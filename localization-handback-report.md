@@ -1,11 +1,39 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 0
+ Total Files | 2
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [dsc\metaConfig.md](https://github.com/PowerShell/powerShell-Docs/blob/dcacf14d13cc0c3e4bb3b6602ad3ab6b3141471f/dsc/metaConfig.md) | InSyncHandedBackSuccess | [Details](#5131f7b51bde9c714fe249e14addaea8b05b80b342)
+ [dsc\windowsfeatureResource.md](https://github.com/PowerShell/powerShell-Docs/blob/dcacf14d13cc0c3e4bb3b6602ad3ab6b3141471f/dsc/windowsfeatureResource.md) | InSyncHandedBackSuccess | [Details](#1484f03d1d80b73e3131095e3363b246929a0a3566)
 
 ## Item Details
+##### <a name='5131f7b51bde9c714fe249e14addaea8b05b80b342'></a> Source: [dsc\metaConfig.md](https://github.com/PowerShell/powerShell-Docs/blob/dcacf14d13cc0c3e4bb3b6602ad3ab6b3141471f/dsc/metaConfig.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [dsc\metaConfig.md](https://github.com/PowerShell/powerShell-Docs.de-de/blob/9ada39b9ee5ad7bcac54a91e74c5bed15db8347a/dsc/metaConfig.md)
+* Handoff File: [metaConfig.915dba9ed66671e4a41c35a16d5248bb4c94e3d6.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/fe81af500771b252f451b70052d3a2ce7625b112/ol-handoff/PowerShell/powerShell-Docs.de-de/live/metaConfig.915dba9ed66671e4a41c35a16d5248bb4c94e3d6.de-de.xlf)
+* Handoff Datetime: 2016-02-23 03:01:20
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [metaConfig.915dba9ed66671e4a41c35a16d5248bb4c94e3d6.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/4572ee684cdfa1040acc7f7bc300aaeeacc5bd35/ol-handback/PowerShell/powerShell-Docs.de-de/live/metaConfig.915dba9ed66671e4a41c35a16d5248bb4c94e3d6.de-de.xlf)
+* Handback Datetime: 2016-03-21 21:14:51
+* [Back to Top](#report-top)
+
+##### <a name='1484f03d1d80b73e3131095e3363b246929a0a3566'></a> Source: [dsc\windowsfeatureResource.md](https://github.com/PowerShell/powerShell-Docs/blob/dcacf14d13cc0c3e4bb3b6602ad3ab6b3141471f/dsc/windowsfeatureResource.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [dsc\windowsfeatureResource.md](https://github.com/PowerShell/powerShell-Docs.de-de/blob/9ada39b9ee5ad7bcac54a91e74c5bed15db8347a/dsc/windowsfeatureResource.md)
+* Handoff File: [windowsfeatureResource.07b968eb71ba947a4bf5fa25add8a0e2c25bcadf.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/fe81af500771b252f451b70052d3a2ce7625b112/ol-handoff/PowerShell/powerShell-Docs.de-de/live/windowsfeatureResource.07b968eb71ba947a4bf5fa25add8a0e2c25bcadf.de-de.xlf)
+* Handoff Datetime: 2016-02-23 03:01:20
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [windowsfeatureResource.07b968eb71ba947a4bf5fa25add8a0e2c25bcadf.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/4572ee684cdfa1040acc7f7bc300aaeeacc5bd35/ol-handback/PowerShell/powerShell-Docs.de-de/live/windowsfeatureResource.07b968eb71ba947a4bf5fa25add8a0e2c25bcadf.de-de.xlf)
+* Handback Datetime: 2016-03-21 21:14:51
+* [Back to Top](#report-top)
+
 
 ## Error Details
 
