@@ -1,6 +1,6 @@
 {
   "LastProcessedCommit": "414c88e7b4157b9d3eeca34bf49389771312b0fa",
-  "LastTranslatedCommit": "9ada39b9ee5ad7bcac54a91e74c5bed15db8347a",
+  "LastTranslatedCommit": "8630805fafb6c3c84c932145881d5726e86ea86c",
   "Items": {
     "81efeb79a70df604ef8c126c0ebd17b4f4711a44": {
       "FileHash": "81efeb79a70df604ef8c126c0ebd17b4f4711a44",
@@ -609,14 +609,14 @@
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
-      "TargetFileCommit": null,
-      "TargetFilePath": null,
-      "HandbackFilePath": null,
-      "HandbackFileCommit": null,
-      "HandbackDateTime": "0001-01-01T00:00:00",
+      "TargetFileCommit": "8630805fafb6c3c84c932145881d5726e86ea86c",
+      "TargetFilePath": "dsc\\lnxBuiltInResources.md",
+      "HandbackFilePath": "ol-handback\\PowerShell\\powerShell-Docs.de-de\\live\\lnxBuiltInResources.12cc0e2a7d17afe6b1e1b9c928760080863926f9.de-de.xlf",
+      "HandbackFileCommit": "2473d721ab1707a4fcfb154daa465cb329a870cf",
+      "HandbackDateTime": "2016-03-21T22:37:42.727504Z",
       "HandbackException": null,
       "HandbackFailureTimes": 0,
-      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "UpdatedDateTime": "2016-03-21T22:37:42.727504Z",
       "ArchiveFilePath": null,
       "ArchiveFileCommit": null,
       "ArchiveFileDateTime": "0001-01-01T00:00:00",
