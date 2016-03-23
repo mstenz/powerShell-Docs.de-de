@@ -63,7 +63,7 @@ configuration Sample_xDscWebService
 1. Führen Sie die Konfiguration aus, und übergeben Sie den Fingerabdruck des selbstsignierten Zertifikats, das Sie erstellt haben, mit dem Parameter **certificateThumbPrint**:
 
 ```powershell
-PS:\>$myCert = Get-ChildItem CERT: | Where-Object {$_.Subject -eq 'CN=PSDSCPullServerCert'}
+PS:\>$myCert = Get-ChildItem CERT:\LocalMachine\My | Where-Object {$_.Subject -eq 'CN=PSDSCPullServerCert'}
 PS:\>Sample_xDSCService -certificateThumbprint $myCert.Thumbprint 
 ```
 
@@ -89,4 +89,4 @@ Die Prüfsummendatei muss sich im gleichen Verzeichnis wie die MOF-Konfiguration
 * [Windows PowerShell DSC – Übersicht](overview.md)
 * [Inkraftsetzung von Konfigurationen](enactingConfigurations.md)
 * [Abrufen von Knoteninformationen vom DSC-Pullserver](retrieveNodeInfo.md)
-<!--HONumber=Feb16_HO4-->
+<!--HONumber=Mar16_HO1-->
