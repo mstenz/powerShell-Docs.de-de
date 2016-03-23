@@ -11,7 +11,7 @@ Die folgende Tabelle bietet eine Liste dieser Ressourcen sowie Links zu Themen, 
 * Ressource [nxFile](lnxFileResource.md): Verwaltet Linux-Dateien und -Verzeichnisse. 
 * Ressource [nxFileLine](lnxFileLineResource.md): Verwaltet einzelne Zeilen in einer Linux-Datei. 
 * Ressource [nxGroup](lnxGroupResource.md): Verwaltet lokale Linux-Gruppen. 
-* Ressource [nxPackage](lnxPackageResource.md): Verwaltet Pakete auf Linux-Knoten.Ressource [nxScript ](lnxScriptResource.md): Führt Skripts auf Zielknoten aus.
+* Ressource [nxPackage](lnxPackageResource.md): Verwaltet Pakete auf Linux-Knoten. Ressource [nxScript ](lnxScriptResource.md): Führt Skripts auf Zielknoten aus.
 * Ressource [nxService](lnxServiceResource.md): Verwaltet Linux-Dienste (Daemons).
 * Ressource [nxSshAuthorizedKeys](lnxSshAuthorizedKeysResource.md): Verwaltet öffentliche SSH-Schlüssel für einen Linux-Benutzer. 
 * Ressource [nxUser](lnxUserResource.md): Verwaltet lokale Linux-Benutzer. 
