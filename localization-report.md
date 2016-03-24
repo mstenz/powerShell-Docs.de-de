@@ -410,9 +410,9 @@
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [dsc\decisionMaker.md](https://github.com/PowerShell/powerShell-Docs.de-de/blob/cbb54708e872f8e6892d03de06ae5d0113953473/dsc/decisionMaker.md)
-* Current Handback File: [decisionMaker.01553169f2ba4241995260fad925e2784b5f5567.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/00bb6b5d29bebe4b456a3e26ebc3f29bc26e9eb1/ol-handback/PowerShell/powerShell-Docs.de-de/live/decisionMaker.01553169f2ba4241995260fad925e2784b5f5567.de-de.xlf)
-* Current Handback Datetime: 2016-03-22 17:21:05
+* Current Target File: [dsc\decisionMaker.md](https://github.com/PowerShell/powerShell-Docs.de-de/blob/484ffb5068055df946ea2fd31b8bf1ed4975857c/dsc/decisionMaker.md)
+* Current Handback File: [decisionMaker.01553169f2ba4241995260fad925e2784b5f5567.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/8b714fb02be5e53fc4de316b8e5b809d2648f41c/ol-handback/PowerShell/powerShell-Docs.de-de/live/decisionMaker.01553169f2ba4241995260fad925e2784b5f5567.de-de.xlf)
+* Current Handback Datetime: 2016-03-24 20:13:48
 * [Back to Top](#report-top)
 
 ##### <a name='c0e59ca822ca5bcf841e3a5a8f2f775cc5f8fc1218'></a> Source: [dsc\docfx.json](https://github.com/PowerShell/powerShell-Docs/blob/14457b676a0b23ba38d404a34d16b14473a5f2fe/dsc/docfx.json)
@@ -473,9 +473,9 @@
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [dsc\gettingStarted.md](https://github.com/PowerShell/powerShell-Docs.de-de/blob/cbb54708e872f8e6892d03de06ae5d0113953473/dsc/gettingStarted.md)
-* Current Handback File: [gettingStarted.92e02d8bd273df5c304475a9b4fa251c22a7ea19.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/00bb6b5d29bebe4b456a3e26ebc3f29bc26e9eb1/ol-handback/PowerShell/powerShell-Docs.de-de/live/gettingStarted.92e02d8bd273df5c304475a9b4fa251c22a7ea19.de-de.xlf)
-* Current Handback Datetime: 2016-03-22 17:21:05
+* Current Target File: [dsc\gettingStarted.md](https://github.com/PowerShell/powerShell-Docs.de-de/blob/484ffb5068055df946ea2fd31b8bf1ed4975857c/dsc/gettingStarted.md)
+* Current Handback File: [gettingStarted.92e02d8bd273df5c304475a9b4fa251c22a7ea19.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/8b714fb02be5e53fc4de316b8e5b809d2648f41c/ol-handback/PowerShell/powerShell-Docs.de-de/live/gettingStarted.92e02d8bd273df5c304475a9b4fa251c22a7ea19.de-de.xlf)
+* Current Handback Datetime: 2016-03-24 20:13:48
 * [Back to Top](#report-top)
 
 ##### <a name='bc098355d65bff2203a212f2387be6f79fbb63e823'></a> Source: [dsc\groupResource.md](https://github.com/PowerShell/powerShell-Docs/blob/dcacf14d13cc0c3e4bb3b6602ad3ab6b3141471f/dsc/groupResource.md)
@@ -1006,9 +1006,9 @@
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [dsc\TOC.md](https://github.com/PowerShell/powerShell-Docs.de-de/blob/cbb54708e872f8e6892d03de06ae5d0113953473/dsc/TOC.md)
-* Current Handback File: [TOC.b2a7935bce42ebc7e43bfe65f3058900e2942427.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/00bb6b5d29bebe4b456a3e26ebc3f29bc26e9eb1/ol-handback/PowerShell/powerShell-Docs.de-de/live/TOC.b2a7935bce42ebc7e43bfe65f3058900e2942427.de-de.xlf)
-* Current Handback Datetime: 2016-03-22 17:21:05
+* Current Target File: [dsc\TOC.md](https://github.com/PowerShell/powerShell-Docs.de-de/blob/484ffb5068055df946ea2fd31b8bf1ed4975857c/dsc/TOC.md)
+* Current Handback File: [TOC.b2a7935bce42ebc7e43bfe65f3058900e2942427.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/8b714fb02be5e53fc4de316b8e5b809d2648f41c/ol-handback/PowerShell/powerShell-Docs.de-de/live/TOC.b2a7935bce42ebc7e43bfe65f3058900e2942427.de-de.xlf)
+* Current Handback Datetime: 2016-03-24 20:13:48
 * [Back to Top](#report-top)
 
 ##### <a name='d571a7562bd23e3bca78127732dd4fccb88fee1c64'></a> Source: [dsc\troubleshooting.md](https://github.com/PowerShell/powerShell-Docs/blob/9aee11690c9278e18265f954c6808eecbb1576b5/dsc/troubleshooting.md)
