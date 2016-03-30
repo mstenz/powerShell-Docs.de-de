@@ -39,7 +39,6 @@
 #### [Konfigurieren von Knoten mit mehreren Konfigurationsfragmenten](dsc_partialconfig.md)
 ##### [Unterstützung gemischter „RefreshMode“-Eigenschaften](dsc_partialconfig_mixedmode.md)
 #### [Konfigurieren des DSC-Moduls mit neuem Attribut](dsc_metaconfiguration.md)
-#### [Kombinieren von PUSH- und PULL-Modus](dsc_mixedrefreshmode.md)
 #### [Detaillierte Informationen zum LCM-Status](dsc_lcmstate.md)
 #### [Frequenzen für „RefreshMode“ und „ConfigurationMode“ müssen keine Vielfache des jeweils anderen sein](dsc_freqnomultiple.md)
 #### [Zusätzlicher Wert für „RefreshMode“-Eigenschaft](dsc_refreshmode.md)
@@ -98,4 +97,4 @@
 
 # [Bekannte Probleme und Einschränkungen](limitation_overview.md)
 ## [Bekannte Probleme bei DSC (Desired State Configuration)](limitation_dsc.md)
-<!--HONumber=Mar16_HO2-->
+<!--HONumber=Mar16_HO3-->
