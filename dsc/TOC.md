@@ -4,6 +4,7 @@
 ## [Inkraftsetzung von Konfigurationen](enactingConfigurations.md)
 ## [Konfigurationsdaten](configData.md)
 ### [Optionen für Anmeldeinformationen in Konfigurationsdaten](configDataCredentials.md)
+### [Ausführen von DSC mit Benutzeranmeldeinformationen](runAsUser.md)
 ## [Schützen der MOF-Konfigurationsdatei](secureMOF.md)
 ## [Teilkonfigurationen](partialConfigs.md)
 # [Ressourcen](resources.md)
@@ -17,7 +18,7 @@
 ### [Ressource „Registry“](registryResource.md)
 ### [Ressource „Script“](scriptResource.md)
 ### [Ressource „Service“](serviceResource.md)
-### [Ressource „User“](userResource.md)
+### [Benutzerressource](userResource.md)
 ### [Ressource „WindowsFeature“](windowsfeatureResource.md)
 ### [Ressource „WindowsProcess“](windowsProcessResource.md)
 ## [Erstellen benutzerdefinierter Ressourcen](authoringResource.md) 
@@ -26,12 +27,14 @@
 ### [Klassenbasierte benutzerdefinierte Ressourcen](authoringResourceClass.md)
 ### [Zusammengesetzte Ressourcen](authoringResourceComposite.md)
 ### [Debuggen von DSC-Ressourcen](debugResource.md)
+### [Prüfliste für die Ressourcenerstellung](resourceAuthoringChecklist.md)
 
 # [Konfigurieren des lokalen Konfigurations-Managers (LCM)](metaConfig.md)
 ## [Konfigurieren des LCM in PowerShell 4.0](metaConfig4.md)
 
 # Das DSC-Pullmodell
 ## [Einrichten eines Webpullservers](pullServer.md)
+## [Einrichten eines DSC-SMB-Pullservers](pullServerSMB.md)
 ## [Einrichten eines Pullclients](pullClient.md)
 ### [Einrichten eines Pullclients mithilfe von Konfigurationsnamen](pullClientConfigNames.md)
 ### [Einrichten eines DSC-Pullclients mithilfe einer Konfigurations-ID](pullClientConfigID.md)
@@ -52,4 +55,8 @@
 ### [Ressource „nxService“](lnxServiceResource.md)
 ### [Ressource „nxSshAuthorizedKeys“](lnxSshAuthorizedKeysResource.md)
 ### [Resource „nxUser“](lnxUserResource.md)
-<!--HONumber=Feb16_HO4-->
+
+
+<!--HONumber=Mar16_HO3-->
+
+

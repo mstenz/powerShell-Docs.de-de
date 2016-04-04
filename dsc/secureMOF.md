@@ -8,21 +8,51 @@ DSC weist die Zielknoten an, welche Konfiguration sie aufweisen sollen, indem ei
 
 Stellen Sie sicher, dass Folgendes zutrifft, um die Anmeldeinformationen sicher zu verschlüsseln, die zum Schutz einer DSC-Konfiguration dienen:
 
-* **Möglichkeiten zum Ausstellen und Verteilen von Zertifikaten**. In diesem Thema und seinen Beispielen wird davon ausgegangen, dass Sie eine Active Directory-Zertifizierungsstelle verwenden. Weitere Informationen zu Active Directory-Zertifikatdiensten finden Sie unter [Übersicht über Active Directory-Zertifikatdienste](https://technet.microsoft.com/library/hh831740.aspx) und [Active Directory-Zertifikatdienste in Windows Server 2008](https://technet.microsoft.com/windowsserver/dd448615.aspx).
-* **Administratorzugriff auf den Zielknoten oder Knoten**.
-* **Jeder Zielknoten hat ein verschlüsselungsfähiges Zertifikat, das in seinem persönlichen Speicher gespeichert ist**. In Windows PowerShell ist der Pfad zum Speicher „Cert: \LocalMachine\My“. In den Beispielen in diesem Thema verwenden Sie die Vorlage „Arbeitsstationsauthentifizierung“, die Sie (zusammen mit anderen Zertifikatvorlagen) unter [Standardzertifikatvorlagen](https://technet.microsoft.com/library/cc740061(v=WS.10).aspx) finden.
-* Wenn Sie diese Konfiguration auf einem anderen Computer als dem Zielknoten ausführen, **exportieren Sie den öffentlichen Schlüssel des Zertifikats**, und importieren Sie ihn anschließend auf den Computer, auf dem Sie die Konfiguration ausführen. Stellen Sie sicher, dass Sie nur den **öffentlichen** Schlüssel exportieren. Halten Sie den privaten Schlüssel geschützt.
+* Möglichkeiten zum Ausstellen und Verteilen von Zertifikaten. In diesem Thema und seinen Beispielen wird davon ausgegangen, dass Sie eine Active Directory-Zertifizierungsstelle verwenden. Weitere Informationen zu Active Directory-Zertifikatdiensten finden Sie unter Übersicht über Active Directory-Zertifikatdienste und Active Directory-Zertifikatdienste in Windows Server 2008.
+* Administratorzugriff auf den Zielknoten oder Knoten.
+* Jeder Zielknoten hat ein verschlüsselungsfähiges Zertifikat, das in seinem persönlichen Speicher gespeichert ist. In Windows PowerShell ist der Pfad zum Speicher „Cert: \LocalMachine\My“. In den Beispielen in diesem Thema verwenden Sie die Vorlage „Arbeitsstationsauthentifizierung“, die Sie (zusammen mit anderen Zertifikatvorlagen) unter Standardzertifikatvorlagen finden.
+* Wenn Sie diese Konfiguration auf einem anderen Computer als dem Zielknoten ausführen, exportieren Sie den öffentlichen Schlüssel des Zertifikats, und importieren Sie ihn anschließend auf den Computer, auf dem Sie die Konfiguration ausführen. Stellen Sie sicher, dass Sie nur den öffentlichen Schlüssel exportieren. Halten Sie den privaten Schlüssel geschützt.
 
 ## Allgemeiner Prozess
 
-1. Richten Sie die Zertifikate, Schlüssel und Fingerabdrücke ein, und stellen Sie sicher, dass jeder Zielknoten über Kopien des Zertifikats verfügt, und dass sich der öffentliche Schlüssel und Fingerabdruck auf dem Konfigurationscomputer befinden.
-1. Erstellen Sie einen „Configuration“-Datenblock, der den Pfad und Fingerabdruck des öffentlichen Schlüssels enthält.
-1. Erstellen Sie ein Konfigurationsskript, das die gewünschte Konfiguration für den Zielknoten definiert. Richten Sie die Entschlüsselung auf den Zielknoten ein, indem Sie den lokalen Konfigurations-Manager anweisen, die Konfigurationsdaten mithilfe des Zertifikats und Fingerabdrucks zu entschlüsseln.
-1. Führen Sie die Konfiguration aus, woraufhin die Einstellungen des lokalen Konfigurations-Managers festgelegt werden und die DSC-Konfiguration gestartet wird.
+ 1. Richten Sie die Zertifikate, Schlüssel und Fingerabdrücke ein, und stellen Sie sicher, dass jeder Zielknoten über Kopien des Zertifikats verfügt, und dass sich der öffentliche Schlüssel und Fingerabdruck auf dem Konfigurationscomputer befinden.
+ 2. Erstellen Sie einen „Configuration“-Datenblock, der den Pfad und Fingerabdruck des öffentlichen Schlüssels enthält.
+ 3. Erstellen Sie ein Konfigurationsskript, das die gewünschte Konfiguration für den Zielknoten definiert. Richten Sie die Entschlüsselung auf den Zielknoten ein, indem Sie den lokalen Konfigurations-Manager anweisen, die Konfigurationsdaten mithilfe des Zertifikats und Fingerabdrucks zu entschlüsseln.
+ 4. Führen Sie die Konfiguration aus, woraufhin die Einstellungen des lokalen Konfigurations-Managers festgelegt werden und die DSC-Konfiguration gestartet wird.
+
+![Diagramm1](images/CredentialEncryptionDiagram1.png)
+
+## Zertifikatanforderungen
+
+Zum Aktivieren der Verschlüsselung der Anmeldeinformationen muss auf dem Zielknoten ein Zertifikat für öffentliche Schlüssel verfügbar sein, dem der zum Erstellen der DSC-Konfiguration verwendete Computer vertraut.
+Dieses Zertifikat für öffentliche Schlüssel hat bestimmte Anforderungen, die erfüllt sein müssen, damit es für die Verschlüsselung der DSC-Anmeldeinformationen verwendet werden kann:
+ 1. Schlüsselverwendung:
+   - Muss enthalten: „KeyEncipherment!“ und „DataEncipherment“.
+   - Sollte nicht enthalten: „Digitale Signatur“.
+ 2. Erweiterte Schlüsselverwendung:
+   - Muss enthalten: Dokumentenverschlüsselung (1.3.6.1.4.1.311.80.1).
+   - Sollte nicht enthalten: Clientauthentifizierung (1.3.6.1.5.5.7.3.2) und Serverauthentifizierung (1.3.6.1.5.5.7.3.1).
+ 3. Der private Schlüssel für das Zertifikat ist auf dem Zielknoten verfügbar.
+ 
+Empfohlene bewährte Methode: Sie können ein Zertifikat, das die Schlüsselverwendung „Digitale Signatur“ oder eine der „Authentifizierungs-EKU enthält, zwar verwenden, dadurch kann der die Verschlüsselungsschlüssel allerdings leichter missbraucht werden und ist anfälliger für Angriffe. Es empfiehlt sich daher, ein Zertifikat ohne diese Schlüsselverwendung und EKUs zu verwenden, das speziell zum Sichern von DSC-Anmeldeinformationen erstellt wurde.
+  
+Alle vorhandenen Zertifikate auf dem Zielknoten, die diese Kriterien erfüllen, können zum Absichern von DSC-Anmeldeinformationen verwendet werden.
+ 
+## Erstellen des Zertifikats
+
+Das Zertifikat für private Schlüssel kann auf dem Zielknoten erstellt werden, und das Zertifikat für öffentliche Schlüssel kann auf den Computer kopiert werden, der zum Kompilieren der DSC-Konfiguration in eine MOF-Datei verwendet wird.
+
+Alternativ kann das Zertifikat für private Schlüssel auf dem Computer, der zum Kompilieren der DSC-Konfigurationsdatei verwendet wird, erstellt, mit dem privaten Schlüssel exportiert und dann auf den Zielknoten importiert werden. Dies ist die aktuelle Methode zur Implementierung der Verschlüsselung der DSC-Anmeldeinformationen unter Nano Server. 
 
 ## Konfigurationsdaten
 
-Der „Configuration“-Datenblock definiert die betroffenen Zielknoten, ob die Anmeldeinformationen verschlüsselt werden oder nicht, die Verschlüsselungsmethode und andere Informationen. Weitere Informationen zum „Configuration“-Datenblock finden Sie unter [Trennen von Konfigurations- und Umgebungsdaten](configData.md).
+Der „Configuration“-Datenblock definiert die betroffenen Zielknoten, ob die Anmeldeinformationen verschlüsselt werden oder nicht, die Verschlüsselungsmethode und andere Informationen. Weitere Informationen zum „Configuration“-Datenblock finden Sie unter Trennen von Konfigurations- und Umgebungsdaten.
+
+Die Elemente im Zusammenhang mit der Verschlüsselung von Anmeldeinformationen für jeden Knoten konfiguriert werden können, sind:
+* NodeName: Der Name des Zielknotens, für den die Verschlüsselung der Anmeldeinformationen konfiguriert wird.
+* PsDscAllowPlainTextPassword: Legt fest, ob unverschlüsselte Anmeldeinformationen an diesen Knoten übergeben werden können. Dies ist nicht zu empfehlen.
+* Thumbprint: Der Fingerabdruck des Zertifikats, das verwendet wird, um die Anmeldeinformationen in der DSC-Konfiguration auf dem Zielknoten zu entschlüsseln. **Dieses Zertifikat muss im Zertifikatspeicher des lokalen Computers auf dem Zielknoten vorhanden sein.**
+* CertificateFile: Die Zertifikatsdatei (enthält nur den öffentlichen Schlüssel), die verwendet werden soll, um die Anmeldeinformationen für die Zielknoten zu verschlüsseln. Dies muss eine Zertifikatdatei im DER-codierten binären X.509-Format oder im Base-64-codierten X.509-Format sein.
 
 Dieses Beispiel zeigt einen „Configuration“-Datenblock, einen betroffenen Zielknoten namens „targetNode“, den Pfad zur Zertifikatdatei mit dem öffentlichen Schlüssel (namens „targetNode.cer“) und den Fingerabdruck des öffentlichen Schlüssels.
 
@@ -124,8 +154,8 @@ configuration CredentialEncryptionExample
 
 An dieser Stellen können Sie die Konfiguration ausführen, woraufhin zwei Dateien ausgegeben werden:
 
-* Eine Datei des Typs „*.meta.mof“, die vom lokalen Konfigurations-Manager zum Entschlüsseln der Anmeldeinformationen mithilfe des Zertifikats verwendet wird, das sich im lokalen Computerspeicher befindet und von dessen Fingerabdruck bestimmt wird. „Set DscLocalConfigurationManager“ wendet die Datei „*.meta.mof“ an.
-* Eine MOF-Datei, die die Konfiguration tatsächlich anwendet. „Start-DscConfiguration“ wendet die Konfiguration an.
+ * Eine Datei des Typs „*.meta.mof“, die vom lokalen Konfigurations-Manager zum Entschlüsseln der Anmeldeinformationen mithilfe des Zertifikats verwendet wird, das sich im lokalen Computerspeicher befindet und von dessen Fingerabdruck bestimmt wird. `Set-DscLocalConfigurationManager` installiert die *.meta.mof-Datei.
+ * Eine MOF-Datei, die die Konfiguration tatsächlich anwendet. „Start-DscConfiguration“ wendet die Konfiguration an.
 
 Mit diesen Befehlen werden diese Schritte ausgeführt:
 
@@ -139,6 +169,13 @@ Set-DscLocalConfigurationManager .\CredentialEncryptionExample -Verbose
 Write-Host "Starting Configuration..."
 Start-DscConfiguration .\CredentialEncryptionExample -wait -Verbose
 ```
+
+In diesem Beispiel wird die DSC-Konfiguration per Push auf den Zielknoten übertragen.
+Die DSC-Konfiguration kann auch unter Verwendung eines DSC-Pullservers, sofern verfügbar, angewendet werden.
+
+Weitere Informationen zum Anwenden von DSC-Konfigurationen unter Verwendung eines DSC-Pullservers finden Sie unter auf dieser Seite.
+
+## Beispiel für das Modul zum Verschlüsseln von Anmeldeinformationen
 
 Es folgt ein vollständiges Beispiel, das alle diese Schritte enthält, sowie ein Hilfs-Cmdlet zum Exportieren und Kopieren der öffentlichen Schlüssel:
 
@@ -252,4 +289,10 @@ function Get-EncryptionCertificate
     # Return the thumbprint
     return $returnValue[0]
 }
-```<!--HONumber=Feb16_HO4-->
+
+Start-CredentialEncryptionExample
+```
+
+<!--HONumber=Mar16_HO4-->
+
+

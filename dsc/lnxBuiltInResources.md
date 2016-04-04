@@ -6,13 +6,19 @@ Ressourcen sind Bausteine zum Schreiben eines PowerShell DSC-Skripts. DSC für L
 
 Die folgende Tabelle bietet eine Liste dieser Ressourcen sowie Links zu Themen, in denen diese Ressourcen ausführlich beschrieben werden.
 
-* Ressource [nxArchive](lnxArchiveResource.md): Bietet einen Mechanismus zum Entpacken von Archivdateien (.tar, .zip) in einem bestimmten Pfad.
-* Ressource [nxEnvironment](lnxEnvironmentResource.md): Verwaltet Umgebungsvariablen auf Zielknoten. 
-* Ressource [nxFile](lnxFileResource.md): Verwaltet Linux-Dateien und -Verzeichnisse. 
-* Ressource [nxFileLine](lnxFileLineResource.md): Verwaltet einzelne Zeilen in einer Linux-Datei. 
-* Ressource [nxGroup](lnxGroupResource.md): Verwaltet lokale Linux-Gruppen. 
-* Ressource [nxPackage](lnxPackageResource.md): Verwaltet Pakete auf Linux-Knoten. Ressource [nxScript ](lnxScriptResource.md): Führt Skripts auf Zielknoten aus.
-* Ressource [nxService](lnxServiceResource.md): Verwaltet Linux-Dienste (Daemons).
-* Ressource [nxSshAuthorizedKeys](lnxSshAuthorizedKeysResource.md): Verwaltet öffentliche SSH-Schlüssel für einen Linux-Benutzer. 
-* Ressource [nxUser](lnxUserResource.md): Verwaltet lokale Linux-Benutzer. 
-  <!--HONumber=Feb16_HO4-->
+* Ressource <ctype="x-NOTFOUND" mdpre="[" mdpost="](lnxArchiveResource.md)">nxArchive</ctype="x-NOTFOUND">: Bietet einen Mechanismus zum Entpacken von Archivdateien (.tar, .zip) in einem bestimmten Pfad.
+* Ressource <ctype="x-NOTFOUND" mdpre="[" mdpost="](lnxEnvironmentResource.md)">nxEnvironment</ctype="x-NOTFOUND">: Verwaltet Umgebungsvariablen auf Zielknoten. 
+* Ressource <ctype="x-NOTFOUND" mdpre="[" mdpost="](lnxFileResource.md)">nxFile</ctype="x-NOTFOUND">: Verwaltet Linux-Dateien und -Verzeichnisse. 
+* Ressource <ctype="x-NOTFOUND" mdpre="[" mdpost="](lnxFileLineResource.md)">nxFileLine</ctype="x-NOTFOUND">: Verwaltet einzelne Zeilen in einer Linux-Datei. 
+* Ressource <ctype="x-NOTFOUND" mdpre="[" mdpost="](lnxGroupResource.md)">nxGroup</ctype="x-NOTFOUND">: Verwaltet lokale Linux-Gruppen. 
+* Ressource <ctype="x-NOTFOUND" mdpre="[" mdpost="](lnxPackageResource.md)">nxPackage</ctype="x-NOTFOUND">: Verwaltet Pakete auf Linux-Knoten.
+* Ressource <ctype="x-NOTFOUND" mdpre="[" mdpost="](lnxScriptResource.md)">nxScript</ctype="x-NOTFOUND">: Führt Skripts auf Zielknoten aus.
+* Ressource <ctype="x-NOTFOUND" mdpre="[" mdpost="](lnxServiceResource.md)">nxService</ctype="x-NOTFOUND">: Verwaltet Linux-Dienste (Daemons).
+* Ressource <ctype="x-NOTFOUND" mdpre="[" mdpost="](lnxSshAuthorizedKeysResource.md)">nxSshAuthorizedKeys</ctype="x-NOTFOUND">: Verwaltet öffentliche SSH-Schlüssel für einen Linux-Benutzer. 
+* Ressource <ctype="x-NOTFOUND" mdpre="[" mdpost="](lnxUserResource.md)">nxUser</ctype="x-NOTFOUND">: Verwaltet lokale Linux-Benutzer. 
+  
+
+
+<!--HONumber=Mar16_HO4-->
+
+

@@ -5,7 +5,7 @@
 In PowerShell 5.0 wurde ein neues Feature in DSC (Konfiguration für den gewünschten Zustand) eingeführt, mit dem Sie eine DSC-Ressource beim Anwenden einer Konfiguration debuggen können.
 
 ## Aktivieren des DSC-Debuggens
-Bevor Sie eine Ressource debuggen können, müssen Sie das Cmdlet [Enable-DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx) aufrufen, um das Debuggen zu aktivieren. Dieses Cmdlet verfügt über den Pflichtparameter **BreakAll**. Um zu überprüfen, ob das Debuggen aktiviert wurde, werfen Sie einen Blick auf das Ergebnis eines Aufrufs von [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx). Die folgende PowerShell-Ausgabe zeigt das Ergebnis der Aktivierung des Debuggens an:
+Bevor Sie eine Ressource debuggen können, müssen Sie das Cmdlet Enable-DscDebug aufrufen, um das Debuggen zu aktivieren. Dieses Cmdlet verfügt über den Pflichtparameter BreakAll. Um zu überprüfen, ob das Debuggen aktiviert wurde, werfen Sie einen Blick auf das Ergebnis eines Aufrufs von Get-DscLocalConfigurationManager. Die folgende PowerShell-Ausgabe zeigt das Ergebnis der Aktivierung des Debuggens an:
 
 
 ```powershell
@@ -27,7 +27,7 @@ PS C:\DebugTest>
 
 
 ## Starten einer Konfiguration mit aktiviertem Debuggen
-Um eine DSC-Ressource zu debuggen, starten Sie eine Konfiguration, die diese Ressource aufruft. In diesem Beispiel betrachten wir eine einfache Konfiguration, die die Ressource [WindowsFeature](windowsfeatureResource.md) aufruft, um sicherzustellen, dass das Feature „WindowsPowerShellWebAccess“ installiert wurde:
+Um eine DSC-Ressource zu debuggen, starten Sie eine Konfiguration, die diese Ressource aufruft. In diesem Beispiel betrachten wir eine einfache Konfiguration, die die Ressource WindowsFeature aufruft, um sicherzustellen, dass das Feature „WindowsPowerShellWebAccess“ installiert wurde:
 
 ```powershell
 Configuration PSWebAccess
@@ -44,7 +44,7 @@ Configuration PSWebAccess
     }
 PSWebAccess
 ```
-Rufen Sie nach dem Kompilieren der Konfiguration [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) auf, um die Konfiguration zu starten. Die Konfiguration wird beendet, wenn der
+Rufen Sie nach dem Kompilieren der Konfiguration Start-DscConfiguration auf, um die Konfiguration zu starten. Die Konfiguration wird beendet, wenn der
 lokale Konfigurations-Manager die erste Ressource in der Konfiguration aufruft. Bei Verwendung der Parameter `-Verbose` und `-Wait` werden in der Ausgabe die Zeilen angezeigt, die Sie eingeben müssen,
 um das Debuggen zu starten.
 
@@ -73,8 +73,20 @@ An diesem Punkt hat der lokale Konfigurations-Manager die Ressource aufgerufen u
 ## Debuggen des Ressourcenskripts
 
 Starten Sie eine neue Instanz von PowerShell ISE. Geben Sie im Konsolenbereich die letzten drei Zeilen der `Start-DscConifiguration`-Ausgabe als Befehle ein, wobei Sie `<credentials>` durch
-gültige Benutzeranmeldeinformationen ersetzen. Hier ist die resultierende Ausgabe.
+gültige Benutzeranmeldeinformationen ersetzen. Jetzt sollte eine Eingabeaufforderung angezeigt werden, die in etwa so aussieht:
+
+```powershell
+[TEST-SRV]: [DBG]: [Process:9000]: [RemoteHost]: PS C:\DebugTest>>
+```
+
+Das Ressourcenskript wird im Skriptfenster geöffnet, und der Debugger wird in der ersten Zeile der Funktion Test-TargetResource angehalten (der Test()-Methode einer klassenbbasierten Ressource).
+Jetzt können Sie die Debugbefehle in der ISE verwenden, um das Ressourcenskript schrittweise zu durchlaufen, sich die Variablenwerte anzuschauen, die Aufrufliste anzuzeigen, usw. Informationen über das Debuggen in der PowerShell ISE
+finden Sie unter Debuggen von Skripts in Windows PowerShell ISE. Denken Sie daran, dass jede Zeile im Ressourcenskript (oder in der Klasse) als Haltepunkt festgelegt ist.
+
+## Weitere Informationen
+- [Schreiben einer benutzerdefinierten DSC-Ressource mit MOF](authoringResourceMOF.md) 
+- [Schreiben einer benutzerdefinierten DSC-Ressource mit PowerShell-Klassen](authoringResourceClass.md)
+
+<!--HONumber=Mar16_HO2-->
 
 
-
-<!--HONumber=Feb16_HO4-->

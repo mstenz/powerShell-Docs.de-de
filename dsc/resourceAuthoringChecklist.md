@@ -1,7 +1,7 @@
 # Prüfliste für die Ressourcenerstellung
-
+Diese Prüfliste ist eine Liste der empfohlenen Vorgehensweisen beim Erstellen einer neuen DSC-Ressource.
 ## Das Ressourcenmodul enthält für jede Ressource Dateien des Typs „.psd1“ und „schema.mof“. 
-Als Erstes müssen Sie prüfen, ob Ihre Ressource eine ordnungsgemäße Struktur hat und alle erforderlichen Dateien enthält. Ein Ressourcenmodul muss eine PSD1-Datei enthalten, und für jede nicht zusammengesetzte Ressource muss die Datei „schema.mof“ vorhanden sein. Ressourcen ohne Schema werden nach Ausführen von **Get-DscResource** nicht aufgeführt. Zudem können Benutzer nicht mit IntelliSense arbeiten, wenn Code für diese Module in der ISE geschrieben wird. 
+Als Erstes müssen Sie prüfen, ob Ihre Ressource eine ordnungsgemäße Struktur hat und alle erforderlichen Dateien enthält. Ein Ressourcenmodul muss eine PSD1-Datei enthalten, und für jede nicht zusammengesetzte Ressource muss die Datei „schema.mof“ vorhanden sein. Ressourcen ohne Schema werden nach Ausführen von Get-DscResource nicht aufgeführt. Zudem können Benutzer nicht mit IntelliSense arbeiten, wenn Code für diese Module in der ISE geschrieben wird. 
 Die Beispielverzeichnisstruktur für die Ressource „xRemoteFile“, die Teil des Ressourcenmoduls „xPSDesiredStateConfiguration“ ist, kann so aussehen:
 
 
@@ -62,7 +62,7 @@ class MSFT_xRemoteFile : OMI_BaseResource
     [Read, ValueMap{"Present", "Absent"}, Values{"Present", "Absent"}, Description("Says whether DestinationPath exists on the machine")] String Ensure;
 }; 
 ```
-Sie sollten darüber hinaus die Cmdlets **Test-xDscResource** und **Test-xDscSchema** im DSC-Ressourcen-Designer verwenden, um die Ressource und das Schema automatisch zu überprüfen:
+Sie sollten darüber hinaus die Cmdlets Test-xDscResource und Test-xDscSchema im DSC-Ressourcen-Designer verwenden, um die Ressource und das Schema automatisch zu überprüfen:
 ```
 Test-xDscResource <Resource_folder>
 Test-xDscSchema <Path_to_resource_schema_file>
@@ -92,36 +92,36 @@ File file {
 } 
 ```
 Nach dem ersten Anwenden sollte die Datei „Test.txt“ im Ordner „C:\test“ enthalten sein. Bei nachfolgenden Ausführungen derselben Konfiguration sollte sich der Zustand des Computers nicht ändern (d. h. keine Kopien der Datei „Test.txt“ sollten erstellt werden).
-Um sicherzustellen, dass unsere Ressource idempotent ist, können wir beim direkten Testen der Ressource **Set-TargetResource** wiederholt aufrufen. Bei End-to-End-Tests können wir **Start-DscConfiguration** mehrmals aufrufen. Das Ergebnis sollte nach jeder Ausführung identisch sein. 
+Um sicherzustellen, dass unsere Ressource idempotent ist, können wir beim direkten Testen der Ressource Set-TargetResource wiederholt aufrufen. Bei End-to-End-Tests können wir Start-DscConfiguration mehrmals aufrufen. Das Ergebnis sollte nach jeder Ausführung identisch sein. 
 
 
 ## Benutzeränderungsszenario getestet ##
-Das Ändern des Benutzers ist ein weiteres gängiges Szenario, das zu testen lohnt. Es dient zum Überprüfen, ob **Set-TargetResource** und **Test-TargetResource** richtig funktionieren. Es folgen die für einen Test auszuführenden Schritte:
+Das Ändern des Benutzers ist ein weiteres gängiges Szenario, das zu testen lohnt. Es dient zum Überprüfen, ob Set-TargetResource und Test-TargetResource richtig funktionieren. Es folgen die für einen Test auszuführenden Schritte:
 1.  Beginnen Sie mit einer Ressource, die nicht im gewünschten Zustand ist.
 2.  Wenden Sie eine Konfiguration auf die Ressource an.
-3.  Überprüfen Sie, ob **Test-DscConfiguration** „True“ zurückgibt.
+3.  Überprüfen Sie, ob Test-DscConfiguration „True“ zurückgibt.
 4.  Ändern Sie den gewünschten Zustand der Ressource.
-5.  Überprüfen Sie, ob **Test-DscConfiguration** „False“ zurückgibt.
+5.  Überprüfen Sie, ob Test-DscConfiguration „False“ zurückgibt.
 Hier ein konkreteres Beispiel der Ressource „Registry“:
 1.  Beginnen Sie mit einem Registrierungsschlüssel, der nicht im gewünschten Zustand ist.
-2.  Führen Sie **Start-DscConfiguration** mit einer Konfiguration aus, um sie in den gewünschten Zustand zu versetzen, der eine Überprüfung besteht.
-3.  Führen Sie **Test-DscConfiguration** aus, und prüfen Sie, ob „True“ zurückgegeben wird.
+2.  Führen Sie Start-DscConfiguration mit einer Konfiguration aus, um sie in den gewünschten Zustand zu versetzen, der eine Überprüfung besteht.
+3.  Führen Sie Test-DscConfiguration aus, und prüfen Sie, ob „True“ zurückgegeben wird.
 4.  Ändern Sie den Wert des Schlüssels so, dass er sich nicht im gewünschten Zustand befindet.
-5.  Führen Sie **Test-DscConfiguration** aus, und prüfen Sie, ob „False“ zurückgegeben wird.
+5.  Führen Sie Test-DscConfiguration aus, und prüfen Sie, ob „False“ zurückgegeben wird.
 6.  Überprüfen von „Get-TargetResource“-Funktionalität mit „Get-DscConfiguration“
 
 „Get-TargetResource“ sollte Details zum aktuellen Zustand der Ressource zurückgeben. Testen Sie sie durch Aufrufen von „Get-DscConfiguration“ nach Anwenden der Konfiguration, und überprüfen Sie, ob die Ausgabe den aktuellen Zustand des Computers ordnungsgemäß widerspiegelt. Es müssen unbedingt getrennte Tests erfolgen, da Probleme in diesem Bereich nicht auftauchen, wenn „Start-DscConfiguration“ aufgerufen wird.
 
-## Überprüfen der Ressource durch direktes Aufrufen von **Get/Set/Test-TargetResource**-Funktionen ##
+## Überprüfen der Ressource durch direktes Aufrufen von Get/Set/Test-TargetResource-Funktionen ##
 
-Stellen Sie sicher, dass Sie die **Get/Set/Test-TargetResource**-Funktionen testen, die in Ihrer Ressource implementiert sind, indem Sie sie direkt aufrufen und sicherstellen, dass sie erwartungsgemäß funktionieren.
+Vergessen Sie nicht, die Get/Set/Test-TargetResource-Funktionen zu testen, die in Ihrer Ressource implementiert sind, indem Sie sie direkt aufrufen und sicherstellen, dass sie erwartungsgemäß funktionieren.
 
-## End-to-End-Überprüfung der Ressource mit **Start-DscConfiguration** ##
+## End-to-End-Überprüfung der Ressource mit Start-DscConfiguration ##
 
-Das Testen von **Get/Set/Test-TargetResource**-Funktionen, indem sie direkt aufgerufen werden, ist wichtig, doch auf diese Weise werden nicht alle Probleme ermittelt. Konzentrieren Sie einen wesentlichen Teil Ihrer Tests auf das Verwenden von **Start-DscConfiguration** oder des Pullservers. Benutzer verwenden die Ressource genau so, weshalb Sie die Bedeutung dieser Art von Tests nicht unterschätzen sollten. 
+Das Testen von Get/Set/Test-TargetResource-Funktionen, indem sie direkt aufgerufen werden, ist wichtig, doch auf diese Weise werden nicht alle Probleme ermittelt. Konzentrieren Sie einen wesentlichen Teil Ihrer Tests auf das Verwenden von Start-DscConfiguration oder des Pullservers. Benutzer verwenden die Ressource genau so, weshalb Sie die Bedeutung dieser Art von Tests nicht unterschätzen sollten. 
 Mögliche Problemtypen:
 -   Das Verhalten von Anmeldeinformationen oder der Sitzung ist möglicherweise anders, da der DSC-Agent als Dienst ausgeführt wird.  Führen Sie in diesem Bereich auf jeden Fall End-to-End-Tests von Features durch.
--   Überprüfen Sie, ob von der Ressource angezeigte Fehlermeldungen sinnvoll sind. Von **Start-DscConfiguration** ausgegebene Fehler sind ggf. anders als die, die angezeigt werden, wenn die **Set-TargetResource**-Funktion direkt aufgerufen wird.
+-   Überprüfen Sie, ob von der Ressource angezeigte Fehlermeldungen sinnvoll sind. Von Start-DscConfiguration ausgegebene Fehler sind ggf. anders als die, die angezeigt werden, wenn die Set-TargetResource-Funktion direkt aufgerufen wird.
 
 ## Die Ressource verhält sich auf allen von DSC unterstützten Plattformen ordnungsgemäß (oder gibt andernfalls einen Fehler zurück) ##
 Die Ressource sollte auf allen von DSC unterstützten Plattformen funktionieren (Windows Server 2008 R2 und höher). Stellen Sie sicher, dass Sie für Ihr Betriebssystem das neueste WMF (Windows Management Framework) installieren, um mit der neuesten DSC-Version zu arbeiten. Wenn eine Ressource auf einigen dieser Plattformen standardmäßig nicht funktioniert, sollte eine entsprechende Fehlermeldung zurückgegeben werden. Stellen Sie außerdem sicher, dass die Ressource überprüft, ob die Cmdlets, die Sie aufrufen, auf einem bestimmten Computer vorhanden sind. Windows Server 2012 wurde eine große Anzahl neuer Cmdlets hinzugefügt, die unter Windows Server 2008 R2, sogar mit installiertem WMF, nicht verfügbar sind. 
@@ -196,12 +196,12 @@ Gute Fehlermeldungen zeichnen sich wie folgt aus:
 -   Genaue Beschreibung, was das Problem ist.
 -   Konstruktive Ratschläge zum Beheben des Problems.
 -   Höfliche Informationen, die dem Benutzer nicht die Schuld geben oder ihn dumm aussehen lassen.
-Stellen Sie sicher, dass Sie Fehler in End-to-End-Szenarien (mit **Start-DscConfiguration**) überprüfen, da sie sich von denjenigen unterscheiden können, die zurückgegeben werden, wenn die Ressourcenfunktionen direkt ausgeführt werden. 
+Stellen Sie sicher, dass Sie Fehler in End-to-End-Szenarien (mit Start-DscConfiguration) überprüfen, da sie sich von denjenigen unterscheiden können, die zurückgegeben werden, wenn die Ressourcenfunktionen direkt ausgeführt werden. 
 
 ## Protokollmeldungen sind leicht verständlich und informativ (z. B. „–verbose“, „–debug“ und ETW-Protokolle) ##
 Stellen Sie sicher, dass Protokolle, die von der Ressource ausgegeben werden, leicht verständlich und für den Benutzer von Nutzen sind. Ressourcen sollten alle Informationen ausgeben, die für den Benutzer hilfreich sind, doch mehr Protokolle sind nicht unbedingt besser. Sie sollten das Ausgeben redundanter Daten ohne Mehrwert unbedingt vermeiden. Lassen Sie Benutzer nicht Hunderte von Protokolleinträgen durchlaufen, damit sie finden, was sie suchen. Keine Protokolle sind freilich keine akzeptable Lösung dieses Problems. 
 
-Beim Testen sollten Sie auch ausführliche und Debugprotokolle (durch Ausführen von **Start-DscConfiguration** mit den Schaltern „–verbose“ und „–debug“) sowie ETW-Protokolle analysieren. Um ETW-Protokolle für DSC anzuzeigen, wechseln Sie zur Ereignisanzeige, und öffnen Sie den folgenden Ordner: Anwendungen und Dienste -> Microsoft -> Windows -> Konfiguration für den gewünschten Zustand.  In der Standardeinstellung gibt es den Kanal „Betriebsbereit“, doch aktivieren Sie auch die Kanäle „Analyse“ und „Debuggen“ (was vor dem Ausführen der Konfiguration erfolgen muss). 
+Beim Testen sollten Sie auch ausführliche und Debugprotokolle (durch Ausführen von Start-DscConfiguration mit den Schaltern „–verbose“ und „–debug“) sowie ETW-Protokolle analysieren. Um ETW-Protokolle für DSC anzuzeigen, wechseln Sie zur Ereignisanzeige, und öffnen Sie den folgenden Ordner: Anwendungen und Dienste -> Microsoft -> Windows -> Konfiguration für den gewünschten Zustand.  In der Standardeinstellung gibt es den Kanal „Betriebsbereit“, doch aktivieren Sie auch die Kanäle „Analyse“ und „Debuggen“ (was vor dem Ausführen der Konfiguration erfolgen muss). 
 Zum Aktivieren der Kanäle „Analyse/Debuggen“ können Sie das folgende Skript ausführen:
 ```powershell
 $statusEnabled = $true
@@ -245,18 +245,18 @@ Beispiel:
 - SAMBA-Freigaben (wenn Sie Linux unterstützen möchten)
 
 ## Ressource ohne Cmdlets mit erforderlicher interaktiver Eingabe ##
-**Get/Set/Test-TargetResource**-Funktionen sollen automatisch ausgeführt werden und in keiner Phase der Ausführung auf Benutzereingaben warten (platzieren Sie deshalb **Get-Credential** nicht innerhalb dieser Funktionen). Wenn Sie Benutzereingaben bereitstellen müssen, sollten Sie sie in der Kompilierungsphase als Parameter an die Konfiguration übergeben. 
+Get/Set/Test-TargetResource-Funktionen sollen automatisch ausgeführt werden und in keiner Phase der Ausführung auf Benutzereingaben warten (platzieren Sie deshalb Get-Credential nicht innerhalb dieser Funktionen). Wenn Sie Benutzereingaben bereitstellen müssen, sollten Sie sie in der Kompilierungsphase als Parameter an die Konfiguration übergeben. 
 ## Gründliches Testen der Ressourcenfunktionalität ##
 Sie sind verantwortlich, dass sich die Ressource ordnungsgemäß verhält. Deshalb müssen Sie ihre Funktionalität manuell oder besser noch automatisiert testen. Diese Prüfliste enthält Elemente, die unbedingt getestet werden sollten und/oder oft übersehen werden. Es gibt eine Vielzahl von Tests, hauptsächlich Funktionstests, die spezifisch für die Ressource sind, die Sie testen, und hier nicht erwähnt werden. Vergessen Sie nicht die negativen Testfälle. Diese stellen wahrscheinlich den aufwendigsten Teil der Ressourcentests dar. 
 ## Bewährte Methode: Ressourcenmodul enthält den Ordner „Tests“ mit dem Skript „ResourceDesignerTests.ps1“ ##
-Es empfiehlt sich, im Ressourcenmodul den Ordner „Tests“ anzulegen, die Datei „ResourceDesignerTests.ps1“ zu erstellen und über **Test-xDscResource** und **Test-xDscSchema** Tests für alle Ressourcen in einem bestimmten Modul hinzuzufügen. 
+Es empfiehlt sich, im Ressourcenmodul den Ordner „Tests“ anzulegen, die Datei „ResourceDesignerTests.ps1“ zu erstellen und über Test-xDscResource und Test-xDscSchema Tests für alle Ressourcen in einem bestimmten Modul hinzuzufügen. 
 Auf diese Weise können wir schnell die Schemas aller Ressourcen aus bestimmten Modulen überprüfen und vor der Veröffentlichung eine Integritätsprüfung vornehmen.
 Für „xRemoteFile“ kann „ResourceTests.ps1“ einfach so aussehen:
 ```powershell
 Test-xDscResource ..\DSCResources\MSFT_xRemoteFile
 Test-xDscSchema ..\DSCResources\MSFT_xRemoteFile\MSFT_xRemoteFile.schema.mof 
 ```
-**Bewährte Methode: Ressourcenordner enthält Ressourcen-Designer-Skript zur Generierung des Schemas**
+Bewährte Methode: Ressourcenordner enthält Ressourcen-Designer-Skript zur Generierung des Schemas
 Jede Ressource sollte ein Ressourcen-Designer-Skript enthalten, mit dem ein MOF-Schema der Ressource generiert wird. Diese Datei sollte in <ResourceName>„\ResourceDesignerScripts“ gespeichert und „Generate<ResourceName>Schema.ps1“ genannt werden.
 Für die Ressource „xRemoteFile“ wird diese Datei „GenerateXRemoteFileSchema.ps1“ genannt und enthält Folgendes:
 ```powershell 
@@ -315,4 +315,8 @@ VERBOSE: Operation 'Invoke CimMethod' complete.
 
 Hiermit endet unsere Prüfliste. Beachten Sie, dass diese Liste nicht vollständig ist. Doch sie spricht viele wichtige Aspekte an, auf die wir beim Entwerfen, Entwickeln und Testen von DSC-Ressourcen gestoßen sind. Eine Prüfliste hilft sicherstellen, dass wir keinen dieser Aspekte vergessen. Zudem nutzen wir sie bei Microsoft selbst bei der Entwicklung von DSC-Ressourcen. 
 Wenn Sie Leitlinien und bewährte Methoden formuliert haben, die Sie beim Schreiben und Testen von DSC-Ressourcen befolgen, teilen Sie sie bitte mit uns!
-<!--HONumber=Mar16_HO1-->
+
+
+<!--HONumber=Mar16_HO2-->
+
+

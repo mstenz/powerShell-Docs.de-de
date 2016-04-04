@@ -2,17 +2,17 @@
 
 > Gilt für: Windows PowerShell 5.0
 
-Mit der Einführung der PowerShell-Klassen in Windows PowerShell 5.0 können Sie jetzt eine DSC-Ressourcen durch Erstellen einer Klasse definieren. Die Klasse definiert das Schema und die Implementierung der Ressource, daher besteht keine Notwendigkeit, eine separate MOF-Datei zu erstellen. Die Ordnerstruktur für eine klassenbasierte Ressource ist auch einfacher, da kein **DSCResources**-Ordner erforderlich ist.
+Mit der Einführung der PowerShell-Klassen in Windows PowerShell 5.0 können Sie jetzt eine DSC-Ressourcen durch Erstellen einer Klasse definieren. Die Klasse definiert das Schema und die Implementierung der Ressource, daher besteht keine Notwendigkeit, eine separate MOF-Datei zu erstellen. Die Ordnerstruktur für eine klassenbasierte Ressource ist auch einfacher, da kein DSCResources-Ordner erforderlich ist.
 
-In einer klassenbasierten DSC-Ressource wird das Schema als Eigenschaften der Klasse definiert, die mit Attributen für den Eigenschaftstyp geändert werden können. Die Ressource wird mit den Methoden **Get()**, **Set()**und **Test()** implementiert (entspricht den Funktionen **Get-TargetResource**, **Set-TargetResource** und **Test-TargetResource** in einer Skriptressource.
+In einer klassenbasierten DSC-Ressource wird das Schema als Eigenschaften der Klasse definiert, die mit Attributen für den Eigenschaftstyp geändert werden können. Die Ressource wird mit den Methoden Get(), Set()und Test() implementiert (entspricht den Funktionen Get-TargetResource, Set-TargetResource und Test-TargetResource in einer Skriptressource.
 
-In diesem Thema wird eine einfache Ressource mit dem Namen **FileResource** erstellt, die eine Datei unter einem angegebenen Pfad verwaltet.
+In diesem Thema wird eine einfache Ressource mit dem Namen FileResource erstellt, die eine Datei unter einem angegebenen Pfad verwaltet.
 
-Weitere Informationen zu DSC-Ressourcen finden Sie unter [Erstellen von benutzerdefinierten Windows PowerShell DSC-Ressourcen](authoringResource.md).
+Weitere Informationen zu DSC-Ressourcen finden Sie unter Erstellen von benutzerdefinierten Windows PowerShell DSC-Ressourcen.
 
 ## Ordnerstruktur für eine Klassenressource
 
-Um eine benutzerdefinierte DSC-Ressource mit einer PowerShell-Klasse zu implementieren, erstellen Sie die folgende Ordnerstruktur. Die Klasse wird in **MyDscResource.psm1** und das Modulmanifest in **MyDscResource.psd1** definiert.
+Um eine benutzerdefinierte DSC-Ressource mit einer PowerShell-Klasse zu implementieren, erstellen Sie die folgende Ordnerstruktur. Die Klasse wird in MyDscResource.psm1 und das Modulmanifest in MyDscResource.psd1 definiert.
 
 ```
 $env: psmodulepath (folder)
@@ -21,28 +21,9 @@ $env: psmodulepath (folder)
            MyDscResource.psd1 
 ```
 
-### Geschachtelte Module
-
-Alternativ können Sie Ressourcen auf mehrere `.psm1`-Dateien verteilen sie als geschachtelte Module einfügen.
-Dies ist sinnvoll, wenn Sie über sehr viele Ressourcen verfügen und die Verwaltung schwierig würde, wenn Sie sie alle in einer Datei speichern.
-
-```
-$env: psmodulepath (folder)
-    |- MyDscResource (folder)
-        |- MyDscResourceA.psm1
-           MyDscResourceB.psm1 
-           MyDscResource.psd1 
-```
-
-Sie können in jeder Datei eine oder mehrere Klasse einfügen. 
-Es kann sinnvoll sein, Ressourcen nach einem untergeordneten Bereich innerhalb eines geschachtelten Moduls zu gruppieren.
-Aus Sicht des Benutzers besteht kein Unterschied in der Verwendung.
-Alle Ressourcen werden im Modul `MyDscResource` angezeigt.
-Betrachten Sie diese geschachtelten Module als Implementierungsdetails, die Ihre Arbeit erleichtern.
-
 ## Erstellen einer Klasse
 
-Sie verwenden das Schlüsselwort „class“ zum Erstellen einer PowerShell-Klasse. Um anzugeben, dass eine Klasse eine DSC-Ressource ist, verwenden Sie das Attribut **DscResource()**. Der Name der Klasse ist der Name der DSC-Ressource.
+Sie verwenden das Schlüsselwort „class“ zum Erstellen einer PowerShell-Klasse. Um anzugeben, dass eine Klasse eine DSC-Ressource ist, verwenden Sie das Attribut DscResource(). Der Name der Klasse ist der Name der DSC-Ressource.
 
 ```powershell
 [DscResource()]
@@ -70,12 +51,12 @@ Das DSC-Ressourcenschema wird als Eigenschaften der Klasse definiert. Es wurden 
 
 Beachten Sie, dass die Eigenschaften durch Attribute geändert werden. Die Attribute haben folgende Bedeutungen:
 
-- **DscProperty(Key)**: Die Eigenschaft ist erforderlich. Die Eigenschaft ist ein Schlüssel. Die Werte aller als Schlüssel gekennzeichneten Eigenschaften in Kombination müssen eine Ressourceninstanz in einer Konfiguration eindeutig identifizieren.
-- **DscProperty(Mandatory)**: Die Eigenschaft ist erforderlich.
-- **DscProperty(NotConfigurable)**: Die Eigenschaft ist schreibgeschützt. Eigenschaften, die mit diesem Attribut gekennzeichnet sind, können nicht von einer Konfiguration festgelegt werden, sondern werden durch die Methode **Get()**, wenn vorhanden, aufgefüllt.
-- **DscProperty()**: Die Eigenschaft ist konfigurierbar, aber nicht erforderlich.
+- DscProperty(Key): Die Eigenschaft ist erforderlich. Die Eigenschaft ist ein Schlüssel. Die Werte aller als Schlüssel gekennzeichneten Eigenschaften in Kombination müssen eine Ressourceninstanz in einer Konfiguration eindeutig identifizieren.
+- DscProperty(Mandatory): Die Eigenschaft ist erforderlich.
+- DscProperty(NotConfigurable): Die Eigenschaft ist schreibgeschützt. Eigenschaften, die mit diesem Attribut gekennzeichnet sind, können nicht von einer Konfiguration festgelegt werden, sondern werden durch die Methode Get(), wenn vorhanden, aufgefüllt.
+- DscProperty(): Die Eigenschaft ist konfigurierbar, aber nicht erforderlich.
 
-Die Eigenschaften **$Path** und **$SourcePath** sind Zeichenfolgen. **$CreationTime** ist eine [DateTime](https://technet.microsoft.com/en-us/library/system.datetime.aspx)-Eigenschaft. Die Eigenschaft **$Ensure** ist ein Enumerationstyp, der wie folgt definiert ist:
+Die Eigenschaften $Path und $SourcePath sind Zeichenfolgen. $CreationTime ist eine DateTime-Eigenschaft. Die Eigenschaft $Ensure ist ein Enumerationstyp, der wie folgt definiert ist:
 
 ```powershell
 enum Ensure 
@@ -87,9 +68,9 @@ enum Ensure
 
 ### Implementieren der Methoden
 
-Die Methoden **Get()**, **Set()** und **Test()** werden analog zu den Funktionen **Get-TargetResource**, **Set-TargetResource** und **Test-TargetResource** in einer Skriptressource implementiert.
+Die Methoden Get(), Set() und Test() werden analog zu den Funktionen Get-TargetResource, Set-TargetResource und Test-TargetResource in einer Skriptressource implementiert.
 
-Dieser Code umfasst auch die Funktion „CopyFile()“, eine Hilfsfunktion, die die Datei von **$SourcePath** nach **$Path** kopiert. 
+Dieser Code umfasst auch die Funktion „CopyFile()“, eine Hilfsfunktion, die die Datei von $SourcePath nach $Path kopiert. 
 
 ```powershell
 
@@ -423,7 +404,7 @@ class FileResource
 
 ## Erstellen eines Manifests
 
-Um eine klassenbasierte Ressource für das DSC-Modul verfügbar zu machen, müssen Sie eine **DscResourcesToExport**-Anweisung zur Manifestdatei hinzufügen, die das Modul anweist, Ressourcen zu exportieren. 
+Um eine klassenbasierte Ressource für das DSC-Modul verfügbar zu machen, müssen Sie eine DscResourcesToExport-Anweisung zur Manifestdatei hinzufügen, die das Modul anweist, die Ressource zu exportieren. Unser Manifest sieht folgendermaßen aus:
 
 ```powershell
 @{
@@ -431,45 +412,7 @@ Um eine klassenbasierte Ressource für das DSC-Modul verfügbar zu machen, müss
 # Script module or binary module file associated with this manifest.
 RootModule = 'MyDscResource.psm1'
 
-DscResourcesToExport = @('FileResource')
-
-# Version number of this module.
-ModuleVersion = '1.0'
-
-# ID used to uniquely identify this module
-GUID = '81624038-5e71-40f8-8905-b1a87afe22d7'
-
-# Author of this module
-Author = 'Microsoft Corporation'
-
-# Company or vendor of this module
-CompanyName = 'Microsoft Corporation'
-
-# Copyright statement for this module
-Copyright = '(c) 2014 Microsoft. All rights reserved.'
-
-# Description of the functionality provided by this module
-# Description = ''
-
-# Minimum version of the Windows PowerShell engine required by this module
-PowerShellVersion = '5.0'
-
-# Name of the Windows PowerShell host required by this module
-# PowerShellHostName = ''
-} 
-```
-
-Bei Verwendung von **geschachtelten Modulen** zum Aufteilen von Ressourcen auf mehrere Dateien platzieren Sie die Liste der geschachtelten Module im Schlüssel `NestedModules`.
-
-```powershell
-@{
-
-# Don't specify RootModule
-
-# Script module or binary module file associated with this manifest.
-NestedModules = @('MyDscResourceA.psm1', 'MyDscResourceB.psm1')
-
-DscResourcesToExport = @('MyDscResourceA', 'MyDscResourceB')
+DscResourcesToExport = 'FileResource'
 
 # Version number of this module.
 ModuleVersion = '1.0'
@@ -499,7 +442,7 @@ PowerShellVersion = '5.0'
 
 ## Testen der Ressource
 
-Nachdem Sie die Klasse und die Manifestdateien, wie zuvor beschrieben, in der Ordnerstruktur gespeichert haben, können Sie eine Konfiguration erstellen, die die neue Ressource verwendet. Informationen dazu, wie Sie eine DSC-Konfiguration ausführen, finden Sie unter [Inkraftsetzung von Konfigurationen](enactingConfigurations.md). Die folgende Konfiguration überprüft, ob die Datei unter `c:\test\test.txt` vorhanden ist, und kopiert sie bei Bedarf aus `c:\test.txt` (Sie sollten `c:\test.txt` vor dem Ausführen der Konfiguration erstellen).
+Nachdem Sie die Klasse und die Manifestdateien, wie zuvor beschrieben, in der Ordnerstruktur gespeichert haben, können Sie eine Konfiguration erstellen, die die neue Ressource verwendet. Informationen dazu, wie Sie eine DSC-Konfiguration ausführen, finden Sie unter Inkraftsetzung von Konfigurationen. Die folgende Konfiguration überprüft, ob die Datei unter `c:\test\test.txt` vorhanden ist, und kopiert sie bei Bedarf aus `c:\test.txt` (Sie sollten `c:\test.txt` vor dem Ausführen der Konfiguration erstellen).
 
 ```powershell
 Configuration Test
@@ -519,4 +462,8 @@ Start-DscConfiguration -Wait -Force Test
 ## Weitere Informationen
 ### Konzepte
 [Erstellen von benutzerdefinierten Windows PowerShell DSC-Ressourcen](authoringResource.md)
-<!--HONumber=Mar16_HO1-->
+
+
+<!--HONumber=Mar16_HO4-->
+
+
