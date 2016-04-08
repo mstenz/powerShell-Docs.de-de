@@ -52,7 +52,7 @@ Configuration MyDscConfiguration {
 }
 ```
 
-Bei diesem Beispiel geben Sie den Namen des Knotens an, indem Sie ihn als „$computerName“-Parameter übergeben, wenn Sie [die Konfiguration kompilieren](# Kompilieren der Konfiguration). Der Standardname ist „localhost“.
+Bei diesem Beispiel geben Sie den Namen des Knotens an, indem Sie ihn als „$computerName“-Parameter übergeben, wenn Sie [die Konfiguration kompilieren](# Compiling the configuration). Der Standardname ist „localhost“.
 
 ## Kompilieren der Konfiguration
 Bevor Sie eine Konfiguration anwenden können, müssen Sie sie in einem MOF-Dokument kompilieren. Dazu rufen Sie die Konfiguration wie eine PowerShell-Funktion auf.
@@ -118,4 +118,8 @@ Nachdem diese Module in `$env:PSModulePath` abgelegt und von [Get-DscResource](h
 * [Windows PowerShell DSC – Übersicht](overview.md)
 * [DSC-Ressourcen](resources.md)
 * [Konfigurieren des lokalen Konfigurations-Managers](metaconfig.md)
+
+
 <!--HONumber=Feb16_HO4-->
+
+
