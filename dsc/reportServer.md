@@ -2,7 +2,7 @@
 
 > Gilt für: Windows PowerShell 5.0
 
->Hinweis: Der in diesem Thema beschriebene Berichtsserver ist in PowerShell 4.0 nicht verfügbar. Informationen zur Berichterstellung in PowerShell 4.0 finden Sie unter „Verwenden eines DSC-Kompatibilitätsservers“.
+>**Hinweis:** Der in diesem Thema beschriebene Berichtsserver ist in PowerShell 4.0 nicht verfügbar.
 
 Die lokale Configuration Manager (LCM) eines Knotens kann so konfiguriert werden, dass Berichte zu seinem Konfigurationsstatus an einen Pullserver gesendet werden, der zum Abrufen dieser Daten abgefragt werden kann. Jedes Mal, wenn der Knoten eine Konfiguration überprüft und anwendet,
 wird ein Bericht zum Berichtsserver gesendet. Diese Berichte werden in einer Datenbank auf dem Server gespeichert und können durch Aufrufen des Webdiensts für die Berichtserstellung abgerufen werden. Jeder Bericht enthält
@@ -10,12 +10,12 @@ Informationen zu den angewendeten Konfigurationen samt Zeitpunkt, verwendeten Re
 
 ## Konfigurieren eines Knotens zum Senden von Berichten
 
-Sie weisen einen Knoten im ReportServerWeb-Block der LCM-Konfiguration des Knotens an, Berichte zu einem Server zu senden (weitere Informationen zum Konfigurieren des LCM finden Sie unter Konfigurieren des lokalen Konfigurations-Managers).
-see <bpt id="p1">[</bpt>Configuring the Local Configuration Manager<ept id="p1">](metaConfig.md)</ept>). Der Server, an den der Knoten Berichte sendet, muss als Pullwebserver eingerichtet werden (Sie können keine Berichte
-an eine SMB-Freigabe senden). Weitere Informationen zum Einrichten von Pullservern finden Sie unter Einrichten eines DSC-Webpullservers. Der Berichtsserver kann vom selben Dienst unterstützt werden,
+Sie weisen einen Knoten im **ReportServerWeb**-Block der LCM-Konfiguration des Knotens an, Berichte zu einem Server zu senden (weitere Informationen zum Konfigurieren des LCM
+finden Sie unter [Konfigurieren des lokalen Konfigurations-Managers](metaConfig.md)). Der Server, an den der Knoten Berichte sendet, muss als Pullwebserver eingerichtet werden (Sie können keine Berichte
+an eine SMB-Freigabe senden). Weitere Informationen zum Einrichten von Pullservern finden Sie unter [Einrichten eines DSC-Webpullservers](pullServer.md). Der Berichtsserver kann vom selben Dienst unterstützt werden,
 von dem der Knoten Konfigurationen und Ressourcen abruft. Es kann sich aber auch um einen anderen Dienst handeln.
  
-Im ReportServerWeb-Block geben Sie die URL des Pulldiensts
+Im **ReportServerWeb**-Block geben Sie die URL des Pulldiensts
 und einen Registrierungsschlüssel an, der dem Server bekannt ist.
  
 Die folgende Konfiguration konfiguriert einen Knoten für das Abrufen von Konfiguration per Pull von einem Dienst und Senden von Berichten
@@ -49,14 +49,14 @@ configuration ReportClientConfig
         }
     }
 }
-PullClientConfigID
+ReportClientConfig
 ```
 
 Mit der folgenden Konfiguration wird ein Knoten so eingerichtet, dass er einen einzigen Server für Konfigurationen, Ressourcen und Berichterstattung verwendet.
 
 ```powershell
 [DSCLocalConfigurationManager()]
-configuration PullClientConfigID
+configuration PullClientConfig
 {
     Node localhost
     {
@@ -75,23 +75,23 @@ configuration PullClientConfigID
         
         
 
-        ReportServerWeb CONTOSO-PullSrv
+        ReportServerWeb CONTOSO-ReportSrv
         {
             ServerURL = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
         }
     }
 }
-PullClientConfigID
+PullClientConfig
 ```
 
->Hinweis: Sie können den Webdienst beim Einrichten eines Pull-Servers beliebig benennen, aber die Eigenschaft ServerURL muss mit dem Dienstnamen übereinstimmen.
+>**Hinweis:** Sie können den Webdienst beim Einrichten eines Pullservers beliebig benennen, aber die Eigenschaft **ServerURL** muss mit dem Dienstnamen übereinstimmen.
 
 ## Abrufen von Berichtsdaten
 
 Berichte, die zum Pullserver gesendet werden, gelangen in eine Datenbank auf dem Server. Die Berichte stehen über Aufrufe des Webdiensts zur Verfügung. Zum Abrufen von Berichten für einen bestimmten Knoten 
 senden Sie eine HTTP-Anforderung an den Berichtswebdienst in der folgenden Form:
 `http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentID = MyNodeAgentId)/Reports` 
-`MyNodeAgentId` ist die Agent-ID des Knotens, für den Sie Berichte erhalten möchten. Durch Aufrufen von Get-DscLocalConfigurationManager auf einem Knoten können Sie die Agent-ID
+`MyNodeAgentId` ist die Agent-ID des Knotens, für den Sie Berichte erhalten möchten. Durch Aufrufen von [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) auf einem Knoten können Sie die Agent-ID
 dieses Knotens abrufen.
 
 Die Berichte werden als ein Array von JSON-Objekten zurückgegeben.
@@ -113,83 +113,120 @@ function GetReport
     
 ## Anzeigen von Berichtsdaten
 
-Wenn Sie eine Variable auf das Ergebnis der GetReport-Funktion festlegen, können Sie die einzelnen Felder in einem Element des Arrays anzeigen, das zurückgegeben wird:
+Wenn Sie eine Variable auf das Ergebnis der **GetReport**-Funktion festlegen, können Sie die einzelnen Felder in einem Element des Arrays anzeigen, das zurückgegeben wird:
 
 ```powershell
 $reports = GetReport
 $reports[1]
 
-JobId                : 71515ae8-7294-40a3-8137-fc85bf4b678f
+
+JobId                : 019dfbe5-f99f-11e5-80c6-001dd8b8065c
 OperationType        : Consistency
-RefreshMode          : 
-Status               : 
-ReportFormatVersion  : 1.0
+RefreshMode          : Pull
+Status               : Success
+ReportFormatVersion  : 2.0
 ConfigurationVersion : 2.0.0
-StartTime            : 02/08/2016 01:28:54
-EndTime              : 02/08/2016 01:28:57
+StartTime            : 04/03/2016 06:21:43
+EndTime              : 04/03/2016 06:22:04
 RebootRequested      : False
 Errors               : {}
-StatusData           : {{"NumberOfResources":"2","Locale":"en-US","ResourcesInDesiredState":[{"ResourceId":"[WindowsFeature]MyFeatureInstance","SourceI
-                       nfo":"C:\\ReportTest\\ClientConfig.ps1::4::9::WindowsFeature","ModuleName":"PsDesiredStateConfiguration","ModuleVersion":"1.0","
-                       ConfigurationName":"ClientConfig","ResourceName":"WindowsFeature"},{"ResourceId":"[WindowsFeature]My2ndFeatureInstance","SourceI
-                       nfo":"C:\\ReportTest\\ClientConfig.ps1::8::9::WindowsFeature","ModuleName":"PsDesiredStateConfiguration","ModuleVersion":"1.0","
-                       ConfigurationName":"ClientConfig","ResourceName":"WindowsFeature"}]}}
+StatusData           : {{"StartDate":"2016-04-03T06:21:43.7220000-07:00","IPV6Addresses":["2001:4898:d8:f2f2:852b:b255:b071:283b","fe80::852b:b255:b071
+                       :283b%12","::2000:0:0:0","::1","::2000:0:0:0"],"DurationInSeconds":"21","JobID":"{019DFBE5-F99F-11E5-80C6-001DD8B8065C}","Curren
+                       tChecksum":"A7797571CB9C3AF4D74C39A0FDA11DAF33273349E1182385528FFC1E47151F7F","MetaData":"Author: configAuthor; Name: 
+                       Sample_ArchiveFirewall; Version: 2.0.0; GenerationDate: 04/01/2016 15:23:30; GenerationHost: CONTOSO-PullSrv;","RebootRequested":"False
+                       ","Status":"Success","IPV4Addresses":["10.240.179.151","127.0.0.1"],"LCMVersion":"2.0","ResourcesNotInDesiredState":[{"SourceInf
+                       o":"C:\\ReportTest\\Sample_xFirewall_AddFirewallRule.ps1::23::9::xFirewall","ModuleName":"xNetworking","DurationInSeconds":"8.785",
+                       "InstanceName":"Firewall","StartDate":"2016-04-03T06:21:56.4650000-07:00","ResourceName":"xFirewall","ModuleVersion":"2.7.0.0","
+                       RebootRequested":"False","ResourceId":"[xFirewall]Firewall","ConfigurationName":"Sample_ArchiveFirewall","InDesiredState":"False
+                       "}],"NumberOfResources":"2","Type":"Consistency","HostName":"CONTOSO-PULLCLI","ResourcesInDesiredState":[{"SourceInfo":"C:\\ReportTest\\Sample_xFirewall_AddFirewallRule.ps1::16::9::Archive","ModuleName":"PSDesiredStateConfiguration","DurationInSeconds":"1.848",
+                       "InstanceName":"ArchiveExample","StartDate":"2016-04-03T06:21:56.4650000-07:00","ResourceName":"Archive","ModuleVersion":"1.1","
+                       RebootRequested":"False","ResourceId":"[Archive]ArchiveExample","ConfigurationName":"Sample_ArchiveFirewall","InDesiredState":"T
+                       rue"}],"MACAddresses":["00-1D-D8-B8-06-5C","00-00-00-00-00-00-00-E0"],"MetaConfiguration":{"AgentId":"52DA826D-00DE-4166-8ACB-73F2B46A7E00",
+                       "ConfigurationDownloadManagers":[{"SourceInfo":"C:\\ReportTest\\LCMConfig.ps1::14::9::ConfigurationRepositoryWeb","A
+                       llowUnsecureConnection":"True","ServerURL":"http://CONTOSO-PullSrv:8080/PSDSCPullServer.svc","RegistrationKey":"","ResourceId":"[Config
+                       urationRepositoryWeb]CONTOSO-PullSrv","ConfigurationNames":["ClientConfig"]}],"ActionAfterReboot":"ContinueConfiguration","LCMCo
+                       mpatibleVersions":["1.0","2.0"],"LCMState":"Idle","ResourceModuleManagers":[],"ReportManagers":[{"AllowUnsecureConnection":"True
+                       ","RegistrationKey":"","ServerURL":"http://CONTOSO-PullSrv:8080/PSDSCPullServer.svc","ResourceId":"[ReportServerWeb]CONTOSO-PullSrv","S
+                       ourceInfo":"C:\\ReportTest\\LCMConfig.ps1::24::9::ReportServerWeb"}],"StatusRetentionTimeInDays":"10","LCMVersion":"2.0","Config
+                       urationMode":"ApplyAndMonitor","RefreshFrequencyMins":"30","RebootNodeIfNeeded":"True","RefreshMode":"Pull","DebugMode":["NONE"]
+                       ,"LCMStateDetail":"","AllowModuleOverwrite":"False","ConfigurationModeFrequencyMins":"15"},"Locale":"en-US","Mode":"Pull"}}
+AdditionalData       : {}
 ```
 
-Beachten Sie, dass das Feld StatusData ein Objekt mit drei Eigenschaften ist: NumberOfResources, Locale und ResourcesInDesiredState. Die ResourcesInDesiredState-Eigenschaft
-ist ein Array von Objekten, von denen jedes eine Reihe von Eigenschaften hat. Das folgende Skript verwendet einen einzelnen Bericht als Parameter, durchläuft dessen ResourcesInDesiredState-Array
-und gibt das Ergebnis in der Konsole aus:
- 
+Standardmäßig werden die Berichte nach **JobID** sortiert. Zum Abrufen des neuesten Berichts können Sie die Berichte absteigend nach der Eigenschaft **StartTime** sortieren, und dann das erste Element des Arrays abrufen:
+
 ```powershell
-function GetStatusData
-{
-    param ($Report)
-    $statusData = $Report.StatusData | ConvertFrom-Json
-
-    $Resources = $statusData.ResourcesInDesiredState
-
-    Foreach ($Resource in $Resources)
-    {
-        Write-Host 'ResourceId: ' $Resource.ResourceId
-        Write-Host 'SourceInfo: ' $Resource.SourceInfo
-        Write-Host 'ModuleName: ' $Resource.ModuleName
-        Write-Host 'ModuleVersion: ' $Resource.ModuleVersion
-        Write-Host 'ConfigurationName: ' $Resource.ConfigurationName
-        Write-Host 'ResourceName: ' $Resource.ResourceName
-        Write-Host
-    }
-}
+$reportsByStartTime = $reports | Sort-Object -Property StartTime -Descending
+$reportMostRecent = $reportsByStartTime[0]
 ```
 
-Hier eine Beispielausgabe nach Aufrufen der GetStatusData-Funktion:
+Beachten Sie, dass das Feld **StatusData** ein Objekt mit mehreren Eigenschaften ist. Hier befindet sich ein Großteil der Berichtsdaten. Sehen wir uns die einzelnen Felder der Eigenschaft 
+StatusData für den aktuellen Bericht an:
 
 ```powershell
-GetStatusData -Report $report[1]
+$statusData = $reportMostRecent.StatusData | ConvertFrom-Json
+$statusData
 
-ResourceId:  [WindowsFeature]MyFeatureInstance
-SourceInfo:  C:\ReportTest\ClientConfig.ps1::4::9::WindowsFeature
-ModuleName:  PsDesiredStateConfiguration
-ModuleVersion:  1.0
-ConfigurationName:  ClientConfig
-ResourceName:  WindowsFeature
+StartDate                  : 2016-04-04T11:21:41.2990000-07:00
+IPV6Addresses              : {2001:4898:d8:f2f2:852b:b255:b071:283b, fe80::852b:b255:b071:283b%12, ::2000:0:0:0, ::1...}
+DurationInSeconds          : 25
+JobID                      : {135D230E-FA92-11E5-80C6-001DD8B8065C}
+CurrentChecksum            : A7797571CB9C3AF4D74C39A0FDA11DAF33273349E1182385528FFC1E47151F7F
+MetaData                   : Author: configAuthor; Name: Sample_ArchiveFirewall; Version: 2.0.0; GenerationDate: 04/01/2016 15:23:30; GenerationHost: 
+                             CONTOSO-PullSrv;
+RebootRequested            : False
+Status                     : Success
+IPV4Addresses              : {10.240.179.151, 127.0.0.1}
+LCMVersion                 : 2.0
+ResourcesNotInDesiredState : {@{SourceInfo=C:\ReportTest\Sample_xFirewall_AddFirewallRule.ps1::23::9::xFirewall; ModuleName=xNetworking; 
+                             DurationInSeconds=10.725; InstanceName=Firewall; StartDate=2016-04-04T11:21:55.7200000-07:00; ResourceName=xFirewall; 
+                             ModuleVersion=2.7.0.0; RebootRequested=False; ResourceId=[xFirewall]Firewall; ConfigurationName=Sample_ArchiveFirewall; 
+                             InDesiredState=False}}
+NumberOfResources          : 2
+Type                       : Consistency
+HostName                   : CONTOSO-PULLCLI
+ResourcesInDesiredState    : {@{SourceInfo=C:\ReportTest\Sample_xFirewall_AddFirewallRule.ps1::16::9::Archive; ModuleName=PSDesiredStateConfiguration; 
+                             DurationInSeconds=2.672; InstanceName=ArchiveExample; StartDate=2016-04-04T11:21:55.7200000-07:00; ResourceName=Archive; 
+                             ModuleVersion=1.1; RebootRequested=False; ResourceId=[Archive]ArchiveExample; ConfigurationName=Sample_ArchiveFirewall; 
+                             InDesiredState=True}}
+MACAddresses               : {00-1D-D8-B8-06-5C, 00-00-00-00-00-00-00-E0}
+MetaConfiguration          : @{AgentId=52DA826D-00DE-4166-8ACB-73F2B46A7E00; ConfigurationDownloadManagers=System.Object[]; 
+                             ActionAfterReboot=ContinueConfiguration; LCMCompatibleVersions=System.Object[]; LCMState=Idle; 
+                             ResourceModuleManagers=System.Object[]; ReportManagers=System.Object[]; StatusRetentionTimeInDays=10; LCMVersion=2.0; 
+                             ConfigurationMode=ApplyAndMonitor; RefreshFrequencyMins=30; RebootNodeIfNeeded=True; RefreshMode=Pull; 
+                             DebugMode=System.Object[]; LCMStateDetail=; AllowModuleOverwrite=False; ConfigurationModeFrequencyMins=15}
+Locale                     : en-US
+Mode                       : Pull
+```
 
-ResourceId:  [WindowsFeature]My2ndFeatureInstance
-SourceInfo:  C:\ReportTest\ClientConfig.ps1::8::9::WindowsFeature
-ModuleName:  PsDesiredStateConfiguration
-ModuleVersion:  1.0
-ConfigurationName:  ClientConfig
-ResourceName:  WindowsFeature
+Unter anderem wird hier deutlich, dass die neueste Konfiguration zwei Ressourcen aufgerufen hat, von denen sich die eine im gewünschten Zustand befand und die andere nicht. So können Sie 
+eine besser lesbare Ausgabe der Eigenschaft ResourcesNotInDesiredState erzeugen:
+
+```powershell
+$statusData.ResourcesInDesiredState
+
+SourceInfo        : C:\ReportTest\Sample_xFirewall_AddFirewallRule.ps1::16::9::Archive
+ModuleName        : PSDesiredStateConfiguration
+DurationInSeconds : 2.672
+InstanceName      : ArchiveExample
+StartDate         : 2016-04-04T11:21:55.7200000-07:00
+ResourceName      : Archive
+ModuleVersion     : 1.1
+RebootRequested   : False
+ResourceId        : [Archive]ArchiveExample
+ConfigurationName : Sample_ArchiveFirewall
+InDesiredState    : True
 ```
 
 Beachten Sie, dass diese Beispiele dazu dienen, Ihnen eine Vorstellung der Möglichkeiten von Berichtsdaten zu geben. Eine Einführung in das Arbeiten mit JSON in PowerShell finden Sie unter
-Arbeiten mit JSON und PowerShell.
+[Arbeiten mit JSON und PowerShell](https://blogs.technet.microsoft.com/heyscriptingguy/2015/10/08/playing-with-json-and-powershell/).
 
 ## Weitere Informationen
->[Konfigurieren des lokalen Konfigurations-Managers](metaConfig.md)
->[Einrichten eines DSC-Webpullservers](pullServer.md)
->[Einrichten eines Pullclients mithilfe von Konfigurationsnamen](pullClientConfigNames.md)
+- [Konfigurieren des lokalen Konfigurations-Managers](metaConfig.md)
+- [Einrichten eines DSC-Webpullservers](pullServer.md)
+- [Einrichten eines Pullclients mithilfe von Konfigurationsnamen](pullClientConfigNames.md)
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=Apr16_HO1-->
 
 

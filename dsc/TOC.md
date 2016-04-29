@@ -27,6 +27,7 @@
 ### [Klassenbasierte benutzerdefinierte Ressourcen](authoringResourceClass.md)
 ### [Zusammengesetzte Ressourcen](authoringResourceComposite.md)
 ### [Debuggen von DSC-Ressourcen](debugResource.md)
+### [Schreiben einer Einzelinstanz-DSC-Ressource (empfohlen)](singleInstance.md)
 ### [Prüfliste für die Ressourcenerstellung](resourceAuthoringChecklist.md)
 
 # [Konfigurieren des lokalen Konfigurations-Managers (LCM)](metaConfig.md)
@@ -57,6 +58,6 @@
 ### [Resource „nxUser“](lnxUserResource.md)
 
 
-<!--HONumber=Mar16_HO3-->
+<!--HONumber=Apr16_HO1-->
 
 
