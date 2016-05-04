@@ -26,12 +26,12 @@ In der Windows PowerShell-Debugumgebung können Sie drei Typen von Haltepunkten 
 
 3.  **Befehlshaltepunkt.** Das Skript wird immer dann angehalten, wenn der bestimmte Befehl beim Ausführen des Skripts der nächste auszuführende Befehl ist. Der Haltepunkt kann Parameter enthalten, um ihn weiter entsprechend dem von Ihnen gewünschten Vorgang zu filtern. Der Befehl kann auch eine Funktion sein, die Sie erstellt haben.
 
-Für diese Haltepunkte ist zu beachten, dass in der [!INCLUDE[ise_2](../Token/ise_2_md.md)]-Debugumgebung nur Zeilenhaltepunkte über das Menü oder über Tastenkombinationen festgelegt werden können. Die beiden anderen Typen von Haltepunkten können festgelegt werden, dies erfolgt jedoch aus dem Konsolenbereich mit dem Cmdlet [Set-PSBreakpoint [m2]](assetId:///88d2d9ad-17dc-44ae-99aa-f841125b9dc8). In diesem Abschnitt wird beschrieben, wie Sie Debugaufgaben in [!INCLUDE[ise_2](../Token/ise_2_md.md)] über die Menüs (sofern verfügbar) sowie eine größere Auswahl von Befehlen aus dem Konsolenbereich über Skripterstellung ausführen können.
+Für diese Haltepunkte ist zu beachten, dass in der [!INCLUDE[ise_2](../Token/ise_2_md.md)]-Debugumgebung nur Zeilenhaltepunkte über das Menü oder über Tastenkombinationen festgelegt werden können. Die beiden anderen Typen von Haltepunkten können festgelegt werden, dies erfolgt jedoch aus dem Konsolenbereich mit dem Cmdlet [Set-PSBreakpoint [m2]](https://technet.microsoft.com/en-us/library/88d2d9ad-17dc-44ae-99aa-f841125b9dc8). In diesem Abschnitt wird beschrieben, wie Sie Debugaufgaben in [!INCLUDE[ise_2](../Token/ise_2_md.md)] über die Menüs (sofern verfügbar) sowie eine größere Auswahl von Befehlen aus dem Konsolenbereich über Skripterstellung ausführen können.
 
 ### So legen Sie einen Haltepunkt fest
 Ein Haltepunkt kann in einem Skript nur festgelegt werden, nachdem es gespeichert wurde. Klicken Sie mit der rechten Maustaste auf die Zeile, für die Sie einen Zeilenhaltepunkt festlegen möchten, und klicken Sie dann auf **Haltepunkt umschalten**. Klicken Sie alternativ auf die Zeile, für die Sie einen Zeilenhaltepunkt festlegen möchten, und drücken Sie **F9**, oder klicken Sie im Menü **Debuggen** auf **Haltepunkt umschalten**.
 
-Das folgende Skript ist ein Beispiel dazu, wie Sie aus dem Konsolenbereich einen Variablenhaltepunkt mit dem Cmdlet [Set-PSBreakpoint](assetId:///6afd5d2c-a285-4796-8607-3cbf49471420) festlegen können.
+Das folgende Skript ist ein Beispiel dazu, wie Sie aus dem Konsolenbereich einen Variablenhaltepunkt mit dem Cmdlet [Set-PSBreakpoint](https://technet.microsoft.com/en-us/library/6afd5d2c-a285-4796-8607-3cbf49471420) festlegen können.
 
 ```
 # This command sets a breakpoint on the Server variable in the Sample.ps1 script.
@@ -41,7 +41,7 @@ set-psbreakpoint -script sample.ps1 -variable Server
 ### Auflisten aller Haltepunkte
 Zeigt alle Haltepunkte an, die es in der aktuellen [!INCLUDE[wps_1](../Token/wps_1_md.md)]-Sitzung gibt.
 
-Klicken Sie im Menü **Debuggen** auf **Haltepunkte auflisten**. Das folgende Skript ist ein Beispiel dazu, wie Sie aus dem Konsolenbereich alle Haltepunkte mit dem Cmdlet [Get-PSBreakpoint](assetId:///0bf48936-00ab-411c-b5e0-9b10a812a3c6) auflisten können.
+Klicken Sie im Menü **Debuggen** auf **Haltepunkte auflisten**. Das folgende Skript ist ein Beispiel dazu, wie Sie aus dem Konsolenbereich alle Haltepunkte mit dem Cmdlet [Get-PSBreakpoint](https://technet.microsoft.com/en-us/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) auflisten können.
 
 ```
 # This command lists all breakpoints in the current session. 
@@ -49,7 +49,7 @@ get-psbreakpoint
 ```
 
 ### Entfernen eines Haltepunkts
-Durch Entfernen eines Haltepunkts wird dieser gelöscht.  Wenn Sie annehmen, dass Sie ihn später erneut verwenden möchten, bietet es sich an, ihn stattdessen zu [deaktivieren](#bkmk_disable).  Klicken Sie mit der rechten Maustaste auf die Zeile, aus der Sie einen Haltepunkt entfernen möchten, und klicken Sie dann auf **Haltepunkt umschalten**. Klicken Sie alternativ auf die Zeile, aus der Sie einen Haltepunkt entfernen möchten, und klicken Sie im Menü **Debuggen** auf **Haltepunkt umschalten**. Das folgende Skript ist ein Beispiel dazu, wie aus dem Konsolenbereich ein Haltepunkt mit angegebener ID mit dem Cmdlet [Remove-PSBreakpoint](assetId:///4c877a80-0ea0-4790-9281-88c08ef0ddd6) entfernt werden kann.
+Durch Entfernen eines Haltepunkts wird dieser gelöscht.  Wenn Sie annehmen, dass Sie ihn später erneut verwenden möchten, bietet es sich an, ihn stattdessen zu [deaktivieren](#bkmk_disable).  Klicken Sie mit der rechten Maustaste auf die Zeile, aus der Sie einen Haltepunkt entfernen möchten, und klicken Sie dann auf **Haltepunkt umschalten**. Klicken Sie alternativ auf die Zeile, aus der Sie einen Haltepunkt entfernen möchten, und klicken Sie im Menü **Debuggen** auf **Haltepunkt umschalten**. Das folgende Skript ist ein Beispiel dazu, wie aus dem Konsolenbereich ein Haltepunkt mit angegebener ID mit dem Cmdlet [Remove-PSBreakpoint](https://technet.microsoft.com/en-us/library/4c877a80-0ea0-4790-9281-88c08ef0ddd6) entfernt werden kann.
 
 ```
 # This command deletes the breakpoint with breakpoint ID 2.
@@ -59,7 +59,7 @@ remove-psbreakpoint -id 2
 ### Alle Haltepunkte entfernen
 Wenn Sie alle Haltepunkte entfernen möchten, die in der aktuellen Sitzung definiert sind, klicken Sie im Menü **Debuggen** auf **Alle Haltepunkte entfernen**.
 
-Das folgende Skript ist ein Beispiel dazu, wie aus dem Konsolenbereich alle Haltepunkte mit dem Cmdlet [Remove-PSBreakpoint](assetId:///4c877a80-0ea0-4790-9281-88c08ef0ddd6) entfernt werden können.
+Das folgende Skript ist ein Beispiel dazu, wie aus dem Konsolenbereich alle Haltepunkte mit dem Cmdlet [Remove-PSBreakpoint](https://technet.microsoft.com/en-us/library/4c877a80-0ea0-4790-9281-88c08ef0ddd6) entfernt werden können.
 
 ```
 # This command deletes all of the breakpoints in the current session.
@@ -67,7 +67,7 @@ get-breakpoint | remove-breakpoint
 ```
 
 ### <a name="bkmk_disable"></a>Deaktivieren eines Haltepunkts
-Deaktivieren eines Haltepunktes bewirkt wird nicht, dass er entfernt wird. Er wird dadurch deaktiviert, bis er wieder aktiviert wird.  Um einen bestimmten Zeilenhaltepunkt zu deaktivieren, klicken Sie auf die Zeile, in der Sie den Haltepunkt deaktivieren möchten, und klicken Sie dann auf **Haltepunkt deaktivieren**. Klicken Sie alternativ auf die Zeile, in der Sie einen Haltepunkt deaktivieren möchten, und drücken Sie **F9**, oder klicken Sie im Menü **Debuggen** auf **Haltepunkt deaktivieren**. Das folgende Skript ist ein Beispiel dazu, wie Sie aus dem Konsolenbereich einen Haltepunkt mit angegebener ID mit dem Cmdlet [Disable-PSBreakpoint](assetId:///d4974e9b-0aaa-4e20-b87f-f599a413e4e8) entfernen können.
+Deaktivieren eines Haltepunktes bewirkt wird nicht, dass er entfernt wird. Er wird dadurch deaktiviert, bis er wieder aktiviert wird.  Um einen bestimmten Zeilenhaltepunkt zu deaktivieren, klicken Sie auf die Zeile, in der Sie den Haltepunkt deaktivieren möchten, und klicken Sie dann auf **Haltepunkt deaktivieren**. Klicken Sie alternativ auf die Zeile, in der Sie einen Haltepunkt deaktivieren möchten, und drücken Sie **F9**, oder klicken Sie im Menü **Debuggen** auf **Haltepunkt deaktivieren**. Das folgende Skript ist ein Beispiel dazu, wie Sie aus dem Konsolenbereich einen Haltepunkt mit angegebener ID mit dem Cmdlet [Disable-PSBreakpoint](https://technet.microsoft.com/en-us/library/d4974e9b-0aaa-4e20-b87f-f599a413e4e8) entfernen können.
 
 ```
 # This command disables the breakpoint with breakpoint ID 0.
@@ -75,7 +75,7 @@ disable-psbreakpoint -id 0
 ```
 
 ### Deaktivieren aller Haltepunkte
-Deaktivieren eines Haltepunktes bewirkt wird nicht, dass er entfernt wird. Er wird dadurch deaktiviert, bis er wieder aktiviert wird.  Wenn Sie alle Haltepunkte in der aktuellen Sitzung deaktivieren möchten, klicken Sie im Menü **Debuggen** auf **Alle Haltepunkte deaktivieren**. Das folgende Skript ist ein Beispiel dazu, wie Sie aus dem Konsolenbereich alle Haltepunkte mit dem Cmdlet [Disable-PSBreakpoint](assetId:///d4974e9b-0aaa-4e20-b87f-f599a413e4e8) deaktivieren können.
+Deaktivieren eines Haltepunktes bewirkt wird nicht, dass er entfernt wird. Er wird dadurch deaktiviert, bis er wieder aktiviert wird.  Wenn Sie alle Haltepunkte in der aktuellen Sitzung deaktivieren möchten, klicken Sie im Menü **Debuggen** auf **Alle Haltepunkte deaktivieren**. Das folgende Skript ist ein Beispiel dazu, wie Sie aus dem Konsolenbereich alle Haltepunkte mit dem Cmdlet [Disable-PSBreakpoint](https://technet.microsoft.com/en-us/library/d4974e9b-0aaa-4e20-b87f-f599a413e4e8) deaktivieren können.
 
 ```
 # This command disables all breakpoints in the current session. 
@@ -84,7 +84,7 @@ get-psbreakpoint | disable-psbreakpoint
 ```
 
 ### Aktivieren eines Haltepunkts
-Um einen bestimmten Zeilenhaltepunkt zu aktivieren, klicken Sie auf die Zeile, in der Sie den Haltepunkt aktivieren möchten, und klicken Sie dann auf **Haltepunkt aktivieren**. Klicken Sie alternativ auf die Zeile, in der Sie einen Haltepunkt aktivieren möchten, und drücken Sie **F9**, oder klicken Sie im Menü **Debuggen** auf **Haltepunkt aktivieren**. Das folgende Skript ist ein Beispiel dazu, wie Sie aus dem Konsolenbereich bestimmte Haltepunkte mit dem Cmdlet [Enable-PSBreakpoint](assetId:///739e1091-3b3f-405f-a428-bec7543e5df0) aktivieren können.
+Um einen bestimmten Zeilenhaltepunkt zu aktivieren, klicken Sie auf die Zeile, in der Sie den Haltepunkt aktivieren möchten, und klicken Sie dann auf **Haltepunkt aktivieren**. Klicken Sie alternativ auf die Zeile, in der Sie einen Haltepunkt aktivieren möchten, und drücken Sie **F9**, oder klicken Sie im Menü **Debuggen** auf **Haltepunkt aktivieren**. Das folgende Skript ist ein Beispiel dazu, wie Sie aus dem Konsolenbereich bestimmte Haltepunkte mit dem Cmdlet [Enable-PSBreakpoint](https://technet.microsoft.com/en-us/library/739e1091-3b3f-405f-a428-bec7543e5df0) aktivieren können.
 
 ```
 # This command enables breakpoints with breakpoint IDs 0, 1, and 5.
@@ -92,7 +92,7 @@ enable-psbreakpoint -id 0, 1, 5
 ```
 
 ### Aktivieren aller Haltepunkte
-Wenn Sie alle Haltepunkte aktivieren möchten, die in der aktuellen Sitzung definiert sind, klicken Sie im Menü **Debuggen** auf **Alle Haltepunkte aktivieren**. Das folgende Skript ist ein Beispiel dazu, wie Sie aus dem Konsolenbereich alle Haltepunkte mit dem Cmdlet [Enable-PSBreakpoint](assetId:///739e1091-3b3f-405f-a428-bec7543e5df0) aktivieren können.
+Wenn Sie alle Haltepunkte aktivieren möchten, die in der aktuellen Sitzung definiert sind, klicken Sie im Menü **Debuggen** auf **Alle Haltepunkte aktivieren**. Das folgende Skript ist ein Beispiel dazu, wie Sie aus dem Konsolenbereich alle Haltepunkte mit dem Cmdlet [Enable-PSBreakpoint](https://technet.microsoft.com/en-us/library/739e1091-3b3f-405f-a428-bec7543e5df0) aktivieren können.
 
 ```
 # This command enables all breakpoints in the current session. 
@@ -101,7 +101,7 @@ get-psbreakpoint | enable-psbreakpoint
 ```
 
 ## <a name="bkmk_2"></a>Verwalten einer Debugsitzung
-Bevor Sie mit dem Debuggen beginnen, müssen Sie mindestens einen Haltepunkt festlegen. Einen Haltepunkt können Sie nur dann festlegen, wenn das Skript, das Sie debuggen möchten, gespeichert ist. Anleitungen zum Festlegen eines Haltepunkts finden Sie unter [Verwalten von Haltepunkten](#bkmk_1) oder [Set-PSBreakpoint](assetId:///6afd5d2c-a285-4796-8607-3cbf49471420). Nachdem Sie mit dem Debuggen begonnen haben, können Sie ein Skript erst wieder bearbeiten, nachdem Sie das Debuggen beendet haben. Ein Skript, für das es mindestens einen Haltepunkt gibt, wird automatisch gespeichert, bevor es ausgeführt wird.
+Bevor Sie mit dem Debuggen beginnen, müssen Sie mindestens einen Haltepunkt festlegen. Einen Haltepunkt können Sie nur dann festlegen, wenn das Skript, das Sie debuggen möchten, gespeichert ist. Anleitungen zum Festlegen eines Haltepunkts finden Sie unter [Verwalten von Haltepunkten](#bkmk_1) oder [Set-PSBreakpoint](https://technet.microsoft.com/en-us/library/6afd5d2c-a285-4796-8607-3cbf49471420). Nachdem Sie mit dem Debuggen begonnen haben, können Sie ein Skript erst wieder bearbeiten, nachdem Sie das Debuggen beendet haben. Ein Skript, für das es mindestens einen Haltepunkt gibt, wird automatisch gespeichert, bevor es ausgeführt wird.
 
 ### So starten Sie das Debuggen
 Drücken Sie **F5**, oder klicken Sie auf der Symbolleiste auf das **Skript ausführen**-Symbol, oder klicken Sie im Menü **Debuggen** auf **Ausführen/Fortsetzen**. Das Skript wird ausgeführt, bis der erste Haltepunkt erreicht ist. Das Ausführen des Skripts wird in dieser Zeile angehalten, und die Zeile wird hervorgehoben angezeigt.
@@ -175,6 +175,6 @@ C:\ps-test\MyScript.ps1
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=Apr16_HO2-->
 
 

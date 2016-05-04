@@ -22,11 +22,11 @@ Geben Sie im Befehlsbereich oder Skriptbereich ein Cmdlet gefolgt von einem Bind
 Geben Sie z. B. `get-process -` ein, und drücken Sie dann mehrmals die TAB-TASTE, um jeden der Parameter des Cmdlets der Reihe nach anzuzeigen.
 
 ## Weitere Informationen
-[Verwenden von Windows PowerShell ISE](assetId:///777ea82b-dd73-4269-b61a-69a17e6ff16f)
-[Erstellen einer PowerShell-Registerkarte](assetId:///c57fc210-19c8-47b1-9171-26a2144c907c)
+[Verwenden von Windows PowerShell ISE](https://technet.microsoft.com/en-us/library/777ea82b-dd73-4269-b61a-69a17e6ff16f)
+[Erstellen einer PowerShell-Registerkarte](https://technet.microsoft.com/en-us/library/c57fc210-19c8-47b1-9171-26a2144c907c)
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=Apr16_HO2-->
 
 

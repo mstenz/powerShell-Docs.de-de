@@ -20,7 +20,7 @@ In diesem Thema ist beschrieben, wie Skripts im Skriptbereich erstellt, bearbeit
 Sie können [!INCLUDE[wps_1](../Token/wps_1_md.md)]-Dateien im Skriptbereich öffnen und bearbeiten. Die speziellen Dateitypen für [!INCLUDE[wps_1](../Token/wps_1_md.md)] sind Skriptdateien (PS1), Skriptdatendateien (PSD1) und Skriptmoduldateien (PSM1). Diese Dateitypen werden mit Syntaxfärbung im Skriptbereichs-Editor angezeigt. Andere gängige Dateitypen, die Sie möglicherweise im Skriptbereich öffnen möchten, sind Konfigurationsdateien (PS1XML), XML-Dateien und Textdateien.
 
 > [!NOTE]
-> Die [!INCLUDE[wps_2](../Token/wps_2_md.md)]-Ausführungsrichtlinie bestimmt, ob Sie Skripts ausführen sowie Windows PowerShell-Profile und -Konfigurationsdateien laden können. Die Standardausführungsrichtlinie, „Restricted“, verhindert sowohl das Ausführen jeglicher Skripts als auch das Laden von Profilen. Wenn Sie die Ausführungsrichtlinie ändern möchten, sodass sie das Laden und Verwenden von Profilen zulässt, lesen Sie [Set-ExecutionPolicy[PSITPro5_Security]](assetId:///5690a0e1-495b-4e63-8280-65ead7bf01ab) und [about_Signing [v4]](assetId:///fcbdd3b9-0b9f-4734-b5c7-e0dcc304fa1d).
+> Die [!INCLUDE[wps_2](../Token/wps_2_md.md)]-Ausführungsrichtlinie bestimmt, ob Sie Skripts ausführen sowie Windows PowerShell-Profile und -Konfigurationsdateien laden können. Die Standardausführungsrichtlinie, „Restricted“, verhindert sowohl das Ausführen jeglicher Skripts als auch das Laden von Profilen. Wenn Sie die Ausführungsrichtlinie ändern möchten, sodass sie das Laden und Verwenden von Profilen zulässt, lesen Sie [Set-ExecutionPolicy[PSITPro5_Security]](https://technet.microsoft.com/en-us/library/5690a0e1-495b-4e63-8280-65ead7bf01ab) und [about_Signing [v4]](https://technet.microsoft.com/en-us/library/fcbdd3b9-0b9f-4734-b5c7-e0dcc304fa1d).
 
 ### So erstellen Sie eine neue Skriptdatei
 Klicken Sie auf der Symbolleiste auf **Neu**, oder klicken Sie im Menü **Datei** auf **Neu**. Die erstellte Datei wird in einer neuen Dateiregisterkarte unter der aktuellen PowerShell-Registerkarte angezeigt. Denken Sie daran, dass die PowerShell-Registerkarten nur angezeigt werden, wenn mehrere vorhanden sind. Standardmäßig wird eine Datei des Typs Skript (PS1) erstellt, diese kann aber mit einem neuen Namen und einer neuen Erweiterung gespeichert werden. Es können mehrere Skriptdateien auf derselben PowerShell-Registerkarte erstellt werden.
@@ -118,7 +118,7 @@ Drücken Sie **STRG+S**, oder klicken Sie auf der Symbolleiste auf das **Speiche
 4.  Klicken Sie auf **Speichern**.
 
 ### So speichern Sie ein Skript in ASCII-Codierung
-[!INCLUDE[ise_2](../Token/ise_2_md.md)] speichert neue Skriptdateien (PS1), Skriptdatendateien (PSD1) und Skriptmoduldateien (PSM1) standardmäßig im Unicode-Format (BigEndianUnicode). Um ein Skript in einer anderen Codierung, z. B. ASCII (ANSI), zu speichern, verwenden Sie die **Save**- oder **SaveAs**-Methode des [$psISE.CurrentFile](assetId:///bc3300e4-9c17-4f00-a621-c8867126e3b3#CurrentFile)-Objekts.
+[!INCLUDE[ise_2](../Token/ise_2_md.md)] speichert neue Skriptdateien (PS1), Skriptdatendateien (PSD1) und Skriptmoduldateien (PSM1) standardmäßig im Unicode-Format (BigEndianUnicode). Um ein Skript in einer anderen Codierung, z. B. ASCII (ANSI), zu speichern, verwenden Sie die **Save**- oder **SaveAs**-Methode des [$psISE.CurrentFile](https://technet.microsoft.com/en-us/library/bc3300e4-9c17-4f00-a621-c8867126e3b3#CurrentFile)-Objekts.
 
 Im folgenden Befehl wird ein neues Skript als „MyScript.ps1“ mit ASCII-Codierung gespeichert.
 
@@ -147,6 +147,6 @@ $psise.CurrentFile.encoding
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=Apr16_HO2-->
 
 

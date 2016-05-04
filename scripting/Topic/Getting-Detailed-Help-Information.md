@@ -13,7 +13,7 @@ Windows PowerShell umfasst ausführliche Hilfethemen, in denen die Konzepte von 
 Sie können diese Hilfethemen über die Eingabeaufforderung anzeigen, oder Sie können die zuletzt aktualisierten Versionen dieser Themen in der Microsoft TechNet Library anzeigen. Viele Programme, von denen Windows PowerShell gehostet wird, z. B. Windows PowerShell Integrated Scripting Environment, stellen zusätzliche Hilfefunktionen bereit, etwa kontextsensitive Hilfe und kompilierte Hilfedateien (CHM).
 
 ## Abrufen von Hilfe für Cmdlets
-Wenn Sie Hilfe zu Windows PowerShell-Cmdlets abrufen möchten, verwenden Sie das Cmdlet [Get-Help [m2]](assetId:///2d7fe1b4-0025-4580-a911-d81922dd6cd2). Geben Sie beispielsweise Folgendes ein, um Hilfe für das Cmdlet [Get-ChildItem [m2]](assetId:///4b270d63-c995-45b8-b5b4-3f8887efbfcc) abzurufen:
+Wenn Sie Hilfe zu Windows PowerShell-Cmdlets abrufen möchten, verwenden Sie das Cmdlet [Get-Help [m2]](https://technet.microsoft.com/en-us/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2). Geben Sie beispielsweise Folgendes ein, um Hilfe für das Cmdlet [Get-ChildItem [m2]](https://technet.microsoft.com/en-us/library/4b270d63-c995-45b8-b5b4-3f8887efbfcc) abzurufen:
 
 ```
 get-help get-childitem
@@ -126,7 +126,7 @@ get-help c:\ps-test\TestScript.ps1
 
 Die Parameter, die für die Anzeige von Cmdlet-Hilfe konzipiert wurden, etwa *Detailed*, *Full*, *Examples* und *Parameter*, funktionieren auch für Hilfe zu Skripts und Funktionen. Wenn Sie die gesamte Hilfe anzeigen, indem Sie „get-help *“ eingeben", wird die Hilfe zu Funktionen und Skripts aber nicht angezeigt.
 
-Informationen über das Schreiben von Hilfethemen für Ihre Funktionen und Skripts finden Sie unter [about_Functions [m2]](assetId:///61d40692-5300-4de9-a9b5-bae31815e105), [about_Scripts](assetId:///7dc08334-dcfe-450b-b949-0554855623af) und [about_Comment_Based_Help](assetId:///99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf).
+Informationen über das Schreiben von Hilfethemen für Ihre Funktionen und Skripts finden Sie unter [about_Functions [m2]](https://technet.microsoft.com/en-us/library/61d40692-5300-4de9-a9b5-bae31815e105), [about_Scripts](https://technet.microsoft.com/en-us/library/7dc08334-dcfe-450b-b949-0554855623af) und [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf).
 
 ## Abrufen von Hilfe aus dem Internet
 Wenn Sie eine Verbindung mit dem Internet haben, ist eine der besten Möglichkeiten zum Abrufen von Hilfe, die Hilfethemen online anzuzeigen. Da online verfügbare Themen einfach zu aktualisieren sind, stellen sie wahrscheinlich die aktuellsten Inhalte bereit.
@@ -163,16 +163,16 @@ Die erste Zeile des Abschnitts „Verwandte Links“ des Themas ist nachstehend 
 Online version: http://go.microsoft.com/fwlink/?LinkID=135194
 ```
 
-Informationen dazu, wie Sie die Onlineunterstützung für Ihre Hilfethemen bereitstellen, finden Sie unter [about_Comment_Based_Help](assetId:///99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf) sowie unter „How to Write Cmdlet Help“ ([http://go.microsoft.com/fwlink/?LinkID=123415](http://go.microsoft.com/fwlink/?LinkID=123415)) in der MSDN-Bibliothek (Microsoft Developer Network).
+Informationen dazu, wie Sie die Onlineunterstützung für Ihre Hilfethemen bereitstellen, finden Sie unter [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf) sowie unter „How to Write Cmdlet Help“ ([http://go.microsoft.com/fwlink/?LinkID=123415](http://go.microsoft.com/fwlink/?LinkID=123415)) in der MSDN-Bibliothek (Microsoft Developer Network).
 
 ## Weitere Informationen
-[about_Functions [m2]](assetId:///61d40692-5300-4de9-a9b5-bae31815e105)
-[about_Scripts](assetId:///7dc08334-dcfe-450b-b949-0554855623af)
-[about_Comment_Based_Help](assetId:///99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)
-[Get-Help [m2]](assetId:///2d7fe1b4-0025-4580-a911-d81922dd6cd2)
+[about_Functions [m2]](https://technet.microsoft.com/en-us/library/61d40692-5300-4de9-a9b5-bae31815e105)
+[about_Scripts](https://technet.microsoft.com/en-us/library/7dc08334-dcfe-450b-b949-0554855623af)
+[about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)
+[Get-Help [m2]](https://technet.microsoft.com/en-us/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2)
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=Apr16_HO2-->
 
 

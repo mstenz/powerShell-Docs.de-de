@@ -14,7 +14,7 @@ Sie können die [!INCLUDE[ise_1](../Token/ise_1_md.md)] zum Erstellen, Ausführe
 > Ab [!INCLUDE[ise_2](../Token/ise_2_md.md)] 3.0 wurden der Befehls- und Ausgabebereich in einer zentralen Konsole zusammengefasst.
 
 ## Menüleiste
-Die Menüleiste enthält die Menüs **Datei**, **Bearbeiten**, **Ansicht**, **Tools**, **Debuggen**, **Add-Ons** und **Hilfe**. Über die Schaltflächen in den Menüs können Sie Aufgaben im Zusammenhang mit dem Schreiben und Ausführen von Skripts und Ausführen von Befehlen in der [!INCLUDE[ise_2](../Token/ise_2_md.md)] erledigen. Darüber hinaus kann das Menü [Add-Ons ](assetId:///412dd662-417a-4661-ada2-558802d0f6d2#submenus) auf der Menüleiste platziert werden, indem Skripts ausgeführt werden, die das [Windows PowerShell ISE-Skriptobjektmodell](assetId:///1737ddb7-c20d-4e6b-a0d3-68cc2650f2a1) verwenden.
+Die Menüleiste enthält die Menüs **Datei**, **Bearbeiten**, **Ansicht**, **Tools**, **Debuggen**, **Add-Ons** und **Hilfe**. Über die Schaltflächen in den Menüs können Sie Aufgaben im Zusammenhang mit dem Schreiben und Ausführen von Skripts und Ausführen von Befehlen in der [!INCLUDE[ise_2](../Token/ise_2_md.md)] erledigen. Darüber hinaus kann das Menü [Add-Ons ](https://technet.microsoft.com/en-us/library/412dd662-417a-4661-ada2-558802d0f6d2#submenus) auf der Menüleiste platziert werden, indem Skripts ausgeführt werden, die das [Windows PowerShell ISE-Skriptobjektmodell](https://technet.microsoft.com/en-us/library/1737ddb7-c20d-4e6b-a0d3-68cc2650f2a1) verwenden.
 
 > [!NOTE]
 > In [!INCLUDE[ise_2](../Token/ise_2_md.md)] 2.0 gab es die Menüs **Tools** und **Add-Ons** nicht.
@@ -73,6 +73,6 @@ Hilfe für [!INCLUDE[ise_2](../Token/ise_2_md.md)] ist im Web in der TechNet-Bib
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=Apr16_HO2-->
 
 

@@ -19,11 +19,11 @@ In diesem Thema werden die Barrierefreiheitsfeatures von [!INCLUDE[ise_1](../Tok
 [Tastenkombinationen für Starten und Beenden](#bkmk_7)
 Microsoft ist bestrebt, seine Produkte und Dienste so benutzerfreundlich wie möglich zu gestalten. In den folgenden Abschnitten werden Informationen zu den Features, Produkten und Dienstleistungen vermittelt, mit deren Hilfe Personen mit Behinderungen der Zugriff auf [!INCLUDE[ise_2](../Token/ise_2_md.md)] einfacher gestaltet werden soll.
 
-[!INCLUDE[ise_2](../Token/ise_2_md.md)] unterstützt einen Modus für hohe Kontraste. Für Sehbehinderte stehen Haltepunktinformationen über die Cmdlets zum Verwalten von Haltepunkten zur Verfügung, wie z. B. [Get-PSBreakpoint](assetId:///0bf48936-00ab-411c-b5e0-9b10a812a3c6) und [Set-PSBreakpoint](assetId:///6afd5d2c-a285-4796-8607-3cbf49471420). Weitere Informationen finden Sie unter „Verwalten von Haltepunkten“ in [Debuggen von Skripts in der Windows PowerShell ISE](../Topic/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md#bkmk_1). Neben den Barrierefreiheitsfeatures und Hilfsprogrammen von Microsoft Windows sorgen die folgenden Windows PowerShell ISE-Features für Personen mit Behinderungen für mehr Barrierefreiheit:
+[!INCLUDE[ise_2](../Token/ise_2_md.md)] unterstützt einen Modus für hohe Kontraste. Für Sehbehinderte stehen Haltepunktinformationen über die Cmdlets zum Verwalten von Haltepunkten zur Verfügung, wie z. B. [Get-PSBreakpoint](https://technet.microsoft.com/en-us/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) und [Set-PSBreakpoint](https://technet.microsoft.com/en-us/library/6afd5d2c-a285-4796-8607-3cbf49471420). Weitere Informationen finden Sie unter „Verwalten von Haltepunkten“ in [Debuggen von Skripts in der Windows PowerShell ISE](../Topic/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md#bkmk_1). Neben den Barrierefreiheitsfeatures und Hilfsprogrammen von Microsoft Windows sorgen die folgenden Windows PowerShell ISE-Features für Personen mit Behinderungen für mehr Barrierefreiheit:
 
 -   Tastenkombinationen
 
--   Syntaxfarbtabelle und Möglichkeit des Änderns anderer Farbeinstellungen mithilfe des Skripterstellungsobjekts [$psISE.Options](assetId:///75e2a76f-f3d1-490b-ad5d-e3829946aabb)
+-   Syntaxfarbtabelle und Möglichkeit des Änderns anderer Farbeinstellungen mithilfe des Skripterstellungsobjekts [$psISE.Options](https://technet.microsoft.com/en-us/library/75e2a76f-f3d1-490b-ad5d-e3829946aabb)
 
 -   Änderung der Textgröße
 
@@ -71,8 +71,8 @@ Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Skripts im Skr
 
 |Aktion|Tastenkombination|
 |----------|---------------------|
-|**Neu**|STRG+N|
-|**Öffnen**|STRG+O|
+|**„Neu“,**|STRG+N|
+|**Öffnen Sie den**|STRG+O|
 |**Ausführen**|F5|
 |**Auswahl ausführen**|F8|
 |**Ausführung beenden**|STRG+UNTBR STRG+C kann verwendet werden, wenn der Kontext eindeutig ist (es ist kein Text ausgewählt).|
@@ -149,6 +149,6 @@ Die folgenden Tastenkombinationen können Sie verwenden, um die Windows PowerShe
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=Apr16_HO2-->
 
 

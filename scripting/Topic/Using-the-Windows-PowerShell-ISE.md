@@ -31,10 +31,10 @@ Bietet Informationen über Profile und die Schritte zu ihrer Erstellung und Verw
 ## Weitere Informationen
 [Kennenlernen der Windows PowerShell ISE](../Topic/Exploring-the-Windows-PowerShell-ISE.md)
 [Barrierefreiheit in Windows PowerShell ISE](../Topic/Accessibility-in-Windows-PowerShell-ISE.md)
-[Das Windows PowerShell ISE-Skriptobjektmodell](assetId:///69b047d0-da79-413e-b948-8e45d05d1f85)
+[Das Windows PowerShell ISE-Skriptobjektmodell](https://technet.microsoft.com/en-us/library/69b047d0-da79-413e-b948-8e45d05d1f85)
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=Apr16_HO2-->
 
 

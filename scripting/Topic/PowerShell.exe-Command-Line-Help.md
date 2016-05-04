@@ -72,7 +72,7 @@ Das Windows PowerShell-Profil wird nicht geladen.
 Bestimmt, wie die Ausgabe von Windows PowerShell formatiert ist. Gültige Werte sind "Text" (Textzeichenfolgen) oder "XML" (serialisiertes CLIXML-Format).
 
 ### -PSConsoleFile <FilePath>
-Lädt die angegebene Windows PowerShell-Konsolendatei. Geben Sie den Pfad und Namen der Konsolendatei ein. Verwenden Sie zum Erstellen einer Konsolendatei das Cmdlet [Export-Console](assetId:///4bab1c02-9e61-4aaf-9957-11d1934ef4ef) in Windows PowerShell.
+Lädt die angegebene Windows PowerShell-Konsolendatei. Geben Sie den Pfad und Namen der Konsolendatei ein. Verwenden Sie zum Erstellen einer Konsolendatei das Cmdlet [Export-Console](https://technet.microsoft.com/en-us/library/4bab1c02-9e61-4aaf-9957-11d1934ef4ef) in Windows PowerShell.
 
 ### -Sta
 Startet Windows PowerShell mit einem Singlethread-Apartment. In [!INCLUDE[psversion3](../Token/psversion3_md.md)] ist Singlethread-Apartment (STA) die Standardeinstellung. In [!INCLUDE[psversion2](../Token/psversion2_md.md)] ist Multithread-Apartment (MTA) die Standardeinstellung.
@@ -82,7 +82,7 @@ Startet die angegebene Version von Windows PowerShell. Die Version, die Sie ange
 
 Wenn [!INCLUDE[psversion3](../Token/psversion3_md.md)] nicht installiert ist, ist „2.0“ der einzige gültige Wert. Andere Werte werden ignoriert.
 
-Weitere Informationen finden Sie unter „Installieren von Windows PowerShell“ in [Erste Schritte mit Windows PowerShell [ALTES MSDN]](assetId:///69555d95-b481-43e1-86e7-b46d68b3e2dd).
+Weitere Informationen finden Sie unter „Installieren von Windows PowerShell“ in [Erste Schritte mit Windows PowerShell [ALTES MSDN]](https://technet.microsoft.com/en-us/library/69555d95-b481-43e1-86e7-b46d68b3e2dd).
 
 ### -WindowStyle <Window style>
 Legt den Fensterstil für die Sitzung fest. Gültige Werte sind „Normal“, „Minimized“, „Maximized“ und „Hidden“.
@@ -130,6 +130,6 @@ powershell.exe -encodedCommand $encodedCommand
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=Apr16_HO2-->
 
 
