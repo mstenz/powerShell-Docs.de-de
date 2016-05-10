@@ -1,6 +1,6 @@
 # Erste Schritte mit DSC für Linux
 
-In diesem Thema werden die ersten Schritte mit PowerShell DSC für Linux erläutert. Allgemeine Informationen zu DSC finden Sie unter Erste Schritte mit Windows PowerShell DSC.
+In diesem Thema werden die ersten Schritte mit PowerShell DSC für Linux erläutert. Allgemeine Informationen zu DSC finden Sie unter [Erste Schritte mit Windows PowerShell DSC](overview.md).
 
 ## Unterstützte Linux-Betriebssystemversionen
 
@@ -25,15 +25,15 @@ In der folgenden Tabelle werden die erforderlichen Paketabhängigkeiten für DSC
 
 ## Installieren von DSC für Linux
 
-Sie müssen vor der Installation von DSC für Linux die Open Management Infrastructure (OMI) installieren.
+Sie müssen vor der Installation von DSC für Linux die [Open Management Infrastructure (OMI)](https://collaboration.opengroup.org/omi/) installieren.
 
 ### Installieren von OMI
 
-DSC für Linux erfordert den Open Management Infrastructure (OMI) CIM-Server, Version 1.0.8.1. OMI kann unter The Open Group: Open Management Infrastructure (OMI) heruntergeladen werden.
+DSC für Linux erfordert den Open Management Infrastructure (OMI) CIM-Server, Version 1.0.8.1. OMI kann unter The Open Group: [Open Management Infrastructure (OMI)](https://collaboration.opengroup.org/omi/) heruntergeladen werden.
 
 Zum Installieren von OMI installieren Sie das Ihrem Linux-System entsprechende Paket (RPM oder DEB), die OpenSSL-Version (ssl_098 oder ssl_100) und die Architektur (x64/x86). RPM-Pakete eignen sich für CentOS, Red Hat Enterprise Linux, SUSE Linux Enterprise Server und Oracle Linux. DEB-Pakete sind für Debian GNU/Linux und Ubuntu Server geeignet. Die ssl_098-Pakete eignen sich für Computer mit installiertem OpenSSL 0.9.8, während die ssl_100 Pakete für Computer mit installiertem OpenSSL 1.0 geeignet sind.
 
-> Hinweis: Um die installierte OpenSSL-Version zu bestimmen, führen Sie den Befehl `openssl version` aus.
+> **Hinweis**: Um die installierte OpenSSL-Version zu bestimmen, führen Sie den Befehl `openssl version` aus.
 
 Führen Sie den folgenden Befehl aus, um OMI auf einem CentOS 7 x64-System zu installieren.
 
@@ -41,11 +41,11 @@ Führen Sie den folgenden Befehl aus, um OMI auf einem CentOS 7 x64-System zu in
 
 ### Installieren von DSC
 
-DSC für Linux kann von hier heruntergeladen werden. 
+DSC für Linux kann [hier](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/latest) heruntergeladen werden. 
 
 Zum Installieren von DSC installieren Sie das Ihrem Linux-System entsprechende Paket (RPM oder DEB), die OpenSSL-Version (ssl_098 oder ssl_100) und die Architektur (x64/x86). RPM-Pakete eignen sich für CentOS, Red Hat Enterprise Linux, SUSE Linux Enterprise Server und Oracle Linux. DEB-Pakete sind für Debian GNU/Linux und Ubuntu Server geeignet. Die ssl_098-Pakete eignen sich für Computer mit installiertem OpenSSL 0.9.8, während die ssl_100 Pakete für Computer mit installiertem OpenSSL 1.0 geeignet sind.
 
-> Hinweis: Um die installierte OpenSSL-Version zu bestimmen, führen Sie den Befehl „openssl“ aus.
+> **Hinweis**: Um die installierte OpenSSL-Version zu bestimmen, führen Sie den Befehl „openssl“ aus.
  
 Führen Sie den folgenden Befehl aus, um DSC auf einem CentOS 7 x64-System zu installieren.
 
@@ -62,7 +62,7 @@ Das Windows PowerShell-Schlüsselwort „Configuration“ wird wie für Windows-
 
 1. Importieren Sie das Modul „nx“. Das Windows PowerShell-Modul „nx“ enthält das Schema für integrierte Ressourcen für DSC für Linux und muss auf dem lokalen Computer installiert und in die Konfiguration importiert werden.
 
-    Zum Installieren des Moduls „nx“ kopieren Sie das Verzeichnis dieses Moduls in entweder `%UserProfile%\Documents\WindowsPowerShell\Modules\` oder `C:\windows\system32\WindowsPowerShell\v1.0\Modules`. Das Modul „nx“ ist im Installationspaket (MSI) von DSC für Linux enthalten. Verwenden Sie zum Importieren des Moduls „nx“ in Ihre Konfiguration den Befehl Import-DSCResource:
+    Zum Installieren des Moduls „nx“ kopieren Sie das Verzeichnis dieses Moduls in entweder `$env:USERPROFILE\Documents\WindowsPowerShell\Modules\` oder `$PSHOME\Modules`. Das Modul „nx“ ist im Installationspaket (MSI) von DSC für Linux enthalten. Verwenden Sie zum Importieren des Moduls „nx“ in Ihre Konfiguration den Befehl __Import-DSCResource__:
     
 ```powershell
 Configuration ExampleConfiguration{
@@ -76,7 +76,7 @@ Configuration ExampleConfiguration{
 ```powershell
 Configuration ExampleConfiguration{
    
-    Import-DSCResource -Module nx
+    Import-DscResource -Module nx
  
     Node  "linuxhost.contoso.com"{
     nxFile ExampleFile {
@@ -94,7 +94,7 @@ ExampleConfiguration -OutputPath:"C:\temp"
 
 ### Übertragen der Konfiguration per Push auf den Linux-Computer
 
-Konfigurationsdokumente (MOF-Dateien) können mit dem Cmdlet Start-DscConfiguration per Push auf den Linux-Computer übertragen werden. Verwenden Sie eine CIMSession, um dieses Cmdlet zusammen mit den Cmdlets Get-DscConfiguration und Test-DscConfiguration remote auf einem Linux-Computer zu verwenden. Das Cmdlet New-CimSession dient zum Starten einer CIMSession mit dem Linux-Computer.
+Konfigurationsdokumente (MOF-Dateien) können mit dem Cmdlet [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) per Push auf den Linux-Computer übertragen werden. Verwenden Sie eine CIMSession, um dieses Cmdlet zusammen mit den Cmdlets [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379) und [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) remote auf einem Linux-Computer zu verwenden. Das Cmdlet [New-CimSession](https://technet.microsoft.com/en-us/library/jj590760.aspx) dient zum Starten einer CIMSession mit dem Linux-Computer.
 
 Der folgende Code zeigt, wie Sie eine CIMSession für DSC für Linux starten.
 
@@ -110,19 +110,19 @@ $opt = New-CimSessionOption -UseSsl:$true
 $Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Authentication:basic -SessionOption:$opt -OperationTimeoutSec:90 
 ```
 
-> Hinweis:
+> **Hinweis**:
 * Im Pushmodus müssen die Anmeldeinformationen des Benutzers denen des Benutzers „root“ auf dem Linux-Computer entsprechen.
 * Für DSC für Linux werden nur SSL/TLS-Verbindungen unterstützt. Der Befehl „New-CimSession“ muss mit auf „$true“ festgelegtem „–UseSSL“-Parameter aufgerufen werden.
 * Das von OMI (für DSC) verwendete SSL-Zertifikat wird in der Datei `/opt/omi/etc/omiserver.conf` mit den Eigenschaften „pemfile“ und „keyfile“ angegeben.
-Wenn diesem Zertifikat vom Windows-Computer nicht vertraut wird, auf dem Sie das Cmdlet New-CimSession ausführen, können Sie in den Optionen für „CIMSession“ die Überprüfung des Zertifikats ignorieren: `-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true`
+Wenn diesem Zertifikat vom Windows-Computer nicht vertraut wird, auf dem Sie das Cmdlet [New-CimSession](https://technet.microsoft.com/en-us/library/jj590760.aspx) ausführen, können Sie in den Optionen für „CIMSession“ die Überprüfung des Zertifikats ignorieren: `-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true`
 
 Führen Sie den folgenden Befehl aus, um die DSC-Konfiguration per Push auf den Linux-Knoten zu übertragen.
 
-`Start-DSCConfiguration -Path:"C:\temp" -cimsession:$sess -wait -verbose`
+`Start-DscConfiguration -Path:"C:\temp" -CimSession:$Sess -Wait -Verbose`
 
 ### Verteilen der Konfiguration mit einem Pullserver
 
-Konfigurationen können mithilfe eines Pullservers wie bei Windows-Computern auch an Linux-Computer verteilt werden. Eine Anleitung zur Verwendung eines Pullservers finden Sie unter Windows PowerShell DSC – Pullserver. Weitere Informationen und Einschränkungen im Zusammenhang mit der Verwendung von Linux-Computern mit einem Pullserver finden Sie die Versionshinweisen zu DSC für Linux.
+Konfigurationen können mithilfe eines Pullservers wie bei Windows-Computern auch an Linux-Computer verteilt werden. Eine Anleitung zur Verwendung eines Pullservers finden Sie unter [Windows PowerShell DSC – Pullserver](pullServer.md). Weitere Informationen und Einschränkungen im Zusammenhang mit der Verwendung von Linux-Computern mit einem Pullserver finden Sie die Versionshinweisen zu DSC für Linux.
 
 ### Arbeiten mit lokalen Konfigurationen
 
@@ -135,7 +135,7 @@ DSC für Linux bietet Skripts für das Ausführen von Konfigurationsaufgaben auf
 
 * GetDscLocalConfigurationManager.py
 
- Gibt die aktuell auf dem Computer installierte Metakonfiguration zurück. Vergleichbar mit dem Cmdlet Get-DSCLocalConfigurationManager.
+ Gibt die aktuell auf dem Computer installierte Metakonfiguration zurück. Vergleichbar mit dem Cmdlet [Get-DSCLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx).
 
 `# sudo ./GetDscLocalConfigurationManager.py`
 
@@ -153,13 +153,13 @@ DSC für Linux bietet Skripts für das Ausführen von Konfigurationsaufgaben auf
 
 * StartDscLocalConfigurationManager.py 
 
- Wendet eine MOF-Konfigurationsdatei auf den Computer an. Vergleichbar mit dem Cmdlet Start-DscConfiguration. Erfordert die Angabe des Pfads zur anzuwendenden MOF-Konfigurationsdatei.
+ Wendet eine MOF-Konfigurationsdatei auf den Computer an. Vergleichbar mit dem Cmdlet [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx). Erfordert die Angabe des Pfads zur anzuwendenden MOF-Konfigurationsdatei.
 
 `# sudo ./StartDscLocalConfigurationManager.py –configurationmof /tmp/localhost.mof`
 
 * SetDscLocalConfigurationManager.py
 
- Wendet eine MOF-Metakonfigurationsdatei auf den Computer an. Vergleichbar mit dem Cmdlet Set-DSCLocalConfigurationManager. Erfordert die Angabe des Pfads zur anzuwendenden MOF-Metakonfigurationsdatei.
+ Wendet eine MOF-Metakonfigurationsdatei auf den Computer an. Vergleichbar mit dem Cmdlet [Set-DSCLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx). Erfordert die Angabe des Pfads zur anzuwendenden MOF-Metakonfigurationsdatei.
 
 `# sudo ./SetDscLocalConfigurationManager.py –configurationmof /tmp/localhost.meta.mof`
 
@@ -173,6 +173,6 @@ Die folgenden Protokolldateien werden für DSC-für-Linux-Nachrichten generiert.
 |dsc.log|/ opt/Omi/Var/Log /|Meldungen im Zusammenhang mit dem Betrieb des lokalen Konfigurations-Managers (LCM) und DSC-Ressourcenvorgängen.|
 
 
-<!--HONumber=Mar16_HO2-->
+<!--HONumber=Apr16_HO2-->
 
 

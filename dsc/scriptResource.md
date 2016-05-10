@@ -3,7 +3,16 @@
  
 > Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-Die Ressource **Script** in Windows PowerShell DSC bietet einen Mechanismus zum Anwenden von Windows PowerShell-Skriptblöcken auf Zielknoten.
+Die Ressource **Script** in Windows PowerShell DSC bietet einen Mechanismus zum Anwenden von Windows PowerShell-Skriptblöcken auf Zielknoten. Die Ressource `Script` hat die Eigenschaften `GetScript`, `SetScript` und `TestScript`. Diese Eigenschaften sollten in Skriptblöcken festgelegt werden, die auf jedem Zielknoten ausgeführt werden. 
+
+Der Skriptblock `GetScript` sollte eine Hashtabelle zurückgeben, die den Zustand des aktuellen Knotens darstellt. Es ist keine Rückgabe erforderlich. DSC macht nichts mit der Ausgabe dieses Skriptblocks.
+
+Der Skriptblock `TestScript` sollte ermitteln, ob der aktuelle Knoten geändert werden muss. Er sollte `$true` zurückgeben, wenn der Knoten auf dem neuesten Stand ist. Er sollte `$false` zurückgeben, wenn die Konfiguration des Knotens veraltet ist und von dem Skriptblock `SetScript` aktualisiert werden sollte. Der Skriptblock `TestScript` wird von DSC aufgerufen.
+
+Der Skriptblock `SetScript` sollte den Knoten ändern. Er wird von DSC aufgerufen, wenn der Block `TestScript` `$false` zurückgibt.
+
+Wenn Sie Variablen aus Ihrem Konfigurationsskript in den Skriptblöcken `GetScript`, `TestScript` oder `SetScript` verwenden müssen, verwenden Sie den Bereich `$using:` (ein Beispiel finden Sie weiter unten).
+
 
 ## Syntax
 
@@ -28,7 +37,7 @@ Script [string] #ResourceName
 | Credential| Gibt die Anmeldeinformationen zum Ausführen dieses Skripts an, falls Anmeldeinformationen erforderlich sind.| 
 | DependsOn| Gibt an, dass die Konfiguration einer anderen Ressource ausgeführt werden muss, bevor diese Ressource konfiguriert wird. Wenn beispielsweise die ID des Skriptblocks mit der Ressourcenkonfiguration, den Sie zuerst ausführen möchten, **ResourceName** und dessen Typ **ResourceType** ist, lautet die Syntax für das Verwenden dieser Eigenschaft `DependsOn = "[ResourceType]ResourceName"`.
 
-## Beispiel
+## Beispiel 1
 ```powershell
 Script ScriptExample
 {
@@ -42,4 +51,35 @@ Script ScriptExample
 }
 ```
 
-<!--HONumber=Feb16_HO4-->
+## Beispiel 2
+```powershell
+$version = Get-Content 'version.txt'
+Script UpdateConfigurationVersion
+{
+    GetScript = { 
+        $currentVersion = Get-Content (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
+        return @{ 'Version' = $currentVersion }
+    }          
+    TestScript = { 
+        $state = GetScript
+        if( $state['Version'] -eq $using:version )
+        {
+            Write-Verbose -Message ('{0} -eq {1}' -f $state['Version'],$using:version)
+            return $true
+        }
+        Write-Verbose -Message ('Version up-to-date: {0}' -f $using:version)
+        return $false
+    }
+    SetScript = { 
+        $using:version | Set-Content -Path (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
+    }
+}
+```
+
+Diese Ressource schreibt die Version der Konfiguration in eine Textdatei. Diese Version ist auf dem Clientcomputer verfügbar, aber auf keinem der Knoten, weshalb sie an jeden der Skriptblöcke der `Script`-Ressource mit dem Bereich `using` der PowerShell übergeben werden muss. Beim Generieren der MOF-Datei des Knotens wird der Wert der `$version`-Variablen aus einer Textdatei auf dem Clientcomputer gelesen. DSC ersetzt die `$using:version`-Variablen in jedem Skriptblock durch den Wert der `$version`-Variablen.
+
+
+
+<!--HONumber=Apr16_HO2-->
+
+

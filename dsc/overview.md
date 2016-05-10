@@ -35,6 +35,10 @@ DSC bietet auch eine Reihe von neuen Programmiersprachen-Schlüsselworten, Cmdle
 ## Weitere Informationen
 * [DSC-Konfigurationen](configurations.md)
 * [DSC-Ressourcen](resources.md)
-* [Konfigurieren des lokalen Konfigurations-Managers](metaconfig.md)
+* [Konfigurieren des lokalen Konfigurations-Managers](metaConfig.md)
 
-<!--HONumber=Feb16_HO4-->
+
+
+<!--HONumber=Apr16_HO2-->
+
+

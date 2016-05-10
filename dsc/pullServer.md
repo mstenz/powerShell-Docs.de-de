@@ -168,6 +168,6 @@ In den folgenden Themen wird das Einrichten von Pullclients im Detail beschriebe
 * [Verwenden eines DSC-Berichtsservers](reportServer.md)
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=Apr16_HO2-->
 
 

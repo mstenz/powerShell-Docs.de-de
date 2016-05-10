@@ -100,8 +100,9 @@ Configuration DependsOnExample {
 
         User UserExample {
             Ensure = "Present"
+            UserName = "TestUser"
             FullName = "TestUser"
-            DependsOn = "GroupExample"
+            DependsOn = "[Group]GroupExample"
         }
     }
 }
@@ -117,9 +118,9 @@ Nachdem diese Module in `$env:PSModulePath` abgelegt und von [Get-DscResource](h
 ## Weitere Informationen
 * [Windows PowerShell DSC – Übersicht](overview.md)
 * [DSC-Ressourcen](resources.md)
-* [Konfigurieren des lokalen Konfigurations-Managers](metaconfig.md)
+* [Konfigurieren des lokalen Konfigurations-Managers](metaConfig.md)
 
 
-<!--HONumber=Feb16_HO4-->
+<!--HONumber=Apr16_HO2-->
 
 
