@@ -124,7 +124,7 @@ hashtable new(int capacity, float loadFactor)
 
 ## Methoden
 
-Eine Windows PowerShell-Klassenmethode wird als Skriptblock mit nur einem „end“-Block implementiert. Alle Methoden sind öffentlich. Nachstehend sehen Sie ein Beispiel der Definition einer Methode namens **DoSomething**.
+Eine Windows PowerShell-Klassenmethode wird als Skriptblock mit nur einem „end“-Block implementiert. Alle Methoden sind öffentlich. Nachstehend sehen Sie ein Beispiel der Definition einer Methode namens **DoSomething**..
 
 ```powershell
 class MyClass
@@ -168,7 +168,7 @@ Der Rückgabetyp ist ein Vertrag. Der Rückgabewert wird in den erwarteten Typ k
 
 ## Attribute
 
-Die vier neuen Attribute **DscResource**, **DscResourceKey**, **DscResourceMandatory** und **DscResourceOut** wurden hinzugefügt.
+Die beiden neuen Attribute **DscResource** und **DscProperty** wurden hinzugefügt.
 
 ## Lexikalische Eingrenzung von Variablen
 
@@ -324,4 +324,8 @@ function Style
 # and then returns the resulting type.
 #
 function Html ([HTML] $doc) { return $doc }
-```<!--HONumber=Mar16_HO2-->
+```
+
+<!--HONumber=Apr16_HO5-->
+
+

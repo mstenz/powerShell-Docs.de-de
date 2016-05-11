@@ -9,7 +9,7 @@ Es folgen die wichtigsten Unterschiede zwischen einer klassenbasierten DSC-Resso
 * Der Unterordner **DSCResource** im Ordner „module“ ist nicht erforderlich.
 * Eine PowerShell-Moduldatei kann mehrere DSC-Ressourcenklassen enthalten.
 
-Es folgt ein Beispiel einer klassenbasierten DSC-Ressource, die die andere klassenbasierte DSC-Ressource in der gleichen Datei erweitert. Diese wird als Modul **MyDSCResource.psm1** gespeichert. 
+Es folgt ein Beispiel einer klassenbasierten DSC-Ressource, die die andere klassenbasierte DSC-Ressource in der gleichen Datei erweitert. Diese wird als Modul **MyDSCResource.psm1** gespeichert.. 
 Beachten Sie, dass Sie in eine klassenbasierte DSC-Ressource bzw. ihre Basisklassen mindestens eine „key“-Eigenschaft und „Get“-, „Set“- oder „Test“-Methode einbeziehen müssen.
 
 ```powershell
@@ -60,7 +60,7 @@ NOTE: This property is required because [DscProperty(Mandatory)] is set.
 [string] $SourcePath
 
 <#
-This property reports the file's creation timestamp.
+This property reports the file creation timestamp.
 
 [DscProperty(NotConfigurable)] attribute indicates the property is not configurable in a DSC configuration. Properties marked this way are populated by the Get() method to report additional details about the resource when it is present.
 #>
@@ -212,13 +212,13 @@ class FileResource : BaseFileResource
     [bool] $IsReadOnly
 
     <#
-    This property reports the file's LastAccessTime timestamp.
+    This property reports the file LastAccessTime timestamp.
     #>
     [DscProperty(NotConfigurable)]
     [Nullable[datetime]] $LastAccessTime
 
     <#
-    This property reports the file's LastWriteTime timestamp.
+    This property reports the file LastWriteTime timestamp.
     #>
     [DscProperty(NotConfigurable)]
     [Nullable[datetime]] $LastWriteTime
@@ -252,7 +252,7 @@ class FileResource : BaseFileResource
 }
 ```
 
-Nach dem Erstellen des klassenbasierten DSC-Ressourcenanbieters und dessen Speicherung als Modul erstellen Sie ein Modulmanifest für das Modul. Bei diesem Beispiel wird das folgende Modulmanifest als **MyDscResource.psd1** gespeichert.
+Nach dem Erstellen des klassenbasierten DSC-Ressourcenanbieters und dessen Speicherung als Modul erstellen Sie ein Modulmanifest für das Modul. Bei diesem Beispiel wird das folgende Modulmanifest als **MyDscResource.psd1** gespeichert..
 
 ```powershell
 @{
@@ -288,13 +288,13 @@ DscResourcesToExport = @('BaseFileResource','FileResource')
 }
 ```
 
-Stellen Sie den neuen DSC-Ressourcenanbieter bereit, indem Sie unter `$env:SystemDrive\Program Files\WindowsPowerShell\Modules` den Ordner **MyDscResource** erstellen.
+Stellen Sie den neuen DSC-Ressourcenanbieter bereit, indem Sie den Ordner **MyDscResource** im folgenden Pfad erstellen: `$env:SystemDrive\Program Files\WindowsPowerShell\Modules`.
 Sie müssen nicht den Unterordner „DSCResource“ erstellen.
 Kopieren Sie die Modul- und Modulmanifestdatei (**MyDscResource.psm1** und **MyDscResource.psd1**) in den Ordner **MyDscResource**.
 
 Anschließend muss wie bei allen anderen DSC-Ressourcen ein Konfigurationsskript erstellt und ausgeführt werden. 
 Es folgt eine Konfiguration, die auf das Modul „MyDSCResource“ verweist. 
-Speichern Sie diese als das Skript **MyResource.ps1**.
+Speichern Sie diese als das Skript **MyResource.ps1**..
 
 ```powershell
 Configuration MyConfig
@@ -333,4 +333,8 @@ Diese Version weist die folgenden bekannten Probleme bei klassenbasierten DSC-Re
 
 * „Get-DscConfiguration“ gibt möglicherweise leere Werte (NULL) oder Fehler zurück, wenn von der „Get()“-Funktion einer klassenbasierten DSC-Ressource ein komplexer Typ zurückgegeben wird.
 * Zusammengesetzte Ressourcen können nicht als klassenbasierte Ressource geschrieben werden.
-<!--HONumber=Mar16_HO2-->
+
+
+<!--HONumber=Apr16_HO5-->
+
+
