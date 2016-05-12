@@ -7,10 +7,10 @@
 [ Handoff Failed Files ](#handoff-failed-list)| 0
 [ Handoff Success Files ](#handoff-success-list)| 1
 [ Archive Failed Files ](#archive-failed-list)| 0
-[ Archive Success Files ](#archive-success-list)| 88
+[ Archive Success Files ](#archive-success-list)| 87
 [ Handback Failed Files ](#handback-failed-list)| 0
 [ Out Of Sync Handback Files ](#outofsync-handback-success-list)| 11
-[ In Sync Handback Files ](#insync-handback-success-list)| 205
+[ In Sync Handback Files ](#insync-handback-success-list)| 206
 [ Ignored Files ](#ignored-list)| 12
 
 ## <a name='handoff-failed-list'></a> Handoff Failed File List
@@ -25,7 +25,6 @@
 ## <a name='archive-success-list'></a> Archive Success File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [dsc\configHelp.md](https://github.com/PowerShell/powerShell-Docs/blob/826a2f2909bef6645030a8a9e899bbc7de1a452c/dsc/configHelp.md) | ArchivedSuccess | [Details](#918f7ebd3f6973cb17db4bdada7babf5dc716c3c15)
  [scripting\core-powershell\console\PowerShell.exe-Command-Line-Help.md](https://github.com/PowerShell/powerShell-Docs/blob/d82c4380c786618a3578a43c6ca7c77e22bb6b03/scripting/core-powershell/console/PowerShell.exe-Command-Line-Help.md) | ArchivedSuccess | [Details](#a7e4230252572a1eedad96492c087cb75250259c98)
  [scripting\core-powershell\console-guide.md](https://github.com/PowerShell/powerShell-Docs/blob/84dddac69fa9689c77ea7fde1aa2e75ec9ea6cb3/scripting/core-powershell/console-guide.md) | ArchivedSuccess | [Details](#2bb5a27df9dcd3a9b7fc414f7ac140169f67af9397)
  [scripting\core-powershell\core-modules.md](https://github.com/PowerShell/powerShell-Docs/blob/127e7711b6e7a542248d16b2771943a236827bc5/scripting/core-powershell/core-modules.md) | ArchivedSuccess | [Details](#50d1d59551974f0be5af55a682d405e6f6f78fec100)
@@ -142,6 +141,7 @@
  [dsc\builtInResource.md](https://github.com/PowerShell/powerShell-Docs/blob/682edfe87872b7b99546c2a78c1b6191d1933ad6/dsc/builtInResource.md) | InSyncHandedBackSuccess | [Details](#3e887680203d836b4161a1e54b6bc60bb20dc6c812)
  [dsc\configData.md](https://github.com/PowerShell/powerShell-Docs/blob/dcacf14d13cc0c3e4bb3b6602ad3ab6b3141471f/dsc/configData.md) | InSyncHandedBackSuccess | [Details](#291278563679354d4a21858157c0679914131dd313)
  [dsc\configDataCredentials.md](https://github.com/PowerShell/powerShell-Docs/blob/dcacf14d13cc0c3e4bb3b6602ad3ab6b3141471f/dsc/configDataCredentials.md) | InSyncHandedBackSuccess | [Details](#0ed581ed07a81f654304c888733aa4429de146a314)
+ [dsc\configHelp.md](https://github.com/PowerShell/powerShell-Docs/blob/826a2f2909bef6645030a8a9e899bbc7de1a452c/dsc/configHelp.md) | InSyncHandedBackSuccess | [Details](#918f7ebd3f6973cb17db4bdada7babf5dc716c3c15)
  [dsc\configurations.md](https://github.com/PowerShell/powerShell-Docs/blob/deb04906dbc6868d83a6cef88ce2e363bd13a9d8/dsc/configurations.md) | InSyncHandedBackSuccess | [Details](#ab74c4e76b998f694982786942879dc02deeb77716)
  [dsc\crossNodeDependencies.md](https://github.com/PowerShell/powerShell-Docs/blob/4528b4c033ae0a9b7476a60899e5cd0c96607d1c/dsc/crossNodeDependencies.md) | InSyncHandedBackSuccess | [Details](#f6b6006e9d1ad8aef62523accf73e5f2dba3689817)
  [dsc\debugResource.md](https://github.com/PowerShell/powerShell-Docs/blob/22ee8b62b9107e26360466330f82809d4a150f46/dsc/debugResource.md) | InSyncHandedBackSuccess | [Details](#0959c2576a82b63e814b73a95a085e5512c0726f18)
@@ -544,15 +544,15 @@
 * [Back to Top](#report-top)
 
 ##### <a name='918f7ebd3f6973cb17db4bdada7babf5dc716c3c15'></a> Source: [dsc\configHelp.md](https://github.com/PowerShell/powerShell-Docs/blob/826a2f2909bef6645030a8a9e899bbc7de1a452c/dsc/configHelp.md)
-* Status: ArchivedSuccess
-* Target File: 
+* Status: InSyncHandedBackSuccess
+* Target File: [dsc\configHelp.md](https://github.com/PowerShell/powerShell-Docs.de-de/blob/3e4d3cc0628663e7b1dbb00547b19b892ea0b8c5/dsc/configHelp.md)
 * Handoff File: [configHelp.640c1514ba89b533fcd70fb36da2f349eced1926.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/484f3debed28747d7a3bcb20be0a8a5dd147a1bd/ol-handoff/PowerShell/powerShell-Docs.de-de/live/configHelp.640c1514ba89b533fcd70fb36da2f349eced1926.de-de.xlf)
 * Handoff Datetime: 2016-04-29 22:41:33
 * Handoff Reason: Include
 * Archive File: [configHelp.640c1514ba89b533fcd70fb36da2f349eced1926.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/bafef1f3aa5dfa22448cfabf880bd34f37cade12/ol-handoff/PowerShell/powerShell-Docs.de-de/live/archive/configHelp.640c1514ba89b533fcd70fb36da2f349eced1926.de-de.xlf)
 * Archive Datetime: 2016-05-03 15:36:01
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
+* Handback File: [configHelp.640c1514ba89b533fcd70fb36da2f349eced1926.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/8368d9fb3a52ad462273c62364ce72bdc285cf66/ol-handback/PowerShell/powerShell-Docs.de-de/live/configHelp.640c1514ba89b533fcd70fb36da2f349eced1926.de-de.xlf)
+* Handback Datetime: 2016-05-12 10:33:23
 * [Back to Top](#report-top)
 
 ##### <a name='ab74c4e76b998f694982786942879dc02deeb77716'></a> Source: [dsc\configurations.md](https://github.com/PowerShell/powerShell-Docs/blob/deb04906dbc6868d83a6cef88ce2e363bd13a9d8/dsc/configurations.md)
