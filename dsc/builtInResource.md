@@ -1,3 +1,14 @@
+---
+title:   Erstellen von integrierten Windows PowerShell DSC-Ressourcen
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Erstellen von integrierten Windows PowerShell DSC-Ressourcen
 
 > Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
@@ -18,6 +29,7 @@ Im Lieferumfang von Windows PowerShell DSC sind einer Reihe von integrierten Kon
 * [Ressource „WindowsProcess“](windowsProcessResource.md)
 
 
-<!--HONumber=Apr16_HO2-->
+
+<!--HONumber=May16_HO3-->
 
 

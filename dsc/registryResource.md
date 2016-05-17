@@ -1,3 +1,14 @@
+---
+title:   DSC-Ressource „Registry“
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # DSC-Ressource „Registry“
 
 > Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
@@ -59,4 +70,8 @@ Registry RegistryExample
 }
 ```
 
-<!--HONumber=Feb16_HO4-->
+
+
+<!--HONumber=May16_HO3-->
+
+

@@ -1,12 +1,15 @@
 ---
-title: Erste Schritte mit Windows PowerShell
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: b0e2ad92-875f-421d-b612-f624e644aa69
+title:  Erste Schritte mit Windows PowerShell
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  b0e2ad92-875f-421d-b612-f624e644aa69
 ---
+
 # Erste Schritte mit Windows PowerShell
 Windows PowerShell ist eine neue Windows-Befehlszeilenshell, die insbesondere für Systemadministratoren konzipiert ist. Windows PowerShell umfasst eine interaktive Eingabeaufforderung und eine Skriptumgebung, die einzeln oder in Kombination verwendet werden können.
 

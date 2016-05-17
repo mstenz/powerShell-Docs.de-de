@@ -1,12 +1,15 @@
 ---
-title: Verwenden von „Format“-Befehlen zum Ändern der Ausgabeanzeige
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 63515a06-a6f7-4175-a45e-a0537f4f6d05
+title:  Verwenden von „Format“-Befehlen zum Ändern der Ausgabeanzeige
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  63515a06-a6f7-4175-a45e-a0537f4f6d05
 ---
+
 # Verwenden von „Format“-Befehlen zum Ändern der Ausgabeanzeige
 Windows PowerShell hat eine Reihe von Cmdlets, mit denen Sie steuern können, welche Eigenschaften für bestimmte Objekte angezeigt werden. Der Name jedes dieser Cmdlets beginnt mit dem Verb **Format**. In diesen Cmdlets können Sie eine oder mehrere anzuzeigende Eigenschaften auswählen.
 
@@ -212,6 +215,6 @@ powershell 2656 C:\Program Files\Windows PowerShell\v1.0\powershell.exe
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,3 +1,14 @@
+---
+title:   DSC für Linux-Resource „nxFileLine“
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # DSC für Linux-Resource „nxFileLine“
 
 Die Ressource **nxFileLine** in PowerShell DSC bietet einen Mechanismus zum Verwalten von Zeilen in einer Konfigurationsdatei auf einem Linux-Knoten.
@@ -39,4 +50,8 @@ nxFileLine DoNotRequireTTY
 } 
 ```
 
-<!--HONumber=Feb16_HO4-->
+
+
+<!--HONumber=May16_HO3-->
+
+

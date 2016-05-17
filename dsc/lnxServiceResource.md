@@ -1,3 +1,14 @@
+---
+title:   DSC für Linux-Resource „nxService“
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # DSC für Linux-Resource „nxService“
 
 Die Ressource **nxService** in PowerShell DSC bietet einen Mechanismus zum Verwalten von Diensten auf einem Linux-Knoten.
@@ -48,4 +59,9 @@ Controller = "systemd"
 }
 }
 ```
-<!--HONumber=Mar16_HO1-->
+
+
+
+<!--HONumber=May16_HO3-->
+
+

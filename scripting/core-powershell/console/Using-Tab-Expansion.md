@@ -1,12 +1,15 @@
 ---
-title: Verwenden von Erweiterung mit der TAB-TASTE
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: c8730471-bf6a-43b8-ab1d-f9ef5a74f04e
+title:  Verwenden von Erweiterung mit der TAB-TASTE
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  c8730471-bf6a-43b8-ab1d-f9ef5a74f04e
 ---
+
 # Verwenden von Erweiterung mit der TAB-TASTE
 Befehlszeilenshells bieten häufig eine Möglichkeit, die Namen langer Dateien oder Befehle automatisch zu vervollständigen, wodurch die Befehlseingabe und das Bereitstellen von Hinweisen beschleunigt werden. Windows PowerShell ermöglicht Ihnen das Ausfüllen von Dateinamen und Cmdletnamen durch Drücken der **TAB-TASTE**.
 
@@ -46,6 +49,6 @@ PS> Get-Content C:\windows\actsetup.log
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

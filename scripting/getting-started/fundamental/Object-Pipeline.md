@@ -1,12 +1,15 @@
 ---
-title: Objektpipeline
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 523d8ae4-d743-47a4-b79a-806130ca688a
+title:  Objektpipeline
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  523d8ae4-d743-47a4-b79a-806130ca688a
 ---
+
 # Objektpipeline
 Eine Pipeline fungiert als eine Reihe von verbundenen Segmenten eines Rohrs. Elemente, die durch die Pipeline geleitet werden, durchlaufen jedes Segment. Um eine Pipeline in Windows PowerShell zu erstellen, verbinden Sie Befehle mit dem Pipeoperator „|“. Die Ausgabe eines Befehls wird als Eingabe des nächsten Befehls verwendet.
 
@@ -16,6 +19,6 @@ In diesem Kapitel wird beschrieben, wie sich die Windows PowerShell-Pipeline von
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

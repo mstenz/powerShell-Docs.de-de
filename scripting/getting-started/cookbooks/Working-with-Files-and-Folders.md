@@ -1,12 +1,15 @@
 ---
-title: Arbeiten mit Dateien und Ordnern
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: c0ceb96b-e708-45f3-803b-d1f61a48f4c1
+title:  Arbeiten mit Dateien und Ordnern
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  c0ceb96b-e708-45f3-803b-d1f61a48f4c1
 ---
+
 # Arbeiten mit Dateien und Ordnern
 Das Navigieren auf Windows PowerShell-Laufwerken und das Bearbeiten der darauf gespeicherten Elemente gleicht dem Bearbeiten von Dateien und Ordnern auf physischen Windows-Festplattenlaufwerken. In diesem Abschnitt werden bestimmte Aufgaben im Zusammenhang mit der Bearbeitung von Dateien und Ordnern erörtert.
 
@@ -140,6 +143,6 @@ $Computers = Get-Content -Path C:\temp\DomainMembers.txt
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

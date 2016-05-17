@@ -1,12 +1,15 @@
 ---
-title: Erlernen von Windows PowerShell-Namen
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
+title:  Erlernen von Windows PowerShell-Namen
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  b4d0fd22-8298-4ee6-82ae-9b6f2907c986
 ---
+
 # Erlernen von Windows PowerShell-Namen
 Das Erlernen der Namen von Befehlen und Befehlsparametern ist bei den meisten Befehlszeilenschnittstellen mit einem hohen Zeitaufwand verbunden. Das Problem ist, dass es nur sehr wenige Muster gibt. Deshalb ist die einzige Lernmöglichkeit das Auswendiglernen sämtlicher Befehle und Parameter, die Sie regelmäßig verwenden müssen.
 
@@ -92,6 +95,6 @@ In den Anleitungen wird beispielsweise empfohlen, für einen Parameter, der anha
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

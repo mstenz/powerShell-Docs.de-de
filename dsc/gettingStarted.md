@@ -1,3 +1,14 @@
+---
+title:   Erste Schritte mit Windows PowerShell DSC 
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Erste Schritte mit Windows PowerShell DSC #
 
 In dieser Anleitung wird erläutert, wie PowerShell DSC-Dokumente erstellt und auf Computer angewendet werden. Grundkenntnisse von PowerShell-Cmdlets, Modulen und Funktionen werden vorausgesetzt. 
@@ -5,7 +16,7 @@ In dieser Anleitung wird erläutert, wie PowerShell DSC-Dokumente erstellt und a
 
 ## Erstellen einer Konfiguration ##
 
-<ctype="x-NOTFOUND" mdpre="[" mdpost="](https://msdn.microsoft.com/en-us/powershell/dsc/configurations)"><ctype="x-NOTFOUND" mdpre="**" mdpost="**">Konfigurationen</ctype="x-NOTFOUND"></ctype="x-NOTFOUND"> sind Dokumente, die eine Umgebung beschreiben. Umgebungen bestehen aus <ctype="x-NOTFOUND" mdpre="**" mdpost="**">Knoten</ctype="x-NOTFOUND">, bei denen es sich um virtuelle oder physische Computer handelt. 
+[**Konfigurationen**](https://msdn.microsoft.com/en-us/powershell/dsc/configurations) sind Dokumente, die eine Umgebung beschreiben. Umgebungen bestehen aus **Knoten**, bei denen es sich um virtuelle oder physische Computer handelt. 
 
 Konfigurationen können verschiedene Formen haben. Die einfachste Möglichkeit zum Erstellen einer neuen Konfiguration ist die Erstellung einer PS1-Datei (PowerShell-Skript). Öffnen Sie hierfür den Editor Ihrer Wahl. Die PowerShell ISE ist eine gute Wahl, da sie DSC nativ versteht. Speichern Sie Folgendes in einer PS1-Datei:
 
@@ -27,15 +38,15 @@ configuration MyFirstConfiguration
 }
 ```
 ## Teile einer Konfiguration ##
-<ctype="x-NOTFOUND" mdpre="**" mdpost="**">Configuration</ctype="x-NOTFOUND"> ist ein Schlüsselwort, das PowerShell 4.0 hinzugefügt wurde. Es bezeichnet eine spezielle Art von PowerShell-Funktion, die von DSC verwendet wird. In diesem Beispiel heißt die Funktion „myFirstConfiguration“. 
+**Configuration** ist ein Schlüsselwort, das PowerShell 4.0 hinzugefügt wurde. Es bezeichnet eine spezielle Art von PowerShell-Funktion, die von DSC verwendet wird. In diesem Beispiel heißt die Funktion „myFirstConfiguration“. 
 
 Die nächste Zeile ist eine Importanweisung wie zum Importieren eines Moduls. Sie wird weiter unten besprochen.
 
 „Node“ definiert den Namen des Computers, auf den diese Konfiguration angewendet werden soll. Obwohl diese Konfiguration lokal bearbeitet wird, können Konfigurationen auch für Remoteknoten gelten. 
 
-Knoten können Computernamen oder IP-Adressen haben. Ein einzelnes Konfigurationsdokument kann mehrere Knoten enthalten. Mithilfe von <ctype="x-NOTFOUND" mdpre="[" mdpost="](https://msdn.microsoft.com/en-us/powershell/dsc/configdata)">Konfigurationsdaten</ctype="x-NOTFOUND"> können Sie die gleiche Konfiguration auch auf mehrere Knoten anwenden. In diesem Fall heißt der Knoten „localhost“, was sich auf den lokalen Computer bezieht. 
+Knoten können Computernamen oder IP-Adressen haben. Ein einzelnes Konfigurationsdokument kann mehrere Knoten enthalten. Mithilfe von [Konfigurationsdaten](https://msdn.microsoft.com/en-us/powershell/dsc/configdata) können Sie die gleiche Konfiguration auch auf mehrere Knoten anwenden. In diesem Fall heißt der Knoten „localhost“, was sich auf den lokalen Computer bezieht. 
 
-Das nächste Element ist eine <ctype="x-NOTFOUND" mdpre="[" mdpost="](https://msdn.microsoft.com/en-us/powershell/dsc/resources)"><ctype="x-NOTFOUND" mdpre="**" mdpost="**">Ressource</ctype="x-NOTFOUND"></ctype="x-NOTFOUND">. Ressourcen sind Bausteine von Konfigurationen. Jede Ressource ist ein Modul, das die Implementierungslogik eines einzelnen Aspekts eines Computers definiert. Durch Ausführen von <ctype="x-NOTFOUND" mdpre="**" mdpost="**">Get-DscResource</ctype="x-NOTFOUND"> in PowerShell können Sie alle Ressourcen auf Ihrem Computer anzeigen. Ressourcen müssen auf dem lokalen Computer vorhanden sein und importiert werden, ehe sie in einer Konfiguration mit <ctype="x-NOTFOUND" mdpre="**" mdpost="**">Import-DscResource</ctype="x-NOTFOUND"> in der zweiten Zeile dieser Konfiguration verwendet werden können. 
+Das nächste Element ist eine [**Ressource**](https://msdn.microsoft.com/en-us/powershell/dsc/resources). Ressourcen sind Bausteine von Konfigurationen. Jede Ressource ist ein Modul, das die Implementierungslogik eines einzelnen Aspekts eines Computers definiert. Durch Ausführen von **Get-DscResource** in PowerShell können Sie alle Ressourcen auf Ihrem Computer anzeigen. Ressourcen müssen auf dem lokalen Computer vorhanden sein und importiert werden, ehe sie in einer Konfiguration mit **Import-DscResource** in der zweiten Zeile dieser Konfiguration verwendet werden können. 
 
 **Anwenden einer Konfiguration**
 
@@ -46,7 +57,7 @@ myFirstConfiguration
 
 Bei ihrer Ausführung überprüfen Konfigurationsfunktionen, ob die Konfiguration gültig ist. Sie darf keine Syntaxfehler aufweisen, für Ressourcen müssen alle Pflichtparameter definiert sein, und alle Ressourcen müssen vor der Ausführung importiert werden.
 
-Nachdem die Konfiguration ausgeführt wurde, wird ein Ordner mit dem Namen der Konfiguration und einer <ctype="x-NOTFOUND" mdpre="**" mdpost="**">MOF-Datei</ctype="x-NOTFOUND"> für jeden Knoten in der Konfiguration erstellt. Die MOF-Datei ist ein auf Standards basierendes Verwaltungsformat, das von PowerShell DSC für die Kommunikation über das Netzwerk verwendet wird.
+Nachdem die Konfiguration ausgeführt wurde, wird ein Ordner mit dem Namen der Konfiguration und einer **MOF-Datei** für jeden Knoten in der Konfiguration erstellt. Die MOF-Datei ist ein auf Standards basierendes Verwaltungsformat, das von PowerShell DSC für die Kommunikation über das Netzwerk verwendet wird.
 
 So wenden Sie eine Konfiguration an:
 ```powershell
@@ -57,4 +68,8 @@ Dadurch wird ein PowerShell-Auftrag erstellt, der auf den Knoten in der Konfigur
 Start-DscConfiguration -Path ./myFirstConfiguration -Wait
 ```
 
-<!--HONumber=Mar16_HO1-->
+
+
+<!--HONumber=May16_HO3-->
+
+

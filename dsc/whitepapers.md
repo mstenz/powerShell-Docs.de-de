@@ -1,3 +1,14 @@
+---
+title:   Whitepapers
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Whitepapers
 
 Die folgenden Whitepapers wurden veröffentlicht, um zusätzliche Informationen zu Themen im Zusammenhang mit PowerShell Desired State Configuration (DSC) bereitzustellen.
@@ -7,6 +18,8 @@ Es lassen sich Vorteile erzielen, wenn Muster und Verfahren aus Entwicklermethod
 
 **[PDF herunterladen](http://aka.ms/thereleasepipelinemodelpdf)**
 
-<!--HONumber=Apr16_HO2-->
+
+
+<!--HONumber=May16_HO3-->
 
 

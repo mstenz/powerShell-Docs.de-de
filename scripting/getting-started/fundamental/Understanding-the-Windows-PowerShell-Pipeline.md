@@ -1,12 +1,15 @@
 ---
-title: Grundlegendes zur Windows PowerShell-Pipeline
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 6be50926-7943-4ef7-9499-4490d72a63fb
+title:  Grundlegendes zur Windows PowerShell-Pipeline
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  6be50926-7943-4ef7-9499-4490d72a63fb
 ---
+
 # Grundlegendes zur Windows PowerShell-Pipeline
 Die Weiterleitung über Pipes funktioniert nahezu überall in Windows PowerShell. Obwohl Text auf dem Bildschirm angezeigt wird, leitet Windows PowerShell Text nicht zwischen Befehlen weiter. Stattdessen werden Objekte weitergeleitet.
 
@@ -62,6 +65,6 @@ Im weiteren Verlauf dieses Kapitels wird erörtert, wie Sie die Struktur bestimm
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -3,12 +3,13 @@
 # [Konfigurationen](configurations.md)
 ## [Inkraftsetzung von Konfigurationen](enactingConfigurations.md)
 ## [Verwenden von Ressourcen mit mehreren Versionen](sxsResource.md)
+## [Ausführen von DSC mit Benutzeranmeldeinformationen](runAsUser.md)
 ## [Angeben knotenübergreifender Abhängigkeiten](crossNodeDependencies.md)
 ## [Konfigurationsdaten](configData.md)
 ### [Optionen für Anmeldeinformationen in Konfigurationsdaten](configDataCredentials.md)
-### [Ausführen von DSC mit Benutzeranmeldeinformationen](runAsUser.md)
 ## [Schützen der MOF-Konfigurationsdatei](secureMOF.md)
 ## [Teilkonfigurationen](partialConfigs.md)
+## [Schreiben von Hilfe für DSC-Konfigurationen](configHelp.md)
 
 # [Ressourcen](resources.md)
 ## [Integrierte Ressourcen](builtInResource.md)
@@ -89,6 +90,7 @@
 ## [Whitepapers](whitepapers.md)
 
 
-<!--HONumber=Apr16_HO4-->
+
+<!--HONumber=May16_HO3-->
 
 

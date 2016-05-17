@@ -1,12 +1,15 @@
 ---
-title: Arbeiten mit Druckern
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 4f29ead3-f83b-4706-ac3e-f2154ff38dc5
+title:  Arbeiten mit Druckern
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  4f29ead3-f83b-4706-ac3e-f2154ff38dc5
 ---
+
 # Arbeiten mit Druckern
 Sie können Windows PowerShell zum Verwalten von Druckern mit WMI und dem COM-Objekt „WScript.Network“ vom WSH verwenden. Wir werden eine Kombination beider Tools verwenden, um bestimmte Aufgaben zu veranschaulichen.
 
@@ -54,6 +57,6 @@ Um eine Druckerverbindung zu entfernen, verwenden Sie die Methode **WScript.Netw
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
