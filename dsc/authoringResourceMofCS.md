@@ -2,9 +2,9 @@
 
 > Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-In der Regel wird eine benutzerdefinierte Windows PowerShell DSC-Ressource in einem PowerShell-Skript implementiert. Allerdings können Sie die Funktionalität einer benutzerdefinierten DSC-Ressource auch durch Schreiben von C#-Cmdlets implementieren. Eine Einführung zum Schreiben von Cmdlets in C# finden Sie unter [Schreiben eines Windows PowerShell-Cmdlets](https://technet.microsoft.com/en-us/library/dd878294.aspx).
+In der Regel wird eine benutzerdefinierte Windows PowerShell DSC-Ressource in einem PowerShell-Skript implementiert. Allerdings können Sie die Funktionalität einer benutzerdefinierten DSC-Ressource auch durch Schreiben von C#-Cmdlets implementieren. Eine Einführung zum Schreiben von Cmdlets in C# finden Sie unter [Writing a Windows PowerShell Cmdlet](https://technet.microsoft.com/en-us/library/dd878294.aspx) (Schreiben eines Windows PowerShell-Cmdlets)..
 
-Abgesehen von der Implementierung der Ressource als Cmdlets in C# entsprechen die Schritte zum Erstellen des MOF-Schemas, zum Erstellen der Ordnerstruktur sowie zum Importieren und Verwenden Ihrer benutzerdefinierten DSC-Ressource dem unter [Schreiben einer benutzerdefinierten DSC-Ressource mit MOF](authoringResourceMOF.md) beschriebenen Verfahren.
+Abgesehen von der Implementierung der Ressource als Cmdlets in C# entsprechen die Schritte zum Erstellen des MOF-Schemas, zum Erstellen der Ordnerstruktur sowie zum Importieren und Verwenden Ihrer benutzerdefinierten DSC-Ressource dem unter [Schreiben einer benutzerdefinierten DSC-Ressource mit MOF](authoringResourceMOF.md) beschriebenen Verfahren..
 
 ## Schreiben einer Cmdlet-basierten Ressource
 In diesem Beispiel wird eine einfache Ressource implementiert, die eine Textdatei und deren Inhalt verwaltet.
@@ -29,9 +29,9 @@ class MSFT_XDemoFile : OMI_BaseResource
 1. Öffnen Sie Visual Studio.
 1. Erstellen Sie ein C#-Projekt, und geben Sie diesem einen Namen.
 1. Wählen Sie **-Klassenbibliothek** aus den verfügbaren Projektvorlagen aus.
-1. Klicken Sie auf **OK**.
+1. Klicken Sie auf **OK**..
 1. Fügen Sie „System.Automation.Management.dll“ einen Assemblyverweis auf Ihr Projekt hinzu.
-1. Ändern Sie den Assemblynamen so, dass er dem Namen der Ressource entspricht. In diesem Fall sollte die Assembly **MSFT_XDemoFile** benannt werden.
+1. Ändern Sie den Assemblynamen so, dass er dem Namen der Ressource entspricht. In diesem Fall sollten Sie die Assembly **MSFT_XDemoFile** nennen..
 
 ### Schreiben des Codes des Cmdlets
 
@@ -150,6 +150,7 @@ Die kompilierte DLL-Datei sollte in einer Dateistruktur gespeichert werden, die 
 ```
 $env: psmodulepath (folder)
     |- MyDscResources (folder)
+        |- MyDscResources.psd1 (file, required)     
         |- DSCResources (folder)
             |- MSFT_XDemoFile (folder)
                 |- MSFT_XDemoFile.psd1 (file, optional)
@@ -161,4 +162,9 @@ $env: psmodulepath (folder)
 #### Konzepte
 [Schreiben einer benutzerdefinierten DSC-Ressource mit MOF](authoringResourceMOF.md)
 #### Weitere Ressourcen
-[Schreiben eines Windows PowerShell-Cmdlets](https://msdn.microsoft.com/en-us/library/dd878294.aspx)<!--HONumber=Feb16_HO4-->
+[Schreiben eines Windows PowerShell-Cmdlets](https://msdn.microsoft.com/en-us/library/dd878294.aspx)
+
+
+<!--HONumber=May16_HO2-->
+
+
