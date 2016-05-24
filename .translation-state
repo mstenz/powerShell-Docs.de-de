@@ -1,6 +1,6 @@
 {
   "LastProcessedCommit": "a89797d5f94f60ad65e2c9d4095358af176aab7f",
-  "LastTranslatedCommit": "72bebc40e1bc509f31c91a50db42dff5fd796123",
+  "LastTranslatedCommit": "247d2ac3f440b5fcaa5c9a283a510a2b67b95b4b",
   "Items": {
     "81efeb79a70df604ef8c126c0ebd17b4f4711a44": {
       "FileHash": "81efeb79a70df604ef8c126c0ebd17b4f4711a44",
@@ -13000,14 +13000,14 @@
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
-      "TargetFileCommit": "6aad8a5025c5c825962b373a8a7e3de611ed9c7c",
+      "TargetFileCommit": "247d2ac3f440b5fcaa5c9a283a510a2b67b95b4b",
       "TargetFilePath": "dsc\\nanoDsc.md",
       "HandbackFilePath": "ol-handback\\PowerShell\\powerShell-Docs.de-de\\live\\nanoDsc.aab436599c769befa85e33015714db23e0d73ae6.de-de.xlf",
-      "HandbackFileCommit": "644a79cd187f125b9af1e9e58674d0d64e9ca50c",
-      "HandbackDateTime": "2016-05-10T02:33:23.2879285Z",
+      "HandbackFileCommit": "920161d639d120fc3cefd1abbad4d9fc0bfe8f1d",
+      "HandbackDateTime": "2016-05-24T14:47:37.5983984Z",
       "HandbackException": null,
       "HandbackFailureTimes": 0,
-      "UpdatedDateTime": "2016-05-10T02:33:23.2879285Z",
+      "UpdatedDateTime": "2016-05-24T14:47:37.5983984Z",
       "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.de-de\\live\\archive\\nanoDsc.aab436599c769befa85e33015714db23e0d73ae6.de-de.xlf",
       "ArchiveFileCommit": "20f94b796ddb3121c19ba55df29acdf8914a34d1",
       "ArchiveFileDateTime": "2016-04-29T00:22:00.5522116Z",
