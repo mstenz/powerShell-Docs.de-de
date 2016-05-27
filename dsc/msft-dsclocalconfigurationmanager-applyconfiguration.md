@@ -1,3 +1,13 @@
+---
+title: ApplyConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse 
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
 
 # ApplyConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse
 
@@ -50,6 +60,6 @@ Dies ist eine statische Methode.
 
 
 
-<!--HONumber=Apr16_HO2-->
+<!--HONumber=May16_HO3-->
 
 

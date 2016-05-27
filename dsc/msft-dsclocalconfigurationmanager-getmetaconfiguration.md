@@ -1,10 +1,14 @@
 ---
-DCS.appliesToProduct: 'WindowsServer\_Dev'
-Description: 'Abrufen der Einstellungen des lokalen Konfigurations-Managers fest, die zur Steuerung des Konfigurations-Agents verwendet werden.'
-MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_getmetaconfiguration'
-MSHAttr: 'PreferredLib:/library'
-title: 'GetMetaConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse'
+title:  GetMetaConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
 ---
+
 
 # GetMetaConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse
 
@@ -44,7 +48,7 @@ Dies ist eine statische Methode.
 ## Siehe auch
 
 
-[**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
+[**MSFT_DSCLocalConfigurationManager-Klasse**](msft-dsclocalconfigurationmanager.md)
 
 
  
@@ -55,6 +59,6 @@ Dies ist eine statische Methode.
 
 
 
-<!--HONumber=Apr16_HO2-->
+<!--HONumber=May16_HO3-->
 
 

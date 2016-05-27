@@ -1,10 +1,14 @@
 ---
-DCS.appliesToProduct: 'WindowsServer\_Dev'
-Description: 'Hilfe und Unterstützung bei der DSC-Konfiguration'
-MS-HAID: 'cimwin32a.msft\_dsclocalconfigurationmanager\_enabledebugconfiguration'
-MSHAttr: 'PreferredLib:/library'
-title: 'EnableDebugConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse'
+title:  EnableDebugConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
 ---
+
 
 # EnableDebugConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse
 
@@ -53,6 +57,6 @@ Dies ist eine statische Methode.
 
 
 
-<!--HONumber=Apr16_HO2-->
+<!--HONumber=May16_HO3-->
 
 

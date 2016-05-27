@@ -1,5 +1,5 @@
 ---
-title:  
+title: MSFT_DSCLocalConfigurationManager-Klasse 
 ms.date:  2016-05-16
 keywords:  powershell,DSC
 description:  

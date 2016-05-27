@@ -1,3 +1,14 @@
+---
+title:   DSC-Ressource „Group“
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # DSC-Ressource „Group“
 
 > Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
@@ -23,13 +34,13 @@ Group [string] #ResourceName
 
 |  Eigenschaft  |  Beschreibung   | 
 |---|---| 
-| GroupName| Gibt den Namen der Gruppe an, für die Sie einen bestimmten Zustand sicherstellen möchten.| 
-| Credential| Gibt die Anmeldeinformationen für den Zugriff auf Remoteressourcen an. **Hinweis**: Dieses Konto muss die entsprechenden Active Directory-Berechtigungen aufweisen, um alle nicht lokalen Konten zur Gruppe hinzuzufügen. Andernfalls tritt ein Fehler auf.
-| Description| Gibt die Beschreibung der Gruppe an.| 
+| GroupName| Der Name der Gruppe, für die Sie einen bestimmten Zustand sicherstellen möchten.| 
+| Credential| Die Anmeldeinformationen für den Zugriff auf Remoteressourcen. **Hinweis**: Dieses Konto muss die entsprechenden Active Directory-Berechtigungen aufweisen, um alle nicht lokalen Konten zur Gruppe hinzuzufügen. Andernfalls tritt ein Fehler auf.
+| Beschreibung| Die Beschreibung der Gruppe.| 
 | Ensure| Gibt an, ob die Gruppe vorhanden ist. Legen Sie diese Eigenschaft auf „Absent“ fest, um sicherzustellen, dass die Gruppe nicht vorhanden ist. Das Festlegen auf „Present“ (den Standardwert) stellt sicher, dass die Gruppe vorhanden ist.| 
-| Members| Gibt an, dass Sie sicherstellen möchten, dass diese Mitglieder die Gruppe bilden.| 
-| MembersToExclude| Gibt die Benutzer an, die auf keinen Fall Mitglied dieser Gruppe werden sollen.| 
-| MembersToInclude| Gibt die Benutzer an, die Mitglied dieser Gruppe werden sollen.| 
+| Mitglieder| Verwenden Sie diese Eigenschaft, um die aktuelle Gruppenmitgliedschaft durch die angegebenen Member zu ersetzen. Der Wert dieser Eigenschaft ist ein Zeichenfolgenarray im Format *Domäne*\\*Benutzername*. Wenn Sie diese Eigenschaft in einer Konfiguration festlegen, verwenden Sie weder die Eigenschaft **MembersToExclude** noch die Eigenschaft **MembersToInclude**. Andernfalls wird ein Fehler generiert.| 
+| MembersToExclude| Verwenden Sie diese Eigenschaft, um Member aus der vorhandenen Gruppenmitgliedschaft zu entfernen. Der Wert dieser Eigenschaft ist ein Zeichenfolgenarray im Format *Domäne*\\*Benutzername*. Wenn Sie diese Eigenschaft in einer Konfiguration festgelegt haben, verwenden Sie die Eigenschaft **Members** nicht. Andernfalls wird ein Fehler generiert.| 
+| MembersToInclude| Verwenden Sie diese Eigenschaft, um Member zur vorhandenen Gruppenmitgliedschaft hinzuzufügen. Der Wert dieser Eigenschaft ist ein Zeichenfolgenarray im Format *Domäne*\\*Benutzername*. Wenn Sie diese Eigenschaft in einer Konfiguration festgelegt haben, verwenden Sie die Eigenschaft **Members** nicht. Andernfalls wird ein Fehler generiert.| 
 | DependsOn | Gibt an, dass die Konfiguration einer anderen Ressource ausgeführt werden muss, bevor diese Ressource konfiguriert wird. Wenn beispielsweise die ID des Skriptblocks mit der Ressourcenkonfiguration, den Sie zuerst ausführen möchten, __ResourceName__ und dessen Typ __ResourceType__ ist, lautet die Syntax für das Verwenden dieser Eigenschaft „DependsOn = „[ResourceType]ResourceName“.| 
 
 ## Beispiel 1
@@ -75,6 +86,8 @@ Group AddADUserToLocalAdminGroup
         }
 ```
 
-<!--HONumber=Apr16_HO3-->
+
+
+<!--HONumber=May16_HO3-->
 
 

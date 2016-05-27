@@ -2,7 +2,7 @@
 
 # [Installationsdetails](requirements.md)
 
-# [Bekannte Inkompatibilitäten des Produkts](productincompat.md)
+# [Status der Produktkompatibilität](productincompat.md)
 
 # [Feedback](feedback.md)
 
@@ -97,4 +97,8 @@
 
 # [Bekannte Probleme und Einschränkungen](limitation_overview.md)
 ## [Bekannte Probleme bei DSC (Desired State Configuration)](limitation_dsc.md)
-<!--HONumber=Mar16_HO3-->
+
+
+<!--HONumber=May16_HO4-->
+
+

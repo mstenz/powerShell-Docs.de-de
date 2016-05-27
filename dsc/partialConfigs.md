@@ -1,3 +1,14 @@
+---
+title:   PowerShell DSC – Teilkonfigurationen
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # PowerShell DSC – Teilkonfigurationen
 
 >Gilt für: Windows PowerShell 5.0
@@ -93,7 +104,7 @@ Nach dem Erstellen der Metakonfiguration müssen Sie diese ausführen, um ein Ko
 ### Benennen und Ablegen der Konfigurationsdokumente auf dem Pullserver
 
 Die Teilkonfigurationsdokumente müssen in dem Ordner abgelegt werden, der als **ConfigurationPath** in der Datei `web.config` für den Pullserver angegeben ist (meist `C:\Program Files\WindowsPowerShell\DscService\Configuration`). Die Konfigurationsdokumente müssen wie folgt heißen: _ConfigurationName_. _ConfigurationID_`.mof`, wobei _ConfigurationName_ der Name der Teilkonfiguration und _ConfigurationID_ die Konfigurations-ID ist, die im LCM auf dem Zielknoten definiert ist. In unserem Beispiel sollten die Konfigurationsdokumente wie folgt heißen.
-![„PartialConfig“-Namen auf Pullserver](images/PartialConfigPullServer.jpg)
+![PartialConfig-Namen auf Pullserver](images/PartialConfigPullServer.jpg)
 
 ### Ausführen von Teilkonfigurationen von einem Pullserver
 
@@ -141,8 +152,69 @@ PartialConfigDemo
 
 Beachten Sie, dass der im „Settings“-Block angegebene **RefreshMode** auf „Pull“, aber der **RefreshMode** für die Teilkonfiguration „OSInstall“ auf „Push“ festgelegt ist.
 
-Sie müssen, wie oben für die entsprechenden Aktualisierungsmodi beschrieben, die Konfigurationsdokumente benennen und ablegen. Rufen Sie das Cmdlet **Publish-DSCConfiguration** zum Veröffentlichen der „SharePointInstall“-Teilkonfiguration auf. Warten Sie dann entweder, bis die „OSInstall“-Konfiguration vom Pullserver abgerufen wird, oder erzwingen Sie eine Aktualisierung durch Aufrufen von [Update-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143541(v=wps.630).aspx).
+Benennen Sie die MOF-Konfigurationsdateien und legen Sie sie ab, wie oben für die entsprechenden Aktualisierungsmodi beschrieben. Rufen Sie das Cmdlet **Publish-DSCConfiguration** zum Veröffentlichen der `SharePointInstall`-Teilkonfiguration auf. Warten Sie dann entweder, bis die `OSInstall`-Konfiguration vom Pullserver abgerufen wird, oder erzwingen Sie eine Aktualisierung durch das Aufrufen von [Update-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143541(v=wps.630).aspx).
 
+## Beispiel für eine OSInstall-Teilkonfiguration
+
+```powershell
+Configuration OSInstall
+{
+    Param (
+        [Parameter(Mandatory,
+                   HelpMessage="Domain credentials required to add domain\sharepoint_svc to the local Administrators group.")]
+        [ValidateNotNullOrEmpty()]
+        [pscredential]$Credential
+    )
+
+    Import-DscResource -ModuleName PSDesiredStateConfiguration
+
+
+    Node localhost
+    {
+        Group LocalAdmins
+        {
+            GroupName = 'Administrators'
+            MembersToInclude = 'domain\sharepoint_svc',
+                               'admins@example.domain'
+            Ensure = 'Present'
+            Credential = $Credential
+            
+        }
+
+        WindowsFeature Telnet
+        {
+            Name = 'Telnet-Server'
+            Ensure = 'Absent'
+        }
+    }
+}
+OSInstall
+
+```
+## Beispiel für eine SharePointConfig-Teilkonfiguration
+```powershell
+Configuration SharePointConfig
+{
+    Param (
+        [Parameter(Mandatory)]
+        [ValidateNotNullOrEmpty()]
+        [pscredential]$ProductKey
+    )
+
+    Import-DscResource -ModuleName xSharePoint
+
+    Node localhost
+    {
+        xSPInstall SharePointDefault
+        {
+            Ensure = 'Present'
+            BinaryDir = '\\FileServer\Installers\Sharepoint\'
+            ProductKey = $ProductKey
+        }
+    }
+}
+SharePointConfig
+```
 ##Weitere Informationen 
 
 **Konzepte**
@@ -150,6 +222,7 @@ Sie müssen, wie oben für die entsprechenden Aktualisierungsmodi beschrieben, d
 [Konfigurieren des lokalen Konfigurations-Managers](https://technet.microsoft.com/en-us/library/mt421188.aspx) 
 
 
-<!--HONumber=Apr16_HO2-->
+
+<!--HONumber=May16_HO4-->
 
 

@@ -1,9 +1,12 @@
 ---
-DCS.appliesToProduct: 'WindowsServer\_Dev'
-Description: 'Deaktivieren des Debuggens der DSC-Konfiguration.'
-MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_disabledebugconfiguration'
-MSHAttr: 'PreferredLib:/library'
-title: 'DisableDebugConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse'
+title:  DisableDebugConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
 ---
 
 # DisableDebugConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse
@@ -51,6 +54,6 @@ Dies ist eine statische Methode.
 
 
 
-<!--HONumber=Apr16_HO2-->
+<!--HONumber=May16_HO3-->
 
 

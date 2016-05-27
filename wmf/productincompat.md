@@ -1,19 +1,26 @@
-# Bekannte Inkompatibilitäten des Produkts
+# Status der Produktkompatibilität
 
-**Auf Systemen, auf denen die folgenden Serveranwendungen ausgeführt werden, sollte Windows Management Framework 5.0 derzeit nicht ausgeführt werden:**
+## Kompatibel:
+> Systeme, auf denen die folgenden Serveranwendungen ausgeführt werden, **können** Windows Management Framework 5.0 ausführen:
+
+- Microsoft SharePoint Server 2013
+- System Center 2012 Configuration Manager
+
+## Nicht getestet:
+> Systeme, auf denen die folgenden Serveranwendungen ausgeführt werden, wurden **nicht** gegen Windows Management Framework 5.0 getestet:
+
+- Microsoft SharePoint Server 2010
+- System Center 2012 Virtual Machine Manager
+
+## Nicht kompatibel:
+> Systeme, auf denen die folgenden Serveranwendungen ausgeführt werden, sollten Windows Management Framework 5.0 derzeit **nicht ausführen**:
 
 - Microsoft Exchange Server 2013
 - Microsoft Exchange Server 2010 SP3
-- Microsoft SharePoint Server 2013
-- Microsoft SharePoint Server 2010
-- System Center 2012 Virtual Machine Manager
 - System Center 2012 R2 Service Management Automation
 
-**Auf Servern, auf denen die folgenden Programme ausgeführt werden, kann WMF 5.0 nun ausgeführt werden:**
-
-- System Center 2012 Configuration Manager
 
 
-<!--HONumber=Apr16_HO2-->
+<!--HONumber=May16_HO4-->
 
 
