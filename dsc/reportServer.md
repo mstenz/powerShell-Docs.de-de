@@ -1,25 +1,29 @@
+---
+title:   Verwenden eines DSC-Berichtsservers
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Verwenden eines DSC-Berichtsservers
 
 > Gilt für: Windows PowerShell 5.0
 
 >**Hinweis:** Der in diesem Thema beschriebene Berichtsserver ist in PowerShell 4.0 nicht verfügbar.
 
-Die lokale Configuration Manager (LCM) eines Knotens kann so konfiguriert werden, dass Berichte zu seinem Konfigurationsstatus an einen Pullserver gesendet werden, der zum Abrufen dieser Daten abgefragt werden kann. Jedes Mal, wenn der Knoten eine Konfiguration überprüft und anwendet,
-wird ein Bericht zum Berichtsserver gesendet. Diese Berichte werden in einer Datenbank auf dem Server gespeichert und können durch Aufrufen des Webdiensts für die Berichtserstellung abgerufen werden. Jeder Bericht enthält
-Informationen zu den angewendeten Konfigurationen samt Zeitpunkt, verwendeten Ressourcen, ausgelösten Fehlern sowie Start- und Endzeiten.
+Die lokale Configuration Manager (LCM) eines Knotens kann so konfiguriert werden, dass Berichte zu seinem Konfigurationsstatus an einen Pullserver gesendet werden, der zum Abrufen dieser Daten abgefragt werden kann. Jedes Mal, wenn der Knoten eine Konfiguration überprüft und anwendet, wird ein Bericht zum Berichtsserver gesendet. Diese Berichte werden in einer Datenbank auf dem Server gespeichert und können durch Aufrufen des Webdiensts für die Berichtserstellung abgerufen werden. Jeder Bericht enthält Informationen zu den angewendeten Konfigurationen samt Zeitpunkt, verwendeten Ressourcen, ausgelösten Fehlern sowie Start- und Endzeiten.
 
 ## Konfigurieren eines Knotens zum Senden von Berichten
 
-Sie weisen einen Knoten im **ReportServerWeb**-Block der LCM-Konfiguration des Knotens an, Berichte zu einem Server zu senden (weitere Informationen zum Konfigurieren des LCM
-finden Sie unter [Konfigurieren des lokalen Konfigurations-Managers](metaConfig.md)). Der Server, an den der Knoten Berichte sendet, muss als Pullwebserver eingerichtet werden (Sie können keine Berichte
-an eine SMB-Freigabe senden). Weitere Informationen zum Einrichten von Pullservern finden Sie unter [Einrichten eines DSC-Webpullservers](pullServer.md). Der Berichtsserver kann vom selben Dienst unterstützt werden,
-von dem der Knoten Konfigurationen und Ressourcen abruft. Es kann sich aber auch um einen anderen Dienst handeln.
+Sie weisen einen Knoten im **ReportServerWeb**-Block der LCM-Konfiguration des Knotens an, Berichte zu einem Server zu senden (weitere Informationen zum Konfigurieren des LCM finden Sie unter [Konfigurieren des lokalen Konfigurations-Managers](metaConfig.md)). Der Server, an den der Knoten Berichte sendet, muss als Webpullserver eingerichtet werden (Sie können keine Berichte an eine SMB-Freigabe senden). Weitere Informationen zum Einrichten von Pullservern finden Sie unter [Einrichten eines DSC-Webpullservers](pullServer.md). Der Berichtsserver kann vom selben Dienst unterstützt werden, von dem der Knoten Konfigurationen und Ressourcen abruft. Es kann sich aber auch um einen anderen Dienst handeln.
  
-Im **ReportServerWeb**-Block geben Sie die URL des Pulldiensts
-und einen Registrierungsschlüssel an, der dem Server bekannt ist.
+Im **ReportServerWeb**-Block geben Sie die URL des Pulldiensts und einen Registrierungsschlüssel an, der dem Server bekannt ist.
  
-Die folgende Konfiguration konfiguriert einen Knoten für das Abrufen von Konfiguration per Pull von einem Dienst und Senden von Berichten
-an einen Dienst auf einem anderen Server. 
+Die folgende Konfiguration konfiguriert einen Knoten für das Abrufen von Konfiguration per Pull von einem Dienst und Senden von Berichten an einen Dienst auf einem anderen Server. 
  
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -88,11 +92,7 @@ PullClientConfig
 
 ## Abrufen von Berichtsdaten
 
-Berichte, die zum Pullserver gesendet werden, gelangen in eine Datenbank auf dem Server. Die Berichte stehen über Aufrufe des Webdiensts zur Verfügung. Zum Abrufen von Berichten für einen bestimmten Knoten 
-senden Sie eine HTTP-Anforderung an den Berichtswebdienst in der folgenden Form:
-`http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentID = MyNodeAgentId)/Reports` 
-`MyNodeAgentId` ist die Agent-ID des Knotens, für den Sie Berichte erhalten möchten. Durch Aufrufen von [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) auf einem Knoten können Sie die Agent-ID
-dieses Knotens abrufen.
+Berichte, die zum Pullserver gesendet werden, gelangen in eine Datenbank auf dem Server. Die Berichte stehen über Aufrufe des Webdiensts zur Verfügung. Zum Abrufen von Berichten für einen bestimmten Knoten senden Sie eine HTTP-Anforderung an den Berichtswebdienst in der folgenden Form: `http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentID = MyNodeAgentId)/Reports`, wobei `MyNodeAgentId` die Agent-ID des Knotens ist, für den Sie Berichte erhalten möchten. Durch Aufrufen von [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) auf einem Knoten können Sie die Agent-ID dieses Knotens abrufen.
 
 Die Berichte werden als ein Array von JSON-Objekten zurückgegeben.
 
@@ -156,12 +156,11 @@ AdditionalData       : {}
 Standardmäßig werden die Berichte nach **JobID** sortiert. Zum Abrufen des neuesten Berichts können Sie die Berichte absteigend nach der Eigenschaft **StartTime** sortieren, und dann das erste Element des Arrays abrufen:
 
 ```powershell
-$reportsByStartTime = $reports | Sort-Object -Property StartTime -Descending
+$reportsByStartTime = $reports | Sort-Object {$_."StartTime" -as [DateTime] } -Descending
 $reportMostRecent = $reportsByStartTime[0]
 ```
 
-Beachten Sie, dass das Feld **StatusData** ein Objekt mit mehreren Eigenschaften ist. Hier befindet sich ein Großteil der Berichtsdaten. Sehen wir uns die einzelnen Felder der Eigenschaft 
-StatusData für den aktuellen Bericht an:
+Beachten Sie, dass das Feld **StatusData** ein Objekt mit mehreren Eigenschaften ist. Hier befindet sich ein Großteil der Berichtsdaten. Sehen wir uns die einzelnen Felder der Eigenschaft **StatusData** für den aktuellen Bericht an:
 
 ```powershell
 $statusData = $reportMostRecent.StatusData | ConvertFrom-Json
@@ -199,8 +198,7 @@ Locale                     : en-US
 Mode                       : Pull
 ```
 
-Unter anderem wird hier deutlich, dass die neueste Konfiguration zwei Ressourcen aufgerufen hat, von denen sich die eine im gewünschten Zustand befand und die andere nicht. So können Sie 
-eine besser lesbare Ausgabe der Eigenschaft ResourcesNotInDesiredState erzeugen:
+Unter anderem wird hier deutlich, dass die neueste Konfiguration zwei Ressourcen aufgerufen hat, von denen sich die eine im gewünschten Zustand befand und die andere nicht. So können Sie eine besser lesbare Ausgabe der Eigenschaft **ResourcesNotInDesiredState** erzeugen:
 
 ```powershell
 $statusData.ResourcesInDesiredState
@@ -218,8 +216,7 @@ ConfigurationName : Sample_ArchiveFirewall
 InDesiredState    : True
 ```
 
-Beachten Sie, dass diese Beispiele dazu dienen, Ihnen eine Vorstellung der Möglichkeiten von Berichtsdaten zu geben. Eine Einführung in das Arbeiten mit JSON in PowerShell finden Sie unter
-[Arbeiten mit JSON und PowerShell](https://blogs.technet.microsoft.com/heyscriptingguy/2015/10/08/playing-with-json-and-powershell/).
+Beachten Sie, dass diese Beispiele dazu dienen, Ihnen eine Vorstellung der Möglichkeiten von Berichtsdaten zu geben. Eine Einführung in das Arbeiten mit JSON in PowerShell finden Sie unter [Arbeiten mit JSON und PowerShell](https://blogs.technet.microsoft.com/heyscriptingguy/2015/10/08/playing-with-json-and-powershell/).
 
 ## Weitere Informationen
 - [Konfigurieren des lokalen Konfigurations-Managers](metaConfig.md)
@@ -227,6 +224,7 @@ Beachten Sie, dass diese Beispiele dazu dienen, Ihnen eine Vorstellung der Mögl
 - [Einrichten eines Pullclients mithilfe von Konfigurationsnamen](pullClientConfigNames.md)
 
 
-<!--HONumber=Apr16_HO1-->
+
+<!--HONumber=May16_HO4-->
 
 
