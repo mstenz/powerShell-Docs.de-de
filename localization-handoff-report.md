@@ -6,22 +6,19 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [dsc\partialConfigs.md](https://github.com/PowerShell/powerShell-Docs/blob/ede565ef23c36a195f137e9949b215c6632a7e26/dsc/partialConfigs.md) | OutofSyncHandedBackSuccess | [Details](#9e3052353dd54568eb2dfaf5af5efde7faafd03a71)
+ [jea\index.md](https://github.com/PowerShell/powerShell-Docs/blob/d11efe21af38a9544ea350936c92d667322af1b3/jea/index.md) | HandedOffSuccess | [Details](#2bf3293026c3df211073cfcf67ba5c4a1a61bd0f97)
 
 ## Item Details
-##### <a name='9e3052353dd54568eb2dfaf5af5efde7faafd03a71'></a> Source: [dsc\partialConfigs.md](https://github.com/PowerShell/powerShell-Docs/blob/ede565ef23c36a195f137e9949b215c6632a7e26/dsc/partialConfigs.md)
-* Status: OutofSyncHandedBackSuccess
+##### <a name='2bf3293026c3df211073cfcf67ba5c4a1a61bd0f97'></a> Source: [jea\index.md](https://github.com/PowerShell/powerShell-Docs/blob/d11efe21af38a9544ea350936c92d667322af1b3/jea/index.md)
+* Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [partialConfigs.f483ab7fa1511b557780a02b5b807245f730c1b6.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/da173cf1edfe2c6426d64fcd432cb695262a045d/ol-handoff/PowerShell/powerShell-Docs.de-de/live/partialConfigs.f483ab7fa1511b557780a02b5b807245f730c1b6.de-de.xlf)
-* Handoff Datetime: 2016-05-27 23:53:30
+* Handoff File: [index.9e63af59180db0ca954982ba5c3d1e4a7e40c6bc.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/55690ced4a80530423b552ad3e8efc021e44e078/ol-handoff/PowerShell/powerShell-Docs.de-de/live/index.9e63af59180db0ca954982ba5c3d1e4a7e40c6bc.de-de.xlf)
+* Handoff Datetime: 2016-06-02 22:12:08
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [dsc\partialConfigs.md](https://github.com/PowerShell/powerShell-Docs.de-de/blob/65fe25b66ec9fa155654d1adfdce3041120d9b67/dsc/partialConfigs.md)
-* Current Handback File: [partialConfigs.f483ab7fa1511b557780a02b5b807245f730c1b6.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f2edf49e2a5cbf55d063a2934cb5af88517ad208/ol-handback/PowerShell/powerShell-Docs.de-de/live/partialConfigs.f483ab7fa1511b557780a02b5b807245f730c1b6.de-de.xlf)
-* Current Handback Datetime: 2016-05-27 16:57:43
 * [Back to Top](#report-top)
 
 
