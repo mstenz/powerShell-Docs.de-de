@@ -1,3 +1,14 @@
+---
+title:   Einrichten eines DSC-Pullclients mithilfe einer Konfigurations-ID
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Einrichten eines DSC-Pullclients mithilfe einer Konfigurations-ID
 
 > Gilt für: Windows PowerShell 5.0
@@ -70,12 +81,9 @@ PullClientConfigID
 
 ## Ressourcen und Berichtsserver
 
-Wenn Sie in Ihrer LCM-Konfiguration nur einen **ConfigurationRepositoryWeb**- oder einen **ConfigurationRepositoryShare**-Block angeben (wie im vorherigen Beispiel), ruft der Pullclient 
-Ressourcen per Pull vom angegebenen Server ab, sendet aber keine Berichte an den Server. Sie können für Konfigurationen, Ressourcen und Berichte einen einzigen Pullserver verwenden, allerdings müssen Sie 
-einen **ReportRepositoryWeb**-Block erstellen, um die Berichterstattung einzurichten. 
+Wenn Sie in Ihrer LCM-Konfiguration nur einen **ConfigurationRepositoryWeb**- oder einen **ConfigurationRepositoryShare**-Block angeben (wie im vorherigen Beispiel), ruft der Pullclient Ressourcen per Pull vom angegebenen Server ab, sendet aber keine Berichte an den Server. Sie können für Konfigurationen, Ressourcen und Berichte einen einzigen Pullserver verwenden, allerdings müssen Sie einen **ReportRepositoryWeb**-Block erstellen, um die Berichterstattung einzurichten. 
 
-Das folgenden Beispiel zeigt eine Metakonfiguration, mit der einen Client so eingerichtet wird, dass Konfigurationen und Ressourcen per Pull von einem Pullserver abgerufen und Berichtsdaten
-an denselben Pullserver gesendet werden.
+Das folgenden Beispiel zeigt eine Metakonfiguration, mit der einen Client so eingerichtet wird, dass Konfigurationen und Ressourcen per Pull von einem Pullserver abgerufen und Berichtsdaten an denselben Pullserver gesendet werden.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -107,8 +115,7 @@ configuration PullClientConfigID
 PullClientConfigID
 ```
 
-Sie können für den Abruf von Ressourcen und die Berichterstattung auch unterschiedliche Pullserver angeben. Um einen Ressourcenserver anzugeben, verwenden Sie entweder einen **ResourceRepositoryWeb**-Block (für einen Webpullserver) oder einen 
-**ResourceRepositoryShare**-Block (für einen SMB-Pullserver).
+Sie können für den Abruf von Ressourcen und die Berichterstattung auch unterschiedliche Pullserver angeben. Um einen Ressourcenserver anzugeben, verwenden Sie entweder einen **ResourceRepositoryWeb**-Block (für einen Webpullserver) oder einen **ResourceRepositoryShare**-Block (für einen SMB-Pullserver).
 Um einen Berichtsserver anzugeben, verwenden Sie einen **ReportRepositoryWeb**-Block. Ein Berichtsserver kann kein SMB-Server sein.
 Die folgende Metakonfiguration konfiguriert einen Pullclient zum Abrufen seiner Konfigurationen von **CONTOSO-PullSrv** und seiner Ressourcen von**CONTOSO-ResourceSrv** und Senden von Statusberichten an **CONTOSO-ReportSrv**.
 
@@ -151,6 +158,7 @@ PullClientConfigID
 * [Einrichten eines Pullclients mit Konfigurationsnamen](pullClientConfigNames.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=May16_HO3-->
 
 
