@@ -58,39 +58,81 @@ Teilkonfigurationen können von einem oder mehreren Pullservern abgerufen werden
 
 ### Konfigurieren des LCM für Teilkonfigurationen im Pullmodus
 
-Zum Konfigurieren des LCM zum Abrufen von Teilkonfigurationen per Pull von einem Pullserver müssen Sie den Pullserver entweder in einem **ConfigurationRepositoryWeb**-Block (für einen HTTP-Pullserver) oder einem **ConfigurationRepositoryShare**-Block (für einen SMB-Pullserver) definieren. Dann erstellen Sie **PartialConfiguration**-Blöcke, die unter Verwendung der **ConfigurationSource**-Eigenschaft auf den Pullserver verweisen. Sie müssen außerdem einen „Settings“-Block erstellen, um anzugeben, dass der LCM den Pullmodus verwendet, und um die „ConfigurationID“-Eigenschaft anzugeben, die der Pullserver und Zielknoten zum Identifizieren der Konfigurationen verwenden. Die folgende Metakonfiguration definiert einen HTTP-Pullserver mit dem Namen „CONTOSO-PullSrv“ und zwei Teilkonfigurationen, die diesen Pullserver verwenden.
+Zum Konfigurieren des LCM zum Abrufen von Teilkonfigurationen per Pull von einem Pullserver müssen Sie den Pullserver entweder in einem **ConfigurationRepositoryWeb**-Block (für einen HTTP-Pullserver) oder einem **ConfigurationRepositoryShare**-Block (für einen SMB-Pullserver) definieren. Dann erstellen Sie **PartialConfiguration**-Blöcke, die unter Verwendung der **ConfigurationSource**-Eigenschaft auf den Pullserver verweisen. Sie müssen außerdem einen **Settings**-Block erstellen, um anzugeben, dass der LCM den Pullmodus verwendet, und um die **ConfigurationNames**- oder **ConfigurationID**-Werte anzugeben, die der Pullserver und Zielknoten zum Identifizieren der Konfigurationen verwenden. Die folgende Metakonfiguration definiert einen HTTP-Pullserver mit dem Namen „CONTOSO-PullSrv“ und zwei Teilkonfigurationen, die diesen Pullserver verwenden.
+
+Weitere Informationen zum Konfigurieren des LCM unter Verwendung von **ConfigurationNames** finden Sie unter [Einrichten eines Pullclients mithilfe von Konfigurationsnamen](pullClientConfigNames.md). Weitere Informationen zum Konfigurieren des LCM unter Verwendung von **ConfigurationID** finden Sie unter [Einrichten eines Pullclients mithilfe der Konfigurations-ID](pullClientConfigID.md).
+
+#### Konfigurieren des LCM für Pullmoduskonfigurationen mithilfe von Konfigurationsnamen
+
+```powershell
+[DscLocalConfigurationManager()]
+Configuration PartialConfigDemoConfigNames
+{
+        Settings
+        {
+            RefreshFrequencyMins            = 30;
+            RefreshMode                     = "PULL";
+            ConfigurationMode               ="ApplyAndAutocorrect";
+            AllowModuleOverwrite            = $true;
+            RebootNodeIfNeeded              = $true;
+            ConfigurationModeFrequencyMins  = 60;
+        }
+        ConfigurationRepositoryWeb CONTOSO-PullSrv
+        {
+            ServerURL                       = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'    
+            RegistrationKey                 = 5b41f4e6-5e6d-45f5-8102-f2227468ef38     
+            ConfigurationNames              = @("OSInstall", "SharePointConfig")
+        }     
+        
+        PartialConfiguration Part1 
+        {
+            Description                     = "OSInstall"
+            ConfigurationSource             = @("[ConfigurationRepositoryWeb]CONTOSO-PullSrv") 
+        }
+ 
+        PartialConfiguration SharePointConfig
+        {
+            Description                     = "SharePointConfig"
+            ConfigurationSource             = @("[ConfigurationRepositoryWeb]CONTOSO-PullSrv")
+            DependsOn                       = '[PartialConfiguration]OSInstall'
+        }
+   
+}
+``` 
+
+#### Konfigurieren des LCM für Pullmoduskonfigurationen mithilfe der Konfigurations-ID
 
 ```powershell
 [DSCLocalConfigurationManager()]
-configuration PartialConfigDemo
+configuration PartialConfigDemoConfigID
 {
     Node localhost
     {
         Settings
         {
-            RefreshMode = 'Pull'
-            ConfigurationID = '1d545e3b-60c3-47a0-bf65-5afc05182fd0'
-            RefreshFrequencyMins = 30 
-            RebootNodeIfNeeded = $true
+            RefreshMode                     = 'Pull'
+            ConfigurationID                 = '1d545e3b-60c3-47a0-bf65-5afc05182fd0'
+            RefreshFrequencyMins            = 30 
+            RebootNodeIfNeeded              = $true
         }
         ConfigurationRepositoryWeb CONTOSO-PullSrv
         {
-            ServerURL = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
+            ServerURL                       = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
             
         }
         
            PartialConfiguration OSInstall
         {
-            Description = 'Configuration for the Base OS'
-            ConfigurationSource = '[ConfigurationRepositoryWeb]CONTOSO-PullSrv'
-            RefreshMode = 'Pull'
+            Description                     = 'Configuration for the Base OS'
+            ConfigurationSource             = '[ConfigurationRepositoryWeb]CONTOSO-PullSrv'
+            RefreshMode                     = 'Pull'
         }
            PartialConfiguration SharePointConfig
         {
-            Description = 'Configuration for the Sharepoint Server'
-            ConfigurationSource = '[ConfigurationRepositoryWeb]CONTOSO-PullSrv'
-            DependsOn = '[PartialConfiguration]OSInstall'
-            RefreshMode = 'Pull'
+            Description                     = 'Configuration for the Sharepoint Server'
+            ConfigurationSource             = '[ConfigurationRepositoryWeb]CONTOSO-PullSrv'
+            DependsOn                       = '[PartialConfiguration]OSInstall'
+            RefreshMode                     = 'Pull'
         }
     }
 }
@@ -101,18 +143,78 @@ Sie können Teilkonfigurationen per Pull von mehreren Pullservern abrufen. Sie m
 
 Nach dem Erstellen der Metakonfiguration müssen Sie diese ausführen, um ein Konfigurationsdokument (eine MOF-Datei) zu erstellen. Rufen Sie anschließend [Set- DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621(v=wps.630).aspx) auf, um den LCM zu konfigurieren.
 
-### Benennen und Ablegen der Konfigurationsdokumente auf dem Pullserver
+### Benennen und Ablegen der Konfigurationsdokumente auf dem Pullserver (ConfigurationNames)
 
-Die Teilkonfigurationsdokumente müssen in dem Ordner abgelegt werden, der als **ConfigurationPath** in der Datei `web.config` für den Pullserver angegeben ist (meist `C:\Program Files\WindowsPowerShell\DscService\Configuration`). Die Konfigurationsdokumente müssen wie folgt heißen: _ConfigurationName_. _ConfigurationID_`.mof`, wobei _ConfigurationName_ der Name der Teilkonfiguration und _ConfigurationID_ die Konfigurations-ID ist, die im LCM auf dem Zielknoten definiert ist. In unserem Beispiel sollten die Konfigurationsdokumente wie folgt heißen.
-![PartialConfig-Namen auf Pullserver](images/PartialConfigPullServer.jpg)
+Die Teilkonfigurationsdokumente müssen in dem Ordner abgelegt werden, der als **ConfigurationPath** in der Datei `web.config` für den Pullserver angegeben ist (meist `C:\Program Files\WindowsPowerShell\DscService\Configuration`). Konfigurationsdokumente müssen wie folgt benannt werden: `ConfigurationName.mof`, wobei _ConfigurationName_ der Name der partiellen Konfiguration ist. In unserem Beispiel sollten die Konfigurationsdokumente wie folgt heißen:
+
+```
+OSInstall.mof
+OSInstall.mof.checksum
+SharePointConfig.mof
+SharePointConfig.mof.checksum
+```
+
+### Benennen und Ablegen der Konfigurationsdokumente auf dem Pullserver (ConfigurationID)
+
+Die Teilkonfigurationsdokumente müssen in dem Ordner abgelegt werden, der als **ConfigurationPath** in der Datei `web.config` für den Pullserver angegeben ist (meist `C:\Program Files\WindowsPowerShell\DscService\Configuration`). Die Konfigurationsdokumente müssen wie folgt heißen: _ConfigurationName_. _ConfigurationID_`.mof`, wobei _ConfigurationName_ der Name der Teilkonfiguration und _ConfigurationID_ die Konfigurations-ID ist, die im LCM auf dem Zielknoten definiert ist. In unserem Beispiel sollten die Konfigurationsdokumente wie folgt heißen:
+
+```
+OSInstall.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof
+OSInstall.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof.checksum
+SharePointConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof
+SharePointConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof.checksum
+```
+
 
 ### Ausführen von Teilkonfigurationen von einem Pullserver
 
-Nachdem der LCM auf dem Zielknoten konfiguriert wurde und die Konfigurationsdokumente auf dem Pullserver erstellt und ordnungsgemäß benannt wurden, ruft der Zielknoten die Teilkonfigurationen ab, kombiniert sie und wendet die resultierende Konfiguration in regelmäßigen Abständen entsprechend der Angabe der **RefreshFrequencyMins**-Eigenschaft des LCM an. Wenn Sie eine Aktualisierung erzwingen möchten, können Sie das Cmdlet „Update-DscConfiguration“ aufrufen, um die Konfigurationen per Pull abzurufen, und dann `Start-DSCConfiguration –UseExisting` aufrufen, um sie anzuwenden.
+Nachdem der LCM auf dem Zielknoten konfiguriert wurde und die Konfigurationsdokumente auf dem Pullserver erstellt und ordnungsgemäß benannt wurden, ruft der Zielknoten die Teilkonfigurationen ab, kombiniert sie und wendet die resultierende Konfiguration in regelmäßigen Abständen entsprechend der Angabe der **RefreshFrequencyMins**-Eigenschaft des LCM an. Wenn Sie eine Aktualisierung erzwingen möchten, können Sie das Cmdlet [Update-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143541.aspx) aufrufen, um die Konfigurationen per Pull abzurufen, und dann `Start-DSCConfiguration –UseExisting` aufrufen, um sie anzuwenden.
+
 
 ## Teilkonfigurationen im gemischten Push- und Pullmodus
 
 Sie können Push- und Pullmodus für Teilkonfigurationen auch mischen. Es ist also möglich, dass eine Teilkonfiguration per Pull von einem Pullserver abgerufen wird, während eine andere per Push übertragen wird. Behandeln Sie jede Teilkonfiguration abhängig von ihrem in den vorherigen Abschnitten beschriebenen Aktualisierungsmodus. In der folgenden Metakonfiguration wird z. B. dasselbe Beispiel beschrieben – mit der Teilkonfiguration für das Betriebssystem im Pullmodus und der Teilkonfiguration für SharePoint im Pushmodus.
+
+### Gemischte Push- und Pullmodi unter Verwendung von „ConfigurationNames“
+
+```powershell
+[DscLocalConfigurationManager()]
+Configuration PartialConfigDemoConfigNames
+{
+        Settings
+        {
+            RefreshFrequencyMins            = 30;
+            RefreshMode                     = "PULL";
+            ConfigurationMode               = "ApplyAndAutocorrect";
+            AllowModuleOverwrite            = $true;
+            RebootNodeIfNeeded              = $true;
+            ConfigurationModeFrequencyMins  = 60;
+        }
+        ConfigurationRepositoryWeb CONTOSO-PullSrv
+        {
+            ServerURL                       = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'    
+            RegistrationKey                 = 5b41f4e6-5e6d-45f5-8102-f2227468ef38     
+            ConfigurationNames              = @("OSInstall", "SharePointConfig")
+        }     
+        
+        PartialConfiguration OSInstall 
+        {
+            Description                     = "OSInstall"
+            ConfigurationSource             = @("[ConfigurationRepositoryWeb]CONTOSO-PullSrv")
+            RefreshMode                     = 'Pull' 
+        }
+ 
+        PartialConfiguration SharePointConfig
+        {
+            Description                     = "SharePointConfig"
+            DependsOn                       = '[PartialConfiguration]OSInstall'
+            RefreshMode                     = 'Push'
+        }
+   
+}
+``` 
+
+### Gemischte Push- und Pullmodi unter Verwendung von „ConfigurationID“
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -122,28 +224,28 @@ configuration PartialConfigDemo
     {
         Settings
         {
-            RefreshMode = 'Pull'
-            ConfigurationID = '1d545e3b-60c3-47a0-bf65-5afc05182fd0'
-            RefreshFrequencyMins = 30 
-            RebootNodeIfNeeded = $true
+            RefreshMode             = 'Pull'
+            ConfigurationID         = '1d545e3b-60c3-47a0-bf65-5afc05182fd0'
+            RefreshFrequencyMins    = 30 
+            RebootNodeIfNeeded      = $true
         }
         ConfigurationRepositoryWeb CONTOSO-PullSrv
         {
-            ServerURL = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
+            ServerURL               = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
             
         }
         
            PartialConfiguration OSInstall
         {
-            Description = 'Configuration for the Base OS'
-            ConfigurationSource = '[ConfigurationRepositoryWeb]CONTOSO-PullSrv'
-            RefreshMode = 'Pull'
+            Description             = 'Configuration for the Base OS'
+            ConfigurationSource     = '[ConfigurationRepositoryWeb]CONTOSO-PullSrv'
+            RefreshMode             = 'Pull'
         }
            PartialConfiguration SharePointConfig
         {
-            Description = 'Configuration for the Sharepoint Server'
-            DependsOn = '[PartialConfiguration]OSInstall'
-            RefreshMode = 'Push'
+            Description             = 'Configuration for the Sharepoint Server'
+            DependsOn               = '[PartialConfiguration]OSInstall'
+            RefreshMode             = 'Push'
         }
     }
 }
@@ -173,18 +275,18 @@ Configuration OSInstall
     {
         Group LocalAdmins
         {
-            GroupName = 'Administrators'
-            MembersToInclude = 'domain\sharepoint_svc',
-                               'admins@example.domain'
-            Ensure = 'Present'
-            Credential = $Credential
+            GroupName           = 'Administrators'
+            MembersToInclude    = 'domain\sharepoint_svc',
+                                  'admins@example.domain'
+            Ensure              = 'Present'
+            Credential          = $Credential
             
         }
 
         WindowsFeature Telnet
         {
-            Name = 'Telnet-Server'
-            Ensure = 'Absent'
+            Name                = 'Telnet-Server'
+            Ensure              = 'Absent'
         }
     }
 }
@@ -207,9 +309,9 @@ Configuration SharePointConfig
     {
         xSPInstall SharePointDefault
         {
-            Ensure = 'Present'
-            BinaryDir = '\\FileServer\Installers\Sharepoint\'
-            ProductKey = $ProductKey
+            Ensure      = 'Present'
+            BinaryDir   = '\\FileServer\Installers\Sharepoint\'
+            ProductKey  = $ProductKey
         }
     }
 }

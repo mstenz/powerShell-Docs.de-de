@@ -1,14 +1,17 @@
 ---
-title: Ausführen von Remotebefehlen
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
+title:  Ausführen von Remotebefehlen
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
 ---
+
 # Ausführen von Remotebefehlen
-Mit einem einzigen Windows PowerShell-Befehl können Sie Befehle auf einem oder Hunderten von Computern ausführen. Windows PowerShell unterstützt das Remotecomputing mithilfe verschiedener Technologien, unter anderem WMI, RPC und WS-Management.
+Mit einem einzigen Windows PowerShell-Befehl können Sie Befehle auf einem oder Hunderten von Computern ausführen. Windows PowerShell unterstützt das Remotecomputing mithilfe verschiedener Technologien, unter anderem WMI, RPC und WS\-Management.
 
 ## Remoting ohne Konfiguration
 Viele Windows PowerShell-Cmdlets verfügen über einen „ComputerName“-Parameter, mit dem Sie Daten auf einem oder mehreren Remotecomputern sammeln und Einstellungsänderungen vornehmen können. Sie verwenden eine Vielzahl von Kommunikationstechnologien und viele arbeiten ohne besondere Konfiguration unter allen Windows-Betriebssystemen, die Windows PowerShell unterstützen.
@@ -42,12 +45,11 @@ get-command | where { $_.parameters.keys -contains "ComputerName" -and $_.parame
 ```
 
 ## Windows PowerShell-Remoting
-Mit dem Windows PowerShell-Remoting, bei dem das WS-Verwaltungsprotokoll verwendet wird, können Sie jeden Windows PowerShell-Befehl auf einem oder mehreren Remotecomputern ausführen. Sie können dauerhafte Verbindungen herstellen, interaktive 1:1-Sitzungen 1:1 starten und Skripts auf mehreren Computern ausführen.
+Mit dem Windows PowerShell-Remoting, bei dem das WS\-Management-Protokoll verwendet wird, können Sie jeden Windows PowerShell-Befehl auf einem oder mehreren Remotecomputern ausführen. Sie können dauerhafte Verbindungen herstellen, interaktive 1:1-Sitzungen 1:1 starten und Skripts auf mehreren Computern ausführen.
 
 Um Windows PowerShell-Remoting zu verwenden, muss der Remotecomputer für die Remoteverwaltung konfiguriert sein. Weitere Informationen und Anweisungen hierzu finden Sie unter [Informationen zu Remoteanforderungen](https://technet.microsoft.com/en-us/library/dd315349.aspx).
 
-Nachdem Sie Windows PowerShell-Remoting konfiguriert haben, stehen Ihnen viele Remotingstrategien zur Verfügung. Im weiteren Verlauf dieses Dokuments sind einige davon aufgelistet. Weitere Informationen finden Sie unter [Informationen zu Remote](https://technet.microsoft.com/en-us/library/dd347744.aspx) und 
-[Häufig gestellte Fragen zu Remote](https://technet.microsoft.com/en-us/library/dd347744.aspx).
+Nachdem Sie Windows PowerShell-Remoting konfiguriert haben, stehen Ihnen viele Remotingstrategien zur Verfügung. Im weiteren Verlauf dieses Dokuments sind einige davon aufgelistet. Weitere Informationen finden Sie unter [about_Remote](https://technet.microsoft.com/en-us/library/dd347744.aspx) und [about_Remote_FAQ](https://technet.microsoft.com/en-us/library/dd347744.aspx).
 
 ### Starten einer interaktiven Sitzung
 Um eine interaktive Sitzung mit einem einzelnen Remotecomputer zu starten, verwenden Sie das Cmdlet [Enter-PSSession](https://technet.microsoft.com/en-us/library/dd315384.aspx). Um beispielsweise eine interaktive Sitzung mit dem Remotecomputer „Server01“ zu starten, geben Sie Folgendes ein:
@@ -64,12 +66,11 @@ Um die interaktive Sitzung zu beenden, geben Sie Folgendes ein:
 exit-pssession
 ```
 
-Weitere Informationen über die Cmdlets „Enter-PSSession“ und „Exit-PSSession“ finden Sie unter [Enter-PSSession](https://technet.microsoft.com/en-us/library/dd315384.aspx) 
-und [Exit-PSSession](https://technet.microsoft.com/en-us/library/dd315322.aspx).
+Weitere Informationen zu den Cmdlets „Enter\-PSSession“ und „Exit\-PSSession“ finden Sie unter [Enter-PSSession](https://technet.microsoft.com/en-us/library/dd315384.aspx) und [Exit-PSSession](https://technet.microsoft.com/en-us/library/dd315322.aspx).
 
 ### Ausführen eines Remotebefehls
 Zum Ausführen eines Befehls auf einem oder mehreren Remotecomputern verwenden Sie das Cmdlet [Invoke-Command](https://technet.microsoft.com/en-us/library/dd347578.aspx).
- Um beispielsweise einen [Get-UICulture](https://technet.microsoft.com/en-us/library/dd347742.aspx)-Befehl auf den Remotecomputern „Server01“ und „Server02“ auszuführen, geben Sie Folgendes ein:
+Um beispielsweise einen [Get-UICulture](https://technet.microsoft.com/en-us/library/dd347742.aspx)-Befehl auf den Remotecomputern „Server01“ und „Server02“ auszuführen, geben Sie Folgendes ein:
 
 ```
 invoke-command -computername Server01, Server02 {get-UICulture}
@@ -84,10 +85,10 @@ LCID    Name     DisplayName               PSComputerName
 1033    en-US    English (United States)   server02.corp.fabrikam.com
 ```
 
-Weitere Informationen zum Cmdlet „Invoke-Command“ finden Sie unter [Invoke-Command](https://technet.microsoft.com/en-us/library/22fd98ba-1874-492e-95a5-c069467b8462).
+Weitere Informationen zum Cmdlet „Invoke\-Command“ finden Sie unter [Invoke-Command](https://technet.microsoft.com/en-us/library/22fd98ba-1874-492e-95a5-c069467b8462).
 
 ### Ausführen eines Skripts
-Zum Ausführen eines Skripts auf einem oder mehreren Remotecomputern verwenden Sie den Parameter „FilePath“ des Cmdlets „Invoke-Command“. Das Skript muss sich auf dem lokalen Computer befinden oder für diesen verfügbar sein. Die Ergebnisse werden an den lokalen Computer zurückgegeben.
+Zum Ausführen eines Skripts auf einem oder mehreren Remotecomputern verwenden Sie den Parameter „FilePath“ des Cmdlets „Invoke\-Command“. Das Skript muss sich auf dem lokalen Computer befinden oder für diesen verfügbar sein. Die Ergebnisse werden an den lokalen Computer zurückgegeben.
 
 Der folgende Befehl führt beispielsweise das Skript „DiskCollect.ps1“ auf den Remotecomputern „Server01“ und „Server02“ aus.
 
@@ -95,10 +96,10 @@ Der folgende Befehl führt beispielsweise das Skript „DiskCollect.ps1“ auf d
 invoke-command -computername Server01, Server02 -filepath c:\Scripts\DiskCollect.ps1
 ```
 
-Weitere Informationen zum Cmdlet „Invoke-Command“ finden Sie unter [Invoke-Command](https://technet.microsoft.com/en-us/library/dd347578.aspx).
+Weitere Informationen zum Cmdlet „Invoke\-Command“ finden Sie unter [Invoke-Command](https://technet.microsoft.com/en-us/library/dd347578.aspx).
 
 ### Herstellen einer dauerhaften Verbindung
-Um eine Reihe verwandter Befehle auszuführen, die Daten gemeinsam nutzen, erstellen Sie eine Sitzung auf dem Remotecomputer, und verwenden Sie dann das Cmdlet „Invoke-Command“ zum Ausführen der Befehle in der Sitzung, die Sie erstellen. Um eine Remotesitzung zu erstellen, verwenden Sie das Cmdlet „New-PSSession“.
+Um eine Reihe verwandter Befehle auszuführen, die Daten gemeinsam nutzen, erstellen Sie eine Sitzung auf dem Remotecomputer, und verwenden Sie dann das Cmdlet „Invoke\-Command“ zum Ausführen der Befehle in der Sitzung, die Sie erstellen. Um eine Remotesitzung zu erstellen, verwenden Sie das Cmdlet „New\-PSSession“.
 
 Mit dem folgenden Befehl erstellen Sie z. B. eine Remotesitzung auf dem Computer "Server01" und eine weitere Remotesitzung auf dem Computer "Server02". Es speichert die Sitzungsobjekte in der Variablen „$s“.
 
@@ -108,7 +109,7 @@ $s = new-pssession -computername Server01, Server02
 
 Nachdem die Sitzungen nun hergestellt sind, können Sie jeden beliebigen Befehl in diesen ausführen. Und da die Sitzungen dauerhaft sind, können Sie Daten in einem Befehl sammeln und diese in einem nachfolgenden Befehl verwenden.
 
-Beispielsweise führt der folgende Befehl einen „Get-Hotfix“-Befehl in den Sitzungen in der Variablen „$s“ aus und speichert die Ergebnisse dann in der Variablen „$h“. Die Variable „$h“ wird in jeder der Sitzungen in „$s“ erstellt, ist jedoch in der lokalen Sitzung nicht vorhanden.
+Beispielsweise führt der folgende Befehl einen „Get\-Hotfix“-Befehl in den Sitzungen in der Variablen „$s“ aus und speichert die Ergebnisse dann in der Variablen „$h“. Die Variable „$h“ wird in jeder der Sitzungen in „$s“ erstellt, ist jedoch in der lokalen Sitzung nicht vorhanden.
 
 ```
 invoke-command -session $s {$h = get-hotfix}
@@ -117,15 +118,14 @@ invoke-command -session $s {$h = get-hotfix}
 Sie können die Daten in der Variablen „$h“ jetzt in nachfolgenden Befehle verwenden, wie z. B. dem folgenden. Die Ergebnisse werden auf dem lokalen Computer angezeigt.
 
 ```
-invoke-command -session $s {$h | where {$_.installedby -ne "NTAUTHORITY\SYSTEM"
+invoke-command -session $s {$h | where {$_.installedby -ne "NTAUTHORITY\SYSTEM"} }
 ```
 
 ### Erweitertes Remoting
 Dies sind nur die grundlegenden Möglichkeiten, die die Remoteverwaltung von Windows PowerShell bietet. Mithilfe von Cmdlets, die mit Windows PowerShell installiert werden, können Sie Remotesitzungen sowohl von lokaler Seite als auch von Remoteseite aus einrichten und konfigurieren, angepasste und eingeschränkte Sitzungen erstellen, Benutzern über eine Remotesitzung den Import von Befehlen ermöglichen, die tatsächlich implizit in der Remotesitzung ausgeführt werden, die Sicherheit einer Remotesitzung konfigurieren und vieles mehr.
 
 Um die Remotekonfiguration zu vereinfachen, umfasst Windows PowerShell einen WSMan-Anbieter. Das vom Anbieter erstellte Laufwerk „WSMAN:“ ermöglicht Ihnen, durch eine Hierarchie von Konfigurationseinstellungen auf dem lokalen Computer und den Remotecomputern zu navigieren.
- Weitere Informationen zum WSMan-Anbieter finden Sie unter [WSMan-Anbieter](https://technet.microsoft.com/en-us/library/dd819476.aspx) und
-  [Informationen zu WS-Management-Cmdlets](https://technet.microsoft.com/en-us/library/dd819481.aspx), oder wenn Sie in der Windows PowerShell-Konsol „get-help wsman“ eingeben.
+Weitere Informationen zum WSMan-Anbieter finden Sie unter [WS-Management-Anbieter](https://technet.microsoft.com/en-us/library/dd819476.aspx) und   [Informationen zu WS-Management- Cmdlets](https://technet.microsoft.com/en-us/library/dd819481.aspx). Alternativ geben Sie in der Windows PowerShell-Konsole „get\-help wsman“ ein.
 
 Weitere Informationen finden Sie unter:
 - [About Remote FAQ](https://technet.microsoft.com/en-us/library/dd315359.aspx)
@@ -149,6 +149,6 @@ Hilfe zu Remotingfehlern finden Sie unter [about_Remote_Troubleshooting](https:/
 
 
 
-<!--HONumber=Apr16_HO2-->
+<!--HONumber=May16_HO4-->
 
 
