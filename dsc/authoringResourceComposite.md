@@ -1,3 +1,8 @@
+---
+title: Zusammengesetzte Ressourcen: Verwenden einer DSC-Konfiguration als Ressource ms.date: 2016-05-16 keywords: PowerShell, DSC description:  
+ms.topic: Artikel author: eslesar manager: dongill ms.prod: PowerShell
+---
+
 # Zusammengesetzte Ressourcen: Verwenden einer DSC-Konfiguration als Ressource
 
 > Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
@@ -134,7 +139,7 @@ Wenn Sie fertig sind, sollte die Ordnerstruktur wie folgt aussehen:
 $env: psmodulepath
     |- MyDscResources
            MyDscResources.psd1
-        |- DSC Resources
+        |- DSCResources
             |- xVirtualMachine
                 |- xVirtualMachine.psd1
                 |- xVirtualMachine.schema.psm1
@@ -180,5 +185,10 @@ configuration RenameVM
 ## Weitere Informationen
 ### Konzepte
 * [Schreiben einer benutzerdefinierten DSC-Ressource mit MOF](authoringResourceMOF.md)
-* [Erste Schritte mit Windows PowerShell Desired State Configuration (DSC)](overview.md)
-<!--HONumber=Feb16_HO4-->
+* [Erste Schritte mit Windows PowerShell DSC (Desired State Configuration)](overview.md)
+
+
+
+<!--HONumber=Jun16_HO1-->
+
+
