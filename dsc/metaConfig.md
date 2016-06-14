@@ -42,7 +42,7 @@ configuration LCMConfig
 } 
 ```
 
-Für die Erstellung der MOF-Konfigurationsdatei können Sie die Konfiguration wie eine normale Konfiguration aufrufen und starten. Weitere Informationen zum Erstellen der MOF-Konfigurationsdatei finden Sie unter [Kompilieren der Konfiguration](configurations#compiling-the-configuration). Im Gegensatz zu normalen Konfigurationen wird eine LCM-Konfiguration nicht durch Aufrufen des Cmdlets [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) angewendet. Stattdessen rufen Sie das Cmdlet [Set-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx) auf und geben dabei den Pfad zur MOF-Konfigurationsdatei als Parameter an. Nach dem Anwenden der Konfiguration können Sie die Eigenschaften des LCM durch Aufrufen des Cmdlets [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) anzeigen.
+Für die Erstellung der MOF-Konfigurationsdatei können Sie die Konfiguration wie eine normale Konfiguration aufrufen und ausführen. Weitere Informationen zum Erstellen der MOF-Konfigurationsdatei finden Sie unter [Kompilieren der Konfiguration](configurations.md#compiling-the-configuration). Im Gegensatz zu normalen Konfigurationen wird eine LCM-Konfiguration nicht durch Aufrufen des Cmdlets [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) angewendet. Stattdessen rufen Sie das Cmdlet [Set-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx) auf und geben dabei den Pfad zur MOF-Konfigurationsdatei als Parameter an. Nach dem Anwenden der Konfiguration können Sie die Eigenschaften des LCM durch Aufrufen des Cmdlets [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) anzeigen.
 
 Eine LCM-Konfiguration kann nur Blöcke für eine begrenzte Menge von Ressourcen enthalten. Im vorherigen Beispiel ist **Settings** die einzige aufgerufene Ressource. Es folgen die anderen verfügbaren Ressourcen:
 
@@ -162,6 +162,6 @@ Zum Definieren von Teilkonfigurationen erstellen Sie einen **PartialConfiguratio
 
 
 
-<!--HONumber=May16_HO3-->
+<!--HONumber=Jun16_HO1-->
 
 
