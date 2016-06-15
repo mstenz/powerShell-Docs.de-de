@@ -1,12 +1,15 @@
 ---
-title: PSWorkflow-Modul
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 117316fe-2f82-4fc9-b5dc-794ae9e3f258
+title:  PSWorkflow-Modul
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  117316fe-2f82-4fc9-b5dc-794ae9e3f258
 ---
+
 # PSWorkflow-Modul
 Dieser Abschnitt enthält die Hilfethemen für das **PSWorkflow**-Modul, das Cmdlets enthält, die die Windows PowerShell-Workflowfunktion unterstützen. Das **PSWorkflow**-Modul wird mit Windows PowerShell installiert.
 
@@ -37,10 +40,10 @@ Dieser Abschnitt enthält die Hilfethemen für das **PSWorkflow**-Modul, das Cmd
 
 ## Weitere Informationen
 [Erste Schritte mit dem Windows PowerShell-Workflow](http://go.microsoft.com/fwlink/?LinkID=252592)
-[Schreiben Sie einen Windows PowerShell-Workflow](https://technet.microsoft.com/en-us/library/2551ceed-836f-4275-9fc0-ea68446d6a35)
-[Windows PowerShell 5.0](../core-modules/Windows-PowerShell-5.0.md)
+[Writing a Windows PowerShell Workflow(Schreiben eines Windows PowerShell-Workflows)](https://technet.microsoft.com/en-us/library/2551ceed-836f-4275-9fc0-ea68446d6a35)
+[Windows PowerShell 5.0](../core-modules/Windows-PowerShell-5.0.md)
 [Konzeptionelle Hilfethemen für Windows PowerShell Core](../core-modules/Windows-PowerShell-Core-About-Topics.md)
-[Verwalten mit Windows PowerShell](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
+[Skripterstellung mit Windows PowerShell](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
 
 
 

@@ -1,12 +1,15 @@
 ---
-title: Windows PowerShell Integrated Scripting Environment (ISE)
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
+title:  Windows PowerShell Integrated Scripting Environment  ISE 
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  f156b92d-0203-46d2-89c7-b4989d32e3d2
 ---
+
 # Windows PowerShell Integrated Scripting Environment (ISE)
 Die Windows PowerShell Integrated Scripting Environment (ISE) ist einer von zwei Hosts des Moduls und der Sprache von Windows PowerShell. Sie ermöglicht Ihnen, Skripts auf eine Weise zu schreiben, auszuführen und zu testen, die in der Windows PowerShell-Konsole nicht verfügbar ist. Diese ISE bietet zusätzlich Syntaxfarben, Vervollständigung mit der TAB-TASTE, IntelliSense, visuelles Debuggen und kontextbezogene Hilfe.
 
@@ -46,7 +49,7 @@ Die **Liste „Zuletzt verwendet“** ist jetzt Teil des Menüs „Datei öffnen
 
 -   **Umfassende Funktionen zum Kopieren und Einfügen von Text**. Wenn Sie Code aus der ISE in die Zwischenablage kopieren, werden die Schriftart-, Größen und Farbinformationen des markierten Texts eingeschlossen.
 
--   **Blockauswahl**. Sie können einen Textblock auswählen, indem Sie die ALT-TASTE gedrückt halten, während Sie den Text im Skriptbereich mit der Maus auswählen, oder **ALT+UMSCHALT+NACH-OBEN/NACH-UNTEN** verwenden..
+-   **Blockauswahl**. Sie können einen Textblock auswählen, indem Sie die ALT-TASTE gedrückt halten, während Sie den Text im Skriptbereich mit der Maus auswählen, oder **ALT+UMSCHALT+NACH-OBEN/NACH-UNTEN** verwenden.
 
 ### In PowerShell 2.0 hinzugefügt (Windows Server 2008 R2, Windows 7)
 Die ISE wurde mit PowerShell 2.0 eingeführt.
@@ -54,8 +57,7 @@ Die ISE wurde mit PowerShell 2.0 eingeführt.
 ## Anforderungen für die Ausführung der Windows PowerShell ISE
 Die ISE ist auf allen Computern verfügbar, auf denen Windows PowerShell 2.0 oder höher ausgeführt werden kann. Alle Versionen von Windows und Windows Server enthalten eine Version von Windows PowerShell und der ISE. Durch die Installation von Windows Management Framework können Sie jedoch ein Upgrade auf die neueste verfügbare Version vornehmen. Führen Sie diese Suche durch, um die neueste verfügbare Version zu finden: [Downloads](http://www.microsoft.com/en-us/search/DownloadResults.aspx?q=%22windows%20management%20framework%22%20PowerShell&sortby=Relevancy~Descending). Beachten Sie, dass alle Einträge mit der Bezeichnung „Preview“ zu einer Vorabversion des Codes gehören und die Features nicht vollständig sind.
 
-> [!NOTE]
-> Da die Windows PowerShell ISE eine grafische Benutzeroberfläche erfordert, können Sie sie nicht mit der Server Core-Option von Windows Server ausführen.
+> [!NOTE] Da die Windows PowerShell ISE eine grafische Benutzeroberfläche erfordert, können Sie sie nicht mit der Server Core-Option von Windows Server ausführen.
 
 ## <a name="BKMK_LINKS"></a>Siehe auch
 [Verwenden der Windows PowerShell Integrated Scripting Environment (ISE)](http://technet.microsoft.com/library/cc732148.aspx)

@@ -1,3 +1,14 @@
+---
+title:  Deinstallieren von Windows PowerShell Web Access
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+---
+
 #  Deinstallieren von Windows PowerShell Web Access
 
 Aktualisiert: 24. Juni 2013
@@ -10,7 +21,7 @@ Führen Sie die Schritte in diesem Thema aus, um die Windows PowerShell Web Acce
 
 ------------------------------------------------------------------------
 
-Führen Sie vor dem Deinstallieren von Windows PowerShell Web Access vom Gatewayserver entweder das Cmdlet <span class="code">Uninstall-PswaWebApplication</span> aus, um die Website und die Windows PowerShell Web Access-Webanwendungen zu entfernen, oder verwenden Sie das IIS-Manager-Verfahren unter [So löschen Sie die Windows PowerShell Web Access-Website und -Webanwendungen mit IIS Manager](#BKMK_delsite)..
+Führen Sie vor dem Deinstallieren von Windows PowerShell Web Access vom Gatewayserver entweder das Cmdlet <span class="code">Uninstall-PswaWebApplication</span> aus, um die Website und die Windows PowerShell Web Access-Webanwendungen zu entfernen, oder verwenden Sie das IIS-Manager-Verfahren unter [So löschen Sie die Windows PowerShell Web Access-Website und -Webanwendungen mit IIS Manager](#BKMK_delsite).
 
 Bei der Deinstallation von Windows PowerShell Web Access werden IIS oder andere Features, die automatisch installiert wurden, nicht deinstalliert, weil diese von Windows PowerShell Web Access zur Ausführung benötigt werden. Beim Deinstallationsvorgang bleiben die Features unangetastet, mit denen für Windows PowerShell Web Access eine Abhängigkeit besteht. Sie können diese Features bei Bedarf separat deinstallieren.
 
@@ -35,9 +46,9 @@ Wenn Sie Ihre eigenen, benutzerdefinierten Websitenamen angegeben haben, fügen 
 
     -   Klicken Sie auf dem Windows-Desktop mit der rechten Maustaste auf der Taskleiste auf **Windows PowerShell**.
 
-    -   Klicken Sie auf der Windows-Startseite** **auf **Windows PowerShell**..
+    -   Klicken Sie auf der Windows-Startseite** **auf **Windows PowerShell**.
 
-2.  Geben Sie **Uninstall-PswaWebApplication** ein, und drücken Sie dann die **EINGABETASTE**..
+2.  Geben Sie **Uninstall-PswaWebApplication** ein, und drücken Sie dann die **EINGABETASTE**.
 
 3.  Fügen Sie dem Cmdlet den <span class="code">DeleteTestCertificate</span>-Parameter hinzu, falls Sie ein Testzertifikat verwenden. Dies ist im folgenden Beispiel dargestellt.
 
@@ -55,9 +66,9 @@ Wenn Sie Ihre eigenen, benutzerdefinierten Websitenamen angegeben haben, fügen 
 
 1.  Öffnen Sie eine Windows PowerShell-Sitzung mit erhöhten Benutzerrechten, indem Sie einen der folgenden Schritte durchführen. Wenn bereits eine Sitzung geöffnet ist, fahren Sie mit dem nächsten Schritt fort.
 
-    -   Klicken Sie auf dem Windows-Desktop auf der Taskleiste mit der rechten Maustaste auf **Windows PowerShell**, und klicken Sie dann auf **Als Administrator ausführen**..
+    -   Klicken Sie auf dem Windows-Desktop mit der rechten Maustaste in der Taskleiste auf **Windows PowerShell** und anschließend auf **Als Administrator ausführen**.
 
-    -   Klicken Sie auf der Windows-Startseite** **mit der rechten Maustaste auf **Windows PowerShell**, und klicken Sie dann auf **Als Administrator ausführen**..
+    -   Klicken Sie auf dem Windows-**Startbildschirm** mit der rechten Maustaste auf **Windows PowerShell**, und klicken Sie anschließend auf **Als Administrator ausführen**.
 
 2.  Geben Sie Folgendes ein, und drücken Sie dann die **EINGABETASTE**, wobei *computer_name* für einen Remoteserver steht, von dem Sie Windows PowerShell Web Access entfernen möchten. Mit dem Parameter <span class="code">–Restart</span> werden Zielserver automatisch neu gestartet, falls dies für die Entfernung erforderlich ist.
 
@@ -90,15 +101,15 @@ Mit den in diesem Abschnitt beschriebenen Verfahren können Sie die Windows Powe
 
 1.  Öffnen Sie die IIS-Manager-Konsole, indem Sie eine der folgenden Aktionen ausführen: Wenn die Konsole bereits geöffnet ist, fahren Sie mit dem nächsten Schritt fort.
 
-    -   Starten Sie auf dem Windows-Desktop den Server-Manager, indem Sie in der Windows-Taskleiste auf **Server-Manager** klicken. Klicken Sie im Menü **Tools** im Server-Manager auf **Internetinformationsdienste-Manager (IIS)**..
+    -   Starten Sie auf dem Windows-Desktop den Server-Manager, indem Sie in der Windows-Taskleiste auf **Server-Manager** klicken. Klicken Sie im Menü **Tools** im Server-Manager auf **Internetinformationsdienste-Manager (IIS)**.
 
-    -   Geben Sie auf der Windows-**Startseite** einen beliebigen Teil des Namens **Internetinformationsdienste-Manager (IIS)** ein. Klicken Sie auf die Verknüpfung, wenn diese in den Ergebnissen unter **Apps** angezeigt wird.
+    -   Geben Sie auf dem Windows-**Startbildschirm** einen beliebigen Teil des Namens **Internetinformationsdienste-Manager (IIS)** ein. Klicken Sie auf die Verknüpfung, wenn diese in den Ergebnissen unter **Apps** angezeigt wird.
 
 2.  Wählen Sie im IIS-Manager-Strukturbereich die Website aus, auf der die Windows PowerShell Web Access-Webanwendung ausgeführt wird.
 
-3.  Klicken Sie im **Aktionsbereich** unter **Website verwalten** auf **Beenden**..
+3.  Klicken Sie im **Aktionsbereich** unter **Website verwalten** auf **Beenden**.
 
-4.  Klicken Sie im Strukturbereich mit der rechten Maustaste auf die Webanwendung der Website, von der die Windows PowerShell Web Access-Webanwendung ausgeführt wird, und klicken Sie dann auf **Entfernen**..
+4.  Klicken Sie im Strukturbereich mit der rechten Maustaste auf die Webanwendung der Website, von der die Windows PowerShell Web Access-Webanwendung ausgeführt wird, und klicken Sie dann auf **Entfernen**.
 
 5.  Wählen Sie im Strukturbereich die Option **Anwendungspools** und dann den Windows PowerShell Web Access-Anwendungsordner aus, klicken Sie im **Aktionsbereich** auf **Beenden**, und klicken Sie im Inhaltsbereich dann auf **Entfernen**.
 
@@ -132,17 +143,17 @@ Mit den in diesem Abschnitt beschriebenen Verfahren können Sie die Windows Powe
 
     -   Starten Sie auf dem Windows-Desktop den Server-Manager, indem Sie in der Windows-Taskleiste auf **Server-Manager** klicken.
 
-    -   Klicken Sie auf der Windows-Startseite** **auf **Server-Manager**..
+    -   Klicken Sie auf der Windows-Startseite** **auf **Server-Manager**.
 
-2.  Klicken Sie im Menü **Verwalten** auf **Rollen und Funktionen entfernen**..
+2.  Klicken Sie im Menü **Verwalten** auf **Rollen und Funktionen entfernen**.
 
-3.  Wählen Sie auf der Seite **Zielserver auswählen** den Server oder die Offline-VHD aus, von dem bzw. der Sie das Feature entfernen möchten. Um eine Offline-VHD auszuwählen, müssen Sie zuerst den Server auswählen, auf dem die VHD eingebunden werden soll. Wählen Sie anschließend die VHD-Datei aus. Klicken Sie nach dem Auswählen des Zielservers auf **Weiter**..
+3.  Wählen Sie auf der Seite **Zielserver auswählen** den Server oder die Offline-VHD aus, von dem bzw. der Sie das Feature entfernen möchten. Um eine Offline-VHD auszuwählen, müssen Sie zuerst den Server auswählen, auf dem die VHD eingebunden werden soll. Wählen Sie anschließend die VHD-Datei aus. Klicken Sie nach dem Auswählen des Zielservers auf **Weiter**.
 
 4.  Klicken Sie erneut auf **Weiter**, um auf die Seite **Features entfernen** zu wechseln.
 
-5.  Deaktivieren Sie das Kontrollkästchen unter **Windows PowerShell Web Access**, und klicken Sie auf **Weiter**..
+5.  Deaktivieren Sie das Kontrollkästchen unter **Windows PowerShell Web Access**, und klicken Sie auf **Weiter**.
 
-6.  Klicken Sie auf der Seite **Entfernungsauswahl bestätigen** auf **Entfernen**..
+6.  Klicken Sie auf der Seite **Entfernungsauswahl bestätigen** auf **Entfernen**.
 
 <a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Weitere Informationen</span></a>
 <a href="/en-us/library/dn282396(v=ws.11).aspx#Anchor_3" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
@@ -152,17 +163,14 @@ Mit den in diesem Abschnitt beschriebenen Verfahren können Sie die Windows Powe
 [Installieren und Verwenden von Windows PowerShell Web Access](https://technet.microsoft.com/en-us/library/hh831611(v=ws.11).aspx)
 [Hilfe zum IIS-Manager 7.0](https://technet.microsoft.com/library/cc732664.aspx)
 
-<span>Anzeigen:</span> Geerbt Geschützt
+<span>Show:</span> Inherited Protected
 
 <span class="stdr-votetitle">War diese Seite hilfreich?</span>
-Ja
-Nein
+Ja Nein
 
 Zusätzliches Feedback?
 
-<span class="stdr-count"><span class="stdr-charcnt">1500</span> verbleibende Zeichen</span>
-Senden
-Diesen Schritt überspringen
+<span class="stdr-count"><span class="stdr-charcnt">1500</span> verbleibende Zeichen</span> Senden Diesen Schritt überspringen
 
 <span class="stdr-thankyou">Vielen Dank!</span> <span class="stdr-appreciate">Wir schätzen Ihr Feedback.</span>
 
@@ -170,8 +178,7 @@ Diesen Schritt überspringen
 
 |
 
-<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span> Feedback zur Website</a>
-Feedback zur Website
+<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span> Feedback zur Website</a> Feedback zur Website
 
 <a href="javascript:void(0)" id="SiteFeedbackLinkCloser">x</a>
 
@@ -202,8 +209,9 @@ Erzählen Sie uns mehr
 
 © 2016 Microsoft
 
-Die Lizenz für Drittanbieterskripts oder Code, die mit dieser Website verlinkt oder über Verweise verbunden sind, wird Ihnen von den Codeeigentümern erteilt, nicht von Microsoft. Die ASP.NET Ajax CDN Nutzungsbedingungen finden Sie unter http://www.asp.net/ajaxlibrary/CDN.ashx.
+Die Lizenz für Drittanbieterskripts oder Code, die mit dieser Website verlinkt oder über Verweise verbunden sind, wird Ihnen von den Codeeigentümern erteilt, nicht von Microsoft. Die ASP.NET Ajax CDN-Nutzungsbedingungen finden Sie unter http://www.asp.net/ajaxlibrary/CDN.ashx.
 <img src="https://m.webtrends.com/dcsjwb9vb00000c932fd0rjc7_5p3t/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" alt="DCSIMG" id="Img1" width="1" height="1" />
+
 
 
 <!--HONumber=May16_HO2-->

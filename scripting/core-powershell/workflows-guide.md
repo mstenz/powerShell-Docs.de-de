@@ -1,3 +1,14 @@
+---
+title:  Workflows-Handbuch
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+---
+
 # PSWorkflow-Modul
 Dieser Abschnitt enthält die Hilfethemen für das **PSWorkflow**-Modul, das Cmdlets enthält, die die Windows PowerShell-Workflowfunktion unterstützen. Das **PSWorkflow**-Modul wird mit Windows PowerShell installiert.
 
@@ -25,6 +36,7 @@ Dieser Abschnitt enthält die Hilfethemen für das **PSWorkflow**-Modul, das Cmd
 [Informationen über_Suspend-Workflow](https://technet.microsoft.com/en-us/library/be2ded75-1eca-493e-96c1-758f92b5f199)
 
 [PowerShell-Workflow-Hilfsprogramm-Cmdlets](https://technet.microsoft.com/en-us/library/a5a32019-0d68-4041-935f-1b1cacaf6d3d)
+
 
 
 <!--HONumber=May16_HO2-->

@@ -1,12 +1,15 @@
 ---
-title: Windows PowerShell-Systemanforderungen
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
+title:  Windows PowerShell-Systemanforderungen
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
 ---
+
 # Windows PowerShell-Systemanforderungen
 In diesem Thema werden die Systemanforderungen für Windows PowerShell 3.0 und Windows PowerShell 4.0 sowie für besondere Features wie Windows PowerShell Integrated Scripting Environment (ISE), CIM-Befehle und Workflows aufgeführt.
 
@@ -74,7 +77,7 @@ Allerdings erfordern einige Elemente, wie z. B. die folgenden, eine grafische Be
 
     1.  **ShowWindow**-Parameter des Cmdlets [Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a).
 
-    2.  **ShowSecurityDescriptorUi**-Parameter der Cmdlets [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) und [Set-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/b21fbad3-1759-4260-b206-dcb8431cd6ea).
+    2.  **ShowSecurityDescriptorUI**-Parameter der Cmdlets [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) und [Set-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/b21fbad3-1759-4260-b206-dcb8431cd6ea).
 
 ## Anforderungen an das Windows PowerShell-Modul
 Windows PowerShell 4.0 ist mit Windows PowerShell 3.0 und Windows PowerShell 2.0 abwärtskompatibel. Cmdlets, Anbieter, Snap-Ins, Module und Skripts, die für Windows PowerShell 2.0 und Windows PowerShell 3.0 geschrieben wurden, können unverändert in Windows PowerShell 4.0 ausgeführt werden.
@@ -83,7 +86,7 @@ Doch aufgrund einer Änderung der Richtlinie für die Laufzeitaktivierung in Mic
 
 Windows PowerShell 2.0 Engine erfordert mindestens Microsoft .NET Framework 2.0.50727. Diese Anforderung wird durch Microsoft .NET Framework 3.5 Service Pack 1 erfüllt. Diese Anforderung wird nicht durch Microsoft .NET Framework 4 und höhere Versionen von Microsoft .NET Framework erfüllt.
 
-Informationen zum Hinzufügen oder Installieren von Windows PowerShell 2.0 Engine sowie zum Hinzufügen oder Installieren der erforderlichen Versionen von Microsoft .NET Framework finden Sie unter [Installieren des Windows PowerShell 2.0-Moduls](Installing-the-Windows-PowerShell-2.0-Engine.md). Informationen zum Starten von Windows PowerShell 2.0 Engine finden Sie unter [Starten des Windows PowerShell 2.0-Moduls](Starting-the-Windows-PowerShell-2.0-Engine.md)..
+Informationen zum Hinzufügen oder Installieren von Windows PowerShell 2.0 Engine sowie zum Hinzufügen oder Installieren der erforderlichen Versionen von Microsoft .NET Framework finden Sie unter [Installieren des Windows PowerShell 2.0-Moduls](Installing-the-Windows-PowerShell-2.0-Engine.md). Informationen zum Starten von Windows PowerShell 2.0 Engine finden Sie unter [Starten des Windows PowerShell 2.0-Moduls](Starting-the-Windows-PowerShell-2.0-Engine.md).
 
 ## Windows Preinstallation Environment
 Windows PowerShell 2.0, Windows PowerShell 3.0 und Windows PowerShell 4.0 werden in Windows Preinstallation Environment (Windows PE) ausgeführt. Die folgenden Cmdlets werden jedoch nicht unterstützt.
@@ -92,18 +95,20 @@ Windows PowerShell 2.0, Windows PowerShell 3.0 und Windows PowerShell 4.0 werden
 
 -   [Get-EventLog](https://technet.microsoft.com/en-us/library/b4985b11-82bf-487d-928d-becd96fc0419)
 
--   [Get-WinEvent[PSITPro5_Diagnostic]](https://technet.microsoft.com/en-us/library/5fe94870-ed6b-4ce2-9500-93846cc65c95)
+-   [Get-WinEvent](https://technet.microsoft.com/en-us/library/5fe94870-ed6b-4ce2-9500-93846cc65c95)
 
 -   [Save-Help](https://technet.microsoft.com/en-us/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa)
 
 -   [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545)
 
-Darüber hinaus ist der **WinRm**-Dienst nicht in der Windows PE vorhanden.
+Darüber hinaus ist der **WinRM**-Dienst nicht in der Windows PE vorhanden.
 
 ## Weitere Informationen
 [Erste Schritte mit Windows PowerShell](../getting-started/Getting-Started-with-Windows-PowerShell.md)
+
 [Installieren von Windows PowerShell](Installing-Windows-PowerShell.md)
-[Starten von Windows PowerShell [ps]](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
+
+[Starten von Windows PowerShell](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
 
 
 

@@ -1,12 +1,15 @@
 ---
-title: Das ISEEditor-Objekt
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 0101daf8-4e31-4e4c-ab89-01d95dcb8f46
+title:  Das ISEEditor-Objekt
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  0101daf8-4e31-4e4c-ab89-01d95dcb8f46
 ---
+
 # Das ISEEditor-Objekt
   Ein **ISEEditor**-Objekt ist eine Instanz der Microsoft.PowerShell.Host.ISE.ISEEditor-Klasse. Der Konsolenbereich ist ein **ISEEditor**-Objekt. Jedes [ISEFile](The-ISEFile-Object.md)-Objekt verfügt über ein zugeordnetes **ISEEditor**-Objekt. In den folgenden Abschnitten werden die Methoden und Eigenschaften eines **ISEEditor**-Objekts aufgeführt.
 
@@ -55,7 +58,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.Focus()
  **lineNumber**
  Die Nummer der Zeile, deren Länge abgerufen werden soll.
 
- **Rückgabe**
+ **Returns**
  Die Zeilenlänge für die Zeile mit der angegebenen Zeilennummer.
 
 ```
@@ -77,8 +80,7 @@ $psIse.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  Ersetzt die Markierung durch Text oder fügt Text an der aktuellen Position des Textcursors ein.
 
- **text** – Zeichenfolge
- Der einzufügende Text.
+ **text** \- Zeichenfolge Der einzufügende Text.
 
  Weitere Informationen finden Sie im [Beispielskript](#example) weiter unten in diesem Thema.
 
@@ -87,17 +89,13 @@ $psIse.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  Wählt den Text anhand der Parameter **startLine**, **startColumn**, **endLine** und **endColumn** aus.
 
- **startLine** – ganze Zahl
- Die Zeile, in der die Auswahl beginnt.
+ **startLine** \- ganze Zahl  Die Zeile, in der die Auswahl beginnt.
 
- **startColumn** – ganze Zahl
- Die Spalte in die Startzeile, in der die Auswahl beginnt.
+ **startColumn** \- ganze Zahl  Die Spalte in der Startzeile, in der die Auswahl beginnt.
 
- **endLine** – ganze Zahl
- Die Zeile, in der die Auswahl endet.
+ **endLine** \- ganze Zahl  Die Zeile, in der die Auswahl endet.
 
- **endColumn** – ganze Zahl
- Die Spalte in die Endzeile, in der die Auswahl endet.
+ **endColumn** \- ganze Zahl  Die Spalte in der Endzeile, in der die Auswahl endet.
 
  Weitere Informationen finden Sie im [Beispielskript](#example) weiter unten in diesem Thema.
 
@@ -119,11 +117,9 @@ $psIse.CurrentFile.Editor.SelectCaretLine()
 
  Legt die Position des Textcursors auf die Zeilennummer und die Spaltennummer fest. Es wird eine Ausnahme ausgelöst, wenn die Zeilennummer des Textcursors oder die Spaltennummer des Textcursors außerhalb des jeweils gültigen Bereichs liegt.
 
- **lineNumber** – ganze Zahl
- Die Zeilennummer des Textcursors.
+ **lineNumber** \-ganze Zahl  Die Zeilennummer des Textcursors.
 
- **columnNumber** – ganze Zahl
- Die Spaltennummer des Textcursors.
+ **columnNumber** \- ganze Zahl  Die Spaltennummer des Textcursors.
 
 ```
 # Set the CaretPosition.

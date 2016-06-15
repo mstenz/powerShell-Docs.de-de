@@ -1,19 +1,22 @@
 ---
-title: Neuerungen bei der Windows PowerShell ISE
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
+title:  Neuerungen bei der Windows PowerShell 5.0 ISE
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  38648d47-7c27-4b37-a40e-ad29948519c2
 ---
+
 # Neuerungen bei der Windows PowerShell ISE
 In diesem Thema werden die neuen und aktualisierten Features vorgestellt, die in Versionen von Windows PowerShell® Integrated Scripting Environment (ISE) eingeführt wurden.
 
 ## <a name="overview"></a>Featurebeschreibung
 Die Windows PowerShell ISE ist eine Hostanwendung, die es Ihnen ermöglicht, Skripts und Module in einer grafischen und intuitiven Umgebung zu schreiben, auszuführen und zu testen. Wichtige Features wie Syntaxfarben, Vervollständigung mit der TAB-TASTE, visuelles Debuggen, Unicode-Kompatibilität und kontextbezogene Hilfe ermöglichen eine komfortable Skripterstellung.
 
-Eine Übersicht über die Windows PowerShell ISE finden Sie unter [Windows PowerShell Integrated Scripting Environment (Übersicht)](https://technet.microsoft.com/en-us/library/3c1892c2-bf84-4cb6-af26-1f453be9e671)..
+Eine Übersicht über die Windows PowerShell ISE finden Sie unter [Windows PowerShell Integrated Scripting Environment (Übersicht)](https://technet.microsoft.com/en-us/library/3c1892c2-bf84-4cb6-af26-1f453be9e671).
 
 ## <a name="versions"></a>Neue und geänderte Funktionen in der Windows PowerShell ISE
 Die folgende Tabelle enthält die neuen und geänderten Funktionen für diese Version von Windows PowerShell ISE in Windows PowerShell.
@@ -55,12 +58,12 @@ Mithilfe von Codeausschnitten können Sie Skripts zum Automatisieren Ihrer Umgeb
 
 **Worin bestehen die Unterschiede?**
 
-Klicken Sie zum Verwenden von Codeausschnitten in Windows PowerShell 3.0 oder höher im Menü **Bearbeiten** auf **Codeausschnitte starten**, oder drücken Sie **STRG+J**..
+Klicken Sie zum Verwenden von Codeausschnitten in Windows PowerShell 3.0 oder höher im Menü **Bearbeiten** auf **Codeausschnitte starten**, oder drücken Sie **STRG+J**.
 
 ### <a name="BKMK_AddOnTools"></a>Add-On-Tools
 **In PowerShell 3.0 hinzugefügt**
 
-Windows PowerShell ISE unterstützt jetzt Add-On-Tools, bei denen es sich um WPF-Steuerelemente (Windows Presentation Foundation) handelt, die mithilfe des Objektmodells hinzugefügt werden. Add-On-Tools können in der Konsole in einem vertikalen oder horizontalen Bereich angezeigt werden. Mehrere Add-On-Tools in einem Bereich werden als Registerkarten-Steuerelement angezeigt. Sie können auch Add-On-Tools von anderen Anbietern als Microsoft hinzufügen oder entfernen. Weitere Informationen zum Importieren oder Entfernen von Add-On-Tools finden Sie unter [Windows PowerShell ISE-Vorgänge](http://technet.microsoft.com/library/cc732148.aspx)..
+Windows PowerShell ISE unterstützt jetzt Add-On-Tools, bei denen es sich um WPF-Steuerelemente (Windows Presentation Foundation) handelt, die mithilfe des Objektmodells hinzugefügt werden. Add-On-Tools können in der Konsole in einem vertikalen oder horizontalen Bereich angezeigt werden. Mehrere Add-On-Tools in einem Bereich werden als Registerkarten-Steuerelement angezeigt. Sie können auch Add-On-Tools von anderen Anbietern als Microsoft hinzufügen oder entfernen. Weitere Informationen zum Importieren oder Entfernen von Add-On-Tools finden Sie unter [Windows PowerShell ISE-Vorgänge](http://technet.microsoft.com/library/cc732148.aspx).
 
 **Welchen Nutzen bietet diese Änderung?**
 
@@ -77,7 +80,7 @@ Zusätzliche Add-Ons finden Sie über den Befehl **Website mit Add-On-Tools öff
 
 Windows PowerShell ISE speichert nun Ihre geöffneten Skripts automatisch alle zwei Minuten an einem gesonderten Speicherort.  Wenn Windows PowerShell ISE unerwartet beendet oder das Betriebssystem neu gestartet wird, stellt Windows PowerShell ISE die in der letzten Sitzung geöffneten Skripts wieder her (auch wenn sie nicht gespeichert wurden).
 
-Um das Intervall für die automatische Speicherung zu ändern, führen Sie den folgenden Befehl im Konsolenbereich aus: **$psise.Options.AutoSaveMinuteInterval**..
+Um das Intervall für die automatische Speicherung zu ändern, führen im Konsolenbereich Sie den folgenden Befehl aus: **$psise.Options.AutoSaveMinuteInterval**.
 
 **Welchen Nutzen bietet diese Änderung?**
 
@@ -92,7 +95,7 @@ In Windows PowerShell ISE 2.0 werden die Skripts bei einem Neustart nicht automa
 
 Windows PowerShell ISE bietet jetzt eine Liste der zuletzt verwendeten Dateien. Beim Öffnen einer Datei in Windows PowerShell ISE wird die Datei der Liste „Zuletzt verwendet“ im Menü **Datei** hinzugefügt.
 
-Um die Standardanzahl von Dateien in der Liste „Zuletzt verwendet“ zu ändern, führen Sie im Konsolenbereich den folgenden Befehl aus: **$psise.Options.MruCount**..
+Um die Standardanzahl von Dateien in der Liste „Zuletzt verwendet“ zu ändern, führen Sie im Konsolenbereich den folgenden Befehl aus: **$psise.Options.MruCount**.
 
 **Welchen Nutzen bietet diese Änderung?**
 
@@ -148,7 +151,7 @@ Wenn Sie Windows PowerShell ISE über die Befehlszeile starten (indem Sie **Powe
 
 -   *-Help*: Zeigt ein Hilfefenster an.
 
--   *-mta*: Startet Windows PowerShell ISE im Multithread-Apartment-Modus. Der Standardbetriebsmodus von Windows PowerShell ISE ist der Singlethread-Apartment-Modus bzw. *-sta*..
+-   *-mta*: Startet Windows PowerShell ISE im Multithread-Apartment-Modus. Der Standardbetriebsmodus von Windows PowerShell ISE ist der Singlethread-Apartment-Modus bzw. *-sta*.
 
 **Welchen Nutzen bietet diese Änderung?**
 
@@ -167,7 +170,7 @@ Zu den weiteren Windows PowerShell ISE-Bearbeitungsfeatures zählen:
 
 -   **Zugehörige Klammer** Windows PowerShell ISE bietet das Feature „Zugehörige Klammer (Hervorhebung)“, das wie folgt verwendet werden kann: Wenn Sie z. B. den Befehl **Gehe zu Übereinstimmung** bzw. **STRG+]** verwenden, wird die schließende Klammer gefunden, wenn eine öffnende Klammer ausgewählt ist.
 
--   **Gliederungsansicht** Der Skriptbereich unterstützt Gliederungen, sodass Codeabschnitte durch Klicken auf Plus- und Minuszeichen am linken Rand auf- bzw. zugeklappt werden können. Sie können Klammern bzw. **#region**- und **#endregion**-Tags verwenden, um den Anfang bzw. das Ende eines zuklappbaren Abschnitts zu markieren. Drücken Sie zum Auf- und Zuklappen aller Bereiche **STRG+M**..
+-   **Gliederungsansicht** Der Skriptbereich unterstützt Gliederungen, sodass Codeabschnitte durch Klicken auf Plus- und Minuszeichen am linken Rand auf- bzw. zugeklappt werden können. Sie können Klammern bzw. **#region**- und **#endregion**-Tags verwenden, um den Anfang bzw. das Ende eines zuklappbaren Abschnitts zu markieren. Drücken Sie zum Auf- und Zuklappen aller Bereiche **STRG+M**.
 
 -   **Textbearbeitung mit Drag & Drop** Windows PowerShell ISE unterstützt nun die Textbearbeitung mit Drag & Drop. Sie können einen beliebigen Textblock auswählen und an eine andere Stelle im Editor oder in der Konsole ziehen, um den Text zu verschieben. Wenn Sie die STRG-Taste gedrückt halten, während Sie den markierten Text ziehen, wird der Text, sobald Sie die Maustaste loslassen, an den neuen Ort kopiert. In dieser Version von Windows PowerShell ISE wird wie in der vorherigen Version von Windows PowerShell ISE beim Ziehen und Ablegen von Dateien auf Windows PowerShell ISE die Datei von Windows PowerShell ISE geöffnet.
 
@@ -177,7 +180,7 @@ Zu den weiteren Windows PowerShell ISE-Bearbeitungsfeatures zählen:
 
 -   **Umfassende Funktionen zum Kopieren und Einfügen von Text** Beim Kopieren in die Zwischenablage in Windows PowerShell ISE bleiben Informationen zur Schriftart, Größe und Farbe der ursprünglichen Auswahl erhalten.
 
--   **Blockauswahl** Sie können einen Textblock auswählen, indem Sie die ALT-TASTE gedrückt halten, während Sie den Text im Skriptbereich mit der Maus auswählen, oder indem Sie **ALT+UMSCHALT+NACH-OBEN/NACH-UNTEN** drücken..
+-   **Blockauswahl** Sie können einen Textblock auswählen, indem Sie die ALT-TASTE gedrückt halten, während Sie den Text im Skriptbereich mit der Maus auswählen, oder ** **ALT+UMSCHALT+NACH-OBEN/NACH-UNTEN drücken.
 
 **Welchen Nutzen bietet diese Änderung?**
 
@@ -190,7 +193,7 @@ In Windows PowerShell ISE 2.0 waren diese Bearbeitungsoptimierungen nicht vorhan
 ### <a name="BKMK_NewHelpViewer"></a>Neues Anzeigefenster für Hilfe
 **In PowerShell 3.0 hinzugefügt**
 
-Wenn Sie **F1** drücken, während sich der Cursor in einem Cmdlet befindet oder Sie einen Teil eines Cmdlets markiert haben, wird im neuen Anzeigefenster für Hilfe eine kontextbezogene Hilfe zum markierten Cmdlet geöffnet. Um die konzeptionelle Hilfe für Windows PowerShell ISE anzuzeigen, geben Sie im Konsolenbereich **operators** ein, und drücken Sie dann **F1**..
+Wenn Sie **F1** drücken, während sich der Cursor in einem Cmdlet befindet oder Sie einen Teil eines Cmdlets markiert haben, wird im neuen Anzeigefenster für Hilfe eine kontextbezogene Hilfe zum markierten Cmdlet geöffnet. Um die konzeptionelle Hilfe für Windows PowerShell ISE anzuzeigen, geben Sie im Konsolenbereich **operators** ein, und drücken Sie dann **F1**.
 
 Laden Sie die aktuelle Version der Windows PowerShell-Hilfethemen von der Microsoft-Website herunter, bevor Sie dieses Feature verwenden. Die einfachste Methode zum Herunterladen der Hilfethemen ist die Ausführung des Cmdlets **Update-Help** im Konsolenbereich, wenn Sie Windows PowerShell ISE als Administrator ausführen.
 
@@ -225,6 +228,7 @@ Weitere Informationen zur Verwendung von Windows PowerShell ISE in Windows Power
 -   [ISE im TechNet Wiki](http://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
 
 -   [Script Center](http://technet.microsoft.com/scriptcenter/default)
+
 
 
 <!--HONumber=May16_HO2-->

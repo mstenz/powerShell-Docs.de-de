@@ -1,12 +1,15 @@
 ---
-title: Zweck des Windows PowerShell ISE-Skriptobjektmodells
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: d176a131-ab0c-43ee-80c1-f824ab8e4a05
+title:  Zweck des Windows PowerShell ISE-Skriptobjektmodells
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  d176a131-ab0c-43ee-80c1-f824ab8e4a05
 ---
+
 # Zweck des Windows PowerShell ISE-Skriptobjektmodells
   Objekte sind der Form und Funktion von Windows PowerShell Integrated Scripting Environment (ISE) zugeordnet. Die Modellreferenz bietet Details zu den Elementeigenschaften und Methoden, die diese Objekte verfügbar machen. Die Beispiele zeigen Ihnen, wie Sie mithilfe von Skripts direkt auf diese Methoden und Eigenschaften zugreifen können. Das Skriptobjektmodell erleichtert die folgenden Aufgaben.
 

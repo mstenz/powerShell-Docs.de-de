@@ -1,16 +1,19 @@
 ---
-title: Windows PowerShell – Core-Anbieter
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 6e24bf6d-4c70-4edf-956a-1e8e4779ba10
+title:  Windows PowerShell – Core-Anbieter
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  6e24bf6d-4c70-4edf-956a-1e8e4779ba10
 ---
+
 # Windows PowerShell – Core-Anbieter
 Dieser Abschnitt enthält die Hilfethemen zu den Windows PowerShell-Anbietern im **Microsoft.PowerShell.Core**-Modul.
 
-Windows PowerShell-Anbieter sind .NET-Programme, die die Daten in einem speziellen Datenspeicher in Windows PowerShell verfügbar machen, damit Sie diese problemlos anzeigen und verwalten können. Die Daten, die ein Anbieter verfügbar macht, werden in einem Laufwerk, ähnlich einem Dateisystemlaufwerk, angezeigt. Weitere Informationen finden Sie unter [about_Providers [v4]](https://technet.microsoft.com/en-us/library/2d9b3f32-be78-49ad-a547-21231c803242)..
+Windows PowerShell-Anbieter sind .NET-Programme, die die Daten in einem speziellen Datenspeicher in Windows PowerShell verfügbar machen, damit Sie diese problemlos anzeigen und verwalten können. Die Daten, die ein Anbieter verfügbar macht, werden in einem Laufwerk, ähnlich einem Dateisystemlaufwerk, angezeigt. Weitere Informationen finden Sie unter [about_Providers [v4]](https://technet.microsoft.com/en-us/library/2d9b3f32-be78-49ad-a547-21231c803242).
 
 |Anbieter|Beschreibung|
 |------------|---------------|

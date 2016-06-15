@@ -1,3 +1,14 @@
+---
+title:  Verwendung der webbasierten Windows PowerShell-Konsole
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+---
+
 #  Verwendung der webbasierten Windows PowerShell-Konsole
 
 Aktualisiert: 24. Juni 2013
@@ -74,7 +85,7 @@ Browser müssen folgende Anforderungen erfüllen, um die webbasierte Windows Pow
 
 ------------------------------------------------------------------------
 
-Ihr Windows PowerShell Web Access-Administrator sollten Ihnen eine URL bereitstellen, die die Adresse der Website des Windows PowerShell Web Access-Gateways Ihrer Organisation ist. Standardmäßig ist die Adresse dieser Website „https://&lt;server_name&gt;/pswa“. Bevor Sie sich bei Windows PowerShell Web Access anmelden, sollten Sie sichergehen, dass Sie über den Namen oder die IP-Adresse des zu verwaltenden Remotecomputers verfügen. Sie müssen auf dem Remotecomputer ein autorisierter Benutzer sein. Außerdem müssen Sie darauf die Remoteverwaltung zulassen. Weitere Informationen dazu, wie Sie Ihren Computer so konfigurieren, dass eine Remoteverwaltung möglich ist, finden Sie unter [Aktivieren und Verwenden von Remotebefehlen in Windows PowerShell](https://technet.microsoft.com/magazine/ff700227.aspx). Die einfachste Möglichkeit, die Remoteverwaltung auf Ihrem Computer zu konfigurieren, besteht in der Ausführung des Cmdlets **Enable-PSRemoting -force** auf dem Computer in einer Windows PowerShell-Sitzung, die mit erhöhten Benutzerrechten (**Als Administrator ausführen**) geöffnet wurde.).
+Ihr Windows PowerShell Web Access-Administrator sollten Ihnen eine URL bereitstellen, die die Adresse der Website des Windows PowerShell Web Access-Gateways Ihrer Organisation ist. Standardmäßig ist die Adresse dieser Website „https://&lt;server_name&gt;/pswa“. Bevor Sie sich bei Windows PowerShell Web Access anmelden, sollten Sie sichergehen, dass Sie über den Namen oder die IP-Adresse des zu verwaltenden Remotecomputers verfügen. Sie müssen auf dem Remotecomputer ein autorisierter Benutzer sein. Außerdem müssen Sie darauf die Remoteverwaltung zulassen. Weitere Informationen dazu, wie Sie Ihren Computer so konfigurieren, dass eine Remoteverwaltung möglich ist, finden Sie unter [Aktivieren und Verwenden von Remotebefehlen in Windows PowerShell](https://technet.microsoft.com/magazine/ff700227.aspx). Die einfachste Möglichkeit, die Remoteverwaltung auf Ihrem Computer zu konfigurieren, besteht in der Ausführung des Cmdlets **Enable-PSRemoting -force** auf dem Computer in einer Windows PowerShell-Sitzung, die mit erhöhten Benutzerrechten (**Als Administrator ausführen**) geöffnet wurde.
 
 ### So melden Sie sich bei Windows PowerShell Web Access an
 
@@ -94,15 +105,15 @@ Ihr Windows PowerShell Web Access-Administrator sollten Ihnen eine URL bereitste
     <tbody>
     <tr class="odd">
     <td><ul>
-    <li><p>Wenn der Zielcomputer Mitglied einer Arbeitsgruppe ist, können Sie die folgende Syntax verwenden, um den Benutzernamen anzugeben und sich am Computer anzumelden:&lt;<em>workgroup_name</em>&gt;\&lt;<em>user_name.</em>&gt;.</p></li>
+    <li><p>Wenn der Zielcomputer Mitglied einer Arbeitsgruppe ist, können Sie die folgende Syntax verwenden, um den Benutzernamen anzugeben und sich am Computer anzumelden:&lt;<em>workgroup_name</em>&gt;\&lt;<em>user_name</em>&gt;.</p></li>
     <li><p>Wenn es sich beim Zielcomputer um den Gatewayserver handelt, können Sie <strong>localhost</strong> im Feld <strong>Computername</strong> angeben.</p></li>
-    <li><p>Sollte es sich beim Zielcomputer um den Gatewayserver handeln und sich der Gatewayserver in einer Arbeitsgruppe befinden, können Sie <strong>localhost</strong> im Feld <strong>Computername</strong> angeben. Verwenden Sie jedoch nicht „localhost\&lt;<em>user_name</em>&gt;“ im Feld <strong>Benutzername</strong>. Verwenden Sie &lt;<em>Arbeitsgruppenname</em>&gt;\&lt;<em>user_name.</em>&gt;.</p></li>
+    <li><p>Sollte es sich beim Zielcomputer um den Gatewayserver handeln und sich der Gatewayserver in einer Arbeitsgruppe befinden, können Sie <strong>localhost</strong> im Feld <strong>Computername</strong> angeben. Verwenden Sie jedoch nicht „localhost\&lt;<em>user_name</em>&gt;“ im Feld <strong>Benutzername</strong>. Verwenden Sie &lt;<em>Arbeitsgruppenname</em>&gt;\&lt;<em>user_name</em>&gt;.</p></li>
     </ul></td>
     </tr>
     </tbody>
     </table>
 
-3.  Der Abschnitt **Optionale Verbindungseinstellungen** bezieht sich auf die Autorisierungsanforderungen des zu verwaltenden Remotecomputers. Weitere Informationen zu den Parametern, die den optionalen Verbindungseinstellungen entsprechen, finden Sie in der [Hilfe zum Cmdlet „Enter-PSSession“](https://technet.microsoft.com/library/dd315384.aspx)..
+3.  Der Abschnitt **Optionale Verbindungseinstellungen** bezieht sich auf die Autorisierungsanforderungen des zu verwaltenden Remotecomputers. Weitere Informationen zu den Parametern, die den optionalen Verbindungseinstellungen entsprechen, finden Sie in der [Hilfe zum Cmdlet „Enter-PSSession“](https://technet.microsoft.com/library/dd315384.aspx).
 
     In der Regel sind die Anmeldeinformationen zum Passieren des Windows PowerShell Web Access-Gateways dieselben, die vom zu verwaltenden Remotecomputer erkannt werden. Wenn Sie jedoch andere Anmeldeinformationen zur Verwaltung des in Schritt 2 angegebenen Remotecomputers verwenden möchten, erweitern Sie den Abschnitt **Optionale Verbindungseinstellungen**, und geben Sie die abweichenden Anmeldeinformationen an. Fahren Sie ansonsten mit Schritt 6 fort.
 
@@ -110,7 +121,7 @@ Ihr Windows PowerShell Web Access-Administrator sollten Ihnen eine URL bereitste
 
 5.  Belassen Sie den **Authentifizierungstyp** als **Standard**, sofern Sie nicht vom Windows PowerShell Web Access-Administrator gegenteilige Anweisungen erhalten haben.
 
-6.  Klicken Sie auf **Anmelden**..
+6.  Klicken Sie auf **Anmelden**.
 
 <a href="" id="BKMK_timeout"></a>
 
@@ -129,7 +140,7 @@ Sie werden in den folgenden Situationen von einer webbasierten Windows PowerShel
 
 -   Wenn Sie sich zur Verwaltung eines anderen Remotecomputers in derselben Browsersitzung oder einer neuen Registerkarte desselben Browsers anmelden. (Dies gilt nicht, wenn Windows Server 2012 R2 auf dem Gatewayserver ausgeführt wird. Windows PowerShell Web Access unter Windows Server 2012 R2 lässt mehrere Benutzersitzungen auf neuen Registerkarten in derselben Browsersitzung zu.) Weitere Informationen dazu, wie Sie mehr als eine aktive Sitzung auf demselben Computer starten, finden Sie unter „Aufbauen von Verbindungen zu mehreren Zielcomputern gleichzeitig“ im Abschnitt [Einschränkungen der webbasierten Konsole](#BKMK_limits) dieses Artikels.
 
--   Wenn Sie mehr als 20 Minuten inaktiv sind. Der Gatewayadministrator kann den Timeoutzeitraum für Inaktivität anpassen. Weitere Informationen finden Sie unter [Sitzungsverwaltung](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx#BKMK_sesmgmt)..
+-   Wenn Sie mehr als 20 Minuten inaktiv sind. Der Gatewayadministrator kann den Timeoutzeitraum für Inaktivität anpassen. Weitere Informationen finden Sie unter [Sitzungsverwaltung](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx#BKMK_sesmgmt).
 
     -   Wenn Sie aufgrund von Netzwerkfehlern oder anderen ungeplanten Herunterfahrvorgängen oder Ausfällen in der webbasierten Konsole von Sitzungen getrennt werden und nicht weil Sie die Sitzungen selbst geschlossen haben, wird die Windows PowerShell Web Access-Sitzung weiter ausgeführt. Die Verbindung mit dem Zielcomputer bleibt bestehen, bis das Timeout auf dem Client überschritten wird. In der Standardeinstellung beträgt dieses Zeitlimit 20 Minuten, was vom Gatewayadministrator angepasst werden kann. Die Sitzung wird entweder standardmäßig nach 20 Minuten oder nach der vom Gatewayadministrator festgelegten Timeoutperiode getrennt, je nachdem, was kürzer ist.
 
@@ -304,7 +315,7 @@ Die Mehrzahl der Windows PowerShell-Hostfunktionen steht in der webbasierten Win
 
     -   Ändern von Höhe und Breite des Konsolenfensters per Cmdlet
 
-        Das Konsolenfenster von Windows PowerShell Web Access kann wie folgt mithilfe von Cmdlets konfiguriert werden. Im folgenden Beispiel ändert ein Benutzer die Breite der Windows PowerShell Web Access-Konsole auf **20**..
+        Das Konsolenfenster von Windows PowerShell Web Access kann wie folgt mithilfe von Cmdlets konfiguriert werden. Im folgenden Beispiel ändert ein Benutzer die Breite der Windows PowerShell Web Access-Konsole auf **20**.
 
         [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_778d5e55-9195-4bd7-b313-d1fbca7876e4'); "Copy to clipboard.")
 
@@ -317,7 +328,7 @@ Die Mehrzahl der Windows PowerShell-Hostfunktionen steht in der webbasierten Win
 
         Die Höhe der Konsole lässt sich auf eine ähnliche Weise ändern.
 
-        Weitere Beispiele zur Anpassung der Konsolenansicht stehen im [Windows PowerShell-Teamblog](http://blogs.msdn.com/b/powershell/) zur Verfügung..
+        Weitere Beispiele zur Anpassung der Konsolenansicht stehen im [Windows PowerShell-Teamblog](http://blogs.msdn.com/b/powershell/) zur Verfügung.
 
 <a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Weitere Informationen</span></a>
 <a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_4" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
@@ -330,17 +341,14 @@ Die Mehrzahl der Windows PowerShell-Hostfunktionen steht in der webbasierten Win
 [Skriptcenter – Hey, Scripting Guy!](https://technet.microsoft.com/scriptcenter)
 [Windows PowerShell-Teamblog](http://blogs.msdn.com/b/powershell/)
 
-<span>Anzeigen:</span> Geerbt Geschützt
+<span>Show:</span> Inherited Protected
 
 <span class="stdr-votetitle">War diese Seite hilfreich?</span>
-Ja
-Nein
+Ja Nein
 
 Zusätzliches Feedback?
 
-<span class="stdr-count"><span class="stdr-charcnt">1500</span> verbleibende Zeichen</span>
-Senden
-Diesen Schritt überspringen
+<span class="stdr-count"><span class="stdr-charcnt">1500</span> verbleibende Zeichen</span> Senden Diesen Schritt überspringen
 
 <span class="stdr-thankyou">Vielen Dank!</span> <span class="stdr-appreciate">Wir schätzen Ihr Feedback.</span>
 
@@ -348,8 +356,7 @@ Diesen Schritt überspringen
 
 |
 
-<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span> Feedback zur Website</a>
-Feedback zur Website
+<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span> Feedback zur Website</a> Feedback zur Website
 
 <a href="javascript:void(0)" id="SiteFeedbackLinkCloser">x</a>
 
@@ -380,8 +387,9 @@ Erzählen Sie uns mehr
 
 © 2016 Microsoft
 
-Die Lizenz für Drittanbieterskripts oder Code, die mit dieser Website verlinkt oder über Verweise verbunden sind, wird Ihnen von den Codeeigentümern erteilt, nicht von Microsoft. Die ASP.NET Ajax CDN Nutzungsbedingungen finden Sie unter http://www.asp.net/ajaxlibrary/CDN.ashx.
+Die Lizenz für Drittanbieterskripts oder Code, die mit dieser Website verlinkt oder über Verweise verbunden sind, wird Ihnen von den Codeeigentümern erteilt, nicht von Microsoft. Die ASP.NET Ajax CDN-Nutzungsbedingungen finden Sie unter http://www.asp.net/ajaxlibrary/CDN.ashx.
 <img src="https://m.webtrends.com/dcsjwb9vb00000c932fd0rjc7_5p3t/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" alt="DCSIMG" id="Img1" width="1" height="1" />
+
 
 
 <!--HONumber=May16_HO2-->

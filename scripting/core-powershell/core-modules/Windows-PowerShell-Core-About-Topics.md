@@ -1,12 +1,15 @@
 ---
-title: Konzeptionelle Hilfethemen für Windows PowerShell Core
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 8b950138-9782-4dfe-bd5f-6bdcea7060da
+title:  Konzeptionelle Hilfethemen für Windows PowerShell Core
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  8b950138-9782-4dfe-bd5f-6bdcea7060da
 ---
+
 # Konzeptionelle Hilfethemen für Windows PowerShell Core
 Dieser Abschnitt enthält konzeptionelle Hilfethemen ("Info"), die für alle Windows PowerShell-Module gelten. Die Info-Themen für andere Module finden Sie unter den Hilfethemen für das Modul.
 
@@ -127,9 +130,9 @@ Dieser Abschnitt enthält konzeptionelle Hilfethemen ("Info"), die für alle Win
 |[about_WS-Management_Cmdlets [v3]](https://technet.microsoft.com/en-us/library/22738d36-4d49-472c-ae51-9365b9bbd7c2)|Beschreibt die Cmdlets im Modul Microsoft.WsMan.Management. Erläutert, wie diese zusammen verwenden werden, um die WS-Management-Funktionen zu verwalten, einschließlich des WSMan-Anbieterlaufwerks.|
 
 ## Weitere Informationen
-[Verwalten mit Windows PowerShell](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
+[Skripterstellung mit Windows PowerShell](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
 [Windows PowerShell Core](https://technet.microsoft.com/en-us/library/4b75f1e4-f327-48f3-92ab-bf5435094d41)
-[Windows PowerShell 5.0](Windows-PowerShell-5.0.md)
+[Windows PowerShell 5.0](Windows-PowerShell-5.0.md)
 [about_Scheduled_Jobs](https://technet.microsoft.com/en-us/library/3b546629-703c-4939-b44f-52dd567bce92)
 [about_WMI_Cmdlets [v3]](https://technet.microsoft.com/en-us/library/9c56b172-3b25-47b2-b6e0-86db649b1c45)
 [about_WS-Management_Cmdlets](https://technet.microsoft.com/en-us/library/6ed3370a-ea10-45a5-9493-696aeace27ed)
