@@ -1,31 +1,11 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 1
+ Total Files | 0
 
 ## File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [jea\README.md](https://github.com/PowerShell/powerShell-Docs/blob/97b43cc541335dd91917195861a75b8a8f98835a/jea/README.md) | OutofSyncHandedBackSuccess | [Details](#08b317533a7180e111746334e5d9228caa8a09e798)
 
 ## Item Details
-##### <a name='08b317533a7180e111746334e5d9228caa8a09e798'></a> Source: [jea\README.md](https://github.com/PowerShell/powerShell-Docs/blob/97b43cc541335dd91917195861a75b8a8f98835a/jea/README.md)
-* Status: OutofSyncHandedBackSuccess
-* Target File: 
-* Handoff File: [README.21b5f679157a942d8da32daf52be349e47cf03ae.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/bd810d483640b0f62a3bd33dbf918dbf2b20952f/ol-handoff/PowerShell/powerShell-Docs.de-de/live/README.21b5f679157a942d8da32daf52be349e47cf03ae.de-de.xlf)
-* Handoff Datetime: 2016-06-17 21:43:59
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [jea\README.md](https://github.com/PowerShell/powerShell-Docs.de-de/blob/e0fde29b87367332349ff0ec06290cd58cf363df/jea/README.md)
-* Current Handback File: [README.21b5f679157a942d8da32daf52be349e47cf03ae.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/be2f2d0750484d5988fae90a009dc2a65a3e4e08/ol-handback/PowerShell/powerShell-Docs.de-de/live/README.21b5f679157a942d8da32daf52be349e47cf03ae.de-de.xlf)
-* Current Handback Datetime: 2016-06-20 12:21:39
-* Bilingual File: [README.21b5f679157a942d8da32daf52be349e47cf03ae.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/5220d4dbcb65335d68344dd8f62c9b9c5bd7faf0/ol-handback/PowerShell/powerShell-Docs.de-de/live/README.21b5f679157a942d8da32daf52be349e47cf03ae.de-de.xlf)
-* Bilingual Datetime: 2016-06-16 14:28:56
-* [Back to Top](#report-top)
-
 
 ## Error Details
 
