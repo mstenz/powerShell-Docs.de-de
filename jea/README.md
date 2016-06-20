@@ -55,13 +55,13 @@ Virtuelle Konten gehören standardmäßig zur Sicherheitsgruppe „Administrator
 
 ### Einführungsleitfaden zu JEA
 Sind Sie bereit, Ihren ersten JEA-Endpunkt zu erstellen?
-Sehen Sie sich den [Einführungsleitfaden zu JEA](./JEA Guide.md) an, um zu erfahren, wie Sie selbst einen JEA-Endpunkt erstellen, bereitstellen und verwenden.
+Sehen Sie sich den [Einführungsleitfaden zu JEA](jea-uide.md) an, um zu erfahren, wie Sie selbst einen JEA-Endpunkt erstellen, bereitstellen und verwenden.
 Dieser Leitfaden ist ein idealer Startpunkt für den schnellen Einstieg: Anhand eines vorgefertigten JEA-Endpunkts erhalten Sie eine Vorstellung davon, welche Möglichkeiten JEA dem Endbenutzer bietet. Anschließend führt der Leitfaden Sie durch den Prozess der Erstellung eines Endpunkts von Grund auf und erläutert dabei die Konzepte von Sitzungskonfigurationen und Rollenfunktionen.
 
 ### Ihre ersten eigenen JEA-Endpunkte
 Die Erstellung eines JEA-Endpunkts ist ganz einfach – Sie benötigen nur ein JEA-fähiges System und einen Text-Editor (wie z. B. die PowerShell ISE).
 Ein guter Tipp für den Einstieg: Erstellen Sie Gerüstdateien mithilfe von `New-PSRoleCapabilityFile -Path <path>` und `New-PSSessionCapabilityFile -Path <Path>`, ohne weitere Argumente.
-Diese Gerüstdateien enthalten alle anwendbaren Konfigurationsfelder sowie nützliche Kommentare, die erklären, wozu welches Feld verwendet werden kann. 
+Diese Gerüstdateien enthalten alle anwendbaren Konfigurationsfelder sowie nützliche Kommentare, die erklären, wozu welches Feld verwendet werden kann.
 
 Um die Erstellung von JEA-Endpunkten noch einfacher zu gestalten, lesen Sie den Blog [JEA Toolkit Helper](http://blogs.technet.com/b/privatecloud/archive/2015/12/20/introducing-the-updated-jea-helper-tool.aspx). In diesem Blog finden Sie eine GUI, mit deren Hilfe Sie Sitzungskonfigurations- und Rollenfunktionsdateien erstellen können.
 Die GUI unterstützt sogar die Erstellung von Rollenfunktionen basierend auf PowerShell-Protokollen, sodass Sie mit den Befehlen beginnen können, die Ihre Benutzer regelmäßig für ihre Arbeit ausführen.
