@@ -550,8 +550,8 @@
 * Handoff File: [configData.51d01a46dd9af8b425788cc485523b09f8470b95.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/bd810d483640b0f62a3bd33dbf918dbf2b20952f/ol-handoff/PowerShell/powerShell-Docs.de-de/live/configData.51d01a46dd9af8b425788cc485523b09f8470b95.de-de.xlf)
 * Handoff Datetime: 2016-06-17 21:43:59
 * Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
+* Archive File: [configData.51d01a46dd9af8b425788cc485523b09f8470b95.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/9f75f6298ce5c4a286e1bde45e928e0c4ed6e68e/ol-handoff/PowerShell/powerShell-Docs.de-de/live/archive/configData.51d01a46dd9af8b425788cc485523b09f8470b95.de-de.xlf)
+* Archive Datetime: 2016-06-21 13:12:50
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Current Target File: [dsc\configData.md](https://github.com/PowerShell/powerShell-Docs.de-de/blob/50f3174ff0fb1cddb2559f0b9e7bbd5998ac0b06/dsc/configData.md)
@@ -584,8 +584,8 @@
 * Handoff File: [configHelp.640c1514ba89b533fcd70fb36da2f349eced1926.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/bd810d483640b0f62a3bd33dbf918dbf2b20952f/ol-handoff/PowerShell/powerShell-Docs.de-de/live/configHelp.640c1514ba89b533fcd70fb36da2f349eced1926.de-de.xlf)
 * Handoff Datetime: 2016-06-17 21:43:59
 * Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
+* Archive File: [configHelp.640c1514ba89b533fcd70fb36da2f349eced1926.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/9f75f6298ce5c4a286e1bde45e928e0c4ed6e68e/ol-handoff/PowerShell/powerShell-Docs.de-de/live/archive/configHelp.640c1514ba89b533fcd70fb36da2f349eced1926.de-de.xlf)
+* Archive Datetime: 2016-06-21 13:12:50
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Current Target File: [dsc\configHelp.md](https://github.com/PowerShell/powerShell-Docs.de-de/blob/3e4d3cc0628663e7b1dbb00547b19b892ea0b8c5/dsc/configHelp.md)
@@ -618,8 +618,8 @@
 * Handoff File: [crossNodeDependencies.bd1d65501a23b72cf44e4d417ebad7a3bd5c7139.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/bd810d483640b0f62a3bd33dbf918dbf2b20952f/ol-handoff/PowerShell/powerShell-Docs.de-de/live/crossNodeDependencies.bd1d65501a23b72cf44e4d417ebad7a3bd5c7139.de-de.xlf)
 * Handoff Datetime: 2016-06-17 21:43:59
 * Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
+* Archive File: [crossNodeDependencies.bd1d65501a23b72cf44e4d417ebad7a3bd5c7139.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/9f75f6298ce5c4a286e1bde45e928e0c4ed6e68e/ol-handoff/PowerShell/powerShell-Docs.de-de/live/archive/crossNodeDependencies.bd1d65501a23b72cf44e4d417ebad7a3bd5c7139.de-de.xlf)
+* Archive Datetime: 2016-06-21 13:12:50
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Current Target File: [dsc\crossNodeDependencies.md](https://github.com/PowerShell/powerShell-Docs.de-de/blob/6aad8a5025c5c825962b373a8a7e3de611ed9c7c/dsc/crossNodeDependencies.md)
@@ -1061,8 +1061,8 @@
 * Handoff File: [metaConfig.915dba9ed66671e4a41c35a16d5248bb4c94e3d6.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/bd810d483640b0f62a3bd33dbf918dbf2b20952f/ol-handoff/PowerShell/powerShell-Docs.de-de/live/metaConfig.915dba9ed66671e4a41c35a16d5248bb4c94e3d6.de-de.xlf)
 * Handoff Datetime: 2016-06-17 21:43:59
 * Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
+* Archive File: [metaConfig.915dba9ed66671e4a41c35a16d5248bb4c94e3d6.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/9f75f6298ce5c4a286e1bde45e928e0c4ed6e68e/ol-handoff/PowerShell/powerShell-Docs.de-de/live/archive/metaConfig.915dba9ed66671e4a41c35a16d5248bb4c94e3d6.de-de.xlf)
+* Archive Datetime: 2016-06-21 13:12:50
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Current Target File: [dsc\metaConfig.md](https://github.com/PowerShell/powerShell-Docs.de-de/blob/5822a99c70cc9e52007df79e715e5e971a4eff1c/dsc/metaConfig.md)
@@ -1095,8 +1095,8 @@
 * Handoff File: [msft-dsclocalconfigurationmanager.a79fe5e4edd04227feb5da9e41daad2c0b306f84.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/bd810d483640b0f62a3bd33dbf918dbf2b20952f/ol-handoff/PowerShell/powerShell-Docs.de-de/live/msft-dsclocalconfigurationmanager.a79fe5e4edd04227feb5da9e41daad2c0b306f84.de-de.xlf)
 * Handoff Datetime: 2016-06-17 21:43:59
 * Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
+* Archive File: [msft-dsclocalconfigurationmanager.a79fe5e4edd04227feb5da9e41daad2c0b306f84.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/9f75f6298ce5c4a286e1bde45e928e0c4ed6e68e/ol-handoff/PowerShell/powerShell-Docs.de-de/live/archive/msft-dsclocalconfigurationmanager.a79fe5e4edd04227feb5da9e41daad2c0b306f84.de-de.xlf)
+* Archive Datetime: 2016-06-21 13:12:50
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Current Target File: [dsc\msft-dsclocalconfigurationmanager.md](https://github.com/PowerShell/powerShell-Docs.de-de/blob/65fe25b66ec9fa155654d1adfdce3041120d9b67/dsc/msft-dsclocalconfigurationmanager.md)
@@ -1744,8 +1744,8 @@
 * Handoff File: [sxsResource.835258073c6738946b31509359c72fa70af35ce2.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/bd810d483640b0f62a3bd33dbf918dbf2b20952f/ol-handoff/PowerShell/powerShell-Docs.de-de/live/sxsResource.835258073c6738946b31509359c72fa70af35ce2.de-de.xlf)
 * Handoff Datetime: 2016-06-17 21:43:59
 * Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
+* Archive File: [sxsResource.835258073c6738946b31509359c72fa70af35ce2.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/9f75f6298ce5c4a286e1bde45e928e0c4ed6e68e/ol-handoff/PowerShell/powerShell-Docs.de-de/live/archive/sxsResource.835258073c6738946b31509359c72fa70af35ce2.de-de.xlf)
+* Archive Datetime: 2016-06-21 13:12:50
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Current Target File: [dsc\sxsResource.md](https://github.com/PowerShell/powerShell-Docs.de-de/blob/6aad8a5025c5c825962b373a8a7e3de611ed9c7c/dsc/sxsResource.md)
@@ -1761,8 +1761,8 @@
 * Handoff File: [TOC.b2a7935bce42ebc7e43bfe65f3058900e2942427.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/bd810d483640b0f62a3bd33dbf918dbf2b20952f/ol-handoff/PowerShell/powerShell-Docs.de-de/live/TOC.b2a7935bce42ebc7e43bfe65f3058900e2942427.de-de.xlf)
 * Handoff Datetime: 2016-06-17 21:43:59
 * Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
+* Archive File: [TOC.b2a7935bce42ebc7e43bfe65f3058900e2942427.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/9f75f6298ce5c4a286e1bde45e928e0c4ed6e68e/ol-handoff/PowerShell/powerShell-Docs.de-de/live/archive/TOC.b2a7935bce42ebc7e43bfe65f3058900e2942427.de-de.xlf)
+* Archive Datetime: 2016-06-21 13:12:50
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Current Target File: [dsc\TOC.md](https://github.com/PowerShell/powerShell-Docs.de-de/blob/72bebc40e1bc509f31c91a50db42dff5fd796123/dsc/TOC.md)
@@ -1886,8 +1886,8 @@
 * Handoff File: [README.21b5f679157a942d8da32daf52be349e47cf03ae.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/bd810d483640b0f62a3bd33dbf918dbf2b20952f/ol-handoff/PowerShell/powerShell-Docs.de-de/live/README.21b5f679157a942d8da32daf52be349e47cf03ae.de-de.xlf)
 * Handoff Datetime: 2016-06-17 21:43:59
 * Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
+* Archive File: [README.21b5f679157a942d8da32daf52be349e47cf03ae.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/9f75f6298ce5c4a286e1bde45e928e0c4ed6e68e/ol-handoff/PowerShell/powerShell-Docs.de-de/live/archive/README.21b5f679157a942d8da32daf52be349e47cf03ae.de-de.xlf)
+* Archive Datetime: 2016-06-21 13:12:50
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Current Target File: [jea\README.md](https://github.com/PowerShell/powerShell-Docs.de-de/blob/e0fde29b87367332349ff0ec06290cd58cf363df/jea/README.md)
@@ -3874,8 +3874,8 @@
 * Handoff File: [Installing-Windows-PowerShell.c225d4b5172b3b37e8ac8bff29aa92025a05b723.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/bd810d483640b0f62a3bd33dbf918dbf2b20952f/ol-handoff/PowerShell/powerShell-Docs.de-de/live/Installing-Windows-PowerShell.c225d4b5172b3b37e8ac8bff29aa92025a05b723.de-de.xlf)
 * Handoff Datetime: 2016-06-17 21:43:59
 * Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
+* Archive File: [Installing-Windows-PowerShell.c225d4b5172b3b37e8ac8bff29aa92025a05b723.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/9f75f6298ce5c4a286e1bde45e928e0c4ed6e68e/ol-handoff/PowerShell/powerShell-Docs.de-de/live/archive/Installing-Windows-PowerShell.c225d4b5172b3b37e8ac8bff29aa92025a05b723.de-de.xlf)
+* Archive Datetime: 2016-06-21 13:12:50
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Current Target File: [scripting\setup\Installing-Windows-PowerShell.md](https://github.com/PowerShell/powerShell-Docs.de-de/blob/3257436b1e4aadc9aa3d62b3ede55bf021f2ebfa/scripting/setup/Installing-Windows-PowerShell.md)
@@ -3922,8 +3922,8 @@
 * Handoff File: [Starting-the-32-Bit-Version-of-Windows-PowerShell.4a4eaf664caff353459bbcc3d81a3756ede97b7f.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/bd810d483640b0f62a3bd33dbf918dbf2b20952f/ol-handoff/PowerShell/powerShell-Docs.de-de/live/Starting-the-32-Bit-Version-of-Windows-PowerShell.4a4eaf664caff353459bbcc3d81a3756ede97b7f.de-de.xlf)
 * Handoff Datetime: 2016-06-17 21:43:59
 * Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
+* Archive File: [Starting-the-32-Bit-Version-of-Windows-PowerShell.4a4eaf664caff353459bbcc3d81a3756ede97b7f.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/9f75f6298ce5c4a286e1bde45e928e0c4ed6e68e/ol-handoff/PowerShell/powerShell-Docs.de-de/live/archive/Starting-the-32-Bit-Version-of-Windows-PowerShell.4a4eaf664caff353459bbcc3d81a3756ede97b7f.de-de.xlf)
+* Archive Datetime: 2016-06-21 13:12:50
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Current Target File: [scripting\setup\Starting-the-32-Bit-Version-of-Windows-PowerShell.md](https://github.com/PowerShell/powerShell-Docs.de-de/blob/a6d1e07e3bb56c7fec8a97fb4f9bff7ac4fab7a2/scripting/setup/Starting-the-32-Bit-Version-of-Windows-PowerShell.md)
@@ -4997,8 +4997,8 @@
 * Handoff File: [limitation_dsc.3684c81bb088cba98089dffdb1a1e56e1c098335.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/bd810d483640b0f62a3bd33dbf918dbf2b20952f/ol-handoff/PowerShell/powerShell-Docs.de-de/live/limitation_dsc.3684c81bb088cba98089dffdb1a1e56e1c098335.de-de.xlf)
 * Handoff Datetime: 2016-06-17 21:43:59
 * Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
+* Archive File: [limitation_dsc.3684c81bb088cba98089dffdb1a1e56e1c098335.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/9f75f6298ce5c4a286e1bde45e928e0c4ed6e68e/ol-handoff/PowerShell/powerShell-Docs.de-de/live/archive/limitation_dsc.3684c81bb088cba98089dffdb1a1e56e1c098335.de-de.xlf)
+* Archive Datetime: 2016-06-21 13:12:50
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
 * Current Target File: [wmf\limitation_dsc.md](https://github.com/PowerShell/powerShell-Docs.de-de/blob/92d59a9262cca149aa5d5a4ca9f3897414f52573/wmf/limitation_dsc.md)
