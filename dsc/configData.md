@@ -1,3 +1,14 @@
+---
+title:   Trennen von Konfiguration und Umgebungsdaten
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Trennen von Konfiguration und Umgebungsdaten
 
 >Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
@@ -15,7 +26,7 @@ Um den Umgebungsteil der Konfiguration festzulegen, verwendet DSC den Parameter 
 ```powershell
 $MyData = 
 @{
-    AllNodes = @();
+    AllNodes = @()
     NonNodeData = ""   
 }
 ```
@@ -54,19 +65,19 @@ $MyData =
     AllNodes = 
     @(
         @{
-            NodeName = "VM-1";
+            NodeName = "VM-1"
             Role     = "WebServer"
         },
 
  
         @{
-            NodeName = "VM-2";
+            NodeName = "VM-2"
             Role     = "SQLServer"
         },
 
  
         @{
-            NodeName = "VM-3";
+            NodeName = "VM-3"
             Role     = "WebServer"
         }
     );
@@ -120,7 +131,7 @@ $MyData =
 
  
         @{
-            NodeName = "VM-1";
+            NodeName = "VM-1"
             Role     = "WebServer"
             SiteContents = "C:\Site1"
             SiteName = "Website1"
@@ -128,14 +139,14 @@ $MyData =
 
  
         @{
-            NodeName = "VM-2";
+            NodeName = "VM-2"
             Role     = "SQLServer"
         },
 
  
         @{
-            NodeName = "VM-3";
-            Role     = "WebServer";
+            NodeName = "VM-3"
+            Role     = "WebServer"
             SiteContents = "C:\Site2"
             SiteName = "Website3"
         }
@@ -157,7 +168,7 @@ $MyData =
 
  
         @{
-            NodeName = "VM-1";
+            NodeName = "VM-1"
             Role     = "WebServer"
             SiteContents = "C:\Site1"
             SiteName = "Website1"
@@ -165,14 +176,14 @@ $MyData =
 
  
         @{
-            NodeName = "VM-2";
+            NodeName = "VM-2"
             Role     = "SQLServer"
         },
  
 
         @{
-            NodeName = "VM-3";
-            Role     = "WebServer";
+            NodeName = "VM-3"
+            Role     = "WebServer"
             SiteContents = "C:\Site2"
             SiteName = "Website3"
         }
@@ -207,4 +218,9 @@ configuration MyConfiguration
 ```
 
 Ein vollständiges Beispiel finden Sie im [xWebAdministration-Modul](https://powershellgallery.com/packages/xWebAdministration).
-<!--HONumber=Feb16_HO4-->
+
+
+
+<!--HONumber=Jun16_HO3-->
+
+
