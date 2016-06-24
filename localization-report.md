@@ -9,8 +9,8 @@
 [ Archive Failed Files ](#archive-failed-list)| 0
 [ Archive Success Files ](#archive-success-list)| 1
 [ Handback Failed Files ](#handback-failed-list)| 0
-[ Out Of Sync Handback Files ](#outofsync-handback-success-list)| 139
-[ In Sync Handback Files ](#insync-handback-success-list)| 163
+[ Out Of Sync Handback Files ](#outofsync-handback-success-list)| 138
+[ In Sync Handback Files ](#insync-handback-success-list)| 164
 [ Ignored Files ](#ignored-list)| 16
 
 ## <a name='handoff-failed-list'></a> Handoff Failed File List
@@ -176,7 +176,6 @@
  [scripting\setup\Accessibility-in-Windows-PowerShell-ISE.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/setup/Accessibility-in-Windows-PowerShell-ISE.md) | OutofSyncHandedBackSuccess | [Details](#a6581fe76bf29a0090f9dfa5ad41ec4fc7572998230)
  [scripting\setup\Installing-the-Windows-PowerShell-2.0-Engine.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/setup/Installing-the-Windows-PowerShell-2.0-Engine.md) | OutofSyncHandedBackSuccess | [Details](#8a61e974e7f7ea479ecc447c2db91c677cd8931f231)
  [scripting\setup\setup-reference.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/setup/setup-reference.md) | OutofSyncHandedBackSuccess | [Details](#63f7597ba91fb839252de451c6c9380b5b19c0ec235)
- [scripting\setup\Starting-the-32-Bit-Version-of-Windows-PowerShell.md](https://github.com/PowerShell/powerShell-Docs/blob/b6ab9bfdd779a865c1f543bf16e91ec17b43c4b0/scripting/setup/Starting-the-32-Bit-Version-of-Windows-PowerShell.md) | OutofSyncHandedBackSuccess | [Details](#41bbdd302aa3aa0d253bc4c820fdbbeb1b827ccc236)
  [scripting\setup\Starting-the-Windows-PowerShell-2.0-Engine.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/setup/Starting-the-Windows-PowerShell-2.0-Engine.md) | OutofSyncHandedBackSuccess | [Details](#45102cbc730d8eaac9ebdcb73456b1d1e149c6f2237)
  [scripting\setup\Starting-Windows-PowerShell.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/setup/Starting-Windows-PowerShell.md) | OutofSyncHandedBackSuccess | [Details](#f8406a2066ef54ea0fdaaff6e612bb0d43b12ab6239)
  [scripting\setup\Starting-Windows-PowerShell-on-Earlier-Versions-of-Windows.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/setup/Starting-Windows-PowerShell-on-Earlier-Versions-of-Windows.md) | OutofSyncHandedBackSuccess | [Details](#1fe8c9e872b1646746ad2e3426bc816393e68fe8238)
@@ -264,6 +263,7 @@
  [scripting\setup\Installing-the-Windows-PowerShell-SDK.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/setup/Installing-the-Windows-PowerShell-SDK.md) | InSyncHandedBackSuccess | [Details](#9ba9ef3efe6a8ae85d96b59db53ad3a16bf57699232)
  [scripting\setup\Installing-Windows-PowerShell.md](https://github.com/PowerShell/powerShell-Docs/blob/f856f170c6e18be8758d52df9b50ac443531fdf2/scripting/setup/Installing-Windows-PowerShell.md) | InSyncHandedBackSuccess | [Details](#415e68b372c831ed8dd4535c2968e5a36b5cb65d233)
  [scripting\setup\security.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/setup/security.md) | InSyncHandedBackSuccess | [Details](#6bdf3f658ed75b48be6df217b6a0b4ad5951c935234)
+ [scripting\setup\Starting-the-32-Bit-Version-of-Windows-PowerShell.md](https://github.com/PowerShell/powerShell-Docs/blob/b6ab9bfdd779a865c1f543bf16e91ec17b43c4b0/scripting/setup/Starting-the-32-Bit-Version-of-Windows-PowerShell.md) | InSyncHandedBackSuccess | [Details](#41bbdd302aa3aa0d253bc4c820fdbbeb1b827ccc236)
  [scripting\setup\Windows-PowerShell-System-Requirements.md](https://github.com/PowerShell/powerShell-Docs/blob/1ae9150b226147c039acf0738690de4da8686a71/scripting/setup/Windows-PowerShell-System-Requirements.md) | InSyncHandedBackSuccess | [Details](#e2e129c1c90ab7561861a7d9c71fb654569d5712240)
  [scripting\whats-new\What-s-New-in-the-PowerShell-50-ISE.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/whats-new/What-s-New-in-the-PowerShell-50-ISE.md) | InSyncHandedBackSuccess | [Details](#7be11016317a65565dd9af2a3f65e8f00b3818f3244)
  [scripting\whats-new\What-s-New-in-Windows-PowerShell-50.md](https://github.com/PowerShell/powerShell-Docs/blob/ca7ab17f7ba2615c7a39d1e3dd944501bab4e72c/scripting/whats-new/What-s-New-in-Windows-PowerShell-50.md) | InSyncHandedBackSuccess | [Details](#87e4a23f93d19219a8d00671f319ef93a96fbbf6245)
@@ -4016,18 +4016,15 @@
 * [Back to Top](#report-top)
 
 ##### <a name='41bbdd302aa3aa0d253bc4c820fdbbeb1b827ccc236'></a> Source: [scripting\setup\Starting-the-32-Bit-Version-of-Windows-PowerShell.md](https://github.com/PowerShell/powerShell-Docs/blob/b6ab9bfdd779a865c1f543bf16e91ec17b43c4b0/scripting/setup/Starting-the-32-Bit-Version-of-Windows-PowerShell.md)
-* Status: OutofSyncHandedBackSuccess
-* Target File: 
+* Status: InSyncHandedBackSuccess
+* Target File: [scripting\setup\Starting-the-32-Bit-Version-of-Windows-PowerShell.md](https://github.com/PowerShell/powerShell-Docs.de-de/blob/ebc72370b23ae178637cdd12dae50c98541c3b70/scripting/setup/Starting-the-32-Bit-Version-of-Windows-PowerShell.md)
 * Handoff File: [Starting-the-32-Bit-Version-of-Windows-PowerShell.4a4eaf664caff353459bbcc3d81a3756ede97b7f.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/bd810d483640b0f62a3bd33dbf918dbf2b20952f/ol-handoff/PowerShell/powerShell-Docs.de-de/live/Starting-the-32-Bit-Version-of-Windows-PowerShell.4a4eaf664caff353459bbcc3d81a3756ede97b7f.de-de.xlf)
 * Handoff Datetime: 2016-06-17 21:43:59
 * Handoff Reason: Include
 * Archive File: [Starting-the-32-Bit-Version-of-Windows-PowerShell.4a4eaf664caff353459bbcc3d81a3756ede97b7f.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/9f75f6298ce5c4a286e1bde45e928e0c4ed6e68e/ol-handoff/PowerShell/powerShell-Docs.de-de/live/archive/Starting-the-32-Bit-Version-of-Windows-PowerShell.4a4eaf664caff353459bbcc3d81a3756ede97b7f.de-de.xlf)
 * Archive Datetime: 2016-06-21 13:12:50
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [scripting\setup\Starting-the-32-Bit-Version-of-Windows-PowerShell.md](https://github.com/PowerShell/powerShell-Docs.de-de/blob/a6d1e07e3bb56c7fec8a97fb4f9bff7ac4fab7a2/scripting/setup/Starting-the-32-Bit-Version-of-Windows-PowerShell.md)
-* Current Handback File: [Starting-the-32-Bit-Version-of-Windows-PowerShell.4a4eaf664caff353459bbcc3d81a3756ede97b7f.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d8d8212de03d2ca0851f39ff17ceeeb63fb2ccef/ol-handback/PowerShell/powerShell-Docs.de-de/live/Starting-the-32-Bit-Version-of-Windows-PowerShell.4a4eaf664caff353459bbcc3d81a3756ede97b7f.de-de.xlf)
-* Current Handback Datetime: 2016-05-24 23:36:07
+* Handback File: [Starting-the-32-Bit-Version-of-Windows-PowerShell.4a4eaf664caff353459bbcc3d81a3756ede97b7f.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/5bcfa9443406cee57dff64e7bbd25865ec4285a1/ol-handback/PowerShell/powerShell-Docs.de-de/live/Starting-the-32-Bit-Version-of-Windows-PowerShell.4a4eaf664caff353459bbcc3d81a3756ede97b7f.de-de.xlf)
+* Handback Datetime: 2016-06-24 14:08:54
 * Bilingual File: [Starting-the-32-Bit-Version-of-Windows-PowerShell.4a4eaf664caff353459bbcc3d81a3756ede97b7f.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d8d8212de03d2ca0851f39ff17ceeeb63fb2ccef/ol-handback/PowerShell/powerShell-Docs.de-de/live/Starting-the-32-Bit-Version-of-Windows-PowerShell.4a4eaf664caff353459bbcc3d81a3756ede97b7f.de-de.xlf)
 * Bilingual Datetime: 2016-06-16 14:28:56
 * [Back to Top](#report-top)
