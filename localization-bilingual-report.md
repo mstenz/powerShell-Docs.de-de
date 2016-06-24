@@ -6,21 +6,21 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [scripting\setup\Starting-the-32-Bit-Version-of-Windows-PowerShell.md](https://github.com/PowerShell/powerShell-Docs/blob/b6ab9bfdd779a865c1f543bf16e91ec17b43c4b0/scripting/setup/Starting-the-32-Bit-Version-of-Windows-PowerShell.md) | InSyncHandedBackSuccess | [Details](#41bbdd302aa3aa0d253bc4c820fdbbeb1b827ccc236)
+ [wmf\requirements.md](https://github.com/PowerShell/powerShell-Docs/blob/02b9b25c505adbf49630145bc0543d6436edae0b/wmf/requirements.md) | InSyncHandedBackSuccess | [Details](#02ce3d08b01e58d6d9506f90142f92cc16304e64328)
 
 ## Item Details
-##### <a name='41bbdd302aa3aa0d253bc4c820fdbbeb1b827ccc236'></a> Source: [scripting\setup\Starting-the-32-Bit-Version-of-Windows-PowerShell.md](https://github.com/PowerShell/powerShell-Docs/blob/b6ab9bfdd779a865c1f543bf16e91ec17b43c4b0/scripting/setup/Starting-the-32-Bit-Version-of-Windows-PowerShell.md)
+##### <a name='02ce3d08b01e58d6d9506f90142f92cc16304e64328'></a> Source: [wmf\requirements.md](https://github.com/PowerShell/powerShell-Docs/blob/02b9b25c505adbf49630145bc0543d6436edae0b/wmf/requirements.md)
 * Status: InSyncHandedBackSuccess
-* Target File: [scripting\setup\Starting-the-32-Bit-Version-of-Windows-PowerShell.md](https://github.com/PowerShell/powerShell-Docs.de-de/blob/ebc72370b23ae178637cdd12dae50c98541c3b70/scripting/setup/Starting-the-32-Bit-Version-of-Windows-PowerShell.md)
-* Handoff File: [Starting-the-32-Bit-Version-of-Windows-PowerShell.4a4eaf664caff353459bbcc3d81a3756ede97b7f.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/bd810d483640b0f62a3bd33dbf918dbf2b20952f/ol-handoff/PowerShell/powerShell-Docs.de-de/live/Starting-the-32-Bit-Version-of-Windows-PowerShell.4a4eaf664caff353459bbcc3d81a3756ede97b7f.de-de.xlf)
-* Handoff Datetime: 2016-06-17 21:43:59
+* Target File: [wmf\requirements.md](https://github.com/PowerShell/powerShell-Docs.de-de/blob/2e6261890fb03a4728194e1fb88ec151a4855e5e/wmf/requirements.md)
+* Handoff File: [requirements.ef8332f358d65b1759bfd4c7336b11d1dc8c2d46.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/13605a2222dd98904ed25b2ceb23e82c468ea913/ol-handoff/PowerShell/powerShell-Docs.de-de/live/requirements.ef8332f358d65b1759bfd4c7336b11d1dc8c2d46.de-de.xlf)
+* Handoff Datetime: 2016-03-23 21:11:12
 * Handoff Reason: Include
-* Archive File: [Starting-the-32-Bit-Version-of-Windows-PowerShell.4a4eaf664caff353459bbcc3d81a3756ede97b7f.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/9f75f6298ce5c4a286e1bde45e928e0c4ed6e68e/ol-handoff/PowerShell/powerShell-Docs.de-de/live/archive/Starting-the-32-Bit-Version-of-Windows-PowerShell.4a4eaf664caff353459bbcc3d81a3756ede97b7f.de-de.xlf)
-* Archive Datetime: 2016-06-21 13:12:50
-* Handback File: [Starting-the-32-Bit-Version-of-Windows-PowerShell.4a4eaf664caff353459bbcc3d81a3756ede97b7f.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/5bcfa9443406cee57dff64e7bbd25865ec4285a1/ol-handback/PowerShell/powerShell-Docs.de-de/live/Starting-the-32-Bit-Version-of-Windows-PowerShell.4a4eaf664caff353459bbcc3d81a3756ede97b7f.de-de.xlf)
-* Handback Datetime: 2016-06-24 14:08:54
-* Bilingual File: [Starting-the-32-Bit-Version-of-Windows-PowerShell.4a4eaf664caff353459bbcc3d81a3756ede97b7f.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/5bcfa9443406cee57dff64e7bbd25865ec4285a1/ol-handback/PowerShell/powerShell-Docs.de-de/live/Starting-the-32-Bit-Version-of-Windows-PowerShell.4a4eaf664caff353459bbcc3d81a3756ede97b7f.de-de.xlf)
-* Bilingual Datetime: 2016-06-24 14:10:54
+* Archive File: [requirements.ef8332f358d65b1759bfd4c7336b11d1dc8c2d46.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/f4b21d3aba1c6dd9c1b94fd91c3e85f3e63c1a71/ol-handoff/PowerShell/powerShell-Docs.de-de/live/archive/requirements.ef8332f358d65b1759bfd4c7336b11d1dc8c2d46.de-de.xlf)
+* Archive Datetime: 2016-03-29 13:11:16
+* Handback File: [requirements.ef8332f358d65b1759bfd4c7336b11d1dc8c2d46.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f2fec111eed755a5f7f5e8c3145d1dab58248ca5/ol-handback/PowerShell/powerShell-Docs.de-de/live/requirements.ef8332f358d65b1759bfd4c7336b11d1dc8c2d46.de-de.xlf)
+* Handback Datetime: 2016-06-24 14:38:56
+* Bilingual File: [requirements.ef8332f358d65b1759bfd4c7336b11d1dc8c2d46.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f2fec111eed755a5f7f5e8c3145d1dab58248ca5/ol-handback/PowerShell/powerShell-Docs.de-de/live/requirements.ef8332f358d65b1759bfd4c7336b11d1dc8c2d46.de-de.xlf)
+* Bilingual Datetime: 2016-06-24 14:41:42
 * [Back to Top](#report-top)
 
 
