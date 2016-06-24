@@ -6,7 +6,7 @@ Mit JEA ist Folgendes möglich:
 - **Verschaffen Sie sich genauere Kenntnis darüber, was Ihre Benutzer tun**, indem Sie Aufzeichnungen mitschneiden, die Ihnen genau zeigen, welche Befehle ein Benutzer während einer Sitzung ausgeführt hat.
 
 Warum ist das so wichtig?
-Betrachten Sie ein häufiges Szenario, in dem sich Ihre DNS-Server im gleichen Standort befinden wie Ihre Active Directory-Domänencontroller.
+Betrachten Sie das gängige Szenario, bei dem Ihre DNS-Server mit Ihren Active Directory-Domänencontrollern zusammengestellt sind.
 Ihre DNS-Administratoren müssen lokale Administratorrechte besitzen, um Probleme mit dem DNS-Server beheben zu können. Zu diesem Zweck müssen Sie sie zu Mitgliedern der Sicherheitsgruppe „Domänen-Admins“ machen, die über weit reichende Berechtigungen verfügt.
 Damit erhalten diese Administratoren effektiv Kontrolle über Ihre gesamte Domäne sowie Zugriff auf alle Ressourcen auf diesem Computer.
 
@@ -67,6 +67,6 @@ Um die Erstellung von JEA-Endpunkten noch einfacher zu gestalten, lesen Sie den 
 Die GUI unterstützt sogar die Erstellung von Rollenfunktionen basierend auf PowerShell-Protokollen, sodass Sie mit den Befehlen beginnen können, die Ihre Benutzer regelmäßig für ihre Arbeit ausführen.
 
 
-<!--HONumber=Jun16_HO1-->
+<!--HONumber=Jun16_HO3-->
 
 

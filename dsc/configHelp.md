@@ -1,12 +1,21 @@
+---
+title:   Schreiben von Hilfe für DSC-Konfigurationen
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Schreiben von Hilfe für DSC-Konfigurationen
 
 >Gilt für: Windows PowerShell 5.0
 
-Sie können die kommentarbasierte Hilfe in DSC-Konfigurationen verwenden. Benutzer können auf die Hilfe zugreifen, entweder durch Aufrufen der Konfigurationsfunktion mit `-?` oder mithilfe des 
-Cmdlets [Get-Help](https://technet.microsoft.com/en-us/library/hh849696.aspx). Weitere Informationen zur kommentarbasierten Hilfe für PowerShell finden Sie unter 
-[about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/hh847834.aspx).
+Sie können die kommentarbasierte Hilfe in DSC-Konfigurationen verwenden. Benutzer können auf die Hilfe zugreifen, entweder durch Aufrufen der Konfigurationsfunktion mit `-?` oder mithilfe des Cmdlets [Get-Help](https://technet.microsoft.com/en-us/library/hh849696.aspx). Weitere Informationen zur kommentarbasierten Hilfe für PowerShell finden Sie unter [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/hh847834.aspx).
 
-Das folgende Beispiel zeigt ein Skript, das zwei Konfigurationen und kommentarbasierte Hilfe für jede Konfiguration enthält:
+Das folgende Beispiel zeigt ein Skript, das eine Konfiguration und kommentarbasierte Hilfe dafür enthält:
 
 ```powershell
 <#
@@ -18,7 +27,7 @@ A brief description of the function or script. This keyword can be used only onc
 A detailed description of the function or script. This keyword can be used only once for each configuration.
 
 
-.PARAMETER computername
+.PARAMETER ComputerName
 The description of a parameter. Add a .PARAMETER keyword for each parameter in the function or script syntax.
 
 Type the parameter name on the same line as the .PARAMETER keyword. Type the parameter description on the lines following the .PARAMETER keyword. 
@@ -28,7 +37,7 @@ The description can include paragraph breaks.
 The Parameter keywords can appear in any order in the comment block, but the function or script syntax determines the order in which the parameters 
 (and their descriptions) appear in help topic. To change the order, change the syntax.
 
-.PARAMETER filePath
+.PARAMETER FilePath
 Provide a PARAMETER section for each parameter that your script or function accepts.
 
 .EXAMPLE
@@ -41,7 +50,7 @@ This example will be labeled "EXAMPLE 2" when help is displayed to the user.
 
 configuration HelpSample1
 {
-    param([string]$computername,[string]$filePath)
+    param([string]$ComputerName,[string]$FilePath)
     File f
     {
         Contents="Hello World"
@@ -52,8 +61,7 @@ configuration HelpSample1
 
 ## Anzeigen von Hilfe zur Konfiguration
 
-Verwenden Sie zum Anzeigen der Hilfe für eine Konfiguration das Cmdlet **Get-Help** mit dem Namen der Funktion, oder geben der Namen der Funktion gefolgt von `-?` ein. Folgendes ist die Ausgabe
-der vorherigen Funktion bei Übergabe an Get-Help:
+Verwenden Sie zum Anzeigen der Hilfe für eine Konfiguration das Cmdlet **Get-Help** mit dem Namen der Funktion, oder geben der Namen der Funktion gefolgt von `-?` ein. Folgendes ist die Ausgabe der vorherigen Funktion bei Übergabe an **Get-Help**:
 
 ```powershell
 PS C:\> Get-Help HelpSample1
@@ -66,8 +74,8 @@ SYNOPSIS
     
     
 SYNTAX
-    HelpSample1 [[-InstanceName] <String>] [[-DependsOn] <String[]>] [[-OutputPath] <String>] [[-ConfigurationData] <Hashtable>] [[-computername] 
-    <String>] [[-filePath] <String>] [<CommonParameters>]
+    HelpSample1 [[-InstanceName] <String>] [[-DependsOn] <String[]>] [[-OutputPath] <String>] [[-ConfigurationData] <Hashtable>] [[-ComputerName] 
+    <String>] [[-FilePath] <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -85,6 +93,8 @@ REMARKS
 ## Weitere Informationen
 * [DSC-Konfigurationen](configurations.md)
 
-<!--HONumber=Apr16_HO5-->
+
+
+<!--HONumber=Jun16_HO3-->
 
 

@@ -1,22 +1,29 @@
+---
+title:   Angeben knotenübergreifender Abhängigkeiten
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Angeben knotenübergreifender Abhängigkeiten
 
 > Gilt für: Windows PowerShell 5.0
 
-DSC bietet spezielle Ressourcen **WaitForAll**, **WaitForAny** und **WaitForSome**, die in Konfigurationen zum Angeben von Abhängigkeiten von Konfigurationen auf anderen Knoten verwendet werden können. Die
-Ressourcen verhalten sich wie folgt:
+DSC bietet spezielle Ressourcen **WaitForAll**, **WaitForAny** und **WaitForSome**, die in Konfigurationen zum Angeben von Abhängigkeiten von Konfigurationen auf anderen Knoten verwendet werden können. Die Ressourcen verhalten sich wie folgt:
 
 * **WaitForAll**: Ist erfolgreich, wenn die angegebene Ressource auf allen Zielknoten, die in der **NodeName**-Eigenschaft definiert sind, den gewünschten Zustand hat.
 * **WaitForAny**: Ist erfolgreich, wenn die angegebene Ressource auf mindestens einem der Zielknoten, die in der **NodeName**-Eigenschaft definiert sind, den gewünschten Zustand hat.
-* **WaitForSome**: Gibt zusätzlich zu einer **NodeName**-Eigenschaft eine **NodeCount**-Eigenschaft an. Die Ressource ist erfolgreich, wenn sich die Ressource auf einer Mindestanzahl von Knoten 
-(angegeben durch **NodeCount**), die von der **NodeName**-Eigenschaft definiert sind, im gewünschten Zustand befindet. 
+* **WaitForSome**: Gibt zusätzlich zu einer **NodeName**-Eigenschaft eine **NodeCount**-Eigenschaft an. Die Ressource ist erfolgreich, wenn sich die Ressource auf einer Mindestanzahl von Knoten (angegeben durch **NodeCount**), die von der **NodeName**-Eigenschaft definiert sind, im gewünschten Zustand befindet. 
 
 ## Verwenden von WaitForXXXX-Ressourcen
 
-Um die **WaitForXXXX**-Ressourcen zu verwenden, erstellen Sie einen Ressourcenblock des Ressourcentyps, der die DSC-Ressource und Knoten angibt, auf die gewartet werden soll. Dann verwenden Sie die **DependsOn**-Eigenschaft
-in allen anderen Ressourcenblöcken in Ihre Konfiguration, um darauf zu warten, dass die im **WaitForXXXX**-Knoten angegebenen Bedingungen erfolgreich erfüllt werden.
+Um die **WaitForXXXX**-Ressourcen zu verwenden, erstellen Sie einen Ressourcenblock des Ressourcentyps, der die DSC-Ressource und Knoten angibt, auf die gewartet werden soll. Dann verwenden Sie die **DependsOn**-Eigenschaft in allen anderen Ressourcenblöcken Ihrer Konfiguration und warten darauf, dass die im **WaitForXXXX**-Knoten angegebenen Bedingungen erfolgreich erfüllt werden.
 
-Bei der folgenden Konfiguration wartet der Zielknoten beispielsweise, bis die Ressource **xADDomain** auf dem Knoten **MyDC** mit 30 Wiederholungen, bei 15-Sekunden-Intervallen, abgeschlossen ist, 
-ehe der Zielknoten der Domäne beitreten kann.
+Bei der folgenden Konfiguration wartet der Zielknoten beispielsweise, bis die Ressource **xADDomain** auf dem Knoten **MyDC** (bei einer maximalen Anzahl von 30 Wiederholungen in 15-Sekunden-Intervallen) abgeschlossen ist, ehe der Zielknoten der Domäne beitreten kann.
 
 ```PowerShell
 Configuration JoinDomain
@@ -39,20 +46,22 @@ Configuration JoinDomain
         {
             Name             = 'MyPC'
             DomainName       = 'Contoso.com'
-            Credential       = (get-credential)
+            Credential       = (Get-Credential)
             DependsOn        ='[WaitForAll]DC'
         }
     }
 }
 ```
 
->**Hinweis:** Standardmäßig führen die WaitForXXXX-Ressourcen einen Versuch durch, und schlagen dann fehl. Auch wenn dies nicht erforderlich ist, sollten Sie doch in der Regel ein Wiederholungsintervall sowie eine Anzahl von Wiederholungen angeben.
+>**Hinweis:** Standardmäßig führen die „WaitForXXXX“-Ressourcen einen Versuch durch und verursachen dann einen Fehler. Auch wenn dies nicht erforderlich ist, sollten Sie doch in der Regel ein Wiederholungsintervall sowie eine Anzahl von Wiederholungen angeben.
 
 ## Weitere Informationen
 * [DSC-Konfigurationen](configurations.md)
 * [DSC-Ressourcen](resources.md)
 * [Konfigurieren des lokalen Konfigurations-Managers](metaConfig.md)
 
-<!--HONumber=Apr16_HO4-->
+
+
+<!--HONumber=Jun16_HO3-->
 
 
