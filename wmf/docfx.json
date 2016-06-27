@@ -10,33 +10,7 @@
         ],
         "globalMetadata": {
             "ROBOTS": "INDEX, FOLLOW",
-            {
-    "build": {
-        "content": [
-            {
-                "files": [
-                    "**/**.md"
-                ],
-                "exclude": ["**/obj/**"]
-            }
-        ],
-        "globalMetadata": {
-            "ROBOTS": "INDEX, FOLLOW",
             "bilingual_type": "hover over"
-        },
-        "resource": [
-            {
-                "files": [
-                    "**/images/**"
-                ],
-                "exclude": ["**/obj/**"]
-            }
-        ],
-        "template": "op.html",
-        "dest": "dsc"
-    }
-}
-
         },
         "resource": [
             {
@@ -50,3 +24,4 @@
         "dest": "wmf"
     }
 }
+
