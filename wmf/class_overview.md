@@ -8,4 +8,8 @@ Wir haben die PowerShell-Sprache zum Definieren von Klassen und anderen benutzer
 -   Definieren benutzerdefinierter Typen in PowerShell mithilfe vertrauter objektorientierter Programmierkonstrukte, z. B. Klassen, Eigenschaften, Methoden usw.
 -   Unterstützung der Vererbung von Klassen in PowerShell und Basisklassen für DSC-Ressourcen
 -   Debuggen von Typen mithilfe der PowerShell-Sprache
--   Generieren und Behandeln von Ausnahmen mithilfe formaler Mechanismen auf der richtigen Ebene<!--HONumber=Mar16_HO2-->
+-   Generieren und Behandeln von Ausnahmen mithilfe formaler Mechanismen auf der richtigen Ebene
+
+<!--HONumber=Jun16_HO4-->
+
+

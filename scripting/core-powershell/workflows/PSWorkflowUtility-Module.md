@@ -1,13 +1,17 @@
 ---
-title:  PSWorkflowUtility-Modul
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
-ms.assetid:  c62a363a-caa2-4b6e-a079-d6e8543bc4c6
+title: PSWorkflowUtility-Modul
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+ms.assetid: c62a363a-caa2-4b6e-a079-d6e8543bc4c6
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 62cb6e90637373791e66ad1f94af085de00e4666
+
 ---
 
 # PSWorkflowUtility-Modul
@@ -31,6 +35,7 @@ Dieser Abschnitt enthält die Hilfethemen für das **PSWorkflowUtility**-Modul, 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 
