@@ -74,16 +74,14 @@
 
 ### [Wo finde ich weitere Informationen?](getting-started/more-powershell-learning.md)
 
-## [Core PowerShell](core-powershell/core-powershell.md)
-### [Skripterstellungshandbuch](core-powershell/scripting-guide.md)
-### [Sprachführer](core-powershell/language-guide.md)
+## [PowerShell-Kern](core-powershell/core-powershell.md)
 ### [Core-Module](core-powershell/core-modules.md)
 ####  [Archivmodul](core-powershell/core-modules/Microsoft.PowerShell.Archive-Module.md)
 ####  [Core-Modul](core-powershell/core-modules/Microsoft.PowerShell.Core-Module.md)
 ####  [Core-Modul-Referenzliste](core-powershell/core-modules/Windows-PowerShell-5.0.md)
 ####  [Diagnosemodul](core-powershell/core-modules/Microsoft.PowerShell.Diagnostics-Module.md)
 ####  [Hostmodul](core-powershell/core-modules/Microsoft.PowerShell.Host-Module.md)
-####  [Lokales Kontomodul](core-powershell/core-modules/PSLocalAccount5-Module.md)
+####  [Modul für lokales Konto](core-powershell/core-modules/PSLocalAccount5-Module.md)
 ####  [Verwaltungsmodul](core-powershell/core-modules/Microsoft.PowerShell.Management-Module.md)
 ####  [ODataUtils-Modul](core-powershell/core-modules/Microsoft.PowerShell.ODataUtils-Module.md)
 ####  [Paketverwaltungsmodul](core-powershell/core-modules/PackageManagement-Module.md)
@@ -112,6 +110,8 @@
 ####  [Einführung in die PowerShell ISE](core-powershell/ise/Introducing-the-Windows-PowerShell-ISE.md)
 ####  [ISE-Modul](core-powershell/ise/ISE-Module.md)
 ####  [Tastenkombinationen für PowerShell ISE](core-powershell/ise/Keyboard-Shortcuts-for-the-Windows-PowerShell-ISE.md)
+####  [Das PowerShellTab-Objekt](core-powershell/ise/The-PowerShellTab-Object.md)
+####  [Das PowerShellTabCollection-Objekt](core-powershell/ise/The-PowerShellTabCollection-Object.md)
 ####  [Zweck des PowerShell ISE-Skriptobjektmodells](core-powershell/ise/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 ####  [Die ISE-Objektmodellhierarchie](core-powershell/ise/The-ISE-Object-Model-Hierarchy.md)
 ####  [Das ISEAddOnTool-Objekt](core-powershell/ise/The-ISEAddOnTool-Object.md)
@@ -124,8 +124,6 @@
 ### [Konsole](core-powershell/console-guide.md)
 ####  [Referenz für die Konsolenbefehlszeile](core-powershell/console/PowerShell.exe-Command-Line-Help.md)
 ####  [Verwenden von Vervollständigung mit der TAB-TASTE im Skriptbereich und Konsolenbereich](core-powershell/ise/How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md)
-####  [Das PowerShellTab-Objekt](core-powershell/ise/The-PowerShellTab-Object.md)
-####  [Das PowerShellTabCollection-Objekt](core-powershell/ise/The-PowerShellTabCollection-Object.md)
 ####  [Verwenden von Erweiterung mit der TAB-TASTE](core-powershell/console/Using-Tab-Expansion.md)
 
 ### [Ausführen von Remotebefehlen](core-powershell/Running-Remote-Commands.md)
@@ -144,6 +142,6 @@
 ## [PowerShell-Glossar](Windows-PowerShell-Glossary.md)
 
 
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 
