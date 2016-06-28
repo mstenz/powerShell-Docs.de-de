@@ -1,13 +1,17 @@
 ---
-title:  Microsoft.PowerShell.Host-Modul
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
-ms.assetid:  580a896f-b1dc-46f9-af1d-ab1a93c1fbf4
+title: Microsoft.PowerShell.Host-Modul
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+ms.assetid: 580a896f-b1dc-46f9-af1d-ab1a93c1fbf4
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 10dff4577e717b2c74604515f7fa696dc7fb996b
+
 ---
 
 # Microsoft.PowerShell.Host-Modul
@@ -23,6 +27,7 @@ Dieser Abschnitt enthält Hilfethemen für das **Microsoft.PowerShell.Host**-Mod
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 
