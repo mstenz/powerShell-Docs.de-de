@@ -1,12 +1,16 @@
 ---
-title:  Workflows-Handbuch
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
+title: Workflows-Handbuch
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 8c3f76e53465b9d4eb90355cb6200abd871fa7b3
+
 ---
 
 # PSWorkflow-Modul
@@ -39,6 +43,7 @@ Dieser Abschnitt enthält die Hilfethemen für das **PSWorkflow**-Modul, das Cmd
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

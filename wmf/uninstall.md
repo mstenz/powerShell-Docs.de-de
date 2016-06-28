@@ -22,4 +22,8 @@ wusa /uninstall /kb:3134760
 2.  Öffnen Sie **Programme** und dann **Programm deinstallieren**.
 3.  Klicken Sie auf **Installierte Updates anzeigen**.
 4.  Wählen Sie in der Liste der installierten Updates **Windows Management Framework 5.0** aus. Dies entspricht *KB3134758*, *KB3134759* oder *KB3134760*. Klicken Sie auf **Deinstallieren**.
-<!--HONumber=Mar16_HO2-->
+
+
+<!--HONumber=Jun16_HO4-->
+
+
