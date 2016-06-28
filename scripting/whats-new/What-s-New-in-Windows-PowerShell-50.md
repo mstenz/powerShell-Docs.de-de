@@ -1,13 +1,17 @@
 ---
-title:  Neuerungen in Windows PowerShell 5.0
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
-ms.assetid:  1476722e-947e-425d-a86c-50037488dc6e
+title: Neuerungen in Windows PowerShell 5.0
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+ms.assetid: 1476722e-947e-425d-a86c-50037488dc6e
+translationtype: Human Translation
+ms.sourcegitcommit: ca7ab17f7ba2615c7a39d1e3dd944501bab4e72c
+ms.openlocfilehash: 87e4a23f93d19219a8d00671f319ef93a96fbbf6
+
 ---
 
 # Neuerungen in Windows PowerShell
@@ -754,6 +758,7 @@ Damit Windows PowerShell 3.0 Sonderzeichen besser interpretieren und ordnungsgem
 
 
 
-<!--HONumber=May16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 
