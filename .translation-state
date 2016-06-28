@@ -3932,8 +3932,8 @@
       "ArchiveFileDateTime": "2016-06-28T13:27:50.1672128Z",
       "ArchiveException": null,
       "BilingualFilePath": "ol-handback\\PowerShell\\powerShell-Docs.de-de\\live\\feedback.3662230166299ef7c1fb7a7a7f5cdbd64b1d812a.de-de.xlf",
-      "BilingualFileCommit": "7bb4c77c7a4ad46da2cfe7990f32e8e11b4726b6",
-      "BilingualDateTime": "2016-06-16T14:28:56.0564179Z",
+      "BilingualFileCommit": "70a8e93420cdc6da970f9f7f1aad1edd362f86c9",
+      "BilingualDateTime": "2016-06-28T15:31:59.5568798Z",
       "BilingualException": null
     },
     "e2d8147c6a85b59f5289f64e068c56593acc0cfc": {
@@ -19354,8 +19354,8 @@
       "ArchiveFileDateTime": "2016-06-28T13:27:50.1672128Z",
       "ArchiveException": null,
       "BilingualFilePath": "ol-handback\\PowerShell\\powerShell-Docs.de-de\\live\\Microsoft.PowerShell.Host-Module.f7e8e946a81fe0f0747b2ed86d068b078f2bdad1.de-de.xlf",
-      "BilingualFileCommit": "38fd34faa8c249b4ff0847fd3c3734fde98babc9",
-      "BilingualDateTime": "2016-06-16T14:28:56.0564179Z",
+      "BilingualFileCommit": "70a8e93420cdc6da970f9f7f1aad1edd362f86c9",
+      "BilingualDateTime": "2016-06-28T15:31:59.5568798Z",
       "BilingualException": null
     },
     "d62bf183f2b80c8ff7bc279124dc10ef72fdf5ff": {
@@ -27579,8 +27579,8 @@
       "ArchiveFileDateTime": "2016-06-28T13:27:50.1672128Z",
       "ArchiveException": null,
       "BilingualFilePath": "ol-handback\\PowerShell\\powerShell-Docs.de-de\\live\\groupResource.d19d416269795c92566b62c36b9782062dcea43e.de-de.xlf",
-      "BilingualFileCommit": "f2edf49e2a5cbf55d063a2934cb5af88517ad208",
-      "BilingualDateTime": "2016-06-16T14:28:56.0564179Z",
+      "BilingualFileCommit": "70a8e93420cdc6da970f9f7f1aad1edd362f86c9",
+      "BilingualDateTime": "2016-06-28T15:31:59.5568798Z",
       "BilingualException": null
     },
     "1ecef855e4bfc0ee0e5109fd0ecfb9ca395854d5": {
