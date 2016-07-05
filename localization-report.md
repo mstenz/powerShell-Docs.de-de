@@ -4143,8 +4143,8 @@
 * Handoff File: [TOC.94c88eadcdc1b167fb0a17837d186c734f84dea9.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/78fe3206926636a55dfb7442486aaa68c6f41d9b/ol-handoff/PowerShell/powerShell-Docs.de-de/live/TOC.94c88eadcdc1b167fb0a17837d186c734f84dea9.de-de.xlf)
 * Handoff Datetime: 2016-06-30 18:40:52
 * Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
+* Archive File: [TOC.94c88eadcdc1b167fb0a17837d186c734f84dea9.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/fcddaf843777583799d46bc71632875c2829f0b1/ol-handoff/PowerShell/powerShell-Docs.de-de/live/archive/TOC.94c88eadcdc1b167fb0a17837d186c734f84dea9.de-de.xlf)
+* Archive Datetime: 2016-07-05 13:08:15
 * Handback File: [TOC.94c88eadcdc1b167fb0a17837d186c734f84dea9.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/79bba21eecf64f85314e2d50e52974fa2a70e5ac/ol-handback/PowerShell/powerShell-Docs.de-de/live/TOC.94c88eadcdc1b167fb0a17837d186c734f84dea9.de-de.xlf)
 * Handback Datetime: 2016-06-28 14:53:31
 * Bilingual File: [TOC.94c88eadcdc1b167fb0a17837d186c734f84dea9.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/79bba21eecf64f85314e2d50e52974fa2a70e5ac/ol-handback/PowerShell/powerShell-Docs.de-de/live/TOC.94c88eadcdc1b167fb0a17837d186c734f84dea9.de-de.xlf)
