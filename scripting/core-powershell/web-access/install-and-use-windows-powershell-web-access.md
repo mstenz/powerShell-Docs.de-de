@@ -1,12 +1,16 @@
 ---
-title:  Installieren und Verwenden von Windows PowerShell Web Access
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
+title: Installieren und Verwenden von Windows PowerShell Web Access
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: d2f78148402f06992f5f58cd40e8c4f624b5e4b5
+
 ---
 
 #  Installieren und Verwenden von Windows PowerShell Web Access
@@ -159,7 +163,7 @@ Sie können das Windows PowerShell Web Access-Gateway auf einem Server mit Windo
     </tbody>
     </table>
 
-2.  Geben Sie Folgendes ein, und drücken Sie dann die **EINGABETASTE**, wobei *Computername* für den Remotecomputer steht, auf dem Sie Windows PowerShell Web Access ggf. installieren möchten. Mit dem <span class="code">Restart</span>-Parameter werden Zielserver bei Bedarf automatisch neu gestartet.
+2.  Geben Sie Folgendes ein, und drücken Sie anschließend die **EINGABETASTE**, wobei *Computername* für den Remotecomputer steht, auf dem Sie Windows PowerShell Web Access ggf. installieren möchten. Mit dem <span class="code">Restart</span>-Parameter werden Zielserver bei Bedarf automatisch neu gestartet.
 
     [Kopieren](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_374a9c21-4f6e-471e-b957-bb190a594533'); "In Zwischenablage kopieren.")
 
@@ -189,7 +193,7 @@ Sie können das Windows PowerShell Web Access-Gateway auf einem Server mit Windo
 
 3.  Stellen Sie nach Abschluss der Installation sicher, dass Windows PowerShell Web Access auf den Zielservern installiert wurde. Führen Sie dazu das Cmdlet **Get-WindowsFeature** auf einem Zielserver in einer Windows PowerShell-Konsole aus, die mit erhöhten Benutzerrechten geöffnet wurde. Sie können die Installation von Windows PowerShell Web Access auch in der Server-Manager-Konsole überprüfen, indem Sie auf der Seite **Alle Server** einen Zielserver auswählen und anschließend die Kachel **Rollen und Features** für den ausgewählten Server anzeigen. Sie können auch die Infodatei für Windows PowerShell Web Access anzeigen.
 
-4.  Nachdem Windows PowerShell Web Access installiert wurde, werden Sie aufgefordert, die Infodatei zu lesen, in der grundlegende, erforderliche Setupanweisungen für das Gateway enthalten sind. Diese Setupanweisungen finden Sie auch im nächsten Abschnitt [Schritt 2: Konfigurieren des Gateways](#BKMK_step2). Die Infodatei befindet sich unter <span class="computerOutputInline">C:\\Windows\\Web\\PowerShellWebAccess\\wwwroot\\README.txt</span>.
+4.  Nachdem Windows PowerShell Web Access installiert wurde, werden Sie aufgefordert, die Infodatei zu lesen, in der grundlegende, erforderliche Setupanweisungen für das Gateway enthalten sind. Diese Setupanweisungen finden Sie auch im nächsten Abschnitt [Schritt 2: Konfigurieren des Gateways](#BKMK_step2). Die Infodatei befindet sich unter <span class="computerOutputInline">C:\\Windows\\Web\\PowerShellWebAccess\\wwwroot\\README.txt.</span>
 
 <a href="" id="BKMK_step2"></a>
 ###
@@ -256,7 +260,7 @@ Sie können die Konfiguration der Windows PowerShell Web Access-Webanwendung dur
 
     -   Pfad: /pswa
 
-    -   Anwendungspool: pswa\_pool
+    -   ApplicationPool: pswa\_pool
 
     -   Aktivierte Protokolle: http
 
@@ -264,7 +268,7 @@ Sie können die Konfiguration der Windows PowerShell Web Access-Webanwendung dur
 
     <span class="label">Beispiel:</span> <span class="code">Install-PswaWebApplication –webApplicationName myWebApp –useTestCertificate</span>
 
-    In diesem Beispiel ergibt sich als Website für Windows PowerShell Web Access „https://&lt;*Servername*&gt;/myWebApp“.
+    In diesem Beispiel ergibt sich als Website für Windows PowerShell Web Access „https://&lt;*Servername*&gt;/myWebApp“.\_
 
     <table>
     <colgroup>
@@ -298,7 +302,7 @@ Sie können die Konfiguration der Windows PowerShell Web Access-Webanwendung dur
 
     -   Pfad: /pswa
 
-    -   Anwendungspool: pswa\_pool
+    -   ApplicationPool: pswa\_pool
 
     -   Aktivierte Protokolle: http
 
@@ -427,7 +431,7 @@ Sie können das Windows PowerShell Web Access-Gateway auf einem Server mit Windo
 
 7.  Falls die Featuredateien für Windows PowerShell Web Access nicht auf dem in Schritt 4 ausgewählten Zielserver gespeichert sind, klicken Sie auf der Seite **Installationsauswahl bestätigen** auf **Alternativen Quellpfad angeben**, und geben Sie den Pfad zu den Featuredateien an. Klicken Sie andernfalls auf **Installieren**.
 
-8.  Nachdem Sie auf **Installieren** geklickt haben, werden auf der Seite **Installationsstatus** der Installationsstatus, Ergebnisse und Meldungen wie Warnungen, Fehler oder nach der Installation auszuführende Konfigurationsschritten angezeigt, die für Windows PowerShell Web Access erforderlich sind. Nachdem Windows PowerShell Web Access installiert wurde, werden Sie aufgefordert, die Infodatei zu lesen, in der grundlegende, erforderliche Setupanweisungen für das Gateway enthalten sind. Diese Anweisungen sind auch in diesem Thema enthalten. Die Infodatei befindet sich unter <span class="computerOutputInline">C:\\Windows\\Web\\PowerShellWebAccess\\wwwroot\\README.txt</span>.
+8.  Nachdem Sie auf **Installieren** geklickt haben, werden auf der Seite **Installationsstatus** der Installationsstatus, Ergebnisse und Meldungen wie Warnungen, Fehler oder nach der Installation auszuführende Konfigurationsschritten angezeigt, die für Windows PowerShell Web Access erforderlich sind. Nachdem Windows PowerShell Web Access installiert wurde, werden Sie aufgefordert, die Infodatei zu lesen, in der grundlegende, erforderliche Setupanweisungen für das Gateway enthalten sind. Diese Anweisungen sind auch in diesem Thema enthalten. Die Infodatei befindet sich unter <span class="computerOutputInline">C:\\Windows\\Web\\PowerShellWebAccess\\wwwroot\\README.txt.</span>
 
 ###
 
@@ -453,13 +457,13 @@ Die Anweisungen in diesem Abschnitt gelten für die Installation der Windows Pow
 
 2.  Erstellen Sie einen neuen Anwendungspool für Windows PowerShell Web Access. Erweitern Sie den Knoten des Gatewayservers im IIS-Manager-Strukturbereich, wählen Sie die **Anwendungspools** aus, und klicken Sie im Bereich** Aktionen** auf **Anwendungspool hinzufügen**.
 
-3.  Fügen Sie einen neuen Anwendungspool mit dem Namen **pswa\_pool** hinzu, oder geben Sie einen anderen Namen an. Klicken Sie auf **OK**.
+3.  Fügen Sie einen neuen Anwendungspool mit dem Namen **pswa\_pool **hinzu, oder geben Sie einen anderen Namen an. Klicken Sie auf **OK**.
 
 4.  Erweitern Sie im IIS-Manager-Strukturbereich den Knoten für den Server, auf dem Windows PowerShell Web Access installiert ist, bis der Ordner **Sites** sichtbar ist. Wählen Sie den Ordner **Sites** aus.
 
 5.  Klicken Sie mit der rechten Maustaste auf die Website (z.B. **Standardwebsite**), der Sie die Windows PowerShell Web Access-Website hinzufügen möchten, und klicken Sie anschließend auf **Anwendung hinzufügen**.
 
-6.  Geben Sie im Feld **Alias** „pswa“ ein, oder geben Sie einen anderen Alias an. Der Alias wird zum Namen des virtuellen Verzeichnisses. In der folgenden URL steht **pswa** z.B. für den Alias, der in diesem Schritt angegeben wurde: „https://&lt;Servername&gt;/pswa.“
+6.  Geben Sie im Feld **Alias** „pswa“ ein, oder geben Sie einen anderen Alias an. Der Alias wird zum Namen des virtuellen Verzeichnisses. In der folgenden URL steht **pswa** z.B. für den Alias, der in diesem Schritt angegeben wurde: „https://&lt;Servername&gt;/pswa“.
 
 7.  Wählen Sie im Feld **Anwendungspool** den Anwendungspool aus, den Sie in Schritt 3 erstellt haben.
 
@@ -708,6 +712,7 @@ Die Lizenz für Drittanbieterskripts oder Code, die mit dieser Website verlinkt 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 
