@@ -2726,8 +2726,8 @@
 * Archive Datetime: 2016-06-28 13:27:50
 * Handback File: [The-ISEOptions-Object.c3be3e584cddf0fbee4dc195cc7dc8959113e07b.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/b324d8ab63e6a6722efb425e32d661f2c5a67d92/ol-handback/PowerShell/powerShell-Docs.de-de/live/The-ISEOptions-Object.c3be3e584cddf0fbee4dc195cc7dc8959113e07b.de-de.xlf)
 * Handback Datetime: 2016-07-05 16:11:52
-* Bilingual File: [The-ISEOptions-Object.c3be3e584cddf0fbee4dc195cc7dc8959113e07b.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/38fd34faa8c249b4ff0847fd3c3734fde98babc9/ol-handback/PowerShell/powerShell-Docs.de-de/live/The-ISEOptions-Object.c3be3e584cddf0fbee4dc195cc7dc8959113e07b.de-de.xlf)
-* Bilingual Datetime: 2016-06-16 14:28:56
+* Bilingual File: [The-ISEOptions-Object.c3be3e584cddf0fbee4dc195cc7dc8959113e07b.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/b324d8ab63e6a6722efb425e32d661f2c5a67d92/ol-handback/PowerShell/powerShell-Docs.de-de/live/The-ISEOptions-Object.c3be3e584cddf0fbee4dc195cc7dc8959113e07b.de-de.xlf)
+* Bilingual Datetime: 2016-07-05 16:12:28
 * [Back to Top](#report-top)
 
 ##### <a name='1d899709f3a0caa2c957fc8b84f00eeb597a47fa155'></a> Source: [scripting\core-powershell\ise\The-ISESnippetCollection-Object.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/core-powershell/ise/The-ISESnippetCollection-Object.md)
@@ -2926,8 +2926,8 @@
 * Archive Datetime: 2016-06-28 13:27:50
 * Handback File: [install-and-use-windows-powershell-web-access.b0ab653c895ebd67ec078d852bf20804e9c72a1c.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/b324d8ab63e6a6722efb425e32d661f2c5a67d92/ol-handback/PowerShell/powerShell-Docs.de-de/live/install-and-use-windows-powershell-web-access.b0ab653c895ebd67ec078d852bf20804e9c72a1c.de-de.xlf)
 * Handback Datetime: 2016-07-05 16:11:52
-* Bilingual File: [install-and-use-windows-powershell-web-access.b0ab653c895ebd67ec078d852bf20804e9c72a1c.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/38fd34faa8c249b4ff0847fd3c3734fde98babc9/ol-handback/PowerShell/powerShell-Docs.de-de/live/install-and-use-windows-powershell-web-access.b0ab653c895ebd67ec078d852bf20804e9c72a1c.de-de.xlf)
-* Bilingual Datetime: 2016-06-16 14:28:56
+* Bilingual File: [install-and-use-windows-powershell-web-access.b0ab653c895ebd67ec078d852bf20804e9c72a1c.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/b324d8ab63e6a6722efb425e32d661f2c5a67d92/ol-handback/PowerShell/powerShell-Docs.de-de/live/install-and-use-windows-powershell-web-access.b0ab653c895ebd67ec078d852bf20804e9c72a1c.de-de.xlf)
+* Bilingual Datetime: 2016-07-05 16:12:28
 * [Back to Top](#report-top)
 
 ##### <a name='6366ec9c49f721b758b6a520f68cf2b3c5ee0caf167'></a> Source: [scripting\core-powershell\web-access\troubleshooting-access-problems-in-windows-powershell-web-access.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/core-powershell/web-access/troubleshooting-access-problems-in-windows-powershell-web-access.md)
@@ -3206,8 +3206,8 @@
 * Archive Datetime: 2016-06-28 13:27:50
 * Handback File: [Managing-Current-Location.d3cc0638ed635f92822a2f7ba0e1a1b92de3ad78.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/b324d8ab63e6a6722efb425e32d661f2c5a67d92/ol-handback/PowerShell/powerShell-Docs.de-de/live/Managing-Current-Location.d3cc0638ed635f92822a2f7ba0e1a1b92de3ad78.de-de.xlf)
 * Handback Datetime: 2016-07-05 16:11:52
-* Bilingual File: [Managing-Current-Location.c10f254b8fa5fbc946467528edd5cb47e1d36870.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/89446d208f4afa894c858c6e2c0009624b2f5fc6/ol-handback/PowerShell/powerShell-Docs.de-de/live/Managing-Current-Location.c10f254b8fa5fbc946467528edd5cb47e1d36870.de-de.xlf)
-* Bilingual Datetime: 2016-06-16 14:28:56
+* Bilingual File: [Managing-Current-Location.d3cc0638ed635f92822a2f7ba0e1a1b92de3ad78.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/b324d8ab63e6a6722efb425e32d661f2c5a67d92/ol-handback/PowerShell/powerShell-Docs.de-de/live/Managing-Current-Location.d3cc0638ed635f92822a2f7ba0e1a1b92de3ad78.de-de.xlf)
+* Bilingual Datetime: 2016-07-05 16:12:28
 * [Back to Top](#report-top)
 
 ##### <a name='6857cf5e73252f646e563fa12a8252b4bdc2e1e5185'></a> Source: [scripting\getting-started\cookbooks\Managing-Processes-with-Process-Cmdlets.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/getting-started/cookbooks/Managing-Processes-with-Process-Cmdlets.md)
@@ -3455,8 +3455,8 @@
 * Archive Datetime: 2016-06-28 13:27:50
 * Handback File: [Using-Format-Commands-to-Change-Output-View.2137f36cb5d1b6954de7ab8d2a6eedc4bfd21aa7.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/b324d8ab63e6a6722efb425e32d661f2c5a67d92/ol-handback/PowerShell/powerShell-Docs.de-de/live/Using-Format-Commands-to-Change-Output-View.2137f36cb5d1b6954de7ab8d2a6eedc4bfd21aa7.de-de.xlf)
 * Handback Datetime: 2016-07-05 16:11:52
-* Bilingual File: [Using-Format-Commands-to-Change-Output-View.2137f36cb5d1b6954de7ab8d2a6eedc4bfd21aa7.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/97de0876da50d4a969669a71fdebc746ab78ccd1/ol-handback/PowerShell/powerShell-Docs.de-de/live/Using-Format-Commands-to-Change-Output-View.2137f36cb5d1b6954de7ab8d2a6eedc4bfd21aa7.de-de.xlf)
-* Bilingual Datetime: 2016-06-16 14:28:56
+* Bilingual File: [Using-Format-Commands-to-Change-Output-View.2137f36cb5d1b6954de7ab8d2a6eedc4bfd21aa7.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/b324d8ab63e6a6722efb425e32d661f2c5a67d92/ol-handback/PowerShell/powerShell-Docs.de-de/live/Using-Format-Commands-to-Change-Output-View.2137f36cb5d1b6954de7ab8d2a6eedc4bfd21aa7.de-de.xlf)
+* Bilingual Datetime: 2016-07-05 16:12:28
 * [Back to Top](#report-top)
 
 ##### <a name='50ebc8a737b50aba5a5af49716b59905da74669a200'></a> Source: [scripting\getting-started\cookbooks\Using-Static-Classes-and-Methods.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/getting-started/cookbooks/Using-Static-Classes-and-Methods.md)
@@ -3678,8 +3678,8 @@
 * Archive Datetime: 2016-06-28 13:27:50
 * Handback File: [Learning-Windows-PowerShell-Names.fc1b82ec398316e9fb38af6a070070e1e3773976.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/b324d8ab63e6a6722efb425e32d661f2c5a67d92/ol-handback/PowerShell/powerShell-Docs.de-de/live/Learning-Windows-PowerShell-Names.fc1b82ec398316e9fb38af6a070070e1e3773976.de-de.xlf)
 * Handback Datetime: 2016-07-05 16:11:52
-* Bilingual File: [Learning-Windows-PowerShell-Names.fc1b82ec398316e9fb38af6a070070e1e3773976.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/97de0876da50d4a969669a71fdebc746ab78ccd1/ol-handback/PowerShell/powerShell-Docs.de-de/live/Learning-Windows-PowerShell-Names.fc1b82ec398316e9fb38af6a070070e1e3773976.de-de.xlf)
-* Bilingual Datetime: 2016-06-16 14:28:56
+* Bilingual File: [Learning-Windows-PowerShell-Names.fc1b82ec398316e9fb38af6a070070e1e3773976.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/b324d8ab63e6a6722efb425e32d661f2c5a67d92/ol-handback/PowerShell/powerShell-Docs.de-de/live/Learning-Windows-PowerShell-Names.fc1b82ec398316e9fb38af6a070070e1e3773976.de-de.xlf)
+* Bilingual Datetime: 2016-07-05 16:12:28
 * [Back to Top](#report-top)
 
 ##### <a name='56aa32d40d8e5e61f5328d5a373ca5a1bd7ca6e3215'></a> Source: [scripting\getting-started\fundamental\Object-Pipeline.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/getting-started/fundamental/Object-Pipeline.md)
@@ -3737,8 +3737,8 @@
 * Archive Datetime: 2016-06-28 13:27:50
 * Handback File: [Understanding-the-Windows-PowerShell-Pipeline.5006e128bc4994cdd31323aee54ddf13a776c1da.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/b324d8ab63e6a6722efb425e32d661f2c5a67d92/ol-handback/PowerShell/powerShell-Docs.de-de/live/Understanding-the-Windows-PowerShell-Pipeline.5006e128bc4994cdd31323aee54ddf13a776c1da.de-de.xlf)
 * Handback Datetime: 2016-07-05 16:11:52
-* Bilingual File: [Understanding-the-Windows-PowerShell-Pipeline.5006e128bc4994cdd31323aee54ddf13a776c1da.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/97de0876da50d4a969669a71fdebc746ab78ccd1/ol-handback/PowerShell/powerShell-Docs.de-de/live/Understanding-the-Windows-PowerShell-Pipeline.5006e128bc4994cdd31323aee54ddf13a776c1da.de-de.xlf)
-* Bilingual Datetime: 2016-06-16 14:28:56
+* Bilingual File: [Understanding-the-Windows-PowerShell-Pipeline.5006e128bc4994cdd31323aee54ddf13a776c1da.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/b324d8ab63e6a6722efb425e32d661f2c5a67d92/ol-handback/PowerShell/powerShell-Docs.de-de/live/Understanding-the-Windows-PowerShell-Pipeline.5006e128bc4994cdd31323aee54ddf13a776c1da.de-de.xlf)
+* Bilingual Datetime: 2016-07-05 16:12:28
 * [Back to Top](#report-top)
 
 ##### <a name='2cbc7e5481ecfb21b2f6088191e2e34cf2631992219'></a> Source: [scripting\getting-started\fundamental\Using-Familiar-Command-Names.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/getting-started/fundamental/Using-Familiar-Command-Names.md)
@@ -4170,8 +4170,8 @@
 * Archive Datetime: 2016-06-28 13:27:50
 * Handback File: [What-s-New-in-the-PowerShell-50-ISE.bd27df5ede4241a8e6b57d0582112056984b68c8.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/b324d8ab63e6a6722efb425e32d661f2c5a67d92/ol-handback/PowerShell/powerShell-Docs.de-de/live/What-s-New-in-the-PowerShell-50-ISE.bd27df5ede4241a8e6b57d0582112056984b68c8.de-de.xlf)
 * Handback Datetime: 2016-07-05 16:11:52
-* Bilingual File: [What-s-New-in-the-PowerShell-50-ISE.bd27df5ede4241a8e6b57d0582112056984b68c8.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/38fd34faa8c249b4ff0847fd3c3734fde98babc9/ol-handback/PowerShell/powerShell-Docs.de-de/live/What-s-New-in-the-PowerShell-50-ISE.bd27df5ede4241a8e6b57d0582112056984b68c8.de-de.xlf)
-* Bilingual Datetime: 2016-06-16 14:28:56
+* Bilingual File: [What-s-New-in-the-PowerShell-50-ISE.bd27df5ede4241a8e6b57d0582112056984b68c8.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/b324d8ab63e6a6722efb425e32d661f2c5a67d92/ol-handback/PowerShell/powerShell-Docs.de-de/live/What-s-New-in-the-PowerShell-50-ISE.bd27df5ede4241a8e6b57d0582112056984b68c8.de-de.xlf)
+* Bilingual Datetime: 2016-07-05 16:12:28
 * [Back to Top](#report-top)
 
 ##### <a name='87e4a23f93d19219a8d00671f319ef93a96fbbf6246'></a> Source: [scripting\whats-new\What-s-New-in-Windows-PowerShell-50.md](https://github.com/PowerShell/powerShell-Docs/blob/ca7ab17f7ba2615c7a39d1e3dd944501bab4e72c/scripting/whats-new/What-s-New-in-Windows-PowerShell-50.md)
