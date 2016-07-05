@@ -1,8 +1,20 @@
+---
+title: PowerShell-Kern
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+ms.sourcegitcommit: cd6e130d9f6f70449084d25eb386a3c0a2b84737
+ms.openlocfilehash: 4c22e1a2543690a971836813cb32ace74ababb4a
+
+---
+
 #  PowerShell-Kern
 Dieser Abschnitt enthält alle Referenzmaterialien und ausführliche Handbücher zu PowerShell.  
 Inhalt dieses Abschnitts:
--  Das [Handbuch zur PowerShell-Skripterstellung](scripting-guide.md)
--  Das [Handbuch zur PowerShell-Sprache](language-guide.md)
 -  Das [Handbuch zu den PowerShell-Kernmodulen](core-modules.md)
 -  Das [Handbuch zu Windows PowerShell Integrated Scripting Environment (ISE)](ise-guide.md)
 -  Das [Handbuch zum PowerShell-Konsolenfenster](console-guide.md)
@@ -12,6 +24,8 @@ Inhalt dieses Abschnitts:
 -  Das [PowerShell-Glossar](../Windows-PowerShell-Glossary.md)
 
 
-<!--HONumber=May16_HO2-->
+
+
+<!--HONumber=Jun16_HO4-->
 
 
