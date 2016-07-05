@@ -17,7 +17,7 @@ Unprotect-CmsMessage [-LiteralPath] <string> [[-To] <CmsMessageRecipient[]>] [-I
 
 Der CMS-Verschlüsselungsstandard implementiert die Verschlüsselung mit öffentlichem Schlüssel, bei der die Schlüssel zum Verschlüsseln von Inhalten (der *öffentliche Schlüssel*) und zum Entschlüsseln von Inhalten (der *private Schlüssel*) getrennt sind.
 
-Ihr öffentlicher Schlüssel kann umfassend freigegeben werden, da seine Daten nicht vertraulich sind. Wenn Inhalte mit diesem öffentlichen Schlüssel verschlüsselt sind, können sie nur mit Ihrem privaten Schlüssel entschlüsselt werden. Weitere Informationen zur Verschlüsselung mit öffentlichem Schlüssel finden Sie unter: <http://en.wikipedia.org/wiki/Public-key_cryptography>.
+Ihr öffentlicher Schlüssel kann umfassend freigegeben werden, da seine Daten nicht vertraulich sind. Wenn Inhalte mit diesem öffentlichen Schlüssel verschlüsselt sind, können sie nur mit Ihrem privaten Schlüssel entschlüsselt werden. Weitere Informationen über asymmetrische Kryptosysteme finden Sie unter <https://de.wikipedia.org/wiki/Asymmetrisches_Kryptosystem>.
 
 Um in PowerShell erkannt zu werden, benötigen Verschlüsselungszertifikate einen eindeutigen Schlüsselverwendungsbezeichner zum Kennzeichnen als Datenverschlüsselungszertifikate (wie die Bezeichner für „Codesignatur“ und „Verschlüsselte E-Mail“).
 
@@ -81,4 +81,8 @@ Um Verschlüsselungszertifikate für Dokumente beim Zertifikatanbieter anzuzeige
 
 ```powershell
 dir -DocumentEncryptionCert
-```<!--HONumber=Mar16_HO2-->
+```
+
+<!--HONumber=Jun16_HO4-->
+
+

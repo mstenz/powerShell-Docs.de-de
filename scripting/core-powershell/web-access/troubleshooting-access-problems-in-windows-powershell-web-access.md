@@ -1,12 +1,16 @@
 ---
-title:  Behandeln von Zugriffsproblemen in Windows PowerShell Web Access
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
+title: Behandeln von Zugriffsproblemen in Windows PowerShell Web Access
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 6366ec9c49f721b758b6a520f68cf2b3c5ee0caf
+
 ---
 
 #  Behandeln von Zugriffsproblemen in Windows PowerShell Web Access
@@ -65,7 +69,7 @@ In der folgenden Tabelle sind einige allgemeine Probleme aufgeführt, die mögli
 </tr>
 <tr class="odd">
 <td><p>Es kann keine Verbindung mit einem Remotecomputer in einer Arbeitsgruppe hergestellt werden.</p></td>
-<td><p>Wenn der Zielcomputer Mitglied einer Arbeitsgruppe ist, können Sie die folgende Syntax verwenden, um den Benutzernamen anzugeben und sich am Computer anzumelden: &lt;<em>workgroup_name</em>&gt;\&lt;<em>user_name</em>&gt;</p></td>
+<td><p>Wenn der Zielcomputer Mitglied einer Arbeitsgruppe ist, können Sie die folgende Syntax verwenden, um Ihren Benutzernamen anzugeben und sich am Computer anzumelden: &lt;<em>Name der Arbeitsgruppe</em>&gt;\&lt;<em>Benutzername</em>&gt;</p></td>
 </tr>
 <tr class="even">
 <td><p>Die Verwaltungstools des Webservers (IIS) sind nicht verfügbar, obwohl die Rolle installiert wurde.</p></td>
@@ -137,8 +141,8 @@ In der folgenden Tabelle sind einige allgemeine Probleme aufgeführt, die mögli
 
 ------------------------------------------------------------------------
 
-[Autorisierungsregeln und Sicherheitsfeatures von Windows PowerShell Web Access](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)
-[Verwendung der webbasierten Windows PowerShell-Konsole](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx)
+[Authorization Rules and Security Features of Windows PowerShell Web Access (Autorisierungsregeln und Sicherheitsfunktionen von Windows PowerShell Web Access)](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)
+[Use the Web-based Windows PowerShell Console (Verwenden der webbasierten Windows PowerShell-Konsole)](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx)
 [about\_Remote\_Requirements](https://technet.microsoft.com/library/dd315349.aspx)
 
 <span>Show:</span> Inherited Protected
@@ -192,6 +196,7 @@ Die Lizenz für Drittanbieterskripts oder Code, die mit dieser Website verlinkt 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,6 +1,6 @@
 # Das Cmdlet „Set-DscLocalConfigurationManager“ unterstützt den „-force“-Parameter
 
-Das Cmdlet „Set-DscLocalConfigurationManager“ wird jetzt unterstützt. Dadurch kann der Benutzer die Metakonfiguration auf dem Computer deterministisch zurücksetzen, wenn andere Vorgänge wie die Konsistenzprüfung im Hintergrund ausgeführt werden, da dadurch alle ausgeführten Vorgänge angehalten werden.
+Wir haben dem Cmdlet „Set-DscLocalConfigurationManager“ die Unterstützung für einen neuen Parameter hinzugefügt. Dadurch kann der Benutzer die Metakonfiguration auf dem Computer deterministisch zurücksetzen, wenn andere Vorgänge wie die Konsistenzprüfung im Hintergrund ausgeführt werden, da dadurch alle ausgeführten Vorgänge angehalten werden.
 
 Die Umgebung sieht wie folgt aus, wenn versucht wird, die Metakonfiguration ohne den „–force“-Parameter festzulegen.
 ```powershell
@@ -35,4 +35,8 @@ VERBOSE: \[DEV-10586-465\]: LCM: \[ End Set \]
 VERBOSE: \[DEV-10586-465\]: LCM: \[ End Set \] in 0.1410 seconds.
 VERBOSE: Operation 'Invoke CimMethod' complete.
 VERBOSE: Set-DscLocalConfigurationManager finished in 0.421 seconds.
-```<!--HONumber=Mar16_HO2-->
+```
+
+<!--HONumber=Jun16_HO4-->
+
+

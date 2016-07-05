@@ -38,8 +38,11 @@ Laden Sie das richtige Paket für Ihr Betriebssystem und Ihre Architektur herunt
 - Das neueste Service Pack ist installiert.
 - [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) ist installiert.
 
-*WinRM-Abhängigkeit:*
-Windows PowerShell DSC (Desired State Configuration) hängt von WinRM ab. Unter Windows Server 2008 R2 und Windows 7 ist WinRM nicht standardmäßig aktiviert. Führen Sie zum Aktivieren von WinRM in einer Windows PowerShell-Sitzung mit erhöhten Benutzerrechten **Set-WSManQuickConfig** aus.
+*WinRM-Abhängigkeit:* Windows PowerShell DSC (Desired State Configuration) hängt von WinRM ab. Unter Windows Server 2008 R2 und Windows 7 ist WinRM nicht standardmäßig aktiviert. Führen Sie zum Aktivieren von WinRM in einer Windows PowerShell-Sitzung mit erhöhten Benutzerrechten **Set-WSManQuickConfig** aus.
 
 
-<!--HONumber=Mar16_HO2-->
+
+
+<!--HONumber=Jun16_HO4-->
+
+

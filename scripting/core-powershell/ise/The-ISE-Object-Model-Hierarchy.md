@@ -1,13 +1,17 @@
 ---
-title:  Die ISE-Objektmodellhierarchie
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
-ms.assetid:  bc3300e4-9c17-4f00-a621-c8867126e3b3
+title: Die ISE-Objektmodellhierarchie
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+ms.assetid: bc3300e4-9c17-4f00-a621-c8867126e3b3
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 77f368782a4adb395dc3446e140e4d0ab6c21f18
+
 ---
 
 # Die ISE-Objektmodellhierarchie
@@ -115,7 +119,7 @@ ms.assetid:  bc3300e4-9c17-4f00-a621-c8867126e3b3
 -   **[$psISE.CurrentPowerShellTab.VisibleVerticalAddOnTools](The-ISEAddOnToolCollection-Object.md)**
 
 ##  <a name="CurrentVisibleHorizontalTool"></a> **$psISE.CurrentVisibleHorizontalTool**
- Das **$psISE.CurrentVisibleHorizontalTool**-Objekt ist eine Instanz der [ISEAddOnTool](The-ISEAddOnTool-Object.md)-Klasse. Es stellt das installierte Add-On-Tool dar, das derzeit am oberen Rand des Windows PowerShell ISE-Fensters angedockt ist. Das Objekt macht die folgenden Objekte für Skripts verfügbar:
+ Das **$psISE.CurrentVisibleHorizontalTool**-Objekt ist eine Instanz der [ISEAddOnTool](The-ISEAddOnTool-Object.md)-Klasse. Es stellt das installierte Add\-On-Tool dar, das derzeit am oberen Rand des Windows PowerShell ISE-Fensters angedockt ist. Das Objekt macht die folgenden Objekte für Skripts verfügbar:
 
 -   **[$psISE.CurrentVisibleHorizontalTool.Control](The-ISEAddOnTool-Object.md#control)**
 
@@ -124,7 +128,7 @@ ms.assetid:  bc3300e4-9c17-4f00-a621-c8867126e3b3
 -   **[$psISE.CurrentVisibleHorizontalTool.Name](The-ISEAddOnTool-Object.md#name)**
 
 ##  <a name="CurrentVisibleVerticalTool"></a> **$psISE.CurrentVisibleVerticalTool**
- Das **$psISE.CurrentVisibleHorizontalTool**-Objekt ist eine Instanz der [ISEAddOnTool](The-ISEAddOnTool-Object.md)-Klasse. Es stellt das installierte Add-On-Tool dar, das derzeit am rechten Rand des Windows PowerShell ISE-Fensters angedockt ist. Das Objekt macht die folgenden Objekte für Skripts verfügbar:
+ Das **$psISE.CurrentVisibleHorizontalTool**-Objekt ist eine Instanz der [ISEAddOnTool](The-ISEAddOnTool-Object.md)-Klasse. Es stellt das installierte Add\-On-Tool dar, das derzeit am rechten Rand des Windows PowerShell ISE\-Fensters angedockt ist. Das Objekt macht die folgenden Objekte für Skripts verfügbar:
 
 -   **[$psISE.CurrentVisibleHorizontalTool.Control](The-ISEAddOnTool-Object.md#control)**
 
@@ -214,6 +218,7 @@ ms.assetid:  bc3300e4-9c17-4f00-a621-c8867126e3b3
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

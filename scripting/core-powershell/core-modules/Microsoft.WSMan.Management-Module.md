@@ -1,13 +1,17 @@
 ---
-title:  Microsoft.WSMan.Management-Modul
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
-ms.assetid:  687cb04d-541c-44f6-a896-75c9686cb04e
+title: Microsoft.WSMan.Management-Modul
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+ms.assetid: 687cb04d-541c-44f6-a896-75c9686cb04e
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 49a97d15fdef0d7fa60e94636fc200e8f70943f7
+
 ---
 
 # Microsoft.WSMan.Management-Modul
@@ -27,6 +31,7 @@ Dieser Abschnitt enthält die Hilfethemen für das **Microsoft.WSMan.Management*
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

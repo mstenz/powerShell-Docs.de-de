@@ -1,13 +1,17 @@
 ---
-title:  Referenz zum Windows PowerShell ISE-Objektmodell
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
-ms.assetid:  e1a9e7d1-0fd5-47de-8d9b-f1be1ed13b0c
+title: Referenz zum Windows PowerShell ISE-Objektmodell
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+ms.assetid: e1a9e7d1-0fd5-47de-8d9b-f1be1ed13b0c
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 9bfb74ba438dd27fc2799263fc12a20edd2bb8cb
+
 ---
 
 # Referenz zum Windows PowerShell ISE-Objektmodell
@@ -29,7 +33,7 @@ ms.assetid:  e1a9e7d1-0fd5-47de-8d9b-f1be1ed13b0c
  Beispiele: $psISE.PowerShellTabs.Files.
 
  [Das ISEMenuItem-Objekt](The-ISEMenuItem-Object.md)
- Beispiele: $psISE.CurrentPowerShellTab.AddOnsMenu , $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus\[0\].
+ Beispiele: $psISE.CurrentPowerShellTab.AddOnsMenu, $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus\[0\].
 
  [Das ISEMenuItemCollection-Objekt](The-ISEMenuItemCollection-Object.md)
  Beispiel: $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.
@@ -52,6 +56,7 @@ ms.assetid:  e1a9e7d1-0fd5-47de-8d9b-f1be1ed13b0c
   
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

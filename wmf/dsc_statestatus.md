@@ -14,21 +14,19 @@ Die nachfolgende Tabelle veranschaulicht die resultierenden auf Zustand und Stat
 
 | **Szenario**                    | **LCMState\***       | **Status** | **Neustart angefordert**  | **ResourcesInDesiredState**  | **ResourcesNotInDesiredState** |
 |---------------------------------|----------------------|------------|---------------|------------------------------|--------------------------------|
-| E**^**                          | Idle                 | Erfolg    | $false        | E                            | $null                          |
+| S**^**                          | Idle                 | Erfolg    | $false        | E                            | $null                          |
 | F**^**                          | PendingConfiguration | Fehler    | $false        | $null                        | F                              |
 | E,F                             | PendingConfiguration | Fehler    | $false        | S                            | F                              |
 | E, S                             | PendingConfiguration | Fehler    | $false        | S                            | F                              |
-| E<sub>1</sub>, F, E<sub>2</sub> | PendingConfiguration | Fehler    | $false        | E<sub>1</sub>, E<sub>2</sub> | F                              |
-| F<sub>1</sub>, E, F<sub>2</sub> | PendingConfiguration | Fehler    | $false        | E                            | F<sub>1</sub>, F<sub>2</sub>   |
+| S<sub>1</sub>, F, S<sub>2</sub> | PendingConfiguration | Fehler    | $false        | S<sub>1</sub>, S<sub>2</sub> | F                              |
+| F<sub>1</sub>, S, F<sub>2</sub> | PendingConfiguration | Fehler    | $false        | S                            | F<sub>1</sub>, F<sub>2</sub>   |
 | E, N                            | PendingReboot        | Erfolg    | $True         | E                            | N                              |
 | F, N                            | PendingReboot        | Fehler    | $True         | $null                        | F, N                           |
-| R, E                            | PendingReboot        | Erfolgreich    | $True         | $null                        | N                              |
-| N, F                            | PendingReboot        | Erfolg    | $True         | $null                        | N                              |
+| R, E                            | PendingReboot        | Erfolg    | $True         | $null                        | N                              |
+| N, F                            | PendingReboot        | Erfolg    | $True         | $null                        | r                              |
 
 ^
-E<sub>i</sub>: Eine Reihe von Ressourcen, die erfolgreich angewendet wurden
-F<sub>i</sub>: Eine Reihe von Ressourcen, die nicht erfolgreich angewendet wurden
-N: Eine Ressource, die einen Neustart anfordert
+S<sub>i</sub>: eine Reihe von Ressourcen, die erfolgreich angewendet wurde F<sub>i</sub>: eine Reihe von Ressourcen, die nicht erfolgreich angewendet hat r: eine Ressource, die einen Neustart erfordert
 \*
 
 ```powershell
@@ -105,4 +103,8 @@ LCM State: Idle,
 LCM State: Busy, LCM is performing a consistency check.
 LCM State: Idle,
 ```
-<!--HONumber=Mar16_HO2-->
+
+
+<!--HONumber=Jun16_HO4-->
+
+

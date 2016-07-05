@@ -39,8 +39,7 @@ Wenn WMF 5.0 auf einem Computer mit Windows Server 2012 R2 installiert wird, auf
 „Get-ChildItem“ funktioniert nicht, wenn „-LiteralPath“ und „-Recurse“ zusammen verwendet werden
 --------------------------------------------------------------------------
 
-Wenn ein Verzeichnisname ein ungültiges Platzhalterzeichen enthält, liefert „Get-ChildItem“ nicht die erwarteten Ergebnisse, wenn
-„-LiteralPath“ und „-Recurse“ zusammen verwendet werden.
+Wenn ein Verzeichnisname ein ungültiges Platzhalterzeichen enthält, liefert „Get-ChildItem“ nicht die erwarteten Ergebnisse, wenn „-LiteralPath“ und „-Recurse“ zusammen verwendet werden.
 
 **Lösung:** Die aktuelle, allerdings nicht ideale Umgehung ist das Implementieren der Rekursion im Skript, anstatt das Cmdlet zu verwenden.
 
@@ -100,6 +99,6 @@ Es gibt zwei Problemumgehungen für dieses Problem, abhängig davon, welche Vers
 
 
 
-<!--HONumber=May16_HO1-->
+<!--HONumber=Jun16_HO4-->
 
 

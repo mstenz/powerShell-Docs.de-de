@@ -26,8 +26,8 @@ Wenn Sie die ausführlichen Protokollierung aktivieren, schreibt das Feature die
 | Opcode  | Öffnen (/ Schließen)                                         |
 | Aufgabe    | CommandStart (/ CommandStop)                           |
 | Schlüsselwort | Runspace                                               |
-| Ereignis-ID | ScriptBlock\_Invoke\_Start\_Detail (0x1009 = 4105) / </br> ScriptBlock\_Invoke\_Complete\_Detail (0x100A = 4106) |
-| Nachricht | Der Aufruf der ScriptBlock-ID wurde gestartet (/ abgeschlossen: %1 </br> Runspace-ID: %2 |
+| Ereignis-ID | ScriptBlock\_Invoke\_Start\_Detail (0x1009 = 4105) / </br> ScriptBlock\_Invoke\_Complete\_Detail (0x100A = 4106) / |
+| Message | Der Aufruf der ScriptBlock-ID wurde gestartet (/ abgeschlossen: %1 </br> Runspace-ID: %2 |
 
 Die ID ist die GUID, die den Skriptblock darstellt (der mit der Ereignis-ID 0x1008 korreliert werden kann). Die Runspace-ID stellt den Runspace dar, in dem dieser Skriptblock ausgeführt wurde.
 
@@ -96,4 +96,8 @@ $mergedScript = -join ($sortedScripts | % { $_.Properties[2].Value })
 ```
 
 Wie alle Protokollierungssysteme, die einen begrenzten Aufbewahrungspuffer haben (wie z. B. ETW-Protokolle), besteht ein Angriff auf diese Infrastruktur darin, dass Protokoll mit gefälschten Ereignissen zu überfluten, um ein früheres Vorkommen zu vertuschen. Um sich vor einem solchen Angriff zu schützen, stellen Sie sicher, dass Sie eine Form der Ereignisprotokollsammlung eingerichtet haben (z. B. Windows-Ereignisweiterleitung, [Spotting the Adversary with Windows Event Log Monitoring](http://www.nsa.gov/ia/_files/app/Spotting_the_Adversary_with_Windows_Event_Log_Monitoring.pdf) [Erkennen des Gegners mithilfe der Überwachung des Windows-Ereignisprotokolls]), um Ereignisprotokolle so schnell wie möglich vom Computer zu verschieben.
-<!--HONumber=Mar16_HO2-->
+
+
+<!--HONumber=Jun16_HO4-->
+
+

@@ -4,8 +4,7 @@ PowerShell 5.0 führt die folgenden neuen Sprachelemente in Windows PowerShell e
 
 ## Schlüsselwort „Class“
 
-Das Schlüsselwort **class** definiert eine neue Klasse. Es handelt sich um einen echten .NET Framework-Typ. 
-Klassenmember sind öffentlich, jedoch nur innerhalb des Geltungsbereichs des Moduls.
+Das Schlüsselwort **class** definiert eine neue Klasse. Es handelt sich um einen echten .NET Framework-Typ. Klassenmember sind öffentlich, jedoch nur innerhalb des Geltungsbereichs des Moduls.
 Sie können auf den Typnamen nicht mittels einer Zeichenfolge verweisen (`New-Object` funktioniert z. B. nicht). In dieser Version können Sie zudem keinen Literaltyp (z. B. `[MyClass]`) außerhalb der Skript-/Moduldatei verwenden, in der die Klasse definiert ist.
 
 ```powershell
@@ -124,7 +123,7 @@ hashtable new(int capacity, float loadFactor)
 
 ## Methoden
 
-Eine Windows PowerShell-Klassenmethode wird als Skriptblock mit nur einem „end“-Block implementiert. Alle Methoden sind öffentlich. Nachstehend sehen Sie ein Beispiel der Definition einer Methode namens **DoSomething**..
+Eine Windows PowerShell-Klassenmethode wird als Skriptblock mit nur einem „end“-Block implementiert. Alle Methoden sind öffentlich. Nachstehend sehen Sie ein Beispiel der Definition einer Methode namens **DoSomething**.
 
 ```powershell
 class MyClass
@@ -200,8 +199,7 @@ $v -eq $d # true
 
 ## End-to-End-Beispiel
 
-Das folgende Beispiel erstellt mehrere neue, benutzerdefinierte Klassen, um eine HTML-Sprache des Typs DSL (Dynamic Style Sheet Language) zu implementieren. 
-Dann werden im Beispiel Hilfsfunktionen hinzugefügt, um spezifische Elementtypen als Teil der Elementklasse zu erstellen, wie z. B. Überschriftsformate und Tabellen, damit Typen nicht außerhalb des Geltungsbereichs eines Moduls verwendet werden können.
+Das folgende Beispiel erstellt mehrere neue, benutzerdefinierte Klassen, um eine HTML-Sprache des Typs DSL (Dynamic Style Sheet Language) zu implementieren. Dann werden im Beispiel Hilfsfunktionen hinzugefügt, um spezifische Elementtypen als Teil der Elementklasse zu erstellen, wie z. B. Überschriftsformate und Tabellen, damit Typen nicht außerhalb des Geltungsbereichs eines Moduls verwendet werden können.
 
 ```powershell
 # Classes that define the structure of the document
@@ -326,6 +324,6 @@ function Style
 function Html ([HTML] $doc) { return $doc }
 ```
 
-<!--HONumber=Apr16_HO5-->
+<!--HONumber=Jun16_HO4-->
 
 

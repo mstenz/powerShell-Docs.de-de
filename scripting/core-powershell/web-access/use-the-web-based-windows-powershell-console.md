@@ -1,12 +1,16 @@
 ---
-title:  Verwendung der webbasierten Windows PowerShell-Konsole
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
+title: Verwendung der webbasierten Windows PowerShell-Konsole
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 02964dd763ccccbf27a963c0f8eef20aa23cc117
+
 ---
 
 #  Verwendung der webbasierten Windows PowerShell-Konsole
@@ -85,7 +89,7 @@ Browser müssen folgende Anforderungen erfüllen, um die webbasierte Windows Pow
 
 ------------------------------------------------------------------------
 
-Ihr Windows PowerShell Web Access-Administrator sollten Ihnen eine URL bereitstellen, die die Adresse der Website des Windows PowerShell Web Access-Gateways Ihrer Organisation ist. Standardmäßig ist die Adresse dieser Website „https://&lt;server_name&gt;/pswa“. Bevor Sie sich bei Windows PowerShell Web Access anmelden, sollten Sie sichergehen, dass Sie über den Namen oder die IP-Adresse des zu verwaltenden Remotecomputers verfügen. Sie müssen auf dem Remotecomputer ein autorisierter Benutzer sein. Außerdem müssen Sie darauf die Remoteverwaltung zulassen. Weitere Informationen dazu, wie Sie Ihren Computer so konfigurieren, dass eine Remoteverwaltung möglich ist, finden Sie unter [Aktivieren und Verwenden von Remotebefehlen in Windows PowerShell](https://technet.microsoft.com/magazine/ff700227.aspx). Die einfachste Möglichkeit, die Remoteverwaltung auf Ihrem Computer zu konfigurieren, besteht in der Ausführung des Cmdlets **Enable-PSRemoting -force** auf dem Computer in einer Windows PowerShell-Sitzung, die mit erhöhten Benutzerrechten (**Als Administrator ausführen**) geöffnet wurde.
+Ihr Windows PowerShell Web Access-Administrator sollten Ihnen eine URL bereitstellen, die die Adresse der Website des Windows PowerShell Web Access-Gateways Ihrer Organisation ist. Standardmäßig lautet die Adresse dieser Website https://&lt;Servername&gt;/pswa.\_ Bevor Sie sich bei Windows PowerShell Web Access anmelden, sollten Sie sichergehen, dass Sie über den Namen oder die IP-Adresse des zu verwaltenden Remotecomputers verfügen. Sie müssen auf dem Remotecomputer ein autorisierter Benutzer sein. Außerdem müssen Sie darauf die Remoteverwaltung zulassen. Weitere Informationen dazu, wie Sie Ihren Computer so konfigurieren, dass eine Remoteverwaltung möglich ist, finden Sie unter [Aktivieren und Verwenden von Remotebefehlen in Windows PowerShell](https://technet.microsoft.com/magazine/ff700227.aspx). Die einfachste Möglichkeit, die Remoteverwaltung auf Ihrem Computer zu konfigurieren, besteht in der Ausführung des Cmdlets **Enable-PSRemoting -force** auf dem Computer in einer Windows PowerShell-Sitzung, die mit erhöhten Benutzerrechten (**Als Administrator ausführen**) geöffnet wurde.
 
 ### So melden Sie sich bei Windows PowerShell Web Access an
 
@@ -105,9 +109,9 @@ Ihr Windows PowerShell Web Access-Administrator sollten Ihnen eine URL bereitste
     <tbody>
     <tr class="odd">
     <td><ul>
-    <li><p>Wenn der Zielcomputer Mitglied einer Arbeitsgruppe ist, können Sie die folgende Syntax verwenden, um den Benutzernamen anzugeben und sich am Computer anzumelden:&lt;<em>workgroup_name</em>&gt;\&lt;<em>user_name</em>&gt;.</p></li>
+    <li><p>Falls der Zielcomputer einer Arbeitsgruppe angehört, müssen Sie die folgende Syntax verwenden, um den Benutzernamen anzugeben und sich am Computer anzumelden: &lt;<em>Arbeitsgruppenname</em>&gt;\&lt;<em>Benutzername</em>&gt;.</p></li>
     <li><p>Wenn es sich beim Zielcomputer um den Gatewayserver handelt, können Sie <strong>localhost</strong> im Feld <strong>Computername</strong> angeben.</p></li>
-    <li><p>Sollte es sich beim Zielcomputer um den Gatewayserver handeln und sich der Gatewayserver in einer Arbeitsgruppe befinden, können Sie <strong>localhost</strong> im Feld <strong>Computername</strong> angeben. Verwenden Sie jedoch nicht „localhost\&lt;<em>user_name</em>&gt;“ im Feld <strong>Benutzername</strong>. Verwenden Sie &lt;<em>Arbeitsgruppenname</em>&gt;\&lt;<em>user_name</em>&gt;.</p></li>
+    <li><p>Sollte es sich beim Zielcomputer um den Gatewayserver handeln und sich der Gatewayserver in einer Arbeitsgruppe befinden, können Sie <strong>localhost</strong> im Feld <strong>Computername</strong> angeben. Verwenden Sie jedoch nicht localhost\&lt;<em>Benutzername</em>&gt; im Feld <strong>Benutzername</strong>. Sie müssen &lt;<em>Arbeitsgruppenname</em>&gt;\&lt;<em>Benutzername</em>&gt; verwenden.</p></li>
     </ul></td>
     </tr>
     </tbody>
@@ -392,6 +396,7 @@ Die Lizenz für Drittanbieterskripts oder Code, die mit dieser Website verlinkt 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 
