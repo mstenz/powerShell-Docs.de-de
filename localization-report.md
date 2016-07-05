@@ -4147,8 +4147,8 @@
 * Archive Datetime: 2016-07-05 13:08:15
 * Handback File: [TOC.94c88eadcdc1b167fb0a17837d186c734f84dea9.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/c50020479d5b98790397672732ad1157de1d3b6d/ol-handback/PowerShell/powerShell-Docs.de-de/live/TOC.94c88eadcdc1b167fb0a17837d186c734f84dea9.de-de.xlf)
 * Handback Datetime: 2016-07-05 14:09:23
-* Bilingual File: [TOC.94c88eadcdc1b167fb0a17837d186c734f84dea9.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/79bba21eecf64f85314e2d50e52974fa2a70e5ac/ol-handback/PowerShell/powerShell-Docs.de-de/live/TOC.94c88eadcdc1b167fb0a17837d186c734f84dea9.de-de.xlf)
-* Bilingual Datetime: 2016-06-28 14:57:24
+* Bilingual File: [TOC.94c88eadcdc1b167fb0a17837d186c734f84dea9.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/c50020479d5b98790397672732ad1157de1d3b6d/ol-handback/PowerShell/powerShell-Docs.de-de/live/TOC.94c88eadcdc1b167fb0a17837d186c734f84dea9.de-de.xlf)
+* Bilingual Datetime: 2016-07-05 14:10:21
 * [Back to Top](#report-top)
 
 ##### <a name='207792452c563ec6cca5c17fbcd122372442d8ac244'></a> Source: [scripting\topic\WinRMSecurity.md](https://github.com/PowerShell/powerShell-Docs/blob/afa259b8611f995bbf5b824179a12e3d8f15df86/scripting/topic/WinRMSecurity.md)
