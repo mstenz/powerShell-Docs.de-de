@@ -3,13 +3,13 @@
 - Vor der Installation von WMF 5.0 RTM müssen Sie die neuesten Windows-Updates installieren.
 - Sie können WMF 5.0 RTM nur unter folgenden Betriebssystemen installieren:
 
-    | Betriebssystem | Editionen | Voraussetzungen | Links zu Paketen |
+    | Betriebssystem       | Editionen         | Voraussetzungen        |  Paketlinks |
     |------------------------|--------------|------------------|----------------------| --------------|
-    | Windows Server 2012 R2 |  |  | [Win8.1AndW2K12R2-KB3134758-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717507) |
-    | Windows Server 2012    |  |  | [W2K12-KB3134759-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717506) |
-    | Windows Server 2008 R2 SP1 | Alle außer IA64 | [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) und [.NET Framework 4.5 oder höher](https://msdn.microsoft.com/en-us/library/5a4x27ek.aspx) sind installiert | [Win7AndW2K8R2-KB3134760-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717504)|
+    | Windows Server 2012 R2 |  |  | [Win8.1AndW2K12R2-KB3134758-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717507) |
+    | Windows Server 2012    |  |  | [W2K12-KB3134759-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717506) |
+    | Windows Server 2008 R2 SP1 | Alle, außer IA64 | [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) und [.NET Framework 4.5 oder höher](https://msdn.microsoft.com/en-us/library/5a4x27ek.aspx) sind installiert.| [Win7AndW2K8R2-KB3134760-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717504)|
     | Windows 8.1 | Pro, Enterprise | | **x64:** [Win8.1AndW2K12R2-KB3134758-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717507) </br> **x86:** [Win8.1-KB3134758-x86.msu](http://go.microsoft.com/fwlink/?LinkID=717963)|
-    | Windows 7 SP1 | Alle | [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) und [.NET Framework 4.5 oder höher](https://msdn.microsoft.com/en-us/library/5a4x27ek.aspx) sind installiert | **x64:** [Win7AndW2K8R2-KB3134760-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717504)  </br> **x86:** [Win7-KB3134760-x86.msu](http://go.microsoft.com/fwlink/?LinkID=717962)|
+    | Windows 7 SP1 | Alle | [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) und [.NET Framework 4.5 oder höher](https://msdn.microsoft.com/en-us/library/5a4x27ek.aspx) sind installiert. | **x64:** [Win7AndW2K8R2-KB3134760-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717504)  </br> **x86:** [Win7-KB3134760-x86.msu](http://go.microsoft.com/fwlink/?LinkID=717962)|
 
 # Installationsanweisungen
 
@@ -48,8 +48,8 @@ Auf Systemen mit Windows Server 2008 R2 SP1 bzw. Windows 7 SP1 sind PowerShell 2
 
 All diese Probleme wurden in den WMF 4.0-Paketen behoben. Daher ist WMF 4.0 Voraussetzung für die Installation von WMF 5.0 auf Windows Server 2008 R2 SP1 und Windows 7 SP1. Im Folgenden sind die spezifischen Probleme aufgelistet, die auftreten können, wenn Sie WMF 4.0 nicht vor dem Upgrade auf WMF 5.0 installieren:
 
-- Das Protokoll der weitergeleiteten Ereignisse ist nicht verfügbar, und das EventCollector-Protokoll wird in der Ereignisanzeige nach der Deinstallation von WMF 3.0 oder WMF 5.0 (ohne die erforderliche Installation von WMF 4.0) in Windows 7 SP1 und Windows Server 2008 R2 SP1 nicht angezeigt ([KB2809215](https://support.microsoft.com/en-us/kb/2809215)).
-- Die Anpassung der Umgebungsvariable *PSModulePath* wird auf den Standardwert zurückgesetzt, wenn Sie in Windows 7 SP1 und in Windows Server 2008 R2 SP1 vom integrierten PowerShell 2.0 direkt auf WMF 5.0 ([KB2872035](https://support.microsoft.com/en-us/kb/2872035)) oder von WMF 3.0 zu WMF 5.0  ([KB2872047](https://support.microsoft.com/en-us/kb/2872047)) aktualisieren.
+- Das Protokoll „Weitergeleitete Ereignisse“ ist nicht verfügbar, und das Protokoll „EventCollector“ wird in der Ereignisanzeige nach der Deinstallation von WMF 3.0 oder WMF 5.0 (ohne die erforderliche Installation von WMF 4.0) in Windows 7 SP1 und Windows Server 2008 R2 SP1 nicht angezeigt ([KB2809215](https://support.microsoft.com/en-us/kb/2809215)).
+- Die Anpassung der Umgebungsvariable *PSModulePath* wird auf den Standardwert zurückgesetzt, wenn Sie in Windows 7 SP1 und in Windows Server 2008 R2 SP1 vom integrierten PowerShell 2.0 direkt auf WMF 5.0 ([KB2872035](https://support.microsoft.com/en-us/kb/2872035)) oder von WMF 3.0 zu WMF 5.0  ([KB2872047](https://support.microsoft.com/en-us/kb/2872047)) upgraden.
 
 **WinRM-Abhängigkeit**
 
@@ -87,6 +87,6 @@ wusa /uninstall /kb:3134760
 4.  Wählen Sie in der Liste der installierten Updates **Windows Management Framework 5.0** aus. Dies entspricht *KB3134758*, *KB3134759* oder *KB3134760*. Klicken Sie auf **Deinstallieren**.
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=Jun16_HO4-->
 
 
