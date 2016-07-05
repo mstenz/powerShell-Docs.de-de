@@ -1,11 +1,28 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 0
+ Total Files | 1
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [wmf\requirements.md](https://github.com/PowerShell/powerShell-Docs/blob/02b9b25c505adbf49630145bc0543d6436edae0b/wmf/requirements.md) | InSyncHandedBackSuccess | [Details](#02ce3d08b01e58d6d9506f90142f92cc16304e64329)
 
 ## Item Details
+##### <a name='02ce3d08b01e58d6d9506f90142f92cc16304e64329'></a> Source: [wmf\requirements.md](https://github.com/PowerShell/powerShell-Docs/blob/02b9b25c505adbf49630145bc0543d6436edae0b/wmf/requirements.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [wmf\requirements.md](https://github.com/PowerShell/powerShell-Docs.de-de/blob/e8ca33abe3442dd8efffba89f56df6a8fc3db9e1/wmf/requirements.md)
+* Handoff File: [requirements.ef8332f358d65b1759bfd4c7336b11d1dc8c2d46.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/7396235c5c7a759b1a1d23c02bba65e3ab144b5a/ol-handoff/PowerShell/powerShell-Docs.de-de/live/requirements.ef8332f358d65b1759bfd4c7336b11d1dc8c2d46.de-de.xlf)
+* Handoff Datetime: 2016-06-27 20:15:23
+* Handoff Reason: Include
+* Archive File: [requirements.ef8332f358d65b1759bfd4c7336b11d1dc8c2d46.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/533ef2fb09dfdb6d996fa7757e53ae0571074569/ol-handoff/PowerShell/powerShell-Docs.de-de/live/archive/requirements.ef8332f358d65b1759bfd4c7336b11d1dc8c2d46.de-de.xlf)
+* Archive Datetime: 2016-06-28 13:27:50
+* Handback File: [requirements.ef8332f358d65b1759bfd4c7336b11d1dc8c2d46.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/2318c9ffcb4f0ed6d3dbcfc53d2a562870c1093e/ol-handback/PowerShell/powerShell-Docs.de-de/live/requirements.ef8332f358d65b1759bfd4c7336b11d1dc8c2d46.de-de.xlf)
+* Handback Datetime: 2016-07-05 15:27:34
+* Bilingual File: [requirements.ef8332f358d65b1759bfd4c7336b11d1dc8c2d46.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f2fec111eed755a5f7f5e8c3145d1dab58248ca5/ol-handback/PowerShell/powerShell-Docs.de-de/live/requirements.ef8332f358d65b1759bfd4c7336b11d1dc8c2d46.de-de.xlf)
+* Bilingual Datetime: 2016-06-24 14:41:42
+* [Back to Top](#report-top)
+
 
 ## Error Details
 
