@@ -1,13 +1,17 @@
 ---
-title:  Das ISEFile-Objekt
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
-ms.assetid:  1c6d91f3-c556-42a2-a017-79b6b7b4b7db
+title: Das ISEFile-Objekt
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+ms.assetid: 1c6d91f3-c556-42a2-a017-79b6b7b4b7db
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: ce9364e8fb73a2d31b728430c590fef4175ebe26
+
 ---
 
 # Das ISEFile-Objekt
@@ -15,13 +19,13 @@ ms.assetid:  1c6d91f3-c556-42a2-a017-79b6b7b4b7db
 
 ## Methoden
 
-###  <a name="save-override"></a> Save( [saveEncoding] )
+###  <a name="save-override"></a> Save\( \[saveEncoding\] \)
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Speichert die Datei auf dem Datenträger.
 
  **\[saveEncoding\]** – optional [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)
- Ein optionaler Zeichencodierungsparameter, der für die gespeicherte Datei verwendet werden soll. Der Standardwert lautet **UTF8**.
+ – Ein optionaler Zeichencodierungsparameter, der für die gespeicherte Datei verwendet werden soll. Der Standardwert lautet **UTF8**.
 
  **Ausnahmen**
  -   **System.IO.IOException**: Die Datei konnte nicht gespeichert werden.
@@ -39,15 +43,15 @@ $myfile.Encoding
 
 ```
 
-###  <a name="saveas"></a> SaveAs(filename, [saveEncoding])
+###  <a name="saveas"></a> SaveAs\(Dateiname, \[saveEncoding\]\)
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Speichert die Datei mit dem angegebenen Namen und der angegebenen Codierung.
 
- **filename** \- Zeichenfolge  Der Name, der zum Speichern der Datei verwendet werden soll.
+ **Dateiname** – Zeichenfolge – Der Name, der zum Speichern der Datei verwendet werden soll.
 
  **\[saveEncoding\]** – optional [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)
- Ein optionaler Zeichencodierungsparameter, der für die gespeicherte Datei verwendet werden soll. Der Standardwert lautet **UTF8**.
+ – Ein optionaler Zeichencodierungsparameter, der für die gespeicherte Datei verwendet werden soll. Der Standardwert lautet **UTF8**.
 
  **Ausnahmen**
  -   **System.ArgumentNullException**: Der **filename**-Parameter ist NULL.
@@ -70,7 +74,7 @@ $psIse.CurrentFile.SaveAs( $fullPath, [System.Text.Encoding]::UTF8 )
 ###  <a name="Displayname"></a> DisplayName
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
- Die schreibgeschützte Eigenschaft, die die Zeichenfolge mit dem Anzeigenamen dieser Datei abruft. Der Name wird auf der Registerkarte **Datei** oben im Editor angezeigt. Wenn am Ende des Namens ein Sternchen (*) vorhanden ist, enthält die Datei nicht gespeicherte Änderungen.
+ Die schreibgeschützte Eigenschaft, die die Zeichenfolge mit dem Anzeigenamen dieser Datei abruft. Der Name wird auf der Registerkarte **Datei** oben im Editor angezeigt. Ein Sternchen \(\*\) am Ende des Namens zeigt an, dass die Datei nicht gespeicherte Änderungen enthält.
 
 ```
 # Shows the display name of the file.
@@ -81,7 +85,7 @@ $psIse.CurrentFile.DisplayName
 ###  <a name="Editor"></a> Editor
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
- Die schreibgeschützte Eigenschaft, die das für die angegebene Datei verwendete [Editor-Objekt](The-ISEEditor-Object.md) abruft.
+ Die schreibgeschützte Eigenschaft, die das für die angegebene Datei verwendete [Editorobjekt](The-ISEEditor-Object.md) abruft.
 
 ```
 # Gets the editor and the text.
@@ -145,6 +149,7 @@ $psISE.CurrentFile.IsUntitled
   
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

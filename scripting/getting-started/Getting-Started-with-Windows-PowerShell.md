@@ -1,13 +1,17 @@
 ---
-title:  Erste Schritte mit Windows PowerShell
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
-ms.assetid:  b0e2ad92-875f-421d-b612-f624e644aa69
+title: Erste Schritte mit Windows PowerShell
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+ms.assetid: b0e2ad92-875f-421d-b612-f624e644aa69
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: bee671bf537a100bd8ad407f34ccd5fe63c7f9a8
+
 ---
 
 # Erste Schritte mit Windows PowerShell
@@ -15,7 +19,7 @@ Windows PowerShell ist eine neue Windows-Befehlszeilenshell, die insbesondere f�
 
 Anders als die meisten Shells, in denen Text akzeptiert und zurückgegeben wird, setzt Windows PowerShell auf der .NET Framework Common Language Runtime (CLR) und auf .NET Framework auf und akzeptiert .NET Framework-Objekte bzw. gibt .NET Framework-Objekte zurück. Diese grundlegende Änderung in der Umgebung bedingt völlig neue Tools und Methoden für die Verwaltung und Konfiguration von Windows.
 
-Windows PowerShell führt das Konzept eines Cmdlets (ausgesprochen als „Command-let“) ein. Dies ist ein einfaches Einzelfunktions-Befehlszeilentool, das in die Shell integriert ist. Sie können jedes Cmdlet einzeln verwenden, aber deren Leistungsfähigkeit wird freigesetzt, wenn Sie diese einfachen Tools in Kombination verwenden, um komplexe Aufgaben auszuführen. Windows PowerShell umfasst mehr als einhundert grundlegende Kerncmdlets, und Sie können eigene Cmdlets schreiben und diese für andere Benutzer freigeben.
+Windows PowerShell führt das Konzept eines Cmdlets (ausgesprochen: „Command\-let“) ein. Dies ist ein einfaches Einzelfunktions\-Befehlszeilentool, das in die Shell integriert ist. Sie können jedes Cmdlet einzeln verwenden, aber deren Leistungsfähigkeit wird freigesetzt, wenn Sie diese einfachen Tools in Kombination verwenden, um komplexe Aufgaben auszuführen. Windows PowerShell umfasst mehr als einhundert grundlegende Kerncmdlets, und Sie können eigene Cmdlets schreiben und diese für andere Benutzer freigeben.
 
 Ähnlich wie viele Shells ermöglicht Windows PowerShell Ihnen Zugriff auf das Dateisystem auf dem Computer. Darüber hinaus bieten Windows PowerShell-*Anbieter* Ihnen die Möglichkeit, auf andere Datenspeicher, etwa die Registrierung und den Zertifikatspeicher für digitale Signaturen, so einfach zuzugreifen wie auf das Dateisystem.
 
@@ -33,6 +37,7 @@ Inhalte dieses Themas:
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,32 +1,36 @@
 ---
-title:  Arbeiten mit Dateien und Ordnern
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
-ms.assetid:  c0ceb96b-e708-45f3-803b-d1f61a48f4c1
+title: Arbeiten mit Dateien und Ordnern
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+ms.assetid: c0ceb96b-e708-45f3-803b-d1f61a48f4c1
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: c9bc3460e25063347de3c594ef5ce437b0f8961d
+
 ---
 
 # Arbeiten mit Dateien und Ordnern
 Das Navigieren auf Windows PowerShell-Laufwerken und das Bearbeiten der darauf gespeicherten Elemente gleicht dem Bearbeiten von Dateien und Ordnern auf physischen Windows-Festplattenlaufwerken. In diesem Abschnitt werden bestimmte Aufgaben im Zusammenhang mit der Bearbeitung von Dateien und Ordnern erörtert.
 
 ### Auflisten aller Dateien und Ordner in einem Ordner
-Mit **Get-ChildItem** können Sie alle Elemente abrufen, die sich unmittelbar in einem Ordner befinden. Fügen Sie den optionalen Parameter **Force** hinzu, um ausgeblendete oder Systemelemente anzuzeigen. Dieser Befehl zeigt z. B. den unmittelbaren Inhalt der Windows PowerShell-Laufwerks C: an (dieses entspricht dem physischen Windows-Laufwerk C:):
+Mit **Get\-ChildItem** können Sie alle Elemente in einem Ordner direkt abrufen. Fügen Sie den optionalen Parameter **Force** hinzu, um ausgeblendete oder Systemelemente anzuzeigen. Dieser Befehl zeigt z. B. den unmittelbaren Inhalt der Windows PowerShell-Laufwerks C: an (dieses entspricht dem physischen Windows-Laufwerk C:):
 
 ```
 Get-ChildItem -Force C:\
 ```
 
-Der Befehl listet nur die Elemente auf, die sich unmittelbar in dem Ordner befinden, ähnlich dem „Cmd.exe“-Befehl **DIR** oder **ls** in einer UNIX-Shell. Um enthaltene Elemente anzuzeigen, müssen Sie außerdem den Parameter **-Recurse** angeben. (Es kann sehr lange dauern, bis dieser Vorgang abgeschlossen ist.) So listen Sie alle Dateien auf Laufwerk C: auf:
+Der Befehl listet nur die Elemente auf, die sich unmittelbar in dem Ordner befinden, ähnlich dem „Cmd.exe“-Befehl **DIR** oder **ls** in einer UNIX-Shell. Um enthaltene Elemente anzuzeigen, müssen Sie außerdem den Parameter **\-Recurse** angeben. (Es kann sehr lange dauern, bis dieser Vorgang abgeschlossen ist.) So listen Sie alle Dateien auf Laufwerk C: auf:
 
 ```
 Get-ChildItem -Force C:\ -Recurse
 ```
 
-Um mit **Get-ChildItem** Elemente zu filtern, verwenden Sie die Parameter **Path**, **Filter**, **Include** und **Exclude**, die allerdings nur auf Namen basieren. Zum Durchführen komplexer Filterung basierend auf anderen Eigenschaften verwenden Sie **Where-Object**.
+Sie können die Parameter **Path**, **Filter**, **Include** und **Exclude** verwenden, die allerdings nur auf Namen basieren, um mit **Get\-ChildItem** Elemente zu filtern. Zum Durchführen komplexer Filterung basierend auf anderen Eigenschaften, können Sie **Where\-Object** verwenden.
 
 Der folgende Befehl sucht alle ausführbaren Dateien im Ordner „Programme“, die nach dem 1. Oktober 2005 zuletzt geändert wurden und weder kleiner als 1 MB noch größer als 10 MB sind:
 
@@ -35,7 +39,7 @@ Get-ChildItem -Path $env:ProgramFiles -Recurse -Include *.exe | Where-Object -Fi
 ```
 
 ### Kopieren von Dateien und Ordner
-Das Kopieren erfolgt mit **Copy-Item**. Der folgende Befehl sichert „C:\boot.ini“ nach „C:\boot.bak“:
+Das Kopieren erfolgt mit **Copy\-Item**. Der folgende Befehl sichert C:\\boot.ini nach C:\\boot.bak:
 
 ```
 Copy-Item -Path c:\boot.ini -Destination c:\boot.bak
@@ -49,19 +53,19 @@ Copy-Item -Path c:\boot.ini -Destination c:\boot.bak -Force
 
 Dieser Befehl funktioniert auch, wenn das Ziel schreibgeschützt ist.
 
-Das Kopieren von Ordnern funktioniert auf dieselbe Weise. Dieser Befehl kopiert den Ordner „C:\temp\test1“ rekursiv nach „c:\temp\DeleteMe“:
+Das Kopieren von Ordnern funktioniert auf dieselbe Weise. Dieser Befehl kopiert den Ordner „C:\\temp\\test1“ rekursiv nach „c:\\temp\\DeleteMe“:
 
 ```
 Copy-Item C:\temp\test1 -Recurse c:\temp\DeleteMe
 ```
 
-Sie können auch eine Auswahl von Elementen kopieren. Der folgende Befehl kopiert alle TXT-Dateien, die an beliebiger Stelle in „c:\data“ enthalten sind, nach „c:\temp\text“:
+Sie können auch eine Auswahl von Elementen kopieren. Der folgende Befehl kopiert alle TXT-Dateien, die an beliebiger Stelle in „c:\\data“ enthalten sind, nach „c:\\temp\\text“:
 
 ```
 Copy-Item -Filter *.txt -Path c:\data -Recurse -Destination c:\temp\text
 ```
 
-Sie können auch weiterhin andere Tools verwenden, um Dateisystemkopien auszuführen. XCOPY-, ROBOCOPY- und COM-Objekte, z. B. **Scripting.FileSystemObject,** können in Windows PowerShell verwendet werden. Sie können z. B. die Windows Script Host-Klasse **Scripting.FileSystem COM** verwenden, um „C:\boot.ini“ nach „C:\boot.bak“ zu sichern:
+Sie können auch weiterhin andere Tools verwenden, um Dateisystemkopien auszuführen. XCOPY-, ROBOCOPY- und COM-Objekte, z. B. **Scripting.FileSystemObject,** können in Windows PowerShell verwendet werden. Sie können z.B. die Windows Script Host-Klasse **Scripting.FileSystem COM** verwenden, um „C:\\boot.ini“ nach „C:\\boot.bak“ zu sichern:
 
 ```
 (New-Object -ComObject Scripting.FileSystemObject).CopyFile("c:\boot.ini", "c:\boot.bak")
@@ -70,20 +74,20 @@ Sie können auch weiterhin andere Tools verwenden, um Dateisystemkopien auszufü
 ### Erstellen von Dateien und Ordnern
 Das Erstellen neuer Elemente funktioniert auf allen Windows PowerShell-Anbietern gleich. Wenn ein Windows PowerShell-Anbieter über mehrere Elementtypen verfügt – der Dateisystem Windows PowerShell-Anbieter z. B. unterscheidet zwischen Verzeichnissen und Dateien – müssen Sie den Elementtyp angeben.
 
-Dieser Befehl erstellt einen neuen Ordner „C:\temp\New Folder“:
+Dieser Befehl erstellt einen neuen Ordner „C:\\temp\\New Folder“:
 
 ```
 New-Item -Path 'C:\temp\New Folder' -ItemType "directory"
 ```
 
-Dieser Befehl erstellt eine neue leere Datei „C:\temp\New Folder\file.txt“.
+Dieser Befehl erstellt eine neue leere Datei „C:\\temp\\New Folder\\file.txt“.
 
 ```
 New-Item -Path 'C:\temp\New Folder\file.txt' -ItemType "file"
 ```
 
 ### Entfernen aller Dateien und Ordner in einem Ordner
-Mit **Remove-Item** können Sie enthaltene Elemente entfernen. Wenn ein Element weitere Elemente enthält, werden Sie jedoch aufgefordert, das Entfernen zu bestätigen. Wenn Sie z. B. versuchen, den Ordner „C:\temp\DeleteMe“, der weitere Elemente enthält, zu löschen, fordert Windows PowerShell Sie vor dem Löschen des Ordners zur Bestätigung auf:
+Mit **Remove\-Item** können Sie enthaltene Elemente entfernen. Wenn ein Element weitere Elemente enthält, werden Sie jedoch aufgefordert, das Entfernen zu bestätigen. Wenn Sie z.B. versuchen, den Ordner „C:\\temp\\DeleteMe“, der weitere Elemente enthält, zu löschen, fordert Windows PowerShell Sie vor dem Löschen des Ordners zur Bestätigung auf:
 
 ```
 Remove-Item C:\temp\DeleteMe
@@ -112,7 +116,7 @@ subst p: $env:programfiles
 Wie bei Netzlaufwerken sind in Windows PowerShell mit **subst** zugeordnete Laufwerke für die Windows PowerShell-Shell sofort sichtbar.
 
 ### Einlesen einer Textdatei in ein Array
-Eine der häufigeren Speicherformate für Textdaten ist eine Datei mit separaten Zeilen, die als einzelne Datenelemente behandelt werden. Das Cmdlet **Get-Content** kann zum Lesen einer vollständigen Datei in einem Schritt verwendet werden, wie hier gezeigt:
+Eine der häufigeren Speicherformate für Textdaten ist eine Datei mit separaten Zeilen, die als einzelne Datenelemente behandelt werden. Das Cmdlet **Get\-Content** kann zum Lesen einer vollständigen Datei in einem Schritt verwendet werden, wie hier dargestellt:
 
 ```
 PS> Get-Content -Path C:\boot.ini
@@ -126,14 +130,14 @@ multi(0)disk(0)rdisk(0)partition(1)\WINDOWS=" Microsoft Windows XP Professional
 with Data Execution Prevention" /noexecute=optin /fastdetect
 ```
 
-**Get-Content** behandelt die aus der Datei gelesenen Daten bereits als Array, mit je einem Element Dateiinhalt pro Zeile. Sie können dies anhand der Länge (**Length**) des zurückgegebenen Inhalts überprüfen:
+**Get\-Content** behandelt die aus der Datei gelesenen Daten bereits als Array, mit je einem Element Dateiinhalt pro Zeile. Sie können dies anhand der Länge (**Length**) des zurückgegebenen Inhalts überprüfen:
 
 ```
 PS> (Get-Content -Path C:\boot.ini).Length
 6
 ```
 
-Dieser Befehl ist besonders hilfreich zum Abrufen von Listen mit Informationen direkt in Windows PowerShell. Beispielsweise können Sie eine Liste von Computernamen oder IP-Adressen in einer Datei namens „C:\temp\domainMembers.txt“ speichern, wobei in jede Zeile der Datei je ein Name geschrieben wird. Mit **Get-Content** können Sie Dateiinhalte abrufen und in die Variable **$Computers** übernehmen:
+Dieser Befehl ist besonders hilfreich zum Abrufen von Listen mit Informationen direkt in Windows PowerShell. Beispielsweise können Sie eine Liste von Computernamen oder IP-Adressen in einer Datei namens „C:\\temp\\domainMembers.txt“ speichern, wobei in jede Zeile der Datei je ein Name geschrieben wird. Mit **Get\-Content** können Sie die Dateiinhalte abrufen und in die Variable **$Computers** übernehmen:
 
 ```
 $Computers = Get-Content -Path C:\temp\DomainMembers.txt
@@ -143,6 +147,7 @@ $Computers = Get-Content -Path C:\temp\DomainMembers.txt
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

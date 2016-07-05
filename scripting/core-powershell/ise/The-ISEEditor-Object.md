@@ -1,13 +1,17 @@
 ---
-title:  Das ISEEditor-Objekt
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
-ms.assetid:  0101daf8-4e31-4e4c-ab89-01d95dcb8f46
+title: Das ISEEditor-Objekt
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+ms.assetid: 0101daf8-4e31-4e4c-ab89-01d95dcb8f46
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 4812092dea24fa61245af7e06d1c5924ec812218
+
 ---
 
 # Das ISEEditor-Objekt
@@ -15,7 +19,7 @@ ms.assetid:  0101daf8-4e31-4e4c-ab89-01d95dcb8f46
 
 ## Methoden
 
-### Clear()
+### Löschen\(\)
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Löscht den Text im Editor.
@@ -26,7 +30,7 @@ $psIse.CurrentPowerShellTab.ConsolePane.Clear()
 
 ```
 
-### EnsureVisible(int lineNumber)
+### EnsureVisible\(int lineNumber\)
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Führt einen Bildlauf im Editor aus, sodass die Zeile, die dem angegebenen Wert des **lineNumber**-Parameters entspricht, angezeigt wird. Es wird eine Ausnahme ausgelöst, wenn die angegebene Zeilennummer nicht zwischen 1 und der Nummer der letzten Zeile liegt. Dieser Bereich definiert die gültigen Zeilennummern.
@@ -40,7 +44,7 @@ $psIse.CurrentFile.Editor.EnsureVisible(5)
 
 ```
 
-### Focus()
+### Focus\(\)
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Legt den Fokus auf den Editor fest.
@@ -50,7 +54,7 @@ $psIse.CurrentFile.Editor.EnsureVisible(5)
 $psISE.CurrentPowerShellTab.ConsolePane.Focus()
 ```
 
-### GetLineLength(int lineNumber)
+### GetLineLength\(int lineNumber \)
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Ruft für die durch die Zeilennummer angegebene Zeile die Länge der Zeile als ganze Zahl ab.
@@ -66,40 +70,40 @@ $psISE.CurrentPowerShellTab.ConsolePane.Focus()
 $psIse.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 ```
 
-### GoToMatch()
+### GoToMatch\(\)
   In Windows PowerShell ISE 3.0 und höher unterstützt, in früheren Versionen nicht enthalten. 
 
- Verschiebt den Textcursor zum entsprechenden Zeichen, wenn die **CanGoToMatch**-Eigenschaft des Editor-Objekts **$true** ist. Dies tritt ein, wenn sich der Textcursor direkt vor einer öffnenden Klammer, eckigen Klammer oder geschweiften Klammer ((,[,{) oder nach einer schließenden Klammer, eckigen Klammer oder geschweiften Klammer (),],}) befindet.  Der Textcursor wird vor einer öffnenden bzw. nach einer schließenden Klammer platziert. Wenn die **CanGoToMatch**-Eigenschaft **$false** ist, wird mit dieser Methode keine Aktion ausgeführt. Siehe [CanGoToMatch](#cangotomatch).
+ Verschiebt den Textcursor zum entsprechenden Zeichen, wenn die Eigenschaft **CanGoToMatch** des Editorobjekts **$true** ist. Dies tritt ein, wenn sich der Textcursor direkt vor einer öffnenden, eckigen oder geschweiften Klammer – \(, \[, { – oder unmittelbar nach einer schließenden, eckigen oder geschweiften Klammer befindet – \), \], }.  Der Textcursor wird vor einer öffnenden bzw. nach einer schließenden Klammer platziert. Wenn die **CanGoToMatch**-Eigenschaft **$false** ist, wird mit dieser Methode keine Aktion ausgeführt. Siehe [CanGoToMatch](#cangotomatch).
 
 ```
 # Test to see if the caret is next to a parenthesis, bracket, or brace.
 ```
 
-### InsertText( text )
+### InsertText\( text \)
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Ersetzt die Markierung durch Text oder fügt Text an der aktuellen Position des Textcursors ein.
 
- **text** \- Zeichenfolge Der einzufügende Text.
+ **text** – Zeichenfolge – Der einzufügende Text.
 
  Weitere Informationen finden Sie im [Beispielskript](#example) weiter unten in diesem Thema.
 
-### Select( startLine, startColumn, endLine, endColumn )
+### Select\( startLine, startColumn, endLine, endColumn \)
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Wählt den Text anhand der Parameter **startLine**, **startColumn**, **endLine** und **endColumn** aus.
 
- **startLine** \- ganze Zahl  Die Zeile, in der die Auswahl beginnt.
+ **startLine** – ganze Zahl – Die Zeile, in der die Auswahl beginnt.
 
- **startColumn** \- ganze Zahl  Die Spalte in der Startzeile, in der die Auswahl beginnt.
+ **startColumn** \- ganze Zahl – Die Spalte in der Startzeile, in der die Auswahl beginnt.
 
- **endLine** \- ganze Zahl  Die Zeile, in der die Auswahl endet.
+ **endLine** ganze Zahl – Die Zeile, in der die Auswahl endet.
 
- **endColumn** \- ganze Zahl  Die Spalte in der Endzeile, in der die Auswahl endet.
+ **endColumn** – ganze Zahl – Die Spalte in der Endzeile, in der die Auswahl endet.
 
  Weitere Informationen finden Sie im [Beispielskript](#example) weiter unten in diesem Thema.
 
-### SelectCaretLine()
+### SelectCaretLine\(\)
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Wählt die gesamte Textzeile aus, in der sich der Textcursor gerade befindet.
@@ -112,21 +116,21 @@ $psIse.CurrentFile.Editor.SelectCaretLine()
 
 ```
 
-### SetCaretPosition( lineNumber, columnNumber )
+### SetCaretPosition\( lineNumber, columnNumber \)
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Legt die Position des Textcursors auf die Zeilennummer und die Spaltennummer fest. Es wird eine Ausnahme ausgelöst, wenn die Zeilennummer des Textcursors oder die Spaltennummer des Textcursors außerhalb des jeweils gültigen Bereichs liegt.
 
- **lineNumber** \-ganze Zahl  Die Zeilennummer des Textcursors.
+ **lineNumber** – ganze Zahl – Die Zeilennummer des Textcursors.
 
- **columnNumber** \- ganze Zahl  Die Spaltennummer des Textcursors.
+ **columnNumber** – ganze Zahl – Die Spaltennummer des Textcursors.
 
 ```
 # Set the CaretPosition.
 $psIse.CurrentFile.Editor.SetCaretPosition(5,1)
 ```
 
-### ToggleOutliningExpansion()
+### ToggleOutliningExpansion\(\)
   In Windows PowerShell ISE 3.0 und höher unterstützt, in früheren Versionen nicht enthalten. 
 
  Führt dazu, dass alle Gliederungsabschnitte erweitert oder reduziert werden.
@@ -142,7 +146,7 @@ $psIse.CurrentFile.Editor.ToggleOutliningExpansion()
 ###  <a name="CanGoToMatch"></a> CanGoToMatch
   In Windows PowerShell ISE 3.0 und höher unterstützt, in früheren Versionen nicht enthalten. 
 
- Die schreibgeschützte boolesche Eigenschaft, die angibt, ob der Textcursor sich neben einer Klammer, eckigen Klammer oder geschweiften Klammer befindet: (), [], {}. Wenn der Textcursor sich direkt vor der öffnenden Klammer oder unmittelbar nach der schließenden Klammer eines Klammerpaars befindet, lautet der Wert dieser Eigenschaft **$true**. Andernfalls lautet er **$false**.
+ Die schreibgeschützte boolesche Eigenschaft, die angibt, ob der Textcursor sich neben einer normalen, eckigen oder geschweiften Klammer befindet – \(\), \[\], {}. Wenn der Textcursor sich direkt vor der öffnenden Klammer oder unmittelbar nach der schließenden Klammer eines Klammerpaars befindet, lautet der Wert dieser Eigenschaft **$true**. Andernfalls lautet er **$false**.
 
 ```
 # Test to see if the caret is next to a parenthesis, bracket, or brace
@@ -164,7 +168,7 @@ $psIse.CurrentFile.Editor.CaretColumn
 ###  <a name="CaretLine"></a> CaretLine
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
- Die schreibgeschützte Eigenschaft, die der Nummer der Zeile mit dem Textcursor abruft.
+ Die schreibgeschützte Eigenschaft, die die Nummer der Zeile abruft, die den Textcursor enthält.
 
 ```
 # Get the CaretLine.
@@ -175,7 +179,7 @@ $psIse.CurrentFile.Editor.CaretLine
 ###  <a name="caretlinetext"></a> CaretLineText
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
- Die schreibgeschützte Eigenschaft, die die Nummer der Zeile mit dem Textcursor abruft.
+ Die schreibgeschützte Eigenschaft, die die vollständige Textzeile abruft, die den Textcursor enthält.
 
 ```
 # Get all of the text on the line that contains the caret.
@@ -204,7 +208,7 @@ $psIse.CurrentFile.Editor.LineCount
 ###  <a name="Text"></a> Text
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
- Die Lese-/Schreibeigenschaft, die den Text im Editor abruft oder festlegt.
+ Die Lese-\/Schreibeigenschaft, die den Text im Editor abruft oder festlegt.
 
  Weitere Informationen finden Sie im [Beispielskript](#example) weiter unten in diesem Thema.
 
@@ -248,6 +252,7 @@ $myEditor.InsertText($selection.ToLower())
   
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

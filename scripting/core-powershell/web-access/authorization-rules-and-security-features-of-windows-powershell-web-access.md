@@ -1,12 +1,16 @@
 ---
-title:  Autorisierungsregeln und Sicherheitsfeatures von Windows PowerShell Web Access
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
+title: Autorisierungsregeln und Sicherheitsfeatures von Windows PowerShell Web Access
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: ed586e55f4533ce5be7c68564e5cc537fed05016
+
 ---
 
 # Autorisierungsregeln und Sicherheitsfeatures von Windows PowerShell Web Access
@@ -176,7 +180,7 @@ Administratoren streben für Windows PowerShell Web Access-Benutzer meist die Ve
 
 Wenn Sie die Verwendung von benutzerdefinierten Sitzungskonfigurationen planen, um für bestimmte Benutzer nur die Arbeit in eingeschränkten Runspaces von Windows PowerShell Web Access zuzulassen, erstellen Sie die benutzerdefinierten Sitzungskonfigurationen vor dem Hinzufügen der Autorisierungsregeln, die darauf verweisen. Sie können die Windows PowerShell Web Access-Cmdlets nicht zum Erstellen von benutzerdefinierten Sitzungskonfigurationen verwenden. Weitere Informationen zur Erstellung von benutzerdefinierten Sitzungskonfigurationen finden Sie auf MSDN unter [about\_Session\_Configuration\_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx).
 
-Für Windows PowerShell Web Access-Cmdlets wird ein Platzhalterzeichen unterstützt, und zwar das Sternchen (\*). Platzhalterzeichen innerhalb von Zeichenfolgen werden nicht unterstützt. Verwenden Sie ein einzelnes Sternchen pro Eigenschaft (Benutzer, Computer oder Sitzungskonfigurationen).
+Für Windows PowerShell Web Access-Cmdlets wird ein Platzhalterzeichen unterstützt, und zwar das Sternchen ( \*). Platzhalterzeichen innerhalb von Zeichenfolgen werden nicht unterstützt. Verwenden Sie ein einzelnes Sternchen pro Eigenschaft (Benutzer, Computer oder Sitzungskonfigurationen).
 
 <table>
 <colgroup>
@@ -257,11 +261,11 @@ Bei jeder Windows PowerShell-Sitzung wird eine Sitzungskonfiguration verwendet. 
 
 -   Ein Administrator erstellt einen Endpunkt namens **PswaEndpoint** mit einem eingeschränkten Runspace. Anschließend erstellt der Administrator die Regel **\*,\*,PswaEndpoint** und verteilt den Endpunkt an andere Computer. Mithilfe der Regel können alle Benutzer auf alle Computer mit dem Endpunkt **PswaEndpoint** zugreifen. Falls es sich um die einzige Autorisierungsregel handelt, die in dem Regelsatz definiert ist, ist der Zugriff auf Computer ohne diesen Endpunkt nicht möglich.
 
--   Der Administrator hat einen Endpunkt mit dem eingeschränkten Runspace **PswaEndpoint** erstellt und möchte den Zugriff auf bestimmte Benutzer beschränken. Der Administrator erstellt die Benutzergruppe **Level1Support** und definiert die folgende Regel: **Level1Support,\*,PswaEndpoint**. Mit der Regel wird allen Benutzern der Gruppe **Level1Support** Zugriff auf alle Computer mit der Konfiguration **PswaEndpoint** gewährt. Ebenso ist es möglich, den Zugriff auf eine bestimmte Gruppe von Computern zu beschränken.
+-   Der Administrator hat einen Endpunkt mit dem eingeschränkten Runspace **PswaEndpoint** erstellt und möchte den Zugriff auf bestimmte Benutzer beschränken. Der Administrator erstellt die Benutzergruppe namens **Level1Support** und definiert die folgende Regel: **Level1Support,\*,PswaEndpoint**. Mit der Regel wird allen Benutzern der Gruppe **Level1Support** Zugriff auf alle Computer mit der Konfiguration **PswaEndpoint** gewährt. Ebenso ist es möglich, den Zugriff auf eine bestimmte Gruppe von Computern zu beschränken.
 
--   Einige Administratoren gewähren bestimmten Benutzern mehr Zugriff als anderen. Beispielsweise erstellt ein Administrator die beiden Benutzergruppen **Admins** und **BasicSupport**. Ferner erstellt der Administrator einen Endpunkt mit dem eingeschränkten Runspace **PswaEndpoint** und definiert die folgenden beiden Regeln: **Admins,\*,\*** und **BasicSupport,\*,PswaEndpoint**. Mit der ersten Regel wird allen Benutzern der Gruppe **Admin** Zugriff auf alle Computer gewährt, und mit der zweiten Regel wird allen Benutzern der Gruppe **BasicSupport** nur Zugriff auf Computer mit **PswaEndpoint** gewährt.
+-   Einige Administratoren gewähren bestimmten Benutzern mehr Zugriff als anderen. Beispielsweise erstellt ein Administrator die beiden Benutzergruppen **Admins** und **BasicSupport**. Ferner erstellt der Administrator einen Endpunkt mit dem eingeschränkten Runspace namens **PswaEndpoint** und definiert die folgenden beiden Regeln: **Admins,\*,\*** und **BasicSupport,\*,PswaEndpoint**. Mit der ersten Regel wird allen Benutzern der Gruppe **Admin** Zugriff auf alle Computer gewährt, und mit der zweiten Regel wird allen Benutzern der Gruppe **BasicSupport** nur Zugriff auf Computer mit **PswaEndpoint** gewährt.
 
--   Ein Administrator hat eine private Testumgebung eingerichtet und möchte nun allen autorisierten Netzwerkbenutzern den Zugriff auf alle Computer im Netzwerk ermöglichen, auf die sie normalerweise zugreifen können, und zwar mit Zugriff auf alle Sitzungskonfigurationen, auf die sie normalerweise zugreifen können. Da es sich um eine private Testumgebung handelt, erstellt der Administrator eine Autorisierungsregel, die nicht sicher ist. Der Administrator führt das Cmdlet <span class="code">Add-PswaAuthorizationRule \* \* \*</span> aus. Dabei wird das Platzhalterzeichen **\*** verwendet, um alle Benutzer, alle Computer und alle Konfigurationen anzugeben. Diese Regel entspricht der folgenden: <span class="code">Add-PswaAuthorizationRule -UserName \* -ComputerName \* -ConfigurationName \*</span>.
+-   Ein Administrator hat eine private Testumgebung eingerichtet und möchte nun allen autorisierten Netzwerkbenutzern den Zugriff auf alle Computer im Netzwerk ermöglichen, auf die sie normalerweise zugreifen können, und zwar mit Zugriff auf alle Sitzungskonfigurationen, auf die sie normalerweise zugreifen können. Da es sich um eine private Testumgebung handelt, erstellt der Administrator eine Autorisierungsregel, die nicht sicher ist. Der Administrator führt das Cmdlet <span class="code">Add-PswaAuthorizationRule \* \* \*</span> aus. Dabei wird das Platzhalterzeichen **\*** verwendet, um alle Benutzer, alle Computer und alle Konfigurationen anzugeben. Diese Regel entspricht der folgenden: <span class="code">Add-PswaAuthorizationRule –UserName \* -ComputerName \* -ConfigurationName \*</span>.
 
     <table>
     <colgroup>
@@ -285,11 +289,11 @@ Bei jeder Windows PowerShell-Sitzung wird eine Sitzungskonfiguration verwendet. 
 
         Add-PswaAuthorizationRule –userName PswaServer\chrisLocal –computerName srv1.contoso.com –configurationName Microsoft.PowerShell
 
-    Im vorigen Regelbeispiel wird Chris auf dem Gatewayserver authentifiziert und anschließend sein Zugriff auf *srv1* autorisiert. Auf der Anmeldeseite muss Chris unter **Optionale Verbindungseinstellungen** (*contoso\\chris*) einen zweiten Satz von Anmeldeinformationen angeben. Der Gatewayserver verwendet den zusätzlichen Satz von Anmeldeinformationen für die Authentifizierung auf dem Zielcomputer *srv1.contoso.com*.
+    Im vorigen Regelbeispiel wird Chris auf dem Gatewayserver authentifiziert und anschließend sein Zugriff auf *srv1* autorisiert. Auf der Anmeldeseite muss Chris unter **Optionale Verbindungseinstellungen** (*contoso\\chris*) einen zweiten Satz Anmeldeinformationen angeben. Der Gatewayserver verwendet den zusätzlichen Satz von Anmeldeinformationen für die Authentifizierung auf dem Zielcomputer *srv1.contoso.com*.
 
     Im obigen Szenario richtet Windows PowerShell Web Access eine Verbindung mit dem Zielcomputer erst ein, nachdem Folgendes erfolgreich durchgeführt und von mindestens einer Autorisierungsregel zugelassen wurde.
 
-    1.  Authentifizierung des Arbeitsgruppen-Gatewayservers durch Hinzufügen eines Benutzernamens im Format *server\_name*\\*user\_name* zur Autorisierungsregel
+    1.  Authentifizierung auf dem Arbeitsgruppen-Gatewayserver durch Hinzufügen eines Benutzernamens im Format *Servername*\\*Benutzername* zur Autorisierungsregel
 
     2.  Authentifizierung auf dem Zielcomputer mithilfe von alternativen Anmeldeinformationen, die auf der Anmeldeseite unter **Optionale Verbindungseinstellungen** angegeben wurden
 
@@ -315,9 +319,9 @@ Bei jeder Windows PowerShell-Sitzung wird eine Sitzungskonfiguration verwendet. 
 
 ------------------------------------------------------------------------
 
-Autorisierungsregeln werden in einer XML-Datei gespeichert. Standardmäßig wird die XML-Datei unter dem Pfad „%windir%\\Web\\PowershellWebAccess\\data\\AuthorizationRules.xml“ gespeichert.
+Autorisierungsregeln werden in einer XML-Datei gespeichert. Standardmäßig wird die XML-Datei unter dem Pfad %windir%\\Web\\PowershellWebAccess\\data\\AuthorizationRules.xml gespeichert.
 
-Der Pfad zur XML-Datei mit den Autorisierungsregeln ist in der Datei **powwa.config** gespeichert, die im Ordner „%windir%\\Web\\PowershellWebAccess\\data“ enthalten ist. Der Administrator kann den Verweis auf den Standardpfad in **powwa.config** flexibel ändern, falls Präferenzen oder Anforderungen dies erfordern. Da der Administrator den Speicherort der Datei ändern kann, können mehrere Windows PowerShell Web Access-Gateways dieselben Autorisierungsregeln verwenden, falls eine Konfiguration dieser Art gewünscht wird.
+Der Pfad zur XML-Datei mit den Autorisierungsregeln ist in der Datei **powwa.config** gespeichert, die im Ordner \\Web\\PowershellWebAccess\\data enthalten ist. Der Administrator kann den Verweis auf den Standardpfad in **powwa.config** flexibel ändern, falls Präferenzen oder Anforderungen dies erfordern. Da der Administrator den Speicherort der Datei ändern kann, können mehrere Windows PowerShell Web Access-Gateways dieselben Autorisierungsregeln verwenden, falls eine Konfiguration dieser Art gewünscht wird.
 
 <a href="" id="BKMK_sesmgmt"></a>
 
@@ -326,7 +330,7 @@ Der Pfad zur XML-Datei mit den Autorisierungsregeln ist in der Datei **powwa.con
 
 ------------------------------------------------------------------------
 
-Standardmäßig begrenzt Windows PowerShell Web Access einen Benutzer auf drei zeitgleiche Sitzungen. Sie können die Datei **web.config** der Webanwendung im IIS-Manager bearbeiten, um eine andere Anzahl von Sitzungen pro Benutzer zu unterstützen. Der Pfad zur Datei **web.config** lautet „$Env:Windir\\Web\\PowerShellWebAccess\\wwwroot\\Web.config“.
+Standardmäßig begrenzt Windows PowerShell Web Access einen Benutzer auf drei zeitgleiche Sitzungen. Sie können die Datei **web.config** der Webanwendung im IIS-Manager bearbeiten, um eine andere Anzahl von Sitzungen pro Benutzer zu unterstützen. Der Pfad zur Datei **web.config** lautet $Env:Windir\\Web\\PowerShellWebAccess\\wwwroot\\Web.config.
 
 Standardmäßig ist der Webserver (IIS) so konfiguriert, dass der Anwendungspool neu gestartet wird, wenn Einstellungen bearbeitet werden. Beispielsweise wird der Anwendungspool neu gestartet, wenn Änderungen an der Datei **web.config** vorgenommen werden. Da von Windows PowerShell Web Access speicherinterne Sitzungszustände verwendet werden, verlieren bei Windows PowerShell Web Access-Sitzungen angemeldete Benutzer ihre Sitzungen, wenn der Anwendungspool neu gestartet wird.
 
@@ -423,6 +427,7 @@ Die Lizenz für Drittanbieterskripts oder Code, die mit dieser Website verlinkt 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,12 +1,16 @@
 ---
-title:  Deinstallieren von Windows PowerShell Web Access
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
+title: Deinstallieren von Windows PowerShell Web Access
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: ee5e88ece27add955fcef3a9df0a441a08251e77
+
 ---
 
 #  Deinstallieren von Windows PowerShell Web Access
@@ -70,7 +74,7 @@ Wenn Sie Ihre eigenen, benutzerdefinierten Websitenamen angegeben haben, fügen 
 
     -   Klicken Sie auf dem Windows-**Startbildschirm** mit der rechten Maustaste auf **Windows PowerShell**, und klicken Sie anschließend auf **Als Administrator ausführen**.
 
-2.  Geben Sie Folgendes ein, und drücken Sie dann die **EINGABETASTE**, wobei *computer_name* für einen Remoteserver steht, von dem Sie Windows PowerShell Web Access entfernen möchten. Mit dem Parameter <span class="code">–Restart</span> werden Zielserver automatisch neu gestartet, falls dies für die Entfernung erforderlich ist.
+2.  Geben Sie Folgendes ein, und drücken Sie anschließend die **EINGABETASTE**, wobei *Computername* für einen Remoteserver steht, von dem Sie Windows PowerShell Web Access entfernen möchten. Mit dem Parameter <span class="code">–Restart</span> werden Zielserver automatisch neu gestartet, falls dies für die Entfernung erforderlich ist.
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_7b534520-f292-471f-89e3-a1079c03e369'); "Copy to clipboard.")
 
@@ -214,6 +218,7 @@ Die Lizenz für Drittanbieterskripts oder Code, die mit dieser Website verlinkt 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 
