@@ -1,9 +1,0 @@
-# Frequenzen für „RefreshMode“ und „ConfigurationMode“ müssen keine Vielfache des jeweils anderen sein
-
-In der vorherigen Version von DSC behandelt der LCM `RefreshFrequencyMins` und `ConfigurationModeFrequencyMins` als Vielfaches des jeweils anderen. In WMF 5.0 RTM werden diese Eigenschaften unabhängig voneinander verarbeitet. 
-
-Weitere Informationen finden Sie unter [Konfigurieren des lokalen Konfigurations-Managers](../dsc/metaConfig.md).
-
-<!--HONumber=Jun16_HO4-->
-
-
