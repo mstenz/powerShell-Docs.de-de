@@ -1,13 +1,17 @@
 ---
-title:  PSWorkflow-Modul
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
-ms.assetid:  117316fe-2f82-4fc9-b5dc-794ae9e3f258
+title: PSWorkflow-Modul
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+ms.assetid: 117316fe-2f82-4fc9-b5dc-794ae9e3f258
+translationtype: Human Translation
+ms.sourcegitcommit: 4f67538548a3828f0f2ad2cdb1a7828a0f3db892
+ms.openlocfilehash: 1e30424797ee285e9e4eeae990979e8a1329fd74
+
 ---
 
 # PSWorkflow-Modul
@@ -32,8 +36,6 @@ Dieser Abschnitt enthält die Hilfethemen für das **PSWorkflow**-Modul, das Cmd
 
 [about_Parallel](https://technet.microsoft.com/en-us/library/104559a8-e89a-49f5-8c08-e5bf72768cbf)
 
-[Informationen über_Foreach-Parallel](https://technet.microsoft.com/en-us/library/35704780-dde8-4f5f-9319-5b982148bba7)
-
 [Informationen über_Sequence](https://technet.microsoft.com/en-us/library/bda3f81a-be8a-43be-b0df-12bb7e193b9b)
 
 [Informationen über_Suspend-Workflow](https://technet.microsoft.com/en-us/library/be2ded75-1eca-493e-96c1-758f92b5f199)
@@ -47,6 +49,7 @@ Dieser Abschnitt enthält die Hilfethemen für das **PSWorkflow**-Modul, das Cmd
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jul16_HO1-->
 
 
