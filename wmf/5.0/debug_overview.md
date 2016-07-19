@@ -41,4 +41,8 @@ Neue Cmdlets wurden hinzugefügt, mit denen Sie aktuelle Runspaces in einem Proz
 Nun ist ein Anfügen an jeden Computerprozess möglich, für den Windows PowerShell geladen wurde. Starten Sie dazu eine interaktive Sitzung mit dem Prozess ähnlich dem Starten einer interaktiven Remotesitzung, indem Sie das Cmdlet „Enter-PSSession“ ausführen:
 
 -   Enter-PSHostProcess
--   Exit-PSHostProcess<!--HONumber=Mar16_HO2-->
+-   Exit-PSHostProcess
+
+<!--HONumber=Jun16_HO4-->
+
+

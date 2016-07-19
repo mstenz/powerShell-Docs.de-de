@@ -8,4 +8,8 @@ Wir haben das Verfügbarmachen von Details zum LCM-Status verbessert. Der „LCM
 * **PendingConfiguration**
 
 Wir haben auch die „LCMStateDetail“-Eigenschaft hinzugefügt, die weitere Statusinformationen enthält.
-<!--HONumber=Mar16_HO2-->
+
+
+<!--HONumber=Jun16_HO4-->
+
+

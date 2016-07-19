@@ -1,12 +1,16 @@
 ---
-title:  security
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
+title: security
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 6bdf3f658ed75b48be6df217b6a0b4ad5951c935
+
 ---
 
 # Sicherheitsmodul
@@ -26,6 +30,7 @@ Dieser Abschnitt enthält die Hilfethemen für das **Microsoft.PowerShell.Securi
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 
