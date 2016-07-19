@@ -5711,6 +5711,8 @@
 * Archive Datetime: 2016-07-19 13:10:22
 * Handback File: [ps-engine-enhancements.51ba717e1fb1db2a8fb647083ba968b9f58c4a82.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/ce2ccfc2e1ce1b3e36ffa74eb93ac01aaeddeb0e/ol-handback/PowerShell/powerShell-Docs.de-de/live/ps-engine-enhancements.51ba717e1fb1db2a8fb647083ba968b9f58c4a82.de-de.xlf)
 * Handback Datetime: 2016-07-19 14:27:44
+* Bilingual File: [ps-engine-enhancements.51ba717e1fb1db2a8fb647083ba968b9f58c4a82.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/ce2ccfc2e1ce1b3e36ffa74eb93ac01aaeddeb0e/ol-handback/PowerShell/powerShell-Docs.de-de/live/ps-engine-enhancements.51ba717e1fb1db2a8fb647083ba968b9f58c4a82.de-de.xlf)
+* Bilingual Datetime: 2016-07-19 14:29:49
 * [Back to Top](#report-top)
 
 ##### <a name='dfba55f1eae5468df95309e14b3ee256511badf4356'></a> Source: [wmf\5.1\features-scenarios-cache\template.md](https://github.com/PowerShell/powerShell-Docs/blob/a952a27ec1695ce9951c352446194cf72d18f50a/wmf/5.1/features-scenarios-cache/template.md)
@@ -5735,6 +5737,8 @@
 * Archive Datetime: 2016-07-19 13:10:22
 * Handback File: [using-module.dfdedb618ec7d188918f7f3f705c8c39bbb26521.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/ce2ccfc2e1ce1b3e36ffa74eb93ac01aaeddeb0e/ol-handback/PowerShell/powerShell-Docs.de-de/live/using-module.dfdedb618ec7d188918f7f3f705c8c39bbb26521.de-de.xlf)
 * Handback Datetime: 2016-07-19 14:27:44
+* Bilingual File: [using-module.dfdedb618ec7d188918f7f3f705c8c39bbb26521.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/ce2ccfc2e1ce1b3e36ffa74eb93ac01aaeddeb0e/ol-handback/PowerShell/powerShell-Docs.de-de/live/using-module.dfdedb618ec7d188918f7f3f705c8c39bbb26521.de-de.xlf)
+* Bilingual Datetime: 2016-07-19 14:29:49
 * [Back to Top](#report-top)
 
 ##### <a name='8a10903c421f62311a28c9f32e352bba75f21052358'></a> Source: [wmf\5.1\install-configure.md](https://github.com/PowerShell/powerShell-Docs/blob/26da6c80568327faadc6746099ac9869f2018fcf/wmf/5.1/install-configure.md)
