@@ -8,8 +8,9 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: Infodatei
 ms.technology: powershell
-ms.sourcegitcommit: 47593773fb0f34e0b52d35617522d7b1db7f48e6
-ms.openlocfilehash: 1cecf1b6bf5a55ed785c8ff43bdd4a0a41e96cd0
+translationtype: Human Translation
+ms.sourcegitcommit: d4e46653ff31ea7cda71f1c92b12ce5f2811b8a7
+ms.openlocfilehash: e24757029fd3ac9a70f710a7a755c35f440f087c
 
 ---
 
@@ -53,7 +54,7 @@ Dieser Leitfaden bietet einen schnellen Einstieg und vermittelt anhand eines vor
 Dieses Kapitel bietet eine kurze Übersicht darüber, warum JEA für Sie interessant ist.
 
 2.  [Voraussetzungen](prerequisites.md)  
-Dieses Kapitel erklärt die Einrichtung Ihrer Umgebung.
+In diesem Kapitel wird die Einrichtung Ihrer Umgebung erklärt.
 
 3.  [Verwenden von JEA](using-jea.md)  
 Dieses Kapitel erleichtert Ihnen den Einstieg, indem die JEA-Benutzererfahrung von Operatoren erläutert wird.
@@ -91,6 +92,6 @@ Die GUI unterstützt sogar die Erstellung von Rollenfunktionen basierend auf Pow
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

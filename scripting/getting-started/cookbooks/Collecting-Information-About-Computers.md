@@ -1,12 +1,19 @@
 ---
-title: Erfassen von Informationen über Computer
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "Erfassen von Informationen über Computer"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 9e7b6a2d-34f7-4731-a92c-8b3382eb51bb
+translationtype: Human Translation
+ms.sourcegitcommit: d698cdd29bfe165b87494696ca2dc3486be4ab0e
+ms.openlocfilehash: 96204a0ce674cacd5b830f9f8b820ce3e1cbbc20
+
 ---
+
 # Erfassen von Informationen über Computer
 **Get-WmiObject** ist das wichtigste Cmdlet für allgemeine Systemverwaltungsaufgaben. Alle kritischen Subsystemeinstellungen werden über WMI verfügbar gemacht. Darüber hinaus behandelt WMI Daten als Objekte, die zu Sammlungen eines oder mehrerer Elemente gehören. Da Windows PowerShell ebenfalls mit Objekten arbeitet und über eine Pipeline verfügt, mit der Sie einzelne oder mehrere Objekte auf die gleiche Weise behandeln können, ermöglicht der generische WMI-Zugriff Ihnen, einige erweiterte Aufgaben mit sehr geringem Aufwand auszuführen.
 
@@ -22,29 +29,29 @@ Get-WmiObject -Class Win32_Desktop -ComputerName .
 Dadurch werden Informationen über alle Desktops zurückgegeben, ganz gleich, ob sie verwendet werden oder nicht.
 
 > [!NOTE]
-> Einige WMI-Klassen geben sehr detaillierte Informationen zurück, die häufig Metadaten über die WMI-Klasse enthalten. Da die meisten dieser Metadateneigenschaften über Namen verfügen, die mit einem doppelten Unterstrich beginnen, können Sie die Eigenschaften mit „Select-Object“ filtern. Geben Sie nur Eigenschaften an, die mit einem Buchstaben beginnen und verwenden Sie **[a-z]&#42;** als Wert der Eigenschaft. Beispiel:
+> Einige WMI-Klassen geben sehr detaillierte Informationen zurück, die häufig Metadaten über die WMI-Klasse enthalten. Da die meisten dieser Metadateneigenschaften über Namen verfügen, die mit einem doppelten Unterstrich beginnen, können Sie die Eigenschaften mit „Select-Object“ filtern. Geben Sie nur Eigenschaften an, die mit einem Buchstaben beginnen, und verwenden Sie **[a-z]*** als Wert der Eigenschaft. Beispiel:
 
 ```
 Get-WmiObject -Class Win32_Desktop -ComputerName . | Select-Object -Property [a-z]*
 ```
 
-Um die Metadaten zu filtern, verwenden Sie einen Pipelineoperator (|), um die Ergebnisse des Befehls „Get-WmiObject“ an **Select-Object -Property [a-z]&#42;** zu senden.
+Um die Metadaten zu filtern, verwenden Sie einen Pipelineoperator (|), um die Ergebnisse des Befehls „Get-WmiObject“ an **Select-Object -Property [a-z]*** zu senden.
 
 ### Auflisten von BIOS-Informationen
-Die WMI-Klasse „Win32_BIOS“ gibt ziemlich kompakte und vollständige Informationen über den System-BIOS auf dem lokalen Computer zurück:
+Die WMI-Klasse „Win32_BIOS“ gibt kompakte und vollständige Informationen zum System-BIOS auf dem lokalen Computer zurück:
 
 ```
 Get-WmiObject -Class Win32_BIOS -ComputerName .
 ```
 
 ### Auflisten von Prozessorinformationen
-Sie können allgemeine Prozessorinformationen mithilfe der WMI-Klasse **Win32_Processor** abrufen, allerdings möchten Sie die Daten wahrscheinlich filtern:
+Sie können allgemeine Prozessorinformationen mithilfe der WMI-Klasse **Win32_Processor** abrufen. Allerdings möchten Sie die Daten wahrscheinlich filtern:
 
 ```
 Get-WmiObject -Class Win32_Processor -ComputerName . | Select-Object -Property [a-z]*
 ```
 
-Wenn Sie eine Zeichenfolge mit einer allgemeinen Beschreibung der Prozessorfamilie erhalten möchten, lassen Sie die **Win32_ComputerSystemSystemType**-Eigenschaft zurückgeben:
+Wenn Sie eine Zeichenfolge mit einer allgemeinen Beschreibung der Prozessorfamilie erhalten möchten, lassen Sie die **SystemType**-Eigenschaft zurückgeben:
 
 ```
 PS> Get-WmiObject -Class Win32_ComputerSystem -ComputerName . | Select-Object -Property SystemType
@@ -89,10 +96,10 @@ ServicePackInEffect : SP3
 Status              :
 ```
 
-Wenn Sie eine kompaktere Ausgabe erhalten möchten, können Sie bestimmte Eigenschaften ausschließen. Sie können zwar den **Get-WmiObject Property**-Parameter verwenden, um nur die **HotFixID** auszuwählen, dennoch werden weitere Informationen zurückgegeben, da standardmäßig alle Metadaten angezeigt werden:
+Wenn Sie eine kompaktere Ausgabe erhalten möchten, können Sie bestimmte Eigenschaften ausschließen. Sie können zwar den **Property**-Parameter von „Get-WmiObject“ verwenden, um nur die **HotFixID** auszuwählen. Dennoch werden weitere Informationen zurückgegeben, da standardmäßig alle Metadaten angezeigt werden:
 
 ```
-PS> Get-WmiObject -Class Win32_QuickFixEngineering -ComputerName . -Property HotFixId
+PS> Get-WmiObject -Class Win32_QuickFixEngineering -ComputerName . -Property HotFixID
 HotFixID         : KB910437
 __GENUS          : 2
 __CLASS          : Win32_QuickFixEngineering
@@ -106,7 +113,7 @@ __NAMESPACE      :
 __PATH           :
 ```
 
-Die zusätzlichen Daten werden zurückgegeben, weil der Parameter „Property“ in **Get-WmiObject** die von WMI-Klasseninstanzen zurückgegebenen Eigenschaften, nicht aber das an die Windows PowerShell zurückgegebene Objekt einschränkt. Um die Ausgabe zu verringern, verwenden Sie **Select-Object**:
+Die zusätzlichen Daten werden zurückgegeben, weil der „Property“-Parameter in **Get-WmiObject** die von WMI-Klasseninstanzen zurückgegebenen Eigenschaften, nicht aber das an die Windows PowerShell zurückgegebene Objekt einschränkt. Um die Ausgabe zu verringern, verwenden Sie **Select-Object**:
 
 ```
 PS> Get-WmiObject -Class Win32_QuickFixEngineering -ComputerName . -Property Hot
@@ -123,7 +130,7 @@ Die Klasseneigenschaften **Win32_OperatingSystem** umfassen Informationen zur Ve
 Get-WmiObject -Class Win32_OperatingSystem -ComputerName . | Select-Object -Property BuildNumber,BuildType,OSType,ServicePackMajorVersion,ServicePackMinorVersion
 ```
 
-Sie können mit dem **Select-Object Property**-Parameter auch Platzhalterzeichen verwenden. Da alle Eigenschaften, die entweder mit **Build** oder **Service Pack** beginnen, hier wichtig sind, können wir das Beispiel auf das folgende Format kürzen:
+Sie können mit dem ** Property**-Parameter von „Select-Object“ auch Platzhalterzeichen verwenden. Da alle Eigenschaften, die entweder mit **Build** oder **Service Pack** beginnen, hier wichtig sind, können wir das Beispiel auf das folgende Format kürzen:
 
 ```
 PS> Get-WmiObject -Class Win32_OperatingSystem -ComputerName . | Select-Object -Property Build*,OSType,ServicePack*
@@ -168,8 +175,6 @@ FreeSpace    : 44298250240
 Size         : 122934034432
 VolumeName   : New Volume
 
-PS> Get-WmiObject -Class Win32_LogicalDisk -Filter "DriveType=3" -ComputerName . | Measure-Object -Property FreeSpace,Size -Sum
-
 Get-WmiObject -Class Win32_LogicalDisk -Filter "DriveType=3" -ComputerName . | Measure-Object -Property FreeSpace,Size -Sum | Select-Object -Property Property,Sum
 ```
 
@@ -206,7 +211,7 @@ Year         : 2006
 ```
 
 ### Anzeigen des Dienststatus
-Zum Anzeigen des Status aller Dienste auf einem bestimmten Computer können Sie das weiter oben beschriebene Cmdlet **Get-Service** lokal verwenden. Für Remotesysteme können Sie die Klasse „WMI-Win32_Service“ verwenden. Wenn Sie die Ergebnisse außerdem mit **Select-Object** auf **Status**, **Name** und **DisplayName** filtern, ist das Ausgabeformat fast identisch mit dem von **Get-Service-**:
+Zum Anzeigen des Status aller Dienste auf einem bestimmten Computer können Sie das weiter oben beschriebene Cmdlet **Get-Service** lokal verwenden. Für Remotesysteme können Sie die Klasse „WMI-Win32_Service“ verwenden. Wenn Sie die Ergebnisse außerdem mit **Select-Object** auf **Status**, **Name** und **DisplayName** filtern, ist das Ausgabeformat fast identisch mit dem von **Get-Service**:
 
 ```
 Get-WmiObject -Class Win32_Service -ComputerName . | Select-Object -Property Status,Name,DisplayName
@@ -220,6 +225,7 @@ Get-WmiObject -Class Win32_Service -ComputerName . | Format-Table -Property Stat
 
 
 
-<!--HONumber=Apr16_HO1-->
+
+<!--HONumber=Jul16_HO1-->
 
 

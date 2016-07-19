@@ -8,8 +8,9 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: End-to-End Active Directory
 ms.technology: powershell
-ms.sourcegitcommit: 7504fe496a8913718847e45115d126caf4049bef
-ms.openlocfilehash: 0a262e2c83174db7041d3cf35d97542b1cac4386
+translationtype: Human Translation
+ms.sourcegitcommit: 5954eb797df43de6f132a434ecad7049ee0221fb
+ms.openlocfilehash: 204909c16d5e3e2099f6ba4247929d61445cd654
 
 ---
 
@@ -70,7 +71,7 @@ Denken Sie daran, dass es sich hier nur um ein Beispiel handelt und Ihre Organis
 Nachdem Sie jetzt über die Liste der notwendigen Aktionen verfügen, müssen Sie die Funktion jedes einzelnen Befehls gründlich durchdenken.
 Dafür gibt es zwei wichtige Gründe:
 
-1.  Es kann leicht passieren, dass Sie Benutzern mehr Funktionen verfügbar machen als Sie wollten.
+1.  Es kann leicht passieren, dass Sie Benutzern mehr Funktionen bieten als gewollt.
 `Set-ADUser` z. B. ist ein unglaublich leistungsfähiger und flexibler Befehl.
 Sie möchten sicher nicht die gesamte Funktionalität dieses Befehls für Helpdeskbenutzer verfügbar machen.  
 
@@ -84,7 +85,7 @@ Nachdem Sie jeden Befehl sorgfältig geprüft haben, entscheiden Sie sich für f
 
 1.  `Set-ADUser` soll nur mit dem Parameter „-Title“ ausgeführt werden dürfen.
 
-2.  `Add-ADGroupMember` und `Remove-ADGroupMember` sollen nur für bestimmte Gruppen funktionieren
+2.  `Add-ADGroupMember` `Remove-ADGroupMember` soll nur für bestimmte Gruppen funktionieren.
 
 ### Schritt 3: Bestätigen Sie, dass die Aufgaben mit JEA funktionieren.
 Die Verwendung dieser Cmdlets ist in der eingeschränkten JEA-Umgebung möglicherweise nicht ganz einfach.
@@ -96,11 +97,11 @@ Der Parameter „-NewPassword“ erfordert eine sichere Zeichenfolge.
 Benutzer erstellen häufig eine sichere Zeichenfolge und übergeben sie als Variable, wie hier zu sehen:
 
 ```PowerShell
-$newPassword = (Read-Host -Prompt "Specify a new password" -AsSecureString)
+$newPassword = Read-Host -Prompt "Specify a new password" -AsSecureString
 Set-ADAccountPassword -Identity mollyd -NewPassword $newPassword -Reset
 ```
 
-Der Modus „NoLanguage“ verhindert jedoch die Verwendung von Variablen.
+Der Modus *NoLanguage* verhindert jedoch die Verwendung von Variablen.
 Es gibt zwei Möglichkeiten, diese Einschränkung zu umgehen:
 
 1.  Sie können festlegen, dass Benutzer den Befehl ohne Variablenzuweisung ausführen.
@@ -124,7 +125,7 @@ Wir speichern den Befehl in dem Modul „Contoso_AD_Module“, das Sie im letzte
 
 1. Öffnen Sie in der PowerShell ISE die Datei „Contoso_AD_Module.psm1“.
 ```PowerShell
-ISE 'C:\Program Files\WindowsPowerShell\Modules\Contoso_AD_Module\Contoso_AD_Module.psm1'
+ise 'C:\Program Files\WindowsPowerShell\Modules\Contoso_AD_Module\Contoso_AD_Module.psm1'
 ```
 
 2. Drücken Sie STRG+J, um das Menü für Codeausschnitte zu öffnen.
@@ -165,7 +166,7 @@ Jetzt können Ihre Benutzer einfach `Reset-ContosoUserPassword` aufrufen und mü
 Im Abschnitt [Erstellen einer Rollenfunktion](#role-capability-creation) haben Sie eine leere Rollenfunktionsdatei erstellt.
 In diesem Abschnitt werden Sie diese Datei mit Werten füllen.
 
-Öffnen Sie zunächst die Rollenfunktionsdatei in der ISE.
+Öffnen Sie zunächst die Rollenfunktionsdatei in der PowerShell ISE.
 ```PowerShell
 ise 'C:\Program Files\WindowsPowerShell\Modules\Contoso_AD_Module\RoleCapabilities\ADHelpDesk.psrc'
 ```
@@ -193,7 +194,7 @@ In obigem Beispiel gilt es einiges zu beachten:
 1.  PowerShell versucht, die Module automatisch zu laden, die für Ihre Rollenfunktion benötigt werden.
 Möglicherweise müssen Sie Modulnamen explizit im Feld „ModulesToImport“ auflisten, wenn Sie feststellen, dass ein Modul nicht automatisch geladen wird.
 
-2.  Wenn Sie nicht sicher sind, ob es sich bei einem Befehl um ein Cmdlet oder eine Funktion handelt, führen Sie `Get-Command` aus, und sehen Sie sich den Wert für „CommandType“ an.
+2.  Wenn Sie nicht sicher sind, ob es sich bei einem Befehl um ein Cmdlet oder eine Funktion handelt, führen Sie `Get-Command` aus, und sehen Sie sich den Wert der „CommandType“-Eigenschaft an.
 
 3.  Das ValidatePattern-Element ermöglicht die Verwendung eines regulären Ausdrucks, um Parameterargumente einzuschränken, falls zulässige Werte nicht einfach zu definieren sind.
 Sie können für einen einzigen Parameter nicht sowohl ValidatePattern als auch ValidateSet definieren.
@@ -210,7 +211,7 @@ ise "$env:ProgramData\JEAConfiguration\HelpDeskDemo.pssc"
 Wenn Sie in Ihrer eigenen Umgebung arbeiten, sollten Sie „CONTOSO\JEA_NonAdmins_Helpdesk“ durch Ihre eigene Gruppe ohne Administratorrechte ersetzen.
 ```PowerShell
 # OLD: Description = ''
-Description = 'An endpoint for active directory tasks.'
+Description = 'An endpoint for Active Directory tasks.'
 
 # OLD: SessionType = 'Default'
 SessionType = 'RestrictedRemoteServer'
@@ -237,7 +238,7 @@ Wenn Sie den Abschnitt [Set Up Users and Groups](creating-a-domain-controller.md
 -   Benutzername = HelpDeskUser
 -   Kennwort = pa$$w0rd
 
-Stellen Sie eine Remoteverbindung mit dem AD-Helpdeskendpunkt her, und verwenden Sie dabei diese Anmeldeinformationen ohne Administratorrechte:
+Stellen Sie eine Remoteverbindung mit dem „ADHelpdesk“ -Endpunkt her, und verwenden Sie dabei diese Anmeldeinformationen ohne Administratorrechte:
 ```PowerShell
 Enter-PSSession -ComputerName . -ConfigurationName ADHelpDesk -Credential $HelpDeskCred
 ```
@@ -266,12 +267,12 @@ Wenn Sie hierzu weitere Informationen benötigen, führen Sie `Get-Help about_La
 Wenn Sie hierzu weitere Informationen benötigen, führen Sie `Get-Help about_Functions` aus.
 
 **ValidateSet/ValidatePattern**: Wenn Sie einen Befehl verfügbar machen, können Sie die gültigen Argumente für bestimmte Parameter einschränken.
-Ein ValidateSet-Element ist eine spezifische Liste gültiger Befehle.
+Ein „ValidateSet“-Element ist eine spezifische Liste gültiger Argumente.
 Ein ValidatePattern-Element ist ein regulärer Ausdruck, mit dem die Argumente für diesen Parameter übereinstimmen müssen.
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

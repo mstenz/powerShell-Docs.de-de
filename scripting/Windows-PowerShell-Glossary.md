@@ -1,12 +1,19 @@
 ---
 title: Windows PowerShell-Glossar
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
+translationtype: Human Translation
+ms.sourcegitcommit: ea25f98e60050a52fc1d72c7e529985855eeed36
+ms.openlocfilehash: ab41246eda58eb384500daa1f99aa9a8f9e019e1
+
 ---
+
 # Windows PowerShell-Glossar
 
 
@@ -15,7 +22,7 @@ ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
 |Binäres Modul|Ein Windows PowerShell-Modul, dessen Stammmodul eine binäre Moduldatei (DLL) ist. Ein binäres Modul kann ein Modulmanifest enthalten.|
 |Allgemeiner Parameter|Ein Parameter, der vom Windows PowerShell-Modul allen Cmdlets und erweiterten Funktionen hinzugefügt wird.|
 |Punkt als Stammelement|Um in Windows PowerShell einen Befehl zu starten, geben Sie einen Punkt und ein Leerzeichen vor dem Befehl ein. Befehle mit Punkt als Stammelement werden im aktuellen Bereich anstatt im neuen Bereich ausgeführt. Alle Variablen, Aliase, Funktionen oder Laufwerke, die der Befehl erstellt, werden im aktuellen Bereich erstellt und sind für Benutzer verfügbar, wenn der Befehl abgeschlossen ist.|
-|Dynamisches Modul|Ein Modul, das nur im Arbeitsspeicher vorhanden ist. Das Cmdlet „Import-PSSession“ erstellt dynamische Module.|
+|Dynamisches Modul|Ein Modul, das nur im Arbeitsspeicher vorhanden ist. Die Cmdlets „New-Module“ und „Import-PSSession“ erstellen dynamische Module.|
 |Dynamischer Parameter|Parameter, der einem Windows PowerShell-Cmdlet, einer Funktion oder Skript einen unter bestimmten Umständen hinzugefügt wird. Cmdlets, Funktionen, Anbieter und Skripts können dynamische Parameter hinzufügen.|
 |Formatierungsdatei|Eine Windows PowerShell-XML-Datei mit der Erweiterung „.format.ps1xml“, die definiert, wie Windows PowerShell ein Objekt basierend auf seinem .NET Framework-Typ angezeigt.|
 |Globaler Sitzungsstatus|Der Sitzungsstatus, der die Daten enthält, auf die der Benutzer einer Windows PowerShell-Sitzung zugreifen kann.|
@@ -56,6 +63,7 @@ ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jul16_HO1-->
 
 

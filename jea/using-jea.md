@@ -8,8 +8,9 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: Verwenden von JEA
 ms.technology: powershell
-ms.sourcegitcommit: 7504fe496a8913718847e45115d126caf4049bef
-ms.openlocfilehash: 3bac5932c3ed57713bdb08e3a9ed435b228518bc
+translationtype: Human Translation
+ms.sourcegitcommit: 88ce340c09efdbb3d81a72fe6113c1187a9152f2
+ms.openlocfilehash: 9db7a5a91d25d459313117da34af63016f03c241
 
 ---
 
@@ -49,7 +50,7 @@ Get-Command
 ```
 
 Wie Sie sehen, steht Ihnen nur eine sehr eingeschränkte Teilmenge der Befehle eines normalen PowerShell-Fensters zur Verfügung (bei denen es sich durchaus um mehrere Tausend handeln kann).
-Genau gesagt: Das Fenster zeigt nur die sieben JEA-Standardcmdlets (Clear-Host, Exit-PSSession, Get-Command, Get-FormatData, Get-Help, Measure-Object, Out-Default, Select-Object) sowie die beiden Befehle an, die explizit in der Rollenfunktionsdatei für die Wartungsrolle enthalten sind.
+Genau gesagt: Das Fenster zeigt nur die acht JEA-Standardbefehle (Clear-Host, Exit-PSSession, Get-Command, Get-FormatData, Get-Help, Measure-Object, Out-Default, Select-Object) sowie die beiden Befehle an, die explizit in der Rollenfunktionsdatei für die Wartungsrolle enthalten sind.
 
 Sehen Sie sich jetzt den Benutzerkontext an, in dem diese Sitzung ausgeführt wird, indem Sie die benutzerdefinierte Funktion aufrufen, die in der Rollenfunktionsdatei für die Wartungsrolle enthalten ist.
 
@@ -96,6 +97,6 @@ Dadurch wird die Verbindung mit der PowerShell-Remotesitzung getrennt.
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

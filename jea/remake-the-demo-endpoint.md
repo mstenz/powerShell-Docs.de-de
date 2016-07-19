@@ -8,8 +8,9 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: Neuerstellen des Demoendpunkts
 ms.technology: powershell
-ms.sourcegitcommit: 7504fe496a8913718847e45115d126caf4049bef
-ms.openlocfilehash: dabb5023012e90ace3fbc5f347c17821abd92595
+translationtype: Human Translation
+ms.sourcegitcommit: d20ea8418cb7389d756de94ea752cf604b8d07af
+ms.openlocfilehash: acd2cfbd038250a26236c875d0e8b03a32cd84f9
 
 ---
 
@@ -63,7 +64,7 @@ New-PSSessionConfigurationFile -Path "$env:ProgramData\JEAConfiguration\JEADemo2
 ise "$env:ProgramData\JEAConfiguration\JEADemo2.pssc"
 ```
 
-Aktualisieren Sie die folgenden Felder mit den unten stehenden Werten (denken Sie daran, Ihre eigene Sicherheitsgruppe ohne Administratorrechte einzusetzen):
+Aktualisieren Sie die folgenden Felder mit den nachstehenden Werten (denken Sie daran, Ihre eigene Sicherheitsgruppe ohne Administratorrechte einzusetzen):
 
 ```PowerShell
 # OLD: SessionType = 'Default'
@@ -91,7 +92,7 @@ Das Ergebnis dieser Einstellungen ist ein sicherer und einfacher Startpunkt zum 
 Es definiert, welcher Benutzer mit einem privilegierten Konto welche Aufgaben ausführen darf.
 Mit diesem Feld können Sie basierend auf der Gruppenmitgliedschaft die Funktionen angeben, die für einen verbundenen Benutzer zur Verfügung stehen.
 Dies ist das Kernstück der RBAC-Funktionalität von JEA.
-In diesem Beispiel machen Sie die vorab erstellte Rollenfunktion „Demo“ für Mitglieder der Gruppe „Contoso\JEA_NonAdmin_Operator“ verfügbar.
+In diesem Beispiel machen Sie die vorab erstellte Rollenfunktion „Maintenance“ für Mitglieder der Gruppe „Contoso\JEA_NonAdmin_Operator“ verfügbar.
 
 3.  Das Feld *RunAsVirtualAccount* gibt an, dass PowerShell auf diesem Endpunkt mit einem ausführenden virtuellen Konto ausgeführt werden soll.
 Standardmäßig ist das virtuelle Konto Mitglied der integrierten Administratorengruppe.
@@ -124,7 +125,7 @@ Herzlichen Glückwunsch! Sie haben Ihren JEA-Endpunkt eingerichtet.
 
 ## Testen Ihres Endpunkts
 Führen Sie die Schritte im Abschnitt [Verwenden von JEA](using-jea.md) erneut für Ihren neuen Endpunkt aus, um zu überprüfen, ob er erwartungsgemäß ausgeführt wird.
-Stellen Sie sicher, dass Sie einen neuen Endpunktnamen verwenden (JEADemo2), wenn Sie den Konfigurationsnamen in Enter-PSSession bereitstellen.
+Stellen Sie sicher, dass Sie einen neuen Endpunktnamen verwenden (JEADemo2), wenn Sie den Konfigurationsnamen in `Enter-PSSession` bereitstellen.
 
 ```PowerShell
 Enter-PSSession -ComputerName . -ConfigurationName JEADemo2 -Credential $NonAdminCred
@@ -152,6 +153,6 @@ Weitere Informationen über Aufzeichnungen finden Sie in diesem [Blogbeitrag](ht
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

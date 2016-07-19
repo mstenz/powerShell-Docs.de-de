@@ -9,15 +9,15 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 1476722e-947e-425d-a86c-50037488dc6e
 translationtype: Human Translation
-ms.sourcegitcommit: ca7ab17f7ba2615c7a39d1e3dd944501bab4e72c
-ms.openlocfilehash: 87e4a23f93d19219a8d00671f319ef93a96fbbf6
+ms.sourcegitcommit: b41a40fd06de6898ba9adf01053d225edaa31b29
+ms.openlocfilehash: cd94291f225851a99253f5f54e10d6174e63f413
 
 ---
 
 # Neuerungen in Windows PowerShell
-Windows PowerShell ® 5.0 bietet wichtige neue Features, die die Verwendungsmöglichkeiten erweitern, die Benutzerfreundlichkeit verbessern und es Ihnen ermöglichen, die Steuerung und Verwaltung von Windows\-basierten Umgebungen leichter und umfassender zu bewältigen.
+Windows PowerShell® 5.0 bietet wichtige neue Features, die die Verwendungsmöglichkeiten erweitern, die Benutzerfreundlichkeit verbessern und es Ihnen ermöglichen, die Steuerung und Verwaltung von Windows-basierten Umgebungen leichter und umfassender zu bewältigen.
 
-Windows PowerShell 5.0 ist abwärtskompatibel. Cmdlets, Anbieter, Module, Snap\-Ins, Skripts, Funktionen und Profile, die für Windows PowerShell 4.0, Windows PowerShell 3.0 und Windows PowerShell 2.0 entwickelt wurden, funktionieren im Allgemeinen ohne Änderungen in Windows PowerShell 5.0.
+Windows PowerShell 5.0 ist abwärtskompatibel. Cmdlets, Anbieter, Module, Snap-Ins, Skripts, Funktionen und Profile, die für Windows PowerShell 4.0, Windows PowerShell 3.0 und Windows PowerShell 2.0 entwickelt wurden, funktionieren im Allgemeinen ohne Änderungen in Windows PowerShell 5.0.
 
 Windows PowerShell 5.0 wird standardmäßig unter Windows Server ® 2016 Technical Preview und Windows 10 ® installiert. Zum Installieren von Windows PowerShell 5.0 unter Windows Server 2012 R2, Windows 8.1 Enterprise oder Windows 8.1 Pro müssen Sie [Windows Management Framework 5.0](http://aka.ms/wmf5download) herunterladen und installieren. Achten Sie darauf, dass Sie die Details für das Herunterladen lesen und alle Systemanforderungen erfüllen, bevor Sie Windows Management Framework 5.0 installieren.
 
@@ -40,7 +40,7 @@ Viele Updates und Verbesserungen für Windows PowerShell DSC (Desired State Conf
 
     -   [Start-DscConfiguration](http://technet.microsoft.com/library/dn521623.aspx) hat den neuen Parameter „– UseExisting“, der die zuletzt angewendete Konfiguration erneut anwendet.
 
-    -   Der [Start-DscConfiguration](http://technet.microsoft.com/library/dn521623.aspx)-Parameter „\-Force“ wurde korrigiert.
+    -   Der [Start-DscConfiguration](http://technet.microsoft.com/library/dn521623.aspx)-Parameter „-Force“ wurde korrigiert.
 
     -   [Get-DscLocalConfigurationManager](http://technet.microsoft.com/library/dn407378.aspx) zeigt nützlichere Informationen zum Modulzustand.
 
@@ -104,13 +104,13 @@ Viele Updates und Verbesserungen für Windows PowerShell DSC (Desired State Conf
 
     -   Die Version des Moduls wird nun erzwungen, bevor eine Konfiguration angewendet wird.
 
-    -   **DebugPreference** ist jetzt ordnungsgemäß für Get\-, Set\- oder Test\-TargetResource-Aufrufe festgelegt.
+    -   **DebugPreference** ist jetzt ordnungsgemäß für Aufrufe von „Get-, Set- oder Test-TargetResource“ festgelegt.
 
 -   Verbesserungen bei der Behandlung von Anmeldeinformationen
 
     -   Ein Zertifikat wird nun verwendet, wenn sowohl **Certificate** als auch **PSDscAllowPlainTextPassword** angegeben werden.
 
-    -   Anmeldeinformationen werden auch für „Get\-TargetResource“ entschlüsselt.
+    -   Anmeldeinformationen werden auch für „Get-TargetResource“ entschlüsselt.
 
     -   Anmeldeinformationen für Metakonfigurationen werden ver- und entschlüsselt.
 
@@ -142,87 +142,87 @@ Viele Updates und Verbesserungen für Windows PowerShell DSC (Desired State Conf
 
 ### <a name="BKMK_newcore"></a>Neue Features in Windows PowerShell
 
--   Ab Windows PowerShell 5.0 ist eine Entwicklung mithilfe von Klassen möglich, indem eine mit anderen objektorientierten Programmiersprachen vergleichbare formale Syntax und Semantik verwendet wird. **Class**, **Enum** und andere Schlüsselwörter wurden der Windows PowerShell-Sprache hinzugefügt, um das neue Feature zu unterstützen. Weitere Informationen zum Arbeiten mit Klassen finden Sie unter „about\_Classes“.
+-   Ab Windows PowerShell 5.0 ist eine Entwicklung mithilfe von Klassen möglich, indem eine mit anderen objektorientierten Programmiersprachen vergleichbare formale Syntax und Semantik verwendet wird. **Class**, **Enum** und andere Schlüsselwörter wurden der Windows PowerShell-Sprache hinzugefügt, um das neue Feature zu unterstützen. Weitere Informationen zum Arbeiten mit Klassen finden Sie unter „about_Classes“.
 
--   Windows PowerShell 5.0 führt einen neuen, strukturierten Informationsdatenstrom ein, mit dessen Hilfe Sie strukturierte Daten zwischen einem Skript und seinen Aufrufern (oder seiner Hostingumgebung) übertragen können. Sie können nun „Write\-Host“ zum Übergeben der Ausgabe an den Informationsdatenstrom nutzen. Informationsdatenströme funktionieren auch für „PowerShell.Streams“, Aufträge, geplante Aufträge und Workflows. Die folgenden Features unterstützen den Informationsdatenstrom.
+-   Windows PowerShell 5.0 führt einen neuen, strukturierten Informationsdatenstrom ein, mit dessen Hilfe Sie strukturierte Daten zwischen einem Skript und seinen Aufrufern (oder seiner Hostingumgebung) übertragen können. Sie können nun „Write-Host“ zum Übergeben der Ausgabe an den Informationsdatenstrom nutzen. Informationsdatenströme funktionieren auch für „PowerShell.Streams“, Aufträge, geplante Aufträge und Workflows. Die folgenden Features unterstützen den Informationsdatenstrom.
 
-    -   Das neue Cmdlet „Write\-Information“ ermöglicht Ihnen das Angeben, wie Windows PowerShell Daten in einem Informationsdatenstrom für einen Befehl verarbeitet. „Write\-Host“ ist ein Wrapper für „Write\-Information“. „Write\-Information“ ist auch eine unterstützte Workflowaktivität.
+    -   Das neue Cmdlet „Write-Information“ ermöglicht Ihnen das Angeben, wie Windows PowerShell Daten in einem Informationsdatenstrom für einen Befehl verarbeitet. „Write-Host“ ist ein Wrapper für „Write-Informationen“. „Write-Information“ ist auch eine unterstützte Workflowaktivität.
 
-    -   Mit den beiden neuen allgemeinen Parametern, „InformationVariable“ und „InformationAction“, können Sie festlegen, wie Informationsdatenströme von einem Befehl angezeigt werden. Gültige Werte für „InformationAction“ sind „SilentlyContinue“, „Stop“, „Continue“, „Inquire“, „Ignore“ oder „Suspend“. „SilentlyContinue“ ist der Standardwert. „InformationVariable“ gibt eine Zeichenfolge als Namen einer Variablen an, in der die „Write\-Host“-Daten von einem Befehl gespeichert werden sollen.
+    -   Mit den beiden neuen allgemeinen Parametern, „InformationVariable“ und „InformationAction“, können Sie festlegen, wie Informationsdatenströme von einem Befehl angezeigt werden. Gültige Werte für „InformationAction“ sind „SilentlyContinue“, „Stop“, „Continue“, „Inquire“, „Ignore“ oder „Suspend“. „SilentlyContinue“ ist der Standardwert. „InformationVariable“ gibt eine Zeichenfolge als Namen einer Variablen an, in der die „Write-Host“-Daten von einem Befehl gespeichert werden sollen.
 
     -   Die neue Einstellungsvariable „InformationPreference“ gibt Ihre Standardeinstellung für Daten in einem Informationsdatenstrom in einer Windows PowerShell-Sitzung an. Der Standardwert ist „SilentlyContinue“.
 
     -   Die beiden neuen allgemeinen Workflowparameter „PSInformation“ und „InformationAction“ wurden hinzugefügt.
 
-    -   Wenn Sie den Befehl „Format\-Table“ verwenden, werden Spalten jetzt automatisch formatiert, indem die ersten 300 ms Daten ausgewertet werden, die den Datenstrom durchlaufen.
+    -   Wenn Sie den Befehl „Format-Table“ verwenden, werden Spalten jetzt automatisch formatiert, indem die ersten 300 ms Daten ausgewertet werden, die den Datenstrom durchlaufen.
 
--   In Zusammenarbeit mit [Microsoft Research](http://research.microsoft.com/) wurde das neue Cmdlet „ConvertFrom\-String“ hinzugefügt. „ConvertFrom\-String“ ermöglicht das Extrahieren und Analysieren strukturierter Objekte aus dem Inhalt von Textzeichenfolgen. Weitere Informationen finden Sie unter „ConvertFrom\-String“.
+-   In Zusammenarbeit mit [Microsoft Research](http://research.microsoft.com/) wurde das neue Cmdlet „ConvertFrom-String“ hinzugefügt. „ConvertFrom-String“ ermöglicht das Extrahieren und Analysieren strukturierter Objekte aus dem Inhalt von Textzeichenfolgen. Weitere Informationen finden Sie unter „ConvertFrom-String“.
 
--   Das neue Cmdlet „Convert\-String“ formatiert Text automatisch basierend auf einem Beispiel, das Sie in einem „\-Example“-Parameter angeben.
+-   Das neue Cmdlet „Convert-String“ formatiert Text automatisch basierend auf einem Beispiel, das Sie in einem „-Example“-Parameter angeben.
 
 -   Das neue Modul „Microsoft.PowerShell.Archive“ bietet Cmdlets, mit denen Sie Dateien und Ordner in Archivdateien (.zip) komprimieren, Dateien aus vorhandenen ZIP-Dateien extrahieren und ZIP-Dateien mit neueren Versionen von Dateien aktualisieren können, die in ihnen komprimiert sind.
 
 -   Mit dem neuen Modul „PackageManagement“ können Sie Softwarepakete im Internet ermitteln und installieren. Das Modul „PackageManagement“ (zuvor als OneGet bezeichnet) dient zur Verwaltung vorhandener Paket-Manager (die auch als Paketanbieter bezeichnet werden) und zur Vereinheitlichung der Verwaltung von Windows-Paketen mithilfe einer einzigen Windows PowerShell-Schnittstelle.
 
--   Mit dem neuen Modul „PowerShellGet“ können Sie Module und DSC-Ressourcen im [PowerShell-Katalog](http://www.powershellgallery.com/) finden, installieren, veröffentlichen und aktualisieren. Dies ist auch in einem internen Modulrepository möglich, das Sie durch Ausführen des Cmdlets „Register\-PSRepository“ einrichten können.
+-   Mit dem neuen Modul „PowerShellGet“ können Sie Module und DSC-Ressourcen im [PowerShell-Katalog](http://www.powershellgallery.com/) finden, installieren, veröffentlichen und aktualisieren. Dies ist auch in einem internen Modulrepository möglich, das Sie durch Ausführen des Cmdlets „Register-PSRepository“ einrichten können.
 
--   Das neue Schlüsselwort **Hidden** wurde hinzugefügt, um anzugeben, dass ein Member (eine Eigenschaft oder Methode) nicht standardmäßig in Ergebnissen von „Get\-Member“ angezeigt wird (es sei denn, Sie fügen den Parameter „\-Force“ hinzu). Eigenschaften oder Methoden, die als ausgeblendet markiert wurden, werden auch nicht in IntelliSense-Ergebnissen angezeigt. Dies gilt nur, wenn Sie sich in einem Kontext befinden, in dem der Member sichtbar sein soll. Die automatische Variable „$This“ soll beispielsweise ausgeblendete Member zeigen, wenn sie in der Klassenmethode enthalten ist.
+-   Das neue Schlüsselwort **Hidden** wurde hinzugefügt, um anzugeben, dass ein Member (eine Eigenschaft oder Methode) nicht standardmäßig in Ergebnissen von „Get-Member“ angezeigt wird (es sei denn, Sie fügen den Parameter „-Force“ hinzu). Eigenschaften oder Methoden, die als ausgeblendet markiert wurden, werden auch nicht in IntelliSense-Ergebnissen angezeigt. Dies gilt nur, wenn Sie sich in einem Kontext befinden, in dem der Member sichtbar sein soll. Die automatische Variable „$This“ soll beispielsweise ausgeblendete Member zeigen, wenn sie in der Klassenmethode enthalten ist.
 
--   „New\-Item“, „Remove\-Item“ und „Get\-ChildItem“ wurden verbessert, um das Erstellen und Verwalten [symbolischer Verknüpfungen](http://en.wikipedia.org/wiki/Symbolic_link) zu unterstützen. Der **ItemType**-Parameter für „New\-Item“ akzeptiert den neuen Wert **SymbolicLink**. Nun können Sie symbolische Verknüpfungen in einer einzigen Zeile erstellen, indem Sie das Cmdlet „New\-Item“ ausführen.
+-   „New-Item“, „Remove-Item“ und „Get-ChildItem“ wurden verbessert, um das Erstellen und Verwalten [symbolischer Verknüpfungen](http://en.wikipedia.org/wiki/Symbolic_link) zu unterstützen. Der **ItemType**-Parameter für „New-Item“ akzeptiert den neuen Wert **SymbolicLink**. Nun können Sie symbolische Verknüpfungen in einer einzigen Zeile erstellen, indem Sie das Cmdlet „New-Item“ ausführen.
 
--   „Get\-ChildItem“ hat auch den neuen „–Depth“-Parameter, den Sie mit dem „–Recurse“-Parameter verwenden, um die Rekursion zu beschränken. Beispiel: „Get\-ChildItem –Recurse –Depth 2“ gibt Ergebnisse aus dem aktuellen Ordner, alle untergeordneten Ordner im aktuellen Ordner und alle Ordner innerhalb der untergeordneten Ordner zurück.
+-   „Get-ChildItem“ hat auch den neuen „–Depth“-Parameter, den Sie mit dem „–Recurse“-Parameter verwenden, um die Rekursion zu beschränken. Beispiel: „Get-ChildItem –Recurse –Depth 2“ gibt Ergebnisse aus dem aktuellen Ordner, alle untergeordneten Ordner im aktuellen Ordner und alle Ordner innerhalb der untergeordneten Ordner zurück.
 
--   „Copy\-Item“ ermöglicht Ihnen nun das Kopieren von Dateien oder Ordnern aus einer Windows PowerShell-Sitzung in eine andere. Das bedeutet, dass Sie Dateien in Sitzungen kopieren können, die mit Remotecomputern verbunden sind (einschließlich Computern mit [Windows Nano Server](http://blogs.technet.com/b/windowsserver/archive/2015/04/08/microsoft-announces-nano-server-for-modern-apps-and-cloud.aspx), die keine andere Schnittstelle haben). Zum Kopieren von Dateien geben Sie „PSSession“-IDs als Wert für die neuen Parameter „\-FromSession“ und „\-ToSession“ ein. Fügen Sie „–Path“ und „–Destination“ hinzu, um den Ursprungspfad und das Ziel anzugeben. Beispiel: Copy\-Item \-Path c:\\myFile.txt \-ToSession $s \-Destination d:\\destinationFolder.
+-   „Copy-Item“ ermöglicht Ihnen nun das Kopieren von Dateien oder Ordnern aus einer Windows PowerShell-Sitzung in eine andere. Das bedeutet, dass Sie Dateien in Sitzungen kopieren können, die mit Remotecomputern verbunden sind (einschließlich Computern mit [Nano Server](http://blogs.technet.com/b/windowsserver/archive/2015/04/08/microsoft-announces-nano-server-for-modern-apps-and-cloud.aspx), die keine andere Schnittstelle haben). Zum Kopieren von Dateien geben Sie „PSSession“-IDs als Wert für die neuen Parameter „FromSession“ und „ToSession“ ein. Fügen Sie „–Path“ und „–Destination“ hinzu, um den Ursprungspfad und das Ziel anzugeben. Beispiel: Copy-Item -Path c:\\myFile.txt -ToSession $s -Destination d:\\destinationFolder.
 
--   Die Windows PowerShell-Aufzeichnung wurde verbessert und gilt nun für alle Hostinganwendungen (z. B. Windows PowerShell ISE) anstatt nur für den Konsolenhost (**powershell.exe**). Aufzeichnungsoptionen (einschließlich einer systemweiten Aufzeichnung) können durch Aktivieren der Gruppenrichtlinieneinstellung **PowerShell-Aufzeichnung aktivieren** („Administrative Vorlagen“\/„Windows-Komponenten“\/„Windows PowerShell“) konfiguriert werden.
+-   Die Windows PowerShell-Aufzeichnung wurde verbessert und gilt nun für alle Hostinganwendungen (z. B. Windows PowerShell ISE) anstatt nur für den Konsolenhost (**powershell.exe**). Aufzeichnungsoptionen (einschließlich einer systemweiten Aufzeichnung) können durch Aktivieren der Gruppenrichtlinieneinstellung **PowerShell-Aufzeichnung aktivieren** („Administrative Vorlagen“/„Windows-Komponenten“/„Windows PowerShell“) konfiguriert werden.
 
--   Ein neues Feature zur detaillierten Ablaufverfolgung von Skripts ermöglicht eine detaillierte Nachverfolgung und Analyse der Verwendung von Windows PowerShell-Skripts auf einem System. Nachdem Sie die detaillierte Ablaufverfolgung von Skripts aktiviert haben, protokolliert Windows PowerShell alle Skriptblöcke im ETW-Ereignisprotokoll **Microsoft\-Windows\-PowerShell\/Operational**.
+-   Ein neues Feature zur detaillierten Ablaufverfolgung von Skripts ermöglicht eine detaillierte Nachverfolgung und Analyse der Verwendung von Windows PowerShell-Skripts auf einem System. Nachdem Sie die detaillierte Ablaufverfolgung von Skripts aktiviert haben, protokolliert Windows PowerShell alle Skriptblöcke im ETW-Ereignisprotokoll **Microsoft-Windows-PowerShell/Operational**.
 
--   Ab Windows PowerShell 5.0 unterstützen die neuen CMS-Cmdlets (Cryptographic Message Syntax) die Ver- und Entschlüsselung von Inhalten mithilfe des IETF-Standardformats für kryptografisch geschützte Nachrichten, wie unter [RFC5652](http://tools.ietf.org/html/rfc5652) dokumentiert. Die Cmdlets „Get\-CmsMessage“, „Protect\-CmsMessage“ und „Unprotect\-CmsMessage“ wurden dem Modul [Microsoft.PowerShell.Security](http://technet.microsoft.com/library/hh849807.aspx) hinzugefügt.
+-   Ab Windows PowerShell 5.0 unterstützen die neuen CMS-Cmdlets (Cryptographic Message Syntax) die Ver- und Entschlüsselung von Inhalten mithilfe des IETF-Standardformats für kryptografisch geschützte Nachrichten, wie unter [RFC5652](http://tools.ietf.org/html/rfc5652) dokumentiert. Die Cmdlets „Get-CmsMessage“, „Protect-CmsMessage“ und „Unprotect-CmsMessage“ wurden dem Modul [Microsoft.PowerShell.Security](http://technet.microsoft.com/library/hh849807.aspx) hinzugefügt.
 
--   Neue Cmdlets im Modul [Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) („Get\-Runspace“, „Debug\-Runspace“, „Get\-RunspaceDebug“, „Enable\-RunspaceDebug“ und „Disable\-RunspaceDebug“) ermöglichen das Festlegen von Debugoptionen für einen Runspace sowie das Starten und Beenden des Debuggens in einem Runspace. Für das Debuggen beliebiger Runspaces, d. h. Runspaces, die nicht der Standardrunspace für eine Windows PowerShell-Konsole oder Windows PowerShell-ISE-Sitzung sind, ermöglicht Windows PowerShell, dass Sie Haltepunkte setzen und veranlassen, dass hinzugefügte Haltepunkte die Ausführung des Skripts bewirken, bis Sie einen Debugger zum Debuggen des Runspaceskripts anfügen können. Dem Windows PowerShell-Skriptdebugger für Runspaces wurde Unterstützung für das geschachtelte Debugging für beliebige Runspaces hinzugefügt.
+-   Neue Cmdlets im Modul [Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) (Get-Runspace, Debug-Runspace, Get-RunspaceDebug, Enable-RunspaceDebug, Disable-RunspaceDebug), ermöglichen das Festlegen von Debugoptionen für einen Runspace sowie das Starten und Beenden des Debuggens in einem Runspace. Für das Debuggen beliebiger Runspaces, d. h. Runspaces, die nicht der Standardrunspace für eine Windows PowerShell-Konsole oder Windows PowerShell-ISE-Sitzung sind, ermöglicht Windows PowerShell, dass Sie Haltepunkte setzen und veranlassen, dass hinzugefügte Haltepunkte die Ausführung des Skripts bewirken, bis Sie einen Debugger zum Debuggen des Runspaceskripts anfügen können. Dem Windows PowerShell-Skriptdebugger für Runspaces wurde Unterstützung für das geschachtelte Debugging für beliebige Runspaces hinzugefügt.
 
--   Das Cmdlet „Format\-Hex“ wurde dem Modul [Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) hinzugefügt. Mit „Format\-Hex“ können Sie Text- und Binärdaten im Hexadezimalformat anzeigen.
+-   Das Cmdlet „Format-Hex“ wurde dem Modul [Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) hinzugefügt. Mit Format-Hex- können Sie Text- und Binärdaten im Hexadezimalformat anzeigen.
 
--   Die Cmdlets „Get\-Clipboard“ und „Set\-Clipboard“ wurden dem Modul [Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) hinzugefügt. Sie vereinfachen die Übertragung von Inhalten in und aus einer Windows PowerShell-Sitzung. Die „Clipboard“-Cmdlets unterstützen Bilder, Audiodateien, Dateilisten und Text.
+-   Die Cmdlets „Get-Clipboard“ und „Set-Clipboard“ wurden dem Modul [Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) hinzugefügt. Sie vereinfachen die Übertragung von Inhalten in und aus einer Windows PowerShell-Sitzung. Die „Clipboard“-Cmdlets unterstützen Bilder, Audiodateien, Dateilisten und Text.
 
--   Das Cmdlet „Clear\-RecycleBin“ wurde dem Modul [Microsoft.PowerShell.Management](http://technet.microsoft.com/library/hh849827(v=wps.640).aspx) hinzugefügt. Es dient zum Leeren des Papierkorbs für ein Festplattenlaufwerk, wozu auch externe Laufwerke zählen. Standardmäßig werden Sie aufgefordert, einen „Clear\-RecycleBin“-Befehl zu bestätigen, da die „ConfirmImpact“-Eigenschaft des Cmdlets auf „ConfirmImpact.High“ festgelegt ist.
+-   Das Cmdlet „Clear-RecycleBin“ wurde dem Modul [Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849827(v=wps.640).aspx) hinzugefügt. Es dient zum Leeren des Papierkorbs für ein Festplattenlaufwerk, wozu auch externe Laufwerke zählen. Standardmäßig werden Sie aufgefordert, einen „Clear-RecycleBin“-Befehl zu bestätigen, da die „ConfirmImpact“-Eigenschaft des Cmdlets auf „ConfirmImpact.High“ festgelegt ist.
 
--   Das neue Cmdlet „New\-TemporaryFile“ ermöglicht Ihnen während der Skripterstellung das Anlegen einer temporären Datei. Standardmäßig wird die neue temporäre Datei in „C:\\Users\\<user name>\\AppData\\Local\\Temp“ erstellt.
+-   Das neue Cmdlet „New-TemporaryFile“ ermöglicht Ihnen während der Skripterstellung das Anlegen einer temporären Datei. Standardmäßig wird der neue temporäre Datei in ```C:\Users\<user name>\AppData\Local\Temp``` erstellt.
 
--   Die Cmdlets „Out\-File“, „Add\-Content“ und „Set\-Content“ haben nun den neuen Parameter „–NoNewline“, der eine neue Zeile hinter der Ausgabe weglässt.
+-   Die Cmdlets „Out-File“, „Add-Content“ und „Set-Content“ haben nun den neuen Parameter „–NoNewline“, der eine neue Zeile hinter der Ausgabe weglässt.
 
--   Das Cmdlet „New\-Guid“ nutzt die .NET Framework-Klasse „Guid“ zum Generieren einer GUID, die beim Schreiben von Skripts oder DSC-Ressourcen nützlich ist.
+-   Das Cmdlet „New-Guid“ nutzt die .NET Framework-Klasse „Guid“ zum Generieren einer GUID, die beim Schreiben von Skripts oder DSC-Ressourcen nützlich ist.
 
--   Da Dateiversionsinformationen irreführend sein können, insbesondere, wenn eine Datei mit einem Patch versehen wurde, sind die neuen Skripteigenschaften „FileVersionRaw“ und „ProductVersionRaw“ für „FileInfo“-Objekte verfügbar. Sie können z. B. den folgenden Befehl ausführen, um die Werte dieser Eigenschaften für „PowerShell.exe“ anzuzeigen, wobei „$pid“ die Prozess-ID für eine ausgeführte Windows PowerShell-Sitzung enthält:  Get\-Process \-Id $pid \-FileVersionInfo | Format\-List \*version\* \-Force
+-   Da Dateiversionsinformationen irreführend sein können, insbesondere, wenn eine Datei mit einem Patch versehen wurde, sind die neuen Skripteigenschaften „FileVersionRaw“ und „ProductVersionRaw“ für „FileInfo“-Objekte verfügbar. Sie können z. B. den folgenden Befehl ausführen, um die Werte dieser Eigenschaften für „PowerShell.exe“ anzuzeigen, wobei „$pid“ die Prozess-ID für eine ausgeführte Windows PowerShell-Sitzung enthält:   ```Get-Process -Id $pid -FileVersionInfo | Format-List *version* -Force```
 
--   Die neuen Cmdlets „Enter\-PSHostProcess“ und „Exit\-PSHostProcess“ ermöglichen das Debuggen von Windows PowerShell-Skripts in vom aktuellen Prozess getrennten Prozessen, der in der Windows PowerShell-Konsole ausgeführt wird. Führen Sie „Enter\-PSHostProcess“ zum Eingeben einer oder Anfügen an eine bestimmte Prozess-ID und dann „Get\-Runspace“ zum Zurückgeben der aktiven Runspaces innerhalb des Prozesses aus. Führen Sie „Exit\-PSHostProcess“ zum Trennen vom Prozess aus, wenn Sie mit dem Debuggen des Skripts innerhalb des Prozesses fertig sind.
+-   Die neuen Cmdlets „Enter-PSHostProcess“ und „Exit-PSHostProcess“ ermöglichen das Debuggen von Windows PowerShell-Skripts in vom aktuellen Prozess getrennten Prozessen, der in der Windows PowerShell-Konsole ausgeführt wird. Führen Sie „Enter-PSHostProcess“ zum Eingeben einer oder Anfügen an eine bestimmte Prozess-ID und dann „Get-Runspace“ zum Zurückgeben der aktiven Runspaces innerhalb des Prozesses aus. Führen Sie „Exit-PSHostProcess“ zum Trennen vom Prozess aus, wenn Sie mit dem Debuggen des Skripts innerhalb des Prozesses fertig sind.
 
--   Das Cmdlet „Wait\-Debugger“ wurde dem Modul [Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) hinzugefügt. Sie können „Wait\-Debugger“ ausführen, um ein Skript im Debugger zu beenden, bevor die nächste Anweisung im Skript ausgeführt wird.
+-   Das Cmdlet „Wait-Debugger“ wurde dem Modul [Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) hinzugefügt. Sie können „Wait-Debugger“ ausführen, um ein Skript im Debugger zu beenden, bevor die nächste Anweisung im Skript ausgeführt wird.
 
--   Der Windows PowerShell-Workflow-Debugger unterstützt nun die Vervollständigung mit der TAB-TASTE und das Debuggen geschachtelter Workflowfunktionen. Sie können jetzt **STRG\+PAUSE** drücken, um den Debugger in einem ausgeführten Skript, in lokalen und Remotesitzungen und in einem Workflowskript zu öffnen.
+-   Der Windows PowerShell-Workflow-Debugger unterstützt nun die Vervollständigung mit der TAB-TASTE und das Debuggen geschachtelter Workflowfunktionen. Sie können jetzt **STRG+PAUSE** drücken, um den Debugger in einem ausgeführten Skript, in lokalen und Remotesitzungen und in einem Workflowskript zu öffnen.
 
--   Das Cmdlet „Debug\-Job“ wurde dem Modul [Microsoft.PowerShell.Core](http://technet.microsoft.com/library/hh849695.aspx) hinzugefügt, um ausgeführte Auftragsskripts zu debuggen, die für Windows PowerShell-Workflowaufträge, Hintergrundaufträge und in Remotesitzungen ausgeführte Aufträge ausgeführt werden.
+-   Das Cmdlet „Debug-Job“ wurde dem Modul [Microsoft.PowerShell.Core](http://technet.microsoft.com/library/hh849695.aspx) hinzugefügt, um ausgeführte Auftragsskripts zu debuggen, die für Windows PowerShell-Workflowaufträge, Hintergrundaufträge und in Remotesitzungen ausgeführte Aufträge ausgeführt werden.
 
--   Der neue Status „AtBreakpoint“ wurde für Windows PowerShell-Aufträge hinzugefügt. Der Status „AtBreakpoint“ gilt, wenn ein Auftrag in einem Skript ausgeführt wird, das gesetzte Haltepunkte enthält, und das Skript einen Haltepunkt erreicht hat. Wenn ein Auftrag an einem Haltepunkt angehalten wird, müssen Sie den Auftrag durch Ausführen des Cmdlets „Debug\-Job“ debuggen.
+-   Der neue Status „AtBreakpoint“ wurde für Windows PowerShell-Aufträge hinzugefügt. Der Status „AtBreakpoint“ gilt, wenn ein Auftrag in einem Skript ausgeführt wird, das gesetzte Haltepunkte enthält, und das Skript einen Haltepunkt erreicht hat. Wenn ein Auftrag an einem Haltepunkt angehalten wird, müssen Sie den Auftrag durch Ausführen des Cmdlets „Debug-Job“ debuggen.
 
--   Windows PowerShell 5.0 implementiert in „$PSModulePath“ Unterstützung für mehrere Versionen eines einzelnen Windows PowerShell-Moduls in demselben Ordner. Die „RequiredVersion“\-Eigenschaft wurde der „ModuleSpecification“-Klasse hinzugefügt, um Sie beim Abrufen der gewünschten Version zu unterstützen. Diese Eigenschaft und die „ModuleVersion“-Eigenschaft schließen sich gegenseitig aus. „RequiredVersion“ wird nun als Teil des Werts des „FullyQualifiedName“-Parameters der Cmdlets „Get\-Module“, „Import\-Module“ und „Remove\-Module“ unterstützt.
+-   Windows PowerShell 5.0 implementiert in „$PSModulePath“ Unterstützung für mehrere Versionen eines einzelnen Windows PowerShell-Moduls in demselben Ordner. Die „RequiredVersion“-Eigenschaft wurde der „ModuleSpecification“-Klasse hinzugefügt, um Sie beim Abrufen der gewünschten Version zu unterstützen. Diese Eigenschaft und die „ModuleVersion“-Eigenschaft schließen sich gegenseitig aus. „RequiredVersion“ wird nun als Teil des Werts des „FullyQualifiedName“-Parameters der Cmdlets „Get-Module“, „Import-Module“ und „Remove-Module“ unterstützt.
 
--   Durch Ausführen des Cmdlets „Test\-ModuleManifest“ können Sie jetzt die Gültigkeit der Modulversion überprüfen.
+-   Durch Ausführen des Cmdlets „Test-ModuleManifest“ können Sie jetzt die Gültigkeit der Modulversion überprüfen.
 
--   Ergebnisse des Cmdlets „Get\-Command“ enthalten nun die Spalte „Version“. Der „CommandInfo“-Klasse wurde die neue „Version“-Eigenschaft hinzugefügt. „Get\-Command“ zeigt Befehle aus mehreren Versionen des gleichen Moduls. Die „Version“-Eigenschaft ist ebenfalls Teil der abgeleiteten Klassen von „CmdletInfo“ und „ApplicationInfo“.
+-   Ergebnisse des Cmdlets „Get-Command“ enthalten nun die Spalte „Version“. Der „CommandInfo“-Klasse wurde die neue „Version“-Eigenschaft hinzugefügt. „Get-Command“ zeigt Befehle aus mehreren Versionen des gleichen Moduls. Die „Version“-Eigenschaft ist ebenfalls Teil der abgeleiteten Klassen von „CmdletInfo“ und „ApplicationInfo“.
 
--   „Get\-Command“ hat den neuen Parameter „\-ShowCommandInfo“, der „ShowCommand“-Informationen als „PSObjects“ zurückgibt. Dies ist besonders nützlich für die Ausführung von „Show\-Command“ in der Windows PowerShell ISE mithilfe von Windows PowerShell-Remoting. Der Parameter „–ShowCommandInfo“ ersetzt die vorhandene „Get\-SerializedCommand“-Funktion im Modul „Microsoft.PowerShell.Utility“. Doch das „Get\-SerializedCommand“-Skript ist weiterhin zur Unterstützung von Skripts unter einer Vorgängerversion verfügbar.
+-   „Get-Command“ hat den neuen Parameter „-ShowCommandInfo“, der „ShowCommand“-Informationen als „PSObjects“ zurückgibt. Dies ist besonders nützlich für die Ausführung von „Show-Command“ in der Windows PowerShell-ISE mithilfe von Windows PowerShell-Remoting. Der Parameter „–ShowCommandInfo“ ersetzt die vorhandene „Get-SerializedCommand“-Funktion im Modul „Microsoft.PowerShell.Utility“. Doch das „Get-SerializedCommand“-Skript ist weiterhin zur Unterstützung von Skripts unter einer Vorgängerversion verfügbar.
 
--   Das neue Cmdlet „Get\-ItemPropertyValue“ ermöglicht das Abrufen des Werts einer Eigenschaft ohne Verwendung der Punktnotation. Beispielsweise können Sie in älteren Versionen von Windows PowerShell den folgenden Befehl ausführen, um den Wert der ApplicationBase-Eigenschaft des PowerShellEngine-Registrierungsschlüssels abzurufen: **(Get\-ItemProperty \-Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine \-Name ApplicationBase).ApplicationBase**. Ab Windows PowerShell 5.0 können Sie **Get\-ItemPropertyValue \-Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine \-Name ApplicationBase** ausführen.
+-   Das neue Cmdlet „Get-ItemPropertyValue“ ermöglicht das Abrufen des Werts einer Eigenschaft ohne Verwendung der Punktnotation. Beispielsweise können Sie in älteren Versionen von Windows PowerShell den folgenden Befehl ausführen, um den Wert der ApplicationBase-Eigenschaft des PowerShellEngine-Registrierungsschlüssels abzurufen: **(Get-ItemProperty -Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine -Name ApplicationBase).ApplicationBase**. Ab Windows PowerShell 5.0 können Sie **Get-ItemPropertyValue -Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine -Name ApplicationBase** ausführen.
 
 -   In der Windows PowerShell-Konsole werden jetzt wie in der Windows PowerShell ISE Syntaxfarben verwendet.
 
--   Das neue NetworkSwitch-Modul enthält Cmdlets, die es Ihnen ermöglichen, Netzwerkswitches, die mit dem Windows Server 2012 R2-Logo zertifiziert sind, mit einer Switch-, VLAN\- und grundlegenden Layer 2-Netzwerkswitch-Konfiguration zu versehen.
+-   Das neue NetworkSwitch-Modul enthält Cmdlets, die es Ihnen ermöglichen, Netzwerkswitches, die mit dem Windows Server 2012 R2-Logo zertifiziert sind, mit einer Switch-, VLAN- und grundlegenden Schicht-2-Netzwerkswitch-Konfiguration zu versehen.
 
--   Der „FullyQualifiedName“-Parameter wurde den Cmdlets „Import\-Module“ und „Remove\-Module“ hinzugefügt, um die Speicherung mehrerer Versionen eines einzelnen Moduls zu unterstützen.
+-   Der „FullyQualifiedName“-Parameter wurde den Cmdlets „Import-Module“ und „Remove-Module“ hinzugefügt, um die Speicherung mehrerer Versionen eines einzelnen Moduls zu unterstützen.
 
--   „Save\-Help“, „Update\-Help“, „Import\-PSSession“, „Export\-PSSession“ und „Get\-Command“ haben einen neuen Parameter „FullyQualifiedModule“ des Typs „ModuleSpecification“. Fügen Sie diesen Parameter hinzu, um ein Modul mit seinem vollqualifizierten Namen anzugeben.
+-   „Save-Help“, „Update-Help“, „Import-PSSession“, „Export-PSSession“ und „Get-Command“ haben den neuen Parameter „FullyQualifiedModule“ des Typs „ModuleSpecification“. Fügen Sie diesen Parameter hinzu, um ein Modul mit seinem vollqualifizierten Namen anzugeben.
 
 -   Der Wert von **$PSVersionTable.PSVersion** wurde auf 5.0 aktualisiert.
 
@@ -759,6 +759,6 @@ Damit Windows PowerShell 3.0 Sonderzeichen besser interpretieren und ordnungsgem
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 
