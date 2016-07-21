@@ -54,7 +54,7 @@ Bei Eingabe von Cmdlets in die Windows PowerShell ISE 3.0 oder höher wird ein b
 ### <a name="BKMK_Snippets"></a>Codeausschnitte
 **In ISE 3.0 hinzugefügt**
 
-*Codeausschnitte* sind kurze Abschnitte von Windows PowerShell-Code, die Sie in die in Windows PowerShell ISE erstellten Skripts einfügen können. Windows PowerShell ISE bietet einen Standardsatz von Codeausschnitten. Beim Arbeiten in Windows PowerShell ISE können Sie Codeausschnitte mithilfe des Cmdlets **New\-Snippet** hinzufügen.
+*Codeausschnitte* sind kurze Abschnitte von Windows PowerShell-Code, die Sie in die in Windows PowerShell ISE erstellten Skripts einfügen können. Windows PowerShell ISE bietet einen Standardsatz von Codeausschnitten. Beim Arbeiten in der Windows PowerShell ISE können Sie Codeausschnitte mithilfe des Cmdlets **New\-Snippet** hinzufügen.
 
 **Welchen Nutzen bietet diese Änderung?**
 
@@ -67,15 +67,15 @@ Klicken Sie zum Verwenden von Codeausschnitten in Windows PowerShell 3.0 oder h�
 ### <a name="BKMK_AddOnTools"></a>Add\-On-Tools
 **In PowerShell 3.0 hinzugefügt**
 
-Windows PowerShell ISE unterstützt jetzt Add\-On-Tools, bei denen es sich um WPF-Steuerelemente (Windows Presentation Foundation) handelt, die mithilfe des Objektmodells hinzugefügt werden. Add\-On-Tools können in der Konsole in einem vertikalen oder horizontalen Bereich angezeigt werden. Mehrere Add\-On-Tools in einem Bereich werden als Registerkarten-Steuerelement angezeigt. Sie können auch Add\-On-Tools von anderen Anbietern als Microsoft hinzufügen oder entfernen. Weitere Informationen zum Importieren oder Entfernen von Add\-On-Tools finden Sie unter [Windows PowerShell ISE-Vorgänge](http://technet.microsoft.com/library/cc732148.aspx).
+Die Windows PowerShell ISE unterstützt jetzt Add\-On-Tools, bei denen es sich um WPF-Steuerelemente (Windows Presentation Foundation) handelt, die mithilfe des Objektmodells hinzugefügt werden. Add\-On-Tools können in der Konsole in einem vertikalen oder horizontalen Bereich angezeigt werden. Mehrere Add\-On-Tools in einem Bereich werden als Registerkarten-Steuerelement angezeigt. Sie können auch Add\-On-Tools von anderen Anbietern als Microsoft hinzufügen oder entfernen. Weitere Informationen zum Importieren oder Entfernen von Add\-On-Tools finden Sie unter [Windows PowerShell ISE-Vorgänge](http://technet.microsoft.com/library/cc732148.aspx).
 
 **Welchen Nutzen bietet diese Änderung?**
 
-Add\-Ons ermöglichen Ihnen das Erweitern und Anpassen von Windows PowerShell ISE mit Tools, die Ihre Skripterstellungsumgebung verbessern oder Windows PowerShell ISE neue Funktionen hinzufügen können.
+Add\-Ons ermöglichen Ihnen das Erweitern und Anpassen der Windows PowerShell ISE mit Tools, die Ihre Skripterstellungsumgebung verbessern oder der Windows PowerShell ISE neue Funktionen hinzufügen können.
 
 **Worin bestehen die Unterschiede?**
 
-Zum Funktionsumfang von Windows PowerShell ISE 3.0 und höher gehört das Add\-On **Befehle**. Das Add\-On **Befehle** ermöglicht das Durchsuchen von Cmdlets und das Zugreifen auf die Cmdlethilfe. Dieses wird neben den Bereichen **Skript** und **Konsole** angezeigt.
+Zum Funktionsumfang der Windows PowerShell ISE 3.0 und höher gehört das Add\-On **Befehle**. Das Add\-On **Befehle** ermöglicht das Durchsuchen von Cmdlets und das Zugreifen auf die Cmdlethilfe. Es wird neben den Bereichen **Skript** und **Konsole** angezeigt.
 
 Zusätzliche Add\-Ons finden Sie über den Befehl **Website mit Add\-On-Tools öffnen** im Menü **Add\-Ons**.
 
@@ -97,7 +97,7 @@ In Windows PowerShell ISE 2.0 werden die Skripts bei einem Neustart nicht automa
 ### <a name="BKMK_MRU"></a>Liste „Zuletzt verwendet“
 **In PowerShell 3.0 hinzugefügt**
 
-Windows PowerShell ISE bietet jetzt eine Liste der zuletzt verwendeten Dateien. Beim Öffnen einer Datei in Windows PowerShell ISE wird die Datei der Liste „Zuletzt verwendet“ im Menü **Datei** hinzugefügt.
+Die Windows PowerShell ISE bietet jetzt eine Liste der zuletzt verwendeten Dateien. Beim Öffnen einer Datei in der Windows PowerShell ISE wird die Datei der Liste „Zuletzt verwendet“ im Menü **Datei** hinzugefügt.
 
 Führen Sie im Konsolenbereich den folgenden Befehl aus: **$psise.Options.MruCount**, um die Standardanzahl von Dateien in der Liste „Zuletzt verwendet“ zu ändern.
 
@@ -107,7 +107,7 @@ Führen Sie im Konsolenbereich den folgenden Befehl aus: **$psise.Options.MruCou
 
 **Worin bestehen die Unterschiede?**
 
-Windows PowerShell ISE 2.0 bietet keine „Zuletzt verwendet“-Liste.
+Die Windows PowerShell ISE 2.0 bietet keine „Zuletzt verwendet“-Liste.
 
 ### <a name="BKMK_ConsolePane"></a>Konsolenbereich
 **In PowerShell 3.0 hinzugefügt**
@@ -149,13 +149,13 @@ Windows PowerShell ISE 2.0 verfügt über getrennte Befehls- und Ausgabebereiche
 ### <a name="BKMK_CommandLine"></a>Befehlszeilenschalter
 **In PowerShell 3.0 hinzugefügt**
 
-Falls Sie Windows PowerShell ISE über die Befehlszeile starten (indem Sie **Powershell\_ise.exe** eingeben), können Sie die folgenden neuen Befehlszeilenschalter hinzufügen.
+Falls Sie die Windows PowerShell ISE über die Befehlszeile starten (indem Sie **Powershell\_ise.exe** eingeben), können Sie die folgenden neuen Befehlszeilenschalter hinzufügen.
 
--   *\-NoProfile*: Startet Windows PowerShell ISE ohne Ausführung von **$profile**.
+-   *\-NoProfile*: Startet die Windows PowerShell ISE ohne Ausführung von **$profile**.
 
 -   *\-Help*: Zeigt ein Hilfefenster an.
 
--   *\-mta*: Startet Windows PowerShell ISE im Multithread-Apartment-Modus. Der Standardbetriebsmodus von Windows PowerShell ISE ist der Singlethread\-Apartment-Modus bzw. *\-sta*.
+-   *\-mta*: Startet die Windows PowerShell ISE im Multithread-Apartment-Modus. Der Standardbetriebsmodus der Windows PowerShell ISE ist der Singlethread\-Apartment-Modus bzw. *\-sta*.
 
 **Welchen Nutzen bietet diese Änderung?**
 
@@ -163,7 +163,7 @@ Das Hinzufügen dieser Befehlszeilenschalter ermöglicht Ihnen das Steuern der U
 
 **Worin bestehen die Unterschiede?**
 
-Windows PowerShell ISE 2.0 erkennt diese Befehlszeilenschalter nicht.
+Die Windows PowerShell ISE 2.0 erkennt diese Befehlszeilenschalter nicht.
 
 ### <a name="BKMK_NewEditorFeatures"></a>Neue Features im Editor
 **In PowerShell 3.0 hinzugefügt**
@@ -172,7 +172,7 @@ Zu den weiteren Windows PowerShell ISE-Bearbeitungsfeatures zählen:
 
 -   **XML-Syntaxfarben** Windows PowerShell ISE versieht die XML-Syntax jetzt ebenso mit Farben wie die Windows PowerShell-Syntax.
 
--   **Zugehörige Klammer** Windows PowerShell ISE bietet die Funktion „Zugehörige Klammer (Hervorhebung)“, die wie folgt verwendet werden kann: Wenn Sie z.B. den Befehl **Gehe zu Übereinstimmung** bzw. **STRG \+ ]** verwenden, wird die schließende Klammer gefunden, wenn eine öffnende Klammer ausgewählt wird.
+-   **Zugehörige Klammer** Die Windows PowerShell ISE bietet die Funktion „Zugehörige Klammer (Hervorhebung)“, die wie folgt verwendet werden kann: Wenn Sie z.B. den Befehl **Gehe zu Übereinstimmung** bzw. **STRG \+ ]** verwenden, wird die schließende Klammer gefunden, wenn eine öffnende Klammer ausgewählt wird.
 
 -   **Gliederungsansicht** Der Skriptbereich unterstützt Gliederungen, sodass Codeabschnitte durch Klicken auf Plus- und Minuszeichen am linken Rand auf- bzw. zugeklappt werden können. Sie können Klammern bzw. die **\#region-** und **\#endregion-Tags** verwenden, um den Anfang bzw. das Ende eines zuklappbaren Abschnitts zu markieren. Drücken Sie zum Erweitern bzw. Reduzieren aller Bereiche **STRG\+M**.
 
@@ -184,7 +184,7 @@ Zu den weiteren Windows PowerShell ISE-Bearbeitungsfeatures zählen:
 
 -   **Umfassende Funktionen zum Kopieren und Einfügen von Text** Beim Kopieren in die Zwischenablage in Windows PowerShell ISE bleiben Informationen zur Schriftart, Größe und Farbe der ursprünglichen Auswahl erhalten.
 
--   **Blockauswahl** Sie können einen Textblock auswählen, indem Sie die ALT-TASTE gedrückt halten, während Sie den Text im Skriptbereich mit der Maus auswählen, oder indem Sie **ALT\+UMSCHALT\+NACH-OBEN/NACH-UNTEN** drücken.
+-   **Blockauswahl** Sie können einen Textblock auswählen, indem Sie bei gedrückter ALT-TASTE den Text im Skriptbereich mit der Maus auswählen, oder indem Sie **ALT\+UMSCHALT\+NACH-OBEN/NACH-UNTEN** drücken.
 
 **Welchen Nutzen bietet diese Änderung?**
 
@@ -199,7 +199,7 @@ In Windows PowerShell ISE 2.0 waren diese Bearbeitungsoptimierungen nicht vorhan
 
 Falls Sie **F1** drücken, während sich der Cursor in einem Cmdlet befindet oder Sie einen Teil eines Cmdlets hervorgehoben haben, wird im neuen Anzeigefenster für Hilfe eine kontextbezogene Hilfe zum hervorgehobenen Cmdlet geöffnet. Um die konzeptionelle Hilfe für Windows PowerShell ISE anzuzeigen, geben Sie im Konsolenbereich **operators** ein, und drücken Sie dann **F1**.
 
-Laden Sie die aktuelle Version der Windows PowerShell-Hilfethemen von der Microsoft-Website herunter, bevor Sie dieses Feature verwenden. Die einfachste Methode zum Herunterladen der Hilfethemen ist die Ausführung des Cmdlets **Update\-Help** im Konsolenbereich, wenn Sie Windows PowerShell ISE als Administrator ausführen.
+Laden Sie die aktuelle Version der Windows PowerShell-Hilfethemen von der Microsoft-Website herunter, bevor Sie dieses Feature verwenden. Die einfachste Methode zum Herunterladen der Hilfethemen ist die Ausführung des Cmdlets **Update\-Help** im Konsolenbereich, wenn Sie die Windows PowerShell ISE als Administrator ausführen.
 
 Sie können ändern, wo über die Taste **F1** nach Hilfe gesucht wird. Im Menü **Extras**\/**Optionen** können Sie auf der Registerkarte **Allgemeine Einstellungen** unter **Andere Einstellungen** das Kontrollkästchen **Lokale Hilfe anstatt Onlineinhalt verwenden** aktivieren bzw. deaktivieren. Falls aktiviert, sucht der Client die Cmdlet-Hilfe in der heruntergeladenen Hilfe im Ordner „modules“.  Falls das Kontrollkästchen deaktiviert ist, sucht der Client in der TechNet-Bibliothek nach der Cmdlet-Hilfe.
 
@@ -222,7 +222,7 @@ Durch das Verwenden von **Show\-Command** in Ihren Windows PowerShell-Skripts k�
 
 **Worin bestehen die Unterschiede?**
 
-„Show\-Command“ ist in Windows PowerShell ISE 3.0 neu.
+„Show\-Command“ ist in der Windows PowerShell ISE 3.0 neu.
 
 ## <a name="BKMK_LINKS"></a>Siehe auch
 Weitere Informationen zur Verwendung von Windows PowerShell ISE in Windows PowerShell finden Sie unter den folgenden Links.
