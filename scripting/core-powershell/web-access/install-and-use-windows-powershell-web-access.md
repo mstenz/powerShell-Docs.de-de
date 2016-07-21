@@ -495,7 +495,7 @@ Die Anweisungen in diesem Abschnitt gelten für die Installation der Windows Pow
     </tbody>
     </table>
 
-13. Führen Sie in einer mit erhöhten Benutzerrechten (Als Administrator ausführen) geöffneten Windows PowerShell-Sitzung das folgende Skript aus (hierbei entspricht *Anwendungspoolname* dem Namen des in Schritt 3 erstellten Anwendungspools), um dem Anwendungspool Zugriffsrechte für die Autorisierungsdatei zu erteilen.
+13. Führen Sie in einer mit erhöhten Benutzerrechten geöffneten (d.h. als Administrator ausgeführten) Windows PowerShell-Sitzung das folgende Skript aus, um dem Anwendungspool Zugriffsrechte für die Autorisierungsdatei zu erteilen (hierbei entspricht *Anwendungspoolname* dem Namen des in Schritt 3 erstellten Anwendungspools).
 
     [Kopieren](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_c1a80a93-8fcf-4beb-a025-5f81bfb8bdae'); "In Zwischenablage kopieren.")
 
@@ -539,7 +539,7 @@ Die Anweisungen in diesem Abschnitt gelten für die Installation der Windows Pow
 
 11. Klicken Sie auf **OK**, um das Dialogfeld **Website hinzufügen** zu schließen.
 
-12. Führen Sie in einer mit erhöhten Benutzerrechten (Als Administrator ausführen) geöffneten Windows PowerShell-Sitzung das folgende Skript aus (hierbei entspricht *Anwendungspoolname* dem Namen des in Schritt 4 erstellten Anwendungspools), um dem Anwendungspool Zugriffsrechte für die Autorisierungsdatei zu erteilen.
+12. Führen Sie in einer mit erhöhten Benutzerrechten geöffneten (d.h. als Administrator ausgeführten) Windows PowerShell-Sitzung das folgende Skript aus, um dem Anwendungspool Zugriffsrechte für die Autorisierungsdatei zu erteilen (hierbei entspricht *Anwendungspoolname* dem Namen des in Schritt 4 erstellten Anwendungspools).
 
     [Kopieren](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_35ae9944-ca44-4af7-9c96-616083b3e3db'); "In Zwischenablage kopieren.")
 
