@@ -1,11 +1,31 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 0
+ Total Files | 1
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [scripting\whats-new\What-s-New-in-the-PowerShell-50-ISE.md](https://github.com/PowerShell/powerShell-Docs/blob/5b978b9c939759bd47ee73d4f7ffa6e3a66df788/scripting/whats-new/What-s-New-in-the-PowerShell-50-ISE.md) | OutofSyncHandedBackSuccess | [Details](#ababa1b3ce913528a3ac7089d91ef74c5eb27737309)
 
 ## Item Details
+##### <a name='ababa1b3ce913528a3ac7089d91ef74c5eb27737309'></a> Source: [scripting\whats-new\What-s-New-in-the-PowerShell-50-ISE.md](https://github.com/PowerShell/powerShell-Docs/blob/5b978b9c939759bd47ee73d4f7ffa6e3a66df788/scripting/whats-new/What-s-New-in-the-PowerShell-50-ISE.md)
+* Status: OutofSyncHandedBackSuccess
+* Target File: 
+* Handoff File: [What-s-New-in-the-PowerShell-50-ISE.bd27df5ede4241a8e6b57d0582112056984b68c8.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/11712d4a076742f523a94f11995c440faa0b9e2a/ol-handoff/PowerShell/powerShell-Docs.de-de/live/What-s-New-in-the-PowerShell-50-ISE.bd27df5ede4241a8e6b57d0582112056984b68c8.de-de.xlf)
+* Handoff Datetime: 2016-07-12 21:20:37
+* Handoff Reason: Include
+* Archive File: [What-s-New-in-the-PowerShell-50-ISE.bd27df5ede4241a8e6b57d0582112056984b68c8.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/10a109ced1405dddd0bb7a2fff6ad3595726f1ee/ol-archive/PowerShell/powerShell-Docs.de-de/live/What-s-New-in-the-PowerShell-50-ISE.bd27df5ede4241a8e6b57d0582112056984b68c8.de-de.xlf)
+* Archive Datetime: 2016-07-19 13:10:22
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [scripting\whats-new\What-s-New-in-the-PowerShell-50-ISE.md](https://github.com/PowerShell/powerShell-Docs.de-de/blob/f4fb7beab91a9328557262c85069e4f33ca6bc4c/scripting/whats-new/What-s-New-in-the-PowerShell-50-ISE.md)
+* Current Handback File: [What-s-New-in-the-PowerShell-50-ISE.bd27df5ede4241a8e6b57d0582112056984b68c8.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/25c49b8b111ca3487cf7f0f51ecc55be6b35ed9b/ol-handback/PowerShell/powerShell-Docs.de-de/live/What-s-New-in-the-PowerShell-50-ISE.bd27df5ede4241a8e6b57d0582112056984b68c8.de-de.xlf)
+* Current Handback Datetime: 2016-07-21 11:15:52
+* Bilingual File: [What-s-New-in-the-PowerShell-50-ISE.bd27df5ede4241a8e6b57d0582112056984b68c8.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/b324d8ab63e6a6722efb425e32d661f2c5a67d92/ol-handback/PowerShell/powerShell-Docs.de-de/live/What-s-New-in-the-PowerShell-50-ISE.bd27df5ede4241a8e6b57d0582112056984b68c8.de-de.xlf)
+* Bilingual Datetime: 2016-07-05 16:12:28
+* [Back to Top](#report-top)
+
 
 ## Error Details
 
