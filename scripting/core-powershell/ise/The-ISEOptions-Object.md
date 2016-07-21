@@ -376,7 +376,7 @@ $psISE.Options.OutputPaneForegroundColor = "gold"
 ###  <a name="optfc"></a> OutputPaneTextForegroundColor
   Dieses Feature ist in Windows PowerShell ISE 2.0 enthalten, wurde in höheren Versionen von ISE aber entfernt oder umbenannt.  Informationen zu höheren Versionen finden Sie unter [ConsolePaneForegroundColor](#conpfc).
 
- Die Lese-\/Schreibeigenschaft, mit der die Vordergrundfarbe des Texts im Ausgabereich in Windows PowerShell ISE 2.0 geändert wird.
+ Die Lese-\/Schreibeigenschaft, mit der die Vordergrundfarbe des Texts im Ausgabereich der Windows PowerShell ISE 2.0 geändert wird.
 
 ```
 # Changes the foreground color of the text in the Output Pane to blue.
@@ -608,7 +608,7 @@ $psISE.Options.WarningForegroundColor =”yellow”
 ###  <a name="xtc"></a> XmlTokenColors
   In Windows PowerShell ISE 3.0 und höher unterstützt, in früheren Versionen nicht enthalten.
 
- Gibt ein Dictionary-Objekt an, das Name\/Wert-Paare von Tokentypen und Farben von XML-Inhalten enthält, die in Windows PowerShell ISE angezeigt werden. Tokenfarben können für folgende Elemente festgelegt werden: Attribute, Command, CommandArgument, CommandParameter, Comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, Member, NewLine, Number, Operator, Position, StatementSeparator, String, Type, Unknown, Variable. Siehe auch [RestoreDefaultXmlTokenColors()](#rdxtc).
+ Gibt ein Dictionary-Objekt an, das Name\/Wert-Paare von Tokentypen und Farben von XML-Inhalten enthält, die in der Windows PowerShell ISE angezeigt werden. Tokenfarben können für folgende Elemente festgelegt werden: Attribute, Command, CommandArgument, CommandParameter, Comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, Member, NewLine, Number, Operator, Position, StatementSeparator, String, Type, Unknown, Variable. Siehe auch [RestoreDefaultXmlTokenColors()](#rdxtc).
 
 ```
 # Sets the color of XML element names to green.

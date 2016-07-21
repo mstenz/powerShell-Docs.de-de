@@ -42,12 +42,12 @@ ms.openlocfilehash: 01b67073be64bac6e993cf0f4a5f07ce7a8c6f0d
 ### Optionen
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
- Die schreibgeschützte Eigenschaft, mit der die verschiedenen Optionen zum Ändern von Eigenschaften in Windows PowerShell ISE abgerufen werden.
+ Die schreibgeschützte Eigenschaft, mit der die verschiedenen Optionen zum Ändern von Eigenschaften in der Windows PowerShell ISE abgerufen werden.
 
 ### PowerShellTabs
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
- Die schreibgeschützte Eigenschaft, die die Sammlung der PowerShell\-Registerkarten abruft, die in Windows PowerShell ISE geöffnet sind. Standardmäßig enthält dieses Objekt eine PowerShell-Registerkarte. Allerdings können Sie mit Skripts oder Menüs in Windows PowerShell ISE weitere PowerShell-Registerkarten zu diesem Objekt hinzufügen.
+ Die schreibgeschützte Eigenschaft, die die Sammlung der PowerShell\-Registerkarten abruft, die in der Windows PowerShell ISE geöffnet sind. Standardmäßig enthält dieses Objekt eine PowerShell-Registerkarte. Allerdings können Sie mit Skripts oder Menüs in Windows PowerShell ISE weitere PowerShell-Registerkarten zu diesem Objekt hinzufügen.
 
 ## Weitere Informationen
  [Das Windows PowerShell ISE-Skriptobjektmodell](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 

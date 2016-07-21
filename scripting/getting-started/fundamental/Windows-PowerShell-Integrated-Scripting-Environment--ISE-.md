@@ -53,7 +53,7 @@ Die **Liste „Zuletzt verwendet“** ist jetzt Teil des Menüs „Datei öffnen
 
 -   **Umfassende Funktionen zum Kopieren und Einfügen von Text**. Wenn Sie Code aus der ISE in die Zwischenablage kopieren, werden die Schriftart-, Größen und Farbinformationen des markierten Texts eingeschlossen.
 
--   **Blockauswahl**. Sie können einen Textblock auswählen, indem Sie die ALT-TASTE gedrückt halten, während Sie den Text im Skriptbereich mit der Maus auswählen, oder **ALT\+UMSCHALT\+NACH-OBEN/NACH-UNTEN** verwenden.
+-   **Blockauswahl**. Sie können einen Textblock auswählen, indem Sie die bei gedrückter ALT-TASTE den Text im Skriptbereich mit der Maus auswählen, oder **ALT\+UMSCHALT\+NACH-OBEN/NACH-UNTEN** verwenden.
 
 ### In PowerShell 2.0 hinzugefügt (Windows Server 2008 R2, Windows 7)
 Die ISE wurde mit PowerShell 2.0 eingeführt.
