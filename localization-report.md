@@ -5041,8 +5041,8 @@
 * Current Target File: [scripting\whats-new\What-s-New-in-the-PowerShell-50-ISE.md](https://github.com/PowerShell/powerShell-Docs.de-de/blob/f4fb7beab91a9328557262c85069e4f33ca6bc4c/scripting/whats-new/What-s-New-in-the-PowerShell-50-ISE.md)
 * Current Handback File: [What-s-New-in-the-PowerShell-50-ISE.bd27df5ede4241a8e6b57d0582112056984b68c8.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/25c49b8b111ca3487cf7f0f51ecc55be6b35ed9b/ol-handback/PowerShell/powerShell-Docs.de-de/live/What-s-New-in-the-PowerShell-50-ISE.bd27df5ede4241a8e6b57d0582112056984b68c8.de-de.xlf)
 * Current Handback Datetime: 2016-07-21 11:15:52
-* Bilingual File: [What-s-New-in-the-PowerShell-50-ISE.bd27df5ede4241a8e6b57d0582112056984b68c8.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/b324d8ab63e6a6722efb425e32d661f2c5a67d92/ol-handback/PowerShell/powerShell-Docs.de-de/live/What-s-New-in-the-PowerShell-50-ISE.bd27df5ede4241a8e6b57d0582112056984b68c8.de-de.xlf)
-* Bilingual Datetime: 2016-07-05 16:12:28
+* Bilingual File: [What-s-New-in-the-PowerShell-50-ISE.bd27df5ede4241a8e6b57d0582112056984b68c8.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/25c49b8b111ca3487cf7f0f51ecc55be6b35ed9b/ol-handback/PowerShell/powerShell-Docs.de-de/live/What-s-New-in-the-PowerShell-50-ISE.bd27df5ede4241a8e6b57d0582112056984b68c8.de-de.xlf)
+* Bilingual Datetime: 2016-07-21 11:16:34
 * [Back to Top](#report-top)
 
 ##### <a name='cd94291f225851a99253f5f54e10d6174e63f413310'></a> Source: [scripting\whats-new\What-s-New-in-Windows-PowerShell-50.md](https://github.com/PowerShell/powerShell-Docs/blob/b41a40fd06de6898ba9adf01053d225edaa31b29/scripting/whats-new/What-s-New-in-Windows-PowerShell-50.md)
