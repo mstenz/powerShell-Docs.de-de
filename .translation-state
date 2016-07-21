@@ -21017,8 +21017,8 @@
       "ArchiveFileDateTime": "2016-06-28T13:27:50.1672128Z",
       "ArchiveException": null,
       "BilingualFilePath": "ol-handback\\PowerShell\\powerShell-Docs.de-de\\live\\authorization-rules-and-security-features-of-windows-powershell-web-access.c317fe9a78ba1130929bd001738c2eb57f0037dd.de-de.xlf",
-      "BilingualFileCommit": "2ef26c2f0a6e26d664c4ee4d4b5d27817726b5da",
-      "BilingualDateTime": "2016-07-05T15:56:20.6487112Z",
+      "BilingualFileCommit": "e74e0803f340673309c0b00d9003f12841fa855d",
+      "BilingualDateTime": "2016-07-21T16:05:03.5293118Z",
       "BilingualException": null
     },
     "d2f78148402f06992f5f58cd40e8c4f624b5e4b5": {
@@ -21052,8 +21052,8 @@
       "ArchiveFileDateTime": "2016-06-28T13:27:50.1515982Z",
       "ArchiveException": null,
       "BilingualFilePath": "ol-handback\\PowerShell\\powerShell-Docs.de-de\\live\\install-and-use-windows-powershell-web-access.b0ab653c895ebd67ec078d852bf20804e9c72a1c.de-de.xlf",
-      "BilingualFileCommit": "b324d8ab63e6a6722efb425e32d661f2c5a67d92",
-      "BilingualDateTime": "2016-07-05T16:12:28.3170168Z",
+      "BilingualFileCommit": "e74e0803f340673309c0b00d9003f12841fa855d",
+      "BilingualDateTime": "2016-07-21T16:05:03.5293118Z",
       "BilingualException": null
     },
     "6366ec9c49f721b758b6a520f68cf2b3c5ee0caf": {
@@ -21122,8 +21122,8 @@
       "ArchiveFileDateTime": "2016-06-28T13:27:50.1672128Z",
       "ArchiveException": null,
       "BilingualFilePath": "ol-handback\\PowerShell\\powerShell-Docs.de-de\\live\\uninstall-windows-powershell-web-access.95bac7bf293e2b8b9e3aecf2e955c5e893499e71.de-de.xlf",
-      "BilingualFileCommit": "2ef26c2f0a6e26d664c4ee4d4b5d27817726b5da",
-      "BilingualDateTime": "2016-07-05T15:56:20.6487112Z",
+      "BilingualFileCommit": "e74e0803f340673309c0b00d9003f12841fa855d",
+      "BilingualDateTime": "2016-07-21T16:05:03.5293118Z",
       "BilingualException": null
     },
     "02964dd763ccccbf27a963c0f8eef20aa23cc117": {
