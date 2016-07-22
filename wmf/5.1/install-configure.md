@@ -9,12 +9,15 @@ manager: dongill
 ms.prod: powershell
 ms.technology: WMF
 translationtype: Human Translation
-ms.sourcegitcommit: 4c1b57f221d0f502313eecb21dd36b5e85c2de4d
-ms.openlocfilehash: 5a7aa50eb4ad5ea2788dc2cbdd189d5632f5c15f
+ms.sourcegitcommit: 26da6c80568327faadc6746099ac9869f2018fcf
+ms.openlocfilehash: 8a10903c421f62311a28c9f32e352bba75f21052
 
 ---
 
 # Installieren und Konfigurieren von WMF 5.1 (Preview) #
+
+***Beachten Sie Folgendes:*** 
+*Dies ist ein Platzhalter. Die folgenden Links führen zu WMF 5.0-Versionen und werden aktualisiert, sobald die Binärdateien freigegeben werden.*
 
 Laden Sie das WMF 5.1-Paket für das Betriebssystem und die Architektur herunter, in der es installiert werden soll:
 
@@ -57,6 +60,7 @@ Für Installation von WMF 5.1 unter Windows Server 2008 SP1 oder Windows 7 SP1 m
 
 
 
-<!--HONumber=Jul16_HO1-->
+
+<!--HONumber=Jul16_HO2-->
 
 

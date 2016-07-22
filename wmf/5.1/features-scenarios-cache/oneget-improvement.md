@@ -1,15 +1,15 @@
 ---
-title: "Verbesserungen für PackageManagement (bzw. OneGet)"
+title: PackageManagement (alias OneGet)-Verbesserungen
 contributor: jianyunt, quoctruong
 translationtype: Human Translation
-ms.sourcegitcommit: 4c1b57f221d0f502313eecb21dd36b5e85c2de4d
-ms.openlocfilehash: e2646a59c7a241491ef934c62fdfb6d649d16191
+ms.sourcegitcommit: 3b5a3bb0ef9cf123c0cee4a36890ac61431c85ff
+ms.openlocfilehash: bb1129e6aa20b64e94ddb6d7b7cf7b51b1df9ca3
 
 ---
 
 >Hinweis: Vorschlag für einen aussagekräftigen Namen und eine Kurzbeschreibung bereitstellen
 
-## Verbesserungen für PackageManagement (bzw. OneGet) ##
+## PackageManagement (alias OneGet)-Verbesserungen ##
 Im folgenden werden die Korrekturen beschrieben, die an WMF 5.1 erfolgt sind, um einige Probleme bei der Benutzererfahrung in der WMF-Version 5.0 zu beheben. 
 
 1 **„-version“-Alias**
@@ -36,9 +36,9 @@ Es gibt auch eine Umgehung dieses Problems. Löschen Sie manuell die alte Versio
 **Szenario**: Benutzer im Unternehmen haben keinen Zugriff auf das Internet, sondern nur auf das Intranet. Dies wurde von OneGet in WMF 5.0 nicht unterstützt.
 
 **Lösung**:
-- Sie können den NuGet-Anbieter auf einem anderen Computer mit Internetverbindung mit dem Befehl „Install-PackageProvider NuGet“ herunterladen.
+- Sie können den NuGet-Anbieter auf einen anderen Computer mit Internetverbindung mithilfe des Befehls „Install-PackageProvider -Name NuGet“ herunterladen.
 
-- Den NuGet-Anbieter finden Sie entweder unter „$env:ProgramFiles\PackageManagement\ProviderAssemblies\nuget“ oder „$env:LOCALAPPDATA\PackageManagement\ProviderAssemblies\nuget“. 
+- Den soeben installierten NuGet-Anbieter finden Sie entweder unter „$env:ProgramFiles\PackageManagement\ProviderAssemblies\nuget“ oder „$env:LOCALAPPDATA\PackageManagement\ProviderAssemblies\nuget“. 
 
 - Kopieren Sie die Binärdateien in einen Ordner oder eine Netzwerkfreigabe, auf die Ihr Computer (der ohne Internetzugang) zugreifen kann, und installieren Sie den NuGet-Anbieter mit „Install-PackageProvider NuGet -Source <Path to folder>“.
 
@@ -60,6 +60,6 @@ Find-Package -Source http://www.nuget.org/api/v2/ -Proxy http://www.myproxyserve
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Jul16_HO3-->
 
 

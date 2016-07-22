@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.technology: WMF
 translationtype: Human Translation
-ms.sourcegitcommit: 1f6f18e46537d4b9f5e64c9e808e46e82b2d3050
-ms.openlocfilehash: a4a59cefde5bac004dc07d7b5bfc6ad091eaf8ea
+ms.sourcegitcommit: 9c763f92b8e342b0208204f997c079c725891933
+ms.openlocfilehash: d25a22b0448e82a85e45c302a998abc35bd4c1b6
 
 ---
 
@@ -18,10 +18,19 @@ ms.openlocfilehash: a4a59cefde5bac004dc07d7b5bfc6ad091eaf8ea
 
 > Hinweis: Diese Dokumentation ist vorläufig und kann geändert werden.
 
-`TODO` Keith: Overlay bereitstellen
+Die Dokumente in diesem Abschnitt beziehen sich auf eine anstehende WMF 5.1-Vorschau. Das Veröffentlichungsdatum für die WMF 5.1-Vorschau steht noch nicht fest. Bei diesem Inhalt handelt es sich um eine vorläufige Version, die in den kommenden Wochen kontinuierlich aktualisiert wird. 
+
+Wir stellen diesen Inhalt früh zur Verfügung, um Informationen für die Benutzer bereitzustellen, die Zugriff auf die frühen Releases von Windows Server 2016 haben. Der Großteil der Informationen in diesen Dokumenten gilt auch für die Vorschauversionen von Windows Server 2016, mit Ausnahme der Installations-, Konfigurations- und Kompatibilitätsabschnitte, die sich nur auf WMF beziehen.
 
 
 
-<!--HONumber=Jul16_HO1-->
+
+
+
+
+
+
+
+<!--HONumber=Jul16_HO2-->
 
 
