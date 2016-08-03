@@ -24761,9 +24761,9 @@
       "ArchiveFileCommit": "295cd6767a2d08ee91b7bd6f73cfb51220effb36",
       "ArchiveFileDateTime": "2016-05-17T13:25:22.8886854Z",
       "ArchiveException": null,
-      "BilingualFilePath": null,
-      "BilingualFileCommit": null,
-      "BilingualDateTime": "0001-01-01T00:00:00",
+      "BilingualFilePath": "ol-handback\\PowerShell\\powerShell-Docs.de-de\\live\\lnxBuiltInResources.12cc0e2a7d17afe6b1e1b9c928760080863926f9.de-de.xlf",
+      "BilingualFileCommit": "a35ffc28cadfc0dd9bd17894380b501f5e26f809",
+      "BilingualDateTime": "2016-08-03T21:59:20.4820481Z",
       "BilingualException": null
     },
     "0a7ab24ff278defd7fc0a80f1dbd45bfa0e16427": {

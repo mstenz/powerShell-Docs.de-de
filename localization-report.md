@@ -1000,8 +1000,8 @@
 * Archive Datetime: 2016-05-17 13:25:22
 * Handback File: [lnxBuiltInResources.12cc0e2a7d17afe6b1e1b9c928760080863926f9.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/a35ffc28cadfc0dd9bd17894380b501f5e26f809/ol-handback/PowerShell/powerShell-Docs.de-de/live/lnxBuiltInResources.12cc0e2a7d17afe6b1e1b9c928760080863926f9.de-de.xlf)
 * Handback Datetime: 2016-08-03 21:58:45
-* Bilingual File: [lnxBuiltInResources.12cc0e2a7d17afe6b1e1b9c928760080863926f9.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/992d421faf41a0b6200066a7b389a7a549a4baf1/ol-handback/PowerShell/powerShell-Docs.de-de/live/lnxBuiltInResources.12cc0e2a7d17afe6b1e1b9c928760080863926f9.de-de.xlf)
-* Bilingual Datetime: 2016-06-16 14:28:56
+* Bilingual File: [lnxBuiltInResources.12cc0e2a7d17afe6b1e1b9c928760080863926f9.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/a35ffc28cadfc0dd9bd17894380b501f5e26f809/ol-handback/PowerShell/powerShell-Docs.de-de/live/lnxBuiltInResources.12cc0e2a7d17afe6b1e1b9c928760080863926f9.de-de.xlf)
+* Bilingual Datetime: 2016-08-03 21:59:20
 * [Back to Top](#report-top)
 
 ##### <a name='0a7ab24ff278defd7fc0a80f1dbd45bfa0e1642736'></a> Source: [dsc\lnxEnvironmentResource.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/lnxEnvironmentResource.md)
