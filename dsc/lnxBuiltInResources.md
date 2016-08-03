@@ -1,3 +1,17 @@
+---
+title: "Integrierte PowerShell DSC-Ressourcen für Linux"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
+ms.openlocfilehash: 6b001c12885022006003ef3ffe91b7aede07bd17
+
+---
+
 # Integrierte PowerShell DSC-Ressourcen für Linux
 
 Ressourcen sind Bausteine zum Schreiben eines PowerShell DSC-Skripts. DSC für Linux bietet verschiedene integrierte Funktionen für das Konfigurieren von Ressourcen wie Dateien und Ordnern, Paketen, Umgebungsvariablen sowie Diensten und Prozessen.
@@ -6,19 +20,20 @@ Ressourcen sind Bausteine zum Schreiben eines PowerShell DSC-Skripts. DSC für L
 
 Die folgende Tabelle bietet eine Liste dieser Ressourcen sowie Links zu Themen, in denen diese Ressourcen ausführlich beschrieben werden.
 
-* Ressource <ctype="x-NOTFOUND" mdpre="[" mdpost="](lnxArchiveResource.md)">nxArchive</ctype="x-NOTFOUND">: Bietet einen Mechanismus zum Entpacken von Archivdateien (.tar, .zip) in einem bestimmten Pfad.
-* Ressource <ctype="x-NOTFOUND" mdpre="[" mdpost="](lnxEnvironmentResource.md)">nxEnvironment</ctype="x-NOTFOUND">: Verwaltet Umgebungsvariablen auf Zielknoten. 
-* Ressource <ctype="x-NOTFOUND" mdpre="[" mdpost="](lnxFileResource.md)">nxFile</ctype="x-NOTFOUND">: Verwaltet Linux-Dateien und -Verzeichnisse. 
-* Ressource <ctype="x-NOTFOUND" mdpre="[" mdpost="](lnxFileLineResource.md)">nxFileLine</ctype="x-NOTFOUND">: Verwaltet einzelne Zeilen in einer Linux-Datei. 
-* Ressource <ctype="x-NOTFOUND" mdpre="[" mdpost="](lnxGroupResource.md)">nxGroup</ctype="x-NOTFOUND">: Verwaltet lokale Linux-Gruppen. 
-* Ressource <ctype="x-NOTFOUND" mdpre="[" mdpost="](lnxPackageResource.md)">nxPackage</ctype="x-NOTFOUND">: Verwaltet Pakete auf Linux-Knoten.
-* Ressource <ctype="x-NOTFOUND" mdpre="[" mdpost="](lnxScriptResource.md)">nxScript</ctype="x-NOTFOUND">: Führt Skripts auf Zielknoten aus.
-* Ressource <ctype="x-NOTFOUND" mdpre="[" mdpost="](lnxServiceResource.md)">nxService</ctype="x-NOTFOUND">: Verwaltet Linux-Dienste (Daemons).
-* Ressource <ctype="x-NOTFOUND" mdpre="[" mdpost="](lnxSshAuthorizedKeysResource.md)">nxSshAuthorizedKeys</ctype="x-NOTFOUND">: Verwaltet öffentliche SSH-Schlüssel für einen Linux-Benutzer. 
-* Ressource <ctype="x-NOTFOUND" mdpre="[" mdpost="](lnxUserResource.md)">nxUser</ctype="x-NOTFOUND">: Verwaltet lokale Linux-Benutzer. 
+* [nxArchive Ressource](lnxArchiveResource.md): Bietet einen Mechanismus zum Entpacken von Archivdateien (.tar, .zip) in einem bestimmten Pfad.
+* [nxEnvironment Ressource](lnxEnvironmentResource.md): Verwaltet Umgebungsvariablen auf Zielknoten. 
+* [nxFile Ressource](lnxFileResource.md): Verwaltet Linux-Dateien und -Verzeichnisse. 
+* [nxFileLine Ressource](lnxFileLineResource.md): Verwaltet einzelne Zeilen in einer Linux-Datei. 
+* [nxGroup Ressource](lnxGroupResource.md): Verwaltet lokale Linux-Gruppen. 
+* [nxPackage Ressource](lnxPackageResource.md): Verwaltet Pakete auf Linux-Knoten.
+* [nxScript Ressource ](lnxScriptResource.md): Führt Skripts auf Zielknoten aus.
+* [nxService Ressource](lnxServiceResource.md): Verwaltet Linux-Dienste (Daemons).
+* [nxSshAuthorizedKeys Ressource](lnxSshAuthorizedKeysResource.md): Verwaltet öffentliche SSH-Schlüssel für einen Linux-Benutzer. 
+* [nxUser Ressource](lnxUserResource.md): Verwaltet lokale Linux-Benutzer. 
   
 
 
-<!--HONumber=Mar16_HO4-->
+
+<!--HONumber=May16_HO3-->
 
 
