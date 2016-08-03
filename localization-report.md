@@ -9,8 +9,8 @@
 [ Archive Failed Files ](#archive-failed-list)| 0
 [ Archive Success Files ](#archive-success-list)| 66
 [ Handback Failed Files ](#handback-failed-list)| 6
-[ Out Of Sync Handback Files ](#outofsync-handback-success-list)| 128
-[ In Sync Handback Files ](#insync-handback-success-list)| 216
+[ Out Of Sync Handback Files ](#outofsync-handback-success-list)| 127
+[ In Sync Handback Files ](#insync-handback-success-list)| 217
 [ Ignored Files ](#ignored-list)| 31
 
 ## <a name='handoff-failed-list'></a> Handoff Failed File List
@@ -113,7 +113,6 @@
  [dsc\enactingConfigurations.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/enactingConfigurations.md) | OutofSyncHandedBackSuccess | [Details](#4c802002c6a03a27d02221dd713677911a77c30b22)
  [dsc\environmentResource.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/environmentResource.md) | OutofSyncHandedBackSuccess | [Details](#20a7711604033b5ff1484dbb526df2642a9a173823)
  [dsc\lnxArchiveResource.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/lnxArchiveResource.md) | OutofSyncHandedBackSuccess | [Details](#2edbc1d11dfc7c84369430688a8b0d773277e86434)
- [dsc\lnxBuiltInResources.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/lnxBuiltInResources.md) | OutofSyncHandedBackSuccess | [Details](#6b001c12885022006003ef3ffe91b7aede07bd1735)
  [dsc\lnxEnvironmentResource.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/lnxEnvironmentResource.md) | OutofSyncHandedBackSuccess | [Details](#0a7ab24ff278defd7fc0a80f1dbd45bfa0e1642736)
  [dsc\lnxFileResource.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/lnxFileResource.md) | OutofSyncHandedBackSuccess | [Details](#2ba44df5dd6c91371cbbfe95d48184a4ff4a773838)
  [dsc\lnxGettingStarted.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/lnxGettingStarted.md) | OutofSyncHandedBackSuccess | [Details](#c05b48d2c903e59f8b65c4c8c289d2dd5c23c3f939)
@@ -249,6 +248,7 @@
  [dsc\images\CredentialEncryptionDiagram1.png](https://github.com/PowerShell/powerShell-Docs/blob/97cfb44dc3db0937a0eaae5af5113210f988aa56/dsc/images/CredentialEncryptionDiagram1.png) | InSyncHandedBackSuccess | [Details](#d9f53a805041164f5070845c0fd216b63d17ae5828)
  [dsc\images\PartialConfig1.jpg](https://github.com/PowerShell/powerShell-Docs/blob/97cfb44dc3db0937a0eaae5af5113210f988aa56/dsc/images/PartialConfig1.jpg) | InSyncHandedBackSuccess | [Details](#3e61149f7b05f74d662d3038233013ffdcbed1a329)
  [dsc\images\PartialConfigPullServer.jpg](https://github.com/PowerShell/powerShell-Docs/blob/97cfb44dc3db0937a0eaae5af5113210f988aa56/dsc/images/PartialConfigPullServer.jpg) | InSyncHandedBackSuccess | [Details](#1ba842005c2b1ce80a3670429b3e010c7b1c1f5930)
+ [dsc\lnxBuiltInResources.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/lnxBuiltInResources.md) | InSyncHandedBackSuccess | [Details](#6b001c12885022006003ef3ffe91b7aede07bd1735)
  [dsc\lnxFileLineResource.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/lnxFileLineResource.md) | InSyncHandedBackSuccess | [Details](#9196129e79272d8bee717ef8a5d42fb590760a0f37)
  [dsc\lnxScriptResource.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/lnxScriptResource.md) | InSyncHandedBackSuccess | [Details](#4c575bbf0e0553e19e56bcc6edd605e36586cb9442)
  [dsc\lnxServiceResource.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/lnxServiceResource.md) | InSyncHandedBackSuccess | [Details](#3835495705297616a41329bcfdaad42b464115d843)
@@ -991,18 +991,15 @@
 * [Back to Top](#report-top)
 
 ##### <a name='6b001c12885022006003ef3ffe91b7aede07bd1735'></a> Source: [dsc\lnxBuiltInResources.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/lnxBuiltInResources.md)
-* Status: OutofSyncHandedBackSuccess
-* Target File: 
+* Status: InSyncHandedBackSuccess
+* Target File: [dsc\lnxBuiltInResources.md](https://github.com/PowerShell/powerShell-Docs.de-de/blob/65cb4106b80725b1d9ac816708517dc52fcb5936/dsc/lnxBuiltInResources.md)
 * Handoff File: [lnxBuiltInResources.12cc0e2a7d17afe6b1e1b9c928760080863926f9.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/440de3859e3fba37cb863698d27f2fc3beb42487/ol-handoff/PowerShell/powerShell-Docs.de-de/live/lnxBuiltInResources.12cc0e2a7d17afe6b1e1b9c928760080863926f9.de-de.xlf)
 * Handoff Datetime: 2016-05-16 23:01:16
 * Handoff Reason: Include
 * Archive File: [lnxBuiltInResources.12cc0e2a7d17afe6b1e1b9c928760080863926f9.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/295cd6767a2d08ee91b7bd6f73cfb51220effb36/ol-handoff/PowerShell/powerShell-Docs.de-de/live/archive/lnxBuiltInResources.12cc0e2a7d17afe6b1e1b9c928760080863926f9.de-de.xlf)
 * Archive Datetime: 2016-05-17 13:25:22
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [dsc\lnxBuiltInResources.md](https://github.com/PowerShell/powerShell-Docs.de-de/blob/23410422ddb60e2ac5d4cb6596cd981fd2ff21dc/dsc/lnxBuiltInResources.md)
-* Current Handback File: [lnxBuiltInResources.12cc0e2a7d17afe6b1e1b9c928760080863926f9.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/992d421faf41a0b6200066a7b389a7a549a4baf1/ol-handback/PowerShell/powerShell-Docs.de-de/live/lnxBuiltInResources.12cc0e2a7d17afe6b1e1b9c928760080863926f9.de-de.xlf)
-* Current Handback Datetime: 2016-04-04 10:22:21
+* Handback File: [lnxBuiltInResources.12cc0e2a7d17afe6b1e1b9c928760080863926f9.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/a35ffc28cadfc0dd9bd17894380b501f5e26f809/ol-handback/PowerShell/powerShell-Docs.de-de/live/lnxBuiltInResources.12cc0e2a7d17afe6b1e1b9c928760080863926f9.de-de.xlf)
+* Handback Datetime: 2016-08-03 21:58:45
 * Bilingual File: [lnxBuiltInResources.12cc0e2a7d17afe6b1e1b9c928760080863926f9.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/992d421faf41a0b6200066a7b389a7a549a4baf1/ol-handback/PowerShell/powerShell-Docs.de-de/live/lnxBuiltInResources.12cc0e2a7d17afe6b1e1b9c928760080863926f9.de-de.xlf)
 * Bilingual Datetime: 2016-06-16 14:28:56
 * [Back to Top](#report-top)
