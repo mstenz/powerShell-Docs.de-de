@@ -1,55 +1,41 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 3
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [dsc\partialConfigs.md](https://github.com/PowerShell/powerShell-Docs/blob/0e830804616ff23412e0d6ff69c38e2ea20228e5/dsc/partialConfigs.md) | HandedOffSuccess | [Details](#c5d3cb1045e67d4913fbbad13938e8f95a43cacf73)
- [gallery\psget\psget_cmdlets_troubleshooting.md](https://github.com/PowerShell/powerShell-Docs/blob/05ae53b510412cd6e81f10e6dd8960025467f304/gallery/psget/psget_cmdlets_troubleshooting.md) | HandedOffSuccess | [Details](#dc283a7dd5794c07194066537a10734b0b5e743e144)
- [gallery\TOC.md](https://github.com/PowerShell/powerShell-Docs/blob/763a6068064be04fd198f2bc2699d0e53dedef83/gallery/TOC.md) | HandedOffSuccess | [Details](#420624e0e554b0838bcca582a0e6c3c0cbd15901163)
+ [jea\prerequisites.md](https://github.com/PowerShell/powerShell-Docs/blob/7504fe496a8913718847e45115d126caf4049bef/jea/prerequisites.md) | HandedOffSuccess | [Details](#ac9231a475ba84e9051bbd06a65f3f20c9e49846174)
+ [scripting\core-powershell\ise\Windows-PowerShell-ISE-Object-Model-Reference.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/core-powershell/ise/Windows-PowerShell-ISE-Object-Model-Reference.md) | HandedOffSuccess | [Details](#9bfb74ba438dd27fc2799263fc12a20edd2bb8cb230)
 
 ## Item Details
-##### <a name='c5d3cb1045e67d4913fbbad13938e8f95a43cacf73'></a> Source: [dsc\partialConfigs.md](https://github.com/PowerShell/powerShell-Docs/blob/0e830804616ff23412e0d6ff69c38e2ea20228e5/dsc/partialConfigs.md)
+##### <a name='ac9231a475ba84e9051bbd06a65f3f20c9e49846174'></a> Source: [jea\prerequisites.md](https://github.com/PowerShell/powerShell-Docs/blob/7504fe496a8913718847e45115d126caf4049bef/jea/prerequisites.md)
 * Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [partialConfigs.f483ab7fa1511b557780a02b5b807245f730c1b6.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/77ba95edbc0a9cd940174f395324c77143c14456/ol-handoff/PowerShell/powerShell-Docs.de-de/live/partialConfigs.f483ab7fa1511b557780a02b5b807245f730c1b6.de-de.xlf)
-* Handoff Datetime: 2016-08-12 22:17:20
+* Target File: [jea\prerequisites.md](https://github.com/PowerShell/powerShell-Docs.de-de/blob/0ff9b536fdd4cb61d9a229f70a2d294bd60e760d/jea/prerequisites.md)
+* Handoff File: [prerequisites.c7c64787c6d6d670a4d099b82dfa08e0cdc17727.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/91ffc9b93f07738ad8999a508166026375fb83dd/ol-handoff/PowerShell/powerShell-Docs.de-de/live/prerequisites.c7c64787c6d6d670a4d099b82dfa08e0cdc17727.de-de.xlf)
+* Handoff Datetime: 2016-08-17 12:12:52
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [dsc\partialConfigs.md](https://github.com/PowerShell/powerShell-Docs.de-de/blob/58b0500a53d353308a597af72665c63003ec5813/dsc/partialConfigs.md)
-* Current Handback File: [partialConfigs.f483ab7fa1511b557780a02b5b807245f730c1b6.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/3924f66b4fc339492d9b1bbbab1d62381abca89c/ol-handback/PowerShell/powerShell-Docs.de-de/live/partialConfigs.f483ab7fa1511b557780a02b5b807245f730c1b6.de-de.xlf)
-* Current Handback Datetime: 2016-07-19 20:03:55
-* Bilingual File: [partialConfigs.f483ab7fa1511b557780a02b5b807245f730c1b6.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/3924f66b4fc339492d9b1bbbab1d62381abca89c/ol-handback/PowerShell/powerShell-Docs.de-de/live/partialConfigs.f483ab7fa1511b557780a02b5b807245f730c1b6.de-de.xlf)
-* Bilingual Datetime: 2016-07-19 20:06:59
+* Handback File: [prerequisites.c7c64787c6d6d670a4d099b82dfa08e0cdc17727.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/0564825ca64338092f02123084fa2dc238495d03/ol-handback/PowerShell/powerShell-Docs.de-de/live/prerequisites.c7c64787c6d6d670a4d099b82dfa08e0cdc17727.de-de.xlf)
+* Handback Datetime: 2016-07-12 18:17:56
+* Bilingual File: [prerequisites.c7c64787c6d6d670a4d099b82dfa08e0cdc17727.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/0564825ca64338092f02123084fa2dc238495d03/ol-handback/PowerShell/powerShell-Docs.de-de/live/prerequisites.c7c64787c6d6d670a4d099b82dfa08e0cdc17727.de-de.xlf)
+* Bilingual Datetime: 2016-07-12 18:20:35
 * [Back to Top](#report-top)
 
-##### <a name='dc283a7dd5794c07194066537a10734b0b5e743e144'></a> Source: [gallery\psget\psget_cmdlets_troubleshooting.md](https://github.com/PowerShell/powerShell-Docs/blob/05ae53b510412cd6e81f10e6dd8960025467f304/gallery/psget/psget_cmdlets_troubleshooting.md)
+##### <a name='9bfb74ba438dd27fc2799263fc12a20edd2bb8cb230'></a> Source: [scripting\core-powershell\ise\Windows-PowerShell-ISE-Object-Model-Reference.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/core-powershell/ise/Windows-PowerShell-ISE-Object-Model-Reference.md)
 * Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [psget_cmdlets_troubleshooting.d9c18494b8d800c47375d9b3b54afd5a739502dc.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/77ba95edbc0a9cd940174f395324c77143c14456/ol-handoff/PowerShell/powerShell-Docs.de-de/live/psget_cmdlets_troubleshooting.d9c18494b8d800c47375d9b3b54afd5a739502dc.de-de.xlf)
-* Handoff Datetime: 2016-08-12 22:17:20
+* Target File: [scripting\core-powershell\ise\Windows-PowerShell-ISE-Object-Model-Reference.md](https://github.com/PowerShell/powerShell-Docs.de-de/blob/db4dc64cba77f5ed0286e79d9a449302369f23f5/scripting/core-powershell/ise/Windows-PowerShell-ISE-Object-Model-Reference.md)
+* Handoff File: [Windows-PowerShell-ISE-Object-Model-Reference.b7881a7d0cd485d731d26e1fc83eab2823736ab8.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/91ffc9b93f07738ad8999a508166026375fb83dd/ol-handoff/PowerShell/powerShell-Docs.de-de/live/Windows-PowerShell-ISE-Object-Model-Reference.b7881a7d0cd485d731d26e1fc83eab2823736ab8.de-de.xlf)
+* Handoff Datetime: 2016-08-17 12:12:52
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='420624e0e554b0838bcca582a0e6c3c0cbd15901163'></a> Source: [gallery\TOC.md](https://github.com/PowerShell/powerShell-Docs/blob/763a6068064be04fd198f2bc2699d0e53dedef83/gallery/TOC.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [TOC.8c64df72d95d4bd53637941319526dd80056a223.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/77ba95edbc0a9cd940174f395324c77143c14456/ol-handoff/PowerShell/powerShell-Docs.de-de/live/TOC.8c64df72d95d4bd53637941319526dd80056a223.de-de.xlf)
-* Handoff Datetime: 2016-08-12 22:17:20
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
+* Handback File: [Windows-PowerShell-ISE-Object-Model-Reference.b7881a7d0cd485d731d26e1fc83eab2823736ab8.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/4404fc895277707b083eeac0d76c1831c76e6423/ol-handback/PowerShell/powerShell-Docs.de-de/live/Windows-PowerShell-ISE-Object-Model-Reference.b7881a7d0cd485d731d26e1fc83eab2823736ab8.de-de.xlf)
+* Handback Datetime: 2016-07-21 13:03:19
+* Bilingual File: [Windows-PowerShell-ISE-Object-Model-Reference.b7881a7d0cd485d731d26e1fc83eab2823736ab8.de-de.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/4404fc895277707b083eeac0d76c1831c76e6423/ol-handback/PowerShell/powerShell-Docs.de-de/live/Windows-PowerShell-ISE-Object-Model-Reference.b7881a7d0cd485d731d26e1fc83eab2823736ab8.de-de.xlf)
+* Bilingual Datetime: 2016-07-21 13:04:04
 * [Back to Top](#report-top)
 
 
