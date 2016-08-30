@@ -9,8 +9,7 @@
             }
         ],
         "globalMetadata": {
-            "ROBOTS": "INDEX, FOLLOW",
-            "bilingual_type": "hover over"
+            "ROBOTS": "INDEX, FOLLOW"
         },
         "resource": [
             {
