@@ -24,6 +24,6 @@ In diesem Kapitel wird beschrieben, wie sich die Windows PowerShell-Pipeline von
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

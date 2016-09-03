@@ -167,6 +167,6 @@ Zum Definieren von Teilkonfigurationen erstellen Sie einen **PartialConfiguratio
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

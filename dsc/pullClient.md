@@ -30,6 +30,6 @@ In den folgenden Themen wird erläutert, wie Pullclients eingerichtet werden:
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -62,6 +62,6 @@ Um eine Druckerverbindung zu entfernen, verwenden Sie die Methode **WScript.Netw
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 
