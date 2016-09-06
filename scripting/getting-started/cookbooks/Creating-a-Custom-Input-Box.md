@@ -1,14 +1,21 @@
 ---
 title: Erstellen eines benutzerdefinierten Eingabefelds
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 0b12e56c-299f-40ee-afbf-d30d23ed2565
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 6c0c1d42dae602a83bbad7a0abe8df1b6435489a
+
 ---
+
 # Erstellen eines benutzerdefinierten Eingabefelds
-Erstellen Sie mit Microsoft .NET Framework-Formularerstellungsfunktionen in Windows PowerShell 3.0 und späteren Versionen ein Skript für ein benutzerdefiniertes grafisches Eingabefeld.
+Schreiben Sie ein benutzerdefiniertes graphisches Eingabefeld mit Microsoft .NET Framework-Formularerstellungsfunktionen in Windows PowerShell 3.0 und späteren Versionen.
 
 ## Erstellen Sie eine benutzerdefiniertes, graphisches Eingabefeld
 Kopieren und fügen Sie Folgendes in Windows PowerShell ISE ein, und speichern Sie es als Windows PowerShell-Skript (.ps1).
@@ -155,10 +162,11 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 ## Weitere Informationen
 [Hey Scripting Guy: Warum funktionieren diese PowerShell GUI-Beispiele nicht?](http://go.microsoft.com/fwlink/?LinkId=506644)
 [GitHub: WinFormsExampleUpdates von Dave Wyatt](https://github.com/dlwyatt/WinFormsExampleUpdates)
-[Windows PowerShell-Tipp der Woche: Erstellen eines benutzerdefinierten Eingabefelds](http://technet.microsoft.com/library/ff730941.aspx)
+[Windows PowerShell Tip of the Week: Erstellen eines benutzerdefinierten Eingabefelds](http://technet.microsoft.com/library/ff730941.aspx)
 
 
 
-<!--HONumber=Apr16_HO1-->
+
+<!--HONumber=Aug16_HO4-->
 
 
