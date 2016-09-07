@@ -8,8 +8,8 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: ed586e55f4533ce5be7c68564e5cc537fed05016
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: dc50a729855a71d61c187da9d698bd294f740546
 
 ---
 
@@ -178,7 +178,7 @@ Die folgende Tabelle enthält eine Beschreibung der vier Sicherheitsebenen zwisc
 
 Administratoren streben für Windows PowerShell Web Access-Benutzer meist die Verwendung derjenigen Autorisierungsregel an, die in ihrer Umgebung bereits für die Windows PowerShell-Remoteverwaltung definiert ist. Im ersten Verfahren dieses Abschnitts wird beschrieben, wie Sie eine sichere Autorisierungsregel hinzufügen können, die es einem einzelnen Benutzer erlaubt, sich für die Verwaltung eines Computers bei Verwendung einer einzigen Sitzungskonfiguration anzumelden. Das zweite Verfahren beschreibt, wie Sie eine Autorisierungsregel entfernen, die nicht mehr benötigt wird.
 
-Wenn Sie die Verwendung von benutzerdefinierten Sitzungskonfigurationen planen, um für bestimmte Benutzer nur die Arbeit in eingeschränkten Runspaces von Windows PowerShell Web Access zuzulassen, erstellen Sie die benutzerdefinierten Sitzungskonfigurationen vor dem Hinzufügen der Autorisierungsregeln, die darauf verweisen. Sie können die Windows PowerShell Web Access-Cmdlets nicht zum Erstellen von benutzerdefinierten Sitzungskonfigurationen verwenden. Weitere Informationen zur Erstellung von benutzerdefinierten Sitzungskonfigurationen finden Sie auf MSDN unter [about\_Session\_Configuration\_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx).
+Wenn Sie die Verwendung von benutzerdefinierten Sitzungskonfigurationen planen, um für bestimmte Benutzer nur die Arbeit in eingeschränkten Runspaces von Windows PowerShell Web Access zuzulassen, erstellen Sie die benutzerdefinierten Sitzungskonfigurationen vor dem Hinzufügen der Autorisierungsregeln, die darauf verweisen. Sie können die Windows PowerShell Web Access-Cmdlets nicht zum Erstellen von benutzerdefinierten Sitzungskonfigurationen verwenden. Weitere Informationen zur Erstellung von benutzerdefinierten Sitzungskonfigurationen finden Sie auf MSDN unter [about_Session_Configuration_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx).
 
 Für Windows PowerShell Web Access-Cmdlets wird ein Platzhalterzeichen unterstützt, und zwar das Sternchen ( \*). Platzhalterzeichen innerhalb von Zeichenfolgen werden nicht unterstützt. Verwenden Sie ein einzelnes Sternchen pro Eigenschaft (Benutzer, Computer oder Sitzungskonfigurationen).
 
@@ -200,13 +200,13 @@ Für Windows PowerShell Web Access-Cmdlets wird ein Platzhalterzeichen unterstü
 
 #### So fügen Sie eine restriktive Autorisierungsregel hinzu
 
-1.  Führen Sie einen der folgenden Schritte aus, um eine Windows PowerShell-Sitzung mit erhöhten Benutzerrechten zu öffnen.
+1.  Öffnen Sie eine Windows PowerShell-Sitzung mit erhöhten Benutzerrechten, indem Sie einen der folgenden Schritte durchführen.
 
     -   Klicken Sie auf dem Windows-Desktop mit der rechten Maustaste in der Taskleiste auf **Windows PowerShell** und anschließend auf **Als Administrator ausführen**.
 
     -   Klicken Sie auf dem Windows-**Startbildschirm** mit der rechten Maustaste auf **Windows PowerShell**, und klicken Sie anschließend auf **Als Administrator ausführen**.
 
-2.  <span class="label">Optionaler Schritt zur Einschränkung des Benutzerzugriffs mithilfe von Sitzungskonfigurationen:</span> Stellen Sie sicher, dass die Sitzungskonfigurationen, die Sie in den Regeln verwenden möchten, bereits vorhanden sind. Falls diese noch nicht erstellt wurden, verwenden Sie die Anleitung zum Erstellen von Sitzungskonfigurationen im MSDN unter [about\_Session\_Configuration\_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx).
+2.  <span class="label">Optionaler Schritt zur Einschränkung des Benutzerzugriffs mithilfe von Sitzungskonfigurationen:</span> Stellen Sie sicher, dass die Sitzungskonfigurationen, die Sie in den Regeln verwenden möchten, bereits vorhanden sind. Falls diese noch nicht erstellt wurden, verwenden Sie die Anleitung zum Erstellen von Sitzungskonfigurationen in MSDN unter [about_Session_Configuration_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx).
 
 3.  Geben Sie Folgendes ein, und drücken Sie anschließend die **EINGABETASTE**.
 
@@ -214,13 +214,13 @@ Für Windows PowerShell Web Access-Cmdlets wird ein Platzhalterzeichen unterstü
 
         Add-PswaAuthorizationRule –UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
 
-    Diese Autorisierungsregel erlaubt es einem bestimmten Benutzer, auf einen Computer im Netzwerk zuzugreifen, auf den er normalerweise zugreifen kann. Der Zugriff ist auf eine bestimmte Sitzungskonfiguration beschränkt, die die üblichen Anforderungen des Benutzers im Hinblick auf die Ausführung von Skripts und Cmdlets abdeckt. Im folgenden Beispiel wird dem Benutzer <span class="code">JSmith</span> in der Domäne <span class="code">Contoso</span> Zugriff auf die Verwaltung des Computers <span class="code">Contoso\_214</span> und die Verwendung einer Sitzungskonfiguration mit dem Namen <span class="code">NewAdminsOnly</span> gewährt.
+    Diese Autorisierungsregel erlaubt es einem bestimmten Benutzer, auf einen Computer im Netzwerk zuzugreifen, auf den er normalerweise zugreifen kann. Der Zugriff ist auf eine bestimmte Sitzungskonfiguration beschränkt, die die üblichen Anforderungen des Benutzers im Hinblick auf die Ausführung von Skripts und Cmdlets abdeckt. Im folgenden Beispiel wird dem Benutzer <span class="code">JSmith</span> in der Domäne <span class="code">Contoso</span> Zugriff auf die Verwaltung des Computers <span class="code">Contoso_214</span> und die Verwendung einer Sitzungskonfiguration mit dem Namen <span class="code">NewAdminsOnly</span> gewährt.
 
     [Kopieren](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_4e760377-e401-4ef4-988f-7a0aec1b2a90'); „In Zwischenablage kopieren.“)
 
         Add-PswaAuthorizationRule –UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
 
-4.  Stellen Sie sicher, dass die Regel erstellt wurde, indem Sie entweder das Cmdlet **Get-PswaAuthorizationRule** oder **Test-PswaAuthorizationRule -UserName &lt;Domäne\\Benutzercomputer\\Benutzer&gt; -ComputerName** &lt;Computername&gt; ausführen. Beispiel: **Test-PswaAuthorizationRule –UserName Contoso\\JSmith –ComputerName Contoso\_214**.
+4.  Stellen Sie sicher, dass die Regel erstellt wurde, indem Sie entweder das Cmdlet **Get-PswaAuthorizationRule** oder **Test-PswaAuthorizationRule -UserName &lt;Domäne\\Benutzer | Computer\\Benutzer&gt; -ComputerName** &lt;Computername&gt; ausführen. Beispiel: **Test-PswaAuthorizationRule –UserName Contoso\\JSmith –ComputerName Contoso_214**.
 
 #### So entfernen Sie eine Autorisierungsregel
 
@@ -257,7 +257,7 @@ Für Windows PowerShell Web Access-Cmdlets wird ein Platzhalterzeichen unterstü
 
 ------------------------------------------------------------------------
 
-Bei jeder Windows PowerShell-Sitzung wird eine Sitzungskonfiguration verwendet. Falls für eine Sitzung keine Konfiguration angegeben ist, wird von Windows PowerShell die standardmäßige integrierte Windows PowerShell-Sitzungskonfiguration mit dem Namen „Microsoft.PowerShell“ verwendet. Die Standardsitzungskonfiguration schließt alle auf einem Computer verfügbaren Cmdlets ein. Administratoren können den Zugriff auf alle Computer einschränken, indem sie eine Sitzungskonfiguration mit eingeschränktem Runspace (ein begrenzter Bereich von Cmdlets und Aufgaben, die die Endbenutzer ausführen können) definieren. Ein Benutzer, dem der Zugriff auf einen Computer gestattet wurde (entweder mit vollem Sprachzugriff oder nur mit Zugriff auf die Windows PowerShell-Remoteverwaltungs-Cmdlets), kann Verbindungen mit anderen Computern herstellen, die mit dem ersten Computer verbunden sind. Durch die Definition eines eingeschränkten Runspace kann verhindert werden, dass Benutzer von ihrem zulässigen Windows PowerShell-Runspace aus auf andere Computer zugreifen. Außerdem wird dadurch die Sicherheit der Windows PowerShell Web Access-Umgebung verbessert. Die Sitzungskonfiguration kann (per Gruppenrichtlinie) an alle Computer verteilt werden, für die Administratoren den Zugriff über Windows PowerShell Web Access gewähren möchten. Weitere Informationen zu Sitzungskonfigurationen finden Sie unter [about\_Session\_Configurations](https://technet.microsoft.com/library/dd819508.aspx). Im Folgenden sind einige Beispiele für die Verwendung von Sitzungskonfigurationen aufgeführt.
+Bei jeder Windows PowerShell-Sitzung wird eine Sitzungskonfiguration verwendet. Falls für eine Sitzung keine Konfiguration angegeben ist, wird von Windows PowerShell die standardmäßige integrierte Windows PowerShell-Sitzungskonfiguration mit dem Namen „Microsoft.PowerShell“ verwendet. Die Standardsitzungskonfiguration schließt alle auf einem Computer verfügbaren Cmdlets ein. Administratoren können den Zugriff auf alle Computer einschränken, indem sie eine Sitzungskonfiguration mit eingeschränktem Runspace (ein begrenzter Bereich von Cmdlets und Aufgaben, die die Endbenutzer ausführen können) definieren. Ein Benutzer, dem der Zugriff auf einen Computer gestattet wurde (entweder mit vollem Sprachzugriff oder nur mit Zugriff auf die Windows PowerShell-Remoteverwaltungs-Cmdlets), kann Verbindungen mit anderen Computern herstellen, die mit dem ersten Computer verbunden sind. Durch die Definition eines eingeschränkten Runspace kann verhindert werden, dass Benutzer von ihrem zulässigen Windows PowerShell-Runspace aus auf andere Computer zugreifen. Außerdem wird dadurch die Sicherheit der Windows PowerShell Web Access-Umgebung verbessert. Die Sitzungskonfiguration kann (per Gruppenrichtlinie) an alle Computer verteilt werden, für die Administratoren den Zugriff über Windows PowerShell Web Access gewähren möchten. Weitere Informationen zu Sitzungskonfigurationen finden Sie unter [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx). Im Folgenden sind einige Beispiele für die Verwendung von Sitzungskonfigurationen aufgeführt.
 
 -   Ein Administrator erstellt einen Endpunkt namens **PswaEndpoint** mit einem eingeschränkten Runspace. Anschließend erstellt der Administrator die Regel **\*,\*,PswaEndpoint** und verteilt den Endpunkt an andere Computer. Mithilfe der Regel können alle Benutzer auf alle Computer mit dem Endpunkt **PswaEndpoint** zugreifen. Falls es sich um die einzige Autorisierungsregel handelt, die in dem Regelsatz definiert ist, ist der Zugriff auf Computer ohne diesen Endpunkt nicht möglich.
 
@@ -293,7 +293,7 @@ Bei jeder Windows PowerShell-Sitzung wird eine Sitzungskonfiguration verwendet. 
 
     Im obigen Szenario richtet Windows PowerShell Web Access eine Verbindung mit dem Zielcomputer erst ein, nachdem Folgendes erfolgreich durchgeführt und von mindestens einer Autorisierungsregel zugelassen wurde.
 
-    1.  Authentifizierung auf dem Arbeitsgruppen-Gatewayserver durch Hinzufügen eines Benutzernamens im Format *Servername*\\*Benutzername* zur Autorisierungsregel
+    1.  Authentifizierung des Arbeitsgruppen-Gatewayservers durch Hinzufügen eines Benutzernamens im Format *server_name*\\*user_name* zur Autorisierungsregel
 
     2.  Authentifizierung auf dem Zielcomputer mithilfe von alternativen Anmeldeinformationen, die auf der Anmeldeseite unter **Optionale Verbindungseinstellungen** angegeben wurden
 
@@ -373,7 +373,7 @@ Wenn der Gatewayserver unter Windows Server 2012 R2 ausgeführt wird, ermöglich
 ------------------------------------------------------------------------
 
 [Installieren und Verwenden von Windows PowerShell Web Access](https://technet.microsoft.com/en-us/library/hh831611(v=ws.11).aspx)
-[about\_Session\_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
+[about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
 [Windows PowerShell Web Access-Cmdlets](https://technet.microsoft.com/library/hh918342.aspx)
 
 <span>Show:</span> Inherited Protected
@@ -428,6 +428,6 @@ Die Lizenz für Drittanbieterskripts oder Code, die mit dieser Website verlinkt 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Aug16_HO4-->
 
 

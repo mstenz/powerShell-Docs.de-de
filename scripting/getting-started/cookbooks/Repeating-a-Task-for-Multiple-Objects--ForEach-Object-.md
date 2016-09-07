@@ -1,12 +1,19 @@
 ---
-title: Wiederholen einer Aufgabe für mehrere Objekte (ForEach-Object)
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "Wiederholen einer Aufgabe für mehrere Objekte  ForEach-Object"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 6697a12d-2470-4ed6-b5bb-c35e5d525eb6
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 8dd7904611fb697f9b398161e12765454b4f3441
+
 ---
+
 # Wiederholen einer Aufgabe für mehrere Objekte (ForEach-Object)
 Das Cmdlet **ForEach-Object** verwendet Skriptblöcke und den Deskriptor „$_“ für das aktuelle Pipelineobjekt, um Ihnen das Ausführen eines Befehls für jedes Objekt in der Pipeline zu ermöglichen. Damit können Sie einige komplizierte Aufgaben ausführen.
 
@@ -23,7 +30,7 @@ Size         : 203912880128
 VolumeName   : Local Disk
 ```
 
-Sie können den Wert von „FreeSpace in MB konvertieren, indem Sie jeden Wert zweimal durch 1024 dividieren. Mit der ersten Division werden die Daten in KB umgerechnet, bei der zweiten in MB. Sie können dazu einen ForEach-Objekt-Skriptblock verwenden, indem Sie Folgendes eingeben:
+Sie können den Wert von „FreeSpace in MB konvertieren, indem Sie jeden Wert zweimal durch 1024 dividieren. Mit der ersten Division werden die Daten in KB umgerechnet, bei der zweiten in MB. Sie können dazu einen ForEach-Object-Skriptblock verwenden, indem Sie Folgendes eingeben:
 
 ```
 Get-WmiObject -Class Win32_LogicalDisk | ForEach-Object -Process {($_.FreeSpace)/1024.0/1024.0}
@@ -49,6 +56,7 @@ Sie könnten die Daten mithilfe bestimmter erweiterter Techniken neu anordnen, e
 
 
 
-<!--HONumber=Apr16_HO1-->
+
+<!--HONumber=Aug16_HO4-->
 
 

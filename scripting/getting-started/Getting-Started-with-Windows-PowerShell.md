@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: b0e2ad92-875f-421d-b612-f624e644aa69
 translationtype: Human Translation
-ms.sourcegitcommit: 35dafe18719cd26977966a26d2781fc99cbf4097
-ms.openlocfilehash: d0f5fb26844edd4e07265a8c7d638f30a51244f7
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: a031bad99e8aca1d7598f99e157723bf4360cf56
 
 ---
 
@@ -19,7 +19,7 @@ Windows PowerShell ist eine Windows-Befehlszeilenshell, die insbesondere für Sy
 
 Anders als die meisten Shells, in denen Text akzeptiert und zurückgegeben wird, setzt Windows PowerShell auf der .NET Framework Common Language Runtime (CLR) und auf .NET Framework auf und akzeptiert .NET Framework-Objekte bzw. gibt .NET Framework-Objekte zurück. Diese grundlegende Änderung in der Umgebung bedingt völlig neue Tools und Methoden für die Verwaltung und Konfiguration von Windows.
 
-Windows PowerShell führt das Konzept eines Cmdlets (ausgesprochen: „Command\-let“) ein. Dies ist ein einfaches Einzelfunktions\-Befehlszeilentool, das in die Shell integriert ist. Sie können jedes Cmdlet einzeln verwenden, aber deren Leistungsfähigkeit wird freigesetzt, wenn Sie diese einfachen Tools in Kombination verwenden, um komplexe Aufgaben auszuführen. Windows PowerShell umfasst mehr als einhundert grundlegende Kerncmdlets, und Sie können eigene Cmdlets schreiben und diese für andere Benutzer freigeben.
+Windows PowerShell führt das Konzept eines Cmdlets (ausgesprochen als „Command-let“) ein. Dies ist ein einfaches Einzelfunktions-Befehlszeilentool, das in die Shell integriert ist. Sie können jedes Cmdlet einzeln verwenden, aber deren Leistungsfähigkeit wird freigesetzt, wenn Sie diese einfachen Tools in Kombination verwenden, um komplexe Aufgaben auszuführen. Windows PowerShell umfasst mehr als einhundert grundlegende Kerncmdlets, und Sie können eigene Cmdlets schreiben und diese für andere Benutzer freigeben.
 
 Ähnlich wie viele Shells ermöglicht Windows PowerShell Ihnen Zugriff auf das Dateisystem auf dem Computer. Darüber hinaus bieten Windows PowerShell-*Anbieter* Ihnen die Möglichkeit, auf andere Datenspeicher, etwa die Registrierung und den Zertifikatspeicher für digitale Signaturen, so einfach zuzugreifen wie auf das Dateisystem.
 
@@ -38,6 +38,6 @@ Inhalte dieses Themas:
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO4-->
 
 

@@ -8,8 +8,8 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: d2f78148402f06992f5f58cd40e8c4f624b5e4b5
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 75e9b6525d74a8bc632b9fe2e64183717f59776f
 
 ---
 
@@ -141,7 +141,7 @@ Sie können das Windows PowerShell Web Access-Gateway auf einem Server mit Windo
 
 #### So installieren Sie Windows PowerShell Web Access mithilfe von Windows PowerShell-Cmdlets
 
-1.  Führen Sie einen der folgenden Schritte aus, um eine Windows PowerShell-Sitzung mit erhöhten Benutzerrechten zu öffnen.
+1.  Öffnen Sie eine Windows PowerShell-Sitzung mit erhöhten Benutzerrechten, indem Sie einen der folgenden Schritte durchführen.
 
     -   Klicken Sie auf dem Windows-Desktop mit der rechten Maustaste in der Taskleiste auf **Windows PowerShell** und anschließend auf **Als Administrator ausführen**.
 
@@ -163,7 +163,7 @@ Sie können das Windows PowerShell Web Access-Gateway auf einem Server mit Windo
     </tbody>
     </table>
 
-2.  Geben Sie Folgendes ein, und drücken Sie anschließend die **EINGABETASTE**, wobei *Computername* für den Remotecomputer steht, auf dem Sie Windows PowerShell Web Access ggf. installieren möchten. Mit dem <span class="code">Restart</span>-Parameter werden Zielserver bei Bedarf automatisch neu gestartet.
+2.  Geben Sie Folgendes ein, und drücken Sie dann die **EINGABETASTE**, wobei *Computername* für den Remotecomputer steht, auf dem Sie Windows PowerShell Web Access ggf. installieren möchten. Mit dem <span class="code">Restart</span>-Parameter werden Zielserver bei Bedarf automatisch neu gestartet.
 
     [Kopieren](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_374a9c21-4f6e-471e-b957-bb190a594533'); "In Zwischenablage kopieren.")
 
@@ -204,7 +204,7 @@ Sie können das Windows PowerShell Web Access-Gateway auf einem Server mit Windo
 
 Das Cmdlet **Install-PswaWebApplication** stellt eine schnelle Möglichkeit zum Konfigurieren von Windows PowerShell Web Access dar. Sie können den <span class="code">UseTestCertificate</span>-Parameter zwar dem Cmdlet <span class="code">Install-PswaWebApplication</span> hinzufügen, um zu Testzwecken ein selbstsigniertes SSL-Zertifikat zu installieren, aber dies ist kein sicheres Verfahren. Verwenden Sie für eine sichere Produktionsumgebung immer ein gültiges SSL-Zertifikat, das von einer Zertifizierungsstelle signiert wurde. Mithilfe der IIS-Manager-Konsole können Administratoren das Testzertifikat durch ein signiertes Zertifikat ihrer Wahl ersetzen.
 
-Sie können die Konfiguration der Windows PowerShell Web Access-Webanwendung durchführen, indem Sie entweder das Cmdlet <span class="code">Install-PswaWebApplication</span> ausführen oder im IIS-Manager GUI-basierte Konfigurationsschritte ausführen. Standardmäßig wird die Webanwendung **pswa** (und der dazugehörige Anwendungspool **pswa\_pool**) durch das Cmdlet im Container **Standardwebsite** installiert, wie im IIS-Manager gezeigt. Bei Bedarf können Sie das Cmdlet anweisen, den Container „Standardwebsite“ der Webanwendung zu ändern. Der IIS-Manager bietet Konfigurationsoptionen, die für Webanwendungen verfügbar sind, beispielsweise das Ändern der Portnummer oder des SSL-Zertifikats (Secure Sockets Layer).
+Sie können die Konfiguration der Windows PowerShell Web Access-Webanwendung durchführen, indem Sie entweder das Cmdlet <span class="code">Install-PswaWebApplication</span> ausführen oder im IIS-Manager GUI-basierte Konfigurationsschritte ausführen. Standardmäßig wird die Webanwendung **pswa** (und der dazugehörige Anwendungspool **pswa_pool**) durch das Cmdlet im Container **Standardwebsite** installiert, wie im IIS-Manager gezeigt. Bei Bedarf können Sie das Cmdlet anweisen, den Container „Standardwebsite“ der Webanwendung zu ändern. Der IIS-Manager bietet Konfigurationsoptionen, die für Webanwendungen verfügbar sind, beispielsweise das Ändern der Portnummer oder des SSL-Zertifikats (Secure Sockets Layer).
 
 <table>
 <colgroup>
@@ -260,7 +260,7 @@ Sie können die Konfiguration der Windows PowerShell Web Access-Webanwendung dur
 
     -   Pfad: /pswa
 
-    -   ApplicationPool: pswa\_pool
+    -   Anwendungspool: pswa_pool
 
     -   Aktivierte Protokolle: http
 
@@ -268,7 +268,7 @@ Sie können die Konfiguration der Windows PowerShell Web Access-Webanwendung dur
 
     <span class="label">Beispiel:</span> <span class="code">Install-PswaWebApplication –webApplicationName myWebApp –useTestCertificate</span>
 
-    In diesem Beispiel ergibt sich als Website für Windows PowerShell Web Access „https://&lt;*Servername*&gt;/myWebApp“.\_
+    In diesem Beispiel ergibt sich als Website für Windows PowerShell Web Access „https://&lt;*Servername*&gt;/myWebApp“.
 
     <table>
     <colgroup>
@@ -302,7 +302,7 @@ Sie können die Konfiguration der Windows PowerShell Web Access-Webanwendung dur
 
     -   Pfad: /pswa
 
-    -   ApplicationPool: pswa\_pool
+    -   Anwendungspool: pswa_pool
 
     -   Aktivierte Protokolle: http
 
@@ -355,13 +355,13 @@ Weitere Informationen zu Windows PowerShell Web Access-Autorisierungsregeln und 
 
 #### So fügen Sie eine restriktive Autorisierungsregel hinzu
 
-1.  Führen Sie einen der folgenden Schritte aus, um eine Windows PowerShell-Sitzung mit erhöhten Benutzerrechten zu öffnen.
+1.  Öffnen Sie eine Windows PowerShell-Sitzung mit erhöhten Benutzerrechten, indem Sie einen der folgenden Schritte durchführen.
 
     -   Klicken Sie auf dem Windows-Desktop mit der rechten Maustaste in der Taskleiste auf **Windows PowerShell** und anschließend auf **Als Administrator ausführen**.
 
     -   Klicken Sie auf dem Windows-**Startbildschirm** mit der rechten Maustaste auf **Windows PowerShell**, und klicken Sie anschließend auf **Als Administrator ausführen**.
 
-2.  <span class="label">Optionaler Schritt zur Einschränkung des Benutzerzugriffs mithilfe von Sitzungskonfigurationen:</span> Stellen Sie sicher, dass die Sitzungskonfigurationen, die Sie in den Regeln verwenden möchten, bereits vorhanden sind. Falls diese noch nicht erstellt wurden, verwenden Sie die Anleitung zum Erstellen von Sitzungskonfigurationen im MSDN unter [about\_Session\_Configuration\_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx).
+2.  <span class="label">Optionaler Schritt zur Einschränkung des Benutzerzugriffs mithilfe von Sitzungskonfigurationen:</span> Stellen Sie sicher, dass die Sitzungskonfigurationen, die Sie in den Regeln verwenden möchten, bereits vorhanden sind. Falls diese noch nicht erstellt wurden, verwenden Sie die Anleitung zum Erstellen von Sitzungskonfigurationen in MSDN unter [about_Session_Configuration_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx).
 
 3.  Geben Sie Folgendes ein, und drücken Sie anschließend die **EINGABETASTE**.
 
@@ -369,13 +369,13 @@ Weitere Informationen zu Windows PowerShell Web Access-Autorisierungsregeln und 
 
         Add-PswaAuthorizationRule –UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
 
-    Diese Autorisierungsregel erlaubt es einem bestimmten Benutzer, auf einen Computer im Netzwerk zuzugreifen, auf den er normalerweise zugreifen kann. Der Zugriff ist auf eine bestimmte Sitzungskonfiguration beschränkt, die die üblichen Anforderungen des Benutzers im Hinblick auf die Ausführung von Skripts und Cmdlets abdeckt. Im folgenden Beispiel wird dem Benutzer <span class="code">JSmith</span> in der Domäne <span class="code">Contoso</span> Zugriff auf die Verwaltung des Computers <span class="code">Contoso\_214</span> und die Verwendung einer Sitzungskonfiguration mit dem Namen <span class="code">NewAdminsOnly</span> gewährt.
+    Diese Autorisierungsregel erlaubt es einem bestimmten Benutzer, auf einen Computer im Netzwerk zuzugreifen, auf den er normalerweise zugreifen kann. Der Zugriff ist auf eine bestimmte Sitzungskonfiguration beschränkt, die die üblichen Anforderungen des Benutzers im Hinblick auf die Ausführung von Skripts und Cmdlets abdeckt. Im folgenden Beispiel wird dem Benutzer <span class="code">JSmith</span> in der Domäne <span class="code">Contoso</span> Zugriff auf die Verwaltung des Computers <span class="code">Contoso_214</span> und die Verwendung einer Sitzungskonfiguration mit dem Namen <span class="code">NewAdminsOnly</span> gewährt.
 
     [Kopieren](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_ebd5bc5e-ec5d-4955-a86a-63843e480e37'); "In Zwischenablage kopieren.")
 
         Add-PswaAuthorizationRule –UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
 
-4.  Stellen Sie sicher, dass die Regel erstellt wurde, indem Sie entweder das Cmdlet **Get-PswaAuthorizationRule** oder **Test-PswaAuthorizationRule -UserName &lt;Domäne\\Benutzercomputer\\Benutzer&gt; -ComputerName** &lt;Computername&gt; ausführen. Beispiel: **Test-PswaAuthorizationRule –UserName Contoso\\JSmith –ComputerName Contoso\_214**.
+4.  Stellen Sie sicher, dass die Regel erstellt wurde, indem Sie entweder das Cmdlet **Get-PswaAuthorizationRule** oder **Test-PswaAuthorizationRule -UserName &lt;Domäne\\Benutzer | Computer\\Benutzer&gt; -ComputerName** &lt;Computername&gt; ausführen. Beispiel: **Test-PswaAuthorizationRule –UserName Contoso\\JSmith –ComputerName Contoso_214**.
 
 Nachdem Sie eine Autorisierungsregel konfiguriert haben, können sich autorisierte Benutzer bei der webbasierten Konsole anmelden und mit der Nutzung von Windows PowerShell Web Access beginnen.
 
@@ -457,7 +457,7 @@ Die Anweisungen in diesem Abschnitt gelten für die Installation der Windows Pow
 
 2.  Erstellen Sie einen neuen Anwendungspool für Windows PowerShell Web Access. Erweitern Sie den Knoten des Gatewayservers im IIS-Manager-Strukturbereich, wählen Sie die **Anwendungspools** aus, und klicken Sie im Bereich** Aktionen** auf **Anwendungspool hinzufügen**.
 
-3.  Fügen Sie einen neuen Anwendungspool mit dem Namen **pswa\_pool **hinzu, oder geben Sie einen anderen Namen an. Klicken Sie auf **OK**.
+3.  Fügen Sie einen neuen Anwendungspool mit dem Namen **pswa_pool** hinzu, oder geben Sie einen anderen Namen an. Klicken Sie auf **OK**.
 
 4.  Erweitern Sie im IIS-Manager-Strukturbereich den Knoten für den Server, auf dem Windows PowerShell Web Access installiert ist, bis der Ordner **Sites** sichtbar ist. Wählen Sie den Ordner **Sites** aus.
 
@@ -495,7 +495,7 @@ Die Anweisungen in diesem Abschnitt gelten für die Installation der Windows Pow
     </tbody>
     </table>
 
-13. Führen Sie in einer mit erhöhten Benutzerrechten geöffneten (d.h. als Administrator ausgeführten) Windows PowerShell-Sitzung das folgende Skript aus, um dem Anwendungspool Zugriffsrechte für die Autorisierungsdatei zu erteilen (hierbei entspricht *Anwendungspoolname* dem Namen des in Schritt 3 erstellten Anwendungspools).
+13. Führen Sie in einer mit erhöhten Benutzerrechten (Als Administrator ausführen) geöffneten Windows PowerShell-Sitzung das folgende Skript aus (hierbei entspricht *Anwendungspoolname* dem Namen des in Schritt 3 erstellten Anwendungspools), um dem Anwendungspool Zugriffsrechte für die Autorisierungsdatei zu erteilen.
 
     [Kopieren](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_c1a80a93-8fcf-4beb-a025-5f81bfb8bdae'); "In Zwischenablage kopieren.")
 
@@ -539,7 +539,7 @@ Die Anweisungen in diesem Abschnitt gelten für die Installation der Windows Pow
 
 11. Klicken Sie auf **OK**, um das Dialogfeld **Website hinzufügen** zu schließen.
 
-12. Führen Sie in einer mit erhöhten Benutzerrechten geöffneten (d.h. als Administrator ausgeführten) Windows PowerShell-Sitzung das folgende Skript aus, um dem Anwendungspool Zugriffsrechte für die Autorisierungsdatei zu erteilen (hierbei entspricht *Anwendungspoolname* dem Namen des in Schritt 4 erstellten Anwendungspools).
+12. Führen Sie in einer mit erhöhten Benutzerrechten (Als Administrator ausführen) geöffneten Windows PowerShell-Sitzung das folgende Skript aus (hierbei entspricht *Anwendungspoolname* dem Namen des in Schritt 4 erstellten Anwendungspools), um dem Anwendungspool Zugriffsrechte für die Autorisierungsdatei zu erteilen.
 
     [Kopieren](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_35ae9944-ca44-4af7-9c96-616083b3e3db'); "In Zwischenablage kopieren.")
 
@@ -559,7 +559,7 @@ Die Anweisungen in diesem Abschnitt gelten für die Installation der Windows Pow
 
 15. Öffnen Sie die neue Windows PowerShell Web Access-Website.
 
-    Da die Stammwebsite auf den Windows PowerShell Web Access-Ordner verweist, sollte im Browser die Anmeldeseite von Windows PowerShell Web Access angezeigt werden, wenn Sie „https://&lt;*Gatewayservername*&gt;“ öffnen. Es sollte nicht erforderlich sein, der URL **/pswa** hinzuzufügen.
+    Da die Stammwebsite auf den Windows PowerShell Web Access-Ordner verweist, sollte im Browser die Anmeldeseite von Windows PowerShell Web Access angezeigt werden, wenn Sie „https://&lt; *Gatewayservername*&gt;“ öffnen. Es sollte nicht erforderlich sein, der URL **/pswa** hinzuzufügen.
 
     <table>
     <colgroup>
@@ -589,13 +589,13 @@ Weitere Informationen zu Windows PowerShell Web Access-Autorisierungsregeln und 
 
 #### So fügen Sie eine restriktive Autorisierungsregel hinzu
 
-1.  Führen Sie einen der folgenden Schritte aus, um eine Windows PowerShell-Sitzung mit erhöhten Benutzerrechten zu öffnen.
+1.  Öffnen Sie eine Windows PowerShell-Sitzung mit erhöhten Benutzerrechten, indem Sie einen der folgenden Schritte durchführen.
 
     -   Klicken Sie auf dem Windows-Desktop mit der rechten Maustaste in der Taskleiste auf **Windows PowerShell** und anschließend auf **Als Administrator ausführen**.
 
     -   Klicken Sie auf dem Windows-**Startbildschirm** mit der rechten Maustaste auf **Windows PowerShell**, und klicken Sie anschließend auf **Als Administrator ausführen**.
 
-2.  <span class="label">Optionaler Schritt zur Einschränkung des Benutzerzugriffs mithilfe von Sitzungskonfigurationen:</span> Stellen Sie sicher, dass die Sitzungskonfigurationen, die Sie in den Regeln verwenden möchten, bereits vorhanden sind. Falls diese noch nicht erstellt wurden, verwenden Sie die Anleitung zum Erstellen von Sitzungskonfigurationen im MSDN unter [about\_Session\_Configuration\_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx).
+2.  <span class="label">Optionaler Schritt zur Einschränkung des Benutzerzugriffs mithilfe von Sitzungskonfigurationen:</span> Stellen Sie sicher, dass die Sitzungskonfigurationen, die Sie in den Regeln verwenden möchten, bereits vorhanden sind. Falls diese noch nicht erstellt wurden, verwenden Sie die Anleitung zum Erstellen von Sitzungskonfigurationen in MSDN unter [about_Session_Configuration_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx).
 
 3.  Geben Sie Folgendes ein, und drücken Sie anschließend die **EINGABETASTE**.
 
@@ -603,13 +603,13 @@ Weitere Informationen zu Windows PowerShell Web Access-Autorisierungsregeln und 
 
         Add-PswaAuthorizationRule –UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
 
-    Diese Autorisierungsregel erlaubt es einem bestimmten Benutzer, auf einen Computer im Netzwerk zuzugreifen, auf den er normalerweise zugreifen kann. Der Zugriff ist auf eine bestimmte Sitzungskonfiguration beschränkt, die die üblichen Anforderungen des Benutzers im Hinblick auf die Ausführung von Skripts und Cmdlets abdeckt. Im folgenden Beispiel wird dem Benutzer <span class="code">JSmith</span> in der Domäne <span class="code">Contoso</span> Zugriff auf die Verwaltung des Computers <span class="code">Contoso\_214</span> und die Verwendung einer Sitzungskonfiguration mit dem Namen <span class="code">NewAdminsOnly</span> gewährt.
+    Diese Autorisierungsregel erlaubt es einem bestimmten Benutzer, auf einen Computer im Netzwerk zuzugreifen, auf den er normalerweise zugreifen kann. Der Zugriff ist auf eine bestimmte Sitzungskonfiguration beschränkt, die die üblichen Anforderungen des Benutzers im Hinblick auf die Ausführung von Skripts und Cmdlets abdeckt. Im folgenden Beispiel wird dem Benutzer <span class="code">JSmith</span> in der Domäne <span class="code">Contoso</span> Zugriff auf die Verwaltung des Computers <span class="code">Contoso_214</span> und die Verwendung einer Sitzungskonfiguration mit dem Namen <span class="code">NewAdminsOnly</span> gewährt.
 
     [Kopieren](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_efc3999a-2905-453f-86cd-014b41658ffc'); "In Zwischenablage kopieren.")
 
         Add-PswaAuthorizationRule –UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
 
-4.  Stellen Sie sicher, dass die Regel erstellt wurde, indem Sie entweder das Cmdlet **Get-PswaAuthorizationRule** oder **Test-PswaAuthorizationRule -UserName &lt;Domäne\\Benutzercomputer\\Benutzer&gt; -ComputerName** &lt;Computername&gt; ausführen. Beispiel: **Test-PswaAuthorizationRule –UserName Contoso\\JSmith –ComputerName Contoso\_214**.
+4.  Stellen Sie sicher, dass die Regel erstellt wurde, indem Sie entweder das Cmdlet **Get-PswaAuthorizationRule** oder **Test-PswaAuthorizationRule -UserName &lt;Domäne\\Benutzer | Computer\\Benutzer&gt; -ComputerName** &lt;Computername&gt; ausführen. Beispiel: **Test-PswaAuthorizationRule –UserName Contoso\\JSmith –ComputerName Contoso_214**.
 
 Nachdem Sie eine Autorisierungsregel konfiguriert haben, können sich autorisierte Benutzer bei der webbasierten Konsole anmelden und mit der Nutzung von Windows PowerShell Web Access beginnen.
 
@@ -713,6 +713,6 @@ Die Lizenz für Drittanbieterskripts oder Code, die mit dieser Website verlinkt 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Aug16_HO4-->
 
 

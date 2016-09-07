@@ -1,16 +1,23 @@
 ---
-title: Abrufen von WMI-Objekten (Get-WmiObject)
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: Abrufen von WMI-Objekten  Get-WmiObject
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: f0ddfc7d-6b5e-4832-82de-2283597ea70d
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: de9e8af7908ac6a72a100fd2c86b52c30c390c39
+
 ---
+
 # Abrufen von WMI-Objekten (Get-WmiObject)
 
 ## Abrufen von WMI-Objekten (Get-WmiObject)
-Windows-Verwaltungsinstrumentation (Windows Management Instrumentation, WMI) ist eine Kerntechnologie für die Windows-Systemadministration, denn sie macht eine Vielzahl von Informationen auf einheitliche Weise verfügbar. Weil WMI so viel möglich macht, ist das Windows PowerShell-Cmdlet **Get-WmiObject** eines der nützlichsten Cmdlets für die tasächliche Arbeit. Es wird zunächst erläutert, wie mit „Get-WmiObject WMI“ auf WMI-Objekte zugegriffen werden kann, und dann wird erläutert, wie WMI-Objekte zum Ausführen bestimmter Aufgaben verwendet werden können.
+Windows-Verwaltungsinstrumentation (Windows Management Instrumentation, WMI) ist eine Kerntechnologie für die Windows-Systemadministration, denn sie macht eine Vielzahl von Informationen auf einheitliche Weise verfügbar. Weil WMI so viel möglich macht, ist das Windows PowerShell-Cmdlet **Get-WmiObject** eines der nützlichsten Cmdlets für die tatsächliche Arbeit. Es wird zunächst erläutert, wie mit „Get-WmiObject WMI“ auf WMI-Objekte zugegriffen werden kann, und dann wird erläutert, wie WMI-Objekte zum Ausführen bestimmter Aufgaben verwendet werden können.
 
 ### Auflisten von WMI-Klassen
 Das erste Problem, das die meisten WMI-Benutzer haben, besteht im Herausfinden, was mit WMI erledigt werden kann. WMI-Klassen beschreiben die Ressourcen, die verwaltet werden können. Es gibt Hunderte von WMI-Klassen, von denen einige Dutzende von Eigenschaften enthalten.
@@ -66,7 +73,7 @@ __Provider                              __Win32Provider
 ```
 
 ### Anzeigen von WMI-Klassendetails
-Wenn Sie den Namen einer WMI-Klasse bereits kennen, können Sie ihn verwenden, um Informationen sofort abzurufen. Eine der WMI-Klassen, die häufig verwendet werden, um Informationen zu einem Computer abzurufen, ist z. B. **Win32\_OperatingSystem**.
+Wenn Sie den Namen einer WMI-Klasse bereits kennen, können Sie ihn verwenden, um Informationen sofort abzurufen. Eine der WMI-Klassen, die häufig verwendet werden, um Informationen zu einem Computer abzurufen, ist z.B. **Win32_OperatingSystem**.
 
 ```
 PS> Get-WmiObject -Class Win32_OperatingSystem -Namespace root/cimv2 -ComputerName .
@@ -85,7 +92,7 @@ Obwohl hier alle Parameter gezeigt sind, kann der Befehl auf kompaktere Weise fo
 Get-WmiObject Win32_OperatingSystem
 ```
 
-Die **Win32\_OperatingSystem**-Klasse hat viel mehr Eigenschaften als hier aufgeführt sind. Sie können „Get-Member“ verwenden, um alle Eigenschaften anzuzeigen. Die Eigenschaften einer WMI-Klasse sind automatisch wie andere Objekteigenschaften verfügbar:
+Die **Win32_OperatingSystem**-Klasse hat viel mehr Eigenschaften als hier aufgeführt sind. Sie können „Get-Member“ verwenden, um alle Eigenschaften anzuzeigen. Die Eigenschaften einer WMI-Klasse sind automatisch wie andere Objekteigenschaften verfügbar:
 
 ```
 PS> Get-WmiObject -Class Win32_OperatingSystem -Namespace root/cimv2 -ComputerName . | Get-Member -MemberType Property
@@ -103,7 +110,7 @@ BuildNumber                               Property   System.String BuildNumb...
 ```
 
 #### Anzeigen von Nicht-Standardeigenschaften mit „Format“-Cmdlets
-Wenn Sie Informationen anzeigen möchten, die in der **Win32\_OperatingSystem**-Klasse enthalten sind, aber nicht standardmäßig angezeigt werden, verwenden Sie die **Format**-Cmdlets. Wenn Sie beispielsweise die verfügbaren Arbeitsspeicherdaten anzeigen möchten, geben Sie Folgendes ein:
+Wenn Sie Informationen anzeigen möchten, die in der **Win32_OperatingSystem**-Klasse enthalten sind, aber nicht standardmäßig angezeigt werden, verwenden Sie die **Format**-Cmdlets. Wenn Sie beispielsweise die verfügbaren Arbeitsspeicherdaten anzeigen möchten, geben Sie Folgendes ein:
 
 ```
 PS> Get-WmiObject -Class Win32_OperatingSystem -Namespace root/cimv2 -ComputerName . | Format-Table -Property TotalVirtualMemorySize,TotalVisibleMemorySize,FreePhysicalMemory,FreeVirtualMemory,FreeSpaceInPagingFiles
@@ -115,7 +122,7 @@ TotalVirtualMemorySize TotalVisibleMem FreePhysicalMem FreeVirtualMemo FreeSpace
 ```
 
 > [!NOTE]
-> Platzhalter können für Eigenschaftsnamen in **Format-Table** verwendet werden, also kann das letzte Pipelineelement zu **Format-Table -Property TotalV&#42;,Free&#42;** reduziert werden.
+> Platzhalter können für Eigenschaftsnamen in **Format-Table** verwendet werden, also kann das letzte Pipelineelement zu **Format-Table -Property TotalV\&#42;,Free\&#42;** reduziert werden.
 
 Die Arbeitsspeicherdaten lassen sich möglicherweise besser lesen, wenn Sie sie durch die folgende Eingabe als Liste formatieren:
 
@@ -131,6 +138,7 @@ FreeSpaceInPagingFiles : 1556644
 
 
 
-<!--HONumber=Apr16_HO1-->
+
+<!--HONumber=Aug16_HO4-->
 
 

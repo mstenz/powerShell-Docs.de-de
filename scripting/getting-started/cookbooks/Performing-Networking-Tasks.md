@@ -1,14 +1,21 @@
 ---
-title: Ausführen von Netzwerkaufgaben
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "Ausführen von Netzwerkaufgaben"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: a43cc55f-70c1-45c8-9467-eaad0d57e3b5
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 39266e1e4ae2101de26277c20a98596f62cf223d
+
 ---
+
 # Ausführen von Netzwerkaufgaben
-Weil TCP/IP das am häufigsten verwendete Netzwerkprotokoll ist, geht es bei den meisten Aufgaben zur grundlegenden Netzwerkprotokollverwaltung um TCP\IP. In diesem Abschnitt werden Windows PowerShell und WMI verwendet, um diese Aufgaben auszuführen.
+Weil TCP/IP das am häufigsten verwendete Netzwerkprotokoll ist, geht es bei den meisten Aufgaben zur grundlegenden Netzwerkprotokollverwaltung um TCP/IP. In diesem Abschnitt werden Windows PowerShell und WMI verwendet, um diese Aufgaben auszuführen.
 
 ### Auflisten der IP-Adressen für einen Computer
 Um alle IP-Adressen abzurufen, die auf dem lokalen Computer verwendet werden, verwenden Sie den folgenden Befehl:
@@ -21,19 +28,11 @@ Die Ausgabe dieses Befehls unterscheidet sich von den meisten Eigenschaftenliste
 
 <pre>IPAddress
 ---------
-{192.168.1.80}
-{192.168.148.1}
-{192.168.171.1}
-{0.0.0.0}</pre>
+{192.168.1.80} {192.168.148.1} {192.168.171.1} {0.0.0.0}</pre>
 
 Um zu verstehen, warum die geschweiften Klammern angezeigt werden, verwenden Sie das Cmdlet „Get-Member“, um sich die **IPAddress**-Eigenschaft anzusehen:
 
-<pre>PS> Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=TRUE -ComputerName . | Get-Member -Name IPAddress
-TypeName: System.Management.ManagementObject#root\cimv2\Win32_NetworkAdapter
-Konfiguration
-Name      MemberType Definition
-----      ---------- ----------
-IPAddress Property   System.String[] IPAddress {get;}</pre>
+<pre>PS> Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=TRUE -ComputerName . | Get-Member -Name IPAddress TypeName: System.Management.ManagementObject#root\cimv2\Win32_NetworkAdapter Configuration Name      MemberType Definition ----      ---------- ---------- IPAddress Property   System.String[] IPAddress {get;}</pre>
 
 Die „IPAdress“-Eigenschaft für jede Netzwerkkarte ist tatsächlich ein Array. Die geschweiften Klammern in der Definition kennzeichnen, dass **IPAdress** ein **System.String**-Wert ist, allerdings ein Array von **System.String**-Werten.
 
@@ -55,7 +54,7 @@ Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=TRUE -C
 Dieser Befehl gibt detaillierte Informationen zu DHCP, DNS, Routing und einigen unwesentlicheren IP-Konfigurationseigenschaften zurück.
 
 ### Pingen von Computern
-Sie können einen einfachen Ping zu einem Computer ausführen, indem Sie **Win32\_PingStatus** verwenden. Der folgende Befehl führt den Ping aus, gibt jedoch eine ausführliche Ausgabe zurück:
+Sie können einen einfachen Ping zu einem Computer ausführen, indem Sie **Win32_PingStatus** verwenden. Der folgende Befehl führt den Ping aus, gibt jedoch eine ausführliche Ausgabe zurück:
 
 ```
 Get-WmiObject -Class Win32_PingStatus -Filter "Address='127.0.0.1'" -ComputerName .
@@ -91,20 +90,20 @@ Diese Vorgehensweise zum Generieren eines Adressbereichs kann auch an jeder ande
 `$ips = 1..254 | ForEach-Object -Process {"192.168.1." + $_}`
 
 ### Abrufen von Netzwerkkarteneigenschaften
-Wie bereits in diesem Handbuch erläutert wurde, können Sie allgemeine Konfigurationseigenschaften über **Win32\_NetworkAdapterConfiguration** abrufen. Netzwerkkarteninformationen wie MAC-Adressen und Kartentypen sind zwar keine TCP/IP-Informationen, können aber trotzdem nützlich sein, um zu verstehen, was mit einem Computer los ist. Um eine Zusammenfassung dieser Informationen zu erhalten, verwenden Sie den folgenden Befehl:
+Wie bereits in diesem Handbuch erläutert wurde, können Sie allgemeine Konfigurationseigenschaften über **Win32_NetworkAdapterConfiguration** abrufen. Netzwerkkarteninformationen wie MAC-Adressen und Kartentypen sind zwar keine TCP/IP-Informationen, können aber trotzdem nützlich sein, um zu verstehen, was mit einem Computer los ist. Um eine Zusammenfassung dieser Informationen zu erhalten, verwenden Sie den folgenden Befehl:
 
 ```
 Get-WmiObject -Class Win32_NetworkAdapter -ComputerName .
 ```
 
 ### Zuweisen der DNS-Domäne für eine Netzwerkkarte
-Wenn Sie die DNS-Domäne für automatische Namensauflösung zuweisen möchten, verwenden Sie die **Win32\_NetworkAdapterConfiguration SetDNSDomain**-Methode. Weil Sie die DNS-Domäne für jede Netzwerkkartenkonfiguration unabhängig zuweisen, müssen Sie eine **ForEach-Object**-Anweisung verwenden, um die Domäne jedem Adapter zuzuweisen:
+Wenn Sie die DNS-Domäne für automatische Namensauflösung zuweisen möchten, verwenden Sie die **Win32_NetworkAdapterConfiguration SetDNSDomain**-Methode. Weil Sie die DNS-Domäne für jede Netzwerkkartenkonfiguration unabhängig zuweisen, müssen Sie eine **ForEach-Object**-Anweisung verwenden, um die Domäne jedem Adapter zuzuweisen:
 
 ```
 Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=true -ComputerName . | ForEach-Object -Process { $_. SetDNSDomain("fabrikam.com") }
 ```
 
-Die Filteranweisung „IPEnabled=True" ist erforderlich, da selbst in einem Netzwerk, in dem nur TCP/IP verwendet wird, verschiedene Netzwerkkartenkonfigurationen auf einem Computer keine wirklichen TCP/IP-Karten sind. Sie sind allgemeine Softwareelemente, die RAS, PPTP, QoS und andere Dienste für alle Karten unterstützen und daher keine eigenen Adressen haben.
+Die Filteranweisung „IPEnabled=True“ ist erforderlich, da selbst in einem Netzwerk, in dem nur TCP/IP verwendet wird, verschiedene Netzwerkkartenkonfigurationen auf einem Computer keine wirklichen TCP/IP-Karten sind. Sie sind allgemeine Softwareelemente, die RAS, PPTP, QoS und andere Dienste für alle Karten unterstützen und daher keine eigenen Adressen haben.
 
 Sie können den Befehl filtern, indem Sie das Cmdlet **Where-Object** anstelle des **Get-WmiObject**-Filters verwenden.
 
@@ -142,10 +141,10 @@ Wenn Sie DHCP auf allen Netzwerkkarten aktivieren möchten, verwenden Sie den fo
 Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=true -ComputerName . | ForEach-Object -Process {$_.EnableDHCP()}
 ```
 
-Sie können die **Filter**-Anweisung „IPEnabled\=true and DHCPEnabled\=false“ verwenden, um ein Aktivieren von DHCP dort zu vermeiden, wo es bereits aktiviert ist, wobei keine Fehler verursacht werden, wenn dieser Schritt nicht erfolgt.
+Sie können die **Filter**-Anweisung „IPEnabled=true and DHCPEnabled=false“ verwenden, um ein Aktivieren von DHCP dort zu vermeiden, wo es bereits aktiviert ist, wobei keine Fehler verursacht werden, wenn dieser Schritt nicht erfolgt.
 
 #### Freigeben und Erneuern von DHCP-Leases auf bestimmten Netzwerkkarten
-Die **Win32\_NetworkAdapterConfiguration**-Klasse hat die Methoden **ReleaseDHCPLease** und **RenewDHCPLease**. Beide werden auf die gleiche Weise verwendet. Üblicherweise verwenden Sie diese Methoden, wenn Sie nur Adressen für eine Netzwerkkarte in einem bestimmten Subnetz freigeben oder erneuern müssen. Die einfachste Möglichkeit zum Filtern von Netzwerkkarten in einem Subnetz besteht darin, nur die Netzwerkkartenkonfigurationen auswählen, die das Gateway für das Subnetz verwenden. Beispielsweise gibt der folgende Befehl alle DHCP-Leases auf Netzwerkkarten des lokalen Computers frei, die DHCP-Leases von 192.168.1.254 erhalten:
+Die **Win32_NetworkAdapterConfiguration**-Klasse hat die Methoden **ReleaseDHCPLease** und **RenewDHCPLease**. Beide werden auf die gleiche Weise verwendet. Üblicherweise verwenden Sie diese Methoden, wenn Sie nur Adressen für eine Netzwerkkarte in einem bestimmten Subnetz freigeben oder erneuern müssen. Die einfachste Möglichkeit zum Filtern von Netzwerkkarten in einem Subnetz besteht darin, nur die Netzwerkkartenkonfigurationen auswählen, die das Gateway für das Subnetz verwenden. Beispielsweise gibt der folgende Befehl alle DHCP-Leases auf Netzwerkkarten des lokalen Computers frei, die DHCP-Leases von 192.168.1.254 erhalten:
 
 ```
 Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=true and DHCPEnabled=true" -ComputerName . | Where-Object -FilterScript {$_.DHCPServer -contains "192.168.1.254"} | ForEach-Object -Process {$_.ReleaseDHCPLease()}
@@ -161,9 +160,9 @@ Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=true a
 > Wenn Sie diese Methoden auf einem Remotecomputer verwenden, sollten Sie daran denken, dass der Zugriff auf das Remotesystem verloren gehen kann, wenn die Verbindung mit dem System über die Netzwerkkarte mit der freigegebenen oder erneuerten Lease besteht.
 
 #### Freigeben und Erneuern von DHCP-Leases auf allen Netzwerkkarten
-Sie können globale DHCP-Adressfreigaben oder -erneuerungen auf allen Netzwerkkarten ausführen, indem Sie die **Win32\_NetworkAdapterConfiguration**-Methoden **ReleaseDHCPLeaseAll** und **RenewDHCPLeaseAll** verwenden. Allerdings muss der Befehl auf die WMI-Klasse statt auf eine bestimmte Netzwerkkarte angewendet werden, weil globales Freigeben und Erneuern von Leases für die Klasse, nicht für eine bestimmte Netzwerkkarte ausgeführt wird.
+Sie können globale DHCP-Adressfreigaben oder -erneuerungen auf allen Netzwerkkarten ausführen, indem Sie die **Win32_NetworkAdapterConfiguration**-Methoden **ReleaseDHCPLeaseAll** und **RenewDHCPLeaseAll** verwenden. Allerdings muss der Befehl auf die WMI-Klasse statt auf eine bestimmte Netzwerkkarte angewendet werden, weil globales Freigeben und Erneuern von Leases für die Klasse, nicht für eine bestimmte Netzwerkkarte ausgeführt wird.
 
-Sie können einen Verweis auf eine WMI-Klasse anstelle von Klasseninstanzen abrufen, indem Sie alle WMI-Klassen auflisten und dann nur die gewünschte Klasse nach Name auswählen. Beispielsweise gibt der folgende Befehl die „Win32\_NetworkAdapterConfiguration“-Klasse zurück:
+Sie können einen Verweis auf eine WMI-Klasse anstelle von Klasseninstanzen abrufen, indem Sie alle WMI-Klassen auflisten und dann nur die gewünschte Klasse nach Name auswählen. Beispielsweise gibt der folgende Befehl die „Win32_NetworkAdapterConfiguration“-Klasse zurück:
 
 ```
 Get-WmiObject -List | Where-Object -FilterScript {$_.Name -eq "Win32_NetworkAdapterConfiguration"}
@@ -182,7 +181,7 @@ Sie können das gleiche Befehlsformat verwenden, um die **RenewDHCPLeaseAll**-Me
 ```
 
 ### Erstellen einer Netzwerkfreigabe
-Um eine Netzwerkfreigabe zu erstellen, verwenden Sie die **Win32\_Share erstellen**-Methode:
+Um eine Netzwerkfreigabe zu erstellen, verwenden Sie die **Win32_Share Create**-Methode:
 
 ```
 (Get-WmiObject -List -ComputerName . | Where-Object -FilterScript {$_.Name -eq "Win32_Share"}).Create("C:\temp","TempShare",0,25,"test share of the temp folder")
@@ -195,7 +194,7 @@ net share tempshare=c:\temp /users:25 /remark:"test share of the temp folder"
 ```
 
 ### Entfernen einer Netzwerkfreigabe
-Sie können eine Netzwerkfreigabe mit **Win32\_Share** entfernen, aber der Vorgang unterscheidet sich etwas vom Erstellen einer Freigabe, weil Sie die bestimmte zu entfernende Freigabe anstelle der **Win32\_Share**-Klasse abrufen müssen. Mit der folgenden Anweisung wird die Freigabe „TempShare“ gelöscht:
+Sie können eine Netzwerkfreigabe mit **Win32_Share** entfernen, aber der Vorgang unterscheidet sich etwas vom Erstellen einer Freigabe, weil Sie die bestimmte zu entfernende Freigabe anstelle der **Win32_Share**-Klasse abrufen müssen. Mit der folgenden Anweisung wird die Freigabe „TempShare“ gelöscht:
 
 ```
 (Get-WmiObject -Class Win32_Share -ComputerName . -Filter "Name='TempShare'").Delete()
@@ -209,7 +208,7 @@ tempshare was deleted successfully.
 ```
 
 ### Verbinden eines für Windows verfügbaren Netzlaufwerks
-Das Cmdlet **New-PSDrive** erstellt ein Windows PowerShell-Laufwerk, aber Laufwerke, die auf diese Weise erstellt wurden, sind nur für Windows PowerShell verfügbar. Um ein neues Netzlaufwerk zu erstellen, können Sie das **WScript.Network**-COM-Objekt verwenden. Im folgenden Befehl wird die Freigabe „\\FPS01\users“ dem lokalen Laufwerk B: zugeordnet:
+Das Cmdlet **New-PSDrive** erstellt ein Windows PowerShell-Laufwerk, aber Laufwerke, die auf diese Weise erstellt wurden, sind nur für Windows PowerShell verfügbar. Um ein neues Netzlaufwerk zu erstellen, können Sie das **WScript.Network**-COM-Objekt verwenden. Im folgenden Befehl wird die Freigabe „\\\\FPS01\\users“ dem lokalen Laufwerk B: zugeordnet:
 
 ```
 (New-Object -ComObject WScript.Network).MapNetworkDrive("B:", "\\FPS01\users")
@@ -225,6 +224,7 @@ Laufwerke, die entweder mit **WScript.Network** oder „net use“ zugeordnet wu
 
 
 
-<!--HONumber=Apr16_HO1-->
+
+<!--HONumber=Aug16_HO4-->
 
 

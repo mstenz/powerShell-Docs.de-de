@@ -1,12 +1,19 @@
 ---
-title: Verwalten von Prozessen mit „Process“-Cmdlets
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "Verwalten von Prozessen mit „Process“-Cmdlets"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 5038f612-d149-4698-8bbb-999986959e31
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 5a635485387bb367f4e43982085f9d36765a95e5
+
 ---
+
 # Verwalten von Prozessen mit „Process“-Cmdlets
 Sie können die „Process“-Cmdlets in Windows PowerShell verwenden, um lokale und Remoteprozesse in Windows PowerShell zu verwalten.
 
@@ -77,7 +84,7 @@ PS> Get-Process -Name PowerShell -ComputerName localhost, Server01, Server01 | F
 5816 powershell  localhost
 ```
 
-In diesem komplexeren Befehl wird der standardmäßigen „Get-Process“-Anzeige die „MachineName“-Eigenschaft hinzugefügt. Das Graviszeichen (`) (ASCII 96) ist das Windows PowerShell-Fortsetzungszeichen.
+In diesem komplexeren Befehl wird der standardmäßigen „Get-Process“-Anzeige die „MachineName“-Eigenschaft hinzugefügt. Das Graviszeichen (\`) (ASCII 96) ist das Windows PowerShell-Fortsetzungszeichen.
 
 ```
 get-process powershell -computername localhost, Server01, Server02 | format-table -property Handles, `
@@ -174,6 +181,7 @@ Zu Windows PowerShell gehören auch Cmdlets zum Starten (oder Neustarten) eines 
 
 
 
-<!--HONumber=Apr16_HO2-->
+
+<!--HONumber=Aug16_HO4-->
 
 

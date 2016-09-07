@@ -9,13 +9,13 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 8093268b-27f8-4a49-8871-142c5cc33f01
 translationtype: Human Translation
-ms.sourcegitcommit: c6b87ed59a16ccb147fdd3d98e48cfa1c0aa748d
-ms.openlocfilehash: d1f3c08451b385c56d0c4e084dce8fa5795c278e
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 1779b9de13a30a43236e24793e5196261a7db77f
 
 ---
 
 # Ändern des Computerstatus
-Verwenden Sie zum Zurücksetzen eines Computers in Windows PowerShell entweder ein standardmäßiges Befehlszeilentool oder ein WMI-Klasse. Sie verwenden Windows PowerShell zwar nur zum Ausführen des Tools, dennoch erfahren Sie einige wichtige Details über die Arbeit mit externen Tools in Windows PowerShell, indem Sie lernen, wie Sie den Energiezustand eines Computers in Windows PowerShell ändern.
+Verwenden Sie zum Zurücksetzen eines Computers in Windows PowerShell entweder ein Standardbefehlszeilentool oder ein WMI-Klasse. Sie verwenden Windows PowerShell zwar nur zum Ausführen des Tools, dennoch erfahren Sie einige wichtige Details über die Arbeit mit externen Tools in Windows PowerShell, indem Sie lernen, wie Sie den Energiezustand eines Computers in Windows PowerShell ändern.
 
 ### Sperren eines Computers
 Die einzige Möglichkeit, einen Computer unmittelbar mit den standardmäßig verfügbaren Tools zu sperren, besteht im Aufrufen der Funktion **LockWorkstation()** in **user32.dll**:
@@ -31,7 +31,7 @@ Wenn Sie eine Arbeitsstation sperren, während die schnelle Benutzerumschaltung 
 Um bestimmte Sitzungen auf einem Terminalserver herunterzufahren, verwenden Sie das Befehlszeilentool **tsshutdn.exe**.
 
 ### Abmelden der aktuellen Sitzung
-Es sind mehrere verschiedene Verfahren verfügbar, um eine Sitzung auf dem lokalen System abzumelden. Die einfachste Möglichkeit besteht in der Verwendung des Befehlszeilentools **logoff.exe** für Remotedesktop-/Terminaldienste. (Weitere Informationen erhalten Sie, indem Sie an der Windows PowerShell-Eingabeaufforderung **logoff /?** eingeben). Zum Abmelden der aktuellen aktiven Sitzung geben Sie **logoff** ohne Argumente ein.
+Es sind mehrere verschiedene Verfahren verfügbar, um eine Sitzung auf dem lokalen System abzumelden. Die einfachste Möglichkeit besteht in der Verwendung des Remotedesktop-/Terminaldienste-Befehlszeilentools **logoff.exe**. (Weitere Informationen erhalten Sie, indem Sie an der Windows PowerShell-Eingabeaufforderung **logoff /?** eingeben). Zum Abmelden der aktuellen aktiven Sitzung geben Sie **logoff** ohne Argumente ein.
 
 Sie können auch das Tool **shutdown.exe** mit der zugehörigen Abmeldeoption verwenden:
 
@@ -39,18 +39,18 @@ Sie können auch das Tool **shutdown.exe** mit der zugehörigen Abmeldeoption ve
 shutdown.exe -l
 ```
 
-Eine dritte Möglichkeit ist die Verwendung von WMI. Die „Win32\_OperatingSystem“-Klasse bietet eine „Win32Shutdown“-Methode. Durch Aufrufen der Methode mit dem 0-Flag wird die Abmeldung initiiert:
+Eine dritte Möglichkeit ist die Verwendung von WMI. Die Klasse „Win32_OperatingSystem“ besitzt eine Win32Shutdown-Methode. Durch Aufrufen der Methode mit dem 0-Flag wird die Abmeldung initiiert:
 
 ```
 (Get-WmiObject -Class Win32_OperatingSystem -ComputerName .).Win32Shutdown(0)
 ```
 
-Weitere Informationen und andere Funktionen der „Win32Shutdown“-Methode finden Sie unter „Win32Shutdown-Methode der Win32\_OperatingSystem-Klasse“ in MSDN.
+Weitere Informationen und andere Funktionen der Win32Shutdown-Methode finden Sie unter „Win32Shutdown-Methode der Win32_OperatingSystem-Klasse“ in MSDN.
 
 ### Herunterfahren oder Neustarten eines Computers
 Das Herunterfahren und Neustarten von Computern wird im Allgemeinen vom gleichen Tasktyp ausgeführt. Mit Tools, die einen Computer herunterfahren, kann normalerweise auch ein Neustart ausgeführt werden, und umgekehrt. Es gibt zwei einfache Optionen für den Neustart eines Computers aus Windows PowerShell. Verwenden Sie entweder „Tsshutdn.exe“ oder „Shutdown.exe“ mit den entsprechenden Argumenten. Ausführliche Informationen zur Verwendung erhalten Sie mit **tsshutdn.exe /?** oder **shutdown.exe /?**.
 
-Sie können auch **Win32\_OperatingSystem** direkt in Windows PowerShell zum Herunterfahren und Neustarten verwenden.
+Sie können auch **Win32_OperatingSystem** direkt in Windows PowerShell zum Herunterfahren und Neustarten verwenden.
 
 Verwenden Sie zum Herunterfahren des Computers die Win32Shutdown-Methode mit dem Flag **1**.
 
@@ -67,6 +67,6 @@ Verwenden Sie zum Neustarten des Betriebssystems die Win32Shutdown-Methode mit d
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO4-->
 
 

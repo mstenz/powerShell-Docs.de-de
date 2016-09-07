@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
 translationtype: Human Translation
-ms.sourcegitcommit: ea25f98e60050a52fc1d72c7e529985855eeed36
-ms.openlocfilehash: ab41246eda58eb384500daa1f99aa9a8f9e019e1
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 5c6f660f9de9039355f3a991da440b75e97275eb
 
 ---
 
@@ -58,12 +58,12 @@ ms.openlocfilehash: ab41246eda58eb384500daa1f99aa9a8f9e019e1
 |Windows PowerShell-Anbieter|Auf Microsoft .NET Framework basierendes Programm, das die Daten in einem speziellen Datenspeicher in Windows PowerShell verfügbar macht, damit Sie diese anzeigen und verwalten können.|
 |Windows PowerShell-Skript|Skript, das in der Windows PowerShell-Sprache geschrieben ist.|
 |Windows PowerShell-Skriptdatei|Datei mit der Erweiterung „.ps1“, die ein Skript enthält, das in der Windows PowerShell-Sprache geschrieben ist.|
-|Windows PowerShell-Snap-In|Ressource, die einen Satz von Cmdlets, Anbietern und Microsoft .NET Framework-Typen definiert, die der Windows PowerShell-Umgebung hinzugefügt werden können.|
+|Windows PowerShell-Snap-In|Ressource, die einen Satz von Cmdlets, Anbietern und Microsoft .NET Framework-Typen definiert, die der Windows PowerShell-Umgebung hinzugefügt werden können.|
 |Windows PowerShell-Workflow|Bei einem Workflow handelt es sich um eine Sequenz von programmierten, zusammenhängenden Schritten, mit denen zeitaufwendige Aufgaben ausgeführt werden oder für die mehrere Schritte auf mehreren Geräten oder verwalteten Knoten koordiniert werden müssen. Der Windows PowerShell-Workflow ermöglicht es IT-Spezialisten und Entwicklern, Sequenzen von Verwaltungsaktivitäten für mehrere Geräte oder einzelne Aufgaben innerhalb eines Workflows als Workflows zu erstellen. Mithilfe des Windows PowerShell-Workflows können Sie Windows PowerShell-Skripts und XAML-Dateien als Workflows anpassen und erstellen.|
 
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO4-->
 
 

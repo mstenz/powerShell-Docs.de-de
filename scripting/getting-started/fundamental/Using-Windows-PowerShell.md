@@ -1,14 +1,21 @@
 ---
 title: Verwenden von Windows PowerShell
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: cf06f1e5-3945-47e4-98be-412f5a1f43fe
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 994e6c89f6fc20b95691f010deb3c48062cef310
+
 ---
+
 # Verwenden von Windows PowerShell
-Windows PowerShell® ist eine taskbasierte Befehlszeilenshell und Skriptsprache, die speziell für die Systemverwaltung entwickelt wurde. Windows PowerShell basiert auf .NET Framework und unterstützt IT-Experten und erfahrene Benutzer beim Steuern und Automatisieren der Verwaltung von Windows-Betriebssystemen sowie von Anwendungen, die unter Windows ausgeführt werden.
+Windows PowerShell® ist eine taskbasierte Befehlszeilenshell und Skriptsprache, die speziell für die Systemverwaltung entwickelt wurde. Windows PowerShell basiert auf .NET Framework und unterstützt IT-Experten und erfahrene Benutzer beim Steuern und Automatisieren der Verwaltung von Windows-Betriebssystemen sowie von Anwendungen, die unter Windows ausgeführt werden.
 
 Mithilfe der Ressourcen in diesem Abschnitt können Sie sich mit Windows PowerShell, den in Windows PowerShell enthaltenen Features, dem grafischen Windows PowerShell-Editor und der Windows PowerShell Integrated Scripting Environment (ISE) vertraut machen.
 
@@ -32,7 +39,7 @@ Windows PowerShell ist Teil einer Familie verwandter Technologien zur Erstellung
 
 -   [Windows PowerShell-Workflow](http://technet.microsoft.com/library/jj134242.aspx). Der erstmals in Windows PowerShell 3.0 eingeführte Windows PowerShell-Workflow bietet IT-Spezialisten und Entwicklern die Vorteile von [Windows Workflow Foundation](http://msdn.microsoft.com/library/ee342461.aspx) zusammen mit den Automatisierungsfunktionen und dem Komfort von Windows PowerShell.
 
--   [Windows PowerShell Web Access](http://technet.microsoft.com/library/hh831611.aspx). Windows PowerShell Web Access (eingeführt in Windows Server 2012) fungiert als Windows PowerShell-Gateway, indem eine webbasierte Windows PowerShell-Konsole bereitgestellt wird, die auf einen Remotecomputer ausgerichtet ist. Dadurch können IT-Spezialisten Windows PowerShell-Befehle und -Skripts über eine Windows PowerShell-Konsole in einem Webbrowser ausführen, ohne dass Windows PowerShell, Remoteverwaltungssoftware oder Browser-Plug-ins auf dem Clientgerät installiert sein müssen.
+-   [Windows PowerShell Web Access](http://technet.microsoft.com/library/hh831611.aspx). Windows PowerShell Web Access (eingeführt in Windows Server 2012) fungiert als Windows PowerShell-Gateway, indem eine webbasierte Windows PowerShell-Konsole bereitgestellt wird, die auf einen Remotecomputer ausgerichtet ist. Dadurch können IT-Spezialisten Windows PowerShell-Befehle und -Skripts über eine Windows PowerShell-Konsole in einem Webbrowser ausführen, ohne dass Windows PowerShell, Remoteverwaltungssoftware oder Browser-Plugins auf dem Clientgerät installiert sein müssen.
 
 -   [Windows PowerShell-Webdienste (Verwaltung der OData-IIS-Erweiterung)](http://msdn.microsoft.com/library/windows/desktop/hh880865.aspx). Die Windows PowerShell-Webdienste sind ein Framework für das einfache Verfügbarmachen von Windows PowerShell-Cmdlets über einen auf OData basierenden Webdienst, der auf einem Webserver (IIS) ausgeführt wird.
 
@@ -62,13 +69,15 @@ In den folgenden Themen wird beschrieben, wie Sie die aktuelle Hilfe für Window
 
 -   Das Cmdlet [Update-Help](http://technet.microsoft.com/library/hh849720.aspx). Ein Windows PowerShell-Cmdlet, das die neuesten Versionen der Hilfethemen für Windows PowerShell-Module auf Ihrem Computer herunterlädt und installiert.
 
-    Weitere Informationen über das aktualisierbare Hilfesystem in Windows PowerShell, einschließlich Informationen zum Installieren der aktualisierbaren Hilfe auf vom Netzwerk isolierten Computern, finden Sie unter [about_Updatable_Help](http://technet.microsoft.com/library/hh847735.aspx), [Save-Help](http://technet.microsoft.com/library/hh849724.aspx) und [Unterstützen aktualisierbarer Hilfe](http://msdn.microsoft.com/library/hh852754.aspx)..
+    Weitere Informationen über das aktualisierbare Hilfesystem in Windows PowerShell, einschließlich Informationen zum Installieren der aktualisierbaren Hilfe auf vom Netzwerk isolierten Computern, finden Sie unter [about_Updatable_Help](http://technet.microsoft.com/library/hh847735.aspx), [Save-Help](http://technet.microsoft.com/library/hh849724.aspx) und [Unterstützen aktualisierbarer Hilfe](http://msdn.microsoft.com/library/hh852754.aspx).
 
 -   Cmdlets [Get-Help](http://technet.microsoft.com/library/hh849696(v=wps.630).aspx). Ein Windows PowerShell-Cmdlet, das Sie verwenden können, um mehr über die Cmdlets und Anbieter zu erfahren, die in Ihrem System installiert sind.
 
--   Sie können Benachrichtigungen über alle Änderungen an veröffentlichten Hilfedateien erhalten, indem Sie den folgenden RSS-Feed abonnieren: [http://sxp.microsoft.com/feeds/msdntn/PowerShellHelpVersions](http://sxp.microsoft.com/feeds/msdntn/PowerShellHelpVersions)..
+-   Sie können Benachrichtigungen über alle Änderungen an veröffentlichten Hilfedateien erhalten, indem Sie den folgenden RSS-Feed abonnieren: [http://sxp.microsoft.com/feeds/msdntn/PowerShellHelpVersions](http://sxp.microsoft.com/feeds/msdntn/PowerShellHelpVersions).
 
 
-<!--HONumber=May16_HO2-->
+
+
+<!--HONumber=Aug16_HO4-->
 
 

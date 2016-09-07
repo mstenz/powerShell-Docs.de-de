@@ -1,12 +1,19 @@
 ---
 title: Verwalten von Windows PowerShell-Laufwerken
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: bd809e38-8de9-437a-a250-f30a667d11b4
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: d266a109b1acd97c03594f988ce2fab3c697b80c
+
 ---
+
 # Verwalten von Windows PowerShell-Laufwerken
 Ein *Windows PowerShell-Laufwerk* ist ein Speicherort für Daten, auf den Sie wie auf ein Dateisystemlaufwerk in Windows PowerShell zugreifen können. Die Windows PowerShell-Anbieter erstellen einige Laufwerke für Sie, z. B. die Dateisystemlaufwerke (einschließlich C: und D:), die Registrierungslaufwerke (HKCU: und HKLM:) und das Zertifikatlaufwerk (Cert:). Sie können auch eigene Windows PowerShell-Laufwerke erstellen. Diese Laufwerke sind sehr nützlich, aber nur in Windows PowerShell verfügbar. Sie können darauf nicht mit anderen Windows-Tools, z. B. Datei-Explorer oder „Cmd.exe“, zugreifen.
 
@@ -56,20 +63,11 @@ D          FileSystem    D:\
 
 Um die Windows PowerShell-Laufwerke anzuzeigen, die Registrierungsstrukturen darstellen, verwenden Sie den Parameter **PSProvider**, damit nur die Windows PowerShell-Laufwerke angezeigt werden, die vom Windows PowerShell-Anbieter „Registry“ unterstützt werden:
 
-<pre>PS> Get-PSDrive -PSProvider Registry
-Name       Provider      Root                                   CurrentLocation
-----       --------      ----                                   ---------------
-HKCU       Registry      HKEY_CURRENT_USER
-HKLM       Registry      HKEY_LOCAL_MACHINE</pre>
+<pre>PS> Get-PSDrive -PSProvider Registry Name       Provider      Root                                   CurrentLocation ----       --------      ----                                   --------------- HKCU       Registry      HKEY_CURRENT_USER HKLM       Registry      HKEY_LOCAL_MACHINE</pre>
 
 Sie können auch die standardmäßigen „Location“-Cmdlets mit den Windows PowerShell-Laufwerken verwenden:
 
-<pre>PS> Set-Location HKLM:\SOFTWARE
-PS> Push-Location .\Microsoft
-PS> Get-Location
-Path
-----
-HKLM:\SOFTWARE\Microsoft</pre>
+<pre>PS> Set-Location HKLM:\SOFTWARE PS> Push-Location .\Microsoft PS> Get-Location Path ---- HKLM:\SOFTWARE\Microsoft</pre>
 
 ### Hinzufügen neuer Windows PowerShell-Laufwerke (New-PSDrive)
 Mit dem Befehl **New-PSDrive** können Sie eigene Windows PowerShell-Laufwerke hinzufügen. Um die Syntax des Befehls **New-PSDrive** abzurufen, geben Sie den Befehl **Get-Command** mit dem Parameter **Syntax** ein:
@@ -88,9 +86,9 @@ Um ein neues Windows PowerShell-Laufwerk zu erstellen, müssen Sie drei Paramete
 
 -   PSProvider (verwenden Sie „FileSystem“ für Dateisystemspeicherorte und „Registry“ für Registrierungsspeicherorte)
 
--   Das Stammelement, d. h. den Pfad zum Stamm des neuen Laufwerks
+-   Das Stammelement, d.h. den Pfad zum Stamm des neuen Laufwerks
 
-Sie können beispielsweise ein Laufwerk namens „Office“ erstellen, das dem Ordner zugeordnet ist, der die Microsoft Office-Anwendungen auf Ihrem Computer enthält, z. B. **C:\Program Files\Microsoft Office\OFFICE11**. Geben Sie zum Erstellen des Laufwerks den folgenden Befehl ein:
+Sie können beispielsweise ein Laufwerk namens „Office“ erstellen, das dem Ordner zugeordnet ist, der die Microsoft Office-Anwendungen auf Ihrem Computer enthält, z.B. **C:\\Programme\\Microsoft Office\\OFFICE11**. Geben Sie zum Erstellen des Laufwerks den folgenden Befehl ein:
 
 ```
 PS> New-PSDrive -Name Office -PSProvider FileSystem -Root "C:\Program Files\Micr
@@ -106,13 +104,9 @@ Office     FileSystem    C:\Program Files\Microsoft Offic...
 
 Sie verweisen auf das neue Windows PowerShell-Laufwerk wie auf alle Windows PowerShell-Laufwerke – über den Namen gefolgt von einem Doppelpunkt (**:**).
 
-Ein Windows PowerShell-Laufwerk kann viele Aufgaben einfacher machen. Beispielsweise haben einige der wichtigsten Schlüssel in der Windows-Registrierung äußerst lange Pfade, die den Zugriff darauf mühsam machen und schwer zu merken sind. Wichtige Konfigurationsinformationen befinden sich unter **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion**. Zum Anzeigen und Ändern von Elementen im Registrierungsschlüssel „CurrentVersion“ können Sie ein Windows PowerShell-Laufwerk mit dem Stamm in diesem Schlüssel erstellen, indem Sie Folgendes eingeben:
+Ein Windows PowerShell-Laufwerk kann viele Aufgaben einfacher machen. Beispielsweise haben einige der wichtigsten Schlüssel in der Windows-Registrierung äußerst lange Pfade, die den Zugriff darauf mühsam machen und schwer zu merken sind. Wichtige Konfigurationsinformationen befinden sich unter **HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion**. Zum Anzeigen und Ändern von Elementen im Registrierungsschlüssel „CurrentVersion“ können Sie ein Windows PowerShell-Laufwerk mit dem Stamm in diesem Schlüssel erstellen, indem Sie Folgendes eingeben:
 
-<pre>PS> New-PSDrive -Name cvkey -PSProvider Registry -Root HKLM\Software\Microsoft\
-Windows\CurrentVersion
-Name       Provider      Root                                   CurrentLocation
-----       --------      ----                                   ---------------
-cvkey      Registry      HKLM\Software\Microsoft\Windows\...</pre>
+<pre>PS> New-PSDrive -Name cvkey -PSProvider Registry -Root HKLM\Software\Microsoft\Windows\CurrentVersion Name       Provider      Root                                   CurrentLocation ----       --------      ----                                   --------------- cvkey      Registry      HKLM\Software\Microsoft\Windows\...</pre>
 
 Sie können dann zum Laufwerk **cvkey:** auf dieselbe Weise wechseln, wie Sie zu jedem anderen Laufwerk wechseln:
 
@@ -120,10 +114,7 @@ Sie können dann zum Laufwerk **cvkey:** auf dieselbe Weise wechseln, wie Sie zu
 
 oder:
 
-<pre>PS> Set-Location cvkey: -PassThru
-Path
-----
-cvkey:\</pre>
+<pre>PS> Set-Location cvkey: -PassThru Path ---- cvkey:\</pre>
 
 Das Cmdlet „New-PsDrive“ fügt das neue Laufwerk nur für die aktuelle Windows PowerShell-Sitzung hinzu. Wenn Sie das Windows PowerShell-Fenster schließen, geht das neue Laufwerk verloren. Wenn Sie ein Windows PowerShell-Laufwerk speichern möchten, verwenden Sie das Cmdlet „Export-Console“, um die aktuelle Windows PowerShell-Sitzung zu exportieren, und verwenden Sie dann den „PowerShell.exe“-Parameter **PSConsoleFile**, um sie zu importieren. Sie können auch das neue Laufwerk Ihrem Windows PowerShell-Profil hinzufügen.
 
@@ -157,6 +148,7 @@ Windows PowerShell erkennt Dateisystemlaufwerke, die in Windows hinzugefügt ode
 
 
 
-<!--HONumber=Apr16_HO1-->
+
+<!--HONumber=Aug16_HO4-->
 
 

@@ -1,21 +1,28 @@
 ---
 title: Starten des Windows PowerShell 2.0-Moduls
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: edafc2fa-7576-49c2-bbba-9336f4bcfc28
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 094c3c9f240457fc884031e7d82dcdc1e81e582d
+
 ---
+
 # Starten des Windows PowerShell 2.0-Moduls
 In diesem Abschnitt wird erklärt, wie Sie Windows PowerShell 2.0 Engine unter Windows 8.1, Windows Server 2012 R2, Windows 8 und Windows Server 2012 starten. Bei diesen ist Windows PowerShell 2.0 Engine bereits installiert. Sie erfahren darüber hinaus, wie Sie Windows PowerShell 2.0 Engine auf anderen Systemen starten, auf denen Windows PowerShell 2.0, Windows PowerShell 3.0, und Windows PowerShell 4.0 installiert sind.
 
-Windows PowerShell 4.0 und Windows PowerShell 3.0 sind mit Windows PowerShell 2.0 abwärtskompatibel. Cmdlets, Anbieter, Snap\-Ins, Module und Skripts, die für Windows PowerShell 2.0 geschrieben wurden, können unverändert in Windows PowerShell 4.0 und Windows PowerShell 3.0 ausgeführt werden. Doch aufgrund einer Änderung der Richtlinie für die Laufzeitaktivierung in Microsoft .NET Framework 4 können Windows PowerShell-Hostprogramme, die für Windows PowerShell 2.0 geschrieben und mit Common Language Runtime (CLR) 2.0 kompiliert wurden, nicht unverändert in Windows PowerShell 3.0 oder Windows PowerShell 4.0 ausgeführt werden, da die mit CLR 4.0 kompiliert wurden. Windows PowerShell 2.0 Engine sollte nur verwendet werden, wenn ein vorhandenes Skript oder Hostprogramm nicht ausgeführt werden kann, da es inkompatibel mit Windows PowerShell 4.0, Windows PowerShell 3.0, oder Microsoft .NET Framework 4 ist. Solche Fälle sind allerdings eher selten.
+Windows PowerShell 4.0 und Windows PowerShell 3.0 sind mit Windows PowerShell 2.0 abwärtskompatibel. Cmdlets, Anbieter, Snap-Ins, Module und Skripts, die für Windows PowerShell 2.0 geschrieben wurden, können unverändert in Windows PowerShell 4.0 und in Windows PowerShell 3.0 ausgeführt werden. Doch aufgrund einer Änderung der Richtlinie für die Laufzeitaktivierung in Microsoft .NET Framework 4 können Windows PowerShell-Hostprogramme, die für Windows PowerShell 2.0 geschrieben und mit Common Language Runtime (CLR) 2.0 kompiliert wurden, nicht unverändert in Windows PowerShell 3.0 oder Windows PowerShell 4.0 ausgeführt werden, da die mit CLR 4.0 kompiliert wurden. Windows PowerShell 2.0 Engine sollte nur verwendet werden, wenn ein vorhandenes Skript oder Hostprogramm nicht ausgeführt werden kann, da es inkompatibel mit Windows PowerShell 4.0, Windows PowerShell 3.0, oder Microsoft .NET Framework 4 ist. Solche Fälle sind allerdings eher selten.
 
 Viele Programme, die Windows PowerShell 2.0 Engine benötigen, starten sie automatisch. Diese Anweisungen gelten für die seltenen Fälle, in denen Sie das Modul manuell starten müssen.
 
 ## Installieren und Aktivieren erforderlicher Programme
-Aktivieren Sie Windows PowerShell 2.0 Engine und Microsoft .NET Framework 3.5 mit Service Pack 1, bevor Sie Windows PowerShell 2.0 Engine starten. Anweisungen hierzu finden Sie unter [Installieren von Windows PowerShell](Installing-Windows-PowerShell.md)..
+Aktivieren Sie Windows PowerShell 2.0 Engine und Microsoft .NET Framework 3.5 mit Service Pack 1, bevor Sie Windows PowerShell 2.0 Engine starten. Anweisungen hierzu finden Sie unter [Installieren von Windows PowerShell](Installing-Windows-PowerShell.md).
 
 Systeme, auf denen [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881) oder Windows Management Framework 3.0 installiert sind, verfügen über alle erforderlichen Komponenten. Es ist keine weitere Konfiguration erforderlich. Informationen zum Installieren von [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881) oder Windows Management Framework 3.0 finden Sie unter [Installieren von Windows PowerShell](Installing-Windows-PowerShell.md).
 
@@ -68,6 +75,7 @@ Weitere Informationen zu Hintergrundaufträgen finden Sie unter [about_Jobs [v4]
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO4-->
 
 

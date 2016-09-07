@@ -1,12 +1,19 @@
 ---
-title: Erstellen von .NET- und COM-Objekten (New-Object)
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: Erstellen von .NET- und COM-Objekten  New-Object
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 2057b113-efeb-465e-8b44-da2f20dbf603
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 4c0f405a46e16935211b3886a40c9f7d1afc7260
+
 ---
+
 # Erstellen von .NET- und COM-Objekten (New-Object)
 Es gibt Softwarekomponenten mit .NET Framework- und COM-Schnittstellen, mit denen Sie viele Systemverwaltungsaufgaben ausführen können. Mit Windows PowerShell können Sie diese Komponenten verwenden und sind somit nicht auf die Aufgaben beschränkt, die mithilfe von Cmdlets ausgeführt werden können. Viele der Cmdlets in der ursprünglichen Version von Windows PowerShell funktionieren nicht auf Remotecomputern. Wir zeigen, wie diese Einschränkung beim Verwalten von Ereignisprotokollen mithilfe der .NET Framework-Klasse **System.Diagnostics.EventLog** direkt aus Windows PowerShell heraus umgangen werden können.
 
@@ -175,20 +182,11 @@ $Home\Desktop\PSHome.lnk
 
 Wir verfügen jetzt über eine Variable namens **$lnk**, die einen neuen Verknüpfungsverweis enthält. Wenn Sie die zugehörigen Elemente anzeigen möchten, können Sie sie über die Pipeline an **Get-Member** übergeben. In der folgenden Ausgabe werden die zum Abschließen der Erstellung unserer Verknüpfung zu verwendenden Elemente angezeigt:
 
-<pre>PS> $lnk | Get-Member
-TypeName: System.__ComObject#{f935dc23-1cf0-11d0-adb9-00c04fd58a0b}
-Name             MemberType   Definition
-----             ----------   ----------
-...
-Save             Method       void Save ()
-...
-TargetPath       Property     string TargetPath () {get} {set}
-...</pre>
+<pre>PS> $lnk | Get-Member TypeName: System.__ComObject#{f935dc23-1cf0-11d0-adb9-00c04fd58a0b} Name             MemberType   Definition ----             ----------   ---------- ... Save             Method       void Save () ... TargetPath       Property     string TargetPath () {get} {set} ...</pre>
 
-Sie müssen den **TargetPath** angeben, d. h. den Anwendungsordner für Windows PowerShell, und dann die Verknüpfung **$lnk** durch Aufrufen der Methode **Save** speichern. Der Pfad des Windows PowerShell-Anwendungsordners ist in der Variablen **$PSHome** gespeichert, also geben Sie Folgendes ein:
+Sie müssen den **TargetPath** angeben, d.h. den Anwendungsordner für Windows PowerShell, und dann die Verknüpfung **$lnk** durch Aufrufen der Methode **Save** speichern. Der Pfad des Windows PowerShell-Anwendungsordners ist in der Variablen **$PSHome** gespeichert, also geben Sie Folgendes ein:
 
-<pre>$lnk.TargetPath = $PSHome
-$lnk.Save()</pre>
+<pre>$lnk.TargetPath = $PSHome $lnk.Save()</pre>
 
 ### Verwenden von Internet Explorer in Windows PowerShell
 Viele Anwendungen (einschließlich der Microsoft Office-Anwendungen und Internet Explorer) können mithilfe von COM automatisiert werden. Internet Explorer verdeutlicht einige der typischen Techniken und Probleme im Zusammenhang mit COM-basierten Anwendungen.
@@ -266,6 +264,7 @@ Das Objekt wird zwar erstellt, Sie werden jedoch darauf hingewiesen, dass es sic
 
 
 
-<!--HONumber=Apr16_HO1-->
+
+<!--HONumber=Aug16_HO4-->
 
 

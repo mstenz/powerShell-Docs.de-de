@@ -1,19 +1,26 @@
 ---
-title: Arbeiten mit Dateien, Ordnern und Registrierungsschlüsseln
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "Arbeiten mit Dateien, Ordnern und Registrierungsschlüsseln"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: e6cf87aa-b5f8-48d5-a75a-7cb7ecb482dc
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 3e1bf444d7657b66422dab3eb8dbeef5e4d581b4
+
 ---
+
 # Arbeiten mit Dateien, Ordnern und Registrierungsschlüsseln
 Windows PowerShell verwendet das Nomen **Item** zum Verweisen auf Elemente in einem Windows PowerShell-Laufwerk. Im Zusammenhang mit dem Windows PowerShell FileSystem-Anbieter kann ein **Item** eine Datei, ein Ordner oder das Windows PowerShell-Laufwerk sein. Das Auflisten dieser Elemente und die Arbeiten damit ist in den meisten Verwaltungseinstellungen eine wichtige grundlegende Aufgabe. Daher sollen diese Aufgaben ausführlich erläutert werden.
 
 ### Auflisten von Dateien, Ordnern und Registrierungsschlüsseln (Get-ChildItem)
-Da das Abrufen einer Sammlung von Elementen von einem bestimmten Standort eine sehr häufig vorkommende Aufgabe ist, wurde das Cmdlet **Get-ChildItem** speziell dazu entwickelt, alle in einem Container, z. B. einem Ordner, gefundenen Elemente zurückzugeben.
+Da das Abrufen einer Sammlung von Elementen von einem bestimmten Standort eine sehr häufig vorkommende Aufgabe ist, wurde das Cmdlet **Get-ChildItem** speziell dazu entwickelt, alle in einem Container, z.B. einem Ordner, gefundenen Elemente zurückzugeben.
 
-Wenn Sie alle Dateien und Ordner zurückgeben möchten, die direkt im Ordner „C:\Windows“ enthalten sind, geben Sie Folgendes ein:
+Wenn Sie alle Dateien und Ordner zurückgeben möchten, die direkt im Ordner „C:\\Windows“ enthalten sind, geben Sie Folgendes ein:
 
 ```
 PS> Get-ChildItem -Path C:\Windows
@@ -75,11 +82,11 @@ Der Befehl **Get-ChildItem** akzeptiert Platzhalter im Pfad der aufzulistenden E
 
 Da das Abgleichen von Platzhaltern vom Windows PowerShell-Modul durchgeführt wird, verwenden alle Cmdlets, die Platzhalter akzeptieren, die gleiche Notation und das gleiche Abgleichverhalten. Die Windows PowerShell-Notation für Platzhalter enthält Folgendes:
 
--   Sternchen (*) steht für null oder mehr beliebige Zeichen.
+-   Sternchen (\*) steht für null oder mehr beliebige Zeichen.
 
 -   Fragezeichen (?) steht für genau ein Zeichen.
 
--   Die linke eckige Klammer ([) und die rechte eckige Klammer (]) umgeben eine Gruppe von Zeichen, die für den Abgleich verwendet werden soll.
+-   Die linke eckige Klammer (\[) und die rechte eckige Klammer (]) umgeben eine Gruppe von Zeichen, die für den Abgleich verwendet werden soll.
 
 Hier sind einige Beispiele für die Funktionsweise der Platzhalterspezifikation.
 
@@ -116,21 +123,9 @@ Sie können bestimmte Elemente durch Verwenden des Parameters **Exclude** von �
 
 Angenommen, Sie möchten die Windows Time Service-DLL im Ordner „System32“ suchen, und Sie können sich nur daran erinnern, dass der Name der DLL mit „W“ anfängt und „32“ darin enthalten ist.
 
-Mit einem Ausdruck wie **w&#42;32&#42;.dll** finden Sie alle DLLs, die die Bedingung erfüllen, aber es können auch die Kompatibilitäts-DLLs für Windows 95 und 16-Bit-Windows zurückgegeben werden, die „95“ oder „16“ im Namen enthalten. Sie können Dateien ausschließen, die diese Zahlen in ihren Namen enthalten, indem Sie den Parameter **Exclude** mit dem Muster **&#42;[9516]&#42;** verwenden.
+Mit einem Ausdruck wie **w\&#42;32\&#42;.dll** finden Sie alle DLLs, die die Bedingung erfüllen, aber es können auch die Kompatibilitäts-DLLs für Windows 95 und 16-Bit-Windows zurückgegeben werden, die „95“ oder „16“ im Namen enthalten. Sie können Dateien ausschließen, die diese Zahlen in ihren Namen enthalten, indem Sie den Parameter **Exclude** mit dem Muster **\&#42;\[9516]\&#42;** verwenden:
 
-<pre>PS> Get-ChildItem -Path C:\WINDOWS\System32\w*32*.dll -Exclude *[9516]*
-Directory: Microsoft.PowerShell.Core\FileSystem::C:\WINDOWS\System32
-Mode                LastWriteTime     Length Name
-----                -------------     ------ ----
--a---        2004-08-04   8:00 AM     174592 w32time.dll
--a---        2004-08-04   8:00 AM      22016 w32topl.dll
--a---        2004-08-04   8:00 AM     101888 win32spl.dll
--a---        2004-08-04   8:00 AM     172032 wldap32.dll
--a---        2004-08-04   8:00 AM     264192 wow32.dll
--a---        2004-08-04   8:00 AM      82944 ws2_32.dll
--a---        2004-08-04   8:00 AM      42496 wsnmp32.dll
--a---        2004-08-04   8:00 AM      22528 wsock32.dll
--a---        2004-08-04   8:00 AM      18432 wtsapi32.dll</pre>
+<pre>PS> Get-ChildItem -Path C:\WINDOWS\System32\w*32*.dll -Exclude *[9516]* Directory: Microsoft.PowerShell.Core\FileSystem::C:\WINDOWS\System32 Mode                LastWriteTime     Length Name ----                -------------     ------ ---- -a---        2004-08-04   8:00 AM     174592 w32time.dll -a---        2004-08-04   8:00 AM      22016 w32topl.dll -a---        2004-08-04   8:00 AM     101888 win32spl.dll -a---        2004-08-04   8:00 AM     172032 wldap32.dll -a---        2004-08-04   8:00 AM     264192 wow32.dll -a---        2004-08-04   8:00 AM      82944 ws2_32.dll -a---        2004-08-04   8:00 AM      42496 wsnmp32.dll -a---        2004-08-04   8:00 AM      22528 wsock32.dll -a---        2004-08-04   8:00 AM      18432 wtsapi32.dll</pre>
 
 #### Kombinieren von Get-ChildItem-Parametern
 Sie können verschiedene Parameter des Cmdlets **Get-ChildItem** im gleichen Befehl verwenden. Bevor Sie Parameter kombinieren, sollten Sie sicher sein, dass Sie das Abgleichen mit Platzhalterzeichen verstanden haben. Beispielsweise gibt der folgende Befehl keine Ergebnisse zurück:
@@ -163,6 +158,7 @@ Mode                LastWriteTime     Length Name
 
 
 
-<!--HONumber=Apr16_HO1-->
+
+<!--HONumber=Aug16_HO4-->
 
 

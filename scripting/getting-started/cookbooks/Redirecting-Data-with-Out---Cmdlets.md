@@ -1,12 +1,19 @@
 ---
-title: Umleiten von Daten mit Out-*-Cmdlets
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: Umleiten von Daten mit Out   Cmdlets
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 2a4acd33-041d-43a5-a3e9-9608a4c52b0c
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: e62ae14e4d7334d0cd42681c7e2591692c089187
+
 ---
+
 # Umleiten von Daten mit Out-*-Cmdlets
 Windows PowerShell stellt mehrere Cmdlets bereit, mit denen Sie die Datenausgabe direkt steuern können. Diese Cmdlets haben zwei wichtige Merkmale gemeinsam.
 
@@ -153,6 +160,7 @@ Das Cmdlet **Out-File** lässt sich dann am besten verwenden, wenn Sie Ausgabe s
 
 
 
-<!--HONumber=Apr16_HO1-->
+
+<!--HONumber=Aug16_HO4-->
 
 

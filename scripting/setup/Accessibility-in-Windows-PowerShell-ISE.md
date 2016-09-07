@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
 translationtype: Human Translation
-ms.sourcegitcommit: 51b2182de7b563daefb9d64434bdc8b8ab5e0343
-ms.openlocfilehash: cdf1f553d0bea91e2dcd051faef42417ad0cbc7a
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: b4d97b1c96a99bcfc43fb20ce9a4ecfa528ea024
 
 ---
 
@@ -47,11 +47,11 @@ Sie können über die folgenden Schritte die Größe und Position des Konsolen- 
 ### So verschieben Sie den Skript- und Konsolenbereich
 Führen Sie eines der folgenden Verfahren aus:
 
--   Drücken Sie zum Verschieben des Skriptbereichs über den Konsolenbereich **STRG+\+1**. Alternativ können Sie auf der Symbolleiste auf das Symbol **Skriptbereich oben anzeigen** oder im Menü **Ansicht** auf **Skriptbereich oben anzeigen** klicken.
+-   Drücken Sie zum Verschieben des Skriptbereichs über den Konsolenbereich **STRG+1**. Alternativ können Sie auf der Symbolleiste auf das Symbol **Skriptbereich oben anzeigen** oder im Menü **Ansicht** auf **Skriptbereich oben anzeigen** klicken.
 
--   Drücken Sie zum Verschieben des Skriptbereichs rechts neben den Konsolenbereich **STRG+\+2**. Alternativ können Sie auf der Symbolleiste auf das Symbol **Skriptbereich rechts anzeigen** oder im Menü **Ansicht** auf **Skriptbereich rechts anzeigen** klicken.
+-   Drücken Sie zum Verschieben des Skriptbereichs rechts neben den Konsolenbereich **STRG+2**. Alternativ können Sie auf der Symbolleiste auf das Symbol **Skriptbereich rechts anzeigen** oder im Menü **Ansicht** auf **Skriptbereich rechts anzeigen** klicken.
 
--   Drücken Sie zum Maximieren des Skriptbereichs **STRG+\+3**. Alternativ können Sie auf der Symbolleiste auf das Symbol **Skriptbereich maximiert anzeigen** oder im Menü **Ansicht** auf **Skriptbereich** maximiert anzeigen klicken.
+-   Drücken Sie zum Maximieren des Skriptbereichs **STRG+3**. Alternativ können Sie auf der Symbolleiste auf das Symbol **Skriptbereich maximiert anzeigen** oder im Menü **Ansicht** auf **Skriptbereich maximiert anzeigen** klicken.
 
 -   Klicken Sie zum Maximieren des Konsolenbereichs und Ausblenden des Skriptbereich ganz rechts in der Reihe der Registerkarten auf das Symbol **Skriptbereich ausblenden**. Oder deaktivieren Sie im Menü **Ansicht** die Option **Skriptbereich anzeigen**.
 
@@ -62,46 +62,46 @@ Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Text bearbeite
 
 |Aktion|Tastenkombinationen|Verwenden in|
 |----------|----------------------|----------|
-|**Kopieren**|STRG\+C|Skriptbereich, Konsolenbereich|
-|**Ausschneiden**|STRG\+X|Skriptbereich, Konsolenbereich|
-|**In Skript suchen**|STRG\+F|Skriptbereich|
+|**Kopieren**|STRG + C|Skriptbereich, Konsolenbereich|
+|**Ausschneiden**|STRG+X|Skriptbereich, Konsolenbereich|
+|**In Skript suchen**|STRG+F|Skriptbereich|
 |**Im Skript weitersuchen**|F3|Skriptbereich|
-|**Vorheriges im Skript suchen**|UMSCHALT\+F3|Skriptbereich|
-|**Einfügen**|STRG\+V|Skriptbereich, Konsolenbereich|
-|**Wiederholen**|STRG\+Y|Skriptbereich, Konsolenbereich|
-|**In Skript ersetzen**|STRG\+H|Skriptbereich|
-|**Speichern**|STRG\+S|Skriptbereich|
-|**Alle auswählen**|STRG\+A|Skriptbereich, Konsolenbereich|
-|**Rückgängig machen**|STRG\+Z|Skriptbereich, Konsolenbereich|
+|**Vorheriges im Skript suchen**|UMSCHALT+F3|Skriptbereich|
+|**Einfügen**|STRG+V|Skriptbereich, Konsolenbereich|
+|**Wiederholen**|STRG+Y|Skriptbereich, Konsolenbereich|
+|**In Skript ersetzen**|STRG+H|Skriptbereich|
+|**Speichern**|STRG+S|Skriptbereich|
+|**Alle auswählen**|STRG+A|Skriptbereich, Konsolenbereich|
+|**Rückgängig machen**|STRG+Z|Skriptbereich, Konsolenbereich|
 
 ## <a name="bkmk_3"></a>Tastenkombinationen zum Ausführen von Skripts
 Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Skripts im Skriptbereich ausführen.
 
 |Aktion|Tastenkombination|
 |----------|---------------------|
-|**Neu**|STRG\+N|
-|**Öffnen**|STRG\+O|
+|**„Neu“,**|STRG+N|
+|**Öffnen**|STRG+O|
 |**Ausführen**|F5|
 |**Auswahl ausführen**|F8|
-|**Ausführung beenden**|STRG\+UNTBR. STRG\+C kann verwendet werden, wenn der Kontext eindeutig ist (es ist kein Text ausgewählt).|
-|**Registerkarte** (zum nächsten Skript)|STRG\+TAB **Hinweis**: Mit dieser Kombination zum nächsten Skript wechseln funktioniert nur, wenn Sie eine einzige PowerShell-Registerkarte geöffnet haben, oder wenn Sie mehrere PowerShell-Registerkarten geöffnet haben und sich der Fokus im Skriptbereich befindet.|
-|**Registerkarte** (zum vorherigen Skript)|STRG\+UMSCHALT\+TAB **Hinweis**: Mit dieser Kombination zum vorherigen Skript wechseln funktioniert nur, wenn Sie eine einzige PowerShell-Registerkarte geöffnet haben, oder wenn Sie mehrere PowerShell-Registerkarten geöffnet haben und sich der Fokus im Skriptbereich befindet.|
+|**Ausführung beenden**|STRG+UNTBR. STRG+C kann verwendet werden, wenn der Kontext eindeutig ist (es ist kein Text ausgewählt).|
+|**Registerkarte** (zum nächsten Skript)|STRG+TAB **Hinweis:** Mit STRG+TAB zum nächsten Skript wechseln funktioniert nur, wenn Sie eine einzige PowerShell-Registerkarte geöffnet haben, oder wenn Sie mehrere PowerShell-Registerkarten geöffnet haben und sich der Fokus im Skriptbereich befindet.|
+|**Registerkarte** (zum vorherigen Skript)|STRG+UMSCHALT+TAB **Hinweis:** Mit STRG+UMSCHALT+TAB zum vorherigen Skript wechseln funktioniert nur, wenn Sie eine einzige PowerShell-Registerkarte geöffnet haben, oder wenn Sie mehrere PowerShell-Registerkarten geöffnet haben und sich der Fokus im Skriptbereich befindet.|
 
 ## <a name="bkmk_4"></a>Tastenkombinationen zum Anpassen der Ansicht
 Sie können die folgenden Tastenkombinationen verwenden, um die Ansicht in Windows PowerShell ISE anzupassen. Diese Tastenkombinationen sind in allen Bereichen in der Anwendung wirksam.
 
 |Aktion|Tastenkombination|
 |----------|---------------------|
-|**Zum Konsolenbereich wechseln**|STRG\+D|
-|**Zum Skriptbereich wechseln**|STRG\+I|
-|**Skriptbereich anzeigen**|STRG\+R|
-|**Skriptbereich ausblenden**|STRG\+R|
+|**Zum Konsolenbereich wechseln**|STRG+D|
+|**Zum Skriptbereich wechseln**|STRG+I|
+|**Skriptbereich anzeigen**|STRG+R|
+|**Skriptbereich ausblenden**|STRG+R|
 ||
-|**Skriptbereich nach oben verschieben**|STRG\+1|
-|**Skriptbereich nach rechts verschieben**|STRG\+2|
-|**Skriptbereich maximieren**|STRG\+3|
-|**Vergrößern**|STRG\+PLUSZEICHEN|
-|**Verkleinern**|STRG\+MINUSZEICHEN|
+|**Skriptbereich nach oben verschieben**|STRG+1|
+|**Skriptbereich nach rechts verschieben**|STRG+2|
+|**Skriptbereich maximieren**|STRG+3|
+|**Vergrößern**|STRG+PLUSZEICHEN|
+|**Verkleinern**|STRG+MINUSZEICHEN|
 
 ## <a name="bkmk_5"></a>Tastenkombinationen zum Debuggen von Skripts
 Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Skripts debuggen.
@@ -111,12 +111,12 @@ Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Skripts debugg
 |**Ausführen/Fortsetzen**|F5|Skriptbereich beim Debuggen eines Skripts|
 |**Einzelschritt**|F11|Skriptbereich beim Debuggen eines Skripts|
 |**Überspringen**|F10|Skriptbereich beim Debuggen eines Skripts|
-|**Rücksprung**|UMSCHALT\+F11|Skriptbereich beim Debuggen eines Skripts|
-|**Aufrufliste anzeigen**|STRG\+UMSCHALT\+D|Skriptbereich beim Debuggen eines Skripts|
-|**Haltepunkte auflisten**|STRG\+UMSCHALT\+L|Skriptbereich beim Debuggen eines Skripts|
+|**Rücksprung**|UMSCHALT+F11|Skriptbereich beim Debuggen eines Skripts|
+|**Aufrufliste anzeigen**|STRG+UMSCHALT+D|Skriptbereich beim Debuggen eines Skripts|
+|**Haltepunkte auflisten**|STRG+UMSCHALT+L|Skriptbereich beim Debuggen eines Skripts|
 |**Haltepunkt umschalten**|F9|Skriptbereich beim Debuggen eines Skripts|
-|**Alle Haltepunkte entfernen**|STRG\+UMSCHALT\+F9|Skriptbereich beim Debuggen eines Skripts|
-|**Debugger beenden**|UMSCHALT\+F5|Skriptbereich beim Debuggen eines Skripts|
+|**Alle Haltepunkte entfernen**|STRG+UMSCHALT+F9|Skriptbereich beim Debuggen eines Skripts|
+|**Debugger beenden**|UMSCHALT+F5|Skriptbereich beim Debuggen eines Skripts|
 
 > [!NOTE]
 > Sie können beim Debuggen von Skripts in der Windows PowerShell ISE auch die Tastenkombinationen verwenden, die für die Windows PowerShell-Konsole vorgesehen sind. Um diese Tastenkombinationen zu verwenden, müssen Sie die jeweilige Kombination im Konsolenbereich eingeben und die EINGABETASTE drücken.
@@ -124,7 +124,7 @@ Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Skripts debugg
 |Aktion|Tastenkombination|Verwenden in|
 |----------|---------------------|----------|
 |**Fortsetzen**|C|Konsolenbereich, wenn ein Skript debuggt wird|
-|**Einzelschritt**|S|Konsolenbereich, wenn ein Skript debuggt wird|
+|**Einzelschritt**|E|Konsolenbereich, wenn ein Skript debuggt wird|
 |**Überspringen**|V|Konsolenbereich, wenn ein Skript debuggt wird|
 |**Rücksprung**|O|Konsolenbereich, wenn ein Skript debuggt wird|
 |**Letzten Befehl wiederholen** (für Einzelschritt oder Überspringen)|EINGABETASTE|Konsolenbereich, wenn ein Skript debuggt wird|
@@ -138,18 +138,18 @@ Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Windows PowerS
 
 |Aktion|Tastenkombination|
 |----------|---------------------|
-|**PowerShell-Registerkarte schließen**|STRG\+W|
-|**Neue PowerShell-Registerkarte**|STRG\+T|
-|**Vorherige PowerShell-Registerkarte**|STRG\+UMSCHALT\+TAB Diese Tastenkombination funktioniert nur, wenn keine Dateien in irgendeiner Windows PowerShell-Registerkarte geöffnet sind.|
-|**Nächste Windows PowerShell-Registerkarte**|STRG\+TAB Diese Tastenkombination funktioniert nur, wenn keine Dateien in irgendeiner Windows PowerShell-Registerkarte geöffnet sind.|
+|**PowerShell-Registerkarte schließen**|STRG+W|
+|**Neue PowerShell-Registerkarte**|STRG+T|
+|**Vorherige PowerShell-Registerkarte**|STRG+UMSCHALT+TAB. Diese Tastenkombination funktioniert nur, wenn keine Dateien in irgendeiner Windows PowerShell-Registerkarte geöffnet sind.|
+|**Nächste Windows PowerShell-Registerkarte**|STRG+TAB. Diese Tastenkombination funktioniert nur, wenn keine Dateien in irgendeiner Windows PowerShell-Registerkarte geöffnet sind.|
 
 ## <a name="bkmk_7"></a>Tastenkombinationen für Starten und Beenden
 Sie können die folgenden Tastenkombinationen verwenden, um die Windows PowerShell-Konsole (PowerShell.exe) zu starten oder Windows PowerShell ISE zu beenden.
 
 |Aktion|Tastenkombination|
 |----------|---------------------|
-|**Beenden**|ALT\+F4|
-|**PowerShell.exe starten** (Windows PowerShell-Konsole)|STRG\+UMSCHALT\+P|
+|**Beenden**|ALT+F4|
+|**PowerShell.exe starten** (Windows PowerShell-Konsole)|STRG+UMSCHALT+P|
 
 ## Weitere Informationen
 [Verwenden der Windows PowerShell ISE](../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
@@ -157,6 +157,6 @@ Sie können die folgenden Tastenkombinationen verwenden, um die Windows PowerShe
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO4-->
 
 

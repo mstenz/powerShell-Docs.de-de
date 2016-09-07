@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 1c6d91f3-c556-42a2-a017-79b6b7b4b7db
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: ce9364e8fb73a2d31b728430c590fef4175ebe26
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: c1744841e23aa9c2fedf3eb92230ef422c36f0cd
 
 ---
 
@@ -48,7 +48,7 @@ $myfile.Encoding
 
  Speichert die Datei mit dem angegebenen Namen und der angegebenen Codierung.
 
- **Dateiname** – Zeichenfolge – Der Name, der zum Speichern der Datei verwendet werden soll.
+ **Dateiname**: Zeichenfolge – der Name, der zum Speichern der Datei verwendet werden soll.
 
  **\[saveEncoding\]** – optional [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)
  – Ein optionaler Zeichencodierungsparameter, der für die gespeicherte Datei verwendet werden soll. Der Standardwert lautet **UTF8**.
@@ -85,7 +85,7 @@ $psIse.CurrentFile.DisplayName
 ###  <a name="Editor"></a> Editor
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
- Die schreibgeschützte Eigenschaft, die das für die angegebene Datei verwendete [Editorobjekt](The-ISEEditor-Object.md) abruft.
+ Die schreibgeschützte Eigenschaft, die das für die angegebene Datei verwendete [Editor-Objekt](The-ISEEditor-Object.md) abruft.
 
 ```
 # Gets the editor and the text.
@@ -150,6 +150,6 @@ $psISE.CurrentFile.IsUntitled
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Aug16_HO4-->
 
 

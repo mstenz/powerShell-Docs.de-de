@@ -1,12 +1,19 @@
 ---
 title: Verwenden von statischen Klassen und Methoden
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 418ad766-afa6-4b8c-9a44-471889af7fd9
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 28bc665c3ffb1b74a2ff922584c31a8657842a0f
+
 ---
+
 # Verwenden von statischen Klassen und Methoden
 Nicht alle .NET Framework-Klassen können mit **New-Object** erstellt werden. Wenn Sie beispielsweise versuchen, ein **System.Environment**- oder ein **System.Math**-Objekt mit **New-Object** zu erstellen, erhalten Sie die folgenden Fehlermeldungen:
 
@@ -40,7 +47,7 @@ True     False    Environment                              System.Object
 ```
 
 > [!NOTE]
-> Wie bereits erwähnt wurde, setzt Windows PowerShell automatisch **System.** vor die Typnamen, wenn Sie **New-Object** verwenden. Das gleiche passiert, wenn Sie einen in Klammern stehenden Namen verwenden, d. h., Sie können **\[System.Environment]** als **\[Environment]** angeben.
+> Wie bereits erwähnt wurde, setzt Windows PowerShell automatisch **System.** vor die Typnamen, wenn Sie **New-Object** verwenden. Das gleiche passiert, wenn Sie einen in Klammern stehenden Namen verwenden, d.h., Sie können **\[System.Environment]** als **\[Environment]** angeben.
 
 Die **System.Environment**-Klasse enthält allgemeine Informationen über die Arbeitsumgebung des aktuellen Prozesses, der „powershell.exe“ ist, wenn Sie in Windows PowerShell arbeiten.
 
@@ -182,6 +189,7 @@ PS> [System.Math]::Truncate(-9.3)
 
 
 
-<!--HONumber=Apr16_HO1-->
+
+<!--HONumber=Aug16_HO4-->
 
 

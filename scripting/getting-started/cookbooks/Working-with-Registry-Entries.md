@@ -1,17 +1,24 @@
 ---
-title: Arbeiten mit Registrierungseinträge
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "Arbeiten mit Registrierungseinträge"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: fd254570-27ac-4cc9-81d4-011afd29b7dc
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: cdc7f45c9fa8a6bf748a52b460a1ac190d283971
+
 ---
+
 # Arbeiten mit Registrierungseinträge
 Da Registrierungseinträge Eigenschaften von Schlüsseln sind und daher nicht direkt gesucht werden können, muss für die Arbeit mit diesen ein etwas anderer Ansatz gewählt werden.
 
 ### Auflisten von Registrierungseinträgen
-Es gibt viele verschiedene Möglichkeiten zum Untersuchen von Registrierungseinträgen. Am einfachsten ist es, die Eigenschaftennamen mit einem Schlüssel zu verknüpfen. Um beispielsweise die Namen der Einträge im Registrierungsschlüssel **HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion** anzuzeigen, verwenden Sie **Get-Item**. Registrierungsschlüssel verfügen über eine Eigenschaft mit dem generischen Namen „Property“, die eine Liste der Registrierungseinträge im Schlüssel ist. Der folgende Befehl wählt die Eigenschaft „Property“ aus und erweitert die Elemente so, dass sie in einer Liste angezeigt werden:
+Es gibt viele verschiedene Möglichkeiten zum Untersuchen von Registrierungseinträgen. Am einfachsten ist es, die Eigenschaftennamen mit einem Schlüssel zu verknüpfen. Um beispielsweise die Namen der Einträge im Registrierungsschlüssel **HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion** anzuzeigen, verwenden Sie **Get-Item**. Registrierungsschlüssel verfügen über eine Eigenschaft mit dem generischen Namen „Property“, die eine Liste der Registrierungseinträge im Schlüssel ist. Der folgende Befehl wählt die Eigenschaft „Property“ aus und erweitert die Elemente so, dass sie in einer Liste angezeigt werden:
 
 ```
 PS> Get-Item -Path Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion | Select-Object -ExpandProperty Property
@@ -46,7 +53,7 @@ PF_AccessoriesName  : Accessories
 (default)           :
 ```
 
-Die Windows PowerShell-bezogenen Eigenschaften für den Schüssel verfügen alle über das Präfix „PS“, z. B. **PSPath**, **PSParentPath**, **PSChildName** und **PSProvider**.
+Die Windows PowerShell-bezogenen Eigenschaften für den Schüssel verfügen alle über das Präfix „PS“, z.B. **PSPath**, **PSParentPath**, **PSChildName** und **PSProvider**.
 
 Sie können die Notation „**.**“ zum Verweisen auf den aktuellen Speicherort verwenden. Sie können **Set-Location** verwenden, um zuerst in den Registrierungscontainer **CurrentVersion** zu wechseln:
 
@@ -71,10 +78,10 @@ ProgramFilesDir     : C:\Program Files
 ...
 ```
 
-Die Pfaderweiterung funktioniert in derselben Weise wie innerhalb des Dateisystem. Von diesem Speicherort aus können Sie die Auflistung **ItemProperty** für **HKLM:\SOFTWARE\Microsoft\Windows\Help** abrufen, indem Sie **Get-ItemProperty -Path ..\Help** verwenden.
+Die Pfaderweiterung funktioniert in derselben Weise wie innerhalb des Dateisystem. Von diesem Speicherort aus können Sie die Auflistung **ItemProperty** für **HKLM:\\SOFTWARE\\Microsoft\\Windows\\Help** abrufen, indem Sie **Get-ItemProperty -Path ..\\Help** verwenden.
 
 ### Abrufen eines einzelnen Registrierungseintrags
-Wenn Sie einen bestimmten Eintrag in einem Registrierungsschlüssel abrufen möchten, stehen verschiedene Möglichkeiten zur Verfügung. In diesem Beispiel wird der Wert von **DevicePath** in **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion** abgerufen.
+Wenn Sie einen bestimmten Eintrag in einem Registrierungsschlüssel abrufen möchten, stehen verschiedene Möglichkeiten zur Verfügung. In diesem Beispiel wird der Wert von **DevicePath** in **HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion** abgerufen.
 
 Verwenden Sie mit **Get-ItemProperty** den Parameter **Path**, um den Namen des Schlüssels anzugeben, und den Parameter **Name**, um den Namen des Eintrags **DevicePath** anzugeben.
 
@@ -96,7 +103,7 @@ Dieser Befehl gibt die standardmäßigen Windows PowerShell-Eigenschaften sowie 
 > [!NOTE]
 > Obwohl **Get-ItemProperty** die Parameter **Filter**, **Include** und **Exclude** aufweist, können diese nicht zum Filtern nach dem Namen der Eigenschaft verwendet werden. Diese Parameter verweisen auf Registrierungsschlüssel (das sind Elementpfade und keine Registrierungseinträge), die Elementeigenschaften sind.
 
-Eine weitere Option ist die Verwendung des Befehlszeilentools „Reg.exe“. Um Hilfe zu „reg.exe“ zu erhalten, geben Sie **reg.exe /?** an einer Eingabeaufforderung ein. at a command prompt. Mithilfe von „reg.exe“ finden Sie den Eintrag „DevicePath“, wie im folgenden Befehl gezeigt:
+Eine weitere Option ist die Verwendung des Befehlszeilentools „Reg.exe“. Um Hilfe zu „reg.exe“ zu erhalten, geben Sie **reg.exe /?** an einer Eingabeaufforderung ein. an einer Eingabeaufforderung. Mithilfe von „reg.exe“ finden Sie den Eintrag „DevicePath“, wie im folgenden Befehl gezeigt:
 
 ```
 PS> reg query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion /v DevicePath
@@ -107,7 +114,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
     DevicePath  REG_EXPAND_SZ   %SystemRoot%\inf
 ```
 
-Sie können das Objekt **WshShell COM** auch zum Suchen bestimmter Registrierungseinträge verwenden, obwohl diese Methode mit großen Binärdaten oder mit Registrierungseintragsnamen, die Zeichen wie „\“ enthalten, nicht funktioniert. Fügen Sie den Namen der Eigenschaft mit einem \-Trennzeichen zum Elementpfad hinzu:
+Sie können das Objekt **WshShell COM** auch zum Suchen bestimmter Registrierungseinträge verwenden, obwohl diese Methode mit großen Binärdaten oder mit Registrierungseintragsnamen, die Zeichen wie „\\“ enthalten, nicht funktioniert. Fügen Sie den Namen der Eigenschaft mit einem \\-Trennzeichen zum Elementpfad hinzu:
 
 ```
 PS> (New-Object -ComObject WScript.Shell).RegRead("HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\DevicePath")
@@ -175,6 +182,7 @@ Remove-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name 
 
 
 
-<!--HONumber=Apr16_HO1-->
+
+<!--HONumber=Aug16_HO4-->
 
 

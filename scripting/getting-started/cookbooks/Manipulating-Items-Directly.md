@@ -1,12 +1,19 @@
 ---
 title: Direktes Verarbeiten von Elementen
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 8cbd4867-917d-41ea-9ff0-b8e765509735
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: b21af4711cc5a846517c3e286c9e90f858612ccb
+
 ---
+
 # Direktes Verarbeiten von Elementen
 Die Elemente, die Sie in Windows PowerShell-Laufwerken sehen, z. B. Dateien und Ordner auf den Dateisystemlaufwerken, sowie die Registrierungsschlüssel in den Windows PowerShell-Registrierungslaufwerken werden in Windows PowerShell als *Elemente* (Items) bezeichnet. Die Cmdlets zum Arbeiten mit diesen Elementen haben das Substantiv **Item** in ihren Namen.
 
@@ -31,7 +38,7 @@ Cmdlet          Set-Item                        Set-Item [-Path] <String[]> ...
 ### Erstellen von neuen Elementen (New-Item)
 Um ein neues Element im Dateisystem zu erstellen, verwenden Sie das Cmdlet **New-Item**. Fügen Sie den **Path**-Parameter mit dem Pfad zum Element und den **ItemType**-Parameter mit dem Wert „file“ oder „directory“ ein.
 
-Wenn Sie beispielsweise ein neues Verzeichnis namens „New.Directory“ im Verzeichnis „C:\Temp“ erstellen möchten, geben Sie Folgendes ein:
+Wenn Sie beispielsweise ein neues Verzeichnis namens „New.Directory“ im Verzeichnis „C:\\Temp“ erstellen möchten, geben Sie Folgendes ein:
 
 ```
 PS> New-Item -Path c:\temp\New.Directory -ItemType Directory
@@ -55,10 +62,10 @@ Mode                LastWriteTime     Length Name
 -a---        2006-05-18  11:44 AM          0 file1
 ```
 
-Auf gleiche Weise können Sie einen neuen Registrierungsschlüssel erstellen. Tatsächlich ist ein Registrierungsschlüssel einfacher zu erstellen, weil der einzige Elementtyp in der Windows-Registrierung ein Schlüssel ist. (Registrierungseinträge sind Element-*Eigenschaften*.) Wenn Sie beispielsweise einen Schlüssel namens „\_Test“ im „CurrentVersion“-Unterschlüssel erstellen möchten, geben Sie Folgendes ein:
+Auf gleiche Weise können Sie einen neuen Registrierungsschlüssel erstellen. Tatsächlich ist ein Registrierungsschlüssel einfacher zu erstellen, weil der einzige Elementtyp in der Windows-Registrierung ein Schlüssel ist. (Registrierungseinträge sind Element-*Eigenschaften*.) Wenn Sie beispielsweise einen Schlüssel namens „_Test“ im „CurrentVersion“-Unterschlüssel erstellen möchten, geben Sie Folgendes ein:
 
 ```
-PS> New-Item -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\_Test
+PS> New-Item -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion_Test
 
    Hive: Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Micros
 oft\Windows\CurrentVersion
@@ -73,7 +80,7 @@ Wenn Sie einen Registrierungspfad eingeben, müssen Sie den Doppelpunkt (**:**) 
 ### Warum Registrierungswerte keine Elemente
 Wenn Sie mit dem Cmdlet **Get-ChildItem** nach den Elemente in einem Registrierungsschlüssel suchen, werden weder die tatsächlichen Registrierungseinträge noch deren Werte angezeigt.
 
-Beispielsweise enthält der Registrierungsschlüssel **HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run** in der Regel mehrere Registrierungseinträge, die den Anwendungen entsprechen, die beim Systemstart ausgeführt werden.
+Beispielsweise enthält der Registrierungsschlüssel **HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Run** in der Regel mehrere Registrierungseinträge, die den Anwendungen entsprechen, die beim Systemstart ausgeführt werden.
 
 Wenn Sie **Get-ChildItem** verwenden, um nach untergeordnete Elementen im Schlüssel zu suchen, wird nur der **OptionalComponents**-Unterschlüssel des Schlüssels angezeigt:
 
@@ -86,7 +93,7 @@ SKC  VC Name                           Property
   3   0 OptionalComponents             {}
 ```
 
-Zwar wäre es praktisch, wenn Registrierungseinträge wie Elemente behandelt werden könnten, es ist aber nicht möglich, einen Pfad zu einem Registrierungseintrag so anzugeben, dass seine Eindeutigkeit sicherstellt ist. In der Pfadnotation wird nicht zwischen dem Registrierungsunterschlüssel namens **Run** und dem **(Standard)**Registrierungseintrag im **Run**-Unterschlüssel unterschieden. Darüber hinaus könnten Sie, wenn Registrierungseinträge Elemente wären, die Pfadnotation nicht dazu verwenden, einen Registrierungeintrag namens **Windows\CurrentVersion\Run** von dem Unterschlüssel zu unterscheiden, der sich in diesem Pfad befindet, denn Registrierungeintragsnamen können den umgekehrten Schrägstrich (**\** enthalten.
+Zwar wäre es praktisch, wenn Registrierungseinträge wie Elemente behandelt werden könnten, es ist aber nicht möglich, einen Pfad zu einem Registrierungseintrag so anzugeben, dass seine Eindeutigkeit sicherstellt ist. In der Pfadnotation wird nicht zwischen dem Registrierungsunterschlüssel namens **Run** und dem **(Standard)**Registrierungseintrag im **Run**-Unterschlüssel unterschieden. Darüber hinaus könnten Sie, wenn Registrierungseinträge Elemente wären, die Pfadnotation nicht dazu verwenden, einen Registrierungseintrag namens **Windows\\CurrentVersion\\Run** von dem Unterschlüssel zu unterscheiden, der sich in diesem Pfad befindet, denn Registrierungseintragsnamen können den umgekehrten Schrägstrich (**\\**) enthalten.
 
 ### Umbenennen von vorhandenen Elementen (Rename-Item)
 Um den Namen einer Datei oder eines Ordners zu ändern, verwenden Sie das Cmdlet **Rename-Item**. Der folgende Befehl ändert den Namen der Datei **file1.txt** in **fileOne.txt**.
@@ -107,7 +114,7 @@ At line:1 char:12
 ### Verschieben von Elementen (Move-Item)
 Um eine Datei oder einen Ordner zu verschieben, verwenden Sie das Cmdlet **Move-Item**.
 
-Der folgende Befehl verschiebt z. B. das Verzeichnis „New.Directory“ aus dem Verzeichnis „C:\temp“ in das Stammverzeichnis von Laufwerk C:. Wenn Sie überprüfen möchten, ob das Element verschoben wurde, fügen Sie den **PassThru**-Parameter des **Move-Item**-Cmdlets ein. Ohne **Passthru** zeigt das Cmdlet **Move-Item** keine Ergebnisse an.
+Der folgende Befehl verschiebt z.B. das Verzeichnis „New.Directory“ aus dem Verzeichnis „C:\\temp“ in das Stammverzeichnis von Laufwerk C:. Wenn Sie überprüfen möchten, ob das Element verschoben wurde, fügen Sie den **PassThru**-Parameter des **Move-Item**-Cmdlets ein. Ohne **Passthru** zeigt das Cmdlet **Move-Item** keine Ergebnisse an.
 
 ```
 PS> Move-Item -Path C:\temp\New.Directory -Destination C:\ -PassThru
@@ -122,13 +129,13 @@ d----        2006-05-18  12:14 PM            New.Directory
 ### Kopieren von Elementen (Copy-Item)
 Wenn Sie mit den Kopiervorgänge in anderen Shells vertraut sind, finden Sie das Verhalten des Cmdlets **Copy-Item** in Windows PowerShell möglicherweise ungewöhnlich. Wenn Sie ein Element aus einem Speicherort in einen anderen kopieren, kopiert „Copy-Item“ den Inhalt des Elements nicht standardmäßig.
 
-Angenommen, Sie kopieren das Verzeichnis **New.Directory** von Laufwerk C: in das Verzeichnis „C:\temp“, dann wird der Befehl erfolgreich ausgeführt, aber die Dateien im Verzeichnis „New.Directory“ werden nicht kopiert.
+Angenommen, Sie kopieren das Verzeichnis **New.Directory** von Laufwerk C: in das Verzeichnis „C:\\temp“, dann wird der Befehl erfolgreich ausgeführt, aber die Dateien im Verzeichnis „New.Directory“ werden nicht kopiert.
 
 ```
 PS> Copy-Item -Path C:\New.Directory -Destination C:\temp
 ```
 
-Wenn Sie den Inhalt von **C:\temp\New.Directory** anzeigen, stellen Sie fest, dass es keine Dateien enthält:
+Wenn Sie den Inhalt von **C:\\temp\\New.Directory** anzeigen, stellen Sie fest, dass es keine Dateien enthält:
 
 ```
 PS> Get-ChildItem -Path C:\temp\New.Directory
@@ -137,7 +144,7 @@ PS>
 
 Warum kopiert das Cmdlet **Copy-Item** den Inhalt nicht in den neuen Speicherort?
 
-Das Cmdlet **Copy-Item** wurde als generisches Cmdlet entworfen, d. h., es ist nicht nur zum Kopieren von Dateien und Ordnern vorgesehen. Außerdem könnte es sein, auch wenn Dateien und Ordner kopiert werden, dass Sie nur den Container und nicht die Elemente im Container kopieren möchten.
+Das Cmdlet **Copy-Item** wurde als generisches Cmdlet entworfen, d.h., es ist nicht nur zum Kopieren von Dateien und Ordnern vorgesehen. Außerdem könnte es sein, auch wenn Dateien und Ordner kopiert werden, dass Sie nur den Container und nicht die Elemente im Container kopieren möchten.
 
 Wenn Sie den gesamten Inhalt eines Ordners kopieren möchten, fügen Sie den **Recurse**-Parameter des **Copy-Item**-Cmdlets in den Befehl ein. Wenn Sie das Verzeichnis bereits ohne Inhalt kopiert haben, fügen Sie den **Force**-Parameter ein, der es ermöglicht, dass der leere Ordner überschrieben wird.
 
@@ -185,7 +192,7 @@ Nehmen Sie an, Sie führen den folgenden Befehl aus:
 PS> Invoke-Item C:\WINDOWS
 ```
 
-Ein Explorer-Fenster, das sich in „C:\Windows“ befindet, wird angezeigt, genau so, als hätten Sie auf den Ordner „C:\Windows“ doppelgeklickt.
+Ein Explorer-Fenster, das sich in „C:\\Windows“ befindet, wird angezeigt, genau so, als hätten Sie auf den Ordner „C:\\Windows“ doppelgeklickt.
 
 Wenn Sie die Datei **Boot.ini** auf einem System vor Windows Vista aufrufen:
 
@@ -197,6 +204,7 @@ Ist der INI-Dateityp mit Editor verknüpft ist, wird die Datei „boot.ini“ in
 
 
 
-<!--HONumber=Apr16_HO1-->
+
+<!--HONumber=Aug16_HO4-->
 
 

@@ -1,12 +1,19 @@
 ---
 title: Grundlegendes zu wichtigen Windows PowerShell-Konzepten
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 3e601e38-4520-4578-a48d-b6779f1d35ee
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 89634d992eb59650e1f1a6cf89064b477ac4fea9
+
 ---
+
 # Grundlegendes zu wichtigen Windows PowerShell-Konzepten
 Für Windows PowerShell wurden Konzepte aus vielen verschiedenen Umgebungen integriert. Mit mehreren davon sind Personen vertraut, die Erfahrung mit bestimmten Shells oder Programmierumgebungen haben, doch nur sehr wenige kennen alle. Ein Blick auf einige dieser Konzepte ermöglicht eine nützliche Übersicht über die Shell.
 
@@ -16,7 +23,7 @@ Im Gegensatz zu herkömmlichen Befehlszeilenschnittstellen sind Windows PowerShe
 Wenn Sie bislang Textverarbeitungstools zum Verarbeiten von Befehlszeilendaten genutzt haben, werden Sie feststellen, dass sie sich anders verhalten, wenn Sie versuchen, sie in Windows PowerShell zu verwenden. In den meisten Fällen benötigen Sie keine Textverarbeitungstools, um bestimmte Informationen zu extrahieren. Über standardmäßige Windows PowerShell-Objektbearbeitungsbefehle können Sie auf Teile der Daten direkt zugreifen.
 
 ### Die Befehlsfamilie ist erweiterbar
-Schnittstellen wie „Cmd.exe“ bieten keine Möglichkeit, den integrierten Befehlssatz direkt zu erweitern. Sie können externe Befehlszeilentools erstellen, die in „Cmd.exe“ ausgeführt werden. Doch diese externen Tools bieten keinen Dienste, z. B. die Integration von Hilfe, und „Cmd.exe“ weiß nicht automatisch, ob es sich um gültige Befehle handelt.
+Schnittstellen wie „Cmd.exe“ bieten keine Möglichkeit, den integrierten Befehlssatz direkt zu erweitern. Sie können externe Befehlszeilentools erstellen, die in „Cmd.exe“ ausgeführt werden. Doch diese externen Tools bieten keinen Dienste, z.B. die Integration von Hilfe, und „Cmd.exe“ weiß nicht automatisch, ob es sich um gültige Befehle handelt.
 
 Die nativen binären Befehle in Windows PowerShell, die *Cmdlets* (ausgesprochen „Commandlets“) genannt werden, können mithilfe von Cmdlets verbessert werden, die Sie mithilfe von Snap-Ins erstellen und Windows PowerShell hinzufügen. Windows PowerShell-*Snap-Ins* werden wie binäre Tools in einer beliebigen anderen Schnittstelle kompiliert. Mit ihrer Hilfe können Sie Windows PowerShell-Anbieter der Shell und auch neue Cmdlets hinzufügen.
 
@@ -44,6 +51,7 @@ Wenn Sie kein C#-Programmierer sind, ist diese Ähnlichkeit ohne Bedeutung. Wenn
 
 
 
-<!--HONumber=Apr16_HO1-->
+
+<!--HONumber=Aug16_HO4-->
 
 

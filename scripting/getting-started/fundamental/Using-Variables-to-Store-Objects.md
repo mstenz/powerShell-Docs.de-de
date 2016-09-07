@@ -1,12 +1,19 @@
 ---
 title: Verwenden von Variablen, um Objekte zu speichern
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: b1688d73-c173-491e-9ba6-6d0c1cc852de
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 6216f3e1a766c57a7549a3e3b4fbe76d043a8a41
+
 ---
+
 # Verwenden von Variablen, um Objekte zu speichern
 Windows PowerShell arbeitet mit Objekten. In Windows PowerShell können Sie Variablen – eigentlich benannte Objekte – erstellen, um Ausgabe zur späteren Verwendung beizubehalten. Wenn Sie mit dem Verwenden von Variablen in anderen Shells vertraut sind, sollten Sie daran denken, dass Windows PowerShell-Variablen keine Texte, sondern Objekte sind.
 
@@ -87,7 +94,7 @@ Windows PowerShell ist zwar nicht „Cmd.exe“, wird aber trotzdem in einer Bef
 Get-ChildItem env:
 ```
 
-Obwohl die Standardcmdlets für Variablen nicht so konzipiert sind, dass sie mit **env:** funktionieren, können Sie sie weiterhin verwenden, indem Sie das Präfix **env:** angeben. Wenn Sie beispielsweise das Stammverzeichnis des Betriebssystems anzeigen möchten, können Sie die Befehlsshellvariable **%Systemroot%** in Windows PowerShell verwenden, indem Sie Folgende eingeben:
+Obwohl die Standardcmdlets für Variablen nicht so konzipiert sind, dass sie mit **env:** funktionieren, können Sie sie weiterhin verwenden, indem Sie das Präfix **env:** angeben. Wenn Sie beispielsweise das Stammverzeichnis des Betriebssystems anzeigen möchten, können Sie die Befehlsshellvariable **%SystemRoot%** in Windows PowerShell verwenden, indem Sie Folgende eingeben:
 
 ```
 PS> $env:SystemRoot
@@ -98,6 +105,7 @@ Sie können auch Umgebungsvariablen in Windows PowerShell erstellen und ändern.
 
 
 
-<!--HONumber=Apr16_HO1-->
+
+<!--HONumber=Aug16_HO4-->
 
 

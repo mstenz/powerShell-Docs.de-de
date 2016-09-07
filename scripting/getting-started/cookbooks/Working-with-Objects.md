@@ -9,19 +9,19 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 7ecc94a4-015c-4459-ae58-85289ea09030
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: a25734261fdcf657d0b97b1f037580f89b04881d
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: e7069571249447bffc587d3665ffdb8f75bd9c25
 
 ---
 
 # Arbeiten mit Objekten
-Wir haben erläutert, wie Windows PowerShell Objekte zum Übertragen von Daten zwischen Cmdlets verwendet. Außerdem haben wir einige Möglichkeiten zum Abrufen ausführlicher Informationen zu Objekten unter Verwendung der Cmdlets „Get\-Member“ und „Format“ zum Anzeigen bestimmter Eigenschaften von Objekten beschrieben.
+Wir haben erläutert, wie Windows PowerShell Objekte zum Übertragen von Daten zwischen Cmdlets verwendet. Außerdem haben wir einige Möglichkeiten zum Abrufen ausführlicher Informationen zu Objekten unter Verwendung der Cmdlets „Get-Member“ und „Format“ zum Anzeigen bestimmter Eigenschaften von Objekten beschrieben.
 
 Die Leistungsfähigkeit von Objekten besteht darin, dass Sie Ihnen Zugriff auf viele komplexe Daten bereitstellen, die bereits in Beziehung zueinander stehen. Mit einigen einfachen Techniken können Sie Objekte weiter bearbeiten, um noch mehr Aufgaben zu erledigen. In diesem Kapitel werden einige spezielle Objekttypen behandelt und Methoden zu deren Bearbeitung beschrieben.
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Aug16_HO4-->
 
 

@@ -1,12 +1,19 @@
 ---
 title: Informationen zu Windows PowerShell
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 979654ae-7994-47f8-be43-d79e7a140143
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 548cb522ecf8f8f5e82fb43e709c6b8bf3a05096
+
 ---
+
 # Informationen zu Windows PowerShell
 Windows PowerShell ist auf das Verbessern der Befehlszeilen- und Skriptumgebung ausgelegt, indem lange bestehende Probleme beseitigt und neue Features hinzugefügt wurden.
 
@@ -14,25 +21,24 @@ Windows PowerShell ist auf das Verbessern der Befehlszeilen- und Skriptumgebung 
 Windows PowerShell erleichtert das Ermitteln seiner Features. Um z. B. eine Liste von Cmdlets zu finden, die zum Anzeigen und Ändern von Windows-Diensten dienen, geben Sie Folgendes ein:
 
 ```
-get-command *-service
+Get-Command *-Service
 ```
 
-Nach dem Ermitteln, mit welchem Cmdlet eine Aufgabe erledigt wird, können Sie mithilfe des Cmdlets „Get-Help“ mehr über das Cmdlet erfahren. Geben Sie z. B. zum Anzeigen der Hilfe zum Cmdlet „Get-Service“ Folgendes ein:
+Nach dem Ermitteln, mit welchem Cmdlet eine Aufgabe erledigt wird, können Sie mithilfe des Cmdlets „Get-Help“ mehr über das Cmdlet erfahren. Geben Sie z.B. zum Anzeigen der Hilfe zum Cmdlet „Get-Service“ Folgendes ein:
 
 ```
-get-help get-service
+Get-Help Get-Service
 ```
-
-Um die Ausgabe dieses Cmdlets vollständig zu verstehen, leiten Sie seine Ausgabe an das Cmdlet „Get-Member“ weiter. Der folgende Befehl zeigt z. B. Informationen zu den Elementen des Objekts an, das vom Cmdlet „Get-Service“ ausgegeben wurde.
+Die meisten Cmdlets geben Objekte aus, die bearbeitet und dann in Text für die Anzeige gerendert werden können. Um die Ausgabe dieses Cmdlets vollständig zu verstehen, leiten Sie seine Ausgabe an das Cmdlet „Get-Member“ weiter. Der folgende Befehl zeigt z.B. Informationen zu den Elementen des Objekts an, das vom Cmdlet „Get-Service“ ausgegeben wurde.
 
 ```
-get-service | get-member
+Get-Service | Get-Member
 ```
 
 ## Konsistenz
 Das Verwalten von Systemen kann ein komplexer Vorgang sein, und Tools mit einer konsistenten Schnittstelle helfen, die inhärente Komplexität im Griff zu behalten. Leider zeichnen sich weder Befehlszeilentools noch skriptfähige COM-Objekte durch ihre Konsistenz aus.
 
-Die Konsistenz von Windows PowerShell ist einer der wesentlichen Vorteile. Wenn Sie z. B. gelernt haben, wie das Cmdlet „Sort-Object“ verwendet wird, können Sie mit diesem Wissen die Ausgabe sämtlicher Cmdlets sortieren. Sie müssen also nicht für jedes Cmdlet eine andere Sortierroutine erlernen.
+Die Konsistenz von Windows PowerShell ist einer der wesentlichen Vorteile. Wenn Sie z.B. gelernt haben, wie das Cmdlet „Sort-Object“ verwendet wird, können Sie mit diesem Wissen die Ausgabe sämtlicher Cmdlets sortieren. Sie müssen also nicht für jedes Cmdlet eine andere Sortierroutine erlernen.
 
 Darüber hinaus müssen Cmdlet-Entwickler keine Sortierfunktionen für ihre Cmdlets entwerfen. Windows PowerShell bietet ihnen ein Framework, das die grundlegenden Funktionen bereitstellt und Konsistenz bei vielen Aspekten der Schnittstelle erzwingt. Das Framework bietet nicht mehr einige der Wahlmöglichkeiten, die normalerweise dem Entwickler überlassen werden, vereinfacht aber im Gegenzug die Entwicklung zuverlässiger und benutzerfreundlicher Cmdlets wesentlich.
 
@@ -51,6 +57,7 @@ Windows PowerShell vereinfacht den Übergang von der interaktiven Eingabe von Be
 
 
 
-<!--HONumber=Apr16_HO1-->
+
+<!--HONumber=Aug16_HO4-->
 
 

@@ -1,12 +1,19 @@
 ---
 title: Arbeiten mit Softwareinstallationen
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 51a12fe9-95f6-4ffc-81a5-4fa72a5bada9
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 13fdac5369d70289d7a0b5115a04879f707e47fc
+
 ---
+
 # Arbeiten mit Softwareinstallationen
 Auf Anwendungen, die für die Verwendung von Windows Installer entwickelt wurden, kann über die WMI-Klasse **Win32_Product** zugegriffen werden, aber nicht alle heute verfügbaren Anwendungen verwenden den Windows Installer. Da Windows Installer eine breite Palette von Standardverfahren für die Arbeit mit installierbaren Anwendungen bereitstellt, konzentrieren wir uns in erster Linie auf diese Anwendungen. Anwendungen, die alternative Setuproutinen verwenden, werden im Allgemeinen nicht von Windows Installer verwaltet. Spezifische Verfahren für die Arbeit mit diesen Anwendungen hängen von der Installationssoftware und Entscheidungen des Anwendungsentwicklers ab.
 
@@ -25,7 +32,7 @@ Version           : 2.0.50727
 Caption           : Microsoft .NET Framework 2.0
 ```
 
-Um alle Eigenschaften des Objekts „Win32_Product“ auf dem Bildschirm anzuzeigen, verwenden Sie den Eigenschaftenparameter der Formatierungs-Cmdlets wie z. B. das Cmdlet „Format-List“ mit dem Wert „*“ (alle).
+Um alle Eigenschaften des Objekts „Win32_Product“ auf dem Bildschirm anzuzeigen, verwenden Sie den Eigenschaftenparameter der Formatierungs-Cmdlets wie z.B. das Cmdlet „Format-List“ mit dem Wert „\*“ (alle).
 
 ```
 PS> Get-WmiObject -Class Win32_Product -ComputerName . | Where-Object -FilterScript {$_.Name -eq "Microsoft .NET Framework 2.0"} | Format-List -Property *
@@ -49,7 +56,7 @@ Oder verwenden Sie den Parameter **Get-WmiObject Filter**, um nur Microsoft .NET
 Get-WmiObject -Class Win32_Product -ComputerName . -Filter "Name='Microsoft .NET Framework 2.0'"| Format-List -Property *
 ```
 
-Beachten Sie, dass WQL-Abfragen häufig Zeichen wie Leerzeichen oder Gleichheitszeichen verwenden, die in Windows PowerShell eine besondere Bedeutung haben. Aus diesem Grund ist es ratsam, den Wert des Filterparameters immer in Anführungszeichen anzugeben. Sie können auch das Windows PowerShell-Escapezeichen verwenden, ein Hochkomma ('), obwohl die Lesbarkeit damit möglicherweise nicht verbessert wird. Der folgende Befehl entspricht dem vorherigen Befehl und es werden dieselben Ergebnisse zurückgegeben, aber es wird das Hochkomma als Escapezeichen für Sonderzeichen verwendet, statt die gesamte Filterzeichenfolge wiederzugeben
+Beachten Sie, dass WQL-Abfragen häufig Zeichen wie Leerzeichen oder Gleichheitszeichen verwenden, die in Windows PowerShell eine besondere Bedeutung haben. Aus diesem Grund ist es ratsam, den Wert des Filterparameters immer in Anführungszeichen anzugeben. Sie können auch das Windows PowerShell-Escapezeichen verwenden, ein Hochkomma (\`), obwohl die Lesbarkeit damit möglicherweise nicht verbessert wird. Der folgende Befehl entspricht dem vorherigen Befehl und es werden dieselben Ergebnisse zurückgegeben, aber es wird das Hochkomma als Escapezeichen für Sonderzeichen verwendet, statt die gesamte Filterzeichenfolge wiederzugeben
 
 ```
 Get-WmiObject -Class Win32_Product -ComputerName . -Filter Name`=`'Microsoft` .NET` Framework` 2.0`' | Format-List -Property *
@@ -81,7 +88,7 @@ Obwohl es nun mehrere Möglichkeiten zum Anzeigen der Anwendungen gibt, die mit 
 ### Auflisten aller deinstallierbaren Anwendungen
 Es gibt zwar keine sichere Methode, alle Anwendungen auf einem System zu finden, aber es ist möglich, alle Programme mit Auflistungen zu finden, die im Dialogfeld „Software“ angezeigt werden. „Software“ sucht diese Anwendungen im folgenden Registrierungsschlüssel:
 
-**HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall**.
+**HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall**.
 
 Dieser Schlüssel kann auch untersucht werden, um Anwendungen zu finden. Um die Anzeige des Deinstallationsschlüssel zu vereinfachen, kann diesem Registrierungsspeicherort ein Windows PowerShell-Laufwerk zugeordnet werden:
 
@@ -140,7 +147,7 @@ Sie können die Klasse **Win32_Product** verwenden, um Windows Installer-Pakete 
 > [!NOTE]
 > Unter Windows Vista, Windows Server 2008 und höheren Versionen von Windows müssen Sie Windows PowerShell zum Installieren einer Anwendung mit der Option „Als Administrator ausführen“ starten.
 
-Verwenden Sie bei der Remoteinstallation einen UNC-Netzwerkpfad (Universal Naming Convention), um den Pfad zum MSI-Paket anzugeben, da das WMI-Subsystem Windows PowerShell-Pfade nicht interpretieren kann. Geben Sie beispielsweise zum Installieren des Pakets „NewPackage.msi“ in der Netzwerkfreigabe „\\AppServ\dsp“ auf dem Remotecomputer PC01 den folgenden Befehl in der Windows PowerShell-Eingabeaufforderung ein:
+Verwenden Sie bei der Remoteinstallation einen UNC-Netzwerkpfad (Universal Naming Convention), um den Pfad zum MSI-Paket anzugeben, da das WMI-Subsystem Windows PowerShell-Pfade nicht interpretieren kann. Geben Sie beispielsweise zum Installieren des Pakets „NewPackage.msi“ in der Netzwerkfreigabe „\\\\AppServ\\dsp“ auf dem Remotecomputer PC01 den folgenden Befehl in der Windows PowerShell-Eingabeaufforderung ein:
 
 ```
 (Get-WMIObject -ComputerName PC01 -List | Where-Object -FilterScript {$_.Name -eq "Win32_Product"}).Install(\\AppSrv\dsp\NewPackage.msi)
@@ -178,6 +185,7 @@ Um eine Anwendung zu aktualisieren, müssen Sie den Namen der Anwendung und den 
 
 
 
-<!--HONumber=Apr16_HO1-->
+
+<!--HONumber=Aug16_HO4-->
 
 

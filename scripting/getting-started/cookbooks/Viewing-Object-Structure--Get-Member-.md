@@ -1,12 +1,19 @@
 ---
-title: Anzeigen einer Objektstruktur (Get-Member)
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: Anzeigen einer Objektstruktur  Get-Member
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: a1819ed2-2ef3-453a-b2b0-f3589c550481
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: acd52c1271013320dafa7f7bf5c72b752e07574b
+
 ---
+
 # Anzeigen einer Objektstruktur (Get-Member)
 Weil Objekte in Windows PowerShell eine so zentrale Rolle spielen, gibt es mehrere systemeigene Befehle, die zum Arbeiten mit beliebigen Objekttypen vorgesehen sind. Der wichtigste dieser Befehle ist der Befehl **Get-Member**.
 
@@ -69,6 +76,7 @@ Wenn Sie Eigenschaften anzeigen müssen, die nicht standardmäßig von Windows P
 
 
 
-<!--HONumber=Apr16_HO1-->
+
+<!--HONumber=Aug16_HO4-->
 
 

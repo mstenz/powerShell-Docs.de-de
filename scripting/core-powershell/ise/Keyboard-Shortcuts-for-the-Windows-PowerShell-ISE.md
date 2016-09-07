@@ -1,22 +1,29 @@
 ---
-title: Tastenkombinationen für Windows PowerShell ISE
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "Tastenkombinationen für Windows PowerShell ISE"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 8328b946-0f02-4ef4-ac28-2743a1b4043b
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 596bbd2a5c272918171833310fc8c8aa5353adb1
+
 ---
+
 # Tastenkombinationen für Windows PowerShell ISE
-Verwenden Sie die folgenden Tastenkombinationen zum Ausführen von Aktionen in Windows PowerShell® Integrated Scripting Environment (ISE). Windows PowerShell ISE ist als Bestandteil von Windows Server- und Windows-Client-Betriebssystemen verfügbar, kann aber auch unter einigen älteren Windows-Betriebssystemen als Teil des [Windows Management Framework 4.0-Downloadpakets](http://go.microsoft.com/fwlink/?LinkID=293881) installiert werden..
+Verwenden Sie die folgenden Tastenkombinationen zum Ausführen von Aktionen in Windows PowerShell® Integrated Scripting Environment (ISE). Windows PowerShell ISE ist als Bestandteil von Windows Server- und Windows-Client-Betriebssystemen verfügbar, kann aber auch unter einigen älteren Windows-Betriebssystemen als Teil des [Windows Management Framework 4.0-Downloadpakets](http://go.microsoft.com/fwlink/?LinkID=293881) installiert werden.
 
 ## Tastenkombinationen zum Bearbeiten von Text
 Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Text bearbeiten.
 
 |Aktion|Tastenkombinationen|Verwenden in|
 |----------|----------------------|----------|
-|**Hilfe**|F1|Skriptbereich **Wichtig:** Sie können angeben, dass F1-Hilfe aus der TechNet-Bibliothek im Internet oder aus der heruntergeladenen Hilfe abgerufen wird (siehe „Update-Help). Um dies auszuwählen, klicken Sie auf **Tools**, **Optionen**, und aktivieren oder deaktivieren Sie dann auf der Registerkarte **Allgemeine Einstellungen** die Option **Lokale Hilfe anstatt Onlineinhalt verwenden**.|
-|**Kopieren**|STRG+C|Skriptbereich, Befehlsbereich, Ausgabebereich|
+|**Hilfe**|F1|Skriptbereich **Wichtig:** Sie können angeben, dass F1-Hilfe aus der TechNet-Bibliothek im Internet oder aus der heruntergeladenen Hilfe abgerufen wird (siehe „Update-Help“). Um dies auszuwählen, klicken Sie auf **Tools**, **Optionen**, und aktivieren oder deaktivieren Sie dann auf der Registerkarte **Allgemeine Einstellungen** die Option **Lokale Hilfe anstatt Onlineinhalt verwenden**.|
+|**Kopieren**|STRG + C|Skriptbereich, Befehlsbereich, Ausgabebereich|
 |**Ausschneiden**|STRG+X|Skriptbereich, Befehlsbereich|
 |**Gliederung erweitern oder reduzieren**|STRG+M|Skriptbereich|
 |**In Skript suchen**|STRG+F|Skriptbereich|
@@ -37,10 +44,10 @@ Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Skripts im Skr
 |Aktion|Tastenkombination|
 |----------|---------------------|
 |**„Neu“,**|STRG+N|
-|**Öffnen Sie den**|STRG+O|
+|**Öffnen**|STRG+O|
 |**Ausführen**|F5|
 |**Auswahl ausführen**|F8|
-|**Ausführung beenden**|STRG+UNTBR STRG+C kann verwendet werden, wenn der Kontext eindeutig ist (es ist kein Text ausgewählt).|
+|**Ausführung beenden**|STRG+UNTBR. STRG+C kann verwendet werden, wenn der Kontext eindeutig ist (es ist kein Text ausgewählt).|
 |**Registerkarte** (zum nächsten Skript)|STRG+TAB **Hinweis:** Mit STRG+TAB zum nächsten Skript wechseln funktioniert nur, wenn Sie eine einzige Windows PowerShell-Registerkarte geöffnet haben, oder wenn Sie mehrere Windows PowerShell-Registerkarten geöffnet haben und sich der Fokus im Skriptbereich befindet.|
 |**Registerkarte** (zum vorherigen Skript)|STRG+UMSCHALT+TAB **Hinweis:** Mit STRG+UMSCHALT+TAB zum vorherigen Skript wechseln funktioniert nur, wenn Sie eine einzige Windows PowerShell-Registerkarte geöffnet haben, oder wenn Sie mehrere Windows PowerShell-Registerkarten geöffnet haben und sich der Fokus im Skriptbereich befindet.|
 
@@ -81,7 +88,7 @@ Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Skripts debugg
 |Aktion|Tastenkombination|Verwenden in|
 |----------|---------------------|----------|
 |**Fortsetzen**|C|Konsolenbereich, wenn ein Skript debuggt wird|
-|**Einzelschritt**|S|Konsolenbereich, wenn ein Skript debuggt wird|
+|**Einzelschritt**|E|Konsolenbereich, wenn ein Skript debuggt wird|
 |**Überspringen**|V|Konsolenbereich, wenn ein Skript debuggt wird|
 |**Rücksprung**|O|Konsolenbereich, wenn ein Skript debuggt wird|
 |**Letzten Befehl wiederholen** (für Einzelschritt oder Überspringen)|EINGABETASTE|Konsolenbereich, wenn ein Skript debuggt wird|
@@ -97,8 +104,8 @@ Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Windows PowerS
 |----------|---------------------|
 |**PowerShell-Registerkarte schließen**|STRG+W|
 |**Neue PowerShell-Registerkarte**|STRG+T|
-|**Vorherige PowerShell-Registerkarte**|STRG+UMSCHALT+TAB Diese Tastenkombination funktioniert nur, wenn keine Dateien in irgendeiner Windows PowerShell-Registerkarte geöffnet sind.|
-|**Nächste Windows PowerShell-Registerkarte**|STRG+TAB Diese Tastenkombination funktioniert nur, wenn keine Dateien in irgendeiner Windows PowerShell-Registerkarte geöffnet sind.|
+|**Vorherige PowerShell-Registerkarte**|STRG+UMSCHALT+TAB. Diese Tastenkombination funktioniert nur, wenn keine Dateien in irgendeiner Windows PowerShell-Registerkarte geöffnet sind.|
+|**Nächste Windows PowerShell-Registerkarte**|STRG+TAB. Diese Tastenkombination funktioniert nur, wenn keine Dateien in irgendeiner Windows PowerShell-Registerkarte geöffnet sind.|
 
 ## Tastenkombinationen für Starten und Beenden
 Sie können die folgenden Tastenkombinationen verwenden, um die Windows PowerShell-Konsole (PowerShell.exe) zu starten oder Windows PowerShell ISE zu beenden.
@@ -113,6 +120,7 @@ Sie können die folgenden Tastenkombinationen verwenden, um die Windows PowerShe
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO4-->
 
 

@@ -1,15 +1,22 @@
 ---
-title: Einführung in die Windows PowerShell ISE
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "Einführung in die Windows PowerShell ISE"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: a0de70ca-909a-4807-94d1-6da86e5b52a0
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 07ec87200c8cc2db2c4d5695a2ca32a63bc470c8
+
 ---
+
 # Einführung in die Windows PowerShell ISE
-Windows PowerShell Integrated Scripting Environment (ISE) ist eine Hostanwendung für Windows PowerShell. In der Windows PowerShell ISE können Sie Befehle ausführen und Skripts schreiben, testen und debuggen, und zwar auf einer einzigen Windows\-basierten grafischen Benutzeroberfläche mit mehrzeiliger Bearbeitung, Vervollständigung mit der TAB-TASTE, Syntaxfarben, selektiver Ausführung, kontextabhängiger Hilfe und Unterstützung für von rechts nach links geschriebene Sprachen.
-Sie können Menüelemente und Tastenkombinationen für viele der Aufgaben nutzen, die Sie auch in der Windows PowerShell-Konsole ausführen würden.  Um beispielsweise beim Debuggen eines Skripts in der Windows PowerShell ISE einen Zeilenhaltepunkt in einem Skript festzulegen, klicken Sie mit der rechten Maustaste auf die Codezeile, und klicken Sie anschließende auf **Haltepunkt umschalten**..
+Windows PowerShell Integrated Scripting Environment (ISE) ist eine Hostanwendung für Windows PowerShell. In der Windows PowerShell ISE können Sie Befehle ausführen und Skripts schreiben, testen und debuggen, und zwar auf einer einzigen Windows-basierten grafischen Benutzeroberfläche mit mehrzeiliger Bearbeitung, Vervollständigung mit der TAB-TASTE, Syntaxfarben, selektiver Ausführung, kontextbezogener Hilfe und Unterstützung für von rechts nach links geschriebene Sprachen.
+Sie können Menüelemente und Tastenkombinationen für viele der Aufgaben nutzen, die Sie auch in der Windows PowerShell-Konsole ausführen würden.  Um beispielsweise beim Debuggen eines Skripts in der Windows PowerShell ISE einen Zeilenhaltepunkt in einem Skript festzulegen, klicken Sie mit der rechten Maustaste auf die Codezeile, und klicken Sie anschließende auf **Haltepunkt umschalten**.
 
 Testen Sie diese neuen Features in der Windows PowerShell ISE.
 
@@ -17,7 +24,7 @@ Testen Sie diese neuen Features in der Windows PowerShell ISE.
 
 -   Selektive Ausführung: Um einen Teil eines Skripts auszuführen, markieren Sie den Text, den Sie ausführen möchten, und klicken Sie dann auf die Schaltfläche **Skript ausführen**. Oder drücken Sie F5.
 
--   Kontextabhängige Hilfe: Geben Sie **Invoke-Item** ein, und drücken Sie dann F1. Die Hilfedatei wird mit dem Hilfethema für das Cmdlet **Invoke-Item** geöffnet.
+-   Kontextbezogene Hilfe: Geben Sie **Invoke-Item** ein, und drücken Sie dann F1. Die Hilfedatei wird mit dem Hilfethema für das Cmdlet **Invoke-Item** geöffnet.
 
 Die Windows PowerShell ISE ermöglicht Ihnen das Anpassen einiger Aspekte ihrer Darstellung. Sie hat auch ein eigenes Windows PowerShell-Profil, in dem Sie Funktionen, Aliase, Variablen und Befehle speichern können, die Sie in der Windows PowerShell ISE verwenden.
 
@@ -25,9 +32,9 @@ Die Windows PowerShell ISE ermöglicht Ihnen das Anpassen einiger Aspekte ihrer 
 
 1.  Führen Sie eines der folgenden Verfahren aus:
 
-    -   Klicken Sie auf **Start**, zeigen Sie auf **Alle Programme**, auf **Windows PowerShell V2**, und klicken Sie anschließend auf **Windows PowerShell ISE**..
+    -   Klicken Sie auf **Start**, zeigen Sie auf **Alle Programme**, dann auf **Windows PowerShell 2.0**, und klicken Sie dann auf **Windows PowerShell ISE**.
 
-    -   Geben Sie in der Windows PowerShell-Konsole „Cmd.exe“ oder im Feld „Ausführen“ **powershell\_ise.exe** ein..
+    -   Geben Sie in der Windows PowerShell-Konsole „Cmd.exe“ oder im Feld „Ausführen“ **powershell_ise.exe** ein.
 
 ### So rufen Sie Hilfe in der Windows PowerShell ISE ab
 
@@ -35,6 +42,7 @@ Die Windows PowerShell ISE ermöglicht Ihnen das Anpassen einiger Aspekte ihrer 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO4-->
 
 

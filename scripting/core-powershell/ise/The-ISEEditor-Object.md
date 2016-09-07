@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 0101daf8-4e31-4e4c-ab89-01d95dcb8f46
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 4812092dea24fa61245af7e06d1c5924ec812218
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 05255e63ae34e239003e5847c9f3b7fb2f4e3a0a
 
 ---
 
@@ -84,7 +84,7 @@ $psIse.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  Ersetzt die Markierung durch Text oder fügt Text an der aktuellen Position des Textcursors ein.
 
- **text** – Zeichenfolge – Der einzufügende Text.
+ **text**: Zeichenfolge – der einzufügende Text.
 
  Weitere Informationen finden Sie im [Beispielskript](#example) weiter unten in diesem Thema.
 
@@ -93,13 +93,13 @@ $psIse.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  Wählt den Text anhand der Parameter **startLine**, **startColumn**, **endLine** und **endColumn** aus.
 
- **startLine** – ganze Zahl – Die Zeile, in der die Auswahl beginnt.
+ **startLine**: ganze Zahl – die Zeile, in der die Auswahl beginnt.
 
- **startColumn** \- ganze Zahl – Die Spalte in der Startzeile, in der die Auswahl beginnt.
+ **startColumn**: ganze Zahl – die Spalte in der Startzeile, in der die Auswahl beginnt.
 
- **endLine** ganze Zahl – Die Zeile, in der die Auswahl endet.
+ **endLine**: ganze Zahl – die Zeile, in der die Auswahl endet.
 
- **endColumn** – ganze Zahl – Die Spalte in der Endzeile, in der die Auswahl endet.
+ **endColumn**: ganze Zahl – die Spalte in der Endzeile, in der die Auswahl endet.
 
  Weitere Informationen finden Sie im [Beispielskript](#example) weiter unten in diesem Thema.
 
@@ -121,9 +121,9 @@ $psIse.CurrentFile.Editor.SelectCaretLine()
 
  Legt die Position des Textcursors auf die Zeilennummer und die Spaltennummer fest. Es wird eine Ausnahme ausgelöst, wenn die Zeilennummer des Textcursors oder die Spaltennummer des Textcursors außerhalb des jeweils gültigen Bereichs liegt.
 
- **lineNumber** – ganze Zahl – Die Zeilennummer des Textcursors.
+ **lineNumber**: ganze Zahl – die Zeilennummer des Textcursors.
 
- **columnNumber** – ganze Zahl – Die Spaltennummer des Textcursors.
+ **columnNumber**: ganze Zahl – die Spaltennummer des Textcursors.
 
 ```
 # Set the CaretPosition.
@@ -146,7 +146,7 @@ $psIse.CurrentFile.Editor.ToggleOutliningExpansion()
 ###  <a name="CanGoToMatch"></a> CanGoToMatch
   In Windows PowerShell ISE 3.0 und höher unterstützt, in früheren Versionen nicht enthalten. 
 
- Die schreibgeschützte boolesche Eigenschaft, die angibt, ob der Textcursor sich neben einer normalen, eckigen oder geschweiften Klammer befindet – \(\), \[\], {}. Wenn der Textcursor sich direkt vor der öffnenden Klammer oder unmittelbar nach der schließenden Klammer eines Klammerpaars befindet, lautet der Wert dieser Eigenschaft **$true**. Andernfalls lautet er **$false**.
+ Die schreibgeschützte boolesche Eigenschaft, die angibt, ob der Textcursor sich neben einer Klammer, eckigen Klammer oder geschweiften Klammer befindet: \(\), \[\], {}. Wenn der Textcursor sich direkt vor der öffnenden Klammer oder unmittelbar nach der schließenden Klammer eines Klammerpaars befindet, lautet der Wert dieser Eigenschaft **$true**. Andernfalls lautet er **$false**.
 
 ```
 # Test to see if the caret is next to a parenthesis, bracket, or brace
@@ -168,7 +168,7 @@ $psIse.CurrentFile.Editor.CaretColumn
 ###  <a name="CaretLine"></a> CaretLine
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
- Die schreibgeschützte Eigenschaft, die die Nummer der Zeile abruft, die den Textcursor enthält.
+ Die schreibgeschützte Eigenschaft, die die Nummer der Zeile mit dem Textcursor abruft.
 
 ```
 # Get the CaretLine.
@@ -208,7 +208,7 @@ $psIse.CurrentFile.Editor.LineCount
 ###  <a name="Text"></a> Text
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
- Die Lese-\/Schreibeigenschaft, die den Text im Editor abruft oder festlegt.
+ Die Lese-/Schreibeigenschaft, die den Text im Editor abruft oder festlegt.
 
  Weitere Informationen finden Sie im [Beispielskript](#example) weiter unten in diesem Thema.
 
@@ -253,6 +253,6 @@ $myEditor.InsertText($selection.ToLower())
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Aug16_HO4-->
 
 

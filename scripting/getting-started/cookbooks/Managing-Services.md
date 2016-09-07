@@ -1,14 +1,21 @@
 ---
 title: Verwalten von Diensten
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 7a410e4d-514b-4813-ba0c-0d8cef88df31
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 66c2a8c8afab49f16e8ef7d0b5ba3a2a65c92490
+
 ---
+
 # Verwalten von Diensten
-Es gibt acht dienstbezogene Kern-Cmdlets („Service“-Cmdlets), die für eine Vielzahl von Dienstaufgaben konzipiert sind. Hier geht es nur um das Auflisten von Diensten und das Ändern des Ausführungsstatus für Dienste, Sie können aber eine Liste der „Service“-Cmdlets abrufen, indem Sie **Get-Help & #42;-Service** verwenden, und Sie finden Informationen zu jedem „Service“-Cmdlet, indem Sie **Get-Help <Cmdlet-Name >** verwenden, z. B. **Get-Help New-Service**.
+Es gibt acht dienstbezogene Kern-Cmdlets („Service“-Cmdlets), die für eine Vielzahl von Dienstaufgaben konzipiert sind. Hier geht es nur um das Auflisten von Diensten und das Ändern des Ausführungsstatus für Dienste, Sie können aber eine Liste der „Service“-Cmdlets abrufen, indem Sie **Get-Help \&#42;-Service** verwenden, und Sie finden Informationen zu jedem „Service“-Cmdlet, indem Sie **Get-Help <Cmdlet-Name>** verwenden, z.B. **Get-Help New-Service**.
 
 ## Abrufen von Diensten
 Sie können die Dienste auf einem lokalen oder Remotecomputer abrufen, indem Sie das Cmdlet **Get-Service** verwenden. Wie bei **Get-Process** werden alle Dienste zurückgegeben, wenn Sie den Befehl **Get-Service** ohne Parameter verwenden. Sie können nach Name filtern, und Sie können sogar ein Sternchen als Platzhalterzeichen verwenden:
@@ -146,6 +153,7 @@ Weitere Informationen hierzu finden Sie unter [Set-Service [m2]](https://technet
 
 
 
-<!--HONumber=Apr16_HO2-->
+
+<!--HONumber=Aug16_HO4-->
 
 

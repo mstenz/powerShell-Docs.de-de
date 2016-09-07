@@ -1,19 +1,26 @@
 ---
-title: Entfernen von Objekten aus der Pipeline (Where-Object)
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: Entfernen von Objekten aus der Pipeline  Where-Object
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 01df8b22-2d22-4e2c-a18d-c004cd3cc284
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 94117fcf337ecf550d6df1d167e608ba64582c03
+
 ---
+
 # Entfernen von Objekten aus der Pipeline (Where-Object)
 In Windows PowerShell geschieht es häufig, dass Sie mehr Objekte als gewünscht generieren und an eine Pipeline übergeben. Mithilfe der **Format**-Cmdlets können Sie die Eigenschaften bestimmter Objekte angeben, die angezeigt werden sollen, aber dies hilft dabei, ganze Objekte aus der Anzeige zu entfernen. Möglicherweise möchten Sie die Objekte vor dem Ende einer Pipeline filtern, um nur für eine Teilmenge der ursprünglich generierten Objekte bestimmte Aktionen auszuführen.
 
 Windows PowerShell enthält ein **Where-Object**-Cmdlet, mit dem Sie jedes Objekt in der Pipeline testen können, um es nur dann an die Pipeline zu übergeben, wenn es eine bestimmte Testbedingung erfüllt. Objekte, die den Test nicht bestehen, werden aus der Pipeline entfernt. Sie geben die Testbedingung als Wert des Parameters **Where-ObjectFilterScript** an.
 
 ### Ausführen einfacher Tests mit „Where-Object“
-Der Wert von **FilterScript** ist ein *Skriptblock* (d. h. ein oder mehrere, in geschweifte Klammern {} eingeschlossene Windows PowerShell-Befehle), der als „true“ oder „false“ ausgewertet wird. Diese Skriptblöcke können sehr einfach sein, aber ihre Erstellung erfordert Kenntnisse eines anderen Windows PowerShell-Konzepts: Vergleichsoperatoren. Mit einem Vergleichsoperator werden die Elemente auf den beiden Seiten des Operators verglichen. Vergleichsoperatoren beginnen mit einem Minuszeichen (-), gefolgt von einem Namen. Die grundlegenden Vergleichsoperatoren können für nahezu jede Art von Objekt verwendet werden. Die erweiterten Vergleichsoperatoren können möglicherweise nur mit Text oder Arrays verwendet werden.
+Der Wert von **FilterScript** ist ein *Skriptblock* (d.h. ein oder mehrere, in geschweifte Klammern {} eingeschlossene Windows PowerShell-Befehle), der als „true“ oder „false“ ausgewertet wird. Diese Skriptblöcke können sehr einfach sein, aber ihre Erstellung erfordert Kenntnisse eines anderen Windows PowerShell-Konzepts: Vergleichsoperatoren. Mit einem Vergleichsoperator werden die Elemente auf den beiden Seiten des Operators verglichen. Vergleichsoperatoren beginnen mit einem Minuszeichen (-), gefolgt von einem Namen. Die grundlegenden Vergleichsoperatoren können für nahezu jede Art von Objekt verwendet werden. Die erweiterten Vergleichsoperatoren können möglicherweise nur mit Text oder Arrays verwendet werden.
 
 > [!NOTE]
 > Bei Windows PowerShell-Vergleichsoperatoren wird beim Arbeiten mit Text die Groß-/Kleinschreibung standardmäßig nicht beachtet.
@@ -28,8 +35,8 @@ Aufgrund von Analyseaspekten werden Symbole wie <, > und = nicht als Vergleichso
 |-le|Ist kleiner als oder gleich|1 -le 2|
 |-gt|Ist größer als|2 -gt 1|
 |-ge|Ist größer als oder gleich|2 -ge 1|
-|-like|Entspricht (Platzhaltervergleich für Text)|„file.doc“ -like „f*.do?“|
-|-notlike|Entspricht nicht (Platzhaltervergleich für Text)|„file.doc“ -notlike „p*.doc“|
+|-like|Entspricht (Platzhaltervergleich für Text)|"file.doc" -like "f\*.do?"|
+|-notlike|Entspricht nicht (Platzhaltervergleich für Text)|"file.doc" -notlike "p\*.doc"|
 |-contains|Enthält|1,2,3 -contains 1|
 |-notcontains|Enthält nicht|1,2,3 -notcontains 4|
 
@@ -98,10 +105,11 @@ In der folgenden Tabelle sind die standardmäßigen logischen Operatoren aufgef�
 |-and|Logisches „Und“; „true“, wenn beide Seiten zutreffen|(1 -eq 1) -and (2 -eq 2)|
 |-or|Logisches „Oder“; „true“, wenn eine der beiden Seiten zutrifft|(1 -eq 1) -or (1 -eq 2)|
 |-not|Logisches „Nicht“; kehrt „true“ und „false“ um|-not (1 -eq 2)|
-|\!|Logisches „Nicht“; kehrt „true“ und „false“ um|!(1 -eq 2)|
+|\!|Logisches „Nicht“; kehrt „true“ und „false“ um|\!(1 -eq 2)|
 
 
 
-<!--HONumber=Apr16_HO1-->
+
+<!--HONumber=Aug16_HO4-->
 
 

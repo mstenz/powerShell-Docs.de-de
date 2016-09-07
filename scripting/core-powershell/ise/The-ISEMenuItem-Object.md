@@ -9,13 +9,13 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: a16660bd-0aee-46fd-ac17-3f022165d089
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 8b8c960604457fd41f5f7fefe0035003b675e13a
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: e067519d58ca381fc4e5c746fe9bbd16bdc68c60
 
 ---
 
 # Das ISEMenuItem-Objekt
-  Ein **ISEMenuItem**-Objekt ist eine Instanz der Microsoft.PowerShell.Host.ISE.ISEMenuItem-Klasse. Alle Menüobjekte im Menü **Add\-Ons** sind Instanzen der **Microsoft.PowerShell.Host.ISE.ISEMenuItem**-Klasse.
+  Ein **ISEMenuItem**-Objekt ist eine Instanz der Microsoft.PowerShell.Host.ISE.ISEMenuItem-Klasse. Alle Menüobjekte im Menü **Add-Ons** sind Instanzen der **Microsoft.PowerShell.Host.ISE.ISEMenuItem**-Klasse.
 
 ## Eigenschaften
 
@@ -50,7 +50,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Action.Invoke()
 ###  <a name="Shortcut"></a> Abkürzung
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
- Die schreibgeschützte Eigenschaft, die die Windows\-Eingabetastenkombination für das Menüelement abruft.
+ Die schreibgeschützte Eigenschaft, die die Windows-Eingabetastenkombination für das Menüelement abruft.
 
 ```
 # Get the shortcut for the first submenu item.
@@ -72,7 +72,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus
 ```
 
 ## Beispielskript
- Lesen Sie das folgende Beispielskript, um die Verwendung des Menüs „Add\-Ons“ und seiner skriptfähigen Eigenschaften besser zu verstehen.
+ Um die Verwendung des Menüs „Add-Ons“ und seiner skriptfähigen Eigenschaften besser zu verstehen, betrachten Sie das folgende Beispielskript.
 
 ```
 
@@ -99,6 +99,6 @@ $parentAdded.SubMenus.Add("_Dir",{dir},"Alt+D")
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Aug16_HO4-->
 
 

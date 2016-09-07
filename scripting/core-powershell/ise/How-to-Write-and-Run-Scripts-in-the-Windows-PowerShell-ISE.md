@@ -1,12 +1,19 @@
 ---
-title: Schreiben und Ausführen von Skripts in der Windows PowerShell ISE
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "Schreiben und Ausführen von Skripts in der Windows PowerShell ISE"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 62f916d9-b3a1-484a-bdfb-41f57112c22b
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 6e58c298725254a84819856070b9702340fcf81d
+
 ---
+
 # Schreiben und Ausführen von Skripts in der Windows PowerShell ISE
 In diesem Thema ist beschrieben, wie Skripts im Skriptbereich erstellt, bearbeitet, ausgeführt und gespeichert werden.
 
@@ -20,7 +27,7 @@ In diesem Thema ist beschrieben, wie Skripts im Skriptbereich erstellt, bearbeit
 Sie können Windows PowerShell®-Dateien im Skriptbereich öffnen und bearbeiten. Die speziellen Dateitypen für Windows PowerShell® sind Skriptdateien (.ps1), Skriptdatendateien (.psd1) und Skriptmoduldateien (.psm1). Diese Dateitypen werden mit Syntaxfärbung im Skriptbereichs-Editor angezeigt. Andere gängige Dateitypen, die Sie möglicherweise im Skriptbereich öffnen möchten, sind Konfigurationsdateien (PS1XML), XML-Dateien und Textdateien.
 
 > [!NOTE]
-> Die Windows PowerShell-Ausführungsrichtlinie bestimmt, ob Sie Skripts ausführen sowie Windows PowerShell-Profile und -Konfigurationsdateien laden können. Die Standardausführungsrichtlinie, „Restricted“, verhindert sowohl das Ausführen jeglicher Skripts als auch das Laden von Profilen. Wenn Sie die Ausführungsrichtlinie ändern möchten, sodass sie das Laden und Verwenden von Profilen zulässt, lesen Sie [Set-ExecutionPolicy[PSITPro5_Security]](https://technet.microsoft.com/en-us/library/5690a0e1-495b-4e63-8280-65ead7bf01ab) und [about_Signing [v4]](https://technet.microsoft.com/en-us/library/fcbdd3b9-0b9f-4734-b5c7-e0dcc304fa1d)..
+> Die Windows PowerShell-Ausführungsrichtlinie bestimmt, ob Sie Skripts ausführen sowie Windows PowerShell-Profile und -Konfigurationsdateien laden können. Die Standardausführungsrichtlinie, „Restricted“, verhindert sowohl das Ausführen jeglicher Skripts als auch das Laden von Profilen. Wenn Sie die Ausführungsrichtlinie ändern möchten, sodass sie das Laden und Verwenden von Profilen zulässt, lesen Sie [Set-ExecutionPolicy[PSITPro5_Security]](https://technet.microsoft.com/en-us/library/5690a0e1-495b-4e63-8280-65ead7bf01ab) und [about_Signing [v4]](https://technet.microsoft.com/en-us/library/fcbdd3b9-0b9f-4734-b5c7-e0dcc304fa1d).
 
 ### So erstellen Sie eine neue Skriptdatei
 Klicken Sie auf der Symbolleiste auf **Neu**, oder klicken Sie im Menü **Datei** auf **Neu**. Die erstellte Datei wird in einer neuen Dateiregisterkarte unter der aktuellen PowerShell-Registerkarte angezeigt. Denken Sie daran, dass die PowerShell-Registerkarten nur angezeigt werden, wenn mehrere vorhanden sind. Standardmäßig wird eine Datei des Typs Skript (PS1) erstellt, diese kann aber mit einem neuen Namen und einer neuen Erweiterung gespeichert werden. Es können mehrere Skriptdateien auf derselben PowerShell-Registerkarte erstellt werden.
@@ -31,9 +38,9 @@ Klicken Sie auf der Symbolleiste auf **Öffnen…**, oder klicken Sie im Menü *
 ### So schließen Sie eine Skriptregisterkarte
 Klicken Sie auf die Skriptregisterkarte des Skripts, das Sie schließen möchten, und führen Sie dann einen der folgenden Schritte aus:
 
-1.  Klicken Sie auf das **Schließen**-Symbol (X) auf der Skriptregisterkarte.
+1.  Klicken Sie auf das Symbol **Schließen** (X) auf der Skriptregisterkarte.
 
-2.  Klicken Sie im Menü **Datei** auf **Schließen**..
+2.  Klicken Sie im Menü **Datei** auf **Schließen**.
 
 Wurde die Datei seit ihrer letzten Speicherung geändert, werden Sie aufgefordert, die Datei zu speichern oder zu verwerfen.
 
@@ -41,13 +48,13 @@ Wurde die Datei seit ihrer letzten Speicherung geändert, werden Sie aufgeforder
 Zeigen Sie auf der Registerkarte der Datei auf den Dateinamen an. Der vollqualifizierte Pfad der Skriptdatei wird als QuickInfo angezeigt.
 
 ### So führen Sie ein Skript aus
-Klicken Sie auf der Symbolleiste auf **Skript ausführen**, oder klicken Sie im Menü **Datei** auf **Ausführen**..
+Klicken Sie auf der Symbolleiste auf **Skript ausführen**, oder klicken Sie im Menü **Datei** auf **Ausführen**.
 
 ### So führen Sie einen Abschnitt eines Skripts aus
 
 1.  Wählen Sie Skriptbereich einen Abschnitt eines Skripts aus.
 
-2.  Klicken Sie im Menü **Datei** auf **Auswahl ausführen**, oder klicken Sie auf der Symbolleiste auf **Auswahl ausführen**..
+2.  Klicken Sie im Menü **Datei** auf **Auswahl ausführen**, oder klicken Sie auf der Symbolleiste auf **Auswahl ausführen**.
 
 ### So beenden Sie ein Skript, das ausgeführt wird
 Klicken Sie auf der Symbolleiste auf **Vorgang beenden**, drücken Sie STRG+UNTBR, oder klicken Sie im Menü **Datei** auf **Vorgang beenden**. Drücken von **STRG+C** funktioniert ebenfalls, sofern aktuell kein Text ausgewählt ist. Ist dies der Fall, wird **STRG+C** der Kopierfunktion für den ausgewählten Text zugeordnet.
@@ -65,18 +72,18 @@ Führen Sie die folgenden Schritte aus, um Text im Skriptbereich zu bearbeiten. 
 
 ### So suchen Sie nach Text im Skriptbereich
 
-1.  Drücken Sie **STRG\+F**, oder klicken Sie im Menü **Bearbeiten** auf **Im Skript suchen**, um nach Text an einer beliebigen Stelle zu suchen..
+1.  Drücken Sie **STRG+F**, oder klicken Sie im Menü **Bearbeiten** auf **Im Skript suchen**, um nach Text an einer beliebigen Stelle zu suchen.
 
-2.  Drücken Sie **F3**, oder klicken Sie im Menü **Bearbeiten** auf **Im Skript weitersuchen**, um nach Text ab dem Cursor zu suchen..
+2.  Um nach Text ab dem Cursor zu suchen, drücken Sie **F3**, oder klicken Sie im Menü **Bearbeiten** auf **Im Skript weitersuchen**.
 
-3.  Drücken Sie **UMSCHALT\+F3**, oder klicken Sie im Menü **Bearbeiten** auf **Vorheriges im Skript suchen**, um nach Text vor dem Cursor zu suchen..
+3.  Drücken Sie **UMSCHALT+F3**, oder klicken Sie im Menü **Bearbeiten** auf **Vorheriges im Skript suchen**, um nach Text vor dem Cursor zu suchen.
 
 ### So finden und ersetzen Sie Text im Skriptbereich
-Drücken Sie **STRG+H**, oder klicken Sie im Menü **Bearbeiten** auf **Im Skript ersetzen**. Geben Sie sowohl den zu suchenden Text als auch den Text ein, durch den der zu suchende Text ersetzt werden soll, und drücken Sie die **EINGABETASTE**..
+Drücken Sie **STRG+H**, oder klicken Sie im Menü **Bearbeiten** auf **Im Skript ersetzen**. Geben Sie sowohl den zu suchenden Text und auch den Text ein, durch den der zu suchende Text ersetzt werden soll, und drücken Sie die **EINGABETASTE**.
 
 ### So wechseln Sie zu einer bestimmten Zeile des Texts im Skriptbereich
 
-1.  Drücken Sie im Skriptbereich die Tastenkombination **STRG+G**, oder klicken Sie im Menü **Bearbeiten** auf **Gehe zu Zeile**..
+1.  Drücken Sie im Skriptbereich die Tastenkombination **STRG+G**, oder klicken Sie im Menü **Bearbeiten** auf **Gehe zu Zeile**.
 
 2.  Geben Sie eine Zeilennummer ein.
 
@@ -84,28 +91,28 @@ Drücken Sie **STRG+H**, oder klicken Sie im Menü **Bearbeiten** auf **Im Skrip
 
 1.  Wählen Sie im Skriptbereich den Text aus, den Sie kopieren möchten.
 
-2.  Drücken Sie **STRG\+C**, klicken Sie auf der Symbolleiste auf das **Kopieren**-Symbol, oder klicken Sie im Menü **Bearbeiten** auf **Kopieren**..
+2.  Drücken Sie **STRG+C**, klicken Sie auf der Symbolleiste auf das Symbol **Kopieren**, oder klicken Sie im Menü **Bearbeiten** auf **Kopieren**.
 
 ### So schneiden Sie Text im Skriptbereich aus
 
 1.  Wählen Sie im Skriptbereich den Text aus, den Sie ausschneiden möchten.
 
-2.  Drücken Sie **STRG\+X**, oder klicken Sie auf der Symbolleiste auf das **Ausschneiden**-Symbol, oder klicken Sie im Menü **Bearbeiten** auf **Ausschneiden**..
+2.  Drücken Sie **STRG+X**, oder klicken Sie auf der Symbolleiste auf das Symbol **Ausschneiden**, oder klicken Sie im Menü **Bearbeiten** auf **Ausschneiden**.
 
 ### So fügen Sie Text in den Skriptbereich ein
-Drücken Sie **STRG\+V**, oder klicken Sie auf der Symbolleiste auf das **Einfügen**-Symbol, oder klicken Sie im Menü **Bearbeiten** auf **Einfügen**..
+Drücken Sie **STRG+V**, oder klicken Sie auf der Symbolleiste auf das Symbol **Einfügen**, oder klicken Sie im Menü **Bearbeiten** auf **Einfügen**.
 
 ### So machen Sie eine Aktion im Skriptbereich rückgängig
-Drücken Sie **STRG\+Z**, oder klicken Sie auf der Symbolleiste auf das **Rückgängig**-Symbol, oder klicken Sie im Menü **Bearbeiten** auf **Rückgängig**..
+Drücken Sie **STRG+Z**, oder klicken Sie auf der Symbolleiste auf das Symbol **Rückgängig**, oder klicken Sie im Menü **Bearbeiten** auf **Rückgängig**.
 
 ### So wiederholen Sie eine Aktion im Skriptbereich
-Drücken Sie **STRG\+Y**, oder klicken Sie auf der Symbolleiste auf das **Wiederholen**-Symbol, oder klicken Sie im Menü **Bearbeiten** auf **Wiederholen**..
+Drücken Sie **STRG+Y**, oder klicken Sie auf der Symbolleiste auf das Symbol **Wiederholen**, oder klicken Sie im Menü **Bearbeiten** auf **Wiederholen**.
 
 ## <a name="bkmk_3"></a>Speichern eines Skripts
 Gehen Sie folgendermaßen vor, um einem Skript einen Namen zu geben und es zu speichern. Ein Sternchen wird neben dem Skriptnamen angezeigt, um zu kennzeichnen, dass die Datei nicht gespeichert wurde, seit sie geändert wurde. Das Sternchen verschwindet, wenn die Datei gespeichert wird.
 
 ### So speichern Sie ein Skript
-Drücken Sie **STRG\+S**, oder klicken Sie auf der Symbolleiste auf das **Speichern**-Symbol, oder klicken Sie im Menü **Datei** auf **Speichern**..
+Drücken Sie **STRG+S**, oder klicken Sie auf der Symbolleiste auf das Symbol **Speichern**, oder klicken Sie im Menü **Datei** auf **Speichern**.
 
 ### So geben Sie einem Skript einen Namen und speichern es
 
@@ -113,9 +120,9 @@ Drücken Sie **STRG\+S**, oder klicken Sie auf der Symbolleiste auf das **Speich
 
 2.  Geben Sie in das Feld **Dateiname** einen Namen für die Datei ein.
 
-3.  Wählen Sie im Feld **Dateityp** einen Dateityp aus. Wählen Sie beispielsweise im Feld **Dateityp** den Typ „PowerShell-Skripte (*.ps1)“ aus.
+3.  Wählen Sie im Feld **Dateityp** einen Dateityp aus. Wählen Sie beispielsweise im Feld **Dateityp** den Typ „PowerShell-Skripte (\* .ps1)“ aus.
 
-4.  Klicken Sie auf **Speichern**..
+4.  Klicken Sie auf **Speichern**.
 
 ### So speichern Sie ein Skript in ASCII-Codierung
 Windows PowerShell ISE speichert neue Skriptdateien (.ps1), Skriptdatendateien (.psd1) und Skriptmoduldateien (.psm1) standardmäßig im Unicode-Format (BigEndianUnicode). Um ein Skript in einer anderen Codierung, z. B. ASCII (ANSI), zu speichern, verwenden Sie die **Save**- oder **SaveAs**-Methode des [$psISE.CurrentFile](https://technet.microsoft.com/en-us/library/bc3300e4-9c17-4f00-a621-c8867126e3b3#CurrentFile)-Objekts.
@@ -147,6 +154,7 @@ Windows PowerShell ISE ändert nicht die Codierung von Skripts, die in anderen E
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO4-->
 
 
