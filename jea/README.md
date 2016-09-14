@@ -9,8 +9,8 @@ ms.date: 2016-06-22
 title: Infodatei
 ms.technology: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: bd7f637d0889fd0f56c3fa653389819341d2ccff
-ms.openlocfilehash: bfee5ef59a4085f0350ff454f634fc0bf5d6d837
+ms.sourcegitcommit: 8149f656f0aacbb23cacc8a1a9b45ed59866b92f
+ms.openlocfilehash: 7bb5635832e912b39ec387e8ac93ada24a434ff8
 
 ---
 
@@ -83,7 +83,7 @@ Erfahren Sie, wie Sie alle JEA-Aktionen und die gesamte Infrastruktur überprüf
 
 ## Ihre ersten eigenen JEA-Endpunkte
 Die Erstellung eines JEA-Endpunkts ist ganz einfach – Sie benötigen nur ein JEA-fähiges System und einen Text-Editor (wie z. B. die PowerShell ISE).
-Ein guter Tipp für den Einstieg: Erstellen Sie Gerüstdateien mithilfe von `New-PSRoleCapabilityFile -Path <path>` und `New-PSSessionCapabilityFile -Path <Path>`, ohne weitere Argumente.
+Ein guter Tipp für den Einstieg: Erstellen Sie Gerüstdateien mithilfe von [`New-PSRoleCapabilityFile -Path <path>`](https://technet.microsoft.com/library/mt631422.aspx) und [`New-PSSessionConfigurationFile -Path <Path>`](https://technet.microsoft.com/library/mt631422.aspx), ohne weitere Argumente.
 Diese Gerüstdateien enthalten alle anwendbaren Konfigurationsfelder sowie nützliche Kommentare, die erklären, wozu welches Feld verwendet werden kann.
 
 Um die Erstellung von JEA-Endpunkten noch einfacher zu gestalten, lesen Sie den Blog [JEA Toolkit Helper](http://blogs.technet.com/b/privatecloud/archive/2015/12/20/introducing-the-updated-jea-helper-tool.aspx). In diesem Blog finden Sie eine GUI, mit deren Hilfe Sie Sitzungskonfigurations- und Rollenfunktionsdateien erstellen können.
@@ -92,6 +92,6 @@ Die GUI unterstützt sogar die Erstellung von Rollenfunktionen basierend auf Pow
 
 
 
-<!--HONumber=Jul16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

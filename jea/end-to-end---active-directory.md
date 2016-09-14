@@ -9,8 +9,8 @@ ms.date: 2016-06-22
 title: End-to-End Active Directory
 ms.technology: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 5954eb797df43de6f132a434ecad7049ee0221fb
-ms.openlocfilehash: 204909c16d5e3e2099f6ba4247929d61445cd654
+ms.sourcegitcommit: 33e92c7fd6039a1e3f5f784470c7bd0e43a7f030
+ms.openlocfilehash: e7ea3957ce3bbd3ce0fc072a82cd108606f05614
 
 ---
 
@@ -27,7 +27,7 @@ Dieser Abschnitt leitet Sie durch die Erstellung einer Sitzungskonfiguration sow
 Um diesen Abschnitt schrittweise durchzugehen, müssen Sie auf einem Domänencontroller arbeiten.
 Machen Sie sich keine Sorgen, wenn Sie keinen Zugriff auf Ihren Domänencontroller haben.
 Folgen Sie den Anweisungen einfach mit einem anderen Szenario oder einer anderen Rolle, mit der Sie vertraut sind.
-Wenn Sie schnell einen neuen Domänencontroller einrichten möchten, finden Sie die notwendigen Informationen im Anhang unter [Erstellen eines Domänencontrollers](#creating-a-domain-controller).
+Wenn Sie schnell einen neuen Domänencontroller einrichten möchten, finden Sie die notwendigen Informationen im Anhang unter [Erstellen eines Domänencontrollers](.\creating-a-domain-controller.md).
 
 ## Schritte zum Erstellen einer neuen Rollenfunktion und Sitzungskonfiguration
 
@@ -163,7 +163,7 @@ Set-ADUser -Identity $Identity -ChangePasswordAtLogon
 Jetzt können Ihre Benutzer einfach `Reset-ContosoUserPassword` aufrufen und müssen sich nicht die Syntax merken, um inline eine sichere Zeichenfolge zu erstellen.
 
 ## Schritt 4: Bearbeiten Sie die Rollenfunktionsdatei.
-Im Abschnitt [Erstellen einer Rollenfunktion](#role-capability-creation) haben Sie eine leere Rollenfunktionsdatei erstellt.
+Im Abschnitt [Erstellen von Rollenfunktionen](./role-capabilities.md#role-capability-creation) haben Sie eine leere Rollenfunktionsdatei erstellt.
 In diesem Abschnitt werden Sie diese Datei mit Werten füllen.
 
 Öffnen Sie zunächst die Rollenfunktionsdatei in der PowerShell ISE.
@@ -273,6 +273,6 @@ Ein ValidatePattern-Element ist ein regulärer Ausdruck, mit dem die Argumente f
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 
