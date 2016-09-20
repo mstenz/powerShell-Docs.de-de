@@ -1,3 +1,18 @@
+---
+title: "DSC-Ressource „Package“"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 62f993e3d3e6ef744fb07920d332d476dfd24fc6
+ms.openlocfilehash: d07b11c148dfa747b3f9c0157191b83efb6c65df
+
+---
+
 # DSC-Ressource „Package“
 
 > Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
@@ -39,12 +54,21 @@ Package [string] #ResourceName
 Bei diesem Beispiel wird das MSI-Installationsprogramm ausgeführt, das sich im angegebenen Pfad befindet und die angegebene Produkt-ID hat.
 
 ```powershell
-Package PackageExample
+Configuration PackageTest
 {
-    Ensure = "Present"  # You can also set Ensure to "Absent"
-    Path  = "$Env:SystemDrive\TestFolder\TestProject.msi"
-    Name = "TestPackage"
-    ProductId = "ACDDCDAF-80C6-41E6-A1B9-8ABD8A05027E"
-} 
+    Package PackageExample
+    {
+        Ensure      = "Present"  # You can also set Ensure to "Absent"
+        Path        = "$Env:SystemDrive\TestFolder\TestProject.msi"
+        Name        = "TestPackage"
+        ProductId   = "ACDDCDAF-80C6-41E6-A1B9-8ABD8A05027E"
+    } 
+}
 ```
-<!--HONumber=Feb16_HO4-->
+
+
+
+
+<!--HONumber=Sep16_HO3-->
+
+
