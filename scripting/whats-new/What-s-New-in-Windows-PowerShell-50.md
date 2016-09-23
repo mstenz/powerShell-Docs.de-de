@@ -228,7 +228,7 @@ Viele Updates und Verbesserungen für Windows PowerShell DSC (Desired State Conf
 
 ### <a name="BKMK_newDSC"></a>Neue Features in Windows PowerShell DSC
 
--   Verbesserungen der Windows PowerShell-Sprache ermöglichen Ihnen das Definieren von Windows PowerShell-DSC-Ressourcen mithilfe von Klassen. Import-DscResource ist jetzt ein tatsächlich dynamisches Schlüsselwort. Windows PowerShell analysiert das Stammmodul des angegebenen Moduls und sucht Klassen, die das DscResource-Attribut enthalten. Sie können jetzt Klassen verwenden, um DSC-Ressourcen zu definieren, bei denen weder eine MOF-Datei noch ein Unterordner des Typs „DSCResource“ im Modulordner erforderlich ist. Eine Windows PowerShell-Moduldatei kann mehrere DSC-Ressourcenklassen enthalten.
+-   Verbesserungen der Windows PowerShell-Sprache ermöglichen Ihnen das Definieren von Windows PowerShell-DSC-Ressourcen mithilfe von Klassen. Import-DscResource ist jetzt ein echtes dynamisches Schlüsselwort. Windows PowerShell analysiert das Stammmodul des angegebenen Moduls und sucht Klassen, die das DscResource-Attribut enthalten. Sie können jetzt Klassen verwenden, um DSC-Ressourcen zu definieren, bei denen weder eine MOF-Datei noch ein Unterordner des Typs „DSCResource“ im Modulordner erforderlich ist. Eine Windows PowerShell-Moduldatei kann mehrere DSC-Ressourcenklassen enthalten.
 
 -   Den folgenden Cmdlets im Modul „PSDesiredStateConfiguration“ wurde der neue Parameter „ThrottleLimit“ hinzugefügt. Fügen Sie den „ThrottleLimit“-Parameter zum Angeben der Anzahl der Zielcomputer oder -geräte hinzu, auf die der Befehl gleichzeitig angewendet werden soll.
 
@@ -282,7 +282,7 @@ Viele Updates und Verbesserungen für Windows PowerShell DSC (Desired State Conf
 
     -   Das neue Cmdlet „Get-DscConfigurationStatus“ ruft allgemeine Informationen zum Konfigurationsstatus von einem Knoten ab. Sie erhalten den Status der letzten oder aller Konfigurationen.
 
-    -   Das neue Cmdlet „Compare-DscConfiguration“ vergleicht eine angegebene Konfiguration mit den tatsächlichen Status eines oder mehrerer Zielknoten.
+    -   Das neue Cmdlet „Compare-DscConfiguration“ vergleicht eine angegebene Konfiguration mit dem tatsächlichen Status eines oder mehrerer Zielknoten.
 
     -   Das neue Cmdlet „Publish-DscConfiguration“ kopiert eine MOF-Konfigurationsdatei auf einen Zielknoten, ohne die Konfiguration anzuwenden. Diese Konfiguration wird während des nächsten Konsistenzdurchlaufs oder bei Ausführen des Cmdlets „Update-DscConfiguration“ angewendet.
 
