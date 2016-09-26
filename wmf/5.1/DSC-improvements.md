@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.technology: WMF
 translationtype: Human Translation
-ms.sourcegitcommit: 57049ff138604b0e13c8fd949ae14da05cb03a4b
-ms.openlocfilehash: 1f00f2706f3c3ece783590f3a2b0bdb6734402b0
+ms.sourcegitcommit: 270f2a458a40f005f462d3de5236defbb91a7362
+ms.openlocfilehash: c88c145c3585befcee194499f7e21aaeac67c0f3
 
 ---
 
@@ -22,33 +22,35 @@ In WMF 5.1 haben wir die folgenden bekannten Probleme behoben:
 * „Get-DscConfiguration“ gibt möglicherweise leere Werte (NULL) oder Fehler zurück, wenn von der „Get()“-Funktion einer klassenbasierten DSC-Ressource ein komplexer Typ bzw. ein Hashtabellentyp zurückgegeben wird.
 * „Get-DscConfiguration“ gibt einen Fehler zurück, wenn die RunAs-Anmeldeinformationen bei der DSC-Konfiguration verwendet werden.
 * Eine klassenbasierte Ressource kann nicht in einer zusammengesetzten Konfiguration verwendet werden.
-* „Start-DscConfiguration“ reagiert nicht mehr, wenn die klassenbasierte Ressource eine Eigenschaft des eigenen Typs hat.
+* „Start-DscConfiguration“ reagiert nicht mehr, wenn die klassenbasierte Ressource eine Eigenschaft des eigenen Typs aufweist.
 * Eine klassenbasierte Ressource kann nicht als exklusive Ressource verwendet werden.
 
 
 ## Verbesserungen beim Debuggen von DSC-Ressourcen
 
-In WMF 5.0 hat der PowerShell-Debugger nicht direkt an der Klassenressourcenmethode (Get/Set/Test) angehalten.
-In WMF 5.1 wird der Debugger an der Klassenressourcenmethode auf die gleiche Weise wie bei MOF-basierten Ressourcenmethoden anhalten.
+In WMF 5.0 hat der PowerShell-Debugger nicht direkt an der klassenbasierten Ressourcenmethode (Get/Set/Test) angehalten.
+In WMF 5.1 wird der Debugger an der klassenbasierten Ressourcenmethode auf die gleiche Weise wie bei MOF-basierten Ressourcenmethoden anhalten.
 
 ## Der DSC-Pull-Client unterstützt TLS 1.1 und TLS 1.2 
-Zuvor unterstützte der DSC-Pull-Client nur SSL 3.0 und TLS 1.0 über HTTPS-Verbindungen. Wenn er gezwungen würde, sicherere Protokolle zu verwenden, würde der Pull-Client nicht mehr funktionieren. In WMF 5.1 unterstützt der DSC-Pull-Client SSL 3.0 nicht mehr. Stattdessen werden die sichereren TLS 1.1- und TLS 1.2-Protokolle unterstützt.  
+Zuvor unterstützte der DSC-Pull-Client nur SSL 3.0 und TLS 1.0 über HTTPS-Verbindungen. Wenn er gezwungen wurde, sicherere Protokolle zu verwenden, funktionierte der Pull-Client nicht mehr. In WMF 5.1 unterstützt der DSC-Pull-Client SSL 3.0 nicht mehr. Stattdessen werden die sichereren TLS 1.1- und TLS 1.2-Protokolle unterstützt.  
 
 ## Verbesserte Pull-Serverregistrierung ##
 
-In früheren Versionen von WMF führten gleichzeitige Registrierungen/Berichterstellungsanfragen an einen DSC-Pull-Server während der Verwendung der ESENT-Datenbank zu einem LCM-Registrierungs- und/oder Berichterstellungsfehler. In solchen Fällen tritt bei den Ereignisprotokollen auf dem Pull-Server der Fehler „Der Instanzname wird bereits verwendet.“ auf.
-Die Ursache hierfür ist die Verwendung eines falschen Musters für den Zugriff auf die ESENT-Datenbank in einem Multithread-Szenario. In WMF 5.1 wurde dieses Problem behoben. Gleichzeitige Registrierungen oder Berichterstellungen (mit ESENT-Datenbank) funktionieren einwandfrei in WMF 5.1. Dieses Problem gilt nur für die ESENT-Datenbank und nicht für die OLE DB-Datenbank. 
+In früheren Versionen von WMF führten gleichzeitige Registrierungen/Berichterstellungsanforderungen an einen DSC-Pullserver während der Verwendung der ESENT-Datenbank zu einem LCM-Registrierungs- und/oder Berichterstellungsfehler. In solchen Fällen tritt bei den Ereignisprotokollen auf dem Pull-Server der Fehler „Der Instanzname wird bereits verwendet.“ auf.
+Die Ursache hierfür ist die Verwendung eines falschen Musters für den Zugriff auf die ESENT-Datenbank in einem Multithread-Szenario. In WMF 5.1 wurde dieses Problem behoben. Gleichzeitige Registrierungen oder Berichterstellungen (mit ESENT-Datenbank) funktionieren in WMF 5.1 einwandfrei. Dieses Problem gilt nur für die ESENT-Datenbank und nicht für die OLE DB-Datenbank. 
 
 ##Übertragen einer Namenskonvention für eine partielle Konfiguration mithilfe von Pull
 Im vorherigen Release besagte die Namenskonvention für eine partielle Konfiguration, dass der MOF-Dateiname im Pull-Server/-Dienst mit dem Namen der partiellen Konfiguration übereinstimmen soll, der in den Einstellungen des lokalen Konfigurations-Managers (Local Configuration Manager; LCM) angegeben wurde. Dieser Name sollte wiederum mit dem in der MOF-Datei eingebetteten Konfigurationsnamen übereinstimmen. 
 
-Sehen Sie sich die nachfolgenden Momentaufnahmen an:- •   lokale Konfigurationseinstellungen, die eine partielle Konfiguration definieren, die von einem Knoten empfangen werden darf.
+Weitere Informationen finden Sie in den nachfolgenden Abbildungen:
 
-![Beispiel einer Metakonfiguration](../../images/MetaConfigPartialOne.png)
+•   lokale Konfigurationseinstellungen, die eine Teilkonfiguration definieren, die von einem Knoten empfangen werden darf.
+
+![Beispiel einer Metakonfiguration](../images/MetaConfigPartialOne.png)
 
 •   Beispieldefinition einer partiellen Konfiguration 
 
-```Powershell
+```PowerShell
 Configuration PartialOne
 {
     Node('localhost')
@@ -63,19 +65,19 @@ Configuration PartialOne
 PartialOne
 ```
 
-•   ConfigurationName, eingebettet in der generierten MOF-Datei
+•   ConfigurationName, eingebettet in der generierten MOF-Datei.
 
-![Beispiel einer generierten MOF-Datei](../../images/PartialGeneratedMof.png)
+![Beispiel einer generierten MOF-Datei](../images/PartialGeneratedMof.png)
 
 •   FileName im Repository der Pull-Konfiguration 
 
-![FileName im Repository der Konfiguration](../../images/PartialInConfigRepository.png)
+![FileName im Repository der Konfiguration](../images/PartialInConfigRepository.png)
 
-Der Name des Azure Automation-Diensts generierte MOF-Dateien nach dem Schema „<ConfigurationName>.<NodeName>.mof“. Daher wurde die nachstehende Konfiguration in „PartialOne.Localhost.mof“ kompiliert.
+Basierend auf dem Namen des Azure Automation-Diensts generierte MOF-Dateien nach dem Schema „`<ConfigurationName>.<NodeName>.mof`“. Die nachstehende Konfiguration wird also in „PartialOne.localhost.mof“ kompiliert.
 
-Aus diesem Grund war es unmöglich, eine Ihrer partiellen Konfigurationen aus dem Azure Automation-Dienst mithilfe von Pull zu übertragen.
+Aus diesem Grund war es nicht möglich, eine Ihrer Teilkonfigurationen aus dem Azure Automation-Dienst mithilfe von Pull zu übertragen.
 
-```Powershell
+```PowerShell
 Configuration PartialOne
 {
     Node('localhost')
@@ -90,18 +92,18 @@ Configuration PartialOne
 PartialOne
 ```
 
-In WMF 5.1 kann die partielle Konfiguration im Pull-Server/-Dienst nach dem Schema „<ConfigurationName>.<NodeName>.mof“ benannt werden. Darüber hinaus kann die Konfigurationsdatei auf dem Konfigurationsrepository des Pull-Servers einen beliebigen Dateinamen haben, wenn ein Computer eine einzelne Konfiguration von einem Pull-Server/-Dienst mithilfe von Pull überträgt. Diese Benennungsflexibilität erlaubt Ihnen, Ihre Knoten partiell über den Azure Automation-Dienst zu verwalten, wobei ein Teil der Konfiguration Ihres Knotens von Azure Automation DSC stammt und die andere partielle Konfiguration von Ihnen lokal verwaltet wird.
+In WMF 5.1 kann die Teilkonfiguration im Pullserver/-dienst nach dem Schema „`<ConfigurationName>.<NodeName>.mof`“ benannt werden. Darüber hinaus kann die Konfigurationsdatei auf dem Konfigurationsrepository des Pull-Servers einen beliebigen Dateinamen haben, wenn ein Computer eine einzelne Konfiguration von einem Pull-Server/-Dienst mithilfe von Pull überträgt. Diese Benennungsflexibilität erlaubt Ihnen, Ihre Knoten teilweise über den Azure Automation-Dienst zu verwalten, wobei ein Teil der Konfiguration Ihres Knotens von Azure Automation DSC stammt und die andere Teilkonfiguration von Ihnen lokal verwaltet wird.
 
-Die nachstehende Metakonfiguration legt einen Knoten fest, der sowohl lokal als auch vom Azure Automation-Dienst verwaltet wird.
+Mit der nachstehenden Metakonfiguration wird ein Knoten so eingerichtet, dass er sowohl lokal als auch vom Azure Automation-Dienst verwaltet wird.
 
-```Powershell
+```PowerShell
   [DscLocalConfigurationManager()]
    Configuration RegistrationMetaConfig
    {
         Settings
         {
-            RefreshFrequencyMins = 30;
-            RefreshMode = "PULL";            
+            RefreshFrequencyMins = 30
+            RefreshMode = "PULL"            
         }
 
         ConfigurationRepositoryWeb web
@@ -111,14 +113,14 @@ Die nachstehende Metakonfiguration legt einen Knoten fest, der sowohl lokal als 
             ConfigurationNames = $configurationName
         }
 
-        # Partial configuration managed by Azure Automation Service.
-        PartialConfiguration PartialCOnfigurationManagedByAzureAutomation
+        # Partial configuration managed by Azure Automation service.
+        PartialConfiguration PartialConfigurationManagedByAzureAutomation
         {
             ConfigurationSource = "[ConfigurationRepositoryWeb]Web"   
         }
     
         # This partial configuration is managed locally.
-        PartialConfiguration OnPremConfig
+        PartialConfiguration OnPremisesConfig
         {
             RefreshMode = "PUSH"
             ExclusiveResources = @("Script")
@@ -132,9 +134,9 @@ Die nachstehende Metakonfiguration legt einen Knoten fest, der sowohl lokal als 
 
 # Verwenden von PsDscRunAsCredential mit zusammengesetzten DSC-Ressourcen   
 
-Wir bieten nun auch Unterstützung für die Verwendung von [*PsDscRunAsCredential*](https://msdn.microsoft.com/cs-cz/powershell/dsc/runasuser) mit [zusammengesetzten](https://msdn.microsoft.com/en-us/powershell/dsc/authoringresourcecomposite) DSC-Ressourcen.    
+Ab jetzt können Sie auch[*PsDscRunAsCredential*](https://msdn.microsoft.com/cs-cz/powershell/dsc/runasuser) mit [zusammengesetzten](https://msdn.microsoft.com/en-us/powershell/dsc/authoringresourcecomposite) DSC-Ressourcen verwenden.    
 
-Benutzer können jetzt für PsDscRunAsCredential einen Wert angeben, wenn sie zusammengesetzte Ressourcen innerhalb von Konfigurationen verwenden. Wenn angegeben, werden alle Ressourcen in einer zusammengesetzten Ressource als RunAs-Benutzer ausgeführt. Wenn eine zusammengesetzte Ressource eine andere zusammengesetzte Ressource aufruft, werden deren gesamte Ressourcen ebenfalls als RunAs-Benutzer ausgeführt.  RunAs-Anmeldeinformationen werden auf alle Hierarchieebenen der zusammengesetzten Ressource verteilt. Wenn eine Ressource in einer zusammengesetzten Ressource einen eigenen Wert für PsDscRunAsCredential angibt, wird während der Kompilierung der Konfiguration ein Fehler beim Zusammenführen zurückgegeben.
+Benutzer können jetzt für PsDscRunAsCredential einen Wert angeben, wenn sie zusammengesetzte Ressourcen innerhalb von Konfigurationen verwenden. Wenn angegeben, werden alle Ressourcen in einer zusammengesetzten Ressource als RunAs-Benutzer ausgeführt. Wenn eine zusammengesetzte Ressource eine andere zusammengesetzte Ressource aufruft, werden deren gesamte Ressourcen ebenfalls als RunAs-Benutzer ausgeführt. RunAs-Anmeldeinformationen werden auf alle Hierarchieebenen der zusammengesetzten Ressource verteilt. Wenn eine Ressource in einer zusammengesetzten Ressource einen eigenen Wert für PsDscRunAsCredential angibt, wird während der Kompilierung der Konfiguration ein Fehler beim Zusammenführen zurückgegeben.
 
 Dieses Beispiel zeigt die Verwendung in Kombination mit der zusammengesetzten [WindowsFeatureSet](https://msdn.microsoft.com/en-us/powershell/wmf/dsc_newresources)-Ressource, die im PSDesiredStateConfiguration-Modul enthalten ist. 
 
@@ -162,7 +164,7 @@ Configuration InstallWindowsFeature
 $configData = @{
     AllNodes = @(
         @{
-            NodeName             = 'localhost';
+            NodeName             = 'localhost'
             PSDscAllowDomainUser = $true
             CertificateFile      = 'C:\publicKeys\targetNode.cer'
             Thumbprint           = '7ee7f09d-4be0-41aa-a47f-96b9e3bdec25'
@@ -184,9 +186,11 @@ In DSC werden Konfigurationen und Module über den Pull-Server auf die verwaltet
 
 ###So signieren Sie Konfigurationen und Module 
 ***
-* Konfigurationsdateien (MOF-Dateien):-Das vorhandene PowerShell-Cmdlet [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) wurde erweitert und unterstützt nun das Signieren von MOF-Dateien.  
-* Module:- Module werden signiert, indem der entsprechende Modulkatalog wie in den nachfolgenden Schritten erläutert signiert wird:- 
-    1. Erstellen einer Katalogdatei: Eine Katalogdatei enthält eine Sammlung kryptografischer Hashes oder Fingerabdrücke. Jeder Fingerabdruck entspricht einer Datei, die im Modul enthalten ist. Mit dem neu hinzugefügten Cmdlet [New-FileCatalog](https://technet.microsoft.com/library/cc732148.aspx) können Benutzer eine Katalogdatei für ihr Modul erstellen.
+* Konfigurationsdateien (MOF-Dateien): Das vorhandene PowerShell-Cmdlet [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) wurde erweitert und unterstützt nun das Signieren von MOF-Dateien.  
+* Module: Module werden signiert, indem der entsprechende Modulkatalog wie in den nachfolgenden Schritten erläutert signiert wird: 
+    1. Erstellen einer Katalogdatei: Eine Katalogdatei enthält eine Sammlung kryptografischer Hashes oder Fingerabdrücke. 
+       Jeder Fingerabdruck entspricht einer Datei, die im Modul enthalten ist. 
+       Mit dem neu hinzugefügten Cmdlet [New-FileCatalog](https://technet.microsoft.com/library/cc732148.aspx) können Benutzer eine Katalogdatei für ihr Modul erstellen.
     2. Signieren der Katalogdatei: Mit [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) wird die Katalogdatei signiert.
     3. Fügen Sie die Katalogdatei in den Modulordner ein.
 Gemäß der Konvention sollte die Modulkatalogdatei mit dem gleichen Namen wie das Modul im Modulordner abgelegt werden.
@@ -194,7 +198,7 @@ Gemäß der Konvention sollte die Modulkatalogdatei mit dem gleichen Namen wie d
 ###Einstellungen des lokalen Konfigurations-Managers zur Aktivierung von Signaturüberprüfungen
 
 ####Pull
-Der lokale Konfigurations-Manager eines Knotens überprüft die Signatur von Modulen und Konfigurationen auf Grundlage der aktuellen Einstellungen. Die Überprüfung der Signatur ist standardmäßig deaktiviert. Die Signaturüberprüfung kann aktiviert werden, indem Sie wie unten dargestellt den Block „SignatureValidation“ der Definition der Metakonfiguration des Knotens hinzufügen:-
+Der lokale Konfigurations-Manager eines Knotens überprüft die Signatur von Modulen und Konfigurationen auf Grundlage der aktuellen Einstellungen. Die Überprüfung der Signatur ist standardmäßig deaktiviert. Die Signaturüberprüfung kann aktiviert werden, indem Sie wie nachfolgend gezeigt den Block „SignatureValidation“ der Metakonfigurationsdefinition des Knotens hinzufügen:
 
 ```PowerShell
 [DSCLocalConfigurationManager()]
@@ -212,9 +216,9 @@ Configuration EnableSignatureValidation
       RegistrationKey = 'd6750ff1-d8dd-49f7-8caf-7471ea9793fc' # Replace this with correct registration key.
     }
     SignatureValidation validations{
-        # By default,LCM will use default Windows trusted publisher store to validate the certificate chain. If TrustedStorePath property is specified, LCM will use this custom store for retrieving the trusted publishers to validate the content.
+        # By default, LCM will use default Windows trusted publisher store to validate the certificate chain. If TrustedStorePath property is specified, LCM will use this custom store for retrieving the trusted publishers to validate the content.
         TrustedStorePath = 'Cert:\LocalMachine\DSCStore'            
-        SignedItemType =  'Configuration','Module'         # Those are list of DSC artifacts, for which LCM need to verify their digital signature before executing them on the node.       
+        SignedItemType = 'Configuration','Module'         # This is a list of DSC artifacts, for which LCM need to verify their digital signature before executing them on the node.       
     }
  
 }
@@ -223,32 +227,34 @@ Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose
  ```
 
 Die Festlegung der oben genannten Metakonfiguration auf einem Knoten aktiviert die Überprüfung der Signatur für heruntergeladene Konfigurationen und Module. Der lokale Konfigurations-Manager führt die folgenden Schritte aus, um die digitalen Signaturen zu überprüfen.
-1. Überprüfen, ob die Signatur einer Konfigurationsdatei (MOF) gültig ist. Der lokale Konfigurations-Manager verwendet das PowerShell-Cmdlet [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx), das in 5.1 zur Unterstützung der Überprüfung von MOF-Signaturen erweitert wurde.
-2. Überprüfen der Zertifizierungsstelle, die den Signaturgeber als vertrauenswürdig eingestuft hat
-3. Herunterladen der Modul-/Ressourcenabhängigkeiten der Konfiguration in einen temporären Speicherort
-4. Überprüfen der Signatur des Katalogs, der im Modul enthalten ist
-    * Suchen einer „<moduleName>.cat“-Datei und Überprüfen der Signatur mithilfe des Cmdlets [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx)
+
+1. Überprüfen, ob die Signatur einer Konfigurationsdatei (MOF) gültig ist. 
+   Der lokale Konfigurations-Manager verwendet das PowerShell-Cmdlet [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx), das in 5.1 zur Unterstützung der Überprüfung von MOF-Signaturen erweitert wurde.
+2. Überprüfen der Zertifizierungsstelle, die den Signaturgeber als vertrauenswürdig eingestuft hat.
+3. Herunterladen der Modul-/Ressourcenabhängigkeiten der Konfiguration in einen temporären Speicherort.
+4. Überprüfen der Signatur des Katalogs, der im Modul enthalten ist.
+    * Suchen einer `<moduleName>.cat`-Datei und Überprüfen der Signatur mithilfe des Cmdlets [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx).
     * Überprüfen der Zertifizierungsstelle, die den Signaturgeber als vertrauenswürdig eingestuft hat
-    * Sicherstellen, dass der Inhalt der Module nicht mit dem neuen Cmdlet [Test-FileCatalog](https://technet.microsoft.com/library/cc732148.aspx) manipuliert wurde
+    * Sicherstellen, dass der Inhalt der Module nicht mit dem neuen Cmdlet [Test-FileCatalog](https://technet.microsoft.com/library/cc732148.aspx) manipuliert wurde.
 5. Installieren des Moduls mithilfe des Cmdlets „Install-Module“ im Verzeichnis „$env:ProgramFiles\WindowsPowerShell\Modules\“
 6. Prozesskonfiguration
 
 > Hinweis: Signaturen von Modulkatalogen und -konfigurationen werden nur bei der ersten Anwendung der Konfiguration auf das System überprüft, oder wenn das Modul heruntergeladen und installiert wird. Konsistenzläufe überprüfen nicht die Signatur von „current.mof“-Dateien oder deren Modulabhängigkeiten.
-Wenn bei der Überprüfung zu irgendeinem Zeitpunkt ein Fehler auftritt, z.B. wenn die vom Pull-Server mithilfe von Pull übertragene Konfiguration nicht signiert ist, wird bei der Verarbeitung der Konfiguration der nachstehende Fehler ausgegeben und alle temporären Dateien gelöscht.
+Wenn bei der Überprüfung zu irgendeinem Zeitpunkt ein Fehler auftritt, z. B. wenn die vom Pullserver mithilfe von Pull übertragene Konfiguration nicht signiert ist, wird bei der Verarbeitung der Konfiguration der nachstehende Fehler ausgegeben, und alle temporären Dateien werden gelöscht.
 
-![Beispielkonfiguration einer Fehlerausgabe](../../images/PullUnsignedConfigFail.png)
+![Beispielkonfiguration einer Fehlerausgabe](../images/PullUnsignedConfigFail.png)
 
-Entsprechend wird beim Übertragen eines Moduls mithilfe von Pull, dessen Katalog nicht signiert ist, der folgende Fehler ausgegeben:-
+Entsprechend wird beim Übertragen eines Moduls mithilfe von Pull, dessen Katalog nicht signiert ist, der folgende Fehler ausgegeben:
 
-![Beispielmodul einer Fehlerausgabe](../../images/PullUnisgnedCatalog.png)
+![Beispielmodul einer Fehlerausgabe](../images/PullUnisgnedCatalog.png)
 
 ####Push
-Eine Konfiguration, die über Push geliefert wurde, könnte an ihrer Quelle manipuliert worden sein, bevor sie an den Knoten geliefert wurde. Der lokale Konfigurations-Manager wird für mithilfe von Push übertragene oder veröffentlichte Konfigurationen ähnliche Schritte zur Überprüfung der Signatur durchführen.
+Eine Konfiguration, die über Push bereitgestellt wurde, könnte an ihrer Quelle manipuliert worden sein, bevor sie an den Knoten übermittelt wurde. Der lokale Konfigurations-Manager wird für mithilfe von Push übertragene oder veröffentlichte Konfigurationen ähnliche Schritte zur Überprüfung der Signatur durchführen.
 Nachstehend finden Sie ein vollständiges Beispiel für die Signaturüberprüfung bei einer mithilfe von Push übertragenen Konfiguration.
 
 * Aktivieren Sie die Überprüfung der Signatur auf dem Knoten.
 
-```Powershell
+```PowerShell
 [DSCLocalConfigurationManager()]
 Configuration EnableSignatureValidation
 {
@@ -267,9 +273,10 @@ Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose
 ``` 
 * Erstellen Sie eine Beispielkonfigurationsdatei.
 
-```Powershell
+```PowerShell
 # Sample configuration
-Configuration Test{
+Configuration Test
+{
 
     File foo
     {
@@ -282,22 +289,22 @@ Test
 
 * Versuchen Sie, die nicht signierte Konfigurationsdatei mithilfe von Push auf den Knoten zu übertragen. 
 
-```Powershell
+```PowerShell
 Start-DscConfiguration -Path .\Test -Wait -Verbose -Force
 ``` 
-![ErrorUnsignedMofPushed](../../images/PushUnsignedMof.png)
+![ErrorUnsignedMofPushed](../images/PushUnsignedMof.png)
 
 * Signieren Sie die Konfigurationsdatei mithilfe eines Codesignaturzertifikats.
 
-![SignMofFile](../../images/SignMofFile.png)
+![SignMofFile](../images/SignMofFile.png)
 
 * Versuchen Sie, die signierte MOF-Datei mithilfe von Push zu übertragen.
 
-![SignMofFile](../../images/PushSignedMof.png)
+![SignMofFile](../images/PushSignedMof.png)
 
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Sep16_HO3-->
 
 

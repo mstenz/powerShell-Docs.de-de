@@ -68,14 +68,14 @@
 ####  [Arbeiten mit Dateien und Ordnern](getting-started/cookbooks/Working-with-Files-and-Folders.md)
 ####  [Arbeiten mit Objekten](getting-started/cookbooks/Working-with-Objects.md)
 ####  [Arbeiten mit Druckern](getting-started/cookbooks/Working-with-Printers.md)
-####  [Arbeiten mit Registrierungseinträgen](getting-started/cookbooks/Working-with-Registry-Entries.md)
+####  [Arbeiten mit Registrierungseinträge](getting-started/cookbooks/Working-with-Registry-Entries.md)
 ####  [Arbeiten mit Registrierungsschlüsseln](getting-started/cookbooks/Working-with-Registry-Keys.md)
 ####  [Arbeiten mit Softwareinstallationen](getting-started/cookbooks/Working-with-Software-Installations.md)
 
 ### [Wo finde ich weitere Informationen?](getting-started/more-powershell-learning.md)
 
-## [PowerShell-Kern](core-powershell/core-powershell.md)
-### [Core-Module](core-powershell/core-modules.md)
+## [Allgemeine PowerShell](core-powershell/core-powershell.md)
+### [Allgemeine Module](core-powershell/core-modules.md)
 ####  [Archivmodul](core-powershell/core-modules/Microsoft.PowerShell.Archive-Module.md)
 ####  [Core-Modul](core-powershell/core-modules/Microsoft.PowerShell.Core-Module.md)
 ####  [Core-Modul-Referenzliste](core-powershell/core-modules/Windows-PowerShell-5.0.md)
@@ -106,6 +106,7 @@
 ####  [So wird's gemacht: Debuggen von Skripts in PowerShell ISE](core-powershell/ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md)
 ####  [So wird's gemacht: Verwenden von Profilen in PowerShell ISE](core-powershell/ise/How-to-Use-Profiles-in-Windows-PowerShell-ISE.md)
 ####  [Verwenden des Konsolenbereichs in der PowerShell ISE](core-powershell/ise/How-to-Use-the-Console-Pane-in-the-Windows-PowerShell-ISE.md)
+####  [Verwenden von Vervollständigung mit der TAB-TASTE im Skriptbereich und Konsolenbereich](core-powershell/ise/How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md)
 ####  [Schreiben und Ausführen von Skripts in der Windows PowerShell ISE](core-powershell/ise/How-to-Write-and-Run-Scripts-in-the-Windows-PowerShell-ISE.md)
 ####  [Einführung in die PowerShell ISE](core-powershell/ise/Introducing-the-Windows-PowerShell-ISE.md)
 ####  [ISE-Modul](core-powershell/ise/ISE-Module.md)
@@ -123,7 +124,6 @@
 
 ### [Konsole](core-powershell/console-guide.md)
 ####  [Referenz für die Konsolenbefehlszeile](core-powershell/console/PowerShell.exe-Command-Line-Help.md)
-####  [Verwenden von Vervollständigung mit der TAB-TASTE im Skriptbereich und Konsolenbereich](core-powershell/ise/How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md)
 ####  [Verwenden von Erweiterung mit der TAB-TASTE](core-powershell/console/Using-Tab-Expansion.md)
 
 ### [Ausführen von Remotebefehlen](core-powershell/Running-Remote-Commands.md)
@@ -142,6 +142,6 @@
 ## [PowerShell-Glossar](Windows-PowerShell-Glossary.md)
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Sep16_HO3-->
 
 

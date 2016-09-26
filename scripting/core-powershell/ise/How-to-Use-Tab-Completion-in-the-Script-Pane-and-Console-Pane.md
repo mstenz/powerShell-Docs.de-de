@@ -1,12 +1,19 @@
 ---
-title: Verwenden von Vervollständigung mit der TAB-TASTE im Skriptbereich und Konsolenbereich
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "Verwenden von Vervollständigung mit der TAB-TASTE im Skriptbereich und Konsolenbereich"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 3b752c3c-0bd0-4eca-a2d3-2d5a37fd9d84
+translationtype: Human Translation
+ms.sourcegitcommit: b14aaee5a66a80295420fe9b517ba1fc652c86bf
+ms.openlocfilehash: 290d9237e20b35ec603f0967854b1e0d193e6cbb
+
 ---
+
 # Verwenden von Vervollständigung mit der TAB-TASTE im Skriptbereich und Konsolenbereich
 Vervollständigung mit der TAB-TASTE bietet automatische Hilfe, wenn Sie eine Eingabe im Skriptbereich oder Befehlsbereich vornehmen. Gehen Sie folgendermaßen vor, um dieses Feature zu nutzen:
 
@@ -19,13 +26,15 @@ Geben Sie im Befehlsbereich oder Skriptbereich einige Zeichen eines Befehls ein,
 ## So wird ein Parametereintrag eines Cmdlets automatisch vervollständigt
 Geben Sie im Befehlsbereich oder Skriptbereich ein Cmdlet gefolgt von einem Bindestrich ein, und drücken Sie dann die TAB-TASTE.
 
-Geben Sie z. B. `get-process -` ein, und drücken Sie dann mehrmals die TAB-TASTE, um jeden der Parameter des Cmdlets der Reihe nach anzuzeigen.
+Geben Sie z. B. `Get-Process -` ein, und drücken Sie dann mehrmals die TAB-TASTE, um jeden der Parameter des Cmdlets der Reihe nach anzuzeigen.
 
 ## Weitere Informationen
-[Verwenden von Windows PowerShell ISE](using-the-windows-powershell-ise.md)
-[Erstellen einer PowerShell-Registerkarte](How-to-Create-a-PowerShell-Tab-in-Windows-PowerShell-ISE.md)
+- [Verwenden von Windows PowerShell ISE](using-the-windows-powershell-ise.md)
+- [Erstellen einer PowerShell-Registerkarte](How-to-Create-a-PowerShell-Tab-in-Windows-PowerShell-ISE.md)
 
 
-<!--HONumber=May16_HO2-->
+
+
+<!--HONumber=Sep16_HO3-->
 
 

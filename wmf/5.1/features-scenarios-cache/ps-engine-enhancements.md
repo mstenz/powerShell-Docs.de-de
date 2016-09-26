@@ -2,8 +2,8 @@
 title: Verbesserungen des PowerShell-Moduls
 author: jasonsh
 translationtype: Human Translation
-ms.sourcegitcommit: 6813902aec214aee9ede27ff79dd291364e9f443
-ms.openlocfilehash: f864850128f118704d7545b09110835ab1d51b8e
+ms.sourcegitcommit: 47c963343c541d0f2ace194f365de5fcd809ccc5
+ms.openlocfilehash: 1b35a25312b44d14ec8771be9e17aaa43e270b61
 
 ---
 
@@ -19,7 +19,7 @@ In einigen wichtigen Bereichen wurde die Leistung verbessert:
 1. Start
 2. Das Pipelining zu Cmdlets wie „ForEach-Object“ und „Where-Object“ erfolgt ca. 50 % schneller. 
 
-Einige Beispiele der Verbesserungen (Ergebnisse variieren je nach Hardware): 
+Einige Beispiele für Verbesserungen (die Ergebnisse variieren je nach Hardware): 
 
 | Szenario | Zeit (ms) in 5.0 | Zeit (ms) in 5.1 |
 | -------- | :---------------: | :---------------: |
@@ -49,7 +49,7 @@ In WMF 5.1 ändert sich dieses Verhalten so, dass `$env:PSModulePath` vollständ
 
 ### Keine Hartcodierung mehr bei der Umleitung von Dateien `-Encoding Unicode` ###
 
-In allen früheren Versionen von PowerShell konnte die vom Dateiumleitungsoperator, z. B. `get-childitem > out.txt`, verwendete Dateicodierung nicht gesteuert werden, da PowerShell `-Encoding Unicode` hinzugefügt hat.
+In allen früheren Versionen von PowerShell konnte die vom Dateiumleitungsoperator, z. B. `Get-ChildItem > out.txt`, verwendete Dateicodierung nicht gesteuert werden, da PowerShell `-Encoding Unicode` hinzugefügt hat.
 
 Ab WMF 5.1 können Sie jetzt die Dateicodierung der Umleitung durch Festlegen von z. B. `$PSDefaultParameterValues` ändern.
 
@@ -66,14 +66,14 @@ Dieser Fehler wurde in WMF 5.1 behoben.
 ### Korrektur einiger Probleme mit COM-Objekten ###
 
 In WMF 5 wurde ein neuer COM-Binder zum Aufrufen von Methoden für COM-Objekte und den Zugriff auf Eigenschaften von COM-Objekten eingeführt.
-Dieser neue Binder verbesserte die Leistung erheblich, verursachte jedoch auch einige Fehler, die in WMF 5.1 behoben wurden.
+Dieser neue Binder verbesserte die Leistung erheblich, verursachte jedoch auch einige Fehler, die in WMF 5.1 behoben wurden.
 
 #### Argumentkonvertierungen erfolgten nicht immer ordnungsgemäß ####
 
 Siehe das folgende Beispiel:
 
 ```
-$obj = new-object -com wscript.shell
+$obj = New-Object -ComObject WScript.Shell
 $obj.SendKeys([char]173)
 ```
 
@@ -123,6 +123,6 @@ In WMF 5.1 wurde dieser Fehler behoben, sodass nur die Hilfe für die neueste V
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 
