@@ -1,21 +1,36 @@
+---
+title: Schreiben einer benutzerdefinierten DSC-Ressource mit PowerShell-Klassen
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: c243385d2cf2cae2f7e7d52dcd529878cd1e4f5b
+ms.openlocfilehash: 05683faf5ef0baf823cb365a17c82af57fc4942e
+
+---
+
 # Schreiben einer benutzerdefinierten DSC-Ressource mit PowerShell-Klassen
 
 > Gilt für: Windows PowerShell 5.0
 
-Mit der Einführung der PowerShell-Klassen in Windows PowerShell 5.0 können Sie jetzt eine DSC-Ressourcen durch Erstellen einer Klasse definieren. Die Klasse definiert das Schema und die Implementierung der Ressource, daher besteht keine Notwendigkeit, eine separate MOF-Datei zu erstellen. Die Ordnerstruktur für eine klassenbasierte Ressource ist auch einfacher, da kein DSCResources-Ordner erforderlich ist.
+Mit der Einführung der PowerShell-Klassen in Windows PowerShell 5.0 können Sie jetzt eine DSC-Ressourcen durch Erstellen einer Klasse definieren. Die Klasse definiert das Schema und die Implementierung der Ressource, daher besteht keine Notwendigkeit, eine separate MOF-Datei zu erstellen. Die Ordnerstruktur für eine klassenbasierte Ressource ist auch einfacher, da kein **DSCResources**-Ordner erforderlich ist.
 
-In einer klassenbasierten DSC-Ressource wird das Schema als Eigenschaften der Klasse definiert, die mit Attributen für den Eigenschaftstyp geändert werden können. Die Ressource wird mit den Methoden Get(), Set()und Test() implementiert (entspricht den Funktionen Get-TargetResource, Set-TargetResource und Test-TargetResource in einer Skriptressource.
+In einer klassenbasierten DSC-Ressource wird das Schema als Eigenschaften der Klasse definiert, die mit Attributen für den Eigenschaftstyp geändert werden können. Die Ressource wird mit den Methoden **Get()**, **Set()**und **Test()** implementiert (entspricht den Funktionen **Get-TargetResource**, **Set-TargetResource** und **Test-TargetResource** in einer Skriptressource.
 
-In diesem Thema wird eine einfache Ressource mit dem Namen FileResource erstellt, die eine Datei unter einem angegebenen Pfad verwaltet.
+In diesem Thema wird eine einfache Ressource mit dem Namen **FileResource** erstellt, die eine Datei unter einem angegebenen Pfad verwaltet.
 
-Weitere Informationen zu DSC-Ressourcen finden Sie unter Erstellen von benutzerdefinierten Windows PowerShell DSC-Ressourcen.
+Weitere Informationen zu DSC-Ressourcen finden Sie unter [Erstellen von benutzerdefinierten Windows PowerShell DSC-Ressourcen](authoringResource.md).
 
 ## Ordnerstruktur für eine Klassenressource
 
-Um eine benutzerdefinierte DSC-Ressource mit einer PowerShell-Klasse zu implementieren, erstellen Sie die folgende Ordnerstruktur. Die Klasse wird in MyDscResource.psm1 und das Modulmanifest in MyDscResource.psd1 definiert.
+Um eine benutzerdefinierte DSC-Ressource mit einer PowerShell-Klasse zu implementieren, erstellen Sie die folgende Ordnerstruktur. Die Klasse wird in **MyDscResource.psm1** und das Modulmanifest in **MyDscResource.psd1** definiert.
 
 ```
-$env: psmodulepath (folder)
+$env: ProgramFiles\WindowsPowerShell\Modules (folder)
     |- MyDscResource (folder)
         |- MyDscResource.psm1 
            MyDscResource.psd1 
@@ -23,7 +38,7 @@ $env: psmodulepath (folder)
 
 ## Erstellen einer Klasse
 
-Sie verwenden das Schlüsselwort „class“ zum Erstellen einer PowerShell-Klasse. Um anzugeben, dass eine Klasse eine DSC-Ressource ist, verwenden Sie das Attribut DscResource(). Der Name der Klasse ist der Name der DSC-Ressource.
+Sie verwenden das Schlüsselwort „class“ zum Erstellen einer PowerShell-Klasse. Um anzugeben, dass eine Klasse eine DSC-Ressource ist, verwenden Sie das Attribut **DscResource()**. Der Name der Klasse ist der Name der DSC-Ressource.
 
 ```powershell
 [DscResource()]
@@ -51,12 +66,12 @@ Das DSC-Ressourcenschema wird als Eigenschaften der Klasse definiert. Es wurden 
 
 Beachten Sie, dass die Eigenschaften durch Attribute geändert werden. Die Attribute haben folgende Bedeutungen:
 
-- DscProperty(Key): Die Eigenschaft ist erforderlich. Die Eigenschaft ist ein Schlüssel. Die Werte aller als Schlüssel gekennzeichneten Eigenschaften in Kombination müssen eine Ressourceninstanz in einer Konfiguration eindeutig identifizieren.
-- DscProperty(Mandatory): Die Eigenschaft ist erforderlich.
-- DscProperty(NotConfigurable): Die Eigenschaft ist schreibgeschützt. Eigenschaften, die mit diesem Attribut gekennzeichnet sind, können nicht von einer Konfiguration festgelegt werden, sondern werden durch die Methode Get(), wenn vorhanden, aufgefüllt.
-- DscProperty(): Die Eigenschaft ist konfigurierbar, aber nicht erforderlich.
+- **DscProperty(Key)**: Die Eigenschaft ist erforderlich. Die Eigenschaft ist ein Schlüssel. Die Werte aller als Schlüssel gekennzeichneten Eigenschaften in Kombination müssen eine Ressourceninstanz in einer Konfiguration eindeutig identifizieren.
+- **DscProperty(Mandatory)**: Die Eigenschaft ist erforderlich.
+- **DscProperty(NotConfigurable)**: Die Eigenschaft ist schreibgeschützt. Eigenschaften, die mit diesem Attribut gekennzeichnet sind, können nicht von einer Konfiguration festgelegt werden, sondern werden durch die Methode **Get()**, wenn vorhanden, aufgefüllt.
+- **DscProperty()**: Die Eigenschaft ist konfigurierbar, aber nicht erforderlich.
 
-Die Eigenschaften $Path und $SourcePath sind Zeichenfolgen. $CreationTime ist eine DateTime-Eigenschaft. Die Eigenschaft $Ensure ist ein Enumerationstyp, der wie folgt definiert ist:
+Die Eigenschaften **$Path** und **$SourcePath** sind Zeichenfolgen. **$CreationTime** ist eine [DateTime](https://technet.microsoft.com/en-us/library/system.datetime.aspx)-Eigenschaft. Die Eigenschaft **$Ensure** ist ein Enumerationstyp, der wie folgt definiert ist:
 
 ```powershell
 enum Ensure 
@@ -68,9 +83,9 @@ enum Ensure
 
 ### Implementieren der Methoden
 
-Die Methoden Get(), Set() und Test() werden analog zu den Funktionen Get-TargetResource, Set-TargetResource und Test-TargetResource in einer Skriptressource implementiert.
+Die Methoden **Get()**, **Set()** und **Test()** werden analog zu den Funktionen **Get-TargetResource**, **Set-TargetResource** und **Test-TargetResource** in einer Skriptressource implementiert.
 
-Dieser Code umfasst auch die Funktion „CopyFile()“, eine Hilfsfunktion, die die Datei von $SourcePath nach $Path kopiert. 
+Dieser Code umfasst auch die Funktion „CopyFile()“, eine Hilfsfunktion, die die Datei von **$SourcePath** nach **$Path** kopiert. 
 
 ```powershell
 
@@ -404,7 +419,7 @@ class FileResource
 
 ## Erstellen eines Manifests
 
-Um eine klassenbasierte Ressource für das DSC-Modul verfügbar zu machen, müssen Sie eine DscResourcesToExport-Anweisung zur Manifestdatei hinzufügen, die das Modul anweist, die Ressource zu exportieren. Unser Manifest sieht folgendermaßen aus:
+Um eine klassenbasierte Ressource für das DSC-Modul verfügbar zu machen, müssen Sie eine **DscResourcesToExport**-Anweisung zur Manifestdatei hinzufügen, die das Modul anweist, die Ressource zu exportieren. Unser Manifest sieht folgendermaßen aus:
 
 ```powershell
 @{
@@ -442,7 +457,7 @@ PowerShellVersion = '5.0'
 
 ## Testen der Ressource
 
-Nachdem Sie die Klasse und die Manifestdateien, wie zuvor beschrieben, in der Ordnerstruktur gespeichert haben, können Sie eine Konfiguration erstellen, die die neue Ressource verwendet. Informationen dazu, wie Sie eine DSC-Konfiguration ausführen, finden Sie unter Inkraftsetzung von Konfigurationen. Die folgende Konfiguration überprüft, ob die Datei unter `c:\test\test.txt` vorhanden ist, und kopiert sie bei Bedarf aus `c:\test.txt` (Sie sollten `c:\test.txt` vor dem Ausführen der Konfiguration erstellen).
+Nachdem Sie die Klasse und die Manifestdateien, wie zuvor beschrieben, in der Ordnerstruktur gespeichert haben, können Sie eine Konfiguration erstellen, die die neue Ressource verwendet. Informationen dazu, wie Sie eine DSC-Konfiguration ausführen, finden Sie unter [Inkraftsetzung von Konfigurationen](enactingConfigurations.md). Die folgende Konfiguration überprüft, ob die Datei unter `c:\test\test.txt` vorhanden ist, und kopiert sie bei Bedarf aus `c:\test.txt` (Sie sollten `c:\test.txt` vor dem Ausführen der Konfiguration erstellen).
 
 ```powershell
 Configuration Test
@@ -464,6 +479,8 @@ Start-DscConfiguration -Wait -Force Test
 [Erstellen von benutzerdefinierten Windows PowerShell DSC-Ressourcen](authoringResource.md)
 
 
-<!--HONumber=Mar16_HO4-->
+
+
+<!--HONumber=Sep16_HO5-->
 
 
