@@ -4,6 +4,6 @@ WMF 5.0 unterstützt das Ausführen **beliebiger** DSC-Ressourcen unter einem an
 
 Weitere Informationen finden Sie unter [Ausführen von DSC mit Benutzeranmeldeinformationen](https://msdn.microsoft.com/powershell/dsc/runasuser).
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

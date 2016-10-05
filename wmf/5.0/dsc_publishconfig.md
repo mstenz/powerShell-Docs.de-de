@@ -4,6 +4,6 @@ Das Cmdlet [Publish-DscConfiguration](https://technet.microsoft.com/library/mt51
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

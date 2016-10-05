@@ -1,3 +1,18 @@
+---
+title: "DSC-Resource „Environment“"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
+ms.openlocfilehash: 20a7711604033b5ff1484dbb526df2642a9a1738
+
+---
+
 # DSC-Resource „Environment“
 
 > Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
@@ -38,4 +53,10 @@ Environment EnvironmentExample
     Value = "TestValue"
 }
 ```
-<!--HONumber=Feb16_HO4-->
+
+
+
+
+<!--HONumber=Aug16_HO3-->
+
+

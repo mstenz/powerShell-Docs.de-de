@@ -4,6 +4,6 @@ Das `DscLocalConfigurationManager`-Attribut kennzeichnet einen Konfigurationsblo
 
 Weitere Informationen finden Sie unter [Konfigurieren des lokalen Konfigurations-Managers](https://msdn.microsoft.com/powershell/dsc/metaconfig).
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

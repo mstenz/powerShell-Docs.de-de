@@ -1,3 +1,18 @@
+---
+title: DSC-Ressourcen
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
+ms.openlocfilehash: 0a27a40b995393c41f0496a5f7fa3f56fbd865dd
+
+---
+
 # DSC-Ressourcen
 
 >Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
@@ -10,4 +25,11 @@ In den folgenden Themen werden DSC-Ressourcen beschrieben:
 
 - [Integrierte DSC-Ressourcen](builtInResource.md)
 - [Erstellen benutzerdefinierter DSC-Ressourcen](authoringResource.md)
-- [Integrierte DSC-Ressourcen für Linux](lnxBuiltInResources.md)<!--HONumber=Feb16_HO4-->
+- [Integrierte DSC-Ressourcen für Linux](lnxBuiltInResources.md)
+
+
+
+
+<!--HONumber=Aug16_HO3-->
+
+

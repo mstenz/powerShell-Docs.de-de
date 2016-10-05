@@ -11,6 +11,6 @@ Wenn Sie bereits die Zertifikatmethode zum Verschlüsseln von Kennwörtern verwe
 Diese Verschlüsselung gilt nur für MOF-Konfigurationsdokumente (pending.mof, current.mof, previous.mof, MOF-Teilkonfigurationen). MOF-Dateien mit Metakonfigurationen werden weiterhin unverschlüsselt gespeichert, da sie meist keine geheimen Schlüssel enthalten.
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

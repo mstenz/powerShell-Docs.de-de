@@ -4,6 +4,6 @@ In dieser Version bieten wir Ihnen die Flexibilität, die Sie brauchen, um Konfi
 
 Weitere Informationen finden Sie unter [Einrichten eines DSC-Pullclients mithilfe einer Konfigurations-ID](https://msdn.microsoft.com/powershell/dsc/pullclientconfigid) oder [Einrichten eines Pullclients mithilfe von Konfigurationsnamen](https://msdn.microsoft.com/powershell/dsc/pullclientconfignames).
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

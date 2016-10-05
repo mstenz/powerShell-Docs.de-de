@@ -11,6 +11,6 @@ Basierend auf Feedback haben wir das Erstellen klassenbasierter DSC-Ressourcen v
 Weitere Informationen finden Sie unter [Schreiben einer benutzerdefinierten DSC-Ressource mit PowerShell-Klassen](https://msdn.microsoft.com/powershell/dsc/authoringresource).
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

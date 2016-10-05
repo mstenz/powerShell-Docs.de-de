@@ -1,9 +1,23 @@
+---
+title: Einrichten eines DSC-SMB-Pullservers
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
+ms.openlocfilehash: 35ac9b38086b12fb48844c56a488854f63529e21
+
+---
+
 # Einrichten eines DSC-SMB-Pullservers
 
 >Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-Ein DSC-SMB-Pullserver ist eine SMB-Dateifreigabe, mit der DSC-Konfigurationsdateien und/oder DSC-Ressourcen für Zielknoten zur Verfügung gestellt werden, wenn sie von diesen Knoten angefordert werden.
-available to target nodes when those nodes ask for them.
+Ein DSC-[SMB](https://technet.microsoft.com/en-us/library/hh831795.aspx)-Pullserver ist eine SMB-Dateifreigabe, mit der DSC-Konfigurationsdateien und/oder DSC-Ressourcen für Zielknoten zur Verfügung gestellt werden, wenn sie von diesen Knoten angefordert werden.
 
 Zum Verwenden eines SMB-Pullservers für DSC müssen Sie folgende Schritte ausführen:
 - Einrichten einer SMB-Dateifreigabe auf einem Server mit PowerShell 4.0 oder höher
@@ -15,14 +29,12 @@ Es gibt zahlreiche Methoden zum Einrichten einer SMB-Dateifreigabe. Im Folgenden
 
 ### Installieren der Ressource „xSmbShare“
 
-Rufen Sie das Cmdlet Install-Module auf, um das Modul xSmbShare zu installieren.
->Hinweis: Install-Module ist im Modul PowerShellGet enthalten, das Bestandteil von PowerShell 5.0 ist. Das Modul PowerShellGet für PowerShell 3.0 und 4.0 können Sie unter PowerShell-Module „PackageManagement“ – Vorschau herunterladen.
->at <bpt id="p1">[</bpt>PackageManagement PowerShell Modules Preview<ept id="p1">](https://www.microsoft.com/en-us/download/details.aspx?id=49186)</ept>. xSmbShare enthält die DSC-Ressource xSmbShare, mit der Sie eine SMB-Dateifreigabe erstellen können.
-to create an SMB file share.
+Rufen Sie das Cmdlet [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) auf, um das Modul **xSmbShare** zu installieren.
+>**Hinweis**: **Install-Module** ist im Modul **PowerShellGet** enthalten, das Bestandteil von PowerShell 5.0 ist. Das Modul **PowerShellGet** für PowerShell 3.0 und 4.0 können Sie unter [PowerShell-Module „PackageManagement“ – Vorschau](https://www.microsoft.com/en-us/download/details.aspx?id=49186) herunterladen. **xSmbShare** enthält die DSC-Ressource **xSmbShare**, mit der Sie eine SMB-Dateifreigabe erstellen können.
 
 ### Erstellen des Verzeichnisses und der Dateifreigabe
 
-Die folgende Konfiguration verwendet die Datei-Ressource zum Erstellen des Verzeichnisses für die Freigabe und die xSmbShare-Ressource zum Einrichten der SMB-Freigabe:
+Die folgende Konfiguration verwendet die [File](fileResource.md)-Ressource zum Erstellen des Verzeichnisses für die Freigabe und die **xSmbShare**-Ressource zum Einrichten der SMB-Freigabe:
 
 ```powershell
 Configuration SmbShare {
@@ -57,16 +69,12 @@ Import-DscResource -ModuleName xSmbShare
 }
 ```
 
-Die Konfiguration erstellt das Verzeichnis `C:\DscSmbShare`, wenn es noch nicht vorhanden ist, und verwendet dieses Verzeichnis anschließend als SMB-Dateifreigabe. Jedes Konto, das in die Dateifreigabe schreiben oder Elemente daraus löschen können muss, sollte FullAccess erhalten, und allen Clientknoten, die Konfigurationen und/oder DSC-Ressourcen aus dieser Freigabe erhalten, ReadAccess gewährt werden (da DSC standardmäßig als Systemkonto ausgeführt wird, daher muss der Computer selbst auf die Freigabe zugreifen können).
-account that needs to write to or delete from the file share, and <bpt id="p1">**</bpt>ReadAccess<ept id="p1">**</ept> must be given to any client nodes that will get configurations and/or DSC resources from the share (
-this is because DSC runs as the system account by default, so the computer itself has to have access to the share).
+Die Konfiguration erstellt das Verzeichnis `C:\DscSmbShare`, wenn es noch nicht vorhanden ist, und verwendet dieses Verzeichnis anschließend als SMB-Dateifreigabe. Jedes Konto, das in die Dateifreigabe schreiben oder Elemente daraus löschen können muss, sollte **FullAccess** erhalten, und allen Clientknoten, die Konfigurationen und/oder DSC-Ressourcen aus dieser Freigabe erhalten, **ReadAccess** gewährt werden (da DSC standardmäßig als Systemkonto ausgeführt wird, daher muss der Computer selbst auf die Freigabe zugreifen können).
 
 
 ### Gewähren von Dateisystemzugriff für den Pullclient
 
-Indem Sie einem Clientknoten ReadAccess gewähren, kann dieser Knoten auf die SMB-Freigabe zugreifen, aber nicht auf Dateien oder Ordner innerhalb der Freigabe. Sie müssen Clientknoten explizit Zugriff auf den SMB-Freigabeordner und dessen Unterordner gewähren.
-folder and sub-folders. In DSC erfolgt dies mithilfe der Ressource cNtfsPermissionEntry, die im Modul CNtfsAccessControl enthalten ist.
-module. Die folgende Konfiguration fügt einen cNtfsPermissionEntry-Block hinzu, der dem Pullclient „ReadAndExecute“-Zugriff gewährt:
+Indem Sie einem Clientknoten **ReadAccess** gewähren, kann dieser Knoten auf die SMB-Freigabe zugreifen, aber nicht auf Dateien oder Ordner innerhalb der Freigabe. Sie müssen Clientknoten explizit Zugriff auf den SMB-Freigabeordner und dessen Unterordner gewähren. In DSC erfolgt dies mithilfe der Ressource **cNtfsPermissionEntry**, die im Modul [CNtfsAccessControl](https://www.powershellgallery.com/packages/cNtfsAccessControl/1.2.0) enthalten ist. Die folgende Konfiguration fügt einen **cNtfsPermissionEntry**-Block hinzu, der dem Pullclient „ReadAndExecute“-Zugriff gewährt:
 
 ```powershell
 Configuration DSCSMB {
@@ -125,29 +133,25 @@ Import-DscResource -ModuleName cNtfsAccessControl
 
 Speichern Sie alle MOF-Konfigurationsdateien und/oder DSC-Ressourcen, die von Clientknoten per Pull abgerufen werden sollen, im SMB-Freigabeordner.
 
-Alle MOF-Konfigurationsdateien müssen den Namen ConfigurationID.mof haben, wobei ConfigurationID der Wert der ConfigurationID-Eigenschaft des LCM des Zielknotens ist. Weitere Informationen zum
-Einrichten von Pullclients finden Sie unter Einrichten eines DSC-Pullclients mithilfe einer Konfigurations-ID.
+Alle MOF-Konfigurationsdateien müssen den Namen _ConfigurationID_.mof haben, wobei _ConfigurationID_ der Wert der **ConfigurationID**-Eigenschaft des LCM des Zielknotens ist. Weitere Informationen zum Einrichten von Pullclients finden Sie unter [Einrichten eines DSC-Pullclients mithilfe einer Konfigurations-ID](pullClientConfigID.md).
 
->Hinweis: Sie müssen Konfigurations-ID verwenden, wenn Sie einen SMB-Pullserver verwenden. Konfigurationsnamen werden für SMB nicht unterstützt.
+>**Hinweis:** Sie müssen Konfigurations-IDs verwenden, wenn Sie einen SMB-Pullserver verwenden. Konfigurationsnamen werden für SMB nicht unterstützt.
 
 Alle vom Client benötigten Ressourcen müssen in den SMB-Freigabeordner als archivierte `.zip`-Dateien abgelegt werden.  
 
 ## Erstellen der MOF-Prüfsumme
-Eine MOF-Konfigurationsdatei muss einer Prüfsummendatei zugeordnet werden, damit ein LCM auf einem Zielknoten die Konfiguration überprüfen kann. 
-Um eine Prüfsumme zu erstellen, rufen Sie das Cmdlet New-DSCCheckSum auf. Das Cmdlet verwendet einen Path-Parameter, der den Ordner angibt, in dem sich die MOF-Konfigurationsdatei befindet. 
-where the configuration MOF is located. Das Cmdlet erstellt eine Prüfsummendatei mit dem Namen `ConfigurationMOFName.mof.checksum`, wobei `ConfigurationMOFName` der Name der MOF-Konfigurationsdatei ist. 
-Wenn in dem angegebenen Ordner mehrere MOF-Konfigurationsdateien vorhanden sind, wird für jede Konfiguration im Ordner eine Prüfsumme erstellt.
+Eine MOF-Konfigurationsdatei muss einer Prüfsummendatei zugeordnet werden, damit ein LCM auf einem Zielknoten die Konfiguration überprüfen kann. Um eine Prüfsumme zu erstellen, rufen Sie das Cmdlet [New-DSCCheckSum](https://technet.microsoft.com/en-us/library/dn521622.aspx) auf. Das Cmdlet verwendet einen **Path**-Parameter, der den Ordner angibt, in dem sich die MOF-Konfigurationsdatei befindet. Das Cmdlet erstellt eine Prüfsummendatei mit dem Namen `ConfigurationMOFName.mof.checksum`, wobei `ConfigurationMOFName` der Name der MOF-Konfigurationsdatei ist. Wenn in dem angegebenen Ordner mehrere MOF-Konfigurationsdateien vorhanden sind, wird für jede Konfiguration im Ordner eine Prüfsumme erstellt.
 
 Die Prüfsummendatei muss sich im gleichen Verzeichnis wie die MOF-Konfigurationsdatei befinden (standardmäßig `$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration`). Sie muss den gleichen Namen mit der Erweiterung `.checksum` haben.
 
->Hinweis: Wenn Sie die MOF-Konfigurationsdatei in irgendeiner Weise ändern, müssen Sie auch die Prüfsummendatei neu erstellen.
+>**Hinweis**: Wenn Sie die MOF-Konfigurationsdatei in irgendeiner Weise ändern, müssen Sie auch die Prüfsummendatei neu erstellen.
 
 ## Bestätigungen
 
 Besonderer Dank geht an folgende Personen:
 
-- Mike F. Robbins, dessen Beiträge zur Verwendung von SMB für DSC beim Zusammenstellen des Inhalts in diesem Thema geholfen haben. Seinen Blog finden Sie unter Mike F Robbins.
-- Serge Nikalaichyk, der das Modul cNtfsAccessControl erstellt hat. Die Quelle für dieses Modul finden Sie unter „https://github.com/SNikalaichyk/cNtfsAccessControl“.
+- Mike F. Robbins, dessen Beiträge zur Verwendung von SMB für DSC beim Zusammenstellen des Inhalts in diesem Thema geholfen haben. Seinen Blog finden Sie unter [Mike F Robbins](http://mikefrobbins.com/).
+- Serge Nikalaichyk, der das Modul **cNtfsAccessControl** erstellt hat. Die Quelle für dieses Modul finden Sie unter „https://github.com/SNikalaichyk/cNtfsAccessControl“.
 
 ## Siehe auch
 - [Windows PowerShell DSC – Übersicht](overview.md)
@@ -156,6 +160,8 @@ Besonderer Dank geht an folgende Personen:
 
  
 
-<!--HONumber=Mar16_HO2-->
+
+
+<!--HONumber=Aug16_HO3-->
 
 

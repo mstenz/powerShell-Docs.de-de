@@ -4,6 +4,6 @@ Mithilfe der integrierten Ressourcen des Typs „WaitFor\*“ (`WaitForAll`, `Wa
 
 Weitere Informationen finden Sie unter [Angeben knotenübergreifender Abhängigkeiten](https://msdn.microsoft.com/powershell/dsc/crossnodedependencies).
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

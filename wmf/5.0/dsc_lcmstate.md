@@ -10,6 +10,6 @@ Wir haben das Verfügbarmachen von Details zum LCM-Status verbessert. Der „LCM
 Wir haben auch die „LCMStateDetail“-Eigenschaft hinzugefügt, die weitere Statusinformationen enthält.
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -4,6 +4,6 @@ Sie können nun innerhalb von DSC-Konfigurationen eine kommentarbasierte Hilfe n
 
 Weitere Informationen finden Sie unter [Schreiben von Hilfe für DSC-Konfigurationen](https://msdn.microsoft.com/powershell/dsc/confighelp).
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

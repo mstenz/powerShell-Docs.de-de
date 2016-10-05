@@ -21,6 +21,6 @@ Mode LastWriteTime Length Name
 Die „Clipboard“-Cmdlets unterstützen Bilder, Audiodateien, Dateilisten und Text.
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

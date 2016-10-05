@@ -16,13 +16,13 @@ Die nachfolgende Tabelle veranschaulicht die resultierenden auf Zustand und Stat
 |---------------------------------|----------------------|------------|---------------|------------------------------|--------------------------------|
 | S**^**                          | Idle                 | Erfolg    | $false        | E                            | $null                          |
 | F**^**                          | PendingConfiguration | Fehler    | $false        | $null                        | F                              |
-| E,F                             | PendingConfiguration | Fehler    | $false        | S                            | F                              |
-| E, S                             | PendingConfiguration | Fehler    | $false        | S                            | F                              |
+| E,F                             | PendingConfiguration | Fehler    | $false        | E                            | F                              |
+| E, S                             | PendingConfiguration | Fehler    | $false        | E                            | F                              |
 | S<sub>1</sub>, F, S<sub>2</sub> | PendingConfiguration | Fehler    | $false        | S<sub>1</sub>, S<sub>2</sub> | F                              |
-| F<sub>1</sub>, S, F<sub>2</sub> | PendingConfiguration | Fehler    | $false        | S                            | F<sub>1</sub>, F<sub>2</sub>   |
+| F<sub>1</sub>, S, F<sub>2</sub> | PendingConfiguration | Fehler    | $false        | E                            | F<sub>1</sub>, F<sub>2</sub>   |
 | E, N                            | PendingReboot        | Erfolg    | $True         | E                            | N                              |
 | F, N                            | PendingReboot        | Fehler    | $True         | $null                        | F, N                           |
-| R, E                            | PendingReboot        | Erfolg    | $True         | $null                        | N                              |
+| R, E                            | PendingReboot        | Erfolg    | $True         | $null                        | r                              |
 | N, F                            | PendingReboot        | Erfolg    | $True         | $null                        | r                              |
 
 ^
@@ -105,6 +105,6 @@ LCM State: Idle,
 ```
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

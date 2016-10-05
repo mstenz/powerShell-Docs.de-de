@@ -4,6 +4,6 @@ In der vorherigen Version von DSC behandelt der LCM `RefreshFrequencyMins` und `
 
 Weitere Informationen finden Sie unter [Konfigurieren des lokalen Konfigurations-Managers](https://msdn.microsoft.com/powershell/dsc/metaconfig).
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

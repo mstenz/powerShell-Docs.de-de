@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.technology: WMF
 translationtype: Human Translation
-ms.sourcegitcommit: 57049ff138604b0e13c8fd949ae14da05cb03a4b
-ms.openlocfilehash: 01d7ac9815a8650f36150e36b4f6942f451dc368
+ms.sourcegitcommit: a1dde68414fd9754a15adb42642646f87adb0823
+ms.openlocfilehash: 9611a7da48a849b52821ac2890e1ea60441a75e3
 
 ---
 
@@ -32,25 +32,25 @@ Ab Version 5.1 steht PowerShell in verschiedenen Editionen zur Verfügung, die u
 
 ## Katalog-Cmdlets  
 
-Dem [Microsoft.Powershell.Secuity](https://technet.microsoft.com/en-us/library/hh847877.aspx)-Modul wurden zwei neue Cmdlets hinzugefügt. Sie generieren und überprüfen Windows-Katalogdateien.  
+Dem [Microsoft.PowerShell.Security](https://technet.microsoft.com/en-us/library/hh847877.aspx)-Modul wurden zwei neue Cmdlets hinzugefügt, die Windows-Katalogdateien generieren und überprüfen.  
 
 ###New-FileCatalog 
 --------------------------------
 
-„New-FileCatalog“ erstellt eine Windows-Katalogdatei für Ordner- und Dateisätze. Diese Katalogdatei enthält die Hashes aller Dateien in bestimmten Pfaden. Benutzer können den Satz von Ordnern zusammen mit den entsprechenden Katalogdateien verteilen, die diese Ordner darstellen. Diese Informationen helfen bei der Überprüfung, ob seit der Erstellung des Katalogs Änderungen an den Ordnern vorgenommen wurden.    
+„New-FileCatalog“ erstellt eine Windows-Katalogdatei für eine Gruppe von Ordnern und Dateien. Diese Katalogdatei enthält die Hashes aller Dateien in bestimmten Pfaden. Benutzer können den Satz von Ordnern zusammen mit den entsprechenden Katalogdateien verteilen, die diese Ordner darstellen. Diese Informationen helfen bei der Überprüfung, ob seit der Erstellung des Katalogs Änderungen an den Ordnern vorgenommen wurden.    
 
 ```PowerShell
 New-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-CatalogVersion <int>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 Die Katalogversionen 1 und 2 werden unterstützt. Version 1 verwendet den SHA1-Hashalgorithmus, um Dateihashes zu erstellen, Version 2 verwendet SHA256. Katalogversion 2 wird weder auf *Windows Server 2008 R2* noch auf *Windows 7* unterstützt. Daher sollten Sie die Katalogversion 2 mit *Windows 8*, *Windows Server 2012* und späteren Betriebssystemen verwenden.  
 
-![](../../images/NewFileCatalog.jpg)
+![](../images/NewFileCatalog.jpg)
 
 Dadurch wird die Katalogdatei erstellt. 
 
-![](../../images/CatalogFile1.jpg)  
+![](../images/CatalogFile1.jpg)  
 
-![](../../images/CatalogFile2.jpg) 
+![](../images/CatalogFile2.jpg) 
 
 Melden Sie sich mit dem Cmdlet [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) an, um die Integrität der Katalogdatei zu überprüfen (im obigen Beispiel: „pester.cat“).   
 
@@ -64,9 +64,9 @@ Melden Sie sich mit dem Cmdlet [Set-AuthenticodeSignature](https://technet.micro
 Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-FilesToSkip <string[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-![](../../images/TestFileCatalog.jpg)
+![](../images/TestFileCatalog.jpg)
 
-Dieses Cmdlet vergleicht alle Dateihashes und deren im *Katalog* enthaltenen relativen Pfade mit denen auf dem *Datenträger*. Wenn das Cmdlet eine Unstimmigkeit zwischen den Dateihashes und den Pfaden entdeckt, gibt es den Status *ValidationFailed* zurück. Benutzer können alle diese Informationen mithilfe des Kennzeichens *-Detailed* abrufen. Es zeigt auch den Signierstatus des Katalogs in *Signatur*, was dem Aufruf des Cmdlets [Get-AuthenticodeSignature](https://technet.microsoft.com/en-us/library/hh849805.aspx) in der Katalogdatei entspricht. Benutzer können außerdem jede Datei während der Überprüfung mithilfe des Parameters *-FilesToSkip* überspringen. 
+Dieses Cmdlet vergleicht alle Dateihashes und deren im *Katalog* enthaltenen relativen Pfade mit denen auf dem *Datenträger*. Wenn das Cmdlet eine Unstimmigkeit zwischen den Dateihashes und den Pfaden entdeckt, gibt es den Status *ValidationFailed* zurück. Benutzer können alle diese Informationen mithilfe des Parameters *-Detailed* abrufen. Dieser Parameter zeigt in der Eigenschaft *Signature* auch den Signierstatus des Katalogs an, was dem Aufruf des Cmdlets [Get-AuthenticodeSignature](https://technet.microsoft.com/en-us/library/hh849805.aspx) in der Katalogdatei entspricht. Benutzer können außerdem jede Datei während der Überprüfung mithilfe des Parameters *-FilesToSkip* überspringen. 
 
 
 ## Die Datei „ModuleAnalysisCache“ ##
@@ -75,15 +75,13 @@ Ab Version 5.1 bietet PowerShell Kontrolle über die Datei, die zum Zwischenspei
 Standardmäßig wird dieser Cache in der Datei `${env:LOCALAPPDATA}\Microsoft\Windows\PowerShell\ModuleAnalysisCache` gespeichert.
 Der Cache wird in der Regel beim Start der Suche nach einem Befehl gelesen und einige Zeit nach dem Import des Moduls in einem Hintergrundthread geschrieben.
 
-Um den Standardspeicherort des Caches zu ändern, legen Sie die Umgebungsvariable „PSModuleAnalysisCachePath“ vor dem Starten von PowerShell fest. Änderungen an dieser Umgebungsvariablen betreffen nur untergeordnete Prozesse.
-Der Wert muss einen vollständigen Pfad (samt Dateiname) definieren, in dem PowerShell die Berechtigung zum Erstellen und Schreiben von Dateien hat.
-Zum Deaktivieren des Dateicaches kann dieser Wert auf einen ungültigen Speicherort festgelegt werden. Beispiel:
+Um den Standardspeicherort des Caches zu ändern, legen Sie die Umgebungsvariable `$env:PSModuleAnalysisCachePath` vor dem Starten von PowerShell fest. Änderungen an dieser Umgebungsvariablen betreffen nur untergeordnete Prozesse. Der Wert muss einen vollständigen Pfad (samt Dateiname) definieren, in dem PowerShell die Berechtigung zum Erstellen und Schreiben von Dateien hat. Zum Deaktivieren des Dateicaches kann dieser Wert auf einen ungültigen Speicherort festgelegt werden. Beispiel:
 
 ```PowerShell
 $env:PSModuleAnalysisCachePath = 'nul'
 ```
 
-Hiermit wird der Pfad auf ein ungültiges Gerät festgelegt. Wenn PowerShell nicht in den Pfad schreiben kann, wird keine Fehlermeldung zurückgegeben. Doch mithilfe eines Ablaufverfolgungstools können Sie einen Fehlerbericht anzeigen:
+Hiermit wird der Pfad auf ein ungültiges Gerät festgelegt. Wenn PowerShell nicht in den Pfad schreiben kann, wird keine Fehlermeldung zurückgegeben. Mithilfe eines Ablaufverfolgungstools können Sie jedoch einen Fehlerbericht anzeigen:
 
 ```PowerShell
 Trace-Command -PSHost -Name Modules -Expression { Import-Module Microsoft.PowerShell.Management -Force }
@@ -112,19 +110,13 @@ In WMF 5.1:
 * Wenn mehrere Versionen des Moduls vorhanden sind, verwendet PowerShell **dieselbe Auflösungslogik** wie `Import-Module` und gibt keinen Fehler zurück, was dem Verhalten von `Import-Module` und `Import-DscResource` entspricht.
 
 
-
-
-
-
-
-
 ##Verbesserungen an Pester
-In WMF 5.1 wurde die in PowerShell mitgelieferte Pester-Version von 3.3.5 auf 3.4.0 aktualisiert und um eine „commit“-Funktion ergänzt, die die Funktionsweise von Pester auf Nano verbessert (https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e). 
+In WMF 5.1 wurde die in PowerShell mitgelieferte Pester-Version von 3.3.5 auf 3.4.0 aktualisiert und um eine „commit“-Funktion ergänzt, die die Funktionsweise von Pester auf Nano Server verbessert (https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e). 
 
 Die Änderungen, die in Version 3.4.0 hinsichtlich der Version 3.3.5 gemacht wurden, können Sie in der Datei „ChangeLog.md“ unter „https://github.com/pester/Pester/blob/master/CHANGELOG.md“ einsehen.
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Aug16_HO3-->
 
 

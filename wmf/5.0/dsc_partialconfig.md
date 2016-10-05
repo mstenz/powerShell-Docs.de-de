@@ -3,6 +3,6 @@
 WMF 5.0 hilft Ihnen, Konfigurationsdokumente in Fragmenten an einen Knoten zu übermitteln. Weitere Informationen finden Sie unter [Teilkonfigurationen](https://msdn.microsoft.com/powershell/dsc/partialconfigs).
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

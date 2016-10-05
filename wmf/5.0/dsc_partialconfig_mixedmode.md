@@ -4,6 +4,6 @@ Wenn Sie Teilkonfigurationen verwenden, können nun mit einem `RefreshMode` einz
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 
