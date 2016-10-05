@@ -1,5 +1,5 @@
 # Indextestdatei für Open Publishing
 
-<!--HONumber=Jul16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

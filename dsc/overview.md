@@ -1,3 +1,18 @@
+---
+title: "Windows PowerShell DSC – Übersicht"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
+ms.openlocfilehash: 1a796658eb30bdf5c37ea3677f94767260a34b45
+
+---
+
 # Windows PowerShell DSC – Übersicht 
 
 > Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
@@ -30,7 +45,7 @@ DSC ist eine deklarative Plattform für die Konfiguration, Bereitstellung und Ve
 * Ressourcen sind die zwingend erforderlichen Bausteine von DSC, die geschrieben werden, um die verschiedenen Komponenten eines Teilsystems zu modellieren und die Ablaufsteuerung ihrer sich ändernden Zustände zu implementieren. Sie befinden sich in PowerShell-Modulen und können geschrieben werden, um etwas Allgemeines wie eine Datei oder einen Windows-Prozess oder etwas Spezifisches wie einen IIS-Server oder eine in Azure ausgeführte VM zu modellieren.
 * Der lokale Konfigurations-Manager (Local Configuration Manager, LCM) ist das Modul, dass DSC die Interaktion zwischen Ressourcen und Konfigurationen erleichtert. Der LCM fragt das System mithilfe der von Ressourcen implementierten Ablaufsteuerung ab, um sicherzustellen, dass der von einer Konfiguration vorgegebene Zustand beibehalten wird. Ist dies nicht der Fall, verwendete der LCM weitere Logik innerhalb der Ressourcen, um eine Korrektur entsprechend der Deklaration der Konfiguration vorzunehmen. 
 
-DSC bietet auch eine Reihe von neuen Programmiersprachen-Schlüsselworten, Cmdlets und Tools, die das Erstellen von Konfigurationen, Entwickeln von DSC-Ressourcen, Aufrufen von Konfigurationen und Verwalten des LCM ermöglichen. Viele dieser Cmdlets sind in Windows 8.1 als Teil des Moduls „PsDesiredStateConfig“ enthalten (einschließlich `Start-DscConfiguration`, `Set-DscLocalConfigurationManager` und `Get-DscResource`). Der (im [PowerShell-Katalog](https://www.powershellgallery.com/packages/xDSCResourceDesigner/) enthaltene) „xDscResourceDesigner“ ist eine Sammlung von Cmdlets, die die Entwicklung von DSC-Ressourcen vereinfachen.
+DSC bietet auch eine Reihe von neuen Programmiersprachen-Schlüsselworten, Cmdlets und Tools, die das Erstellen von Konfigurationen, Entwickeln von DSC-Ressourcen, Aufrufen von Konfigurationen und Verwalten des LCM ermöglichen. Viele dieser Cmdlets sind in Windows 8.1 als Teil des Moduls „PSDesiredStateConfiguration“ enthalten (einschließlich `Start-DscConfiguration`, `Set-DscLocalConfigurationManager` und `Get-DscResource`). Der (im [PowerShell-Katalog](https://www.powershellgallery.com/packages/xDSCResourceDesigner/) enthaltene) „xDscResourceDesigner“ ist eine Sammlung von Cmdlets, die die Entwicklung von DSC-Ressourcen vereinfachen.
 
 ## Weitere Informationen
 * [DSC-Konfigurationen](configurations.md)
@@ -39,6 +54,7 @@ DSC bietet auch eine Reihe von neuen Programmiersprachen-Schlüsselworten, Cmdle
 
 
 
-<!--HONumber=Apr16_HO2-->
+
+<!--HONumber=Aug16_HO3-->
 
 

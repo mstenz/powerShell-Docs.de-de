@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.technology: WMF
 translationtype: Human Translation
-ms.sourcegitcommit: 0a53817d6af625822d9183d2a0d5bc7bf4d2b264
-ms.openlocfilehash: 058d18deeb3d4926970ea25a157f92ad14836e4b
+ms.sourcegitcommit: c88163b5a7d8805d0dea82d321796d8f41d17bb8
+ms.openlocfilehash: 26a325dc7a18ba167ddc56ca226fce3eded79f52
 
 ---
 
@@ -67,6 +67,6 @@ Für Installation von WMF 5.1 unter Windows Server 2008 SP1 oder Windows 7 SP1 m
 
 
 
-<!--HONumber=Jul16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

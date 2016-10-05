@@ -9,6 +9,6 @@ JEA basiert auf dem Erstellen speziell konfigurierter eingeschränkter Endpunkte
 2. Der Endpunkt ist gesperrt.  Dies bedeutet, dass PowerShell im Modus „Keine Sprache“ ausgeführt wird.  Nur bestimmte Befehle, Skripts und ausführbare Dateien sind für den Benutzer sichtbar.
 3. Anderen Benutzern, die eine Verbindung herstellen, wird basierend auf der Gruppenmitgliedschaft eine andere Gruppe von Funktionen angezeigt.  Sie können am selben Endpunkt verschiedene Rollen mit verschiedenen Möglichkeiten einrichten.
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -11,6 +11,6 @@ Im Rahmen der Funktionalität des Features werden keine Daten an Microsoft gesen
 Weitere Informationen und Dokumentation zu Cmdlets zur Protokollierung des Softwarebestands (Software Inventory Logging; SIL) finden Sie in den Windows Server 2012 R2-Onlineressourcen unter <http://technet.microsoft.com/library/dn383584.aspx>.
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

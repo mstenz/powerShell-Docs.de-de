@@ -1,10 +1,18 @@
 ---
-DCS.appliesToProduct: 'WindowsServer\_Dev'
-Description: 'Senden des Konfigurationsdokuments an den verwalteten Knoten und Testen des Dokuments anhand der aktuellen Konfiguration.'
-MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_testconfiguration'
-MSHAttr: 'PreferredLib:/library'
-title: 'TestConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse'
+title: TestConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: c915ebd021ed20209bc491505d45cff2ac89f21d
+ms.openlocfilehash: 0777467d37e2f5588f9c0ef368148e3bea963a5b
+
 ---
+
 
 # TestConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse
 
@@ -56,7 +64,7 @@ Dies ist eine statische Methode.
 ## Siehe auch
 
 
-[**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
+[**MSFT_DSCLocalConfigurationManager-Klasse**](msft-dsclocalconfigurationmanager.md)
 
 
  
@@ -67,6 +75,7 @@ Dies ist eine statische Methode.
 
 
 
-<!--HONumber=Apr16_HO2-->
+
+<!--HONumber=Aug16_HO3-->
 
 
