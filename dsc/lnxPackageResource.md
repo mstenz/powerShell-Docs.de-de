@@ -1,3 +1,18 @@
+---
+title: "DSC für Linux-Resource „nxPackage“"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
+ms.openlocfilehash: 31867cc7af96a3d8d527f5906d77bed5206940b4
+
+---
+
 # DSC für Linux-Resource „nxPackage“
 
 Die Ressource **nxPackage** in PowerShell DSC bietet einen Mechanismus zum Verwalten von Paketen auf einem Linux-Knoten.
@@ -48,4 +63,10 @@ nxPackage httpd
 }
 }
 ```
-<!--HONumber=Feb16_HO4-->
+
+
+
+
+<!--HONumber=Aug16_HO3-->
+
+
