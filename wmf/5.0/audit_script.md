@@ -98,6 +98,6 @@ $mergedScript = -join ($sortedScripts | % { $_.Properties[2].Value })
 Wie alle Protokollierungssysteme, die einen begrenzten Aufbewahrungspuffer haben (wie z. B. ETW-Protokolle), besteht ein Angriff auf diese Infrastruktur darin, dass Protokoll mit gefälschten Ereignissen zu überfluten, um ein früheres Vorkommen zu vertuschen. Um sich vor einem solchen Angriff zu schützen, stellen Sie sicher, dass Sie eine Form der Ereignisprotokollsammlung eingerichtet haben (z. B. Windows-Ereignisweiterleitung, [Spotting the Adversary with Windows Event Log Monitoring](http://www.nsa.gov/ia/_files/app/Spotting_the_Adversary_with_Windows_Event_Log_Monitoring.pdf) [Erkennen des Gegners mithilfe der Überwachung des Windows-Ereignisprotokolls]), um Ereignisprotokolle so schnell wie möglich vom Computer zu verschieben.
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

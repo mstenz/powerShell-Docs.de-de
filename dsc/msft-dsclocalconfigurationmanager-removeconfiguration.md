@@ -1,9 +1,16 @@
 ---
-DCS.appliesToProduct: 'WindowsServer\_Dev'
-Description: 'Entfernen der Konfigurationsdateien.'
-MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_removeconfiguration'
-MSHAttr: 'PreferredLib:/library'
-title: 'RemoveConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse'
+title: RemoveConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: c915ebd021ed20209bc491505d45cff2ac89f21d
+ms.openlocfilehash: 4f3d74949d98e3ab3f5136303e229c23ed903c5d
+
 ---
 
 # RemoveConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse
@@ -26,7 +33,7 @@ Parameter
 *Stage* \[in\]  
 Gibt an, welches Konfigurationsdokument entfernt werden soll. Die folgenden Werte sind gültig:
 
-|Wert |Beschreibung |
+|Value |Beschreibung |
 |:--- |:---|
 |**1** | Das **aktuelle** (Current) Konfigurationsdokument (current.mof). |
 |**2** | Das **ausstehende** (Pending) Konfigurationsdokument (pending.mof).  |
@@ -54,7 +61,7 @@ Dies ist eine statische Methode.
 ## Siehe auch
 
 
-[**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
+[**MSFT_DSCLocalConfigurationManager-Klasse**](msft-dsclocalconfigurationmanager.md)
 
 
  
@@ -65,6 +72,7 @@ Dies ist eine statische Methode.
 
 
 
-<!--HONumber=Apr16_HO2-->
+
+<!--HONumber=Aug16_HO3-->
 
 

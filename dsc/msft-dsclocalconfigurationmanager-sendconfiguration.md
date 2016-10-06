@@ -1,10 +1,18 @@
 ---
-DCS.appliesToProduct: 'WindowsServer\_Dev'
-Description: 'Senden des Konfigurationsdokuments an den verwalteten Knoten und Speichern des Dokuments als ausstehend.'
-MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_sendconfiguration'
-MSHAttr: 'PreferredLib:/library'
-title: 'SendConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse'
+title: SendConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: c915ebd021ed20209bc491505d45cff2ac89f21d
+ms.openlocfilehash: 95b141472d9428cee71b6970fc1f496704211c0b
+
 ---
+
 
 # SendConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse
 
@@ -48,7 +56,7 @@ Dies ist eine statische Methode.
 ## Siehe auch
 
 
-[**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
+[**MSFT_DSCLocalConfigurationManager-Klasse**](msft-dsclocalconfigurationmanager.md)
 
 
  
@@ -59,6 +67,7 @@ Dies ist eine statische Methode.
 
 
 
-<!--HONumber=Apr16_HO2-->
+
+<!--HONumber=Aug16_HO3-->
 
 

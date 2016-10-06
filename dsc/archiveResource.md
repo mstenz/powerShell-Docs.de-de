@@ -1,3 +1,18 @@
+---
+title: "DSC-Ressourcen „Archive“"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
+ms.openlocfilehash: 1d4d2d9106ef76d6628f93cf86234807dbb121ed
+
+---
+
 # DSC-Ressourcen „Archive“
 
 > Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
@@ -41,4 +56,10 @@ Archive ArchiveExample {
     Destination = "C:\Users\Public\Documents\ExtractionPath"
 } 
 ```
-<!--HONumber=Feb16_HO4-->
+
+
+
+
+<!--HONumber=Aug16_HO3-->
+
+

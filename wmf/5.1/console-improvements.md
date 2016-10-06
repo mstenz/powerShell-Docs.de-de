@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.technology: WMF
 translationtype: Human Translation
-ms.sourcegitcommit: 57049ff138604b0e13c8fd949ae14da05cb03a4b
-ms.openlocfilehash: 221b8095c15a810c032bd93aafe8ec886af233d9
+ms.sourcegitcommit: 749c1ca8bc617014dffacecce7d14a55adc38036
+ms.openlocfilehash: 2a17fdd4092adf734398f38bec915d53c1b3e566
 
 ---
 
@@ -18,7 +18,7 @@ ms.openlocfilehash: 221b8095c15a810c032bd93aafe8ec886af233d9
 
 ## Verbesserungen an der PowerShell-Konsole
 
-Die folgenden Änderungen sind in WMF 5.1 an Powershell.exe zum Verbessern der Konsolenumgebung erfolgt:
+Die folgenden Änderungen wurden in WMF 5.1 an powershell.exe vorgenommen, um die Konsolenumgebung zu verbessern:
 
 ###Unterstützung von VT100
 
@@ -51,12 +51,12 @@ Beachten Sie, dass VT100-Escapesequenzen erst ab dem Anniversary-Update für Win
 
 In früheren Versionen war das Starten von PowerShell mit `powershell -File -` erforderlich, wenn stdin umgeleitet wurde und Sie Befehle interaktiv eingeben wollten.
 
-Ab WMF 5.1 ist diese nur schwer auffindbare Option nicht mehr erforderlich. Sie können PowerShell ohne Optionen starten, z. B. `powershell`.
+Bei WMF 5.1 ist diese schwer zu findende Option nicht mehr erforderlich. Sie können PowerShell ohne Optionen starten, z. B. mit `powershell`.
 
-Beachten Sie, dass PSReadline derzeit umgeleitetes stdin nicht unterstützt und dass die integrierte Bearbeitungsumgebung für die Befehlszeile mit umgeleitetem sdtdin sehr eingeschränkt ist. Beispielsweise funktionieren die Pfeiltasten nicht.  In einer künftigen Version von PSReadline soll dieses Problem behoben werden.   
+Beachten Sie, dass PSReadline derzeit umgeleitetes stdin nicht unterstützt und dass die integrierte Bearbeitungsumgebung für die Befehlszeile mit umgeleitetem stdin sehr eingeschränkt ist. Beispielsweise funktionieren die Pfeiltasten nicht. In einer künftigen Version von PSReadline soll dieses Problem behoben werden.   
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Aug16_HO3-->
 
 

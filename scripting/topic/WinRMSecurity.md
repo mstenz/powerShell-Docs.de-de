@@ -1,5 +1,5 @@
 ---
-title: WinRMSecurity
+title: WinRMSecurityRedirect
 ms.date: 2016-05-11
 keywords: powershell,cmdlet
 description: 
@@ -7,9 +7,10 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
+redirect_url: https://msdn.microsoft.com/powershell/scripting/setup/winrmsecurity
 translationtype: Human Translation
-ms.sourcegitcommit: 67ef350559f9b3d17232f3c93d67634b3e939c60
-ms.openlocfilehash: b1addddd50368fadcbb2581673d3ebc7cad8e32a
+ms.sourcegitcommit: afa259b8611f995bbf5b824179a12e3d8f15df86
+ms.openlocfilehash: 207792452c563ec6cca5c17fbcd122372442d8ac
 
 ---
 
@@ -62,7 +63,7 @@ Wenn ein Client eine Verbindung mit einem Domänenserver mithilfe seiner IP-Adre
       
 Das NTLM-Protokoll garantiert jedoch nicht die Identität des Servers. Wie bei allen Protokollen, die NTLM für die Authentifizierung verwenden, könnte ein Angreifer, der Zugriff auf das Computerkonto eines der Domäne beigetretenen Computers hat, den Domänencontroller zur Berechnung eines NTLM-Sitzungsschlüssels aufrufen und auf diese Art die Identität des Servers annehmen.
 
-NTLM-basierte Authentifizierung ist standardmäßig deaktiviert, kann aber zugelassen werden, indem entweder SSL auf dem Zielserver oder die WinRM-Einstellung „TrustedHosts“ auf dem Client konfiguriert wird.
+NTLM-basierte Authentifizierung ist standardmäßig deaktiviert, kann aber zugelassen werden, indem entweder SSL auf dem Zielserver oder die WinRM-Einstellung „TrustedHosts“ konfiguriert wird.
     
 #### Verwenden von SSL-Zertifikaten zum Überprüfen der Identität des Servers während NTLM-basierter Verbindungen
 

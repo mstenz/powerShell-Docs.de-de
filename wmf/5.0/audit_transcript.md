@@ -7,6 +7,6 @@ Zusätzlich zu den Verbesserungen bei der Aufzeichnung wurde die Aufzeichnungsfu
 Aufzeichnungsoptionen (einschließlich einer systemweiten Aufzeichnung) können mithilfe der Gruppenrichtlinieneinstellung **PowerShell-Aufzeichnung aktivieren** (Administrative Vorlagen -> Windows-Komponenten -> Windows PowerShell) konfiguriert werden.
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

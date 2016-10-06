@@ -1,10 +1,18 @@
 ---
-DCS.appliesToProduct: 'WindowsServer\_Dev'
-Description: 'Direktes Ausführen von „Set“ für einen Anbieter.'
-MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_resourceset'
-MSHAttr: 'PreferredLib:/library'
-title: 'ResourceSet-Methode der MSFT_DSCLocalConfigurationManager-Klasse'
+title: ResourceSet-Methode der MSFT_DSCLocalConfigurationManager-Klasse
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: c915ebd021ed20209bc491505d45cff2ac89f21d
+ms.openlocfilehash: cbc499f293aad941d40fcb720ef53e832c3b1ea8
+
 ---
+
 
 # ResourceSet-Methode der MSFT_DSCLocalConfigurationManager-Klasse
 
@@ -32,8 +40,7 @@ Der Name der aufzurufenden Ressource.
 Der Name des Moduls, das die aufzurufende Ressource enthält.
 
 *resourceProperty* \[in\]  
-Gibt den Namen der Ressourceneigenschaft und deren Wert in einer Hashtabelle als Schlüssel und Wert an. Verwenden Sie das
-[Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx)-Cmdlet zum Ermitteln von Ressourceneigenschaften und deren Typen.
+Gibt den Namen der Ressourceneigenschaft und deren Wert in einer Hashtabelle als Schlüssel und Wert an. Verwenden Sie das Cmdlet [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) zum Ermitteln von Ressourceneigenschaften und deren Typen.
 
 *RebootRequired* \[out\]  
 Bei der Rückgabe wird diese Eigenschaft auf **true** festgelegt, wenn der Zielknoten neu gestartet werden muss.
@@ -67,6 +74,7 @@ Dies ist eine statische Methode.
 
 
 
-<!--HONumber=Apr16_HO2-->
+
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,9 +1,16 @@
 ---
-DCS.appliesToProduct: 'WindowsServer\_Dev'
-Description: 'Abrufen des Konfigurationsstatusverlaufs.'
-MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_getconfigurationstatus'
-MSHAttr: 'PreferredLib:/library'
-title: 'GetConfigurationStatus-Methode der MSFT_DSCLocalConfigurationManager-Klasse'
+title: GetConfigurationStatus-Methode der MSFT_DSCLocalConfigurationManager-Klasse
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: c915ebd021ed20209bc491505d45cff2ac89f21d
+ms.openlocfilehash: b430e98c7ec287c0efcf2c2e2736253797242904
+
 ---
 
 # GetConfigurationStatus-Methode der MSFT_DSCLocalConfigurationManager-Klasse
@@ -24,8 +31,7 @@ Parameter
 ----------
 
 *All* \[in\]  
-**true**, wenn diese Methode Informationen zu allen Konfigurationsausführungen auf dem Computer zurückgeben soll, einschließlich
-der Konfigurationsanwendung und der Konsistenzprüfung.
+**true**, wenn diese Methode Informationen zu allen Konfigurationsausführungen auf dem Computer zurückgeben soll, einschließlich der Konfigurationsanwendung und der Konsistenzprüfung.
 
 *configurationStatus* \[out\]  
 Enthält bei der Rückgabe eine eingebettete Instanz der **MSFT_DSCConfigurationStatus**-Klasse, die die Einstellungen definiert.
@@ -60,6 +66,7 @@ Dies ist eine statische Methode.
 
 
 
-<!--HONumber=Apr16_HO2-->
+
+<!--HONumber=Aug16_HO3-->
 
 

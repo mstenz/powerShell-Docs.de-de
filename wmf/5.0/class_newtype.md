@@ -165,7 +165,7 @@ Das neue Attribut **System.Management.Automation.HiddenAttribute** wurde hinzuge
 
 Der Rückgabetyp ist ein Vertrag. Der Rückgabewert wird in den erwarteten Typ konvertiert. Falls kein Rückgabetyp angegeben wird, ist der Rückgabetyp „void“. Es gibt kein Streaming von Objekten. Objekte können nicht absichtlich oder versehentlich in die Pipeline geschrieben werden.
 
-## Attribute
+## Attributes
 
 Die beiden neuen Attribute **DscResource** und **DscProperty** wurden hinzugefügt.
 
@@ -324,6 +324,6 @@ function Style
 function Html ([HTML] $doc) { return $doc }
 ```
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

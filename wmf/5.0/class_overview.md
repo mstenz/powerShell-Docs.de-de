@@ -10,6 +10,6 @@ Wir haben die PowerShell-Sprache zum Definieren von Klassen und anderen benutzer
 -   Debuggen von Typen mithilfe der PowerShell-Sprache
 -   Generieren und Behandeln von Ausnahmen mithilfe formaler Mechanismen auf der richtigen Ebene
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

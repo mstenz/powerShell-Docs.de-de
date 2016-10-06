@@ -1,13 +1,20 @@
 ---
-title: Microsoft.PowerShell.Archive-Modul
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: Microsoft.PowerShell.Archive Module
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 71a727b5-49a5-47a9-8034-161c86cf042b
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 249a0ece77a11fd9aa54a6ff4170e44f42b377c9
+
 ---
-# Microsoft.PowerShell.Archive-Modul
+
+# Microsoft.PowerShell.Archive Module
 Dieser Abschnitt enthält die Hilfethemen für die Cmdlets, die zusammen mit dem Windows PowerShell-Modul **Microsoft.PowerShell.Archive** installiert werden. Das Archive-Modul enthält Cmdlets, mit denen Sie Archiv- oder ZIP-Dateien erstellen und extrahieren können.
 
 ## Microsoft.PowerShell.Archive-Cmdlets
@@ -22,6 +29,7 @@ Dieser Abschnitt enthält die Hilfethemen für die Cmdlets, die zusammen mit dem
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO3-->
 
 

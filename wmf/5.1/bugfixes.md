@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.technology: WMF
 translationtype: Human Translation
-ms.sourcegitcommit: 57049ff138604b0e13c8fd949ae14da05cb03a4b
-ms.openlocfilehash: 90d57af0c8b90e709769525455ae39557b9c7176
+ms.sourcegitcommit: be3659b02cb1bc58cc13aa9d8f92946b2afa37b1
+ms.openlocfilehash: 8a7774b36f15ff790c31d4c1a8bc69be257b8508
 
 ---
 
@@ -28,9 +28,9 @@ In WMF 5.1 ändert sich dieses Verhalten so, dass `$env:PSModulePath` vollständ
 
 ### Keine Hartcodierung mehr bei der Umleitung von Dateien `-Encoding Unicode` ###
 
-In allen früheren Versionen von PowerShell konnte die vom Dateiumleitungsoperator, z. B. `get-childitem > out.txt`, verwendete Dateicodierung nicht gesteuert werden, da PowerShell `-Encoding Unicode` hinzugefügt hat.
+In allen früheren Versionen von PowerShell konnte die vom Dateiumleitungsoperator, z. B. `Get-ChildItem > out.txt`, verwendete Dateicodierung nicht gesteuert werden, da PowerShell `-Encoding Unicode` hinzugefügt hat.
 
-Ab WMF 5.1 können Sie jetzt die Dateicodierung der Umleitung durch Festlegen von z. B. `$PSDefaultParameterValues` ändern.
+Ab WMF 5.1 können Sie jetzt die Dateicodierung der Umleitung durch Festlegen von `$PSDefaultParameterValues` ändern.
 
 ```
 $PSDefaultParameterValues["Out-File:Encoding"] = "Ascii"
@@ -44,15 +44,14 @@ Dieser Fehler wurde in WMF 5.1 behoben.
 
 ### Korrektur einiger Probleme mit COM-Objekten ###
 
-In WMF 5.0 wurde ein neuer COM-Binder zum Aufrufen von Methoden für COM-Objekte und den Zugriff auf Eigenschaften von COM-Objekten eingeführt.
-Dieser neue Binder verbesserte die Leistung erheblich, verursachte jedoch auch einige Fehler, die in WMF 5.1 behoben wurden.
+In WMF 5.0 wurde ein neuer COM-Binder zum Aufrufen von Methoden für COM-Objekte und den Zugriff auf Eigenschaften von COM-Objekten eingeführt. Dieser neue Binder verbesserte die Leistung erheblich, verursachte jedoch auch einige Fehler, die in WMF 5.1 behoben wurden.
 
 #### Argumentkonvertierungen erfolgten nicht immer ordnungsgemäß ####
 
 Siehe das folgende Beispiel:
 
 ```
-$obj = new-object -com wscript.shell
+$obj = New-Object -ComObject WScript.Shell
 $obj.SendKeys([char]173)
 ```
 
@@ -74,13 +73,14 @@ function Get-COMDictionary
 $x = Get-COMDictionary
 ```
 
-Im obigen Beispiel schreibt WMF 5.0 „Scripting.Dictionary“ fälschlicherweise in die Pipeline, anstatt die Schlüssel-/Wert-Paare aufzuzählen.
+Im obigen Beispiel schreibt WMF 5.0 fälschlicherweise „Scripting.Dictionary“ in die Pipeline, anstatt die Schlüssel-Wert-Paare aufzuzählen.
 
-Diese Änderung befasst sich auch mit den [Problemen 1752224 auf Microsoft Connect](https://connect.microsoft.com/PowerShell/feedback/details/1752224)
+Diese Änderung betrifft auch das [Problem 1752224 auf Microsoft Connect](https://connect.microsoft.com/PowerShell/feedback/details/1752224).
 
 ### `[ordered]` war innerhalb von Klassen nicht zulässig. ###
 
-In WMF 5 wurden Klassen mit einer in Klassen verwendeten Überprüfung von Typliteralen eingeführt.  `[ordered]` sieht wie ein Typliteral aus, ist jedoch kein echter .NET-Typ.  WMF 5 meldete fälschlicherweise einen Fehler für `[ordered]` innerhalb einer Klasse:
+In WMF 5.0 wurden Klassen mit einer in Klassen verwendeten Überprüfung von Typliteralen eingeführt.  
+`[ordered]` sieht wie ein Typliteral aus, ist jedoch kein echter .NET-Typ. WMF 5.0 meldete fälschlicherweise einen Fehler für `[ordered]` innerhalb einer Klasse:
 
 ```
 class CThing
@@ -99,10 +99,10 @@ Wenn Sie vor WMF 5.1 über mehrere Versionen eines installierten Modus verfügt 
 
 In WMF 5.1 wurde dieser Fehler behoben, sodass nur die Hilfe für die neueste Version des Themas zurückgegeben wird.
 
-„Get-Help“ bietet keine Möglichkeit anzugeben, für welche Version Sie Hilfe wünschen. Die Problemumgebung besteht darin, zum Verzeichnis „Modules“ zu navigieren und die Hilfe direkt mit einem Tool wie Ihrem bevorzugten Editor anzuzeigen. 
+`Get-Help` bietet keine Möglichkeit anzugeben, für welche Version Sie Hilfe wünschen. Die Problemumgebung besteht darin, zum Verzeichnis „Modules“ zu navigieren und die Hilfe direkt mit einem Tool wie Ihrem bevorzugten Editor anzuzeigen. 
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Aug16_HO3-->
 
 

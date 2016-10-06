@@ -1,3 +1,18 @@
+---
+title: "DSC-Ressource „User“"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
+ms.openlocfilehash: 5c7878bdfc8a3f118b569a9e43be6c7e4333ad2c
+
+---
+
 #DSC-Ressource „User“#
 
  
@@ -29,7 +44,7 @@ User [string] #ResourceName
 |  Eigenschaft  |  Beschreibung   | 
 |---|---| 
 | UserName| Gibt den Kontonamen an, für den Sie einen bestimmten Zustand sicherstellen möchten.| 
-| Description| Gibt die Beschreibung an, die Sie für das Benutzerkonto verwenden möchten.| 
+| Beschreibung| Gibt die Beschreibung an, die Sie für das Benutzerkonto verwenden möchten.| 
 | Disabled| Gibt an, ob das Konto aktiviert ist. Legen Sie diese Eigenschaft auf __$true__ fest, um sicherzustellen, dass dieses Konto deaktiviert ist. Legen Sie sie auf __$false__ fest, um sicherzustellen, dass es aktiviert ist.| 
 | Ensure| Gibt an, ob das Konto vorhanden ist. Legen Sie diese Eigenschaft auf „Present“ fest, um sicherzustellen, dass das Konto vorhanden ist. Legen Sie sie auf „Absent“ fest, um sicherzustellen, dass das Konto nicht vorhanden ist.| 
 | FullName| Stellt eine Zeichenfolge mit dem vollständigen Namen dar, den Sie für das Benutzerkonto verwenden möchten.| 
@@ -50,4 +65,10 @@ User UserExample
     DependsOn = “[Group]GroupExample" # Configures GroupExample first
 }
 ```
-<!--HONumber=Feb16_HO4-->
+
+
+
+
+<!--HONumber=Aug16_HO3-->
+
+

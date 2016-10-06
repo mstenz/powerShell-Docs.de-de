@@ -1,3 +1,18 @@
+---
+title: "Optionen für Anmeldeinformationen in den Konfigurationsdaten"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
+ms.openlocfilehash: a750fb208e73ce2ebffb2fa86a55c825169d8ad8
+
+---
+
 # Optionen für Anmeldeinformationen in den Konfigurationsdaten
 >Gilt für: Windows PowerShell 5.0
 
@@ -15,7 +30,7 @@ DSC-Konfigurationsressourcen werden standardmäßig als `Local System` ausgefüh
 Einige Ressourcen benötigen jedoch Anmeldeinformationen, z. B. wenn die `Package`-Ressource Software unter einem bestimmten Benutzerkonto installieren muss.
 
 Frühere Ressourcen verwendeten in diesem Fall einen hartcodierten `Credential`-Eigenschaftennamen.
-In WMF 5.0 wurde eine automatische `PsDscRunAsCredential`-Eigenschaft für alle Ressourcen hinzugefügt.
+In WMF 5.0 wurde eine automatische `PsDscRunAsCredential`-Eigenschaft für alle Ressourcen hinzugefügt. Weitere Informationen zur Verwendung von `PsDscRunAsCredential`, finden Sie unter [Ausführen von DSC mit Benutzeranmeldeinformationen](runAsUser.md).
 Neuere und benutzerdefinierte Ressourcen können diese automatische Eigenschaft verwenden, anstatt eine eigene Eigenschaften für Anmeldeinformationen zu erstellen.
 
 *Beachten Sie, dass einige Ressourcen so angelegt wurden, dass sie aus einem bestimmten Grund mehrere Sätze von Anmeldeinformationen verwenden und über eigene Eigenschaften für Anmeldeinformationen verfügen.*
@@ -161,7 +176,7 @@ Durch Verwendung eines lokalen Kontos wird verhindert, dass Domänenanmeldeinfor
 
 **Bei Verwendung von Anmeldeinformationen mit DSC-Ressourcen ziehen Sie, wenn möglich, ein lokales Konto einem Domänenkonto vor.**
 
-Enthält die Eigenschaft `Username` der Anmeldeinformationen einen „\“ oder ein „@“, behandelt DSC sie als einem Domänenkonto zugehörig.
+Enthält die Eigenschaft `Username` der Anmeldeinformationen einen „\'“ oder ein „@“, behandelt DSC das Konto als Domänenkonto.
 Ausnahmen machen „Localhost“, „127.0.0.1“ und „:: 1“ im Domänenteil des Benutzernamens.
 
 ## PSDscAllowDomainUser
@@ -183,4 +198,10 @@ $cd = @{
 ```
 
 Nun generiert das Konfigurationsskript die MOF-Datei ohne Fehler oder Warnungen.
-<!--HONumber=Feb16_HO4-->
+
+
+
+
+<!--HONumber=Aug16_HO3-->
+
+

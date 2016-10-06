@@ -1,3 +1,18 @@
+---
+title: "Windows PowerShell 4.0 DSC – Lokaler Konfigurations-Manager (LCM)"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
+ms.openlocfilehash: 25195166f4d9dd668427d6bb5d748ef61273cdee
+
+---
+
 # Windows PowerShell 4.0 DSC – Lokaler Konfigurations-Manager (LCM)
 
 >Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
@@ -61,4 +76,11 @@ Set-DscLocalConfigurationManager -Path "c:\users\public\dsc"
 
 > **Hinweis**: Für den **Path**-Parameter müssen Sie den Pfad angeben, den Sie für den **OutputPath**-Parameter angegeben haben, als Sie die Konfiguration im vorherigen Beispiel aufgerufen haben.
 
-Mit dem Cmdlet **Get-DscLocalConfigurationManager** können Sie die aktuellen Einstellungen des lokalen Konfigurations-Managers anzeigen. Wenn Sie dieses Cmdlet ohne Parameter aufrufen, werden standardmäßig die Einstellungen des lokalen Konfigurations-Manager für den Knoten abgerufen, auf dem er ausgeführt wird. Um einen anderen Knoten anzugeben, verwenden Sie mit diesem Cmdlet den **CimSession**-Parameter.<!--HONumber=Feb16_HO4-->
+Mit dem Cmdlet **Get-DscLocalConfigurationManager** können Sie die aktuellen Einstellungen des lokalen Konfigurations-Managers anzeigen. Wenn Sie dieses Cmdlet ohne Parameter aufrufen, werden standardmäßig die Einstellungen des lokalen Konfigurations-Manager für den Knoten abgerufen, auf dem er ausgeführt wird. Um einen anderen Knoten anzugeben, verwenden Sie mit diesem Cmdlet den **CimSession**-Parameter.
+
+
+
+
+<!--HONumber=Aug16_HO3-->
+
+

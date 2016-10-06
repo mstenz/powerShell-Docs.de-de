@@ -49,6 +49,6 @@ Ab WMF 5.1 ist diese nur schwer auffindbare Option nicht mehr erforderlich. Sie 
 Beachten Sie, dass PSReadline derzeit umgeleitetes stdin nicht unterstützt und dass die integrierte Bearbeitungsumgebung für die Befehlszeile mit umgeleitetem sdtdin sehr eingeschränkt ist. Beispielsweise funktionieren die Pfeiltasten nicht.  In einer künftigen Version von PSReadline soll dieses Problem behoben werden.   
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

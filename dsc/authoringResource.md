@@ -1,3 +1,18 @@
+---
+title: Erstellen von benutzerdefinierten Windows PowerShell DSC-Ressourcen
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
+ms.openlocfilehash: 5b43723f7b14eb4bca06d0430b5981c3663c5801
+
+---
+
 # Erstellen von benutzerdefinierten Windows PowerShell DSC-Ressourcen
 
 > Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
@@ -12,4 +27,11 @@ Eine DSC-Ressource ist ein Windows PowerShell-Modul. Das Modul enthält das Sche
 * [Implementieren einer DSC-Ressource in C#](authoringResourceMofCS.md) 
 * [Schreiben einer benutzerdefinierten DSC-Ressource mit PowerShell-Klassen](authoringResourceClass.md) 
 * [Zusammengesetzte Ressourcen: Verwenden einer DSC-Konfiguration als Ressource](authoringResourceComposite.md) 
-* [Verwenden des Ressourcen-Designers](authoringResourceMofDesigner.md) <!--HONumber=Feb16_HO4-->
+* [Verwenden des Ressourcen-Designers](authoringResourceMofDesigner.md) 
+
+
+
+
+<!--HONumber=Aug16_HO3-->
+
+
