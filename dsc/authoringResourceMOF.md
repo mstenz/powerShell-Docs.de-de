@@ -8,8 +8,8 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: 4d685e518acd3a18f4872417b645dbe66f758421
+ms.sourcegitcommit: b414a01bcd111143791a5fac77e61ce309a0a5c5
+ms.openlocfilehash: 50b99917f15d290db30da1b1b752d668d886ec50
 
 ---
 
@@ -28,7 +28,7 @@ Das Schema definiert die Eigenschaften der Ressource, die durch ein DSC-Konfigur
 Um eine benutzerdefinierte DSC-Ressource mit einem MOF-Schema zu implementieren, erstellen Sie die folgende Ordnerstruktur. Das MOF-Schema ist in der Datei „Demo_IISWebsite.schema.mof“ definiert und das Ressourcenskript in „Demo_IISWebsite.psm1“. Optional können Sie eine Modulmanifestdatei (psd1) erstellen.
 
 ```
-$env:PSModulePath (folder)
+$env:ProgramFiles\WindowsPowerShell\Modules (folder)
     |- MyDscResources (folder)
         |- DSCResources (folder)
             |- Demo_IISWebsite (folder)
@@ -279,6 +279,6 @@ FunctionsToExport = @("Get-TargetResource", "Set-TargetResource", "Test-TargetRe
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Oct16_HO1-->
 
 
