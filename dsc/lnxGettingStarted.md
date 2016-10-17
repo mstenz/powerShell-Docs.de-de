@@ -1,3 +1,18 @@
+---
+title: "Erste Schritte mit DSC für Linux"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e4385f0ed482b97e8794cde968de549902cc358e
+ms.openlocfilehash: 2283e797275f426b624119bd1191e58080780c09
+
+---
+
 # Erste Schritte mit DSC für Linux
 
 In diesem Thema werden die ersten Schritte mit PowerShell DSC für Linux erläutert. Allgemeine Informationen zu DSC finden Sie unter [Erste Schritte mit Windows PowerShell DSC](overview.md).
@@ -114,7 +129,7 @@ $Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Aut
 * Im Pushmodus müssen die Anmeldeinformationen des Benutzers denen des Benutzers „root“ auf dem Linux-Computer entsprechen.
 * Für DSC für Linux werden nur SSL/TLS-Verbindungen unterstützt. Der Befehl „New-CimSession“ muss mit auf „$true“ festgelegtem „–UseSSL“-Parameter aufgerufen werden.
 * Das von OMI (für DSC) verwendete SSL-Zertifikat wird in der Datei `/opt/omi/etc/omiserver.conf` mit den Eigenschaften „pemfile“ und „keyfile“ angegeben.
-Wenn diesem Zertifikat vom Windows-Computer nicht vertraut wird, auf dem Sie das Cmdlet [New-CimSession](https://technet.microsoft.com/en-us/library/jj590760.aspx) ausführen, können Sie in den Optionen für „CIMSession“ die Überprüfung des Zertifikats ignorieren: `-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true`
+Wenn diesem Zertifikat vom Windows-Computer, auf dem Sie das Cmdlet [New-CimSession](https://technet.microsoft.com/en-us/library/jj590760.aspx) ausführen, nicht vertraut wird, können Sie in den Optionen für „CIMSession“ die Überprüfung des Zertifikats ignorieren: `-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true`
 
 Führen Sie den folgenden Befehl aus, um die DSC-Konfiguration per Push auf den Linux-Knoten zu übertragen.
 
@@ -169,10 +184,12 @@ Die folgenden Protokolldateien werden für DSC-für-Linux-Nachrichten generiert.
 
 |Protokolldatei|Verzeichnis|Beschreibung|
 |---|---|---|
-|omiserver.log|/ opt/Omi/Var/Log /|Meldungen im Zusammenhang mit dem Betrieb des OMI CIM-Servers.|
-|dsc.log|/ opt/Omi/Var/Log /|Meldungen im Zusammenhang mit dem Betrieb des lokalen Konfigurations-Managers (LCM) und DSC-Ressourcenvorgängen.|
+|omiserver.log|/var/opt/omi/log|Meldungen im Zusammenhang mit dem Betrieb des OMI CIM-Servers.|
+|dsc.log|/var/opt/omi/log|Meldungen im Zusammenhang mit dem Betrieb des lokalen Konfigurations-Managers (LCM) und DSC-Ressourcenvorgängen.|
 
 
-<!--HONumber=Apr16_HO2-->
+
+
+<!--HONumber=Aug16_HO4-->
 
 

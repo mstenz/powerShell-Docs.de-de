@@ -1,3 +1,18 @@
+---
+title: Grundlegende Cookbooks
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: e1c94c281a39b3ae026bbeea9811ecc71b9cdb1c
+
+---
+
 #  [Grundlegende Cookbooks-Referenz](cookbooks/basic-cookbooks-reference.md)
 
 -  [Ändern des Computerstatus](cookbooks/Changing-Computer-State.md)
@@ -30,11 +45,13 @@
 -  [Arbeiten mit Dateien, Ordnern und Registrierungsschlüsseln](cookbooks/Working-With-Files-Folders-and-Registry-Keys.md)
 -  [Arbeiten mit Objekten](cookbooks/Working-with-Objects.md)
 -  [Arbeiten mit Druckern](cookbooks/Working-with-Printers.md)
--  [Arbeiten mit Registrierungseinträgen](cookbooks/Working-with-Registry-Entries.md)
+-  [Arbeiten mit Registrierungseinträge](cookbooks/Working-with-Registry-Entries.md)
 -  [Arbeiten mit Registrierungsschlüsseln](cookbooks/Working-with-Registry-Keys.md)
 -  [Arbeiten mit Softwareinstallationen](cookbooks/Working-with-Software-Installations.md)
 
 
-<!--HONumber=May16_HO2-->
+
+
+<!--HONumber=Aug16_HO3-->
 
 

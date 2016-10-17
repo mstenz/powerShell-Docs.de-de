@@ -8,25 +8,24 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: cd6e130d9f6f70449084d25eb386a3c0a2b84737
-ms.openlocfilehash: 4c22e1a2543690a971836813cb32ace74ababb4a
+ms.sourcegitcommit: ab536969fac8ded0e540da3eb138448b4f444f67
+ms.openlocfilehash: c8f97c3b565e0718b38a8e62a2b9cb9558451fc5
 
 ---
 
-#  PowerShell-Kern
+#  Allgemeine PowerShell
 Dieser Abschnitt enthält alle Referenzmaterialien und ausführliche Handbücher zu PowerShell.  
 Inhalt dieses Abschnitts:
--  Das [Handbuch zu den PowerShell-Kernmodulen](core-modules.md)
--  Das [Handbuch zu Windows PowerShell Integrated Scripting Environment (ISE)](ise-guide.md)
+-  Das [Handbuch zu den allgemeinen PowerShell-Modulen](core-modules.md)
+-  Das [Handbuch zur Windows PowerShell Integrated Scripting Environment (ISE)](ise-guide.md)
 -  Das [Handbuch zum PowerShell-Konsolenfenster](console-guide.md)
--  Das [Handbuch zur PowerShell-Remoteverwaltung](Running-Remote-Commands.md)
--  Das [Handbuch zu PowerShell-Workflows](workflows-guide.md)
--  Das [Handbuch zu PowerShell Web Access](web-access.md)
+-  Informationen zur [PowerShell-Remoteverwaltung](Running-Remote-Commands.md)
+-  Informationen zu den [PowerShell-Workflows](workflows-guide.md)
+-  Informationen zu [PowerShell Web Access](web-access.md)
 -  Das [PowerShell-Glossar](../Windows-PowerShell-Glossary.md)
 
 
 
-
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

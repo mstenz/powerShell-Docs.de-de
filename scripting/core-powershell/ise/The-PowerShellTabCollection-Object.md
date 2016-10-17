@@ -1,18 +1,25 @@
 ---
 title: Das PowerShellTabCollection-Objekt
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 81f4bf4a-83bf-415e-8378-1703792fbb58
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 4456b1e165130fd52249ffdbd7c22ff591061a8e
+
 ---
+
 # Das PowerShellTabCollection-Objekt
   Das **PowerShellTab**-Sammlungsobjekt ist eine Sammlung von **PowerShellTab**-Objekten. Jedes **PowerShellTab**-Objekt fungiert als eine separate Laufzeitumgebung. Dies ist eine Instanz der Microsoft.PowerShell.Host.ISE.PowerShellTabs-Klasse. Ein Beispiel ist das **$psISE.PowerShellTabs**-Objekt.
 
 ## Methoden
 
-### Add()
+### Hinzufügen\(\)
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Fügt eine neue PowerShell-Registerkarte zur Sammlung hinzu. Die neu hinzugefügte Registerkarte wird zurückgegeben.
@@ -22,7 +29,7 @@ $NewTab=$psISE.PowerShellTabs.Add()
 $newTab.DisplayName="Brand New Tab"
 ```
 
-### Remove(Microsoft.PowerShell.Host.ISE.PowerShellTab psTab)
+### Remove\(Microsoft.PowerShell.Host.ISE.PowerShellTab psTab\)
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Entfernt die Registerkarte, die durch den **psTab**-Parameter angegeben wird.
@@ -39,7 +46,7 @@ sleep 5
 $psISE.PowerShellTabs.Remove($newTab)
 ```
 
-### SetSelectedPowerShellTab(Microsoft.PowerShell.Host.ISE.PowerShellTab psTab)
+### SetSelectedPowerShellTab\(Microsoft.PowerShell.Host.ISE.PowerShellTab psTab\)
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Wählt die PowerShell-Registerkarte aus, die durch den **psTab**-Parameter angegeben wird, um diese als aktuell aktive PowerShell-Registerkarte festzulegen.
@@ -67,6 +74,7 @@ $psISE.PowerShellTabs.SelectedPowerShellTab=$oldtab
   
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO3-->
 
 

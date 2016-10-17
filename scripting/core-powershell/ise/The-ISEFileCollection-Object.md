@@ -1,12 +1,19 @@
 ---
 title: Das ISEFileCollection-Objekt
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 0f86a427-ea38-4bce-85f8-06c98d30d508
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: c334a38d6686be45101f4569f38411e9703c8fea
+
 ---
+
 # Das ISEFileCollection-Objekt
   Das **ISEFileCollection**-Objekt ist eine Sammlung von **ISEFile**-Objekten. Ein Beispiel ist die $psISE.CurrentPowerShellTab.Files-Sammlung.
 
@@ -17,8 +24,7 @@ ms.assetid: 0f86a427-ea38-4bce-85f8-06c98d30d508
 
  Erstellt eine neue unbenannte Datei, gibt diese zurück und fügt sie der Sammlung hinzu. Die **IsUntitled**-Eigenschaft der neu erstellten Datei ist **$true**.
 
- **\[fullPath\]** – optionale Zeichenfolge
- Der vollständig angegebene Pfad der Datei. Eine Ausnahme wird erstellt, falls Sie den **fullPath**-Parameter und den relativen Pfad angeben oder falls Sie einen Dateinamen statt dem vollständigen Pfad verwenden.
+ **\[fullPath\]** – Optionale Zeichenfolge: der vollständig angegebene Pfad der Datei. Eine Ausnahme wird erstellt, falls Sie den **fullPath**-Parameter und den relativen Pfad angeben oder falls Sie einen Dateinamen statt dem vollständigen Pfad verwenden.
 
 ```
 # Adds a new untitled file to the collection of files in the current PowerShell tab.
@@ -34,11 +40,9 @@ $psISE.CurrentPowerShellTab.Files.Add("$pshome\Examples\profile.ps1")
 
  Entfernt eine angegebene Datei aus der aktuellen PowerShell-Registerkarte.
 
- **File** – Zeichenfolge
- Die ISEFile-Datei, die Sie aus der Sammlung entfernt möchten. Falls die Datei nicht gespeichert wurde, löst diese Methode eine Ausnahme aus. Verwenden Sie den Schalter **Force**, um das Entfernen einer ungespeicherten Datei zu erzwingen.
+ **File** – Zeichenfolge: Die ISEFile-Datei, die Sie aus der Sammlung entfernen möchten. Falls die Datei nicht gespeichert wurde, löst diese Methode eine Ausnahme aus. Verwenden Sie den Schalter **Force**, um das Entfernen einer ungespeicherten Datei zu erzwingen.
 
- **\[Force\]** – optionaler boolescher Wert
- Falls er auf **$true** festgelegt wird, verleiht er die Berechtigung dafür, die Datei zu entfernen, auch wenn sie nach der letzten Verwendung nicht gespeichert wurde. Der Standardwert lautet **$false**.
+ **\[Force\]** – Optionaler boolescher Wert: Falls er auf **$true** festgelegt wird, erteilt er die Berechtigung dafür, die Datei zu entfernen, auch wenn sie nach der letzten Verwendung nicht gespeichert wurde. Der Standardwert ist **$false**.
 
 ```
 # Removes the first opened file from the file collection associated with the current PowerShell tab.
@@ -56,8 +60,7 @@ $psISE.CurrentPowerShellTab.Files.Remove($firstfile, $true)
 
  Wählt die Datei aus, die durch den **selectedFile**-Parameter angegeben wird.
 
- **selectedFile** – Microsoft.PowerShell.Host.ISE.ISEFile
- Die ISEFile-Datei, die Sie auswählen möchten.
+ **selectedFile** – Microsoft.PowerShell.Host.ISE.ISEFile: die ISEFile-Datei, die Sie auswählen möchten
 
 ```
 
@@ -76,6 +79,7 @@ $psISE.CurrentPowerShellTab.Files.SetSelectedFile($firstfile)
   
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO3-->
 
 

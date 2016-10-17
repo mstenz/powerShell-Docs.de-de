@@ -1,12 +1,19 @@
 ---
-title: Auswählen von Elementen aus einem Listenfeld
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "Auswählen von Elementen aus einem Listenfeld"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 327c7cc5-21d0-4ace-b151-aa1491d1d3c2
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 7e8fd05cfedd500c51f2d7e4f6adbb7d1f27cb00
+
 ---
+
 # Auswählen von Elementen aus einem Listenfeld
 Verwenden Sie Windows PowerShell 3.0 und spätere Versionen zur Erstellung eines Dialogfelds, in dem Benutzer Elemente aus einem Listenfeld-Steuerelement auswählen können.
 
@@ -173,12 +180,13 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 ```
 
 ## Weitere Informationen
-[Hey Scripting Guy: Warum funktionieren diese PowerShell GUI-Beispiele nicht?](http://go.microsoft.com/fwlink/?LinkId=506644)
-[GitHub: WinFormsExampleUpdates von Dave Wyatt](https://github.com/dlwyatt/WinFormsExampleUpdates)
-[Windows PowerShell-Tipp der Woche: Auswählen von Elementen aus einem Listenfeld](http://technet.microsoft.com/library/ff730949.aspx)
+[Hey Scripting Guy: Why don’t these PowerShell GUI examples work? (Hey Scripting Guy: Warum funktionieren diese PowerShell GUI-Beispiele nicht?)](http://go.microsoft.com/fwlink/?LinkId=506644)
+[GitHub: Dave Wyatt's WinFormsExampleUpdates (GitHub: WinFormsExampleUpdates von Dave Wyatt)](https://github.com/dlwyatt/WinFormsExampleUpdates)
+[Windows PowerShell Tip of the Week: Selecting Items from a List Box (Windows PowerShell-Tipp der Woche: Auswählen von Elementen aus einem Listenfeld)](http://technet.microsoft.com/library/ff730949.aspx)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO3-->
 
 

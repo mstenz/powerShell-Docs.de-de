@@ -1,7 +1,7 @@
 ---
 title: "DSC-Ressource „GroupSet“"
 ms.date: 2016-05-16
-keywords: powershell, DSC, built-in, resource
+keywords: PowerShell, DSC, integriert, Ressource
 description: "Stellt einen Mechanismus zum Verwalten lokaler Gruppen auf dem Zielknoten zur Verfügung."
 ms.topic: article
 author: eslesar
@@ -86,6 +86,6 @@ GroupSetTest -ConfigurationData $cd
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 
