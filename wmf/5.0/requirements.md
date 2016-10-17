@@ -49,7 +49,7 @@ Auf Systemen mit Windows Server 2008 R2 SP1 bzw. Windows 7 SP1 sind PowerShell 2
 All diese Probleme wurden in den WMF 4.0-Paketen behoben. Daher ist WMF 4.0 Voraussetzung für die Installation von WMF 5.0 auf Windows Server 2008 R2 SP1 und Windows 7 SP1. Im Folgenden sind die spezifischen Probleme aufgelistet, die auftreten können, wenn Sie WMF 4.0 nicht vor dem Upgrade auf WMF 5.0 installieren:
 
 - Das Protokoll „Weitergeleitete Ereignisse“ ist nicht verfügbar, und das Protokoll „EventCollector“ wird in der Ereignisanzeige nach der Deinstallation von WMF 3.0 oder WMF 5.0 (ohne die erforderliche Installation von WMF 4.0) in Windows 7 SP1 und Windows Server 2008 R2 SP1 nicht angezeigt ([KB2809215](https://support.microsoft.com/en-us/kb/2809215)).
-- Die Anpassung der Umgebungsvariable *PSModulePath* wird auf den Standardwert zurückgesetzt, wenn Sie in Windows 7 SP1 und in Windows Server 2008 R2 SP1 vom integrierten PowerShell 2.0 direkt auf WMF 5.0 ([KB2872035](https://support.microsoft.com/en-us/kb/2872035)) oder von WMF 3.0 zu WMF 5.0  ([KB2872047](https://support.microsoft.com/en-us/kb/2872047)) upgraden.
+- Die Anpassung der Umgebungsvariable *PSModulePath* wird auf den Standardwert zurückgesetzt, wenn Sie von der integrierten PowerShell 2.0 direkt auf WMF 5.0 ([KB2872035](https://support.microsoft.com/en-us/kb/2872035)) oder von WMF 3.0 auf WMF 5.0 aktualisieren. ([KB2872047](https://support.microsoft.com/en-us/kb/2872047)) in Windows 7 SP1 und in Windows Server 2008 R2 SP1.
 
 **WinRM-Abhängigkeit**
 
@@ -87,6 +87,6 @@ wusa /uninstall /kb:3134760
 4.  Wählen Sie in der Liste der installierten Updates **Windows Management Framework 5.0** aus. Dies entspricht *KB3134758*, *KB3134759* oder *KB3134760*. Klicken Sie auf **Deinstallieren**.
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 
