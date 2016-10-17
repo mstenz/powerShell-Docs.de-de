@@ -55,13 +55,13 @@ Um die verschiedenen Verbesserungen an PowerShell und anderen Komponenten einer 
 | Windows 7 SP1  | ?? | Ja | Ja | Ja | Im Lieferumfang |
 | Windows Server 2008 SP2 | | | | Ja | Ja |
 | Windows Vista | | | | | Ja |
-| Windows Server 2003| | | |  | Ja |
+| WindowsServer 2003| | | |  | Ja |
 | Windows XP | | | |  | Ja |
 
 >AUFGABE: * in der obigen Tabelle erläutern
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 
