@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 1476722e-947e-425d-a86c-50037488dc6e
 translationtype: Human Translation
-ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
-ms.openlocfilehash: 9e012dd8218a256e4236c2263babefd29ecdb016
+ms.sourcegitcommit: 1d4062490ba76a8cc62faa8fb96eff92b49169b7
+ms.openlocfilehash: 966cab74cb2519893d4744e8bd0ca12f93f73136
 
 ---
 
@@ -19,7 +19,10 @@ Windows PowerShell® 5.0 bietet wichtige neue Features, die die Verwendungsmög
 
 Windows PowerShell 5.0 ist abwärtskompatibel. Cmdlets, Anbieter, Module, Snap-Ins, Skripts, Funktionen und Profile, die für Windows PowerShell 4.0, Windows PowerShell 3.0 und Windows PowerShell 2.0 entwickelt wurden, funktionieren im Allgemeinen ohne Änderungen in Windows PowerShell 5.0.
 
-Windows PowerShell 5.0 wird standardmäßig unter Windows Server ® 2016 Technical Preview und Windows 10 ® installiert. Zum Installieren von Windows PowerShell 5.0 unter Windows Server 2012 R2, Windows 8.1 Enterprise oder Windows 8.1 Pro müssen Sie [Windows Management Framework 5.0](http://aka.ms/wmf5download) herunterladen und installieren. Achten Sie darauf, dass Sie die Details für das Herunterladen lesen und alle Systemanforderungen erfüllen, bevor Sie Windows Management Framework 5.0 installieren.
+# Installieren von Windows PowerShell
+Windows PowerShell 5.0 wird standardmäßig unter Windows Server ® 2016 Technical Preview und Windows 10 ® installiert. 
+
+Zum Installieren von Windows PowerShell 5.0 unter Windows Server 2012 R2, Windows 8.1 Enterprise oder Windows 8.1 Pro müssen Sie [Windows Management Framework 5.0](http://aka.ms/wmf5download) herunterladen und installieren. Achten Sie darauf, dass Sie die Details für das Herunterladen lesen und alle Systemanforderungen erfüllen, bevor Sie Windows Management Framework 5.0 installieren.
 
 ## Inhalt dieses Themas
 
@@ -752,13 +755,13 @@ Mit dem Feature **SharedHost** können mehrere Benutzer auf mehreren Computern g
 Damit Windows PowerShell 3.0 Sonderzeichen besser interpretieren und ordnungsgemäß verarbeiten kann, ist der **LiteralPath**-Parameter, der Sonderzeichen in Pfaden verarbeitet, für fast alle Cmdlets gültig, die über einen **Path**-Parameter verfügen. Dazu zählen die neuen Cmdlets [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) und [Save-Help](https://technet.microsoft.com/en-us/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa). Die Analyse bietet außerdem eine spezielle Logik zur Verbesserung der Verarbeitung von Akzentzeichen (\`) und eckigen Klammern in Dateinamen und -pfaden.
 
 ## Weitere Informationen
-[about_Windows_PowerShell_4.0](http://technet.microsoft.com/en-us/library/hh847833(v=wps.630).aspx)
-[about_Windows_PowerShell_5.0](https://technet.microsoft.com/en-us/library/6d56fa88-371e-40c9-b2de-64a2a0cd49da)
-[Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116)
+- [about_Windows_PowerShell_4.0](http://technet.microsoft.com/en-us/library/hh847833(v=wps.630).aspx)
+- [about_Windows_PowerShell_5.0](https://technet.microsoft.com/en-us/library/6d56fa88-371e-40c9-b2de-64a2a0cd49da)
+- [Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116)
 
 
 
 
-<!--HONumber=Oct16_HO1-->
+<!--HONumber=Oct16_HO3-->
 
 

@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 0c0f5484-3320-408e-8534-5bd1c8e48512
 translationtype: Human Translation
-ms.sourcegitcommit: 16608d8b97ec816d77ec7b8ac2438a4d64b55fba
-ms.openlocfilehash: f5bb35c3689350cab2c56c462914f1754e005da2
+ms.sourcegitcommit: 6c666e2e23cb74818e37293410dafc9033057733
+ms.openlocfilehash: 489c9492e8de213145b71a7963e180fe1a4ad5b6
 
 ---
 
@@ -54,15 +54,15 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Clear()
 ```
 
 ## Weitere Informationen
- [Das ISEMenuItem-Objekt](The-ISEMenuItem-Object.md) 
- [Das Windows PowerShell ISE-Skriptobjektmodell](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
- [Referenz zum Windows PowerShell ISE-Objektmodell](Windows-PowerShell-ISE-Object-Model-Reference.md) 
- [Die ISE-Objektmodellhierarchie](The-ISE-Object-Model-Hierarchy.md)
+- [Das ISEMenuItem-Objekt](The-ISEMenuItem-Object.md) 
+- [Das Windows PowerShell ISE-Skriptobjektmodell](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
+- [Referenz zum Windows PowerShell ISE-Objektmodell](Windows-PowerShell-ISE-Object-Model-Reference.md) 
+- [Die ISE-Objektmodellhierarchie](The-ISE-Object-Model-Hierarchy.md)
 
   
 
 
 
-<!--HONumber=Oct16_HO1-->
+<!--HONumber=Oct16_HO3-->
 
 

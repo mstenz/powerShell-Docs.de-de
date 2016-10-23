@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 8b632570-5739-4fab-bf09-a1d59004743d
 translationtype: Human Translation
-ms.sourcegitcommit: 16608d8b97ec816d77ec7b8ac2438a4d64b55fba
-ms.openlocfilehash: f72179db813b6065de172f76f134f02ee33f1caa
+ms.sourcegitcommit: 6c666e2e23cb74818e37293410dafc9033057733
+ms.openlocfilehash: 6a4b65525125e088a58a66719b4b21816814f012
 
 ---
 
@@ -21,13 +21,13 @@ Dieser Abschnitt enthält die Hilfethemen für das **Microsoft.PowerShell.Packag
 [Windows PowerShell PackageManagement-Cmdlets](http://technet.microsoft.com/library/dn890706(v=wps.640).aspx)
 
 ## Weitere Informationen
-[Windows PowerShell 5.0](Windows-PowerShell-5.0.md)
-[Windows PowerShell Core](https://technet.microsoft.com/en-us/library/4b75f1e4-f327-48f3-92ab-bf5435094d41)
-[Skripterstellung mit Windows PowerShell](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
+- [Windows PowerShell 5.0](Windows-PowerShell-5.0.md)
+- [Windows PowerShell Core](https://technet.microsoft.com/en-us/library/4b75f1e4-f327-48f3-92ab-bf5435094d41)
+- [Verwalten mit Windows PowerShell](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
 
 
 
 
-<!--HONumber=Oct16_HO1-->
+<!--HONumber=Oct16_HO3-->
 
 

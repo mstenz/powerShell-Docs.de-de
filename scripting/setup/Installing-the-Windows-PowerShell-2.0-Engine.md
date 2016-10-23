@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 82928f2b-f96a-4ae6-a0d0-6e7b181da308
 translationtype: Human Translation
-ms.sourcegitcommit: 16608d8b97ec816d77ec7b8ac2438a4d64b55fba
-ms.openlocfilehash: 34fc34fa752e8f67e9bdb015c234da83e80b7328
+ms.sourcegitcommit: 2aa04e8094fee4b0da3d5e7025cca215d542355e
+ms.openlocfilehash: 68a3d823f6545e1fbf6399b4d566a7e62daeebc9
 
 ---
 
@@ -79,14 +79,14 @@ Das [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=29
 Das Windows Management Framework 3.0-Paket, das Windows PowerShell 3.0 auf Windows 7, Windows Server 2008 R2 und Windows Server 2008 installiert, enthält Windows PowerShell 2.0 Engine. Windows PowerShell 2.0 Engine ist aktiviert und einsatzbereit, falls erforderlich, ohne zusätzliche Installation, Einrichtung und Konfiguration.
 
 ## Weitere Informationen
-[Windows PowerShell-Systemanforderungen](Windows-PowerShell-System-Requirements.md)
-[Installieren von Windows PowerShell](Installing-Windows-PowerShell.md)
-[Starten von Windows PowerShell [ps]](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
-[Starten des Windows PowerShell 2.0-Moduls](Starting-the-Windows-PowerShell-2.0-Engine.md)
+- [Windows PowerShell-Systemanforderungen](Windows-PowerShell-System-Requirements.md)
+- [Installieren von Windows PowerShell](Installing-Windows-PowerShell.md)
+- [Starten von Windows PowerShell](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
+- [Starten des Windows PowerShell 2.0-Moduls](Starting-the-Windows-PowerShell-2.0-Engine.md)
 
 
 
 
-<!--HONumber=Oct16_HO1-->
+<!--HONumber=Oct16_HO3-->
 
 
