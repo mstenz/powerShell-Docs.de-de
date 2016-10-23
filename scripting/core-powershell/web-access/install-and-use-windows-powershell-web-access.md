@@ -8,8 +8,8 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 75e9b6525d74a8bc632b9fe2e64183717f59776f
+ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
+ms.openlocfilehash: fe79ca70ff1f9a3960b79747221a70adc46b7c67
 
 ---
 
@@ -167,7 +167,7 @@ Sie können das Windows PowerShell Web Access-Gateway auf einem Server mit Windo
 
     [Kopieren](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_374a9c21-4f6e-471e-b957-bb190a594533'); "In Zwischenablage kopieren.")
 
-        Install-WindowsFeature –Name WindowsPowerShellWebAccess -ComputerName <computer_name> -IncludeManagementTools -Restart
+        Install-WindowsFeature -Name WindowsPowerShellWebAccess -ComputerName <computer_name> -IncludeManagementTools -Restart
 
     <table>
     <colgroup>
@@ -189,7 +189,7 @@ Sie können das Windows PowerShell Web Access-Gateway auf einem Server mit Windo
 
     [Kopieren](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_d841d509-347e-49d0-bf54-8d1f306bece6'); "In Zwischenablage kopieren.")
 
-        Install-WindowsFeature –Name WindowsPowerShellWebAccess –VHD <path> -ComputerName <computer_name> -IncludeManagementTools -Restart
+        Install-WindowsFeature -Name WindowsPowerShellWebAccess -VHD <path> -ComputerName <computer_name> -IncludeManagementTools -Restart
 
 3.  Stellen Sie nach Abschluss der Installation sicher, dass Windows PowerShell Web Access auf den Zielservern installiert wurde. Führen Sie dazu das Cmdlet **Get-WindowsFeature** auf einem Zielserver in einer Windows PowerShell-Konsole aus, die mit erhöhten Benutzerrechten geöffnet wurde. Sie können die Installation von Windows PowerShell Web Access auch in der Server-Manager-Konsole überprüfen, indem Sie auf der Seite **Alle Server** einen Zielserver auswählen und anschließend die Kachel **Rollen und Features** für den ausgewählten Server anzeigen. Sie können auch die Infodatei für Windows PowerShell Web Access anzeigen.
 
@@ -367,15 +367,15 @@ Weitere Informationen zu Windows PowerShell Web Access-Autorisierungsregeln und 
 
     [Kopieren](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_f9e7959b-75d0-4d63-8f8e-02334a8dd09d'); "In Zwischenablage kopieren.")
 
-        Add-PswaAuthorizationRule –UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
+        Add-PswaAuthorizationRule -UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
 
     Diese Autorisierungsregel erlaubt es einem bestimmten Benutzer, auf einen Computer im Netzwerk zuzugreifen, auf den er normalerweise zugreifen kann. Der Zugriff ist auf eine bestimmte Sitzungskonfiguration beschränkt, die die üblichen Anforderungen des Benutzers im Hinblick auf die Ausführung von Skripts und Cmdlets abdeckt. Im folgenden Beispiel wird dem Benutzer <span class="code">JSmith</span> in der Domäne <span class="code">Contoso</span> Zugriff auf die Verwaltung des Computers <span class="code">Contoso_214</span> und die Verwendung einer Sitzungskonfiguration mit dem Namen <span class="code">NewAdminsOnly</span> gewährt.
 
     [Kopieren](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_ebd5bc5e-ec5d-4955-a86a-63843e480e37'); "In Zwischenablage kopieren.")
 
-        Add-PswaAuthorizationRule –UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
+        Add-PswaAuthorizationRule -UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
 
-4.  Stellen Sie sicher, dass die Regel erstellt wurde, indem Sie entweder das Cmdlet **Get-PswaAuthorizationRule** oder **Test-PswaAuthorizationRule -UserName &lt;Domäne\\Benutzer | Computer\\Benutzer&gt; -ComputerName** &lt;Computername&gt; ausführen. Beispiel: **Test-PswaAuthorizationRule –UserName Contoso\\JSmith –ComputerName Contoso_214**.
+4.  Stellen Sie sicher, dass die Regel erstellt wurde, indem Sie entweder das Cmdlet **Get-PswaAuthorizationRule** oder **Test-PswaAuthorizationRule -UserName &lt;Domäne\\Benutzer | Computer\\Benutzer&gt; -ComputerName** &lt;Computername&gt; ausführen. Beispiel: **Test-PswaAuthorizationRule -UserName Contoso\\JSmith -ComputerName Contoso_214**.
 
 Nachdem Sie eine Autorisierungsregel konfiguriert haben, können sich autorisierte Benutzer bei der webbasierten Konsole anmelden und mit der Nutzung von Windows PowerShell Web Access beginnen.
 
@@ -601,15 +601,15 @@ Weitere Informationen zu Windows PowerShell Web Access-Autorisierungsregeln und 
 
     [Kopieren](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_4df22c91-f56f-4bb5-91e7-99f9b365ed5d'); "In Zwischenablage kopieren.")
 
-        Add-PswaAuthorizationRule –UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
+        Add-PswaAuthorizationRule -UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
 
     Diese Autorisierungsregel erlaubt es einem bestimmten Benutzer, auf einen Computer im Netzwerk zuzugreifen, auf den er normalerweise zugreifen kann. Der Zugriff ist auf eine bestimmte Sitzungskonfiguration beschränkt, die die üblichen Anforderungen des Benutzers im Hinblick auf die Ausführung von Skripts und Cmdlets abdeckt. Im folgenden Beispiel wird dem Benutzer <span class="code">JSmith</span> in der Domäne <span class="code">Contoso</span> Zugriff auf die Verwaltung des Computers <span class="code">Contoso_214</span> und die Verwendung einer Sitzungskonfiguration mit dem Namen <span class="code">NewAdminsOnly</span> gewährt.
 
     [Kopieren](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_efc3999a-2905-453f-86cd-014b41658ffc'); "In Zwischenablage kopieren.")
 
-        Add-PswaAuthorizationRule –UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
+        Add-PswaAuthorizationRule -UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
 
-4.  Stellen Sie sicher, dass die Regel erstellt wurde, indem Sie entweder das Cmdlet **Get-PswaAuthorizationRule** oder **Test-PswaAuthorizationRule -UserName &lt;Domäne\\Benutzer | Computer\\Benutzer&gt; -ComputerName** &lt;Computername&gt; ausführen. Beispiel: **Test-PswaAuthorizationRule –UserName Contoso\\JSmith –ComputerName Contoso_214**.
+4.  Stellen Sie sicher, dass die Regel erstellt wurde, indem Sie entweder das Cmdlet **Get-PswaAuthorizationRule** oder **Test-PswaAuthorizationRule -UserName &lt;Domäne\\Benutzer | Computer\\Benutzer&gt; -ComputerName** &lt;Computername&gt; ausführen. Beispiel: **Test-PswaAuthorizationRule -UserName Contoso\\JSmith -ComputerName Contoso_214**.
 
 Nachdem Sie eine Autorisierungsregel konfiguriert haben, können sich autorisierte Benutzer bei der webbasierten Konsole anmelden und mit der Nutzung von Windows PowerShell Web Access beginnen.
 
@@ -713,6 +713,6 @@ Die Lizenz für Drittanbieterskripts oder Code, die mit dieser Website verlinkt 
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

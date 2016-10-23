@@ -8,8 +8,8 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: dc50a729855a71d61c187da9d698bd294f740546
+ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
+ms.openlocfilehash: f62b1e0ec9f26e1b2bcb364c78a2ce39467655a5
 
 ---
 
@@ -212,15 +212,15 @@ Für Windows PowerShell Web Access-Cmdlets wird ein Platzhalterzeichen unterstü
 
     [Kopieren] (javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_1079478f-cd51-4d35-8022-4b532a9d57a4'); „In Zwischenablage kopieren.“)
 
-        Add-PswaAuthorizationRule –UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
+        Add-PswaAuthorizationRule -UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
 
     Diese Autorisierungsregel erlaubt es einem bestimmten Benutzer, auf einen Computer im Netzwerk zuzugreifen, auf den er normalerweise zugreifen kann. Der Zugriff ist auf eine bestimmte Sitzungskonfiguration beschränkt, die die üblichen Anforderungen des Benutzers im Hinblick auf die Ausführung von Skripts und Cmdlets abdeckt. Im folgenden Beispiel wird dem Benutzer <span class="code">JSmith</span> in der Domäne <span class="code">Contoso</span> Zugriff auf die Verwaltung des Computers <span class="code">Contoso_214</span> und die Verwendung einer Sitzungskonfiguration mit dem Namen <span class="code">NewAdminsOnly</span> gewährt.
 
     [Kopieren](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_4e760377-e401-4ef4-988f-7a0aec1b2a90'); „In Zwischenablage kopieren.“)
 
-        Add-PswaAuthorizationRule –UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
+        Add-PswaAuthorizationRule -UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
 
-4.  Stellen Sie sicher, dass die Regel erstellt wurde, indem Sie entweder das Cmdlet **Get-PswaAuthorizationRule** oder **Test-PswaAuthorizationRule -UserName &lt;Domäne\\Benutzer | Computer\\Benutzer&gt; -ComputerName** &lt;Computername&gt; ausführen. Beispiel: **Test-PswaAuthorizationRule –UserName Contoso\\JSmith –ComputerName Contoso_214**.
+4.  Stellen Sie sicher, dass die Regel erstellt wurde, indem Sie entweder das Cmdlet **Get-PswaAuthorizationRule** oder **Test-PswaAuthorizationRule -UserName &lt;Domäne\\Benutzer | Computer\\Benutzer&gt; -ComputerName** &lt;Computername&gt; ausführen. Beispiel: **Test-PswaAuthorizationRule -UserName Contoso\\JSmith -ComputerName Contoso_214**.
 
 #### So entfernen Sie eine Autorisierungsregel
 
@@ -265,7 +265,7 @@ Bei jeder Windows PowerShell-Sitzung wird eine Sitzungskonfiguration verwendet. 
 
 -   Einige Administratoren gewähren bestimmten Benutzern mehr Zugriff als anderen. Beispielsweise erstellt ein Administrator die beiden Benutzergruppen **Admins** und **BasicSupport**. Ferner erstellt der Administrator einen Endpunkt mit dem eingeschränkten Runspace namens **PswaEndpoint** und definiert die folgenden beiden Regeln: **Admins,\*,\*** und **BasicSupport,\*,PswaEndpoint**. Mit der ersten Regel wird allen Benutzern der Gruppe **Admin** Zugriff auf alle Computer gewährt, und mit der zweiten Regel wird allen Benutzern der Gruppe **BasicSupport** nur Zugriff auf Computer mit **PswaEndpoint** gewährt.
 
--   Ein Administrator hat eine private Testumgebung eingerichtet und möchte nun allen autorisierten Netzwerkbenutzern den Zugriff auf alle Computer im Netzwerk ermöglichen, auf die sie normalerweise zugreifen können, und zwar mit Zugriff auf alle Sitzungskonfigurationen, auf die sie normalerweise zugreifen können. Da es sich um eine private Testumgebung handelt, erstellt der Administrator eine Autorisierungsregel, die nicht sicher ist. Der Administrator führt das Cmdlet <span class="code">Add-PswaAuthorizationRule \* \* \*</span> aus. Dabei wird das Platzhalterzeichen **\*** verwendet, um alle Benutzer, alle Computer und alle Konfigurationen anzugeben. Diese Regel entspricht der folgenden: <span class="code">Add-PswaAuthorizationRule –UserName \* -ComputerName \* -ConfigurationName \*</span>.
+-   Ein Administrator hat eine private Testumgebung eingerichtet und möchte nun allen autorisierten Netzwerkbenutzern den Zugriff auf alle Computer im Netzwerk ermöglichen, auf die sie normalerweise zugreifen können, und zwar mit Zugriff auf alle Sitzungskonfigurationen, auf die sie normalerweise zugreifen können. Da es sich um eine private Testumgebung handelt, erstellt der Administrator eine Autorisierungsregel, die nicht sicher ist. Der Administrator führt das Cmdlet <span class="code">Add-PswaAuthorizationRule \* \* \*</span> aus. Dabei wird das Platzhalterzeichen **\*** verwendet, um alle Benutzer, alle Computer und alle Konfigurationen anzugeben. Diese Regel entspricht der folgenden: <span class="code">Add-PswaAuthorizationRule -UserName \* -ComputerName \* -ConfigurationName \*</span>.
 
     <table>
     <colgroup>
@@ -287,7 +287,7 @@ Bei jeder Windows PowerShell-Sitzung wird eine Sitzungskonfiguration verwendet. 
 
     [Kopieren](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_8d183d3d-1c19-44b8-9297-530b0efc7c79'); „In Zwischenablage kopieren.“)
 
-        Add-PswaAuthorizationRule –userName PswaServer\chrisLocal –computerName srv1.contoso.com –configurationName Microsoft.PowerShell
+        Add-PswaAuthorizationRule -userName PswaServer\chrisLocal -computerName srv1.contoso.com -configurationName Microsoft.PowerShell
 
     Im vorigen Regelbeispiel wird Chris auf dem Gatewayserver authentifiziert und anschließend sein Zugriff auf *srv1* autorisiert. Auf der Anmeldeseite muss Chris unter **Optionale Verbindungseinstellungen** (*contoso\\chris*) einen zweiten Satz Anmeldeinformationen angeben. Der Gatewayserver verwendet den zusätzlichen Satz von Anmeldeinformationen für die Authentifizierung auf dem Zielcomputer *srv1.contoso.com*.
 
@@ -428,6 +428,6 @@ Die Lizenz für Drittanbieterskripts oder Code, die mit dieser Website verlinkt 
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

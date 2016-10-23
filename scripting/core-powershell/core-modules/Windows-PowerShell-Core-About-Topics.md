@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 8b950138-9782-4dfe-bd5f-6bdcea7060da
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 4d33ebe2a067781d708ca3b0f8dc4dd2848ba4d4
+ms.sourcegitcommit: 16608d8b97ec816d77ec7b8ac2438a4d64b55fba
+ms.openlocfilehash: aeb0b26ff7cb65381a4cecbf9ae790e5a22a8e97
 
 ---
 
@@ -125,7 +125,7 @@ Dieser Abschnitt enthält konzeptionelle Hilfethemen ("Info"), die für alle Win
 |[about_While [v4]](https://technet.microsoft.com/en-us/library/3a1a1329-2501-4e4e-8660-a2ca68c68541)|Beschreibt **While**-Schleifen in Windows PowerShell.|
 |[about_Wildcards [v4]](https://technet.microsoft.com/en-us/library/9fe09a23-afce-4547-9e2f-c38090f77636)|Beschreibt die Verwendung des Platzhalterzeichens (\*) in Windows PowerShell.|
 |[about_Windows_PowerShell_5.0](https://technet.microsoft.com/en-us/library/6d56fa88-371e-40c9-b2de-64a2a0cd49da)|Beschreibt die neuen Funktionen und Änderungen in Windows PowerShell 4.0.|
-|[about_Windows_PowerShell_ISE [v3]](https://technet.microsoft.com/en-us/library/dfa54d47-60c6-4fff-8197-c747e8d411bb)|Beschreibt Windows PowerShell® Integrated Scripting Environment (ISE).|
+|[about_Windows_PowerShell_ISE [v3]](https://technet.microsoft.com/en-us/library/dfa54d47-60c6-4fff-8197-c747e8d411bb)|Beschreibt Windows PowerShell® Integrated Scripting Environment (ISE)|
 |[Informationen über_Workflows](https://technet.microsoft.com/en-us/library/f2897bdd-1b9d-4679-8b19-09840bd40a22)|Bietet eine kurze Einführung in das Windows PowerShell-Workflow-Feature.|
 |[Informationen über_WorkflowCommonParameters](https://technet.microsoft.com/en-us/library/119f968e-618e-439c-b76c-cdd17e6df27c)|Beschreibt die Parameter, die für alle Windows PowerShell-Workflowbefehle gültig sind.|
 |[about_WMI](https://technet.microsoft.com/en-us/library/32da7221-c213-48ad-8466-fad82285e4e8)|Beschreibt die Windows-Verwaltungsinstrumentation (WMI), bei der es sich um die Microsoft-Implementierung des Industriestandards für Web-Based Enterprise Management (WBEM) handelt.|
@@ -145,6 +145,6 @@ Dieser Abschnitt enthält konzeptionelle Hilfethemen ("Info"), die für alle Win
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

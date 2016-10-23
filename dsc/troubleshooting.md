@@ -8,8 +8,8 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 7fb70aba7d4c3c44cc89b5f8c4f6ff5aeb3b14c9
-ms.openlocfilehash: 4830be14b105485c50446f06e9d36491b4c4fe44
+ms.sourcegitcommit: c7b198d6206c57ef663ea5f4c8cef5ab5678a823
+ms.openlocfilehash: d06b330e3a64705e2f86230e8a9e344e85b8d4be
 
 ---
 
@@ -296,7 +296,7 @@ SRV1   5          6/23/2016 4:36:51 PM  Success                                 
 
 ### Abrufen von Details der DSC-Ereignisse
 
-Das Cmdlet „Trace-xDscOperation1“ gibt ein Objekt zurück, das eine Sammlung von Ereignissen, deren Ereignistypen und die von einem bestimmten DSC-Vorgang generierte Meldungsausgabe enthält. Wenn bei einem der Get-xDscOperation-Vorgänge ein Fehler auftritt, sollten Sie den Vorgang nachverfolgen, um herauszufinden, welches der Ereignisse den Fehler hervorgerufen hat.
+Das Cmdlet `Trace-xDscOperation1` gibt ein Objekt zurück, das eine Sammlung von Ereignissen, deren Ereignistypen und die von einem bestimmten DSC-Vorgang generierte Meldungsausgabe enthält. Wenn Sie mit `Get-xDscOperation` in einem der Vorgänge einen Fehler finden, würden Sie diesen Vorgang normalerweise verfolgen, um herauszufinden, welches Ereignis den Fehler verursacht hat.
 
 Verwenden Sie den Parameter `SequenceID`, um die Ereignisse eines bestimmten Vorgangs auf einem bestimmten Computer abzurufen. Wenn Sie beispielsweise für `SequenceID` „9“ angeben, ruft `Trace-xDscOperaion` die Verfolgung des neuntletzten DSC-Vorgangs ab:
 
@@ -626,6 +626,6 @@ onlyProperty                            PSComputerName
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Oct16_HO1-->
 
 

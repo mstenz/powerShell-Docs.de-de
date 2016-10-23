@@ -9,13 +9,13 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 1c6d91f3-c556-42a2-a017-79b6b7b4b7db
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: c1744841e23aa9c2fedf3eb92230ef422c36f0cd
+ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
+ms.openlocfilehash: 9063e17928c433db8c3c9d26d41d31c2675e413c
 
 ---
 
 # Das ISEFile-Objekt
-  Ein **ISEFile**-Objekt stellt eine Datei in Windows-PowerShell® Integrated Scripting Environment (ISE) dar. Es ist eine Instanz der Microsoft.PowerShell.Host.ISE.ISEFile-Klasse. In diesem Thema werden die Elementmethoden und -eigenschaften aufgeführt. **$psISE.CurrentFile** und die Dateien in der DateiSammlung auf einer PowerShell-Registerkarte sind Instanzen der Microsoft.PowerShell.Host.ISE.ISEFile-Klasse.
+  Ein **ISEFile**-Objekt stellt eine Datei in Windows-PowerShell® Integrated Scripting Environment (ISE) dar Es ist eine Instanz der Microsoft.PowerShell.Host.ISE.ISEFile-Klasse. In diesem Thema werden die Elementmethoden und -eigenschaften aufgeführt. **$psISE.CurrentFile** und die Dateien in der DateiSammlung auf einer PowerShell-Registerkarte sind Instanzen der Microsoft.PowerShell.Host.ISE.ISEFile-Klasse.
 
 ## Methoden
 
@@ -24,8 +24,8 @@ ms.openlocfilehash: c1744841e23aa9c2fedf3eb92230ef422c36f0cd
 
  Speichert die Datei auf dem Datenträger.
 
- **\[saveEncoding\]** – optional [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)
- – Ein optionaler Zeichencodierungsparameter, der für die gespeicherte Datei verwendet werden soll. Der Standardwert lautet **UTF8**.
+ **\[saveEncoding\]** – Optional [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)
+ – Ein optionaler Zeichencodierungsparameter, der für die gespeicherte Datei verwendet werden soll Der Standardwert lautet **UTF8**.
 
  **Ausnahmen**
  -   **System.IO.IOException**: Die Datei konnte nicht gespeichert werden.
@@ -50,8 +50,8 @@ $myfile.Encoding
 
  **Dateiname**: Zeichenfolge – der Name, der zum Speichern der Datei verwendet werden soll.
 
- **\[saveEncoding\]** – optional [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)
- – Ein optionaler Zeichencodierungsparameter, der für die gespeicherte Datei verwendet werden soll. Der Standardwert lautet **UTF8**.
+ **\[saveEncoding\]** – Optional [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)
+ – Ein optionaler Zeichencodierungsparameter, der für die gespeicherte Datei verwendet werden soll Der Standardwert lautet **UTF8**.
 
  **Ausnahmen**
  -   **System.ArgumentNullException**: Der **filename**-Parameter ist NULL.
@@ -150,6 +150,6 @@ $psISE.CurrentFile.IsUntitled
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

@@ -8,8 +8,8 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: d54139714552943901f565a8525bb478ed308f09
+ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
+ms.openlocfilehash: d84b13db1fa5f12a7b4f8fa7b9b8cd7fb8fbae9d
 
 ---
 
@@ -74,17 +74,17 @@ Wenn Sie Ihre eigenen, benutzerdefinierten Websitenamen angegeben haben, fügen 
 
     -   Klicken Sie auf dem Windows-**Startbildschirm** mit der rechten Maustaste auf **Windows PowerShell**, und klicken Sie anschließend auf **Als Administrator ausführen**.
 
-2.  Geben Sie Folgendes ein, und drücken Sie dann die **EINGABETASTE**, wobei *computer_name* für einen Remoteserver steht, von dem Sie Windows PowerShell Web Access entfernen möchten. Mit dem Parameter <span class="code">–Restart</span> werden Zielserver automatisch neu gestartet, falls dies für die Entfernung erforderlich ist.
+2.  Geben Sie Folgendes ein, und drücken Sie dann die **EINGABETASTE**, wobei *computer_name* für einen Remoteserver steht, von dem Sie Windows PowerShell Web Access entfernen möchten. Mit dem Parameter <span class="code">-Restart</span> werden Zielserver automatisch neu gestartet, falls dies für die Entfernung erforderlich ist.
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_7b534520-f292-471f-89e3-a1079c03e369'); "Copy to clipboard.")
 
-        Uninstall-WindowsFeature –Name WindowsPowerShellWebAccess -ComputerName <computer_name> -Restart
+        Uninstall-WindowsFeature -Name WindowsPowerShellWebAccess -ComputerName <computer_name> -Restart
 
     Zum Entfernen von Rollen oder Features von einer Offline-VHD müssen Sie sowohl den <span class="code">ComputerName</span>-Parameter als auch den <span class="code">VHD</span>-Parameter hinzufügen. Der <span class="code">ComputerName</span>-Parameter enthält den Namen des Servers, auf dem die VHD eingebunden werden soll. Der <span class="code">VHD</span>-Parameter enthält den Pfad zur VHD-Datei auf dem angegebenen Server.
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_5d8f91ee-b91a-4653-b7df-e745187fd72d'); "Copy to clipboard.")
 
-        Uninstall-WindowsFeature –Name WindowsPowerShellWebAccess –VHD <path> -ComputerName <computer_name> -Restart
+        Uninstall-WindowsFeature -Name WindowsPowerShellWebAccess -VHD <path> -ComputerName <computer_name> -Restart
 
 3.  Vergewissern Sie sich nach Abschluss der Entfernung, ob Windows PowerShell Web Access wirklich entfernt wurde. Öffnen Sie dazu im Server-Manager die Seite **Alle Server**, wählen Sie einen Server aus, von dem Sie das Feature entfernt haben, und zeigen Sie auf der Seite für den ausgewählten Server die Kachel **Rollen und Features** an. Sie können auch das Cmdlet <span class="code">Get-WindowsFeature</span> für den ausgewählten Server (Get-WindowsFeature -ComputerName &lt;*Computername*&gt;) ausführen, um eine Liste der Rollen und Features anzuzeigen, die auf dem Server installiert sind.
 
@@ -219,6 +219,6 @@ Die Lizenz für Drittanbieterskripts oder Code, die mit dieser Website verlinkt 
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

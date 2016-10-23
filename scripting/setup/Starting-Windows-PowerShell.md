@@ -9,12 +9,14 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 59b649a2-c90c-4cf4-bf95-a740c59148e7
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: f8406a2066ef54ea0fdaaff6e612bb0d43b12ab6
+ms.sourcegitcommit: 7ffb26f12766a7ac1eb282459ab2c62293bcb3ed
+ms.openlocfilehash: 13bd92f65aebb5692844356feb6ac0c079b2ca20
 
 ---
 
 # Starten von Windows PowerShell
+PowerShell ist ein Skriptmodul im DLL-Format, das in mehreren Hosts eingebettet ist.  Als Host werden am häufigsten die interaktive Befehlszeile „PowerShell.exe“ und die integrierte Skriptumgebung „PowerShell_ISE.exe“ verwendet.  
+
 Informationen zum Starten von Windows PowerShell® unter Windows Server® 2012 R2, Windows® 8.1, Windows Server 2012 und Windows 8 finden Sie unter [Allgemeine Verwaltungsaufgaben und Navigation in Windows](http://technet.microsoft.com/library/hh831491.aspx).
 
 In den Themen in diesem Abschnitt wird erläutert, wie Windows PowerShell unter älteren Betriebssystemen gestartet wird.
@@ -34,6 +36,6 @@ Die Themen umfassen Folgendes:
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Oct16_HO1-->
 
 

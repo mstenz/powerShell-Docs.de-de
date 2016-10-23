@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: cf06f1e5-3945-47e4-98be-412f5a1f43fe
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 994e6c89f6fc20b95691f010deb3c48062cef310
+ms.sourcegitcommit: 16608d8b97ec816d77ec7b8ac2438a4d64b55fba
+ms.openlocfilehash: 9563e58d2840c7cc2120b58b041660aaeee12830
 
 ---
 
@@ -45,9 +45,9 @@ Windows PowerShell ist Teil einer Familie verwandter Technologien zur Erstellung
 
 -   [Erste Schritte mit Windows PowerShell DSC (Desired State Configuration)](https://technet.microsoft.com/en-us/library/c134aa32-b085-4656-9a89-955d8ff768d0). Das in Windows PowerShell 4.0 eingeführte Windows PowerShell DSC (Desired State Configuration, Konfiguration für den gewünschten Zustand) ist ein neues Verwaltungssystem in Windows PowerShell, mit dem die Bereitstellung und Verwaltung von Konfigurationsdaten für Softwaredienste und die Umgebung ermöglicht wird, in der diese Dienste ausgeführt werden. DSC stellt eine Gruppe von Windows PowerShell-Spracherweiterungen, neue Cmdlets und Ressourcen bereit, mit denen Sie deklarativ angeben können, wie Ihre Softwareumgebung konfiguriert werden soll.
 
--   [Windows Management Framework 4.0 Preview](http://go.microsoft.com/fwlink/?LinkID=293881) umfasst Updates für Windows PowerShell, Windows PowerShell ISE, Windows PowerShell-Webdienste (Management OData-IIS-Erweiterung), Windows Remote Management (WinRM), Windows Management Infrastructure (WMI), den Server-Manager-WMI-Anbieter und ein neues Feature für 4.0, Windows PowerShell DSC (Desired State Configuration). Windows Management Framework 4.0 Preview ermöglicht es Ihnen, diese Technologien auf Computern zu installieren, auf denen Windows Server 2012, Windows® 7 SP1 und Windows Server 2008 R2 SP1 ausgeführt werden.
+-   [Windows Management Framework 4.0 Preview](http://go.microsoft.com/fwlink/?LinkID=293881) umfasst Updates für Windows PowerShell, Windows PowerShell ISE, Windows PowerShell-Webdienste (Management OData-IIS-Erweiterung), Windows Remote Management (WinRM), Windows Management Infrastructure (WMI), den Server-Manager-WMI-Anbieter und ein neues Feature für 4.0, Windows PowerShell DSC (Desired State Configuration). Windows Management Framework 4.0 Preview ermöglicht es Ihnen, diese Technologien auf Computern zu installieren und zu verwenden, auf denen Windows Server 2012, Windows® 7 SP1 und Windows Server 2008 R2 SP1 ausgeführt werden.
 
--   [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) umfasst Updates für Windows PowerShell, Windows PowerShell ISE, Windows PowerShell-Webdienste (Management OData-IIS-Erweiterung), Windows Remote Management (WinRM), Windows Management Infrastructure (WMI) und den Server-Manager-WMI-Anbieter. Windows Management Framework 3.0 ermöglicht es Ihnen, diese Technologien auf Computern zu installieren, auf denen Windows® 7 SP1, Windows Server 2008 SP2 und Windows Server 2008 R2 SP1 ausgeführt werden.
+-   [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) umfasst Updates für Windows PowerShell, Windows PowerShell ISE, Windows PowerShell-Webdienste (Management OData-IIS-Erweiterung), Windows Remote Management (WinRM), Windows Management Infrastructure (WMI) und den Server-Manager-WMI-Anbieter. Windows Management Framework 3.0 ermöglicht es Ihnen, diese Technologien auf Computern zu installieren und zu verwenden, auf denen Windows® 7 SP1, Windows Server 2008 SP2 und Windows Server 2008 R2 SP1 ausgeführt werden.
 
 ## Einstieg in Windows PowerShell
 Für den Einstieg in Windows PowerShell starten Sie mit den folgenden Ressourcen:
@@ -78,6 +78,6 @@ In den folgenden Themen wird beschrieben, wie Sie die aktuelle Hilfe für Window
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

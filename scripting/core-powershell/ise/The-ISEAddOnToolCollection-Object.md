@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 634eab89-0845-4016-974b-361b09bb8f7b
 translationtype: Human Translation
-ms.sourcegitcommit: 457451343b51891e336b0df6f979c285fb6144eb
-ms.openlocfilehash: 0a8f19693085b9b878fae60953a2cdc358ba8f4c
+ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
+ms.openlocfilehash: 575ee3b8279ad50920df17ff92d4f65467d83830
 
 ---
 
@@ -24,11 +24,11 @@ ms.openlocfilehash: 0a8f19693085b9b878fae60953a2cdc358ba8f4c
 
  Fügt der Sammlung ein neues Add-On-Tool hinzu. Das neu hinzugefügte Add-On-Tool wird zurückgegeben. Vor dem Ausführen dieses Befehls müssen Sie das Add-On-Tool auf dem lokalen Computer installieren und die Assembly laden.
 
- **Name**: Zeichenfolge – gibt den Anzeigenamen des Add-On-Tools an, das zu Windows PowerShell ISE hinzugefügt wird.
+ **Name** – Zeichenfolge – gibt den Anzeigenamen des Add-On-Tools an, das zu Windows PowerShell ISE hinzugefügt wird
 
- **ControlType**: Typ – gibt das Steuerelement an, das hinzugefügt wird.
+ **ControlType** – Typ – gibt das Steuerelement an, das hinzugefügt wird
 
- **\[IsVisible\]**: optionaler boolescher Wert – bei **$true** ist das Add-On-Tool sofort im zugehörigen Toolbereich sichtbar.
+ **\[IsVisible\]** – optionaler boolescher Wert – bei **$true** ist das Add-On-Tool sofort im zugehörigen Toolbereich sichtbar
 
 ```PowerShell
 # Load a DLL with an add-on and then add it to the ISE
@@ -41,7 +41,7 @@ $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSoluti
 
  Entfernt das angegebene Add-On-Tool aus der Sammlung.
 
- **Item**: Microsoft.PowerShell.Host.ISE.ISEAddOnTool – gibt das Objekt an, das aus Windows PowerShell ISE entfernt werden soll.
+ **Item** – Microsoft.PowerShell.Host.ISE.ISEAddOnTool – gibt das Objekt an, das aus Windows PowerShell ISE entfernt werden soll
 
 ```PowerShell
 # Load a DLL with an add-on and then add it to the ISE
@@ -54,7 +54,7 @@ $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSoluti
 
  Wählt die PowerShell-Registerkarte aus, die vom **psTab**-Parameter angegeben wird.
 
- **psTab**: Microsoft.PowerShell.Host.ISE.PowerShellTab – die auszuwählende PowerShell-Registerkarte.
+ **psTab** – Microsoft.PowerShell.Host.ISE.PowerShellTab – die auszuwählende PowerShell-Registerkarte
 
 ```PowerShell
       $newTab = $psISE.PowerShellTabs.Add()
@@ -67,7 +67,7 @@ $newTab.DisplayName="Brand New Tab"
 
  Entfernt die PowerShell Registerkarte, die vom **psTab**-Parameter angegeben wird.
 
- **psTab**: Microsoft.PowerShell.Host.ISE.PowerShellTab – die zu entfernende PowerShell-Registerkarte.
+ **psTab** – Microsoft.PowerShell.Host.ISE.PowerShellTab – die zu entfernende PowerShell-Registerkarte
 
 ```PowerShell
 $newTab = $psISE.PowerShellTabs.Add()
@@ -87,6 +87,6 @@ $psISE.PowerShellTabs.Remove($newTab)
 
 
 
-<!--HONumber=Sep16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

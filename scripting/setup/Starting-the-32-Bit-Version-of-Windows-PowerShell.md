@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 12b31890-2609-4a76-8c24-0ebe78084f50
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 310f898a471ca60da4d9ebe5234ee86a636e44b5
+ms.sourcegitcommit: fa0a541965b4121b8e8ac677b3c38e6f316b4553
+ms.openlocfilehash: 4e6a0e7f8935b905d1cb19576541d1b532fcba21
 
 ---
 
@@ -21,7 +21,7 @@ Es kann jedoch möglicherweise erforderlich sein, **Windows PowerShell (x86)** a
 
 Wählen Sie eines der folgenden Verfahren, um eine 32-Bit-Version von Windows PowerShell zu starten.
 
-#### Windows Server® 2012 R2
+#### In Windows Server® 2012 R2
 
 -   Geben Sie im** **Startbildschirm **Windows PowerShell (x86)** ein. Klicken Sie auf die Kachel **Windows PowerShell x86**.
 
@@ -31,7 +31,7 @@ Wählen Sie eines der folgenden Verfahren, um eine 32-Bit-Version von Windows Po
 
 -   Geben Sie über die Befehlszeile Folgendes ein: `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
-#### Windows Server 2012
+#### In Windows Server® 2012
 
 -   Klicken Sie auf **Start**, geben Sie **PowerShell** ein, und klicken Sie dann auf **Windows PowerShell (x86)**.
 
@@ -41,7 +41,7 @@ Wählen Sie eines der folgenden Verfahren, um eine 32-Bit-Version von Windows Po
 
 -   Geben Sie über die Befehlszeile Folgendes ein: `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
-#### Windows 8.1
+#### In Windows® 8.1
 
 -   Geben Sie im** **Startbildschirm **Windows PowerShell (x86)** ein. Klicken Sie auf die Kachel **Windows PowerShell x86**.
 
@@ -51,7 +51,7 @@ Wählen Sie eines der folgenden Verfahren, um eine 32-Bit-Version von Windows Po
    
 -   Geben Sie über die Befehlszeile Folgendes ein: `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
-#### Windows 8
+#### In Windows® 8
 
 -   Bewegen Sie auf dem Bildschirm **Start** den Cursor in die rechte obere Ecke, klicken Sie auf **Einstellungen**, dann auf **Kacheln**, und bewegen Sie den Schieberegler **Verwaltungstools anzeigen** auf „Ja“. Geben Sie dann **PowerShell** ein, und klicken Sie auf **Windows PowerShell (x86)**.
 
@@ -63,6 +63,6 @@ Wählen Sie eines der folgenden Verfahren, um eine 32-Bit-Version von Windows Po
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

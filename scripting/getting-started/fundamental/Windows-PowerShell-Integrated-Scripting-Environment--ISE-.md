@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 061e22c26853664c89adc023d43802628859b9a6
+ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
+ms.openlocfilehash: bfb36e6313379080ee071ec1df41992b945d2d83
 
 ---
 
@@ -19,7 +19,7 @@ Die Windows PowerShell Integrated Scripting Environment (ISE) ist einer von zwei
 
 Die ISE ermöglicht das Ausführen von Befehlen in einem Konsolenbereich, unterstützt aber auch Bereiche, mit deren Hilfe Sie den Quellcode Ihres Skripts und andere Tools gleichzeitig anzeigen können, die in die ISE eingebunden werden können. Sie können sogar mehrere Skriptfenster gleichzeitig öffnen, was besonders hilfreich ist, wenn Sie ein Skript debuggen, das Funktionen nutzt, die in anderen Skripts oder Modulen definiert sind.
 
-## <a name="BKMK_NEW"></a>Neu
+## Neu
 Es folgen einige der Features, die der ISE in den neuesten Versionen von PowerShell hinzugefügt wurden.
 
 ### In PowerShell 3.0 hinzugefügt (Windows Server 2012, Windows 8)
@@ -35,7 +35,7 @@ Die **Liste „Zuletzt verwendet“** ist jetzt Teil des Menüs „Datei öffnen
 
 **Zusammengeführter Konsolenbereich**. In vorherigen Versionen der ISE gab es separate Bereiche für Befehle und Ausgabe. Diese wurden zu einem einzelnen Bereich kombiniert, der die Windows Powershell-Konsole direkter nachbildet.
 
-**Befehlszeilenschalter**. Mehrere neue Befehlszeilenschalter bieten Ihnen mehr Kontrolle über die Funktionsweise der ISE. „–NoProfile“ startet die ISE ohne Ausführung eines Profilskripts. „–Help“ öffnet ein Hilfefenster mit der ISE. „–mta“ startet die ISE im „Multithread-Apartment-Modus“. Der Standardwert ist „Singlethread“.
+**Befehlszeilenschalter**. Mehrere neue Befehlszeilenschalter bieten Ihnen mehr Kontrolle über die Funktionsweise der ISE. „-NoProfile“ startet die ISE ohne Ausführung eines Profilskripts. „-Help“ öffnet ein Hilfefenster mit der ISE. „-mta“ startet die ISE im „Multithread-Apartment-Modus“. Der Standardwert ist „Singlethread“.
 
 **Neue Features im Editor** erleichtern das Erstellen und Lesen Ihres Codes:
 
@@ -64,12 +64,12 @@ Die ISE ist auf allen Computern verfügbar, auf denen Windows PowerShell 2.0 od
 > [!NOTE]
 > Da die Windows PowerShell ISE eine grafische Benutzeroberfläche erfordert, können Sie sie nicht mit der Server Core-Option von Windows Server ausführen.
 
-## <a name="BKMK_LINKS"></a>Siehe auch
-[Verwenden der Windows PowerShell Integrated Scripting Environment (ISE)](http://technet.microsoft.com/library/cc732148.aspx)
+## Siehe auch
+- [Verwenden der Windows PowerShell Integrated Scripting Environment (ISE)](http://technet.microsoft.com/library/cc732148.aspx)
 
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

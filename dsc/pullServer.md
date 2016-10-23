@@ -8,8 +8,8 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: a5f3025ff222d4a27c0da074df9e84d82c51a46f
-ms.openlocfilehash: 7bbfc31fdebdde83ac1784373b51af40b1dc9492
+ms.sourcegitcommit: 8e486891a4e5db20389d6ae65d00c42e1308af35
+ms.openlocfilehash: 4ab20cdcac6f10dc9ecab6d85b38f413e0ade8b0
 
 ---
 
@@ -150,6 +150,8 @@ Nach Abschluss des Pullserversetups befinden sich die von den Eigenschaften **Co
 ### Format des DSC-Ressourcenmodulpakets
 Jedes Ressourcenmodul muss komprimiert und entsprechend dem folgenden Muster benannt werden: **{Modulname}_{Modulversion}.zip**. Ein Modul namens „xWebAdminstration“ mit einer Modulversion 3.1.2.0 würde beispielsweise „xWebAdministration_3.2.1.0.zip“ heißen. Jede Version eines Moduls muss in einer eigenen ZIP-Datei enthalten sein. Da jede ZIP-Datei nur jeweils eine Version einer Ressource enthält, wird das in WMF 5.0 eingeführte das Modulformat, das mehrere Versionen in einem einzigen Verzeichnis ermöglicht, nicht unterstützt. Das bedeutet, dass Sie vor dem Packen von DSC-Ressourcenmodulen für die Verwendung mit einem Pullserver eine kleine Änderung an der Verzeichnisstruktur vornehmen müssen. Das Standardformat für Module mit DSC-Ressourcen in WMF 5.0 ist: {Modulordner}\{Modulversion}\DscResources\{DSC-Ressourcenordner}\'. Entfernen Sie vor dem Packen für den Pullserver einfach den Ordner **{Modulversion}**, damit der Pfad wie folgt geändert wird: {Modulordner}\DscResources\{DSC-Ressourcenordner}\'. Komprimieren Sie den Odner nach dieser Änderung wie oben beschrieben, und speichern Sie die ZIP-Dateien im Ordner **ModulePath**.
 
+Verwenden Sie `new-dscchecksum {module zip file}` zum Erstellen einer Prüfsummendatei für das neu hinzugefügte Modul.
+
 ### MOF-Konfigurationsformat 
 Eine MOF-Konfigurationsdatei muss einer Prüfsummendatei zugeordnet werden, damit ein LCM auf einem Zielknoten die Konfiguration überprüfen kann. Um eine Prüfsumme zu erstellen, rufen Sie das Cmdlet [New-DSCCheckSum](https://technet.microsoft.com/en-us/library/dn521622.aspx) auf. Das Cmdlet verwendet einen **Path**-Parameter, der den Ordner angibt, in dem sich die MOF-Konfigurationsdatei befindet. Das Cmdlet erstellt eine Prüfsummendatei mit dem Namen `ConfigurationMOFName.mof.checksum`, wobei `ConfigurationMOFName` der Name der MOF-Konfigurationsdatei ist. Wenn in dem angegebenen Ordner mehrere MOF-Konfigurationsdateien vorhanden sind, wird für jede Konfiguration im Ordner eine Prüfsumme erstellt. Platzieren Sie die MOF-Dateien und die zugeordneten Prüfsummendateien im Ordner **ConfigurationPath**.
 
@@ -187,6 +189,6 @@ In den folgenden Themen wird das Einrichten von Pullclients im Detail beschriebe
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Oct16_HO1-->
 
 

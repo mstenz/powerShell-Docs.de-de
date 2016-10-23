@@ -12,7 +12,7 @@
 #### [Starten von PowerShell unter früheren Versionen von Windows](setup/Starting-Windows-PowerShell-on-Earlier-Versions-of-Windows.md)
 ### [Installieren des Windows PowerShell 2.0-Moduls](setup/Installing-the-Windows-PowerShell-2.0-Engine.md)
 ### [Starten des Windows PowerShell 2.0-Moduls](setup/Starting-the-Windows-PowerShell-2.0-Engine.md)
-### [Installieren das Windows PowerShell SDK](https://msdn.microsoft.com/en-us/library/ff458115.aspx)
+### [Installieren das Windows PowerShell SDK](setup/Installing-the-Windows-PowerShell-SDK.md)
 ### [Sicherheit](setup/security.md)
 #### [Sicherheitsaspekte von PowerShell-Remoting](setup/WinRMSecurity.md)
 ### [Eingabehilfen](setup/Accessibility-in-Windows-PowerShell-ISE.md)
@@ -49,7 +49,7 @@
 ####  [Verwalten von Prozessen mit „Process“-Cmdlets](getting-started/cookbooks/Managing-Processes-with-Process-Cmdlets.md)
 ####  [Verwalten von Diensten](getting-started/cookbooks/Managing-Services.md)
 ####  [Verwalten von Windows PowerShell-Laufwerken](getting-started/cookbooks/Managing-Windows-PowerShell-Drives.md)
-####  [Managing-Current-Location](getting-started/cookbooks/Managing-Current-Location.md)
+####  [Verwalten des aktuellen Speicherorts](getting-started/cookbooks/Managing-Current-Location.md)
 ####  [Direktes Verarbeiten von Elementen](getting-started/cookbooks/Manipulating-Items-Directly.md)
 ####  [Listenfelder für Mehrfachauswahl](getting-started/cookbooks/Multiple-selection-List-Boxes.md)
 ####  [Andere nützliche Skriptobjekte](getting-started/cookbooks/Other-Useful-Scripting-Objects.md)
@@ -102,13 +102,13 @@
 ####  [Das ISESnippetCollection-Objekt](core-powershell/ise/The-ISESnippetCollection-Object.md)
 ####  [Das ISESnippet-Objekt](core-powershell/ise/The-ISESnippetObject.md)
 ####  [Das ISE-ObjectModelRoot-Objekt](core-powershell/ise/The-ObjectModelRoot-Object.md)
-####  [So wird's gemacht: Erstellen einer PowerShell-Registerkarte in PowerShell ISE](core-powershell/ise/How-to-Create-a-PowerShell-Tab-in-Windows-PowerShell-ISE.md)
+####  [So erstellen Sie eine PowerShell-Registerkarte in PowerShell ISE](core-powershell/ise/How-to-Create-a-PowerShell-Tab-in-Windows-PowerShell-ISE.md)
 ####  [So wird's gemacht: Debuggen von Skripts in PowerShell ISE](core-powershell/ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md)
-####  [So wird's gemacht: Verwenden von Profilen in PowerShell ISE](core-powershell/ise/How-to-Use-Profiles-in-Windows-PowerShell-ISE.md)
-####  [Verwenden des Konsolenbereichs in der PowerShell ISE](core-powershell/ise/How-to-Use-the-Console-Pane-in-the-Windows-PowerShell-ISE.md)
+####  [So verwenden Sie Profile in PowerShell ISE](core-powershell/ise/How-to-Use-Profiles-in-Windows-PowerShell-ISE.md)
+####  [So verwenden Sie den Konsolenbereich in PowerShell ISE](core-powershell/ise/How-to-Use-the-Console-Pane-in-the-Windows-PowerShell-ISE.md)
 ####  [Verwenden von Vervollständigung mit der TAB-TASTE im Skriptbereich und Konsolenbereich](core-powershell/ise/How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md)
 ####  [Schreiben und Ausführen von Skripts in der Windows PowerShell ISE](core-powershell/ise/How-to-Write-and-Run-Scripts-in-the-Windows-PowerShell-ISE.md)
-####  [Einführung in die PowerShell ISE](core-powershell/ise/Introducing-the-Windows-PowerShell-ISE.md)
+####  [Einführung in PowerShell ISE](core-powershell/ise/Introducing-the-Windows-PowerShell-ISE.md)
 ####  [ISE-Modul](core-powershell/ise/ISE-Module.md)
 ####  [Tastenkombinationen für PowerShell ISE](core-powershell/ise/Keyboard-Shortcuts-for-the-Windows-PowerShell-ISE.md)
 ####  [Das PowerShellTab-Objekt](core-powershell/ise/The-PowerShellTab-Object.md)
@@ -142,6 +142,6 @@
 ## [PowerShell-Glossar](Windows-PowerShell-Glossary.md)
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Oct16_HO1-->
 
 
