@@ -9,12 +9,12 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 021e2424-c64e-4fa5-aa98-aa6405758d5d
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: b567510b9a39bfa62e64e62752a1a7d2002cf6b9
+ms.sourcegitcommit: 0c22cc16f5c5becacfc07a6332c0b949f9da40e0
+ms.openlocfilehash: dc235dee1af01c1f3d29118e4824d6a2b49b113a
 
 ---
 
-# Verwenden von vertrauten Befehlsnamen
+# <a name="using-familiar-command-names"></a>Verwenden von vertrauten Befehlsnamen
 Durch Verwenden eines Mechanismus namens *Aliasing* versetzt Windows PowerShell Benutzer in die Lage, über alternative Namen auf Befehle zu verweisen. Aliasing ermöglicht es Benutzern mit Erfahrung mit anderen Shells, übliche Befehlsnamen, die sie bereits kennen, wiederzuverwenden, um gleiche Vorgänge in Windows PowerShell auszuführen. Windows PowerShell-Aliase werden zwar nicht im Detail erläutert, Sie können diese aber weiterhin verwenden, wenn Sie sich mit Windows PowerShell vertraut machen.
 
 Aliasing ordnet einen Befehlsnamen, den Sie eingeben, einem anderen Befehl zu. Windows PowerShell hat beispielsweise eine interne Funktion namens **Clear-Host**, die den Inhalt des Ausgabefensters löscht. Wenn Sie entweder den Befehl **cls** oder den Befehl **clear** an einer Eingabeaufforderung eingeben, interpretiert Windows PowerShell, dass dies ein Alias für die **Clear-Host**-Funktion ist, und führt die **Clear-Host**-Funktion aus.
@@ -46,14 +46,14 @@ Alias           cls                             Clear-Host
 
 Damit Beispiele besser lesbar sind, wird es im Windows PowerShell-Benutzerhandbuch grundsätzlich vermieden, Aliase zu verwenden. Es kann jedoch hilfreich sein, dass Sie frühzeitig mehr über Aliase wissen, wenn Sie mit beliebigen Ausschnitten von Windows PowerShell-Code aus einer anderen Quelle arbeiten oder eigene Aliase definieren möchten. Im weiteren Verlauf dieses Abschnitts werden Standardaliase erläutert und wird gezeigt, wie Sie eigene Aliase definieren.
 
-### Interpretieren von Standardaliasen
+### <a name="interpreting-standard-aliases"></a>Interpretieren von Standardaliasen
 Im Gegensatz zu den oben beschriebenen Aliasen, die zur Namenskompatibilität mit anderen Schnittstellen entwickelt wurden, sind die in Windows PowerShell integrierten Aliase grundsätzlich als Abkürzungen vorgesehen. Diese kürzeren Namen können schnell eingegeben werden, lassen sich jedoch unmöglich lesen, wenn Sie nicht wissen, worauf sie verweisen.
 
 In Windows PowerShell wird versucht, einen Kompromiss zwischen Klarheit und Knappheit zu finden, indem ein Satz von Standardaliasen bereitgestellt wird, die auf Kurzschriftnamen für allgemeine Verben und Substantive basieren. Dies ermöglicht einen Kernsatz von Aliasen für allgemeine Cmdlets, die lesbar sind, wenn Sie die Kurzschriftnamen wissen. Beispielsweise sind in Standardaliasen das Verb **Get** mit **g**, das Verb **Set** mit **s**, das Substantiv **Item** mit **i**, das Substantiv **Location** mit **l** und das Substantiv Command mit **cm** abgekürzt.
 
 Es folgen kurze Beispiel, um zu veranschaulichen, wie dies funktioniert. Der Standardalias für „Get-Item“ ergibt sich aus der Kombination von **g** für Get und **i** für Item: **gi**. Der Standardalias für „Set-Item“ ergibt sich aus der Kombination von **s** für Set und **i** für Item: **si**. Der Standardalias für „Get-Location“ ergibt sich aus der Kombination von **g** für Get und **l** für Location: **gl**. Der Standardalias für „Set-Location“ ergibt sich aus der Kombination von **s** für Set und **l** für Location: **l**. Der Standardalias für „Get-Command“ ergibt sich aus der Kombination von **g** für Get und **cm** für Command: **gcm**. Es gibt kein „Set-Command“-Cmdlet, aber würde es das geben, können Sie erraten, dass sich der Standardalias aus **s** für Set und **cm** für Command ergeben würde: **scm**. Darüber hinaus könnten Personen, die mit Windows PowerShell-Aliasing vertraut sind und auf **scm** stoßen, erraten, dass sich der Alias auf „Set-Command“ bezieht.
 
-### Erstellen neue Aliase
+### <a name="creating-new-aliases"></a>Erstellen neue Aliase
 Mit dem Cmdlet „Set-Alias“ Sie können Sie Ihre eigenen Aliase erstellen. Beispielsweise werden in den folgenden Anweisungen die Cmdlet-Standardaliase erstellt, die unter „Interpretieren von Standardaliasen“ erläutert sind:
 
 ```
@@ -66,12 +66,16 @@ Set-Alias -Name gcm -Value Get-Command
 
 Intern verwendet Windows PowerShell Befehle wie diese während des Starts, aber diese Aliase sind nicht änderbar. Wenn Sie versuchen, einen dieser Befehle tatsächlich auszuführen, erhalten Sie einen Fehler, in dem erläutert wird, dass der Alias nicht geändert werden kann. Beispiel:
 
-<pre>PS> Set-Alias -Name gi -Value Get-Item Set-Alias: Der Alias kann nicht geschrieben werden, da der Alias „gi“ schreibgeschützt oder konstant ist und daher nicht geschrieben werden kann.
-At line:1 char:10 + Set-Alias  <<<< -Name gi -Value Get-Item</pre>
+```
+PS> Set-Alias -Name gi -Value Get-Item
+Set-Alias : Alias is not writeable because alias gi is read-only or constant and cannot be written to.
+At line:1 char:10
++ Set-Alias  <<<< -Name gi -Value Get-Item
+```
 
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Nov16_HO1-->
 
 

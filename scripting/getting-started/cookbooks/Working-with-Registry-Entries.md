@@ -14,10 +14,10 @@ ms.openlocfilehash: cdc7f45c9fa8a6bf748a52b460a1ac190d283971
 
 ---
 
-# Arbeiten mit Registrierungseinträge
+# <a name="working-with-registry-entries"></a>Arbeiten mit Registrierungseinträge
 Da Registrierungseinträge Eigenschaften von Schlüsseln sind und daher nicht direkt gesucht werden können, muss für die Arbeit mit diesen ein etwas anderer Ansatz gewählt werden.
 
-### Auflisten von Registrierungseinträgen
+### <a name="listing-registry-entries"></a>Auflisten von Registrierungseinträgen
 Es gibt viele verschiedene Möglichkeiten zum Untersuchen von Registrierungseinträgen. Am einfachsten ist es, die Eigenschaftennamen mit einem Schlüssel zu verknüpfen. Um beispielsweise die Namen der Einträge im Registrierungsschlüssel **HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion** anzuzeigen, verwenden Sie **Get-Item**. Registrierungsschlüssel verfügen über eine Eigenschaft mit dem generischen Namen „Property“, die eine Liste der Registrierungseinträge im Schlüssel ist. Der folgende Befehl wählt die Eigenschaft „Property“ aus und erweitert die Elemente so, dass sie in einer Liste angezeigt werden:
 
 ```
@@ -80,7 +80,7 @@ ProgramFilesDir     : C:\Program Files
 
 Die Pfaderweiterung funktioniert in derselben Weise wie innerhalb des Dateisystem. Von diesem Speicherort aus können Sie die Auflistung **ItemProperty** für **HKLM:\\SOFTWARE\\Microsoft\\Windows\\Help** abrufen, indem Sie **Get-ItemProperty -Path ..\\Help** verwenden.
 
-### Abrufen eines einzelnen Registrierungseintrags
+### <a name="getting-a-single-registry-entry"></a>Abrufen eines einzelnen Registrierungseintrags
 Wenn Sie einen bestimmten Eintrag in einem Registrierungsschlüssel abrufen möchten, stehen verschiedene Möglichkeiten zur Verfügung. In diesem Beispiel wird der Wert von **DevicePath** in **HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion** abgerufen.
 
 Verwenden Sie mit **Get-ItemProperty** den Parameter **Path**, um den Namen des Schlüssels anzugeben, und den Parameter **Name**, um den Namen des Eintrags **DevicePath** anzugeben.
@@ -121,7 +121,7 @@ PS> (New-Object -ComObject WScript.Shell).RegRead("HKLM\SOFTWARE\Microsoft\Windo
 %SystemRoot%\inf
 ```
 
-### Erstellen neuer Registrierungseinträge
+### <a name="creating-new-registry-entries"></a>Erstellen neuer Registrierungseinträge
 Um einen neuen Eintrag namens „PowerShellPath“ zum Schlüssel **CurrentVersion** hinzuzufügen, verwenden Sie **New-ItemProperty** mit dem Pfad zum Schüssel, dem Eintragsnamen und dem Wert des Eintrags. In diesem Beispiel wird der Wert der Windows PowerShell-Variablen **$PSHome** verwendet, in der der Pfad zum Installationsverzeichnis für Windows PowerShell gespeichert wird.
 
 Sie können dem Schlüssel mit Hilfe des folgenden Befehls den neuen Eintrag hinzufügen, und der Befehl gibt auch Informationen zu dem neuen Eintrag zurück:
@@ -159,7 +159,7 @@ New-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion, HKCU:\SO
 
 Sie können auch einen bereits vorhandenen Registrierungseintragswert überschreiben, indem Sie den Parameter **Force** an einen beliebigen **New-ItemProperty**-Befehl anfügen.
 
-### Umbenennen von Registrierungseinträgen
+### <a name="renaming-registry-entries"></a>Umbenennen von Registrierungseinträgen
 Um den Eintrag **PowerShellPath** in „PSHome“ umzubenennen, verwenden Sie **Rename-ItemProperty**:
 
 ```
@@ -172,7 +172,7 @@ Um den umbenannten Wert anzuzeigen, fügen Sie dem Befehl den Parameter **PassTh
 Rename-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath -NewName PSHome -passthru
 ```
 
-### Löschen von Registrierungseinträgen
+### <a name="deleting-registry-entries"></a>Löschen von Registrierungseinträgen
 Um die Registrierungseinträge „PSHome“ und „PowerShellPath“ zu löschen, verwenden Sie **Remove-ItemProperty**:
 
 ```
@@ -183,6 +183,6 @@ Remove-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name 
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Nov16_HO1-->
 
 
