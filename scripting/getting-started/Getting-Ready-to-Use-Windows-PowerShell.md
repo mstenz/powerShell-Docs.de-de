@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 6dc7052d-cc5a-4220-950f-98f963a2b587
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 52d55ff10a9118bea2a34a53452fd252d1e17580
+ms.sourcegitcommit: 416d21d2a2fa3d837eba19b1023e4045a124e23c
+ms.openlocfilehash: 9229df48b00c125e04d0f97536697495d0ca01ed
 
 ---
 
@@ -28,12 +28,12 @@ Wenn Sie die Windows PowerShell installieren und ausführen, sollten Sie die fol
     HINWEIS: Ist Remoting auf einem Computer unter Windows PowerShell 2.0 aktiviert, ist es auch nach der Installation von Windows Management Framework 3.0 weiterhin aktiviert. Allerdings müssen Sie Remoting unter Windows Server 2008 (nicht Windows Server 2008 R2) nach der Installation von Windows Management Framework 3.0 erneut aktivieren.
 
 ## Weitere Informationen
-[Installieren von Windows PowerShell](../setup/Installing-Windows-PowerShell.md)
-[Starten von Windows PowerShell [ps]](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
+- [Installieren von Windows PowerShell](../setup/Installing-Windows-PowerShell.md)
+- [Starten von Windows PowerShell [ps]](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
 
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO3-->
 
 
