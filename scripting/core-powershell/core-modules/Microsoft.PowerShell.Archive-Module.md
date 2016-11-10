@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 71a727b5-49a5-47a9-8034-161c86cf042b
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 249a0ece77a11fd9aa54a6ff4170e44f42b377c9
+ms.sourcegitcommit: 6c666e2e23cb74818e37293410dafc9033057733
+ms.openlocfilehash: 72c28d35486561482697bdecd3df8b8af5164f01
 
 ---
 
@@ -25,11 +25,11 @@ Dieser Abschnitt enthält die Hilfethemen für die Cmdlets, die zusammen mit dem
 |[Expand-Archive](http://technet.microsoft.com/library/dn841359.aspx)|Entpackt die Inhalte von Archiv- oder ZIP-Dateien am einem angegebenen Ort.|
 
 ## Weitere Informationen
-[Core-Module in Windows PowerShell](http://technet.microsoft.com/library/hh847741.aspx)
+- [Core-Module in Windows PowerShell](http://technet.microsoft.com/library/hh847741.aspx)
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Oct16_HO3-->
 
 

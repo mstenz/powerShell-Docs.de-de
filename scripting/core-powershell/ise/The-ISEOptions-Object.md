@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 75e2a76f-f3d1-490b-ad5d-e3829946aabb
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 1aee849dd8b89492a641560ed4ef163c3cb96da4
+ms.sourcegitcommit: 6c666e2e23cb74818e37293410dafc9033057733
+ms.openlocfilehash: 416f8f72df6f6fa4975f07f86fbe796d9221b0fd
 
 ---
 
@@ -629,12 +629,12 @@ $psISE.Options.Zoom = 200
 ```
 
 ## Weitere Informationen
- [Das Windows PowerShell ISE-Skriptobjektmodell](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
- [Referenz zum Windows PowerShell ISE-Objektmodell](Windows-PowerShell-ISE-Object-Model-Reference.md)
+- [Das Windows PowerShell ISE-Skriptobjektmodell](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [Referenz zum Windows PowerShell ISE-Objektmodell](Windows-PowerShell-ISE-Object-Model-Reference.md)
 
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO3-->
 
 
