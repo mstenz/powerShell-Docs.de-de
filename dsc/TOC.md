@@ -10,21 +10,23 @@
 ## [Schützen der MOF-Konfigurationsdatei](secureMOF.md)
 ## [Teilkonfigurationen](partialConfigs.md)
 ## [Schreiben von Hilfe für DSC-Konfigurationen](configHelp.md)
+## [Konfigurieren eines virtuellen Computers beim ersten Hochfahren mithilfe von DSC](bootstrapDsc.md)
+### [DSCAutomationHostEnabled (Registrierungsschlüssel)](DSCAutomationHostEnabled.md)
 
 # [Ressourcen](resources.md)
 ## [Integrierte Ressourcen](builtInResource.md)
-### [Ressource „Archive“](archiveResource.md)
-### [Ressource „Environment“](environmentResource.md)
-### [Ressource „File“](fileResource.md)
-### [Ressource „Group“](groupResource.md)
-### [Ressource „Log“](logResource.md)
-### [Ressource „Package“](packageResource.md)
-### [Ressource „Registry“](registryResource.md)
-### [Ressource „Script“](scriptResource.md)
-### [Ressource „Service“](serviceResource.md)
-### [Benutzerressource](userResource.md)
-### [Ressource „WindowsFeature“](windowsfeatureResource.md)
-### [Ressource „WindowsProcess“](windowsProcessResource.md)
+### [Archive-Ressource](archiveResource.md)
+### [Environment-Ressource](environmentResource.md)
+### [File-Ressource](fileResource.md)
+### [Group-Ressource](groupResource.md)
+### [Log-Ressource](logResource.md)
+### [Package-Ressource](packageResource.md)
+### [Registry-Ressource](registryResource.md)
+### [Script-Ressource](scriptResource.md)
+### [Service-Ressource](serviceResource.md)
+### [User-Ressource](userResource.md)
+### [WindowsFeature-Ressource](windowsfeatureResource.md)
+### [WindowsProcess-Ressource](windowsProcessResource.md)
 ## [Erstellen benutzerdefinierter Ressourcen](authoringResource.md) 
 ### [MOF-basierte benutzerdefinierte Ressourcen](authoringResourceMOF.md)
 #### [MOF-basierte Ressourcen in C#](authoringResourceMofCS.md)
@@ -43,26 +45,26 @@
 ## [Einrichten eines DSC-SMB-Pullservers](pullServerSMB.md)
 ## [Einrichten eines Pullclients](pullClient.md)
 ### [Einrichten eines Pullclients mithilfe von Konfigurationsnamen](pullClientConfigNames.md)
-### [Einrichten eines DSC-Pullclients mithilfe einer Konfigurations-ID](pullClientConfigID.md)
+### [Einrichten eines Pullclients mithilfe einer Konfigurations-ID](pullClientConfigID.md)
 ## [Verwenden eines DSC-Berichtsservers](reportServer.md)
 ## [Bewährte Methoden für Pullserver](secureServer.md)
 
 # [Problembehandlung bei DSC](troubleshooting.md)
 
-# [Verwenden von DSC auf Nano Server](nanoDsc.md)
+# [Verwenden von DSC unter Nano Server](nanoDsc.md)
 
 # DSC für Linux
 ## [Erste Schritte mit DSC für Linux](lnxGettingStarted.md)
 ## [Integrierte Ressourcen für Linux](lnxBuiltInResources.md)
-### [Ressource „nxArchive“](lnxArchiveResource.md)
-### [Ressource „nxEnvironment“](lnxEnvironmentResource.md)
-### [Ressource „nxFile“](lnxFileResource.md)
-### [Ressource „nxFileLine“](lnxFileLineResource.md)
-### [Ressource „nxGroup“](lnxGroupResource.md)
-### [Ressource „nxPackage“](lnxPackageResource.md)
-### [Ressource „nxService“](lnxServiceResource.md)
-### [Ressource „nxSshAuthorizedKeys“](lnxSshAuthorizedKeysResource.md)
-### [Resource „nxUser“](lnxUserResource.md)
+### [nxArchive Ressource](lnxArchiveResource.md)
+### [nxEnvironment-Ressource](lnxEnvironmentResource.md)
+### [nxFile-Ressource](lnxFileResource.md)
+### [nxFileLine-Ressource](lnxFileLineResource.md)
+### [nxGroup-Ressource](lnxGroupResource.md)
+### [nxPackage-Ressource](lnxPackageResource.md)
+### [nxService-Ressource](lnxServiceResource.md)
+### [nxSshAuthorizedKeys-Ressource](lnxSshAuthorizedKeysResource.md)
+### [nxUser-Ressource](lnxUserResource.md)
 
 # DSC MOF-Referenz
 ## [MSFT_DSCLocalConfigurationManager-Klasse](msft-dsclocalconfigurationmanager.md)
@@ -91,6 +93,6 @@
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Oct16_HO4-->
 
 
