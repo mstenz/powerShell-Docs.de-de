@@ -8,12 +8,12 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 0dc83a1b69f26a25874c819a2f3a027ed7966895
-ms.openlocfilehash: f0aed5bb627825b74fe4df29cbe2f0bc53f90c23
+ms.sourcegitcommit: be32b4acbfca788532e1b173809a7879ac4ecba0
+ms.openlocfilehash: 68a203ea1c445c3d0269c48ec92c02c407bcd5e1
 
 ---
 
-# Schützen der MOF-Datei
+# <a name="securing-the-mof-file"></a>Schützen der MOF-Datei
 
 >Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
@@ -21,7 +21,7 @@ DSC weist die Zielknoten an, welche Konfiguration sie aufweisen sollen, indem ei
 
 >**Hinweis:** In diesem Thema werden für die Verschlüsselung verwendete Zertifikate behandelt. Für die Verschlüsselung ist ein selbst signiertes Zertifikat ausreichend, da der private Schlüssel immer geheim ist und die Verschlüsselung die Vertrauenswürdigkeit des Dokuments nicht impliziert. Selbstsignierte Zertifikate sollten *nicht* zu Authentifizierungszwecken verwendet werden. Zum Zweck der Authentifizierung Sie sollten Sie ein Zertifikat von einer vertrauenswürdigen Zertifizierungsstelle verwenden.
 
-## Voraussetzungen
+## <a name="prerequisites"></a>Voraussetzungen
 
 Stellen Sie sicher, dass Folgendes zutrifft, um die Anmeldeinformationen sicher zu verschlüsseln, die zum Schutz einer DSC-Konfiguration dienen:
 
@@ -30,7 +30,7 @@ Stellen Sie sicher, dass Folgendes zutrifft, um die Anmeldeinformationen sicher 
 * **Jeder Zielknoten hat ein verschlüsselungsfähiges Zertifikat, das in seinem persönlichen Speicher gespeichert ist**. In Windows PowerShell ist der Pfad zum Speicher „Cert: \LocalMachine\My“. In den Beispielen in diesem Thema verwenden Sie die Vorlage „Arbeitsstationsauthentifizierung“, die Sie (zusammen mit anderen Zertifikatvorlagen) unter [Standardzertifikatvorlagen](https://technet.microsoft.com/library/cc740061(v=WS.10).aspx) finden.
 * Wenn Sie diese Konfiguration auf einem anderen Computer als dem Zielknoten ausführen, **exportieren Sie den öffentlichen Schlüssel des Zertifikats**, und importieren Sie ihn anschließend auf den Computer, auf dem Sie die Konfiguration ausführen. Stellen Sie sicher, dass Sie nur den **öffentlichen** Schlüssel exportieren. Halten Sie den privaten Schlüssel geschützt.
 
-## Allgemeiner Prozess
+## <a name="overall-process"></a>Allgemeiner Prozess
 
  1. Richten Sie die Zertifikate, Schlüssel und Fingerabdrücke ein, und stellen Sie sicher, dass jeder Zielknoten über Kopien des Zertifikats verfügt, und dass sich der öffentliche Schlüssel und Fingerabdruck auf dem Konfigurationscomputer befinden.
  2. Erstellen Sie einen „Configuration“-Datenblock, der den Pfad und Fingerabdruck des öffentlichen Schlüssels enthält.
@@ -39,7 +39,7 @@ Stellen Sie sicher, dass Folgendes zutrifft, um die Anmeldeinformationen sicher 
 
 ![Diagramm1](images/CredentialEncryptionDiagram1.png)
 
-## Zertifikatanforderungen
+## <a name="certificate-requirements"></a>Zertifikatanforderungen
 
 Zum Aktivieren der Verschlüsselung der Anmeldeinformationen muss auf dem _Zielknoten_ ein Zertifikat für öffentliche Schlüssel verfügbar sein, dem der zum Erstellen der DSC-Konfiguration verwendete Computer **vertraut**.
 Dieses Zertifikat für öffentliche Schlüssel muss bestimmte Anforderungen erfüllen, damit es für die Verschlüsselung der DSC-Anmeldeinformationen verwendet werden kann:
@@ -56,7 +56,7 @@ Dieses Zertifikat für öffentliche Schlüssel muss bestimmte Anforderungen erf�
   
 Alle vorhandenen Zertifikate auf dem _Zielknoten_, die diese Kriterien erfüllen, können zum Absichern von DSC-Anmeldeinformationen verwendet werden.
 
-## Erstellen von Zertifikaten
+## <a name="certificate-creation"></a>Erstellen von Zertifikaten
 
 Es gibt zwei Ansätze, die Sie ergreifen können, um das erforderliche Verschlüsselungszertifikat (Paar aus öffentlichem/privatem Schlüssel) zu erstellen und zu verwenden .
 
@@ -66,7 +66,7 @@ Es gibt zwei Ansätze, die Sie ergreifen können, um das erforderliche Verschlü
 Empfohlen wird Methode 1, weil der im MOF zum Entschlüsseln von Anmeldeinformationen verwendete private Schlüssel immer auf dem Zielknoten verbleibt.
 
 
-### Erstellen des Zertifikats auf dem Zielknoten
+### <a name="creating-the-certificate-on-the-target-node"></a>Erstellen des Zertifikats auf dem Zielknoten
 
 Der private Schlüssel muss geheim gehalten werden, weil er zum Entschlüsseln des MOF auf dem **Zielknoten** verwendet wird. Die einfachste Möglichkeit hierzu ist, das Zertifikat für private Schlüssel auf dem **Zielknoten** zu erstellen und das **Zertifikat für öffentliche Schlüssel** auf den Computer zu kopieren, der zum Erstellen der DSC-Konfiguration in einer MOF-Datei verwendet wird.
 Im folgenden Beispiel
@@ -74,7 +74,7 @@ Im folgenden Beispiel
  2. das Zertifikat für öffentliche Schlüssel auf den **Zielknoten** exportiert.
  3. das Zertifikat für öffentliche Schlüssel in den **my**-Zertifikatspeicher auf dem **Erstellungsknoten** importiert.
 
-#### Auf dem Zielknoten: Erstellen und Exportieren des Zertifikats
+#### <a name="on-the-target-node-create-and-export-the-certificate"></a>Auf dem Zielknoten: Erstellen und Exportieren des Zertifikats
 >Erstellungsknoten: Windows Server 2016 und Windows 10
 
 ```powershell
@@ -119,13 +119,13 @@ $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 ```
 Einmal exportiert, müsste ```DscPublicKey.cer``` auf den **Erstellungsknoten** kopiert werden.
 
-#### Auf dem Erstellungsknoten: Importieren des öffentlichen Schlüssels des Zertifikats
+#### <a name="on-the-authoring-node-import-the-certs-public-key"></a>Auf dem Erstellungsknoten: Importieren des öffentlichen Schlüssels des Zertifikats
 ```powershell
 # Import to the my store
 Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\My
 ```
 
-### Erstellen des Zertifikats auf dem Erstellungsknoten
+### <a name="creating-the-certificate-on-the-authoring-node"></a>Erstellen des Zertifikats auf dem Erstellungsknoten
 Alternativ kann das Verschlüsselungszertifikat auf dem **Erstellungsknoten** erstellt, mit dem **privaten Schlüssel** als PFX-Datei exportiert und dann auf dem **Zielknoten** importiert werden.
 Dies ist die aktuelle Methode zur Implementierung der Verschlüsselung von DSC-Anmeldeinformationen unter _Nano Server_.
 Obwohl die PFX-Datei mit einem Kennwort geschützt ist, sollte sie während der Übertragung gesichert werden.
@@ -136,7 +136,7 @@ Im folgenden Beispiel
  4. wird das Zertifikat für den privaten Schlüssel in den Stammzertifikatspeicher auf dem **Zielknoten** importiert.
    - muss es dem Stammspeicher hinzugefügt werden, damit ihm der **Zielknoten** vertraut.
 
-#### Auf dem Erstellungsknoten: Erstellen und Exportieren des Zertifikats
+#### <a name="on-the-authoring-node-create-and-export-the-certificate"></a>Auf dem Erstellungsknoten: Erstellen und Exportieren des Zertifikats
 >Zielknoten: Windows Server 2016 und Windows 10
 
 ```powershell
@@ -170,7 +170,6 @@ New-SelfsignedCertificateEx `
     -FriendlyName 'DSC Credential Encryption certificate' `
     -Exportable `
     -StoreLocation 'LocalMachine' `
-    -StoreName 'My' `
     -KeyLength 2048 `
     -ProviderName 'Microsoft Enhanced Cryptographic Provider v1.0' `
     -AlgorithmName 'RSA' `
@@ -190,14 +189,14 @@ $cert | Remove-Item -Force
 Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\My
 ```
 
-#### Auf dem Zielknoten: Importieren des privaten Schlüssels des Zertifikats als vertrauenswürdiger Stamm
+#### <a name="on-the-target-node-import-the-certs-private-key-as-a-trusted-root"></a>Auf dem Zielknoten: Importieren des privaten Schlüssels des Zertifikats als vertrauenswürdiger Stamm
 ```powershell
 # Import to the root store so that it is trusted
 $mypwd = ConvertTo-SecureString -String "YOUR_PFX_PASSWD" -Force -AsPlainText
 Import-PfxCertificate -FilePath "$env:temp\DscPrivateKey.pfx" -CertStoreLocation Cert:\LocalMachine\Root -Password $mypwd > $null
 ```
 
-## Konfigurationsdaten
+## <a name="configuration-data"></a>Konfigurationsdaten
 
 Der „Configuration“-Datenblock definiert die betroffenen Zielknoten, ob die Anmeldeinformationen verschlüsselt werden oder nicht, die Verschlüsselungsmethode und andere Informationen. Weitere Informationen zum „Configuration“-Datenblock finden Sie unter [Trennen von Konfigurations- und Umgebungsdaten](configData.md).
 
@@ -231,7 +230,7 @@ $ConfigData= @{
 ```
 
 
-## Konfigurationsskript
+## <a name="configuration-script"></a>Konfigurationsskript
 
 Verwenden Sie im Skript selbst den `PsCredential`-Parameter, um sicherzustellen, dass die Anmeldeinformationen so kurz wie möglich gespeichert werden. Wenn Sie das bereitgestellte Beispiel ausführen, werden Sie von DSC zum Eingeben von Anmeldeinformationen und anschließendem Verschlüsseln der MOF-Datei mithilfe der Zertifikatdatei aufgefordert, die dem Zielknoten im „Configuration“-Datenblock zugeordnet ist. Bei diesem Codebeispiel wird eine Datei aus einer geschützten Freigabe zu einem Benutzer kopiert.
 
@@ -257,7 +256,7 @@ configuration CredentialEncryptionExample
 }
 ```
 
-## Einrichten der Entschlüsselung
+## <a name="setting-up-decryption"></a>Einrichten der Entschlüsselung
 
 Damit [`Start-DscConfiguration`](https://technet.microsoft.com/en-us/library/dn521623.aspx) funktionieren kann, müssen Sie den lokalen Konfigurations-Manager auf allen Zielknoten informieren, welches Zertifikat zum Entschlüsseln der Anmeldeinformationen verwendet werden soll. Die „CertificateID“-Ressource wird zum Überprüfen des Fingerabdrucks des Zertifikats verwendet. Diese Beispielfunktion findet das entsprechende lokale Zertifikat (Sie müssen ggf. eine Anpassung vornehmen, damit genau das gewünschte Zertifikat gefunden wird):
 
@@ -304,7 +303,7 @@ configuration CredentialEncryptionExample
 }
 ```
 
-## Ausführen der Konfiguration
+## <a name="running-the-configuration"></a>Ausführen der Konfiguration
 
 An dieser Stellen können Sie die Konfiguration ausführen, woraufhin zwei Dateien ausgegeben werden:
 
@@ -329,7 +328,7 @@ Die DSC-Konfiguration kann auch unter Verwendung eines DSC-Pullservers, sofern v
 
 Weitere Informationen zum Anwenden von DSC-Konfigurationen unter Verwendung eines DSC-Pullservers finden Sie unter [Einrichten eines DSC-Pullclients](pullClient.md).
 
-## Beispiel für das Modul zum Verschlüsseln von Anmeldeinformationen
+## <a name="credential-encryption-module-example"></a>Beispiel für das Modul zum Verschlüsseln von Anmeldeinformationen
 
 Es folgt ein vollständiges Beispiel, das alle diese Schritte enthält, sowie ein Hilfs-Cmdlet zum Exportieren und Kopieren der öffentlichen Schlüssel:
 
@@ -450,6 +449,6 @@ Start-CredentialEncryptionExample
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 
