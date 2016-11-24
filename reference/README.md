@@ -14,7 +14,7 @@ ms.openlocfilehash: edafde9188cad3b21d0cd2b30cfaaf1bede9b195
 
 ---
 
-#  <a name="powershell-reference"></a>PowerShell-Referenz
+#  PowerShell-Referenz
 
 Das Referenzmaterial ist nach Releaseversionen gruppiert.
 
@@ -50,6 +50,6 @@ Im Laufe der Zeit erschienen Namespaces als:
 
 
 
-<!--HONumber=Nov16_HO3-->
+<!--HONumber=Nov16_HO4-->
 
 
