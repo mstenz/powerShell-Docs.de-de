@@ -14,12 +14,12 @@ ms.openlocfilehash: 410cd4503883ea2cc02936044d7357b9cb029274
 
 ---
 
-# Das ISESnippetCollection-Objekt
+# <a name="the-isesnippetcollection-object"></a>Das ISESnippetCollection-Objekt
   Das **ISESnippetCollection**-Objekt ist eine Sammlung von **ISESnippet**-Objekten. Die einem **PowerShellTab**-Objekt zugeordnete Dateisammlung ist ein Member dieser Klasse. Ein Beispiel ist die **$psISE.CurrentPowerShellTab.Files**-Sammlung.
 
-## Methoden
+## <a name="methods"></a>Methoden
 
-### Load\( FilePathName \)
+### <a name="load-filepathname-"></a>Load\( FilePathName \)
   In Windows PowerShell ISE 3.0 und höher unterstützt, in früheren Versionen nicht enthalten. 
 
  Lädt eine .snippets.ps1xml-Datei mit benutzerdefinierten Codeausschnitten. Die einfachste Möglichkeit zum Erstellen von Codeausschnitten ist das New-IseSnippet-Cmdlet, das sie automatisch im Profilordner speichert, sodass sie bei jedem Start von Windows PowerShell ISE geladen werden.
@@ -32,7 +32,7 @@ $SnipFile = Join-Path ( Split-Path $profile) “Snippets\MySnips.snippets.ps1xml
 
 ```
 
-## Weitere Informationen
+## <a name="see-also"></a>Weitere Informationen
 - [Das ISESnippet-Objekt](The-ISESnippetObject.md) 
 - [Das Windows PowerShell ISE-Skriptobjektmodell](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
 - [Referenz zum Windows PowerShell ISE-Objektmodell](Windows-PowerShell-ISE-Object-Model-Reference.md) 
@@ -42,6 +42,6 @@ $SnipFile = Join-Path ( Split-Path $profile) “Snippets\MySnips.snippets.ps1xml
 
 
 
-<!--HONumber=Oct16_HO3-->
+<!--HONumber=Nov16_HO4-->
 
 

@@ -14,12 +14,12 @@ ms.openlocfilehash: e4d830fa49157366fb20851f01b34d433b296534
 
 ---
 
-# Das ISEFile-Objekt
+# <a name="the-isefile-object"></a>Das ISEFile-Objekt
   Ein **ISEFile**-Objekt stellt eine Datei in Windows-PowerShell® Integrated Scripting Environment (ISE) dar Es ist eine Instanz der Microsoft.PowerShell.Host.ISE.ISEFile-Klasse. In diesem Thema werden die Elementmethoden und -eigenschaften aufgeführt. **$psISE.CurrentFile** und die Dateien in der DateiSammlung auf einer PowerShell-Registerkarte sind Instanzen der Microsoft.PowerShell.Host.ISE.ISEFile-Klasse.
 
-## Methoden
+## <a name="methods"></a>Methoden
 
-###  <a name="save-override"></a> Save\( \[saveEncoding\] \)
+###  <a name="a-namesave-overridea-save-saveencoding-"></a><a name="save-override"></a> Save\( \[saveEncoding\] \)
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Speichert die Datei auf dem Datenträger.
@@ -43,7 +43,7 @@ $myfile.Encoding
 
 ```
 
-###  <a name="saveas"></a> SaveAs\(Dateiname, \[saveEncoding\]\)
+###  <a name="a-namesaveasa-saveasfilename-saveencoding"></a><a name="saveas"></a> SaveAs\(Dateiname, \[saveEncoding\]\)
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Speichert die Datei mit dem angegebenen Namen und der angegebenen Codierung.
@@ -69,9 +69,9 @@ $psIse.CurrentFile.SaveAs( $fullPath, [System.Text.Encoding]::UTF8 )
 
 ```
 
-## Eigenschaften
+## <a name="properties"></a>Eigenschaften
 
-###  <a name="Displayname"></a> DisplayName
+###  <a name="a-namedisplaynamea-displayname"></a><a name="Displayname"></a> DisplayName
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Die schreibgeschützte Eigenschaft, die die Zeichenfolge mit dem Anzeigenamen dieser Datei abruft. Der Name wird auf der Registerkarte **Datei** oben im Editor angezeigt. Ein Sternchen \(\*\) am Ende des Namens zeigt an, dass die Datei nicht gespeicherte Änderungen enthält.
@@ -82,7 +82,7 @@ $psIse.CurrentFile.DisplayName
 
 ```
 
-###  <a name="Editor"></a> Editor
+###  <a name="a-nameeditora-editor"></a><a name="Editor"></a> Editor
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Die schreibgeschützte Eigenschaft, die das für die angegebene Datei verwendete [Editor-Objekt](The-ISEEditor-Object.md) abruft.
@@ -93,7 +93,7 @@ $psIse.CurrentFile.Editor.Text
 
 ```
 
-###  <a name="Encoding"></a> Codierung
+###  <a name="a-nameencodinga-encoding"></a><a name="Encoding"></a> Encoding
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Die schreibgeschützte Eigenschaft, die die ursprüngliche Dateicodierung abruft. Dies ist ein **System.Text.Encoding**-Objekt.
@@ -104,7 +104,7 @@ $psIse.CurrentFile.Encoding
 
 ```
 
-###  <a name="FullPath"></a> FullPath
+###  <a name="a-namefullpatha-fullpath"></a><a name="FullPath"></a> FullPath
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Die schreibgeschützte Eigenschaft, die die Zeichenfolge abruft, die den vollständigen Pfad der geöffneten Datei angibt.
@@ -115,7 +115,7 @@ $psIse.CurrentFile.FullPath
 
 ```
 
-###  <a name="IsSaved"></a> IsSaved
+###  <a name="a-nameissaveda-issaved"></a><a name="IsSaved"></a> IsSaved
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Die schreibgeschützte boolesche Eigenschaft, die **$true** zurückgibt, wenn die Datei nach der letzten Änderung gespeichert wurde.
@@ -127,7 +127,7 @@ $myfile.IsSaved
 
 ```
 
-###  <a name="IsUntitled"></a> IsUntitled
+###  <a name="a-nameisuntitleda-isuntitled"></a><a name="IsUntitled"></a> IsUntitled
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Die schreibgeschützte Eigenschaft, die **$true** zurückgibt, wenn für die Datei nie ein Titel festgelegt wurde.
@@ -140,7 +140,7 @@ $psISE.CurrentFile.IsUntitled
 
 ```
 
-## Weitere Informationen
+## <a name="see-also"></a>Weitere Informationen
 - [Das ISEFileCollection-Objekt](The-ISEFileCollection-Object.md) 
 - [Das Windows PowerShell ISE-Skriptobjektmodell](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
 - [Referenz zum Windows PowerShell ISE-Objektmodell](Windows-PowerShell-ISE-Object-Model-Reference.md) 
@@ -150,6 +150,6 @@ $psISE.CurrentFile.IsUntitled
 
 
 
-<!--HONumber=Oct16_HO3-->
+<!--HONumber=Nov16_HO4-->
 
 

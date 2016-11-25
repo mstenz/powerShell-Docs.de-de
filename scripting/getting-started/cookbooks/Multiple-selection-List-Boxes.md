@@ -14,10 +14,10 @@ ms.openlocfilehash: 03a9bbfb14c4587d794db2eaadf60cc7a4d4dcdc
 
 ---
 
-# Listenfelder für Mehrfachauswahl
+# <a name="multiple-selection-list-boxes"></a>Listenfelder für Mehrfachauswahl
 Verwenden Sie Windows PowerShell 3.0 und höhere Versionen, um ein Listenfeld-Steuerelement für die Mehrfachauswahl in einem benutzerdefinierten Windows-Formular zu erstellen.
 
-## Erstellen von Listenfeld-Steuerelementen, die Mehrfachauswahl unterstützen
+## <a name="create-list-box-controls-that-allow-multiple-selections"></a>Erstellen von Listenfeld-Steuerelementen, die Mehrfachauswahl unterstützen
 Kopieren und fügen Sie Folgendes in Windows PowerShell ISE ein, und speichern Sie es als Windows PowerShell-Skript (.ps1).
 
 ```
@@ -86,7 +86,7 @@ Nachdem Sie eine Instanz der Formularklasse erstellt haben, ordnen Sie drei Eige
 
 -   **Text.** Dies wird der Titel des Fensters.
 
--   **Größe.** Dies ist die Größe des Formulars, in Pixeln. Das vorhergehende Skript erstellt ein Formular, das 300 Pixel breit und 200 Pixel hoch ist.
+-   **Size.** Dies ist die Größe des Formulars, in Pixeln. Das vorhergehende Skript erstellt ein Formular, das 300 Pixel breit und 200 Pixel hoch ist.
 
 -   **StartingPosition.** Für diese optionale Eigenschaft ist im Skript oben **CenterScreen** festgelegt. Wenn Sie diese Eigenschaft nicht hinzufügen, wählt Windows eine Stelle aus, wenn das Formular geöffnet wird. Durch Festlegen der **StartingPosition** auf **CenterScreen** wird das Formular automatisch bei jedem Laden in der Mitte des Bildschirms angezeigt.
 
@@ -184,14 +184,14 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-## Weitere Informationen
+## <a name="see-also"></a>Weitere Informationen
 - [Hey Scripting Guy: Warum funktionieren diese PowerShell GUI-Beispiele nicht?](http://go.microsoft.com/fwlink/?LinkId=506644)
 - [GitHub: Dave Wyatt's WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [Windows PowerShell Tip of the Week: Multi-Select List Boxes – And More! (Windows PowerShell-Tipp der Woche zum Thema Listenfelder mit Mehrfachauswahl)](http://technet.microsoft.com/library/ff730950.aspx)
+- [Windows PowerShell Tip of the Week: Multi-Select List Boxes – And More!](http://technet.microsoft.com/library/ff730950.aspx) (Windows PowerShell-Tipp der Woche zum Thema Listenfelder mit Mehrfachauswahl)
 
 
 
 
-<!--HONumber=Oct16_HO3-->
+<!--HONumber=Nov16_HO4-->
 
 

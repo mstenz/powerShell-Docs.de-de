@@ -14,12 +14,12 @@ ms.openlocfilehash: 86cb3485445fdb00c9b99a20694b9bf12a6e8f2c
 
 ---
 
-# Das ISEFileCollection-Objekt
+# <a name="the-isefilecollection-object"></a>Das ISEFileCollection-Objekt
   Das **ISEFileCollection**-Objekt ist eine Sammlung von **ISEFile**-Objekten. Ein Beispiel ist die $psISE.CurrentPowerShellTab.Files-Sammlung.
 
-## Methoden
+## <a name="methods"></a>Methoden
 
-### Add\( \[fullPath\] \)
+### <a name="add-fullpath-"></a>Add\( \[fullPath\] \)
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Erstellt eine neue unbenannte Datei, gibt diese zurück und fügt sie der Sammlung hinzu. Die **IsUntitled**-Eigenschaft der neu erstellten Datei ist **$true**.
@@ -35,7 +35,7 @@ $psISE.CurrentPowerShellTab.Files.Add("$pshome\Examples\profile.ps1")
 
 ```
 
-### Remove\( File, \[Force\] \)
+### <a name="remove-file-force-"></a>Remove\( File, \[Force\] \)
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Entfernt eine angegebene Datei aus der aktuellen PowerShell-Registerkarte.
@@ -55,7 +55,7 @@ $firstfile = $psISE.CurrentPowerShellTab.Files[0]
 $psISE.CurrentPowerShellTab.Files.Remove($firstfile, $true)
 ```
 
-### SetSelectedFile\( selectedFile \)
+### <a name="setselectedfile-selectedfile-"></a>SetSelectedFile\( selectedFile \)
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Wählt die Datei aus, die durch den **selectedFile**-Parameter angegeben wird.
@@ -70,7 +70,7 @@ $psISE.CurrentPowerShellTab.Files.SetSelectedFile($firstfile)
 
 ```
 
-## Weitere Informationen
+## <a name="see-also"></a>Weitere Informationen
 - [Das ISEFile-Objekt](The-ISEFile-Object.md) 
 - [Das Windows PowerShell ISE-Skriptobjektmodell](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
 - [Referenz zum Windows PowerShell ISE-Objektmodell](Windows-PowerShell-ISE-Object-Model-Reference.md) 
@@ -80,6 +80,6 @@ $psISE.CurrentPowerShellTab.Files.SetSelectedFile($firstfile)
 
 
 
-<!--HONumber=Oct16_HO3-->
+<!--HONumber=Nov16_HO4-->
 
 

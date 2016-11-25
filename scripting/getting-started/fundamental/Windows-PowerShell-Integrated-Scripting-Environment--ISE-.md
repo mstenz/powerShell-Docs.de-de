@@ -14,15 +14,15 @@ ms.openlocfilehash: 20718ebbfb38f847d460a33e3c69b5cb45b754c6
 
 ---
 
-# Windows PowerShell Integrated Scripting Environment (ISE)
+# <a name="windows-powershell-integrated-scripting-environment-ise"></a>Windows PowerShell Integrated Scripting Environment (ISE)
 Die Windows PowerShell Integrated Scripting Environment (ISE) ist einer von zwei Hosts des Moduls und der Sprache von Windows PowerShell. Sie ermöglicht Ihnen, Skripts auf eine Weise zu schreiben, auszuführen und zu testen, die in der Windows PowerShell-Konsole nicht verfügbar ist. Diese ISE bietet zusätzlich Syntaxfarben, Vervollständigung mit der TAB-TASTE, IntelliSense, visuelles Debuggen und kontextbezogene Hilfe.
 
 Die ISE ermöglicht das Ausführen von Befehlen in einem Konsolenbereich, unterstützt aber auch Bereiche, mit deren Hilfe Sie den Quellcode Ihres Skripts und andere Tools gleichzeitig anzeigen können, die in die ISE eingebunden werden können. Sie können sogar mehrere Skriptfenster gleichzeitig öffnen, was besonders hilfreich ist, wenn Sie ein Skript debuggen, das Funktionen nutzt, die in anderen Skripts oder Modulen definiert sind.
 
-## Neu
+## <a name="whats-new"></a>Neu
 Es folgen einige der Features, die der ISE in den neuesten Versionen von PowerShell hinzugefügt wurden.
 
-### In PowerShell 3.0 hinzugefügt (Windows Server 2012, Windows 8)
+### <a name="added-in-powershell-30-windows-server-2012-windows-8"></a>In PowerShell 3.0 hinzugefügt (Windows Server 2012, Windows 8)
 **IntelliSense** vervollständigt automatisch Ihre Befehle, indem während der Eingabe Menüs übereinstimmender Cmdlets, Parameter, Parameterwerte, Dateien oder Ordner angezeigt werden.
 
 **Codeausschnitte** sind kurze Abschnitte des Codes, die Sie in von Ihnen geschriebene Skripts einfügen können. Eine Sammlung nützlicher Codeausschnitte ist standardmäßig enthalten. Über das Cmdlet **New-Snippet** können Sie weitere hinzufügen.
@@ -55,21 +55,21 @@ Die **Liste „Zuletzt verwendet“** ist jetzt Teil des Menüs „Datei öffnen
 
 -   **Blockauswahl**. Sie können einen Textblock auswählen, indem Sie die ALT-TASTE gedrückt halten, während Sie den Text im Skriptbereich mit der Maus auswählen, oder **ALT+UMSCHALT+NACH-OBEN/NACH-UNTEN** verwenden.
 
-### In PowerShell 2.0 hinzugefügt (Windows Server 2008 R2, Windows 7)
+### <a name="added-in-powershell-20-windows-server-2008-r2-windows-7"></a>In PowerShell 2.0 hinzugefügt (Windows Server 2008 R2, Windows 7)
 Die ISE wurde mit PowerShell 2.0 eingeführt.
 
-## Anforderungen für die Ausführung der Windows PowerShell ISE
+## <a name="requirements-for-running-the-windows-powershell-ise"></a>Anforderungen für die Ausführung der Windows PowerShell ISE
 Die ISE ist auf allen Computern verfügbar, auf denen Windows PowerShell 2.0 oder höher ausgeführt werden kann. Alle Versionen von Windows und Windows Server enthalten eine Version von Windows PowerShell und der ISE. Durch die Installation von Windows Management Framework können Sie jedoch ein Upgrade auf die neueste verfügbare Version vornehmen. Führen Sie diese Suche durch, um die neueste verfügbare Version zu finden: [Downloads](http://www.microsoft.com/en-us/search/DownloadResults.aspx?q=%22windows%20management%20framework%22%20PowerShell&sortby=Relevancy~Descending). Beachten Sie, dass alle Einträge mit der Bezeichnung „Preview“ zu einer Vorabversion des Codes gehören und die Features nicht vollständig sind.
 
 > [!NOTE]
 > Da die Windows PowerShell ISE eine grafische Benutzeroberfläche erfordert, können Sie sie nicht mit der Server Core-Option von Windows Server ausführen.
 
-## Siehe auch
+## <a name="see-also"></a>Siehe auch
 - [Verwenden der Windows PowerShell Integrated Scripting Environment (ISE)](http://technet.microsoft.com/library/cc732148.aspx)
 
 
 
 
-<!--HONumber=Oct16_HO3-->
+<!--HONumber=Nov16_HO4-->
 
 

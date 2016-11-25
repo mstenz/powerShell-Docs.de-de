@@ -14,12 +14,12 @@ ms.openlocfilehash: 489c9492e8de213145b71a7963e180fe1a4ad5b6
 
 ---
 
-# Das ISEMenuItemCollection-Objekt
+# <a name="the-isemenuitemcollection-object"></a>Das ISEMenuItemCollection-Objekt
   Ein **ISEMenuItemCollection**-Objekt ist eine Sammlung von **ISEMenuItem**-Objekten. Es ist eine Instanz der Microsoft.PowerShell.Host.ISE.ISEMenuItemCollection-Klasse. Ein Beispiel ist das **$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus**-Objekt, das verwendet wird, um das Menü **Add-On** in Windows PowerShell® Integrated Scripting Environment (ISE) anzupassen.
 
-## Methode
+## <a name="method"></a>Methode
 
-### Add\(string DisplayName, System.Management.Automation.ScriptBlock Action, System.Windows.Input.KeyGesture Shortcut \)
+### <a name="addstring-displayname-systemmanagementautomationscriptblock-action-systemwindowsinputkeygesture-shortcut-"></a>Add\(string DisplayName, System.Management.Automation.ScriptBlock Action, System.Windows.Input.KeyGesture Shortcut \)
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Fügt der Sammlung ein Menüelement hinzu.
@@ -42,7 +42,7 @@ ms.openlocfilehash: 489c9492e8de213145b71a7963e180fe1a4ad5b6
 $menuAdded = $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add("_Process",{get-process},"Alt+P")
 ```
 
-### Löschen\(\)
+### <a name="clear"></a>Clear\(\)
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Entfernt alle Untermenüs des Menüelements.
@@ -53,7 +53,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Clear()
 
 ```
 
-## Weitere Informationen
+## <a name="see-also"></a>Weitere Informationen
 - [Das ISEMenuItem-Objekt](The-ISEMenuItem-Object.md) 
 - [Das Windows PowerShell ISE-Skriptobjektmodell](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
 - [Referenz zum Windows PowerShell ISE-Objektmodell](Windows-PowerShell-ISE-Object-Model-Reference.md) 
@@ -63,6 +63,6 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Clear()
 
 
 
-<!--HONumber=Oct16_HO3-->
+<!--HONumber=Nov16_HO4-->
 
 

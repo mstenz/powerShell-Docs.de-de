@@ -14,10 +14,10 @@ ms.openlocfilehash: 64f68d93821eff391189b02ef4a6bb78e9087289
 
 ---
 
-# Das Windows PowerShell ISE-Skriptobjektmodell
+# <a name="the-windows-powershell-ise-scripting-object-model"></a>Das Windows PowerShell ISE-Skriptobjektmodell
   Windows-PowerShell® Integrated Scripting Environment (ISE) stellt seine Funktionen über ein zugrunde liegendes Skriptobjektmodell bereit, mit dem die Benutzer Windows PowerShell-Skripts schreiben und hiermit verschiedene visuelle und funktionale Aspekte von Windows PowerShell ISE bearbeiten können. Skriptobjekte, ihre Eigenschaften und ihre Methoden werden speziell für diesen Zweck definiert.
 
-## Inhalt dieses Dokuments
+## <a name="in-this-document"></a>Inhalt dieses Dokuments
 
 -   [Zweck des Windows PowerShell ISE-Skriptobjektmodells](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 
@@ -27,13 +27,13 @@ ms.openlocfilehash: 64f68d93821eff391189b02ef4a6bb78e9087289
 
 -   [Andere nützliche Skriptobjekte](../../getting-started/cookbooks/Other-Useful-Scripting-Objects.md)
 
-## Weitere Informationen
+## <a name="see-also"></a>Weitere Informationen
 - [Windows PowerShell Integrated Scripting Environment &#40;ISE&#41;](../../getting-started/fundamental/Windows-PowerShell-Integrated-Scripting-Environment--ISE-.md)
 
   
 
 
 
-<!--HONumber=Oct16_HO3-->
+<!--HONumber=Nov16_HO4-->
 
 

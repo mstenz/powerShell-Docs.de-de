@@ -14,7 +14,7 @@ ms.openlocfilehash: c935d6f066aed1496069681723aa7bd72edbb8e3
 
 ---
 
-# Konzeptionelle Hilfethemen für Windows PowerShell Core
+# <a name="windows-powershell-core-about-topics"></a>Konzeptionelle Hilfethemen für Windows PowerShell Core
 Dieser Abschnitt enthält konzeptionelle Hilfethemen ("Info"), die für alle Windows PowerShell-Module gelten. Die Info-Themen für andere Module finden Sie unter den Hilfethemen für das Modul.
 
 |Thema|Beschreibung|
@@ -25,7 +25,7 @@ Dieser Abschnitt enthält konzeptionelle Hilfethemen ("Info"), die für alle Win
 |[about_Assignment_Operators [v4]](https://technet.microsoft.com/en-us/library/ac2e399d-9cdc-422c-8b44-7746d93d1db5)|Beschreibt die Operatoren, die Variablen Werte zuweisen.|
 |[about_Automatic_Variables [v4]](https://technet.microsoft.com/en-us/library/68bc622f-eb7e-4cf5-9c56-a289737efc99)|Beschreibt die automatischen Variablen, die Statusinformationen für Windows PowerShell speichern.|
 |[about_Break [v4]](https://technet.microsoft.com/en-us/library/fb810374-761e-46f2-8748-eac12557cf54)|Erläutert die Verwendung der **Break**-Anweisung, die die Anweisungen **Foreach**, **For**, **While**, **Do** und **Switch** sofort unterbricht.|
-|[Informationen über_Checkpoint-Workflow](https://technet.microsoft.com/en-us/library/3a309488-1e7a-4807-b83b-dedbeac3ee1c)|Beschreibt die Checkpoint-Workflow-Aktivität, die einen Prüfpunkt in einem Workflow nimmt.|
+|[about_Checkpoint-Workflow](https://technet.microsoft.com/en-us/library/3a309488-1e7a-4807-b83b-dedbeac3ee1c)|Beschreibt die Checkpoint-Workflow-Aktivität, die einen Prüfpunkt in einem Workflow nimmt.|
 |[about_Command_Precedence [v4]](https://technet.microsoft.com/en-us/library/fb14a05e-d461-432d-a253-e9371b54bd2e)|Beschreibt, wie Windows PowerShell bestimmt, welcher Befehl ausgeführt werden soll.|
 |[about_Command_Syntax [v4]](https://technet.microsoft.com/en-us/library/f39782e8-fe76-46ea-b8b5-b50bbee8da4b)|Erläutert das Befehlsformat in Windows PowerShell.|
 |[about_Comment_Based_Help [v4]](https://technet.microsoft.com/en-us/library/c270e198-6da2-4825-b6eb-35d5c8a5cf3d)|Erläutert das Schreiben von Kommentar-Hilfethemen für Funktionen und Skripts.|
@@ -54,7 +54,7 @@ Dieser Abschnitt enthält konzeptionelle Hilfethemen ("Info"), die für alle Win
 |[about_Hash_Tables [v4]](https://technet.microsoft.com/en-us/library/161a2a45-7a6b-44fb-b669-fb9ff0dbae3d)|Beschreibt das Erstellen, Verwenden und Sortieren von Hashtabellen in Windows PowerShell.|
 |[about_History [v4]](https://technet.microsoft.com/en-us/library/46fa1b2e-c079-4e94-a87e-511ee50b347a)|Erklärt, wie Befehle aus dem Befehlsverlauf abgerufen und ausgeführt werden.|
 |[about_If [v4]](https://technet.microsoft.com/en-us/library/acf971f7-d844-4160-b347-435178c8a6fa)|Beschreibt die **If**-Anweisung, die Bedingungen für eine Aktion festlegt.|
-|[Informationen über_InlineScript](https://technet.microsoft.com/en-us/library/f88ed5a9-02d6-4bf0-a031-61198e1e7291)|Beschreibt die InlineScript-Workflow-Aktivität.|
+|[about_InlineScript](https://technet.microsoft.com/en-us/library/f88ed5a9-02d6-4bf0-a031-61198e1e7291)|Beschreibt die InlineScript-Workflow-Aktivität.|
 |[about_Jobs [v4]](https://technet.microsoft.com/en-us/library/7362512a-8a4e-4575-b2ea-a740e5c4f002)|Beschreibt die Windows PowerShell-Hintergrundaufträge.|
 |[about_Job_Details [v4]](https://technet.microsoft.com/en-us/library/87511f90-984f-44d1-b869-8671b4181717)|Enthält ausführliche Informationen zu den Hintergrundaufträgen.|
 |[about_Join [v4]](https://technet.microsoft.com/en-us/library/57acaf72-6b7d-44d7-8aa1-c521b0152198)|Beschreibt den **Join**-Operator, der mehrere Zeichenfolgen zu einer einzelnen Zeichenfolge kombiniert.|
@@ -126,17 +126,17 @@ Dieser Abschnitt enthält konzeptionelle Hilfethemen ("Info"), die für alle Win
 |[about_Wildcards [v4]](https://technet.microsoft.com/en-us/library/9fe09a23-afce-4547-9e2f-c38090f77636)|Beschreibt die Verwendung des Platzhalterzeichens (\*) in Windows PowerShell.|
 |[about_Windows_PowerShell_5.0](https://technet.microsoft.com/en-us/library/6d56fa88-371e-40c9-b2de-64a2a0cd49da)|Beschreibt die neuen Funktionen und Änderungen in Windows PowerShell 4.0.|
 |[about_Windows_PowerShell_ISE [v3]](https://technet.microsoft.com/en-us/library/dfa54d47-60c6-4fff-8197-c747e8d411bb)|Beschreibt Windows PowerShell® Integrated Scripting Environment (ISE)|
-|[Informationen über_Workflows](https://technet.microsoft.com/en-us/library/f2897bdd-1b9d-4679-8b19-09840bd40a22)|Bietet eine kurze Einführung in das Windows PowerShell-Workflow-Feature.|
-|[Informationen über_WorkflowCommonParameters](https://technet.microsoft.com/en-us/library/119f968e-618e-439c-b76c-cdd17e6df27c)|Beschreibt die Parameter, die für alle Windows PowerShell-Workflowbefehle gültig sind.|
+|[about_Workflows](https://technet.microsoft.com/en-us/library/f2897bdd-1b9d-4679-8b19-09840bd40a22)|Bietet eine kurze Einführung in das Windows PowerShell-Workflow-Feature.|
+|[about_WorkflowCommonParameters](https://technet.microsoft.com/en-us/library/119f968e-618e-439c-b76c-cdd17e6df27c)|Beschreibt die Parameter, die für alle Windows PowerShell-Workflowbefehle gültig sind.|
 |[about_WMI](https://technet.microsoft.com/en-us/library/32da7221-c213-48ad-8466-fad82285e4e8)|Beschreibt die Windows-Verwaltungsinstrumentation (WMI), bei der es sich um die Microsoft-Implementierung des Industriestandards für Web-Based Enterprise Management (WBEM) handelt.|
 |[about_WMI_Cmdlets [v3]](https://technet.microsoft.com/en-us/library/9c56b172-3b25-47b2-b6e0-86db649b1c45)|Enthält Hintergrundinformationen über die Windows-Verwaltungsinstrumentation (Windows Management Instrumentation, WMI) und Windows PowerShell.|
 |[about_WQL](https://technet.microsoft.com/en-us/library/820b2d23-3473-46f5-a188-5910704c7905)|Beschreibt die WMI-Abfragesprache (WQL), die zum Abrufen von WMI-Objekten in Windows PowerShell verwendet werden kann.|
 |[about_WS-Management_Cmdlets [v3]](https://technet.microsoft.com/en-us/library/22738d36-4d49-472c-ae51-9365b9bbd7c2)|Beschreibt die Cmdlets im Modul Microsoft.WsMan.Management. Erläutert, wie diese zusammen verwenden werden, um die WS-Management-Funktionen zu verwalten, einschließlich des WSMan-Anbieterlaufwerks.|
 
-## Weitere Informationen
-- [Verwalten mit Windows PowerShell](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
+## <a name="see-also"></a>Weitere Informationen
+- [Skripting mit WindowsPowerShell](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
 - [Windows PowerShell Core](https://technet.microsoft.com/en-us/library/4b75f1e4-f327-48f3-92ab-bf5435094d41)
-- [Windows PowerShell 5.0](Windows-PowerShell-5.0.md)
+- [Windows PowerShell 5.0](Windows-PowerShell-5.0.md)
 - [about_Scheduled_Jobs](https://technet.microsoft.com/en-us/library/3b546629-703c-4939-b44f-52dd567bce92)
 - [about_WMI_Cmdlets [v3]](https://technet.microsoft.com/en-us/library/9c56b172-3b25-47b2-b6e0-86db649b1c45)
 - [about_WS-Management_Cmdlets](https://technet.microsoft.com/en-us/library/6ed3370a-ea10-45a5-9493-696aeace27ed)
@@ -145,6 +145,6 @@ Dieser Abschnitt enthält konzeptionelle Hilfethemen ("Info"), die für alle Win
 
 
 
-<!--HONumber=Oct16_HO3-->
+<!--HONumber=Nov16_HO4-->
 
 
