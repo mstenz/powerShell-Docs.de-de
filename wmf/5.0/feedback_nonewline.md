@@ -1,4 +1,4 @@
-# „NoNewLine“-Parameter
+# <a name="nonewline-parameter"></a>„NoNewLine“-Parameter
 **Out-File**, **Add-Content** und **Set-Content** haben nun den neuen Schalter **–NoNewline**, der einfach eine neue Zeile hinter der Ausgabe weglässt.
 ```PowerShell
 PS C:\> "This is " | Out-File -FilePath Example.txt -NoNewline
@@ -27,8 +27,3 @@ a single
 
 sentence.
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
-

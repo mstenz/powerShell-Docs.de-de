@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 8530caa8-3ed4-4c56-aed7-1295dd9ba199
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 88753c43124cfce3581af2259449be5f01579ae8
-
+ms.openlocfilehash: 99ca62261f8302673f886149a7715ce06efa16cb
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Sortieren von Objekten
+# <a name="sorting-objects"></a>Sortieren von Objekten
 Damit sich angezeigte Daten einfacher auswerten lassen, können sie mit dem Cmdlet **Sort-Object** geordnet werden. **Sort-Object** erhält den Namen von mindestens einer Eigenschaft, nach der sortiert werden soll, und gibt Daten zurück, die nach den Werten dieser Eigenschaften sortiert sind.
 
 Nehmen Sie das Problem des Auflistens von „Win32_SystemDriver“-Instanzen. Wenn Sie nach Staus (**State**) und dann nach **Name** sortieren möchten, geben Sie Folgendes ein:
@@ -54,10 +52,4 @@ wdmaud         Running    True Microsoft WINMM WDM Audio Compatibility Driver
 Wanarp         Running    True Remote Access IP ARP Driver
 ...
 ```
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

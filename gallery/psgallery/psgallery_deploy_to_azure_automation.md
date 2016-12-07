@@ -1,5 +1,19 @@
-
-Bereitstellen in Azure Automation
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: PowerShell, Cmdlet, Katalog
+ms.date: 2016-10-14
+contributor: manikb
+title: Bereitstellen in Azure Automation | MSDN
+ms.technology: powershell
+ms.openlocfilehash: 20b0dd53b5d10f36089a884a99209a575332a91a
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
+---
+<a name="deploy-to-azure-automation"></a>Bereitstellen in Azure Automation
 ===========================
 
 Mit der Schaltfläche „Deploy to Azure Automation“ (Bereitstellen in Azure Automation) auf der Seite mit den Elementdetails können Sie ein Element aus dem PowerShell-Katalog auf Azure Automation bereitstellen.
@@ -16,9 +30,4 @@ Wenn Sie ein Modul bereitstellen, wird es im Abschnitt „Module“ von Azure Au
 Sie können die Schaltfläche „Deploy to Azure Automation“ (Bereitstellen in Azure Automation) deaktivieren, indem Sie den Elementmetadaten das Tag „AzureAutomationNotSupported“ hinzufügen.
 
 Weitere Informationen zu Azure Automation finden Sie auf der [Azure Automation-Website](http://azure.microsoft.com/en-us/services/automation/).
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -1,4 +1,4 @@
-# Bedarfsgesteuerter PULL-Abruf von DSC-Konfigurationen
+# <a name="on-demand-pull-of-dsc-configurations"></a>Bedarfsgesteuerter PULL-Abruf von DSC-Konfigurationen
 
 Das neue Cmdlet „Update-DscConfiguration“ löst auf den Pullservern, die in der Metakonfiguration definiert sind, einen Pullvorgang aus. Das Verhalten wird häufig als „Jetzt per Pull abrufen“ bezeichnet. 
 
@@ -31,7 +31,3 @@ Update-DscConfiguration     -CimSession <CimSession[]>
                             [-Confirm] 
                             [<CommonParameters>]
 ```
-
-<!--HONumber=Aug16_HO3-->
-
-

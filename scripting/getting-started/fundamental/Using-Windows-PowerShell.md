@@ -8,18 +8,16 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: cf06f1e5-3945-47e4-98be-412f5a1f43fe
-translationtype: Human Translation
-ms.sourcegitcommit: 16608d8b97ec816d77ec7b8ac2438a4d64b55fba
-ms.openlocfilehash: 9563e58d2840c7cc2120b58b041660aaeee12830
-
+ms.openlocfilehash: 0e5ee17b9c08edbcd46649fa2000c043a9c95776
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Verwenden von Windows PowerShell
-Windows PowerShell® ist eine taskbasierte Befehlszeilenshell und Skriptsprache, die speziell für die Systemverwaltung entwickelt wurde. Windows PowerShell basiert auf .NET Framework und unterstützt IT-Experten und erfahrene Benutzer beim Steuern und Automatisieren der Verwaltung von Windows-Betriebssystemen sowie von Anwendungen, die unter Windows ausgeführt werden.
+# <a name="using-windows-powershell"></a>Verwenden von Windows PowerShell
+Windows PowerShell® ist eine taskbasierte Befehlszeilenshell und Skriptsprache, die speziell für die Systemverwaltung entwickelt wurde. Windows PowerShell basiert auf .NET Framework und unterstützt IT-Experten und erfahrene Benutzer beim Steuern und Automatisieren der Verwaltung von Windows-Betriebssystemen sowie von Anwendungen, die unter Windows ausgeführt werden.
 
 Mithilfe der Ressourcen in diesem Abschnitt können Sie sich mit Windows PowerShell, den in Windows PowerShell enthaltenen Features, dem grafischen Windows PowerShell-Editor und der Windows PowerShell Integrated Scripting Environment (ISE) vertraut machen.
 
-## Inhalte in diesem Abschnitt
+## <a name="whats-in-this-section"></a>Inhalte in diesem Abschnitt
 Anhand der Inhalte in diesem Abschnitt können Sie mehr über Windows PowerShell und die Verwendung von Windows PowerShell sowie die Neuerungen in Windows PowerShell in den aktuelleren Versionen erfahren.
 
 -   [Neuerungen in Windows PowerShell](../../whats-new/What-s-New-in-Windows-PowerShell-50.md) In diesem Thema werden die Änderungen in Windows PowerShell 3.0 und Windows PowerShell 4.0 beschrieben.
@@ -34,7 +32,7 @@ Anhand der Inhalte in diesem Abschnitt können Sie mehr über Windows PowerShell
 
 -   [Windows PowerShell-Glossar](../../Windows-PowerShell-Glossary.md). Informationen zu in Windows PowerShell häufig verwendeten Begriffen und dazugehörige Dokumentation.
 
-## Verwandte Technologien
+## <a name="related-technologies"></a>Verwandte Technologien
 Windows PowerShell ist Teil einer Familie verwandter Technologien zur Erstellung von Skripts, mit denen Sie die Remoteverwaltung von Windows-basierten Computern automatisieren können. Links zu weiteren Informationen über diese Technologien sind hier enthalten.
 
 -   [Windows PowerShell-Workflow](http://technet.microsoft.com/library/jj134242.aspx). Der erstmals in Windows PowerShell 3.0 eingeführte Windows PowerShell-Workflow bietet IT-Spezialisten und Entwicklern die Vorteile von [Windows Workflow Foundation](http://msdn.microsoft.com/library/ee342461.aspx) zusammen mit den Automatisierungsfunktionen und dem Komfort von Windows PowerShell.
@@ -49,7 +47,7 @@ Windows PowerShell ist Teil einer Familie verwandter Technologien zur Erstellung
 
 -   [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) umfasst Updates für Windows PowerShell, Windows PowerShell ISE, Windows PowerShell-Webdienste (Management OData-IIS-Erweiterung), Windows Remote Management (WinRM), Windows Management Infrastructure (WMI) und den Server-Manager-WMI-Anbieter. Windows Management Framework 3.0 ermöglicht es Ihnen, diese Technologien auf Computern zu installieren und zu verwenden, auf denen Windows® 7 SP1, Windows Server 2008 SP2 und Windows Server 2008 R2 SP1 ausgeführt werden.
 
-## Einstieg in Windows PowerShell
+## <a name="learning-windows-powershell"></a>Einstieg in Windows PowerShell
 Für den Einstieg in Windows PowerShell starten Sie mit den folgenden Ressourcen:
 
 -   [Microsoft Virtual Academy: Getting Started with PowerShell 3.0 Jump Start](https://mva.microsoft.com/en-us/training-courses/getting-started-with-powershell-3-0-jump-start-8276). Dieser Jump Start ist darauf ausgelegt, stark beschäftigten IT-Experten, Administratoren und Helpdeskmitarbeitern zu zeigen, wie Windows PowerShell Verwaltungsfunktionen verbessern, redundante Aufgaben automatisieren und die Umgebung skaliert verwalten kann. Erfahren Sie von den Experten Jeffrey Snover, dem Erfinder von Windows PowerShell, und Jason Helmick, Senior Technologist bei Concentrated Technology, wie Windows PowerShell funktioniert und wie Sie Windows PowerShell für sich arbeiten lassen können.
@@ -64,7 +62,7 @@ Für den Einstieg in Windows PowerShell starten Sie mit den folgenden Ressourcen
 
 -   [System Center-Automatisierung mit Windows PowerShell](https://technet.microsoft.com/en-us/library/mt156962.aspx). Eine alphabetisch sortierte Liste der Hilfethemen für Windows PowerShell-Module, die in Komponenten von Microsoft System Center enthalten sind.
 
-## Herunterladen und Aktualisieren der Windows PowerShell-Hilfe
+## <a name="downloading-and-updating-windows-powershell-help"></a>Herunterladen und Aktualisieren der Windows PowerShell-Hilfe
 In den folgenden Themen wird beschrieben, wie Sie die aktuelle Hilfe für Windows PowerShell abrufen und an der Windows PowerShell-Eingabeaufforderung anzeigen können.
 
 -   Das Cmdlet [Update-Help](http://technet.microsoft.com/library/hh849720.aspx). Ein Windows PowerShell-Cmdlet, das die neuesten Versionen der Hilfethemen für Windows PowerShell-Module auf Ihrem Computer herunterlädt und installiert.
@@ -74,10 +72,4 @@ In den folgenden Themen wird beschrieben, wie Sie die aktuelle Hilfe für Window
 -   Cmdlets [Get-Help](http://technet.microsoft.com/library/hh849696(v=wps.630).aspx). Ein Windows PowerShell-Cmdlet, das Sie verwenden können, um mehr über die Cmdlets und Anbieter zu erfahren, die in Ihrem System installiert sind.
 
 -   Sie können Benachrichtigungen über alle Änderungen an veröffentlichten Hilfedateien erhalten, indem Sie den folgenden RSS-Feed abonnieren: [http://sxp.microsoft.com/feeds/msdntn/PowerShellHelpVersions](http://sxp.microsoft.com/feeds/msdntn/PowerShellHelpVersions).
-
-
-
-
-<!--HONumber=Oct16_HO1-->
-
 

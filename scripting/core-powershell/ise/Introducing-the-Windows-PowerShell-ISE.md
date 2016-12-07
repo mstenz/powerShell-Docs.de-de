@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: a0de70ca-909a-4807-94d1-6da86e5b52a0
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 07ec87200c8cc2db2c4d5695a2ca32a63bc470c8
-
+ms.openlocfilehash: e12348d8230549766a04d9995acaaee7213d8808
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Einführung in die Windows PowerShell ISE
+# <a name="introducing-the-windows-powershell-ise"></a>Einführung in die Windows PowerShell ISE
 Windows PowerShell Integrated Scripting Environment (ISE) ist eine Hostanwendung für Windows PowerShell. In der Windows PowerShell ISE können Sie Befehle ausführen und Skripts schreiben, testen und debuggen, und zwar auf einer einzigen Windows-basierten grafischen Benutzeroberfläche mit mehrzeiliger Bearbeitung, Vervollständigung mit der TAB-TASTE, Syntaxfarben, selektiver Ausführung, kontextbezogener Hilfe und Unterstützung für von rechts nach links geschriebene Sprachen.
 Sie können Menüelemente und Tastenkombinationen für viele der Aufgaben nutzen, die Sie auch in der Windows PowerShell-Konsole ausführen würden.  Um beispielsweise beim Debuggen eines Skripts in der Windows PowerShell ISE einen Zeilenhaltepunkt in einem Skript festzulegen, klicken Sie mit der rechten Maustaste auf die Codezeile, und klicken Sie anschließende auf **Haltepunkt umschalten**.
 
@@ -28,21 +26,15 @@ Testen Sie diese neuen Features in der Windows PowerShell ISE.
 
 Die Windows PowerShell ISE ermöglicht Ihnen das Anpassen einiger Aspekte ihrer Darstellung. Sie hat auch ein eigenes Windows PowerShell-Profil, in dem Sie Funktionen, Aliase, Variablen und Befehle speichern können, die Sie in der Windows PowerShell ISE verwenden.
 
-### So starten Sie die Windows PowerShell ISE
+### <a name="to-start-the-windows-powershell-ise"></a>So starten Sie die Windows PowerShell ISE
 
 1.  Führen Sie eines der folgenden Verfahren aus:
 
-    -   Klicken Sie auf **Start**, zeigen Sie auf **Alle Programme**, dann auf **Windows PowerShell 2.0**, und klicken Sie dann auf **Windows PowerShell ISE**.
+    -   Klicken Sie auf **Start**, zeigen Sie auf **Alle Programme**, dann auf **Windows PowerShell 2.0**, und klicken Sie dann auf **Windows PowerShell ISE**.
 
     -   Geben Sie in der Windows PowerShell-Konsole „Cmd.exe“ oder im Feld „Ausführen“ **powershell_ise.exe** ein.
 
-### So rufen Sie Hilfe in der Windows PowerShell ISE ab
+### <a name="to-get-help-in-the-windows-powershell-ise"></a>So rufen Sie Hilfe in der Windows PowerShell ISE ab
 
 -   Klicken Sie im Menü **Hilfe** auf **Windows PowerShell-Hilfe**. Oder drücken Sie F1. Die Datei, die geöffnet wird, beschreibt die Windows PowerShell ISE und Windows PowerShell, einschließlich sämtlicher Hilfe, die über das Cmdlet „Get-Help“ verfügbar ist.
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

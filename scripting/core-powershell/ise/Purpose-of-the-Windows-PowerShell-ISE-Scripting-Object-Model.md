@@ -8,16 +8,14 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: d176a131-ab0c-43ee-80c1-f824ab8e4a05
-translationtype: Human Translation
-ms.sourcegitcommit: 641b6b2169824296b459691e67cdb771f3a07294
-ms.openlocfilehash: 63ea621ed8eb31a3be8394d99fd05dc8f663769f
-
+ms.openlocfilehash: 3213279588df19a677940b67fa1752a29a678e36
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Zweck des Windows PowerShell ISE-Skriptobjektmodells
+# <a name="purpose-of-the-windows-powershell-ise-scripting-object-model"></a>Zweck des Windows PowerShell ISE-Skriptobjektmodells
   Objekte sind der Form und Funktion von Windows PowerShell Integrated Scripting Environment (ISE) zugeordnet. Die Modellreferenz bietet Details zu den Elementeigenschaften und Methoden, die diese Objekte verfügbar machen. Die Beispiele zeigen Ihnen, wie Sie mithilfe von Skripts direkt auf diese Methoden und Eigenschaften zugreifen können. Das Skriptobjektmodell erleichtert die folgenden Aufgaben.
 
-## Anpassen der Darstellung von Windows PowerShell ISE
+## <a name="customizing-the-appearance-of-windows-powershell-ise"></a>Anpassen der Darstellung von Windows PowerShell ISE
  Sie können das Objektmodell verwenden, um die Anwendungseinstellungen und -optionen zu ändern. Sie können sie beispielsweise folgendermaßen ändern:
 
 -   Sie können die Farbe der Fehlermeldungen, Warnungen, ausführlichen Ausgaben, und Debugausgaben ändern.
@@ -32,7 +30,7 @@ ms.openlocfilehash: 63ea621ed8eb31a3be8394d99fd05dc8f663769f
 
 -   Sie können zwischen zwei Ansichten wechseln: Entweder werden der Skriptbereich und der Ausgabebereich nebeneinander angezeigt, oder der Skriptbereich wird über dem Ausgabebereich angezeigt. Sie können den Befehlsbereich oben oder unten an den Ausgabebereich andocken.
 
-## Erweitern der Funktionalität von Windows PowerShell ISE
+## <a name="enhancing-the-functionality-of-windows-powershell-ise"></a>Erweitern der Funktionalität von Windows PowerShell ISE
  Sie können das Objektmodell verwenden, um die Funktionalität von Windows PowerShell ISE zu erweitern. Beispielsweise können Sie folgende Aktionen ausführen:
 
 -   Fügen Sie Instanzen von Windows PowerShell ISE hinzu und ändern Sie sie. Sie können z.B. neue Menüelemente hinzufügen und die neuen Elemente Skripts zuordnen, um die Menüs zu ändern.
@@ -67,18 +65,12 @@ ms.openlocfilehash: 63ea621ed8eb31a3be8394d99fd05dc8f663769f
 
     -   Eine Datei auswählen.
 
-## Automatisieren von Aufgaben
+## <a name="automating-tasks"></a>Automatisieren von Aufgaben
  Das Skriptobjektmodell verwenden, um Tastenkombinationen für häufige Vorgänge zu erstellen.
 
-## Weitere Informationen
- - [Die ISE-Objektmodellhierarchie](The-ISE-Object-Model-Hierarchy.md) 
- - [Referenz zum Windows PowerShell ISE-Objektmodell](Windows-PowerShell-ISE-Object-Model-Reference.md) 
- - [Das Windows PowerShell ISE-Skriptobjektmodell](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+## <a name="see-also"></a>Weitere Informationen
+- [Die ISE-Objektmodellhierarchie](The-ISE-Object-Model-Hierarchy.md) 
+- [Referenz zum Windows PowerShell ISE-Objektmodell](Windows-PowerShell-ISE-Object-Model-Reference.md) 
+- [Das Windows PowerShell ISE-Skriptobjektmodell](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 
   
-
-
-
-<!--HONumber=Sep16_HO3-->
-
-

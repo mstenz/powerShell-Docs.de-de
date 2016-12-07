@@ -7,17 +7,15 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
 ms.openlocfilehash: 3835495705297616a41329bcfdaad42b464115d8
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# DSC für Linux-Resource „nxService“
+# <a name="dsc-for-linux-nxservice-resource"></a>DSC für Linux-Resource „nxService“
 
 Die Ressource **nxService** in PowerShell DSC bietet einen Mechanismus zum Verwalten von Diensten auf einem Linux-Knoten.
 
-## Syntax
+## <a name="syntax"></a>Syntax
 
 ```
 nxService <string> #ResourceName
@@ -31,7 +29,7 @@ nxService <string> #ResourceName
 }
 ```
 
-## Eigenschaften
+## <a name="properties"></a>Eigenschaften
 |  Eigenschaft |  Beschreibung | 
 |---|---|
 | Name| Der Name des Diensts/Daemons, der konfiguriert werden soll.| 
@@ -41,11 +39,11 @@ nxService <string> #ResourceName
 | DependsOn | Gibt an, dass die Konfiguration einer anderen Ressource ausgeführt werden muss, bevor diese Ressource konfiguriert wird. Wenn beispielsweise die **ID** des Skriptblocks mit der Ressourcenkonfiguration, den Sie zuerst ausführen möchten, **ResourceName** und dessen Typ **ResourceType** ist, lautet die Syntax für das Verwenden dieser Eigenschaft `DependsOn = "[ResourceType]ResourceName"`.| 
 
 
-## Weitere Informationen
+## <a name="additional-information"></a>Weitere Informationen
 
 Die Ressource **nxService** erstellt keine Dienstdefinition bzw. kein Skript für den Dienst, falls er nicht vorhanden ist. Sie können die PowerShell DSC-Ressource **nxFile** verwenden, um das Vorhandensein oder den Inhalt der Dienstdefinitionsdatei oder des Skripts zu verwalten.
 
-## Beispiel
+## <a name="example"></a>Beispiel
 
 Das folgende Beispiel zeigt die Konfiguration des Diensts „httpd“ (für Apache HTTP Server), der mit dem Dienstcontroller **SystemD** registriert wurde.
 
@@ -63,10 +61,4 @@ Controller = "systemd"
 }
 }
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

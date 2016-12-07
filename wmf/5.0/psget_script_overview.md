@@ -1,6 +1,6 @@
-# Ermittlung, Installation und Verwaltung von PowerShell-Skripts mit PowerShellGet
+# <a name="powershell-script-discovery-install-and-management-with-powershellget"></a>Ermittlung, Installation und Verwaltung von PowerShell-Skripts mit PowerShellGet
 
-In der RTM-Version von WMF 5.0 wurde PowerShellGet die PowerShell-Skriptfreigabefunktion hinzugefügt.
+In der RTM-Version von WMF 5.0 wurde PowerShellGet die PowerShell-Skriptfreigabefunktion hinzugefügt.
 Die folgenden neuen Cmdlets wurden dem PowerShellGet-Modul zur Unterstützung von PowerShell-Skripts hinzugefügt.
 ```powershell
 PS C:\\windows\\system32&gt; Get-Command \*script\* -Module PowerShellGet | Sort-Object -Property Noun, Verb
@@ -66,8 +66,3 @@ Syntax von Cmdlets für die Skriptfreigabe:
 
 **Publish-Script** -LiteralPath &lt;string&gt; \[-NuGetApiKey &lt;string&gt;\] \[-Repository &lt;string&gt;\] \[-WhatIf\] \[-Confirm\] \[&lt;CommonParameters&gt;\]
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
-

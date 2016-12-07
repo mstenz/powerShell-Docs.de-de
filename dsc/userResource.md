@@ -7,22 +7,20 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: 5c7878bdfc8a3f118b569a9e43be6c7e4333ad2c
-
+ms.openlocfilehash: 84ed3408cfef1dbc99f6f3147ae36be09bca67e4
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-#DSC-Ressource „User“#
+#<a name="dsc-user-resource"></a>DSC-Ressource „User“#
 
  
->Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
+>Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 
 Die Ressource __User__ in Windows PowerShell DSC bietet einen Mechanismus zum Verwalten lokaler Benutzerkonten auf dem Zielknoten.
 
 
-##Syntax##
+##<a name="syntax"></a>Syntax##
 
 ```
 User [string] #ResourceName
@@ -40,7 +38,7 @@ User [string] #ResourceName
 }
 ```
 
-## Eigenschaften
+## <a name="properties"></a>Eigenschaften
 |  Eigenschaft  |  Beschreibung   | 
 |---|---| 
 | UserName| Gibt den Kontonamen an, für den Sie einen bestimmten Zustand sicherstellen möchten.| 
@@ -54,7 +52,7 @@ User [string] #ResourceName
 | PasswordNeverExpires| Gibt an, ob das Kennwort abläuft. Um sicherzustellen, dass das Kennwort für dieses Konto nicht abläuft, legen Sie diese Eigenschaft auf __$true__ fest. Legen Sie sie auf __$false__ fest, wenn das Kennwort abläuft. Der Standardwert ist __$false__.| 
 | DependsOn | Gibt an, dass die Konfiguration einer anderen Ressource ausgeführt werden muss, bevor diese Ressource konfiguriert wird. Wenn beispielsweise die ID des Skriptblocks mit der Ressourcenkonfiguration, den Sie zuerst ausführen möchten, __ResourceName__ und dessen Typ __ResourceType__ ist, lautet die Syntax für das Verwenden dieser Eigenschaft `DependsOn = "[ResourceType]ResourceName"`.| 
 
-## Beispiel
+## <a name="example"></a>Beispiel
 
 ```powershell
 User UserExample
@@ -65,10 +63,4 @@ User UserExample
     DependsOn = “[Group]GroupExample" # Configures GroupExample first
 }
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

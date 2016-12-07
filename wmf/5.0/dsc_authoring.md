@@ -1,4 +1,4 @@
-# Erstellungsverbesserungen mithilfe von PowerShell ISE
+# <a name="authoring-improvements-using-powershell-ise"></a>Erstellungsverbesserungen mithilfe von PowerShell ISE
 
 Das Erstellen von DSC-Konfigurationen in Windows PowerShell ISE ist nun dank der folgenden Verbesserungen viel einfacher:
 
@@ -8,8 +8,3 @@ Das Erstellen von DSC-Konfigurationen in Windows PowerShell ISE ist nun dank der
 - Bessere automatische Ergänzung von Eigenschaftswerten von Ressourcen.
 
 **Hinweis:** Sie benötigen eine leere Zeichenfolge für Werte von Ressourceneigenschaften, bevor Sie STRG+LEERTASTE zum Auflisten von Optionen verwenden können. Bei Drücken der **TAB**-Taste werden Optionen durchlaufen.
-
-
-<!--HONumber=Aug16_HO3-->
-
-

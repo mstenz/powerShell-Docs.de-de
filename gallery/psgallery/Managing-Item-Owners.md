@@ -1,15 +1,30 @@
-# Verwalten von Elementbesitzern
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: PowerShell, Cmdlet, Katalog
+ms.date: 2016-10-14
+contributor: manikb
+title: Verwalten von Elementbesitzern
+ms.technology: powershell
+ms.openlocfilehash: 36a3a3079bce642b16f0512ead2b0778b43e5d2d
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
+---
+# <a name="managing-item-owners"></a>Verwalten von Elementbesitzern
 
 Der Besitz eines Elements im PowerShell-Katalog wird von der Person definiert, die das Element im Katalog veröffentlicht hat.
 Mitunter müssen diese Metadaten über die anfängliche Veröffentlichung des Elements hinaus verwaltet werden, was bedeutet, dass die Besitzermetadaten veränderlich sein müssen, das Element hingegen nicht.
 
 Alle Elementbesitzer sind Peers. Das bedeutet, dass alle Elementbesitzer eine neue Version eines Elements veröffentlichen können. Es bedeutet aber auch, dass jeder Elementbesitzer jeden anderen Elementbesitzer entfernen kann. Kein Besitzer verfügt über mehr Berechtigungen als andere Besitzer.  
 
-## Festlegen des anfänglichen Besitzers eines Elements 
+## <a name="setting-an-items-initial-owner"></a>Festlegen des anfänglichen Besitzers eines Elements 
 
 Beim Veröffentlichen eines neues Elements im PowerShell-Katalog wird der anfängliche Besitzer von dem Benutzer definiert, der das Element veröffentlicht. Dies richtet sich danach, wessen API-Schlüssel im Cmdlet „Publish-Modul“ verwendet wurde.
 
-## Hinzufügen von Besitzern
+## <a name="adding-owners"></a>Hinzufügen von Besitzern
 
 Sobald ein Element im PowerShell-Katalog veröffentlicht wurde, können ganz einfach zusätzliche Benutzer als Besitzer eines Elements eingeladen werden.
 
@@ -28,7 +43,7 @@ Dieser Einladungsprozess verhindert, dass Benutzer fälschlicherweise andere Ben
 Beachten Sie, dass die Metadaten „Autoren“ in reinem Freiformtext vorliegen. Nur „Besitzer“ werden gesteuert.
 
 
-## Entfernen von Besitzern
+## <a name="removing-owners"></a>Entfernen von Besitzern
 Wenn ein Element mehrere Besitzer aufweist und einer entfernt werden muss, ist der Prozess einfach:
 
 1. [Melden Sie sich beim PowerShell-Katalog mit dem Konto an](https://powershellgallery.com/users/account/LogOn), das der aktuelle Besitzer eines Elements ist.
@@ -38,7 +53,7 @@ Wenn ein Element mehrere Besitzer aufweist und einer entfernt werden muss, ist d
 
 
 
-## Übertragen des Besitzes für ein Element
+## <a name="transferring-item-ownership"></a>Übertragen des Besitzes für ein Element
 Gelegentlich erhalten wir Supportanfragen, um den Besitz eines Elements von einem Benutzer auf einen anderen zu übertragen, allerdings können Sie das fast immer selbst durchführen.
 Das Übertragen des Besitzes von einem Benutzer auf einen anderen ist einfach eine Kombination aus den beiden oben genannten Funktionen.
 
@@ -51,7 +66,7 @@ Diese Anfrage ist über mehrere Formulare eingegangen, der Prozess funktioniert 
 * Das Element wurde versehentlich über das falsche Konto veröffentlicht.
 
 
-## Verwaiste Elemente
+## <a name="orphaned-items"></a>Verwaiste Elemente
 Ein letztes Szenario ist aufgetreten, wenn auch nicht häufig.
 Elemente waren verwaist und das einzige Elementbesitzerkonto kann nicht zum Hinzufügen neuer Besitzer verwendet werden.
 Im Folgenden sind einige Beispiele für dieses Szenario aufgeführt:
@@ -66,7 +81,4 @@ Wir befolgen dann einen Prozess, um Ihren Besitz des Elements zu überprüfen.
 Wenn wir feststellen, dass Sie der Besitzer des Elements sein sollten, verwenden wir selbst den Link „Besitzer verwalten“ für das Element und senden Ihnen die Einladung als Besitzer.
 Dies erfolgt jedoch erst, nachdem wir Sie als Besitzer bestätigt haben, und der Vorgang variiert je nach den Umständen.
 Oft verwenden wir die Projekt-URL des Elements, um eine Möglichkeit zum Kontaktieren des Projektbesitzers zu finden. Gelegentlich wenden wir uns jedoch auch über Twitter, E-Mail oder andere Methoden an den Besitzer.
-
-<!--HONumber=Aug16_HO3-->
-
 

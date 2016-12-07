@@ -8,16 +8,14 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 4f29ead3-f83b-4706-ac3e-f2154ff38dc5
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: c013124d12a551245152c1703e5f1d8a3f8f5f70
-
+ms.openlocfilehash: 2142d7ef1d1cc9b20ecc1ab35b9685817c838347
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Arbeiten mit Druckern
+# <a name="working-with-printers"></a>Arbeiten mit Druckern
 Sie können Windows PowerShell zum Verwalten von Druckern mit WMI und dem COM-Objekt „WScript.Network“ vom WSH verwenden. Wir werden eine Kombination beider Tools verwenden, um bestimmte Aufgaben zu veranschaulichen.
 
-### Auflisten von Druckerverbindungen
+### <a name="listing-printer-connections"></a>Auflisten von Druckerverbindungen
 Die einfachste Möglichkeit, die auf einem Computer installierten Drucker aufzulisten, ist die Verwendung der WMI-Klasse **Win32_Printer**:
 
 ```
@@ -32,14 +30,14 @@ Sie können die Drucker auch mit dem COM-Objekt **WScript.Network** auflisten, d
 
 Da dieser Befehl eine einfache Zeichenfolgenauflistung von Portnamen und Druckergerätenamen ohne unterscheidende Bezeichnungen zurückgibt, ist die Ausgabe nicht leicht zu interpretieren.
 
-### Hinzufügen eines Netzwerkdruckers
+### <a name="adding-a-network-printer"></a>Hinzufügen eines Netzwerkdruckers
 Verwenden Sie zum Hinzufügen eines neuen Netzwerkdruckers **WScript.Network**:
 
 ```
 (New-Object -ComObject WScript.Network).AddWindowsPrinterConnection("\\Printserver01\Xerox5")
 ```
 
-### Festlegen eines Standarddruckers
+### <a name="setting-a-default-printer"></a>Festlegen eines Standarddruckers
 Um mithilfe von WMI den Standarddrucker festzulegen, suchen Sie den Drucker in der **Win32_Printer**-Sammlung, und rufen Sie dann die Methode **SetDefaultPrinter** auf:
 
 ```
@@ -52,16 +50,10 @@ Um mithilfe von WMI den Standarddrucker festzulegen, suchen Sie den Drucker in d
 (New-Object -ComObject WScript.Network).SetDefaultPrinter('HP LaserJet 5Si')
 ```
 
-### Entfernen einer Druckerverbindung
+### <a name="removing-a-printer-connection"></a>Entfernen einer Druckerverbindung
 Um eine Druckerverbindung zu entfernen, verwenden Sie die Methode **WScript.Network RemovePrinterConnection**:
 
 ```
 (New-Object -ComObject WScript.Network).RemovePrinterConnection("\\Printserver01\Xerox5")
 ```
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

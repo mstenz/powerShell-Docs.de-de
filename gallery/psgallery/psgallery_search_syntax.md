@@ -1,21 +1,36 @@
-# Syntax für die Katalogsuche
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: PowerShell, Cmdlet, Katalog
+ms.date: 2016-10-14
+contributor: manikb
+title: "Syntax für die Katalogsuche | MSDN"
+ms.technology: powershell
+ms.openlocfilehash: 36b551cd6576b1d2a9ca696f2bfdab570ea2523f
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
+---
+# <a name="gallery-search-syntax"></a>Syntax für die Katalogsuche
 
 Der PowerShell-Katalog bietet ein Textsuchfeld in das Sie Wörter, Ausdrücke und Schlüsselwortausdrücke schreiben können, um die Suchergebnisse einzugrenzen.
 
-## Suche nach Schlüsselwörtern
+## <a name="search-by-keywords"></a>Suche nach Schlüsselwörtern
 
     dsc azure sql
 
 Die Suche tut ihr Möglichstes, um relevante Dokumente zu finden, die alle drei Schlüsselwörter enthalten, und zugehörige Dokumente zurückzugeben.
 
-## Suchen mithilfe von Ausdrücken und Schlüsselwörtern
+## <a name="search-using-phrases-and-keywords"></a>Suchen mithilfe von Ausdrücken und Schlüsselwörtern
 
     "azure sql" deployment
 
 Die Eingabe eines Ausdrucks zwischen Anführungszeichen ("") ändert den Suchvorgang. Es wird nun nach dem bestimmten Ausdruck statt nach einzelnen Schlüsselwörter gesucht.
 Übereinstimmende Dokumente sollten in der Regel den exakten Ausdruck "azure sql", einschließlich der Varianten bezüglich Groß-/Kleinschreibung enthalten, z.B. "Azure SQL" und sollten auch in der Regel das Wort „deployment“ (Bereitstellung) enthalten.
 
-## Filtern nach Feldern
+## <a name="filtering-on-fields"></a>Filtern nach Feldern
 
 Sie können nach einer bestimmten Element-ID (oder „Id“ oder „id“) suchen oder nach bestimmten anderen Feldern, indem Sie den Suchbegriffen den Feldnamen voranstellen.
 
@@ -23,7 +38,7 @@ Aktuell lauten die durchsuchbaren Felder „Id“, „Version“, „Tags“, �
 
 [Was ist der Unterschied zwischen ID und Titel? Die ID ist der Name, den Sie in der Konsole verwenden. Der Titel ist das, was am oberen Rand der Elementseite in den Suchergebnissen angezeigt wird.]
 
-## Beispiele
+## <a name="examples"></a>Beispiele
 
     ID:"PSReadline"
     id:"AzureRM.Profile"
@@ -80,9 +95,4 @@ Wenn Sie anschließend ein Feld verwenden, das nicht unterstützt wird, wie z.B.
 wird genau wie diese Abfrage interpretiert:
 
     blobs storage
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

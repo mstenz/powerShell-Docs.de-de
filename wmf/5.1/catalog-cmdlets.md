@@ -8,10 +8,9 @@ author: keithb
 manager: carolz
 ms.prod: powershell
 ms.technology: WMF
-translationtype: Human Translation
-ms.sourcegitcommit: ecf70f38bbf48f410eb59b75f86eea767637757a
-ms.openlocfilehash: 72df0311a1d187dc6c7c1d29b0a3d2fd243848f0
-
+ms.openlocfilehash: 6986e7b8543ce38c0330e6428ac908ca7f126e08
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
 # <a name="catalog-cmdlets"></a>Katalog-Cmdlets  
 
@@ -52,9 +51,3 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 ![](../images/TestFileCatalog.jpg)
 
 Dieses Cmdlet vergleicht die Hashes aller Dateien und deren relative Pfade in der Katalogdatei mit denen, die auf dem Datenträger gespeichert sind. Wenn das Cmdlet eine Unstimmigkeit zwischen den Dateihashes und den Pfaden entdeckt, gibt es den Status `ValidationFailed` zurück. Benutzer können alle diese Informationen mithilfe des Schalters `Detailed` abrufen. Der Signierstatus des Katalogs wird im Feld `Signature` angezeigt, was dem Aufrufen des Cmdlets [Get-AuthenticodeSignature](https://technet.microsoft.com/en-us/library/hh849805.aspx) für die Katalogdatei entspricht. Benutzer können außerdem jede Datei während der Überprüfung mithilfe des Parameters `FilesToSkip` überspringen. 
-
-
-
-<!--HONumber=Nov16_HO4-->
-
-

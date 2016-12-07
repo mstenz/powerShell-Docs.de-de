@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: a1819ed2-2ef3-453a-b2b0-f3589c550481
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: acd52c1271013320dafa7f7bf5c72b752e07574b
-
+ms.openlocfilehash: 041b58f5fcfdf2225704adcb943de864c94502c1
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Anzeigen einer Objektstruktur (Get-Member)
+# <a name="viewing-object-structure-get-member"></a>Anzeigen einer Objektstruktur (Get-Member)
 Weil Objekte in Windows PowerShell eine so zentrale Rolle spielen, gibt es mehrere systemeigene Befehle, die zum Arbeiten mit beliebigen Objekttypen vorgesehen sind. Der wichtigste dieser Befehle ist der Befehl **Get-Member**.
 
 Die einfachste Methode zum Analysieren der Objekte, die von einem Befehl zurückgegeben werden, besteht darin, die Ausgabe dieses Befehls an das Cmdlet **Get-Member** weiterzuleiten. Das Cmdlet **Get-Member** zeigt den formalen Objekttypnamen sowie eine vollständige Liste der Member des Objekts an. Die Anzahl von zurückgegebenen Elementen kann manchmal überwältigend sein. Beispielsweise kann ein Prozessobjekt mehr als 100 Member haben.
@@ -73,10 +71,4 @@ Es gibt mehr als 60 Eigenschaften für einen Prozess. Der Grund, warum Windows P
 > Windows PowerShell bestimmt, wie ein Objekttyp angezeigt werden soll, anhand der Informationen, die in XML-Dateien gespeichert sind, deren Namen mit „.format.ps1xml“ enden. Die Formatierungsdaten für Prozessobjekte, die „.NET System.Diagnostics.Process“-Objekte sind, sind in „PowerShellCore.format.ps1xml“ gespeichert.
 
 Wenn Sie Eigenschaften anzeigen müssen, die nicht standardmäßig von Windows PowerShell angezeigt werden, müssen Sie die Ausgabedaten selbst formatieren. Dazu können Sie die „Format“-Cmdlets verwenden.
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

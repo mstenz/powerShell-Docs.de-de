@@ -1,5 +1,5 @@
 ---
-title: 'So wird''s gemacht: Verwenden von Profilen in Windows PowerShell ISE'
+title: 'So wird&quot;s gemacht: Verwenden von Profilen in Windows PowerShell ISE'
 ms.date: 2016-05-11
 keywords: powershell,cmdlet
 description: 
@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 0219626a-6da5-4acc-b630-d058e8b29cc6
-translationtype: Human Translation
-ms.sourcegitcommit: cb3db96ff87078756166df9f90d44d88cdfd155f
-ms.openlocfilehash: 3543503655cc506c4c0f8a7f3d1056c05a66ecba
-
+ms.openlocfilehash: dc85d616aac580effc7170935a3edb35e1a54e04
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# So wird's gemacht: Verwenden von Profilen in Windows PowerShell ISE
+# <a name="how-to-use-profiles-in-windows-powershell-ise"></a>So wird's gemacht: Verwenden von Profilen in Windows PowerShell ISE
 In diesem Thema wird erklärt, wie Profile in Windows PowerShell® Integrated Scripting Environment (ISE) verwendet werden können. Es empfiehlt sich, dass Sie die Aufgaben in diesem Abschnitt erst ausführen, nachdem Sie [about_Profiles [v4]](https://technet.microsoft.com/library/e1d9e30a-70cc-4f36-949f-fc7cd96b4054(v=wps.630)) gelesen oder im Konsolenbereich `Get-Help about_Profiles` eingegeben und die **EINGABETASTE** gedrückt haben.
 
 Ein Profil ist ein Windows PowerShell ISE-Skript, das automatisch ausgeführt wird, wenn Sie eine neue Sitzung starten.  Sie können ein oder mehrere Windows PowerShell-Profile für Windows PowerShell ISE erstellen und diese dazu verwenden, die Umgebung von Windows PowerShell oder Windows PowerShell ISE zu konfigurieren, um sie mit den Variablen, Aliasen, Funktionen sowie Farb- und Schriftartvoreinstellungen vorzubereiten, die Sie zur Verfügung haben möchten. Ein Profil wirkt sich auf jede Windows PowerShell ISE-Sitzung aus, die Sie starten.
@@ -22,7 +20,7 @@ Ein Profil ist ein Windows PowerShell ISE-Skript, das automatisch ausgeführt wi
 > [!NOTE]
 > Die Windows PowerShell-Ausführungsrichtlinie bestimmt, ob Sie Skripts ausführen und ein Profil laden dürfen. Die Standardausführungsrichtlinie, „Restricted“, verhindert das Ausführen jeglicher Skripts, einschließlich Profile. Wenn Sie die Richtlinie „Restricted“ verwenden, kann das Profil nicht geladen werden. Weitere Informationen zu Ausführungsrichtlinien finden Sie unter [about_Execution_Policies [v4]](https://technet.microsoft.com/library/347708dc-1515-4d74-978b-8334603472e6(v=wps.630)).
 
-## Auswählen eines Profils, das in Windows PowerShell ISE verwendet werden soll
+## <a name="selecting-a-profile-to-use-in-the-windows-powershell-ise"></a>Auswählen eines Profils, das in Windows PowerShell ISE verwendet werden soll
 Windows PowerShell ISE unterstützt Profile für den aktuellen Benutzer sowie für alle Benutzer. Außerdem werden die Windows PowerShell-Profile unterstützt, die für alle Hosts gelten.
 
 Das Profil, das Sie verwenden, wird durch die Verwendung der Windows PowerShell und Windows PowerShell ISE bestimmt.
@@ -35,12 +33,12 @@ Die folgenden Profile sind Profile, die in Windows PowerShell ISE erstellt und v
 
 | Profiltyp | Profilpfad |
 | --- | --- |
-| **Aktueller Benutzer, PowerShell ISE**| `$PROFILE.CurrentUserCurrentHost`oder `$PROFILE` |
+| **Aktueller Benutzer, PowerShell ISE**| `$PROFILE.CurrentUserCurrentHost` oder `$PROFILE` |
 | **Alle Benutzer, PowerShell ISE**| `$PROFILE.AllUsersCurrentHost` |
 | **Aktueller Benutzer, alle Hosts**| `$PROFILE.CurrentUserAllHosts` |
 | **Alle Benutzer, alle Hosts** | `$PROFILE.AllUsersAllHosts` |
 
-## So erstellen Sie ein neues Profil
+## <a name="to-create-a-new-profile"></a>So erstellen Sie ein neues Profil
 Um ein neues „Aktueller Benutzer, PowerShell ISE“-Profil zu erstellen, führen Sie den folgenden Befehl aus:
 
 ```PowerShell
@@ -69,7 +67,7 @@ if (!(Test-Path -Path $PROFILE.AllUsersAllHosts))
 { New-Item -Type File -Path $PROFILE.AllUsersAllHosts -Force }
 ```
 
-## So bearbeiten Sie ein Profil
+## <a name="to-edit-a-profile"></a>So bearbeiten Sie ein Profil
 
 1.  Um das Profil zu öffnen, führen Sie den Befehl „psedit“ mit der Variablen aus, die das Profil angibt, das Sie bearbeiten möchten. Wenn Sie beispielsweise das „Aktueller Benutzer, PowerShell ISE“-Profil öffnen möchten, geben Sie Folgendes ein: `psEdit $PROFILE`
 
@@ -77,17 +75,11 @@ if (!(Test-Path -Path $PROFILE.AllUsersAllHosts))
 
     -   Um die Standardhintergrundfarbe des Konsolenbereichs in Blau zu ändern, geben Sie Folgendes in die Profildatei ein: `$psISE.Options.OutputPaneBackground = 'blue'`. Weitere Informationen zu der Variablen „$psISE“ finden Sie unter [Referenz zum Windows PowerShell ISE-Objektmodell](#windows-powershell-ise-object-model-reference).
 
-    -   Geben Sie Folgendes in die Profildatei ein, um den Schriftgrad in 20 zu ändern: `$psISE.Options.FontSize =20`
+    -   Um den Schriftgrad in 20 zu ändern, geben Sie Folgendes in die Profildatei ein: `$psISE.Options.FontSize =20`
 
 3.  Um Ihre Profildatei zu speichern, klicken Sie im Menü **Datei** auf **Speichern**. Wenn Sie Windows PowerShell ISE das nächste Mal öffnen, werden Ihre Anpassungen angewendet.
 
-## Weitere Informationen
+## <a name="see-also"></a>Weitere Informationen
 - [about_Profiles [v4]](https://technet.microsoft.com/library/e1d9e30a-70cc-4f36-949f-fc7cd96b4054(v=wps.630))
 - [Verwenden der Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
-
-
-
-
-<!--HONumber=Sep16_HO3-->
-
 

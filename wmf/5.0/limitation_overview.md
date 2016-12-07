@@ -36,7 +36,7 @@ Wenn WMF 5.0 auf einem Computer mit Windows Server 2012 R2 installiert wird, auf
 
 **Lösung:** Führen Sie das Cmdlet „Start-SilLogging“ nach der Installation von WMF aus, da der Installationsvorgang fälschlicherweise das Feature „Protokollierung des Softwarebestands“ beendet.
 
-<a name="getchilditem-does-not-work-if-literalpath-and-recurse-are-used-together"></a>„Get-ChildItem“ funktioniert nicht, wenn „-LiteralPath“ und „-Recurse“ zusammen verwendet werden
+<a name="get-childitem-does-not-work-if--literalpath-and--recurse-are-used-together"></a>„Get-ChildItem“ funktioniert nicht, wenn „-LiteralPath“ und „-Recurse“ zusammen verwendet werden
 --------------------------------------------------------------------------
 
 Wenn ein Verzeichnisname ein ungültiges Platzhalterzeichen enthält, liefert „Get-ChildItem“ nicht die erwarteten Ergebnisse, wenn „-LiteralPath“ und „-Recurse“ zusammen verwendet werden.
@@ -105,8 +105,3 @@ Es gibt zwei Problemumgehungen für dieses Problem, abhängig davon, welche Vers
       * Es wird davon ausgegangen, dass Ihre bearbeitete Kopie von „Generalize.xml“ nach C:\ kopiert wurde.
 
   10.   „Generalize.XML“ wird jetzt mit der Problemumgehung aktualisiert. Führen Sie Sysprep bitte mit der aktivierten Generalisierungsoption aus.
-
-
-<!--HONumber=Oct16_HO5-->
-
-

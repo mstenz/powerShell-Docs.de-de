@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: bd809e38-8de9-437a-a250-f30a667d11b4
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: d266a109b1acd97c03594f988ce2fab3c697b80c
-
+ms.openlocfilehash: 776e55de817dd200142965e19ce84bbe776fcb9d
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Verwalten von Windows PowerShell-Laufwerken
+# <a name="managing-windows-powershell-drives"></a>Verwalten von Windows PowerShell-Laufwerken
 Ein *Windows PowerShell-Laufwerk* ist ein Speicherort für Daten, auf den Sie wie auf ein Dateisystemlaufwerk in Windows PowerShell zugreifen können. Die Windows PowerShell-Anbieter erstellen einige Laufwerke für Sie, z. B. die Dateisystemlaufwerke (einschließlich C: und D:), die Registrierungslaufwerke (HKCU: und HKLM:) und das Zertifikatlaufwerk (Cert:). Sie können auch eigene Windows PowerShell-Laufwerke erstellen. Diese Laufwerke sind sehr nützlich, aber nur in Windows PowerShell verfügbar. Sie können darauf nicht mit anderen Windows-Tools, z. B. Datei-Explorer oder „Cmd.exe“, zugreifen.
 
 Windows PowerShell verwendet das Nomen **PSDrive** für Befehle, die mit Windows PowerShell-Laufwerken arbeiten. Verwenden Sie zum Anzeigen einer Liste der Windows PowerShell-Laufwerke in Ihrer Windows PowerShell-Sitzung das Cmdlet **Get-PSDrive**.
@@ -69,7 +67,7 @@ Sie können auch die standardmäßigen „Location“-Cmdlets mit den Windows Po
 
 <pre>PS> Set-Location HKLM:\SOFTWARE PS> Push-Location .\Microsoft PS> Get-Location Path ---- HKLM:\SOFTWARE\Microsoft</pre>
 
-### Hinzufügen neuer Windows PowerShell-Laufwerke (New-PSDrive)
+### <a name="adding-new-windows-powershell-drives-new-psdrive"></a>Hinzufügen neuer Windows PowerShell-Laufwerke (New-PSDrive)
 Mit dem Befehl **New-PSDrive** können Sie eigene Windows PowerShell-Laufwerke hinzufügen. Um die Syntax des Befehls **New-PSDrive** abzurufen, geben Sie den Befehl **Get-Command** mit dem Parameter **Syntax** ein:
 
 ```
@@ -118,7 +116,7 @@ oder:
 
 Das Cmdlet „New-PsDrive“ fügt das neue Laufwerk nur für die aktuelle Windows PowerShell-Sitzung hinzu. Wenn Sie das Windows PowerShell-Fenster schließen, geht das neue Laufwerk verloren. Wenn Sie ein Windows PowerShell-Laufwerk speichern möchten, verwenden Sie das Cmdlet „Export-Console“, um die aktuelle Windows PowerShell-Sitzung zu exportieren, und verwenden Sie dann den „PowerShell.exe“-Parameter **PSConsoleFile**, um sie zu importieren. Sie können auch das neue Laufwerk Ihrem Windows PowerShell-Profil hinzufügen.
 
-### Löschen von Windows PowerShell-Laufwerken (Remove-PSDrive)
+### <a name="deleting-windows-powershell-drives-remove-psdrive"></a>Löschen von Windows PowerShell-Laufwerken (Remove-PSDrive)
 Über das Cmdlet **Remove-PSDrive** können Sie Laufwerke aus Windows PowerShell löschen. Das Cmdlet **Remove-PSDrive** ist einfach zu verwenden. Um ein bestimmtes Windows PowerShell-Laufwerk zu löschen, geben Sie lediglich den Namen des Windows PowerShell-Laufwerk ein.
 
 Wenn Sie beispielsweise das Windows PowerShell-Laufwerk **Office:** hinzugefügt haben, wie im Thema **New-PSDrive** gezeigt, können Sie es löschen, indem Sie Folgendes eingeben:
@@ -143,12 +141,6 @@ At line:1 char:15
 + remove-psdrive  <<<< -name office
 ```
 
-### Hinzufügen und Entfernen von Laufwerken außerhalb von Windows PowerShell
+### <a name="adding-and-removing-drives-outside-windows-powershell"></a>Hinzufügen und Entfernen von Laufwerken außerhalb von Windows PowerShell
 Windows PowerShell erkennt Dateisystemlaufwerke, die in Windows hinzugefügt oder gelöscht werden, einschließlich Netzlaufwerken, die zugeordnet sind, USB-Laufwerken, die angeschlossen sind, und Laufwerken, die über den Befehl **net use** oder die Methoden **WScript.NetworkMapNetworkDrive** und **RemoveNetworkDrive** von einem WSH-Skript (Windows Script Host) gelöscht werden.
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

@@ -8,16 +8,14 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 2057b113-efeb-465e-8b44-da2f20dbf603
-translationtype: Human Translation
-ms.sourcegitcommit: 41647fc2b323292e496340f68bc92fd9a997ce0e
-ms.openlocfilehash: 662d0823749c142a716b74164ad57a8612833ccd
-
+ms.openlocfilehash: f35cfa6b547c63fc94c370f21ee83987468a894d
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# <a name="creating-net-and-com-objects-newobject"></a>Erstellen von .NET- und COM-Objekten (New-Object)
+# <a name="creating-net-and-com-objects-new-object"></a>Erstellen von .NET- und COM-Objekten (New-Object)
 Es gibt Softwarekomponenten mit .NET Framework- und COM-Schnittstellen, mit denen Sie viele Systemverwaltungsaufgaben ausführen können. Mit Windows PowerShell können Sie diese Komponenten verwenden und sind somit nicht auf die Aufgaben beschränkt, die mithilfe von Cmdlets ausgeführt werden können. Viele der Cmdlets in der ursprünglichen Version von Windows PowerShell funktionieren nicht auf Remotecomputern. Wir zeigen, wie diese Einschränkung beim Verwalten von Ereignisprotokollen mithilfe der .NET Framework-Klasse **System.Diagnostics.EventLog** direkt aus Windows PowerShell heraus umgangen werden können.
 
-### <a name="using-newobject-for-event-log-access"></a>Verwenden von „New-Object“ für den Zugriff auf das Ereignisprotokoll
+### <a name="using-new-object-for-event-log-access"></a>Verwenden von „New-Object“ für den Zugriff auf das Ereignisprotokoll
 Die .NET Framework-Klassenbibliothek enthält eine Klasse namens **System.Diagnostics.EventLog**, die zum Verwalten von Ereignisprotokollen verwendet werden kann. Zum Erstellen einer neuen Instanz einer .NET Framework-Klasse können Sie das Cmdlet **New-Object** mit dem Parameter **TypeName** verwenden. Der folgende Befehl erstellt z. B. einen Ereignisprotokollverweis:
 
 ```
@@ -29,7 +27,7 @@ PS> New-Object -TypeName System.Diagnostics.EventLog
 
 Obwohl der Befehl eine Instanz der EventLog-Klasse erstellt hat, enthält die Instanz keine Daten. Der Grund hierfür ist, dass wir kein bestimmtes Ereignisprotokoll angegeben haben. Wie erhalten Sie ein echtes Ereignisprotokoll?
 
-#### <a name="using-constructors-with-newobject"></a>Verwenden von Konstruktoren mit „New-Object“
+#### <a name="using-constructors-with-new-object"></a>Verwenden von Konstruktoren mit „New-Object“
 Um auf ein bestimmtes Ereignisprotokoll zu verweisen, müssen Sie den Namen des Protokolls angeben. **New-Object** verfügt über einen **ArgumentList**-Parameter. Die Argumente, die Sie als Werte an diesen Parameter übergeben, werden von einer speziellen Startmethode des Objekts verwendet. Die Methode wird als *Konstruktor* bezeichnet, da sie zum Konstruieren des Objekts dient. Um beispielsweise einen Verweis auf das Anwendungsprotokoll zu erhalten, geben Sie die Zeichenfolge „Application“ als Argument ein:
 
 ```
@@ -62,7 +60,7 @@ PS> $AppLog
   16,384      7 OverwriteOlder          2,160 Application
 ```
 
-#### <a name="accessing-a-remote-event-log-with-newobject"></a>Zugreifen auf ein Remoteereignisprotokoll mit „New-Object“
+#### <a name="accessing-a-remote-event-log-with-new-object"></a>Zugreifen auf ein Remoteereignisprotokoll mit „New-Object“
 Die im vorherigen Abschnitt verwendeten Befehle hatten den lokalen Computer als Ziel. Dazu kann auch das Cmdlet **Get-EventLog** verwendet werden. Um auf das Anwendungsprotokoll auf einem Remotecomputer zuzugreifen, müssen Sie sowohl den Namen des Protokolls als auch einen Computernamen (oder eine IP-Adresse) als Argumente bereitstellen.
 
 ```
@@ -116,7 +114,7 @@ PS> $RemoteAppLog
      512      7 OverwriteOlder              0 Application
 ```
 
-### <a name="creating-com-objects-with-newobject"></a>Erstellen von COM-Objekten mit „New-Object“
+### <a name="creating-com-objects-with-new-object"></a>Erstellen von COM-Objekten mit „New-Object“
 Sie können **New-Object** verwenden, um mit Component Object Model-Komponenten (COM) zu arbeiten. Die Komponenten reichen von den verschiedenen in Windows Script Host (WSH) enthaltenen Bibliotheken bis hin zu ActiveX-Anwendungen wie Internet Explorer, die auf den meisten Systemen installiert sind.
 
 **New-Object** verwendet zum Erstellen von COM-Objekten .NET Framework Runtime Callable Wrapper, es gelten somit die gleichen Einschränkungen wie für .NET Framework beim Aufrufen von COM-Objekten. Zum Erstellen eines COM-Objekts müssen Sie den Parameter **ComObject** mit dem programmatischen Bezeichner bzw. der *ProgId* der COM-Klasse angeben, die Sie verwenden möchten. Eine vollständige Erläuterung der Einschränkungen der COM-Verwendung und Informationen zu den auf einem System verfügbaren ProgIDs würden den Rahmen dieses Handbuchs sprengen, aber die meisten bekannten Objekte aus Umgebungen wie WSH können in Windows PowerShell verwendet werden.
@@ -259,7 +257,7 @@ Remove-Variable ie
 > [!NOTE]
 > Es gibt keinen allgemeinen Standard, der festlegt, ob ActiveX-EXE-Dateien beendet oder weiterhin ausgeführt werden, wenn Sie einen Verweis darauf entfernen. Je nach Situation, also z. B. abhängig davon, ob die Anwendung angezeigt, ein bearbeitetes Dokument darin ausgeführt oder Windows PowerShell noch ausgeführt wird, wird die Anwendung beendet oder auch nicht. Aus diesem Grund sollten Sie das Abbruchverhalten für jede ActiveX-EXE-Datei testen, die Sie in Windows PowerShell verwenden möchten.
 
-### <a name="getting-warnings-about-net-frameworkwrapped-com-objects"></a>Abrufen von Warnungen zu von .NET Framework umschlossenen COM-Objekten
+### <a name="getting-warnings-about-net-framework-wrapped-com-objects"></a>Abrufen von Warnungen zu von .NET Framework umschlossenen COM-Objekten
 In einigen Fällen verfügt ein COM-Objekt möglicherweise über einen zugeordneten .NET Framework *Runtime-Callable Wrapper* oder RCW, und dieser wird von **New-Object** verwendet. Da das Verhalten des RCW möglicherweise vom Verhalten des normalen COM-Objekts abweicht, verfügt **New-Object** über einen **Strict**-Parameter, der Sie auf den RCW-Zugriff hinweist. Wenn Sie den Parameter **Strict** angeben und dann ein COM-Objekt erstellen, das einen RCW verwendet, wird eine Warnung angezeigt:
 
 ```
@@ -274,10 +272,4 @@ At line:1 char:17
 ```
 
 Das Objekt wird zwar erstellt, Sie werden jedoch darauf hingewiesen, dass es sich nicht um ein Standard-COM-Objekt handelt.
-
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

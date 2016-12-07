@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: b414a01bcd111143791a5fac77e61ce309a0a5c5
-ms.openlocfilehash: b5de1100450a89796c20a5bbb2e71f7759374b02
-
+ms.openlocfilehash: a8c2094cbef1bb14c4a9082ff78fae78ec0c2e65
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Schreiben einer benutzerdefinierten DSC-Ressource mit PowerShell-Klassen
+# <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>Schreiben einer benutzerdefinierten DSC-Ressource mit PowerShell-Klassen
 
 > Gilt für: Windows PowerShell 5.0
 
@@ -25,7 +23,7 @@ In diesem Thema wird eine einfache Ressource mit dem Namen **FileResource** erst
 
 Weitere Informationen zu DSC-Ressourcen finden Sie unter [Erstellen von benutzerdefinierten Windows PowerShell DSC-Ressourcen](authoringResource.md).
 
-## Ordnerstruktur für eine Klassenressource
+## <a name="folder-structure-for-a-class-resource"></a>Ordnerstruktur für eine Klassenressource
 
 Um eine benutzerdefinierte DSC-Ressource mit einer PowerShell-Klasse zu implementieren, erstellen Sie die folgende Ordnerstruktur. Die Klasse wird in **MyDscResource.psm1** und das Modulmanifest in **MyDscResource.psd1** definiert.
 
@@ -36,7 +34,7 @@ $env:ProgramFiles\WindowsPowerShell\Modules (folder)
            MyDscResource.psd1 
 ```
 
-## Erstellen einer Klasse
+## <a name="create-the-class"></a>Erstellen einer Klasse
 
 Sie verwenden das Schlüsselwort „class“ zum Erstellen einer PowerShell-Klasse. Um anzugeben, dass eine Klasse eine DSC-Ressource ist, verwenden Sie das Attribut **DscResource()**. Der Name der Klasse ist der Name der DSC-Ressource.
 
@@ -46,7 +44,7 @@ class FileResource {
 }
 ```
 
-### Deklarieren von Eigenschaften
+### <a name="declare-properties"></a>Deklarieren von Eigenschaften
 
 Das DSC-Ressourcenschema wird als Eigenschaften der Klasse definiert. Es wurden die folgenden drei Eigenschaften deklariert.
 
@@ -81,7 +79,7 @@ enum Ensure
 }
 ```
 
-### Implementieren der Methoden
+### <a name="implementing-the-methods"></a>Implementieren der Methoden
 
 Die Methoden **Get()**, **Set()** und **Test()** werden analog zu den Funktionen **Get-TargetResource**, **Set-TargetResource** und **Test-TargetResource** in einer Skriptressource implementiert.
 
@@ -218,7 +216,7 @@ Dieser Code umfasst auch die Funktion „CopyFile()“, eine Hilfsfunktion, die 
     }
 ```
 
-### Die vollständige Datei
+### <a name="the-complete-file"></a>Die vollständige Datei
 Die vollständige Klassendatei folgt.
 
 ```powershell
@@ -417,7 +415,7 @@ class FileResource
 ```
 
 
-## Erstellen eines Manifests
+## <a name="create-a-manifest"></a>Erstellen eines Manifests
 
 Um eine klassenbasierte Ressource für das DSC-Modul verfügbar zu machen, müssen Sie eine **DscResourcesToExport**-Anweisung zur Manifestdatei hinzufügen, die das Modul anweist, die Ressource zu exportieren. Unser Manifest sieht folgendermaßen aus:
 
@@ -455,7 +453,7 @@ PowerShellVersion = '5.0'
 } 
 ```
 
-## Testen der Ressource
+## <a name="test-the-resource"></a>Testen der Ressource
 
 Nachdem Sie die Klasse und die Manifestdateien, wie zuvor beschrieben, in der Ordnerstruktur gespeichert haben, können Sie eine Konfiguration erstellen, die die neue Ressource verwendet. Informationen dazu, wie Sie eine DSC-Konfiguration ausführen, finden Sie unter [Inkraftsetzung von Konfigurationen](enactingConfigurations.md). Die folgende Konfiguration überprüft, ob die Datei unter `c:\test\test.txt` vorhanden ist, und kopiert sie bei Bedarf aus `c:\test.txt` (Sie sollten `c:\test.txt` vor dem Ausführen der Konfiguration erstellen).
 
@@ -474,13 +472,7 @@ Test
 Start-DscConfiguration -Wait -Force Test
 ```
 
-## Weitere Informationen
-### Konzepte
+## <a name="see-also"></a>Weitere Informationen
+### <a name="concepts"></a>Konzepte
 [Erstellen von benutzerdefinierten Windows PowerShell DSC-Ressourcen](authoringResource.md)
-
-
-
-
-<!--HONumber=Oct16_HO1-->
-
 

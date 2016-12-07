@@ -7,19 +7,17 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 97714d3fa9a1c00fb3d2e79cc873280ca945a840
-ms.openlocfilehash: 0fe5e7d9679d44bb50c897badf8c6517b95049e2
-
+ms.openlocfilehash: 7e8c0d39d4f49d09acef79d789ee54f158e465f8
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
+# <a name="dsc-windowsprocess-resource"></a>DSC-Ressource „WindowsProcess“
 
-# DSC-Ressource „WindowsProcess“
-
-> Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Die Ressource **WindowsProcess** in Windows PowerShell DSC bietet einen Mechanismus zum Konfigurieren von Prozessen auf einem Zielknoten.
 
-## Syntax
+## <a name="syntax"></a>Syntax
 
 ```
 WindowsProcess [string] #ResourceName
@@ -36,7 +34,7 @@ WindowsProcess [string] #ResourceName
 }
 ```
 
-## Eigenschaften
+## <a name="properties"></a>Eigenschaften
 |  Eigenschaft  |  Beschreibung   | 
 |---|---| 
 | Argumente| Gibt eine Zeichenfolge von Argumenten an, die wie vorhanden an den Prozess übergeben wird. Wenn Sie mehrere Argumente übergeben müssen, fügen Sie sie alle dieser Zeichenfolge hinzu.| 
@@ -48,10 +46,4 @@ WindowsProcess [string] #ResourceName
 | StandardInputPath| Gibt den Standardpfad für die Eingabe an.| 
 | StandardOutputPath| Gibt den Speicherort an, in den die Standardausgabe geschrieben wird. Eine vorhandene Datei wird überschrieben.| 
 | WorkingDirectory| Gibt den Speicherort an, der als das aktuelle Arbeitsverzeichnis für den Prozess verwendet wird.| 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -7,20 +7,18 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: bda348e6597f31b8dfa2014e5c34c5d3bc7bca15
-ms.openlocfilehash: 10123359213df7180388d9251e032c2bbb673143
-
+ms.openlocfilehash: 6c1dce6a3f1b801f7bdf5bf778df8033e3d76280
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
+# <a name="dsc-service-resource"></a>DSC-Ressource „Service“
 
-# DSC-Ressource „Service“
-
-> Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 
 Die Ressource **Service** in Windows PowerShell DSC bietet einen Mechanismus zum Verwalten von Diensten auf dem Zielknoten.
 
-## Syntax
+## <a name="syntax"></a>Syntax
 
 ```
 Service [string] #ResourceName
@@ -38,7 +36,7 @@ Service [string] #ResourceName
 }
 ```
 
-## Eigenschaften
+## <a name="properties"></a>Eigenschaften
 
 |  Eigenschaft  |  Beschreibung   | 
 |---|---| 
@@ -53,7 +51,7 @@ Service [string] #ResourceName
 | Ensure | Gibt an, ob der Zieldienst auf dem System vorhanden ist. Legen Sie diese Eigenschaft auf **Absent** fest, um sicherzustellen, dass der Zieldienst nicht vorhanden ist. Das Festlegen auf **Present** (den Standardwert) stellt sicher, dass der Zieldienst vorhanden ist.|
 | Path | Gibt den Pfad zur Binärdatei eines neuen Diensts an.| 
 
-## Beispiel
+## <a name="example"></a>Beispiel
 
 ```powershell
 configuration ServiceTest
@@ -71,10 +69,4 @@ configuration ServiceTest
     }
 }
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -7,17 +7,15 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
 ms.openlocfilehash: 4c575bbf0e0553e19e56bcc6edd605e36586cb94
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# DSC für Linux-Resource „nxScript“
+# <a name="dsc-for-linux-nxscript-resource"></a>DSC für Linux-Resource „nxScript“
 
 Die Ressource **nxScript** in PowerShell DSC bietet einen Mechanismus zum Ausführen von Linux-Skripts auf einem Linux-Knoten.
 
-## Syntax
+## <a name="syntax"></a>Syntax
 
 ```
 nxScript <string> #ResourceName
@@ -32,7 +30,7 @@ nxScript <string> #ResourceName
 }
 ```
 
-## Eigenschaften
+## <a name="properties"></a>Eigenschaften
 
 |  Eigenschaft |  Beschreibung | 
 |---|---|
@@ -43,7 +41,7 @@ nxScript <string> #ResourceName
 | Group| Die Gruppe, die das Skript ausführt.| 
 | DependsOn | Gibt an, dass die Konfiguration einer anderen Ressource ausgeführt werden muss, bevor diese Ressource konfiguriert wird. Wenn beispielsweise die **ID** des Skriptblocks mit der Ressourcenkonfiguration, den Sie zuerst ausführen möchten, **ResourceName** und dessen Typ **ResourceType** ist, lautet die Syntax für das Verwenden dieser Eigenschaft `DependsOn = "[ResourceType]ResourceName"`.| 
 
-## Beispiel
+## <a name="example"></a>Beispiel
 
 Das folgende Beispiel veranschaulicht die Verwendung der Ressource **nxScript**, um zusätzliche Konfigurationsschritte auszuführen.
 
@@ -76,10 +74,4 @@ fi
 } 
 }
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

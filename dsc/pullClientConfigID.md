@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
 ms.openlocfilehash: f6569220fbafdba49bac9ac9dca3e6036a7aad08
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Einrichten eines DSC-Pullclients mithilfe einer Konfigurations-ID
+# <a name="setting-up-a-pull-client-using-configuration-id"></a>Einrichten eines DSC-Pullclients mithilfe einer Konfigurations-ID
 
 > Gilt für: Windows PowerShell 5.0
 
@@ -52,11 +50,11 @@ Nachdem das Skript ausgeführt wurde, erstellt es einen neuen Ausgabeordner mit 
 
 Rufen Sie zum Anwenden der Konfiguration das Cmdlet **Set DscLocalConfigurationManager** auf, wobei **Path** auf den Speicherort der MOF-Datei mit der Metakonfiguration festgelegt wird. Beispiel: `Set-DSCLocalConfigurationManager localhost –Path .\PullClientConfigID –Verbose.`
 
-## Konfigurations-ID
+## <a name="configuration-id"></a>Konfigurations-ID
 
 Das Skript legt die **ConfigurationID**-Eigenschaft des LCM auf eine GUID fest, die zuvor für diesen Zweck erstellt wurde (Sie können eine GUID mit dem Cmdlet **New-Guid** erstellen). Der LCM nutzt die **ConfigurationID** zum Auffinden der entsprechenden Konfiguration auf dem Pullserver. Die MOF-Konfigurationsdatei auf dem Pullserver muss den Namen _ConfigurationID.mof_ haben, wobei _ConfigurationID_ der Wert der **ConfigurationID**-Eigenschaft des LCM des Zielknotens ist.
 
-## SMB-Pullserver
+## <a name="smb-pull-server"></a>SMB-Pullserver
 
 Um einen Client zum Abrufen von Konfigurationen per Pull von einem SMB-Server einzurichten, verwenden Sie einen **ConfigurationRepositoryShare**-Block. Im **ConfigurationRepositoryShare**-Block geben Sie den Pfad zum Server durch Festlegen der **SourcePath**-Eigenschaft an. Die folgende Metakonfiguration konfiguriert den Zielknoten zum Abrufen von Daten von einem SMB-Pullserver mit dem Namen **SMBPullServer**.
 
@@ -83,7 +81,7 @@ configuration PullClientConfigID
 PullClientConfigID
 ```
 
-## Ressourcen und Berichtsserver
+## <a name="resource-and-report-servers"></a>Ressourcen und Berichtsserver
 
 Wenn Sie in Ihrer LCM-Konfiguration nur einen **ConfigurationRepositoryWeb**- oder einen **ConfigurationRepositoryShare**-Block angeben (wie im vorherigen Beispiel), ruft der Pullclient Ressourcen per Pull vom angegebenen Server ab, sendet aber keine Berichte an den Server. Sie können für Konfigurationen, Ressourcen und Berichte einen einzigen Pullserver verwenden, allerdings müssen Sie einen **ReportRepositoryWeb**-Block erstellen, um die Berichterstattung einzurichten. 
 
@@ -157,13 +155,7 @@ configuration PullClientConfigID
 PullClientConfigID
 ```
 
-## Weitere Informationen
+## <a name="see-also"></a>Weitere Informationen
 
 * [Einrichten eines Pullclients mit Konfigurationsnamen](pullClientConfigNames.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

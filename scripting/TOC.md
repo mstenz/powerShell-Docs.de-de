@@ -140,8 +140,3 @@
 ####  [Verwendung der webbasierten Windows PowerShell-Konsole](core-powershell/web-access/use-the-web-based-windows-powershell-console.md)
 
 ## [PowerShell-Glossar](Windows-PowerShell-Glossary.md)
-
-
-<!--HONumber=Nov16_HO4-->
-
-

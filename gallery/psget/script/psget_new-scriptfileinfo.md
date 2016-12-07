@@ -1,30 +1,45 @@
-# New-ScriptFileInfo
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: PowerShell, Cmdlet, Katalog
+ms.date: 2016-10-14
+contributor: manikb
+title: New-ScriptFileInfo | MSDN
+ms.technology: powershell
+ms.openlocfilehash: d6b8790c3dd7ce366d608ff7bfd083ca12b201fd
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
+---
+# <a name="new-scriptfileinfo"></a>New-ScriptFileInfo
 
 Erstellt eine Skriptdatei mit Metadaten
 
-## Beschreibung
+## <a name="description"></a>Beschreibung
 
 Das Cmdlet „New-ScriptFileInfo“ erstellt eine PowerShell-Skriptdatei, einschließlich Metadaten über das Skript.
 
-## Cmdlet-Syntax
+## <a name="cmdlet-syntax"></a>Cmdlet-Syntax
 
 ```powershell
 Get-Command -Name New-ScriptFileInfo -Module PowerShellGet -Syntax
 ```
 
-## Cmdlet-Onlinehilfe
+## <a name="cmdlet-online-help-reference"></a>Cmdlet-Onlinehilfe
 
 [New-ScriptFileInfo](http://go.microsoft.com/fwlink/?LinkId=619792)
 
-## Beispiele für Befehle
+## <a name="example-commands"></a>Beispiele für Befehle
 
-### PassThru-Parameter
+### <a name="passthru-parameter"></a>PassThru-Parameter
 
 ```powershell
 New-ScriptFileInfo -Description "Script file description." -PassThru
 ```
 
-### Cmdlet „New-ScriptFileInfo“
+### <a name="new-scriptfileinfo-cmdlet"></a>Cmdlet „New-ScriptFileInfo“
 Mit dem Cmdlet „New-ScriptFileInfo“ können Sie eine neue Skriptdatei mit Metadaten wie „Version“, „Guid“, „Author“ und „Description“ erstellen. 
 
 ```powershell
@@ -180,8 +195,4 @@ DefinedCommands : {Demo-ScriptFunction, Demo-ScriptWorkflow}
 DefinedFunctions : Demo-ScriptFunction
 DefinedWorkflows : Demo-ScriptWorkflow
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -1,21 +1,36 @@
-# Uninstall-Script
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: PowerShell, Cmdlet, Katalog
+ms.date: 2016-10-14
+contributor: manikb
+title: Uninstall-Script | MSDN
+ms.technology: powershell
+ms.openlocfilehash: 9cc6ee62720bfca858e7f783753adabe8a53fb29
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
+---
+# <a name="uninstall-script"></a>Uninstall-Script
 
 Deinstalliert eine Skriptdatei, die mithilfe von PowerShellGet installiert wurde
 
-## Beschreibung
+## <a name="description"></a>Beschreibung
 
 Das Cmdlet „Uninstall-Script“ deinstalliert die angegebenen Skriptdateien, die aus dem Online-Repository installiert wurden.
 
-## Cmdlet-Syntax
+## <a name="cmdlet-syntax"></a>Cmdlet-Syntax
 
 ```powershell
 Get-Command -Name Uninstall-Script -Module PowerShellGet -Syntax
 ```
-## Cmdlet-Onlinehilfe
+## <a name="cmdlet-online-help-reference"></a>Cmdlet-Onlinehilfe
 
 [Uninstall-Script](http://go.microsoft.com/fwlink/?LinkId=619789)
 
-## Beispiele für Befehle
+## <a name="example-commands"></a>Beispiele für Befehle
 
 ```powershell
 Get-InstalledScript | Uninstall-Script -WhatIf
@@ -55,8 +70,4 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PSModule.psm
 + CategoryInfo : ObjectNotFound: (Microsoft.Power...lets.GetPackage:GetPackage) [Get-Package], Exception
 + FullyQualifiedErrorId : NoMatchFound,Microsoft.PowerShell.PackageManagement.Cmdlets.GetPackage
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: dbe2c1ca2fb7dd65b49876f3bee6752ec9a24d6b
-
+ms.openlocfilehash: 8a8af7f4b82b856460427a68ec536e98f7cd981b
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Ausführen von DSC mit Benutzeranmeldeinformationen 
+# <a name="running-dsc-with-user-credentials"></a>Ausführen von DSC mit Benutzeranmeldeinformationen 
 
 > Gilt für: Windows PowerShell 5.0
 
@@ -62,10 +60,4 @@ ChangeCmdBackGroundColor -ConfigurationData $configData
 ```
 >**Hinweis**: In diesem Beispiel wird vorausgesetzt, dass Sie über ein gültiges Zertifikat unter `C:\publicKeys\targetNode.cer` verfügen und dass der Fingerabdruck dieses Zertifikats der angezeigte Wert ist.
 >Informationen zum Verschlüsseln von Anmeldeinformationen in DSC MOF-Konfigurationsdateien finden Sie unter [Schützen der MOF-Datei](secureMOF.md).
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

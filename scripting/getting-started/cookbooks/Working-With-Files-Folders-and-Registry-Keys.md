@@ -8,16 +8,14 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: e6cf87aa-b5f8-48d5-a75a-7cb7ecb482dc
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 3e1bf444d7657b66422dab3eb8dbeef5e4d581b4
-
+ms.openlocfilehash: e049f49414a79b9de5c05100957ae4dba8d992ce
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Arbeiten mit Dateien, Ordnern und Registrierungsschlüsseln
+# <a name="working-with-files-folders-and-registry-keys"></a>Arbeiten mit Dateien, Ordnern und Registrierungsschlüsseln
 Windows PowerShell verwendet das Nomen **Item** zum Verweisen auf Elemente in einem Windows PowerShell-Laufwerk. Im Zusammenhang mit dem Windows PowerShell FileSystem-Anbieter kann ein **Item** eine Datei, ein Ordner oder das Windows PowerShell-Laufwerk sein. Das Auflisten dieser Elemente und die Arbeiten damit ist in den meisten Verwaltungseinstellungen eine wichtige grundlegende Aufgabe. Daher sollen diese Aufgaben ausführlich erläutert werden.
 
-### Auflisten von Dateien, Ordnern und Registrierungsschlüsseln (Get-ChildItem)
+### <a name="enumerating-files-folders-and-registry-keys-get-childitem"></a>Auflisten von Dateien, Ordnern und Registrierungsschlüsseln (Get-ChildItem)
 Da das Abrufen einer Sammlung von Elementen von einem bestimmten Standort eine sehr häufig vorkommende Aufgabe ist, wurde das Cmdlet **Get-ChildItem** speziell dazu entwickelt, alle in einem Container, z.B. einem Ordner, gefundenen Elemente zurückzugeben.
 
 Wenn Sie alle Dateien und Ordner zurückgeben möchten, die direkt im Ordner „C:\\Windows“ enthalten sind, geben Sie Folgendes ein:
@@ -43,7 +41,7 @@ PS> Get-Command -Name Get-ChildItem -Syntax
 
 Diese Parameter können gemischt und angepasst werden, um eine stark angepasste Ausgabe zu erhalten.
 
-#### Auflisten aller enthaltenen Elemente (-Recurse)
+#### <a name="listing-all-contained-items--recurse"></a>Auflisten aller enthaltenen Elemente (-Recurse)
 Um sowohl die Elemente in einem Windows-Ordner als auch alle in dessen Unterordnern enthaltenen Elemente anzuzeigen, verwenden Sie den Parameter **Recurse** von **Get-ChildItem**. Die Auflistung zeigt alles, was im Windows-Ordner enthalten ist, und alle Elemente in seinen Unterordnern an. Beispiel:
 
 ```
@@ -57,7 +55,7 @@ Mode                LastWriteTime     Length Name
 ...
 ```
 
-#### Filtern von Elementen anhand des Namens (-Name)
+#### <a name="filtering-items-by-name--name"></a>Filtern von Elementen anhand des Namens (-Name)
 Um nur die Elementnamen anzuzeigen, verwenden Sie den Parameter **Name** von **Get-Childitem**:
 
 ```
@@ -68,7 +66,7 @@ assembly
 ...
 ```
 
-#### Erzwungenes Auflisten von ausgeblendeten Elementen (-Force)
+#### <a name="forcibly-listing-hidden-items--force"></a>Erzwungenes Auflisten von ausgeblendeten Elementen (-Force)
 Elemente, die normalerweise im Datei-Explorer oder in „Cmd.exe“ nicht sichtbar sind, werden in der Ausgabe des Befehls **Get-ChildItem** nicht angezeigt. Um ausgeblendete Elemente anzuzeigen, verwenden Sie den Parameter **Force** von **Get-ChildItem**. Beispiel:
 
 ```
@@ -77,7 +75,7 @@ Get-ChildItem -Path C:\Windows -Force
 
 Dieser Parameter heißt „Force“ (Zwingen), weil Sie mit ihm erzwingen können, dass das normale Verhalten des Befehls **Get-ChildItem** außer Kraft gesetzt wird. „Force“ ist ein weit verbreiteter Parameter, der eine Aktion erzwingt, die ein Cmdlet normalerweise nicht ausführen würde. Allerdings wird keine Aktion ausgeführt, die die Sicherheit des Systems gefährden würde.
 
-#### Abgleichen von Elementnamen mit Platzhaltern
+#### <a name="matching-item-names-with-wildcards"></a>Abgleichen von Elementnamen mit Platzhaltern
 Der Befehl **Get-ChildItem** akzeptiert Platzhalter im Pfad der aufzulistenden Elemente.
 
 Da das Abgleichen von Platzhaltern vom Windows PowerShell-Modul durchgeführt wird, verwenden alle Cmdlets, die Platzhalter akzeptieren, die gleiche Notation und das gleiche Abgleichverhalten. Die Windows PowerShell-Notation für Platzhalter enthält Folgendes:
@@ -118,7 +116,7 @@ Um alle Dateien zu suchen, deren Name mit **x** oder **z** beginnt, geben Sie Fo
 Get-ChildItem -Path C:\Windows\[xz]*
 ```
 
-#### Ausschließen von Elementen (-Exclude)
+#### <a name="excluding-items--exclude"></a>Ausschließen von Elementen (-Exclude)
 Sie können bestimmte Elemente durch Verwenden des Parameters **Exclude** von „Get-ChildItem“ ausschließen. Auf diese Weise können Sie eine komplexe Filterung in einer einzigen Anweisung durchführen.
 
 Angenommen, Sie möchten die Windows Time Service-DLL im Ordner „System32“ suchen, und Sie können sich nur daran erinnern, dass der Name der DLL mit „W“ anfängt und „32“ darin enthalten ist.
@@ -127,7 +125,7 @@ Mit einem Ausdruck wie **w\&#42;32\&#42;.dll** finden Sie alle DLLs, die die Bed
 
 <pre>PS> Get-ChildItem -Path C:\WINDOWS\System32\w*32*.dll -Exclude *[9516]* Directory: Microsoft.PowerShell.Core\FileSystem::C:\WINDOWS\System32 Mode                LastWriteTime     Length Name ----                -------------     ------ ---- -a---        2004-08-04   8:00 AM     174592 w32time.dll -a---        2004-08-04   8:00 AM      22016 w32topl.dll -a---        2004-08-04   8:00 AM     101888 win32spl.dll -a---        2004-08-04   8:00 AM     172032 wldap32.dll -a---        2004-08-04   8:00 AM     264192 wow32.dll -a---        2004-08-04   8:00 AM      82944 ws2_32.dll -a---        2004-08-04   8:00 AM      42496 wsnmp32.dll -a---        2004-08-04   8:00 AM      22528 wsock32.dll -a---        2004-08-04   8:00 AM      18432 wtsapi32.dll</pre>
 
-#### Kombinieren von Get-ChildItem-Parametern
+#### <a name="mixing-get-childitem-parameters"></a>Kombinieren von Get-ChildItem-Parametern
 Sie können verschiedene Parameter des Cmdlets **Get-ChildItem** im gleichen Befehl verwenden. Bevor Sie Parameter kombinieren, sollten Sie sicher sein, dass Sie das Abgleichen mit Platzhalterzeichen verstanden haben. Beispielsweise gibt der folgende Befehl keine Ergebnisse zurück:
 
 ```
@@ -155,10 +153,4 @@ Mode                LastWriteTime     Length Name
 ----                -------------     ------ ----
 -a---        2004-08-04   8:00 AM     337920 zipfldr.dll
 ```
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

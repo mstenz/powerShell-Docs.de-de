@@ -7,15 +7,13 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
 ms.openlocfilehash: 0a27a40b995393c41f0496a5f7fa3f56fbd865dd
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
+# <a name="dsc-resources"></a>DSC-Ressourcen
 
-# DSC-Ressourcen
-
->Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
+>Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 DSC-Ressourcen sind die Bausteine einer DSC-Konfiguration. Eine Ressource macht Eigenschaften verfügbar, die konfiguriert werden können (Schema), und enthält die PowerShell-Skriptfunktionen, die der lokale Konfigurations-Manager wie gewünscht ausführt.
 
@@ -26,10 +24,4 @@ In den folgenden Themen werden DSC-Ressourcen beschrieben:
 - [Integrierte DSC-Ressourcen](builtInResource.md)
 - [Erstellen benutzerdefinierter DSC-Ressourcen](authoringResource.md)
 - [Integrierte DSC-Ressourcen für Linux](lnxBuiltInResources.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

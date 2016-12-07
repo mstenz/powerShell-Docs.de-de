@@ -7,17 +7,15 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
 ms.openlocfilehash: 2edbc1d11dfc7c84369430688a8b0d773277e864
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# DSC für Linux-Resource „nxArchive“
+# <a name="dsc-for-linux-nxarchive-resource"></a>DSC für Linux-Resource „nxArchive“
 
 Die Ressource **nxArchive** in PowerShell DSC bietet einen Mechanismus zum Entpacken von Archivdateien (.tar, .zip) in einem bestimmten Pfad auf einem Linux-Knoten.
 
-## Syntax
+## <a name="syntax"></a>Syntax
 
 ```
 nxArchive <string> #ResourceName
@@ -31,7 +29,7 @@ nxArchive <string> #ResourceName
 }
 ```
 
-## Eigenschaften
+## <a name="properties"></a>Eigenschaften
 
 |  Eigenschaft |  Beschreibung | 
 |---|---|
@@ -42,7 +40,7 @@ nxArchive <string> #ResourceName
 | DependsOn | Gibt an, dass die Konfiguration einer anderen Ressource ausgeführt werden muss, bevor diese Ressource konfiguriert wird. Wenn beispielsweise die **ID** des Skriptblocks mit der Ressourcenkonfiguration, den Sie zuerst ausführen möchten, **ResourceName** und dessen Typ **ResourceType** ist, lautet die Syntax für das Verwenden dieser Eigenschaft `DependsOn = "[ResourceType]ResourceName"`.| 
 | Ensure| Bestimmt, ob geprüft wird, ob der Inhalt der Archivdatei am **Ziel** vorhanden ist. Legen Sie diese Eigenschaft auf „Present“ fest, um sicherzustellen, dass der Inhalt vorhanden ist. Legen Sie sie auf „Absent“ fest, um sicherzustellen, dass der Inhalt nicht vorhanden ist. Der Standardwert ist „Present“.| 
 
-## Beispiel
+## <a name="example"></a>Beispiel
 
 Im folgenden Beispiel wird veranschaulicht, wie Sie die Ressource **nxArchive** verwenden, um sicherzustellen, dass der Inhalt einer Archivdatei mit dem Namen `website.tar` vorhanden ist und an ein bestimmtes Ziel extrahiert wird.
 
@@ -66,10 +64,4 @@ nxArchive SyncWebDir
    DependsOn = "[nxFile]SyncArchiveFromWeb"
 } 
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

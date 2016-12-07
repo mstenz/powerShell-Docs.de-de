@@ -1,27 +1,19 @@
 ---
 title: "Beispielvorlage für das Hochschreiben eines bekannten Problems oder einer Einschränkung"
 contributor: 
-translationtype: Human Translation
-ms.sourcegitcommit: a952a27ec1695ce9951c352446194cf72d18f50a
-ms.openlocfilehash: cfe0a6562743f1df81acb81e33c120cb67f9042c
-
+ms.openlocfilehash: e3b98044902cb6665e06582c8259bd5defd6f2ca
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 >Hinweis: Vorschlag für einen aussagekräftigen Namen und eine Kurzbeschreibung bereitstellen
 
-## Beispiel: Fehlerhafte „ExecutionPolicy“-Fehler ##
+## <a name="example-erroneous-executionpolicy-errors"></a>Beispiel: Fehlerhafte „ExecutionPolicy“-Fehler ##
 Unter Windows 7 kann die Verwendung von PowerShell-Modulen und DSC-Ressourcen zu Fehlern führen, die zu „ExecutionPolicy“ gemeldet werden.
 
-### Lösung
+### <a name="resolution"></a>Lösung
 
 Legen Sie als Lösung **ExecutionPolicy** auf **RemoteSigned** fest, indem Sie den folgenden Befehl mit erhöhten Rechten in einer PowerShell-Sitzung ausführen (Als Administrator ausführen):
 
 ```powershell
 Set-ExecutionPolicy RemoteSigned
 ```
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

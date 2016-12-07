@@ -7,19 +7,17 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: 522dbea958a60f76e98abe32e11e6491ea6d457c
-
+ms.openlocfilehash: 98c39d11122d26502723a302ebd7ad4cff0be35d
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
+# <a name="dsc-windowsfeature-resource"></a>DSC-Ressource „WindowsFeature“
 
-# DSC-Ressource „WindowsFeature“
-
-> Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Die Ressource **WindowsFeature** in Windows PowerShell DSC (Desired State Configuration) bietet einen Mechanismus, um sicherzustellen, dass Rollen und Features einem Knoten hinzugefügt oder entfernt werden.
 
-## Syntax
+## <a name="syntax"></a>Syntax
 
 ```
 WindowsFeature [string] #ResourceName
@@ -34,7 +32,7 @@ WindowsFeature [string] #ResourceName
 }
 ```
 
-## Eigenschaften
+## <a name="properties"></a>Eigenschaften
 
 |  Eigenschaft  |  Beschreibung   | 
 |---|---| 
@@ -46,7 +44,7 @@ WindowsFeature [string] #ResourceName
 | DependsOn| Gibt an, dass die Konfiguration einer anderen Ressource ausgeführt werden muss, bevor diese Ressource konfiguriert wird. Wenn beispielsweise die ID des Skriptblocks mit der Ressourcenkonfiguration, den Sie zuerst ausführen möchten, __ResourceName__ und dessen Typ __ResourceType__ ist, lautet die Syntax für das Verwenden dieser Eigenschaft `DependsOn = "[ResourceType]ResourceName"`.| 
 | Source| Gibt bei Bedarf den Speicherort der Quelldatei an, die für die Installation verwendet werden soll.| 
 
-## Beispiel
+## <a name="example"></a>Beispiel
 ```powershell
 WindowsFeature RoleExample
 {
@@ -55,10 +53,4 @@ WindowsFeature RoleExample
     Name = "Web-Server" # Use the Name property from Get-WindowsFeature  
 }
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

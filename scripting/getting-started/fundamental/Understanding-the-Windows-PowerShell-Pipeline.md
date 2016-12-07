@@ -8,16 +8,14 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 6be50926-7943-4ef7-9499-4490d72a63fb
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: d90bf940a1047b629f7b59d239aab50a78748251
-
+ms.openlocfilehash: 34e641329388436074f2d0f05647ec4fa7efdf83
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Grundlegendes zur Windows PowerShell-Pipeline
+# <a name="understanding-the-windows-powershell-pipeline"></a>Grundlegendes zur Windows PowerShell-Pipeline
 Die Weiterleitung über Pipes funktioniert nahezu überall in Windows PowerShell. Obwohl Text auf dem Bildschirm angezeigt wird, leitet Windows PowerShell Text nicht zwischen Befehlen weiter. Stattdessen werden Objekte weitergeleitet.
 
-Die Notation für Pipelines ist ähnlich wie bei anderen Shells, weshalb es auf den ersten Blick möglicherweise nicht ersichtlich ist, dass in Windows PowerShell etwas Neues eingeführt wird. Wenn Sie beispielsweise das Cmdlet **Out-Host\\ zum Erzwingen einer Seitenanzeige der Ausgabe eines anderen Befehls verwenden, sieht die Ausgabe bloß wie der normale auf dem Bildschirm gezeigte Text aus, der in Seiten unterteilt ist:
+Die Notation für Pipelines ist ähnlich wie bei anderen Shells, weshalb es auf den ersten Blick möglicherweise nicht ersichtlich ist, dass in Windows PowerShell etwas Neues eingeführt wird. Wenn Sie beispielsweise das Cmdlet **Out-Host** zum Erzwingen einer Seitenanzeige der Ausgabe eines anderen Befehls verwenden, sieht die Ausgabe bloß wie der normale auf dem Bildschirm gezeigte Text aus, der in Seiten unterteilt ist:
 
 ```
 PS> Get-ChildItem -Path C:\WINDOWS\System32 | Out-Host -Paging
@@ -66,10 +64,4 @@ Die vom Cmdlet **Get-Location** ausgegebenen Überschriftsinformationen werden e
 Angenommen, ein Windows PowerShell-Befehl gibt mehr Informationen aus, als im Konsolenfenster angezeigt werden. Wie können wir die nicht sichtbaren Elemente abrufen? Wie zeigen Sie die zusätzlichen Daten an? Was ist, wenn Sie die Daten in einem anderen Format als in demjenigen anzeigen möchten, das Windows PowerShell normalerweise verwendet?
 
 Im weiteren Verlauf dieses Kapitels wird erörtert, wie Sie die Struktur bestimmter Windows PowerShell-Objekte erkennen, bestimmte Elemente auswählen und für eine einfachere Anzeige formatieren und diese Informationen an alternative Ausgabeziele wie Dateien oder Drucker übermitteln können.
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

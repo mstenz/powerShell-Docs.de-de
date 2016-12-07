@@ -8,12 +8,10 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
-translationtype: Human Translation
-ms.sourcegitcommit: c1e210afa664304fa38f7dead444ab4a206be64f
-ms.openlocfilehash: f560b955f8f817caf96dba40900844b98a0e92a9
-
+ms.openlocfilehash: 9510e13156b0dd0da8e5c4f94cfaf7b3152f3ad0
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="windows-powershell-system-requirements"></a>Windows PowerShell-Systemanforderungen
 In diesem Thema werden die Systemanforderungen für Windows PowerShell 3.0, Windows PowerShell 4.0 und Windows PowerShell 5.0 sowie für besondere Features wie Windows PowerShell Integrated Scripting Environment (ISE), CIM-Befehle und Workflows aufgeführt.
 
@@ -70,7 +68,7 @@ Informationen zur vollständigen Installation von Microsoft .NET Framework 4 (do
 ## <a name="windows-management-framework-40"></a>Windows Management Framework 4.0
 Windows PowerShell 5.0 erfordert Windows Management Framework 4.0 vorinstalliert unter Windows Server 2008 R2 SP1 und Windows 7 SP1.
 
-## <a name="wsmanagement-30"></a>WS-Management 3.0
+## <a name="ws-management-30"></a>WS-Management 3.0
 Windows PowerShell 3.0 und Windows PowerShell 4.0 erfordern WS-Management 3.0, das den WinRM-Dienst und das WSMan-Protokoll unterstützt. Dieses Programm ist in Windows 8.1, Windows Server 2012 R2, Windows 8, Windows Server 2012, Windows Management Framework 4.0 und Windows Management Framework 3.0 enthalten.
 
 ## <a name="windows-management-instrumentation-30"></a>Windows-Verwaltungsinstrumentation 3.0 (Windows Management Instrumentation, WMI)
@@ -130,10 +128,4 @@ Darüber hinaus ist der **WinRM**-Dienst nicht in der Windows PE vorhanden.
 - [Erste Schritte mit Windows PowerShell](../getting-started/Getting-Started-with-Windows-PowerShell.md)
 - [Installieren von Windows PowerShell](Installing-Windows-PowerShell.md)
 - [Starten von Windows PowerShell](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
-
-
-
-
-<!--HONumber=Oct16_HO4-->
-
 

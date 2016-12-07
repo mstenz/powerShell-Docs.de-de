@@ -7,17 +7,15 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
 ms.openlocfilehash: edc906b4e9c925320c4ed00c5ab295189066ccb9
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# DSC für Linux-Ressource „nxSshAuthorizedKeys“
+# <a name="dsc-for-linux-nxsshauthorizedkeys-resource"></a>DSC für Linux-Ressource „nxSshAuthorizedKeys“
 
 Die Ressource **nxAuthorizedKeys** in PowerShell DSC bietet ein Mechanismus zum Verwalten autorisierter SSH-Schlüssel für einen angegebenen Benutzer.
 
-## Syntax
+## <a name="syntax"></a>Syntax
 
 ```
 nxAuthorizedKeys <string> #ResourceName
@@ -31,7 +29,7 @@ nxAuthorizedKeys <string> #ResourceName
 }
 ```
 
-## Eigenschaften
+## <a name="properties"></a>Eigenschaften
 
 |  Eigenschaft |  Beschreibung | 
 |---|---|
@@ -41,7 +39,7 @@ nxAuthorizedKeys <string> #ResourceName
 | Key| Der Inhalt des Schlüssels. Ist erforderlich, wenn **Ensure** auf „Present“ festgelegt ist.| 
 | DependsOn | Gibt an, dass die Konfiguration einer anderen Ressource ausgeführt werden muss, bevor diese Ressource konfiguriert wird. Wenn beispielsweise die **ID** des Skriptblocks mit der Ressourcenkonfiguration, den Sie zuerst ausführen möchten, **ResourceName** und dessen Typ **ResourceType** ist, lautet die Syntax für das Verwenden dieser Eigenschaft `DependsOn = "[ResourceType]ResourceName"`.| 
 
-## Beispiel
+## <a name="example"></a>Beispiel
 
 Das folgende Beispiel definiert einen öffentlichen autorisierten SSH-Schlüssel für den Benutzer „monuser“.
 
@@ -58,10 +56,4 @@ nxSshAuthorizedKeys myKey{
 } 
 }
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

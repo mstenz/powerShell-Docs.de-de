@@ -8,18 +8,16 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: a9f9e7a7-3ea8-47d3-bbb4-6e437f6d4a4a
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 97bdd8ed6278fc5d45b34adf50ef8a194966ef0c
-
+ms.openlocfilehash: 77960d8876a7b0bc928158a04b26735aa6be517b
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Verwalten des aktuellen Speicherorts
+# <a name="managing-current-location"></a>Verwalten des aktuellen Speicherorts
 Wenn Sie in Verzeichnissystemen im Datei-Explorer navigieren, haben Sie in der Regel einen bestimmten Arbeitsspeicherort, nämlich den aktuell geöffneten Ordner. Elemente im aktuellen Ordner können problemlos verarbeitet werden, indem auf sie geklickt wird. In Befehlszeilenschnittstellen wie z.B. „Cmd.exe“ gilt: Wenn Sie sich im selben Ordner wie eine bestimmte Datei befinden, können Sie darauf zugreifen, indem Sie einen relativ kurzen Namen angeben. Es ist nicht erforderlich, dass Sie den vollständigen Pfad zu der Datei angeben. Das aktuelle Verzeichnis wird als Arbeitsverzeichnis bezeichnet.
 
 In Windows PowerShell wird das Substantiv **Location** verwendet, um auf das Arbeitsverzeichnis zu verweisen, und es sind einige Cmdlets implementiert, mit denen der Speicherort überprüft und geändert werden kann.
 
-### Abrufen Ihres aktuellen Speicherorts (Get-Location)
+### <a name="getting-your-current-location-get-location"></a>Abrufen Ihres aktuellen Speicherorts (Get-Location)
 Um den Pfad zu Ihrem aktuellen Verzeichnis zu ermitteln, geben Sie den Befehl **Get-Location** ein:
 
 ```
@@ -32,7 +30,7 @@ C:\Documents and Settings\PowerUser
 > [!NOTE]
 > Das Cdmlet „Get-Location“ ähnelt dem Befehl **pwd** in der BASH-Shell. Das Cdmlet „Set-Location“ ähnelt dem Befehl **cd** in „Cmd.exe“.
 
-### Festlegen Ihres aktuellen Speicherorts (Set-Location)
+### <a name="setting-your-current-location-set-location"></a>Festlegen Ihres aktuellen Speicherorts (Set-Location)
 Der Befehl **Get-Location** wird mit dem Befehl **Set-Location** verwendet. Der Befehl **Set-Location** ermöglicht es Ihnen, das aktuelle Verzeichnis anzugeben.
 
 ```
@@ -90,7 +88,7 @@ chdir -Path .. -PassThru
 sl -Path HKLM:\SOFTWARE -PassThru
 ```
 
-### Speichern und Abrufen von zuletzt verwendeten Speicherorten („Push-Location“ und „Pop-Location“)
+### <a name="saving-and-recalling-recent-locations-push-location-and-pop-location"></a>Speichern und Abrufen von zuletzt verwendeten Speicherorten („Push-Location“ und „Pop-Location“)
 Wenn Sie Speicherorte wechseln, ist es sinnvoll, zu verfolgen, wo Sie waren, und in der Lage zu sein, zu Ihrem vorherigen Speicherort zurückzukehren. Das Cmdlet **Push-Location** in Windows PowerShell erstellt einen geordneten Verlauf (einen „Stapel“) der Verzeichnispfade, in denen Sie waren, und Sie können mithilfe des komplementären Cmdlets **Pop-Location** durch den Verlauf der Verzeichnispfade zurückgehen.
 
 Beispielsweise startet Windows PowerShell üblicherweise im Basisverzeichnis des Benutzers.
@@ -171,10 +169,4 @@ Set-Location : Cannot find path 'D:\' because it does not exist.
 ```
 
 Wenn Sie eine Befehlszeilenschnittstelle verwenden, ist es nicht praktisch, den Datei-Explorer zu verwenden, um die verfügbaren physischen Laufwerken zu prüfen. Der Datei-Explorer zeigt darüber hinaus nicht alle Windows PowerShell-Laufwerke an. Windows PowerShell stellt eine Reihe von Befehlen zum Handhaben von Windows PowerShell-Laufwerken bereit, die im nächsten Abschnitt vorgestellt werden.
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

@@ -1,4 +1,4 @@
-# Deklarieren der implementierten Schnittstelle
+# <a name="declare-implemented-interface"></a>Deklarieren der implementierten Schnittstelle
 
 Sie können implementierte Schnittstellen nach Basistypen oder unmittelbar nach einem Doppelpunkt (:) deklarieren, wenn kein Basistyp angegeben ist. Trennen Sie alle Typnamen durch Kommas. Dies entspricht der C#-Syntax.
 
@@ -19,7 +19,3 @@ class MyComparableBar : bar, system.IComparable
     }
 }
 ```
-
-<!--HONumber=Aug16_HO3-->
-
-

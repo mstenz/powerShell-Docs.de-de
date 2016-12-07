@@ -8,15 +8,13 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: Voraussetzungen
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 7504fe496a8913718847e45115d126caf4049bef
-ms.openlocfilehash: ac9231a475ba84e9051bbd06a65f3f20c9e49846
-
+ms.openlocfilehash: 6cd57c2fab63d2184cb5c792b63df99dbd782235
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
+# <a name="prerequisites"></a>Voraussetzungen
 
-# Voraussetzungen
-
-## Anfangszustand
+## <a name="initial-state"></a>Anfangszustand
 Bevor Sie mit diesem Abschnitt beginnen, stellen Sie Folgendes sicher:
 
 1. JEA ist auf Ihrem System verfügbar. Lesen Sie die [Infodatei](./README.md), um Informationen zu den derzeit unterstützten Betriebssystemen und erforderlichen Downloads zu erhalten.
@@ -24,7 +22,7 @@ Bevor Sie mit diesem Abschnitt beginnen, stellen Sie Folgendes sicher:
 3. Der Computer ist in die Domäne eingebunden.
 Falls Sie noch nicht über eine Domäne verfügen, finden Sie im Abschnitt [Erstellen eines Domänencontrollers](#creating-a-domain-controller) Informationen zum schnellen Erstellen einer neuen Domäne auf einem Server.
 
-## Aktivieren von PowerShell-Remoting
+## <a name="enable-powershell-remoting"></a>Aktivieren von PowerShell-Remoting
 Die Verwaltung mit JEA erfolgt über PowerShell-Remoting.
 Führen Sie Folgendes in einem PowerShell-Administratorfenster aus, um sicherzustellen, dass PowerShell-Remoting aktiviert und ordnungsgemäß konfiguriert ist:
 
@@ -34,7 +32,7 @@ Enable-PSRemoting
 
 Wenn Sie mit PowerShell-Remoting noch nicht vertraut sind, empfiehlt es sich, `Get-Help about_Remote` auszuführen, um Informationen zu diesem wichtigen und grundlegenden Konzept zu erhalten.
 
-## Identifizieren der Benutzer und Gruppen
+## <a name="identify-your-users-or-groups"></a>Identifizieren der Benutzer und Gruppen
 Um JEA in Aktion zu erleben, müssen Sie die Benutzer und Gruppen ohne Administratorrechte identifizieren, die Sie in diesem Leitfaden verwenden werden.
 
 Wenn Sie eine vorhandene Domäne verwenden, identifizieren oder erstellen Sie einige Benutzer und Gruppen ohne solche Rechte.
@@ -45,7 +43,7 @@ Wenn Sie eine neue Domäne erstellt haben, ist die Aufgabe wesentlich leichter.
 Verwenden Sie den Abschnitt [Set Up Users and Groups](creating-a-domain-controller.md#set-up-users-and-groups) (Einrichten von Benutzern und Gruppen) im Anhang, um Benutzer und Gruppen ohne Administratorrechte zu erstellen.
 Die in diesem Abschnitt erstellten Gruppen weisen standardmäßig den Wert `$NonAdministrator` auf.
 
-## Einrichten der Rollenfunktionsdatei für die Wartungsrolle
+## <a name="set-up-maintenance-role-capability-file"></a>Einrichten der Rollenfunktionsdatei für die Wartungsrolle
 Führen Sie die folgenden Befehle in PowerShell aus, um die Rollenfunktionsdatei für die Demo zu erstellen, die Sie im nächsten Abschnitt benötigen.
 Im späteren Verlauf dieses Leitfadens werden Sie erfahren, wozu diese Datei dient.
 
@@ -68,7 +66,7 @@ New-Item -Path "$env:ProgramFiles\WindowsPowerShell\Modules\Demo_Module\RoleCapa
 New-PSRoleCapabilityFile -Path "$env:ProgramFiles\WindowsPowerShell\Modules\Demo_Module\RoleCapabilities\Maintenance.psrc" @MaintenanceRoleCapabilityCreationParams
 ```
 
-## Erstellen und Registrieren der Sitzungskonfigurationsdatei für die Demo
+## <a name="create-and-register-demo-session-configuration-file"></a>Erstellen und Registrieren der Sitzungskonfigurationsdatei für die Demo
 Führen Sie die folgenden Befehle aus, um die Sitzungskonfigurationsdatei für die Demo zu erstellen und zu registrieren, die Sie im nächsten Abschnitt benötigen.
 Im späteren Verlauf dieses Leitfadens werden Sie erfahren, wozu diese Datei dient.
 
@@ -110,7 +108,7 @@ New-PSSessionConfigurationFile -Path "$env:ProgramData\JEAConfiguration\JEADemo.
 Register-PSSessionConfiguration -Name $sessionName -Path "$env:ProgramData\JEAConfiguration\JEADemo.pssc"
 ```
 
-## Aktivieren der PowerShell-Modulprotokollierung (optional)
+## <a name="enable-powershell-module-logging-optional"></a>Aktivieren der PowerShell-Modulprotokollierung (optional)
 Die folgenden Schritte aktivieren die Protokollierung für alle PowerShell-Aktionen in Ihrem System.
 Sie müssen die Protokollierung nicht aktivieren, damit JEA funktioniert, sie ist jedoch sehr nützlich für den Abschnitt [Berichterstellung in JEA](reporting-on-jea.md).
 
@@ -124,11 +122,5 @@ Sie müssen die Protokollierung nicht aktivieren, damit JEA funktioniert, sie is
 
 Hinweis: Sie können über eine Gruppenrichtlinie auch die systemweite PowerShell-Aufzeichnung aktivieren.
 
-**Herzlichen Glückwunsch! Sie haben einen Demoendpunkt für Ihren Computer konfiguriert und sind jetzt bereit für den Einstieg in JEA.**
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
+**Herzlichen Glückwunsch! Sie haben Ihren Computer mit dem Demoendpunkt konfiguriert und sind jetzt bereit, um mit JEA loszulegen.**
 

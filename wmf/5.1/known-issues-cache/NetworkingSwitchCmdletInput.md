@@ -1,13 +1,11 @@
 ---
 title: Fehler bei Cmdlets des Netzwerkswitch-Managers
 contributor: vaibch
-translationtype: Human Translation
-ms.sourcegitcommit: 34337749a77f4379b841a8478d4e6e3bc97e7ada
-ms.openlocfilehash: 180158033e0c960f73dba66a3d77b15765e3e382
-
+ms.openlocfilehash: e32e31762b665a7e2c6f6938fe494cb6127d4264
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-Die Cmdlets des Netzwerkswitch-Managers können zum Verwalten von Netzwerkswitches über WSMAN verwendet werden. Einige Cmdlets dieses Moduls können Werte aus Pipelines akzeptieren. In WMF 5.1 Preview werden Cmdlets, die Werte aus Pipelines akzeptieren, nicht ausgeführt, wenn die Werte nicht über Pipelines übergeben werden.
+Die Cmdlets des Netzwerkswitch-Managers können zum Verwalten von Netzwerkswitches über WSMAN verwendet werden. Einige Cmdlets dieses Moduls können Werte aus Pipelines akzeptieren. In WMF 5.1 Preview werden Cmdlets, die Werte aus Pipelines akzeptieren, nicht ausgeführt, wenn die Werte nicht über Pipelines übergeben werden.
 
 Wenn der Parameter „InputObject“ nicht verwendet wird, sollte das Cmdlet weiterhin ohne Fehler ausgeführt werden.
 
@@ -24,7 +22,7 @@ Nachfolgend finden Sie eine Liste der betroffenen Cmdlets, also der Cmdlets, die
 - Remove-NetworkSwitchVlan
 - Set-NetworkSwitchVlanProperty
 
-### Lösung
+### <a name="resolution"></a>Lösung
 Die Cmdlets werden ordnungsgemäß ausgeführt, wenn der Wert des Parameters „InputObject“ über eine Pipeline übergeben wird. Nachfolgend finden Sie Beispiele für die oben stehenden Cmdlets:
 
 - Disable-NetworkSwitchEthernetPort
@@ -77,9 +75,3 @@ $properties = @{Caption = "New Caption"}
 $vlan = Get-CimInstance -ClassName CIM_NetworkVlan -Namespace root/interop -CimSession $cimSession | Select-Object -First 1
 $vlan | Set-NetworkSwitchVlanProperty -Property $properties -CimSession $cimSession
 ```
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

@@ -8,19 +8,17 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: Verwenden von JEA
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 88ce340c09efdbb3d81a72fe6113c1187a9152f2
-ms.openlocfilehash: 9db7a5a91d25d459313117da34af63016f03c241
-
+ms.openlocfilehash: 55c8f2d6a8e2bb9f33a3e9af5c3ee94fa5259716
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Verwenden von JEA
+# <a name="using-jea"></a>Verwenden von JEA
 In diesem Abschnitt geht es um das Endbenutzererlebnis beim *Verwenden von JEA*.
 Im Abschnitt „Voraussetzungen“ haben Sie einen JEA-Demoendpunkt erstellt.
 Wir verwenden diesen Demoendpunkt jetzt, um JEA in Aktion zu zeigen.
 In späteren Abschnitten arbeiten wir uns sozusagen rückwärts an das Thema heran und stellen die Aktionen und Dateien vor, die dieses Endbenutzererlebnis ermöglichen.
 
-## Verwenden von JEA als Benutzer ohne Administratorrechte
+## <a name="using-jea-as-a-non-administrator"></a>Verwenden von JEA als Benutzer ohne Administratorrechte
 Um JEA in Aktion zu erleben, müssen Sie PowerShell-Remoting so verwenden, als wären Sie ein Benutzer ohne Administratorrechte.
 Führen Sie folgenden Befehl in einem neuen PowerShell-Fenster aus:   
 
@@ -59,7 +57,7 @@ Get-UserInfo
 ```
 
 Die Ausgabe dieser Funktion zeigt „ConnectedUser“ sowie „RunAsUser“.
-Der verbundene Benutzer ist das Konto, über das die Verbindung mit der Remotesitzung hergestellt wurde (also z. B. Ihr Konto).
+Der verbundene Benutzer ist das Konto, über das die Verbindung mit der Remotesitzung hergestellt wurde (also z. B. Ihr Konto).
 Der verbundene Benutzer benötigt keine Administratorrechte.
 Das ausführende Konto ist das Konto, das tatsächlich die Aktionen ausführt, für die Berechtigungen erforderlich sind.
 Durch Herstellen einer Verbindung als ein Benutzer und anschließendes Nutzen des Kontos eines anderen Benutzers, der über Administratorrechte verfügt, können Sie nicht privilegierten Benutzern erlauben, bestimmte Verwaltungsaufgaben auszuführen, ohne ihnen Administratorrechte zu erteilen.
@@ -75,7 +73,7 @@ Normalerweise sind für die Ausführung von Restart-Service Administratorrechte 
 
 Mit JEA können Sie Ihre Arbeit also mit den Befehlen erledigen, die Sie bereits verwenden.
 Was aber ist mit Befehlen, deren Ausführung *nicht* erlaubt sein sollte?
-Versuchen Sie, einen anderen Befehl in der JEA-Sitzung auszuführen – z. B. `Restart-Computer` –, und sehen Sie selbst, wie JEA die Ausführung solcher Befehle verhindert.
+Versuchen Sie, einen anderen Befehl in der JEA-Sitzung auszuführen – z. B. `Restart-Computer` –, und sehen Sie selbst, wie JEA die Ausführung solcher Befehle verhindert.
 
 ```PowerShell
 [localhost]: PS> Restart-Computer
@@ -93,10 +91,4 @@ Exit-PSSession
 ```
 
 Dadurch wird die Verbindung mit der PowerShell-Remotesitzung getrennt.
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

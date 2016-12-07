@@ -8,12 +8,10 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 8b632570-5739-4fab-bf09-a1d59004743d
-translationtype: Human Translation
-ms.sourcegitcommit: 6c666e2e23cb74818e37293410dafc9033057733
-ms.openlocfilehash: 6a4b65525125e088a58a66719b4b21816814f012
-
+ms.openlocfilehash: de8e5b0d1ee44a752db683dbc2207f51f43863d6
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="packagemanagement-module"></a>PackageManagement-Modul
 Dieser Abschnitt enthält die Hilfethemen für das **Microsoft.PowerShell.PackageManagement**-Modul. Das **Microsoft.PowerShell. PackageManagement**-Modul wird mit Windows PowerShell® 5.0 installiert.
 
@@ -24,10 +22,4 @@ Dieser Abschnitt enthält die Hilfethemen für das **Microsoft.PowerShell.Packag
 - [Windows PowerShell 5.0](Windows-PowerShell-5.0.md)
 - [Windows PowerShell Core](https://technet.microsoft.com/en-us/library/4b75f1e4-f327-48f3-92ab-bf5435094d41)
 - [Skripting mit WindowsPowerShell](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
-
-
-
-
-<!--HONumber=Nov16_HO4-->
-
 

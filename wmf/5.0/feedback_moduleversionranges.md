@@ -1,4 +1,4 @@
-# Modulunterstützung für das Deklarieren von Versionsbereichen (1.* usw.)
+# <a name="modules-support-for-declaring-version-ranges-1-etc"></a>Modulunterstützung für das Deklarieren von Versionsbereichen (1.* usw.)
 In Kombination mit **-MinimumVersion** ermöglicht **-MaximumVersion** Benutzern nun das Abrufen/Importieren von Modulen innerhalb eines bestimmten Bereichs. Der Parameter unterstützt auch **.***. Im folgenden Beispiel wird die Funktionsweise gezeigt:
 
 ```PowerShell
@@ -14,8 +14,3 @@ VERBOSE: Importing cmdlet 'Set-PSReadlineKeyHandler'.
 VERBOSE: Importing cmdlet 'Set-PSReadlineOption'.
 VERBOSE: Importing function 'PSConsoleHostReadline'.
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
-

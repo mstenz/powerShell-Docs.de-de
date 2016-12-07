@@ -3,7 +3,7 @@
 <a name="breaking-change-certificates-used-to-encryptdecrypt-passwords-in-dsc-configurations-may-not-work-after-installing-wmf-50-rtm"></a>Wichtige Änderung: Zertifikate zum Verschlüsseln und Entschlüsseln von Kennwörtern in DSC-Konfigurationen funktionieren nach der Installation von WMF 5.0 RTM ggf. nicht
 --------------------------------------------------------------------------------------------------------------------------------
 
-In den Versionen WMF 4.0 und WMF 5.0 Preview lässt DSC in der Konfiguration keine Kennwörter mit mehr als 121 Zeichen zu. DSC erzwang das Verwenden kurzer Kennwörter, auch wenn längere und sichere Kennwörter gewünscht waren. Dank dieser wichtigen Änderungen können Kennwörter in der DSC-Konfiguration nun eine beliebige Länge haben.
+In den Versionen WMF 4.0 und WMF 5.0 Preview lässt DSC in der Konfiguration keine Kennwörter mit mehr als 121 Zeichen zu. DSC erzwang das Verwenden kurzer Kennwörter, auch wenn längere und sichere Kennwörter gewünscht waren. Dank dieser wichtigen Änderungen können Kennwörter in der DSC-Konfiguration nun eine beliebige Länge haben.
 
 **Lösung:** Erstellen Sie das Zertifikat neu, indem Sie Data Encipherment oder Key Encipherment Key und Document Encryption Enhanced Key (1.3.6.1.4.1.311.80.1) verwenden. Im TechNet-Artikel <https://technet.microsoft.com/en-us/library/dn807171.aspx> finden Sie weitere Informationen.
 
@@ -33,7 +33,7 @@ Remove-Item -Path $env:SystemRoot\system32\Configuration\DSCEngineCache.mof
 ```
 
 
-<a name="lcm-can-go-into-an-unstable-state-while-using-getdscconfiguration-in-debugmode"></a>Der LCM kann bei Verwenden von „Get-DscConfiguration“ im Debugmodus instabil werden
+<a name="lcm-can-go-into-an-unstable-state-while-using-get-dscconfiguration-in-debugmode"></a>Der LCM kann bei Verwenden von „Get-DscConfiguration“ im Debugmodus instabil werden
 -------------------------------------------------------------------------------
 
 Wenn der LCM im Debugmodus ist, kann das Drücken von STRG+C zum Bearbeiten von „Get-DscConfiguration“ bewirken, dass der LCM so instabil wird, dass die Mehrheit der DSC-Cmdlets nicht funktioniert.
@@ -41,7 +41,7 @@ Wenn der LCM im Debugmodus ist, kann das Drücken von STRG+C zum Bearbeiten von 
 **Lösung:** Drücken Sie während des Debuggens des Cmdlets „Get-DscConfiguration“ nicht STRG+C.
 
 
-<a name="stopdscconfiguration-may-hang-in-debugmode"></a>Stop-DscConfiguration bleibt ggf. im Debugmodus hängen
+<a name="stop-dscconfiguration-may-hang-in-debugmode"></a>Stop-DscConfiguration bleibt ggf. im Debugmodus hängen
 ------------------------------------------------------------------------------------------------------------------------
 Wenn der LCM im Debugmodus ist, kann „Stop-DscConfiguration“ möglicherweise beim Versuch hängenbleiben, einen Vorgang zu beenden, der mit „Get-DscConfiguration“ gestartet wurde.
 
@@ -55,27 +55,27 @@ Wenn der LCM im Debugmodus ist, werden von DSC-Ressourcen keine ausführlichen F
 **Lösung:** Deaktivieren Sie den *Debugmodus*, um ausführliche Meldungen der Ressource anzuzeigen.
 
 
-<a name="invokedscresource-operations-cannot-be-retrieved-by-getdscconfigurationstatus-cmdlet"></a>„Invoke-DscResource“-Vorgänge können vom Cmdlet „Get-DscConfigurationStatus“ nicht abgerufen werden
+<a name="invoke-dscresource-operations-cannot-be-retrieved-by-get-dscconfigurationstatus-cmdlet"></a>„Invoke-DscResource“-Vorgänge können vom Cmdlet „Get-DscConfigurationStatus“ nicht abgerufen werden
 --------------------------------------------------------------------------------------
 Nach Verwenden des Cmdlets „Invoke-DscResource“ zum direkten Aufrufen von Methoden einer Ressource können die Datensätze eines solchen Vorgangs später nicht mit „Get-DscConfigurationStatus“ abgerufen werden.
 
 **Lösung:** Keine.
 
 
-<a name="getdscconfigurationstatus-returns-pull-cycle-operations-as-type-consistency"></a>„Get-DscConfigurationStatus“ gibt Pullzyklusvorgänge mit dem Typ *Consistency* zurück
+<a name="get-dscconfigurationstatus-returns-pull-cycle-operations-as-type-consistency"></a>„Get-DscConfigurationStatus“ gibt Pullzyklusvorgänge mit dem Typ *Consistency* zurück
 ---------------------------------------------------------------------------------
 Wenn ein Knoten auf den PULL-Aktualisierungsmodus festgelegt ist, meldet das Cmdlet „Get-DscConfigurationStatus“ den Vorgangstyp als *Consistency* anstatt als *Initial*.
 
 **Lösung:** Keine.
 
-<a name="invokedscresource-cmdlet-does-not-return-message-in-the-order-they-were-produced"></a>Das Cmdlet „Invoke-DscResource“ gibt Meldungen nicht in der Reihenfolge ihrer Erstellung zurück
+<a name="invoke-dscresource-cmdlet-does-not-return-message-in-the-order-they-were-produced"></a>Das Cmdlet „Invoke-DscResource“ gibt Meldungen nicht in der Reihenfolge ihrer Erstellung zurück
 ---------------------------------------------------------------------------------
 Das Cmdlet „Invoke-DscResource“ gibt ausführliche, Warn- und Fehlermeldungen nicht in der Reihenfolge zurück, in der sie vom LCM oder der DSC-Ressource erstellt wurden.
 
 **Lösung:** Keine.
 
 
-<a name="dsc-resources-cannot-be-debugged-easily-when-used-with-invokedscresource"></a>Bei Verwendung mit „Invoke-DscResource“ ist das Debuggen von DSC-Ressourcen nicht einfach
+<a name="dsc-resources-cannot-be-debugged-easily-when-used-with-invoke-dscresource"></a>Bei Verwendung mit „Invoke-DscResource“ ist das Debuggen von DSC-Ressourcen nicht einfach
 -----------------------------------------------------------------------
 Wenn der LCM im Debugmodus ausgeführt wird (weitere Details finden Sie unter [Debuggen von DSC-Ressourcen](https://msdn.microsoft.com/powershell/dsc/debugresource)), bietet das Invoke-DscResource-Cmdlet keine Informationen zum Runspace, mit dem zum Debuggen eine Verbindung hergestellt werden soll.
 **Lösung:** Zum Debuggen der DSC-Ressource müssen Sie zum Ermitteln des Runspaces und für ein Anfügen daran die Cmdlets **Get-PSHostProcessInfo**, **Enter-PSHostProcess**, **Get-Runspace** und **Debug-Runspace** verwenden.
@@ -114,7 +114,7 @@ Wenn mehrere Teilkonfigurationen, die auf einem einzelnen Knoten bereitgestellt 
 **Lösung:** Verwenden Sie unterschiedliche Namen für die dieselben Ressourcen in unterschiedlichen Teilkonfigurationen.
 
 
-<a name="startdscconfiguration-useexisting-does-not-work-with-credential"></a>„Start-DscConfiguration –UseExisting“ funktioniert nicht mit „-Credential“
+<a name="start-dscconfiguration-useexisting-does-not-work-with--credential"></a>„Start-DscConfiguration –UseExisting“ funktioniert nicht mit „-Credential“
 ------------------------------------------------------------------
 
 Bei Verwendung von „Start-DscConfiguration“ mit dem „–UseExisting“-Parameter wird der „–Credential“-Parameter ignoriert. DSC verwendet die Standardprozessidentität, um den Vorgang fortzusetzen. Dies bewirkt einen Fehler, wenn für das Fortsetzen auf einem Remoteknoten andere Anmeldeinformationen benötigt werden.
@@ -133,14 +133,14 @@ IPv6-Adressen als Knotennamen in DSC-Konfigurationsskripts werden in dieser Vers
 **Lösung:** Keine.
 
 
-<a name="debugging-of-classbased-dsc-resources"></a>Debuggen klassenbasierter DSC-Ressourcen
+<a name="debugging-of-class-based-dsc-resources"></a>Debuggen klassenbasierter DSC-Ressourcen
 --------------------------------------
 Das Debuggen klassenbasierter DSC-Ressourcen wird in dieser Version nicht unterstützt.
 
 **Lösung:** Keine.
 
 
-<a name="variables-functions-defined-in-script-scope-in-dsc-classbased-resource-are-not-preserved-across-multiple-calls-to-a-dsc-resource"></a>Variablen und Funktionen, die im Bereich „$script“ in klassenbasierten DSC-Ressourcen definiert werden, bleiben bei mehreren Aufrufen einer DSC-Ressource nicht erhalten. 
+<a name="variables-functions-defined-in-script-scope-in-dsc-class-based-resource-are-not-preserved-across-multiple-calls-to-a-dsc-resource"></a>Variablen und Funktionen, die im Bereich „$script“ in klassenbasierten DSC-Ressourcen definiert werden, bleiben bei mehreren Aufrufen einer DSC-Ressource nicht erhalten. 
 -------------------------------------------------------------------------------------------------------------------------------------
 
 Mehrere aufeinander folgende Aufrufe von „Start-DSCConfiguration“ misslingen, wenn die Konfiguration klassenbasierte Ressourcen mit im Bereich „$script“ definierten Variablen oder Funktionen verwendet.
@@ -161,7 +161,7 @@ Das Debuggen von DSC-Ressourcen, wenn eine Ressource *PSDscRunAsCredential* in d
 **Lösung:** Verwenden Sie, falls verfügbar, die „Credential“-Eigenschaft. Beispiel für „ServiceSet“ und „WindowsFeatureSet“
 
 
-<a name="getdscresource-syntax-does-not-reflect-psdscrunascredential-correctly"></a>*Get-DscResource -Syntax* spiegelt „PsDscRunAsCredential“ nicht ordnungsgemäß wider
+<a name="get-dscresource--syntax-does-not-reflect-psdscrunascredential-correctly"></a>*Get-DscResource -Syntax* spiegelt „PsDscRunAsCredential“ nicht ordnungsgemäß wider
 -------------------------------------------------------------------------
 „Get-DscResource -Syntax“ spiegelt „PsDscRunAsCredential“ nicht ordnungsgemäß wider, wenn eine Ressource das Element als erforderlich kennzeichnet oder es nicht unterstützt.
 
@@ -173,7 +173,7 @@ Das Debuggen von DSC-Ressourcen, wenn eine Ressource *PSDscRunAsCredential* in d
 
 Die DSC-Ressource „WindowsOptionalFeature“ ist unter Windows 7 nicht verfügbar. Diese Ressource erfordert das DISM-Modul und DISM-Cmdlets, die ab Windows 8 und in neueren Versionen des Windows-Betriebssystems verfügbar sind.
 
-<a name="for-classbased-dsc-resources-importdscresource-moduleversion-may-not-work-as-expected"></a>Bei klassenbasierten DSC-Ressourcen funktioniert „Import-DscResource-ModuleVersion“ möglicherweise nicht wie erwartet   
+<a name="for-class-based-dsc-resources-import-dscresource--moduleversion-may-not-work-as-expected"></a>Bei klassenbasierten DSC-Ressourcen funktioniert „Import-DscResource-ModuleVersion“ möglicherweise nicht wie erwartet   
 ------------------------------------------------------------------------------------------
 Falls der Kompilierungsknoten mehrere Versionen eines klassenbasierten DSC-Ressourcenmoduls aufweist, wählt `Import-DscResource -ModuleVersion` nicht die angegebene Version aus und folgender Kompilierungsfehler wird zurückgegeben.
 
@@ -191,7 +191,7 @@ At C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguratio
 Import-DscResource -ModuleName @{ModuleName='MyModuleName';RequiredVersion='1.2'}  
 ```  
 
-<a name="some-dsc-resources-like-registry-resource-may-start-to-take-a-long-time-to-process-the-request"></a>Bei einigen DSC-Ressourcen, wie z. B. der Registrierungsressource, kann das Starten der Verarbeitung der Anforderung lange dauern.
+<a name="some-dsc-resources-like-registry-resource-may-start-to-take-a-long-time-to-process-the-request"></a>Bei einigen DSC-Ressourcen, wie z. B. der Registrierungsressource, kann das Starten der Verarbeitung der Anforderung lange dauern.
 --------------------------------------------------------------------------------------------------------------------------------
 
 **Lösung 1:** Erstellen Sie eine Zeitplanaufgabe zum regelmäßigen Bereinigen des folgenden Ordners.
@@ -226,8 +226,3 @@ Configuration $configName
     }
 }
 ```
-
-
-<!--HONumber=Nov16_HO2-->
-
-

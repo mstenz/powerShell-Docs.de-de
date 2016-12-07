@@ -8,18 +8,16 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 4d781196-720b-4ccc-90d2-c570e5e719f5
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 83aa2ceb63497c7a12ec80d4b1472327284acf5b
-
+ms.openlocfilehash: 114f7b60bf44e0cfc2c9e2bad223552cb141d145
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Andere nützliche Skriptobjekte
+# <a name="other-useful-scripting-objects"></a>Andere nützliche Skriptobjekte
   Die folgenden Objekte bieten zusätzliche Skriptfunktionalität in Windows PowerShell ISE. Sie sind nicht Teil der **$psISE**-Hierarchie.
 
-## Nützliche Skriptobjekte
+## <a name="useful-scripting-objects"></a>Nützliche Skriptobjekte
 
-### $psUnsupportedConsoleApplications
+### <a name="psunsupportedconsoleapplications"></a>$psUnsupportedConsoleApplications
  Es gibt einige Einschränkungen für die Interaktion von Windows PowerShell ISE mit Konsolenanwendungen. Ein Befehl oder ein Automatisierungsskript, das einen Benutzereingriff erfordert, funktioniert möglicherweise anders, als wenn es von der Windows PowerShell-Konsole aus ausgeführt wird. Möglicherweise wollen Sie die Ausführung dieser Skripts oder Befehle im Befehlsbereich von Windows PowerShell ISE sperren. Das Objekt **$psUnsupportedConsoleApplications** hält eine Liste solcher Befehle vor. Falls Sie versuchen, die Befehle in dieser Liste auszuführen, erhalten Sie die Meldung, dass sie nicht unterstützt werden. Das nachfolgende Skript fügt der Liste einen Eintrag hinzu.
 
 ```
@@ -32,7 +30,7 @@ psUnsupportedConsoleApplications
 
 ```
 
-### $psLocalHelp
+### <a name="pslocalhelp"></a>$psLocalHelp
  Dabei handelt es sich um ein Wörterbuchobjekt, das eine kontextbezogene Zuordnung zwischen Hilfethemen und den entsprechenden Links in der lokalen kompilierten HTML-Hilfedatei verwaltet. Es wird bei der Suche der lokalen Hilfe für ein bestimmtes Thema verwendet. Sie können Themen zu dieser Liste hinzufügen oder aus dieser Liste löschen. Das folgende Codebeispiel zeigt einige Beispiele für Schlüssel-Wert-Paare, die in **$psLocalHelp**enthalten sind.
 
 ```
@@ -41,7 +39,7 @@ $psLocalHelp | Format-List
 
 ```
 
-### Beispielausgabe
+### <a name="sample-output"></a>Beispielausgabe
 
 |||
 |-|-|
@@ -54,7 +52,7 @@ $psLocalHelp | Format-List
 $psLocalHelp.Add("get-myNoun","c:\MyFolder\MyHelpChm.chm::/html/0198854a-1298-57ae-aa0c-87b5e5a84712.htm")
 ```
 
-### $psOnlineHelp
+### <a name="psonlinehelp"></a>$psOnlineHelp
  Dabei handelt es sich um ein Wörterbuchobjekt, das eine kontextbezogene Zuordnung zwischen den Titeln der Hilfethemen und den entsprechenden externen URLs verwaltet. Es wird verwendet, um die Hilfe für ein bestimmtes Thema im Web zu finden. Sie können Themen zu dieser Liste hinzufügen oder aus dieser Liste löschen.
 
 ```
@@ -62,7 +60,7 @@ $psOnlineHelp | Format-List
 
 ```
 
-### Beispielausgabe
+### <a name="sample-output"></a>Beispielausgabe
 
 |||
 |-|-|
@@ -75,13 +73,7 @@ $psOnlineHelp | Format-List
 $psOnlineHelp.Add("get-myNoun","http://www.mydomain.com/MyNoun.html")
 ```
 
-## Weitere Informationen
- [Das Windows PowerShell ISE-Skriptobjektmodell](../../core-powershell/ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+## <a name="see-also"></a>Weitere Informationen
+- [Das Windows PowerShell ISE-Skriptobjektmodell](../../core-powershell/ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 
   
-
-
-
-<!--HONumber=Aug16_HO4-->
-
-

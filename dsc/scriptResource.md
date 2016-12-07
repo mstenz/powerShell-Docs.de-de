@@ -7,16 +7,14 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 62f993e3d3e6ef744fb07920d332d476dfd24fc6
-ms.openlocfilehash: 6b060d17fb106089528b0737ab03cc7d592d412a
-
+ms.openlocfilehash: 56eb7ef230d84cc5f5679f39e13e2019205c65f5
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# DSC-Ressource „Script“
+# <a name="dsc-script-resource"></a>DSC-Ressource „Script“
 
  
-> Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Die Ressource **Script** in Windows PowerShell DSC bietet einen Mechanismus zum Anwenden von Windows PowerShell-Skriptblöcken auf Zielknoten. Die Ressource `Script` hat die Eigenschaften `GetScript`, `SetScript` und `TestScript`. Diese Eigenschaften sollten in Skriptblöcken festgelegt werden, die auf jedem Zielknoten ausgeführt werden. 
 
@@ -29,7 +27,7 @@ Der Skriptblock `SetScript` sollte den Knoten ändern. Er wird von DSC aufgerufe
 Wenn Sie Variablen aus Ihrem Konfigurationsskript in den Skriptblöcken `GetScript`, `TestScript` oder `SetScript` verwenden müssen, verwenden Sie den Bereich `$using:` (ein Beispiel finden Sie weiter unten).
 
 
-## Syntax
+## <a name="syntax"></a>Syntax
 
 ```
 Script [string] #ResourceName
@@ -42,7 +40,7 @@ Script [string] #ResourceName
 }
 ```
 
-## Eigenschaften
+## <a name="properties"></a>Eigenschaften
 
 |  Eigenschaft  |  Beschreibung   | 
 |---|---| 
@@ -52,7 +50,7 @@ Script [string] #ResourceName
 | Credential| Gibt die Anmeldeinformationen zum Ausführen dieses Skripts an, falls Anmeldeinformationen erforderlich sind.| 
 | DependsOn| Gibt an, dass die Konfiguration einer anderen Ressource ausgeführt werden muss, bevor diese Ressource konfiguriert wird. Wenn beispielsweise die ID des Skriptblocks mit der Ressourcenkonfiguration, den Sie zuerst ausführen möchten, **ResourceName** und dessen Typ **ResourceType** ist, lautet die Syntax für das Verwenden dieser Eigenschaft `DependsOn = "[ResourceType]ResourceName"`.
 
-## Beispiel 1
+## <a name="example-1"></a>Beispiel 1
 ```powershell
 $version = Get-Content 'version.txt'
 
@@ -74,7 +72,7 @@ Configuration ScriptTest
 }
 ```
 
-## Beispiel 2
+## <a name="example-2"></a>Beispiel 2
 ```powershell
 $version = Get-Content 'version.txt'
 
@@ -106,10 +104,4 @@ Configuration ScriptTest
 ```
 
 Diese Ressource schreibt die Version der Konfiguration in eine Textdatei. Diese Version ist auf dem Clientcomputer verfügbar, aber auf keinem der Knoten, weshalb sie an jeden der Skriptblöcke der `Script`-Ressource mit dem Bereich `using` der PowerShell übergeben werden muss. Beim Generieren der MOF-Datei des Knotens wird der Wert der `$version`-Variablen aus einer Textdatei auf dem Clientcomputer gelesen. DSC ersetzt die `$using:version`-Variablen in jedem Skriptblock durch den Wert der `$version`-Variablen.
-
-
-
-
-<!--HONumber=Sep16_HO3-->
-
 

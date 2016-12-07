@@ -1,4 +1,4 @@
-# Informationsdatenstrom
+# <a name="information-stream"></a>Informationsdatenstrom
 
 Ein neuer strukturierter Informationsdatenstrom kann jetzt verwendet werden, um strukturierte Daten zwischen einem Skript und seinem Host zu übertragen. **Write-Host** wurde auch so aktualisiert, dass seine Ausgabe in den Informationsdatenstrom erfolgt, in dem Sie sie nun erfassen oder unterdrücken können. Das neue Cmdlet **Write-Information**, das (zusammen mit einer entsprechenden „WriteInformation“-API) mit den allgemeinen Parametern **-InformationVariable** und **-InformationAction** verwendet wird, bietet mehr Flexibilität und Funktionalität.
 
@@ -112,8 +112,3 @@ ProcessId       : 4008
 NativeThreadId  : 2276
 ManagedThreadId : 14
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
-

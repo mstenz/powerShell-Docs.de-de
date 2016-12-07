@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 6b3cbbc8-060c-4877-b00b-7300dbbe4e28
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 6b35f2dd3cf441daa1a92d52435ed0ae350c138a
-
+ms.openlocfilehash: 6644ad379def3853d618dad2c72e7aa97b8242da
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Grundlagen von Windows PowerShell
+# <a name="windows-powershell-basics"></a>Grundlagen von Windows PowerShell
 Grafische Benutzeroberflächen basieren auf Grundkonzepten, die den meisten Computerbenutzern bekannt sind. Benutzer verlassen sich beim Ausführen von Aufgaben auf die Vertrautheit mit diesen Oberflächen. Betriebssysteme bieten Benutzern eine grafische Darstellung von Elementen, die durchsucht werden können, meist mit Einblendmenüs für den Zugriff auf bestimmte Funktionen und Kontextmenüs für den Zugriff auf kontextspezifische Funktionalität.
 
 Eine Befehlszeilenschnittstelle (Command-Line Interface, CLI) wie Windows PowerShell muss einen anderen Ansatz zum Offenlegen von Informationen befolgen, da sie nicht über Menüs oder grafische Systeme verfügt, die dem Benutzer helfen. Sie müssen Namen von Befehlen kennen, bevor Sie sie verwenden können. Obwohl Sie komplexe Befehle eingeben können, die mit den Features in einer grafischen Umgebung äquivalent sind, müssen Sie sich mit den am häufigsten verwendeten Befehlen und deren Parametern vertraut machen.
@@ -32,10 +30,4 @@ Windows PowerShell wurde so entwickelt, dass die historischen CLI-Kenntnisse der
 -   Verwenden der Vervollständigung mit der TAB-TASTE
 
 -   Verwenden von „Get-Help“
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

@@ -7,22 +7,20 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 12438bc9c6e4211b6a31550fa25334a20fde6846
-ms.openlocfilehash: 871d697626a0376e8f1f27bdbbf16d8612a56a79
-
+ms.openlocfilehash: 798609d7e1e7d88e7a9f76f5fff12f63c6109c76
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
+# <a name="dsc-serviceset-resource"></a>DSC-Ressource „ServiceSet“
 
-# DSC-Ressource „ServiceSet“
-
-> Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 
 Die Ressource **ServiceSet** in Windows PowerShell DSC bietet einen Mechanismus zum Verwalten von Diensten auf dem Zielknoten. Diese Ressource ist eine [zusammengesetzte Ressource](authoringResourceComposite.md), die die Ressource [Service](serviceResource.md) für jeden Dienst aufruft, der in der `Name`-Eigenschaft angegeben ist.
 
 Verwenden Sie diese Ressource, wenn Sie verschiedene Dienste mit demselben Status konfigurieren möchten.
 
-## Syntax
+## <a name="syntax"></a>Syntax
 
 ```
 Service [string] #ResourceName
@@ -38,7 +36,7 @@ Service [string] #ResourceName
 }
 ```
 
-## Eigenschaften
+## <a name="properties"></a>Eigenschaften
 
 |  Eigenschaft  |  Beschreibung   | 
 |---|---| 
@@ -52,7 +50,7 @@ Service [string] #ResourceName
 
 
 
-## Beispiel
+## <a name="example"></a>Beispiel
 
 Die folgende Konfiguration startet die Dienste „Windows-Audio“ und „Remotedesktopdienste“.
 
@@ -72,10 +70,4 @@ configuration ServiceSetTest
     }
 }
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

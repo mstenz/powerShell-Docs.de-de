@@ -7,13 +7,11 @@ ms.topic: article
 author: jpjofre
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
-ms.openlocfilehash: f62b1e0ec9f26e1b2bcb364c78a2ce39467655a5
-
+ms.openlocfilehash: 984323731b2cd0c4f3c26fe100e4b680082881f5
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Autorisierungsregeln und Sicherheitsfeatures von Windows PowerShell Web Access
+# <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Autorisierungsregeln und Sicherheitsfeatures von Windows PowerShell Web Access
 
 Aktualisiert: 24. Juni 2013
 
@@ -198,7 +196,7 @@ Für Windows PowerShell Web Access-Cmdlets wird ein Platzhalterzeichen unterstü
 </tbody>
 </table>
 
-#### So fügen Sie eine restriktive Autorisierungsregel hinzu
+#### <a name="to-add-a-restrictive-authorization-rule"></a>So fügen Sie eine restriktive Autorisierungsregel hinzu
 
 1.  Öffnen Sie eine Windows PowerShell-Sitzung mit erhöhten Benutzerrechten, indem Sie einen der folgenden Schritte durchführen.
 
@@ -206,7 +204,7 @@ Für Windows PowerShell Web Access-Cmdlets wird ein Platzhalterzeichen unterstü
 
     -   Klicken Sie auf dem Windows-**Startbildschirm** mit der rechten Maustaste auf **Windows PowerShell**, und klicken Sie anschließend auf **Als Administrator ausführen**.
 
-2.  <span class="label">Optionaler Schritt zur Einschränkung des Benutzerzugriffs mithilfe von Sitzungskonfigurationen:</span> Stellen Sie sicher, dass die Sitzungskonfigurationen, die Sie in den Regeln verwenden möchten, bereits vorhanden sind. Falls diese noch nicht erstellt wurden, verwenden Sie die Anleitung zum Erstellen von Sitzungskonfigurationen in MSDN unter [about_Session_Configuration_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx).
+2.  <span class="label">Optionaler Schritt zur Einschränkung des Benutzerzugriffs mithilfe von Sitzungskonfigurationen:</span> Überprüfen Sie, ob Sitzungskonfigurationen, die Sie in Ihren Regeln verwenden möchten, bereits vorhanden sind. Falls diese noch nicht erstellt wurden, verwenden Sie die Anleitung zum Erstellen von Sitzungskonfigurationen in MSDN unter [about_Session_Configuration_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx).
 
 3.  Geben Sie Folgendes ein, und drücken Sie anschließend die **EINGABETASTE**.
 
@@ -222,7 +220,7 @@ Für Windows PowerShell Web Access-Cmdlets wird ein Platzhalterzeichen unterstü
 
 4.  Stellen Sie sicher, dass die Regel erstellt wurde, indem Sie entweder das Cmdlet **Get-PswaAuthorizationRule** oder **Test-PswaAuthorizationRule -UserName &lt;Domäne\\Benutzer | Computer\\Benutzer&gt; -ComputerName** &lt;Computername&gt; ausführen. Beispiel: **Test-PswaAuthorizationRule -UserName Contoso\\JSmith -ComputerName Contoso_214**.
 
-#### So entfernen Sie eine Autorisierungsregel
+#### <a name="to-remove-an-authorization-rule"></a>So entfernen Sie eine Autorisierungsregel
 
 1.  Falls noch keine Windows PowerShell-Sitzung geöffnet wurde, finden Sie die entsprechende Vorgehensweise in Schritt 1 unter [So fügen Sie eine restriktive Autorisierungsregel hinzu](#BKMK_arar) in diesem Abschnitt.
 
@@ -253,7 +251,7 @@ Für Windows PowerShell Web Access-Cmdlets wird ein Platzhalterzeichen unterstü
 <a href="" id="BKMK_others"></a>
 ####
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Weitere Beispiele für Autorisierungsregelszenarios</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Weitere Beispiele für Autorisierungsregelszenarien</span></a>
 
 ------------------------------------------------------------------------
 
@@ -265,7 +263,7 @@ Bei jeder Windows PowerShell-Sitzung wird eine Sitzungskonfiguration verwendet. 
 
 -   Einige Administratoren gewähren bestimmten Benutzern mehr Zugriff als anderen. Beispielsweise erstellt ein Administrator die beiden Benutzergruppen **Admins** und **BasicSupport**. Ferner erstellt der Administrator einen Endpunkt mit dem eingeschränkten Runspace namens **PswaEndpoint** und definiert die folgenden beiden Regeln: **Admins,\*,\*** und **BasicSupport,\*,PswaEndpoint**. Mit der ersten Regel wird allen Benutzern der Gruppe **Admin** Zugriff auf alle Computer gewährt, und mit der zweiten Regel wird allen Benutzern der Gruppe **BasicSupport** nur Zugriff auf Computer mit **PswaEndpoint** gewährt.
 
--   Ein Administrator hat eine private Testumgebung eingerichtet und möchte nun allen autorisierten Netzwerkbenutzern den Zugriff auf alle Computer im Netzwerk ermöglichen, auf die sie normalerweise zugreifen können, und zwar mit Zugriff auf alle Sitzungskonfigurationen, auf die sie normalerweise zugreifen können. Da es sich um eine private Testumgebung handelt, erstellt der Administrator eine Autorisierungsregel, die nicht sicher ist. Der Administrator führt das Cmdlet <span class="code">Add-PswaAuthorizationRule \* \* \*</span> aus. Dabei wird das Platzhalterzeichen **\*** verwendet, um alle Benutzer, alle Computer und alle Konfigurationen anzugeben. Diese Regel entspricht der folgenden: <span class="code">Add-PswaAuthorizationRule -UserName \* -ComputerName \* -ConfigurationName \*</span>.
+-   Ein Administrator hat eine private Testumgebung eingerichtet und möchte nun allen autorisierten Netzwerkbenutzern den Zugriff auf alle Computer im Netzwerk ermöglichen, auf die sie normalerweise zugreifen können, und zwar mit Zugriff auf alle Sitzungskonfigurationen, auf die sie normalerweise zugreifen können. Da es sich um eine private Testumgebung handelt, erstellt der Administrator eine Autorisierungsregel, die nicht sicher ist. Der Administrator führt das Cmdlet <span class="code">Add-PswaAuthorizationRule \* \* \*</span> aus. Dabei wird das Platzhalterzeichen **\*** verwendet, um alle Benutzer, alle Computer und alle Konfigurationen anzugeben. Diese Regel entspricht Folgendem: <span class="code">Add-PswaAuthorizationRule -UserName \* -ComputerName \* -ConfigurationName \*</span>.
 
     <table>
     <colgroup>
@@ -273,7 +271,7 @@ Bei jeder Windows PowerShell-Sitzung wird eine Sitzungskonfiguration verwendet. 
     </colgroup>
     <thead>
     <tr class="header">
-    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC17938.jpeg" title="System_CAPS_security" alt="System_CAPS_security" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-security" /></span><span class="alertTitle"> Sicherheitshinweis </span></th>
+    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC17938.jpeg" title="System_CAPS_security" alt="System_CAPS_security" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-security" /></span><span class="alertTitle">Sicherheitshinweis </span></th>
     </tr>
     </thead>
     <tbody>
@@ -363,11 +361,11 @@ Wenn Ihr Windows PowerShell Web Access-Gateway unter Windows Server 2012 R2 ausg
 
 Windows PowerShell Web Access-Sitzungstimeout In Windows PowerShell Web Access unter Windows Server 2012 wird nach 15-minütiger Inaktivität angemeldeten Benutzern eine Timeoutmeldung angezeigt. Wenn der Benutzer nach dem Anzeigen der Timeoutmeldung nicht innerhalb von fünf Minuten reagiert, wird die Sitzung beendet, und der Benutzer wird abgemeldet. Sie können die Zeitspanne für den Sitzungstimeout in den Websiteeinstellungen im IIS-Manager ändern.
 
-In Windows PowerShell Web Access unter Windows Server 2012 R2 wird standardmäßig nach 20-minütiger Inaktivität ein Sitzungstimeout angezeigt. Wenn Benutzer aufgrund von Netzwerkfehlern oder anderen ungeplanten Herunterfahrvorgängen oder Ausfällen von Sitzungen in der webbasierten Konsole getrennt werden, werden die Windows PowerShell Web Access-Sitzungen weiter ausgeführt und bleiben mit den Zielcomputern verbunden, bis die Timeoutperiode auf dem Client überschritten wird. Dies geschieht nicht, wenn Benutzer die Sitzungen selbst beenden. Die Sitzung wird entweder standardmäßig nach 20 Minuten oder nach der vom Gatewayadministrator festgelegten Timeoutperiode getrennt, je nachdem, was kürzer ist.
+In Windows PowerShell Web Access unter Windows Server 2012 R2 wird standardmäßig nach 20-minütiger Inaktivität ein Sitzungstimeout angezeigt. Wenn Benutzer aufgrund von Netzwerkfehlern oder anderen ungeplanten Herunterfahrvorgängen oder Ausfällen von Sitzungen in der webbasierten Konsole getrennt werden, werden die Windows PowerShell Web Access-Sitzungen weiter ausgeführt und bleiben mit den Zielcomputern verbunden, bis die Timeoutperiode auf dem Client überschritten wird. Dies geschieht nicht, wenn Benutzer die Sitzungen selbst beenden. Die Sitzung wird entweder standardmäßig nach 20 Minuten oder nach der vom Gatewayadministrator festgelegten Timeoutperiode getrennt, je nachdem, was kürzer ist.
 
 Wenn der Gatewayserver unter Windows Server 2012 R2 ausgeführt wird, ermöglicht Windows PowerShell Web Access Benutzern das erneute Verbinden mit gespeicherten Sitzungen zu einem späteren Zeitpunkt. Wenn Sitzungen jedoch aufgrund von Netzwerkfehlern, ungeplanten Herunterfahrvorgängen oder Ausfällen getrennt werden, können Benutzer gespeicherte Sitzungen erst sehen bzw. sich wieder mit diesen verbinden, nachdem die vom Gatewayadministrator festgelegte Timeoutperiode abgelaufen ist.
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Weitere Informationen</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Siehe auch</span></a>
 <a href="/en-us/library/dn282394(v=ws.11).aspx#Anchor_2" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
 
 ------------------------------------------------------------------------
@@ -383,7 +381,7 @@ Ja Nein
 
 Zusätzliches Feedback?
 
-<span class="stdr-count"><span class="stdr-charcnt">1500</span> verbleibende Zeichen</span> Senden Diesen Schritt überspringen
+<span class="stdr-count"><span class="stdr-charcnt">1.500</span> verbleibende Zeichen</span> Senden Diesen Schritt überspringen
 
 <span class="stdr-thankyou">Vielen Dank!</span> <span class="stdr-appreciate">Wir schätzen Ihr Feedback.</span>
 
@@ -409,13 +407,13 @@ Erzählen Sie uns mehr
 
 -   [Flash-Newsletter](https://technet.microsoft.com/cc543196.aspx)
 -   |
--   [So erreichen Sie uns:](https://technet.microsoft.com/cc512759.aspx)
+-   [So erreichen Sie uns](https://technet.microsoft.com/cc512759.aspx)
 -   |
 -   [Datenschutzbestimmungen](https://privacy.microsoft.com/privacystatement)
 -   |
 -   [Nutzungsbedingungen](https://technet.microsoft.com/cc300389.aspx)
 -   |
--   [Warenzeichen](https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/)
+-   [Marken](https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/)
 -   |
 
 © 2016 Microsoft
@@ -424,10 +422,4 @@ Erzählen Sie uns mehr
 
 Die Lizenz für Drittanbieterskripts oder Code, die mit dieser Website verlinkt oder über Verweise verbunden sind, wird Ihnen von den Codeeigentümern erteilt, nicht von Microsoft. Die ASP.NET Ajax CDN-Nutzungsbedingungen finden Sie unter http://www.asp.net/ajaxlibrary/CDN.ashx.
 <img src="https://m.webtrends.com/dcsjwb9vb00000c932fd0rjc7_5p3t/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" alt="DCSIMG" id="Img1" width="1" height="1" />
-
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

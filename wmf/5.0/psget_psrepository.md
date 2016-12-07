@@ -1,4 +1,4 @@
-# Registrieren eines PowerShell-Repositorys
+# <a name="register-a-powershell-repository"></a>Registrieren eines PowerShell-Repositorys
 Sie können PowerShellGet für interne Repositorys konfigurieren. Dies erfolgt mithilfe der folgenden Erweiterungen:
 - Register-PSRepository: Registriert ein Repository für den aktuellen Benutzer.
 - Unregister-PSRepository: Entfernt ein registriertes Repository für den aktuellen Benutzer.
@@ -31,7 +31,3 @@ Install-Module SomeModule
 \#Removing a repository
 Unregister-PSRepository DemoRepo
 ```
-
-<!--HONumber=Aug16_HO3-->
-
-

@@ -7,19 +7,17 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 62f993e3d3e6ef744fb07920d332d476dfd24fc6
-ms.openlocfilehash: 48b68a99baa489dad38e7072b171db10ee0f7386
-
+ms.openlocfilehash: d94f178fb75d15b12268ad783f78183ceba9f2b3
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
+# <a name="dsc-registry-resource"></a>DSC-Ressource „Registry“
 
-# DSC-Ressource „Registry“
-
-> Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Die Ressource **Registry** in Windows PowerShell DSC bietet einen Mechanismus zum Verwalten von Registrierungsschlüsseln und -werten auf einem Zielknoten.
 
-## Syntax
+## <a name="syntax"></a>Syntax
 
 ```
 Registry [string] #ResourceName
@@ -35,7 +33,7 @@ Registry [string] #ResourceName
 }
 ```
 
-## Eigenschaften
+## <a name="properties"></a>Eigenschaften
 |  Eigenschaft  |  Beschreibung   | 
 |---|---| 
 | Key| Gibt den Pfad des Registrierungsschlüssels an, für den Sie einen bestimmten Zustand sicherstellen möchten. Dieser Pfad muss die Struktur enthalten.| 
@@ -63,7 +61,7 @@ Registry [string] #ResourceName
 
 <li>Erweiterbare Zeichenfolge (REG_EXPAND_SZ)</li></ul>
 
-## Beispiel
+## <a name="example"></a>Beispiel
 In diesem Beispiel wird sichergestellt, dass ein Schlüssel mit dem Namen „ExampleKey“ in der Struktur **HKEY\_LOCAL\_MACHINE** vorhanden ist.
 ```powershell
 Configuration RegistryTest
@@ -81,11 +79,5 @@ Configuration RegistryTest
 >**Hinweis:** Das Ändern einer Einstellung in der Registrierungseinstellung in der Struktur **HKEY\_CURRENT\_USER** erfordert, dass die Konfiguration mit Benutzeranmeldeinformationen anstatt mit Anmeldeinformationen des Systems ausgeführt wird.
 >Sie können die **PsDscRunAsCredential**-Eigenschaft verwenden, um die Benutzeranmeldeinformationen für die Konfiguration anzugeben. Ein Beispiel finden Sie unter [Ausführen von DSC mit Benutzeranmeldeinformationen](runAsUser.md).
 
-
-
-
-
-
-<!--HONumber=Sep16_HO3-->
 
 

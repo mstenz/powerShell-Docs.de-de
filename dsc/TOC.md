@@ -93,8 +93,3 @@
 # Weitere Ressourcen
 ## [Whitepapers](whitepapers.md)
 
-
-
-<!--HONumber=Nov16_HO4-->
-
-

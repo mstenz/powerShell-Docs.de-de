@@ -94,8 +94,3 @@
 ### [Generieren von PowerShell-Cmdlets basierend auf einem OData-Endpunkt](5.0/odata_overview.md)
 ### [Verwalten von Netzwerkswitches mit PowerShell](5.0/networkswitch_overview.md)
 ### [Protokollierung des Softwarebestands (Software Inventory Logging, SIL)](5.0/sil_overview.md)
-
-
-<!--HONumber=Nov16_HO4-->
-
-

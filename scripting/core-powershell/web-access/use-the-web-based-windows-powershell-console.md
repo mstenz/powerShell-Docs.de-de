@@ -7,13 +7,11 @@ ms.topic: article
 author: jpjofre
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
-ms.openlocfilehash: 67426f6ad72967293f8aee1b3f098afc73067c59
-
+ms.openlocfilehash: a62e258812960ce59f050e59d2ef3acc296663a2
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-#  Verwendung der webbasierten Windows PowerShell-Konsole
+#  <a name="use-the-web-based-windows-powershell-console"></a>Verwendung der webbasierten Windows PowerShell-Konsole
 
 Aktualisiert: 24. Juni 2013
 
@@ -50,9 +48,9 @@ Windows PowerShell Web Access unterstützt die folgenden Internetbrowser. Obwohl
 
 -   Google Chrome™ 17.0.963.56m für Windows
 
--   Apple Safari® 5.1.2 für Windows
+-   Apple Safari® 5.1.2 für Windows
 
--   Apple Safari 5.1.2 für Mac OS®
+-   Apple Safari 5.1.2 für Mac OS®
 
 ###
 
@@ -91,7 +89,7 @@ Browser müssen folgende Anforderungen erfüllen, um die webbasierte Windows Pow
 
 Ihr Windows PowerShell Web Access-Administrator sollten Ihnen eine URL bereitstellen, die die Adresse der Website des Windows PowerShell Web Access-Gateways Ihrer Organisation ist. Standardmäßig ist die Adresse dieser Website „https://&lt;server_name&gt;/pswa“. Bevor Sie sich bei Windows PowerShell Web Access anmelden, sollten Sie sichergehen, dass Sie über den Namen oder die IP-Adresse des zu verwaltenden Remotecomputers verfügen. Sie müssen auf dem Remotecomputer ein autorisierter Benutzer sein. Außerdem müssen Sie darauf die Remoteverwaltung zulassen. Weitere Informationen dazu, wie Sie Ihren Computer so konfigurieren, dass eine Remoteverwaltung möglich ist, finden Sie unter [Aktivieren und Verwenden von Remotebefehlen in Windows PowerShell](https://technet.microsoft.com/magazine/ff700227.aspx). Die einfachste Möglichkeit, die Remoteverwaltung auf Ihrem Computer zu konfigurieren, besteht in der Ausführung des Cmdlets **Enable-PSRemoting -force** auf dem Computer in einer Windows PowerShell-Sitzung, die mit erhöhten Benutzerrechten (**Als Administrator ausführen**) geöffnet wurde.
 
-### So melden Sie sich bei Windows PowerShell Web Access an
+### <a name="to-sign-in-to-windows-powershell-web-access"></a>So melden Sie sich bei Windows PowerShell Web Access an
 
 1.  Öffnen Sie die Windows PowerShell Web Access-Website in einem Fenster oder auf einer Registerkarte des Internetbrowsers.
 
@@ -109,9 +107,9 @@ Ihr Windows PowerShell Web Access-Administrator sollten Ihnen eine URL bereitste
     <tbody>
     <tr class="odd">
     <td><ul>
-    <li><p>Falls der Zielcomputer einer Arbeitsgruppe angehört, müssen Sie die folgende Syntax verwenden, um den Benutzernamen anzugeben und sich am Computer anzumelden: &lt;<em>Arbeitsgruppenname</em>&gt;\&lt;<em>Benutzername</em>&gt;.</p></li>
+    <li><p>Wenn der Zielcomputer einer Arbeitsgruppe angehört, verwenden Sie die folgende Syntax, um Ihren Benutzernamen anzugeben und sich am Computer anzumelden: &lt;<em>Arbeitsgruppenname</em>&gt;\&lt;<em>Benutzername</em>&gt;.</p></li>
     <li><p>Wenn es sich beim Zielcomputer um den Gatewayserver handelt, können Sie <strong>localhost</strong> im Feld <strong>Computername</strong> angeben.</p></li>
-    <li><p>Sollte es sich beim Zielcomputer um den Gatewayserver handeln und sich der Gatewayserver in einer Arbeitsgruppe befinden, können Sie <strong>localhost</strong> im Feld <strong>Computername</strong> angeben. Verwenden Sie jedoch nicht localhost\&lt;<em>Benutzername</em>&gt; im Feld <strong>Benutzername</strong>. Sie müssen &lt;<em>Arbeitsgruppenname</em>&gt;\&lt;<em>Benutzername</em>&gt; verwenden.</p></li>
+    <li><p>Sollte es sich beim Zielcomputer um den Gatewayserver handeln und dieser sich in einer Arbeitsgruppe befinden, können Sie <strong>localhost</strong> im Feld <strong>Computername</strong> angeben. Verwenden Sie jedoch nicht „localhost\&lt;<em>Benutzername</em>&gt;“ im Feld <strong>Benutzername</strong>. Sie müssen &lt;<em>Arbeitsgruppenname</em>&gt;\&lt;<em>Benutzername</em>&gt; verwenden.</p></li>
     </ul></td>
     </tr>
     </tbody>
@@ -119,7 +117,7 @@ Ihr Windows PowerShell Web Access-Administrator sollten Ihnen eine URL bereitste
 
 3.  Der Abschnitt **Optionale Verbindungseinstellungen** bezieht sich auf die Autorisierungsanforderungen des zu verwaltenden Remotecomputers. Weitere Informationen zu den Parametern, die den optionalen Verbindungseinstellungen entsprechen, finden Sie in der [Hilfe zum Cmdlet „Enter-PSSession“](https://technet.microsoft.com/library/dd315384.aspx).
 
-    In der Regel sind die Anmeldeinformationen zum Passieren des Windows PowerShell Web Access-Gateways dieselben, die vom zu verwaltenden Remotecomputer erkannt werden. Wenn Sie jedoch andere Anmeldeinformationen zur Verwaltung des in Schritt 2 angegebenen Remotecomputers verwenden möchten, erweitern Sie den Abschnitt **Optionale Verbindungseinstellungen**, und geben Sie die abweichenden Anmeldeinformationen an. Fahren Sie ansonsten mit Schritt 6 fort.
+    In der Regel sind die Anmeldeinformationen zum Passieren des Windows PowerShell Web Access-Gateways dieselben, die vom zu verwaltenden Remotecomputer erkannt werden. Wenn Sie jedoch andere Anmeldeinformationen zur Verwaltung des in Schritt 2 angegebenen Remotecomputers verwenden möchten, erweitern Sie den Abschnitt **Optionale Verbindungseinstellungen**, und geben Sie die abweichenden Anmeldeinformationen an. Fahren Sie ansonsten mit Schritt 6 fort.
 
 4.  Wenn der Windows PowerShell Web Access-Administrator eine benutzerdefinierte Konfiguration für Windows PowerShell Web Access-Benutzer erstellt hat, geben Sie den Namen der Sitzungskonfiguration in das Feld **Konfigurationsname** ein. Weitere Informationen zu Sitzungskonfigurationen finden Sie unter [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx) auf der Microsoft-Website.
 
@@ -144,9 +142,9 @@ Sie werden in den folgenden Situationen von einer webbasierten Windows PowerShel
 
 -   Wenn Sie sich zur Verwaltung eines anderen Remotecomputers in derselben Browsersitzung oder einer neuen Registerkarte desselben Browsers anmelden. (Dies gilt nicht, wenn Windows Server 2012 R2 auf dem Gatewayserver ausgeführt wird. Windows PowerShell Web Access unter Windows Server 2012 R2 lässt mehrere Benutzersitzungen auf neuen Registerkarten in derselben Browsersitzung zu.) Weitere Informationen dazu, wie Sie mehr als eine aktive Sitzung auf demselben Computer starten, finden Sie unter „Aufbauen von Verbindungen zu mehreren Zielcomputern gleichzeitig“ im Abschnitt [Einschränkungen der webbasierten Konsole](#BKMK_limits) dieses Artikels.
 
--   Wenn Sie mehr als 20 Minuten inaktiv sind. Der Gatewayadministrator kann den Timeoutzeitraum für Inaktivität anpassen. Weitere Informationen finden Sie unter [Sitzungsverwaltung](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx#BKMK_sesmgmt).
+-   Wenn Sie mehr als 20 Minuten inaktiv sind. Der Gatewayadministrator kann den Timeoutzeitraum für Inaktivität anpassen. Weitere Informationen finden Sie unter [Sitzungsverwaltung](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx#BKMK_sesmgmt).
 
-    -   Wenn Sie aufgrund von Netzwerkfehlern oder anderen ungeplanten Herunterfahrvorgängen oder Ausfällen in der webbasierten Konsole von Sitzungen getrennt werden und nicht weil Sie die Sitzungen selbst geschlossen haben, wird die Windows PowerShell Web Access-Sitzung weiter ausgeführt. Die Verbindung mit dem Zielcomputer bleibt bestehen, bis das Timeout auf dem Client überschritten wird. In der Standardeinstellung beträgt dieses Zeitlimit 20 Minuten, was vom Gatewayadministrator angepasst werden kann. Die Sitzung wird entweder standardmäßig nach 20 Minuten oder nach der vom Gatewayadministrator festgelegten Timeoutperiode getrennt, je nachdem, was kürzer ist.
+    -   Wenn Sie aufgrund von Netzwerkfehlern oder anderen ungeplanten Herunterfahrvorgängen oder Ausfällen in der webbasierten Konsole von Sitzungen getrennt werden und nicht weil Sie die Sitzungen selbst geschlossen haben, wird die Windows PowerShell Web Access-Sitzung weiter ausgeführt. Die Verbindung mit dem Zielcomputer bleibt bestehen, bis das Timeout auf dem Client überschritten wird. In der Standardeinstellung beträgt dieses Zeitlimit 20 Minuten, was vom Gatewayadministrator angepasst werden kann. Die Sitzung wird entweder standardmäßig nach 20 Minuten oder nach der vom Gatewayadministrator festgelegten Timeoutperiode getrennt, je nachdem, was kürzer ist.
 
         Wenn der Gatewayserver unter Windows Server 2012 R2 ausgeführt wird, ermöglicht Windows PowerShell Web Access Benutzern das erneute Verbinden mit gespeicherten Sitzungen zu einem späteren Zeitpunkt. Die Benutzer können jedoch gespeicherte Sitzungen erst anzeigen bzw. die Verbindung erneut herstellen, nachdem das vom Gatewayadministrator festgelegte Timeout abgelaufen ist.
 
@@ -169,7 +167,7 @@ Nach der Anmeldung bei Windows PowerShell Web Access wird im Fenster oder auf de
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Funktionelle Unterschiede von "PowerShell.exe"</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Funktionale Unterschiede zu „PowerShell.exe“</span></a>
 
 ------------------------------------------------------------------------
 
@@ -285,7 +283,7 @@ Die Mehrzahl der Windows PowerShell-Hostfunktionen steht in der webbasierten Win
 
 ------------------------------------------------------------------------
 
--   <span class="label">Doppel-Hop.</span>   Auf die Doppel-Hop-Einschränkung (oder die Verbindung mit einem zweiten Computer über die erste Verbindung) stoßen Sie, wenn Sie versuchen, eine neue Sitzung zu erstellen oder mit einer neuen Sitzung zu arbeiten, indem Sie Windows PowerShell Web Access verwenden. Windows PowerShell Web Access verwendet einen Remoterunspace, und **PowerShell.exe** unterstützt das Herstellen einer Remoteverbindungen mit einem zweiten Computer von einem Remoterunspace derzeit nicht. Wenn Sie beispielsweise versuchen, mithilfe des Cmdlets **Enter-PSSession** von einer bestehenden Verbindung aus eine Verbindung mit einem zweiten Remotecomputer herzustellen, können verschiedene Fehler gemeldet werden, z. B. „Netzwerkressourcen nicht verfügbar“.
+-   <span class="label">Double-Hop.</span>   Auf die Doppel-Hop-Einschränkung (oder die Verbindung mit einem zweiten Computer über die erste Verbindung) stoßen Sie, wenn Sie versuchen, eine neue Sitzung zu erstellen oder mit einer neuen Sitzung zu arbeiten, indem Sie Windows PowerShell Web Access verwenden. Windows PowerShell Web Access verwendet einen Remoterunspace, und **PowerShell.exe** unterstützt das Herstellen einer Remoteverbindungen mit einem zweiten Computer von einem Remoterunspace derzeit nicht. Wenn Sie beispielsweise versuchen, mithilfe des Cmdlets **Enter-PSSession** von einer bestehenden Verbindung aus eine Verbindung mit einem zweiten Remotecomputer herzustellen, können verschiedene Fehler gemeldet werden, z. B. „Netzwerkressourcen nicht verfügbar“.
 
     Derlei Fehler können vermieden werden, indem Ihr Administrator die CredSSP-Authentifizierung in der Netzwerkumgebung Ihrer Organisation einrichtet. Weitere Informationen zur Konfiguration der CredSSP-Authentifizierung finden Sie unter [CredSSP für Zweit-Hop-Remoting](http://blogs.msdn.com/b/powershell/archive/2008/06/05/credssp-for-second-hop-remoting-part-i-domain-account.aspx) auf der Microsoft-Website. Sie können auch explizite Anmeldeinformationen zur Verwaltung eines zweiten Remotecomputers angeben, denn mit impliziten Daten ist es unwahrscheinlich, dass der zweite Hop zugelassen wird.
 
@@ -334,7 +332,7 @@ Die Mehrzahl der Windows PowerShell-Hostfunktionen steht in der webbasierten Win
 
         Weitere Beispiele zur Anpassung der Konsolenansicht stehen im [Windows PowerShell-Teamblog](http://blogs.msdn.com/b/powershell/) zur Verfügung.
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Weitere Informationen</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Siehe auch</span></a>
 <a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_4" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
 
 ------------------------------------------------------------------------
@@ -352,7 +350,7 @@ Ja Nein
 
 Zusätzliches Feedback?
 
-<span class="stdr-count"><span class="stdr-charcnt">1500</span> verbleibende Zeichen</span> Senden Diesen Schritt überspringen
+<span class="stdr-count"><span class="stdr-charcnt">1.500</span> verbleibende Zeichen</span> Senden Diesen Schritt überspringen
 
 <span class="stdr-thankyou">Vielen Dank!</span> <span class="stdr-appreciate">Wir schätzen Ihr Feedback.</span>
 
@@ -378,13 +376,13 @@ Erzählen Sie uns mehr
 
 -   [Flash-Newsletter](https://technet.microsoft.com/cc543196.aspx)
 -   |
--   [So erreichen Sie uns:](https://technet.microsoft.com/cc512759.aspx)
+-   [So erreichen Sie uns](https://technet.microsoft.com/cc512759.aspx)
 -   |
 -   [Datenschutzbestimmungen](https://privacy.microsoft.com/privacystatement)
 -   |
 -   [Nutzungsbedingungen](https://technet.microsoft.com/cc300389.aspx)
 -   |
--   [Warenzeichen](https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/)
+-   [Marken](https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/)
 -   |
 
 © 2016 Microsoft
@@ -393,10 +391,4 @@ Erzählen Sie uns mehr
 
 Die Lizenz für Drittanbieterskripts oder Code, die mit dieser Website verlinkt oder über Verweise verbunden sind, wird Ihnen von den Codeeigentümern erteilt, nicht von Microsoft. Die ASP.NET Ajax CDN-Nutzungsbedingungen finden Sie unter http://www.asp.net/ajaxlibrary/CDN.ashx.
 <img src="https://m.webtrends.com/dcsjwb9vb00000c932fd0rjc7_5p3t/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" alt="DCSIMG" id="Img1" width="1" height="1" />
-
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

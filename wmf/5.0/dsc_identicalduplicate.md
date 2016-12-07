@@ -1,4 +1,4 @@
-# Zulassen identischer doppelter Ressourcen in einer Konfiguration
+# <a name="allowing-for-identical-duplicate-resources-in-a-configuration"></a>Zulassen identischer doppelter Ressourcen in einer Konfiguration
 
 DSC lässt keine in Konflikt stehenden Ressourcendefinitionen in einer Konfiguration zu bzw. behandeln diese nicht. Anstatt zu versuchen, den Konflikt zu lösen, tritt ein Fehler auf. Sobald die Wiederverwendung von Konfigurationen mittels zusammengesetzter Ressourcen häufiger vorkommt, werden Konflikte häufiger auftreten. Wenn in Konflikt stehende Ressourcendefinitionen identisch sind, sollte DSC diese intelligent zulassen. In dieser Version unterstützen wir mehrere Ressourceninstanzen, die identische Definitionen aufweisen:
 
@@ -85,7 +85,3 @@ Configuration WebApplication
 ```
 
 Diese sehr ähnliche Konfiguration ist nicht erfolgreich, da die Ressourcen „WindowsFeature FE_IIS“ und „WindowsFeature Worker_IIS“ nicht mehr identisch sind und daher in Konflikt stehen.
-
-<!--HONumber=Aug16_HO3-->
-
-

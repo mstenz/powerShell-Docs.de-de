@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 97714d3fa9a1c00fb3d2e79cc873280ca945a840
-ms.openlocfilehash: 52eb958e59ecb1d5ae3faf268933bbd544410d47
-
+ms.openlocfilehash: 1fab04dfcd4ce927bbe526b93c826cf3749a42a5
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# DSC-Ressource „WindowsOptionalFeatureSet“
+# <a name="dsc-windowsoptionalfeatureset-resource"></a>DSC-Ressource „WindowsOptionalFeatureSet“
 
 > Gilt für: Windows PowerShell 5.0
 
@@ -21,7 +19,7 @@ Die Ressource **WindowsOptionalFeatureSet** in Windows PowerShell DSC (Desired S
 
 Verwenden Sie diese Ressource, wenn Sie verschiedene optionale Windows-Features mit demselben Status konfigurieren möchten.
 
-## Syntax
+## <a name="syntax"></a>Syntax
 
 ```
 WindowsOptionalFeature [string] #ResourceName
@@ -38,7 +36,7 @@ WindowsOptionalFeature [string] #ResourceName
 }
 ```
 
-## Eigenschaften
+## <a name="properties"></a>Eigenschaften
 
 |  Eigenschaft  |  Beschreibung   | 
 |---|---| 
@@ -46,17 +44,11 @@ WindowsOptionalFeature [string] #ResourceName
 | Ensure| Gibt an, ob die Features aktiviert sind. Um sicherzustellen, dass die Feature aktiviert sind, legen Sie diese Eigenschaft auf „Present“ fest. Um sicherzustellen, dass die Feature deaktiviert sind, legen Sie diese Eigenschaft auf „Absent“ fest.|
 | Source| Nicht implementiert.|
 | NoWindowsUpdateCheck| Gibt an, ob Windows Update (WU) von DISM kontaktiert wird, wenn die Quelldateien zum Aktivieren von Features gesucht werden. Falls „$true“, wird WU nicht von DISM kontaktiert.|
-| RemoveFilesOnDisable| Legen Sie diese Einstellung auf **$true** fest, um alle zu den Features gehörigen Dateien zu entfernen, wenn sie deaktiviert werden (d. h. wenn **Ensure** auf „Absent“ festgelegt wird).|
+| RemoveFilesOnDisable| Legen Sie diese Einstellung auf **$true** fest, um alle zu den Features gehörigen Dateien zu entfernen, wenn sie deaktiviert werden (d. h. wenn **Ensure** auf „Absent“ festgelegt wird).|
 | LogLevel| Die maximale Ausgabeebene, die in den Protokollen angezeigt wird. Die zulässigen Werte lauten: „ErrorsOnly“ (nur Fehler werden protokolliert), „ErrorsAndWarning“ (Fehler und Warnungen werden protokolliert) und „ErrorsAndWarningAndInformation“ (Fehler, Warnungen und Debuginformationen werden protokolliert).|
 | LogPath| Der Pfad zu einer Protokolldatei, in der der Ressourcenanbieter den Vorgang protokollieren soll.| 
 | DependsOn| Gibt an, dass die Konfiguration einer anderen Ressource ausgeführt werden muss, bevor diese Ressource konfiguriert wird. Wenn beispielsweise die ID des Skriptblocks mit der Ressourcenkonfiguration, den Sie zuerst ausführen möchten, __ResourceName__ und dessen Typ __ResourceType__ ist, lautet die Syntax für das Verwenden dieser Eigenschaft `DependsOn = "[ResourceType]ResourceName"`.| 
  
 
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -1,8 +1,23 @@
-# Find-Command
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: PowerShell, Cmdlet, Katalog
+ms.date: 2016-10-14
+contributor: manikb
+title: Find-Command | MSDN
+ms.technology: powershell
+ms.openlocfilehash: 99091130ea89023495e5e3aacafb292f67f2db30
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
+---
+# <a name="find-command"></a>Find-Command
 
 Sucht PowerShell-Befehle in Modulen.
 
-## Beschreibung
+## <a name="description"></a>Beschreibung
 Das Cmdlet Find-Command sucht PowerShell-Befehle wie z.B. Cmdlets, Aliase, Funktionen und Workflows. Find-Command sucht Module in registrierten Repositorys.
 Für jeden Befehl, den dieses Cmdlet findet, gibt es ein PSGetCommandInfo-Objekt zurück. Sie können ein PSGetCommandInfo-Objekt an das Install-Module-Cmdlet übergeben, um das Modul zu installieren, das den Befehl enthält.
 
@@ -15,16 +30,16 @@ Für jeden Befehl, den dieses Cmdlet findet, gibt es ein PSGetCommandInfo-Objekt
 - Find-Command kann mit dem „-Filter“-Parameter nach einer repositoryspezifischen Suchsprache filtern.
 - Find-Command kann Module von allen oder einigen registrierten Repositorys filtern.
 
-## Cmdlet-Syntax
+## <a name="cmdlet-syntax"></a>Cmdlet-Syntax
 ```powershell
 Get-Command -Name Find-Command -Module PowerShellGet -Syntax
 ```
 
-## Cmdlet-Onlinehilfe
+## <a name="cmdlet-online-help-reference"></a>Cmdlet-Onlinehilfe
 
 [Find-Command](http://go.microsoft.com/fwlink/?LinkId=733636)
 
-## Beispiele für Befehle
+## <a name="example-commands"></a>Beispiele für Befehle
 ```powershell
 
 # Find a specific command
@@ -66,7 +81,4 @@ Find-Command -Filter RBAC
 Find-Command -Tag Azure, DSC
 
 ```
-
-<!--HONumber=Aug16_HO3-->
-
 

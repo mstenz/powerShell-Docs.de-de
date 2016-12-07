@@ -8,12 +8,10 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: f74cd5d9-da57-4802-b614-0b194a7bc8f8
-translationtype: Human Translation
-ms.sourcegitcommit: f891988cce205b5729d0da6c4ce23da5fbd53b7f
-ms.openlocfilehash: 03a9bbfb14c4587d794db2eaadf60cc7a4d4dcdc
-
+ms.openlocfilehash: 0c17cb271441ed20b36176e2c5d8cecdad586e8b
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="multiple-selection-list-boxes"></a>Listenfelder für Mehrfachauswahl
 Verwenden Sie Windows PowerShell 3.0 und höhere Versionen, um ein Listenfeld-Steuerelement für die Mehrfachauswahl in einem benutzerdefinierten Windows-Formular zu erstellen.
 
@@ -188,10 +186,4 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 - [Hey Scripting Guy: Warum funktionieren diese PowerShell GUI-Beispiele nicht?](http://go.microsoft.com/fwlink/?LinkId=506644)
 - [GitHub: Dave Wyatt's WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
 - [Windows PowerShell Tip of the Week: Multi-Select List Boxes – And More!](http://technet.microsoft.com/library/ff730950.aspx) (Windows PowerShell-Tipp der Woche zum Thema Listenfelder mit Mehrfachauswahl)
-
-
-
-
-<!--HONumber=Nov16_HO4-->
-
 

@@ -8,15 +8,13 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: f0ddfc7d-6b5e-4832-82de-2283597ea70d
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: de9e8af7908ac6a72a100fd2c86b52c30c390c39
-
+ms.openlocfilehash: 517b07a9ebca91029381684beaec95d37934f3ce
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
+# <a name="getting-wmi-objects-get-wmiobject"></a>Abrufen von WMI-Objekten (Get-WmiObject)
 
-# <a name="getting-wmi-objects-getwmiobject"></a>Abrufen von WMI-Objekten (Get-WmiObject)
-
-## <a name="getting-wmi-objects-getwmiobject"></a>Abrufen von WMI-Objekten (Get-WmiObject)
+## <a name="getting-wmi-objects-get-wmiobject"></a>Abrufen von WMI-Objekten (Get-WmiObject)
 Windows-Verwaltungsinstrumentation (Windows Management Instrumentation, WMI) ist eine Kerntechnologie für die Windows-Systemadministration, denn sie macht eine Vielzahl von Informationen auf einheitliche Weise verfügbar. Weil WMI so viel möglich macht, ist das Windows PowerShell-Cmdlet **Get-WmiObject** eines der nützlichsten Cmdlets für die tatsächliche Arbeit. Es wird zunächst erläutert, wie mit „Get-WmiObject WMI“ auf WMI-Objekte zugegriffen werden kann, und dann wird erläutert, wie WMI-Objekte zum Ausführen bestimmter Aufgaben verwendet werden können.
 
 ### <a name="listing-wmi-classes"></a>Auflisten von WMI-Klassen
@@ -109,7 +107,7 @@ BuildNumber                               Property   System.String BuildNumb...
 ...
 ```
 
-#### <a name="displaying-nondefault-properties-with-format-cmdlets"></a>Anzeigen von Nicht-Standardeigenschaften mit „Format“-Cmdlets
+#### <a name="displaying-non-default-properties-with-format-cmdlets"></a>Anzeigen von Nicht-Standardeigenschaften mit „Format“-Cmdlets
 Wenn Sie Informationen anzeigen möchten, die in der **Win32_OperatingSystem**-Klasse enthalten sind, aber nicht standardmäßig angezeigt werden, verwenden Sie die **Format**-Cmdlets. Wenn Sie beispielsweise die verfügbaren Arbeitsspeicherdaten anzeigen möchten, geben Sie Folgendes ein:
 
 ```
@@ -135,10 +133,4 @@ FreePhysicalMemory     : 301876
 FreeVirtualMemory      : 2056724
 FreeSpaceInPagingFiles : 1556644
 ```
-
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

@@ -8,12 +8,10 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: e0d2c6e8-5126-40e7-a1e1-d1cff29fe94a
-translationtype: Human Translation
-ms.sourcegitcommit: b59186234a513cf34d2615d90643ee749bd60d3f
-ms.openlocfilehash: d0f9c059f6f5286388af3cfc07995fe46e7321c3
-
+ms.openlocfilehash: 590996f2db730a7841eb7a85036e4f36e59e46ff
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="exploring-the-windows-powershell-ise"></a>Kennenlernen der Windows PowerShell ISE
 Sie können Windows PowerShell® Integrated Scripting Environment (ISE) verwenden, um Befehle und Skripts zu erstellen, auszuführen und zu debuggen. Windows PowerShell ISE besteht aus der Menüleiste, den Windows PowerShell-Registerkarten, der Symbolleiste, den Skriptregisterkarten, dem Skriptbereich, dem Konsolenbereich, der Statusleiste, dem Schieberegler für die Textgröße und der kontextbezogenen Hilfe.
 
@@ -47,7 +45,7 @@ Die folgenden Schaltflächen befinden sich auf der Symbolleiste.
 |**Auswahl ausführen**|Führt einen ausgewählten Teil eines Skripts aus.|
 |**Vorgang beenden**|Beendet ein Skript, das ausgeführt wird.|
 |**Neue Registerkarte „Remote-PowerShell“**|Erstellt eine neue PowerShell-Registerkarte, die eine Sitzung auf einem Remotecomputer herstellt. Ein Dialogfeld wird angezeigt und fordert Sie zur Eingabe von Details auf, die zum Herstellen der Remoteverbindung erforderlich sind.|
-|**„PowerShell.exe“ starten**|Öffnet eine PowerShell-Konsole.|
+|**„PowerShell.exe“ starten**|Öffnet eine PowerShell-Konsole.|
 |**Skriptbereich oben anzeigen**|Verschiebt den Skriptbereich in der Anzeige nach oben.|
 |**Skriptbereich rechts anzeigen**|Verschiebt den Skriptbereich in der Anzeige nach rechts.|
 |**Skriptbereich maximiert anzeigen**|Maximiert den Skriptbereich.|
@@ -77,10 +75,4 @@ Hilfe für Windows PowerShell ISE ist im Web in der TechNet-Bibliothek verfügba
 
 ## <a name="see-also"></a>Weitere Informationen
 - [Verwenden der Windows PowerShell ISE](../../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
-
-
-
-
-<!--HONumber=Nov16_HO4-->
-
 

@@ -8,18 +8,16 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: b1688d73-c173-491e-9ba6-6d0c1cc852de
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 6216f3e1a766c57a7549a3e3b4fbe76d043a8a41
-
+ms.openlocfilehash: 5f37f66a34a98a4da28f4e36f115272d44ae5fc4
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Verwenden von Variablen, um Objekte zu speichern
+# <a name="using-variables-to-store-objects"></a>Verwenden von Variablen, um Objekte zu speichern
 Windows PowerShell arbeitet mit Objekten. In Windows PowerShell können Sie Variablen – eigentlich benannte Objekte – erstellen, um Ausgabe zur späteren Verwendung beizubehalten. Wenn Sie mit dem Verwenden von Variablen in anderen Shells vertraut sind, sollten Sie daran denken, dass Windows PowerShell-Variablen keine Texte, sondern Objekte sind.
 
 Variablen werden immer mit dem Anfangszeichen $ angegeben und können jedes alphanumerische Zeichen und den Unterstrich in ihren Namen enthalten.
 
-### Erstellen einer Variablen
+### <a name="creating-a-variable"></a>Erstellen einer Variablen
 Sie können eine Variablen erstellen, indem Sie einen zulässigen Variablennamen eingeben:
 
 ```
@@ -58,7 +56,7 @@ Provider     Property   System.Management.Automation.ProviderInfo Provider {...
 ProviderPath Property   System.String ProviderPath {get;}
 ```
 
-### Verwalten von Variablen
+### <a name="manipulating-variables"></a>Verwalten von Variablen
 Windows PowerShell stellt mehrere Befehle bereit, mit denen Variablen verwaltet werden können. Eine vollständige Liste in einem lesbaren Format erhalten Sie, wenn Sie Folgendes eingeben:
 
 ```
@@ -87,7 +85,7 @@ Wenn Sie nun das Cmdlet **Get-Variable** ausführen, sehen Sie die verbliebenen 
 Get-ChildItem variable:
 ```
 
-### Verwenden von „Cmd.exe“-Variablen
+### <a name="using-cmdexe-variables"></a>Verwenden von „Cmd.exe“-Variablen
 Windows PowerShell ist zwar nicht „Cmd.exe“, wird aber trotzdem in einer Befehlsshellumgebung ausgeführt und kann die Variablen verwenden, die in jeder Umgebung in Windows verfügbar sind. Diese Variablen werden über ein Laufwerk namens **env:** verfügbar gemacht. Sie können diese Variablen anzeigen, indem Sie Folgendes eingeben:
 
 ```
@@ -102,10 +100,4 @@ C:\WINDOWS
 ```
 
 Sie können auch Umgebungsvariablen in Windows PowerShell erstellen und ändern. Für Umgebungsvariablen, auf die über Windows PowerShell zugegriffen wird, gelten die normalen Regeln für Umgebungsvariablen wie an sonstigen Stellen in Windows.
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

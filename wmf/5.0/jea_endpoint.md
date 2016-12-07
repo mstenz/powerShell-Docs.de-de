@@ -1,4 +1,4 @@
-# Erstellen eines JEA-Endpunkts und Herstellen einer Verbindung damit
+# <a name="creating-and-connecting-to-a-jea-endpoint"></a>Erstellen eines JEA-Endpunkts und Herstellen einer Verbindung damit
 Um einen JEA-Endpunkt zu erstellen, müssen Sie eine besonders konfigurierte PowerShell-Sitzungskonfigurationsdatei erstellen und registrieren, die mit dem Cmdlet **New-PSSessionConfigurationFile** generiert werden kann.
 
 ```powershell
@@ -130,14 +130,10 @@ Nachdem Sie die Anpassung Ihrer Sitzungskonfiguration und dazugehörigen Rollenf
 Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfiguration\Demo.pssc" 
 ```
 
-## Herstellen einer Verbindung mit einem JEA-Endpunkt
+## <a name="connect-to-a-jea-endpoint"></a>Herstellen einer Verbindung mit einem JEA-Endpunkt
 Das Herstellen einer Verbindung mit einem JEA-Endpunkt erfolgt wie das Verbinden mit einem beliebigen anderen PowerShell-Endpunkt.  Sie müssen einfach den Namen Ihres JEA-Endpunkts als „ConfigurationName“-Parameter für **New-PSSession**, **Invoke-Command** oder **Enter-PSSession** eingeben.
 
 ```powershell
 Enter-PSSession -ConfigurationName Maintenance -ComputerName localhost
 ```
 Sobald Sie mit der JEA-Sitzung verbunden sind, können Sie nur noch die Befehle ausführen, die in der Positivliste unter den Rollenfunktionen angegeben sind. Wenn Sie versuchen, einen für Ihre Rolle nicht zulässigen Befehl auszuführen, tritt ein Fehler auf.
-
-<!--HONumber=Aug16_HO3-->
-
-

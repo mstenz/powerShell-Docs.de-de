@@ -1,4 +1,4 @@
-# Das Cmdlet „Test-DscConfiguration“ unterstützt Referenzkonfigurationen
+# <a name="test-dscconfiguration-cmdlet-supports-reference-configurations"></a>Das Cmdlet „Test-DscConfiguration“ unterstützt Referenzkonfigurationen
 
 Das Cmdlet „Test-DscConfiguration“ wurde so aktualisiert, dass es das Testen des gewünschten Konfigurationszustands eines oder mehrerer Zielknoten zulässt, indem zum Vergleich ein Referenzkonfigurationsdokument angegeben wird.
 
@@ -35,8 +35,3 @@ Test-DscConfiguration   -ReferenceConfiguration <string>
                         [-AsJob] 
                         [<CommonParameters>]
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
-

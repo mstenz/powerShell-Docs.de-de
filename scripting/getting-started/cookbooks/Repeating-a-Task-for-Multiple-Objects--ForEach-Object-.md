@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 6697a12d-2470-4ed6-b5bb-c35e5d525eb6
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 8dd7904611fb697f9b398161e12765454b4f3441
-
+ms.openlocfilehash: 4b219e4499482eafa6eddf1461b74c62ba091d1a
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Wiederholen einer Aufgabe für mehrere Objekte (ForEach-Object)
+# <a name="repeating-a-task-for-multiple-objects-foreach-object"></a>Wiederholen einer Aufgabe für mehrere Objekte (ForEach-Object)
 Das Cmdlet **ForEach-Object** verwendet Skriptblöcke und den Deskriptor „$_“ für das aktuelle Pipelineobjekt, um Ihnen das Ausführen eines Befehls für jedes Objekt in der Pipeline zu ermöglichen. Damit können Sie einige komplizierte Aufgaben ausführen.
 
 Besonders nützlich kann dies sein, wenn Sie Daten bearbeiten möchten, um sie besser nutzen zu können. Beispielsweise kann die Klasse „Win32_LogicalDisk“ aus WMI verwendet werden, um für jeden lokalen Datenträger Informationen zum freien Speicherplatz zurückzugeben. Die Daten werden als Bytes zurückgegeben, sind daher schwierig zu lesen:
@@ -53,10 +51,4 @@ eeSpace = ($_.FreeSpace)/1024.0/1024.0}
 ```
 
 Sie könnten die Daten mithilfe bestimmter erweiterter Techniken neu anordnen, ein einfacherer Ansatz ist jedoch die Erstellung ein neues Objekts mit **Select-Object**.
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

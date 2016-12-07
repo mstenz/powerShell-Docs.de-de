@@ -8,12 +8,10 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 62f916d9-b3a1-484a-bdfb-41f57112c22b
-translationtype: Human Translation
-ms.sourcegitcommit: 6c666e2e23cb74818e37293410dafc9033057733
-ms.openlocfilehash: 068ea5b8de5463c492c894d313ac1f266c449797
-
+ms.openlocfilehash: f38c9f310c528a9daff2784ab3a686309e624ecb
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>Schreiben und Ausführen von Skripts in der Windows PowerShell ISE
 In diesem Thema ist beschrieben, wie Skripts im Skriptbereich erstellt, bearbeitet, ausgeführt und gespeichert werden.
 
@@ -125,7 +123,7 @@ Drücken Sie **STRG+S**, oder klicken Sie auf der Symbolleiste auf das Symbol **
 4.  Klicken Sie auf **Speichern**.
 
 ### <a name="to-save-a-script-in-ascii-encoding"></a>So speichern Sie ein Skript in ASCII-Codierung
-Windows PowerShell ISE speichert neue Skriptdateien (.ps1), Skriptdatendateien (.psd1) und Skriptmoduldateien (.psm1) standardmäßig im Unicode-Format (BigEndianUnicode). Um ein Skript in einer anderen Codierung, z. B. ASCII (ANSI), zu speichern, verwenden Sie die **Save**- oder **SaveAs**-Methode des [$psISE.CurrentFile](https://technet.microsoft.com/en-us/library/bc3300e4-9c17-4f00-a621-c8867126e3b3#CurrentFile)-Objekts.
+Windows PowerShell ISE speichert neue Skriptdateien (.ps1), Skriptdatendateien (.psd1) und Skriptmoduldateien (.psm1) standardmäßig im Unicode-Format (BigEndianUnicode). Um ein Skript in einer anderen Codierung, z. B. ASCII (ANSI), zu speichern, verwenden Sie die **Save**- oder **SaveAs**-Methode des [$psISE.CurrentFile](https://technet.microsoft.com/en-us/library/bc3300e4-9c17-4f00-a621-c8867126e3b3#CurrentFile)-Objekts.
 
 Im folgenden Befehl wird ein neues Skript als „MyScript.ps1“ mit ASCII-Codierung gespeichert.
 
@@ -151,10 +149,4 @@ Windows PowerShell ISE ändert nicht die Codierung von Skripts, die in anderen E
 
 ## <a name="see-also"></a>Weitere Informationen
 - [Verwenden der Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
-
-
-
-
-<!--HONumber=Nov16_HO4-->
-
 

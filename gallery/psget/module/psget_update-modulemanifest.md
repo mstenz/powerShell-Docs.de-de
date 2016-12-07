@@ -1,23 +1,38 @@
-# Update-ModuleManifest
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: PowerShell, Cmdlet, Katalog
+ms.date: 2016-10-14
+contributor: manikb
+title: Update-ModuleManifest | MSDN
+ms.technology: powershell
+ms.openlocfilehash: 85153872326c5af8f869bc2254040eca1a152f8b
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
+---
+# <a name="update-modulemanifest"></a>Update-ModuleManifest
 Aktualisiert eine Modulmanifestdatei
 
-## Beschreibung
+## <a name="description"></a>Beschreibung
 
 Das Cmdlet „Update-ModuleManifest“ aktualisiert eine Modulmanifestdatei (.psd1).
 
-### Hinweise
-    - DscResourcesToExport is only supported on the latest PowerShell version 5.0. We won’t be able to update the field if you are running on lower versions of PowerShell.
+### <a name="notes"></a>Hinweise
+    - DscResourcesToExport wird nur von der neuesten PowerShell-Version 5.0 unterstützt. Wenn Sie eine frühere Version von PowerShell ausführen, kann das Feld nicht aktualisiert werden.
 
-## Cmdlet-Syntax
+## <a name="cmdlet-syntax"></a>Cmdlet-Syntax
 ```powershell
 Get-Command -Name Update-ModuleManifest -Module PowerShellGet -Syntax
 ```
 
-## Cmdlet-Onlinehilfe
+## <a name="cmdlet-online-help-reference"></a>Cmdlet-Onlinehilfe
 
 [Update-ModuleManifest](http://go.microsoft.com/fwlink/?LinkId=619311)
 
-## Beispiele für Befehle
+## <a name="example-commands"></a>Beispiele für Befehle
 
 Dieses neue Cmdlet wird verwendet, um die Manifestdatei mit eingegebenen Eigenschaftswerten zu aktualisieren. Es verwendet dieselben Parameter wie „New-ModuleManifest“.
 
@@ -104,9 +119,4 @@ PrivateData = @{
     } # End of PSData hashtable
 } # End of PrivateData hashtable
 ```
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

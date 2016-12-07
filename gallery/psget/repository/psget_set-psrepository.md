@@ -1,21 +1,36 @@
-# Set-PSRepository
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: PowerShell, Cmdlet, Katalog
+ms.date: 2016-10-14
+contributor: manikb
+title: Set-PSRepository | MSDN
+ms.technology: powershell
+ms.openlocfilehash: be2c16a79a3e6873c0f7a364092def881d490091
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
+---
+# <a name="set-psrepository"></a>Set-PSRepository
 
 Set-PSRepository legt Werte für ein registriertes Repository fest.
 
-## Beschreibung
+## <a name="description"></a>Beschreibung
 
 Das Cmdlet „Set-PSRepository“ legt Werte für ein registriertes Modulrepository fest.
 
-## Cmdlet-Syntax
+## <a name="cmdlet-syntax"></a>Cmdlet-Syntax
 
 ```powershell
 Get-Command -Name Set-PSRepository -Module PowerShellGet -Syntax
 ```
-## Cmdlet-Onlinehilfe
+## <a name="cmdlet-online-help-reference"></a>Cmdlet-Onlinehilfe
 
 [Set-PSRepository](http://go.microsoft.com/fwlink/?LinkID=517128)
 
-## Beispiele für Befehle
+## <a name="example-commands"></a>Beispiele für Befehle
 
 ```powershell
 PS C:\> Register-PSRepository -Name myRepository -SourceLocation "https://www.myget.org/F/powershellgetdemo/api/v2" -InstallationPolicy Trusted
@@ -34,7 +49,7 @@ myRepository              Untrusted            https://www.myget.org/F/powershel
 ```
 
 
-### Das Cmdlet „Set-PSRepository“ mit Unterstützung der Skriptfreigabe
+### <a name="set-psrepository-cmdlet-with-script-sharing-support"></a>Das Cmdlet „Set-PSRepository“ mit Unterstützung der Skriptfreigabe
 
 Verwenden Sie die „Set-PSRepository“-Cmdlets zum Hinzufügen von **ScriptSourceLocation** und **ScriptPublishLocation** zu „PSRepository“.
 ```powershell
@@ -57,8 +72,4 @@ ScriptPublishLocation : https://MyGallery.com/api/v2/package/
 ProviderOptions : {}
 
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
 

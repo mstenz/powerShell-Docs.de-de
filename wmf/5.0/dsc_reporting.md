@@ -1,9 +1,5 @@
-# Melden des Konfigurationsstatus an zentralem Ort
+# <a name="report-configuration-status-to-central-location"></a>Melden des Konfigurationsstatus an zentralem Ort
 
 Detaillierte Informationen zum Status der DSC-Konfiguration können an einen Server gesendet werden, auf dem der DSC-Dienst ausgeführt wird. 
 
 Weitere Informationen finden Sie unter [Verwenden eines DSC-Berichtsservers](https://msdn.microsoft.com/powershell/dsc/reportserver).
-
-<!--HONumber=Aug16_HO3-->
-
-

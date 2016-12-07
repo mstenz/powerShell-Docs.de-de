@@ -1,22 +1,37 @@
-# Test-ScriptFileInfo
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: PowerShell, Cmdlet, Katalog
+ms.date: 2016-10-14
+contributor: manikb
+title: Test-ScriptFileInfo | MSDN
+ms.technology: powershell
+ms.openlocfilehash: 570ad7e878195f36e1d0831c504301bcee647a7d
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
+---
+# <a name="test-scriptfileinfo"></a>Test-ScriptFileInfo
 
 Überprüft den Metadaten-Kommentarblock einer Skriptdatei
 
-## Beschreibung
+## <a name="description"></a>Beschreibung
 
 Das Cmdlet „Test-ScriptFileInfo“ überprüft den Kommentarblock am Anfang eines Skripts, das mithilfe des Cmdlets „Publish-Script“ veröffentlicht wird.
 Wenn der Metadaten-Kommentarblock einen Fehler enthält, gibt dieses Cmdlet Informationen darüber zurück, wo sich der Fehler befindet oder wie er behoben werden kann.
 
-## Cmdlet-Syntax
+## <a name="cmdlet-syntax"></a>Cmdlet-Syntax
 
 ```powershell
 Get-Command -Name Test-ScriptFileInfo -Module PowerShellGet -Syntax
 ```
-## Cmdlet-Onlinehilfe
+## <a name="cmdlet-online-help-reference"></a>Cmdlet-Onlinehilfe
 
 [Test-ScriptFileInfo](http://go.microsoft.com/fwlink/?LinkId=619791)
 
-## Beispiele für Befehle
+## <a name="example-commands"></a>Beispiele für Befehle
 ```powershell
 # Create a new script file with minimum required metadata values
 New-ScriptFileInfo -Path C:\ScriptSharingDemo\Demo-Script.ps1 -Description "Script file description goes here"
@@ -62,8 +77,4 @@ At line:1 char:1
     + FullyQualifiedErrorId : MissingPSScriptInfo,Test-ScriptFileInfo
 
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
 

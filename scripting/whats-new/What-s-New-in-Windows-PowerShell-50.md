@@ -8,14 +8,12 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 1476722e-947e-425d-a86c-50037488dc6e
-translationtype: Human Translation
-ms.sourcegitcommit: 1d4062490ba76a8cc62faa8fb96eff92b49169b7
-ms.openlocfilehash: 966cab74cb2519893d4744e8bd0ca12f93f73136
-
+ms.openlocfilehash: b3823319cef457c7d04ebdaf521857f1f3e096b9
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="what39s-new-in-windows-powershell"></a>Neuerungen in Windows PowerShell
-Windows PowerShell® 5.0 bietet wichtige neue Features, die die Verwendungsmöglichkeiten erweitern, die Benutzerfreundlichkeit verbessern und es Ihnen ermöglichen, die Steuerung und Verwaltung von Windows-basierten Umgebungen leichter und umfassender zu bewältigen.
+Windows PowerShell® 5.0 bietet wichtige neue Features, die die Verwendungsmöglichkeiten erweitern, die Benutzerfreundlichkeit verbessern und es Ihnen ermöglichen, die Steuerung und Verwaltung von Windows-basierten Umgebungen leichter und umfassender zu bewältigen.
 
 Windows PowerShell 5.0 ist abwärtskompatibel. Cmdlets, Anbieter, Module, Snap-Ins, Skripts, Funktionen und Profile, die für Windows PowerShell 4.0, Windows PowerShell 3.0 und Windows PowerShell 2.0 entwickelt wurden, funktionieren im Allgemeinen ohne Änderungen in Windows PowerShell 5.0.
 
@@ -157,7 +155,7 @@ Viele Updates und Verbesserungen für Windows PowerShell DSC (Desired State Conf
 
     -   Die beiden neuen allgemeinen Workflowparameter „PSInformation“ und „InformationAction“ wurden hinzugefügt.
 
-    -   Wenn Sie den Befehl „Format-Table“ verwenden, werden Spalten jetzt automatisch formatiert, indem die ersten 300 ms Daten ausgewertet werden, die den Datenstrom durchlaufen.
+    -   Wenn Sie den Befehl „Format-Table“ verwenden, werden Spalten jetzt automatisch formatiert, indem die ersten 300 ms Daten ausgewertet werden, die den Datenstrom durchlaufen.
 
 -   In Zusammenarbeit mit [Microsoft Research](http://research.microsoft.com/) wurde das neue Cmdlet „ConvertFrom-String“ hinzugefügt. „ConvertFrom-String“ ermöglicht das Extrahieren und Analysieren strukturierter Objekte aus dem Inhalt von Textzeichenfolgen. Weitere Informationen finden Sie unter „ConvertFrom-String“.
 
@@ -279,7 +277,7 @@ Viele Updates und Verbesserungen für Windows PowerShell DSC (Desired State Conf
 
 -   Die computerübergreifende Synchronisierung in DSC in Windows PowerShell 5.0 ist neu. Mithilfe der integrierten Ressourcen des Typs „WaitFor\*“ (**WaitForAll**, **WaitForAny**, **WaitForSome**) können Sie jetzt computerübergreifende Abhängigkeiten im Verlauf von Konfigurationsausführungen ohne externe Orchestrierungen angeben. Diese Ressourcen ermöglichen eine Synchronisierung zwischen Knoten mithilfe von CIM-Verbindungen über das Protokoll „WS-Man“. Eine Konfiguration kann warten, bis sich der Zustand einer bestimmten Ressource eines anderen Computers geändert hat.
 
--   Just Enough Administration (JEA), ein neues Delegierungssicherheitsfeature, nutzt DSC und von Windows PowerShell eingeschränkte Runspaces, um Unternehmen vor (absichtlichen oder unabsichtlichen) Datenverlusten oder Gefährdungen durch Mitarbeiter zu schützen. Weitere Informationen zu JEA, so z. B. zum Herunterladen der xJEA DSC-Ressource, finden Sie unter [Just Enough Administration, Step by Step](http://blogs.technet.com/b/privatecloud/archive/2014/05/14/just-enough-administration-step-by-step.aspx) (Just Enough Administration, Schritt für Schritt).
+-   Just Enough Administration (JEA), ein neues Delegierungssicherheitsfeature, nutzt DSC und von Windows PowerShell eingeschränkte Runspaces, um Unternehmen vor (absichtlichen oder unabsichtlichen) Datenverlusten oder Gefährdungen durch Mitarbeiter zu schützen. Weitere Informationen zu JEA, so z. B. zum Herunterladen der xJEA DSC-Ressource, finden Sie unter [Just Enough Administration, Step by Step](http://blogs.technet.com/b/privatecloud/archive/2014/05/14/just-enough-administration-step-by-step.aspx) (Just Enough Administration, Schritt für Schritt).
 
 -   Dem Modul „PSDesiredStateConfiguration“ wurden die folgenden neuen Cmdlets hinzugefügt.
 
@@ -757,11 +755,5 @@ Damit Windows PowerShell 3.0 Sonderzeichen besser interpretieren und ordnungsgem
 ## <a name="see-also"></a>Weitere Informationen
 - [about_Windows_PowerShell_4.0](http://technet.microsoft.com/en-us/library/hh847833(v=wps.630).aspx)
 - [about_Windows_PowerShell_5.0](https://technet.microsoft.com/en-us/library/6d56fa88-371e-40c9-b2de-64a2a0cd49da)
-- [Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116)
-
-
-
-
-<!--HONumber=Nov16_HO4-->
-
+- [Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116)
 
