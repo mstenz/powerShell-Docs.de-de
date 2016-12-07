@@ -1,8 +1,23 @@
-# Get-InstalledScript
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: PowerShell, Cmdlet, Katalog
+ms.date: 2016-10-14
+contributor: manikb
+title: Get-InstalledScript | MSDN
+ms.technology: powershell
+ms.openlocfilehash: d755ed5dbcee279f943d56832ffd7689e4cc6f04
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
+---
+# <a name="get-installedscript"></a>Get-InstalledScript
 
 Ruft installierte Skripts auf einem Computer ab.
 
-## Beschreibung
+## <a name="description"></a>Beschreibung
 
 Das Cmdlet „Get-InstalledScript“ ruft installierte PowerShell-Skripts auf einem Computer ab.
 
@@ -15,17 +30,17 @@ Für jedes installierte Skript gibt Get-InstalledScript ein PSRepositoryItemInfo
   - Wenn der RequiredVersion-Parameter nicht angegeben wird, gibt Get-InstalledScript die neueste Version des installierten Skripts zurück, das gleich oder größer als die angegebene minimale Version oder die neueste Version des Skripts ist, wenn keine Mindestversion angegeben wird. 
   - Wenn der RequiredVersion-Parameter angegeben ist, gibt Get-InstalledScript nur die Version des installierten Skripts zurück, die genau mit der angegebenen Version übereinstimmt.
 
-## Cmdlet-Syntax
+## <a name="cmdlet-syntax"></a>Cmdlet-Syntax
 
 ```powershell
 Get-Command -Name Get-InstalledScript -Module PowerShellGet -Syntax
 ```
 
-## Cmdlet-Onlinehilfe
+## <a name="cmdlet-online-help-reference"></a>Cmdlet-Onlinehilfe
 
 [Get-InstalledScript](http://go.microsoft.com/fwlink/?LinkId=619790)
 
-## Beispiele für Befehle
+## <a name="example-commands"></a>Beispiele für Befehle
 
 ```powershell
 
@@ -86,7 +101,4 @@ InstalledLocation          : C:\Program Files\WindowsPowerShell\Scripts
 
 
 ```
-
-<!--HONumber=Aug16_HO3-->
-
 

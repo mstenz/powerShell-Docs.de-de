@@ -7,17 +7,15 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
 ms.openlocfilehash: 31867cc7af96a3d8d527f5906d77bed5206940b4
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# DSC für Linux-Resource „nxPackage“
+# <a name="dsc-for-linux-nxpackage-resource"></a>DSC für Linux-Resource „nxPackage“
 
 Die Ressource **nxPackage** in PowerShell DSC bietet einen Mechanismus zum Verwalten von Paketen auf einem Linux-Knoten.
 
-## Syntax
+## <a name="syntax"></a>Syntax
 
 ```
 nxPackage <string> #ResourceName
@@ -34,7 +32,7 @@ nxPackage <string> #ResourceName
 }
 ```
 
-## Eigenschaften
+## <a name="properties"></a>Eigenschaften
 
 |  Eigenschaft |  Beschreibung | 
 |---|---|
@@ -47,7 +45,7 @@ nxPackage <string> #ResourceName
 | ReturnCode| Der erwartete Rückgabecode. Wenn der tatsächliche Rückgabecode nicht dem erwarteten Wert entspricht, gibt die Konfiguration einen Fehler zurück.| 
 | DependsOn | Gibt an, dass die Konfiguration einer anderen Ressource ausgeführt werden muss, bevor diese Ressource konfiguriert wird. Wenn beispielsweise die **ID** des Skriptblocks mit der Ressourcenkonfiguration, den Sie zuerst ausführen möchten, **ResourceName** und dessen Typ **ResourceType** ist, lautet die Syntax für das Verwenden dieser Eigenschaft `DependsOn = "[ResourceType]ResourceName"`.| 
 
-## Beispiel
+## <a name="example"></a>Beispiel
 
 Im folgende Beispiel wird sichergestellt, dass das Paket mit dem Namen „httpd“ mit dem Paket-Manager „Yum“ auf einem Linux-Computer installiert wird.
 
@@ -63,10 +61,4 @@ nxPackage httpd
 }
 }
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

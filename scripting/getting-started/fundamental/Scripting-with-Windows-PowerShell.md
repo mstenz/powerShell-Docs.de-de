@@ -8,15 +8,13 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: c425d27a-bb41-4947-8d73-ba5480bc8ee0
-translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 0148f4631e34e65a4336c5d1d50e313fb6639748
-
+ms.openlocfilehash: f7c9164e09e253e8138820708ba8864841ddfff2
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
+# <a name="scripting-with-windows-powershell"></a>Verwalten mit Windows PowerShell
 
-# Verwalten mit Windows PowerShell
-
-Windows PowerShell® ist eine taskbasierte Befehlszeilenshell und Skriptsprache, die speziell für die Systemverwaltung entwickelt wurde. Windows PowerShell basiert auf .NET Framework und unterstützt IT-Experten und erfahrene Benutzer beim Steuern und Automatisieren der Verwaltung von Windows-Betriebssystemen sowie von Anwendungen, die unter Windows ausgeführt werden.
+Windows PowerShell® ist eine taskbasierte Befehlszeilenshell und Skriptsprache, die speziell für die Systemverwaltung entwickelt wurde. Windows PowerShell basiert auf .NET Framework und unterstützt IT-Experten und erfahrene Benutzer beim Steuern und Automatisieren der Verwaltung von Windows-Betriebssystemen sowie von Anwendungen, die unter Windows ausgeführt werden.
 
 Mit Windows PowerShell-Befehlen, so genannten *Cmdlets*, können Sie die Computer des Unternehmens über die Befehlszeile verwalten. Mithilfe von Windows PowerShell- *Anbietern* können Sie auf Datenspeicher wie die Registrierung und den Zertifikatspeicher genauso einfach zugreifen wie auf das Dateisystem. Darüber hinaus verfügt Windows PowerShell über einen umfangreichen Ausdrucksparser und eine vollständig entwickelte Skriptsprache.
 
@@ -28,10 +26,4 @@ Windows PowerShell enthält die folgenden Features:
 -   Eine vereinfachte, befehlsbasierte Navigation durch das Betriebssystem, das Benutzer in der Registrierung und anderen Datenspeichern navigieren lässt. Dabei werden dieselben Methoden verwendet, die auch für die Navigation im Dateisystem verwendet werden.
 -   Leistungsstarke Objektbearbeitungsfähigkeiten. Objekte können direkt bearbeitet oder an andere Tools oder Datenbanken gesendet werden.
 -   Erweiterbare Schnittstelle. Unabhängige Softwarehersteller und Entwickler in Unternehmen können benutzerdefinierte Tools und Dienstprogramme zum Verwalten ihrer Software erstellen.
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -1,4 +1,4 @@
-# Aufrufen des Basisklassenkonstruktors
+# <a name="call-base-class-constructor"></a>Aufrufen des Basisklassenkonstruktors
 
 Um einen Basisklassenkonstruktor aus einer Unterklasse aufzurufen, verwenden Sie das Schlüsselwort **base**:
 
@@ -29,7 +29,3 @@ class C : B
     C([int]$c) {}
 }
 ```
-
-<!--HONumber=Aug16_HO3-->
-
-

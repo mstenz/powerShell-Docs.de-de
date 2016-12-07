@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 44d67705-87c7-4a69-a53e-6471fdebb757
-translationtype: Human Translation
-ms.sourcegitcommit: 117b3fe541b7a92479e9c68e07fa21fc8add9678
-ms.openlocfilehash: 4588577c0c05fadee6b443e2fa4c32049cf99ac3
-
+ms.openlocfilehash: 100697bc474c46d0381bccf5bc169474f4213aac
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Verwenden des Konsolenbereichs in der Windows PowerShell ISE
+# <a name="how-to-use-the-console-pane-in-the-windows-powershell-ise"></a>Verwenden des Konsolenbereichs in der Windows PowerShell ISE
 Der Konsolenbereich in Windows PowerShell® Integrated Scripting Environment (ISE) funktioniert genauso wie das eigenständige Windows PowerShell ISE-Konsolenfenster.
 
 Um einen Befehl im Konsolenbereich ausführen, geben Sie einen Befehl ein, und drücken Sie dann die EINGABETASTE. Um mehrere Befehle einzugeben, die nacheinander ausgeführt werden sollen, drücken Sie UMSCHALT+EINGABETASTE zwischen den Befehlen. Hilfe zum Eingeben von Befehlen finden Sie unter [Verwenden von Vervollständigung mit der TAB-TASTE im Skriptbereich und Konsolenbereich](How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md).
@@ -29,12 +27,6 @@ Seit Windows PowerShell Version 3 ist der Ausgabebereich mit dem Konsolenbereich
 
 -   Löschen des gesamten Texts im Konsolenbereich. Sie können auf der Symbolleiste auf das Symbol **Konsolenbereich löschen** klicken, oder Sie führen den Befehl **Clear-Host** oder dessen Alias **cls** aus, um den Konsolenbereich zu löschen.
 
-## Weitere Informationen
-[Verwenden der Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
-
-
-
-
-<!--HONumber=Sep16_HO3-->
-
+## <a name="see-also"></a>Weitere Informationen
+- [Verwenden der Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
 

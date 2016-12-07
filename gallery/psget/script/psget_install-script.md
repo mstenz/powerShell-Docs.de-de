@@ -1,9 +1,24 @@
-# Install-Script
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: PowerShell, Cmdlet, Katalog
+ms.date: 2016-10-14
+contributor: manikb
+title: Install-Script | MSDN
+ms.technology: powershell
+ms.openlocfilehash: ac2473283a80e76d4823d85d4c4481d349a95a12
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
+---
+# <a name="install-script"></a>Install-Script
 
 Installiert die PowerShell-Skriptdateien aus Onlinerepositorys auf den lokalen Computer.
 
 
-## Beschreibung
+## <a name="description"></a>Beschreibung
 
 Das Cmdlet Install-Script ruft eine Skript-Nutzlast aus einem Repository auf, bestätigt, dass die Nutzlast ein gültiges PowerShell-Skript ist und kopiert die Skriptdatei in einen angegebenen Installationsspeicherort.
 
@@ -26,7 +41,7 @@ Sie können Ihre Ergebnisse nach den mindestens erforderlichen Versionen oder de
 
 Wildcards werden nicht in „-Name“ für die Cmdlets Install-Module, Save-Module, Uninstall-Module, Install-Script, Save-Script und Unistall-Script unterstützt.
 
-### Bereich
+### <a name="scope"></a>Bereich
 Gibt den Bereich der Installation des Moduls an. Die folgenden Werte für diesen Parameter sind zulässig: AllUsers und CurrentUser.
 
 Der Standardbereich für die Installation ist AllUsers.
@@ -41,7 +56,7 @@ Gibt den Bereich der Installation des Skripts an. Gültige Werte sind: AllUsers 
 Der Bereich „AllUsers“ gibt an, dass ein Skript unter %systemdrive%:\ProgramFiles\WindowsPowerShell\Scripts installiert werden soll, sodass das Skript für alle Benutzer verfügbar ist. Der Bereich „CurrentUser“ gibt an, dass das Skript unter $home\Documents\WindowsPowerShell\Scripts installiert werden soll, sodass das Skript nur für den aktuellen Benutzer verfügbar ist.
 
 
-## NoPathUpdate
+## <a name="nopathupdate"></a>NoPathUpdate
 
 - Der Switchparameter „NoPathUpdate“ auf dem Cmdlet Install-Script umgeht die Aufforderung zum Hinzufügen des Skriptinstallationsorts zur Umgebungsvariable PATH.
 - Jede Verwendung des Befehls MIT „-NoPathUpdate“ führt zu keiner Aufforderung und der Pfad wird NICHT aktualisiert (-Force kann hier ignoriert werden).
@@ -50,7 +65,7 @@ Der Bereich „AllUsers“ gibt an, dass ein Skript unter %systemdrive%:\Program
 - All dies gilt nur, wenn Install-Script zum ersten Mal in einem angegebenen Bereich verwendet wird.
 
 
-## Hinweise
+## <a name="notes"></a>Hinweise
 
 Dieses Cmdlet wird unter Windows PowerShell 3.0 oder auf höheren Versionen von Windows PowerShell ausgeführt. Ebenso wird es unter Windows 7 oder Windows 2008 R2 und höheren Versionen von Windows ausgeführt.
 
@@ -67,17 +82,17 @@ Standardmäßig werden die Module im Ordner „Programme“ installiert, um Verw
 Damit ausgeführte Module, die schädlichen Code enthalten, vermieden werden, werden installierte Module nicht automatisch während der Installation importiert. Eine bewährte Sicherheitsmethode ist die Bewertung von Modulcode vor der ersten Ausführung von Cmdlets oder Funktionen in einem Modul.
 
 
-## Cmdlet-Syntax
+## <a name="cmdlet-syntax"></a>Cmdlet-Syntax
 
 ```powershell
 Get-Command -Name Install-Script -Module PowerShellGet -Syntax
 ```
 
-## Cmdlet-Onlinehilfe
+## <a name="cmdlet-online-help-reference"></a>Cmdlet-Onlinehilfe
 
 [Install-Script](http://go.microsoft.com/fwlink/?LinkId=619784)
 
-## Beispiele für Befehle
+## <a name="example-commands"></a>Beispiele für Befehle
 
 ```powershell
 
@@ -459,7 +474,7 @@ The scripts install location 'C:\Program Files\WindowsPowerShell\Scripts' is req
 
 ```
 
-## Install-Script-Cmdlet in Pipeline-Vorgängen
+## <a name="install-script-cmdlet-in-pipeline-operations"></a>Install-Script-Cmdlet in Pipeline-Vorgängen
 
 ```powershell
 
@@ -486,11 +501,11 @@ Get-InstalledModule
 
 ```
 
-## Unterstützung der gleichzeitigen Ausführung unterschiedlicher Versionen für PowerShell 5.0 oder höher
+## <a name="side-by-side-version-support-on-powershell-50-or-newer"></a>Unterstützung der gleichzeitigen Ausführung unterschiedlicher Versionen für PowerShell 5.0 oder höher
 
 Für die in Windows PowerShell 5.0 oder höher ausgeführten Cmdlets „Install-Script“ „Update-Script“ und „Publish-Script“ unterstützt PowerShellGet die gleichzeitige Ausführung unterschiedlicher Modulversionen.
 
-### Beispiele für Install-Script
+### <a name="install-script-examples"></a>Beispiele für Install-Script
 
 ```powershell
 # Install a version of the module
@@ -522,7 +537,7 @@ Version    Name                                Repository           Description
 
 ```
 
-## Installieren eines Moduls mit dessen Abhängigkeiten
+## <a name="install-module-with-its-dependencies"></a>Installieren eines Moduls mit dessen Abhängigkeiten
 
 ```powershell
 
@@ -616,7 +631,7 @@ Version    Name                                Repository           Description
 
 ```
 
-## Fehlerszenarios
+## <a name="error-scenarios"></a>Fehlerszenarios
 
 ```powershell
 
@@ -634,7 +649,7 @@ Install-Script ContosoClient,ContosoServer -MinimumVersion 2.0
 
 ```
 
-## Installieren ein Skripts mit abhängigen Skripts und Modulen
+## <a name="installing-a-script-with-dependent-scripts-and-modules"></a>Installieren ein Skripts mit abhängigen Skripts und Modulen
 
 ```powershell
 # Installing a script with dependent scripts and modules
@@ -707,7 +722,7 @@ Function Test-FunctionFromScript\_Script-WithDependencies2 { Get-Date }
 Workflow Test-WorkflowFromScript\_Script-WithDependencies2 { Get-Date }
 ```
 
-## Die Cmdlets „Install-Script“ und „Get-InstalledScript“
+## <a name="install-script-and-get-installedscript-cmdlets"></a>Die Cmdlets „Install-Script“ und „Get-InstalledScript“
 Mit dem Cmdlet „Install-Script“ können Sie eine bestimmte Skriptdatei mit ihren Abhängigkeiten im angegebenen Bereich installieren. Standardmäßig werden Skripts im Bereich „AllUsers“ installiert. Mit dem Cmdlet „Get-InstalledScript“ können Sie die Liste der Skriptdateien abrufen, die mit dem Cmdlet „Install-Script“ installiert wurden.
 
 Hinweis: Um das Verwalten und Auffinden von Skripts nach ihrer Installation zu ermöglichen, erstellt „Install-Script“ unter „$home\Documents\WindowsPowerShell\Scripts“ einen Standardordner zum Speichern von Skripts und fügt diesen Ordner Ihrer Umgebungsvariablen PATH hinzu. Falls es Bedenken gegen das Ändern des Pfads gibt, verwenden Sie „Save-Script“ anstelle von „Install-Script“. „Get-InstalledScripts“ und „Uninstall-Script“ funktionieren nur mit Skripts, die mit „Install-Script“ auf dem System installiert wurden.
@@ -887,8 +902,4 @@ Param()
 Function Test-FunctionFromScript\_Script-WithDependencies2 { Get-Date }
 Workflow Test-WorkflowFromScript\_Script-WithDependencies2 { Get-Date }
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
 

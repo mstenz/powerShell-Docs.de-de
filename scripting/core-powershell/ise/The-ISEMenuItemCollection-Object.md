@@ -8,12 +8,10 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 0c0f5484-3320-408e-8534-5bd1c8e48512
-translationtype: Human Translation
-ms.sourcegitcommit: 6c666e2e23cb74818e37293410dafc9033057733
-ms.openlocfilehash: 489c9492e8de213145b71a7963e180fe1a4ad5b6
-
+ms.openlocfilehash: 89f62e1dc70886bd4c3bf84a3ffc27dfdcba7a3e
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="the-isemenuitemcollection-object"></a>Das ISEMenuItemCollection-Objekt
   Ein **ISEMenuItemCollection**-Objekt ist eine Sammlung von **ISEMenuItem**-Objekten. Es ist eine Instanz der Microsoft.PowerShell.Host.ISE.ISEMenuItemCollection-Klasse. Ein Beispiel ist das **$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus**-Objekt, das verwendet wird, um das Menü **Add-On** in Windows PowerShell® Integrated Scripting Environment (ISE) anzupassen.
 
@@ -60,9 +58,3 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Clear()
 - [Die ISE-Objektmodellhierarchie](The-ISE-Object-Model-Hierarchy.md)
 
   
-
-
-
-<!--HONumber=Nov16_HO4-->
-
-

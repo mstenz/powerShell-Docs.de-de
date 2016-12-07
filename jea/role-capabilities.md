@@ -8,25 +8,23 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: Rollenfunktionen
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 81fd386d58576a8930093b4f18ce36a4ff6cecd0
-ms.openlocfilehash: a3dd4a217f5b1fd80e97adf802c65073ca015bbc
-
+ms.openlocfilehash: d5f6311d74e47f2fa1a93909c244cddf114b0229
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
+# <a name="role-capabilities"></a>Rollenfunktionen
 
-# Rollenfunktionen
-
-## Übersicht
+## <a name="overview"></a>Übersicht
 Im vorherigen Abschnitt haben Sie erfahren, dass das Feld RoleDefinitions definiert, welche Gruppen Zugriff auf bestimmte Rollenfunktionen haben.
 Möglicherweise haben Sie sich gefragt, was denn Rollenfunktionen sind.
 Diese Frage wird im vorliegenden Abschnitt beantwortet.  
 
-## Einführung in PowerShell-Rollenfunktionen
+## <a name="introducing-powershell-role-capabilities"></a>Einführung in PowerShell-Rollenfunktionen
 PowerShell-Rollenfunktionen definieren die Aufgaben, die ein Benutzer auf einem JEA-Endpunkt ausführen darf.
 Sie stellen eine Whitelist mit sichtbaren Befehlen und Anwendungen sowie weiteren nutzbaren Elementen bereit.
 Rollenfunktionen werden durch Dateien mit der Erweiterung PSRC definiert.
 
-## Inhalte von Rollenfunktionen
+## <a name="role-capability-contents"></a>Inhalte von Rollenfunktionen
 Zunächst untersuchen und bearbeiten wir die Datei mit den Demorollenfunktionen, die Sie bereits verwendet haben.
 Stellen Sie sich folgende Situation vor: Sie haben Ihre Sitzungskonfiguration in der gesamten Umgebung bereitgestellt und erhalten jetzt Feedback, dass Sie die Funktionen ändern müssen, die Benutzern verfügbar gemacht werden.
 Operatoren müssen Computer neu starten können und sie möchten auch in der Lage sein, Informationen zu Netzwerkeinstellungen abzurufen.
@@ -102,7 +100,7 @@ Beenden Sie die Sitzung, wenn Sie fertig sind.
 Exit-PSSession
 ```
 
-## Erstellen von Rollenfunktionen
+## <a name="role-capability-creation"></a>Erstellen von Rollenfunktionen
 Im nächsten Abschnitt erstellen Sie einen JEA-Endpunkt für AD-Helpdeskbenutzer.
 Zur Vorbereitung erstellen Sie zunächst eine leere Rollenfunktionsdatei, die in diesem Abschnitt ausgefüllt werden soll.
 Rollenfunktionen müssen in einem gültigen PowerShell-Modul innerhalb eines Ordners namens „RoleCapabilities“ erstellt werden, damit sie beim Start einer Sitzung aufgelöst werden können.
@@ -133,7 +131,7 @@ New-PSRoleCapabilityFile -Path 'C:\Program Files\WindowsPowerShell\Modules\Conto
 Herzlichen Glückwunsch! Sie haben eine leere Rollenfunktionsdatei erstellt.
 Diese Datei wird im nächsten Abschnitt verwendet.
 
-## Wichtige Konzepte
+## <a name="key-concepts"></a>Wichtige Konzepte
 **Rollenfunktionen (PSRC)**: Eine Datei, die die Aufgaben definiert, die ein Benutzer auf einem JEA-Endpunkt ausführen darf.
 Sie stellt eine Whitelist mit sichtbaren Befehlen und Konsolenanwendungen sowie weiteren nutzbaren Elementen bereit.
 Damit PowerShell die Rollenfunktionen erkennen kann, müssen Sie diese in einem gültigen PowerShell-Modul im Ordner „RoleCapabilities“ speichern.
@@ -141,10 +139,4 @@ Damit PowerShell die Rollenfunktionen erkennen kann, müssen Sie diese in einem 
 **PowerShell-Modul**: Ein Paket mit PowerShell-Funktionalität.
 Es kann PowerShell-Funktionen, -Cmdlets, -DSC-Ressourcen, -Rollenfunktionen und vieles mehr enthalten.
 PowerShell-Module müssen in einem Pfad in `$env:PSModulePath` gespeichert werden, damit sie automatisch geladen werden können.
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

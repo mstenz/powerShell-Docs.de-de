@@ -1,8 +1,23 @@
-# Install-Module
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: PowerShell, Cmdlet, Katalog
+ms.date: 2016-10-14
+contributor: manikb
+title: Install-Module | MSDN
+ms.technology: powershell
+ms.openlocfilehash: 82e4bb1ec76b1a51e1a99de85bc77a5429d46e26
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
+---
+# <a name="install-module"></a>Install-Module
 
 Installiert die PowerShell-Module aus Onlinerepositorys auf den lokalen Computer.
 
-## Beschreibung
+## <a name="description"></a>Beschreibung
 
 Das Cmdlet Install-Module lädt ein Modul oder mehrere Module aus einem Onlinekatalog herunter, überprüft diese und installiert sie auf dem lokalen Computer im angegebenen Installationsbereich.
 
@@ -18,7 +33,7 @@ Sie können Ihre Ergebnisse nach den mindestens erforderlichen Versionen oder de
 - „-Force“ installiert das bereits installierte Modul neu.
 - RequiredVersion installiert die angegebene Version in SxS zusammen mit vorhandenen Versionen auf PowerShell-Version 5.0 oder höher.
 
-### Bereich
+### <a name="scope"></a>Bereich
 Gibt den Bereich der Installation des Moduls an. Die folgenden Werte für diesen Parameter sind zulässig: AllUsers und CurrentUser.
 
 Der Standardbereich für die Installation ist AllUsers.
@@ -27,7 +42,7 @@ Mit der Einstellung „AllUsers“ können Module an einem Speicherort installie
 
 Mit dem CurrentUser-Bereich können Module nur unter $home\Documents\WindowsPowerShell\Modules installiert werden. Das Modul ist also nur für den aktuellen Benutzer verfügbar.
 
-## Hinweise
+## <a name="notes"></a>Hinweise
 
 Dieses Cmdlet wird unter Windows PowerShell 3.0 oder auf höheren Versionen von Windows PowerShell ausgeführt. Ebenso wird es unter Windows 7 oder Windows 2008 R2 und höheren Versionen von Windows ausgeführt.
 
@@ -44,16 +59,16 @@ Standardmäßig werden die Module im Ordner „Programme“ installiert, um Verw
 Damit ausgeführte Module, die schädlichen Code enthalten, vermieden werden, werden installierte Module nicht automatisch während der Installation importiert. Eine bewährte Sicherheitsmethode ist die Bewertung von Modulcode vor der ersten Ausführung von Cmdlets oder Funktionen in einem Modul.
 
 
-## Cmdlet-Syntax
+## <a name="cmdlet-syntax"></a>Cmdlet-Syntax
 ```powershell
 Get-Command -Name Install-Module -Module PowerShellGet -Syntax
 ```
 
-## Cmdlet-Onlinehilfe
+## <a name="cmdlet-online-help-reference"></a>Cmdlet-Onlinehilfe
 
 [Install-Module](http://go.microsoft.com/fwlink/?LinkID=398573)
 
-## Beispiele für Befehle
+## <a name="example-commands"></a>Beispiele für Befehle
 
 ```powershell
 
@@ -94,7 +109,7 @@ Install-Module ContosoClient -Force
 Install-Module -Name 
 ```
 
-## Install-Module-Cmdlet in Pipeline-Vorgängen
+## <a name="install-module-cmdlet-in-pipeline-operations"></a>Install-Module-Cmdlet in Pipeline-Vorgängen
 
 ```powershell
 
@@ -121,11 +136,11 @@ Get-InstalledModule
 
 ```
 
-## Unterstützung der gleichzeitigen Ausführung unterschiedlicher Versionen für PowerShell 5.0 oder höher
+## <a name="side-by-side-version-support-on-powershell-50-or-newer"></a>Unterstützung der gleichzeitigen Ausführung unterschiedlicher Versionen für PowerShell 5.0 oder höher
 
 Für die in Windows PowerShell 5.0 oder höher ausgeführten Cmdlets „Install-Module“ „Update-Module“ und „Publish-Module“ unterstützt PowerShellGet die gleichzeitige Ausführung unterschiedlicher Modulversionen.
 
-### Beispiele für „Install-Module“
+### <a name="install-module-examples"></a>Beispiele für „Install-Module“
 
 ```powershell
 # Install a version of the module
@@ -157,7 +172,7 @@ Version    Name                                Repository           Description
 
 ```
 
-## Installieren eines Moduls mit dessen Abhängigkeiten
+## <a name="install-module-with-its-dependencies"></a>Installieren eines Moduls mit dessen Abhängigkeiten
 
 ```powershell
 
@@ -251,7 +266,7 @@ Version    Name                                Repository           Description
 
 ```
 
-## Fehlerszenarios
+## <a name="error-scenarios"></a>Fehlerszenarios
 
 ```powershell
 
@@ -268,8 +283,4 @@ Install-Module ContosoClient,ContosoServer -RequiredVersion 2.0
 Install-Module ContosoClient,ContosoServer -MinimumVersion 2.0
 
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -1,21 +1,36 @@
-# Save-Module
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: PowerShell, Cmdlet, Katalog
+ms.date: 2016-10-14
+contributor: manikb
+title: Save-Module | MSDN
+ms.technology: powershell
+ms.openlocfilehash: 9e83f1eeeb8e4bee666aeb845702f6562a487d6b
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
+---
+# <a name="save-module"></a>Save-Module
 
 Speichert ein Modul lokal, ohne es zu installieren
 
-## Beschreibung
+## <a name="description"></a>Beschreibung
 
 Das Cmdlet „Save-Module“ speichert ein Modul aus dem angegebenen Repository zur Prüfung lokal. Das Modul wird nicht installiert.
 
-## Cmdlet-Syntax
+## <a name="cmdlet-syntax"></a>Cmdlet-Syntax
 ```powershell
 Get-Command -Name Save-Module -Module PowerShellGet -Syntax
 ```
 
-## Cmdlet-Onlinehilfe
+## <a name="cmdlet-online-help-reference"></a>Cmdlet-Onlinehilfe
 
 [Save-Module](http://go.microsoft.com/fwlink/?LinkId=531351)
 
-## Beispiele für Befehle
+## <a name="example-commands"></a>Beispiele für Befehle
 
 ```powershell
 Save-Module -Repository MSPSGallery -Name ModuleWithDependencies2 -Path C:\MySavedModuleLocation
@@ -43,8 +58,4 @@ Find-Command -Name "Get-NestedRequiredModule4" -Repository "INT" | Save-Module -
 Find-RoleCapability -Name Maintenance,MyJeaRole | Save-Module -Path C:\MyModulesPath
 
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -1,4 +1,4 @@
-# Protokollierung des Softwarebestands (Software Inventory Logging, SIL)
+# <a name="software-inventory-logging-sil"></a>Protokollierung des Softwarebestands (Software Inventory Logging, SIL)
 
 **WICHTIG: ** *Bei der Installation von WMF 5.0 auf einem Server mit Windows Server 2012 R2 Server, auf dem die Protokollierung des Softwarebestands (SIL) bereits ausgeführt wird, muss das Cmdlet „Start-SilLogging“ nach der Installation von WMF einmal ausgeführt werden, da der Installationsvorgang das Feature „Protokollierung des Softwarebestands“ fälschlicherweise beendet.*
 
@@ -9,8 +9,3 @@ Sie können Daten zum Softwarebestand auch über ein direktes Abfragen aller Com
 Im Rahmen der Funktionalität des Features werden keine Daten an Microsoft gesendet. Die Daten und die Funktionalität der Softwareinventurprotokollierung sind ausschließlich zur Verwendung durch den lizenzierten Besitzer der Serversoftware und durch Administratoren gedacht.
 
 Weitere Informationen und Dokumentation zu Cmdlets zur Protokollierung des Softwarebestands (Software Inventory Logging; SIL) finden Sie in den Windows Server 2012 R2-Onlineressourcen unter <http://technet.microsoft.com/library/dn383584.aspx>.
-
-
-<!--HONumber=Aug16_HO3-->
-
-

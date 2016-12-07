@@ -1,8 +1,8 @@
-# Neue Sprachfeatures in PowerShell 5.0 
+# <a name="new-language-features-in-powershell-50"></a>Neue Sprachfeatures in PowerShell 5.0 
 
 PowerShell 5.0 führt die folgenden neuen Sprachelemente in Windows PowerShell ein:
 
-## Schlüsselwort „Class“
+## <a name="class-keyword"></a>Schlüsselwort „Class“
 
 Das Schlüsselwort **class** definiert eine neue Klasse. Es handelt sich um einen echten .NET Framework-Typ. Klassenmember sind öffentlich, jedoch nur innerhalb des Geltungsbereichs des Moduls.
 Sie können auf den Typnamen nicht mittels einer Zeichenfolge verweisen (`New-Object` funktioniert z. B. nicht). In dieser Version können Sie zudem keinen Literaltyp (z. B. `[MyClass]`) außerhalb der Skript-/Moduldatei verwenden, in der die Klasse definiert ist.
@@ -14,7 +14,7 @@ class MyClass
 }
 ```
 
-## Schlüsselwort „enum“ und Enumerationen
+## <a name="enum-keyword-and-enumerations"></a>Schlüsselwort „enum“ und Enumerationen
 
 Das Schlüsselwort **enum** wurde hinzugefügt, welches das Zeilenumbruchzeichen als Trennzeichen verwendet.
 Aktuelle Einschränkungen: Sie können einen Enumerator nicht hinsichtlich sich selbst definieren, aber Sie können, wie im folgenden Beispiel gezeigt, eine Enumeration hinsichtlich einer anderen Enumeration initialisieren.
@@ -46,12 +46,12 @@ enum SomeEnum { Max = 42 }
 enum OtherEnum { Max = [SomeEnum]::Max + 1 }
 ```
 
-## Import-DscResource
+## <a name="import-dscresource"></a>Import-DscResource
 
 **Import-DscResource** ist jetzt ein tatsächlich dynamisches Schlüsselwort.
 PowerShell analysiert das Stammmodul des angegebenen Moduls und sucht Klassen, die das **DscResource**-Attribut enthalten.
 
-## ImplementingAssembly
+## <a name="implementingassembly"></a>ImplementingAssembly
 
 Das neue Feld **ImplementingAssembly** wurde „ModuleInfo“ hinzugefügt. Es ist auf die dynamische Assembly, die für ein Skriptmodul erstellt wird, wenn das Skript Klassen definiert, oder die geladene Assembly für binäre Module festgelegt. Falls „ModuleType = Manifest“, wird es nicht festgelegt. 
 
@@ -77,7 +77,7 @@ $s = "hello"
 
 Alle Member sind öffentlich. 
 
-## Konstruktoren und Instanziierung
+## <a name="constructors-and-instantiation"></a>Konstruktoren und Instanziierung
 
 Windows PowerShell-Klassen können Konstruktoren haben, die den gleichen Namen wie ihre Klasse haben. Konstruktoren können überladen werden. Statische Konstruktoren werden unterstützt. Eigenschaften mit Initialisierungsausdrücken werden vor dem Ausführen von Code in einem Konstruktor initialisiert. Statische Eigenschaften werden vor dem Hauptteil eines statischen Konstruktors initialisiert. Instanzeigenschaften werden vor dem Hauptteil des nicht statischen Konstruktors initialisiert. Derzeit gibt es keine Syntax zum Aufrufen eines Konstruktors aus einem anderen Konstruktor (wie die C\#-Syntax „: this()“). Eine Behelfslösung ist das Definieren einer allgemeinen „Init“-Methode. 
 
@@ -121,7 +121,7 @@ hashtable new(int capacity)
 hashtable new(int capacity, float loadFactor)
 ```
 
-## Methoden
+## <a name="methods"></a>Methoden
 
 Eine Windows PowerShell-Klassenmethode wird als Skriptblock mit nur einem „end“-Block implementiert. Alle Methoden sind öffentlich. Nachstehend sehen Sie ein Beispiel der Definition einer Methode namens **DoSomething**.
 
@@ -143,15 +143,15 @@ $b = [MyClass]::new()
 $b.DoSomething(42) 
 ```
 
-Überladene Methoden, d. h. Methoden mit demselben Namen wie eine vorhandene Methode, aber mit unterschiedlichen angegebenen Werten, werden ebenfalls unterstützt.
+Überladene Methoden, d. h. Methoden mit demselben Namen wie eine vorhandene Methode, aber mit unterschiedlichen angegebenen Werten, werden ebenfalls unterstützt.
 
-## Eigenschaften 
+## <a name="properties"></a>Eigenschaften 
 
 Alle Eigenschaften sind öffentlich. Eigenschaften erfordern ein Zeilenumbruchzeichen oder Semikolon. Wenn kein Objekttyp angegeben ist, ist der Eigenschaftentyp „object“.
 
 Eigenschaften, die Validierungs- oder Argumenttransformationsattribute verwenden (z. B. `[ValidateSet("aaa")]`), funktionieren wie erwartet.
 
-## Hidden
+## <a name="hidden"></a>Hidden
 
 Mit **Hidden** wurde ein neues Schlüsselwort hinzugefügt. **Hidden** kann auf Eigenschaften und Methoden (einschließlich Konstruktoren) angewendet werden.
 
@@ -161,15 +161,15 @@ Ausgeblendete Member sind bei Verwenden der Befehlszeilenergänzung oder von Int
 
 Das neue Attribut **System.Management.Automation.HiddenAttribute** wurde hinzugefügt, damit C#-Code in Windows PowerShell die gleiche Semantik haben kann.
 
-## Rückgabetypen
+## <a name="return-types"></a>Rückgabetypen
 
 Der Rückgabetyp ist ein Vertrag. Der Rückgabewert wird in den erwarteten Typ konvertiert. Falls kein Rückgabetyp angegeben wird, ist der Rückgabetyp „void“. Es gibt kein Streaming von Objekten. Objekte können nicht absichtlich oder versehentlich in die Pipeline geschrieben werden.
 
-## Attributes
+## <a name="attributes"></a>Attributes
 
 Die beiden neuen Attribute **DscResource** und **DscProperty** wurden hinzugefügt.
 
-## Lexikalische Eingrenzung von Variablen
+## <a name="lexical-scoping-of-variables"></a>Lexikalische Eingrenzung von Variablen
 
 Das folgende Beispiel zeigt, wie die lexikalische Eingrenzung in dieser Version funktioniert.
 
@@ -197,9 +197,9 @@ $v = bar
 $v -eq $d # true
 ```
 
-## End-to-End-Beispiel
+## <a name="end-to-end-example"></a>End-to-End-Beispiel
 
-Das folgende Beispiel erstellt mehrere neue, benutzerdefinierte Klassen, um eine HTML-Sprache des Typs DSL (Dynamic Style Sheet Language) zu implementieren. Dann werden im Beispiel Hilfsfunktionen hinzugefügt, um spezifische Elementtypen als Teil der Elementklasse zu erstellen, wie z. B. Überschriftsformate und Tabellen, damit Typen nicht außerhalb des Geltungsbereichs eines Moduls verwendet werden können.
+Das folgende Beispiel erstellt mehrere neue, benutzerdefinierte Klassen, um eine HTML-Sprache des Typs DSL (Dynamic Style Sheet Language) zu implementieren. Dann werden im Beispiel Hilfsfunktionen hinzugefügt, um spezifische Elementtypen als Teil der Elementklasse zu erstellen, wie z. B. Überschriftsformate und Tabellen, damit Typen nicht außerhalb des Geltungsbereichs eines Moduls verwendet werden können.
 
 ```powershell
 # Classes that define the structure of the document
@@ -323,7 +323,3 @@ function Style
 #
 function Html ([HTML] $doc) { return $doc }
 ```
-
-<!--HONumber=Aug16_HO3-->
-
-

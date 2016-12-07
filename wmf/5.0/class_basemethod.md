@@ -1,4 +1,4 @@
-# Aufrufen der Basisklassenmethode
+# <a name="call-base-class-method"></a>Aufrufen der Basisklassenmethode
 
 Sie können vorhandene Methoden in Unterklassen überschreiben. Deklarieren Sie dazu Methoden mit demselben Namen und derselben Signatur:
 
@@ -46,7 +46,3 @@ $list = [MyIntList]::new()
 $list.Add(100)
 $list[0] # return 200
 ```
-
-<!--HONumber=Aug16_HO3-->
-
-

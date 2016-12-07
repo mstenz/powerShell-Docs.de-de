@@ -8,12 +8,10 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: c10c18c7-9ece-4fd0-83dc-a19c53d4fd83
-translationtype: Human Translation
-ms.sourcegitcommit: d015dfae1990c66ea75aa45004b366d1609fb36f
-ms.openlocfilehash: 460ab6d82b694266d31b09779866f746b56c9f51
-
+ms.openlocfilehash: fb568b1194a3d123913e635d26b5fbd2ad76c531
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="how-to-create-a-powershell-tab-in-windows-powershell-ise"></a>Erstellen einer PowerShell-Registerkarte in Windows PowerShell ISE
 Registerkarten in Windows PowerShell® Integrated Scripting Environment (ISE) ermöglichen Ihnen, mehrere Ausführungsumgebungen innerhalb derselben Anwendung gleichzeitig zu erstellen und zu verwenden. Jede PowerShell-Registerkarte entspricht einer separaten Ausführungsumgebung bzw. Sitzung.
 
@@ -44,10 +42,4 @@ Wenn Sie auf der PowerShell-Registerkarte nicht gespeicherte Dateien geöffnet s
 ## <a name="see-also"></a>Weitere Informationen
 - [Verwenden der Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
 - [Verwenden des Konsolenbereichs in der Windows PowerShell ISE](How-to-Use-the-Console-Pane-in-the-Windows-PowerShell-ISE.md)
-
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

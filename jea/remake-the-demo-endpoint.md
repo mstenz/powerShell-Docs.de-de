@@ -8,17 +8,15 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: Neuerstellen des Demoendpunkts
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: d20ea8418cb7389d756de94ea752cf604b8d07af
-ms.openlocfilehash: acd2cfbd038250a26236c875d0e8b03a32cd84f9
-
+ms.openlocfilehash: 4a56272b6f995500d443d441f5e03db85dac6f96
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Neuerstellen des Demoendpunkts
+# <a name="remake-the-demo-endpoint"></a>Neuerstellen des Demoendpunkts
 In diesem Abschnitt erfahren Sie, wie Sie ein exaktes Replikat des Demoendpunkts erstellen, das Sie im vorherigen Abschnitt verwendet haben.
 Hierbei werden wichtige Konzepte vorgestellt, die für ein genaues Verständnis von JEA notwendig sind, einschließlich der PowerShell-Sitzungskonfigurationen und -Rollenfunktionen.
 
-## PowerShell-Sitzungskonfigurationen
+## <a name="powershell-session-configurations"></a>PowerShell-Sitzungskonfigurationen
 Bei der Verwendung von JEA im vorherigen Abschnitt bestand der erste Schritt darin, den folgenden Befehl auszuführen:
 
 ```PowerShell
@@ -41,14 +39,14 @@ Sie können alle registrierten Sitzungskonfigurationen anzeigen, indem Sie folge
 Get-PSSessionConfiguration
 ```
 
-## PowerShell-Sitzungskonfigurationsdateien
+## <a name="powershell-session-configuration-files"></a>PowerShell-Sitzungskonfigurationsdateien
 Sie können neuen Sitzungskonfigurationen erstellen, indem Sie neue *PowerShell-Sitzungskonfigurationsdateien* registrieren.
 Sitzungskonfigurationsdateien weisen die Dateierweiterung PSSC auf.
 Sie können Sitzungskonfigurationsdateien mit dem Cmdlet New-PSSessionConfigurationFile generieren.
 
 Als Nächstes werden Sie eine neue Sitzungskonfiguration für JEA erstellen und registrieren.
 
-## Generieren und Ändern der PowerShell-Sitzungskonfiguration
+## <a name="generate-and-modify-your-powershell-session-configuration"></a>Generieren und Ändern der PowerShell-Sitzungskonfiguration
 Führen Sie folgenden Befehl aus, um eine Gerüstdatei („Skeleton“) für eine PowerShell-Sitzungskonfiguration zu generieren.
 
 ```PowerShell
@@ -107,7 +105,7 @@ PowerShell-Aufzeichnungen sind allerdings besser lesbar.
 
 Speichern Sie Ihre Änderungen abschließend in *JEADemo2.pssc*.
 
-## Anwenden der PowerShell-Sitzungskonfiguration
+## <a name="apply-the-powershell-session-configuration"></a>Anwenden der PowerShell-Sitzungskonfiguration
 
 Um aus einer Sitzungskonfigurationsdatei einen Endpunkt zu erstellen, müssen Sie die Datei registrieren.
 Dafür sind einige Informationen erforderlich:
@@ -123,7 +121,7 @@ Register-PSSessionConfiguration -Name 'JEADemo2' -Path "$env:ProgramData\JEAConf
 
 Herzlichen Glückwunsch! Sie haben Ihren JEA-Endpunkt eingerichtet.
 
-## Testen Ihres Endpunkts
+## <a name="test-out-your-endpoint"></a>Testen Ihres Endpunkts
 Führen Sie die Schritte im Abschnitt [Verwenden von JEA](using-jea.md) erneut für Ihren neuen Endpunkt aus, um zu überprüfen, ob er erwartungsgemäß ausgeführt wird.
 Stellen Sie sicher, dass Sie einen neuen Endpunktnamen verwenden (JEADemo2), wenn Sie den Konfigurationsnamen in `Enter-PSSession` bereitstellen.
 
@@ -131,7 +129,7 @@ Stellen Sie sicher, dass Sie einen neuen Endpunktnamen verwenden (JEADemo2), wen
 Enter-PSSession -ComputerName . -ConfigurationName JEADemo2 -Credential $NonAdminCred
 ```
 
-## Wichtige Konzepte
+## <a name="key-concepts"></a>Wichtige Konzepte
 **PowerShell Session-Sitzungskonfiguration**: Wird auch als *PowerShell-Endpunkt* bezeichnet und ist im übertragenen Sinn der „Ort“, an dem Benutzer eine Verbindung herstellen und Zugriff auf PowerShell-Funktionen erhalten.
 Sie können die in Ihrem System registrierten Sitzungskonfigurationen durch Ausführen von `Get-PSSessionConfiguration` auflisten.
 Wenn eine PowerShell-Sitzungskonfiguration auf bestimmte Weise konfiguriert ist, kann sie auch als *JEA-Endpunkt* bezeichnet werden.
@@ -149,10 +147,4 @@ Bei JEA-Endpunkten muss dieses Feld auf RestrictedRemoteServer festgelegt sein.
 **PowerShell-Aufzeichnung**: Eine Datei mit einem Mitschnitt einer PowerShell-Sitzung.
 Sie können PowerShell mithilfe des Felds TranscriptDirectory so einrichten, dass Aufzeichnungen von JEA-Sitzungen generiert werden.
 Weitere Informationen über Aufzeichnungen finden Sie in diesem [Blogbeitrag](https://technet.microsoft.com/en-us/magazine/ff687007.aspx).
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 
