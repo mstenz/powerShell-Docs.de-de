@@ -7,19 +7,17 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 83ca45d507e39b77751ac7feb6a7b65ae2834280
 ms.openlocfilehash: e1922008a92f00c9ddab28598735839c25219d24
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Debuggen von DSC-Ressourcen
+# <a name="debugging-dsc-resources"></a>Debuggen von DSC-Ressourcen
 
 > Gilt für: Windows PowerShell 5.0
 
 In PowerShell 5.0 wurde ein neues Feature in DSC (Konfiguration für den gewünschten Zustand) eingeführt, mit dem Sie eine DSC-Ressource beim Anwenden einer Konfiguration debuggen können.
 
-## Aktivieren des DSC-Debuggens
+## <a name="enabling-dsc-debugging"></a>Aktivieren des DSC-Debuggens
 Bevor Sie eine Ressource debuggen können, müssen Sie das Cmdlet [Enable-DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx) aufrufen, um das Debuggen zu aktivieren. Dieses Cmdlet verfügt über den Pflichtparameter **BreakAll**. 
 
 Um zu überprüfen, ob das Debuggen aktiviert wurde, werfen Sie einen Blick auf das Ergebnis eines Aufrufs von [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx). Die folgende PowerShell-Ausgabe zeigt das Ergebnis der Aktivierung des Debuggens an:
@@ -43,7 +41,7 @@ PS C:\DebugTest>
 ```
 
 
-## Starten einer Konfiguration mit aktiviertem Debuggen
+## <a name="starting-a-configuration-with-debug-enabled"></a>Starten einer Konfiguration mit aktiviertem Debuggen
 Um eine DSC-Ressource zu debuggen, starten Sie eine Konfiguration, die diese Ressource aufruft. In diesem Beispiel betrachten wir eine einfache Konfiguration, die die Ressource [WindowsFeature](windowsfeatureResource.md) aufruft, um sicherzustellen, dass das Feature „WindowsPowerShellWebAccess“ installiert wurde:
 
 ```powershell
@@ -85,7 +83,7 @@ Debug-Runspace -Id 9
 ```
 An diesem Punkt hat der lokale Konfigurations-Manager die Ressource aufgerufen und den ersten Haltepunkt erreicht. Die letzten drei Zeilen in der Ausgabe zeigen, wie das Ressourcenskript an den Prozess angefügt und das Debuggen gestartet wird.
 
-## Debuggen des Ressourcenskripts
+## <a name="debugging-the-resource-script"></a>Debuggen des Ressourcenskripts
 
 Starten Sie eine neue Instanz von PowerShell ISE. Geben Sie im Konsolenbereich die letzten drei Zeilen der `Start-DscConfiguration`-Ausgabe als Befehle ein, wobei Sie `<credentials>` durch gültige Benutzeranmeldeinformationen ersetzen. Jetzt sollte eine Eingabeaufforderung angezeigt werden, die in etwa so aussieht:
 
@@ -96,20 +94,14 @@ Starten Sie eine neue Instanz von PowerShell ISE. Geben Sie im Konsolenbereich d
 Das Ressourcenskript wird im Skriptfenster geöffnet, und der Debugger wird in der ersten Zeile der Funktion **Test-TargetResource** angehalten (der **Test()**-Methode einer klassenbasierten Ressource).
 Jetzt können Sie die Debugbefehle in der ISE verwenden, um das Ressourcenskript schrittweise zu durchlaufen, sich die Variablenwerte anzuschauen, die Aufrufliste anzuzeigen, usw. Weitere Informationen zum Debuggen in PowerShell ISE finden Sie unter [So wird's gemacht: Debuggen von Skripts in Windows PowerShell ISE](https://technet.microsoft.com/en-us/library/dd819480.aspx). Denken Sie daran, dass jede Zeile im Ressourcenskript (oder in der Klasse) als Haltepunkt festgelegt ist.
 
-## Deaktivieren des DSC-Debuggens
+## <a name="disabling-dsc-debugging"></a>Deaktivieren des DSC-Debuggens
 
 Nach Aufrufen von [Enable-DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx), führen alle Aufrufe von [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) dazu, dass die Konfiguration unterbrochen und der Debugger gestartet wird. Damit Konfigurationen wie gewohnt ausgeführt werden können, müssen Sie das Debuggen durch Aufrufen des Cmdlets [Disable-DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx) deaktivieren.
 
 >**Hinweis:** Ein Neustart ändert den Debugzustand des LCM nicht. Wenn das Debuggen aktiviert ist, wird nach einem Neustart weiterhin das Starten einer Konfiguration unterbrochen und der Debugger gestartet.
 
 
-## Weitere Informationen
+## <a name="see-also"></a>Weitere Informationen
 - [Schreiben einer benutzerdefinierten DSC-Ressource mit MOF](authoringResourceMOF.md) 
 - [Schreiben einer benutzerdefinierten DSC-Ressource mit PowerShell-Klassen](authoringResourceClass.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

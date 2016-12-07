@@ -8,24 +8,22 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: Bereitstellung und Wartung mehrerer Computer
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 7504fe496a8913718847e45115d126caf4049bef
-ms.openlocfilehash: 784806197a64eb30af1ecea4af55575434ce7b87
-
+ms.openlocfilehash: 8117d0d12c062b460cb7117b54c138c8db5a1d0c
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Bereitstellung und Wartung mehrerer Computer
+# <a name="multi-machine-deployment-and-maintenance"></a>Bereitstellung und Wartung mehrerer Computer
 Bisher haben Sie JEA mehrmals auf lokalen Systemen bereitgestellt.
 Da Ihre Produktionsumgebung aller Wahrscheinlichkeit nach aus mehr als einen Computer besteht, müssen Sie die wichtigen Schritte im Bereitstellungsprozesses kennen, die auf jedem Computer ausgeführt werden müssen.
 
-## Allgemeine Schritte:
+## <a name="high-level-steps"></a>Allgemeine Schritte:
 1.  Kopieren Sie Ihre Module (mit Rollenfunktionen) auf jeden Knoten.
 2.  Kopieren Sie Ihre Sitzungskonfigurationsdateien auf jeden Knoten.
 3.  Führen Sie `Register-PSSessionConfiguration` mit Ihrer Sitzungskonfiguration aus.
 4.  Speichern Sie eine Kopie Ihrer Sitzungskonfiguration und Toolkits an einem sicheren Ort.
 Wenn Sie Änderungen vornehmen, ist es gut, über eine „sichere Informationsquelle“ zu verfügen.
 
-## Beispielskript
+## <a name="example-script"></a>Beispielskript
 Hier sehen Sie ein Beispielskript für die Bereitstellung.
 Um dieses Skript in Ihrer Umgebung zu verwenden, müssen Sie die Namen/Pfade echter Dateifreigaben und Module angeben.
 ```PowerShell
@@ -55,20 +53,14 @@ Invoke-Command –ComputerName 'Node1', 'Node2', 'Node3', 'NodeN' -FilePath 'C:\
 Remove-Item -Path '\\FileShare\JEA\Demo.pssc'
 Remove-Item -Path '\\FileShare\JEA\SomeModule' -Recurse
 ```
-## Ändern von Funktionen
+## <a name="modifying-capabilities"></a>Ändern von Funktionen
 Beim Arbeiten mit vielen Computern ist es wichtig, dass Änderungen auf konsistente Weise eingeführt werden.
 Sobald JEA über eine DSC-Ressource verfügt, wird sichergestellt, dass Ihre Umgebung synchronisiert ist.
 Bis dahin empfiehlt es sich dringend, eine Masterkopie Ihrer Sitzungskonfigurationen zu speichern und diese nach jeder Änderung erneut bereitzustellen.
 
-## Entfernen von Funktionen:
+## <a name="removing-capabilities"></a>Entfernen von Funktionen:
 Um Ihre JEA-Konfiguration von Ihren Systemen zu entfernen, verwenden Sie den folgenden Befehl auf jedem Computer:
 ```PowerShell
 Unregister-PSSessionConfiguration -Name JEADemo
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

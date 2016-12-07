@@ -1,9 +1,24 @@
-# Starten des NuGet-Anbieters sowie der Datei „NuGet.exe“ für Veröffentlichungsvorgänge mit einer einzigen Aufforderungsmeldung und ausschließliches Starten des NuGet-Anbieters für Vorgänge ohne Veröffentlichung
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: PowerShell, Cmdlet, Katalog
+ms.date: 2016-10-14
+contributor: manikb
+title: "Starten des NuGet-Anbieters sowie der Datei „NuGet.exe“ | MSDN"
+ms.technology: powershell
+ms.openlocfilehash: 3ba2289f83f2de5f7be7e4e0cced1988ee17b466
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
+---
+# <a name="bootstrap-both-nuget-provider-and-nugetexe-for-publish-operations-with-single-prompt-message-and-bootstrap-only-nuget-provider-for-non-publish-operations"></a>Starten des NuGet-Anbieters sowie der Datei „NuGet.exe“ für Veröffentlichungsvorgänge mit einer einzigen Aufforderungsmeldung und ausschließliches Starten des NuGet-Anbieters für Vorgänge ohne Veröffentlichung
 
 „NuGet.exe“ wird im aktuellsten NuGet-Anbieter entfernt. PowerShellGet benötigt für die Veröffentlichung eines Moduls/Skripts „NuGet.exe“, um eine NUPKG-Datei zu erstellen und mithilfe von Push an das Repository zu übertragen. Der NuGet-Anbieter wird für Vorgänge ohne Veröffentlichung wie „Suchen“, „Installieren“, „Aktualisieren“ und „Speichern“ benötigt.
 Es wurde die Logik zum Starten des NuGet-Anbieters sowie der Datei „NuGet.exe“ für Veröffentlichungsvorgänge mit einer einzigen Aufforderungsmeldung und zum ausschließlichen Starten des NuGet-Anbieters für Vorgänge ohne Veröffentlichung hinzugefügt.
 
-## Wenn der NuGet-Anbieter nicht verfügbar ist
+## <a name="when-nuget-provider-is-not-available"></a>Wenn der NuGet-Anbieter nicht verfügbar ist
 
 ```powershell                                
 PS C:\windows\system32> find-module -Repository dtlgalleryint -verbose -name contoso
@@ -34,7 +49,7 @@ Version    Name                                Type       Repository           D
 2.5        Contoso                             Module     dtlgalleryint        Contoso module
 ```
 
-## Wenn der NuGet-Anbieter während des Veröffentlichungsvorgangs verfügbar ist und „NuGet.exe“ nicht verfügbar ist
+## <a name="when-nuget-provider-is-available-and-nugetexe-is-not-available-during-the-publish-operation"></a>Wenn der NuGet-Anbieter während des Veröffentlichungsvorgangs verfügbar ist und „NuGet.exe“ nicht verfügbar ist
 
 ```powershell
 PS C:\windows\system32> Publish-Module -Name Contoso -Repository LocalRepo -Verbose
@@ -58,7 +73,7 @@ VERBOSE: Installing NuGet.exe.
 VERBOSE: Successfully published module 'Contoso' to the module publish location 'C:\LocalGallery'. Please allow few minutes for 'Contoso' to show up in the search results.
 ```
                    
-## Wenn sowohl der NuGet-Anbieter als auch „NuGet.exe“ während des Veröffentlichungsvorgangs nicht verfügbar sind
+## <a name="when-both-nuget-provider-and-nugetexe-are-not-available-during-the-publish-operation"></a>Wenn sowohl der NuGet-Anbieter als auch „NuGet.exe“ während des Veröffentlichungsvorgangs nicht verfügbar sind
 
 ```powershell
 PS C:\windows\system32> Publish-Module -Name Contoso -Repository LocalRepo -Verbose
@@ -83,7 +98,4 @@ VERBOSE: Installing NuGet provider.
 VERBOSE: Installing NuGet.exe.
 VERBOSE: Successfully published module 'Contoso' to the module publish location 'C:\LocalGallery'. Please allow few minutes for 'Contoso' to show up in the search results.
 ```
-
-<!--HONumber=Aug16_HO3-->
-
 

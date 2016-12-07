@@ -7,13 +7,11 @@ ms.topic: article
 author: jpjofre
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
-ms.openlocfilehash: d84b13db1fa5f12a7b4f8fa7b9b8cd7fb8fbae9d
-
+ms.openlocfilehash: 9e03bca75eeb6acf3f1433a9baaed0c1674ab1be
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-#  Deinstallieren von Windows PowerShell Web Access
+#  <a name="uninstall-windows-powershell-web-access"></a>Deinstallieren von Windows PowerShell Web Access
 
 Aktualisiert: 24. Juni 2013
 
@@ -44,7 +42,7 @@ Mit den in diesem Abschnitt beschriebenen Verfahren können Sie die Windows Powe
 
 Wenn Sie Ihre eigenen, benutzerdefinierten Websitenamen angegeben haben, fügen Sie dem Befehl den <span class="code">WebsiteName</span>-Parameter hinzu, und geben Sie den Namen der Website an. Wenn Sie eine benutzerdefinierte Webanwendung (und nicht die Standardanwendung **pswa**) verwendet haben, fügen Sie dem Befehl den <span class="code">WebApplicationName</span>-Parameter hinzu, und geben Sie den Namen der Webanwendung an.
 
-#### So löschen Sie die Website und Webanwendungen mithilfe des Uninstall-PswaWebApplication-Cmdlets
+#### <a name="to-delete-the-website-and-web-applications-by-using-the-uninstall-pswawebapplication-cmdlet"></a>So löschen Sie die Website und Webanwendungen mithilfe des Uninstall-PswaWebApplication-Cmdlets
 
 1.  Öffnen Sie eine Windows PowerShell-Sitzung, indem Sie einen der folgenden Schritte durchführen.
 
@@ -62,11 +60,11 @@ Wenn Sie Ihre eigenen, benutzerdefinierten Websitenamen angegeben haben, fügen 
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Schritt 2: Deinstallieren von Windows PowerShell Web Access</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Schritt 2: Deinstallieren von Windows PowerShell Web Access</span></a>
 
 ------------------------------------------------------------------------
 
-#### So deinstallieren Sie Windows PowerShell Web Access mithilfe von Windows PowerShell-Cmdlets
+#### <a name="to-uninstall-windows-powershell-web-access-by-using-windows-powershell-cmdlets"></a>So deinstallieren Sie Windows PowerShell Web Access mithilfe von Windows PowerShell-Cmdlets
 
 1.  Öffnen Sie eine Windows PowerShell-Sitzung mit erhöhten Benutzerrechten, indem Sie einen der folgenden Schritte durchführen. Wenn bereits eine Sitzung geöffnet ist, fahren Sie mit dem nächsten Schritt fort.
 
@@ -101,7 +99,7 @@ Mit den in diesem Abschnitt beschriebenen Verfahren können Sie die Windows Powe
 
 ------------------------------------------------------------------------
 
-#### So löschen Sie die Windows PowerShell Web Access-Website und -Webanwendungen mithilfe des IIS-Managers
+#### <a name="to-delete-the-windows-powershell-web-access-website-and-web-applications-by-using-iis-manager"></a>So löschen Sie die Windows PowerShell Web Access-Website und -Webanwendungen mithilfe des IIS-Managers
 
 1.  Öffnen Sie die IIS-Manager-Konsole, indem Sie eine der folgenden Aktionen ausführen: Wenn die Konsole bereits geöffnet ist, fahren Sie mit dem nächsten Schritt fort.
 
@@ -137,11 +135,11 @@ Mit den in diesem Abschnitt beschriebenen Verfahren können Sie die Windows Powe
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Schritt 2: Deinstallieren von Windows PowerShell Web Access</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Schritt 2: Deinstallieren von Windows PowerShell Web Access</span></a>
 
 ------------------------------------------------------------------------
 
-#### So deinstallieren Sie Windows PowerShell Web Access mithilfe des Assistenten zum Entfernen von Rollen und Features
+#### <a name="to-uninstall-windows-powershell-web-access-by-using-the-remove-roles-and-features-wizard"></a>So deinstallieren Sie Windows PowerShell Web Access mithilfe des Assistenten zum Entfernen von Rollen und Features
 
 1.  Wenn der Server-Manager bereits geöffnet ist, fahren Sie mit dem nächsten Schritt fort. Ist der Server-Manager noch nicht geöffnet, öffnen Sie ihn mit einer der folgenden Aktionen.
 
@@ -159,7 +157,7 @@ Mit den in diesem Abschnitt beschriebenen Verfahren können Sie die Windows Powe
 
 6.  Klicken Sie auf der Seite **Entfernungsauswahl bestätigen** auf **Entfernen**.
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Weitere Informationen</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Siehe auch</span></a>
 <a href="/en-us/library/dn282396(v=ws.11).aspx#Anchor_3" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
 
 ------------------------------------------------------------------------
@@ -174,7 +172,7 @@ Ja Nein
 
 Zusätzliches Feedback?
 
-<span class="stdr-count"><span class="stdr-charcnt">1500</span> verbleibende Zeichen</span> Senden Diesen Schritt überspringen
+<span class="stdr-count"><span class="stdr-charcnt">1.500</span> verbleibende Zeichen</span> Senden Diesen Schritt überspringen
 
 <span class="stdr-thankyou">Vielen Dank!</span> <span class="stdr-appreciate">Wir schätzen Ihr Feedback.</span>
 
@@ -200,13 +198,13 @@ Erzählen Sie uns mehr
 
 -   [Flash-Newsletter](https://technet.microsoft.com/cc543196.aspx)
 -   |
--   [So erreichen Sie uns:](https://technet.microsoft.com/cc512759.aspx)
+-   [So erreichen Sie uns](https://technet.microsoft.com/cc512759.aspx)
 -   |
 -   [Datenschutzbestimmungen](https://privacy.microsoft.com/privacystatement)
 -   |
 -   [Nutzungsbedingungen](https://technet.microsoft.com/cc300389.aspx)
 -   |
--   [Warenzeichen](https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/)
+-   [Marken](https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/)
 -   |
 
 © 2016 Microsoft
@@ -215,10 +213,4 @@ Erzählen Sie uns mehr
 
 Die Lizenz für Drittanbieterskripts oder Code, die mit dieser Website verlinkt oder über Verweise verbunden sind, wird Ihnen von den Codeeigentümern erteilt, nicht von Microsoft. Die ASP.NET Ajax CDN-Nutzungsbedingungen finden Sie unter http://www.asp.net/ajaxlibrary/CDN.ashx.
 <img src="https://m.webtrends.com/dcsjwb9vb00000c932fd0rjc7_5p3t/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" alt="DCSIMG" id="Img1" width="1" height="1" />
-
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

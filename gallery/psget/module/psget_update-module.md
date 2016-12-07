@@ -1,8 +1,23 @@
-# Update-Module
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: PowerShell, Cmdlet, Katalog
+ms.date: 2016-10-14
+contributor: manikb
+title: Update-Module | MSDN
+ms.technology: powershell
+ms.openlocfilehash: 3f843bcf667bdb40f45613911647acf464cbbf29
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
+---
+# <a name="update-module"></a>Update-Module
 
 Lädt die neueste Version der angegebenen Module aus einem Onlinekatalog auf den lokalen Computer herunter und installiert diese
 
-## Beschreibung
+## <a name="description"></a>Beschreibung
 
 Das Cmdlet „Update-Module“ installiert eine neuere Version des Windows PowerShell-Moduls, das durch das Ausführen von „Install-Module“ aus dem Onlinekatalog auf dem lokalen Computer installiert wurde.
 
@@ -10,7 +25,7 @@ Standardmäßig wird die neueste Version des im Onlinekatalog verfügbaren angeg
 
 Durch das Ausführen von „Update-Module“ ohne den Name-Parameter werden alle Module aktualisiert, die auf dem lokalen Computer aktualisiert werden können.
 
-### Hinweise
+### <a name="notes"></a>Hinweise
 
 - Dieses Cmdlet wird unter Windows PowerShell 3.0 oder auf höheren Versionen von Windows PowerShell ausgeführt. Ebenso wird es unter Windows 7 oder Windows 2008 R2 und höheren Versionen von Windows ausgeführt.
 - Wenn das Modul, das Sie mit dem Name-Parameter angeben, nicht mithilfe von „Install-Module“ installiert wurde, tritt ein Fehler auf. Sie können „Update-Module“ nur auf Modulen ausführen, die Sie durch Ausführen von „Install-Module“ aus dem Onlinekatalog installiert haben.
@@ -18,17 +33,17 @@ Durch das Ausführen von „Update-Module“ ohne den Name-Parameter werden alle
 - Unter PowerShell 5.0 oder neueren Versionen fügt „Update-Module“ beim Aktualisieren eines Moduls die neueste (oder angegebene) Version des Moduls hinzu, damit sich die ältere und neuere Version nun im gleichen Verzeichnis befindet. Es wäre hilfreich, den Benutzer darauf hinzuweisen und ein Beispiel der Ausgabe dieser Befehle anzuzeigen.
 
 
-## Cmdlet-Syntax
+## <a name="cmdlet-syntax"></a>Cmdlet-Syntax
 ```powershell
 Get-Command -Name Update-Module -Module PowerShellGet -Syntax
 ```
 
-## Cmdlet-Onlinehilfe
+## <a name="cmdlet-online-help-reference"></a>Cmdlet-Onlinehilfe
 
 [Update-Module](http://go.microsoft.com/fwlink/?LinkID=398576)
 
 
-## Beispiele für Befehle
+## <a name="example-commands"></a>Beispiele für Befehle
 
 ```powershell
 PS C:\\windows\\system32> Update-Module -Name ContosoServer -RequiredVersion 1.5
@@ -72,7 +87,7 @@ Version Name Repository Description
 ```
 
 
-###  Aktualisieren Sie das Modul „TestDepWithNestedRequiredModules1“ mit Abhängigkeiten.
+###  <a name="update-the-testdepwithnestedrequiredmodules1-module-with-dependencies"></a>Aktualisieren Sie das Modul „TestDepWithNestedRequiredModules1“ mit Abhängigkeiten.
 ```powershell
 Find-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -AllVersions
 
@@ -97,7 +112,4 @@ Version    Name                                Repository  Description
 1.0        TestDepWithNestedRequiredModules1   LocalRepo   TestDepWithNestedRequiredModules1 module
 2.0        TestDepWithNestedRequiredModules1   LocalRepo   TestDepWithNestedRequiredModules1 module
 ```
-
-<!--HONumber=Aug16_HO3-->
-
 

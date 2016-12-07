@@ -7,15 +7,13 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 787ac3c3d6ffaf7b1009fe3cfd64a0aefadc32d1
-ms.openlocfilehash: 8d305c67fb22e0d27dc1a36ba93369e9633680d3
-
+ms.openlocfilehash: 72555a36819c9717fafdd3daede8fa2f02c692b2
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="separating-configuration-and-environment-data"></a>Trennen von Konfiguration und Umgebungsdaten
 
->Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
+>Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Mithilfe des integrierten DSC-Parameters **ConfigurationData** können Sie Daten definieren, die innerhalb einer Konfiguration verwendet werden können. Dadurch können Sie eine einzige Konfiguration erstellen, die für mehrere Knoten oder für unterschiedliche Umgebungen verwendet werden kann. Wenn Sie z.B. eine Anwendung entwickeln, können Sie eine Konfiguration für die Entwicklungs-und die Produktionsumgebung verwenden und mithilfe von Konfigurationsdaten Daten für jede Umgebung angeben.
 
@@ -356,8 +354,3 @@ MyWebApp -ConfigurationData DevProdEnvData.psd1
 ## <a name="see-also"></a>Weitere Informationen
 - [Optionen für Anmeldeinformationen in den Konfigurationsdaten](configDataCredentials.md)
 - [DSC-Konfigurationen](configurations.md)
-
-
-<!--HONumber=Nov16_HO3-->
-
-

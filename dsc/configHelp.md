@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: f4dc0265246195cc2320bcaf9d7f9abf7b1405a3
-ms.openlocfilehash: becacd2dcbc6fd0edd9154a45342edc5c536935b
-
+ms.openlocfilehash: 099755bf8dc41adfedf77de451dbcdf390c298e9
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Schreiben von Hilfe für DSC-Konfigurationen
+# <a name="writing-help-for-dsc-configurations"></a>Schreiben von Hilfe für DSC-Konfigurationen
 
 >Gilt für: Windows PowerShell 5.0
 
@@ -63,7 +61,7 @@ configuration HelpSample1
 }
 ```
 
-## Anzeigen von Hilfe zur Konfiguration
+## <a name="viewing-configuration-help"></a>Anzeigen von Hilfe zur Konfiguration
 
 Verwenden Sie zum Anzeigen der Hilfe für eine Konfiguration das Cmdlet **Get-Help** mit dem Namen der Funktion, oder geben der Namen der Funktion gefolgt von `-?` ein. Folgendes ist die Ausgabe der vorherigen Funktion bei Übergabe an **Get-Help**:
 
@@ -94,12 +92,6 @@ REMARKS
     For technical information, type: "get-help HelpSample1 -full".
 ```
 
-## Weitere Informationen
+## <a name="see-also"></a>Weitere Informationen
 * [DSC-Konfigurationen](configurations.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

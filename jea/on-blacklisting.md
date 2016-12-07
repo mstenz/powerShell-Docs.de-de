@@ -8,13 +8,11 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: Blacklists
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 7504fe496a8913718847e45115d126caf4049bef
-ms.openlocfilehash: 8892e5e08a763fbc66d782bbc9252d1f3a7dcfcf
-
+ms.openlocfilehash: e823cc0b130500fb7ea60e65acf27f90ad3f3802
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-### Blacklists
+### <a name="on-blacklisting"></a>Blacklists
 Nachdem Sie erste Erfahrungen mit JEA gesammelt haben, fragen Sie sich vielleicht, ob es möglich ist, Befehle auf eine „Blacklist“ zu setzen.
 Das ist eine verständliche Anforderung, derzeit jedoch aus folgenden Gründen für JEA nicht geplant:
 
@@ -22,9 +20,9 @@ Das ist eine verständliche Anforderung, derzeit jedoch aus folgenden Gründen f
 Eine Blacklist ist das Gegenteil dieses Konzepts.
 
 2.  Die Autoren der PowerShell-Befehle haben diese Befehle nicht mit Blick auf JEA geschrieben.
-Bei einer Neuinstallation von Windows Server 2016 sind etwa 1520 Befehle sofort verfügbar.
+Bei einer Neuinstallation von Windows Server 2016 sind etwa 1520 Befehle sofort verfügbar.
 Bei den Gefahrenmodellen für diese Befehle ist die Möglichkeit, dass ein Benutzer Befehle mit einem Konto mit höheren Berechtigungen ausführt, nicht berücksichtigt.
-Einige Befehle lassen per Design Codeeinfügungen zu (z. B. Add-Type und Invoke-Command im PowerShell-Kernmodul).
+Einige Befehle lassen per Design Codeeinfügungen zu (z. B. Add-Type und Invoke-Command im PowerShell-Kernmodul).
 JEA kann Sie warnen, wenn Sie bestimmte, uns bekannte Befehle verfügbar machen, wir haben jedoch nicht jeden einzelnen Befehl in Windows basierend auf dem neuen Gefahrenmodell neu bewertet.
 Sie müssen die Funktionen der Befehle verstehen, die Sie über JEA verfügbar machen.  
 
@@ -32,10 +30,4 @@ Sie müssen die Funktionen der Befehle verstehen, die Sie über JEA verfügbar m
 Wenn Sie die Befehle, die Sie verfügbar machen, nicht genau kennen, können Sie nicht garantieren, dass eine bestimmte Aktion nicht möglich ist.
 Die Verantwortung dafür, die Befehle zu verstehen, die Sie verfügbar machen, liegt vollständig bei Ihnen – unabhängig davon, ob eine Whitelist oder eine Blacklist verwendet wird.
 Die Anzahl von Befehlen, die auf einer Blacklist aufgeführt werden müssten, wäre unüberschaubar. Daher wird JEA stattdessen mit Whitelists implementiert.
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 
