@@ -8,24 +8,22 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: "Erstellen eines Domänencontrollers"
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: d4a72a7c5883b1d3ba8de3dbc9cfe016a6fb3498
-ms.openlocfilehash: 8473eb668e4da5bab01c2f2b7647cbced413bd22
-
+ms.openlocfilehash: 80b957ed666ca626c6083041cf99c263e2e0dc27
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-### Erstellen eines Domänencontrollers
+### <a name="creating-a-domain-controller"></a>Erstellen eines Domänencontrollers
 
 Im vorliegenden Dokument wird davon ausgegangen, dass Ihr Computer in eine Domäne eingebunden ist.
 Wenn Sie derzeit nicht über eine Domäne verfügen, in die der Computer eingebunden werden kann, hilft Ihnen dieser Abschnitt dabei, mithilfe von DSC schnell einen Domänencontroller einzurichten.
 
-#### Voraussetzungen
+#### <a name="prerequisites"></a>Voraussetzungen
 
 1.  Der Computer befindet sich in einem internen Netzwerk.
 2.  Der Computer ist nicht in eine vorhandene Domäne eingebunden.
 3.  Auf dem Computer wird Windows Server 2016 ausgeführt, oder es ist WMF 5.0 installiert.
 
-#### Installieren von xActiveDirectory
+#### <a name="install-xactivedirectory"></a>Installieren von xActiveDirectory
 Wenn Ihr Computer über eine aktive Internetverbindung verfügt, führen Sie folgenden Befehl in einem PowerShell-Fenster mit erhöhten Rechten aus:
 ```PowerShell
 Install-Module xActiveDirectory -Force
@@ -37,7 +35,7 @@ Um zu überprüfen, ob die Installation erfolgreich war, führen Sie folgenden B
 Get-Module xActiveDirectory -ListAvailable
 ```
 
-#### Einrichten einer Domäne mit DSC
+#### <a name="set-up-a-domain-with-dsc"></a>Einrichten einer Domäne mit DSC
 Kopieren Sie das folgende Skript in PowerShell, um Ihren Computer als Domänencontroller in einer neuen Domäne einzurichten.
 **HINWEIS DES AUTORS: ES GIBT EIN BEKANNTES PROBLEM, DASS DIE BEREITGESTELLTEN ANMELDEINFORMATIONEN NICHT VERWENDET WERDEN.  MERKEN SIE SICH DAHER UNBEDINGT IHR LOKALES ADMINISTRATORKENNWORT.**
 
@@ -115,7 +113,7 @@ Start-DSCConfiguration -path .\DomainController -ComputerName $env:Computername 
 Ihr Computer wird mehrmals neu gestartet.
 Sobald Sie eine Datei namens „C:\temp.txt“ mit dem Inhalt „Domain has been created.“ sehen, wissen Sie, dass der Vorgang abgeschlossen ist.
 
-#### Einrichten von Benutzern und Gruppen
+#### <a name="set-up-users-and-groups"></a>Einrichten von Benutzern und Gruppen
 Mit den folgenden Befehlen richten Sie eine Gruppe „Helpdesk“ und eine Gruppe „Operator“ sowie jeweils einen entsprechenden Benutzer ohne Administratorrechte in Ihrer Domäne ein, der Mitglied der jeweiligen Gruppe ist.
 ```PowerShell
 # Make Groups
@@ -134,10 +132,4 @@ Enable-ADAccount -Identity $HelpDeskUser
 Add-ADGroupMember -Identity $NonAdminOperatorGroup -Members $OperatorUser
 Add-ADGroupMember -Identity $NonAdminHelpDeskGroup -Members $HelpDeskUser
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

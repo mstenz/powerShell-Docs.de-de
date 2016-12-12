@@ -8,13 +8,11 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: Infodatei
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 8149f656f0aacbb23cacc8a1a9b45ed59866b92f
-ms.openlocfilehash: 7bb5635832e912b39ec387e8ac93ada24a434ff8
-
+ms.openlocfilehash: b0ef4ff685b82e1a4e9ab83a45736720df7b39a2
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Just Enough Administration
+# <a name="just-enough-administration"></a>Just Enough Administration
 Just Enough Administration (JEA) ist eine Sicherheitstechnologie, die eine delegierte Verwaltung für sämtliche Elemente ermöglicht, die in PowerShell verwaltet werden können.
 Mit JEA ist Folgendes möglich:
 - **Reduzieren Sie die Anzahl von Administratoren auf Ihren Computern**, indem Sie virtuelle Konten nutzen, die privilegierte Aktionen für normale Benutzer ausführen.
@@ -30,7 +28,7 @@ Mit JEA können Sie eine Rolle für die DNS-Administratoren konfigurieren, die i
 Das bedeutet, dass Sie ihnen den entsprechenden Zugriff gewähren können, damit ein beschädigter DNS-Cache repariert werden kann, ohne gleichzeitig unbeabsichtigt Berechtigungen für Active Directory, das Durchsuchen des Dateisystems oder die Ausführung potenziell gefährlicher Skripts zu erteilen.
 Wenn die JEA-Sitzung so konfiguriert ist, dass einmalige privilegierte virtuelle Konten verwendet werden, können Ihre DNS-Administratoren überdies eine Verbindung mit dem Server als *nicht privilegierte* Benutzer herstellen und trotzdem Befehle ausführen, für die Berechtigungen erforderlich sind.
 
-## Verfügbarkeit
+## <a name="availability"></a>Verfügbarkeit
 JEA wird parallel zu Windows Server 2016 entwickelt und steht in älteren Windows-Versionen über Updates des Windows Management Frameworks zur Verfügung.
 Das aktuelle JEA-Release ist auf den folgenden Plattformen verfügbar:
 
@@ -38,14 +36,14 @@ Das aktuelle JEA-Release ist auf den folgenden Plattformen verfügbar:
 - Windows Server 2016 Technical Preview 4 und höher
 - Windows Server 2012 R2, 2012 und 2008 R2\* mit installiertem [Windows Management Framework 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395)
 
-**Windows-Client**
+**Windows Client**
 - Windows 10 mit installiertem November-Update (1511)
 - Windows 8.1, 8 und 7\* mit installiertem [Windows Management Framework 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395)
 
 \* Unterstützung für virtuelle JEA-Sitzungen steht in Windows Server 2008 R2 und Windows 7 derzeit nicht zur Verfügung.
 
 
-## Einführungsleitfaden zu JEA
+## <a name="explore-the-experience-guide"></a>Einführungsleitfaden zu JEA
 Sind Sie bereit zu erfahren, wie Sie selbst einen JEA-Endpunkt erstellen, bereitstellen und verwenden?
 
 Dieser Leitfaden bietet einen schnellen Einstieg und vermittelt anhand eines vorgefertigten JEA-Endpunkts eine Vorstellung von der Endbenutzererfahrung. Anschließend führt der Leitfaden Sie durch den Prozess der Neuerstellung eines Endpunkts, um dabei Konzepte wie Sitzungskonfigurationen und Rollenfunktionen zu erläutern.
@@ -81,17 +79,11 @@ Erfahren Sie, wie Sie alle JEA-Aktionen und die gesamte Infrastruktur überprüf
   -  [Überlegungen zum Einschränken von Befehlen](considerations-when-limiting-commands.md)  
   -  [Häufige Fehler bei Rollenfunktionen](common-role-capability-pitfalls.md)
 
-## Ihre ersten eigenen JEA-Endpunkte
+## <a name="start-authoring-your-own-jea-endpoints"></a>Ihre ersten eigenen JEA-Endpunkte
 Die Erstellung eines JEA-Endpunkts ist ganz einfach – Sie benötigen nur ein JEA-fähiges System und einen Text-Editor (wie z. B. die PowerShell ISE).
 Ein guter Tipp für den Einstieg: Erstellen Sie Gerüstdateien mithilfe von [`New-PSRoleCapabilityFile -Path <path>`](https://technet.microsoft.com/library/mt631422.aspx) und [`New-PSSessionConfigurationFile -Path <Path>`](https://technet.microsoft.com/library/mt631422.aspx), ohne weitere Argumente.
 Diese Gerüstdateien enthalten alle anwendbaren Konfigurationsfelder sowie nützliche Kommentare, die erklären, wozu welches Feld verwendet werden kann.
 
 Um die Erstellung von JEA-Endpunkten noch einfacher zu gestalten, lesen Sie den Blog [JEA Toolkit Helper](http://blogs.technet.com/b/privatecloud/archive/2015/12/20/introducing-the-updated-jea-helper-tool.aspx). In diesem Blog finden Sie eine GUI, mit deren Hilfe Sie Sitzungskonfigurations- und Rollenfunktionsdateien erstellen können.
 Die GUI unterstützt sogar die Erstellung von Rollenfunktionen basierend auf PowerShell-Protokollen, sodass Sie mit den Befehlen beginnen können, die Ihre Benutzer regelmäßig für ihre Arbeit ausführen.
-
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

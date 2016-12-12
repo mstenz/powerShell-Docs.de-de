@@ -8,17 +8,15 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: c3636b45-61aa-4720-85f0-58312c4fc8f9
-translationtype: Human Translation
-ms.sourcegitcommit: 7caac42751c580d588fcf19db7253c8b75d6c865
-ms.openlocfilehash: 7af27dc9bd8e93d1df5258b0d8df8af12726f568
-
+ms.openlocfilehash: 8df8b9bb74eba5921263ad9d802dcece41261f9a
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Installieren das Windows PowerShell SDK
+# <a name="installing-the-windows-powershell-sdk"></a>Installieren das Windows PowerShell SDK
 
 Das folgende Thema beschreibt, wie das PowerShell SDK in verschiedenen Versionen von Windows installiert wird.
 
-## Installieren des Windows PowerShell 3.0 SDK für Windows 8 und Windows Server 2012
+## <a name="installing-windows-powershell-30-sdk-for-windows-8-and-windows-server-2012"></a>Installieren des Windows PowerShell 3.0 SDK für Windows 8 und Windows Server 2012
 
 Windows PowerShell 3.0 wird automatisch mit Windows 8 und Windows Server 2012 installiert.
 Darüber hinaus können Sie die Verweisassemblys für Windows PowerShell 3.0 als Teil des Windows 8 SDKs herunterladen und installieren.
@@ -32,33 +30,33 @@ Darüber hinaus ist Windows PowerShell 3.0 abwärtskompatibel mit dem Windows Po
 Weitere Informationen zum Herunterladen des Windows PowerShell 2.0 SDKs finden Sie nachstehend.
 (Beachten Sie, dass, während die 2.0-Codebeispiele mit Windows 8 und Windows PowerShell 3.0 kompatibel sind, Sie Windows PowerShell 2.0 auf einer Windows 8-Plattform nicht installieren können.)
 
-##Installieren des Windows PowerShell 3.0 SDK für Windows 7 und Windows Server 2008 R2
+##<a name="installing-windows-powershell-30-sdk-for-windows-7-and-windows-server-2008-r2"></a>Installieren des Windows PowerShell 3.0 SDK für Windows 7 und Windows Server 2008 R2
 
 Bei Windows 7 und Windows Server 2008 R2 wird PowerShell 2.0 automatisch installiert.
 Darüber hinaus können Sie PowerShell 3.0 auf diesen Systemen installieren.
 (Weitere Informationen finden Sie unter [Installieren von Windows PowerShell](Installing-Windows-PowerShell.md).)
 Wie oben beschrieben, können Sie das Windows 8 SDK auch unter Windows 7 und Windows Server 2008 R2 installieren.
 
-## Installieren des Windows PowerShell 2.0 SDK für Windows 7, Vista, XP, Server 2003 und Server 2008
+## <a name="installing-windows-powershell-20-sdk-for-windows-7-vista-xp-server-2003-and-server-2008"></a>Installieren des Windows PowerShell 2.0 SDK für Windows 7, Vista, XP, Server 2003 und Server 2008
 
 Das Windows PowerShell 2.0 SDK stellt die Verweisassemblys bereit, die zum Schreiben von Cmdlets, Anbietern und Hostinganwendungen erforderlich sind, und bietet C#-Beispielcode, der als Ausgangspunkt dienen kann, wenn Sie mit dem Schreiben von Code beginnen.
 
 Informationen zur Installation dieses SDK finden Sie unter [Windows PowerShell 2.0 SDK](http://go.microsoft.com/fwlink/?LinkId=184611).
 
-## Verweisassemblys
+## <a name="reference-assemblies"></a>Verweisassemblys
 
 Verweisassemblys werden standardmäßig an folgendem Speicherort installiert: `c:\Program Files\Reference Assemblies\Microsoft\WindowsPowerShell\V1.0`.
 
 > **Hinweis**: Code, der für die Windows PowerShell 2.0-Assemblys kompiliert wird, kann nicht in Windows PowerShell 1.0-Installationen geladen werden.
 >Jedoch kann Code, der für die Windows PowerShell 1.0-Assemblys kompiliert wird, in Windows PowerShell 2.0-Installationen geladen werden.
 
-## Beispiele
+## <a name="samples"></a>Beispiele
 
 Codebeispiele werden standardmäßig an folgendem Speicherort installiert: `C:\Program Files\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\`.
 
 Die folgenden Abschnitte enthalten eine kurze Beschreibung der einzelnen Beispiele.
 
-## Cmdlet-Beispiele
+## <a name="cmdlet-samples"></a>Cmdlet-Beispiele
 **GetProcessSample01**
 
 Zeigt, wie Sie ein einfaches Cmdlet schreiben, das alle Prozesse auf dem lokalen Computer abruft.
@@ -105,7 +103,7 @@ Zeigt, wie Aliase für Parameter deklariert und Platzhalter unterstützt werden.
 
 Zeigt die Deklaration von Parametersätzen, das Objekt, das vom Cmdlet als Eingabe akzeptiert wird, und die Angabe des zu verwendenden Standardparametersatzes.
 
-## Remotingbeispiele
+## <a name="remoting-samples"></a>Remotingbeispiele
 
 **RemoteRunspace01**
 
@@ -127,7 +125,7 @@ Zeigt, wie Sie eine vorhandene .NET-Klasse anzeigen und sicherstellen, dass Info
 
 Zeigt, wie Sie eine vorhandene .NET-Klasse anzeigen und sicherstellen, dass Instanzen dieser Klasse und von abgeleiteten Klassen in aktive .NET-Objekte deserialisiert (aktiviert) werden.
 
-## Ereignisbeispiele
+## <a name="event-samples"></a>Ereignisbeispiele
 
 **Event01**
 
@@ -138,7 +136,7 @@ Zeigt, wie Sie ein Cmdlet für die Ereignisregistrierung durch Ableiten von Obje
 Zeigt, wie Sie Benachrichtigungen von Windows PowerShell-Ereignissen empfangen, die auf Remotecomputern generiert werden.
 Verwendet das über die [Runspace](https://technet.microsoft.com/library/system.management.automation.runspaces.runspace.aspx)-Klasse offen gelegte PSEventReceived-Ereignis.
 
-## Hosten von Anwendungsbeispielen
+## <a name="hosting-application-samples"></a>Hosten von Anwendungsbeispielen
 
 **Runspace01**
 
@@ -204,7 +202,7 @@ Zeigt, wie Sie über ein [InitialSessionState](https://technet.microsoft.com/lib
 
 Zeigt, wie Sie einen Runspacepool verwenden, um mehrere Befehle gleichzeitig auszuführen.
 
-## Hostbeispiele
+## <a name="host-samples"></a>Hostbeispiele
 
 **Host01**
 
@@ -236,7 +234,7 @@ Diese Anwendung unterstützt auch Aufrufe von Remotecomputern mithilfe der Cmdle
 Zeigt, wie eine interaktive, konsolenbasierte Hostanwendung erstellt wird, die Befehle von der Befehlszeile aus liest, die Befehle ausführt und die Ergebnisse anschließend in der Konsole anzeigt.
 Darüber hinaus verwendet dieses Beispiel die Tokenizer-APIs, um die Farbe des vom Benutzer eingegebenen Texts anzugeben.
 
-## Anbieterbeispiele
+## <a name="provider-samples"></a>Anbieterbeispiele
 
 **AccessDBProviderSample01**
 
@@ -271,9 +269,3 @@ Die Anbieterklasse in diesem Beispiel wird von der [NavigationCmdletProvider](ht
 Zeigt, wie Sie Inhaltsmethoden überschreiben, um Aufrufe der Cmdlets „Clear-Content“, „Get-Content“ und „Set-Content“ zu unterstützen.
 Diese Methoden sollten implementiert werden, wenn der Benutzer den Inhalt der Elemente im Datenspeicher verwaltet muss.
 Die Anbieterklasse in diesem Beispiel wird von der [NavigationCmdletProvider](https://technet.microsoft.com/library/system.management.automation.provider.navigationcmdletprovider.aspx)-Klasse abgeleitet und implementiert die [IContentCmdletProvider](https://technet.microsoft.com/library/system.management.automation.provider.icontentcmdletprovider.aspx)-Schnittstelle.
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

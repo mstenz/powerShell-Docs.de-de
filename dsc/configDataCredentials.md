@@ -7,16 +7,14 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: a750fb208e73ce2ebffb2fa86a55c825169d8ad8
-
+ms.openlocfilehash: 58ba849bbf0789a66bc752385c7954edf95c9d03
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Optionen für Anmeldeinformationen in den Konfigurationsdaten
+# <a name="credentials-options-in-configuration-data"></a>Optionen für Anmeldeinformationen in den Konfigurationsdaten
 >Gilt für: Windows PowerShell 5.0
 
-## Nur-Text-Kennwörter und Domänenbenutzer
+## <a name="plain-text-passwords-and-domain-users"></a>Nur-Text-Kennwörter und Domänenbenutzer
 
 DSC-Konfigurationen mit unverschlüsselten Anmeldeinformationen generieren eine Fehlermeldung zu Nur-Text-Kennwörtern.
 DSC generiert außerdem bei Verwendung von Domänenanmeldeinformationen eine Warnung.
@@ -24,7 +22,7 @@ Um diese Fehler- und Warnmeldungen zu unterdrücken, verwenden Sie die DSC-Konfi
 * **PsDscAllowPlainTextPassword**
 * **PsDscAllowDomainUser**
 
-## Behandeln von Anmeldeinformationen in DSC
+## <a name="handling-credentials-in-dsc"></a>Behandeln von Anmeldeinformationen in DSC
 
 DSC-Konfigurationsressourcen werden standardmäßig als `Local System` ausgeführt.
 Einige Ressourcen benötigen jedoch Anmeldeinformationen, z. B. wenn die `Package`-Ressource Software unter einem bestimmten Benutzerkonto installieren muss.
@@ -59,7 +57,7 @@ Es wird sowohl die Eigenschaft `Credential` als auch die automatische Eigenschaf
 Allerdings verwendet die Ressource nur die Eigenschaft `Credential`.
 Erfahren Sie mehr über `PsDscRunAsCredential` in den [WMF-Versionshinweise](https://msdn.microsoft.com/en-us/powershell/wmf/dsc_runas).
 
-## Beispiel: Die Eigenschaft „Credential“ der Ressource „Group“
+## <a name="example-the-group-resource-credential-property"></a>Beispiel: Die Eigenschaft „Credential“ der Ressource „Group“
 
 Der DSC-Dienst wird unter `Local System` ausgeführt, sodass er bereits über Berechtigungen zum Ändern lokaler Benutzer und Gruppen verfügt.
 Wenn es sich bei dem hinzugefügten Member um ein lokales Konto handelt, sind keine Anmeldeinformationen erforderlich.
@@ -69,7 +67,7 @@ Anonyme Abfragen an Active Directory sind nicht zulässig.
 Die Eigenschaft `Credential` der Ressource `Group`ist das zum Abfragen von Active Directory verwendete Domänenkonto.
 In den meisten Fällen könnte es sich dabei um ein allgemeines Benutzerkonto handeln, da Benutzer standardmäßig über *Lesezugriff* auf die meisten Objekte in Active Directory verfügen.
 
-## Beispielkonfiguration
+## <a name="example-configuration"></a>Beispielkonfiguration
 
 Der folgende Beispielcode verwendet DSC zum Auffüllen einer lokalen Gruppen mit einem Domänenbenutzer:
 
@@ -124,7 +122,7 @@ In diesem Beispiel gibt es zwei Probleme:
 1.  Ein Fehler zeigt an, dass Nur-Text-Kennwörter nicht empfohlen werden.
 2.  Eine Warnung rät davon ab, Domänenanmeldeinformationen zu verwenden.
 
-## PsDscAllowPlainTextPassword
+## <a name="psdscallowplaintextpassword"></a>PsDscAllowPlainTextPassword
 
 Die erste Fehlermeldung enthält eine URL zur Dokumentation.
 Unter diesem Link wird erläutert, wie Kennwörtern mit einer [ConfigurationData](https://msdn.microsoft.com/en-us/powershell/dsc/configdata)-Struktur und einem Zertifikat verschlüsselt werden.
@@ -169,17 +167,17 @@ DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 
 **Microsoft empfiehlt, Nur-Text-Kennwörter aufgrund des hohen Sicherheitsrisikos zu vermeiden.**
 
-## Domänenanmeldeinformationen
+## <a name="domain-credentials"></a>Domänenanmeldeinformationen
 
 Wenn Sie das Beispielkonfigurationsskript erneut ausführen (mit oder ohne Verschlüsselung), wird weiterhin die Warnung generiert, dass die Verwendung von Anmeldeinformationen eines Domänenkontos nicht empfohlen wird.
 Durch Verwendung eines lokalen Kontos wird verhindert, dass Domänenanmeldeinformationen, die auf anderen Servern verwendet werden könnten, offengelegt werden.
 
 **Bei Verwendung von Anmeldeinformationen mit DSC-Ressourcen ziehen Sie, wenn möglich, ein lokales Konto einem Domänenkonto vor.**
 
-Enthält die Eigenschaft `Username` der Anmeldeinformationen einen „\'“ oder ein „@“, behandelt DSC das Konto als Domänenkonto.
+Enthält die Eigenschaft `Username` der Anmeldeinformationen einen \' oder ein '@', behandelt DSC das Konto als Domänenkonto.
 Ausnahmen machen „Localhost“, „127.0.0.1“ und „:: 1“ im Domänenteil des Benutzernamens.
 
-## PSDscAllowDomainUser
+## <a name="psdscallowdomainuser"></a>PSDscAllowDomainUser
 
 Im oben stehenden Beispiel zur DSC-Ressourcen `Group` ist zum Abfragen einer Active Directory-Domäne ein Domänenkonto *erforderlich*.
 Fügen Sie in diesem Fall die Eigenschaft `PSDscAllowDomainUser` wie folgt zum Block `ConfigurationData` hinzu:
@@ -198,10 +196,4 @@ $cd = @{
 ```
 
 Nun generiert das Konfigurationsskript die MOF-Datei ohne Fehler oder Warnungen.
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

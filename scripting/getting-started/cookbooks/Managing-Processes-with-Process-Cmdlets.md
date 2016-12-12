@@ -8,16 +8,14 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 5038f612-d149-4698-8bbb-999986959e31
-translationtype: Human Translation
-ms.sourcegitcommit: f891988cce205b5729d0da6c4ce23da5fbd53b7f
-ms.openlocfilehash: 3812d0492da1879df50538533740ff857af7b15d
-
+ms.openlocfilehash: 7f7097966aff6ae73b50521b86f932ffdfadf937
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Verwalten von Prozessen mit „Process“-Cmdlets
+# <a name="managing-processes-with-process-cmdlets"></a>Verwalten von Prozessen mit „Process“-Cmdlets
 Sie können die „Process“-Cmdlets in Windows PowerShell verwenden, um lokale und Remoteprozesse in Windows PowerShell zu verwalten.
 
-## Abrufen von Prozessen (Get-Process)
+## <a name="getting-processes-get-process"></a>Abrufen von Prozessen (Get-Process)
 Um die Prozesse abzurufen, die auf dem lokalen Computer ausgeführt werden, führen Sie **Get-Process** ohne Parameter aus.
 
 Sie können bestimmte Prozesse abrufen, indem Sie deren Prozessnamen oder Prozess-IDs angeben. Der folgende Befehl ruft den Prozess „Idle“ ab:
@@ -103,7 +101,7 @@ Handles  NPM(K)  PM(K) WS(K) VM(M) CPU(s)  Id ProcessName  MachineName
     605       9  30668 29800   155 7.11    3052 powershell Server02
 ```
 
-## Beenden von Prozessen (Stop-Process)
+## <a name="stopping-processes-stop-process"></a>Beenden von Prozessen (Stop-Process)
 Windows PowerShell gibt Ihnen die Flexibilität zum Auflisten von Prozessen, aber wie sieht es mit dem Beenden eines Prozesses aus?
 
 Das Cmdlet **Stop-Process** akzeptiert einen Namen oder eine ID als Angabe für den Prozess, den Sie beenden möchten. Inwieweit Sie Prozesse beenden können, hängt von Ihren Berechtigungen ab. Einige Prozesse können nicht beendet werden. Wenn Sie beispielsweise versuchen, den Prozess „idle“ zu beenden, erhalten Sie einen Fehler:
@@ -150,7 +148,7 @@ Das Cmdlet „Stop-Process“ hat keinen ComputerName-Parameter. Daher müssen S
 Invoke-Command -ComputerName Server01 {Stop-Process Powershell}
 ```
 
-## Beenden alle anderen Windows PowerShell-Sitzungen
+## <a name="stopping-all-other-windows-powershell-sessions"></a>Beenden alle anderen Windows PowerShell-Sitzungen
 Gelegentlich kann es nützlich sein, alle aktiven Windows PowerShell-Sitzungen mit Ausnahme der aktuellen Sitzung zu beenden. Wenn eine Sitzung zu viele Ressourcen verwendet, oder wenn nicht mehr auf sie zugegriffen werden kann (sie wird möglicherweise remote oder in einer anderen Desktopsitzung ausgeführt), kann es sein, dass Sie sie nicht direkt beenden können. Wenn Sie aber versuchen, alle aktiven Sitzungen zu beenden, wird möglicherweise stattdessen die aktuelle Sitzung beendet.
 
 Jede Windows PowerShell-Sitzung hat die Umgebungsvariable PID, die die ID des jeweiligen Windows PowerShell-Prozesses enthält. Sie können die $PID mit der ID jeder Sitzung abgleichen und nur die Windows PowerShell-Sitzungen beenden, die eine andere ID haben. Im folgenden Pipelinebefehl wird dies ausgeführt und die Liste der beendeten Sitzungen zurückgegeben (weil der **PassThru**-Parameter verwendet wird):
@@ -168,19 +166,13 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
     287       9    21044      26928   143     1.02   3672 powershell
 ```
 
-## Starten und Debuggen von Prozessen sowie Warten auf Prozesse
+## <a name="starting-debugging-and-waiting-for-processes"></a>Starten und Debuggen von Prozessen sowie Warten auf Prozesse
 Zu Windows PowerShell gehören auch Cmdlets zum Starten (oder Neustarten) eines Prozesses, zum Debuggen eines Prozesses sowie zum Warten, bis ein Prozess abgeschlossen ist, bevor ein Befehl ausgeführt wird. Informationen zu diesen Cmdlets finden Sie im Cmdlet-Hilfethema für jedes Cmdlet.
 
-## Weitere Informationen
+## <a name="see-also"></a>Weitere Informationen
 - [Get-Process [m2]](https://technet.microsoft.com/en-us/library/27a05dbd-4b69-48a3-8d55-b295f6225f15)
 - [Stop-Process [m2]](https://technet.microsoft.com/en-us/library/12454238-9881-457a-bde4-fb6cd124deec)
 - [Start-Process](https://technet.microsoft.com/en-us/library/41a7e43c-9bb3-4dc2-8b0c-f6c32962e72c)
 - [Wait-Process](https://technet.microsoft.com/en-us/library/9222af7a-789d-4a09-aa90-09d7c256c799)
 - [Debug-Process](https://technet.microsoft.com/en-us/library/eea1dace-3913-4dbd-b659-5a94a610eee1)
 - [Invoke-Command](https://technet.microsoft.com/en-us/library/22fd98ba-1874-492e-95a5-c069467b8462)
-
-
-
-<!--HONumber=Oct16_HO3-->
-
-

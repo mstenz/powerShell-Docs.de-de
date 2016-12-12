@@ -8,13 +8,11 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: Wichtige Konzepte in diesem Leitfaden
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 7504fe496a8913718847e45115d126caf4049bef
-ms.openlocfilehash: 178fea44987b0c457b8e5d23fbe851ee12f03b31
-
+ms.openlocfilehash: 873ab19fdf43ec4ac41cc546aa94b64fbc607984
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Wichtige Konzepte in diesem Leitfaden
+# <a name="key-concepts-used-throughout-this-guide"></a>Wichtige Konzepte in diesem Leitfaden
 **Was genau ist JEA?**
 
 JEA ist eine Erweiterung von [eingeschränkten PowerShell-Endpunkten](http://blogs.technet.com/b/heyscriptingguy/archive/2014/03/31/introduction-to-powershell-endpoints.aspx), die Rollendefinitionen, virtuelle Konten sowie viele weitere Verbesserungen hinzufügt, mit denen Sie Ihre Verwaltungsendpunkte noch besser sichern können.
@@ -53,10 +51,4 @@ Außerdem gilt: Wenn ein zulässiger Befehl bzw. ein zulässiges Skript versucht
 
 **Verbundener Benutzer (Connected)**: Der Benutzer ohne Administratorrechte, der eine Verbindung mit dem JEA-Endpunkt herstellt und dem Rollen zugewiesen sind.
 Alle Befehle, die dieser Benutzer ausführt, werden im Kontext des ausführenden Benutzers oder des virtuellen ausführenden Kontos ausgeführt.
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

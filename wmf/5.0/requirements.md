@@ -1,4 +1,4 @@
-# Systemanforderungen
+# <a name="system-requirements"></a>Systemanforderungen
 
 - Vor der Installation von WMF 5.0 RTM müssen Sie die neuesten Windows-Updates installieren.
 - Sie können WMF 5.0 RTM nur unter folgenden Betriebssystemen installieren:
@@ -11,15 +11,15 @@
     | Windows 8.1 | Pro, Enterprise | | **x64:** [Win8.1AndW2K12R2-KB3134758-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717507) </br> **x86:** [Win8.1-KB3134758-x86.msu](http://go.microsoft.com/fwlink/?LinkID=717963)|
     | Windows 7 SP1 | Alle | [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) und [.NET Framework 4.5 oder höher](https://msdn.microsoft.com/en-us/library/5a4x27ek.aspx) sind installiert. | **x64:** [Win7AndW2K8R2-KB3134760-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717504)  </br> **x86:** [Win7-KB3134760-x86.msu](http://go.microsoft.com/fwlink/?LinkID=717962)|
 
-# Installationsanweisungen
+# <a name="installation-instructions"></a>Installationsanweisungen
 
-### So installieren Sie WMF 5.0 über Windows-Explorer (oder Datei-Explorer)
+### <a name="to-install-wmf-50-from-windows-explorer-or-file-explorer"></a>So installieren Sie WMF 5.0 über Windows-Explorer (oder Datei-Explorer)
 
 1. Wechseln Sie zum Ordner, in den Sie die MSU-Datei heruntergeladen haben.
 
 2. Doppelklicken Sie auf die MSU-Datei, um sie auszuführen.
 
-### So installieren Sie WMF 5.0 über die Befehlszeile
+### <a name="to-install-wmf-50-from-command-prompt"></a>So installieren Sie WMF 5.0 über die Befehlszeile
 
 1. Öffnen Sie nach dem Herunterladen des richtigen Pakets für die Architektur Ihres Computers ein Eingabeaufforderungsfenster mit erhöhten Benutzerrechten (Als Administrator ausführen). Bei den Server Core-Installationsoptionen von Windows Server 2012 R2, Windows Server 2012 oder Windows Server 2008 R2 SP1 wird das Eingabeaufforderungsfenster standardmäßig mit erhöhten Benutzerrechten geöffnet.
 
@@ -32,7 +32,7 @@
     - Führen Sie auf Computern mit Windows 8.1 x86 **Win8.1-KB3134758-x86.msu /quiet** aus.
     - Führen Sie auf Computern mit Windows 7 SP1 x86 **Win7-KB3134760-x86.msu /quiet** aus.
 
-### Zusätzliche Installationshinweise für Windows Server 2008 R2 SP1 und Windows 7 SP1:
+### <a name="additional-installation-notes-for-windows-server-2008-r2-sp1-and-windows-7-sp1"></a>Zusätzliche Installationshinweise für Windows Server 2008 R2 SP1 und Windows 7 SP1:
 
 Überprüfen Sie, ob die folgenden Voraussetzungen erfüllt sind:
 - Das neueste Service Pack ist installiert.
@@ -55,9 +55,9 @@ All diese Probleme wurden in den WMF 4.0-Paketen behoben. Daher ist WMF 4.0 Vora
 
 Windows PowerShell DSC (Desired State Configuration) hängt von WinRM ab. Unter Windows Server 2008 R2 SP1 und Windows 7 SP1 ist WinRM nicht standardmäßig aktiviert. Führen Sie zum Aktivieren von WinRM in einer Windows PowerShell-Sitzung mit erhöhten Benutzerrechten **Set-WSManQuickConfig** aus.
 
-# Deinstallationsanweisungen
+# <a name="uninstallation-instructions"></a>Deinstallationsanweisungen
 
-### Verwenden der Eingabeaufforderung
+### <a name="using-command-prompt"></a>Verwenden der Eingabeaufforderung
 
 1.  Öffnen Sie die **Eingabeaufforderung**.
 
@@ -76,7 +76,7 @@ Unter Windows Server 2008 R2 SP1 und Windows 7 SP1:
 wusa /uninstall /kb:3134760
 ```
 
-### Über die Systemsteuerung
+### <a name="using-control-panel"></a>Über die Systemsteuerung
 
 1.  Öffnen Sie die **Systemsteuerung**.
 
@@ -85,8 +85,3 @@ wusa /uninstall /kb:3134760
 3.  Klicken Sie auf **Installierte Updates anzeigen**.
 
 4.  Wählen Sie in der Liste der installierten Updates **Windows Management Framework 5.0** aus. Dies entspricht *KB3134758*, *KB3134759* oder *KB3134760*. Klicken Sie auf **Deinstallieren**.
-
-
-<!--HONumber=Aug16_HO3-->
-
-

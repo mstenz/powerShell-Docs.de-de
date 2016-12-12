@@ -7,20 +7,18 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 919438862ca9786447b690d2db10e905da0a7c42
 ms.openlocfilehash: 6f9c6a8851732574ac72bc4f3a3db1a73fbbecf2
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# ApplyConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse
+# <a name="applyconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>ApplyConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse
 
 Verwendet den Konfigurations-Agent, um die ausstehende Konfiguration anzuwenden. 
 
 Wenn keine ausstehende Konfiguration vorhanden ist, wendet diese Methode die aktuelle Konfiguration erneut an.
 
 
-## Syntax
+## <a name="syntax"></a>Syntax
 ------
 
 ```mof
@@ -29,29 +27,29 @@ uint32 ApplyConfiguration(
 );
 ```
 
-## Parameter
+## <a name="parameters"></a>Parameter
 ----------
 
 *force* \[in\]  
 Wenn dies **true** ist, wird die aktuelle Konfiguration erneut angewendet, auch wenn eine Konfiguration aussteht.
 
-## Rückgabewert
+## <a name="return-value"></a>Rückgabewert
 ------------
 
 Gibt bei Erfolg null zurück, andernfalls einen Fehlercode.
 
-## Hinweise
+## <a name="remarks"></a>Hinweise
 
 Dies ist eine statische Methode.
 
-## Anforderungen
+## <a name="requirements"></a>Anforderungen
 ------------
 >**MOF:** DscCore.mof
 
 >**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 
-## Siehe auch
+## <a name="see-also"></a>Siehe auch
 
 
 [**MSFT_DSCLocalConfigurationManager-Klasse**](msft-dsclocalconfigurationmanager.md)
@@ -60,11 +58,5 @@ Dies ist eine statische Methode.
 
  
 
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

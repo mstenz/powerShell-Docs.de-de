@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: b0e2ad92-875f-421d-b612-f624e644aa69
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: a031bad99e8aca1d7598f99e157723bf4360cf56
-
+ms.openlocfilehash: bb852b8d5cb5202568a80517074cc8ff6f40ea0f
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Erste Schritte mit Windows PowerShell
+# <a name="getting-started-with-windows-powershell"></a>Erste Schritte mit Windows PowerShell
 Windows PowerShell ist eine Windows-Befehlszeilenshell, die insbesondere für Systemadministratoren konzipiert ist. Windows PowerShell umfasst eine interaktive Eingabeaufforderung und eine Skriptumgebung, die einzeln oder in Kombination verwendet werden können.
 
 Anders als die meisten Shells, in denen Text akzeptiert und zurückgegeben wird, setzt Windows PowerShell auf der .NET Framework Common Language Runtime (CLR) und auf .NET Framework auf und akzeptiert .NET Framework-Objekte bzw. gibt .NET Framework-Objekte zurück. Diese grundlegende Änderung in der Umgebung bedingt völlig neue Tools und Methoden für die Verwaltung und Konfiguration von Windows.
@@ -33,11 +31,5 @@ Inhalte dieses Themas:
 
 -   [Starten von Windows PowerShell](../setup/Starting-Windows-PowerShell.md)
 
--   [Vorbereiten des Verwendens von WindowsPowerShell](Getting-Ready-to-Use-Windows-PowerShell.md)
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
+-   [Vorbereiten der Verwendung von Windows PowerShell](Getting-Ready-to-Use-Windows-PowerShell.md)
 

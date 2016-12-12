@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 1dd7dade688b56e3ac544c0562ad6bad4a4284a7
-
+ms.openlocfilehash: 6bd3c3d9b9f05f8ea633ee23fdce7608e985abd7
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Erlernen von Windows PowerShell-Namen
+# <a name="learning-windows-powershell-names"></a>Erlernen von Windows PowerShell-Namen
 Das Erlernen der Namen von Befehlen und Befehlsparametern ist bei den meisten Befehlszeilenschnittstellen mit einem hohen Zeitaufwand verbunden. Das Problem ist, dass es nur sehr wenige Muster gibt. Deshalb ist die einzige Lernmöglichkeit das Auswendiglernen sämtlicher Befehle und Parameter, die Sie regelmäßig verwenden müssen.
 
 Wenn Sie mit einem neuen Befehl oder Parameter arbeiten, können Sie meist nicht darauf zurückgreifen, was Sie bereits wissen. Sie müssen einen neuen Namen finden und erlernen. Wenn Sie sich ansehen, wie Schnittstellen ausgehend von einer kleinen Gruppe von Tools mit schrittweisen Ergänzungen der Funktionalität wachsen, ist es nicht schwer zu verstehen, warum die Struktur keinem Standard entspricht. Insbesondere bei Befehlsnamen mag dies logisch klingen, da jeder Befehl ein eigenes Tool ist, doch es gibt eine bessere Möglichkeit, mit Befehlsnamen zurecht zu kommen.
@@ -27,7 +25,7 @@ Obwohl es wichtige technische Unterschiede zwischen einem Dienst und einem Proze
 
 Windows PowerShell nutzt diese Ähnlichkeiten zum Verringern der Anzahl unterschiedlicher Namen, die Sie kennen müssen, um Cmdlets zu verstehen und zu nutzen.
 
-### Cmdlets bestehen aus einer Verb- und einer Nomenkomponente, damit Befehlsnamen einprägsamer sind
+### <a name="cmdlets-use-verb-noun-names-to-reduce-command-memorization"></a>Cmdlets bestehen aus einer Verb- und einer Nomenkomponente, damit Befehlsnamen einprägsamer sind
 Windows PowerShell arbeitet mit einem Benennungssystem nach dem Muster „Verb-Nomen“, bei dem jeder Cmdlet-Name aus einem Standardverb besteht, das mittels Bindestrich mit einem bestimmten Nomen verbunden ist. Windows PowerShell-Verben sind nicht immer englische Verben, drücken aber bestimmte Aktionen in Windows PowerShell aus. Nomen sind sehr ähnlich wie Nomen in einer beliebigen Sprache. Sie beschreiben bestimmte Arten von Objekten, die bei der Systemadministration wichtig sind. Es ist einfach zu veranschaulichen, wie zweiteilige Namen den Lernaufwand verringern, indem wir uns einige Beispiele von Verben und Nomen ansehen.
 
 Nomen sind weniger eingeschränkt, sollten aber stets beschreiben, auf was ein Befehl angewendet wird. Windows PowerShell bietet Befehle wie **Get-Process**, **Stop-Process**, **Get-Service** und **Stop-Service**.
@@ -76,7 +74,7 @@ CommandType     Name                            Definition
 Function        Clear-Host                      $spaceType = [System.Managem...
 ```
 
-### Cmdlets verwenden Standardparameter
+### <a name="cmdlets-use-standard-parameters"></a>Cmdlets verwenden Standardparameter
 Wie bereits erwähnt, weisen Befehle, die bei herkömmlichen Befehlsschnittstellen verwendet werden, in der Regel keine konsistenten Parameternamen auf. Mitunter haben Parameter überhaupt keine Namen. Falls doch, handelt es sich oft um einzelne Zeichen oder abgekürzte Wörter, die schnell eingegeben werden können, aber für neue Benutzern nicht leicht verständlich sind.
 
 Im Gegensatz zu den meisten anderen herkömmlichen Befehlszeilenschnittstellen verarbeitet Windows PowerShell Parameter direkt und nutzt diesen direkten Zugriff auf die Parameter (zusammen mit Anleitungen für Entwickler), um Parameternamen zu standardisieren. Obwohl dies nicht garantiert, dass jedes Cmdlet immer den Standards entspricht, wird dies angeregt.
@@ -86,20 +84,14 @@ Im Gegensatz zu den meisten anderen herkömmlichen Befehlszeilenschnittstellen v
 
 Es folgen einige allgemeine Merkmale der Standardparameternamen und ihre Verwendungen.
 
-#### Der Parameter „Hilfe“ (?)
+#### <a name="the-help-parameter-"></a>Der Parameter „Hilfe“ (?)
 Wenn Sie den Parameter **-?** für ein Cmdlet angeben, wird das Cmdlet nicht ausgeführt. Stattdessen zeigt Windows PowerShell Hilfe für das Cmdlet an.
 
-#### Allgemeine Parameter
+#### <a name="common-parameters"></a>Allgemeine Parameter
 Windows PowerShell verfügt über mehrere Parameter, die als *allgemeine Parameter* bezeichnet werden. Da diese Parameter vom Windows PowerShell-Modul gesteuert werden, weisen Sie bei Implementierung durch ein Cmdlet stets dasselbe Verhalten auf. Die allgemeinen Parameter heißen **WhatIf**, **Confirm**, **Verbose**, **Debug**, **Warn**, **ErrorAction**, **ErrorVariable**, **OutVariable** und **OutBuffer**.
 
-#### Empfohlene Parameter
+#### <a name="suggested-parameters"></a>Empfohlene Parameter
 Die Windows PowerShell-Kern-Cmdlets verwenden standardmäßige Namen für ähnliche Parameter. Wenngleich die Verwendung von Parameternamen nicht erzwungen wird, gibt es zur Förderung der Standardisierung explizite Anleitungen für die Verwendung.
 
 In den Anleitungen wird beispielsweise empfohlen, für einen Parameter, der anhand des Namens auf einen Computer verweist, die Bezeichnung **ComputerName** anstatt „Server“, „Host“, „System“, „Node“ oder ein anderes gängiges alternatives Wort zu wählen. Zu den empfohlenen Parameternamen gehören **Force**, **Exclude**, **Include**, **PassThru**, **Path** und **CaseSensitive**.
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

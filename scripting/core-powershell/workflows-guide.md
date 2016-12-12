@@ -7,41 +7,33 @@ ms.topic: article
 author: jpjofre
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 4f760ef9a62d16ec709f8d25e62c2a03b8d841a5
-ms.openlocfilehash: 4cdd2c913eb33d29e9734c3845994d7e776db2b1
-
+ms.openlocfilehash: 5cace2ee6612b9f827fedd31361d259525eab66d
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# PSWorkflow-Modul
+# <a name="psworkflow-module"></a>PSWorkflow-Modul
 Dieser Abschnitt enthält die Hilfethemen für das **PSWorkflow**-Modul, das Cmdlets enthält, die die Windows PowerShell-Workflowfunktion unterstützen. Das **PSWorkflow**-Modul wird mit Windows PowerShell installiert.
 
-## Hilfethemen
+## <a name="help-topics"></a>Hilfethemen
 [Workflow-Cmdlets](http://go.microsoft.com/fwlink/?LinkID=245865)
 
-[Informationen über_Workflows](https://technet.microsoft.com/en-us/library/f2897bdd-1b9d-4679-8b19-09840bd40a22)
+[about_Workflows](https://technet.microsoft.com/en-us/library/f2897bdd-1b9d-4679-8b19-09840bd40a22)
 
-[Informationen über_WorkflowCommonParameters](https://technet.microsoft.com/en-us/library/119f968e-618e-439c-b76c-cdd17e6df27c)
+[about_WorkflowCommonParameters](https://technet.microsoft.com/en-us/library/119f968e-618e-439c-b76c-cdd17e6df27c)
 
-[Informationen über_ActivityCommonParameters](https://technet.microsoft.com/en-us/library/8ca60664-37c6-4257-a723-e3c41dd10122)
+[about_ActivityCommonParameters](https://technet.microsoft.com/en-us/library/8ca60664-37c6-4257-a723-e3c41dd10122)
 
-[Informationen über_Checkpoint-Workflow](https://technet.microsoft.com/en-us/library/3a309488-1e7a-4807-b83b-dedbeac3ee1c)
+[about_Checkpoint-Workflow](https://technet.microsoft.com/en-us/library/3a309488-1e7a-4807-b83b-dedbeac3ee1c)
 
-[Informationen über_Foreach-Parallel](https://technet.microsoft.com/en-us/library/35704780-dde8-4f5f-9319-5b982148bba7)
+[about_Foreach-Parallel](https://technet.microsoft.com/en-us/library/35704780-dde8-4f5f-9319-5b982148bba7)
 
-[Informationen über_InlineScript](https://technet.microsoft.com/en-us/library/f88ed5a9-02d6-4bf0-a031-61198e1e7291)
+[about_InlineScript](https://technet.microsoft.com/en-us/library/f88ed5a9-02d6-4bf0-a031-61198e1e7291)
 
 [about_Parallel](https://technet.microsoft.com/en-us/library/104559a8-e89a-49f5-8c08-e5bf72768cbf)
 
-[Informationen über_Sequence](https://technet.microsoft.com/en-us/library/bda3f81a-be8a-43be-b0df-12bb7e193b9b)
+[about_Sequence](https://technet.microsoft.com/en-us/library/bda3f81a-be8a-43be-b0df-12bb7e193b9b)
 
-[Informationen über_Suspend-Workflow](https://technet.microsoft.com/en-us/library/be2ded75-1eca-493e-96c1-758f92b5f199)
+[about_Suspend-Workflow](https://technet.microsoft.com/en-us/library/be2ded75-1eca-493e-96c1-758f92b5f199)
 
 [PowerShell-Workflow-Hilfsprogramm-Cmdlets](https://technet.microsoft.com/en-us/library/a5a32019-0d68-4041-935f-1b1cacaf6d3d)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

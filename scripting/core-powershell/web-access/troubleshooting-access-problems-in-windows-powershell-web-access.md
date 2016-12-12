@@ -7,13 +7,11 @@ ms.topic: article
 author: jpjofre
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
-ms.openlocfilehash: 3d2eb84bf706c935e978e78b84e221f9f68042f8
-
+ms.openlocfilehash: e22fa0d8712321e8b0f61b849d46c0c610049c86
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-#  Behandeln von Zugriffsproblemen in Windows PowerShell Web Access
+#  <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Behandeln von Zugriffsproblemen in Windows PowerShell Web Access
 
 Aktualisiert: 24. Juni 2013
 
@@ -69,7 +67,7 @@ In der folgenden Tabelle sind einige allgemeine Probleme aufgeführt, die mögli
 </tr>
 <tr class="odd">
 <td><p>Es kann keine Verbindung mit einem Remotecomputer in einer Arbeitsgruppe hergestellt werden.</p></td>
-<td><p>Wenn der Zielcomputer Mitglied einer Arbeitsgruppe ist, können Sie die folgende Syntax verwenden, um Ihren Benutzernamen anzugeben und sich am Computer anzumelden: &lt;<em>Name der Arbeitsgruppe</em>&gt;\&lt;<em>Benutzername</em>&gt;</p></td>
+<td><p>Wenn der Zielcomputer Mitglied einer Arbeitsgruppe ist, können Sie die folgende Syntax verwenden, um Ihren Benutzernamen anzugeben und sich am Computer anzumelden: &lt;<em>Name der Arbeitsgruppel</em>&gt;\&lt;<em>Benutzername</em>&gt;</p></td>
 </tr>
 <tr class="even">
 <td><p>Die Verwaltungstools des Webservers (IIS) sind nicht verfügbar, obwohl die Rolle installiert wurde.</p></td>
@@ -126,7 +124,7 @@ In der folgenden Tabelle sind einige allgemeine Probleme aufgeführt, die mögli
 </ul></td>
 </tr>
 <tr class="odd">
-<td><p>Eine Sicherheits-ID wird in einer Autorisierungsregel anstelle der folgenden Syntax angezeigt <em>Benutzername</em>/<em>Computername</em> </p></td>
+<td><p>Eine Sicherheits-ID wird in einer Autorisierungsregel anstelle der folgenden Syntax angezeigt: <em>Benutzername</em>/<em>Computername</em> </p></td>
 <td><p>Entweder ist die Regel nicht mehr gültig, oder bei der Active Directory-Domänendienste-Abfrage ist ein Fehler aufgetreten. Eine Autorisierungsregel ist normalerweise nicht in Fällen gültig, in denen der Gatewayserver zuerst einer Arbeitsgruppe angehörte, dann jedoch einer Domäne beigetreten ist.</p></td>
 </tr>
 <tr class="even">
@@ -136,7 +134,8 @@ In der folgenden Tabelle sind einige allgemeine Probleme aufgeführt, die mögli
 </tbody>
 </table>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Weitere Informationen</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">
+Siehe auch</span></a>
 <a href="/en-us/library/dn282395(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
 
 ------------------------------------------------------------------------
@@ -152,7 +151,7 @@ Ja Nein
 
 Zusätzliches Feedback?
 
-<span class="stdr-count"><span class="stdr-charcnt">1500</span> verbleibende Zeichen</span> Senden Diesen Schritt überspringen
+<span class="stdr-count"><span class="stdr-charcnt">1.500</span> verbleibende Zeichen</span> Senden Diesen Schritt überspringen
 
 <span class="stdr-thankyou">Vielen Dank!</span> <span class="stdr-appreciate">Wir schätzen Ihr Feedback.</span>
 
@@ -178,13 +177,13 @@ Erzählen Sie uns mehr
 
 -   [Flash-Newsletter](https://technet.microsoft.com/cc543196.aspx)
 -   |
--   [So erreichen Sie uns:](https://technet.microsoft.com/cc512759.aspx)
+-   [So erreichen Sie uns](https://technet.microsoft.com/cc512759.aspx)
 -   |
 -   [Datenschutzbestimmungen](https://privacy.microsoft.com/privacystatement)
 -   |
 -   [Nutzungsbedingungen](https://technet.microsoft.com/cc300389.aspx)
 -   |
--   [Warenzeichen](https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/)
+-   [Marken](https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/)
 -   |
 
 © 2016 Microsoft
@@ -193,10 +192,4 @@ Erzählen Sie uns mehr
 
 Die Lizenz für Drittanbieterskripts oder Code, die mit dieser Website verlinkt oder über Verweise verbunden sind, wird Ihnen von den Codeeigentümern erteilt, nicht von Microsoft. Die ASP.NET Ajax CDN-Nutzungsbedingungen finden Sie unter http://www.asp.net/ajaxlibrary/CDN.ashx.
 <img src="https://m.webtrends.com/dcsjwb9vb00000c932fd0rjc7_5p3t/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" alt="DCSIMG" id="Img1" width="1" height="1" />
-
-
-
-
-<!--HONumber=Oct16_HO1-->
-
 

@@ -7,17 +7,15 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: c915ebd021ed20209bc491505d45cff2ac89f21d
 ms.openlocfilehash: 8f13964dfbbe1cd827c58232a35d1cbacddeed1b
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# GetConfigurationResultOutput-Methode der MSFT_DSCLocalConfigurationManager-Klasse
+# <a name="getconfigurationresultoutput-method-of-the-msftdsclocalconfigurationmanager-class"></a>GetConfigurationResultOutput-Methode der MSFT_DSCLocalConfigurationManager-Klasse
 
 Ruft die Konfigurations-Agent-Ausgabe im Zusammenhang mit einem bestimmten Auftrag ab.
 
-Syntax
+<a name="syntax"></a>Syntax
 ------
 
 ```mof
@@ -28,7 +26,7 @@ uint32 GetConfigurationResultOutput(
 );
 ```
 
-Parameter
+<a name="parameters"></a>Parameter
 ----------
 
 *jobId* \[in\]  
@@ -40,23 +38,23 @@ Gibt an, dass die Ausgabe eine Fortsetzung eines vorherigen Lesezeichens sein so
 *output* \[out\]  
 Die Ausgabe für den angegebenen Auftrag.
 
-## Rückgabewert
+## <a name="return-value"></a>Rückgabewert
 ------------
 
 Gibt bei Erfolg null zurück, andernfalls einen Fehlercode.
 
-## Hinweise
+## <a name="remarks"></a>Hinweise
 
 Dies ist eine statische Methode.
 
-## Anforderungen
+## <a name="requirements"></a>Anforderungen
 ------------
 >**MOF:** DscCore.mof
 
 >**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 
-## Siehe auch
+## <a name="see-also"></a>Siehe auch
 
 
 [**MSFT_DSCLocalConfigurationManager-Klasse**](msft-dsclocalconfigurationmanager.md)
@@ -65,11 +63,5 @@ Dies ist eine statische Methode.
 
  
 
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

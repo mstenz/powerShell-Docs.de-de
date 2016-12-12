@@ -7,18 +7,16 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: c5ee7f7e7678b60700edb1ab1b66139791ea67c6
-
+ms.openlocfilehash: 3a59f76919c0a63f269ca587d358020825412be4
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Erste Schritte mit Windows PowerShell DSC #
+# <a name="getting-started-with-powershell-desired-state-configuration"></a>Erste Schritte mit Windows PowerShell DSC #
 
 In dieser Anleitung wird erläutert, wie PowerShell DSC-Dokumente erstellt und auf Computer angewendet werden. Grundkenntnisse von PowerShell-Cmdlets, Modulen und Funktionen werden vorausgesetzt. 
 
 
-## Erstellen einer Konfiguration ##
+## <a name="create-a-configuration"></a>Erstellen einer Konfiguration ##
 
 [**Konfigurationen**](https://msdn.microsoft.com/en-us/powershell/dsc/configurations) sind Dokumente, die eine Umgebung beschreiben. Umgebungen bestehen aus **Knoten**, bei denen es sich um virtuelle oder physische Computer handelt. 
 
@@ -41,7 +39,7 @@ configuration MyFirstConfiguration
 
 }
 ```
-## Teile einer Konfiguration ##
+## <a name="parts-of-a-configuration"></a>Teile einer Konfiguration ##
 **Configuration** ist ein Schlüsselwort, das PowerShell 4.0 hinzugefügt wurde. Es bezeichnet eine spezielle Art von PowerShell-Funktion, die von DSC verwendet wird. In diesem Beispiel heißt die Funktion „myFirstConfiguration“. 
 
 Die nächste Zeile ist eine Importanweisung wie zum Importieren eines Moduls. Sie wird weiter unten besprochen.
@@ -71,10 +69,4 @@ Dadurch wird ein PowerShell-Auftrag erstellt, der auf den Knoten in der Konfigur
 ```powershell
 Start-DscConfiguration -Path ./myFirstConfiguration -Wait
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

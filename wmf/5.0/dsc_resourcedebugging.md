@@ -1,6 +1,4 @@
-# Debuggen von DSC-Ressourcenskripts
-WMF 5.0 Produktion Preview unterstützt das Debuggen von DSC-Ressourcenskripts, während sie auf den Zielknoten ausgeführt werden. Weitere Informationen finden Sie unter [Debuggen von DSC-Ressourcen](https://msdn.microsoft.com/powershell/dsc/debugresource).
+# <a name="dsc-resource-script-debugging"></a>Debuggen von DSC-Ressourcenskripts
 
-<!--HONumber=Aug16_HO3-->
-
-
+WMF 5.0 unterstützt das Debuggen von DSC-Ressourcenskripts, während sie auf den Zielknoten ausgeführt werden.
+Weitere Informationen finden Sie unter [Debuggen von DSC-Ressourcen](https://msdn.microsoft.com/powershell/dsc/debugresource).

@@ -1,4 +1,19 @@
-# Logik zum Vorbereiten der Modulabhängigkeiten während des Veröffentlichungsvorgangs
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: PowerShell, Cmdlet, Katalog
+ms.date: 2016-10-14
+contributor: manikb
+title: "Logik zum Vorbereiten der Modulabhängigkeiten während des Veröffentlichungsvorgangs | MSDN"
+ms.technology: powershell
+ms.openlocfilehash: 3d89dddf2fc31a9fdb1a57f21baaf757990989c7
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
+---
+# <a name="logic-for-preparing-the-module-dependencies-during-publish-operation"></a>Logik zum Vorbereiten der Modulabhängigkeiten während des Veröffentlichungsvorgangs
 1.  Module, die als Teil von RequiredModules aufgelistet sind, werden als Abhängigkeiten betrachtet.
 2.  Module, die als Teil des NestedModules-Schlüssels aufgelistet sind, dessen Modulbasis nicht Teil der angegebenen Modulbasis ist, werden als Abhängigkeiten betrachtet.
 
@@ -16,9 +31,5 @@
 
 *Während der Modulinstallation wird die oben dargestellte vorbereitete Liste der Abhängigkeiten für die Installation der Abhängigkeiten verwendet.*
 
-*Stellen Sie sicher, dass die Abhängigkeiten Ihres Moduls unter $env:PSModulePath auf Ihrem System während der Veröffentlichung verfügbar sind.*
-
-
-<!--HONumber=Aug16_HO3-->
-
+*Stellen Sie sicher, dass die Abhängigkeiten Ihres Moduls unter „$env:PSModulePath“ auf Ihrem System während der Veröffentlichung verfügbar sind.*
 

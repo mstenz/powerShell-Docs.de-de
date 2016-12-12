@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 6dc7052d-cc5a-4220-950f-98f963a2b587
-translationtype: Human Translation
-ms.sourcegitcommit: 416d21d2a2fa3d837eba19b1023e4045a124e23c
-ms.openlocfilehash: 9229df48b00c125e04d0f97536697495d0ca01ed
-
+ms.openlocfilehash: 2564ab148fb1de1cb58ee775d2000d321a1d36c1
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Vorbereiten des Verwendens von WindowsPowerShell
+# <a name="getting-ready-to-use-windows-powershell"></a>Vorbereiten des Verwendens von WindowsPowerShell
 Wenn Sie die Windows PowerShell installieren und ausführen, sollten Sie die folgenden Setupoptionen berücksichtigen. Sie können diese Aufgaben zu einem beliebigen Zeitpunkt ausführen.
 
 -   **Installieren von Hilfedateien.** Die Cmdlets, die in Windows PowerShell 3.0 enthalten sind, werden zunächst ohne Hilfedateien bereitgestellt. Sie können aber das Cmdlet [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) verwenden, um die neuesten Hilfedateien auf Ihren Computer herunterzuladen und zu installieren. Wenn diese Dateien installiert sind, können Sie das Cmdlet [Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) verwenden, um sie direkt über die Befehlszeile anzuzeigen. Weitere Informationen hierzu finden Sie unter [about_Updatable_Help](https://technet.microsoft.com/en-us/library/10bba75c-f4ac-4ca1-bbf3-8f34dd521ffe).
@@ -27,13 +25,7 @@ Wenn Sie die Windows PowerShell installieren und ausführen, sollten Sie die fol
 
     HINWEIS: Ist Remoting auf einem Computer unter Windows PowerShell 2.0 aktiviert, ist es auch nach der Installation von Windows Management Framework 3.0 weiterhin aktiviert. Allerdings müssen Sie Remoting unter Windows Server 2008 (nicht Windows Server 2008 R2) nach der Installation von Windows Management Framework 3.0 erneut aktivieren.
 
-## Weitere Informationen
+## <a name="see-also"></a>Weitere Informationen
 - [Installieren von Windows PowerShell](../setup/Installing-Windows-PowerShell.md)
 - [Starten von Windows PowerShell [ps]](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
-
-
-
-
-<!--HONumber=Oct16_HO3-->
-
 

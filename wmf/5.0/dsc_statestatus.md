@@ -1,4 +1,4 @@
-# Vereinheitlichung und Konsistenz von Zustands- und Statusdarstellung
+# <a name="unified-and-consistent-state-and-status-representation"></a>Vereinheitlichung und Konsistenz von Zustands- und Statusdarstellung
 
 Für diese Version sind eine Reihe von Verbesserungen beim automatisch erstellten LCM-Zustand und DSC-Status erfolgt. Dazu gehören vereinheitlichte und konsistente Zustands- und Statusdarstellungen, verwaltbare „datetime“-Eigenschaft von Statusobjekten, die vom Cmdlet „Get-DscConfigurationStatus“ zurückgegeben werden, und eine verbesserte LCM-Statusdetaileigenschaft, die vom Cmdlet „Get-DscLocalConfigurationManager“ zurückgegeben wird.
 
@@ -18,16 +18,15 @@ Die nachfolgende Tabelle veranschaulicht die resultierenden auf Zustand und Stat
 | F**^**                          | PendingConfiguration | Fehler    | $false        | $null                        | F                              |
 | E,F                             | PendingConfiguration | Fehler    | $false        | E                            | F                              |
 | E, S                             | PendingConfiguration | Fehler    | $false        | E                            | F                              |
-| S<sub>1</sub>, F, S<sub>2</sub> | PendingConfiguration | Fehler    | $false        | S<sub>1</sub>, S<sub>2</sub> | F                              |
-| F<sub>1</sub>, S, F<sub>2</sub> | PendingConfiguration | Fehler    | $false        | E                            | F<sub>1</sub>, F<sub>2</sub>   |
+| E<sub>1</sub>, F, E<sub>2</sub> | PendingConfiguration | Fehler    | $false        | E<sub>1</sub>, E<sub>2</sub> | F                              |
+| F<sub>1</sub>, E, F<sub>2</sub> | PendingConfiguration | Fehler    | $false        | E                            | F<sub>1</sub>, F<sub>2</sub>   |
 | E, N                            | PendingReboot        | Erfolg    | $True         | E                            | N                              |
 | F, N                            | PendingReboot        | Fehler    | $True         | $null                        | F, N                           |
 | R, E                            | PendingReboot        | Erfolg    | $True         | $null                        | r                              |
 | N, F                            | PendingReboot        | Erfolg    | $True         | $null                        | r                              |
 
 ^
-S<sub>i</sub>: eine Reihe von Ressourcen, die erfolgreich angewendet wurde F<sub>i</sub>: eine Reihe von Ressourcen, die nicht erfolgreich angewendet hat r: eine Ressource, die einen Neustart erfordert
-\*
+S<sub>i</sub>: eine Reihe von Ressourcen, die erfolgreich angewendet wurde F<sub>i</sub>: eine Reihe von Ressourcen, die nicht erfolgreich angewendet hat r: eine Ressource, die einen Neustart erfordert \*
 
 ```powershell
 $LCMState = (Get-DscLocalConfigurationManager).LCMState
@@ -39,7 +38,7 @@ $ResourcesInDesiredState = (Get-DscConfigurationStatus).ResourcesInDesiredState
 
 $ResourcesNotInDesiredState = (Get-DscConfigurationStatus).ResourcesNotInDesiredState
 ```
-## Verbesserungen beim Cmdlet „Get-DscConfigurationStatus“
+## <a name="enhancement-in-get-dscconfigurationstatus-cmdlet"></a>Verbesserungen beim Cmdlet „Get-DscConfigurationStatus“
 
 Für diese Version wurden einige Verbesserungen am Cmdlet „Get-DscConfigurationStatus“ vorgenommen. Zuvor hatte die „StartDate“-Eigenschaft von Objekten, die vom Cmdlet zurückgegeben wurden, den Typ „String“. Jetzt hat sie den Typ „Datetime“, der komplexe Auswahl- und Filtervorgänge basierend auf den inhärenten Eigenschaften eines „Datetime“-Objekts erleichtert.
 ```powershell
@@ -81,7 +80,7 @@ Success 11/13/2015 11:20:44 AM Initial True
 Success 11/13/2015 11:20:44 AM LocalConfigurationManager False
 ```
 
-## Verbesserungen beim Cmdlet „Get-DscLocalConfigurationManager“
+## <a name="enhancement-in-get-dsclocalconfigurationmanager-cmdlet"></a>Verbesserungen beim Cmdlet „Get-DscLocalConfigurationManager“
 Das neue Feld „LCMStateDetail“ wird dem Objekt hinzugefügt, das vom Cmdlet „Get-DscLocalConfigurationManager“ zurückgegeben wird. Dieses Feld wird aufgefüllt, wenn „LCMState = Busy". Es kann mit dem folgenden Cmdlet abgerufen werden:
 ```powershell
 (Get-DscLocalConfigurationManager).LCMStateDetail
@@ -103,8 +102,3 @@ LCM State: Idle,
 LCM State: Busy, LCM is performing a consistency check.
 LCM State: Idle,
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
-

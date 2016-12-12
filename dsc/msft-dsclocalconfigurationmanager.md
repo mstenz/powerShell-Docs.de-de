@@ -7,19 +7,17 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 26db4a48af3aa3d6a9a2054fb85da8779626f284
 ms.openlocfilehash: b9cb89bb120151df69e3cb26b50c3a0d15c23711
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# MSFT_DSCLocalConfigurationManager-Klasse
+# <a name="msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager-Klasse
 
 Der lokale Konfigurations-Manager, der die Zustände von Konfigurationsdateien steuert und den Konfigurations-Agent verwendet, um die Konfigurationen anzuwenden.
 
 Die folgende Syntax wurde aus MOF-Code (Managed Object Format, verwaltetes Objektformat) vereinfacht und enthält alle geerbten Eigenschaften.
 
-## Syntax
+## <a name="syntax"></a>Syntax
 ------
 
 ``` syntax
@@ -29,14 +27,14 @@ class MSFT_DSCLocalConfigurationManager
 };
 ```
 
-## Mitglieder
+## <a name="members"></a>Mitglieder
 -------
 
 Die **MSFT_DSCLocalConfigurationManager**-Klasse hat folgende Member:
 
 -   [Methoden][]
 
-### Methoden
+### <a name="methods"></a>Methoden
 
 Die **MSFT_DSCLocalConfigurationManager**-Klasse enthält diese Methoden.
 
@@ -66,7 +64,7 @@ Die **MSFT_DSCLocalConfigurationManager**-Klasse enthält diese Methoden.
 
  
 
-## Anforderungen
+## <a name="requirements"></a>Anforderungen
 ------------
 >**MOF:** DscCore.mof
 
@@ -78,11 +76,5 @@ Die **MSFT_DSCLocalConfigurationManager**-Klasse enthält diese Methoden.
 
  
 
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

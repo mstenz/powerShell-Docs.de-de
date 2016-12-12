@@ -8,18 +8,16 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-translationtype: Human Translation
-ms.sourcegitcommit: b59186234a513cf34d2615d90643ee749bd60d3f
-ms.openlocfilehash: c38edc68154ccfa9cd76ebdad5a94ddfb4f902c8
-
+ms.openlocfilehash: 983876d805404857392565d4273e4dc38752a094
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Abrufen von ausführlichen Hilfeinformationen
+# <a name="getting-detailed-help-information"></a>Abrufen von ausführlichen Hilfeinformationen
 Windows PowerShell umfasst ausführliche Hilfethemen, in denen die Konzepte von Windows PowerShell und die Windows PowerShell-Sprache erläutert werden. Außerdem gibt es Hilfethemen für jedes Cmdlet und jeden Anbieter sowie Hilfethemen für viele Funktionen und Skripts.
 
 Sie können diese Hilfethemen über die Eingabeaufforderung anzeigen, oder Sie können die zuletzt aktualisierten Versionen dieser Themen in der Microsoft TechNet Library anzeigen. Viele Programme, von denen Windows PowerShell gehostet wird, z.B. Windows PowerShell Integrated Scripting Environment, stellen zusätzliche Hilfefunktionen bereit, etwa kontextbezogene Hilfe und kompilierte Hilfedateien (CHM).
 
-## Abrufen von Hilfe für Cmdlets
+## <a name="getting-help-for-cmdlets"></a>Abrufen von Hilfe für Cmdlets
 Wenn Sie Hilfe zu Windows PowerShell-Cmdlets abrufen möchten, verwenden Sie das Cmdlet [Get-Help [m2]](https://technet.microsoft.com/en-us/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2). Geben Sie beispielsweise Folgendes ein, um Hilfe für das Cmdlet [Get-ChildItem [m2]](https://technet.microsoft.com/en-us/library/4b270d63-c995-45b8-b5b4-3f8887efbfcc) abzurufen:
 
 ```
@@ -82,7 +80,7 @@ get-help get-childitem -examples
 
 Informationen dazu, wie Sie Hilfethemen für die Cmdlets schreiben, die Sie erstellen, finden Sie im Thema „How to Write Cmdlet Help“ in MSDN.
 
-## Abrufen von konzeptioneller Hilfe
+## <a name="getting-conceptual-help"></a>Abrufen von konzeptioneller Hilfe
 Das Cmdlet „Get-Help“ zeigt auch Informationen zu konzeptionellen Themen in Windows PowerShell an, einschließlich Themen zur Windows PowerShell-Sprache. Konzeptionelle Hilfethemen beginnen mit dem Präfix „about_“, z.B. „about_line_editing“. (Der Name eines konzeptionellen Themas muss in Englisch eingegeben werden, auch in nicht englischsprachigen Versionen von Windows PowerShell.)
 
 Um eine Liste der konzeptionellen Themen anzuzeigen, geben Sie Folgendes ein:
@@ -99,7 +97,7 @@ get-help about_command_syntax
 
 Die Parameter von „Get-Help“, etwa *Detailed*, *Parameter* und *Examples*, wirken sich nicht auf die Anzeige von konzeptionellen Hilfethemen aus.
 
-## Abrufen von Hilfe zu Anbietern
+## <a name="getting-help-about-providers"></a>Abrufen von Hilfe zu Anbietern
 Das Cmdlet „Get-Help“ zeigt Informationen zu Windows PowerShell-Anbietern an. Um Hilfe zu einem Anbieter (Provider) zu abzurufen, geben Sie „Get-Help“ gefolgt vom Anbieternamen ein. Wenn Sie z. B. Hilfe zum Registrierungsanbieter abrufen möchten, geben Sie Folgendes ein:
 
 ```
@@ -114,7 +112,7 @@ get-help -category provider
 
 Die Parameter von „Get-Help“, etwa *Detailed*, *Parameter* und *Examples*, wirken sich nicht auf die Anzeige von Anbieter-Hilfethemen aus.
 
-## Abrufen von Hilfe zu Skripts und Funktionen
+## <a name="getting-help-about-scripts-and-functions"></a>Abrufen von Hilfe zu Skripts und Funktionen
 Viele Skripts und Funktionen in Windows PowerShell haben Hilfethemen. Verwenden Sie das Cmdlet „Get-Help“, um die Hilfethemen für Skripts und Funktionen anzuzeigen.
 
 Wenn Sie die Hilfe für eine Funktion anzeigen möchten, geben Sie „get-help“ und dahinter den Namen der Funktion ein. Soll beispielsweise Hilfe für die Funktion „Disable-PSRemoting“ abgerufen werden, geben Sie Folgendes ein:
@@ -135,7 +133,7 @@ Die Parameter, die für die Anzeige von Cmdlet-Hilfe konzipiert wurden, etwa *De
 
 Informationen über das Schreiben von Hilfethemen für Ihre Funktionen und Skripts finden Sie unter [about_Functions [m2]](https://technet.microsoft.com/en-us/library/61d40692-5300-4de9-a9b5-bae31815e105), [about_Scripts](https://technet.microsoft.com/en-us/library/7dc08334-dcfe-450b-b949-0554855623af) und [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf).
 
-## Abrufen von Hilfe aus dem Internet
+## <a name="getting-help-online"></a>Abrufen von Hilfe aus dem Internet
 Wenn Sie eine Verbindung mit dem Internet haben, ist eine der besten Möglichkeiten zum Abrufen von Hilfe, die Hilfethemen online anzuzeigen. Da online verfügbare Themen einfach zu aktualisieren sind, stellen sie wahrscheinlich die aktuellsten Inhalte bereit.
 
 Um Hilfe aus dem Internet abzurufen, verwenden Sie den *Online*-Parameter des Cmdlets „Get-Help“. Der *Online*-Parameter des Cmdlets „Get-Help“ funktioniert nur für Hilfe zu Cmdlets, Funktionen und Skripts. Der *Online*-Parameter kann nicht mit konzeptionellen Themen (About) oder Anbieter-Hilfethemen verwendet werden. Außerdem funktioniert dieser Parameter, da er optional ist, nicht für alle Hilfethemen zu Cmdlets, Funktionen oder Skripts.
@@ -172,15 +170,9 @@ Online version: http://go.microsoft.com/fwlink/?LinkID=135194
 
 Informationen dazu, wie Sie die Onlineunterstützung für Ihre Hilfethemen bereitstellen, finden Sie unter [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf) sowie unter „How to Write Cmdlet Help“ ([http://go.microsoft.com/fwlink/?LinkID=123415](http://go.microsoft.com/fwlink/?LinkID=123415)) in der MSDN-Bibliothek (Microsoft Developer Network).
 
-## Weitere Informationen
+## <a name="see-also"></a>Weitere Informationen
 - [about_Functions [m2]](https://technet.microsoft.com/en-us/library/61d40692-5300-4de9-a9b5-bae31815e105)
 - [about_Scripts](https://technet.microsoft.com/en-us/library/7dc08334-dcfe-450b-b949-0554855623af)
 - [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)
 - [Get-Help [m2]](https://technet.microsoft.com/en-us/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2)
-
-
-
-
-<!--HONumber=Oct16_HO3-->
-
 

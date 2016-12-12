@@ -1,4 +1,19 @@
-# Entfernen von Elementen aus der Liste
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: PowerShell, Cmdlet, Katalog
+ms.date: 2016-10-14
+contributor: manikb
+title: Entfernen von Elementen aus der Liste | MSDN
+ms.technology: powershell
+ms.openlocfilehash: ede07cce7b65b795f48d16cb2862880f84c3eda2
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
+---
+# <a name="unlisting-items"></a>Entfernen von Elementen aus der Liste
 
 **Weshalb ist keine Option zum Entfernen von Elementen aus dem PowerShell-Katalog verfügbar?**
 
@@ -24,10 +39,5 @@ In folgenden Fällen ist das Löschen eines Elements zulässig:
 - Das Element enthält sensible Daten.
 
 Um eine Anforderung zum Löschen eines Elements an die PowerShell-Katalogadministratoren zu senden, wählen Sie auf der Seite mit den Elementdetails die Option „Support kontaktieren“.  
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

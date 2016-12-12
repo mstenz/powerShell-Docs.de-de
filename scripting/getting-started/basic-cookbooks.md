@@ -7,22 +7,20 @@ ms.topic: article
 author: jpjofre
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: e1c94c281a39b3ae026bbeea9811ecc71b9cdb1c
-
+ms.openlocfilehash: 0a5460dd8b3d94745c1350d4c88ac4ba2420eb03
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-#  [Grundlegende Cookbooks-Referenz](cookbooks/basic-cookbooks-reference.md)
+#  <a name="basic-cookbooks-referencecookbooksbasic-cookbooks-referencemd"></a>[Grundlegende Cookbooks-Referenz](cookbooks/basic-cookbooks-reference.md)
 
 -  [Ändern des Computerstatus](cookbooks/Changing-Computer-State.md)
 -  [Erfassen von Informationen über Computer](cookbooks/Collecting-Information-About-Computers.md)
 -  [Kompatibilitätsaliase](cookbooks/Appendix-1---Compatibility-Aliases.md)
 -  [Erstellen einer benutzerdefinierten PowerShell-Verknüpfung](cookbooks/Appendix-2---Creating-a-Custom-PowerShell-Shortcut.md)
--  [Erstellen von .NET- und COM-Objekten  New-Object ](cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md)
+-  [Erstellen von .NET- und COM-Objekten (New-Object)](cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md)
 -  [Erstellen eines benutzerdefinierten Eingabefelds](cookbooks/Creating-a-Custom-Input-Box.md)
 -  [Erstellen einer grafischen Datumsauswahl](cookbooks/Creating-a-Graphical-Date-Picker.md)
--  [Abrufen von WMI-Objekten  Get-WmiObject ](cookbooks/Getting-WMI-Objects--Get-WmiObject-.md)
+-  [Abrufen von WMI-Objekten (Get-WmiObject)](cookbooks/Getting-WMI-Objects--Get-WmiObject-.md)
 -  [Verwalten des aktuellen Speicherorts](cookbooks/Managing-Current-Location.md)
 -  [Verwalten von Prozessen mit „Process“-Cmdlets](cookbooks/Managing-Processes-with-Process-Cmdlets.md)
 -  [Verwalten von Diensten](cookbooks/Managing-Services.md)
@@ -30,28 +28,22 @@ ms.openlocfilehash: e1c94c281a39b3ae026bbeea9811ecc71b9cdb1c
 -  [Direktes Verarbeiten von Elementen](cookbooks/Manipulating-Items-Directly.md)
 -  [Listenfelder für Mehrfachauswahl](cookbooks/Multiple-selection-List-Boxes.md)
 -  [Andere nützliche Skriptobjekte](cookbooks/Other-Useful-Scripting-Objects.md)
--  [Ausführen von Netzwerkaufgaben](cookbooks/Performing-Networking-Tasks.md)
+-  [Durchführen von Netzwerkaufgaben](cookbooks/Performing-Networking-Tasks.md)
 -  [PowerShellGet-Modul](cookbooks/PowerShellGet-Module.md)
--  [Umleiten von Daten mit Out   Cmdlets](cookbooks/Redirecting-Data-with-Out---Cmdlets.md)
--  [Entfernen von Objekten aus der Pipeline  Where-Object ](cookbooks/Removing-Objects-from-the-Pipeline--Where-Object-.md)
--  [Wiederholen einer Aufgabe für mehrere Objekte  ForEach-Object ](cookbooks/Repeating-a-Task-for-Multiple-Objects--ForEach-Object-.md)
--  [Auswählen von Elementen aus einem Listenfeld](cookbooks/Selecting-Items-from-a-List-Box.md)
--  [Auswählen von Objektteilen  Select-Object ](cookbooks/Selecting-Parts-of-Objects--Select-Object-.md)
+-  [Umleiten von Daten mit Out-Cmdlets](cookbooks/Redirecting-Data-with-Out---Cmdlets.md)
+-  [Entfernen von Objekten aus der Pipeline (Where-Object)](cookbooks/Removing-Objects-from-the-Pipeline--Where-Object-.md)
+-  [Wiederholen einer Aufgabe für mehrere Objekte (ForEach-Object)](cookbooks/Repeating-a-Task-for-Multiple-Objects--ForEach-Object-.md)
+-  [Auswählen von Elementen in einem Listenfeld](cookbooks/Selecting-Items-from-a-List-Box.md)
+-  [Auswählen von Objektteilen (Select-Object)](cookbooks/Selecting-Parts-of-Objects--Select-Object-.md)
 -  [Sortieren von Objekten](cookbooks/Sorting-Objects.md)
 -  [Verwenden von „Format“-Befehlen zum Ändern der Ausgabeanzeige](cookbooks/Using-Format-Commands-to-Change-Output-View.md)
 -  [Verwenden von statischen Klassen und Methoden](cookbooks/Using-Static-Classes-and-Methods.md)
--  [Anzeigen einer Objektstruktur  Get-Member ](cookbooks/Viewing-Object-Structure--Get-Member-.md)
+-  [Anzeigen einer Objektstruktur (Get-Member)](cookbooks/Viewing-Object-Structure--Get-Member-.md)
 -  [Arbeiten mit Dateien und Ordnern](cookbooks/Working-with-Files-and-Folders.md)
 -  [Arbeiten mit Dateien, Ordnern und Registrierungsschlüsseln](cookbooks/Working-With-Files-Folders-and-Registry-Keys.md)
 -  [Arbeiten mit Objekten](cookbooks/Working-with-Objects.md)
 -  [Arbeiten mit Druckern](cookbooks/Working-with-Printers.md)
--  [Arbeiten mit Registrierungseinträge](cookbooks/Working-with-Registry-Entries.md)
+-  [Arbeiten mit Registrierungseinträgen](cookbooks/Working-with-Registry-Entries.md)
 -  [Arbeiten mit Registrierungsschlüsseln](cookbooks/Working-with-Registry-Keys.md)
 -  [Arbeiten mit Softwareinstallationen](cookbooks/Working-with-Software-Installations.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

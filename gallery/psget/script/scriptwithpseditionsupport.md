@@ -1,4 +1,19 @@
-# Skript mit kompatiblen PowerShell-Editionen
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: PowerShell, Cmdlet, Katalog
+ms.date: 2016-10-14
+contributor: manikb
+title: Skript mit kompatiblen PowerShell-Editionen | MSDN
+ms.technology: powershell
+ms.openlocfilehash: aac38b9a5b133b0b7982e7748e1483a0774599a2
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
+---
+# <a name="script-with-compatible-powershell-editions"></a>Skript mit kompatiblen PowerShell-Editionen
 Ab Version 5.1 steht PowerShell in verschiedenen Editionen zur Verfügung, die unterschiedliche Featuregruppen und Plattformkompatibilität bieten.
 
 - **Desktop-Edition:** Diese Edition basiert auf .NET Framework und bietet Kompatibilität mit Skripts und Modulen für Versionen von PowerShell, die unter Vollversionen von Windows wie Server Core und Windows Desktop ausgeführt werden.
@@ -50,12 +65,7 @@ Find-Script -Tag PSEditon_Core
 
 ```
 
-## Weitere Details
-### [Module mit PSEditions](../module/modulewithpseditionsupport.md)
-### [Unterstützung von PowerShell-Editionen im PowerShell-Katalog](../../psgallery/psgallery_pseditions.md)
-
-
-
-<!--HONumber=Aug16_HO3-->
-
+## <a name="more-details"></a>Weitere Details
+### <a name="modules-with-pseditionsmodulemodulewithpseditionsupportmd"></a>[Module mit PowerShell-Editionen](../module/modulewithpseditionsupport.md)
+### <a name="pseditions-support-on-powershellgallerypsgallerypsgallerypseditionsmd"></a>[Unterstützung von PowerShell-Editionen im PowerShell-Katalog](../../psgallery/psgallery_pseditions.md)
 

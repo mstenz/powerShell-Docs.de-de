@@ -7,18 +7,15 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: c915ebd021ed20209bc491505d45cff2ac89f21d
 ms.openlocfilehash: 95b141472d9428cee71b6970fc1f496704211c0b
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-
-# SendConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse
+# <a name="sendconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>SendConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse
 
 Sendet das Konfigurationsdokument an den verwalteten Knoten und speichert es als ausstehende Änderung.
 
-Syntax
+<a name="syntax"></a>Syntax
 ------
 
 ```mof
@@ -28,7 +25,7 @@ uint32 SendConfiguration(
 );
 ```
 
-Parameter
+<a name="parameters"></a>Parameter
 ----------
 
 *ConfigurationData* \[in\]  
@@ -37,23 +34,23 @@ Die Umgebungsdaten für die Konfiguration.
 *force* \[in\]  
 **true**, um das Beenden der Konfiguration zu erzwingen.
 
-## Rückgabewert
+## <a name="return-value"></a>Rückgabewert
 ------------
 
 Gibt bei Erfolg null zurück, andernfalls einen Fehlercode.
 
-## Hinweise
+## <a name="remarks"></a>Hinweise
 
 Dies ist eine statische Methode.
 
-## Anforderungen
+## <a name="requirements"></a>Anforderungen
 ------------
 >**MOF:** DscCore.mof
 
 >**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 
-## Siehe auch
+## <a name="see-also"></a>Siehe auch
 
 
 [**MSFT_DSCLocalConfigurationManager-Klasse**](msft-dsclocalconfigurationmanager.md)
@@ -63,11 +60,5 @@ Dies ist eine statische Methode.
 
  
 
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

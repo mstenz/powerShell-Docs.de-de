@@ -8,16 +8,14 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: c1cb722c-41e9-4baa-be83-59b4653222e9
-translationtype: Human Translation
-ms.sourcegitcommit: f891988cce205b5729d0da6c4ce23da5fbd53b7f
-ms.openlocfilehash: e3899a183cb1c8652adff7d01ffc09efde7f49b4
-
+ms.openlocfilehash: 25c6dcbc2c79cb62d26aad60c7e3277ef039564f
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Erstellen einer grafischen Datumsauswahl
+# <a name="creating-a-graphical-date-picker"></a>Erstellen einer grafischen Datumsauswahl
 Verwenden Sie Windows PowerShell 3.0 und neuere Versionen, um ein Formular mit einem grafischen Kalendersteuerelement zu erstellen, mit dem Benutzer einen Tag des Monats auswählen können.
 
-## Erstellen eines grafischen Steuerelements für die Datumsauswahl
+## <a name="create-a-graphical-date-picker-control"></a>Erstellen eines grafischen Steuerelements für die Datumsauswahl
 Kopieren und fügen Sie Folgendes in Windows PowerShell ISE ein, und speichern Sie es als Windows PowerShell-Skript (.ps1).
 
 ```
@@ -72,7 +70,7 @@ Nachdem Sie eine Instanz der Formularklasse erstellt haben, ordnen Sie drei Eige
 
 -   **Text.** Dies wird der Titel des Fensters.
 
--   **Größe.** Dies ist die Größe des Formulars, in Pixeln. Dieses Skript erstellt ein Formular, das 243 Pixel breit und 230 Pixel hoch ist.
+-   **Size.** Dies ist die Größe des Formulars, in Pixeln. Dieses Skript erstellt ein Formular, das 243 Pixel breit und 230 Pixel hoch ist.
 
 -   **StartingPosition.** Für diese optionale Eigenschaft ist im Skript oben **CenterScreen** festgelegt. Wenn Sie diese Eigenschaft nicht hinzufügen, wählt Windows eine Stelle aus, wenn das Formular geöffnet wird. Durch Festlegen der **StartingPosition** auf **CenterScreen** wird das Formular automatisch bei jedem Laden in der Mitte des Bildschirms angezeigt.
 
@@ -137,14 +135,8 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-## Weitere Informationen
+## <a name="see-also"></a>Weitere Informationen
 - [Hey Scripting Guy: Warum funktionieren diese PowerShell GUI-Beispiele nicht?](http://go.microsoft.com/fwlink/?LinkId=506644)
 - [GitHub: Dave Wyatt's WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
 - [Windows PowerShell-Tipp der Woche: Erstellen einer grafischen Datumsauswahl](http://technet.microsoft.com/library/ff730942.aspx)
-
-
-
-
-<!--HONumber=Oct16_HO3-->
-
 

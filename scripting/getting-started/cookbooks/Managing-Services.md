@@ -8,16 +8,14 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 7a410e4d-514b-4813-ba0c-0d8cef88df31
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 66c2a8c8afab49f16e8ef7d0b5ba3a2a65c92490
-
+ms.openlocfilehash: 9d9566328cac84ae6b450d9dedeb75a37d6dcba5
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Verwalten von Diensten
+# <a name="managing-services"></a>Verwalten von Diensten
 Es gibt acht dienstbezogene Kern-Cmdlets („Service“-Cmdlets), die für eine Vielzahl von Dienstaufgaben konzipiert sind. Hier geht es nur um das Auflisten von Diensten und das Ändern des Ausführungsstatus für Dienste, Sie können aber eine Liste der „Service“-Cmdlets abrufen, indem Sie **Get-Help \&#42;-Service** verwenden, und Sie finden Informationen zu jedem „Service“-Cmdlet, indem Sie **Get-Help <Cmdlet-Name>** verwenden, z.B. **Get-Help New-Service**.
 
-## Abrufen von Diensten
+## <a name="getting-services"></a>Abrufen von Diensten
 Sie können die Dienste auf einem lokalen oder Remotecomputer abrufen, indem Sie das Cmdlet **Get-Service** verwenden. Wie bei **Get-Process** werden alle Dienste zurückgegeben, wenn Sie den Befehl **Get-Service** ohne Parameter verwenden. Sie können nach Name filtern, und Sie können sogar ein Sternchen als Platzhalterzeichen verwenden:
 
 ```
@@ -53,7 +51,7 @@ Sie können den „ComputerName“-Parameter des „Get-Service“-Cmdlets verwe
 Get-Service -ComputerName Server01
 ```
 
-## Abrufen von erforderlichen und abhängigen Diensten
+## <a name="getting-required-and-dependent-services"></a>Abrufen von erforderlichen und abhängigen Diensten
 Das „Get-Service“-Cmdlet hat zwei Parameter, die bei der Verwaltung von Diensten sehr hilfreich sind. Der „DependentServices“-Parameter bewirkt, dass Dienste abgerufen werden, die vom angegebenen Dienst abhängen. Der „RequiredServices“-Parameter bewirkt, dass Dienste abgerufen, von denen der angegebene Dienst abhängt.
 
 Diese Parameter bewirken lediglich, dass die Werte der Eigenschaften „DependentServices und „ServicesDependedOn“ (Alias = „RequiredServices“) des von „Get-Service“ zurückgegebenen „System.ServiceProcess.ServiceController“-Objekts angezeigt werden, aber sie vereinfachen Befehle und machen das Abrufen dieser Informationen viel einfacher.
@@ -88,7 +86,7 @@ Sie können sogar alle Dienste abrufen, für die es Abhängigkeiten gibt. Im fol
 Get-Service -Name * | where {$_.RequiredServices -or $_.DependentServices} | Format-Table -Property Status, Name, RequiredServices, DependentServices -auto
 ```
 
-## Beenden, Starten, Anhalten und Neustarten von Diensten
+## <a name="stopping-starting-suspending-and-restarting-services"></a>Beenden, Starten, Anhalten und Neustarten von Diensten
 Die „Service“-Cmdlets die alle haben dieselbe allgemeine Form. Dienste können als allgemeine Namen oder Anzeigenamen angegeben werden, und es können Listen sowie Platzhalter als Werte angegeben werden. Um den Druckspooler zu beenden, verwenden Sie folgenden Befehl:
 
 ```
@@ -138,22 +136,16 @@ Diese „Service“-Cmdlets haben keinen „ComputerName“-Parameter, Sie könn
 Invoke-Command -ComputerName Server01 {Restart-Service Spooler}
 ```
 
-## Festlegen von Diensteigenschaften
+## <a name="setting-service-properties"></a>Festlegen von Diensteigenschaften
 Das Cmdlet „Set-Service“ ändert die Eigenschaften eines Diensts auf einem lokalen Computer oder Remotecomputer. Weil der Dienststatus eine Eigenschaft ist, können Sie dieses Cmdlet verwenden, um einen Dienst zu starten, zu beenden und anzuhalten. Das Cmdlet „Set-Service“ hat außerdem einen „StartupType“-Parameter, über den Sie den Starttyp des Diensts ändern können.
 
 Wenn Sie „Set-Service“ unter Windows Vista und höheren Versionen von Windows verwenden möchten, öffnen Sie Windows PowerShell mit der Option „Als Administrator ausführen“.
 
 Weitere Informationen hierzu finden Sie unter [Set-Service [m2]](https://technet.microsoft.com/en-us/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3).
 
-## Weitere Informationen
-[Get-Service [m2]](https://technet.microsoft.com/en-us/library/0a09cb22-0a1c-4a79-9851-4e53075f9cf6)
-[Set-Service [m2]](https://technet.microsoft.com/en-us/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
-[Restart-Service [m2]](https://technet.microsoft.com/en-us/library/45acf50d-2277-4523-baf7-ce7ced977d0f)
-[Suspend-Service [m2]](https://technet.microsoft.com/en-us/library/c8492b87-0e21-4faf-8054-3c83c2ec2826)
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
+## <a name="see-also"></a>Weitere Informationen
+- [Get-Service [m2]](https://technet.microsoft.com/en-us/library/0a09cb22-0a1c-4a79-9851-4e53075f9cf6)
+- [Set-Service [m2]](https://technet.microsoft.com/en-us/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
+- [Restart-Service [m2]](https://technet.microsoft.com/en-us/library/45acf50d-2277-4523-baf7-ce7ced977d0f)
+- [Suspend-Service [m2]](https://technet.microsoft.com/en-us/library/c8492b87-0e21-4faf-8054-3c83c2ec2826)
 

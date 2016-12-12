@@ -7,20 +7,18 @@ ms.topic: article
 author: jpjofre
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 053a4fd734b1e86c5f8ca22c8197ce4e80b6fce6
-
+ms.openlocfilehash: 52103ee815f97068efc2c4cf666589e9d240bf92
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# ISE-Handbuch
+# <a name="ise-guide"></a>ISE-Handbuch
 
 -  [Erstellen einer PowerShell-Registerkarte in Windows PowerShell ISE](ise/How-to-Create-a-PowerShell-Tab-in-Windows-PowerShell-ISE.md)
--  [So wird's gemacht: Debuggen von Skripts in Windows PowerShell ISE](ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md)
--  [So wird's gemacht: Verwenden von Profilen in Windows PowerShell ISE](ise/How-to-Use-Profiles-in-Windows-PowerShell-ISE.md)
--  [Verwenden von Vervollständigung mit der TAB-TASTE im Skriptbereich und Konsolenbereich](ise/How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md)
+-  [Debuggen von Skripts in Windows PowerShell ISE](ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md)
+-  [Verwenden von Profilen in Windows PowerShell ISE](ise/How-to-Use-Profiles-in-Windows-PowerShell-ISE.md)
+-  [Gewusst wie: Verwenden von Vervollständigung mit der TAB-TASTE im Skriptbereich und Konsolenbereich](ise/How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md)
 -  [Verwenden des Konsolenbereichs in der Windows PowerShell ISE](ise/How-to-Use-the-Console-Pane-in-the-Windows-PowerShell-ISE.md)
--  [Schreiben und Ausführen von Skripts in der Windows PowerShell ISE](ise/How-to-Write-and-Run-Scripts-in-the-Windows-PowerShell-ISE.md)
+-  [Gewusst wie: Schreiben und Ausführen von Skripts in der Windows PowerShell ISE](ise/How-to-Write-and-Run-Scripts-in-the-Windows-PowerShell-ISE.md)
 -  [Einführung in die Windows PowerShell ISE](ise/Introducing-the-Windows-PowerShell-ISE.md)
 -  [ISE-Modul](ise/ISE-Module.md)
 -  [Tastenkombinationen für Windows PowerShell ISE](ise/Keyboard-Shortcuts-for-the-Windows-PowerShell-ISE.md)
@@ -42,10 +40,4 @@ ms.openlocfilehash: 053a4fd734b1e86c5f8ca22c8197ce4e80b6fce6
 -  [Das Windows PowerShell ISE-Skriptobjektmodell](ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 -  [Verwenden der Windows PowerShell ISE](ise/Using-the-Windows-PowerShell-ISE.md)
 -  [Referenz zum Windows PowerShell ISE-Objektmodell](ise/Windows-PowerShell-ISE-Object-Model-Reference.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

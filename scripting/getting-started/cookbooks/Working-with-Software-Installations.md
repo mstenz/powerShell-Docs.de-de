@@ -8,19 +8,17 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 51a12fe9-95f6-4ffc-81a5-4fa72a5bada9
-translationtype: Human Translation
-ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
-ms.openlocfilehash: 4334a1ff099072c2287af299d65caed3f16032fe
-
+ms.openlocfilehash: 27b9d9c71412a06a8890b56163d0e6acb7ecd1f4
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Arbeiten mit Softwareinstallationen
+# <a name="working-with-software-installations"></a>Arbeiten mit Softwareinstallationen
 Auf Anwendungen, die für die Verwendung von Windows Installer entwickelt wurden, kann über die WMI-Klasse **Win32_Product** zugegriffen werden, aber nicht alle heute verfügbaren Anwendungen verwenden den Windows Installer. Da Windows Installer eine breite Palette von Standardverfahren für die Arbeit mit installierbaren Anwendungen bereitstellt, konzentrieren wir uns in erster Linie auf diese Anwendungen. Anwendungen, die alternative Setuproutinen verwenden, werden im Allgemeinen nicht von Windows Installer verwaltet. Spezifische Verfahren für die Arbeit mit diesen Anwendungen hängen von der Installationssoftware und Entscheidungen des Anwendungsentwicklers ab.
 
 > [!NOTE]
 > Anwendungen, die durch Kopieren der Anwendungsdateien auf den Computer installiert werden, können in der Regel nicht mit den hier beschriebenen Verfahren verwaltet werden. Sie können diese Anwendungen als Dateien und Ordner mit den Verfahren verwalten, die im Abschnitt „Arbeiten mit Dateien und Ordnern“ erläutert werden.
 
-### Auflisten von Windows Installer-Anwendungen
+### <a name="listing-windows-installer-applications"></a>Auflisten von Windows Installer-Anwendungen
 Verwenden Sie die folgende einfache WMI-Abfrage zum Auflisten von Anwendungen, die mithilfe von Windows Installer auf einem lokalen System oder Remotesystem installiert wurden:
 
 ```
@@ -85,7 +83,7 @@ Get-WmiObject -Class Win32_Product -ComputerName .  | Format-Wide -Column 1
 
 Obwohl es nun mehrere Möglichkeiten zum Anzeigen der Anwendungen gibt, die mit Windows Installer installiert wurden, wurden keine anderen Anwendungen berücksichtigt. Da die meisten Standardanwendungen ihr Deinstallationsprogramm bei Windows registrieren, können Sie mit diesen lokal arbeiten, indem Sie sie in der Windows-Registrierung suchen.
 
-### Auflisten aller deinstallierbaren Anwendungen
+### <a name="listing-all-uninstallable-applications"></a>Auflisten aller deinstallierbaren Anwendungen
 Es gibt zwar keine sichere Methode, alle Anwendungen auf einem System zu finden, aber es ist möglich, alle Programme mit Auflistungen zu finden, die im Dialogfeld „Software“ angezeigt werden. „Software“ sucht diese Anwendungen im folgenden Registrierungsschlüssel:
 
 **HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall**.
@@ -141,7 +139,7 @@ SKC  VC Name                           Property
   0  24 {E38C00D0-A68B-4318-A8A6-F7... {AuthorizedCDFPrefix, Comments, Conta...
 ```
 
-### Installieren von Anwendungen
+### <a name="installing-applications"></a>Installieren von Anwendungen
 Sie können die Klasse **Win32_Product** verwenden, um Windows Installer-Pakete remote oder lokal zu installieren.
 
 > [!NOTE]
@@ -155,7 +153,7 @@ Verwenden Sie bei der Remoteinstallation einen UNC-Netzwerkpfad (Universal Namin
 
 Anwendungen, die keine Windows Installer-Technologie verwenden, verfügen möglicherweise über anwendungsspezifische Methoden für die automatisierte Bereitstellung. Um zu bestimmen, ob es eine Methode für die automatische Bereitstellung gibt, überprüfen Sie die Dokumentation für die Anwendung, oder wenden Sie sich an den Support des Anwendungsherstellers. In einigen Fällen verfügt die Installationssoftware möglicherweise über Verfahren zur Automatisierung, auch wenn der Hersteller der Anwendung diese nicht speziell für die Automatisierung der Installation vorgesehen hat.
 
-### Entfernen von Anwendungen
+### <a name="removing-applications"></a>Entfernen von Anwendungen
 Das Entfernen eines Windows Installer-Pakets mithilfe von Windows PowerShell funktioniert ungefähr so wie die Installation eines Pakets. Im Folgenden ist ein Beispiel aufgeführt, in dem das zu deinstallierende Paket basierend auf seinem Namen ausgewählt wird. In einigen Fällen ist es möglicherweise einfacher, mit **IdentifyingNumber** zu filtern:
 
 ```
@@ -176,16 +174,10 @@ Get-ChildItem -Path Uninstall: | Where-Object -FilterScript { $_.GetValue("Displ
 
 Diese Zeichenfolgen sind jedoch möglicherweise direkt über die Windows PowerShell-Eingabeaufforderung nur mit einigen Änderungen verwendbar.
 
-### Aktualisieren von Windows Installer-Anwendungen
+### <a name="upgrading-windows-installer-applications"></a>Aktualisieren von Windows Installer-Anwendungen
 Um eine Anwendung zu aktualisieren, müssen Sie den Namen der Anwendung und den Pfad zum Aktualisierungspaket der Anwendung kennen. Mit diesen Informationen können Sie eine Anwendung mit einem einzigen Windows PowerShell-Befehl aktualisieren:
 
 ```
 (Get-WmiObject -Class Win32_Product -ComputerName . -Filter "Name='OldAppName'").Upgrade(\\AppSrv\dsp\OldAppUpgrade.msi)
 ```
-
-
-
-
-<!--HONumber=Oct16_HO1-->
-
 

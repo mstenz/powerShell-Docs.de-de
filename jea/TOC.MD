@@ -13,8 +13,3 @@
 ###  [Blacklists](on-blacklisting.md)  
 ###  [Überlegungen zum Einschränken von Befehlen](considerations-when-limiting-commands.md)  
 ###  [Häufige Fehler bei Rollenfunktionen](common-role-capability-pitfalls.md)
-
-
-<!--HONumber=Aug16_HO3-->
-
-

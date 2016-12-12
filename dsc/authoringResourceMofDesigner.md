@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: be2141330dda803a22fdce6d65a1e379adf14fed
-
+ms.openlocfilehash: 4478806e46c9c6cdc314b1ecadd8554d6558e8f5
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Verwenden des Ressourcen-Designers
+# <a name="using-the-resource-designer-tool"></a>Verwenden des Ressourcen-Designers
 
 > Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
@@ -23,7 +21,7 @@ Verwenden Sie das Cmdlet [Install-Module](https://technet.microsoft.com/en-us/li
 
 >**Hinweis**: **Install-Module** ist im Modul **PowerShellGet** enthalten, das Bestandteil von PowerShell 5.0 ist. Das Modul **PowerShellGet** für PowerShell 3.0 und 4.0 können Sie unter [PowerShell-Module „PackageManagement“ – Vorschau](https://www.microsoft.com/en-us/download/details.aspx?id=49186) herunterladen.
 
-## Erstellen von Ressourceneigenschaften
+## <a name="creating-resource-properties"></a>Erstellen von Ressourceneigenschaften
 Zunächst werden Eigenschaften festgelegt, die die Ressource verfügbar machen soll. In diesem Beispiel wird ein Active Directory-Benutzer mit den folgenden Eigenschaften definiert.
  
 Parameternamen und Beschreibungen
@@ -41,7 +39,7 @@ PS C:\> $DomainCredential = New-xDscResourceProperty –Name DomainCredential-Ty
 PS C:\> $Password = New-xDscResourceProperty –Name Password -Type PSCredential -Attribute Write
 ```
 
-## Erstellen der Ressource
+## <a name="create-the-resource"></a>Erstellen der Ressource
 
 Nachdem die Ressourceneigenschaften nun erstellt wurden, kann das Cmdlet **New-xDscResource** aufgerufen werden, um die Ressource zu erstellen. Vom Cmdlet **New-xDscResource** wird die Liste der Eigenschaften als Parameter verwendet. Es verwendet auch der Pfad, unter dem das Modul erstellt werden soll, den Namen der neuen Ressource und den Namen des Moduls, in dem sie enthalten ist. Der folgende PowerShell-Befehl erstellt die Ressource:
 
@@ -164,7 +162,7 @@ $result
 Export-ModuleMember -Function *-TargetResource
 ```
 
-## Aktualisieren der Ressource
+## <a name="updating-the-resource"></a>Aktualisieren der Ressource
 
 Wenn Sie die Parameterliste der Ressource erweitern oder ändern müssen, können Sie das Cmdlet **Update-xDscResource** aufrufen. Das Cmdlet aktualisiert die Ressource mit einer neuen Parameterliste. Wenn Sie bereits Logik zu Ihrem Ressourcenskript hinzugefügt haben, bleibt diese davon unberührt.
 
@@ -175,21 +173,15 @@ PS C:\> $lastLogon = New-xDscResourceProperty –Name LastLogon –Type Hashtabl
 PS C:\> Update-xDscResource –Name ‘Demo_ADUser’ –Property $UserName, $Ensure, $DomainCredential, $Password, $lastLogon -Force
 ```
 
-## Testen eines Ressourcenschemas
+## <a name="testing-a-resource-schema"></a>Testen eines Ressourcenschemas
 
 Der Ressourcen-Designer stellt ein weiteres Cmdlet zur Verfügung, mit dem Sie die Gültigkeit eines MOF-Schemas testen können, das Sie manuell geschrieben haben. Rufen Sie das Cmdlet **Test-xDscSchema**auf, und übergeben Sie dabei den Pfad eines MOF-Ressourcenschemas als Parameter. Das Cmdlet gibt alle Fehler im Schema aus.
 
-### Weitere Informationen
+### <a name="see-also"></a>Weitere Informationen
 
-#### Konzepte
+#### <a name="concepts"></a>Konzepte
 [Erstellen von benutzerdefinierten Windows PowerShell DSC-Ressourcen](authoringResource.md)
 
-#### Weitere Ressourcen
+#### <a name="other-resources"></a>Weitere Ressourcen
 [xDscResourceDesigner-Modul](https://powershellgallery.com/packages/xDscResourceDesigner)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -1,7 +1,7 @@
-# Format-Hex
+# <a name="format-hex"></a>Format-Hex
 Mit **Format-Hex-** können Sie Text- und Binärdaten im Hexadezimalformat anzeigen. Im folgenden Beispiel sehen Sie die hexadezimale Darstellung einer Zeichenfolge sowie den binären Inhalt eines Word-Dokuments.
 
-PS C:\\&gt; "hello world" | Format-Hex
+PS C:\\&gt; „hello world“ | Format-Hex
 
 0 1 2 3 4 5 6 7 8 9 A B C D E F
 
@@ -26,8 +26,3 @@ Path: C:\\Users\\slee\\Downloads\\DSP1009\_1 1 1.doc
 00000050 DC 01 00 00 DD 01 00 00 DE 01 00 00 E3 01 00 00 Ü...Ý...Þ...ã...
 
 00000060 4F 02 00 00 D8 02 00 00 79 03 00 00 FF FF FF FF O...Ø...y.......
-
-
-<!--HONumber=Aug16_HO3-->
-
-

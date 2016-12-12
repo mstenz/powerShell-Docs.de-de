@@ -1,4 +1,4 @@
-# Installationsanweisungen
+# <a name="installation-instructions"></a>Installationsanweisungen
 
 Laden Sie das richtige Paket für Ihr Betriebssystem und Ihre Architektur herunter:
 
@@ -32,17 +32,12 @@ Laden Sie das richtige Paket für Ihr Betriebssystem und Ihre Architektur herunt
     - Führen Sie auf Computern mit Windows 8.1 x86 **Win8.1-KB3134758-x86.msu /quiet** aus.
     - Führen Sie auf Computern mit Windows 7 SP1 x86 **Win7-KB3134760-x86.msu /quiet** aus.
 
-**Zusätzliche Installationshinweise für Windows Server 2008 SP1 und Windows 7 SP1:**
+**Zusätzliche Installationshinweise für Windows Server 2008 SP1 und Windows 7 SP1**
 
 Überprüfen Sie, ob die folgenden Voraussetzungen erfüllt sind:
 - Das neueste Service Pack ist installiert.
 - [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) ist installiert.
 
 *WinRM-Abhängigkeit:* Windows PowerShell DSC (Desired State Configuration) hängt von WinRM ab. Unter Windows Server 2008 R2 und Windows 7 ist WinRM nicht standardmäßig aktiviert. Führen Sie zum Aktivieren von WinRM in einer Windows PowerShell-Sitzung mit erhöhten Benutzerrechten **Set-WSManQuickConfig** aus.
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 
