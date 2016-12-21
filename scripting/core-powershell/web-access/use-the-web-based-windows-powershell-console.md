@@ -1,14 +1,15 @@
 ---
-title: Verwendung der webbasierten Windows PowerShell-Konsole
-ms.date: 2016-05-11
-keywords: powershell,cmdlet
 description: 
+manager: carmonm
 ms.topic: article
 author: jpjofre
-manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: a62e258812960ce59f050e59d2ef3acc296663a2
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+keywords: powershell,cmdlet
+ms.date: 2016-12-12
+title: Verwendung der webbasierten Windows PowerShell-Konsole
+ms.technology: powershell
+ms.openlocfilehash: ea530d346ec36000da331b287f51d8f732947629
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 #  <a name="use-the-web-based-windows-powershell-console"></a>Verwendung der webbasierten Windows PowerShell-Konsole
@@ -48,9 +49,9 @@ Windows PowerShell Web Access unterstützt die folgenden Internetbrowser. Obwohl
 
 -   Google Chrome™ 17.0.963.56m für Windows
 
--   Apple Safari® 5.1.2 für Windows
+-   Apple Safari® 5.1.2 für Windows
 
--   Apple Safari 5.1.2 für Mac OS®
+-   Apple Safari 5.1.2 für Mac OS®
 
 ###
 
@@ -117,7 +118,7 @@ Ihr Windows PowerShell Web Access-Administrator sollten Ihnen eine URL bereitste
 
 3.  Der Abschnitt **Optionale Verbindungseinstellungen** bezieht sich auf die Autorisierungsanforderungen des zu verwaltenden Remotecomputers. Weitere Informationen zu den Parametern, die den optionalen Verbindungseinstellungen entsprechen, finden Sie in der [Hilfe zum Cmdlet „Enter-PSSession“](https://technet.microsoft.com/library/dd315384.aspx).
 
-    In der Regel sind die Anmeldeinformationen zum Passieren des Windows PowerShell Web Access-Gateways dieselben, die vom zu verwaltenden Remotecomputer erkannt werden. Wenn Sie jedoch andere Anmeldeinformationen zur Verwaltung des in Schritt 2 angegebenen Remotecomputers verwenden möchten, erweitern Sie den Abschnitt **Optionale Verbindungseinstellungen**, und geben Sie die abweichenden Anmeldeinformationen an. Fahren Sie ansonsten mit Schritt 6 fort.
+    In der Regel sind die Anmeldeinformationen zum Passieren des Windows PowerShell Web Access-Gateways dieselben, die vom zu verwaltenden Remotecomputer erkannt werden. Wenn Sie jedoch andere Anmeldeinformationen zur Verwaltung des in Schritt 2 angegebenen Remotecomputers verwenden möchten, erweitern Sie den Abschnitt **Optionale Verbindungseinstellungen**, und geben Sie die abweichenden Anmeldeinformationen an. Fahren Sie ansonsten mit Schritt 6 fort.
 
 4.  Wenn der Windows PowerShell Web Access-Administrator eine benutzerdefinierte Konfiguration für Windows PowerShell Web Access-Benutzer erstellt hat, geben Sie den Namen der Sitzungskonfiguration in das Feld **Konfigurationsname** ein. Weitere Informationen zu Sitzungskonfigurationen finden Sie unter [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx) auf der Microsoft-Website.
 
@@ -142,9 +143,9 @@ Sie werden in den folgenden Situationen von einer webbasierten Windows PowerShel
 
 -   Wenn Sie sich zur Verwaltung eines anderen Remotecomputers in derselben Browsersitzung oder einer neuen Registerkarte desselben Browsers anmelden. (Dies gilt nicht, wenn Windows Server 2012 R2 auf dem Gatewayserver ausgeführt wird. Windows PowerShell Web Access unter Windows Server 2012 R2 lässt mehrere Benutzersitzungen auf neuen Registerkarten in derselben Browsersitzung zu.) Weitere Informationen dazu, wie Sie mehr als eine aktive Sitzung auf demselben Computer starten, finden Sie unter „Aufbauen von Verbindungen zu mehreren Zielcomputern gleichzeitig“ im Abschnitt [Einschränkungen der webbasierten Konsole](#BKMK_limits) dieses Artikels.
 
--   Wenn Sie mehr als 20 Minuten inaktiv sind. Der Gatewayadministrator kann den Timeoutzeitraum für Inaktivität anpassen. Weitere Informationen finden Sie unter [Sitzungsverwaltung](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx#BKMK_sesmgmt).
+-   Wenn Sie mehr als 20 Minuten inaktiv sind. Der Gatewayadministrator kann den Timeoutzeitraum für Inaktivität anpassen. Weitere Informationen finden Sie unter [Sitzungsverwaltung](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx#BKMK_sesmgmt).
 
-    -   Wenn Sie aufgrund von Netzwerkfehlern oder anderen ungeplanten Herunterfahrvorgängen oder Ausfällen in der webbasierten Konsole von Sitzungen getrennt werden und nicht weil Sie die Sitzungen selbst geschlossen haben, wird die Windows PowerShell Web Access-Sitzung weiter ausgeführt. Die Verbindung mit dem Zielcomputer bleibt bestehen, bis das Timeout auf dem Client überschritten wird. In der Standardeinstellung beträgt dieses Zeitlimit 20 Minuten, was vom Gatewayadministrator angepasst werden kann. Die Sitzung wird entweder standardmäßig nach 20 Minuten oder nach der vom Gatewayadministrator festgelegten Timeoutperiode getrennt, je nachdem, was kürzer ist.
+    -   Wenn Sie aufgrund von Netzwerkfehlern oder anderen ungeplanten Herunterfahrvorgängen oder Ausfällen in der webbasierten Konsole von Sitzungen getrennt werden und nicht weil Sie die Sitzungen selbst geschlossen haben, wird die Windows PowerShell Web Access-Sitzung weiter ausgeführt. Die Verbindung mit dem Zielcomputer bleibt bestehen, bis das Timeout auf dem Client überschritten wird. In der Standardeinstellung beträgt dieses Zeitlimit 20 Minuten, was vom Gatewayadministrator angepasst werden kann. Die Sitzung wird entweder standardmäßig nach 20 Minuten oder nach der vom Gatewayadministrator festgelegten Timeoutperiode getrennt, je nachdem, was kürzer ist.
 
         Wenn der Gatewayserver unter Windows Server 2012 R2 ausgeführt wird, ermöglicht Windows PowerShell Web Access Benutzern das erneute Verbinden mit gespeicherten Sitzungen zu einem späteren Zeitpunkt. Die Benutzer können jedoch gespeicherte Sitzungen erst anzeigen bzw. die Verbindung erneut herstellen, nachdem das vom Gatewayadministrator festgelegte Timeout abgelaufen ist.
 

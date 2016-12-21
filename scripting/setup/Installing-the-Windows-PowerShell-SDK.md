@@ -1,15 +1,16 @@
 ---
-title: Installieren das Windows PowerShell SDK
-ms.date: 2016-05-11
-keywords: powershell,cmdlet
 description: 
+manager: carmonm
 ms.topic: article
 author: jpjofre
-manager: dongill
 ms.prod: powershell
+keywords: powershell,cmdlet
+ms.date: 2016-12-12
+title: Installieren das Windows PowerShell SDK
+ms.technology: powershell
 ms.assetid: c3636b45-61aa-4720-85f0-58312c4fc8f9
-ms.openlocfilehash: 8df8b9bb74eba5921263ad9d802dcece41261f9a
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 97c7c509363aa7849dd243271527efbb1a98865f
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 # <a name="installing-the-windows-powershell-sdk"></a>Installieren das Windows PowerShell SDK
@@ -269,3 +270,4 @@ Die Anbieterklasse in diesem Beispiel wird von der [NavigationCmdletProvider](ht
 Zeigt, wie Sie Inhaltsmethoden überschreiben, um Aufrufe der Cmdlets „Clear-Content“, „Get-Content“ und „Set-Content“ zu unterstützen.
 Diese Methoden sollten implementiert werden, wenn der Benutzer den Inhalt der Elemente im Datenspeicher verwaltet muss.
 Die Anbieterklasse in diesem Beispiel wird von der [NavigationCmdletProvider](https://technet.microsoft.com/library/system.management.automation.provider.navigationcmdletprovider.aspx)-Klasse abgeleitet und implementiert die [IContentCmdletProvider](https://technet.microsoft.com/library/system.management.automation.provider.icontentcmdletprovider.aspx)-Schnittstelle.
+

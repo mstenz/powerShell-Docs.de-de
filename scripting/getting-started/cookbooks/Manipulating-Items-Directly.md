@@ -1,19 +1,20 @@
 ---
-title: Direktes Verarbeiten von Elementen
-ms.date: 2016-05-11
-keywords: powershell,cmdlet
 description: 
+manager: carmonm
 ms.topic: article
 author: jpjofre
-manager: dongill
 ms.prod: powershell
+keywords: powershell,cmdlet
+ms.date: 2016-12-12
+title: Direktes Verarbeiten von Elementen
+ms.technology: powershell
 ms.assetid: 8cbd4867-917d-41ea-9ff0-b8e765509735
-ms.openlocfilehash: f462f195e1128cd67be8073fe0755b5158fee970
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: e99ea91b6e17ab898815480d615b23cbd29061d5
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 # <a name="manipulating-items-directly"></a>Direktes Verarbeiten von Elementen
-Die Elemente, die Sie in Windows PowerShell-Laufwerken sehen, z. B. Dateien und Ordner auf den Dateisystemlaufwerken, sowie die Registrierungsschlüssel in den Windows PowerShell-Registrierungslaufwerken werden in Windows PowerShell als *Elemente* (Items) bezeichnet. Die Cmdlets zum Arbeiten mit diesen Elementen haben das Substantiv **Item** in ihren Namen.
+Die Elemente, die Sie in Windows PowerShell-Laufwerken sehen, z. B. Dateien und Ordner auf den Dateisystemlaufwerken, sowie die Registrierungsschlüssel in den Windows PowerShell-Registrierungslaufwerken werden in Windows PowerShell als *Elemente* (Items) bezeichnet. Die Cmdlets zum Arbeiten mit diesen Elementen haben das Substantiv **Item** in ihren Namen.
 
 Die Ausgabe des Befehls **Get-Command -Noun Item** zeigt, dass es neun Windows PowerShell-Item-Cmdlets gibt.
 
@@ -48,7 +49,7 @@ Mode                LastWriteTime     Length Name
 d----        2006-05-18  11:29 AM            New.Directory
 ```
 
-Um eine Datei zu erstellen, ändern Sie den Wert des **ItemType**-Parameters in „file“. Möchten Sie z. B. eine Datei namens „file1.txt“ im Verzeichnis „New.Directory“ erstellen, geben Sie Folgendes ein:
+Um eine Datei zu erstellen, ändern Sie den Wert des **ItemType**-Parameters in „file“. Möchten Sie z. B. eine Datei namens „file1.txt“ im Verzeichnis „New.Directory“ erstellen, geben Sie Folgendes ein:
 
 ```
 PS> New-Item -Path C:\temp\New.Directory\file1.txt -ItemType file

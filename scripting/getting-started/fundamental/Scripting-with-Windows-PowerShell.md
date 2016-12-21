@@ -1,20 +1,21 @@
 ---
-title: Verwalten mit Windows PowerShell
-ms.date: 2016-05-11
-keywords: powershell,cmdlet
 description: 
+manager: carmonm
 ms.topic: article
 author: jpjofre
-manager: dongill
 ms.prod: powershell
+keywords: powershell,cmdlet
+ms.date: 2016-12-12
+title: Verwalten mit Windows PowerShell
+ms.technology: powershell
 ms.assetid: c425d27a-bb41-4947-8d73-ba5480bc8ee0
-ms.openlocfilehash: f7c9164e09e253e8138820708ba8864841ddfff2
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 31a13a72688b89de4f0f29b81790b515988ecbf0
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 # <a name="scripting-with-windows-powershell"></a>Verwalten mit Windows PowerShell
 
-Windows PowerShell® ist eine taskbasierte Befehlszeilenshell und Skriptsprache, die speziell für die Systemverwaltung entwickelt wurde. Windows PowerShell basiert auf .NET Framework und unterstützt IT-Experten und erfahrene Benutzer beim Steuern und Automatisieren der Verwaltung von Windows-Betriebssystemen sowie von Anwendungen, die unter Windows ausgeführt werden.
+Windows PowerShell® ist eine taskbasierte Befehlszeilenshell und Skriptsprache, die speziell für die Systemverwaltung entwickelt wurde. Windows PowerShell basiert auf .NET Framework und unterstützt IT-Experten und erfahrene Benutzer beim Steuern und Automatisieren der Verwaltung von Windows-Betriebssystemen sowie von Anwendungen, die unter Windows ausgeführt werden.
 
 Mit Windows PowerShell-Befehlen, so genannten *Cmdlets*, können Sie die Computer des Unternehmens über die Befehlszeile verwalten. Mithilfe von Windows PowerShell- *Anbietern* können Sie auf Datenspeicher wie die Registrierung und den Zertifikatspeicher genauso einfach zugreifen wie auf das Dateisystem. Darüber hinaus verfügt Windows PowerShell über einen umfangreichen Ausdrucksparser und eine vollständig entwickelte Skriptsprache.
 

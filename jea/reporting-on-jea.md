@@ -1,59 +1,15 @@
 ---
-description: 
-manager: dongill
+manager: carmonm
 ms.topic: article
-author: jpjofre
+author: rpsqrd
+ms.author: ryanpu
 ms.prod: powershell
 keywords: powershell,cmdlet,jea
-ms.date: 2016-06-22
-title: Berichterstellung zu JEA
+ms.date: 2016-12-05
+title: Just Enough Administration
 ms.technology: powershell
-ms.openlocfilehash: 3e7bd2755281f491bba8a905df018fb2e1cac6ff
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+redirect_url: https://msdn.microsoft.com/powershell/jea/audit-and-report
+ms.openlocfilehash: 10d9cf10652603fa6e5a6d50eef117269c7d2f9d
+ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
 translationtype: HT
 ---
-# <a name="reporting-on-jea"></a>Berichterstellung zu JEA
-Da JEA es nicht privilegierten Benutzern erlaubt, in einem privilegierten Kontext zu arbeiten, sind Protokollierung und Überprüfung extrem wichtig.
-In diesem Abschnitt geht es um die Tools, die Sie für die Protokollierung und Berichterstellung verwenden können.
-
-## <a name="reporting-on-jea-actions"></a>Berichterstellung zu JEA-Aktionen
-### <a name="over-the-shoulder-transcription"></a>Mitschnitt einer Aufzeichnung
-Eine der schnellsten Möglichkeiten, sich einen Überblick über die Aktivitäten in einer PowerShell-Sitzung zu verschaffen, ist es, der Person, die Daten eingibt, über die Schulter zu schauen.
-So sehen Sie die eingegebenen Befehle, die Ausgabe dieser Befehle, und alles ist gut.
-Vielleicht ist auch nicht alles gut, aber zumindest wissen Sie dann Bescheid.
-PowerShell-Aufzeichnungen bieten eine ähnliche Ansicht nach Abschluss der Aktivitäten.
-
-Wenn Sie das Feld „TranscriptDirectory“ in Ihrer Sitzungskonfiguration verwenden, zeichnet PowerShell automatisch alle Aktionen in einer bestimmten Sitzung auf.
-Sie finden die Aufzeichnungen Ihrer Sitzungen in diesem Dokument: $env:ProgramData\JEAConfiguration\Transcripts.
-
-Wie Sie sehen, werden Informationen über den verbundenen Benutzer, den ausführenden Benutzer, die in dieser Sitzung ausgeführten Befehle und vieles mehr aufgezeichnet.
-Weitere Informationen über PowerShell-Aufzeichnungen finden Sie in diesem [Blogbeitrag](http://blogs.msdn.com/b/powershell/archive/2015/06/09/powershell-the-blue-team.aspx).
-
-### <a name="powershell-event-logs"></a>PowerShell-Ereignisprotokolle
-Wenn die Modulprotokollierung aktiviert ist, werden alle PowerShell-Aktionen auch in regulären Windows-Ereignisprotokollen aufgezeichnet.
-Diese sind im Vergleich zu Aufzeichnungen etwas schwieriger zu lesen, aber die Detailgenauigkeit kann sehr hilfreich sein.
-
-Im Betriebsprotokoll „PowerShell“ wird unter der Ereignis-ID 4104 jeder aufgerufene Befehl aufgezeichnet, wenn die Modulprotokollierung aktiviert ist.
-
-### <a name="other-event-logs"></a>Weitere Ereignisprotokolle
-Im Gegensatz zu PowerShell-Protokollen und -Aufzeichnungen erfassen andere Protokollierungsmechanismen nicht den „verbundenen Benutzer“.
-Sie müssen PowerShell-Protokolle und andere Protokolle korrelieren, um durchgeführte Aktionen zu vergleichen.
-
-Im Betriebsprotokoll „Windows Remote Management“ werden unter der Ereignis-ID 193 die SID und der Name des Benutzers aufgezeichnet, der die Verbindung herstellt. Zur Unterstützung der Korrelation wird auch die SID des virtuellen ausführenden Kontos aufgezeichnet.
-Sie haben sicherlich auch bemerkt, dass der Name des virtuellen ausführenden Kontos am Ende die Domäne und den Benutzernamen des Benutzers enthält, der die Verbindung herstellt.
-
-## <a name="reporting-on-jea-configuration"></a>Berichterstellung für die JEA-Konfiguration
-### <a name="get-pssessionconfiguration"></a>Get-PSSessionConfiguration
-Um einen exakten Bericht über den Status Ihrer Umgebung zu erhalten, müssen Sie wissen, wie viele JEA-Endpunkte Sie auf Ihrem Computer eingerichtet haben.
-`Get-PSSessionConfiguration` ruft diese Informationen ab.
-
-### <a name="get-pssessioncapability"></a>Get-PSSessionCapability
-Die manuelle Berichterstellung zu den Funktionen eines bestimmten Benutzers über einen JEA-Endpunkt kann ziemlich komplex sein.
-Sie müssen wahrscheinlich mehrere verschiedene Rollenfunktionen überprüfen.
-Glücklicherweise macht das Cmdlet „Get-PSSessionCapability“ genau das.
-
-Führen Sie zum Testen den folgenden Befehl von einer PowerShell-Administratoreingabeaufforderung aus:
-```PowerShell
-Get-PSSessionCapability -Username 'CONTOSO\OperatorUser' -ConfigurationName JEADemo
-```
-

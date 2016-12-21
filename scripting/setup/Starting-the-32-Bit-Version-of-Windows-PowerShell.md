@@ -1,15 +1,16 @@
 ---
-title: Starten der 32-Bit-Version von Windows PowerShell
-ms.date: 2016-05-11
-keywords: powershell,cmdlet
 description: 
+manager: carmonm
 ms.topic: article
 author: jpjofre
-manager: dongill
 ms.prod: powershell
+keywords: powershell,cmdlet
+ms.date: 2016-12-12
+title: Starten der 32-Bit-Version von Windows PowerShell
+ms.technology: powershell
 ms.assetid: 12b31890-2609-4a76-8c24-0ebe78084f50
-ms.openlocfilehash: e6e9d951b2dd10637bbf2c6afda774cd9ba32a8d
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 691818e242600234564479aa97255567760139e0
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 # <a name="starting-the-32-bit-version-of-windows-powershell"></a>Starten der 32-Bit-Version von Windows PowerShell
@@ -58,3 +59,4 @@ Wählen Sie eines der folgenden Verfahren, um eine 32-Bit-Version von Windows Po
 -   Geben Sie auf dem Bildschirm **Start** oder dem Desktop **PowerShell (x86)** ein, und klicken Sie dann auf **Windows PowerShell (x86)**.
 
 -   Geben Sie über die Befehlszeile Folgendes ein: `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
+

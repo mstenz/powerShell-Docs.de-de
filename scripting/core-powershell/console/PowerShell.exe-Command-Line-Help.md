@@ -1,15 +1,16 @@
 ---
-title: "Befehlszeilenhilfe für „PowerShell.exe“"
-ms.date: 2016-05-11
-keywords: powershell,cmdlet
 description: 
+manager: carmonm
 ms.topic: article
 author: jpjofre
-manager: dongill
 ms.prod: powershell
+keywords: powershell,cmdlet
+ms.date: 2016-12-12
+title: "Befehlszeilenhilfe für „PowerShell.exe“"
+ms.technology: powershell
 ms.assetid: 1ab7b93b-6785-42c6-a1c9-35ff686a958f
-ms.openlocfilehash: f2a682671bb39de943fac47488e2a1c651423b53
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 609682294c344129f96afd0241116bb19154d19e
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 # <a name="powershellexe-command-line-help"></a>Befehlszeilenhilfe für „PowerShell.exe“
@@ -55,7 +56,7 @@ Die Switch-Parameter eines Skripts werden in der Regel entweder einbezogen oder 
 
 In seltenen Fällen müssen Sie für einen Switch-Parameter einen booleschen Wert angeben. Zum Angeben eines booleschen Werts für einen Switch-Parameter im Wert des **File**-Parameters setzen Sie den Namen und Wert des Parameters in geschweifte Klammern. Siehe das folgende Beispiel: `-File .\Get-Script.ps1 {-All:$False}`
 
-### <a name="-inputformat-text-xml"></a>-InputFormat {Text | XML}
+### <a name="-inputformat-text--xml"></a>-InputFormat {Text | XML}
 Beschreibt das Format der Daten, die an Windows PowerShell übermittelt werden. Gültige Werte sind "Text" (Textzeichenfolgen) oder "XML" (serialisiertes CLIXML-Format).
 
 ### <a name="-mta"></a>-Mta
@@ -73,7 +74,7 @@ Zeigt dem Benutzer keine interaktive Eingabeaufforderung.
 ### <a name="-noprofile"></a>-NoProfile
 Das Windows PowerShell-Profil wird nicht geladen.
 
-### <a name="-outputformat-text-xml"></a>-OutputFormat {Text | XML}
+### <a name="-outputformat-text--xml"></a>-OutputFormat {Text | XML}
 Bestimmt, wie die Ausgabe von Windows PowerShell formatiert ist. Gültige Werte sind "Text" (Textzeichenfolgen) oder "XML" (serialisiertes CLIXML-Format).
 
 ### <a name="-psconsolefile-filepath"></a>-PSConsoleFile <FilePath>

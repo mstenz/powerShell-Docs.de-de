@@ -1,14 +1,15 @@
 ---
-title: Autorisierungsregeln und Sicherheitsfeatures von Windows PowerShell Web Access
-ms.date: 2016-05-11
-keywords: powershell,cmdlet
 description: 
+manager: carmonm
 ms.topic: article
 author: jpjofre
-manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: 984323731b2cd0c4f3c26fe100e4b680082881f5
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+keywords: powershell,cmdlet
+ms.date: 2016-12-12
+title: Autorisierungsregeln und Sicherheitsfeatures von Windows PowerShell Web Access
+ms.technology: powershell
+ms.openlocfilehash: f2ed4355536ed92048dde66617d36d36958fd75f
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Autorisierungsregeln und Sicherheitsfeatures von Windows PowerShell Web Access
@@ -361,7 +362,7 @@ Wenn Ihr Windows PowerShell Web Access-Gateway unter Windows Server 2012 R2 ausg
 
 Windows PowerShell Web Access-Sitzungstimeout In Windows PowerShell Web Access unter Windows Server 2012 wird nach 15-minütiger Inaktivität angemeldeten Benutzern eine Timeoutmeldung angezeigt. Wenn der Benutzer nach dem Anzeigen der Timeoutmeldung nicht innerhalb von fünf Minuten reagiert, wird die Sitzung beendet, und der Benutzer wird abgemeldet. Sie können die Zeitspanne für den Sitzungstimeout in den Websiteeinstellungen im IIS-Manager ändern.
 
-In Windows PowerShell Web Access unter Windows Server 2012 R2 wird standardmäßig nach 20-minütiger Inaktivität ein Sitzungstimeout angezeigt. Wenn Benutzer aufgrund von Netzwerkfehlern oder anderen ungeplanten Herunterfahrvorgängen oder Ausfällen von Sitzungen in der webbasierten Konsole getrennt werden, werden die Windows PowerShell Web Access-Sitzungen weiter ausgeführt und bleiben mit den Zielcomputern verbunden, bis die Timeoutperiode auf dem Client überschritten wird. Dies geschieht nicht, wenn Benutzer die Sitzungen selbst beenden. Die Sitzung wird entweder standardmäßig nach 20 Minuten oder nach der vom Gatewayadministrator festgelegten Timeoutperiode getrennt, je nachdem, was kürzer ist.
+In Windows PowerShell Web Access unter Windows Server 2012 R2 wird standardmäßig nach 20-minütiger Inaktivität ein Sitzungstimeout angezeigt. Wenn Benutzer aufgrund von Netzwerkfehlern oder anderen ungeplanten Herunterfahrvorgängen oder Ausfällen von Sitzungen in der webbasierten Konsole getrennt werden, werden die Windows PowerShell Web Access-Sitzungen weiter ausgeführt und bleiben mit den Zielcomputern verbunden, bis die Timeoutperiode auf dem Client überschritten wird. Dies geschieht nicht, wenn Benutzer die Sitzungen selbst beenden. Die Sitzung wird entweder standardmäßig nach 20 Minuten oder nach der vom Gatewayadministrator festgelegten Timeoutperiode getrennt, je nachdem, was kürzer ist.
 
 Wenn der Gatewayserver unter Windows Server 2012 R2 ausgeführt wird, ermöglicht Windows PowerShell Web Access Benutzern das erneute Verbinden mit gespeicherten Sitzungen zu einem späteren Zeitpunkt. Wenn Sitzungen jedoch aufgrund von Netzwerkfehlern, ungeplanten Herunterfahrvorgängen oder Ausfällen getrennt werden, können Benutzer gespeicherte Sitzungen erst sehen bzw. sich wieder mit diesen verbinden, nachdem die vom Gatewayadministrator festgelegte Timeoutperiode abgelaufen ist.
 
