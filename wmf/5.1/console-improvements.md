@@ -1,5 +1,5 @@
 ---
-title: Verbesserungen an der Konsole in WMF 5.1 (Vorschau)
+title: Verbesserungen an der Konsole in WMF 5.1
 ms.date: 2016-07-13
 keywords: PowerShell, DSC, WMF
 description: 
@@ -8,15 +8,15 @@ author: keithb
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-ms.openlocfilehash: 574fec8e1f4948021988d8489532d7325277fed6
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: d3f38b7f5d77717e0bec46132a3a521c2d4c0d12
+ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
 translationtype: HT
 ---
-# <a name="console-improvements-in-wmf-51-preview"></a>Verbesserungen an der Konsole in WMF 5.1 (Vorschau)#
+# <a name="console-improvements-in-wmf-51"></a>Verbesserungen an der Konsole in WMF 5.1#
 
 ## <a name="powershell-console-improvements"></a>Verbesserungen an der PowerShell-Konsole
 
-Die folgenden Änderungen wurden in WMF 5.1 an powershell.exe vorgenommen, um die Konsolenumgebung zu verbessern:
+Die folgenden Änderungen wurden in WMF 5.1 an powershell.exe vorgenommen, um die Konsolenumgebung zu verbessern:
 
 ###<a name="vt100-support"></a>Unterstützung von VT100
 
@@ -49,6 +49,6 @@ Beachten Sie, dass VT100-Escapesequenzen erst ab dem Anniversary-Update für Win
 
 In früheren Versionen war das Starten von PowerShell mit `powershell -File -` erforderlich, wenn stdin umgeleitet wurde und Sie Befehle interaktiv eingeben wollten.
 
-Bei WMF 5.1 ist diese schwer zu findende Option nicht mehr erforderlich. Sie können PowerShell ohne Optionen starten, z. B. mit `powershell`.
+Bei WMF 5.1 ist diese schwer zu findende Option nicht mehr erforderlich. Sie können PowerShell ohne Optionen starten, z. B. mit `powershell`.
 
 Beachten Sie, dass PSReadline derzeit umgeleitetes stdin nicht unterstützt und dass die integrierte Bearbeitungsumgebung für die Befehlszeile mit umgeleitetem stdin sehr eingeschränkt ist. Beispielsweise funktionieren die Pfeiltasten nicht. In einer künftigen Version von PSReadline soll dieses Problem behoben werden.   

@@ -1,15 +1,16 @@
 ---
-title: Windows PowerShell Integrated Scripting Environment  ISE
-ms.date: 2016-05-11
-keywords: powershell,cmdlet
 description: 
+manager: carmonm
 ms.topic: article
 author: jpjofre
-manager: dongill
 ms.prod: powershell
+keywords: powershell,cmdlet
+ms.date: 2016-12-12
+title: Windows PowerShell Integrated Scripting Environment (ISE)
+ms.technology: powershell
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
-ms.openlocfilehash: 411d7cce5c93d274ab1f10d77f5efba2154c74a8
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: ce6f084ee1f7e8f086ef5c3a6202cbf7070431db
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 # <a name="windows-powershell-integrated-scripting-environment-ise"></a>Windows PowerShell Integrated Scripting Environment (ISE)
@@ -43,7 +44,7 @@ Die **Liste „Zuletzt verwendet“** ist jetzt Teil des Menüs „Datei öffnen
 
 -   **Gliederungsansicht**. Sie können Abschnitte in Ihrem Code auf- und zuklappen, indem Sie am linken Rand auf das Plus- oder Minuszeichen klicken. Dies erleichtert das Auffinden des gesuchten Codes in einem langen Skript.
 
--   **Textbearbeitung per Drag & Drop**. Sie können einen Textblock auswählen und ihn an eine andere Stelle ziehen, um ihn zu verschieben. Wenn Sie die STRG-Taste gedrückt halten, während Sie den markierten Text ziehen, wird der Text kopiert und nicht verschoben.
+-   **Textbearbeitung per Drag & Drop**. Sie können einen Textblock auswählen und ihn an eine andere Stelle ziehen, um ihn zu verschieben. Wenn Sie die STRG-Taste gedrückt halten, während Sie den markierten Text ziehen, wird der Text kopiert und nicht verschoben.
 
 -   **Anzeige von Analysefehlern**. Windows PowerShell untersucht Ihr Skript während der Eingabe. Wenn einen Fehler erkannt wird, wird eine rote Wellenlinie unter den fehlerhaften Code angezeigt. Wenn Sie auf den angezeigten Fehler zeigen, informiert eine QuickInfo über das gefundene Problem.
 
@@ -56,8 +57,8 @@ Die **Liste „Zuletzt verwendet“** ist jetzt Teil des Menüs „Datei öffnen
 ### <a name="added-in-powershell-20-windows-server-2008-r2-windows-7"></a>In PowerShell 2.0 hinzugefügt (Windows Server 2008 R2, Windows 7)
 Die ISE wurde mit PowerShell 2.0 eingeführt.
 
-## <a name="requirements-for-running-the-windows-powershell-ise"></a>Anforderungen für die Ausführung der Windows PowerShell ISE
-Die ISE ist auf allen Computern verfügbar, auf denen Windows PowerShell 2.0 oder höher ausgeführt werden kann. Alle Versionen von Windows und Windows Server enthalten eine Version von Windows PowerShell und der ISE. Durch die Installation von Windows Management Framework können Sie jedoch ein Upgrade auf die neueste verfügbare Version vornehmen. Führen Sie diese Suche durch, um die neueste verfügbare Version zu finden: [Downloads](http://www.microsoft.com/en-us/search/DownloadResults.aspx?q=%22windows%20management%20framework%22%20PowerShell&sortby=Relevancy~Descending). Beachten Sie, dass alle Einträge mit der Bezeichnung „Preview“ zu einer Vorabversion des Codes gehören und die Features nicht vollständig sind.
+## <a name="requirements-for-running-the-windows-powershell-ise"></a>Anforderungen für die Ausführung der Windows PowerShell ISE
+Die ISE ist auf allen Computern verfügbar, auf denen Windows PowerShell 2.0 oder höher ausgeführt werden kann. Alle Versionen von Windows und Windows Server enthalten eine Version von Windows PowerShell und der ISE. Durch die Installation von Windows Management Framework können Sie jedoch ein Upgrade auf die neueste verfügbare Version vornehmen. Führen Sie diese Suche durch, um die neueste verfügbare Version zu finden: [Downloads](http://www.microsoft.com/en-us/search/DownloadResults.aspx?q=%22windows%20management%20framework%22%20PowerShell&sortby=Relevancy~Descending). Beachten Sie, dass alle Einträge mit der Bezeichnung „Preview“ zu einer Vorabversion des Codes gehören und die Features nicht vollständig sind.
 
 > [!NOTE]
 > Da die Windows PowerShell ISE eine grafische Benutzeroberfläche erfordert, können Sie sie nicht mit der Server Core-Option von Windows Server ausführen.

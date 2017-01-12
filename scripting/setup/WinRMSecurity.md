@@ -1,14 +1,15 @@
 ---
-title: WinRMSecurity
-ms.date: 2016-05-11
-keywords: powershell,cmdlet
 description: 
+manager: carmonm
 ms.topic: article
-author: eslesar
-manager: dongill
+author: jpjofre
 ms.prod: powershell
-ms.openlocfilehash: d1a75f4167a2f0af60801f33b79fb07cf7fe9398
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+keywords: powershell,cmdlet
+ms.date: 2016-12-12
+title: WinRMSecurity
+ms.technology: powershell
+ms.openlocfilehash: 31b5ec784d394568c462a1e133b501f0a8884f2e
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 # <a name="powershell-remoting-security-considerations"></a>Sicherheitsaspekte von PowerShell-Remoting
@@ -80,30 +81,11 @@ Nach Abschluss der anfänglichen Authentifizierung verschlüsselt das [PowerShel
 ## <a name="making-the-second-hop"></a>Durchführen des zweiten Hops
 
 Standardmäßig verwendet PowerShell-Remoting Kerberos (falls verfügbar) oder NTLM für die Authentifizierung. Beide Protokolle führen eine Authentifizierung gegenüber dem Remotecomputer durch, ohne Anmeldeinformationen an diesen zu senden.
-Dies ist die sicherste Methode der Authentifizierung, doch da der Remotecomputer nicht über die Anmeldeinformationen des Benutzers verfügt, kann er nicht auf andere Computer und Dienste im Auftrag des Benutzers zugreifen. Dies ist bekannt als „Double-Hop“-Problem.
+Dies ist die sicherste Methode der Authentifizierung, doch da der Remotecomputer nicht über die Anmeldeinformationen des Benutzers verfügt, kann er nicht auf andere Computer und Dienste im Auftrag des Benutzers zugreifen. Dies ist als „zweites Hop-Problem“ bekannt.
 
-Es gibt verschiedene Möglichkeiten, um dieses Problem zu vermeiden:
+Es gibt verschiedene Möglichkeiten, um dieses Problem zu vermeiden: Eine Beschreibung dieser Methoden mit ihren jeweiligen Vor- und Nachteilen finden Sie unter [Making the second hop in PowerShell Remoting (Das zweite Hop-Problem in PowerShell Remoting)](PS-remoting-second-hop.md).
 
-### <a name="trust-between-remote-computers"></a>Vertrauensstellung zwischen Remotecomputern
 
-Wenn Sie Benutzern vertrauen, die remote mit *Server1* und von da aus mit Ressourcen auf *Server2* verbunden sind, können Sie *Server1* explizit Zugriff auf diese Ressourcen erteilen.
-
-### <a name="use-explicit-credentials-when-accessing-remote-resources"></a>Verwenden expliziter Anmeldeinformationen beim Zugriff auf Remoteressourcen
-
-Sie können Ihre Anmeldeinformationen explizit an eine Remoteressource übergeben, indem Sie den Parameter **Credential** eines Cmdlets verwenden. Beispiel:
-
-```powershell
-$myCredential = Get-Credential
-New-PSDrive -Name Tools \\Server2\Shared\Tools -Credential $myCredential 
-```
-
-### <a name="credssp"></a>CredSSP
-
-Sie können den [Credential Security Support Provider (CredSSP)](https://msdn.microsoft.com/en-us/library/windows/desktop/bb931352.aspx) für die Authentifizierung verwenden (durch Angabe von „CredSSP“ als Wert des Parameters `Authentication` eines Aufrufs des Cmdlets [New-PSSession](https://technet.microsoft.com/en-us/library/hh849717.aspx)). CredSSP übergibt Anmeldeinformationen als Klartext an den Server, weshalb dessen Verwendung Sie gegenüber Angriffen zum Diebstahl von Anmeldeinformationen verwundbar macht. Wenn der Remotecomputer kompromittiert ist, hat der Angreifer Zugriff auf die Anmeldeinformationen des Benutzers. CredSSP ist standardmäßig sowohl auf Client- als auch auf Servercomputern deaktiviert. Sie sollten CredSSP nur in absolut vertrauenswürdigen Umgebungen aktivieren. Beispielsweise wenn ein Domänenadministrator eine Verbindung mit einem Domänencontroller herstellt, weil der Domänencontroller hochgradig vertrauenswürdig ist.
-
-Weitere Informationen zu Sicherheitsaspekten bei der Verwendung von CredSSP für PowerShell-Remoting finden Sie unter [Versehentliche Sabotage: Vorsicht vor CredSSP](http://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp).
-
-Weitere Informationen zu Angriffen zum Diebstahl von Anmeldeinformationen finden Sie unter [Abschwächen von Pass-the-Hash-Angriffen (PtH) und anderen Techniken zum Diebstahl von Anmeldeinformationen](https://www.microsoft.com/en-us/download/details.aspx?id=36036).
 
 
 

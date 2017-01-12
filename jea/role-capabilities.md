@@ -1,142 +1,275 @@
 ---
-description: 
-manager: dongill
+manager: carmonm
 ms.topic: article
-author: jpjofre
+author: rpsqrd
+ms.author: ryanpu
 ms.prod: powershell
 keywords: powershell,cmdlet,jea
-ms.date: 2016-06-22
-title: Rollenfunktionen
+ms.date: 2016-12-05
+title: JEA-Rollenfunktionen
 ms.technology: powershell
-ms.openlocfilehash: d5f6311d74e47f2fa1a93909c244cddf114b0229
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: e67b38344e2d1d0d347c7850f2097e31c0945e15
+ms.sourcegitcommit: b88151841dd44c8ee9296d0855d8b322cbf16076
 translationtype: HT
 ---
-# <a name="role-capabilities"></a>Rollenfunktionen
+# <a name="jea-role-capabilities"></a>JEA-Rollenfunktionen
 
-## <a name="overview"></a>Übersicht
-Im vorherigen Abschnitt haben Sie erfahren, dass das Feld RoleDefinitions definiert, welche Gruppen Zugriff auf bestimmte Rollenfunktionen haben.
-Möglicherweise haben Sie sich gefragt, was denn Rollenfunktionen sind.
-Diese Frage wird im vorliegenden Abschnitt beantwortet.  
+> Gilt für: Windows PowerShell 5.0
 
-## <a name="introducing-powershell-role-capabilities"></a>Einführung in PowerShell-Rollenfunktionen
-PowerShell-Rollenfunktionen definieren die Aufgaben, die ein Benutzer auf einem JEA-Endpunkt ausführen darf.
-Sie stellen eine Whitelist mit sichtbaren Befehlen und Anwendungen sowie weiteren nutzbaren Elementen bereit.
-Rollenfunktionen werden durch Dateien mit der Erweiterung PSRC definiert.
+Beim Erstellen eines JEA-Endpunkts müssen Sie eine oder mehrere „Rollenfunktionen“ definieren, die festlegen, *welche Befehle* ein Benutzer in einer JEA-Sitzung ausführen kann.
+Eine Rollenfunktion ist eine PowerShell-Datendatei mit der Erweiterung PSRC. Sie enthält alle Cmdlets, Funktionen, Anbieter und externen Programme für Benutzer, die eine Verbindung herstellen.
 
-## <a name="role-capability-contents"></a>Inhalte von Rollenfunktionen
-Zunächst untersuchen und bearbeiten wir die Datei mit den Demorollenfunktionen, die Sie bereits verwendet haben.
-Stellen Sie sich folgende Situation vor: Sie haben Ihre Sitzungskonfiguration in der gesamten Umgebung bereitgestellt und erhalten jetzt Feedback, dass Sie die Funktionen ändern müssen, die Benutzern verfügbar gemacht werden.
-Operatoren müssen Computer neu starten können und sie möchten auch in der Lage sein, Informationen zu Netzwerkeinstellungen abzurufen.
-Darüber hinaus hat das Sicherheitsteam Sie darüber informiert, dass es nicht akzeptabel ist, Benutzern die uneingeschränkte Ausführung von Restart-Service zu ermöglichen.
-Sie müssen die Dienste einschränken, die von Operatoren neu gestartet werden dürfen.
+In diesem Thema wird das Erstellen einer PowerShell-Rollenfunktionsdatei für Ihre JEA-Benutzer beschrieben.
 
-Um diese Änderungen durchzuführen, führen Sie die PowerShell ISE als Administrator aus, und öffnen Sie die folgende Datei:
+## <a name="determine-which-commands-to-allow"></a>Festlegen der zulässigen Befehle
 
-```
-C:\Program Files\WindowsPowerShell\Modules\Demo_Module\RoleCapabilities\Maintenance.psrc
-```
+Die erste Frage beim Erstellen einer Rollenfunktionsdatei lautet: Welche Zugriffe benötigen Benutzer mit dieser Rolle?
+Das Sammeln dieser Informationen kann relativ zeitaufwändig sein, aber es ist ein sehr wichtiger Prozess.
+Benutzer, deren Zugriff auf zu wenige Cmdlets und Funktionen beschränkt ist, können ihre jeweiligen Aufgaben möglicherweise nicht ausführen.
+Umgekehrt kann der Zugriff auf zu viele Cmdlets und Funktionen dazu führen, dass Benutzer mithilfe ihrer impliziten Administratorberechtigungen mehr Aktionen ausführen als ursprünglich beabsichtigt und dadurch die Sicherheit beeinträchtigen.
 
-Suchen Sie die folgenden Zeilen in der Datei, und aktualisieren Sie sie:
+Der von Ihnen gewählte Prozess ist abhängig von Ihrer Organisation und Ihren Zielen. Die folgenden Tipps sollen Ihnen jedoch auf den richtigen Weg helfen.
 
-```PowerShell
-# OLD: VisibleCmdlets = 'Restart-Service'
-VisibleCmdlets = 'Restart-Computer',
-                 @{
-                     Name = 'Restart-Service'
-                     Parameters = @{ Name = 'Name'; ValidateSet = 'Spooler' }
-                 },
-                 'NetTCPIP\Get-*'
+1. **Identifizieren** Sie die Befehle, die Benutzer verwenden, um ihre Arbeit zu erledigen. Dazu müssen Sie möglicherweise IT-Mitarbeiter befragen, Automatisierungsskripts überprüfen oder PowerShell-Sitzungsaufzeichnungen oder -protokolle analysieren.
+2. **Aktualisieren** Sie, soweit möglich, die Verwendung von Befehlszeilentools auf PowerShell-Entsprechungen, und sorgen Sie dadurch für eine optimale Überwachung und JEA-Anpassungserfahrung. Externe Programme können in JEA nicht so präzise wie native PowerShell-Cmdlets und -Funktionen beschränkt werden.
+3. **Beschränken** Sie den Gültigkeitsbereich der Cmdlets, falls erforderlich, um nur bestimmte Parameter oder Parameterwerte zu ermöglichen. Dies ist besonders wichtig, wenn Benutzer nur Teile eines Systems verwalten sollen.
+4. **Erstellen** Sie benutzerdefinierte Funktionen, um komplexe Befehle zu ersetzen bzw. Befehle, die in JEA nur schwer einzuschränken sind. Eine einfache Funktion, die einen komplexen Befehl enthält oder zusätzliche Validierungslogik anwendet, bietet Administratoren zusätzliche Kontrolle und sorgt für mehr Benutzerfreundlichkeit bei Endbenutzern.
+5. **Testen** Sie die entsprechende Liste von zulässigen Befehlen mit Ihren Benutzern und/oder Automatisierungsservices, und nehmen Sie bei Bedarf Anpassungen vor.
 
-# OLD: VisibleExternalCommands = 'Item1', 'Item2'
-VisibleExternalCommands = 'C:\Windows\system32\ipconfig.exe'
-```
+Beachten Sie, dass Befehle in einer JEA-Sitzung häufig mit Administratorberechtigungen (oder anderweitig erhöhten Berechtigungen) ausgeführt werden.
+Die verfügbaren Befehle sollten sorgfältig ausgewählt werden, um sicherzustellen, dass der JEA-Endpunkt dem Benutzer, der eine Verbindung herstellt, keine Möglichkeit gibt, seine Berechtigungen zu erhöhen.
+Im Folgenden finden Sie Beispiele für Befehle, die böswillig verwendet werden können, wenn sie uneingeschränkt zur Verfügung stehen.
+Beachten Sie, dass dies keine vollständige Liste und lediglich als einleitende Vorsichtsmaßnahme gedacht ist.
 
-Dies enthält einige interessante Beispiele:
+### <a name="examples-of-potentially-dangerous-commands"></a>Beispiele für potenziell gefährliche Befehle
 
-1.  Sie haben Restart-Service eingeschränkt, sodass Operatoren Restart-Service nur mit dem Parameter „-Name“ verwenden und als Argument für diesen Parameter nur „Spooler“ bereitstellen dürfen.
-Wenn gewünscht, können Sie mithilfe eines regulären Ausdrucks unter Verwendung von ValidatePattern anstelle von ValidateSet auch die Argumente einschränken.
+Risiko | Beispiel | Verwandte Befehle
+-----|---------|-----------------
+Gewähren von Administratorberechtigungen für Benutzer, die eine Verbindung aufbauen, um JEA zu umgehen | `Add-LocalGroupMember -Member 'CONTOSO\jdoe' -Group 'Administrators'` | `Add-ADGroupMember`, `Add-LocalGroupMember`, `net.exe`, `dsadd.exe`
+Ausführen von beliebigem Code, z.B. Malware, Exploits oder benutzerdefinierten Skripts, um Schutzmechanismen zu umgehen | `Start-Process -FilePath '\\san\share\malware.exe'` | `Start-Process`, `New-Service`, `Invoke-Item`, `Invoke-WmiMethod`, `Invoke-CimMethod`, `Invoke-Expression`, `Invoke-Command`, `New-ScheduledTask`, `Register-ScheduledJob`
 
-2.  Sie haben alle Befehle mit dem Verb „Get“ aus dem NetTCPIP-Modul verfügbar gemacht.
-Da Get-Befehle üblicherweise den Systemstatus nicht ändern, ist dies ein relativ sicheres Vorgehen.
-Nichtsdestoweniger sollten Sie jeden Befehl, den Sie über JEA verfügbar machen, sehr sorgfältig überprüfen.
+## <a name="create-a-role-capability-file"></a>Erstellen einer Rollenfunktionsdatei
 
-3.  Sie haben mithilfe von VisibleExternalCommands eine ausführbare Datei (IPCONFIG) verfügbar gemacht.
-Mit diesem Feld können Sie auch vollständige PowerShell-Skripts verfügbar machen.
-Es ist wichtig, immer den vollständigen Pfad zu externen Pfaden bereitzustellen, um sicherzustellen, dass nicht versehentlich ein (möglicherweise schädliches) Programm mit ähnlichem Namen ausgeführt wird, das sich im Benutzerpfad befindet.
+Sie können eine neue PowerShell-Rollenfunktionsdatei mit dem [New-PSRoleCapabilityFile](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/New-PSRoleCapabilityFile)-Cmdlet erstellen.
 
-Speichern Sie die Datei, und stellen Sie dann erneut eine Verbindung mit dem Demoendpunkt her, um zu bestätigen, dass die Änderungen funktioniert haben.
-
-```PowerShell
-Enter-PSSession -ComputerName . -ConfigurationName JEADemo2 -Credential $NonAdminCred
-Get-Command
-```
-Da Sie nur die Rollenfunktionsdatei geändert haben, müssen Sie die Sitzungskonfiguration nicht erneut registrieren.
-PowerShell findet automatisch die aktualisierten Rollenfunktionen, wenn ein Benutzer eine Verbindung herstellt.
-Da Rollenfunktionen beim Start der Sitzung geladen werden, sind vorhandene Sitzungen von Aktualisierungen der Rollenfunktionsdateien nicht betroffen.
-
-Bestätigen Sie jetzt, dass Sie den Computer neu starten können, indem Sie Restart-Computer mit dem Parameter „-WhatIf“ ausführen (es sei denn, Sie möchten den Computer tatsächlich neu starten).
-
-```PowerShell
-Restart-Computer -WhatIf
+```powershell
+New-PSRoleCapabilityFile -Path .\MyFirstJEARole.psrc
 ```
 
-Bestätigen, dass Sie „ipconfig“ ausführen können.
+Die resultierende Rollenfunktionsdatei kann in einem Text-Editor geöffnet und geändert werden, um die gewünschten Befehle für die Rolle zuzulassen.
+Die PowerShell-Hilfedokumentation enthält mehrere Beispiele dafür, wie Sie die Datei konfigurieren können.
 
-```PowerShell
-ipconfig
+### <a name="allowing-powershell-cmdlets-and-functions"></a>Zulassen von PowerShell-Cmdlets und -Funktionen
+
+Fügen Sie den Feldern „VisbibleCmdlets“ oder „VisibleFunctionsCmdlet“ den Cmdlet- oder Funktionsnamen hinzu, um Benutzern das Ausführen von PowerShell-Cmdlets oder -Funktionen zu ermöglichen.
+Wenn Sie nicht sicher sind, ob es sich um einen Befehl für ein Cmdlet oder eine Funktion handelt, können Sie `Get-Command <name>` ausführen und die Eigenschaft „CommandType“ in der Ausgabe überprüfen.
+
+```powershell
+VisibleCmdlets = 'Restart-Computer', 'Get-NetIPAddress'
 ```
 
-Zum Schluss bestätigen Sie, dass Restart-Service nur für den Spoolerdienst funktioniert.
+Manchmal ist der Gültigkeitsbereich eines bestimmten Cmdlets oder einer Funktion für die Anforderungen Ihrer Benutzer zu weit gefasst.
+Ein DNS-Administrator z.B. muss wahrscheinlich nur über Zugriff verfügen, um den DNS-Dienst neu zu starten.
+In einer Umgebung mit mehreren Mandanten, die Zugriff auf Self-Service-Managementtools haben, sollte die Verwaltung durch diese Mandanten auf deren eigene Ressourcen beschränkt sein.
+In einem solchen Fall können Sie festlegen, welche Parameter vom Cmdlet oder der Funktion verfügbar gemacht werden.
 
-```PowerShell
-Restart-Service Spooler # This should work
-Restart-Service WSearch # This should fail
+```powershell
+
+VisibleCmdlets = @{ Name = 'Restart-Computer'; Parameters = @{ Name = 'Name' }}
+
 ```
 
-Beenden Sie die Sitzung, wenn Sie fertig sind.
+In komplexeren Szenarios müssen Sie möglicherweise auch beschränken, welche Werte ein Benutzer für diese Parameter angibt.
+Anhand von Rollenfunktionen können Sie einen Satz zulässiger Werte oder das Muster eines regulären Ausdrucks definieren, der bzw. das ausgewertet wird, um festzustellen, ob eine gegebene Eingabe zulässig ist.
 
-```PowerShell
-Exit-PSSession
+```powershell
+VisibleCmdlets = @{ Name = 'Restart-Service'; Parameters = @{ Name = 'Name'; ValidateSet = 'Dns', 'Spooler' }},
+                 @{ Name = 'Start-Website'; Parameters = @{ Name = 'Name'; ValidatePattern = 'HR_*' }}
 ```
 
-## <a name="role-capability-creation"></a>Erstellen von Rollenfunktionen
-Im nächsten Abschnitt erstellen Sie einen JEA-Endpunkt für AD-Helpdeskbenutzer.
-Zur Vorbereitung erstellen Sie zunächst eine leere Rollenfunktionsdatei, die in diesem Abschnitt ausgefüllt werden soll.
-Rollenfunktionen müssen in einem gültigen PowerShell-Modul innerhalb eines Ordners namens „RoleCapabilities“ erstellt werden, damit sie beim Start einer Sitzung aufgelöst werden können.
+> [!NOTE]
+> Die [allgemeinen PowerShell-Parameter](https://technet.microsoft.com/en-us/library/hh847884.aspx) sind immer zulässig, selbst wenn Sie die verfügbaren Parameter beschränken.
+> Sie brauchen sie nicht explizit im Parameter-Feld aufzuführen.
 
-Bei PowerShell-Modulen handelt es sich im Wesentlichen um Pakete mit PowerShell-Funktionalitäten.
-Sie können PowerShell-Funktionen, -Cmdlets, -DSC-Ressourcen, -Rollenfunktionen und vieles mehr enthalten.
-Sie können Informationen zu Modulen erhalten, indem Sie `Get-Help about_Modules` in einer PowerShell-Konsole ausführen.
+Die folgende Tabelle beschreibt die verschiedenen Methoden, mit denen Sie ein sichtbares Cmdlet bzw. eine sichtbare Funktion anpassen können.
+Sie können alle unten aufgeführten Cmdlets und Funktionen im VisibleCmdlets-Feld frei miteinander kombinieren.
 
-Um ein neues PowerShell-Modul mit einer leeren Rollenfunktionsdatei zu erstellen, führen Sie folgende Befehle aus:  
+Beispiel                                                                                      | Anwendungsfall
+---------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------
+`'My-Func'` oder `@{ Name = 'My-Func' }`                                                       | Ermöglicht dem Benutzer das Ausführen von `My-Func` ohne jegliche Einschränkungen bei den Parametern
+`'MyModule\My-Func'`                                                                         | Ermöglicht dem Benutzer das Ausführen von `My-Func` vom Modul `MyModule` ohne jegliche Einschränkungen bei den Parametern
+`'My-*'`                                                                                     | Ermöglicht dem Benutzer das Ausführen eines beliebigen Cmdlets oder einer beliebigen Funktion mit dem Verb `My`
+`'*-Func'`                                                                                   | Ermöglicht dem Benutzer das Ausführen eines beliebigen Cmdlets oder einer beliebigen Funktion mit dem Namen `Func`
+`@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'}, @{ Name = 'Param2' }}`               | Ermöglicht dem Benutzer das Ausführen von `My-Func` mit den Parametern `Param1` und/oder `Param2` Für die Parameter kann ein beliebiger Wert angegeben werden.
+`@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidateSet = 'Value1', 'Value2' }}`  | Ermöglicht dem Benutzer das Ausführen von `My-Func` mit dem Parameter `Param1`. Für den Parameter kann nur „Value1“ und „Value2“ angegeben werden.
+`@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidatePattern = 'contoso.*' }}`     | Ermöglicht dem Benutzer das Ausführen von `My-Func` mit dem Parameter `Param1`. Für den Parameter kann ein beliebiger Wert, beginnend mit „Contoso“, angegeben werden.
 
-```PowerShell
-# Create a new folder for the module.
-New-Item -Path 'C:\Program Files\WindowsPowerShell\Modules\Contoso_AD_Module' -ItemType Directory
 
-# Add a module manifest to contain metadata for this module.
-New-ModuleManifest -Path 'C:\Program Files\WindowsPowerShell\Modules\Contoso_AD_Module\Contoso_AD_Module.psd1' -RootModule Contoso_AD_Module.psm1
+> [!WARNING]
+> Bewährten Sicherheitsmaßnahmen zufolge wird bei der Definition sichtbarer Cmdlets und Funktionen empfohlen, keine Platzhalter zu verwenden.
+> Stattdessen sollten Sie jeden vertrauenswürdigen Befehl einzeln aufführen, um sicherzustellen, dass Befehle, die dem gleichen Namensschema folgen, nicht unbeabsichtigt autorisiert werden.
 
-# Create a blank script module. You'll use this for custom functions in the next section.
-New-Item -Path 'C:\Program Files\WindowsPowerShell\Modules\Contoso_AD_Module\Contoso_AD_Module.psm1' -ItemType File
+Sie können nicht gleichzeitig ein ValidatePattern- und ein ValidateSet-Attribut auf das gleiche Cmdlet oder die gleiche Funktion anwenden.
 
-# Create a RoleCapabilities folder in the Contoso_AD_Module folder. PowerShell expects Role Capabilities to be located in a "RoleCapabilities" folder within a module.
-New-Item -Path 'C:\Program Files\WindowsPowerShell\Modules\Contoso_AD_Module\RoleCapabilities' -ItemType Directory
+Andernfalls wird das ValidateSet-Attribut vom ValidatePattern-Attribut überschrieben.
 
-# Create a blank Role Capability in your RoleCapabilities folder. Running this command without any additional parameters just creates a blank template.
-New-PSRoleCapabilityFile -Path 'C:\Program Files\WindowsPowerShell\Modules\Contoso_AD_Module\RoleCapabilities\ADHelpDesk.psrc'
+Weitere Informationen zum ValidatePattern-Attribut finden Sie unter [dem englischsprachigen Blogbeitrag *Hey, Scripting Guy!*](https://blogs.technet.microsoft.com/heyscriptingguy/2011/01/11/validate-powershell-parameters-before-running-the-script/) und dem Referenzmaterial [PowerShell Regular Expressions (Reguläre Ausdrücke in PowerShell)](https://technet.microsoft.com/en-us/library/hh847880.aspx).
+
+### <a name="allowing-external-commands-and-powershell-scripts"></a>Zulassen von externen Befehlen und PowerShell-Skripts
+
+Um Benutzern das Ausführen von ausführbaren Dateien und PowerShell-Skripts (.ps1) in einer JEA-Sitzung zu ermöglichen, müssen Sie den vollständigen Pfad zu jedem einzelnen Programm im Feld „VisibleExternalCommands“ hinzufügen.
+
+```powershell
+VisibleExternalCommands = 'C:\Windows\System32\whoami.exe', 'C:\Program Files\Contoso\Scripts\UpdateITSoftware.ps1'
 ```
 
-Herzlichen Glückwunsch! Sie haben eine leere Rollenfunktionsdatei erstellt.
-Diese Datei wird im nächsten Abschnitt verwendet.
+Es wird empfohlen, möglichst mit den PowerShell-Cmdlet- bzw. -Funktionsentsprechungen der von Ihnen autorisierten, ausführbaren Dateien zu arbeiten, da Sie bestimmen können, welche Parameter für PowerShell-Cmdlets bzw. -Funktionen zulässig sind.
 
-## <a name="key-concepts"></a>Wichtige Konzepte
-**Rollenfunktionen (PSRC)**: Eine Datei, die die Aufgaben definiert, die ein Benutzer auf einem JEA-Endpunkt ausführen darf.
-Sie stellt eine Whitelist mit sichtbaren Befehlen und Konsolenanwendungen sowie weiteren nutzbaren Elementen bereit.
-Damit PowerShell die Rollenfunktionen erkennen kann, müssen Sie diese in einem gültigen PowerShell-Modul im Ordner „RoleCapabilities“ speichern.
+Mithilfe vieler ausführbarer Dateien können Sie den aktuellen Status lesen und ändern, indem Sie einfach unterschiedliche Parameter angeben.
 
-**PowerShell-Modul**: Ein Paket mit PowerShell-Funktionalität.
-Es kann PowerShell-Funktionen, -Cmdlets, -DSC-Ressourcen, -Rollenfunktionen und vieles mehr enthalten.
-PowerShell-Module müssen in einem Pfad in `$env:PSModulePath` gespeichert werden, damit sie automatisch geladen werden können.
+Betrachten Sie z.B. die Rolle eines Dateiserveradministrators, der überprüfen möchte, welche Netzwerkfreigaben auf dem lokalen Computer gehostet werden.
+Eine Möglichkeit der Überprüfung besteht in der Verwendung von `net share`.
+Die Verwendung von „net.exe“ ist allerdings mit Gefahren verbunden, denn der Administrator könnte den Befehl auch problemlos nutzen, um sich mithilfe von `net group Administrators unprivilegedjeauser /add` Administratorberechtigungen zu verschaffen.
+Eine bessere Lösung ist die Verwendung von [Get-SmbShare](https://technet.microsoft.com/en-us/library/jj635704.aspx). Dieses Cmdlet sorgt für das gleiche Ergebnis, verfügt jedoch über einen weitaus eingeschränkteren Geltungsbereich.
 
+Wenn Sie Benutzern in einer JEA-Sitzung externe Befehle zur Verfügung stellen, geben Sie immer den vollständigen Pfad zur ausführbaren Datei an, um sicherzustellen, dass kein (potenziell bösartiges) Programm mit ähnlichem Namen an anderer Stelle im System ausgeführt wird.
+
+### <a name="allowing-access-to-powershell-providers"></a>Zulassen von Zugriffssteuerung für PowerShell-Anbieter
+
+Standardmäßig sind in JEA-Sitzungen keine PowerShell-Anbieter verfügbar.
+
+Dies geschieht in erster Linie, um zu verhindern, dass vertrauliche Informationen und Konfigurationseinstellungen an Benutzer weitergegeben werden, die eine Verbindung herstellen.
+
+Bei Bedarf können Sie den Zugriff auf die PowerShell-Anbieter über den Befehl `VisibleProviders` ermöglichen.
+Sie erhalten eine vollständige Liste aller Anbieter, indem Sie `Get-PSProvider` ausführen.
+
+```powershell
+VisibleProviders = 'Registry'
+```
+
+Für einfache Aufgaben, die Zugriff auf das Dateisystem, die Registrierung, den Zertifikatspeicher oder andere vertrauliche Anbieter voraussetzen, können Sie auch eine benutzerdefinierte Funktion in Erwägung ziehen, die einen Zugriff auf den Anbieter im Auftrag des Benutzers ermöglicht.
+Funktionen, Cmdlets und externe Programme, die in einer JEA-Sitzung verfügbar sind, unterliegen nicht den gleichen Einschränkungen wie JEA – sie können standardmäßig auf alle Anbieter zugreifen.
+Sie können auch das [Benutzerlaufwerk](session-configurations.md#user-drive) verwenden, wenn Sie Dateien auf einen bzw. von einem JEA-Endpunkt kopieren müssen.
+
+### <a name="creating-custom-functions"></a>Erstellen von benutzerdefinierten Funktionen
+
+Sie können benutzerdefinierte Funktionen in einer Rollenfunktionsdatei erstellen, um komplexe Aufgaben für Ihre Endbenutzer zu vereinfachen.
+Benutzerdefinierte Funktionen erweisen sich als nützlich, wenn für Cmdlet-Parameterwerte eine erweiterte Validierungslogik erforderlich ist.
+Sie können einfache Funktionen in das Feld **FunctionDefinitions** schreiben:
+
+```powershell
+VisibleFunctions = 'Get-TopProcess'
+
+FunctionDefinitions = @{
+    Name = 'Get-TopProcess'
+
+    ScriptBlock = {
+        param($Count = 10)
+
+        Get-Process | Sort-Object -Property CPU -Descending | Microsoft.PowerShell.Utility\Select-Object -First $Count
+    }
+}
+```
+
+> [!IMPORTANT]
+> Vergessen Sie nicht, den Namen der benutzerdefinierten Funktionen im Feld **VisibleFunctions** hinzuzufügen, damit sie von den JEA-Benutzern ausgeführt werden können.
+
+
+Textkörper (Skriptblöcke) von benutzerdefinierten Funktionen werden im Standardsprachmodus für das System ausgeführt und unterliegen nicht den JEA-Spracheinschränkungen.
+Dies bedeutet, dass Funktionen Zugriff auf das Dateisystem und die Registrierung haben und Befehle ausführen können, die in der Rollenfunktionsdatei nicht sichtbar gemacht wurden.
+Achten Sie darauf, dass kein beliebiger Code ausgeführt wird, wenn Sie Parameter verwenden. Vermeiden Sie außerdem das direkte Weiterreichen von Benutzereingaben in Cmdlets wie `Invoke-Expression`.
+
+Im obigen Beispiel sehen Sie, dass der vollqualifizierte Modulname (FQMN) `Microsoft.PowerShell.Utility\Select-Object` verwendet wurde anstelle der Kurzschreibweise `Select-Object`.
+Funktionen, die in Rollenfunktionsdateien definiert werden, unterliegen weiterhin dem Gültigkeitsbereich von JEA-Sitzungen. Darunter fallen auch die Proxyfunktionen, die JEA erstellt, um vorhandene Befehle einzuschränken.
+
+„Select-Object“ ist ein standardmäßiges, eingeschränktes Cmdlet in allen JEA-Sitzungen, das eine Auswahl beliebiger Eigenschaften auf Objekten nicht zulässt.
+Um das uneingeschränkte Select-Object-Cmdlet in Funktionen verwenden zu können, müssen Sie die vollständige Implementierung explizit durch Angabe der FQMN anfordern.
+Alle eingeschränkten Cmdlets in einer JEA-Sitzung weisen das gleiche Verhalten auf, wenn sie über eine Funktion aufgerufen werden. Dabei folgen sie der PowerShell-[Rangfolge von Befehlen](https://msdn.microsoft.com/en-us/powershell/reference/3.0/microsoft.powershell.core/about/about_command_precedence).
+
+Wenn Sie viele benutzerdefinierte Funktionen schreiben, ist es möglicherweise einfacher, diese in einem [PowerShell-Skriptmodul](https://msdn.microsoft.com/en-us/library/dd878340(v=vs.85).aspx) zu speichern.
+Sie können diese Funktionen anschließend in der JEA-Sitzung mithilfe des VisibleFunctions-Felds genauso sichtbar machen wie integrierte und Drittanbietermodule.
+
+## <a name="place-role-capabilities-in-a-module"></a>Platzieren von Rollenfunktionen in einem Modul
+
+Damit PowerShell eine Rollenfunktionsdatei erkennen kann, müssen Sie diese in einem Ordner „RoleCapabilities“ in einem PowerShell-Modul speichern.
+Das Modul kann in einem beliebigen Ordner gespeichert werden, der in der Umgebungsvariable `$env:PSModulePath` enthalten ist. Sie sollten das Modul jedoch nicht unter dem Ordner „System32“ (reserviert für integrierte Module) oder in einen Ordner einfügen, dessen Dateien von nicht vertrauenswürdigen Benutzern geändert werden können, die eine Verbindung herstellen.
+Im Folgenden finden Sie ein Beispiel für das Erstellen eines grundlegenden PowerShell-Skripts mit dem Namen *ContosoJEA* im Pfad „Programme“.
+
+```powershell
+# Create a folder for the module
+$modulePath = Join-Path $env:ProgramFiles "WindowsPowerShell\Modules\ContosoJEA"
+New-Item -ItemType Directory -Path $modulePath
+
+# Create an empty script module and module manifest. At least one file in the module folder must have the same name as the folder itself.
+New-Item -ItemType File -Path (Join-Path $modulePath "ContosoJEAFunctions.psm1")
+New-ModuleManifest -Path (Join-Path $modulePath "ContosoJEA.psd1") -RootModule "ContosoJEAFunctions.psm1"
+
+# Create the RoleCapabilities folder and copy in the PSRC file
+$rcFolder = Join-Path $modulePath "RoleCapabilities"
+New-Item -ItemType Directory $rcFolder
+Copy-Item -Path .\MyFirstJEARole.psrc -Destination $rcFolder
+```
+
+Weitere Informationen zu PowerShell-Modulen, Modulmanifeste und die Umgebungsvariable „PSModulePath“ finden Sie unter [Understanding a PowerShell Module (Grundlegendes zu PowerShell-Modulen)](https://msdn.microsoft.com/en-us/library/dd878324.aspx).
+
+## <a name="updating-role-capabilities"></a>Aktualisieren von Rollenfunktionen
+
+
+Sie können eine Rollenfunktionsdatei jederzeit aktualisieren, indem Sie einfach Änderungen an der Rollenfunktionsdatei speichern.
+Jede neue JEA-Sitzung, die nach dem Aktualisieren der Rollenfunktion gestartet wird, enthält die überarbeiteten Funktionen.
+
+Aus diesem Grund ist es so wichtig, den Zugriff auf den Rollenfunktionsordner genau zu steuern.
+Nur sehr vertrauenswürdige Administratoren sollten Rollenfunktionsdateien ändern können.
+Wenn nicht vertrauenswürdige Benutzer berechtigt sind, Rollenfunktionsdateien zu ändern, können sie sich leicht selbst Zugriff auf Cmdlets verschaffen und damit ihre eigenen Berechtigungen erhöhen.
+
+
+Administratoren, die den Zugriff auf die Rollenfunktionen einschränken möchten, müssen sicherstellen, dass das lokale System über Lesezugriff auf die Rollenfunktionsdateien und die darin enthaltenen Module verfügt.
+
+## <a name="how-role-capabilities-are-merged"></a>Zusammenführung von Rollenfunktionen
+
+Benutzer können Zugriff auf mehrere Rollenfunktionen erhalten, wenn sie eine JEA-Sitzung beginnen, abhängig von den Rollenzuordnungen in der [Sitzungskonfigurationsdatei](session-configurations.md).
+In diesem Fall versucht JEA, den Benutzern den Satz von Befehlen mit den *höchsten Berechtigungen* zur Verfügung zu stellen, die für die Rollen zulässig sind.
+
+**VisibleCmdlets und VisibleFunctions**
+
+Die komplexe Zusammenführungslogik wirkt sich auf Cmdlets und Funktionen aus, deren Parameter und Parameterwerte in JEA eingeschränkt sein können.
+
+Die folgenden Regeln gelten:
+
+
+1. Wenn ein Cmdlet nur in einer Rolle sichtbar gemacht wird, ist es für Benutzer mit beliebigen Parametereinschränkungen sichtbar.
+2. Wenn ein Cmdlet in mehr als einer Rolle sichtbar gemacht wird und jede Rolle über dieselben Einschränkungen für das Cmdlet verfügt, ist das Cmdlet für Benutzer mit diesen Einschränkungen sichtbar.
+3. Wenn ein Cmdlet in mehr als einer Rolle sichtbar gemacht wird und jede Rolle einen anderen Satz von Parametern zulässt, sind das Cmdlet und alle für jede Rolle definierten Parameter für die Benutzer sichtbar. Wenn für eine Rolle keine Einschränkungen für die Parameter gelten, sind alle Parameter zulässig.
+4. Wenn eine Rolle ein ValidateSet- oder ein ValidatePattern-Attribut für einen Cmdlet-Parameter definiert und die andere Rolle den Parameter zwar zulässt, aber die Parameterwerte nicht einschränkt, werden das ValidateSet- bzw. das ValidatePattern-Attribut ignoriert.
+5. Wenn für den gleichen Cmdlet-Parameter in mehr als einer Rolle ein ValidateSet-Attribut definiert ist, sind alle Werte aller ValidateSet-Attribute zulässig.
+6. Wenn für den gleichen Cmdlet-Parameter in mehr als einer Rolle ein ValidatePattern-Attribut definiert ist, sind alle Werte, die einem beliebigen ValidatePattern-Attribut entsprechen, zulässig.
+7. Wenn ein ValidateSet-Attribut in einer oder mehreren Rollen definiert ist und ein ValidatePattern-Attribut in einer anderen Rolle für den gleichen Cmdlet-Parameter definiert ist,wird das ValidateSet-Attribut ignoriert und für die übrigen ValidatePattern-Attribute gilt Regel 6.
+
+Die folgende Tabelle zeigt einige praktische Anwendungsbeispiele für diese Logik mit zwei Rollen, A und B, die beide einem Benutzer in einer JEA-Sitzung zugewiesen werden.
+
+Regel | Rolle A – VisibleCmdlets                                                                          | Rolle B – VisibleCmdlets                                                                             | Geltende Benutzerberechtigungen
+-----|------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|----------------------------
+1    | `Get-Service`                                                                                  | Nicht zutreffend                                                                                               | `Get-Service`
+1    | Nicht zutreffend                                                                                            | `Get-Service`                                                                                     | `Get-Service`
+2    | `Get-Service`                                                                                  | `Get-Service`                                                                                     | `Get-Service`
+3    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName' }}`                             | `Get-Service`                                                                                     | `Get-Service`
+3    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName' }}`                             | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'Name' }}`                                       | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName' }, @{ Name = 'Name' }}`
+4    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client' }}` | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName' }}`                                | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName' }}`
+5    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client' }}` | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DHCP Client' }}`   | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client', 'DHCP Client' }}`
+6    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidatePattern = 'DNS.*' }}`  | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidatePattern = 'contoso.*' }}` | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidatePattern = '(DNS.*)\|(contoso.*)' }}`
+7    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client' }}` | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidatePattern = 'contoso.*' }}` | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidatePattern = '(DNS.*)\|(contoso.*)' }}`
+
+
+
+**VisibleExternalCommands, VisibleAliases, VisibleProviders, ScriptsToProcess**
+
+Alle anderen Felder in der Rollenfunktionsdatei werden einfach einem kumulativen Satz von zulässigen externen Befehlen, Aliasen, Anbietern und Startskripts hinzugefügt.
+Alle in einer Rollenfunktion verfügbaren Befehle, Aliase, Anbieter oder Skripts sind für JEA-Benutzer verfügbar.
+
+Achten Sie darauf, dass die kombinierte Gruppe der Anbieter einer Rollenfunktion und der Anbieter von Cmdlets/Funktionen/Befehlen einer anderen Rollenfunktion den Benutzern, die eine Verbindung herstellen, keinen unbeabsichtigten Zugriff auf Systemressourcen gibt.
+Wenn eine Rolle z.B. das `Remove-Item`-Cmdlet zulässt und eine andere den `FileSystem`-Anbieter, besteht die Gefahr, dass ein JEA-Benutzer beliebige Dateien auf Ihrem Computer löscht.
+Weitere Informationen dazu, wie die geltenden Berechtigungen von Benutzern ermittelt werden können, finden Sie im Thema [Auditing and Reporting on JEA (Überprüfen und Erstellen von Berichten mit JEA)](audit-and-report.md).
+
+## <a name="next-steps"></a>Nächste Schritte
+
+- [Create a session configuration file (Erstellen einer Sitzungskonfigurationsdatei)](session-configurations.md)
