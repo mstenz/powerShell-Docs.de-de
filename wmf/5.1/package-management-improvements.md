@@ -1,5 +1,5 @@
 ---
-title: Verbesserungen bei der Paketverwaltung in WMF 5.1 (Preview)
+title: Verbesserungen bei der Paketverwaltung in WMF 5.1
 ms.date: 2016-07-15
 keywords: PowerShell, DSC, WMF
 description: 
@@ -9,14 +9,14 @@ contributor: jianyunt, quoctruong
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-ms.openlocfilehash: fd1fb6dd12b0a9ddcf69d159d83595955af62bc5
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 77d8e66da0452a3cb55ad770537b35a97dffb357
+ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
 translationtype: HT
 ---
-# <a name="improvements-to-package-management-in-wmf-51-preview"></a>Verbesserungen bei der Paketverwaltung in WMF 5.1 (Preview) #
+# <a name="improvements-to-package-management-in-wmf-51"></a>Verbesserungen bei der Paketverwaltung in WMF 5.1#
 
 ## <a name="improvements-in-packagemanagement"></a>Verbesserungen bei PackageManagement ##
-In WMF 5.1 wurden folgende Probleme behoben: 
+In WMF 5.1 wurden folgende Probleme behoben: 
 
 ### <a name="version-alias"></a>Versionsalias
 
@@ -32,7 +32,7 @@ Dies passiert, weil der `-Version`-Parameter ein Alias für den `-MinimumVersion
     
 Wenn jedoch eine ältere Version des NuGet-Anbieters auf Ihrem Computer installiert ist, wird mitunter die ältere NuGet-Version zuerst in die PowerShell-Sitzung geladen (was die Racebedingung in PackageManagement ist). Damit PowerShellGet funktioniert, ist jedoch die neuere Version des NuGet-Anbieters erforderlich. Deshalb wird PackageManagement von PowerShellGet aufgefordert, für den NuGet-Anbieter erneut das Bootstrapping auszuführen. Dies führt zu mehreren Aufforderungen zum Bootstrapping des NuGet-Anbieters.
 
-**Lösung**: In WMF 5.1 lädt PackageManagement die neueste Version des NuGet-Anbieters, um mehrere Aufforderungen zum Bootstrapping des NuGet-Anbieters zu vermeiden.
+**Lösung**: In WMF 5.1 lädt PackageManagement die neueste Version des NuGet-Anbieters, um mehrere Aufforderungen zum Bootstrapping des NuGet-Anbieters zu vermeiden.
 
 Es gibt auch eine Umgehung dieses Problems. Löschen Sie dazu manuell die alte Version des NuGet-Anbieters (NuGet-Anycpu.exe), sofern vorhanden, aus „$env:ProgramFiles\PackageManagement\ProviderAssemblies $env:LOCALAPPDATA\PackageManagement\ProviderAssemblies“.
 
@@ -54,7 +54,7 @@ Es gibt auch eine Umgehung dieses Problems. Löschen Sie dazu manuell die alte V
 
 ### <a name="event-logging-improvements"></a>Verbesserungen bei der Ereignisprotokollierung
 
-Wenn Sie Pakete installieren, ändern Sie den Status des Computers. In WMF 5.1 protokolliert PackageManagement jetzt Ereignisse im Windows-Ereignisprotokoll für die Aktivitäten `Install-Package`, `Uninstall-Package` und `Save-Package`. Das Ereignisprotokoll ist dasselbe wie für PowerShell, d. h. `Microsoft-Windows-PowerShell, Operational`.
+Wenn Sie Pakete installieren, ändern Sie den Status des Computers. In WMF 5.1 protokolliert PackageManagement jetzt Ereignisse im Windows-Ereignisprotokoll für die Aktivitäten `Install-Package`, `Uninstall-Package` und `Save-Package`. Das Ereignisprotokoll ist dasselbe wie für PowerShell, d. h. `Microsoft-Windows-PowerShell, Operational`.
 
 ### <a name="support-for-basic-authentication"></a>Unterstützung für Standardauthentifizierung
 
