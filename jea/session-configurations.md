@@ -8,8 +8,8 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-12-05
 title: JEA-Sitzungskonfigurationen
 ms.technology: powershell
-ms.openlocfilehash: 1d410e345ff31a5f8149810fb9c3b07e92b27e05
-ms.sourcegitcommit: b88151841dd44c8ee9296d0855d8b322cbf16076
+ms.openlocfilehash: 32602293afd3a94767682d32a053281ec021cc33
+ms.sourcegitcommit: f06ef671c0a646bdd277634da89cc11bc2a78a41
 translationtype: HT
 ---
 # <a name="jea-session-configurations"></a>JEA-Sitzungskonfigurationen
@@ -49,7 +49,9 @@ Auf diese Weise konfigurierte Sitzungen arbeiten im [NoLanguage-Modus](https://t
 - "Get-Help "
 - Measure-Object (messen)
 - Out-Default
-- Select-Object (auswählen) Weder PowerShell-Anbieter noch externe Programme (ausführbare Dateien, Skripts usw.) stehen zur Verfügung.
+- Select-Object (auswählen)
+
+Weder PowerShell-Anbieter noch externe Programme (ausführbare Dateien, Skripts usw.) stehen zur Verfügung.
 
 Es gibt mehrere andere Felder, die Sie für die JEA-Sitzung konfigurieren sollten.
 Sie werden in den folgenden Abschnitten beschrieben.
