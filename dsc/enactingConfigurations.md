@@ -13,7 +13,7 @@ translationtype: HT
 ---
 # <a name="enacting-configurations"></a>Inkraftsetzung von Konfigurationen
 
->Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
+>Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Es gibt zwei Möglichkeiten, PowerShell DSC-Konfigurationen (Desired State Configuration) anzuwenden: Push- und Pullmodus.
 
