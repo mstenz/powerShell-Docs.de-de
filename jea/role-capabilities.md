@@ -243,7 +243,7 @@ Die folgenden Regeln gelten:
 4. Wenn eine Rolle ein ValidateSet- oder ein ValidatePattern-Attribut für einen Cmdlet-Parameter definiert und die andere Rolle den Parameter zwar zulässt, aber die Parameterwerte nicht einschränkt, werden das ValidateSet- bzw. das ValidatePattern-Attribut ignoriert.
 5. Wenn für den gleichen Cmdlet-Parameter in mehr als einer Rolle ein ValidateSet-Attribut definiert ist, sind alle Werte aller ValidateSet-Attribute zulässig.
 6. Wenn für den gleichen Cmdlet-Parameter in mehr als einer Rolle ein ValidatePattern-Attribut definiert ist, sind alle Werte, die einem beliebigen ValidatePattern-Attribut entsprechen, zulässig.
-7. Wenn ein ValidateSet-Attribut in einer oder mehreren Rollen definiert ist und ein ValidatePattern-Attribut in einer anderen Rolle für den gleichen Cmdlet-Parameter definiert ist,wird das ValidateSet-Attribut ignoriert und für die übrigen ValidatePattern-Attribute gilt Regel 6.
+7. Wenn ein ValidateSet-Attribut in einer oder mehreren Rollen definiert ist und ein ValidatePattern-Attribut in einer anderen Rolle für den gleichen Cmdlet-Parameter definiert ist,wird das ValidateSet-Attribut ignoriert und für die übrigen ValidatePattern-Attribute gilt Regel&6;.
 
 Die folgende Tabelle zeigt einige praktische Anwendungsbeispiele für diese Logik mit zwei Rollen, A und B, die beide einem Benutzer in einer JEA-Sitzung zugewiesen werden.
 
