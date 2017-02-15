@@ -7,19 +7,23 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: f933d5d821d71a497d20e8ff66ebe26af9661f50
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 6b506abf2508a8ba182af9c3362fcc408785d058
+ms.sourcegitcommit: a3966253a165d193a42b43b9430a4dc76988f82f
 translationtype: HT
 ---
 # <a name="troubleshooting-dsc"></a>Problembehandlung bei DSC
 
->Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
+>Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Dieses Thema beschreibt die Problembehandlung für DSC.
 
+## <a name="winrm-dependency"></a>WinRM-Abhängigkeit
+
+Windows PowerShell DSC (Desired State Configuration) hängt von WinRM ab. Unter Windows Server 2008 R2 und Windows 7 ist WinRM nicht standardmäßig aktiviert. Führen Sie zum Aktivieren von WinRM in einer Windows PowerShell-Sitzung mit erhöhten Benutzerrechten ```Set-WSManQuickConfig``` aus.
+
 ## <a name="using-get-dscconfigurationstatus"></a>Verwenden von „Get-DscConfigurationStatus“
 
-Das Cmdlet [Get-DscConfigurationStatus](https://technet.microsoft.com/en-us/library/mt517868.aspx) ruft Informationen zum Konfigurationsstatus von einem Zielknoten ab. Ein umfangreiches Objekt wird zurückgegeben, das ausführliche Informationen dazu enthält, ob die Ausführung der Konfiguration erfolgreich war oder nicht. Sie können das Objekt eingehender untersuchen, um Details zur Ausführung der Konfiguration zu ermitteln, wie z. B.:
+Das Cmdlet [Get-DscConfigurationStatus](https://technet.microsoft.com/en-us/library/mt517868.aspx) ruft Informationen zum Konfigurationsstatus von einem Zielknoten ab. Ein umfangreiches Objekt wird zurückgegeben, das ausführliche Informationen dazu enthält, ob die Ausführung der Konfiguration erfolgreich war oder nicht. Sie können das Objekt eingehender untersuchen, um Details zur Ausführung der Konfiguration zu ermitteln, wie z. B.:
 
 * Alle fehlerhaften Ressourcen
 * Alle Ressourcen, die ein Neustart erfordern
@@ -29,7 +33,7 @@ Das Cmdlet [Get-DscConfigurationStatus](https://technet.microsoft.com/en-us/libr
 Die folgende Parametergruppe gibt die Statusinformationen zur letzten Konfigurationsausführung zurück:
 
 ```powershell
-Get-DscConfigurationStatus  [-CimSession <CimSession[]>] 
+Get-DscConfigurationStatus     [-CimSession <CimSession[]>] 
                             [-ThrottleLimit <int>] 
                             [-AsJob] 
                             [<CommonParameters>]
@@ -37,7 +41,7 @@ Get-DscConfigurationStatus  [-CimSession <CimSession[]>]
 Die folgende Parametergruppe gibt die Statusinformationen zu allen vorherigen Konfigurationsausführungen zurück:
 
 ```powershell
-Get-DscConfigurationStatus  -All 
+Get-DscConfigurationStatus     -All 
                             [-CimSession <CimSession[]>] 
                             [-ThrottleLimit <int>] 
                             [-AsJob] 
@@ -51,30 +55,30 @@ PS C:\> $Status = Get-DscConfigurationStatus
 
 PS C:\> $Status
 
-Status      StartDate               Type            Mode    RebootRequested     NumberOfResources
-------      ---------               ----            ----    ---------------     -----------------
-Failure     11/24/2015  3:44:56     Consistency     Push    True                36
+Status         StartDate                Type            Mode    RebootRequested        NumberOfResources
+------        ---------                ----            ----    ---------------        -----------------
+Failure        11/24/2015  3:44:56     Consistency        Push    True                36
 
 PS C:\> $Status.ResourcesNotInDesiredState
 
-ConfigurationName       :   MyService
-DependsOn               :   
-ModuleName              :   PSDesiredStateConfiguration
-ModuleVersion           :   1.1
-PsDscRunAsCredential    :   
-ResourceID              :   [File]ServiceDll
-SourceInfo              :   c:\git\CustomerService\Configs\MyCustomService.ps1::5::34::File
-DurationInSeconds       :   0.19
-Error                   :   SourcePath must be accessible for current configuration. The related file/directory is:
+ConfigurationName        :    MyService
+DependsOn                :    
+ModuleName                :    PSDesiredStateConfiguration
+ModuleVersion            :    1.1
+PsDscRunAsCredential    :    
+ResourceID                 :    [File]ServiceDll
+SourceInfo                :    c:\git\CustomerService\Configs\MyCustomService.ps1::5::34::File
+DurationInSeconds        :    0.19
+Error                    :    SourcePath must be accessible for current configuration. The related file/directory is:
                             \\Server93\Shared\contosoApp.dll. The related ResourceID is [File]ServiceDll
-FinalState              :   
-InDesiredState          :   False
-InitialState            :   
-InstanceName            :   ServiceDll
-RebootRequested         :   False
-ReosurceName            :   File
-StartDate               :   11/24/2015  3:44:56
-PSComputerName          :
+FinalState                :    
+InDesiredState             :    False
+InitialState             :    
+InstanceName            :    ServiceDll
+RebootRequested            :    False
+ReosurceName            :    File
+StartDate                :    11/24/2015  3:44:56
+PSComputerName            :
 ```
 
 ## <a name="my-script-wont-run-using-dsc-logs-to-diagnose-script-errors"></a>Mein Skript wird nicht ausgeführt: Verwenden von DSC-Protokollen für die Diagnose von Skriptfehlern

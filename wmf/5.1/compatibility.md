@@ -8,17 +8,15 @@ author: keithb
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-ms.openlocfilehash: 6956c31692285f62e5bf5a9ad857423abc7e8335
-ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
+ms.openlocfilehash: ed7be717b831bad24bde74a68ce39d5e65f1c5d9
+ms.sourcegitcommit: 58e5e77050ba32717ce3e31e314f0f25cb7b2979
 translationtype: HT
 ---
 # <a name="wmf-51-operating-system-compatibility"></a>WMF 5.1 – Betriebssystemkompatibilität #
 
 > Hinweis: Diese Dokumentation ist vorläufig und kann geändert werden.
 
->AUFGABE: Links zu WMF 5.1 DLC für die Spaltenüberschrift hinzufügen
-
-| Betriebssystemversion | [WMF 5.1]() | [WMF 5.0](https://aka.ms/wmf5download) | [WMF 4.0](https://aka.ms/wmf4download) |  [WMF 3.0](https://aka.ms/wmf3download) | [WMF 2.0](https://aka.ms/wmf2download) |
+| Betriebssystemversion | [WMF 5.1](https://aka.ms/wmf51download) | [WMF 5.0](https://aka.ms/wmf5download) | [WMF 4.0](https://aka.ms/wmf4download) |  [WMF 3.0](https://aka.ms/wmf3download) | [WMF 2.0](https://aka.ms/wmf2download) |
 | ------------------------ | ----------- | ----------- | ----------- | ------------ |  ------------- |
 | Windows Server 2016 | Im Lieferumfang* |  |  |  |  |
 | Windows 10 | Im Lieferumfang* | Im Lieferumfang*  | | | |  

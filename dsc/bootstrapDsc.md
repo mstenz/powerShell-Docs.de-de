@@ -7,8 +7,8 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: bf5b3da641facfdfa395aacf0eadcf773b8c4b02
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 38751d62a56dc90ff69fe3ab6e92829fb33edb2b
+ms.sourcegitcommit: a81ffb39f370b95ae802cd054dc4480c9e68cf77
 translationtype: HT
 ---
 >Gilt für: Windows PowerShell 5.0
@@ -32,9 +32,9 @@ Standardmäßig ist der Wert dieses Schlüssels 2, wodurch DSC zur Startzeit aus
 
 Wenn DSC nicht zur Startzeit ausgeführt werden soll, legen Sie den Wert des Registrierungsschlüssels [DSCAutomationHostEnabled](DSCAutomationHostEnabled.md) auf 0 fest.
 
-- [Hinzufügen eines MOF-Konfigurationsdokuments zu einer VHD](##Inject-a-configuration-MOF-document-into-a-VHD)
-- [Hinzufügen einer Metakonfiguration zu einer VHD](##Inject-a-DSC-metaconfiguration-into-a-VHD)
-- [Deaktivieren von DSC zur Startzeit](##Disable-DSC-at-boot-time)
+- Hinzufügen eines MOF-Konfigurationsdokuments zu einer VHD
+- Hinzufügen einer Metakonfiguration zu einer VHD
+- Deaktivieren von DSC zur Startzeit
 
 >**Hinweis:** Sie können zu einem Computer gleichzeitig `Pending.mof` und `MetaConfig.mof` hinzufügen.
 Wenn beide Dateien vorhanden sind, haben die Einstellungen von `MetaConfig.mof` Vorrang.

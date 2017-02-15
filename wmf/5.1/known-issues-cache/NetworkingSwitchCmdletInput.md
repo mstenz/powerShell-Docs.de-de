@@ -1,11 +1,11 @@
 ---
 title: Fehler bei Cmdlets des Netzwerkswitch-Managers
 contributor: vaibch
-ms.openlocfilehash: e32e31762b665a7e2c6f6938fe494cb6127d4264
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 8495d79aec54d93f94e745e2efccb5116ad5d944
+ms.sourcegitcommit: a3966253a165d193a42b43b9430a4dc76988f82f
 translationtype: HT
 ---
-Die Cmdlets des Netzwerkswitch-Managers können zum Verwalten von Netzwerkswitches über WSMAN verwendet werden. Einige Cmdlets dieses Moduls können Werte aus Pipelines akzeptieren. In WMF 5.1 Preview werden Cmdlets, die Werte aus Pipelines akzeptieren, nicht ausgeführt, wenn die Werte nicht über Pipelines übergeben werden.
+Die Cmdlets des Netzwerkswitch-Managers können zum Verwalten von Netzwerkswitches über WSMAN verwendet werden. Einige Cmdlets dieses Moduls können Werte aus Pipelines akzeptieren. In WMF 5.1 Preview werden Cmdlets, die Werte aus Pipelines akzeptieren, nicht ausgeführt, wenn die Werte nicht über Pipelines übergeben werden.
 
 Wenn der Parameter „InputObject“ nicht verwendet wird, sollte das Cmdlet weiterhin ohne Fehler ausgeführt werden.
 
@@ -30,6 +30,7 @@ Die Cmdlets werden ordnungsgemäß ausgeführt, wenn der Wert des Parameters „
 $port = Get-CimInstance -Namespace root/interop -ClassName CIM_EthernetPort -CimSession $cimSession | Select-Object -First 1
 $port | Disable-NetworkSwitchEthernetPort -CimSession $cimSession
 ```
+
 - Enable-NetworkSwitchEthernetPort
 ```powershell
 $port = Get-CimInstance -Namespace root/interop -ClassName CIM_EthernetPort -CimSession $cimSession | Select-Object -First 1

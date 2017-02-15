@@ -7,8 +7,8 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: e1922008a92f00c9ddab28598735839c25219d24
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: bca71e26585b091b839e8560dcf9d400651c476b
+ms.sourcegitcommit: a3966253a165d193a42b43b9430a4dc76988f82f
 translationtype: HT
 ---
 # <a name="debugging-dsc-resources"></a>Debuggen von DSC-Ressourcen
@@ -20,7 +20,9 @@ In PowerShell 5.0 wurde ein neues Feature in DSC (Konfiguration für den gewüns
 ## <a name="enabling-dsc-debugging"></a>Aktivieren des DSC-Debuggens
 Bevor Sie eine Ressource debuggen können, müssen Sie das Cmdlet [Enable-DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx) aufrufen, um das Debuggen zu aktivieren. Dieses Cmdlet verfügt über den Pflichtparameter **BreakAll**. 
 
-Um zu überprüfen, ob das Debuggen aktiviert wurde, werfen Sie einen Blick auf das Ergebnis eines Aufrufs von [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx). Die folgende PowerShell-Ausgabe zeigt das Ergebnis der Aktivierung des Debuggens an:
+Um zu überprüfen, ob das Debuggen aktiviert wurde, werfen Sie einen Blick auf das Ergebnis eines Aufrufs von [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx).
+
+Die folgende PowerShell-Ausgabe zeigt das Ergebnis der Aktivierung des Debuggens an:
 
 
 ```powershell
@@ -62,7 +64,7 @@ PSWebAccess
 Rufen Sie nach dem Kompilieren der Konfiguration [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) auf, um die Konfiguration zu starten. Die Konfiguration wird beendet, wenn der lokale Konfigurations-Manager die erste Ressource in der Konfiguration aufruft. Bei Verwendung der Parameter `-Verbose` und `-Wait` werden in der Ausgabe die Zeilen angezeigt, die Sie eingeben müssen, um das Debuggen zu starten.
 
 ```powershell
-PS C:\DebugTest> Start-DscConfiguration .\PSWebAccess -Wait -Verbose
+Start-DscConfiguration .\PSWebAccess -Wait -Verbose
 VERBOSE: Perform operation 'Invoke CimMethod' with following parameters, ''methodName' = SendConfigurationApply,'className' = MSFT_DSCLocalConfiguration
 Manager,'namespaceName' = root/Microsoft/Windows/DesiredStateConfiguration'.
 VERBOSE: An LCM method call arrived from computer TEST-SRV with user sid S-1-5-21-2127521184-1604012920-1887927527-108583.
@@ -75,8 +77,8 @@ nfiguration\DscResources\MSFT_RoleResource\MSFT_RoleResource.psm1 in force mode.
 VERBOSE: [TEST-SRV]: LCM:  [ Start  Resource ]  [[WindowsFeature]PSWA]
 VERBOSE: [TEST-SRV]: LCM:  [ Start  Test     ]  [[WindowsFeature]PSWA]
 VERBOSE: [TEST-SRV]:                            [[WindowsFeature]PSWA] Importing the module MSFT_RoleResource in force mode.
-WARNING: [TEST-SRV]:                            [[WindowsFeature]PSWA] Resource is waiting for PowerShell script debugger to attach.  Use the follow
-ing commands to begin debugging this resource script:
+WARNING: [TEST-SRV]:                            [[WindowsFeature]PSWA] Resource is waiting for PowerShell script debugger to attach. 
+Use the following commands to begin debugging this resource script:
 Enter-PSSession -ComputerName TEST-SRV -Credential <credentials>
 Enter-PSHostProcess -Id 9000 -AppDomainName DscPsPluginWkr_AppDomain
 Debug-Runspace -Id 9
