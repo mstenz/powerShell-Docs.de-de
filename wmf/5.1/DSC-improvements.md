@@ -8,11 +8,11 @@ author: keithb
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-ms.openlocfilehash: 581d80d476e918a78775291521abfd254703a7b7
-ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
+ms.openlocfilehash: 1bf1bf914982e0d52e592e6ef421d36b1915b338
+ms.sourcegitcommit: 267688f61dcc76fd685c1c34a6c7bfd9be582046
 translationtype: HT
 ---
-#<a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>Verbesserungen an DSC (Desired State Configuration) in WMF 5.1
+# <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>Verbesserungen an DSC (Desired State Configuration) in WMF 5.1
 
 ## <a name="dsc-class-resource-improvements"></a>Verbesserungen an DSC-Klassenressourcen
 
@@ -25,24 +25,33 @@ In WMF 5.1 haben wir die folgenden bekannten Probleme behoben:
 
 
 ## <a name="dsc-resource-debugging-improvements"></a>Verbesserungen beim Debuggen von DSC-Ressourcen
-
 In WMF 5.0 hat der PowerShell-Debugger nicht direkt an der klassenbasierten Ressourcenmethode (Get/Set/Test) angehalten.
 In WMF 5.1 wird der Debugger an der klassenbasierten Ressourcenmethode auf die gleiche Weise wie bei MOF-basierten Ressourcenmethoden anhalten.
 
 ## <a name="dsc-pull-client-supports-tls-11-and-tls-12"></a>Der DSC-Pull-Client unterstützt TLS 1.1 und TLS 1.2 
-Zuvor unterstützte der DSC-Pull-Client nur SSL 3.0 und TLS 1.0 über HTTPS-Verbindungen. Wenn er gezwungen wurde, sicherere Protokolle zu verwenden, funktionierte der Pull-Client nicht mehr. In WMF 5.1 unterstützt der DSC-Pull-Client SSL 3.0 nicht mehr. Stattdessen werden die sichereren TLS 1.1- und TLS 1.2-Protokolle unterstützt.  
+Zuvor unterstützte der DSC-Pull-Client nur SSL&3;.0 und TLS&1;.0 über HTTPS-Verbindungen. Wenn er gezwungen wurde, sicherere Protokolle zu verwenden, funktionierte der Pull-Client nicht mehr. In WMF 5.1 unterstützt der DSC-Pull-Client SSL 3.0 nicht mehr. Stattdessen werden die sichereren TLS 1.1- und TLS 1.2-Protokolle unterstützt.  
 
 ## <a name="improved-pull-server-registration"></a>Verbesserte Pull-Serverregistrierung ##
 
 In früheren Versionen von WMF führten gleichzeitige Registrierungen/Berichterstellungsanforderungen an einen DSC-Pullserver während der Verwendung der ESENT-Datenbank zu einem LCM-Registrierungs- und/oder Berichterstellungsfehler. In solchen Fällen tritt bei den Ereignisprotokollen auf dem Pull-Server der Fehler „Der Instanzname wird bereits verwendet.“ auf.
 Die Ursache hierfür ist die Verwendung eines falschen Musters für den Zugriff auf die ESENT-Datenbank in einem Multithread-Szenario. In WMF 5.1 wurde dieses Problem behoben. Gleichzeitige Registrierungen oder Berichterstellungen (mit ESENT-Datenbank) funktionieren in WMF 5.1 einwandfrei. Dieses Problem gilt nur für die ESENT-Datenbank und nicht für die OLE DB-Datenbank. 
 
-##<a name="pull-partial-configuration-naming-convention"></a>Übertragen einer Namenskonvention für eine partielle Konfiguration mithilfe von Pull
+## <a name="enable-circular-log-on-esent-database-instance"></a>Aktivieren des Umlaufprotokolls in der ESENT-Datenbankinstanz
+In früheren Version von DSC-PullServer füllten die ESENT-Datenbankprotokolldateien den Speicherplatz des Pullservers, weil die Datenbankinstanz ohne Umlaufprotokoll erstellt wurde. In dieser Version kann der Kunde das Umlaufprotokollverhalten der Instanz mit „web.config“ des Pullservers steuern. Standardmäßig wird „CircularLogging“ auf „TRUE“ festgelegt.
+```
+<appSettings>
+     <add key="dbprovider" value="ESENT" />
+    <add key="dbconnectionstr" value="C:\Program Files\WindowsPowerShell\DscService\Devices.edb" />
+    <add key="CheckpointDepthMaxKB" value="512" />
+    <add key="UseCircularESENTLogs" value="TRUE" />
+  </appSettings>
+```
+## <a name="pull-partial-configuration-naming-convention"></a>Übertragen einer Namenskonvention für eine partielle Konfiguration mithilfe von Pull
 Im vorherigen Release besagte die Namenskonvention für eine partielle Konfiguration, dass der MOF-Dateiname im Pull-Server/-Dienst mit dem Namen der partiellen Konfiguration übereinstimmen soll, der in den Einstellungen des lokalen Konfigurations-Managers (Local Configuration Manager; LCM) angegeben wurde. Dieser Name sollte wiederum mit dem in der MOF-Datei eingebetteten Konfigurationsnamen übereinstimmen. 
 
 Weitere Informationen finden Sie in den nachfolgenden Abbildungen:
 
-•   lokale Konfigurationseinstellungen, die eine Teilkonfiguration definieren, die von einem Knoten empfangen werden darf.
+•   lokale Konfigurationseinstellungen, die eine partielle Konfiguration definieren, die von einem Knoten empfangen werden darf.
 
 ![Beispiel einer Metakonfiguration](../images/MetaConfigPartialOne.png)
 

@@ -8,8 +8,8 @@ author: keithb
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-ms.openlocfilehash: 09316fef0594697a60a1bd4acabf39588f75edc2
-ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
+ms.openlocfilehash: 8957f4709c95ccb5b72c4fa9b42c9fe9ef93dffe
+ms.sourcegitcommit: 58e5e77050ba32717ce3e31e314f0f25cb7b2979
 translationtype: HT
 ---
 # <a name="bug-fixes-in-wmf-51"></a>Fehlerkorrekturen in WMF 5.1#
@@ -98,3 +98,16 @@ Wenn Sie vor WMF 5.1 über mehrere Versionen eines installierten Modus verfügt 
 In WMF 5.1 wurde dieser Fehler behoben, sodass nur die Hilfe für die neueste Version des Themas zurückgegeben wird.
 
 `Get-Help` bietet keine Möglichkeit anzugeben, für welche Version Sie Hilfe wünschen. Die Problemumgebung besteht darin, zum Verzeichnis „Modules“ zu navigieren und die Hilfe direkt mit einem Tool wie Ihrem bevorzugten Editor anzuzeigen. 
+
+### <a name="powershellexe-reading-from-stdin-stopped-working"></a>„powershell.exe“ wird beim Lesen aus STDIN beendet
+
+Kunden verwenden `powershell -command -` aus native Apps heraus zum Ausführen von PowerShell; die Übergabe im Skript über STDIN ist leider aufgrund anderer Änderungen am Konsolenhost fehlerhaft.
+
+https://windowsserver.uservoice.com/forums/301869-powershell/suggestions/15854689-powershell-exe-command-is-broken-on-windows-10
+
+### <a name="powershellexe-creates-spike-in-cpu-usage-on-startup"></a>„powerShell.exe“ führt beim Start zu einer Spitze in der CPU-Auslastung
+
+PowerShell überprüft mithilfe einer WMI-Abfrage, ob der Start über die Gruppenrichtlinie erfolgt ist, um Verzögerung bei der Anmeldung zu vermeiden.
+Am Ende der WMI-Abfrage wird „tzres.mui.dll“ in jeden Prozess auf dem System hinzugefügt, da die Klasse „WMI-Win32_Process“ versucht, lokale Zeitzoneninformationen abzurufen.
+Dies führt zu einer großen CPU-Spitze in wmiprvse (dem WMI-Anbieterhost).
+Lösung: Verwenden Sie Win32-API-Aufrufe anstelle von WMI, um die gleichen Informationen abzurufen.

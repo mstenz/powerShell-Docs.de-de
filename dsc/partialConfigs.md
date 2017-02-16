@@ -7,13 +7,13 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: 02f1cc45f30c0892e777a9e05d87f440f628fbf5
-ms.sourcegitcommit: f06ef671c0a646bdd277634da89cc11bc2a78a41
+ms.openlocfilehash: fba9b3ed183d82cf532e2431de4a9e2c30243197
+ms.sourcegitcommit: a3966253a165d193a42b43b9430a4dc76988f82f
 translationtype: HT
 ---
 # <a name="powershell-desired-state-configuration-partial-configurations"></a>PowerShell DSC – Teilkonfigurationen
 
->Gilt für: Windows PowerShell 5.0
+>Gilt für: Windows PowerShell 5.0 und höher.
 
 In PowerShell 5.0 ermöglicht DSC (Desired State Configuration, Konfiguration des gewünschten Zustands), dass Konfigurationen in Fragmenten und aus mehreren Quellen übermittelt werden. Der LCM (Local Configuration Manager, lokale Konfigurations-Manager) auf dem Zielknoten setzt die Fragmente zusammen, ehe sie als einzelne Konfiguration angewendet werden. Dies ermöglicht die gemeinsame Steuerung der Konfiguration durch Teams oder Einzelpersonen. Wenn z. B. zwei oder mehr Teams an der Entwicklung eines Diensts zusammenarbeiten, möchte ggf. jedes Team Konfigurationen für die Verwaltung seines Teils des Diensts erstellen. Jede dieser Konfigurationen kann von verschiedenen Pullservern abgerufen und in verschiedenen Phasen der Entwicklung hinzugefügt werden. Teilkonfigurationen ermöglichen außerdem verschiedenen Personen oder Teams das Steuern verschiedener Aspekte der Konfiguration von Knoten, ohne dass die Bearbeitung eines einzelnen Konfigurationsdokuments koordiniert werden muss. Ein Team kann z. B. für die Bereitstellung einer VM und eines Betriebssystems verantwortlich sein, während ein anderes Team andere Anwendungen und Dienste auf dieser VM bereitstellen kann. Bei Teilkonfigurationen kann jedes Team seine eigene Konfiguration erstellen, die dann nicht unnötig kompliziert sein muss.
 
@@ -53,7 +53,7 @@ PartialConfigDemo
 
 ### <a name="publishing-and-starting-push-mode-partial-configurations"></a>Veröffentlichen und Starten von Teilkonfigurationen im Pushmodus
 
-Rufen Sie dann [Publish-DSCConfiguration](/reference/5.0/PSDesiredStateconfiguration/Publish-DscConfiguration.md) für jede Konfiguration auf, und übergeben Sie die Ordner mit den Konfigurationsdokumenten als **Path**-Parameter. `Publish-DSCConfiguration` positioniert die Konfigurations-MOF-Dateien auf die Zielknoten. Nach Veröffentlichen beider Konfigurationen können Sie `Start-DSCConfiguration –UseExisting` auf dem Zielknoten aufrufen.
+Rufen Sie dann [Publish-DSCConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration) für jede Konfiguration auf, und übergeben Sie die Ordner mit den Konfigurationsdokumenten als **Path**-Parameter. `Publish-DSCConfiguration` positioniert die Konfigurations-MOF-Dateien auf die Zielknoten. Nach Veröffentlichen beider Konfigurationen können Sie `Start-DSCConfiguration –UseExisting` auf dem Zielknoten aufrufen.
 
 Wenn Sie z.B. die folgenden Konfigurations-MOF-Dokumente auf dem Erstellungsknoten kompiliert haben:
 
@@ -98,8 +98,7 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 17     Job17           Configuratio... Running       True            TestVM            Start-DscConfiguration...
 ```
 
->**Hinweis:** Der Benutzer mit 
-
+>**Hinweis:** Der Benutzer, der das Cmdlet [Publish-DSCConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration) ausführt, muss über Administratorrechte auf dem Zielknoten verfügen.
 
 ## <a name="partial-configurations-in-pull-mode"></a>Teilkonfigurationen im Pullmodus
 
@@ -194,7 +193,16 @@ Nach dem Erstellen der Metakonfiguration müssen Sie diese ausführen, um ein Ko
 
 ### <a name="naming-and-placing-the-configuration-documents-on-the-pull-server-configurationnames"></a>Benennen und Ablegen der Konfigurationsdokumente auf dem Pullserver (ConfigurationNames)
 
-Die Teilkonfigurationsdokumente müssen in dem Ordner abgelegt werden, der als **ConfigurationPath** in der Datei `web.config` für den Pullserver angegeben ist (meist `C:\Program Files\WindowsPowerShell\DscService\Configuration`). Konfigurationsdokumente müssen wie folgt benannt werden: `ConfigurationName.mof`, wobei _ConfigurationName_ der Name der partiellen Konfiguration ist. In unserem Beispiel sollten die Konfigurationsdokumente wie folgt heißen:
+Die Teilkonfigurationsdokumente müssen in dem Ordner abgelegt werden, der als **ConfigurationPath** in der Datei `web.config` für den Pullserver angegeben ist (meist `C:\Program Files\WindowsPowerShell\DscService\Configuration`). 
+
+#### <a name="naming-configuration-documents-on-the-pull-server-in-powershell-51"></a>Benennen der Konfigurationsdokumente auf dem Pullserver in PowerShell 5.1
+
+Wenn Sie nur eine partielle Konfiguration von einem einzelnen Pullserver abrufen, kann das Konfigurationsdokument beliebig benannt werden. Wenn Sie mehrere partielle Konfigurationen von einem Pullserver abrufen, kann das Konfigurationsdokument entweder `<ConfigurationName>.mof` genannt werden, wobei _ConfigurationName_ der Name der partiellen Konfiguration ist, oder `<ConfigurationName>.<NodeName>.mof`, wobei _ConfigurationName_ der Name der partiellen Konfiguration und _NodeName_ der Name des Zielknotens ist. Dadurch können Sie Konfigurationen vom DSC-Pullserver für Azure Automation abrufen.
+
+
+#### <a name="naming-configuration-documents-on-the-pull-server-in-powershell-50"></a>Benennen der Konfigurationsdokumente auf dem Pullserver in PowerShell 5.0
+
+Konfigurationsdokumente müssen wie folgt benannt werden: `ConfigurationName.mof`, wobei _ConfigurationName_ der Name der partiellen Konfiguration ist. In unserem Beispiel sollten die Konfigurationsdokumente wie folgt heißen:
 
 ```
 ServiceAccountConfig.mof
@@ -222,7 +230,7 @@ Nachdem der LCM auf dem Zielknoten konfiguriert wurde und die Konfigurationsdoku
 
 ## <a name="partial-configurations-in-mixed-push-and-pull-modes"></a>Teilkonfigurationen im gemischten Push- und Pullmodus
 
-Sie können Push- und Pullmodus für Teilkonfigurationen auch mischen. Es ist also möglich, dass eine Teilkonfiguration per Pull von einem Pullserver abgerufen wird, während eine andere per Push übertragen wird. Behandeln Sie jede Teilkonfiguration abhängig von ihrem in den vorherigen Abschnitten beschriebenen Aktualisierungsmodus. In der folgenden Metakonfiguration wird z. B. dasselbe Beispiel beschrieben – mit der Teilkonfiguration für das Dienstkonto im Pullmodus und der Teilkonfiguration für SharePoint im Pushmodus.
+Sie können Push- und Pullmodus für Teilkonfigurationen auch mischen. Es ist also möglich, dass eine Teilkonfiguration per Pull von einem Pullserver abgerufen wird, während eine andere per Push übertragen wird. Geben Sie den Aktualisierungsmodus für jede partielle Konfiguration an, wie in den vorherigen Abschnitten beschrieben. In der folgenden Metakonfiguration wird z. B. dasselbe Beispiel beschrieben – mit der partiellen Konfiguration für `ServiceAccountConfig` im Pullmodus und der partiellen Konfiguration für `SharePointConfig` im Pushmodus.
 
 ### <a name="mixed-push-and-pull-modes-using-configurationnames"></a>Gemischte Push- und Pullmodi unter Verwendung von „ConfigurationNames“
 
@@ -301,7 +309,7 @@ configuration PartialConfigDemo
 PartialConfigDemo 
 ```
 
-Beachten Sie, dass der im „Settings“-Block angegebene **RefreshMode** auf „Pull“, aber der **RefreshMode** für die Teilkonfiguration „SharePointConfig“ auf „Push“ festgelegt ist.
+Beachten Sie, dass der im „Settings“-Block angegebene **RefreshMode** auf „Pull“, aber der **RefreshMode** für die partielle Konfiguration `SharePointConfig` auf „Push“ festgelegt ist.
 
 Benennen Sie die MOF-Konfigurationsdateien und legen Sie sie ab, wie oben für die entsprechenden Aktualisierungsmodi beschrieben. Rufen Sie das Cmdlet **Publish-DSCConfiguration** zum Veröffentlichen der `SharePointConfig`-Teilkonfiguration auf. Warten Sie dann entweder, bis die `ServiceAccountConfig`-Konfiguration vom Pullserver abgerufen wird, oder erzwingen Sie eine Aktualisierung durch das Aufrufen von [Update-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143541(v=wps.630).aspx).
 
