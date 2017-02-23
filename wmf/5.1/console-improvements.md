@@ -8,8 +8,8 @@ author: keithb
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-ms.openlocfilehash: d3f38b7f5d77717e0bec46132a3a521c2d4c0d12
-ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
+ms.openlocfilehash: fc0c78f59a2c4cda5c6aad625a5eaf5121485bad
+ms.sourcegitcommit: 26f4e52f3dd008b51b7eae7b634f0216eec6200e
 translationtype: HT
 ---
 # <a name="console-improvements-in-wmf-51"></a>Verbesserungen an der Konsole in WMF 5.1#
@@ -43,7 +43,7 @@ Beachten Sie, dass VT100-Escapesequenzen erst ab dem Anniversary-Update für Win
 
 ### <a name="vi-mode-support-in-psreadline"></a>Unterstützung des vi-Modus in PSReadline
 
-[PSReadline](https://github.com/lzybkr/PSReadLine) bietet nun Unterstützung den für vi-Modus. Führen Sie zur Verwendung des vi-Modus `Set-PSReadline -EditMode vi` aus.
+[PSReadline](https://github.com/lzybkr/PSReadLine) bietet nun Unterstützung den für vi-Modus. Führen Sie zur Verwendung des vi-Modus `Set-PSReadlineOption -EditMode Vi` aus.
 
 ### <a name="redirected-stdin-with-interactive-input"></a>Umgeleitetes stdin mit interaktiver Eingabe 
 
