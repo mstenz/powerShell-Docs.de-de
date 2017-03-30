@@ -5,10 +5,10 @@ keywords: powershell,DSC
 description: 
 ms.topic: article
 author: eslesar
-manager: dongill
+manager: carmonm
 ms.prod: powershell
-ms.openlocfilehash: b84b70edeafca3112356224c9ae14c6497170ac5
-ms.sourcegitcommit: f06ef671c0a646bdd277634da89cc11bc2a78a41
+ms.openlocfilehash: af86f1f93a1035ec52a8b029acdd826e8463e2c2
+ms.sourcegitcommit: ba8ed836799ef465e507fa1b8d341ba38459d863
 translationtype: HT
 ---
 # <a name="pull-server-best-practices"></a>Bewährte Methoden für Pullserver
@@ -117,13 +117,12 @@ Sie benötigen einen Servernamen für die Konfiguration von Clients, damit diese
 
 Mit einem DNS-CNAME können Sie ein Alias erstellen, um auf Ihren Hosteintrag (A) zu verweisen. Die Absicht des zusätzlichen Namenseintrags ist eine verbesserte Flexibilität für den Fall, dass eine Änderung in der Zukunft erforderlich sein sollte. Ein CNAME kann bei der Isolierung der Clientkonfiguration behilflich sein, damit Änderungen der Serverumgebung keine entsprechenden Änderungen der Clientkonfiguration erfordern. Diese Änderungen umfassen das Ersetzen eines Pullservers oder Hinzufügen zusätzlicher Pullserver.
 
-Bedenken Sie die Lösungsarchitektur, wenn Sie einen Namen für den DNS-Datensatz auswählen. Bei der Nutzung des Lastenausgleichs muss das Zertifikat zur Sicherung von Datenverkehr über HTTPS über denselben Namen verfügen wie der DNS-Datensatz. Gleichermaßen würde bei Verwendung einer hoch verfügbaren Dateifreigabe der virtuelle Name des Clusters verwendet werden.
+Bedenken Sie die Lösungsarchitektur, wenn Sie einen Namen für den DNS-Datensatz auswählen. Bei der Nutzung des Lastenausgleichs muss das Zertifikat zur Sicherung von Datenverkehr über HTTPS über denselben Namen verfügen wie der DNS-Datensatz. 
 
 Szenario |Bewährte Methode
 :---|:---
 Testumgebung |Reproduzieren Sie nach Möglichkeit die geplante Produktionsumgebung. Ein Serverhostname eignet sich für einfache Konfigurationen. Wenn DNS nicht verfügbar ist, kann eine IP-Adresse anstatt eines Hostnamen verwendet werden.|
 Einzelknotenbereitstellung |Erstellen Sie einen DNS CNAME-Datensatz, der auf den Serverhostnamen verweist.|
-Hoch verfügbare Bereitstellung |Wenn sich Clients durch eine Lastenausgleichslösung verbinden, dann erstellen Sie einen Hostnamen für die virtuelle IP-Adresse und einen CNAME-Datensatz, der auf diesen Hostnamen verweist. Wenn DNS-Roundrobin zur Verteilung von Clientanforderungen auf Pullservern verwendet wird, müssen Sie die Namenseinträge konfigurieren, um die Hostnamen aller bereitgestellten Pullserverinstanzen einzubeziehen.|
 
 Weitere Informationen finden Sie unter [Configuring DNS Round Robin in Windows Server (Konfigurieren des DNS-Roundrobin in Windows Server)](https://technet.microsoft.com/en-us/library/cc787484(v=ws.10).aspx).
 
@@ -154,13 +153,6 @@ Haben Sie einen DNS-Namen für die Pullserverumgebung ausgewählt, die Sie für 
 
 Ein Pullserver kann mithilfe eines auf IIS gehosteten Webdiensts oder einer SMB-Datenfreigabe bereitgestellt werden. In den meisten Fällen bietet die Webdienstoption mehr Flexibilität. Es ist nicht ungewöhnlich, dass HTTPS-Datenverkehr die Netzwerkgrenzen durchläuft. Im Gegensatz dazu wird SMB-Datenverkehr häufig zwischen Netzwerken gefiltert oder blockiert. Der Webdienst bietet außerdem die Option zum Einschließen eines Conformance Server oder Web Reporting Manager (beide Themen werden in einer künftigen Version dieses Dokuments behandelt), die einen Mechanismus für Clients bereitstellen, mit dem der Status an einen Server weitergeleitet werden kann, um somit für zentrale Sichtbarkeit zu sorgen. SMB bietet eine Option für Umgebungen, bei der eine Richtlinie bestimmt, dass ein Webserver nicht verwendet werden sollte und für andere Umgebungsanforderungen, die eine Webserverrolle unerwünscht erscheinen lassen. Sie müssen in beiden Fällen die Anforderungen für die Signierung und Verschlüsselung des Datenverkehrs bewerten. HTTPS, SMB-Signaturen und IPSEC-Richtlinien sind Optionen, die in Betracht gezogen werden sollten.
 
-#### <a name="designing-for-high-availability"></a>Entwerfen für hohe Verfügbarkeit  
-Die Pullserverrolle kann in einer hoch verfügbaren Architektur bereitgestellt werden. Die Webdienstrolle kann per Lastenausgleich verarbeitet werden und, die Dateien und Ordner, die DSC-Module und DSC-Konfigurationen enthalten, können in hoch verfügbaren Speicherorten lokalisiert werden.
-
-Bedenken Sie, dass alle Daten für die Testdurchführung und die Einstellung der Konfigurationen lokal auf jedem Knoten gespeichert werden, sobald die Konfigurationen und Module an einen Zielknoten übertragen wurden. Der Pullserver übermittelt ausschließlich Änderungen. Ein Dienstausfall eines Pullservers würde nur im Falle aktiver Bereitstellungen eine Unterbrechung darstellen.  Hoher Verfügbarkeit ist in der Regel nur für die größte Umgebung gerechtfertigt.
-
-Das Konfigurieren einer hoch verfügbaren Pullserverumgebung erfordert Entscheidungen über die Art der Verteilung von Clientanforderungen über mehrere Serverknoten hinweg und wie die erforderlichen Serverdateien über diese Knoten hinweg freigegeben werden sollen.
-
 #### <a name="load-balancing"></a>Lastenausgleich  
 Clients, die mit dem Webdienst interagieren, fordern Informationen an, die in einer einzelnen Antwort zurückgegeben werden. Es sind keine sequenziellen Anforderungen erforderlich. Deshalb muss die Lastenausgleichsplattform nicht sicherstellen, dass Sitzungen zu jedem Zeitpunkt auf einem einzelnen Server beibehalten werden.
 
@@ -173,17 +165,6 @@ Welche Information ist für die Anforderung erforderlich?|
 Müssen Sie eine zusätzliche IP-Adresse anfordern oder wird das für den Lastenausgleich verantwortliche Team sich darum kümmern?|
 Verfügen Sie über die benötigten DNS-Datensätze, und werden diese vom Team benötigt, das für die Konfiguration der Lastenausgleichslösung verantwortlich ist?|
 Erfordert die Lastenausgleichslösung, dass PKI vom Gerät verarbeitet wird, oder kann es den HTTPS-Datenverkehr per Lastenausgleich verarbeiten, so lange keine Sitzungserforderungen bestehen?|
-
-### <a name="shared-storage"></a>Freigegebener Speicher
-
-In einem Szenario mit hoher Verfügbarkeit, in dem mehrere Server als Pullserver konfiguriert werden und Verbindungen per Lastenausgleich über sie verarbeitet werden, ist es wichtig, dass die von diesen Servern verfügbaren Ressourcen und Konfigurationen identisch sind. Die beste Möglichkeit, um dies zu erreichen, ist das Speichern dieses Inhalts in einem hoch verfügbaren Speicherort, wie z.B. einer gruppierten Dateifreigabe. Der Speicherort der Freigabe kann in der Konfiguration für jeden Server angegeben werden. Weitere Informationen zu freigegebenen Speicheroptionen finden Sie unter „Übersicht über Dateiserver mit horizontaler Skalierung für Anwendungsdaten“.
-
-Planungsaufgabe|
----|
-Welche Lösung wird zum Hosten der hoch verfügbaren Freigabe verwendet werden?|
-Wer wird die Anforderung für eine neue, hoch verfügbare Freigabe bearbeiten?|
-Was ist die durchschnittliche Verarbeitungszeit, bis eine hoch verfügbare Freigabe verfügbar ist?|
-Welche Informationen benötigen die Teams, die für die Speicherung und/oder das Clustering verantwortlich sind?|
 
 ### <a name="staging-configurations-and-modules-on-the-pull-server"></a>Bereitstellen von Konfigurationen und Modulen auf dem Pullserver
 
