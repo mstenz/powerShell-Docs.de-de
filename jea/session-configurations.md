@@ -5,11 +5,11 @@ author: rpsqrd
 ms.author: ryanpu
 ms.prod: powershell
 keywords: powershell,cmdlet,jea
-ms.date: 2016-12-05
+ms.date: 2017-03-08
 title: JEA-Sitzungskonfigurationen
 ms.technology: powershell
-ms.openlocfilehash: 32602293afd3a94767682d32a053281ec021cc33
-ms.sourcegitcommit: f06ef671c0a646bdd277634da89cc11bc2a78a41
+ms.openlocfilehash: e98214d1777a1530b5a18ac9df1a6185d6d73979
+ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
 translationtype: HT
 ---
 # <a name="jea-session-configurations"></a>JEA-Sitzungskonfigurationen
@@ -175,55 +175,13 @@ Wie im obigen Beispiel gezeigt, wird auf die Rollenfunktionen durch den flachen 
 Wenn mehrere Rollenfunktionen mit dem gleichen flachen Namen im System verfügbar sind, verwendet PowerShell die implizite Suchreihenfolge, um die zutreffende Rollenfunktionsdatei auszuwählen.
 Sie erhalten **keinen** Zugriff auf alle Rollenfunktionsdateien mit dem gleichen Namen.
 
-Die Suchreihenfolge für JEA-Rollenfunktionen richtet sich nach der Reihenfolge der Pfade in `$env:PSModulePath` und dem Namen des übergeordneten Moduls.
-Der Standardpfad für die Module in PowerShell lautet wie folgt:
+JEA verwendet die Umgebungsvariable `$env:PSModulePath`, um zu bestimmen, welche Pfaden nach Rollenfunktionsdateien gescannt werden sollen.
+JEA sucht innerhalb dieser Pfade nach gültigen PowerShell-Modulen, die einen Unterordner namens „RoleCapabilities“ enthalten.
+Wie beim Importieren von Modulen zieht JEA Rollenfunktionen, die mit Windows ausgeliefert wurden, benutzerdefinierten Rollenfunktionen gleichen Namens vor.
+Bei allen anderen Namenskonflikten wird die Rangfolge durch die Reihenfolge bestimmt, in der Windows die Dateien im Verzeichnis aufzählt (nicht unbedingt alphabetisch).
+Die erste gefundene Rollenfunktionsdatei, die den gewünschten Namen hat, wird für den verbindenden Benutzer verwendet.
 
-```powershell
-PS C:\> $env:PSModulePath
-
-
-C:\Users\Alice\Documents\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\
-```
-
-Pfade, die in der PSModulePath-Liste früher (auf der linken Seite) angezeigt werden, haben Vorrang vor Pfaden auf der rechten Seite.
-
-In jedem Pfad können 0 oder mehr PowerShell-Module enthalten sein.
-Rollenfunktionen werden in alphabetischer Reihenfolge ab dem ersten Modul ausgewählt, das eine Rollenfunktionsdatei mit dem gewünschten Namen enthält.
-
-Betrachten wir dazu das folgende Beispiel: Das Pluszeichen (+) gibt einen Ordner an, während das Minuszeichen (-) auf eine Datei hinweist.
-
-```
-+ C:\Program Files\WindowsPowerShell\Modules
-    + ContosoMaintenance
-        - ContosoMaintenance.psd1
-        + RoleCapabilities
-            - DnsAdmin.psrc
-            - DnsOperator.psrc
-            - DnsAuditor.psrc
-    + FabrikamModule
-        - FabrikamModule.psd1
-        + RoleCapabilities
-            - DnsAdmin.psrc
-            - FileServerAdmin.psrc
-
-+ C:\Windows\System32\WindowsPowerShell\v1.0\Modules
-    + BuiltInModule
-        - BuiltInModule.psd1
-        + RoleCapabilities
-            - DnsAdmin.psrc
-            - OtherBuiltinRole.psrc
-```
-
-Auf diesem System sind mehrere Rollenfunktionsdateien installiert.
-Was geschieht, wenn eine Sitzungskonfigurationsdatei einem Benutzer Zugriff auf die Rolle „DnsAdmin“ gibt?
-
-
-Die gültige Rollenfunktionsdatei befindet sich unter „C:\\Programmdateien\\WindowsPowerShell\\Modules\\ContosoMaintenance\\RoleCapabilities\\DnsAdmin.psrc“.
-
-Denken Sie an die zwei Rangabfolgen:
-
-1. Aufgrund der `$env:PSModulePath`-Variablen wird der Ordner „Programme“ vor dem Ordner „System32“ aufgeführt, sodass Dateien aus dem Ordner „Programme“ Vorrang haben.
-2. Entsprechend der alphabetischen Reihenfolge erscheint das ContosoMaintenance-Modul vor dem FabrikamModule-Modul. Daher wird die DnsAdmin-Rolle aus ContosoMaintenance ausgewählt.
+Da die Suchreihenfolge der Rollenfunktion nicht deterministisch ist, wenn zwei oder mehr Funktionen der Rolle den gleichen Namen aufweisen, wird **dringend empfohlen**, sicherzustellen, dass Rollenfunktionen auf Ihrem Computer über eindeutige Namen verfügen.
 
 ### <a name="conditional-access-rules"></a>Regeln für bedingten Zugriff
 

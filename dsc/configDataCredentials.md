@@ -7,8 +7,8 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: 162ae26dec67e8259661bb58c1b713818627220b
-ms.sourcegitcommit: b88151841dd44c8ee9296d0855d8b322cbf16076
+ms.openlocfilehash: e6ea0992f90a72da6426d9112950c925ab6cd32b
+ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
 translationtype: HT
 ---
 # <a name="credentials-options-in-configuration-data"></a>Optionen für Anmeldeinformationen in den Konfigurationsdaten
@@ -82,10 +82,8 @@ configuration unencryptedPasswordDemo
             Ensure = "Present"
             MembersToInclude = "User1"
         }
-
     }
 
-    
     Node "TestMachine2"
     {
         # Now we'll use a node-specific password to this machine
@@ -112,7 +110,6 @@ configuration unencryptedPasswordDemo
             Ensure = "Present"
             MembersToInclude = "User2"
         }
-      
     }
 
 }
@@ -160,7 +157,8 @@ In diesem Beispiel wird eine [Group](https://msdn.microsoft.com/en-us/powershell
 Damit können lokale Gruppen erstellt oder Member hinzugefügt bzw. entfernt werden.
 Es wird sowohl die Eigenschaft `Credential` als auch die automatische Eigenschaft `PsDscRunAsCredential` akzeptiert.
 Allerdings verwendet die Ressource nur die Eigenschaft `Credential`.
-Erfahren Sie mehr über `PsDscRunAsCredential` in den [WMF-Versionshinweise](https://msdn.microsoft.com/en-us/powershell/wmf/dsc_runas).
+
+Weitere Informationen über die Eigenschaft `PsDscRunAsCredential` finden Sie unter [Ausführen von DSC mit Benutzeranmeldeinformationen](runAsUser.md).
 
 ## <a name="example-the-group-resource-credential-property"></a>Beispiel: Die Eigenschaft „Credential“ der Ressource „Group“
 
@@ -279,8 +277,8 @@ Durch Verwendung eines lokalen Kontos wird verhindert, dass Domänenanmeldeinfor
 
 **Bei Verwendung von Anmeldeinformationen mit DSC-Ressourcen ziehen Sie, wenn möglich, ein lokales Konto einem Domänenkonto vor.**
 
-Enthält die Eigenschaft `Username` der Anmeldeinformationen einen \' oder ein '@', behandelt DSC das Konto als Domänenkonto.
-Ausnahmen machen „Localhost“, „127.0.0.1“ und „::&1;“ im Domänenteil des Benutzernamens.
+Enthält die Eigenschaft `Username` der Anmeldeinformationen einen „\'“ oder ein „@“, behandelt DSC das Konto als Domänenkonto.
+Ausnahmen machen „Localhost“, „127.0.0.1“ und „:: 1“ im Domänenteil des Benutzernamens.
 
 ## <a name="psdscallowdomainuser"></a>PSDscAllowDomainUser
 

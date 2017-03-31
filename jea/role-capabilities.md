@@ -5,11 +5,11 @@ author: rpsqrd
 ms.author: ryanpu
 ms.prod: powershell
 keywords: powershell,cmdlet,jea
-ms.date: 2016-12-05
+ms.date: 2017-03-07
 title: JEA-Rollenfunktionen
 ms.technology: powershell
-ms.openlocfilehash: e67b38344e2d1d0d347c7850f2097e31c0945e15
-ms.sourcegitcommit: b88151841dd44c8ee9296d0855d8b322cbf16076
+ms.openlocfilehash: 49623e69b186fd09679bf7e0186dec3961e719ba
+ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
 translationtype: HT
 ---
 # <a name="jea-role-capabilities"></a>JEA-Rollenfunktionen
@@ -236,28 +236,37 @@ Die komplexe Zusammenführungslogik wirkt sich auf Cmdlets und Funktionen aus, d
 
 Die folgenden Regeln gelten:
 
-
 1. Wenn ein Cmdlet nur in einer Rolle sichtbar gemacht wird, ist es für Benutzer mit beliebigen Parametereinschränkungen sichtbar.
 2. Wenn ein Cmdlet in mehr als einer Rolle sichtbar gemacht wird und jede Rolle über dieselben Einschränkungen für das Cmdlet verfügt, ist das Cmdlet für Benutzer mit diesen Einschränkungen sichtbar.
 3. Wenn ein Cmdlet in mehr als einer Rolle sichtbar gemacht wird und jede Rolle einen anderen Satz von Parametern zulässt, sind das Cmdlet und alle für jede Rolle definierten Parameter für die Benutzer sichtbar. Wenn für eine Rolle keine Einschränkungen für die Parameter gelten, sind alle Parameter zulässig.
 4. Wenn eine Rolle ein ValidateSet- oder ein ValidatePattern-Attribut für einen Cmdlet-Parameter definiert und die andere Rolle den Parameter zwar zulässt, aber die Parameterwerte nicht einschränkt, werden das ValidateSet- bzw. das ValidatePattern-Attribut ignoriert.
 5. Wenn für den gleichen Cmdlet-Parameter in mehr als einer Rolle ein ValidateSet-Attribut definiert ist, sind alle Werte aller ValidateSet-Attribute zulässig.
 6. Wenn für den gleichen Cmdlet-Parameter in mehr als einer Rolle ein ValidatePattern-Attribut definiert ist, sind alle Werte, die einem beliebigen ValidatePattern-Attribut entsprechen, zulässig.
-7. Wenn ein ValidateSet-Attribut in einer oder mehreren Rollen definiert ist und ein ValidatePattern-Attribut in einer anderen Rolle für den gleichen Cmdlet-Parameter definiert ist,wird das ValidateSet-Attribut ignoriert und für die übrigen ValidatePattern-Attribute gilt Regel&6;.
+7. Wenn ein ValidateSet-Attribut in einer oder mehreren Rollen definiert ist und ein ValidatePattern-Attribut in einer anderen Rolle für den gleichen Cmdlet-Parameter definiert ist,wird das ValidateSet-Attribut ignoriert und für die übrigen ValidatePattern-Attribute gilt Regel 6.
 
-Die folgende Tabelle zeigt einige praktische Anwendungsbeispiele für diese Logik mit zwei Rollen, A und B, die beide einem Benutzer in einer JEA-Sitzung zugewiesen werden.
+Das nachstehende Beispiel zeigt, wie Rollen gemäß geltenden Regeln zusammengeführt werden:
 
-Regel | Rolle A – VisibleCmdlets                                                                          | Rolle B – VisibleCmdlets                                                                             | Geltende Benutzerberechtigungen
------|------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|----------------------------
-1    | `Get-Service`                                                                                  | Nicht zutreffend                                                                                               | `Get-Service`
-1    | Nicht zutreffend                                                                                            | `Get-Service`                                                                                     | `Get-Service`
-2    | `Get-Service`                                                                                  | `Get-Service`                                                                                     | `Get-Service`
-3    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName' }}`                             | `Get-Service`                                                                                     | `Get-Service`
-3    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName' }}`                             | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'Name' }}`                                       | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName' }, @{ Name = 'Name' }}`
-4    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client' }}` | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName' }}`                                | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName' }}`
-5    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client' }}` | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DHCP Client' }}`   | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client', 'DHCP Client' }}`
-6    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidatePattern = 'DNS.*' }}`  | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidatePattern = 'contoso.*' }}` | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidatePattern = '(DNS.*)\|(contoso.*)' }}`
-7    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client' }}` | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidatePattern = 'contoso.*' }}` | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidatePattern = '(DNS.*)\|(contoso.*)' }}`
+```powershell
+# Role A Visible Cmdlets
+$roleA = @{
+    VisibleCmdlets = 'Get-Service',
+                     @{ Name = 'Restart-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client' } }
+}
+
+# Role B Visible Cmdlets
+$roleB = @{
+    VisibleCmdlets = @{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidatePattern = 'DNS.*' } },
+                     @{ Name = 'Restart-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Server' } }
+}
+
+# Resulting permisisons for a user who belongs to both role A and B
+# - The constraint in role B for the DisplayName parameter on Get-Service is ignored becuase of rule #4
+# - The ValidateSets for Restart-Service are merged because both roles use ValidateSet on the same parameter per rule #5
+$mergedAandB = @{
+    VisibleCmdlets = 'Get-Service',
+                     @{ Name = 'Restart-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client', 'DNS Server' } }
+}
+```
 
 
 

@@ -1,16 +1,15 @@
 ---
-description: 
-manager: dongill
+manager: carmonm
 ms.topic: article
 author: rpsqrd
 ms.author: ryanpu
 ms.prod: powershell
 keywords: powershell,cmdlet,jea
-ms.date: 2016-12-05
+ms.date: 2017-03-07
 title: "Übersicht über Just Enough Administration"
 ms.technology: powershell
-ms.openlocfilehash: 742f88bd130a9bcb577914c842735e8c47ca53e6
-ms.sourcegitcommit: cfe32f213819ae76de05da564c3e2c4b7ecfda2f
+ms.openlocfilehash: 2206ccbbcf5996b1bf8db9a46acab2f18f8020dd
+ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
 translationtype: HT
 ---
 # <a name="just-enough-administration"></a>Just Enough Administration
@@ -18,7 +17,7 @@ translationtype: HT
 Just Enough Administration (JEA) ist eine Sicherheitstechnologie, die eine delegierte Verwaltung für sämtliche Elemente ermöglicht, die in PowerShell verwaltet werden können.
 Mit JEA ist Folgendes möglich:
 
-- **Reduzieren Sie die Anzahl von Administratoren auf Ihren Computern**, indem Sie virtuelle Konten nutzen, die privilegierte Aktionen für normale Benutzer ausführen.
+- **Reduzieren Sie die Anzahl von Administratoren auf Ihren Computern**, indem Sie virtuelle Konten oder gruppenverwaltete Dienstkonten nutzen, die privilegierte Aktionen für normale Benutzer ausführen.
 - **Beschränken Sie Benutzeraktionen**, indem Sie die Cmdlets, Funktionen und externen Befehle festlegen, die von Benutzern ausgeführt werden dürfen.
 - **Verschaffen Sie sich einen besseren Überblick über die Aktionen Ihrer Benutzer**, indem Sie Aufzeichnungen und Protokolle nutzen, die Ihnen genau zeigen, welche Befehle ein Benutzer während einer Sitzung ausgeführt hat.
 
@@ -52,3 +51,7 @@ Informationen zu den Anforderungen für die Verwendung von JEA sowie zum Erstell
 - [Verwenden von JEA](using-jea.md): In diesem Thema lernen Sie die verschiedenen Verwendungsmöglichkeiten von JEA kennen.
 - [JEA Security Considerations (JEA-Sicherheitsaspekte)](security-considerations.md): Dieses Thema enthält bewährte Sicherheitsmethoden und Auswirkungen der einzelnen JEA-Konfigurationsoptionen.
 - [Audit and Report on JEA (Überwachen und Erstellen von Berichten zu JEA)](audit-and-report.md): In diesem Thema erfahren Sie, wie Sie JEA-Endpunkte überwachen und Berichte dazu erstellen.
+
+## <a name="samples-and-dsc-resource"></a>Beispiele und DSC-Ressource
+
+Beispielkonfigurationen von JEA und die JEA DSC-Ressource finden Sie im [JEA GitHub-Repository](https://github.com/PowerShell/JEA).

@@ -5,11 +5,11 @@ author: rpsqrd
 ms.author: ryanpu
 ms.prod: powershell
 keywords: powershell,cmdlet,jea
-ms.date: 2016-12-05
+ms.date: 2017-03-07
 title: "JEA-Sicherheitsüberlegungen"
 ms.technology: powershell
-ms.openlocfilehash: 03d34a7c8241aee1578a1cf2e794046578669dce
-ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
+ms.openlocfilehash: 02384465e3c1b6d9633cc346ba88a2566fea1af1
+ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
 translationtype: HT
 ---
 # <a name="jea-security-considerations"></a>JEA-Sicherheitsüberlegungen
@@ -35,12 +35,11 @@ Der Benutzer, der die Verbindung herstellt, kennt die Anmeldeinformation des vir
 
 Virtuelle Konten gehören standardmäßig zur Gruppe der lokalen Administratoren auf dem Computer.
 Dadurch erhalten sie Vollzugriff zum Verwalten aller Elemente auf dem System, aber keine Rechte zum Verwalten von Ressourcen im Netzwerk.
-Bei der Authentifizierung mit anderen Computern gilt das lokale Computerkonto als Benutzerkontext, das virtuelle Konto hingegen nicht.
+Für die Authentifizierung an anderen Computern wird statt des virtuellen Kontos das lokale Computerkonto als Benutzerkontext verwendet.
 
-Auf einem Active Directory-Domänencontroller verfügen virtuelle Konten standardmäßig über die Berechtigungen von *Domänen-Admins*.
-Dies ist darauf zurückzuführen, dass es keine Gruppe für lokale Administratoren auf einem Domänencontroller gibt.
-Dementsprechend zählen virtuelle Konten auf Domänencontrollern als Domänenkonten und können auf anderen Computern verwendet werden.
-Achten Sie beim Konfigurieren von JEA-Sitzungen auf einem Domänencontroller darauf, dass Sie keine Befehle verfügbar machen, mit denen andere Computer im Netzwerk verwaltet werden könnten.
+Domänencontroller sind ein Sonderfall, da es bei ihnen das Konzept der lokalen Administratorgruppe nicht gibt.
+Stattdessen gehören virtuelle Konten zu Domänen-Admins und können die Verzeichnisdienste auf dem Domänencontroller verwalten.
+Die Gültigkeit der Domänenidentität ist auf den Domänencontroller beschränkt, auf dem die JEA-Sitzung instanziiert wurde. Bei jedem Netzwerkzugriff wird es stattdessen so aussehen, als erfolge dieser vom Computerobjekt des Domänencontrollers.
 
 In beiden Fällen können Sie auch explizit definieren, zu welchen Sicherheitsgruppen das virtuelle Konto gehören soll.
 Dies wird empfohlen, wenn Sie Ihre Aufgabe ohne lokale Administrator- bzw. Domänen-Adminberechtigungen ausführen können.
@@ -52,8 +51,8 @@ In der folgenden Tabelle werden die möglichen Konfigurationsoptionen und die si
 
 Computertyp                | Konfiguration virtueller Kontogruppen | Lokaler Benutzerkontext                                      | Netzwerkbenutzerkontext
 -----------------------------|-------------------------------------|---------------------------------------------------------|--------------------------------------------------
-Domänencontroller            | Standardwert                             | Domänenbenutzer, Mitglied von „*DOMÄNE*\Domänen-Admins“         | Domänenbenutzer, Mitglied von „*DOMÄNE*\Domänen-Admins“
-Domänencontroller            | Domänengruppen A und B               | Domänenbenutzer, Mitglied von „*DOMAIN*\A“, „*DOMAIN*\B“       | Domänenbenutzer, Mitglied von „*DOMAIN*\A“, „*DOMAIN*\B“
+Domänencontroller            | Standardwert                             | Domänenbenutzer, Mitglied von „*DOMÄNE*\Domänen-Admins“         | Computerkonto
+Domänencontroller            | Domänengruppen A und B               | Domänenbenutzer, Mitglied von „*DOMAIN*\A“, „*DOMAIN*\B“       | Computerkonto
 Mitgliedsserver oder Arbeitsstation | Standardwert                             | Lokaler Benutzer, Mitglied von „*BUILTIN*\Administrators“        | Computerkonto
 Mitgliedsserver oder Arbeitsstation | Lokale Gruppen C und D                | Lokale Gruppen, Mitglied von „*COMPUTER*\C“ und „*COMPUTER*\D“ | Computerkonto
 
@@ -71,8 +70,8 @@ Die effektiven Berechtigungen des gMSA werden durch die Sicherheitsgruppen (loka
 Wenn ein JEA-Endpunkt für die Verwendung eines gMSA-Kontos konfiguriert ist, sieht es aus, als stammten die Aktionen aller JEA-Benutzer aus demselben gruppenverwalteten Dienstkonto.
 Sie können die Aktionen eines bestimmten Benutzers nur dann zurückverfolgen, wenn Sie die ausgeführten Befehle identifizieren können, die in einer PowerShell-Sitzungsaufzeichnung erfasst sind.
 
-**Pass-Through-Anmeldeinformationen** Wenn Sie kein ausführendes Konto angeben, verwendet PowerShell die Anmeldeinformationen des Benutzers, der die Verbindung herstellt, um Befehle auf dem Remoteserver ausführen.
-Diese Konfiguration wird für JEA nicht empfohlen. Sie setzt voraus, dass Sie dem Benutzer, der eine Verbindung herstellt, direkten Zugriff auf privilegierte Verwaltungsgruppen geben.
+**Pass-Through-Anmeldeinformationen** werden verwendet, wenn Sie kein ausführendes Konto angeben und möchten, dass PowerShell für die Ausführung von Befehlen auf dem Remoteserver die Anmeldeinformationen des Benutzers verwendet, der die Verbindung herstellt.
+Diese Konfiguration wird für JEA *nicht* empfohlen. Sie setzt voraus, dass Sie dem Benutzer, der eine Verbindung herstellt, direkten Zugriff auf privilegierte Verwaltungsgruppen gewähren.
 Benutzer, die eine Verbindung herstellen und über Administratorberechtigungen verfügen, können JEA gänzlich umgehen und das System über andere, uneingeschränkte Möglichkeiten verwalten.
 Weitere Informationen dazu, warum [JEA keinen Schutz von Administratoren bietet](#jea-does-not-protect-against-admins), finden Sie im Abschnitt weiter unten.
 
