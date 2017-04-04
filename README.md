@@ -25,5 +25,5 @@ Jeder Ordner in diesem Repository wird in [MSDN](https://msdn.microsoft.com/en-u
 
 Beiträge zu diesem Repository werden aktiv über [Pullanforderungen](https://help.github.com/articles/using-pull-requests/) im *Staging*-Branch zusammengeführt. Beachten Sie, dass Sie vor der Übermittlung einer Pullanforderung [einen Beitragslizenzvertrags unterschreiben](https://cla.microsoft.com/) müssen, um sicherzustellen, dass die Community Ihre Einsendungen kostenlos verwenden darf.
 Weitere Informationen zu Beiträgen finden Sie in unserem [Handbuch über Beiträge](CONTRIBUTING.md).
-Lesen Sie sich den [-Styleguide für Entwürfe](./style.md) durch, bevor Sie Beiträge erstellen.
+Lesen Sie sich den [-Styleguide für Entwürfe](./STYLE.md) durch, bevor Sie Beiträge erstellen.
 Verwenden Sie die Vorlagen für Probleme und Pullanforderungen, um die Dokumentation über Versionen hinweg konsistent zu halten. 
