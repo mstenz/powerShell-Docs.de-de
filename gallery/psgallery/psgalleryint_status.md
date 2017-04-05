@@ -9,20 +9,22 @@ ms.date: 2016-10-14
 contributor: manikb
 title: PowerShell-Katalogstatus | MSDN
 ms.technology: powershell
-ms.openlocfilehash: a889620aff415146d1808df052ffc43732640ae7
-ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
+ms.openlocfilehash: 58f06ca061a4f171288e75b30698910c701f1da1
+ms.sourcegitcommit: ba8ed836799ef465e507fa1b8d341ba38459d863
 translationtype: HT
 ---
 <a name="powershell-gallery-status"></a>PowerShell-Katalogstatus
 =========================
 
-## <a name="03272017---unable-to-see-individual-module-and-script-pages"></a>27.03.2017 – Einzelne Module und Skriptseiten können nicht angezeigt werden
+## <a name="03272017---resolved-unable-to-see-individual-module-and-script-pages"></a>27.03.2017 – GELÖST: Einzelne Modul- und Skriptseiten können nicht angezeigt werden
 
-__Zusammenfassung der Auswirkungen__: Die direkten Links zu einzelnen Modulen und Skriptseiten auf https://www.powershellgallery.com funktionieren derzeit nicht. Dies wird derzeit aus allen Regionen gemeldet. Dies wirkt sich auf alle PowerShellGet Cmdlets aus, d.h. Install-Module, Install-Script, Update-Module, Update-Script, Publish-Module, Publish-Script sollten weiterhin funktionieren.
+__Zusammenfassung der Auswirkungen__: Die direkten Links zu einzelnen Modul- und Skriptseiten auf https://www.powershellgallery.com haben nicht funktioniert. Dies wurde aus allen Regionen gemeldet. Dies hat sich nicht auf alle PowerShellGet-Cmdlets ausgewirkt, d.h. Install-Module, Install-Script, Update-Module, Update-Script, Publish-Module, Publish-Script haben weiterhin funktioniert.
 
 __Grundursache__: Laut unseren Technikern ist die Ursache ein Problem bei der Einbindung von Schaltflächen für soziale Netzwerke, z.B. Facebook, auf der Seite.  
 
-__Lösung__: Unsere Techniker arbeiten an einer Lösung für dieses Problem. 
+__Lösung__: Die Techniker haben das Problem gelöst, indem sie die Facebook-Kontoinformationen deaktiviert haben.
+
+__Nächste Schritte__: Wir haben ein internes Nachverfolgungsproblem geöffnet, um unseren Gebrauch der Facebook-API zu reparieren.
 
 ## <a name="12152016---unable-to-send-emails-via-powershellgallery-website"></a>15.12.2016 – Es konnten keine E-Mails über die PowerShell-Katalogwebsite gesendet werden.
 
