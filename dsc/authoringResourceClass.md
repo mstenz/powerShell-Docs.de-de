@@ -7,8 +7,8 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: a8c2094cbef1bb14c4a9082ff78fae78ec0c2e65
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: feec9b9e242ef6f43c272bfeb179d11944d1cb06
+ms.sourcegitcommit: 1002c473b88abb209e4188bb626d93675c3614e2
 translationtype: HT
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>Schreiben einer benutzerdefinierten DSC-Ressource mit PowerShell-Klassen
@@ -22,6 +22,8 @@ In einer klassenbasierten DSC-Ressource wird das Schema als Eigenschaften der Kl
 In diesem Thema wird eine einfache Ressource mit dem Namen **FileResource** erstellt, die eine Datei unter einem angegebenen Pfad verwaltet.
 
 Weitere Informationen zu DSC-Ressourcen finden Sie unter [Erstellen von benutzerdefinierten Windows PowerShell DSC-Ressourcen](authoringResource.md).
+
+>**Hinweis:** Generische Sammlungen werden nicht in auf Klassen basierenden Ressourcen unterstützt.
 
 ## <a name="folder-structure-for-a-class-resource"></a>Ordnerstruktur für eine Klassenressource
 

@@ -9,12 +9,20 @@ ms.date: 2016-10-14
 contributor: manikb
 title: PowerShell-Katalogstatus | MSDN
 ms.technology: powershell
-ms.openlocfilehash: 48f554793d25c2d5ea10bc202489845f4225b2b9
-ms.sourcegitcommit: ba8ed836799ef465e507fa1b8d341ba38459d863
+ms.openlocfilehash: 1886715c4b948e4bc59a51fb96d54b56b5b5afed
+ms.sourcegitcommit: 809e4f1bdf218b283e84438151030bfa94ca956d
 translationtype: HT
 ---
 <a name="powershell-gallery-status"></a>PowerShell-Katalogstatus
 =========================
+
+## <a name="04112017---users-unable-to-log-in"></a>04.11.2017: Benutzer können sich nicht anmelden
+
+__Zusammenfassung der Auswirkungen__: Einige Benutzer können sich mit ihren Azure AD-Konten nicht im PowerShell-Katalog anmelden. Das Betriebsteam des PowerShell-Katalogs untersucht das Problem. Es scheint so, als würde dieses Problem keine Benutzer mit Microsoft-Konten betreffen (von Domänen wie Outlook.com, Live.com, etc.) 
+ 
+__Ursache__: noch offen  
+
+__Nächste Schritte__: Wir arbeiten mit dem Azure AD-Team an der Untersuchung des Problems. 
 
 ## <a name="03272017---resolved-unable-to-see-individual-module-and-script-pages"></a>27.03.2017 – GELÖST: Einzelne Modul- und Skriptseiten können nicht angezeigt werden
 
