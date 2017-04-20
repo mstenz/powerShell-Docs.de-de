@@ -9,20 +9,22 @@ ms.date: 2016-10-14
 contributor: manikb
 title: PowerShell-Katalogstatus | MSDN
 ms.technology: powershell
-ms.openlocfilehash: 1886715c4b948e4bc59a51fb96d54b56b5b5afed
-ms.sourcegitcommit: 809e4f1bdf218b283e84438151030bfa94ca956d
+ms.openlocfilehash: a260b9b696b41947fbbb789fd165dfe4bdac1dc3
+ms.sourcegitcommit: 214b8442f05618d078837889cbb6a30b42c01edb
 translationtype: HT
 ---
 <a name="powershell-gallery-status"></a>PowerShell-Katalogstatus
 =========================
 
-## <a name="04112017---users-unable-to-log-in"></a>04.11.2017: Benutzer können sich nicht anmelden
+## <a name="04112017---users-unable-to-log-in-with-azure-active-directory-aad-accounts"></a>11.04.2017: Benutzer können sich nicht mit Azure Active Directory-Konten (AAD) anmelden
 
-__Zusammenfassung der Auswirkungen__: Einige Benutzer können sich mit ihren Azure AD-Konten nicht im PowerShell-Katalog anmelden. Das Betriebsteam des PowerShell-Katalogs untersucht das Problem. Es scheint so, als würde dieses Problem keine Benutzer mit Microsoft-Konten betreffen (von Domänen wie Outlook.com, Live.com, etc.) 
+__Zusammenfassung der Auswirkungen__: Einige Benutzer konnten sich mit ihren Azure AD-Konten nicht beim PowerShell-Katalog anmelden. 
  
-__Ursache__: noch offen  
+__Ursache__: Bei einem Update für eine sicherere Interaktion mit AAD wurde eine Einstellung nicht geändert. Die Tests zur Überprüfung der Änderung umfassten bestimmte Arten von AAD-Konten nicht, daher wurde die Bereitstellung fortgesetzt.
 
-__Nächste Schritte__: Wir arbeiten mit dem Azure AD-Team an der Untersuchung des Problems. 
+__Lösung__: Techniker haben die fehlende Einstellung ermittelt und das Problem behoben. 
+
+__Nächste Schritte__: Wir ändern unsere Tests, sodass eine größere Gruppe von AAD-Kontotypen einbezogen wird.
 
 ## <a name="03272017---resolved-unable-to-see-individual-module-and-script-pages"></a>27.03.2017 – GELÖST: Einzelne Modul- und Skriptseiten können nicht angezeigt werden
 
