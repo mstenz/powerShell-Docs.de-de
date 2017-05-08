@@ -9,9 +9,11 @@ ms.date: 2016-12-12
 title: Arbeiten mit Softwareinstallationen
 ms.technology: powershell
 ms.assetid: 51a12fe9-95f6-4ffc-81a5-4fa72a5bada9
-ms.openlocfilehash: 123ad074fc626bc2c93c4c61f30f056e92cd9d51
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 3ab302d585b69df69faa59c0561216899dd7ee9a
+ms.sourcegitcommit: 6057e6d22ef8a2095af610e0d681e751366a9773
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 05/08/2017
 ---
 # <a name="working-with-software-installations"></a>Arbeiten mit Softwareinstallationen
 Auf Anwendungen, die für die Verwendung von Windows Installer entwickelt wurden, kann über die WMI-Klasse **Win32_Product** zugegriffen werden, aber nicht alle heute verfügbaren Anwendungen verwenden den Windows Installer. Da Windows Installer eine breite Palette von Standardverfahren für die Arbeit mit installierbaren Anwendungen bereitstellt, konzentrieren wir uns in erster Linie auf diese Anwendungen. Anwendungen, die alternative Setuproutinen verwenden, werden im Allgemeinen nicht von Windows Installer verwaltet. Spezifische Verfahren für die Arbeit mit diesen Anwendungen hängen von der Installationssoftware und Entscheidungen des Anwendungsentwicklers ab.
@@ -92,7 +94,7 @@ Es gibt zwar keine sichere Methode, alle Anwendungen auf einem System zu finden,
 Dieser Schlüssel kann auch untersucht werden, um Anwendungen zu finden. Um die Anzeige des Deinstallationsschlüssel zu vereinfachen, kann diesem Registrierungsspeicherort ein Windows PowerShell-Laufwerk zugeordnet werden:
 
 ```
-PS>    
+PS> New-PSDrive -Name Uninstall -PSProvider Registry -Root HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall    
 
 Name       Provider      Root                                   CurrentLocation
 ----       --------      ----                                   ---------------
