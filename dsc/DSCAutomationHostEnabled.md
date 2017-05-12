@@ -1,14 +1,23 @@
-
 ---
-title: DSCAutomationHostEnabled (Registrierungsschlüssel) ms.date: 16.05.2016 keywords: PowerShell, DSC description:  
-ms.topic: Artikel author: eslesar manager: dongill ms.prod: PowerShell
+title: "DSCAutomationHostEnabled (Registrierungsschlüssel)"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+ms.openlocfilehash: eb5889668136def1b47a4999374711460a08179c
+ms.sourcegitcommit: 6057e6d22ef8a2095af610e0d681e751366a9773
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 05/08/2017
 ---
-
 >Gilt für: Windows PowerShell 5.0
 
 # <a name="dscautomationhostenabled-registry-key"></a>DSCAutomationHostEnabled (Registrierungsschlüssel)
 
-DSC verwendet den Registrierungsschlüssel **DSCAutomationHostEnabled** aus **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies**, um den Computer beim ersten Start automatisch zu konfigurieren.
+DSC verwendet den Registrierungsschlüssel **DSCAutomationHostEnabled** unter **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies**, um die Konfiguration des Computer beim ersten Start zu ermöglichen.
 DSCAutomationHostEnabled unterstützt drei Modi:
 
 |  DSCAutomationHostEnabled-Wert  |  Beschreibung   | 

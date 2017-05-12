@@ -7,15 +7,17 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: df994500ce5f46d62f143af07d8ce86dddf44c3e
-ms.sourcegitcommit: b88151841dd44c8ee9296d0855d8b322cbf16076
-translationtype: HT
+ms.openlocfilehash: f16af7664ac5d07b5884070534bed20e8cf2fcd9
+ms.sourcegitcommit: 6057e6d22ef8a2095af610e0d681e751366a9773
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 05/08/2017
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>Einrichten eines DSC-SMB-Pullservers
 
 >Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-Ein DSC-[SMB](https://technet.microsoft.com/en-us/library/hh831795.aspx)-Pullserver ist eine SMB-Dateifreigabe, mit der DSC-Konfigurationsdateien und/oder DSC-Ressourcen für Zielknoten zur Verfügung gestellt werden, wenn sie von diesen Knoten angefordert werden.
+Ein DSC-[SMB](https://technet.microsoft.com/en-us/library/hh831795.aspx)-Pullserver ist ein Computer, der als Host einer SMB-Dateifreigabe fungiert, mit der DSC-Konfigurationsdateien und DSC-Ressourcen für Zielknoten zur Verfügung gestellt werden, wenn sie von diesen Knoten angefordert werden.
 
 Zum Verwenden eines SMB-Pullservers für DSC müssen Sie folgende Schritte ausführen:
 - Einrichten einer SMB-Dateifreigabe auf einem Server mit PowerShell 4.0 oder höher
@@ -146,7 +148,7 @@ Die Prüfsummendatei muss sich im gleichen Verzeichnis wie die MOF-Konfiguration
 
 ## <a name="setting-up-a-pull-client-for-smb"></a>Einrichten eines Pullclients für SMB
 
-Zum Einrichten eines Clients, der Konfigurationen und/oder der Ressourcen von einer SMB-Freigabe abruft, konfigurieren Sie den lokalen Konfigurations-Manager (Local Configuration Manager, LCM) mit den Codeblöcken **ConfigurationRepositoryShare** und **ResourceRepositoryShare**, die angeben, aus welcher Freigabe abgerufen werden soll.
+Zum Einrichten eines Clients, der Konfigurationen und/oder der Ressourcen von einer SMB-Freigabe abruft, konfigurieren Sie den lokalen Konfigurations-Manager (Local Configuration Manager, LCM) des Clients mit den Codeblöcken **ConfigurationRepositoryShare** und **ResourceRepositoryShare**, die die Freigabe angeben, aus der Pullkonfigurationen und DSC-Ressourcen abgerufen werden sollen.
 
 Weitere Informationen zum Konfigurieren des LCM finden Sie unter [Einrichten eines DSC-Pullclients mithilfe einer Konfigurations-ID](pullClientConfigID.md).
 

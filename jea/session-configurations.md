@@ -5,12 +5,14 @@ author: rpsqrd
 ms.author: ryanpu
 ms.prod: powershell
 keywords: powershell,cmdlet,jea
-ms.date: 2017-03-08
+ms.date: 2017-04-25
 title: JEA-Sitzungskonfigurationen
 ms.technology: powershell
-ms.openlocfilehash: e98214d1777a1530b5a18ac9df1a6185d6d73979
-ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
-translationtype: HT
+ms.openlocfilehash: 8773096627217663362e61fb158cc900aea20f43
+ms.sourcegitcommit: 6057e6d22ef8a2095af610e0d681e751366a9773
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 05/08/2017
 ---
 # <a name="jea-session-configurations"></a>JEA-Sitzungskonfigurationen
 
@@ -40,7 +42,7 @@ New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -Path .\MyJEA
 
 Sie können die Sitzungskonfigurationsdatei in einem beliebigen Texteditor öffnen.
 Das `-SessionType RestrictedRemoteServer`-Feld gibt an, dass die Sitzungskonfiguration von JEA für eine sichere Verwaltung verwendet wird.
-Auf diese Weise konfigurierte Sitzungen arbeiten im [NoLanguage-Modus](https://technet.microsoft.com/en-us/library/dn433292.aspx) und verfügen nur über die folgenden acht Standard-Cmdlets (und Aliase):
+Auf diese Weise konfigurierte Sitzungen arbeiten im [NoLanguage-Modus](https://technet.microsoft.com/en-us/library/dn433292.aspx) und verfügen nur über die folgenden acht Standardbefehle (und Aliase):
 
 - Clear-Host (cls, löschen)
 - Exit-PSSession (exsn, beenden)
@@ -139,7 +141,7 @@ MountUserDrive = $true
 ```
 
 Auf dem Benutzerlaufwerk können standardmäßig maximal 50 MB Daten pro Benutzer gespeichert werden.
-Sie können die Datenmenge, die ein Benutzer nutzen kann, mithilfe des Felds *UserDriveMaxmimumSize* einschränken.
+Sie können die Datenmenge, die ein Benutzer nutzen kann, mithilfe des Felds *UserDriveMaximumSize* einschränken.
 
 ```powershell
 # Enables the user drive with a per-user limit of 500MB (524288000 bytes)
@@ -169,6 +171,15 @@ RoleDefinitions = @{
 
 Wenn ein Benutzer zu mehr als einer Gruppe in der Rollendefinition gehört, erhält er Zugriff auf die Rollen jeder einzelnen Gruppe.
 Wenn zwei Rollen Zugriff auf die gleichen Cmdlets vergeben, erhält der Benutzer den Parameter mit den höchsten Berechtigungen.
+
+Wenn Sie im Rollendefinitionsfeld lokale Benutzer oder Gruppen angeben, geben Sie vor dem umgekehrten Schrägstrich den Computernamen (nicht *localhost* oder *.*) an.
+Überprüfen Sie den Computernamen durch Untersuchen der Variablen `$env:computername`.
+
+```powershell
+RoleDefinitions = @{
+    'MyComputerName\MyLocalGroup' = @{ RoleCapabilities = 'DnsAuditor' }
+}
+```
 
 ### <a name="role-capability-search-order"></a>Suchreihenfolge für Rollenfunktionen
 Wie im obigen Beispiel gezeigt, wird auf die Rollenfunktionen durch den flachen Namen (Dateiname ohne Erweiterung) verwiesen.

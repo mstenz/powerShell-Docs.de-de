@@ -8,9 +8,11 @@ author: keithb
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-ms.openlocfilehash: 1bf1bf914982e0d52e592e6ef421d36b1915b338
-ms.sourcegitcommit: 267688f61dcc76fd685c1c34a6c7bfd9be582046
-translationtype: HT
+ms.openlocfilehash: 4c5dfaaf368097c18a2788a9df15632ce116dbbb
+ms.sourcegitcommit: ee407927101c3b166cc200a39a6ea786a1c21f95
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 05/08/2017
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>Verbesserungen an DSC (Desired State Configuration) in WMF 5.1
 
@@ -26,21 +28,21 @@ In WMF 5.1 haben wir die folgenden bekannten Probleme behoben:
 
 ## <a name="dsc-resource-debugging-improvements"></a>Verbesserungen beim Debuggen von DSC-Ressourcen
 In WMF 5.0 hat der PowerShell-Debugger nicht direkt an der klassenbasierten Ressourcenmethode (Get/Set/Test) angehalten.
-In WMF 5.1 wird der Debugger an der klassenbasierten Ressourcenmethode auf die gleiche Weise wie bei MOF-basierten Ressourcenmethoden anhalten.
+In WMF 5.1 wird der Debugger bei der klassenbasierten Ressourcenmethode auf die gleiche Weise wie bei MOF-basierten Ressourcenmethoden anhalten.
 
 ## <a name="dsc-pull-client-supports-tls-11-and-tls-12"></a>Der DSC-Pull-Client unterstützt TLS 1.1 und TLS 1.2 
-Zuvor unterstützte der DSC-Pull-Client nur SSL&3;.0 und TLS&1;.0 über HTTPS-Verbindungen. Wenn er gezwungen wurde, sicherere Protokolle zu verwenden, funktionierte der Pull-Client nicht mehr. In WMF 5.1 unterstützt der DSC-Pull-Client SSL 3.0 nicht mehr. Stattdessen werden die sichereren TLS 1.1- und TLS 1.2-Protokolle unterstützt.  
+Zuvor unterstützte der DSC-Pull-Client nur SSL 3.0 und TLS 1.0 über HTTPS-Verbindungen. Wenn er gezwungen wurde, sicherere Protokolle zu verwenden, funktionierte der Pull-Client nicht mehr. In WMF 5.1 unterstützt der DSC-Pull-Client SSL 3.0 nicht mehr. Stattdessen werden die sichereren TLS 1.1- und TLS 1.2-Protokolle unterstützt.  
 
 ## <a name="improved-pull-server-registration"></a>Verbesserte Pull-Serverregistrierung ##
 
-In früheren Versionen von WMF führten gleichzeitige Registrierungen/Berichterstellungsanforderungen an einen DSC-Pullserver während der Verwendung der ESENT-Datenbank zu einem LCM-Registrierungs- und/oder Berichterstellungsfehler. In solchen Fällen tritt bei den Ereignisprotokollen auf dem Pull-Server der Fehler „Der Instanzname wird bereits verwendet.“ auf.
-Die Ursache hierfür ist die Verwendung eines falschen Musters für den Zugriff auf die ESENT-Datenbank in einem Multithread-Szenario. In WMF 5.1 wurde dieses Problem behoben. Gleichzeitige Registrierungen oder Berichterstellungen (mit ESENT-Datenbank) funktionieren in WMF 5.1 einwandfrei. Dieses Problem gilt nur für die ESENT-Datenbank und nicht für die OLE DB-Datenbank. 
+In früheren Versionen von WMF führten gleichzeitige Registrierungen/Berichterstellungsanforderungen an einen DSC-Pullserver während der Verwendung der ESENT-Datenbank zu einem LCM-Registrierungs- und/oder Berichterstellungsfehler. In solchen Fällen enthalten die Ereignisprotokolle auf dem Pull-Server den Fehler „Der Instanzname wird bereits verwendet“.
+Die Ursache hierfür ist die Verwendung eines falschen Musters für den Zugriff auf die ESENT-Datenbank in einem Multithread-Szenario. In WMF 5.1 wurde dieses Problem behoben. Gleichzeitige Registrierungen oder Berichterstellung (mit ESENT-Datenbank) funktionieren in WMF 5.1 einwandfrei. Dieses Problem gilt nur für die ESENT-Datenbank und nicht für die OLE DB-Datenbank. 
 
 ## <a name="enable-circular-log-on-esent-database-instance"></a>Aktivieren des Umlaufprotokolls in der ESENT-Datenbankinstanz
-In früheren Version von DSC-PullServer füllten die ESENT-Datenbankprotokolldateien den Speicherplatz des Pullservers, weil die Datenbankinstanz ohne Umlaufprotokoll erstellt wurde. In dieser Version kann der Kunde das Umlaufprotokollverhalten der Instanz mit „web.config“ des Pullservers steuern. Standardmäßig wird „CircularLogging“ auf „TRUE“ festgelegt.
+In früheren Version von DSC-PullServer füllten die ESENT-Datenbankprotokolldateien den Speicherplatz des Pullservers, weil die Datenbankinstanz ohne Umlaufprotokoll erstellt wurde. In dieser Version können Sie das Umlaufprotokollverhalten der Instanz mit „web.config“ des Pull-Servers steuern. Standardmäßig ist „CircularLogging“ auf TRUE festgelegt.
 ```
 <appSettings>
-     <add key="dbprovider" value="ESENT" />
+    <add key="dbprovider" value="ESENT" />
     <add key="dbconnectionstr" value="C:\Program Files\WindowsPowerShell\DscService\Devices.edb" />
     <add key="CheckpointDepthMaxKB" value="512" />
     <add key="UseCircularESENTLogs" value="TRUE" />
@@ -99,7 +101,7 @@ Configuration PartialOne
 PartialOne
 ```
 
-In WMF 5.1 kann die Teilkonfiguration im Pullserver/-dienst nach dem Schema „`<ConfigurationName>.<NodeName>.mof`“ benannt werden. Darüber hinaus kann die Konfigurationsdatei auf dem Konfigurationsrepository des Pull-Servers einen beliebigen Dateinamen haben, wenn ein Computer eine einzelne Konfiguration von einem Pull-Server/-Dienst mithilfe von Pull überträgt. Diese Benennungsflexibilität erlaubt Ihnen, Ihre Knoten teilweise über den Azure Automation-Dienst zu verwalten, wobei ein Teil der Konfiguration Ihres Knotens von Azure Automation DSC stammt und die andere Teilkonfiguration von Ihnen lokal verwaltet wird.
+In WMF 5.1 kann die Teilkonfiguration im Pull-Server/Dienst nach dem Schema „`<ConfigurationName>.<NodeName>.mof`“ benannt werden. Darüber hinaus kann die Konfigurationsdatei auf dem Konfigurationsrepository des Pull-Servers einen beliebigen Dateinamen haben, wenn ein Computer eine einzelne Konfiguration von einem Pull-Server/-Dienst mithilfe von Pull überträgt. Diese Benennungsflexibilität erlaubt Ihnen, Ihre Knoten teilweise über den Azure Automation-Dienst zu verwalten, wobei ein Teil der Konfiguration Ihres Knotens von Azure Automation DSC stammt und die andere Teilkonfiguration von Ihnen lokal verwaltet wird.
 
 Mit der nachstehenden Metakonfiguration wird ein Knoten so eingerichtet, dass er sowohl lokal als auch vom Azure Automation-Dienst verwaltet wird.
 
@@ -136,14 +138,14 @@ Mit der nachstehenden Metakonfiguration wird ein Knoten so eingerichtet, dass er
    }
 
    RegistrationMetaConfig
-   slcm -Path .\RegistrationMetaConfig -Verbose
+   Set-DscLocalConfigurationManager -Path .\RegistrationMetaConfig -Verbose
  ```
 
 # <a name="using-psdscrunascredential-with-dsc-composite-resources"></a>Verwenden von PsDscRunAsCredential mit zusammengesetzten DSC-Ressourcen   
 
 Ab jetzt können Sie auch[*PsDscRunAsCredential*](https://msdn.microsoft.com/cs-cz/powershell/dsc/runasuser) mit [zusammengesetzten](https://msdn.microsoft.com/en-us/powershell/dsc/authoringresourcecomposite) DSC-Ressourcen verwenden.    
 
-Benutzer können jetzt für PsDscRunAsCredential einen Wert angeben, wenn sie zusammengesetzte Ressourcen innerhalb von Konfigurationen verwenden. Wenn angegeben, werden alle Ressourcen in einer zusammengesetzten Ressource als RunAs-Benutzer ausgeführt. Wenn eine zusammengesetzte Ressource eine andere zusammengesetzte Ressource aufruft, werden deren gesamte Ressourcen ebenfalls als RunAs-Benutzer ausgeführt. RunAs-Anmeldeinformationen werden auf alle Hierarchieebenen der zusammengesetzten Ressource verteilt. Wenn eine Ressource in einer zusammengesetzten Ressource einen eigenen Wert für PsDscRunAsCredential angibt, wird während der Kompilierung der Konfiguration ein Fehler beim Zusammenführen zurückgegeben.
+Sie können jetzt für „PsDscRunAsCredential“ einen Wert angeben, wenn sie zusammengesetzte Ressourcen innerhalb von Konfigurationen verwenden. Wenn angegeben, werden alle Ressourcen in einer zusammengesetzten Ressource als RunAs-Benutzer ausgeführt. Wenn eine zusammengesetzte Ressource eine andere zusammengesetzte Ressource aufruft, werden deren gesamte Ressourcen ebenfalls als RunAs-Benutzer ausgeführt. RunAs-Anmeldeinformationen werden auf alle Hierarchieebenen der zusammengesetzten Ressource verteilt. Wenn eine Ressource in einer zusammengesetzten Ressource einen eigenen Wert für „PsDscRunAsCredential“ angibt, wird während der Kompilierung der Konfiguration ein Fehler beim Zusammenführen zurückgegeben.
 
 Dieses Beispiel zeigt die Verwendung in Kombination mit der zusammengesetzten [WindowsFeatureSet](https://msdn.microsoft.com/en-us/powershell/wmf/dsc_newresources)-Ressource, die im PSDesiredStateConfiguration-Modul enthalten ist. 
 
@@ -223,7 +225,7 @@ Configuration EnableSignatureValidation
       RegistrationKey = 'd6750ff1-d8dd-49f7-8caf-7471ea9793fc' # Replace this with correct registration key.
     }
     SignatureValidation validations{
-        # By default, LCM will use default Windows trusted publisher store to validate the certificate chain. If TrustedStorePath property is specified, LCM will use this custom store for retrieving the trusted publishers to validate the content.
+        # By default, LCM uses the default Windows trusted publisher store to validate the certificate chain. If TrustedStorePath property is specified, LCM uses this custom store for retrieving the trusted publishers to validate the content.
         TrustedStorePath = 'Cert:\LocalMachine\DSCStore'            
         SignedItemType = 'Configuration','Module'         # This is a list of DSC artifacts, for which LCM need to verify their digital signature before executing them on the node.       
     }
@@ -247,7 +249,7 @@ Die Festlegung der oben genannten Metakonfiguration auf einem Knoten aktiviert d
 6. Prozesskonfiguration
 
 > Hinweis: Signaturen von Modulkatalogen und -konfigurationen werden nur bei der ersten Anwendung der Konfiguration auf das System überprüft, oder wenn das Modul heruntergeladen und installiert wird. Konsistenzläufe überprüfen nicht die Signatur von „current.mof“-Dateien oder deren Modulabhängigkeiten.
-Wenn bei der Überprüfung zu irgendeinem Zeitpunkt ein Fehler auftritt, z. B. wenn die vom Pullserver mithilfe von Pull übertragene Konfiguration nicht signiert ist, wird bei der Verarbeitung der Konfiguration der nachstehende Fehler ausgegeben, und alle temporären Dateien werden gelöscht.
+Wenn bei der Überprüfung zu irgendeinem Zeitpunkt ein Fehler auftritt, z. B. wenn die vom Pull-Server mithilfe von Pull übertragene Konfiguration nicht signiert ist, wird bei der Verarbeitung der Konfiguration der nachstehende Fehler ausgegeben, und alle temporären Dateien werden gelöscht.
 
 ![Beispielkonfiguration einer Fehlerausgabe](../images/PullUnsignedConfigFail.png)
 
@@ -256,7 +258,7 @@ Entsprechend wird beim Übertragen eines Moduls mithilfe von Pull, dessen Katalo
 ![Beispielmodul einer Fehlerausgabe](../images/PullUnisgnedCatalog.png)
 
 ####<a name="push"></a>Push
-Eine Konfiguration, die über Push bereitgestellt wurde, könnte an ihrer Quelle manipuliert worden sein, bevor sie an den Knoten übermittelt wurde. Der lokale Konfigurations-Manager wird für mithilfe von Push übertragene oder veröffentlichte Konfigurationen ähnliche Schritte zur Überprüfung der Signatur durchführen.
+Eine Konfiguration, die über Push bereitgestellt wurde, könnte an ihrer Quelle manipuliert worden sein, bevor sie an den Knoten übermittelt wurde. Der lokale Konfigurations-Manager führt für mithilfe von Push übertragene oder veröffentlichte Konfigurationen ähnliche Schritte zur Überprüfung der Signatur durch.
 Nachstehend finden Sie ein vollständiges Beispiel für die Signaturüberprüfung bei einer mithilfe von Push übertragenen Konfiguration.
 
 * Aktivieren Sie die Überprüfung der Signatur auf dem Knoten.

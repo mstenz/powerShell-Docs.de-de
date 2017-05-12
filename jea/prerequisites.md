@@ -8,9 +8,11 @@ keywords: powershell,cmdlet,jea
 ms.date: 2017-03-07
 title: JEA-Voraussetzungen
 ms.technology: powershell
-ms.openlocfilehash: e4ae3ebd0b2c330a76d3183e6c9c1106f769feb3
-ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
-translationtype: HT
+ms.openlocfilehash: a38c9e948190b9384c62eec3e40758a782c9f72b
+ms.sourcegitcommit: 6057e6d22ef8a2095af610e0d681e751366a9773
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 05/08/2017
 ---
 # <a name="prerequisites"></a>Voraussetzungen
 
@@ -29,22 +31,23 @@ Serverbetriebssystem   | JEA-Verfügbarkeit
 Windows Server 2016       | Vorinstalliert
 Windows Server 2012 R2    | Vollständige Funktionalität mit WMF 5.1
 Windows Server 2012       | Vollständige Funktionalität mit WMF 5.1
-Windows Server 2008 R2    | Vollständige Funktionalität mit WMF 5.1
+Windows Server 2008 R2    | Reduzierte Funktionalität<sup>1</sup> mit WMF 5.1
 
 Sie können JEA auch auf Ihrem Heim- oder Firmencomputer verwenden:
 
 Clientbetriebssystem   | JEA-Verfügbarkeit
 --------------------------|-----------------------------------------------------
-Windows 10 1607           | Vorinstalliert
-Windows 10 1603, 1511     | Vorinstalliert, mit eingeschränkter Funktionalität<sup>1</sup>
+Windows 10 1607+          | Vorinstalliert
+Windows 10 1603, 1511     | Vorinstalliert, mit eingeschränkter Funktionalität<sup>2</sup>
 Windows 10 1507           | Nicht verfügbar
 Windows 8, 8.1            | Vollständige Funktionalität mit WMF 5.1
-Windows 7                 | Eingeschränkte Funktionalität<sup>2</sup> mit WMF 5.1
+Windows 7                 | Reduzierte Funktionalität<sup>1</sup> mit WMF 5.1
 
-<sup>1</sup> Die folgenden JEA-Features werden von den Windows 10-Versionen 1511 und 1603 nicht unterstützt: Ausführen als gruppenverwaltetes Dienstkonto, bedingte Zugriffsregeln in Sitzungskonfigurationen, Benutzerlaufwerk und Gewähren von Zugriff auf lokale Benutzerkonten.
+<sup>1</sup> JEA kann nicht konfiguriert werden, um gruppenverwaltete Dienstkonten unter Windows Server 2008 R2 oder Windows 7 zu verwenden.
+Virtuelle Konten und andere JEA-Features *werden* unterstützt.
+
+<sup>2</sup> Die folgenden JEA-Features werden von den Windows 10-Versionen 1511 und 1603 nicht unterstützt: Ausführen als gruppenverwaltetes Dienstkonto, bedingte Zugriffsregeln in Sitzungskonfigurationen, Benutzerlaufwerk und Gewähren von Zugriff auf lokale Benutzerkonten.
 Aktualisieren Sie Windows auf Version 1607 (Anniversary Update) oder höher, um Unterstützung für diese Features zu erhalten.
-
-<sup>2</sup> JEA kann nicht für die Verwendung von virtuellen Konten unter Windows 7 konfiguriert werden.
 
 ### <a name="check-which-version-of-powershell-is-installed"></a>Überprüfen der installierten Version von PowerShell
 
@@ -98,7 +101,7 @@ Sie können die Richtlinien für die PowerShell-Modulprotokollierung mithilfe vo
 7. Klicken Sie auf **OK**, um die Richtlinie festzulegen.
 8. Doppelklicken Sie anschließend auf **Protokollierung von PowerShell-Skriptblöcken aktivieren**.
 9. Klicken Sie auf **Aktiviert**.
-10. Klicken Sie auf „**OK“, um die Richtlinie festzulegen.
+10. Klicken Sie auf **OK**, um die Richtlinie festzulegen.
 11. (Nur auf der Domäne zugehörige Computer:) Führen Sie **gpupdate** aus, oder warten Sie, bis die Gruppenrichtlinie die aktualisierte Richtlinie verarbeitet hat und diese Einstellungen anwendet.
 
 Sie können über eine Gruppenrichtlinie auch die systemweite PowerShell-Aufzeichnung aktivieren.
