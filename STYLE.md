@@ -40,7 +40,7 @@ Header 2
 * Starten Sie PowerShell-Befehle nicht mit „C:\ PS>“
 * Ausgabe, die von PowerShell-Befehlen ausgegeben wurde, sollte kommentiert werden, um sie am Empfangen von Syntaxhervorhebung zu hindern
 * Eigenschaftsnamen und Parameternamen sollten **fett** geschrieben werden
-
+* PowerShell-Cmdlets haben die [Pascal-Schreibweise](https://en.wikipedia.org/wiki/PascalCase). Verben sind durch einen Bindestrich von Substantiven getrennt.
 
 ## <a name="lists"></a>Listen
 

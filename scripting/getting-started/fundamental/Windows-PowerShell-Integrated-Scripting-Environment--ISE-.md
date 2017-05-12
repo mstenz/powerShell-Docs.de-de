@@ -9,9 +9,11 @@ ms.date: 2016-12-12
 title: Windows PowerShell Integrated Scripting Environment (ISE)
 ms.technology: powershell
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
-ms.openlocfilehash: ce6f084ee1f7e8f086ef5c3a6202cbf7070431db
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 6b10e9ee610235cb17795a371fe05e4c2a81c3bb
+ms.sourcegitcommit: 6057e6d22ef8a2095af610e0d681e751366a9773
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 05/08/2017
 ---
 # <a name="windows-powershell-integrated-scripting-environment-ise"></a>Windows PowerShell Integrated Scripting Environment (ISE)
 Die Windows PowerShell Integrated Scripting Environment (ISE) ist einer von zwei Hosts des Moduls und der Sprache von Windows PowerShell. Sie ermöglicht Ihnen, Skripts auf eine Weise zu schreiben, auszuführen und zu testen, die in der Windows PowerShell-Konsole nicht verfügbar ist. Diese ISE bietet zusätzlich Syntaxfarben, Vervollständigung mit der TAB-TASTE, IntelliSense, visuelles Debuggen und kontextbezogene Hilfe.
@@ -54,7 +56,7 @@ Die **Liste „Zuletzt verwendet“** ist jetzt Teil des Menüs „Datei öffnen
 
 -   **Blockauswahl**. Sie können einen Textblock auswählen, indem Sie die ALT-TASTE gedrückt halten, während Sie den Text im Skriptbereich mit der Maus auswählen, oder **ALT+UMSCHALT+NACH-OBEN/NACH-UNTEN** verwenden.
 
-### <a name="added-in-powershell-20-windows-server-2008-r2-windows-7"></a>In PowerShell 2.0 hinzugefügt (Windows Server 2008 R2, Windows 7)
+### <a name="added-in-powershell-20-windows-server-2008-r2-windows-7"></a>In PowerShell 2.0 (Windows Server 2008 R2, Windows 7) hinzugefügt
 Die ISE wurde mit PowerShell 2.0 eingeführt.
 
 ## <a name="requirements-for-running-the-windows-powershell-ise"></a>Anforderungen für die Ausführung der Windows PowerShell ISE
