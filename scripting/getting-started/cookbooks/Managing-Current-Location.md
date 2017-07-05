@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: Verwalten des aktuellen Speicherorts
-ms.technology: powershell
 ms.assetid: a9f9e7a7-3ea8-47d3-bbb4-6e437f6d4a4a
-ms.openlocfilehash: aa051d80e9f154212393c0fdb4258495635565b9
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 20b3828d12587e675ed51863e5d96c37839b62d6
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="managing-current-location"></a>Verwalten des aktuellen Speicherorts
 Wenn Sie in Verzeichnissystemen im Datei-Explorer navigieren, haben Sie in der Regel einen bestimmten Arbeitsspeicherort, nämlich den aktuell geöffneten Ordner. Elemente im aktuellen Ordner können problemlos verarbeitet werden, indem auf sie geklickt wird. In Befehlszeilenschnittstellen wie z.B. „Cmd.exe“ gilt: Wenn Sie sich im selben Ordner wie eine bestimmte Datei befinden, können Sie darauf zugreifen, indem Sie einen relativ kurzen Namen angeben. Es ist nicht erforderlich, dass Sie den vollständigen Pfad zu der Datei angeben. Das aktuelle Verzeichnis wird als Arbeitsverzeichnis bezeichnet.
@@ -53,7 +49,10 @@ Sie können Pfade, die relativ zu Ihrem aktuellen Speicherort sind, auf die glei
 
 Wenn Sie sich beispielsweise im Ordner **C:\\Windows** befinden, stellt ein Punkt (**.**) **C:\\Windows** dar, während zwei Punkte (**..**) **C:** darstellen. Sie können aus Ihrem aktuellen Speicherort in das Stammverzeichnis des Laufwerks C: wechseln, indem Sie Folgendes eingeben:
 
-<pre>PS> Set-Location -Path .. -PassThru Path ---- C:\</pre>
+<pre>PS> Set-Location -Path .. -PassThru
+Path
+----
+C:\</pre>
 
 Dieselbe Vorgehensweise funktioniert für Windows PowerShell-Laufwerke, die keine Dateisystemlaufwerke sind, etwa **HKLM:**. Sie können Ihren Speicherort auf den Schlüssel „HKLM\\Software“ in der Registrierung festlegen, indem Sie Folgendes eingeben:
 

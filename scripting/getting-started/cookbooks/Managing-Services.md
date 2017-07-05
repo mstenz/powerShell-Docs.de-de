@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: Verwalten von Diensten
-ms.technology: powershell
 ms.assetid: 7a410e4d-514b-4813-ba0c-0d8cef88df31
-ms.openlocfilehash: b4910eed852e777a1b407d436b2e6daa8c12a003
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 9fd6c8bcfecc99756188409629ddf94b880aab91
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="managing-services"></a>Verwalten von Diensten
 Es gibt acht dienstbezogene Kern-Cmdlets („Service“-Cmdlets), die für eine Vielzahl von Dienstaufgaben konzipiert sind. Hier geht es nur um das Auflisten von Diensten und das Ändern des Ausführungsstatus für Dienste, Sie können aber eine Liste der „Service“-Cmdlets abrufen, indem Sie **Get-Help \&#42;-Service** verwenden, und Sie finden Informationen zu jedem „Service“-Cmdlet, indem Sie **Get-Help <Cmdlet-Name>** verwenden, z.B. **Get-Help New-Service**.

@@ -1,16 +1,12 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: Deinstallieren von Windows PowerShell Web Access
-ms.technology: powershell
-ms.openlocfilehash: 1673892b5430f8c49b6ea5ffacf8be0e9e2b3fdf
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 7231d5eadceda8e3b28d9a81c2b5dcbe43680ff2
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/08/2017
 ---
 #  <a name="uninstall-windows-powershell-web-access"></a>Deinstallieren von Windows PowerShell Web Access
 
@@ -49,7 +45,7 @@ Wenn Sie Ihre eigenen, benutzerdefinierten Websitenamen angegeben haben, fügen 
 
     -   Klicken Sie auf dem Windows-Desktop mit der rechten Maustaste auf der Taskleiste auf **Windows PowerShell**.
 
-    -   Klicken Sie auf der Windows-Startseite** **auf **Windows PowerShell**.
+    -   Klicken Sie auf der Windows-Startseite**** auf **Windows PowerShell**.
 
 2.  Geben Sie **Uninstall-PswaWebApplication** ein, und drücken Sie dann die **EINGABETASTE**.
 
@@ -146,7 +142,7 @@ Mit den in diesem Abschnitt beschriebenen Verfahren können Sie die Windows Powe
 
     -   Starten Sie auf dem Windows-Desktop den Server-Manager, indem Sie in der Windows-Taskleiste auf **Server-Manager** klicken.
 
-    -   Klicken Sie auf der Windows-Startseite** **auf **Server-Manager**.
+    -   Klicken Sie auf der Windows-Startseite**** auf **Server-Manager**.
 
 2.  Klicken Sie im Menü **Verwalten** auf **Rollen und Funktionen entfernen**.
 

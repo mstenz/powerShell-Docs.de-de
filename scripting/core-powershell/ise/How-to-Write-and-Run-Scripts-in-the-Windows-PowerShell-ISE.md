@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "Schreiben und Ausführen von Skripts in der Windows PowerShell ISE"
-ms.technology: powershell
 ms.assetid: 62f916d9-b3a1-484a-bdfb-41f57112c22b
-ms.openlocfilehash: 2478db382639ef315574bb7c79faec7cf2ae1c96
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 871a4b6f4575af4f823a6957dc971335497320a4
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>Schreiben und Ausführen von Skripts in der Windows PowerShell ISE
 In diesem Thema ist beschrieben, wie Skripts im Skriptbereich erstellt, bearbeitet, ausgeführt und gespeichert werden.
@@ -22,7 +18,7 @@ In diesem Thema ist beschrieben, wie Skripts im Skriptbereich erstellt, bearbeit
 
 -   [Speichern eines Skripts](#bkmk_3)
 
-## <a name="a-namebkmk1ahow-to-create-and-run-scripts"></a><a name="bkmk_1"></a>Erstellen und Ausführen von Skripts
+## <a name="bkmk_1"></a>Erstellen und Ausführen von Skripts
 Sie können Windows PowerShell®-Dateien im Skriptbereich öffnen und bearbeiten. Die speziellen Dateitypen für Windows PowerShell® sind Skriptdateien (.ps1), Skriptdatendateien (.psd1) und Skriptmoduldateien (.psm1). Diese Dateitypen werden mit Syntaxfärbung im Skriptbereichs-Editor angezeigt. Andere gängige Dateitypen, die Sie möglicherweise im Skriptbereich öffnen möchten, sind Konfigurationsdateien (PS1XML), XML-Dateien und Textdateien.
 
 > [!NOTE]
@@ -58,7 +54,7 @@ Klicken Sie auf der Symbolleiste auf **Skript ausführen**, oder klicken Sie im 
 ### <a name="to-stop-a-running-script"></a>So beenden Sie ein Skript, das ausgeführt wird
 Klicken Sie auf der Symbolleiste auf **Vorgang beenden**, drücken Sie STRG+UNTBR, oder klicken Sie im Menü **Datei** auf **Vorgang beenden**. Drücken von **STRG+C** funktioniert ebenfalls, sofern aktuell kein Text ausgewählt ist. Ist dies der Fall, wird **STRG+C** der Kopierfunktion für den ausgewählten Text zugeordnet.
 
-## <a name="a-namebkmk2ahow-to-write-and-edit-text-in-the-script-pane"></a><a name="bkmk_2"></a>Schreiben und Bearbeiten von Text im Skriptbereich
+## <a name="bkmk_2"></a>Schreiben und Bearbeiten von Text im Skriptbereich
 Führen Sie die folgenden Schritte aus, um Text im Skriptbereich zu bearbeiten. Sie können Text kopieren, ausschneiden, einfügen, suchen und ersetzen. Sie können außerdem die letzte von Ihnen ausgeführte Aktion rückgängig machen und wiederholen. Die Tastenkombinationen zum Ausführen dieser Aktionen sind mit denen identisch, die für alle Windows-Anwendungen verwendet werden.
 
 ### <a name="to-enter-text-in-the-script-pane"></a>So geben Sie Text im Skriptbereich ein
@@ -107,7 +103,7 @@ Drücken Sie **STRG+Z**, oder klicken Sie auf der Symbolleiste auf das Symbol **
 ### <a name="to-redo-an-action-in-the-script-pane"></a>So wiederholen Sie eine Aktion im Skriptbereich
 Drücken Sie **STRG+Y**, oder klicken Sie auf der Symbolleiste auf das Symbol **Wiederholen**, oder klicken Sie im Menü **Bearbeiten** auf **Wiederholen**.
 
-## <a name="a-namebkmk3ahow-to-save-a-script"></a><a name="bkmk_3"></a>Speichern eines Skripts
+## <a name="bkmk_3"></a>Speichern eines Skripts
 Gehen Sie folgendermaßen vor, um einem Skript einen Namen zu geben und es zu speichern. Ein Sternchen wird neben dem Skriptnamen angezeigt, um zu kennzeichnen, dass die Datei nicht gespeichert wurde, seit sie geändert wurde. Das Sternchen verschwindet, wenn die Datei gespeichert wird.
 
 ### <a name="to-save-a-script"></a>So speichern Sie ein Skript

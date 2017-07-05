@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: Das ISEAddOnTool-Objekt
-ms.technology: powershell
 ms.assetid: ce84d8bc-07ba-41f6-bdde-d6f3fddcd1e3
-ms.openlocfilehash: c1ab4220fdede7cabec99fd2d9dfb39648503f28
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 15f0cdd1425b9f87edeb0404fc385275e4a9d1d8
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="the-iseaddontool-object"></a>Das ISEAddOnTool-Objekt
   Ein **ISEAddonTool**-Objekt stellt ein installiertes Add-On-Tool dar, das zusätzliche Funktionen für Windows PowerShell ISE bereitstellt. Ein Beispiel ist das Tool **Befehle**, das Sie anzeigen können, indem Sie auf **Ansicht** und dann auf **Befehl-Add-On anzeigen** klicken. Sie können dann auf dieses Tool zugreifen, indem Sie die verschiedenen verfügbaren **ISEAddOnTool**-Objekte bearbeiten.
@@ -25,7 +21,7 @@ translationtype: HT
 
 ## <a name="properties"></a>Eigenschaften
 
-###  <a name="a-namecontrola-control"></a><a name="Control"></a> Control
+###  <a name="Control"></a> Control
   In Windows PowerShell ISE 3.0 und höher unterstützt, in früheren Versionen nicht enthalten.
 
  Die **Control**-Eigenschaft stellt Lesezugriff für viele der Details des Add-On-Tools „Befehle“ bereit.
@@ -141,7 +137,7 @@ Dispatcher                  : System.Windows.Threading.Dispatcher
 
 ```
 
-###  <a name="a-nameisvisiblea-isvisible"></a><a name="IsVisible"></a> IsVisible
+###  <a name="IsVisible"></a> IsVisible
   In Windows PowerShell ISE 3.0 und höher unterstützt, in früheren Versionen nicht enthalten.
 
  Die boolesche Eigenschaft, die angibt, ob das Add-On-Tool derzeit im zugewiesenen Bereich sichtbar ist. Wenn es sichtbar ist, können Sie die **IsVisible**-Eigenschaft auf **$false** festlegen, um das Tool auszublenden, oder die **IsVisible**-Eigenschaft auf **$true** festlegen, um ein Add-On-Tool auf der entsprechenden PowerShell-Registerkarte sichtbar zu machen. Wenn ein Add-On-Tool ausgeblendet wurde, kann darauf nicht mehr über das **CurrentVisibleHorizontalTool**-Objekt oder das **CurrentVisibleVerticalTool**-Objekt zugegriffen werden. Daher kann es auch nicht mehr mit dieser Eigenschaft für dieses Objekt sichtbar gemacht werden.
@@ -154,7 +150,7 @@ $psISE.CurrentPowerShellTab.VerticalAddOnTools[0].IsVisible=$true
 
 ```
 
-###  <a name="a-namenamea-name"></a><a name="name"></a> Name
+###  <a name="name"></a> Name
   In Windows PowerShell ISE 3.0 und höher unterstützt, in früheren Versionen nicht enthalten.
 
  Die schreibgeschützte Eigenschaft, die den Namen des Add-On-Tools abruft.

@@ -1,24 +1,20 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: Das PowerShellTab-Objekt
-ms.technology: powershell
 ms.assetid: a9b58556-951b-4f48-b3ae-b351b7564360
-ms.openlocfilehash: 89258180377c6649c213e442b1f2d64872aaa1b4
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: d4e9374202d352a30b3eb46bcf1e4e40dea49822
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="the-powershelltab-object"></a>Das PowerShellTab-Objekt
   Das **PowerShellTab**-Objekt stellt eine Windows PowerShell-Laufzeitumgebung dar.
 
 ## <a name="methods"></a>Methoden
 
-###  <a name="a-nameinvokea-invoke-script-"></a><a name="invoke"></a> Invoke\( Script \)
+###  <a name="invoke"></a> Invoke\( Script \)
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Führt das angegebene Skript auf der PowerShell-Registerkarte aus.
@@ -72,7 +68,7 @@ measure-command {$psISE.PowerShellTabs[1].InvokeSynchronous("sleep 10",$false,50
 
 ## <a name="properties"></a>Eigenschaften
 
-###  <a name="a-nameaddonsmenua-addonsmenu"></a><a name="AddOnsMenu"></a> AddOnsMenu
+###  <a name="AddOnsMenu"></a> AddOnsMenu
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Die schreibgeschützte Eigenschaft, die das Add-On-Menü für die PowerShell-Registerkarte abruft.
@@ -90,7 +86,7 @@ $parentAdded.SubMenus.Add("_Dir",{dir},"Alt+D")
 $psISE.CurrentPowerShellTab.AddOnsMenu
 ```
 
-###  <a name="a-namecanexecutea-caninvoke"></a><a name="CanExecute"></a> CanInvoke
+###  <a name="CanExecute"></a> CanInvoke
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Die schreibgeschützte boolesche Eigenschaft, die den Wert **$true** zurückgibt, wenn ein Skript mit der [Invoke( Script )](#invoke)-Methode aufgerufen werden kann.
@@ -109,7 +105,7 @@ $secondTab.CanInvoke
 
 ```
 
-###  <a name="a-namecommandpanea-consolepane"></a><a name="Commandpane"></a> Consolepane
+###  <a name="Commandpane"></a> Consolepane
   In Windows PowerShell ISE 3.0 und höher unterstützt, in früheren Versionen nicht enthalten.  In Windows PowerShell ISE 2.0 lautete der Name hierfür **CommandPane**.
 
  Die schreibgeschützte Eigenschaft, die das [editor](../ise/The-ISEEditor-Object.md)-Objekt des Konsolenbereichs abruft.
@@ -120,7 +116,7 @@ $psISE.CurrentPowerShellTab.ConsolePane
 
 ```
 
-###  <a name="a-namedisplaynamea-displayname"></a><a name="Displayname"></a> DisplayName
+###  <a name="Displayname"></a> DisplayName
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Die Lese-/Schreibeigenschaft Eigenschaft, die den auf der PowerShell-Registerkarte angezeigten Text abruft oder festlegt. Standardmäßig lautet der Name von Registerkarten „PowerShell #“, wobei # eine Zahl darstellt.
@@ -131,7 +127,7 @@ $newTab = $psise.PowerShellTabs.Add()
 $newTab.DisplayName="Brand New Tab"
 ```
 
-###  <a name="a-nameexpandedscripta-expandedscript"></a><a name="ExpandedScript"></a> ExpandedScript
+###  <a name="ExpandedScript"></a> ExpandedScript
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Die Lese-/Schreibeigenschaft, die bestimmt, ob der Skript-Bereich erweitert oder ausgeblendet wird.
@@ -142,7 +138,7 @@ $PSise.CurrentPowerShellTab.ExpandedScript=!$PSise.CurrentPowerShellTab.Expanded
 
 ```
 
-###  <a name="a-namefilesa-files"></a><a name="Files"></a> Files
+###  <a name="Files"></a> Files
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Die schreibgeschützte Eigenschaft, die die [Sammlung von Skriptdateien](../ise/The-ISEFileCollection-Object.md) abruft, die auf der PowerShell-Registerkarte geöffnet sind.
@@ -154,7 +150,7 @@ $newFile.Editor.Text = "a`r`nb"
 $newFile.Editor.LineCount
 ```
 
-###  <a name="a-nameoutputa-output"></a><a name="Output"></a> Output
+###  <a name="Output"></a> Output
   Dieses Feature ist in Windows PowerShell ISE 2.0 enthalten, wurde in höheren Versionen von ISE aber entfernt oder umbenannt.  In höheren Versionen von Windows PowerShell ISE können Sie das **ConsolePane**-Objekt für den gleichen Zweck verwenden.
 
  Die schreibgeschützte Eigenschaft, die den Ausgabebereich des aktuellen [editor](../ise/The-ISEEditor-Object.md) abruft.
@@ -164,7 +160,7 @@ $newFile.Editor.LineCount
 $psise.CurrentPowerShellTab.output.clear()
 ```
 
-###  <a name="a-nameprompta-prompt"></a><a name="Prompt"></a> Prompt
+###  <a name="Prompt"></a> Prompt
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Die schreibgeschützte Eigenschaft, die den aktuellen Aufforderungstext abruft. Hinweis: Die **Prompt**-Funktion kann durch das Profil des Benutzers überschrieben werden. Wenn das Ergebnis von einer einfachen Zeichenfolge abweicht, gibt diese Eigenschaft nichts zurück.
@@ -174,7 +170,7 @@ $psise.CurrentPowerShellTab.output.clear()
 $psISE.CurrentPowerShellTab.Prompt
 ```
 
-###  <a name="a-nameshowcommandsa-showcommands"></a><a name="ShowCommands"></a> ShowCommands
+###  <a name="ShowCommands"></a> ShowCommands
   In Windows PowerShell ISE 3.0 und höher unterstützt, in früheren Versionen nicht enthalten. 
 
  Die Lese-/Schreibeigenschaft, die angibt, ob der Befehlsbereich derzeit angezeigt wird.
@@ -186,7 +182,7 @@ $a = $psISE.CurrentPowerShellTab.ShowCommands
 if (!$a) {$psISE.CurrentPowerShellTab.ShowCommands=$True}
 ```
 
-###  <a name="a-namestatustexta-statustext"></a><a name="StatusText"></a> StatusText
+###  <a name="StatusText"></a> StatusText
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Die schreibgeschützte Eigenschaft, die den **PowerShellTab**-Statustext abruft.
@@ -196,7 +192,7 @@ if (!$a) {$psISE.CurrentPowerShellTab.ShowCommands=$True}
 $psISE.CurrentPowerShellTab.StatusText
 ```
 
-###  <a name="a-namehorizontaladdontoolspaneopeneda-horizontaladdontoolspaneopened"></a><a name="HorizontalAddOnToolsPaneOpened"></a> HorizontalAddOnToolsPaneOpened
+###  <a name="HorizontalAddOnToolsPaneOpened"></a> HorizontalAddOnToolsPaneOpened
   In Windows PowerShell ISE 3.0 und höher unterstützt, in früheren Versionen nicht enthalten. 
 
  Die schreibgeschützte Eigenschaft, die angibt, ob der horizontale Add-On-Toolbereich derzeit geöffnet ist.
@@ -206,7 +202,7 @@ $psISE.CurrentPowerShellTab.StatusText
 $psISE.CurrentPowerShellTab.HorizontalAddOnToolsPaneOpened
 ```
 
-###  <a name="a-nameverticaladdontoolspaneopeneda-verticaladdontoolspaneopened"></a><a name="VerticalAddOnToolsPaneOpened"></a> **VerticalAddOnToolsPaneOpened**
+###  <a name="VerticalAddOnToolsPaneOpened"></a> **VerticalAddOnToolsPaneOpened**
   In Windows PowerShell ISE 3.0 und höher unterstützt, in früheren Versionen nicht enthalten. 
 
  Die schreibgeschützte Eigenschaft, die angibt, ob der vertikale Add-On-Toolbereich derzeit geöffnet ist.

@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: Erste Schritte mit Windows PowerShell
-ms.technology: powershell
 ms.assetid: b0e2ad92-875f-421d-b612-f624e644aa69
-ms.openlocfilehash: e1a7da700bb88c2f72d1d38ac2cd55635f50108e
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 8dbdd5d7b2dcb80e5562ff0f0f211b2baf5357cf
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="getting-started-with-windows-powershell"></a>Erste Schritte mit Windows PowerShell
 Windows PowerShell ist eine Windows-Befehlszeilenshell, die insbesondere für Systemadministratoren konzipiert ist. Windows PowerShell umfasst eine interaktive Eingabeaufforderung und eine Skriptumgebung, die einzeln oder in Kombination verwendet werden können.

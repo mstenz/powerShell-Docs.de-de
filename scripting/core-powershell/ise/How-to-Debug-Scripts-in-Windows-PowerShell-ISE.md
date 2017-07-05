@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: 'So wird&quot;s gemacht: Debuggen von Skripts in Windows PowerShell ISE'
-ms.technology: powershell
 ms.assetid: 6dc6d8f9-8978-46e9-a92f-169af37e2817
-ms.openlocfilehash: 8574754ccdf4717d29c4076f88d41691501da471
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: db8847e2cc9abeec729ed8d939fc170529a93846
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="how-to-debug-scripts-in-windows-powershell-ise"></a>So wird's gemacht: Debuggen von Skripts in Windows PowerShell ISE
 In diesem Thema wird beschrieben, wie das Debuggen von Skripts auf einem lokalen Computer mithilfe der visuellen Debugfunktionen von Windows PowerShell® Integrated Scripting Environment (ISE) erfolgt.
@@ -21,7 +17,7 @@ In diesem Thema wird beschrieben, wie das Debuggen von Skripts auf einem lokalen
 [Schrittweises Debuggen: Überspringen, Einzelschritt und Rücksprung](#bkmk_3)
 [Anzeigen der Werte von Variablen beim Debuggen](#bkmk_4)
 
-## <a name="a-namebkmk1ahow-to-manage-breakpoints"></a><a name="bkmk_1"></a>Verwalten von Haltepunkten
+## <a name="bkmk_1"></a>Verwalten von Haltepunkten
 Ein Haltepunkt ist eine bestimmte Stelle in einem Skript, an der die Verarbeitung angehalten werden soll, damit Sie den aktuellen Status der Variablen sowie die Umgebung prüfen können, in der das Skript ausgeführt wird. Sobald Ihr Skript an einem Haltepunkt angehalten wird, können Sie Befehle im Konsolenbereich ausführen, um den Status des Skripts zu prüfen.  Sie können Variablen ausgeben oder andere Befehle ausführen. Sie können sogar die Werte aller Variablen ändern, die im Kontext des Skripts sichtbar sind, das derzeit ausgeführt wird. Nachdem Sie die Elemente geprüft haben, die Sie sich ansehen wollten, können Sie das Ausführen des Skripts fortsetzen.
 
 In der Windows PowerShell-Debugumgebung können Sie drei Typen von Haltepunkten festlegen:
@@ -72,7 +68,7 @@ Das folgende Skript ist ein Beispiel dazu, wie aus dem Konsolenbereich alle Halt
 Get-PSBreakpoint | Remove-PSBreakpoint
 ```
 
-### <a name="a-namebkmkdisableadisable-a-breakpoint"></a><a name="bkmk_disable"></a>Deaktivieren eines Haltepunkts
+### <a name="bkmk_disable"></a>Deaktivieren eines Haltepunkts
 Deaktivieren eines Haltepunktes bewirkt wird nicht, dass er entfernt wird. Er wird dadurch deaktiviert, bis er wieder aktiviert wird.  Um einen bestimmten Zeilenhaltepunkt zu deaktivieren, klicken Sie auf die Zeile, in der Sie den Haltepunkt deaktivieren möchten, und klicken Sie dann auf **Haltepunkt deaktivieren**. Klicken Sie alternativ auf die Zeile, in der Sie einen Haltepunkt deaktivieren möchten, und drücken Sie **F9**, oder klicken Sie im Menü **Debuggen** auf **Haltepunkt deaktivieren**. Das folgende Skript ist ein Beispiel dazu, wie Sie aus dem Konsolenbereich einen Haltepunkt mit angegebener ID mit dem Cmdlet [Disable-PSBreakpoint](https://technet.microsoft.com/library/d4974e9b-0aaa-4e20-b87f-f599a413e4e8) entfernen können.
 
 ``` PowerShell
@@ -106,7 +102,7 @@ Wenn Sie alle Haltepunkte aktivieren möchten, die in der aktuellen Sitzung defi
 Get-PSBreakpoint | Enable-PSBreakpoint
 ```
 
-## <a name="a-namebkmk2ahow-to-manage-a-debugging-session"></a><a name="bkmk_2"></a>Verwalten einer Debugsitzung
+## <a name="bkmk_2"></a>Verwalten einer Debugsitzung
 Bevor Sie mit dem Debuggen beginnen, müssen Sie mindestens einen Haltepunkt festlegen. Einen Haltepunkt können Sie nur dann festlegen, wenn das Skript, das Sie debuggen möchten, gespeichert ist. Anleitungen zum Festlegen eines Haltepunkts finden Sie unter [Verwalten von Haltepunkten](#bkmk_1) oder [Set-PSBreakpoint](https://technet.microsoft.com/library/6afd5d2c-a285-4796-8607-3cbf49471420). Nachdem Sie mit dem Debuggen begonnen haben, können Sie ein Skript erst wieder bearbeiten, nachdem Sie das Debuggen beendet haben. Ein Skript, für das es mindestens einen Haltepunkt gibt, wird automatisch gespeichert, bevor es ausgeführt wird.
 
 ### <a name="to-start-debugging"></a>So starten Sie das Debuggen
@@ -123,7 +119,7 @@ Um bei angehaltener Skriptausführung die aktuelle Aufrufliste anzuzeigen, drüc
 ### <a name="to-stop-debugging"></a>So beenden Sie das Debuggen
 Drücken Sie **UMSCHALT+F5**, oder klicken Sie im Menü **Debuggen** auf **Debugger beenden**, oder geben Sie im Konsolenbereich **K** ein, und drücken Sie dann die **EINGABETASTE**.
 
-## <a name="a-namebkmk3ahow-to-step-over-step-into-and-step-out-while-debugging"></a><a name="bkmk_3"></a>Schrittweises Debuggen: Überspringen, Einzelschritt und Rücksprung
+## <a name="bkmk_3"></a>Schrittweises Debuggen: Überspringen, Einzelschritt und Rücksprung
 Schrittweises Debuggen ist die Vorgehensweise, bei der immer nur jeweils eine Zeile ausgeführt wird. Sie können in einer Codezeile anhalten und die Werte von Variablen sowie den Status des Systems prüfen. In der folgenden Tabelle sind allgemeinen Debugaufgaben wie Überspringen, Einzelschritt und Rücksprung beschrieben.
 
 | Debugaufgabe | Beschreibung | Vorgehensweise in PowerShell ISE |
@@ -133,7 +129,7 @@ Schrittweises Debuggen ist die Vorgehensweise, bei der immer nur jeweils eine Ze
 | **Rücksprung** | Führt einen Rücksprung aus der aktuellen Funktion und auf eine Ebene höher aus, wenn die Funktion geschachtelt ist. Befindet sich der Fokus im Hauptteil, wird das Skript bis zum Ende oder bis zum nächsten Haltepunkt ausgeführt. Die übersprungenen Anweisungen werden ausgeführt, aber nicht in Einzelschritten durchlaufen. | Drücken Sie **UMSCHALT+F11**, oder klicken Sie im Menü **Debuggen** auf **Rücksprung**, oder geben Sie im Konsolenbereich **O** ein, und drücken Sie die **EINGABETASTE**. |
 | **Fortsetzen** | Setzt die Ausführung bis zum Ende oder bis zum nächsten Haltepunkt fort. Die übersprungenen Funktionen und Aufrufe werden ausgeführt, aber nicht in Einzelschritten durchlaufen. | Drücken Sie **F5**, oder klicken Sie im Menü **Debuggen** auf **Ausführen/Fortsetzen**, oder geben Sie im Konsolenbereich **C** ein, und drücken Sie die **EINGABETASTE**. |
 
-## <a name="a-namebkmk4ahow-to-display-the-values-of-variables-while-debugging"></a><a name="bkmk_4"></a>Anzeigen der Werte von Variablen beim Debuggen
+## <a name="bkmk_4"></a>Anzeigen der Werte von Variablen beim Debuggen
 Sie können die aktuellen Werte von Variablen im Skript anzeigen, während Sie den Code schrittweise durchlaufen.
 
 ### <a name="to-display-the-values-of-standard-variables"></a>So zeigen Sie die Werte von Standardvariablen an

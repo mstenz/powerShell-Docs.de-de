@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "Arbeiten mit Dateien, Ordnern und Registrierungsschlüsseln"
-ms.technology: powershell
 ms.assetid: e6cf87aa-b5f8-48d5-a75a-7cb7ecb482dc
-ms.openlocfilehash: 5d76098261c0288c83b4a27063ca36c23d606103
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 2bae8d6931c84bee4aa30a43742acd052b82d079
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a>Arbeiten mit Dateien, Ordnern und Registrierungsschlüsseln
 Windows PowerShell verwendet das Nomen **Item** zum Verweisen auf Elemente in einem Windows PowerShell-Laufwerk. Im Zusammenhang mit dem Windows PowerShell FileSystem-Anbieter kann ein **Item** eine Datei, ein Ordner oder das Windows PowerShell-Laufwerk sein. Das Auflisten dieser Elemente und die Arbeiten damit ist in den meisten Verwaltungseinstellungen eine wichtige grundlegende Aufgabe. Daher sollen diese Aufgaben ausführlich erläutert werden.
@@ -124,7 +120,19 @@ Angenommen, Sie möchten die Windows Time Service-DLL im Ordner „System32“ s
 
 Mit einem Ausdruck wie **w\&#42;32\&#42;.dll** finden Sie alle DLLs, die die Bedingung erfüllen, aber es können auch die Kompatibilitäts-DLLs für Windows 95 und 16-Bit-Windows zurückgegeben werden, die „95“ oder „16“ im Namen enthalten. Sie können Dateien ausschließen, die diese Zahlen in ihren Namen enthalten, indem Sie den Parameter **Exclude** mit dem Muster **\&#42;\[9516]\&#42;** verwenden:
 
-<pre>PS> Get-ChildItem -Path C:\WINDOWS\System32\w*32*.dll -Exclude *[9516]* Directory: Microsoft.PowerShell.Core\FileSystem::C:\WINDOWS\System32 Mode                LastWriteTime     Length Name ----                -------------     ------ ---- -a---        2004-08-04   8:00 AM     174592 w32time.dll -a---        2004-08-04   8:00 AM      22016 w32topl.dll -a---        2004-08-04   8:00 AM     101888 win32spl.dll -a---        2004-08-04   8:00 AM     172032 wldap32.dll -a---        2004-08-04   8:00 AM     264192 wow32.dll -a---        2004-08-04   8:00 AM      82944 ws2_32.dll -a---        2004-08-04   8:00 AM      42496 wsnmp32.dll -a---        2004-08-04   8:00 AM      22528 wsock32.dll -a---        2004-08-04   8:00 AM      18432 wtsapi32.dll</pre>
+<pre>PS> Get-ChildItem -Path C:\WINDOWS\System32\w*32*.dll -Exclude *[9516]*
+Directory: Microsoft.PowerShell.Core\FileSystem::C:\WINDOWS\System32
+Mode                LastWriteTime     Length Name
+----                -------------     ------ ----
+-a---        2004-08-04   8:00 AM     174592 w32time.dll
+-a---        2004-08-04   8:00 AM      22016 w32topl.dll
+-a---        2004-08-04   8:00 AM     101888 win32spl.dll
+-a---        2004-08-04   8:00 AM     172032 wldap32.dll
+-a---        2004-08-04   8:00 AM     264192 wow32.dll
+-a---        2004-08-04   8:00 AM      82944 ws2_32.dll
+-a---        2004-08-04   8:00 AM      42496 wsnmp32.dll
+-a---        2004-08-04   8:00 AM      22528 wsock32.dll
+-a---        2004-08-04   8:00 AM      18432 wtsapi32.dll</pre>
 
 #### <a name="mixing-get-childitem-parameters"></a>Kombinieren von Get-ChildItem-Parametern
 Sie können verschiedene Parameter des Cmdlets **Get-ChildItem** im gleichen Befehl verwenden. Bevor Sie Parameter kombinieren, sollten Sie sicher sein, dass Sie das Abgleichen mit Platzhalterzeichen verstanden haben. Beispielsweise gibt der folgende Befehl keine Ergebnisse zurück:

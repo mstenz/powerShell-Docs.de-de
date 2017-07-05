@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "Konzeptionelle Hilfethemen für Windows PowerShell Core"
-ms.technology: powershell
 ms.assetid: 8b950138-9782-4dfe-bd5f-6bdcea7060da
-ms.openlocfilehash: 08f62a8e54e1342a01e76dafd02b745c59a1e3f8
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 6790850358a71b13e1057af8f99c6064c74f326b
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="windows-powershell-core-about-topics"></a>Konzeptionelle Hilfethemen für Windows PowerShell Core
 Dieser Abschnitt enthält konzeptionelle Hilfethemen ("Info"), die für alle Windows PowerShell-Module gelten. Die Info-Themen für andere Module finden Sie unter den Hilfethemen für das Modul.

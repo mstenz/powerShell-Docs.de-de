@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: Starten des Windows PowerShell 2.0-Moduls
-ms.technology: powershell
 ms.assetid: edafc2fa-7576-49c2-bbba-9336f4bcfc28
-ms.openlocfilehash: 4f388bc2e397d12b73718e6bc326bb448ed3ae16
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 15f578e2fbf0b10afa307cde0a32123a8026a282
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="starting-the-windows-powershell-20-engine"></a>Starten des Windows PowerShell 2.0-Moduls
 In diesem Abschnitt wird erklärt, wie Sie Windows PowerShell 2.0 Engine unter Windows 8.1, Windows Server 2012 R2, Windows 8 und Windows Server 2012 starten. Bei diesen ist Windows PowerShell 2.0 Engine bereits installiert. Sie erfahren darüber hinaus, wie Sie Windows PowerShell 2.0 Engine auf anderen Systemen starten, auf denen Windows PowerShell 2.0, Windows PowerShell 3.0, und Windows PowerShell 4.0 installiert sind.

@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: Verwaltung mit Windows PowerShell
-ms.technology: powershell
 ms.assetid: db6334ec-ace6-436d-ab88-77aefc817511
-ms.openlocfilehash: c0a15bc813e6fdb850fe2d957711f1ad005d853d
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: fa87745b9be04d14de37a308d870b73c5a98cf83
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="using-windows-powershell-for-administration"></a>Verwaltung mit Windows PowerShell
 Das grundlegende Ziel von Windows PowerShell ist das Ermöglichen einer besseren und einfacheren administrativen Kontrolle über Systeme, entweder interaktiv oder per Skript. In diesem Kapitel werden Lösungen für viele spezifische Probleme bei der Verwaltung von Windows-Systemen mit Windows PowerShell erläutert. Obwohl wir im Windows PowerShell-Benutzerhandbuch nicht die Rede von Skripts oder Funktionen ist, können die Lösungen später in Skripts oder als Funktionen verwendet werden. Wir zeigen Beispiele, die Funktionen als Teil der Lösung zum Beheben von Problemen enthalten.

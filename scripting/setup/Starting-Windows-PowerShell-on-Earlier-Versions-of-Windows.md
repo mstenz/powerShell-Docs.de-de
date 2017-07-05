@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "Starten von Windows PowerShell unter früheren Versionen von Windows"
-ms.technology: powershell
 ms.assetid: 57125436-3d1e-4e7f-b5c4-8f0ecb49d642
-ms.openlocfilehash: ac7cacef0b2ee9e17355db7f60e5050ddb76c986
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: cb56fded1e67a4f4219d210dd95078314e855b1a
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="starting-windows-powershell-on-earlier-versions-of-windows"></a>Starten von Windows PowerShell unter früheren Versionen von Windows
 In diesem Abschnitt wird das Starten von Windows PowerShell und Windows PowerShell Integrated Scripting Environment (ISE) unter Windows® 7, Windows Server® 2008 R2 und Windows Server® 2008 erläutert. Außerdem wird beschrieben, wie das optionale Feature für Windows PowerShell ISE in Windows PowerShell 2.0 in Windows Server® 2008 R2 und Windows Server® 2008 aktiviert wird.
@@ -27,7 +23,7 @@ Mit den folgenden Methoden können Sie die installierte Version von Windows Powe
 
 -   Klicken Sie auf **Start**, geben Sie **PowerShell** ein, und klicken Sie dann auf **Windows PowerShell**.
 
--   Klicken Sie im Menü ** ****Start** auf **Alle Programme**, danach auf **Zubehör**, anschließend auf den Ordner **Windows PowerShell** und schließlich auf **Windows PowerShell**.
+-   Klicken Sie im Menü **** **Start** auf **Alle Programme**, danach auf **Zubehör**, anschließend auf den Ordner **Windows PowerShell** und schließlich auf **Windows PowerShell**.
 
 #### <a name="at-the-command-prompt"></a>An der Eingabeaufforderung
 
@@ -50,7 +46,7 @@ Verwenden Sie eine der folgenden Methoden, um Windows PowerShell ISE zu starten:
 
 -   Klicken Sie auf **Start**, geben Sie **ISE** ein, und klicken Sie dann auf **Windows PowerShell ISE**.
 
--   Klicken Sie im Menü ** ****Start** auf **Alle Programme**, danach auf **Zubehör**, anschließend auf den Ordner **Windows PowerShell** und schließlich auf **Windows PowerShell ISE**.
+-   Klicken Sie im Menü **** **Start** auf **Alle Programme**, danach auf **Zubehör**, anschließend auf den Ordner **Windows PowerShell** und schließlich auf **Windows PowerShell ISE**.
 
 #### <a name="at-the-command-prompt"></a>An der Eingabeaufforderung
 
