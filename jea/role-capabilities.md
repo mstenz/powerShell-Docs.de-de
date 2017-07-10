@@ -1,18 +1,17 @@
 ---
-manager: carmonm
-ms.topic: article
+ms.date: 2017-06-12
 author: rpsqrd
-ms.author: ryanpu
-ms.prod: powershell
-keywords: powershell,cmdlet,jea
-ms.date: 2017-03-07
+ms.topic: conceptual
+keywords: jea,powershell,security
 title: JEA-Rollenfunktionen
-ms.technology: powershell
-ms.openlocfilehash: 49623e69b186fd09679bf7e0186dec3961e719ba
-ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
-translationtype: HT
+ms.openlocfilehash: 10f5f390daccbb012be6ee7272041e777810ee12
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="jea-role-capabilities"></a>JEA-Rollenfunktionen
+<a id="jea-role-capabilities" class="xliff"></a>
+# JEA-Rollenfunktionen
 
 > Gilt für: Windows PowerShell 5.0
 
@@ -21,7 +20,8 @@ Eine Rollenfunktion ist eine PowerShell-Datendatei mit der Erweiterung PSRC. Sie
 
 In diesem Thema wird das Erstellen einer PowerShell-Rollenfunktionsdatei für Ihre JEA-Benutzer beschrieben.
 
-## <a name="determine-which-commands-to-allow"></a>Festlegen der zulässigen Befehle
+<a id="determine-which-commands-to-allow" class="xliff"></a>
+## Festlegen der zulässigen Befehle
 
 Die erste Frage beim Erstellen einer Rollenfunktionsdatei lautet: Welche Zugriffe benötigen Benutzer mit dieser Rolle?
 Das Sammeln dieser Informationen kann relativ zeitaufwändig sein, aber es ist ein sehr wichtiger Prozess.
@@ -41,14 +41,16 @@ Die verfügbaren Befehle sollten sorgfältig ausgewählt werden, um sicherzustel
 Im Folgenden finden Sie Beispiele für Befehle, die böswillig verwendet werden können, wenn sie uneingeschränkt zur Verfügung stehen.
 Beachten Sie, dass dies keine vollständige Liste und lediglich als einleitende Vorsichtsmaßnahme gedacht ist.
 
-### <a name="examples-of-potentially-dangerous-commands"></a>Beispiele für potenziell gefährliche Befehle
+<a id="examples-of-potentially-dangerous-commands" class="xliff"></a>
+### Beispiele für potenziell gefährliche Befehle
 
 Risiko | Beispiel | Verwandte Befehle
 -----|---------|-----------------
 Gewähren von Administratorberechtigungen für Benutzer, die eine Verbindung aufbauen, um JEA zu umgehen | `Add-LocalGroupMember -Member 'CONTOSO\jdoe' -Group 'Administrators'` | `Add-ADGroupMember`, `Add-LocalGroupMember`, `net.exe`, `dsadd.exe`
 Ausführen von beliebigem Code, z.B. Malware, Exploits oder benutzerdefinierten Skripts, um Schutzmechanismen zu umgehen | `Start-Process -FilePath '\\san\share\malware.exe'` | `Start-Process`, `New-Service`, `Invoke-Item`, `Invoke-WmiMethod`, `Invoke-CimMethod`, `Invoke-Expression`, `Invoke-Command`, `New-ScheduledTask`, `Register-ScheduledJob`
 
-## <a name="create-a-role-capability-file"></a>Erstellen einer Rollenfunktionsdatei
+<a id="create-a-role-capability-file" class="xliff"></a>
+## Erstellen einer Rollenfunktionsdatei
 
 Sie können eine neue PowerShell-Rollenfunktionsdatei mit dem [New-PSRoleCapabilityFile](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/New-PSRoleCapabilityFile)-Cmdlet erstellen.
 
@@ -59,7 +61,8 @@ New-PSRoleCapabilityFile -Path .\MyFirstJEARole.psrc
 Die resultierende Rollenfunktionsdatei kann in einem Text-Editor geöffnet und geändert werden, um die gewünschten Befehle für die Rolle zuzulassen.
 Die PowerShell-Hilfedokumentation enthält mehrere Beispiele dafür, wie Sie die Datei konfigurieren können.
 
-### <a name="allowing-powershell-cmdlets-and-functions"></a>Zulassen von PowerShell-Cmdlets und -Funktionen
+<a id="allowing-powershell-cmdlets-and-functions" class="xliff"></a>
+### Zulassen von PowerShell-Cmdlets und -Funktionen
 
 Fügen Sie den Feldern „VisbibleCmdlets“ oder „VisibleFunctionsCmdlet“ den Cmdlet- oder Funktionsnamen hinzu, um Benutzern das Ausführen von PowerShell-Cmdlets oder -Funktionen zu ermöglichen.
 Wenn Sie nicht sicher sind, ob es sich um einen Befehl für ein Cmdlet oder eine Funktion handelt, können Sie `Get-Command <name>` ausführen und die Eigenschaft „CommandType“ in der Ausgabe überprüfen.
@@ -115,7 +118,8 @@ Andernfalls wird das ValidateSet-Attribut vom ValidatePattern-Attribut überschr
 
 Weitere Informationen zum ValidatePattern-Attribut finden Sie unter [dem englischsprachigen Blogbeitrag *Hey, Scripting Guy!*](https://blogs.technet.microsoft.com/heyscriptingguy/2011/01/11/validate-powershell-parameters-before-running-the-script/) und dem Referenzmaterial [PowerShell Regular Expressions (Reguläre Ausdrücke in PowerShell)](https://technet.microsoft.com/en-us/library/hh847880.aspx).
 
-### <a name="allowing-external-commands-and-powershell-scripts"></a>Zulassen von externen Befehlen und PowerShell-Skripts
+<a id="allowing-external-commands-and-powershell-scripts" class="xliff"></a>
+### Zulassen von externen Befehlen und PowerShell-Skripts
 
 Um Benutzern das Ausführen von ausführbaren Dateien und PowerShell-Skripts (.ps1) in einer JEA-Sitzung zu ermöglichen, müssen Sie den vollständigen Pfad zu jedem einzelnen Programm im Feld „VisibleExternalCommands“ hinzufügen.
 
@@ -134,7 +138,8 @@ Eine bessere Lösung ist die Verwendung von [Get-SmbShare](https://technet.micro
 
 Wenn Sie Benutzern in einer JEA-Sitzung externe Befehle zur Verfügung stellen, geben Sie immer den vollständigen Pfad zur ausführbaren Datei an, um sicherzustellen, dass kein (potenziell bösartiges) Programm mit ähnlichem Namen an anderer Stelle im System ausgeführt wird.
 
-### <a name="allowing-access-to-powershell-providers"></a>Zulassen von Zugriffssteuerung für PowerShell-Anbieter
+<a id="allowing-access-to-powershell-providers" class="xliff"></a>
+### Zulassen von Zugriffssteuerung für PowerShell-Anbieter
 
 Standardmäßig sind in JEA-Sitzungen keine PowerShell-Anbieter verfügbar.
 
@@ -151,7 +156,8 @@ Für einfache Aufgaben, die Zugriff auf das Dateisystem, die Registrierung, den 
 Funktionen, Cmdlets und externe Programme, die in einer JEA-Sitzung verfügbar sind, unterliegen nicht den gleichen Einschränkungen wie JEA – sie können standardmäßig auf alle Anbieter zugreifen.
 Sie können auch das [Benutzerlaufwerk](session-configurations.md#user-drive) verwenden, wenn Sie Dateien auf einen bzw. von einem JEA-Endpunkt kopieren müssen.
 
-### <a name="creating-custom-functions"></a>Erstellen von benutzerdefinierten Funktionen
+<a id="creating-custom-functions" class="xliff"></a>
+### Erstellen von benutzerdefinierten Funktionen
 
 Sie können benutzerdefinierte Funktionen in einer Rollenfunktionsdatei erstellen, um komplexe Aufgaben für Ihre Endbenutzer zu vereinfachen.
 Benutzerdefinierte Funktionen erweisen sich als nützlich, wenn für Cmdlet-Parameterwerte eine erweiterte Validierungslogik erforderlich ist.
@@ -189,7 +195,8 @@ Alle eingeschränkten Cmdlets in einer JEA-Sitzung weisen das gleiche Verhalten 
 Wenn Sie viele benutzerdefinierte Funktionen schreiben, ist es möglicherweise einfacher, diese in einem [PowerShell-Skriptmodul](https://msdn.microsoft.com/en-us/library/dd878340(v=vs.85).aspx) zu speichern.
 Sie können diese Funktionen anschließend in der JEA-Sitzung mithilfe des VisibleFunctions-Felds genauso sichtbar machen wie integrierte und Drittanbietermodule.
 
-## <a name="place-role-capabilities-in-a-module"></a>Platzieren von Rollenfunktionen in einem Modul
+<a id="place-role-capabilities-in-a-module" class="xliff"></a>
+## Platzieren von Rollenfunktionen in einem Modul
 
 Damit PowerShell eine Rollenfunktionsdatei erkennen kann, müssen Sie diese in einem Ordner „RoleCapabilities“ in einem PowerShell-Modul speichern.
 Das Modul kann in einem beliebigen Ordner gespeichert werden, der in der Umgebungsvariable `$env:PSModulePath` enthalten ist. Sie sollten das Modul jedoch nicht unter dem Ordner „System32“ (reserviert für integrierte Module) oder in einen Ordner einfügen, dessen Dateien von nicht vertrauenswürdigen Benutzern geändert werden können, die eine Verbindung herstellen.
@@ -212,7 +219,8 @@ Copy-Item -Path .\MyFirstJEARole.psrc -Destination $rcFolder
 
 Weitere Informationen zu PowerShell-Modulen, Modulmanifeste und die Umgebungsvariable „PSModulePath“ finden Sie unter [Understanding a PowerShell Module (Grundlegendes zu PowerShell-Modulen)](https://msdn.microsoft.com/en-us/library/dd878324.aspx).
 
-## <a name="updating-role-capabilities"></a>Aktualisieren von Rollenfunktionen
+<a id="updating-role-capabilities" class="xliff"></a>
+## Aktualisieren von Rollenfunktionen
 
 
 Sie können eine Rollenfunktionsdatei jederzeit aktualisieren, indem Sie einfach Änderungen an der Rollenfunktionsdatei speichern.
@@ -225,7 +233,8 @@ Wenn nicht vertrauenswürdige Benutzer berechtigt sind, Rollenfunktionsdateien z
 
 Administratoren, die den Zugriff auf die Rollenfunktionen einschränken möchten, müssen sicherstellen, dass das lokale System über Lesezugriff auf die Rollenfunktionsdateien und die darin enthaltenen Module verfügt.
 
-## <a name="how-role-capabilities-are-merged"></a>Zusammenführung von Rollenfunktionen
+<a id="how-role-capabilities-are-merged" class="xliff"></a>
+## Zusammenführung von Rollenfunktionen
 
 Benutzer können Zugriff auf mehrere Rollenfunktionen erhalten, wenn sie eine JEA-Sitzung beginnen, abhängig von den Rollenzuordnungen in der [Sitzungskonfigurationsdatei](session-configurations.md).
 In diesem Fall versucht JEA, den Benutzern den Satz von Befehlen mit den *höchsten Berechtigungen* zur Verfügung zu stellen, die für die Rollen zulässig sind.
@@ -279,6 +288,8 @@ Achten Sie darauf, dass die kombinierte Gruppe der Anbieter einer Rollenfunktion
 Wenn eine Rolle z.B. das `Remove-Item`-Cmdlet zulässt und eine andere den `FileSystem`-Anbieter, besteht die Gefahr, dass ein JEA-Benutzer beliebige Dateien auf Ihrem Computer löscht.
 Weitere Informationen dazu, wie die geltenden Berechtigungen von Benutzern ermittelt werden können, finden Sie im Thema [Auditing and Reporting on JEA (Überprüfen und Erstellen von Berichten mit JEA)](audit-and-report.md).
 
-## <a name="next-steps"></a>Nächste Schritte
+<a id="next-steps" class="xliff"></a>
+## Nächste Schritte
 
 - [Create a session configuration file (Erstellen einer Sitzungskonfigurationsdatei)](session-configurations.md)
+

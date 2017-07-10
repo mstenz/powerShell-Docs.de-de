@@ -1,24 +1,25 @@
 ---
-title: Verbesserungen bei der Paketverwaltung in WMF 5.1
-ms.date: 2016-07-15
-keywords: PowerShell, DSC, WMF
-description: 
-ms.topic: article
-author: jaimeo
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
 contributor: jianyunt, quoctruong
-manager: dongill
-ms.prod: powershell
-ms.technology: WMF
-ms.openlocfilehash: 77d8e66da0452a3cb55ad770537b35a97dffb357
-ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
-translationtype: HT
+title: Verbesserungen bei der Paketverwaltung in WMF 5.1
+ms.openlocfilehash: b55a1742530b7cd48d60d79b7d4866ebee80a3b6
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="improvements-to-package-management-in-wmf-51"></a>Verbesserungen bei der Paketverwaltung in WMF 5.1#
+<a id="improvements-to-package-management-in-wmf-51" class="xliff"></a>
+# Verbesserungen bei der Paketverwaltung in WMF 5.1#
 
-## <a name="improvements-in-packagemanagement"></a>Verbesserungen bei PackageManagement ##
+<a id="improvements-in-packagemanagement" class="xliff"></a>
+## Verbesserungen bei PackageManagement ##
 In WMF 5.1 wurden folgende Probleme behoben: 
 
-### <a name="version-alias"></a>Versionsalias
+<a id="version-alias" class="xliff"></a>
+### Versionsalias
 
 **Szenario**: Angenommen, Sie haben Version 1.0 und 2.0 des Pakets P1 auf Ihrem System installiert und möchten nun die Version 1.0 deinstallieren. Deshalb führen Sie `Uninstall-Package -Name P1 -Version 1.0` aus. Sie erwarten, dass Version 1.0 nach dem Ausführen des Cmdlets deinstalliert wurde. Das Ergebnis ist jedoch, dass Version 2.0 deinstalliert wird.  
     
@@ -26,7 +27,8 @@ Dies passiert, weil der `-Version`-Parameter ein Alias für den `-MinimumVersion
     
 **Lösung**: Der Alias `-Version` wurde in PackageManagement (auch bekannt als OneGet) und PowerShellGet vollständig entfernt. 
 
-### <a name="multiple-prompts-for-bootstrapping-the-nuget-provider"></a>Mehrere Aufforderungen zum Bootstrapping des NuGet-Anbieters
+<a id="multiple-prompts-for-bootstrapping-the-nuget-provider" class="xliff"></a>
+### Mehrere Aufforderungen zum Bootstrapping des NuGet-Anbieters
 
 **Szenario**: Wenn Sie `Find-Module` oder `Install-Module` oder andere PackageManagement-Cmdlets erstmals auf Ihrem Computer ausführen, versucht PackageManagement das Bootstrapping des NuGet-Anbieters. Das liegt daran, dass der PowerShellGet-Anbieter auch den NuGet-Anbieter verwendet, um PowerShell-Module herunterzuladen. PackageManagement fordert dann vom Benutzer die Berechtigung zum Installieren des NuGet-Anbieters an. Nachdem der Benutzer für das Bootstrapping „yes“ ausgewählt hat, wird die neueste Version des NuGet-Anbieters installiert. 
     
@@ -37,7 +39,8 @@ Wenn jedoch eine ältere Version des NuGet-Anbieters auf Ihrem Computer installi
 Es gibt auch eine Umgehung dieses Problems. Löschen Sie dazu manuell die alte Version des NuGet-Anbieters (NuGet-Anycpu.exe), sofern vorhanden, aus „$env:ProgramFiles\PackageManagement\ProviderAssemblies $env:LOCALAPPDATA\PackageManagement\ProviderAssemblies“.
 
 
-### <a name="support-for-packagemanagement-on-computers-with-intranet-access-only"></a>Unterstützung für PackageManagement auf Computern mit ausschließlichem Intranetzugriff
+<a id="support-for-packagemanagement-on-computers-with-intranet-access-only" class="xliff"></a>
+### Unterstützung für PackageManagement auf Computern mit ausschließlichem Intranetzugriff
 
 **Szenario**: Benutzer im Unternehmen haben keinen Zugriff auf das Internet, sondern nur auf das Intranet. Dies wurde von PackageManagement in WMF 5.0 nicht unterstützt.
 
@@ -52,18 +55,21 @@ Es gibt auch eine Umgehung dieses Problems. Löschen Sie dazu manuell die alte V
 3. Kopieren Sie die Binärdateien in einen Ordner oder eine Netzwerkfreigabe, auf die der Intranetcomputer zugreifen kann, und installieren Sie den NuGet-Anbieter mit `Install-PackageProvider -Name NuGet -Source <Path to folder>`.
 
 
-### <a name="event-logging-improvements"></a>Verbesserungen bei der Ereignisprotokollierung
+<a id="event-logging-improvements" class="xliff"></a>
+### Verbesserungen bei der Ereignisprotokollierung
 
 Wenn Sie Pakete installieren, ändern Sie den Status des Computers. In WMF 5.1 protokolliert PackageManagement jetzt Ereignisse im Windows-Ereignisprotokoll für die Aktivitäten `Install-Package`, `Uninstall-Package` und `Save-Package`. Das Ereignisprotokoll ist dasselbe wie für PowerShell, d. h. `Microsoft-Windows-PowerShell, Operational`.
 
-### <a name="support-for-basic-authentication"></a>Unterstützung für Standardauthentifizierung
+<a id="support-for-basic-authentication" class="xliff"></a>
+### Unterstützung für Standardauthentifizierung
 
 In WMF 5.1 unterstützt PackageManagement das Suchen und Installieren von Paketen aus einem Repository, das Standardauthentifizierung erfordert. Sie können Ihre Anmeldeinformationen für die Cmdlets `Find-Package` und `Install-Package` angeben. Beispiel:
 
 ``` PowerShell
 Find-Package -Source <SourceWithCredential> -Credential (Get-Credential)
 ```
-### <a name="support-for-using-packagemanagement-behind-a-proxy"></a>Unterstützung für die Verwendung von PackageManagement hinter einem Proxy
+<a id="support-for-using-packagemanagement-behind-a-proxy" class="xliff"></a>
+### Unterstützung für die Verwendung von PackageManagement hinter einem Proxy
 
 In WMF 5.1 verwendet PackageManagement jetzt die neuen Proxyparameter `-ProxyCredential` und `-Proxy`. Mithilfe dieser Parameter können Sie den Proxy-URL und die Anmeldeinformationen für PackageManagement-Cmdlets angeben. Standardmäßig werden die Proxyeinstellungen des Systems verwendet. Beispiel:
 

@@ -1,17 +1,17 @@
 ---
-title: Verwenden des Ressourcen-Designers
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 4478806e46c9c6cdc314b1ecadd8554d6558e8f5
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: Verwenden des Ressourcen-Designers
+ms.openlocfilehash: 5a034547d0850682513e9a80367ce148bfcf0bdc
+ms.sourcegitcommit: a775e4788616490980123e8e6ea78594ffeb6f7d
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/29/2017
 ---
-# <a name="using-the-resource-designer-tool"></a>Verwenden des Ressourcen-Designers
+<a id="using-the-resource-designer-tool" class="xliff"></a>
+# Verwenden des Ressourcen-Designers
 
 > Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
@@ -21,7 +21,8 @@ Verwenden Sie das Cmdlet [Install-Module](https://technet.microsoft.com/en-us/li
 
 >**Hinweis**: **Install-Module** ist im Modul **PowerShellGet** enthalten, das Bestandteil von PowerShell 5.0 ist. Das Modul **PowerShellGet** für PowerShell 3.0 und 4.0 können Sie unter [PowerShell-Module „PackageManagement“ – Vorschau](https://www.microsoft.com/en-us/download/details.aspx?id=49186) herunterladen.
 
-## <a name="creating-resource-properties"></a>Erstellen von Ressourceneigenschaften
+<a id="creating-resource-properties" class="xliff"></a>
+## Erstellen von Ressourceneigenschaften
 Zunächst werden Eigenschaften festgelegt, die die Ressource verfügbar machen soll. In diesem Beispiel wird ein Active Directory-Benutzer mit den folgenden Eigenschaften definiert.
  
 Parameternamen und Beschreibungen
@@ -33,18 +34,19 @@ Parameternamen und Beschreibungen
 Um die Eigenschaften zu erstellen, wird das Cmdlet **New-xDscResourceProperty** verwendet. Mit den folgenden PowerShell-Befehlen werden die oben beschriebenen Eigenschaften erstellt.
 
 ```powershell
-PS C:\> $UserName = New-xDscResourceProperty –Name UserName -Type String -Attribute Key
-PS C:\> $Ensure = New-xDscResourceProperty –Name Ensure -Type String -Attribute Write –ValidateSet “Present”, “Absent”
-PS C:\> $DomainCredential = New-xDscResourceProperty –Name DomainCredential-Type PSCredential -Attribute Write
-PS C:\> $Password = New-xDscResourceProperty –Name Password -Type PSCredential -Attribute Write
+$UserName = New-xDscResourceProperty –Name UserName -Type String -Attribute Key
+$Ensure = New-xDscResourceProperty –Name Ensure -Type String -Attribute Write –ValidateSet “Present”, “Absent”
+$DomainCredential = New-xDscResourceProperty –Name DomainCredential-Type PSCredential -Attribute Write
+$Password = New-xDscResourceProperty –Name Password -Type PSCredential -Attribute Write
 ```
 
-## <a name="create-the-resource"></a>Erstellen der Ressource
+<a id="create-the-resource" class="xliff"></a>
+## Erstellen der Ressource
 
 Nachdem die Ressourceneigenschaften nun erstellt wurden, kann das Cmdlet **New-xDscResource** aufgerufen werden, um die Ressource zu erstellen. Vom Cmdlet **New-xDscResource** wird die Liste der Eigenschaften als Parameter verwendet. Es verwendet auch der Pfad, unter dem das Modul erstellt werden soll, den Namen der neuen Ressource und den Namen des Moduls, in dem sie enthalten ist. Der folgende PowerShell-Befehl erstellt die Ressource:
 
 ```powershell
-PS C:\> New-xDscResource –Name Demo_ADUser –Property $UserName, $Ensure, $DomainCredential, $Password –Path ‘C:\Program Files\WindowsPowerShell\Modules’ –ModuleName Demo_DSCModule
+New-xDscResource –Name Demo_ADUser –Property $UserName, $Ensure, $DomainCredential, $Password –Path ‘C:\Program Files\WindowsPowerShell\Modules’ –ModuleName Demo_DSCModule
 ```
 
 Das Cmdlet **New-xDscResource** erstellt das MOF-Schema, ein Skelettressourcenskript, die erforderliche Verzeichnisstruktur für die neue Ressource und ein Manifest für das Modul, das die neue Ressource verfügbar macht.
@@ -55,10 +57,10 @@ Die MOF-Schemadatei befindet sich unter **C:\Programme\WindowsPowerShell\Modules
 [ClassVersion("1.0.0.0"), FriendlyName("Demo_ADUser")]
 class Demo_ADUser : OMI_BaseResource
 {
-[Key] string UserName;
-[Write, ValueMap{"Present","Absent"}, Values{"Present","Absent"}] string Ensure;
-[Write, EmbeddedInstance("MSFT_Credential")] String DomainCredential;
-[Write, EmbeddedInstance("MSFT_Credential")] String Password;
+  [Key] string UserName;
+  [Write, ValueMap{"Present","Absent"}, Values{"Present","Absent"}] string Ensure;
+  [Write, EmbeddedInstance("MSFT_Credential")] String DomainCredential;
+  [Write, EmbeddedInstance("MSFT_Credential")] String Password;
 };
 ```
 
@@ -67,59 +69,59 @@ Das Ressourcenskript befindet sich unter **C:\Programme\WindowsPowerShell\Module
 ```powershell
 function Get-TargetResource
 {
-[CmdletBinding()]
-[OutputType([System.Collections.Hashtable])]
-param
-(
-[parameter(Mandatory = $true)]
-[System.String]
-$UserName
-)
+  [CmdletBinding()]
+  [OutputType([System.Collections.Hashtable])]
+  param
+  (
+    [parameter(Mandatory = $true)]
+    [System.String]
+    $UserName
+  )
 
-#Write-Verbose "Use this cmdlet to deliver information about command processing."
+  #Write-Verbose "Use this cmdlet to deliver information about command processing."
 
-#Write-Debug "Use this cmdlet to write debug information while troubleshooting."
+  #Write-Debug "Use this cmdlet to write debug information while troubleshooting."
 
 
-<#
-$returnValue = @{
-UserName = [System.String]
-Ensure = [System.String]
-DomainAdminCredential = [System.Management.Automation.PSCredential]
-Password = [System.Management.Automation.PSCredential]
-}
+  <#
+  $returnValue = @{
+  UserName = [System.String]
+  Ensure = [System.String]
+  DomainAdminCredential = [System.Management.Automation.PSCredential]
+  Password = [System.Management.Automation.PSCredential]
+  }
 
-$returnValue
-#>
+  $returnValue
+  #>
 }
 
 
 function Set-TargetResource
 {
-[CmdletBinding()]
-param
-(
-[parameter(Mandatory = $true)]
-[System.String]
-$UserName,
+  [CmdletBinding()]
+  param
+  (
+    [parameter(Mandatory = $true)]
+    [System.String]
+    $UserName,
 
-[ValidateSet("Present","Absent")]
-[System.String]
-$Ensure,
+    [ValidateSet("Present","Absent")]
+    [System.String]
+    $Ensure,
 
-[System.Management.Automation.PSCredential]
-$DomainAdminCredential,
+    [System.Management.Automation.PSCredential]
+    $DomainAdminCredential,
 
-[System.Management.Automation.PSCredential]
-$Password
-)
+    [System.Management.Automation.PSCredential]
+    $Password
+  )
 
-#Write-Verbose "Use this cmdlet to deliver information about command processing."
+  #Write-Verbose "Use this cmdlet to deliver information about command processing."
 
-#Write-Debug "Use this cmdlet to write debug information while troubleshooting."
+  #Write-Debug "Use this cmdlet to write debug information while troubleshooting."
 
-#Include this line if the resource requires a system reboot.
-#$global:DSCMachineStatus = 1
+  #Include this line if the resource requires a system reboot.
+  #$global:DSCMachineStatus = 1
 
 
 }
@@ -127,61 +129,65 @@ $Password
 
 function Test-TargetResource
 {
-[CmdletBinding()]
-[OutputType([System.Boolean])]
-param
-(
-[parameter(Mandatory = $true)]
-[System.String]
-$UserName,
+  [CmdletBinding()]
+  [OutputType([System.Boolean])]
+  param
+  (
+    [parameter(Mandatory = $true)]
+    [System.String]
+    $UserName,
 
-[ValidateSet("Present","Absent")]
-[System.String]
-$Ensure,
+    [ValidateSet("Present","Absent")]
+    [System.String]
+    $Ensure,
 
-[System.Management.Automation.PSCredential]
-$DomainAdminCredential,
+    [System.Management.Automation.PSCredential]
+    $DomainAdminCredential,
 
-[System.Management.Automation.PSCredential]
-$Password
-)
+    [System.Management.Automation.PSCredential]
+    $Password
+  )
 
-#Write-Verbose "Use this cmdlet to deliver information about command processing."
+  #Write-Verbose "Use this cmdlet to deliver information about command processing."
 
-#Write-Debug "Use this cmdlet to write debug information while troubleshooting."
+  #Write-Debug "Use this cmdlet to write debug information while troubleshooting."
 
 
-<#
-$result = [System.Boolean]
+  <#
+  $result = [System.Boolean]
 
-$result
-#>
+  $result
+  #>
 }
 
 
 Export-ModuleMember -Function *-TargetResource
 ```
 
-## <a name="updating-the-resource"></a>Aktualisieren der Ressource
+<a id="updating-the-resource" class="xliff"></a>
+## Aktualisieren der Ressource
 
 Wenn Sie die Parameterliste der Ressource erweitern oder ändern müssen, können Sie das Cmdlet **Update-xDscResource** aufrufen. Das Cmdlet aktualisiert die Ressource mit einer neuen Parameterliste. Wenn Sie bereits Logik zu Ihrem Ressourcenskript hinzugefügt haben, bleibt diese davon unberührt.
 
 Angenommen, Sie möchten den Zeitpunkt der letzten Anmeldung des Benutzers zur Ressource hinzufügen. Anstatt die Ressource vollständig neu zu schreiben, können Sie **New-xDscResourceProperty** aufrufen, um die Eigenschaft neu zu erstellen, und diese neue Eigenschaft dann mit **Update-xDscResource** zur Eigenschaftenliste hinzufügen.
 
 ```powershell
-PS C:\> $lastLogon = New-xDscResourceProperty –Name LastLogon –Type Hashtable –Attribute Write –Description “For mapping users to their last log on time”
-PS C:\> Update-xDscResource –Name ‘Demo_ADUser’ –Property $UserName, $Ensure, $DomainCredential, $Password, $lastLogon -Force
+$lastLogon = New-xDscResourceProperty –Name LastLogon –Type Hashtable –Attribute Write –Description “For mapping users to their last log on time”
+Update-xDscResource –Name ‘Demo_ADUser’ –Property $UserName, $Ensure, $DomainCredential, $Password, $lastLogon -Force
 ```
 
-## <a name="testing-a-resource-schema"></a>Testen eines Ressourcenschemas
+<a id="testing-a-resource-schema" class="xliff"></a>
+## Testen eines Ressourcenschemas
 
 Der Ressourcen-Designer stellt ein weiteres Cmdlet zur Verfügung, mit dem Sie die Gültigkeit eines MOF-Schemas testen können, das Sie manuell geschrieben haben. Rufen Sie das Cmdlet **Test-xDscSchema**auf, und übergeben Sie dabei den Pfad eines MOF-Ressourcenschemas als Parameter. Das Cmdlet gibt alle Fehler im Schema aus.
 
-### <a name="see-also"></a>Weitere Informationen
+<a id="see-also" class="xliff"></a>
+### Weitere Informationen
 
-#### <a name="concepts"></a>Konzepte
+<a id="concepts" class="xliff"></a>
+#### Konzepte
 [Erstellen von benutzerdefinierten Windows PowerShell DSC-Ressourcen](authoringResource.md)
 
-#### <a name="other-resources"></a>Weitere Ressourcen
+<a id="other-resources" class="xliff"></a>
+#### Weitere Ressourcen
 [xDscResourceDesigner-Modul](https://powershellgallery.com/packages/xDscResourceDesigner)
-

@@ -1,22 +1,22 @@
 ---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
 title: Neue Szenarios und Features in WMF 5.1
-ms.date: 2016-07-13
-keywords: PowerShell, DSC, WMF
-description: 
-ms.topic: article
-author: keithb
-manager: dongill
-ms.prod: powershell
-ms.technology: WMF
-ms.openlocfilehash: 1ea650d5dd69251c0407133f649ea8efb1315dd2
-ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
-translationtype: HT
+ms.openlocfilehash: 02c27711c886916da56bb382b1bc0187f1e30805
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="new-scenarios-and-features-in-wmf-51"></a>Neue Szenarios und Features in WMF 5.1 #
+<a id="new-scenarios-and-features-in-wmf-51" class="xliff"></a>
+# Neue Szenarios und Features in WMF 5.1 #
 
 > Hinweis: Diese Dokumentation ist vorläufig und kann geändert werden.
 
-## <a name="powershell-editions"></a>PowerShell-Editionen ##
+<a id="powershell-editions" class="xliff"></a>
+## PowerShell-Editionen ##
 Ab Version 5.1 steht PowerShell in verschiedenen Editionen zur Verfügung, die unterschiedliche Featuregruppen und Plattformkompatibilität bieten.
 
 - **Desktop-Edition:** Diese Edition basiert auf .NET Framework und bietet Kompatibilität mit Skripts und Modulen für Versionen von PowerShell, die unter Vollversionen von Windows wie Server Core und Windows Desktop ausgeführt werden.
@@ -28,11 +28,13 @@ Ab Version 5.1 steht PowerShell in verschiedenen Editionen zur Verfügung, die u
 - [Der Filter „Get-Module“ hat „CompatiblePSEditions“ als Ergebnis]()
 - [Verhindern der Ausführung von Skripts außer bei Ausführung in einer kompatiblen Edition von PowerShell]()
 
-## <a name="catalog-cmdlets"></a>Katalog-Cmdlets  
+<a id="catalog-cmdlets" class="xliff"></a>
+## Katalog-Cmdlets  
 
 Dem [Microsoft.PowerShell.Security](https://technet.microsoft.com/en-us/library/hh847877.aspx)-Modul wurden zwei neue Cmdlets hinzugefügt, die Windows-Katalogdateien generieren und überprüfen.  
 
-###<a name="new-filecatalog"></a>New-FileCatalog 
+<a id="new-filecatalog" class="xliff"></a>
+###New-FileCatalog 
 --------------------------------
 
 „New-FileCatalog“ erstellt eine Windows-Katalogdatei für eine Gruppe von Ordnern und Dateien. Diese Katalogdatei enthält die Hashes aller Dateien in bestimmten Pfaden. Benutzer können den Satz von Ordnern zusammen mit den entsprechenden Katalogdateien verteilen, die diese Ordner darstellen. Diese Informationen helfen bei der Überprüfung, ob seit der Erstellung des Katalogs Änderungen an den Ordnern vorgenommen wurden.    
@@ -53,7 +55,8 @@ Dadurch wird die Katalogdatei erstellt.
 Melden Sie sich mit dem Cmdlet [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) an, um die Integrität der Katalogdatei zu überprüfen (im obigen Beispiel: „pester.cat“).   
 
 
-###<a name="test-filecatalog"></a>Test-FileCatalog 
+<a id="test-filecatalog" class="xliff"></a>
+###Test-FileCatalog 
 --------------------------------
 
 „Test-FileCatalog“ überprüft den Katalog, der einen Satz von Ordnern darstellt. 
@@ -67,7 +70,8 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 Dieses Cmdlet vergleicht alle Dateihashes und deren im *Katalog* enthaltenen relativen Pfade mit denen auf dem *Datenträger*. Wenn das Cmdlet eine Unstimmigkeit zwischen den Dateihashes und den Pfaden entdeckt, gibt es den Status *ValidationFailed* zurück. Benutzer können alle diese Informationen mithilfe des Parameters *-Detailed* abrufen. Dieser Parameter zeigt in der Eigenschaft *Signature* auch den Signierstatus des Katalogs an, was dem Aufruf des Cmdlets [Get-AuthenticodeSignature](https://technet.microsoft.com/en-us/library/hh849805.aspx) in der Katalogdatei entspricht. Benutzer können außerdem jede Datei während der Überprüfung mithilfe des Parameters *-FilesToSkip* überspringen. 
 
 
-## <a name="module-analysis-cache"></a>Die Datei „ModuleAnalysisCache“ ##
+<a id="module-analysis-cache" class="xliff"></a>
+## Die Datei „ModuleAnalysisCache“ ##
 Ab Version 5.1 bietet PowerShell Kontrolle über die Datei, die zum Zwischenspeichern von Daten zu einem Modul verwendet wird, z. B. der Befehle, die es exportiert.
 
 Standardmäßig wird dieser Cache in der Datei `${env:LOCALAPPDATA}\Microsoft\Windows\PowerShell\ModuleAnalysisCache` gespeichert.
@@ -94,7 +98,8 @@ $env:PSDisableModuleAnalysisCacheCleanup = 1
 
 Das Festlegen dieser Umgebungsvariablen wird im aktuellen Prozess sofort wirksam.
 
-##<a name="specifying-module-version"></a>Angeben der Modulversion
+<a id="specifying-module-version" class="xliff"></a>
+##Angeben der Modulversion
 
 In WMF 5.1 verhält sich `using module` genauso wie andere modulbezogene Konstruktionen in PowerShell. Zuvor gab es keine Möglichkeit, eine bestimmte Modulversion anzugeben. Wenn mehrere Versionen vorhanden waren, führte dies zu einem Fehler.
 
@@ -108,7 +113,9 @@ In WMF 5.1:
 * Wenn mehrere Versionen des Moduls vorhanden sind, verwendet PowerShell **dieselbe Auflösungslogik** wie `Import-Module` und gibt keinen Fehler zurück, was dem Verhalten von `Import-Module` und `Import-DscResource` entspricht.
 
 
-##<a name="improvements-to-pester"></a>Verbesserungen an Pester
+<a id="improvements-to-pester" class="xliff"></a>
+##Verbesserungen an Pester
 In WMF 5.1 wurde die in PowerShell mitgelieferte Pester-Version von 3.3.5 auf 3.4.0 aktualisiert und um eine „commit“-Funktion ergänzt, die die Funktionsweise von Pester auf Nano Server verbessert (https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e). 
 
 Die Änderungen, die in Version 3.4.0 hinsichtlich der Version 3.3.5 gemacht wurden, können Sie in der Datei „ChangeLog.md“ unter „https://github.com/pester/Pester/blob/master/CHANGELOG.md“ einsehen.
+
