@@ -1,19 +1,17 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: PowerShell, Cmdlet, Katalog
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
+ms.topic: reference
+keywords: gallery,powershell,cmdlet,psget
 title: Skript mit kompatiblen PowerShell-Editionen | MSDN
-ms.technology: powershell
-ms.openlocfilehash: aac38b9a5b133b0b7982e7748e1483a0774599a2
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.openlocfilehash: e6994b994cb15903560f3dd89c21383fb2cd367d
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="script-with-compatible-powershell-editions"></a>Skript mit kompatiblen PowerShell-Editionen
+<a id="script-with-compatible-powershell-editions" class="xliff"></a>
+# Skript mit kompatiblen PowerShell-Editionen
 Ab Version 5.1 steht PowerShell in verschiedenen Editionen zur Verfügung, die unterschiedliche Featuregruppen und Plattformkompatibilität bieten.
 
 - **Desktop-Edition:** Diese Edition basiert auf .NET Framework und bietet Kompatibilität mit Skripts und Modulen für Versionen von PowerShell, die unter Vollversionen von Windows wie Server Core und Windows Desktop ausgeführt werden.
@@ -65,7 +63,10 @@ Find-Script -Tag PSEditon_Core
 
 ```
 
-## <a name="more-details"></a>Weitere Details
-### <a name="modules-with-pseditionsmodulemodulewithpseditionsupportmd"></a>[Module mit PowerShell-Editionen](../module/modulewithpseditionsupport.md)
-### <a name="pseditions-support-on-powershellgallerypsgallerypsgallerypseditionsmd"></a>[Unterstützung von PowerShell-Editionen im PowerShell-Katalog](../../psgallery/psgallery_pseditions.md)
+<a id="more-details" class="xliff"></a>
+## Weitere Details
+<a id="modules-with-pseditionsmodulemodulewithpseditionsupportmd" class="xliff"></a>
+### [Module mit PowerShell-Editionen](../module/modulewithpseditionsupport.md)
+<a id="pseditions-support-on-powershellgallerypsgallerypsgallerypseditionsmd" class="xliff"></a>
+### [Unterstützung von PowerShell-Editionen im PowerShell-Katalog](../../psgallery/psgallery_pseditions.md)
 

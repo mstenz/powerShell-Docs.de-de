@@ -1,19 +1,17 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: PowerShell, Cmdlet, Katalog
-ms.date: 2016-10-14
-contributor: manikb
+ms.date: 2017-06-12
+contributor: JKeithB
+ms.topic: conceptual
+keywords: gallery,powershell,cmdlet,psgallery
 title: "Löschen von Elementen | MSDN"
-ms.technology: powershell
-ms.openlocfilehash: 0bc8261992802c75463c454dd990dccdbfb2eb12
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.openlocfilehash: 00452f9b6625a51e95f3f46dbd66291fa20e17ad
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="deleting-items"></a>Löschen von Elementen
+<a id="deleting-items" class="xliff"></a>
+# Löschen von Elementen
 
 Der PowerShell-Katalog unterstützt nicht das permanente Löschen von Objekten, da es dadurch bei jedem zu Fehlern kommt, der von deren Verfügbarkeit abhängig ist.
 

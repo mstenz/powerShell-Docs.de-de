@@ -1,17 +1,17 @@
 ---
-title: DSC-Konfigurationen
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: carmonm
-ms.prod: powershell
-ms.openlocfilehash: d960cbe8534d4e5b4a423e685113a3ebafd403d4
-ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: DSC-Konfigurationen
+ms.openlocfilehash: 3fdee72d5701433a3903697c5a0a32b112136592
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-configurations"></a>DSC-Konfigurationen
+<a id="dsc-configurations" class="xliff"></a>
+# DSC-Konfigurationen
 
 >Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
@@ -23,7 +23,7 @@ Configuration MyDscConfiguration {
     Node "TEST-PC1" {
         WindowsFeature MyFeatureInstance {
             Ensure = "Present"
-            Name =    "RSAT"
+            Name =  "RSAT"
         }
         WindowsFeature My2ndFeatureInstance {
             Ensure = "Present"
@@ -37,7 +37,8 @@ MyDscConfiguration
 
 Speichern Sie das Skript als PS1-Datei.
 
-## <a name="configuration-syntax"></a>Konfigurationssyntax
+<a id="configuration-syntax" class="xliff"></a>
+## Konfigurationssyntax
 
 Ein Konfigurationsskript besteht aus den folgenden Teilen:
 
@@ -56,7 +57,7 @@ Configuration MyDscConfiguration {
     Node $ComputerName {
         WindowsFeature MyFeatureInstance {
             Ensure = "Present"
-            Name =    "RSAT"
+            Name =  "RSAT"
         }
         WindowsFeature My2ndFeatureInstance {
             Ensure = "Present"
@@ -70,7 +71,8 @@ MyDscConfiguration
 
 Bei diesem Beispiel geben Sie den Namen des Knotens an, indem Sie ihn als **ComputerName**-Parameter übergeben, wenn Sie die Konfiguration kompilieren. Der Standardname ist „localhost“.
 
-## <a name="compiling-the-configuration"></a>Kompilieren der Konfiguration
+<a id="compiling-the-configuration" class="xliff"></a>
+## Kompilieren der Konfiguration
 
 Bevor Sie eine Konfiguration anwenden können, müssen Sie sie in einem MOF-Dokument kompilieren. Dazu rufen Sie die Konfiguration wie eine PowerShell-Funktion auf.  
 Die letzte Zeile des Beispiels, die nur den Namen der Konfiguration enthält, ruft die Konfiguration auf.
@@ -117,7 +119,8 @@ Mode                LastWriteTime         Length Name
 -a----       10/23/2015   4:32 PM           2842 MyTestNode.mof
 ```      
 
-## <a name="using-dependson"></a>Verwenden von „DependsOn“
+<a id="using-dependson" class="xliff"></a>
+## Verwenden von „DependsOn“
 
 Eine nützliches DSC-Schlüsselwort ist **DependsOn**. In der Regel (jedoch nicht unbedingt immer) wendet DSC die Ressourcen in der Reihenfolge an, die der sie in der Konfiguration angegeben sind. **DependsOn** gibt hingegen an, welche Ressourcen von anderen Ressourcen abhängig sind. Der LCM stellt sicher, dass sie in der richtigen Reihenfolge angewendet werden, und zwar unabhängig von der Reihenfolge, in der Ressourceninstanzen definiert sind. Eine Konfiguration kann z. B. angeben, dass eine Instanz der Ressource **User** vom Vorhandensein einer **Group**-Instanz abhängig ist:
 
@@ -141,7 +144,8 @@ Configuration DependsOnExample {
 DependsOnExample
 ```
 
-## <a name="using-new-resources-in-your-configuration"></a>Verwenden neuer Ressourcen in Ihrer Konfiguration
+<a id="using-new-resources-in-your-configuration" class="xliff"></a>
+## Verwenden neuer Ressourcen in Ihrer Konfiguration
 
 Wenn Sie die vorherigen Beispielen ausgeführt haben, werden Sie vielleicht die Warnung bemerkt haben, dass Sie eine Ressource verwendet haben, ohne sie explizit zu importieren.
 Derzeit gehören 12 Ressourcen zum Funktionsumfang von DSC im „PSDesiredStateConfiguration“-Modul. Andere Ressourcen in externen Modulen müssen in `$env:PSModulePath` eingefügt werden, damit sie vom lokalen Konfigurations-Manager (LCM) erkannt werden. Das neue Cmdlet [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) kann verwendet werden, um zu bestimmen, welche Ressourcen im System installiert sind und dem LCM zur Verfügung stehen. Nachdem diese Module in `$env:PSModulePath` abgelegt und von [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) ordnungsgemäß erkannt wurden, müssen sie dennoch in Ihre Konfiguration geladen werden. 
@@ -150,7 +154,8 @@ Derzeit gehören 12 Ressourcen zum Funktionsumfang von DSC im „PSDesiredState
 - **ModuleName** ist die empfohlene Methode der Verwendung von **Import DscResource**. Dieser Parameter akzeptiert den Namen des Moduls mit den Ressourcen, die importiert werden sollen, (sowie einem Zeichenfolgenarray mit Modulnamen). 
 - **Name** ist der Name der zu importierenden Ressource. Dies ist nicht der Anzeigename, der als „Name“ von [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) zurückgegeben wird, sondern der Klassennamen, der verwendet wird, wenn Sie das Ressourcenschema definieren (wird als **ResourceType** von [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) zurückgegeben). 
 
-## <a name="see-also"></a>Weitere Informationen
+<a id="see-also" class="xliff"></a>
+## Weitere Informationen
 * [Windows PowerShell DSC – Übersicht](overview.md)
 * [DSC-Ressourcen](resources.md)
 * [Konfigurieren des lokalen Konfigurations-Managers](metaConfig.md)

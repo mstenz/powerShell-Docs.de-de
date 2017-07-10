@@ -1,21 +1,22 @@
 ---
-title: "DSC für die Linux-Resource „nxUser“"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 9d27299aca8dee3e0390c9c8fc900832eb7e960c
-ms.sourcegitcommit: b3724fac99e52c712b18c4effbb9ee13711d0238
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: "DSC für die Linux-Resource „nxUser“"
+ms.openlocfilehash: d708edcee592835ce448752465125d451afbd45b
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-for-linux-nxuser-resource"></a>DSC für die Linux-Resource „nxUser“
+<a id="dsc-for-linux-nxuser-resource" class="xliff"></a>
+# DSC für die Linux-Resource „nxUser“
 
 Die Ressource **nxUser** in PowerShell DSC bietet einen Mechanismus zum Verwalten von Dateien und Verzeichnissen auf einem Linux-Knoten.
 
-## <a name="syntax"></a>Syntax
+<a id="syntax" class="xliff"></a>
+## Syntax
 
 ```
 nxUser <string> #ResourceName
@@ -34,7 +35,8 @@ nxUser <string> #ResourceName
 }
 ```
 
-## <a name="properties"></a>Eigenschaften
+<a id="properties" class="xliff"></a>
+## Eigenschaften
 
 |  Eigenschaft |  Gibt den Kontonamen an, für den Sie einen bestimmten Zustand sicherstellen möchten. | 
 |---|---|
@@ -49,7 +51,8 @@ nxUser <string> #ResourceName
 | GroupID| Die primäre Gruppen-ID des Benutzers.| 
 | DependsOn | Gibt an, dass die Konfiguration einer anderen Ressource ausgeführt werden muss, bevor diese Ressource konfiguriert wird. Wenn beispielsweise die ID des Skriptblocks mit der Ressourcenkonfiguration, den Sie zuerst ausführen möchten, „ResourceName“ und dessen Typ „ResourceType“ ist, lautet die Syntax für das Verwenden dieser Eigenschaft `DependsOn = "[ResourceType]ResourceName"`.| 
 
-## <a name="example"></a>Beispiel
+<a id="example" class="xliff"></a>
+## Beispiel
 
 Im folgenden Beispiel wird sichergestellt, dass der Benutzer „monuser“ vorhanden und Mitglied der Gruppe „DBusers“ ist.
 

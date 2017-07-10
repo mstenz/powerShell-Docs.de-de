@@ -1,21 +1,20 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: PowerShell, Cmdlet, Katalog
-ms.date: 2016-10-14
-contributor: manikb
+ms.date: 2017-06-12
+contributor: JKeithB
+ms.topic: conceptual
+keywords: gallery,powershell,cmdlet,psgallery
 title: Kontaktieren von Katalogadministratoren | MSDN
-ms.technology: powershell
-ms.openlocfilehash: 6822dfd6d0358ad42cd499f7eb153a4f19906c7d
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.openlocfilehash: a405fb5f5517c86900d07ad09f980b96ba8e2fe8
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="contact-gallery-administrators"></a>Kontaktieren von Katalogadministratoren
+<a id="contact-gallery-administrators" class="xliff"></a>
+# Kontaktieren von Katalogadministratoren
 
-## <a name="when-to-contact-gallery-administrators"></a>Wann sollten Sie Katalogadministratoren kontaktieren?
+<a id="when-to-contact-gallery-administrators" class="xliff"></a>
+## Wann sollten Sie Katalogadministratoren kontaktieren?
 
 Katalogadministratoren sollten in den folgenden Fällen kontaktiert werden:
 
@@ -25,7 +24,8 @@ Katalogadministratoren sollten in den folgenden Fällen kontaktiert werden:
 4. Sie sind sich wegen eines Elementnamens mit anderen Benutzern uneinig und können die Meinungsverschiedenheit nicht beilegen, indem Sie die Benutzer kontaktieren.
 5. Sie wurden von Katalogadministratoren wegen Ihrer Elemente im Katalog kontaktiert und möchten antworten.
 
-## <a name="how-to-contact-gallery-administrators"></a>Wie sollten Sie Katalogadministratoren kontaktieren?
+<a id="how-to-contact-gallery-administrators" class="xliff"></a>
+## Wie sollten Sie Katalogadministratoren kontaktieren?
 
 1. Senden Sie uns eine E-Mail: cgadmin@microsoft.com.
 2. Wenn Sie den Missbrauch eines Elements melden möchten, können Sie den Link „Missbrauch melden“ unterhalb der Elementinformationen im linken Bereich verwenden.

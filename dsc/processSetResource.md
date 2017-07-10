@@ -1,23 +1,24 @@
 ---
-title: "DSC-Ressource „ProcessSet“"
-ms.date: 2016-05-23
-keywords: PowerShell, DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: f9754be3f803d3232189985faa41fb209bfcfe46
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: "DSC-Ressource „ProcessSet“"
+ms.openlocfilehash: b713d1a9c34eab6966de4f342991ead32c19df5d
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-windowsprocess-resource"></a>DSC-Ressource „WindowsProcess“
+<a id="dsc-windowsprocess-resource" class="xliff"></a>
+# DSC-Ressource „WindowsProcess“
 
 > Gilt für: Windows PowerShell 5.0
 
 Die Ressource **ProcessSet** in Windows PowerShell DSC bietet einen Mechanismus zum Konfigurieren von Prozessen auf einem Zielknoten. Diese Ressource ist eine [zusammengesetzte Ressource](authoringResourceComposite.md), die die Ressource [WindowsProcess](windowsProcessResource.md) für jede Gruppe aufruft, die im `GroupName`-Parameter angegeben ist.
 
-## <a name="syntax"></a>Syntax
+<a id="syntax" class="xliff"></a>
+## Syntax
 
 ```
 WindowsProcess [string] #ResourceName
@@ -34,7 +35,8 @@ WindowsProcess [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>Eigenschaften
+<a id="properties" class="xliff"></a>
+## Eigenschaften
 |  Eigenschaft  |  Beschreibung   | 
 |---|---| 
 | Arguments| Eine Zeichenfolge mit Argumenten, die wie vorhanden an den Prozess übergeben werden. Wenn Sie mehrere Argumente übergeben müssen, fügen Sie sie alle dieser Zeichenfolge hinzu.| 

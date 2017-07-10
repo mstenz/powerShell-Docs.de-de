@@ -1,17 +1,17 @@
 ---
-title: Verwenden eines DSC-Berichtsservers
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 17b56a0ce25d3154e21f18269926a0c41aae833b
-ms.sourcegitcommit: d7b28f28a09caa7fa48b0f66c5c437f128ce316f
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: Verwenden eines DSC-Berichtsservers
+ms.openlocfilehash: dd61d6ffff43ac2d1ec663b566e39dfc7d6c6565
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="using-a-dsc-report-server"></a>Verwenden eines DSC-Berichtsservers
+<a id="using-a-dsc-report-server" class="xliff"></a>
+# Verwenden eines DSC-Berichtsservers
 
 > Gilt für: Windows PowerShell 5.0
 
@@ -19,7 +19,8 @@ translationtype: HT
 
 Die lokale Configuration Manager (LCM) eines Knotens kann so konfiguriert werden, dass Berichte zu seinem Konfigurationsstatus an einen Pullserver gesendet werden, der zum Abrufen dieser Daten abgefragt werden kann. Jedes Mal, wenn der Knoten eine Konfiguration überprüft und anwendet, wird ein Bericht zum Berichtsserver gesendet. Diese Berichte werden in einer Datenbank auf dem Server gespeichert und können durch Aufrufen des Webdiensts für die Berichtserstellung abgerufen werden. Jeder Bericht enthält Informationen zu den angewendeten Konfigurationen samt Zeitpunkt, verwendeten Ressourcen, ausgelösten Fehlern sowie Start- und Endzeiten.
 
-## <a name="configuring-a-node-to-send-reports"></a>Konfigurieren eines Knotens zum Senden von Berichten
+<a id="configuring-a-node-to-send-reports" class="xliff"></a>
+## Konfigurieren eines Knotens zum Senden von Berichten
 
 Sie weisen einen Knoten im **ReportServerWeb**-Block der LCM-Konfiguration des Knotens an, Berichte zu einem Server zu senden (weitere Informationen zum Konfigurieren des LCM finden Sie unter [Konfigurieren des lokalen Konfigurations-Managers](metaConfig.md)). Der Server, an den der Knoten Berichte sendet, muss als Webpullserver eingerichtet werden (Sie können keine Berichte an eine SMB-Freigabe senden). Weitere Informationen zum Einrichten von Pullservern finden Sie unter [Einrichten eines DSC-Webpullservers](pullServer.md). Der Berichtsserver kann vom selben Dienst unterstützt werden, von dem der Knoten Konfigurationen und Ressourcen abruft. Es kann sich aber auch um einen anderen Dienst handeln.
  
@@ -92,7 +93,8 @@ PullClientConfig
 
 >**Hinweis:** Sie können den Webdienst beim Einrichten eines Pullservers beliebig benennen, aber die Eigenschaft **ServerURL** muss mit dem Dienstnamen übereinstimmen.
 
-## <a name="getting-report-data"></a>Abrufen von Berichtsdaten
+<a id="getting-report-data" class="xliff"></a>
+## Abrufen von Berichtsdaten
 
 Berichte, die zum Pullserver gesendet werden, gelangen in eine Datenbank auf dem Server. Die Berichte stehen über Aufrufe des Webdiensts zur Verfügung. Zum Abrufen von Berichten für einen bestimmten Knoten senden Sie eine HTTP-Anforderung an den Berichtswebdienst in der folgenden Form: `http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId= 'MyNodeAgentId')/Reports`, wobei `MyNodeAgentId` die Agent-ID des Knotens ist, für den Sie Berichte erhalten möchten. Durch Aufrufen von [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) auf einem Knoten können Sie die Agent-ID dieses Knotens abrufen.
 
@@ -113,7 +115,8 @@ function GetReport
 }
 ```
     
-## <a name="viewing-report-data"></a>Anzeigen von Berichtsdaten
+<a id="viewing-report-data" class="xliff"></a>
+## Anzeigen von Berichtsdaten
 
 Wenn Sie eine Variable auf das Ergebnis der **GetReport**-Funktion festlegen, können Sie die einzelnen Felder in einem Element des Arrays anzeigen, das zurückgegeben wird:
 
@@ -220,7 +223,8 @@ InDesiredState    : True
 
 Beachten Sie, dass diese Beispiele dazu dienen, Ihnen eine Vorstellung der Möglichkeiten von Berichtsdaten zu geben. Eine Einführung in das Arbeiten mit JSON in PowerShell finden Sie unter [Arbeiten mit JSON und PowerShell](https://blogs.technet.microsoft.com/heyscriptingguy/2015/10/08/playing-with-json-and-powershell/).
 
-## <a name="see-also"></a>Weitere Informationen
+<a id="see-also" class="xliff"></a>
+## Weitere Informationen
 - [Konfigurieren des lokalen Konfigurations-Managers](metaConfig.md)
 - [Einrichten eines DSC-Webpullservers](pullServer.md)
 - [Einrichten eines Pullclients mithilfe von Konfigurationsnamen](pullClientConfigNames.md)

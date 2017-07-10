@@ -1,23 +1,24 @@
 ---
-title: "DSC-Ressourcen „Archive“"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 77398d26f59975469e7c752a8d7f4f8bbbe4f553
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: "DSC-Ressourcen „Archive“"
+ms.openlocfilehash: 035f7cc1b7f21f7a0df2d72db0ba83bc0688356c
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-archive-resource"></a>DSC-Ressourcen „Archive“
+<a id="dsc-archive-resource" class="xliff"></a>
+# DSC-Ressourcen „Archive“
 
 > Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Die Ressource „Archive“ in Windows PowerShell DSC bietet einen Mechanismus zum Entpacken von Archivdateien (.zip).
 
-## <a name="syntax"></a>Syntax 
+<a id="syntax" class="xliff"></a>
+## Syntax 
 ```MOF
 Archive [string] #ResourceName
 {
@@ -31,7 +32,8 @@ Archive [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>Eigenschaften
+<a id="properties" class="xliff"></a>
+## Eigenschaften
 
 |  Eigenschaft  |  Beschreibung   | 
 |---|---| 
@@ -43,7 +45,8 @@ Archive [string] #ResourceName
 | Überprüfen| Verwendet die Eigenschaft „Checksum“, um zu bestimmen, ob das Archiv der Signatur entspricht. Wenn Sie „Checksum“ ohne „Validate“ angeben, schlägt die Konfiguration fehl. Wenn Sie „Validate“ ohne „Checksum“ angeben, wird standardmäßig eine SHA-256-Prüfsumme verwendet.| 
 | Force| Bestimmte Dateioperationen (z. B. das Überschreiben einer Datei oder Löschen eines Verzeichnisses, das nicht leer ist), führen zu einem Fehler. Bei Verwenden der Eigenschaften „Force“ werden solche Fehler überschrieben. Der Standardwert ist „False“.| 
 
-## <a name="example"></a>Beispiel
+<a id="example" class="xliff"></a>
+## Beispiel
 
 Im folgenden Beispiel wird veranschaulicht, wie Sie die Ressource „Archive“ verwenden, um sicherzustellen, dass der Inhalt einer Archivdatei mit dem Namen „Test.zip“ vorhanden ist und an ein bestimmtes Ziel extrahiert wird.
 

@@ -1,23 +1,23 @@
 ---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
 title: Verbesserungen am PowerShell-Modul in WMF 5.1
-ms.date: 2016-07-13
-keywords: PowerShell, DSC, WMF
-description: 
-ms.topic: article
-author: keithb
-manager: dongill
-ms.prod: powershell
-ms.technology: WMF
-ms.openlocfilehash: c8ad4ac8f3c7bf705114edc06c1b85846336dfff
-ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
-translationtype: HT
+ms.openlocfilehash: 6c8000ccfc59ab46de95dc4f67161e12a5a41199
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
 ---
-#<a name="powershell-engine-improvements"></a>Verbesserungen am PowerShell-Modul
+<a id="powershell-engine-improvements" class="xliff"></a>
+#Verbesserungen am PowerShell-Modul
 
 Die folgenden Verbesserungen am PowerShell-Kernmodul wurden in WMF 5.1 implementiert:
 
 
-## <a name="performance"></a>Leistung ##
+<a id="performance" class="xliff"></a>
+## Leistung ##
 
 In einigen wichtigen Bereichen wurde die Leistung verbessert:
 
@@ -40,3 +40,4 @@ Beachten Sie, dass das Ändern dieser Dateien zu keiner Zeit ein unterstütztes 
 
 Eine andere sichtbare Änderung ist, wie PowerShell die exportierten Befehle und andere Informationen für Module zwischenspeichert, die auf einem System installiert sind. Zuvor wurde dieser Cache im Verzeichnis `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\CommandAnalysis` gespeichert. In WMF 5.1 befindet sich der Cache ausschließlich in der Datei `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\ModuleAnalysisCache`.
 Unter [Die Datei „ModuleAnalysisCache“](scenarios-features.md#module-analysis-cache) finden Sie weitere Details.
+

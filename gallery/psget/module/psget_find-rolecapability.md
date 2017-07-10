@@ -1,23 +1,22 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: PowerShell, Cmdlet, Katalog
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: Find-RoleCapability | MSDN
-ms.technology: powershell
-ms.openlocfilehash: 3f005bf0a9201c3762ca6399a78d4ff983409656
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: gallery,powershell,cmdlet,psget
+title: Find-RoleCapability
+ms.openlocfilehash: 77c5b492d9681fa05315401fba410c508af1d13b
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="find-rolecapability"></a>Find-RoleCapability
+<a id="find-rolecapability" class="xliff"></a>
+# Find-RoleCapability
 
 Sucht nach Rollenfunktionen in Modulen.
 
-## <a name="description"></a>Beschreibung
+<a id="description" class="xliff"></a>
+## Beschreibung
 Das Cmdlet Find-RoleCapability sucht PowerShell-Rollenfunktionen in Modulen. Find-RoleCapability sucht Module in registrierten Repositorys. Für jede Rollenfunktion, die von diesem Cmdlet gefunden wird, wird ein PSGetRoleCapabilityInfo-Objekt von diesem zurückgegeben. Sie können ein PSGetRoleCapabilityInfo-Objekt an das Install-Module-Cmdlet übergeben, um das Modul zu installieren, das die Rollenfunktion enthält.
 PowerShell-Rollenfunktionen definieren, welche Befehle, Anwendungen usw. für einen Benutzer an einem Just Enough Administration-Endpunkt (JEA) verfügbar sind. Rollenfunktionen werden durch Dateien mit der Erweiterung PSRC definiert.
 
@@ -30,16 +29,19 @@ PowerShell-Rollenfunktionen definieren, welche Befehle, Anwendungen usw. für ei
 - Find-RoleCapability kann mit dem „-Filter“-Parameter nach einer repositoryspezifischen Suchsprache filtern.
 - Find-RoleCapability kann Module von allen oder einigen registrierten Repositorys filtern.
 
-## <a name="cmdlet-syntax"></a>Cmdlet-Syntax
+<a id="cmdlet-syntax" class="xliff"></a>
+## Cmdlet-Syntax
 ```powershell
 Get-Command -Name Find-RoleCapability -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a>Cmdlet-Onlinehilfe
+<a id="cmdlet-online-help-reference" class="xliff"></a>
+## Cmdlet-Onlinehilfe
 
 [Find-RoleCapability](http://go.microsoft.com/fwlink/?LinkId=718029)
 
-## <a name="example-commands"></a>Beispiele für Befehle
+<a id="example-commands" class="xliff"></a>
+## Beispiele für Befehle
 ```powershell
 
 # Find a specific role capability

@@ -1,23 +1,24 @@
 ---
-title: "Windows PowerShell 4.0 DSC – Lokaler Konfigurations-Manager (LCM)"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: cec3aaf4e57d1efc3e29880e4a7f078bd1840901
-ms.sourcegitcommit: b88151841dd44c8ee9296d0855d8b322cbf16076
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: "Windows PowerShell 4.0 DSC – Lokaler Konfigurations-Manager (LCM)"
+ms.openlocfilehash: 2e6e4731bdf6d7de6d13fc7f9b81698a192247e4
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="windows-powershell-40-desired-state-configuration-local-configuration-manager-lcm"></a>Windows PowerShell 4.0 DSC – Lokaler Konfigurations-Manager (LCM)
+<a id="windows-powershell-40-desired-state-configuration-local-configuration-manager-lcm" class="xliff"></a>
+# Windows PowerShell 4.0 DSC – Lokaler Konfigurations-Manager (LCM)
 
 >Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Der lokale Konfigurations-Manager (Local Configuration Manager, LCM) ist das Windows PowerShell DSC-Modul (Desired State Configuration, Konfiguration des gewünschten Zustands). Dieses Modul wird auf allen Zielknoten ausgeführt und ist zuständig für das Aufrufen der Konfigurationsressourcen, die in einem DSC-Konfigurationsskript enthalten sind. In diesem Thema werden die Eigenschaften des lokalen Konfigurations-Managers (LCM) aufgelistet, und Sie erfahren, wie Sie die LCM-Einstellungen auf einem Zielknoten ändern können.
 
-## <a name="local-configuration-manager-properties"></a>Eigenschaften des lokalen Konfigurations-Managers
+<a id="local-configuration-manager-properties" class="xliff"></a>
+## Eigenschaften des lokalen Konfigurations-Managers
 Nachstehend sind die LCM-Eigenschaften aufgelistet, die Sie festlegen oder abrufen können.
  
 * **AllowModuleOverwrite**: Bestimmt, ob neue vom Konfigurationsserver heruntergeladene Konfigurationen die alten Konfigurationen auf dem Zielknoten überschreiben dürfen. Mögliche Werte sind „True“ und „False“.
@@ -35,7 +36,8 @@ Nachstehend sind die LCM-Eigenschaften aufgelistet, die Sie festlegen oder abruf
 * **RefreshFrequencyMins**: Wird verwendet, wenn Sie einen Pullserver eingerichtet haben. Stellt die Häufigkeit (in Minuten) dar, mit der der lokale Konfigurations-Manager einen Pullserver kontaktiert, um die aktuelle Konfiguration herunterzuladen. Dieser Wert kann in Verbindung mit „ConfigurationModeFrequencyMins“ festgelegt werden. Wenn „RefreshMode“ auf PULL festgelegt ist, kontaktiert der Zielknoten den Pullserver in einem von „RefreshFrequencyMins“ festgelegten Intervall und lädt die aktuelle Konfiguration herunter. Das Konsistenzmodul wendet im von „ConfigurationModeFrequencyMins“ festgelegten Intervall die neueste Konfiguration an, die auf den Zielknoten heruntergeladen wurde. Wenn „RefreshFrequencyMins“ nicht in Form einer ganzen Zahl auf ein Vielfaches von „ConfigurationModeFrequencyMins“ festgelegt wurde, rundet das System den Wert auf. Der Standardwert ist 30.
 * **RefreshMode**: Mögliche Werte sind **Push** (Standard) und **Pull**. Bei der Pushkonfiguration müssen Sie mithilfe eines beliebigen Clientcomputers eine Konfigurationsdatei auf jedem Zielknoten ablegen. Im Pullmodus müssen Sie einen Pullserver für den lokalen Konfigurations-Manager einrichten, der für den Zugriff auf die Konfigurationsdateien kontaktiert werden muss.
 
-### <a name="example-of-updating-local-configuration-manager-settings"></a>Beispiel der Aktualisierung der Einstellungen des lokalen Konfigurations-Managers
+<a id="example-of-updating-local-configuration-manager-settings" class="xliff"></a>
+### Beispiel der Aktualisierung der Einstellungen des lokalen Konfigurations-Managers
 
 Sie können die Einstellungen des lokalen Konfigurations-Managers auf einem Zielknoten aktualisieren, indem Sie einen **LocalConfigurationManager**-Block dem „node“-Block in einem Konfigurationsskript hinzufügen (siehe das folgende Beispiel).
 

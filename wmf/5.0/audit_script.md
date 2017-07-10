@@ -1,4 +1,16 @@
-# <a name="script-tracing-and-logging"></a>Ablaufverfolgung und Protokollierung von Skripts
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
+ms.openlocfilehash: 2c3cc6d5d226daf22c7ee83a1b7068d6a08b7f45
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
+---
+<a id="script-tracing-and-logging" class="xliff"></a>
+# Ablaufverfolgung und Protokollierung von Skripts
 
 Während Windows PowerShell bereits über die Gruppenrichtlinieneinstellung **LogPipelineExecutionDetails** verfügt, um den Aufruf von Cmdlets zu protokollieren, bietet die PowerShell-Skriptsprache viele Features, die Sie ggf. protokollieren und/oder überwachen möchten. Das neue Feature zur detaillierten Ablaufverfolgung von Skripts ermöglicht eine detaillierte Nachverfolgung und Analyse der Verwendung von Windows PowerShell-Skripts auf einem System. Nachdem Sie die detaillierte Ablaufverfolgung von Skripts aktiviert haben, protokolliert Windows PowerShell alle Skriptblöcke im ETW-Ereignisprotokoll **Microsoft-Windows-PowerShell/Operational**. Wenn ein Skriptblock einen anderen Skriptblock erstellt (ein Skript z. B. das Cmdlet „Invoke-Expression“ für eine Zeichenfolge aufruft), wird dieser resultierende Skriptblock ebenfalls protokolliert.
 
@@ -96,3 +108,4 @@ $mergedScript = -join ($sortedScripts | % { $_.Properties[2].Value })
 ```
 
 Wie alle Protokollierungssysteme, die einen begrenzten Aufbewahrungspuffer haben (wie z. B. ETW-Protokolle), besteht ein Angriff auf diese Infrastruktur darin, dass Protokoll mit gefälschten Ereignissen zu überfluten, um ein früheres Vorkommen zu vertuschen. Um sich vor einem solchen Angriff zu schützen, stellen Sie sicher, dass Sie eine Form der Ereignisprotokollsammlung eingerichtet haben (z. B. Windows-Ereignisweiterleitung, [Spotting the Adversary with Windows Event Log Monitoring](http://www.nsa.gov/ia/_files/app/Spotting_the_Adversary_with_Windows_Event_Log_Monitoring.pdf) [Erkennen des Gegners mithilfe der Überwachung des Windows-Ereignisprotokolls]), um Ereignisprotokolle so schnell wie möglich vom Computer zu verschieben.
+

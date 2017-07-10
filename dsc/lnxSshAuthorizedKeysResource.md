@@ -1,21 +1,22 @@
 ---
-title: "DSC für Linux-Ressource „nxSshAuthorizedKeys“"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: edc906b4e9c925320c4ed00c5ab295189066ccb9
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: "DSC für Linux-Ressource „nxSshAuthorizedKeys“"
+ms.openlocfilehash: 3c145eeb86d971dc00e1c7cea60fb50c83d7b9a2
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-for-linux-nxsshauthorizedkeys-resource"></a>DSC für Linux-Ressource „nxSshAuthorizedKeys“
+<a id="dsc-for-linux-nxsshauthorizedkeys-resource" class="xliff"></a>
+# DSC für Linux-Ressource „nxSshAuthorizedKeys“
 
 Die Ressource **nxAuthorizedKeys** in PowerShell DSC bietet ein Mechanismus zum Verwalten autorisierter SSH-Schlüssel für einen angegebenen Benutzer.
 
-## <a name="syntax"></a>Syntax
+<a id="syntax" class="xliff"></a>
+## Syntax
 
 ```
 nxAuthorizedKeys <string> #ResourceName
@@ -29,7 +30,8 @@ nxAuthorizedKeys <string> #ResourceName
 }
 ```
 
-## <a name="properties"></a>Eigenschaften
+<a id="properties" class="xliff"></a>
+## Eigenschaften
 
 |  Eigenschaft |  Beschreibung | 
 |---|---|
@@ -39,7 +41,8 @@ nxAuthorizedKeys <string> #ResourceName
 | Key| Der Inhalt des Schlüssels. Ist erforderlich, wenn **Ensure** auf „Present“ festgelegt ist.| 
 | DependsOn | Gibt an, dass die Konfiguration einer anderen Ressource ausgeführt werden muss, bevor diese Ressource konfiguriert wird. Wenn beispielsweise die **ID** des Skriptblocks mit der Ressourcenkonfiguration, den Sie zuerst ausführen möchten, **ResourceName** und dessen Typ **ResourceType** ist, lautet die Syntax für das Verwenden dieser Eigenschaft `DependsOn = "[ResourceType]ResourceName"`.| 
 
-## <a name="example"></a>Beispiel
+<a id="example" class="xliff"></a>
+## Beispiel
 
 Das folgende Beispiel definiert einen öffentlichen autorisierten SSH-Schlüssel für den Benutzer „monuser“.
 

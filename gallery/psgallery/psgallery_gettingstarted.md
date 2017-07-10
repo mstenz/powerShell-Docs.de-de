@@ -1,27 +1,27 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: PowerShell, Cmdlet, Katalog
-ms.date: 2016-10-14
-contributor: manikb
+ms.date: 2017-06-12
+contributor: JKeithB
+ms.topic: conceptual
+keywords: gallery,powershell,cmdlet,psgallery
 title: Erste Schritte mit dem PowerShell-Katalog | MSDN
-ms.technology: powershell
-ms.openlocfilehash: 4c06d1ebd4417da4bd58e3536d123f8285ba189e
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.openlocfilehash: 6b2119a736cc428598c245526e5af970d86af998
+ms.sourcegitcommit: 79e8f03afb8d0b0bb0a167e56464929b27f51990
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/26/2017
 ---
-# <a name="get-started-with-the-powershell-gallery"></a>Erste Schritte mit dem PowerShell-Katalog
+<a id="get-started-with-the-powershell-gallery" class="xliff"></a>
+# Erste Schritte mit dem PowerShell-Katalog
 
-## <a name="what-is-the-powershell-gallery"></a>Was ist der PowerShell-Katalog?
+<a id="what-is-the-powershell-gallery" class="xliff"></a>
+## Was ist der PowerShell-Katalog?
 
 Der PowerShell-Katalog ist das zentrale Repository für PowerShell-Inhalte.
 Sie finden darin nützliche PowerShell-Module, die PowerShell-Befehle und Desired State Configuration-Ressourcen (DSC) enthalten. Sie finden dort auch PowerShell-Skripts, von denen einige PowerShell-Workflows enthalten, eine Reihe von Aufgaben umreißen und Sequenzierungen für diese Aufgaben bereitstellen.
 Einige dieser Elemente wurden von Microsoft erstellt, andere stammen aus der PowerShell-Community.
 
-## <a name="requirements"></a>Anforderungen
+<a id="requirements" class="xliff"></a>
+## Anforderungen
 
 Das Herunterladen von Elementen aus dem PowerShell-Katalog auf Ihr System erfordert das [PowerShellGet](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)-Modul. Das PowerShellGet-Modul ist in jedem der folgenden Downloads enthalten. Um diese Elemente aus dem PowerShell-Katalog herunterzuladen, müssen Sie sich nicht anmelden.
 
@@ -31,16 +31,16 @@ Das Herunterladen von Elementen aus dem PowerShell-Katalog auf Ihr System erford
 
 PowerShellGet erfordert außerdem den [NuGet-Anbieter](http://go.microsoft.com/fwlink/?LinkId=722208), um mit dem PowerShell-Katalog zu funktionieren. Sie werden aufgefordert, den NuGet-Anbieter automatisch bei der ersten Verwendung von PowerShellGet zu installieren, wenn der NuGet-Anbieter sich nicht an einem der folgenden Speicherorte befindet:
 
--   $env:ProgramFiles\\PackageManagement\\ProviderAssemblies
--   $env:LOCALAPPDATA\\PackageManagement\\ProviderAssemblies
+- `$env:ProgramFiles\PackageManagement\ProviderAssemblies`
+- `$env:LOCALAPPDATA\PackageManagement\ProviderAssemblies`
 
-Alternativ können Sie **Install-PackageProvider -Name NuGet -Force** ausführen, um den Download und die Installation des NuGet-Anbieters zu automatisieren.
+Alternativ können Sie `Install-PackageProvider -Name NuGet -Force` ausführen, um den Download und die Installation des NuGet-Anbieters zu automatisieren.
 
   
 Wenn Sie eine älteren Version von NuGet als 2.8.5.201 besitzen, müssen Sie die folgenden PowerShell-Cmdlets aufrufen, um die neueste Version von NuGet zu installieren.
 
-1.  Install-PackageProvider NuGet -MinimumVersion '2.8.5.201' -Force
-2.  Import-PackageProvider NuGet -MinimumVersion '2.8.5.201' -Force
+1.  `Install-PackageProvider NuGet -MinimumVersion '2.8.5.201' -Force`
+2.  `Import-PackageProvider NuGet -MinimumVersion '2.8.5.201' -Force`
 3.  Löschen Sie die ältere Version von NuGet aus dem obigen Installationsverzeichnis.
 
 Weitere Informationen hierzu finden Sie unter <http://oneget.org/>.
@@ -49,11 +49,12 @@ Weitere Informationen hierzu finden Sie unter <http://oneget.org/>.
 Hinweis: Aufgrund von Änderungen an den Paketerstellungsformaten empfehlen wir, dass Sie auf die neueste Version von PowerShellGet und PackageManagement zu aktualisieren, um Elemente zu installieren, die kürzlich aktualisiert wurden. PowerShellGet ist im Lieferumfang von Windows 10 mit inbegriffen. [Hier](http://go.microsoft.com/fwlink/?LinkID=624830&clcid=0x409) können Sie mehr darüber erfahren.
 PowerShellGet ist auch ein Teil des Windows Management Framework (WMF) 5.0, das Sie [hier](http://go.microsoft.com/fwlink/?LinkId=398175) herunterladen können.
 
-## <a name="discovering-items-from-the-powershell-gallery"></a>Suchen von Elementen im PowerShell-Katalog
+<a id="discovering-items-from-the-powershell-gallery" class="xliff"></a>
+## Suchen von Elementen im PowerShell-Katalog
 
-Sie können Elemente im PowerShell-Katalog mithilfe des Steuerelements **Suchen** auf dieser Website suchen. Alternativ können Sie die Seiten zu Modulen und Skripts durchsuchen. Sie können Elemente im PowerShell-Katalog je nach Elementtyp auch mit **-Repository PSGallery**über die Cmdlets [**Find-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) und [**Find-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)
+Sie können Elemente im PowerShell-Katalog mithilfe des Steuerelements **Suchen** auf dieser Website suchen. Alternativ können Sie die Seiten zu Modulen und Skripts durchsuchen. Sie können auch nach Elementen im PowerShell-Katalog suchen, indem Sie die Cmdlets [**Find-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) und [**Find-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) je nach Elementtyp mit `-Repository PSGallery` ausführen.
 
-Das Filtern von Ergebnissen im Katalog kann über die folgenden Parameter von [Find-Module](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) und [Find-Script](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) erfolgen:
+Das Filtern von Ergebnissen im Katalog kann über die folgenden Parameter von [**Find-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) und [**Find-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) erfolgen:
 
 - Name
 - AllVersions
@@ -67,21 +68,24 @@ Das Filtern von Ergebnissen im Katalog kann über die folgenden Parameter von [F
 - Filter
 
 Wenn Sie nur spezifische DSC-Ressourcen im Katalog suchen, können Sie das Cmdlet [**Find-DscResource**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) ausführen.
-[**Find-DscResource**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) gibt Daten zu DSC-Ressourcen zurück, die im Katalog enthalten sind. Da DSC-Ressourcen immer als Teil eines Moduls geliefert werden, müssen Sie [Install-Module](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) ausführen, um diese DSC-Ressourcen zu installieren.
+[**Find-DscResource**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) gibt Daten zu DSC-Ressourcen zurück, die im Katalog enthalten sind. Weil DSC-Ressourcen immer als Teil eines Moduls bereitgestellt werden, müssen Sie [**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) ausführen, um diese DSC-Ressourcen zu installieren.
 
-## <a name="learning-about-items-in-the-powershell-gallery"></a>Informationen zu den Elementen im PowerShell-Katalog
+<a id="learning-about-items-in-the-powershell-gallery" class="xliff"></a>
+## Informationen zu den Elementen im PowerShell-Katalog
 
 Wenn Sie ein Element ermittelt haben, an dem Sie interessiert sind, möchten Sie möglicherweise weitere Informationen erhalten. Diese finden Sie auf der Katalogseite dieses bestimmten Elements. Dort finden Sie alle Metadaten, die mit dem Element hochgeladen wurden. Diese Metadaten eines Elements werden von dem jeweiligen Autoren bereitgestellt und nicht von Microsoft überprüft. Der Besitzer des Elements ist eng an das Katalog-Konto gebunden, das für die Veröffentlichung des Elements verwendet wurde, und ist vertrauenswürdiger als das Feld „Autor“.
 
 Wenn Sie ein Element entdecken, das Ihrer Meinung nach nicht mit guten Absichten veröffentlicht wurde, klicken Sie auf der Elementseite auf **Report Abuse** (Missbrauch melden).
 
-Wenn Sie [Find-Module](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) oder [Find-Script](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) ausführen, können Sie diese Daten im zurückgegebenen PSGetModuleInfo-Objekt anzeigen. Die Ausführung von [**Find-Module -Name PSReadLine -Repository PSGallery | Get-Member**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) gibt beispielsweise Daten zum PSReadLine-Modul im Katalog zurück.
+Wenn Sie [**Find-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) oder [**Find-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) ausführen, können Sie diese Daten im zurückgegebenen PSGetModuleInfo-Objekt anzeigen. Die Ausführung von [**Find-Module -Name PSReadLine -Repository PSGallery | Get-Member**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) gibt beispielsweise Daten zum PSReadLine-Modul im Katalog zurück.
 
-## <a name="downloading-items-from-the-powershell-gallery"></a>Herunterladen von Elementen aus dem PowerShell-Katalog
+<a id="downloading-items-from-the-powershell-gallery" class="xliff"></a>
+## Herunterladen von Elementen aus dem PowerShell-Katalog
 
 Wir empfehlen den folgenden Prozess für das Herunterladen von Elementen aus dem PowerShell-Katalog:
 
-### <a name="inspect"></a>Überprüfen
+<a id="inspect" class="xliff"></a>
+### Überprüfen
 
 Führen Sie zum Herunterladen eines Elements aus dem Katalog für die Überprüfung je nach Elementtyp die Cmdlets [**Save-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) oder [**Save-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409). Dadurch können Sie das Element lokal speichern, ohne es zu installieren, und den Inhalt des Elements überprüfen. Denken Sie daran, das gespeicherte Element manuell löschen.
 
@@ -89,31 +93,37 @@ Einige dieser Elemente wurden von Microsoft erstellt, andere stammen aus der Pow
 
 Wenn Sie ein Element entdecken, das Ihrer Meinung nach nicht mit guten Absichten veröffentlicht wurde, klicken Sie auf der Elementseite auf **Report Abuse** (Missbrauch melden).
 
-### <a name="install"></a>Installation
+<a id="install" class="xliff"></a>
+### Installation
 
 Führen Sie je nach Elementtyp die Cmdlets [**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) oder [**Install-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409), um ein Element aus dem Katalog für die Verwendung zu installieren.
 
-[Install-Module](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) installiert das Modul standardmäßig in $env:ProgramFiles\\WindowsPowerShell\\Modules. Dafür ist ein Administratorkonto erforderlich. Wenn Sie den Parameter **-Scope CurrentUser** hinzufügen, wird das Modul nach $env:USERPROFILE\\Documents\\WindowsPowerShell\\Modules installiert.
+[**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) installiert das Modul standardmäßig in `$env:ProgramFiles\WindowsPowerShell\Modules`. Dafür ist ein Administratorkonto erforderlich. Wenn Sie den Parameter `-Scope
+CurrentUser` hinzufügen, wird das Modul in `$env:USERPROFILE\Documents\WindowsPowerShell\Modules` installiert.
 
-[Install-Script](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) installiert das Skript standardmäßig nach $env:ProgramFiles\\WindowsPowerShell\\Scripts. Dafür ist ein Administratorkonto erforderlich. Wenn Sie den Parameter **-Scope CurrentUser** hinzufügen, wird das Skript nach $env:USERPROFILE\\Documents\\WindowsPowerShell\\Scripts installiert.
+[**Install-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) installiert das Skript standardmäßig in `$env:ProgramFiles\WindowsPowerShell\Scripts`. Dafür ist ein Administratorkonto erforderlich. Wenn Sie den Parameter `-Scope
+CurrentUser` hinzufügen, wird das Skript in `$env:USERPROFILE\Documents\WindowsPowerShell\Scripts` installiert.
 
-[Install-Module](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) und [Install-Script](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) installieren standardmäßig die aktuellste Version eines Elements. Fügen Sie zum Installieren einer älteren Version des Elements den Parameter **-RequiredVersion** hinzu.
+[**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) und [**Install-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) installieren standardmäßig die neueste Version eines Elements. Fügen Sie den Parameter `-RequiredVersion` hinzu, um eine ältere Version des Elements zu installieren.
 
-### <a name="deploy"></a>Stellen Sie
+<a id="deploy" class="xliff"></a>
+### Bereitstellen
 
 Klicken Sie auf der Detailseite des Elements auf **Deploy to Azure Automation** (Bereitstellen in Azure Automation), um ein Element aus dem Katalog in Azure Automation bereitzustellen. Sie werden zum Azure-Verwaltungsportal umgeleitet, wo Sie sich mit den Anmeldeinformationen Ihres Azure-Kontos anmelden. Beachten Sie, dass das Bereitstellen von Elementen mit Abhängigkeiten alle Abhängigkeiten in Azure Automation bereitstellt. Sie können die Schaltfläche „Deploy to Azure Automation“ (Bereitstellen in Azure Automation) deaktivieren, indem Sie Ihren Elementmetadaten das Tag **AzureAutomationNotSupported** hinzufügen.
 
 Weitere Informationen zu Azure Automation finden Sie auf der [Azure Automation-Website](http://azure.microsoft.com/en-us/services/automation/).
 
-## <a name="updating-items-from-the-powershell-gallery"></a>Aktualisieren von Elementen aus dem PowerShell-Katalog
+<a id="updating-items-from-the-powershell-gallery" class="xliff"></a>
+## Aktualisieren von Elementen aus dem PowerShell-Katalog
 
-Führen Sie zum Aktualisieren der installierten Elemente aus dem PowerShell-Katalog die Cmdlets [Update-Module](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) oder [Update-Script](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) aus. [Update-Module](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) versucht, jedes mithilfe von [Install-Module](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) installierte Modul zu aktualisieren, wenn es ohne zusätzliche Parameter ausgeführt wird.
-Um Module einzeln zu aktualisieren, fügen die **-Namen** Parameter.
+Führen Sie zum Aktualisieren der installierten Elemente aus dem PowerShell-Katalog die Cmdlets [**Update-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) oder [**Update-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) aus. [**Update-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) versucht, jedes mithilfe von [**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) installierte Modul zu aktualisieren, wenn es ohne zusätzliche Parameter ausgeführt wird.
+Um Module einzeln zu aktualisieren, fügen Sie den Parameter `-Name` hinzu.
 
-Ebenso versucht [Update-Script](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409), jedes mithilfe von [Install-Script](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) installierte Script zu aktualisieren, wenn es ohne zusätzliche Parameter ausgeführt wird.
-Fügen Sie den Parameter **-Name** hinzu, um Skripts selektiv zu aktualisieren.
+Ähnlich versucht [**Update-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409), jedes durch Ausführung von [**Install-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) installierte Skript zu aktualisieren, wenn es ohne zusätzliche Parameter ausgeführt wird.
+Um Skripts einzeln zu aktualisieren, fügen Sie den Parameter `-Name` hinzu.
 
-## <a name="list-items-that-you-have-installed-from-the-powershell-gallery"></a>Listenelemente, die Sie aus dem PowerShell-Katalog installiert haben
+<a id="list-items-that-you-have-installed-from-the-powershell-gallery" class="xliff"></a>
+## Listenelemente, die Sie aus dem PowerShell-Katalog installiert haben
 
 Führen Sie das Cmdlet [**Get-InstalledModule**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) aus, um herauszufinden, welche Module Sie aus dem PowerShell-Katalog installiert haben. Dieser Befehl listet alle Module auf, die direkt aus dem PowerShell-Katalog auf Ihrem System installiert wurden.
 

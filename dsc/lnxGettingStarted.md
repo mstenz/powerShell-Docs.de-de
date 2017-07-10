@@ -1,21 +1,22 @@
 ---
-title: "Erste Schritte mit DSC für Linux"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: c585dc929e85a404aecfb1e9f06daf2dfaf21832
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: "Erste Schritte mit DSC für Linux"
+ms.openlocfilehash: 2d4276a0ffcb4fd7b872cbc4771f86cb850c0b83
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Erste Schritte mit DSC für Linux
+<a id="get-started-with-desired-state-configuration-dsc-for-linux" class="xliff"></a>
+# Erste Schritte mit DSC für Linux
 
 In diesem Thema werden die ersten Schritte mit PowerShell DSC für Linux erläutert. Allgemeine Informationen zu DSC finden Sie unter [Erste Schritte mit Windows PowerShell DSC](overview.md).
 
-## <a name="supported-linux-operation-system-versions"></a>Unterstützte Linux-Betriebssystemversionen
+<a id="supported-linux-operation-system-versions" class="xliff"></a>
+## Unterstützte Linux-Betriebssystemversionen
 
 Die folgenden Linux-Betriebssystemversionen werden für DSC unterstützt.
 - CentOS 5, 6 und 7 (x86/x64)
@@ -36,11 +37,13 @@ In der folgenden Tabelle werden die erforderlichen Paketabhängigkeiten für DSC
 | ctypes| Python CTypes-Bibliothek| Muss mit Python-Version übereinstimmen| 
 | libcurl| cURL http-Clientbibliothek| 7.15.1| 
 
-## <a name="installing-dsc-for-linux"></a>Installieren von DSC für Linux
+<a id="installing-dsc-for-linux" class="xliff"></a>
+## Installieren von DSC für Linux
 
 Sie müssen vor der Installation von DSC für Linux die [Open Management Infrastructure (OMI)](https://collaboration.opengroup.org/omi/) installieren.
 
-### <a name="installing-omi"></a>Installieren von OMI
+<a id="installing-omi" class="xliff"></a>
+### Installieren von OMI
 
 DSC für Linux erfordert den Open Management Infrastructure (OMI) CIM-Server, Version 1.0.8.1. OMI kann unter The Open Group: [Open Management Infrastructure (OMI)](https://collaboration.opengroup.org/omi/) heruntergeladen werden.
 
@@ -52,7 +55,8 @@ Führen Sie den folgenden Befehl aus, um OMI auf einem CentOS 7 x64-System zu in
 
 `# sudo rpm -Uvh omiserver-1.0.8.ssl_100.rpm`
 
-### <a name="installing-dsc"></a>Installieren von DSC
+<a id="installing-dsc" class="xliff"></a>
+### Installieren von DSC
 
 DSC für Linux kann [hier](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/latest) heruntergeladen werden. 
 
@@ -65,11 +69,13 @@ Führen Sie den folgenden Befehl aus, um DSC auf einem CentOS 7 x64-System zu in
 `# sudo rpm -Uvh dsc-1.0.0-254.ssl_100.x64.rpm`
 
 
-## <a name="using-dsc-for-linux"></a>Verwenden von DSC für Linux
+<a id="using-dsc-for-linux" class="xliff"></a>
+## Verwenden von DSC für Linux
 
 In den folgenden Abschnitten wird erläutert, wie DSC-Konfigurationen erstellt und auf Linux-Computern ausgeführt werden.
 
-### <a name="creating-a-configuration-mof-document"></a>Erstellen eines MOF-Konfigurationsdokuments
+<a id="creating-a-configuration-mof-document" class="xliff"></a>
+### Erstellen eines MOF-Konfigurationsdokuments
 
 Das Windows PowerShell-Schlüsselwort „Configuration“ wird wie für Windows-Computer verwendet, um eine Konfiguration für Linux-Computer zu erstellen. Es folgen die Schritte zum Erstellen eines Konfigurationsdokuments für einen Linux-Computer mithilfe von Windows PowerShell.
 
@@ -105,7 +111,8 @@ Configuration ExampleConfiguration{
 ExampleConfiguration -OutputPath:"C:\temp" 
 ```
 
-### <a name="push-the-configuration-to-the-linux-computer"></a>Übertragen der Konfiguration per Push auf den Linux-Computer
+<a id="push-the-configuration-to-the-linux-computer" class="xliff"></a>
+### Übertragen der Konfiguration per Push auf den Linux-Computer
 
 Konfigurationsdokumente (MOF-Dateien) können mit dem Cmdlet [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) per Push auf den Linux-Computer übertragen werden. Verwenden Sie eine CIMSession, um dieses Cmdlet zusammen mit den Cmdlets [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379) und [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) remote auf einem Linux-Computer zu verwenden. Das Cmdlet [New-CimSession](https://technet.microsoft.com/en-us/library/jj590760.aspx) dient zum Starten einer CIMSession mit dem Linux-Computer.
 
@@ -133,11 +140,13 @@ Führen Sie den folgenden Befehl aus, um die DSC-Konfiguration per Push auf den 
 
 `Start-DscConfiguration -Path:"C:\temp" -CimSession:$Sess -Wait -Verbose`
 
-### <a name="distribute-the-configuration-with-a-pull-server"></a>Verteilen der Konfiguration mit einem Pullserver
+<a id="distribute-the-configuration-with-a-pull-server" class="xliff"></a>
+### Verteilen der Konfiguration mit einem Pullserver
 
 Konfigurationen können mithilfe eines Pullservers wie bei Windows-Computern auch an Linux-Computer verteilt werden. Eine Anleitung zur Verwendung eines Pullservers finden Sie unter [Windows PowerShell DSC – Pullserver](pullServer.md). Weitere Informationen und Einschränkungen im Zusammenhang mit der Verwendung von Linux-Computern mit einem Pullserver finden Sie die Versionshinweisen zu DSC für Linux.
 
-### <a name="working-with-configurations-locally"></a>Arbeiten mit lokalen Konfigurationen
+<a id="working-with-configurations-locally" class="xliff"></a>
+### Arbeiten mit lokalen Konfigurationen
 
 DSC für Linux bietet Skripts für das Ausführen von Konfigurationsaufgaben auf einem lokalen Linux-Computer. Diese Skripts befinden sich in `/opt/microsoft/dsc/Scripts` und umfassen Folgendes:
 * GetDscConfiguration.py
@@ -176,7 +185,8 @@ DSC für Linux bietet Skripts für das Ausführen von Konfigurationsaufgaben auf
 
 `# sudo ./SetDscLocalConfigurationManager.py –configurationmof /tmp/localhost.meta.mof`
 
-## <a name="powershell-desired-state-configuration-for-linux-log-files"></a>PowerShell – DSC für Linux – Protokolldateien
+<a id="powershell-desired-state-configuration-for-linux-log-files" class="xliff"></a>
+## PowerShell – DSC für Linux – Protokolldateien
 
 Die folgenden Protokolldateien werden für DSC-für-Linux-Nachrichten generiert.
 

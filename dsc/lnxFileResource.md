@@ -1,21 +1,22 @@
 ---
-title: "DSC für Linux-Resource „nxFile“"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 2ba44df5dd6c91371cbbfe95d48184a4ff4a7738
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: "DSC für Linux-Resource „nxFile“"
+ms.openlocfilehash: 14f1ae31a8409b8874d76a91b8b29595e30fbb46
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-for-linux-nxfile-resource"></a>DSC für Linux-Resource „nxFile“
+<a id="dsc-for-linux-nxfile-resource" class="xliff"></a>
+# DSC für Linux-Resource „nxFile“
 
 Die Ressource **nxFile** in PowerShell DSC bietet einen Mechanismus zum Verwalten von Dateien und Verzeichnissen auf einem Linux-Knoten.
 
-## <a name="syntax"></a>Syntax
+<a id="syntax" class="xliff"></a>
+## Syntax
 
 ```
 nxFile <string> #ResourceName
@@ -37,7 +38,8 @@ nxFile <string> #ResourceName
 }
 ```
 
-## <a name="properties"></a>Eigenschaften
+<a id="properties" class="xliff"></a>
+## Eigenschaften
 
 |  Eigenschaft |  Beschreibung | 
 |---|---|
@@ -49,12 +51,13 @@ nxFile <string> #ResourceName
 | Checksum| Definiert den zu verwendenden Typ, wenn bestimmt wird, ob zwei Dateien identisch sind. Wenn **Checksum** nicht angegeben ist, wird nur der Datei- oder Verzeichnisname für den Vergleich verwendet. Werte sind: „ctime“, „mtime“ oder „md5“.| 
 | Recurse| Gibt an, ob Unterverzeichnisse enthalten sind. Legen Sie diese Eigenschaft auf **$true** fest, um anzugeben, dass Unterverzeichnisse enthalten sein sollen. Der Standardwert ist **$false**. **Hinweis:** Diese Eigenschaft ist nur gültig, wenn die **Type**-Eigenschaft auf „directory“ festgelegt ist.| 
 | Force| Bestimmte Dateioperationen (z. B. das Überschreiben einer Datei oder Löschen eines Verzeichnisses, das nicht leer ist), führen zu einem Fehler. Bei Verwenden der **Force**-Eigenschaft werden solche Fehler überschrieben. Der Standardwert ist **$false**.| 
-| Links| Gibt das gewünschte Verhalten für symbolische Verknüpfungen an. Legen Sie diese Eigenschaft auf „follow“ fest, um symbolischen Verknüpfungen zu folgen und Aktionen auf das Ziel der Verknüpfung anzuwenden (z. B. die Datei statt der Verknüpfung kopieren). Legen Sie diese Eigenschaft auf „manage“ fest, um eine Aktion auf die Verknüpfung anzuwenden (z. B. die Verknüpfung selbst kopieren). Legen Sie diese Eigenschaft auf „ignore“ fest, um symbolische Verknüpfungen zu ignorieren.| 
+| Links| Gibt das gewünschte Verhalten für symbolische Verknüpfungen an. Legen Sie diese Eigenschaft auf „follow“ fest, um symbolischen Verknüpfungen zu folgen und Aktionen auf das Ziel der Verknüpfung anzuwenden (z. B. die Datei statt der Verknüpfung kopieren). Legen Sie diese Eigenschaft auf „manage“ fest, um eine Aktion auf die Verknüpfung anzuwenden (z. B. die Verknüpfung selbst kopieren). Legen Sie diese Eigenschaft auf „ignore“ fest, um symbolische Verknüpfungen zu ignorieren.| 
 | Group| Der Name der **Gruppe**, die die Datei oder das Verzeichnis besitzen soll.| 
 | Mode| Gibt die gewünschten Berechtigungen für die Ressource in der Oktal- oder symbolischen Schreibweise an. (z. B. 777 oder rwxrwxrwx). Geben Sie bei Verwenden der symbolischen Schreibweise nicht das erste Zeichen an, welches Verzeichnis oder Datei angibt.| 
 | DependsOn | Gibt an, dass die Konfiguration einer anderen Ressource ausgeführt werden muss, bevor diese Ressource konfiguriert wird. Wenn beispielsweise die **ID** des Skriptblocks mit der Ressourcenkonfiguration, den Sie zuerst ausführen möchten, **ResourceName** und dessen Typ **ResourceType** ist, lautet die Syntax für das Verwenden dieser Eigenschaft `DependsOn = "[ResourceType]ResourceName"`.| 
 
-## <a name="additional-information"></a>Weitere Informationen
+<a id="additional-information" class="xliff"></a>
+## Weitere Informationen
 
 
 Linux und Windows verwenden in Textdateien standardmäßig unterschiedliche Zeilenumbruchzeichen. Diese kann zu unerwarteten Ergebnissen führen, wenn einige Dateien mit __nxFile__ auf einem Linux-Computer konfiguriert werden. Es gibt mehrere Möglichkeiten, den Inhalt einer Linux-Datei zu verwalten, um durch unerwartete Zeilenumbruchzeichen verursachte Probleme zu vermeiden:
@@ -132,7 +135,8 @@ nxFile resolvConf
 }
 ```
 
-## <a name="example"></a>Beispiel
+<a id="example" class="xliff"></a>
+## Beispiel
 
 Im folgende Beispiel wird sichergestellt, dass das Verzeichnis `/opt/mydir` vorhanden ist und dass eine Datei mit dem angegebenen Inhalt in diesem Verzeichnis vorhanden ist.
 

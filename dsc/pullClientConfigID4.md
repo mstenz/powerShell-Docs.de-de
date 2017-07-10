@@ -1,19 +1,19 @@
 ---
-title: Einrichten eines DSC-Pullclients mithilfe einer Konfigurations-ID in PowerShell 4.0
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 730f2f26e2811996e79cf0073a4ef65cad390687
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: Einrichten eines DSC-Pullclients mithilfe einer Konfigurations-ID in PowerShell 4.0
+ms.openlocfilehash: 19328018d276cddd0877869b0ec69c14c51e4b85
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="setting-up-a-pull-client-using-configuration-id-in-powershell-40"></a>Einrichten eines DSC-Pullclients mithilfe einer Konfigurations-ID in PowerShell 4.0
+<a id="setting-up-a-pull-client-using-configuration-id-in-powershell-40" class="xliff"></a>
+# Einrichten eines DSC-Pullclients mithilfe einer Konfigurations-ID in PowerShell 4.0
 
->Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
+>Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Jeder Zielknoten muss angewiesen werden, den Pullmodus zu verwenden. Außerdem muss die URL angegeben werden, unter der der Pullserver zum Abrufen von Konfigurationen kontaktiert werden kann. Hierzu müssen Sie den lokalen Konfigurations-Manager (LCM) mit den benötigten Informationen konfigurieren. Zum Konfigurieren des LCM müssen Sie einen besonderen Typ von Konfiguration erstellen, die als „Metakonfiguration“ bezeichnet wird. Weitere Informationen zum Konfigurieren des LCM finden Sie unter [Windows PowerShell 4.0 DSC – Lokaler Konfigurations-Manager](metaConfig4.md).
 
@@ -46,10 +46,12 @@ Um die Konfiguration anzuwenden, verwenden Sie das Cmdlet **Set DscLocalConfigur
 Set-DSCLocalConfigurationManager –ComputerName localhost –Path . –Verbose.
 ```
 
-## <a name="configuration-id"></a>Konfigurations-ID
+<a id="configuration-id" class="xliff"></a>
+## Konfigurations-ID
 Das Skript legt die **ConfigurationID**-Eigenschaft des LCM auf eine GUID fest, die zuvor für diesen Zweck erstellt wurde (Sie können eine GUID mit dem Cmdlet **New-Guid** erstellen). Der LCM nutzt die **ConfigurationID** zum Auffinden der entsprechenden Konfiguration auf dem Pullserver. Die MOF-Konfigurationsdatei auf dem Pullserver muss den Namen `ConfigurationID.mof` haben, wobei *ConfigurationID* der Wert der **ConfigurationID**-Eigenschaft des LCM des Zielknotens ist.
 
-## <a name="pulling-from-an-smb-server"></a>Abrufen per Pull von einem SMB-Server
+<a id="pulling-from-an-smb-server" class="xliff"></a>
+## Abrufen per Pull von einem SMB-Server
 
 Wenn der Pullserver nicht als Webdienst, sondern als SMB-Dateifreigabe konfiguriert wurde, legen Sie **DscFileDownloadManager** anstelle von **WebDownLoadManager** fest.
 **DscFileDownloadManager** verwendet eine **SourcePath**-Eigenschaft anstelle von **ServerUrl**. Das folgende Skript konfiguriert den LCM zum Abrufen von Konfigurationen von einer SMB-Freigabe namens „SmbDscShare“ auf einem Server namens „CONTOSO-SERVER“:
@@ -72,7 +74,8 @@ Configuration SimpleMetaConfigurationForPull
 SimpleMetaConfigurationForPull -Output "."
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+<a id="see-also" class="xliff"></a>
+## Weitere Informationen
 
 - [Einrichten eines DSC-Webpullservers](pullServer.md)
 - [Einrichten eines DSC-SMB-Pullservers](pullServerSMB.md)

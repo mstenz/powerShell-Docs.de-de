@@ -1,27 +1,25 @@
 ---
-manager: carmonm
-ms.topic: article
+ms.date: 2017-06-12
 author: rpsqrd
-ms.author: ryanpu
-ms.prod: powershell
-keywords: powershell,cmdlet,jea
-ms.date: 2017-03-07
+ms.topic: conceptual
+keywords: jea,powershell,security
 title: JEA-Voraussetzungen
-ms.technology: powershell
-ms.openlocfilehash: a38c9e948190b9384c62eec3e40758a782c9f72b
-ms.sourcegitcommit: 6057e6d22ef8a2095af610e0d681e751366a9773
+ms.openlocfilehash: 75d5db2ba446df1d461050d187dc1495a22fef18
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2017
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="prerequisites"></a>Voraussetzungen
+<a id="prerequisites" class="xliff"></a>
+# Voraussetzungen
 
 > Gilt für: Windows PowerShell 5.0
 
 „Just Enough Administration“ ist ein in Windows PowerShell 5.0 und höher enthaltenes Feature.
 Dieses Thema beschreibt die Voraussetzungen, die erfüllt sein müssen, um JEA verwenden zu können.
 
-## <a name="install-jea"></a>Installieren von JEA
+<a id="install-jea" class="xliff"></a>
+## Installieren von JEA
 
 JEA ist in Windows PowerShell 5.0 und höher verfügbar. Wenn Sie jedoch die vollständige Funktionalität nutzen möchten, empfehlen wir Ihnen die Installation der neuesten Version von PowerShell für Ihr Betriebssystem.
 Die folgende Tabelle beschreibt die Verfügbarkeit von JEA unter Windows Server:
@@ -49,7 +47,8 @@ Virtuelle Konten und andere JEA-Features *werden* unterstützt.
 <sup>2</sup> Die folgenden JEA-Features werden von den Windows 10-Versionen 1511 und 1603 nicht unterstützt: Ausführen als gruppenverwaltetes Dienstkonto, bedingte Zugriffsregeln in Sitzungskonfigurationen, Benutzerlaufwerk und Gewähren von Zugriff auf lokale Benutzerkonten.
 Aktualisieren Sie Windows auf Version 1607 (Anniversary Update) oder höher, um Unterstützung für diese Features zu erhalten.
 
-### <a name="check-which-version-of-powershell-is-installed"></a>Überprüfen der installierten Version von PowerShell
+<a id="check-which-version-of-powershell-is-installed" class="xliff"></a>
+### Überprüfen der installierten Version von PowerShell
 
 Überprüfen Sie die `$PSVersionTable`-Variable in einer Windows PowerShell-Aufforderung, um festzustellen, welche PowerShell-Version auf Ihrem System installiert ist.
 
@@ -64,7 +63,8 @@ Major  Minor  Build  Revision
 Sie können JEA verwenden, wenn die *Hauptversion* mindestens **5** ist.
 Wir empfehlen Ihnen, soweit möglich, ein Upgrade auf die PowerShell-Version **5.1** durchzuführen, um sich optimale Ergebnisse und Zugriff auf die neuesten Features zu sichern.
 
-### <a name="install-windows-management-framework"></a>Installieren von Windows Management Framework
+<a id="install-windows-management-framework" class="xliff"></a>
+### Installieren von Windows Management Framework
 
 Wenn Sie eine ältere Version von PowerShell ausführen, müssen Sie Ihr System mit dem aktuellen Update von Windows Management Framework (WMF) aktualisieren.
 Updatepakete und einen Link zu den neuesten Anmerkungen zur WMF-Version finden Sie im [Download Center](https://aka.ms/WMF5).
@@ -73,7 +73,8 @@ Es wird dringend empfohlen, vor dem Upgrade aller Server die Kompatibilität Ihr
 
 Windows 10-Benutzer sollten die neuesten Funktionsupdates zum Abrufen der aktuellen Version von Windows PowerShell installieren.
 
-## <a name="enable-powershell-remoting"></a>Aktivieren von PowerShell-Remoting
+<a id="enable-powershell-remoting" class="xliff"></a>
+## Aktivieren von PowerShell-Remoting
 
 PowerShell-Remoting stellt die Grundlage für JEA dar.
 Daher sollten Sie sicherstellen, dass PowerShell-Remoting aktiviert ist und auf Ihrem System [ordnungsgemäß abgesichert](https://msdn.microsoft.com/en-us/powershell/scripting/setup/winrmsecurity) ist, bevor Sie JEA verwenden können.
@@ -85,7 +86,8 @@ Sie können PowerShell-Remoting aktivieren, indem Sie den folgenden Befehl in ei
 Enable-PSRemoting
 ```
 
-## <a name="enable-powershell-module-and-script-block-logging-optional"></a>Aktivieren der PowerShell-Modul- und Skriptblockprotokollierung (optional)
+<a id="enable-powershell-module-and-script-block-logging-optional" class="xliff"></a>
+## Aktivieren der PowerShell-Modul- und Skriptblockprotokollierung (optional)
 
 Die folgenden Schritte aktivieren die Protokollierung für alle PowerShell-Aktionen in Ihrem System.
 Für JEA ist die PowerShell-Modulprotokollierung nicht erforderlich. Es wird jedoch dringend empfohlen, dass Sie dieses Feature aktivieren, um sicherzustellen, dass von Benutzern ausgeführte Befehle an einem zentralen Ort protokolliert werden.
@@ -106,12 +108,15 @@ Sie können die Richtlinien für die PowerShell-Modulprotokollierung mithilfe vo
 
 Sie können über eine Gruppenrichtlinie auch die systemweite PowerShell-Aufzeichnung aktivieren.
 
-## <a name="next-steps"></a>Nächste Schritte
+<a id="next-steps" class="xliff"></a>
+## Nächste Schritte
 
 - [Create a role capability file (Erstellen einer Rollenfunktionsdatei)](role-capabilities.md)
 - [Create a session configuration file (Erstellen einer Sitzungskonfigurationsdatei)](session-configurations.md)
 
-## <a name="see-also"></a>Siehe auch
+<a id="see-also" class="xliff"></a>
+## Siehe auch
 
 - [Sicherheitsaspekte von PowerShell-Remoting](https://msdn.microsoft.com/en-us/powershell/scripting/setup/winrmsecurity)
 - [*PowerShell ♥ the Blue Team (PowerShell ♥ das Blue Team)* – Blogbeitrag zum Thema Sicherheit](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
+

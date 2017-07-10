@@ -1,26 +1,27 @@
 ---
-title: "DSC-Ressource „File“"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: ba625f5130e806b3b8e14a0f6ed91fd5a1aabc54
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: "DSC-Ressource „File“"
+ms.openlocfilehash: f16bfbc31489ef7d1b0e5e4ec3a4f30069c24c79
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-file-resource"></a>DSC-Ressource „File“
+<a id="dsc-file-resource" class="xliff"></a>
+# DSC-Ressource „File“
 
-> Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Die Ressource „File“ in Windows PowerShell DSC bietet einen Mechanismus zum Verwalten von Dateien und Verzeichnissen auf einem Zielknoten.
 
 >**Hinweis:** Wenn die Eigenschaft **MatchSource** auf **$false** festgelegt wurde (der Standardwert), werden die zu kopierenden Inhalte bei der ersten Anwendung der Konfiguration zwischengespeichert. 
 >Darauffolgende Anwendungen der Konfiguration suchen in dem in **SourcePath** angegebenen Pfad nicht nach aktualisierten Dateien bzw. Ordnern. Wenn Sie bei jeder Anwendung der Konfiguration nach Updates für die Dateien bzw. Ordner in **SourcePath** suchen möchten, müssen Sie **MatchSource** auf **$true** festlegen. 
 
-## <a name="syntax"></a>Syntax
+<a id="syntax" class="xliff"></a>
+## Syntax
 ```
 File [string] #ResourceName
 {
@@ -39,7 +40,8 @@ File [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>Eigenschaften
+<a id="properties" class="xliff"></a>
+## Eigenschaften
 
 |  Eigenschaft  |  Beschreibung   | 
 |---|---| 
@@ -54,11 +56,12 @@ File [string] #ResourceName
 | DependsOn | Gibt an, dass die Konfiguration einer anderen Ressource ausgeführt werden muss, bevor diese Ressource konfiguriert wird. Wenn beispielsweise die ID des Skriptblocks mit der Ressourcenkonfiguration, den Sie zuerst ausführen möchten, __ResourceName__ und dessen Typ __ResourceType__ ist, lautet die Syntax für das Verwenden dieser Eigenschaft `DependsOn = "[ResourceType]ResourceName"`.| 
 | SourcePath| Gibt den Pfad an, aus dem die Datei- oder Ordnerressource kopiert werden soll.| 
 | Typ| Gibt an, ob die zu konfigurierende Ressource ein Verzeichnis oder eine Datei ist. Legen Sie diese Eigenschaft auf „Directory“ fest, um anzugeben, dass die Ressource ein Verzeichnis ist. Legen Sie sie auf „File“ fest, um anzugeben, dass die Ressource eine Datei ist. Der Standardwert ist „File“.| 
-| MatchSource| Bei Festlegen auf den Standardwert __$false__ werden beliebige Dateien in der Quelle (z. B. die Dateien A, B und C) dem Ziel hinzugefügt, wenn die Konfiguration zum ersten Mal angewendet wird. Wenn eine neue Datei (D) der Quelle hinzugefügt wird, wird sie nicht dem Ziel hinzugefügt, auch wenn die Konfiguration später erneut angewendet wird. Wenn der Wert __$true__ ist, werden bei jedem Anwenden der Konfiguration in der Quelle gefundene neue Dateien (wie z. B. Datei D in diesem Beispiel) dem Ziel hinzugefügt. Der Standardwert ist **$false**.| 
+| MatchSource| Bei Festlegen auf den Standardwert __$false__ werden beliebige Dateien in der Quelle (z. B. die Dateien A, B und C) dem Ziel hinzugefügt, wenn die Konfiguration zum ersten Mal angewendet wird. Wenn eine neue Datei (D) der Quelle hinzugefügt wird, wird sie nicht dem Ziel hinzugefügt, auch wenn die Konfiguration später erneut angewendet wird. Wenn der Wert __$true__ ist, werden bei jedem Anwenden der Konfiguration in der Quelle gefundene neue Dateien (wie z. B. Datei D in diesem Beispiel) dem Ziel hinzugefügt. Der Standardwert ist **$false**.| 
 
-## <a name="example"></a>Beispiel
+<a id="example" class="xliff"></a>
+## Beispiel
 
-Im folgenden Beispiel wird veranschaulicht, wie die Ressource „File“ verwendet wird, um sicherzustellen, dass ein Verzeichnis mit dem Pfad `C:\Users\Public\Documents\DSCDemo\DemoSource` auf einem Quellcomputer (z. B. dem Pullserver) auch auf dem Zielknoten (mit allen Unterverzeichnissen) vorhanden ist. Außerdem wird nach Abschluss eine Bestätigungsmeldung in das Protokoll geschrieben und eine Anweisung hinzugefügt, um dafür zu sorgen, dass der Dateiprüfvorgang vor dem Protokollierungsvorgang erfolgt.
+Im folgenden Beispiel wird veranschaulicht, wie die Ressource „File“ verwendet wird, um sicherzustellen, dass ein Verzeichnis mit dem Pfad `C:\Users\Public\Documents\DSCDemo\DemoSource` auf einem Quellcomputer (z. B. dem Pullserver) auch auf dem Zielknoten (mit allen Unterverzeichnissen) vorhanden ist. Außerdem wird nach Abschluss eine Bestätigungsmeldung in das Protokoll geschrieben und eine Anweisung hinzugefügt, um dafür zu sorgen, dass der Dateiprüfvorgang vor dem Protokollierungsvorgang erfolgt.
 
 ```powershell
 Configuration FileResourceDemo

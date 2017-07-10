@@ -1,18 +1,17 @@
 ---
-manager: carmonm
-ms.topic: article
+ms.date: 2017-06-12
 author: rpsqrd
-ms.author: ryanpu
-ms.prod: powershell
-keywords: powershell,cmdlet,jea
-ms.date: 2016-12-05
+ms.topic: conceptual
+keywords: jea,powershell,security
 title: "Überwachung und Berichterstellung zu JEA"
-ms.technology: powershell
-ms.openlocfilehash: 865055e873a065aef16a95d0f3297e550e40bc98
-ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
-translationtype: HT
+ms.openlocfilehash: 60bc7a4213c75735628207bb21078bf90f7b1ca3
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="auditing-and-reporting-on-jea"></a>Überwachung und Berichterstellung zu JEA
+<a id="auditing-and-reporting-on-jea" class="xliff"></a>
+# Überwachung und Berichterstellung zu JEA
 
 > Gilt für: Windows PowerShell 5.0
 
@@ -21,7 +20,8 @@ Auf diese Weise können Sie leichter beurteilen, ob die Benutzer, die auf den JE
 
 Dieses Thema beschreibt die verschiedenen Methoden zur Überwachung eines JEA-Endpunkts.
 
-## <a name="find-registered-jea-sessions-on-a-machine"></a>Ermitteln von registrierten JEA-Sitzungen auf einem Computer
+<a id="find-registered-jea-sessions-on-a-machine" class="xliff"></a>
+## Ermitteln von registrierten JEA-Sitzungen auf einem Computer
 
 Verwenden Sie das [Get-PSSessionConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration)-Cmdlet, um zu überprüfen, welche JEA-Sitzungen auf einem Computer registriert sind.
 
@@ -50,7 +50,8 @@ $jea = Get-PSSessionConfiguration -Name 'JEAMaintenance'
 $jea.RoleDefinitions.GetEnumerator() | Select-Object Name, @{ Name = 'Role Capabilities'; Expression = { $_.Value.RoleCapabilities } }
 ```
 
-## <a name="find-available-role-capabilities-on-the-machine"></a>Ermitteln verfügbarer Rollenfunktionen auf dem Computer
+<a id="find-available-role-capabilities-on-the-machine" class="xliff"></a>
+## Ermitteln verfügbarer Rollenfunktionen auf dem Computer
 
 Rollenfunktionsdateien werden nur dann von JEA verwendet, wenn sie in einem Ordner „RoleCapabilities“ in einem gültigen PowerShell-Modul gespeichert sind.
 Sie erhalten alle verfügbaren Rollenfunktionen, indem Sie die Liste verfügbarer Module durchsuchen.
@@ -75,7 +76,8 @@ function Find-LocalRoleCapability {
 > [!NOTE]
 > Die Reihenfolge der Ergebnisse dieser Funktion entspricht nicht zwangsläufig der Reihenfolge, in der die Rollenfunktionen ausgewählt werden, wenn mehrere Rollenfunktionen den gleichen Namen haben.
 
-## <a name="check-effective-rights-for-a-specific-user"></a>Überprüfen gültiger Berechtigungen für einen bestimmten Benutzer
+<a id="check-effective-rights-for-a-specific-user" class="xliff"></a>
+## Überprüfen gültiger Berechtigungen für einen bestimmten Benutzer
 
 Nachdem Sie einen JEA-Endpunkt eingerichtet haben, sollten Sie überprüfen, welche Befehle in einer JEA-Sitzung für einen bestimmten Benutzer verfügbar sind.
 Sie können [Get-PSSessionCapability](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Get-PSSessionCapability) zum Auflisten aller Befehle verwenden, die für Benutzer gelten, die eine JEA-Sitzung mit ihren aktuellen Gruppenmitgliedschaften starten.
@@ -89,7 +91,8 @@ Wenn Ihre Benutzer keine ständigen Mitglieder von Gruppen sind, die ihnen zusä
 Dies ist i.d.R. der Fall, wenn Just-in-Time-Privileged Access Management-Systeme verwendet werden, um Benutzern vorübergehend die Aufnahme in eine Sicherheitsgruppe zu ermöglichen.
 Überprüfen Sie daher stets sorgfältig die Zuordnung von Benutzern zu Rollen und den Inhalt der einzelnen Rollen, um sicherzustellen, dass Benutzer nur Zugriff auf jene Befehle habe, die sie zur Erfüllung ihrer Aufgaben unbedingt benötigen.
 
-## <a name="powershell-event-logs"></a>PowerShell-Ereignisprotokolle
+<a id="powershell-event-logs" class="xliff"></a>
+## PowerShell-Ereignisprotokolle
 
 Wenn Sie die Modul- und/oder Skriptblockprotokollierung im System aktivieren, enthalten die Windows-Ereignisprotokolle Ereignisse für jeden Befehl, den Benutzer in ihren JEA-Sitzungen ausgeführt haben.
 Um diese Ereignisse zu finden, öffnen Sie die Windows-Ereignisanzeige, navigieren Sie zum Ereignisprotokoll **Microsoft-Windows-PowerShell/Operational** Ereignisprotokoll, und suchen Sie nach Ereignissen mit der Ereignis-ID **4104**.
@@ -98,7 +101,8 @@ Jeder Eintrag im Ereignisprotokoll enthält Informationen über die Sitzung, in 
 Bei JEA-Sitzungen handelt es sich dabei um wichtige Informationen zum **ConnectedUser**, also dem tatsächlichen Benutzer, der die JEA-Sitzung erstellt hat, als auch zum Parameter **RunAsUser**, der das JEA-Konto angibt, das zum Ausführen des Befehls verwendet wurde.
 Anwendungsereignisprotokolle zeigen Änderungen durch RunAsUser. Die Aufzeichnungs- bzw Modul-/Skriptprotokollierung sollte daher unbedingt aktiviert sein, um einen bestimmten Befehlsaufruf zu einem Benutzer zurückverfolgen zu können.
 
-## <a name="application-event-logs"></a>Anwendungsereignisprotokolle
+<a id="application-event-logs" class="xliff"></a>
+## Anwendungsereignisprotokolle
 
 Wenn Sie einen Befehl in einer JEA-Sitzung ausführen, die mit einer externen Anwendung oder einem externen Dienst interagiert, können diese Anwendungen Ereignisse in ihren eigenen Ereignisprotokollen protokollieren.
 Im Gegensatz zu PowerShell-Protokollen und Aufzeichnungen erfassen andere Protokollierungsmechanismen nicht den Benutzer, der eine Verbindung zur JEA-Sitzung aufbaut. Stattdessen wird nur das Konto des virtuellen, ausführenden Benutzers bzw. des gruppenverwalteten Dienstkontos protokolliert.
@@ -107,7 +111,8 @@ Um zu bestimmen, wer den Befehl ausgeführt hat, überprüfen Sie eine [Sitzungs
 Das WinRM-Protokoll kann ebenfalls hilfreich sein, wenn Sie ausführende Benutzer in einem Anwendungsereignisprotokoll mit dem Benutzer korrelieren möchten, der eine Verbindung herstellt.
 Die Ereignis-ID **193** im Protokoll **Microsoft-Windows-Windows Remote Management/Operational** erfasst bei jeder Erstellung einer JEA-Sitzung die Sicherheits-ID (SID) und den Kontonamen sowohl des Benutzers, der eine Verbindung herstellt, als auch des ausführenden Benutzers.
 
-## <a name="session-transcripts"></a>Sitzungsaufzeichnungen
+<a id="session-transcripts" class="xliff"></a>
+## Sitzungsaufzeichnungen
 
 Wenn Sie JEA für die Erstellung einer Aufzeichnung bei jeder Benutzersitzung konfiguriert haben, wird eine Textkopie für die Aktionen aller Benutzer im angegebenen Ordner gespeichert.
 
@@ -149,7 +154,9 @@ Im voranstehenden Beispiel sehen Sie, dass für den Parameter „Name“ der Wer
 Die Ausgabe jedes Befehls löst außerdem eine „CommandInvocation“ aus, in der Regel nach „Out-Default“. Das vom Befehl zurückgegebene PowerShell-Objekt fungiert als InputObject für„InputObject“ von „Out-Default“.
 Die Details des Objekts einige Zeilen darunter bilden täuschend ähnlich das nach, was der Benutzer gesehen hätte.
 
-## <a name="see-also"></a>Siehe auch
+<a id="see-also" class="xliff"></a>
+## Siehe auch
 
 - [Überwachung und Berichterstellung zu JEA](audit-and-report.md)
 - [*PowerShell ♥ the Blue Team (PowerShell ♥ das Blue Team)* – Blogbeitrag zum Thema Sicherheit](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
+

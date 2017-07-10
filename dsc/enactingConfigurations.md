@@ -1,23 +1,24 @@
 ---
-title: Inkraftsetzung von Konfigurationen
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 7059d0a0ac3ad81353d1e758bc24fc236656c199
-ms.sourcegitcommit: 89e7ae30faff5f96641fc72764bdc76e0e257bc2
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: Inkraftsetzung von Konfigurationen
+ms.openlocfilehash: db82788650186eb82f67b30b24cd45b719bbe314
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="enacting-configurations"></a>Inkraftsetzung von Konfigurationen
+<a id="enacting-configurations" class="xliff"></a>
+# Inkraftsetzung von Konfigurationen
 
 >Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Es gibt zwei Möglichkeiten, PowerShell DSC-Konfigurationen (Desired State Configuration) anzuwenden: Push- und Pullmodus.
 
-## <a name="push-mode"></a>Pushmodus
+<a id="push-mode" class="xliff"></a>
+## Pushmodus
 
 ![Pushmodus](images/Push.png "Funktionsweise des Pushmodus")
 
@@ -28,7 +29,8 @@ Nach dem Erstellen und Kompilieren einer Konfiguration können Sie sie im Pushmo
 > __Hinweis__: DSC führt eine Konfiguration standardmäßig als Hintergrundauftrag aus. Um die Konfiguration interaktiv auszuführen, rufen Sie das Cmdlet [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) mit dem __-Wait__-Parameter auf.
 
 
-## <a name="pull-mode"></a>Pullmodus
+<a id="pull-mode" class="xliff"></a>
+## Pullmodus
 
 ![Pullmodus](images/Pull.png "Funktionsweise des Pullmodus")
 

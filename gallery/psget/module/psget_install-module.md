@@ -1,23 +1,22 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: PowerShell, Cmdlet, Katalog
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: Install-Module | MSDN
-ms.technology: powershell
-ms.openlocfilehash: 82e4bb1ec76b1a51e1a99de85bc77a5429d46e26
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: gallery,powershell,cmdlet,psget
+title: Install-Module
+ms.openlocfilehash: 37e07cd32e7b2fd4a7a8e6cab179aecc3251baf3
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="install-module"></a>Install-Module
+<a id="install-module" class="xliff"></a>
+# Install-Module
 
 Installiert die PowerShell-Module aus Onlinerepositorys auf den lokalen Computer.
 
-## <a name="description"></a>Beschreibung
+<a id="description" class="xliff"></a>
+## Beschreibung
 
 Das Cmdlet Install-Module lädt ein Modul oder mehrere Module aus einem Onlinekatalog herunter, überprüft diese und installiert sie auf dem lokalen Computer im angegebenen Installationsbereich.
 
@@ -33,7 +32,8 @@ Sie können Ihre Ergebnisse nach den mindestens erforderlichen Versionen oder de
 - „-Force“ installiert das bereits installierte Modul neu.
 - RequiredVersion installiert die angegebene Version in SxS zusammen mit vorhandenen Versionen auf PowerShell-Version 5.0 oder höher.
 
-### <a name="scope"></a>Bereich
+<a id="scope" class="xliff"></a>
+### Bereich
 Gibt den Bereich der Installation des Moduls an. Die folgenden Werte für diesen Parameter sind zulässig: AllUsers und CurrentUser.
 
 Der Standardbereich für die Installation ist AllUsers.
@@ -42,7 +42,8 @@ Mit der Einstellung „AllUsers“ können Module an einem Speicherort installie
 
 Mit dem CurrentUser-Bereich können Module nur unter $home\Documents\WindowsPowerShell\Modules installiert werden. Das Modul ist also nur für den aktuellen Benutzer verfügbar.
 
-## <a name="notes"></a>Hinweise
+<a id="notes" class="xliff"></a>
+## Hinweise
 
 Dieses Cmdlet wird unter Windows PowerShell 3.0 oder auf höheren Versionen von Windows PowerShell ausgeführt. Ebenso wird es unter Windows 7 oder Windows 2008 R2 und höheren Versionen von Windows ausgeführt.
 
@@ -59,16 +60,19 @@ Standardmäßig werden die Module im Ordner „Programme“ installiert, um Verw
 Damit ausgeführte Module, die schädlichen Code enthalten, vermieden werden, werden installierte Module nicht automatisch während der Installation importiert. Eine bewährte Sicherheitsmethode ist die Bewertung von Modulcode vor der ersten Ausführung von Cmdlets oder Funktionen in einem Modul.
 
 
-## <a name="cmdlet-syntax"></a>Cmdlet-Syntax
+<a id="cmdlet-syntax" class="xliff"></a>
+## Cmdlet-Syntax
 ```powershell
 Get-Command -Name Install-Module -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a>Cmdlet-Onlinehilfe
+<a id="cmdlet-online-help-reference" class="xliff"></a>
+## Cmdlet-Onlinehilfe
 
 [Install-Module](http://go.microsoft.com/fwlink/?LinkID=398573)
 
-## <a name="example-commands"></a>Beispiele für Befehle
+<a id="example-commands" class="xliff"></a>
+## Beispiele für Befehle
 
 ```powershell
 
@@ -109,7 +113,8 @@ Install-Module ContosoClient -Force
 Install-Module -Name 
 ```
 
-## <a name="install-module-cmdlet-in-pipeline-operations"></a>Install-Module-Cmdlet in Pipeline-Vorgängen
+<a id="install-module-cmdlet-in-pipeline-operations" class="xliff"></a>
+## Install-Module-Cmdlet in Pipeline-Vorgängen
 
 ```powershell
 
@@ -136,11 +141,13 @@ Get-InstalledModule
 
 ```
 
-## <a name="side-by-side-version-support-on-powershell-50-or-newer"></a>Unterstützung der gleichzeitigen Ausführung unterschiedlicher Versionen für PowerShell 5.0 oder höher
+<a id="side-by-side-version-support-on-powershell-50-or-newer" class="xliff"></a>
+## Unterstützung der gleichzeitigen Ausführung unterschiedlicher Versionen für PowerShell 5.0 oder höher
 
 Für die in Windows PowerShell 5.0 oder höher ausgeführten Cmdlets „Install-Module“ „Update-Module“ und „Publish-Module“ unterstützt PowerShellGet die gleichzeitige Ausführung unterschiedlicher Modulversionen.
 
-### <a name="install-module-examples"></a>Beispiele für „Install-Module“
+<a id="install-module-examples" class="xliff"></a>
+### Beispiele für „Install-Module“
 
 ```powershell
 # Install a version of the module
@@ -172,7 +179,8 @@ Version    Name                                Repository           Description
 
 ```
 
-## <a name="install-module-with-its-dependencies"></a>Installieren eines Moduls mit dessen Abhängigkeiten
+<a id="install-module-with-its-dependencies" class="xliff"></a>
+## Installieren eines Moduls mit dessen Abhängigkeiten
 
 ```powershell
 
@@ -266,7 +274,8 @@ Version    Name                                Repository           Description
 
 ```
 
-## <a name="error-scenarios"></a>Fehlerszenarios
+<a id="error-scenarios" class="xliff"></a>
+## Fehlerszenarios
 
 ```powershell
 

@@ -1,6 +1,19 @@
-# <a name="powershellget-cmdlets-for-script-management"></a>PowerShellGet-Cmdlets für die Skriptverwaltung
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
+ms.openlocfilehash: 2d56df459a4e09a16ab16c02f7ca2744c779206f
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
+---
+<a id="powershellget-cmdlets-for-script-management" class="xliff"></a>
+# PowerShellGet-Cmdlets für die Skriptverwaltung
 
-## <a name="find-script-cmdlet"></a>Cmdlet „Find-Script“
+<a id="find-script-cmdlet" class="xliff"></a>
+## Cmdlet „Find-Script“
 Das Cmdlet „Find-Script“ ermöglicht das Ermitteln der Skriptdateien mithilfe verschiedener Suchkriterien wie Name, Tag, Filter, Befehlsname, Versionsbereich, genaue Version, alle Versionen einschließlich Abhängigkeiten und Ursprung aus einem bestimmten oder allen registrierten Repositorys.
 
 Beispielsyntax:
@@ -139,7 +152,8 @@ Workflow {Test-WorkflowFromScript\_Fabrikam-ClientScript}
 Command {Test-FunctionFromScript\_Fabrikam-ClientScript, Test-WorkflowFromScript\_Fabrikam-ClientScript}
 ```
 
-## <a name="save-script-cmdlet"></a>Cmdlet „Save-Script“
+<a id="save-script-cmdlet" class="xliff"></a>
+## Cmdlet „Save-Script“
 Mit dem Cmdlet „Save-Script“ können Sie die Skriptdatei überprüfen, indem Sie sie an einem angegebenen Speicherort speichern.
 ```powershell
 \# Save a script file to the specified location for the script analysis
@@ -152,7 +166,8 @@ Version Name Author Description
 1.5 Fabrikam-ClientScript manikb Description for the Fabrikam-ClientScript script
 ```
 
-## <a name="install-script-and-get-installedscript-cmdlets"></a>Die Cmdlets „Install-Script“ und „Get-InstalledScript“
+<a id="install-script-and-get-installedscript-cmdlets" class="xliff"></a>
+## Die Cmdlets „Install-Script“ und „Get-InstalledScript“
 Mit dem Cmdlet „Install-Script“ können Sie eine bestimmte Skriptdatei mit ihren Abhängigkeiten im angegebenen Bereich installieren. Standardmäßig werden Skripts im Bereich „AllUsers“ installiert. Mit dem Cmdlet „Get-InstalledScript“ können Sie die Liste der Skriptdateien abrufen, die mit dem Cmdlet „Install-Script“ installiert wurden.
 
 Hinweis: Um das Verwalten und Auffinden von Skripts nach ihrer Installation zu ermöglichen, erstellt „Install-Script“ unter „$home\Documents\WindowsPowerShell\Scripts“ einen Standardordner zum Speichern von Skripts und fügt diesen Ordner Ihrer Umgebungsvariablen PATH hinzu. Falls es Bedenken gegen das Ändern des Pfads gibt, verwenden Sie „Save-Script“ anstelle von „Install-Script“. „Get-InstalledScripts“ und „Uninstall-Script“ funktionieren nur mit Skripts, die mit „Install-Script“ auf dem System installiert wurden.
@@ -333,7 +348,8 @@ Function Test-FunctionFromScript\_Script-WithDependencies2 { Get-Date }
 Workflow Test-WorkflowFromScript\_Script-WithDependencies2 { Get-Date }
 ```
 
-## <a name="update-script-cmdlet"></a>Cmdlet „Update-Script“
+<a id="update-script-cmdlet" class="xliff"></a>
+## Cmdlet „Update-Script“
 Das Cmdlet „Update-Script“ ermöglicht ein direktes Update der Skriptdateien, die mit dem Cmdlet „Install-Script“ installiert wurden.
 ```powershell
 Install-Script -Name Fabrikam-Script -RequiredVersion 1.0 -Repository GalleryINT -Scope
@@ -375,7 +391,8 @@ Version Name Type Repository Description
 2.0 Script-WithDependencies2 Script GalleryINT Description for the Script-WithDependencies2 script
 ```
 
-## <a name="uninstall-script-cmdlet"></a>Cmdlet „Uninstall-Script“
+<a id="uninstall-script-cmdlet" class="xliff"></a>
+## Cmdlet „Uninstall-Script“
 ```powershell
 Uninstall-Script cmdlet lets you to uninstall the installed script files.
 Get-InstalledScript | Uninstall-Script -WhatIf
@@ -412,7 +429,8 @@ At C:\\Program Files\\WindowsPowerShell\\Modules\\PowerShellGet\\1.0.0.1\\PSModu
 + FullyQualifiedErrorId : NoMatchFound,Microsoft.PowerShell.PackageManagement.Cmdlets.GetPackage
 ```
 
-## <a name="new-scriptfileinfo-and-test-scriptfileinfo-cmdlets"></a>Cmdlets „Test-ScriptFileInfo“ und „New-ScriptFileInfo“
+<a id="new-scriptfileinfo-and-test-scriptfileinfo-cmdlets" class="xliff"></a>
+## Cmdlets „Test-ScriptFileInfo“ und „New-ScriptFileInfo“
 Mit dem Cmdlet „New-ScriptFileInfo“ können Sie eine neue Skriptdatei mit Metadaten wie „Version“, „Guid“, „Author“ und „Description“ erstellen. Mit dem Cmdlet „Test-ScriptFileInfo“ können Sie die Metadaten der Skriptdatei überprüfen und abrufen.
 ```powershell
 \# Create a new script file with minimum required metadata values
@@ -564,7 +582,8 @@ DefinedFunctions : Demo-ScriptFunction
 DefinedWorkflows : Demo-ScriptWorkflow
 ```
 
-## <a name="update-scriptfileinfo-cmdlet"></a>Cmdlet „Update-ScriptFileInfo“
+<a id="update-scriptfileinfo-cmdlet" class="xliff"></a>
+## Cmdlet „Update-ScriptFileInfo“
 Mit dem Cmdlet „Update-ScriptFileInfo“ können Sie die Metadaten der vorhandenen Skriptdatei aktualisieren.
 ```powershell
 \# Use Update-ScriptFileInfo cmdlet to update the script metadata
@@ -575,7 +594,8 @@ Version Name Author Description
 2.0 Demo-ScriptWithComplet... manikb my new script file
 ```
 
-## <a name="register-psrepository-and-set-psrepository-cmdlets-with-script-sharing-support"></a>Cmdlets „Register-PSRepository“ und „Set-PSRepository“ mit Unterstützung der Skriptfreigabe
+<a id="register-psrepository-and-set-psrepository-cmdlets-with-script-sharing-support" class="xliff"></a>
+## Cmdlets „Register-PSRepository“ und „Set-PSRepository“ mit Unterstützung der Skriptfreigabe
 Verwenden Sie die Cmdlets „Register-PSRepository“ und „Set-PSRepository“ zum Hinzufügen von **ScriptSourceLocation** und **ScriptPublishLocation** zu „PSRepository“.
 ```powershell
 \# Register an GalleryINT repository with Scripts and Modules support
@@ -633,7 +653,8 @@ ScriptPublishLocation : https://MyGallery.com/api/v2/package/
 ProviderOptions : {}
 ```
 
-## <a name="publish-script-cmdlet"></a>Cmdlet „Publish-Script“
+<a id="publish-script-cmdlet" class="xliff"></a>
+## Cmdlet „Publish-Script“
 Mit dem Cmdlet „Publish-Script“ können Sie Ihre Skriptdatei mit gültigen Metadaten wie „Version“, „Guid“, „Author“ und „Description“ veröffentlichen.
 ```powershell
 \# Publish the really basic script file with required metadata

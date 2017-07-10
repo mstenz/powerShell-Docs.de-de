@@ -1,5 +1,5 @@
 # [Übersicht](readme.md)
-## Galerie
+## Katalog
 ### [Erste Schritte](psgallery/psgallery_gettingstarted.md)
 ### [Integritätsstatus](psgallery/psgallery_status.md)
 ### [FAQs zum Katalog](psgallery/psgallery_faqs.md)
@@ -8,6 +8,9 @@
 ### [Elemente mit kompatiblen PowerShell-Editionen](psgallery/psgallery_pseditions.md)
 ### [FileList-Ansicht](psgallery/psgallery_filelist_feature.md)
 ### [Bereitstellen in Azure Automation](psgallery/psgallery_deploy_to_azure_automation.md)
+### [Erstellen eines PowerShell-Katalogkontos](psgallery/psgallery_creating_an_account.md)
+### [Erstellen und Veröffentlichen von Elementen](psgallery/Creating-and-Publishing-an-item.md)
+### [Veröffentlichungsrichtlinien und Best Practices](psgallery/psgallery-PublishingGuidelines.md)
 ### [Entfernen von Elementen aus der Liste](psgallery/psgallery_unlist_items.md)
 ### [Löschen von Elementen](psgallery/Deleting-Items.md)
 ### [Verwalten von Elementbesitzern](psgallery/Managing-Item-Owners.md)
@@ -15,8 +18,11 @@
 ### [Beilegung von Streitigkeiten](psgallery/psgallery_dispute_resolution.md)
 ### [Kontaktieren der Elementbesitzer](psgallery/psgallery_contacting_item_owners.md)
 ### [Kontaktieren der Administratoren](psgallery/psgallery_contacting_administrators.md)
+### [Bereitstellen von Feedback über soziale Netzwerke oder Kommentare](psgallery/psgallery-SocialMediaFeedback.md)
 
 # [PowerShellGet](psget/overview.md)
+## [Abrufen des PowerShellGet-Moduls](psget/get_psget_module.md)
+
 ## Modul
 ### [Module suchen](psget/module/psget_find-module.md)
 ### [DSC-Ressourcen suchen](psget/module/psget_find-dscresource.md)
@@ -32,7 +38,7 @@
 ### [Module mit PowerShell-Editionen](psget/module/modulewithpseditionsupport.md)
 ### [Problembehandlung](psget/psget_cmdlets_troubleshooting.md)
 
-## Script
+## Skript
 ### [Suchen](psget/script/psget_find-script.md)
 ### [Speichern](psget/script/psget_save-script.md)
 ### [Installieren](psget/script/psget_install-script.md)

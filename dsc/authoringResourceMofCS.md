@@ -1,17 +1,17 @@
 ---
-title: Erstellen einer DSC-Ressource in C
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: df330cede5466f4d8da3b4be0057f6a822d15f00
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: Erstellen einer DSC-Ressource in C
+ms.openlocfilehash: 502a4f42f685642d0966a8ee1ee745902005d61c
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="authoring-a-dsc-resource-in-c"></a>Erstellen einer DSC-Ressource in C`#`
+<a id="authoring-a-dsc-resource-in-c" class="xliff"></a>
+# Erstellen einer DSC-Ressource in C`#`
 
 > Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
@@ -19,10 +19,12 @@ In der Regel wird eine benutzerdefinierte Windows PowerShell DSC-Ressource in ei
 
 Abgesehen von der Implementierung der Ressource als Cmdlets in C# entsprechen die Schritte zum Erstellen des MOF-Schemas, zum Erstellen der Ordnerstruktur sowie zum Importieren und Verwenden Ihrer benutzerdefinierten DSC-Ressource dem unter [Schreiben einer benutzerdefinierten DSC-Ressource mit MOF](authoringResourceMOF.md) beschriebenen Verfahren.
 
-## <a name="writing-a-cmdlet-based-resource"></a>Schreiben einer Cmdlet-basierten Ressource
+<a id="writing-a-cmdlet-based-resource" class="xliff"></a>
+## Schreiben einer Cmdlet-basierten Ressource
 In diesem Beispiel wird eine einfache Ressource implementiert, die eine Textdatei und deren Inhalt verwaltet.
 
-### <a name="writing-the-mof-schema"></a>Schreiben des MOF-Schemas
+<a id="writing-the-mof-schema" class="xliff"></a>
+### Schreiben des MOF-Schemas
 
 Im folgenden sehen Sie die Definition der MOF-Ressource.
 
@@ -36,8 +38,10 @@ class MSFT_XDemoFile : OMI_BaseResource
 };
 ```
 
-### <a name="setting-up-the-visual-studio-project"></a>Einrichten des Visual Studio-Projekts
-#### <a name="setting-up-a-cmdlet-project"></a>Einrichten eines Cmdlet-Projekts
+<a id="setting-up-the-visual-studio-project" class="xliff"></a>
+### Einrichten des Visual Studio-Projekts
+<a id="setting-up-a-cmdlet-project" class="xliff"></a>
+#### Einrichten eines Cmdlet-Projekts
 
 1. Öffnen Sie Visual Studio.
 1. Erstellen Sie ein C#-Projekt, und geben Sie diesem einen Namen.
@@ -46,7 +50,8 @@ class MSFT_XDemoFile : OMI_BaseResource
 1. Fügen Sie „System.Automation.Management.dll“ einen Assemblyverweis auf Ihr Projekt hinzu.
 1. Ändern Sie den Assemblynamen so, dass er dem Namen der Ressource entspricht. In diesem Fall sollte die Assembly **MSFT_XDemoFile** benannt werden.
 
-### <a name="writing-the-cmdlet-code"></a>Schreiben des Codes des Cmdlets
+<a id="writing-the-cmdlet-code" class="xliff"></a>
+### Schreiben des Codes des Cmdlets
 
 Der folgende C#-Code implementiert die Cmdlets **Get-TargetResource**, **Set-TargetResource** und **Test-TargetResource**.
 
@@ -264,7 +269,8 @@ namespace cSharpDSCResourceExample
 }
 ```
 
-### <a name="deploying-the-resource"></a>Bereitstellen der Ressource
+<a id="deploying-the-resource" class="xliff"></a>
+### Bereitstellen der Ressource
 
 Die kompilierte DLL-Datei sollte in einer Dateistruktur gespeichert werden, die einer skriptbasierten Ressource ähnelt. Im folgenden finden die Ordnerstruktur für diese Ressource.
 
@@ -279,9 +285,12 @@ $env: psmodulepath (folder)
                 |- MSFT_XDemoFile.schema.mof (file, required)
 ```
 
-### <a name="see-also"></a>Weitere Informationen
-#### <a name="concepts"></a>Konzepte
+<a id="see-also" class="xliff"></a>
+### Weitere Informationen
+<a id="concepts" class="xliff"></a>
+#### Konzepte
 [Schreiben einer benutzerdefinierten DSC-Ressource mit MOF](authoringResourceMOF.md)
-#### <a name="other-resources"></a>Weitere Ressourcen
+<a id="other-resources" class="xliff"></a>
+#### Weitere Ressourcen
 [Schreiben eines Windows PowerShell-Cmdlets](https://msdn.microsoft.com/en-us/library/dd878294.aspx)
 

@@ -1,23 +1,22 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: PowerShell, Cmdlet, Katalog
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: Find-Command | MSDN
-ms.technology: powershell
-ms.openlocfilehash: 99091130ea89023495e5e3aacafb292f67f2db30
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: gallery,powershell,cmdlet,psget
+title: Find-Command
+ms.openlocfilehash: f867f12b1c6efad30a04581c6f36c5a77a2fb2ae
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="find-command"></a>Find-Command
+<a id="find-command" class="xliff"></a>
+# Find-Command
 
 Sucht PowerShell-Befehle in Modulen.
 
-## <a name="description"></a>Beschreibung
+<a id="description" class="xliff"></a>
+## Beschreibung
 Das Cmdlet Find-Command sucht PowerShell-Befehle wie z.B. Cmdlets, Aliase, Funktionen und Workflows. Find-Command sucht Module in registrierten Repositorys.
 Für jeden Befehl, den dieses Cmdlet findet, gibt es ein PSGetCommandInfo-Objekt zurück. Sie können ein PSGetCommandInfo-Objekt an das Install-Module-Cmdlet übergeben, um das Modul zu installieren, das den Befehl enthält.
 
@@ -30,16 +29,19 @@ Für jeden Befehl, den dieses Cmdlet findet, gibt es ein PSGetCommandInfo-Objekt
 - Find-Command kann mit dem „-Filter“-Parameter nach einer repositoryspezifischen Suchsprache filtern.
 - Find-Command kann Module von allen oder einigen registrierten Repositorys filtern.
 
-## <a name="cmdlet-syntax"></a>Cmdlet-Syntax
+<a id="cmdlet-syntax" class="xliff"></a>
+## Cmdlet-Syntax
 ```powershell
 Get-Command -Name Find-Command -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a>Cmdlet-Onlinehilfe
+<a id="cmdlet-online-help-reference" class="xliff"></a>
+## Cmdlet-Onlinehilfe
 
 [Find-Command](http://go.microsoft.com/fwlink/?LinkId=733636)
 
-## <a name="example-commands"></a>Beispiele für Befehle
+<a id="example-commands" class="xliff"></a>
+## Beispiele für Befehle
 ```powershell
 
 # Find a specific command

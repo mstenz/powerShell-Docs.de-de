@@ -1,23 +1,22 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: PowerShell, Cmdlet, Katalog
-ms.date: 2016-10-14
-contributor: manikb
+ms.date: 2017-06-12
+contributor: JKeithB
+ms.topic: conceptual
+keywords: gallery,powershell,cmdlet,psgallery
 title: Beilegung von Streitigkeiten | MSDN
-ms.technology: powershell
-ms.openlocfilehash: b7a76a6d8746b4a22154f8a8c7dde89d61046116
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.openlocfilehash: 640d20371a51b08a5627b9beff1bb0ada4f06dd8
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dispute-resolution"></a>Beilegung von Streitigkeiten
+<a id="dispute-resolution" class="xliff"></a>
+# Beilegung von Streitigkeiten
 
 Dieses Dokument enthält eine empfohlene Vorgehensweise zur Beilegung von Streitigkeiten zwischen Communitymitgliedern und anderen Herausgebern im PowerShell-Katalog.
 
-## <a name="process"></a>Prozess
+<a id="process" class="xliff"></a>
+## Prozess
 
 1. Kontaktieren Sie die Besitzer des Elements, bei dem es Unstimmigkeiten gibt, über den Link **Besitzer kontaktieren** auf der Seite mit den Elementdetails.
 Erläutern Sie Ihr Problem höflich und direkt.
@@ -26,7 +25,8 @@ Erläutern Sie Ihr Problem höflich und direkt.
 Das PowerShellGallery.com-Supportteam wird sich an Ihren Gesprächen beteiligen und versuchen, eine Lösung zu finden.
 
 
-## <a name="prohibited-use"></a>Unerlaubte Nutzung
+<a id="prohibited-use" class="xliff"></a>
+## Unerlaubte Nutzung
 
 Folgende Elemente und Vorgänge sind im öffentlichen PowerShell-Katalog nicht zulässig. Die entsprechenden Elemente werden umgehend und ohne Rücksprache entfernt.  Die Elementbesitzer werden benachrichtigt, wenn ihre Elemente entfernt werden.
 

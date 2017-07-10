@@ -1,23 +1,22 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: PowerShell, Cmdlet, Katalog
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: Find-DscResource | MSDN
-ms.technology: powershell
-ms.openlocfilehash: afd13e1dd791794d62be4601477bcc77448586c5
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: gallery,powershell,cmdlet,psget
+title: Find-DscResource
+ms.openlocfilehash: 37ba7925d6f73c453126f25e0818b3f8839d3b3b
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="find-dscresource"></a>Find-DscResource
+<a id="find-dscresource" class="xliff"></a>
+# Find-DscResource
 
 Sucht DSC-Ressourcen in Modulen.
 
-## <a name="description"></a>Beschreibung
+<a id="description" class="xliff"></a>
+## Beschreibung
 
 Das Cmdlet „Find-DscResource“ sucht Ressourcen von [Desired State Configuration (DSC)](https://msdn.microsoft.com/en-us/PowerShell/dsc/overview), die in Modulen enthalten sind, die mit bestimmten Kriterien von registrierten Repositorys übereinstimmen.
 Find-DscResource gibt für jedes Modul, das von diesem Cmdlet gefunden wird, ein PSGetDscResourceInfo-Objekt zurück, das Sie an Install-Module übergeben können, um die Module zu installieren, die die von diesem Cmdlet zurückgegebenen Ressourcen enthalten.
@@ -37,16 +36,19 @@ Mit einer Ressource kann etwas Allgemeines wie eine Datei oder Spezifisches wie 
 - Find-DscResource kann mit dem „-Filter“-Parameter nach einer repositoryspezifischen Suchsprache filtern.
 - Find-DscResource kann Module von allen oder einigen registrierten Repositorys filtern.
 
-## <a name="cmdlet-syntax"></a>Cmdlet-Syntax
+<a id="cmdlet-syntax" class="xliff"></a>
+## Cmdlet-Syntax
 ```powershell
 Get-Command -Name Find-DscResource -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a>Cmdlet-Onlinehilfe
+<a id="cmdlet-online-help-reference" class="xliff"></a>
+## Cmdlet-Onlinehilfe
 
 [Find-DscResource](http://go.microsoft.com/fwlink/?LinkId=517196)
 
-## <a name="example-commands"></a>Beispiele für Befehle
+<a id="example-commands" class="xliff"></a>
+## Beispiele für Befehle
 ```powershell
 
 # Find a specific DSC Resource

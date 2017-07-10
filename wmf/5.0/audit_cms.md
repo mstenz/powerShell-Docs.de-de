@@ -1,4 +1,16 @@
-# <a name="cryptographic-message-syntax-cms-cmdlets"></a>CMS-Cmdlets (Cryptographic Message Syntax, Syntax verschlüsselter Nachrichten)
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
+ms.openlocfilehash: 9556f0d9a12807cbfe38aaade6798088f051596d
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
+---
+<a id="cryptographic-message-syntax-cms-cmdlets" class="xliff"></a>
+# CMS-Cmdlets (Cryptographic Message Syntax, Syntax verschlüsselter Nachrichten)
 
 Der CMS-Cmdlets unterstützen die Ver- und Entschlüsselung von Inhalten mithilfe des IETF-Standardformats für kryptografisch geschützte Nachrichten, wie unter [RFC5652](http://tools.ietf.org/html/rfc5652) dokumentiert.
 
@@ -82,3 +94,4 @@ Um Verschlüsselungszertifikate für Dokumente beim Zertifikatanbieter anzuzeige
 ```powershell
 dir -DocumentEncryptionCert
 ```
+

@@ -1,4 +1,16 @@
-# <a name="test-dscconfiguration-cmdlet-supports-reference-configurations"></a>Das Cmdlet „Test-DscConfiguration“ unterstützt Referenzkonfigurationen
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
+ms.openlocfilehash: 2d629d98b59c455011f4a5d955ef666218ae2f3f
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
+---
+<a id="test-dscconfiguration-cmdlet-supports-reference-configurations" class="xliff"></a>
+# Das Cmdlet „Test-DscConfiguration“ unterstützt Referenzkonfigurationen
 
 Das Cmdlet „Test-DscConfiguration“ wurde so aktualisiert, dass es das Testen des gewünschten Konfigurationszustands eines oder mehrerer Zielknoten zulässt, indem zum Vergleich ein Referenzkonfigurationsdokument angegeben wird.
 
@@ -35,3 +47,4 @@ Test-DscConfiguration   -ReferenceConfiguration <string>
                         [-AsJob] 
                         [<CommonParameters>]
 ```
+

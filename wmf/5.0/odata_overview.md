@@ -1,5 +1,18 @@
-# <a name="generate-powershell-cmdlets-based-on-odata-endpoint"></a>Generieren von PowerShell-Cmdlets basierend auf einem OData-Endpunkt
-<a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint"></a>Generieren von Windows PowerShell-Cmdlets basierend auf einem OData-Endpunkt
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
+ms.openlocfilehash: 11891587f59dc8a38e4ce267018160f7f9a28178
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
+---
+<a id="generate-powershell-cmdlets-based-on-odata-endpoint" class="xliff"></a>
+# Generieren von PowerShell-Cmdlets basierend auf einem OData-Endpunkt
+<a id="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint" class="xliff"></a>
+Generieren von Windows PowerShell-Cmdlets basierend auf einem OData-Endpunkt
 --------------------------------------------------------------
 
 **Export-ODataEndpointProxy** ist ein Cmdlet, das basierend auf der von einem bestimmten OData-Endpunkt verfügbar gemachten Funktionalität verschiedene Windows PowerShell-Cmdlets generiert.
@@ -40,7 +53,8 @@ Teile wichtiger Anwendungsfälle dieser Funktionalität befinden sich noch in de
 -   Zuordnungen
 -   Übergeben von Datenströmen
 
-<a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint-with-odatautils"></a>Generieren von Windows PowerShell-Cmdlets basierend auf einem OData-Endpunkt mit ODataUtils
+<a id="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint-with-odatautils" class="xliff"></a>
+Generieren von Windows PowerShell-Cmdlets basierend auf einem OData-Endpunkt mit ODataUtils
 ------------------------------------------------------------------------------
 Das „ODataUtils“-Modul ermöglicht die Generierung von Windows PowerShell-Cmdlets anhand von REST-Endpunkten, die OData unterstützen. Das Windows PowerShell-Modul „Microsoft.PowerShell.ODataUtils“ weist die folgenden inkrementellen Verbesserungen auf.
 -   Übertragen zusätzlicher Informationen vom serverseitigen Endpunkt zur Clientseite
@@ -98,3 +112,4 @@ Das Cmdlet „Export-ODataEndpointProxy“ und die von ihm generierten „Proxy�
 
 Export-ODataEndpointProxy -Uri $endPointUri -OutputModule $generatedProxyModuleDir -Force -AllowUnSecureConnection -Verbose -Headers @{'subscription-key'='XXXX'}
 ```
+

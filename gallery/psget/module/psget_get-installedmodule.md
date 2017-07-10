@@ -1,23 +1,22 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: PowerShell, Cmdlet, Katalog
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: Get-InstalledModule | MSDN
-ms.technology: powershell
-ms.openlocfilehash: a3c7c96bcb288dcc44aa1e4039d85def4ddb014e
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: gallery,powershell,cmdlet,psget
+title: Get-InstalledModule
+ms.openlocfilehash: 6f485d04503ea6d9a51a68ae7ec3d0dc2e6facab
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="get-installedmodule"></a>Get-InstalledModule
+<a id="get-installedmodule" class="xliff"></a>
+# Get-InstalledModule
 
 Ruft installierte Module auf einem Computer ab.
 
-## <a name="description"></a>Beschreibung
+<a id="description" class="xliff"></a>
+## Beschreibung
 
 Das Cmdlet „Get-InstalledModule“ ruft installierte PowerShell-Module auf einem Computer ab, die mithilfe des Install-Module-Cmdlets installiert wurden.
 
@@ -30,16 +29,19 @@ Für jedes installierte Modul gibt Get-InstalledModule ein PSRepositoryItemInfo-
   - Wenn der RequiredVersion-Parameter nicht angegeben wird, gibt Get-InstalledModule die neueste Version des installierten Moduls zurück, das gleich oder größer als die angegebene minimale Version oder die neueste Version des Moduls ist, wenn keine Mindestversion angegeben wird. 
   - Wenn der RequiredVersion-Parameter angegeben ist, gibt Get-InstalledModule nur die Version des installierten Moduls zurück, die genau mit der angegebenen Version übereinstimmt.
 
-## <a name="cmdlet-syntax"></a>Cmdlet-Syntax
+<a id="cmdlet-syntax" class="xliff"></a>
+## Cmdlet-Syntax
 ```powershell
 Get-Command -Name Get-InstalledModule -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a>Cmdlet-Onlinehilfe
+<a id="cmdlet-online-help-reference" class="xliff"></a>
+## Cmdlet-Onlinehilfe
 
 [Get-InstalledModule](http://go.microsoft.com/fwlink/?LinkId=526863)
 
-## <a name="example-commands"></a>Beispiele für Befehle
+<a id="example-commands" class="xliff"></a>
+## Beispiele für Befehle
 
 ```powershell
 
@@ -103,7 +105,8 @@ InstalledLocation          : C:\Program Files\WindowsPowerShell\Modules\DJoin\1.
 
 
 
-## <a name="installeddate-and-updateddate-properties-in-psgetrepositoryiteminfo-object"></a>InstalledDate and UpdatedDate-Eigenschaften im PSGetRepositoryItemInfo-Objekt
+<a id="installeddate-and-updateddate-properties-in-psgetrepositoryiteminfo-object" class="xliff"></a>
+## InstalledDate and UpdatedDate-Eigenschaften im PSGetRepositoryItemInfo-Objekt
 
     During the install operation:
         InstalledDate: current DateTime (Get-Date) value

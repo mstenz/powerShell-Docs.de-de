@@ -1,7 +1,20 @@
-# <a name="format-hex"></a>Format-Hex
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
+ms.openlocfilehash: 0749f942d542f0e10292a49a6bb1fe47c7fd53df
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
+---
+<a id="format-hex" class="xliff"></a>
+# Format-Hex
 Mit **Format-Hex** können Sie Text- und Binärdaten im Hexadezimalformat anzeigen (siehe [Format-Hex](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.utility/format-hex)).
 
-## <a name="example-1"></a>Beispiel 1
+<a id="example-1" class="xliff"></a>
+## Beispiel 1
 Zeigen Sie den Inhalt einer Zeichenfolge im Hexadezimalformat an.
 
 ```PowerShell
@@ -24,3 +37,4 @@ PS C:\> This is a very long line to force the line folding in Format-Hex cmdlet"
 
 PS C:\>
 ```
+

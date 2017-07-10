@@ -1,4 +1,16 @@
-# <a name="network-switch-management-with-powershell"></a>Verwalten von Netzwerkswitches mit PowerShell
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
+ms.openlocfilehash: 80852bf750700d549de24e150ffd89ac55b7bf88
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
+---
+<a id="network-switch-management-with-powershell" class="xliff"></a>
+# Verwalten von Netzwerkswitches mit PowerShell
 
 Das Cmdlet **Get-NetworkSwitchEthernetPort** gibt nun die folgenden zusätzlichen Informationen für Instanzen zurück:
 
@@ -7,7 +19,8 @@ Das Cmdlet **Get-NetworkSwitchEthernetPort** gibt nun die folgenden zusätzliche
 - AccessVLAN – die diesem Port im Modus „access“ zugeordnete ID des VLAN
 - TrunkedVLANList – die diesem Port im Modus „trunk“ zugeordnete Listen von IDs von VLANs
 
-## <a name="fundamental-network-switch-management-with-windows-powershell"></a>Grundlegende Verwaltung von Netzwerkswitches mit Windows PowerShell
+<a id="fundamental-network-switch-management-with-windows-powershell" class="xliff"></a>
+## Grundlegende Verwaltung von Netzwerkswitches mit Windows PowerShell
 
 Die „NetworkSwitch“-Cmdlets, die in WMF 5.0 eingeführt wurden, ermöglichen Ihnen Netzwerkswitches, die mit dem Windows Server 2012 R2-Logo zertifiziert sind, mit einer Switch-, VLAN- und grundlegenden Layer 2-Netzwerkswitch-Konfiguration zu versehen. Microsoft unterstützt weiterhin das [Datacenter Abstraction Layer](http://technet.microsoft.com/en-us/cloud/dal.aspx)-Konzept (DAL), um Kunden und Partnern weiter einen Nutzen zu bieten. Mithilfe dieser Cmdlets können Sie Folgendes ausführen:
 
@@ -59,3 +72,4 @@ PS> Get-Command *-NetworkSwitch*
 ```
 
 Weitere Informationen finden im Blogbeitrag von Jeffrey Snover mit der Ankündigung der WMF 5.0 Preview-Version: <http://blogs.technet.com/b/windowsserver/archive/2014/04/03/windows-management-framework-v5-preview.aspx>
+

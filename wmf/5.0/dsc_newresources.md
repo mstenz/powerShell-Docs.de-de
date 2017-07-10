@@ -1,4 +1,16 @@
-# <a name="new-built-in-dsc-resources"></a>Neue integrierte DSC-Ressourcen
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
+ms.openlocfilehash: ab49a0ae10f9ad32966944a1dcf8125619bde141
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
+---
+<a id="new-built-in-dsc-resources" class="xliff"></a>
+# Neue integrierte DSC-Ressourcen
 
 WMF 5.0 RTM hat vier neue DSC-Ressourcen: 
 * WindowsFeatureSet
@@ -8,7 +20,8 @@ WMF 5.0 RTM hat vier neue DSC-Ressourcen:
 
 Diese Ressourcen bieten eine einfache Möglichkeit, mehrere Instanzen mit einem einzelnen Ressourcenaufruf zu konfigurieren.
 
-## <a name="windowsfeatureset"></a>WindowsFeatureSet
+<a id="windowsfeatureset" class="xliff"></a>
+## WindowsFeatureSet
 
 ```powershell
 # Get the syntax of WindowsFeatureSet resource
@@ -26,7 +39,8 @@ WindowsFeatureSet [String] #ResourceName
 }
 ```
 
-## <a name="windowsoptionalfeatureset"></a>WindowsOptionalFeatureSet 
+<a id="windowsoptionalfeatureset" class="xliff"></a>
+## WindowsOptionalFeatureSet 
 
 ```powershell
 # Get the syntax of WindowsOptionalFeatureSet resource
@@ -45,7 +59,8 @@ WindowsOptionalFeatureSet [String] #ResourceName
 }
 ```
 
-## <a name="serviceset"></a>ServiceSet 
+<a id="serviceset" class="xliff"></a>
+## ServiceSet 
 
 ```powershell
 # Get the syntax of ServiceSet resource
@@ -63,7 +78,8 @@ ServiceSet [String] #ResourceName
 }
 ```
 
-## <a name="processset"></a>ProcessSet 
+<a id="processset" class="xliff"></a>
+## ProcessSet 
 
 ```powershell
 # Get the syntax of ProcessSet resource
@@ -81,3 +97,4 @@ ProcessSet [String] #ResourceName
     [WorkingDirectory = [String]]
 }
 ```
+

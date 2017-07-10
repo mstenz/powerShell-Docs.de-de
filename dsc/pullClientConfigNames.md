@@ -1,17 +1,17 @@
 ---
-title: Einrichten eines Pullclients mithilfe von Konfigurationsnamen
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 03db9843209038f7a14b46cf8a27316f1c63a819
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: Einrichten eines Pullclients mithilfe von Konfigurationsnamen
+ms.openlocfilehash: 9bfcac87300d30a59b66e60ed24add32e2420e21
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="setting-up-a-pull-client-using-configuration-names"></a>Einrichten eines Pullclients mithilfe von Konfigurationsnamen
+<a id="setting-up-a-pull-client-using-configuration-names" class="xliff"></a>
+# Einrichten eines Pullclients mithilfe von Konfigurationsnamen
 
 > Gilt für: Windows PowerShell 5.0
 
@@ -73,7 +73,8 @@ Set-DSCLocalConfigurationManager localhost –Path .\PullClientConfigNames –Ve
 Bei einem SMB-Pullserver müssen Sie **ConfigurationID** weiterhin verwenden.
 Informationen zum Konfigurieren eines Pullservers unter Verwendung von **ConfigurationID** finden Sie unter [Einrichten eines Pullclients mithilfe der Konfigurations-ID](PullClientConfigNames.md).
 
-## <a name="resource-and-report-servers"></a>Ressourcen und Berichtsserver
+<a id="resource-and-report-servers" class="xliff"></a>
+## Ressourcen und Berichtsserver
 
 Wenn Sie in Ihrer LCM-Konfiguration nur einen **ConfigurationRepositoryWeb**- oder einen **ConfigurationRepositoryShare**-Block angeben (wie im vorherigen Beispiel), ruft der Pullclient Ressourcen per Pull vom angegebenen Server ab, sendet aber keine Berichte an den Server.
 Sie können für Konfigurationen, Ressourcen und Berichte einen einzigen Pullserver verwenden, allerdings müssen Sie einen **ReportRepositoryWeb**-Block erstellen, um die Berichterstattung einzurichten.
@@ -148,7 +149,9 @@ configuration PullClientConfigNames
 PullClientConfigNames
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+<a id="see-also" class="xliff"></a>
+## Weitere Informationen
 
 * [Einrichten eines Pullclients mit Konfigurations-ID](PullClientConfigNames.md)
 * [Einrichten eines DSC-Webpullservers](pullServer.md)
+

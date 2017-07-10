@@ -1,18 +1,17 @@
 ---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
 title: Community-Ressourcen
-ms.date: 2016-05-16
-keywords: PowerShell, DSC, WMF
-description: 
-ms.topic: article
-author: keithb
-manager: dongill
-ms.prod: powershell
-ms.technology: WMF
-ms.openlocfilehash: 82e6539484aa11bb370f3011bb12ea51f9d55047
-ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
-translationtype: HT
+ms.openlocfilehash: 1a4b49f0773c7d54b6dbb504a9d44cae7e0ef924
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="community-resources"></a>Community-Ressourcen #
+<a id="community-resources" class="xliff"></a>
+# Community-Ressourcen #
 > Hinweis: Diese Dokumentation ist vorläufig und kann geändert werden.
 
 Das PowerShell-Team freut sich über Ihr Feedback zum Produkt und bietet Kunden, die uns kontaktieren möchten, mehrere Möglichkeiten dazu.
@@ -32,5 +31,5 @@ Es gibt viele Repositorys, die wir verwalten und für Open-Source-Entwicklungen 
 * [PowerShell-Dokumente](https://github.com/PowerShell/powershell-docs): Dort wird die gesamte Dokumentation (einschließlich dieses Inhalts) verwaltet. 
 * [PowerShell](https://github.com/PowerShell/powershell) ist die Seite für PowerShell Core, der zukünftigen Version von PowerShell. Hier können Sie Vorschläge für Features einbringen oder auf Probleme mit PowerShell Core hinweisen.   
 * [PowerShellGet](https://github.com/PowerShell/powershellget): Dies ist das Repository für das PowerShellGet-Modul und die PowerShellGet-Cmdlets.
-* [DSCResources] (https://github.com/PowerShell/DscResources) enthält den Satz der DSC-Module, die durch das PowerShell-Team verwaltet und in der PowerShell-Galerie im DSC Resource Kit veröffentlicht werden.
+* [DSCResources](https://github.com/PowerShell/DscResources) enthält den Satz an DSC-Modulen, die durch das PowerShell-Team verwaltet und im PowerShell-Katalog im DSC Resource Kit veröffentlicht werden.
 

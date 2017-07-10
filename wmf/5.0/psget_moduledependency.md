@@ -1,4 +1,16 @@
-# <a name="installation-of-module-dependencies"></a>Installation von Modulabhängigkeiten
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
+ms.openlocfilehash: 06a1ae284975a56d092c708f8bb57e2ae8b46e54
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
+---
+<a id="installation-of-module-dependencies" class="xliff"></a>
+# Installation von Modulabhängigkeiten
 
 Für die in Windows PowerShell 5.0 oder höher ausgeführten Cmdlets „Install-Module“ „Update-Module“ und „Publish-Module“ wird nun die gleichzeitige Ausführung unterschiedlicher Versionen unterstützt.
 Außerdem haben wir dem Cmdlet „Publish-Module“ den Parameter „-RequiredVersion“ hinzugefügt, um die Version anzugeben, die veröffentlicht werden soll. Der „Path“-Parameter unterstützt jetzt den Modulbasispfad mit dem Ordner „version“.
@@ -192,3 +204,4 @@ _------ ---- ---------- -----------
 1.5 ContosoServer LocalRepo ContosoServer module
 2.0 ContosoServer LocalRepo ContosoServer module
 ```
+

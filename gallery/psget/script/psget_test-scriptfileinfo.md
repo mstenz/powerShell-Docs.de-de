@@ -1,37 +1,39 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: PowerShell, Cmdlet, Katalog
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: Test-ScriptFileInfo | MSDN
-ms.technology: powershell
-ms.openlocfilehash: 570ad7e878195f36e1d0831c504301bcee647a7d
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: gallery,powershell,cmdlet,psget
+title: Test-ScriptFileInfo
+ms.openlocfilehash: 0f6951b86bba352e33abe91fc76e000b7df75b49
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="test-scriptfileinfo"></a>Test-ScriptFileInfo
+<a id="test-scriptfileinfo" class="xliff"></a>
+# Test-ScriptFileInfo
 
 Überprüft den Metadaten-Kommentarblock einer Skriptdatei
 
-## <a name="description"></a>Beschreibung
+<a id="description" class="xliff"></a>
+## Beschreibung
 
 Das Cmdlet „Test-ScriptFileInfo“ überprüft den Kommentarblock am Anfang eines Skripts, das mithilfe des Cmdlets „Publish-Script“ veröffentlicht wird.
 Wenn der Metadaten-Kommentarblock einen Fehler enthält, gibt dieses Cmdlet Informationen darüber zurück, wo sich der Fehler befindet oder wie er behoben werden kann.
 
-## <a name="cmdlet-syntax"></a>Cmdlet-Syntax
+<a id="cmdlet-syntax" class="xliff"></a>
+## Cmdlet-Syntax
 
 ```powershell
 Get-Command -Name Test-ScriptFileInfo -Module PowerShellGet -Syntax
 ```
-## <a name="cmdlet-online-help-reference"></a>Cmdlet-Onlinehilfe
+<a id="cmdlet-online-help-reference" class="xliff"></a>
+## Cmdlet-Onlinehilfe
 
 [Test-ScriptFileInfo](http://go.microsoft.com/fwlink/?LinkId=619791)
 
-## <a name="example-commands"></a>Beispiele für Befehle
+<a id="example-commands" class="xliff"></a>
+## Beispiele für Befehle
 ```powershell
 # Create a new script file with minimum required metadata values
 New-ScriptFileInfo -Path C:\ScriptSharingDemo\Demo-Script.ps1 -Description "Script file description goes here"

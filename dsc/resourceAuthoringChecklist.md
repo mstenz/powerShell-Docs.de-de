@@ -1,19 +1,20 @@
 ---
-title: "Prüfliste für die Ressourcenerstellung"
-ms.date: 2016-07-11
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 59a0e45e3d0ded6cde31418984c3a0cc04c39478
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: "Prüfliste für die Ressourcenerstellung"
+ms.openlocfilehash: 9e9855f4ad4ee6db4d9e3b90d3c9a03d81429805
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="resource-authoring-checklist"></a>Prüfliste für die Ressourcenerstellung
+<a id="resource-authoring-checklist" class="xliff"></a>
+# Prüfliste für die Ressourcenerstellung
 Diese Prüfliste ist eine Liste der bewährten Methoden beim Erstellen einer neuen DSC-Ressource.
-## <a name="resource-module-contains-psd1-file-and-schemamof-for-every-resource"></a>Das Ressourcenmodul enthält für jede Ressource Dateien des Typs „.psd1“ und „schema.mof“. 
+<a id="resource-module-contains-psd1-file-and-schemamof-for-every-resource" class="xliff"></a>
+## Das Ressourcenmodul enthält für jede Ressource Dateien des Typs „.psd1“ und „schema.mof“. 
 Stellen Sie sicher, dass Ihre Ressource eine ordnungsgemäße Struktur hat und alle erforderlichen Dateien enthält. Ein Ressourcenmodul muss eine PSD1-Datei enthalten, und für jede nicht zusammengesetzte Ressource muss die Datei „schema.mof“ vorhanden sein. Ressourcen ohne Schema werden nach Ausführen von **Get-DscResource** nicht aufgeführt. Zudem können Benutzer nicht mit IntelliSense arbeiten, wenn Code für diese Module in der ISE geschrieben wird. Die Verzeichnisstruktur für die Ressource „xRemoteFile“, die Teil des [Ressourcenmoduls „xPSDesiredStateConfiguration“](https://github.com/PowerShell/xPSDesiredStateConfiguration) ist, sieht folgendermaßen aus:
 
 
@@ -32,7 +33,8 @@ xPSDesiredStateConfiguration
     xPSDesiredStateConfiguration.psd1
 ```
 
-## <a name="resource-and-schema-are-correct"></a>Die Ressource und das Schema sind richtig##
+<a id="resource-and-schema-are-correct" class="xliff"></a>
+## Die Ressource und das Schema sind richtig##
 Überprüfen Sie die Ressourcenschemadatei („*.schema.mof“). Sie können den [DSC-Ressourcen-Designer](https://www.powershellgallery.com/packages/xDSCResourceDesigner/) verwenden, um Ihr Schema zu entwickeln und zu testen. Stellen Sie Folgendes sicher:
 - Eigenschaftentypen sind ordnungsgemäß (z. B. STRING wird nicht für Eigenschaften für numerische Werte verwendet, wofür UInt32 oder andere numerische Typen gewählt werden müssen).
 - Eigenschaftsattribute sind ordnungsgemäß angegeben als: ([key], [required], [write], [read]).
@@ -64,7 +66,8 @@ Test-xDscResource ..\DSCResources\MSFT_xRemoteFile
 Test-xDscSchema ..\DSCResources\MSFT_xRemoteFile\MSFT_xRemoteFile.schema.mof
 ```
 
-## <a name="resource-loads-without-errors"></a>Ressource wird ohne Fehler geladen. ##
+<a id="resource-loads-without-errors" class="xliff"></a>
+## Ressource wird ohne Fehler geladen. ##
 Überprüfen Sie, ob das Ressourcenmodul erfolgreich geladen werden kann.
 Dies kann manuell erfolgen, indem `Import-Module <resource_module> -force ` ausgeführt und bestätigt wird, dass keine Fehler aufgetreten sind. Sie können auch einen automatisierten Test schreiben. Im letzteren Fall können Sie diese Struktur bei Ihrem Testfall befolgen:
 ```powershell
@@ -74,7 +77,8 @@ If ($error.count –ne 0) {
     Throw “Module was not imported correctly. Errors returned: $error”
 }
 ```
-## <a name="resource-is-idempotent-in-the-positive-case"></a>Die Ressource ist im positiven Sinn idempotent 
+<a id="resource-is-idempotent-in-the-positive-case" class="xliff"></a>
+## Die Ressource ist im positiven Sinn idempotent 
 Eines der grundlegenden Merkmale von DSC-Ressourcen ist die Idempotenz. Dies bedeutet, dass beim Anwenden einer DSC-Konfiguration, die diese Ressource mehrmals enthält, immer das gleiche Ergebnis erreicht wird. Angenommen, wir erstellen eine Konfiguration mit der folgenden „File“-Ressource:
 ```powershell
 File file {
@@ -82,11 +86,12 @@ File file {
     Contents = "Sample text"
 } 
 ```
-Nach dem ersten Anwenden sollte die Datei „Test.txt“ im Ordner „C:\test“ enthalten sein. Bei nachfolgenden Ausführungen derselben Konfiguration sollte sich der Zustand des Computers nicht ändern (d. h. keine Kopien der Datei „Test.txt“ sollten erstellt werden).
+Nach dem ersten Anwenden sollte die Datei „Test.txt“ im Ordner „C:\test“ enthalten sein. Bei nachfolgenden Ausführungen derselben Konfiguration sollte sich der Zustand des Computers nicht ändern (d.h. keine Kopien der Datei „Test.txt“ sollten erstellt werden).
 Um sicherzustellen, dass eine Ressource idempotent ist, können Sie beim direkten Testen der Ressource **Set-TargetResource** wiederholt aufrufen. Bei End-to-End-Tests können Sie **Start-DscConfiguration** mehrmals aufrufen. Das Ergebnis sollte nach jeder Ausführung identisch sein. 
 
 
-## <a name="test-user-modification-scenario"></a>Testen des Benutzeränderungsszenarios ##
+<a id="test-user-modification-scenario" class="xliff"></a>
+## Testen des Benutzeränderungsszenarios ##
 Sie können sicherstellen, dass **Set-TargetResource** und **Test-TargetResource** ordnungsgemäß funktionieren, indem Sie den Zustand des Computers ändern und DSC anschließend erneut ausführen. Führen Sie dazu die folgenden Schritte aus:
 1.  Beginnen Sie mit einer Ressource, die nicht im gewünschten Zustand ist.
 2.  Wenden Sie eine Konfiguration auf die Ressource an.
@@ -102,29 +107,35 @@ Sie können sicherstellen, dass **Set-TargetResource** und **Test-TargetResource
 
 „Get-TargetResource“ sollte Details zum aktuellen Zustand der Ressource zurückgeben. Testen Sie die Konfiguration durch Aufrufen von „Get-DscConfiguration“ nachdem Sie sie angewendet haben, und stellen Sie sicher, dass die Ausgabe den aktuellen Zustand des Computers ordnungsgemäß widerspiegelt. Es müssen unbedingt getrennte Tests erfolgen, da Probleme in diesem Bereich nicht auftauchen, wenn „Start-DscConfiguration“ aufgerufen wird.
 
-## <a name="call-getsettest-targetresource-functions-directly"></a>Direktes Aufrufen der **Get/Set/Test-TargetResource**-Funktionen ##
+<a id="call-getsettest-targetresource-functions-directly" class="xliff"></a>
+## Direktes Aufrufen der **Get/Set/Test-TargetResource**-Funktionen ##
 
 Stellen Sie sicher, dass Sie die **Get/Set/Test-TargetResource**-Funktionen testen, die in Ihrer Ressource implementiert sind, indem Sie sie direkt aufrufen und sicherstellen, dass sie erwartungsgemäß funktionieren.
 
-## <a name="verify-end-to-end-using-start-dscconfiguration"></a>End-to-End-Überprüfen der Ressource mithilfe von **Start-DscConfiguration** ##
+<a id="verify-end-to-end-using-start-dscconfiguration" class="xliff"></a>
+## End-to-End-Überprüfen der Ressource mithilfe von **Start-DscConfiguration** ##
 
 Das Testen von **Get/Set/Test-TargetResource**-Funktionen, indem sie direkt aufgerufen werden, ist wichtig, doch auf diese Weise werden nicht alle Probleme ermittelt. Konzentrieren Sie einen wesentlichen Teil Ihrer Tests auf das Verwenden von **Start-DscConfiguration** oder des Pullservers. Benutzer verwenden die Ressource genau so, weshalb Sie die Bedeutung dieser Art von Tests nicht unterschätzen sollten. Mögliche Problemtypen:
 - Das Verhalten von Anmeldeinformationen oder der Sitzung ist möglicherweise anders, da der DSC-Agent als Dienst ausgeführt wird.  Führen Sie in diesem Bereich auf jeden Fall End-to-End-Tests von Features durch.
 - Von **Start-DscConfiguration** ausgegebene Fehler sind ggf. anders als die, die angezeigt werden, wenn die Funktion **Set-TargetResource** direkt aufgerufen wird.
 
-## <a name="test-compatability-on-all-dsc-supported-platforms"></a>Testen der Kompatibilität auf allen DSC-unterstützten Plattformen ##
+<a id="test-compatability-on-all-dsc-supported-platforms" class="xliff"></a>
+## Testen der Kompatibilität auf allen DSC-unterstützten Plattformen ##
 Die Ressource sollte auf allen von DSC unterstützten Plattformen funktionieren (Windows Server 2008 R2 und höher). Installieren Sie für Ihr Betriebssystem das neueste WMF (Windows Management Framework), um die neueste DSC-Version zu erhalten. Wenn Ihre Ressource einige dieser Plattformen entwurfsbedingt nicht unterstützt, sollte eine bestimmte Fehlermeldung zurückgegeben werden. Stellen Sie außerdem sicher, dass die Ressource überprüft, ob die Cmdlets, die Sie aufrufen, auf einem bestimmten Computer vorhanden sind. Windows Server 2012 wurde eine große Anzahl neuer Cmdlets hinzugefügt, die unter Windows Server 2008 R2, sogar mit installiertem WMF, nicht verfügbar sind. 
 
-## <a name="verify-on-windows-client-if-applicable"></a>Überprüfen auf Windows-Client (falls zutreffend) ##
+<a id="verify-on-windows-client-if-applicable" class="xliff"></a>
+## Überprüfen auf Windows-Client (falls zutreffend) ##
 Sehr häufig wird bei Tests die Ressource nur auf den Serverversionen von Windows zu überprüft. Viele Ressourcen sind aber auch für Client-SKUs konzipiert. Vergessen Sie daher nicht, wenn dies für Sie gilt, sie auf diesen Plattformen ebenfalls zu testen. 
-## <a name="get-dscresource-lists-the-resource"></a>Auflisten der Ressourcen mit „Get-DSCResource“ ##
+<a id="get-dscresource-lists-the-resource" class="xliff"></a>
+## Auflisten der Ressourcen mit „Get-DSCResource“ ##
 Nach der Bereitstellung des Moduls sollte ein Aufruf von „Get-DscResource“ u.a. Ihre Ressource im Ergebnis auflisten. Wenn Sie die Ressource nicht finden können, stellen Sie sicher, dass die Datei „schema.mof“ für die Ressource vorhanden ist. 
-## <a name="resource-module-contains-examples"></a>Ressourcenmodul enthält Beispiele ##
+<a id="resource-module-contains-examples" class="xliff"></a>
+## Ressourcenmodul enthält Beispiele ##
 Erstellen Sie anschauliche Beispiele, die anderen helfen, die Verwendung zu verstehen. Dies ist entscheidend, insbesondere seitdem viele Benutzer Beispielcode als Dokumentation behandeln. 
 - Zunächst sollten Sie die Beispiele bestimmen, die Sie dem Modul hinzufügen möchten. Zumindest sollten die wichtigsten Anwendungsfälle für Ihre Ressource abgedeckt werden:
 - Wenn Ihr Modul mehrere Ressourcen enthält, die für ein End-to-End-Szenario zusammenarbeiten müssen, bietet sich idealerweise das grundlegende End-to-End-Beispiel als Erstes an.
-- Die anfänglichen Beispiele sollten sehr einfach sein und die ersten Schritte mit Ihren Ressourcen in kurzen, übersichtlichen Abschnitten erläutern (z. B. das Erstellen einer neuen virtuellen Festplatte [VHD]).
-- Nachfolgende Beispiele sollten auf diesen Beispielen aufbauen (z. b. Erstellen einer VM anhand einer VHD, Entfernen einer VM, Ändern einer VM) und erweiterte Funktionen veranschaulichen (z. B. das Erstellen einer VM mit dynamischem Arbeitsspeicher).
+- Die anfänglichen Beispiele sollten sehr einfach sein und die ersten Schritte mit Ihren Ressourcen in kurzen, übersichtlichen Abschnitten erläutern (z. B. das Erstellen einer neuen virtuellen Festplatte [VHD]).
+- Nachfolgende Beispiele sollten auf diesen Beispielen aufbauen (z. b. Erstellen einer VM anhand einer VHD, Entfernen einer VM, Ändern einer VM) und erweiterte Funktionen veranschaulichen (z. B. das Erstellen einer VM mit dynamischem Arbeitsspeicher).
 - Beispielkonfigurationen sollten parametrisiert sein (alle Werte sollten als Parameter an die Konfiguration übergeben werden, und es darf keine hartcodierten Werte geben):
 ```powershell
 configuration Sample_xRemoteFile_DownloadFile
@@ -177,7 +188,8 @@ Sample_xRemoteFile_DownloadFile -destinationPath "$env:SystemDrive\fileName.jpg"
 - Schreiben Sie für jedes Beispiel eine kurze Beschreibung mit einer Erläuterung der Funktionsweise und Bedeutung der Parameter. 
 - Vergewissern Sie sich, dass die Beispiele die meisten wichtigen Szenarien für Ihre Ressource abdecken. Wenn nichts fehlt, überprüfen Sie, dass sie alle ausgeführt werden und den Computer in den gewünschten Zustand versetzen.  
 
-## <a name="error-messages-are-easy-to-understand-and-help-users-solve-problems"></a>Leicht verständliche Fehlermeldungen helfen Benutzern bei der Problembehebung ##
+<a id="error-messages-are-easy-to-understand-and-help-users-solve-problems" class="xliff"></a>
+## Leicht verständliche Fehlermeldungen helfen Benutzern bei der Problembehebung ##
 Gute Fehlermeldungen zeichnen sich wie folgt aus:
 - Ihr Vorhandensein: Das größte Problem bei Fehlermeldungen besteht darin, dass sie häufig nicht vorhanden sind. Achten Sie deshalb darauf, dass sie vorhanden sind. 
 - Einfach zu verstehende, von Menschen lesbare, nicht kryptische Fehlercodes.
@@ -185,7 +197,8 @@ Gute Fehlermeldungen zeichnen sich wie folgt aus:
 - Konstruktive Ratschläge zum Beheben des Problems.
 - Höfliche Informationen, die dem Benutzer nicht die Schuld geben oder ihm ein schlechtes Gefühl vermitteln. Stellen Sie sicher, dass Sie Fehler in End-to-End-Szenarien (mit **Start-DscConfiguration**) überprüfen, da sie sich von denjenigen unterscheiden können, die bei direkter Ausführung von Ressourcenfunktionen zurückgegeben werden. 
 
-## <a name="log-messages-are-easy-to-understand-and-informative-including-verbose-debug-and-etw-logs"></a>Protokollmeldungen sind leicht verständlich und informativ (z. B. „–verbose“, „–debug“ und ETW-Protokolle) ##
+<a id="log-messages-are-easy-to-understand-and-informative-including-verbose-debug-and-etw-logs" class="xliff"></a>
+## Protokollmeldungen sind leicht verständlich und informativ (z. B. „–verbose“, „–debug“ und ETW-Protokolle) ##
 Stellen Sie sicher, dass Protokolle, die von der Ressource ausgegeben werden, leicht verständlich und für den Benutzer von Nutzen sind. Ressourcen sollten alle Informationen ausgeben, die für den Benutzer hilfreich sind, doch mehr Protokolle sind nicht unbedingt besser. Sie sollten das Ausgeben redundanter Daten ohne Mehrwert unbedingt vermeiden. Lassen Sie Benutzer nicht Hunderte von Protokolleinträgen durchlaufen, damit sie finden, was sie suchen. Keine Protokolle sind freilich keine akzeptable Lösung dieses Problems. 
 
 Beim Testen sollten Sie auch ausführliche und Debugprotokolle (durch Ausführen von **Start-DscConfiguration** mit den Schaltern „–verbose“ und „–debug“) sowie ETW-Protokolle analysieren. Um ETW-Protokolle für DSC anzuzeigen, wechseln Sie zur Ereignisanzeige, und öffnen Sie den folgenden Ordner: Anwendungen und Dienste -> Microsoft -> Windows -> Konfiguration für den gewünschten Zustand.  In der Standardeinstellung gibt es den Kanal „Betriebsbereit“. Aktivieren Sie vor dem Ausführen der Konfiguration jedoch auch die Kanäle „Analyse“ und „Debuggen“. Zum Aktivieren der Kanäle „Analyse/Debuggen“ können Sie das folgende Skript ausführen:
@@ -202,7 +215,8 @@ if($statusEnabled -eq $log.IsEnabled)
 }     
 Invoke-Expression $commandToExecute 
 ```
-## <a name="resource-implementation-does-not-contain-hardcoded-paths"></a>Ressourcenimplementierung ohne hartcodierte Pfade ##
+<a id="resource-implementation-does-not-contain-hardcoded-paths" class="xliff"></a>
+## Ressourcenimplementierung ohne hartcodierte Pfade ##
 Vergewissern Sie sich, dass es in der Ressourcenimplementierung keine hartcodierten Pfade gibt, insbesondere wenn diese eine Sprache voraussetzen (z. B. en-us), oder wenn es Systemvariablen gibt, die verwendet werden können.
 Wenn Ihre Ressource auf bestimmte Pfade zugreifen muss, verwenden Sie Umgebungsvariablen anstelle eines hartcodierten Pfads, da sich dieser je nach Computer unterscheiden kann.
 
@@ -218,9 +232,11 @@ Können Sie Folgendes schreiben:
 $tempPath = Join-Path $env:temp "MyResource"
 $programFilesPath = ${env:ProgramFiles(x86)} 
 ```
-## <a name="resource-implementation-does-not-contain-user-information"></a>Ressourcenimplementierung ohne Benutzerinformationen ##
+<a id="resource-implementation-does-not-contain-user-information" class="xliff"></a>
+## Ressourcenimplementierung ohne Benutzerinformationen ##
 Stellen Sie sicher, dass im Code keine E-Mail-Adressen, Kontoinformationen oder Namen von Personen vorhanden sind.
-## <a name="resource-was-tested-with-validinvalid-credentials"></a>Ressourcentests mit gültigen/ungültigen Anmeldeinformationen ##
+<a id="resource-was-tested-with-validinvalid-credentials" class="xliff"></a>
+## Ressourcentests mit gültigen/ungültigen Anmeldeinformationen ##
 Wenn Ihre Ressource Anmeldeinformationen als Parameter verwendet:
 - Überprüfen Sie, ob die Ressource funktioniert, wenn das lokale System (oder das Computerkonto für Remoteressourcen) keinen Zugriff hat.
 - Überprüfen Sie, ob die Ressource mit für „Get“, „Set“ und „Test“ angegebenen Anmeldeinformationen funktioniert. 
@@ -229,18 +245,22 @@ Wenn Ihre Ressource Anmeldeinformationen als Parameter verwendet:
   - DFS-Freigaben
   - SAMBA-Freigaben (wenn Sie Linux unterstützen möchten)
 
-## <a name="resource-does-not-require-interactive-input"></a>Die Ressource benötigt keine interaktive Eingabe ##
+<a id="resource-does-not-require-interactive-input" class="xliff"></a>
+## Die Ressource benötigt keine interaktive Eingabe ##
 **Get/Set/Test-TargetResource**-Funktionen sollen automatisch ausgeführt werden und in keiner Phase der Ausführung auf Benutzereingaben warten (platzieren Sie deshalb **Get-Credential** nicht innerhalb dieser Funktionen). Wenn Sie Benutzereingaben bereitstellen müssen, sollten Sie sie in der Kompilierungsphase als Parameter an die Konfiguration übergeben. 
-## <a name="resource-functionality-was-thoroughly-tested"></a>Gründliches Testen der Ressourcenfunktionalität ##
+<a id="resource-functionality-was-thoroughly-tested" class="xliff"></a>
+## Gründliches Testen der Ressourcenfunktionalität ##
 Diese Prüfliste enthält Elemente, die unbedingt getestet werden sollten und/oder oft übersehen werden. Es gibt eine Vielzahl von Tests, hauptsächlich Funktionstests, die spezifisch für die Ressource sind, die Sie testen, und hier nicht erwähnt werden. Vergessen Sie nicht die negativen Testfälle. 
-## <a name="best-practice-resource-module-contains-tests-folder-with-resourcedesignertestsps1-script"></a>Bewährte Methode: Ressourcenmodul enthält den Ordner „Tests“ mit dem Skript „ResourceDesignerTests.ps1“ ##
+<a id="best-practice-resource-module-contains-tests-folder-with-resourcedesignertestsps1-script" class="xliff"></a>
+## Bewährte Methode: Ressourcenmodul enthält den Ordner „Tests“ mit dem Skript „ResourceDesignerTests.ps1“ ##
 Es empfiehlt sich, im Ressourcenmodul den Ordner „Tests“ anzulegen, die Datei „ResourceDesignerTests.ps1“ zu erstellen und über **Test-xDscResource** und **Test-xDscSchema** Tests für alle Ressourcen in einem bestimmten Modul hinzuzufügen. Auf diese Weise können Sie schnell die Schemas aller Ressourcen aus den angegebenen Modulen überprüfen und vor der Veröffentlichung eine Integritätsprüfung vornehmen.
 Für „xRemoteFile“ kann „ResourceTests.ps1“ einfach so aussehen:
 ```powershell
 Test-xDscResource ..\DSCResources\MSFT_xRemoteFile
 Test-xDscSchema ..\DSCResources\MSFT_xRemoteFile\MSFT_xRemoteFile.schema.mof 
 ```
-##<a name="best-practice-resource-folder-contains-resource-designer-script-for-generating-schema"></a>Bewährte Methode: Ressourcenordner enthält Ressourcen-Designer-Skript zur Generierung des Schemas##
+<a id="best-practice-resource-folder-contains-resource-designer-script-for-generating-schema" class="xliff"></a>
+##Bewährte Methode: Ressourcenordner enthält Ressourcen-Designer-Skript zum Generieren des Schemas##
 Jede Ressource sollte ein Ressourcen-Designer-Skript enthalten, mit dem ein MOF-Schema der Ressource generiert wird. Diese Datei sollte in <ResourceName>\ResourceDesignerScripts abgelegt und „Generate<ResourceName>Schema.ps1“ genannt werden. Bei der Ressource „xRemoteFile“ würde diese Datei „GenerateXRemoteFileSchema.ps1“ heißen und Folgendes beinhalten:
 ```powershell 
 $DestinationPath = New-xDscResourceProperty -Name DestinationPath -Type String -Attribute Key -Description 'Path under which downloaded or copied file should be accessible after operation.'
@@ -253,9 +273,10 @@ $CertificateThumbprint = New-xDscResourceProperty -Name CertificateThumbprint -T
 
 New-xDscResource -Name MSFT_xRemoteFile -Property @($DestinationPath, $Uri, $Headers, $UserAgent, $Ensure, $Credential, $CertificateThumbprint) -ModuleName xPSDesiredStateConfiguration2 -FriendlyName xRemoteFile 
 ```
-## <a name="best-practice-resource-supports--whatif"></a>Bewährte Methode: Die Ressource unterstützt „-whatif“ ##
+<a id="best-practice-resource-supports--whatif" class="xliff"></a>
+## Bewährte Methode: Die Ressource unterstützt „-whatif“ ##
 Wenn mit der Ressource „gefährliche“ Vorgänge ausgeführt werden, empfiehlt es sich, „-whatif“-Funktionalität zu implementieren. Nachdem dies erfolgt ist, stellen Sie sicher, dass die „whatif“-Ausgabe Vorgänge ordnungsgemäß beschreibt, die eintreten würden, wenn der Befehl ohne den Schalter „whatif“ ausgeführt würde.
-Vergewissern Sie sich auch, dass wenn der Schalter „-whatif“ vorhanden ist, keine Vorgänge ausgeführt werden (d. h. keine Änderungen am Zustand des Knotens erfolgen). Angenommen, wir testen die Ressource „File“. Nachstehend finden Sie einfache Konfiguration, die die Datei „test.txt“ mit dem Inhalt „test“ erstellt:
+Vergewissern Sie sich auch, dass wenn der Schalter „-whatif“ vorhanden ist, keine Vorgänge ausgeführt werden (d. h. keine Änderungen am Zustand des Knotens erfolgen). Angenommen, wir testen die Ressource „File“. Nachstehend finden Sie einfache Konfiguration, die die Datei „test.txt“ mit dem Inhalt „test“ erstellt:
 ```powershell
 configuration config
 {
@@ -296,3 +317,4 @@ VERBOSE: Operation 'Invoke CimMethod' complete.
 ```
 
 Diese Liste ist nicht vollständig. Sie deckt jedoch viele wichtige Aspekte ab, die beim Entwerfen, Entwickeln und Testen von DSC-Ressourcen auftreten können.
+

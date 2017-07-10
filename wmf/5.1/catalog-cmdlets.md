@@ -1,22 +1,22 @@
 ---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
 title: Katalog-Cmdlets
-ms.date: 2016-07-13
-keywords: PowerShell, DSC, WMF
-description: 
-ms.topic: article
-author: keithb
-manager: carolz
-ms.prod: powershell
-ms.technology: WMF
-ms.openlocfilehash: 6986e7b8543ce38c0330e6428ac908ca7f126e08
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.openlocfilehash: 88ca8a3366f7b1d83ba2596d7ae1230427797cf4
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="catalog-cmdlets"></a>Katalog-Cmdlets  
+<a id="catalog-cmdlets" class="xliff"></a>
+# Katalog-Cmdlets  
 
 Dem [Microsoft.Powershell.Secuity](https://technet.microsoft.com/en-us/library/hh847877.aspx)-Modul wurden zwei neue Cmdlets hinzugefügt. Sie generieren und überprüfen Windows-Katalogdateien.  
 
-## <a name="new-filecatalog"></a>New-FileCatalog 
+<a id="new-filecatalog" class="xliff"></a>
+## New-FileCatalog 
 --------------------------------
 
 `New-FileCatalog` erstellt eine Windows-Katalogdatei für eine Gruppe von Ordnern und Dateien. Eine Katalogdatei enthält die Hashes aller Dateien in bestimmten Pfaden. Benutzer können den Satz von Ordnern zusammen mit den entsprechenden Katalogdateien verteilen, die diese Ordner darstellen. Eine Katalogdatei kann vom Empfänger des Inhalts verwendet werden, um zu überprüfen, ob an den Ordnern Änderungen vorgenommen wurden, nachdem der Katalog erstellt wurde.    
@@ -39,7 +39,8 @@ Dadurch wird die Katalogdatei erstellt.
 Die Katalogdatei (im obigen Beispiel: „pester.cat“) muss mit dem Cmdlet [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) signiert werden, um ihre Integrität zu überprüfen.   
 
 
-## <a name="test-filecatalog"></a>Test-FileCatalog 
+<a id="test-filecatalog" class="xliff"></a>
+## Test-FileCatalog 
 --------------------------------
 
 `Test-FileCatalog` überprüft den Katalog, der einen Satz von Ordnern darstellt. 
@@ -51,3 +52,4 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 ![](../images/TestFileCatalog.jpg)
 
 Dieses Cmdlet vergleicht die Hashes aller Dateien und deren relative Pfade in der Katalogdatei mit denen, die auf dem Datenträger gespeichert sind. Wenn das Cmdlet eine Unstimmigkeit zwischen den Dateihashes und den Pfaden entdeckt, gibt es den Status `ValidationFailed` zurück. Benutzer können alle diese Informationen mithilfe des Schalters `Detailed` abrufen. Der Signierstatus des Katalogs wird im Feld `Signature` angezeigt, was dem Aufrufen des Cmdlets [Get-AuthenticodeSignature](https://technet.microsoft.com/en-us/library/hh849805.aspx) für die Katalogdatei entspricht. Benutzer können außerdem jede Datei während der Überprüfung mithilfe des Parameters `FilesToSkip` überspringen. 
+

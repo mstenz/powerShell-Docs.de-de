@@ -1,23 +1,24 @@
 ---
+ms.date: 2017-06-12
+author: eslesar
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
 title: "DSC-Ressource „PackageManagement“"
-ms.date: 
-keywords: powershell,DSC
-description: 
-ms.topic: article
-author: brywang-msft
-manager: kriscv
-ms.prod: powershell
-ms.openlocfilehash: 33775be230a4e92e22784d991338510510f69889
-ms.sourcegitcommit: 89e7ae30faff5f96641fc72764bdc76e0e257bc2
-translationtype: HT
+ms.openlocfilehash: a984fbf5db561a696d89b60dde8b92096c6e4924
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-packagemanagement-resource"></a>DSC-Ressource „PackageManagement“
+<a id="dsc-packagemanagement-resource" class="xliff"></a>
+# DSC-Ressource „PackageManagement“
 
 > Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Die Ressource **PackageManagement** in Windows PowerShell Desired State Configuration (DSC) bietet einen Mechanismus zum Installieren oder Deinstallieren von Paketverwaltungspaketen auf einem Zielknoten. Diese Ressource erfordert das Modul **PackageManagement**, das unter „http://PowerShellGallery.com“ verfügbar ist.
 
-## <a name="syntax"></a>Syntax
+<a id="syntax" class="xliff"></a>
+## Syntax
 
 ```
 PackageManagement [string] #ResourceName
@@ -34,7 +35,8 @@ PackageManagement [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>Eigenschaften
+<a id="properties" class="xliff"></a>
+## Eigenschaften
 |  Eigenschaft  |  Beschreibung   | 
 |---|---| 
 | Name| Gibt den Namen des Pakets an, das installiert oder deinstalliert werden soll.| 
@@ -47,14 +49,16 @@ PackageManagement [string] #ResourceName
 | ProviderName| Gibt den Namen eines Paketanbieters an, auf den Ihre Paketsuche sich erstrecken soll. Paketanbieternamen können Sie durch Ausführen des Cmdlets „Get-PackageProvider“ abrufen.| 
 | AdditionalParameters| Anbieterspezifische Parameter, die als eine Hashtabelle übergeben werden. Für NuGet-Anbieter können Sie z. B. zusätzliche Parameter wie „DestinationPath“ übergeben.| 
 
-## <a name="additional-parameters"></a>Zusätzliche Parameter
+<a id="additional-parameters" class="xliff"></a>
+## Zusätzliche Parameter
 In der folgenden Tabelle sind die Optionen für die Eigenschaft „AdditionalParameters“ aufgeführt.
 |  Parameter  | Beschreibung   | 
 |---|---|
 | DestinationPath| Wird von Anbietern wie dem integrierten NuGet-Anbieter verwendet. Gibt einen Dateispeicherort an, an dem das Paket installiert werden soll.|
 | InstallationPolicy| Wird von Anbietern wie dem integrierten NuGet-Anbieter verwendet. Bestimmt, ob Sie der Paketquelle vertrauen. Entweder „Nicht vertrauenswürdig“, oder „Vertrauenswürdig“.|
 
-## <a name="example"></a>Beispiel
+<a id="example" class="xliff"></a>
+## Beispiel
 
 In diesem Beispiel werden das NuGet-Paket **JQuery** und das PowerShell-Modul **GistProvider** mithilfe der DSC-Ressource **PackageManagement** installiert. In diesem Beispiel wird zunächst sichergestellt, dass die erforderlichen Paketquellen verfügbar sind. Anschließend wird der erwartete Zustand der **JQuery**- und **GistProvider**-Pakete (NuGet bzw. PowerShell) definiert.
 
@@ -97,3 +101,4 @@ Configuration PackageTest
     }
 }
 ```
+

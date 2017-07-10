@@ -1,19 +1,17 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: PowerShell, Cmdlet, Katalog
-ms.date: 2016-10-14
-contributor: manikb
+ms.date: 2017-06-12
+contributor: JKeithB
+ms.topic: conceptual
+keywords: gallery,powershell,cmdlet,psgallery
 title: "ScriptAnalyzer-Regel – Profil für den Katalog | MSDN"
-ms.technology: powershell
-ms.openlocfilehash: 3274b66203044c0ed9fc1135cea7472428eb753e
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.openlocfilehash: b178f198c9643fb39a6499d7e957cfd0d848c52d
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="scriptanazlyer-rule-profile-for-gallery"></a>ScriptAnalyzer-Regel – Profil für den Katalog
+<a id="scriptanazlyer-rule-profile-for-gallery" class="xliff"></a>
+# ScriptAnalyzer-Regel – Profil für den Katalog
 Um die Qualität der im PowerShell-Katalog veröffentlichen Elemente sicherzustellen, werden [PowerShell ScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer)-Regeln ausgeführt, die die eingereichten Skripts auf Verstöße überprüfen.
 
 Eine Liste der ausgeführte Regeln finden Sie auf der [GitHub-Seite von ScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer/blob/development/Engine/Settings/PSGallery.psd1).

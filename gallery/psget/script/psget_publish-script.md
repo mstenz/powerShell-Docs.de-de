@@ -1,37 +1,39 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: PowerShell, Cmdlet, Katalog
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: Publish-Script | MSDN
-ms.technology: powershell
-ms.openlocfilehash: 2619738ba76ed3b3c84d1a77771531ebd6955d6f
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: gallery,powershell,cmdlet,psget
+title: Publish-Script
+ms.openlocfilehash: 0d2fd87645d2286e87e68198844adce8909739cb
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="publish-script"></a>Publish-Script
+<a id="publish-script" class="xliff"></a>
+# Publish-Script
 
 Das Cmdlet „Publish-Script“ veröffentlicht das angegebene Skript im Onlinekatalog.
 
-## <a name="description"></a>Beschreibung
+<a id="description" class="xliff"></a>
+## Beschreibung
 
 Mit dem Cmdlet „Publish-Script“ können Sie Ihre Skriptdatei mit gültigen Metadaten wie „Version“, „Guid“, „Author“ und „Description“ veröffentlichen. Der Switchparameter „Force“ im Cmdlet „Publish-Script“ startet „NuGet.exe“ ohne Eingabeaufforderung.
 
-## <a name="cmdlet-syntax"></a>Cmdlet-Syntax
+<a id="cmdlet-syntax" class="xliff"></a>
+## Cmdlet-Syntax
 
 ```powershell
 Get-Command -Name Publish-Script -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a>Cmdlet-Onlinehilfe
+<a id="cmdlet-online-help-reference" class="xliff"></a>
+## Cmdlet-Onlinehilfe
 
 [Publish-Script](http://go.microsoft.com/fwlink/?LinkId=619788)
 
-## <a name="example-commands"></a>Beispiele für Befehle
+<a id="example-commands" class="xliff"></a>
+## Beispiele für Befehle
 
 ```powershell
 # Publish the really basic script file with required metadata

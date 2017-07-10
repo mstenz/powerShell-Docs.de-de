@@ -1,4 +1,16 @@
-# <a name="allowing-for-identical-duplicate-resources-in-a-configuration"></a>Zulassen identischer doppelter Ressourcen in einer Konfiguration
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
+ms.openlocfilehash: d3a625d05eaf4e7448b4abf90499f6a94e2f7718
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
+---
+<a id="allowing-for-identical-duplicate-resources-in-a-configuration" class="xliff"></a>
+# Zulassen identischer doppelter Ressourcen in einer Konfiguration
 
 DSC lässt keine in Konflikt stehenden Ressourcendefinitionen in einer Konfiguration zu bzw. behandeln diese nicht. Anstatt zu versuchen, den Konflikt zu lösen, tritt ein Fehler auf. Sobald die Wiederverwendung von Konfigurationen mittels zusammengesetzter Ressourcen häufiger vorkommt, werden Konflikte häufiger auftreten. Wenn in Konflikt stehende Ressourcendefinitionen identisch sind, sollte DSC diese intelligent zulassen. In dieser Version unterstützen wir mehrere Ressourceninstanzen, die identische Definitionen aufweisen:
 
@@ -85,3 +97,4 @@ Configuration WebApplication
 ```
 
 Diese sehr ähnliche Konfiguration ist nicht erfolgreich, da die Ressourcen „WindowsFeature FE_IIS“ und „WindowsFeature Worker_IIS“ nicht mehr identisch sind und daher in Konflikt stehen.
+
