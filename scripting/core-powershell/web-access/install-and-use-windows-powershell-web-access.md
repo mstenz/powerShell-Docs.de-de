@@ -1,18 +1,15 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: Installieren und Verwenden von Windows PowerShell Web Access
-ms.technology: powershell
-ms.openlocfilehash: f2a908b670d1a0aba3ca0912aed0ff7e3c5bba1f
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: a860f7c22829da46f0458ea729fa0afd1fe4fb6f
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/08/2017
 ---
-#  <a name="install-and-use-windows-powershell-web-access"></a>Installieren und Verwenden von Windows PowerShell Web Access
+<a id="install-and-use-windows-powershell-web-access" class="xliff"></a>
+#  Installieren und Verwenden von Windows PowerShell Web Access
 
 Aktualisiert: 5. November 2013
 
@@ -138,7 +135,8 @@ Sie können das Windows PowerShell Web Access-Gateway auf einem Server mit Windo
 
 ------------------------------------------------------------------------
 
-#### <a name="to-install-windows-powershell-web-access-by-using-windows-powershell-cmdlets"></a>So installieren Sie Windows PowerShell Web Access mithilfe von Windows PowerShell-Cmdlets
+<a id="to-install-windows-powershell-web-access-by-using-windows-powershell-cmdlets" class="xliff"></a>
+#### So installieren Sie Windows PowerShell Web Access mithilfe von Windows PowerShell-Cmdlets
 
 1.  Öffnen Sie eine Windows PowerShell-Sitzung mit erhöhten Benutzerrechten, indem Sie einen der folgenden Schritte durchführen.
 
@@ -211,7 +209,7 @@ Sie können die Konfiguration der Windows PowerShell Web Access-Webanwendung dur
 </colgroup>
 <thead>
 <tr class="header">
-<th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC17938.jpeg" title="System_CAPS_security" alt="System_CAPS_security" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-security" /></span><span class="alertTitle"> Sicherheitshinweis </span></th>
+<th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC17938.jpeg" title="System_CAPS_security" alt="System_CAPS_security" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-security" /></span><span class="alertTitle">Sicherheitshinweis </span></th>
 </tr>
 </thead>
 <tbody>
@@ -225,13 +223,14 @@ Sie können die Konfiguration der Windows PowerShell Web Access-Webanwendung dur
 
 -   [So verwenden Sie Install-PswaWebApplication und IIS-Manager, um das Windows PowerShell Web Access-Gateway mit einem Originalzertifikat zu konfigurieren](#BKMK_gencert)
 
-#### <a name="to-configure-the-windows-powershell-web-access-gateway-with-a-test-certificate-by-using-install-pswawebapplication"></a>So verwenden Sie das Install-PswaWebApplication-Cmdlet, um das Windows PowerShell Web Access-Gateway mit einem Testzertifikat zu konfigurieren
+<a id="to-configure-the-windows-powershell-web-access-gateway-with-a-test-certificate-by-using-install-pswawebapplication" class="xliff"></a>
+#### So verwenden Sie das Install-PswaWebApplication-Cmdlet, um das Windows PowerShell Web Access-Gateway mit einem Testzertifikat zu konfigurieren
 
 1.  Öffnen Sie eine Windows PowerShell-Sitzung, indem Sie einen der folgenden Schritte durchführen.
 
     -   Klicken Sie auf dem Windows-Desktop mit der rechten Maustaste auf der Taskleiste auf **Windows PowerShell**.
 
-    -   Klicken Sie auf der Windows-Startseite** **auf **Windows PowerShell**.
+    -   Klicken Sie auf der Windows-Startseite**** auf **Windows PowerShell**.
 
 2.  Geben Sie Folgendes ein, und drücken Sie anschließend die **EINGABETASTE**.
 
@@ -285,13 +284,14 @@ Sie können die Konfiguration der Windows PowerShell Web Access-Webanwendung dur
     </tbody>
     </table>
 
-#### <a name="to-configure-the-windows-powershell-web-access-gateway-with-a-genuine-certificate-by-using-install-pswawebapplication-and-iis-manager"></a>So verwenden Sie Install-PswaWebApplication und IIS-Manager, um das Windows PowerShell Web Access-Gateway mit einem Originalzertifikat zu konfigurieren
+<a id="to-configure-the-windows-powershell-web-access-gateway-with-a-genuine-certificate-by-using-install-pswawebapplication-and-iis-manager" class="xliff"></a>
+#### So verwenden Sie Install-PswaWebApplication und IIS-Manager, um das Windows PowerShell Web Access-Gateway mit einem Originalzertifikat zu konfigurieren
 
 1.  Öffnen Sie eine Windows PowerShell-Sitzung, indem Sie einen der folgenden Schritte durchführen.
 
     -   Klicken Sie auf dem Windows-Desktop mit der rechten Maustaste auf der Taskleiste auf **Windows PowerShell**.
 
-    -   Klicken Sie auf der Windows-Startseite** **auf **Windows PowerShell**.
+    -   Klicken Sie auf der Windows-Startseite**** auf **Windows PowerShell**.
 
 2.  Geben Sie Folgendes ein, und drücken Sie anschließend die **EINGABETASTE**.
 
@@ -311,7 +311,7 @@ Sie können die Konfiguration der Windows PowerShell Web Access-Webanwendung dur
 
     -   Starten Sie auf dem Windows-Desktop den Server-Manager, indem Sie in der Windows-Taskleiste auf **Server-Manager** klicken. Klicken Sie im Menü **Tools** im Server-Manager auf **Internetinformationsdienste-Manager (IIS)**.
 
-    -   Klicken Sie auf der Windows-Startseite** **auf **Server-Manager**.
+    -   Klicken Sie auf der Windows-Startseite**** auf **Server-Manager**.
 
 4.  Erweitern Sie im IIS-Manager-Strukturbereich den Knoten für den Server, auf dem Windows PowerShell Web Access installiert ist, bis der Ordner **Sites** sichtbar ist. Erweitern Sie den Ordner **Sites**.
 
@@ -352,7 +352,8 @@ Nach der Installation von Windows PowerShell Web Access und der Konfiguration de
 
 Weitere Informationen zu Windows PowerShell Web Access-Autorisierungsregeln und -Sicherheit finden Sie unter [Autorisierungsregeln und Sicherheitsfeatures von Windows PowerShell Web Access](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx).
 
-#### <a name="to-add-a-restrictive-authorization-rule"></a>So fügen Sie eine restriktive Autorisierungsregel hinzu
+<a id="to-add-a-restrictive-authorization-rule" class="xliff"></a>
+#### So fügen Sie eine restriktive Autorisierungsregel hinzu
 
 1.  Öffnen Sie eine Windows PowerShell-Sitzung mit erhöhten Benutzerrechten, indem Sie einen der folgenden Schritte durchführen.
 
@@ -394,13 +395,14 @@ Sie können das Windows PowerShell Web Access-Gateway auf einem Server mit Windo
 
 ------------------------------------------------------------------------
 
-#### <a name="to-install-windows-powershell-web-access-by-using-the-add-roles-and-features-wizard"></a>So installieren Sie Windows PowerShell Web Access mithilfe des Assistenten zum Hinzufügen von Rollen und Features
+<a id="to-install-windows-powershell-web-access-by-using-the-add-roles-and-features-wizard" class="xliff"></a>
+#### So installieren Sie Windows PowerShell Web Access mithilfe des Assistenten zum Hinzufügen von Rollen und Features
 
 1.  Wenn der Server-Manager bereits geöffnet ist, fahren Sie mit dem nächsten Schritt fort. Ist der Server-Manager noch nicht geöffnet, öffnen Sie ihn mit einer der folgenden Aktionen.
 
     -   Starten Sie auf dem Windows-Desktop den Server-Manager, indem Sie in der Windows-Taskleiste auf **Server-Manager** klicken.
 
-    -   Klicken Sie auf der Windows-Startseite** **auf **Server-Manager**.
+    -   Klicken Sie auf der Windows-Startseite**** auf **Server-Manager**.
 
 2.  Klicken Sie im Menü **Verwalten** auf **Rollen und Funktionen hinzufügen**.
 
@@ -446,7 +448,8 @@ Die Anweisungen in diesem Abschnitt gelten für die Installation der Windows Pow
 
 -   
 
-#### <a name="to-use-iis-manager-to-configure-the-gateway-in-an-existing-website"></a>So verwenden Sie den IIS-Manager, um das Gateway auf einer vorhandenen Website zu konfigurieren
+<a id="to-use-iis-manager-to-configure-the-gateway-in-an-existing-website" class="xliff"></a>
+#### So verwenden Sie den IIS-Manager, um das Gateway auf einer vorhandenen Website zu konfigurieren
 
 1.  Öffnen Sie die IIS-Manager-Konsole, indem Sie eine der folgenden Aktionen ausführen:
 
@@ -454,7 +457,7 @@ Die Anweisungen in diesem Abschnitt gelten für die Installation der Windows Pow
 
     -   Geben Sie auf dem Windows-**Startbildschirm** einen beliebigen Teil des Namens **Internetinformationsdienste-Manager (IIS)** ein. Klicken Sie auf die Verknüpfung, wenn diese in den **Apps**-Ergebnissen angezeigt wird.
 
-2.  Erstellen Sie einen neuen Anwendungspool für Windows PowerShell Web Access. Erweitern Sie den Knoten des Gatewayservers im IIS-Manager-Strukturbereich, wählen Sie die **Anwendungspools** aus, und klicken Sie im Bereich** Aktionen** auf **Anwendungspool hinzufügen**.
+2.  Erstellen Sie einen neuen Anwendungspool für Windows PowerShell Web Access. Erweitern Sie den Knoten des Gatewayservers im IIS-Manager-Strukturbereich, wählen Sie die **Anwendungspools** aus, und klicken Sie im Bereich **Aktionen** auf **Anwendungspool hinzufügen**.
 
 3.  Fügen Sie einen neuen Anwendungspool mit dem Namen **pswa_pool** hinzu, oder geben Sie einen anderen Namen an. Klicken Sie auf **OK**.
 
@@ -508,7 +511,8 @@ Die Anweisungen in diesem Abschnitt gelten für die Installation der Windows Pow
 
         c:\windows\system32\icacls.exe $authorizationFile
 
-#### <a name="to-use-iis-manager-to-configure-the-gateway-as-a-root-website-with-a-test-certificate"></a>So verwenden Sie den IIS-Manager, um das Gateway als Stammwebsite mit einem Testzertifikat zu konfigurieren
+<a id="to-use-iis-manager-to-configure-the-gateway-as-a-root-website-with-a-test-certificate" class="xliff"></a>
+#### So verwenden Sie den IIS-Manager, um das Gateway als Stammwebsite mit einem Testzertifikat zu konfigurieren
 
 1.  Öffnen Sie die IIS-Manager-Konsole, indem Sie eine der folgenden Aktionen ausführen:
 
@@ -586,7 +590,8 @@ Nach der Installation von Windows PowerShell Web Access und der Konfiguration de
 
 Weitere Informationen zu Windows PowerShell Web Access-Autorisierungsregeln und -Sicherheit finden Sie unter [Autorisierungsregeln und Sicherheitsfeatures von Windows PowerShell Web Access](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx).
 
-#### <a name="to-add-a-restrictive-authorization-rule"></a>So fügen Sie eine restriktive Autorisierungsregel hinzu
+<a id="to-add-a-restrictive-authorization-rule" class="xliff"></a>
+#### So fügen Sie eine restriktive Autorisierungsregel hinzu
 
 1.  Öffnen Sie eine Windows PowerShell-Sitzung mit erhöhten Benutzerrechten, indem Sie einen der folgenden Schritte durchführen.
 
@@ -621,7 +626,8 @@ Nachdem Sie eine Autorisierungsregel konfiguriert haben, können sich autorisier
 
 Für sichere Produktionsumgebungen sollten Sie stets ein gültiges, von einer Zertifizierungsstelle (ZS) signiertes SSL-Zertifikat verwenden. In diesem Abschnitt wird das Verfahren beschrieben, mit dem Sie ein gültiges SSL-Zertifikat von einer Zertifizierungsstelle beziehen und anwenden.
 
-### <a name="to-configure-an-ssl-certificate-in-iis-manager"></a>So konfigurieren Sie ein SSL-Zertifikat im IIS-Manager
+<a id="to-configure-an-ssl-certificate-in-iis-manager" class="xliff"></a>
+### So konfigurieren Sie ein SSL-Zertifikat im IIS-Manager
 
 1.  Wählen Sie im IIS-Manager-Strukturbereich den Server aus, auf dem Windows PowerShell Web Access installiert ist.
 

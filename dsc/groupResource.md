@@ -1,25 +1,24 @@
 ---
-title: "DSC-Ressource „Group“"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: db2a12141ab1eaca73bf958b5a27ef2a356d5b8f
-ms.sourcegitcommit: 6057e6d22ef8a2095af610e0d681e751366a9773
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: "DSC-Ressource „Group“"
+ms.openlocfilehash: 6fb6c5f9593687d7204ff31fddd9bca978ed2707
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/08/2017
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-group-resource"></a>DSC-Ressource „Group“
+<a id="dsc-group-resource" class="xliff"></a>
+# DSC-Ressource „Group“
 
 > Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Die Ressource „Group“ in Windows PowerShell DSC bietet einen Mechanismus zum Verwalten lokaler Gruppen auf dem Zielknoten.
 
-## <a name="syntax"></a>Syntax
+<a id="syntax" class="xliff"></a>
+## Syntax
 ```
 Group [string] #ResourceName
 {
@@ -34,7 +33,8 @@ Group [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>Eigenschaften
+<a id="properties" class="xliff"></a>
+## Eigenschaften
 
 |  Eigenschaft  |  Beschreibung   | 
 |---|---| 
@@ -47,7 +47,8 @@ Group [string] #ResourceName
 | MembersToInclude| Verwenden Sie diese Eigenschaft, um Member zur vorhandenen Gruppenmitgliedschaft hinzuzufügen. Der Wert dieser Eigenschaft ist ein Zeichenfolgenarray im Format *Domäne*\\*Benutzername*. Wenn Sie diese Eigenschaft in einer Konfiguration festgelegt haben, verwenden Sie die Eigenschaft **Members** nicht. Andernfalls wird ein Fehler generiert.| 
 | DependsOn | Gibt an, dass die Konfiguration einer anderen Ressource ausgeführt werden muss, bevor diese Ressource konfiguriert wird. Wenn beispielsweise die ID des Skriptblocks mit der Ressourcenkonfiguration, den Sie zuerst ausführen möchten, __ResourceName__ und dessen Typ __ResourceType__ ist, lautet die Syntax für das Verwenden dieser Eigenschaft „DependsOn = „[ResourceType]ResourceName“.| 
 
-## <a name="example-1"></a>Beispiel 1
+<a id="example-1" class="xliff"></a>
+## Beispiel 1
 
 Im folgenden Beispiel wird veranschaulicht, wie sichergestellt wird, dass eine Gruppe namens „TestGroup“ nicht vorhanden ist. 
 
@@ -60,7 +61,8 @@ Group GroupExample
     GroupName = "TestGroup"
 }
 ```
-## <a name="example-2"></a>Beispiel 2
+<a id="example-2" class="xliff"></a>
+## Beispiel 2
 Im folgenden Beispiel wird veranschaulicht, wie Sie einen Active Directory-Benutzer der lokalen Administratorengruppe als Teil eines Testbuilds für mehrere Computer hinzufügen, bei dem Sie bereits PS-Anmeldeinformationen (PSCredential) für das Konto „Lokaler Administrator“ verwenden. Da diese auch für das Domänenadministratorkonto (nach der Domänenhöherstufung) verwendet werden, müssen wir diese vorhandenen PSCredential dann in domänenkompatible Anmeldeinformationen konvertieren, um es uns zu ermöglichen, der Gruppe „Lokale Administratoren“ auf dem Mitgliedsserver einen Domänenbenutzer hinzuzufügen.
 
 ```powershell
@@ -90,7 +92,8 @@ Group AddADUserToLocalAdminGroup
         }
 ```
 
-## <a name="example-3"></a>Beispiel 3
+<a id="example-3" class="xliff"></a>
+## Beispiel 3
 Das folgende Beispiel zeigt, wie sichergestellt wird, dass die lokale Gruppe „TigerTeamAdmins“ auf dem Server „TigerTeamSource.Contoso.Com“ ein bestimmtes Domänenkonto, „Contoso\JerryG“, nicht enthält.  
 
 ```powershell
@@ -109,3 +112,4 @@ Configuration SecureTigerTeamSrouce
   }
 }
 ```
+

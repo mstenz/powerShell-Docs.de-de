@@ -1,22 +1,23 @@
 ---
-title: Erste Schritte mit Windows PowerShell DSC
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 3a59f76919c0a63f269ca587d358020825412be4
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: Erste Schritte mit Windows PowerShell DSC
+ms.openlocfilehash: 403badd11749cfa5c6a5d07e1b537fa3a5f954da
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="getting-started-with-powershell-desired-state-configuration"></a>Erste Schritte mit Windows PowerShell DSC #
+<a id="getting-started-with-powershell-desired-state-configuration" class="xliff"></a>
+# Erste Schritte mit Windows PowerShell DSC #
 
 In dieser Anleitung wird erläutert, wie PowerShell DSC-Dokumente erstellt und auf Computer angewendet werden. Grundkenntnisse von PowerShell-Cmdlets, Modulen und Funktionen werden vorausgesetzt. 
 
 
-## <a name="create-a-configuration"></a>Erstellen einer Konfiguration ##
+<a id="create-a-configuration" class="xliff"></a>
+## Erstellen einer Konfiguration ##
 
 [**Konfigurationen**](https://msdn.microsoft.com/en-us/powershell/dsc/configurations) sind Dokumente, die eine Umgebung beschreiben. Umgebungen bestehen aus **Knoten**, bei denen es sich um virtuelle oder physische Computer handelt. 
 
@@ -39,7 +40,8 @@ configuration MyFirstConfiguration
 
 }
 ```
-## <a name="parts-of-a-configuration"></a>Teile einer Konfiguration ##
+<a id="parts-of-a-configuration" class="xliff"></a>
+## Teile einer Konfiguration ##
 **Configuration** ist ein Schlüsselwort, das PowerShell 4.0 hinzugefügt wurde. Es bezeichnet eine spezielle Art von PowerShell-Funktion, die von DSC verwendet wird. In diesem Beispiel heißt die Funktion „myFirstConfiguration“. 
 
 Die nächste Zeile ist eine Importanweisung wie zum Importieren eines Moduls. Sie wird weiter unten besprochen.

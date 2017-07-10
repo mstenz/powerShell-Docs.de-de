@@ -1,18 +1,15 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: Verwendung der webbasierten Windows PowerShell-Konsole
-ms.technology: powershell
-ms.openlocfilehash: ea530d346ec36000da331b287f51d8f732947629
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 48ed1646c00f909c4e950f197f51a30205060ef0
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/08/2017
 ---
-#  <a name="use-the-web-based-windows-powershell-console"></a>Verwendung der webbasierten Windows PowerShell-Konsole
+<a id="use-the-web-based-windows-powershell-console" class="xliff"></a>
+#  Verwendung der webbasierten Windows PowerShell-Konsole
 
 Aktualisiert: 24. Juni 2013
 
@@ -90,7 +87,8 @@ Browser müssen folgende Anforderungen erfüllen, um die webbasierte Windows Pow
 
 Ihr Windows PowerShell Web Access-Administrator sollten Ihnen eine URL bereitstellen, die die Adresse der Website des Windows PowerShell Web Access-Gateways Ihrer Organisation ist. Standardmäßig ist die Adresse dieser Website „https://&lt;server_name&gt;/pswa“. Bevor Sie sich bei Windows PowerShell Web Access anmelden, sollten Sie sichergehen, dass Sie über den Namen oder die IP-Adresse des zu verwaltenden Remotecomputers verfügen. Sie müssen auf dem Remotecomputer ein autorisierter Benutzer sein. Außerdem müssen Sie darauf die Remoteverwaltung zulassen. Weitere Informationen dazu, wie Sie Ihren Computer so konfigurieren, dass eine Remoteverwaltung möglich ist, finden Sie unter [Aktivieren und Verwenden von Remotebefehlen in Windows PowerShell](https://technet.microsoft.com/magazine/ff700227.aspx). Die einfachste Möglichkeit, die Remoteverwaltung auf Ihrem Computer zu konfigurieren, besteht in der Ausführung des Cmdlets **Enable-PSRemoting -force** auf dem Computer in einer Windows PowerShell-Sitzung, die mit erhöhten Benutzerrechten (**Als Administrator ausführen**) geöffnet wurde.
 
-### <a name="to-sign-in-to-windows-powershell-web-access"></a>So melden Sie sich bei Windows PowerShell Web Access an
+<a id="to-sign-in-to-windows-powershell-web-access" class="xliff"></a>
+### So melden Sie sich bei Windows PowerShell Web Access an
 
 1.  Öffnen Sie die Windows PowerShell Web Access-Website in einem Fenster oder auf einer Registerkarte des Internetbrowsers.
 

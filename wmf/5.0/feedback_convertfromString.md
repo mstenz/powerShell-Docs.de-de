@@ -1,4 +1,16 @@
-# <a name="extract-and-parse-structured-objects-out-of-string"></a>Extrahieren und Analysieren von strukturierten Objekten aus einer Zeichenfolge
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,setup
+ms.openlocfilehash: 3413672e73705252225300a853c10a514500baa2
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
+---
+<a id="extract-and-parse-structured-objects-out-of-string" class="xliff"></a>
+# Extrahieren und Analysieren von strukturierten Objekten aus einer Zeichenfolge
 Auch das Cmdlet „ConvertFrom-String“ weist einige neue Funktionen auf:
 
 -   Die „ExtentText“-Eigenschaft wird standardmäßig entfernt. Sie können sie mit dem „-IncludeExtent“-Parameter einschließen.
@@ -8,7 +20,8 @@ Auch das Cmdlet „ConvertFrom-String“ weist einige neue Funktionen auf:
 -   Neuer „-UpdateTemplate“-Parameter zum Speichern der Ergebnisse des lernenden Algorithmus in einem Kommentar in der Vorlagendatei. Dadurch wird der Lernprozess (die langsamste Phase) zu einem einmaligen Aufwand. Das Ausführen von „Convert-String“ mit einer Vorlage, die den codierten lernenden Algorithmus enthält, erfolgt nun fast unmittelbar.
 
 
-<a name="extract-and-parse-structured-objects-out-of-string-content"></a>Extrahieren und Analysieren von strukturierten Objekten aus einer Zeichenfolge
+<a id="extract-and-parse-structured-objects-out-of-string-content" class="xliff"></a>
+Extrahieren und Analysieren von strukturierten Objekten aus einer Zeichenfolge
 ----------------------------------------------------------
 
 In Zusammenarbeit mit [Microsoft Research](http://research.microsoft.com/) wurde das neue Cmdlet **ConvertFrom-String** hinzugefügt.
@@ -17,8 +30,7 @@ Dieses Cmdlet unterstützt zwei Modi: getrennte Analyse und von einem automatisc
 
 Bei der getrennten Analyse wird die Eingabe standardmäßig bei Leerzeichen getrennt, wobei den resultierenden Gruppen Eigenschaftsnamen zugewiesen werden. Sie können das Trennzeichen anpassen:
 
-> 1 \[C:\\temp\]
-> &gt;&gt; „Hello World“ | ConvertFrom-String | Format-Table -Auto
+> 1 \[C:\\temp\] &gt;&gt; „Hello World“ | ConvertFrom-String | Format-Table -Auto
 
 P1    P2
 --    --

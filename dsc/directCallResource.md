@@ -1,17 +1,17 @@
 ---
-title: Direktes Aufrufen von DSC-Ressourcenmethoden
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 97d97a36830088d6ee1296cda5310e087fc41893
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: Direktes Aufrufen von DSC-Ressourcenmethoden
+ms.openlocfilehash: ab00e66d526eda244500a41e450c56b0151274ee
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="calling-dsc-resource-methods-directly"></a>Direktes Aufrufen von DSC-Ressourcenmethoden
+<a id="calling-dsc-resource-methods-directly" class="xliff"></a>
+# Direktes Aufrufen von DSC-Ressourcenmethoden
 
 >Gilt für: Windows PowerShell 5.0
 
@@ -23,7 +23,8 @@ Beim Aufrufen des Cmdlets **Invoke-DscResource** geben Sie an, welche Methode od
 
 Im Folgenden finden Sie Beispiele für das direkte Aufrufen von Ressourcenmethoden:
 
-## <a name="ensure-a-file-is-present"></a>Sicherstellen, dass eine Datei vorhanden ist
+<a id="ensure-a-file-is-present" class="xliff"></a>
+## Sicherstellen, dass eine Datei vorhanden ist
 
 ```powershell
 $result = Invoke-DscResource -Name File -Method Set -Property @{
@@ -32,7 +33,8 @@ $result = Invoke-DscResource -Name File -Method Set -Property @{
 $result | fl
 ```
 
-## <a name="test-that-a-file-is-present"></a>Testen, ob eine Datei vorhanden ist
+<a id="test-that-a-file-is-present" class="xliff"></a>
+## Testen, ob eine Datei vorhanden ist
 
 ```powershell
 $result = Invoke-DscResource -Name File -Method Test -Property @{
@@ -41,7 +43,8 @@ $result = Invoke-DscResource -Name File -Method Test -Property @{
 $result | fl
 ```
 
-## <a name="get-the-contents-of-file"></a>Abrufen des Inhalts einer Datei
+<a id="get-the-contents-of-file" class="xliff"></a>
+## Abrufen des Inhalts einer Datei
 
 ```powershell
 $result = Invoke-DscResource -Name File -Method Get -Property @{
@@ -52,7 +55,8 @@ $result.ItemValue | fl
 
 >**Hinweis:** Das direkte Aufrufen von Methoden für zusammengesetzte Ressourcen wird nicht unterstützt. Rufen Sie stattdessen die Methoden der zugrunde liegenden Ressourcen auf, aus denen die zusammengesetzte Ressource besteht.
 
-## <a name="see-also"></a>Weitere Informationen
+<a id="see-also" class="xliff"></a>
+## Weitere Informationen
 - [Schreiben einer benutzerdefinierten DSC-Ressource mit MOF](authoringResourceMOF.md) 
 - [Schreiben einer benutzerdefinierten DSC-Ressource mit PowerShell-Klassen](authoringResourceClass.md)
 - [Debuggen von DSC-Ressourcen](debugResource.md)

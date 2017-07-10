@@ -1,18 +1,15 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: Behandeln von Zugriffsproblemen in Windows PowerShell Web Access
-ms.technology: powershell
-ms.openlocfilehash: 26de977d2c85e26f445eecb1278e6a7278e7dfd6
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: c10e19b177110ff62d44f28b6a523380b55b79e0
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/08/2017
 ---
-#  <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Behandeln von Zugriffsproblemen in Windows PowerShell Web Access
+<a id="troubleshooting-access-problems-in-windows-powershell-web-access" class="xliff"></a>
+#  Behandeln von Zugriffsproblemen in Windows PowerShell Web Access
 
 Aktualisiert: 24. Juni 2013
 
@@ -79,7 +76,7 @@ In der folgenden Tabelle sind einige allgemeine Probleme aufgeführt, die mögli
 <td><p>Wenn die verstärkte Sicherheitskonfiguration in Internet Explorer (IE ESC) aktiviert ist, können Sie die Windows PowerShell Web Access-Website der Liste der vertrauenswürdigen Websites hinzufügen oder IE ESC deaktivieren. Sie können IE ESC auf der Kachel <strong>Eigenschaften</strong> der Seite <strong>Lokaler Server</strong> im Server-Manager deaktivieren.</p></td>
 </tr>
 <tr class="even">
-<td><p>Die folgende Fehlermeldung wird beim Versuch angezeigt, eine Verbindung herstellen, wenn der Gatewayserver der Zielcomputer ist und sich auch in einer Arbeitsgruppe befindet: <strong>Fehler bei der Autorisierung. Stellen Sie sicher, dass Sie zum Herstellen einer Verbindung mit dem Zielcomputer autorisiert sind.</strong></p></td>
+<td><p>Die folgende Fehlermeldung wird beim Versuch angezeigt, eine Verbindung herstellen, wenn der Gatewayserver der Zielcomputer ist und sich auch in einer Arbeitsgruppe befindet: <strong>Fehler bei der Autorisierung. Überprüfen Sie, ob Sie autorisiert sind, eine Verbindung mit dem Zielcomputer herzustellen.</strong></p></td>
 <td><p>Wenn der Gatewayserver auch der Zielserver ist und sich in einer Arbeitsgruppe befindet, geben Sie den Benutzernamen, den Computernamen und den Benutzergruppennamen wie in der folgenden Tabelle dargestellt an. Verwenden Sie nicht nur einen Punkt (.) als Computernamen.</p>
 <div>
 <table>
@@ -121,7 +118,7 @@ In der folgenden Tabelle sind einige allgemeine Probleme aufgeführt, die mögli
 <ul>
 <li><p><em>Servername</em>\<em>Benutzername</em></p></li>
 <li><p>Localhost\<em>Benutzername</em></p></li>
-<li><p>.\<em>user_name</em></p></li>
+<li><p>.\<em>Benutzername</em></p></li>
 </ul></td>
 </tr>
 <tr class="odd">
@@ -135,8 +132,7 @@ In der folgenden Tabelle sind einige allgemeine Probleme aufgeführt, die mögli
 </tbody>
 </table>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">
-Siehe auch</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Siehe auch</span></a>
 <a href="/en-us/library/dn282395(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
 
 ------------------------------------------------------------------------

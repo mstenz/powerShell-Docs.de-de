@@ -1,18 +1,15 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: Autorisierungsregeln und Sicherheitsfeatures von Windows PowerShell Web Access
-ms.technology: powershell
-ms.openlocfilehash: f2ed4355536ed92048dde66617d36d36958fd75f
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 706830f618173879185f5b84570fdc7782434d59
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/08/2017
 ---
-# <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Autorisierungsregeln und Sicherheitsfeatures von Windows PowerShell Web Access
+<a id="authorization-rules-and-security-features-of-windows-powershell-web-access" class="xliff"></a>
+# Autorisierungsregeln und Sicherheitsfeatures von Windows PowerShell Web Access
 
 Aktualisiert: 24. Juni 2013
 
@@ -39,7 +36,7 @@ Windows PowerShell Web Access-Authentifizierungsregeln sind Whitelist-Regeln. Je
 </colgroup>
 <thead>
 <tr class="header">
-<th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC17938.jpeg" title="System_CAPS_security" alt="System_CAPS_security" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-security" /></span><span class="alertTitle"> Sicherheitshinweis </span></th>
+<th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC17938.jpeg" title="System_CAPS_security" alt="System_CAPS_security" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-security" /></span><span class="alertTitle">Sicherheitshinweis </span></th>
 </tr>
 </thead>
 <tbody>
@@ -197,7 +194,8 @@ Für Windows PowerShell Web Access-Cmdlets wird ein Platzhalterzeichen unterstü
 </tbody>
 </table>
 
-#### <a name="to-add-a-restrictive-authorization-rule"></a>So fügen Sie eine restriktive Autorisierungsregel hinzu
+<a id="to-add-a-restrictive-authorization-rule" class="xliff"></a>
+#### So fügen Sie eine restriktive Autorisierungsregel hinzu
 
 1.  Öffnen Sie eine Windows PowerShell-Sitzung mit erhöhten Benutzerrechten, indem Sie einen der folgenden Schritte durchführen.
 
@@ -221,7 +219,8 @@ Für Windows PowerShell Web Access-Cmdlets wird ein Platzhalterzeichen unterstü
 
 4.  Stellen Sie sicher, dass die Regel erstellt wurde, indem Sie entweder das Cmdlet **Get-PswaAuthorizationRule** oder **Test-PswaAuthorizationRule -UserName &lt;Domäne\\Benutzer | Computer\\Benutzer&gt; -ComputerName** &lt;Computername&gt; ausführen. Beispiel: **Test-PswaAuthorizationRule -UserName Contoso\\JSmith -ComputerName Contoso_214**.
 
-#### <a name="to-remove-an-authorization-rule"></a>So entfernen Sie eine Autorisierungsregel
+<a id="to-remove-an-authorization-rule" class="xliff"></a>
+#### So entfernen Sie eine Autorisierungsregel
 
 1.  Falls noch keine Windows PowerShell-Sitzung geöffnet wurde, finden Sie die entsprechende Vorgehensweise in Schritt 1 unter [So fügen Sie eine restriktive Autorisierungsregel hinzu](#BKMK_arar) in diesem Abschnitt.
 

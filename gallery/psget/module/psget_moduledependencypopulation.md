@@ -1,19 +1,17 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: PowerShell, Cmdlet, Katalog
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
+ms.topic: reference
+keywords: gallery,powershell,cmdlet,psget
 title: "Logik zum Vorbereiten der Modulabhängigkeiten während des Veröffentlichungsvorgangs | MSDN"
-ms.technology: powershell
-ms.openlocfilehash: 3d89dddf2fc31a9fdb1a57f21baaf757990989c7
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.openlocfilehash: 126cd65ac35a31f4118474bc36dac1836ec0f22e
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="logic-for-preparing-the-module-dependencies-during-publish-operation"></a>Logik zum Vorbereiten der Modulabhängigkeiten während des Veröffentlichungsvorgangs
+<a id="logic-for-preparing-the-module-dependencies-during-publish-operation" class="xliff"></a>
+# Logik zum Vorbereiten der Modulabhängigkeiten während des Veröffentlichungsvorgangs
 1.  Module, die als Teil von RequiredModules aufgelistet sind, werden als Abhängigkeiten betrachtet.
 2.  Module, die als Teil des NestedModules-Schlüssels aufgelistet sind, dessen Modulbasis nicht Teil der angegebenen Modulbasis ist, werden als Abhängigkeiten betrachtet.
 
