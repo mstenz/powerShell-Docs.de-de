@@ -9,31 +9,27 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="product-compatibility-status" class="xliff"></a>
-# Status der Produktkompatibilität
+# <a name="product-compatibility-status"></a><span data-ttu-id="56388-102">Status der Produktkompatibilität</span><span class="sxs-lookup"><span data-stu-id="56388-102">Product Compatibility Status</span></span>
 
-<a id="compatible" class="xliff"></a>
-## Kompatibel:
-> Systeme, auf denen die folgenden Serveranwendungen ausgeführt werden, **können** Windows Management Framework 5.0 ausführen:
+## <a name="compatible"></a><span data-ttu-id="56388-103">Kompatibel:</span><span class="sxs-lookup"><span data-stu-id="56388-103">Compatible:</span></span>
+> <span data-ttu-id="56388-104">Systeme, auf denen die folgenden Serveranwendungen ausgeführt werden, **können** Windows Management Framework 5.0 ausführen:</span><span class="sxs-lookup"><span data-stu-id="56388-104">Systems that are running the following server applications **can run** Windows Management Framework 5.0:</span></span>
 
-- Microsoft SharePoint Server 2013
-- System Center 2012 Configuration Manager
+- <span data-ttu-id="56388-105">Microsoft SharePoint Server 2013</span><span class="sxs-lookup"><span data-stu-id="56388-105">Microsoft SharePoint Server 2013</span></span>
+- <span data-ttu-id="56388-106">System Center 2012 Configuration Manager</span><span class="sxs-lookup"><span data-stu-id="56388-106">System Center 2012 Configuration Manager</span></span>
 
-<a id="not-tested" class="xliff"></a>
-## Nicht getestet:
-> Systeme, auf denen die folgenden Serveranwendungen ausgeführt werden, wurden **nicht** gegen Windows Management Framework 5.0 getestet:
+## <a name="not-tested"></a><span data-ttu-id="56388-107">Nicht getestet:</span><span class="sxs-lookup"><span data-stu-id="56388-107">Not Tested:</span></span>
+> <span data-ttu-id="56388-108">Systeme, auf denen die folgenden Serveranwendungen ausgeführt werden, wurden **nicht** gegen Windows Management Framework 5.0 getestet:</span><span class="sxs-lookup"><span data-stu-id="56388-108">Systems that are running the following server applications **have not tested** against Windows Management Framework 5.0:</span></span>
 
-- Microsoft SharePoint Server 2010
-- System Center 2012 Virtual Machine Manager
+- <span data-ttu-id="56388-109">Microsoft SharePoint Server 2010</span><span class="sxs-lookup"><span data-stu-id="56388-109">Microsoft SharePoint Server 2010</span></span>
+- <span data-ttu-id="56388-110">System Center 2012 Virtual Machine Manager</span><span class="sxs-lookup"><span data-stu-id="56388-110">System Center 2012 Virtual Machine Manager</span></span>
 
-<a id="incompatible" class="xliff"></a>
-## Nicht kompatibel:
-> Systeme, auf denen die folgenden Serveranwendungen ausgeführt werden, sollten Windows Management Framework 5.0 derzeit **nicht ausführen**:
+## <a name="incompatible"></a><span data-ttu-id="56388-111">Nicht kompatibel:</span><span class="sxs-lookup"><span data-stu-id="56388-111">Incompatible:</span></span>
+> <span data-ttu-id="56388-112">Systeme, auf denen die folgenden Serveranwendungen ausgeführt werden, sollten Windows Management Framework 5.0 derzeit **nicht ausführen**:</span><span class="sxs-lookup"><span data-stu-id="56388-112">Systems that are running the following server applications **should not run** Windows Management Framework 5.0:</span></span>
 
-- Microsoft Exchange Server 2013
-- Microsoft Exchange Server 2010 SP3
-- Skype for Business Server 2015
-- Microsoft Lync Server 2013
-- Microsoft Lync Server 2010
-- System Center 2012 R2 Service Management Automation
+- <span data-ttu-id="56388-113">Microsoft Exchange Server 2013</span><span class="sxs-lookup"><span data-stu-id="56388-113">Microsoft Exchange Server 2013</span></span>
+- <span data-ttu-id="56388-114">Microsoft Exchange Server 2010 SP3</span><span class="sxs-lookup"><span data-stu-id="56388-114">Microsoft Exchange Server 2010 SP3</span></span>
+- <span data-ttu-id="56388-115">Skype for Business Server 2015</span><span class="sxs-lookup"><span data-stu-id="56388-115">Skype for Business Server 2015</span></span>
+- <span data-ttu-id="56388-116">Microsoft Lync Server 2013</span><span class="sxs-lookup"><span data-stu-id="56388-116">Microsoft Lync Server 2013</span></span>
+- <span data-ttu-id="56388-117">Microsoft Lync Server 2010</span><span class="sxs-lookup"><span data-stu-id="56388-117">Microsoft Lync Server 2010</span></span>
+- <span data-ttu-id="56388-118">System Center 2012 R2 Service Management Automation</span><span class="sxs-lookup"><span data-stu-id="56388-118">System Center 2012 R2 Service Management Automation</span></span>
 

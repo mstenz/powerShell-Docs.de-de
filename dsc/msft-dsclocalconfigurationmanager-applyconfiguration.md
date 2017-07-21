@@ -10,16 +10,14 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="applyconfiguration-method-of-the-msftdsclocalconfigurationmanager-class" class="xliff"></a>
-# ApplyConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse
+# <a name="applyconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="f6cad-103">ApplyConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse</span><span class="sxs-lookup"><span data-stu-id="f6cad-103">ApplyConfiguration method of the MSFT_DSCLocalConfigurationManager class</span></span>
 
-Verwendet den Konfigurations-Agent, um die ausstehende Konfiguration anzuwenden. 
+<span data-ttu-id="f6cad-104">Verwendet den Konfigurations-Agent, um die ausstehende Konfiguration anzuwenden.</span><span class="sxs-lookup"><span data-stu-id="f6cad-104">Uses the Configuration Agent to apply the configuration that is pending.</span></span> 
 
-Wenn keine ausstehende Konfiguration vorhanden ist, wendet diese Methode die aktuelle Konfiguration erneut an.
+<span data-ttu-id="f6cad-105">Wenn keine ausstehende Konfiguration vorhanden ist, wendet diese Methode die aktuelle Konfiguration erneut an.</span><span class="sxs-lookup"><span data-stu-id="f6cad-105">If there is no configuration pending, this method reapplies the current configuration.</span></span>
 
 
-<a id="syntax" class="xliff"></a>
-## Syntax
+## <a name="syntax"></a><span data-ttu-id="f6cad-106">Syntax</span><span class="sxs-lookup"><span data-stu-id="f6cad-106">Syntax</span></span>
 ------
 
 ```mof
@@ -28,37 +26,32 @@ uint32 ApplyConfiguration(
 );
 ```
 
-<a id="parameters" class="xliff"></a>
-## Parameter
+## <a name="parameters"></a><span data-ttu-id="f6cad-107">Parameter</span><span class="sxs-lookup"><span data-stu-id="f6cad-107">Parameters</span></span>
 ----------
 
-*force* \[in\]  
-Wenn dies **true** ist, wird die aktuelle Konfiguration erneut angewendet, auch wenn eine Konfiguration aussteht.
+<span data-ttu-id="f6cad-108">*force* \[in\]</span><span class="sxs-lookup"><span data-stu-id="f6cad-108">*force* \[in\]</span></span>  
+<span data-ttu-id="f6cad-109">Wenn dies **true** ist, wird die aktuelle Konfiguration erneut angewendet, auch wenn eine Konfiguration aussteht.</span><span class="sxs-lookup"><span data-stu-id="f6cad-109">If this is **true**, the current configuration is reapplied, even if there is a configuration pending.</span></span>
 
-<a id="return-value" class="xliff"></a>
-## Rückgabewert
+## <a name="return-value"></a><span data-ttu-id="f6cad-110">Rückgabewert</span><span class="sxs-lookup"><span data-stu-id="f6cad-110">Return value</span></span>
 ------------
 
-Gibt bei Erfolg null zurück, andernfalls einen Fehlercode.
+<span data-ttu-id="f6cad-111">Gibt bei Erfolg null zurück, andernfalls einen Fehlercode.</span><span class="sxs-lookup"><span data-stu-id="f6cad-111">Returns zero on success; otherwise returns an error code.</span></span>
 
-<a id="remarks" class="xliff"></a>
-## Hinweise
+## <a name="remarks"></a><span data-ttu-id="f6cad-112">Hinweise</span><span class="sxs-lookup"><span data-stu-id="f6cad-112">Remarks</span></span>
 
-Dies ist eine statische Methode.
+<span data-ttu-id="f6cad-113">Dies ist eine statische Methode.</span><span class="sxs-lookup"><span data-stu-id="f6cad-113">This is a static method.</span></span>
 
-<a id="requirements" class="xliff"></a>
-## Anforderungen
+## <a name="requirements"></a><span data-ttu-id="f6cad-114">Anforderungen</span><span class="sxs-lookup"><span data-stu-id="f6cad-114">Requirements</span></span>
 ------------
->**MOF:** DscCore.mof
+><span data-ttu-id="f6cad-115">**MOF:** DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="f6cad-115">**MOF:** DscCore.mof</span></span>
 
->**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
-
-
-<a id="see-also" class="xliff"></a>
-## Siehe auch
+><span data-ttu-id="f6cad-116">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="f6cad-116">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
 
 
-[**MSFT_DSCLocalConfigurationManager-Klasse**](msft-dsclocalconfigurationmanager.md)
+## <a name="see-also"></a><span data-ttu-id="f6cad-117">Siehe auch</span><span class="sxs-lookup"><span data-stu-id="f6cad-117">See also</span></span>
+
+
+[<span data-ttu-id="f6cad-118">**MSFT_DSCLocalConfigurationManager-Klasse**</span><span class="sxs-lookup"><span data-stu-id="f6cad-118">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
 
  
 

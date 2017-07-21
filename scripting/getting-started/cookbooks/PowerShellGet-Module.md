@@ -9,14 +9,14 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/08/2017
 ---
-# <a name="powershellget-module"></a>PowerShellGet-Modul
-Dieser Abschnitt enthält die Hilfethemen für das **PowerShellGet**-Modul. Das **PowerShellGet**-Modul wird mit Windows PowerShell 5.0 und späteren Versionen von Windows PowerShell installiert.
+# <a name="powershellget-module"></a><span data-ttu-id="46e7f-103">PowerShellGet-Modul</span><span class="sxs-lookup"><span data-stu-id="46e7f-103">PowerShellGet Module</span></span>
+<span data-ttu-id="46e7f-104">Dieser Abschnitt enthält die Hilfethemen für das **PowerShellGet**-Modul.</span><span class="sxs-lookup"><span data-stu-id="46e7f-104">This section contains the help topics for the **PowerShellGet** module.</span></span> <span data-ttu-id="46e7f-105">Das **PowerShellGet**-Modul wird mit Windows PowerShell 5.0 und späteren Versionen von Windows PowerShell installiert.</span><span class="sxs-lookup"><span data-stu-id="46e7f-105">The **PowerShellGet** module is installed with Windows PowerShell 5.0 and later releases of Windows PowerShell.</span></span>
 
-## <a name="help-topics"></a>Hilfethemen
-[PowerShellGet-Cmdlets](http://technet.microsoft.com/library/dn807169.aspx)
+## <a name="help-topics"></a><span data-ttu-id="46e7f-106">Hilfethemen</span><span class="sxs-lookup"><span data-stu-id="46e7f-106">Help Topics</span></span>
+[<span data-ttu-id="46e7f-107">PowerShellGet-Cmdlets</span><span class="sxs-lookup"><span data-stu-id="46e7f-107">PowerShellGet Cmdlets</span></span>](http://technet.microsoft.com/library/dn807169.aspx)
 
-## <a name="see-also"></a>Weitere Informationen
-- [Windows PowerShell 5.0](../../core-powershell/core-modules/Windows-PowerShell-5.0.md)
-- [Windows PowerShell Core](https://technet.microsoft.com/en-us/library/4b75f1e4-f327-48f3-92ab-bf5435094d41)
-- [Skripting mit WindowsPowerShell](../fundamental/Scripting-with-Windows-PowerShell.md)
+## <a name="see-also"></a><span data-ttu-id="46e7f-108">Weitere Informationen</span><span class="sxs-lookup"><span data-stu-id="46e7f-108">See Also</span></span>
+- [<span data-ttu-id="46e7f-109">Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="46e7f-109">Windows PowerShell 5.0</span></span>](../../core-powershell/core-modules/Windows-PowerShell-5.0.md)
+- [<span data-ttu-id="46e7f-110">Windows PowerShell Core</span><span class="sxs-lookup"><span data-stu-id="46e7f-110">Windows PowerShell Core</span></span>](https://technet.microsoft.com/en-us/library/4b75f1e4-f327-48f3-92ab-bf5435094d41)
+- [<span data-ttu-id="46e7f-111">Skripting mit WindowsPowerShell</span><span class="sxs-lookup"><span data-stu-id="46e7f-111">Scripting with Windows PowerShell</span></span>](../fundamental/Scripting-with-Windows-PowerShell.md)
 

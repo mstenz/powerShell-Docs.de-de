@@ -10,15 +10,13 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="modules-with-compatible-powershell-editions" class="xliff"></a>
-# Module mit kompatiblen PowerShell-Editionen
-Ab Version 5.1 steht PowerShell in verschiedenen Editionen zur Verfügung, die unterschiedliche Featuregruppen und Plattformkompatibilität bieten.
+# <a name="modules-with-compatible-powershell-editions"></a><span data-ttu-id="a1b7b-103">Module mit kompatiblen PowerShell-Editionen</span><span class="sxs-lookup"><span data-stu-id="a1b7b-103">Modules with compatible PowerShell Editions</span></span>
+<span data-ttu-id="a1b7b-104">Ab Version 5.1 steht PowerShell in verschiedenen Editionen zur Verfügung, die unterschiedliche Featuregruppen und Plattformkompatibilität bieten.</span><span class="sxs-lookup"><span data-stu-id="a1b7b-104">Starting with version 5.1, PowerShell is available in different editions which denote varying feature sets and platform compatibility.</span></span>
 
-- **Desktop-Edition:** Diese Edition basiert auf .NET Framework und bietet Kompatibilität mit Skripts und Modulen für Versionen von PowerShell, die unter Vollversionen von Windows wie Server Core und Windows Desktop ausgeführt werden.
-- **Core-Edition:** Diese Edition basiert auf .NET Core und bietet Kompatibilität mit Skripts und Modulen für Versionen von PowerShell, die unter funktionsreduzierten Versionen von Windows wie Nano Server und Windows IoT ausgeführt werden.
+- <span data-ttu-id="a1b7b-105">**Desktop-Edition:** Diese Edition basiert auf .NET Framework und bietet Kompatibilität mit Skripts und Modulen für Versionen von PowerShell, die unter Vollversionen von Windows wie Server Core und Windows Desktop ausgeführt werden.</span><span class="sxs-lookup"><span data-stu-id="a1b7b-105">**Desktop Edition:** Built on .NET Framework and provides compatibility with scripts and modules targeting versions of PowerShell running on full footprint editions of Windows such as Server Core and Windows Desktop.</span></span>
+- <span data-ttu-id="a1b7b-106">**Core-Edition:** Diese Edition basiert auf .NET Core und bietet Kompatibilität mit Skripts und Modulen für Versionen von PowerShell, die unter funktionsreduzierten Versionen von Windows wie Nano Server und Windows IoT ausgeführt werden.</span><span class="sxs-lookup"><span data-stu-id="a1b7b-106">**Core Edition:** Built on .NET Core and provides compatibility with scripts and modules targeting versions of PowerShell running on reduced footprint editions of Windows such as Nano Server and Windows IoT.</span></span>
 
-<a id="the-running-edition-of-powershell-is-shown-in-the-psedition-property-of-psversiontable" class="xliff"></a>
-## Die ausgeführte Edition von PowerShell wird in der PSEdition-Eigenschaft von $PSVersionTable angezeigt.
+## <a name="the-running-edition-of-powershell-is-shown-in-the-psedition-property-of-psversiontable"></a><span data-ttu-id="a1b7b-107">Die ausgeführte Edition von PowerShell wird in der PSEdition-Eigenschaft von $PSVersionTable angezeigt.</span><span class="sxs-lookup"><span data-stu-id="a1b7b-107">The running edition of PowerShell is shown in the PSEdition property of $PSVersionTable.</span></span>
 ```powershell
 $PSVersionTable
 
@@ -34,9 +32,8 @@ PSRemotingProtocolVersion      2.3
 SerializationVersion           1.1.0.1
 ```
 
-<a id="module-authors-can-declare-their-modules-to-be-compatible-with-one-or-more-powershell-editions-using-the-compatiblepseditions-module-manifest-key-this-key-is-only-supported-on-powershell-51-or-later" class="xliff"></a>
-## Modulautoren können ihre Module als kompatibel mit einer oder mehreren PowerShell-Editionen deklarieren, indem Sie den Modulmanifestschlüssel CompatiblePSEditions verwenden. Dieser Schlüssel wird nur auf PowerShell 5.1 oder höher unterstützt.
-*HINWEIS*: Sobald mit dem Schlüssel CompatiblePSEditions ein Modulmanifest angegeben wurde, kann es nicht in ältere Versionen von PowerShell importiert werden.
+## <a name="module-authors-can-declare-their-modules-to-be-compatible-with-one-or-more-powershell-editions-using-the-compatiblepseditions-module-manifest-key-this-key-is-only-supported-on-powershell-51-or-later"></a><span data-ttu-id="a1b7b-108">Modulautoren können ihre Module als kompatibel mit einer oder mehreren PowerShell-Editionen deklarieren, indem Sie den Modulmanifestschlüssel CompatiblePSEditions verwenden.</span><span class="sxs-lookup"><span data-stu-id="a1b7b-108">Module authors can declare their modules to be compatible with one or more PowerShell editions using the CompatiblePSEditions module manifest key.</span></span> <span data-ttu-id="a1b7b-109">Dieser Schlüssel wird nur auf PowerShell 5.1 oder höher unterstützt.</span><span class="sxs-lookup"><span data-stu-id="a1b7b-109">This key is only supported on PowerShell 5.1 or later.</span></span>
+<span data-ttu-id="a1b7b-110">*HINWEIS*: Sobald mit dem Schlüssel CompatiblePSEditions ein Modulmanifest angegeben wurde, kann es nicht in ältere Versionen von PowerShell importiert werden.</span><span class="sxs-lookup"><span data-stu-id="a1b7b-110">*NOTE* Once a module manifest is specified with the CompatiblePSEditions key, it can not be imported on lower versions of PowerShell.</span></span>
 
 ```powershell
 New-ModuleManifest -Path .\TestModuleWithEdition.psd1 -CompatiblePSEditions Desktop,Core -PowerShellVersion 5.1
@@ -54,7 +51,7 @@ Name                 MemberType Definition
 CompatiblePSEditions Property   System.Collections.Generic.IEnumerable[string] CompatiblePSEditions {get;}
 
 ```
-Beim Abrufen einer Liste der verfügbaren Module können Sie sie nach PowerShell-Editionen filtern.
+<span data-ttu-id="a1b7b-111">Beim Abrufen einer Liste der verfügbaren Module können Sie sie nach PowerShell-Editionen filtern.</span><span class="sxs-lookup"><span data-stu-id="a1b7b-111">When getting a list of available modules, you can filter the list by PowerShell edition.</span></span>
 ```powershell
 Get-Module -ListAvailable -PSEdition Desktop
 
@@ -71,38 +68,34 @@ Core
 
 ```
 
-<a id="module-authors-can-publish-a-single-module-targeting-to-either-or-both-powershell-editions-desktop-and-core" class="xliff"></a>
-## Modulautoren können ein einzelnes Modul veröffentlichen und auf eine oder beide PowerShell-Editionen ausrichten (Desktop und Core) 
+## <a name="module-authors-can-publish-a-single-module-targeting-to-either-or-both-powershell-editions-desktop-and-core"></a><span data-ttu-id="a1b7b-112">Modulautoren können ein einzelnes Modul veröffentlichen und auf eine oder beide PowerShell-Editionen ausrichten (Desktop und Core)</span><span class="sxs-lookup"><span data-stu-id="a1b7b-112">Module authors can publish a single module targeting to either or both PowerShell editions (Desktop and Core)</span></span> 
 
-Ein einzelnes Modul kann sowohl in der Desktop- als auch in der Core-Edition funktionieren, wenn der Modulautor die dafür benötigte Logik mithilfe der Variable $PSEdition zu RootModule oder dem Modulmanifest hinzufügt.
-Module können über zwei Sätze kompilierter DLLs verfügen, die jeweils auf CoreCLR und FullCLR ausgerichtet sind.
-Nachstehend finden Sie die verschiedenen Optionen, mit denen Sie Ihren Modulen Logik hinzufügen können, damit die jeweils korrekten DLLs geladen werden können.
+<span data-ttu-id="a1b7b-113">Ein einzelnes Modul kann sowohl in der Desktop- als auch in der Core-Edition funktionieren, wenn der Modulautor die dafür benötigte Logik mithilfe der Variable $PSEdition zu RootModule oder dem Modulmanifest hinzufügt.</span><span class="sxs-lookup"><span data-stu-id="a1b7b-113">A single module can work on both Desktop and Core editions, in that module author has to add required logic in either RootModule or in the module manifest using $PSEdition variable.</span></span>
+<span data-ttu-id="a1b7b-114">Module können über zwei Sätze kompilierter DLLs verfügen, die jeweils auf CoreCLR und FullCLR ausgerichtet sind.</span><span class="sxs-lookup"><span data-stu-id="a1b7b-114">Modules can have two sets of compiled DLLs targeting both CoreCLR and FullCLR.</span></span>
+<span data-ttu-id="a1b7b-115">Nachstehend finden Sie die verschiedenen Optionen, mit denen Sie Ihren Modulen Logik hinzufügen können, damit die jeweils korrekten DLLs geladen werden können.</span><span class="sxs-lookup"><span data-stu-id="a1b7b-115">Here are the couple of options to package your module with logic for loading proper dlls.</span></span>
 
-<a id="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell" class="xliff"></a>
-### Option 1: Packen eines Moduls für die Adressierung mehrerer Versionen und Editionen von PowerShell
+### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a><span data-ttu-id="a1b7b-116">Option 1: Packen eines Moduls für die Adressierung mehrerer Versionen und Editionen von PowerShell</span><span class="sxs-lookup"><span data-stu-id="a1b7b-116">Option 1: Packaging a module for targeting multiple versions and multiple editions of PowerShell</span></span>
 
-<a id="module-folder-contents" class="xliff"></a>
-#### Inhalt des Modulordners
-- Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll 
-- Microsoft.Windows.PowerShell.ScriptAnalyzer.dll 
-- PSScriptAnalyzer.psd1
-- PSScriptAnalyzer.psm1
-- ScriptAnalyzer.format.ps1xml
-- ScriptAnalyzer.types.ps1xml
-- coreclr\Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll 
-- coreclr\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll 
-- en-US\about_PSScriptAnalyzer.help.txt
-- en-US\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll-Help.xml
-- PSv3\Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll 
-- PSv3\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll 
-- Settings\CmdletDesign.psd1
-- Settings\DSC.psd1
-- Settings\ScriptFunctions.psd1
-- Settings\ScriptingStyle.psd1
-- Settings\ScriptSecurity.psd1
+#### <a name="module-folder-contents"></a><span data-ttu-id="a1b7b-117">Inhalt des Modulordners</span><span class="sxs-lookup"><span data-stu-id="a1b7b-117">Module folder contents</span></span>
+- <span data-ttu-id="a1b7b-118">Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll</span><span class="sxs-lookup"><span data-stu-id="a1b7b-118">Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll</span></span> 
+- <span data-ttu-id="a1b7b-119">Microsoft.Windows.PowerShell.ScriptAnalyzer.dll</span><span class="sxs-lookup"><span data-stu-id="a1b7b-119">Microsoft.Windows.PowerShell.ScriptAnalyzer.dll</span></span> 
+- <span data-ttu-id="a1b7b-120">PSScriptAnalyzer.psd1</span><span class="sxs-lookup"><span data-stu-id="a1b7b-120">PSScriptAnalyzer.psd1</span></span>
+- <span data-ttu-id="a1b7b-121">PSScriptAnalyzer.psm1</span><span class="sxs-lookup"><span data-stu-id="a1b7b-121">PSScriptAnalyzer.psm1</span></span>
+- <span data-ttu-id="a1b7b-122">ScriptAnalyzer.format.ps1xml</span><span class="sxs-lookup"><span data-stu-id="a1b7b-122">ScriptAnalyzer.format.ps1xml</span></span>
+- <span data-ttu-id="a1b7b-123">ScriptAnalyzer.types.ps1xml</span><span class="sxs-lookup"><span data-stu-id="a1b7b-123">ScriptAnalyzer.types.ps1xml</span></span>
+- <span data-ttu-id="a1b7b-124">coreclr\Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll</span><span class="sxs-lookup"><span data-stu-id="a1b7b-124">coreclr\Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll</span></span> 
+- <span data-ttu-id="a1b7b-125">coreclr\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll</span><span class="sxs-lookup"><span data-stu-id="a1b7b-125">coreclr\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll</span></span> 
+- <span data-ttu-id="a1b7b-126">en-US\about_PSScriptAnalyzer.help.txt</span><span class="sxs-lookup"><span data-stu-id="a1b7b-126">en-US\about_PSScriptAnalyzer.help.txt</span></span>
+- <span data-ttu-id="a1b7b-127">en-US\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll-Help.xml</span><span class="sxs-lookup"><span data-stu-id="a1b7b-127">en-US\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll-Help.xml</span></span>
+- <span data-ttu-id="a1b7b-128">PSv3\Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll</span><span class="sxs-lookup"><span data-stu-id="a1b7b-128">PSv3\Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll</span></span> 
+- <span data-ttu-id="a1b7b-129">PSv3\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll</span><span class="sxs-lookup"><span data-stu-id="a1b7b-129">PSv3\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll</span></span> 
+- <span data-ttu-id="a1b7b-130">Settings\CmdletDesign.psd1</span><span class="sxs-lookup"><span data-stu-id="a1b7b-130">Settings\CmdletDesign.psd1</span></span>
+- <span data-ttu-id="a1b7b-131">Settings\DSC.psd1</span><span class="sxs-lookup"><span data-stu-id="a1b7b-131">Settings\DSC.psd1</span></span>
+- <span data-ttu-id="a1b7b-132">Settings\ScriptFunctions.psd1</span><span class="sxs-lookup"><span data-stu-id="a1b7b-132">Settings\ScriptFunctions.psd1</span></span>
+- <span data-ttu-id="a1b7b-133">Settings\ScriptingStyle.psd1</span><span class="sxs-lookup"><span data-stu-id="a1b7b-133">Settings\ScriptingStyle.psd1</span></span>
+- <span data-ttu-id="a1b7b-134">Settings\ScriptSecurity.psd1</span><span class="sxs-lookup"><span data-stu-id="a1b7b-134">Settings\ScriptSecurity.psd1</span></span>
 
-<a id="contents-of-psscriptanalyzerpsd1-file" class="xliff"></a>
-#### Inhalt der Datei PSScriptAnalyzer.psd1
+#### <a name="contents-of-psscriptanalyzerpsd1-file"></a><span data-ttu-id="a1b7b-135">Inhalt der Datei PSScriptAnalyzer.psd1</span><span class="sxs-lookup"><span data-stu-id="a1b7b-135">Contents of PSScriptAnalyzer.psd1 file</span></span>
 
 ```powershell
 @{
@@ -120,9 +113,8 @@ ModuleVersion = '1.6.1'
 }
 ```
 
-<a id="contents-of-psscriptanalyzerpsm1-file" class="xliff"></a>
-#### Inhalt der Datei PSScriptAnalyzer.psm1
-Die nachstehende Logik lädt die erforderlichen Assemblys abhängig von der aktuellen Edition oder Version.
+#### <a name="contents-of-psscriptanalyzerpsm1-file"></a><span data-ttu-id="a1b7b-136">Inhalt der Datei PSScriptAnalyzer.psm1</span><span class="sxs-lookup"><span data-stu-id="a1b7b-136">Contents of PSScriptAnalyzer.psm1 file</span></span>
+<span data-ttu-id="a1b7b-137">Die nachstehende Logik lädt die erforderlichen Assemblys abhängig von der aktuellen Edition oder Version.</span><span class="sxs-lookup"><span data-stu-id="a1b7b-137">Below logic loads the required assemblies depending on the current edition or version.</span></span>
 
 ```powershell
 #
@@ -158,17 +150,15 @@ $PSModule.OnRemove = {
 
 ```
 
-<a id="option-2-use-psedition-variable-in-the-psd1-file-to-load-the-proper-dlls-and-nestedrequired-modules" class="xliff"></a>
-### Option 2: Verwenden der Variable $PSEdition in der PSD1-Datei, um die korrekten DLLs und die geschachtelten/erforderlichen Module zu laden
+### <a name="option-2-use-psedition-variable-in-the-psd1-file-to-load-the-proper-dlls-and-nestedrequired-modules"></a><span data-ttu-id="a1b7b-138">Option 2: Verwenden der Variable $PSEdition in der PSD1-Datei, um die korrekten DLLs und die geschachtelten/erforderlichen Module zu laden</span><span class="sxs-lookup"><span data-stu-id="a1b7b-138">Option 2: Use $PSEdition variable in the PSD1 file to load the proper DLLs and Nested/Required modules</span></span>
 
-In PS 5.1 oder höher ist die Variable „$PSEdition global“ in der Modulmanifestdatei zulässig.
-Durch die Verwendung dieser Variable kann der Modulautor die bedingten Werte in der Modulmanifestdatei angeben. Auf die Variable $PSEdition kann im eingeschränkten Sprachmodus oder in einem „Data“-Abschnitt verwiesen werden. 
+<span data-ttu-id="a1b7b-139">In PS 5.1 oder höher ist die Variable „$PSEdition global“ in der Modulmanifestdatei zulässig.</span><span class="sxs-lookup"><span data-stu-id="a1b7b-139">In PS 5.1 or newer, $PSEdition global variable is allowed in the module manifest file.</span></span>
+<span data-ttu-id="a1b7b-140">Durch die Verwendung dieser Variable kann der Modulautor die bedingten Werte in der Modulmanifestdatei angeben.</span><span class="sxs-lookup"><span data-stu-id="a1b7b-140">Using this variable, module author can specify the conditional values in the module manifest file.</span></span> <span data-ttu-id="a1b7b-141">Auf die Variable $PSEdition kann im eingeschränkten Sprachmodus oder in einem „Data“-Abschnitt verwiesen werden.</span><span class="sxs-lookup"><span data-stu-id="a1b7b-141">$PSEdition variable can be referenced in restricted language mode or a Data section.</span></span> 
 
-*HINWEIS*: Sobald mit dem Schlüssel CompatiblePSEditions ein Modulmanifest angegeben wurde oder dieses die Variable $PSEdition verwendet, kann es nicht in ältere Versionen von PowerShell importiert werden.
+<span data-ttu-id="a1b7b-142">*HINWEIS*: Sobald mit dem Schlüssel CompatiblePSEditions ein Modulmanifest angegeben wurde oder dieses die Variable $PSEdition verwendet, kann es nicht in ältere Versionen von PowerShell importiert werden.</span><span class="sxs-lookup"><span data-stu-id="a1b7b-142">*NOTE* Once a module manifest is specified with the CompatiblePSEditions key or uses $PSEdition variable, it can not be imported on lower versions of PowerShell.</span></span>
 
 
-<a id="sample-module-manifest-file-with-compatiblepseditions-key" class="xliff"></a>
-#### Beispiel einer Modulmanifestdatei mit dem Schlüssel CompatiblePSEditions
+#### <a name="sample-module-manifest-file-with-compatiblepseditions-key"></a><span data-ttu-id="a1b7b-143">Beispiel einer Modulmanifestdatei mit dem Schlüssel CompatiblePSEditions</span><span class="sxs-lookup"><span data-stu-id="a1b7b-143">Sample module manifest file with CompatiblePSEditions key</span></span>
 
 ```powershell
 @{ 
@@ -203,8 +193,7 @@ else # Desktop
 }
 ```
 
-<a id="module-contents" class="xliff"></a>
-#### Modulinhalte
+#### <a name="module-contents"></a><span data-ttu-id="a1b7b-144">Modulinhalte</span><span class="sxs-lookup"><span data-stu-id="a1b7b-144">Module contents</span></span>
 
 ```powershell
 
@@ -235,9 +224,8 @@ Mode                LastWriteTime         Length Name
 -a----         7/5/2016   1:35 PM              0 MyCoreClrRM.dl                                                                      
 ```
 
-<a id="powershell-gallery-users-can-find-the-list-of-modules-supported-on-a-specific-powershell-edition-using-tags-pseditiondesktop-and-pseditoncore" class="xliff"></a>
-## Benutzer des PowerShell-Katalogs finden mithilfe der Tags PSEdition_Desktop und PSEdition_Core eine Liste der unterstützten Module in einer bestimmten PowerShell-Edition
-Module ohne die Tags PSEdition_Desktop und PSEditon_Core sollten in PowerShell Desktop keine Probleme bereiten.
+## <a name="powershell-gallery-users-can-find-the-list-of-modules-supported-on-a-specific-powershell-edition-using-tags-pseditiondesktop-and-pseditoncore"></a><span data-ttu-id="a1b7b-145">Benutzer des PowerShell-Katalogs finden mithilfe der Tags PSEdition_Desktop und PSEdition_Core eine Liste der unterstützten Module in einer bestimmten PowerShell-Edition</span><span class="sxs-lookup"><span data-stu-id="a1b7b-145">PowerShell Gallery users can find the list of modules supported on a specific PowerShell Edition using tags PSEdition_Desktop and PSEditon_Core.</span></span>
+<span data-ttu-id="a1b7b-146">Module ohne die Tags PSEdition_Desktop und PSEditon_Core sollten in PowerShell Desktop keine Probleme bereiten.</span><span class="sxs-lookup"><span data-stu-id="a1b7b-146">Modules without PSEdition_Desktop and PSEditon_Core tags are considered to work fine on PowerShell Desktop editions.</span></span>
 
 ```powershell
 
@@ -250,12 +238,8 @@ Find-Module -Tag PSEditon_Core
 ```
 
 
-<a id="more-details" class="xliff"></a>
-## Weitere Details
-<a id="scripts-with-pseditionsscriptscriptwithpseditionsupportmd" class="xliff"></a>
-### [Skripts mit PowerShell-Editionen](../script/scriptwithpseditionsupport.md)
-<a id="pseditions-support-on-powershellgallerypsgallerypsgallerypseditionsmd" class="xliff"></a>
-### [Unterstützung von PowerShell-Editionen im PowerShell-Katalog](../../psgallery/psgallery_pseditions.md)
-<a id="update-module-manifest-psgetupdate-modulemanifestmd" class="xliff"></a>
-### [Aktualisieren des Modulmanifests] (./psget_update-modulemanifest.md)
+## <a name="more-details"></a><span data-ttu-id="a1b7b-147">Weitere Details</span><span class="sxs-lookup"><span data-stu-id="a1b7b-147">More details</span></span>
+### <a name="scripts-with-pseditionsscriptscriptwithpseditionsupportmd"></a>[<span data-ttu-id="a1b7b-148">Skripts mit PowerShell-Editionen</span><span class="sxs-lookup"><span data-stu-id="a1b7b-148">Scripts with PSEditions</span></span>](../script/scriptwithpseditionsupport.md)
+### <a name="pseditions-support-on-powershellgallerypsgallerypsgallerypseditionsmd"></a>[<span data-ttu-id="a1b7b-149">Unterstützung von PowerShell-Editionen im PowerShell-Katalog</span><span class="sxs-lookup"><span data-stu-id="a1b7b-149">PSEditions support on PowerShellGallery</span></span>](../../psgallery/psgallery_pseditions.md)
+### <a name="update-module-manifest-psgetupdate-modulemanifestmd"></a><span data-ttu-id="a1b7b-150">[Aktualisieren des Modulmanifests] (./psget_update-modulemanifest.md)</span><span class="sxs-lookup"><span data-stu-id="a1b7b-150">[Update module manifest] (./psget_update-modulemanifest.md)</span></span>
 

@@ -9,10 +9,9 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="audit-powershell-usage-using-transcription-and-logging" class="xliff"></a>
-# Überwachen der PowerShell-Verwendung mithilfe von Aufzeichnung und Protokollierung
+# <a name="audit-powershell-usage-using-transcription-and-logging"></a><span data-ttu-id="aa728-102">Überwachen der PowerShell-Verwendung mithilfe von Aufzeichnung und Protokollierung</span><span class="sxs-lookup"><span data-stu-id="aa728-102">Audit PowerShell Usage using Transcription and Logging</span></span>
 
-- [Verbesserte Aufzeichnungsoptionen](audit_transcript.md)
-- [Ablaufverfolgung und Protokollierung von Skripts](audit_script.md)
-- [CMS-Cmdlets (Cryptographic Message Syntax, Syntax verschlüsselter Nachrichten)](audit_cms.md)
+- [<span data-ttu-id="aa728-103">Verbesserte Aufzeichnungsoptionen</span><span class="sxs-lookup"><span data-stu-id="aa728-103">Enhanced Transcription Options</span></span>](audit_transcript.md)
+- [<span data-ttu-id="aa728-104">Ablaufverfolgung und Protokollierung von Skripts</span><span class="sxs-lookup"><span data-stu-id="aa728-104">Script Tracing and Logging</span></span>](audit_script.md)
+- [<span data-ttu-id="aa728-105">CMS-Cmdlets (Cryptographic Message Syntax, Syntax verschlüsselter Nachrichten)</span><span class="sxs-lookup"><span data-stu-id="aa728-105">Cryptographic Message Syntax (CMS) cmdlets</span></span>](audit_cms.md)
 

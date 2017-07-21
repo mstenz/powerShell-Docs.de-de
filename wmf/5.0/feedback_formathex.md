@@ -9,19 +9,17 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="format-hex" class="xliff"></a>
-# Format-Hex
-Mit **Format-Hex** können Sie Text- und Binärdaten im Hexadezimalformat anzeigen (siehe [Format-Hex](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.utility/format-hex)).
+# <a name="format-hex"></a><span data-ttu-id="bfddf-102">Format-Hex</span><span class="sxs-lookup"><span data-stu-id="bfddf-102">Format-Hex</span></span>
+<span data-ttu-id="bfddf-103">Mit **Format-Hex** können Sie Text- und Binärdaten im Hexadezimalformat anzeigen (siehe [Format-Hex](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.utility/format-hex)).</span><span class="sxs-lookup"><span data-stu-id="bfddf-103">**Format-Hex** lets you view text or binary data in hexadecimal format; see [Format-Hex](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.utility/format-hex)</span></span>
 
-<a id="example-1" class="xliff"></a>
-## Beispiel 1
-Zeigen Sie den Inhalt einer Zeichenfolge im Hexadezimalformat an.
+## <a name="example-1"></a><span data-ttu-id="bfddf-104">Beispiel 1</span><span class="sxs-lookup"><span data-stu-id="bfddf-104">Example 1</span></span>
+<span data-ttu-id="bfddf-105">Zeigen Sie den Inhalt einer Zeichenfolge im Hexadezimalformat an.</span><span class="sxs-lookup"><span data-stu-id="bfddf-105">View the contents of a string in hexadecimal format.</span></span>
 
 ```PowerShell
 "This is a very long line to force the line folding in Format-Hex cmdlet" | Format-Hex
 ```
 
-Ausgaben
+<span data-ttu-id="bfddf-106">Ausgaben</span><span class="sxs-lookup"><span data-stu-id="bfddf-106">Outputs</span></span>
 ```
 PS C:\> This is a very long line to force the line folding in Format-Hex cmdlet" | Format-Hex
 

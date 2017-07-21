@@ -9,17 +9,17 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/08/2017
 ---
-# <a name="ise-module"></a>ISE-Modul
-Dieser Abschnitt enthält die Hilfethemen für das **ISE**-Modul, das Befehle enthält, die Sie in Windows PowerShell Integrated Scripting Environment (ISE) verwenden können. Dieses **ISE**-Modul wird mit Windows PowerShell installiert.
+# <a name="ise-module"></a><span data-ttu-id="82836-103">ISE-Modul</span><span class="sxs-lookup"><span data-stu-id="82836-103">ISE Module</span></span>
+<span data-ttu-id="82836-104">Dieser Abschnitt enthält die Hilfethemen für das **ISE**-Modul, das Befehle enthält, die Sie in Windows PowerShell Integrated Scripting Environment (ISE) verwenden können.</span><span class="sxs-lookup"><span data-stu-id="82836-104">This section contains the help topics for the **ISE** module, which includes commands that you can use in Windows PowerShell Integrated Scripting Environment (ISE).</span></span> <span data-ttu-id="82836-105">Dieses **ISE**-Modul wird mit Windows PowerShell installiert.</span><span class="sxs-lookup"><span data-stu-id="82836-105">The **ISE** module is installed with Windows PowerShell.</span></span>
 
-## <a name="help-topics"></a>Hilfethemen
-[ISE-Cmdlets](http://go.microsoft.com/fwlink/?LinkID=254686)
+## <a name="help-topics"></a><span data-ttu-id="82836-106">Hilfethemen</span><span class="sxs-lookup"><span data-stu-id="82836-106">Help Topics</span></span>
+[<span data-ttu-id="82836-107">ISE-Cmdlets</span><span class="sxs-lookup"><span data-stu-id="82836-107">ISE Cmdlets</span></span>](http://go.microsoft.com/fwlink/?LinkID=254686)
 
-## <a name="see-also"></a>Weitere Informationen
-- [about_Windows_PowerShell_ISE [v3]](https://technet.microsoft.com/en-us/library/dfa54d47-60c6-4fff-8197-c747e8d411bb)
-- [Windows PowerShell 3.0 Integrated Scripting Environment](http://go.microsoft.com/fwlink/?LinkId=254681)
-- [Windows PowerShell 2.0 Integrated Scripting Environment](http://go.microsoft.com/fwlink/?LinkID=238569)
-- [Windows PowerShell 5.0](../core-modules/Windows-PowerShell-5.0.md)
-- [Windows PowerShell Core](https://technet.microsoft.com/en-us/library/4b75f1e4-f327-48f3-92ab-bf5435094d41)
-- [Skripting mit WindowsPowerShell](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
+## <a name="see-also"></a><span data-ttu-id="82836-108">Weitere Informationen</span><span class="sxs-lookup"><span data-stu-id="82836-108">See Also</span></span>
+- [<span data-ttu-id="82836-109">about_Windows_PowerShell_ISE [v3]</span><span class="sxs-lookup"><span data-stu-id="82836-109">about_Windows_PowerShell_ISE [v3]</span></span>](https://technet.microsoft.com/en-us/library/dfa54d47-60c6-4fff-8197-c747e8d411bb)
+- [<span data-ttu-id="82836-110">Windows PowerShell 3.0 Integrated Scripting Environment</span><span class="sxs-lookup"><span data-stu-id="82836-110">Windows PowerShell 3.0 Integrated Scripting Environment</span></span>](http://go.microsoft.com/fwlink/?LinkId=254681)
+- [<span data-ttu-id="82836-111">Windows PowerShell 2.0 Integrated Scripting Environment</span><span class="sxs-lookup"><span data-stu-id="82836-111">Windows PowerShell 2.0 Integrated Scripting Environment</span></span>](http://go.microsoft.com/fwlink/?LinkID=238569)
+- [<span data-ttu-id="82836-112">Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="82836-112">Windows PowerShell 5.0</span></span>](../core-modules/Windows-PowerShell-5.0.md)
+- [<span data-ttu-id="82836-113">Windows PowerShell Core</span><span class="sxs-lookup"><span data-stu-id="82836-113">Windows PowerShell Core</span></span>](https://technet.microsoft.com/en-us/library/4b75f1e4-f327-48f3-92ab-bf5435094d41)
+- [<span data-ttu-id="82836-114">Skripting mit WindowsPowerShell</span><span class="sxs-lookup"><span data-stu-id="82836-114">Scripting with Windows PowerShell</span></span>](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
 

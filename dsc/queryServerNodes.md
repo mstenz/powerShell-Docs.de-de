@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-function-to-query-node-information-from-pull-server" class="xliff"></a>
-# DSC-Funktion zum Abfragen von Knoteninformationen vom Pullserver
+# <a name="dsc-function-to-query-node-information-from-pull-server"></a><span data-ttu-id="5416d-103">DSC-Funktion zum Abfragen von Knoteninformationen vom Pullserver</span><span class="sxs-lookup"><span data-stu-id="5416d-103">DSC function to query node information from pull server.</span></span>
 
 ```powershell
 function QueryNodeInformation
@@ -40,9 +39,9 @@ Param (
 }
 ```
 
-Ersetzen Sie den `Uri`-Parameter durch den URI Ihres Pullservers. Wenn Sie die Knoteninformationen im XML-Format wünschen, legen Sie `ContentType` auf `application/xml` fest.
+<span data-ttu-id="5416d-104">Ersetzen Sie den `Uri`-Parameter durch den URI Ihres Pullservers.</span><span class="sxs-lookup"><span data-stu-id="5416d-104">Replace the `Uri` parameter with the URI for your pull server.</span></span> <span data-ttu-id="5416d-105">Wenn Sie die Knoteninformationen im XML-Format wünschen, legen Sie `ContentType` auf `application/xml` fest.</span><span class="sxs-lookup"><span data-stu-id="5416d-105">If you want the node information in XML format, set `ContentType` to `application/xml`.</span></span>
 
-Zum Abrufen von Knoteninformationen aus dem `$json`-Parameter verwenden Sie Folgendes:
+<span data-ttu-id="5416d-106">Zum Abrufen von Knoteninformationen aus dem `$json`-Parameter verwenden Sie Folgendes:</span><span class="sxs-lookup"><span data-stu-id="5416d-106">To retrieve the node information from the `$json` parameter, use the following:</span></span>
 
 ```powershell
 $json = QueryNodeInformation –Uri http://localhost:7070/PSDSCComplianceServer.svc/Status 

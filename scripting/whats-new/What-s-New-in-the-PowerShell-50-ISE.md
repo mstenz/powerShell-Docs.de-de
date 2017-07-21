@@ -9,220 +9,220 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/08/2017
 ---
-# <a name="what39s-new-in-the-windows-powershell-ise"></a>Neuerungen bei der Windows PowerShell ISE
-In diesem Thema werden die neuen und aktualisierten Features vorgestellt, die in Versionen von Windows PowerShell® Integrated Scripting Environment (ISE) eingeführt wurden.
+# <a name="what39s-new-in-the-windows-powershell-ise"></a><span data-ttu-id="ec1c1-103">Neuerungen bei der Windows PowerShell ISE</span><span class="sxs-lookup"><span data-stu-id="ec1c1-103">What&#39;s New in the Windows PowerShell ISE</span></span>
+<span data-ttu-id="ec1c1-104">In diesem Thema werden die neuen und aktualisierten Features vorgestellt, die in Versionen von Windows PowerShell® Integrated Scripting Environment (ISE) eingeführt wurden.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-104">This topic explains the new and updated features that have been introduced in versions of Windows PowerShell ® Integrated Scripting Environment (ISE).</span></span>
 
-## <a name="overview"></a>Featurebeschreibung
-Die Windows PowerShell ISE ist eine Hostanwendung, die es Ihnen ermöglicht, Skripts und Module in einer grafischen und intuitiven Umgebung zu schreiben, auszuführen und zu testen. Wichtige Features wie farbliche Syntaxkennzeichnung, Vervollständigung mit der TAB-Taste, visuelles Debuggen, Unicode-Kompatibilität und kontextbezogene Hilfe ermöglichen eine komfortable Skripterstellung.
+## <span data-ttu-id="ec1c1-105"><a name="overview"></a>Featurebeschreibung</span><span class="sxs-lookup"><span data-stu-id="ec1c1-105"><a name="overview"></a>Feature description</span></span>
+<span data-ttu-id="ec1c1-106">Die Windows PowerShell ISE ist eine Hostanwendung, die es Ihnen ermöglicht, Skripts und Module in einer grafischen und intuitiven Umgebung zu schreiben, auszuführen und zu testen.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-106">The Windows PowerShell ISE is a host application that enables you to write, run, and test scripts and modules in a graphical and intuitive environment.</span></span> <span data-ttu-id="ec1c1-107">Wichtige Features wie farbliche Syntaxkennzeichnung, Vervollständigung mit der TAB-Taste, visuelles Debuggen, Unicode-Kompatibilität und kontextbezogene Hilfe ermöglichen eine komfortable Skripterstellung.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-107">Key features such as syntax-coloring, tab completion, visual debugging, Unicode compliance, and context-sensitive Help provide a rich scripting experience.</span></span>
 
-Eine Übersicht über die Windows PowerShell ISE finden Sie unter [Windows PowerShell Integrated Scripting Environment (Übersicht)](https://technet.microsoft.com/en-us/library/3c1892c2-bf84-4cb6-af26-1f453be9e671).
+<span data-ttu-id="ec1c1-108">Eine Übersicht über die Windows PowerShell ISE finden Sie unter [Windows PowerShell Integrated Scripting Environment (Übersicht)](https://technet.microsoft.com/en-us/library/3c1892c2-bf84-4cb6-af26-1f453be9e671).</span><span class="sxs-lookup"><span data-stu-id="ec1c1-108">For an overview of Windows PowerShell ISE, see [Windows PowerShell Integrated Scripting Environment overview](https://technet.microsoft.com/en-us/library/3c1892c2-bf84-4cb6-af26-1f453be9e671).</span></span>
 
-## <a name="versions"></a>Neue und geänderte Funktionen in der Windows PowerShell ISE
-Die folgende Tabelle enthält die neuen und geänderten Funktionen für diese Version von Windows PowerShell ISE in Windows PowerShell.
+## <span data-ttu-id="ec1c1-109"><a name="versions"></a>Neue und geänderte Funktionen in der Windows PowerShell ISE</span><span class="sxs-lookup"><span data-stu-id="ec1c1-109"><a name="versions"></a>New and changed functionality in Windows PowerShell ISE</span></span>
+<span data-ttu-id="ec1c1-110">Die folgende Tabelle enthält die neuen und geänderten Funktionen für diese Version von Windows PowerShell ISE in Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-110">The following table lists the new and changed features for this release of Windows PowerShell ISE in Windows PowerShell.</span></span>
 
-|Feature/Funktionalität|Windows PowerShell ISE 4.0|Windows PowerShell ISE 3.0|Windows PowerShell ISE 2.0|
+|<span data-ttu-id="ec1c1-111">Feature/Funktionalität</span><span class="sxs-lookup"><span data-stu-id="ec1c1-111">Feature/functionality</span></span>|<span data-ttu-id="ec1c1-112">Windows PowerShell ISE 4.0</span><span class="sxs-lookup"><span data-stu-id="ec1c1-112">Windows PowerShell ISE 4.0</span></span>|<span data-ttu-id="ec1c1-113">Windows PowerShell ISE 3.0</span><span class="sxs-lookup"><span data-stu-id="ec1c1-113">Windows PowerShell ISE 3.0</span></span>|<span data-ttu-id="ec1c1-114">Windows PowerShell ISE 2.0</span><span class="sxs-lookup"><span data-stu-id="ec1c1-114">Windows PowerShell ISE 2.0</span></span>|
 |--------------------------|-----------------------------------------------|-----------------------------------------------|-----------------------------------------------|
-|**[IntelliSense](#BKMK_Intellisense)**|X|X||
-|**[Codeausschnitte](#bkmk_snippets)**|X|X||
-|**[Add-On-Tools](#BKMK_AddOnTools)**|X|X||
-|**[Neustart-Manager und automatisches Speichern](#BKMK_RestartMgr)**|X|X||
-|**[Konsolenbereich](#BKMK_ConsolePane)**|X|X||
-|**[Liste „Zuletzt verwendet“](#BKMK_MRU)**|X|X||
-|**[Befehlszeilenschalter](#BKMK_CommandLine)**|X|X||
-|**[Neue Features im Editor](#BKMK_NewEditorFeatures)**|X|X||
-|**[Neues Anzeigefenster für Hilfe](#BKMK_NewHelpViewer)**|X|X||
-|**[Cmdlet „Show-Command“](#BKMK_ShowCommand)**|X|X||
+|<span data-ttu-id="ec1c1-115">**[IntelliSense](#BKMK_Intellisense)**</span><span class="sxs-lookup"><span data-stu-id="ec1c1-115">**[IntelliSense](#BKMK_Intellisense)**</span></span>|<span data-ttu-id="ec1c1-116">X</span><span class="sxs-lookup"><span data-stu-id="ec1c1-116">X</span></span>|<span data-ttu-id="ec1c1-117">X</span><span class="sxs-lookup"><span data-stu-id="ec1c1-117">X</span></span>||
+|<span data-ttu-id="ec1c1-118">**[Codeausschnitte](#bkmk_snippets)**</span><span class="sxs-lookup"><span data-stu-id="ec1c1-118">**[Snippets](#bkmk_snippets)**</span></span>|<span data-ttu-id="ec1c1-119">X</span><span class="sxs-lookup"><span data-stu-id="ec1c1-119">X</span></span>|<span data-ttu-id="ec1c1-120">X</span><span class="sxs-lookup"><span data-stu-id="ec1c1-120">X</span></span>||
+|<span data-ttu-id="ec1c1-121">**[Add-On-Tools](#BKMK_AddOnTools)**</span><span class="sxs-lookup"><span data-stu-id="ec1c1-121">**[Add-on Tools](#BKMK_AddOnTools)**</span></span>|<span data-ttu-id="ec1c1-122">X</span><span class="sxs-lookup"><span data-stu-id="ec1c1-122">X</span></span>|<span data-ttu-id="ec1c1-123">X</span><span class="sxs-lookup"><span data-stu-id="ec1c1-123">X</span></span>||
+|<span data-ttu-id="ec1c1-124">**[Neustart-Manager und automatisches Speichern](#BKMK_RestartMgr)**</span><span class="sxs-lookup"><span data-stu-id="ec1c1-124">**[Restart Manager and Auto-save](#BKMK_RestartMgr)**</span></span>|<span data-ttu-id="ec1c1-125">X</span><span class="sxs-lookup"><span data-stu-id="ec1c1-125">X</span></span>|<span data-ttu-id="ec1c1-126">X</span><span class="sxs-lookup"><span data-stu-id="ec1c1-126">X</span></span>||
+|<span data-ttu-id="ec1c1-127">**[Konsolenbereich](#BKMK_ConsolePane)**</span><span class="sxs-lookup"><span data-stu-id="ec1c1-127">**[Console Pane](#BKMK_ConsolePane)**</span></span>|<span data-ttu-id="ec1c1-128">X</span><span class="sxs-lookup"><span data-stu-id="ec1c1-128">X</span></span>|<span data-ttu-id="ec1c1-129">X</span><span class="sxs-lookup"><span data-stu-id="ec1c1-129">X</span></span>||
+|<span data-ttu-id="ec1c1-130">**[Liste „Zuletzt verwendet“](#BKMK_MRU)**</span><span class="sxs-lookup"><span data-stu-id="ec1c1-130">**[Most-recently used list](#BKMK_MRU)**</span></span>|<span data-ttu-id="ec1c1-131">X</span><span class="sxs-lookup"><span data-stu-id="ec1c1-131">X</span></span>|<span data-ttu-id="ec1c1-132">X</span><span class="sxs-lookup"><span data-stu-id="ec1c1-132">X</span></span>||
+|<span data-ttu-id="ec1c1-133">**[Befehlszeilenschalter](#BKMK_CommandLine)**</span><span class="sxs-lookup"><span data-stu-id="ec1c1-133">**[Command-line switches](#BKMK_CommandLine)**</span></span>|<span data-ttu-id="ec1c1-134">X</span><span class="sxs-lookup"><span data-stu-id="ec1c1-134">X</span></span>|<span data-ttu-id="ec1c1-135">X</span><span class="sxs-lookup"><span data-stu-id="ec1c1-135">X</span></span>||
+|<span data-ttu-id="ec1c1-136">**[Neue Features im Editor](#BKMK_NewEditorFeatures)**</span><span class="sxs-lookup"><span data-stu-id="ec1c1-136">**[New editor features](#BKMK_NewEditorFeatures)**</span></span>|<span data-ttu-id="ec1c1-137">X</span><span class="sxs-lookup"><span data-stu-id="ec1c1-137">X</span></span>|<span data-ttu-id="ec1c1-138">X</span><span class="sxs-lookup"><span data-stu-id="ec1c1-138">X</span></span>||
+|<span data-ttu-id="ec1c1-139">**[Neues Anzeigefenster für Hilfe](#BKMK_NewHelpViewer)**</span><span class="sxs-lookup"><span data-stu-id="ec1c1-139">**[New Help viewer window](#BKMK_NewHelpViewer)**</span></span>|<span data-ttu-id="ec1c1-140">X</span><span class="sxs-lookup"><span data-stu-id="ec1c1-140">X</span></span>|<span data-ttu-id="ec1c1-141">X</span><span class="sxs-lookup"><span data-stu-id="ec1c1-141">X</span></span>||
+|<span data-ttu-id="ec1c1-142">**[Cmdlet „Show-Command“](#BKMK_ShowCommand)**</span><span class="sxs-lookup"><span data-stu-id="ec1c1-142">**[Show-Command cmdlet](#BKMK_ShowCommand)**</span></span>|<span data-ttu-id="ec1c1-143">X</span><span class="sxs-lookup"><span data-stu-id="ec1c1-143">X</span></span>|<span data-ttu-id="ec1c1-144">X</span><span class="sxs-lookup"><span data-stu-id="ec1c1-144">X</span></span>||
 
-### <a name="BKMK_Intellisense"></a>IntelliSense
-**In ISE 3.0 hinzugefügt**
+### <span data-ttu-id="ec1c1-145"><a name="BKMK_Intellisense"></a>IntelliSense</span><span class="sxs-lookup"><span data-stu-id="ec1c1-145"><a name="BKMK_Intellisense"></a>IntelliSense</span></span>
+<span data-ttu-id="ec1c1-146">**In ISE 3.0 hinzugefügt**</span><span class="sxs-lookup"><span data-stu-id="ec1c1-146">**Added in ISE 3.0**</span></span>
 
-IntelliSense ist ein Feature für die automatische Vervollständigung, das zur Windows PowerShell ISE gehört. IntelliSense zeigt während der Eingabe klickbare Menüs möglicherweise übereinstimmender Cmdlets, Parameter, Parameterwerte, Dateien oder Ordner an.
+<span data-ttu-id="ec1c1-147">IntelliSense ist ein Feature für die automatische Vervollständigung, das zur Windows PowerShell ISE gehört.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-147">IntelliSense is an automatic-completion assistance feature that is part of Windows PowerShell ISE.</span></span> <span data-ttu-id="ec1c1-148">IntelliSense zeigt während der Eingabe klickbare Menüs möglicherweise übereinstimmender Cmdlets, Parameter, Parameterwerte, Dateien oder Ordner an.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-148">IntelliSense displays clickable menus of potentially matching cmdlets, parameters, parameter values, files, or folders as you type.</span></span>
 
-**Welchen Nutzen bietet diese Änderung?**
+<span data-ttu-id="ec1c1-149">**Welchen Nutzen bietet diese Änderung?**</span><span class="sxs-lookup"><span data-stu-id="ec1c1-149">**What value does this change add?**</span></span>
 
-Durch Hinzufügen von IntelliSense ist es einfacher, Cmdlets und Syntax zu ermitteln, wenn Sie die Windows PowerShell ISE zum Erstellen von Skripts nutzen. Sie können mithilfe von Windows PowerShell ISE auch Windows PowerShell erlernen, während Sie neue Skripts erstellen.
+<span data-ttu-id="ec1c1-150">Durch Hinzufügen von IntelliSense ist es einfacher, Cmdlets und Syntax zu ermitteln, wenn Sie die Windows PowerShell ISE zum Erstellen von Skripts nutzen.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-150">With the addition of IntelliSense, it is easier to discover cmdlets and syntax when you use Windows PowerShell ISE to create scripts.</span></span> <span data-ttu-id="ec1c1-151">Sie können mithilfe von Windows PowerShell ISE auch Windows PowerShell erlernen, während Sie neue Skripts erstellen.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-151">You can also use Windows PowerShell ISE to learn Windows PowerShell while you create new scripts.</span></span>
 
-**Worin bestehen die Unterschiede?**
+<span data-ttu-id="ec1c1-152">**Worin bestehen die Unterschiede?**</span><span class="sxs-lookup"><span data-stu-id="ec1c1-152">**What works differently?**</span></span>
 
-Bei Eingabe von Cmdlets in die Windows PowerShell ISE 3.0 oder höher wird ein bildlauffähiges und klickbares Menü angezeigt, das Ihnen das Durchsuchen und Auswählen der entsprechenden Befehle ermöglicht.
+<span data-ttu-id="ec1c1-153">Bei Eingabe von Cmdlets in die Windows PowerShell ISE 3.0 oder höher wird ein bildlauffähiges und klickbares Menü angezeigt, das Ihnen das Durchsuchen und Auswählen der entsprechenden Befehle ermöglicht.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-153">When you type cmdlets in the Windows PowerShell ISE 3.0 or later, a scrollable and clickable menu displays, allowing you to browse and select the appropriate commands.</span></span>
 
-### <a name="BKMK_Snippets"></a>Codeausschnitte
-**In ISE 3.0 hinzugefügt**
+### <span data-ttu-id="ec1c1-154"><a name="BKMK_Snippets"></a>Codeausschnitte</span><span class="sxs-lookup"><span data-stu-id="ec1c1-154"><a name="BKMK_Snippets"></a>Snippets</span></span>
+<span data-ttu-id="ec1c1-155">**In ISE 3.0 hinzugefügt**</span><span class="sxs-lookup"><span data-stu-id="ec1c1-155">**Added in ISE 3.0**</span></span>
 
-*Codeausschnitte* sind kurze Abschnitte von Windows PowerShell-Code, die Sie in die in Windows PowerShell ISE erstellten Skripts einfügen können. Windows PowerShell ISE bietet einen Standardsatz von Codeausschnitten. Beim Arbeiten in der Windows PowerShell ISE können Sie Codeausschnitte mithilfe des Cmdlets **New-Snippet** hinzufügen.
+<span data-ttu-id="ec1c1-156">*Codeausschnitte* sind kurze Abschnitte von Windows PowerShell-Code, die Sie in die in Windows PowerShell ISE erstellten Skripts einfügen können.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-156">*Snippets* are short sections of Windows PowerShell code that you can insert into the scripts you create in Windows PowerShell ISE.</span></span> <span data-ttu-id="ec1c1-157">Windows PowerShell ISE bietet einen Standardsatz von Codeausschnitten.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-157">Windows PowerShell ISE comes with a default set of snippets.</span></span> <span data-ttu-id="ec1c1-158">Beim Arbeiten in der Windows PowerShell ISE können Sie Codeausschnitte mithilfe des Cmdlets **New-Snippet** hinzufügen.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-158">You can add snippets by using the **New-Snippet** cmdlet while working in Windows PowerShell ISE.</span></span>
 
-**Welchen Nutzen bietet diese Änderung?**
+<span data-ttu-id="ec1c1-159">**Welchen Nutzen bietet diese Änderung?**</span><span class="sxs-lookup"><span data-stu-id="ec1c1-159">**What value does this change add?**</span></span>
 
-Mithilfe von Codeausschnitten können Sie Skripts zum Automatisieren Ihrer Umgebung schnell zusammenstellen und erstellen.
+<span data-ttu-id="ec1c1-160">Mithilfe von Codeausschnitten können Sie Skripts zum Automatisieren Ihrer Umgebung schnell zusammenstellen und erstellen.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-160">By using snippets, you can quickly assemble and create scripts to automate your environment.</span></span>
 
-**Worin bestehen die Unterschiede?**
+<span data-ttu-id="ec1c1-161">**Worin bestehen die Unterschiede?**</span><span class="sxs-lookup"><span data-stu-id="ec1c1-161">**What works differently?**</span></span>
 
-Klicken Sie zum Verwenden von Codeausschnitten in Windows PowerShell 3.0 oder höher im Menü **Bearbeiten** auf **Ausschnitte starten**, oder drücken Sie **STRG+J**.
+<span data-ttu-id="ec1c1-162">Klicken Sie zum Verwenden von Codeausschnitten in Windows PowerShell 3.0 oder höher im Menü **Bearbeiten** auf **Ausschnitte starten**, oder drücken Sie **STRG+J**.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-162">To use snippets in Windows PowerShell 3.0 or later, on the **Edit** menu, click **Start Snippets**, or press **Ctrl-J**.</span></span>
 
-### <a name="BKMK_AddOnTools"></a>Add-On-Tools
-**In PowerShell 3.0 hinzugefügt**
+### <span data-ttu-id="ec1c1-163"><a name="BKMK_AddOnTools"></a>Add-On-Tools</span><span class="sxs-lookup"><span data-stu-id="ec1c1-163"><a name="BKMK_AddOnTools"></a>Add-on tools</span></span>
+<span data-ttu-id="ec1c1-164">**In PowerShell 3.0 hinzugefügt**</span><span class="sxs-lookup"><span data-stu-id="ec1c1-164">**Added in PowerShell 3.0**</span></span>
 
-Die Windows PowerShell ISE unterstützt jetzt Add-On-Tools, bei denen es sich um WPF-Steuerelemente (Windows Presentation Foundation) handelt, die mithilfe des Objektmodells hinzugefügt werden. Add-On-Tools können in der Konsole in einem vertikalen oder horizontalen Bereich angezeigt werden. Mehrere Add-On-Tools in einem Bereich werden als Registerkarten-Steuerelement angezeigt. Sie können auch Add-On-Tools von anderen Anbietern als Microsoft hinzufügen oder entfernen. Weitere Informationen zum Importieren oder Entfernen von Add-On-Tools finden Sie unter [Windows PowerShell ISE Operations](http://technet.microsoft.com/library/cc732148.aspx) (Windows PowerShell ISE-Vorgänge).
+<span data-ttu-id="ec1c1-165">Die Windows PowerShell ISE unterstützt jetzt Add-On-Tools, bei denen es sich um WPF-Steuerelemente (Windows Presentation Foundation) handelt, die mithilfe des Objektmodells hinzugefügt werden.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-165">Windows PowerShell ISE now supports add-on tools, which are Windows Presentation Foundation (WPF) controls that are added by using the object model.</span></span> <span data-ttu-id="ec1c1-166">Add-On-Tools können in der Konsole in einem vertikalen oder horizontalen Bereich angezeigt werden.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-166">Add-on tools can be displayed as a vertical or horizontal pane in the console.</span></span> <span data-ttu-id="ec1c1-167">Mehrere Add-On-Tools in einem Bereich werden als Registerkarten-Steuerelement angezeigt.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-167">Multiple add-on tools in a pane are displayed as a tabbed control.</span></span> <span data-ttu-id="ec1c1-168">Sie können auch Add-On-Tools von anderen Anbietern als Microsoft hinzufügen oder entfernen.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-168">You can also add or remove add-on tools that are produced by non-Microsoft parties.</span></span> <span data-ttu-id="ec1c1-169">Weitere Informationen zum Importieren oder Entfernen von Add-On-Tools finden Sie unter [Windows PowerShell ISE Operations](http://technet.microsoft.com/library/cc732148.aspx) (Windows PowerShell ISE-Vorgänge).</span><span class="sxs-lookup"><span data-stu-id="ec1c1-169">For more information about how to import or remove add-on tools, see [Windows PowerShell ISE Operations](http://technet.microsoft.com/library/cc732148.aspx).</span></span>
 
-**Welchen Nutzen bietet diese Änderung?**
+<span data-ttu-id="ec1c1-170">**Welchen Nutzen bietet diese Änderung?**</span><span class="sxs-lookup"><span data-stu-id="ec1c1-170">**What value does this change add?**</span></span>
 
-Add-Ons ermöglichen Ihnen das Erweitern und Anpassen der Windows PowerShell ISE mit Tools, die Ihre Skripterstellungsumgebung verbessern oder der Windows PowerShell ISE neue Funktionen hinzufügen können.
+<span data-ttu-id="ec1c1-171">Add-Ons ermöglichen Ihnen das Erweitern und Anpassen der Windows PowerShell ISE mit Tools, die Ihre Skripterstellungsumgebung verbessern oder der Windows PowerShell ISE neue Funktionen hinzufügen können.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-171">Add-ons allow you to extend and customize Windows PowerShell ISE with tools that can enhance your scripting experience or add functionality to Windows PowerShell ISE.</span></span>
 
-**Worin bestehen die Unterschiede?**
+<span data-ttu-id="ec1c1-172">**Worin bestehen die Unterschiede?**</span><span class="sxs-lookup"><span data-stu-id="ec1c1-172">**What works differently?**</span></span>
 
-Zum Funktionsumfang der Windows PowerShell ISE 3.0 und höher gehört das Add-On **Befehle**. Das Add-On **Befehle** ermöglicht das Durchsuchen von Cmdlets und das Zugreifen auf die Hilfe zu den Cmdlets. Es wird neben den Bereichen **Skript** und **Konsole** angezeigt.
+<span data-ttu-id="ec1c1-173">Zum Funktionsumfang der Windows PowerShell ISE 3.0 und höher gehört das Add-On **Befehle**.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-173">Windows PowerShell ISE 3.0 and later come with the **Commands** add-on.</span></span> <span data-ttu-id="ec1c1-174">Das Add-On **Befehle** ermöglicht das Durchsuchen von Cmdlets und das Zugreifen auf die Hilfe zu den Cmdlets. Es wird neben den Bereichen **Skript** und **Konsole** angezeigt.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-174">The **Commands** add-on allows you to browse cmdlets, and access help about the cmdlets side-by-side with the **Script** and **Console** Panes.</span></span>
 
-Zusätzliche Add-Ons finden Sie über den Befehl **Website mit Add-On-Tools öffnen** im Menü**Add-Ons**.
+<span data-ttu-id="ec1c1-175">Zusätzliche Add-Ons finden Sie über den Befehl **Website mit Add-On-Tools öffnen** im Menü**Add-Ons**.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-175">Additional add-ons can be found by using the **Open Add-on Tools Website** command on the **Add-ons** menu.</span></span>
 
-### <a name="BKMK_RestartMgr"></a>Neustart-Manager und automatisches Speichern
-**In PowerShell 3.0 hinzugefügt**
+### <span data-ttu-id="ec1c1-176"><a name="BKMK_RestartMgr"></a>Neustart-Manager und automatisches Speichern</span><span class="sxs-lookup"><span data-stu-id="ec1c1-176"><a name="BKMK_RestartMgr"></a>Restart manager and auto-save</span></span>
+<span data-ttu-id="ec1c1-177">**In PowerShell 3.0 hinzugefügt**</span><span class="sxs-lookup"><span data-stu-id="ec1c1-177">**Added in PowerShell 3.0**</span></span>
 
-Windows PowerShell ISE speichert nun Ihre geöffneten Skripts automatisch alle zwei Minuten an einem gesonderten Speicherort.  Wenn Windows PowerShell ISE unerwartet beendet oder das Betriebssystem neu gestartet wird, stellt Windows PowerShell ISE die in der letzten Sitzung geöffneten Skripts wieder her (auch wenn sie nicht gespeichert wurden).
+<span data-ttu-id="ec1c1-178">Windows PowerShell ISE speichert nun Ihre geöffneten Skripts automatisch alle zwei Minuten an einem gesonderten Speicherort.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-178">Windows PowerShell ISE now automatically saves your open scripts every two minutes, in a separate location.</span></span>  <span data-ttu-id="ec1c1-179">Wenn Windows PowerShell ISE unerwartet beendet oder das Betriebssystem neu gestartet wird, stellt Windows PowerShell ISE die in der letzten Sitzung geöffneten Skripts wieder her (auch wenn sie nicht gespeichert wurden).</span><span class="sxs-lookup"><span data-stu-id="ec1c1-179">If Windows PowerShell ISE stops working, or if the operating system is restarted, after Windows PowerShell ISE restarts, it recovers scripts that were open in the last session, even if the scripts were not saved.</span></span>
 
-Führen Sie im Konsolenbereich den folgenden Befehl aus, um das Intervall für die automatische Speicherung zu ändern: **$psise.Options.AutoSaveMinuteInterval**.
+<span data-ttu-id="ec1c1-180">Führen Sie im Konsolenbereich den folgenden Befehl aus, um das Intervall für die automatische Speicherung zu ändern: **$psise.Options.AutoSaveMinuteInterval**.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-180">To change the automatic saving interval, run the following command in the Console pane: **$psise.Options.AutoSaveMinuteInterval**.</span></span>
 
-**Welchen Nutzen bietet diese Änderung?**
+<span data-ttu-id="ec1c1-181">**Welchen Nutzen bietet diese Änderung?**</span><span class="sxs-lookup"><span data-stu-id="ec1c1-181">**What value does this change add?**</span></span>
 
-Sie können jetzt mit Windows PowerShell ISE mit dem Wissen arbeiten, dass Ihre geöffneten Skripts im Fall eines unerwarteten Neustarts automatisch gespeichert werden.
+<span data-ttu-id="ec1c1-182">Sie können jetzt mit Windows PowerShell ISE mit dem Wissen arbeiten, dass Ihre geöffneten Skripts im Fall eines unerwarteten Neustarts automatisch gespeichert werden.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-182">You can now work within Windows PowerShell ISE knowing that your open scripts are automatically saved in the event of an unexpected restart.</span></span>
 
-**Worin bestehen die Unterschiede?**
+<span data-ttu-id="ec1c1-183">**Worin bestehen die Unterschiede?**</span><span class="sxs-lookup"><span data-stu-id="ec1c1-183">**What works differently?**</span></span>
 
-In Windows PowerShell ISE 2.0 werden die Skripts bei einem Neustart nicht automatisch gespeichert.
+<span data-ttu-id="ec1c1-184">In Windows PowerShell ISE 2.0 werden die Skripts bei einem Neustart nicht automatisch gespeichert.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-184">Windows PowerShell ISE 2.0 does not save the scripts automatically in the event of a restart.</span></span>
 
-### <a name="BKMK_MRU"></a>Liste „Zuletzt verwendet“
-**In PowerShell 3.0 hinzugefügt**
+### <span data-ttu-id="ec1c1-185"><a name="BKMK_MRU"></a>Liste „Zuletzt verwendet“</span><span class="sxs-lookup"><span data-stu-id="ec1c1-185"><a name="BKMK_MRU"></a>Most-recently used list</span></span>
+<span data-ttu-id="ec1c1-186">**In PowerShell 3.0 hinzugefügt**</span><span class="sxs-lookup"><span data-stu-id="ec1c1-186">**Added in PowerShell 3.0**</span></span>
 
-Die Windows PowerShell ISE bietet jetzt eine Liste der zuletzt verwendeten Dateien. Beim Öffnen einer Datei in der Windows PowerShell ISE wird die Datei der Liste „Zuletzt verwendet“ im Menü **Datei** hinzugefügt.
+<span data-ttu-id="ec1c1-187">Die Windows PowerShell ISE bietet jetzt eine Liste der zuletzt verwendeten Dateien.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-187">Windows PowerShell ISE now has a most-recently used list for files.</span></span> <span data-ttu-id="ec1c1-188">Beim Öffnen einer Datei in der Windows PowerShell ISE wird die Datei der Liste „Zuletzt verwendet“ im Menü **Datei** hinzugefügt.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-188">When you open a file in Windows PowerShell ISE, the file is added to the most-recently used list on the **File** menu.</span></span>
 
-Führen Sie im Konsolenbereich den folgenden Befehl aus, um die Standardanzahl von Dateien in der Liste „Zuletzt verwendet“ zu ändern: **$psise.Options.MruCount**.
+<span data-ttu-id="ec1c1-189">Führen Sie im Konsolenbereich den folgenden Befehl aus, um die Standardanzahl von Dateien in der Liste „Zuletzt verwendet“ zu ändern: **$psise.Options.MruCount**.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-189">To change the default number of files in the most-recently used list, run the following command in the Console Pane: **$psise.Options.MruCount**.</span></span>
 
-**Welchen Nutzen bietet diese Änderung?**
+<span data-ttu-id="ec1c1-190">**Welchen Nutzen bietet diese Änderung?**</span><span class="sxs-lookup"><span data-stu-id="ec1c1-190">**What value does this change add?**</span></span>
 
-Über die Liste „Zuletzt verwendet“ können Sie nun mühelos auf die zuletzt verwendeten Dateien zugreifen.
+<span data-ttu-id="ec1c1-191">Über die Liste „Zuletzt verwendet“ können Sie nun mühelos auf die zuletzt verwendeten Dateien zugreifen.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-191">You can now use the most-recently used list to easily access your frequently-used files.</span></span>
 
-**Worin bestehen die Unterschiede?**
+<span data-ttu-id="ec1c1-192">**Worin bestehen die Unterschiede?**</span><span class="sxs-lookup"><span data-stu-id="ec1c1-192">**What works differently?**</span></span>
 
-Die Windows PowerShell ISE 2.0 bietet keine solche Liste.
+<span data-ttu-id="ec1c1-193">Die Windows PowerShell ISE 2.0 bietet keine solche Liste.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-193">Windows PowerShell ISE 2.0 does not have a most-recently used list.</span></span>
 
-### <a name="BKMK_ConsolePane"></a>Konsolenbereich
-**In PowerShell 3.0 hinzugefügt**
+### <span data-ttu-id="ec1c1-194"><a name="BKMK_ConsolePane"></a>Konsolenbereich</span><span class="sxs-lookup"><span data-stu-id="ec1c1-194"><a name="BKMK_ConsolePane"></a>Console Pane</span></span>
+<span data-ttu-id="ec1c1-195">**In PowerShell 3.0 hinzugefügt**</span><span class="sxs-lookup"><span data-stu-id="ec1c1-195">**Added in PowerShell 3.0**</span></span>
 
-Die separaten Befehls- und Ausgabebereiche, die in der ersten Version der Windows PowerShell ISE verfügbar waren, wurden in einem Konsolenbereich kombiniert. Hinsichtlich Funktion und Darstellung ähnelt der Konsolenbereich einer typischen Windows PowerShell-Konsole, bietet aber die im Folgenden aufgeführten Erweiterungen (von denen die meisten in diesem Thema beschrieben werden).
+<span data-ttu-id="ec1c1-196">Die separaten Befehls- und Ausgabebereiche, die in der ersten Version der Windows PowerShell ISE verfügbar waren, wurden in einem Konsolenbereich kombiniert.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-196">The separate Command and Output Panes that were available in the first release of Windows PowerShell ISE have been combined into a single Console Pane.</span></span> <span data-ttu-id="ec1c1-197">Hinsichtlich Funktion und Darstellung ähnelt der Konsolenbereich einer typischen Windows PowerShell-Konsole, bietet aber die im Folgenden aufgeführten Erweiterungen (von denen die meisten in diesem Thema beschrieben werden).</span><span class="sxs-lookup"><span data-stu-id="ec1c1-197">The Console Pane is similar in function and appearance to a typical Windows PowerShell console, but it includes the following enhancements (most are described in this topic).</span></span>
 
--   Syntaxfarben für Eingabetext (nicht für Ausgabetext), einschließlich XML-Syntax
+-   <span data-ttu-id="ec1c1-198">Syntaxfarben für Eingabetext (nicht für Ausgabetext), einschließlich XML-Syntax</span><span class="sxs-lookup"><span data-stu-id="ec1c1-198">Syntax coloring for input text (not output text), including XML syntax</span></span>
 
--   IntelliSense
+-   <span data-ttu-id="ec1c1-199">IntelliSense</span><span class="sxs-lookup"><span data-stu-id="ec1c1-199">IntelliSense</span></span>
 
--   Zugehörige Klammer
+-   <span data-ttu-id="ec1c1-200">Zugehörige Klammer</span><span class="sxs-lookup"><span data-stu-id="ec1c1-200">Brace matching</span></span>
 
--   Fehleranzeige
+-   <span data-ttu-id="ec1c1-201">Fehleranzeige</span><span class="sxs-lookup"><span data-stu-id="ec1c1-201">Error indication</span></span>
 
--   Vollständige Unicode-Unterstützung
+-   <span data-ttu-id="ec1c1-202">Vollständige Unicode-Unterstützung</span><span class="sxs-lookup"><span data-stu-id="ec1c1-202">Full Unicode support</span></span>
 
--   Kontextbezogene Hilfe über **F1**
+-   <span data-ttu-id="ec1c1-203">Kontextbezogene Hilfe über **F1**</span><span class="sxs-lookup"><span data-stu-id="ec1c1-203">**F1** context-sensitive help</span></span>
 
--   Kontextbezogene Befehlsanzeige (Show-Command) über **STRG+F1**
+-   <span data-ttu-id="ec1c1-204">Kontextbezogene Befehlsanzeige (Show-Command) über **STRG+F1**</span><span class="sxs-lookup"><span data-stu-id="ec1c1-204">**Ctrl+F1** context-sensitive Show-Command</span></span>
 
--   Unterstützung für komplexe Skripts und Sprachen mit Leserichtung von rechts nach links
+-   <span data-ttu-id="ec1c1-205">Unterstützung für komplexe Skripts und Sprachen mit Leserichtung von rechts nach links</span><span class="sxs-lookup"><span data-stu-id="ec1c1-205">Complex script and right-to-left support</span></span>
 
--   Schriftartenunterstützung
+-   <span data-ttu-id="ec1c1-206">Schriftartenunterstützung</span><span class="sxs-lookup"><span data-stu-id="ec1c1-206">Font support</span></span>
 
--   Zoom
+-   <span data-ttu-id="ec1c1-207">Zoom</span><span class="sxs-lookup"><span data-stu-id="ec1c1-207">Zoom</span></span>
 
--   Modi für Linien- und Blockauswahl
+-   <span data-ttu-id="ec1c1-208">Modi für Linien- und Blockauswahl</span><span class="sxs-lookup"><span data-stu-id="ec1c1-208">Line-select and block-select modes</span></span>
 
--   Beibehaltung von über die Befehlszeile eingegebenem Inhalt, wenn Sie mithilfe der NACH-OBEN-TASTE**** den Verlauf in der Konsole anzeigen
+-   <span data-ttu-id="ec1c1-209">Beibehaltung von über die Befehlszeile eingegebenem Inhalt, wenn Sie mithilfe der NACH-OBEN-TASTE**** den Verlauf in der Konsole anzeigen</span><span class="sxs-lookup"><span data-stu-id="ec1c1-209">Preservation of typed content at the command line when you press the **Up** arrow to view history in the console</span></span>
 
-**Welchen Nutzen bietet diese Änderung?**
+<span data-ttu-id="ec1c1-210">**Welchen Nutzen bietet diese Änderung?**</span><span class="sxs-lookup"><span data-stu-id="ec1c1-210">**What value does this change add?**</span></span>
 
-Diese Änderungen im Konsolenbereich ermöglichen eine Skripterstellungsumgebung, die mit der Konsolenschnittstelle konsistenter ist.
+<span data-ttu-id="ec1c1-211">Diese Änderungen im Konsolenbereich ermöglichen eine Skripterstellungsumgebung, die mit der Konsolenschnittstelle konsistenter ist.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-211">The addition of these Console Pane changes provides a scripting experience that is more consistent with the console interface.</span></span>
 
-**Worin bestehen die Unterschiede?**
+<span data-ttu-id="ec1c1-212">**Worin bestehen die Unterschiede?**</span><span class="sxs-lookup"><span data-stu-id="ec1c1-212">**What works differently?**</span></span>
 
-Die Windows PowerShell ISE 2.0 verfügt über getrennte Befehls- und Ausgabebereiche.
+<span data-ttu-id="ec1c1-213">Die Windows PowerShell ISE 2.0 verfügt über getrennte Befehls- und Ausgabebereiche.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-213">Windows PowerShell ISE 2.0 has separate Command and Output Panes.</span></span>
 
-### <a name="BKMK_CommandLine"></a>Befehlszeilenschalter
-**In PowerShell 3.0 hinzugefügt**
+### <span data-ttu-id="ec1c1-214"><a name="BKMK_CommandLine"></a>Befehlszeilenschalter</span><span class="sxs-lookup"><span data-stu-id="ec1c1-214"><a name="BKMK_CommandLine"></a>Command-line switches</span></span>
+<span data-ttu-id="ec1c1-215">**In PowerShell 3.0 hinzugefügt**</span><span class="sxs-lookup"><span data-stu-id="ec1c1-215">**Added in PowerShell 3.0**</span></span>
 
-Wenn Sie die Windows PowerShell ISE über die Befehlszeile starten (indem Sie **powershell_ise.exe** eingeben), können Sie die folgenden neuen Befehlszeilenschalter hinzufügen.
+<span data-ttu-id="ec1c1-216">Wenn Sie die Windows PowerShell ISE über die Befehlszeile starten (indem Sie **powershell_ise.exe** eingeben), können Sie die folgenden neuen Befehlszeilenschalter hinzufügen.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-216">If you start Windows PowerShell ISE from the command line (by typing **powershell_ise.exe**), you can add the following new command-line switches.</span></span>
 
--   *-NoProfile*: Startet die Windows PowerShell ISE ohne Ausführung von **$profile**
+-   <span data-ttu-id="ec1c1-217">*-NoProfile*: Startet die Windows PowerShell ISE ohne Ausführung von **$profile**</span><span class="sxs-lookup"><span data-stu-id="ec1c1-217">*-NoProfile*: Starts Windows PowerShell ISE without running **$profile**</span></span>
 
--   *-Help*: Zeigt ein Hilfefenster an
+-   <span data-ttu-id="ec1c1-218">*-Help*: Zeigt ein Hilfefenster an</span><span class="sxs-lookup"><span data-stu-id="ec1c1-218">*-Help*: Displays a Help window</span></span>
 
--   *-mta*: Startet die Windows PowerShell ISE im Multithread-Apartment-Modus Der Standardbetriebsmodus der Windows PowerShell ISE ist der Singlethread-Apartment-Modus bzw. *-sta*.
+-   <span data-ttu-id="ec1c1-219">*-mta*: Startet die Windows PowerShell ISE im Multithread-Apartment-Modus</span><span class="sxs-lookup"><span data-stu-id="ec1c1-219">*-mta*: Starts Windows PowerShell ISE in multithreaded apartment mode.</span></span> <span data-ttu-id="ec1c1-220">Der Standardbetriebsmodus der Windows PowerShell ISE ist der Singlethread-Apartment-Modus bzw. *-sta*.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-220">The default operation mode for Windows PowerShell ISE is single-threaded apartment mode, or *-sta*.</span></span>
 
-**Welchen Nutzen bietet diese Änderung?**
+<span data-ttu-id="ec1c1-221">**Welchen Nutzen bietet diese Änderung?**</span><span class="sxs-lookup"><span data-stu-id="ec1c1-221">**What value does this change add?**</span></span>
 
-Das Hinzufügen dieser Befehlszeilenschalter ermöglicht Ihnen das Steuern der Umgebung, in der die Windows PowerShell ISE ausgeführt wird.
+<span data-ttu-id="ec1c1-222">Das Hinzufügen dieser Befehlszeilenschalter ermöglicht Ihnen das Steuern der Umgebung, in der die Windows PowerShell ISE ausgeführt wird.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-222">The addition of these command-line switches allows you to control the environment in which the Windows PowerShell ISE runs.</span></span>
 
-**Worin bestehen die Unterschiede?**
+<span data-ttu-id="ec1c1-223">**Worin bestehen die Unterschiede?**</span><span class="sxs-lookup"><span data-stu-id="ec1c1-223">**What works differently?**</span></span>
 
-Die Windows PowerShell ISE 2.0 erkennt diese Befehlszeilenschalter nicht.
+<span data-ttu-id="ec1c1-224">Die Windows PowerShell ISE 2.0 erkennt diese Befehlszeilenschalter nicht.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-224">Windows PowerShell ISE 2.0 does not recognize these command-line switches.</span></span>
 
-### <a name="BKMK_NewEditorFeatures"></a>Neue Features im Editor
-**In PowerShell 3.0 hinzugefügt**
+### <span data-ttu-id="ec1c1-225"><a name="BKMK_NewEditorFeatures"></a>Neue Features im Editor</span><span class="sxs-lookup"><span data-stu-id="ec1c1-225"><a name="BKMK_NewEditorFeatures"></a>New editor features</span></span>
+<span data-ttu-id="ec1c1-226">**In PowerShell 3.0 hinzugefügt**</span><span class="sxs-lookup"><span data-stu-id="ec1c1-226">**Added in PowerShell 3.0**</span></span>
 
-Zu den weiteren Windows PowerShell ISE-Bearbeitungsfeatures zählen:
+<span data-ttu-id="ec1c1-227">Zu den weiteren Windows PowerShell ISE-Bearbeitungsfeatures zählen:</span><span class="sxs-lookup"><span data-stu-id="ec1c1-227">Other Windows PowerShell ISE editing features include:</span></span>
 
--   **XML-Syntaxfarben** Windows PowerShell ISE versieht die XML-Syntax jetzt ebenso mit Farben wie die Windows PowerShell-Syntax.
+-   <span data-ttu-id="ec1c1-228">**XML-Syntaxfarben** Windows PowerShell ISE versieht die XML-Syntax jetzt ebenso mit Farben wie die Windows PowerShell-Syntax.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-228">**XML syntax coloring**Windows PowerShell ISE now colors XML syntax in the same way as it colors Windows PowerShell syntax.</span></span>
 
--   **Zugehörige Klammer** Die Windows PowerShell ISE bietet die Funktion „Zugehörige Klammer (Hervorhebung)“, die wie folgt verwendet werden kann: Wenn Sie z.B. den Befehl **Gehe zu Spiel** bzw. **STRG+]** verwenden, wird die schließende Klammer gefunden, wenn eine öffnende Klammer ausgewählt ist.
+-   <span data-ttu-id="ec1c1-229">**Zugehörige Klammer** Die Windows PowerShell ISE bietet die Funktion „Zugehörige Klammer (Hervorhebung)“, die wie folgt verwendet werden kann: Wenn Sie z.B. den Befehl **Gehe zu Spiel** bzw. **STRG+]** verwenden, wird die schließende Klammer gefunden, wenn eine öffnende Klammer ausgewählt ist.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-229">**Brace matching** Windows PowerShell ISE includes brace matching and highlighting, and can be used in the following ways: (for example, using the **Go to Match** command or **Ctrl + ]** locates the closing brace, if you have an opening brace selected).</span></span>
 
--   **Gliederungsansicht** Der Skriptbereich unterstützt Gliederungen, sodass Codeabschnitte durch Klicken auf Plus- bzw. Minuszeichen am linken Rand auf- bzw. zugeklappt werden können. Sie können Klammern bzw. die Tags **#region** und **#endregion** verwenden, um den Anfang bzw. das Ende eines zuklappbaren Abschnitts zu markieren. Drücken Sie zum Auf- bzw. Zuklappen aller Bereiche **STRG+M**.
+-   <span data-ttu-id="ec1c1-230">**Gliederungsansicht** Der Skriptbereich unterstützt Gliederungen, sodass Codeabschnitte durch Klicken auf Plus- bzw. Minuszeichen am linken Rand auf- bzw. zugeklappt werden können.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-230">**Outline view** The Script Pane supports outlining, which allows collapsing or expanding sections of code by clicking plus or minus signs in the left margin.</span></span> <span data-ttu-id="ec1c1-231">Sie können Klammern bzw. die Tags **#region** und **#endregion** verwenden, um den Anfang bzw. das Ende eines zuklappbaren Abschnitts zu markieren.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-231">You can use braces or the **#region** and **#endregion** tags to mark the beginning or end of a collapsible section.</span></span> <span data-ttu-id="ec1c1-232">Drücken Sie zum Auf- bzw. Zuklappen aller Bereiche **STRG+M**.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-232">To expand or collapse all regions, press **Ctrl + M**.</span></span>
 
--   **Textbearbeitung mit Drag & Drop** Windows PowerShell ISE unterstützt nun die Textbearbeitung mit Drag & Drop. Sie können einen beliebigen Textblock auswählen und an eine andere Stelle im Editor oder in der Konsole ziehen, um den Text zu verschieben. Wenn Sie die STRG-Taste gedrückt halten, während Sie den markierten Text ziehen, wird der Text, sobald Sie die Maustaste loslassen, an den neuen Ort kopiert. In dieser Version von Windows PowerShell ISE wird wie in der vorherigen Version von Windows PowerShell ISE beim Ziehen und Ablegen von Dateien auf Windows PowerShell ISE die Datei von Windows PowerShell ISE geöffnet.
+-   <span data-ttu-id="ec1c1-233">**Textbearbeitung mit Drag & Drop** Windows PowerShell ISE unterstützt nun die Textbearbeitung mit Drag & Drop.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-233">**Drag and drop text editing**Windows PowerShell ISE now supports drag and drop text editing.</span></span> <span data-ttu-id="ec1c1-234">Sie können einen beliebigen Textblock auswählen und an eine andere Stelle im Editor oder in der Konsole ziehen, um den Text zu verschieben.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-234">You can select any block of text and drag that text to another location in the editor or the console to move the text.</span></span> <span data-ttu-id="ec1c1-235">Wenn Sie die STRG-Taste gedrückt halten, während Sie den markierten Text ziehen, wird der Text, sobald Sie die Maustaste loslassen, an den neuen Ort kopiert.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-235">If you hold down the Ctrl key while you drag the selected text, when you release the mouse button the text is copied to the new location.</span></span> <span data-ttu-id="ec1c1-236">In dieser Version von Windows PowerShell ISE wird wie in der vorherigen Version von Windows PowerShell ISE beim Ziehen und Ablegen von Dateien auf Windows PowerShell ISE die Datei von Windows PowerShell ISE geöffnet.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-236">In this version of Windows PowerShell ISE, as well as the previous version of Windows PowerShell ISE, when you drag and drop files onto Windows PowerShell ISE, Windows PowerShell ISE opens the file.</span></span>
 
--   **Anzeige von Analysefehlern** Analysefehler werden rot unterstrichen angezeigt. Wenn Sie auf einen Fehler zeigen, wird das im Code gefundene Problem als QuickInfo angezeigt.
+-   <span data-ttu-id="ec1c1-237">**Anzeige von Analysefehlern** Analysefehler werden rot unterstrichen angezeigt.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-237">**Parse error display** Parse errors are indicated with red underlines.</span></span> <span data-ttu-id="ec1c1-238">Wenn Sie auf einen Fehler zeigen, wird das im Code gefundene Problem als QuickInfo angezeigt.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-238">When you hover over an indicated error, tooltip text displays the problem that was found in the code.</span></span>
 
--   **Zoom** Der Zoomprozentsatz des Konsoleninhalts kann mit einem Zoomschieberegler (rechts unten im Fenster der Windows PowerShell ISE) oder durch Eingabe des Befehls **$psise.options.Zoom** im Konsolenbereich festgelegt werden.
+-   <span data-ttu-id="ec1c1-239">**Zoom** Der Zoomprozentsatz des Konsoleninhalts kann mit einem Zoomschieberegler (rechts unten im Fenster der Windows PowerShell ISE) oder durch Eingabe des Befehls **$psise.options.Zoom** im Konsolenbereich festgelegt werden.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-239">**Zoom** The zoom percentage of the console’s content can be set by using the zoom slider (in the lower right corner of Windows PowerShell ISE window), or by entering the command **$psise.options.Zoom** in the Console Pane.</span></span>
 
--   **Umfassende Funktionen zum Kopieren und Einfügen von Text** Beim Kopieren in die Zwischenablage in Windows PowerShell ISE bleiben Informationen zur Schriftart, Größe und Farbe der ursprünglichen Auswahl erhalten.
+-   <span data-ttu-id="ec1c1-240">**Umfassende Funktionen zum Kopieren und Einfügen von Text** Beim Kopieren in die Zwischenablage in Windows PowerShell ISE bleiben Informationen zur Schriftart, Größe und Farbe der ursprünglichen Auswahl erhalten.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-240">**Rich text copy and paste** Copying to the clipboard in Windows PowerShell ISE preserves the font, size, and color information of the original selection.</span></span>
 
--   **Blockauswahl** Sie können einen Textblock auswählen, indem Sie bei gedrückter ALT-TASTE den Text im Skriptbereich mit der Maus auswählen oder **ALT+UMSCHALT+NACH-OBEN/NACH-UNTEN** drücken.
+-   <span data-ttu-id="ec1c1-241">**Blockauswahl** Sie können einen Textblock auswählen, indem Sie bei gedrückter ALT-TASTE den Text im Skriptbereich mit der Maus auswählen oder **ALT+UMSCHALT+NACH-OBEN/NACH-UNTEN** drücken.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-241">**Block selection** You can select a block of text by holding down the ALT key while selecting text in the Script Pane with your mouse, or by pressing **Alt+Shift+Arrow**.</span></span>
 
-**Welchen Nutzen bietet diese Änderung?**
+<span data-ttu-id="ec1c1-242">**Welchen Nutzen bietet diese Änderung?**</span><span class="sxs-lookup"><span data-stu-id="ec1c1-242">**What value does this change add?**</span></span>
 
-Die zusätzlichen Bearbeitungsfeatures bieten eine konsistentere und leistungsstärkere Bearbeitungsumgebung.
+<span data-ttu-id="ec1c1-243">Die zusätzlichen Bearbeitungsfeatures bieten eine konsistentere und leistungsstärkere Bearbeitungsumgebung.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-243">The additional editing features provide a more consistent and powerful editing environment.</span></span>
 
-**Worin bestehen die Unterschiede?**
+<span data-ttu-id="ec1c1-244">**Worin bestehen die Unterschiede?**</span><span class="sxs-lookup"><span data-stu-id="ec1c1-244">**What works differently?**</span></span>
 
-In Windows PowerShell ISE 2.0 waren diese Bearbeitungsoptimierungen nicht vorhanden.
+<span data-ttu-id="ec1c1-245">In Windows PowerShell ISE 2.0 waren diese Bearbeitungsoptimierungen nicht vorhanden.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-245">These editing enhancements were not present in Windows PowerShell ISE 2.0.</span></span>
 
-### <a name="BKMK_NewHelpViewer"></a>Neues Anzeigefenster für Hilfe
-**In PowerShell 3.0 hinzugefügt**
+### <span data-ttu-id="ec1c1-246"><a name="BKMK_NewHelpViewer"></a>Neues Anzeigefenster für Hilfe</span><span class="sxs-lookup"><span data-stu-id="ec1c1-246"><a name="BKMK_NewHelpViewer"></a>New Help viewer window</span></span>
+<span data-ttu-id="ec1c1-247">**In PowerShell 3.0 hinzugefügt**</span><span class="sxs-lookup"><span data-stu-id="ec1c1-247">**Added in PowerShell 3.0**</span></span>
 
-Wenn Sie **F1** drücken, während sich der Cursor in einem Cmdlet befindet oder Sie einen Teil eines Cmdlets hervorgehoben haben, wird im neuen Anzeigefenster für Hilfe eine kontextbezogene Hilfe zum hervorgehobenen Cmdlet geöffnet. Um die konzeptionelle Hilfe für Windows PowerShell ISE anzuzeigen, geben Sie im Konsolenbereich **operators** ein, und drücken Sie dann **F1**.
+<span data-ttu-id="ec1c1-248">Wenn Sie **F1** drücken, während sich der Cursor in einem Cmdlet befindet oder Sie einen Teil eines Cmdlets hervorgehoben haben, wird im neuen Anzeigefenster für Hilfe eine kontextbezogene Hilfe zum hervorgehobenen Cmdlet geöffnet.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-248">If you press **F1** when your cursor is in a cmdlet, or you have part of a cmdlet highlighted, the new Help viewer opens context-sensitive Help about the highlighted cmdlet.</span></span> <span data-ttu-id="ec1c1-249">Um die konzeptionelle Hilfe für Windows PowerShell ISE anzuzeigen, geben Sie im Konsolenbereich **operators** ein, und drücken Sie dann **F1**.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-249">To display Windows PowerShell About help, type  **operators** in the console pane, and then press **F1**.</span></span>
 
-Laden Sie die aktuelle Version der Windows PowerShell-Hilfethemen von der Microsoft-Website herunter, bevor Sie dieses Feature verwenden. Die einfachste Methode zum Herunterladen der Hilfethemen ist die Ausführung des Cmdlets **Update-Help** im Konsolenbereich, wenn Sie die Windows PowerShell ISE als Administrator ausführen.
+<span data-ttu-id="ec1c1-250">Laden Sie die aktuelle Version der Windows PowerShell-Hilfethemen von der Microsoft-Website herunter, bevor Sie dieses Feature verwenden.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-250">Before you use this feature, download the most current version of Windows PowerShell Help topics from the Microsoft website.</span></span> <span data-ttu-id="ec1c1-251">Die einfachste Methode zum Herunterladen der Hilfethemen ist die Ausführung des Cmdlets **Update-Help** im Konsolenbereich, wenn Sie die Windows PowerShell ISE als Administrator ausführen.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-251">The simplest method for downloading the Help topics is to run the **Update-Help** cmdlet in the Console Pane when running Windows PowerShell ISE as administrator.</span></span>
 
-Sie können ändern, wo über die Taste **F1** nach Hilfe gesucht wird. Im Menü **Extras**/**Optionen** können Sie auf der Registerkarte **Allgemeine Einstellungen** unter **Andere Einstellungen** das Kontrollkästchen **Lokale Hilfe anstatt Onlineinhalt verwenden** aktivieren bzw. deaktivieren. Falls aktiviert, sucht der Client die Cmdlet-Hilfe in der heruntergeladenen Hilfe im Ordner „modules“.  Falls das Kontrollkästchen deaktiviert ist, sucht der Client in der TechNet-Bibliothek nach der Cmdlet-Hilfe.
+<span data-ttu-id="ec1c1-252">Sie können ändern, wo über die Taste **F1** nach Hilfe gesucht wird.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-252">You can alter where the **F1** key looks for Help.</span></span> <span data-ttu-id="ec1c1-253">Im Menü **Extras**/**Optionen** können Sie auf der Registerkarte **Allgemeine Einstellungen** unter **Andere Einstellungen** das Kontrollkästchen **Lokale Hilfe anstatt Onlineinhalt verwenden** aktivieren bzw. deaktivieren.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-253">In the **Tools**/**Options** menu, on the **General Settings** tab, under **Other Settings**, you can set or clear the checkbox **Use local help content instead of online content**.</span></span> <span data-ttu-id="ec1c1-254">Falls aktiviert, sucht der Client die Cmdlet-Hilfe in der heruntergeladenen Hilfe im Ordner „modules“.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-254">If checked, then the client looks for the cmdlet Help in the downloaded Help found in the modules folder.</span></span>  <span data-ttu-id="ec1c1-255">Falls das Kontrollkästchen deaktiviert ist, sucht der Client in der TechNet-Bibliothek nach der Cmdlet-Hilfe.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-255">If the checkbox is cleared, then the client looks on the TechNet library for the cmdlet help.</span></span>
 
-**Welchen Nutzen bietet diese Änderung?**
+<span data-ttu-id="ec1c1-256">**Welchen Nutzen bietet diese Änderung?**</span><span class="sxs-lookup"><span data-stu-id="ec1c1-256">**What value does this change add?**</span></span>
 
-Durch eine kontextbezogene Hilfe ohne Verlassen des aktuellen Cmdlets oder Skripts erhalten Sie eine flüssige Lernerfahrung.
+<span data-ttu-id="ec1c1-257">Durch eine kontextbezogene Hilfe ohne Verlassen des aktuellen Cmdlets oder Skripts erhalten Sie eine flüssige Lernerfahrung.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-257">Context-sensitive Help without leaving your current cmdlet or script provides a seamless learning experience.</span></span>
 
-**Worin bestehen die Unterschiede?**
+<span data-ttu-id="ec1c1-258">**Worin bestehen die Unterschiede?**</span><span class="sxs-lookup"><span data-stu-id="ec1c1-258">**What works differently?**</span></span>
 
-Durch Drücken von F1 in früheren Versionen von Windows PowerShell ISE wurde die Hilfedatei auf dem lokalen Computer geöffnet. In Windows PowerShell ISE 3.0 und höher wird ein Fenster geöffnet, das die Hilfe für das Cmdlet enthält, die durchsuchbar und konfigurierbar ist. Diese Hilfe ist in Windows PowerShell ISE 3.0 neu. Die aktualisierbare Hilfe ist in Windows PowerShell 3.0 neu.
+<span data-ttu-id="ec1c1-259">Durch Drücken von F1 in früheren Versionen von Windows PowerShell ISE wurde die Hilfedatei auf dem lokalen Computer geöffnet.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-259">Pressing F1 in previous versions of Windows PowerShell ISE opened the help file on the local computer.</span></span> <span data-ttu-id="ec1c1-260">In Windows PowerShell ISE 3.0 und höher wird ein Fenster geöffnet, das die Hilfe für das Cmdlet enthält, die durchsuchbar und konfigurierbar ist.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-260">In Windows PowerShell ISE 3.0 and later, a window opens that contains the help for the cmdlet that is searchable and configurable.</span></span> <span data-ttu-id="ec1c1-261">Diese Hilfe ist in Windows PowerShell ISE 3.0 neu. Die aktualisierbare Hilfe ist in Windows PowerShell 3.0 neu.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-261">This Help experience is new for Windows PowerShell ISE 3.0, and Updatable Help is new for Windows PowerShell 3.0.</span></span>
 
-### <a name="BKMK_ShowCommand"></a>Cmdlet „Show-Command“
-**In PowerShell 3.0 hinzugefügt**
+### <span data-ttu-id="ec1c1-262"><a name="BKMK_ShowCommand"></a>Cmdlet „Show-Command“</span><span class="sxs-lookup"><span data-stu-id="ec1c1-262"><a name="BKMK_ShowCommand"></a>Show-Command cmdlet</span></span>
+<span data-ttu-id="ec1c1-263">**In PowerShell 3.0 hinzugefügt**</span><span class="sxs-lookup"><span data-stu-id="ec1c1-263">**Added in PowerShell 3.0**</span></span>
 
-Das Cmdlet **Show-Command** ermöglicht das Erstellen und Ausführen eines Cmdlets oder einer Funktion, indem ein grafisches Formular ausgefüllt wird. Das Formular ermöglicht Benutzern das Arbeiten mit Windows PowerShell in einer grafischen Umgebung. Mit **Show-Command** können erfahrene Skriptentwickler schnell eine Windows PowerShell-basierte grafische Benutzeroberfläche (GUI) erstellen.
+<span data-ttu-id="ec1c1-264">Das Cmdlet **Show-Command** ermöglicht das Erstellen und Ausführen eines Cmdlets oder einer Funktion, indem ein grafisches Formular ausgefüllt wird.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-264">The **Show-Command** cmdlet enables you to compose or run a cmdlet or function by filling in a graphical form.</span></span> <span data-ttu-id="ec1c1-265">Das Formular ermöglicht Benutzern das Arbeiten mit Windows PowerShell in einer grafischen Umgebung.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-265">The form lets users work with Windows PowerShell in a graphical environment.</span></span> <span data-ttu-id="ec1c1-266">Mit **Show-Command** können erfahrene Skriptentwickler schnell eine Windows PowerShell-basierte grafische Benutzeroberfläche (GUI) erstellen.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-266">**Show-Command** also enables advanced scripters to create a quick Windows PowerShell-based GUI.</span></span>
 
-**Welchen Nutzen bietet diese Änderung?**
+<span data-ttu-id="ec1c1-267">**Welchen Nutzen bietet diese Änderung?**</span><span class="sxs-lookup"><span data-stu-id="ec1c1-267">**What value does this change add?**</span></span>
 
-Durch Verwenden von **Show-Command** in Ihren Windows PowerShell-Skripts können Sie Ihren Benutzern die grafische Umgebung bereitstellen, mit der sie vertraut sind. Darüber hinaus hilft **Show-Command** Einsteigern beim Erlernen von Windows PowerShell.
+<span data-ttu-id="ec1c1-268">Durch Verwenden von **Show-Command** in Ihren Windows PowerShell-Skripts können Sie Ihren Benutzern die grafische Umgebung bereitstellen, mit der sie vertraut sind.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-268">By using **Show-Command** in your Windows PowerShell scripts, you can provide your users with the graphical environment with which they are familiar.</span></span> <span data-ttu-id="ec1c1-269">Darüber hinaus hilft **Show-Command** Einsteigern beim Erlernen von Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-269">**Show-Command** can also help introductory users learn Windows PowerShell.</span></span>
 
-**Worin bestehen die Unterschiede?**
+<span data-ttu-id="ec1c1-270">**Worin bestehen die Unterschiede?**</span><span class="sxs-lookup"><span data-stu-id="ec1c1-270">**What works differently?**</span></span>
 
-„Show-Command“ ist in der Windows PowerShell ISE 3.0 neu.
+<span data-ttu-id="ec1c1-271">„Show-Command“ ist in der Windows PowerShell ISE 3.0 neu.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-271">Show-Command is new Windows PowerShell ISE 3.0.</span></span>
 
-## <a name="BKMK_LINKS"></a>Siehe auch
-Weitere Informationen zur Verwendung von Windows PowerShell ISE in Windows PowerShell finden Sie unter den folgenden Links.
+## <span data-ttu-id="ec1c1-272"><a name="BKMK_LINKS"></a>Siehe auch</span><span class="sxs-lookup"><span data-stu-id="ec1c1-272"><a name="BKMK_LINKS"></a>See also</span></span>
+<span data-ttu-id="ec1c1-273">Weitere Informationen zur Verwendung von Windows PowerShell ISE in Windows PowerShell finden Sie unter den folgenden Links.</span><span class="sxs-lookup"><span data-stu-id="ec1c1-273">For more information about using Windows PowerShell ISE in Windows PowerShell, see the following links.</span></span>
 
-- [Verwenden der Windows PowerShell Integrated Scripting Environment (ISE)](../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
-- [ISE im TechNet Wiki](http://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
-- [Script Center](http://technet.microsoft.com/scriptcenter/default)
+- [<span data-ttu-id="ec1c1-274">Verwenden der Windows PowerShell Integrated Scripting Environment (ISE)</span><span class="sxs-lookup"><span data-stu-id="ec1c1-274">Using the Windows PowerShell Integrated Scripting Environment</span></span>](../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
+- [<span data-ttu-id="ec1c1-275">ISE im TechNet Wiki</span><span class="sxs-lookup"><span data-stu-id="ec1c1-275">ISE on the TechNet Wiki</span></span>](http://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
+- [<span data-ttu-id="ec1c1-276">Script Center</span><span class="sxs-lookup"><span data-stu-id="ec1c1-276">Script Center</span></span>](http://technet.microsoft.com/scriptcenter/default)
 

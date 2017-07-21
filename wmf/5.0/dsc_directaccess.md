@@ -9,11 +9,10 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="direct-access-to-dsc-resource-methods" class="xliff"></a>
-# Direkter Zugriff auf DSC-Ressourcenmethoden
+# <a name="direct-access-to-dsc-resource-methods"></a><span data-ttu-id="93113-102">Direkter Zugriff auf DSC-Ressourcenmethoden</span><span class="sxs-lookup"><span data-stu-id="93113-102">Direct access to DSC resource methods</span></span>
 
 
-Das Cmdlet [Invoke-DscResource](https://technet.microsoft.com/en-us/library/mt517869.aspx) wurde hinzugefügt, um direkten Zugriff auf DSC-Ressourcen und ihre Methoden (Get, Set, Test) zu erlauben. Es kann von Drittanbietern verwendet werden, die DSC-Ressourcen nutzen möchten.
+<span data-ttu-id="93113-103">Das Cmdlet [Invoke-DscResource](https://technet.microsoft.com/en-us/library/mt517869.aspx) wurde hinzugefügt, um direkten Zugriff auf DSC-Ressourcen und ihre Methoden (Get, Set, Test) zu erlauben.</span><span class="sxs-lookup"><span data-stu-id="93113-103">The [Invoke-DscResource](https://technet.microsoft.com/en-us/library/mt517869.aspx) cmdlet has been added to allow direct access to DSC resources and their methods (Get, Set or Test).</span></span> <span data-ttu-id="93113-104">Es kann von Drittanbietern verwendet werden, die DSC-Ressourcen nutzen möchten.</span><span class="sxs-lookup"><span data-stu-id="93113-104">It can be used by third-parties that want to take advantage of DSC resources.</span></span>
 
-Weitere Informationen finden Sie unter [Direktes Aufrufen von DSC-Ressourcenmethoden](https://msdn.microsoft.com/powershell/dsc/directcallresource).
+<span data-ttu-id="93113-105">Weitere Informationen finden Sie unter [Direktes Aufrufen von DSC-Ressourcenmethoden](https://msdn.microsoft.com/powershell/dsc/directcallresource).</span><span class="sxs-lookup"><span data-stu-id="93113-105">For more information, see [Calling DSC resource methods directly](https://msdn.microsoft.com/powershell/dsc/directcallresource).</span></span>
 

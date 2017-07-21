@@ -9,10 +9,9 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="configure-dsc-lcm-with-new-meta-configuration-attribute" class="xliff"></a>
-# Konfigurieren des LCM von DSC mit neuem Metakonfigurationsattribut
+# <a name="configure-dsc-lcm-with-new-meta-configuration-attribute"></a><span data-ttu-id="38164-102">Konfigurieren des LCM von DSC mit neuem Metakonfigurationsattribut</span><span class="sxs-lookup"><span data-stu-id="38164-102">Configure DSC LCM with new meta-configuration attribute</span></span>
 
-Das `DscLocalConfigurationManager`-Attribut kennzeichnet einen Konfigurationsblock als Metakonfiguration, die zum Konfigurieren des lokalen Konfigurations-Managers von DSC verwendet wird. 
+<span data-ttu-id="38164-103">Das `DscLocalConfigurationManager`-Attribut kennzeichnet einen Konfigurationsblock als Metakonfiguration, die zum Konfigurieren des lokalen Konfigurations-Managers von DSC verwendet wird.</span><span class="sxs-lookup"><span data-stu-id="38164-103">The `DscLocalConfigurationManager` attribute designates a configuration block as a meta-configuration, which is used to configure the DSC Local Configuration Manager.</span></span> 
 
-Weitere Informationen finden Sie unter [Konfigurieren des lokalen Konfigurations-Managers](https://msdn.microsoft.com/powershell/dsc/metaconfig).
+<span data-ttu-id="38164-104">Weitere Informationen finden Sie unter [Konfigurieren des lokalen Konfigurations-Managers](https://msdn.microsoft.com/powershell/dsc/metaconfig).</span><span class="sxs-lookup"><span data-stu-id="38164-104">For more information, see [Configuring the Local Configuration Manager](https://msdn.microsoft.com/powershell/dsc/metaconfig).</span></span>
 

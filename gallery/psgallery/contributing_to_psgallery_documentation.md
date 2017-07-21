@@ -10,13 +10,13 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-Wer kann an der Dokumentation mitwirken?
+<span data-ttu-id="332cb-103">Wer kann an der Dokumentation mitwirken?</span><span class="sxs-lookup"><span data-stu-id="332cb-103">Who can contribute to the documentation</span></span>
 
-Welche Art von Daten ist im Katalog zulässig?
+<span data-ttu-id="332cb-104">Welche Art von Daten ist im Katalog zulässig?</span><span class="sxs-lookup"><span data-stu-id="332cb-104">What type of data is allowed on the gallery</span></span>
 
-Welche Schritte müssen durchgeführt werden, um zum Katalog beizutragen?
+<span data-ttu-id="332cb-105">Welche Schritte müssen durchgeführt werden, um zum Katalog beizutragen?</span><span class="sxs-lookup"><span data-stu-id="332cb-105">What are the steps to contribute to the gallery</span></span>
 
-Wo und wann kann ich meinen Beitrag zum Katalog sehen?
+<span data-ttu-id="332cb-106">Wo und wann kann ich meinen Beitrag zum Katalog sehen?</span><span class="sxs-lookup"><span data-stu-id="332cb-106">Where and when can I see my contribution to the the gallery</span></span>
 
-VIELEN DANK FÜR IHREN BEITRAG ZUM POWERSHELL-KATALOG.
+<span data-ttu-id="332cb-107">VIELEN DANK FÜR IHREN BEITRAG ZUM POWERSHELL-KATALOG.</span><span class="sxs-lookup"><span data-stu-id="332cb-107">THANK YOU FOR CONTRIBUTING TO THE POWERSHELL GALLERY.</span></span>
 

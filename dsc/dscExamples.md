@@ -10,11 +10,10 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-examples" class="xliff"></a>
-# DSC-Beispiele
+# <a name="dsc-examples"></a><span data-ttu-id="a2efd-103">DSC-Beispiele</span><span class="sxs-lookup"><span data-stu-id="a2efd-103">DSC examples</span></span>
 
-Dieser Abschnitt enthält DSC-Beispiele:
+<span data-ttu-id="a2efd-104">Dieser Abschnitt enthält DSC-Beispiele:</span><span class="sxs-lookup"><span data-stu-id="a2efd-104">This section contains DSC examples:</span></span>
 
-- [Erstellen einer CI/CD-Pipeline mit DSC, Pester und Visual Studio Team Services](dscCiCd.md)
-- [Trennen von Konfiguration und Umgebungsdaten](separatingEnvData.md)
+- [<span data-ttu-id="a2efd-105">Erstellen einer CI/CD-Pipeline mit DSC, Pester und Visual Studio Team Services</span><span class="sxs-lookup"><span data-stu-id="a2efd-105">Building a CI-CD pipeline with DSC, Pester, and Visual Studio Team Services</span></span>](dscCiCd.md)
+- [<span data-ttu-id="a2efd-106">Trennen von Konfiguration und Umgebungsdaten</span><span class="sxs-lookup"><span data-stu-id="a2efd-106">Separating configuration and environment data</span></span>](separatingEnvData.md)
 

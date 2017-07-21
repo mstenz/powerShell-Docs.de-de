@@ -9,22 +9,22 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/08/2017
 ---
-# <a name="psscheduledjob-module"></a>PSScheduledJob-Modul
-Dieser Abschnitt enthält die Hilfethemen für das **PSScheduledJob**-Modul, das geplante Aufträge in Windows PowerShell verwaltet. Diese Modul wird mit Windows PowerShell installiert.
+# <a name="psscheduledjob-module"></a><span data-ttu-id="0de96-103">PSScheduledJob-Modul</span><span class="sxs-lookup"><span data-stu-id="0de96-103">PSScheduledJob Module</span></span>
+<span data-ttu-id="0de96-104">Dieser Abschnitt enthält die Hilfethemen für das **PSScheduledJob**-Modul, das geplante Aufträge in Windows PowerShell verwaltet.</span><span class="sxs-lookup"><span data-stu-id="0de96-104">This section contains the help topics for the **PSScheduledJob** module, which manages scheduled jobs in Windows PowerShell.</span></span> <span data-ttu-id="0de96-105">Diese Modul wird mit Windows PowerShell installiert.</span><span class="sxs-lookup"><span data-stu-id="0de96-105">This module is installed with Windows PowerShell.</span></span>
 
-## <a name="help-topics"></a>Hilfethemen
-[Windows PowerShell-Cmdlets für geplante Aufträge](http://go.microsoft.com/fwlink/?LinkID=245864)
+## <a name="help-topics"></a><span data-ttu-id="0de96-106">Hilfethemen</span><span class="sxs-lookup"><span data-stu-id="0de96-106">Help Topics</span></span>
+[<span data-ttu-id="0de96-107">Windows PowerShell-Cmdlets für geplante Aufträge</span><span class="sxs-lookup"><span data-stu-id="0de96-107">Windows PowerShell Scheduled Job Cmdlets</span></span>](http://go.microsoft.com/fwlink/?LinkID=245864)
 
-[about_Scheduled_Jobs](https://technet.microsoft.com/en-us/library/3b546629-703c-4939-b44f-52dd567bce92)
+[<span data-ttu-id="0de96-108">about_Scheduled_Jobs</span><span class="sxs-lookup"><span data-stu-id="0de96-108">about_Scheduled_Jobs</span></span>](https://technet.microsoft.com/en-us/library/3b546629-703c-4939-b44f-52dd567bce92)
 
-[about_Scheduled_Jobs_Basics](https://technet.microsoft.com/en-us/library/859d8bfd-e655-4dc3-ab65-19813301eb57)
+[<span data-ttu-id="0de96-109">about_Scheduled_Jobs_Basics</span><span class="sxs-lookup"><span data-stu-id="0de96-109">about_Scheduled_Jobs_Basics</span></span>](https://technet.microsoft.com/en-us/library/859d8bfd-e655-4dc3-ab65-19813301eb57)
 
-[about_Scheduled_Jobs_Advanced](https://technet.microsoft.com/en-us/library/6aea5423-fb96-461c-a1cb-1fb705930eee)
+[<span data-ttu-id="0de96-110">about_Scheduled_Jobs_Advanced</span><span class="sxs-lookup"><span data-stu-id="0de96-110">about_Scheduled_Jobs_Advanced</span></span>](https://technet.microsoft.com/en-us/library/6aea5423-fb96-461c-a1cb-1fb705930eee)
 
-[about_Scheduled_Jobs_Troubleshooting](https://technet.microsoft.com/en-us/library/70de91e9-675f-4b5f-9179-6104b9cc4f0d)
+[<span data-ttu-id="0de96-111">about_Scheduled_Jobs_Troubleshooting</span><span class="sxs-lookup"><span data-stu-id="0de96-111">about_Scheduled_Jobs_Troubleshooting</span></span>](https://technet.microsoft.com/en-us/library/70de91e9-675f-4b5f-9179-6104b9cc4f0d)
 
-## <a name="see-also"></a>Weitere Informationen
-- [Windows PowerShell 5.0](Windows-PowerShell-5.0.md)
-- [Windows PowerShell Core](https://technet.microsoft.com/en-us/library/4b75f1e4-f327-48f3-92ab-bf5435094d41)
-- [Skripting mit WindowsPowerShell](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
+## <a name="see-also"></a><span data-ttu-id="0de96-112">Weitere Informationen</span><span class="sxs-lookup"><span data-stu-id="0de96-112">See Also</span></span>
+- [<span data-ttu-id="0de96-113">Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="0de96-113">Windows PowerShell 5.0</span></span>](Windows-PowerShell-5.0.md)
+- [<span data-ttu-id="0de96-114">Windows PowerShell Core</span><span class="sxs-lookup"><span data-stu-id="0de96-114">Windows PowerShell Core</span></span>](https://technet.microsoft.com/en-us/library/4b75f1e4-f327-48f3-92ab-bf5435094d41)
+- [<span data-ttu-id="0de96-115">Skripting mit WindowsPowerShell</span><span class="sxs-lookup"><span data-stu-id="0de96-115">Scripting with Windows PowerShell</span></span>](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
 

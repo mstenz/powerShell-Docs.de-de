@@ -10,29 +10,24 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="save-module" class="xliff"></a>
-# Save-Module
+# <a name="save-module"></a><span data-ttu-id="de6bd-103">Save-Module</span><span class="sxs-lookup"><span data-stu-id="de6bd-103">Save-Module</span></span>
 
-Speichert ein Modul lokal, ohne es zu installieren
+<span data-ttu-id="de6bd-104">Speichert ein Modul lokal, ohne es zu installieren</span><span class="sxs-lookup"><span data-stu-id="de6bd-104">Saves a module locally without installing it.</span></span>
 
-<a id="description" class="xliff"></a>
-## Beschreibung
+## <a name="description"></a><span data-ttu-id="de6bd-105">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="de6bd-105">Description</span></span>
 
-Das Cmdlet „Save-Module“ speichert ein Modul aus dem angegebenen Repository zur Prüfung lokal. Das Modul wird nicht installiert.
+<span data-ttu-id="de6bd-106">Das Cmdlet „Save-Module“ speichert ein Modul aus dem angegebenen Repository zur Prüfung lokal.</span><span class="sxs-lookup"><span data-stu-id="de6bd-106">The Save-Module cmdlet saves a module locally from the specified repository for inspection.</span></span> <span data-ttu-id="de6bd-107">Das Modul wird nicht installiert.</span><span class="sxs-lookup"><span data-stu-id="de6bd-107">The module is not installed.</span></span>
 
-<a id="cmdlet-syntax" class="xliff"></a>
-## Cmdlet-Syntax
+## <a name="cmdlet-syntax"></a><span data-ttu-id="de6bd-108">Cmdlet-Syntax</span><span class="sxs-lookup"><span data-stu-id="de6bd-108">Cmdlet syntax</span></span>
 ```powershell
 Get-Command -Name Save-Module -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-## Cmdlet-Onlinehilfe
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="de6bd-109">Cmdlet-Onlinehilfe</span><span class="sxs-lookup"><span data-stu-id="de6bd-109">Cmdlet online help reference</span></span>
 
-[Save-Module](http://go.microsoft.com/fwlink/?LinkId=531351)
+[<span data-ttu-id="de6bd-110">Save-Module</span><span class="sxs-lookup"><span data-stu-id="de6bd-110">Save-Module</span></span>](http://go.microsoft.com/fwlink/?LinkId=531351)
 
-<a id="example-commands" class="xliff"></a>
-## Beispiele für Befehle
+## <a name="example-commands"></a><span data-ttu-id="de6bd-111">Beispiele für Befehle</span><span class="sxs-lookup"><span data-stu-id="de6bd-111">Example commands</span></span>
 
 ```powershell
 Save-Module -Repository MSPSGallery -Name ModuleWithDependencies2 -Path C:\MySavedModuleLocation

@@ -9,12 +9,11 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="set-dsclocalconfigurationmanager-cmdlet-supports--force-parameter" class="xliff"></a>
-# Das Cmdlet „Set-DscLocalConfigurationManager“ unterstützt den „-force“-Parameter
+# <a name="set-dsclocalconfigurationmanager-cmdlet-supports--force-parameter"></a><span data-ttu-id="b0b34-102">Das Cmdlet „Set-DscLocalConfigurationManager“ unterstützt den „-force“-Parameter</span><span class="sxs-lookup"><span data-stu-id="b0b34-102">Set-DscLocalConfigurationManager cmdlet supports -force parameter</span></span>
 
-Wir haben dem Cmdlet „Set-DscLocalConfigurationManager“ die Unterstützung für einen neuen Parameter hinzugefügt. Dadurch kann der Benutzer die Metakonfiguration auf dem Computer deterministisch zurücksetzen, wenn andere Vorgänge wie die Konsistenzprüfung im Hintergrund ausgeführt werden, da dadurch alle ausgeführten Vorgänge angehalten werden.
+<span data-ttu-id="b0b34-103">Wir haben dem Cmdlet „Set-DscLocalConfigurationManager“ die Unterstützung für einen neuen Parameter hinzugefügt.</span><span class="sxs-lookup"><span data-stu-id="b0b34-103">We have added a support for new parameter to Set-DscLocalConfigurationManager cmdlet.</span></span> <span data-ttu-id="b0b34-104">Dadurch kann der Benutzer die Metakonfiguration auf dem Computer deterministisch zurücksetzen, wenn andere Vorgänge wie die Konsistenzprüfung im Hintergrund ausgeführt werden, da dadurch alle ausgeführten Vorgänge angehalten werden.</span><span class="sxs-lookup"><span data-stu-id="b0b34-104">This will allow the user to reset meta configuration on machine deterministically when other operations like consistency check are running in background as it will cause all running operations to be stopped.</span></span>
 
-Die Umgebung sieht wie folgt aus, wenn versucht wird, die Metakonfiguration ohne den „–force“-Parameter festzulegen.
+<span data-ttu-id="b0b34-105">Die Umgebung sieht wie folgt aus, wenn versucht wird, die Metakonfiguration ohne den „–force“-Parameter festzulegen.</span><span class="sxs-lookup"><span data-stu-id="b0b34-105">The experience looks like this when trying to set meta configuration without –Force parameter.</span></span>
 ```powershell
 PS C:\\Configs&gt; Set-DscLocalConfigurationManager -Path .\\MetaTest1\\ -Verbose
 VERBOSE: Performing the operation "Start-DscConfiguration: SendMetaConfigurationApply" on target "MSFT\_DSCLocalConfigurationManager".
@@ -29,7 +28,7 @@ VERBOSE: Operation 'Invoke CimMethod' complete.
 VERBOSE: Set-DscLocalConfigurationManager finished in 0.046 seconds.
 ```
 
-Wenn wir „–force“ verwenden, wird die Metakonfiguration auf dem System erfolgreich aktualisiert, indem der aktuell ausgeführte Vorgang auf dem Computer abgebrochen wird.
+<span data-ttu-id="b0b34-106">Wenn wir „–force“ verwenden, wird die Metakonfiguration auf dem System erfolgreich aktualisiert, indem der aktuell ausgeführte Vorgang auf dem Computer abgebrochen wird.</span><span class="sxs-lookup"><span data-stu-id="b0b34-106">When we use –force it successfully updates the meta configuration on system by canceling the current running operation on the machine.</span></span>
 ```powershell
 PS C:\\Configs&gt; Set-DscLocalConfigurationManager -Path .\\MetaTest1\\ -Verbose -Force
 VERBOSE: Performing the operation "Start-DscConfiguration: SendMetaConfigurationApply" on target "MSFT\_DSCLocalConfigurationManager".

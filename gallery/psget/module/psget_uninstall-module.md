@@ -10,35 +10,29 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="uninstall-module" class="xliff"></a>
-# Uninstall-Module
+# <a name="uninstall-module"></a><span data-ttu-id="987a0-103">Uninstall-Module</span><span class="sxs-lookup"><span data-stu-id="987a0-103">Uninstall-Module</span></span>
 
-Deinstalliert ein Modul, das mithilfe der „PowerShellGet“-Cmdlets installiert wurde
+<span data-ttu-id="987a0-104">Deinstalliert ein Modul, das mithilfe der „PowerShellGet“-Cmdlets installiert wurde</span><span class="sxs-lookup"><span data-stu-id="987a0-104">Uninstalls a module which was installed using PowerShellGet cmdlets.</span></span>
 
-<a id="description" class="xliff"></a>
-## Beschreibung
+## <a name="description"></a><span data-ttu-id="987a0-105">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="987a0-105">Description</span></span>
 
-Das Cmdlet „Uninstall-Module“ deinstalliert das angegebene Modul auf dem lokalen Computer. Sie können ein Modul nicht deinstallieren, wenn einige andere Module von ihm abhängig sind.
-Das Cmdlet „Uninstall-Module“ überprüft zudem, ob das Modul, das deinstalliert wird, gerade verwendet wird oder nicht. Wenn das Modul gerade verwendet wird, wird ein Fehler ausgelöst.
+<span data-ttu-id="987a0-106">Das Cmdlet „Uninstall-Module“ deinstalliert das angegebene Modul auf dem lokalen Computer.</span><span class="sxs-lookup"><span data-stu-id="987a0-106">The Uninstall-Module cmdlet uninstalls the specified module from the local computer.</span></span> <span data-ttu-id="987a0-107">Sie können ein Modul nicht deinstallieren, wenn einige andere Module von ihm abhängig sind.</span><span class="sxs-lookup"><span data-stu-id="987a0-107">You cannot uninstall a module if some other modules have a dependency on it.</span></span>
+<span data-ttu-id="987a0-108">Das Cmdlet „Uninstall-Module“ überprüft zudem, ob das Modul, das deinstalliert wird, gerade verwendet wird oder nicht.</span><span class="sxs-lookup"><span data-stu-id="987a0-108">The Uninstall-Module cmdlets also validates if the module being uninstalled is in-use or not.</span></span> <span data-ttu-id="987a0-109">Wenn das Modul gerade verwendet wird, wird ein Fehler ausgelöst.</span><span class="sxs-lookup"><span data-stu-id="987a0-109">An error will be thrown if the module is in use.</span></span>
 
-<a id="cmdlet-syntax" class="xliff"></a>
-## Cmdlet-Syntax
+## <a name="cmdlet-syntax"></a><span data-ttu-id="987a0-110">Cmdlet-Syntax</span><span class="sxs-lookup"><span data-stu-id="987a0-110">Cmdlet syntax</span></span>
 ```powershell
 Get-Command -Name Uninstall-Module -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-## Cmdlet-Onlinehilfe
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="987a0-111">Cmdlet-Onlinehilfe</span><span class="sxs-lookup"><span data-stu-id="987a0-111">Cmdlet online help reference</span></span>
 
-[Uninstall-Module](http://go.microsoft.com/fwlink/?LinkId=526864)
+[<span data-ttu-id="987a0-112">Uninstall-Module</span><span class="sxs-lookup"><span data-stu-id="987a0-112">Uninstall-Module</span></span>](http://go.microsoft.com/fwlink/?LinkId=526864)
 
 
-<a id="example-commands" class="xliff"></a>
-## Beispiele für Befehle
+## <a name="example-commands"></a><span data-ttu-id="987a0-113">Beispiele für Befehle</span><span class="sxs-lookup"><span data-stu-id="987a0-113">Example commands</span></span>
 
-<a id="run-the-uninstall-module-cmdlet-to-uninstall-a-module-that-you-installed-by-using-powershellget" class="xliff"></a>
-###  Führen Sie das Cmdlet „Uninstall-Module“ zum Deinstallieren eines Moduls aus, das Sie mit PowerShellGet installiert haben.
-Wenn ein anderes Modul von dem Modul abhängt, das Sie löschen möchten, löst PowerShellGet einen Fehler aus.
+###  <a name="run-the-uninstall-module-cmdlet-to-uninstall-a-module-that-you-installed-by-using-powershellget"></a><span data-ttu-id="987a0-114">Führen Sie das Cmdlet „Uninstall-Module“ zum Deinstallieren eines Moduls aus, das Sie mit PowerShellGet installiert haben.</span><span class="sxs-lookup"><span data-stu-id="987a0-114">Run the Uninstall-Module cmdlet to uninstall a module that you installed by using PowerShellGet.</span></span>
+<span data-ttu-id="987a0-115">Wenn ein anderes Modul von dem Modul abhängt, das Sie löschen möchten, löst PowerShellGet einen Fehler aus.</span><span class="sxs-lookup"><span data-stu-id="987a0-115">If any other module depends on the module that you want to delete, PowerShellGet throws an error.</span></span>
 ```powershell
 Get-InstalledModule -Name RequiredModule1 | Uninstall-Module
 
@@ -50,8 +44,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\PSGet.psm1:1303 char
 + FullyQualifiedErrorId : UnableToUninstallAsOtherModulesNeedThisModule,Uninstall-Package,Microsoft.PowerShell.PackageManagement.Cmdlets.UninstallPackage
 ```
 
-<a id="uninstalling-a-module-when-some-other-modules-have-a-dependency-on-it" class="xliff"></a>
-### Deinstallieren eines Moduls, wenn einige andere Module von ihm abhängig sind
+### <a name="uninstalling-a-module-when-some-other-modules-have-a-dependency-on-it"></a><span data-ttu-id="987a0-116">Deinstallieren eines Moduls, wenn einige andere Module von ihm abhängig sind</span><span class="sxs-lookup"><span data-stu-id="987a0-116">Uninstalling a module when some other modules have a dependency on it.</span></span>
 
 ```powershell
 Uninstall-Module SnippetPx
@@ -66,16 +59,14 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.3\PSModule.psm
    kageManagement.Cmdlets.UninstallPackage
 ```
 
-<a id="you-can-override-this-by-specify--force-option-on-uninstall-module-cmdlet" class="xliff"></a>
-### Sie können es überschreiben, indem Sie die Option „-Force“ im Cmdlet „Uninstall-Module“ angeben
-**HINWEIS:** Dies wird nicht empfohlen. Bei dieser Aktion werden andere Module unterbrochen.
+### <a name="you-can-override-this-by-specify--force-option-on-uninstall-module-cmdlet"></a><span data-ttu-id="987a0-117">Sie können es überschreiben, indem Sie die Option „-Force“ im Cmdlet „Uninstall-Module“ angeben</span><span class="sxs-lookup"><span data-stu-id="987a0-117">You can override this by specify -Force option on Uninstall-Module cmdlet</span></span>
+<span data-ttu-id="987a0-118">**HINWEIS:** Dies wird nicht empfohlen.</span><span class="sxs-lookup"><span data-stu-id="987a0-118">**NOTE:** This is not a recommended practice.</span></span> <span data-ttu-id="987a0-119">Bei dieser Aktion werden andere Module unterbrochen.</span><span class="sxs-lookup"><span data-stu-id="987a0-119">Other modules will break with this action.</span></span>
 
 ```powershell
 Uninstall-Module SnippetPx -Force
 ```
 
-<a id="uninstall-a-module-which-is-already-in-use" class="xliff"></a>
-### Deinstallieren eines Moduls, das bereits verwendet wird
+### <a name="uninstall-a-module-which-is-already-in-use"></a><span data-ttu-id="987a0-120">Deinstallieren eines Moduls, das bereits verwendet wird</span><span class="sxs-lookup"><span data-stu-id="987a0-120">Uninstall a module which is already in use</span></span>
 
 ```powershell
 Get-InstalledModule TypePx,SnippetPx
@@ -86,8 +77,7 @@ Version    Name                                Repository           Description
 1.0.5.18   SnippetPx                           PSGallery            The SnippetPx module enhances the snippet experi...
 ```
 
-<a id="uninstall-snippetpx-fails-due-to-the-dependent-module" class="xliff"></a>
-### Fehler beim Deinstallieren von SnippetPx aufgrund des abhängigen Moduls
+### <a name="uninstall-snippetpx-fails-due-to-the-dependent-module"></a><span data-ttu-id="987a0-121">Fehler beim Deinstallieren von SnippetPx aufgrund des abhängigen Moduls</span><span class="sxs-lookup"><span data-stu-id="987a0-121">Uninstall SnippetPx fails due to the dependent module</span></span>
 
 ```powershell
 Uninstall-Module SnippetPx
@@ -104,8 +94,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PSModule.psm
    kageManagement.Cmdlets.UninstallPackage
 ```
 
-<a id="uninstall-typepx-then-uninstall-the-snippetpx" class="xliff"></a>
-### Deinstallieren von TypePx, anschließend Deinstallieren von SnippetPx
+### <a name="uninstall-typepx-then-uninstall-the-snippetpx"></a><span data-ttu-id="987a0-122">Deinstallieren von TypePx, anschließend Deinstallieren von SnippetPx</span><span class="sxs-lookup"><span data-stu-id="987a0-122">Uninstall TypePx then uninstall the SnippetPx</span></span>
 
 ```powershell
 Uninstall-Module TypePx
@@ -124,8 +113,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PSModule.psm
 ```
 
 
-<a id="for-a-module-name-which-is-not-installed-using-powershellget-cmdlets" class="xliff"></a>
-### Bei einem Modul, das nicht mithilfe der „PowerShellGet“-Cmdlets installiert wurde
+### <a name="for-a-module-name-which-is-not-installed-using-powershellget-cmdlets"></a><span data-ttu-id="987a0-123">Bei einem Modul, das nicht mithilfe der „PowerShellGet“-Cmdlets installiert wurde</span><span class="sxs-lookup"><span data-stu-id="987a0-123">For a module name which is not installed using PowerShellGet cmdlets</span></span>
 
 ```powershell
 Uninstall-Module SnipptPx

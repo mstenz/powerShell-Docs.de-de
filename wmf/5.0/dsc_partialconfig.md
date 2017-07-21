@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="configure-node-with-multiple-configuration-fragments-partial-configurations" class="xliff"></a>
-# Konfigurieren von Knoten mit mehreren Konfigurationsfragmenten (Teilkonfigurationen)
+# <a name="configure-node-with-multiple-configuration-fragments-partial-configurations"></a><span data-ttu-id="b9ca6-102">Konfigurieren von Knoten mit mehreren Konfigurationsfragmenten (Teilkonfigurationen)</span><span class="sxs-lookup"><span data-stu-id="b9ca6-102">Configure Node with multiple configuration fragments (partial configurations)</span></span>
 
-WMF 5.0 hilft Ihnen, Konfigurationsdokumente in Fragmenten an einen Knoten zu übermitteln. Weitere Informationen finden Sie unter [Teilkonfigurationen](https://msdn.microsoft.com/powershell/dsc/partialconfigs).
+<span data-ttu-id="b9ca6-103">WMF 5.0 hilft Ihnen, Konfigurationsdokumente in Fragmenten an einen Knoten zu übermitteln.</span><span class="sxs-lookup"><span data-stu-id="b9ca6-103">WMF 5.0 helps you deliver configuration documents to a node in fragments.</span></span> <span data-ttu-id="b9ca6-104">Weitere Informationen finden Sie unter [Teilkonfigurationen](https://msdn.microsoft.com/powershell/dsc/partialconfigs).</span><span class="sxs-lookup"><span data-stu-id="b9ca6-104">For more information, see [Partial configurations](https://msdn.microsoft.com/powershell/dsc/partialconfigs).</span></span>
 

@@ -9,10 +9,9 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="help-support-for-dsc-configurations" class="xliff"></a>
-# Hilfe und Unterstützung für DSC-Konfigurationen
+# <a name="help-support-for-dsc-configurations"></a><span data-ttu-id="c1f96-102">Hilfe und Unterstützung für DSC-Konfigurationen</span><span class="sxs-lookup"><span data-stu-id="c1f96-102">Help support for DSC configurations</span></span>
 
-Sie können nun innerhalb von DSC-Konfigurationen eine kommentarbasierte Hilfe nutzen und Hilfe zur Verwendung der jeweiligen Konfigurationen abrufen, wenn Sie die Konfigurationsfunktion mit `-?` aufrufen:  
+<span data-ttu-id="c1f96-103">Sie können nun innerhalb von DSC-Konfigurationen eine kommentarbasierte Hilfe nutzen und Hilfe zur Verwendung der jeweiligen Konfigurationen abrufen, wenn Sie die Konfigurationsfunktion mit `-?` aufrufen:</span><span class="sxs-lookup"><span data-stu-id="c1f96-103">You can now use comment-based help inside of DSC configurations and get help on usage of that configuration when calling the configuration function with `-?`:</span></span>  
 
-Weitere Informationen finden Sie unter [Schreiben von Hilfe für DSC-Konfigurationen](https://msdn.microsoft.com/powershell/dsc/confighelp).
+<span data-ttu-id="c1f96-104">Weitere Informationen finden Sie unter [Schreiben von Hilfe für DSC-Konfigurationen](https://msdn.microsoft.com/powershell/dsc/confighelp).</span><span class="sxs-lookup"><span data-stu-id="c1f96-104">For more information, see [Writing help for DSC configurations](https://msdn.microsoft.com/powershell/dsc/confighelp).</span></span>
 

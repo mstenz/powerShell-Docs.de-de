@@ -10,38 +10,32 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="update-modulemanifest" class="xliff"></a>
-# Update-ModuleManifest
-Aktualisiert eine Modulmanifestdatei
+# <a name="update-modulemanifest"></a><span data-ttu-id="a7684-103">Update-ModuleManifest</span><span class="sxs-lookup"><span data-stu-id="a7684-103">Update-ModuleManifest</span></span>
+<span data-ttu-id="a7684-104">Aktualisiert eine Modulmanifestdatei</span><span class="sxs-lookup"><span data-stu-id="a7684-104">Updates a module manifest file.</span></span>
 
-<a id="description" class="xliff"></a>
-## Beschreibung
+## <a name="description"></a><span data-ttu-id="a7684-105">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="a7684-105">Description</span></span>
 
-Das Cmdlet „Update-ModuleManifest“ aktualisiert eine Modulmanifestdatei (.psd1).
+<span data-ttu-id="a7684-106">Das Cmdlet „Update-ModuleManifest“ aktualisiert eine Modulmanifestdatei (.psd1).</span><span class="sxs-lookup"><span data-stu-id="a7684-106">The Update-ModuleManifest cmdlet updates a module manifest (.psd1) file.</span></span>
 
-<a id="notes" class="xliff"></a>
-### Hinweise
-    - DscResourcesToExport wird nur von der neuesten PowerShell-Version 5.0 unterstützt. Wenn Sie eine frühere Version von PowerShell ausführen, kann das Feld nicht aktualisiert werden.
+### <a name="notes"></a><span data-ttu-id="a7684-107">Hinweise</span><span class="sxs-lookup"><span data-stu-id="a7684-107">Notes</span></span>
+    - <span data-ttu-id="a7684-108">DscResourcesToExport wird nur von der neuesten PowerShell-Version 5.0 unterstützt.</span><span class="sxs-lookup"><span data-stu-id="a7684-108">DscResourcesToExport is only supported on the latest PowerShell version 5.0.</span></span> <span data-ttu-id="a7684-109">Wenn Sie eine frühere Version von PowerShell ausführen, kann das Feld nicht aktualisiert werden.</span><span class="sxs-lookup"><span data-stu-id="a7684-109">We won’t be able to update the field if you are running on lower versions of PowerShell.</span></span>
 
-<a id="cmdlet-syntax" class="xliff"></a>
-## Cmdlet-Syntax
+## <a name="cmdlet-syntax"></a><span data-ttu-id="a7684-110">Cmdlet-Syntax</span><span class="sxs-lookup"><span data-stu-id="a7684-110">Cmdlet syntax</span></span>
 ```powershell
 Get-Command -Name Update-ModuleManifest -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-## Cmdlet-Onlinehilfe
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="a7684-111">Cmdlet-Onlinehilfe</span><span class="sxs-lookup"><span data-stu-id="a7684-111">Cmdlet online help reference</span></span>
 
-[Update-ModuleManifest](http://go.microsoft.com/fwlink/?LinkId=619311)
+[<span data-ttu-id="a7684-112">Update-ModuleManifest</span><span class="sxs-lookup"><span data-stu-id="a7684-112">Update-ModuleManifest</span></span>](http://go.microsoft.com/fwlink/?LinkId=619311)
 
-<a id="example-commands" class="xliff"></a>
-## Beispiele für Befehle
+## <a name="example-commands"></a><span data-ttu-id="a7684-113">Beispiele für Befehle</span><span class="sxs-lookup"><span data-stu-id="a7684-113">Example commands</span></span>
 
-Dieses neue Cmdlet wird verwendet, um die Manifestdatei mit eingegebenen Eigenschaftswerten zu aktualisieren. Es verwendet dieselben Parameter wie „New-ModuleManifest“.
+<span data-ttu-id="a7684-114">Dieses neue Cmdlet wird verwendet, um die Manifestdatei mit eingegebenen Eigenschaftswerten zu aktualisieren.</span><span class="sxs-lookup"><span data-stu-id="a7684-114">This new cmdlet is used to help update manifest file with input property values.</span></span> <span data-ttu-id="a7684-115">Es verwendet dieselben Parameter wie „New-ModuleManifest“.</span><span class="sxs-lookup"><span data-stu-id="a7684-115">It takes all parameters that New-ModuleManifest does.</span></span>
 
-Wir stellen fest, dass viele Modulentwickler in exportierten Werten wie „FunctionsToExport“, „CmdletsToExport“ usw. „\*“ angeben möchten. Während der Veröffentlichung des Moduls im PowerShell-Katalog werden nicht angegebene Funktionen und Befehle nicht ordnungsgemäß im Katalog aufgefüllt. Deshalb sollten Modulentwickler ihre Manifeste mit ordnungsgemäßen Werten aktualisieren.
+<span data-ttu-id="a7684-116">Wir stellen fest, dass viele Modulentwickler in exportierten Werten wie „FunctionsToExport“, „CmdletsToExport“ usw. „\*“ angeben möchten. Während der Veröffentlichung des Moduls im PowerShell-Katalog werden nicht angegebene Funktionen und Befehle nicht ordnungsgemäß im Katalog aufgefüllt.</span><span class="sxs-lookup"><span data-stu-id="a7684-116">We notice that a lot of module authors would like to specify “\*” in exported values such as FunctionsToExport, CmdletsToExport, etc. During module publishing to PowerShell Gallery, unspecified functions and commands will not be populated properly onto the Gallery.</span></span> <span data-ttu-id="a7684-117">Deshalb sollten Modulentwickler ihre Manifeste mit ordnungsgemäßen Werten aktualisieren.</span><span class="sxs-lookup"><span data-stu-id="a7684-117">Therefore, we suggest module authors update their manifests with proper values.</span></span>
 
-Wenn es Module mit exportierten Eigenschaften gibt, füllt „Update-ModuleManifest“ die angegebene Manifestdatei mit Informationen aus exportierten Funktionen, Cmdlets, Variablen usw. auf:
+<span data-ttu-id="a7684-118">Wenn es Module mit exportierten Eigenschaften gibt, füllt „Update-ModuleManifest“ die angegebene Manifestdatei mit Informationen aus exportierten Funktionen, Cmdlets, Variablen usw. auf:</span><span class="sxs-lookup"><span data-stu-id="a7684-118">If you have modules that have exported properties, Update-ModuleManifest will fill the specified manifest file with information from exported functions, cmdlets, variables etc:</span></span>
 ```powershell
 Get-Content -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1"
 @{
@@ -65,7 +59,7 @@ AliasesToExport = '*'
 }
 ```
 
-Nach „Update-ModuleManifest“:
+<span data-ttu-id="a7684-119">Nach „Update-ModuleManifest“:</span><span class="sxs-lookup"><span data-stu-id="a7684-119">After Update-ModuleManifest:</span></span>
 ```powershell
 Update-ModuleManifest -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1"
 Get-Content -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1"
@@ -90,13 +84,13 @@ CmdletsToExport = 'Test-PSGetTestCmdlet'
 }
 ```
 
-Jedem Modul sind auch Metadatenfelder zugeordnet. Um die Metadaten im PowerShell-Katalog ordnungsgemäß anzuzeigen, können Sie mit „Update-ModuleManifest“ diese Felder unter „PrivateData“ auffüllen.
+<span data-ttu-id="a7684-120">Jedem Modul sind auch Metadatenfelder zugeordnet.</span><span class="sxs-lookup"><span data-stu-id="a7684-120">For each module, there are also metadata fields associated with it.</span></span> <span data-ttu-id="a7684-121">Um die Metadaten im PowerShell-Katalog ordnungsgemäß anzuzeigen, können Sie mit „Update-ModuleManifest“ diese Felder unter „PrivateData“ auffüllen.</span><span class="sxs-lookup"><span data-stu-id="a7684-121">In order to display metadata properly on PowrShell Gallery, you can use Update-ModuleManifest to populate those fields under PrivateData.</span></span>
 
 ```powershell
 Update-ModuleManifest -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1" -Tags "Tag1" -LicenseUri "http://license.com" -ProjectUri "http://project.com" -IconUri "http://icon.com" -ReleaseNotes "Test module"
 ```
 
-Die Hashtabelle „PrivateData“ in der Vorlage der Manifestdatei hat die folgenden Eigenschaften
+<span data-ttu-id="a7684-122">Die Hashtabelle „PrivateData“ in der Vorlage der Manifestdatei hat die folgenden Eigenschaften</span><span class="sxs-lookup"><span data-stu-id="a7684-122">PrivateData hashtable from the manifest file template has the following properties</span></span>
 
 ```powershell
 # Private data to pass to the module specified in RootModule/ModuleToProcess. This may also contain a PSData hashtable with additional module metadata used by PowerShell.

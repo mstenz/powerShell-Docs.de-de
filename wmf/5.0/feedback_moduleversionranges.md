@@ -9,9 +9,8 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="modules-support-for-declaring-version-ranges-1-etc" class="xliff"></a>
-# Modulunterstützung für das Deklarieren von Versionsbereichen (1.* usw.)
-In Kombination mit **-MinimumVersion** ermöglicht **-MaximumVersion** Benutzern nun das Abrufen/Importieren von Modulen innerhalb eines bestimmten Bereichs. Der Parameter unterstützt auch **.***. Im folgenden Beispiel wird die Funktionsweise gezeigt:
+# <a name="modules-support-for-declaring-version-ranges-1-etc"></a><span data-ttu-id="9f1e8-102">Modulunterstützung für das Deklarieren von Versionsbereichen (1.* usw.)</span><span class="sxs-lookup"><span data-stu-id="9f1e8-102">Modules support for declaring version ranges (1.*, etc)</span></span>
+<span data-ttu-id="9f1e8-103">In Kombination mit **-MinimumVersion** ermöglicht **-MaximumVersion** Benutzern nun das Abrufen/Importieren von Modulen innerhalb eines bestimmten Bereichs.</span><span class="sxs-lookup"><span data-stu-id="9f1e8-103">Combined with **-MinimumVersion**, **-MaximumVersion** now allows user to get/import module within specific range.</span></span> <span data-ttu-id="9f1e8-104">Der Parameter unterstützt auch **.***.</span><span class="sxs-lookup"><span data-stu-id="9f1e8-104">The parameter also support **.***.</span></span> <span data-ttu-id="9f1e8-105">Im folgenden Beispiel wird die Funktionsweise gezeigt:</span><span class="sxs-lookup"><span data-stu-id="9f1e8-105">The following example shows how it works:</span></span>
 
 ```PowerShell
 Now, you can combine **-MinimumVersion** and **-MaximumVersion** to import module within specific range:

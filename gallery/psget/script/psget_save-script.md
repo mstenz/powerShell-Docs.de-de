@@ -10,44 +10,37 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="save-script" class="xliff"></a>
-# Save-Script
+# <a name="save-script"></a><span data-ttu-id="ae02a-103">Save-Script</span><span class="sxs-lookup"><span data-stu-id="ae02a-103">Save-Script</span></span>
 
-Mit dem Cmdlet „Save-Script“ können Sie die Skriptdatei überprüfen, indem Sie sie an einem angegebenen Speicherort speichern.
+<span data-ttu-id="ae02a-104">Mit dem Cmdlet „Save-Script“ können Sie die Skriptdatei überprüfen, indem Sie sie an einem angegebenen Speicherort speichern.</span><span class="sxs-lookup"><span data-stu-id="ae02a-104">Save-Script cmdlet lets you to review the script file by saving it to a specified location.</span></span>
 
-<a id="description" class="xliff"></a>
-## Beschreibung
+## <a name="description"></a><span data-ttu-id="ae02a-105">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="ae02a-105">Description</span></span>
 
-Das Cmdlet „Save-Script“ speichert das angegebene Skript.
+<span data-ttu-id="ae02a-106">Das Cmdlet „Save-Script“ speichert das angegebene Skript.</span><span class="sxs-lookup"><span data-stu-id="ae02a-106">The Save-Script cmdlet saves the specified script.</span></span>
 
-<a id="cmdlet-syntax" class="xliff"></a>
-## Cmdlet-Syntax
+## <a name="cmdlet-syntax"></a><span data-ttu-id="ae02a-107">Cmdlet-Syntax</span><span class="sxs-lookup"><span data-stu-id="ae02a-107">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Save-Script -Module PowerShellGet -Syntax
 ```
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-## Cmdlet-Onlinehilfe
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="ae02a-108">Cmdlet-Onlinehilfe</span><span class="sxs-lookup"><span data-stu-id="ae02a-108">Cmdlet online help reference</span></span>
 
-[Save-Script](http://go.microsoft.com/fwlink/?LinkId=619786)
+[<span data-ttu-id="ae02a-109">Save-Script</span><span class="sxs-lookup"><span data-stu-id="ae02a-109">Save-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619786)
 
-<a id="example-commands" class="xliff"></a>
-## Beispiele für Befehle
+## <a name="example-commands"></a><span data-ttu-id="ae02a-110">Beispiele für Befehle</span><span class="sxs-lookup"><span data-stu-id="ae02a-110">Example commands</span></span>
 
-<a id="example-1-save-a-script-from-a-repository" class="xliff"></a>
-### Beispiel 1: Speichern eines Skripts aus einem Repository
-Dieser Befehl speichert die neueste Version des Skripts „Fabrikam-ClientScript“ aus dem Repository „GalleryINT“ im lokalen Ordner „C:\ScriptSharingDemo“.
+### <a name="example-1-save-a-script-from-a-repository"></a><span data-ttu-id="ae02a-111">Beispiel 1: Speichern eines Skripts aus einem Repository</span><span class="sxs-lookup"><span data-stu-id="ae02a-111">Example 1: Save a script from a repository</span></span>
+<span data-ttu-id="ae02a-112">Dieser Befehl speichert die neueste Version des Skripts „Fabrikam-ClientScript“ aus dem Repository „GalleryINT“ im lokalen Ordner „C:\ScriptSharingDemo“.</span><span class="sxs-lookup"><span data-stu-id="ae02a-112">This command saves the latest version of the script Fabrikam-ClientScript from GalleryINT repository to the local folder C:\ScriptSharingDemo</span></span>
 
 ```powershell
 Save-Script -Name Fabrikam-ClientScript -Repository GalleryINT -Path C:\ScriptSharingDemo
 ```
 
-<a id="example-2-save-a-version-of-a-script-by-piping-from-the-find-script-cmdlet" class="xliff"></a>
-### Beispiel 2: Speichern einer Version eines Skripts durch Weiterreichen vom Cmdlet „Find-Script“
+### <a name="example-2-save-a-version-of-a-script-by-piping-from-the-find-script-cmdlet"></a><span data-ttu-id="ae02a-113">Beispiel 2: Speichern einer Version eines Skripts durch Weiterreichen vom Cmdlet „Find-Script“</span><span class="sxs-lookup"><span data-stu-id="ae02a-113">Example 2: Save a version of a script by piping from the Find-Script cmdlet</span></span>
 
-Der erste Befehl sucht nach Version 1.5 von „Fabrikam-ClientScript“ vom Repository „GalleryINT“ und speichert sie im Ordner „C:\ScriptSharingDemo“.
+<span data-ttu-id="ae02a-114">Der erste Befehl sucht nach Version 1.5 von „Fabrikam-ClientScript“ vom Repository „GalleryINT“ und speichert sie im Ordner „C:\ScriptSharingDemo“.</span><span class="sxs-lookup"><span data-stu-id="ae02a-114">The first command finds version 1.5 of Fabrikam-ClientScript from the repository GalleryINT and saves it to the folder C:\ScriptSharingDemo</span></span>
 
-Der zweite Befehl überprüft die Metadaten des gespeicherten Skripts.
+<span data-ttu-id="ae02a-115">Der zweite Befehl überprüft die Metadaten des gespeicherten Skripts.</span><span class="sxs-lookup"><span data-stu-id="ae02a-115">The second command validates the saved script metadata.</span></span>
 
 ```powershell
 Find-Script -Name Fabrikam-ClientScript -Repository GalleryINT -RequiredVersion 1.5 | Save-Script -Path C:\\ScriptSharingDemo

@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="report-abuse" class="xliff"></a>
-# Melden von Missbrauch
+# <a name="report-abuse"></a><span data-ttu-id="7c398-103">Melden von Missbrauch</span><span class="sxs-lookup"><span data-stu-id="7c398-103">Report Abuse</span></span>
 
-Wenn Sie ein Element finden, das gegen diese Regeln verstößt, klicken Sie auf den Link **Report Abuse** (Missbrauch melden) auf der Seite mit den Elementdetails, um einen Bericht zu übermitteln.
+<span data-ttu-id="7c398-104">Wenn Sie ein Element finden, das gegen diese Regeln verstößt, klicken Sie auf den Link **Report Abuse** (Missbrauch melden) auf der Seite mit den Elementdetails, um einen Bericht zu übermitteln.</span><span class="sxs-lookup"><span data-stu-id="7c398-104">If you find a item that is in violation of any of these items, click the **Report Abuse** link on the item details page and submit a report.</span></span>
 

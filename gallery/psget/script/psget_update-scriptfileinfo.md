@@ -10,33 +10,28 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="update-scriptfileinfo" class="xliff"></a>
-# Update-ScriptFileInfo
+# <a name="update-scriptfileinfo"></a><span data-ttu-id="8d8e9-103">Update-ScriptFileInfo</span><span class="sxs-lookup"><span data-stu-id="8d8e9-103">Update-ScriptFileInfo</span></span>
 
-Mit dem Cmdlet „Update-ScriptFileInfo“ können Sie die Metadaten der vorhandenen Skriptdatei aktualisieren.
+<span data-ttu-id="8d8e9-104">Mit dem Cmdlet „Update-ScriptFileInfo“ können Sie die Metadaten der vorhandenen Skriptdatei aktualisieren.</span><span class="sxs-lookup"><span data-stu-id="8d8e9-104">Update-ScriptFileInfo cmdlet lets you to update the existing script file metadata.</span></span>
 
-<a id="description" class="xliff"></a>
-## Beschreibung
+## <a name="description"></a><span data-ttu-id="8d8e9-105">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="8d8e9-105">Description</span></span>
 
-Das Cmdlet „Update-ScriptFileInfo“ aktualisiert Informationen für ein Skript.
-- Das Cmdlet „Update-ScriptFileInfo“ aktualisiert die Metadaten einer Skriptdatei nur, wenn sie mithilfe des Cmdlets „New-ScriptFileInfo“ oder mit gültigem PSScriptInfo-Kommentar erstellt wurden.
-- Es ermöglicht Ihnen zudem das Hinzufügen der Skriptdateiinformationen zu den vorhandenen Skriptdateien, die nicht mithilfe des Cmdlets „New-ScriptFileInfo“ erstellt wurden.
-- Wenn „–Force“ angegeben ist, versuchen Sie, die Metadaten zu der vorhandenen Skriptdatei hinzuzufügen, die nicht mithilfe des Cmdlets „New-ScriptFileInfo“ erstellt wurde.
-- Wenn nach dem Voranstellen der Skriptmetadaten an die vorhandene Datei bei Test-ScriptFileInfo Parsingfehler auftreten, wird eine Fehlermeldung ausgegeben, die etwa wie folgt lautet: „Die Metadaten können nicht zur vorhandenen Datei hinzugefügt werden. Sie können das Cmdlet New-ScriptFileInfo verwenden, um die Metadaten zu der vorhandenen Skriptdatei hinzuzufügen, die nicht mithilfe des Cmdlets New-ScriptFileInfo erstellt wurde.“
+<span data-ttu-id="8d8e9-106">Das Cmdlet „Update-ScriptFileInfo“ aktualisiert Informationen für ein Skript.</span><span class="sxs-lookup"><span data-stu-id="8d8e9-106">The Update-ScriptFileInfo cmdlet updates information for a script.</span></span>
+- <span data-ttu-id="8d8e9-107">Das Cmdlet „Update-ScriptFileInfo“ aktualisiert die Metadaten einer Skriptdatei nur, wenn sie mithilfe des Cmdlets „New-ScriptFileInfo“ oder mit gültigem PSScriptInfo-Kommentar erstellt wurden.</span><span class="sxs-lookup"><span data-stu-id="8d8e9-107">Update-ScriptFileInfo cmdlet updates the metadata of a script file only if it was created using New-ScriptFileInfo cmdlet or with valid PSScriptInfo comment.</span></span>
+- <span data-ttu-id="8d8e9-108">Es ermöglicht Ihnen zudem das Hinzufügen der Skriptdateiinformationen zu den vorhandenen Skriptdateien, die nicht mithilfe des Cmdlets „New-ScriptFileInfo“ erstellt wurden.</span><span class="sxs-lookup"><span data-stu-id="8d8e9-108">Also allows you to add the script file information to the existing script files which were not created using New-ScriptFileInfo cmdlet.</span></span>
+- <span data-ttu-id="8d8e9-109">Wenn „–Force“ angegeben ist, versuchen Sie, die Metadaten zu der vorhandenen Skriptdatei hinzuzufügen, die nicht mithilfe des Cmdlets „New-ScriptFileInfo“ erstellt wurde.</span><span class="sxs-lookup"><span data-stu-id="8d8e9-109">If –Force is specified, try to add the metadata to the existing script file which was not created using New-ScriptFileInfo cmdlet.</span></span>
+- <span data-ttu-id="8d8e9-110">Wenn nach dem Voranstellen der Skriptmetadaten an die vorhandene Datei bei Test-ScriptFileInfo Parsingfehler auftreten, wird eine Fehlermeldung ausgegeben, die etwa wie folgt lautet: „Die Metadaten können nicht zur vorhandenen Datei hinzugefügt werden. Sie können das Cmdlet New-ScriptFileInfo verwenden, um die Metadaten zu der vorhandenen Skriptdatei hinzuzufügen, die nicht mithilfe des Cmdlets New-ScriptFileInfo erstellt wurde.“</span><span class="sxs-lookup"><span data-stu-id="8d8e9-110">If Test-ScriptFileInfo fails with the parsing errors, after prepending the script metadata to the existing file, an error will be thrown saying something like "unable to add the metadata to the existing file, you can use the new-scriptfileinfo cmdlet to add the metadata to the existing script file which was not created using New-ScriptFileInfo cmdlet."</span></span>
 
-<a id="cmdlet-syntax" class="xliff"></a>
-## Cmdlet-Syntax
+## <a name="cmdlet-syntax"></a><span data-ttu-id="8d8e9-111">Cmdlet-Syntax</span><span class="sxs-lookup"><span data-stu-id="8d8e9-111">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Update-ScriptFileInfo -Module PowerShellGet -Syntax
 ```
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-## Cmdlet-Onlinehilfe
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="8d8e9-112">Cmdlet-Onlinehilfe</span><span class="sxs-lookup"><span data-stu-id="8d8e9-112">Cmdlet online help reference</span></span>
 
-[Update-Script](http://go.microsoft.com/fwlink/?LinkId=619793)
+[<span data-ttu-id="8d8e9-113">Update-Script</span><span class="sxs-lookup"><span data-stu-id="8d8e9-113">Update-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619793)
 
-<a id="example-commands" class="xliff"></a>
-## Beispiele für Befehle
+## <a name="example-commands"></a><span data-ttu-id="8d8e9-114">Beispiele für Befehle</span><span class="sxs-lookup"><span data-stu-id="8d8e9-114">Example commands</span></span>
 
 ```powershell
 # Use Update-ScriptFileInfo cmdlet to update the script metadata
@@ -50,8 +45,7 @@ Version Name Author Description
 ```
 
 
-<a id="adding-the-script-metadata-to-the-existing-script-file" class="xliff"></a>
-### Hinzufügen der Skriptmetadaten zur vorhandenen Skriptdatei
+### <a name="adding-the-script-metadata-to-the-existing-script-file"></a><span data-ttu-id="8d8e9-115">Hinzufügen der Skriptmetadaten zur vorhandenen Skriptdatei</span><span class="sxs-lookup"><span data-stu-id="8d8e9-115">Adding the script metadata to the existing script file</span></span>
 
 ```powershell
 PS C:\WINDOWS\system32> New-ScriptFileInfo -Description "Script file description." -PassThru

@@ -1,34 +1,34 @@
 ---
-title: "Ausführen von DSC mit Benutzeranmeldeinformationen"
-ms.date: 2016-05-16
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 5436b047052f522e930e60925aef1de2f5e81fcb
-ms.sourcegitcommit: a3966253a165d193a42b43b9430a4dc76988f82f
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: "Ausführen von DSC mit Benutzeranmeldeinformationen"
+ms.openlocfilehash: f15b2e4bfb888e2f3646a33cc0191e33a7ebb8ab
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="running-dsc-with-user-credentials"></a>Ausführen von DSC mit Benutzeranmeldeinformationen 
+# <a name="running-dsc-with-user-credentials"></a><span data-ttu-id="751ae-103">Ausführen von DSC mit Benutzeranmeldeinformationen</span><span class="sxs-lookup"><span data-stu-id="751ae-103">Running DSC with user credentials</span></span> 
 
-> Gilt für: Windows PowerShell 5.0, Windows PowerShell 5.1
+> <span data-ttu-id="751ae-104">Gilt für: Windows PowerShell 5.0, Windows PowerShell 5.1</span><span class="sxs-lookup"><span data-stu-id="751ae-104">Applies To: Windows PowerShell 5.0, Windows PowerShell 5.1</span></span>
 
-Sie können eine DSC-Ressource unter einem angegebenen Satz von Anmeldeinformationen ausführen, indem Sie die automatische Eigenschaft **PsDscRunAsCredential** in der Konfiguration verwenden. Standardmäßig führt DSC jede Ressource unter dem Systemkonto aus. Es gibt Situationen, in denen DSC unter einem Benutzerkonto ausgeführt werden muss, z. B. beim Installieren von MSI-Paketen in einem bestimmten Benutzerkontext, beim Festlegen von Registrierungsschlüsseln eines Benutzers, beim Zugriff auf ein bestimmtes lokales Verzeichnis eines Benutzers oder beim Zugriff auf eine Netzwerkfreigabe.
+<span data-ttu-id="751ae-105">Sie können eine DSC-Ressource unter einem angegebenen Satz von Anmeldeinformationen ausführen, indem Sie die automatische Eigenschaft **PsDscRunAsCredential** in der Konfiguration verwenden.</span><span class="sxs-lookup"><span data-stu-id="751ae-105">You can run a DSC resource under a specified set of credentials by using the automatic **PsDscRunAsCredential** property in the configuration.</span></span> <span data-ttu-id="751ae-106">Standardmäßig führt DSC jede Ressource unter dem Systemkonto aus.</span><span class="sxs-lookup"><span data-stu-id="751ae-106">By default, DSC runs each resource as the system account.</span></span>
+<span data-ttu-id="751ae-107">Es gibt Situationen, in denen DSC unter einem Benutzerkonto ausgeführt werden muss, z. B. beim Installieren von MSI-Paketen in einem bestimmten Benutzerkontext, beim Festlegen von Registrierungsschlüsseln eines Benutzers, beim Zugriff auf ein bestimmtes lokales Verzeichnis eines Benutzers oder beim Zugriff auf eine Netzwerkfreigabe.</span><span class="sxs-lookup"><span data-stu-id="751ae-107">There are times when running as a user is necessary, such as installing MSI packages in a specific user context, setting a user's registry keys, accessing a user's specific local directory, or accessing a network share.</span></span>
 
-Jede DSC-Ressource verfügt über eine **PsDscRunAsCredential**-Eigenschaft, die auf beliebige Anmeldeinformationen festgelegt werden kann (ein [PSCredential](https://msdn.microsoft.com/en-us/library/ms572524(v=VS.85).aspx)-Objekt).
-Die Anmeldeinformationen können als Wert der Eigenschaft in der Konfiguration hartcodiert werden, oder Sie können den Wert auf [Get-Credential](https://technet.microsoft.com/en-us/library/hh849815.aspx) festlegen, wodurch der Benutzer beim Kompilieren der Konfiguration zur Eingabe der Anmeldeinformationen aufgefordert wird (Informationen zum Kompilieren von Konfigurationen finden Sie unter [Konfigurationen](configurations.md).
+<span data-ttu-id="751ae-108">Jede DSC-Ressource verfügt über eine **PsDscRunAsCredential**-Eigenschaft, die auf beliebige Anmeldeinformationen festgelegt werden kann (ein [PSCredential](https://msdn.microsoft.com/en-us/library/ms572524(v=VS.85).aspx)-Objekt).</span><span class="sxs-lookup"><span data-stu-id="751ae-108">Every DSC resource has a **PsDscRunAsCredential** property that can be set to any user credentials (a [PSCredential](https://msdn.microsoft.com/en-us/library/ms572524(v=VS.85).aspx) object).</span></span>
+<span data-ttu-id="751ae-109">Die Anmeldeinformationen können als Wert der Eigenschaft in der Konfiguration hartcodiert werden, oder Sie können den Wert auf [Get-Credential](https://technet.microsoft.com/en-us/library/hh849815.aspx) festlegen, wodurch der Benutzer beim Kompilieren der Konfiguration zur Eingabe der Anmeldeinformationen aufgefordert wird (Informationen zum Kompilieren von Konfigurationen finden Sie unter [Konfigurationen](configurations.md).</span><span class="sxs-lookup"><span data-stu-id="751ae-109">The credential can be hard-coded as the value of the property in the configuration, or you can set the value to [Get-Credential](https://technet.microsoft.com/en-us/library/hh849815.aspx), which will prompt the user for a credential when the configuration is compiled (for information about compiling configurations, see [Configurations](configurations.md).</span></span>
 
->**Hinweis:** In PowerShell 5.0 wurde die Verwendung der Eigenschaft **PsDscRunAsCredential** in Konfigurationen, die zusammengesetzte Ressourcen aufrufen, nicht unterstützt. 
->In PowerShell 5.1 wird die Eigenschaft **PsDscRunAsCredential** in Konfigurationen, die zusammengesetzte Ressourcen aufrufen, unterstützt.
+><span data-ttu-id="751ae-110">**Hinweis:** In PowerShell 5.0 wurde die Verwendung der Eigenschaft **PsDscRunAsCredential** in Konfigurationen, die zusammengesetzte Ressourcen aufrufen, nicht unterstützt.</span><span class="sxs-lookup"><span data-stu-id="751ae-110">**Note:** In PowerShell 5.0, using the **PsDscRunAsCredential** property in configurations calling composite resources was not supported.</span></span> 
+><span data-ttu-id="751ae-111">In PowerShell 5.1 wird die Eigenschaft **PsDscRunAsCredential** in Konfigurationen, die zusammengesetzte Ressourcen aufrufen, unterstützt.</span><span class="sxs-lookup"><span data-stu-id="751ae-111">In PowerShell 5.1, the **PsDscRunAsCredential** property is supported in configurations calling composite resources.</span></span>
 
->**Hinweis**: Die Eigenschaft **PsDscRunAsCredential** ist in PowerShell 4.0 nicht verfügbar.
+><span data-ttu-id="751ae-112">**Hinweis**: Die Eigenschaft **PsDscRunAsCredential** ist in PowerShell 4.0 nicht verfügbar.</span><span class="sxs-lookup"><span data-stu-id="751ae-112">**Note:** The **PsDscRunAsCredential** property is not available in PowerShell 4.0.</span></span>
 
-Im folgenden Beispiel wird **Get-Credential** verwendet, um den Benutzer zur Eingabe von Anmeldeinformationen aufzufordern. Die Ressource [Registry](registryResource.md) wird verwendet, um den Registrierungsschlüssel zu ändern, der die Hintergrundfarbe für das Windows-Eingabeaufforderungsfenster angibt.
+<span data-ttu-id="751ae-113">Im folgenden Beispiel wird **Get-Credential** verwendet, um den Benutzer zur Eingabe von Anmeldeinformationen aufzufordern.</span><span class="sxs-lookup"><span data-stu-id="751ae-113">In the following example, **Get-Credential** is used to prompt the user for credentials.</span></span> <span data-ttu-id="751ae-114">Die Ressource [Registry](registryResource.md) wird verwendet, um den Registrierungsschlüssel zu ändern, der die Hintergrundfarbe für das Windows-Eingabeaufforderungsfenster angibt.</span><span class="sxs-lookup"><span data-stu-id="751ae-114">The [Registry](registryResource.md) resource is used to change the registry key that specifies the background color for the Windows command prompt window.</span></span>
 
 ```powershell
-Configuration ChangeCmdBackGroundColor    
+Configuration ChangeCmdBackGroundColor
 {
     Import-DscResource -ModuleName PSDesiredStateConfiguration
 
@@ -45,7 +45,7 @@ Configuration ChangeCmdBackGroundColor
             Hex                  = $true
             PsDscRunAsCredential = Get-Credential
         }
-    }                   
+    }
 }
 
 $configData = @{
@@ -61,6 +61,6 @@ $configData = @{
 
 ChangeCmdBackGroundColor -ConfigurationData $configData
 ```
->**Hinweis**: In diesem Beispiel wird vorausgesetzt, dass Sie über ein gültiges Zertifikat unter `C:\publicKeys\targetNode.cer` verfügen und dass der Fingerabdruck dieses Zertifikats der angezeigte Wert ist.
->Informationen zum Verschlüsseln von Anmeldeinformationen in DSC MOF-Konfigurationsdateien finden Sie unter [Schützen der MOF-Datei](secureMOF.md).
+><span data-ttu-id="751ae-115">**Hinweis**: In diesem Beispiel wird vorausgesetzt, dass Sie über ein gültiges Zertifikat unter `C:\publicKeys\targetNode.cer` verfügen und dass der Fingerabdruck dieses Zertifikats der angezeigte Wert ist.</span><span class="sxs-lookup"><span data-stu-id="751ae-115">**Note:** This example assumes that you have a valid certificate at `C:\publicKeys\targetNode.cer`, and that the thumbprint of that certificate is the value shown.</span></span>
+><span data-ttu-id="751ae-116">Informationen zum Verschlüsseln von Anmeldeinformationen in DSC MOF-Konfigurationsdateien finden Sie unter [Schützen der MOF-Datei](secureMOF.md).</span><span class="sxs-lookup"><span data-stu-id="751ae-116">For information about encrypting credentials in DSC configuration MOF files, see [Securing the MOF file](secureMOF.md).</span></span>
 

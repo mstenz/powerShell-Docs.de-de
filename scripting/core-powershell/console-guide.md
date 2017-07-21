@@ -8,9 +8,9 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/08/2017
 ---
-#  <a name="powershell-console-window-guide"></a>Handbuch für das PowerShell-Konsolenfenster
+#  <a name="powershell-console-window-guide"></a><span data-ttu-id="36e37-103">Handbuch für das PowerShell-Konsolenfenster</span><span class="sxs-lookup"><span data-stu-id="36e37-103">PowerShell Console Window Guide</span></span>
 
-Inhalt dieses Handbuchs:
--  [Befehlszeilenhilfe für „PowerShell.exe“](console/PowerShell.exe-Command-Line-Help.md)
--  [Verwenden von Erweiterung mit der TAB-TASTE](console/Using-Tab-Expansion.md)
+<span data-ttu-id="36e37-104">Inhalt dieses Handbuchs:</span><span class="sxs-lookup"><span data-stu-id="36e37-104">Find in this guide:</span></span>
+-  [<span data-ttu-id="36e37-105">Befehlszeilenhilfe für „PowerShell.exe“</span><span class="sxs-lookup"><span data-stu-id="36e37-105">PowerShell.exe Command Line Help</span></span>](console/PowerShell.exe-Command-Line-Help.md)
+-  [<span data-ttu-id="36e37-106">Verwenden von Erweiterung mit der TAB-TASTE</span><span class="sxs-lookup"><span data-stu-id="36e37-106">Using Tab Expansion</span></span>](console/Using-Tab-Expansion.md)
 

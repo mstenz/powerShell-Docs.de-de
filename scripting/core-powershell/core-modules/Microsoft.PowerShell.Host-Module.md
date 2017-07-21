@@ -9,14 +9,14 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/08/2017
 ---
-# <a name="microsoftpowershellhost-module"></a>Microsoft.PowerShell.Host-Modul
-Dieser Abschnitt enthält Hilfethemen für das **Microsoft.PowerShell.Host**-Modul. Das **Microsoft.PowerShell.Host**-Modul enthält Cmdlets, die die Funktion der Programme verwalten, die Windows PowerShell hosten. Dieses Modul wird mit Windows PowerShell installiert.
+# <a name="microsoftpowershellhost-module"></a><span data-ttu-id="d2b60-103">Microsoft.PowerShell.Host-Modul</span><span class="sxs-lookup"><span data-stu-id="d2b60-103">Microsoft.PowerShell.Host Module</span></span>
+<span data-ttu-id="d2b60-104">Dieser Abschnitt enthält Hilfethemen für das **Microsoft.PowerShell.Host**-Modul.</span><span class="sxs-lookup"><span data-stu-id="d2b60-104">This section contains the help topics for the **Microsoft.PowerShell.Host** module.</span></span> <span data-ttu-id="d2b60-105">Das **Microsoft.PowerShell.Host**-Modul enthält Cmdlets, die die Funktion der Programme verwalten, die Windows PowerShell hosten.</span><span class="sxs-lookup"><span data-stu-id="d2b60-105">The **Microsoft.PowerShell.Host** module contains cmdlets that manage the feature of programs that host Windows PowerShell.</span></span> <span data-ttu-id="d2b60-106">Dieses Modul wird mit Windows PowerShell installiert.</span><span class="sxs-lookup"><span data-stu-id="d2b60-106">It is installed with Windows PowerShell.</span></span>
 
-## <a name="help-topics"></a>Hilfethemen
-[Windows PowerShell Host-Cmdlets](http://go.microsoft.com/fwlink/?LinkID=245859)
+## <a name="help-topics"></a><span data-ttu-id="d2b60-107">Hilfethemen</span><span class="sxs-lookup"><span data-stu-id="d2b60-107">Help Topics</span></span>
+[<span data-ttu-id="d2b60-108">Windows PowerShell Host-Cmdlets</span><span class="sxs-lookup"><span data-stu-id="d2b60-108">Windows PowerShell Host Cmdlets</span></span>](http://go.microsoft.com/fwlink/?LinkID=245859)
 
-## <a name="see-also"></a>Weitere Informationen
-- [Windows PowerShell 5.0](Windows-PowerShell-5.0.md)
-- [Windows PowerShell Core](https://technet.microsoft.com/en-us/library/4b75f1e4-f327-48f3-92ab-bf5435094d41)
-- [Skripting mit WindowsPowerShell](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
+## <a name="see-also"></a><span data-ttu-id="d2b60-109">Weitere Informationen</span><span class="sxs-lookup"><span data-stu-id="d2b60-109">See Also</span></span>
+- [<span data-ttu-id="d2b60-110">Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="d2b60-110">Windows PowerShell 5.0</span></span>](Windows-PowerShell-5.0.md)
+- [<span data-ttu-id="d2b60-111">Windows PowerShell Core</span><span class="sxs-lookup"><span data-stu-id="d2b60-111">Windows PowerShell Core</span></span>](https://technet.microsoft.com/en-us/library/4b75f1e4-f327-48f3-92ab-bf5435094d41)
+- [<span data-ttu-id="d2b60-112">Skripting mit WindowsPowerShell</span><span class="sxs-lookup"><span data-stu-id="d2b60-112">Scripting with Windows PowerShell</span></span>](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
 

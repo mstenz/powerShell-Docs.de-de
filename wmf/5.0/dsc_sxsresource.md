@@ -9,17 +9,15 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="side-by-side-module-versioning-support-for-dsc-resources" class="xliff"></a>
-# Unterstützung der gleichzeitigen Ausführung unterschiedlicher Versionen für DSC-Ressourcen
+# <a name="side-by-side-module-versioning-support-for-dsc-resources"></a><span data-ttu-id="90092-102">Unterstützung der gleichzeitigen Ausführung unterschiedlicher Versionen für DSC-Ressourcen</span><span class="sxs-lookup"><span data-stu-id="90092-102">Side-By-Side Module Versioning Support for DSC Resources</span></span>
 
-Module unterschiedlicher Versionen mit DSC-Ressourcen können parallel installiert werden, und DSC-Konfigurationen können eine bestimmte Version der Ressource verwenden, die auf dem System installiert ist.
+<span data-ttu-id="90092-103">Module unterschiedlicher Versionen mit DSC-Ressourcen können parallel installiert werden, und DSC-Konfigurationen können eine bestimmte Version der Ressource verwenden, die auf dem System installiert ist.</span><span class="sxs-lookup"><span data-stu-id="90092-103">Modules containing DSC resources can be installed side-by-side, and DSC configurations can use a specific version of the resource that is installed on the system.</span></span>
 
-Weitere Informationen finden Sie unter [Verwenden von Ressourcen mit mehreren Versionen](https://msdn.microsoft.com/powershell/dsc/sxsresource).
+<span data-ttu-id="90092-104">Weitere Informationen finden Sie unter [Verwenden von Ressourcen mit mehreren Versionen](https://msdn.microsoft.com/powershell/dsc/sxsresource).</span><span class="sxs-lookup"><span data-stu-id="90092-104">For more information, see [Using resources with multiple versions](https://msdn.microsoft.com/powershell/dsc/sxsresource).</span></span>
 
-<a id="known-issues" class="xliff"></a>
-## Bekannte Probleme
+## <a name="known-issues"></a><span data-ttu-id="90092-105">Bekannte Probleme</span><span class="sxs-lookup"><span data-stu-id="90092-105">Known issues</span></span>
 
-In dieser Version sind die folgenden Probleme bei paralleler Installation unterschiedlicher Versionen bekannt:
+<span data-ttu-id="90092-106">In dieser Version sind die folgenden Probleme bei paralleler Installation unterschiedlicher Versionen bekannt:</span><span class="sxs-lookup"><span data-stu-id="90092-106">In this release, the following are known issues of side-by-side installation:</span></span>
 
--   Das Verwenden zweier verschiedener Versionen der DSC-Ressourcen innerhalb der gleichen Konfiguration wird nicht unterstützt.
+-   <span data-ttu-id="90092-107">Das Verwenden zweier verschiedener Versionen der DSC-Ressourcen innerhalb der gleichen Konfiguration wird nicht unterstützt.</span><span class="sxs-lookup"><span data-stu-id="90092-107">Using two different versions of the DSC resource within the same configuration is not supported.</span></span>
 

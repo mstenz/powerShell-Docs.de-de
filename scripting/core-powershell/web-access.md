@@ -8,11 +8,11 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/08/2017
 ---
-#  <a name="web-access-for-powershell"></a>Web Access für PowerShell
+#  <a name="web-access-for-powershell"></a><span data-ttu-id="d86f9-103">Web Access für PowerShell</span><span class="sxs-lookup"><span data-stu-id="d86f9-103">Web Access for PowerShell</span></span>
 
--  [Autorisierungsregeln und Sicherheitsfeatures von Windows PowerShell Web Access](web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md)
--  [Installieren und Verwenden von Windows PowerShell Web Access](web-access/install-and-use-windows-powershell-web-access.md)
--  [Behandeln von Zugriffsproblemen in Windows PowerShell Web Access](web-access/troubleshooting-access-problems-in-windows-powershell-web-access.md)
--  [Deinstallieren von Windows PowerShell Web Access](web-access/uninstall-windows-powershell-web-access.md)
--  [Verwendung der webbasierten Windows PowerShell-Konsole](web-access/use-the-web-based-windows-powershell-console.md)
+-  [<span data-ttu-id="d86f9-104">Autorisierungsregeln und Sicherheitsfeatures von Windows PowerShell Web Access</span><span class="sxs-lookup"><span data-stu-id="d86f9-104">Authorization rules and security features of windows powershell web access</span></span>](web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md)
+-  [<span data-ttu-id="d86f9-105">Installieren und Verwenden von Windows PowerShell Web Access</span><span class="sxs-lookup"><span data-stu-id="d86f9-105">Install and use windows powershell web access</span></span>](web-access/install-and-use-windows-powershell-web-access.md)
+-  [<span data-ttu-id="d86f9-106">Behandeln von Zugriffsproblemen in Windows PowerShell Web Access</span><span class="sxs-lookup"><span data-stu-id="d86f9-106">Troubleshooting access problems in windows powershell web access</span></span>](web-access/troubleshooting-access-problems-in-windows-powershell-web-access.md)
+-  [<span data-ttu-id="d86f9-107">Deinstallieren von Windows PowerShell Web Access</span><span class="sxs-lookup"><span data-stu-id="d86f9-107">Uninstall windows powershell web access</span></span>](web-access/uninstall-windows-powershell-web-access.md)
+-  [<span data-ttu-id="d86f9-108">Verwendung der webbasierten Windows PowerShell-Konsole</span><span class="sxs-lookup"><span data-stu-id="d86f9-108">Use the web based windows powershell console</span></span>](web-access/use-the-web-based-windows-powershell-console.md)
 

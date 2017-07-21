@@ -9,7 +9,6 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="new-and-updated-cmdlets-based-on-community-feedback" class="xliff"></a>
-# Neue und aktualisierte Cmdlets basierend auf Communityfeedback 
-Wir haben basierend auf Feedback aus der Community über [Connect](https://connect.microsoft.com/powershell) einige neue „Utility“-Cmdlets hinzugefügt und vorhandene Cmdlets aktualisiert. Wir sichten Ihr Feedback weiter und gehen auf so viele Anforderungen wie möglich ein.
+# <a name="new-and-updated-cmdlets-based-on-community-feedback"></a><span data-ttu-id="f4861-102">Neue und aktualisierte Cmdlets basierend auf Communityfeedback</span><span class="sxs-lookup"><span data-stu-id="f4861-102">New and updated cmdlets based on community feedback</span></span> 
+<span data-ttu-id="f4861-103">Wir haben basierend auf Feedback aus der Community über [Connect](https://connect.microsoft.com/powershell) einige neue „Utility“-Cmdlets hinzugefügt und vorhandene Cmdlets aktualisiert.</span><span class="sxs-lookup"><span data-stu-id="f4861-103">We have added some new Utility cmdlets, and updated existing cmdlets based on feedback from the community via [Connect](https://connect.microsoft.com/powershell).</span></span> <span data-ttu-id="f4861-104">Wir sichten Ihr Feedback weiter und gehen auf so viele Anforderungen wie möglich ein.</span><span class="sxs-lookup"><span data-stu-id="f4861-104">We continue to go through the feedback, and address as many of your requests as possible.</span></span>
 

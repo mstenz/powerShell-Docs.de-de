@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="support-for-mixed-refreshmode" class="xliff"></a>
-# Unterstützung gemischter „RefreshMode“-Eigenschaften
+# <a name="support-for-mixed-refreshmode"></a><span data-ttu-id="c0110-102">Unterstützung gemischter „RefreshMode“-Eigenschaften</span><span class="sxs-lookup"><span data-stu-id="c0110-102">Support for mixed RefreshMode</span></span>
 
-Wenn Sie Teilkonfigurationen verwenden, können nun mit einem `RefreshMode` einzelne Teilkonfigurationen definieren. Weitere Informationen finden Sie unter [Teilkonfigurationen](https://msdn.microsoft.com/powershell/dsc/partialconfigs).
+<span data-ttu-id="c0110-103">Wenn Sie Teilkonfigurationen verwenden, können nun mit einem `RefreshMode` einzelne Teilkonfigurationen definieren.</span><span class="sxs-lookup"><span data-stu-id="c0110-103">When you use partial configurations, you can now define each individual partial configuration with a `RefreshMode`.</span></span> <span data-ttu-id="c0110-104">Weitere Informationen finden Sie unter [Teilkonfigurationen](https://msdn.microsoft.com/powershell/dsc/partialconfigs).</span><span class="sxs-lookup"><span data-stu-id="c0110-104">For more information, see [Partial configurations](https://msdn.microsoft.com/powershell/dsc/partialconfigs).</span></span>
 

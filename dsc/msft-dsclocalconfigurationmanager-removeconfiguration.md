@@ -10,13 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="removeconfiguration-method-of-the-msftdsclocalconfigurationmanager-class" class="xliff"></a>
-# RemoveConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse
+# <a name="removeconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="bbd43-103">RemoveConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse</span><span class="sxs-lookup"><span data-stu-id="bbd43-103">RemoveConfiguration method of the MSFT_DSCLocalConfigurationManager class</span></span>
 
-Entfernt die Konfigurationsdateien.
+<span data-ttu-id="bbd43-104">Entfernt die Konfigurationsdateien.</span><span class="sxs-lookup"><span data-stu-id="bbd43-104">Removes the configuration files.</span></span>
 
-<a id="syntax" class="xliff"></a>
-Syntax
+<a name="syntax"></a><span data-ttu-id="bbd43-105">Syntax</span><span class="sxs-lookup"><span data-stu-id="bbd43-105">Syntax</span></span>
 ------
 
 ```mof
@@ -26,46 +24,41 @@ uint32 RemoveConfiguration(
 );
 ```
 
-<a id="parameters" class="xliff"></a>
-Parameter
+<a name="parameters"></a><span data-ttu-id="bbd43-106">Parameter</span><span class="sxs-lookup"><span data-stu-id="bbd43-106">Parameters</span></span>
 ----------
 
-*Stage* \[in\]  
-Gibt an, welches Konfigurationsdokument entfernt werden soll. Die folgenden Werte sind gültig:
+<span data-ttu-id="bbd43-107">*Stage* \[in\]</span><span class="sxs-lookup"><span data-stu-id="bbd43-107">*Stage* \[in\]</span></span>  
+<span data-ttu-id="bbd43-108">Gibt an, welches Konfigurationsdokument entfernt werden soll.</span><span class="sxs-lookup"><span data-stu-id="bbd43-108">Specifies which configuration document to remove.</span></span> <span data-ttu-id="bbd43-109">Die folgenden Werte sind gültig:</span><span class="sxs-lookup"><span data-stu-id="bbd43-109">The following values are valid:</span></span>
 
-|Value |Beschreibung |
+|<span data-ttu-id="bbd43-110">Value</span><span class="sxs-lookup"><span data-stu-id="bbd43-110">Value</span></span> |<span data-ttu-id="bbd43-111">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="bbd43-111">Description</span></span> |
 |:--- |:---|
-|**1** | Das **aktuelle** (Current) Konfigurationsdokument (current.mof). |
-|**2** | Das **ausstehende** (Pending) Konfigurationsdokument (pending.mof).  |
-|**4** | Das **vorherige** (Previous) Konfigurationsdokument (previous.mof). |
+|<span data-ttu-id="bbd43-112">**1**</span><span class="sxs-lookup"><span data-stu-id="bbd43-112">**1**</span></span> | <span data-ttu-id="bbd43-113">Das **aktuelle** (Current) Konfigurationsdokument (current.mof).</span><span class="sxs-lookup"><span data-stu-id="bbd43-113">The **Current** configuration document (current.mof).</span></span> |
+|<span data-ttu-id="bbd43-114">**2**</span><span class="sxs-lookup"><span data-stu-id="bbd43-114">**2**</span></span> | <span data-ttu-id="bbd43-115">Das **ausstehende** (Pending) Konfigurationsdokument (pending.mof).</span><span class="sxs-lookup"><span data-stu-id="bbd43-115">The **Pending** configuration document (pending.mof).</span></span>  |
+|<span data-ttu-id="bbd43-116">**4**</span><span class="sxs-lookup"><span data-stu-id="bbd43-116">**4**</span></span> | <span data-ttu-id="bbd43-117">Das **vorherige** (Previous) Konfigurationsdokument (previous.mof).</span><span class="sxs-lookup"><span data-stu-id="bbd43-117">The **Previous** configuration document (previous.mof).</span></span> |
 
-*Force* \[in\]  
-**true**, um das Entfernen der Konfiguration zu erzwingen.
+<span data-ttu-id="bbd43-118">*Force* \[in\]</span><span class="sxs-lookup"><span data-stu-id="bbd43-118">*Force* \[in\]</span></span>  
+<span data-ttu-id="bbd43-119">**true**, um das Entfernen der Konfiguration zu erzwingen.</span><span class="sxs-lookup"><span data-stu-id="bbd43-119">**true** to force the removal of the configuration.</span></span>
 
-<a id="return-value" class="xliff"></a>
-## Rückgabewert
+## <a name="return-value"></a><span data-ttu-id="bbd43-120">Rückgabewert</span><span class="sxs-lookup"><span data-stu-id="bbd43-120">Return value</span></span>
 ------------
 
-Gibt bei Erfolg null zurück, andernfalls einen Fehlercode.
+<span data-ttu-id="bbd43-121">Gibt bei Erfolg null zurück, andernfalls einen Fehlercode.</span><span class="sxs-lookup"><span data-stu-id="bbd43-121">Returns zero on success; otherwise returns an error code.</span></span>
 
-<a id="remarks" class="xliff"></a>
-## Hinweise
+## <a name="remarks"></a><span data-ttu-id="bbd43-122">Hinweise</span><span class="sxs-lookup"><span data-stu-id="bbd43-122">Remarks</span></span>
 
-Dies ist eine statische Methode.
+<span data-ttu-id="bbd43-123">Dies ist eine statische Methode.</span><span class="sxs-lookup"><span data-stu-id="bbd43-123">This is a static method.</span></span>
 
-<a id="requirements" class="xliff"></a>
-## Anforderungen
+## <a name="requirements"></a><span data-ttu-id="bbd43-124">Anforderungen</span><span class="sxs-lookup"><span data-stu-id="bbd43-124">Requirements</span></span>
 ------------
->**MOF:** DscCore.mof
+><span data-ttu-id="bbd43-125">**MOF:** DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="bbd43-125">**MOF:** DscCore.mof</span></span>
 
->**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
-
-
-<a id="see-also" class="xliff"></a>
-## Siehe auch
+><span data-ttu-id="bbd43-126">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="bbd43-126">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
 
 
-[**MSFT_DSCLocalConfigurationManager-Klasse**](msft-dsclocalconfigurationmanager.md)
+## <a name="see-also"></a><span data-ttu-id="bbd43-127">Siehe auch</span><span class="sxs-lookup"><span data-stu-id="bbd43-127">See also</span></span>
+
+
+[<span data-ttu-id="bbd43-128">**MSFT_DSCLocalConfigurationManager-Klasse**</span><span class="sxs-lookup"><span data-stu-id="bbd43-128">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
 
 
  

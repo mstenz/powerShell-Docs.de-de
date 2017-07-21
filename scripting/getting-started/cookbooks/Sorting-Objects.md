@@ -9,16 +9,16 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/08/2017
 ---
-# <a name="sorting-objects"></a>Sortieren von Objekten
-Damit sich angezeigte Daten einfacher auswerten lassen, können sie mit dem Cmdlet **Sort-Object** geordnet werden. **Sort-Object** erhält den Namen von mindestens einer Eigenschaft, nach der sortiert werden soll, und gibt Daten zurück, die nach den Werten dieser Eigenschaften sortiert sind.
+# <a name="sorting-objects"></a><span data-ttu-id="82727-103">Sortieren von Objekten</span><span class="sxs-lookup"><span data-stu-id="82727-103">Sorting Objects</span></span>
+<span data-ttu-id="82727-104">Damit sich angezeigte Daten einfacher auswerten lassen, können sie mit dem Cmdlet **Sort-Object** geordnet werden.</span><span class="sxs-lookup"><span data-stu-id="82727-104">We can organize displayed data to make it easier to scan by using the **Sort-Object** cmdlet.</span></span> <span data-ttu-id="82727-105">**Sort-Object** erhält den Namen von mindestens einer Eigenschaft, nach der sortiert werden soll, und gibt Daten zurück, die nach den Werten dieser Eigenschaften sortiert sind.</span><span class="sxs-lookup"><span data-stu-id="82727-105">**Sort-Object** takes the name of one or more properties to sort on, and returns data sorted by the values of those properties.</span></span>
 
-Nehmen Sie das Problem des Auflistens von „Win32_SystemDriver“-Instanzen. Wenn Sie nach Staus (**State**) und dann nach **Name** sortieren möchten, geben Sie Folgendes ein:
+<span data-ttu-id="82727-106">Nehmen Sie das Problem des Auflistens von „Win32_SystemDriver“-Instanzen.</span><span class="sxs-lookup"><span data-stu-id="82727-106">Consider the problem of listing Win32_SystemDriver instances.</span></span> <span data-ttu-id="82727-107">Wenn Sie nach Staus (**State**) und dann nach **Name** sortieren möchten, geben Sie Folgendes ein:</span><span class="sxs-lookup"><span data-stu-id="82727-107">If we want to sort by **State** and then by **Name**, we can do it by typing:</span></span>
 
 ```
 Get-WmiObject -Class Win32_SystemDriver | Sort-Object -Property State,Name | Format-Table -Property Name,State,Started,DisplayName -AutoSize -Wrap
 ```
 
-Dies ist zwar eine ziemlich lange Anzeige, aber Sie sehen die Elemente mit demselben Status in Gruppen zusammengefasst:
+<span data-ttu-id="82727-108">Dies ist zwar eine ziemlich lange Anzeige, aber Sie sehen die Elemente mit demselben Status in Gruppen zusammengefasst:</span><span class="sxs-lookup"><span data-stu-id="82727-108">Although this is a lengthy display, you can see items with the same state grouped together:</span></span>
 
 ```
 Name           State   Started DisplayName
@@ -34,7 +34,7 @@ aec            Stopped   False Microsoft Kernel Acoustic Echo Canceller
 ...
 ```
 
-Sie können die Objekte auch in umgekehrter Reihenfolge sortieren, indem Sie den **Descending**-Parameter angeben. Dadurch wird die Sortierreihenfolge umgekehrt, sodass Namen in umgekehrter alphabetischer Reihenfolge und Zahlen nach absteigender Größe sortiert werden.
+<span data-ttu-id="82727-109">Sie können die Objekte auch in umgekehrter Reihenfolge sortieren, indem Sie den **Descending**-Parameter angeben.</span><span class="sxs-lookup"><span data-stu-id="82727-109">You can also sort the objects in reverse order by specifying the **Descending** parameter.</span></span> <span data-ttu-id="82727-110">Dadurch wird die Sortierreihenfolge umgekehrt, sodass Namen in umgekehrter alphabetischer Reihenfolge und Zahlen nach absteigender Größe sortiert werden.</span><span class="sxs-lookup"><span data-stu-id="82727-110">This reverses the sort order so that names are sorted in reverse alphabetical order and numbers are sorted by descending size.</span></span>
 
 ```
 PS> Get-WmiObject -Class Win32_SystemDriver | Sort-Object -Property State,Name -Descending | Format-Table -Property Name,State,Started,DisplayName -AutoSize -Wrap

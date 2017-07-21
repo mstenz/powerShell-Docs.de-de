@@ -33,10 +33,14 @@
 ### [Service-Ressource](serviceResource.md)
 ### [ServiceSet-Ressource](serviceSetResource.md)
 ### [User-Ressource](userResource.md)
+### [WaitForAllResource](waitForAllResource.md)
+### [WaitForAnyResource](waitForAnyResource.md)
+### [WaitForSomeResource](waitForSomeResource.md)
 ### [WindowsFeature-Ressource](windowsfeatureResource.md)
 ### [WindowsFeatureSet-Ressource](windowsFeatureSetResource.md)
 ### [WindowsOptionalFeature-Ressource](windowsOptionalFeatureResource.md)
 ### [WindowsOptionalFeatureSet-Ressource](windowsOptionalFeatureSetResource.md)
+### [WindowsPackageCab-Ressource](windowsPackageCabResource.md)
 ### [WindowsProcess-Ressource](windowsProcessResource.md)
 ## [Erstellen benutzerdefinierter Ressourcen](authoringResource.md) 
 ### [MOF-basierte benutzerdefinierte Ressourcen](authoringResourceMOF.md)
@@ -59,6 +63,10 @@
 ### [Einrichten eines Pullclients mithilfe einer Konfigurations-ID](pullClientConfigID.md)
 ## [Verwenden eines DSC-Berichtsservers](reportServer.md)
 ## [Bewährte Methoden für Pullserver](secureServer.md)
+
+# [DSC-Beispiele](dscExamples.md)
+## [Erstellen einer CI/CD-Pipeline mit DSC, Pester und Visual Studio Team Services](dscCiCd.md)
+## [Trennen von Konfiguration und Umgebungsdaten](separatingEnvData.md)
 
 # [Problembehandlung bei DSC](troubleshooting.md)
 

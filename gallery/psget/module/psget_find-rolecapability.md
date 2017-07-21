@@ -10,38 +10,33 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="find-rolecapability" class="xliff"></a>
-# Find-RoleCapability
+# <a name="find-rolecapability"></a><span data-ttu-id="95594-103">Find-RoleCapability</span><span class="sxs-lookup"><span data-stu-id="95594-103">Find-RoleCapability</span></span>
 
-Sucht nach Rollenfunktionen in Modulen.
+<span data-ttu-id="95594-104">Sucht nach Rollenfunktionen in Modulen.</span><span class="sxs-lookup"><span data-stu-id="95594-104">Finds role capabilities in modules.</span></span>
 
-<a id="description" class="xliff"></a>
-## Beschreibung
-Das Cmdlet Find-RoleCapability sucht PowerShell-Rollenfunktionen in Modulen. Find-RoleCapability sucht Module in registrierten Repositorys. Für jede Rollenfunktion, die von diesem Cmdlet gefunden wird, wird ein PSGetRoleCapabilityInfo-Objekt von diesem zurückgegeben. Sie können ein PSGetRoleCapabilityInfo-Objekt an das Install-Module-Cmdlet übergeben, um das Modul zu installieren, das die Rollenfunktion enthält.
-PowerShell-Rollenfunktionen definieren, welche Befehle, Anwendungen usw. für einen Benutzer an einem Just Enough Administration-Endpunkt (JEA) verfügbar sind. Rollenfunktionen werden durch Dateien mit der Erweiterung PSRC definiert.
+## <a name="description"></a><span data-ttu-id="95594-105">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="95594-105">Description</span></span>
+<span data-ttu-id="95594-106">Das Cmdlet Find-RoleCapability sucht PowerShell-Rollenfunktionen in Modulen.</span><span class="sxs-lookup"><span data-stu-id="95594-106">The Find-RoleCapability cmdlet finds PowerShell role capabilities in modules.</span></span> <span data-ttu-id="95594-107">Find-RoleCapability sucht Module in registrierten Repositorys.</span><span class="sxs-lookup"><span data-stu-id="95594-107">Find-RoleCapability searches modules in registered repositories.</span></span> <span data-ttu-id="95594-108">Für jede Rollenfunktion, die von diesem Cmdlet gefunden wird, wird ein PSGetRoleCapabilityInfo-Objekt von diesem zurückgegeben.</span><span class="sxs-lookup"><span data-stu-id="95594-108">For each role capability that this cmdlet finds, it returns a PSGetRoleCapabilityInfo object.</span></span> <span data-ttu-id="95594-109">Sie können ein PSGetRoleCapabilityInfo-Objekt an das Install-Module-Cmdlet übergeben, um das Modul zu installieren, das die Rollenfunktion enthält.</span><span class="sxs-lookup"><span data-stu-id="95594-109">You can pass a PSGetRoleCapabilityInfo object to the Install-Module cmdlet to install the module that contains the role capability.</span></span>
+<span data-ttu-id="95594-110">PowerShell-Rollenfunktionen definieren, welche Befehle, Anwendungen usw. für einen Benutzer an einem Just Enough Administration-Endpunkt (JEA) verfügbar sind.</span><span class="sxs-lookup"><span data-stu-id="95594-110">PowerShell role capabilities define which commands, applications, and so on are available to a user at a Just Enough Administration (JEA) endpoint.</span></span> <span data-ttu-id="95594-111">Rollenfunktionen werden durch Dateien mit der Erweiterung PSRC definiert.</span><span class="sxs-lookup"><span data-stu-id="95594-111">Role capabilities are defined by files with a .psrc extension.</span></span>
 
-- Find-RoleCapability kann mit Versionsparametern filtern: MinimumVersion, RequiredVersion, AllVersions.
-  - Die Parameter schließen sich gegenseitig aus.
-  - Diese Versionsparameter sind nur mit dem einzigen Modulnamen ohne Platzhalter erlaubt.
-  - Wenn der RequiredVersion-Parameter nicht angegeben wird, gibt Find-RoleCapability die neueste Version des Moduls zurück, das gleich oder größer als die angegebene minimale Version oder die neueste Version des Moduls ist, wenn keine Mindestversion angegeben wird.
-  - Wenn der RequiredVersion-Parameter angegeben ist, gibt Find-RoleCapability nur die Version des Moduls zurück, die genau mit der angegebenen Version übereinstimmt.
-- Find-RoleCapability kann Modulmetadaten anhand des „-Tag“-Parameters filtern.
-- Find-RoleCapability kann mit dem „-Filter“-Parameter nach einer repositoryspezifischen Suchsprache filtern.
-- Find-RoleCapability kann Module von allen oder einigen registrierten Repositorys filtern.
+- <span data-ttu-id="95594-112">Find-RoleCapability kann mit Versionsparametern filtern: MinimumVersion, RequiredVersion, AllVersions.</span><span class="sxs-lookup"><span data-stu-id="95594-112">Find-RoleCapability can filter with version parameters: MinimumVersion, RequiredVersion, AllVersions.</span></span>
+  - <span data-ttu-id="95594-113">Die Parameter schließen sich gegenseitig aus.</span><span class="sxs-lookup"><span data-stu-id="95594-113">These parameters are mutually exclusive.</span></span>
+  - <span data-ttu-id="95594-114">Diese Versionsparameter sind nur mit dem einzigen Modulnamen ohne Platzhalter erlaubt.</span><span class="sxs-lookup"><span data-stu-id="95594-114">These version parameters are allowed only with the single module name without any wildcards.</span></span>
+  - <span data-ttu-id="95594-115">Wenn der RequiredVersion-Parameter nicht angegeben wird, gibt Find-RoleCapability die neueste Version des Moduls zurück, das gleich oder größer als die angegebene minimale Version oder die neueste Version des Moduls ist, wenn keine Mindestversion angegeben wird.</span><span class="sxs-lookup"><span data-stu-id="95594-115">If the RequiredVersion parameter is not specified, Find-RoleCapability returns the latest version of the module that is equal to or greater than the minimum version specified or the latest version of the module if no minimum version is specified.</span></span>
+  - <span data-ttu-id="95594-116">Wenn der RequiredVersion-Parameter angegeben ist, gibt Find-RoleCapability nur die Version des Moduls zurück, die genau mit der angegebenen Version übereinstimmt.</span><span class="sxs-lookup"><span data-stu-id="95594-116">If the RequiredVersion parameter is specified, Find-RoleCapability only returns the version of the module that exactly matches the specified version.</span></span>
+- <span data-ttu-id="95594-117">Find-RoleCapability kann Modulmetadaten anhand des „-Tag“-Parameters filtern.</span><span class="sxs-lookup"><span data-stu-id="95594-117">Find-RoleCapability can filter on module metadata with the -Tag parameter</span></span>
+- <span data-ttu-id="95594-118">Find-RoleCapability kann mit dem „-Filter“-Parameter nach einer repositoryspezifischen Suchsprache filtern.</span><span class="sxs-lookup"><span data-stu-id="95594-118">Find-RoleCapability can filter on repository-specific search language with the -Filter parameter.</span></span>
+- <span data-ttu-id="95594-119">Find-RoleCapability kann Module von allen oder einigen registrierten Repositorys filtern.</span><span class="sxs-lookup"><span data-stu-id="95594-119">Find-RoleCapability can filter on modules from all or few of the registered repositories.</span></span>
 
-<a id="cmdlet-syntax" class="xliff"></a>
-## Cmdlet-Syntax
+## <a name="cmdlet-syntax"></a><span data-ttu-id="95594-120">Cmdlet-Syntax</span><span class="sxs-lookup"><span data-stu-id="95594-120">Cmdlet syntax</span></span>
 ```powershell
 Get-Command -Name Find-RoleCapability -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-## Cmdlet-Onlinehilfe
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="95594-121">Cmdlet-Onlinehilfe</span><span class="sxs-lookup"><span data-stu-id="95594-121">Cmdlet online help reference</span></span>
 
-[Find-RoleCapability](http://go.microsoft.com/fwlink/?LinkId=718029)
+[<span data-ttu-id="95594-122">Find-RoleCapability</span><span class="sxs-lookup"><span data-stu-id="95594-122">Find-RoleCapability</span></span>](http://go.microsoft.com/fwlink/?LinkId=718029)
 
-<a id="example-commands" class="xliff"></a>
-## Beispiele für Befehle
+## <a name="example-commands"></a><span data-ttu-id="95594-123">Beispiele für Befehle</span><span class="sxs-lookup"><span data-stu-id="95594-123">Example commands</span></span>
 ```powershell
 
 # Find a specific role capability

@@ -10,11 +10,10 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="contacting-item-owners" class="xliff"></a>
-# Kontaktieren der Elementbesitzer
+# <a name="contacting-item-owners"></a><span data-ttu-id="62287-103">Kontaktieren der Elementbesitzer</span><span class="sxs-lookup"><span data-stu-id="62287-103">Contacting Item Owners</span></span>
 
-Um den Besitzer eines bestimmten Elements zu kontaktieren, wechseln Sie auf die Seite mit den Elementdetails.
-Die Menüleiste auf der linken Seite enthält einen Link „Besitzer kontaktieren“.
-Wenn Sie auf diesen Link klicken, werden Sie auf eine neue Seite geleitet.
-Von dieser Seite können Sie eine Nachricht senden.
+<span data-ttu-id="62287-104">Um den Besitzer eines bestimmten Elements zu kontaktieren, wechseln Sie auf die Seite mit den Elementdetails.</span><span class="sxs-lookup"><span data-stu-id="62287-104">To contact owner of a particular item, navigate to the item detail page.</span></span>
+<span data-ttu-id="62287-105">Die Menüleiste auf der linken Seite enthält einen Link „Besitzer kontaktieren“.</span><span class="sxs-lookup"><span data-stu-id="62287-105">There is a contact Owners link in the left menu bar.</span></span>
+<span data-ttu-id="62287-106">Wenn Sie auf diesen Link klicken, werden Sie auf eine neue Seite geleitet.</span><span class="sxs-lookup"><span data-stu-id="62287-106">Clicking on the link will take you to a new page.</span></span>
+<span data-ttu-id="62287-107">Von dieser Seite können Sie eine Nachricht senden.</span><span class="sxs-lookup"><span data-stu-id="62287-107">You can send a message from here.</span></span>
 

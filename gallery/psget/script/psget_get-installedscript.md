@@ -10,39 +10,34 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="get-installedscript" class="xliff"></a>
-# Get-InstalledScript
+# <a name="get-installedscript"></a><span data-ttu-id="f38e6-103">Get-InstalledScript</span><span class="sxs-lookup"><span data-stu-id="f38e6-103">Get-InstalledScript</span></span>
 
-Ruft installierte Skripts auf einem Computer ab.
+<span data-ttu-id="f38e6-104">Ruft installierte Skripts auf einem Computer ab.</span><span class="sxs-lookup"><span data-stu-id="f38e6-104">Gets installed scripts on a computer.</span></span>
 
-<a id="description" class="xliff"></a>
-## Beschreibung
+## <a name="description"></a><span data-ttu-id="f38e6-105">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="f38e6-105">Description</span></span>
 
-Das Cmdlet „Get-InstalledScript“ ruft installierte PowerShell-Skripts auf einem Computer ab.
+<span data-ttu-id="f38e6-106">Das Cmdlet „Get-InstalledScript“ ruft installierte PowerShell-Skripts auf einem Computer ab.</span><span class="sxs-lookup"><span data-stu-id="f38e6-106">The Get-InstalledScript cmdlet gets installed PowerShell scripts on a computer.</span></span>
 
-Für jedes installierte Skript gibt Get-InstalledScript ein PSRepositoryItemInfo-Objekt zurück, das optional an Uninstall-Script zum Deinstallieren der installierten Skripts übergeben werden kann.
+<span data-ttu-id="f38e6-107">Für jedes installierte Skript gibt Get-InstalledScript ein PSRepositoryItemInfo-Objekt zurück, das optional an Uninstall-Script zum Deinstallieren der installierten Skripts übergeben werden kann.</span><span class="sxs-lookup"><span data-stu-id="f38e6-107">For each installed script, Get-InstalledScript returns a PSRepositoryItemInfo object which can optionally be piped to Uninstall-Script for uninstalling the installed scripts.</span></span>
 
-- Get-InstalledScript kann installierte Skripts auf Grundlage des Namens, der Version und der Parameter filtern.
-- Get-InstalledScript kann mit Versionsparametern filtern: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.
-  - Diese Parameter schließen sich gegenseitig aus, außer MinmimumVersion und MaximumVersion.
-  - Diese Versionsparameter sind nur mit dem einzigen Skriptnamen ohne Platzhalter erlaubt.
-  - Wenn der RequiredVersion-Parameter nicht angegeben wird, gibt Get-InstalledScript die neueste Version des installierten Skripts zurück, das gleich oder größer als die angegebene minimale Version oder die neueste Version des Skripts ist, wenn keine Mindestversion angegeben wird. 
-  - Wenn der RequiredVersion-Parameter angegeben ist, gibt Get-InstalledScript nur die Version des installierten Skripts zurück, die genau mit der angegebenen Version übereinstimmt.
+- <span data-ttu-id="f38e6-108">Get-InstalledScript kann installierte Skripts auf Grundlage des Namens, der Version und der Parameter filtern.</span><span class="sxs-lookup"><span data-stu-id="f38e6-108">Get-InstalledScript can filter installed scripts based on name, version parameters.</span></span>
+- <span data-ttu-id="f38e6-109">Get-InstalledScript kann mit Versionsparametern filtern: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.</span><span class="sxs-lookup"><span data-stu-id="f38e6-109">Get-InstalledScript can filter with version parameters: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.</span></span>
+  - <span data-ttu-id="f38e6-110">Diese Parameter schließen sich gegenseitig aus, außer MinmimumVersion und MaximumVersion.</span><span class="sxs-lookup"><span data-stu-id="f38e6-110">These parameters are mutually exclusive, except MinmimumVersion and MaximumVersion.</span></span>
+  - <span data-ttu-id="f38e6-111">Diese Versionsparameter sind nur mit dem einzigen Skriptnamen ohne Platzhalter erlaubt.</span><span class="sxs-lookup"><span data-stu-id="f38e6-111">These version parameters are allowed only with the single script name without any wildcards.</span></span>
+  - <span data-ttu-id="f38e6-112">Wenn der RequiredVersion-Parameter nicht angegeben wird, gibt Get-InstalledScript die neueste Version des installierten Skripts zurück, das gleich oder größer als die angegebene minimale Version oder die neueste Version des Skripts ist, wenn keine Mindestversion angegeben wird.</span><span class="sxs-lookup"><span data-stu-id="f38e6-112">If the RequiredVersion parameter is not specified, Get-InstalledScript returns the latest version of the installed script that is equal to or greater than the minimum version specified or the latest version of the script if no minimum version is specified.</span></span> 
+  - <span data-ttu-id="f38e6-113">Wenn der RequiredVersion-Parameter angegeben ist, gibt Get-InstalledScript nur die Version des installierten Skripts zurück, die genau mit der angegebenen Version übereinstimmt.</span><span class="sxs-lookup"><span data-stu-id="f38e6-113">If the RequiredVersion parameter is specified, Get-InstalledScript only returns the version of installed script that exactly matches the specified version.</span></span>
 
-<a id="cmdlet-syntax" class="xliff"></a>
-## Cmdlet-Syntax
+## <a name="cmdlet-syntax"></a><span data-ttu-id="f38e6-114">Cmdlet-Syntax</span><span class="sxs-lookup"><span data-stu-id="f38e6-114">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Get-InstalledScript -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-## Cmdlet-Onlinehilfe
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="f38e6-115">Cmdlet-Onlinehilfe</span><span class="sxs-lookup"><span data-stu-id="f38e6-115">Cmdlet online help reference</span></span>
 
-[Get-InstalledScript](http://go.microsoft.com/fwlink/?LinkId=619790)
+[<span data-ttu-id="f38e6-116">Get-InstalledScript</span><span class="sxs-lookup"><span data-stu-id="f38e6-116">Get-InstalledScript</span></span>](http://go.microsoft.com/fwlink/?LinkId=619790)
 
-<a id="example-commands" class="xliff"></a>
-## Beispiele für Befehle
+## <a name="example-commands"></a><span data-ttu-id="f38e6-117">Beispiele für Befehle</span><span class="sxs-lookup"><span data-stu-id="f38e6-117">Example commands</span></span>
 
 ```powershell
 

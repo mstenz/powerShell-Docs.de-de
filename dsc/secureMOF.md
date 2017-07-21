@@ -10,76 +10,69 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="securing-the-mof-file" class="xliff"></a>
-# Schützen der MOF-Datei
+# <a name="securing-the-mof-file"></a><span data-ttu-id="1be61-103">Schützen der MOF-Datei</span><span class="sxs-lookup"><span data-stu-id="1be61-103">Securing the MOF File</span></span>
 
->Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
+><span data-ttu-id="1be61-104">Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="1be61-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
 
-DSC weist die Zielknoten an, welche Konfiguration sie aufweisen sollen, indem eine MOF-Datei mit den gewünschten Informationen an alle Knoten gesendet wird, auf denen der lokale Konfigurations-Manager (LCM) die gewünschte Konfiguration implementiert. Da diese Datei die Details der Konfiguration enthält, muss sie geschützt werden. Zu diesem Zweck können Sie den LCM die Anmeldeinformationen eines Benutzers überprüfen lassen. In diesem Thema wird beschrieben, wie diese Anmeldeinformationen sicher an den Zielknoten übertragen werden, indem sie mithilfe von Zertifikaten verschlüsselt werden.
+<span data-ttu-id="1be61-105">DSC weist die Zielknoten an, welche Konfiguration sie aufweisen sollen, indem eine MOF-Datei mit den gewünschten Informationen an alle Knoten gesendet wird, auf denen der lokale Konfigurations-Manager (LCM) die gewünschte Konfiguration implementiert.</span><span class="sxs-lookup"><span data-stu-id="1be61-105">DSC tells the target nodes what configuration they should have by sending a MOF file with that information to each node, where the Local Configuration Manager (LCM) implements the desired configuration.</span></span> <span data-ttu-id="1be61-106">Da diese Datei die Details der Konfiguration enthält, muss sie geschützt werden.</span><span class="sxs-lookup"><span data-stu-id="1be61-106">Because this file contains the details of the configuration, it’s important to keep it secure.</span></span> <span data-ttu-id="1be61-107">Zu diesem Zweck können Sie den LCM die Anmeldeinformationen eines Benutzers überprüfen lassen.</span><span class="sxs-lookup"><span data-stu-id="1be61-107">To do this, you can set the LCM to check the credentials of a user.</span></span> <span data-ttu-id="1be61-108">In diesem Thema wird beschrieben, wie diese Anmeldeinformationen sicher an den Zielknoten übertragen werden, indem sie mithilfe von Zertifikaten verschlüsselt werden.</span><span class="sxs-lookup"><span data-stu-id="1be61-108">This topic describes how to transmit those credentials securely to the target node by encrypting them with certificates.</span></span>
 
->**Hinweis:** In diesem Thema werden für die Verschlüsselung verwendete Zertifikate behandelt. Für die Verschlüsselung ist ein selbst signiertes Zertifikat ausreichend, da der private Schlüssel immer geheim ist und die Verschlüsselung die Vertrauenswürdigkeit des Dokuments nicht impliziert. Selbstsignierte Zertifikate sollten *nicht* zu Authentifizierungszwecken verwendet werden. Zum Zweck der Authentifizierung Sie sollten Sie ein Zertifikat von einer vertrauenswürdigen Zertifizierungsstelle verwenden.
+><span data-ttu-id="1be61-109">**Hinweis:** In diesem Thema werden für die Verschlüsselung verwendete Zertifikate behandelt.</span><span class="sxs-lookup"><span data-stu-id="1be61-109">**Note:** This topic discusses certificates used for encryption.</span></span> <span data-ttu-id="1be61-110">Für die Verschlüsselung ist ein selbst signiertes Zertifikat ausreichend, da der private Schlüssel immer geheim ist und die Verschlüsselung die Vertrauenswürdigkeit des Dokuments nicht impliziert.</span><span class="sxs-lookup"><span data-stu-id="1be61-110">For encryption, a self-signed certificate is sufficient, because the private key is always kept secret and encryption does not imply trust of the document.</span></span> <span data-ttu-id="1be61-111">Selbstsignierte Zertifikate sollten *nicht* zu Authentifizierungszwecken verwendet werden.</span><span class="sxs-lookup"><span data-stu-id="1be61-111">Self-signed certificates should *not* be used for authentication purposes.</span></span> <span data-ttu-id="1be61-112">Zum Zweck der Authentifizierung Sie sollten Sie ein Zertifikat von einer vertrauenswürdigen Zertifizierungsstelle verwenden.</span><span class="sxs-lookup"><span data-stu-id="1be61-112">You should use a certificate from a trusted Certification Authority (CA) for any authentication purposes.</span></span>
 
-<a id="prerequisites" class="xliff"></a>
-## Voraussetzungen
+## <a name="prerequisites"></a><span data-ttu-id="1be61-113">Voraussetzungen</span><span class="sxs-lookup"><span data-stu-id="1be61-113">Prerequisites</span></span>
 
-Stellen Sie sicher, dass Folgendes zutrifft, um die Anmeldeinformationen sicher zu verschlüsseln, die zum Schutz einer DSC-Konfiguration dienen:
+<span data-ttu-id="1be61-114">Stellen Sie sicher, dass Folgendes zutrifft, um die Anmeldeinformationen sicher zu verschlüsseln, die zum Schutz einer DSC-Konfiguration dienen:</span><span class="sxs-lookup"><span data-stu-id="1be61-114">To successfully encrypt the credentials used to secure a DSC configuration, make sure you have the following:</span></span>
 
-* **Möglichkeiten zum Ausstellen und Verteilen von Zertifikaten**. In diesem Thema und seinen Beispielen wird davon ausgegangen, dass Sie eine Active Directory-Zertifizierungsstelle verwenden. Weitere Informationen zu Active Directory-Zertifikatdiensten finden Sie unter [Übersicht über Active Directory-Zertifikatdienste](https://technet.microsoft.com/library/hh831740.aspx) und [Active Directory-Zertifikatdienste in Windows Server 2008](https://technet.microsoft.com/windowsserver/dd448615.aspx).
-* **Administratorzugriff auf den Zielknoten oder Knoten**.
-* **Jeder Zielknoten hat ein verschlüsselungsfähiges Zertifikat, das in seinem persönlichen Speicher gespeichert ist**. In Windows PowerShell ist der Pfad zum Speicher „Cert: \LocalMachine\My“. In den Beispielen in diesem Thema verwenden Sie die Vorlage „Arbeitsstationsauthentifizierung“, die Sie (zusammen mit anderen Zertifikatvorlagen) unter [Standardzertifikatvorlagen](https://technet.microsoft.com/library/cc740061(v=WS.10).aspx) finden.
-* Wenn Sie diese Konfiguration auf einem anderen Computer als dem Zielknoten ausführen, **exportieren Sie den öffentlichen Schlüssel des Zertifikats**, und importieren Sie ihn anschließend auf den Computer, auf dem Sie die Konfiguration ausführen. Stellen Sie sicher, dass Sie nur den **öffentlichen** Schlüssel exportieren. Halten Sie den privaten Schlüssel geschützt.
+* <span data-ttu-id="1be61-115">**Möglichkeiten zum Ausstellen und Verteilen von Zertifikaten**.</span><span class="sxs-lookup"><span data-stu-id="1be61-115">**Some means of issuing and distributing certificates**.</span></span> <span data-ttu-id="1be61-116">In diesem Thema und seinen Beispielen wird davon ausgegangen, dass Sie eine Active Directory-Zertifizierungsstelle verwenden.</span><span class="sxs-lookup"><span data-stu-id="1be61-116">This topic and its examples assume you are using Active Directory Certification Authority.</span></span> <span data-ttu-id="1be61-117">Weitere Informationen zu Active Directory-Zertifikatdiensten finden Sie unter [Übersicht über Active Directory-Zertifikatdienste](https://technet.microsoft.com/library/hh831740.aspx) und [Active Directory-Zertifikatdienste in Windows Server 2008](https://technet.microsoft.com/windowsserver/dd448615.aspx).</span><span class="sxs-lookup"><span data-stu-id="1be61-117">For more background information on Active Directory Certificate Services, see [Active Directory Certificate Services Overview](https://technet.microsoft.com/library/hh831740.aspx) and [Active Directory Certificate Services in Windows Server 2008](https://technet.microsoft.com/windowsserver/dd448615.aspx).</span></span>
+* <span data-ttu-id="1be61-118">**Administratorzugriff auf den Zielknoten oder Knoten**.</span><span class="sxs-lookup"><span data-stu-id="1be61-118">**Administrative access to the target node or nodes**.</span></span>
+* <span data-ttu-id="1be61-119">**Jeder Zielknoten hat ein verschlüsselungsfähiges Zertifikat, das in seinem persönlichen Speicher gespeichert ist**.</span><span class="sxs-lookup"><span data-stu-id="1be61-119">**Each target node has an encryption-capable certificate saved its Personal Store**.</span></span> <span data-ttu-id="1be61-120">In Windows PowerShell ist der Pfad zum Speicher „Cert: \LocalMachine\My“.</span><span class="sxs-lookup"><span data-stu-id="1be61-120">In Windows PowerShell, the path to the store is Cert:\LocalMachine\My.</span></span> <span data-ttu-id="1be61-121">In den Beispielen in diesem Thema verwenden Sie die Vorlage „Arbeitsstationsauthentifizierung“, die Sie (zusammen mit anderen Zertifikatvorlagen) unter [Standardzertifikatvorlagen](https://technet.microsoft.com/library/cc740061(v=WS.10).aspx) finden.</span><span class="sxs-lookup"><span data-stu-id="1be61-121">The examples in this topic use the “workstation authentication” template, which you can find (along with other certificate templates) at [Default Certificate Templates](https://technet.microsoft.com/library/cc740061(v=WS.10).aspx).</span></span>
+* <span data-ttu-id="1be61-122">Wenn Sie diese Konfiguration auf einem anderen Computer als dem Zielknoten ausführen, **exportieren Sie den öffentlichen Schlüssel des Zertifikats**, und importieren Sie ihn anschließend auf den Computer, auf dem Sie die Konfiguration ausführen.</span><span class="sxs-lookup"><span data-stu-id="1be61-122">If you will be running this configuration on a computer other than the target node, **export the public key of the certificate**, and then import it to the computer you will run the configuration from.</span></span> <span data-ttu-id="1be61-123">Stellen Sie sicher, dass Sie nur den **öffentlichen** Schlüssel exportieren. Halten Sie den privaten Schlüssel geschützt.</span><span class="sxs-lookup"><span data-stu-id="1be61-123">Make sure that you export only the **public** key; keep the private key secure.</span></span>
 
-<a id="overall-process" class="xliff"></a>
-## Allgemeiner Prozess
+## <a name="overall-process"></a><span data-ttu-id="1be61-124">Allgemeiner Prozess</span><span class="sxs-lookup"><span data-stu-id="1be61-124">Overall process</span></span>
 
- 1. Richten Sie die Zertifikate, Schlüssel und Fingerabdrücke ein, und stellen Sie sicher, dass jeder Zielknoten über Kopien des Zertifikats verfügt, und dass sich der öffentliche Schlüssel und Fingerabdruck auf dem Konfigurationscomputer befinden.
- 2. Erstellen Sie einen „Configuration“-Datenblock, der den Pfad und Fingerabdruck des öffentlichen Schlüssels enthält.
- 3. Erstellen Sie ein Konfigurationsskript, das die gewünschte Konfiguration für den Zielknoten definiert. Richten Sie die Entschlüsselung auf den Zielknoten ein, indem Sie den lokalen Konfigurations-Manager anweisen, die Konfigurationsdaten mithilfe des Zertifikats und Fingerabdrucks zu entschlüsseln.
- 4. Führen Sie die Konfiguration aus, woraufhin die Einstellungen des lokalen Konfigurations-Managers festgelegt werden und die DSC-Konfiguration gestartet wird.
+ 1. <span data-ttu-id="1be61-125">Richten Sie die Zertifikate, Schlüssel und Fingerabdrücke ein, und stellen Sie sicher, dass jeder Zielknoten über Kopien des Zertifikats verfügt, und dass sich der öffentliche Schlüssel und Fingerabdruck auf dem Konfigurationscomputer befinden.</span><span class="sxs-lookup"><span data-stu-id="1be61-125">Set up the certificates, keys, and thumbprints, making sure that each target node has copies of the certificate and the configuration computer has the public key and thumbprint.</span></span>
+ 2. <span data-ttu-id="1be61-126">Erstellen Sie einen „Configuration“-Datenblock, der den Pfad und Fingerabdruck des öffentlichen Schlüssels enthält.</span><span class="sxs-lookup"><span data-stu-id="1be61-126">Create a configuration data block that contains the path and thumbprint of the public key.</span></span>
+ 3. <span data-ttu-id="1be61-127">Erstellen Sie ein Konfigurationsskript, das die gewünschte Konfiguration für den Zielknoten definiert. Richten Sie die Entschlüsselung auf den Zielknoten ein, indem Sie den lokalen Konfigurations-Manager anweisen, die Konfigurationsdaten mithilfe des Zertifikats und Fingerabdrucks zu entschlüsseln.</span><span class="sxs-lookup"><span data-stu-id="1be61-127">Create a configuration script that defines your desired configuration for the target node and sets up decryption on the target nodes by commanding the Local Configuration manager to decrypt the configuration data using the certificate and its thumbprint.</span></span>
+ 4. <span data-ttu-id="1be61-128">Führen Sie die Konfiguration aus, woraufhin die Einstellungen des lokalen Konfigurations-Managers festgelegt werden und die DSC-Konfiguration gestartet wird.</span><span class="sxs-lookup"><span data-stu-id="1be61-128">Run the configuration, which will set the Local Configuration Manager settings and start the DSC configuration.</span></span>
 
 ![Diagramm1](images/CredentialEncryptionDiagram1.png)
 
-<a id="certificate-requirements" class="xliff"></a>
-## Zertifikatanforderungen
+## <a name="certificate-requirements"></a><span data-ttu-id="1be61-130">Zertifikatanforderungen</span><span class="sxs-lookup"><span data-stu-id="1be61-130">Certificate Requirements</span></span>
 
-Zum Aktivieren der Verschlüsselung der Anmeldeinformationen muss auf dem _Zielknoten_ ein Zertifikat für öffentliche Schlüssel verfügbar sein, dem der zum Erstellen der DSC-Konfiguration verwendete Computer **vertraut**.
-Dieses Zertifikat für öffentliche Schlüssel muss bestimmte Anforderungen erfüllen, damit es für die Verschlüsselung der DSC-Anmeldeinformationen verwendet werden kann:
- 1. **Schlüsselverwendung**:
-   - Muss enthalten: „KeyEncipherment“ und „DataEncipherment“.
-   - Sollte _nicht_ enthalten: „Digitale Signatur“.
- 2. **Erweiterte Schlüsselverwendung**:
-   - Muss enthalten: Dokumentenverschlüsselung (1.3.6.1.4.1.311.80.1).
-   - Sollte _nicht_ enthalten: Clientauthentifizierung (1.3.6.1.5.5.7.3.2) und Serverauthentifizierung (1.3.6.1.5.5.7.3.1).
- 3. Der private Schlüssel für das Zertifikat ist auf dem *Zielknoten_ verfügbar.
- 4. Der **Anbieter** für das Zertifikat muss „Microsoft RSA SChannel Cryptographic Provider“ sein.
+<span data-ttu-id="1be61-131">Zum Aktivieren der Verschlüsselung der Anmeldeinformationen muss auf dem _Zielknoten_ ein Zertifikat für öffentliche Schlüssel verfügbar sein, dem der zum Erstellen der DSC-Konfiguration verwendete Computer **vertraut**.</span><span class="sxs-lookup"><span data-stu-id="1be61-131">To enact credential encryption, a public key certificate must be available on the _Target Node_ that is **trusted** by the computer being used to author the DSC configuration.</span></span>
+<span data-ttu-id="1be61-132">Dieses Zertifikat für öffentliche Schlüssel muss bestimmte Anforderungen erfüllen, damit es für die Verschlüsselung der DSC-Anmeldeinformationen verwendet werden kann:</span><span class="sxs-lookup"><span data-stu-id="1be61-132">This public key certificate has specific requirements for it to be used for DSC credential encryption:</span></span>
+ 1. <span data-ttu-id="1be61-133">**Schlüsselverwendung**:</span><span class="sxs-lookup"><span data-stu-id="1be61-133">**Key Usage**:</span></span>
+   - <span data-ttu-id="1be61-134">Muss enthalten: „KeyEncipherment“ und „DataEncipherment“.</span><span class="sxs-lookup"><span data-stu-id="1be61-134">Must contain: 'KeyEncipherment' and 'DataEncipherment'.</span></span>
+   - <span data-ttu-id="1be61-135">Sollte _nicht_ enthalten: „Digitale Signatur“.</span><span class="sxs-lookup"><span data-stu-id="1be61-135">Should _not_ contain: 'Digital Signature'.</span></span>
+ 2. <span data-ttu-id="1be61-136">**Erweiterte Schlüsselverwendung**:</span><span class="sxs-lookup"><span data-stu-id="1be61-136">**Enhanced Key Usage**:</span></span>
+   - <span data-ttu-id="1be61-137">Muss enthalten: Dokumentenverschlüsselung (1.3.6.1.4.1.311.80.1).</span><span class="sxs-lookup"><span data-stu-id="1be61-137">Must contain: Document Encryption (1.3.6.1.4.1.311.80.1).</span></span>
+   - <span data-ttu-id="1be61-138">Sollte _nicht_ enthalten: Clientauthentifizierung (1.3.6.1.5.5.7.3.2) und Serverauthentifizierung (1.3.6.1.5.5.7.3.1).</span><span class="sxs-lookup"><span data-stu-id="1be61-138">Should _not_ contain: Client Authentication (1.3.6.1.5.5.7.3.2) and Server Authentication (1.3.6.1.5.5.7.3.1).</span></span>
+ 3. <span data-ttu-id="1be61-139">Der private Schlüssel für das Zertifikat ist auf dem *Zielknoten_ verfügbar.</span><span class="sxs-lookup"><span data-stu-id="1be61-139">The Private Key for the certificate is available on the *Target Node_.</span></span>
+ 4. <span data-ttu-id="1be61-140">Der **Anbieter** für das Zertifikat muss „Microsoft RSA SChannel Cryptographic Provider“ sein.</span><span class="sxs-lookup"><span data-stu-id="1be61-140">The **Provider** for the certificate must be "Microsoft RSA SChannel Cryptographic Provider".</span></span>
  
->**Empfohlene bewährte Methode:** Sie können ein Zertifikat, das die Schlüsselverwendung „Digitale Signatur“ oder eine der „Authentifizierungs-EKU enthält, zwar verwenden, dadurch kann der die Verschlüsselungsschlüssel allerdings leichter missbraucht werden und ist anfälliger für Angriffe. Es empfiehlt sich daher, ein Zertifikat ohne diese Schlüsselverwendung und EKUs zu verwenden, das speziell zum Sichern von DSC-Anmeldeinformationen erstellt wurde.
+><span data-ttu-id="1be61-141">**Empfohlene bewährte Methode:** Sie können ein Zertifikat, das die Schlüsselverwendung „Digitale Signatur“ oder eine der „Authentifizierungs-EKU enthält, zwar verwenden, dadurch kann der die Verschlüsselungsschlüssel allerdings leichter missbraucht werden und ist anfälliger für Angriffe.</span><span class="sxs-lookup"><span data-stu-id="1be61-141">**Recommended Best Practice:** Although you can use a certificate with containing a Key Usage of 'Digital Signature' or one of the Authentication EKU's, this will enable the encryption key to be more easily misused and vulnerable to attack.</span></span> <span data-ttu-id="1be61-142">Es empfiehlt sich daher, ein Zertifikat ohne diese Schlüsselverwendung und EKUs zu verwenden, das speziell zum Sichern von DSC-Anmeldeinformationen erstellt wurde.</span><span class="sxs-lookup"><span data-stu-id="1be61-142">So it is best practice to use a certificate created specifically for the purpose of securing DSC credentials that omits these Key Usage and EKUs.</span></span>
   
-Alle vorhandenen Zertifikate auf dem _Zielknoten_, die diese Kriterien erfüllen, können zum Absichern von DSC-Anmeldeinformationen verwendet werden.
+<span data-ttu-id="1be61-143">Alle vorhandenen Zertifikate auf dem _Zielknoten_, die diese Kriterien erfüllen, können zum Absichern von DSC-Anmeldeinformationen verwendet werden.</span><span class="sxs-lookup"><span data-stu-id="1be61-143">Any existing certificate on the _Target Node_ that meets these criteria can be used to secure DSC credentials.</span></span>
 
-<a id="certificate-creation" class="xliff"></a>
-## Erstellen von Zertifikaten
+## <a name="certificate-creation"></a><span data-ttu-id="1be61-144">Erstellen von Zertifikaten</span><span class="sxs-lookup"><span data-stu-id="1be61-144">Certificate creation</span></span>
 
-Es gibt zwei Ansätze, die Sie ergreifen können, um das erforderliche Verschlüsselungszertifikat (Paar aus öffentlichem/privatem Schlüssel) zu erstellen und zu verwenden .
+<span data-ttu-id="1be61-145">Es gibt zwei Ansätze, die Sie ergreifen können, um das erforderliche Verschlüsselungszertifikat (Paar aus öffentlichem/privatem Schlüssel) zu erstellen und zu verwenden .</span><span class="sxs-lookup"><span data-stu-id="1be61-145">There are two approaches you can take to create and use the required Encryption Certificate (public-private key pair).</span></span>
 
-1. Sie können es auf dem **Zielknoten** erstellen und nur den öffentlichen Schlüssel auf den **Erstellungsknoten** exportieren.
-2. Sie können es auf dem **Erstellungsknoten** erstellen und das gesamte Schlüsselpaar auf den **Zielknoten** exportieren.
+1. <span data-ttu-id="1be61-146">Sie können es auf dem **Zielknoten** erstellen und nur den öffentlichen Schlüssel auf den **Erstellungsknoten** exportieren.</span><span class="sxs-lookup"><span data-stu-id="1be61-146">Create it on the **Target Node** and export just the public key to the **Authoring Node**</span></span>
+2. <span data-ttu-id="1be61-147">Sie können es auf dem **Erstellungsknoten** erstellen und das gesamte Schlüsselpaar auf den **Zielknoten** exportieren.</span><span class="sxs-lookup"><span data-stu-id="1be61-147">Create it on the **Authoring Node** and export the entire key pair to the **Target Node**</span></span>
 
-Empfohlen wird Methode 1, weil der im MOF zum Entschlüsseln von Anmeldeinformationen verwendete private Schlüssel immer auf dem Zielknoten verbleibt.
+<span data-ttu-id="1be61-148">Empfohlen wird Methode 1, weil der im MOF zum Entschlüsseln von Anmeldeinformationen verwendete private Schlüssel immer auf dem Zielknoten verbleibt.</span><span class="sxs-lookup"><span data-stu-id="1be61-148">Method 1 is recommended because the private key used to decrypt credentials in the MOF stays on the Target Node at all times.</span></span>
 
 
-<a id="creating-the-certificate-on-the-target-node" class="xliff"></a>
-### Erstellen des Zertifikats auf dem Zielknoten
+### <a name="creating-the-certificate-on-the-target-node"></a><span data-ttu-id="1be61-149">Erstellen des Zertifikats auf dem Zielknoten</span><span class="sxs-lookup"><span data-stu-id="1be61-149">Creating the Certificate on the Target Node</span></span>
 
-Der private Schlüssel muss geheim gehalten werden, weil er zum Entschlüsseln des MOF auf dem **Zielknoten** verwendet wird. Die einfachste Möglichkeit hierzu ist, das Zertifikat für private Schlüssel auf dem **Zielknoten** zu erstellen und das **Zertifikat für öffentliche Schlüssel** auf den Computer zu kopieren, der zum Erstellen der DSC-Konfiguration in einer MOF-Datei verwendet wird.
-Im folgenden Beispiel
- 1. ein Zertifikat auf dem **Zielknoten** erstellt.
- 2. das Zertifikat für öffentliche Schlüssel auf den **Zielknoten** exportiert.
- 3. das Zertifikat für öffentliche Schlüssel in den **my**-Zertifikatspeicher auf dem **Erstellungsknoten** importiert.
+<span data-ttu-id="1be61-150">Der private Schlüssel muss geheim gehalten werden, weil er zum Entschlüsseln des MOF auf dem **Zielknoten** verwendet wird. Die einfachste Möglichkeit hierzu ist, das Zertifikat für private Schlüssel auf dem **Zielknoten** zu erstellen und das **Zertifikat für öffentliche Schlüssel** auf den Computer zu kopieren, der zum Erstellen der DSC-Konfiguration in einer MOF-Datei verwendet wird.</span><span class="sxs-lookup"><span data-stu-id="1be61-150">The private key must be kept secret, because is used to decrypt the MOF on the **Target Node** The easiest way to do that is to create the private key certificate on the **Target Node**, and copy the **public key certificate** to the computer being used to author the DSC configuration into a MOF file.</span></span>
+<span data-ttu-id="1be61-151">Im folgenden Beispiel</span><span class="sxs-lookup"><span data-stu-id="1be61-151">The following example:</span></span>
+ 1. <span data-ttu-id="1be61-152">ein Zertifikat auf dem **Zielknoten** erstellt.</span><span class="sxs-lookup"><span data-stu-id="1be61-152">creates a certificate on the **Target node**</span></span>
+ 2. <span data-ttu-id="1be61-153">das Zertifikat für öffentliche Schlüssel auf den **Zielknoten** exportiert.</span><span class="sxs-lookup"><span data-stu-id="1be61-153">exports the public key certificate on the **Target node**.</span></span>
+ 3. <span data-ttu-id="1be61-154">das Zertifikat für öffentliche Schlüssel in den **my**-Zertifikatspeicher auf dem **Erstellungsknoten** importiert.</span><span class="sxs-lookup"><span data-stu-id="1be61-154">imports the public key certificate into the **my** certificate store on the **Authoring node**.</span></span>
 
-<a id="on-the-target-node-create-and-export-the-certificate" class="xliff"></a>
-#### Auf dem Zielknoten: Erstellen und Exportieren des Zertifikats
->Erstellungsknoten: Windows Server 2016 und Windows 10
+#### <a name="on-the-target-node-create-and-export-the-certificate"></a><span data-ttu-id="1be61-155">Auf dem Zielknoten: Erstellen und Exportieren des Zertifikats</span><span class="sxs-lookup"><span data-stu-id="1be61-155">On the Target Node: create and export the certificate</span></span>
+><span data-ttu-id="1be61-156">Erstellungsknoten: Windows Server 2016 und Windows 10</span><span class="sxs-lookup"><span data-stu-id="1be61-156">Authoring Node: Windows Server 2016 and Windows 10</span></span>
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -87,14 +80,14 @@ $cert = New-SelfSignedCertificate -Type DocumentEncryptionCertLegacyCsp -DnsName
 # export the public key certificate
 $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 ```
-Einmal exportiert, müsste ```DscPublicKey.cer``` auf den **Erstellungsknoten** kopiert werden.
+<span data-ttu-id="1be61-157">Einmal exportiert, müsste ```DscPublicKey.cer``` auf den **Erstellungsknoten** kopiert werden.</span><span class="sxs-lookup"><span data-stu-id="1be61-157">Once exported, the ```DscPublicKey.cer``` would need to be copied to the **Authoring Node**.</span></span>
 
->Erstellungsknoten: Windows Server 2012 R2/Windows 8.1 und früher
+><span data-ttu-id="1be61-158">Erstellungsknoten: Windows Server 2012 R2/Windows 8.1 und früher</span><span class="sxs-lookup"><span data-stu-id="1be61-158">Authoring Node: Windows Server 2012 R2/Windows 8.1 and earlier</span></span>
 
-Da das Cmdlet „New-SelfSignedCertificate“ unter niedrigeren Windows-Betriebssystemen als Windows 10 und Windows Server 2016 nicht den Parameter **Typ** unterstützt, ist eine alternative Methode zum Erstellen dieses Zertifikats unter diesen Betriebssystemen erforderlich.
-In diesem Fall können Sie ```makecert.exe``` oder ```certutil.exe``` zum Erstellen des Zertifikats verwenden.
+<span data-ttu-id="1be61-159">Da das Cmdlet „New-SelfSignedCertificate“ unter niedrigeren Windows-Betriebssystemen als Windows 10 und Windows Server 2016 nicht den Parameter **Typ** unterstützt, ist eine alternative Methode zum Erstellen dieses Zertifikats unter diesen Betriebssystemen erforderlich.</span><span class="sxs-lookup"><span data-stu-id="1be61-159">Because the New-SelfSignedCertificate cmdlet on Windows Operating Systems prior to Windows 10 and Windows Server 2016 do not support the **Type** parameter, an alternate method of creating this certificate is required on these operating systems.</span></span>
+<span data-ttu-id="1be61-160">In diesem Fall können Sie ```makecert.exe``` oder ```certutil.exe``` zum Erstellen des Zertifikats verwenden.</span><span class="sxs-lookup"><span data-stu-id="1be61-160">In this case you can use ```makecert.exe``` or ```certutil.exe``` to create the certificate.</span></span>
 
-Eine alternative Methode besteht darin, [das Skript „New-SelfSignedCertificateEx.ps1“ aus dem Microsoft Script Center](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) herunterzuladen und es stattdessen zum Erstellen des Zertifikats zu verwenden:
+<span data-ttu-id="1be61-161">Eine alternative Methode besteht darin, [das Skript „New-SelfSignedCertificateEx.ps1“ aus dem Microsoft Script Center](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) herunterzuladen und es stattdessen zum Erstellen des Zertifikats zu verwenden:</span><span class="sxs-lookup"><span data-stu-id="1be61-161">An alternate method is to [download the New-SelfSignedCertificateEx.ps1 script from Microsoft Script Center](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) and use it to create the certificate instead:</span></span>
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
 # and in the folder that contains New-SelfSignedCertificateEx.ps1
@@ -121,30 +114,27 @@ $Cert = Get-ChildItem -Path cert:\LocalMachine\My `
 # export the public key certificate
 $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 ```
-Einmal exportiert, müsste ```DscPublicKey.cer``` auf den **Erstellungsknoten** kopiert werden.
+<span data-ttu-id="1be61-162">Einmal exportiert, müsste ```DscPublicKey.cer``` auf den **Erstellungsknoten** kopiert werden.</span><span class="sxs-lookup"><span data-stu-id="1be61-162">Once exported, the ```DscPublicKey.cer``` would need to be copied to the **Authoring Node**.</span></span>
 
-<a id="on-the-authoring-node-import-the-certs-public-key" class="xliff"></a>
-#### Auf dem Erstellungsknoten: Importieren des öffentlichen Schlüssels des Zertifikats
+#### <a name="on-the-authoring-node-import-the-certs-public-key"></a><span data-ttu-id="1be61-163">Auf dem Erstellungsknoten: Importieren des öffentlichen Schlüssels des Zertifikats</span><span class="sxs-lookup"><span data-stu-id="1be61-163">On the Authoring Node: import the cert’s public key</span></span>
 ```powershell
 # Import to the my store
 Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\My
 ```
 
-<a id="creating-the-certificate-on-the-authoring-node" class="xliff"></a>
-### Erstellen des Zertifikats auf dem Erstellungsknoten
-Alternativ kann das Verschlüsselungszertifikat auf dem **Erstellungsknoten** erstellt, mit dem **privaten Schlüssel** als PFX-Datei exportiert und dann auf dem **Zielknoten** importiert werden.
-Dies ist die aktuelle Methode zur Implementierung der Verschlüsselung von DSC-Anmeldeinformationen unter _Nano Server_.
-Obwohl die PFX-Datei mit einem Kennwort geschützt ist, sollte sie während der Übertragung gesichert werden.
-Im folgenden Beispiel
- 1. wird ein Zertifikat auf dem **Erstellungsknoten** erstellt.
- 2. wird das Zertifikat, einschließlich des privaten Schlüssels, auf den **Erstellungsknoten** exportiert.
- 3. wird der private Schlüssel vom **Erstellungsknoten** entfernt, aber das Zertifikat für den öffentlichen Schlüssel im **my**-Speicher beibehalten.
- 4. wird das Zertifikat für den privaten Schlüssel in den Stammzertifikatspeicher auf dem **Zielknoten** importiert.
-   - muss es dem Stammspeicher hinzugefügt werden, damit ihm der **Zielknoten** vertraut.
+### <a name="creating-the-certificate-on-the-authoring-node"></a><span data-ttu-id="1be61-164">Erstellen des Zertifikats auf dem Erstellungsknoten</span><span class="sxs-lookup"><span data-stu-id="1be61-164">Creating the Certificate on the Authoring Node</span></span>
+<span data-ttu-id="1be61-165">Alternativ kann das Verschlüsselungszertifikat auf dem **Erstellungsknoten** erstellt, mit dem **privaten Schlüssel** als PFX-Datei exportiert und dann auf dem **Zielknoten** importiert werden.</span><span class="sxs-lookup"><span data-stu-id="1be61-165">Alternately, the encryption certificate can be created on the **Authoring Node**, exported with the **private key** as a PFX file and then imported on the **Target Node**.</span></span>
+<span data-ttu-id="1be61-166">Dies ist die aktuelle Methode zur Implementierung der Verschlüsselung von DSC-Anmeldeinformationen unter _Nano Server_.</span><span class="sxs-lookup"><span data-stu-id="1be61-166">This is the current method for implementing DSC credential encryption on _Nano Server_.</span></span>
+<span data-ttu-id="1be61-167">Obwohl die PFX-Datei mit einem Kennwort geschützt ist, sollte sie während der Übertragung gesichert werden.</span><span class="sxs-lookup"><span data-stu-id="1be61-167">Although the PFX is secured with a password it should be kept secure during transit.</span></span>
+<span data-ttu-id="1be61-168">Im folgenden Beispiel</span><span class="sxs-lookup"><span data-stu-id="1be61-168">The following example:</span></span>
+ 1. <span data-ttu-id="1be61-169">wird ein Zertifikat auf dem **Erstellungsknoten** erstellt.</span><span class="sxs-lookup"><span data-stu-id="1be61-169">creates a certificate on the **Authoring node**.</span></span>
+ 2. <span data-ttu-id="1be61-170">wird das Zertifikat, einschließlich des privaten Schlüssels, auf den **Erstellungsknoten** exportiert.</span><span class="sxs-lookup"><span data-stu-id="1be61-170">exports the certificate including the private key on the **Authoring node**.</span></span>
+ 3. <span data-ttu-id="1be61-171">wird der private Schlüssel vom **Erstellungsknoten** entfernt, aber das Zertifikat für den öffentlichen Schlüssel im **my**-Speicher beibehalten.</span><span class="sxs-lookup"><span data-stu-id="1be61-171">removes the private key from the **Authoring node**, but keeps the public key certificate in the **my** store.</span></span>
+ 4. <span data-ttu-id="1be61-172">wird das Zertifikat für den privaten Schlüssel in den Stammzertifikatspeicher auf dem **Zielknoten** importiert.</span><span class="sxs-lookup"><span data-stu-id="1be61-172">imports the private key certificate into the root certificate store on the **Target node**.</span></span>
+   - <span data-ttu-id="1be61-173">muss es dem Stammspeicher hinzugefügt werden, damit ihm der **Zielknoten** vertraut.</span><span class="sxs-lookup"><span data-stu-id="1be61-173">it must be added to the root store so that it will be trusted by the **Target node**.</span></span>
 
-<a id="on-the-authoring-node-create-and-export-the-certificate" class="xliff"></a>
-#### Auf dem Erstellungsknoten: Erstellen und Exportieren des Zertifikats
->Zielknoten: Windows Server 2016 und Windows 10
+#### <a name="on-the-authoring-node-create-and-export-the-certificate"></a><span data-ttu-id="1be61-174">Auf dem Erstellungsknoten: Erstellen und Exportieren des Zertifikats</span><span class="sxs-lookup"><span data-stu-id="1be61-174">On the Authoring Node: create and export the certificate</span></span>
+><span data-ttu-id="1be61-175">Zielknoten: Windows Server 2016 und Windows 10</span><span class="sxs-lookup"><span data-stu-id="1be61-175">Target Node: Windows Server 2016 and Windows 10</span></span>
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -157,14 +147,14 @@ $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 $cert | Remove-Item -Force
 Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\My
 ```
-Einmal exportiert, müsste ```DscPrivateKey.cer``` auf den **Zielknoten** kopiert werden.
+<span data-ttu-id="1be61-176">Einmal exportiert, müsste ```DscPrivateKey.cer``` auf den **Zielknoten** kopiert werden.</span><span class="sxs-lookup"><span data-stu-id="1be61-176">Once exported, the ```DscPrivateKey.cer``` would need to be copied to the **Target Node**.</span></span>
 
->Zielknoten: Windows Server 2012 R2/Windows 8.1 und früher
+><span data-ttu-id="1be61-177">Zielknoten: Windows Server 2012 R2/Windows 8.1 und früher</span><span class="sxs-lookup"><span data-stu-id="1be61-177">Target Node: Windows Server 2012 R2/Windows 8.1 and earlier</span></span>
 
-Da das Cmdlet „New-SelfSignedCertificate“ unter niedrigeren Windows-Betriebssystemen als Windows 10 und Windows Server 2016 nicht den Parameter **Typ** unterstützt, ist eine alternative Methode zum Erstellen dieses Zertifikats unter diesen Betriebssystemen erforderlich.
-In diesem Fall können Sie ```makecert.exe``` oder ```certutil.exe``` zum Erstellen des Zertifikats verwenden.
+<span data-ttu-id="1be61-178">Da das Cmdlet „New-SelfSignedCertificate“ unter niedrigeren Windows-Betriebssystemen als Windows 10 und Windows Server 2016 nicht den Parameter **Typ** unterstützt, ist eine alternative Methode zum Erstellen dieses Zertifikats unter diesen Betriebssystemen erforderlich.</span><span class="sxs-lookup"><span data-stu-id="1be61-178">Because the New-SelfSignedCertificate cmdlet on Windows Operating Systems prior to Windows 10 and Windows Server 2016 do not support the **Type** parameter, an alternate method of creating this certificate is required on these operating systems.</span></span>
+<span data-ttu-id="1be61-179">In diesem Fall können Sie ```makecert.exe``` oder ```certutil.exe``` zum Erstellen des Zertifikats verwenden.</span><span class="sxs-lookup"><span data-stu-id="1be61-179">In this case you can use ```makecert.exe``` or ```certutil.exe``` to create the certificate.</span></span>
 
-Eine alternative Methode besteht darin, [das Skript „New-SelfSignedCertificateEx.ps1“ aus dem Microsoft Script Center](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) herunterzuladen und es stattdessen zum Erstellen des Zertifikats zu verwenden:
+<span data-ttu-id="1be61-180">Eine alternative Methode besteht darin, [das Skript „New-SelfSignedCertificateEx.ps1“ aus dem Microsoft Script Center](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) herunterzuladen und es stattdessen zum Erstellen des Zertifikats zu verwenden:</span><span class="sxs-lookup"><span data-stu-id="1be61-180">An alternate method is to [download the New-SelfSignedCertificateEx.ps1 script from Microsoft Script Center](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) and use it to create the certificate instead:</span></span>
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
 # and in the folder that contains New-SelfSignedCertificateEx.ps1
@@ -196,26 +186,24 @@ $cert | Remove-Item -Force
 Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\My
 ```
 
-<a id="on-the-target-node-import-the-certs-private-key-as-a-trusted-root" class="xliff"></a>
-#### Auf dem Zielknoten: Importieren des privaten Schlüssels des Zertifikats als vertrauenswürdiger Stamm
+#### <a name="on-the-target-node-import-the-certs-private-key-as-a-trusted-root"></a><span data-ttu-id="1be61-181">Auf dem Zielknoten: Importieren des privaten Schlüssels des Zertifikats als vertrauenswürdiger Stamm</span><span class="sxs-lookup"><span data-stu-id="1be61-181">On the Target Node: import the cert’s private key as a trusted root</span></span>
 ```powershell
 # Import to the root store so that it is trusted
 $mypwd = ConvertTo-SecureString -String "YOUR_PFX_PASSWD" -Force -AsPlainText
 Import-PfxCertificate -FilePath "$env:temp\DscPrivateKey.pfx" -CertStoreLocation Cert:\LocalMachine\Root -Password $mypwd > $null
 ```
 
-<a id="configuration-data" class="xliff"></a>
-## Konfigurationsdaten
+## <a name="configuration-data"></a><span data-ttu-id="1be61-182">Konfigurationsdaten</span><span class="sxs-lookup"><span data-stu-id="1be61-182">Configuration data</span></span>
 
-Der „Configuration“-Datenblock definiert die betroffenen Zielknoten, ob die Anmeldeinformationen verschlüsselt werden oder nicht, die Verschlüsselungsmethode und andere Informationen. Weitere Informationen zum „Configuration“-Datenblock finden Sie unter [Trennen von Konfigurations- und Umgebungsdaten](configData.md).
+<span data-ttu-id="1be61-183">Der „Configuration“-Datenblock definiert die betroffenen Zielknoten, ob die Anmeldeinformationen verschlüsselt werden oder nicht, die Verschlüsselungsmethode und andere Informationen.</span><span class="sxs-lookup"><span data-stu-id="1be61-183">The configuration data block defines which target nodes to operate on, whether or not to encrypt the credentials, the means of encryption, and other information.</span></span> <span data-ttu-id="1be61-184">Weitere Informationen zum „Configuration“-Datenblock finden Sie unter [Trennen von Konfigurations- und Umgebungsdaten](configData.md).</span><span class="sxs-lookup"><span data-stu-id="1be61-184">For more information on the configuration data block, see [Separating Configuration and Environment Data](configData.md).</span></span>
 
-Die Elemente im Zusammenhang mit der Verschlüsselung von Anmeldeinformationen für jeden Knoten konfiguriert werden können, sind:
-* **NodeName**: Der Name des Zielknotens, für den die Verschlüsselung der Anmeldeinformationen konfiguriert wird.
-* **PsDscAllowPlainTextPassword**: Legt fest, ob unverschlüsselte Anmeldeinformationen an diesen Knoten übergeben werden können. Dies ist **nicht zu empfehlen**.
-* **Thumbprint**: Der Fingerabdruck des Zertifikats, das verwendet wird, um die Anmeldeinformationen in der DSC-Konfiguration auf dem _Zielknoten_ zu entschlüsseln. **Dieses Zertifikat muss im Zertifikatspeicher des lokalen Computers auf dem Zielknoten vorhanden sein.**
-* **CertificateFile**: Die Zertifikatsdatei (enthält nur den öffentlichen Schlüssel), die verwendet werden soll, um die Anmeldeinformationen für die _Zielknoten_ zu verschlüsseln. Dies muss eine Zertifikatdatei im DER-codierten binären X.509-Format oder im Base-64-codierten X.509-Format sein.
+<span data-ttu-id="1be61-185">Die Elemente im Zusammenhang mit der Verschlüsselung von Anmeldeinformationen für jeden Knoten konfiguriert werden können, sind:</span><span class="sxs-lookup"><span data-stu-id="1be61-185">The elements that can be configured for each node that are related to credential encryption are:</span></span>
+* <span data-ttu-id="1be61-186">**NodeName**: Der Name des Zielknotens, für den die Verschlüsselung der Anmeldeinformationen konfiguriert wird.</span><span class="sxs-lookup"><span data-stu-id="1be61-186">**NodeName** - the name of the target node that the credential encryption is being configured for.</span></span>
+* <span data-ttu-id="1be61-187">**PsDscAllowPlainTextPassword**: Legt fest, ob unverschlüsselte Anmeldeinformationen an diesen Knoten übergeben werden können.</span><span class="sxs-lookup"><span data-stu-id="1be61-187">**PsDscAllowPlainTextPassword** - whether unencrypted credentials will be allowed to be passed to this node.</span></span> <span data-ttu-id="1be61-188">Dies ist **nicht zu empfehlen**.</span><span class="sxs-lookup"><span data-stu-id="1be61-188">This is **not recommended**.</span></span>
+* <span data-ttu-id="1be61-189">**Thumbprint**: Der Fingerabdruck des Zertifikats, das verwendet wird, um die Anmeldeinformationen in der DSC-Konfiguration auf dem _Zielknoten_ zu entschlüsseln.</span><span class="sxs-lookup"><span data-stu-id="1be61-189">**Thumbprint** - the thumbprint of the certificate that will be used to decrypt the credentials in the DSC Configuration on the _Target Node_.</span></span> <span data-ttu-id="1be61-190">**Dieses Zertifikat muss im Zertifikatspeicher des lokalen Computers auf dem Zielknoten vorhanden sein.**</span><span class="sxs-lookup"><span data-stu-id="1be61-190">**This certificate must exist in the Local Machine certificate store on the Target Node.**</span></span>
+* <span data-ttu-id="1be61-191">**CertificateFile**: Die Zertifikatsdatei (enthält nur den öffentlichen Schlüssel), die verwendet werden soll, um die Anmeldeinformationen für die _Zielknoten_ zu verschlüsseln.</span><span class="sxs-lookup"><span data-stu-id="1be61-191">**CertificateFile** - the certificate file (containing the public key only) that should be used to encrypt the credentials for the _Target Node_.</span></span> <span data-ttu-id="1be61-192">Dies muss eine Zertifikatdatei im DER-codierten binären X.509-Format oder im Base-64-codierten X.509-Format sein.</span><span class="sxs-lookup"><span data-stu-id="1be61-192">This must be either a DER encoded binary X.509 or Base-64 encoded X.509 format certificate file.</span></span>
 
-Dieses Beispiel zeigt einen „Configuration“-Datenblock, einen betroffenen Zielknoten namens „targetNode“, den Pfad zur Zertifikatdatei mit dem öffentlichen Schlüssel (namens „targetNode.cer“) und den Fingerabdruck des öffentlichen Schlüssels.
+<span data-ttu-id="1be61-193">Dieses Beispiel zeigt einen „Configuration“-Datenblock, einen betroffenen Zielknoten namens „targetNode“, den Pfad zur Zertifikatdatei mit dem öffentlichen Schlüssel (namens „targetNode.cer“) und den Fingerabdruck des öffentlichen Schlüssels.</span><span class="sxs-lookup"><span data-stu-id="1be61-193">This example shows a configuration data block that specifies a target node to act on named targetNode, the path to the public key certificate file (named targetNode.cer), and the thumbprint for the public key.</span></span>
 
 ```powershell
 $ConfigData= @{ 
@@ -239,10 +227,9 @@ $ConfigData= @{
 ```
 
 
-<a id="configuration-script" class="xliff"></a>
-## Konfigurationsskript
+## <a name="configuration-script"></a><span data-ttu-id="1be61-194">Konfigurationsskript</span><span class="sxs-lookup"><span data-stu-id="1be61-194">Configuration script</span></span>
 
-Verwenden Sie im Skript selbst den `PsCredential`-Parameter, um sicherzustellen, dass die Anmeldeinformationen so kurz wie möglich gespeichert werden. Wenn Sie das bereitgestellte Beispiel ausführen, werden Sie von DSC zum Eingeben von Anmeldeinformationen und anschließendem Verschlüsseln der MOF-Datei mithilfe der Zertifikatdatei aufgefordert, die dem Zielknoten im „Configuration“-Datenblock zugeordnet ist. Bei diesem Codebeispiel wird eine Datei aus einer geschützten Freigabe zu einem Benutzer kopiert.
+<span data-ttu-id="1be61-195">Verwenden Sie im Skript selbst den `PsCredential`-Parameter, um sicherzustellen, dass die Anmeldeinformationen so kurz wie möglich gespeichert werden.</span><span class="sxs-lookup"><span data-stu-id="1be61-195">In the configuration script itself, use the `PsCredential` parameter to ensure that credentials are stored for the shortest possible time.</span></span> <span data-ttu-id="1be61-196">Wenn Sie das bereitgestellte Beispiel ausführen, werden Sie von DSC zum Eingeben von Anmeldeinformationen und anschließendem Verschlüsseln der MOF-Datei mithilfe der Zertifikatdatei aufgefordert, die dem Zielknoten im „Configuration“-Datenblock zugeordnet ist.</span><span class="sxs-lookup"><span data-stu-id="1be61-196">When you run the supplied example, DSC will prompt you for credentials and then encrypt the MOF file using the CertificateFile that is associated with the target node in the configuration data block.</span></span> <span data-ttu-id="1be61-197">Bei diesem Codebeispiel wird eine Datei aus einer geschützten Freigabe zu einem Benutzer kopiert.</span><span class="sxs-lookup"><span data-stu-id="1be61-197">This code example copies a file from a share that is secured to a user.</span></span>
 
 ```
 configuration CredentialEncryptionExample 
@@ -266,10 +253,9 @@ configuration CredentialEncryptionExample
 }
 ```
 
-<a id="setting-up-decryption" class="xliff"></a>
-## Einrichten der Entschlüsselung
+## <a name="setting-up-decryption"></a><span data-ttu-id="1be61-198">Einrichten der Entschlüsselung</span><span class="sxs-lookup"><span data-stu-id="1be61-198">Setting up decryption</span></span>
 
-Damit [`Start-DscConfiguration`](https://technet.microsoft.com/en-us/library/dn521623.aspx) funktionieren kann, müssen Sie den lokalen Konfigurations-Manager auf allen Zielknoten informieren, welches Zertifikat zum Entschlüsseln der Anmeldeinformationen verwendet werden soll. Die „CertificateID“-Ressource wird zum Überprüfen des Fingerabdrucks des Zertifikats verwendet. Diese Beispielfunktion findet das entsprechende lokale Zertifikat (Sie müssen ggf. eine Anpassung vornehmen, damit genau das gewünschte Zertifikat gefunden wird):
+<span data-ttu-id="1be61-199">Damit [`Start-DscConfiguration`](https://technet.microsoft.com/en-us/library/dn521623.aspx) funktionieren kann, müssen Sie den lokalen Konfigurations-Manager auf allen Zielknoten informieren, welches Zertifikat zum Entschlüsseln der Anmeldeinformationen verwendet werden soll. Die „CertificateID“-Ressource wird zum Überprüfen des Fingerabdrucks des Zertifikats verwendet.</span><span class="sxs-lookup"><span data-stu-id="1be61-199">Before [`Start-DscConfiguration`](https://technet.microsoft.com/en-us/library/dn521623.aspx) can work, you have to tell the Local Configuration Manager on each target node which certificate to use to decrypt the credentials, using the CertificateID resource to verify the certificate’s thumbprint.</span></span> <span data-ttu-id="1be61-200">Diese Beispielfunktion findet das entsprechende lokale Zertifikat (Sie müssen ggf. eine Anpassung vornehmen, damit genau das gewünschte Zertifikat gefunden wird):</span><span class="sxs-lookup"><span data-stu-id="1be61-200">This example function will find the appropriate local certificate (you might have to customize it so it will find the exact certificate you want to use):</span></span>
 
 ```powershell
 # Get the certificate that works for encryption 
@@ -285,7 +271,7 @@ function Get-LocalEncryptionCertificateThumbprint
 }
 ```
 
-Mit dem über seinen Fingerabdruck bestimmten Zertifikat kann das Konfigurationsskript für das Verwenden des folgenden Werts aktualisiert werden:
+<span data-ttu-id="1be61-201">Mit dem über seinen Fingerabdruck bestimmten Zertifikat kann das Konfigurationsskript für das Verwenden des folgenden Werts aktualisiert werden:</span><span class="sxs-lookup"><span data-stu-id="1be61-201">With the certificate identified by its thumbprint, the configuration script can be updated to use the value:</span></span>
 
 ```powershell
 configuration CredentialEncryptionExample 
@@ -314,15 +300,14 @@ configuration CredentialEncryptionExample
 }
 ```
 
-<a id="running-the-configuration" class="xliff"></a>
-## Ausführen der Konfiguration
+## <a name="running-the-configuration"></a><span data-ttu-id="1be61-202">Ausführen der Konfiguration</span><span class="sxs-lookup"><span data-stu-id="1be61-202">Running the configuration</span></span>
 
-An dieser Stellen können Sie die Konfiguration ausführen, woraufhin zwei Dateien ausgegeben werden:
+<span data-ttu-id="1be61-203">An dieser Stellen können Sie die Konfiguration ausführen, woraufhin zwei Dateien ausgegeben werden:</span><span class="sxs-lookup"><span data-stu-id="1be61-203">At this point, you can run the configuration, which will output two files:</span></span>
 
- * Eine Datei des Typs „*.meta.mof“, die vom lokalen Konfigurations-Manager zum Entschlüsseln der Anmeldeinformationen mithilfe des Zertifikats verwendet wird, das sich im lokalen Computerspeicher befindet und von dessen Fingerabdruck bestimmt wird. [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/en-us/library/dn521621.aspx) installiert die *.meta.mof-Datei.
- * Eine MOF-Datei, die die Konfiguration tatsächlich anwendet. „Start-DscConfiguration“ wendet die Konfiguration an.
+ * <span data-ttu-id="1be61-204">Eine Datei des Typs „*.meta.mof“, die vom lokalen Konfigurations-Manager zum Entschlüsseln der Anmeldeinformationen mithilfe des Zertifikats verwendet wird, das sich im lokalen Computerspeicher befindet und von dessen Fingerabdruck bestimmt wird.</span><span class="sxs-lookup"><span data-stu-id="1be61-204">A *.meta.mof file that configures the Local Configuration Manager to decrypt the credentials using the certificate that is stored on the local machine store and identified by its thumbprint.</span></span> <span data-ttu-id="1be61-205">[`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/en-us/library/dn521621.aspx) installiert die *.meta.mof-Datei.</span><span class="sxs-lookup"><span data-stu-id="1be61-205">[`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/en-us/library/dn521621.aspx) applies the *.meta.mof file.</span></span>
+ * <span data-ttu-id="1be61-206">Eine MOF-Datei, die die Konfiguration tatsächlich anwendet.</span><span class="sxs-lookup"><span data-stu-id="1be61-206">A MOF file that actually applies the configuration.</span></span> <span data-ttu-id="1be61-207">„Start-DscConfiguration“ wendet die Konfiguration an.</span><span class="sxs-lookup"><span data-stu-id="1be61-207">Start-DscConfiguration applies the configuration.</span></span>
 
-Mit diesen Befehlen werden diese Schritte ausgeführt:
+<span data-ttu-id="1be61-208">Mit diesen Befehlen werden diese Schritte ausgeführt:</span><span class="sxs-lookup"><span data-stu-id="1be61-208">These commands will accomplish those steps:</span></span>
 
 ```powershell
 Write-Host "Generate DSC Configuration..."
@@ -335,15 +320,14 @@ Write-Host "Starting Configuration..."
 Start-DscConfiguration .\CredentialEncryptionExample -wait -Verbose
 ```
 
-In diesem Beispiel wird die DSC-Konfiguration per Push auf den Zielknoten übertragen.
-Die DSC-Konfiguration kann auch unter Verwendung eines DSC-Pullservers, sofern verfügbar, angewendet werden.
+<span data-ttu-id="1be61-209">In diesem Beispiel wird die DSC-Konfiguration per Push auf den Zielknoten übertragen.</span><span class="sxs-lookup"><span data-stu-id="1be61-209">This example would push the DSC configuration to the target node.</span></span>
+<span data-ttu-id="1be61-210">Die DSC-Konfiguration kann auch unter Verwendung eines DSC-Pullservers, sofern verfügbar, angewendet werden.</span><span class="sxs-lookup"><span data-stu-id="1be61-210">The DSC configuration can also be applied using a DSC Pull Server if one is available.</span></span>
 
-Weitere Informationen zum Anwenden von DSC-Konfigurationen unter Verwendung eines DSC-Pullservers finden Sie unter [Einrichten eines DSC-Pullclients](pullClient.md).
+<span data-ttu-id="1be61-211">Weitere Informationen zum Anwenden von DSC-Konfigurationen unter Verwendung eines DSC-Pullservers finden Sie unter [Einrichten eines DSC-Pullclients](pullClient.md).</span><span class="sxs-lookup"><span data-stu-id="1be61-211">See [Setting up a DSC pull client](pullClient.md) for more information on applying DSC configurations using a DSC Pull Server.</span></span>
 
-<a id="credential-encryption-module-example" class="xliff"></a>
-## Beispiel für das Modul zum Verschlüsseln von Anmeldeinformationen
+## <a name="credential-encryption-module-example"></a><span data-ttu-id="1be61-212">Beispiel für das Modul zum Verschlüsseln von Anmeldeinformationen</span><span class="sxs-lookup"><span data-stu-id="1be61-212">Credential Encryption Module Example</span></span>
 
-Es folgt ein vollständiges Beispiel, das alle diese Schritte enthält, sowie ein Hilfs-Cmdlet zum Exportieren und Kopieren der öffentlichen Schlüssel:
+<span data-ttu-id="1be61-213">Es folgt ein vollständiges Beispiel, das alle diese Schritte enthält, sowie ein Hilfs-Cmdlet zum Exportieren und Kopieren der öffentlichen Schlüssel:</span><span class="sxs-lookup"><span data-stu-id="1be61-213">Here is a full example that incorporates all of these steps, plus a helper cmdlet that exports and copies the public keys:</span></span>
 
 ```powershell
 # A simple example of using credentials

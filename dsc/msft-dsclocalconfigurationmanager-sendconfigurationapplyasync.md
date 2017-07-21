@@ -10,13 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="sendconfigurationapplyasync-method-of-the-msftdsclocalconfigurationmanager-class" class="xliff"></a>
-# SendConfigurationApplyAsync-Methode der MSFT_DSCLocalConfigurationManager-Klasse
+# <a name="sendconfigurationapplyasync-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="50c29-103">SendConfigurationApplyAsync-Methode der MSFT_DSCLocalConfigurationManager-Klasse</span><span class="sxs-lookup"><span data-stu-id="50c29-103">SendConfigurationApplyAsync method of the MSFT_DSCLocalConfigurationManager class</span></span>
 
-Sendet das Konfigurationsdokument asynchron an den verwalteten Knoten und verwendet den Konfigurations-Agent, um die Konfiguration anzuwenden.
+<span data-ttu-id="50c29-104">Sendet das Konfigurationsdokument asynchron an den verwalteten Knoten und verwendet den Konfigurations-Agent, um die Konfiguration anzuwenden.</span><span class="sxs-lookup"><span data-stu-id="50c29-104">Sends the configuration document asynchronously to the managed node and uses the Configuration Agent to apply the configuration.</span></span>
 
-<a id="syntax" class="xliff"></a>
-Syntax
+<a name="syntax"></a><span data-ttu-id="50c29-105">Syntax</span><span class="sxs-lookup"><span data-stu-id="50c29-105">Syntax</span></span>
 ------
 
 ```mof
@@ -27,43 +25,38 @@ uint32 SendConfigurationApplyAsync(
 );
 ```
 
-<a id="parameters" class="xliff"></a>
-Parameter
+<a name="parameters"></a><span data-ttu-id="50c29-106">Parameter</span><span class="sxs-lookup"><span data-stu-id="50c29-106">Parameters</span></span>
 ----------
 
-*ConfigurationData* \[in\]  
-Die Umgebungsdaten für die Konfiguration.
+<span data-ttu-id="50c29-107">*ConfigurationData* \[in\]</span><span class="sxs-lookup"><span data-stu-id="50c29-107">*ConfigurationData* \[in\]</span></span>  
+<span data-ttu-id="50c29-108">Die Umgebungsdaten für die Konfiguration.</span><span class="sxs-lookup"><span data-stu-id="50c29-108">The environment data for the configuration.</span></span>
 
-*force* \[in\]  
-**true**, um das Beenden der Konfiguration zu erzwingen.
+<span data-ttu-id="50c29-109">*force* \[in\]</span><span class="sxs-lookup"><span data-stu-id="50c29-109">*force* \[in\]</span></span>  
+<span data-ttu-id="50c29-110">**true**, um das Beenden der Konfiguration zu erzwingen.</span><span class="sxs-lookup"><span data-stu-id="50c29-110">**true** to force the configuration to stop.</span></span>
 
-*jobId* \[in\]  
-Die ID des Auftrags, für den die Konfiguration gesendet werden soll.
+<span data-ttu-id="50c29-111">*jobId* \[in\]</span><span class="sxs-lookup"><span data-stu-id="50c29-111">*jobId* \[in\]</span></span>  
+<span data-ttu-id="50c29-112">Die ID des Auftrags, für den die Konfiguration gesendet werden soll.</span><span class="sxs-lookup"><span data-stu-id="50c29-112">The ID of the job for which to send the configuration.</span></span>
 
-<a id="return-value" class="xliff"></a>
-## Rückgabewert
+## <a name="return-value"></a><span data-ttu-id="50c29-113">Rückgabewert</span><span class="sxs-lookup"><span data-stu-id="50c29-113">Return value</span></span>
 ------------
 
-Gibt bei Erfolg null zurück, andernfalls einen Fehlercode.
+<span data-ttu-id="50c29-114">Gibt bei Erfolg null zurück, andernfalls einen Fehlercode.</span><span class="sxs-lookup"><span data-stu-id="50c29-114">Returns zero on success; otherwise returns an error code.</span></span>
 
-<a id="remarks" class="xliff"></a>
-## Hinweise
+## <a name="remarks"></a><span data-ttu-id="50c29-115">Hinweise</span><span class="sxs-lookup"><span data-stu-id="50c29-115">Remarks</span></span>
 
-Dies ist eine statische Methode.
+<span data-ttu-id="50c29-116">Dies ist eine statische Methode.</span><span class="sxs-lookup"><span data-stu-id="50c29-116">This is a static method.</span></span>
 
-<a id="requirements" class="xliff"></a>
-## Anforderungen
+## <a name="requirements"></a><span data-ttu-id="50c29-117">Anforderungen</span><span class="sxs-lookup"><span data-stu-id="50c29-117">Requirements</span></span>
 ------------
->**MOF:** DscCore.mof
+><span data-ttu-id="50c29-118">**MOF:** DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="50c29-118">**MOF:** DscCore.mof</span></span>
 
->**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
-
-
-<a id="see-also" class="xliff"></a>
-## Siehe auch
+><span data-ttu-id="50c29-119">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="50c29-119">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
 
 
-[**MSFT_DSCLocalConfigurationManager-Klasse**](msft-dsclocalconfigurationmanager.md)
+## <a name="see-also"></a><span data-ttu-id="50c29-120">Siehe auch</span><span class="sxs-lookup"><span data-stu-id="50c29-120">See also</span></span>
+
+
+[<span data-ttu-id="50c29-121">**MSFT_DSCLocalConfigurationManager-Klasse**</span><span class="sxs-lookup"><span data-stu-id="50c29-121">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
 
 
  

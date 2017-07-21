@@ -9,13 +9,13 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/08/2017
 ---
-# <a name="psreadline-module"></a>PSReadline-Modul
-Dieser Abschnitt enthält die Hilfethemen für das **PSReadline**-Modul. Das **PSReadline**-Modul enthält Cmdlets, mit denen Sie die Bearbeitungsumgebung der Befehlszeilen in Windows PowerShell anpassen können.
+# <a name="psreadline-module"></a><span data-ttu-id="705bb-103">PSReadline-Modul</span><span class="sxs-lookup"><span data-stu-id="705bb-103">PSReadline Module</span></span>
+<span data-ttu-id="705bb-104">Dieser Abschnitt enthält die Hilfethemen für das **PSReadline**-Modul.</span><span class="sxs-lookup"><span data-stu-id="705bb-104">This section contains the help topics for the **PSReadline** module.</span></span> <span data-ttu-id="705bb-105">Das **PSReadline**-Modul enthält Cmdlets, mit denen Sie die Bearbeitungsumgebung der Befehlszeilen in Windows PowerShell anpassen können.</span><span class="sxs-lookup"><span data-stu-id="705bb-105">The **PSReadline** module contains cmdlets that let you customize the command-line editing environment in Windows PowerShell.</span></span>
 
-## <a name="help-topics"></a>Hilfethemen
-[Windows PowerShell PSReadline-Cmdlets](https://technet.microsoft.com/en-us/library/ed48e832-95f9-4577-bf56-a7e5aa9630ba)
+## <a name="help-topics"></a><span data-ttu-id="705bb-106">Hilfethemen</span><span class="sxs-lookup"><span data-stu-id="705bb-106">Help Topics</span></span>
+[<span data-ttu-id="705bb-107">Windows PowerShell PSReadline-Cmdlets</span><span class="sxs-lookup"><span data-stu-id="705bb-107">Windows PowerShell PSReadline Cmdlets</span></span>](https://technet.microsoft.com/en-us/library/ed48e832-95f9-4577-bf56-a7e5aa9630ba)
 
-## <a name="see-also"></a>Weitere Informationen
-- [Windows PowerShell 5.0](Windows-PowerShell-5.0.md)
-- [Skripting mit WindowsPowerShell](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
+## <a name="see-also"></a><span data-ttu-id="705bb-108">Weitere Informationen</span><span class="sxs-lookup"><span data-stu-id="705bb-108">See Also</span></span>
+- [<span data-ttu-id="705bb-109">Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="705bb-109">Windows PowerShell 5.0</span></span>](Windows-PowerShell-5.0.md)
+- [<span data-ttu-id="705bb-110">Skripting mit WindowsPowerShell</span><span class="sxs-lookup"><span data-stu-id="705bb-110">Scripting with Windows PowerShell</span></span>](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
 

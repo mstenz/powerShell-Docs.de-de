@@ -10,13 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="stopconfiguration-method-of-the-msftdsclocalconfigurationmanager-class" class="xliff"></a>
-# StopConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse
+# <a name="stopconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="9156c-103">StopConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse</span><span class="sxs-lookup"><span data-stu-id="9156c-103">StopConfiguration method of the MSFT_DSCLocalConfigurationManager class</span></span>
 
-Beende die Konfigurationsänderung, die gerade ausgeführt wird.
+<span data-ttu-id="9156c-104">Beende die Konfigurationsänderung, die gerade ausgeführt wird.</span><span class="sxs-lookup"><span data-stu-id="9156c-104">Stops the configuration change that is in progress.</span></span>
 
-<a id="syntax" class="xliff"></a>
-Syntax
+<a name="syntax"></a><span data-ttu-id="9156c-105">Syntax</span><span class="sxs-lookup"><span data-stu-id="9156c-105">Syntax</span></span>
 ------
 
 ```mof
@@ -25,37 +23,32 @@ uint32 StopConfiguration(
 );
 ```
 
-<a id="parameters" class="xliff"></a>
-Parameter
+<a name="parameters"></a><span data-ttu-id="9156c-106">Parameter</span><span class="sxs-lookup"><span data-stu-id="9156c-106">Parameters</span></span>
 ----------
 
-*force* \[in\]  
-**true**, um das Beenden der Konfiguration zu erzwingen.
+<span data-ttu-id="9156c-107">*force* \[in\]</span><span class="sxs-lookup"><span data-stu-id="9156c-107">*force* \[in\]</span></span>  
+<span data-ttu-id="9156c-108">**true**, um das Beenden der Konfiguration zu erzwingen.</span><span class="sxs-lookup"><span data-stu-id="9156c-108">**true** to force the configuration to stop.</span></span>
 
-<a id="return-value" class="xliff"></a>
-## Rückgabewert
+## <a name="return-value"></a><span data-ttu-id="9156c-109">Rückgabewert</span><span class="sxs-lookup"><span data-stu-id="9156c-109">Return value</span></span>
 ------------
 
-Gibt bei Erfolg null zurück, andernfalls einen Fehlercode.
+<span data-ttu-id="9156c-110">Gibt bei Erfolg null zurück, andernfalls einen Fehlercode.</span><span class="sxs-lookup"><span data-stu-id="9156c-110">Returns zero on success; otherwise returns an error code.</span></span>
 
-<a id="remarks" class="xliff"></a>
-## Hinweise
+## <a name="remarks"></a><span data-ttu-id="9156c-111">Hinweise</span><span class="sxs-lookup"><span data-stu-id="9156c-111">Remarks</span></span>
 
-Dies ist eine statische Methode.
+<span data-ttu-id="9156c-112">Dies ist eine statische Methode.</span><span class="sxs-lookup"><span data-stu-id="9156c-112">This is a static method.</span></span>
 
-<a id="requirements" class="xliff"></a>
-## Anforderungen
+## <a name="requirements"></a><span data-ttu-id="9156c-113">Anforderungen</span><span class="sxs-lookup"><span data-stu-id="9156c-113">Requirements</span></span>
 ------------
->**MOF:** DscCore.mof
+><span data-ttu-id="9156c-114">**MOF:** DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="9156c-114">**MOF:** DscCore.mof</span></span>
 
->**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
-
-
-<a id="see-also" class="xliff"></a>
-## Siehe auch
+><span data-ttu-id="9156c-115">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="9156c-115">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
 
 
-[**MSFT_DSCLocalConfigurationManager-Klasse**](msft-dsclocalconfigurationmanager.md)
+## <a name="see-also"></a><span data-ttu-id="9156c-116">Siehe auch</span><span class="sxs-lookup"><span data-stu-id="9156c-116">See also</span></span>
+
+
+[<span data-ttu-id="9156c-117">**MSFT_DSCLocalConfigurationManager-Klasse**</span><span class="sxs-lookup"><span data-stu-id="9156c-117">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
 
 
  

@@ -9,10 +9,9 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="specifying-cross-node-dependencies" class="xliff"></a>
-# Angeben knotenübergreifender Abhängigkeiten
+# <a name="specifying-cross-node-dependencies"></a><span data-ttu-id="243f6-102">Angeben knotenübergreifender Abhängigkeiten</span><span class="sxs-lookup"><span data-stu-id="243f6-102">Specifying Cross Node Dependencies</span></span>
 
-Mithilfe der integrierten Ressourcen des Typs „WaitFor\*“ (`WaitForAll`, `WaitForAny`, `WaitForSome`) können Sie jetzt computerübergreifende Abhängigkeiten während der Konfigurierung ohne externe Orchestrierung angeben. 
+<span data-ttu-id="243f6-103">Mithilfe der integrierten Ressourcen des Typs „WaitFor\*“ (`WaitForAll`, `WaitForAny`, `WaitForSome`) können Sie jetzt computerübergreifende Abhängigkeiten während der Konfigurierung ohne externe Orchestrierung angeben.</span><span class="sxs-lookup"><span data-stu-id="243f6-103">By using the built-in WaitFor\* resources (`WaitForAll`, `WaitForAny`, and `WaitForSome`), you can now specify dependencies across computers during configuration runs without external orchestration.</span></span> 
 
-Weitere Informationen finden Sie unter [Angeben knotenübergreifender Abhängigkeiten](https://msdn.microsoft.com/powershell/dsc/crossnodedependencies).
+<span data-ttu-id="243f6-104">Weitere Informationen finden Sie unter [Angeben knotenübergreifender Abhängigkeiten](https://msdn.microsoft.com/powershell/dsc/crossnodedependencies).</span><span class="sxs-lookup"><span data-stu-id="243f6-104">For more information, see [Specifying cross-node dependencies](https://msdn.microsoft.com/powershell/dsc/crossnodedependencies)</span></span>
 

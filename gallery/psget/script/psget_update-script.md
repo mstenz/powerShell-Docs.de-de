@@ -10,29 +10,24 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="update-script" class="xliff"></a>
-# Update-Script
+# <a name="update-script"></a><span data-ttu-id="54441-103">Update-Script</span><span class="sxs-lookup"><span data-stu-id="54441-103">Update-Script</span></span>
 
-Das Cmdlet „Update-Script“ ermöglicht ein direktes Update der Skriptdateien, die mit dem Cmdlet „Install-Script“ installiert wurden.
+<span data-ttu-id="54441-104">Das Cmdlet „Update-Script“ ermöglicht ein direktes Update der Skriptdateien, die mit dem Cmdlet „Install-Script“ installiert wurden.</span><span class="sxs-lookup"><span data-stu-id="54441-104">Update-Script cmdlet lets you to do in-place update of the script files which were installed using Install-Script cmdlet.</span></span>
 
-<a id="description" class="xliff"></a>
-## Beschreibung
+## <a name="description"></a><span data-ttu-id="54441-105">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="54441-105">Description</span></span>
 
-Das Cmdlet „Update-Script“ aktualisiert das angegebene Skript aus dem Repository, aus dem es zuvor installiert wurde.
+<span data-ttu-id="54441-106">Das Cmdlet „Update-Script“ aktualisiert das angegebene Skript aus dem Repository, aus dem es zuvor installiert wurde.</span><span class="sxs-lookup"><span data-stu-id="54441-106">The Update-Script cmdlet updates the specified script from the repository from which it was previously installed.</span></span>
 
-<a id="cmdlet-syntax" class="xliff"></a>
-## Cmdlet-Syntax
+## <a name="cmdlet-syntax"></a><span data-ttu-id="54441-107">Cmdlet-Syntax</span><span class="sxs-lookup"><span data-stu-id="54441-107">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Update-Script -Module PowerShellGet -Syntax
 ```
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-## Cmdlet-Onlinehilfe
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="54441-108">Cmdlet-Onlinehilfe</span><span class="sxs-lookup"><span data-stu-id="54441-108">Cmdlet online help reference</span></span>
 
-[Update-Script](http://go.microsoft.com/fwlink/?LinkId=619787)
+[<span data-ttu-id="54441-109">Update-Script</span><span class="sxs-lookup"><span data-stu-id="54441-109">Update-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619787)
 
-<a id="example-commands" class="xliff"></a>
-## Beispiele für Befehle
+## <a name="example-commands"></a><span data-ttu-id="54441-110">Beispiele für Befehle</span><span class="sxs-lookup"><span data-stu-id="54441-110">Example commands</span></span>
 ```powershell
 Install-Script -Name Fabrikam-Script -RequiredVersion 1.0 -Repository GalleryINT -Scope
 Get-InstalledScript -Name Fabrikam-Script

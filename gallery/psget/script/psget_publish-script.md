@@ -10,30 +10,25 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="publish-script" class="xliff"></a>
-# Publish-Script
+# <a name="publish-script"></a><span data-ttu-id="c5f6e-103">Publish-Script</span><span class="sxs-lookup"><span data-stu-id="c5f6e-103">Publish-Script</span></span>
 
-Das Cmdlet „Publish-Script“ veröffentlicht das angegebene Skript im Onlinekatalog.
+<span data-ttu-id="c5f6e-104">Das Cmdlet „Publish-Script“ veröffentlicht das angegebene Skript im Onlinekatalog.</span><span class="sxs-lookup"><span data-stu-id="c5f6e-104">The Publish-Script cmdlet publishes the specified script to the online gallery.</span></span>
 
-<a id="description" class="xliff"></a>
-## Beschreibung
+## <a name="description"></a><span data-ttu-id="c5f6e-105">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="c5f6e-105">Description</span></span>
 
-Mit dem Cmdlet „Publish-Script“ können Sie Ihre Skriptdatei mit gültigen Metadaten wie „Version“, „Guid“, „Author“ und „Description“ veröffentlichen. Der Switchparameter „Force“ im Cmdlet „Publish-Script“ startet „NuGet.exe“ ohne Eingabeaufforderung.
+<span data-ttu-id="c5f6e-106">Mit dem Cmdlet „Publish-Script“ können Sie Ihre Skriptdatei mit gültigen Metadaten wie „Version“, „Guid“, „Author“ und „Description“ veröffentlichen. Der Switchparameter „Force“ im Cmdlet „Publish-Script“ startet „NuGet.exe“ ohne Eingabeaufforderung.</span><span class="sxs-lookup"><span data-stu-id="c5f6e-106">Publish-Script cmdlet lets you to publish your script file with valid metadata like Version, Guid, Author, and Description, etc. Force switch parameter on Publish-Script cmdlet bootstraps the NuGet.exe without prompting.</span></span>
 
-<a id="cmdlet-syntax" class="xliff"></a>
-## Cmdlet-Syntax
+## <a name="cmdlet-syntax"></a><span data-ttu-id="c5f6e-107">Cmdlet-Syntax</span><span class="sxs-lookup"><span data-stu-id="c5f6e-107">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Publish-Script -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-## Cmdlet-Onlinehilfe
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="c5f6e-108">Cmdlet-Onlinehilfe</span><span class="sxs-lookup"><span data-stu-id="c5f6e-108">Cmdlet online help reference</span></span>
 
-[Publish-Script](http://go.microsoft.com/fwlink/?LinkId=619788)
+[<span data-ttu-id="c5f6e-109">Publish-Script</span><span class="sxs-lookup"><span data-stu-id="c5f6e-109">Publish-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619788)
 
-<a id="example-commands" class="xliff"></a>
-## Beispiele für Befehle
+## <a name="example-commands"></a><span data-ttu-id="c5f6e-110">Beispiele für Befehle</span><span class="sxs-lookup"><span data-stu-id="c5f6e-110">Example commands</span></span>
 
 ```powershell
 # Publish the really basic script file with required metadata

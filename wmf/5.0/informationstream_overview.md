@@ -9,10 +9,9 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="information-stream" class="xliff"></a>
-# Informationsdatenstrom
+# <a name="information-stream"></a><span data-ttu-id="01bcd-102">Informationsdatenstrom</span><span class="sxs-lookup"><span data-stu-id="01bcd-102">Information Stream</span></span>
 
-Ein neuer strukturierter Informationsdatenstrom kann jetzt verwendet werden, um strukturierte Daten zwischen einem Skript und seinem Host zu übertragen. **Write-Host** wurde auch so aktualisiert, dass seine Ausgabe in den Informationsdatenstrom erfolgt, in dem Sie sie nun erfassen oder unterdrücken können. Das neue Cmdlet **Write-Information**, das (zusammen mit einer entsprechenden „WriteInformation“-API) mit den allgemeinen Parametern **-InformationVariable** und **-InformationAction** verwendet wird, bietet mehr Flexibilität und Funktionalität.
+<span data-ttu-id="01bcd-103">Ein neuer strukturierter Informationsdatenstrom kann jetzt verwendet werden, um strukturierte Daten zwischen einem Skript und seinem Host zu übertragen.</span><span class="sxs-lookup"><span data-stu-id="01bcd-103">A new structured Information stream can now be used to transmit structured data between a script and its host.</span></span> <span data-ttu-id="01bcd-104">**Write-Host** wurde auch so aktualisiert, dass seine Ausgabe in den Informationsdatenstrom erfolgt, in dem Sie sie nun erfassen oder unterdrücken können.</span><span class="sxs-lookup"><span data-stu-id="01bcd-104">**Write-Host** has also been updated to emit its output to the Information stream where you can now capture or silence it.</span></span> <span data-ttu-id="01bcd-105">Das neue Cmdlet **Write-Information**, das (zusammen mit einer entsprechenden „WriteInformation“-API) mit den allgemeinen Parametern **-InformationVariable** und **-InformationAction** verwendet wird, bietet mehr Flexibilität und Funktionalität.</span><span class="sxs-lookup"><span data-stu-id="01bcd-105">The new **Write-Information** cmdlet (along with a corresponding WriteInformation API) used with **-InformationVariable** and **-InformationAction** common parameters enables more flexibility and capability.</span></span>
 
 ```powershell
 PS C:\Users\demo> ## Here's a typical PowerShell script

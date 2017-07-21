@@ -9,10 +9,9 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="automatic-runas-support-for-dsc-resources" class="xliff"></a>
-# Automatische RunAs-Unterstützung für DSC-Ressourcen
+# <a name="automatic-runas-support-for-dsc-resources"></a><span data-ttu-id="c1e56-102">Automatische RunAs-Unterstützung für DSC-Ressourcen</span><span class="sxs-lookup"><span data-stu-id="c1e56-102">Automatic RunAs support for DSC Resources</span></span>
 
-WMF 5.0 unterstützt das Ausführen **beliebiger** DSC-Ressourcen unter einem angegebenen Satz von Anmeldeinformationen mithilfe der Eigenschaft `PsDscRunAsCredential`. 
+<span data-ttu-id="c1e56-103">WMF 5.0 unterstützt das Ausführen **beliebiger** DSC-Ressourcen unter einem angegebenen Satz von Anmeldeinformationen mithilfe der Eigenschaft `PsDscRunAsCredential`.</span><span class="sxs-lookup"><span data-stu-id="c1e56-103">WMF 5.0 includes support for running **any** DSC resource under a specified set of credentials by using the property `PsDscRunAsCredential`.</span></span> 
 
-Weitere Informationen finden Sie unter [Ausführen von DSC mit Benutzeranmeldeinformationen](https://msdn.microsoft.com/powershell/dsc/runasuser).
+<span data-ttu-id="c1e56-104">Weitere Informationen finden Sie unter [Ausführen von DSC mit Benutzeranmeldeinformationen](https://msdn.microsoft.com/powershell/dsc/runasuser).</span><span class="sxs-lookup"><span data-stu-id="c1e56-104">For more information, see [Running DSC with user credentials](https://msdn.microsoft.com/powershell/dsc/runasuser).</span></span>
 

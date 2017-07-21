@@ -9,13 +9,12 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="new-temporaryfile" class="xliff"></a>
-# New-TemporaryFile
-Mitunter müssen Sie in Ihren Skripts eine temporäre Datei erstellen. Hierfür dient das Cmdlet **New-TemporaryFile**:
+# <a name="new-temporaryfile"></a><span data-ttu-id="f282a-102">New-TemporaryFile</span><span class="sxs-lookup"><span data-stu-id="f282a-102">New-TemporaryFile</span></span>
+<span data-ttu-id="f282a-103">Mitunter müssen Sie in Ihren Skripts eine temporäre Datei erstellen.</span><span class="sxs-lookup"><span data-stu-id="f282a-103">Sometimes in your scripts, you must create a temporary file.</span></span> <span data-ttu-id="f282a-104">Hierfür dient das Cmdlet **New-TemporaryFile**:</span><span class="sxs-lookup"><span data-stu-id="f282a-104">You can easily do this with the **New-TemporaryFile** cmdlet:</span></span>
 
-PS C:\\&gt; $tempFile = New-TemporaryFile
+<span data-ttu-id="f282a-105">PS C:\\&gt; $tempFile = New-TemporaryFile</span><span class="sxs-lookup"><span data-stu-id="f282a-105">PS C:\\&gt; $tempFile = New-TemporaryFile</span></span>
 
-PS C:\\&gt; $tempFile.FullName
+<span data-ttu-id="f282a-106">PS C:\\&gt; $tempFile.FullName</span><span class="sxs-lookup"><span data-stu-id="f282a-106">PS C:\\&gt; $tempFile.FullName</span></span>
 
-C:\\Users\\slee\\AppData\\Local\\Temp\\tmp375.tmp
+<span data-ttu-id="f282a-107">C:\\Users\\slee\\AppData\\Local\\Temp\\tmp375.tmp</span><span class="sxs-lookup"><span data-stu-id="f282a-107">C:\\Users\\slee\\AppData\\Local\\Temp\\tmp375.tmp</span></span>
 

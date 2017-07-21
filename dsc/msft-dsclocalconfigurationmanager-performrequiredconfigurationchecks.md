@@ -10,13 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="performrequiredconfigurationchecks-method-of-the-msftdsclocalconfigurationmanager-class" class="xliff"></a>
-# PerformRequiredConfigurationChecks-Methode der MSFT_DSCLocalConfigurationManager-Klasse
+# <a name="performrequiredconfigurationchecks-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="32bd4-103">PerformRequiredConfigurationChecks-Methode der MSFT_DSCLocalConfigurationManager-Klasse</span><span class="sxs-lookup"><span data-stu-id="32bd4-103">PerformRequiredConfigurationChecks method of the MSFT_DSCLocalConfigurationManager class</span></span>
 
-Startet eine Konsistenzprüfung unter Verwendung des Taskplaners.
+<span data-ttu-id="32bd4-104">Startet eine Konsistenzprüfung unter Verwendung des Taskplaners.</span><span class="sxs-lookup"><span data-stu-id="32bd4-104">Starts a consistency check by using the Task Scheduler.</span></span>
 
-<a id="syntax" class="xliff"></a>
-Syntax
+<a name="syntax"></a><span data-ttu-id="32bd4-105">Syntax</span><span class="sxs-lookup"><span data-stu-id="32bd4-105">Syntax</span></span>
 ------
 
 ```mof
@@ -25,44 +23,39 @@ uint32 PerformRequiredConfigurationChecks(
 );
 ```
 
-<a id="parameters" class="xliff"></a>
-Parameter
+<a name="parameters"></a><span data-ttu-id="32bd4-106">Parameter</span><span class="sxs-lookup"><span data-stu-id="32bd4-106">Parameters</span></span>
 ----------
 
-*Flags* \[in\]  
-Eine Bitmaske, die den Typ der auszuführenden Konsistenzprüfung angibt. Die folgenden Werte sind gültig und können mit einem bitweisen **ODER**-Vorgang kombiniert werden:
+<span data-ttu-id="32bd4-107">*Flags* \[in\]</span><span class="sxs-lookup"><span data-stu-id="32bd4-107">*Flags* \[in\]</span></span>  
+<span data-ttu-id="32bd4-108">Eine Bitmaske, die den Typ der auszuführenden Konsistenzprüfung angibt.</span><span class="sxs-lookup"><span data-stu-id="32bd4-108">A bitmask that specifies the type of consistency check to run.</span></span> <span data-ttu-id="32bd4-109">Die folgenden Werte sind gültig und können mit einem bitweisen **ODER**-Vorgang kombiniert werden:</span><span class="sxs-lookup"><span data-stu-id="32bd4-109">The following values are valid, and can be combined by using a bitwise **OR** operation:</span></span>
 
-|Wert |Beschreibung |
+|<span data-ttu-id="32bd4-110">Wert</span><span class="sxs-lookup"><span data-stu-id="32bd4-110">Value</span></span> |<span data-ttu-id="32bd4-111">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="32bd4-111">Description</span></span> |
 |:--- |:---|
-|**1** | Eine normale Konsistenzprüfung. |
-|**2** | Die Fortsetzung einer Konsistenzprüfung nach einem Neustart. Dieser Wert sollte nicht mit anderen Werten kombiniert werden. |
-|**4** | Die Konfiguration sollte von dem Pull-Server abgerufen werden, der in der Metakonfiguration für den Knoten angegeben ist. Dieser Wert sollte immer mit **1** kombiniert werden, um einen Wert von **5** zu erzielen. |
-|**8** | Senden des Status an den Berichtsserver. |
+|<span data-ttu-id="32bd4-112">**1**</span><span class="sxs-lookup"><span data-stu-id="32bd4-112">**1**</span></span> | <span data-ttu-id="32bd4-113">Eine normale Konsistenzprüfung.</span><span class="sxs-lookup"><span data-stu-id="32bd4-113">A normal consistency check.</span></span> |
+|<span data-ttu-id="32bd4-114">**2**</span><span class="sxs-lookup"><span data-stu-id="32bd4-114">**2**</span></span> | <span data-ttu-id="32bd4-115">Die Fortsetzung einer Konsistenzprüfung nach einem Neustart.</span><span class="sxs-lookup"><span data-stu-id="32bd4-115">A continuation of a consistency check after a reboot.</span></span> <span data-ttu-id="32bd4-116">Dieser Wert sollte nicht mit anderen Werten kombiniert werden.</span><span class="sxs-lookup"><span data-stu-id="32bd4-116">This value should not be combined with other values.</span></span> |
+|<span data-ttu-id="32bd4-117">**4**</span><span class="sxs-lookup"><span data-stu-id="32bd4-117">**4**</span></span> | <span data-ttu-id="32bd4-118">Die Konfiguration sollte von dem Pull-Server abgerufen werden, der in der Metakonfiguration für den Knoten angegeben ist.</span><span class="sxs-lookup"><span data-stu-id="32bd4-118">The configuration should be pulled from the pull server specified in the metaconfiguration for the node.</span></span> <span data-ttu-id="32bd4-119">Dieser Wert sollte immer mit **1** kombiniert werden, um einen Wert von **5** zu erzielen.</span><span class="sxs-lookup"><span data-stu-id="32bd4-119">This value should always be combined with **1**, for a value of **5**.</span></span> |
+|<span data-ttu-id="32bd4-120">**8**</span><span class="sxs-lookup"><span data-stu-id="32bd4-120">**8**</span></span> | <span data-ttu-id="32bd4-121">Senden des Status an den Berichtsserver.</span><span class="sxs-lookup"><span data-stu-id="32bd4-121">Send status to the report server.</span></span> |
 
-<a id="return-value" class="xliff"></a>
-## Rückgabewert
+## <a name="return-value"></a><span data-ttu-id="32bd4-122">Rückgabewert</span><span class="sxs-lookup"><span data-stu-id="32bd4-122">Return value</span></span>
 ------------
 
-Gibt bei Erfolg null zurück, andernfalls einen Fehlercode.
+<span data-ttu-id="32bd4-123">Gibt bei Erfolg null zurück, andernfalls einen Fehlercode.</span><span class="sxs-lookup"><span data-stu-id="32bd4-123">Returns zero on success; otherwise returns an error code.</span></span>
 
-<a id="remarks" class="xliff"></a>
-## Hinweise
+## <a name="remarks"></a><span data-ttu-id="32bd4-124">Hinweise</span><span class="sxs-lookup"><span data-stu-id="32bd4-124">Remarks</span></span>
 
-Dies ist eine statische Methode.
+<span data-ttu-id="32bd4-125">Dies ist eine statische Methode.</span><span class="sxs-lookup"><span data-stu-id="32bd4-125">This is a static method.</span></span>
 
-<a id="requirements" class="xliff"></a>
-## Anforderungen
+## <a name="requirements"></a><span data-ttu-id="32bd4-126">Anforderungen</span><span class="sxs-lookup"><span data-stu-id="32bd4-126">Requirements</span></span>
 ------------
->**MOF:** DscCore.mof
+><span data-ttu-id="32bd4-127">**MOF:** DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="32bd4-127">**MOF:** DscCore.mof</span></span>
 
->**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
-
-
-<a id="see-also" class="xliff"></a>
-## Siehe auch
+><span data-ttu-id="32bd4-128">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="32bd4-128">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
 
 
-[**MSFT_DSCLocalConfigurationManager-Klasse**](msft-dsclocalconfigurationmanager.md)
+## <a name="see-also"></a><span data-ttu-id="32bd4-129">Siehe auch</span><span class="sxs-lookup"><span data-stu-id="32bd4-129">See also</span></span>
+
+
+[<span data-ttu-id="32bd4-130">**MSFT_DSCLocalConfigurationManager-Klasse**</span><span class="sxs-lookup"><span data-stu-id="32bd4-130">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
 
 
  

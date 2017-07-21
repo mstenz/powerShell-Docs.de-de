@@ -9,47 +9,46 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="installation-instructions" class="xliff"></a>
-# Installationsanweisungen
+# <a name="installation-instructions"></a><span data-ttu-id="cc5f6-102">Installationsanweisungen</span><span class="sxs-lookup"><span data-stu-id="cc5f6-102">Installation Instructions</span></span>
 
-Laden Sie das richtige Paket für Ihr Betriebssystem und Ihre Architektur herunter:
+<span data-ttu-id="cc5f6-103">Laden Sie das richtige Paket für Ihr Betriebssystem und Ihre Architektur herunter:</span><span class="sxs-lookup"><span data-stu-id="cc5f6-103">Download the correct package for your operating system and architecture:</span></span>
 
-| Betriebssystem       | Architektur | Paketname              | 
+| <span data-ttu-id="cc5f6-104">Betriebssystem</span><span class="sxs-lookup"><span data-stu-id="cc5f6-104">Operating System</span></span>       | <span data-ttu-id="cc5f6-105">Architektur</span><span class="sxs-lookup"><span data-stu-id="cc5f6-105">Architecture</span></span> | <span data-ttu-id="cc5f6-106">Paketname</span><span class="sxs-lookup"><span data-stu-id="cc5f6-106">Package Name</span></span>              | 
 |------------------------|--------------|---------------------------| 
-| Windows Server 2012 R2 | x64      | [Win8.1AndW2K12R2-KB3134758-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717507) | 
-| Windows Server 2012    | x64      | [W2K12-KB3134759-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717506) | 
-| Windows Server 2008 R2 | x64      | [Win7AndW2K8R2-KB3134760-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717504) |
-| Windows 8.1            | x64          | [Win8.1AndW2K12R2-KB3134758-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717507) |
-| Windows 8.1            | x86          | [Win8.1-KB3134758-x86.msu](http://go.microsoft.com/fwlink/?LinkID=717963) |
-| Windows 7 SP1          | x64          | [Win7AndW2K8R2-KB3134760-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717504) |
-| Windows 7 SP1          | x86          | [Win7-KB3134760-x86.msu](http://go.microsoft.com/fwlink/?LinkID=717962) |
+| <span data-ttu-id="cc5f6-107">Windows Server 2012 R2</span><span class="sxs-lookup"><span data-stu-id="cc5f6-107">Windows Server 2012 R2</span></span> | <span data-ttu-id="cc5f6-108">x64</span><span class="sxs-lookup"><span data-stu-id="cc5f6-108">x64</span></span>      | [<span data-ttu-id="cc5f6-109">Win8.1AndW2K12R2-KB3134758-x64.msu</span><span class="sxs-lookup"><span data-stu-id="cc5f6-109">Win8.1AndW2K12R2-KB3134758-x64.msu</span></span>](http://go.microsoft.com/fwlink/?LinkId=717507) | 
+| <span data-ttu-id="cc5f6-110">Windows Server 2012</span><span class="sxs-lookup"><span data-stu-id="cc5f6-110">Windows Server 2012</span></span>    | <span data-ttu-id="cc5f6-111">x64</span><span class="sxs-lookup"><span data-stu-id="cc5f6-111">x64</span></span>      | [<span data-ttu-id="cc5f6-112">W2K12-KB3134759-x64.msu</span><span class="sxs-lookup"><span data-stu-id="cc5f6-112">W2K12-KB3134759-x64.msu</span></span>](http://go.microsoft.com/fwlink/?LinkId=717506) | 
+| <span data-ttu-id="cc5f6-113">Windows Server 2008 R2</span><span class="sxs-lookup"><span data-stu-id="cc5f6-113">Windows Server 2008 R2</span></span> | <span data-ttu-id="cc5f6-114">x64</span><span class="sxs-lookup"><span data-stu-id="cc5f6-114">x64</span></span>      | [<span data-ttu-id="cc5f6-115">Win7AndW2K8R2-KB3134760-x64.msu</span><span class="sxs-lookup"><span data-stu-id="cc5f6-115">Win7AndW2K8R2-KB3134760-x64.msu</span></span>](http://go.microsoft.com/fwlink/?LinkId=717504) |
+| <span data-ttu-id="cc5f6-116">Windows 8.1</span><span class="sxs-lookup"><span data-stu-id="cc5f6-116">Windows 8.1</span></span>            | <span data-ttu-id="cc5f6-117">x64</span><span class="sxs-lookup"><span data-stu-id="cc5f6-117">x64</span></span>          | [<span data-ttu-id="cc5f6-118">Win8.1AndW2K12R2-KB3134758-x64.msu</span><span class="sxs-lookup"><span data-stu-id="cc5f6-118">Win8.1AndW2K12R2-KB3134758-x64.msu</span></span>](http://go.microsoft.com/fwlink/?LinkId=717507) |
+| <span data-ttu-id="cc5f6-119">Windows 8.1</span><span class="sxs-lookup"><span data-stu-id="cc5f6-119">Windows 8.1</span></span>            | <span data-ttu-id="cc5f6-120">x86</span><span class="sxs-lookup"><span data-stu-id="cc5f6-120">x86</span></span>          | [<span data-ttu-id="cc5f6-121">Win8.1-KB3134758-x86.msu</span><span class="sxs-lookup"><span data-stu-id="cc5f6-121">Win8.1-KB3134758-x86.msu</span></span>](http://go.microsoft.com/fwlink/?LinkID=717963) |
+| <span data-ttu-id="cc5f6-122">Windows 7 SP1</span><span class="sxs-lookup"><span data-stu-id="cc5f6-122">Windows 7 SP1</span></span>          | <span data-ttu-id="cc5f6-123">x64</span><span class="sxs-lookup"><span data-stu-id="cc5f6-123">x64</span></span>          | [<span data-ttu-id="cc5f6-124">Win7AndW2K8R2-KB3134760-x64.msu</span><span class="sxs-lookup"><span data-stu-id="cc5f6-124">Win7AndW2K8R2-KB3134760-x64.msu</span></span>](http://go.microsoft.com/fwlink/?LinkId=717504) |
+| <span data-ttu-id="cc5f6-125">Windows 7 SP1</span><span class="sxs-lookup"><span data-stu-id="cc5f6-125">Windows 7 SP1</span></span>          | <span data-ttu-id="cc5f6-126">x86</span><span class="sxs-lookup"><span data-stu-id="cc5f6-126">x86</span></span>          | [<span data-ttu-id="cc5f6-127">Win7-KB3134760-x86.msu</span><span class="sxs-lookup"><span data-stu-id="cc5f6-127">Win7-KB3134760-x86.msu</span></span>](http://go.microsoft.com/fwlink/?LinkID=717962) |
 
 
-**So installieren Sie WMF 5.0 über den Windows-Explorer (bzw. Datei-Explorer in Windows Server 2012 R2 und Windows 8.1)**
+<span data-ttu-id="cc5f6-128">**So installieren Sie WMF 5.0 über den Windows-Explorer (bzw. Datei-Explorer in Windows Server 2012 R2 und Windows 8.1)**</span><span class="sxs-lookup"><span data-stu-id="cc5f6-128">**To install WMF 5.0 from Windows Explorer (or File Explorer in Windows Server 2012 R2 and Windows 8.1):**</span></span>
 
-1. Wechseln Sie zum Ordner, in den Sie die MSU-Datei heruntergeladen haben.
+1. <span data-ttu-id="cc5f6-129">Wechseln Sie zum Ordner, in den Sie die MSU-Datei heruntergeladen haben.</span><span class="sxs-lookup"><span data-stu-id="cc5f6-129">Navigate to the folder into which you downloaded the MSU file.</span></span>
 
-2. Doppelklicken Sie auf die MSU-Datei, um sie auszuführen.
+2. <span data-ttu-id="cc5f6-130">Doppelklicken Sie auf die MSU-Datei, um sie auszuführen.</span><span class="sxs-lookup"><span data-stu-id="cc5f6-130">Double-click the MSU to run it.</span></span>
 
-**So installieren Sie WMF 5.0 über die Befehlszeile** 
+<span data-ttu-id="cc5f6-131">**So installieren Sie WMF 5.0 über die Befehlszeile**</span><span class="sxs-lookup"><span data-stu-id="cc5f6-131">**To install WMF 5.0 from Command Prompt:**</span></span> 
 
-1. Öffnen Sie nach dem Herunterladen des richtigen Pakets für die Architektur Ihres Computers ein Eingabeaufforderungsfenster mit erhöhten Benutzerrechten (Als Administrator ausführen). Bei den Server Core-Installationsoptionen von Windows Server 2012 R2, Windows Server 2012 oder Windows Server 2008 R2 SP1 wird das Eingabeaufforderungsfenster standardmäßig mit erhöhten Benutzerrechten geöffnet.
+1. <span data-ttu-id="cc5f6-132">Öffnen Sie nach dem Herunterladen des richtigen Pakets für die Architektur Ihres Computers ein Eingabeaufforderungsfenster mit erhöhten Benutzerrechten (Als Administrator ausführen).</span><span class="sxs-lookup"><span data-stu-id="cc5f6-132">After downloading the correct package for your computer's architecture, open a Command Prompt window with elevated user rights (Run as Administrator).</span></span> <span data-ttu-id="cc5f6-133">Bei den Server Core-Installationsoptionen von Windows Server 2012 R2, Windows Server 2012 oder Windows Server 2008 R2 SP1 wird das Eingabeaufforderungsfenster standardmäßig mit erhöhten Benutzerrechten geöffnet.</span><span class="sxs-lookup"><span data-stu-id="cc5f6-133">On the Server Core installation options of Windows Server 2012 R2 or Windows Server 2012 or Windows Server 2008 R2 SP1, Command Prompt opens with elevated user rights by default.</span></span>
 
-2. Wechseln Sie zum Ordner, in den Sie das Installationspaket für WMF 5.0 heruntergeladen oder kopiert haben.
+2. <span data-ttu-id="cc5f6-134">Wechseln Sie zum Ordner, in den Sie das Installationspaket für WMF 5.0 heruntergeladen oder kopiert haben.</span><span class="sxs-lookup"><span data-stu-id="cc5f6-134">Change directories to the folder into which you have downloaded or copied the WMF 5.0 installation package.</span></span>
 
-3. Führen Sie einen der folgenden Befehle aus:
-    - Führen Sie auf Computern mit Windows Server 2012 R2 oder Windows 8.1 x64 **Win8.1AndW2K12R2-KB3134758-x64.msu /quiet** aus.
-    - Führen Sie auf Computern mit Windows Server 2012 **W2K12-KB3134759-x64.msu /quiet** aus.
-    - Führen Sie auf Computern mit Windows Server 2008 R2 SP1 oder Windows 7 SP1 x64 **Win7AndW2K8R2-KB3134760-x64.msu /quiet** aus.
-    - Führen Sie auf Computern mit Windows 8.1 x86 **Win8.1-KB3134758-x86.msu /quiet** aus.
-    - Führen Sie auf Computern mit Windows 7 SP1 x86 **Win7-KB3134760-x86.msu /quiet** aus.
+3. <span data-ttu-id="cc5f6-135">Führen Sie einen der folgenden Befehle aus:</span><span class="sxs-lookup"><span data-stu-id="cc5f6-135">Run one of the following commands:</span></span>
+    - <span data-ttu-id="cc5f6-136">Führen Sie auf Computern mit Windows Server 2012 R2 oder Windows 8.1 x64 **Win8.1AndW2K12R2-KB3134758-x64.msu /quiet** aus.</span><span class="sxs-lookup"><span data-stu-id="cc5f6-136">On computers that are running Windows Server 2012 R2 or Windows 8.1 x64, run **Win8.1AndW2K12R2-KB3134758-x64.msu /quiet**.</span></span>
+    - <span data-ttu-id="cc5f6-137">Führen Sie auf Computern mit Windows Server 2012 **W2K12-KB3134759-x64.msu /quiet** aus.</span><span class="sxs-lookup"><span data-stu-id="cc5f6-137">On computers that are running Windows Server 2012, run **W2K12-KB3134759-x64.msu /quiet**.</span></span>
+    - <span data-ttu-id="cc5f6-138">Führen Sie auf Computern mit Windows Server 2008 R2 SP1 oder Windows 7 SP1 x64 **Win7AndW2K8R2-KB3134760-x64.msu /quiet** aus.</span><span class="sxs-lookup"><span data-stu-id="cc5f6-138">On computers that are running Windows Server 2008 R2 SP1 or Windows 7 SP1 x64, run **Win7AndW2K8R2-KB3134760-x64.msu /quiet**.</span></span>
+    - <span data-ttu-id="cc5f6-139">Führen Sie auf Computern mit Windows 8.1 x86 **Win8.1-KB3134758-x86.msu /quiet** aus.</span><span class="sxs-lookup"><span data-stu-id="cc5f6-139">On computers that are running Windows 8.1 x86, run **Win8.1-KB3134758-x86.msu /quiet**.</span></span>
+    - <span data-ttu-id="cc5f6-140">Führen Sie auf Computern mit Windows 7 SP1 x86 **Win7-KB3134760-x86.msu /quiet** aus.</span><span class="sxs-lookup"><span data-stu-id="cc5f6-140">On computers that are running Windows 7 SP1 x86, run **Win7-KB3134760-x86.msu /quiet**.</span></span>
 
-**Zusätzliche Installationshinweise für Windows Server 2008 SP1 und Windows 7 SP1**
+<span data-ttu-id="cc5f6-141">**Zusätzliche Installationshinweise für Windows Server 2008 SP1 und Windows 7 SP1**</span><span class="sxs-lookup"><span data-stu-id="cc5f6-141">**Additional Installation Notes for Windows Server 2008 SP1 and Windows 7 SP1:**</span></span>
 
-Überprüfen Sie, ob die folgenden Voraussetzungen erfüllt sind:
-- Das neueste Service Pack ist installiert.
-- [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) ist installiert.
+<span data-ttu-id="cc5f6-142">Überprüfen Sie, ob die folgenden Voraussetzungen erfüllt sind:</span><span class="sxs-lookup"><span data-stu-id="cc5f6-142">Ensure following prerequisites have been met:</span></span>
+- <span data-ttu-id="cc5f6-143">Das neueste Service Pack ist installiert.</span><span class="sxs-lookup"><span data-stu-id="cc5f6-143">Latest service pack is installed.</span></span>
+- <span data-ttu-id="cc5f6-144">[WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) ist installiert.</span><span class="sxs-lookup"><span data-stu-id="cc5f6-144">[WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) is installed</span></span>
 
-*WinRM-Abhängigkeit:* Windows PowerShell DSC (Desired State Configuration) hängt von WinRM ab. Unter Windows Server 2008 R2 und Windows 7 ist WinRM nicht standardmäßig aktiviert. Führen Sie zum Aktivieren von WinRM in einer Windows PowerShell-Sitzung mit erhöhten Benutzerrechten **Set-WSManQuickConfig** aus.
+<span data-ttu-id="cc5f6-145">*WinRM-Abhängigkeit:* Windows PowerShell DSC (Desired State Configuration) hängt von WinRM ab.</span><span class="sxs-lookup"><span data-stu-id="cc5f6-145">*WinRM Dependency:* Windows PowerShell Desired State Configuration (DSC) depends on WinRM.</span></span> <span data-ttu-id="cc5f6-146">Unter Windows Server 2008 R2 und Windows 7 ist WinRM nicht standardmäßig aktiviert.</span><span class="sxs-lookup"><span data-stu-id="cc5f6-146">WinRM is not enabled by default on Windows Server 2008 R2 and Windows 7.</span></span> <span data-ttu-id="cc5f6-147">Führen Sie zum Aktivieren von WinRM in einer Windows PowerShell-Sitzung mit erhöhten Benutzerrechten **Set-WSManQuickConfig** aus.</span><span class="sxs-lookup"><span data-stu-id="cc5f6-147">To enable WinRM, in a Windows PowerShell elevated session, run **Set-WSManQuickConfig**.</span></span>
 
 

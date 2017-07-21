@@ -9,10 +9,9 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="declare-implemented-interface" class="xliff"></a>
-# Deklarieren der implementierten Schnittstelle
+# <a name="declare-implemented-interface"></a><span data-ttu-id="ef5dc-102">Deklarieren der implementierten Schnittstelle</span><span class="sxs-lookup"><span data-stu-id="ef5dc-102">Declare Implemented Interface</span></span>
 
-Sie können implementierte Schnittstellen nach Basistypen oder unmittelbar nach einem Doppelpunkt (:) deklarieren, wenn kein Basistyp angegeben ist. Trennen Sie alle Typnamen durch Kommas. Dies entspricht der C#-Syntax.
+<span data-ttu-id="ef5dc-103">Sie können implementierte Schnittstellen nach Basistypen oder unmittelbar nach einem Doppelpunkt (:) deklarieren, wenn kein Basistyp angegeben ist.</span><span class="sxs-lookup"><span data-stu-id="ef5dc-103">You can declare implemented interfaces after base types, or immediately after a colon (:), if there is no base type specified.</span></span> <span data-ttu-id="ef5dc-104">Trennen Sie alle Typnamen durch Kommas.</span><span class="sxs-lookup"><span data-stu-id="ef5dc-104">Separate all type names by using commas.</span></span> <span data-ttu-id="ef5dc-105">Dies entspricht der C#-Syntax.</span><span class="sxs-lookup"><span data-stu-id="ef5dc-105">It’s very similar to C# syntax.</span></span>
 
 ```PowerShell
 class MyComparable : system.IComparable
