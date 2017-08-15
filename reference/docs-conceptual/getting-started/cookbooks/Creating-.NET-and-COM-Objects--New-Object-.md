@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "Erstellen von .NET- und COM-Objekten – New-Object"
 ms.assetid: 2057b113-efeb-465e-8b44-da2f20dbf603
 ms.openlocfilehash: 534e1a9a759d67cfc62ce658a7abddf02f767212
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="creating-net-and-com-objects-new-object"></a>Erstellen von .NET- und COM-Objekten (New-Object)
 Es gibt Softwarekomponenten mit .NET Framework- und COM-Schnittstellen, mit denen Sie viele Systemverwaltungsaufgaben ausführen können. Mit Windows PowerShell können Sie diese Komponenten verwenden und sind somit nicht auf die Aufgaben beschränkt, die mithilfe von Cmdlets ausgeführt werden können. Viele der Cmdlets in der ursprünglichen Version von Windows PowerShell funktionieren nicht auf Remotecomputern. Wir zeigen, wie diese Einschränkung beim Verwalten von Ereignisprotokollen mithilfe der .NET Framework-Klasse **System.Diagnostics.EventLog** direkt aus Windows PowerShell heraus umgangen werden können.

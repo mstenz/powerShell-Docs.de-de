@@ -1,22 +1,21 @@
 ---
-ms.date: 2017-06-12
+ms.date: 2017-06-12T00:00:00.000Z
 author: JKeithB
 ms.topic: reference
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 2d629d98b59c455011f4a5d955ef666218ae2f3f
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: ce60b240045acf538edae1a08007971e538588ca
+ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 07/27/2017
 ---
-<a id="test-dscconfiguration-cmdlet-supports-reference-configurations" class="xliff"></a>
-# Das Cmdlet „Test-DscConfiguration“ unterstützt Referenzkonfigurationen
+# <a name="test-dscconfiguration-cmdlet-supports-reference-configurations"></a>Das Cmdlet „Test-DscConfiguration“ unterstützt Referenzkonfigurationen
 
 Das Cmdlet „Test-DscConfiguration“ wurde so aktualisiert, dass es das Testen des gewünschten Konfigurationszustands eines oder mehrerer Zielknoten zulässt, indem zum Vergleich ein Referenzkonfigurationsdokument angegeben wird.
 
 Der folgende neue Parameter verwendet DSC-Konfigurationen in dem Pfad, der angegeben wird, um jede Konfiguration auf den angegebenen Zielknoten zu testen, ohne sie anzuwenden. Wie bei „Start-DscConfiguration“ und anderen DSC-Cmdlets dient der Name der jeweiligen MOF-Datei zum Bestimmen des Zielknotens, auf dem die Konfiguration getestet werden soll. 
 
-```PowerShell
+```powershell
 Test-DscConfiguration   [-Path] <string> 
                         [[-ComputerName] <string[]>] 
                         [-Credential <pscredential>] 
@@ -33,7 +32,7 @@ Test-DscConfiguration   [-Path] <string>
 
 Der folgende neue Parameter verwendet eine einzelne DSC-Konfiguration, um die Konfiguration auf den angegebenen Zielknoten zu testen, ohne sie anzuwenden. 
 
-```PowerShell
+```powershell
 Test-DscConfiguration   -ReferenceConfiguration <string> 
                         [[-ComputerName] <string[]>]
                         [-Credential <pscredential>] 

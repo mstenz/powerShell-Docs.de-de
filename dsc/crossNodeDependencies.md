@@ -1,17 +1,16 @@
 ---
-ms.date: 2017-06-12
+ms.date: 2017-06-12T00:00:00.000Z
 author: eslesar
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: "Angeben knotenübergreifender Abhängigkeiten"
-ms.openlocfilehash: dcdf9f8ef4b74d23bd083767db2cc4aafc0ee83b
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 885c130fb050629aac4c072e18a147d77b9deb8f
+ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 07/27/2017
 ---
-<a id="specifying-cross-node-dependencies" class="xliff"></a>
-# Angeben knotenübergreifender Abhängigkeiten
+# <a name="specifying-cross-node-dependencies"></a>Angeben knotenübergreifender Abhängigkeiten
 
 > Gilt für: Windows PowerShell 5.0
 
@@ -21,8 +20,7 @@ DSC bietet spezielle Ressourcen **WaitForAll**, **WaitForAny** und **WaitForSome
 * **WaitForAny**: Ist erfolgreich, wenn die angegebene Ressource auf mindestens einem der Zielknoten, die in der **NodeName**-Eigenschaft definiert sind, den gewünschten Zustand hat.
 * **WaitForSome**: Gibt zusätzlich zu einer **NodeName**-Eigenschaft eine **NodeCount**-Eigenschaft an. Die Ressource ist erfolgreich, wenn sich die Ressource auf einer Mindestanzahl von Knoten (angegeben durch **NodeCount**), die von der **NodeName**-Eigenschaft definiert sind, im gewünschten Zustand befindet. 
 
-<a id="using-waitforxxxx-resources" class="xliff"></a>
-## Verwenden von WaitForXXXX-Ressourcen
+## <a name="using-waitforxxxx-resources"></a>Verwenden von WaitForXXXX-Ressourcen
 
 Um die **WaitForXXXX**-Ressourcen zu verwenden, erstellen Sie einen Ressourcenblock des Ressourcentyps, der die DSC-Ressource und Knoten angibt, auf die gewartet werden soll. Dann verwenden Sie die **DependsOn**-Eigenschaft in allen anderen Ressourcenblöcken Ihrer Konfiguration und warten darauf, dass die im **WaitForXXXX**-Knoten angegebenen Bedingungen erfolgreich erfüllt werden.
 
@@ -34,7 +32,7 @@ Configuration JoinDomain
 {
     Import-DscResource -Module xComputerManagement, xActiveDirectory
 
-    Node myPC
+    Node myDC
     {
         WindowsFeature InstallAD
         {
@@ -78,8 +76,7 @@ Configuration JoinDomain
 
 >**Hinweis:** Standardmäßig führen die „WaitForXXXX“-Ressourcen einen Versuch durch und verursachen dann einen Fehler. Auch wenn dies nicht erforderlich ist, sollten Sie doch in der Regel ein Wiederholungsintervall sowie eine Anzahl von Wiederholungen angeben.
 
-<a id="see-also" class="xliff"></a>
-## Weitere Informationen
+## <a name="see-also"></a>Weitere Informationen
 * [DSC-Konfigurationen](configurations.md)
 * [DSC-Ressourcen](resources.md)
 * [Konfigurieren des lokalen Konfigurations-Managers](metaConfig.md)

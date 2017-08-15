@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: Microsoft.WSMan.Management-Modul
 ms.assetid: 687cb04d-541c-44f6-a896-75c9686cb04e
 ms.openlocfilehash: 68bd3e0240c3a3bc6ff9477742483635bb0cd5b5
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="microsoftwsmanmanagement-module"></a>Microsoft.WSMan.Management-Modul
 Dieser Abschnitt enthält die Hilfethemen für das **Microsoft.WSMan.Management**-Modul, das den [WSMan-Anbieter [v3]](https://technet.microsoft.com/en-us/library/4c3d8d36-4f7a-4211-996f-64110e4b2eb7) und Cmdlets enthält, die die Web Services for Management (WS-Management) und die Windows Remoteverwaltung (WinRM) verwalten. Das **Microsoft.WSMan.Management**-Modul wird mit Windows PowerShell installiert.

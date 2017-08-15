@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: ISE-Modul
 ms.assetid: fd03c995-4cdb-4d14-a315-9cfbd1e81b10
 ms.openlocfilehash: 5305175a7f2f900825a204105818e55381cfa93e
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="ise-module"></a>ISE-Modul
 Dieser Abschnitt enthält die Hilfethemen für das **ISE**-Modul, das Befehle enthält, die Sie in Windows PowerShell Integrated Scripting Environment (ISE) verwenden können. Dieses **ISE**-Modul wird mit Windows PowerShell installiert.

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "Tastenkombinationen für Windows PowerShell ISE"
 ms.assetid: 8328b946-0f02-4ef4-ac28-2743a1b4043b
 ms.openlocfilehash: 21c4b43b1ab94e2b533413362319ec42ac8a15aa
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Tastenkombinationen für Windows PowerShell ISE
 Verwenden Sie die folgenden Tastenkombinationen zum Ausführen von Aktionen in Windows PowerShell® Integrated Scripting Environment (ISE). Windows PowerShell ISE ist als Bestandteil von Windows Server- und Windows-Client-Betriebssystemen verfügbar, kann aber auch unter einigen älteren Windows-Betriebssystemen als Teil des [Windows Management Framework 4.0-Downloadpakets](http://go.microsoft.com/fwlink/?LinkID=293881) installiert werden.

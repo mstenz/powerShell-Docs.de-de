@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "Arbeiten mit Registrierungsschlüsseln"
 ms.assetid: 91bfaecd-8684-48b4-ad86-065dfe6dc90a
 ms.openlocfilehash: efb2c016afa2212c2907c0740ad26c4e4cddd3af
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="working-with-registry-keys"></a>Arbeiten mit Registrierungsschlüsseln
 Da Registrierungsschlüssel Elemente auf Windows PowerShell-Laufwerken sind, gleicht deren Verwendung der Arbeit mit Dateien und Ordnern. Ein wichtiger Unterschied besteht darin, dass jedes Element auf einem registrierungsbasierten Windows PowerShell-Laufwerk ein Container ist, genau wie ein Ordner auf einem Dateisystemlaufwerk. Registrierungseinträge und deren zugehörige Werte sind jedoch Eigenschaften der Elemente, nicht unterschiedliche Elemente.

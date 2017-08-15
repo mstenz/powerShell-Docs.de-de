@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: PSScheduledJob-Modul
 ms.assetid: 9ab43b8d-3f4d-48fe-a274-9116f1bc4b60
 ms.openlocfilehash: 54f5cde176843b75c5f5de728144d748895492ec
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="psscheduledjob-module"></a>PSScheduledJob-Modul
 Dieser Abschnitt enthält die Hilfethemen für das **PSScheduledJob**-Modul, das geplante Aufträge in Windows PowerShell verwaltet. Diese Modul wird mit Windows PowerShell installiert.

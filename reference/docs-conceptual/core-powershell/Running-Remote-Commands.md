@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "Ausführen von Remotebefehlen"
 ms.assetid: d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
-ms.openlocfilehash: a8645a348ebc25533f60cd049ed5872e49565b96
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.openlocfilehash: 755c3c4ac93219c1d0f75394d1c900e8b5fea4be
+ms.sourcegitcommit: ced46469e064736eeb1f5608abbc792ec69bdc92
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/08/2017
 ---
 # <a name="running-remote-commands"></a>Ausführen von Remotebefehlen
 Mit einem einzigen Windows PowerShell-Befehl können Sie Befehle auf einem oder Hunderten von Computern ausführen. Windows PowerShell unterstützt das Remotecomputing mithilfe verschiedener Technologien, unter anderem WMI, RPC und WS-Management.
@@ -27,7 +27,7 @@ Zu diesem Cmdlets zählen:
 
 -   [Get-HotFix](https://technet.microsoft.com/en-us/library/e1ef636f-5170-4675-b564-199d9ef6f101)
 
--   [Get-Process](https://technet.microsoft.com/en-us/library/dd347630.aspx)
+ -   [Get-Process](https://technet.microsoft.com/en-us/library/dd347630.aspx)
 
 -   [Get-Service](https://technet.microsoft.com/en-us/library/dd347591.aspx)
 
@@ -72,7 +72,7 @@ Zum Ausführen eines Befehls auf einem oder mehreren Remotecomputern verwenden S
 Um beispielsweise einen [Get-UICulture](https://technet.microsoft.com/en-us/library/dd347742.aspx)-Befehl auf den Remotecomputern „Server01“ und „Server02“ auszuführen, geben Sie Folgendes ein:
 
 ```
-Invoke-Command -ComputerName Server01, Server02 {Get-UICulture}
+Invoke-Command -ComputerName Server01, Server02 -ScriptBlock {Get-UICulture}
 ```
 
 Die Ausgabe wird an den Computer zurückgegeben.
@@ -83,7 +83,6 @@ LCID    Name     DisplayName               PSComputerName
 1033    en-US    English (United States)   server01.corp.fabrikam.com
 1033    en-US    English (United States)   server02.corp.fabrikam.com
 ```
-
 Weitere Informationen zum Cmdlet „Invoke-Command“ finden Sie unter [Invoke-Command](https://technet.microsoft.com/en-us/library/22fd98ba-1874-492e-95a5-c069467b8462).
 
 ### <a name="run-a-script"></a>Ausführen eines Skripts
@@ -117,14 +116,14 @@ Invoke-Command -Session $s {$h = Get-HotFix}
 Sie können die Daten in der Variablen „$h“ jetzt in nachfolgenden Befehle verwenden, wie z. B. dem folgenden. Die Ergebnisse werden auf dem lokalen Computer angezeigt.
 
 ```
-Invoke-Command -Session $s {$h | where {$_.installedby -ne "NTAUTHORITY\SYSTEM"}}
+Invoke-Command -Session $s {$h | where {$_.InstalledBy -ne "NTAUTHORITY\SYSTEM"}}
 ```
 
 ### <a name="advanced-remoting"></a>Erweitertes Remoting
 Dies sind nur die grundlegenden Möglichkeiten, die die Remoteverwaltung von Windows PowerShell bietet. Mithilfe von Cmdlets, die mit Windows PowerShell installiert werden, können Sie Remotesitzungen sowohl von lokaler Seite als auch von Remoteseite aus einrichten und konfigurieren, angepasste und eingeschränkte Sitzungen erstellen, Benutzern über eine Remotesitzung den Import von Befehlen ermöglichen, die tatsächlich implizit in der Remotesitzung ausgeführt werden, die Sicherheit einer Remotesitzung konfigurieren und vieles mehr.
 
 Um die Remotekonfiguration zu vereinfachen, umfasst Windows PowerShell einen WSMan-Anbieter. Das vom Anbieter erstellte Laufwerk „WSMAN:“ ermöglicht Ihnen, durch eine Hierarchie von Konfigurationseinstellungen auf dem lokalen Computer und den Remotecomputern zu navigieren.
-Weitere Informationen zum WSMan-Anbieter finden Sie unter [WSMan Provider](https://technet.microsoft.com/en-us/library/dd819476.aspx) und   [About_WS-Management_Cmdlets](https://technet.microsoft.com/en-us/library/dd819481.aspx), oder indem Sie in der Windows PowerShell-Konsole „Get-Help wsman“ eingeben.
+Weitere Informationen zum WSMan-Anbieter finden Sie unter [WSMan Provider](https://technet.microsoft.com/en-us/library/dd819476.aspx) und [About_WS-Management_Cmdlets](https://technet.microsoft.com/en-us/library/dd819481.aspx), oder indem Sie in der Windows PowerShell-Konsole „Get-Help wsman“ eingeben.
 
 Weitere Informationen finden Sie unter:
 - [Häufig gestellte Fragen zu Remote](https://technet.microsoft.com/en-us/library/dd315359.aspx)

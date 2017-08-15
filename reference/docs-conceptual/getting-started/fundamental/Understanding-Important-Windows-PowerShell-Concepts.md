@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: Grundlegendes zu wichtigen Windows PowerShell-Konzepten
 ms.assetid: 3e601e38-4520-4578-a48d-b6779f1d35ee
 ms.openlocfilehash: 1ffcfefcc7ffc7c98ba4d1e3ccc9a59cd9b0baac
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="understanding-important-windows-powershell-concepts"></a>Grundlegendes zu wichtigen Windows PowerShell-Konzepten
 Für Windows PowerShell wurden Konzepte aus vielen verschiedenen Umgebungen integriert. Mit mehreren davon sind Personen vertraut, die Erfahrung mit bestimmten Shells oder Programmierumgebungen haben, doch nur sehr wenige kennen alle. Ein Blick auf einige dieser Konzepte ermöglicht eine nützliche Übersicht über die Shell.

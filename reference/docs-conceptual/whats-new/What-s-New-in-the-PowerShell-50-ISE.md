@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: Neuerungen bei der Windows PowerShell 5.0 ISE
 ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
 ms.openlocfilehash: e772c31ae407e73a96364ffedf98057760037836
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="what39s-new-in-the-windows-powershell-ise"></a>Neuerungen bei der Windows PowerShell ISE
 In diesem Thema werden die neuen und aktualisierten Features vorgestellt, die in Versionen von Windows PowerShell® Integrated Scripting Environment (ISE) eingeführt wurden.

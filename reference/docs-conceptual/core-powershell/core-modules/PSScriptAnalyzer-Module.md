@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: PSScriptAnalyzer-Modul
 ms.assetid: 8734c1e1-898e-4fc1-8fc0-d1ad7d3cf077
 ms.openlocfilehash: 808d2e2766aeb46cbc58add547dcca64170bb036
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="psscriptanalyzer-module"></a>PSScriptAnalyzer-Modul
 Dieser Abschnitt enthält die Hilfethemen für das **PSScriptAnalyzer**-Modul, das Sie verwenden können, um Skripts und Module in Windows PowerShell® auf Probleme zu überprüfen. Diese Modul wird mit Windows PowerShell installiert.

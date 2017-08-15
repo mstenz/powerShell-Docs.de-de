@@ -1,21 +1,19 @@
 ---
-ms.date: 2017-06-12
+ms.date: 2017-06-12T00:00:00.000Z
 author: eslesar
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: "Optionen für Anmeldeinformationen in den Konfigurationsdaten"
-ms.openlocfilehash: 7fadce447c418b229a534e92d12bc2131365a37a
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: ec4eeb8e519158b2bf929b949e381cdba54f8928
+ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 07/27/2017
 ---
-<a id="credentials-options-in-configuration-data" class="xliff"></a>
-# Optionen für Anmeldeinformationen in den Konfigurationsdaten
+# <a name="credentials-options-in-configuration-data"></a>Optionen für Anmeldeinformationen in den Konfigurationsdaten
 >Gilt für: Windows PowerShell 5.0
 
-<a id="plain-text-passwords-and-domain-users" class="xliff"></a>
-## Nur-Text-Kennwörter und Domänenbenutzer
+## <a name="plain-text-passwords-and-domain-users"></a>Nur-Text-Kennwörter und Domänenbenutzer
 
 DSC-Konfigurationen mit unverschlüsselten Anmeldeinformationen generieren eine Fehlermeldung zu Nur-Text-Kennwörtern.
 DSC generiert außerdem bei Verwendung von Domänenanmeldeinformationen eine Warnung.
@@ -125,8 +123,7 @@ unencryptedPasswordDemo -ConfigurationData $ConfigurationData
 Start-DscConfiguration ./unencryptedPasswordDemo -verbose -wait -force
 ```
 
-<a id="handling-credentials-in-dsc" class="xliff"></a>
-## Behandeln von Anmeldeinformationen in DSC
+## <a name="handling-credentials-in-dsc"></a>Behandeln von Anmeldeinformationen in DSC
 
 DSC-Konfigurationsressourcen werden standardmäßig als `Local System` ausgeführt.
 Einige Ressourcen benötigen jedoch Anmeldeinformationen, z. B. wenn die `Package`-Ressource Software unter einem bestimmten Benutzerkonto installieren muss.
@@ -139,7 +136,7 @@ Neuere und benutzerdefinierte Ressourcen können diese automatische Eigenschaft 
 
 Um die verfügbaren Eigenschaften für Anmeldeinformationen für eine Ressource zu finden, verwenden Sie entweder `Get-DscResource -Name ResourceName -Syntax` oder Intellisense in der ISE (`CTRL+SPACE`).
 
-```PowerShell
+```powershell
 PS C:\> Get-DscResource -Name Group -Syntax
 Group [String] #ResourceName
 {
@@ -162,8 +159,7 @@ Allerdings verwendet die Ressource nur die Eigenschaft `Credential`.
 
 Weitere Informationen über die Eigenschaft `PsDscRunAsCredential` finden Sie unter [Ausführen von DSC mit Benutzeranmeldeinformationen](runAsUser.md).
 
-<a id="example-the-group-resource-credential-property" class="xliff"></a>
-## Beispiel: Die Eigenschaft „Credential“ der Ressource „Group“
+## <a name="example-the-group-resource-credential-property"></a>Beispiel: Die Eigenschaft „Credential“ der Ressource „Group“
 
 Der DSC-Dienst wird unter `Local System` ausgeführt, sodass er bereits über Berechtigungen zum Ändern lokaler Benutzer und Gruppen verfügt.
 Wenn es sich bei dem hinzugefügten Member um ein lokales Konto handelt, sind keine Anmeldeinformationen erforderlich.
@@ -173,12 +169,11 @@ Anonyme Abfragen an Active Directory sind nicht zulässig.
 Die Eigenschaft `Credential` der Ressource `Group`ist das zum Abfragen von Active Directory verwendete Domänenkonto.
 In den meisten Fällen könnte es sich dabei um ein allgemeines Benutzerkonto handeln, da Benutzer standardmäßig über *Lesezugriff* auf die meisten Objekte in Active Directory verfügen.
 
-<a id="example-configuration" class="xliff"></a>
-## Beispielkonfiguration
+## <a name="example-configuration"></a>Beispielkonfiguration
 
 Der folgende Beispielcode verwendet DSC zum Auffüllen einer lokalen Gruppen mit einem Domänenbenutzer:
 
-```PowerShell
+```powershell
 Configuration DomainCredentialExample
 {
     param
@@ -229,8 +224,7 @@ In diesem Beispiel gibt es zwei Probleme:
 1.  Ein Fehler zeigt an, dass Nur-Text-Kennwörter nicht empfohlen werden.
 2.  Eine Warnung rät davon ab, Domänenanmeldeinformationen zu verwenden.
 
-<a id="psdscallowplaintextpassword" class="xliff"></a>
-## PsDscAllowPlainTextPassword
+## <a name="psdscallowplaintextpassword"></a>PsDscAllowPlainTextPassword
 
 Die erste Fehlermeldung enthält eine URL zur Dokumentation.
 Unter diesem Link wird erläutert, wie Kennwörtern mit einer [ConfigurationData](https://msdn.microsoft.com/en-us/powershell/dsc/configdata)-Struktur und einem Zertifikat verschlüsselt werden.
@@ -238,7 +232,7 @@ Weitere Informationen zu Zertifikaten und DSC [erhalten Sie in diesen Beitrag](h
 
 Um ein Nur-Text-Kennwort zu erzwingen, muss im Konfigurationsdatenabschnitt der Ressource das Schlüsselwort `PsDscAllowPlainTextPassword` wie folgt enthalten sein:
 
-```PowerShell
+```powershell
 Configuration DomainCredentialExample
 {
     param
@@ -275,8 +269,7 @@ DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 
 **Microsoft empfiehlt, Nur-Text-Kennwörter aufgrund des hohen Sicherheitsrisikos zu vermeiden.**
 
-<a id="domain-credentials" class="xliff"></a>
-## Domänenanmeldeinformationen
+## <a name="domain-credentials"></a>Domänenanmeldeinformationen
 
 Wenn Sie das Beispielkonfigurationsskript erneut ausführen (mit oder ohne Verschlüsselung), wird weiterhin die Warnung generiert, dass die Verwendung von Anmeldeinformationen eines Domänenkontos nicht empfohlen wird.
 Durch Verwendung eines lokalen Kontos wird verhindert, dass Domänenanmeldeinformationen, die auf anderen Servern verwendet werden könnten, offengelegt werden.
@@ -286,13 +279,12 @@ Durch Verwendung eines lokalen Kontos wird verhindert, dass Domänenanmeldeinfor
 Enthält die Eigenschaft `Username` der Anmeldeinformationen einen „\'“ oder ein „@“, behandelt DSC das Konto als Domänenkonto.
 Ausnahmen machen „Localhost“, „127.0.0.1“ und „:: 1“ im Domänenteil des Benutzernamens.
 
-<a id="psdscallowdomainuser" class="xliff"></a>
-## PSDscAllowDomainUser
+## <a name="psdscallowdomainuser"></a>PSDscAllowDomainUser
 
 Im oben stehenden Beispiel zur DSC-Ressourcen `Group` ist zum Abfragen einer Active Directory-Domäne ein Domänenkonto *erforderlich*.
 Fügen Sie in diesem Fall die Eigenschaft `PSDscAllowDomainUser` wie folgt zum Block `ConfigurationData` hinzu:
 
-```PowerShell
+```powershell
 $cd = @{
     AllNodes = @(
         @{

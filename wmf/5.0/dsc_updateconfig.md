@@ -1,16 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 2017-06-12T00:00:00.000Z
 author: JKeithB
 ms.topic: reference
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 410fa4b6c6d3e2708da78414cbb9b80dd3ca1387
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: f2ddde78f436e6f03f521a9a8246dbda93e7a57a
+ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 07/27/2017
 ---
-<a id="on-demand-pull-of-dsc-configurations" class="xliff"></a>
-# Bedarfsgesteuerter PULL-Abruf von DSC-Konfigurationen
+# <a name="on-demand-pull-of-dsc-configurations"></a>Bedarfsgesteuerter PULL-Abruf von DSC-Konfigurationen
 
 Das neue Cmdlet „Update-DscConfiguration“ löst auf den Pullservern, die in der Metakonfiguration definiert sind, einen Pullvorgang aus. Das Verhalten wird häufig als „Jetzt per Pull abrufen“ bezeichnet. 
 
@@ -23,7 +22,7 @@ Nach seinem Auslösen erfolgt der Pullvorgang genau so, wie er bei Auslösen gem
 
 **Hinweis:** Wenn die Metakonfiguration „RefreshMode = Push“ lautet, wird von diesem Cmdlet ein Fehler zurückgegeben, weshalb dieses Cmdlet nichts unternimmt, wenn sich ein Zielknoten im Pushmodus befindet.
 
-```PowerShell
+```powershell
 Update-DscConfiguration     [[-ComputerName] <string[]>] 
                             [-Wait]
                             [-Force] 

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
-title: 'So wird&quot;s gemacht: Debuggen von Skripts in Windows PowerShell ISE'
+title: 'So wird''s gemacht: Debuggen von Skripts in Windows PowerShell ISE'
 ms.assetid: 6dc6d8f9-8978-46e9-a92f-169af37e2817
 ms.openlocfilehash: db8847e2cc9abeec729ed8d939fc170529a93846
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="how-to-debug-scripts-in-windows-powershell-ise"></a>So wird's gemacht: Debuggen von Skripts in Windows PowerShell ISE
 In diesem Thema wird beschrieben, wie das Debuggen von Skripts auf einem lokalen Computer mithilfe der visuellen Debugfunktionen von Windows PowerShell® Integrated Scripting Environment (ISE) erfolgt.

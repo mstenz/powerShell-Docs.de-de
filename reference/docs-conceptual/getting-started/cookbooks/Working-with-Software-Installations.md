@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: Arbeiten mit Softwareinstallationen
 ms.assetid: 51a12fe9-95f6-4ffc-81a5-4fa72a5bada9
 ms.openlocfilehash: 2078376a8be19c9ff8ecc44183eb89f14bc388ed
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="working-with-software-installations"></a>Arbeiten mit Softwareinstallationen
 Auf Anwendungen, die für die Verwendung von Windows Installer entwickelt wurden, kann über die WMI-Klasse **Win32_Product** zugegriffen werden, aber nicht alle heute verfügbaren Anwendungen verwenden den Windows Installer. Da Windows Installer eine breite Palette von Standardverfahren für die Arbeit mit installierbaren Anwendungen bereitstellt, konzentrieren wir uns in erster Linie auf diese Anwendungen. Anwendungen, die alternative Setuproutinen verwenden, werden im Allgemeinen nicht von Windows Installer verwaltet. Spezifische Verfahren für die Arbeit mit diesen Anwendungen hängen von der Installationssoftware und Entscheidungen des Anwendungsentwicklers ab.
