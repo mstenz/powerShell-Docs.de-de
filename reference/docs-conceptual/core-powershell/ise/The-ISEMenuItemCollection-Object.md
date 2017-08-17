@@ -4,10 +4,10 @@ keywords: powershell,cmdlet
 title: Das ISEMenuItemCollection-Objekt
 ms.assetid: 0c0f5484-3320-408e-8534-5bd1c8e48512
 ms.openlocfilehash: 7ce9132021d4d5e755503e0adb355beb388a625a
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="the-isemenuitemcollection-object"></a>Das ISEMenuItemCollection-Objekt
   Ein **ISEMenuItemCollection**-Objekt ist eine Sammlung von **ISEMenuItem**-Objekten. Es ist eine Instanz der Microsoft.PowerShell.Host.ISE.ISEMenuItemCollection-Klasse. Ein Beispiel ist das **$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus**-Objekt, das verwendet wird, um das Menü **Add-On** in Windows PowerShell® Integrated Scripting Environment (ISE) anzupassen.
@@ -19,17 +19,13 @@ ms.lasthandoff: 06/08/2017
 
  Fügt der Sammlung ein Menüelement hinzu.
 
- **DisplayName**
- Der Anzeigename des hinzuzufügenden Menüs.
+ **DisplayName** Der Anzeigename des hinzuzufügenden Menüs.
 
- **Action**
- Das **System.Management.Automation.ScriptBlock**-Objekt, das die diesem Menüelement zugeordnete Aktion angibt.
+ **Action** Das **System.Management.Automation.ScriptBlock**-Objekt, das die diesem Menüelement zugeordnete Aktion angibt.
 
- **Shortcut**
- Die Tastenkombination für diese Aktion.
+ **Shortcut** Die Tastenkombination für diese Aktion.
 
- **Returns**
- Das ISEMenuItem-Objekt, das soeben hinzugefügt wurde.
+ **Returns** Das ISEMenuItem-Objekt, das soeben hinzugefügt wurde.
 
 ```
 # Create an Add-ons menu with an fast access key and a shortcut.

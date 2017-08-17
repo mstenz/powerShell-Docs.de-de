@@ -1,16 +1,12 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: Installieren und Verwenden von Windows PowerShell Web Access
-ms.technology: powershell
-ms.openlocfilehash: f2a908b670d1a0aba3ca0912aed0ff7e3c5bba1f
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: a860f7c22829da46f0458ea729fa0afd1fe4fb6f
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 08/03/2017
 ---
 #  <a name="install-and-use-windows-powershell-web-access"></a>Installieren und Verwenden von Windows PowerShell Web Access
 
@@ -38,7 +34,7 @@ Dieses Thema enthält keine ausführliche Anleitung zum Webserverbetrieb (IIS), 
 
 Das folgende Diagramm zeigt die Funktionsweise von Windows PowerShell Web Access.
 
-<span><img src="https://i-technet.sec.s-msft.com/dynimg/IC564303.jpeg" title="Windows PowerShell Web Access diagram" alt="Windows PowerShell Web Access diagram" id="ee15fa8f-ce13-49e5-933d-514f6d60a2b1" /></span>
+<span><img src="https://i-technet.sec.s-msft.com/dynimg/IC564303.jpeg" title="Windows PowerShell Web Access-Diagramm" alt="Windows PowerShell Web Access diagram" id="ee15fa8f-ce13-49e5-933d-514f6d60a2b1" /></span>
 
 Inhalte dieses Themas:
 
@@ -54,8 +50,8 @@ Inhalte dieses Themas:
 
 <a href="" id="BKMK_reqs"></a>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Anforderungen für die Ausführung von Windows PowerShell Web Access</span></a>
-<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_0" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Ausblenden"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Anforderungen für das Ausführen von Windows PowerShell Web Access</span></a>
+<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_0" class="LW_CollapsibleArea_Anchor_Img" title="Klicken Sie mit der rechten Maustaste, um den Link für diesen Abschnitt zu kopieren und zu teilen"></a>
 
 ------------------------------------------------------------------------
 
@@ -65,8 +61,8 @@ Mithilfe von Windows PowerShell Web Access können Remotebenutzer auf Computer d
 
 <a href="" id="BKMK_browser"></a>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Unterstützung für Browser und Clientgeräte</span></a>
-<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Ausblenden"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Browser and client device support (Unterstützung für Browser und Clientgeräte)</span></a>
+<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="Klicken Sie mit der rechten Maustaste, um den Link für diesen Abschnitt zu kopieren und zu teilen"></a>
 
 ------------------------------------------------------------------------
 
@@ -74,7 +70,7 @@ Windows PowerShell Web Access unterstützt die folgenden Internetbrowser. Obwohl
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Unterstützte Desktopcomputerbrowser</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Ausblenden"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Unterstützte Desktopcomputerbrowser</span></a>
 
 ------------------------------------------------------------------------
 
@@ -90,7 +86,7 @@ Windows PowerShell Web Access unterstützt die folgenden Internetbrowser. Obwohl
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Mobile Geräte oder Browser, für die Minimaltests durchgeführt wurden</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Ausblenden"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Mobile Geräte oder Browser, für die Minimaltests durchgeführt wurden</span></a>
 
 ------------------------------------------------------------------------
 
@@ -104,7 +100,7 @@ Windows PowerShell Web Access unterstützt die folgenden Internetbrowser. Obwohl
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Browseranforderungen</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Ausblenden"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Browseranforderungen</span></a>
 
 ------------------------------------------------------------------------
 
@@ -118,8 +114,8 @@ Browser müssen folgende Anforderungen erfüllen, um die webbasierte Windows Pow
 
 <a href="" id="BKMK_recm"></a>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Empfohlene (schnelle) Bereitstellung</span></a>
-<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_2" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Ausblenden"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Recommended (quick) deployment (Empfohlene (schnelle) Bereitstellung)</span></a>
+<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_2" class="LW_CollapsibleArea_Anchor_Img" title="Klicken Sie mit der rechten Maustaste, um den Link für diesen Abschnitt zu kopieren und zu teilen"></a>
 
 ------------------------------------------------------------------------
 
@@ -134,7 +130,7 @@ Sie können das Windows PowerShell Web Access-Gateway auf einem Server mit Windo
 <a href="" id="BKMK_step1"></a>
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Schritt 1: Installieren von Windows PowerShell Web Access</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Ausblenden"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Schritt 1: Installieren von Windows PowerShell Web Access</span></a>
 
 ------------------------------------------------------------------------
 
@@ -197,7 +193,7 @@ Sie können das Windows PowerShell Web Access-Gateway auf einem Server mit Windo
 <a href="" id="BKMK_step2"></a>
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Schritt 2: Konfigurieren des Gateways</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Ausblenden"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Schritt 2: Konfigurieren des Gateways</span></a>
 
 ------------------------------------------------------------------------
 
@@ -211,7 +207,7 @@ Sie können die Konfiguration der Windows PowerShell Web Access-Webanwendung dur
 </colgroup>
 <thead>
 <tr class="header">
-<th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC17938.jpeg" title="System_CAPS_security" alt="System_CAPS_security" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-security" /></span><span class="alertTitle"> Sicherheitshinweis </span></th>
+<th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC17938.jpeg" title="System_CAPS_security" alt="System_CAPS_security" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-security" /></span><span class="alertTitle">Sicherheitshinweis </span></th>
 </tr>
 </thead>
 <tbody>
@@ -231,7 +227,7 @@ Sie können die Konfiguration der Windows PowerShell Web Access-Webanwendung dur
 
     -   Klicken Sie auf dem Windows-Desktop mit der rechten Maustaste auf der Taskleiste auf **Windows PowerShell**.
 
-    -   Klicken Sie auf der Windows-Startseite** **auf **Windows PowerShell**.
+    -   Klicken Sie auf der Windows-Startseite**** auf **Windows PowerShell**.
 
 2.  Geben Sie Folgendes ein, und drücken Sie anschließend die **EINGABETASTE**.
 
@@ -291,7 +287,7 @@ Sie können die Konfiguration der Windows PowerShell Web Access-Webanwendung dur
 
     -   Klicken Sie auf dem Windows-Desktop mit der rechten Maustaste auf der Taskleiste auf **Windows PowerShell**.
 
-    -   Klicken Sie auf der Windows-Startseite** **auf **Windows PowerShell**.
+    -   Klicken Sie auf der Windows-Startseite**** auf **Windows PowerShell**.
 
 2.  Geben Sie Folgendes ein, und drücken Sie anschließend die **EINGABETASTE**.
 
@@ -311,7 +307,7 @@ Sie können die Konfiguration der Windows PowerShell Web Access-Webanwendung dur
 
     -   Starten Sie auf dem Windows-Desktop den Server-Manager, indem Sie in der Windows-Taskleiste auf **Server-Manager** klicken. Klicken Sie im Menü **Tools** im Server-Manager auf **Internetinformationsdienste-Manager (IIS)**.
 
-    -   Klicken Sie auf der Windows-Startseite** **auf **Server-Manager**.
+    -   Klicken Sie auf der Windows-Startseite**** auf **Server-Manager**.
 
 4.  Erweitern Sie im IIS-Manager-Strukturbereich den Knoten für den Server, auf dem Windows PowerShell Web Access installiert ist, bis der Ordner **Sites** sichtbar ist. Erweitern Sie den Ordner **Sites**.
 
@@ -344,7 +340,7 @@ Sie können die Konfiguration der Windows PowerShell Web Access-Webanwendung dur
 <a href="" id="BKMK_step3"></a>
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Schritt 3: Konfigurieren einer restriktiven Autorisierungsregel</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Ausblenden"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Schritt 3: Konfigurieren einer restriktiven Autorisierungsregel</span></a>
 
 ------------------------------------------------------------------------
 
@@ -380,8 +376,8 @@ Nachdem Sie eine Autorisierungsregel konfiguriert haben, können sich autorisier
 
 <a href="" id="BKMK_custom"></a>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Benutzerdefinierte Bereitstellung</span></a>
-<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_3" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Ausblenden"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Benutzerdefinierte Bereitstellung</span></a>
+<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_3" class="LW_CollapsibleArea_Anchor_Img" title="Klicken Sie mit der rechten Maustaste, um den Link für diesen Abschnitt zu kopieren und zu teilen"></a>
 
 ------------------------------------------------------------------------
 
@@ -390,7 +386,7 @@ Sie können das Windows PowerShell Web Access-Gateway auf einem Server mit Windo
 <a href="" id="BKMK_custom1"></a>
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Schritt 1: Installieren von Windows PowerShell Web Access</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Ausblenden"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Schritt 1: Installieren von Windows PowerShell Web Access</span></a>
 
 ------------------------------------------------------------------------
 
@@ -400,7 +396,7 @@ Sie können das Windows PowerShell Web Access-Gateway auf einem Server mit Windo
 
     -   Starten Sie auf dem Windows-Desktop den Server-Manager, indem Sie in der Windows-Taskleiste auf **Server-Manager** klicken.
 
-    -   Klicken Sie auf der Windows-Startseite** **auf **Server-Manager**.
+    -   Klicken Sie auf der Windows-Startseite**** auf **Server-Manager**.
 
 2.  Klicken Sie im Menü **Verwalten** auf **Rollen und Funktionen hinzufügen**.
 
@@ -434,7 +430,7 @@ Sie können das Windows PowerShell Web Access-Gateway auf einem Server mit Windo
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Schritt 2: Konfigurieren des Gateways</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Ausblenden"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Schritt 2: Konfigurieren des Gateways</span></a>
 
 ------------------------------------------------------------------------
 
@@ -454,7 +450,7 @@ Die Anweisungen in diesem Abschnitt gelten für die Installation der Windows Pow
 
     -   Geben Sie auf dem Windows-**Startbildschirm** einen beliebigen Teil des Namens **Internetinformationsdienste-Manager (IIS)** ein. Klicken Sie auf die Verknüpfung, wenn diese in den **Apps**-Ergebnissen angezeigt wird.
 
-2.  Erstellen Sie einen neuen Anwendungspool für Windows PowerShell Web Access. Erweitern Sie den Knoten des Gatewayservers im IIS-Manager-Strukturbereich, wählen Sie die **Anwendungspools** aus, und klicken Sie im Bereich** Aktionen** auf **Anwendungspool hinzufügen**.
+2.  Erstellen Sie einen neuen Anwendungspool für Windows PowerShell Web Access. Erweitern Sie den Knoten des Gatewayservers im IIS-Manager-Strukturbereich, wählen Sie die **Anwendungspools** aus, und klicken Sie im Bereich **Aktionen** auf **Anwendungspool hinzufügen**.
 
 3.  Fügen Sie einen neuen Anwendungspool mit dem Namen **pswa_pool** hinzu, oder geben Sie einen anderen Namen an. Klicken Sie auf **OK**.
 
@@ -578,7 +574,7 @@ Die Anweisungen in diesem Abschnitt gelten für die Installation der Windows Pow
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Schritt 3: Konfigurieren einer restriktiven Autorisierungsregel</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Ausblenden"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Schritt 3: Konfigurieren einer restriktiven Autorisierungsregel</span></a>
 
 ------------------------------------------------------------------------
 
@@ -614,8 +610,8 @@ Nachdem Sie eine Autorisierungsregel konfiguriert haben, können sich autorisier
 
 <a href="" id="BKMK_configcert"></a>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Konfigurieren eines Originalzertifikats</span></a>
-<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_4" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Ausblenden"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Configure a genuine certificate (Konfigurieren eines Originalzertifikats)</span></a>
+<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_4" class="LW_CollapsibleArea_Anchor_Img" title="Klicken Sie mit der rechten Maustaste, um den Link für diesen Abschnitt zu kopieren und zu teilen"></a>
 
 ------------------------------------------------------------------------
 
@@ -643,15 +639,15 @@ Für sichere Produktionsumgebungen sollten Sie stets ein gültiges, von einer Ze
 
 <a href="" id="BKMK_using"></a>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Verwenden der webbasierten Windows PowerShell-Konsole</span></a>
-<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_5" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Ausblenden"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Using the web-based Windows PowerShell console (Verwenden der webbasierten Windows PowerShell-Konsole)</span></a>
+<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_5" class="LW_CollapsibleArea_Anchor_Img" title="Klicken Sie mit der rechten Maustaste, um den Link für diesen Abschnitt zu kopieren und zu teilen"></a>
 
 ------------------------------------------------------------------------
 
 Nachdem Windows PowerShell Web Access installiert und die Gatewaykonfiguration wie in diesem Thema beschrieben abgeschlossen wurde, ist die webbasierte Windows PowerShell-Konsole für die Verwendung bereit. Weitere Informationen zu den ersten Schritten mit der webbasierten Konsole finden Sie unter [Verwendung der webbasierten Windows PowerShell-Konsole](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx).
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Siehe auch</span></a>
-<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_6" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Ausblenden"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">See also (Siehe auch)</span></a>
+<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_6" class="LW_CollapsibleArea_Anchor_Img" title="Klicken Sie mit der rechten Maustaste, um den Link für diesen Abschnitt zu kopieren und zu teilen"></a>
 
 ------------------------------------------------------------------------
 

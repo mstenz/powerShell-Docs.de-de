@@ -2,15 +2,15 @@
 ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: PowerShell-Skripterstellung
-ms.openlocfilehash: 4e27f81bd06f0994a86ffa3bd23e8fa6f4fe344d
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.openlocfilehash: 98b95339fb30ee95a006d10d68e266ed8243cd68
+ms.sourcegitcommit: 289fe8fbf8ff48ca8999aca10aebd3af44bf9b23
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/07/2017
 ---
 #  <a name="powershell"></a>PowerShell
 
-Windows PowerShell basiert auf dem .NET Framework und ist eine aufgabenbasierte Befehlszeilenshell und Skriptsprache. Sie wurde speziell für Administratoren und Poweruser entworfen, um das Verwalten von mehreren Betriebssystemen (Linux, OSX, Unix und Windows) und die anwendungsbezogenen Prozesse auf diesen Betriebssystemen schnell zu automatisieren.
+Windows PowerShell basiert auf dem .NET Framework und ist eine aufgabenbasierte Befehlszeilenshell und Skriptsprache. Sie wurde speziell für Administratoren und Poweruser entworfen, um das Verwalten von mehreren Betriebssystemen (Linux, macOS, Unix und Windows) und die anwendungsbezogenen Prozesse auf diesen Betriebssystemen schnell zu automatisieren.
 
 ###  <a name="powershell-is-now-open-source"></a>PowerShell ist jetzt Open Source
 

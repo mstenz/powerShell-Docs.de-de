@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Das ISEEditor-Objekt
 ms.assetid: 0101daf8-4e31-4e4c-ab89-01d95dcb8f46
-ms.openlocfilehash: 41f2a6f7684275ad9d6d967ea67b64ca02c1c100
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.openlocfilehash: c4effde470a7a76a21f983b172f0af651dfc5d11
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="the-iseeditor-object"></a>Das ISEEditor-Objekt
   Ein **ISEEditor**-Objekt ist eine Instanz der Microsoft.PowerShell.Host.ISE.ISEEditor-Klasse. Der Konsolenbereich ist ein **ISEEditor**-Objekt. Jedes [ISEFile](The-ISEFile-Object.md)-Objekt verfügt über ein zugeordnetes **ISEEditor**-Objekt. In den folgenden Abschnitten werden die Methoden und Eigenschaften eines **ISEEditor**-Objekts aufgeführt.
@@ -19,7 +19,7 @@ ms.lasthandoff: 06/08/2017
 
  Löscht den Text im Editor.
 
-```PowerShell
+```powershell
 # Clears the text in the Console pane.
 $psISE.CurrentPowerShellTab.ConsolePane.Clear()
 ```
@@ -29,10 +29,9 @@ $psISE.CurrentPowerShellTab.ConsolePane.Clear()
 
  Führt einen Bildlauf im Editor aus, sodass die Zeile, die dem angegebenen Wert des **lineNumber**-Parameters entspricht, angezeigt wird. Es wird eine Ausnahme ausgelöst, wenn die angegebene Zeilennummer nicht zwischen 1 und der Nummer der letzten Zeile liegt. Dieser Bereich definiert die gültigen Zeilennummern.
 
- **lineNumber**
- Die Nummer der Zeile, die angezeigt werden soll.
+ **lineNumber** Die Nummer der Zeile, die angezeigt werden soll.
 
-```PowerShell
+```powershell
 # Scrolls the text in the Script pane so that the fifth line is in view. 
 $psISE.CurrentFile.Editor.EnsureVisible(5)
 ```
@@ -42,7 +41,7 @@ $psISE.CurrentFile.Editor.EnsureVisible(5)
 
  Legt den Fokus auf den Editor fest.
 
-```PowerShell
+```powershell
 # Sets focus to the Console pane. 
 $psISE.CurrentPowerShellTab.ConsolePane.Focus()
 ```
@@ -52,13 +51,11 @@ $psISE.CurrentPowerShellTab.ConsolePane.Focus()
 
  Ruft für die durch die Zeilennummer angegebene Zeile die Länge der Zeile als ganze Zahl ab.
 
- **lineNumber**
- Die Nummer der Zeile, deren Länge abgerufen werden soll.
+ **lineNumber** Die Nummer der Zeile, deren Länge abgerufen werden soll.
 
- **Returns**
- Die Zeilenlänge für die Zeile mit der angegebenen Zeilennummer.
+ **Returns** Die Zeilenlänge für die Zeile mit der angegebenen Zeilennummer.
 
-```PowerShell
+```powershell
 # Gets the length of the first line in the text of the Command pane. 
 $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 ```
@@ -68,7 +65,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  Verschiebt den Textcursor zum entsprechenden Zeichen, wenn die Eigenschaft **CanGoToMatch** des Editorobjekts **$true** ist. Dies tritt ein, wenn sich der Textcursor direkt vor einer öffnenden, eckigen oder geschweiften Klammer – \(, \[, { – oder unmittelbar nach einer schließenden, eckigen oder geschweiften Klammer befindet – \), \], }.  Der Textcursor wird vor einer öffnenden bzw. nach einer schließenden Klammer platziert. Wenn die **CanGoToMatch**-Eigenschaft **$false** ist, wird mit dieser Methode keine Aktion ausgeführt. Siehe [CanGoToMatch](#cangotomatch).
 
-```PowerShell
+```powershell
 # Test to see if the caret is next to a parenthesis, bracket, or brace.
 ```
 
@@ -101,7 +98,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  Wählt die gesamte Textzeile aus, in der sich der Textcursor gerade befindet.
 
-```PowerShell
+```powershell
 # First, set the caret position on line 5.
 $psISE.CurrentFile.Editor.SetCaretPosition(5,1) 
 # Now select that entire line of text
@@ -117,7 +114,7 @@ $psISE.CurrentFile.Editor.SelectCaretLine()
 
  **columnNumber**: ganze Zahl – die Spaltennummer des Textcursors.
 
-```PowerShell
+```powershell
 # Set the CaretPosition.
 $psISE.CurrentFile.Editor.SetCaretPosition(5,1)
 ```
@@ -127,7 +124,7 @@ $psISE.CurrentFile.Editor.SetCaretPosition(5,1)
 
  Führt dazu, dass alle Gliederungsabschnitte erweitert oder reduziert werden.
 
-```PowerShell
+```powershell
 # Toggle the outlining expansion
 $psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 ```
@@ -139,7 +136,7 @@ $psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 
  Die schreibgeschützte boolesche Eigenschaft, die angibt, ob der Textcursor sich neben einer Klammer, eckigen Klammer oder geschweiften Klammer befindet – \(\), \[\], {}. Wenn der Textcursor sich direkt vor der öffnenden Klammer oder unmittelbar nach der schließenden Klammer eines Klammerpaars befindet, lautet der Wert dieser Eigenschaft **$true**. Andernfalls lautet er **$false**.
 
-```PowerShell
+```powershell
 # Test to see if the caret is next to a parenthesis, bracket, or brace
 $psISE.CurrentFile.Editor.CanGoToMatch
 ```
@@ -149,7 +146,7 @@ $psISE.CurrentFile.Editor.CanGoToMatch
 
  Die schreibgeschützte Eigenschaft, die die Spaltennummer abruft, die der Position des Textcursors entspricht.
 
-```PowerShell
+```powershell
 # Get the CaretColumn.
 $psISE.CurrentFile.Editor.CaretColumn
 ```
@@ -159,7 +156,7 @@ $psISE.CurrentFile.Editor.CaretColumn
 
  Die schreibgeschützte Eigenschaft, die die Nummer der Zeile mit dem Textcursor abruft.
 
-```PowerShell
+```powershell
 # Get the CaretLine.
 $psISE.CurrentFile.Editor.CaretLine
 ```
@@ -169,7 +166,7 @@ $psISE.CurrentFile.Editor.CaretLine
 
  Die schreibgeschützte Eigenschaft, die die vollständige Textzeile abruft, die den Textcursor enthält.
 
-```PowerShell
+```powershell
 # Get all of the text on the line that contains the caret.
 $psISE.CurrentFile.Editor.CaretLineText
 ```
@@ -179,7 +176,7 @@ $psISE.CurrentFile.Editor.CaretLineText
 
  Die schreibgeschützte Eigenschaft, die die Anzahl der Zeilen aus dem Editor abruft.
 
-```PowerShell
+```powershell
 # Get the LineCount.
 $psISE.CurrentFile.Editor.LineCount
 ```
@@ -200,7 +197,7 @@ $psISE.CurrentFile.Editor.LineCount
 
 ##  <a name="example"></a> Beispielskript
 
-```PowerShell
+```powershell
 # This illustrates how you can use the length of a line to
 # select the entire line and shows how you can make it lowercase. 
 # You must run this in the Console pane. It will not run in the Script pane.

@@ -5,25 +5,25 @@ ms.topic: conceptual
 keywords: gallery,powershell,cmdlet,psgallery
 description: "Richtlinien für Herausgeber"
 title: "Veröffentlichungsrichtlinien und Best Practices für den PowerShell-Katalog"
-ms.openlocfilehash: 8c3d1862c68c4a5d6f3e42d603c027fd0f472190
-ms.sourcegitcommit: 79e8f03afb8d0b0bb0a167e56464929b27f51990
+ms.openlocfilehash: 394e69e189761f3c5a4bb54dfa8df15c4ab240d6
+ms.sourcegitcommit: e63f09c005b6bbf39c3c001944f307c2b155765b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/26/2017
+ms.lasthandoff: 08/11/2017
 ---
-<a id="powershellgallery-publishing-guidelines-and-best-practices" class="xliff"></a>
-## Veröffentlichungsrichtlinien und Best Practices für den PowerShell-Katalog
+# <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>Veröffentlichungsrichtlinien und Best Practices für den PowerShell-Katalog
 
-In diesem Thema erfahren Sie, welche Schritte die Microsoft-Teams empfehlen, damit Ihre im PowerShell-Katalog veröffentlichten Elemente von möglichst vielen Benutzern verwendet werden und diesen einen hohen Mehrwert bieten. Diese Empfehlungen basieren auf der Verarbeitung von Manifestdaten durch den PowerShell-Katalog sowie auf dem Feedback zahlreicher PowerShell-Katalogbenutzer. Elemente, die gemäß den hier beschriebenen Richtlinien veröffentlicht werden, werden eher installiert, als vertrauenswürdig eingestuft und erzielen ein größeres Benutzerinteresse.
+In diesem Thema erfahren Sie, welche Schritte die Microsoft-Teams empfehlen, damit Ihre im PowerShell-Katalog veröffentlichten Elemente von möglichst vielen Benutzern verwendet werden und diesen einen hohen Mehrwert bieten. Diese Empfehlungen basieren auf der Verarbeitung von Manifestdaten durch den PowerShell-Katalog sowie auf dem Feedback zahlreicher PowerShell-Katalogbenutzer.
+Elemente, die gemäß den hier beschriebenen Richtlinien veröffentlicht werden, werden eher installiert, als vertrauenswürdig eingestuft und erzielen ein größeres Benutzerinteresse.
 
-Die nachfolgenden Richtlinien definieren, wodurch sich ein gutes PowerShell-Katalogelement auszeichnet, welche optionalen Manifesteinstellungen besonders wichtig sind, wie Sie Ihren Code mithilfe von Benutzerfeedback und [Powershell Script Analyzer](https://aka.ms/psscriptanalyzer) verbessern und wie Sie die Versionsverwaltung Ihres Moduls, der zugehörigen Dokumentation sowie von Tests und Anwendungsbeispielen durchführen. Ein Großteil dieser Dokumentation folgt den Richtlinien für das Veröffentlichen von [hochwertigen DSC-Ressourcenmodulen](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md).
+Die nachfolgenden Richtlinien definieren, wodurch sich ein gutes PowerShell-Katalogelement auszeichnet, welche optionalen Manifesteinstellungen besonders wichtig sind, wie Sie Ihren Code mithilfe von Benutzerfeedback und [Powershell Script Analyzer](https://aka.ms/psscriptanalyzer) verbessern und wie Sie die Versionsverwaltung Ihres Moduls, der zugehörigen Dokumentation sowie von Tests und Anwendungsbeispielen durchführen.
+Ein Großteil dieser Dokumentation folgt den Richtlinien für das Veröffentlichen von [hochwertigen DSC-Ressourcenmodulen](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md).
 
 Informationen zu den Mechanismen für das Veröffentlichen eines Elements im PowerShell-Katalog finden Sie unter [Erstellen und Veröffentlichen eines Elements](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/creating-and-publishing-an-item).
 
-Wir freuen uns auf Ihr Feedback zu diesen Richtlinien. Wenn Sie Anmerkungen haben, öffnen Sie ein Problem in unserem [GitHub-Dokumentationsrepository](https://github.com/powershell/powershell-docs/). 
+Wir freuen uns auf Ihr Feedback zu diesen Richtlinien. Wenn Sie Anmerkungen haben, öffnen Sie ein Problem in unserem [GitHub-Dokumentationsrepository](https://github.com/powershell/powershell-docs/).
 
-<a id="best-practices-for-published-items" class="xliff"></a>
-## Best Practices für veröffentlichte Elemente 
+## <a name="best-practices-for-publishing-items"></a>Bewährte Methoden zum Veröffentlichen von Elementen
 
 Die folgenden Best Practices für PowerShell-Katalogelemente definieren die Punkte, die von Katalogbenutzern als wichtig eingestuft werden, aufgeführt nach der genannten Priorität.
 Elemente, die diesen Richtlinien entsprechen, werden eher heruntergeladen und von den Benutzern angenommen.
@@ -37,15 +37,18 @@ Elemente, die diesen Richtlinien entsprechen, werden eher heruntergeladen und vo
 * Schließen Sie Tests in Ihre Module ein
 * Schließen Sie Lizenzbedingungen (bzw. einen Link auf diese) ein
 * Signieren Sie Ihren Code
+* Folgen Sie bei der Versionsverwaltung den SemVer-Richtlinien
 * Verwenden Sie allgemeine Tags, wie in „Common PowerShell Gallery Tags“ dokumentiert.
+* Testen der Veröffentlichung mit einem lokalen Repository
 
 Jede dieser Richtlinien wird in den nachfolgenden Abschnitten kurz erläutert.
 
-<a id="use-psscriptanalyzer" class="xliff"></a>
-## Verwenden Sie PSScriptAnalyzer
+## <a name="use-psscriptanalyzer"></a>Verwenden Sie PSScriptAnalyzer
 
 [PSScriptAnalyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer) ist ein kostenloses Analysetool für statischen Code, das für PowerShell-Code eingesetzt werden kann.
-PSScriptAnalyzer identifiziert die häufigsten Probleme in PowerShell-Code und stellt in vielen Fällen eine Empfehlung zur Lösung des Problems bereit. Das Tool ist einfach bedienbar und unterteilt die Probleme in Fehler (schwerwiegend, müssen behoben werden), Warnungen (müssen überprüft und sollten behoben werden) und Informationsmeldungen (sollten im Rahmen der Best Practices überprüft werden). Alle der im PowerShell-Katalog veröffentlichten Elemente werden unter Verwendung von PSScriptAnalyzer überprüft. Gefundene Fehler werden dem Besitzer gemeldet und müssen beseitigt werden. 
+PSScriptAnalyzer identifiziert die häufigsten Probleme in PowerShell-Code und stellt in vielen Fällen eine Empfehlung zur Lösung des Problems bereit.
+Das Tool ist einfach bedienbar und unterteilt die Probleme in Fehler (schwerwiegend, müssen behoben werden), Warnungen (müssen überprüft und sollten behoben werden) und Informationsmeldungen (sollten im Rahmen der Best Practices überprüft werden).
+Alle der im PowerShell-Katalog veröffentlichten Elemente werden unter Verwendung von PSScriptAnalyzer überprüft. Gefundene Fehler werden dem Besitzer gemeldet und müssen beseitigt werden.
 
 Als Best Practice wird `Invoke-ScriptAnalyzer` mit `-Recurse` und `-Severity` mit der Einstellung „Warning“ ausgeführt. 
 
@@ -56,104 +59,135 @@ Als Best Practice wird `Invoke-ScriptAnalyzer` mit `-Recurse` und `-Severity` mi
 
 Benutzern, die Elemente aus dem PowerShell-Katalog abrufen, wird dringend empfohlen, PSScriptAnalyzer auszuführen und alle Fehler und Warnungen auszuwerten.
 Benutzer setzen sich sehr wahrscheinlich mit den Elementbesitzern in Verbindung, wenn PSScriptAnalyzer einen Fehler meldet.
-Wenn ein triftiger Grund dafür spricht, als fehlerhaft markierten Code für Ihr Element beizubehalten, fügen Sie diese Information in Ihre Dokumentation ein. So müssen Sie nicht wiederholt dieselbe Frage beantworten. 
+Wenn ein triftiger Grund dafür spricht, als fehlerhaft markierten Code für Ihr Element beizubehalten, fügen Sie diese Information in Ihre Dokumentation ein. So müssen Sie nicht wiederholt dieselbe Frage beantworten.
 
-
-<a id="include-documentation-and-examples" class="xliff"></a>
-## Stellen Sie eine Dokumentation und Beispiele bereit
+## <a name="include-documentation-and-examples"></a>Stellen Sie eine Dokumentation und Beispiele bereit
 
 Benutzer können freigegebenen Code optimal nutzen, wenn eine Dokumentation und Beispiele bereitgestellt werden.
 
-Die Dokumentation ist die nützlichste Informationsquelle, die für ein im PowerShell-Katalog veröffentlichtes Element bereitgestellt werden kann. Benutzer meiden im Allgemeinen Elemente ohne Dokumentation, da die Alternative darin besteht, den Code lesen zu müssen, um das Element und seine Verwendung zu verstehen.
+Die Dokumentation ist die nützlichste Informationsquelle, die für ein im PowerShell-Katalog veröffentlichtes Element bereitgestellt werden kann.
+Benutzer meiden im Allgemeinen Elemente ohne Dokumentation, da die Alternative darin besteht, den Code lesen zu müssen, um das Element und seine Verwendung zu verstehen.
 In MSDN finden Sie verschiedene Artikel zur Bereitstellung von Dokumentation für PowerShell-Elemente, darunter diese:
 
 * Richtlinien zum Bereitstellen von Hilfe finden Sie im Artikel [How to Write Cmdlet Help](https://msdn.microsoft.com/en-us/library/aa965353(VS.85).aspx) (Schreiben von Hilfe zu Cmdlets).
-* Das Erstellen von Hilfetexten zu Cmdlets ist der beste Ansatz für beliebige PowerShell-Skripts, -Funktionen oder -Cmdlets. Informationen dazu, wie Sie eine Cmdlet-Hilfe schreiben, finden Sie unter [How to Write Cmdlet Help](http://go.microsoft.com/fwlink/?LinkID=123415) (Schreiben von Hilfe zu Cmdlets) in der MSDN-Bibliothek (Microsoft Developer Network). Informationen dazu, wie Sie innerhalb eines Skripts Hilfe hinzufügen, finden Sie unter [Informationen zur kommentarbasierten Hilfe](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_comment_based_help).
-* Viele Module enthalten Dokumentation in Textformat, z.B. als MarkDown-Dateien. Dies kann besonders nützlich sein, wenn eine Projektwebsite in GitHub vorhanden ist, wo Markdown-Dateien ein häufig verwendetes Format sind.
-Als Best Practice sollte [GitHub Flavored Markdown (GFM)](https://help.github.com/categories/writing-on-github/) verwendet werden. 
+* Das Erstellen von Hilfetexten zu Cmdlets ist der beste Ansatz für beliebige PowerShell-Skripts, -Funktionen oder -Cmdlets.
+  Informationen dazu, wie Sie eine Cmdlet-Hilfe schreiben, finden Sie unter [How to Write Cmdlet Help](http://go.microsoft.com/fwlink/?LinkID=123415) (Schreiben von Hilfe zu Cmdlets) in der MSDN-Bibliothek (Microsoft Developer Network).
+  Informationen dazu, wie Sie innerhalb eines Skripts Hilfe hinzufügen, finden Sie unter [Informationen zur kommentarbasierten Hilfe](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_comment_based_help).
+* Viele Module enthalten Dokumentation in Textformat, z.B. als MarkDown-Dateien.
+  Dies kann besonders nützlich sein, wenn eine Projektwebsite in GitHub vorhanden ist, wo Markdown-Dateien ein häufig verwendetes Format sind.
+  Als Best Practice sollte [GitHub Flavored Markdown (GFM)](https://help.github.com/categories/writing-on-github/) verwendet werden.
 
-Beispiele zeigen dem Benutzer, wie das Element verwendet werden sollte. Viele Entwickler sehen sich die Beispiele noch vor der Dokumentation an, um die Verwendungsweise eines Elements zu verstehen. Die besten Beispiele zeigen die grundlegende Verwendung sowie einige simulierte Anwendungsfälle, und der Code ist gut kommentiert. Beispiele für im PowerShell-Katalog veröffentlichte Module sollten in einem Ordner „Examples“ im Modulstamm enthalten sein.
+Beispiele zeigen dem Benutzer, wie das Element verwendet werden sollte.
+Viele Entwickler sehen sich die Beispiele noch vor der Dokumentation an, um die Verwendungsweise eines Elements zu verstehen.
+Die besten Beispiele zeigen die grundlegende Verwendung sowie einige simulierte Anwendungsfälle, und der Code ist gut kommentiert.
+Beispiele für im PowerShell-Katalog veröffentlichte Module sollten in einem Ordner „Examples“ im Modulstamm enthalten sein.
 
-Ein gutes Muster für Beispiele finden Sie im [PSDscResource-Modul](https://www.powershellgallery.com/packages/PSDscResources) im Ordner „Examples\RegistryResource“. Dort sind vier Beispielanwendungsfälle mit einer kurzen Beschreibung zu Beginn jeder Datei enthalten, die das Gezeigte dokumentieren.
+Ein gutes Muster für Beispiele finden Sie im [PSDscResource-Modul](https://www.powershellgallery.com/packages/PSDscResources) im Ordner „Examples\RegistryResource“.
+Dort sind vier Beispielanwendungsfälle mit einer kurzen Beschreibung zu Beginn jeder Datei enthalten, die das Gezeigte dokumentieren.
 
-<a id="respond-to-feedback" class="xliff"></a>
-## Antworten Sie auf Feedback
+## <a name="respond-to-feedback"></a>Antworten Sie auf Feedback
 
-Elementbesitzer, die angemessen auf Feedback reagieren, werden in der Community sehr geschätzt. Es ist wichtig, Benutzern zu antworten, die konstruktives Feedback geben, da diese Benutzer Sie dabei unterstützen können, das Element zu verbessern. 
+Elementbesitzer, die angemessen auf Feedback reagieren, werden in der Community sehr geschätzt.
+Es ist wichtig, Benutzern zu antworten, die konstruktives Feedback geben, da diese Benutzer Sie dabei unterstützen können, das Element zu verbessern.
 
 Im PowerShell-Katalog sind zwei Feedbackmethoden verfügbar:
 
 * Besitzer kontaktieren: Über diese Option kann ein Benutzer eine E-Mail an den oder die Elementbesitzer senden. Als Elementbesitzer müssen Sie dafür Sorge tragen, dass die für PowerShell-Katalogelemente verwendete E-Mail-Adresse regelmäßig überwacht wird und gemeldete Probleme gelöst werden. Ein Nachteil dieser Methode besteht darin, dass die Kommunikation nur zwischen Benutzer und Besitzer erfolgt, sodass der Besitzer dieselbe Frage möglicherweise wiederholt beantworten muss.
-* Kommentare: Im unteren Bereich der Elementseite befindet sich ein Kommentarfeld. Der Vorteil dieses Systems liegt darin, dass andere Benutzer die Kommentare und Antworten sehen können. Auf diese Weise muss eine einzelne Frage nicht wiederholt beantwortet werden. Elementbesitzern wird dringend empfohlen, die Kommentare für jedes Element zu verfolgen. Ausführliche Informationen hierzu finden Sie unter [Bereitstellen von Feedback über soziale Netzwerke oder Kommentare](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/psgallery-SocialMediaFeedback). 
+* Kommentare: Im unteren Bereich der Elementseite befindet sich ein Kommentarfeld.
+  Der Vorteil dieses Systems liegt darin, dass andere Benutzer die Kommentare und Antworten sehen können. Auf diese Weise muss eine einzelne Frage nicht wiederholt beantwortet werden.
+  Elementbesitzern wird dringend empfohlen, die Kommentare für jedes Element zu verfolgen.
+Ausführliche Informationen hierzu finden Sie unter [Bereitstellen von Feedback über soziale Netzwerke oder Kommentare](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/psgallery-SocialMediaFeedback).
 
 Besitzer, die konstruktiv auf Feedback reagieren, werden von der Community sehr geschätzt.
-Nutzen Sie die Gelegenheit, im Bericht bei Bedarf weitere Informationen anzufordern, eine Problemumgehung bereitzustellen oder darauf hinzuweisen, dass ein Problem durch ein Update behoben werden kann. 
+Nutzen Sie die Gelegenheit, im Bericht bei Bedarf weitere Informationen anzufordern, eine Problemumgehung bereitzustellen oder darauf hinzuweisen, dass ein Problem durch ein Update behoben werden kann.
 
-Falls über einen dieser Kommunikationskanäle ein unangemessenes Verhalten beobachtet wird, verwenden Sie das Feature „Missbrauch melden“ im PowerShell-Katalog, um sich an die PowerShell-Katalogadministratoren zu wenden. 
+Falls über einen dieser Kommunikationskanäle ein unangemessenes Verhalten beobachtet wird, verwenden Sie das Feature „Missbrauch melden“ im PowerShell-Katalog, um sich an die PowerShell-Katalogadministratoren zu wenden.
 
-
-<a id="modules-versus-scripts" class="xliff"></a>
-## Module und Skripts im Vergleich
+## <a name="modules-versus-scripts"></a>Module und Skripts im Vergleich
 
 Das Freigeben eines Skripts für andere Benutzer ist grundsätzlich eine gute Sache und ermöglicht es, Beispiele für die Beseitigung möglicher Probleme bereitzustellen.
 Der Nachteil von Skripts im PowerShell-Katalog liegt darin, dass es sich um einzelne Dateien ohne separate Dokumentation, Beispiele und Tests handelt.
 
 PowerShell-Module bieten eine Ordnerstruktur, die es erlaubt, mehrere Ordner und Dateien in das Paket einzuschließen.
 Die Modulstruktur ermöglicht das Bereitstellen weiterer Elemente, die wir als Best Practices auflisten: Cmdlet-Hilfe, Dokumentation, Beispiele und Tests.
-Der größte Nachteil besteht darin, dass ein Skript innerhalb eines Moduls als Funktion verfügbar gemacht und verwendet werden muss. Informationen zum Erstellen eines Moduls finden Sie unter [Writing a Windows PowerShell Module](http://go.microsoft.com/fwlink/?LinkId=144916) (Schreiben eines Windows PowerShell-Moduls).
+Der größte Nachteil besteht darin, dass ein Skript innerhalb eines Moduls als Funktion verfügbar gemacht und verwendet werden muss.
+Informationen zum Erstellen eines Moduls finden Sie unter [Writing a Windows PowerShell Module](http://go.microsoft.com/fwlink/?LinkId=144916) (Schreiben eines Windows PowerShell-Moduls).
 
-Es gibt Situationen, in denen ein Skript benutzerfreundlicher ist, dies gilt insbesondere bei DSC-Konfigurationen. Die bewährte Methode für DSC-Konfigurationen besteht darin, die Konfiguration als Skript zu veröffentlichen, gemeinsam mit einem Begleitmodul, das die Dokumentation, Beispiele und Tests enthält. Im Skript wird das Begleitmodul unter Verwendung von „RequiredModules = @(Name des Moduls)“ aufgeführt.
+Es gibt Situationen, in denen ein Skript benutzerfreundlicher ist, dies gilt insbesondere bei DSC-Konfigurationen.
+Die bewährte Methode für DSC-Konfigurationen besteht darin, die Konfiguration als Skript zu veröffentlichen, gemeinsam mit einem Begleitmodul, das die Dokumentation, Beispiele und Tests enthält.
+Im Skript wird das Begleitmodul unter Verwendung von „RequiredModules = @(Name des Moduls)“ aufgeführt.
 Dieser Ansatz kann für jedes Skript verwendet werden.
 
-Eigenständige Skripts, die den weiteren Best Practices entsprechen, bieten anderen Benutzern einen echten Nutzen. Beim Veröffentlichen eines Skripts im PowerShell-Katalog wird dringend empfohlen, eine kommentarbasierte Dokumentation und einen Link zu einer Projektwebsite bereitzustellen. 
+Eigenständige Skripts, die den weiteren Best Practices entsprechen, bieten anderen Benutzern einen echten Nutzen.
+Beim Veröffentlichen eines Skripts im PowerShell-Katalog wird dringend empfohlen, eine kommentarbasierte Dokumentation und einen Link zu einer Projektwebsite bereitzustellen.
 
-<a id="provide-a-link-to-a-project-site" class="xliff"></a>
-## Stellen Sie einen Link zu einer Projektwebsite bereit
+## <a name="provide-a-link-to-a-project-site"></a>Stellen Sie einen Link zu einer Projektwebsite bereit
 
 Auf einer Projektwebsite kann der Herausgeber direkt mit den Benutzern seiner PowerShell-Elemente interagieren.
-Benutzer bevorzugen Elemente mit einer Projektwebsite, weil es einfacher ist, Informationen zum Element zu erhalten. Viele Elemente im PowerShell-Katalog werden in GitHub entwickelt, andere werden von Organisationen mit einer dedizierten Webpräsenz bereitgestellt.
+Benutzer bevorzugen Elemente mit einer Projektwebsite, weil es einfacher ist, Informationen zum Element zu erhalten.
+Viele Elemente im PowerShell-Katalog werden in GitHub entwickelt, andere werden von Organisationen mit einer dedizierten Webpräsenz bereitgestellt.
 Beides kann als eine Projektwebsite betrachtet werden.
 
 Ein Link kann durch Einschließen eines ProjectURI-Werts im PSData-Abschnitt des Manifests hinzugefügt werden:
 
         # A URL to the main website for this project.
-        ProjectUri = 'https://github.com/powershell/powershell' 
+        ProjectUri = 'https://github.com/powershell/powershell'
 
-Wenn Sie einen ProjectURI angeben, wird im PowerShell-Katalog links auf der Elementseite ein Link zur Projektwebsite angezeigt. 
+Wenn Sie einen ProjectURI angeben, wird im PowerShell-Katalog links auf der Elementseite ein Link zur Projektwebsite angezeigt.
 
-<a id="include-tests" class="xliff"></a>
-## Schließen Sie Tests ein
+## <a name="include-tests"></a>Schließen Sie Tests ein
 
 Das Einschließen von Tests mit Open Source-Code ist wichtig für die Benutzer, weil diese so sicher sein können, dass Ihr Code überprüft wurde. Zudem können Sie Informationen zur Funktionsweise des Codes bereitstellen. Darüber hinaus können die Benutzer sich darauf verlassen, dass die ursprüngliche Funktionalität durch eine Anpassung Ihres Codes an die Benutzerumgebung nicht beeinträchtigt wird.
 
 Es wird dringend empfohlen, Tests zu schreiben, um von den Vorteilen des Pester-Testframeworks zu profitieren, das speziell für PowerShell entworfen wurde.
-Pester ist in [GitHub](https://github.com/Pester/Pester) und dem [PowerShell-Katalog](https://www.powershellgallery.com/packages/Pester/) verfügbar und gehört zum Lieferumfang von Windows 10, Windows Server 2016, WMF 5.0 und WMF 5.1. 
+Pester ist in [GitHub](https://github.com/Pester/Pester) und dem [PowerShell-Katalog](https://www.powershellgallery.com/packages/Pester/) verfügbar und gehört zum Lieferumfang von Windows 10, Windows Server 2016, WMF 5.0 und WMF 5.1.
 
-Die [Pester-Projektwebsite in GitHub](https://github.com/Pester/Pester) umfasst eine gute Dokumentation zum Schreiben von Pester-Tests – von den ersten Schritten bis hin zu den Best Practices. 
+Die [Pester-Projektwebsite in GitHub](https://github.com/Pester/Pester) umfasst eine gute Dokumentation zum Schreiben von Pester-Tests – von den ersten Schritten bis hin zu den Best Practices.
 
-Die Ziele für die Testabdeckung werden in der [Dokumentation zu hochwertigen Ressourcenmodulen](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md) benannt, hierbei wird für Komponententests eine Codeabdeckung von 70 % empfohlen. 
+Die Ziele für die Testabdeckung werden in der [Dokumentation zu hochwertigen Ressourcenmodulen](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md) benannt, hierbei wird für Komponententests eine Codeabdeckung von 70 % empfohlen.
 
-<a id="sign-your-code" class="xliff"></a>
-## Signieren Sie Ihren Code
+## <a name="include-andor-link-to-license-terms"></a>Schließen Sie Lizenzbedingungen (bzw. einen Link auf diese) ein
 
-Durch Signieren des Codes bieten Sie Benutzern höchstmögliche Sicherheit in Bezug auf den Elementherausgeber – die Benutzer können darauf vertrauen, dass die erworbene Kopie des Codes exakt dem Code entspricht, den der Herausgeber veröffentlicht hat. Allgemeine Informationen zum Signieren von Code finden Sie in der [Einführung in das Codesignieren](http://go.microsoft.com/fwlink/?LinkId=106296). PowerShell unterstützt in Bezug auf das Signieren von Code zwei primäre Ansätze:
+Alle Elemente, die im PowerShell-Katalog veröffentlicht werden, müssen Lizenzbedingungen angeben oder der Lizenz unterliegen, die in den [Nutzungsbedingungen](https://www.powershellgallery.com/policies/Terms) unter „Anhang A“ enthalten sind.
+Der beste Ansatz für das Angeben einer anderen Lizenz besteht darin, mithilfe von LicenseURI im PSData-Abschnitt einen Link zur Lizenz bereitzustellen.
+Ein Beispiel finden Sie im Thema zu den empfohlenen Manifestfeldern.
+
+```powershell
+PrivateData = @{
+    PSData = @{
+
+        # Tags applied to this module. These help with module discovery in online galleries.
+        Tags = @('.net','acl','active-directory')
+
+        # A URL to the license for this module.
+        LicenseUri = 'http://www.apache.org/licenses/LICENSE-2.0'
+```
+
+## <a name="sign-your-code"></a>Signieren Sie Ihren Code
+
+Durch Signieren des Codes bieten Sie Benutzern höchstmögliche Sicherheit in Bezug auf den Elementherausgeber – die Benutzer können darauf vertrauen, dass die erworbene Kopie des Codes exakt dem Code entspricht, den der Herausgeber veröffentlicht hat.
+Allgemeine Informationen zum Signieren von Code finden Sie in der [Einführung in das Codesignieren](http://go.microsoft.com/fwlink/?LinkId=106296).
+PowerShell unterstützt in Bezug auf das Signieren von Code zwei primäre Ansätze:
 
 * Signieren von Skriptdateien
 * Katalogsignierung von Modulen
 
 Das Signieren von PowerShell-Dateien ist ein bewährter Ansatz, mit dem sichergestellt wird, dass der ausgeführte Code aus einer zuverlässigen Quelle stammt und nicht verändert wurde.
-Details zum Signieren von PowerShell-Skriptdateien werden im Thema [Informationen zu Signaturen](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_signing) behandelt. Allgemein ausgedrückt, kann eine Signatur jeder PS1-Datei hinzugefügt werden, die PowerShell beim Laden des Skripts überprüft. Mithilfe der Cmdlets für [Ausführungsrichtlinien](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_execution_policies) kann PowerShell auf die Verwendung von signierten Skripts beschränkt werden. Dieses Feature wird häufig in Umgebungen mit hoher Sicherheit verwendet. 
+Details zum Signieren von PowerShell-Skriptdateien werden im Thema [Informationen zu Signaturen](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_signing) behandelt.
+Allgemein ausgedrückt, kann eine Signatur jeder PS1-Datei hinzugefügt werden, die PowerShell beim Laden des Skripts überprüft.
+Mithilfe der Cmdlets für [Ausführungsrichtlinien](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_execution_policies) kann PowerShell auf die Verwendung von signierten Skripts beschränkt werden.
 
-Die Katalogsignierung von Modulen ist ein Feature, das PowerShell in Version 5.1 hinzugefügt wurde. Das Signieren eines Moduls wird im Thema [Katalog-Cmdlets](https://msdn.microsoft.com/en-us/powershell/wmf/5.1/catalog-cmdlets) abgedeckt. Allgemein ausgedrückt wird bei der Katalogsignierung eine Katalogdatei erstellt, die einen Hashwert für jede Datei im Modul enthält, und anschließend wird diese Datei signiert.
+Die Katalogsignierung von Modulen ist ein Feature, das PowerShell in Version 5.1 hinzugefügt wurde.
+Das Signieren eines Moduls wird im Thema [Katalog-Cmdlets](https://msdn.microsoft.com/en-us/powershell/wmf/5.1/catalog-cmdlets) abgedeckt.
+Allgemein ausgedrückt wird bei der Katalogsignierung eine Katalogdatei erstellt, die einen Hashwert für jede Datei im Modul enthält, und anschließend wird diese Datei signiert.
 Die PowerShell-Cmdlets „publish-module“, „install-module“, „save-module“ und „update-module“ überprüfen die Signatur auf Ihre Gültigkeit und bestätigen dann, dass der Hashwert für jedes Element den Daten im Katalog entspricht.
-Wenn eine vorherige Version des Moduls auf dem System installiert ist, wird mithilfe von „install-module“ bestätigt, dass die Signaturstelle für die neue Version derjenigen der vorherigen Installation entspricht. Die Katalogsignierung kann zusammen mit dem Signieren von Skriptdateien verwendet werden, ersetzt diese Methode aber nicht. PowerShell führt beim Laden von Modulen keine Überprüfung von Katalogsignaturen durch. 
+Wenn eine vorherige Version des Moduls auf dem System installiert ist, wird mithilfe von „install-module“ bestätigt, dass die Signaturstelle für die neue Version derjenigen der vorherigen Installation entspricht.
+Die Katalogsignierung kann zusammen mit dem Signieren von Skriptdateien verwendet werden, ersetzt diese Methode aber nicht. PowerShell führt beim Laden von Modulen keine Überprüfung von Katalogsignaturen durch.
 
-
-<a id="follow-semver-guidelines-for-versioning" class="xliff"></a>
-## Folgen Sie bei der Versionsverwaltung den [SemVer]-Richtlinien
+## <a name="follow-semver-guidelines-for-versioning"></a>Folgen Sie bei der Versionsverwaltung den SemVer-Richtlinien
 
 [SemVer](http://semver.org/) ist eine öffentliche Konvention, die beschreibt, wie eine Version strukturiert und geändert wird, um eine einfache Interpretation von Änderungen zu ermöglichen.
-Die Version für Ihr Element muss in den Manifestdaten eingeschlossen werden. 
+Die Version für Ihr Element muss in den Manifestdaten eingeschlossen werden.
 
 * Die Version sollte aus 3 numerischen Blöcken bestehen, die durch Punkte getrennt sind. Beispiele: 0.1.1 oder 4.11.192
 * Mit 0 beginnende Versionsnummern deuten darauf hin, dass das Element noch nicht bereit für die Produktion ist, und die erste Nummer darf nur mit 0 beginnen, wenn dies die einzige verwendete Nummer ist.
@@ -162,42 +196,37 @@ Die Version für Ihr Element muss in den Manifestdaten eingeschlossen werden.
 * Änderungen an der dritten Nummer weisen auf Änderungen ohne Auswirkung auf die Lauffähigkeit hin, z.B. neue Parameter, aktualisierte Beispiele oder neue Tests.
 * Beim Auflisten von Versionen sortiert PowerShell die Versionen als Zeichenfolgen, deshalb wird 1.01.0 als größer als 1.001.0 eingestuft.
 
-PowerShell wurde vor Herausgabe der SemVer-Richtlinien entwickelt und bietet daher Unterstützung für die meisten, aber nicht alle Elemente von SemVer. Hierbei gilt insbesondere Folgendes: 
+PowerShell wurde vor Herausgabe der SemVer-Richtlinien entwickelt und bietet daher Unterstützung für die meisten, aber nicht alle Elemente von SemVer. Hierbei gilt insbesondere Folgendes:
 
 * In Versionsnummern werden keine Zeichenfolgen für Vorabreleases unterstützt. Dies ist nützlich, wenn ein Herausgeber eine Vorschauversion einer neuen Hauptversion bereitstellen möchte, nachdem eine Version 1.0.0 veröffentlicht wurde. Diese Option wird in einer zukünftigen Version des PowerShell-Katalogs und der PowerShell-Cmdlets unterstützt.
 * PowerShell und der PowerShell-Katalog lassen Versionszeichenfolgen mit 1, 2 und 4 Segmenten zu. Viele frühere Module entsprachen nicht den Richtlinien, und Produktversionen von Microsoft umfassen Buildinformationen als 4. Nummernblock (z.B. 5.1.14393.1066). Vom Standpunkt der Versionsverwaltung aus werden diese Unterschiede ignoriert.
 
+## <a name="test-using-a-local-repository"></a>Testen mit einem lokalen Repository
 
-<a id="include-andor-link-to-license-terms" class="xliff"></a>
-## Schließen Sie Lizenzbedingungen (bzw. einen Link auf diese) ein
+Der PowerShell-Katalog ist nicht als Ziel zum Testen des Veröffentlichungsprozesses konzipiert.
+Die beste Methode, um den End-to-End-Prozess der Veröffentlichung im PowerShell-Katalog zu testen, ist das Einrichten und Verwenden Ihres eigenen lokalen Repositorys.
+Dies kann auf verschiedene Arten erfolgen, einschließlich folgender:
 
-Alle Elemente, die im PowerShell-Katalog veröffentlicht werden, müssen Lizenzbedingungen angeben oder der Lizenz unterliegen, die in den [Nutzungsbedingungen](https://www.powershellgallery.com/policies/Terms) unter „Anhang A“ enthalten sind. Der beste Ansatz für das Angeben einer anderen Lizenz besteht darin, mithilfe von LicenseURI im PSData-Abschnitt einen Link zur Lizenz bereitzustellen. Ein Beispiel finden Sie im Thema zu den empfohlenen Manifestfeldern. 
+* Richten Sie mithilfe des [PS Private Gallery project (PS Private Gallery-Projekts)](https://github.com/PowerShell/PSPrivateGallery) in GitHub eine lokale Instanz des PowerShell-Katalogs ein. Dieses Vorschauprojekt wird Sie beim Einrichten einer Instanz des PowerShell-Katalogs unterstützen, die Sie steuern und für Ihre Tests benutzen können.
+* Richten Sie ein [internes NuGet-Repository](https://blogs.msdn.microsoft.com/powershell/2014/05/20/setting-up-an-internal-powershellget-repository/) ein. Dieses einzurichten erfordert mehr Arbeit. Es hat jedoch den Vorteil, dass einige zusätzliche Anforderungen damit überprüft werden können. Dazu zählt insbesondere die Überprüfung der Verwendung eines API-Schlüssels und ob beim Veröffentlichen Abhängigkeiten im Ziel vorhanden sind.
+* Richten Sie eine Dateifreigabe als „Test-Repository“ ein. Diese einzurichten ist einfach, aber da es sich dabei um eine Dateifreigabe handelt, werden die oben aufgeführten Überprüfungen nicht ausgeführt. Ein möglicher Vorteil in diesem Fall ist, dass die Dateifreigabe den (benötigten) API-Schlüssel nicht überprüft, sodass Sie denselben Schlüssel verwenden können, den Sie auch bei der Veröffentlichung in den PowerShell-Katalog verwenden würden.
 
-    PrivateData = @{
-        PSData = @{
+Verwenden Sie für jede dieser Lösungen Register-PSRepository, um ein neues „Repository“ zu definieren, das Sie im Modul „Repositoryeigenschaft zum Veröffentlichen“ verwenden.
 
-            # Tags applied to this module. These help with module discovery in online galleries.
-            Tags = @('.net','acl','active-directory')
+Ein weiterer Punkt zum Testen von Veröffentlichungen: Jedes Element, das Sie im PowerShell-Katalog veröffentlichen, kann nicht ohne die Hilfe des Betriebsteams wieder gelöscht werden, da von diesem bestätigt werden muss, dass es keine Abhängigkeiten von dem Element gibt, das Sie veröffentlichen möchten.
+Aus diesem Grund unterstützen wir den PowerShell-Katalog nicht als Testziel und werden jeden Herausgeber kontaktieren, der dies tut.
 
-            # A URL to the license for this module.
-            LicenseUri = 'http://www.apache.org/licenses/LICENSE-2.0'
-
-
-
-<a id="recommended-workflow" class="xliff"></a>
-## Empfohlener Workflow
+## <a name="recommended-workflow"></a>Empfohlener Workflow
 
 Als erfolgreichster Ansatz für das Veröffentlichen von Elementen im PowerShell-Katalog hat sich der folgende bewährt:
 
-* Führen Sie die anfängliche Entwicklung auf einer Open Source-Projektwebsite durch. Das PowerShell-Team verwendet GitHub. 
+* Führen Sie die anfängliche Entwicklung auf einer Open Source-Projektwebsite durch. Das PowerShell-Team verwendet GitHub.
 * Nutzen Sie das Feedback von Benutzern und Testern sowie [Powershell Script Analyzer](https://aka.ms/psscriptanalyzer), um den Code in einen stabilen Zustand zu überführen.
 * Schließen Sie eine Dokumentation ein, damit andere Benutzer wissen, wie Ihr Code verwendet wird.
+* Testen Sie die Veröffentlichung, indem Sie ein lokales Repository verwenden.
 * Veröffentlichen Sie eine stabile oder Alphaversion im PowerShell-Katalog. Schließen Sie in diese Version die Dokumentation und einen Link zu Ihrer Projektwebsite ein.
 * Sammeln Sie Feedback, und durchlaufen Sie Ihren Code auf der Projektwebsite. Veröffentlichen Sie anschließend stabile Updates im PowerShell-Katalog.
 * Fügen Sie Ihrem Projekt und Ihrem Modul Beispiele und Pester-Tests hinzu.
-* Entscheiden Sie, ob Sie Ihrem Element eine Codesignatur hinzufügen möchten. 
+* Entscheiden Sie, ob Sie Ihrem Element eine Codesignatur hinzufügen möchten.
 * Wenn Sie der Meinung sind, dass das Projekt bereit zur Verwendung in einer Produktionsumgebung ist, veröffentlichen Sie eine Version 1.0.0 im PowerShell-Katalog.
 * Sammeln Sie weiterhin Feedback, und durchlaufen Sie Ihren Code basierend auf Hinweisen und Kommentaren von Benutzern.
-
-
-   

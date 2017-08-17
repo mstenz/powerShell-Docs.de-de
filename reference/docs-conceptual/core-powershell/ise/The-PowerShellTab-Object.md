@@ -4,10 +4,10 @@ keywords: powershell,cmdlet
 title: Das PowerShellTab-Objekt
 ms.assetid: a9b58556-951b-4f48-b3ae-b351b7564360
 ms.openlocfilehash: d4e9374202d352a30b3eb46bcf1e4e40dea49822
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="the-powershelltab-object"></a>Das PowerShellTab-Objekt
   Das **PowerShellTab**-Objekt stellt eine Windows PowerShell-Laufzeitumgebung dar.
@@ -40,8 +40,7 @@ $psise.PowerShellTabs[1].Invoke({dir})
 
  **Script**: System.Management.Automation.ScriptBlock oder Zeichenfolge – der auszuführende Skriptblock.
 
- **\[useNewScope\]**: optionaler boolescher Wert mit Standardwert **$true**
-. Bei Festlegung auf **$true** wird ein neuer Bereich erstellt, in dem der Befehl ausgeführt werden soll. Die Laufzeitumgebung der vom Befehl angegebenen PowerShell-Registerkarte wird nicht geändert.
+ **\[useNewScope\]**: optionaler boolescher Wert mit Standardwert **$true**. Bei Festlegung auf **$true** wird ein neuer Bereich erstellt, in dem der Befehl ausgeführt werden soll. Die Laufzeitumgebung der vom Befehl angegebenen PowerShell-Registerkarte wird nicht geändert.
 
  **\[millisecondsTimeout\]**: optionale ganze Zahl mit Standardwert **500**.
 Wenn der Befehl nicht innerhalb der angegebenen Zeit abgeschlossen wird, generiert der Befehl eine **TimeoutException** mit der Meldung „Timeout für Vorgang überschritten“.

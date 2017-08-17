@@ -4,14 +4,13 @@ author: eslesar
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Einrichten eines DSC-Webpullservers
-ms.openlocfilehash: ffe5b1ae058b9757def30ad53019a1b61605a42a
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 1dd4aa63c598a359a052f6f00a9e48fc6fa6c113
+ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 07/27/2017
 ---
-<a id="setting-up-a-dsc-web-pull-server" class="xliff"></a>
-# Einrichten eines DSC-Webpullservers
+# <a name="setting-up-a-dsc-web-pull-server"></a>Einrichten eines DSC-Webpullservers
 
 > Gilt für: Windows PowerShell 5.0
 
@@ -27,8 +26,7 @@ Anforderungen für die Verwendung eines Pullservers:
 
 Sie können die IIS-Serverrolle und den DSC-Dienst mit dem Assistenten zum Hinzufügen von Rollen und Features in Server Manager oder unter Verwendung von PowerShell hinzufügen. Die in diesem Thema enthaltenen Beispielskripts führen beide Schritte aus.
 
-<a id="using-the-xwebservice-resource" class="xliff"></a>
-## Verwenden der xWebService-Ressource
+## <a name="using-the-xdscwebservice-resource"></a>Verwenden der xDSCWebService-Ressource
 Die einfachste Möglichkeit einen Webpullserver einzurichten, ist die Verwendung der Ressource „xWebService“ im Modul „xPSDesiredStateConfiguration“. Die folgenden Schritte erläutern, wie Sie die Ressource in einer Konfiguration verwenden, die den Webdienst einrichtet.
 
 1. Rufen Sie das Cmdlet [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) auf, um das Modul **xPSDesiredStateConfiguration** zu installieren. **Hinweis**: **Install-Module** ist im Modul **PowerShellGet** enthalten, das Bestandteil von PowerShell 5.0 ist. Das Modul **PowerShellGet** für PowerShell 3.0 und 4.0 können Sie unter [PowerShell-Module „PackageManagement“ – Vorschau](https://www.microsoft.com/en-us/download/details.aspx?id=49186) herunterladen. 
@@ -89,10 +87,10 @@ configuration Sample_xDscPullServer
 
 ```
 
-1. Führen Sie die Konfiguration aus, und übergeben Sie als Parameter **certificateThumbPrint** den Fingerabdruck des SSL-Zertifikats und als Parameter **RegistrationKey** einen GUID-Registrierungschlüssel:
+5. Führen Sie die Konfiguration aus, und übergeben Sie als Parameter **certificateThumbPrint** den Fingerabdruck des SSL-Zertifikats und als Parameter **RegistrationKey** einen GUID-Registrierungschlüssel:
 
 ```powershell
-# To find the Thumbprint for an installed SSL certificate for use with the pull server list all certifcates in your local store 
+# To find the Thumbprint for an installed SSL certificate for use with the pull server list all certificates in your local store 
 # and then copy the thumbprint for the appropriate certificate by reviewing the certificate subjects
 dir Cert:\LocalMachine\my
 
@@ -103,12 +101,11 @@ Sample_xDSCPullServer -certificateThumbprint 'A7000024B753FA6FFF88E966FD6E19301F
 Start-DscConfiguration -Path c:\Configs\PullServer -Wait -Verbose
 ```
 
-<a id="registration-key" class="xliff"></a>
-## Registrierungsschlüssel
-Um zuzulassen, dass Clientknoten sich beim Server registrieren und Konfigurationsnamen anstelle einer Konfigurations-ID verwenden können, wird ein von der oben beschriebenen Konfiguration erstellter Registrierungsschlüssel in einer Datei namens `RegistrationKeys.txt` in `C:\Program Files\WindowsPowerShell\DscService` gespeichert. Der Registrierungsschlüssel fungiert als ein gemeinsamer geheimer Schlüssel, der vom Client während der anfänglichen Registrierung beim Pullserver verwendet wird. Der Client generiert ein selbstsigniertes Zertifikat, das nach der erfolgreich abgeschlossenen Registrierung zur eindeutigen Authentifizierung beim Pullserver verwendet wird. Der Fingerabdruck des Zertifikats wird lokal gespeichert und der URL des Pullservers zugeordnet.
+## <a name="registration-key"></a>Registrierungsschlüssel
+Um zuzulassen, dass Clientknoten sich beim Server registrieren und Konfigurationsnamen anstelle einer Konfigurations-ID verwenden können, wird ein von der oben beschriebenen Konfiguration erstellter Registrierungsschlüssel in einer Datei namens `RegistrationKeys.txt` in `C:\Program Files\WindowsPowerShell\DscService` gespeichert. Der Registrierungsschlüssel fungiert als ein gemeinsamer geheimer Schlüssel, der vom Client während der anfänglichen Registrierung beim Pullserver verwendet wird. Der Client generiert ein selbstsigniertes Zertifikat, das nach der erfolgreich abgeschlossenen Registrierung zur eindeutigen Authentifizierung beim Pullserver verwendet wird. Der Fingerabdruck dieses Zertifikats wird lokal gespeichert und der URL des Pullservers zugeordnet.
 > **Hinweis**: Registrierungsschlüssel werden in PowerShell 4.0 nicht unterstützt. 
 
-Zum Konfigurieren des Knotens zur Authentifizierung beim Pullserver muss der Registrierungsschlüssel in der Metakonfiguration für alle Zielknoten enthalten sein, die sich bei diesem Pullserver registrieren. Beachten Sie, dass **RegistrationKey** aus der unten stehenden Metakonfiguration entfernt wird, nachdem der Zielcomputer erfolgreich registriert wurde, und dass der Wert „140a952b-b9d6-406b-b416-e0f759c9c0e4“ dem in der Datei „RegistrationKeys.txt“ auf dem Pullserver gespeicherten Wert entsprechen muss. Behandeln Sie den Registrierungsschlüsselwert immer vertraulich, da sich jeder beliebige Zielcomputer mit diesem Schlüssel beim Pullserver registrieren könnte.
+Zum Konfigurieren eines Knotens zur Authentifizierung beim Pullserver muss der Registrierungsschlüssel in der Metakonfiguration für alle Zielknoten enthalten sein, die sich bei diesem Pullserver registrieren. Beachten Sie, dass **RegistrationKey** aus der unten stehenden Metakonfiguration entfernt wird, nachdem der Zielcomputer erfolgreich registriert wurde, und dass der Wert „140a952b-b9d6-406b-b416-e0f759c9c0e4“ dem in der Datei „RegistrationKeys.txt“ auf dem Pullserver gespeicherten Wert entsprechen muss. Behandeln Sie den Registrierungsschlüsselwert immer vertraulich, da sich jeder beliebige Zielcomputer mit diesem Schlüssel beim Pullserver registrieren könnte.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -146,26 +143,22 @@ Das Fehlen der Eigenschaft **ConfigurationID** in der Metakonfigurationsdatei be
 
 >**Hinweis**: In einem PUSH-Szenario tritt in der aktuellen Version ein Fehler auf, aufgrund dessen es erforderlich ist, in der Metakonfigurationsdatei für Knoten, die noch nie bei einem Pullserver registriert wurden, die Eigenschaft „ConfigurationID“ zu definieren. Dies erzwingt die Verwendung des V1-Pullserver-Protokolls verhindert Registrierungsfehlermeldungen.
 
-<a id="placing-configurations-and-resources" class="xliff"></a>
-## Platzieren von Konfigurationen und Ressourcen
+## <a name="placing-configurations-and-resources"></a>Platzieren von Konfigurationen und Ressourcen
 
 Nach Abschluss des Pullserversetups befinden sich die von den Eigenschaften **ConfigurationPath** und **ModulePath** in der Pullserverkonfiguration definierten Ordner an dem Ort, an dem Module und Konfigurationen abgelegt werden, die für Zielknoten zum Abrufen verfügbar sein sollen. Diese Dateien müssen in einem bestimmten Format vorliegen, damit sie von den Pullservern ordnungsgemäß verarbeiten werden können. 
 
-<a id="dsc-resource-module-package-format" class="xliff"></a>
-### Format des DSC-Ressourcenmodulpakets
+### <a name="dsc-resource-module-package-format"></a>Format des DSC-Ressourcenmodulpakets
 
 Jedes Ressourcenmodul muss komprimiert und entsprechend dem folgenden Muster benannt werden: `{Module Name}_{Module Version}.zip`. Ein Modul namens „xWebAdminstration“ mit einer Modulversion 3.1.2.0 würde beispielsweise „xWebAdministration_3.2.1.0.zip“ heißen. Jede Version eines Moduls muss in einer eigenen ZIP-Datei enthalten sein. Da jede ZIP-Datei nur jeweils eine Version einer Ressource enthält, wird das in WMF 5.0 eingeführte das Modulformat, das mehrere Versionen in einem einzigen Verzeichnis ermöglicht, nicht unterstützt. Das bedeutet, dass Sie vor dem Packen von DSC-Ressourcenmodulen für die Verwendung mit einem Pullserver eine kleine Änderung an der Verzeichnisstruktur vornehmen müssen. Das Standardformat für Module mit DSC-Ressourcen in WMF 5.0 ist: {Modulordner}\{Modulversion}\DscResources\{DSC-Ressourcenordner}\'. Entfernen Sie vor dem Packen für den Pullserver einfach den Ordner **{Modulversion}**, damit der Pfad wie folgt geändert wird: {Modulordner}\DscResources\{DSC-Ressourcenordner}\'. Komprimieren Sie den Odner nach dieser Änderung wie oben beschrieben, und speichern Sie die ZIP-Dateien im Ordner **ModulePath**.
 
 Verwenden Sie `new-dscchecksum {module zip file}` zum Erstellen einer Prüfsummendatei für das neu hinzugefügte Modul.
 
-<a id="configuration-mof-format" class="xliff"></a>
-### MOF-Konfigurationsformat 
+### <a name="configuration-mof-format"></a>MOF-Konfigurationsformat 
 Eine MOF-Konfigurationsdatei muss einer Prüfsummendatei zugeordnet werden, damit ein LCM auf einem Zielknoten die Konfiguration überprüfen kann. Um eine Prüfsumme zu erstellen, rufen Sie das Cmdlet [New-DSCCheckSum](https://technet.microsoft.com/en-us/library/dn521622.aspx) auf. Das Cmdlet verwendet einen **Path**-Parameter, der den Ordner angibt, in dem sich die MOF-Konfigurationsdatei befindet. Das Cmdlet erstellt eine Prüfsummendatei mit dem Namen `ConfigurationMOFName.mof.checksum`, wobei `ConfigurationMOFName` der Name der MOF-Konfigurationsdatei ist. Wenn in dem angegebenen Ordner mehrere MOF-Konfigurationsdateien vorhanden sind, wird für jede Konfiguration im Ordner eine Prüfsumme erstellt. Platzieren Sie die MOF-Dateien und die zugeordneten Prüfsummendateien im Ordner **ConfigurationPath**.
 
 >**Hinweis**: Wenn Sie die MOF-Konfigurationsdatei in irgendeiner Weise ändern, müssen Sie auch die Prüfsummendatei neu erstellen.
 
-<a id="tooling" class="xliff"></a>
-## Tools
+## <a name="tooling"></a>Tools
 Um das Einrichten, Überprüfen und Verwalten des Pullservers zu vereinfachen, enthält die neueste Version des Moduls „xPSDesiredStateConfiguration“ folgende Tools als Beispiele:
 1. Ein Modul, das beim Packen von DSC-Ressourcenmodulen und Konfigurationsdateien zur Verwendung auf dem Pullserver hilft. [PublishModulesAndMofsToPullServer.psm1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/DSCPullServerSetup/PublishModulesAndMofsToPullServer.psm1). Beispiele unten:
 
@@ -178,11 +171,10 @@ Um das Einrichten, Überprüfen und Verwalten des Pullservers zu vereinfachen, e
      Publish-DSCModuleAndMof -Source C:\LocalDepot -Force
 ```
 
-1. Ein Skript, das den Pullserver überprüft, wurde ordnungsgemäß konfiguriert. [PullServerSetupTests.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/DSCPullServerSetup/PullServerDeploymentVerificationTest/PullServerSetupTests.ps1).
+2. Ein Skript, das den Pullserver überprüft, wurde ordnungsgemäß konfiguriert. [PullServerSetupTests.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/DSCPullServerSetup/PullServerDeploymentVerificationTest/PullServerSetupTests.ps1).
 
 
-<a id="pull-client-configuration" class="xliff"></a>
-## Pullclientkonfiguration 
+## <a name="pull-client-configuration"></a>Pullclientkonfiguration 
 In den folgenden Themen wird das Einrichten von Pullclients im Detail beschrieben:
 
 * [Einrichten eines DSC-Pullclients mithilfe einer Konfigurations-ID](pullClientConfigID.md)
@@ -190,8 +182,7 @@ In den folgenden Themen wird das Einrichten von Pullclients im Detail beschriebe
 * [Teilkonfigurationen](partialConfigs.md)
 
 
-<a id="see-also" class="xliff"></a>
-## Siehe auch
+## <a name="see-also"></a>Siehe auch
 * [Windows PowerShell DSC – Übersicht](overview.md)
 * [Inkraftsetzung von Konfigurationen](enactingConfigurations.md)
 * [Verwenden eines DSC-Berichtsservers](reportServer.md)

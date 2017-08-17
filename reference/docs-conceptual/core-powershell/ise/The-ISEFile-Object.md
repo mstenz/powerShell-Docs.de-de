@@ -4,10 +4,10 @@ keywords: powershell,cmdlet
 title: Das ISEFile-Objekt
 ms.assetid: 1c6d91f3-c556-42a2-a017-79b6b7b4b7db
 ms.openlocfilehash: 0e1c09c4a92868448d76cc7b4954d250773ce2f2
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="the-isefile-object"></a>Das ISEFile-Objekt
   Ein **ISEFile**-Objekt stellt eine Datei in Windows-PowerShell® Integrated Scripting Environment (ISE) dar Es ist eine Instanz der Microsoft.PowerShell.Host.ISE.ISEFile-Klasse. In diesem Thema werden die Elementmethoden und -eigenschaften aufgeführt. **$psISE.CurrentFile** und die Dateien in der DateiSammlung auf einer PowerShell-Registerkarte sind Instanzen der Microsoft.PowerShell.Host.ISE.ISEFile-Klasse.
@@ -19,8 +19,7 @@ ms.lasthandoff: 06/08/2017
 
  Speichert die Datei auf dem Datenträger.
 
- **\[saveEncoding\]** – Optional [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)
- – Ein optionaler Zeichencodierungsparameter, der für die gespeicherte Datei verwendet werden soll Der Standardwert lautet **UTF8**.
+ **\[saveEncoding\]** – Optional [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx) Ein optionaler Zeichencodierungsparameter, der für die gespeicherte Datei verwendet werden soll. Der Standardwert lautet **UTF8**.
 
  **Ausnahmen**
  -   **System.IO.IOException**: Die Datei konnte nicht gespeichert werden.
@@ -45,8 +44,7 @@ $myfile.Encoding
 
  **Dateiname**: Zeichenfolge – der Name, der zum Speichern der Datei verwendet werden soll.
 
- **\[saveEncoding\]** – Optional [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)
- – Ein optionaler Zeichencodierungsparameter, der für die gespeicherte Datei verwendet werden soll Der Standardwert lautet **UTF8**.
+ **\[saveEncoding\]** – Optional [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx) Ein optionaler Zeichencodierungsparameter, der für die gespeicherte Datei verwendet werden soll. Der Standardwert lautet **UTF8**.
 
  **Ausnahmen**
  -   **System.ArgumentNullException**: Der **filename**-Parameter ist NULL.

@@ -3,10 +3,10 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Deinstallieren von Windows PowerShell Web Access
 ms.openlocfilehash: 7231d5eadceda8e3b28d9a81c2b5dcbe43680ff2
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 #  <a name="uninstall-windows-powershell-web-access"></a>Deinstallieren von Windows PowerShell Web Access
 
@@ -24,8 +24,8 @@ Führen Sie vor dem Deinstallieren von Windows PowerShell Web Access vom Gateway
 
 Bei der Deinstallation von Windows PowerShell Web Access werden IIS oder andere Features, die automatisch installiert wurden, nicht deinstalliert, weil diese von Windows PowerShell Web Access zur Ausführung benötigt werden. Beim Deinstallationsvorgang bleiben die Features unangetastet, mit denen für Windows PowerShell Web Access eine Abhängigkeit besteht. Sie können diese Features bei Bedarf separat deinstallieren.
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Empfohlene (schnelle) Deinstallation</span></a>
-<a href="/en-us/library/dn282396(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Ausblenden"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Empfohlene (schnelle) Deinstallation</span></a>
+<a href="/en-us/library/dn282396(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="Klicken Sie mit der rechten Maustaste, um den Link für diesen Abschnitt zu kopieren und zu teilen"></a>
 
 ------------------------------------------------------------------------
 
@@ -33,7 +33,7 @@ Mit den in diesem Abschnitt beschriebenen Verfahren können Sie die Windows Powe
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Schritt 1: Löschen der Webanwendung</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Ausblenden"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Schritt 1: Löschen der Webanwendung</span></a>
 
 ------------------------------------------------------------------------
 
@@ -57,7 +57,7 @@ Wenn Sie Ihre eigenen, benutzerdefinierten Websitenamen angegeben haben, fügen 
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Schritt 2: Deinstallieren von Windows PowerShell Web Access</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Ausblenden"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Schritt 2: Deinstallieren von Windows PowerShell Web Access</span></a>
 
 ------------------------------------------------------------------------
 
@@ -83,8 +83,8 @@ Wenn Sie Ihre eigenen, benutzerdefinierten Websitenamen angegeben haben, fügen 
 
 3.  Vergewissern Sie sich nach Abschluss der Entfernung, ob Windows PowerShell Web Access wirklich entfernt wurde. Öffnen Sie dazu im Server-Manager die Seite **Alle Server**, wählen Sie einen Server aus, von dem Sie das Feature entfernt haben, und zeigen Sie auf der Seite für den ausgewählten Server die Kachel **Rollen und Features** an. Sie können auch das Cmdlet <span class="code">Get-WindowsFeature</span> für den ausgewählten Server (Get-WindowsFeature -ComputerName &lt;*Computername*&gt;) ausführen, um eine Liste der Rollen und Features anzuzeigen, die auf dem Server installiert sind.
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Benutzerdefinierte Deinstallation</span></a>
-<a href="/en-us/library/dn282396(v=ws.11).aspx#Anchor_2" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Ausblenden"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Benutzerdefinierte Deinstallation</span></a>
+<a href="/en-us/library/dn282396(v=ws.11).aspx#Anchor_2" class="LW_CollapsibleArea_Anchor_Img" title="Klicken Sie mit der rechten Maustaste, um den Link für diesen Abschnitt zu kopieren und zu teilen"></a>
 
 ------------------------------------------------------------------------
 
@@ -92,7 +92,7 @@ Mit den in diesem Abschnitt beschriebenen Verfahren können Sie die Windows Powe
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Schritt 1: Löschen der Webanwendung</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Ausblenden"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Schritt 1: Löschen der Webanwendung</span></a>
 
 ------------------------------------------------------------------------
 
@@ -132,7 +132,7 @@ Mit den in diesem Abschnitt beschriebenen Verfahren können Sie die Windows Powe
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Schritt 2: Deinstallieren von Windows PowerShell Web Access</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Ausblenden"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Schritt 2: Deinstallieren von Windows PowerShell Web Access</span></a>
 
 ------------------------------------------------------------------------
 
@@ -154,8 +154,8 @@ Mit den in diesem Abschnitt beschriebenen Verfahren können Sie die Windows Powe
 
 6.  Klicken Sie auf der Seite **Entfernungsauswahl bestätigen** auf **Entfernen**.
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Siehe auch</span></a>
-<a href="/en-us/library/dn282396(v=ws.11).aspx#Anchor_3" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Ausblenden"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Siehe auch</span></a>
+<a href="/en-us/library/dn282396(v=ws.11).aspx#Anchor_3" class="LW_CollapsibleArea_Anchor_Img" title="Klicken Sie mit der rechten Maustaste, um den Link für diesen Abschnitt zu kopieren und zu teilen"></a>
 
 ------------------------------------------------------------------------
 

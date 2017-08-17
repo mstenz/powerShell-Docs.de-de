@@ -1,16 +1,12 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: Verwendung der webbasierten Windows PowerShell-Konsole
-ms.technology: powershell
-ms.openlocfilehash: ea530d346ec36000da331b287f51d8f732947629
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 48ed1646c00f909c4e950f197f51a30205060ef0
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 08/03/2017
 ---
 #  <a name="use-the-web-based-windows-powershell-console"></a>Verwendung der webbasierten Windows PowerShell-Konsole
 
@@ -39,7 +35,7 @@ Windows PowerShell Web Access unterstützt die folgenden Internetbrowser. Obwohl
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Unterstützte Desktopcomputerbrowser</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Ausblenden"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Unterstützte Desktopcomputerbrowser</span></a>
 
 ------------------------------------------------------------------------
 
@@ -55,7 +51,7 @@ Windows PowerShell Web Access unterstützt die folgenden Internetbrowser. Obwohl
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Mobile Geräte oder Browser, für die Minimaltests durchgeführt wurden</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Ausblenden"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Mobile Geräte oder Browser, für die Minimaltests durchgeführt wurden</span></a>
 
 ------------------------------------------------------------------------
 
@@ -69,7 +65,7 @@ Windows PowerShell Web Access unterstützt die folgenden Internetbrowser. Obwohl
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Browseranforderungen</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Ausblenden"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Browseranforderungen</span></a>
 
 ------------------------------------------------------------------------
 
@@ -83,8 +79,8 @@ Browser müssen folgende Anforderungen erfüllen, um die webbasierte Windows Pow
 
 <a href="" id="BKMK_sign"></a>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Anmelden bei Windows PowerShell Web Access</span></a>
-<a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Ausblenden"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Anmelden bei Windows PowerShell Web Access</span></a>
+<a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="Klicken Sie mit der rechten Maustaste, um den Link für diesen Abschnitt zu kopieren und zu teilen"></a>
 
 ------------------------------------------------------------------------
 
@@ -128,8 +124,8 @@ Ihr Windows PowerShell Web Access-Administrator sollten Ihnen eine URL bereitste
 
 <a href="" id="BKMK_timeout"></a>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Abmelden und Timeout</span></a>
-<a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_2" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Ausblenden"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Signing out and timing out (Abmelden und Timeout)</span></a>
+<a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_2" class="LW_CollapsibleArea_Anchor_Img" title="Klicken Sie mit der rechten Maustaste, um den Link für diesen Abschnitt zu kopieren und zu teilen"></a>
 
 ------------------------------------------------------------------------
 
@@ -159,8 +155,8 @@ Falls Sie sich wieder anmelden möchten, öffnen Sie die Windows PowerShell Web 
 
 <a href="" id="BKMK_web"></a>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Unterschiede bei der webbasierten Windows PowerShell-Konsole</span></a>
-<a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_3" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Ausblenden"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Differences in the web-based Windows PowerShell console (Unterschiede in der webbasierten Windows PowerShell-Konsole)</span></a>
+<a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_3" class="LW_CollapsibleArea_Anchor_Img" title="Klicken Sie mit der rechten Maustaste, um den Link für diesen Abschnitt zu kopieren und zu teilen"></a>
 
 ------------------------------------------------------------------------
 
@@ -168,7 +164,7 @@ Nach der Anmeldung bei Windows PowerShell Web Access wird im Fenster oder auf de
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Funktionale Unterschiede zu „PowerShell.exe“</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Ausblenden"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Funktionale Unterschiede zu „PowerShell.exe“</span></a>
 
 ------------------------------------------------------------------------
 
@@ -280,7 +276,7 @@ Die Mehrzahl der Windows PowerShell-Hostfunktionen steht in der webbasierten Win
 <a href="" id="BKMK_limits"></a>
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Einschränkungen der webbasierten Konsole</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Ausblenden"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Einschränkungen der webbasierten Konsole</span></a>
 
 ------------------------------------------------------------------------
 
@@ -333,8 +329,8 @@ Die Mehrzahl der Windows PowerShell-Hostfunktionen steht in der webbasierten Win
 
         Weitere Beispiele zur Anpassung der Konsolenansicht stehen im [Windows PowerShell-Teamblog](http://blogs.msdn.com/b/powershell/) zur Verfügung.
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Siehe auch</span></a>
-<a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_4" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Ausblenden"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Siehe auch</span></a>
+<a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_4" class="LW_CollapsibleArea_Anchor_Img" title="Klicken Sie mit der rechten Maustaste, um den Link für diesen Abschnitt zu kopieren und zu teilen"></a>
 
 ------------------------------------------------------------------------
 

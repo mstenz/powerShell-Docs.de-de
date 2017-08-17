@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Windows PowerShell-Glossar
 ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
-ms.openlocfilehash: 9b8ff47a568b8a71cc51f50b3f3ba5ad3dab1ad1
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.openlocfilehash: 48e5d832ead720c8bc7753c94f757ddb21846fc9
+ms.sourcegitcommit: ced46469e064736eeb1f5608abbc792ec69bdc92
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/08/2017
 ---
 # <a name="windows-powershell-glossary"></a>Windows PowerShell-Glossar
 
@@ -15,7 +15,7 @@ ms.lasthandoff: 06/08/2017
 |Begriff|Definition|
 |--------|--------------|
 |Binäres Modul|Ein Windows PowerShell-Modul, dessen Stammmodul eine binäre Moduldatei (DLL) ist. Ein binäres Modul kann ein Modulmanifest enthalten.|
-|Allgemeiner Parameter|Ein Parameter, der vom Windows PowerShell-Modul allen Cmdlets und erweiterten Funktionen hinzugefügt wird.|
+|Allgemeiner Parameter|Ein Parameter, der vom Windows PowerShell-Modul allen Cmdlets, erweiterten Funktionen und Workflows hinzugefügt wird.|
 |Punkt als Stammelement|Um in Windows PowerShell einen Befehl zu starten, geben Sie einen Punkt und ein Leerzeichen vor dem Befehl ein. Befehle mit Punkt als Stammelement werden im aktuellen Bereich anstatt im neuen Bereich ausgeführt. Alle Variablen, Aliase, Funktionen oder Laufwerke, die der Befehl erstellt, werden im aktuellen Bereich erstellt und sind für Benutzer verfügbar, wenn der Befehl abgeschlossen ist.|
 |Dynamisches Modul|Ein Modul, das nur im Arbeitsspeicher vorhanden ist. Die Cmdlets „New-Module“ und „Import-PSSession“ erstellen dynamische Module.|
 |Dynamischer Parameter|Parameter, der einem Windows PowerShell-Cmdlet, einer Funktion oder Skript einen unter bestimmten Umständen hinzugefügt wird. Cmdlets, Funktionen, Anbieter und Skripts können dynamische Parameter hinzufügen.|
