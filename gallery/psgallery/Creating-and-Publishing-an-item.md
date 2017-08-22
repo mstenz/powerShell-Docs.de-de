@@ -4,14 +4,13 @@ contributor: JKeithB
 ms.topic: conceptual
 keywords: gallery,powershell,cmdlet,psgallery
 title: "Erstellen und Veröffentlichen eines Elements"
-ms.openlocfilehash: e71381d1a3efda73832fab6189bda26cee411d9e
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: b6bcd3e923b77ad7d19a1d92aeb78222bff7ea7e
+ms.sourcegitcommit: e08f036021e9f115dbb52c697941706cc4ee51dd
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 08/15/2017
 ---
-<a id="creating-and-publishing-an-item" class="xliff"></a>
-# Erstellen und Veröffentlichen eines Elements 
+# <a name="creating-and-publishing-an-item"></a>Erstellen und Veröffentlichen eines Elements 
 Der PowerShell-Katalog ist der Ort, an dem stabile PowerShell-Module, -Skripts und DSC-Ressourcen veröffentlicht und mit der großen PowerShell-Benutzercommunity geteilt werden.    
 
 In diesem Artikel werden die Mechanismen und wichtigen Schritte zum Vorbereiten eines Skripts oder Moduls sowie deren Veröffentlichung im PowerShell-Katalog erläutert.
@@ -27,8 +26,7 @@ Für das Veröffentlichen eines Elements im PowerShell-Katalog gelten diese Mind
  
 Im PowerShell-Katalog können PowerShell-Module und PowerShell-Skripts veröffentlicht werden. Bei der Bezugnahme auf Skripts sind aus einer einzigen Datei bestehende PowerShell-Skripts gemeint – nicht hingegen Skripts, die Bestandteil eines größeren Moduls sind. 
 
-<a id="powershell-gallery-account-and-api-key" class="xliff"></a>
-## PowerShell-Katalogkonto und API-Schlüssel
+## <a name="powershell-gallery-account-and-api-key"></a>PowerShell-Katalogkonto und API-Schlüssel
 Informationen zum Einrichten Ihres PowerShell-Katalogkontos finden Sie unter [Erstellen eines PowerShell-Katalogkontos](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/psgallery_creating_an_account). 
 
 Nachdem Sie ein Konto erstellt haben, können Sie den benötigten API-Schlüssel zum Veröffentlichen eines Elements abrufen.
@@ -36,8 +34,7 @@ Nachdem Sie sich mit dem Konto angemeldet haben, wird oben auf den PowerShell-Ka
 
 Hinweis: Der API-Schlüssel muss so sicher aufbewahrt werden wie Ihre Anmeldung und Ihr Kennwort. Mit diesem Schlüssel können Sie – oder jede andere Person – ein beliebiges Element im PowerShell-Katalog aktualisieren, dessen Besitzer Sie sind. Es wird empfohlen, den Schlüssel regelmäßig zu aktualisieren. Die Aktualisierung kann über den Befehl „Reset Key“ (Schlüssel zurücksetzen) auf der Seite „My Account“ (Mein Konto) durchgeführt werden.
 
-<a id="required-metadata-for-items-published-to-the-powershell-gallery" class="xliff"></a>
-## Erforderliche Metadaten für im PowerShell-Katalog veröffentlichte Elemente
+## <a name="required-metadata-for-items-published-to-the-powershell-gallery"></a>Erforderliche Metadaten für im PowerShell-Katalog veröffentlichte Elemente
 
 Der PowerShell-Katalog stellt den Katalogbenutzern Informationen bereit, die aus Metadatenfeldern extrahiert werden, die im Skript oder Modulmanifest enthalten sind.
 Beim Erstellen oder Ändern von Elementen für die Veröffentlichung im PowerShell-Katalog gelten einige wenige Anforderungen für Informationen, die im Elementmanifest angegeben werden. Es wird dringend empfohlen, den Abschnitt „Elementmetadaten“ in den [Veröffentlichungsrichtlinien](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/psgallery-PublishingGuidelines) zu lesen, um zu erfahren, wie Sie optimale Elementinformationen für die Benutzer bereitstellen. 
@@ -62,8 +59,7 @@ Elementbesitzer (Owners) sind Benutzer mit PowerShell-Katalogkonten, die über d
 * Geben Sie als „Author“ den Namen eines bekannten Teams (z.B. Azure SDK Team) oder Microsoft Corporation an.
 
 
-<a id="pre-validate-your-item" class="xliff"></a>
-## Vorabüberprüfung Ihres Elements
+## <a name="pre-validate-your-item"></a>Vorabüberprüfung Ihres Elements
 
 Es gibt einige Tools, die Sie für Ihren Code ausführen müssen, bevor Sie Ihr Element im PowerShell-Katalog veröffentlichen:
 
@@ -80,8 +76,7 @@ Wenn die Manifestinformationen in Ihrem Element nicht von der PowerShell-Katalog
 In gleicher Weise überprüft [Test-ScriptFileInfo](https://msdn.microsoft.com/en-us/powershell/gallery/psget/script/psget_test-scriptfileinfo) die Metadaten in einem Skript und muss für jedes (separat von einem Modul veröffentlichte) Skript ausgeführt werden, bevor es im PowerShell-Katalog veröffentlicht wird. 
 
 
-<a id="publishing-items" class="xliff"></a>
-## Veröffentlichen von Elementen
+## <a name="publishing-items"></a>Veröffentlichen von Elementen
 
 Sie müssen [Publish-Script](https://msdn.microsoft.com/en-us/powershell/gallery/psget/script/psget_publish-script) oder [Publish-Module](https://msdn.microsoft.com/en-us/powershell/gallery/psget/module/psget_publish-module) verwenden, um Elemente im PowerShell-Katalog zu veröffentlichen.
 Für diese Befehle sind folgende Informationen erforderlich: 

@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Einrichten eines DSC-Webpullservers
-ms.openlocfilehash: 1dd4aa63c598a359a052f6f00a9e48fc6fa6c113
-ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
+ms.openlocfilehash: 865b4a871a75dab18071904983f6b14a10ff7e96
+ms.sourcegitcommit: 4ccf1a64e7a8335797daef6152244a9d4b9a89b9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/27/2017
+ms.lasthandoff: 08/17/2017
 ---
 # <a name="setting-up-a-dsc-web-pull-server"></a>Einrichten eines DSC-Webpullservers
 
@@ -34,72 +34,72 @@ Die einfachste Möglichkeit einen Webpullserver einzurichten, ist die Verwendung
 1. Wählen Sie eine GUID als der Registrierungsschlüssel aus. Um einen mithilfe von PowerShell zu generieren, geben Sie ``` [guid]::newGuid()``` oder ```New-Guid``` an der PS-Eingabeaufforderung ein, und drücken Sie anschließend die EINGABETASTE. Dieser Schlüssel wird von Clientknoten bei der Registrierung als gemeinsamer Schlüssel zum Authentifizieren verwendet. Weitere Informationen finden Sie weiter unten im Abschnitt „Registrierungsschlüssel“.
 1. Starten Sie (F5) in PowerShell ISE das folgende Konfigurationsskript (enthalten im Beispielordner des Moduls **xPSDesiredStateConfiguration** als Sample_xDscWebService.ps1). Dieses Skript richtet den Pullserver ein.
   
-```powershell
-configuration Sample_xDscPullServer
-{ 
-    param  
-    ( 
-            [string[]]$NodeName = 'localhost', 
-            
-            [ValidateNotNullOrEmpty()] 
-            [string] $certificateThumbPrint,
-            
-            [Parameter(Mandatory)]
-            [ValidateNotNullOrEmpty()]
-            [string] $RegistrationKey 
-     ) 
- 
- 
-     Import-DSCResource -ModuleName xPSDesiredStateConfiguration
-     Import-DSCResource –ModuleName PSDesiredStateConfiguration
+    ```powershell
+    configuration Sample_xDscPullServer
+    { 
+        param  
+        ( 
+                [string[]]$NodeName = 'localhost', 
 
-     Node $NodeName 
-     { 
-         WindowsFeature DSCServiceFeature 
-         { 
-             Ensure = 'Present'
-             Name   = 'DSC-Service'             
-         } 
- 
-         xDscWebService PSDSCPullServer 
-         { 
-             Ensure                   = 'Present' 
-             EndpointName             = 'PSDSCPullServer' 
-             Port                     = 8080 
-             PhysicalPath             = "$env:SystemDrive\inetpub\PSDSCPullServer" 
-             CertificateThumbPrint    = $certificateThumbPrint          
-             ModulePath               = "$env:PROGRAMFILES\WindowsPowerShell\DscService\Modules" 
-             ConfigurationPath        = "$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration" 
-             State                    = 'Started'
-             DependsOn                = '[WindowsFeature]DSCServiceFeature'     
-             UseSecurityBestPractices = $false
-         } 
+                [ValidateNotNullOrEmpty()] 
+                [string] $certificateThumbPrint,
 
-        File RegistrationKeyFile
-        {
-            Ensure          = 'Present'
-            Type            = 'File'
-            DestinationPath = "$env:ProgramFiles\WindowsPowerShell\DscService\RegistrationKeys.txt"
-            Contents        = $RegistrationKey
+                [Parameter(Mandatory)]
+                [ValidateNotNullOrEmpty()]
+                [string] $RegistrationKey 
+         ) 
+
+
+         Import-DSCResource -ModuleName xPSDesiredStateConfiguration
+         Import-DSCResource –ModuleName PSDesiredStateConfiguration
+
+         Node $NodeName 
+         { 
+             WindowsFeature DSCServiceFeature 
+             { 
+                 Ensure = 'Present'
+                 Name   = 'DSC-Service'             
+             } 
+
+             xDscWebService PSDSCPullServer 
+             { 
+                 Ensure                   = 'Present' 
+                 EndpointName             = 'PSDSCPullServer' 
+                 Port                     = 8080 
+                 PhysicalPath             = "$env:SystemDrive\inetpub\PSDSCPullServer" 
+                 CertificateThumbPrint    = $certificateThumbPrint          
+                 ModulePath               = "$env:PROGRAMFILES\WindowsPowerShell\DscService\Modules" 
+                 ConfigurationPath        = "$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration" 
+                 State                    = 'Started'
+                 DependsOn                = '[WindowsFeature]DSCServiceFeature'     
+                 UseSecurityBestPractices = $false
+             } 
+
+            File RegistrationKeyFile
+            {
+                Ensure          = 'Present'
+                Type            = 'File'
+                DestinationPath = "$env:ProgramFiles\WindowsPowerShell\DscService\RegistrationKeys.txt"
+                Contents        = $RegistrationKey
+            }
         }
     }
-}
 
-```
+    ```
 
-5. Führen Sie die Konfiguration aus, und übergeben Sie als Parameter **certificateThumbPrint** den Fingerabdruck des SSL-Zertifikats und als Parameter **RegistrationKey** einen GUID-Registrierungschlüssel:
+1. Führen Sie die Konfiguration aus, und übergeben Sie als Parameter **certificateThumbPrint** den Fingerabdruck des SSL-Zertifikats und als Parameter **RegistrationKey** einen GUID-Registrierungschlüssel:
 
-```powershell
-# To find the Thumbprint for an installed SSL certificate for use with the pull server list all certificates in your local store 
-# and then copy the thumbprint for the appropriate certificate by reviewing the certificate subjects
-dir Cert:\LocalMachine\my
+    ```powershell
+    # To find the Thumbprint for an installed SSL certificate for use with the pull server list all certificates in your local store 
+    # and then copy the thumbprint for the appropriate certificate by reviewing the certificate subjects
+    dir Cert:\LocalMachine\my
 
-# Then include this thumbprint when running the configuration
-Sample_xDSCPullServer -certificateThumbprint 'A7000024B753FA6FFF88E966FD6E19301FAE9CCC' -RegistrationKey '140a952b-b9d6-406b-b416-e0f759c9c0e4' -OutputPath c:\Configs\PullServer
+    # Then include this thumbprint when running the configuration
+    Sample_xDSCPullServer -certificateThumbprint 'A7000024B753FA6FFF88E966FD6E19301FAE9CCC' -RegistrationKey '140a952b-b9d6-406b-b416-e0f759c9c0e4' -OutputPath c:\Configs\PullServer
 
-# Run the compiled configuration to make the target node a DSC Pull Server
-Start-DscConfiguration -Path c:\Configs\PullServer -Wait -Verbose
-```
+    # Run the compiled configuration to make the target node a DSC Pull Server
+    Start-DscConfiguration -Path c:\Configs\PullServer -Wait -Verbose
+    ```
 
 ## <a name="registration-key"></a>Registrierungsschlüssel
 Um zuzulassen, dass Clientknoten sich beim Server registrieren und Konfigurationsnamen anstelle einer Konfigurations-ID verwenden können, wird ein von der oben beschriebenen Konfiguration erstellter Registrierungsschlüssel in einer Datei namens `RegistrationKeys.txt` in `C:\Program Files\WindowsPowerShell\DscService` gespeichert. Der Registrierungsschlüssel fungiert als ein gemeinsamer geheimer Schlüssel, der vom Client während der anfänglichen Registrierung beim Pullserver verwendet wird. Der Client generiert ein selbstsigniertes Zertifikat, das nach der erfolgreich abgeschlossenen Registrierung zur eindeutigen Authentifizierung beim Pullserver verwendet wird. Der Fingerabdruck dieses Zertifikats wird lokal gespeichert und der URL des Pullservers zugeordnet.
@@ -162,16 +162,16 @@ Eine MOF-Konfigurationsdatei muss einer Prüfsummendatei zugeordnet werden, dami
 Um das Einrichten, Überprüfen und Verwalten des Pullservers zu vereinfachen, enthält die neueste Version des Moduls „xPSDesiredStateConfiguration“ folgende Tools als Beispiele:
 1. Ein Modul, das beim Packen von DSC-Ressourcenmodulen und Konfigurationsdateien zur Verwendung auf dem Pullserver hilft. [PublishModulesAndMofsToPullServer.psm1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/DSCPullServerSetup/PublishModulesAndMofsToPullServer.psm1). Beispiele unten:
 
-```powershell
-    # Example 1 - Package all versions of given modules installed locally and MOF files are in c:\LocalDepot
-     $moduleList = @("xWebAdministration", "xPhp") 
-     Publish-DSCModuleAndMof -Source C:\LocalDepot -ModuleNameList $moduleList 
-     
-     # Example 2 - Package modules and mof documents from c:\LocalDepot
-     Publish-DSCModuleAndMof -Source C:\LocalDepot -Force
-```
+    ```powershell
+        # Example 1 - Package all versions of given modules installed locally and MOF files are in c:\LocalDepot
+         $moduleList = @("xWebAdministration", "xPhp") 
+         Publish-DSCModuleAndMof -Source C:\LocalDepot -ModuleNameList $moduleList 
 
-2. Ein Skript, das den Pullserver überprüft, wurde ordnungsgemäß konfiguriert. [PullServerSetupTests.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/DSCPullServerSetup/PullServerDeploymentVerificationTest/PullServerSetupTests.ps1).
+         # Example 2 - Package modules and mof documents from c:\LocalDepot
+         Publish-DSCModuleAndMof -Source C:\LocalDepot -Force
+    ```
+
+1. Ein Skript, das den Pullserver überprüft, wurde ordnungsgemäß konfiguriert. [PullServerSetupTests.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/DSCPullServerSetup/PullServerDeploymentVerificationTest/PullServerSetupTests.ps1).
 
 
 ## <a name="pull-client-configuration"></a>Pullclientkonfiguration 
