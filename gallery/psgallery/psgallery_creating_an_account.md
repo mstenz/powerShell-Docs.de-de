@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="creating-a-powershell-gallery-account" class="xliff"></a>
-## Erstellen eines PowerShell-Katalogkontos
+## <a name="creating-a-powershell-gallery-account"></a>Erstellen eines PowerShell-Katalogkontos
 
 Bevor Elemente im PowerShell-Katalog veröffentlicht werden können, muss ein PowerShell-Katalogkonto eingerichtet werden. Das PowerShell-Katalogkonto muss mit einem E-Mail-aktivierten Azure Active Directory-Konto oder mit einem Microsoft-E-Mail-Konto (mit der Domäne outlook.com, hotmail.com usw.) verknüpft werden.
 
@@ -26,8 +25,7 @@ Nach der Anmeldung werden Sie aufgefordert, einen Benutzernamen für den PowerSh
 Hinweis: Dieser Kontoname kann nach der Erstellung nicht mehr geändert werden.  
 Weitere Informationen hierzu finden Sie unter [Verwalten von Elementbesitzern](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/managing-item-owners).
 
-<a id="recommended-practices-for-powershell-gallery-accounts" class="xliff"></a>
-## Empfohlene Vorgehensweisen für PowerShell-Katalogkonten
+## <a name="recommended-practices-for-powershell-gallery-accounts"></a>Empfohlene Vorgehensweisen für PowerShell-Katalogkonten
 
 Es ist wichtig, dass mit Ihrem PowerShell-Katalogkonto verwendete E-Mail-Konto aktiv zu überwachen.
 Die gesamte Kommunikation mit Besitzern von PowerShell-Katalogelementen erfolgt über die E-Mail-Adresse, die Ihrem PowerShell-Katalogkonto zugeordnet ist.
