@@ -12,6 +12,9 @@
       }
     ],
     "globalMetadata": {
+      "breadcrumb_path":"bread/toc.yml",
+      "layout": "conceptual",
+      "ms.locale": "de-de",
       "ROBOTS": "INDEX, FOLLOW",
 	    "ms.prod": "powershell",
             "ms.technology": "dsc",
