@@ -3,7 +3,8 @@
     "content": [
       {
         "files": [
-          "**/**.md"
+          "**/**.md",
+	  "**/**.yml"
         ],
         "exclude": [
           "**/obj/**"
@@ -18,7 +19,7 @@
             "ms.devlang": "powershell",
             "ms.tgt_pltfr": "windows",
             "ms.author": "eslesar",
-      "bilingual_type": "hover over"
+            "bilingual_type": "hover over"
     },
     "resource": [
       {
