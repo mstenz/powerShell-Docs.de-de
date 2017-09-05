@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Das ISEEditor-Objekt
 ms.assetid: 0101daf8-4e31-4e4c-ab89-01d95dcb8f46
-ms.openlocfilehash: c4effde470a7a76a21f983b172f0af651dfc5d11
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: e2ddb0de1089c832f130e1f5c7c8dcb199aca2fa
+ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/31/2017
 ---
 # <a name="the-iseeditor-object"></a>Das ISEEditor-Objekt
   Ein **ISEEditor**-Objekt ist eine Instanz der Microsoft.PowerShell.Host.ISE.ISEEditor-Klasse. Der Konsolenbereich ist ein **ISEEditor**-Objekt. Jedes [ISEFile](The-ISEFile-Object.md)-Objekt verfügt über ein zugeordnetes **ISEEditor**-Objekt. In den folgenden Abschnitten werden die Methoden und Eigenschaften eines **ISEEditor**-Objekts aufgeführt.
@@ -63,7 +63,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 ### <a name="gotomatch"></a>GoToMatch\(\)
   In Windows PowerShell ISE 3.0 und höher unterstützt, in früheren Versionen nicht enthalten. 
 
- Verschiebt den Textcursor zum entsprechenden Zeichen, wenn die Eigenschaft **CanGoToMatch** des Editorobjekts **$true** ist. Dies tritt ein, wenn sich der Textcursor direkt vor einer öffnenden, eckigen oder geschweiften Klammer – \(, \[, { – oder unmittelbar nach einer schließenden, eckigen oder geschweiften Klammer befindet – \), \], }.  Der Textcursor wird vor einer öffnenden bzw. nach einer schließenden Klammer platziert. Wenn die **CanGoToMatch**-Eigenschaft **$false** ist, wird mit dieser Methode keine Aktion ausgeführt. Siehe [CanGoToMatch](#cangotomatch).
+ Verschiebt den Textcursor zum entsprechenden Zeichen, wenn die Eigenschaft **CanGoToMatch** des Editorobjekts **$true** ist. Dies tritt ein, wenn sich der Textcursor direkt vor einer öffnenden, eckigen oder geschweiften Klammer – \(, \[, { – oder unmittelbar nach einer schließenden, eckigen oder geschweiften Klammer befindet – \), \], }.  Der Textcursor wird vor einer öffnenden bzw. nach einer schließenden Klammer platziert. Wenn die **CanGoToMatch**-Eigenschaft **$false** ist, wird mit dieser Methode keine Aktion ausgeführt. Siehe [CanGoToMatch]().
 
 ```powershell
 # Test to see if the caret is next to a parenthesis, bracket, or brace.
@@ -76,7 +76,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  **text**: Zeichenfolge – der einzufügende Text.
 
- Weitere Informationen finden Sie im [Beispielskript](#example) weiter unten in diesem Thema.
+ Weitere Informationen finden Sie im [Beispielskript]() weiter unten in diesem Thema.
 
 ### <a name="select-startline-startcolumn-endline-endcolumn-"></a>Select\( startLine, startColumn, endLine, endColumn \)
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
@@ -91,7 +91,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  **endColumn**: ganze Zahl – die Spalte in der Endzeile, in der die Auswahl endet.
 
- Weitere Informationen finden Sie im [Beispielskript](#example) weiter unten in diesem Thema.
+ Weitere Informationen finden Sie im [Beispielskript]() weiter unten in diesem Thema.
 
 ### <a name="selectcaretline"></a>SelectCaretLine\(\)
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
@@ -186,14 +186,14 @@ $psISE.CurrentFile.Editor.LineCount
 
  Die schreibgeschützte Eigenschaft, die den ausgewählten Text aus dem Editor abruft.
 
- Weitere Informationen finden Sie im [Beispielskript](#example) weiter unten in diesem Thema.
+ Weitere Informationen finden Sie im [Beispielskript]() weiter unten in diesem Thema.
 
 ###  <a name="Text"></a> Text
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Die Lese-/Schreibeigenschaft, die den Text im Editor abruft oder festlegt.
 
- Weitere Informationen finden Sie im [Beispielskript](#example) weiter unten in diesem Thema.
+ Weitere Informationen finden Sie im [Beispielskript]() weiter unten in diesem Thema.
 
 ##  <a name="example"></a> Beispielskript
 

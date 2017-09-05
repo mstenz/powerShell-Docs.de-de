@@ -1,22 +1,22 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "Schreiben und Ausführen von Skripts in der Windows PowerShell ISE"
 ms.assetid: 62f916d9-b3a1-484a-bdfb-41f57112c22b
-ms.openlocfilehash: 871a4b6f4575af4f823a6957dc971335497320a4
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 577ecf96027618a0a8f98d5bcefe7ec949f337cc
+ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/31/2017
 ---
 # <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>Schreiben und Ausführen von Skripts in der Windows PowerShell ISE
 In diesem Thema ist beschrieben, wie Skripts im Skriptbereich erstellt, bearbeitet, ausgeführt und gespeichert werden.
 
--   [Erstellen und Ausführen von Skripts](#bkmk_1)
+-   [Erstellen und Ausführen von Skripts]()
 
--   [Schreiben und Bearbeiten von Text im Skriptbereich](#bkmk_2)
+-   [Schreiben und Bearbeiten von Text im Skriptbereich]()
 
--   [Speichern eines Skripts](#bkmk_3)
+-   [Speichern eines Skripts]()
 
 ## <a name="bkmk_1"></a>Erstellen und Ausführen von Skripts
 Sie können Windows PowerShell®-Dateien im Skriptbereich öffnen und bearbeiten. Die speziellen Dateitypen für Windows PowerShell® sind Skriptdateien (.ps1), Skriptdatendateien (.psd1) und Skriptmoduldateien (.psm1). Diese Dateitypen werden mit Syntaxfärbung im Skriptbereichs-Editor angezeigt. Andere gängige Dateitypen, die Sie möglicherweise im Skriptbereich öffnen möchten, sind Konfigurationsdateien (PS1XML), XML-Dateien und Textdateien.

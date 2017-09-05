@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Erstellen einer PowerShell-Registerkarte in Windows PowerShell ISE
 ms.assetid: c10c18c7-9ece-4fd0-83dc-a19c53d4fd83
-ms.openlocfilehash: 7dc92275c30ad783ad71b2a4825e9cc0d26d1691
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: b8648b3c23e5a7edaa195f2aa4bfad2757e39e75
+ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/31/2017
 ---
 # <a name="how-to-create-a-powershell-tab-in-windows-powershell-ise"></a>Erstellen einer PowerShell-Registerkarte in Windows PowerShell ISE
 Registerkarten in Windows PowerShell® Integrated Scripting Environment (ISE) ermöglichen Ihnen, mehrere Ausführungsumgebungen innerhalb derselben Anwendung gleichzeitig zu erstellen und zu verwenden. Jede PowerShell-Registerkarte entspricht einer separaten Ausführungsumgebung bzw. Sitzung.
@@ -15,7 +15,7 @@ Registerkarten in Windows PowerShell® Integrated Scripting Environment (ISE) er
 > [!NOTE]
 > Variablen, Funktionen und Aliase, die Sie auf einer Registerkarte erstellen, werden nicht auf andere übertragen. Sie sind in verschiedenen Windows PowerShell-Sitzungen enthalten.
 
-Gehen Sie folgendermaßen vor, um eine Registerkarte in Windows PowerShell zu öffnen oder zu schließen. Legen Sie zum Umbenennen einer Registerkarte die Eigenschaft [DisplayName](The-PowerShellTab-Object.md#Displayname) im Skriptobjekt für die Windows PowerShell-Registerkarte fest.
+Gehen Sie folgendermaßen vor, um eine Registerkarte in Windows PowerShell zu öffnen oder zu schließen. Legen Sie zum Umbenennen einer Registerkarte die Eigenschaft [DisplayName]() im Skriptobjekt für die Windows PowerShell-Registerkarte fest.
 
 ## <a name="to-create-and-use-a-new-powershell-tab"></a>So erstellen und verwenden Sie eine neue PowerShell-Registerkarte
 Klicken Sie im Menü **Datei** auf **Neue PowerShell-Registerkarte**. Die neue PowerShell-Registerkarte wird immer als aktives Fenster geöffnet. PowerShell-Registerkarten sind in der Reihenfolge ihres Öffnens aufsteigend nummeriert. Jede Registerkarte ist einem eigenen Windows PowerShell-Konsolenfenster zugeordnet. Sie können bis zu 32 PowerShell-Registerkarten mit jeweils eigener Sitzung gleichzeitig geöffnet haben (bei Windows PowerShell ISE 2.0 maximal 8.)

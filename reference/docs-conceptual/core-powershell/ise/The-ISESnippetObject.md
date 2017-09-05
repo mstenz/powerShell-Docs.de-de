@@ -1,20 +1,20 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Das ISESnippet-Objekt
 ms.assetid: 98bc8113-c3cd-4201-bdb9-9d9bdb7e266c
-ms.openlocfilehash: 5cc49cd504a1343a5737f78eb886bb41591d087d
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 6112f5252d2d1e868092da4a6cd04feb1875b597
+ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/31/2017
 ---
 # <a name="the-isesnippetobject"></a>Das ISESnippet-Objekt
   Ein **ISESnippet**-Objekt ist eine Instanz der Microsoft.PowerShell.Host.ISE.ISESnippet-Klasse. Die Member der **$psISE.CurrentPowerShellTab.Snippets**-Sammlung sind Beispiele für **ISESnippet**-Objekte. Die einfachste Möglichkeit zum Erstellen eines Codeausschnitts ist die Verwendung des [New-IseSnippet&#91;PSITPro5_ISE&#93;](https://technet.microsoft.com/en-us/library/0a6339a3-2683-4a8e-8929-90ad9a95c3e0)-Cmdlets.
 
 ## <a name="properties"></a>Eigenschaften
 
-###  <a name="DisplayName"></a> Author
+### <a name="author"></a>Autor
   In Windows PowerShell ISE 3.0 und höher unterstützt, in früheren Versionen nicht enthalten. 
 
  Die schreibgeschützte Eigenschaft, die den Namen des Autors des Codeausschnitts abruft.
@@ -25,7 +25,7 @@ $psISE.CurrentPowerShellTab.Snippets.Item(0).Author
 
 ```
 
-###  <a name="Action"></a> CodeFragment
+### <a name="codefragment"></a>CodeFragment
   In Windows PowerShell ISE 3.0 und höher unterstützt, in früheren Versionen nicht enthalten. 
 
  Die schreibgeschützte Eigenschaft, die das im Editor einzufügende Codefragment abruft.
@@ -36,7 +36,7 @@ $psISE.CurrentPowerShellTab.Snippets.Item(0).CodeFragment
 
 ```
 
-###  <a name="Shortcut"></a> Shortcut
+### <a name="shortcut"></a>Abkürzung
   In Windows PowerShell ISE 3.0 und höher unterstützt, in früheren Versionen nicht enthalten. 
 
  Die schreibgeschützte Eigenschaft, die die Windows-Tastenkombination für das Menüelement abruft.
