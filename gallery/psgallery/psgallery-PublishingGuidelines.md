@@ -5,11 +5,11 @@ ms.topic: conceptual
 keywords: gallery,powershell,cmdlet,psgallery
 description: "Richtlinien für Herausgeber"
 title: "Veröffentlichungsrichtlinien und Best Practices für den PowerShell-Katalog"
-ms.openlocfilehash: 394e69e189761f3c5a4bb54dfa8df15c4ab240d6
-ms.sourcegitcommit: e63f09c005b6bbf39c3c001944f307c2b155765b
+ms.openlocfilehash: 85486c409382472420a67fc124bd07a30486cb62
+ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 08/31/2017
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>Veröffentlichungsrichtlinien und Best Practices für den PowerShell-Katalog
 
@@ -69,9 +69,9 @@ Die Dokumentation ist die nützlichste Informationsquelle, die für ein im Power
 Benutzer meiden im Allgemeinen Elemente ohne Dokumentation, da die Alternative darin besteht, den Code lesen zu müssen, um das Element und seine Verwendung zu verstehen.
 In MSDN finden Sie verschiedene Artikel zur Bereitstellung von Dokumentation für PowerShell-Elemente, darunter diese:
 
-* Richtlinien zum Bereitstellen von Hilfe finden Sie im Artikel [How to Write Cmdlet Help](https://msdn.microsoft.com/en-us/library/aa965353(VS.85).aspx) (Schreiben von Hilfe zu Cmdlets).
+* Richtlinien zum Bereitstellen von Hilfe finden Sie im Artikel [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415) (Schreiben von Hilfe zu Cmdlets).
 * Das Erstellen von Hilfetexten zu Cmdlets ist der beste Ansatz für beliebige PowerShell-Skripts, -Funktionen oder -Cmdlets.
-  Informationen dazu, wie Sie eine Cmdlet-Hilfe schreiben, finden Sie unter [How to Write Cmdlet Help](http://go.microsoft.com/fwlink/?LinkID=123415) (Schreiben von Hilfe zu Cmdlets) in der MSDN-Bibliothek (Microsoft Developer Network).
+  Informationen dazu, wie Sie eine Cmdlet-Hilfe schreiben, finden Sie unter [How to Write Cmdlet Help (Schreiben von Hilfe zu Cmdlets)](https://go.microsoft.com/fwlink/?LinkID=123415) in der MSDN-Bibliothek.
   Informationen dazu, wie Sie innerhalb eines Skripts Hilfe hinzufügen, finden Sie unter [Informationen zur kommentarbasierten Hilfe](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_comment_based_help).
 * Viele Module enthalten Dokumentation in Textformat, z.B. als MarkDown-Dateien.
   Dies kann besonders nützlich sein, wenn eine Projektwebsite in GitHub vorhanden ist, wo Markdown-Dateien ein häufig verwendetes Format sind.

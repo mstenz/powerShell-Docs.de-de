@@ -1,16 +1,16 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Neuerungen in Windows PowerShell 5.0
 ms.assetid: 1476722e-947e-425d-a86c-50037488dc6e
-ms.openlocfilehash: c172ac076d2cd69e8f1876ad47a51c233d8a4afb
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 24860f34f6e2ef655befd9916a651dd0274b2620
+ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/31/2017
 ---
 # <a name="what39s-new-in-windows-powershell"></a>Neuerungen in Windows PowerShell
-Windows PowerShell® 5.0 bietet wichtige neue Features, die die Verwendungsmöglichkeiten erweitern, die Benutzerfreundlichkeit verbessern und es Ihnen ermöglichen, die Steuerung und Verwaltung von Windows-basierten Umgebungen leichter und umfassender zu bewältigen.
+Windows PowerShell® 5.0 bietet wichtige neue Features, die die Verwendungsmöglichkeiten erweitern, die Benutzerfreundlichkeit verbessern und es Ihnen ermöglichen, die Steuerung und Verwaltung von Windows-basierten Umgebungen leichter und umfassender zu bewältigen.
 
 Windows PowerShell 5.0 ist abwärtskompatibel. Cmdlets, Anbieter, Module, Snap-Ins, Skripts, Funktionen und Profile, die für Windows PowerShell 4.0, Windows PowerShell 3.0 und Windows PowerShell 2.0 entwickelt wurden, funktionieren im Allgemeinen ohne Änderungen in Windows PowerShell 5.0.
 
@@ -21,13 +21,13 @@ Zum Installieren von Windows PowerShell 5.0 unter Windows Server 2012 R2, Window
 
 ## <a name="in-this-topic"></a>Inhalt dieses Themas
 
--   [Windows PowerShell 4.0 DSC-Updates in KB 3000850](#BKMK_3000850)
+-   [Windows PowerShell 4.0 DSC-Updates in KB 3000850]()
 
--   [Neue Features in Windows PowerShell 5.0](#BKMK_new50)
+-   [Neue Features in Windows PowerShell 5.0]()
 
--   [Neue Features in Windows PowerShell 4.0](#BKMK_wps4)
+-   [Neue Features in Windows PowerShell 4.0]()
 
--   [Neue Features in Windows PowerShell 3.0](#BKMK_wps3)
+-   [Neue Features in Windows PowerShell 3.0]()
 
 ## <a name="BKMK_3000850"></a>Windows PowerShell 4.0-Updates im Updaterollup vom November 2014 (KB 3000850)
 Viele Updates und Verbesserungen für Windows PowerShell DSC (Desired State Configuration, Konfiguration für den gewünschten Zustand) in Windows PowerShell 4.0 stehen im [Updaterollup vom November 2014 für Windows RT 8.1, Windows 8.1 und Windows Server 2012 R2](https://support.microsoft.com/kb/3000850/) (KB 3000850) zur Verfügung. Sie können feststellen, ob KB 3000850 auf Ihrem System installiert ist, indem Sie `Get-Hotfix -Id KB3000850` in Windows PowerShell ausführen.
@@ -128,15 +128,15 @@ Viele Updates und Verbesserungen für Windows PowerShell DSC (Desired State Conf
 
 ## <a name="BKMK_new50"></a>Neue Features in Windows PowerShell 5.0
 
--   [Neue Features in Windows PowerShell](#BKMK_newcore)
+-   [Neue Features in Windows PowerShell]()
 
--   [Neue Features in Windows PowerShell DSC](#BKMK_newDSC)
+-   [Neue Features in Windows PowerShell DSC]()
 
--   [Neue Features in der Windows PowerShell ISE](#BKMK_newISE)
+-   [Neue Features in der Windows PowerShell ISE]()
 
--   [Neue Features in Windows PowerShell Web Services](#BKMK_newOData)
+-   [Neue Features in Windows PowerShell Web Services]()
 
--   [Wichtige Fehlerbehebungen in Windows PowerShell 5.0](#BKMK_5bugfix)
+-   [Wichtige Fehlerbehebungen in Windows PowerShell 5.0]()
 
 ### <a name="BKMK_newcore"></a>Neue Features in Windows PowerShell
 
@@ -313,17 +313,17 @@ Windows PowerShell 4.0 ist abwärtskompatibel. Cmdlets, Anbieter, Module, Snap-I
 
 Windows PowerShell 4.0 wird standardmäßig unter Windows® 8.1 und Windows Server 2012 R2 installiert. Zum Installieren von Windows PowerShell 4.0 unter Windows 7 mit SP1 oder Windows Server 2008 R2 müssen Sie [Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855) herunterladen und installieren. Achten Sie darauf, dass Sie die Details für das Herunterladen lesen und alle Systemanforderungen erfüllen, bevor Sie Windows Management Framework 4.0 installieren.
 
--   [Neue Features in Windows PowerShell](#BKMK_core)
+-   [Neue Features in Windows PowerShell]()
 
--   [Neue Features in Windows PowerShell Integrated Scripting Environment (ISE)](#BKMK_ise)
+-   [Neue Features in Windows PowerShell Integrated Scripting Environment (ISE)]()
 
--   [Neue Features in Windows PowerShell Workflow](#BKMK_workflow)
+-   [Neue Features in Windows PowerShell Workflow]()
 
--   [Neue Features in Windows PowerShell Web Services](#BKMK_psws)
+-   [Neue Features in Windows PowerShell Web Services]()
 
--   [Neue Features in Windows PowerShell Web Access](#BKMK_powwa)
+-   [Neue Features in Windows PowerShell Web Access]()
 
--   [Wichtige Fehlerbehebungen in Windows PowerShell 4.0](#BKMK_bugs)
+-   [Wichtige Fehlerbehebungen in Windows PowerShell 4.0]()
 
 Windows PowerShell 4.0 bietet die folgenden neuen Features.
 
@@ -456,59 +456,59 @@ Windows PowerShell 4.0 bietet die folgenden neuen Features.
 ## <a name="BKMK_wps3"></a>Neue Features in Windows PowerShell 3.0
 Windows PowerShell 3.0 bietet die folgenden neuen Features.
 
--   [Windows PowerShell-Workflow](#BKMK_Workflow)
+-   [Windows PowerShell-Workflow]()
 
--   [Windows PowerShell Web Access](#BKMK_WebAccess)
+-   [Windows PowerShell Web Access]()
 
--   [Neue Windows PowerShell ISE-Features](#BKMK_ISE)
+-   [Neue Windows PowerShell ISE-Features]()
 
--   [Unterstützung für Microsoft .NET Framework 4.0](#BKMK_NET4)
+-   [Unterstützung für Microsoft .NET Framework 4.0]()
 
--   [Unterstützung für Windows Preinstallation Environment](#BKMK_WinPE)
+-   [Unterstützung für Windows Preinstallation Environment]()
 
--   [Getrennte Sitzungen](#BKMK_Disconnected)
+-   [Getrennte Sitzungen]()
 
--   [Zuverlässige Sitzungskonnektivität](#BKMK_Robust)
+-   [Zuverlässige Sitzungskonnektivität]()
 
--   [Aktualisierbares Hilfesystem](#BKMK_UpHelp)
+-   [Aktualisierbares Hilfesystem]()
 
--   [Verbesserte Onlinehilfe](#BKMK_Online)
+-   [Verbesserte Onlinehilfe]()
 
--   [CIM-Integration](#BKMK_CIM)
+-   [CIM-Integration]()
 
--   [Sitzungskonfigurationsdateien](#BKMK_ConfigFile)
+-   [Sitzungskonfigurationsdateien]()
 
--   [Integration geplanter Aufträge und der Aufgabenplanung](#BKMK_ScheduledJob)
+-   [Integration geplanter Aufträge und der Aufgabenplanung]()
 
--   [Verbesserungen der Windows PowerShell-Sprache](#BKMK_Lang)
+-   [Verbesserungen der Windows PowerShell-Sprache]()
 
--   [Neue Kern-Cmdlets](#BKMK_Core)
+-   [Neue Kern-Cmdlets]()
 
--   [Verbesserungen an vorhandenen Core-Cmdlets und Anbietern](#BKMK_Prov)
+-   [Verbesserungen an vorhandenen Core-Cmdlets und Anbietern]()
 
--   [Import und Erkennung des Remote-Moduls](#BKMK_REM)
+-   [Import und Erkennung des Remote-Moduls]()
 
--   [Verbesserte Befehlszeilenergänzung](#BKMK_TAB)
+-   [Verbesserte Befehlszeilenergänzung]()
 
--   [Automatisches Laden von Modulen](#BKMK_AutoLoad)
+-   [Automatisches Laden von Modulen]()
 
--   [Verbesserungen der Moduloberfläche](#BKMK_MOD)
+-   [Verbesserungen der Moduloberfläche]()
 
--   [Vereinfachte Ermittlung von Befehlen](#BKMK_SIMPLE)
+-   [Vereinfachte Ermittlung von Befehlen]()
 
--   [Verbesserte Protokollierung, Diagnose und Unterstützung von Gruppenrichtlinien](#BKMK_LOG)
+-   [Verbesserte Protokollierung, Diagnose und Unterstützung von Gruppenrichtlinien]()
 
--   [Formatierung und Ausgabeverbesserungen](#BKMK_OUT)
+-   [Formatierung und Ausgabeverbesserungen]()
 
--   [Verbesserte Konsolenhosterfahrung](#BKMK_HOST)
+-   [Verbesserte Konsolenhosterfahrung]()
 
--   [Neue Cmdlets und Hosting-APIs](#BKMK_API)
+-   [Neue Cmdlets und Hosting-APIs]()
 
--   [Leistungsverbesserungen](#BKMK_PERF)
+-   [Leistungsverbesserungen]()
 
--   [RunAs und Unterstützung freigegebener Hosts](#BKMK_RUNAS)
+-   [RunAs und Unterstützung freigegebener Hosts]()
 
--   [Verbesserungen bei der Verarbeitung von Sonderzeichen](#BKMK_CHAR)
+-   [Verbesserungen bei der Verarbeitung von Sonderzeichen]()
 
 ### <a name="BKMK_Workflow"></a>Windows PowerShell-Workflow
 Durch Windows PowerShell® Workflow kann Windows PowerShell auf die Leistungsfähigkeit von Windows Workflow Foundation zurückgreifen. Sie können Workflows in XAML oder in der Windows PowerShell-Sprache schreiben und sie genau wie ein Cmdlet ausführen. Das Cmdlet [Get-Command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) ruft Workflowbefehle ab, das Cmdlet [Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) ruft Hilfe für Workflows ab.

@@ -1,28 +1,28 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Barrierefreiheit in Windows PowerShell ISE
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
-ms.openlocfilehash: 1231271067f32ff888504344bc324b13aade9c33
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 05e7b8c3166b3530552d082dd4b0431dd7046b90
+ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/31/2017
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Barrierefreiheit in Windows PowerShell ISE
-In diesen Thema werden die Barrierefreiheitsfeatures von Windows PowerShell® Integrated Scripting Environment (ISE) geschrieben, die Sie ggf. hilfreich finden.
+Dieses Thema beschreibt die Funktionen für Barrierefreiheit von Microsoft PowerShell® Integrated Scripting Environment (ISE), die Sie hilfreich finden könnten.
 
-* [Ändern der Größe und Position des Konsolen- und Skriptbereichs](#bkmk_1)
-* [Tastenkombinationen zum Bearbeiten von Text](#bkmk_2)
-* [Tastenkombinationen zum Ausführen von Skripts](#bkmk_3)
-* [Tastenkombinationen zum Anpassen der Ansicht](#bkmk_4)
-* [Tastenkombinationen zum Debuggen von Skripts](#bkmk_5)
-* [Tastenkombinationen für Windows PowerShell-Registerkarten](#bkmk_6)
-* [Tastenkombinationen für Starten und Beenden](#bkmk_7)
+* [Ändern der Größe und Position des Konsolen- und Skriptbereichs]()
+* [Tastenkombinationen zum Bearbeiten von Text]()
+* [Tastenkombinationen zum Ausführen von Skripts]()
+* [Tastenkombinationen zum Anpassen der Ansicht]()
+* [Tastenkombinationen zum Debuggen von Skripts]()
+* [Tastenkombinationen für Windows PowerShell-Registerkarten]()
+* [Tastenkombinationen für Starten und Beenden]()
 
 Microsoft ist bestrebt, seine Produkte und Dienste so benutzerfreundlich wie möglich zu gestalten. In den folgenden Abschnitten werden Informationen zu den Funktionen, Produkten und Dienstleistungen vermittelt, mit deren Hilfe Personen mit Behinderungen der Zugriff auf Windows PowerShell ISE erleichtert wird.
 
-Windows PowerShell ISE unterstützt den Modus für hohen Kontrast. Für Sehbehinderte stehen Haltepunktinformationen über die Cmdlets zum Verwalten von Haltepunkten zur Verfügung, wie z. B. [Get-PSBreakpoint](https://technet.microsoft.com/en-us/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) und [Set-PSBreakpoint](https://technet.microsoft.com/en-us/library/6afd5d2c-a285-4796-8607-3cbf49471420). Weitere Informationen finden Sie unter „Verwalten von Haltepunkten“ in [Debuggen von Skripts in der Windows PowerShell ISE](../core-powershell/ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md#bkmk_1). Neben den Barrierefreiheitsfeatures und Hilfsprogrammen von Microsoft Windows sorgen die folgenden Windows PowerShell ISE-Features für Personen mit Behinderungen für mehr Barrierefreiheit:
+Windows PowerShell ISE unterstützt den Modus für hohen Kontrast. Für Sehbehinderte stehen Haltepunktinformationen über die Cmdlets zum Verwalten von Haltepunkten zur Verfügung, wie z. B. [Get-PSBreakpoint](https://technet.microsoft.com/en-us/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) und [Set-PSBreakpoint](https://technet.microsoft.com/en-us/library/6afd5d2c-a285-4796-8607-3cbf49471420). Weitere Informationen finden Sie unter „Verwalten von Haltepunkten“ in [How to Debug Scripts in the Windows PowerShell ISE (Debuggen von Skripts in der Windows PowerShell ISE)](../core-powershell/ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md). Neben den Barrierefreiheitsfeatures und Hilfsprogrammen von Microsoft Windows sorgen die folgenden Windows PowerShell ISE-Features für Personen mit Behinderungen für mehr Barrierefreiheit:
 
 -   Tastenkombinationen
 

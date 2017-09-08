@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "Abrufen von ausführlichen Hilfeinformationen"
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: 3260b5ec0a91749d3b7b126412137aa9d603ef0e
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: c786ce089073abccdf186dc1d9e8ee383f83655d
+ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/31/2017
 ---
 # <a name="getting-detailed-help-information"></a>Abrufen von ausführlichen Hilfeinformationen
 Windows PowerShell umfasst ausführliche Hilfethemen, in denen die Konzepte von Windows PowerShell und die Windows PowerShell-Sprache erläutert werden. Außerdem gibt es Hilfethemen für jedes Cmdlet und jeden Anbieter sowie Hilfethemen für viele Funktionen und Skripts.
@@ -75,7 +75,7 @@ Um nur die Beispiele anzuzeigen, die es in einem Hilfethema gibt, verwenden Sie 
 get-help get-childitem -examples
 ```
 
-Informationen dazu, wie Sie Hilfethemen für die Cmdlets schreiben, die Sie erstellen, finden Sie im Thema „How to Write Cmdlet Help“ in MSDN.
+Informationen dazu, wie Sie Hilfethemen für die Cmdlets schreiben, die Sie erstellen, finden Sie unter [How to Write Cmdlet Help (Vorgehensweise: Schreiben von Cmdlet-Hilfe)](https://go.microsoft.com/fwlink/?LinkID=123415).
 
 ## <a name="getting-conceptual-help"></a>Abrufen von konzeptioneller Hilfe
 Das Cmdlet „Get-Help“ zeigt auch Informationen zu konzeptionellen Themen in Windows PowerShell an, einschließlich Themen zur Windows PowerShell-Sprache. Konzeptionelle Hilfethemen beginnen mit dem Präfix „about_“, z.B. „about_line_editing“. (Der Name eines konzeptionellen Themas muss in Englisch eingegeben werden, auch in nicht englischsprachigen Versionen von Windows PowerShell.)
@@ -165,7 +165,7 @@ Die erste Zeile des Abschnitts „Verwandte Links“ des Themas ist nachstehend 
 Online version: http://go.microsoft.com/fwlink/?LinkID=135194
 ```
 
-Informationen dazu, wie Sie die Onlineunterstützung für Ihre Hilfethemen bereitstellen, finden Sie unter [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf) sowie unter „How to Write Cmdlet Help“ ([http://go.microsoft.com/fwlink/?LinkID=123415](http://go.microsoft.com/fwlink/?LinkID=123415)) in der MSDN-Bibliothek (Microsoft Developer Network).
+Informationen dazu, wie Sie die Onlineunterstützung für Ihre Hilfethemen bereitstellen, finden Sie in der MSDN-Bibliothek unter [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf) sowie unter [How to Write Cmdlet Help (Schreiben von Cmdlet-Hilfe)](https://go.microsoft.com/fwlink/?LinkID=123415).
 
 ## <a name="see-also"></a>Weitere Informationen
 - [about_Functions [m2]](https://technet.microsoft.com/en-us/library/61d40692-5300-4de9-a9b5-bae31815e105)
