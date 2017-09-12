@@ -2,12 +2,11 @@
 ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Das ISEEditor-Objekt
-ms.assetid: 0101daf8-4e31-4e4c-ab89-01d95dcb8f46
-ms.openlocfilehash: e2ddb0de1089c832f130e1f5c7c8dcb199aca2fa
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 149eda44fea5b02324442970324e3010015e7ae5
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="the-iseeditor-object"></a>Das ISEEditor-Objekt
   Ein **ISEEditor**-Objekt ist eine Instanz der Microsoft.PowerShell.Host.ISE.ISEEditor-Klasse. Der Konsolenbereich ist ein **ISEEditor**-Objekt. Jedes [ISEFile](The-ISEFile-Object.md)-Objekt verfügt über ein zugeordnetes **ISEEditor**-Objekt. In den folgenden Abschnitten werden die Methoden und Eigenschaften eines **ISEEditor**-Objekts aufgeführt.
@@ -63,7 +62,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 ### <a name="gotomatch"></a>GoToMatch\(\)
   In Windows PowerShell ISE 3.0 und höher unterstützt, in früheren Versionen nicht enthalten. 
 
- Verschiebt den Textcursor zum entsprechenden Zeichen, wenn die Eigenschaft **CanGoToMatch** des Editorobjekts **$true** ist. Dies tritt ein, wenn sich der Textcursor direkt vor einer öffnenden, eckigen oder geschweiften Klammer – \(, \[, { – oder unmittelbar nach einer schließenden, eckigen oder geschweiften Klammer befindet – \), \], }.  Der Textcursor wird vor einer öffnenden bzw. nach einer schließenden Klammer platziert. Wenn die **CanGoToMatch**-Eigenschaft **$false** ist, wird mit dieser Methode keine Aktion ausgeführt. Siehe [CanGoToMatch]().
+ Verschiebt den Textcursor zum entsprechenden Zeichen, wenn die Eigenschaft **CanGoToMatch** des Editorobjekts **$true** ist. Dies tritt ein, wenn sich der Textcursor direkt vor einer öffnenden, eckigen oder geschweiften Klammer – \(, \[, { – oder unmittelbar nach einer schließenden, eckigen oder geschweiften Klammer befindet – \), \], }.  Der Textcursor wird vor einer öffnenden bzw. nach einer schließenden Klammer platziert. Wenn die **CanGoToMatch**-Eigenschaft **$false** ist, wird mit dieser Methode keine Aktion ausgeführt.
 
 ```powershell
 # Test to see if the caret is next to a parenthesis, bracket, or brace.
@@ -76,7 +75,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  **text**: Zeichenfolge – der einzufügende Text.
 
- Weitere Informationen finden Sie im [Beispielskript]() weiter unten in diesem Thema.
+ Weitere Informationen finden Sie im [Beispielskript](#-scripting-example) weiter unten in diesem Thema.
 
 ### <a name="select-startline-startcolumn-endline-endcolumn-"></a>Select\( startLine, startColumn, endLine, endColumn \)
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
@@ -91,7 +90,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  **endColumn**: ganze Zahl – die Spalte in der Endzeile, in der die Auswahl endet.
 
- Weitere Informationen finden Sie im [Beispielskript]() weiter unten in diesem Thema.
+ Weitere Informationen finden Sie im [Beispielskript](#-scripting-example) weiter unten in diesem Thema.
 
 ### <a name="selectcaretline"></a>SelectCaretLine\(\)
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
@@ -131,7 +130,7 @@ $psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 
 ## <a name="properties"></a>Eigenschaften
 
-###  <a name="CanGoToMatch"></a> CanGoToMatch
+### <a name="cangotomatch"></a>CanGoToMatch
   In Windows PowerShell ISE 3.0 und höher unterstützt, in früheren Versionen nicht enthalten. 
 
  Die schreibgeschützte boolesche Eigenschaft, die angibt, ob der Textcursor sich neben einer Klammer, eckigen Klammer oder geschweiften Klammer befindet – \(\), \[\], {}. Wenn der Textcursor sich direkt vor der öffnenden Klammer oder unmittelbar nach der schließenden Klammer eines Klammerpaars befindet, lautet der Wert dieser Eigenschaft **$true**. Andernfalls lautet er **$false**.
@@ -141,7 +140,7 @@ $psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 $psISE.CurrentFile.Editor.CanGoToMatch
 ```
 
-###  <a name="CaretColumn"></a> CaretColumn
+### <a name="caretcolumn"></a>CaretColumn
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Die schreibgeschützte Eigenschaft, die die Spaltennummer abruft, die der Position des Textcursors entspricht.
@@ -151,7 +150,7 @@ $psISE.CurrentFile.Editor.CanGoToMatch
 $psISE.CurrentFile.Editor.CaretColumn
 ```
 
-###  <a name="CaretLine"></a> CaretLine
+### <a name="caretline"></a>CaretLine
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Die schreibgeschützte Eigenschaft, die die Nummer der Zeile mit dem Textcursor abruft.
@@ -161,7 +160,7 @@ $psISE.CurrentFile.Editor.CaretColumn
 $psISE.CurrentFile.Editor.CaretLine
 ```
 
-###  <a name="CaretLineText"></a> CaretLineText
+### <a name="caretlinetext"></a>CaretLineText
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Die schreibgeschützte Eigenschaft, die die vollständige Textzeile abruft, die den Textcursor enthält.
@@ -171,7 +170,7 @@ $psISE.CurrentFile.Editor.CaretLine
 $psISE.CurrentFile.Editor.CaretLineText
 ```
 
-###  <a name="LineCount"></a> LineCount
+### <a name="linecount"></a>LineCount
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Die schreibgeschützte Eigenschaft, die die Anzahl der Zeilen aus dem Editor abruft.
@@ -181,21 +180,21 @@ $psISE.CurrentFile.Editor.CaretLineText
 $psISE.CurrentFile.Editor.LineCount
 ```
 
-###  <a name="SelectedText"></a> SelectedText
+### <a name="selectedtext"></a>SelectedText
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Die schreibgeschützte Eigenschaft, die den ausgewählten Text aus dem Editor abruft.
 
- Weitere Informationen finden Sie im [Beispielskript]() weiter unten in diesem Thema.
+ Weitere Informationen finden Sie im [Beispielskript](#-scripting-example) weiter unten in diesem Thema.
 
-###  <a name="Text"></a> Text
+### <a name="text"></a>Text
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Die Lese-/Schreibeigenschaft, die den Text im Editor abruft oder festlegt.
 
- Weitere Informationen finden Sie im [Beispielskript]() weiter unten in diesem Thema.
+ Weitere Informationen finden Sie im [Beispielskript](#-scripting-example) weiter unten in diesem Thema.
 
-##  <a name="example"></a> Beispielskript
+## <a name="scripting-example"></a>Beispielskript
 
 ```powershell
 # This illustrates how you can use the length of a line to

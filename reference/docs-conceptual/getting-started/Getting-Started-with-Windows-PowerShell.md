@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Erste Schritte mit Windows PowerShell
 ms.assetid: b0e2ad92-875f-421d-b612-f624e644aa69
-ms.openlocfilehash: 8dbdd5d7b2dcb80e5562ff0f0f211b2baf5357cf
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 93a4d4a6bc0ebef6b6af7f7f8af59dec865bcfa3
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="getting-started-with-windows-powershell"></a>Erste Schritte mit Windows PowerShell
 Windows PowerShell ist eine Windows-Befehlszeilenshell, die insbesondere für Systemadministratoren konzipiert ist. Windows PowerShell umfasst eine interaktive Eingabeaufforderung und eine Skriptumgebung, die einzeln oder in Kombination verwendet werden können.
@@ -22,11 +22,11 @@ Dieses „Erste Schritte“-Handbuch bietet eine Einführung in Windows PowerShe
 
 Inhalte dieses Themas:
 
--   [Windows PowerShell-Systemanforderungen](../setup/Windows-PowerShell-System-Requirements.md)
+- [Windows PowerShell-Systemanforderungen](../setup/Windows-PowerShell-System-Requirements.md)
 
--   [Installieren von Windows PowerShell](../setup/Installing-Windows-PowerShell.md)
+- [Installieren von Windows PowerShell](../setup/Installing-Windows-PowerShell.md)
 
--   [Starten von Windows PowerShell](../setup/Starting-Windows-PowerShell.md)
+- [Starten von Windows PowerShell](../setup/Starting-Windows-PowerShell.md)
 
--   [Vorbereiten der Verwendung von Windows PowerShell](Getting-Ready-to-Use-Windows-PowerShell.md)
+- [Vorbereiten der Verwendung von Windows PowerShell](Getting-Ready-to-Use-Windows-PowerShell.md)
 

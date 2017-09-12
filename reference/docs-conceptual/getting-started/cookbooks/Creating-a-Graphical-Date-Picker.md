@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Erstellen einer grafischen Datumsauswahl
 ms.assetid: c1cb722c-41e9-4baa-be83-59b4653222e9
-ms.openlocfilehash: 5cb952264092d345945318968cf0b3028b11f3e9
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 7be72be7e9732737f00b15b6b2b83adcca4393ae
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="creating-a-graphical-date-picker"></a>Erstellen einer grafischen Datumsauswahl
 Verwenden Sie Windows PowerShell 3.0 und neuere Versionen, um ein Formular mit einem grafischen Kalendersteuerelement zu erstellen, mit dem Benutzer einen Tag des Monats auswählen können.
@@ -65,11 +65,11 @@ $form = New-Object Windows.Forms.Form
 
 Nachdem Sie eine Instanz der Formularklasse erstellt haben, ordnen Sie drei Eigenschaften dieser Klasse Werte zu.
 
--   **Text.** Dies wird der Titel des Fensters.
+- **Text.** Dies wird der Titel des Fensters.
 
--   **Size.** Dies ist die Größe des Formulars, in Pixeln. Dieses Skript erstellt ein Formular, das 243 Pixel breit und 230 Pixel hoch ist.
+- **Size.** Dies ist die Größe des Formulars, in Pixeln. Dieses Skript erstellt ein Formular, das 243 Pixel breit und 230 Pixel hoch ist.
 
--   **StartingPosition.** Für diese optionale Eigenschaft ist im Skript oben **CenterScreen** festgelegt. Wenn Sie diese Eigenschaft nicht hinzufügen, wählt Windows eine Stelle aus, wenn das Formular geöffnet wird. Durch Festlegen der **StartingPosition** auf **CenterScreen** wird das Formular automatisch bei jedem Laden in der Mitte des Bildschirms angezeigt.
+- **StartingPosition.** Für diese optionale Eigenschaft ist im Skript oben **CenterScreen** festgelegt. Wenn Sie diese Eigenschaft nicht hinzufügen, wählt Windows eine Stelle aus, wenn das Formular geöffnet wird. Durch Festlegen der **StartingPosition** auf **CenterScreen** wird das Formular automatisch bei jedem Laden in der Mitte des Bildschirms angezeigt.
 
 ```
 $form.Text = "Select a Date" 

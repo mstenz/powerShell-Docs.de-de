@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Starten von Windows PowerShell
 ms.assetid: 59b649a2-c90c-4cf4-bf95-a740c59148e7
-ms.openlocfilehash: ec7ecc3214d727d55b41282fc5a5cb2e77cb84ba
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: a8dcf04078228624023387cea3ab8e81ee6eb0a4
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="starting-windows-powershell"></a>Starten von Windows PowerShell
 PowerShell ist ein Skriptmodul im DLL-Format, das in mehreren Hosts eingebettet ist.  Als Host werden am häufigsten die interaktive Befehlszeile „PowerShell.exe“ und die integrierte Skriptumgebung „PowerShell_ISE.exe“ verwendet.  
@@ -18,11 +18,11 @@ In den Themen in diesem Abschnitt wird erläutert, wie Windows PowerShell unter 
 
 Die Themen umfassen Folgendes:
 
--   [Starten von Windows PowerShell unter früheren Versionen von Windows](Starting-Windows-PowerShell-on-Earlier-Versions-of-Windows.md)
+- [Starten von Windows PowerShell unter früheren Versionen von Windows](Starting-Windows-PowerShell-on-Earlier-Versions-of-Windows.md)
 
--   [Starten der 32-Bit-Version von Windows PowerShell](Starting-the-32-Bit-Version-of-Windows-PowerShell.md)
+- [Starten der 32-Bit-Version von Windows PowerShell](Starting-the-32-Bit-Version-of-Windows-PowerShell.md)
 
--   [Starten des Windows PowerShell 2.0-Moduls](Starting-the-Windows-PowerShell-2.0-Engine.md)
+- [Starten des Windows PowerShell 2.0-Moduls](Starting-the-Windows-PowerShell-2.0-Engine.md)
 
 ## <a name="see-also"></a>Weitere Informationen
 - [Windows PowerShell-Systemanforderungen](Windows-PowerShell-System-Requirements.md)

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Windows PowerShell-Systemanforderungen
 ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
-ms.openlocfilehash: 550d8adab18941da3204e0aea8fc8a70f890c289
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 13ec699d39400b6698b6220c28cd12d06b5e681e
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="windows-powershell-system-requirements"></a>Windows PowerShell-Systemanforderungen
 In diesem Thema werden die Systemanforderungen für Windows PowerShell 3.0, Windows PowerShell 4.0 und Windows PowerShell 5.0 sowie für besondere Features wie Windows PowerShell Integrated Scripting Environment (ISE), CIM-Befehle und Workflows aufgeführt.
@@ -17,39 +17,39 @@ Windows® 8.1 und Windows Server® 2012 R2 enthalten alle erforderlichen Program
 ## <a name="operating-system-requirements"></a>Betriebssystemanforderungen
 Windows PowerShell 5.0 wird unter den folgenden Versionen von Windows ausgeführt.
 
--   Windows Server 2016, standardmäßig installiert
+- Windows Server 2016, standardmäßig installiert
 
--   Windows Server 2012 R2, [Windows Management Framework 5.0](http://go.microsoft.com/fwlink/?LinkID=242919) zum Ausführen von Windows PowerShell 5.0 installieren
+- Windows Server 2012 R2, [Windows Management Framework 5.0](http://go.microsoft.com/fwlink/?LinkID=242919) zum Ausführen von Windows PowerShell 5.0 installieren
 
--   Windows Server 2012, [Windows Management Framework 5.0](http://go.microsoft.com/fwlink/?LinkID=242919) zum Ausführen von Windows PowerShell 5.0 installieren
+- Windows Server 2012, [Windows Management Framework 5.0](http://go.microsoft.com/fwlink/?LinkID=242919) zum Ausführen von Windows PowerShell 5.0 installieren
 
--   Windows Server 2008 R2 mit Service Pack 1, [Windows Management Framework 5.0](http://go.microsoft.com/fwlink/?LinkID=242919) zum Ausführen von Windows PowerShell 5.0 installieren
+- Windows Server 2008 R2 mit Service Pack 1, [Windows Management Framework 5.0](http://go.microsoft.com/fwlink/?LinkID=242919) zum Ausführen von Windows PowerShell 5.0 installieren
 
--   Windows 8.1
+- Windows 8.1
 
--   Windows 7 mit Service Pack 1, [Windows Management Framework 5.0](http://go.microsoft.com/fwlink/?LinkID=242919) zum Ausführen von Windows PowerShell 5.0 installieren
+- Windows 7 mit Service Pack 1, [Windows Management Framework 5.0](http://go.microsoft.com/fwlink/?LinkID=242919) zum Ausführen von Windows PowerShell 5.0 installieren
 
 Windows PowerShell 4.0 wird unter den folgenden Versionen von Windows ausgeführt.
 
--   Windows 8.1, standardmäßig installiert
+- Windows 8.1, standardmäßig installiert
 
--   Windows Server 2012 R2, standardmäßig installiert
+- Windows Server 2012 R2, standardmäßig installiert
 
--   Windows® 7 mit Service Pack 1, [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkId=293881) zum Ausführen von Windows PowerShell 4.0 installieren
+- Windows® 7 mit Service Pack 1, [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkId=293881) zum Ausführen von Windows PowerShell 4.0 installieren
 
--   Windows Server® 2008 R2 mit Service Pack 1, [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkId=293881) zum Ausführen von Windows PowerShell 4.0 installieren
+- Windows Server® 2008 R2 mit Service Pack 1, [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkId=293881) zum Ausführen von Windows PowerShell 4.0 installieren
 
 Windows PowerShell 3.0 wird unter den folgenden Versionen von Windows ausgeführt.
 
--   Windows 8, standardmäßig installiert
+- Windows 8, standardmäßig installiert
 
--   Windows Server 2012, standardmäßig installiert
+- Windows Server 2012, standardmäßig installiert
 
--   Windows® 7 mit Service Pack 1, [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) zum Ausführen von Windows PowerShell 3.0 installieren
+- Windows® 7 mit Service Pack 1, [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) zum Ausführen von Windows PowerShell 3.0 installieren
 
--   Windows Server® 2008 R2 mit Service Pack 1, [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) zum Ausführen von Windows PowerShell 3.0 installieren
+- Windows Server® 2008 R2 mit Service Pack 1, [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) zum Ausführen von Windows PowerShell 3.0 installieren
 
--   Windows Server 2008 mit Service Pack 2, [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) zum Ausführen von Windows PowerShell 3.0 installieren
+- Windows Server 2008 mit Service Pack 2, [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) zum Ausführen von Windows PowerShell 3.0 installieren
 
 ## <a name="microsoft-net-framework-requirements"></a>Microsoft .NET Framework-Anforderungen
 Windows PowerShell 5.0 erfordert die vollständige Installation von Microsoft .NET Framework 4.5. Windows 8.1 und Windows Server 2012 R2 enthalten standardmäßig Microsoft .NET Framework 4.5.
@@ -79,9 +79,9 @@ Windows PowerShell ist eine konsolenbasierte Anwendung, die keine grafische Benu
 
 Allerdings erfordern einige Elemente, wie z. B. die folgenden, eine grafische Benutzeroberfläche. Weitere Informationen finden Sie im Hilfethema des jeweiligen Elements.
 
--   Windows PowerShell Integrated Scripting Environment (ISE)
+- Windows PowerShell Integrated Scripting Environment (ISE)
 
--   Cmdlets
+- Cmdlets
 
     1.  [Out-GridView](https://technet.microsoft.com/en-us/library/70915a86-d753-464e-8349-cba02316154c)
 
@@ -91,7 +91,7 @@ Allerdings erfordern einige Elemente, wie z. B. die folgenden, eine grafische Be
 
     4.  [Show-EventLog](https://technet.microsoft.com/en-us/library/a3b0f5ad-0438-42c7-915b-d1b4793a431c)
 
--   Parameter
+- Parameter
 
     1.  **ShowWindow**-Parameter des Cmdlets [Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a).
 
@@ -109,15 +109,15 @@ Informationen zum Hinzufügen oder Installieren von Windows PowerShell 2.0 Engin
 ## <a name="windows-preinstallation-environment"></a>Windows Preinstallation Environment
 Windows PowerShell 2.0, Windows PowerShell 3.0 und Windows PowerShell 4.0 werden in Windows Preinstallation Environment (Windows PE) ausgeführt. Die folgenden Cmdlets werden jedoch nicht unterstützt.
 
--   [Cmdlets für den intelligenten Hintergrundübertragungsdienst (Background Intelligent Transfer Service, BITS)](http://go.microsoft.com/fwlink/?LinkId=257514)
+- [Cmdlets für den intelligenten Hintergrundübertragungsdienst (Background Intelligent Transfer Service, BITS)](http://go.microsoft.com/fwlink/?LinkId=257514)
 
--   [Get-EventLog](https://technet.microsoft.com/en-us/library/b4985b11-82bf-487d-928d-becd96fc0419)
+- [Get-EventLog](https://technet.microsoft.com/en-us/library/b4985b11-82bf-487d-928d-becd96fc0419)
 
--   [Get-WinEvent](https://technet.microsoft.com/en-us/library/5fe94870-ed6b-4ce2-9500-93846cc65c95)
+- [Get-WinEvent](https://technet.microsoft.com/en-us/library/5fe94870-ed6b-4ce2-9500-93846cc65c95)
 
--   [Save-Help](https://technet.microsoft.com/en-us/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa)
+- [Save-Help](https://technet.microsoft.com/en-us/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa)
 
--   [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545)
+- [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545)
 
 Darüber hinaus ist der **WinRM**-Dienst nicht in der Windows PE vorhanden.
 

@@ -8,26 +8,26 @@ keywords: powershell,cmdlet
 ms.date: 2016-12-12
 title: Abrufen von pswaauthorizationrule
 ms.technology: powershell
-ms.openlocfilehash: 43997320ec7ab779b2061a0af88f97db0b7e93d6
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: eb9f42ab4d9cec111e03a096b2f00740e97ee1b7
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 09/08/2017
 ---
-#  <a name="get-pswaauthorizationrule"></a>Get-PswaAuthorizationRule
+# <a name="get-pswaauthorizationrule"></a>Get-PswaAuthorizationRule
 
-##  <a name="synopsis"></a>ZUSAMMENFASSUNG
+## <a name="synopsis"></a>ZUSAMMENFASSUNG
 
 Gibt einen Satz von Windows PowerShell® Web Access-Autorisierungsregeln zurück.
 
-##  <a name="syntax"></a>Syntax
+## <a name="syntax"></a>Syntax
 
-###  <a name="id"></a>ID
+### <a name="id"></a>ID
 ```
 Get-PswaAuthorizationRule [[-Id] <Int32[]> ] [ <CommonParameters>]
 ```
 
-###  <a name="name"></a>Name
+### <a name="name"></a>Name
 ```
 Get-PswaAuthorizationRule [-RuleName] <String[]> [ <CommonParameters>]
 ```
@@ -72,17 +72,17 @@ Weitere Informationen finden Sie unter [about_CommonParameters](http://go.micros
 
 ## <a name="inputs"></a>EINGABEN
 
-###  <a name="int"></a>int\[\]
+### <a name="int"></a>int\[\]
 
 Dieses Cmdlet akzeptiert ein Array von Ganzzahlen oder ein Array von Zeichenfolgenwerten als Eingabe.
 
-###  <a name="string"></a>String\[\]
+### <a name="string"></a>String\[\]
 
 Dieses Cmdlet akzeptiert ein Array von Ganzzahlen oder ein Array von Zeichenfolgenwerten als Eingabe.
 
-##  <a name="outputs"></a>AUSGABEN
+## <a name="outputs"></a>AUSGABEN
 
-###  <a name="microsoftmanagementpowershellwebaccesspswaauthorizationrule"></a>Microsoft.Management.PowerShellWebAccess.PswaAuthorizationRule\[\]
+### <a name="microsoftmanagementpowershellwebaccesspswaauthorizationrule"></a>Microsoft.Management.PowerShellWebAccess.PswaAuthorizationRule\[\]
 
 Dieses Cmdlet erstellt ein „PswaAuthorizationRule“ als Ausgabe.
 
@@ -114,9 +114,9 @@ In diesem Cmdlet werden eine Regel-ID und ein Regelname übergeben.
     PS C:\> "rule1",0 | Get-PswaAuthorizationRule
 ```
 
-##  <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Verwandte Themen
 
--  [Add-PswaAuthorizationRule](add-pswaauthorizationrule.md)
--  [Remove-PswaAuthorizationRule](remove-pswaauthorizationrule.md)
--  [Test-PswaAuthorizationRule](test-pswaauthorizationrule.md)
--  [Install-PswaWebApplication](install-pswawebapplication.md)
+- [Add-PswaAuthorizationRule](add-pswaauthorizationrule.md)
+- [Remove-PswaAuthorizationRule](remove-pswaauthorizationrule.md)
+- [Test-PswaAuthorizationRule](test-pswaauthorizationrule.md)
+- [Install-PswaWebApplication](install-pswawebapplication.md)

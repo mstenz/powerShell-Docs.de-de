@@ -8,21 +8,21 @@ keywords: powershell,cmdlet
 ms.date: 2016-12-12
 title: Entfernen von pswaauthorizationrule
 ms.technology: powershell
-ms.openlocfilehash: d316cb98efc730ed3e99f6a5dac2b969e3437129
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: a8304b68a446de0be98aa732304c71302fb8389e
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 09/08/2017
 ---
-#  <a name="remove-pswaauthorizationrule"></a>Remove-PswaAuthorizationRule
+# <a name="remove-pswaauthorizationrule"></a>Remove-PswaAuthorizationRule
 
-##  <a name="synopsis"></a>ZUSAMMENFASSUNG
+## <a name="synopsis"></a>ZUSAMMENFASSUNG
 
 Entfernt eine angegebene Autorisierungsregel aus Windows PowerShell® Web Access.
 
 ## <a name="syntax"></a>SYNTAX
 
-###  <a name="id"></a>Id
+### <a name="id"></a>Id
 ```
 Remove-PswaAuthorizationRule [-Id] <Int32[]> [-Force] [-Confirm] [-WhatIf] [ <CommonParameters>]
 ```
@@ -108,15 +108,15 @@ Weitere Informationen finden Sie unter [about_CommonParameters](http://go.micros
 
 ## <a name="inputs"></a>EINGABEN
 
-###  <a name="int"></a>int\[\]
+### <a name="int"></a>int\[\]
 
 Dieses Cmdlet akzeptiert ein Array aus Ganzzahlen oder ein Array aus „PswaAuthorizationRule“-Objekten.
 
-###  <a name="pswaauthorizationrule"></a>PswaAuthorizationRule\[\]
+### <a name="pswaauthorizationrule"></a>PswaAuthorizationRule\[\]
 
 Dieses Cmdlet akzeptiert ein Array aus Ganzzahlen oder ein Array aus „PswaAuthorizationRule“-Objekten.
 
-##  <a name="outputs"></a>AUSGABEN
+## <a name="outputs"></a>AUSGABEN
 
 Dieses Cmdlet erzeugt keine Ausgabe.
 
@@ -138,9 +138,9 @@ In diesem Beispiel werden alle Autorisierungsregel entfernt, außerdem ist die B
 Get-PswaAuthorizationRule | Remove-PswaAuthorizationRule -Confirm
 ```
 
-##  <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Verwandte Themen
 
--  [Add-PswaAuthorizationRule](add-pswaauthorizationrule.md)
--  [Get-PswaAuthorizationRule](get-pswaauthorizationrule.md)
--  [Install-PswaWebApplication](install-pswawebapplication.md)
--  [Test-PswaAuthorizationRule](test-pswaauthorizationrule.md)
+- [Add-PswaAuthorizationRule](add-pswaauthorizationrule.md)
+- [Get-PswaAuthorizationRule](get-pswaauthorizationrule.md)
+- [Install-PswaWebApplication](install-pswawebapplication.md)
+- [Test-PswaAuthorizationRule](test-pswaauthorizationrule.md)

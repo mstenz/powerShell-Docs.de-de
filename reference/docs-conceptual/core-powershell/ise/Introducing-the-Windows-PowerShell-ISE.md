@@ -1,13 +1,12 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "Einführung in die Windows PowerShell ISE"
-ms.assetid: a0de70ca-909a-4807-94d1-6da86e5b52a0
-ms.openlocfilehash: 61d31fc2555d91bc7872d7b90cfb1f2a9832ff9c
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 75242c20548e2e83397867214417a48806c897ec
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="introducing-the-windows-powershell-ise"></a>Einführung in die Windows PowerShell ISE
 Windows PowerShell Integrated Scripting Environment (ISE) ist eine Hostanwendung für Windows PowerShell. In der Windows PowerShell ISE können Sie Befehle ausführen und Skripts schreiben, testen und debuggen, und zwar auf einer einzigen Windows-basierten grafischen Benutzeroberfläche mit mehrzeiliger Bearbeitung, Vervollständigung mit der TAB-TASTE, Syntaxfarben, selektiver Ausführung, kontextbezogener Hilfe und Unterstützung für von rechts nach links geschriebene Sprachen.
@@ -15,17 +14,17 @@ Sie können Menüelemente und Tastenkombinationen für viele der Aufgaben nutzen
 
 Testen Sie diese neuen Features in der Windows PowerShell ISE.
 
--   Mehrzeilige Bearbeitung: Drücken Sie zum Einfügen einer leeren Zeile unter der aktuellen Zeile im Befehlsbereich UMSCHALT+EINGABETASTE.
+- Mehrzeilige Bearbeitung: Drücken Sie zum Einfügen einer leeren Zeile unter der aktuellen Zeile im Befehlsbereich UMSCHALT+EINGABETASTE.
 
--   Selektive Ausführung: Um einen Teil eines Skripts auszuführen, markieren Sie den Text, den Sie ausführen möchten, und klicken Sie dann auf die Schaltfläche **Skript ausführen**. Oder drücken Sie F5.
+- Selektive Ausführung: Um einen Teil eines Skripts auszuführen, markieren Sie den Text, den Sie ausführen möchten, und klicken Sie dann auf die Schaltfläche **Skript ausführen**. Oder drücken Sie F5.
 
--   Kontextbezogene Hilfe: Geben Sie **Invoke-Item** ein, und drücken Sie dann F1. Die Hilfedatei wird mit dem Hilfethema für das Cmdlet **Invoke-Item** geöffnet.
+- Kontextbezogene Hilfe: Geben Sie **Invoke-Item** ein, und drücken Sie dann F1. Die Hilfedatei wird mit dem Hilfethema für das Cmdlet **Invoke-Item** geöffnet.
 
 Die Windows PowerShell ISE ermöglicht Ihnen das Anpassen einiger Aspekte ihrer Darstellung. Sie hat auch ein eigenes Windows PowerShell-Profil, in dem Sie Funktionen, Aliase, Variablen und Befehle speichern können, die Sie in der Windows PowerShell ISE verwenden.
 
 ### <a name="to-start-the-windows-powershell-ise"></a>So starten Sie die Windows PowerShell ISE
 
-1.  Führen Sie eines der folgenden Verfahren aus:
+1. Führen Sie eines der folgenden Verfahren aus:
 
     -   Klicken Sie auf **Start**, zeigen Sie auf **Alle Programme**, dann auf **Windows PowerShell 2.0**, und klicken Sie dann auf **Windows PowerShell ISE**.
 
@@ -33,5 +32,5 @@ Die Windows PowerShell ISE ermöglicht Ihnen das Anpassen einiger Aspekte ihrer 
 
 ### <a name="to-get-help-in-the-windows-powershell-ise"></a>So rufen Sie Hilfe in der Windows PowerShell ISE ab
 
--   Klicken Sie im Menü **Hilfe** auf **Windows PowerShell-Hilfe**. Oder drücken Sie F1. Die Datei, die geöffnet wird, beschreibt die Windows PowerShell ISE und Windows PowerShell, einschließlich sämtlicher Hilfe, die über das Cmdlet „Get-Help“ verfügbar ist.
+- Klicken Sie im Menü **Hilfe** auf **Windows PowerShell-Hilfe**. Oder drücken Sie F1. Die Datei, die geöffnet wird, beschreibt die Windows PowerShell ISE und Windows PowerShell, einschließlich sämtlicher Hilfe, die über das Cmdlet „Get-Help“ verfügbar ist.
 

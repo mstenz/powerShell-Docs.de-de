@@ -1,20 +1,20 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Das ISEMenuItem-Objekt
 ms.assetid: a16660bd-0aee-46fd-ac17-3f022165d089
-ms.openlocfilehash: 33de866d706ec2b0894c5bfe49e07fee142b95c0
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 5561955040e56110a6af0619c286548f5812fb47
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="the-isemenuitem-object"></a>Das ISEMenuItem-Objekt
   Ein **ISEMenuItem**-Objekt ist eine Instanz der Microsoft.PowerShell.Host.ISE.ISEMenuItem-Klasse. Alle Menüobjekte im Menü **Add-Ons** sind Instanzen der **Microsoft.PowerShell.Host.ISE.ISEMenuItem**-Klasse.
 
 ## <a name="properties"></a>Eigenschaften
 
-###  <a name="DisplayName"></a> DisplayName
+### <a name="displayname"></a>DisplayName
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Die schreibgeschützte Eigenschaft, die den Anzeigenamen des Menüelements abruft.
@@ -27,7 +27,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.DisplayName
 
 ```
 
-###  <a name="Action"></a> Action
+### <a name="action"></a>Aktion
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Die schreibgeschützte Eigenschaft, die den Skriptblock abruft. Sie ruft die Aktion auf, wenn Sie auf das Menüelement klicken.
@@ -42,7 +42,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Action
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Action.Invoke()
 ```
 
-###  <a name="Shortcut"></a> Shortcut
+### <a name="shortcut"></a>Abkürzung
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Die schreibgeschützte Eigenschaft, die die Windows-Eingabetastenkombination für das Menüelement abruft.
@@ -54,7 +54,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add("_Process",{get-process},"Al
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Shortcut
 ```
 
-###  <a name="Submenus"></a> Submenus
+### <a name="submenus"></a>Submenus
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Die schreibgeschützte Eigenschaft, die die [Liste der Untermenüs](The-ISEMenuItemCollection-Object.md) für das Menüelement abruft.
@@ -87,7 +87,5 @@ $parentAdded.SubMenus.Add("_Dir",{dir},"Alt+D")
 ## <a name="see-also"></a>Weitere Informationen
 - [Das ISEMenuItemCollection-Objekt](The-ISEMenuItemCollection-Object.md) 
 - [Das Windows PowerShell ISE-Skriptobjektmodell](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
-- [Referenz zum Windows PowerShell ISE-Objektmodell](Windows-PowerShell-ISE-Object-Model-Reference.md) 
+- [Referenz zum Windows PowerShell ISE-Objektmodell](Windows-PowerShell-ISE-Object-Model-Reference.md)
 - [Die ISE-Objektmodellhierarchie](The-ISE-Object-Model-Hierarchy.md)
-
-  

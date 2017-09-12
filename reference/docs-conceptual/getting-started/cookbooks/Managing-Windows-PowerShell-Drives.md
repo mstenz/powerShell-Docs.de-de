@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Verwalten von Windows PowerShell-Laufwerken
 ms.assetid: bd809e38-8de9-437a-a250-f30a667d11b4
-ms.openlocfilehash: 92fa70785bcaeac2bd75a5ada91f3adff4fa10eb
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: e2908246bb584291f04b67dc8635caec93d3b72e
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="managing-windows-powershell-drives"></a>Verwalten von Windows PowerShell-Laufwerken
 Ein *Windows PowerShell-Laufwerk* ist ein Speicherort für Daten, auf den Sie wie auf ein Dateisystemlaufwerk in Windows PowerShell zugreifen können. Die Windows PowerShell-Anbieter erstellen einige Laufwerke für Sie, z. B. die Dateisystemlaufwerke (einschließlich C: und D:), die Registrierungslaufwerke (HKCU: und HKLM:) und das Zertifikatlaufwerk (Cert:). Sie können auch eigene Windows PowerShell-Laufwerke erstellen. Diese Laufwerke sind sehr nützlich, aber nur in Windows PowerShell verfügbar. Sie können darauf nicht mit anderen Windows-Tools, z. B. Datei-Explorer oder „Cmd.exe“, zugreifen.
@@ -86,11 +86,11 @@ ring>] [-OutBuffer <Int32>] [-WhatIf] [-Confirm]
 
 Um ein neues Windows PowerShell-Laufwerk zu erstellen, müssen Sie drei Parameter angeben:
 
--   Einen Namen für das Laufwerk (Sie können einen beliebigen gültigen Windows PowerShell-Namen verwenden)
+- Einen Namen für das Laufwerk (Sie können einen beliebigen gültigen Windows PowerShell-Namen verwenden)
 
--   PSProvider (verwenden Sie „FileSystem“ für Dateisystemspeicherorte und „Registry“ für Registrierungsspeicherorte)
+- PSProvider (verwenden Sie „FileSystem“ für Dateisystemspeicherorte und „Registry“ für Registrierungsspeicherorte)
 
--   Das Stammelement, d.h. den Pfad zum Stamm des neuen Laufwerks
+- Das Stammelement, d.h. den Pfad zum Stamm des neuen Laufwerks
 
 Sie können beispielsweise ein Laufwerk namens „Office“ erstellen, das dem Ordner zugeordnet ist, der die Microsoft Office-Anwendungen auf Ihrem Computer enthält, z.B. **C:\\Programme\\Microsoft Office\\OFFICE11**. Geben Sie zum Erstellen des Laufwerks den folgenden Befehl ein:
 

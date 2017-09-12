@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "Arbeiten mit Dateien, Ordnern und Registrierungsschlüsseln"
 ms.assetid: e6cf87aa-b5f8-48d5-a75a-7cb7ecb482dc
-ms.openlocfilehash: 2bae8d6931c84bee4aa30a43742acd052b82d079
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 22a2390686659033bfd8b02a151b3397cfd46a22
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a>Arbeiten mit Dateien, Ordnern und Registrierungsschlüsseln
 Windows PowerShell verwendet das Nomen **Item** zum Verweisen auf Elemente in einem Windows PowerShell-Laufwerk. Im Zusammenhang mit dem Windows PowerShell FileSystem-Anbieter kann ein **Item** eine Datei, ein Ordner oder das Windows PowerShell-Laufwerk sein. Das Auflisten dieser Elemente und die Arbeiten damit ist in den meisten Verwaltungseinstellungen eine wichtige grundlegende Aufgabe. Daher sollen diese Aufgaben ausführlich erläutert werden.
@@ -77,11 +77,11 @@ Der Befehl **Get-ChildItem** akzeptiert Platzhalter im Pfad der aufzulistenden E
 
 Da das Abgleichen von Platzhaltern vom Windows PowerShell-Modul durchgeführt wird, verwenden alle Cmdlets, die Platzhalter akzeptieren, die gleiche Notation und das gleiche Abgleichverhalten. Die Windows PowerShell-Notation für Platzhalter enthält Folgendes:
 
--   Sternchen (\*) steht für null oder mehr beliebige Zeichen.
+- Sternchen (\*) steht für null oder mehr beliebige Zeichen.
 
--   Fragezeichen (?) steht für genau ein Zeichen.
+- Fragezeichen (?) steht für genau ein Zeichen.
 
--   Die linke eckige Klammer (\[) und die rechte eckige Klammer (]) umgeben eine Gruppe von Zeichen, die für den Abgleich verwendet werden soll.
+- Die linke eckige Klammer (\[) und die rechte eckige Klammer (]) umgeben eine Gruppe von Zeichen, die für den Abgleich verwendet werden soll.
 
 Hier sind einige Beispiele für die Funktionsweise der Platzhalterspezifikation.
 

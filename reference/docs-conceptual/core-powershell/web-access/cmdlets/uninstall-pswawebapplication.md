@@ -8,21 +8,21 @@ keywords: powershell,cmdlet
 ms.date: 2016-12-12
 title: Deinstallieren von pswawebapplication
 ms.technology: powershell
-ms.openlocfilehash: 64d546427e44d7bd284da8f682a7218afbadd0ad
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 5fe608b3bfbb90f842f16c1f5a8c51879589cf6d
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 09/08/2017
 ---
-#  <a name="uninstall-pswawebapplication"></a>Uninstall-PswaWebApplication
+# <a name="uninstall-pswawebapplication"></a>Uninstall-PswaWebApplication
 
-##  <a name="synopsis"></a>ZUSAMMENFASSUNG
+## <a name="synopsis"></a>ZUSAMMENFASSUNG
 
 Deinstalliert die Windows PowerShell®-Webanwendung.
 
 ## <a name="syntax"></a>SYNTAX
 
-###  <a name="default"></a>Standardwert
+### <a name="default"></a>Standardwert
 ```
 Uninstall-PswaWebApplication [[-WebApplicationName] <String> ] [-DeleteTestCertificate] [-WebSiteName <String> ] [-Confirm] [-WhatIf] [ <CommonParameters>]
 ```
@@ -140,10 +140,10 @@ Dieser Befehl entfernt die Website namens *MySite* und die Anwendung namens *Tes
 Uninstall-PswaWebApplication -WebApplicationName TestApplication -WebsiteName MySite -DeleteTestCertificate
 ```
 
-##  <a name="related-topics"></a>Verwandte Themen
+## <a name="related-topics"></a>Verwandte Themen
 
--  [Add-PswaAuthorizationRule](add-pswaauthorizationrule.md)
--  [Get-PswaAuthorizationRule](get-pswaauthorizationrule.md)
--  [Install-PswaWebApplication](install-pswawebapplication.md)
--  [Remove-PswaAuthorizationRule](remove-pswaauthorizationrule.md)
--  [Test-PswaAuthorizationRule](test-pswaauthorizationrule.md)
+- [Add-PswaAuthorizationRule](add-pswaauthorizationrule.md)
+- [Get-PswaAuthorizationRule](get-pswaauthorizationrule.md)
+- [Install-PswaWebApplication](install-pswawebapplication.md)
+- [Remove-PswaAuthorizationRule](remove-pswaauthorizationrule.md)
+- [Test-PswaAuthorizationRule](test-pswaauthorizationrule.md)

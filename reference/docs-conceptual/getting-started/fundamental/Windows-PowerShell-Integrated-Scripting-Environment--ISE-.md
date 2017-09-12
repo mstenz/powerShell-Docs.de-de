@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Windows PowerShell Integrated Scripting Environment (ISE)
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
-ms.openlocfilehash: 93b3322ae5634d3611f3c2743e7460e266dc7ab8
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: e5c4e6ef002d6d6ede014a3147d1fed15f6d76d8
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="windows-powershell-integrated-scripting-environment-ise"></a>Windows PowerShell Integrated Scripting Environment (ISE)
 Die Windows PowerShell Integrated Scripting Environment (ISE) ist einer von zwei Hosts des Moduls und der Sprache von Windows PowerShell. Sie ermöglicht Ihnen, Skripts auf eine Weise zu schreiben, auszuführen und zu testen, die in der Windows PowerShell-Konsole nicht verfügbar ist. Diese ISE bietet zusätzlich Syntaxfarben, Vervollständigung mit der TAB-TASTE, IntelliSense, visuelles Debuggen und kontextbezogene Hilfe.
@@ -34,21 +34,21 @@ Die **Liste „Zuletzt verwendet“** ist jetzt Teil des Menüs „Datei öffnen
 
 **Neue Features im Editor** erleichtern das Erstellen und Lesen Ihres Codes:
 
--   **XML-Syntaxfarben**. Im ISE-Editor wird die XML-Syntax ebenso wie die Windows PowerShell-Codesyntax mit Farben versehen.
+- **XML-Syntaxfarben**. Im ISE-Editor wird die XML-Syntax ebenso wie die Windows PowerShell-Codesyntax mit Farben versehen.
 
--   **Zugehörige Klammer**. Die Windows PowerShell ISE markiert zueinanderpassende Klammern, um sicherzustellen, dass Sie über die richtige Anzahl schließender Klammern entsprechend den geöffneten verfügen. Drücken Sie STRG-\[, um die schließende Klammer zu finden, die zur öffnenden Klammer gehört, bei der sich der Cursor befindet.
+- **Zugehörige Klammer**. Die Windows PowerShell ISE markiert zueinanderpassende Klammern, um sicherzustellen, dass Sie über die richtige Anzahl schließender Klammern entsprechend den geöffneten verfügen. Drücken Sie STRG-\[, um die schließende Klammer zu finden, die zur öffnenden Klammer gehört, bei der sich der Cursor befindet.
 
--   **Gliederungsansicht**. Sie können Abschnitte in Ihrem Code auf- und zuklappen, indem Sie am linken Rand auf das Plus- oder Minuszeichen klicken. Dies erleichtert das Auffinden des gesuchten Codes in einem langen Skript.
+- **Gliederungsansicht**. Sie können Abschnitte in Ihrem Code auf- und zuklappen, indem Sie am linken Rand auf das Plus- oder Minuszeichen klicken. Dies erleichtert das Auffinden des gesuchten Codes in einem langen Skript.
 
--   **Textbearbeitung per Drag & Drop**. Sie können einen Textblock auswählen und ihn an eine andere Stelle ziehen, um ihn zu verschieben. Wenn Sie die STRG-Taste gedrückt halten, während Sie den markierten Text ziehen, wird der Text kopiert und nicht verschoben.
+- **Textbearbeitung per Drag & Drop**. Sie können einen Textblock auswählen und ihn an eine andere Stelle ziehen, um ihn zu verschieben. Wenn Sie die STRG-Taste gedrückt halten, während Sie den markierten Text ziehen, wird der Text kopiert und nicht verschoben.
 
--   **Anzeige von Analysefehlern**. Windows PowerShell untersucht Ihr Skript während der Eingabe. Wenn einen Fehler erkannt wird, wird eine rote Wellenlinie unter den fehlerhaften Code angezeigt. Wenn Sie auf den angezeigten Fehler zeigen, informiert eine QuickInfo über das gefundene Problem.
+- **Anzeige von Analysefehlern**. Windows PowerShell untersucht Ihr Skript während der Eingabe. Wenn einen Fehler erkannt wird, wird eine rote Wellenlinie unter den fehlerhaften Code angezeigt. Wenn Sie auf den angezeigten Fehler zeigen, informiert eine QuickInfo über das gefundene Problem.
 
--   **Zoom**. Sie können Text vergrößern, um ihn leichter lesen zu können, oder verkleinern, um sich ein besseres Bild zu verschaffen, indem Sie rechts unten im ISE-Fenster den Schieberegler bewegen.
+- **Zoom**. Sie können Text vergrößern, um ihn leichter lesen zu können, oder verkleinern, um sich ein besseres Bild zu verschaffen, indem Sie rechts unten im ISE-Fenster den Schieberegler bewegen.
 
--   **Umfassende Funktionen zum Kopieren und Einfügen von Text**. Wenn Sie Code aus der ISE in die Zwischenablage kopieren, werden die Schriftart-, Größen und Farbinformationen des markierten Texts eingeschlossen.
+- **Umfassende Funktionen zum Kopieren und Einfügen von Text**. Wenn Sie Code aus der ISE in die Zwischenablage kopieren, werden die Schriftart-, Größen und Farbinformationen des markierten Texts eingeschlossen.
 
--   **Blockauswahl**. Sie können einen Textblock auswählen, indem Sie die ALT-TASTE gedrückt halten, während Sie den Text im Skriptbereich mit der Maus auswählen, oder **ALT+UMSCHALT+NACH-OBEN/NACH-UNTEN** verwenden.
+- **Blockauswahl**. Sie können einen Textblock auswählen, indem Sie die ALT-TASTE gedrückt halten, während Sie den Text im Skriptbereich mit der Maus auswählen, oder **ALT+UMSCHALT+NACH-OBEN/NACH-UNTEN** verwenden.
 
 ### <a name="added-in-powershell-20-windows-server-2008-r2-windows-7"></a>In PowerShell 2.0 (Windows Server 2008 R2, Windows 7) hinzugefügt
 Die ISE wurde mit PowerShell 2.0 eingeführt.

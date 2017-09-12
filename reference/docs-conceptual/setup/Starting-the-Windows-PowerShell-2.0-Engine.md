@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Starten des Windows PowerShell 2.0-Moduls
 ms.assetid: edafc2fa-7576-49c2-bbba-9336f4bcfc28
-ms.openlocfilehash: 15f578e2fbf0b10afa307cde0a32123a8026a282
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 2e5c13cafdfd9fbe479fcad8ac81725cbd7ac3d9
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="starting-the-windows-powershell-20-engine"></a>Starten des Windows PowerShell 2.0-Moduls
 In diesem Abschnitt wird erklärt, wie Sie Windows PowerShell 2.0 Engine unter Windows 8.1, Windows Server 2012 R2, Windows 8 und Windows Server 2012 starten. Bei diesen ist Windows PowerShell 2.0 Engine bereits installiert. Sie erfahren darüber hinaus, wie Sie Windows PowerShell 2.0 Engine auf anderen Systemen starten, auf denen Windows PowerShell 2.0, Windows PowerShell 3.0, und Windows PowerShell 4.0 installiert sind.
@@ -39,7 +39,7 @@ Weitere Informationen zu Sitzungskonfigurationsdateien finden Sie unter [about_S
 
 #### <a name="to-start-a-remote-windows-powershell-20-session"></a>Gehen Sie folgendermaßen vor, um eine Remotesitzung von Windows PowerShell 2.0 zu starten
 
-1.  Verwenden Sie den **PSVersion**-Parameter des Cmdlets [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) mit dem Wert „2.0“, um eine Sitzungskonfiguration zu erstellen, die Windows PowerShell 2.0 Engine erfordert. Führen Sie diesen Befehl auf dem Computer auf der Serverseite oder dem empfangenden Ende der Verbindung aus.
+1. Verwenden Sie den **PSVersion**-Parameter des Cmdlets [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) mit dem Wert „2.0“, um eine Sitzungskonfiguration zu erstellen, die Windows PowerShell 2.0 Engine erfordert. Führen Sie diesen Befehl auf dem Computer auf der Serverseite oder dem empfangenden Ende der Verbindung aus.
 
     Der folgende Befehl erstellt die PS2-Sitzungskonfiguration auf dem Computer „Server01“. Starten Sie Windows PowerShell 4.0 oder Windows PowerShell 3.0 mit der Option **Als Administrator ausführen**, um diesen Befehl auszuführen.
 
@@ -47,7 +47,7 @@ Weitere Informationen zu Sitzungskonfigurationsdateien finden Sie unter [about_S
     Register-PSSessionConfiguration -Name PS2 -PSVersion 2.0
     ```
 
-2.  Zum Erstellen einer Sitzung auf dem Computer „Server01“, der die PS2-Sitzungskonfiguration nutzt, verwenden Sie den **ConfigurationName**-Parameter von Cmdlets, die eine Remotesitzung aufbauen, wie z. B. das Cmdlet [New-PSSession](https://technet.microsoft.com/en-us/library/76f6628c-054c-4eda-ba7a-a6f28daaa26f).
+2. Zum Erstellen einer Sitzung auf dem Computer „Server01“, der die PS2-Sitzungskonfiguration nutzt, verwenden Sie den **ConfigurationName**-Parameter von Cmdlets, die eine Remotesitzung aufbauen, wie z. B. das Cmdlet [New-PSSession](https://technet.microsoft.com/en-us/library/76f6628c-054c-4eda-ba7a-a6f28daaa26f).
 
     Wenn eine Sitzung gestartet wird, die die Sitzungskonfiguration verwendet, wird Windows PowerShell 2.0 Engine automatisch in die Sitzung geladen.
 

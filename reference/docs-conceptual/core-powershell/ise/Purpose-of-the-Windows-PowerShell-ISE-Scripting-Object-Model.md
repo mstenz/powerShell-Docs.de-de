@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Zweck des Windows PowerShell ISE-Skriptobjektmodells
 ms.assetid: d176a131-ab0c-43ee-80c1-f824ab8e4a05
-ms.openlocfilehash: 65535948d681ec63c6cc36583c6d145cfa19b937
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 3256d8bff3885d266f0db6f52932e40c4beaf8b1
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="purpose-of-the-windows-powershell-ise-scripting-object-model"></a>Zweck des Windows PowerShell ISE-Skriptobjektmodells
   Objekte sind der Form und Funktion von Windows PowerShell Integrated Scripting Environment (ISE) zugeordnet. Die Modellreferenz bietet Details zu den Elementeigenschaften und Methoden, die diese Objekte verfügbar machen. Die Beispiele zeigen Ihnen, wie Sie mithilfe von Skripts direkt auf diese Methoden und Eigenschaften zugreifen können. Das Skriptobjektmodell erleichtert die folgenden Aufgaben.
@@ -15,28 +15,28 @@ ms.lasthandoff: 08/03/2017
 ## <a name="customizing-the-appearance-of-windows-powershell-ise"></a>Anpassen der Darstellung von Windows PowerShell ISE
  Sie können das Objektmodell verwenden, um die Anwendungseinstellungen und -optionen zu ändern. Sie können sie beispielsweise folgendermaßen ändern:
 
--   Sie können die Farbe der Fehlermeldungen, Warnungen, ausführlichen Ausgaben, und Debugausgaben ändern.
+- Sie können die Farbe der Fehlermeldungen, Warnungen, ausführlichen Ausgaben, und Debugausgaben ändern.
 
--   Sie können die Hintergrundfarben für den Befehlsbereich, den Ausgabebereich und den Skriptbereich abrufen oder festlegen.
+- Sie können die Hintergrundfarben für den Befehlsbereich, den Ausgabebereich und den Skriptbereich abrufen oder festlegen.
 
--   Sie können die Vordergrundfarbe im Ausgabebereich festlegen.
+- Sie können die Vordergrundfarbe im Ausgabebereich festlegen.
 
--   Sie können die Schriftart und Schriftgröße für Windows PowerShell ISE festlegen.
+- Sie können die Schriftart und Schriftgröße für Windows PowerShell ISE festlegen.
 
--   Sie können Warnungen konfigurieren. Diese Einstellung schließt Warnungen ein, die ausgegeben werden, wenn eine Datei in mehreren PowerShell-Registerkarten geöffnet wird oder wenn eine Datei ausgeführt wird, bevor sie gespeichert wurde.
+- Sie können Warnungen konfigurieren. Diese Einstellung schließt Warnungen ein, die ausgegeben werden, wenn eine Datei in mehreren PowerShell-Registerkarten geöffnet wird oder wenn eine Datei ausgeführt wird, bevor sie gespeichert wurde.
 
--   Sie können zwischen zwei Ansichten wechseln: Entweder werden der Skriptbereich und der Ausgabebereich nebeneinander angezeigt, oder der Skriptbereich wird über dem Ausgabebereich angezeigt. Sie können den Befehlsbereich oben oder unten an den Ausgabebereich andocken.
+- Sie können zwischen zwei Ansichten wechseln: Entweder werden der Skriptbereich und der Ausgabebereich nebeneinander angezeigt, oder der Skriptbereich wird über dem Ausgabebereich angezeigt. Sie können den Befehlsbereich oben oder unten an den Ausgabebereich andocken.
 
 ## <a name="enhancing-the-functionality-of-windows-powershell-ise"></a>Erweitern der Funktionalität von Windows PowerShell ISE
  Sie können das Objektmodell verwenden, um die Funktionalität von Windows PowerShell ISE zu erweitern. Beispielsweise können Sie folgende Aktionen ausführen:
 
--   Fügen Sie Instanzen von Windows PowerShell ISE hinzu und ändern Sie sie. Sie können z.B. neue Menüelemente hinzufügen und die neuen Elemente Skripts zuordnen, um die Menüs zu ändern.
+- Fügen Sie Instanzen von Windows PowerShell ISE hinzu und ändern Sie sie. Sie können z.B. neue Menüelemente hinzufügen und die neuen Elemente Skripts zuordnen, um die Menüs zu ändern.
 
--   Erstellen Sie Skripts, die einige der Aufgaben ausführen, die Sie mithilfe der Menübefehle und Schaltflächen in Windows PowerShell ISE ausführen können. Beispielsweise können Sie eine PowerShell-Registerkarte hinzufügen, entfernen oder auswählen.
+- Erstellen Sie Skripts, die einige der Aufgaben ausführen, die Sie mithilfe der Menübefehle und Schaltflächen in Windows PowerShell ISE ausführen können. Beispielsweise können Sie eine PowerShell-Registerkarte hinzufügen, entfernen oder auswählen.
 
--   Ergänzen Sie Aufgaben, die mithilfe der Menübefehle und Schaltflächen ausgeführt werden können. Beispielsweise können Sie eine PowerShell-Registerkarte umbenennen.
+- Ergänzen Sie Aufgaben, die mithilfe der Menübefehle und Schaltflächen ausgeführt werden können. Beispielsweise können Sie eine PowerShell-Registerkarte umbenennen.
 
--   Ändern Sie Textpuffer für den Befehlsbereich, den Ausgabebereich und den Skriptbereich, die einer Datei zugeordnet sind. Beispielsweise können Sie folgende Aktionen ausführen:
+- Ändern Sie Textpuffer für den Befehlsbereich, den Ausgabebereich und den Skriptbereich, die einer Datei zugeordnet sind. Beispielsweise können Sie folgende Aktionen ausführen:
 
     -   Den gesamten Text abrufen oder festlegen.
 
@@ -52,7 +52,7 @@ ms.lasthandoff: 08/03/2017
 
     -   Die letzte Zeilennummer abrufen.
 
--   Dateivorgänge ausführen. Beispielsweise können Sie folgende Aktionen ausführen:
+- Dateivorgänge ausführen. Beispielsweise können Sie folgende Aktionen ausführen:
 
     -   Eine Datei öffnen, speichern oder unter einem anderen Namen speichern.
 

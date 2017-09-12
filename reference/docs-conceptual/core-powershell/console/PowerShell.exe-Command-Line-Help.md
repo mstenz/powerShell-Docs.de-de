@@ -3,18 +3,18 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "Befehlszeilenhilfe für „PowerShell.exe“"
 ms.assetid: 1ab7b93b-6785-42c6-a1c9-35ff686a958f
-ms.openlocfilehash: 4a14223dd024d967810a90dec10e416e4e35d6a2
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: b2236decb3295ee5b543f72f083e516c91fa4b5f
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="powershellexe-command-line-help"></a>Befehlszeilenhilfe für „PowerShell.exe“
 Startet eine Windows PowerShell-Sitzung. Sie können mithilfe von „PowerShell.exe“ eine Windows PowerShell-Sitzung über die Befehlszeile eines anderen Tools wie z. B. „Cmd.exe“ starten oder mit diesem Befehl über die Windows PowerShell-Befehlszeile eine neue Sitzung starten. Verwenden Sie die Parameter, um die Sitzung anzupassen.
 
 ## <a name="syntax"></a>Syntax
 
-```
+```syntax
 PowerShell[.exe]
        [-EncodedCommand <Base64EncodedCommand>]
        [-ExecutionPolicy <ExecutionPolicy>]
