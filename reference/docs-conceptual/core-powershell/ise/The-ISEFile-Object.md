@@ -3,18 +3,18 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Das ISEFile-Objekt
 ms.assetid: 1c6d91f3-c556-42a2-a017-79b6b7b4b7db
-ms.openlocfilehash: 0e1c09c4a92868448d76cc7b4954d250773ce2f2
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: a1fbd48e872684cc578adb03f52430eabdc54c2c
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="the-isefile-object"></a>Das ISEFile-Objekt
   Ein **ISEFile**-Objekt stellt eine Datei in Windows-PowerShell® Integrated Scripting Environment (ISE) dar Es ist eine Instanz der Microsoft.PowerShell.Host.ISE.ISEFile-Klasse. In diesem Thema werden die Elementmethoden und -eigenschaften aufgeführt. **$psISE.CurrentFile** und die Dateien in der DateiSammlung auf einer PowerShell-Registerkarte sind Instanzen der Microsoft.PowerShell.Host.ISE.ISEFile-Klasse.
 
 ## <a name="methods"></a>Methoden
 
-###  <a name="save-override"></a> Save\( \[saveEncoding\] \)
+### <a name="save-saveencoding-"></a>Save\( \[saveEncoding\] \)
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Speichert die Datei auf dem Datenträger.
@@ -37,7 +37,7 @@ $myfile.Encoding
 
 ```
 
-###  <a name="saveas"></a> SaveAs\(Dateiname, \[saveEncoding\]\)
+### <a name="saveasfilename-saveencoding"></a>SaveAs\(Dateiname, \[saveEncoding\]\)
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Speichert die Datei mit dem angegebenen Namen und der angegebenen Codierung.
@@ -49,9 +49,9 @@ $myfile.Encoding
  **Ausnahmen**
  -   **System.ArgumentNullException**: Der **filename**-Parameter ist NULL.
 
--   **System.ArgumentException**: Der **filename**-Parameter ist leer.
+- **System.ArgumentException**: Der **filename**-Parameter ist leer.
 
--   **System.IO.IOException**: Die Datei konnte nicht gespeichert werden.
+- **System.IO.IOException**: Die Datei konnte nicht gespeichert werden.
 
 ```
 # Save the file with a full path and name. 
@@ -64,8 +64,8 @@ $psIse.CurrentFile.SaveAs( $fullPath, [System.Text.Encoding]::UTF8 )
 
 ## <a name="properties"></a>Eigenschaften
 
-###  <a name="Displayname"></a> DisplayName
-  In Windows PowerShell ISE 2.0 und höher unterstützt. 
+### <a name="displayname"></a>DisplayName
+  In Windows PowerShell ISE 2.0 und höher unterstützt.
 
  Die schreibgeschützte Eigenschaft, die die Zeichenfolge mit dem Anzeigenamen dieser Datei abruft. Der Name wird auf der Registerkarte **Datei** oben im Editor angezeigt. Ein Sternchen \(\*\) am Ende des Namens zeigt an, dass die Datei nicht gespeicherte Änderungen enthält.
 
@@ -75,7 +75,7 @@ $psIse.CurrentFile.DisplayName
 
 ```
 
-###  <a name="Editor"></a> Editor
+### <a name="editor"></a>Editor
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Die schreibgeschützte Eigenschaft, die das für die angegebene Datei verwendete [Editor-Objekt](The-ISEEditor-Object.md) abruft.
@@ -86,7 +86,7 @@ $psIse.CurrentFile.Editor.Text
 
 ```
 
-###  <a name="Encoding"></a> Encoding
+### <a name="encoding"></a>Codierung
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Die schreibgeschützte Eigenschaft, die die ursprüngliche Dateicodierung abruft. Dies ist ein **System.Text.Encoding**-Objekt.
@@ -97,7 +97,7 @@ $psIse.CurrentFile.Encoding
 
 ```
 
-###  <a name="FullPath"></a> FullPath
+### <a name="fullpath"></a>FullPath
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Die schreibgeschützte Eigenschaft, die die Zeichenfolge abruft, die den vollständigen Pfad der geöffneten Datei angibt.
@@ -108,7 +108,7 @@ $psIse.CurrentFile.FullPath
 
 ```
 
-###  <a name="IsSaved"></a> IsSaved
+### <a name="issaved"></a>IsSaved
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Die schreibgeschützte boolesche Eigenschaft, die **$true** zurückgibt, wenn die Datei nach der letzten Änderung gespeichert wurde.
@@ -120,7 +120,7 @@ $myfile.IsSaved
 
 ```
 
-###  <a name="IsUntitled"></a> IsUntitled
+### <a name="isuntitled"></a>IsUntitled
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Die schreibgeschützte Eigenschaft, die **$true** zurückgibt, wenn für die Datei nie ein Titel festgelegt wurde.
@@ -136,7 +136,5 @@ $psISE.CurrentFile.IsUntitled
 ## <a name="see-also"></a>Weitere Informationen
 - [Das ISEFileCollection-Objekt](The-ISEFileCollection-Object.md) 
 - [Das Windows PowerShell ISE-Skriptobjektmodell](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
-- [Referenz zum Windows PowerShell ISE-Objektmodell](Windows-PowerShell-ISE-Object-Model-Reference.md) 
+- [Referenz zum Windows PowerShell ISE-Objektmodell](Windows-PowerShell-ISE-Object-Model-Reference.md)
 - [Die ISE-Objektmodellhierarchie](The-ISE-Object-Model-Hierarchy.md)
-
-  

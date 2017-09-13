@@ -2,11 +2,11 @@
 ms.date: 2017-06-27
 keywords: powershell,cmdlet
 title: Autorisierungsregeln und Sicherheitsfeatures von Windows PowerShell Web Access
-ms.openlocfilehash: 4b076ca1ecdab293f3acadc466d39ba3e7a6444f
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 6b50fdc0f2854d8af6147432fed1a155d26f57e7
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Autorisierungsregeln und Sicherheitsfeatures von Windows PowerShell Web Access
 
@@ -14,7 +14,7 @@ Aktualisiert: 24. Juni 2013
 
 Gilt für: Windows Server 2012 R2, Windows Server 2012
 
-Windows PowerShell® Web Access in Windows Server® 2012 R2 und in Windows Server® 2012 verfügt über ein restriktives Sicherheitsmodell.
+Windows PowerShell Web Access in Windows Server 2012 R2 und in Windows Server 2012 verfügt über ein restriktives Sicherheitsmodell.
 Benutzern muss explizit der Zugriff gewährt werden, bevor sie sich am Windows PowerShell Web Access-Gateway anmelden und die webbasierte Windows PowerShell-Konsole verwenden können.
 
 ## <a name="configuring-authorization-rules-and-site-security"></a>Konfigurieren von Autorisierungsregeln und Websitesicherheit
@@ -48,7 +48,7 @@ Weitere Informationen zur Sicherheit finden Sie im folgenden Abschnitt.
 Falls ein Benutzer keine der vorherigen Sicherheitsebenen passieren kann, wird im Browserfenster eine allgemeine Meldung des Typs „Zugriff verweigert“ angezeigt.
 Obwohl die Sicherheitsdetails auf dem Gatewayserver protokolliert werden, erhalten die Benutzern keine Informationen darüber, wie viele Sicherheitsebenen sie passiert haben oder auf welcher Ebene der Anmelde- oder Authentifizierungsfehler aufgetreten ist.
 
-Weitere Informationen zur Konfiguration von Autorisierungsregeln finden Sie unter [Konfigurieren von Autorisierungsregeln]() in diesem Thema.
+Weitere Informationen zur Konfiguration von Autorisierungsregeln finden Sie unter [Konfigurieren von Autorisierungsregeln](#configuring-authorization-rules-and-site-security) in diesem Thema.
 
 ### <a name="security"></a>Sicherheit
 
@@ -62,17 +62,17 @@ Die folgende Tabelle enthält eine Beschreibung der vier Sicherheitsebenen zwisc
 
 |Ebene|Ebene|
 |-|-|
-|1|[iis web server security features (Sicherheitsfeatures des IIS-Webservers)]()|
-|2|[windows powershell web access forms-based gateway authentication (Formularbasierte Gatewayauthentifizierung von Windows PowerShell Web Access)]()|
-|3|[windows powershell web access authorization rules (Windows PowerShell Web Access-Autorisierungsregeln)]()|
-|4|[target authentication and authorization rules (Zielauthentifizierung und Autorisierungsregeln)]()|
+|1|[iis web server security features (Sicherheitsfeatures des IIS-Webservers)](#iis-web-server-security-features)|
+|2|[windows powershell web access forms-based gateway authentication (Formularbasierte Gatewayauthentifizierung von Windows PowerShell Web Access)](#windows-powershell-web-access-forms-based-gateway-authentication)|
+|3|[windows powershell web access authorization rules (Windows PowerShell Web Access-Autorisierungsregeln)](#windows-powershell-web-access-authorization-rules)|
+|4|[target authentication and authorization rules (Zielauthentifizierung und Autorisierungsregeln)](#target-authentication-and-authorization-rules)|
 
 Ausführliche Informationen zu jeder Ebene finden Sie unter den folgenden Überschriften:
 
 #### <a name="iis-web-server-security-features"></a>Sicherheitsfeatures des IIS-Webservers
 
 Benutzer von Windows PowerShell Web Access müssen immer einen Benutzernamen und ein Kennwort angeben, um ihre Konten auf dem Gateway zu authentifizieren.
-Windows PowerShell Web Access-Administratoren können die optionale Authentifizierung per Clientzertifikat jedoch auch aktivieren oder deaktivieren (siehe [install and use windows powershell web access (Installieren und Verwenden von Windows PowerShell Web Access)](), um ein Testzertifikat zu erstellen und später ein Originalzertifikat zu generieren).
+Windows PowerShell Web Access-Administratoren können die optionale Authentifizierung per Clientzertifikat jedoch auch aktivieren oder deaktivieren (siehe [install and use windows powershell web access (Installieren und Verwenden von Windows PowerShell Web Access)](install-and-use-windows-powershell-web-access.md)), um ein Testzertifikat zu erstellen und später ein Originalzertifikat zu generieren.
 
 Für die optionale Clientzertifikatauthentifizierung müssen Endbenutzer zusätzlich zu ihren Benutzernamen und Kennwörtern auch über ein gültiges Clientzertifikat verfügen. Das Feature ist Teil der Konfiguration des Webservers (IIS).
 Wenn die Clientzertifikatebene aktiviert ist, werden Benutzer auf der Windows PowerShell Web Access-Anmeldeseite zum Angeben gültiger Zertifikate aufgefordert, bevor ihre Anmeldeinformationen ausgewertet werden.
@@ -89,7 +89,7 @@ Die Anmeldeseite von Windows PowerShell Web Access erfordert einen Satz von Anme
 Wenn der Benutzer keine alternativen Anmeldeinformationen angibt, werden die primären Benutzernamen- und Kennwortinformationen, die für die Verbindung zum Gateway verwendet werden, auch genutzt, um eine Verbindung mit dem Zielcomputer herzustellen.
 
 Die erforderlichen Anmeldeinformationen werden auf dem Windows PowerShell Web Access-Gateway authentifiziert.
-Bei diesen Anmeldeinformationen muss es sich um gültige Benutzerkonten auf entweder dem lokalen Windows PowerShell Web Access-Gatewayserver oder in Active Directory® handeln.
+Bei diesen Anmeldeinformationen muss es sich um gültige Benutzerkonten auf entweder dem lokalen Windows PowerShell Web Access-Gatewayserver oder in Active Directory handeln.
 
 #### <a name="windows-powershell-web-access-authorization-rules"></a>Windows PowerShell Web Access-Autorisierungsregeln
 
@@ -129,7 +129,7 @@ Platzhalterzeichen innerhalb von Zeichenfolgen werden nicht unterstützt. Verwen
 
 > **Hinweis**
 >
-> Weitere Möglichkeiten der Verwendung von Autorisierungsregeln, um Benutzern Zugriff zu gewähren, und Hilfe zum Schutz der Windows PowerShell Web Access-Umgebung finden Sie unter [Weitere Beispiele für Autorisierungsregelszenarios]() in diesem Thema.
+> Weitere Möglichkeiten der Verwendung von Autorisierungsregeln, um Benutzern Zugriff zu gewähren, und Hilfe zum Schutz der Windows PowerShell Web Access-Umgebung finden Sie unter [Weitere Beispiele für Autorisierungsregelszenarios](#other-authorization-rule-scenario-examples) in diesem Thema.
 
 #### <a name="to-add-a-restrictive-authorization-rule"></a>So fügen Sie eine restriktive Autorisierungsregel hinzu
 
@@ -160,7 +160,7 @@ Add-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214 -
 
 #### <a name="to-remove-an-authorization-rule"></a>So entfernen Sie eine Autorisierungsregel
 
-1. Falls noch keine Windows PowerShell-Sitzung geöffnet wurde, finden Sie die entsprechende Vorgehensweise in Schritt 1 unter [So fügen Sie eine restriktive Autorisierungsregel hinzu]() in diesem Abschnitt.
+1. Falls noch keine Windows PowerShell-Sitzung geöffnet wurde, finden Sie die entsprechende Vorgehensweise in Schritt 1 unter [So fügen Sie eine restriktive Autorisierungsregel hinzu](#to-add-a-restrictive-authorization-rule) in diesem Abschnitt.
 
 2. Geben Sie Folgendes ein, und drücken Sie anschließend die **EINGABETASTE**, wobei *Regel-ID* für die eindeutige ID-Nummer der Regel steht, die Sie entfernen möchten.
 
@@ -181,9 +181,9 @@ Im Folgenden sind einige Beispiele für die Verwendung von Sitzungskonfiguration
 
 - Ein Administrator erstellt einen Endpunkt namens **PswaEndpoint** mit einem eingeschränkten Runspace. Anschließend erstellt der Administrator die Regel **\*,\*,PswaEndpoint** und verteilt den Endpunkt an andere Computer. Mithilfe der Regel können alle Benutzer auf alle Computer mit dem Endpunkt **PswaEndpoint** zugreifen. Falls es sich um die einzige Autorisierungsregel handelt, die in dem Regelsatz definiert ist, ist der Zugriff auf Computer ohne diesen Endpunkt nicht möglich.
 
--   Der Administrator hat einen Endpunkt mit dem eingeschränkten Runspace **PswaEndpoint** erstellt und möchte den Zugriff auf bestimmte Benutzer beschränken. Der Administrator erstellt die Benutzergruppe namens **Level1Support** und definiert die folgende Regel: **Level1Support,\*,PswaEndpoint**. Mit der Regel wird allen Benutzern der Gruppe **Level1Support** Zugriff auf alle Computer mit der Konfiguration **PswaEndpoint** gewährt. Ebenso ist es möglich, den Zugriff auf eine bestimmte Gruppe von Computern zu beschränken.
+- Der Administrator hat einen Endpunkt mit dem eingeschränkten Runspace **PswaEndpoint** erstellt und möchte den Zugriff auf bestimmte Benutzer beschränken. Der Administrator erstellt die Benutzergruppe namens **Level1Support** und definiert die folgende Regel: **Level1Support,\*,PswaEndpoint**. Mit der Regel wird allen Benutzern der Gruppe **Level1Support** Zugriff auf alle Computer mit der Konfiguration **PswaEndpoint** gewährt. Ebenso ist es möglich, den Zugriff auf eine bestimmte Gruppe von Computern zu beschränken.
 
--   Einige Administratoren gewähren bestimmten Benutzern mehr Zugriff als anderen. Beispielsweise erstellt ein Administrator die beiden Benutzergruppen **Admins** und **BasicSupport**. Ferner erstellt der Administrator einen Endpunkt mit dem eingeschränkten Runspace namens **PswaEndpoint** und definiert die folgenden beiden Regeln: **Admins,\*,\*** und **BasicSupport,\*,PswaEndpoint**. Mit der ersten Regel wird allen Benutzern der Gruppe **Admin** Zugriff auf alle Computer gewährt, und mit der zweiten Regel wird allen Benutzern der Gruppe **BasicSupport** nur Zugriff auf Computer mit **PswaEndpoint** gewährt.
+- Einige Administratoren gewähren bestimmten Benutzern mehr Zugriff als anderen. Beispielsweise erstellt ein Administrator die beiden Benutzergruppen **Admins** und **BasicSupport**. Ferner erstellt der Administrator einen Endpunkt mit dem eingeschränkten Runspace namens **PswaEndpoint** und definiert die folgenden beiden Regeln: **Admins,\*,\*** und **BasicSupport,\*,PswaEndpoint**. Mit der ersten Regel wird allen Benutzern der Gruppe **Admin** Zugriff auf alle Computer gewährt, und mit der zweiten Regel wird allen Benutzern der Gruppe **BasicSupport** nur Zugriff auf Computer mit **PswaEndpoint** gewährt.
 
 - Ein Administrator hat eine private Testumgebung eingerichtet und möchte nun allen autorisierten Netzwerkbenutzern den Zugriff auf alle Computer im Netzwerk ermöglichen, auf die sie normalerweise zugreifen können, und zwar mit Zugriff auf alle Sitzungskonfigurationen, auf die sie normalerweise zugreifen können. Da es sich um eine private Testumgebung handelt, erstellt der Administrator eine Autorisierungsregel, die nicht sicher ist.
   - Der Administrator führt das Cmdlet `Add-PswaAuthorizationRule * * *`aus. Dabei wird das Platzhalterzeichen **\*** verwendet, um alle Benutzer, alle Computer und alle Konfigurationen anzugeben.
@@ -209,7 +209,7 @@ Im obigen Szenario richtet Windows PowerShell Web Access eine Verbindung mit dem
 
   >**Hinweis**:
   >
-  >Wenn sich Gateway- und Zielcomputer in unterschiedlichen Arbeitsgruppen oder Domänen befinden, muss eine Vertrauensstellung zwischen den beiden Arbeitsgruppencomputern, den beiden Domänen oder der Arbeitsgruppe und der Domäne eingerichtet werden. Diese Vertrauensstellung kann nicht mithilfe von Windows PowerShell Web Access-Autorisierungsregel-Cmdlets konfiguriert werden. Mit den Autorisierungsregeln wird keine Vertrauensstellung zwischen Computern definiert. Damit kann für Benutzer nur die Verbindung mit bestimmten Zielcomputern und Sitzungskonfigurationen konfiguriert werden. Weitere Informationen zur Konfiguration einer Vertrauensstellung zwischen unterschiedlichen Domänen finden Sie unter [Creating Domain and Forest Trusts](https://technet.microsoft.com/library/cc794775.aspx") (Erstellen von Domänen- und Gesamtstruktur-Vertrauensstellungen). Weitere Informationen zum Hinzufügen von Arbeitsgruppencomputern zu einer Liste mit vertrauenswürdigen Hosts finden Sie unter [Remoteverwaltung mit dem Server-Manager](href="https://technet.microsoft.com/library/dd759202.aspx).
+  >Wenn sich Gateway- und Zielcomputer in unterschiedlichen Arbeitsgruppen oder Domänen befinden, muss eine Vertrauensstellung zwischen den beiden Arbeitsgruppencomputern, den beiden Domänen oder der Arbeitsgruppe und der Domäne eingerichtet werden. Diese Vertrauensstellung kann nicht mithilfe von Windows PowerShell Web Access-Autorisierungsregel-Cmdlets konfiguriert werden. Mit den Autorisierungsregeln wird keine Vertrauensstellung zwischen Computern definiert. Damit kann für Benutzer nur die Verbindung mit bestimmten Zielcomputern und Sitzungskonfigurationen konfiguriert werden. Weitere Informationen zur Konfiguration einer Vertrauensstellung zwischen unterschiedlichen Domänen finden Sie unter [Creating Domain and Forest Trusts](https://technet.microsoft.com/library/cc794775.aspx") (Erstellen von Domänen- und Gesamtstruktur-Vertrauensstellungen). Weitere Informationen zum Hinzufügen von Arbeitsgruppencomputern zu einer Liste mit vertrauenswürdigen Hosts finden Sie unter [Remoteverwaltung mit dem Server-Manager](https://technet.microsoft.com/library/dd759202.aspx).
 
 ### <a name="using-a-single-set-of-authorization-rules-for-multiple-sites"></a>Verwenden eines einzigen Satzes mit Autorisierungsregeln für mehrere Websites
 
