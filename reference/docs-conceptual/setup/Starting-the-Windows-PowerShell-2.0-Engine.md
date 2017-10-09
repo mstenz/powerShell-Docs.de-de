@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Starten des Windows PowerShell 2.0-Moduls
 ms.assetid: edafc2fa-7576-49c2-bbba-9336f4bcfc28
-ms.openlocfilehash: 2e5c13cafdfd9fbe479fcad8ac81725cbd7ac3d9
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 88d4374891e38501f6bbcd0793c86692eaed2f22
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="starting-the-windows-powershell-20-engine"></a>Starten des Windows PowerShell 2.0-Moduls
 In diesem Abschnitt wird erklärt, wie Sie Windows PowerShell 2.0 Engine unter Windows 8.1, Windows Server 2012 R2, Windows 8 und Windows Server 2012 starten. Bei diesen ist Windows PowerShell 2.0 Engine bereits installiert. Sie erfahren darüber hinaus, wie Sie Windows PowerShell 2.0 Engine auf anderen Systemen starten, auf denen Windows PowerShell 2.0, Windows PowerShell 3.0, und Windows PowerShell 4.0 installiert sind.
@@ -66,5 +66,5 @@ Der folgende Befehl startet einen Hintergrundauftrag mit Windows PowerShell 2.0 
 Start-Job {Get-Process} -PSVersion 2.0
 ```
 
-Weitere Informationen zu Hintergrundaufträgen finden Sie unter [about_Jobs [v4]](https://technet.microsoft.com/en-us/library/7362512a-8a4e-4575-b2ea-a740e5c4f002).
+Weitere Informationen zu Hintergrundaufträgen finden Sie unter [about_Jobs [v4]](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_jobs?view=powershell-4.0).
 

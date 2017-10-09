@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Neuerungen bei der Windows PowerShell 5.0 ISE
 ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
-ms.openlocfilehash: 1e315351d0e5dde146881b0e6527c38e59777a1e
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 89dcc905ce200d06029e148c9675269e6f518fa3
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="what39s-new-in-the-windows-powershell-ise"></a>Neuerungen bei der Windows PowerShell ISE
 In diesem Thema werden die neuen und aktualisierten Features vorgestellt, die in Versionen von Windows PowerShell Integrated Scripting Environment (ISE) eingeführt wurden.
@@ -22,16 +22,16 @@ Die folgende Tabelle enthält die neuen und geänderten Funktionen für diese Ve
 
 |Feature/Funktionalität|Windows PowerShell ISE 4.0|Windows PowerShell ISE 3.0|Windows PowerShell ISE 2.0|
 |--------------------------|-----------------------------------------------|-----------------------------------------------|-----------------------------------------------|
-|**[IntelliSense]()**|X|X||
-|**[Codeausschnitte]()**|X|X||
-|**[Add-On-Tools]()**|X|X||
-|**[Neustart-Manager und automatisches Speichern]()**|X|X||
-|**[Konsolenbereich]()**|X|X||
-|**[Liste „Zuletzt verwendet“]()**|X|X||
-|**[Befehlszeilenschalter]()**|X|X||
-|**[Neue Features im Editor]()**|X|X||
-|**[Neues Anzeigefenster für Hilfe]()**|X|X||
-|**[Cmdlet „Show-Command“]()**|X|X||
+|**[IntelliSense](#intellisense)**|X|X||
+|**[Codeausschnitte](#snippets)**|X|X||
+|**[Add-On-Tools](#add-on-tools)**|X|X||
+|**[Neustart-Manager und automatisches Speichern](#restart-manager-and-auto-save)**|X|X||
+|**[Liste „Zuletzt verwendet“](#most-recently-used-list)**|X|X||
+|**[Konsolenbereich](#console-pane)**|X|X||
+|**[Befehlszeilenschalter](#command-line-switches)**|X|X||
+|**[Neue Features im Editor](#new-editor-features)**|X|X||
+|**[Neues Anzeigefenster für Hilfe](#new-help-viewer-window)**|X|X||
+|**[Cmdlet „Show-Command“](#show-command-cmdlet)**|X|X||
 
 ### <a name="intellisense"></a>IntelliSense
 **In ISE 3.0 hinzugefügt**

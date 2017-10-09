@@ -2,11 +2,11 @@
 ms.date: 2017-08-09
 keywords: powershell,cmdlet,download,installieren,setup,windows 10, windows 8.1, windows 8.0,windows 7
 title: Installieren von Windows PowerShell
-ms.openlocfilehash: 7ccbee66d01dd8e0e6e6ab09c6c8a399bee59ce8
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 781bf50b6ac649e72bcdbb708555275fb7422d94
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="installing-windows-powershell"></a>Installieren von Windows PowerShell
 
@@ -54,7 +54,7 @@ Editionen von Windows Server ohne die GUI werden als **Core**-Editionen bezeichn
 
 In allen Core-Editionen wird ein Windows-Eingabeaufforderungsfenster geöffnet, wenn Sie sich beim Server anmelden.
 
-Geben Sie `powerhell` ein, und drücken Sie auf **EINGABE**, um PowerShell in der Eingabeaufforderungssitzung zu starten. Geben Sie `exit` ein, um die PowerShell-Sitzung zu beenden und zur Eingabeaufforderung zurückzukehren.
+Geben Sie `powershell` ein, und drücken Sie auf **EINGABE**, um PowerShell in der Eingabeaufforderungssitzung zu starten. Geben Sie `exit` ein, um die PowerShell-Sitzung zu beenden und zur Eingabeaufforderung zurückzukehren.
 
 ### <a name="windows-server-desktop-editions"></a>Windows Server Desktop-Editionen
 

@@ -2,11 +2,11 @@
 ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Das ISEEditor-Objekt
-ms.openlocfilehash: 149eda44fea5b02324442970324e3010015e7ae5
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: c593eeebf0b9a94769841efd2aa78f84a3829ca5
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="the-iseeditor-object"></a>Das ISEEditor-Objekt
   Ein **ISEEditor**-Objekt ist eine Instanz der Microsoft.PowerShell.Host.ISE.ISEEditor-Klasse. Der Konsolenbereich ist ein **ISEEditor**-Objekt. Jedes [ISEFile](The-ISEFile-Object.md)-Objekt verfügt über ein zugeordnetes **ISEEditor**-Objekt. In den folgenden Abschnitten werden die Methoden und Eigenschaften eines **ISEEditor**-Objekts aufgeführt.
@@ -75,7 +75,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  **text**: Zeichenfolge – der einzufügende Text.
 
- Weitere Informationen finden Sie im [Beispielskript](#-scripting-example) weiter unten in diesem Thema.
+ Weitere Informationen finden Sie im [Beispielskript](#scripting-example) weiter unten in diesem Thema.
 
 ### <a name="select-startline-startcolumn-endline-endcolumn-"></a>Select\( startLine, startColumn, endLine, endColumn \)
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
@@ -90,7 +90,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  **endColumn**: ganze Zahl – die Spalte in der Endzeile, in der die Auswahl endet.
 
- Weitere Informationen finden Sie im [Beispielskript](#-scripting-example) weiter unten in diesem Thema.
+ Weitere Informationen finden Sie im [Beispielskript](#scripting-example) weiter unten in diesem Thema.
 
 ### <a name="selectcaretline"></a>SelectCaretLine\(\)
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
@@ -185,14 +185,14 @@ $psISE.CurrentFile.Editor.LineCount
 
  Die schreibgeschützte Eigenschaft, die den ausgewählten Text aus dem Editor abruft.
 
- Weitere Informationen finden Sie im [Beispielskript](#-scripting-example) weiter unten in diesem Thema.
+ Weitere Informationen finden Sie im [Beispielskript](#scripting-example) weiter unten in diesem Thema.
 
 ### <a name="text"></a>Text
   In Windows PowerShell ISE 2.0 und höher unterstützt. 
 
  Die Lese-/Schreibeigenschaft, die den Text im Editor abruft oder festlegt.
 
- Weitere Informationen finden Sie im [Beispielskript](#-scripting-example) weiter unten in diesem Thema.
+ Weitere Informationen finden Sie im [Beispielskript](#scripting-example) weiter unten in diesem Thema.
 
 ## <a name="scripting-example"></a>Beispielskript
 

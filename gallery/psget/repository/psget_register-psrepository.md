@@ -4,46 +4,40 @@ contributor: manikb
 ms.topic: reference
 keywords: gallery,powershell,cmdlet,psget
 title: Register-PSRepository
-ms.openlocfilehash: 598bfa52fe3508359bbeb4489cc054bc9314b572
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: badac5dc1157bbfa79058630c5c2f260d2151bd8
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 09/29/2017
 ---
-<a id="register-psrepository" class="xliff"></a>
-# Register-PSRepository
+# <a name="register-psrepository"></a>Register-PSRepository
 
 Ruft die registrierten Repositorys auf einem Computer ab
 
-<a id="description" class="xliff"></a>
-## Beschreibung
+## <a name="description"></a>Beschreibung
 
 Das Cmdlet „Register-PSRepository“ registriert das Online-Repository für PowerShell-Module. Nachdem ein Repository registriert wurde, können Sie von den Cmdlets „Find-Module“, „Install-Module“ und „Publish-Module“ aus darauf verweisen. Das registrierte Repository wird zum Standard-Repository in „Find-Module“ und „Install-Module“. 
 
 Registrierte Repositorys sind benutzerspezifisch. Sie sind nicht in einem systemweiten Kontext registriert.
 
 
-<a id="cmdlet-syntax" class="xliff"></a>
-## Cmdlet-Syntax
+## <a name="cmdlet-syntax"></a>Cmdlet-Syntax
 
 ```powershell
 Get-Command -Name Register-PSRepository -Module PowerShellGet -Syntax
 ```
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-## Cmdlet-Onlinehilfe
+## <a name="cmdlet-online-help-reference"></a>Cmdlet-Onlinehilfe
 
 [Register-PSRepository](http://go.microsoft.com/fwlink/?LinkID=517129)
 
-<a id="example-commands" class="xliff"></a>
-## Beispiele für Befehle
+## <a name="example-commands"></a>Beispiele für Befehle
 
-<a id="register-a-powershell-repository" class="xliff"></a>
-### Registrieren eines PowerShell-Repositorys
+### <a name="register-a-powershell-repository"></a>Registrieren eines PowerShell-Repositorys
 Sie können PowerShellGet für interne Repositorys konfigurieren. Nachdem ein Repository registriert wurde, können Sie „Find-Module“ und „Install-Module“ dafür verwenden.
 
 ```powershell
 # Register a default repository
-Register-PSRepository –Name DemoRepo –SourceLocation "https://www.myget.org/F/powershellgetdemo/api/v2" –InstallationPolicy –Trusted
+Register-PSRepository –Name DemoRepo –SourceLocation "https://www.myget.org/F/powershellgetdemo/api/v2" –InstallationPolicy Trusted
 
 # Get all of the registered repositories
 Name                      InstallationPolicy   SourceLocation
@@ -68,8 +62,7 @@ Unregister-PSRepository DemoRepo
 ```
 
 
-<a id="register-psrepository-and-set-psrepository-cmdlets-with-script-sharing-support" class="xliff"></a>
-### Cmdlets „Register-PSRepository“ und „Set-PSRepository“ mit Unterstützung der Skriptfreigabe
+### <a name="register-psrepository-and-set-psrepository-cmdlets-with-script-sharing-support"></a>Cmdlets „Register-PSRepository“ und „Set-PSRepository“ mit Unterstützung der Skriptfreigabe
 
 Verwenden Sie das Cmdlet „Register-PSRepository“ zum Hinzufügen von **ScriptSourceLocation** und **ScriptPublishLocation** zu „PSRepository“.
 
