@@ -4,40 +4,40 @@ contributor: manikb
 ms.topic: reference
 keywords: gallery,powershell,cmdlet,psget
 title: Register-PSRepository
-ms.openlocfilehash: 598bfa52fe3508359bbeb4489cc054bc9314b572
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: badac5dc1157bbfa79058630c5c2f260d2151bd8
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 09/29/2017
 ---
-# <a name="register-psrepository"></a><span data-ttu-id="10371-103">Register-PSRepository</span><span class="sxs-lookup"><span data-stu-id="10371-103">Register-PSRepository</span></span>
+# <a name="register-psrepository"></a><span data-ttu-id="c54e9-103">Register-PSRepository</span><span class="sxs-lookup"><span data-stu-id="c54e9-103">Register-PSRepository</span></span>
 
-<span data-ttu-id="10371-104">Ruft die registrierten Repositorys auf einem Computer ab</span><span class="sxs-lookup"><span data-stu-id="10371-104">Gets the registered repositories on a computer.</span></span>
+<span data-ttu-id="c54e9-104">Ruft die registrierten Repositorys auf einem Computer ab</span><span class="sxs-lookup"><span data-stu-id="c54e9-104">Gets the registered repositories on a computer.</span></span>
 
-## <a name="description"></a><span data-ttu-id="10371-105">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="10371-105">Description</span></span>
+## <a name="description"></a><span data-ttu-id="c54e9-105">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="c54e9-105">Description</span></span>
 
-<span data-ttu-id="10371-106">Das Cmdlet „Register-PSRepository“ registriert das Online-Repository für PowerShell-Module.</span><span class="sxs-lookup"><span data-stu-id="10371-106">The Register-PSRepository cmdlet registers the online repository for PowerShell modules.</span></span> <span data-ttu-id="10371-107">Nachdem ein Repository registriert wurde, können Sie von den Cmdlets „Find-Module“, „Install-Module“ und „Publish-Module“ aus darauf verweisen.</span><span class="sxs-lookup"><span data-stu-id="10371-107">After a repository is registered, you can reference it from the Find-Module, Install-Module, and Publish-Module cmdlets.</span></span> <span data-ttu-id="10371-108">Das registrierte Repository wird zum Standard-Repository in „Find-Module“ und „Install-Module“.</span><span class="sxs-lookup"><span data-stu-id="10371-108">The registered repository becomes the default repository in Find-Module and Install-Module.</span></span> 
+<span data-ttu-id="c54e9-106">Das Cmdlet „Register-PSRepository“ registriert das Online-Repository für PowerShell-Module.</span><span class="sxs-lookup"><span data-stu-id="c54e9-106">The Register-PSRepository cmdlet registers the online repository for PowerShell modules.</span></span> <span data-ttu-id="c54e9-107">Nachdem ein Repository registriert wurde, können Sie von den Cmdlets „Find-Module“, „Install-Module“ und „Publish-Module“ aus darauf verweisen.</span><span class="sxs-lookup"><span data-stu-id="c54e9-107">After a repository is registered, you can reference it from the Find-Module, Install-Module, and Publish-Module cmdlets.</span></span> <span data-ttu-id="c54e9-108">Das registrierte Repository wird zum Standard-Repository in „Find-Module“ und „Install-Module“.</span><span class="sxs-lookup"><span data-stu-id="c54e9-108">The registered repository becomes the default repository in Find-Module and Install-Module.</span></span> 
 
-<span data-ttu-id="10371-109">Registrierte Repositorys sind benutzerspezifisch.</span><span class="sxs-lookup"><span data-stu-id="10371-109">Registered repositories are user-specific.</span></span> <span data-ttu-id="10371-110">Sie sind nicht in einem systemweiten Kontext registriert.</span><span class="sxs-lookup"><span data-stu-id="10371-110">They are not registered in a system-wide context.</span></span>
+<span data-ttu-id="c54e9-109">Registrierte Repositorys sind benutzerspezifisch.</span><span class="sxs-lookup"><span data-stu-id="c54e9-109">Registered repositories are user-specific.</span></span> <span data-ttu-id="c54e9-110">Sie sind nicht in einem systemweiten Kontext registriert.</span><span class="sxs-lookup"><span data-stu-id="c54e9-110">They are not registered in a system-wide context.</span></span>
 
 
-## <a name="cmdlet-syntax"></a><span data-ttu-id="10371-111">Cmdlet-Syntax</span><span class="sxs-lookup"><span data-stu-id="10371-111">Cmdlet syntax</span></span>
+## <a name="cmdlet-syntax"></a><span data-ttu-id="c54e9-111">Cmdlet-Syntax</span><span class="sxs-lookup"><span data-stu-id="c54e9-111">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Register-PSRepository -Module PowerShellGet -Syntax
 ```
-## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="10371-112">Cmdlet-Onlinehilfe</span><span class="sxs-lookup"><span data-stu-id="10371-112">Cmdlet online help reference</span></span>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="c54e9-112">Cmdlet-Onlinehilfe</span><span class="sxs-lookup"><span data-stu-id="c54e9-112">Cmdlet online help reference</span></span>
 
-[<span data-ttu-id="10371-113">Register-PSRepository</span><span class="sxs-lookup"><span data-stu-id="10371-113">Register-PSRepository</span></span>](http://go.microsoft.com/fwlink/?LinkID=517129)
+[<span data-ttu-id="c54e9-113">Register-PSRepository</span><span class="sxs-lookup"><span data-stu-id="c54e9-113">Register-PSRepository</span></span>](http://go.microsoft.com/fwlink/?LinkID=517129)
 
-## <a name="example-commands"></a><span data-ttu-id="10371-114">Beispiele für Befehle</span><span class="sxs-lookup"><span data-stu-id="10371-114">Example commands</span></span>
+## <a name="example-commands"></a><span data-ttu-id="c54e9-114">Beispiele für Befehle</span><span class="sxs-lookup"><span data-stu-id="c54e9-114">Example commands</span></span>
 
-### <a name="register-a-powershell-repository"></a><span data-ttu-id="10371-115">Registrieren eines PowerShell-Repositorys</span><span class="sxs-lookup"><span data-stu-id="10371-115">Register a PowerShell Repository</span></span>
-<span data-ttu-id="10371-116">Sie können PowerShellGet für interne Repositorys konfigurieren.</span><span class="sxs-lookup"><span data-stu-id="10371-116">You can configure PowerShellGet to work against internal repositories.</span></span> <span data-ttu-id="10371-117">Nachdem ein Repository registriert wurde, können Sie „Find-Module“ und „Install-Module“ dafür verwenden.</span><span class="sxs-lookup"><span data-stu-id="10371-117">After a repository is registered, you can use Find-Module and Install-Module to work with it.</span></span>
+### <a name="register-a-powershell-repository"></a><span data-ttu-id="c54e9-115">Registrieren eines PowerShell-Repositorys</span><span class="sxs-lookup"><span data-stu-id="c54e9-115">Register a PowerShell Repository</span></span>
+<span data-ttu-id="c54e9-116">Sie können PowerShellGet für interne Repositorys konfigurieren.</span><span class="sxs-lookup"><span data-stu-id="c54e9-116">You can configure PowerShellGet to work against internal repositories.</span></span> <span data-ttu-id="c54e9-117">Nachdem ein Repository registriert wurde, können Sie „Find-Module“ und „Install-Module“ dafür verwenden.</span><span class="sxs-lookup"><span data-stu-id="c54e9-117">After a repository is registered, you can use Find-Module and Install-Module to work with it.</span></span>
 
 ```powershell
 # Register a default repository
-Register-PSRepository –Name DemoRepo –SourceLocation "https://www.myget.org/F/powershellgetdemo/api/v2" –InstallationPolicy –Trusted
+Register-PSRepository –Name DemoRepo –SourceLocation "https://www.myget.org/F/powershellgetdemo/api/v2" –InstallationPolicy Trusted
 
 # Get all of the registered repositories
 Name                      InstallationPolicy   SourceLocation
@@ -62,9 +62,9 @@ Unregister-PSRepository DemoRepo
 ```
 
 
-### <a name="register-psrepository-and-set-psrepository-cmdlets-with-script-sharing-support"></a><span data-ttu-id="10371-118">Cmdlets „Register-PSRepository“ und „Set-PSRepository“ mit Unterstützung der Skriptfreigabe</span><span class="sxs-lookup"><span data-stu-id="10371-118">Register-PSRepository and Set-PSRepository cmdlets with script sharing support</span></span>
+### <a name="register-psrepository-and-set-psrepository-cmdlets-with-script-sharing-support"></a><span data-ttu-id="c54e9-118">Cmdlets „Register-PSRepository“ und „Set-PSRepository“ mit Unterstützung der Skriptfreigabe</span><span class="sxs-lookup"><span data-stu-id="c54e9-118">Register-PSRepository and Set-PSRepository cmdlets with script sharing support</span></span>
 
-<span data-ttu-id="10371-119">Verwenden Sie das Cmdlet „Register-PSRepository“ zum Hinzufügen von **ScriptSourceLocation** und **ScriptPublishLocation** zu „PSRepository“.</span><span class="sxs-lookup"><span data-stu-id="10371-119">Use Register-PSRepository cmdlet to add the **ScriptSourceLocation** and **ScriptPublishLocation** to the PSRepository.</span></span>
+<span data-ttu-id="c54e9-119">Verwenden Sie das Cmdlet „Register-PSRepository“ zum Hinzufügen von **ScriptSourceLocation** und **ScriptPublishLocation** zu „PSRepository“.</span><span class="sxs-lookup"><span data-stu-id="c54e9-119">Use Register-PSRepository cmdlet to add the **ScriptSourceLocation** and **ScriptPublishLocation** to the PSRepository.</span></span>
 
 ```powershell
 
