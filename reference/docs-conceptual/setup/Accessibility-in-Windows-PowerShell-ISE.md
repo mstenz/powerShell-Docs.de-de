@@ -3,26 +3,26 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Barrierefreiheit in Windows PowerShell ISE
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
-ms.openlocfilehash: fce9e2e2f177174a7359351738a0e02201448fc6
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 505ec3aca84b5ad0b9d58a1ec84d80e3aa86db7a
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Barrierefreiheit in Windows PowerShell ISE
 In diesen Thema werden die Barrierefreiheitsfeatures von Windows PowerShell Integrated Scripting Environment (ISE) geschrieben, die Sie ggf. hilfreich finden.
 
-* [Ändern der Größe und Position des Konsolen- und Skriptbereichs]()
-* [Tastenkombinationen zum Bearbeiten von Text]()
-* [Tastenkombinationen zum Ausführen von Skripts]()
-* [Tastenkombinationen zum Anpassen der Ansicht]()
-* [Tastenkombinationen zum Debuggen von Skripts]()
-* [Tastenkombinationen für Windows PowerShell-Registerkarten]()
-* [Tastenkombinationen für Starten und Beenden]()
+* [Ändern der Größe und Position des Konsolen- und Skriptbereichs](#how-to-change-the-size-and-location-of-the-console-and-script-panes)
+* [Tastenkombinationen zum Bearbeiten von Text](#keyboard-shortcuts-for-editing-text)
+* [Tastenkombinationen zum Ausführen von Skripts](#keyboard-shortcuts-for-running-scripts)
+* [Tastenkombinationen zum Anpassen der Ansicht](#keyboard-shortcuts-for-customizing-the-view)
+* [Tastenkombinationen zum Debuggen von Skripts](#keyboard-shortcuts-for-debugging-scripts)
+* [Tastenkombinationen für Windows PowerShell-Registerkarten](#keyboard-shortcuts-for-windows-powershell-tabs)
+* [Tastenkombinationen für Starten und Beenden](#keyboard-shortcuts-for-starting-and-exiting)
 
 Microsoft ist bestrebt, seine Produkte und Dienste so benutzerfreundlich wie möglich zu gestalten. In den folgenden Abschnitten werden Informationen zu den Funktionen, Produkten und Dienstleistungen vermittelt, mit deren Hilfe Personen mit Behinderungen der Zugriff auf Windows PowerShell ISE erleichtert wird.
 
-Windows PowerShell ISE unterstützt den Modus für hohen Kontrast. Für Sehbehinderte stehen Haltepunktinformationen über die Cmdlets zum Verwalten von Haltepunkten zur Verfügung, wie z. B. [Get-PSBreakpoint](https://technet.microsoft.com/en-us/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) und [Set-PSBreakpoint](https://technet.microsoft.com/en-us/library/6afd5d2c-a285-4796-8607-3cbf49471420). Weitere Informationen finden Sie unter „Verwalten von Haltepunkten“ in [Vorgehensweise: Debuggen von Skripts in der Windows PowerShell ISE](../core-powershell/ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md). Neben den Barrierefreiheitsfeatures und Hilfsprogrammen von Microsoft Windows sorgen die folgenden Windows PowerShell ISE-Features für Personen mit Behinderungen für mehr Barrierefreiheit:
+Windows PowerShell ISE unterstützt den Modus für hohen Kontrast. Für Sehbehinderte stehen Haltepunktinformationen über die Cmdlets zum Verwalten von Haltepunkten zur Verfügung, wie z. B. [Get-PSBreakpoint](https://technet.microsoft.com/en-us/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) und [Set-PSBreakpoint](https://technet.microsoft.com/en-us/library/6afd5d2c-a285-4796-8607-3cbf49471420). Weitere Informationen finden Sie unter „Verwalten von Haltepunkten“ in [Debuggen von Skripts in der Windows PowerShell ISE](../core-powershell/ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md). Neben den Barrierefreiheitsfeatures und Hilfsprogrammen von Microsoft Windows sorgen die folgenden Windows PowerShell ISE-Features für Personen mit Behinderungen für mehr Barrierefreiheit:
 
 - Tastenkombinationen
 
@@ -113,7 +113,8 @@ Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Skripts debugg
 |**Alle Haltepunkte entfernen**|STRG+UMSCHALT+F9|Skriptbereich beim Debuggen eines Skripts|
 |**Debugger beenden**|UMSCHALT+F5|Skriptbereich beim Debuggen eines Skripts|
 
-> [!NOTE]
+> ![HINWEIS](../core-powershell/web-access/images/Note.jpeg)**Hinweis**
+>
 > Sie können beim Debuggen von Skripts in der Windows PowerShell ISE auch die Tastenkombinationen verwenden, die für die Windows PowerShell-Konsole vorgesehen sind. Um diese Tastenkombinationen zu verwenden, müssen Sie die jeweilige Kombination im Konsolenbereich eingeben und die EINGABETASTE drücken.
 
 |Aktion|Tastenkombination|Verwenden in|

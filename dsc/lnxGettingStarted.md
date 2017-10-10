@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: "Erste Schritte mit DSC für Linux"
-ms.openlocfilehash: 9dbc4c22cff9df4028c5655cdfba3bb1aac1bb90
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: bf87125309a3f6b556fd7546057cb9491fb34229
+ms.sourcegitcommit: 4ab9a86e47b6effe8fe22ebeb81e8fadff41d31c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 10/04/2017
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Erste Schritte mit DSC für Linux
 
@@ -37,11 +37,11 @@ In der folgenden Tabelle werden die erforderlichen Paketabhängigkeiten für DSC
 
 ## <a name="installing-dsc-for-linux"></a>Installieren von DSC für Linux
 
-Sie müssen vor der Installation von DSC für Linux die [Open Management Infrastructure (OMI)](https://collaboration.opengroup.org/omi/) installieren.
+Sie müssen vor der Installation von DSC für Linux die [Open Management Infrastructure (OMI)](https://github.com/Microsoft/omi) installieren.
 
 ### <a name="installing-omi"></a>Installieren von OMI
 
-DSC für Linux erfordert den Open Management Infrastructure (OMI) CIM-Server, Version 1.0.8.1. OMI kann unter The Open Group: [Open Management Infrastructure (OMI)](https://collaboration.opengroup.org/omi/) heruntergeladen werden.
+DSC für Linux erfordert den Open Management Infrastructure (OMI) CIM-Server, Version 1.0.8.1 oder höher. OMI kann unter The Open Group: [Open Management Infrastructure (OMI)](https://github.com/Microsoft/omi) heruntergeladen werden.
 
 Zum Installieren von OMI installieren Sie das Ihrem Linux-System entsprechende Paket (RPM oder DEB), die OpenSSL-Version (ssl_098 oder ssl_100) und die Architektur (x64/x86). RPM-Pakete eignen sich für CentOS, Red Hat Enterprise Linux, SUSE Linux Enterprise Server und Oracle Linux. DEB-Pakete sind für Debian GNU/Linux und Ubuntu Server geeignet. Die ssl_098-Pakete eignen sich für Computer mit installiertem OpenSSL 0.9.8, während die ssl_100 Pakete für Computer mit installiertem OpenSSL 1.0 geeignet sind.
 

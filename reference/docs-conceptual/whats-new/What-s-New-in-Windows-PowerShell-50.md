@@ -2,15 +2,14 @@
 ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Neuerungen in Windows PowerShell 5.0
-ms.assetid: 1476722e-947e-425d-a86c-50037488dc6e
-ms.openlocfilehash: e3c4e840469f3a3caa28a887dc079839f053dc4d
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 3a412b35c593c99fb8ea8307b12ccc05871863f4
+ms.sourcegitcommit: e2360ac94fe4deb0ed0f5c8c8d9b293551ec8030
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 10/05/2017
 ---
-# <a name="what39s-new-in-windows-powershell"></a>Neuerungen in Windows PowerShell
-Windows PowerShell 5.0 bietet wichtige neue Features, die die Verwendungsmöglichkeiten erweitern, die Benutzerfreundlichkeit verbessern und es Ihnen ermöglichen, die Steuerung und Verwaltung von Windows-basierten Umgebungen leichter und umfassender zu bewältigen.
+# <a name="whats-new-in-windows-powershell-50"></a>Neuerungen in Windows PowerShell 5.0
+Windows PowerShell 5.0 bietet wichtige neue Features, die die Verwendungsmöglichkeiten erweitern, die Benutzerfreundlichkeit verbessern und Ihnen ermöglichen, die Steuerung und Verwaltung von Windows-basierten Umgebungen leichter und umfassender zu bewältigen.
 
 Windows PowerShell 5.0 ist abwärtskompatibel. Cmdlets, Anbieter, Module, Snap-Ins, Skripts, Funktionen und Profile, die für Windows PowerShell 4.0, Windows PowerShell 3.0 und Windows PowerShell 2.0 entwickelt wurden, funktionieren im Allgemeinen ohne Änderungen in Windows PowerShell 5.0.
 
@@ -21,13 +20,10 @@ Zum Installieren von Windows PowerShell 5.0 unter Windows Server 2012 R2, Window
 
 ## <a name="in-this-topic"></a>Inhalt dieses Themas
 
-- [Windows PowerShell 4.0 DSC-Updates in KB 3000850]()
-
-- [Neue Features in Windows PowerShell 5.0]()
-
-- [Neue Features in Windows PowerShell 4.0]()
-
-- [Neue Features in Windows PowerShell 3.0]()
+- [Windows PowerShell 4.0 DSC-Updates in KB 3000850](#windows-powershell-40-updates-in-november-2014-update-rollup-kb-3000850)
+- [Neue Features in Windows PowerShell 5.0](#new-features-in-windows-powershell-50)
+- [Neue Features in Windows PowerShell 4.0](#new-features-in-windows-powershell-40)
+- [Neue Features in Windows PowerShell 3.0](#new-features-in-windows-powershell-30)
 
 ## <a name="windows-powershell-40-updates-in-november-2014-update-rollup-kb-3000850"></a>Windows PowerShell 4.0-Updates im Updaterollup vom November 2014 (KB 3000850)
 Viele Updates und Verbesserungen für Windows PowerShell DSC (Desired State Configuration, Konfiguration für den gewünschten Zustand) in Windows PowerShell 4.0 stehen im [Updaterollup vom November 2014 für Windows RT 8.1, Windows 8.1 und Windows Server 2012 R2](https://support.microsoft.com/kb/3000850/) (KB 3000850) zur Verfügung. Sie können feststellen, ob KB 3000850 auf Ihrem System installiert ist, indem Sie `Get-Hotfix -Id KB3000850` in Windows PowerShell ausführen.
@@ -128,15 +124,11 @@ Viele Updates und Verbesserungen für Windows PowerShell DSC (Desired State Conf
 
 ## <a name="new-features-in-windows-powershell-50"></a>Neue Features in Windows PowerShell 5.0
 
-- [Neue Features in Windows PowerShell]()
-
-- [Neue Features in Windows PowerShell DSC]()
-
-- [Neue Features in der Windows PowerShell ISE]()
-
-- [Neue Features in Windows PowerShell Web Services]()
-
-- [Wichtige Fehlerbehebungen in Windows PowerShell 5.0]()
+- [Neue Features in Windows PowerShell](#new-features-in-windows-powershell)
+- [Neue Features in Windows PowerShell DSC](#new-features-in-windows-powershell-desired-state-configuration)
+- [Neue Features in der Windows PowerShell ISE](#new-features-in-windows-powershell-ise)
+- [Neue Features in Windows PowerShell Web Services](#new-features-in-windows-powershell-web-services-management-odata-iis-extension)
+- [Wichtige Fehlerbehebungen in Windows PowerShell 5.0](#notable-bug-fixes-in-windows-powershell-50)
 
 ### <a name="new-features-in-windows-powershell"></a>Neue Features in Windows PowerShell
 
@@ -313,17 +305,12 @@ Windows PowerShell 4.0 ist abwärtskompatibel. Cmdlets, Anbieter, Module, Snap-I
 
 Windows PowerShell 4.0 wird standardmäßig unter Windows 8.1 und Windows Server 2012 R2 installiert. Zum Installieren von Windows PowerShell 4.0 unter Windows 7 mit SP1 oder Windows Server 2008 R2 müssen Sie [Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855) herunterladen und installieren. Achten Sie darauf, dass Sie die Details für das Herunterladen lesen und alle Systemanforderungen erfüllen, bevor Sie Windows Management Framework 4.0 installieren.
 
-- [Neue Features in Windows PowerShell]()
-
-- [Neue Features in Windows PowerShell Integrated Scripting Environment (ISE)]()
-
-- [Neue Features in Windows PowerShell Workflow]()
-
-- [Neue Features in Windows PowerShell Web Services]()
-
-- [Neue Features in Windows PowerShell Web Access]()
-
-- [Wichtige Fehlerbehebungen in Windows PowerShell 4.0]()
+- [Neue Features in Windows PowerShell](#new-features-in-windows-powershell-1)
+- [Neue Features in Windows PowerShell Integrated Scripting Environment (ISE)](#new-features-in-windows-powershell-integrated-scripting-environment-ise)
+- [Neue Features in Windows PowerShell Workflow](#new-features-in-windows-powershell-workflow)
+- [Neue Features in Windows PowerShell Web Services](#new-features-in-windows-powershell-web-services)
+- [Neue Features in Windows PowerShell Web Access](#new-features-in-windows-powershell-web-access)
+- [Wichtige Fehlerbehebungen in Windows PowerShell 4.0](#notable-bug-fixes-in-windows-powershell-40)
 
 Windows PowerShell 4.0 bietet die folgenden neuen Features.
 
@@ -456,59 +443,33 @@ Windows PowerShell 4.0 bietet die folgenden neuen Features.
 ## <a name="new-features-in-windows-powershell-30"></a>Neue Features in Windows PowerShell 3.0
 Windows PowerShell 3.0 bietet die folgenden neuen Features.
 
-- [Windows PowerShell-Workflow]()
-
-- [Windows PowerShell Web Access]()
-
-- [Neue Windows PowerShell ISE-Features]()
-
-- [Unterstützung für Microsoft .NET Framework 4.0]()
-
-- [Unterstützung für Windows Preinstallation Environment]()
-
-- [Getrennte Sitzungen]()
-
-- [Zuverlässige Sitzungskonnektivität]()
-
-- [Aktualisierbares Hilfesystem]()
-
-- [Verbesserte Onlinehilfe]()
-
-- [CIM-Integration]()
-
-- [Sitzungskonfigurationsdateien]()
-
-- [Integration geplanter Aufträge und der Aufgabenplanung]()
-
-- [Verbesserungen der Windows PowerShell-Sprache]()
-
-- [Neue Kern-Cmdlets]()
-
-- [Verbesserungen an vorhandenen Core-Cmdlets und Anbietern]()
-
-- [Import und Erkennung des Remote-Moduls]()
-
-- [Verbesserte Befehlszeilenergänzung]()
-
-- [Automatisches Laden von Modulen]()
-
-- [Verbesserungen der Moduloberfläche]()
-
-- [Vereinfachte Ermittlung von Befehlen]()
-
-- [Verbesserte Protokollierung, Diagnose und Unterstützung von Gruppenrichtlinien]()
-
-- [Formatierung und Ausgabeverbesserungen]()
-
-- [Verbesserte Konsolenhosterfahrung]()
-
-- [Neue Cmdlets und Hosting-APIs]()
-
-- [Leistungsverbesserungen]()
-
-- [RunAs und Unterstützung freigegebener Hosts]()
-
-- [Verbesserungen bei der Verarbeitung von Sonderzeichen]()
+- [Windows PowerShell-Workflow](#windows-powershell-workflow)
+- [Windows PowerShell Web Access](#windows-powershell-web-access)
+- [Neue Windows PowerShell ISE-Features](#new-windows-powershell-ise-features)
+- [Unterstützung für Microsoft .NET Framework 4.0](#support-for-microsoft-net-framework-4)
+- [Unterstützung für Windows Preinstallation Environment](#support-for-windows-preinstallation-environment)
+- [Getrennte Sitzungen](#disconnected-sessions)
+- [Zuverlässige Sitzungskonnektivität](#robust-session-connectivity)
+- [Aktualisierbares Hilfesystem](#updatable-help-system)
+- [Verbesserte Onlinehilfe](#enhanced-online-help)
+- [CIM-Integration](#cim-integration)
+- [Sitzungskonfigurationsdateien](#session-configuration-files)
+- [Integration geplanter Aufträge und der Aufgabenplanung](#scheduled-jobs-and-task-scheduler-integration)
+- [Verbesserungen der Windows PowerShell-Sprache](#windows-powershell-language-enhancements)
+- [Neue Kern-Cmdlets](#new-core-cmdlets)
+- [Verbesserungen an vorhandenen Core-Cmdlets und Anbietern](#improvements-to-existing-core-cmdlets-and-providers)
+- [Import und Erkennung des Remote-Moduls](#remote-module-import-and-discovery)
+- [Verbesserte Befehlszeilenergänzung](#enhanced-tab-completion)
+- [Automatisches Laden von Modulen](#module-auto-loading)
+- [Verbesserungen der Moduloberfläche](#module-experience-improvements)
+- [Vereinfachte Ermittlung von Befehlen](#simplified-command-discovery)
+- [Verbesserte Protokollierung, Diagnose und Unterstützung von Gruppenrichtlinien](#improved-logging-diagnostics-and-group-policy-support)
+- [Formatierung und Ausgabeverbesserungen](#formatting-and-output-improvements)
+- [Verbesserte Konsolenhosterfahrung](#enhanced-console-host-experience)
+- [Neue Cmdlets und Hosting-APIs](#new-cmdlet-and-hosting-apis)
+- [Leistungsverbesserungen](#performance-improvements)
+- [RunAs und Unterstützung freigegebener Hosts](#runas-and-shared-host-support)
+- [Verbesserungen bei der Verarbeitung von Sonderzeichen](#special-character-handling-improvements)
 
 ### <a name="windows-powershell-workflow"></a>Windows PowerShell-Workflow
 Durch Windows PowerShell Workflow kann Windows PowerShell auf die Leistungsfähigkeit von Windows Workflow Foundation zurückgreifen. Sie können Workflows in XAML oder in der Windows PowerShell-Sprache schreiben und sie genau wie ein Cmdlet ausführen. Das Cmdlet [Get-Command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) ruft Workflowbefehle ab, das Cmdlet [Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) ruft Hilfe für Workflows ab.
@@ -750,7 +711,6 @@ Mit dem Feature **SharedHost** können mehrere Benutzer auf mehreren Computern g
 Damit Windows PowerShell 3.0 Sonderzeichen besser interpretieren und ordnungsgemäß verarbeiten kann, ist der **LiteralPath**-Parameter, der Sonderzeichen in Pfaden verarbeitet, für fast alle Cmdlets gültig, die über einen **Path**-Parameter verfügen. Dazu zählen die neuen Cmdlets [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) und [Save-Help](https://technet.microsoft.com/en-us/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa). Die Analyse bietet außerdem eine spezielle Logik zur Verbesserung der Verarbeitung von Akzentzeichen (\`) und eckigen Klammern in Dateinamen und -pfaden.
 
 ## <a name="see-also"></a>Weitere Informationen
-- [about_Windows_PowerShell_4.0](http://technet.microsoft.com/en-us/library/hh847833(v=wps.630).aspx)
-- [about_Windows_PowerShell_5.0](https://technet.microsoft.com/en-us/library/6d56fa88-371e-40c9-b2de-64a2a0cd49da)
+- [about_Windows_PowerShell_5.0](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_windows_powershell_5.0?view=powershell-5.0)
 - [Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116)
 
