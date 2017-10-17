@@ -1,5 +1,5 @@
 # [Übersicht](readme.md)
-## Katalog
+## Galerie
 ### [Erste Schritte](psgallery/psgallery_gettingstarted.md)
 ### [Integritätsstatus](psgallery/psgallery_status.md)
 ### [FAQs zum Katalog](psgallery/psgallery_faqs.md)
@@ -19,6 +19,8 @@
 ### [Kontaktieren der Elementbesitzer](psgallery/psgallery_contacting_item_owners.md)
 ### [Kontaktieren der Administratoren](psgallery/psgallery_contacting_administrators.md)
 ### [Bereitstellen von Feedback über soziale Netzwerke oder Kommentare](psgallery/psgallery-SocialMediaFeedback.md)
+### [Erforderliche Zustimmung zur Lizenz für Elementdetails](psgallery/psgallery_requires_license_acceptance.md)
+### [Erforderliche Zustimmung zur Lizenz für die Bereitstellung in Azure Automation](psgallery/psgallery_deploy_to_azure_automation_requireLicenseAcceptance.md)
 
 # [PowerShellGet](psget/overview.md)
 ## [Abrufen des PowerShellGet-Moduls](psget/get_psget_module.md)
@@ -36,6 +38,7 @@
 ### [Modulmanifest aktualisieren](psget/module/psget_update-modulemanifest.md)
 ### [Veröffentlichen](psget/module/psget_publish-module.md)
 ### [Module mit PowerShell-Editionen](psget/module/modulewithpseditionsupport.md)
+### [Module, die eine Zustimmung zur Lizenz erfordern](psget/module/RequireLicenseAcceptance.md)
 ### [Problembehandlung](psget/psget_cmdlets_troubleshooting.md)
 
 ## Skript
@@ -50,6 +53,7 @@
 ### [Metadaten einer Skriptdatei aktualisieren](psget/script/psget_update-scriptfileinfo.md)
 ### [Veröffentlichen](psget/script/psget_publish-script.md)
 ### [Skripts mit PowerShell-Editionen](psget/script/scriptwithpseditionsupport.md)
+### [Erforderliche Zustimmung zur Lizenz für Skripts](psget/script/script_RequireLicenseAcceptance.md)
 
 ## Repositoryverwaltung
 ### [Bootstrapping des NuGet-Anbieters und von „NuGet.exe“](psget/repository/bootstrapping_nuget_proivder_and_exe.md)
