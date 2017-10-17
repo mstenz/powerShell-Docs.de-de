@@ -2,11 +2,11 @@
 ms.date: 2017-08-23
 keywords: powershell,cmdlet
 title: Installieren und Verwenden von Windows PowerShell Web Access
-ms.openlocfilehash: a4b812e2aa32450bc68f761e7b85e8f2ee2b34ee
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 63e25fa2b1fc7c0a2b57763e337c25ece17a3296
+ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Installieren und Verwenden von Windows PowerShell Web Access
 
@@ -52,7 +52,7 @@ Obwohl es keine offizielle Unterstützung für mobile Browser gibt, kann die web
 
 - Windows Internet Explorer für Microsoft Windows 8.0, 9.0, 10.0 und 11.0
 - Mozilla Firefox 10.0.2
-- Google Chrome™ 17.0.963.56m für Windows
+- Google Chrome 17.0.963.56m für Windows
 - Apple Safari 5.1.2 für Windows
 - Apple Safari 5.1.2 für Mac OS
 

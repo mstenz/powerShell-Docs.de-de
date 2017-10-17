@@ -5,11 +5,11 @@ ms.topic: conceptual
 keywords: gallery,powershell,cmdlet,psgallery
 description: "Richtlinien für Herausgeber"
 title: "Veröffentlichungsrichtlinien und Best Practices für den PowerShell-Katalog"
-ms.openlocfilehash: 72b6ca4cb4815900a3fa48f965e581a6f6130123
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 882a33c00cc024ad2bbb05a3283e058a61035e3a
+ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>Veröffentlichungsrichtlinien und Best Practices für den PowerShell-Katalog
 
@@ -32,12 +32,11 @@ Elemente, die diesen Richtlinien entsprechen, werden eher heruntergeladen und vo
 * Stellen Sie eine Dokumentation und Beispiele bereit
 * Antworten Sie auf Feedback
 * Stellen Sie anstelle von Skripts Module bereit
-* Folgen Sie bei der Versionsverwaltung den [SemVer](http://semver.org/)-Richtlinien
 * Stellen Sie einen Link zu einer Projektwebsite bereit
 * Schließen Sie Tests in Ihre Module ein
 * Schließen Sie Lizenzbedingungen (bzw. einen Link auf diese) ein
 * Signieren Sie Ihren Code
-* Folgen Sie bei der Versionsverwaltung den SemVer-Richtlinien
+* Folgen Sie bei der Versionsverwaltung den [SemVer](http://semver.org/)-Richtlinien
 * Verwenden Sie allgemeine Tags, wie in „Common PowerShell Gallery Tags“ dokumentiert.
 * Testen der Veröffentlichung mit einem lokalen Repository
 

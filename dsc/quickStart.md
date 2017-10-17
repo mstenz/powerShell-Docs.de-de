@@ -1,21 +1,21 @@
 ---
-ms.date: 2017-06-12T00:00:00.000Z
+ms.date: 2017-06-12
 author: eslesar
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Desired State Configuration Schnellstart
-ms.openlocfilehash: e8a73296827297bab3229392c4193fed940c53bf
-ms.sourcegitcommit: 46feddbc753523f464f139b5d272794620072fc8
+ms.openlocfilehash: 295a78f3fd85464239d51d7be0defa04d2344689
+ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/02/2017
+ms.lasthandoff: 10/13/2017
 ---
 > Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 # <a name="desired-state-configuration-quick-start"></a>Desired State Configuration Schnellstart
 
 Diese Übung führt Sie von Anfang bis Ende durch das Erstellen und Anwenden einer Desired State Configuration (DSC)-Konfiguration.
-Das Beispiel, das wir verwenden, stellt sicher, dass ein Server die `Web-Server` (IIS)-Funktion aktiviert hat und der Inhalt für eine einfache „Hello World“-Website ist im Verzeichnis `intetpub\wwwroot` des Servers vorhanden ist.
+Das Beispiel, das wir verwenden, stellt sicher, dass ein Server die `Web-Server` (IIS)-Funktion aktiviert hat und der Inhalt für eine einfache „Hello World“-Website ist im Verzeichnis `intepub\wwwroot` des Servers vorhanden ist.
 
 Eine Übersicht über DSC und die Funktionsweise finden Sie unter [Desired State Configuration (DSC): Übersicht für Entscheidungsträger](decisionMaker.md).
 
