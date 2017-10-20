@@ -4,11 +4,11 @@ contributor: JKeithB
 ms.topic: conceptual
 keywords: gallery,powershell,cmdlet,psgallery,psget
 title: Der PowerShell-Katalog | MSDN
-ms.openlocfilehash: 83a1f4e20b985a502637aee9d50ecc1d3f9a4616
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 9fe341e4b297764321f3b3f07caca8ef4b8b40e0
+ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="the-powershell-gallery"></a>Der PowerShell-Katalog
 
@@ -16,7 +16,7 @@ Der PowerShell-Katalog ist das zentrale Repository für PowerShell-Inhalte. Im K
 
 ## <a name="powershellget-overview"></a>Übersicht über PowerShellGet
 
-Das PowerShellGet-Modul enthält Cmdlets zum Ermitteln, Installieren, Aktualisieren und Veröffentlichen der PowerShell-Artefakte wie Module, DSC-Ressourcen, Rollenfunktionen und Skripts über https://www.PowerShellGallery.com und andere private Repositorys.
+Das PowerShellGet-Modul enthält Cmdlets zum Ermitteln, Installieren, Aktualisieren und Veröffentlichen von PowerShell-Artefakten wie Modulen, DSC-Ressourcen, Rollenfunktionen und Skripts über den [PowerShell-Katalog](https://www.PowerShellGallery.com) und andere private Repositorys.
 
 ## <a name="getting-started-with-the-gallery"></a>Erste Schritte mit dem Katalog
 

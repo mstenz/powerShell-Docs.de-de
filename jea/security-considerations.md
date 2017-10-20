@@ -4,14 +4,13 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: jea,powershell,security
 title: "JEA-Sicherheitsüberlegungen"
-ms.openlocfilehash: f85b342625d4dba0890619ef9680eaccbbde5224
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 2dcce34113998a1c31709b6afe6d0a21c991e79d
+ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 10/13/2017
 ---
-<a id="jea-security-considerations" class="xliff"></a>
-# JEA-Sicherheitsüberlegungen
+# <a name="jea-security-considerations"></a>JEA-Sicherheitsüberlegungen
 
 > Gilt für: Windows PowerShell 5.0
 
@@ -22,8 +21,7 @@ Da JEA das Ausführen von Admin-Befehlen ohne direkten Administratorzugriff erm�
 
 Dieses Thema enthält eine detaillierte Beschreibung des JEA-Sicherheitsmodells und bewährter Methoden.
 
-<a id="run-as-account" class="xliff"></a>
-## Ausführendes Konto
+## <a name="run-as-account"></a>Ausführendes Konto
 
 Jeder JEA-Endpunkt verfügt über ein festgelegtes ausführendes Konto, in dem die Aktionen des Benutzers erfolgen, der eine Verbindung herstellt.
 Dieses Konto lässt sich in der [Sitzungskonfigurationsdatei](session-configurations.md) konfigurieren und hat einen erheblichen Einfluss auf die Sicherheit Ihres Endpunkts.
@@ -81,8 +79,7 @@ Das bedeutet, dass Rollendefinitionen nicht mehr wie erwartet funktionieren und 
 
 RunAsCredential sollte nicht auf einem JEA-Endpunkt verwendet werden, da Aktionen schwer auf bestimmte Benutzer zurückzuverfolgen sind und die Zuordnung von Benutzern zu Rollen nicht unterstützt wird.
 
-<a id="winrm-endpoint-acl" class="xliff"></a>
-## WinRM-Endpunkt-ACL
+## <a name="winrm-endpoint-acl"></a>WinRM-Endpunkt-ACL
 
 Wie auch bei regulären PowerShell-Remoting-Endpunkten verfügt jeder JEA-Endpunkt über eine separate Zugriffssteuerungsliste (ACL) in der WinRM-Konfiguration. Sie legt fest, wer für eine Authentifizierung mit dem JEA-Endpunkt berechtigt ist.
 Bei einer nicht ordnungsgemäßen Konfiguration können vertrauenswürdige Benutzer möglicherweise nicht auf den JEA-Endpunkt zugreifen und nicht vertrauenswürdige Benutzer Zugriff erhalten.
@@ -116,8 +113,7 @@ Wenn zusätzliche Benutzer Zugriffsrechte für den JEA-Endpunkt erhalten, aber n
 Sie können die Benutzerberechtigungen in einem JEA-Endpunkt überwachen, indem Sie `Get-PSSessionCapability` ausführen.
 Weitere Informationen dazu, wie Sie überprüfen können, auf welche Befehle ein Benutzer auf einem JEA-Endpunkt zugreifen kann, finden Sie unter [Überwachung und Berichterstellung zu JEA](audit-and-report.md).
 
-<a id="least-privilege-roles" class="xliff"></a>
-## Rollen mit geringsten Rechten
+## <a name="least-privilege-roles"></a>Rollen mit geringsten Rechten
 
 Wenn Sie JEA-Rollen entwickeln, sollten Sie beachten, dass das im Hintergrund ausgeführte virtuelle oder gruppenverwaltete Dienstkonto häufig uneingeschränkten Zugriff auf die Verwaltung des lokalen Computers hat.
 Mithilfe von JEA-Rollenfunktionen können Sie die Verwendungsmöglichkeiten dieses Kontos einschränken. Begrenzen Sie dazu die Befehle und Anwendungen, die im Rahmen des privilegierten Kontexts ausgeführt werden können.
@@ -146,8 +142,7 @@ Eine sicherere Version der gleichen Rollenfunktion würde so aussehen:
 
 Vermeiden Sie Platzhalter in Rollenfunktionen, und gewährleisten Sie, dass effektive Benutzerberechtigungen regelmäßig überwacht werden (siehe [Überwachung und Berichterstellung zu JEA](audit-and-report.md#check-effective-rights-for-a-specific-user)), damit Sie wissen, auf welche Befehle ein Benutzer Zugriff hat.
 
-<a id="jea-does-not-protect-against-admins" class="xliff"></a>
-## JEA bietet keinen Schutz vor Administratoren
+## <a name="jea-does-not-protect-against-admins"></a>JEA bietet keinen Schutz vor Administratoren
 
 Eines der wichtigsten Prinzipien von JEA ist, dass auch Nichtadministratoren *gewisse* Administratoraufgaben ausführen können.
 JEA bietet keinen Schutz vor Benutzern, die bereits über Administratorberechtigungen verfügen.
