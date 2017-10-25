@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="just-enough-administration" class="xliff"></a>
-# Just Enough Administration
+# <a name="just-enough-administration"></a>Just Enough Administration
 
 Just Enough Administration (JEA) ist eine Sicherheitstechnologie, die eine delegierte Verwaltung für sämtliche Elemente ermöglicht, die in PowerShell verwaltet werden können.
 Mit JEA ist Folgendes möglich:
@@ -37,8 +36,7 @@ Das bedeutet, dass Sie ihnen den entsprechenden Zugriff gewähren können, damit
 Wenn die JEA-Sitzung so konfiguriert ist, dass temporäre privilegierte virtuelle Konten verwendet werden, können Ihre DNS-Administratoren sogar eine Verbindung mit dem Server mithilfe von *Nicht-Admin-*Anmeldeinformationen herstellen und trotzdem Befehle ausführen, für die normalerweise Administratorberechtigungen erforderlich sind.
 Über diese Funktion können Sie Benutzer von stark privilegierten lokalen bzw. Administratorrollen der Domäne entfernen und stattdessen sorgfältig steuern, welche Aktionen sie auf jedem Computer ausführen dürfen.
 
-<a id="get-started-with-jea" class="xliff"></a>
-## Erste Schritte mit JEA
+## <a name="get-started-with-jea"></a>Erste Schritte mit JEA
 
 Starten Sie noch heute mithilfe von JEA auf jedem Computer, auf dem Windows Server 2016 oder Windows 10 ausgeführt wird.
 Sie können JEA auch unter älteren Betriebssystemen mit einem Windows Management Framework-Update ausführen.
@@ -52,8 +50,7 @@ Informationen zu den Anforderungen für die Verwendung von JEA sowie zum Erstell
 - [JEA Security Considerations (JEA-Sicherheitsaspekte)](security-considerations.md): Dieses Thema enthält bewährte Sicherheitsmethoden und Auswirkungen der einzelnen JEA-Konfigurationsoptionen.
 - [Audit and Report on JEA (Überwachen und Erstellen von Berichten zu JEA)](audit-and-report.md): In diesem Thema erfahren Sie, wie Sie JEA-Endpunkte überwachen und Berichte dazu erstellen.
 
-<a id="samples-and-dsc-resource" class="xliff"></a>
-## Beispiele und DSC-Ressource
+## <a name="samples-and-dsc-resource"></a>Beispiele und DSC-Ressource
 
 Beispielkonfigurationen von JEA und die JEA DSC-Ressource finden Sie im [JEA GitHub-Repository](https://github.com/PowerShell/JEA).
 

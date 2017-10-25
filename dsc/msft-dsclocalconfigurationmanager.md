@@ -10,15 +10,13 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="msftdsclocalconfigurationmanager-class" class="xliff"></a>
-# MSFT_DSCLocalConfigurationManager-Klasse
+# <a name="msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager-Klasse
 
 Der lokale Konfigurations-Manager, der die Zustände von Konfigurationsdateien steuert und den Konfigurations-Agent verwendet, um die Konfigurationen anzuwenden.
 
 Die folgende Syntax wurde aus MOF-Code (Managed Object Format, verwaltetes Objektformat) vereinfacht und enthält alle geerbten Eigenschaften.
 
-<a id="syntax" class="xliff"></a>
-## Syntax
+## <a name="syntax"></a>Syntax
 ------
 
 ``` syntax
@@ -28,16 +26,14 @@ class MSFT_DSCLocalConfigurationManager
 };
 ```
 
-<a id="members" class="xliff"></a>
-## Mitglieder
+## <a name="members"></a>Mitglieder
 -------
 
 Die **MSFT_DSCLocalConfigurationManager**-Klasse hat folgende Member:
 
 -   [Methoden][]
 
-<a id="methods" class="xliff"></a>
-### Methoden
+### <a name="methods"></a>Methoden
 
 Die **MSFT_DSCLocalConfigurationManager**-Klasse enthält diese Methoden.
 
@@ -67,8 +63,7 @@ Die **MSFT_DSCLocalConfigurationManager**-Klasse enthält diese Methoden.
 
  
 
-<a id="requirements" class="xliff"></a>
-## Anforderungen
+## <a name="requirements"></a>Anforderungen
 ------------
 >**MOF:** DscCore.mof
 

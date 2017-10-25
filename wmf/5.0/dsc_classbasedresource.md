@@ -9,11 +9,9 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="class-based-dsc-resources" class="xliff"></a>
-# Klassenbasierte DSC-Ressourcen
+# <a name="class-based-dsc-resources"></a>Klassenbasierte DSC-Ressourcen
 
-<a id="defining-dsc-resources-with-classes" class="xliff"></a>
-## Definieren von DSC-Ressourcen mit Klassen
+## <a name="defining-dsc-resources-with-classes"></a>Definieren von DSC-Ressourcen mit Klassen
 
 Basierend auf Feedback haben wir das Erstellen klassenbasierter DSC-Ressourcen vereinfacht und leichter verständlich gemacht. Es folgen die wichtigsten Unterschiede zwischen einer klassenbasierten DSC-Ressource und einem DSC-Ressourcenanbieter für ein Cmdlet:
 

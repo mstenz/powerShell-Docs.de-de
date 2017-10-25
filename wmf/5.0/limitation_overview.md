@@ -9,11 +9,9 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="known-issues-and-limitations" class="xliff"></a>
-# Bekannte Probleme und Einschränkungen
+# <a name="known-issues-and-limitations"></a>Bekannte Probleme und Einschränkungen
 
-<a id="powershell-shortcuts-are-broken-when-used-for-the-first-time" class="xliff"></a>
-PowerShell-Verknüpfungen sind beim ersten Verwenden unterbrochen
+<a name="powershell-shortcuts-are-broken-when-used-for-the-first-time"></a>PowerShell-Verknüpfungen sind beim ersten Verwenden unterbrochen
 ------------------------------------------------------------
 
 **Lösung:** Führen Sie eine der folgenden Aktionen aus:
@@ -24,8 +22,7 @@ PowerShell-Verknüpfungen sind beim ersten Verwenden unterbrochen
 Nachdem Sie eine der oben aufgeführten Aktionen ausgeführt haben, funktionieren die PowerShell-Verknüpfungen. Diese Aktionen müssen nur einmal ausgeführt werden.
 
 
-<a id="powershell-modules-and-dsc-resources-report-errors-about-executionpolicy-on-windows-7" class="xliff"></a>
-PowerShell-Module und DSC-Ressourcen melden Fehler zu „ExecutionPolicy“ unter Windows 7
+<a name="powershell-modules-and-dsc-resources-report-errors-about-executionpolicy-on-windows-7"></a>PowerShell-Module und DSC-Ressourcen melden Fehler zu „ExecutionPolicy“ unter Windows 7
 -------------------------------------------------------------------------------------
 Unter Windows 7 kann die Verwendung von PowerShell-Modulen und DSC-Ressourcen zu Fehlern führen, die zu „ExecutionPolicy“ gemeldet werden.
 
@@ -35,8 +32,7 @@ Unter Windows 7 kann die Verwendung von PowerShell-Modulen und DSC-Ressourcen zu
 Set-ExecutionPolicy RemoteSigned
 ```
 
-<a id="connecting-to-an-old-remote-exchange-endpoint-causes-a-crash" class="xliff"></a>
-Herstellen einer Verbindung mit einem alten Exchange- Remoteendpunkt führt zum Absturz
+<a name="connecting-to-an-old-remote-exchange-endpoint-causes-a-crash"></a>Herstellen einer Verbindung mit einem alten Exchange- Remoteendpunkt führt zum Absturz
 ------------------------------------------------------------
 
 Der alte Exchange-Endpunkt wird zu einem neuen Endpunkt umgeleitet. Die Umleitungslogik weist einen Fehler auf, der zu einem Absturz führt.
@@ -44,16 +40,14 @@ Der alte Exchange-Endpunkt wird zu einem neuen Endpunkt umgeleitet. Die Umleitun
 **Lösung:** Stellen Sie eine direkte Verbindung mit dem neuen Endpunkt her.
 
 
-<a id="software-inventory-logging-feature-is-erroneously-stopped-after-wmf-50-installation-on-windows-server-2012-r2" class="xliff"></a>
-Das Feature „Protokollierung des Softwarebestands“ wird nach der Installation von WMF 5.0 unter Windows Server 2012 R2 fälschlicherweise beendet
+<a name="software-inventory-logging-feature-is-erroneously-stopped-after-wmf-50-installation-on-windows-server-2012-r2"></a>Das Feature „Protokollierung des Softwarebestands“ wird nach der Installation von WMF 5.0 unter Windows Server 2012 R2 fälschlicherweise beendet
 -------------------------------------------------------------------------------------------------------------
 
 Wenn WMF 5.0 auf einem Computer mit Windows Server 2012 R2 installiert wird, auf dem die Protokollierung des Softwarebestands bereits ausgeführt wird, wird dieses Feature nach der Installation fälschlicherweise beendet.
 
 **Lösung:** Führen Sie das Cmdlet „Start-SilLogging“ nach der Installation von WMF aus, da der Installationsvorgang fälschlicherweise das Feature „Protokollierung des Softwarebestands“ beendet.
 
-<a id="get-childitem-does-not-work-if--literalpath-and--recurse-are-used-together" class="xliff"></a>
-„Get-ChildItem“ funktioniert nicht, wenn „-LiteralPath“ und „-Recurse“ zusammen verwendet werden
+<a name="get-childitem-does-not-work-if--literalpath-and--recurse-are-used-together"></a>„Get-ChildItem“ funktioniert nicht, wenn „-LiteralPath“ und „-Recurse“ zusammen verwendet werden
 --------------------------------------------------------------------------
 
 Wenn ein Verzeichnisname ein ungültiges Platzhalterzeichen enthält, liefert „Get-ChildItem“ nicht die erwarteten Ergebnisse, wenn „-LiteralPath“ und „-Recurse“ zusammen verwendet werden.
@@ -61,8 +55,7 @@ Wenn ein Verzeichnisname ein ungültiges Platzhalterzeichen enthält, liefert �
 **Lösung:** Die aktuelle, allerdings nicht ideale Umgehung ist das Implementieren der Rekursion im Skript, anstatt das Cmdlet zu verwenden.
 
 
-<a id="sysprep-fails-after-wmf-50-installation" class="xliff"></a>
-Sysrep schlägt nach der Installation von WMF 5.0 fehl.
+<a name="sysprep-fails-after-wmf-50-installation"></a>Sysrep schlägt nach der Installation von WMF 5.0 fehl.
 ----------------------------------------
 
 Es gibt zwei Problemumgehungen für dieses Problem, abhängig davon, welche Version von Windows Server Sie ausführen.

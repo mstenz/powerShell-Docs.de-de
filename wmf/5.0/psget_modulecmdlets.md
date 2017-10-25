@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="powershellget-cmdlets-for-module-management" class="xliff"></a>
-# PowerShellGet-Cmdlets für die Modulverwaltung
+# <a name="powershellget-cmdlets-for-module-management"></a>PowerShellGet-Cmdlets für die Modulverwaltung
 
 - [Find-DscResource](https://technet.microsoft.com/en-us/library/mt654006.aspx)
 - [Find-Module](https://technet.microsoft.com/en-us/library/dn807167.aspx)
@@ -36,19 +35,16 @@ ms.lasthandoff: 06/12/2017
 - [Update-ScriptFileInfo](https://technet.microsoft.com/en-us/library/mt653991.aspx)
 - [Unregister-PSRepository](https://technet.microsoft.com/en-us/library/dn807161.aspx)
 
-<a id="module-dependency-installation-support-get-installedmodule-and-uninstall-module-cmdlets" class="xliff"></a>
-## Unterstützung der Installation von Modulabhängigkeiten wurde den Cmdlets „Get-InstalledModule“ und „Uninstall-Module“ hinzugefügt
+## <a name="module-dependency-installation-support-get-installedmodule-and-uninstall-module-cmdlets"></a>Unterstützung der Installation von Modulabhängigkeiten wurde den Cmdlets „Get-InstalledModule“ und „Uninstall-Module“ hinzugefügt
 - Dem Cmdlet „Publish-Module“ wurde die Auffüllung von Modulabhängigkeiten hinzugefügt. Die Listen „RequiredModules“ und „NestedModules“ von „PSModuleInfo“ werden bei der Vorbereitung der Abhängigkeitsliste eines Moduls verwendet, das veröffentlicht werden soll.
 - Unterstützung der Installation von Abhängigkeiten in den Cmdlets „Install-Module“ und „Update-Module“. Modulabhängigkeiten werden standardmäßig installiert und aktualisiert.
 - Der „-IncludeDependencies“-Parameter wurde dem Cmdlet „Find-Module“ hinzugefügt, um Modulabhängigkeiten in die Ergebnisse einzuschließen.
 - Unterstützung von „-MaximumVersion“ wurde den Cmdlets „Find-Module“, „Install-Module“ und „Update-Module“ hinzugefügt.
 - Die neuen Cmdlets „Get-InstalledModule“ und „Uninstall-Module“ wurden hinzugefügt.
 
-<a id="powershellget-cmdlets-demo-with-module-dependencies-support" class="xliff"></a>
-## Demo von PowerShellGet-Cmdlets mit unterstützten Modulabhängigkeiten:
+## <a name="powershellget-cmdlets-demo-with-module-dependencies-support"></a>Demo von PowerShellGet-Cmdlets mit unterstützten Modulabhängigkeiten:
 
-<a id="ensure-that-module-dependencies-are-available-on-the-repository" class="xliff"></a>
-### Stellen Sie sicher, dass Modulabhängigkeiten im Repository verfügbar sind:
+### <a name="ensure-that-module-dependencies-are-available-on-the-repository"></a>Stellen Sie sicher, dass Modulabhängigkeiten im Repository verfügbar sind:
 ```powershell
 Find-Module -Repository LocalRepo -Name RequiredModule1,RequiredModule2,RequiredModule3,NestedRequiredModule1,NestedRequiredModule2,NestedRequiredModule3 | Sort-Object -Property Name
 
@@ -62,8 +58,7 @@ Version    Name                     Repository    Description
 2.0        RequiredModule3          LocalRepo     RequiredModule3 module
 ```
 
-<a id="create-a-module-with-dependencies-that-are-specified-in-the-requiredmodules-and-nestedmodules-properties-of-its-module-manifest" class="xliff"></a>
-### Erstellen Sie ein Modul mit Abhängigkeiten, die in den Eigenschaften „RequiredModules“ und „NestedModules“ des Modulmanifests angegeben sind.
+### <a name="create-a-module-with-dependencies-that-are-specified-in-the-requiredmodules-and-nestedmodules-properties-of-its-module-manifest"></a>Erstellen Sie ein Modul mit Abhängigkeiten, die in den Eigenschaften „RequiredModules“ und „NestedModules“ des Modulmanifests angegeben sind.
 ```powershell
 $RequiredModules = @('RequiredModule1',
                      @{ModuleName = 'RequiredModule2'; ModuleVersion = '1.5'; },
@@ -77,14 +72,12 @@ New-ModuleManifest -Path 'C:\Program Files\WindowsPowerShell\Modules\TestDepWith
 -NestedModules $NestedRequiredModules -RequiredModules $RequiredModules -ModuleVersion "1.0" -Description "TestDepWithNestedRequiredModules1 module"
 ```
 
-<a id="publish-two-versions-10-and-20-of-the-testdepwithnestedrequiredmodules1-module-with-dependencies-to-the-repository" class="xliff"></a>
-###  Veröffentlichen Sie zwei Versionen (**1.0** und **2.0**) des Moduls „TestDepWithNestedRequiredModules1“ mit Abhängigkeiten im Repository.
+###  <a name="publish-two-versions-10-and-20-of-the-testdepwithnestedrequiredmodules1-module-with-dependencies-to-the-repository"></a>Veröffentlichen Sie zwei Versionen (**1.0** und **2.0**) des Moduls „TestDepWithNestedRequiredModules1“ mit Abhängigkeiten im Repository.
 ```powershell
 Publish-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -NuGetApiKey "MyNuGet-ApiKey-For-LocalRepo"
 ```
 
-<a id="find-the-testdepwithnestedrequiredmodules1-module-with-its-dependencies-by-specifying--includedependencies" class="xliff"></a>
-###  Suchen Sie das Modul „TestDepWithNestedRequiredModules1“ mit seinen Abhängigkeiten, indem Sie „-IncludeDependencies“ angeben.
+###  <a name="find-the-testdepwithnestedrequiredmodules1-module-with-its-dependencies-by-specifying--includedependencies"></a>Suchen Sie das Modul „TestDepWithNestedRequiredModules1“ mit seinen Abhängigkeiten, indem Sie „-IncludeDependencies“ angeben.
 ```powershell
 Find-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo –IncludeDependencies -MaximumVersion "1.0"
 
@@ -99,8 +92,7 @@ Version    Name                                Repository  Description
 2.0        NestedRequiredModule3               LocalRepo   NestedRequiredModule3 module
 ``` 
 
-<a id="use-find-module-metadata-to-find-the-module-dependencies" class="xliff"></a>
-### Verwenden Sie „Find-Module“-Metadaten zum Auffinden der Modulabhängigkeiten.
+### <a name="use-find-module-metadata-to-find-the-module-dependencies"></a>Verwenden Sie „Find-Module“-Metadaten zum Auffinden der Modulabhängigkeiten.
 ```powershell
 $psgetModuleInfo = Find-Module -Repository MSPSGallery -Name ModuleWithDependencies2
 $psgetModuleInfo.Dependencies.ModuleName
@@ -139,8 +131,7 @@ RequiredVersion 2.5
 CanonicalId PowerShellGet:NestedRequiredModule3/2.5#http://psget/psGallery/api/v2/
 ```
 
-<a id="install-the-testdepwithnestedrequiredmodules1-module-with-dependencies" class="xliff"></a>
-###  Installieren Sie das Modul „TestDepWithNestedRequiredModules1“ mit Abhängigkeiten.
+###  <a name="install-the-testdepwithnestedrequiredmodules1-module-with-dependencies"></a>Installieren Sie das Modul „TestDepWithNestedRequiredModules1“ mit Abhängigkeiten.
 ```powershell
 Install-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -RequiredVersion "1.0"
 Get-InstalledModule
@@ -156,8 +147,7 @@ Version    Name                    Repository   Description
 1.0        TestDepWithNestedRequiredModules1  LocalRepo    TestDepWithNestedRequiredModules1 module
 ```
 
-<a id="update-the-testdepwithnestedrequiredmodules1-module-with-dependencies" class="xliff"></a>
-###  Aktualisieren Sie das Modul „TestDepWithNestedRequiredModules1“ mit Abhängigkeiten.
+###  <a name="update-the-testdepwithnestedrequiredmodules1-module-with-dependencies"></a>Aktualisieren Sie das Modul „TestDepWithNestedRequiredModules1“ mit Abhängigkeiten.
 ```powershell
 Find-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -AllVersions
 
@@ -183,8 +173,7 @@ Version    Name                                Repository  Description
 2.0        TestDepWithNestedRequiredModules1   LocalRepo   TestDepWithNestedRequiredModules1 module
 ```
 
-<a id="run-the-uninstall-module-cmdlet-to-uninstall-a-module-that-you-installed-by-using-powershellget" class="xliff"></a>
-###  Führen Sie das Cmdlet „Uninstall-Module“ zum Deinstallieren eines Moduls aus, das Sie mit PowerShellGet installiert haben.
+###  <a name="run-the-uninstall-module-cmdlet-to-uninstall-a-module-that-you-installed-by-using-powershellget"></a>Führen Sie das Cmdlet „Uninstall-Module“ zum Deinstallieren eines Moduls aus, das Sie mit PowerShellGet installiert haben.
 Wenn ein anderes Modul von dem Modul abhängt, das Sie löschen möchten, löst PowerShellGet einen Fehler aus.
 ```powershell
 Get-InstalledModule -Name RequiredModule1 | Uninstall-Module
@@ -197,8 +186,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\PSGet.psm1:1303 char
 + FullyQualifiedErrorId : UnableToUninstallAsOtherModulesNeedThisModule,Uninstall-Package,Microsoft.PowerShell.PackageManagement.Cmdlets.UninstallPackage
 ```
 
-<a id="save-module-cmdlet" class="xliff"></a>
-## Cmdlet „Save-Module“
+## <a name="save-module-cmdlet"></a>Cmdlet „Save-Module“
 ```powershell
 Save-Module -Repository MSPSGallery -Name ModuleWithDependencies2 -Path C:\MySavedModuleLocation
 dir C:\MySavedModuleLocation
@@ -216,8 +204,7 @@ d----- 4/21/2015 5:40 PM RequiredModule2
 d----- 4/21/2015 5:40 PM RequiredModule3
 ```
 
-<a id="update-modulemanifest-cmdlet" class="xliff"></a>
-## Cmdlet „Update-ModuleManifest“
+## <a name="update-modulemanifest-cmdlet"></a>Cmdlet „Update-ModuleManifest“
 Dieses neue Cmdlet wird verwendet, um die Manifestdatei mit eingegebenen Eigenschaftswerten zu aktualisieren. Es verwendet dieselben Parameter wie „Test-ModuleManifest“.
 
 Wir stellen fest, dass viele Modulentwickler in exportierten Werten wie „FunctionsToExport“, „CmdletsToExport“ usw. „\*“ angeben möchten. Während der Veröffentlichung des Moduls im PowerShell-Katalog werden nicht angegebene Funktionen und Befehle nicht ordnungsgemäß im Katalog aufgefüllt. Deshalb sollten Modulentwickler ihre Manifeste mit ordnungsgemäßen Werten aktualisieren.

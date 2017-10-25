@@ -10,15 +10,13 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="composite-resources-using-a-dsc-configuration-as-a-resource" class="xliff"></a>
-# Zusammengesetzte Ressourcen: Verwenden einer DSC-Konfiguration als Ressource
+# <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a>Zusammengesetzte Ressourcen: Verwenden einer DSC-Konfiguration als Ressource
 
 > Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 In realen Situationen können Konfigurationen lang und komplex sein, viele verschiedene Ressourcen aufrufen und eine große Anzahl von Eigenschaften festlegen. Um mit dieser Komplexität zurecht zu kommen, können Sie eine Windows PowerShell DSC-Konfiguration als Ressource für andere Konfigurationen verwenden. Dies wird als zusammengesetzte Ressource bezeichnet. Eine zusammengesetzte Ressource ist eine DSC-Konfiguration, die Parameter verwendet. Die Parameter der Konfiguration fungieren als Eigenschaften der Ressource. Die Konfiguration wird als Datei mit der Erweiterung **.schema.psm1** gespeichert und tritt in einer normalen DSC-Ressource an die Stelle von MOF-Schema und Ressourcenskript (weitere Informationen zu DSC-Ressourcen finden Sie unter [Windows PowerShell DSC-Ressourcen](resources.md).
 
-<a id="creating-the-composite-resource" class="xliff"></a>
-## Erstellen der zusammengesetzten Ressource
+## <a name="creating-the-composite-resource"></a>Erstellen der zusammengesetzten Ressource
 
 Im folgenden Beispiel wird eine Konfiguration erstellt, die eine Reihe von vorhandenen Ressourcen zum Konfigurieren virtueller Computer aufruft. Anstatt die festzulegenden Werte in Konfigurationsblöcken anzugeben, verwendet die Konfiguration eine Reihe von Parametern, die dann in den Konfigurationsblöcken verwendet werden.
 
@@ -134,8 +132,7 @@ Configuration xVirtualMachine
 }
 ```
 
-<a id="saving-the-configuration-as-a-composite-resource" class="xliff"></a>
-### Speichern die Konfiguration als eine zusammengesetzte Ressource
+### <a name="saving-the-configuration-as-a-composite-resource"></a>Speichern die Konfiguration als eine zusammengesetzte Ressource
 
 Damit die parametrisierte Konfiguration als DSC-Ressource verwendet werden kann, speichern Sie sie in einer Verzeichnisstruktur, die den Verzeichnisstrukturen MOF-basierter Ressourcen entspricht, und geben Sie ihr einen Namen mit der Erweiterung **.schema.psm1**. In diesem Beispiel erhält die Datei den Namen **xVirtualMachine.schema.psm1**. Sie müssen auch ein Manifest mit dem Namen **xVirtualMachine.psd1** erstellen, das die folgende Zeile enthält. Beachten Sie, dass dies zusätzlich zur Datei **MyDscResources.psd1** erforderlich ist, dem Modulmanifest für alle Ressourcen im Ordner **MyDscResources**.
 
@@ -157,8 +154,7 @@ $env: psmodulepath
 
 Die Ressource kann nun mit dem Cmdlet „Get-DscResource“ gefunden werden, und ihre Eigenschaften können entweder mit diesem Cmdlet oder über die Tastenkombination **STRG+LEERTASTE** (AutoVervollständigen) in Windows PowerShell ISE sichtbar gemacht werden.
 
-<a id="using-the-composite-resource" class="xliff"></a>
-## Verwenden der zusammengesetzten Ressource
+## <a name="using-the-composite-resource"></a>Verwenden der zusammengesetzten Ressource
 
 Als Nächstes wird eine Konfiguration erstellt, die die zusammengesetzte Ressource aufruft. Diese Konfiguration ruft die zusammengesetzte Ressource „xVirtualMachine“ auf, um einen virtuellen Computer zu erstellen, und ruft anschließend die Ressource **xComputer** auf, um sie umzubenennen.
 
@@ -193,8 +189,7 @@ configuration RenameVM
 }
 ```
 
-<a id="supporting-psdscrunascredential" class="xliff"></a>
-## Unterstützung von PsDscRunAsCredential
+## <a name="supporting-psdscrunascredential"></a>Unterstützung von PsDscRunAsCredential
 
 >**Hinweis:** **PsDscRunAsCredential** wird in PowerShell 5.0 und höheren Versionen unterstützt.
 
@@ -211,10 +206,8 @@ if (PsDscContext.RunAsUser) {
 }
 ```
 
-<a id="see-also" class="xliff"></a>
-## Weitere Informationen
-<a id="concepts" class="xliff"></a>
-### Konzepte
+## <a name="see-also"></a>Weitere Informationen
+### <a name="concepts"></a>Konzepte
 * [Schreiben einer benutzerdefinierten DSC-Ressource mit MOF](authoringResourceMOF.md)
 * [Erste Schritte mit Windows PowerShell Desired State Configuration (DSC)](overview.md)
 

@@ -10,14 +10,12 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="powershell-engine-improvements" class="xliff"></a>
-#Verbesserungen am PowerShell-Modul
+#<a name="powershell-engine-improvements"></a>Verbesserungen am PowerShell-Modul
 
 Die folgenden Verbesserungen am PowerShell-Kernmodul wurden in WMF 5.1 implementiert:
 
 
-<a id="performance" class="xliff"></a>
-## Leistung ##
+## <a name="performance"></a>Leistung ##
 
 In einigen wichtigen Bereichen wurde die Leistung verbessert:
 

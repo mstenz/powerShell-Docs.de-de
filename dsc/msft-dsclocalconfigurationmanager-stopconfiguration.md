@@ -10,13 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="stopconfiguration-method-of-the-msftdsclocalconfigurationmanager-class" class="xliff"></a>
-# StopConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse
+# <a name="stopconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>StopConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse
 
 Beende die Konfigurationsänderung, die gerade ausgeführt wird.
 
-<a id="syntax" class="xliff"></a>
-Syntax
+<a name="syntax"></a>Syntax
 ------
 
 ```mof
@@ -25,34 +23,29 @@ uint32 StopConfiguration(
 );
 ```
 
-<a id="parameters" class="xliff"></a>
-Parameter
+<a name="parameters"></a>Parameter
 ----------
 
 *force* \[in\]  
 **true**, um das Beenden der Konfiguration zu erzwingen.
 
-<a id="return-value" class="xliff"></a>
-## Rückgabewert
+## <a name="return-value"></a>Rückgabewert
 ------------
 
 Gibt bei Erfolg null zurück, andernfalls einen Fehlercode.
 
-<a id="remarks" class="xliff"></a>
-## Hinweise
+## <a name="remarks"></a>Hinweise
 
 Dies ist eine statische Methode.
 
-<a id="requirements" class="xliff"></a>
-## Anforderungen
+## <a name="requirements"></a>Anforderungen
 ------------
 >**MOF:** DscCore.mof
 
 >**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 
-<a id="see-also" class="xliff"></a>
-## Siehe auch
+## <a name="see-also"></a>Siehe auch
 
 
 [**MSFT_DSCLocalConfigurationManager-Klasse**](msft-dsclocalconfigurationmanager.md)

@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="scriptanazlyer-rule-profile-for-gallery" class="xliff"></a>
-# ScriptAnalyzer-Regel – Profil für den Katalog
+# <a name="scriptanazlyer-rule-profile-for-gallery"></a>ScriptAnalyzer-Regel – Profil für den Katalog
 Um die Qualität der im PowerShell-Katalog veröffentlichen Elemente sicherzustellen, werden [PowerShell ScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer)-Regeln ausgeführt, die die eingereichten Skripts auf Verstöße überprüfen.
 
 Eine Liste der ausgeführte Regeln finden Sie auf der [GitHub-Seite von ScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer/blob/development/Engine/Settings/PSGallery.psd1).

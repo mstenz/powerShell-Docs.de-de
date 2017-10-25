@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="installation-instructions" class="xliff"></a>
-# Installationsanweisungen
+# <a name="installation-instructions"></a>Installationsanweisungen
 
 Laden Sie das richtige Paket für Ihr Betriebssystem und Ihre Architektur herunter:
 

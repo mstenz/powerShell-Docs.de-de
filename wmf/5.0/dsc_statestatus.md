@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="unified-and-consistent-state-and-status-representation" class="xliff"></a>
-# Vereinheitlichung und Konsistenz von Zustands- und Statusdarstellung
+# <a name="unified-and-consistent-state-and-status-representation"></a>Vereinheitlichung und Konsistenz von Zustands- und Statusdarstellung
 
 Für diese Version sind eine Reihe von Verbesserungen beim automatisch erstellten LCM-Zustand und DSC-Status erfolgt. Dazu gehören vereinheitlichte und konsistente Zustands- und Statusdarstellungen, verwaltbare „datetime“-Eigenschaft von Statusobjekten, die vom Cmdlet „Get-DscConfigurationStatus“ zurückgegeben werden, und eine verbesserte LCM-Statusdetaileigenschaft, die vom Cmdlet „Get-DscLocalConfigurationManager“ zurückgegeben wird.
 
@@ -49,8 +48,7 @@ $ResourcesInDesiredState = (Get-DscConfigurationStatus).ResourcesInDesiredState
 
 $ResourcesNotInDesiredState = (Get-DscConfigurationStatus).ResourcesNotInDesiredState
 ```
-<a id="enhancement-in-get-dscconfigurationstatus-cmdlet" class="xliff"></a>
-## Verbesserungen beim Cmdlet „Get-DscConfigurationStatus“
+## <a name="enhancement-in-get-dscconfigurationstatus-cmdlet"></a>Verbesserungen beim Cmdlet „Get-DscConfigurationStatus“
 
 Für diese Version wurden einige Verbesserungen am Cmdlet „Get-DscConfigurationStatus“ vorgenommen. Zuvor hatte die „StartDate“-Eigenschaft von Objekten, die vom Cmdlet zurückgegeben wurden, den Typ „String“. Jetzt hat sie den Typ „Datetime“, der komplexe Auswahl- und Filtervorgänge basierend auf den inhärenten Eigenschaften eines „Datetime“-Objekts erleichtert.
 ```powershell
@@ -92,8 +90,7 @@ Success 11/13/2015 11:20:44 AM Initial True
 Success 11/13/2015 11:20:44 AM LocalConfigurationManager False
 ```
 
-<a id="enhancement-in-get-dsclocalconfigurationmanager-cmdlet" class="xliff"></a>
-## Verbesserungen beim Cmdlet „Get-DscLocalConfigurationManager“
+## <a name="enhancement-in-get-dsclocalconfigurationmanager-cmdlet"></a>Verbesserungen beim Cmdlet „Get-DscLocalConfigurationManager“
 Das neue Feld „LCMStateDetail“ wird dem Objekt hinzugefügt, das vom Cmdlet „Get-DscLocalConfigurationManager“ zurückgegeben wird. Dieses Feld wird aufgefüllt, wenn „LCMState = Busy". Es kann mit dem folgenden Cmdlet abgerufen werden:
 ```powershell
 (Get-DscLocalConfigurationManager).LCMStateDetail

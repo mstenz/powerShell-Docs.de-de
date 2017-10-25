@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="wow64-support-for-configuration-keyword" class="xliff"></a>
-# Wow64-Unterstützung für das Schlüsselwort „Configuration“
+# <a name="wow64-support-for-configuration-keyword"></a>Wow64-Unterstützung für das Schlüsselwort „Configuration“
 
 Das Schlüsselwort „Configuration“ wird nun in WOW64 auf 64-Bit-Computern unterstützt. Dies bedeutet, dass eine DSC-Konfiguration in einem 32-Bit-Prozess, wie z. B. Windows PowerShell ISE (x86) auf einem 64-Bit-Computer, definiert und kompiliert werden kann.
 

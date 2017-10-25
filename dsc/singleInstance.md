@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="writing-a-single-instance-dsc-resource-best-practice" class="xliff"></a>
-# Schreiben einer Einzelinstanz-DSC-Ressource (empfohlen)
+# <a name="writing-a-single-instance-dsc-resource-best-practice"></a>Schreiben einer Einzelinstanz-DSC-Ressource (empfohlen)
 
 >**Hinweis:** In diesem Thema wird ein bewährtes Verfahren zum Definieren einer DSC-Ressource beschrieben, die nur eine einzige Instanz in einer Konfiguration zulässt. Derzeit gibt es hierfür keine integrierte DSC-Funktion. Dies kann sich zukünftig ändern.
 

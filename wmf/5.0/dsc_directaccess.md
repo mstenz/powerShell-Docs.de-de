@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="direct-access-to-dsc-resource-methods" class="xliff"></a>
-# Direkter Zugriff auf DSC-Ressourcenmethoden
+# <a name="direct-access-to-dsc-resource-methods"></a>Direkter Zugriff auf DSC-Ressourcenmethoden
 
 
 Das Cmdlet [Invoke-DscResource](https://technet.microsoft.com/en-us/library/mt517869.aspx) wurde hinzugefügt, um direkten Zugriff auf DSC-Ressourcen und ihre Methoden (Get, Set, Test) zu erlauben. Es kann von Drittanbietern verwendet werden, die DSC-Ressourcen nutzen möchten.

@@ -11,11 +11,9 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="improvements-to-just-enough-administration-jea" class="xliff"></a>
-# Verbesserungen bei Just Enough Administration (JEA)
+# <a name="improvements-to-just-enough-administration-jea"></a>Verbesserungen bei Just Enough Administration (JEA)
 
-<a id="constrained-file-copy-tofrom-jea-endpoints" class="xliff"></a>
-## Eingeschränktes Kopieren von Dateien auf einen bzw. von einem JEA-Endpunkt
+## <a name="constrained-file-copy-tofrom-jea-endpoints"></a>Eingeschränktes Kopieren von Dateien auf einen bzw. von einem JEA-Endpunkt
 
 Sie können Dateien jetzt remote auf einen bzw. von einem JEA-Endpunkt kopieren und sich dabei darauf verlassen, dass der Benutzer, der die Verbindung herstellt, keine *beliebige* Datei auf Ihrem System kopieren kann.
 Dies ist möglich, indem Sie Ihre PSSC-Datei für die Bereitstellung eines Benutzerlaufwerks konfigurieren, mit dem sich Benutzer verbinden können.
@@ -48,8 +46,7 @@ Copy-Item -Path User:\SampleFile.txt -Destination . -FromSession $jeasession
 
 Anschließend können Sie benutzerdefinierte Funktionen schreiben, um die auf dem Benutzerlaufwerk gespeicherten Daten zu verarbeiten und für Benutzer in Ihrer Datei für Rollenfunktionen bereitzustellen.
 
-<a id="support-for-group-managed-service-accounts" class="xliff"></a>
-## Unterstützung für gruppenverwaltete Dienstkonten
+## <a name="support-for-group-managed-service-accounts"></a>Unterstützung für gruppenverwaltete Dienstkonten
 
 In einigen Fällen muss ein Task, den ein Benutzer in einer JEA-Sitzung ausführen muss, auf Ressourcen außerhalb des lokalen Computers zugreifen.
 Wenn eine JEA-Sitzung für die Verwendung eines virtuellen Kontos konfiguriert ist, wird bei jedem Versuch, auf diese Ressourcen zuzugreifen, die Identität des lokalen Computers (nicht des virtuellen Kontos oder des verbundenen Benutzers) als Ursprung dieses Zugriffsversuchs angezeigt.
@@ -71,8 +68,7 @@ RunAsVirtualAccount = $false
 > Jeder verbundene Benutzer verwendet dieselbe Identität des gruppenverwalteten Dienstkontos, das möglicherweise über Berechtigungen für Ihr gesamtes Unternehmen verfügt.
 > Gehen Sie daher mit Bedacht vor, wenn Sie die Verwendung eines gruppenverwalteten Dienstkontos wählen. Wenn möglich, sollten Sie immer virtuelle Konten vorziehen, die auf den lokalen Computer beschränkt sind.
 
-<a id="conditional-access-policies" class="xliff"></a>
-## Richtlinien für bedingten Zugriff
+## <a name="conditional-access-policies"></a>Richtlinien für bedingten Zugriff
 
 Bei JEA lässt sich hervorragend einschränken, welche Aufgaben ein Benutzer, der sich mit einem System verbunden hat, zum Verwalten des Systems ausführen darf. Doch wie gehen Sie vor, wenn Sie einschränken möchten, *wann* ein Benutzer JEA verwenden kann?
 Wir haben die Sitzungskonfigurationsdateien (PSSC-Dateien) um Optionen erweitert, mit denen Sie Sicherheitsgruppen angeben können, deren Mitglied ein Benutzer sein muss, um eine JEA-Sitzung zu erstellen.
@@ -94,8 +90,7 @@ RequiredGroups = @{ Or = '2FA-logon', 'smartcard-logon' }
 RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon' }}
 ```
 
-<a id="fixed-virtual-accounts-are-now-supported-on-windows-server-2008-r2" class="xliff"></a>
-## Behoben: Virtuelle Konten werden jetzt auf Windows Server 2008 R2 unterstützt
+## <a name="fixed-virtual-accounts-are-now-supported-on-windows-server-2008-r2"></a>Behoben: Virtuelle Konten werden jetzt auf Windows Server 2008 R2 unterstützt
 In WMF 5.1 können nun virtuelle Konten auf Windows Server 2008 R2 verwendet werden, sodass für Windows Server 2008 R2 - 2016 jetzt konsistente Konfigurationen und übereinstimmende Features bereitgestellt werden.
 Bei Verwendung von JEA unter Windows 7 werden virtuelle Konten weiterhin nicht unterstützt.
 

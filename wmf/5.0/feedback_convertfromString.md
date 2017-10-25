@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="extract-and-parse-structured-objects-out-of-string" class="xliff"></a>
-# Extrahieren und Analysieren von strukturierten Objekten aus einer Zeichenfolge
+# <a name="extract-and-parse-structured-objects-out-of-string"></a>Extrahieren und Analysieren von strukturierten Objekten aus einer Zeichenfolge
 Auch das Cmdlet „ConvertFrom-String“ weist einige neue Funktionen auf:
 
 -   Die „ExtentText“-Eigenschaft wird standardmäßig entfernt. Sie können sie mit dem „-IncludeExtent“-Parameter einschließen.
@@ -20,8 +19,7 @@ Auch das Cmdlet „ConvertFrom-String“ weist einige neue Funktionen auf:
 -   Neuer „-UpdateTemplate“-Parameter zum Speichern der Ergebnisse des lernenden Algorithmus in einem Kommentar in der Vorlagendatei. Dadurch wird der Lernprozess (die langsamste Phase) zu einem einmaligen Aufwand. Das Ausführen von „Convert-String“ mit einer Vorlage, die den codierten lernenden Algorithmus enthält, erfolgt nun fast unmittelbar.
 
 
-<a id="extract-and-parse-structured-objects-out-of-string-content" class="xliff"></a>
-Extrahieren und Analysieren von strukturierten Objekten aus einer Zeichenfolge
+<a name="extract-and-parse-structured-objects-out-of-string-content"></a>Extrahieren und Analysieren von strukturierten Objekten aus einer Zeichenfolge
 ----------------------------------------------------------
 
 In Zusammenarbeit mit [Microsoft Research](http://research.microsoft.com/) wurde das neue Cmdlet **ConvertFrom-String** hinzugefügt.

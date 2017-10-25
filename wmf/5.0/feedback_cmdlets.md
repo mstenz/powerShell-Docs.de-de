@@ -9,7 +9,6 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="new-and-updated-cmdlets-based-on-community-feedback" class="xliff"></a>
-# Neue und aktualisierte Cmdlets basierend auf Communityfeedback 
+# <a name="new-and-updated-cmdlets-based-on-community-feedback"></a>Neue und aktualisierte Cmdlets basierend auf Communityfeedback 
 Wir haben basierend auf Feedback aus der Community über [Connect](https://connect.microsoft.com/powershell) einige neue „Utility“-Cmdlets hinzugefügt und vorhandene Cmdlets aktualisiert. Wir sichten Ihr Feedback weiter und gehen auf so viele Anforderungen wie möglich ein.
 

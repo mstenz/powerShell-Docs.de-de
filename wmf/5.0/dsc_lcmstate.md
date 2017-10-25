@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="detailed-information-about-lcm-state" class="xliff"></a>
-# Detaillierte Informationen zum LCM-Status
+# <a name="detailed-information-about-lcm-state"></a>Detaillierte Informationen zum LCM-Status
 
 Wir haben das Verfügbarmachen von Details zum LCM-Status verbessert. Der „LCMState“, der von „Get-DscLocalConfigurationManager“ zurückgegeben wird, kann jetzt die folgenden Werte enthalten:
 

@@ -10,13 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="install-module" class="xliff"></a>
-# Install-Module
+# <a name="install-module"></a>Install-Module
 
 Installiert die PowerShell-Module aus Onlinerepositorys auf den lokalen Computer.
 
-<a id="description" class="xliff"></a>
-## Beschreibung
+## <a name="description"></a>Beschreibung
 
 Das Cmdlet Install-Module lädt ein Modul oder mehrere Module aus einem Onlinekatalog herunter, überprüft diese und installiert sie auf dem lokalen Computer im angegebenen Installationsbereich.
 
@@ -32,8 +30,7 @@ Sie können Ihre Ergebnisse nach den mindestens erforderlichen Versionen oder de
 - „-Force“ installiert das bereits installierte Modul neu.
 - RequiredVersion installiert die angegebene Version in SxS zusammen mit vorhandenen Versionen auf PowerShell-Version 5.0 oder höher.
 
-<a id="scope" class="xliff"></a>
-### Bereich
+### <a name="scope"></a>Bereich
 Gibt den Bereich der Installation des Moduls an. Die folgenden Werte für diesen Parameter sind zulässig: AllUsers und CurrentUser.
 
 Der Standardbereich für die Installation ist AllUsers.
@@ -42,8 +39,7 @@ Mit der Einstellung „AllUsers“ können Module an einem Speicherort installie
 
 Mit dem CurrentUser-Bereich können Module nur unter $home\Documents\WindowsPowerShell\Modules installiert werden. Das Modul ist also nur für den aktuellen Benutzer verfügbar.
 
-<a id="notes" class="xliff"></a>
-## Hinweise
+## <a name="notes"></a>Hinweise
 
 Dieses Cmdlet wird unter Windows PowerShell 3.0 oder auf höheren Versionen von Windows PowerShell ausgeführt. Ebenso wird es unter Windows 7 oder Windows 2008 R2 und höheren Versionen von Windows ausgeführt.
 
@@ -60,19 +56,16 @@ Standardmäßig werden die Module im Ordner „Programme“ installiert, um Verw
 Damit ausgeführte Module, die schädlichen Code enthalten, vermieden werden, werden installierte Module nicht automatisch während der Installation importiert. Eine bewährte Sicherheitsmethode ist die Bewertung von Modulcode vor der ersten Ausführung von Cmdlets oder Funktionen in einem Modul.
 
 
-<a id="cmdlet-syntax" class="xliff"></a>
-## Cmdlet-Syntax
+## <a name="cmdlet-syntax"></a>Cmdlet-Syntax
 ```powershell
 Get-Command -Name Install-Module -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-## Cmdlet-Onlinehilfe
+## <a name="cmdlet-online-help-reference"></a>Cmdlet-Onlinehilfe
 
 [Install-Module](http://go.microsoft.com/fwlink/?LinkID=398573)
 
-<a id="example-commands" class="xliff"></a>
-## Beispiele für Befehle
+## <a name="example-commands"></a>Beispiele für Befehle
 
 ```powershell
 
@@ -113,8 +106,7 @@ Install-Module ContosoClient -Force
 Install-Module -Name 
 ```
 
-<a id="install-module-cmdlet-in-pipeline-operations" class="xliff"></a>
-## Install-Module-Cmdlet in Pipeline-Vorgängen
+## <a name="install-module-cmdlet-in-pipeline-operations"></a>Install-Module-Cmdlet in Pipeline-Vorgängen
 
 ```powershell
 
@@ -141,13 +133,11 @@ Get-InstalledModule
 
 ```
 
-<a id="side-by-side-version-support-on-powershell-50-or-newer" class="xliff"></a>
-## Unterstützung der gleichzeitigen Ausführung unterschiedlicher Versionen für PowerShell 5.0 oder höher
+## <a name="side-by-side-version-support-on-powershell-50-or-newer"></a>Unterstützung der gleichzeitigen Ausführung unterschiedlicher Versionen für PowerShell 5.0 oder höher
 
 Für die in Windows PowerShell 5.0 oder höher ausgeführten Cmdlets „Install-Module“ „Update-Module“ und „Publish-Module“ unterstützt PowerShellGet die gleichzeitige Ausführung unterschiedlicher Modulversionen.
 
-<a id="install-module-examples" class="xliff"></a>
-### Beispiele für „Install-Module“
+### <a name="install-module-examples"></a>Beispiele für „Install-Module“
 
 ```powershell
 # Install a version of the module
@@ -179,8 +169,7 @@ Version    Name                                Repository           Description
 
 ```
 
-<a id="install-module-with-its-dependencies" class="xliff"></a>
-## Installieren eines Moduls mit dessen Abhängigkeiten
+## <a name="install-module-with-its-dependencies"></a>Installieren eines Moduls mit dessen Abhängigkeiten
 
 ```powershell
 
@@ -274,8 +263,7 @@ Version    Name                                Repository           Description
 
 ```
 
-<a id="error-scenarios" class="xliff"></a>
-## Fehlerszenarios
+## <a name="error-scenarios"></a>Fehlerszenarios
 
 ```powershell
 

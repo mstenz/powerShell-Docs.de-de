@@ -10,15 +10,13 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="using-resources-with-multiple-versions" class="xliff"></a>
-# Verwenden von Ressourcen mit mehreren Versionen
+# <a name="using-resources-with-multiple-versions"></a>Verwenden von Ressourcen mit mehreren Versionen
 
 > Gilt für: Windows PowerShell 5.0
 
 In PowerShell 5.0 können DSC-Ressourcen mehrere Versionen haben, und verschiedene Versionen können parallel auf einem Computer installiert sein. Dies wird dadurch implementiert, dass mehrere Versionen eines Ressourcenmoduls vorhanden sind, die sich im selben Modulordner befinden.
 
-<a id="installing-multiple-resource-versions-side-by-side" class="xliff"></a>
-## Paralleles Installieren mehrerer Ressourcenversionen
+## <a name="installing-multiple-resource-versions-side-by-side"></a>Paralleles Installieren mehrerer Ressourcenversionen
 
 Sie können die Parameter **MinimumVersion**, **MaximumVersion** und **RequiredVersion** des Cmdlets [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) verwenden, um anzugeben, welche Version eines Moduls installiert werden soll. Wenn Sie **Install-Module** ohne Angabe eine Version aufrufen, wird die neueste Version installiert.
 
@@ -45,8 +43,7 @@ PowerShell      xCluster                  xFailOverCluster               1.1    
 PowerShell      xCluster                  xFailOverCluster               1.2.0.0    {DomainAdministratorCredential, Name, ...
 ```
 
-<a id="specifying-a-resource-version-in-a-configuration" class="xliff"></a>
-## Angeben einer Ressourcenversion in einer Konfiguration
+## <a name="specifying-a-resource-version-in-a-configuration"></a>Angeben einer Ressourcenversion in einer Konfiguration
 
 Wenn Sie mehrere Ressourcen auf einem Computer installiert haben, müssen Sie die Version dieser Ressource angeben, wenn Sie sie in einer Konfiguration verwenden. Hierzu geben Sie den Parameter **ModuleVersion** des Schlüsselworts **Import-DscResource** an. Wenn Sie bei einer Ressource, von der Sie mehr als eine Version installiert haben, keine Version des Ressourcenmoduls angeben, generiert die Konfiguration einen Fehler.
 
@@ -90,8 +87,7 @@ configuration VersionTest
 
 Dies funktioniert auch in PowerShell 5.0, aber es wird empfohlen, dass Sie den Parameter **ModuleVersion** verwenden.
 
-<a id="see-also" class="xliff"></a>
-## Siehe auch
+## <a name="see-also"></a>Siehe auch
 * [DSC-Konfigurationen](configurations.md)
 * [DSC-Ressourcen](resources.md)
 

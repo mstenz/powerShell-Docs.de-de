@@ -12,12 +12,10 @@ ms.lasthandoff: 06/12/2017
 ---
 >Hinweis: Vorschlag für einen aussagekräftigen Namen und eine Kurzbeschreibung bereitstellen
 
-<a id="example-erroneous-executionpolicy-errors" class="xliff"></a>
-## Beispiel: Fehlerhafte „ExecutionPolicy“-Fehler ##
+## <a name="example-erroneous-executionpolicy-errors"></a>Beispiel: Fehlerhafte „ExecutionPolicy“-Fehler ##
 Unter Windows 7 kann die Verwendung von PowerShell-Modulen und DSC-Ressourcen zu Fehlern führen, die zu „ExecutionPolicy“ gemeldet werden.
 
-<a id="resolution" class="xliff"></a>
-### Lösung
+### <a name="resolution"></a>Lösung
 
 Legen Sie als Lösung **ExecutionPolicy** auf **RemoteSigned** fest, indem Sie den folgenden Befehl mit erhöhten Rechten in einer PowerShell-Sitzung ausführen (Als Administrator ausführen):
 

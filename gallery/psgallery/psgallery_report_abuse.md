@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="report-abuse" class="xliff"></a>
-# Melden von Missbrauch
+# <a name="report-abuse"></a>Melden von Missbrauch
 
 Wenn Sie ein Element finden, das gegen diese Regeln verstößt, klicken Sie auf den Link **Report Abuse** (Missbrauch melden) auf der Seite mit den Elementdetails, um einen Bericht zu übermitteln.
 

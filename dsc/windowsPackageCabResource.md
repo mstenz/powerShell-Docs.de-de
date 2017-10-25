@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-windowspackagecab-resource" class="xliff"></a>
-# WindowsPackageCab-Ressource in DSC
+# <a name="dsc-windowspackagecab-resource"></a>WindowsPackageCab-Ressource in DSC
 
 > Gilt für: Windows PowerShell 5.1 und höher.
 
@@ -20,8 +19,7 @@ Die Ressource **WindowsPackageCab** in Windows PowerShell Desired State Configur
 Auf dem Zielknoten muss das DISM-PowerShell-Modul installiert sein. Weitere Informationen finden Sie unter [Verwenden von DISM in Windows PowerShell](https://msdn.microsoft.com/en-us/windows/hardware/commercialize/manufacture/desktop/use-dism-in-windows-powershell-s14). 
 
 
-<a id="syntax" class="xliff"></a>
-## Syntax
+## <a name="syntax"></a>Syntax
 
 ```
 {
@@ -33,8 +31,7 @@ Auf dem Zielknoten muss das DISM-PowerShell-Modul installiert sein. Weitere Info
 }
 ```
 
-<a id="properties" class="xliff"></a>
-## Eigenschaften
+## <a name="properties"></a>Eigenschaften
 
 |  Eigenschaft  |  Beschreibung   | 
 |---|---| 
@@ -44,8 +41,7 @@ Auf dem Zielknoten muss das DISM-PowerShell-Modul installiert sein. Weitere Info
 | LogPath| Gibt den vollständigen Pfad an, in dem der Anbieter eine Protokolldatei zum Installieren oder Deinstallieren des Pakets speichern soll.| 
 | DependsOn | Gibt an, dass die Konfiguration einer anderen Ressource ausgeführt werden muss, bevor diese Ressource konfiguriert wird. Wenn beispielsweise die ID des Skriptblocks mit der Ressourcenkonfiguration, den Sie zuerst ausführen möchten, **ResourceName** und dessen Typ **ResourceType** ist, lautet die Syntax für das Verwenden dieser Eigenschaft „DependsOn = „[ResourceType]ResourceName“.| 
 
-<a id="example" class="xliff"></a>
-## Beispiel
+## <a name="example"></a>Beispiel
 
 In der folgenden Beispielkonfiguration werden Eingabeparameter verwendet, und es wird sichergestellt, dass die über den `$Name`-Parameter angegebene CAB-Datei installiert ist.
 

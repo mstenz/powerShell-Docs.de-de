@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="details-about-configuration-status" class="xliff"></a>
-# Details zum Konfigurationsstatus
+# <a name="details-about-configuration-status"></a>Details zum Konfigurationsstatus
 
 Das Cmdlet [Get-DscConfigurationStatus](https://technet.microsoft.com/library/mt517868.aspx) ruft Informationen zum Konfigurationsstatus von einem Zielknoten ab. Weitere Informationen finden Sie unter [Problembehandlung bei DSC](https://msdn.microsoft.com/powershell/dsc/troubleshooting).
 

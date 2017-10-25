@@ -10,20 +10,17 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="writing-a-custom-dsc-resource-with-mof" class="xliff"></a>
-# Schreiben einer benutzerdefinierten DSC-Ressource mit MOF
+# <a name="writing-a-custom-dsc-resource-with-mof"></a>Schreiben einer benutzerdefinierten DSC-Ressource mit MOF
 
 > Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 In diesem Thema wird das Schema für eine benutzerdefinierte Windows PowerShell DSC-Ressource in einer MOF-Datei definiert und die Ressource in einer Windows PowerShell-Skriptdatei implementiert. Diese benutzerdefinierte Ressource dient zum Erstellen und Verwalten einer Website.
 
-<a id="creating-the-mof-schema" class="xliff"></a>
-## Schreiben des MOF-Schemas
+## <a name="creating-the-mof-schema"></a>Schreiben des MOF-Schemas
 
 Das Schema definiert die Eigenschaften der Ressource, die durch ein DSC-Konfigurationsskript konfiguriert werden können.
 
-<a id="folder-structure-for-a-mof-resource" class="xliff"></a>
-### Ordnerstruktur für eine MOF-Ressource
+### <a name="folder-structure-for-a-mof-resource"></a>Ordnerstruktur für eine MOF-Ressource
 
 Um eine benutzerdefinierte DSC-Ressource mit einem MOF-Schema zu implementieren, erstellen Sie die folgende Ordnerstruktur. Das MOF-Schema ist in der Datei „Demo_IISWebsite.schema.mof“ definiert und das Ressourcenskript in „Demo_IISWebsite.psm1“. Optional können Sie eine Modulmanifestdatei (psd1) erstellen.
 
@@ -39,8 +36,7 @@ $env:ProgramFiles\WindowsPowerShell\Modules (folder)
 
 Beachten Sie, dass im Ordner der obersten Ebene ein Ordner mit dem Namen „DSCResources“ erstellt werden muss, und dass die Ordnernamen für die einzelnen Ressourcen den Namen der jeweiligen Ressourcen entsprechen müssen.
 
-<a id="the-contents-of-the-mof-file" class="xliff"></a>
-### Inhalt der MOF-Datei
+### <a name="the-contents-of-the-mof-file"></a>Inhalt der MOF-Datei
 
 Die folgende MOF-Beispieldatei kann für eine benutzerdefinierte Websiteressource verwendet werden. Um dieses Beispiel anzuwenden, speichern Sie das Schema in einer Datei, und rufen Sie die Datei *Demo_IISWebsite.schema.mof* auf.
 
@@ -70,8 +66,7 @@ Beachten Sie Folgendes im Zusammenhang mit dem vorherigen Code:
 * Eine empfohlene Methode, einen konsistenten Stil mit integrierten DSC-Ressourcen beizubehalten, ist das Hinzufügen einer Eigenschaft namens `Ensure`, die die Werte `Present` und `Absent` aufweist, zu Ihrer Ressource.
 * Benennen Sie die Schemadatei für die benutzerdefinierte Ressource wie folgt: `classname.schema.mof`, wobei `classname` der Bezeichner ist, der dem Schlüsselwort `class` in der Schemadefinition folgt.
 
-<a id="writing-the-resource-script" class="xliff"></a>
-### Schreiben des Ressourcenskripts
+### <a name="writing-the-resource-script"></a>Schreiben des Ressourcenskripts
 
 Das Ressourcenskript implementiert die Logik der Ressource. In diesem Modul fügen Sie die drei Funktionen **Get-TargetResource**, **Set-TargetResource**, und **Test-TargetResource** hinzu. Alle drei Funktionen verwenden einen Parametersatz, der identisch mit dem Satz von Eigenschaften ist, die im MOF-Schema definiert wurden, das Sie für die Ressource erstellt haben. In diesem Dokument wird dieser Eigenschaftensatz als die „Ressourceneigenschaften“ bezeichnet. Speichern Sie die drei Funktionen in einer Datei namens „<ResourceName>.psm1“. Im folgenden Beispiel werden die Funktionen in einer Datei namens „Demo_IISWebsite.psm1“ gespeichert.
 
@@ -224,8 +219,7 @@ $result
 >Dieses Cmdlet schreibt Text in den Stream für ausführliche Meldungen. 
 >Standardmäßig wird der Stream für ausführliche Meldungen nicht angezeigt. Sie können ihn jedoch anzeigen, indem Sie den Wert der Variablen **$VerbosePreference** ändern den Parameter **Verbose** in „DSC cmdlets = new“ verwenden.
 
-<a id="creating-the-module-manifest" class="xliff"></a>
-### Erstellen das Modulmanifest
+### <a name="creating-the-module-manifest"></a>Erstellen das Modulmanifest
 
 Verwenden Sie abschließend das Cmdlet **New-ModuleManifest**, um eine „<ResourceName>psd1“-Datei für das benutzerdefinierte Ressourcenmodul zu definieren. Wenn Sie dieses Cmdlet aufrufen, verweisen Sie auf die im vorherigen Abschnitt beschriebene Skriptmoduldatei (.psm1). Fügen Sie **Get-TargetResource**, **Set-TargetResource** und **Test-TargetResource** zur Liste der zu exportierenden Funktionen hinzu. Im Folgenden finden Sie eine Beispielmanifestdatei.
 
@@ -281,8 +275,7 @@ FunctionsToExport = @("Get-TargetResource", "Set-TargetResource", "Test-TargetRe
 }
 ```
 
-<a id="supporting-psdscrunascredential" class="xliff"></a>
-## Unterstützung von PsDscRunAsCredential
+## <a name="supporting-psdscrunascredential"></a>Unterstützung von PsDscRunAsCredential
 
 >**Hinweis:** **PsDscRunAsCredential** wird in PowerShell 5.0 und höheren Versionen unterstützt.
 

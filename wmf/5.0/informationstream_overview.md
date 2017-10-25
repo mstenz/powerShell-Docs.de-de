@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="information-stream" class="xliff"></a>
-# Informationsdatenstrom
+# <a name="information-stream"></a>Informationsdatenstrom
 
 Ein neuer strukturierter Informationsdatenstrom kann jetzt verwendet werden, um strukturierte Daten zwischen einem Skript und seinem Host zu übertragen. **Write-Host** wurde auch so aktualisiert, dass seine Ausgabe in den Informationsdatenstrom erfolgt, in dem Sie sie nun erfassen oder unterdrücken können. Das neue Cmdlet **Write-Information**, das (zusammen mit einer entsprechenden „WriteInformation“-API) mit den allgemeinen Parametern **-InformationVariable** und **-InformationAction** verwendet wird, bietet mehr Flexibilität und Funktionalität.
 

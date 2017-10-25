@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="built-in-windows-powershell-desired-state-configuration-resources" class="xliff"></a>
-# Erstellen von integrierten Windows PowerShell DSC-Ressourcen
+# <a name="built-in-windows-powershell-desired-state-configuration-resources"></a>Erstellen von integrierten Windows PowerShell DSC-Ressourcen
 
 > Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 

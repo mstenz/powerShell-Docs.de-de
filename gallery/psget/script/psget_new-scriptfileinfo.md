@@ -10,40 +10,33 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="new-scriptfileinfo" class="xliff"></a>
-# New-ScriptFileInfo
+# <a name="new-scriptfileinfo"></a>New-ScriptFileInfo
 
 Erstellt eine Skriptdatei mit Metadaten
 
-<a id="description" class="xliff"></a>
-## Beschreibung
+## <a name="description"></a>Beschreibung
 
 Das Cmdlet „New-ScriptFileInfo“ erstellt eine PowerShell-Skriptdatei, einschließlich Metadaten über das Skript.
 
-<a id="cmdlet-syntax" class="xliff"></a>
-## Cmdlet-Syntax
+## <a name="cmdlet-syntax"></a>Cmdlet-Syntax
 
 ```powershell
 Get-Command -Name New-ScriptFileInfo -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-## Cmdlet-Onlinehilfe
+## <a name="cmdlet-online-help-reference"></a>Cmdlet-Onlinehilfe
 
 [New-ScriptFileInfo](http://go.microsoft.com/fwlink/?LinkId=619792)
 
-<a id="example-commands" class="xliff"></a>
-## Beispiele für Befehle
+## <a name="example-commands"></a>Beispiele für Befehle
 
-<a id="passthru-parameter" class="xliff"></a>
-### PassThru-Parameter
+### <a name="passthru-parameter"></a>PassThru-Parameter
 
 ```powershell
 New-ScriptFileInfo -Description "Script file description." -PassThru
 ```
 
-<a id="new-scriptfileinfo-cmdlet" class="xliff"></a>
-### Cmdlet „New-ScriptFileInfo“
+### <a name="new-scriptfileinfo-cmdlet"></a>Cmdlet „New-ScriptFileInfo“
 Mit dem Cmdlet „New-ScriptFileInfo“ können Sie eine neue Skriptdatei mit Metadaten wie „Version“, „Guid“, „Author“ und „Description“ erstellen. 
 
 ```powershell

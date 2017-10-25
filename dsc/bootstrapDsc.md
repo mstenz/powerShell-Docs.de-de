@@ -15,11 +15,9 @@ ms.lasthandoff: 06/12/2017
 >**Hinweis:** Der in diesem Thema beschriebene Registrierungsschlüssel **DSCAutomationHostEnabled** ist in PowerShell 4.0 nicht verfügbar.
 Informationen dazu, wie Sie neue virtuelle Computer beim ersten Hochfahren in PowerShell 4.0 konfigurieren, finden Sie unter [Sie möchten Ihre Computer mithilfe von DSC beim ersten Hochfahren automatisch konfigurieren?](https://blogs.msdn.microsoft.com/powershell/2014/02/28/want-to-automatically-configure-your-machines-using-dsc-at-initial-boot-up/)
 
-<a id="configure-a-virtual-machines-at-initial-boot-up-by-using-dsc" class="xliff"></a>
-# Konfigurieren eines virtuellen Computers beim ersten Hochfahren mithilfe von DSC
+# <a name="configure-a-virtual-machines-at-initial-boot-up-by-using-dsc"></a>Konfigurieren eines virtuellen Computers beim ersten Hochfahren mithilfe von DSC
 
-<a id="requirements" class="xliff"></a>
-## Anforderungen
+## <a name="requirements"></a>Anforderungen
 
 Um diese Beispiele auszuführen, benötigen Sie:
 
@@ -40,8 +38,7 @@ Wenn DSC nicht zur Startzeit ausgeführt werden soll, legen Sie den Wert des Reg
 >**Hinweis:** Sie können zu einem Computer gleichzeitig `Pending.mof` und `MetaConfig.mof` hinzufügen.
 Wenn beide Dateien vorhanden sind, haben die Einstellungen von `MetaConfig.mof` Vorrang.
 
-<a id="inject-a-configuration-mof-document-into-a-vhd" class="xliff"></a>
-## Hinzufügen eines MOF-Konfigurationsdokuments zu einer VHD
+## <a name="inject-a-configuration-mof-document-into-a-vhd"></a>Hinzufügen eines MOF-Konfigurationsdokuments zu einer VHD
 
 Um eine Konfiguration beim ersten Hochfahren anzuwenden, können Sie ein kompiliertes MOF-Konfigurationsdokument als `Pending.mof`-Datei zur VHD hinzufügen.
 Ist der Registrierungsschlüssel **DSCAutomationHostEnabled** auf 2 (Standardwert) festgelegt, wird die in `Pending.mof` definierte Konfiguration von DSC angewendet, sobald der Computer zum ersten Mal gestartet wird.
@@ -64,8 +61,7 @@ Configuration SampleIISInstall
 }
 ```
 
-<a id="to-inject-the-configuration-mof-document-on-the-vhd" class="xliff"></a>
-### So fügen Sie ein MOF-Konfigurationsdokument zur VHD hinzu
+### <a name="to-inject-the-configuration-mof-document-on-the-vhd"></a>So fügen Sie ein MOF-Konfigurationsdokument zur VHD hinzu
 
 1. Stellen Sie die VHD, zu der Sie die Konfiguration hinzufügen möchten, mit dem Cmdlet [Mount-VHD](https://technet.microsoft.com/library/hh848551.aspx) bereit. Beispiel:
 
@@ -98,8 +94,7 @@ Benennen Sie die Datei in `Pending.mof`um, und verschieben Sie sie an den richti
 7. Erstellen Sie einen virtuellen Computer mithilfe der VHD, auf der Sie das DSC MOF-Dokument installiert haben. Nach dem ersten Hochfahren und der Installation des Betriebssystems wird IIS installiert.
 Sie können dies überprüfen, indem Sie das Cmdlet [Get-WindowsFeature](https://technet.microsoft.com/library/jj205469.aspx) aufrufen.
 
-<a id="inject-a-dsc-metaconfiguration-into-a-vhd" class="xliff"></a>
-## Hinzufügen einer Metakonfiguration zu einer VHD
+## <a name="inject-a-dsc-metaconfiguration-into-a-vhd"></a>Hinzufügen einer Metakonfiguration zu einer VHD
 
 Sie können einen Computer auch so konfigurieren, dass eine Konfiguration beim ersten Hochfahren abgerufen wird, indem Sie eine Metakonfiguration als `MetaConfig.mof`-Datei zur VHD hinzufügen (Informationen hierzu finden Sie unter [Konfigurieren des lokalen Konfigurations-Managers (LCM)](metaConfig.md)).
 Ist der Registrierungsschlüssel **DSCAutomationHostEnabled** auf 2 (Standardwert) festgelegt, wird die in `MetaConfig.mof` definierte Metakonfiguration von DSC auf den LCM angewendet, sobald der Computer zum ersten Mal gestartet wird.
@@ -130,8 +125,7 @@ configuration PullClientBootstrap
 }
 ```
 
-<a id="to-inject-the-metaconfiguration-mof-document-on-the-vhd" class="xliff"></a>
-### So fügen Sie ein MOF-Metakonfigurationsdokument zur VHD hinzu
+### <a name="to-inject-the-metaconfiguration-mof-document-on-the-vhd"></a>So fügen Sie ein MOF-Metakonfigurationsdokument zur VHD hinzu
 
 1. Stellen Sie die VHD, zu der Sie die Metakonfiguration hinzufügen möchten, mit dem Cmdlet [Mount-VHD](https://technet.microsoft.com/library/hh848551.aspx) bereit. Beispiel:
 
@@ -169,8 +163,7 @@ Benennen Sie die Datei in `MetaConfig.mof`um, und verschieben Sie sie an den ric
 Nach dem ersten Hochfahren und der Installation des Betriebssystems wird die Konfiguration durch DSC vom Pullserver abgerufen, und IIS wird installiert.
 Sie können dies überprüfen, indem Sie das Cmdlet [Get-WindowsFeature](https://technet.microsoft.com/library/jj205469.aspx) aufrufen.
 
-<a id="disable-dsc-at-boot-time" class="xliff"></a>
-## Deaktivieren von DSC zur Startzeit
+## <a name="disable-dsc-at-boot-time"></a>Deaktivieren von DSC zur Startzeit
 
 Standardmäßig ist der Wert von des Schlüssels **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DSCAutomationHostEnabled** auf 2 festgelegt, wodurch eine DSC-Konfiguration ausgeführt werden kann, wenn der Computer sich im Status „ausstehend“ oder „aktuell“ befindet. Wenn beim ersten Hochfahren keine Konfiguration ausgeführt werden soll, müssen Sie den Wert dieses Schlüssels auf 0 festgelegt:
 
@@ -205,8 +198,7 @@ Standardmäßig ist der Wert von des Schlüssels **HKEY_LOCAL_MACHINE\SOFTWARE\M
     reg unload HKLM\Vhd
     ```
 
-<a id="see-also" class="xliff"></a>
-## Weitere Informationen
+## <a name="see-also"></a>Weitere Informationen
 
 - [DSC-Konfigurationen](configurations.md)
 - [DSCAutomationHostEnabled (Registrierungsschlüssel)](DSCAutomationHostEnabled.md)

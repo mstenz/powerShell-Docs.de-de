@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="contacting-item-owners" class="xliff"></a>
-# Kontaktieren der Elementbesitzer
+# <a name="contacting-item-owners"></a>Kontaktieren der Elementbesitzer
 
 Um den Besitzer eines bestimmten Elements zu kontaktieren, wechseln Sie auf die Seite mit den Elementdetails.
 Die Menüleiste auf der linken Seite enthält einen Link „Besitzer kontaktieren“.

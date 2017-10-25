@@ -10,16 +10,14 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="providing-feedback-via-social-media-or-comments" class="xliff"></a>
-# Bereitstellen von Feedback über soziale Netzwerke oder Kommentare
+# <a name="providing-feedback-via-social-media-or-comments"></a>Bereitstellen von Feedback über soziale Netzwerke oder Kommentare
 
 Der PowerShell-Katalog bietet Benutzern zwei Ansätze für das Bereitstellen von Feedback zu einem Element:
 
 * Verwenden Sie die Links am linken Seitenrand, um ein Element auf Facebook, LinkedIn oder Twitter zu teilen.
 * Verwenden Sie die Kommentarfunktion, um Kommentare zu einem Element zu posten. Autoren können die Kommentare zu von ihnen veröffentlichten Elementen überwachen.
 
-<a id="social-media-feedback" class="xliff"></a>
-## Feedback über soziale Netzwerke
+## <a name="social-media-feedback"></a>Feedback über soziale Netzwerke
 Für jedes Element im PowerShell-Katalog werden am linken Seitenrand Links zu Facebook, LinkedIn und Twitter angezeigt.   
 Durch das Klicken auf diese Links wird die Website des jeweiligen sozialen Netzwerks geöffnet, und es kann ein Link zum Element geteilt werden.
 
@@ -29,8 +27,7 @@ Benutzern wird empfohlen, Elemente zu teilen, wenn sie sie anderen Benutzern emp
 Da diese Zahlen nur angeben, wie häufig ein Element geteilt wurde, werden die Angaben als „Gefällt mir“-Markierungen für das Element interpretiert.
 
 
-<a id="comments" class="xliff"></a>
-## Kommentare
+## <a name="comments"></a>Kommentare
 Der PowerShell-Katalog verwendet den LiveFyre-Dienst, um das Hinterlassen von Kommentaren zu Elementen zu ermöglichen.
 Benutzer, die Empfehlungen oder Feedback übermitteln möchten, können über dieses Feature Feedback bereitstellen, das für alle Besucher der Elementseite sichtbar ist.
 Elementbesitzer können dieses Feedback verfolgen und sich benachrichtigen lassen, wenn ein Kommentar gepostet wird. 

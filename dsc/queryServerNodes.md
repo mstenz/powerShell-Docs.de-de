@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-function-to-query-node-information-from-pull-server" class="xliff"></a>
-# DSC-Funktion zum Abfragen von Knoteninformationen vom Pullserver
+# <a name="dsc-function-to-query-node-information-from-pull-server"></a>DSC-Funktion zum Abfragen von Knoteninformationen vom Pullserver
 
 ```powershell
 function QueryNodeInformation

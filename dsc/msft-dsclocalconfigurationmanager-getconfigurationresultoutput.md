@@ -10,13 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="getconfigurationresultoutput-method-of-the-msftdsclocalconfigurationmanager-class" class="xliff"></a>
-# GetConfigurationResultOutput-Methode der MSFT_DSCLocalConfigurationManager-Klasse
+# <a name="getconfigurationresultoutput-method-of-the-msftdsclocalconfigurationmanager-class"></a>GetConfigurationResultOutput-Methode der MSFT_DSCLocalConfigurationManager-Klasse
 
 Ruft die Konfigurations-Agent-Ausgabe im Zusammenhang mit einem bestimmten Auftrag ab.
 
-<a id="syntax" class="xliff"></a>
-Syntax
+<a name="syntax"></a>Syntax
 ------
 
 ```mof
@@ -27,8 +25,7 @@ uint32 GetConfigurationResultOutput(
 );
 ```
 
-<a id="parameters" class="xliff"></a>
-Parameter
+<a name="parameters"></a>Parameter
 ----------
 
 *jobId* \[in\]  
@@ -40,27 +37,23 @@ Gibt an, dass die Ausgabe eine Fortsetzung eines vorherigen Lesezeichens sein so
 *output* \[out\]  
 Die Ausgabe für den angegebenen Auftrag.
 
-<a id="return-value" class="xliff"></a>
-## Rückgabewert
+## <a name="return-value"></a>Rückgabewert
 ------------
 
 Gibt bei Erfolg null zurück, andernfalls einen Fehlercode.
 
-<a id="remarks" class="xliff"></a>
-## Hinweise
+## <a name="remarks"></a>Hinweise
 
 Dies ist eine statische Methode.
 
-<a id="requirements" class="xliff"></a>
-## Anforderungen
+## <a name="requirements"></a>Anforderungen
 ------------
 >**MOF:** DscCore.mof
 
 >**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 
-<a id="see-also" class="xliff"></a>
-## Siehe auch
+## <a name="see-also"></a>Siehe auch
 
 
 [**MSFT_DSCLocalConfigurationManager-Klasse**](msft-dsclocalconfigurationmanager.md)

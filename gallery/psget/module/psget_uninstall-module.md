@@ -10,34 +10,28 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="uninstall-module" class="xliff"></a>
-# Uninstall-Module
+# <a name="uninstall-module"></a>Uninstall-Module
 
 Deinstalliert ein Modul, das mithilfe der „PowerShellGet“-Cmdlets installiert wurde
 
-<a id="description" class="xliff"></a>
-## Beschreibung
+## <a name="description"></a>Beschreibung
 
 Das Cmdlet „Uninstall-Module“ deinstalliert das angegebene Modul auf dem lokalen Computer. Sie können ein Modul nicht deinstallieren, wenn einige andere Module von ihm abhängig sind.
 Das Cmdlet „Uninstall-Module“ überprüft zudem, ob das Modul, das deinstalliert wird, gerade verwendet wird oder nicht. Wenn das Modul gerade verwendet wird, wird ein Fehler ausgelöst.
 
-<a id="cmdlet-syntax" class="xliff"></a>
-## Cmdlet-Syntax
+## <a name="cmdlet-syntax"></a>Cmdlet-Syntax
 ```powershell
 Get-Command -Name Uninstall-Module -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-## Cmdlet-Onlinehilfe
+## <a name="cmdlet-online-help-reference"></a>Cmdlet-Onlinehilfe
 
 [Uninstall-Module](http://go.microsoft.com/fwlink/?LinkId=526864)
 
 
-<a id="example-commands" class="xliff"></a>
-## Beispiele für Befehle
+## <a name="example-commands"></a>Beispiele für Befehle
 
-<a id="run-the-uninstall-module-cmdlet-to-uninstall-a-module-that-you-installed-by-using-powershellget" class="xliff"></a>
-###  Führen Sie das Cmdlet „Uninstall-Module“ zum Deinstallieren eines Moduls aus, das Sie mit PowerShellGet installiert haben.
+###  <a name="run-the-uninstall-module-cmdlet-to-uninstall-a-module-that-you-installed-by-using-powershellget"></a>Führen Sie das Cmdlet „Uninstall-Module“ zum Deinstallieren eines Moduls aus, das Sie mit PowerShellGet installiert haben.
 Wenn ein anderes Modul von dem Modul abhängt, das Sie löschen möchten, löst PowerShellGet einen Fehler aus.
 ```powershell
 Get-InstalledModule -Name RequiredModule1 | Uninstall-Module
@@ -50,8 +44,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\PSGet.psm1:1303 char
 + FullyQualifiedErrorId : UnableToUninstallAsOtherModulesNeedThisModule,Uninstall-Package,Microsoft.PowerShell.PackageManagement.Cmdlets.UninstallPackage
 ```
 
-<a id="uninstalling-a-module-when-some-other-modules-have-a-dependency-on-it" class="xliff"></a>
-### Deinstallieren eines Moduls, wenn einige andere Module von ihm abhängig sind
+### <a name="uninstalling-a-module-when-some-other-modules-have-a-dependency-on-it"></a>Deinstallieren eines Moduls, wenn einige andere Module von ihm abhängig sind
 
 ```powershell
 Uninstall-Module SnippetPx
@@ -66,16 +59,14 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.3\PSModule.psm
    kageManagement.Cmdlets.UninstallPackage
 ```
 
-<a id="you-can-override-this-by-specify--force-option-on-uninstall-module-cmdlet" class="xliff"></a>
-### Sie können es überschreiben, indem Sie die Option „-Force“ im Cmdlet „Uninstall-Module“ angeben
+### <a name="you-can-override-this-by-specify--force-option-on-uninstall-module-cmdlet"></a>Sie können es überschreiben, indem Sie die Option „-Force“ im Cmdlet „Uninstall-Module“ angeben
 **HINWEIS:** Dies wird nicht empfohlen. Bei dieser Aktion werden andere Module unterbrochen.
 
 ```powershell
 Uninstall-Module SnippetPx -Force
 ```
 
-<a id="uninstall-a-module-which-is-already-in-use" class="xliff"></a>
-### Deinstallieren eines Moduls, das bereits verwendet wird
+### <a name="uninstall-a-module-which-is-already-in-use"></a>Deinstallieren eines Moduls, das bereits verwendet wird
 
 ```powershell
 Get-InstalledModule TypePx,SnippetPx
@@ -86,8 +77,7 @@ Version    Name                                Repository           Description
 1.0.5.18   SnippetPx                           PSGallery            The SnippetPx module enhances the snippet experi...
 ```
 
-<a id="uninstall-snippetpx-fails-due-to-the-dependent-module" class="xliff"></a>
-### Fehler beim Deinstallieren von SnippetPx aufgrund des abhängigen Moduls
+### <a name="uninstall-snippetpx-fails-due-to-the-dependent-module"></a>Fehler beim Deinstallieren von SnippetPx aufgrund des abhängigen Moduls
 
 ```powershell
 Uninstall-Module SnippetPx
@@ -104,8 +94,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PSModule.psm
    kageManagement.Cmdlets.UninstallPackage
 ```
 
-<a id="uninstall-typepx-then-uninstall-the-snippetpx" class="xliff"></a>
-### Deinstallieren von TypePx, anschließend Deinstallieren von SnippetPx
+### <a name="uninstall-typepx-then-uninstall-the-snippetpx"></a>Deinstallieren von TypePx, anschließend Deinstallieren von SnippetPx
 
 ```powershell
 Uninstall-Module TypePx
@@ -124,8 +113,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PSModule.psm
 ```
 
 
-<a id="for-a-module-name-which-is-not-installed-using-powershellget-cmdlets" class="xliff"></a>
-### Bei einem Modul, das nicht mithilfe der „PowerShellGet“-Cmdlets installiert wurde
+### <a name="for-a-module-name-which-is-not-installed-using-powershellget-cmdlets"></a>Bei einem Modul, das nicht mithilfe der „PowerShellGet“-Cmdlets installiert wurde
 
 ```powershell
 Uninstall-Module SnipptPx

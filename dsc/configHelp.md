@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="writing-help-for-dsc-configurations" class="xliff"></a>
-# Schreiben von Hilfe für DSC-Konfigurationen
+# <a name="writing-help-for-dsc-configurations"></a>Schreiben von Hilfe für DSC-Konfigurationen
 
 >Gilt für: Windows PowerShell 5.0
 
@@ -61,8 +60,7 @@ configuration HelpSample1
 }
 ```
 
-<a id="viewing-configuration-help" class="xliff"></a>
-## Anzeigen von Hilfe zur Konfiguration
+## <a name="viewing-configuration-help"></a>Anzeigen von Hilfe zur Konfiguration
 
 Verwenden Sie zum Anzeigen der Hilfe für eine Konfiguration das Cmdlet **Get-Help** mit dem Namen der Funktion, oder geben der Namen der Funktion gefolgt von `-?` ein. Folgendes ist die Ausgabe der vorherigen Funktion bei Übergabe an **Get-Help**:
 
@@ -93,7 +91,6 @@ REMARKS
     For technical information, type: "get-help HelpSample1 -full".
 ```
 
-<a id="see-also" class="xliff"></a>
-## Weitere Informationen
+## <a name="see-also"></a>Weitere Informationen
 * [DSC-Konfigurationen](configurations.md)
 

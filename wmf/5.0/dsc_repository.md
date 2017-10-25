@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="separation-of-configuration-resource-and-report-repositories" class="xliff"></a>
-# Trennung von Konfigurations-, Ressourcen- und Berichtsrepositorys
+# <a name="separation-of-configuration-resource-and-report-repositories"></a>Trennung von Konfigurations-, Ressourcen- und Berichtsrepositorys
 
 In dieser Version bieten wir Ihnen die Flexibilität, die Sie brauchen, um Konfigurationen per Pull von einem oder mehreren DSC-Pullservern zu beziehen und Berichte dazu zu erstellen. Jeder Endpunkt kann separat definiert werden, damit Sie Konfigurationen von einem Speicherort, Ressourcen von einem anderen und Berichte von noch einem anderen per Pull beziehen können. 
 

@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="specifying-cross-node-dependencies" class="xliff"></a>
-# Angeben knotenübergreifender Abhängigkeiten
+# <a name="specifying-cross-node-dependencies"></a>Angeben knotenübergreifender Abhängigkeiten
 
 Mithilfe der integrierten Ressourcen des Typs „WaitFor\*“ (`WaitForAll`, `WaitForAny`, `WaitForSome`) können Sie jetzt computerübergreifende Abhängigkeiten während der Konfigurierung ohne externe Orchestrierung angeben. 
 

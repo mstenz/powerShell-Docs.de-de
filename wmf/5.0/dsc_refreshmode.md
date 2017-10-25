@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="additional-value-for-refreshmode-property" class="xliff"></a>
-# Zusätzlicher Wert für „RefreshMode“-Eigenschaft
+# <a name="additional-value-for-refreshmode-property"></a>Zusätzlicher Wert für „RefreshMode“-Eigenschaft
 
 Diese Version bietet den neuen `RefreshMode`-Wert **Disabled**. Wenn dieser Modus festgelegt ist, übernimmt der LCM keine Dokumentverwaltung. Weitere Informationen finden Sie unter [Konfigurieren des lokalen Konfigurations-Managers](https://msdn.microsoft.com/powershell/dsc/metaconfig).
 

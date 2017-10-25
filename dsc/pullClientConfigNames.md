@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="setting-up-a-pull-client-using-configuration-names" class="xliff"></a>
-# Einrichten eines Pullclients mithilfe von Konfigurationsnamen
+# <a name="setting-up-a-pull-client-using-configuration-names"></a>Einrichten eines Pullclients mithilfe von Konfigurationsnamen
 
 > Gilt für: Windows PowerShell 5.0
 
@@ -73,8 +72,7 @@ Set-DSCLocalConfigurationManager localhost –Path .\PullClientConfigNames –Ve
 Bei einem SMB-Pullserver müssen Sie **ConfigurationID** weiterhin verwenden.
 Informationen zum Konfigurieren eines Pullservers unter Verwendung von **ConfigurationID** finden Sie unter [Einrichten eines Pullclients mithilfe der Konfigurations-ID](PullClientConfigNames.md).
 
-<a id="resource-and-report-servers" class="xliff"></a>
-## Ressourcen und Berichtsserver
+## <a name="resource-and-report-servers"></a>Ressourcen und Berichtsserver
 
 Wenn Sie in Ihrer LCM-Konfiguration nur einen **ConfigurationRepositoryWeb**- oder einen **ConfigurationRepositoryShare**-Block angeben (wie im vorherigen Beispiel), ruft der Pullclient Ressourcen per Pull vom angegebenen Server ab, sendet aber keine Berichte an den Server.
 Sie können für Konfigurationen, Ressourcen und Berichte einen einzigen Pullserver verwenden, allerdings müssen Sie einen **ReportRepositoryWeb**-Block erstellen, um die Berichterstattung einzurichten.
@@ -149,8 +147,7 @@ configuration PullClientConfigNames
 PullClientConfigNames
 ```
 
-<a id="see-also" class="xliff"></a>
-## Weitere Informationen
+## <a name="see-also"></a>Weitere Informationen
 
 * [Einrichten eines Pullclients mit Konfigurations-ID](PullClientConfigNames.md)
 * [Einrichten eines DSC-Webpullservers](pullServer.md)

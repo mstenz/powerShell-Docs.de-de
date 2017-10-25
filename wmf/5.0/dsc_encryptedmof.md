@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="mof-documents-are-encrypted-by-default" class="xliff"></a>
-# MOF-Dokumente standardmäßig verschlüsselt
+# <a name="mof-documents-are-encrypted-by-default"></a>MOF-Dokumente standardmäßig verschlüsselt
 
 Konfigurationsdokumente enthalten vertrauliche Informationen. In früheren Versionen von DSC mussten Sie zum Schützten von Anmeldeinformationen innerhalb einer Konfiguration Zertifikate verteilen und verwalten. Dies brachte häufig einen erheblichen Verwaltungsaufwand mit sich, wobei es aber immer noch Konfigurationsinformationen gab, die nicht geschützt waren bzw. werden konnten. 
 

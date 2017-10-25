@@ -9,18 +9,15 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="interact-with-symbolic-links-using-improved-item-cmdlets" class="xliff"></a>
-# Interagieren mit symbolischen Verknüpfungen mithilfe verbesserter „Item“-Cmdlets
+# <a name="interact-with-symbolic-links-using-improved-item-cmdlets"></a>Interagieren mit symbolischen Verknüpfungen mithilfe verbesserter „Item“-Cmdlets
 
 Zur Unterstützung symbolischer Verknüpfungen wurden **\*-Item** und einige zugehörige Cmdlets erweitert. Nun können Sie mithilfe von **New-Item** symbolische Verknüpfungen in einer einzigen, einfachen Zeile erstellen. Sie werden feststellen, dass sich „Item“-Cmdlets (**Remove-Item, Get-ChildItem**) sehr ähnlich wie zuvor verhalten.
 
 Nachstehend finden Sie einige Anwendungsfälle neuer Funktionen:
 
-<a id="new-item" class="xliff"></a>
-## NEW-ITEM
+## <a name="new-item"></a>NEW-ITEM
 
-<a id="symbolic-link-files" class="xliff"></a>
-### Symbolische Verknüpfungsdateien
+### <a name="symbolic-link-files"></a>Symbolische Verknüpfungsdateien
 
 ```powershell
 # Create a new symbolic link file named MySymLinkFile.txt in C:\Temp which links to $pshome\profile.ps1
@@ -34,8 +31,7 @@ New-Item -ItemType SymbolicLink -Path C:\Temp\MySymLinkFile.txt -Value $pshome\p
 New-Item -ItemType SymbolicLink -Name C:\Temp\MySymLinkFile.txt -Value $pshome\profile.ps1
 ```
 
-<a id="symbolic-link-directories" class="xliff"></a>
-### Symbolische Verknüpfungsverzeichnisse
+### <a name="symbolic-link-directories"></a>Symbolische Verknüpfungsverzeichnisse
 
 ```powershell
 # Create a new symbolic link directory named MySymLinkDir in C:\Temp which links to the $pshome folder
@@ -50,24 +46,21 @@ New-Item -ItemType SymbolicLink -Path C:\Temp\MySymLinkDir -Value $pshome
 New-Item -ItemType SymbolicLink -Name C:\Temp\MySymLinkDir -Value $pshome
 ```
 
-<a id="hard-links" class="xliff"></a>
-### Feste Verknüpfungen
+### <a name="hard-links"></a>Feste Verknüpfungen
 
 ```powershell
 New-Item -ItemType HardLink -Path C:\Temp -Name MyHardLinkFile.txt -Value $pshome\profile.ps1
 # Same combinations of Path and Name allowed as described above
 ```
 
-<a id="directory-junctions" class="xliff"></a>
-### Verzeichnisverbindungen
+### <a name="directory-junctions"></a>Verzeichnisverbindungen
 
 ```powershell
 New-Item -ItemType Junction -Path C:\Temp\MyJunctionDir -Value $pshome
 # Same combinations of Path and Name allowed as described above
 ```
 
-<a id="get-childitem" class="xliff"></a>
-## GET-CHILDITEM
+## <a name="get-childitem"></a>GET-CHILDITEM
 
 ```powershell
 # Append link type column to Mode property and display with Get-ChildItem
@@ -118,8 +111,7 @@ SpecialBuild: False
 Language:
 ```
 
-<a id="remove-item" class="xliff"></a>
-## REMOVE-ITEM
+## <a name="remove-item"></a>REMOVE-ITEM
 
 ```powershell
 # Works like any other item type

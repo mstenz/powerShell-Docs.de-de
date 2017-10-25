@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="help-support-for-dsc-configurations" class="xliff"></a>
-# Hilfe und Unterstützung für DSC-Konfigurationen
+# <a name="help-support-for-dsc-configurations"></a>Hilfe und Unterstützung für DSC-Konfigurationen
 
 Sie können nun innerhalb von DSC-Konfigurationen eine kommentarbasierte Hilfe nutzen und Hilfe zur Verwendung der jeweiligen Konfigurationen abrufen, wenn Sie die Konfigurationsfunktion mit `-?` aufrufen:  
 

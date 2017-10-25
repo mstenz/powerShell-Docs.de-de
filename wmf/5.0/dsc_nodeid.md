@@ -9,11 +9,9 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="separation-of-node-and-configuration-ids" class="xliff"></a>
-# Trennung von Knoten- und Konfigurations-ID
+# <a name="separation-of-node-and-configuration-ids"></a>Trennung von Knoten- und Konfigurations-ID
 
-<a id="overview" class="xliff"></a>
-## Übersicht
+## <a name="overview"></a>Übersicht
 
 Um bei Verwenden von DSC im Pullmodus eine flexiblere und bessere Erfahrung zu bieten, haben wir in dieser Version verschiedene Features hinzugefügt. Diese Features ermöglichen Ihnen ein flexibles Einrichten und Bereitstellen von Konfigurationen auf mehreren Knoten und zugleich das Nachverfolgen des Status und von Berichtsinformationen für jeden einzelnen Knoten. Diese Features sind wie folgt:
 

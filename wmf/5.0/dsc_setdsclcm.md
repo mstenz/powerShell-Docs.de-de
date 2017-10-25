@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="set-dsclocalconfigurationmanager-cmdlet-supports--force-parameter" class="xliff"></a>
-# Das Cmdlet „Set-DscLocalConfigurationManager“ unterstützt den „-force“-Parameter
+# <a name="set-dsclocalconfigurationmanager-cmdlet-supports--force-parameter"></a>Das Cmdlet „Set-DscLocalConfigurationManager“ unterstützt den „-force“-Parameter
 
 Wir haben dem Cmdlet „Set-DscLocalConfigurationManager“ die Unterstützung für einen neuen Parameter hinzugefügt. Dadurch kann der Benutzer die Metakonfiguration auf dem Computer deterministisch zurücksetzen, wenn andere Vorgänge wie die Konsistenzprüfung im Hintergrund ausgeführt werden, da dadurch alle ausgeführten Vorgänge angehalten werden.
 

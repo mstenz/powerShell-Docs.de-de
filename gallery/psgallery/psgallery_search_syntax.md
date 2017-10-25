@@ -10,28 +10,24 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="gallery-search-syntax" class="xliff"></a>
-# Syntax für die Katalogsuche
+# <a name="gallery-search-syntax"></a>Syntax für die Katalogsuche
 
 Der PowerShell-Katalog bietet ein Textsuchfeld in das Sie Wörter, Ausdrücke und Schlüsselwortausdrücke schreiben können, um die Suchergebnisse einzugrenzen.
 
-<a id="search-by-keywords" class="xliff"></a>
-## Suche nach Schlüsselwörtern
+## <a name="search-by-keywords"></a>Suche nach Schlüsselwörtern
 
     dsc azure sql
 
 Die Suche tut ihr Möglichstes, um relevante Dokumente zu finden, die alle drei Schlüsselwörter enthalten, und zugehörige Dokumente zurückzugeben.
 
-<a id="search-using-phrases-and-keywords" class="xliff"></a>
-## Suchen mithilfe von Ausdrücken und Schlüsselwörtern
+## <a name="search-using-phrases-and-keywords"></a>Suchen mithilfe von Ausdrücken und Schlüsselwörtern
 
     "azure sql" deployment
 
 Die Eingabe eines Ausdrucks zwischen Anführungszeichen ("") ändert den Suchvorgang. Es wird nun nach dem bestimmten Ausdruck statt nach einzelnen Schlüsselwörter gesucht.
 Übereinstimmende Dokumente sollten in der Regel den exakten Ausdruck "azure sql", einschließlich der Varianten bezüglich Groß-/Kleinschreibung enthalten, z.B. "Azure SQL" und sollten auch in der Regel das Wort „deployment“ (Bereitstellung) enthalten.
 
-<a id="filtering-on-fields" class="xliff"></a>
-## Filtern nach Feldern
+## <a name="filtering-on-fields"></a>Filtern nach Feldern
 
 Sie können nach einer bestimmten Element-ID (oder „Id“ oder „id“) suchen oder nach bestimmten anderen Feldern, indem Sie den Suchbegriffen den Feldnamen voranstellen.
 
@@ -39,8 +35,7 @@ Aktuell lauten die durchsuchbaren Felder „Id“, „Version“, „Tags“, �
 
 [Was ist der Unterschied zwischen ID und Titel? Die ID ist der Name, den Sie in der Konsole verwenden. Der Titel ist das, was am oberen Rand der Elementseite in den Suchergebnissen angezeigt wird.]
 
-<a id="examples" class="xliff"></a>
-## Beispiele
+## <a name="examples"></a>Beispiele
 
     ID:"PSReadline"
     id:"AzureRM.Profile"

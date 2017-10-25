@@ -9,15 +9,13 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="side-by-side-module-versioning-support-for-dsc-resources" class="xliff"></a>
-# Unterstützung der gleichzeitigen Ausführung unterschiedlicher Versionen für DSC-Ressourcen
+# <a name="side-by-side-module-versioning-support-for-dsc-resources"></a>Unterstützung der gleichzeitigen Ausführung unterschiedlicher Versionen für DSC-Ressourcen
 
 Module unterschiedlicher Versionen mit DSC-Ressourcen können parallel installiert werden, und DSC-Konfigurationen können eine bestimmte Version der Ressource verwenden, die auf dem System installiert ist.
 
 Weitere Informationen finden Sie unter [Verwenden von Ressourcen mit mehreren Versionen](https://msdn.microsoft.com/powershell/dsc/sxsresource).
 
-<a id="known-issues" class="xliff"></a>
-## Bekannte Probleme
+## <a name="known-issues"></a>Bekannte Probleme
 
 In dieser Version sind die folgenden Probleme bei paralleler Installation unterschiedlicher Versionen bekannt:
 

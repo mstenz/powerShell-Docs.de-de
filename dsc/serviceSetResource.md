@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-serviceset-resource" class="xliff"></a>
-# DSC-Ressource „ServiceSet“
+# <a name="dsc-serviceset-resource"></a>DSC-Ressource „ServiceSet“
 
 > Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
@@ -20,8 +19,7 @@ Die Ressource **ServiceSet** in Windows PowerShell DSC bietet einen Mechanismus 
 
 Verwenden Sie diese Ressource, wenn Sie verschiedene Dienste mit demselben Status konfigurieren möchten.
 
-<a id="syntax" class="xliff"></a>
-## Syntax
+## <a name="syntax"></a>Syntax
 
 ```
 Service [string] #ResourceName
@@ -37,8 +35,7 @@ Service [string] #ResourceName
 }
 ```
 
-<a id="properties" class="xliff"></a>
-## Eigenschaften
+## <a name="properties"></a>Eigenschaften
 
 |  Eigenschaft  |  Beschreibung   | 
 |---|---| 
@@ -52,8 +49,7 @@ Service [string] #ResourceName
 
 
 
-<a id="example" class="xliff"></a>
-## Beispiel
+## <a name="example"></a>Beispiel
 
 Die folgende Konfiguration startet die Dienste „Windows-Audio“ und „Remotedesktopdienste“.
 

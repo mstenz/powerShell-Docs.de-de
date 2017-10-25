@@ -10,11 +10,9 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="contact-gallery-administrators" class="xliff"></a>
-# Kontaktieren von Katalogadministratoren
+# <a name="contact-gallery-administrators"></a>Kontaktieren von Katalogadministratoren
 
-<a id="when-to-contact-gallery-administrators" class="xliff"></a>
-## Wann sollten Sie Katalogadministratoren kontaktieren?
+## <a name="when-to-contact-gallery-administrators"></a>Wann sollten Sie Katalogadministratoren kontaktieren?
 
 Katalogadministratoren sollten in den folgenden Fällen kontaktiert werden:
 
@@ -24,8 +22,7 @@ Katalogadministratoren sollten in den folgenden Fällen kontaktiert werden:
 4. Sie sind sich wegen eines Elementnamens mit anderen Benutzern uneinig und können die Meinungsverschiedenheit nicht beilegen, indem Sie die Benutzer kontaktieren.
 5. Sie wurden von Katalogadministratoren wegen Ihrer Elemente im Katalog kontaktiert und möchten antworten.
 
-<a id="how-to-contact-gallery-administrators" class="xliff"></a>
-## Wie sollten Sie Katalogadministratoren kontaktieren?
+## <a name="how-to-contact-gallery-administrators"></a>Wie sollten Sie Katalogadministratoren kontaktieren?
 
 1. Senden Sie uns eine E-Mail: cgadmin@microsoft.com.
 2. Wenn Sie den Missbrauch eines Elements melden möchten, können Sie den Link „Missbrauch melden“ unterhalb der Elementinformationen im linken Bereich verwenden.

@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="calling-dsc-resource-methods-directly" class="xliff"></a>
-# Direktes Aufrufen von DSC-Ressourcenmethoden
+# <a name="calling-dsc-resource-methods-directly"></a>Direktes Aufrufen von DSC-Ressourcenmethoden
 
 >Gilt für: Windows PowerShell 5.0
 
@@ -23,8 +22,7 @@ Beim Aufrufen des Cmdlets **Invoke-DscResource** geben Sie an, welche Methode od
 
 Im Folgenden finden Sie Beispiele für das direkte Aufrufen von Ressourcenmethoden:
 
-<a id="ensure-a-file-is-present" class="xliff"></a>
-## Sicherstellen, dass eine Datei vorhanden ist
+## <a name="ensure-a-file-is-present"></a>Sicherstellen, dass eine Datei vorhanden ist
 
 ```powershell
 $result = Invoke-DscResource -Name File -Method Set -Property @{
@@ -33,8 +31,7 @@ $result = Invoke-DscResource -Name File -Method Set -Property @{
 $result | fl
 ```
 
-<a id="test-that-a-file-is-present" class="xliff"></a>
-## Testen, ob eine Datei vorhanden ist
+## <a name="test-that-a-file-is-present"></a>Testen, ob eine Datei vorhanden ist
 
 ```powershell
 $result = Invoke-DscResource -Name File -Method Test -Property @{
@@ -43,8 +40,7 @@ $result = Invoke-DscResource -Name File -Method Test -Property @{
 $result | fl
 ```
 
-<a id="get-the-contents-of-file" class="xliff"></a>
-## Abrufen des Inhalts einer Datei
+## <a name="get-the-contents-of-file"></a>Abrufen des Inhalts einer Datei
 
 ```powershell
 $result = Invoke-DscResource -Name File -Method Get -Property @{
@@ -55,8 +51,7 @@ $result.ItemValue | fl
 
 >**Hinweis:** Das direkte Aufrufen von Methoden für zusammengesetzte Ressourcen wird nicht unterstützt. Rufen Sie stattdessen die Methoden der zugrunde liegenden Ressourcen auf, aus denen die zusammengesetzte Ressource besteht.
 
-<a id="see-also" class="xliff"></a>
-## Weitere Informationen
+## <a name="see-also"></a>Weitere Informationen
 - [Schreiben einer benutzerdefinierten DSC-Ressource mit MOF](authoringResourceMOF.md) 
 - [Schreiben einer benutzerdefinierten DSC-Ressource mit PowerShell-Klassen](authoringResourceClass.md)
 - [Debuggen von DSC-Ressourcen](debugResource.md)

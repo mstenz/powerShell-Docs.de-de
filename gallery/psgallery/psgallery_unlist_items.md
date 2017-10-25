@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="unlisting-items" class="xliff"></a>
-# Entfernen von Elementen aus der Liste
+# <a name="unlisting-items"></a>Entfernen von Elementen aus der Liste
 
 **Weshalb ist keine Option zum Entfernen von Elementen aus dem PowerShell-Katalog verfügbar?**
 

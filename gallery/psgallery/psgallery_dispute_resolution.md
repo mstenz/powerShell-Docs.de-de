@@ -10,13 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dispute-resolution" class="xliff"></a>
-# Beilegung von Streitigkeiten
+# <a name="dispute-resolution"></a>Beilegung von Streitigkeiten
 
 Dieses Dokument enthält eine empfohlene Vorgehensweise zur Beilegung von Streitigkeiten zwischen Communitymitgliedern und anderen Herausgebern im PowerShell-Katalog.
 
-<a id="process" class="xliff"></a>
-## Prozess
+## <a name="process"></a>Prozess
 
 1. Kontaktieren Sie die Besitzer des Elements, bei dem es Unstimmigkeiten gibt, über den Link **Besitzer kontaktieren** auf der Seite mit den Elementdetails.
 Erläutern Sie Ihr Problem höflich und direkt.
@@ -25,8 +23,7 @@ Erläutern Sie Ihr Problem höflich und direkt.
 Das PowerShellGallery.com-Supportteam wird sich an Ihren Gesprächen beteiligen und versuchen, eine Lösung zu finden.
 
 
-<a id="prohibited-use" class="xliff"></a>
-## Unerlaubte Nutzung
+## <a name="prohibited-use"></a>Unerlaubte Nutzung
 
 Folgende Elemente und Vorgänge sind im öffentlichen PowerShell-Katalog nicht zulässig. Die entsprechenden Elemente werden umgehend und ohne Rücksprache entfernt.  Die Elementbesitzer werden benachrichtigt, wenn ihre Elemente entfernt werden.
 

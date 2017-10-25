@@ -10,13 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-<a id="performrequiredconfigurationchecks-method-of-the-msftdsclocalconfigurationmanager-class" class="xliff"></a>
-# PerformRequiredConfigurationChecks-Methode der MSFT_DSCLocalConfigurationManager-Klasse
+# <a name="performrequiredconfigurationchecks-method-of-the-msftdsclocalconfigurationmanager-class"></a>PerformRequiredConfigurationChecks-Methode der MSFT_DSCLocalConfigurationManager-Klasse
 
 Startet eine Konsistenzprüfung unter Verwendung des Taskplaners.
 
-<a id="syntax" class="xliff"></a>
-Syntax
+<a name="syntax"></a>Syntax
 ------
 
 ```mof
@@ -25,8 +23,7 @@ uint32 PerformRequiredConfigurationChecks(
 );
 ```
 
-<a id="parameters" class="xliff"></a>
-Parameter
+<a name="parameters"></a>Parameter
 ----------
 
 *Flags* \[in\]  
@@ -39,27 +36,23 @@ Eine Bitmaske, die den Typ der auszuführenden Konsistenzprüfung angibt. Die fo
 |**4** | Die Konfiguration sollte von dem Pull-Server abgerufen werden, der in der Metakonfiguration für den Knoten angegeben ist. Dieser Wert sollte immer mit **1** kombiniert werden, um einen Wert von **5** zu erzielen. |
 |**8** | Senden des Status an den Berichtsserver. |
 
-<a id="return-value" class="xliff"></a>
-## Rückgabewert
+## <a name="return-value"></a>Rückgabewert
 ------------
 
 Gibt bei Erfolg null zurück, andernfalls einen Fehlercode.
 
-<a id="remarks" class="xliff"></a>
-## Hinweise
+## <a name="remarks"></a>Hinweise
 
 Dies ist eine statische Methode.
 
-<a id="requirements" class="xliff"></a>
-## Anforderungen
+## <a name="requirements"></a>Anforderungen
 ------------
 >**MOF:** DscCore.mof
 
 >**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 
-<a id="see-also" class="xliff"></a>
-## Siehe auch
+## <a name="see-also"></a>Siehe auch
 
 
 [**MSFT_DSCLocalConfigurationManager-Klasse**](msft-dsclocalconfigurationmanager.md)
