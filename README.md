@@ -27,3 +27,8 @@ Beiträge zu diesem Repository werden aktiv über [Pullanforderungen](https://he
 Weitere Informationen zu Beiträgen finden Sie in unserem [Handbuch über Beiträge](CONTRIBUTING.md).
 Lesen Sie sich den [-Styleguide für Entwürfe](./STYLE.md) durch, bevor Sie Beiträge erstellen.
 Verwenden Sie die Vorlagen für Probleme und Pullanforderungen, um die Dokumentation über Versionen hinweg konsistent zu halten. 
+
+## <a name="licenses"></a>Lizenzen
+
+Es gibt zwei Lizenzdateien für dieses Projekt. Die MIT-Lizenz gilt für den Code, der in diesem Repository enthalten ist.
+Die Creative Commons-Lizenz gilt für die Dokumentation. 

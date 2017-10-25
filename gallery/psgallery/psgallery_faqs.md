@@ -1,17 +1,14 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: PowerShell, Cmdlet, Katalog
-ms.date: 2016-10-14
-contributor: manikb
+ms.date: 2017-06-12
+contributor: JKeithB
+ms.topic: conceptual
+keywords: gallery,powershell,cmdlet,psgallery
 title: "Häufig gestellte Fragen | MSDN"
-ms.technology: powershell
-ms.openlocfilehash: c352fe48c5833e9bbb2c86e6b23037a4a8f84596
-ms.sourcegitcommit: 6d27d6db5ab0e2d5b6c7229e2e2d2e57915ea22d
-translationtype: HT
+ms.openlocfilehash: 80aaaa5e50e1bd85b93df721a4859e3020d1f315
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="frequently-asked-questions"></a>Häufig gestellte Fragen
 
@@ -172,3 +169,4 @@ Details hierzu finden Sie unter [Verwalten von Elementbesitzern](Managing-Item-O
 ## <a name="how-do-i-deal-with-an-item-owner-who-is-violating-my-item-license"></a>Wie gehe ich mit einem Elementbesitzer um, der meine Elementlizenz verletzt?
 
 Wir möchten die Zusammenarbeit in der PowerShell-Community fördern, um mögliche Rechtsstreitigkeiten zu beheben, die zwischen dem Elementbesitzern auftreten können.  Wir haben einen [Prozess zur Beilegung von Streitigkeiten](psgallery_dispute_resolution.md) entworfen, und bitten Sie, diesen zu befolgen, bevor die Administratoren von PowerShellGallery.com eingeschaltet werden.
+

@@ -1,15 +1,14 @@
 ---
-title: Verschachteln von Konfigurationen
-ms.date: 2017-03-27
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: carmonm
-ms.prod: powershell
-ms.openlocfilehash: 3afc4c87b1bc54e5f251a3a54eab5f448900f124
-ms.sourcegitcommit: 65250232157bb1c742d7d385933b8abc24a570fb
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: Verschachteln von Konfigurationen
+ms.openlocfilehash: 4de53b94056df46d74923dda56e02841cfac2cd1
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="nesting-dsc-configurations"></a>Verschachteln von DSC-Konfigurationen
 
@@ -59,3 +58,4 @@ Die Eigenschaften im Ressourcenblock `NestedConfig` (**CopyFrom** und **CopyTo**
 ## <a name="see-also"></a>Weitere Informationen
 
 - [Zusammengesetzte Ressourcen: Verwenden einer DSC-Konfiguration als Ressource](authoringResourceComposite.md)
+

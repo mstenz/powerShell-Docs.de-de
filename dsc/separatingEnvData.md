@@ -1,15 +1,14 @@
 ---
-title: Trennen von Konfiguration und Umgebungsdaten
-ms.date: 2016-03-31
-keywords: powershell,DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: carmonm
-ms.prod: powershell
-ms.openlocfilehash: b20aa1f15253ba948c3aa7cf46686c8d206a3a6f
-ms.sourcegitcommit: 65250232157bb1c742d7d385933b8abc24a570fb
-translationtype: HT
+ms.topic: conceptual
+keywords: dsc,powershell,configuration,setup
+title: Trennen von Konfiguration und Umgebungsdaten
+ms.openlocfilehash: df3cfea08419c37716b408fdbd6b43e78be2331c
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="separating-configuration-and-environment-data"></a>Trennen von Konfiguration und Umgebungsdaten
 
@@ -314,3 +313,4 @@ configuration WebsiteConfig
 - [Using configuration data (Verwenden von Konfigurationsdaten)](configData.md)
 - [Optionen für Anmeldeinformationen in den Konfigurationsdaten](configDataCredentials.md)
 - [DSC-Konfigurationen](configurations.md)
+
