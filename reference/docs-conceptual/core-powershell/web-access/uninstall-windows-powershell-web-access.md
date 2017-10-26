@@ -38,7 +38,7 @@ Mit den in diesem Abschnitt beschriebenen Verfahren können Sie Folgendes deinst
 
     -   Klicken Sie auf dem Windows-Desktop mit der rechten Maustaste auf der Taskleiste auf **Windows PowerShell**.
 
-    -   Klicken Sie auf der Windows-Startseite**** auf **Windows PowerShell**.
+    -   Klicken Sie auf der Windows **Startseite** auf **Windows PowerShell**.
 
 2. Geben Sie `Uninstall-PswaWebApplication` ein, und drücken Sie dann die **EINGABETASTE**.
    1. Wenn Sie Ihre eigenen, benutzerdefinierten Websitenamen angegeben haben, fügen Sie dem Befehl den `-WebsiteName`-Parameter hinzu, und geben Sie den Namen der Website an.
@@ -106,7 +106,7 @@ Mit den in diesem Abschnitt beschriebenen Verfahren können Sie die Windows Powe
 
     -   Starten Sie auf dem Windows-Desktop den Server-Manager, indem Sie in der Windows-Taskleiste auf **Server-Manager** klicken.
 
-    -   Klicken Sie auf der Windows-Startseite**** auf **Server-Manager**.
+    -   Klicken Sie auf der Windows-**Startseite** auf **Server-Manager**.
 
 1. Klicken Sie im Menü **Verwalten** auf **Rollen und Funktionen entfernen**.
 

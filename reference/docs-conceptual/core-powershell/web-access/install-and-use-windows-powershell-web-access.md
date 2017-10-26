@@ -122,7 +122,7 @@ Sie können die Konfiguration der Windows PowerShell Web Access-Webanwendung dur
 
     - Klicken Sie auf dem Windows-Desktop mit der rechten Maustaste auf der Taskleiste auf **Windows PowerShell**.
 
-    - Klicken Sie auf der Windows-Startseite**** auf **Windows PowerShell**.
+    - Klicken Sie auf der Windows-**Startseite** auf **Windows PowerShell**.
 
 2. Geben Sie Folgendes ein, und drücken Sie anschließend die **EINGABETASTE**.
 
@@ -155,7 +155,7 @@ In diesem Beispiel ergibt sich als Website für Windows PowerShell Web Access �
 
     - Klicken Sie auf dem Windows-Desktop mit der rechten Maustaste auf der Taskleiste auf **Windows PowerShell**.
 
-    - Klicken Sie auf der Windows-Startseite**** auf **Windows PowerShell**.
+    - Klicken Sie auf der Windows-**Startseite** auf **Windows PowerShell**.
 
 2. Geben Sie Folgendes ein, und drücken Sie anschließend die **EINGABETASTE**.
 
@@ -177,7 +177,7 @@ In diesem Beispiel ergibt sich als Website für Windows PowerShell Web Access �
 
     - Starten Sie auf dem Windows-Desktop den Server-Manager, indem Sie in der Windows-Taskleiste auf **Server-Manager** klicken. Klicken Sie im Menü **Tools** im Server-Manager auf **Internetinformationsdienste-Manager (IIS)**.
 
-    - Klicken Sie auf der Windows-Startseite**** auf **Server-Manager**.
+    - Klicken Sie auf der Windows-**Startseite** auf **Server-Manager**.
 
 4. Erweitern Sie im IIS-Manager-Strukturbereich den Knoten für den Server, auf dem Windows PowerShell Web Access installiert ist, bis der Ordner **Sites** sichtbar ist. Erweitern Sie den Ordner **Sites**.
 
@@ -242,7 +242,7 @@ Sie können das Windows PowerShell Web Access-Gateway auf einem Server mit Windo
 
     - Starten Sie auf dem Windows-Desktop den Server-Manager, indem Sie in der Windows-Taskleiste auf **Server-Manager** klicken.
 
-    - Klicken Sie auf der Windows-Startseite**** auf **Server-Manager**.
+    - Klicken Sie auf der Windows-**Startseite** auf **Server-Manager**.
 
 2. Klicken Sie im Menü **Verwalten** auf **Rollen und Funktionen hinzufügen**.
 
@@ -355,7 +355,7 @@ Die Anweisungen in diesem Abschnitt gelten für die Installation der Windows Pow
 
         c:\windows\system32\icacls.exe $authorizationFile
 
-13. Klicken Sie, während die neue Website im IIS-Manager-Strukturbereich ausgewählt ist, im Aktionsbereich **** auf **Start** , um die Website zu starten.
+13. Klicken Sie, während die neue Website im IIS-Manager-Strukturbereich ausgewählt ist, im **Aktionsbereich** auf **Start** , um die Website zu starten.
 
 14. Öffnen Sie eine Browsersitzung auf einem Clientgerät. Weitere Informationen zu unterstützten Browsern und Geräten finden Sie in diesem Dokument unter [Unterstützung für Browser und Clientgeräte](#browser-and-client-device-support).
 

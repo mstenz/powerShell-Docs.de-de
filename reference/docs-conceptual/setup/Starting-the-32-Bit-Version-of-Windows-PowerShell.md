@@ -18,7 +18,7 @@ Wählen Sie eines der folgenden Verfahren, um eine 32-Bit-Version von Windows Po
 
 #### <a name="in-windows-server-2012-r2"></a>In Windows Server® 2012 R2
 
-- Geben Sie im**** Startbildschirm **Windows PowerShell (x86)** ein. Klicken Sie auf die Kachel **Windows PowerShell x86**.
+- Geben Sie im **Startbildschirm** **Windows PowerShell (x86)** ein. Klicken Sie auf die Kachel **Windows PowerShell x86**.
 
 - Wählen Sie im **Server-Manager** im Menü **Extras** den Eintrag **Windows PowerShell (x86)** aus.
 
@@ -38,7 +38,7 @@ Wählen Sie eines der folgenden Verfahren, um eine 32-Bit-Version von Windows Po
 
 #### <a name="in-windows-81"></a>In Windows® 8.1
 
-- Geben Sie im**** Startbildschirm **Windows PowerShell (x86)** ein. Klicken Sie auf die Kachel **Windows PowerShell x86**.
+- Geben Sie im **Startbildschirm** **Windows PowerShell (x86)** ein. Klicken Sie auf die Kachel **Windows PowerShell x86**.
 
 - Falls Sie die [Remoteserver-Verwaltungstools](http://go.microsoft.com/fwlink/?LinkID=304145) für Windows 8.1 ausführen, können Sie Windows PowerShell x86 auch im Server-Manager-Menü **Extras** öffnen. Wählen Sie **Windows PowerShell (x86)** aus.
 

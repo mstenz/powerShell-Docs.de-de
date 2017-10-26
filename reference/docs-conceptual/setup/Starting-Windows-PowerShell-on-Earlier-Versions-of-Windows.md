@@ -23,7 +23,7 @@ Mit den folgenden Methoden können Sie die installierte Version von Windows Powe
 
 - Klicken Sie auf **Start**, geben Sie **PowerShell** ein, und klicken Sie dann auf **Windows PowerShell**.
 
-- Klicken Sie im Menü **** **Start** auf **Alle Programme**, danach auf **Zubehör**, anschließend auf den Ordner **Windows PowerShell** und schließlich auf **Windows PowerShell**.
+- Klicken Sie im **Menü** **Start** auf **Alle Programme**, danach auf **Zubehör**, anschließend auf den Ordner **Windows PowerShell** und schließlich auf **Windows PowerShell**.
 
 #### <a name="at-the-command-prompt"></a>An der Eingabeaufforderung
 
@@ -46,7 +46,7 @@ Verwenden Sie eine der folgenden Methoden, um Windows PowerShell ISE zu starten:
 
 - Klicken Sie auf **Start**, geben Sie **ISE** ein, und klicken Sie dann auf **Windows PowerShell ISE**.
 
-- Klicken Sie im Menü **** **Start** auf **Alle Programme**, danach auf **Zubehör**, anschließend auf den Ordner **Windows PowerShell** und schließlich auf **Windows PowerShell ISE**.
+- Klicken Sie im **Menü** **Start** auf **Alle Programme**, danach auf **Zubehör**, anschließend auf den Ordner **Windows PowerShell** und schließlich auf **Windows PowerShell ISE**.
 
 #### <a name="at-the-command-prompt"></a>An der Eingabeaufforderung
 

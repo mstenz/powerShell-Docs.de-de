@@ -131,7 +131,7 @@ Die separaten Befehls- und Ausgabebereiche, die in der ersten Version der Window
 
 - Modi für Linien- und Blockauswahl
 
-- Beibehaltung von über die Befehlszeile eingegebenem Inhalt, wenn Sie mithilfe der NACH-OBEN-TASTE**** den Verlauf in der Konsole anzeigen
+- Beibehaltung von über die Befehlszeile eingegebenem Inhalt, wenn Sie mithilfe der **NACH-OBEN-TASTE** den Verlauf in der Konsole anzeigen
 
 **Welchen Nutzen bietet diese Änderung?**
 

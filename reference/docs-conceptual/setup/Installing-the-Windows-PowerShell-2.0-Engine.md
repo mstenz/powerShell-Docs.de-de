@@ -25,7 +25,7 @@ Unter Windows 8.1 und Windows 8 ist die Funktion Windows PowerShell 2.0 Engine s
 
 #### <a name="to-turn-on-net-framework-35"></a>So aktivieren Sie .NET Framework 3.5
 
-1. Geben Sie **Windows-Features** auf dem**** Startbildschirm ein.
+1. Geben Sie **Windows-Features** auf dem **Startbildschirm ein**.
 
 2. Klicken Sie auf der Leiste **Apps** auf **Einstellungen**, und klicken Sie dann auf **Windows-Features aktivieren oder deaktivieren**.
 
@@ -35,7 +35,7 @@ Unter Windows 8.1 und Windows 8 ist die Funktion Windows PowerShell 2.0 Engine s
 
 #### <a name="to-turn-the-windows-powershell-20-engine-on-and-off"></a>Aktivieren und Deaktivieren von Windows PowerShell 2.0 Engine
 
-1. Geben Sie **Windows-Features** auf dem**** Startbildschirm ein.
+1. Geben Sie **Windows-Features** auf dem **Startbildschirm ein**.
 
 2. Klicken Sie auf der Leiste **Apps** auf **Einstellungen**, und klicken Sie dann auf **Windows-Features aktivieren oder deaktivieren**.
 
