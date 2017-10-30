@@ -9,7 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-# <a name="just-enough-administration-jea"></a>Just Enough Administration (JEA)
+# <a name="just-enough-administration-jea"></a>Verwaltung Just Enough (JEA)
 Just Enough Administration ist ein neues WMF 5.0-Feature, das mithilfe von PowerShell-Remoting eine rollenbasierte Verwaltung ermöglicht.  Es erweitert die vorhandene eingeschränkte Endpunktinfrastruktur, indem Nicht-Administratoren das Ausführen bestimmter Befehle, Skripts und ausführbarer Dateien als Administrator erlaubt wird.  Dadurch können Sie die Anzahl der Volladministratoren in Ihrer Umgebung verringern und die Sicherheit erhöhen.  Mit JEA kann alles verwaltet werden, was mit PowerShell verwaltet werden kann, und zwar mit höherer Sicherheit.  In [dieser Anleitung](http://aka.ms/JEA) finden Sie eine detaillierte Erläuterung von Just Enough Administration.
 
 Im Gegensatz zu alten eingeschränkten Endpunkten ist JEA sowohl leistungsfähig als auch einfach zu konfigurieren.  Benutzeroptionen in JEA können präzise gesteuert werden. Das geht soweit, dass die Parametersätze und Werte einschränkbar sind, die für einen bestimmten Befehl angegeben werden können. Die Aktionen des Benutzers werden im Kontext eines einmaligen virtuellen Kontos ausgeführt, das über die Rechte zum Ausführen der Administratoraktionen verfügt.  Die Befehle, die vom Benutzer aufgerufen werden, können für Sicherheitsüberwachungen protokolliert werden.
