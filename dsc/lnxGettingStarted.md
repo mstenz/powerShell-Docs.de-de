@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: "Erste Schritte mit DSC für Linux"
-ms.openlocfilehash: f88167cd039077574c3a84aa07ba78186adfa181
-ms.sourcegitcommit: 9a5da3f739b1eebb81ede58bd4fc8037bad87224
+ms.openlocfilehash: fd4820d27de5958a325032ca3fc202a521c131b4
+ms.sourcegitcommit: 28e71b0ae868014523631fec3f5417de751944f3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/16/2017
+ms.lasthandoff: 10/25/2017
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Erste Schritte mit DSC für Linux
 
@@ -18,11 +18,11 @@ In diesem Thema werden die ersten Schritte mit PowerShell DSC für Linux erläut
 
 Die folgenden Linux-Betriebssystemversionen werden für DSC unterstützt.
 - CentOS 5, 6 und 7 (x86/x64)
-- Debian GNU/Linux 6 und 7 (x86/x64)
+- Debian GNU/Linux 6, 7 und 8 (x86/x64)
 - Oracle Linux 5, 6 und 7 (x86/x64)
 - Red Hat Enterprise Linux Server 5, 6 und 7 (x86/x64)
 - SUSE Linux Enterprise Server 10, 11 und 12 (x86/x64)
-- Ubuntu Server 12.04 LTS und 14.04 LTS (x86/x64)
+- Ubuntu Server 12.04 LTS, 14.04 LTS und 16.04 LTS (x86/x64)
 
 In der folgenden Tabelle werden die erforderlichen Paketabhängigkeiten für DSC für Linux beschrieben.
 
