@@ -1,22 +1,31 @@
 ---
-ms.date: 2017-06-12
+ms.date: 2017-10-31
 author: eslesar
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: "Schützen der MOF-Datei"
-ms.openlocfilehash: dc900f53c954637a407fbd026d24d20c2fdabf6e
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: f4ef2962710c7458ac947bf33270175a09de643c
+ms.sourcegitcommit: 4807ab554d55fdee499980835bcc279368b1df68
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="securing-the-mof-file"></a>Schützen der MOF-Datei
 
 >Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-DSC weist die Zielknoten an, welche Konfiguration sie aufweisen sollen, indem eine MOF-Datei mit den gewünschten Informationen an alle Knoten gesendet wird, auf denen der lokale Konfigurations-Manager (LCM) die gewünschte Konfiguration implementiert. Da diese Datei die Details der Konfiguration enthält, muss sie geschützt werden. Zu diesem Zweck können Sie den LCM die Anmeldeinformationen eines Benutzers überprüfen lassen. In diesem Thema wird beschrieben, wie diese Anmeldeinformationen sicher an den Zielknoten übertragen werden, indem sie mithilfe von Zertifikaten verschlüsselt werden.
+DSC verwaltet die Konfiguration von Serverknoten durch Anwenden der in einer MOF-Datei gespeicherten Informationen; die Implementierung des gewünschten Endzustands übernimmt der lokale Konfigurations-Manager (LCM).
+Da diese Datei die Details der Konfiguration enthält, muss sie geschützt werden.
+In diesem Thema wird beschrieben, auf welche Weise sichergestellt werden kann, dass die Datei auf dem Zielknoten verschlüsselt wurde.
 
->**Hinweis:** In diesem Thema werden für die Verschlüsselung verwendete Zertifikate behandelt. Für die Verschlüsselung ist ein selbst signiertes Zertifikat ausreichend, da der private Schlüssel immer geheim ist und die Verschlüsselung die Vertrauenswürdigkeit des Dokuments nicht impliziert. Selbstsignierte Zertifikate sollten *nicht* zu Authentifizierungszwecken verwendet werden. Zum Zweck der Authentifizierung Sie sollten Sie ein Zertifikat von einer vertrauenswürdigen Zertifizierungsstelle verwenden.
+Seit PowerShell-Version 5.0 ist die gesamte MOF-Datei standardmäßig verschlüsselt, wenn sie mithilfe des Cmdlets **Start-DSCConfiguration** auf den Knoten angewendet wird.
+Das in diesem Artikel beschriebene Verfahren ist nur erforderlich, wenn eine Lösung unter Verwendung des Pulldienstprotokolls implementiert wird und keine Zertifikate verwaltet werden, um sicherzustellen, dass vom Zielknoten heruntergeladene Konfigurationen vom System vor der Anwendung entschlüsselt und gelesen werden können (betrifft beispielsweise den in Windows Server verfügbaren Pulldienst).
+Für bei [Azure Automation DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview) registrierte Knoten werden ohne anfallenden administrativen Mehraufwand automatisch Zertifikate installiert und verwaltet.
+
+>**Hinweis:** In diesem Thema werden für die Verschlüsselung verwendete Zertifikate behandelt.
+>Für die Verschlüsselung ist ein selbst signiertes Zertifikat ausreichend, da der private Schlüssel immer geheim ist und die Verschlüsselung die Vertrauenswürdigkeit des Dokuments nicht impliziert.
+>Selbstsignierte Zertifikate sollten *nicht* zu Authentifizierungszwecken verwendet werden.
+>Zum Zweck der Authentifizierung Sie sollten Sie ein Zertifikat von einer vertrauenswürdigen Zertifizierungsstelle verwenden.
 
 ## <a name="prerequisites"></a>Voraussetzungen
 
