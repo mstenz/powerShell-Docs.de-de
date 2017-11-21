@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: DSC-Konfigurationen
-ms.openlocfilehash: 3fdee72d5701433a3903697c5a0a32b112136592
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: b0868a276dbf5cdb566ce1f35a96b3372cf49be1
+ms.sourcegitcommit: 60c6f9d8cf316e6d5b285854e6e5641ac7648f3f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="dsc-configurations"></a>DSC-Konfigurationen
 
@@ -31,7 +31,6 @@ Configuration MyDscConfiguration {
     }
 } 
 
-MyDscConfiguration 
 ```
 
 Speichern Sie das Skript als PS1-Datei.
@@ -64,7 +63,6 @@ Configuration MyDscConfiguration {
     }
 }
 
-MyDscConfiguration 
 ```
 
 Bei diesem Beispiel geben Sie den Namen des Knotens an, indem Sie ihn als **ComputerName**-Parameter übergeben, wenn Sie die Konfiguration kompilieren. Der Standardname ist „localhost“.
@@ -99,7 +97,7 @@ MyDscConfiguration
     Directory: C:\users\default\Documents\DSC Configurations\MyDscConfiguration
 Mode                LastWriteTime         Length Name                                                                                              
 ----                -------------         ------ ----                                                                                         
--a----       10/23/2015   4:32 PM           2842 TEST-PC1.mof
+-a----       10/23/2015   4:32 PM           2842 localhost.mof
 ```  
 
 Wenn die Konfiguration wie im zweiten Beispiel einen Parameter verwendet, muss dieser zur Kompilierungszeit angegeben werden. Das sieht dann so aus:
@@ -137,7 +135,6 @@ Configuration DependsOnExample {
     }
 }
 
-DependsOnExample
 ```
 
 ## <a name="using-new-resources-in-your-configuration"></a>Verwenden neuer Ressourcen in Ihrer Konfiguration

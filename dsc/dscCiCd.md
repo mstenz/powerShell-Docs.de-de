@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: "Erstellen einer Pipeline für Continuous Integration und Continuous Deplyoment mit DSC"
-ms.openlocfilehash: 60b41c5d279560d0121372e593879fe03cd52f7a
-ms.sourcegitcommit: 4807ab554d55fdee499980835bcc279368b1df68
+ms.openlocfilehash: baa56088d83fba56d3a19cff7954d3081f341f9a
+ms.sourcegitcommit: 60c6f9d8cf316e6d5b285854e6e5641ac7648f3f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>Erstellen einer Pipeline für Continuous Integration und Continuous Deplyoment mit DSC
 
@@ -353,7 +353,7 @@ Mit diesem Buildschritt werden die Komponententests im Pester-Skript ausgeführt
     **\Integration\**
     ```
 
-1. Legen Sie **TargetFolder** auf `$(BuildArtifactStagingDirectory)\` fest.
+1. Legen Sie **TargetFolder** auf `$(Build.ArtifactStagingDirectory)\` fest.
 
 Mit diesem Schritt werden der Build und die Testskripts in das Stagingverzeichnis kopiert, sodass im nächsten Schritt eine Veröffentlichung als Buildartefakte erfolgen kann.
 
