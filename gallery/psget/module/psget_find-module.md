@@ -4,39 +4,39 @@ contributor: manikb
 ms.topic: reference
 keywords: gallery,powershell,cmdlet,psget
 title: Find-Module
-ms.openlocfilehash: 5c878a04d186f7f5970fba9e7f3cdb480cef21f6
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 65c466909c007ed08c3fa978f78483983b00ba73
+ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 12/05/2017
 ---
-# <a name="find-module"></a><span data-ttu-id="2a372-103">Find-Module</span><span class="sxs-lookup"><span data-stu-id="2a372-103">Find-Module</span></span>
-<span data-ttu-id="2a372-104">Sucht Module in einem Onlinekatalog, die mit angegebenen Kriterien übereinstimmen</span><span class="sxs-lookup"><span data-stu-id="2a372-104">Finds modules from an online gallery that match specified criteria.</span></span>
+# <a name="find-module"></a><span data-ttu-id="69d79-103">Find-Module</span><span class="sxs-lookup"><span data-stu-id="69d79-103">Find-Module</span></span>
+<span data-ttu-id="69d79-104">Sucht Module in einem Onlinekatalog, die mit angegebenen Kriterien übereinstimmen</span><span class="sxs-lookup"><span data-stu-id="69d79-104">Finds modules from an online gallery that match specified criteria.</span></span>
 
-## <a name="description"></a><span data-ttu-id="2a372-105">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="2a372-105">Description</span></span>
-<span data-ttu-id="2a372-106">Find-Module erkennt die Module aus registrierten Repositorys, die mit den angegebenen Kriterien übereinstimmen.</span><span class="sxs-lookup"><span data-stu-id="2a372-106">Find-Module discovers the modules from registered repositories that matches the specified criteria.</span></span>
-<span data-ttu-id="2a372-107">Für jedes gefundene Modul gibt Find-Module ein PSRepositoryItemInfo-Objekt zurück, das optional an das Cmdlet Install-Module zum Installieren der Module übergeben werden kann.</span><span class="sxs-lookup"><span data-stu-id="2a372-107">For each module found, Find-Module returns a PSRepositoryItemInfo object which can optionally be piped to Install-Module for installing the modules.</span></span>
+## <a name="description"></a><span data-ttu-id="69d79-105">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="69d79-105">Description</span></span>
+<span data-ttu-id="69d79-106">Find-Module erkennt die Module aus registrierten Repositorys, die mit den angegebenen Kriterien übereinstimmen.</span><span class="sxs-lookup"><span data-stu-id="69d79-106">Find-Module discovers the modules from registered repositories that matches the specified criteria.</span></span>
+<span data-ttu-id="69d79-107">Für jedes gefundene Modul gibt Find-Module ein PSRepositoryItemInfo-Objekt zurück, das optional an das Cmdlet Install-Module zum Installieren der Module übergeben werden kann.</span><span class="sxs-lookup"><span data-stu-id="69d79-107">For each module found, Find-Module returns a PSRepositoryItemInfo object which can optionally be piped to Install-Module for installing the modules.</span></span>
 
-- <span data-ttu-id="2a372-108">Find-Module kann mit den Parametern „-Command“, „-DscResource“, „-RoleCapability“ und „-Includes“ den Modulinhalt filtern.</span><span class="sxs-lookup"><span data-stu-id="2a372-108">Find-Module can filter based on module contents with the -Command, -DscResource, -RoleCapability and -Includes parameters.</span></span>
-- <span data-ttu-id="2a372-109">Find-Module kann mit Versionsparametern filtern: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.</span><span class="sxs-lookup"><span data-stu-id="2a372-109">Find-Module can filter with version parameters: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.</span></span>
-  - <span data-ttu-id="2a372-110">Diese Parameter schließen sich gegenseitig aus, außer MinmimumVersion und MaximumVersion.</span><span class="sxs-lookup"><span data-stu-id="2a372-110">These parameters are mutually exclusive, except MinmimumVersion and MaximumVersion.</span></span>
-  - <span data-ttu-id="2a372-111">Diese Versionsparameter sind nur mit dem einzigen Modulnamen ohne Platzhalter erlaubt.</span><span class="sxs-lookup"><span data-stu-id="2a372-111">These version parameters are allowed only with the single module name without any wildcards.</span></span>
-  - <span data-ttu-id="2a372-112">Wenn der RequiredVersion-Parameter nicht angegeben wird, gibt Find-Module die neueste Version des Moduls zurück, das gleich oder größer als die angegebene minimale Version oder die neueste Version des Moduls ist, wenn keine Mindestversion angegeben wird.</span><span class="sxs-lookup"><span data-stu-id="2a372-112">If the RequiredVersion parameter is not specified, Find-Module returns the latest version of the module that is equal to or greater than the minimum version specified or the latest version of the module if no minimum version is specified.</span></span> 
-  - <span data-ttu-id="2a372-113">Wenn der RequiredVersion-Parameter angegeben ist, gibt Find-Module nur die Version des Moduls zurück, die genau mit der angegebenen Version übereinstimmt.</span><span class="sxs-lookup"><span data-stu-id="2a372-113">If the RequiredVersion parameter is specified, Find-Module only returns the version of module that exactly matches the specified version.</span></span>
-- <span data-ttu-id="2a372-114">„Find-Module“ kann Modulmetadaten anhand des „-Tag“-Parameters filtern.</span><span class="sxs-lookup"><span data-stu-id="2a372-114">Find-Module can filter on module metadata with the -Tag parameter</span></span>
-- <span data-ttu-id="2a372-115">Find-Module kann mit dem „-Filter“-Parameter nach einer repositoryspezifischen Suchsprache filtern.</span><span class="sxs-lookup"><span data-stu-id="2a372-115">Find-Module can filter on repository-specific search language with the -Filter parameter.</span></span>
-- <span data-ttu-id="2a372-116">Find-Module kann Module von allen oder einigen registrierten Repositorys filtern.</span><span class="sxs-lookup"><span data-stu-id="2a372-116">Find-Module can filter on modules from all or few of the registered repositories.</span></span>
+- <span data-ttu-id="69d79-108">Find-Module kann mit den Parametern „-Command“, „-DscResource“, „-RoleCapability“ und „-Includes“ den Modulinhalt filtern.</span><span class="sxs-lookup"><span data-stu-id="69d79-108">Find-Module can filter based on module contents with the -Command, -DscResource, -RoleCapability and -Includes parameters.</span></span>
+- <span data-ttu-id="69d79-109">Find-Module kann mit Versionsparametern filtern: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.</span><span class="sxs-lookup"><span data-stu-id="69d79-109">Find-Module can filter with version parameters: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.</span></span>
+  - <span data-ttu-id="69d79-110">Diese Parameter schließen sich gegenseitig aus, außer MinmimumVersion und MaximumVersion.</span><span class="sxs-lookup"><span data-stu-id="69d79-110">These parameters are mutually exclusive, except MinmimumVersion and MaximumVersion.</span></span>
+  - <span data-ttu-id="69d79-111">Diese Versionsparameter sind nur mit dem einzigen Modulnamen ohne Platzhalter erlaubt.</span><span class="sxs-lookup"><span data-stu-id="69d79-111">These version parameters are allowed only with the single module name without any wildcards.</span></span>
+  - <span data-ttu-id="69d79-112">Wenn der RequiredVersion-Parameter nicht angegeben wird, gibt Find-Module die neueste Version des Moduls zurück, das gleich oder größer als die angegebene minimale Version oder die neueste Version des Moduls ist, wenn keine Mindestversion angegeben wird.</span><span class="sxs-lookup"><span data-stu-id="69d79-112">If the RequiredVersion parameter is not specified, Find-Module returns the latest version of the module that is equal to or greater than the minimum version specified or the latest version of the module if no minimum version is specified.</span></span> 
+  - <span data-ttu-id="69d79-113">Wenn der RequiredVersion-Parameter angegeben ist, gibt Find-Module nur die Version des Moduls zurück, die genau mit der angegebenen Version übereinstimmt.</span><span class="sxs-lookup"><span data-stu-id="69d79-113">If the RequiredVersion parameter is specified, Find-Module only returns the version of module that exactly matches the specified version.</span></span>
+- <span data-ttu-id="69d79-114">„Find-Module“ kann Modulmetadaten anhand des „-Tag“-Parameters filtern.</span><span class="sxs-lookup"><span data-stu-id="69d79-114">Find-Module can filter on module metadata with the -Tag parameter</span></span>
+- <span data-ttu-id="69d79-115">Find-Module kann mit dem „-Filter“-Parameter nach einer repositoryspezifischen Suchsprache filtern.</span><span class="sxs-lookup"><span data-stu-id="69d79-115">Find-Module can filter on repository-specific search language with the -Filter parameter.</span></span>
+- <span data-ttu-id="69d79-116">Find-Module kann Module von allen oder einigen registrierten Repositorys filtern.</span><span class="sxs-lookup"><span data-stu-id="69d79-116">Find-Module can filter on modules from all or few of the registered repositories.</span></span>
 
-## <a name="cmdlet-syntax"></a><span data-ttu-id="2a372-117">Cmdlet-Syntax</span><span class="sxs-lookup"><span data-stu-id="2a372-117">Cmdlet syntax</span></span>
+## <a name="cmdlet-syntax"></a><span data-ttu-id="69d79-117">Cmdlet-Syntax</span><span class="sxs-lookup"><span data-stu-id="69d79-117">Cmdlet syntax</span></span>
 ```powershell
 Get-Command -Name Find-Module -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="2a372-118">Cmdlet-Onlinehilfe</span><span class="sxs-lookup"><span data-stu-id="2a372-118">Cmdlet online help reference</span></span>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="69d79-118">Cmdlet-Onlinehilfe</span><span class="sxs-lookup"><span data-stu-id="69d79-118">Cmdlet online help reference</span></span>
 
-[<span data-ttu-id="2a372-119">Find-Module</span><span class="sxs-lookup"><span data-stu-id="2a372-119">Find-Module</span></span>](http://go.microsoft.com/fwlink/?LinkID=398574)
+[<span data-ttu-id="69d79-119">Find-Module</span><span class="sxs-lookup"><span data-stu-id="69d79-119">Find-Module</span></span>](http://go.microsoft.com/fwlink/?LinkID=398574)
 
-## <a name="example-commands"></a><span data-ttu-id="2a372-120">Beispiele für Befehle</span><span class="sxs-lookup"><span data-stu-id="2a372-120">Example commands</span></span>
+## <a name="example-commands"></a><span data-ttu-id="69d79-120">Beispiele für Befehle</span><span class="sxs-lookup"><span data-stu-id="69d79-120">Example commands</span></span>
 ```powershell
 # Find a specific module
 Find-Module Azure
@@ -66,6 +66,9 @@ Find-Module -Name PSReadline -MinimumVersion 1.0.0.12 -MaximumVersion 1.0.0.13
 
 # Find a module with exact version
 Find-Module -Name AzureRM -RequiredVersion 1.3.2
+
+# Find a module with a specific prerelease version
+Find-Module -Name AzureRM -RequiredVersion 1.3.2-alpha -AllowPrerelease
 
 # Find a module from the specified repository
 Find-Module -Name Contoso -Repository MyLocalRepo
