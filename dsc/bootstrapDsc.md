@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Konfigurieren eines virtuellen Computers beim ersten Hochfahren mithilfe von DSC
-ms.openlocfilehash: a3592c50fa7f2232538fbec07129fac86c1d00b5
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: c793e36eb9caa194104f9dda2aa1d335b21b676c
+ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 12/05/2017
 ---
 >Gilt für: Windows PowerShell 5.0
 
@@ -21,7 +21,7 @@ Informationen dazu, wie Sie neue virtuelle Computer beim ersten Hochfahren in Po
 
 Um diese Beispiele auszuführen, benötigen Sie:
 
-- Eine startbare virtuelle Festplatte (VHD). Sie können ein ISO-Image mit einer Evaluierungsversion von Windows Server 2016 aus dem   [TechNet-Evaluierungscenter](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016) herunterladen. Anweisungen finden Sie zum Erstellen einer VHD aus einem ISO-Image finden Sie unter [Erstellen startbarer virtueller Festplatten](https://technet.microsoft.com/en-us/library/gg318049.aspx).
+- Eine startbare virtuelle Festplatte (VHD). Sie können ein ISO-Image mit einer Evaluierungsversion von Windows Server 2016 aus dem [TechNet-Evaluierungscenter](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016) herunterladen. Anweisungen finden Sie zum Erstellen einer VHD aus einem ISO-Image finden Sie unter [Erstellen startbarer virtueller Festplatten](https://technet.microsoft.com/en-us/library/gg318049.aspx).
 - Ein Hostcomputer, auf dem Hyper-V aktiviert ist. Informationen hierzu finden Sie unter [Übersicht über Hyper-V](https://technet.microsoft.com/library/hh831531.aspx).
 
 Mithilfe von DSC können Sie die Installation und Konfiguration von Software beim ersten Hochfahren eines Computers automatisieren.
@@ -83,7 +83,7 @@ Configuration SampleIISInstall
 Benennen Sie die Datei in `Pending.mof`um, und verschieben Sie sie an den richtigen Speicherort auf der virtuellen Festplatte. Verwenden Sie dazu das Cmdlet [Move-Item](https://technet.microsoft.comlibrary/hh849852.aspx). Beispiel:
 
     ```powershell
-        Move-Item -Path C:\DSCTest\SampleIISInstall\localhost.mof -Destination E:\Windows\Sytem32\Configuration\Pending.mof
+        Move-Item -Path C:\DSCTest\SampleIISInstall\localhost.mof -Destination E:\Windows\System32\Configuration\Pending.mof
     ```
 6. Heben Sie die VHD-Bereitstellung durch Aufrufen des Cmdlets [Dismount-VHD](https://technet.microsoft.com/library/hh848562.aspx) auf. Beispiel:
 

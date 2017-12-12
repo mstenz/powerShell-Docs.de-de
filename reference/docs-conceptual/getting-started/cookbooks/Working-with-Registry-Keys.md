@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "Arbeiten mit Registrierungsschlüsseln"
 ms.assetid: 91bfaecd-8684-48b4-ad86-065dfe6dc90a
-ms.openlocfilehash: efb2c016afa2212c2907c0740ad26c4e4cddd3af
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: e7c16fe5f03330da3ea8f60b141d9e35eed474b9
+ms.sourcegitcommit: cd5a1f054cbf9eb95c5242a995f9741e031ddb24
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="working-with-registry-keys"></a>Arbeiten mit Registrierungsschlüsseln
 Da Registrierungsschlüssel Elemente auf Windows PowerShell-Laufwerken sind, gleicht deren Verwendung der Arbeit mit Dateien und Ordnern. Ein wichtiger Unterschied besteht darin, dass jedes Element auf einem registrierungsbasierten Windows PowerShell-Laufwerk ein Container ist, genau wie ein Ordner auf einem Dateisystemlaufwerk. Registrierungseinträge und deren zugehörige Werte sind jedoch Eigenschaften der Elemente, nicht unterschiedliche Elemente.
@@ -49,7 +49,7 @@ Diese Befehle listen nur die Elemente auf, die sich unmittelbar unter HKCU: befi
 Get-ChildItem -Path hkcu:\ -Recurse
 ```
 
-**Get-ChildItem** stellt mit den Parametern **Path**, **Filter**, **Include** und **Exclude** komplexe Filterfunktionen zur Verfügung, die allerdings nur auf Namen basieren. Zum Durchführen komplexer Filterung basierend auf anderen Eigenschaften verwenden Sie das Cmdlet **Where-Object**. Der folgende Befehl sucht alle Schlüssel in „HKCU:\\Software“, die nicht mehr als einen Unterschlüssel und zudem genau vier Werte enthalten:
+**Get-ChildItem** stellt mit den Parametern **Path**, **Filter**, **Include** und **Exclude** komplexe Filterfunktionen zur Verfügung, die allerdings nur auf Namen basieren. Zum Durchführen einer komplexen Filterung basierend auf anderen Eigenschaften verwenden Sie das Cmdlet **Where-Object**. Der folgende Befehl sucht alle Schlüssel in „HKCU:\\Software“, die nicht mehr als einen Unterschlüssel und zudem genau vier Werte enthalten:
 
 ```
 Get-ChildItem -Path HKCU:\Software -Recurse | Where-Object -FilterScript {($_.SubKeyCount -le 1) -and ($_.ValueCount -eq 4) }
