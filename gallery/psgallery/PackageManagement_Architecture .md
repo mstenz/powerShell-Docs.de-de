@@ -10,5 +10,6 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 06/12/2017
 ---
-PackageManagement (alias OneGet) ist eine einheitliche Schnittstelle für Paketverwaltungssysteme und soll die Ermittlung, Installation und Inventarisierung von Software über einige geläufige PowerShell-Cmdlets ermöglichen. Details finden Sie unter PackageManagement auf [OneGet.org] (https://github.com/OneGet/oneget/blob/master/readme.md)
+
+PackageManagement (alias OneGet) ist eine einheitliche Schnittstelle für Paketverwaltungssysteme und soll die Ermittlung, Installation und Inventarisierung von Software über einige geläufige PowerShell-Cmdlets ermöglichen. Details finden Sie unter PackageManagement auf [OneGet.org](https://github.com/OneGet/oneget/blob/master/readme.md)
 
