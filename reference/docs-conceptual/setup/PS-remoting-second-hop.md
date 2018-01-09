@@ -2,11 +2,11 @@
 ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "Ausführen des zweiten Hops in PowerShell-Remoting"
-ms.openlocfilehash: f3b8280819e43bd67bd608ffd0ba9484c2bbc26c
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 2518409369a75a49b975b9b944320c1878819421
+ms.sourcegitcommit: 1a0a0928c1e3cae4e8df8d79b0737bd7ed6b4e47
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>Ausführen des zweiten Hops in PowerShell-Remoting
 
@@ -256,12 +256,12 @@ Anmeldeinformationen können innerhalb des **ScriptBlock**-Parameters für einen
 - erfordert keine spezielle Serverkonfiguration
 - funktioniert auf jedem Server mit WMF 2.0 oder höher
 
-## <a name="cons"></a>Nachteile
+### <a name="cons"></a>Nachteile
 
 - erfordert eine umständliche Codetechnik
 - Wenn WMF 2.0 ausgeführt wird, wird eine andere Syntax zum Übergeben von Argumenten an eine Remotesitzung benötigt.
 
-## <a name="example"></a>Beispiel
+### <a name="example"></a>Beispiel
 
 Das folgende Beispiel zeigt, wie Anmeldeinformationen in einem **Invoke-Command**-Skriptblock übergeben werden:
 
