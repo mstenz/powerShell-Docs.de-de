@@ -4,11 +4,11 @@ author: JKeithB
 ms.topic: reference
 keywords: wmf,powershell,setup
 title: "WMF 5.1 – Betriebssystemkompatibilität"
-ms.openlocfilehash: b8724538a03ab67529682b9efb29e3ab947339b5
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 04217c5abb0f04a5dc6b15cd956a632f7b84c9bb
+ms.sourcegitcommit: 5dbf78ba0db482efa79e31a0e4963f8cbeb3df54
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 12/15/2017
 ---
 # <a name="wmf-51-operating-system-compatibility"></a>WMF 5.1 – Betriebssystemkompatibilität #
 
@@ -33,4 +33,6 @@ ms.lasthandoff: 06/12/2017
 Über „Im Lieferumfang*“: Die Funktionen von WMF 5.0 waren in der ursprünglichen Version von Windows 10 RTM enthalten.
 Die Funktionen von WMF 5.1 waren in Windows Server 2016 und Windows 10 Anniversary Edition enthalten. WMF 5.1 gilt nicht für diese Betriebssysteme, das die Updates über Windows Update bereitgestellt werden.
 
+
+Beachten Sie, dass WMF nicht mit Windows ausgeliefert wird. WMF ist ein Upgradepaket, das eine Reihe von Windows-Funktionen für frühere Windows-Versionen bereitstellt. Dies ist wichtig, wenn Sie Hilfe zu einer dieser Funktionen benötigen, da die Versionen dieser Komponenten nicht denen entsprechen, die mit dem ursprünglichen Betriebssystem ausgeliefert wurden.
 

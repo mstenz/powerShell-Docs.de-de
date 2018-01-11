@@ -4,46 +4,56 @@ contributor: JKeithB
 ms.topic: conceptual
 keywords: gallery,powershell,cmdlet,psgallery
 title: "Registerkarte „Elemente“ | MSDN"
-ms.openlocfilehash: 8424c4729436a78fec3fdbb405591fcd3c6bc6a6
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 8704091542de5c19817ab0b4f77fd98987084b5d
+ms.sourcegitcommit: 1a0a0928c1e3cae4e8df8d79b0737bd7ed6b4e47
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 12/21/2017
 ---
-<a name="items-tab"></a>Registerkarte „Elemente“
-==========
+# <a name="items-tab"></a>Registerkarte „Elemente“
 
-Die Registerkarte „Elemente“ zeigt alle verfügbaren Elemente im PowerShell-Katalog an.
+Die Registerkarte [Elemente](https://www.powershellgallery.com/items) zeigt alle verfügbaren Elemente im PowerShell-Katalog an.
 
-Um nur die Module im PowerShell-Katalog anzuzeigen, klicken Sie in der Dropdownliste der Registerkarte „Elemente“ auf „Module“.  Wenn Sie nur Skripts im PowerShell-Katalog anzuzeigen, klicken Sie in der Dropdownliste der Registerkarte „Elemente“ auf „Skripts“.  
-
+Es gibt verschiedene Möglichkeiten, die Elemente zu filtern, zu sortieren und zu durchsuchen.
 Um weitere Details zu einem bestimmten Element anzuzeigen, klicken Sie auf das Element.
 
-Es gibt mehrere Methoden zum Sortieren der Elemente:
+## <a name="filter-by"></a>Filtern nach
 
-##<a name="filter-by"></a>Filtern nach##
-Der Abschnitt „Filtern nach“ ermöglicht es Benutzern die Ergebnisse nach Folgendem zu filtern:
-* Elementtyp:
-    * Module
-    * Scripts
-* Kategorie:
-    * Cmdlet
-    * DSC-Ressource
-    * Funktion
-    * Workflow
+Mit der Dropdownliste „Filtern nach“ können Benutzer die Ergebnisse nach folgenden Kriterien filtern:
+* Vorabversion einbeziehen
+* Nur stabile
 
-Hinweis: Filter sind inklusiv.  
-Beispiel: Ein Element, das jeweils Cmdlets und Funktionen erhält, erscheint, wenn entweder ein Cmdlet oder eine Funktion (oder beides) aktiviert ist.  Wenn nichts davon ausgewählt ist, wird das Element nicht angezeigt.  
-Wenn auf ähnliche Weise Kategorien ausgewählt werden, erscheinen nur Elemente, die eine dieser Kategorien enthält. **Elemente, die zu keiner dieser Kategorie gehören, werden nicht angezeigt.**
+Informationen zu „Vorabversion“ und „stabil“ finden Sie im PowerShell-Teamblog unter [Prerelease Versioning Added to PowerShellGet and PowerShell Gallery](https://blogs.msdn.microsoft.com/powershell/2017/12/05/prerelease-versioning-added-to-powershellget-and-powershell-gallery/) (Versionsverwaltung von Vorabversionen zu PowerShellGet und dem PowerShell-Katalog hinzugefügt).
 
-##<a name="sort-by"></a>Sortieren nach## 
-Die Dropdownliste „Sortieren nach“ erlaubt Benutzern, die Ergebnisse nach Folgendem zu sortieren:
-* Beliebtheit – Die Beliebtheit wird durch die Anzahl der Downloads bestimmt.
-* A-Z – Alphabetisch nach Elementname.
-* Aktuell – Elemente werden in der Reihenfolge des Veröffentlichungsdatums angezeigt.
+Mithilfe der Kontrollkästchen unter der Dropdownliste können Benutzer die Ergebnisse nach folgenden Kriterien filtern:
+* Elementtypen
+  - Modul
+  - Skript
+* Kategorien
+  - Cmdlet
+  - DSC-Ressource
+  - Funktion
+  - Rollenfunktion
+  - Workflow
 
+Um im PowerShell-Katalog nur Module anzuzeigen, aktivieren Sie unter „Elementtypen“ die Option „Module“.
+Um im PowerShell-Katalog nur Skripts anzuzeigen, aktivieren Sie unter „Elementtypen“ die Option „Skript“.
 
-##<a name="search-box"></a>Suchfeld##
-Mit dem Suchfeld können Benutzer Elemente nach Schlüsselwort suchen.  
-Weitere Details finden Sie unter [Search Syntax (Suchsyntax)](./psgallery_search_syntax.md).
+> [!NOTE]
+> Filter sind inklusiv.
+> Beispiel: Ein Element, das sowohl Cmdlets als auch Funktionen erhält, wird angezeigt, wenn entweder „Cmdlet“ oder „Funktion“ (oder beides) aktiviert ist.
+> Wenn nichts davon ausgewählt ist, wird das Element nicht angezeigt.
+> Wenn auf ähnliche Weise Kategorien ausgewählt werden, erscheinen nur Elemente, die eine dieser Kategorien enthält.
+> **Elemente, die zu keiner dieser Kategorie gehören, werden nicht angezeigt.**
 
+## <a name="sort-by"></a>Sortieren nach
+
+Mithilfe der Dropdownliste „Sortieren nach“ können Benutzer die Ergebnisse nach folgenden Kriterien filtern:
+* Beliebtheit: Die Beliebtheit wird durch die Anzahl der Downloads bestimmt.
+* A-Z: Alphabetisch nach Elementname.
+* Aktuell: Elemente werden in der Reihenfolge der Veröffentlichungsdaten angezeigt.
+
+## <a name="search-box"></a>Suchfeld
+
+Mit dem Suchfeld können Benutzer Elemente nach Schlüsselwort suchen.
+Weitere Informationen finden Sie unter [Syntax für die Katalogsuche](psgallery_search_syntax.md).

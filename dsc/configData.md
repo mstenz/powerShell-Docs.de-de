@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Verwenden von Konfigurationsdaten
-ms.openlocfilehash: a70cd8f0f6c24eb02743b02d198cebcc3d775756
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 60c6c2d5694a03275e1a08522bdcf4b1bc5bb068
+ms.sourcegitcommit: 60f06a06c2fce63024f3f4cbd7657b1dfe7fcb1a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="using-configuration-data-in-dsc"></a>Verwenden von Konfigurationsdaten in DSC
 
@@ -180,14 +180,14 @@ MyDscConfiguration -ConfigurationData .\MyData.psd1
 
 DSC stellt drei spezielle Variablen bereit, die in einem Skript verwendet werden können: **$AllNodes**, **$Node** und **$ConfigurationData**.
 
-- **$AllNodes** bezieht sich auf die gesamte, in **ConfigurationData** definierte Knotensammlung. Sie können die **AllNodes**-Sammlung mit **.Where()** und **.ForEach()**´filtern.
+- **$AllNodes** bezieht sich auf die gesamte, in **ConfigurationData** definierte Knotensammlung. Sie können die **AllNodes**-Sammlung mit **.Where()** und **.ForEach()** filtern.
 - **Nodes** bezieht sich auf einen bestimmten Eintrag in der **AllNodes**-Sammlung, nachdem sie mithilfe von **.Where()** oder **.ForEach()** gefiltert wurde.
 - **ConfigurationData** bezieht sich auf die gesamte Hashtabelle, die beim Kompilieren einer Konfiguration als Parameter übergeben wird.
 
 ## <a name="using-non-node-data"></a>Verwenden von Daten ohne Knoten
 
 Wie wir in den vorherigen Beispielen gesehen haben, kann die Hashtabelle **ConfigurationData** neben dem erforderlichen Schlüssel **AllNodes** weitere Schlüssel aufweisen.
-In den Beispielen in diesem Thema wurde nur ein einziger zusätzlicher Knoten namens `NonNodeData` verwendet. Sie können jedoch eine beliebige Anzahl von zusätzlichen Schlüsseln verwenden und diese nach Wunsch benennen.
+In den Beispielen in diesem Thema wurde nur ein einziger zusätzlicher Knoten namens `NonNodeData` verwendet. Sie können jedoch eine beliebige Anzahl von zusätzlichen Schlüsseln definieren und diese nach Wunsch benennen.
 
 Ein Beispiel für die Verwendung von Nicht-Knotendaten finden Sie unter [Trennen von Konfigurations- und Umgebungsdaten](separatingEnvData.md).
 
