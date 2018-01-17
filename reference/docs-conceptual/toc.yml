@@ -11,8 +11,6 @@
               href: core-powershell/console/powershell.exe-command-line-help.md
             - name: Verwenden von Erweiterung mit der TAB-TASTE
               href: core-powershell/console/using-tab-expansion.md
-        - name: Konsolenhandbuch
-          href: core-powershell/console-guide.md
         - name: ISE
           href: core-powershell/ise/introducing-the-windows-powershell-ise.md
           items:
@@ -70,8 +68,6 @@
               href: core-powershell/ise/using-the-windows-powershell-ise.md
             - name: Referenz zum Windows PowerShell ISE-Objektmodell
               href: core-powershell/ise/windows-powershell-ise-object-model-reference.md
-        - name: ISE-Handbuch
-          href: core-powershell/ise-guide.md
         - name: Visual Studio Code
           items:
             - name: Verwendung von Visual Studio Code
@@ -211,8 +207,6 @@
           href: getting-started/getting-started-with-windows-powershell.md
         - name: Mehr Lernmaterial zu PowerShell
           href: getting-started/more-powershell-learning.md
-        - name: Grundlegendes zu Konzepten – Referenz
-          href: getting-started/understanding-concepts-reference.md
     - name: Setup
       href: ''
       items:
