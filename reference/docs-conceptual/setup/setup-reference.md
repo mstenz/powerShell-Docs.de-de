@@ -2,23 +2,24 @@
 ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Setup-Referenz
-ms.openlocfilehash: 60092e11f882d4e378da83dfb1eb1d2d5d79346b
-ms.sourcegitcommit: 9910675e8758042b5949c99b381a926d2b4e8c21
+ms.openlocfilehash: 39da5f2b524d908270066926ff2cdc56a665fe35
+ms.sourcegitcommit: 6aed37d7f0c9652ae09bb8c11928da7e4783ed7f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 01/10/2018
 ---
-# <a name="setup-guide"></a><span data-ttu-id="27b2c-103">Setup-Handbuch</span><span class="sxs-lookup"><span data-stu-id="27b2c-103">Setup Guide</span></span>
+# <a name="setup-guide"></a><span data-ttu-id="ea224-103">Setup-Handbuch</span><span class="sxs-lookup"><span data-stu-id="ea224-103">Setup Guide</span></span>
 
-- [<span data-ttu-id="27b2c-104">Installieren von Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="27b2c-104">Installing Windows PowerShell</span></span>](Installing-Windows-PowerShell.md)
-- [<span data-ttu-id="27b2c-105">Installieren des Windows PowerShell 2.0-Moduls</span><span class="sxs-lookup"><span data-stu-id="27b2c-105">Installing the Windows PowerShell 2.0 Engine</span></span>](Installing-the-Windows-PowerShell-2.0-Engine.md)
-- [<span data-ttu-id="27b2c-106">Installieren des Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="27b2c-106">Installing the Windows PowerShell SDK</span></span>](Installing-the-Windows-PowerShell-SDK.md)
-- [<span data-ttu-id="27b2c-107">Referenz zum Setup</span><span class="sxs-lookup"><span data-stu-id="27b2c-107">Setup Reference</span></span>](setup-reference.md)
-- [<span data-ttu-id="27b2c-108">Barrierefreiheit in Windows PowerShell ISE</span><span class="sxs-lookup"><span data-stu-id="27b2c-108">Accessibility in Windows PowerShell ISE</span></span>](Accessibility-in-Windows-PowerShell-ISE.md)
-- [<span data-ttu-id="27b2c-109">Starten der 32-Bit-Version von Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="27b2c-109">Starting the 32 Bit Version of Windows PowerShell</span></span>](Starting-the-32-Bit-Version-of-Windows-PowerShell.md)
-- [<span data-ttu-id="27b2c-110">Starten des Windows PowerShell 2.0-Moduls</span><span class="sxs-lookup"><span data-stu-id="27b2c-110">Starting the Windows PowerShell 2.0 Engine</span></span>](Starting-the-Windows-PowerShell-2.0-Engine.md)
-- [<span data-ttu-id="27b2c-111">Starten von Windows PowerShell unter früheren Versionen von Windows</span><span class="sxs-lookup"><span data-stu-id="27b2c-111">Starting Windows PowerShell on Earlier Versions of Windows</span></span>](Starting-Windows-PowerShell-on-Earlier-Versions-of-Windows.md)
-- [<span data-ttu-id="27b2c-112">Starten von Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="27b2c-112">Starting Windows PowerShell</span></span>](Starting-Windows-PowerShell.md)
-- [<span data-ttu-id="27b2c-113">Windows PowerShell-Systemanforderungen</span><span class="sxs-lookup"><span data-stu-id="27b2c-113">Windows PowerShell System Requirements</span></span>](Windows-PowerShell-System-Requirements.md)
-- [<span data-ttu-id="27b2c-114">WinRMSecurity</span><span class="sxs-lookup"><span data-stu-id="27b2c-114">WinRMSecurity</span></span>](WinRMSecurity.md)
-
+- [<span data-ttu-id="ea224-104">Installing PowerShell Core on macOS and Linux (Installieren von PowerShell Core unter macOS und Linux)</span><span class="sxs-lookup"><span data-stu-id="ea224-104">Installing PowerShell Core on macOS and Linux</span></span>](Installing-PowerShell-Core-on-macOS-and-Linux.md)
+- [<span data-ttu-id="ea224-105">Installing PowerShell Core on Windows (Installieren von PowerShell Core unter Windows)</span><span class="sxs-lookup"><span data-stu-id="ea224-105">Installing PowerShell Core on Windows</span></span>](Installing-PowerShell-Core-on-Windows.md)
+- [<span data-ttu-id="ea224-106">Installieren von Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="ea224-106">Installing Windows PowerShell</span></span>](Installing-Windows-PowerShell.md)
+- [<span data-ttu-id="ea224-107">Installieren des Windows PowerShell 2.0-Moduls</span><span class="sxs-lookup"><span data-stu-id="ea224-107">Installing the Windows PowerShell 2.0 Engine</span></span>](Installing-the-Windows-PowerShell-2.0-Engine.md)
+- [<span data-ttu-id="ea224-108">Installieren des Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="ea224-108">Installing the Windows PowerShell SDK</span></span>](Installing-the-Windows-PowerShell-SDK.md)
+- [<span data-ttu-id="ea224-109">Referenz zum Setup</span><span class="sxs-lookup"><span data-stu-id="ea224-109">Setup Reference</span></span>](setup-reference.md)
+- [<span data-ttu-id="ea224-110">Barrierefreiheit in Windows PowerShell ISE</span><span class="sxs-lookup"><span data-stu-id="ea224-110">Accessibility in Windows PowerShell ISE</span></span>](Accessibility-in-Windows-PowerShell-ISE.md)
+- [<span data-ttu-id="ea224-111">Starten der 32-Bit-Version von Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="ea224-111">Starting the 32 Bit Version of Windows PowerShell</span></span>](Starting-the-32-Bit-Version-of-Windows-PowerShell.md)
+- [<span data-ttu-id="ea224-112">Starten des Windows PowerShell 2.0-Moduls</span><span class="sxs-lookup"><span data-stu-id="ea224-112">Starting the Windows PowerShell 2.0 Engine</span></span>](Starting-the-Windows-PowerShell-2.0-Engine.md)
+- [<span data-ttu-id="ea224-113">Starten von Windows PowerShell unter früheren Versionen von Windows</span><span class="sxs-lookup"><span data-stu-id="ea224-113">Starting Windows PowerShell on Earlier Versions of Windows</span></span>](Starting-Windows-PowerShell-on-Earlier-Versions-of-Windows.md)
+- [<span data-ttu-id="ea224-114">Starten von Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="ea224-114">Starting Windows PowerShell</span></span>](Starting-Windows-PowerShell.md)
+- [<span data-ttu-id="ea224-115">Windows PowerShell-Systemanforderungen</span><span class="sxs-lookup"><span data-stu-id="ea224-115">Windows PowerShell System Requirements</span></span>](Windows-PowerShell-System-Requirements.md)
+- [<span data-ttu-id="ea224-116">WinRMSecurity</span><span class="sxs-lookup"><span data-stu-id="ea224-116">WinRMSecurity</span></span>](WinRMSecurity.md)
