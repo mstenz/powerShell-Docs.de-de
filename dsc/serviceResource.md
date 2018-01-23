@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: "DSC-Ressource „Service“"
-ms.openlocfilehash: 611729e5d971ebaf15ac947454cffadc6797927b
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: a549530edc19496a68c036fecbd18b0072cc6d74
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="dsc-service-resource"></a>DSC-Ressource „Service“
 
@@ -48,7 +47,7 @@ Service [string] #ResourceName
 | Beschreibung | Gibt die Beschreibung des Zieldiensts an.| 
 | DisplayName | Gibt den Anzeigenamen des Zieldiensts an.| 
 | Ensure | Gibt an, ob der Zieldienst auf dem System vorhanden ist. Legen Sie diese Eigenschaft auf **Absent** fest, um sicherzustellen, dass der Zieldienst nicht vorhanden ist. Das Festlegen auf **Present** (den Standardwert) stellt sicher, dass der Zieldienst vorhanden ist.|
-| Path | Gibt den Pfad zur Binärdatei eines neuen Diensts an.| 
+| Pfad | Gibt den Pfad zur Binärdatei eines neuen Diensts an.| 
 
 ## <a name="example"></a>Beispiel
 

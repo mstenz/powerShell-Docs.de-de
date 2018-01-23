@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: "Optionen für Anmeldeinformationen in den Konfigurationsdaten"
-ms.openlocfilehash: 94ff541fc517254ef2876c424307513eaf1d362a
-ms.sourcegitcommit: 28e71b0ae868014523631fec3f5417de751944f3
+ms.openlocfilehash: 15cdb29127d9774c58e1d6518bbba56273e7defd
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="credentials-options-in-configuration-data"></a>Optionen für Anmeldeinformationen in den Konfigurationsdaten
 >Gilt für: Windows PowerShell 5.0
@@ -21,7 +20,10 @@ Um diese Fehler- und Warnmeldungen zu unterdrücken, verwenden Sie die DSC-Konfi
 * **PsDscAllowPlainTextPassword**
 * **PsDscAllowDomainUser**
 
->**Hinweise:** <p>Das Speichern/Übertragen von unverschlüsselten Nur-Text-Kennwörtern ist in der Regel nicht sicher. Das Sichern von Anmeldeinformationen mithilfe der weiter unten in diesem Thema behandelten Verfahren wird empfohlen.</p> <p>Der Azure Automation DSC-Dienst erlaubt Ihnen, Ihre Anmeldeinformationen zentral zu verwalten, um sie in Konfigurationen zu kompilieren und sicher zu speichern.  Informationen finden Sie unter: [Compiling DSC Configurations / Credential Assets (Kompilieren von DSC-Konfigurationen/Anmeldeinformationsassets)](https://docs.microsoft.com/en-in/azure/automation/automation-dsc-compile#credential-assets)</p>
+> [!NOTE]
+> Das Speichern/Übertragen von unverschlüsselten Nur-Text-Kennwörtern ist in der Regel nicht sicher. Das Sichern von Anmeldeinformationen mithilfe der weiter unten in diesem Thema behandelten Verfahren wird empfohlen.
+> Der Azure Automation DSC-Dienst erlaubt Ihnen, Ihre Anmeldeinformationen zentral zu verwalten, um sie in Konfigurationen zu kompilieren und sicher zu speichern.
+> Informationen finden Sie unter: [Compiling DSC Configurations / Credential Assets (Kompilieren von DSC-Konfigurationen/Anmeldeinformationsassets)](/azure/automation/automation-dsc-compile#credential-assets)
 
 Im Folgenden finden ein Beispiel für die Weitergabe von Nur-Text-Anmeldeinformationen:
 
@@ -133,7 +135,8 @@ In WMF 5.0 wurde eine automatische `PsDscRunAsCredential`-Eigenschaft für alle 
 Weitere Informationen zur Verwendung von `PsDscRunAsCredential`, finden Sie unter [Ausführen von DSC mit Benutzeranmeldeinformationen](runAsUser.md).
 Neuere und benutzerdefinierte Ressourcen können diese automatische Eigenschaft verwenden, anstatt eine eigene Eigenschaften für Anmeldeinformationen zu erstellen.
 
->**Hinweis:** Das Design einiger Ressourcen wurde so angelegt, dass sie aus einem bestimmten Grund mehrere Sätze von Anmeldeinformationen verwenden und über eigene Eigenschaften für Anmeldeinformationen verfügen.
+> [!NOTE]
+> Das Design einiger Ressourcen wurde so angelegt, dass sie aus einem bestimmten Grund mehrere Sätze von Anmeldeinformationen verwenden und über eigene Eigenschaften für Anmeldeinformationen verfügen.
 
 Um die verfügbaren Eigenschaften für Anmeldeinformationen für eine Ressource zu finden, verwenden Sie entweder `Get-DscResource -Name ResourceName -Syntax` oder Intellisense in der ISE (`CTRL+SPACE`).
 
@@ -222,8 +225,8 @@ for node 'localhost'.
 ```
 
 In diesem Beispiel gibt es zwei Probleme:
-1.  Ein Fehler zeigt an, dass Nur-Text-Kennwörter nicht empfohlen werden.
-2.  Eine Warnung rät davon ab, Domänenanmeldeinformationen zu verwenden.
+1. Ein Fehler zeigt an, dass Nur-Text-Kennwörter nicht empfohlen werden.
+2. Eine Warnung rät davon ab, Domänenanmeldeinformationen zu verwenden.
 
 ## <a name="psdscallowplaintextpassword"></a>PsDscAllowPlainTextPassword
 
@@ -266,9 +269,11 @@ $cred = Get-Credential -UserName contoso\genericuser -Message "Password please"
 DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 ```
 
->**Hinweis:** Für `NodeName` kann kein Sternchen angegeben werden; der Name eines bestimmten Knotens ist obligatorisch.
+> [!NOTE]
+> `NodeName` kann kein Sternchen angegeben werden; der Name eines bestimmten Knotens ist obligatorisch.
 
 **Microsoft empfiehlt, Nur-Text-Kennwörter aufgrund des hohen Sicherheitsrisikos zu vermeiden.**
+
 Eine Ausnahme wäre die Verwendung des Azure Automation DSC-Diensts, da die Daten immer verschlüsselt gespeichert werden (während der Übertragung, im Dienst ruhend und ruhend auf dem Knoten).
 
 ## <a name="domain-credentials"></a>Domänenanmeldeinformationen

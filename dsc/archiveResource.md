@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: "DSC-Ressourcen „Archive“"
-ms.openlocfilehash: 035f7cc1b7f21f7a0df2d72db0ba83bc0688356c
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 0e9515f801888233148afcf1dbaebf85b28a6d79
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="dsc-archive-resource"></a>DSC-Ressourcen „Archive“
 
@@ -16,7 +15,7 @@ ms.lasthandoff: 06/12/2017
 
 Die Ressource „Archive“ in Windows PowerShell DSC bietet einen Mechanismus zum Entpacken von Archivdateien (.zip).
 
-## <a name="syntax"></a>Syntax 
+## <a name="syntax"></a>Syntax
 ```MOF
 Archive [string] #ResourceName
 {
@@ -32,15 +31,15 @@ Archive [string] #ResourceName
 
 ## <a name="properties"></a>Eigenschaften
 
-|  Eigenschaft  |  Beschreibung   | 
-|---|---| 
-| Ziel| Gibt den Speicherort an, an dem der Archivinhalt einer Datei extrahiert werden soll.| 
-| Pfad| Gibt den Quellpfad der Archivdatei an.| 
-| __Checksum__| Definiert den zu verwendenden Typ, wenn bestimmt wird, ob zwei Dateien identisch sind. Wenn __Checksum__ nicht angegeben ist, wird nur der Datei- oder Verzeichnisnamen für den Vergleich verwendet. Gültige Werte sind: SHA-1, SHA-256, SHA-512, createdDate, modifiedDate, keine (Standard). Wenn Sie __Checksum__ ohne __Validate__ angeben, schlägt die Konfiguration fehl.| 
-| Ensure| Bestimmt, ob geprüft wird, ob der Inhalt der Archivdatei am __Ziel__ vorhanden ist. Legen Sie diese Eigenschaft auf __Present__ fest, um sicherzustellen, dass der Inhalt vorhanden ist. Legen Sie sie auf __Absent__ fest, um sicherzustellen, dass der Inhalt nicht vorhanden ist. Der Standardwert ist __Present__.| 
-| DependsOn | Gibt an, dass die Konfiguration einer anderen Ressource ausgeführt werden muss, bevor diese Ressource konfiguriert wird. Wenn beispielsweise die ID des Skriptblocks mit der Ressourcenkonfiguration, den Sie zuerst ausführen möchten, „ResourceName“ und dessen Typ __ResourceType__ ist, lautet die Syntax für das Verwenden dieser Eigenschaft `DependsOn = "[ResourceType]ResourceName"`.| 
-| Überprüfen| Verwendet die Eigenschaft „Checksum“, um zu bestimmen, ob das Archiv der Signatur entspricht. Wenn Sie „Checksum“ ohne „Validate“ angeben, schlägt die Konfiguration fehl. Wenn Sie „Validate“ ohne „Checksum“ angeben, wird standardmäßig eine SHA-256-Prüfsumme verwendet.| 
-| Force| Bestimmte Dateioperationen (z. B. das Überschreiben einer Datei oder Löschen eines Verzeichnisses, das nicht leer ist), führen zu einem Fehler. Bei Verwenden der Eigenschaften „Force“ werden solche Fehler überschrieben. Der Standardwert ist „False“.| 
+|  Eigenschaft  |  Beschreibung   |
+|---|---|
+| Ziel| Gibt den Speicherort an, an dem der Archivinhalt einer Datei extrahiert werden soll.|
+| Pfad| Gibt den Quellpfad der Archivdatei an.|
+| __Checksum__| Definiert den zu verwendenden Typ, wenn bestimmt wird, ob zwei Dateien identisch sind. Wenn __Checksum__ nicht angegeben ist, wird nur der Datei- oder Verzeichnisnamen für den Vergleich verwendet. Gültige Werte sind: SHA-1, SHA-256, SHA-512, createdDate, modifiedDate, keine (Standard). Wenn Sie __Checksum__ ohne __Validate__ angeben, schlägt die Konfiguration fehl.|
+| Ensure| Bestimmt, ob geprüft wird, ob der Inhalt der Archivdatei am __Ziel__ vorhanden ist. Legen Sie diese Eigenschaft auf __Present__ fest, um sicherzustellen, dass der Inhalt vorhanden ist. Legen Sie sie auf __Absent__ fest, um sicherzustellen, dass der Inhalt nicht vorhanden ist. Der Standardwert ist __Present__.|
+| DependsOn | Gibt an, dass die Konfiguration einer anderen Ressource ausgeführt werden muss, bevor diese Ressource konfiguriert wird. Wenn beispielsweise die ID des Skriptblocks mit der Ressourcenkonfiguration, den Sie zuerst ausführen möchten, „ResourceName“ und dessen Typ __ResourceType__ ist, lautet die Syntax für das Verwenden dieser Eigenschaft `DependsOn = "[ResourceType]ResourceName"`.|
+| Überprüfen| Verwendet die Eigenschaft „Checksum“, um zu bestimmen, ob das Archiv der Signatur entspricht. Wenn Sie „Checksum“ ohne „Validate“ angeben, schlägt die Konfiguration fehl. Wenn Sie „Validate“ ohne „Checksum“ angeben, wird standardmäßig eine SHA-256-Prüfsumme verwendet.|
+| Force| Bestimmte Dateioperationen (z. B. das Überschreiben einer Datei oder Löschen eines Verzeichnisses, das nicht leer ist), führen zu einem Fehler. Bei Verwenden der Eigenschaften „Force“ werden solche Fehler überschrieben. Der Standardwert ist „False“.|
 
 ## <a name="example"></a>Beispiel
 
@@ -51,6 +50,6 @@ Archive ArchiveExample {
     Ensure = "Present"  # You can also set Ensure to "Absent"
     Path = "C:\Users\Public\Documents\Test.zip"
     Destination = "C:\Users\Public\Documents\ExtractionPath"
-} 
+}
 ```
 

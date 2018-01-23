@@ -13,7 +13,7 @@ Windows PowerShell macht also die .NET Framework-APIs verfügbar.
 
 Die von .NET Core und .NET Framework gemeinsam genutzten APIs sind als Teil von [.NET Standard 2.0][] definiert.
 
-Weitere Informationen dazu, wie sich dies auf die Kompatibilität von Modulen und Skripts in PowerShell Core und Windows PowerShell auswirkt, finden Sie unter [Backwards compatibility with Windows PowerShell (Abwärtskompatibilität mit Windows PowerShell)][#backwards-compatibility-with-windows-powershell].
+Weitere Informationen dazu, wie sich dies auf die Kompatibilität von Modulen und Skripts in PowerShell Core und Windows PowerShell auswirkt, finden Sie unter [Backwards compatibility with Windows PowerShell (Abwärtskompatibilität mit Windows PowerShell)](#backwards-compatibility-with-windows-powershell).
 
 ## <a name="support-for-macos-and-linux"></a>Unterstützung für macOS und Linux
 
@@ -215,7 +215,7 @@ Weitere Informationen zu PowerShell-Aufträgen finden Sie unter [about_Jobs](htt
 - Probleme bei der Umwandlung eines Arrays mit einem einzigen Element in eine generische Auflistung wurden behoben. (#3170)
 - Dem `..`-Operator wurde eine Überladung des Zeichenbereichs hinzugefügt, sodass `'a'..'z'` Buchstaben von „a“ bis „z“ zurückgibt. (#5026) (Vielen Dank an @IISResetMe)
 - Schreibgeschützte Variablen werden bei der Variablenzuweisung nicht mehr überschrieben.
-- Lokale Variablen werden automatisch per Push an „DottedScopes“ übertragen, wenn Sie Skript-Cmdlets mit einem „.“ versehen. (#4709)
+- Lokale Variablen werden beim Dot-Sourcing von Skript-Cmdlets automatisch per Push an „DottedScopes“ übertragen. (#4709)
 - Die Optionen „Singleline“ und „Multiline“ können jetzt im Split-Operator verwendet werden. (#4721) (Vielen Dank an @iSazonov)
 
 ## <a name="engine-updates"></a>Modulupdates

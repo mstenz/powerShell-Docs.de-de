@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: RemoveConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse
-ms.openlocfilehash: faa113c442b80eea3ac474220b098b7d80ec50a8
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: fed45836293adedbce18f01cfe53cdfa1a474975
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="removeconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>RemoveConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse
 
@@ -30,7 +29,7 @@ uint32 RemoveConfiguration(
 *Stage* \[in\]  
 Gibt an, welches Konfigurationsdokument entfernt werden soll. Die folgenden Werte sind gültig:
 
-|Value |Beschreibung |
+|Wert |Beschreibung |
 |:--- |:---|
 |**1** | Das **aktuelle** (Current) Konfigurationsdokument (current.mof). |
 |**2** | Das **ausstehende** (Pending) Konfigurationsdokument (pending.mof).  |

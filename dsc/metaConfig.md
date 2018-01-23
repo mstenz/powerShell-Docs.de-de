@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-10-11
-author: eslesar;mgreenegit
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Konfigurieren des lokalen Konfigurations-Managers
-ms.openlocfilehash: 6ca527aae263637bbca5a064e0d770fe9384d679
-ms.sourcegitcommit: ea01285a3aa7818d67d4761fbd8793b9b66bd5f7
+ms.openlocfilehash: 947bc17347204f6f15a24f83b449582afe65a4ee
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="configuring-the-local-configuration-manager"></a>Konfigurieren des lokalen Konfigurations-Managers
 
@@ -46,7 +45,7 @@ configuration LCMConfig
             RefreshMode = 'Push'
         }
     }
-} 
+}
 ```
 
 Der Prozess zum Anwenden von Einstellungen auf LCM ähnelt dem Anwenden einer DSC-Konfiguration.
@@ -130,7 +129,7 @@ Zum Definieren eines webbasierten Konfigurationsservers erstellen Sie einen **Co
 Ein **ConfigurationRepositoryWeb**-Block definiert die folgenden Eigenschaften.
 
 |Eigenschaft|Typ|Beschreibung|
-|---|---|---| 
+|---|---|---|
 |AllowUnsecureConnection|bool|Legen Sie diese Einstellung auf **$TRUE** fest, um Verbindungen zwischen Knoten und Server ohne Authentifizierung zu erlauben. Bei Festlegung auf **$FALSE** ist eine Authentifizierung erforderlich.|
 |CertificateId|string|Der Fingerabdruck eines Zertifikats zur Authentifizierung beim Server.|
 |ConfigurationNames|String[]|Array der Namen von Konfigurationen, die per Pull vom Zielknoten abgerufen werden. Diese werden nur verwendet, wenn der Knoten über einen **RegistrationKey** beim Pulldienst registriert ist. Weitere Informationen finden Sie unter [Einrichten eines Pullclients mit Konfigurationsnamen](pullClientConfigNames.md).|
@@ -191,7 +190,7 @@ Weitere Informationen zu Teilkonfigurationen finden Sie unter [DSC-Teilkonfigura
 Ein **PartialConfiguration**-Block definiert die folgenden Eigenschaften.
 
 |Eigenschaft|Typ|Beschreibung|
-|---|---|---| 
+|---|---|---|
 |ConfigurationSource|string[]|Ein Array mit Namen von Konfigurationsservern, die zuvor in den Blöcken **ConfigurationRepositoryWeb** und **ConfigurationRepositoryShare** definiert wurden, aus denen die Teilkonfiguration per Pull abgerufen wird.|
 |DependsOn|string{}|Eine Liste der Namen anderer Konfigurationen, die abgeschlossen sein müssen, bevor diese Teilkonfiguration angewendet wird.|
 |Beschreibung|string|Text zum Beschreiben der Teilkonfiguration.|
@@ -201,11 +200,11 @@ Ein **PartialConfiguration**-Block definiert die folgenden Eigenschaften.
 
 __Hinweis:__ Teilkonfigurationen werden in Azure Automation DSC unterstützt, es kann jedoch nur eine Konfiguration aus jedem Automation-Konto pro Knoten abgerufen werden.
 
-## <a name="see-also"></a>Weitere Informationen 
+## <a name="see-also"></a>Weitere Informationen
 
 ### <a name="concepts"></a>Konzepte
 [Windows PowerShell DSC – Übersicht](overview.md)
- 
+
 [Erste Schritte mit Azure Automation DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-getting-started)
 
 ### <a name="other-resources"></a>Weitere Ressourcen

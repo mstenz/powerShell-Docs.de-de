@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: "DSC-Ressource „File“"
-ms.openlocfilehash: f16bfbc31489ef7d1b0e5e4ec3a4f30069c24c79
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 54d01bf0769eeed0354606eb3543973b0f850a6f
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="dsc-file-resource"></a>DSC-Ressource „File“
 
@@ -52,7 +51,7 @@ File [string] #ResourceName
 | Recurse| Gibt an, ob Unterverzeichnisse enthalten sind. Legen Sie diese Eigenschaft auf __$true__ fest, um anzugeben, dass Unterverzeichnisse enthalten sein sollen. Der Standardwert ist __$false__. **Hinweis:** Diese Eigenschaft ist nur gültig, wenn die „Type“-Eigenschaft auf „directory“ festgelegt ist.| 
 | DependsOn | Gibt an, dass die Konfiguration einer anderen Ressource ausgeführt werden muss, bevor diese Ressource konfiguriert wird. Wenn beispielsweise die ID des Skriptblocks mit der Ressourcenkonfiguration, den Sie zuerst ausführen möchten, __ResourceName__ und dessen Typ __ResourceType__ ist, lautet die Syntax für das Verwenden dieser Eigenschaft `DependsOn = "[ResourceType]ResourceName"`.| 
 | SourcePath| Gibt den Pfad an, aus dem die Datei- oder Ordnerressource kopiert werden soll.| 
-| Typ| Gibt an, ob die zu konfigurierende Ressource ein Verzeichnis oder eine Datei ist. Legen Sie diese Eigenschaft auf „Directory“ fest, um anzugeben, dass die Ressource ein Verzeichnis ist. Legen Sie sie auf „File“ fest, um anzugeben, dass die Ressource eine Datei ist. Der Standardwert ist „File“.| 
+| Type| Gibt an, ob die zu konfigurierende Ressource ein Verzeichnis oder eine Datei ist. Legen Sie diese Eigenschaft auf „Directory“ fest, um anzugeben, dass die Ressource ein Verzeichnis ist. Legen Sie sie auf „File“ fest, um anzugeben, dass die Ressource eine Datei ist. Der Standardwert ist „File“.| 
 | MatchSource| Bei Festlegen auf den Standardwert __$false__ werden beliebige Dateien in der Quelle (z. B. die Dateien A, B und C) dem Ziel hinzugefügt, wenn die Konfiguration zum ersten Mal angewendet wird. Wenn eine neue Datei (D) der Quelle hinzugefügt wird, wird sie nicht dem Ziel hinzugefügt, auch wenn die Konfiguration später erneut angewendet wird. Wenn der Wert __$true__ ist, werden bei jedem Anwenden der Konfiguration in der Quelle gefundene neue Dateien (wie z. B. Datei D in diesem Beispiel) dem Ziel hinzugefügt. Der Standardwert ist **$false**.| 
 
 ## <a name="example"></a>Beispiel
