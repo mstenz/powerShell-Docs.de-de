@@ -13,7 +13,7 @@ Windows PowerShell macht also die .NET Framework-APIs verfügbar.
 
 Die von .NET Core und .NET Framework gemeinsam genutzten APIs sind als Teil von [.NET Standard 2.0][] definiert.
 
-Weitere Informationen dazu, wie sich dies auf die Kompatibilität von Modulen und Skripts in PowerShell Core und Windows PowerShell auswirkt, finden Sie unter [Backwards compatibility with Windows PowerShell (Abwärtskompatibilität mit Windows PowerShell)](#backwards-compatibility-with-windows-powershell).
+Weitere Informationen dazu, wie sich dies auf die Kompatibilität von Modulen und Skripts in PowerShell Core und Windows PowerShell auswirkt, finden Sie unter [Abwärtskompatibilität mit Windows PowerShell](#backwards-compatibility-with-windows-powershell).
 
 ## <a name="support-for-macos-and-linux"></a>Unterstützung für macOS und Linux
 
