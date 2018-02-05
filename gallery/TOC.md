@@ -11,6 +11,7 @@
 ### [Erstellen eines PowerShell-Katalogkontos](psgallery/psgallery_creating_an_account.md)
 ### [Erstellen und Veröffentlichen von Elementen](psgallery/Creating-and-Publishing-an-item.md)
 ### [Veröffentlichungsrichtlinien und Best Practices](psgallery/psgallery-PublishingGuidelines.md)
+### [Elementmanifest und Katalogbenutzeroberfläche](psgallery/psgallery_ItemManifestAffectingUI.md)
 ### [Entfernen von Elementen aus der Liste](psgallery/psgallery_unlist_items.md)
 ### [Löschen von Elementen](psgallery/Deleting-Items.md)
 ### [Verwalten von Elementbesitzern](psgallery/Managing-Item-Owners.md)
