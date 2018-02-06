@@ -234,7 +234,7 @@ Weitere Informationen zu PowerShell-Aufträgen finden Sie unter [about_Jobs](htt
 - Es wurden die drei automatischen Variablen `$IsWindows`, `$IsMacOs` und `$IsLinux` hinzugefügt, mit denen festgestellt werden kann, ob PowerShell unter einem bestimmten Betriebssystem ausgeführt wird.
 - `GitCommitId` wurde dem PowerShell Core-Banner hinzugefügt.
   Nun müssen Sie beim Start von PowerShell nicht `$PSVersionTable` ausführen, um die Version zu erhalten. (#3916) (Vielen Dank an @iSazonov)
-- Es wurde eine JSON-Konfigurationsdatei namens `PowerShellProperties.json` in `$PSHome` hinzugefügt, in der einige Einstellungen vor der Startzeit gespeichert werden (z.B. `ExecutionPolicy`).
+- Es wurde eine JSON-Konfigurationsdatei namens `powershell.config.json` in `$PSHome` hinzugefügt, in der einige Einstellungen vor der Startzeit gespeichert werden (z.B. `ExecutionPolicy`).
 - Es werden keine Pipelines bei der Ausführung von ausführbaren Windows-Dateien blockiert.
 - Die Enumeration von COM-Auflistungen wurde aktiviert. (#4553)
 
