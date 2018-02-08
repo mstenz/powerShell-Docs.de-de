@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Grundlagen von Windows PowerShell
 ms.assetid: 6b3cbbc8-060c-4877-b00b-7300dbbe4e28
-ms.openlocfilehash: 7b5cdfce876aa7d5559fe772379829011b275a02
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: bd17786d2d8690b89a2d107e0da98ee45f5b2ff7
+ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="windows-powershell-basics"></a>Grundlagen von Windows PowerShell
 Grafische Benutzeroberflächen basieren auf Grundkonzepten, die den meisten Computerbenutzern bekannt sind. Benutzer verlassen sich beim Ausführen von Aufgaben auf die Vertrautheit mit diesen Oberflächen. Betriebssysteme bieten Benutzern eine grafische Darstellung von Elementen, die durchsucht werden können, meist mit Einblendmenüs für den Zugriff auf bestimmte Funktionen und Kontextmenüs für den Zugriff auf kontextspezifische Funktionalität.
@@ -18,13 +18,10 @@ Die meisten CLIs bieten keine Muster, die dem Benutzer helfen, die Schnittstelle
 
 Windows PowerShell wurde so entwickelt, dass die historischen CLI-Kenntnisse der Benutzer weiter zum Tragen kommen. In diesem Kapitel beschäftigen wir uns mit einigen grundlegenden Tools und Konzepten, mit deren Hilfe Sie Windows PowerShell schnell erlernen können. Dazu gehören:
 
-- Verwenden von „Get-Command“
+- Verwenden von [Get-Command](/powershell/module/Microsoft.PowerShell.Core/get-command)
 
-- Verwenden von „Cmd.exe“ und UNIX-Befehlen
+- Verwenden von [cmd.exe](/windows-server/administration/windows-commands/cmd) und [UNIX-Befehlen](/windows/wsl/reference)
 
-- Verwenden externer Befehle
+- [Verwenden der Vervollständigung mit der TAB-TASTE](../../core-powershell/console/using-tab-expansion.md)
 
-- Verwenden der Vervollständigung mit der TAB-TASTE
-
-- Verwenden von „Get-Help“
-
+- [Verwenden von „Get-Help“](./getting-detailed-help-information.md)
