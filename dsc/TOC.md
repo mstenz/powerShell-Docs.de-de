@@ -108,7 +108,7 @@
 
 # Das DSC-Pullmodell
 
-## [Einrichten eines Webpullservers](pullServer.md)
+## [DSC-Pulldienst](pullServer.md)
 
 ## [Einrichten eines DSC-SMB-Pullservers](pullServerSMB.md)
 
