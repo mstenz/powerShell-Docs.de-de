@@ -3,11 +3,11 @@ ms.date: 2017-10-11
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Konfigurieren des lokalen Konfigurations-Managers
-ms.openlocfilehash: 81434b57e453ba7b64cc32dffdf309da16ef8882
-ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
+ms.openlocfilehash: b8e0749cf2f67e395e9fd8eaf9cde33b97c0cb67
+ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="configuring-the-local-configuration-manager"></a>Konfigurieren des lokalen Konfigurations-Managers
 
@@ -25,8 +25,8 @@ Dieses Modul ist auch für verschiedene andere DSC-Aspekte zuständig, wie z. B
 Sie verwenden eine spezielle Art von Konfiguration zum Konfigurieren des LCM, um jedes dieser Verhalten anzugeben.
 In den folgenden Abschnitten wird beschrieben, wie der LCM konfiguriert wird.
 
-> **Hinweis**: Dieses Thema gilt für den in Windows PowerShell 5.0 eingeführten LCM.
-Informationen zum Konfigurieren des LCM in Windows PowerShell 4.0 finden Sie unter [Windows PowerShell 4.0 DSC – Lokaler Konfigurations-Manager (LCM)](metaconfig4.md).
+Mit Windows PowerShell 5.0 wurden neue Einstellungen für das Verwalten von lokalen Konfigurations-Managern eingeführt.
+Informationen zum Konfigurieren des LCMs in Windows PowerShell 4.0 finden Sie unter [Konfigurieren des lokalen Konfigurations-Managers in früheren Versionen von Windows PowerShell](metaconfig4.md).
 
 ## <a name="writing-and-enacting-an-lcm-configuration"></a>Schreiben und Anwenden einer LCM-Konfiguration
 
@@ -90,38 +90,13 @@ Die folgenden Eigenschaften sind in einem **Settings**-Block verfügbar:
 
 ## <a name="pull-service"></a>Pulldienst
 
-DSC-Einstellungen ermöglichen die Verwaltung eines Knotens durch das Abrufen von Konfigurationen und Modulen über Pull und durch das Veröffentlichen von Berichtsdaten an einem Remotespeicherort.
-Folgende Optionen sind zurzeit für den Pulldienst verfügbar:
-
-- Azure Automation DSC-Dienst (Desired State Configuration)
-- Eine Pulldienstinstanz unter Windows Server
-- Eine SMB-Freigabe (unterstützt nicht das Veröffentlichen von Berichtsdaten)
-
 Die LCM-Konfiguration unterstützt die folgenden Typen von Pulldienstendpunkten:
 
 - **Konfigurationsserver**: Repository für DSC-Konfigurationen. Definieren Sie Konfigurationsserver mithilfe der Blöcke **ConfigurationRepositoryWeb** (für webbasierte Server) und **ConfigurationRepositoryShare** (für SMB-basierte Server).
 - **Ressourcenserver**: Repository für DSC-Ressourcen, verpackt als PowerShell-Module. Definieren Sie Ressourcenserver mithilfe der Blöcke **ResourceRepositoryWeb** (für webbasierte Server) und **ResourceRepositoryShare** (für SMB-basierte Server).
 - **Berichtsserver**: Dienst, an den DSC Berichtsdaten sendet. Definieren Sie Berichtsserver mithilfe von **ReportServerWeb**-Blöcken. Ein Berichtsserver muss ein Webdienst sein.
 
-**Die empfohlene Lösung** und die Option mit den meisten verfügbaren Features ist [Azure Automation DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-getting-started).
-
-Der Azure-Dienst kann Knoten lokal in privaten Rechenzentren oder in öffentlichen Clouds wie Azure und AWS verwalten.
-Für private Umgebungen, in denen Server keine direkte Verbindung mit dem Internet herstellen können, sollten Sie die Begrenzung des ausgehenden Datenverkehrs auf den veröffentlichten Azure-IP-Adressbereich in Betracht ziehen. Informationen hierzu finden Sie unter [Azure Datacenter IP Ranges](https://www.microsoft.com/en-us/download/details.aspx?id=41653) (IP-Adressbereiche für Azure-Rechenzentren).
-
-Features des Onlinediensts, die im Pulldienst unter Windows Server zurzeit nicht verfügbar sind:
-- Verschlüsselung aller Daten während der Übertragung und im Ruhezustand
-- Automatische Erstellung und Verwaltung von Clientzertifikaten
-- Speicherung von Geheimnissen zur zentralen Verwaltung von [Kennwörtern/Anmeldeinformationen](https://docs.microsoft.com/en-us/azure/automation/automation-credentials) oder [Variablen](https://docs.microsoft.com/en-us/azure/automation/automation-variables) wie z.B. Servernamen oder Verbindungszeichenfolgen
-- Zentrale Verwaltung der [LCM-Konfiguration](metaConfig.md#basic-settings) für Knoten
-- Zentrale Zuweisung von Konfigurationen zu Clientknoten
-- Freigabe von Konfigurationsänderungen für Canarygruppen zum Durchführen von Tests vor Einführung in die Produktion
-- Grafische Berichterstellung
-  - Statusdetails auf der Granularitätsstufe von DSC-Ressourcen
-  - Ausführliche Fehlermeldungen von Clientcomputern für die Problembehandlung
-- [Integration in Azure Log Analytics](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-diagnostics) für Warnungen, automatisierte Tasks, Android-/iOS-App für Berichte und Warnungen
-
-Alternativ dazu finden Sie weitere Informationen zum Einrichten und Verwenden des HTTP-Pulldiensts unter Windows Server unter [Einrichten eines DSC-Pullservers](pullServer.md).
-Beachten Sie, dass es sich um eine eingeschränkte Implementierung handelt, die nur grundlegende Funktionen zur Speicherung von Konfigurationen/Modulen und zur Erfassung von Berichtsdaten in einer lokalen Datenbank bietet.
+Weitere Informationen zu Pulldiensten finden Sie unter [Desired State Configuration – Pulldienst](pullServer.md).
 
 ## <a name="configuration-server-blocks"></a>Konfigurationsserverblöcke
 

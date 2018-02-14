@@ -3,26 +3,31 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Windows PowerShell Integrated Scripting Environment (ISE)
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
-ms.openlocfilehash: 66f36371cbb8ad8523aa1e1e3cd791cc692194c9
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 6a2d2bada2d8d6a1d5bedffc7b1b28fe9472544a
+ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="windows-powershell-integrated-scripting-environment-ise"></a>Windows PowerShell Integrated Scripting Environment (ISE)
+
 Die Windows PowerShell Integrated Scripting Environment (ISE) ist einer von zwei Hosts des Moduls und der Sprache von Windows PowerShell. Sie ermöglicht Ihnen, Skripts auf eine Weise zu schreiben, auszuführen und zu testen, die in der Windows PowerShell-Konsole nicht verfügbar ist. Diese ISE bietet zusätzlich Syntaxfarben, Vervollständigung mit der TAB-TASTE, IntelliSense, visuelles Debuggen und kontextbezogene Hilfe.
 
 Die ISE ermöglicht das Ausführen von Befehlen in einem Konsolenbereich, unterstützt aber auch Bereiche, mit deren Hilfe Sie den Quellcode Ihres Skripts und andere Tools gleichzeitig anzeigen können, die in die ISE eingebunden werden können. Sie können sogar mehrere Skriptfenster gleichzeitig öffnen, was besonders hilfreich ist, wenn Sie ein Skript debuggen, das Funktionen nutzt, die in anderen Skripts oder Modulen definiert sind.
 
 ## <a name="whats-new"></a>Neu
+
 Es folgen einige der Features, die der ISE in den neuesten Versionen von PowerShell hinzugefügt wurden.
 
 ### <a name="added-in-powershell-30-windows-server-2012-windows-8"></a>In PowerShell 3.0 hinzugefügt (Windows Server 2012, Windows 8)
+
 **IntelliSense** vervollständigt automatisch Ihre Befehle, indem während der Eingabe Menüs übereinstimmender Cmdlets, Parameter, Parameterwerte, Dateien oder Ordner angezeigt werden.
 
 **Codeausschnitte** sind kurze Abschnitte des Codes, die Sie in von Ihnen geschriebene Skripts einfügen können. Eine Sammlung nützlicher Codeausschnitte ist standardmäßig enthalten. Über das Cmdlet **New-Snippet** können Sie weitere hinzufügen.
 
-**Add-On-Tools** zum Hinzufügen von Features zur ISE können erstellt werden, indem Code geschrieben wird, der mit dem [Windows PowerShell ISE-Skriptobjektmodell](../../core-powershell/ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md) interagiert. Diese Tools können Steuerelemente in einem Bereich mit Registerkarten anzeigen oder unsichtbar im Hintergrund arbeiten. Das Add-On **Befehle** ist ein gutes Beispiel und in Version 3.0 und höher enthalten. Es zeigt eine Liste der verfügbaren Befehle und ihre Hilfe an.
+**Add-On-Tools** zum Hinzufügen von Features zur ISE können erstellt werden, indem Code geschrieben wird, der mit dem [Windows PowerShell ISE-Skriptobjektmodell](../../core-powershell/ise/The-ISE-Object-Model-Hierarchy.md) interagiert.
+
+Diese Tools können Steuerelemente in einem Bereich mit Registerkarten anzeigen oder unsichtbar im Hintergrund arbeiten. Das Add-On **Befehle** ist ein gutes Beispiel und in Version 3.0 und höher enthalten. Es zeigt eine Liste der verfügbaren Befehle und ihre Hilfe an.
 
 **Neustart-Manager und automatisches Speichern**. Dieses Features speichern Ihre Skripts automatisch alle zwei Minuten, um den Verlust Ihrer Arbeit im Fall eines Absturzes oder unerwarteten Neustarts zu verhindern.
 
@@ -51,17 +56,16 @@ Die **Liste „Zuletzt verwendet“** ist jetzt Teil des Menüs „Datei öffnen
 - **Blockauswahl**. Sie können einen Textblock auswählen, indem Sie die ALT-TASTE gedrückt halten, während Sie den Text im Skriptbereich mit der Maus auswählen, oder **ALT+UMSCHALT+NACH-OBEN/NACH-UNTEN** verwenden.
 
 ### <a name="added-in-powershell-20-windows-server-2008-r2-windows-7"></a>In PowerShell 2.0 (Windows Server 2008 R2, Windows 7) hinzugefügt
+
 Die ISE wurde mit PowerShell 2.0 eingeführt.
 
 ## <a name="requirements-for-running-the-windows-powershell-ise"></a>Anforderungen für die Ausführung der Windows PowerShell ISE
-Die ISE ist auf allen Windows-Computern verfügbar, auf denen Windows PowerShell 2.0 oder höher ausgeführt werden kann.
-Alle Versionen von Windows und Windows Server enthalten eine Version von Windows PowerShell und der ISE. Durch die Installation von Windows Management Framework können Sie jedoch ein Upgrade auf die neueste verfügbare Version vornehmen.
-Führen Sie diese Suche durch, um die neueste verfügbare Version zu finden: [Downloads](http://www.microsoft.com/en-us/search/DownloadResults.aspx?q=%22windows%20management%20framework%22%20PowerShell&sortby=Relevancy~Descending).
-Beachten Sie, dass alle Einträge mit der Bezeichnung „Preview“ zu einer Vorabversion des Codes gehören und die Features nicht vollständig sind.
+
+Die ISE ist auf allen Windows-Computern verfügbar, auf denen Windows PowerShell 2.0 oder höher ausgeführt werden kann. Alle Versionen von Windows und Windows Server enthalten eine Version von Windows PowerShell und der ISE. Durch die Installation von Windows Management Framework (WMF) können Sie jedoch ein Upgrade auf die neueste verfügbare Version vornehmen. Weitere Informationen finden Sie in der [WMF](/powershell/wmf/readme)-Dokumentation.
 
 > [!NOTE]
 > Da die Windows PowerShell ISE eine grafische Benutzeroberfläche erfordert, können Sie sie nicht mit der Server Core-Option von Windows Server ausführen.
 
 ## <a name="see-also"></a>Siehe auch
-- [Verwenden der Windows PowerShell Integrated Scripting Environment (ISE)](../../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
 
+[Zweck des Windows PowerShell ISE-Skriptobjektmodells](../../core-powershell/ise/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)

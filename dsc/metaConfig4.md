@@ -2,16 +2,18 @@
 ms.date: 2017-10-12
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
-title: "Windows PowerShell 4.0 DSC – Lokaler Konfigurations-Manager (LCM)"
-ms.openlocfilehash: 6ff8fa75f8ed33dc8da5285373ec1f3858cfa917
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+title: "Konfigurieren des lokalen Konfigurations-Managers in früheren Versionen von Windows PowerShell"
+ms.openlocfilehash: 65eb2a8d5a99e977cf2f3dbd726240ec2d5a6142
+ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 02/09/2018
 ---
-# <a name="windows-powershell-40-desired-state-configuration-local-configuration-manager-lcm"></a>Windows PowerShell 4.0 DSC – Lokaler Konfigurations-Manager (LCM)
+# <a name="configuring-the-local-configuration-manager-in-previous-versions-of-windows-powershell"></a>Konfigurieren des lokalen Konfigurations-Managers in früheren Versionen von Windows PowerShell
 
 >Gilt für: Windows PowerShell 4.0
+
+**Informationen, die sich auf Windows PowerShell 5.0 und höher beziehen, finden Sie unter [Konfigurieren des lokalen Konfigurations-Managers](metaConfig.md).**
 
 Der lokale Konfigurations-Manager (Local Configuration Manager, LCM) ist das Windows PowerShell DSC-Modul (Desired State Configuration, Konfiguration des gewünschten Zustands).
 Dieses Modul wird auf allen Zielknoten ausgeführt und ist zuständig für das Aufrufen der Konfigurationsressourcen, die in einem DSC-Konfigurationsskript enthalten sind.
