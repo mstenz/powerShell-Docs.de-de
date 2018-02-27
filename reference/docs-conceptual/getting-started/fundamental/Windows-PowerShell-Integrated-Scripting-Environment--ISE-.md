@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Windows PowerShell Integrated Scripting Environment (ISE)
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
-ms.openlocfilehash: 6a2d2bada2d8d6a1d5bedffc7b1b28fe9472544a
-ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
+ms.openlocfilehash: 413fc375ad4617bfae59d6a1217cf9f91c2cf090
+ms.sourcegitcommit: 05d576cf107780fa52b2db4a042816be40b00fbc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="windows-powershell-integrated-scripting-environment-ise"></a>Windows PowerShell Integrated Scripting Environment (ISE)
 
@@ -25,7 +25,7 @@ Es folgen einige der Features, die der ISE in den neuesten Versionen von PowerSh
 
 **Codeausschnitte** sind kurze Abschnitte des Codes, die Sie in von Ihnen geschriebene Skripts einfügen können. Eine Sammlung nützlicher Codeausschnitte ist standardmäßig enthalten. Über das Cmdlet **New-Snippet** können Sie weitere hinzufügen.
 
-**Add-On-Tools** zum Hinzufügen von Features zur ISE können erstellt werden, indem Code geschrieben wird, der mit dem [Windows PowerShell ISE-Skriptobjektmodell](../../core-powershell/ise/The-ISE-Object-Model-Hierarchy.md) interagiert.
+Sie können **Add-On-Tools** zum Hinzufügen von Features zur ISE erstellen, indem Sie Code schreiben, der mit dem [Windows PowerShell ISE-Skriptobjektmodell](../../core-powershell/ise/The-ISE-Object-Model-Hierarchy.md) interagiert.
 
 Diese Tools können Steuerelemente in einem Bereich mit Registerkarten anzeigen oder unsichtbar im Hintergrund arbeiten. Das Add-On **Befehle** ist ein gutes Beispiel und in Version 3.0 und höher enthalten. Es zeigt eine Liste der verfügbaren Befehle und ihre Hilfe an.
 

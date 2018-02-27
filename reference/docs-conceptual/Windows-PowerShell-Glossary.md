@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Windows PowerShell-Glossar
 ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
-ms.openlocfilehash: 48e5d832ead720c8bc7753c94f757ddb21846fc9
-ms.sourcegitcommit: ced46469e064736eeb1f5608abbc792ec69bdc92
+ms.openlocfilehash: 872ceb342cc72477c5142ce28a9b3b66e32bb84f
+ms.sourcegitcommit: 05d576cf107780fa52b2db4a042816be40b00fbc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/08/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="windows-powershell-glossary"></a>Windows PowerShell-Glossar
 
@@ -24,7 +24,7 @@ ms.lasthandoff: 08/08/2017
 |Host|Die Schnittstelle, die das Windows PowerShell-Modul für die Kommunikation mit dem Benutzer verwendet. Der Host gibt beispielsweise an, wie Eingabeaufforderungen zwischen Windows PowerShell und dem Benutzer behandelt werden.|
 |Hostanwendung|Programm, das das Windows PowerShell-Modul in seinen Prozess lädt und verwendet, um Vorgänge auszuführen.|
 |Eingabeverarbeitungsmethode|Methode, die ein Cmdlet verwenden kann, um die Datensätze, die es empfängt, als Eingabe zu nutzen. Eingabeverarbeitungsmethoden sind z. B. „BeginProcessing“, „ProcessRecord“, „EndProcessing“und „StopProcessing“.|
-|Manifestmodul|Windows PowerShell-Modul, das über ein Manifest verfügt und dessen „ModulesToProcess“-Schlüssel leer ist.|
+|Manifestmodul|Windows PowerShell-Modul, das über ein Manifest verfügt und dessen RootModule-Schlüssel leer ist.|
 |Modulmanifest|Windows PowerShell-Datendatei (.psd1), die den Inhalt eines Moduls beschreibt und steuert, wie ein Modul verarbeitet wird.|
 |Modulsitzungsstatus|Sitzungsstatus mit den öffentlichen und privaten Daten eines Windows PowerShell-Moduls. Die privaten Daten im Sitzungsstatus sind für den Benutzer einer Windows PowerShell-Sitzung nicht verfügbar.|
 |Fehler ohne Abbruch|Fehler, der Windows PowerShell nicht an der weiteren Verarbeitung des Befehls hindert.|
@@ -33,7 +33,7 @@ ms.lasthandoff: 08/08/2017
 |Pipe|Dient in Windows PowerShell zum Weiterleiten der Ergebnisse des vorherigen Befehls als Eingabe an den nächsten Befehl in der Pipeline.|
 |Pipeline|Reihe von Befehlen, die durch Pipelineoperatoren (&#124;) (ASCII 124) verbunden sind. Jeder Pipelineoperator leitet die Ergebnisse des vorherigen Befehls als Eingabe an den nächsten Befehl weiter.|
 |PSSession|Typ von Windows PowerShell-Sitzung, die vom Benutzer erstellt, verwaltet und geschlossen wird.|
-|Stammmodul|Das Modul, das im „ModuleToProcess“-Schlüssel in einem Modulmanifest angegeben ist.|
+|Stammmodul|Das Modul, das im RootModule-Schlüssel in einem Modulmanifest angegeben ist.|
 |Runspace|In Windows PowerShell die Betriebsumgebung, in der jeder Befehl in einer Pipeline ausgeführt wird.|
 |Skriptblock|In der Windows PowerShell-Programmiersprache eine Auflistung von Anweisungen oder Ausdrücken, die als einzelne Einheit verwendet werden kann. Ein Skriptblock kann Argumente und Rückgabewerte akzeptieren.|
 |Skriptmodul|Windows PowerShell-Modul, dessen Stammmodul eine Skriptmoduldatei (.psm1) ist. Ein Skriptmodul kann ein Modulmanifest enthalten.|
