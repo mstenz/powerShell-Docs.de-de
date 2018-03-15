@@ -4,10 +4,10 @@ author: JKeithB
 ms.topic: reference
 keywords: wmf,powershell,setup
 ms.openlocfilehash: 3413672e73705252225300a853c10a514500baa2
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
-ms.translationtype: HT
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="extract-and-parse-structured-objects-out-of-string"></a>Extrahieren und Analysieren von strukturierten Objekten aus einer Zeichenfolge
 Auch das Cmdlet „ConvertFrom-String“ weist einige neue Funktionen auf:
@@ -89,5 +89,5 @@ Ausgehend von diesen Beispielen kann **ConvertFrom-String** nun eine objektbasie
 > ----------                     ----               ----     -----
 > Ana Trujillo...                Ana Trujillo       Redmond  WA Antonio Moreno...              Antonio Moreno     Renton   WA Thomas Hardy...                Thomas Hardy       Seattle  WA Christina Berglund...          Christina Berglund Redmond  WA Hanna Moos...                  Hanna Moos         Puyallup WA
 
-Um extrahierten Text weiter zu bearbeiten, erfasst die **ExtentText**-Eigenschaft den unformatierten Text, anhand dessen der Datensatz extrahiert wurde. Wenn Sie Feedback zu diesem Feature geben oder Inhalte teilen möchten, bei denen Sie Probleme haben, Beispiele zu schreiben, senden Sie eine E-Mail an <psdmfb@microsoft.com>.
+Um extrahierten Text weiter zu bearbeiten, erfasst die **ExtentText**-Eigenschaft den unformatierten Text, anhand dessen der Datensatz extrahiert wurde. Um Feedback zu diesem Feature geben oder Freigeben von Inhalten, bei denen Sie Probleme Beispiele zu schreiben, senden Sie eine e-Mail <psdmfb@microsoft.com>.
 
