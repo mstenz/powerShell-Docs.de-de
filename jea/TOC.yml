@@ -1,0 +1,18 @@
+- name: Übersicht
+  href: overview.md
+- name: Bereitstellen von JEA
+  items:
+    - name: Voraussetzungen
+      href: prerequisites.md
+    - name: Rollenfunktionen
+      href: role-capabilities.md
+    - name: Sitzungskonfigurationen
+      href: session-configurations.md
+    - name: Registrieren von JEA
+      href: register-jea.md
+    - name: Verwenden von JEA
+      href: using-jea.md
+    - name: Sicherheitsüberlegungen
+      href: security-considerations.md
+    - name: Überwachen und Erstellen von Berichten in JEA
+      href: audit-and-report.md

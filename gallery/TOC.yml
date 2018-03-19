@@ -1,0 +1,128 @@
+- name: Übersicht
+  href: readme.md
+  items:
+    - name: Galerie
+      items:
+        - name: Erste Schritte
+          href: psgallery/psgallery_gettingstarted.md
+        - name: Integritätsstatus
+          href: psgallery/psgallery_status.md
+        - name: FAQs zum Katalog
+          href: psgallery/psgallery_faqs.md
+        - name: Registerkarte „Katalogartikel“
+          href: psgallery/psgallery_items_tab.md
+        - name: Syntax für die Katalogsuche
+          href: psgallery/psgallery_search_syntax.md
+        - name: Elemente mit kompatiblen PSEditions
+          href: psgallery/psgallery_pseditions.md
+        - name: FileList-Ansicht
+          href: psgallery/psgallery_filelist_feature.md
+        - name: Bereitstellen in Azure Automation
+          href: psgallery/psgallery_deploy_to_azure_automation.md
+        - name: Erstellen eines PowerShell-Katalogkontos
+          href: psgallery/psgallery_creating_an_account.md
+        - name: Erstellen und Veröffentlichen von Elementen
+          href: psgallery/Creating-and-Publishing-an-item.md
+        - name: Veröffentlichungsrichtlinien und Best Practices
+          href: psgallery/psgallery-PublishingGuidelines.md
+        - name: Elementmanifest und Katalogbenutzeroberfläche
+          href: psgallery/psgallery_ItemManifestAffectingUI.md
+        - name: Entfernen von Elementen aus der Liste
+          href: psgallery/psgallery_unlist_items.md
+        - name: Löschen von Elementen
+          href: psgallery/Deleting-Items.md
+        - name: Verwalten von Elementbesitzern
+          href: psgallery/Managing-Item-Owners.md
+        - name: Melden von Missbrauch
+          href: psgallery/psgallery_report_abuse.md
+        - name: Beilegung von Streitigkeiten
+          href: psgallery/psgallery_dispute_resolution.md
+        - name: Kontaktieren der Elementbesitzer
+          href: psgallery/psgallery_contacting_item_owners.md
+        - name: Kontaktieren der Administratoren
+          href: psgallery/psgallery_contacting_administrators.md
+        - name: Bereitstellen von Feedback über soziale Netzwerke oder Kommentare
+          href: psgallery/psgallery-SocialMediaFeedback.md
+        - name: Erforderliche Zustimmung zur Lizenz für Elementdetails
+          href: psgallery/psgallery_requires_license_acceptance.md
+        - name: Erforderliche Zustimmung zur Lizenz für die Bereitstellung in Azure Automation
+          href: psgallery/psgallery_deploy_to_azure_automation_requireLicenseAcceptance.md
+- name: PowerShellGet
+  href: psget/overview.md
+  items:
+    - name: Abrufen des PowerShellGet-Moduls
+      href: psget/get_psget_module.md
+    - name: Modul
+      items:
+        - name: Finden von Modulen
+          href: psget/module/psget_find-module.md
+        - name: Finden von DSC-Ressourcen
+          href: psget/module/psget_find-dscresource.md
+        - name: Finden von Rollenfunktionen
+          href: psget/module/psget_find-rolecapability.md
+        - name: Suchbefehle
+          href: psget/module/psget_find-command.md
+        - name: Speichern
+          href: psget/module/psget_save-module.md
+        - name: Installation
+          href: psget/module/psget_install-module.md
+        - name: Update
+          href: psget/module/psget_update-module.md
+        - name: Deinstallieren
+          href: psget/module/psget_uninstall-module.md
+        - name: Abrufen installierter Module
+          href: psget/module/psget_get-installedmodule.md
+        - name: Aktualisieren des Modulmanifests
+          href: psget/module/psget_update-modulemanifest.md
+        - name: Veröffentlichen
+          href: psget/module/psget_publish-module.md
+        - name: Module mit PSEditions
+          href: psget/module/modulewithpseditionsupport.md
+        - name: 'Module, die eine Zustimmung zur Lizenz erfordern'
+          href: psget/module/RequireLicenseAcceptance.md
+        - name: Vorabversionen
+          href: psget/module/PreReleaseModule.md
+        - name: Problembehandlung
+          href: psget/psget_cmdlets_troubleshooting.md
+    - name: Skript
+      items:
+        - name: Suchen
+          href: psget/script/psget_find-script.md
+        - name: Speichern
+          href: psget/script/psget_save-script.md
+        - name: Installation
+          href: psget/script/psget_install-script.md
+        - name: Update
+          href: psget/script/psget_update-script.md
+        - name: Deinstallieren
+          href: psget/script/psget_uninstall-script.md
+        - name: Abrufen installierter Skripts
+          href: psget/script/psget_get-installedscript.md
+        - name: Erstellen einer Skriptdatei mit Metadaten
+          href: psget/script/psget_new-scriptfileinfo.md
+        - name: Testen der Metadaten einer Skriptdatei
+          href: psget/script/psget_test-scriptfileinfo.md
+        - name: Aktualisieren der Metadaten einer Skriptdatei
+          href: psget/script/psget_update-scriptfileinfo.md
+        - name: Veröffentlichen
+          href: psget/script/psget_publish-script.md
+        - name: Skripts in PowerShell-Editionen
+          href: psget/script/scriptwithpseditionsupport.md
+        - name: Erforderliche Zustimmung zur Lizenz für Skripts
+          href: psget/script/script_RequireLicenseAcceptance.md
+        - name: Vorabversionen
+          href: psget/script/PreReleaseScript.md
+    - name: Repositoryverwaltung
+      items:
+        - name: Bootstrapping des NuGet-Anbieters und von „NuGet.exe“
+          href: psget/repository/bootstrapping_nuget_proivder_and_exe.md
+        - name: Registrieren des Repositorys
+          href: psget/repository/psget_register-psrepository.md
+        - name: Auflisten des registrierten Repositorys
+          href: psget/repository/psget_get-psrepository.md
+        - name: Ändern des registrierten Repositorys
+          href: psget/repository/psget_set-psrepository.md
+        - name: Aufheben der Registrierung des Repositorys
+          href: psget/repository/psget_unregister-psrepository.md
+    - name: PackageManagement-Cmdlets
+      href: psget/oneget/PackageManagement_cmdlets.md
