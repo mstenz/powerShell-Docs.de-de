@@ -9,7 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 08/03/2017
 ---
-# <a name="redirecting-data-with-out--cmdlets"></a>Umleiten von Daten mit Out-*-Cmdlets
+# <a name="redirecting-data-with-out--cmdlets"></a>Umleiten von Daten mit Out-\*-Cmdlets
 Windows PowerShell stellt mehrere Cmdlets bereit, mit denen Sie die Datenausgabe direkt steuern können. Diese Cmdlets haben zwei wichtige Merkmale gemeinsam.
 
 Zum Ersten transformieren sie Daten grundsätzlich in eine Form von Text. Dies geschieht, weil die Cmdlets Daten an Systemkomponenten ausgegeben, die Texteingabe erfordern. Das heißt, sie müssen die Objekte als Text darstellen. Daher wird der Text so formatiert, wie Sie ihn im Windows PowerShell-Konsolenfenster sehen.
