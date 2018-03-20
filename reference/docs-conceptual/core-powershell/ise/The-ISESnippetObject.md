@@ -3,21 +3,21 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Das ISESnippet-Objekt
 ms.assetid: 98bc8113-c3cd-4201-bdb9-9d9bdb7e266c
-ms.openlocfilehash: 6112f5252d2d1e868092da4a6cd04feb1875b597
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: f1b023291826d5568eb8bdf5a898a00228825276
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="the-isesnippetobject"></a><span data-ttu-id="2e662-103">Das ISESnippet-Objekt</span><span class="sxs-lookup"><span data-stu-id="2e662-103">The ISESnippetObject</span></span>
-  <span data-ttu-id="2e662-104">Ein **ISESnippet**-Objekt ist eine Instanz der Microsoft.PowerShell.Host.ISE.ISESnippet-Klasse.</span><span class="sxs-lookup"><span data-stu-id="2e662-104">An **ISESnippet** object is an instance of the Microsoft.PowerShell.Host.ISE.ISESnippet class.</span></span> <span data-ttu-id="2e662-105">Die Member der **$psISE.CurrentPowerShellTab.Snippets**-Sammlung sind Beispiele für **ISESnippet**-Objekte.</span><span class="sxs-lookup"><span data-stu-id="2e662-105">The members of the **$psISE.CurrentPowerShellTab.Snippets** collection are all examples of **ISESnippet** objects.</span></span> <span data-ttu-id="2e662-106">Die einfachste Möglichkeit zum Erstellen eines Codeausschnitts ist die Verwendung des [New-IseSnippet&#91;PSITPro5_ISE&#93;](https://technet.microsoft.com/en-us/library/0a6339a3-2683-4a8e-8929-90ad9a95c3e0)-Cmdlets.</span><span class="sxs-lookup"><span data-stu-id="2e662-106">The easiest way to create a snippet is to use the [New-IseSnippet&#91;PSITPro5_ISE&#93;](https://technet.microsoft.com/en-us/library/0a6339a3-2683-4a8e-8929-90ad9a95c3e0) cmdlet.</span></span>
+# <a name="the-isesnippetobject"></a><span data-ttu-id="b027a-103">Das ISESnippet-Objekt</span><span class="sxs-lookup"><span data-stu-id="b027a-103">The ISESnippetObject</span></span>
+  <span data-ttu-id="b027a-104">Ein **ISESnippet**-Objekt ist eine Instanz der Microsoft.PowerShell.Host.ISE.ISESnippet-Klasse.</span><span class="sxs-lookup"><span data-stu-id="b027a-104">An **ISESnippet** object is an instance of the Microsoft.PowerShell.Host.ISE.ISESnippet class.</span></span> <span data-ttu-id="b027a-105">Die Member der **$psISE.CurrentPowerShellTab.Snippets**-Sammlung sind Beispiele für **ISESnippet**-Objekte.</span><span class="sxs-lookup"><span data-stu-id="b027a-105">The members of the **$psISE.CurrentPowerShellTab.Snippets** collection are all examples of **ISESnippet** objects.</span></span> <span data-ttu-id="b027a-106">Die einfachste Möglichkeit zum Erstellen eines Codeausschnitts ist die Verwendung des [New-IseSnippet&#91;PSITPro5_ISE&#93;](https://technet.microsoft.com/library/0a6339a3-2683-4a8e-8929-90ad9a95c3e0)-Cmdlets.</span><span class="sxs-lookup"><span data-stu-id="b027a-106">The easiest way to create a snippet is to use the [New-IseSnippet&#91;PSITPro5_ISE&#93;](https://technet.microsoft.com/library/0a6339a3-2683-4a8e-8929-90ad9a95c3e0) cmdlet.</span></span>
 
-## <a name="properties"></a><span data-ttu-id="2e662-107">Eigenschaften</span><span class="sxs-lookup"><span data-stu-id="2e662-107">Properties</span></span>
+## <a name="properties"></a><span data-ttu-id="b027a-107">Eigenschaften</span><span class="sxs-lookup"><span data-stu-id="b027a-107">Properties</span></span>
 
-### <a name="author"></a><span data-ttu-id="2e662-108">Autor</span><span class="sxs-lookup"><span data-stu-id="2e662-108">Author</span></span>
-  <span data-ttu-id="2e662-109">In Windows PowerShell ISE 3.0 und höher unterstützt, in früheren Versionen nicht enthalten.</span><span class="sxs-lookup"><span data-stu-id="2e662-109">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span> 
+### <a name="author"></a><span data-ttu-id="b027a-108">Autor</span><span class="sxs-lookup"><span data-stu-id="b027a-108">Author</span></span>
+  <span data-ttu-id="b027a-109">In Windows PowerShell ISE 3.0 und höher unterstützt, in früheren Versionen nicht enthalten.</span><span class="sxs-lookup"><span data-stu-id="b027a-109">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
 
- <span data-ttu-id="2e662-110">Die schreibgeschützte Eigenschaft, die den Namen des Autors des Codeausschnitts abruft.</span><span class="sxs-lookup"><span data-stu-id="2e662-110">The read-only property that gets the name of the author of the snippet.</span></span>
+ <span data-ttu-id="b027a-110">Die schreibgeschützte Eigenschaft, die den Namen des Autors des Codeausschnitts abruft.</span><span class="sxs-lookup"><span data-stu-id="b027a-110">The read-only property that gets the name of the author of the snippet.</span></span>
 
 ```
 # Get the author of the first snippet item
@@ -25,10 +25,10 @@ $psISE.CurrentPowerShellTab.Snippets.Item(0).Author
 
 ```
 
-### <a name="codefragment"></a><span data-ttu-id="2e662-111">CodeFragment</span><span class="sxs-lookup"><span data-stu-id="2e662-111">CodeFragment</span></span>
-  <span data-ttu-id="2e662-112">In Windows PowerShell ISE 3.0 und höher unterstützt, in früheren Versionen nicht enthalten.</span><span class="sxs-lookup"><span data-stu-id="2e662-112">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span> 
+### <a name="codefragment"></a><span data-ttu-id="b027a-111">CodeFragment</span><span class="sxs-lookup"><span data-stu-id="b027a-111">CodeFragment</span></span>
+  <span data-ttu-id="b027a-112">In Windows PowerShell ISE 3.0 und höher unterstützt, in früheren Versionen nicht enthalten.</span><span class="sxs-lookup"><span data-stu-id="b027a-112">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
 
- <span data-ttu-id="2e662-113">Die schreibgeschützte Eigenschaft, die das im Editor einzufügende Codefragment abruft.</span><span class="sxs-lookup"><span data-stu-id="2e662-113">The read-only property that gets the code fragment to be inserted into the editor.</span></span>
+ <span data-ttu-id="b027a-113">Die schreibgeschützte Eigenschaft, die das im Editor einzufügende Codefragment abruft.</span><span class="sxs-lookup"><span data-stu-id="b027a-113">The read-only property that gets the code fragment to be inserted into the editor.</span></span>
 
 ```
 # Get the code fragment associated with the first snippet item.
@@ -36,10 +36,10 @@ $psISE.CurrentPowerShellTab.Snippets.Item(0).CodeFragment
 
 ```
 
-### <a name="shortcut"></a><span data-ttu-id="2e662-114">Abkürzung</span><span class="sxs-lookup"><span data-stu-id="2e662-114">Shortcut</span></span>
-  <span data-ttu-id="2e662-115">In Windows PowerShell ISE 3.0 und höher unterstützt, in früheren Versionen nicht enthalten.</span><span class="sxs-lookup"><span data-stu-id="2e662-115">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span> 
+### <a name="shortcut"></a><span data-ttu-id="b027a-114">Abkürzung</span><span class="sxs-lookup"><span data-stu-id="b027a-114">Shortcut</span></span>
+  <span data-ttu-id="b027a-115">In Windows PowerShell ISE 3.0 und höher unterstützt, in früheren Versionen nicht enthalten.</span><span class="sxs-lookup"><span data-stu-id="b027a-115">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
 
- <span data-ttu-id="2e662-116">Die schreibgeschützte Eigenschaft, die die Windows-Tastenkombination für das Menüelement abruft.</span><span class="sxs-lookup"><span data-stu-id="2e662-116">The read-only property that gets the Windows keyboard shortcut for the menu item.</span></span>
+ <span data-ttu-id="b027a-116">Die schreibgeschützte Eigenschaft, die die Windows-Tastenkombination für das Menüelement abruft.</span><span class="sxs-lookup"><span data-stu-id="b027a-116">The read-only property that gets the Windows keyboard shortcut for the menu item.</span></span>
 
 ```
 # Get the shortcut for the first submenu item.
@@ -48,10 +48,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add("_Process",{get-process},"Al
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Shortcut
 ```
 
-## <a name="see-also"></a><span data-ttu-id="2e662-117">Weitere Informationen</span><span class="sxs-lookup"><span data-stu-id="2e662-117">See Also</span></span>
-- [<span data-ttu-id="2e662-118">Das ISESnippetCollection-Objekt</span><span class="sxs-lookup"><span data-stu-id="2e662-118">The ISESnippetCollection Object</span></span>](The-ISESnippetCollection-Object.md) 
-- [<span data-ttu-id="2e662-119">Das Windows PowerShell ISE-Skriptobjektmodell</span><span class="sxs-lookup"><span data-stu-id="2e662-119">The Windows PowerShell ISE Scripting Object Model</span></span>](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
-- [<span data-ttu-id="2e662-120">Referenz zum Windows PowerShell ISE-Objektmodell</span><span class="sxs-lookup"><span data-stu-id="2e662-120">Windows PowerShell ISE Object Model Reference</span></span>](Windows-PowerShell-ISE-Object-Model-Reference.md) 
-- [<span data-ttu-id="2e662-121">Die ISE-Objektmodellhierarchie</span><span class="sxs-lookup"><span data-stu-id="2e662-121">The ISE Object Model Hierarchy</span></span>](The-ISE-Object-Model-Hierarchy.md)
-
-  
+## <a name="see-also"></a><span data-ttu-id="b027a-117">Weitere Informationen</span><span class="sxs-lookup"><span data-stu-id="b027a-117">See Also</span></span>
+- [<span data-ttu-id="b027a-118">Das ISESnippetCollection-Objekt</span><span class="sxs-lookup"><span data-stu-id="b027a-118">The ISESnippetCollection Object</span></span>](The-ISESnippetCollection-Object.md)
+- [<span data-ttu-id="b027a-119">Zweck des Windows PowerShell ISE-Skriptobjektmodells</span><span class="sxs-lookup"><span data-stu-id="b027a-119">Purpose of the Windows PowerShell ISE Scripting Object Model</span></span>](purpose-of-the-windows-powershell-ise-scripting-object-model.md)
+- [<span data-ttu-id="b027a-120">Die ISE-Objektmodellhierarchie</span><span class="sxs-lookup"><span data-stu-id="b027a-120">The ISE Object Model Hierarchy</span></span>](The-ISE-Object-Model-Hierarchy.md)
