@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Debuggen von DSC-Ressourcen
-ms.openlocfilehash: 35eb990705bab8190172df899c64c9f34452aa4b
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: c9534deb755e2d3ce59dbb44e55b58b59af2e7f4
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="debugging-dsc-resources"></a>Debuggen von DSC-Ressourcen
 
@@ -16,9 +16,9 @@ ms.lasthandoff: 01/17/2018
 In PowerShell 5.0 wurde ein neues Feature in DSC (Konfiguration für den gewünschten Zustand) eingeführt, mit dem Sie eine DSC-Ressource beim Anwenden einer Konfiguration debuggen können.
 
 ## <a name="enabling-dsc-debugging"></a>Aktivieren des DSC-Debuggens
-Bevor Sie eine Ressource debuggen können, müssen Sie das Cmdlet [Enable-DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx) aufrufen, um das Debuggen zu aktivieren. Dieses Cmdlet verfügt über den Pflichtparameter **BreakAll**. 
+Bevor Sie eine Ressource debuggen können, müssen Sie das Cmdlet [Enable-DscDebug](https://technet.microsoft.com/library/mt517870.aspx) aufrufen, um das Debuggen zu aktivieren. Dieses Cmdlet verfügt über den Pflichtparameter **BreakAll**. 
 
-Um zu überprüfen, ob das Debuggen aktiviert wurde, werfen Sie einen Blick auf das Ergebnis eines Aufrufs von [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx).
+Um zu überprüfen, ob das Debuggen aktiviert wurde, werfen Sie einen Blick auf das Ergebnis eines Aufrufs von [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx).
 
 Die folgende PowerShell-Ausgabe zeigt das Ergebnis der Aktivierung des Debuggens an:
 
@@ -59,7 +59,7 @@ Configuration PSWebAccess
     }
 PSWebAccess
 ```
-Rufen Sie nach dem Kompilieren der Konfiguration [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) auf, um die Konfiguration zu starten. Die Konfiguration wird beendet, wenn der lokale Konfigurations-Manager die erste Ressource in der Konfiguration aufruft. Bei Verwendung der Parameter `-Verbose` und `-Wait` werden in der Ausgabe die Zeilen angezeigt, die Sie eingeben müssen, um das Debuggen zu starten.
+Rufen Sie nach dem Kompilieren der Konfiguration [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) auf, um die Konfiguration zu starten. Die Konfiguration wird beendet, wenn der lokale Konfigurations-Manager die erste Ressource in der Konfiguration aufruft. Bei Verwendung der Parameter `-Verbose` und `-Wait` werden in der Ausgabe die Zeilen angezeigt, die Sie eingeben müssen, um das Debuggen zu starten.
 
 ```powershell
 Start-DscConfiguration .\PSWebAccess -Wait -Verbose
@@ -96,7 +96,7 @@ Jetzt können Sie die Debugbefehle in der ISE verwenden, um das Ressourcenskript
 
 ## <a name="disabling-dsc-debugging"></a>Deaktivieren des DSC-Debuggens
 
-Nach Aufrufen von [Enable-DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx), führen alle Aufrufe von [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) dazu, dass die Konfiguration unterbrochen und der Debugger gestartet wird. Damit Konfigurationen wie gewohnt ausgeführt werden können, müssen Sie das Debuggen durch Aufrufen des Cmdlets [Disable-DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx) deaktivieren.
+Nach Aufrufen von [Enable-DscDebug](https://technet.microsoft.com/library/mt517870.aspx), führen alle Aufrufe von [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) dazu, dass die Konfiguration unterbrochen und der Debugger gestartet wird. Damit Konfigurationen wie gewohnt ausgeführt werden können, müssen Sie das Debuggen durch Aufrufen des Cmdlets [Disable-DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx) deaktivieren.
 
 >**Hinweis:** Ein Neustart ändert den Debugzustand des LCM nicht. Wenn das Debuggen aktiviert ist, wird nach einem Neustart weiterhin das Starten einer Konfiguration unterbrochen und der Debugger gestartet.
 

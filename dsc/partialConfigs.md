@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: "PowerShell DSC – Teilkonfigurationen"
-ms.openlocfilehash: 66791bb7b14898d292b9da38dd27ba45b7c75d88
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 4401ea80cffd09f4b92c9fcca16d5dcad7f6a327
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="powershell-desired-state-configuration-partial-configurations"></a>PowerShell DSC – Teilkonfigurationen
 
@@ -18,10 +18,10 @@ In PowerShell 5.0 ermöglicht DSC (Desired State Configuration, Konfiguration de
 Sie können Teilkonfigurationen im Pushmodus, Pullmodus oder einer Kombination aus beidem verwenden.
 
 ## <a name="partial-configurations-in-push-mode"></a>Teilkonfigurationen im Pushmodus
-Um Teilkonfigurationen im Pushmodus zu verwenden, konfigurieren Sie den LCM auf dem Zielknoten für das Empfangen von Teilkonfigurationen. Jede Teilkonfiguration muss per Push auf den Zielknoten übertragen werden, wozu das Cmdlet „Publish-DscConfiguration“ verwendet wird. Der Zielknoten kombiniert dann die Teilkonfigurationen zu einer einzelnen Konfiguration, und Sie können die Konfiguration durch Aufrufen des Cmdlets [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) aufrufen.
+Um Teilkonfigurationen im Pushmodus zu verwenden, konfigurieren Sie den LCM auf dem Zielknoten für das Empfangen von Teilkonfigurationen. Jede Teilkonfiguration muss per Push auf den Zielknoten übertragen werden, wozu das Cmdlet „Publish-DscConfiguration“ verwendet wird. Der Zielknoten kombiniert dann die Teilkonfigurationen zu einer einzelnen Konfiguration, und Sie können die Konfiguration durch Aufrufen des Cmdlets [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) aufrufen.
 
 ### <a name="configuring-the-lcm-for-push-mode-partial-configurations"></a>Konfigurieren des LCM für Teilkonfigurationen im Pushmodus
-Zum Konfigurieren des LCM für Teilkonfigurationen im Pushmodus erstellen Sie eine **DSCLocalConfigurationManager**-Konfiguration mit einem **PartialConfiguration**-Block für jede Teilkonfiguration. Weitere Informationen zum Konfigurieren des LCM finden Sie unter [Konfigurieren des lokalen Konfigurations-Managers](https://technet.microsoft.com/en-us/library/mt421188.aspx). Das folgende Beispiel zeigt eine LCM-Konfiguration, die zwei Teilkonfigurationen erwartet: eine, die das Betriebssystem bereitgestellt, und eine, die SharePoint bereitstellt und konfiguriert.
+Zum Konfigurieren des LCM für Teilkonfigurationen im Pushmodus erstellen Sie eine **DSCLocalConfigurationManager**-Konfiguration mit einem **PartialConfiguration**-Block für jede Teilkonfiguration. Weitere Informationen zum Konfigurieren des LCM finden Sie unter [Konfigurieren des lokalen Konfigurations-Managers](https://technet.microsoft.com/library/mt421188.aspx). Das folgende Beispiel zeigt eine LCM-Konfiguration, die zwei Teilkonfigurationen erwartet: eine, die das Betriebssystem bereitgestellt, und eine, die SharePoint bereitstellt und konfiguriert.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -51,7 +51,7 @@ PartialConfigDemo
 
 ### <a name="publishing-and-starting-push-mode-partial-configurations"></a>Veröffentlichen und Starten von Teilkonfigurationen im Pushmodus
 
-Rufen Sie dann [Publish-DSCConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration) für jede Konfiguration auf, und übergeben Sie die Ordner mit den Konfigurationsdokumenten als **Path**-Parameter. `Publish-DSCConfiguration` positioniert die Konfigurations-MOF-Dateien auf die Zielknoten. Nach Veröffentlichen beider Konfigurationen können Sie `Start-DSCConfiguration –UseExisting` auf dem Zielknoten aufrufen.
+Rufen Sie dann [Publish-DSCConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration) für jede Konfiguration auf, und übergeben Sie die Ordner mit den Konfigurationsdokumenten als **Path**-Parameter. `Publish-DSCConfiguration` positioniert die Konfigurations-MOF-Dateien auf die Zielknoten. Nach Veröffentlichen beider Konfigurationen können Sie `Start-DSCConfiguration –UseExisting` auf dem Zielknoten aufrufen.
 
 Wenn Sie z.B. die folgenden Konfigurations-MOF-Dokumente auf dem Erstellungsknoten kompiliert haben:
 
@@ -96,7 +96,7 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 17     Job17           Configuratio... Running       True            TestVM            Start-DscConfiguration...
 ```
 
->**Hinweis:** Der Benutzer, der das Cmdlet [Publish-DSCConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration) ausführt, muss über Administratorrechte auf dem Zielknoten verfügen.
+>**Hinweis:** Der Benutzer, der das Cmdlet [Publish-DSCConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration) ausführt, muss über Administratorrechte auf dem Zielknoten verfügen.
 
 ## <a name="partial-configurations-in-pull-mode"></a>Teilkonfigurationen im Pullmodus
 
@@ -377,5 +377,5 @@ SharePointConfig
 **Konzepte**
 [Windows PowerShell DSC – Pullserver](pullServer.md) 
 
-[Konfigurieren des lokalen Konfigurations-Managers](https://technet.microsoft.com/en-us/library/mt421188.aspx) 
+[Konfigurieren des lokalen Konfigurations-Managers](https://technet.microsoft.com/library/mt421188.aspx) 
 

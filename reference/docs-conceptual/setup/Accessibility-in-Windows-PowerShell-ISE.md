@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Barrierefreiheit in Windows PowerShell ISE
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
-ms.openlocfilehash: 505ec3aca84b5ad0b9d58a1ec84d80e3aa86db7a
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 7f758a46bdc722482b9e8a9baaff0a075f64ece9
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Barrierefreiheit in Windows PowerShell ISE
 In diesen Thema werden die Barrierefreiheitsfeatures von Windows PowerShell Integrated Scripting Environment (ISE) geschrieben, die Sie ggf. hilfreich finden.
@@ -22,7 +22,7 @@ In diesen Thema werden die Barrierefreiheitsfeatures von Windows PowerShell Inte
 
 Microsoft ist bestrebt, seine Produkte und Dienste so benutzerfreundlich wie möglich zu gestalten. In den folgenden Abschnitten werden Informationen zu den Funktionen, Produkten und Dienstleistungen vermittelt, mit deren Hilfe Personen mit Behinderungen der Zugriff auf Windows PowerShell ISE erleichtert wird.
 
-Windows PowerShell ISE unterstützt den Modus für hohen Kontrast. Für Sehbehinderte stehen Haltepunktinformationen über die Cmdlets zum Verwalten von Haltepunkten zur Verfügung, wie z. B. [Get-PSBreakpoint](https://technet.microsoft.com/en-us/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) und [Set-PSBreakpoint](https://technet.microsoft.com/en-us/library/6afd5d2c-a285-4796-8607-3cbf49471420). Weitere Informationen finden Sie unter „Verwalten von Haltepunkten“ in [Debuggen von Skripts in der Windows PowerShell ISE](../core-powershell/ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md). Neben den Barrierefreiheitsfeatures und Hilfsprogrammen von Microsoft Windows sorgen die folgenden Windows PowerShell ISE-Features für Personen mit Behinderungen für mehr Barrierefreiheit:
+Windows PowerShell ISE unterstützt den Modus für hohen Kontrast. Für Sehbehinderte stehen Haltepunktinformationen über die Cmdlets zum Verwalten von Haltepunkten zur Verfügung, wie z. B. [Get-PSBreakpoint](https://technet.microsoft.com/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) und [Set-PSBreakpoint](https://technet.microsoft.com/library/6afd5d2c-a285-4796-8607-3cbf49471420). Weitere Informationen finden Sie unter „Verwalten von Haltepunkten“ in [Debuggen von Skripts in der Windows PowerShell ISE](../core-powershell/ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md). Neben den Barrierefreiheitsfeatures und Hilfsprogrammen von Microsoft Windows sorgen die folgenden Windows PowerShell ISE-Features für Personen mit Behinderungen für mehr Barrierefreiheit:
 
 - Tastenkombinationen
 
@@ -55,7 +55,7 @@ Führen Sie eines der folgenden Verfahren aus:
 ## <a name="keyboard-shortcuts-for-editing-text"></a>Tastenkombinationen zum Bearbeiten von Text
 Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Text bearbeiten.
 
-|Aktion|Tastenkombinationen|Verwenden in|
+|Action|Tastenkombinationen|Verwenden in|
 |----------|----------------------|----------|
 |**Kopieren**|STRG + C|Skriptbereich, Konsolenbereich|
 |**Ausschneiden**|STRG+X|Skriptbereich, Konsolenbereich|
@@ -72,7 +72,7 @@ Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Text bearbeite
 ## <a name="keyboard-shortcuts-for-running-scripts"></a>Tastenkombinationen zum Ausführen von Skripts
 Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Skripts im Skriptbereich ausführen.
 
-|Aktion|Tastenkombination|
+|Action|Tastenkombination|
 |----------|---------------------|
 |**Neu**|STRG+N|
 |**Öffnen**|STRG+O|
@@ -85,7 +85,7 @@ Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Skripts im Skr
 ## <a name="keyboard-shortcuts-for-customizing-the-view"></a>Tastenkombinationen zum Anpassen der Ansicht
 Sie können die folgenden Tastenkombinationen verwenden, um die Ansicht in Windows PowerShell ISE anzupassen. Diese Tastenkombinationen sind in allen Bereichen in der Anwendung wirksam.
 
-|Aktion|Tastenkombination|
+|Action|Tastenkombination|
 |----------|---------------------|
 |**Zur Konsole wechseln**|STRG+D|
 |**Zum Skriptbereich gehen**|STRG+I|
@@ -101,7 +101,7 @@ Sie können die folgenden Tastenkombinationen verwenden, um die Ansicht in Windo
 ## <a name="keyboard-shortcuts-for-debugging-scripts"></a>Tastenkombinationen zum Debuggen von Skripts
 Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Skripts debuggen.
 
-|Aktion|Tastenkombination|Verwenden in|
+|Action|Tastenkombination|Verwenden in|
 |----------|---------------------|----------|
 |**Ausführen/Fortsetzen**|F5|Skriptbereich beim Debuggen eines Skripts|
 |**Einzelschritt**|F11|Skriptbereich beim Debuggen eines Skripts|
@@ -117,7 +117,7 @@ Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Skripts debugg
 >
 > Sie können beim Debuggen von Skripts in der Windows PowerShell ISE auch die Tastenkombinationen verwenden, die für die Windows PowerShell-Konsole vorgesehen sind. Um diese Tastenkombinationen zu verwenden, müssen Sie die jeweilige Kombination im Konsolenbereich eingeben und die EINGABETASTE drücken.
 
-|Aktion|Tastenkombination|Verwenden in|
+|Action|Tastenkombination|Verwenden in|
 |----------|---------------------|----------|
 |**Fortsetzen**|C|Konsolenbereich, wenn ein Skript debuggt wird|
 |**Einzelschritt**|E|Konsolenbereich, wenn ein Skript debuggt wird|
@@ -132,7 +132,7 @@ Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Skripts debugg
 ## <a name="keyboard-shortcuts-for-windows-powershell-tabs"></a>Tastenkombinationen für Windows PowerShell-Registerkarten
 Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Windows PowerShell-Registerkarten verwenden.
 
-|Aktion|Tastenkombination|
+|Action|Tastenkombination|
 |----------|---------------------|
 |**PowerShell-Registerkarte schließen**|STRG+W|
 |**Neue PowerShell-Registerkarte**|STRG+T|
@@ -142,7 +142,7 @@ Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Windows PowerS
 ## <a name="keyboard-shortcuts-for-starting-and-exiting"></a>Tastenkombinationen für Starten und Beenden
 Sie können die folgenden Tastenkombinationen verwenden, um die Windows PowerShell-Konsole (PowerShell.exe) zu starten oder Windows PowerShell ISE zu beenden.
 
-|Aktion|Tastenkombination|
+|Action|Tastenkombination|
 |----------|---------------------|
 |**Beenden**|ALT+F4|
 |**PowerShell.exe starten** (Windows PowerShell-Konsole)|STRG+UMSCHALT+P|

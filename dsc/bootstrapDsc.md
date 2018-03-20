@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Konfigurieren eines virtuellen Computers beim ersten Hochfahren mithilfe von DSC
-ms.openlocfilehash: 76c990ee7c98ea47d1fc3d7bd955ce6a993e28a6
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: ff06aafa6db49d93a9b42e38ac7c3e9a11657bd5
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 >Gilt für: Windows PowerShell 5.0
 
@@ -20,7 +20,7 @@ Informationen dazu, wie Sie neue virtuelle Computer beim ersten Hochfahren in Po
 
 Um diese Beispiele auszuführen, benötigen Sie:
 
-- Eine startbare virtuelle Festplatte (VHD). Sie können ein ISO-Image mit einer Evaluierungsversion von Windows Server 2016 aus dem [TechNet-Evaluierungscenter](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016) herunterladen. Anweisungen finden Sie zum Erstellen einer VHD aus einem ISO-Image finden Sie unter [Erstellen startbarer virtueller Festplatten](https://technet.microsoft.com/en-us/library/gg318049.aspx).
+- Eine startbare virtuelle Festplatte (VHD). Sie können ein ISO-Image mit einer Evaluierungsversion von Windows Server 2016 aus dem [TechNet-Evaluierungscenter](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016) herunterladen. Anweisungen finden Sie zum Erstellen einer VHD aus einem ISO-Image finden Sie unter [Erstellen startbarer virtueller Festplatten](https://technet.microsoft.com/library/gg318049.aspx).
 - Ein Hostcomputer, auf dem Hyper-V aktiviert ist. Informationen hierzu finden Sie unter [Übersicht über Hyper-V](https://technet.microsoft.com/library/hh831531.aspx).
 
 Mithilfe von DSC können Sie die Installation und Konfiguration von Software beim ersten Hochfahren eines Computers automatisieren.

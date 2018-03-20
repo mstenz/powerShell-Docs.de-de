@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: "Desired State Configuration (DSC): Übersicht für Entscheidungsträger"
-ms.openlocfilehash: cbde5d22f9cf118485a0302e53ee0a75eb4b8843
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 42335d674bd23a109ad8f818d3e22ef221884ca7
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>Desired State Configuration (DSC): Übersicht für Entscheidungsträger
 
@@ -17,7 +17,7 @@ In diesem Dokument werden die Unternehmensvorteile der Verwendung von PowerShell
 
 Windows PowerShell Desired State Configuration (DSC) ist eine in Windows integrierte Konfigurationsverwaltungsplattform, die auf offenen Standards basiert. DSC ist flexibel genug, in jeder Phase des Bereitstellungslebenszyklus (Entwicklung, Test, Präproduktion, Produktion) sowie bei horizontaler Skalierung zuverlässig und konsistent zu funktionieren. 
 
-Eine Hauptfunktion von DSC sind [Konfigurationen](https://msdn.microsoft.com/en-us/powershell/dsc/configurations).
+Eine Hauptfunktion von DSC sind [Konfigurationen](https://msdn.microsoft.com/powershell/dsc/configurations).
 Eine Konfiguration ist ein einfach zu lesendes Dokument, das eine aus Computern („Knoten“) bestehende Umgebung mit bestimmten Merkmalen beschreibt. Diese Merkmale können so einfach wie das Sicherstellen, dass ein bestimmtes Windows-Feature aktiviert ist, oder so komplex wie das Bereitstellen von SharePoint sein. 
 
 DSC verfügt auch über eine integrierte Überwachung und Berichterstellung. Wenn ein System nicht mehr kompatibel ist, kann DSC eine Warnung auslösen und agieren, um das System zu korrigieren. 
@@ -35,11 +35,11 @@ Konfigurationen können auch über den [PowerShell-Katalog](https://powershellga
 
 [DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) ist eine Kombination aus Benutzern, Prozessen und Tools, die eine schnelle Bereitstellung und Iteration ermöglicht, um sowohl internen als auch externen Endbenutzern einen Mehrwert zu bieten. DSC wurde mit Blick auf DevOps entworfen. Wenn eine Umgebung mittels einer einzelnen Konfiguration definiert wird, können Entwickler ihre Anforderungen in einer Konfiguration codieren und diese Konfiguration in die Quellcodeverwaltung einchecken. Das Betriebsteam kann anschließend Code bereitstellen, ohne fehleranfällige manuelle Prozesse durchlaufen zu müssen. 
 
-Konfigurationen sind auch [datengesteuert](https://msdn.microsoft.com/en-us/powershell/dsc/configdata), was es dem Betriebsteam erleichtert, Umgebungen ohne Eingriffe von Entwicklern zu bestimmen und zu ändern. 
+Konfigurationen sind auch [datengesteuert](https://msdn.microsoft.com/powershell/dsc/configdata), was es dem Betriebsteam erleichtert, Umgebungen ohne Eingriffe von Entwicklern zu bestimmen und zu ändern. 
 
 ## <a name="desired-state-configuration-on--and-off-premises"></a>DSC – lokale und externe Bereitstellungen
 
-DSC kann zum Verwalten lokaler und externer Bereitstellungen verwendet werden. Für lokale Lösungen bietet DSC einen [Pullserver](https://msdn.microsoft.com/en-us/powershell/dsc/pullserver) zum Zentralisieren der Verwaltung von Computern und Melden ihres Status. Für Cloudlösungen lässt sich DSC da verwenden, wo Windows verwendet werden kann. Es gibt auch spezielle Angebote in Azure, die auf DSC basieren, wie z.B. [Azure Automation](https://azure.microsoft.com/en-us/documentation/services/automation/) zum Zentralisieren der Berichterstattung für DSC. 
+DSC kann zum Verwalten lokaler und externer Bereitstellungen verwendet werden. Für lokale Lösungen bietet DSC einen [Pullserver](https://msdn.microsoft.com/powershell/dsc/pullserver) zum Zentralisieren der Verwaltung von Computern und Melden ihres Status. Für Cloudlösungen lässt sich DSC da verwenden, wo Windows verwendet werden kann. Es gibt auch spezielle Angebote in Azure, die auf DSC basieren, wie z.B. [Azure Automation](https://azure.microsoft.com/en-us/documentation/services/automation/) zum Zentralisieren der Berichterstattung für DSC. 
 
 ## <a name="dsc-and-compatibility"></a>DSC und Kompatibilität
 

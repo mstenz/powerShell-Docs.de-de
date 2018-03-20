@@ -5,11 +5,11 @@ ms.topic: conceptual
 keywords: gallery,powershell,cmdlet,psgallery
 description: "Richtlinien für Herausgeber"
 title: "Veröffentlichungsrichtlinien und Best Practices für den PowerShell-Katalog"
-ms.openlocfilehash: 882a33c00cc024ad2bbb05a3283e058a61035e3a
-ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
+ms.openlocfilehash: 25bbe31bcc805808c311829598e3c29991f72aad
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>Veröffentlichungsrichtlinien und Best Practices für den PowerShell-Katalog
 
@@ -19,7 +19,7 @@ Elemente, die gemäß den hier beschriebenen Richtlinien veröffentlicht werden,
 Die nachfolgenden Richtlinien definieren, wodurch sich ein gutes PowerShell-Katalogelement auszeichnet, welche optionalen Manifesteinstellungen besonders wichtig sind, wie Sie Ihren Code mithilfe von Benutzerfeedback und [Powershell Script Analyzer](https://aka.ms/psscriptanalyzer) verbessern und wie Sie die Versionsverwaltung Ihres Moduls, der zugehörigen Dokumentation sowie von Tests und Anwendungsbeispielen durchführen.
 Ein Großteil dieser Dokumentation folgt den Richtlinien für das Veröffentlichen von [hochwertigen DSC-Ressourcenmodulen](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md).
 
-Informationen zu den Mechanismen für das Veröffentlichen eines Elements im PowerShell-Katalog finden Sie unter [Erstellen und Veröffentlichen eines Elements](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/creating-and-publishing-an-item).
+Informationen zu den Mechanismen für das Veröffentlichen eines Elements im PowerShell-Katalog finden Sie unter [Erstellen und Veröffentlichen eines Elements](https://msdn.microsoft.com/powershell/gallery/psgallery/creating-and-publishing-an-item).
 
 Wir freuen uns auf Ihr Feedback zu diesen Richtlinien. Wenn Sie Anmerkungen haben, öffnen Sie ein Problem in unserem [GitHub-Dokumentationsrepository](https://github.com/powershell/powershell-docs/).
 
@@ -71,7 +71,7 @@ In MSDN finden Sie verschiedene Artikel zur Bereitstellung von Dokumentation fü
 * Richtlinien zum Bereitstellen von Hilfe finden Sie im Artikel [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415) (Schreiben von Hilfe zu Cmdlets).
 * Das Erstellen von Hilfetexten zu Cmdlets ist der beste Ansatz für beliebige PowerShell-Skripts, -Funktionen oder -Cmdlets.
   Informationen dazu, wie Sie eine Cmdlet-Hilfe schreiben, finden Sie unter [How to Write Cmdlet Help (Schreiben von Hilfe zu Cmdlets)](https://go.microsoft.com/fwlink/?LinkID=123415) in der MSDN-Bibliothek.
-  Informationen dazu, wie Sie innerhalb eines Skripts Hilfe hinzufügen, finden Sie unter [Informationen zur kommentarbasierten Hilfe](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_comment_based_help).
+  Informationen dazu, wie Sie innerhalb eines Skripts Hilfe hinzufügen, finden Sie unter [Informationen zur kommentarbasierten Hilfe](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_comment_based_help).
 * Viele Module enthalten Dokumentation in Textformat, z.B. als MarkDown-Dateien.
   Dies kann besonders nützlich sein, wenn eine Projektwebsite in GitHub vorhanden ist, wo Markdown-Dateien ein häufig verwendetes Format sind.
   Als Best Practice sollte [GitHub Flavored Markdown (GFM)](https://help.github.com/categories/writing-on-github/) verwendet werden.

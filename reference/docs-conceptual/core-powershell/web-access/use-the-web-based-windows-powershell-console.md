@@ -2,13 +2,13 @@
 ms.date: 2017-08-23
 keywords: powershell,cmdlet
 title: Verwendung der webbasierten Windows PowerShell-Konsole
-ms.openlocfilehash: 31ab17f1a1ea1353abc6f770285a2dca70da446d
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: a6c9812253309ba1225141cfd48d0f1c8b8785b5
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="use-the-web-based-windows-powershell-console"></a>Verwendung der webbasierten Windows PowerShell-Konsole
+# <a name="use-the-web-based-windows-powershell-console"></a>Use the Web-based Windows PowerShell Console
 
 Aktualisiert: 24. Juni 2013
 
@@ -58,7 +58,7 @@ Standardmäßig ist die Adresse dieser Website *https://\<Servername\>/pswa*.
 
 Bevor Sie sich bei Windows PowerShell Web Access anmelden, sollten Sie sichergehen, dass Sie über den Namen oder die IP-Adresse des zu verwaltenden Remotecomputers verfügen.
 Sie müssen auf dem Remotecomputer ein autorisierter Benutzer sein. Außerdem müssen Sie darauf die Remoteverwaltung zulassen.
-Weitere Informationen dazu, wie Sie Ihren Computer so konfigurieren, dass eine Remoteverwaltung möglich ist, finden Sie unter [Aktivieren und Verwenden von Remotebefehlen in Windows PowerShell](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enable-psremoting).
+Weitere Informationen dazu, wie Sie Ihren Computer so konfigurieren, dass eine Remoteverwaltung möglich ist, finden Sie unter [Aktivieren und Verwenden von Remotebefehlen in Windows PowerShell](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enable-psremoting).
 
 Die einfachste Möglichkeit, die Remoteverwaltung auf Ihrem Computer zu konfigurieren, besteht in der Ausführung des Cmdlets **Enable-PSRemoting -force** auf dem Computer in einer Windows PowerShell-Sitzung, die mit erhöhten Benutzerrechten (**Als Administrator ausführen**) geöffnet wurde.
 
@@ -74,7 +74,7 @@ Die einfachste Möglichkeit, die Remoteverwaltung auf Ihrem Computer zu konfigur
     > - Wenn es sich beim Zielcomputer um einen Gatewayserver handelt, können Sie `localhost` im Feld „Computername“ angeben.
     > - Sollte es sich beim Zielcomputer um einen Gatewayserver handeln und sich der Gatewayserver in einer Arbeitsgruppe befinden, müssen Sie `<workgroup name>\<user_name>` im Feld „Benutzername“ verwenden. Sie können `localhost` im Feld „Computername“ verwenden.
 
-1. Der Abschnitt **Optionale Verbindungseinstellungen** bezieht sich auf die Autorisierungsanforderungen des zu verwaltenden Remotecomputers. Weitere Informationen zu den Parametern, die den optionalen Verbindungseinstellungen entsprechen, finden Sie in der Hilfe zum Cmdlet [Enter-PSSession](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enter-pssession).
+1. Der Abschnitt **Optionale Verbindungseinstellungen** bezieht sich auf Autorisierungsanforderungen des zu verwaltenden Remotecomputers. Weitere Informationen zu den Parametern, die den optionalen Verbindungseinstellungen entsprechen, finden Sie in der Hilfe zum Cmdlet [Enter-PSSession](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession).
 
     In der Regel sind die Anmeldeinformationen zum Passieren des Windows PowerShell Web Access-Gateways dieselben, die vom zu verwaltenden Remotecomputer erkannt werden. Wenn Sie jedoch andere Anmeldeinformationen zur Verwaltung des in Schritt 2 angegebenen Remotecomputers verwenden möchten, erweitern Sie den Abschnitt **Optionale Verbindungseinstellungen**, und geben Sie die abweichenden Anmeldeinformationen an. Fahren Sie ansonsten mit Schritt 6 fort.
 
@@ -96,9 +96,9 @@ Sie werden in den folgenden Situationen von einer webbasierten Windows PowerShel
 
 - Wenn Sie sich zur Verwaltung eines anderen Remotecomputers in derselben Browsersitzung oder einer neuen Registerkarte desselben Browsers anmelden. (Dies gilt nicht, wenn Windows Server 2012 R2 auf dem Gatewayserver ausgeführt wird. Windows PowerShell Web Access unter Windows Server 2012 R2 lässt mehrere Benutzersitzungen auf neuen Registerkarten in derselben Browsersitzung zu.) Weitere Informationen dazu, wie Sie mehr als eine aktive Sitzung auf demselben Computer starten, finden Sie unter „Aufbauen von Verbindungen zu mehreren Zielcomputern gleichzeitig“ im Abschnitt [Einschränkungen der webbasierten Konsole](#limitations-of-the-web-based-console) dieses Artikels.
 
-- Wenn Sie mehr als 20 Minuten inaktiv sind. Der Gatewayadministrator kann den Timeoutzeitraum für Inaktivität anpassen. Weitere Informationen finden Sie unter [Sitzungsverwaltung](authorization-rules-and-security-features-of-windows-powershell-web-access.md#session-management).
+- Wenn Sie mehr als 20 Minuten inaktiv sind. Der Gatewayadministrator kann den Timeoutzeitraum für Inaktivität anpassen. Weitere Informationen finden Sie unter [Sitzungsverwaltung](authorization-rules-and-security-features-of-windows-powershell-web-access.md#session-management).
 
-    - Wenn Sie aufgrund von Netzwerkfehlern oder anderen ungeplanten Herunterfahrvorgängen oder Ausfällen in der webbasierten Konsole von Sitzungen getrennt werden und nicht weil Sie die Sitzungen selbst geschlossen haben, wird die Windows PowerShell Web Access-Sitzung weiter ausgeführt. Die Verbindung mit dem Zielcomputer bleibt bestehen, bis das Timeout auf dem Client überschritten wird. In der Standardeinstellung beträgt dieses Zeitlimit 20 Minuten, was vom Gatewayadministrator angepasst werden kann. Die Sitzung wird entweder standardmäßig nach 20 Minuten oder nach der vom Gatewayadministrator festgelegten Timeoutperiode getrennt, je nachdem, was kürzer ist.
+    - Wenn Sie aufgrund von Netzwerkfehlern oder anderen ungeplanten Herunterfahrvorgängen oder Ausfällen in der webbasierten Konsole von Sitzungen getrennt werden und nicht weil Sie die Sitzungen selbst geschlossen haben, wird die Windows PowerShell Web Access-Sitzung weiter ausgeführt. Die Verbindung mit dem Zielcomputer bleibt bestehen, bis das Timeout auf dem Client überschritten wird. In der Standardeinstellung beträgt dieses Zeitlimit 20 Minuten, was vom Gatewayadministrator angepasst werden kann. Die Sitzung wird entweder standardmäßig nach 20 Minuten oder nach der vom Gatewayadministrator festgelegten Timeoutperiode getrennt, je nachdem, was kürzer ist.
 
         Wenn der Gatewayserver unter Windows Server 2012 R2 ausgeführt wird, ermöglicht Windows PowerShell Web Access Benutzern das erneute Verbinden mit gespeicherten Sitzungen zu einem späteren Zeitpunkt. Die Benutzer können jedoch gespeicherte Sitzungen erst anzeigen bzw. die Verbindung erneut herstellen, nachdem das vom Gatewayadministrator festgelegte Timeout abgelaufen ist.
 
@@ -106,7 +106,7 @@ Sie werden in den folgenden Situationen von einer webbasierten Windows PowerShel
 
 - Wenn Sie das Clientgerät ausschalten, auf dem der Browser ausgeführt wird, oder es vom Netzwerk trennen.
 
-- Wenn Sie den **Beenden**-Befehl in der Webkonsole ausführen. Der Befehl funktioniert nicht, wenn die Sitzungskonfiguration, mit der Sie verbunden sind, zur Unterstützung des [NoLanguage](https://msdn.microsoft.com/library/windows/desktop/system.management.automation.pslanguagemode.aspx)-Modus konfiguriert ist oder sich in einem eingeschränkten Runspace befindet.
+- Wenn Sie den **Beenden** -Befehl in der Webkonsole ausführen. Der Befehl funktioniert nicht, wenn die Sitzungskonfiguration, mit der Sie verbunden sind, zur Unterstützung des [NoLanguage](https://msdn.microsoft.com/library/windows/desktop/system.management.automation.pslanguagemode.aspx)-Modus konfiguriert ist oder sich in einem eingeschränkten Runspace befindet.
 
 Falls Sie sich wieder anmelden möchten, öffnen Sie die Windows PowerShell Web Access-Website erneut, und melden Sie sich anhand der Schritte in [Anmelden bei Windows PowerShell Web Access](#signing-in-to-windows-powershell-web-access) in diesem Artikel an.
 
@@ -136,7 +136,7 @@ Die Mehrzahl der Windows PowerShell-Hostfunktionen steht in der webbasierten Win
 
 ### <a name="unsupported-shortcut-keys"></a>Nicht unterstützte Tastenkombinationen
 
-Funktionstasten | Aktion
+Funktionstasten | Action
 -- | --
 STRG+C | In Windows PowerShell Web Access wird **STRG+C** vom Browser verwendet, um Inhalte zu kopieren. Die Konsole stellt eine **Abbrechen**-Schaltfläche bereit, darüber hinaus ist der Befehl **STRG+Q** zum Abbrechen von Befehlen verfügbar.
 ALT+Leertaste, E, L | Durch den Bildschirmpuffer scrollen
@@ -165,7 +165,7 @@ ALT+F7 | Befehlsverlauf löschen
 
     Auf die Doppel-Hop-Einschränkung (oder die Verbindung mit einem zweiten Computer über die erste Verbindung) stoßen Sie, wenn Sie versuchen, eine neue Sitzung zu erstellen oder mit einer neuen Sitzung zu arbeiten, indem Sie Windows PowerShell Web Access verwenden. Windows PowerShell Web Access verwendet einen Remoterunspace, und **PowerShell.exe** unterstützt das Herstellen einer Remoteverbindungen mit einem zweiten Computer von einem Remoterunspace derzeit nicht. Wenn Sie beispielsweise versuchen, mithilfe des Cmdlets **Enter-PSSession** von einer bestehenden Verbindung aus eine Verbindung mit einem zweiten Remotecomputer herzustellen, können verschiedene Fehler gemeldet werden, z.B. „Netzwerkressourcen nicht verfügbar“.
 
-    Derlei Fehler können vermieden werden, indem Ihr Administrator die CredSSP-Authentifizierung in der Netzwerkumgebung Ihrer Organisation einrichtet. Weitere Informationen zur Konfiguration der CredSSP-Authentifizierung finden Sie unter [CredSSP für Zweit-Hop-Remoting](http://blogs.msdn.com/b/powershell/archive/2008/06/05/credssp-for-second-hop-remoting-part-i-domain-account.aspx) auf der Microsoft-Website. Sie können auch explizite Anmeldeinformationen zur Verwaltung eines zweiten Remotecomputers angeben, denn mit impliziten Daten ist es unwahrscheinlich, dass der zweite Hop zugelassen wird.
+    Derlei Fehler können vermieden werden, indem Ihr Administrator die CredSSP-Authentifizierung in der Netzwerkumgebung Ihrer Organisation einrichtet. Weitere Informationen zur Einrichtung der CredSSP-Authentifizierung finden Sie unter [CredSSP für Zweit-Hop-Remoting](http://blogs.msdn.com/b/powershell/archive/2008/06/05/credssp-for-second-hop-remoting-part-i-domain-account.aspx) auf der Microsoft-Website. Sie können auch explizite Anmeldeinformationen zur Verwaltung eines zweiten Remotecomputers angeben, denn mit impliziten Daten ist es unwahrscheinlich, dass der zweite Hop zugelassen wird.
 
 - Remoting
 
@@ -173,7 +173,7 @@ ALT+F7 | Befehlsverlauf löschen
 
 - Registerkartenvervollständigung
 
-    Die Registerkartenvervollständigung funktioniert in einer Sitzungskonfiguration mit einem beschränkten Runspace oder einer Sitzungskonfiguration im **NoLanguage**-Modus nicht. Obwohl Administratoren eine Sitzung so konfigurieren können, dass die Registerkartenvervollständigung unterstützt wird, raten wir aus Sicherheitsgründen davon ab, da sie für nicht autorisierte Benutzer die folgenden Informationen verfügbar machen kann.
+    Die Registerkartenvervollständigung funktioniert in einer Sitzungskonfiguration mit einem beschränkten Runspace oder einer solchen im **NoLanguage** -Modus nicht. Obwohl Administratoren eine Sitzung so konfigurieren können, dass die Registerkartenvervollständigung unterstützt wird, raten wir aus Sicherheitsgründen davon ab, da sie für nicht autorisierte Benutzer die folgenden Informationen verfügbar machen kann.
 
     - Interne Pfade des Dateisystems
 
@@ -201,7 +201,7 @@ ALT+F7 | Befehlsverlauf löschen
 
 - Ändern der Konsolengröße.
 
-    Es stehen die folgenden drei Möglichkeiten zur Änderung der Größe des **PowerShell.exe**-Konsolenfensters zur Verfügung.
+    Der Abschnitt **PowerShell.exe** -Konsolenfensters zur Verfügung.
 
     - Ändern der Konsolenfenstergröße per Ziehen des Mauszeigers
 

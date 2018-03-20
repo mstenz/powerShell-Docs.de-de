@@ -7,11 +7,11 @@ ms.date: 2016-12-12
 title: "Hinzufügen von pswaauthorizationrule"
 ms.technology: powershell
 schema: 2.0.0
-ms.openlocfilehash: 196797215a678e6f674592dc6b289816aced3c01
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 71954fc115daee4c05662d11baa2bc6a0a417896
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="add-pswaauthorizationrule"></a>Add-PswaAuthorizationRule
 
@@ -64,10 +64,10 @@ Gibt den Namen einer Computergruppe in Active Directory Domain Services (AD DS) 
 
 |||  
 |-|-|
-| Aliase                              | keine                                 |
+| Aliase                              | Keiner                                 |
 | Erforderlich?                            | wahr                                 |
 | Position?                            | benannt                                |
-| Standardwert                        | keine                                 |
+| Standardwert                        | Keiner                                 |
 | Pipelineeingaben akzeptieren?               | True (ByPropertyName)                |
 | Platzhalterzeichen akzeptieren?          | falsch                                |
 
@@ -77,10 +77,10 @@ Gibt den Namen des Computers an, dem diese Regel Zugriff gewährt.
 
 |||  
 |-|-|
-| Aliase                              | keine                                 |
+| Aliase                              | Keiner                                 |
 | Erforderlich?                            | wahr                                 |
 | Position?                            | benannt                                |
-| Standardwert                        | keine                                 |
+| Standardwert                        | Keiner                                 |
 | Pipelineeingaben akzeptieren?               | True (ByPropertyName)                |
 | Platzhalterzeichen akzeptieren?          | falsch                                |
 
@@ -90,10 +90,10 @@ Gibt den Namen einer Windows PowerShell-Sitzungskonfiguration (auch als Runspace
 
 |||  
 |-|-|
-| Aliase                              | keine                                 |
+| Aliase                              | Keiner                                 |
 | Erforderlich?                            | wahr                                 |
 | Position?                            | benannt                                |
-| Standardwert                        | keine                                 |
+| Standardwert                        | Keiner                                 |
 | Pipelineeingaben akzeptieren?               | True (ByPropertyName)                |
 | Platzhalterzeichen akzeptieren?          | falsch                                |
 
@@ -103,10 +103,10 @@ Gibt ein **PSCredential**-Objekt für ein Benutzerkonto an, das Sie zum Ändern 
 
 |||  
 |-|-|
-| Aliase                              | keine                                 |
+| Aliase                              | Keiner                                 |
 | Erforderlich?                            | falsch                                |
 | Position?                            | benannt                                |
-| Standardwert                        | keine                                 |
+| Standardwert                        | Keiner                                 |
 | Pipelineeingaben akzeptieren?               | falsch                                |
 | Platzhalterzeichen akzeptieren?          | falsch                                |
 
@@ -117,10 +117,10 @@ Zusätzlich werden Sie zu einer Bestätigung aufgefordert, wenn Sie einen einfac
 
 |||  
 |-|-|
-| Aliase                              | keine                                 |
+| Aliase                              | Keiner                                 |
 | Erforderlich?                            | falsch                                |
 | Position?                            | benannt                                |
-| Standardwert                        | keine                                 |
+| Standardwert                        | Keiner                                 |
 | Pipelineeingaben akzeptieren?               | falsch                                |
 | Platzhalterzeichen akzeptieren?          | falsch                                |
 
@@ -130,10 +130,10 @@ Gibt den Anzeigenamen für diese Regel an.
 
 |||  
 |-|-|
-| Aliase                              | keine                                 |
+| Aliase                              | Keiner                                 |
 | Erforderlich?                            | falsch                                |
 | Position?                            | benannt                                |
-| Standardwert                        | keine                                 |
+| Standardwert                        | Keiner                                 |
 | Pipelineeingaben akzeptieren?               | True (ByPropertyName)                |
 | Platzhalterzeichen akzeptieren?          | falsch                                |
 
@@ -143,10 +143,10 @@ Gibt den Namen für eine oder mehrere Benutzergruppen in AD DS oder für lokale 
 
 |||  
 |-|-|
-| Aliase                              | keine                                 |
+| Aliase                              | Keiner                                 |
 | Erforderlich?                            | wahr                                 |
 | Position?                            | benannt                                |
-| Standardwert                        | keine                                 |
+| Standardwert                        | Keiner                                 |
 | Pipelineeingaben akzeptieren?               | True (ByPropertyName)                |
 | Platzhalterzeichen akzeptieren?          | falsch                                |
 
@@ -157,17 +157,17 @@ Das Format ist `domain\user` oder `computer\user`.
 
 |||  
 |-|-|
-| Aliase                              | keine                                 |
+| Aliase                              | Keiner                                 |
 | Erforderlich?                            | wahr                                 |
 | Position?                            | 1                                    |
-| Standardwert                        | keine                                 |
+| Standardwert                        | Keiner                                 |
 | Pipelineeingaben akzeptieren?               | True (ByValue, ByPropertyName)       |
 | Platzhalterzeichen akzeptieren?          | falsch                                |
 
 ### <a name="ltcommonparametersgt"></a>&lt;CommonParameters&gt;
 
 Dieses Cmdlet unterstützt die folgenden allgemeinen Parameter: -Verbose, -Debug, -ErrorAction, -ErrorVariable, -OutBuffer und -OutVariable.
-Weitere Informationen finden Sie unter [about_CommonParameters](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_commonparameters).
+Weitere Informationen finden Sie unter [about_CommonParameters](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_commonparameters).
 
 ## <a name="inputs"></a>EINGABEN
 
@@ -190,7 +190,7 @@ Dieses Cmdlet gibt ein Objekt der Autorisierungsregel zurück.
 ### <a name="example-1"></a>BEISPIEL 1
 
 In diesem Beispiel wird Zugriff auf die Sitzungskonfiguration *PSWAEndpoint*, bei der es sich um einen eingeschränkten Runspace auf *srv2* handelt, für Benutzer der Gruppe *SMAdmins* gewährt.
-**Hinweis**: Der Computername muss ein voll qualifizierter Domänenname (FQDN) sein. Administratoren definieren eine eingeschränkte Sitzungskonfiguration bzw. einen Runspace. Dabei handelt es sich um einen begrenzten Bereich von Cmdlets und Aufgaben, die die Endbenutzer ausführen können. Das Definieren eines eingeschränkten Runspaces kann verhindern, dass Benutzer auf andere Computer zugreifen, die sich nicht im zugelassenen Windows PowerShell®-Runspace befinden. Dadurch wird eine sicherere Verbindung ermöglicht. Weitere Informationen finden Sie unter [about_Session_Configurations](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) oder [Install and Use Windows PowerShell Web Access (Installieren und Verwenden von Windows PowerShell Web Access)](../install-and-use-windows-powershell-web-access.md).
+**Hinweis**: Der Computername muss ein voll qualifizierter Domänenname (FQDN) sein. Administratoren definieren eine eingeschränkte Sitzungskonfiguration bzw. einen Runspace. Dabei handelt es sich um einen begrenzten Bereich von Cmdlets und Aufgaben, die die Endbenutzer ausführen können. Das Definieren eines eingeschränkten Runspaces kann verhindern, dass Benutzer auf andere Computer zugreifen, die sich nicht im zugelassenen Windows PowerShell®-Runspace befinden. Dadurch wird eine sicherere Verbindung ermöglicht. Weitere Informationen finden Sie unter [about_Session_Configurations](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) oder [Install and Use Windows PowerShell Web Access (Installieren und Verwenden von Windows PowerShell Web Access)](../install-and-use-windows-powershell-web-access.md).
 
 ```PowerShell
 Add-PswaAuthorizationRule -ComputerName srv2.contoso.com -UserGroupName contoso\SMAdmins -ConfigurationName PSWAEndpoint

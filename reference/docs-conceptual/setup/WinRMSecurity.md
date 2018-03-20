@@ -2,11 +2,11 @@
 ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: WinRMSecurity
-ms.openlocfilehash: 65cf12466c9dc8fc8b77d79b0d63a6ae61e64d60
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 0522844fded847a3fd45c1b3890a141357edb2b2
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="powershell-remoting-security-considerations"></a>Sicherheitsaspekte von PowerShell-Remoting
 
@@ -14,7 +14,7 @@ PowerShell-Remoting ist die empfohlene Methode zum Verwalten von Windows-Systeme
 
 ## <a name="what-is-powershell-remoting"></a>Was ist PowerShell-Remoting?
 
-PowerShell-Remoting verwendet [Windows-Remoteverwaltung (WinRM)](https://msdn.microsoft.com/en-us/library/windows/desktop/aa384426.aspx), wobei es sich um die Microsoft-Implementierung des Protokolls von [Web Services for Management (WS-Management)](http://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf) handelt, um Benutzern die Ausführung von PowerShell-Befehlen auf Remotecomputern zu ermöglichen. Weitere Informationen zur Verwendung von PowerShell-Remoting finden Sie unter [Ausführen von Remotebefehlen](https://technet.microsoft.com/en-us/library/dd819505.aspx).
+PowerShell-Remoting verwendet [Windows-Remoteverwaltung (WinRM)](https://msdn.microsoft.com/library/windows/desktop/aa384426.aspx), wobei es sich um die Microsoft-Implementierung des Protokolls von [Web Services for Management (WS-Management)](http://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf) handelt, um Benutzern die Ausführung von PowerShell-Befehlen auf Remotecomputern zu ermöglichen. Weitere Informationen zur Verwendung von PowerShell-Remoting finden Sie unter [Ausführen von Remotebefehlen](https://technet.microsoft.com/library/dd819505.aspx).
 
 PowerShell-Remoting unterscheidet sich von Ausführung eines Cmdlets auf einem Remotecomputer unter Verwendung des Parameters **ComputerName**, wobei ein Remoteprozeduraufruf (RPC) als zugrunde liegendes Protokoll verwendet wird.
 
@@ -33,7 +33,7 @@ In privaten Netzwerken akzeptiert die Windows-Firewall-Standardregel für PowerS
 
 ## <a name="process-isolation"></a>Prozessisolation
 
-PowerShell-Remoting verwendet [Windows-Remoteverwaltung (WinRM)](https://msdn.microsoft.com/en-us/library/windows/desktop/aa384426) für die Kommunikation zwischen Computern. WinRM wird als Dienst unter dem „Netzwerkdienst“-Konto ausgeführt, und erstellt isolierte Prozesse, die als Benutzerkonten ausgeführt werden, um PowerShell-Instanzen zu hosten. Eine Instanz von PowerShell, die als ein Benutzer ausgeführt wird, hat keinen Zugriff auf einen Prozess, der eine Instanz von PowerShell als ein anderer Benutzer ausführt.
+PowerShell-Remoting verwendet [Windows-Remoteverwaltung (WinRM)](https://msdn.microsoft.com/library/windows/desktop/aa384426) für die Kommunikation zwischen Computern. WinRM wird als Dienst unter dem „Netzwerkdienst“-Konto ausgeführt, und erstellt isolierte Prozesse, die als Benutzerkonten ausgeführt werden, um PowerShell-Instanzen zu hosten. Eine Instanz von PowerShell, die als ein Benutzer ausgeführt wird, hat keinen Zugriff auf einen Prozess, der eine Instanz von PowerShell als ein anderer Benutzer ausführt.
 
 ## <a name="event-logs-generated-by-powershell-remoting"></a>Von PowerShell-Remoting generierte Ereignisprotokolle
 
@@ -50,10 +50,10 @@ Unabhängig vom verwendeten Transportprotokoll (HTTP oder HTTPS) verschlüsselt 
 
 Mit der Authentifizierung wird die Identität des Clients gegenüber dem Server bestätigt und idealerweise die des Servers gegenüber dem Client.
     
-Wenn ein Client eine Verbindung mit einem Domänenserver mithilfe seines Computernamens herstellt (d. h.: „server01“ oder „server01.contoso.com“), ist das Standardprotokoll für die Authentifizierung [Kerberos](https://msdn.microsoft.com/en-us/library/windows/desktop/aa378747.aspx).
+Wenn ein Client eine Verbindung mit einem Domänenserver mithilfe seines Computernamens herstellt (d. h.: „server01“ oder „server01.contoso.com“), ist das Standardprotokoll für die Authentifizierung [Kerberos](https://msdn.microsoft.com/library/windows/desktop/aa378747.aspx).
 Kerberos garantiert sowohl die Identität des Benutzers als auch die des Servers, ohne dabei jegliche Art von wiederverwendbaren Anmeldeinformationen zu senden.
 
-Wenn ein Client eine Verbindung mit einem Domänenserver mithilfe seiner IP-Adresse oder eine Verbindung mit einem Arbeitsgruppenserver herstellt, ist eine Authentifizierung mittels Kerberos nicht möglich. In diesem Fall verwendet PowerShell-Remoting dann das [NTLM-Authentifizierungsprotokoll](https://msdn.microsoft.com/en-us/library/windows/desktop/aa378749.aspx). Die NTLM-Authentifizierung garantiert die Identität des Benutzers, ohne dabei jegliche Art von delegierbaren Anmeldeinformationen zu senden. Um die Identität des Benutzers nachzuweisen, erfordert das NTLM-Protokoll, dass sowohl der Client als auch der Server einen Sitzungsschlüssel aus dem Kennwort des Benutzers berechnen, ohne dabei jemals das Kennwort selbst auszutauschen. Der Server kennt in der Regel das Kennwort des Benutzers nicht, weshalb er mit dem Domänencontroller kommuniziert, der das Kennwort des Benutzers kennt und den Sitzungsschlüssel für den Server berechnet. 
+Wenn ein Client eine Verbindung mit einem Domänenserver mithilfe seiner IP-Adresse oder eine Verbindung mit einem Arbeitsgruppenserver herstellt, ist eine Authentifizierung mittels Kerberos nicht möglich. In diesem Fall verwendet PowerShell-Remoting dann das [NTLM-Authentifizierungsprotokoll](https://msdn.microsoft.com/library/windows/desktop/aa378749.aspx). Die NTLM-Authentifizierung garantiert die Identität des Benutzers, ohne dabei jegliche Art von delegierbaren Anmeldeinformationen zu senden. Um die Identität des Benutzers nachzuweisen, erfordert das NTLM-Protokoll, dass sowohl der Client als auch der Server einen Sitzungsschlüssel aus dem Kennwort des Benutzers berechnen, ohne dabei jemals das Kennwort selbst auszutauschen. Der Server kennt in der Regel das Kennwort des Benutzers nicht, weshalb er mit dem Domänencontroller kommuniziert, der das Kennwort des Benutzers kennt und den Sitzungsschlüssel für den Server berechnet. 
       
 Das NTLM-Protokoll garantiert jedoch nicht die Identität des Servers. Wie bei allen Protokollen, die NTLM für die Authentifizierung verwenden, könnte ein Angreifer, der Zugriff auf das Computerkonto eines der Domäne beigetretenen Computers hat, den Domänencontroller zur Berechnung eines NTLM-Sitzungsschlüssels aufrufen und auf diese Art die Identität des Servers annehmen.
 

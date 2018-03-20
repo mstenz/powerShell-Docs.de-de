@@ -2,8 +2,8 @@
 
 Dieses Thema enthält zusammenfassende Informationen darüber, wie Herausgeber das Manifest für ihre PowerShell-Katalogveröffentlichungen im Hinblick auf Features von PowerShellGet-Cmdlets und die Benutzeroberfläche des PowerShell-Katalogs ändern können. Der Inhalt des vorliegenden Artikels ist entsprechend der Darstellung der Änderungen organisiert – und zwar beginnend mit dem mittleren Abschnitt bis zum Navigationsbereich auf der linken Seite. Der Artikel enthält einen Detailabschnitt, in dem wichtige Tags sowie einige der häufiger verwendeten Tags erläutert werden. In zwei Themen werden Beispiele für Manifeste vorgestellt: 
 
-* Informationen zu Modulen finden Sie unter [Update-ModuleManifest](https://docs.microsoft.com/en-us/powershell/gallery/psget/module/psget_update-modulemanifest).
-* Informationen zu Skripts finden Sie unter [New-ScriptFileInfo](https://docs.microsoft.com/en-us/powershell/gallery/psget/script/psget_new-scriptfileinfo).
+* Informationen zu Modulen finden Sie unter [Update-ModuleManifest](https://docs.microsoft.com/powershell/gallery/psget/module/psget_update-modulemanifest).
+* Informationen zu Skripts finden Sie unter [New-ScriptFileInfo](https://docs.microsoft.com/powershell/gallery/psget/script/psget_new-scriptfileinfo).
 
 ## <a name="powershell-gallery-feature-elements-controlled-by-the-manifest"></a>Vom Manifest gesteuerte Elemente der PowerShell-Katalogfeatures
 

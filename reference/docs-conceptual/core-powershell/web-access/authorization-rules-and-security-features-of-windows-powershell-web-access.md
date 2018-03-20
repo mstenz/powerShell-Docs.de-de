@@ -2,11 +2,11 @@
 ms.date: 2017-06-27
 keywords: powershell,cmdlet
 title: Autorisierungsregeln und Sicherheitsfeatures von Windows PowerShell Web Access
-ms.openlocfilehash: 6b50fdc0f2854d8af6147432fed1a155d26f57e7
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 19e4aa1bb55178ec2634af0771afe2db5db3423c
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Autorisierungsregeln und Sicherheitsfeatures von Windows PowerShell Web Access
 
@@ -32,7 +32,7 @@ Wie bei anderen Windows PowerShell-Cmdlets, die über einen „Credential“-Par
 Führen Sie das Cmdlet [Get-Credential](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.security/Get-Credential) aus, um ein „PSCredential“-Objekt zu erstellen, das Anmeldeinformationen enthält, die Sie an einen Remotecomputer übergeben möchten.
 
 Windows PowerShell Web Access-Authentifizierungsregeln sind Whitelist-Regeln.
-Jede Regel ist eine Definition einer zulässigen Verbindung zwischen Benutzern, Zielcomputern und bestimmten Windows PowerShell-[Sitzungskonfigurationen](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) (auch als Endpunkte oder _Runspaces_ bezeichnet) auf angegebenen Zielcomputern.
+Jede Regel ist eine Definition einer zulässigen Verbindung zwischen Benutzern, Zielcomputern und bestimmten Windows PowerShell-[Sitzungskonfigurationen](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) (auch als Endpunkte oder _Runspaces_ bezeichnet) auf angegebenen Zielcomputern.
 Eine Erläuterung zu **Runspaces** finden Sie unter [Beginning Use of PowerShell Runspaces (Verwenden von PowerShell-Runspaces)](https://blogs.technet.microsoft.com/heyscriptingguy/2015/11/26/beginning-use-of-powershell-runspaces-part-1/).
 
 > **Sicherheitshinweis**
@@ -103,7 +103,7 @@ Diese Regeln werden erst ausgewertet, nachdem ein Benutzer vom Gateway authentif
 Die letzte Sicherheitsebene für Windows PowerShell Web Access ist die eigene Sicherheitskonfiguration des Zielcomputers.
 Für Benutzer müssen auf dem Zielcomputer die richtigen Zugriffsrechte konfiguriert sein. Dies gilt auch für die Windows PowerShell Web Access-Autorisierungsregeln zum Ausführen einer webbasierten Windows PowerShell Web Access-Konsole, die für einen Zielcomputer über Windows PowerShell Web Access verwendet wird.
 
-Diese Ebene bietet die gleichen Sicherheitsmechanismen, die auch Verbindungsversuche auswerten würden, falls Benutzer versuchen, eine Windows PowerShell-Remotesitzung zu einem Zielcomputer mithilfe der Cmdlets [Enter-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Enter-PSSession) oder [New-PSSession](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/new-pssession) über Windows PowerShell einzurichten.
+Diese Ebene bietet die gleichen Sicherheitsmechanismen, die auch Verbindungsversuche auswerten würden, falls Benutzer versuchen, eine Windows PowerShell-Remotesitzung zu einem Zielcomputer mithilfe der Cmdlets [Enter-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Enter-PSSession) oder [New-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/new-pssession) über Windows PowerShell einzurichten.
 
 Standardmäßig verwendet Windows PowerShell Web Access den primären Benutzernamen und das dazugehörige Kennwort für die Authentifizierung auf dem Gateway und dem Zielcomputer.
 Die webbasierte Anmeldeseite enthält im Abschnitt **Optionale Verbindungseinstellungen** eine Option, bei der Benutzer bei Bedarf andere Anmeldeinformationen für den Zielcomputer angeben können.
@@ -162,7 +162,7 @@ Add-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214 -
 
 1. Falls noch keine Windows PowerShell-Sitzung geöffnet wurde, finden Sie die entsprechende Vorgehensweise in Schritt 1 unter [So fügen Sie eine restriktive Autorisierungsregel hinzu](#to-add-a-restrictive-authorization-rule) in diesem Abschnitt.
 
-2. Geben Sie Folgendes ein, und drücken Sie anschließend die **EINGABETASTE**, wobei *Regel-ID* für die eindeutige ID-Nummer der Regel steht, die Sie entfernen möchten.
+2. Geben Sie Folgendes ein, und drücken Sie dann die **EINGABETASTE**, wobei *Regel-ID* für die eindeutige ID-Nummer der Regel steht, die Sie entfernen möchten.
 
 ```powershell
 Remove-PswaAuthorizationRule -ID <rule ID>
@@ -172,7 +172,7 @@ Falls Ihnen die ID-Nummer nicht bekannt ist, dafür jedoch der Anzeigename der z
 
 >**Hinweis**:
 >
->Sie werden nicht aufgefordert zu bestätigen, dass die angegebene Autorisierungsregel gelöscht werden soll. Die Regel wird gelöscht, wenn Sie die **EINGABETASTE** drücken. Vergewissern Sie sich, ob die Autorisierungsregel wirklich entfernt werden soll, bevor Sie das Cmdlet `Remove-PswaAuthorizationRule` ausführen.
+>Sie werden nicht aufgefordert zu bestätigen, ob die angegebene Autorisierungsregel gelöscht werden soll. Die Regel wird gelöscht, wenn Sie die **EINGABETASTE**drücken. Vergewissern Sie sich, ob die Autorisierungsregel wirklich entfernt werden soll, bevor Sie das Cmdlet `Remove-PswaAuthorizationRule` ausführen.
 
 #### <a name="other-authorization-rule-scenario-examples"></a>Weitere Beispiele für Autorisierungsregelszenarios
 
@@ -193,13 +193,13 @@ Im Folgenden sind einige Beispiele für die Verwendung von Sitzungskonfiguration
   >
   >Diese Regel empfiehlt sich nicht für eine sichere Umgebung und umgeht die von Windows PowerShell Web Access bereitgestellte Autorisierungsregel-Sicherheitsebene.
 
-- Ein Administrator muss für Benutzer in einer Umgebung, in der sowohl Arbeitsgruppen als auch Domänen enthalten sind, das Herstellen einer Verbindung mit Zielcomputern zulassen. Dabei werden Arbeitsgruppencomputer gelegentlich verwendet, um eine Verbindung mit Zielcomputern in Domänen herzustellen, und Computer in Domänen werden gelegentlich verwendet, um eine Verbindung mit Zielcomputern in Arbeitsgruppen herzustellen. Der Administrator verfügt über einen Gatewayserver (*PswaServer*) in einer Arbeitsgruppe, und der Zielcomputer *srv1.contoso.com* befindet sich in einer Domäne. Der Benutzer *Chris* ist ein autorisierter lokaler Benutzer auf dem Arbeitsgruppen-Gatewayserver und auf dem Zielcomputer. Sein Benutzername auf dem Arbeitsgruppenserver lautet *chrisLocal*, und sein Benutzername auf dem Zielcomputer lautet *contoso\\chris*. Der Administrator fügt die folgende Regel hinzu, um den Zugriff auf %%amp;quot;srv1.contoso.com%%amp;quot; für Chris zu autorisieren.
+- Ein Administrator muss für Benutzer in einer Umgebung, in der sowohl Arbeitsgruppen als auch Domänen enthalten sind, das Herstellen einer Verbindung mit Zielcomputern zulassen. Dabei werden Arbeitsgruppencomputer gelegentlich verwendet, um eine Verbindung mit Zielcomputern in Domänen herzustellen, und Computer in Domänen werden gelegentlich verwendet, um eine Verbindung mit Zielcomputern in Arbeitsgruppen herzustellen. Der Administrator verfügt über einen Gatewayserver ( *PswaServer*) in einer Arbeitsgruppe, und der Zielcomputer *srv1.contoso.com* befindet sich in einer Domäne. Der Benutzer *Chris* ist ein autorisierter lokaler Benutzer auf dem Arbeitsgruppen-Gatewayserver und auf dem Zielcomputer. Sein Benutzername auf dem Arbeitsgruppenserver lautet *chrisLocal*, und sein Benutzername auf dem Zielcomputer lautet *contoso\\chris*. Der Administrator fügt die folgende Regel hinzu, um den Zugriff auf %%amp;quot;srv1.contoso.com%%amp;quot; für Chris zu autorisieren.
 
 ```powershell
 Add-PswaAuthorizationRule -userName PswaServer\chrisLocal -computerName srv1.contoso.com -configurationName Microsoft.PowerShell
 ```
 
-Im vorigen Regelbeispiel wird Chris auf dem Gatewayserver authentifiziert und anschließend sein Zugriff auf *srv1* autorisiert. Auf der Anmeldeseite muss Chris unter **Optionale Verbindungseinstellungen** (*contoso\\chris*) einen zweiten Satz Anmeldeinformationen angeben. Der Gatewayserver verwendet den zusätzlichen Satz von Anmeldeinformationen für die Authentifizierung auf dem Zielcomputer *srv1.contoso.com*.
+Im vorigen Regelbeispiel wird Chris auf dem Gatewayserver authentifiziert und anschließend der Zugriff auf *srv1*autorisiert. Auf der Anmeldeseite muss Chris unter **Optionale Verbindungseinstellungen** (*contoso\\chris*) einen zweiten Satz Anmeldeinformationen angeben. Der Gatewayserver verwendet den zusätzlichen Satz von Anmeldeinformationen für die Authentifizierung auf dem Zielcomputer *srv1.contoso.com*.
 
 Im obigen Szenario richtet Windows PowerShell Web Access eine Verbindung mit dem Zielcomputer erst ein, nachdem Folgendes erfolgreich durchgeführt und von mindestens einer Autorisierungsregel zugelassen wurde.
 

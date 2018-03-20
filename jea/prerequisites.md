@@ -4,11 +4,11 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: jea,powershell,security
 title: JEA-Voraussetzungen
-ms.openlocfilehash: 75d5db2ba446df1d461050d187dc1495a22fef18
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: e6ee16e34eb9f1f0b2f3601c1aa9e90ab4f785f1
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="prerequisites"></a>Voraussetzungen
 
@@ -25,7 +25,7 @@ Die folgende Tabelle beschreibt die Verfügbarkeit von JEA unter Windows Server:
 Serverbetriebssystem   | JEA-Verfügbarkeit
 --------------------------|--------------------------------
 Windows Server 2016       | Vorinstalliert
-Windows Server 2012 R2    | Vollständige Funktionalität mit WMF 5.1
+Windows Server 2012 R2    | Vollständige Funktionalität mit WMF 5.1
 Windows Server 2012       | Vollständige Funktionalität mit WMF 5.1
 Windows Server 2008 R2    | Reduzierte Funktionalität<sup>1</sup> mit WMF 5.1
 
@@ -72,7 +72,7 @@ Windows 10-Benutzer sollten die neuesten Funktionsupdates zum Abrufen der aktuel
 ## <a name="enable-powershell-remoting"></a>Aktivieren von PowerShell-Remoting
 
 PowerShell-Remoting stellt die Grundlage für JEA dar.
-Daher sollten Sie sicherstellen, dass PowerShell-Remoting aktiviert ist und auf Ihrem System [ordnungsgemäß abgesichert](https://msdn.microsoft.com/en-us/powershell/scripting/setup/winrmsecurity) ist, bevor Sie JEA verwenden können.
+Daher sollten Sie sicherstellen, dass PowerShell-Remoting aktiviert ist und auf Ihrem System [ordnungsgemäß abgesichert](https://msdn.microsoft.com/powershell/scripting/setup/winrmsecurity) ist, bevor Sie JEA verwenden können.
 
 PowerShell-Remoting ist unter Windows Server 2012, 2012 R2 und 2016 standardmäßig aktiviert.
 Sie können PowerShell-Remoting aktivieren, indem Sie den folgenden Befehl in einem PowerShell-Fenster mit erhöhten Rechten ausführen.
@@ -109,6 +109,6 @@ Sie können über eine Gruppenrichtlinie auch die systemweite PowerShell-Aufzeic
 
 ## <a name="see-also"></a>Siehe auch
 
-- [Sicherheitsaspekte von PowerShell-Remoting](https://msdn.microsoft.com/en-us/powershell/scripting/setup/winrmsecurity)
+- [Sicherheitsaspekte von PowerShell-Remoting](https://msdn.microsoft.com/powershell/scripting/setup/winrmsecurity)
 - [*PowerShell ♥ the Blue Team (PowerShell ♥ das Blue Team)* – Blogbeitrag zum Thema Sicherheit](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
 

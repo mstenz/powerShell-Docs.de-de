@@ -4,11 +4,11 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: jea,powershell,security
 title: JEA-Rollenfunktionen
-ms.openlocfilehash: 10f5f390daccbb012be6ee7272041e777810ee12
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 083cab3b44348168fe20e8355f5076b28be78702
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="jea-role-capabilities"></a>JEA-Rollenfunktionen
 
@@ -86,7 +86,7 @@ VisibleCmdlets = @{ Name = 'Restart-Service'; Parameters = @{ Name = 'Name'; Val
 ```
 
 > [!NOTE]
-> Die [allgemeinen PowerShell-Parameter](https://technet.microsoft.com/en-us/library/hh847884.aspx) sind immer zulässig, selbst wenn Sie die verfügbaren Parameter beschränken.
+> Die [allgemeinen PowerShell-Parameter](https://technet.microsoft.com/library/hh847884.aspx) sind immer zulässig, selbst wenn Sie die verfügbaren Parameter beschränken.
 > Sie brauchen sie nicht explizit im Parameter-Feld aufzuführen.
 
 Die folgende Tabelle beschreibt die verschiedenen Methoden, mit denen Sie ein sichtbares Cmdlet bzw. eine sichtbare Funktion anpassen können.
@@ -111,7 +111,7 @@ Sie können nicht gleichzeitig ein ValidatePattern- und ein ValidateSet-Attribut
 
 Andernfalls wird das ValidateSet-Attribut vom ValidatePattern-Attribut überschrieben.
 
-Weitere Informationen zum ValidatePattern-Attribut finden Sie unter [dem englischsprachigen Blogbeitrag *Hey, Scripting Guy!*](https://blogs.technet.microsoft.com/heyscriptingguy/2011/01/11/validate-powershell-parameters-before-running-the-script/) und dem Referenzmaterial [PowerShell Regular Expressions (Reguläre Ausdrücke in PowerShell)](https://technet.microsoft.com/en-us/library/hh847880.aspx).
+Weitere Informationen zum ValidatePattern-Attribut finden Sie unter [dem englischsprachigen Blogbeitrag *Hey, Scripting Guy!*](https://blogs.technet.microsoft.com/heyscriptingguy/2011/01/11/validate-powershell-parameters-before-running-the-script/) und dem Referenzmaterial [PowerShell Regular Expressions (Reguläre Ausdrücke in PowerShell)](https://technet.microsoft.com/library/hh847880.aspx).
 
 ### <a name="allowing-external-commands-and-powershell-scripts"></a>Zulassen von externen Befehlen und PowerShell-Skripts
 
@@ -128,7 +128,7 @@ Mithilfe vieler ausführbarer Dateien können Sie den aktuellen Status lesen und
 Betrachten Sie z.B. die Rolle eines Dateiserveradministrators, der überprüfen möchte, welche Netzwerkfreigaben auf dem lokalen Computer gehostet werden.
 Eine Möglichkeit der Überprüfung besteht in der Verwendung von `net share`.
 Die Verwendung von „net.exe“ ist allerdings mit Gefahren verbunden, denn der Administrator könnte den Befehl auch problemlos nutzen, um sich mithilfe von `net group Administrators unprivilegedjeauser /add` Administratorberechtigungen zu verschaffen.
-Eine bessere Lösung ist die Verwendung von [Get-SmbShare](https://technet.microsoft.com/en-us/library/jj635704.aspx). Dieses Cmdlet sorgt für das gleiche Ergebnis, verfügt jedoch über einen weitaus eingeschränkteren Geltungsbereich.
+Eine bessere Lösung ist die Verwendung von [Get-SmbShare](https://technet.microsoft.com/library/jj635704.aspx). Dieses Cmdlet sorgt für das gleiche Ergebnis, verfügt jedoch über einen weitaus eingeschränkteren Geltungsbereich.
 
 Wenn Sie Benutzern in einer JEA-Sitzung externe Befehle zur Verfügung stellen, geben Sie immer den vollständigen Pfad zur ausführbaren Datei an, um sicherzustellen, dass kein (potenziell bösartiges) Programm mit ähnlichem Namen an anderer Stelle im System ausgeführt wird.
 

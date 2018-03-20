@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: "DSC-Ressource „Script“"
-ms.openlocfilehash: 22213b74986b45b3a8205f1584b3b0d89a92f211
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: d65a89ceba0b641ccb0ac3dfcc6d5ec1a48dc92a
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="dsc-script-resource"></a>DSC-Ressource „Script“
 
@@ -42,13 +42,13 @@ Script [string] #ResourceName
 
 |  Eigenschaft  |  Beschreibung   | 
 |---|---| 
-| GetScript| Bietet einen Windows PowerShell-Skriptblock, der beim Aufrufen des Cmdlets [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379.aspx) ausgeführt wird. Dieser Block muss eine Hashtabelle zurückgeben. Die Hashtabelle darf nur den Schlüssel **Result** enthalten, dessen Wert den Typ **String** haben muss.| 
-| SetScript| Stellt einen Windows PowerShell-Skriptblock bereit. Beim Aufruf des Cmdlets [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) wird der **TestScript**-Block zuerst ausgeführt. Wenn der **TestScript**-Block **$false** zurückgibt, wird der **SetScript**-Block ausgeführt. Wenn der **TestScript**-Block **$true** zurückgibt, wird der **SetScript**-Block nicht ausgeführt.| 
-| TestScript| Stellt einen Windows PowerShell-Skriptblock bereit. Beim Aufruf des Cmdlets [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) wird dieser Block ausgeführt. Wenn **$false** zurückgegeben wird, wird der „SetScript“-Block ausgeführt. Wenn **$true** zurückgegeben wird, wird der „SetScript“-Block nicht ausgeführt. Der **TestScript**-Block wird auch ausgeführt, wenn Sie das Cmdlet [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) aufrufen. In diesem Fall wird der **SetScript**-Block jedoch nicht ausgeführt, ganz gleich, welcher Exitcode vom „TestScript“-Block zurückgegeben wird. Der **TestScript**-Block muss „True“ zurückgeben, wenn die tatsächliche Konfiguration der Konfiguration des gewünschten Zustands entspricht. Falls nicht, muss „False“ zurückgegeben werden. (Die aktuelle Konfiguration des gewünschten Zustands ist die letzte Konfiguration, die auf den Knoten angewendet wurde, der DSC verwendet.)| 
+| GetScript| Bietet einen Windows PowerShell-Skriptblock, der beim Aufrufen des Cmdlets [Get-DscConfiguration](https://technet.microsoft.com/library/dn407379.aspx) ausgeführt wird. Dieser Block muss eine Hashtabelle zurückgeben. Die Hashtabelle darf nur den Schlüssel **Result** enthalten, dessen Wert den Typ **String** haben muss.| 
+| SetScript| Stellt einen Windows PowerShell-Skriptblock bereit. Beim Aufruf des Cmdlets [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) wird der **TestScript**-Block zuerst ausgeführt. Wenn der **TestScript**-Block **$false** zurückgibt, wird der **SetScript**-Block ausgeführt. Wenn der **TestScript**-Block **$true** zurückgibt, wird der **SetScript**-Block nicht ausgeführt.| 
+| TestScript| Stellt einen Windows PowerShell-Skriptblock bereit. Beim Aufruf des Cmdlets [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) wird dieser Block ausgeführt. Wenn **$false** zurückgegeben wird, wird der „SetScript“-Block ausgeführt. Wenn **$true** zurückgegeben wird, wird der „SetScript“-Block nicht ausgeführt. Der **TestScript**-Block wird auch ausgeführt, wenn Sie das Cmdlet [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) aufrufen. In diesem Fall wird der **SetScript**-Block jedoch nicht ausgeführt, ganz gleich, welcher Exitcode vom „TestScript“-Block zurückgegeben wird. Der **TestScript**-Block muss „True“ zurückgeben, wenn die tatsächliche Konfiguration der Konfiguration des gewünschten Zustands entspricht. Falls nicht, muss „False“ zurückgegeben werden. (Die aktuelle Konfiguration des gewünschten Zustands ist die letzte Konfiguration, die auf den Knoten angewendet wurde, der DSC verwendet.)| 
 | Credential| Gibt die Anmeldeinformationen zum Ausführen dieses Skripts an, falls Anmeldeinformationen erforderlich sind.| 
 | DependsOn| Gibt an, dass die Konfiguration einer anderen Ressource ausgeführt werden muss, bevor diese Ressource konfiguriert wird. Wenn beispielsweise die ID des Skriptblocks mit der Ressourcenkonfiguration, den Sie zuerst ausführen möchten, **ResourceName** und dessen Typ **ResourceType** ist, lautet die Syntax für das Verwenden dieser Eigenschaft `DependsOn = "[ResourceType]ResourceName"`.
 
-## <a name="example-1"></a>Beispiel 1
+## <a name="example-1"></a>Beispiel 1
 ```powershell
 Configuration ScriptTest
 {
@@ -68,7 +68,7 @@ Configuration ScriptTest
 }
 ```
 
-## <a name="example-2"></a>Beispiel 2
+## <a name="example-2"></a>Beispiel 2
 ```powershell
 $version = Get-Content 'version.txt'
 

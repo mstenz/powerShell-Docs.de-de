@@ -4,11 +4,11 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: jea,powershell,security
 title: JEA-Sitzungskonfigurationen
-ms.openlocfilehash: 0a8931ae15caf04a3639ab46f130e5f5b0498d8c
-ms.sourcegitcommit: 0733db9a05e89e6a23f6b52b9edd784fcbe8beec
+ms.openlocfilehash: c475a90a59d91b074f954cfb656b00142444c052
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/22/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="jea-session-configurations"></a>JEA-Sitzungskonfigurationen
 
@@ -38,13 +38,13 @@ New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -Path .\MyJEA
 
 Sie können die Sitzungskonfigurationsdatei in einem beliebigen Texteditor öffnen.
 Das `-SessionType RestrictedRemoteServer`-Feld gibt an, dass die Sitzungskonfiguration von JEA für eine sichere Verwaltung verwendet wird.
-Auf diese Weise konfigurierte Sitzungen arbeiten im [NoLanguage-Modus](https://technet.microsoft.com/en-us/library/dn433292.aspx) und verfügen nur über die folgenden acht Standardbefehle (und Aliase):
+Auf diese Weise konfigurierte Sitzungen arbeiten im [NoLanguage-Modus](https://technet.microsoft.com/library/dn433292.aspx) und verfügen nur über die folgenden acht Standardbefehle (und Aliase):
 
 - Clear-Host (cls, löschen)
 - Exit-PSSession (exsn, beenden)
 - Get-Command (gcm)
 - Get-FormatData
-- "Get-Help "
+- Get-Help
 - Measure-Object (messen)
 - Out-Default
 - Select-Object (auswählen)
@@ -128,7 +128,7 @@ Standardbenutzer sollten keinen Zugriff auf den Ordner haben. Außerdem sollte n
 ### <a name="user-drive"></a>Benutzerlaufwerk
 
 Wenn Benutzer, die eine Verbindung herstellen, Dateien von einem bzw. auf einen JEA-Endpunkt kopieren müssen, um einen Befehl auszuführen, können Sie das Benutzerlaufwerk in der Sitzungskonfigurationsdatei aktivieren.
-Das Benutzerlaufwerk ist ein [PSDrive](https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/managing-windows-powershell-drives), das einem eindeutigen Ordner für jeden Benutzer zugeordnet ist, der eine Verbindung herstellt.
+Das Benutzerlaufwerk ist ein [PSDrive](https://msdn.microsoft.com/powershell/scripting/getting-started/cookbooks/managing-windows-powershell-drives), das einem eindeutigen Ordner für jeden Benutzer zugeordnet ist, der eine Verbindung herstellt.
 Dieser Ordner dient als Speicherplatz, um Dateien vom und auf das System zu kopieren, ohne dass die Benutzer Zugriff auf das gesamte Dateisystem benötigen bzw. ohne den FileSystem-Anbieter verfügbar zu machen.
 Der Inhalt der Benutzerlaufwerke steht durchgehend und sitzungsübergreifend zur Verfügung, um in Situationen Abhilfe zu schaffen, in denen die Netzwerkkonnektivität unterbrochen ist.
 

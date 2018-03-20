@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: "DSC-Ressource „ServiceSet“"
-ms.openlocfilehash: 9556a1d513c3819a36c1161e3b35388ca1eb66f9
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 2488dda5212ccb717f7fd5d59ad62ec135ad13d5
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="dsc-serviceset-resource"></a>DSC-Ressource „ServiceSet“
 
@@ -38,7 +38,7 @@ Service [string] #ResourceName
 
 |  Eigenschaft  |  Beschreibung   | 
 |---|---| 
-| Name| Gibt den Namen des Diensts an. Beachten Sie, dass sich dieser mitunter vom Anzeigenamen unterscheidet. Mit dem Cmdlet [Get-Service](https://technet.microsoft.com/en-us/library/hh849804.aspx) können Sie eine Liste der Dienste und ihren aktuellen Status abrufen.|
+| Name| Gibt den Namen des Diensts an. Beachten Sie, dass sich dieser mitunter vom Anzeigenamen unterscheidet. Mit dem Cmdlet [Get-Service](https://technet.microsoft.com/library/hh849804.aspx) können Sie eine Liste der Dienste und ihren aktuellen Status abrufen.|
 | StartupType| Gibt den Starttyp für den Dienst an. Die für diese Eigenschaft zulässigen Werte sind **Automatic**, **Disabled** und **Manual**.|  
 | BuiltInAccount| Gibt das zu verwendende Anmeldekonto für den Dienst an. Die für diese Eigenschaft zulässigen Werte sind **LocalService**, **LocalSystem** und **NetworkService**.| 
 | Status| Gibt den Status an, den Sie für den Dienst sicherstellen möchten: **Stopped** oder **Running**.| 

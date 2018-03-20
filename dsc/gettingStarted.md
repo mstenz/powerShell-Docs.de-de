@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Erste Schritte mit Windows PowerShell DSC
-ms.openlocfilehash: 856528f1e52eafa8b2c93b825a60376a0d64cab2
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 04404696bef128805e4f1c191711eaab33cf7e4c
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="getting-started-with-powershell-desired-state-configuration"></a>Erste Schritte mit Windows PowerShell DSC #
 
@@ -16,7 +16,7 @@ In dieser Anleitung wird erläutert, wie PowerShell DSC-Dokumente erstellt und a
 
 ## <a name="create-a-configuration"></a>Erstellen einer Konfiguration ##
 
-[**Konfigurationen**](https://msdn.microsoft.com/en-us/powershell/dsc/configurations) sind Dokumente, die eine Umgebung beschreiben. Umgebungen bestehen aus **Knoten**, bei denen es sich um virtuelle oder physische Computer handelt. 
+[**Konfigurationen**](https://msdn.microsoft.com/powershell/dsc/configurations) sind Dokumente, die eine Umgebung beschreiben. Umgebungen bestehen aus **Knoten**, bei denen es sich um virtuelle oder physische Computer handelt. 
 
 Konfigurationen können verschiedene Formen haben. Die einfachste Möglichkeit zum Erstellen einer neuen Konfiguration ist die Erstellung einer PS1-Datei (PowerShell-Skript). Öffnen Sie hierfür den Editor Ihrer Wahl. Die PowerShell ISE ist eine gute Wahl, da sie DSC nativ versteht. Speichern Sie Folgendes in einer PS1-Datei:
 
@@ -44,9 +44,9 @@ Die nächste Zeile ist eine Importanweisung wie zum Importieren eines Moduls. Si
 
 „Node“ definiert den Namen des Computers, auf den diese Konfiguration angewendet werden soll. Obwohl diese Konfiguration lokal bearbeitet wird, können Konfigurationen auch für Remoteknoten gelten. 
 
-Knoten können Computernamen oder IP-Adressen haben. Ein einzelnes Konfigurationsdokument kann mehrere Knoten enthalten. Mithilfe von [Konfigurationsdaten](https://msdn.microsoft.com/en-us/powershell/dsc/configdata) können Sie die gleiche Konfiguration auch auf mehrere Knoten anwenden. In diesem Fall heißt der Knoten „localhost“, was sich auf den lokalen Computer bezieht. 
+Knoten können Computernamen oder IP-Adressen haben. Ein einzelnes Konfigurationsdokument kann mehrere Knoten enthalten. Mithilfe von [Konfigurationsdaten](https://msdn.microsoft.com/powershell/dsc/configdata) können Sie die gleiche Konfiguration auch auf mehrere Knoten anwenden. In diesem Fall heißt der Knoten „localhost“, was sich auf den lokalen Computer bezieht. 
 
-Das nächste Element ist eine [**Ressource**](https://msdn.microsoft.com/en-us/powershell/dsc/resources). Ressourcen sind Bausteine von Konfigurationen. Jede Ressource ist ein Modul, das die Implementierungslogik eines einzelnen Aspekts eines Computers definiert. Durch Ausführen von **Get-DscResource** in PowerShell können Sie alle Ressourcen auf Ihrem Computer anzeigen. Ressourcen müssen auf dem lokalen Computer vorhanden sein und importiert werden, ehe sie in einer Konfiguration mit **Import-DscResource** in der zweiten Zeile dieser Konfiguration verwendet werden können. 
+Das nächste Element ist eine [**Ressource**](https://msdn.microsoft.com/powershell/dsc/resources). Ressourcen sind Bausteine von Konfigurationen. Jede Ressource ist ein Modul, das die Implementierungslogik eines einzelnen Aspekts eines Computers definiert. Durch Ausführen von **Get-DscResource** in PowerShell können Sie alle Ressourcen auf Ihrem Computer anzeigen. Ressourcen müssen auf dem lokalen Computer vorhanden sein und importiert werden, ehe sie in einer Konfiguration mit **Import-DscResource** in der zweiten Zeile dieser Konfiguration verwendet werden können. 
 
 **Anwenden einer Konfiguration**
 

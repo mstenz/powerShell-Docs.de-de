@@ -2,11 +2,11 @@
 ms.date: 2017-08-23
 keywords: powershell,cmdlet
 title: Behandeln von Zugriffsproblemen in Windows PowerShell Web Access
-ms.openlocfilehash: 08a9fd286ed8a40e9423deb7d29dc0a8ecf8e5b1
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 6e51df3f4c6ac196c855ad918a91394d02c7d75e
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Behandeln von Zugriffsproblemen in Windows PowerShell Web Access
 
@@ -34,7 +34,7 @@ Ein Fehler kann aufgrund einer der folgenden Bedingungen auftreten.
 
   Stellen Sie sicher, dass die Remoteverwaltung auf dem Computer aktiviert ist, mit dem der Benutzer eine Verbindung herstellen möchte.
 
-  Weitere Informationen finden Sie unter [How to Configure Your Computer for Remoting (Vorgehensweise: Konfigurieren Ihres Computers für das Remoting)](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_remote_requirements#how-to-configure-your-computer-for-remoting).
+  Weitere Informationen finden Sie unter [How to Configure Your Computer for Remoting (Vorgehensweise: Konfigurieren Ihres Computers für das Remoting)](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements#how-to-configure-your-computer-for-remoting).
 
 ## <a name="internal-server-error"></a>Interner Serverfehler.
 
@@ -132,7 +132,7 @@ Autorisierungsregeln unterstützen keine IPv6-Adresse in Form eines Domänenname
 Verwenden Sie zum Angeben eines Zielcomputers mithilfe einer IPv6-Adresse die ursprüngliche IPv6-Adresse (mit Doppelpunkten) in der Autorisierungsregel.
 Sowohl domänenbezogene als auch numerische IPv6-Adressen (mit Doppelpunkten) werden auf der Anmeldeseite von Windows PowerShell Web Access als Zielcomputername unterstützt. Dies gilt jedoch nicht für Autorisierungsregeln. 
 
-Weitere Informationen zu IPv6-Adressen finden Sie unter [Funktionsweise von IPv6](https://technet.microsoft.com/en-us/library/cc781672(v=ws.10).aspx).
+Weitere Informationen zu IPv6-Adressen finden Sie unter [Funktionsweise von IPv6](https://technet.microsoft.com/library/cc781672(v=ws.10).aspx).
 
 ## <a name="see-also"></a>Weitere Informationen
 

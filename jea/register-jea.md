@@ -4,11 +4,11 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: jea,powershell,security
 title: Registrieren von JEA-Konfigurationen
-ms.openlocfilehash: 0684a1c7acffbccbedab9dba4689611a24c8ae25
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: d6b007fed97be6470bfe4cf4d42f72cb4edc3a45
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="registering-jea-configurations"></a>Registrieren von JEA-Konfigurationen
 
@@ -19,7 +19,7 @@ Bei diesem Vorgang werden die Informationen der Sitzungskonfiguration auf das Sy
 
 ## <a name="single-machine-configuration"></a>Einzelcomputerkonfiguration
 
-Sie können JEA für kleine Umgebungen bereitstellen, indem Sie die Konfigurationsdatei mithilfe des [Register-PSSessionConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/register-pssessionconfiguration)-Cmdlets registrieren.
+Sie können JEA für kleine Umgebungen bereitstellen, indem Sie die Konfigurationsdatei mithilfe des [Register-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/register-pssessionconfiguration)-Cmdlets registrieren.
 
 Vergewissern Sie sich vor Beginn, dass die folgenden Voraussetzungen erfüllt sind:
 - Eine oder mehrere Rollen wurden erstellt und im Ordner „RoleCapabilities“ eines gültigen PowerShell-Moduls abgelegt.
@@ -28,7 +28,7 @@ Vergewissern Sie sich vor Beginn, dass die folgenden Voraussetzungen erfüllt si
 
 Sie müssen auch einen Namen für den JEA-Endpunkt auswählen.
 Der Name des JEA-Endpunkts wird benötigt, wenn Benutzer mithilfe von JEA eine Verbindung mit dem System herstellen möchten.
-Sie können das [Get-PSSessionConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration)-Cmdlet zum Überprüfen der Namen der vorhandenen Endpunkte auf dem System verwenden.
+Sie können das [Get-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration)-Cmdlet zum Überprüfen der Namen der vorhandenen Endpunkte auf dem System verwenden.
 Endpunkte, deren Name mit „microsoft“ beginnt, gehören normalerweise zum Funktionsumfang von Windows.
 Der Endpunkt „microsoft.powershell“ ist der Standardendpunkt, der verwendet wird, wenn eine Verbindung mit einem PowerShell-Remoteendpunkt hergestellt wird.
 

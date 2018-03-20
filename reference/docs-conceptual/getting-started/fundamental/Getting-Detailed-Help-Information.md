@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "Abrufen von ausführlichen Hilfeinformationen"
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: c786ce089073abccdf186dc1d9e8ee383f83655d
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 67e02b503acf4d683c5a190d6642dea384bbfad2
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="getting-detailed-help-information"></a>Abrufen von ausführlichen Hilfeinformationen
 Windows PowerShell umfasst ausführliche Hilfethemen, in denen die Konzepte von Windows PowerShell und die Windows PowerShell-Sprache erläutert werden. Außerdem gibt es Hilfethemen für jedes Cmdlet und jeden Anbieter sowie Hilfethemen für viele Funktionen und Skripts.
@@ -15,7 +15,7 @@ Windows PowerShell umfasst ausführliche Hilfethemen, in denen die Konzepte von 
 Sie können diese Hilfethemen über die Eingabeaufforderung anzeigen, oder Sie können die zuletzt aktualisierten Versionen dieser Themen in der Microsoft TechNet Library anzeigen. Viele Programme, von denen Windows PowerShell gehostet wird, z.B. Windows PowerShell Integrated Scripting Environment, stellen zusätzliche Hilfefunktionen bereit, etwa kontextbezogene Hilfe und kompilierte Hilfedateien (CHM).
 
 ## <a name="getting-help-for-cmdlets"></a>Abrufen von Hilfe für Cmdlets
-Wenn Sie Hilfe zu Windows PowerShell-Cmdlets abrufen möchten, verwenden Sie das Cmdlet [Get-Help [m2]](https://technet.microsoft.com/en-us/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2). Geben Sie beispielsweise Folgendes ein, um Hilfe für das Cmdlet [Get-ChildItem [m2]](https://technet.microsoft.com/en-us/library/4b270d63-c995-45b8-b5b4-3f8887efbfcc) abzurufen:
+Wenn Sie Hilfe zu Windows PowerShell-Cmdlets abrufen möchten, verwenden Sie das Cmdlet [Get-Help [m2]](https://technet.microsoft.com/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2). Geben Sie beispielsweise Folgendes ein, um Hilfe für das Cmdlet [Get-ChildItem [m2]](https://technet.microsoft.com/library/4b270d63-c995-45b8-b5b4-3f8887efbfcc) abzurufen:
 
 ```
 get-help get-childitem
@@ -171,5 +171,5 @@ Informationen dazu, wie Sie die Onlineunterstützung für Ihre Hilfethemen berei
 - [about_Functions [m2]](https://technet.microsoft.com/en-us/library/61d40692-5300-4de9-a9b5-bae31815e105)
 - [about_Scripts](https://technet.microsoft.com/en-us/library/7dc08334-dcfe-450b-b949-0554855623af)
 - [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)
-- [Get-Help [m2]](https://technet.microsoft.com/en-us/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2)
+- [Get-Help [m2]](https://technet.microsoft.com/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2)
 
