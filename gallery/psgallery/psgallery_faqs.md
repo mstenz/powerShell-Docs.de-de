@@ -4,11 +4,11 @@ contributor: JKeithB
 ms.topic: conceptual
 keywords: gallery,powershell,cmdlet,psgallery
 title: "Häufig gestellte Fragen | MSDN"
-ms.openlocfilehash: 80aaaa5e50e1bd85b93df721a4859e3020d1f315
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: b856c44f3733d4a7c236d901edb391091d9d546e
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="frequently-asked-questions"></a>Häufig gestellte Fragen
 
@@ -18,7 +18,7 @@ Ein PowerShell-Modul ist ein wiederverwendbares Paket, das einige PowerShell-Fun
 
 ## <a name="what-is-a-powershell-script"></a>Was ist ein PowerShell-Skript?
 
-Ein PowerShell-Skript ist eine Reihe von Befehlen, die in einer PS1-Datei gespeichert sind, um die Wiederverwendung und Freigabe zu ermöglichen. PowerShell-Workflows sind auch PowerShell-Skripts, die eine Reihe von Aufgaben zeigen und Sequenzierungen für diese Aufgaben bereitstellen. Weitere Informationen finden Sie unter [Einführung in Windows PowerShell Workflow](https://technet.microsoft.com/en-us/library/jj134242.aspx).
+Ein PowerShell-Skript ist eine Reihe von Befehlen, die in einer PS1-Datei gespeichert sind, um die Wiederverwendung und Freigabe zu ermöglichen. PowerShell-Workflows sind auch PowerShell-Skripts, die eine Reihe von Aufgaben zeigen und Sequenzierungen für diese Aufgaben bereitstellen. Weitere Informationen finden Sie unter [Einführung in Windows PowerShell Workflow](https://technet.microsoft.com/library/jj134242.aspx).
 
 ## <a name="how-are-powershell-scripts-different-from-powershell-modules"></a>Worin unterscheiden sich PowerShell-Skripts von PowerShell-Modulen?
 
@@ -48,7 +48,7 @@ Dieser Fehler kann aus folgenden Gründen auftreten:
 
 ## <a name="why-cant-i-sign-in-with-my-personal-account-but-i-could-sign-in-yesterday"></a>Warum konnte ich mich gestern mit meinem persönlichen Konto anmelden, heute aber nicht mehr?
 
-Bitte bedenken Sie, dass Ihr Katalog-Konto keine Änderungen an Ihrem primären E-Mail-Alias übernimmt. Weitere Informationen finden Sie im Microsoft [Verwalten von Aliasen für Ihr Microsoft-Konto](https://windows.microsoft.com/en-us/windows/outlook/add-alias-account).
+Bitte bedenken Sie, dass Ihr Katalog-Konto keine Änderungen an Ihrem primären E-Mail-Alias übernimmt. Weitere Informationen finden Sie im Microsoft [Verwalten von Aliasen für Ihr Microsoft-Konto](https://windows.microsoft.com/windows/outlook/add-alias-account).
 
 ## <a name="why-dont-i-see-all-the-gallery-items-when-i-select-all-the-category-checkboxes-on-the-items-tab"></a>Warum werden mir nicht alle Katalogelemente angezeigt, wenn ich auf der Registerkarte „Elemente“ alle „Category“-Kontrollkästchen aktiviere?
 
@@ -153,10 +153,10 @@ Aus diesem Grund erfordert **PowerShellGet** eines der folgenden Betriebssysteme
 - Windows 8.1 Enterprise
 - Windows 7 SP1
 - Windows Server 2016
-- Windows Server 2012 R2
+- Windows Server 2012 R2
 - Windows Server 2008 R2 SP1
 
-Für **PowerShellGet** ist außerdem .NET Framework 4.5 oder höher erforderlich. Von [hier](https://msdn.microsoft.com/en-us/library/5a4x27ek.aspx) können Sie .NET Framework 4.5 oder höher installieren.
+Für **PowerShellGet** ist außerdem .NET Framework 4.5 oder höher erforderlich. Von [hier](https://msdn.microsoft.com/library/5a4x27ek.aspx) können Sie .NET Framework 4.5 oder höher installieren.
 
 ## <a name="is-it-possible-to-reserve-names-for-items-that-will-be-published-in-future"></a>Ist es möglich, Namen für Elemente zu reservieren, die in Zukunft veröffentlicht werden?
 

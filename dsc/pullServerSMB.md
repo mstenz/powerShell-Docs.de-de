@@ -3,17 +3,17 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Einrichten eines DSC-SMB-Pullservers
-ms.openlocfilehash: 427dc8d858bd12e420fbde03b33a66f33cd654dc
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: ff3faeb1952e6116cf97b1aaf8f125d8931dd35e
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>Einrichten eines DSC-SMB-Pullservers
 
 >Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-Ein DSC-[SMB](https://technet.microsoft.com/en-us/library/hh831795.aspx)-Pullserver ist ein Computer, der als Host einer SMB-Dateifreigabe fungiert, mit der DSC-Konfigurationsdateien und DSC-Ressourcen für Zielknoten zur Verfügung gestellt werden, wenn sie von diesen Knoten angefordert werden.
+Ein DSC-[SMB](https://technet.microsoft.com/library/hh831795.aspx)-Pullserver ist ein Computer, der als Host einer SMB-Dateifreigabe fungiert, mit der DSC-Konfigurationsdateien und DSC-Ressourcen für Zielknoten zur Verfügung gestellt werden, wenn sie von diesen Knoten angefordert werden.
 
 Zum Verwenden eines SMB-Pullservers für DSC müssen Sie folgende Schritte ausführen:
 - Einrichten einer SMB-Dateifreigabe auf einem Server mit PowerShell 4.0 oder höher
@@ -25,7 +25,7 @@ Es gibt zahlreiche Methoden zum Einrichten einer SMB-Dateifreigabe. Im Folgenden
 
 ### <a name="install-the-xsmbshare-resource"></a>Installieren der Ressource „xSmbShare“
 
-Rufen Sie das Cmdlet [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) auf, um das Modul **xSmbShare** zu installieren.
+Rufen Sie das Cmdlet [Install-Module](https://technet.microsoft.com/library/dn807162.aspx) auf, um das Modul **xSmbShare** zu installieren.
 >**Hinweis**: **Install-Module** ist im Modul **PowerShellGet** enthalten, das Bestandteil von PowerShell 5.0 ist. Das Modul **PowerShellGet** für PowerShell 3.0 und 4.0 können Sie unter [PowerShell-Module „PackageManagement“ – Vorschau](https://www.microsoft.com/en-us/download/details.aspx?id=49186) herunterladen. **xSmbShare** enthält die DSC-Ressource **xSmbShare**, mit der Sie eine SMB-Dateifreigabe erstellen können.
 
 ### <a name="create-the-directory-and-file-share"></a>Erstellen des Verzeichnisses und der Dateifreigabe
@@ -208,7 +208,7 @@ $ConfigurationData = @{
 Besonderer Dank geht an folgende Personen:
 
 - Mike F. Robbins, dessen Beiträge zur Verwendung von SMB für DSC beim Zusammenstellen des Inhalts in diesem Thema geholfen haben. Seinen Blog finden Sie unter [Mike F Robbins](http://mikefrobbins.com/).
-- Serge Nikalaichyk, der das Modul **cNtfsAccessControl** erstellt hat. Die Quelle für dieses Modul finden Sie unter „https://github.com/SNikalaichyk/cNtfsAccessControl“.
+- Serge Nikalaichyk, der das Modul **cNtfsAccessControl** erstellt hat. Die Quelle für dieses Modul finden Sie unter https://github.com/SNikalaichyk/cNtfsAccessControl.
 
 ## <a name="see-also"></a>Siehe auch
 - [Windows PowerShell DSC – Übersicht](overview.md)

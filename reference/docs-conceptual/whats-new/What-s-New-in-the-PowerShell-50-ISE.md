@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: Neuerungen bei der Windows PowerShell 5.0 ISE
 ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
-ms.openlocfilehash: 89dcc905ce200d06029e148c9675269e6f518fa3
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 9fd25a4759602bebf2b5df2c17d0c816a15e5e2b
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="what39s-new-in-the-windows-powershell-ise"></a>Neuerungen bei der Windows PowerShell ISE
 In diesem Thema werden die neuen und aktualisierten Features vorgestellt, die in Versionen von Windows PowerShell Integrated Scripting Environment (ISE) eingeführt wurden.
@@ -15,7 +15,7 @@ In diesem Thema werden die neuen und aktualisierten Features vorgestellt, die in
 ## <a name="feature-description"></a>Featurebeschreibung
 Die Windows PowerShell ISE ist eine Hostanwendung, die es Ihnen ermöglicht, Skripts und Module in einer grafischen und intuitiven Umgebung zu schreiben, auszuführen und zu testen. Wichtige Features wie farbliche Syntaxkennzeichnung, Vervollständigung mit der TAB-Taste, visuelles Debuggen, Unicode-Kompatibilität und kontextbezogene Hilfe ermöglichen eine komfortable Skripterstellung.
 
-Eine Übersicht über die Windows PowerShell ISE finden Sie unter [Windows PowerShell Integrated Scripting Environment (Übersicht)](https://technet.microsoft.com/en-us/library/3c1892c2-bf84-4cb6-af26-1f453be9e671).
+Eine Übersicht über die Windows PowerShell ISE finden Sie unter [Windows PowerShell Integrated Scripting Environment (Übersicht)](https://technet.microsoft.com/library/3c1892c2-bf84-4cb6-af26-1f453be9e671).
 
 ## <a name="new-and-changed-functionality-in-windows-powershell-ise"></a>Neue und geänderte Funktionen in der Windows PowerShell ISE
 Die folgende Tabelle enthält die neuen und geänderten Funktionen für diese Version von Windows PowerShell ISE in Windows PowerShell.
@@ -222,7 +222,7 @@ Durch Verwenden von **Show-Command** in Ihren Windows PowerShell-Skripts können
 ## <a name="see-also"></a>Siehe auch
 Weitere Informationen zur Verwendung von Windows PowerShell ISE in Windows PowerShell finden Sie unter den folgenden Links.
 
-- [Verwenden der Windows PowerShell Integrated Scripting Environment (ISE)](../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
+- [Kennenlernen der Windows PowerShell Integrated Scripting Environment (ISE)](../getting-started/fundamental/exploring-the-windows-powershell-ise.md)
 - [ISE im TechNet Wiki](http://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
 - [Script Center](http://technet.microsoft.com/scriptcenter/default)
 

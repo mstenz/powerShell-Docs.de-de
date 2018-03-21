@@ -369,10 +369,21 @@ sudo yum remove powershell
 
 ## <a name="opensuse-422"></a>OpenSUSE 42.2
 
-> **Hinweis:** Bei der Installation von PowerShell Core gibt OpenSUSE möglicherweise die Meldung zurück, dass `libcurl` nicht bereitgestellt wird.
-`libcurl` sollte für unterstützte OpenSUSE-Versionen bereits installiert sein.
-Führen Sie `zypper search libcurl` zur Bestätigung aus.
-In der Fehlermeldung werden zwei mögliche Lösungen genannt. Wählen Sie Lösung 2 aus, um mit der Installation von PowerShell Core fortzufahren.
+> **Hinweis:** Bei der Installation von PowerShell Core verursacht `zypper` eventuell die folgende Fehlermeldung:
+>
+> ```text
+> Problem: nothing provides libcurl needed by powershell-6.0.1-1.rhel.7.x86_64
+>  Solution 1: do not install powershell-6.0.1-1.rhel.7.x86_64
+>  Solution 2: break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies
+> ```
+>
+> Stellen Sie in diesem Fall sicher, dass eine kompatible `libcurl`-Bibliothek vorhanden ist, indem Sie überprüfen, ob der folgende Befehl das `libcurl4`-Paket als installiert anzeigt:
+>
+> ```sh
+> zypper search --file-list --match-exact '/usr/lib64/libcurl.so.4'
+> ```
+>
+> Wählen Sie bei der Installation des `powershell`-Pakets die Lösung `break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies` aus.
 
 ### <a name="installation-via-package-repository-preferred---opensuse-422"></a>Installation über das Paketrepository (bevorzugt): OpenSUSE 42.2
 
@@ -384,9 +395,6 @@ sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 
 # Add the Microsoft Product feed
 curl https://packages.microsoft.com/config/rhel/7/prod.repo | sudo tee /etc/zypp/repos.d/microsoft.repo
-
-# Update the list of products
-sudo zypper update
 
 # Install PowerShell
 sudo zypper install powershell
