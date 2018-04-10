@@ -1,42 +1,41 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
 keywords: gallery,powershell,cmdlet,psgallery
 title: Beilegung von Streitigkeiten | MSDN
-ms.openlocfilehash: 640d20371a51b08a5627b9beff1bb0ada4f06dd8
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 424013229418efddeb0fe56828aece418630d91b
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="dispute-resolution"></a><span data-ttu-id="2dd04-103">Beilegung von Streitigkeiten</span><span class="sxs-lookup"><span data-stu-id="2dd04-103">Dispute Resolution</span></span>
+# <a name="dispute-resolution"></a><span data-ttu-id="488e1-103">Beilegung von Streitigkeiten</span><span class="sxs-lookup"><span data-stu-id="488e1-103">Dispute Resolution</span></span>
 
-<span data-ttu-id="2dd04-104">Dieses Dokument enthält eine empfohlene Vorgehensweise zur Beilegung von Streitigkeiten zwischen Communitymitgliedern und anderen Herausgebern im PowerShell-Katalog.</span><span class="sxs-lookup"><span data-stu-id="2dd04-104">This document is a recommended dispute resolution process for community members to help resolve disputes with other PowerShell Gallery publishers.</span></span>
+<span data-ttu-id="488e1-104">Dieses Dokument enthält eine empfohlene Vorgehensweise zur Beilegung von Streitigkeiten zwischen Communitymitgliedern und anderen Herausgebern im PowerShell-Katalog.</span><span class="sxs-lookup"><span data-stu-id="488e1-104">This document is a recommended dispute resolution process for community members to help resolve disputes with other PowerShell Gallery publishers.</span></span>
 
-## <a name="process"></a><span data-ttu-id="2dd04-105">Prozess</span><span class="sxs-lookup"><span data-stu-id="2dd04-105">Process</span></span>
+## <a name="process"></a><span data-ttu-id="488e1-105">Prozess</span><span class="sxs-lookup"><span data-stu-id="488e1-105">Process</span></span>
 
-1. <span data-ttu-id="2dd04-106">Kontaktieren Sie die Besitzer des Elements, bei dem es Unstimmigkeiten gibt, über den Link **Besitzer kontaktieren** auf der Seite mit den Elementdetails.</span><span class="sxs-lookup"><span data-stu-id="2dd04-106">Contact the owners of the item you have the dispute with using the **Contact Owners** link on the item details page.</span></span>
-<span data-ttu-id="2dd04-107">Erläutern Sie Ihr Problem höflich und direkt.</span><span class="sxs-lookup"><span data-stu-id="2dd04-107">Explain your issue in a kind and direct manner.</span></span>
-2. <span data-ttu-id="2dd04-108">Senden Sie eine Kopie Ihrer Nachricht an [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com), um die PowerShell-Katalogadministratoren über Ihre Unstimmigkeit in Kenntnis zu setzen.</span><span class="sxs-lookup"><span data-stu-id="2dd04-108">Send a copy of your message to [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com) so that PowerShell Gallery Administrators are aware of your dispute.</span></span>
-3. <span data-ttu-id="2dd04-109">Wenn Sie die Streitigkeit nach maximal 30 Tagen nicht beilegen konnten, senden Sie erneut eine Nachricht an [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com).</span><span class="sxs-lookup"><span data-stu-id="2dd04-109">Wait a maximum of 30 days and if you don’t have resolution notify [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com) again.</span></span>
-<span data-ttu-id="2dd04-110">Das PowerShellGallery.com-Supportteam wird sich an Ihren Gesprächen beteiligen und versuchen, eine Lösung zu finden.</span><span class="sxs-lookup"><span data-stu-id="2dd04-110">The PowerShellGallery.com support team will get involved and try to work this out.</span></span>
-
-
-## <a name="prohibited-use"></a><span data-ttu-id="2dd04-111">Unerlaubte Nutzung</span><span class="sxs-lookup"><span data-stu-id="2dd04-111">Prohibited Use</span></span>
-
-<span data-ttu-id="2dd04-112">Folgende Elemente und Vorgänge sind im öffentlichen PowerShell-Katalog nicht zulässig. Die entsprechenden Elemente werden umgehend und ohne Rücksprache entfernt.</span><span class="sxs-lookup"><span data-stu-id="2dd04-112">The following things are not allowed on the public PowerShell Gallery and will be immediately removed without discussion.</span></span>  <span data-ttu-id="2dd04-113">Die Elementbesitzer werden benachrichtigt, wenn ihre Elemente entfernt werden.</span><span class="sxs-lookup"><span data-stu-id="2dd04-113">Item owners will be notified if their item is removed.</span></span>
-
-- <span data-ttu-id="2dd04-114">Schadsoftware, Adware oder jegliche Art von Spyware,</span><span class="sxs-lookup"><span data-stu-id="2dd04-114">Malware, adware, or any kind of spyware</span></span>
-- <span data-ttu-id="2dd04-115">Elemente, die entworfen wurden, um Schaden in Benutzersystemen zu verursachen,</span><span class="sxs-lookup"><span data-stu-id="2dd04-115">Items that are designed to harm the user systems;</span></span>
-- <span data-ttu-id="2dd04-116">Urheberrechts- oder Lizenzverletzungen,</span><span class="sxs-lookup"><span data-stu-id="2dd04-116">Copyright infringement or license violation;</span></span>
-- <span data-ttu-id="2dd04-117">illegale Inhalte,</span><span class="sxs-lookup"><span data-stu-id="2dd04-117">Illegal content;</span></span>
-- <span data-ttu-id="2dd04-118">das Belegen von Elementnamen, deren Verwendung geplant ist, die Sie jedoch nicht nutzen.</span><span class="sxs-lookup"><span data-stu-id="2dd04-118">"Squatting" on item names that you plan to use but are not actually using.</span></span> <span data-ttu-id="2dd04-119">Dies umfasst die Veröffentlichung von Elementen, die keinerlei produktive Inhalte enthalten.</span><span class="sxs-lookup"><span data-stu-id="2dd04-119">This also includes publishing items that have zero productive content.</span></span>
-<span data-ttu-id="2dd04-120">Veröffentlichen Sie Code, und arbeiten Sie umgehend damit, oder geben Sie den Namen für Benutzer frei, die über lieferfähige Produkte verfügen, und</span><span class="sxs-lookup"><span data-stu-id="2dd04-120">Either publish code and get going or concede the name to someone who actually has a product to ship; and</span></span>
-- <span data-ttu-id="2dd04-121">der Versuch, den Katalog zu Zwecken zu nutzen, für die er nicht explizit ausgelegt ist.</span><span class="sxs-lookup"><span data-stu-id="2dd04-121">Attempting to make the gallery do something that it is not explicitly designed to do.</span></span>
+1. <span data-ttu-id="488e1-106">Kontaktieren Sie die Besitzer des Elements, bei dem es Unstimmigkeiten gibt, über den Link **Besitzer kontaktieren** auf der Seite mit den Elementdetails.</span><span class="sxs-lookup"><span data-stu-id="488e1-106">Contact the owners of the item you have the dispute with using the **Contact Owners** link on the item details page.</span></span>
+<span data-ttu-id="488e1-107">Erläutern Sie Ihr Problem höflich und direkt.</span><span class="sxs-lookup"><span data-stu-id="488e1-107">Explain your issue in a kind and direct manner.</span></span>
+2. <span data-ttu-id="488e1-108">Senden Sie eine Kopie Ihrer Nachricht an [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com), um die PowerShell-Katalogadministratoren über Ihre Unstimmigkeit in Kenntnis zu setzen.</span><span class="sxs-lookup"><span data-stu-id="488e1-108">Send a copy of your message to [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com) so that PowerShell Gallery Administrators are aware of your dispute.</span></span>
+3. <span data-ttu-id="488e1-109">Wenn Sie die Streitigkeit nach maximal 30 Tagen nicht beilegen konnten, senden Sie erneut eine Nachricht an [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com).</span><span class="sxs-lookup"><span data-stu-id="488e1-109">Wait a maximum of 30 days and if you don’t have resolution notify [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com) again.</span></span>
+<span data-ttu-id="488e1-110">Das PowerShellGallery.com-Supportteam wird sich an Ihren Gesprächen beteiligen und versuchen, eine Lösung zu finden.</span><span class="sxs-lookup"><span data-stu-id="488e1-110">The PowerShellGallery.com support team will get involved and try to work this out.</span></span>
 
 
-<span data-ttu-id="2dd04-122">Wenn Sie ein Element finden, das gegen diese Regeln verstößt, klicken Sie auf den Link „Missbrauch melden“ auf der Seite mit den Elementdetails, um einen Bericht zu übermitteln.</span><span class="sxs-lookup"><span data-stu-id="2dd04-122">If you find a item that is in violation of any of these items, click the ‘Report Abuse’ link on the item details page and submit a report.</span></span>
+## <a name="prohibited-use"></a><span data-ttu-id="488e1-111">Unerlaubte Nutzung</span><span class="sxs-lookup"><span data-stu-id="488e1-111">Prohibited Use</span></span>
 
-<span data-ttu-id="2dd04-123">**Diese Richtlinie kann nach Ermessen der für den PowerShell-Katalog verantwortlichen Mitarbeiter geändert werden.**</span><span class="sxs-lookup"><span data-stu-id="2dd04-123">**This policy is subject to change at the discretion of the PowerShell Gallery.**</span></span>
+<span data-ttu-id="488e1-112">Folgende Elemente und Vorgänge sind im öffentlichen PowerShell-Katalog nicht zulässig. Die entsprechenden Elemente werden umgehend und ohne Rücksprache entfernt.</span><span class="sxs-lookup"><span data-stu-id="488e1-112">The following things are not allowed on the public PowerShell Gallery and will be immediately removed without discussion.</span></span>  <span data-ttu-id="488e1-113">Die Elementbesitzer werden benachrichtigt, wenn ihre Elemente entfernt werden.</span><span class="sxs-lookup"><span data-stu-id="488e1-113">Item owners will be notified if their item is removed.</span></span>
 
+- <span data-ttu-id="488e1-114">Schadsoftware, Adware oder jegliche Art von Spyware,</span><span class="sxs-lookup"><span data-stu-id="488e1-114">Malware, adware, or any kind of spyware</span></span>
+- <span data-ttu-id="488e1-115">Elemente, die entworfen wurden, um Schaden in Benutzersystemen zu verursachen,</span><span class="sxs-lookup"><span data-stu-id="488e1-115">Items that are designed to harm the user systems;</span></span>
+- <span data-ttu-id="488e1-116">Urheberrechts- oder Lizenzverletzungen,</span><span class="sxs-lookup"><span data-stu-id="488e1-116">Copyright infringement or license violation;</span></span>
+- <span data-ttu-id="488e1-117">illegale Inhalte,</span><span class="sxs-lookup"><span data-stu-id="488e1-117">Illegal content;</span></span>
+- <span data-ttu-id="488e1-118">das Belegen von Elementnamen, deren Verwendung geplant ist, die Sie jedoch nicht nutzen.</span><span class="sxs-lookup"><span data-stu-id="488e1-118">"Squatting" on item names that you plan to use but are not actually using.</span></span> <span data-ttu-id="488e1-119">Dies umfasst die Veröffentlichung von Elementen, die keinerlei produktive Inhalte enthalten.</span><span class="sxs-lookup"><span data-stu-id="488e1-119">This also includes publishing items that have zero productive content.</span></span>
+<span data-ttu-id="488e1-120">Veröffentlichen Sie Code, und arbeiten Sie umgehend damit, oder geben Sie den Namen für Benutzer frei, die über lieferfähige Produkte verfügen, und</span><span class="sxs-lookup"><span data-stu-id="488e1-120">Either publish code and get going or concede the name to someone who actually has a product to ship; and</span></span>
+- <span data-ttu-id="488e1-121">der Versuch, den Katalog zu Zwecken zu nutzen, für die er nicht explizit ausgelegt ist.</span><span class="sxs-lookup"><span data-stu-id="488e1-121">Attempting to make the gallery do something that it is not explicitly designed to do.</span></span>
+
+
+<span data-ttu-id="488e1-122">Wenn Sie ein Element finden, das gegen diese Regeln verstößt, klicken Sie auf den Link „Missbrauch melden“ auf der Seite mit den Elementdetails, um einen Bericht zu übermitteln.</span><span class="sxs-lookup"><span data-stu-id="488e1-122">If you find a item that is in violation of any of these items, click the ‘Report Abuse’ link on the item details page and submit a report.</span></span>
+
+<span data-ttu-id="488e1-123">**Diese Richtlinie kann nach Ermessen der für den PowerShell-Katalog verantwortlichen Mitarbeiter geändert werden.**</span><span class="sxs-lookup"><span data-stu-id="488e1-123">**This policy is subject to change at the discretion of the PowerShell Gallery.**</span></span>
