@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Erlernen von Windows PowerShell-Namen
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-ms.openlocfilehash: 28c821c4a617b6ac775dbdda8ade3d15c3f218c3
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 381aa619a41ccacb2ff3a4cdbc2b75b7f04282d1
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="learning-windows-powershell-names"></a>Erlernen von Windows PowerShell-Namen
 Das Erlernen der Namen von Befehlen und Befehlsparametern ist bei den meisten Befehlszeilenschnittstellen mit einem hohen Zeitaufwand verbunden. Das Problem ist, dass es nur sehr wenige Muster gibt. Deshalb ist die einzige Lernmöglichkeit das Auswendiglernen sämtlicher Befehle und Parameter, die Sie regelmäßig verwenden müssen.
@@ -57,7 +57,7 @@ Cmdlet          Resume-Service                  Resume-Service [-Name] <Stri...
 Cmdlet          Set-Service                     Set-Service [-Name] <String>...
 Cmdlet          Start-Service                   Start-Service [-Name] <Strin...
 Cmdlet          Stop-Service                    Stop-Service [-Name] <String...
-Cmdlet          Suspend-Service                 Suspend-Service [-Name] <Str... 
+Cmdlet          Suspend-Service                 Suspend-Service [-Name] <Str...
 ...
 ```
 
@@ -91,4 +91,3 @@ Windows PowerShell verfügt über mehrere Parameter, die als *allgemeine Paramet
 Die Windows PowerShell-Kern-Cmdlets verwenden standardmäßige Namen für ähnliche Parameter. Wenngleich die Verwendung von Parameternamen nicht erzwungen wird, gibt es zur Förderung der Standardisierung explizite Anleitungen für die Verwendung.
 
 In den Anleitungen wird beispielsweise empfohlen, für einen Parameter, der anhand des Namens auf einen Computer verweist, die Bezeichnung **ComputerName** anstatt „Server“, „Host“, „System“, „Node“ oder ein anderes gängiges alternatives Wort zu wählen. Zu den empfohlenen Parameternamen gehören **Force**, **Exclude**, **Include**, **PassThru**, **Path** und **CaseSensitive**.
-

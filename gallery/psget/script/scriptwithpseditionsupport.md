@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: gallery,powershell,cmdlet,psget
 title: Skript mit kompatiblen PowerShell-Editionen | MSDN
-ms.openlocfilehash: e6994b994cb15903560f3dd89c21383fb2cd367d
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 18ce2d729199e0587ef92993db7fec44ef744ec7
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="script-with-compatible-powershell-editions"></a>Skript mit kompatiblen PowerShell-Editionen
 Ab Version 5.1 steht PowerShell in verschiedenen Editionen zur Verfügung, die unterschiedliche Featuregruppen und Plattformkompatibilität bieten.
@@ -65,4 +65,3 @@ Find-Script -Tag PSEditon_Core
 ## <a name="more-details"></a>Weitere Details
 ### <a name="modules-with-pseditionsmodulemodulewithpseditionsupportmd"></a>[Module mit PowerShell-Editionen](../module/modulewithpseditionsupport.md)
 ### <a name="pseditions-support-on-powershellgallerypsgallerypsgallerypseditionsmd"></a>[Unterstützung von PowerShell-Editionen im PowerShell-Katalog](../../psgallery/psgallery_pseditions.md)
-

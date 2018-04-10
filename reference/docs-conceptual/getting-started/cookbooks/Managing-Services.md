@@ -1,22 +1,25 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Verwalten von Diensten
 ms.assetid: 7a410e4d-514b-4813-ba0c-0d8cef88df31
-ms.openlocfilehash: 1e83566b1cb3c0c9c3c78a5877e52552ee51b0e9
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: f3231d1922568e552534f3d3face3864d1610d65
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="managing-services"></a>Verwalten von Diensten
+
 Es gibt acht dienstbezogene Kern-Cmdlets („Service“-Cmdlets), die für eine Vielzahl von Dienstaufgaben konzipiert sind. Hier geht es nur um das Auflisten von Diensten und das Ändern des Ausführungsstatus für Dienste, Sie können aber eine Liste der „Service“-Cmdlets abrufen, indem Sie **Get-Help \&#42;-Service** verwenden, und Sie finden Informationen zu jedem „Service“-Cmdlet, indem Sie **Get-Help <Cmdlet-Name>** verwenden, z.B. **Get-Help New-Service**.
 
 ## <a name="getting-services"></a>Abrufen von Diensten
+
 Sie können die Dienste auf einem lokalen oder Remotecomputer abrufen, indem Sie das Cmdlet **Get-Service** verwenden. Wie bei **Get-Process** werden alle Dienste zurückgegeben, wenn Sie den Befehl **Get-Service** ohne Parameter verwenden. Sie können nach Name filtern, und Sie können sogar ein Sternchen als Platzhalterzeichen verwenden:
 
 ```
 PS> Get-Service -Name se*
+
 Status   Name               DisplayName
 ------   ----               -----------
 Running  seclogon           Secondary Logon
@@ -28,6 +31,7 @@ Weil nicht immer offensichtlich ist, welcher Name der echte Name für einen Dien
 
 ```
 PS> Get-Service -DisplayName se*
+
 Status   Name               DisplayName
 ------   ----               -----------
 Running  lanmanserver       Server
@@ -35,7 +39,9 @@ Running  SamSs              Security Accounts Manager
 Running  seclogon           Secondary Logon
 Stopped  ServiceLayer       ServiceLayer
 Running  wscsvc             Security Center
+
 PS> Get-Service -DisplayName ServiceLayer,Server
+
 Status   Name               DisplayName
 ------   ----               -----------
 Running  lanmanserver       Server
@@ -44,11 +50,12 @@ Stopped  ServiceLayer       ServiceLayer
 
 Sie können den „ComputerName“-Parameter des „Get-Service“-Cmdlets verwenden, um die Dienste auf Remotecomputern abzurufen. Der „ComputerName“-Parameter akzeptiert mehrere Werte sowie Platzhalterzeichen, sodass Sie die Dienste auf mehreren Computern mit einem einzigen Befehl abrufen können. Beispielsweise ruft der folgende Befehl die Dienste auf dem Remotecomputer „Server01“ ab.
 
-```
+```powershell
 Get-Service -ComputerName Server01
 ```
 
 ## <a name="getting-required-and-dependent-services"></a>Abrufen von erforderlichen und abhängigen Diensten
+
 Das „Get-Service“-Cmdlet hat zwei Parameter, die bei der Verwaltung von Diensten sehr hilfreich sind. Der „DependentServices“-Parameter bewirkt, dass Dienste abgerufen werden, die vom angegebenen Dienst abhängen. Der „RequiredServices“-Parameter bewirkt, dass Dienste abgerufen, von denen der angegebene Dienst abhängt.
 
 Diese Parameter bewirken lediglich, dass die Werte der Eigenschaften „DependentServices und „ServicesDependedOn“ (Alias = „RequiredServices“) des von „Get-Service“ zurückgegebenen „System.ServiceProcess.ServiceController“-Objekts angezeigt werden, aber sie vereinfachen Befehle und machen das Abrufen dieser Informationen viel einfacher.
@@ -57,6 +64,7 @@ Der folgende Befehl ruft die Dienste ab, die für den „LanmanWorkstation“-Di
 
 ```
 PS> Get-Service -Name LanmanWorkstation -RequiredServices
+
 Status   Name               DisplayName
 ------   ----               -----------
 Running  MRxSmb20           SMB 2.0 MiniRedirector
@@ -69,6 +77,7 @@ Der folgende Befehl ruft die Dienste ab, für die der „LanmanWorkstation“-Di
 
 ```
 PS> Get-Service -Name LanmanWorkstation -DependentServices
+
 Status   Name               DisplayName
 ------   ----               -----------
 Running  SessionEnv         Terminal Services Configuration
@@ -79,26 +88,26 @@ Running  BITS               Background Intelligent Transfer Ser...
 
 Sie können sogar alle Dienste abrufen, für die es Abhängigkeiten gibt. Im folgenden Befehl wird genau das getan und anschließend das Cmdlet „Format-Table“ verwendet, um für die Dienste auf dem Computer die Eigenschaften „Status“, „Name“, „RequiredServices“ und „DependentServices“ anzuzeigen.
 
-```
-Get-Service -Name * | where {$_.RequiredServices -or $_.DependentServices} | Format-Table -Property Status, Name, RequiredServices, DependentServices -auto
+```powershell
+Get-Service -Name * | Where-Object {$_.RequiredServices -or $_.DependentServices} | Format-Table -Property Status, Name, RequiredServices, DependentServices -auto
 ```
 
 ## <a name="stopping-starting-suspending-and-restarting-services"></a>Beenden, Starten, Anhalten und Neustarten von Diensten
 Die „Service“-Cmdlets die alle haben dieselbe allgemeine Form. Dienste können als allgemeine Namen oder Anzeigenamen angegeben werden, und es können Listen sowie Platzhalter als Werte angegeben werden. Um den Druckspooler zu beenden, verwenden Sie folgenden Befehl:
 
-```
+```powershell
 Stop-Service -Name spooler
 ```
 
 Um den Druckspooler zu starten, nachdem er beendet wurde, verwenden Sie folgenden Befehl:
 
-```
+```powershell
 Start-Service -Name spooler
 ```
 
 Um den Druckspooler anzuhalten, verwenden Sie folgenden Befehl:
 
-```
+```powershell
 Suspend-Service -Name spooler
 ```
 
@@ -106,6 +115,7 @@ Das **Restart-Service**-Cmdlet funktioniert in gleicher Weise wie die anderen �
 
 ```
 PS> Restart-Service -Name spooler
+
 WARNING: Waiting for service 'Print Spooler (Spooler)' to finish starting...
 WARNING: Waiting for service 'Print Spooler (Spooler)' to finish starting...
 PS>
@@ -117,6 +127,7 @@ Wenn Sie mehrere Dienste neu starten möchten, können Sie eine Liste der Dienst
 
 ```
 PS> Get-Service | Where-Object -FilterScript {$_.CanStop} | Restart-Service
+
 WARNING: Waiting for service 'Computer Browser (Browser)' to finish stopping...
 WARNING: Waiting for service 'Computer Browser (Browser)' to finish stopping...
 Restart-Service : Cannot stop service 'Logical Disk Manager (dmserver)' because
@@ -129,11 +140,12 @@ WARNING: Waiting for service 'Print Spooler (Spooler)' to finish starting...
 
 Diese „Service“-Cmdlets haben keinen „ComputerName“-Parameter, Sie können sie aber auf einem Remotecomputer ausführen, indem Sie das „Invoke-Command“-Cmdlet verwenden. Beispielsweise startet der folgende Befehl den „Spooler“-Dienst auf dem Remotecomputer „Server01“ neu.
 
-```
+```powershell
 Invoke-Command -ComputerName Server01 {Restart-Service Spooler}
 ```
 
 ## <a name="setting-service-properties"></a>Festlegen von Diensteigenschaften
+
 Das Cmdlet „Set-Service“ ändert die Eigenschaften eines Diensts auf einem lokalen Computer oder Remotecomputer. Weil der Dienststatus eine Eigenschaft ist, können Sie dieses Cmdlet verwenden, um einen Dienst zu starten, zu beenden und anzuhalten. Das Cmdlet „Set-Service“ hat außerdem einen „StartupType“-Parameter, über den Sie den Starttyp des Diensts ändern können.
 
 Wenn Sie „Set-Service“ unter Windows Vista und höheren Versionen von Windows verwenden möchten, öffnen Sie Windows PowerShell mit der Option „Als Administrator ausführen“.
@@ -141,8 +153,8 @@ Wenn Sie „Set-Service“ unter Windows Vista und höheren Versionen von Windo
 Weitere Informationen hierzu finden Sie unter [Set-Service [m2]](https://technet.microsoft.com/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3).
 
 ## <a name="see-also"></a>Weitere Informationen
+
 - [Get-Service [m2]](https://technet.microsoft.com/en-us/library/0a09cb22-0a1c-4a79-9851-4e53075f9cf6)
 - [Set-Service [m2]](https://technet.microsoft.com/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
 - [Restart-Service [m2]](https://technet.microsoft.com/en-us/library/45acf50d-2277-4523-baf7-ce7ced977d0f)
 - [Suspend-Service [m2]](https://technet.microsoft.com/en-us/library/c8492b87-0e21-4faf-8054-3c83c2ec2826)
-

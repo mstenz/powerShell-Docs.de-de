@@ -1,19 +1,19 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Neues in PowerShell
-ms.openlocfilehash: cfac61258fed00e369256e7061e440cccf43055f
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: a4f931cfcda947181d6a12a509ca0cfe14279e8b
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="what39s-new-with-powershell"></a>Neues in PowerShell
 Windows PowerShell® 5.0 bietet wichtige neue Features, die die Verwendungsmöglichkeiten erweitern, die Benutzerfreundlichkeit verbessern und es Ihnen ermöglichen, die Steuerung und Verwaltung von Windows-basierten Umgebungen leichter und umfassender zu bewältigen.  Die wichtigsten Verbesserungen finden sich in den Bereichen DSC (Desired State Configuration, Konfigurieren des gewünschten Zustands), Leistung, Remoting und Spracherweiterungen.
 
 Windows PowerShell 5.0 ist abwärtskompatibel. Cmdlets, Anbieter, Module, Snap-Ins, Skripts, Funktionen und Profile, die für Windows PowerShell 4.0, Windows PowerShell 3.0 und Windows PowerShell 2.0 entwickelt wurden, funktionieren im Allgemeinen ohne Änderungen in Windows PowerShell 5.0.
 
-Windows PowerShell 5.0 wird unter Windows® Server 2016 und Windows 10 standardmäßig installiert. Zum Installieren von Windows PowerShell 5.0 unter Windows Server 2012 R2, Windows 8.1 Enterprise oder Windows 8.1 Pro müssen Sie [Windows Management Framework 5.0](https://go.microsoft.com/fwlink/?linkid=830436) herunterladen und installieren. Achten Sie darauf, dass Sie die Details für das Herunterladen lesen und alle Systemanforderungen erfüllen, bevor Sie Windows Management Framework 5.0 Preview installieren.
+Windows PowerShell 5.0 wird unter Windows® Server 2016 und Windows 10 standardmäßig installiert. Zum Installieren von Windows PowerShell 5.0 unter Windows Server 2012 R2, Windows 8.1 Enterprise oder Windows 8.1 Pro müssen Sie [Windows Management Framework 5.0](https://go.microsoft.com/fwlink/?linkid=830436) herunterladen und installieren. Achten Sie darauf, dass Sie die Details für das Herunterladen lesen und alle Systemanforderungen erfüllen, bevor Sie Windows Management Framework 5.0 installieren.
 
 ## <a name="in-this-topic"></a>Inhalt dieses Themas
 
@@ -26,4 +26,3 @@ Windows PowerShell 5.0 wird unter Windows® Server 2016 und Windows 10 standardm
 
 - New features in Windows PowerShell 3.0
 -->
-

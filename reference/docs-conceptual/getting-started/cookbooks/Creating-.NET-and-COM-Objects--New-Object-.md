@@ -1,18 +1,20 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "Erstellen von .NET- und COM-Objekten – New-Object"
+title: Erstellen von .NET- und COM-Objekten – New-Object
 ms.assetid: 2057b113-efeb-465e-8b44-da2f20dbf603
-ms.openlocfilehash: 534e1a9a759d67cfc62ce658a7abddf02f767212
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 1ffd8d4afa419ec0c24321e44aa4a2f41a9bee44
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="creating-net-and-com-objects-new-object"></a>Erstellen von .NET- und COM-Objekten (New-Object)
+
 Es gibt Softwarekomponenten mit .NET Framework- und COM-Schnittstellen, mit denen Sie viele Systemverwaltungsaufgaben ausführen können. Mit Windows PowerShell können Sie diese Komponenten verwenden und sind somit nicht auf die Aufgaben beschränkt, die mithilfe von Cmdlets ausgeführt werden können. Viele der Cmdlets in der ursprünglichen Version von Windows PowerShell funktionieren nicht auf Remotecomputern. Wir zeigen, wie diese Einschränkung beim Verwalten von Ereignisprotokollen mithilfe der .NET Framework-Klasse **System.Diagnostics.EventLog** direkt aus Windows PowerShell heraus umgangen werden können.
 
 ### <a name="using-new-object-for-event-log-access"></a>Verwenden von „New-Object“ für den Zugriff auf das Ereignisprotokoll
+
 Die .NET Framework-Klassenbibliothek enthält eine Klasse namens **System.Diagnostics.EventLog**, die zum Verwalten von Ereignisprotokollen verwendet werden kann. Zum Erstellen einer neuen Instanz einer .NET Framework-Klasse können Sie das Cmdlet **New-Object** mit dem Parameter **TypeName** verwenden. Der folgende Befehl erstellt z. B. einen Ereignisprotokollverweis:
 
 ```
@@ -25,6 +27,7 @@ PS> New-Object -TypeName System.Diagnostics.EventLog
 Obwohl der Befehl eine Instanz der EventLog-Klasse erstellt hat, enthält die Instanz keine Daten. Der Grund hierfür ist, dass wir kein bestimmtes Ereignisprotokoll angegeben haben. Wie erhalten Sie ein echtes Ereignisprotokoll?
 
 #### <a name="using-constructors-with-new-object"></a>Verwenden von Konstruktoren mit „New-Object“
+
 Um auf ein bestimmtes Ereignisprotokoll zu verweisen, müssen Sie den Namen des Protokolls angeben. **New-Object** verfügt über einen **ArgumentList**-Parameter. Die Argumente, die Sie als Werte an diesen Parameter übergeben, werden von einer speziellen Startmethode des Objekts verwendet. Die Methode wird als *Konstruktor* bezeichnet, da sie zum Konstruieren des Objekts dient. Um beispielsweise einen Verweis auf das Anwendungsprotokoll zu erhalten, geben Sie die Zeichenfolge „Application“ als Argument ein:
 
 ```
@@ -39,6 +42,7 @@ Max(K) Retain OverflowAction        Entries Name
 > Da die meisten .NET Framework Core-Klassen im System-Namespace enthalten sind, versucht Windows PowerShell automatisch, Klassen zu finden, die Sie im System-Namespace angeben, wenn keine Übereinstimmung für den angegebenen Typnamen gefunden wird. Dies bedeutet, dass Sie „Diagnostics.EventLog“ anstelle von „System.Diagnostics.EventLog“ angeben können.
 
 #### <a name="storing-objects-in-variables"></a>Speichern von Objekten in Variablen
+
 Möglicherweise möchten Sie einen Verweis auf ein Objekt speichern, damit Sie es in der aktuellen Shell verwenden können. Obwohl Windows PowerShell Ihnen ermöglicht, viele Aufgaben mit Pipelines zu erledigen und damit die Notwendigkeit von Variablen zu verringern, erleichtert das Speichern von Verweisen auf Objekte in Variablen manchmal die Bearbeitung dieser Objekte.
 
 Mit Windows PowerShell können Sie Variablen erstellen, die im Prinzip benannte Objekte sind. Die Ausgabe eines beliebigen gültigen Windows PowerShell-Befehls kann in einer Variablen gespeichert werden. Namen von Variablen beginnen immer mit $. Wenn Sie den Verweis auf ein Anwendungsprotokoll in einer Variablen namens „$AppLog“ speichern möchten, geben Sie den Namen der Variablen an, gefolgt von einem Gleichheitszeichen und dem Befehl zum Erstellen des Anwendungsprotokollobjekts:
@@ -58,6 +62,7 @@ PS> $AppLog
 ```
 
 #### <a name="accessing-a-remote-event-log-with-new-object"></a>Zugreifen auf ein Remoteereignisprotokoll mit „New-Object“
+
 Die im vorherigen Abschnitt verwendeten Befehle hatten den lokalen Computer als Ziel. Dazu kann auch das Cmdlet **Get-EventLog** verwendet werden. Um auf das Anwendungsprotokoll auf einem Remotecomputer zuzugreifen, müssen Sie sowohl den Namen des Protokolls als auch einen Computernamen (oder eine IP-Adresse) als Argumente bereitstellen.
 
 ```
@@ -72,6 +77,7 @@ PS> $RemoteAppLog
 Welche Aufgaben können wir nun mit dem Verweis auf ein in der Variablen $RemoteAppLog gespeichertes Ereignisprotokoll ausführen?
 
 #### <a name="clearing-an-event-log-with-object-methods"></a>Löschen eines Ereignisprotokolls mit Objektmethoden
+
 Objekte verfügen oft über Methoden, die aufgerufen werden können, um Aufgaben auszuführen. Sie können **Get-Member** verwenden, um die einem Objekt zugeordneten Methoden anzuzeigen. Mit dem folgenden Befehl und der ausgewählten Ausgabe werden einige der Methoden der EventLog-Klasse angezeigt:
 
 ```
@@ -118,7 +124,7 @@ Sie können **New-Object** verwenden, um mit Component Object Model-Komponenten 
 
 Sie können die WSH-Objekte erstellen, indem Sie diese ProgIDs angeben: **WScript.Shell**, **WScript.Network**, **Scripting.Dictionary** und **Scripting.FileSystemObject**. Mit den folgenden Befehlen werden diese Objekte erstellt:
 
-```
+```powershell
 New-Object -ComObject WScript.Shell
 New-Object -ComObject WScript.Network
 New-Object -ComObject Scripting.Dictionary
@@ -128,9 +134,10 @@ New-Object -ComObject Scripting.FileSystemObject
 Die meisten Funktionen dieser Klassen werden zwar auch auf andere Weise in Windows PowerShell bereitgestellt, aber einige Aufgaben wie das Erstellen einer Verknüpfung lassen sich mit den WSH-Klassen einfacher erledigen.
 
 ### <a name="creating-a-desktop-shortcut-with-wscriptshell"></a>Erstellen einer Desktopverknüpfung mit „WScript.Shell“
+
 Eine Aufgabe, die mit einem COM-Objekt schnell und einfach ausgeführt werden kann, ist das Erstellen einer Verknüpfung. Angenommen, Sie möchten auf dem Desktop eine Verknüpfung zum Basisordner für Windows PowerShell erstellen. Zuerst müssen Sie einen Verweis auf **WScript.Shell** erstellen, den wir in einer Variablen namens **$WshShell** speichern:
 
-```
+```powershell
 $WshShell = New-Object -ComObject WScript.Shell
 ```
 
@@ -150,7 +157,6 @@ CreateShortcut           Method                IDispatch CreateShortcut (str...
 
 **Get-Member** verfügt über einen optionalen **InputObject**-Parameter, den Sie anstelle von Piping als Eingabe für **Get-Member** verwenden können. Dieselbe Ausgabe wie oben hätten Sie auch über den Befehl **Get-Member -InputObject $WshShell** erhalten. Wenn Sie **InputObject** verwenden, wird das Argument als ein einzelnes Element behandelt. Dies bedeutet, dass bei mehreren Objekte in einer Variablen diese von **Get-Member** als ein Array von Objekten behandelt werden. Beispiel:
 
-
 ```
 PS> $a = 1,2,"three"
 PS> Get-Member -InputObject $a
@@ -163,7 +169,7 @@ Count              AliasProperty Count = Length
 
 Die Methode **WScript.Shell CreateShortcut** akzeptiert ein einziges Argument, und zwar, den Pfad zur zu erstellenden Verknüpfungsdatei. Wir könnten den vollständigen Pfad zum Desktop eingeben, aber es gibt einen einfacheren Weg. Der Desktop wird normalerweise durch einen Ordner namens „Desktop“ im Basisordner des aktuellen Benutzers dargestellt. Windows PowerShell verfügt über eine Variable **$Home**, die den Pfad zu diesem Ordner enthält. Sie können den Pfad zum Basisordner mithilfe dieser Variablen angeben und dann den Namen des Ordners „Desktop“ sowie den Namen für die zu erstellende Verknüpfung hinzufügen. Geben Sie dazu Folgendes ein:
 
-```
+```powershell
 $lnk = $WshShell.CreateShortcut("$Home\Desktop\PSHome.lnk")
 ```
 
@@ -191,17 +197,18 @@ TargetPath       Property     string TargetPath () {get} {set}
 
 Sie müssen den **TargetPath** angeben, d.h. den Anwendungsordner für Windows PowerShell, und dann die Verknüpfung **$lnk** durch Aufrufen der Methode **Save** speichern. Der Pfad des Windows PowerShell-Anwendungsordners ist in der Variablen **$PSHome** gespeichert, also geben Sie Folgendes ein:
 
-```
+```powershell
 $lnk.TargetPath = $PSHome
 $lnk.Save()
 ```
 
 ### <a name="using-internet-explorer-from-windows-powershell"></a>Verwenden von Internet Explorer in Windows PowerShell
+
 Viele Anwendungen (einschließlich der Microsoft Office-Anwendungen und Internet Explorer) können mithilfe von COM automatisiert werden. Internet Explorer verdeutlicht einige der typischen Techniken und Probleme im Zusammenhang mit COM-basierten Anwendungen.
 
 Sie erstellen eine Internet Explorer-Instanz, indem Sie die ProgID von Internet Explorer angeben, **InternetExplorer.Application**:
 
-```
+```powershell
 $ie = New-Object -ComObject InternetExplorer.Application
 ```
 
@@ -212,25 +219,25 @@ Dieser Befehl startet Internet Explorer, zeigt die Anwendung macht aber nicht an
 
 Durch Eingabe von **$ie | Get-Member** können Sie Eigenschaften und Methoden für Internet Explorer anzeigen. Um das Internet Explorer-Fenster anzuzeigen, legen Sie die Eigenschaft „Visible“ auf „$true“ fest. Geben Sie dazu Folgendes ein:
 
-```
+```powershell
 $ie.Visible = $true
 ```
 
 Anschließend können Sie mithilfe der Methode „Navigate“ zu einer bestimmten Webadresse navigieren:
 
-```
+```powershell
 $ie.Navigate("http://www.microsoft.com/technet/scriptcenter/default.mspx")
 ```
 
 Unter Verwendung anderer Elemente des Internet Explorer-Objektmodells können Sie Text-Inhalt von der Website abrufen. Mit dem folgenden Befehl können Sie den HTML-Text im Hauptteil der aktuellen Webseite anzeigen:
 
-```
+```powershell
 $ie.Document.Body.InnerText
 ```
 
 Rufen Sie die Methode „Quit()“ auf, um Internet Explorer aus PowerShell heraus zu schließen:
 
-```
+```powershell
 $ie.Quit()
 ```
 
@@ -247,7 +254,7 @@ At line:1 char:16
 
 Sie können entweder den verbleibenden Verweis mit einem Befehl wie „$ie = $null“ oder die Variable durch folgende Eingabe entfernen:
 
-```
+```powershell
 Remove-Variable ie
 ```
 
@@ -255,6 +262,7 @@ Remove-Variable ie
 > Es gibt keinen allgemeinen Standard, der festlegt, ob ActiveX-EXE-Dateien beendet oder weiterhin ausgeführt werden, wenn Sie einen Verweis darauf entfernen. Je nach Situation, also z. B. abhängig davon, ob die Anwendung angezeigt, ein bearbeitetes Dokument darin ausgeführt oder Windows PowerShell noch ausgeführt wird, wird die Anwendung beendet oder auch nicht. Aus diesem Grund sollten Sie das Abbruchverhalten für jede ActiveX-EXE-Datei testen, die Sie in Windows PowerShell verwenden möchten.
 
 ### <a name="getting-warnings-about-net-framework-wrapped-com-objects"></a>Abrufen von Warnungen zu von .NET Framework umschlossenen COM-Objekten
+
 In einigen Fällen verfügt ein COM-Objekt möglicherweise über einen zugeordneten .NET Framework *Runtime-Callable Wrapper* oder RCW, und dieser wird von **New-Object** verwendet. Da das Verhalten des RCW möglicherweise vom Verhalten des normalen COM-Objekts abweicht, verfügt **New-Object** über einen **Strict**-Parameter, der Sie auf den RCW-Zugriff hinweist. Wenn Sie den Parameter **Strict** angeben und dann ein COM-Objekt erstellen, das einen RCW verwendet, wird eine Warnung angezeigt:
 
 ```
@@ -269,4 +277,3 @@ At line:1 char:17
 ```
 
 Das Objekt wird zwar erstellt, Sie werden jedoch darauf hingewiesen, dass es sich nicht um ein Standard-COM-Objekt handelt.
-

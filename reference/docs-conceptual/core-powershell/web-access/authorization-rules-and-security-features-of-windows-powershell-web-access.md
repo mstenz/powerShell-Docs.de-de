@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-06-27
+ms.date: 06/27/2017
 keywords: powershell,cmdlet
 title: Autorisierungsregeln und Sicherheitsfeatures von Windows PowerShell Web Access
-ms.openlocfilehash: 19e4aa1bb55178ec2634af0771afe2db5db3423c
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 0e765ae90661a054ca9bae71d0f6d449cccb185d
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Autorisierungsregeln und Sicherheitsfeatures von Windows PowerShell Web Access
 
@@ -162,7 +162,7 @@ Add-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214 -
 
 1. Falls noch keine Windows PowerShell-Sitzung geöffnet wurde, finden Sie die entsprechende Vorgehensweise in Schritt 1 unter [So fügen Sie eine restriktive Autorisierungsregel hinzu](#to-add-a-restrictive-authorization-rule) in diesem Abschnitt.
 
-2. Geben Sie Folgendes ein, und drücken Sie dann die **EINGABETASTE**, wobei *Regel-ID* für die eindeutige ID-Nummer der Regel steht, die Sie entfernen möchten.
+2. Geben Sie Folgendes ein, und drücken Sie anschließend die **EINGABETASTE**, wobei *Regel-ID* für die eindeutige ID-Nummer der Regel steht, die Sie entfernen möchten.
 
 ```powershell
 Remove-PswaAuthorizationRule -ID <rule ID>
@@ -172,7 +172,7 @@ Falls Ihnen die ID-Nummer nicht bekannt ist, dafür jedoch der Anzeigename der z
 
 >**Hinweis**:
 >
->Sie werden nicht aufgefordert zu bestätigen, ob die angegebene Autorisierungsregel gelöscht werden soll. Die Regel wird gelöscht, wenn Sie die **EINGABETASTE**drücken. Vergewissern Sie sich, ob die Autorisierungsregel wirklich entfernt werden soll, bevor Sie das Cmdlet `Remove-PswaAuthorizationRule` ausführen.
+>Sie werden nicht aufgefordert zu bestätigen, dass die angegebene Autorisierungsregel gelöscht werden soll. Die Regel wird gelöscht, wenn Sie die **EINGABETASTE** drücken. Vergewissern Sie sich, ob die Autorisierungsregel wirklich entfernt werden soll, bevor Sie das Cmdlet `Remove-PswaAuthorizationRule` ausführen.
 
 #### <a name="other-authorization-rule-scenario-examples"></a>Weitere Beispiele für Autorisierungsregelszenarios
 
@@ -193,13 +193,13 @@ Im Folgenden sind einige Beispiele für die Verwendung von Sitzungskonfiguration
   >
   >Diese Regel empfiehlt sich nicht für eine sichere Umgebung und umgeht die von Windows PowerShell Web Access bereitgestellte Autorisierungsregel-Sicherheitsebene.
 
-- Ein Administrator muss für Benutzer in einer Umgebung, in der sowohl Arbeitsgruppen als auch Domänen enthalten sind, das Herstellen einer Verbindung mit Zielcomputern zulassen. Dabei werden Arbeitsgruppencomputer gelegentlich verwendet, um eine Verbindung mit Zielcomputern in Domänen herzustellen, und Computer in Domänen werden gelegentlich verwendet, um eine Verbindung mit Zielcomputern in Arbeitsgruppen herzustellen. Der Administrator verfügt über einen Gatewayserver ( *PswaServer*) in einer Arbeitsgruppe, und der Zielcomputer *srv1.contoso.com* befindet sich in einer Domäne. Der Benutzer *Chris* ist ein autorisierter lokaler Benutzer auf dem Arbeitsgruppen-Gatewayserver und auf dem Zielcomputer. Sein Benutzername auf dem Arbeitsgruppenserver lautet *chrisLocal*, und sein Benutzername auf dem Zielcomputer lautet *contoso\\chris*. Der Administrator fügt die folgende Regel hinzu, um den Zugriff auf %%amp;quot;srv1.contoso.com%%amp;quot; für Chris zu autorisieren.
+- Ein Administrator muss für Benutzer in einer Umgebung, in der sowohl Arbeitsgruppen als auch Domänen enthalten sind, das Herstellen einer Verbindung mit Zielcomputern zulassen. Dabei werden Arbeitsgruppencomputer gelegentlich verwendet, um eine Verbindung mit Zielcomputern in Domänen herzustellen, und Computer in Domänen werden gelegentlich verwendet, um eine Verbindung mit Zielcomputern in Arbeitsgruppen herzustellen. Der Administrator verfügt über einen Gatewayserver (*PswaServer*) in einer Arbeitsgruppe, und der Zielcomputer *srv1.contoso.com* befindet sich in einer Domäne. Der Benutzer *Chris* ist ein autorisierter lokaler Benutzer auf dem Arbeitsgruppen-Gatewayserver und auf dem Zielcomputer. Sein Benutzername auf dem Arbeitsgruppenserver lautet *chrisLocal*, und sein Benutzername auf dem Zielcomputer lautet *contoso\\chris*. Der Administrator fügt die folgende Regel hinzu, um den Zugriff auf %%amp;quot;srv1.contoso.com%%amp;quot; für Chris zu autorisieren.
 
 ```powershell
 Add-PswaAuthorizationRule -userName PswaServer\chrisLocal -computerName srv1.contoso.com -configurationName Microsoft.PowerShell
 ```
 
-Im vorigen Regelbeispiel wird Chris auf dem Gatewayserver authentifiziert und anschließend der Zugriff auf *srv1*autorisiert. Auf der Anmeldeseite muss Chris unter **Optionale Verbindungseinstellungen** (*contoso\\chris*) einen zweiten Satz Anmeldeinformationen angeben. Der Gatewayserver verwendet den zusätzlichen Satz von Anmeldeinformationen für die Authentifizierung auf dem Zielcomputer *srv1.contoso.com*.
+Im vorigen Regelbeispiel wird Chris auf dem Gatewayserver authentifiziert und anschließend sein Zugriff auf *srv1* autorisiert. Auf der Anmeldeseite muss Chris unter **Optionale Verbindungseinstellungen** (*contoso\\chris*) einen zweiten Satz Anmeldeinformationen angeben. Der Gatewayserver verwendet den zusätzlichen Satz von Anmeldeinformationen für die Authentifizierung auf dem Zielcomputer *srv1.contoso.com*.
 
 Im obigen Szenario richtet Windows PowerShell Web Access eine Verbindung mit dem Zielcomputer erst ein, nachdem Folgendes erfolgreich durchgeführt und von mindestens einer Autorisierungsregel zugelassen wurde.
 

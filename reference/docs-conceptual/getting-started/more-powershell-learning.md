@@ -1,16 +1,16 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Mehr Lernmaterial zu PowerShell
-ms.openlocfilehash: 32d7006010a4808a77d9800ec77c4352213d12b9
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: bed263df0ff52ec687bc7a644470f0397d0106ff
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="more-powershell-learning"></a>Mehr Lernmaterial zu PowerShell
 
-Andere Quellen, um PowerShell zu lernen  
+Andere Quellen, um PowerShell zu lernen
 
 ## <a name="resources-for-windows-powershell-users"></a>Ressourcen für Windows PowerShell-Benutzer
 
@@ -51,4 +51,3 @@ Die folgenden Ressourcen bieten Ressourcen, die Entwicklern dabei helfen, ihre e
 
 - [Windows PowerShell SDK](http://go.microsoft.com/fwlink/p/?LinkID=89595) – Enthält Referenzmaterial.
 - [Windows PowerShell-Programmiererhandbuch](http://go.microsoft.com/fwlink/p/?LinkID=89596) – Stellt Tutorials bereit. Enthält zudem Informationen über grundlegende Konzepte von Windows PowerShell.
-

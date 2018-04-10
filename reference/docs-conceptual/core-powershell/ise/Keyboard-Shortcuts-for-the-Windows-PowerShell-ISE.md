@@ -1,18 +1,20 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "Tastenkombinationen für Windows PowerShell ISE"
+title: Tastenkombinationen für Windows PowerShell ISE
 ms.assetid: 8328b946-0f02-4ef4-ac28-2743a1b4043b
-ms.openlocfilehash: 21c4b43b1ab94e2b533413362319ec42ac8a15aa
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: e17fee4cf0cc8ac7aa0bb36acde3b452919312d0
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Tastenkombinationen für Windows PowerShell ISE
+
 Verwenden Sie die folgenden Tastenkombinationen zum Ausführen von Aktionen in Windows PowerShell® Integrated Scripting Environment (ISE). Windows PowerShell ISE ist als Bestandteil von Windows Server- und Windows-Client-Betriebssystemen verfügbar, kann aber auch unter einigen älteren Windows-Betriebssystemen als Teil des [Windows Management Framework 4.0-Downloadpakets](http://go.microsoft.com/fwlink/?LinkID=293881) installiert werden.
 
 ## <a name="keyboard-shortcuts-for-editing-text"></a>Tastenkombinationen zum Bearbeiten von Text
+
 Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Text bearbeiten.
 
 |Aktion|Tastenkombinationen|Verwenden in|
@@ -34,6 +36,7 @@ Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Text bearbeite
 |**Rückgängig**|STRG+Z|Skriptbereich, Befehlsbereich|
 
 ## <a name="keyboard-shortcuts-for-running-scripts"></a>Tastenkombinationen zum Ausführen von Skripts
+
 Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Skripts im Skriptbereich ausführen.
 
 |Aktion|Tastenkombination|
@@ -47,6 +50,7 @@ Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Skripts im Skr
 |**Registerkarte** (zum vorherigen Skript)|STRG+UMSCHALT+TAB **Hinweis:** Mit STRG+UMSCHALT+TAB zum vorherigen Skript wechseln funktioniert nur, wenn Sie eine einzige Windows PowerShell-Registerkarte geöffnet haben, oder wenn Sie mehrere Windows PowerShell-Registerkarten geöffnet haben und sich der Fokus im Skriptbereich befindet.|
 
 ## <a name="keyboard-shortcuts-for-customizing-the-view"></a>Tastenkombinationen zum Anpassen der Ansicht
+
 Sie können die folgenden Tastenkombinationen verwenden, um die Ansicht in Windows PowerShell ISE anzupassen. Diese Tastenkombinationen sind in allen Bereichen in der Anwendung wirksam.
 
 |Aktion|Tastenkombination|
@@ -63,6 +67,7 @@ Sie können die folgenden Tastenkombinationen verwenden, um die Ansicht in Windo
 |**Verkleinern**|STRG+MINUSZEICHEN|
 
 ## <a name="keyboard-shortcuts-for-debugging-scripts"></a>Tastenkombinationen zum Debuggen von Skripts
+
 Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Skripts debuggen.
 
 |Aktion|Tastenkombination|Verwenden in|
@@ -93,6 +98,7 @@ Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Skripts debugg
 |**Konsolendebugbefehle anzeigen**|H or ?|Konsolenbereich, wenn ein Skript debuggt wird|
 
 ## <a name="keyboard-shortcuts-for-windows-powershell-tabs"></a>Tastenkombinationen für Windows PowerShell-Registerkarten
+
 Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Windows PowerShell-Registerkarten verwenden.
 
 |Aktion|Tastenkombination|
@@ -103,6 +109,7 @@ Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Windows PowerS
 |**Nächste Windows PowerShell-Registerkarte**|STRG+TAB. Diese Tastenkombination funktioniert nur, wenn keine Dateien in irgendeiner Windows PowerShell-Registerkarte geöffnet sind.|
 
 ## <a name="keyboard-shortcuts-for-starting-and-exiting"></a>Tastenkombinationen für Starten und Beenden
+
 Sie können die folgenden Tastenkombinationen verwenden, um die Windows PowerShell-Konsole (PowerShell.exe) zu starten oder Windows PowerShell ISE zu beenden.
 
 |Aktion|Tastenkombination|
@@ -111,5 +118,5 @@ Sie können die folgenden Tastenkombinationen verwenden, um die Windows PowerShe
 |**PowerShell.exe starten** (Windows PowerShell-Konsole)|STRG+UMSCHALT+P|
 
 ## <a name="see-also"></a>Weitere Informationen
-- [PowerShell Magazine: The Complete List of Windows PowerShell ISE Keyboard Shortcuts](http://www.powershellmagazine.com/2013/01/29/the-complete-list-of-powershell-ise-3-0-keyboard-shortcuts/)
 
+- [PowerShell Magazine: The Complete List of Windows PowerShell ISE Keyboard Shortcuts](http://www.powershellmagazine.com/2013/01/29/the-complete-list-of-powershell-ise-3-0-keyboard-shortcuts/)

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Verwenden von statischen Klassen und Methoden
 ms.assetid: 418ad766-afa6-4b8c-9a44-471889af7fd9
-ms.openlocfilehash: fe41c7d6b45564e7b5bc2b922a18587c9745e26d
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 0f2b02c3a40365ad0335118b057a4e548c9f6535
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="using-static-classes-and-methods"></a>Verwenden von statischen Klassen und Methoden
 Nicht alle .NET Framework-Klassen können mit **New-Object** erstellt werden. Wenn Sie beispielsweise versuchen, ein **System.Environment**- oder ein **System.Math**-Objekt mit **New-Object** zu erstellen, erhalten Sie die folgenden Fehlermeldungen:
@@ -18,6 +18,7 @@ New-Object : Constructor not found. Cannot find an appropriate constructor for
 type System.Environment.
 At line:1 char:11
 + New-Object  <<<< System.Environment
+
 PS> New-Object System.Math
 New-Object : Constructor not found. Cannot find an appropriate constructor for
 type System.Math.
@@ -88,6 +89,7 @@ TickCount                               ExitCode
 Nun können Sie anzuzeigende Eigenschaften aus „System.Environment“ auswählen.
 
 #### <a name="displaying-static-properties-of-systemenvironment"></a>Anzeigen von statischen Eigenschaften von „System.Environment“
+
 Die Eigenschaften von „System.Environment“ sind ebenfalls statisch und müssen auf andere Weise angegeben werden als normale Eigenschaften. Es wird **::** verwendet, um für Windows PowerShell anzugeben, dass mit einer statischen Methode oder Eigenschaft gearbeitet werden soll. Um den Befehl anzuzeigen, mit dem Windows PowerShell gestartet wurde, wird die **CommandLine**-Eigenschaft geprüft, indem Folgendes eingegeben wird:
 
 ```
@@ -113,6 +115,7 @@ False
 ```
 
 ### <a name="doing-math-with-systemmath"></a>Ausführen von mathematischen Funktionen mit „System.Math“
+
 Mit der statischen „System.Math“-Klasse können einige mathematische Operationen ausgeführt werden. Die wichtigen Member von **System.Math** sind größtenteils Methoden, die mit **Get-Member** angezeigt werden können.
 
 > [!NOTE]
@@ -181,4 +184,3 @@ PS> [System.Math]::Truncate(9.3)
 PS> [System.Math]::Truncate(-9.3)
 -9
 ```
-

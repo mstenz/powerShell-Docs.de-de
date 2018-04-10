@@ -1,17 +1,17 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 60abe525ca1bdcebca570f2ef3656f32dca3747f
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 85982027ba1c967d3ec9b099300509cf5761807b
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="mof-documents-are-encrypted-by-default"></a>MOF-Dokumente standardmäßig verschlüsselt
 
-Konfigurationsdokumente enthalten vertrauliche Informationen. In früheren Versionen von DSC mussten Sie zum Schützten von Anmeldeinformationen innerhalb einer Konfiguration Zertifikate verteilen und verwalten. Dies brachte häufig einen erheblichen Verwaltungsaufwand mit sich, wobei es aber immer noch Konfigurationsinformationen gab, die nicht geschützt waren bzw. werden konnten. 
+Konfigurationsdokumente enthalten vertrauliche Informationen. In früheren Versionen von DSC mussten Sie zum Schützten von Anmeldeinformationen innerhalb einer Konfiguration Zertifikate verteilen und verwalten. Dies brachte häufig einen erheblichen Verwaltungsaufwand mit sich, wobei es aber immer noch Konfigurationsinformationen gab, die nicht geschützt waren bzw. werden konnten.
 
 Dies ist nicht mehr der Fall, da **alle MOF-Konfigurationsdateien standardmäßig geschützt sind**. Keine Zertifikate oder Metakonfigurationseinstellungen erforderlich Jedes Mal, wenn eine MOF-Konfigurationsdatei auf einem Zielknoten vom lokalen Konfigurations-Manager (LCM) auf einen Datenträger gespeichert wird, wird sie verschlüsselt. Die MOF-Dateien werden mit [DPAPI](https://msdn.microsoft.com/library/ms995355.aspx) verschlüsselt. **Hinweis:** Von einem Konfigurationsskript generierte MOF-Dateien werden nicht verschlüsselt.
 
@@ -20,4 +20,3 @@ Dies ist nicht mehr der Fall, da **alle MOF-Konfigurationsdateien standardmäßi
 Wenn Sie bereits die Zertifikatmethode zum Verschlüsseln von Kennwörtern verwenden oder zusätzliche Sicherheit für Ihre Kennwörter benötigen, funktioniert das [bestehende Verfahren zur zertifikatbasierten Verschlüsselung](https://msdn.microsoft.com/powershell/dsc/securemof) weiterhin. Das Ergebnis ist ein MOF-Dokument, das mit den DPAPIs vollständig verschlüsselt ist und zusätzlich über darin enthaltene verschlüsselte Kennwörter verfügt.
 
 Diese Verschlüsselung gilt nur für MOF-Konfigurationsdokumente (pending.mof, current.mof, previous.mof, MOF-Teilkonfigurationen). MOF-Dateien mit Metakonfigurationen werden weiterhin unverschlüsselt gespeichert, da sie meist keine geheimen Schlüssel enthalten.
-

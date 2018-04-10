@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
 keywords: gallery,powershell,cmdlet,psgallery
-title: "Syntax für die Katalogsuche | MSDN"
-ms.openlocfilehash: 409ae607557af760f9cec4e3c54f39e51b5fac18
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+title: Syntax für die Katalogsuche | MSDN
+ms.openlocfilehash: 337b4b1e702994fcbc456eb31a2d8632f5220d09
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="gallery-search-syntax"></a>Syntax für die Katalogsuche
 
@@ -49,7 +49,7 @@ ist eine andere Möglichkeit, Elemente mit „AzureRM.Profile“ in ihrem ID-Fel
 Der Filter „Id“ ist eine Übereinstimmung bei Teilzeichenfolge, Sie suchen also nach Folgendem:
 
     Id:"azure"
-    
+
 Daraufhin erhalten Sie die Ergebnisse, wie z.B. „AzureRM.Profile“ und „Azure.Storage“.
 
 Sie können auch nach mehreren Schlüsselwörtern in einem einzelnen Feld suchen. Oder kombinieren Sie Felder.
@@ -71,7 +71,7 @@ So suchen Sie alle Elemente mit der angegebenen Funktion.
     Functions:"Update-AzureRM"
 
 So suchen Sie alle Elemente mit dem angegebenen Cmdlet.
-    
+
     Cmdlets:"Get-AzureRmEnvironment"
 
 So suchen Sie alle Elemente mit dem angegebenen DSC-Ressourcennamen.
@@ -88,8 +88,7 @@ So suchen Sie alle Elemente mit der angegebenen PowerShellVersion.
 Wenn Sie anschließend ein Feld verwenden, das nicht unterstützt wird, wie z.B. „commands“ (Befehle), wird es einfach ignoriert, und alle Felder werden durchsucht. Das folgende Query
 
     commands:blobs storage
-    
+
 wird genau wie diese Abfrage interpretiert:
 
     blobs storage
-

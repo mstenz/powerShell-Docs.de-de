@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell-Glossar
 ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
-ms.openlocfilehash: 872ceb342cc72477c5142ce28a9b3b66e32bb84f
-ms.sourcegitcommit: 05d576cf107780fa52b2db4a042816be40b00fbc
+ms.openlocfilehash: fd15667939fd9b3ea705806686b626645519588a
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="windows-powershell-glossary"></a>Windows PowerShell-Glossar
 
@@ -55,4 +55,3 @@ ms.lasthandoff: 02/19/2018
 |Windows PowerShell-Skriptdatei|Datei mit der Erweiterung „.ps1“, die ein Skript enthält, das in der Windows PowerShell-Sprache geschrieben ist.|
 |Windows PowerShell-Snap-In|Ressource, die einen Satz von Cmdlets, Anbietern und Microsoft .NET Framework-Typen definiert, die der Windows PowerShell-Umgebung hinzugefügt werden können.|
 |Windows PowerShell-Workflow|Bei einem Workflow handelt es sich um eine Sequenz von programmierten, zusammenhängenden Schritten, mit denen zeitaufwendige Aufgaben ausgeführt werden oder für die mehrere Schritte auf mehreren Geräten oder verwalteten Knoten koordiniert werden müssen. Der Windows PowerShell-Workflow ermöglicht es IT-Spezialisten und Entwicklern, Sequenzen von Verwaltungsaktivitäten für mehrere Geräte oder einzelne Aufgaben innerhalb eines Workflows als Workflows zu erstellen. Mithilfe des Windows PowerShell-Workflows können Sie Windows PowerShell-Skripts und XAML-Dateien als Workflows anpassen und erstellen.|
-

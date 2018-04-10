@@ -1,34 +1,37 @@
 ---
-ms.date: 2017-09-26
+ms.date: 09/26/2017
 contributor: keithb
 ms.topic: reference
 keywords: gallery,powershell,cmdlet,psget
 title: PrereleaseModule
-ms.openlocfilehash: d2c629d0e0ec0d4a4adafe5994a37d3985d13a06
-ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
+ms.openlocfilehash: 1fc08cbba90e3eb8ca7d280e4d279af1d8aa279f
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="prerelease-module-versions"></a>Vorabmodulversionen
-Ab Version 1.6.0 unterstützen PowerShellGet und der PowerShell-Katalog das Kennzeichnen von Versionen ab 1.0.0 als Vorabversion. Vor der Einführung dieses Features waren Vorabversionselemente auf Versionen, die mit 0 beginnen, beschränkt. Ziel dieser Features ist es, eine größere Unterstützung für die Versionsverwaltungsspezifikation [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) bereitzustellen, ohne die Abwärtskompatibilität mit PowerShell Version 3 und höher oder vorhandenen PowerShellGet-Versionen einzuschränken. Der Schwerpunkt dieses Themas liegt auf modulspezifischen Features. Eine Erläuterung der entsprechenden Features für Skripts finden Sie im Thema [Vorabskriptversionen](../script/PrereleaseScript.md). Mit diesen Features können Herausgeber ein Modul oder Skript als Version 2.5.0-alpha identifizieren und später eine für die Produktion freigegebene 2.5.0-Version veröffentlichen, die die Vorabversion ablöst. 
+Ab Version 1.6.0 unterstützen PowerShellGet und der PowerShell-Katalog das Kennzeichnen von Versionen ab 1.0.0 als Vorabversion. Vor der Einführung dieses Features waren Vorabversionselemente auf Versionen, die mit 0 beginnen, beschränkt. Ziel dieser Features ist es, eine größere Unterstützung für die Versionsverwaltungsspezifikation [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) bereitzustellen, ohne die Abwärtskompatibilität mit PowerShell Version 3 und höher oder vorhandenen PowerShellGet-Versionen einzuschränken. Der Schwerpunkt dieses Themas liegt auf modulspezifischen Features. Eine Erläuterung der entsprechenden Features für Skripts finden Sie im Thema [Vorabskriptversionen](../script/PrereleaseScript.md). Mit diesen Features können Herausgeber ein Modul oder Skript als Version 2.5.0-alpha identifizieren und später eine für die Produktion freigegebene 2.5.0-Version veröffentlichen, die die Vorabversion ablöst.
 
 Allgemein umfassen die Vorabversions-Modulfeatures u.a. Folgendes:
 
-* Durch Hinzufügen einer Vorabversionszeichenfolge zum PSData-Abschnitt des Modulmanifests wird das Modul als Vorabversion identifiziert. Wenn das Modul im PowerShell-Katalog veröffentlicht wurde, werden diese Daten aus dem Manifest extrahiert und zur Identifizierung von Vorabversionselementen verwendet.
-* Zum Abrufen von Vorabversionselementen müssen Sie den -AllowPrerelease-Flag zu den PowerShellGet-Befehlen „Find-Module“, „Install-Module“, „Update-Module“ und „Save-Module“ hinzufügen. Wenn das Flag nicht angegeben ist, werden keine Vorabversionselemente angezeigt.  
-* Die durch „Find-Module“ und „Get-InstalledModule“ sowie im PowerShell-Katalog angezeigten Modulversionen werden als einzelne Zeichenfolge mit angefügter Vorabversionszeichenfolge angezeigt (z.B. „2.5.0-alpha“). 
+* Durch Hinzufügen einer Vorabversionszeichenfolge zum PSData-Abschnitt des Modulmanifests wird das Modul als Vorabversion identifiziert.
+Wenn das Modul im PowerShell-Katalog veröffentlicht wurde, werden diese Daten aus dem Manifest extrahiert und zur Identifizierung von Vorabversionselementen verwendet.
+* Zum Abrufen von Vorabversionselementen müssen Sie den -AllowPrerelease-Flag zu den PowerShellGet-Befehlen „Find-Module“, „Install-Module“, „Update-Module“ und „Save-Module“ hinzufügen.
+Wenn das Flag nicht angegeben ist, werden keine Vorabversionselemente angezeigt.
+* Die durch „Find-Module“ und „Get-InstalledModule“ sowie im PowerShell-Katalog angezeigten Modulversionen werden als einzelne Zeichenfolge mit angefügter Vorabversionszeichenfolge angezeigt (z.B. „2.5.0-alpha“).
 
-Einzelheiten zu den Features finden Sie weiter unten. 
+Einzelheiten zu den Features finden Sie weiter unten.
 
-Diese Änderungen wirken sich nicht auf die in PowerShell integrierte Modulversionsunterstützung aus und sind mit PowerShell 3.0, 4.0 und 5 kompatibel. 
+Diese Änderungen wirken sich nicht auf die in PowerShell integrierte Modulversionsunterstützung aus und sind mit PowerShell 3.0, 4.0 und 5 kompatibel.
 
-## <a name="identifying-a-module-version-as-a-prerelease"></a>Identifizieren einer Modulversion als Vorabversion 
+## <a name="identifying-a-module-version-as-a-prerelease"></a>Identifizieren einer Modulversion als Vorabversion
 
 Um PowerShellGet-Unterstützung für Vorabversionen bereitzustellen, müssen die folgenden zwei Felder innerhalb des Modulmanifests verwendet werden:
 
-* Der im Modulmanifest enthaltene ModuleVersion-Schlüssel muss bei Verwendung einer Vorabversion eine Versionsnummer bestehend aus 3 Ziffern enthalten und mit der vorhandenen PowerShell-Versionsverwaltung übereinstimmen. Das Versionsformat würde „A.B.C“ lauten, wobei „A“, „B“ und „C“ für ganze Zahlen stehen. 
-* Die Vorabversionszeichenfolge wird im Modulmanifest im PSData-Abschnitt von „PrivateData“ angegeben. Die Anforderungen für die Vorabversionszeichenfolge werden nachfolgend ausführlich erläutert. 
+* Der im Modulmanifest enthaltene ModuleVersion-Schlüssel muss bei Verwendung einer Vorabversion eine Versionsnummer bestehend aus 3 Ziffern enthalten und mit der vorhandenen PowerShell-Versionsverwaltung übereinstimmen. Das Versionsformat würde „A.B.C“ lauten, wobei „A“, „B“ und „C“ für ganze Zahlen stehen.
+* Die Vorabversionszeichenfolge wird im Modulmanifest im PSData-Abschnitt von „PrivateData“ angegeben.
+Die Anforderungen für die Vorabversionszeichenfolge werden nachfolgend ausführlich erläutert.
 
 Ein Beispielabschnitt eines Modulmanifests, das ein Modul als Vorabversion definiert, sieht etwa wie folgt aus:
 ```powershell
@@ -43,34 +46,38 @@ Ein Beispielabschnitt eines Modulmanifests, das ein Modul als Vorabversion defin
 }
 ```
 
-Die Anforderungen für die Vorabversionszeichenfolge werden nachfolgend im Einzelnen erläutert: 
+Die Anforderungen für die Vorabversionszeichenfolge werden nachfolgend im Einzelnen erläutert:
 
 * Die Vorabversionszeichenfolge darf nur angegeben werden, wenn der ModuleVersion-Schlüssel 3 Ziffern enthält, nämlich „Hauptversion.Nebenversion.Build“. Dies entspricht SemVer v1.0.0.
 * Ein Bindestrich fungiert als Trennzeichen zwischen der Buildnummer und der Vorabversionszeichenfolge. Ein Bindestrich darf nur als erstes Zeichen in die Vorabversionszeichenfolge eingefügt werden.
-* Die Vorabversionszeichenfolge darf nur alphanumerische ASCII-Zeichen [0-9, A-Z, a-z] enthalten. Die Vorabversionszeichenfolge sollte mit einem Buchstaben beginnen, da es beim Prüfen einer Liste von Elementen einfacher zu erkennen ist, dass es sich um eine Vorabversion handelt. 
-* Zurzeit werden nur SemVer v1.0.0-Vorabversionszeichenfolgen unterstützt. Diese Zeichenfolge darf __keine__ Punkte oder Pluszeichen [.+] enthalten, die in SemVer 2.0 zulässig sind. 
+* Die Vorabversionszeichenfolge darf nur alphanumerische ASCII-Zeichen [0-9, A-Z, a-z] enthalten. Die Vorabversionszeichenfolge sollte mit einem Buchstaben beginnen, da es beim Prüfen einer Liste von Elementen einfacher zu erkennen ist, dass es sich um eine Vorabversion handelt.
+* Zurzeit werden nur SemVer v1.0.0-Vorabversionszeichenfolgen unterstützt. Diese Zeichenfolge darf __keine__ Punkte oder Pluszeichen [.+] enthalten, die in SemVer 2.0 zulässig sind.
 * Zu den unterstützten Vorabversionszeichenfolgen zählen beispielsweise „-alpha“, „-alpha1“, „-BETA“ und „-update20171020“.
 
 __Auswirkung der Vorabversionsverwaltung auf die Sortierreihenfolge und Installationsordner__
 
-Die Sortierreihenfolge ändert sich bei der Verwendung einer Vorabversion, was für die Veröffentlichung von Inhalten im PowerShell-Katalog und der Installation von Modulen mit PowerShellGet-Befehlen relevant ist. Wenn die Vorabversionszeichenfolge für zwei Module angegeben ist, basiert die Sortierreihenfolge auf dem Zeichenfolgenteil nach dem Bindestrich. Deshalb ist Version 2.5.0-alpha niedriger als 2.5.0-beta, die wiederum niedriger als 2.5.0-gamma ist. Wenn zwei Module den gleichen ModuleVersion-Schlüssel und nur eine Vorabversionszeichenfolge aufweisen, wird das Modul ohne die Vorabversionszeichenfolge als für die Produktion freigegebene Version behandelt und gegenüber der Vorabversion (die die Vorabversionszeichenfolge enthält) als höhere Version sortiert. Beispiel: Beim Vergleich der Versionen 2.5.0 und 2.5.0-beta wird die Version 2.5.0 als die höhere der beiden Versionen betrachtet. 
+Die Sortierreihenfolge ändert sich bei der Verwendung einer Vorabversion, was für die Veröffentlichung von Inhalten im PowerShell-Katalog und der Installation von Modulen mit PowerShellGet-Befehlen relevant ist.
+Wenn die Vorabversionszeichenfolge für zwei Module angegeben ist, basiert die Sortierreihenfolge auf dem Zeichenfolgenteil nach dem Bindestrich. Deshalb ist Version 2.5.0-alpha niedriger als 2.5.0-beta, die wiederum niedriger als 2.5.0-gamma ist.
+Wenn zwei Module den gleichen ModuleVersion-Schlüssel und nur eine Vorabversionszeichenfolge aufweisen, wird das Modul ohne die Vorabversionszeichenfolge als für die Produktion freigegebene Version behandelt und gegenüber der Vorabversion (die die Vorabversionszeichenfolge enthält) als höhere Version sortiert.
+Beispiel: Beim Vergleich der Versionen 2.5.0 und 2.5.0-beta wird die Version 2.5.0 als die höhere der beiden Versionen betrachtet.
 
-Beim Veröffentlichen von Inhalten im PowerShell-Katalog muss die Version des Moduls, das veröffentlicht wird, standardmäßig eine höhere Version aufweisen als zuvor veröffentlichte Versionen, die nicht im PowerShell-Katalog vorhanden sind. 
+Beim Veröffentlichen von Inhalten im PowerShell-Katalog muss die Version des Moduls, das veröffentlicht wird, standardmäßig eine höhere Version aufweisen als zuvor veröffentlichte Versionen, die nicht im PowerShell-Katalog vorhanden sind.
 
 ## <a name="finding-and-acquiring-prerelease-items-using-powershellget-commands"></a>Suchen und Abrufen von Vorabversionselementen mithilfe von PowerShellGet-Befehlen
 
-Bei der Verwendung von Vorabversionselementen mit den PowerShellGet-Befehlen „Find-Module“, „Install-Module“, „Update-Module“ und „Save-Module“ muss das -AllowPrerelease-Flag hinzugefügt werden. Bei der Angabe von -AllowPrerelease werden Vorabversionselemente eingeschlossen, sofern diese vorhanden sind.
-Wenn das -AllowPrerelease-Flag nicht angegeben ist, werden keine Vorabversionselemente angezeigt. 
+Bei der Verwendung von Vorabversionselementen mit den PowerShellGet-Befehlen „Find-Module“, „Install-Module“, „Update-Module“ und „Save-Module“ muss das -AllowPrerelease-Flag hinzugefügt werden.
+Bei der Angabe von -AllowPrerelease werden Vorabversionselemente eingeschlossen, sofern diese vorhanden sind.
+Wenn das -AllowPrerelease-Flag nicht angegeben ist, werden keine Vorabversionselemente angezeigt.
 
-Die einzigen Ausnahmen hierfür in Bezug auf PowerShellGet-Modulbefehle sind „Get-InstalledModule“ und in einigen Fällen „Uninstall-Module“. 
+Die einzigen Ausnahmen hierfür in Bezug auf PowerShellGet-Modulbefehle sind „Get-InstalledModule“ und in einigen Fällen „Uninstall-Module“.
 
-* Mit „Get-InstalledModule“ werden immer automatisch die Vorabversionsinformationen in der Versionszeichenfolge für Module angezeigt. 
-* Mit „Uninstall-Module“ wird standardmäßig die neueste Version eines Moduls deinstalliert, wenn __keine Version__ angegeben ist. Dieses Verhalten wurde nicht geändert. Wenn jedoch mit „-RequiredVersion“ eine Vorabversion angegeben wird, ist „-AllowPrerelease“ erforderlich. 
+* Mit „Get-InstalledModule“ werden immer automatisch die Vorabversionsinformationen in der Versionszeichenfolge für Module angezeigt.
+* Mit „Uninstall-Module“ wird standardmäßig die neueste Version eines Moduls deinstalliert, wenn __keine Version__ angegeben ist. Dieses Verhalten wurde nicht geändert. Wenn jedoch mit „-RequiredVersion“ eine Vorabversion angegeben wird, ist „-AllowPrerelease“ erforderlich.
 
 ## <a name="examples"></a>Beispiele
 ```powershell
 # Assume the PowerShell Gallery has TestPackage module versions 1.8.0 and 1.9.0-alpha. If -AllowPrerelease is not specified, only version 1.8.0 will be returned.
-C:\windows\system32> find-module TestPackage 
+C:\windows\system32> find-module TestPackage
 
 Version        Name                                Repository           Description
 -------        ----                                ----------           -----------
@@ -82,7 +89,7 @@ Version        Name                                Repository           Descript
 -------        ----                                ----------           -----------
 1.9.0-alpha    TestPackage                         PSGallery            Package used to validate changes to the PowerShe...
 
-# To install a prerelease, always specify -AllowPrerelease. Specifying a prerelease version string is not sufficient. 
+# To install a prerelease, always specify -AllowPrerelease. Specifying a prerelease version string is not sufficient.
 
 C:\windows\system32> Install-module TestPackage -RequiredVersion 1.9.0-alpha
 PackageManagement\Find-Package : No match was found for the specified search criteria and module name 'TestPackage'.
@@ -106,7 +113,13 @@ Version         Name                                Repository           Descrip
 
 ```
 
-Die parallele Installation von Modulversionen, die sich lediglich durch die angegebene Vorabversion unterscheiden, wird nicht unterstützt. Bei der Installation eines Moduls mit PowerShellGet werden verschiedene Versionen desselben Moduls parallel installiert, indem mit dem ModuleVersion-Schlüssel ein Ordnername erstellt wird. Für den Ordnernamen wird der ModuleVersion-Schlüssel ohne die Vorabversionszeichenfolge verwendet. Wenn ein Benutzer MyModule Version 2.5.0-alpha installiert, wird das Modul im Ordner „MyModule\2.5.0“ installiert. Wenn der Benutzer dann 2.5.0-beta installiert, __überschreibt__ die Version 2.5.0-beta den Inhalt des Ordners „MyModule\2.5.0“. Ein Vorteil bei dieser Vorgehensweise besteht darin, dass nach der Installation der für die Produktion freigegebenen Version die Vorabversion nicht deinstalliert werden muss. Im folgenden Beispiel wird gezeigt, wie dies aussieht:
+Die parallele Installation von Modulversionen, die sich lediglich durch die angegebene Vorabversion unterscheiden, wird nicht unterstützt.
+Bei der Installation eines Moduls mit PowerShellGet werden verschiedene Versionen desselben Moduls parallel installiert, indem mit dem ModuleVersion-Schlüssel ein Ordnername erstellt wird.
+Für den Ordnernamen wird der ModuleVersion-Schlüssel ohne die Vorabversionszeichenfolge verwendet.
+Wenn ein Benutzer MyModule Version 2.5.0-alpha installiert, wird das Modul im Ordner „MyModule\2.5.0“ installiert.
+Wenn der Benutzer dann 2.5.0-beta installiert, __überschreibt__ die Version 2.5.0-beta den Inhalt des Ordners „MyModule\2.5.0“.
+Ein Vorteil bei dieser Vorgehensweise besteht darin, dass nach der Installation der für die Produktion freigegebenen Version die Vorabversion nicht deinstalliert werden muss.
+Im folgenden Beispiel wird gezeigt, wie dies aussieht:
 
 
 ``` powershell
@@ -135,7 +148,8 @@ Version         Name                                Repository           Descrip
 
 ```
 
-Mit „Uninstall-Module“ wird die neueste Version eines Moduls entfernt, wenn „-RequiredVersion“ nicht angegeben ist. Wenn „-RequiredVersion“ angegeben ist und es sich um eine Vorabversion handelt, muss „-AllowPrerelease“ zum Befehl hinzugefügt werden. 
+Mit „Uninstall-Module“ wird die neueste Version eines Moduls entfernt, wenn „-RequiredVersion“ nicht angegeben ist.
+Wenn „-RequiredVersion“ angegeben ist und es sich um eine Vorabversion handelt, muss „-AllowPrerelease“ zum Befehl hinzugefügt werden.
 
 ``` powershell
 C:\windows\system32> Get-InstalledModule TestPackage -AllVersions

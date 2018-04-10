@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Verwalten mit Windows PowerShell
 ms.assetid: c425d27a-bb41-4947-8d73-ba5480bc8ee0
-ms.openlocfilehash: 693d1bb9329dbb280453fc16738eda63c466e156
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 9bb420a3d725d3fa925b79452bbbcc542bf9f4db
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="scripting-with-windows-powershell"></a>Verwalten mit Windows PowerShell
 
@@ -23,4 +23,3 @@ Windows PowerShell enthält die folgenden Features:
 - Eine vereinfachte, befehlsbasierte Navigation durch das Betriebssystem, das Benutzer in der Registrierung und anderen Datenspeichern navigieren lässt. Dabei werden dieselben Methoden verwendet, die auch für die Navigation im Dateisystem verwendet werden.
 - Leistungsstarke Objektbearbeitungsfähigkeiten. Objekte können direkt bearbeitet oder an andere Tools oder Datenbanken gesendet werden.
 - Erweiterbare Schnittstelle. Unabhängige Softwarehersteller und Entwickler in Unternehmen können benutzerdefinierte Tools und Dienstprogramme zum Verwalten ihrer Software erstellen.
-

@@ -1,16 +1,16 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
+ms.date: 12/12/2016
 title: Installieren von pswawebapplication
 ms.technology: powershell
-ms.openlocfilehash: ce4d01fbe8a83924e7023d792c68c903a32e07d4
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: c7f7768a41b6784d8c29afa1fccf0b855160b777
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="install-pswawebapplication"></a>Install-PswaWebApplication
 
@@ -35,7 +35,7 @@ Das Cmdlet **Install-PswaWebApplication** konfiguriert die Windows PowerShell We
 
 Gibt an, dass ein Testzertifikat erstellt wird. Wenn dieser Parameter auf „true“ festgelegt ist, erstellt dieses Cmdlet ein Testzertifikat und konfiguriert die Windows PowerShell Web Access-Webanwendung, damit das Zertifikat für HTTPS-Anforderungen verwendet wird. Wenn dieser Parameter auf „false“ festgelegt ist, wird kein Zertifikat bzw. keine Bindung erstellt. Legen Sie diesen Wert auf „false“ fest, wenn ein anderes Zertifikat für Windows PowerShell Web Access verwendet wird.
 
-|||  
+|||
 |-|-|
 | Aliase                              | keine                                 |
 | Erforderlich?                            | falsch                                |
@@ -48,7 +48,7 @@ Gibt an, dass ein Testzertifikat erstellt wird. Wenn dieser Parameter auf „tru
 
 Gibt den Namen Ihrer Webanwendung an. Dieser wird als letzter Teil der Windows PowerShell Web Access-URL angezeigt.
 
-|||  
+|||
 |-|-|
 | Aliase                              | keine                                 |
 | Erforderlich?                            | falsch                                |
@@ -61,7 +61,7 @@ Gibt den Namen Ihrer Webanwendung an. Dieser wird als letzter Teil der Windows P
 
 Gibt den Namen der Website des Webservers (IIS) an, auf dem die Windows PowerShell Web Access-Webanwendung installiert werden soll.
 
-|||  
+|||
 |-|-|
 | Aliase                              | keine                                 |
 | Erforderlich?                            | falsch                                |
@@ -74,7 +74,7 @@ Gibt den Namen der Website des Webservers (IIS) an, auf dem die Windows PowerShe
 
 Sie werden vor dem Ausführen des Cmdlets zur Bestätigung aufgefordert.
 
-|||  
+|||
 |-|-|
 | Erforderlich?                            | falsch                                |
 | Position?                            | benannt                                |
@@ -87,7 +87,7 @@ Sie werden vor dem Ausführen des Cmdlets zur Bestätigung aufgefordert.
 Zeigt, was geschieht, wenn das Cmdlet ausgeführt wird.
 Das Cmdlet wird nicht ausgeführt.
 
-|||  
+|||
 |-|-|
 | Erforderlich?                            | falsch                                |
 | Position?                            | benannt                                |

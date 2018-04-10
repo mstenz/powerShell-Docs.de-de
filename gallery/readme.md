@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
 keywords: gallery,powershell,cmdlet,psgallery,psget
 title: Der PowerShell-Katalog | MSDN
-ms.openlocfilehash: 7389ce8286c515b0bfc25f32634a482b060cb74c
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 9519b8bcca9f43419a33db380c3b852e9bb354ac
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="the-powershell-gallery"></a>Der PowerShell-Katalog | MSDN
 
@@ -47,7 +47,7 @@ Aus diesem Grund erfordert **PowerShellGet** eines der folgenden Betriebssysteme
 - Windows 8.1 Enterprise
 - Windows 7 SP1
 - Windows Server 2016
-- Windows Server 2012 R2
+- Windows Server 2012 R2
 - Windows Server 2008 R2 SP1
 
 Für **PowerShellGet** ist außerdem .NET Framework 4.5 oder höher erforderlich. Von [hier](https://msdn.microsoft.com/library/5a4x27ek.aspx) können Sie .NET Framework 4.5 oder höher installieren.
@@ -56,4 +56,3 @@ Für **PowerShellGet** ist außerdem .NET Framework 4.5 oder höher erforderlich
 ## <a name="got-a-question-have-feedback"></a>Sie haben eine Frage? Haben Sie Feedback?
 
 Weitere Informationen zum PowerShell-Katalog und zu PowerShellGet finden Sie auf der Seite [Erste Schritte](psgallery/psgallery_gettingstarted.md). Stellen Sie Feedback bereit, und melden Sie Probleme über [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell).
-

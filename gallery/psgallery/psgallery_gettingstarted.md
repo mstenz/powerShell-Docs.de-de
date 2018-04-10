@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
 keywords: gallery,powershell,cmdlet,psgallery
 title: Erste Schritte mit dem PowerShell-Katalog | MSDN
-ms.openlocfilehash: 2117712b0081db4a21f8480b458a499ed84dc512
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 599b148e141ba4205a7c774581e737a5d54bfae1
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="get-started-with-the-powershell-gallery"></a>Erste Schritte mit dem PowerShell-Katalog
 
@@ -33,7 +33,7 @@ PowerShellGet erfordert außerdem den [NuGet-Anbieter](http://go.microsoft.com/f
 
 Alternativ können Sie `Install-PackageProvider -Name NuGet -Force` ausführen, um den Download und die Installation des NuGet-Anbieters zu automatisieren.
 
-  
+
 Wenn Sie eine älteren Version von NuGet als 2.8.5.201 besitzen, müssen Sie die folgenden PowerShell-Cmdlets aufrufen, um die neueste Version von NuGet zu installieren.
 
 1.  `Install-PackageProvider NuGet -MinimumVersion '2.8.5.201' -Force`
@@ -42,7 +42,7 @@ Wenn Sie eine älteren Version von NuGet als 2.8.5.201 besitzen, müssen Sie die
 
 Weitere Informationen finden Sie unter <http://oneget.org/>.
 
-  
+
 Hinweis: Aufgrund von Änderungen an den Paketerstellungsformaten empfehlen wir, dass Sie auf die neueste Version von PowerShellGet und PackageManagement zu aktualisieren, um Elemente zu installieren, die kürzlich aktualisiert wurden. PowerShellGet ist im Lieferumfang von Windows 10 mit inbegriffen. [Hier](http://go.microsoft.com/fwlink/?LinkID=624830&clcid=0x409) können Sie mehr darüber erfahren.
 PowerShellGet ist auch ein Teil des Windows Management Framework (WMF) 5.0, das Sie [hier](http://go.microsoft.com/fwlink/?LinkId=398175) herunterladen können.
 
@@ -118,4 +118,3 @@ Um Skripts einzeln zu aktualisieren, fügen Sie den Parameter `-Name` hinzu.
 Führen Sie das Cmdlet [Get-InstalledModule](https://go.microsoft.com/fwlink/?LinkId=526863) aus, um herauszufinden, welche Module Sie aus dem PowerShell-Katalog installiert haben. Dieser Befehl listet alle Module auf, die direkt aus dem PowerShell-Katalog auf Ihrem System installiert wurden.
 
 Um herauszufinden, welche Skripts Sie aus dem PowerShell-Katalog installiert haben, führen Sie das Cmdlet [Get-InstalledScript](https://go.microsoft.com/fwlink/?LinkId=619790) aus. Dieser Befehl listet alle Skripts auf, die direkt aus dem PowerShell-Katalog auf Ihrem System installiert wurden.
-

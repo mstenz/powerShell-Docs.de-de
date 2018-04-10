@@ -5,4 +5,4 @@
 | Herunterladbares Paket | TBD | TBD | TBD | TBD |
 | TBD | TBD | TBD | TBD | TBD |
 
-*Hinweis: Diese Tabelle ist derzeit nur ein Platzhalter. Wir werden sie in den kommenden Monaten aktualisieren und der Realisierung unserer Pläne gemäß auf dem neuesten Stand halten.* 
+*Hinweis: Diese Tabelle ist derzeit nur ein Platzhalter. Wir werden sie in den kommenden Monaten aktualisieren und der Realisierung unserer Pläne gemäß auf dem neuesten Stand halten.*

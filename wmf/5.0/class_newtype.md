@@ -1,21 +1,22 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
 keywords: wmf,powershell,setup
-ms.openlocfilehash: c7318552969c44f3b79f82efd71e6a72bfabef6b
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 85e9206ffef76fb4bd7714d847888e6e5bbcc4ec
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="new-language-features-in-powershell-50"></a>Neue Sprachfeatures in PowerShell 5.0 
+# <a name="new-language-features-in-powershell-50"></a>Neue Sprachfeatures in PowerShell 5.0
 
 PowerShell 5.0 führt die folgenden neuen Sprachelemente in Windows PowerShell ein:
 
 ## <a name="class-keyword"></a>Schlüsselwort „Class“
 
-Das Schlüsselwort **class** definiert eine neue Klasse. Es handelt sich um einen echten .NET Framework-Typ. Klassenmember sind öffentlich, jedoch nur innerhalb des Geltungsbereichs des Moduls.
+Das Schlüsselwort **class** definiert eine neue Klasse. Es handelt sich um einen echten .NET Framework-Typ.
+Klassenmember sind öffentlich, jedoch nur innerhalb des Geltungsbereichs des Moduls.
 Sie können auf den Typnamen nicht mittels einer Zeichenfolge verweisen (`New-Object` funktioniert z. B. nicht). In dieser Version können Sie zudem keinen Literaltyp (z. B. `[MyClass]`) außerhalb der Skript-/Moduldatei verwenden, in der die Klasse definiert ist.
 
 ```powershell
@@ -64,11 +65,11 @@ PowerShell analysiert das Stammmodul des angegebenen Moduls und sucht Klassen, d
 
 ## <a name="implementingassembly"></a>ImplementingAssembly
 
-Das neue Feld **ImplementingAssembly** wurde „ModuleInfo“ hinzugefügt. Es ist auf die dynamische Assembly, die für ein Skriptmodul erstellt wird, wenn das Skript Klassen definiert, oder die geladene Assembly für binäre Module festgelegt. Falls „ModuleType = Manifest“, wird es nicht festgelegt. 
+Das neue Feld **ImplementingAssembly** wurde „ModuleInfo“ hinzugefügt. Es ist auf die dynamische Assembly, die für ein Skriptmodul erstellt wird, wenn das Skript Klassen definiert, oder die geladene Assembly für binäre Module festgelegt. Falls „ModuleType = Manifest“, wird es nicht festgelegt.
 
 Über eine Reflektion auf das Feld **ImplementingAssembly** werden Ressourcen in einem Modul ermittelt. Dies bedeutet, dass Sie Ressourcen ermitteln können, die in PowerShell oder anderen verwalteten Sprachen geschrieben wurden.
 
-Felder mit Initialisierern:      
+Felder mit Initialisierern:
 
 ```powershell
 [int] $i = 5
@@ -86,11 +87,11 @@ Ein Typ ist optional.
 $s = "hello"
 ```
 
-Alle Member sind öffentlich. 
+Alle Member sind öffentlich.
 
 ## <a name="constructors-and-instantiation"></a>Konstruktoren und Instanziierung
 
-Windows PowerShell-Klassen können Konstruktoren haben, die den gleichen Namen wie ihre Klasse haben. Konstruktoren können überladen werden. Statische Konstruktoren werden unterstützt. Eigenschaften mit Initialisierungsausdrücken werden vor dem Ausführen von Code in einem Konstruktor initialisiert. Statische Eigenschaften werden vor dem Hauptteil eines statischen Konstruktors initialisiert. Instanzeigenschaften werden vor dem Hauptteil des nicht statischen Konstruktors initialisiert. Derzeit gibt es keine Syntax zum Aufrufen eines Konstruktors aus einem anderen Konstruktor (wie die C\#-Syntax „: this()“). Eine Behelfslösung ist das Definieren einer allgemeinen „Init“-Methode. 
+Windows PowerShell-Klassen können Konstruktoren haben, die den gleichen Namen wie ihre Klasse haben. Konstruktoren können überladen werden. Statische Konstruktoren werden unterstützt. Eigenschaften mit Initialisierungsausdrücken werden vor dem Ausführen von Code in einem Konstruktor initialisiert. Statische Eigenschaften werden vor dem Hauptteil eines statischen Konstruktors initialisiert. Instanzeigenschaften werden vor dem Hauptteil des nicht statischen Konstruktors initialisiert. Derzeit gibt es keine Syntax zum Aufrufen eines Konstruktors aus einem anderen Konstruktor (wie die C\#-Syntax „: this()“). Eine Behelfslösung ist das Definieren einer allgemeinen „Init“-Methode.
 
 Es folgen Methoden zum Instanziieren von Klassen in dieser Version.
 
@@ -151,12 +152,12 @@ Methodenaufruf:
 
 ```powershell
 $b = [MyClass]::new()
-$b.DoSomething(42) 
+$b.DoSomething(42)
 ```
 
 Überladene Methoden, d. h. Methoden mit demselben Namen wie eine vorhandene Methode, aber mit unterschiedlichen angegebenen Werten, werden ebenfalls unterstützt.
 
-## <a name="properties"></a>Eigenschaften 
+## <a name="properties"></a>Eigenschaften
 
 Alle Eigenschaften sind öffentlich. Eigenschaften erfordern ein Zeilenumbruchzeichen oder Semikolon. Wenn kein Objekttyp angegeben ist, ist der Eigenschaftentyp „object“.
 
@@ -210,7 +211,8 @@ $v -eq $d # true
 
 ## <a name="end-to-end-example"></a>End-to-End-Beispiel
 
-Das folgende Beispiel erstellt mehrere neue, benutzerdefinierte Klassen, um eine HTML-Sprache des Typs DSL (Dynamic Style Sheet Language) zu implementieren. Dann werden im Beispiel Hilfsfunktionen hinzugefügt, um spezifische Elementtypen als Teil der Elementklasse zu erstellen, wie z. B. Überschriftsformate und Tabellen, damit Typen nicht außerhalb des Geltungsbereichs eines Moduls verwendet werden können.
+Das folgende Beispiel erstellt mehrere neue, benutzerdefinierte Klassen, um eine HTML-Sprache des Typs DSL (Dynamic Style Sheet Language) zu implementieren.
+Dann werden im Beispiel Hilfsfunktionen hinzugefügt, um spezifische Elementtypen als Teil der Elementklasse zu erstellen, wie z. B. Überschriftsformate und Tabellen, damit Typen nicht außerhalb des Geltungsbereichs eines Moduls verwendet werden können.
 
 ```powershell
 # Classes that define the structure of the document
@@ -220,7 +222,7 @@ class Html
     [string] $docType
     [HtmlHead] $Head
     [Element[]] $Body
-    
+
     [string] Render()
     {
         $text = "<html>`n<head>`n"
@@ -334,4 +336,3 @@ function Style
 #
 function Html ([HTML] $doc) { return $doc }
 ```
-

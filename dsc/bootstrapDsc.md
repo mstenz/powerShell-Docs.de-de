@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Konfigurieren eines virtuellen Computers beim ersten Hochfahren mithilfe von DSC
-ms.openlocfilehash: ff06aafa6db49d93a9b42e38ac7c3e9a11657bd5
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: e6ff83b9a09f93277904c80e8e52f3db5e818739
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 >Gilt für: Windows PowerShell 5.0
 
@@ -90,7 +90,8 @@ Benennen Sie die Datei in `Pending.mof`um, und verschieben Sie sie an den richti
     Dismount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
     ```
 
-7. Erstellen Sie einen virtuellen Computer mithilfe der VHD, auf der Sie das DSC MOF-Dokument installiert haben. Nach dem ersten Hochfahren und der Installation des Betriebssystems wird IIS installiert.
+7. Erstellen Sie einen virtuellen Computer mithilfe der VHD, auf der Sie das DSC MOF-Dokument installiert haben.
+Nach dem ersten Hochfahren und der Installation des Betriebssystems wird IIS installiert.
 Sie können dies überprüfen, indem Sie das Cmdlet [Get-WindowsFeature](https://technet.microsoft.com/library/jj205469.aspx) aufrufen.
 
 ## <a name="inject-a-dsc-metaconfiguration-into-a-vhd"></a>Hinzufügen einer Metakonfiguration zu einer VHD
@@ -203,4 +204,3 @@ Standardmäßig ist der Wert von des Schlüssels **HKEY_LOCAL_MACHINE\SOFTWARE\M
 - [DSCAutomationHostEnabled (Registrierungsschlüssel)](DSCAutomationHostEnabled.md)
 - [Konfigurieren des lokalen Konfigurations-Managers (LCM)](metaConfig.md)
 - [Einrichten eines DSC-Webpullservers](pullServer.md)
-

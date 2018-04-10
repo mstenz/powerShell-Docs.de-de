@@ -1,16 +1,16 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
+ms.date: 12/12/2016
 title: Deinstallieren von pswawebapplication
 ms.technology: powershell
-ms.openlocfilehash: cc54c94426d754ff2d3bf658e3e92083f02cd6c7
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 139c8358a24e54dec630f8c78737728330ba4aa2
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="uninstall-pswawebapplication"></a>Uninstall-PswaWebApplication
 
@@ -36,7 +36,7 @@ Das Cmdlet **Uninstall-PswaWebApplication** deinstalliert die Windows PowerShell
 Gibt an, dass die Testzertifikate, die mit dem Cmdlet **Install\_PswaWebApplication** (mit dem Parameter **UseTestCertificate**) erstellt wurden, gelöscht wurden.
 Nur das Testzertifikat, das den gleichen Namen wie das hat, das mit dem Cmdlet **Install-PswaWebApplication** erstellt wurde, wurde gelöscht.
 
-|||  
+|||
 |-|-|
 | Aliase                              | keine                                 |
 | Erforderlich?                            | falsch                                |
@@ -49,7 +49,7 @@ Nur das Testzertifikat, das den gleichen Namen wie das hat, das mit dem Cmdlet *
 
 Gibt den Namen der zu deinstallierenden Webanwendung an.
 
-|||  
+|||
 |-|-|
 | Aliase                              | keine                                 |
 | Erforderlich?                            | falsch                                |
@@ -62,7 +62,7 @@ Gibt den Namen der zu deinstallierenden Webanwendung an.
 
 Gibt den Namen der Website an, auf der die Webanwendung installiert wurde.
 
-|||  
+|||
 |-|-|
 | Aliase                              | keine                                 |
 | Erforderlich?                            | falsch                                |
@@ -75,7 +75,7 @@ Gibt den Namen der Website an, auf der die Webanwendung installiert wurde.
 
 Sie werden vor dem Ausführen des Cmdlets zur Bestätigung aufgefordert.
 
-|||  
+|||
 |-|-|
 | Erforderlich?                            | falsch                                |
 | Position?                            | benannt                                |
@@ -88,7 +88,7 @@ Sie werden vor dem Ausführen des Cmdlets zur Bestätigung aufgefordert.
 Zeigt, was geschieht, wenn das Cmdlet ausgeführt wird.
 Das Cmdlet wird nicht ausgeführt.
 
-|||  
+|||
 |-|-|
 | Erforderlich?                            | falsch                                |
 | Position?                            | benannt                                |

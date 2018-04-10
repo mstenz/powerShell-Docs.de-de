@@ -1,23 +1,25 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
 keywords: gallery,powershell,cmdlet,psgallery
 title: Verwalten von Elementbesitzern
-ms.openlocfilehash: fcd538148f9ff1ac96324b567d54d643f1756c93
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: e550b74ebde00cfbb154dbf4fb1fa4ae0582e029
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="managing-item-owners"></a>Verwalten von Elementbesitzern
 
 Der Besitz eines Elements im PowerShell-Katalog wird von der Person definiert, die das Element im Katalog veröffentlicht hat.
 Mitunter müssen diese Metadaten über die anfängliche Veröffentlichung des Elements hinaus verwaltet werden, was bedeutet, dass die Besitzermetadaten veränderlich sein müssen, das Element hingegen nicht.
 
-Alle Elementbesitzer sind Peers. Das bedeutet, dass alle Elementbesitzer eine neue Version eines Elements veröffentlichen können. Es bedeutet aber auch, dass jeder Elementbesitzer jeden anderen Elementbesitzer entfernen kann. Kein Besitzer verfügt über mehr Berechtigungen als andere Besitzer.  
+Alle Elementbesitzer sind Peers.
+Das bedeutet, dass alle Elementbesitzer eine neue Version eines Elements veröffentlichen können. Es bedeutet aber auch, dass jeder Elementbesitzer jeden anderen Elementbesitzer entfernen kann.
+Kein Besitzer verfügt über mehr Berechtigungen als andere Besitzer.
 
-## <a name="setting-an-items-initial-owner"></a>Festlegen des anfänglichen Besitzers eines Elements 
+## <a name="setting-an-items-initial-owner"></a>Festlegen des anfänglichen Besitzers eines Elements
 
 Beim Veröffentlichen eines neues Elements im PowerShell-Katalog wird der anfängliche Besitzer von dem Benutzer definiert, der das Element veröffentlicht. Dies richtet sich danach, wessen API-Schlüssel im Cmdlet „Publish-Modul“ verwendet wurde.
 
@@ -78,4 +80,3 @@ Wir befolgen dann einen Prozess, um Ihren Besitz des Elements zu überprüfen.
 Wenn wir feststellen, dass Sie der Besitzer des Elements sein sollten, verwenden wir selbst den Link „Besitzer verwalten“ für das Element und senden Ihnen die Einladung als Besitzer.
 Dies erfolgt jedoch erst, nachdem wir Sie als Besitzer bestätigt haben, und der Vorgang variiert je nach den Umständen.
 Oft verwenden wir die Projekt-URL des Elements, um eine Möglichkeit zum Kontaktieren des Projektbesitzers zu finden. Gelegentlich wenden wir uns jedoch auch über Twitter, E-Mail oder andere Methoden an den Besitzer.
-

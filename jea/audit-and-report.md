@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: rpsqrd
 ms.topic: conceptual
 keywords: jea,powershell,security
-title: "Überwachung und Berichterstellung zu JEA"
-ms.openlocfilehash: 57148bc3753bdd751bfa21fc3198aca3f8654849
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: Überwachung und Berichterstellung zu JEA
+ms.openlocfilehash: 7fc670c77b5fbf9bce8fb55dd99a2f9a984100d2
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="auditing-and-reporting-on-jea"></a>Überwachung und Berichterstellung zu JEA
 
@@ -144,11 +144,11 @@ Für jeden Befehl, den der Benutzer ausführt, wird eine Zeile „CommandInvocat
 Auf jede Zeile „CommandInvocation“ folgt „ParameterBindings“ mit Information über jeden Parameter und Wert, der für den Befehl angegeben wurde.
 Im voranstehenden Beispiel sehen Sie, dass für den Parameter „Name“ der Wert „Dns“ für das Cmdlet „Get-Service“ angegeben wurde.
 
-Die Ausgabe jedes Befehls löst außerdem eine „CommandInvocation“ aus, in der Regel nach „Out-Default“. Das vom Befehl zurückgegebene PowerShell-Objekt fungiert als InputObject für„InputObject“ von „Out-Default“.
+Die Ausgabe jedes Befehls löst außerdem eine „CommandInvocation“ aus, in der Regel nach „Out-Default“.
+Das vom Befehl zurückgegebene PowerShell-Objekt fungiert als InputObject für„InputObject“ von „Out-Default“.
 Die Details des Objekts einige Zeilen darunter bilden täuschend ähnlich das nach, was der Benutzer gesehen hätte.
 
 ## <a name="see-also"></a>Siehe auch
 
 - [Überwachung und Berichterstellung zu JEA](audit-and-report.md)
 - [*PowerShell ♥ the Blue Team (PowerShell ♥ das Blue Team)* – Blogbeitrag zum Thema Sicherheit](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
-

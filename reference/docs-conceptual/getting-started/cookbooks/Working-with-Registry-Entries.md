@@ -1,18 +1,20 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "Arbeiten mit Registrierungseinträge"
+title: Arbeiten mit Registrierungseinträge
 ms.assetid: fd254570-27ac-4cc9-81d4-011afd29b7dc
-ms.openlocfilehash: 039203a1a6549d4ba33424a278e4803a5e143d4d
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: bffdf80931fc4dc570b584623487077dc5d449dc
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="working-with-registry-entries"></a>Arbeiten mit Registrierungseinträge
+
 Da Registrierungseinträge Eigenschaften von Schlüsseln sind und daher nicht direkt gesucht werden können, muss für die Arbeit mit diesen ein etwas anderer Ansatz gewählt werden.
 
 ### <a name="listing-registry-entries"></a>Auflisten von Registrierungseinträgen
+
 Es gibt viele verschiedene Möglichkeiten zum Untersuchen von Registrierungseinträgen. Am einfachsten ist es, die Eigenschaftennamen mit einem Schlüssel zu verknüpfen. Um beispielsweise die Namen der Einträge im Registrierungsschlüssel **HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion** anzuzeigen, verwenden Sie **Get-Item**. Registrierungsschlüssel verfügen über eine Eigenschaft mit dem generischen Namen „Property“, die eine Liste der Registrierungseinträge im Schlüssel ist. Der folgende Befehl wählt die Eigenschaft „Property“ aus und erweitert die Elemente so, dass sie in einer Liste angezeigt werden:
 
 ```
@@ -52,13 +54,13 @@ Die Windows PowerShell-bezogenen Eigenschaften für den Schüssel verfügen alle
 
 Sie können die Notation „**.**“ zum Verweisen auf den aktuellen Speicherort verwenden. Sie können **Set-Location** verwenden, um zuerst in den Registrierungscontainer **CurrentVersion** zu wechseln:
 
-```
+```powershell
 Set-Location -Path Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
 ```
 
 Alternativ dazu können Sie das integrierte HKLM PSDrive mit **Set-Location** verwenden:
 
-```
+```powershell
 Set-Location -Path hklm:\SOFTWARE\Microsoft\Windows\CurrentVersion
 ```
 
@@ -76,6 +78,7 @@ ProgramFilesDir     : C:\Program Files
 Die Pfaderweiterung funktioniert in derselben Weise wie innerhalb des Dateisystem. Von diesem Speicherort aus können Sie die Auflistung **ItemProperty** für **HKLM:\\SOFTWARE\\Microsoft\\Windows\\Help** abrufen, indem Sie **Get-ItemProperty -Path ..\\Help** verwenden.
 
 ### <a name="getting-a-single-registry-entry"></a>Abrufen eines einzelnen Registrierungseintrags
+
 Wenn Sie einen bestimmten Eintrag in einem Registrierungsschlüssel abrufen möchten, stehen verschiedene Möglichkeiten zur Verfügung. In diesem Beispiel wird der Wert von **DevicePath** in **HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion** abgerufen.
 
 Verwenden Sie mit **Get-ItemProperty** den Parameter **Path**, um den Namen des Schlüssels anzugeben, und den Parameter **Name**, um den Namen des Eintrags **DevicePath** anzugeben.
@@ -117,6 +120,7 @@ PS> (New-Object -ComObject WScript.Shell).RegRead("HKLM\SOFTWARE\Microsoft\Windo
 ```
 
 ### <a name="creating-new-registry-entries"></a>Erstellen neuer Registrierungseinträge
+
 Um einen neuen Eintrag namens „PowerShellPath“ zum Schlüssel **CurrentVersion** hinzuzufügen, verwenden Sie **New-ItemProperty** mit dem Pfad zum Schüssel, dem Eintragsnamen und dem Wert des Eintrags. In diesem Beispiel wird der Wert der Windows PowerShell-Variablen **$PSHome** verwendet, in der der Pfad zum Installationsverzeichnis für Windows PowerShell gespeichert wird.
 
 Sie können dem Schlüssel mit Hilfe des folgenden Befehls den neuen Eintrag hinzufügen, und der Befehl gibt auch Informationen zu dem neuen Eintrag zurück:
@@ -148,30 +152,31 @@ PowerShellPath : C:\Program Files\Windows PowerShell\v1.0
 > [!NOTE]
 > Sie können einen Registrierungseintrag zu mehreren Speicherorten hinzufügen, indem Sie ein Array von Werten für den Parameter **Path** angeben:
 
-```
+```powershell
 New-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion, HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath -PropertyType String -Value $PSHome
 ```
 
 Sie können auch einen bereits vorhandenen Registrierungseintragswert überschreiben, indem Sie den Parameter **Force** an einen beliebigen **New-ItemProperty**-Befehl anfügen.
 
 ### <a name="renaming-registry-entries"></a>Umbenennen von Registrierungseinträgen
+
 Um den Eintrag **PowerShellPath** in „PSHome“ umzubenennen, verwenden Sie **Rename-ItemProperty**:
 
-```
+```powershell
 Rename-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath -NewName PSHome
 ```
 
 Um den umbenannten Wert anzuzeigen, fügen Sie dem Befehl den Parameter **PassThru** hinzu.
 
-```
+```powershell
 Rename-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath -NewName PSHome -passthru
 ```
 
 ### <a name="deleting-registry-entries"></a>Löschen von Registrierungseinträgen
+
 Um die Registrierungseinträge „PSHome“ und „PowerShellPath“ zu löschen, verwenden Sie **Remove-ItemProperty**:
 
-```
+```powershell
 Remove-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PSHome
 Remove-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath
 ```
-

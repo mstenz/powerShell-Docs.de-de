@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 510e1baa2933932cfd4c3bcb4e0973f3eb8095f3
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 7e24bb4ee4d0658b0619f7f008e3740f647f124f
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="system-requirements"></a>Systemanforderungen
 
@@ -16,10 +16,10 @@ ms.lasthandoff: 03/15/2018
 
     | Betriebssystem       | Editionen         | Voraussetzungen        |  Paketlinks |
     |------------------------|--------------|------------------|----------------------| --------------|
-    | Windows Server 2012 R2 |  |  | [Win8.1AndW2K12R2-KB3134758-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717507) |
+    | Windows Server 2012 R2 |  |  | [Win8.1AndW2K12R2-KB3134758-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717507) |
     | Windows Server 2012    |  |  | [W2K12-KB3134759-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717506) |
     | Windows Server 2008 R2 SP1 | Alle, außer IA64 | [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) und [.NET Framework 4.5 oder höher](https://msdn.microsoft.com/library/5a4x27ek.aspx) sind installiert.| [Win7AndW2K8R2-KB3134760-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717504)|
-    | Windows 8.1 | Pro, Enterprise | | **x64:** [Win8.1AndW2K12R2-KB3134758-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717507) </br> **x86:** [Win8.1-KB3134758-x86.msu](http://go.microsoft.com/fwlink/?LinkID=717963)|
+    | Windows 8.1 | Pro, Enterprise | | **x64:** [Win8.1AndW2K12R2-KB3134758-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717507) </br> **x86:** [Win8.1-KB3134758-x86.msu](http://go.microsoft.com/fwlink/?LinkID=717963)|
     | Windows 7 SP1 | Alle | [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) und [.NET Framework 4.5 oder höher](https://msdn.microsoft.com/library/5a4x27ek.aspx) sind installiert. | **x64:** [Win7AndW2K8R2-KB3134760-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717504)  </br> **x86:** [Win7-KB3134760-x86.msu](http://go.microsoft.com/fwlink/?LinkID=717962)|
 
 # <a name="installation-instructions"></a>Installationsanweisungen
@@ -55,7 +55,7 @@ ms.lasthandoff: 03/15/2018
 Auf Systemen mit Windows Server 2008 R2 SP1 bzw. Windows 7 SP1 sind PowerShell 2.0, WinRM und WMI integriert. WMF 3.0- und 4.0 von WMF-Pakete, mit denen diese integrierten Komponenten aktualisiert werden, wurden nach der Veröffentlichung von Windows Server 2008 R2 SP1 und Windows 7 SP1 veröffentlicht. Beim Installieren/Deinstallieren von WMF 3.0- und WMF 4.0-Paketen wurden einige Probleme unter dem folgenden Upgradepfad entdeckt:
 
 - Integriert --> WMF 4.0
-- Integriert --> WMF 3.0 --> WMF4.0. 
+- Integriert --> WMF 3.0 --> WMF4.0.
 
 All diese Probleme wurden in den WMF 4.0-Paketen behoben. Daher ist WMF 4.0 Voraussetzung für die Installation von WMF 5.0 auf Windows Server 2008 R2 SP1 und Windows 7 SP1. Im Folgenden sind die spezifischen Probleme aufgelistet, die auftreten können, wenn Sie WMF 4.0 nicht vor dem Upgrade auf WMF 5.0 installieren:
 
@@ -96,4 +96,3 @@ wusa /uninstall /kb:3134760
 3.  Klicken Sie auf **Installierte Updates anzeigen**.
 
 4.  Wählen Sie in der Liste der installierten Updates **Windows Management Framework 5.0** aus. Dies entspricht *KB3134758*, *KB3134759* oder *KB3134760*. Klicken Sie auf **Deinstallieren**.
-

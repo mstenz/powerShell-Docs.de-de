@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
-title: "DSC-Ressource „Log“"
-ms.openlocfilehash: 3bc4bf38b376cc62e42107eee1024eaabc93485a
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+title: DSC-Ressource „Log“
+ms.openlocfilehash: f1a528767508d4a0e7f0ea2e58fd27a6a4d7ec75
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="dsc-log-resource"></a>DSC-Ressource „Log“ 
+# <a name="dsc-log-resource"></a>DSC-Ressource „Log“
 
 > Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
@@ -32,10 +32,10 @@ Weitere Informationen finden Sie in folgendem Artikel.
 [Wo befinden sich die DSC-Ereignisprotokolle?](https://msdn.microsoft.com/en-us/powershell/dsc/troubleshooting#where-are-dsc-event-logs)
 
 ## <a name="properties"></a>Eigenschaften
-|  Eigenschaft  |  Beschreibung   | 
-|---|---| 
-| Message| Gibt die Meldung an, die Sie in das Ereignisprotokoll „Microsoft Windows Desired State Configuration/Analyse“ schreiben möchten.| 
-| DependsOn | Gibt an, dass die Konfiguration einer anderen Ressource ausgeführt werden muss, bevor diese Protokollmeldung geschrieben wird. Wenn beispielsweise die ID des Skriptblocks mit der Ressourcenkonfiguration, den Sie zuerst ausführen möchten, __ResourceName__ und dessen Typ __ResourceType__ ist, lautet die Syntax für das Verwenden dieser Eigenschaft `DependsOn = "[ResourceType]ResourceName"`.| 
+|  Eigenschaft  |  Beschreibung   |
+|---|---|
+| Message| Gibt die Meldung an, die Sie in das Ereignisprotokoll „Microsoft Windows Desired State Configuration/Analyse“ schreiben möchten.|
+| DependsOn | Gibt an, dass die Konfiguration einer anderen Ressource ausgeführt werden muss, bevor diese Protokollmeldung geschrieben wird. Wenn beispielsweise die ID des Skriptblocks mit der Ressourcenkonfiguration, den Sie zuerst ausführen möchten, __ResourceName__ und dessen Typ __ResourceType__ ist, lautet die Syntax für das Verwenden dieser Eigenschaft `DependsOn = "[ResourceType]ResourceName"`.|
 
 ## <a name="example"></a>Beispiel
 
@@ -43,7 +43,7 @@ Im folgenden Beispiel wird veranschaulicht, wie Sie eine Meldung in das Ereignis
 
 > **Hinweis**: Wenn Sie [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) mit dieser konfigurierten Ressource ausführen, wird stets **$false** zurückgegeben.
 
-```powershell 
+```powershell
 Configuration logResourceTest
 {
     Import-DscResource -ModuleName PSDesiredStateConfiguration
@@ -58,4 +58,3 @@ Configuration logResourceTest
     }
 }
 ```
-

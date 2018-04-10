@@ -1,20 +1,20 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
-title: "DSC-Ressource „Script“"
-ms.openlocfilehash: d65a89ceba0b641ccb0ac3dfcc6d5ec1a48dc92a
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: DSC-Ressource „Script“
+ms.openlocfilehash: 6a39fbd914f9a0bb0f192b7b1f81f404bb6b93c1
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-script-resource"></a>DSC-Ressource „Script“
 
- 
+
 > Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-Die Ressource **Script** in Windows PowerShell DSC bietet einen Mechanismus zum Anwenden von Windows PowerShell-Skriptblöcken auf Zielknoten. Die Ressource `Script` hat die Eigenschaften `GetScript`, `SetScript` und `TestScript`. Diese Eigenschaften sollten in Skriptblöcken festgelegt werden, die auf jedem Zielknoten ausgeführt werden. 
+Die Ressource **Script** in Windows PowerShell DSC bietet einen Mechanismus zum Anwenden von Windows PowerShell-Skriptblöcken auf Zielknoten. Die Ressource `Script` hat die Eigenschaften `GetScript`, `SetScript` und `TestScript`. Diese Eigenschaften sollten in Skriptblöcken festgelegt werden, die auf jedem Zielknoten ausgeführt werden.
 
 Der Skriptblock `GetScript` sollte eine Hashtabelle zurückgeben, die den Zustand des aktuellen Knotens darstellt. Die Hashtabelle darf nur den Schlüssel `Result` enthalten, dessen Wert den Typ `String` haben muss. Es ist keine Rückgabe erforderlich. DSC macht nichts mit der Ausgabe dieses Skriptblocks.
 
@@ -40,15 +40,15 @@ Script [string] #ResourceName
 
 ## <a name="properties"></a>Eigenschaften
 
-|  Eigenschaft  |  Beschreibung   | 
-|---|---| 
-| GetScript| Bietet einen Windows PowerShell-Skriptblock, der beim Aufrufen des Cmdlets [Get-DscConfiguration](https://technet.microsoft.com/library/dn407379.aspx) ausgeführt wird. Dieser Block muss eine Hashtabelle zurückgeben. Die Hashtabelle darf nur den Schlüssel **Result** enthalten, dessen Wert den Typ **String** haben muss.| 
-| SetScript| Stellt einen Windows PowerShell-Skriptblock bereit. Beim Aufruf des Cmdlets [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) wird der **TestScript**-Block zuerst ausgeführt. Wenn der **TestScript**-Block **$false** zurückgibt, wird der **SetScript**-Block ausgeführt. Wenn der **TestScript**-Block **$true** zurückgibt, wird der **SetScript**-Block nicht ausgeführt.| 
-| TestScript| Stellt einen Windows PowerShell-Skriptblock bereit. Beim Aufruf des Cmdlets [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) wird dieser Block ausgeführt. Wenn **$false** zurückgegeben wird, wird der „SetScript“-Block ausgeführt. Wenn **$true** zurückgegeben wird, wird der „SetScript“-Block nicht ausgeführt. Der **TestScript**-Block wird auch ausgeführt, wenn Sie das Cmdlet [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) aufrufen. In diesem Fall wird der **SetScript**-Block jedoch nicht ausgeführt, ganz gleich, welcher Exitcode vom „TestScript“-Block zurückgegeben wird. Der **TestScript**-Block muss „True“ zurückgeben, wenn die tatsächliche Konfiguration der Konfiguration des gewünschten Zustands entspricht. Falls nicht, muss „False“ zurückgegeben werden. (Die aktuelle Konfiguration des gewünschten Zustands ist die letzte Konfiguration, die auf den Knoten angewendet wurde, der DSC verwendet.)| 
-| Credential| Gibt die Anmeldeinformationen zum Ausführen dieses Skripts an, falls Anmeldeinformationen erforderlich sind.| 
+|  Eigenschaft  |  Beschreibung   |
+|---|---|
+| GetScript| Bietet einen Windows PowerShell-Skriptblock, der beim Aufrufen des Cmdlets [Get-DscConfiguration](https://technet.microsoft.com/library/dn407379.aspx) ausgeführt wird. Dieser Block muss eine Hashtabelle zurückgeben. Die Hashtabelle darf nur den Schlüssel **Result** enthalten, dessen Wert den Typ **String** haben muss.|
+| SetScript| Stellt einen Windows PowerShell-Skriptblock bereit. Beim Aufruf des Cmdlets [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) wird der **TestScript**-Block zuerst ausgeführt. Wenn der **TestScript**-Block **$false** zurückgibt, wird der **SetScript**-Block ausgeführt. Wenn der **TestScript**-Block **$true** zurückgibt, wird der **SetScript**-Block nicht ausgeführt.|
+| TestScript| Stellt einen Windows PowerShell-Skriptblock bereit. Beim Aufruf des Cmdlets [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) wird dieser Block ausgeführt. Wenn **$false** zurückgegeben wird, wird der „SetScript“-Block ausgeführt. Wenn **$true** zurückgegeben wird, wird der „SetScript“-Block nicht ausgeführt. Der **TestScript**-Block wird auch ausgeführt, wenn Sie das Cmdlet [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) aufrufen. In diesem Fall wird der **SetScript**-Block jedoch nicht ausgeführt, ganz gleich, welcher Exitcode vom „TestScript“-Block zurückgegeben wird. Der **TestScript**-Block muss „True“ zurückgeben, wenn die tatsächliche Konfiguration der Konfiguration des gewünschten Zustands entspricht. Falls nicht, muss „False“ zurückgegeben werden. (Die aktuelle Konfiguration des gewünschten Zustands ist die letzte Konfiguration, die auf den Knoten angewendet wurde, der DSC verwendet.)|
+| Credential| Gibt die Anmeldeinformationen zum Ausführen dieses Skripts an, falls Anmeldeinformationen erforderlich sind.|
 | DependsOn| Gibt an, dass die Konfiguration einer anderen Ressource ausgeführt werden muss, bevor diese Ressource konfiguriert wird. Wenn beispielsweise die ID des Skriptblocks mit der Ressourcenkonfiguration, den Sie zuerst ausführen möchten, **ResourceName** und dessen Typ **ResourceType** ist, lautet die Syntax für das Verwenden dieser Eigenschaft `DependsOn = "[ResourceType]ResourceName"`.
 
-## <a name="example-1"></a>Beispiel 1
+## <a name="example-1"></a>Beispiel 1
 ```powershell
 Configuration ScriptTest
 {
@@ -56,19 +56,19 @@ Configuration ScriptTest
 
     Script ScriptExample
     {
-        SetScript = 
-        { 
+        SetScript =
+        {
             $sw = New-Object System.IO.StreamWriter("C:\TempFolder\TestFile.txt")
             $sw.WriteLine("Some sample string")
             $sw.Close()
         }
         TestScript = { Test-Path "C:\TempFolder\TestFile.txt" }
-        GetScript = { @{ Result = (Get-Content C:\TempFolder\TestFile.txt) } }          
+        GetScript = { @{ Result = (Get-Content C:\TempFolder\TestFile.txt) } }
     }
 }
 ```
 
-## <a name="example-2"></a>Beispiel 2
+## <a name="example-2"></a>Beispiel 2
 ```powershell
 $version = Get-Content 'version.txt'
 
@@ -78,11 +78,11 @@ Configuration ScriptTest
 
     Script UpdateConfigurationVersion
     {
-        GetScript = { 
+        GetScript = {
             $currentVersion = Get-Content (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
             return @{ 'Result' = "$currentVersion" }
-        }          
-        TestScript = { 
+        }
+        TestScript = {
             $state = $GetScript
             if( $state['Result'] -eq $using:version )
             {
@@ -92,7 +92,7 @@ Configuration ScriptTest
             Write-Verbose -Message ('Version up-to-date: {0}' -f $using:version)
             return $false
         }
-        SetScript = { 
+        SetScript = {
             $using:version | Set-Content -Path (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
         }
     }
@@ -100,4 +100,3 @@ Configuration ScriptTest
 ```
 
 Diese Ressource schreibt die Version der Konfiguration in eine Textdatei. Diese Version ist auf dem Clientcomputer verfügbar, aber auf keinem der Knoten, weshalb sie an jeden der Skriptblöcke der `Script`-Ressource mit dem Bereich `using` der PowerShell übergeben werden muss. Beim Generieren der MOF-Datei des Knotens wird der Wert der `$version`-Variablen aus einer Textdatei auf dem Clientcomputer gelesen. DSC ersetzt die `$using:version`-Variablen in jedem Skriptblock durch den Wert der `$version`-Variablen.
-

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Verwenden von DSC auf Nano Server
-ms.openlocfilehash: c8f3669ee9c2ed6107c14ba9f4460d82276e1932
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 9ebc1f046893c360538009b5ecbcfb6456f92bbb
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="using-dsc-on-nano-server"></a>Verwenden von DSC auf Nano Server
 
@@ -25,22 +25,22 @@ Informationen zum Installieren und Verwenden von Nano Server sowie zum Verwalten
 ## <a name="dsc-features-available-on-nano-server"></a>Unter Nano Server verfügbare DSC-Funktionen
 
  Da Nano Server im Vergleich mit einer Vollversion von Windows Server nur einen eingeschränkten Satz von APIs unterstützt, besitzt DSC zurzeit unter Nano Server nicht denselben, vollständigen Funktionsumfang wie DSC, das auf vollständigen SKUs ausgeführt wird. DSC unter Nano Server befindet sich in der aktiven Entwicklung, und der Funktionsumfang ist noch nicht vollständig.
- 
- Die folgenden DSC-Funktionen sind zurzeit unter Nano Server verfügbar: 
+
+ Die folgenden DSC-Funktionen sind zurzeit unter Nano Server verfügbar:
 
 
 * Sowohl Push- als auch Pull-Modus
 
-* Alle DSC-Cmdlets, die eine Vollversion von Windows Server beinhaltet, einschließlich der folgenden: 
+* Alle DSC-Cmdlets, die eine Vollversion von Windows Server beinhaltet, einschließlich der folgenden:
   * [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx)
-  * [Set-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn521621.aspx)     
+  * [Set-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn521621.aspx)
   * [Enable-DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx)
-  * [Disable-DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx)       
+  * [Disable-DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx)
   * [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx)
   * [Stop-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143542.aspx)
   * [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379.aspx)
-  * [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx)      
-  * [Publish-DscConfiguraiton](https://technet.microsoft.com/en-us/library/mt517875.aspx) 
+  * [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx)
+  * [Publish-DscConfiguraiton](https://technet.microsoft.com/en-us/library/mt517875.aspx)
   * [Update-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143541.aspx)
   * [Restore-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407383.aspx)
   * [Remove-DscConfigurationDocument](https://technet.microsoft.com/en-us/library/mt143544.aspx)
@@ -48,7 +48,7 @@ Informationen zum Installieren und Verwenden von Nano Server sowie zum Verwalten
   * [Invoke-DscResource](https://technet.microsoft.com/en-us/library/mt517869.aspx)
   * [Find-DscResource](https://technet.microsoft.com/en-us/library/mt517874.aspx)
   * [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx)
-  * [New-DscChecksum](https://technet.microsoft.com/en-us/library/dn521622.aspx)    
+  * [New-DscChecksum](https://technet.microsoft.com/en-us/library/dn521622.aspx)
 
 * Kompilieren von Konfigurationen (siehe [DSC-Konfigurationen](configurations.md))
 
@@ -61,10 +61,10 @@ Informationen zum Installieren und Verwenden von Nano Server sowie zum Verwalten
 * Klassenbasierte Ressourcen (siehe [Schreiben einer benutzerdefinierten DSC-Ressource mit PowerShell-Klassen](authoringResourceClass.md))
 
 * Debuggen von DSC-Ressourcen (siehe [Debuggen von DSC-Ressourcen](debugresource.md))
-  
+
   **Problem:** Funktioniert nicht, wenn eine Ressource PsDscRunAsCredential verwendet (siehe [Ausführen von DSC mit Benutzeranmeldeinformationen](runAsUser.md))
 
-* [Angeben knotenübergreifender Abhängigkeiten](crossNodeDependencies.md) 
+* [Angeben knotenübergreifender Abhängigkeiten](crossNodeDependencies.md)
 
 * [Ressourcenversionsverwaltung](sxsResource.md)
 
@@ -72,7 +72,7 @@ Informationen zum Installieren und Verwenden von Nano Server sowie zum Verwalten
 
 * [Teilkonfigurationen (Pull und Push)](partialConfigs.md)
 
-* [Berichterstattung an Pullserver](reportServer.md) 
+* [Berichterstattung an Pullserver](reportServer.md)
 
 * MOF-Verschlüsselung
 
@@ -97,32 +97,32 @@ Informationen zum Installieren und Verwenden von Nano Server sowie zum Verwalten
 * Ressourcen, die teilweise funktionsfähig sind
   * [Gruppe](groupResource.md)
   * GroupSet
-  
+
   **Problem:** Bei den oben genannten Ressourcen tritt ein Fehler auf, wenn eine bestimmte Instanz zweimal aufgerufen wird (bzw. wenn die gleiche Konfiguration zweimal ausgeführt wird)
-  
+
   * [Service](serviceResource.md)
   * ServiceSet
-  
+
   **Problem:** Funktioniert nur beim Starten/Beenden (Status) des Diensts. Schlägt fehl, wenn versucht wird, andere Attribute des Diensts zu ändern, z. B. Starttyp, Anmeldeinformationen, Beschreibung usw. Ein Fehler mit etwa folgendem Wortlaut wird ausgelöst:
-  
+
   *Typ [management.managementobject] wurde nicht gefunden: Stellen Sie sicher, dass die Assembly, die diesen Typ enthält, geladen wird.*
-  
+
 * Ressourcen, die nicht funktionsfähig sind
   * [User](userResource.md)
-  
+
 
 ## <a name="dsc-features-not-available-on-nano-server"></a>Unter Nano Server nicht verfügbare DSC-Funktionen
 
 Die folgenden DSC-Funktionen sind zurzeit unter Nano Server nicht verfügbar:
 
-* Entschlüsseln von MOF-Dokumenten mit verschlüsselten Kennwörtern 
+* Entschlüsseln von MOF-Dokumenten mit verschlüsselten Kennwörtern
 * Pullserver: Sie können zurzeit keinen Pullserver unter Nano Server einrichten.
 * Alle Funktionen, die nicht in der Liste der Funktionen aufgeführt sind, funktionieren.
 
 ## <a name="using-custom-dsc-resources-on-nano-server"></a>Verwenden benutzerdefinierter DSC-Ressourcen unter Nano Server
- 
-Aufgrund eingeschränkter Sätze von Windows-APIs und CLR-Bibliotheken, die unter Nano Server verfügbar sind, funktionieren DSC-Ressourcen, die in der vollständigen CLR-Version von Windows funktionieren, nicht notwendigerweise auch unter Nano Server. Führen Sie zuerst End-to-End-Tests durch, bevor Sie benutzerdefinierte DSC-Ressourcen in einer Produktionsumgebung bereitstellen.
+
+Aufgrund eingeschränkter Sätze von Windows-APIs und CLR-Bibliotheken, die unter Nano Server verfügbar sind, funktionieren DSC-Ressourcen, die in der vollständigen CLR-Version von Windows funktionieren, nicht notwendigerweise auch unter Nano Server.
+Führen Sie zuerst End-to-End-Tests durch, bevor Sie benutzerdefinierte DSC-Ressourcen in einer Produktionsumgebung bereitstellen.
 
 ## <a name="see-also"></a>Weitere Informationen
 - [Erste Schritte mit Nano Server](https://technet.microsoft.com/library/mt126167.aspx)
-

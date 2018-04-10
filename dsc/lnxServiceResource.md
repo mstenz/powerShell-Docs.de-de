@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
-title: "DSC für Linux-Resource „nxService“"
-ms.openlocfilehash: 4273ad59f15eedd08b07888ebb6ee51d039b72b3
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+title: DSC für Linux-Resource „nxService“
+ms.openlocfilehash: b02fb1153570f628682533cb57a7d429e5cc8762
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-for-linux-nxservice-resource"></a>DSC für Linux-Resource „nxService“
 
@@ -28,13 +28,13 @@ nxService <string> #ResourceName
 ```
 
 ## <a name="properties"></a>Eigenschaften
-|  Eigenschaft |  Beschreibung | 
+|  Eigenschaft |  Beschreibung |
 |---|---|
-| Name| Der Name des Diensts/Daemons, der konfiguriert werden soll.| 
-| Controller| Der Typ des Dienstcontrollers, der beim Konfigurieren des Diensts verwendet werden soll.| 
-| Enabled| Gibt an, ob der Dienst beim Systemstart gestartet wird.| 
-| State| Überprüfen, ob der Dienst ausgeführt wird. Legen Sie diese Eigenschaft auf „Stopped“ fest, um sicherzustellen, dass der Dienst nicht ausgeführt wird. Durch Festlegen auf „Running“ wird sichergestellt, dass der Dienst ausgeführt wird.| 
-| DependsOn | Gibt an, dass die Konfiguration einer anderen Ressource ausgeführt werden muss, bevor diese Ressource konfiguriert wird. Wenn beispielsweise die **ID** des Skriptblocks mit der Ressourcenkonfiguration, den Sie zuerst ausführen möchten, **ResourceName** und dessen Typ **ResourceType** ist, lautet die Syntax für das Verwenden dieser Eigenschaft `DependsOn = "[ResourceType]ResourceName"`.| 
+| Name| Der Name des Diensts/Daemons, der konfiguriert werden soll.|
+| Controller| Der Typ des Dienstcontrollers, der beim Konfigurieren des Diensts verwendet werden soll.|
+| Enabled| Gibt an, ob der Dienst beim Systemstart gestartet wird.|
+| State| Überprüfen, ob der Dienst ausgeführt wird. Legen Sie diese Eigenschaft auf „Stopped“ fest, um sicherzustellen, dass der Dienst nicht ausgeführt wird. Durch Festlegen auf „Running“ wird sichergestellt, dass der Dienst ausgeführt wird.|
+| DependsOn | Gibt an, dass die Konfiguration einer anderen Ressource ausgeführt werden muss, bevor diese Ressource konfiguriert wird. Wenn beispielsweise die **ID** des Skriptblocks mit der Ressourcenkonfiguration, den Sie zuerst ausführen möchten, **ResourceName** und dessen Typ **ResourceType** ist, lautet die Syntax für das Verwenden dieser Eigenschaft `DependsOn = "[ResourceType]ResourceName"`.|
 
 
 ## <a name="additional-information"></a>Weitere Informationen
@@ -46,11 +46,11 @@ Die Ressource **nxService** erstellt keine Dienstdefinition bzw. kein Skript fü
 Das folgende Beispiel zeigt die Konfiguration des Diensts „httpd“ (für Apache HTTP Server), der mit dem Dienstcontroller **SystemD** registriert wurde.
 
 ```
-Import-DSCResource -Module nx 
+Import-DSCResource -Module nx
 
 Node $node {
 #Apache Service
-nxService ApacheService 
+nxService ApacheService
 {
 Name = "httpd"
 State = "running"
@@ -59,4 +59,3 @@ Controller = "systemd"
 }
 }
 ```
-

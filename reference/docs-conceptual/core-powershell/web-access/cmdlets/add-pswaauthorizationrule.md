@@ -1,17 +1,17 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
-title: "Hinzufügen von pswaauthorizationrule"
+ms.date: 12/12/2016
+title: Hinzufügen von pswaauthorizationrule
 ms.technology: powershell
 schema: 2.0.0
-ms.openlocfilehash: 71954fc115daee4c05662d11baa2bc6a0a417896
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 07ddd4df6a776f3ef6763242f8682747b9b97061
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="add-pswaauthorizationrule"></a>Add-PswaAuthorizationRule
 
@@ -62,12 +62,12 @@ Die Autorisierungsregeln werten die primären Anmeldeinformationen des Windows P
 
 Gibt den Namen einer Computergruppe in Active Directory Domain Services (AD DS) oder von lokalen Gruppen, denen diese Regel Zugriff gewährt, an.
 
-|||  
+|||
 |-|-|
-| Aliase                              | Keiner                                 |
+| Aliase                              | keine                                 |
 | Erforderlich?                            | wahr                                 |
 | Position?                            | benannt                                |
-| Standardwert                        | Keiner                                 |
+| Standardwert                        | keine                                 |
 | Pipelineeingaben akzeptieren?               | True (ByPropertyName)                |
 | Platzhalterzeichen akzeptieren?          | falsch                                |
 
@@ -75,12 +75,12 @@ Gibt den Namen einer Computergruppe in Active Directory Domain Services (AD DS) 
 
 Gibt den Namen des Computers an, dem diese Regel Zugriff gewährt.
 
-|||  
+|||
 |-|-|
-| Aliase                              | Keiner                                 |
+| Aliase                              | keine                                 |
 | Erforderlich?                            | wahr                                 |
 | Position?                            | benannt                                |
-| Standardwert                        | Keiner                                 |
+| Standardwert                        | keine                                 |
 | Pipelineeingaben akzeptieren?               | True (ByPropertyName)                |
 | Platzhalterzeichen akzeptieren?          | falsch                                |
 
@@ -88,12 +88,12 @@ Gibt den Namen des Computers an, dem diese Regel Zugriff gewährt.
 
 Gibt den Namen einer Windows PowerShell-Sitzungskonfiguration (auch als Runspaces bezeichnet) an, der diese Regel Zugriff gewährt.
 
-|||  
+|||
 |-|-|
-| Aliase                              | Keiner                                 |
+| Aliase                              | keine                                 |
 | Erforderlich?                            | wahr                                 |
 | Position?                            | benannt                                |
-| Standardwert                        | Keiner                                 |
+| Standardwert                        | keine                                 |
 | Pipelineeingaben akzeptieren?               | True (ByPropertyName)                |
 | Platzhalterzeichen akzeptieren?          | falsch                                |
 
@@ -101,12 +101,12 @@ Gibt den Namen einer Windows PowerShell-Sitzungskonfiguration (auch als Runspace
 
 Gibt ein **PSCredential**-Objekt für ein Benutzerkonto an, das Sie zum Ändern der Windows PowerShell Web Access-Autorisierungsregeln verwenden möchten. Wenn Sie diesen Parameter nicht hinzufügen, verwendet das Cmdlet das aktuell angemeldete Benutzerkonto. Führen Sie zum Abrufen eines **PSCredential**-Objekts, das zum Hinzufügen von Autorisierungsregeln im Remotemodus erforderlich ist, das Cmdlet [Get-Credential](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.security/Get-Credential) aus.
 
-|||  
+|||
 |-|-|
-| Aliase                              | Keiner                                 |
+| Aliase                              | keine                                 |
 | Erforderlich?                            | falsch                                |
 | Position?                            | benannt                                |
-| Standardwert                        | Keiner                                 |
+| Standardwert                        | keine                                 |
 | Pipelineeingaben akzeptieren?               | falsch                                |
 | Platzhalterzeichen akzeptieren?          | falsch                                |
 
@@ -115,12 +115,12 @@ Gibt ein **PSCredential**-Objekt für ein Benutzerkonto an, das Sie zum Ändern 
 Erzwingt die Ausführung des Befehls ohne Aufforderung zur Bestätigung durch den Benutzer.
 Zusätzlich werden Sie zu einer Bestätigung aufgefordert, wenn Sie einen einfachen oder kurzen Computernamen eingeben (z.B. ein Name, der kein Domänenname und nicht vollqualifiziert ist). Die Bestätigung ist aus Sicherheitsgründen erforderlich. Dadurch können Sie einen einfachen Namen zum Hinzufügen eines Computers nur verwenden, wenn der Computer sich in einer Arbeitsgruppe befindet.
 
-|||  
+|||
 |-|-|
-| Aliase                              | Keiner                                 |
+| Aliase                              | keine                                 |
 | Erforderlich?                            | falsch                                |
 | Position?                            | benannt                                |
-| Standardwert                        | Keiner                                 |
+| Standardwert                        | keine                                 |
 | Pipelineeingaben akzeptieren?               | falsch                                |
 | Platzhalterzeichen akzeptieren?          | falsch                                |
 
@@ -128,12 +128,12 @@ Zusätzlich werden Sie zu einer Bestätigung aufgefordert, wenn Sie einen einfac
 
 Gibt den Anzeigenamen für diese Regel an.
 
-|||  
+|||
 |-|-|
-| Aliase                              | Keiner                                 |
+| Aliase                              | keine                                 |
 | Erforderlich?                            | falsch                                |
 | Position?                            | benannt                                |
-| Standardwert                        | Keiner                                 |
+| Standardwert                        | keine                                 |
 | Pipelineeingaben akzeptieren?               | True (ByPropertyName)                |
 | Platzhalterzeichen akzeptieren?          | falsch                                |
 
@@ -141,12 +141,12 @@ Gibt den Anzeigenamen für diese Regel an.
 
 Gibt den Namen für eine oder mehrere Benutzergruppen in AD DS oder für lokale Gruppen, denen diese Regel Zugriff gewährt, an.
 
-|||  
+|||
 |-|-|
-| Aliase                              | Keiner                                 |
+| Aliase                              | keine                                 |
 | Erforderlich?                            | wahr                                 |
 | Position?                            | benannt                                |
-| Standardwert                        | Keiner                                 |
+| Standardwert                        | keine                                 |
 | Pipelineeingaben akzeptieren?               | True (ByPropertyName)                |
 | Platzhalterzeichen akzeptieren?          | falsch                                |
 
@@ -155,12 +155,12 @@ Gibt den Namen für eine oder mehrere Benutzergruppen in AD DS oder für lokale 
 Gibt den Namen von einem oder mehreren Benutzern an, denen diese Regel Zugriff gewährt. Beim Benutzernamen kann es sich um ein lokales Benutzerkonto auf dem Gatewaycomputer oder um einen Benutzer in AD DS handeln.
 Das Format ist `domain\user` oder `computer\user`.
 
-|||  
+|||
 |-|-|
-| Aliase                              | Keiner                                 |
+| Aliase                              | keine                                 |
 | Erforderlich?                            | wahr                                 |
 | Position?                            | 1                                    |
-| Standardwert                        | Keiner                                 |
+| Standardwert                        | keine                                 |
 | Pipelineeingaben akzeptieren?               | True (ByValue, ByPropertyName)       |
 | Platzhalterzeichen akzeptieren?          | falsch                                |
 
@@ -217,9 +217,9 @@ In diesem Beispiel wird veranschaulicht, wie Benutzernamenwerte über die Pipeli
 In diesem Beispiel wird veranschaulicht, wie alle Parameter Werte aus der Pipeline nach Eigenschaftsname annehmen.
 
 ````PowerShell
-$o = New-Object -TypeName PSObject | 
-    Add-Member -Type NoteProperty -Name "UserName" -Value "contoso\user1" -PassThru | 
-    Add-Member -Type NoteProperty -Name "ComputerName" -Value "srv2.contoso.com" -PassThru | 
+$o = New-Object -TypeName PSObject |
+    Add-Member -Type NoteProperty -Name "UserName" -Value "contoso\user1" -PassThru |
+    Add-Member -Type NoteProperty -Name "ComputerName" -Value "srv2.contoso.com" -PassThru |
     Add-Member -Type NoteProperty -Name "ConfigurationName" -Value "Microsoft.PowerShell" –PassThru
 
 $o | Add-PswaAuthorizationRule -UserName contoso\user1 -ConfigurationName Microsoft.PowerShell

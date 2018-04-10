@@ -1,15 +1,16 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Direktes Verarbeiten von Elementen
 ms.assetid: 8cbd4867-917d-41ea-9ff0-b8e765509735
-ms.openlocfilehash: d9aa95dcb0da2e8203cbe32d64b95bf33d914166
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 688f9194bd16793331325999c69e88df3e94c976
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="manipulating-items-directly"></a>Direktes Verarbeiten von Elementen
+
 Die Elemente, die Sie in Windows PowerShell-Laufwerken sehen, z. B. Dateien und Ordner auf den Dateisystemlaufwerken, sowie die Registrierungsschlüssel in den Windows PowerShell-Registrierungslaufwerken werden in Windows PowerShell als *Elemente* (Items) bezeichnet. Die Cmdlets zum Arbeiten mit diesen Elementen haben das Substantiv **Item** in ihren Namen.
 
 Die Ausgabe des Befehls **Get-Command -Noun Item** zeigt, dass es neun Windows PowerShell-Item-Cmdlets gibt.
@@ -31,6 +32,7 @@ Cmdlet          Set-Item                        Set-Item [-Path] <String[]> ...
 ```
 
 ### <a name="creating-new-items-new-item"></a>Erstellen von neuen Elementen (New-Item)
+
 Um ein neues Element im Dateisystem zu erstellen, verwenden Sie das Cmdlet **New-Item**. Fügen Sie den **Path**-Parameter mit dem Pfad zum Element und den **ItemType**-Parameter mit dem Wert „file“ oder „directory“ ein.
 
 Wenn Sie beispielsweise ein neues Verzeichnis namens „New.Directory“ im Verzeichnis „C:\\Temp“ erstellen möchten, geben Sie Folgendes ein:
@@ -73,6 +75,7 @@ SKC  VC Name                           Property
 Wenn Sie einen Registrierungspfad eingeben, müssen Sie den Doppelpunkt (**:**) in die Windows PowerShell-Laufwerksnamen, „HKLM:“ und „HKCU:“, einfügen. Ohne den Doppelpunkt erkennt Windows PowerShell den Laufwerksnamen im Pfad nicht.
 
 ### <a name="why-registry-values-are-not-items"></a>Warum Registrierungswerte keine Elemente
+
 Wenn Sie mit dem Cmdlet **Get-ChildItem** nach den Elemente in einem Registrierungsschlüssel suchen, werden weder die tatsächlichen Registrierungseinträge noch deren Werte angezeigt.
 
 Beispielsweise enthält der Registrierungsschlüssel **HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Run** in der Regel mehrere Registrierungseinträge, die den Anwendungen entsprechen, die beim Systemstart ausgeführt werden.
@@ -81,6 +84,7 @@ Wenn Sie **Get-ChildItem** verwenden, um nach untergeordnete Elementen im Schlü
 
 ```
 PS> Get-ChildItem HKLM:\Software\Microsoft\Windows\CurrentVersion\Run
+
    Hive: Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\Software\Micros
 oft\Windows\CurrentVersion\Run
 SKC  VC Name                           Property
@@ -91,10 +95,11 @@ SKC  VC Name                           Property
 Zwar wäre es praktisch, wenn Registrierungseinträge wie Elemente behandelt werden könnten, es ist aber nicht möglich, einen Pfad zu einem Registrierungseintrag so anzugeben, dass seine Eindeutigkeit sicherstellt ist. In der Pfadnotation wird nicht zwischen dem Registrierungsunterschlüssel namens **Run** und dem **(Standard)**Registrierungseintrag im **Run**-Unterschlüssel unterschieden. Darüber hinaus könnten Sie, wenn Registrierungseinträge Elemente wären, die Pfadnotation nicht dazu verwenden, einen Registrierungseintrag namens **Windows\\CurrentVersion\\Run** von dem Unterschlüssel zu unterscheiden, der sich in diesem Pfad befindet, denn Registrierungseintragsnamen können den umgekehrten Schrägstrich (**\\**) enthalten.
 
 ### <a name="renaming-existing-items-rename-item"></a>Umbenennen von vorhandenen Elementen (Rename-Item)
+
 Um den Namen einer Datei oder eines Ordners zu ändern, verwenden Sie das Cmdlet **Rename-Item**. Der folgende Befehl ändert den Namen der Datei **file1.txt** in **fileOne.txt**.
 
-```
-PS> Rename-Item -Path C:\temp\New.Directory\file1.txt fileOne.txt
+```powershell
+Rename-Item -Path C:\temp\New.Directory\file1.txt fileOne.txt
 ```
 
 Das Cmdlet **Rename-Item** kann den Namen einer Datei oder eines Ordners ändern, kann aber kein Element verschieben. Der folgende Befehl schlägt fehl, weil er versucht, die Datei aus dem Verzeichnis „New.Directory“ in das Verzeichnis „Temp“ zu verschieben.
@@ -107,6 +112,7 @@ At line:1 char:12
 ```
 
 ### <a name="moving-items-move-item"></a>Verschieben von Elementen (Move-Item)
+
 Um eine Datei oder einen Ordner zu verschieben, verwenden Sie das Cmdlet **Move-Item**.
 
 Der folgende Befehl verschiebt z.B. das Verzeichnis „New.Directory“ aus dem Verzeichnis „C:\\temp“ in das Stammverzeichnis von Laufwerk C:. Wenn Sie überprüfen möchten, ob das Element verschoben wurde, fügen Sie den **PassThru**-Parameter des **Move-Item**-Cmdlets ein. Ohne **Passthru** zeigt das Cmdlet **Move-Item** keine Ergebnisse an.
@@ -122,12 +128,13 @@ d----        2006-05-18  12:14 PM            New.Directory
 ```
 
 ### <a name="copying-items-copy-item"></a>Kopieren von Elementen (Copy-Item)
+
 Wenn Sie mit den Kopiervorgänge in anderen Shells vertraut sind, finden Sie das Verhalten des Cmdlets **Copy-Item** in Windows PowerShell möglicherweise ungewöhnlich. Wenn Sie ein Element aus einem Speicherort in einen anderen kopieren, kopiert „Copy-Item“ den Inhalt des Elements nicht standardmäßig.
 
 Angenommen, Sie kopieren das Verzeichnis **New.Directory** von Laufwerk C: in das Verzeichnis „C:\\temp“, dann wird der Befehl erfolgreich ausgeführt, aber die Dateien im Verzeichnis „New.Directory“ werden nicht kopiert.
 
-```
-PS> Copy-Item -Path C:\New.Directory -Destination C:\temp
+```powershell
+Copy-Item -Path C:\New.Directory -Destination C:\temp
 ```
 
 Wenn Sie den Inhalt von **C:\\temp\\New.Directory** anzeigen, stellen Sie fest, dass es keine Dateien enthält:
@@ -145,6 +152,7 @@ Wenn Sie den gesamten Inhalt eines Ordners kopieren möchten, fügen Sie den **R
 
 ```
 PS> Copy-Item -Path C:\New.Directory -Destination C:\temp -Recurse -Force -Passthru
+
     Directory: Microsoft.Windows PowerShell.Core\FileSystem::C:\temp
 
 Mode                LastWriteTime     Length Name
@@ -159,6 +167,7 @@ Mode                LastWriteTime     Length Name
 ```
 
 ### <a name="deleting-items-remove-item"></a>Löschen von Elementen (Remove-Item)
+
 Um Dateien und Ordner zu löschen, verwenden Sie das Cmdlet **Remove-Item**. Windows PowerShell-Cmdlets, etwa **Remove-Item**, die erhebliche, nicht rückgängig zu machende Änderungen vornehmen, fordern häufig zu einer Bestätigung auf, wenn Sie deren Befehle eingeben. Wenn Sie beispielsweise versuchen, den Ordner **New.Directory** zu entfernen, werden Sie aufgefordert, den Befehl zu bestätigen, da der Ordner Dateien enthält:
 
 ```
@@ -174,26 +183,26 @@ specified. If you continue, all children will be removed with the item. Are you
 
 Da **Ja** die Standardantwort ist, drücken Sie die **EINGABETASTE**, um den Ordner und alle in ihm enthaltenen Dateien zu löschen. Um den Ordner ohne Bestätigung zu löschen, verwenden Sie den **-Recurse**-Parameter.
 
-```
-PS> Remove-Item C:\temp\New.Directory -Recurse
+```powershell
+Remove-Item C:\temp\New.Directory -Recurse
 ```
 
 ### <a name="executing-items-invoke-item"></a>Ausführen von Elementen (Invoke-Item)
+
 Windows PowerShell verwendet das **Invoke-Item**-Cmdlet, um eine Standardaktion für eine Datei oder einen Ordner auszuführen. Diese Standardaktion ist durch den Standardanwendungshandler in der Registrierung festgelegt. Der Effekt ist derselbe, als würden Sie im Datei-Explorer auf das Element doppelklicken.
 
 Nehmen Sie an, Sie führen den folgenden Befehl aus:
 
-```
-PS> Invoke-Item C:\WINDOWS
+```powershell
+Invoke-Item C:\WINDOWS
 ```
 
 Ein Explorer-Fenster, das sich in „C:\\Windows“ befindet, wird angezeigt, genau so, als hätten Sie auf den Ordner „C:\\Windows“ doppelgeklickt.
 
 Wenn Sie die Datei **Boot.ini** auf einem System vor Windows Vista aufrufen:
 
-```
-PS> Invoke-Item C:\boot.ini
+```powershell
+Invoke-Item C:\boot.ini
 ```
 
 Ist der INI-Dateityp mit Editor verknüpft ist, wird die Datei „boot.ini“ in Editor geöffnet.
-

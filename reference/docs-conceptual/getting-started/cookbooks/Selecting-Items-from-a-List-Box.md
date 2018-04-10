@@ -1,33 +1,35 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "Auswählen von Elementen aus einem Listenfeld"
+title: Auswählen von Elementen aus einem Listenfeld
 ms.assetid: 327c7cc5-21d0-4ace-b151-aa1491d1d3c2
-ms.openlocfilehash: 5b41ebfb193062a17abcc6ad6ddf1a2d9241a39e
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 6ff6bff8f6ce4e9236d7877c4cca24a10932cbe0
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="selecting-items-from-a-list-box"></a>Auswählen von Elementen aus einem Listenfeld
+
 Verwenden Sie Windows PowerShell 3.0 und spätere Versionen zur Erstellung eines Dialogfelds, in dem Benutzer Elemente aus einem Listenfeld-Steuerelement auswählen können.
 
 ## <a name="create-a-list-box-control-and-select-items-from-it"></a>Erstellen Sie ein Listenfeld-Steuerelement, und wählen Sie Elemente daraus aus
+
 Kopieren und fügen Sie Folgendes in Windows PowerShell ISE ein, und speichern Sie es als Windows PowerShell-Skript (.ps1).
 
-```
+```powershell
 Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
 
-$form = New-Object System.Windows.Forms.Form 
-$form.Text = "Select a Computer"
-$form.Size = New-Object System.Drawing.Size(300,200) 
-$form.StartPosition = "CenterScreen"
+$form = New-Object System.Windows.Forms.Form
+$form.Text = 'Select a Computer'
+$form.Size = New-Object System.Drawing.Size(300,200)
+$form.StartPosition = 'CenterScreen'
 
 $OKButton = New-Object System.Windows.Forms.Button
 $OKButton.Location = New-Object System.Drawing.Point(75,120)
 $OKButton.Size = New-Object System.Drawing.Size(75,23)
-$OKButton.Text = "OK"
+$OKButton.Text = 'OK'
 $OKButton.DialogResult = [System.Windows.Forms.DialogResult]::OK
 $form.AcceptButton = $OKButton
 $form.Controls.Add($OKButton)
@@ -35,33 +37,33 @@ $form.Controls.Add($OKButton)
 $CancelButton = New-Object System.Windows.Forms.Button
 $CancelButton.Location = New-Object System.Drawing.Point(150,120)
 $CancelButton.Size = New-Object System.Drawing.Size(75,23)
-$CancelButton.Text = "Cancel"
+$CancelButton.Text = 'Cancel'
 $CancelButton.DialogResult = [System.Windows.Forms.DialogResult]::Cancel
 $form.CancelButton = $CancelButton
 $form.Controls.Add($CancelButton)
 
 $label = New-Object System.Windows.Forms.Label
-$label.Location = New-Object System.Drawing.Point(10,20) 
-$label.Size = New-Object System.Drawing.Size(280,20) 
-$label.Text = "Please select a computer:"
-$form.Controls.Add($label) 
+$label.Location = New-Object System.Drawing.Point(10,20)
+$label.Size = New-Object System.Drawing.Size(280,20)
+$label.Text = 'Please select a computer:'
+$form.Controls.Add($label)
 
-$listBox = New-Object System.Windows.Forms.ListBox 
-$listBox.Location = New-Object System.Drawing.Point(10,40) 
-$listBox.Size = New-Object System.Drawing.Size(260,20) 
+$listBox = New-Object System.Windows.Forms.ListBox
+$listBox.Location = New-Object System.Drawing.Point(10,40)
+$listBox.Size = New-Object System.Drawing.Size(260,20)
 $listBox.Height = 80
 
-[void] $listBox.Items.Add("atl-dc-001")
-[void] $listBox.Items.Add("atl-dc-002")
-[void] $listBox.Items.Add("atl-dc-003")
-[void] $listBox.Items.Add("atl-dc-004")
-[void] $listBox.Items.Add("atl-dc-005")
-[void] $listBox.Items.Add("atl-dc-006")
-[void] $listBox.Items.Add("atl-dc-007")
+[void] $listBox.Items.Add('atl-dc-001')
+[void] $listBox.Items.Add('atl-dc-002')
+[void] $listBox.Items.Add('atl-dc-003')
+[void] $listBox.Items.Add('atl-dc-004')
+[void] $listBox.Items.Add('atl-dc-005')
+[void] $listBox.Items.Add('atl-dc-006')
+[void] $listBox.Items.Add('atl-dc-007')
 
-$form.Controls.Add($listBox) 
+$form.Controls.Add($listBox)
 
-$form.Topmost = $True
+$form.Topmost = $true
 
 $result = $form.ShowDialog()
 
@@ -74,7 +76,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 
 Das Skript beginnt mit dem Laden von zwei .NET Framework-Klassen: **System.Drawing** und **System.Windows.Forms**. Sie starten daraufhin eine neue Instanz der .NET Framework-Klasse **System.Windows.Forms.Form**, die ein leeres Formular oder Fenster bereitstellt, zu dem Sie Steuerelemente hinzufügen können.
 
-```
+```powershell
 Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
 ```
@@ -87,19 +89,19 @@ Nachdem Sie eine Instanz der Formularklasse erstellt haben, ordnen Sie drei Eige
 
 - **StartingPosition.** Für diese optionale Eigenschaft ist im Skript oben **CenterScreen** festgelegt. Wenn Sie diese Eigenschaft nicht hinzufügen, wählt Windows eine Stelle aus, wenn das Formular geöffnet wird. Durch Festlegen der **StartingPosition** auf **CenterScreen** wird das Formular automatisch bei jedem Laden in der Mitte des Bildschirms angezeigt.
 
-```
-$form.Text = "Select a Computer"
-$form.Size = New-Object System.Drawing.Size(300,200) 
-$form.StartPosition = "CenterScreen"
+```powershell
+$form.Text = 'Select a Computer'
+$form.Size = New-Object System.Drawing.Size(300,200)
+$form.StartPosition = 'CenterScreen'
 ```
 
 Als Nächstes erstellen Sie eine Schaltfläche **OK** für Ihr Formular. Legen Sie die Größe und das Verhalten der Schaltfläche **OK** fest. In diesem Beispiel befindet sich die Schaltfläche 120 Pixel vom oberen Formularrand und 75 Pixel vom linken Rand entfernt. Die Schaltflächenhöhe beträgt 23 Pixel und die Schaltflächenlänge 75 Pixel. Das Skript verwendet vordefinierte Windows-Formulartypen zur Bestimmung des Schaltflächenverhaltens.
 
-```
+```powershell
 $OKButton = New-Object System.Windows.Forms.Button
 $OKButton.Location = New-Object System.Drawing.Point(75,120)
 $OKButton.Size = New-Object System.Drawing.Size(75,23)
-$OKButton.Text = "OK"
+$OKButton.Text = 'OK'
 $OKButton.DialogResult = [System.Windows.Forms.DialogResult]::OK
 $form.AcceptButton = $OKButton
 $form.Controls.Add($OKButton)
@@ -107,11 +109,11 @@ $form.Controls.Add($OKButton)
 
 In entsprechender Weise erstellen Sie eine Schaltfläche **Abbrechen**. Die **Abbrechen**-Schaltfläche ist 120 Pixel vom oberen und 150 Pixel vom linken Rand des Fensters entfernt.
 
-```
+```powershell
 $CancelButton = New-Object System.Windows.Forms.Button
 $CancelButton.Location = New-Object System.Drawing.Point(150,120)
 $CancelButton.Size = New-Object System.Drawing.Size(75,23)
-$CancelButton.Text = "Cancel"
+$CancelButton.Text = 'Cancel'
 $CancelButton.DialogResult = [System.Windows.Forms.DialogResult]::Cancel
 $form.CancelButton = $CancelButton
 $form.Controls.Add($CancelButton)
@@ -119,54 +121,54 @@ $form.Controls.Add($CancelButton)
 
 Als nächstes stellen Sie einen Beschriftungstext in Ihrem Fenster bereit, der die Information beschreibt, die Benutzer verwenden sollen. In diesem Fall sollen die Benutzer einen Computer auswählen.
 
-```
+```powershell
 $label = New-Object System.Windows.Forms.Label
-$label.Location = New-Object System.Drawing.Point(10,20) 
-$label.Size = New-Object System.Drawing.Size(280,20) 
-$label.Text = "Please select a computer:"
+$label.Location = New-Object System.Drawing.Point(10,20)
+$label.Size = New-Object System.Drawing.Size(280,20)
+$label.Text = 'Please select a computer:'
 $form.Controls.Add($label)
 ```
 
 Fügen Sie das Steuerelement (in diesem Fall ein Listenfeld) hinzu, mit dem Benutzer die Informationen bereitstellen, die Sie in Ihrem Beschriftungstext beschrieben haben. Es gibt viele weitere Steuerelemente, die Sie neben Listenfeldern anwenden können. Weitere Steuerelemente finden Sie unter [System.Windows.Forms Namespace](http://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx) auf MSDN.
 
-```
-$listBox = New-Object System.Windows.Forms.ListBox 
-$listBox.Location = New-Object System.Drawing.Point(10,40) 
-$listBox.Size = New-Object System.Drawing.Size(260,20) 
+```powershell
+$listBox = New-Object System.Windows.Forms.ListBox
+$listBox.Location = New-Object System.Drawing.Point(10,40)
+$listBox.Size = New-Object System.Drawing.Size(260,20)
 $listBox.Height = 80
 ```
 
 Im nächsten Abschnitt legen Sie die Werte fest, die im Listenfeld für Benutzer angezeigt werden sollen.
 
 > [!NOTE]
-> Das von diesem Skript erstellte Listenfeld erlaubt nur eine Auswahl. Zur Erstellung eines Listenfeld-Steuerelements für eine Mehrfachauswahl legen Sie einen Wert für die **SelectionMode**-Eigenschaft fest, wie hier beschrieben: `$listBox.SelectionMode = "MultiExtended"`. Weitere Informationen finden Sie unter [Mehrfachauswahl-Listenfelder](Multiple-selection-List-Boxes.md).
+> Das von diesem Skript erstellte Listenfeld erlaubt nur eine Auswahl. Zur Erstellung eines Listenfeld-Steuerelements für eine Mehrfachauswahl legen Sie einen Wert für die **SelectionMode**-Eigenschaft fest, wie hier beschrieben: `$listBox.SelectionMode = 'MultiExtended'`. Weitere Informationen finden Sie unter [Mehrfachauswahl-Listenfelder](Multiple-selection-List-Boxes.md).
 
-```
-[void] $listBox.Items.Add("atl-dc-001")
-[void] $listBox.Items.Add("atl-dc-002")
-[void] $listBox.Items.Add("atl-dc-003")
-[void] $listBox.Items.Add("atl-dc-004")
-[void] $listBox.Items.Add("atl-dc-005")
-[void] $listBox.Items.Add("atl-dc-006")
-[void] $listBox.Items.Add("atl-dc-007")
+```powershell
+[void] $listBox.Items.Add('atl-dc-001')
+[void] $listBox.Items.Add('atl-dc-002')
+[void] $listBox.Items.Add('atl-dc-003')
+[void] $listBox.Items.Add('atl-dc-004')
+[void] $listBox.Items.Add('atl-dc-005')
+[void] $listBox.Items.Add('atl-dc-006')
+[void] $listBox.Items.Add('atl-dc-007')
 ```
 
 Fügen Sie das Listenfeld-Steuerelement zu Ihrem Formular hinzu, um Windows anzuweisen, das Formular beim Öffnen über anderen Fenstern und Dialogfeldern zu öffnen.
 
-```
-$form.Controls.Add($listBox) 
-$form.Topmost = $True
+```powershell
+$form.Controls.Add($listBox)
+$form.Topmost = $true
 ```
 
 Fügen Sie die folgende Codezeile hinzu, um das Formular in Windows anzuzeigen.
 
-```
+```powershell
 $result = $form.ShowDialog()
 ```
 
 Abschließend weist der Code im Block **If** Windows an, was mit dem Formular geschehen soll, wenn Benutzer eine Option aus dem Listenfeld auswählen und anschließend auf die Schaltfläche **OK** klicken oder die **EINGABETASTE** drücken.
 
-```
+```powershell
 if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 {
     $x = $listBox.SelectedItem
@@ -175,7 +177,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 ```
 
 ## <a name="see-also"></a>Weitere Informationen
+
 - [Hey Scripting Guy: Warum funktionieren diese PowerShell GUI-Beispiele nicht?](http://go.microsoft.com/fwlink/?LinkId=506644)
 - [GitHub: Dave Wyatt's WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
 - [Windows PowerShell-Tipp der Woche: Auswählen von Elementen aus einem Listenfeld](http://technet.microsoft.com/library/ff730949.aspx)
-

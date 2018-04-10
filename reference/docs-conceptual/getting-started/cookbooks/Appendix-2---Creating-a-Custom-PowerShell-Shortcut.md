@@ -1,15 +1,16 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "Anhang 2 – Erstellen einer benutzerdefinierten PowerShell-Verknüpfung"
+title: Anhang 2 – Erstellen einer benutzerdefinierten PowerShell-Verknüpfung
 ms.assetid: 5d4fd421-5d43-4ec7-86fd-acfe887b066e
-ms.openlocfilehash: d5e554f6f062fc5bf1beddd2aca1acf0b93d2133
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: e8081b7a64d313c8ef4bbccf95f250445dd68ad9
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="appendix-2---creating-a-custom-powershell-shortcut"></a>Anhang 2: Erstellen einer benutzerdefinierten PowerShell-Verknüpfung
+
 In der folgenden Vorgehensweise wird beschrieben, wie Sie eine Verknüpfung zu Windows PowerShell erstellen, in der mehrere praktische Optionen angepasst sind.
 
 1. Erstellen Sie eine Verknüpfung, die auf „Powershell.exe“ verweist.
@@ -37,4 +38,3 @@ In der folgenden Vorgehensweise wird beschrieben, wie Sie eine Verknüpfung zu W
 11. Wenn Sie die Konsole beim Öffnen an einer bestimmten Stelle auf dem Desktop platzieren möchten, deaktivieren Sie im Abschnitt **Fensterposition** das Kontrollkästchen **Automatisch positionieren**, und ändern Sie die Werte in den Feldern **Links** und **Oben** im Abschnitt **Fensterposition**.
 
 12. Klicken Sie auf **OK**.
-

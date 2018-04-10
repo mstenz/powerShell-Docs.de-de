@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
 keywords: gallery,powershell,cmdlet,psgallery
-title: "Häufig gestellte Fragen | MSDN"
-ms.openlocfilehash: b856c44f3733d4a7c236d901edb391091d9d546e
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: Häufig gestellte Fragen | MSDN
+ms.openlocfilehash: f00372d75b3e73bdc1499c3a2c8895bffb0902f9
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="frequently-asked-questions"></a>Häufig gestellte Fragen
 
@@ -153,7 +153,7 @@ Aus diesem Grund erfordert **PowerShellGet** eines der folgenden Betriebssysteme
 - Windows 8.1 Enterprise
 - Windows 7 SP1
 - Windows Server 2016
-- Windows Server 2012 R2
+- Windows Server 2012 R2
 - Windows Server 2008 R2 SP1
 
 Für **PowerShellGet** ist außerdem .NET Framework 4.5 oder höher erforderlich. Von [hier](https://msdn.microsoft.com/library/5a4x27ek.aspx) können Sie .NET Framework 4.5 oder höher installieren.
@@ -169,4 +169,3 @@ Details hierzu finden Sie unter [Verwalten von Elementbesitzern](Managing-Item-O
 ## <a name="how-do-i-deal-with-an-item-owner-who-is-violating-my-item-license"></a>Wie gehe ich mit einem Elementbesitzer um, der meine Elementlizenz verletzt?
 
 Wir möchten die Zusammenarbeit in der PowerShell-Community fördern, um mögliche Rechtsstreitigkeiten zu beheben, die zwischen dem Elementbesitzern auftreten können.  Wir haben einen [Prozess zur Beilegung von Streitigkeiten](psgallery_dispute_resolution.md) entworfen, und bitten Sie, diesen zu befolgen, bevor die Administratoren von PowerShellGallery.com eingeschaltet werden.
-

@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
 keywords: gallery,powershell,cmdlet,psgallery
 title: Beilegung von Streitigkeiten | MSDN
-ms.openlocfilehash: 640d20371a51b08a5627b9beff1bb0ada4f06dd8
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 424013229418efddeb0fe56828aece418630d91b
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dispute-resolution"></a>Beilegung von Streitigkeiten
 
@@ -39,4 +39,3 @@ Veröffentlichen Sie Code, und arbeiten Sie umgehend damit, oder geben Sie den N
 Wenn Sie ein Element finden, das gegen diese Regeln verstößt, klicken Sie auf den Link „Missbrauch melden“ auf der Seite mit den Elementdetails, um einen Bericht zu übermitteln.
 
 **Diese Richtlinie kann nach Ermessen der für den PowerShell-Katalog verantwortlichen Mitarbeiter geändert werden.**
-

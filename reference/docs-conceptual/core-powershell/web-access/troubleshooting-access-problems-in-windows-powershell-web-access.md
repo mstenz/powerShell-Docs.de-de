@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-08-23
+ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: Behandeln von Zugriffsproblemen in Windows PowerShell Web Access
-ms.openlocfilehash: 6e51df3f4c6ac196c855ad918a91394d02c7d75e
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: ef476d8e386e5380cb2c9dda69180dfce8748bf4
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Behandeln von Zugriffsproblemen in Windows PowerShell Web Access
 
@@ -90,7 +90,7 @@ Verwenden Sie nicht nur einen Punkt (.) als Computernamen.
 
 #### <a name="all-cases"></a>Alle Fälle
 
-Parameter | Value
+Parameter | Wert
 -- | --
 UserName | Server\_name\\user\_name<br/>Localhost\\user\_name<br/>.\\user\_name
 UserGroup | Server\_name\\user\_group<br/>Localhost\\user\_group<br/>.\\user\_group
@@ -98,13 +98,13 @@ ComputerGroup | Server\_name\\computer\_group<br/>Localhost\\computer\_group<br/
 
 #### <a name="gateway-server-is-in-a-domain"></a>Gatewayserver befindet sich in Domäne
 
-Parameter | Value
+Parameter | Wert
 -- | --
 ComputerName | Vollqualifizierter Name des Gatewayservers oder Localhost
 
 #### <a name="gateway-server-is-in-a-workgroup"></a>Gatewayserver befindet sich in Arbeitsgruppe
 
-Parameter | Value
+Parameter | Wert
 -- | --
 ComputerName | Servername
 
@@ -130,7 +130,7 @@ Anmeldung an einem Zielcomputer, der in Autorisierungsregeln als IPv6-Adresse mi
 Autorisierungsregeln unterstützen keine IPv6-Adresse in Form eines Domänennamens.
 
 Verwenden Sie zum Angeben eines Zielcomputers mithilfe einer IPv6-Adresse die ursprüngliche IPv6-Adresse (mit Doppelpunkten) in der Autorisierungsregel.
-Sowohl domänenbezogene als auch numerische IPv6-Adressen (mit Doppelpunkten) werden auf der Anmeldeseite von Windows PowerShell Web Access als Zielcomputername unterstützt. Dies gilt jedoch nicht für Autorisierungsregeln. 
+Sowohl domänenbezogene als auch numerische IPv6-Adressen (mit Doppelpunkten) werden auf der Anmeldeseite von Windows PowerShell Web Access als Zielcomputername unterstützt. Dies gilt jedoch nicht für Autorisierungsregeln.
 
 Weitere Informationen zu IPv6-Adressen finden Sie unter [Funktionsweise von IPv6](https://technet.microsoft.com/library/cc781672(v=ws.10).aspx).
 
