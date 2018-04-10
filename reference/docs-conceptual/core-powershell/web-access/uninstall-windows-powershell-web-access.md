@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-08-23
+ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: Deinstallieren von Windows PowerShell Web Access
-ms.openlocfilehash: b6e6a2374e6b4b2be8742019c5f1e4d5b5d1abe3
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 22c874d766445dccedd8494097daf16c30fa66ff
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="uninstall-windows-powershell-web-access"></a>Deinstallieren von Windows PowerShell Web Access
 
@@ -29,7 +29,7 @@ Mit den in diesem Abschnitt beschriebenen Verfahren können Sie Folgendes deinst
 
 - Die Windows PowerShell Web Access-Anwendung und
 - das Windows PowerShell Web Access-Feature
- 
+
 , indem Sie Windows PowerShell-Cmdlets verwenden.
 
 ### <a name="step-1-delete-the-web-application-using-cmdlets"></a>Schritt 1: Löschen der Webanwendung mithilfe von Cmdlets
@@ -38,7 +38,7 @@ Mit den in diesem Abschnitt beschriebenen Verfahren können Sie Folgendes deinst
 
     -   Klicken Sie auf dem Windows-Desktop mit der rechten Maustaste auf der Taskleiste auf **Windows PowerShell**.
 
-    -   Klicken Sie auf der Windows **Startseite** auf **Windows PowerShell**.
+    -   Klicken Sie auf der Windows-**Startseite** auf **Windows PowerShell**.
 
 2. Geben Sie `Uninstall-PswaWebApplication` ein, und drücken Sie dann die **EINGABETASTE**.
    1. Wenn Sie Ihre eigenen, benutzerdefinierten Websitenamen angegeben haben, fügen Sie dem Befehl den `-WebsiteName`-Parameter hinzu, und geben Sie den Namen der Website an.
@@ -96,9 +96,9 @@ Mit den in diesem Abschnitt beschriebenen Verfahren können Sie die Windows Powe
 
 > ![Warnhinweis](images/SecurityNote.jpeg)**Hinweis**:
 >
-> Das Zertifikat wird während der Deinstallation nicht gelöscht. 
+> Das Zertifikat wird während der Deinstallation nicht gelöscht.
 >
-> Wenn Sie ein selbstsigniertes Zertifikat erstellt oder ein Testzertifikat verwendet haben und dieses Zertifikat nun entfernen möchten, müssen Sie es im IIS-Manager löschen. 
+> Wenn Sie ein selbstsigniertes Zertifikat erstellt oder ein Testzertifikat verwendet haben und dieses Zertifikat nun entfernen möchten, müssen Sie es im IIS-Manager löschen.
 
 ### <a name="step-2-uninstall-windows-powershell-web-access-using-the-remove-roles-and-features-wizard"></a>Schritt 2: Deinstallieren von Windows PowerShell Web Access mithilfe des Assistenten zum Entfernen von Rollen und Features
 
