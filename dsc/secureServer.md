@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
-title: "Bewährte Methoden für Pullserver"
-ms.openlocfilehash: 3d0ab969b7a0de9d428becc4b9bdb124a7a44c2c
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: Bewährte Methoden für Pullserver
+ms.openlocfilehash: 7de523ad16aee77d87ec4d3334d296997020aa19
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="pull-server-best-practices"></a>Bewährte Methoden für Pullserver
 
@@ -17,8 +17,8 @@ Zusammenfassung: Dieses Dokument soll Prozesse und Erweiterungen enthalten und T
 
 | |Dokumentinformation|
 |:---|:---|
-Autor | Michael Greene  
-Prüfer | Ben Gelens, Ravikanth Chaganti, Aleksandar Nikolic  
+Autor | Michael Greene
+Prüfer | Ben Gelens, Ravikanth Chaganti, Aleksandar Nikolic
 Veröffentlicht | April 2015
 
 ## <a name="abstract"></a>Zusammenfassung
@@ -31,8 +31,8 @@ Die zwei Hauptabschnitte dieses Dokuments:
 
  - Konfigurationsplanung
  - Installationsanweisungen
- 
-### <a name="versions-of-the-windows-management-framework"></a>Windows Management Framework-Versionen 
+
+### <a name="versions-of-the-windows-management-framework"></a>Windows Management Framework-Versionen
 Die Informationen in diesem Dokument sollen auf Windows Management Framework 5.0 angewendet werden. Obwohl WMF 5.0 nicht für die Bereitstellung und Ausführung eines Pullservers erforderlich ist, konzentriert sich dieses Dokument auf die Version 5.0.
 
 ### <a name="windows-powershell-desired-state-configuration"></a>Windows PowerShell zum Konfigurieren des gewünschten Zustands
@@ -40,10 +40,11 @@ Desired State Configuration (DSC) ist eine Managementplattform, die das Bereitst
 
 Windows PowerShell bietet eine Reihe an Spracherweiterungen für Desired State Configuration, die Sie zur Erstellung und Verwaltung deklarativer Konfigurationen verwenden können.
 
-### <a name="pull-server-role"></a>Pullserverrolle  
+### <a name="pull-server-role"></a>Pullserverrolle
 Ein Pullserver bietet einen zentralisierten Dienst zum Speichern von Konfigurationen, die für Zielknoten zugänglich sein werden.
- 
-Die Pullserverrolle kann als Webserverinstanz oder SMB-Dateifreigabe bereitgestellt werden. Die Webserverfunktion enthält eine OData-Schnittstelle und kann optional Funktionen für die Zielknoten enthalten, die die Bestätigung des Erfolgs oder Misserfolgs der angewendeten Konfigurationen übermitteln. Diese Funktion ist nützlich in Umgebungen, in denen eine große Anzahl von Knoten besteht. Nach dem Konfigurieren eines Zielknotens (auch als Client bezeichnet), der auf den Pullserver verweist, werden die aktuellen Konfigurationsdaten und alle erforderlichen Skripts heruntergeladen und angewendet. Dies kann eine einmalige Bereitstellung oder eine wiederkehrende Aufgabe sein und macht den Pullserver zu einer wichtigen Ressource zur Verwaltung von Skalierungsänderungen. Weitere Informationen finden Sie unter [Windows PowerShell DSC – Pullserver](https://technet.microsoft.com/library/dn249913.aspx) und [Push and Pull Configuration Modes (Push und Pull-Konfigurationsmodi)](https://technet.microsoft.com/library/dn249913.aspx).
+
+Die Pullserverrolle kann als Webserverinstanz oder SMB-Dateifreigabe bereitgestellt werden. Die Webserverfunktion enthält eine OData-Schnittstelle und kann optional Funktionen für die Zielknoten enthalten, die die Bestätigung des Erfolgs oder Misserfolgs der angewendeten Konfigurationen übermitteln. Diese Funktion ist nützlich in Umgebungen, in denen eine große Anzahl von Knoten besteht.
+Nach dem Konfigurieren eines Zielknotens (auch als Client bezeichnet), der auf den Pullserver verweist, werden die aktuellen Konfigurationsdaten und alle erforderlichen Skripts heruntergeladen und angewendet. Dies kann eine einmalige Bereitstellung oder eine wiederkehrende Aufgabe sein und macht den Pullserver zu einer wichtigen Ressource zur Verwaltung von Skalierungsänderungen. Weitere Informationen finden Sie unter [Windows PowerShell DSC – Pullserver](https://technet.microsoft.com/library/dn249913.aspx) und [Push and Pull Configuration Modes (Push und Pull-Konfigurationsmodi)](https://technet.microsoft.com/library/dn249913.aspx).
 
 ## <a name="configuration-planning"></a>Konfigurationsplanung
 
@@ -59,7 +60,9 @@ Zusätzlich zur Installation des neuesten Inhalts von Windows Update bestehen zw
 
 ### <a name="wmf"></a>WMF
 
-Windows Server 2012 R2 umfasst ein Feature namens DSC-Dienst. Das DSC-Dienstfeature bietet die Pullserverfunktionalität, einschließlich der Binärdateien, die den OData-Endpunkt unterstützen. WMF ist in Windows Server enthalten und wird in einem agilen Rhythmus zwischen den Windows Server-Versionen aktualisiert. [Neue WMF 5.0-Versionen](http://aka.ms/wmf5latest) können Updates des DSC-Dienstfeatures enthalten. Aus diesem Grund ist es eine bewährte Methode, die neueste WMF-Version herunterzuladen und die Versionshinweise zu überprüfen, um festzustellen, ob die Version ein Update für das DSC-Dienstfeature enthält. Sie sollten auch den Abschnitt über die Versionshinweise überprüfen, die angeben, ob der Status des Entwurfs für ein Update oder Szenario als stabil oder experimentell aufgeführt wird. Damit ein agiler Veröffentlichungszyklus möglich ist, können einzelne Features als stabil erklärt werden. Dies gibt an, dass das Feature zur Nutzung in einer Produktionsumgebung bereit ist, auch wenn WMF als Vorschau zur Verfügung gestellt wird.
+Windows Server 2012 R2 umfasst ein Feature namens DSC-Dienst. Das DSC-Dienstfeature bietet die Pullserverfunktionalität, einschließlich der Binärdateien, die den OData-Endpunkt unterstützen.
+WMF ist in Windows Server enthalten und wird in einem agilen Rhythmus zwischen den Windows Server-Versionen aktualisiert. [Neue WMF 5.0-Versionen](http://aka.ms/wmf5latest) können Updates des DSC-Dienstfeatures enthalten. Aus diesem Grund ist es eine bewährte Methode, die neueste WMF-Version herunterzuladen und die Versionshinweise zu überprüfen, um festzustellen, ob die Version ein Update für das DSC-Dienstfeature enthält. Sie sollten auch den Abschnitt über die Versionshinweise überprüfen, die angeben, ob der Status des Entwurfs für ein Update oder Szenario als stabil oder experimentell aufgeführt wird.
+Damit ein agiler Veröffentlichungszyklus möglich ist, können einzelne Features als stabil erklärt werden. Dies gibt an, dass das Feature zur Nutzung in einer Produktionsumgebung bereit ist, auch wenn WMF als Vorschau zur Verfügung gestellt wird.
 Andere Features, die in der Vergangenheit durch WMF-Versionen aktualisiert wurden (weitere Informationen in den WMF-Versionshinweisen):
 
  - Windows PowerShell Windows PowerShell Integrated Scripting
@@ -77,7 +80,7 @@ Verwenden des Cmdlets **Install-Module** aus dem Modul **PowerShellGet**.
 Install-Module xPSDesiredStateConfiguration
 ```
 
-Das Modul **PowerShellGet** wird das Modul hier speichern: 
+Das Modul **PowerShellGet** wird das Modul hier speichern:
 
 `C:\Program Files\Windows PowerShell\Modules`
 
@@ -93,10 +96,7 @@ Haben Sie Zugang zu den Installationsdateien von Windows Server, die durch eine 
 
 Pullserverbereitstellungen werden auf physischen und virtuellen Servern unterstützt. Die Größenanforderungen für Pullserver decken sich mit den Anforderungen für Windows Server 2012 R2.
 
-CPU: 1.4 GHz-Prozessor mit 64 Bit  
-Arbeitsspeicher: 512 MB  
-Speicherplatz: 32 GB  
-Netzwerk: Gigabit-Ethernet-Adapter  
+CPU: 1,4-GHz-Prozessor (64 Bit). Arbeitsspeicher: 512 MB. Speicherplatz: 32 GB. Netzwerk: Gigabit-Ethernet-Adapter.
 
 Planungsaufgabe|
 ---|
@@ -107,15 +107,22 @@ Welche Servergröße werden Sie anfordern?|
 
 ### <a name="accounts"></a>Konten
 
-Es gibt keine Anforderungen an das Dienstkonto zur Bereitstellung einer Pullserverinstanz. Es gibt jedoch Szenarios, in denen die Website im Kontext des lokalen Benutzerkontos ausgeführt werden könnte. Zum Beispiel, wenn Zugang zur Speicherfreigabe für Websiteinhalte benötigt wird und der Windows Server oder das Gerät, das die Datenfreigabe hostet, nicht in eine Domäne eingebunden sind.
+Es gibt keine Anforderungen an das Dienstkonto zur Bereitstellung einer Pullserverinstanz.
+Es gibt jedoch Szenarios, in denen die Website im Kontext des lokalen Benutzerkontos ausgeführt werden könnte.
+Zum Beispiel, wenn Zugang zur Speicherfreigabe für Websiteinhalte benötigt wird und der Windows Server oder das Gerät, das die Datenfreigabe hostet, nicht in eine Domäne eingebunden sind.
 
 ### <a name="dns-records"></a>DNS-Datensätze
 
-Sie benötigen einen Servernamen für die Konfiguration von Clients, damit diese mit einer Pullserverumgebung arbeiten. In Testumgebungen wird in der Regel der Serverhostname verwendet oder die IP-Adresse für den Server, wenn die DNS-Namensauflösung nicht verfügbar ist. In Produktionsumgebungen oder in einer Laborumgebung, die eine Produktionsbereitstellung darstellen soll, wird empfohlen, einen DNS CNAME-Datensatz zu erstellen.
+Sie benötigen einen Servernamen für die Konfiguration von Clients, damit diese mit einer Pullserverumgebung arbeiten.
+In Testumgebungen wird in der Regel der Serverhostname verwendet oder die IP-Adresse für den Server, wenn die DNS-Namensauflösung nicht verfügbar ist.
+In Produktionsumgebungen oder in einer Laborumgebung, die eine Produktionsbereitstellung darstellen soll, wird empfohlen, einen DNS CNAME-Datensatz zu erstellen.
 
-Mit einem DNS-CNAME können Sie ein Alias erstellen, um auf Ihren Hosteintrag (A) zu verweisen. Die Absicht des zusätzlichen Namenseintrags ist eine verbesserte Flexibilität für den Fall, dass eine Änderung in der Zukunft erforderlich sein sollte. Ein CNAME kann bei der Isolierung der Clientkonfiguration behilflich sein, damit Änderungen der Serverumgebung keine entsprechenden Änderungen der Clientkonfiguration erfordern. Diese Änderungen umfassen das Ersetzen eines Pullservers oder Hinzufügen zusätzlicher Pullserver.
+Mit einem DNS-CNAME können Sie ein Alias erstellen, um auf Ihren Hosteintrag (A) zu verweisen.
+Die Absicht des zusätzlichen Namenseintrags ist eine verbesserte Flexibilität für den Fall, dass eine Änderung in der Zukunft erforderlich sein sollte.
+Ein CNAME kann bei der Isolierung der Clientkonfiguration behilflich sein, damit Änderungen der Serverumgebung keine entsprechenden Änderungen der Clientkonfiguration erfordern. Diese Änderungen umfassen das Ersetzen eines Pullservers oder Hinzufügen zusätzlicher Pullserver.
 
-Bedenken Sie die Lösungsarchitektur, wenn Sie einen Namen für den DNS-Datensatz auswählen. Bei der Nutzung des Lastenausgleichs muss das Zertifikat zur Sicherung von Datenverkehr über HTTPS über denselben Namen verfügen wie der DNS-Datensatz. 
+Bedenken Sie die Lösungsarchitektur, wenn Sie einen Namen für den DNS-Datensatz auswählen.
+Bei der Nutzung des Lastenausgleichs muss das Zertifikat zur Sicherung von Datenverkehr über HTTPS über denselben Namen verfügen wie der DNS-Datensatz.
 
 Szenario |Bewährte Methode
 :---|:---
@@ -134,7 +141,8 @@ Wenn nötig, welche Art von Lastenausgleichslösung werden Sie verwenden? (siehe
 
 ### <a name="public-key-infrastructure"></a>Public Key-Infrastruktur
 
-In den meisten Unternehmen muss Netzwerkdatenverkehr, insbesondere Datenverkehr, der vertrauliche Daten wie die Serverkonfiguration enthält, heutzutage bei der Übertragung bestätigt und/oder verschlüsselt werden. Es ist zwar möglich, einen Pullserver mithilfe von HTTP bereitzustellen, was Clientanforderungen im Klartext vereinfacht, aber die bewährte Methode ist ein mit HTTPS gesicherter Datenverkehr. Der Dienst kann mithilfe einer Reihe von Parametern in der DSC-Ressource **xPSDesiredStateConfiguration** zur Verwendung von HTTPS konfiguriert werden.
+In den meisten Unternehmen muss Netzwerkdatenverkehr, insbesondere Datenverkehr, der vertrauliche Daten wie die Serverkonfiguration enthält, heutzutage bei der Übertragung bestätigt und/oder verschlüsselt werden.
+Es ist zwar möglich, einen Pullserver mithilfe von HTTP bereitzustellen, was Clientanforderungen im Klartext vereinfacht, aber die bewährte Methode ist ein mit HTTPS gesicherter Datenverkehr. Der Dienst kann mithilfe einer Reihe von Parametern in der DSC-Ressource **xPSDesiredStateConfiguration** zur Verwendung von HTTPS konfiguriert werden.
 
 Die Zertifikatanforderungen zur Sicherung von HTTPS-Datenverkehr für Pullserver unterscheiden sich nicht von der Sicherung anderer HTTPS-Websites. Die **Webserver**-Vorlage in einem Windows Server Certificate Service erfüllt die erforderlichen Funktionen.
 
@@ -149,9 +157,11 @@ Haben Sie einen DNS-Namen für die Pullserverumgebung ausgewählt, die Sie für 
 
 ### <a name="choosing-an-architecture"></a>Auswählen einer Architektur
 
-Ein Pullserver kann mithilfe eines auf IIS gehosteten Webdiensts oder einer SMB-Datenfreigabe bereitgestellt werden. In den meisten Fällen bietet die Webdienstoption mehr Flexibilität. Es ist nicht ungewöhnlich, dass HTTPS-Datenverkehr die Netzwerkgrenzen durchläuft. Im Gegensatz dazu wird SMB-Datenverkehr häufig zwischen Netzwerken gefiltert oder blockiert. Der Webdienst bietet außerdem die Option zum Einschließen eines Conformance Server oder Web Reporting Manager (beide Themen werden in einer künftigen Version dieses Dokuments behandelt), die einen Mechanismus für Clients bereitstellen, mit dem der Status an einen Server weitergeleitet werden kann, um somit für zentrale Sichtbarkeit zu sorgen. SMB bietet eine Option für Umgebungen, bei der eine Richtlinie bestimmt, dass ein Webserver nicht verwendet werden sollte und für andere Umgebungsanforderungen, die eine Webserverrolle unerwünscht erscheinen lassen. Sie müssen in beiden Fällen die Anforderungen für die Signierung und Verschlüsselung des Datenverkehrs bewerten. HTTPS, SMB-Signaturen und IPSEC-Richtlinien sind Optionen, die in Betracht gezogen werden sollten.
+Ein Pullserver kann mithilfe eines auf IIS gehosteten Webdiensts oder einer SMB-Datenfreigabe bereitgestellt werden. In den meisten Fällen bietet die Webdienstoption mehr Flexibilität. Es ist nicht ungewöhnlich, dass HTTPS-Datenverkehr die Netzwerkgrenzen durchläuft. Im Gegensatz dazu wird SMB-Datenverkehr häufig zwischen Netzwerken gefiltert oder blockiert. Der Webdienst bietet außerdem die Option zum Einschließen eines Conformance Server oder Web Reporting Manager (beide Themen werden in einer künftigen Version dieses Dokuments behandelt), die einen Mechanismus für Clients bereitstellen, mit dem der Status an einen Server weitergeleitet werden kann, um somit für zentrale Sichtbarkeit zu sorgen.
+SMB bietet eine Option für Umgebungen, bei der eine Richtlinie bestimmt, dass ein Webserver nicht verwendet werden sollte und für andere Umgebungsanforderungen, die eine Webserverrolle unerwünscht erscheinen lassen.
+Sie müssen in beiden Fällen die Anforderungen für die Signierung und Verschlüsselung des Datenverkehrs bewerten. HTTPS, SMB-Signaturen und IPSEC-Richtlinien sind Optionen, die in Betracht gezogen werden sollten.
 
-#### <a name="load-balancing"></a>Lastenausgleich  
+#### <a name="load-balancing"></a>Lastenausgleich
 Clients, die mit dem Webdienst interagieren, fordern Informationen an, die in einer einzelnen Antwort zurückgegeben werden. Es sind keine sequenziellen Anforderungen erforderlich. Deshalb muss die Lastenausgleichsplattform nicht sicherstellen, dass Sitzungen zu jedem Zeitpunkt auf einem einzelnen Server beibehalten werden.
 
 Planungsaufgabe|
@@ -166,11 +176,11 @@ Erfordert die Lastenausgleichslösung, dass PKI vom Gerät verarbeitet wird, ode
 
 ### <a name="staging-configurations-and-modules-on-the-pull-server"></a>Bereitstellen von Konfigurationen und Modulen auf dem Pullserver
 
-Als Teil der Konfigurationsplanung müssen Sie darüber nachdenken, welche DSC-Module und Konfigurationen von Pullservern gehostet werden. Für die Konfigurationsplanung ist es wichtig, grundlegende Kenntnisse zum Vorbereiten und Bereitstellen von Inhalten auf einem Pullserver zu haben. 
+Als Teil der Konfigurationsplanung müssen Sie darüber nachdenken, welche DSC-Module und Konfigurationen von Pullservern gehostet werden. Für die Konfigurationsplanung ist es wichtig, grundlegende Kenntnisse zum Vorbereiten und Bereitstellen von Inhalten auf einem Pullserver zu haben.
 
-Dieser Abschnitt wird in Zukunft erweitert und in einem Betriebshandbuch für DSC-Pullserver enthalten sein.  Im Handbuch wird das tägliche Verfahren zum Verwalten von Modulen und Konfigurationen im Laufe der Zeit mithilfe der Automatisierung erläutert. 
+Dieser Abschnitt wird in Zukunft erweitert und in einem Betriebshandbuch für DSC-Pullserver enthalten sein.  Im Handbuch wird das tägliche Verfahren zum Verwalten von Modulen und Konfigurationen im Laufe der Zeit mithilfe der Automatisierung erläutert.
 
-#### <a name="dsc-modules"></a>DSC-Module  
+#### <a name="dsc-modules"></a>DSC-Module
 Clients, die eine Konfiguration anfordern, benötigen die erforderlichen DSC-Module. Die automatische Verteilung von DSC-Modulen an Clients bei Bedarf ist eine Funktion des Pullservers. Wenn Sie einen Pullserver zum ersten Mal vielleicht als Labor oder Machbarkeitsstudie bereitstellen, werden Sie wahrscheinlich von DSC-Modulen abhängig sein, die auf öffentlichen Repositorys verfügbar sind, wie z.B. dem PowerShell-Katalog oder den PowerShell.org GitHub-Repositorys für DSC-Module.
 
 Beachten Sie, dass auch bei vertrauenswürdigen Onlinequellen wie dem PowerShell-Katalog jedes Modul, das aus einem öffentlichen Repository heruntergeladen wird, vor seiner Verwendung in der Produktion von jemandem kontrolliert werden sollte, der Erfahrung mit PowerShell hat und über Kenntnisse der Umgebung verfügt, in der die Module verwendet werden. Das Ausführen dieser Aufgabe ist ein guter Zeitpunkt, das Modul auf eine beliebige zusätzliche Nutzlast zu überprüfen, die entfernt werden kann, wie z.B. Dokumentation und Beispielskripts. Dies verringert die Netzwerkbandbreite pro Client bei ihrer ersten Anforderung, wenn Module über das Netzwerk vom Server zum Client heruntergeladen werden.
@@ -194,7 +204,8 @@ Wird Ihr Team auch für das Verwalten der Automatisierungsplattform verantwortli
 
 #### <a name="dsc-configurations"></a>DSC-Konfigurationen
 
-Ein Pullserver dient zur Bereitstellung eines zentralisierten Mechanismus für die Verteilung von DSC-Konfigurationen auf Clientknoten. Die Konfigurationen werden als MOF-Dokumente auf dem Server gespeichert. Jedes Dokument wird mit einer eindeutigen GUID benannt werden. Wenn Clients für die Verbindung mit einem Pullserver konfiguriert sind, wird ihnen auch die GUID für die Konfiguration zugewiesen, die sie anfordern sollten. Dieses System des Verweisens auf Konfigurationen mit GUID garantiert globale Eindeutigkeit und ist flexibel, sodass eine Konfiguration mit Genauigkeit pro Knoten angewendet werden kann oder als eine Rollenkonfiguration, die viele Server umfasst, die identische Konfigurationen aufweisen sollten.
+Ein Pullserver dient zur Bereitstellung eines zentralisierten Mechanismus für die Verteilung von DSC-Konfigurationen auf Clientknoten. Die Konfigurationen werden als MOF-Dokumente auf dem Server gespeichert.
+Jedes Dokument wird mit einer eindeutigen GUID benannt werden. Wenn Clients für die Verbindung mit einem Pullserver konfiguriert sind, wird ihnen auch die GUID für die Konfiguration zugewiesen, die sie anfordern sollten. Dieses System des Verweisens auf Konfigurationen mit GUID garantiert globale Eindeutigkeit und ist flexibel, sodass eine Konfiguration mit Genauigkeit pro Knoten angewendet werden kann oder als eine Rollenkonfiguration, die viele Server umfasst, die identische Konfigurationen aufweisen sollten.
 
 #### <a name="guids"></a>GUIDs
 
@@ -289,26 +300,26 @@ Start-DscConfiguration -Wait -Force -Verbose -Path 'C:\PullServerConfig\'
 #      * Automatically load certificate from Certificate Authority
 #      * Locate Modules and Configuration data on remote SMB share
 #      * Manage state of default websites in IIS
-    
+
 param (
-        [Parameter(Mandatory=$true)] 
-        [ValidateNotNullorEmpty()] 
+        [Parameter(Mandatory=$true)]
+        [ValidateNotNullorEmpty()]
         [System.String] $ServerName,
         [System.String] $DomainName,
         [System.String] $CARootName,
         [System.String] $CAServerFQDN,
         [System.String] $CertSubject,
         [System.String] $SMBShare,
-        [Parameter(Mandatory=$true)] 
-        [ValidateNotNullorEmpty()] 
+        [Parameter(Mandatory=$true)]
+        [ValidateNotNullorEmpty()]
         [PsCredential] $Credential
     )
-    
+
 Configuration PullServer {
     Import-DscResource -ModuleName xPSDesiredStateConfiguration, xWebAdministration, xCertificate, xComputerManagement
     Node localhost
     {
-            
+
         # Configure the server to automatically corret configuration drift including reboots if needed.
         LocalConfigurationManager
         {
@@ -316,14 +327,14 @@ Configuration PullServer {
             RebootNodeifNeeded = $node.RebootNodeifNeeded
             CertificateId = $node.Thumbprint
         }
-    
+
         # Remove all GUI interfaces so the server has minimum running footprint.
         WindowsFeature ServerCore
         {
             Ensure = 'Absent'
             Name = 'User-Interfaces-Infra'
         }
-    
+
         # Set the server name and if needed, join a domain. If not joining a domain, remove the DomainName parameter.
         xComputer DomainJoin
         {
@@ -331,7 +342,7 @@ Configuration PullServer {
             DomainName = $Node.DomainName
             Credential = $Node.Credential
         }
-    
+
         # The next series of settings disable SSL and enable TLS, for environments where that is required by policy.
         Registry TLS1_2ServerEnabled
         {
@@ -373,14 +384,14 @@ Configuration PullServer {
             ValueData = 0
             ValueType = 'Dword'
         }
-    
+
         # Install the Windows Server DSC Service feature
         WindowsFeature DSCServiceFeature
         {
             Ensure = 'Present'
             Name = 'DSC-Service'
         }
-    
+
         # If using a certificate from a local Active Directory Enterprise Root Certificate Authority, complete a request and install the certificate
         xCertReq SSLCert
         {
@@ -390,7 +401,7 @@ Configuration PullServer {
             AutoRenew = $Node.AutoRenew
             Credential = $Node.Credential
         }
-    
+
         # Use the DSC resource to simplify deployment of the web service.  You might also consider modifying the default port, possibly leveraging port 443 in environments where that is enforced as a standard.
         xDSCWebService PSDSCPullServer
         {
@@ -405,10 +416,10 @@ Configuration PullServer {
             State = 'Started'
             DependsOn = '[WindowsFeature]DSCServiceFeature'
         }
-    
+
         # Validate web config file contains current DB settings
         xWebConfigKeyValue CorrectDBProvider
-        { 
+        {
             ConfigSection = 'AppSettings'
             Key = 'dbprovider'
             Value = 'System.Data.OleDb'
@@ -416,17 +427,17 @@ Configuration PullServer {
             DependsOn = '[xDSCWebService]PSDSCPullServer'
         }
         xWebConfigKeyValue CorrectDBConnectionStr
-        { 
+        {
             ConfigSection = 'AppSettings'
             Key = 'dbconnectionstr'
             Value = 'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Program Files\WindowsPowerShell\DscService\Devices.mdb;'
             WebsitePath = 'IIS:\sites\PSDSCPullServer'
             DependsOn = '[xDSCWebService]PSDSCPullServer'
         }
-    
+
         # Stop the default website
-        xWebsite StopDefaultSite  
-        { 
+        xWebsite StopDefaultSite
+        {
             Ensure = 'Present'
             Name = 'Default Web Site'
             State = 'Stopped'
@@ -456,8 +467,8 @@ $configData = @{
 PullServer -ConfigurationData $configData -OutputPath 'C:\PullServerConfig\'
 Set-DscLocalConfigurationManager -ComputerName localhost -Path 'C:\PullServerConfig\'
 Start-DscConfiguration -Wait -Force -Verbose -Path 'C:\PullServerConfig\'
-    
-# .\Script.ps1 -ServerName web1 -domainname 'test.pha' -carootname 'test-dc01-ca' -caserverfqdn 'dc01.test.pha' -certsubject 'CN=service.test.pha' -smbshare '\\sofs1.test.pha\share' 
+
+# .\Script.ps1 -ServerName web1 -domainname 'test.pha' -carootname 'test-dc01-ca' -caserverfqdn 'dc01.test.pha' -certsubject 'CN=service.test.pha' -smbshare '\\sofs1.test.pha\share'
 ```
 
 
@@ -468,7 +479,7 @@ Start-DscConfiguration -Wait -Force -Verbose -Path 'C:\PullServerConfig\'
 function Verify-DSCPullServer ($fqdn) {
     ([xml](invoke-webrequest "https://$($fqdn):8080/psdscpullserver.svc" | % Content)).service.workspace.collection.href
 }
-Verify-DSCPullServer 'INSERT SERVER FQDN' 
+Verify-DSCPullServer 'INSERT SERVER FQDN'
 
 Expected Result:
 Action
@@ -485,14 +496,14 @@ Configuration PullClient {
     $ID,
     $Server
     )
-        LocalConfigurationManager 
-                { 
+        LocalConfigurationManager
+                {
                     ConfigurationID = $ID;
                     RefreshMode = 'PULL';
                     DownloadManagerName = 'WebDownloadManager';
                     RebootNodeIfNeeded = $true;
                     RefreshFrequencyMins = 30;
-                    ConfigurationModeFrequencyMins = 15; 
+                    ConfigurationModeFrequencyMins = 15;
                     ConfigurationMode = 'ApplyAndAutoCorrect';
                     DownloadManagerCustomData = @{ServerUrl = "http://"+$Server+":8080/PSDSCPullServer.svc"; AllowUnsecureConnection = $true}
                 }
@@ -504,13 +515,13 @@ Set-DscLocalConfigurationManager -ComputerName 'Localhost' -Path 'C:\DSCConfig\'
 
 ## <a name="additional-references-snippets-and-examples"></a>Weitere Referenzen, Ausschnitte und Beispiele
 
-Dieses Beispiel zeigt die manuelle Initiierung einer Clientverbindung (WMF5 erforderlich) zum Testen. 
+Dieses Beispiel zeigt die manuelle Initiierung einer Clientverbindung (WMF5 erforderlich) zum Testen.
 
 ```powershell
 Update-DSCConfiguration –Wait -Verbose
 ```
 
-Das Cmdlet [Add-DnsServerResourceRecordName](http://bit.ly/1G1H31L) wird verwendet, um einen CNAME-Datensatz zu einer DNS-Zone hinzuzufügen. 
+Das Cmdlet [Add-DnsServerResourceRecordName](http://bit.ly/1G1H31L) wird verwendet, um einen CNAME-Datensatz zu einer DNS-Zone hinzuzufügen.
 
 Die PowerShell-Funktion [Create a Checksum and Publish DSC MOF to SMB Pull Server](http://bit.ly/1E46BhI) (Erstellen einer Prüfsumme und Veröffentlichen von DSC MOF auf einem SMB-Pullserver) generiert automatisch die erforderlichen Prüfsumme, und kopiert dann die MOF-Konfiguration und die Prüfsummendateien auf den SMB-Pullserver.
 
@@ -518,10 +529,7 @@ Die PowerShell-Funktion [Create a Checksum and Publish DSC MOF to SMB Pull Serve
 
 Eine Datendatei wird gespeichert, um während der Bereitstellung eines Pullservers Informationen zu erstellen, die den OData-Webdienst enthalten. Wie unten beschrieben, hängt der Dateityp vom Betriebssystem ab.
 
- - **Windows Server 2012**  
-Der Dateityp wird immer MDB sein.
- - **Windows Server 2012 R2**  
-Der Dateityp wird standardmäßig auf EDB festgelegt, es sei denn, eine MDB ist in der Konfiguration angegeben.
+ - **Windows Server 2012** Der Dateityp ist immer MDB.
+ - **Windows Server 2012 R2** Der Dateityp wird standardmäßig auf EDB festgelegt, es sei denn, in der Konfiguration wird eine MDB-Datei angegeben.
 
 Im [erweiterte Beispielskript](https://github.com/mgreenegit/Whitepapers/blob/Dev/PullServerCPIG.md#installation-and-configuration-scripts) für die Installation eines Pullservers finden Sie außerdem ein Beispiel für die automatische Steuerung der web.config-Dateieinstellungen, um mögliche Fehler durch den Dateityp zu verhindern.
-

@@ -133,7 +133,7 @@ Durch die Installation des Moduls [`WindowsPSModulePath`][windowspsmodulepath] k
 Installieren Sie zunächst das `WindowsPSModulePath`-Modul aus dem PowerShell-Katalog:
 
 ```powershell
-# Add `-Scope CurrentUser` if you're installing as non-admin 
+# Add `-Scope CurrentUser` if you're installing as non-admin
 Install-Module WindowsPSModulePath -Force
 ```
 
@@ -160,7 +160,7 @@ Dazu müssen Sie PowerShell nur als Subsystem mit einem OpenSSH-basierten SSH-Se
 
 Weitere Informationen zum Konfigurieren und Verwenden von SSH-basiertem Remoting finden Sie unter [PowerShell Remoting Over SSH (PowerShell-Remoting über SSH)][ssh-remoting].
 
-## <a name="default-encoding-is-utf-8-without-a-bom"></a>Standardcodierung ist UTF-8 ohne eine BOM
+## <a name="default-encoding-is-utf-8-without-a-bom-except-for-new-modulemanifest"></a>Die Standardcodierung ist UTF-8 ohne BOM mit Ausnahme von New-ModuleManifest.
 
 Früher haben Windows PowerShell-Cmdlets wie `Get-Content` und `Set-Content` unterschiedliche Codierungen wie ASCII und UTF-16 verwendet.
 Dadurch kam es beim Kombinieren von Cmdlets ohne Angabe einer Codierung immer wieder zu Problemen.
@@ -179,7 +179,6 @@ Die folgenden Cmdlets sind von dieser Änderung betroffen:
 - Format-Hex
 - Get-Content
 - Import-Csv
-- New-ModuleManifest
 - Out-File
 - Select-String
 - Send-MailMessage
@@ -190,6 +189,8 @@ Diese Cmdlets wurden auch aktualisiert, sodass der Parameter `-Encoding` univers
 Der Standardwert von `$OutputEncoding` wurde auch in UTF-8 geändert.
 
 Es hat sich bewährt, Codierungen in Skripts mithilfe des Parameters `-Encoding` explizit festzulegen, um plattformübergreifend deterministisches Verhalten hervorzurufen.
+
+Das Cmdlet `New-ModuleManifest` verfügt nicht über den Parameter **Encoding**. Die Codierung der mit dem Cmdlet `New-ModuleManifest` erstellten Modulmanifestdatei (PSD1) hängt von der Umgebung ab: In einer PowerShell Core-Umgebung unter Linux lautet die Codierung UTF-8 (ohne BOM). Andernfalls wird die Codierung UTF-16 (mit BOM) verwendet. (#3940)
 
 ## <a name="support-backgrounding-of-pipelines-with-ampersand--3360"></a>Unterstützung eines kaufmännischen Und-Zeichens (`&`) am Ende einer Pipeline (#3360)
 
@@ -225,7 +226,7 @@ Weitere Informationen zu PowerShell-Aufträgen finden Sie unter [about_Jobs](htt
   - `GitCommitId`: Dies ist die Git-Commit-ID des Git-Branchs oder -Tags, in dem PowerShell erstellt wurde.
     Bei veröffentlichten Builds ist sie wahrscheinlich mit `PSVersion` identisch.
   - `OS`: Dies ist eine von `[System.Runtime.InteropServices.RuntimeInformation]::OSDescription` zurückgegebene Betriebssystem-Versionszeichenfolge.
-  - `Platform`: Dieser Wert wird von `[System.Environment]::OSVersion.Platform` zurückgegeben. Unter Windows ist er auf `Win32NT`, unter macOS auf `MacOSX` und unter Linux auf `Unix` festgelegt.
+  - `Platform`: Dieser Wert wird von `[System.Environment]::OSVersion.Platform` zurückgegeben. Unter Windows ist er auf `Win32NT`, unter macOS auf `Unix` und unter Linux auf `Unix` festgelegt.
 - Die `BuildVersion`-Eigenschaft wurde aus `$PSVersionTable` entfernt.
   Diese Eigenschaft war stark an die Windows-Buildversion gebunden.
   Stattdessen wird empfohlen, die genaue Version von PowerShell Core mit `GitCommitId` abzurufen. (#3877) (Vielen Dank an @iSazonov)

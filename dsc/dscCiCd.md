@@ -1,19 +1,20 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
-title: "Erstellen einer Pipeline für Continuous Integration und Continuous Deplyoment mit DSC"
-ms.openlocfilehash: 5f7583fb93b69bbe4103b34b79b3a859c9cee8a9
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+title: Erstellen einer Pipeline für Continuous Integration und Continuous Deplyoment mit DSC
+ms.openlocfilehash: a3803a8e6fe6ff1b93758a73ccd54754d7bb2a84
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>Erstellen einer Pipeline für Continuous Integration und Continuous Deplyoment mit DSC
 
 Dieses Beispiel zeigt, wie Sie unter Verwendung von PowerShell, DSC, Pester und Visual Studio Team Foundation Server (TFS) eine CI/CD-Pipeline (Continuous Integration/Continuous Deployment) erstellen.
 
-Nachdem die Pipeline erstellt und konfiguriert wurde, können Sie sie für das vollständige Bereitstellen, Konfigurieren und Testen eines DNS-Servers sowie der zugeordneten Hosteinträge verwenden. Dieser Prozess simuliert den ersten Teil einer Pipeline, die in einer Entwicklungsumgebung verwendet werden würde.
+Nachdem die Pipeline erstellt und konfiguriert wurde, können Sie sie für das vollständige Bereitstellen, Konfigurieren und Testen eines DNS-Servers sowie der zugeordneten Hosteinträge verwenden.
+Dieser Prozess simuliert den ersten Teil einer Pipeline, die in einer Entwicklungsumgebung verwendet werden würde.
 
 Eine automatisierte CI/CD-Pipeline unterstützt Sie bei einer schnelleren und zuverlässigeren Aktualisierung Ihrer Software. Außerdem wird sichergestellt, dass der gesamte Code getestet wird und dass immer ein aktueller Build Ihres Codes verfügbar ist.
 
@@ -36,7 +37,7 @@ Dies ist der Computer, auf dem Sie die gesamte Arbeitseinrichtung vornehmen und 
 
 Der Clientcomputer muss ein Windows-Computer sein, auf dem folgende Komponenten installiert sind:
 - [Git](https://git-scm.com/)
-- Ein lokales Git-Repository, geklont aus https://github.com/PowerShell/Demo_CI
+- Ein aus https://github.com/PowerShell/Demo_CI geklontes lokales Git-Repository
 - Ein Text-Editor, z.B. [Visual Studio Code](https://code.visualstudio.com/)
 
 ### <a name="tfssrv1"></a>TFSSrv1
@@ -60,7 +61,7 @@ Auf dem Computer muss [Windows Server 2016](https://www.microsoft.com/en-us/eva
 ### <a name="testagent2"></a>TestAgent2
 
 Dies ist der Computer, der die in diesem Beispiel konfigurierte Website hostet.
-Auf dem Computer muss [Windows Server 2016](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016) ausgeführt werden. 
+Auf dem Computer muss [Windows Server 2016](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016) ausgeführt werden.
 
 ## <a name="add-the-code-to-tfs"></a>Hinzufügen des Codes zu TFS
 
@@ -156,7 +157,8 @@ Hiermit werden alle Knoten gesucht, die in den vom `DevEnv.ps1`-Skript erstellte
 
 Die Verwendung von Konfigurationsdaten zum Definieren von Knoten ist im Rahmen der Continuous Integration wichtig, weil sich Knoteninformationen je nach Umgebung wahrscheinlich ändern. Mithilfe von Konfigurationsdaten können Sie problemlos Änderungen an Knoteninformationen durchführen, ohne den Konfigurationscode ändern zu müssen.
 
-Im ersten Ressourcenblock ruft die Konfiguration [WindowsFeature](windowsFeatureResource.md) auf, um sicherzustellen, dass das DNS-Feature aktiviert ist. Die folgenden Ressourcenblöcke rufen Ressourcen aus dem [xDnsServer](https://github.com/PowerShell/xDnsServer)-Modul auf, um die primäre Zone und DNS-Einträge zu konfigurieren.
+Im ersten Ressourcenblock ruft die Konfiguration [WindowsFeature](windowsFeatureResource.md) auf, um sicherzustellen, dass das DNS-Feature aktiviert ist.
+Die folgenden Ressourcenblöcke rufen Ressourcen aus dem [xDnsServer](https://github.com/PowerShell/xDnsServer)-Modul auf, um die primäre Zone und DNS-Einträge zu konfigurieren.
 
 Beachten Sie, dass die zwei `xDnsRecord`-Blöcke von `foreach`-Schleifen umschlossen sind, mit denen die Arrays in den Konfigurationsdaten durchlaufen werden.
 Auch hier werden die Konfigurationsdaten durch das `DevEnv.ps1`-Skript erstellt, das wir nachfolgend betrachten.
@@ -199,7 +201,8 @@ Im vorliegenden Fall wird nur der Parameter `RawEnvData` verwendet.
 ### <a name="the-psake-build-script"></a>Das psake-Buildskript
 
 Das in `Build.ps1` (ausgehend vom Stamm des Demo_CI-Repositorys, `./InfraDNS/Build.ps1`) definierte [psake](https://github.com/psake/psake)-Buildskript definiert Tasks, die Bestandteil des Builds sind.
-Darüber hinaus wird definiert, von welchen weiteren Tasks jeder Task abhängt. Beim Aufruf des psake-Skripts wird sichergestellt, dass der angegebene Task (oder der Task `Default`, sofern kein Task angegeben wird) ausgeführt wird, ebenso wie alle abhängigen Komponenten (dieser Vorgang ist rekursiv, d.h. abhängige Komponenten von abhängigen Komponenten werden ausgeführt usw.).
+Darüber hinaus wird definiert, von welchen weiteren Tasks jeder Task abhängt.
+Beim Aufruf des psake-Skripts wird sichergestellt, dass der angegebene Task (oder der Task `Default`, sofern kein Task angegeben wird) ausgeführt wird, ebenso wie alle abhängigen Komponenten (dieser Vorgang ist rekursiv, d.h. abhängige Komponenten von abhängigen Komponenten werden ausgeführt usw.).
 
 In diesem Beispiel ist der `Default`-Task so definiert:
 
@@ -422,10 +425,3 @@ Sie können die Ergebnisse der Bereitstellung überprüfen, indem Sie einen Brow
 In diesem Beispiel wird der DNS-Server `TestAgent1` konfiguriert, damit die URL `www.contoso.com` in `TestAgent2` aufgelöst wird. Es erfolgt jedoch keine tatsächliche Bereitstellung einer Website.
 Das Skeleton hierfür wird im Repository unterhalb des Ordners `WebApp` bereitgestellt.
 Sie können die bereitgestellten Stubs zum Erstellen von psake-Skripts, Pester-Tests und DSC-Konfigurationen verwenden, um Ihre eigene Website bereitzustellen.
-
-
-
-
-
-
-

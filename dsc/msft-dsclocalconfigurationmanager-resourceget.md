@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: ResourceGet-Methode der MSFT_DSCLocalConfigurationManager-Klasse
-ms.openlocfilehash: 2c055b3fab468f85c9e2f91cf1eaf1a4353b4660
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 3fd7ae54eb3ae782156dc4619ee0b6905dfb1212
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="resourceget-method-of-the-msftdsclocalconfigurationmanager-class"></a>ResourceGet-Methode der MSFT_DSCLocalConfigurationManager-Klasse
 
@@ -28,17 +28,13 @@ uint32 ResourceGet(
 <a name="parameters"></a>Parameter
 ----------
 
-*ResourceType* \[in\]  
-Der Name der aufzurufenden Ressource.
+*ResourceType* \[in\] Der Name der aufzurufenden Ressource.
 
-*ModuleName* \[in\]  
-Der Name des Moduls, das die aufzurufende Ressource enthält.
+*ModuleName* \[in\] Der Name des Moduls, das die aufzurufende Ressource enthält.
 
-*resourceProperty* \[in\]  
-Gibt den Namen der Ressourceneigenschaft und deren Wert in einer Hashtabelle als Schlüssel und Wert an. Verwenden Sie das Cmdlet [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) zum Ermitteln von Ressourceneigenschaften und deren Typen.
+*resourceProperty* \[in\] Gibt den Namen der Ressourceneigenschaft und deren Wert in einer Hashtabelle als Schlüssel und Wert an. Verwenden Sie das Cmdlet [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) zum Ermitteln von Ressourceneigenschaften und deren Typen.
 
-*configurations* \[out\]  
-Enthält bei Rückgabe eine eingebettete Instanz der Konfigurationen.
+*configurations* \[out\] Enthält bei Rückgabe eine eingebettete Instanz der Konfigurationen.
 
 ## <a name="return-value"></a>Rückgabewert
 ------------
@@ -60,11 +56,3 @@ Dies ist eine statische Methode.
 
 
 [**MSFT_DSCLocalConfigurationManager-Klasse**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-
