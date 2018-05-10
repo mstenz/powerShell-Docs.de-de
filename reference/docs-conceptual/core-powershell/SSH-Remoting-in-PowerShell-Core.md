@@ -242,7 +242,7 @@ GitCommitId                    v6.0.0-alpha.17
 1. Der Befehl „sudo“ funktioniert bei Remotesitzungen auf Linux-Computern nicht.
 
 [PowerShell Core für Windows]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi
-[Win32 OpenSSH]: https://github.com/PowerShell/Win32-OpenSSH
+[Win32 OpenSSH]: https://github.com/PowerShell/Win32-OpenSSH/releases
 [Installationsanweisungen]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
 [PowerShell für Linux]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#ubuntu-1404
 [Ubuntu SSH]: https://help.ubuntu.com/lts/serverguide/openssh-server.html
