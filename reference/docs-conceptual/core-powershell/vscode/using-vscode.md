@@ -25,7 +25,7 @@ Herkömmliche Windows PowerShell-Workloads finden Sie unter [Installieren von Wi
 > [!IMPORTANT]
 > Unter macOS müssen Sie OpenSSL für die PowerShell-Erweiterung installieren, damit diese einwandfrei funktionieren kann.
 > Dies funktioniert am besten, wenn Sie [Homebrew](http://brew.sh/) installieren und anschließend `brew install openssl` ausführen.
-> Die PowerShell-Erweiterung sollte nun einwandfrei geladen werden können.
+> Visual Studio Code kann jetzt die Erweiterung PowerShell erfolgreich laden.
 
 - **Windows:** Führen Sie die Installationsanweisungen auf der Seite [Running VS Code on Windows (Ausführen von VS Code unter Windows)](https://code.visualstudio.com/docs/setup/windows) aus.
 
@@ -39,7 +39,7 @@ Herkömmliche Windows PowerShell-Workloads finden Sie unter [Installieren von Wi
 - Starten Sie **Quick Open**, indem Sie **STRG+P** (**cmd+P** unter Mac) drücken.
 - Geben Sie in Quick Open `ext install powershell` ein, und drücken Sie die **EINGABETASTE**.
 - Dann öffnet sich die Ansicht **Erweiterungen** in der Seitenleiste. Wählen Sie die PowerShell-Erweiterung für Microsoft aus.
-  Anschließend wird eine Ansicht angezeigt, die der Folgenden ähnlich ist:
+  Es sollte etwa Folgendes angezeigt werden:
 
   ![VSCode](../../images/vscode.png)
 
