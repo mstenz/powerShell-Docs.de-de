@@ -3,11 +3,11 @@ ms.date: 10/31/2017
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Schützen der MOF-Datei
-ms.openlocfilehash: 80ef37ef1bdcb0a8b0ad343b4eab99f1bc66e116
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 00a33a5d628921bcd04aa904a1aa8ee4345af48f
+ms.sourcegitcommit: 4a841ebda3339ae2477e0f5f5be8c01740221232
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="securing-the-mof-file"></a>Schützen der MOF-Datei
 
@@ -137,7 +137,7 @@ Im folgenden Beispiel
  1. wird ein Zertifikat auf dem **Erstellungsknoten** erstellt.
  2. wird das Zertifikat, einschließlich des privaten Schlüssels, auf den **Erstellungsknoten** exportiert.
  3. wird der private Schlüssel vom **Erstellungsknoten** entfernt, aber das Zertifikat für den öffentlichen Schlüssel im **my**-Speicher beibehalten.
- 4. wird das Zertifikat für den privaten Schlüssel in den Stammzertifikatspeicher auf dem **Zielknoten** importiert.
+ 4. wird das Zertifikat für den privaten Schlüssel in den Zertifikatspeicher „My(Personal)“ auf dem **Zielknoten** importiert.
    - muss es dem Stammspeicher hinzugefügt werden, damit ihm der **Zielknoten** vertraut.
 
 #### <a name="on-the-authoring-node-create-and-export-the-certificate"></a>Auf dem Erstellungsknoten: Erstellen und Exportieren des Zertifikats
