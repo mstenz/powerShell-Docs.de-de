@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Trennen von Konfiguration und Umgebungsdaten
-ms.openlocfilehash: c89e26105611eae59a926be1432079913c40671f
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 3308b83555b3a917e2aa993efcbfa0b946e44048
+ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="separating-configuration-and-environment-data"></a>Trennen von Konfiguration und Umgebungsdaten
 
