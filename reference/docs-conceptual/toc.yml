@@ -20,7 +20,7 @@
           items:
             - name: Installieren von Windows PowerShell
               href: setup/installing-windows-powershell.md
-            - name: Installieren des Windows PowerShell 2.0-Moduls
+            - name: Installieren der Windows PowerShell 2.0-Engine
               href: setup/installing-the-windows-powershell-2.0-engine.md
             - name: Windows PowerShell-Systemanforderungen
               href: setup/windows-powershell-system-requirements.md
@@ -29,7 +29,7 @@
       items:
         - name: Starten von Windows PowerShell
           href: setup/starting-windows-powershell.md
-        - name: Starten des Windows PowerShell 2.0-Moduls
+        - name: Starten der Windows PowerShell 2.0-Engine
           href: setup/starting-the-windows-powershell-2.0-engine.md
     - name: Konzepte
       href: ''
@@ -154,14 +154,20 @@
     - name: Neues
       href: ''
       items:
-        - name: Neues in PowerShell
-          href: whats-new/what-s-new-with-powershell.md
-        - name: Neuigkeiten in Windows PowerShell 5.0
-          href: whats-new/what-s-new-in-windows-powershell-50.md
-        - name: Neuigkeiten in der PowerShell 5.0 ISE
-          href: whats-new/what-s-new-in-the-powershell-50-ise.md
         - name: Neuigkeiten in PowerShell Core 6.0
           href: whats-new/what-s-new-in-powershell-core-60.md
+          items:
+            - name: Breaking Changes in PowerShell Core 6.0
+              href: whats-new/breaking-changes-ps6.md
+            - name: Bekannte Probleme in PowerShell Core 6.0
+              href: whats-new/known-issues-ps6.md
+        - name: Neuigkeiten in PowerShell 5.0
+          href: whats-new/what-s-new-with-powershell.md
+          items:
+            - name: Neuigkeiten in Windows PowerShell 5.0
+              href: whats-new/what-s-new-in-windows-powershell-50.md
+            - name: Neuigkeiten in der PowerShell 5.0 ISE
+              href: whats-new/what-s-new-in-the-powershell-50-ise.md
     - name: Supportlebenszyklus von PowerShell Core
       href: PowerShell-Core-Support.md
     - name: Weitere Informationen

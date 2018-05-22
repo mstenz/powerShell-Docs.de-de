@@ -1,23 +1,21 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 85e9206ffef76fb4bd7714d847888e6e5bbcc4ec
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 9aa7e92632c671751020687ddbfc374eeda7148b
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
-# <a name="new-language-features-in-powershell-50"></a><span data-ttu-id="e0d87-102">Neue Sprachfeatures in PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="e0d87-102">New language features in PowerShell 5.0</span></span>
+# <a name="new-language-features-in-powershell-50"></a><span data-ttu-id="c1f4a-102">Neue Sprachfeatures in PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="c1f4a-102">New language features in PowerShell 5.0</span></span>
 
-<span data-ttu-id="e0d87-103">PowerShell 5.0 führt die folgenden neuen Sprachelemente in Windows PowerShell ein:</span><span class="sxs-lookup"><span data-stu-id="e0d87-103">PowerShell 5.0 introduces the following new language elements in Windows PowerShell:</span></span>
+<span data-ttu-id="c1f4a-103">PowerShell 5.0 führt die folgenden neuen Sprachelemente in Windows PowerShell ein:</span><span class="sxs-lookup"><span data-stu-id="c1f4a-103">PowerShell 5.0 introduces the following new language elements in Windows PowerShell:</span></span>
 
-## <a name="class-keyword"></a><span data-ttu-id="e0d87-104">Schlüsselwort „Class“</span><span class="sxs-lookup"><span data-stu-id="e0d87-104">Class keyword</span></span>
+## <a name="class-keyword"></a><span data-ttu-id="c1f4a-104">Schlüsselwort „Class“</span><span class="sxs-lookup"><span data-stu-id="c1f4a-104">Class keyword</span></span>
 
-<span data-ttu-id="e0d87-105">Das Schlüsselwort **class** definiert eine neue Klasse.</span><span class="sxs-lookup"><span data-stu-id="e0d87-105">The **class** keyword defines a new class.</span></span> <span data-ttu-id="e0d87-106">Es handelt sich um einen echten .NET Framework-Typ.</span><span class="sxs-lookup"><span data-stu-id="e0d87-106">This is a true .NET Framework type.</span></span>
-<span data-ttu-id="e0d87-107">Klassenmember sind öffentlich, jedoch nur innerhalb des Geltungsbereichs des Moduls.</span><span class="sxs-lookup"><span data-stu-id="e0d87-107">Class members are public, but only public within the module scope.</span></span>
-<span data-ttu-id="e0d87-108">Sie können auf den Typnamen nicht mittels einer Zeichenfolge verweisen (`New-Object` funktioniert z. B. nicht). In dieser Version können Sie zudem keinen Literaltyp (z. B. `[MyClass]`) außerhalb der Skript-/Moduldatei verwenden, in der die Klasse definiert ist.</span><span class="sxs-lookup"><span data-stu-id="e0d87-108">You can't refer to the type name as a string (for example, `New-Object` doesn't work), and in this release, you can't use a type literal (for example, `[MyClass]`) outside the script/module file in which the class is defined.</span></span>
+<span data-ttu-id="c1f4a-105">Das Schlüsselwort **class** definiert eine neue Klasse.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-105">The **class** keyword defines a new class.</span></span> <span data-ttu-id="c1f4a-106">Es handelt sich um einen echten .NET Framework-Typ.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-106">This is a true .NET Framework type.</span></span>
+<span data-ttu-id="c1f4a-107">Klassenmember sind öffentlich, jedoch nur innerhalb des Geltungsbereichs des Moduls.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-107">Class members are public, but only public within the module scope.</span></span>
+<span data-ttu-id="c1f4a-108">Sie können auf den Typnamen nicht mittels einer Zeichenfolge verweisen (`New-Object` funktioniert z. B. nicht). In dieser Version können Sie zudem keinen Literaltyp (z. B. `[MyClass]`) außerhalb der Skript-/Moduldatei verwenden, in der die Klasse definiert ist.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-108">You can't refer to the type name as a string (for example, `New-Object` doesn't work), and in this release, you can't use a type literal (for example, `[MyClass]`) outside the script/module file in which the class is defined.</span></span>
 
 ```powershell
 class MyClass
@@ -26,11 +24,11 @@ class MyClass
 }
 ```
 
-## <a name="enum-keyword-and-enumerations"></a><span data-ttu-id="e0d87-109">Schlüsselwort „enum“ und Enumerationen</span><span class="sxs-lookup"><span data-stu-id="e0d87-109">Enum keyword and enumerations</span></span>
+## <a name="enum-keyword-and-enumerations"></a><span data-ttu-id="c1f4a-109">Schlüsselwort „enum“ und Enumerationen</span><span class="sxs-lookup"><span data-stu-id="c1f4a-109">Enum keyword and enumerations</span></span>
 
-<span data-ttu-id="e0d87-110">Das Schlüsselwort **enum** wurde hinzugefügt, welches das Zeilenumbruchzeichen als Trennzeichen verwendet.</span><span class="sxs-lookup"><span data-stu-id="e0d87-110">Support for the **enum** keyword has been added, which uses newline as the delimiter.</span></span>
-<span data-ttu-id="e0d87-111">Aktuelle Einschränkungen: Sie können einen Enumerator nicht hinsichtlich sich selbst definieren, aber Sie können, wie im folgenden Beispiel gezeigt, eine Enumeration hinsichtlich einer anderen Enumeration initialisieren.</span><span class="sxs-lookup"><span data-stu-id="e0d87-111">Current limitations: you cannot define an enumerator in terms of itself, but you can initialize an enum in terms of another enum, as shown in the following example.</span></span>
-<span data-ttu-id="e0d87-112">Darüber hinaus kann der Basistyp derzeit nicht angegeben werden. Er ist stets [int].</span><span class="sxs-lookup"><span data-stu-id="e0d87-112">Also, the base type cannot currently be specified; it is always [int].</span></span>
+<span data-ttu-id="c1f4a-110">Das Schlüsselwort **enum** wurde hinzugefügt, welches das Zeilenumbruchzeichen als Trennzeichen verwendet.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-110">Support for the **enum** keyword has been added, which uses newline as the delimiter.</span></span>
+<span data-ttu-id="c1f4a-111">Aktuelle Einschränkungen: Sie können einen Enumerator nicht hinsichtlich sich selbst definieren, aber Sie können, wie im folgenden Beispiel gezeigt, eine Enumeration hinsichtlich einer anderen Enumeration initialisieren.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-111">Current limitations: you cannot define an enumerator in terms of itself, but you can initialize an enum in terms of another enum, as shown in the following example.</span></span>
+<span data-ttu-id="c1f4a-112">Darüber hinaus kann der Basistyp derzeit nicht angegeben werden. Er ist stets [int].</span><span class="sxs-lookup"><span data-stu-id="c1f4a-112">Also, the base type cannot currently be specified; it is always [int].</span></span>
 
 ```powershell
 enum Color2
@@ -39,7 +37,7 @@ enum Color2
 }
 ```
 
-<span data-ttu-id="e0d87-113">Ein Enumeratorwert muss eine Konstante zur Analysezeit sein. Sie können ihn nicht auf das Ergebnis eines aufgerufenen Befehls festlegen.</span><span class="sxs-lookup"><span data-stu-id="e0d87-113">An enumerator value must be a parse time constant; you cannot set it to the result of an invoked command.</span></span>
+<span data-ttu-id="c1f4a-113">Ein Enumeratorwert muss eine Konstante zur Analysezeit sein. Sie können ihn nicht auf das Ergebnis eines aufgerufenen Befehls festlegen.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-113">An enumerator value must be a parse time constant; you cannot set it to the result of an invoked command.</span></span>
 
 ```powershell
 enum MyEnum
@@ -51,78 +49,78 @@ enum MyEnum
 }
 ```
 
-<span data-ttu-id="e0d87-114">Enumerationen unterstützen arithmetische Operationen, wie im folgenden Beispiel dargestellt.</span><span class="sxs-lookup"><span data-stu-id="e0d87-114">Enums support arithmetic operations, as shown in the following example.</span></span>
+<span data-ttu-id="c1f4a-114">Enumerationen unterstützen arithmetische Operationen, wie im folgenden Beispiel dargestellt.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-114">Enums support arithmetic operations, as shown in the following example.</span></span>
 
 ```powershell
 enum SomeEnum { Max = 42 }
 enum OtherEnum { Max = [SomeEnum]::Max + 1 }
 ```
 
-## <a name="import-dscresource"></a><span data-ttu-id="e0d87-115">Import-DscResource</span><span class="sxs-lookup"><span data-stu-id="e0d87-115">Import-DscResource</span></span>
+## <a name="import-dscresource"></a><span data-ttu-id="c1f4a-115">Import-DscResource</span><span class="sxs-lookup"><span data-stu-id="c1f4a-115">Import-DscResource</span></span>
 
-<span data-ttu-id="e0d87-116">**Import-DscResource** ist jetzt ein tatsächlich dynamisches Schlüsselwort.</span><span class="sxs-lookup"><span data-stu-id="e0d87-116">**Import-DscResource** is now a true dynamic keyword.</span></span>
-<span data-ttu-id="e0d87-117">PowerShell analysiert das Stammmodul des angegebenen Moduls und sucht Klassen, die das **DscResource**-Attribut enthalten.</span><span class="sxs-lookup"><span data-stu-id="e0d87-117">PowerShell parses the specified module’s root module, searching for classes that contain the **DscResource** attribute.</span></span>
+<span data-ttu-id="c1f4a-116">**Import-DscResource** ist jetzt ein tatsächlich dynamisches Schlüsselwort.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-116">**Import-DscResource** is now a true dynamic keyword.</span></span>
+<span data-ttu-id="c1f4a-117">PowerShell analysiert das Stammmodul des angegebenen Moduls und sucht Klassen, die das **DscResource**-Attribut enthalten.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-117">PowerShell parses the specified module’s root module, searching for classes that contain the **DscResource** attribute.</span></span>
 
-## <a name="implementingassembly"></a><span data-ttu-id="e0d87-118">ImplementingAssembly</span><span class="sxs-lookup"><span data-stu-id="e0d87-118">ImplementingAssembly</span></span>
+## <a name="implementingassembly"></a><span data-ttu-id="c1f4a-118">ImplementingAssembly</span><span class="sxs-lookup"><span data-stu-id="c1f4a-118">ImplementingAssembly</span></span>
 
-<span data-ttu-id="e0d87-119">Das neue Feld **ImplementingAssembly** wurde „ModuleInfo“ hinzugefügt.</span><span class="sxs-lookup"><span data-stu-id="e0d87-119">A new field, **ImplementingAssembly**, has been added to ModuleInfo.</span></span> <span data-ttu-id="e0d87-120">Es ist auf die dynamische Assembly, die für ein Skriptmodul erstellt wird, wenn das Skript Klassen definiert, oder die geladene Assembly für binäre Module festgelegt.</span><span class="sxs-lookup"><span data-stu-id="e0d87-120">It is set to the dynamic assembly created for a script module if the script defines classes, or the loaded assembly for binary modules.</span></span> <span data-ttu-id="e0d87-121">Falls „ModuleType = Manifest“, wird es nicht festgelegt.</span><span class="sxs-lookup"><span data-stu-id="e0d87-121">It is not set when ModuleType = Manifest.</span></span>
+<span data-ttu-id="c1f4a-119">Das neue Feld **ImplementingAssembly** wurde „ModuleInfo“ hinzugefügt.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-119">A new field, **ImplementingAssembly**, has been added to ModuleInfo.</span></span> <span data-ttu-id="c1f4a-120">Es ist auf die dynamische Assembly, die für ein Skriptmodul erstellt wird, wenn das Skript Klassen definiert, oder die geladene Assembly für binäre Module festgelegt.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-120">It is set to the dynamic assembly created for a script module if the script defines classes, or the loaded assembly for binary modules.</span></span> <span data-ttu-id="c1f4a-121">Falls „ModuleType = Manifest“, wird es nicht festgelegt.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-121">It is not set when ModuleType = Manifest.</span></span>
 
-<span data-ttu-id="e0d87-122">Über eine Reflektion auf das Feld **ImplementingAssembly** werden Ressourcen in einem Modul ermittelt.</span><span class="sxs-lookup"><span data-stu-id="e0d87-122">Reflection on the **ImplementingAssembly** field discovers resources in a module.</span></span> <span data-ttu-id="e0d87-123">Dies bedeutet, dass Sie Ressourcen ermitteln können, die in PowerShell oder anderen verwalteten Sprachen geschrieben wurden.</span><span class="sxs-lookup"><span data-stu-id="e0d87-123">This means you can discover resources written in either PowerShell or other managed languages.</span></span>
+<span data-ttu-id="c1f4a-122">Über eine Reflektion auf das Feld **ImplementingAssembly** werden Ressourcen in einem Modul ermittelt.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-122">Reflection on the **ImplementingAssembly** field discovers resources in a module.</span></span> <span data-ttu-id="c1f4a-123">Dies bedeutet, dass Sie Ressourcen ermitteln können, die in PowerShell oder anderen verwalteten Sprachen geschrieben wurden.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-123">This means you can discover resources written in either PowerShell or other managed languages.</span></span>
 
-<span data-ttu-id="e0d87-124">Felder mit Initialisierern:</span><span class="sxs-lookup"><span data-stu-id="e0d87-124">Fields with initializers:</span></span>
+<span data-ttu-id="c1f4a-124">Felder mit Initialisierern:</span><span class="sxs-lookup"><span data-stu-id="c1f4a-124">Fields with initializers:</span></span>
 
 ```powershell
 [int] $i = 5
 ```
 
-<span data-ttu-id="e0d87-125">„Static“ wird unterstützt und funktioniert wie Typeinschränkungen wie ein Attribut, weshalb die Angabe in beliebiger Reihenfolge erfolgen kann.</span><span class="sxs-lookup"><span data-stu-id="e0d87-125">Static is supported; it works like an attribute, as do the type constraints, so it can be specified in any order.</span></span>
+<span data-ttu-id="c1f4a-125">„Static“ wird unterstützt und funktioniert wie Typeinschränkungen wie ein Attribut, weshalb die Angabe in beliebiger Reihenfolge erfolgen kann.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-125">Static is supported; it works like an attribute, as do the type constraints, so it can be specified in any order.</span></span>
 
 ```powershell
 static [int] $count = 0
 ```
 
-<span data-ttu-id="e0d87-126">Ein Typ ist optional.</span><span class="sxs-lookup"><span data-stu-id="e0d87-126">A type is optional.</span></span>
+<span data-ttu-id="c1f4a-126">Ein Typ ist optional.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-126">A type is optional.</span></span>
 
 ```powershell
 $s = "hello"
 ```
 
-<span data-ttu-id="e0d87-127">Alle Member sind öffentlich.</span><span class="sxs-lookup"><span data-stu-id="e0d87-127">All members are public.</span></span>
+<span data-ttu-id="c1f4a-127">Alle Member sind öffentlich.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-127">All members are public.</span></span>
 
-## <a name="constructors-and-instantiation"></a><span data-ttu-id="e0d87-128">Konstruktoren und Instanziierung</span><span class="sxs-lookup"><span data-stu-id="e0d87-128">Constructors and instantiation</span></span>
+## <a name="constructors-and-instantiation"></a><span data-ttu-id="c1f4a-128">Konstruktoren und Instanziierung</span><span class="sxs-lookup"><span data-stu-id="c1f4a-128">Constructors and instantiation</span></span>
 
-<span data-ttu-id="e0d87-129">Windows PowerShell-Klassen können Konstruktoren haben, die den gleichen Namen wie ihre Klasse haben.</span><span class="sxs-lookup"><span data-stu-id="e0d87-129">Windows PowerShell classes can have constructors; they have the same name as their class.</span></span> <span data-ttu-id="e0d87-130">Konstruktoren können überladen werden.</span><span class="sxs-lookup"><span data-stu-id="e0d87-130">Constructors can be overloaded.</span></span> <span data-ttu-id="e0d87-131">Statische Konstruktoren werden unterstützt.</span><span class="sxs-lookup"><span data-stu-id="e0d87-131">Static constructors are supported.</span></span> <span data-ttu-id="e0d87-132">Eigenschaften mit Initialisierungsausdrücken werden vor dem Ausführen von Code in einem Konstruktor initialisiert.</span><span class="sxs-lookup"><span data-stu-id="e0d87-132">Properties with initialization expressions are initialized before running any code in a constructor.</span></span> <span data-ttu-id="e0d87-133">Statische Eigenschaften werden vor dem Hauptteil eines statischen Konstruktors initialisiert. Instanzeigenschaften werden vor dem Hauptteil des nicht statischen Konstruktors initialisiert.</span><span class="sxs-lookup"><span data-stu-id="e0d87-133">Static properties are initialized before the body of a static constructor, and instance properties are initialized before the body of the non-static constructor.</span></span> <span data-ttu-id="e0d87-134">Derzeit gibt es keine Syntax zum Aufrufen eines Konstruktors aus einem anderen Konstruktor (wie die C\#-Syntax „: this()“).</span><span class="sxs-lookup"><span data-stu-id="e0d87-134">Currently, there is no syntax for calling a constructor from another constructor (like the C\# syntax ": this()").</span></span> <span data-ttu-id="e0d87-135">Eine Behelfslösung ist das Definieren einer allgemeinen „Init“-Methode.</span><span class="sxs-lookup"><span data-stu-id="e0d87-135">The workaround is to define a common Init method.</span></span>
+<span data-ttu-id="c1f4a-129">Windows PowerShell-Klassen können Konstruktoren haben, die den gleichen Namen wie ihre Klasse haben.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-129">Windows PowerShell classes can have constructors; they have the same name as their class.</span></span> <span data-ttu-id="c1f4a-130">Konstruktoren können überladen werden.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-130">Constructors can be overloaded.</span></span> <span data-ttu-id="c1f4a-131">Statische Konstruktoren werden unterstützt.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-131">Static constructors are supported.</span></span> <span data-ttu-id="c1f4a-132">Eigenschaften mit Initialisierungsausdrücken werden vor dem Ausführen von Code in einem Konstruktor initialisiert.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-132">Properties with initialization expressions are initialized before running any code in a constructor.</span></span> <span data-ttu-id="c1f4a-133">Statische Eigenschaften werden vor dem Hauptteil eines statischen Konstruktors initialisiert. Instanzeigenschaften werden vor dem Hauptteil des nicht statischen Konstruktors initialisiert.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-133">Static properties are initialized before the body of a static constructor, and instance properties are initialized before the body of the non-static constructor.</span></span> <span data-ttu-id="c1f4a-134">Derzeit gibt es keine Syntax zum Aufrufen eines Konstruktors aus einem anderen Konstruktor (wie die C\#-Syntax „: this()“).</span><span class="sxs-lookup"><span data-stu-id="c1f4a-134">Currently, there is no syntax for calling a constructor from another constructor (like the C\# syntax ": this()").</span></span> <span data-ttu-id="c1f4a-135">Eine Behelfslösung ist das Definieren einer allgemeinen „Init“-Methode.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-135">The workaround is to define a common Init method.</span></span>
 
-<span data-ttu-id="e0d87-136">Es folgen Methoden zum Instanziieren von Klassen in dieser Version.</span><span class="sxs-lookup"><span data-stu-id="e0d87-136">The following are ways of instantiating classes in this release.</span></span>
+<span data-ttu-id="c1f4a-136">Es folgen Methoden zum Instanziieren von Klassen in dieser Version.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-136">The following are ways of instantiating classes in this release.</span></span>
 
-<span data-ttu-id="e0d87-137">Instanziieren mithilfe des Standardkonstruktors.</span><span class="sxs-lookup"><span data-stu-id="e0d87-137">Instantiating by using the default constructor.</span></span> <span data-ttu-id="e0d87-138">Beachten Sie, dass „New-Object“ in dieser Version nicht unterstützt wird.</span><span class="sxs-lookup"><span data-stu-id="e0d87-138">Note that New-Object is not supported in this release.</span></span>
+<span data-ttu-id="c1f4a-137">Instanziieren mithilfe des Standardkonstruktors.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-137">Instantiating by using the default constructor.</span></span> <span data-ttu-id="c1f4a-138">Beachten Sie, dass „New-Object“ in dieser Version nicht unterstützt wird.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-138">Note that New-Object is not supported in this release.</span></span>
 
 ```powershell
 $a = [MyClass]::new()
 ```
 
-<span data-ttu-id="e0d87-139">Aufruf eines Konstruktors mit einem Parameter</span><span class="sxs-lookup"><span data-stu-id="e0d87-139">Calling a constructor with a parameter</span></span>
+<span data-ttu-id="c1f4a-139">Aufruf eines Konstruktors mit einem Parameter</span><span class="sxs-lookup"><span data-stu-id="c1f4a-139">Calling a constructor with a parameter</span></span>
 
 ```powershell
 $b = [MyClass]::new(42)
 ```
 
-<span data-ttu-id="e0d87-140">Übergeben ein Arrays an einen Konstruktor mit mehreren Parametern</span><span class="sxs-lookup"><span data-stu-id="e0d87-140">Passing an array to a constructor with multiple parameters</span></span>
+<span data-ttu-id="c1f4a-140">Übergeben ein Arrays an einen Konstruktor mit mehreren Parametern</span><span class="sxs-lookup"><span data-stu-id="c1f4a-140">Passing an array to a constructor with multiple parameters</span></span>
 ```powershell
 $c = [MyClass]::new(@(42,43,44), "Hello")
 ```
 
-<span data-ttu-id="e0d87-141">In dieser Version funktioniert „New-Object“ nicht mit Klassen, die in Windows PowerShell definiert werden.</span><span class="sxs-lookup"><span data-stu-id="e0d87-141">In this release, New-Object does not work with classes defined in Windows PowerShell.</span></span> <span data-ttu-id="e0d87-142">Außerdem ist bei dieser Version der Typname nur lexikalisch sichtbar, was bedeutet, dass er außerhalb des Moduls oder Skripts, das die Klasse definiert, nicht sichtbar ist.</span><span class="sxs-lookup"><span data-stu-id="e0d87-142">Also for this release, the type name is only visible lexically, meaning it is not visible outside of the module or script that defines the class.</span></span> <span data-ttu-id="e0d87-143">Funktionen können Instanzen einer Klasse zurückgeben, die in Windows PowerShell definiert wurden. Instanzen funktionieren auch außerhalb des Moduls oder Skripts.</span><span class="sxs-lookup"><span data-stu-id="e0d87-143">Functions can return instances of a class defined in Windows PowerShell, and instances work well outside of the module or script.</span></span>
+<span data-ttu-id="c1f4a-141">In dieser Version funktioniert „New-Object“ nicht mit Klassen, die in Windows PowerShell definiert werden.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-141">In this release, New-Object does not work with classes defined in Windows PowerShell.</span></span> <span data-ttu-id="c1f4a-142">Außerdem ist bei dieser Version der Typname nur lexikalisch sichtbar, was bedeutet, dass er außerhalb des Moduls oder Skripts, das die Klasse definiert, nicht sichtbar ist.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-142">Also for this release, the type name is only visible lexically, meaning it is not visible outside of the module or script that defines the class.</span></span> <span data-ttu-id="c1f4a-143">Funktionen können Instanzen einer Klasse zurückgeben, die in Windows PowerShell definiert wurden. Instanzen funktionieren auch außerhalb des Moduls oder Skripts.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-143">Functions can return instances of a class defined in Windows PowerShell, and instances work well outside of the module or script.</span></span>
 
-<span data-ttu-id="e0d87-144">`Get-Member -Static` listet Konstruktoren auf, sodass Sie Überladungen wie andere Methoden anzeigen können.</span><span class="sxs-lookup"><span data-stu-id="e0d87-144">`Get-Member -Static` lists constructors, so you can view overloads like any other method.</span></span> <span data-ttu-id="e0d87-145">Die Leistung dieser Syntax ist auch erheblich schneller als „New-Object“.</span><span class="sxs-lookup"><span data-stu-id="e0d87-145">The performance of this syntax is also considerably faster than New-Object.</span></span>
+<span data-ttu-id="c1f4a-144">`Get-Member -Static` listet Konstruktoren auf, sodass Sie Überladungen wie andere Methoden anzeigen können.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-144">`Get-Member -Static` lists constructors, so you can view overloads like any other method.</span></span> <span data-ttu-id="c1f4a-145">Die Leistung dieser Syntax ist auch erheblich schneller als „New-Object“.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-145">The performance of this syntax is also considerably faster than New-Object.</span></span>
 
-<span data-ttu-id="e0d87-146">Die pseudostatische Methode **new** funktioniert mit .NET-Typen, wie im folgenden Beispiel gezeigt.</span><span class="sxs-lookup"><span data-stu-id="e0d87-146">The pseudo-static method named **new** works with .NET types, as shown in the following example.</span></span>
+<span data-ttu-id="c1f4a-146">Die pseudostatische Methode **new** funktioniert mit .NET-Typen, wie im folgenden Beispiel gezeigt.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-146">The pseudo-static method named **new** works with .NET types, as shown in the following example.</span></span>
 
 ```powershell
 [hashtable]::new()
 ```
 
-<span data-ttu-id="e0d87-147">Sie können jetzt Konstruktorüberladungen mit „Get-Member“ oder wie in diesem Beispiel anzeigen:</span><span class="sxs-lookup"><span data-stu-id="e0d87-147">You can now see constructor overloads with Get-Member, or as shown in this example:</span></span>
+<span data-ttu-id="c1f4a-147">Sie können jetzt Konstruktorüberladungen mit „Get-Member“ oder wie in diesem Beispiel anzeigen:</span><span class="sxs-lookup"><span data-stu-id="c1f4a-147">You can now see constructor overloads with Get-Member, or as shown in this example:</span></span>
 
 ```powershell
 PS> [hashtable]::new
@@ -133,9 +131,9 @@ hashtable new(int capacity)
 hashtable new(int capacity, float loadFactor)
 ```
 
-## <a name="methods"></a><span data-ttu-id="e0d87-148">Methoden</span><span class="sxs-lookup"><span data-stu-id="e0d87-148">Methods</span></span>
+## <a name="methods"></a><span data-ttu-id="c1f4a-148">Methoden</span><span class="sxs-lookup"><span data-stu-id="c1f4a-148">Methods</span></span>
 
-<span data-ttu-id="e0d87-149">Eine Windows PowerShell-Klassenmethode wird als Skriptblock mit nur einem „end“-Block implementiert.</span><span class="sxs-lookup"><span data-stu-id="e0d87-149">A Windows PowerShell class method is implemented as a ScriptBlock that has only an end block.</span></span> <span data-ttu-id="e0d87-150">Alle Methoden sind öffentlich.</span><span class="sxs-lookup"><span data-stu-id="e0d87-150">All methods are public.</span></span> <span data-ttu-id="e0d87-151">Nachstehend sehen Sie ein Beispiel der Definition einer Methode namens **DoSomething**.</span><span class="sxs-lookup"><span data-stu-id="e0d87-151">The following shows an example of defining a method named **DoSomething**.</span></span>
+<span data-ttu-id="c1f4a-149">Eine Windows PowerShell-Klassenmethode wird als Skriptblock mit nur einem „end“-Block implementiert.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-149">A Windows PowerShell class method is implemented as a ScriptBlock that has only an end block.</span></span> <span data-ttu-id="c1f4a-150">Alle Methoden sind öffentlich.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-150">All methods are public.</span></span> <span data-ttu-id="c1f4a-151">Nachstehend sehen Sie ein Beispiel der Definition einer Methode namens **DoSomething**.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-151">The following shows an example of defining a method named **DoSomething**.</span></span>
 
 ```powershell
 class MyClass
@@ -148,42 +146,42 @@ class MyClass
 }
 ```
 
-<span data-ttu-id="e0d87-152">Methodenaufruf:</span><span class="sxs-lookup"><span data-stu-id="e0d87-152">Method invocation:</span></span>
+<span data-ttu-id="c1f4a-152">Methodenaufruf:</span><span class="sxs-lookup"><span data-stu-id="c1f4a-152">Method invocation:</span></span>
 
 ```powershell
 $b = [MyClass]::new()
 $b.DoSomething(42)
 ```
 
-<span data-ttu-id="e0d87-153">Überladene Methoden, d. h. Methoden mit demselben Namen wie eine vorhandene Methode, aber mit unterschiedlichen angegebenen Werten, werden ebenfalls unterstützt.</span><span class="sxs-lookup"><span data-stu-id="e0d87-153">Overloaded methods--that is, those that are named the same as an existing method, but differentiated by their specified values--are also supported.</span></span>
+<span data-ttu-id="c1f4a-153">Überladene Methoden, d. h. Methoden mit demselben Namen wie eine vorhandene Methode, aber mit unterschiedlichen angegebenen Werten, werden ebenfalls unterstützt.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-153">Overloaded methods--that is, those that are named the same as an existing method, but differentiated by their specified values--are also supported.</span></span>
 
-## <a name="properties"></a><span data-ttu-id="e0d87-154">Eigenschaften</span><span class="sxs-lookup"><span data-stu-id="e0d87-154">Properties</span></span>
+## <a name="properties"></a><span data-ttu-id="c1f4a-154">Eigenschaften</span><span class="sxs-lookup"><span data-stu-id="c1f4a-154">Properties</span></span>
 
-<span data-ttu-id="e0d87-155">Alle Eigenschaften sind öffentlich.</span><span class="sxs-lookup"><span data-stu-id="e0d87-155">All properties are public.</span></span> <span data-ttu-id="e0d87-156">Eigenschaften erfordern ein Zeilenumbruchzeichen oder Semikolon.</span><span class="sxs-lookup"><span data-stu-id="e0d87-156">Properties require either a newline or semicolon.</span></span> <span data-ttu-id="e0d87-157">Wenn kein Objekttyp angegeben ist, ist der Eigenschaftentyp „object“.</span><span class="sxs-lookup"><span data-stu-id="e0d87-157">If no object type is specified, the property type is object.</span></span>
+<span data-ttu-id="c1f4a-155">Alle Eigenschaften sind öffentlich.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-155">All properties are public.</span></span> <span data-ttu-id="c1f4a-156">Eigenschaften erfordern ein Zeilenumbruchzeichen oder Semikolon.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-156">Properties require either a newline or semicolon.</span></span> <span data-ttu-id="c1f4a-157">Wenn kein Objekttyp angegeben ist, ist der Eigenschaftentyp „object“.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-157">If no object type is specified, the property type is object.</span></span>
 
-<span data-ttu-id="e0d87-158">Eigenschaften, die Validierungs- oder Argumenttransformationsattribute verwenden (z. B. `[ValidateSet("aaa")]`), funktionieren wie erwartet.</span><span class="sxs-lookup"><span data-stu-id="e0d87-158">Properties that use validation attributes or argument transformation attributes (e.g. `[ValidateSet("aaa")]`) work as expected.</span></span>
+<span data-ttu-id="c1f4a-158">Eigenschaften, die Validierungs- oder Argumenttransformationsattribute verwenden (z. B. `[ValidateSet("aaa")]`), funktionieren wie erwartet.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-158">Properties that use validation attributes or argument transformation attributes (e.g. `[ValidateSet("aaa")]`) work as expected.</span></span>
 
-## <a name="hidden"></a><span data-ttu-id="e0d87-159">Hidden</span><span class="sxs-lookup"><span data-stu-id="e0d87-159">Hidden</span></span>
+## <a name="hidden"></a><span data-ttu-id="c1f4a-159">Hidden</span><span class="sxs-lookup"><span data-stu-id="c1f4a-159">Hidden</span></span>
 
-<span data-ttu-id="e0d87-160">Mit **Hidden** wurde ein neues Schlüsselwort hinzugefügt.</span><span class="sxs-lookup"><span data-stu-id="e0d87-160">A new keyword, **Hidden**, has been added.</span></span> <span data-ttu-id="e0d87-161">**Hidden** kann auf Eigenschaften und Methoden (einschließlich Konstruktoren) angewendet werden.</span><span class="sxs-lookup"><span data-stu-id="e0d87-161">**Hidden** can be applied to properties and methods (including constructors).</span></span>
+<span data-ttu-id="c1f4a-160">Mit **Hidden** wurde ein neues Schlüsselwort hinzugefügt.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-160">A new keyword, **Hidden**, has been added.</span></span> <span data-ttu-id="c1f4a-161">**Hidden** kann auf Eigenschaften und Methoden (einschließlich Konstruktoren) angewendet werden.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-161">**Hidden** can be applied to properties and methods (including constructors).</span></span>
 
-<span data-ttu-id="e0d87-162">Ausgeblendete Member sind öffentlich, werden aber in der Ausgabe von „Get-Member“ nicht angezeigt, es sei denn, der „-Force“-Parameter wird hinzugefügt.</span><span class="sxs-lookup"><span data-stu-id="e0d87-162">Hidden members are public, but do not appear in the output of Get-Member unless the -Force parameter is added.</span></span>
+<span data-ttu-id="c1f4a-162">Ausgeblendete Member sind öffentlich, werden aber in der Ausgabe von „Get-Member“ nicht angezeigt, es sei denn, der „-Force“-Parameter wird hinzugefügt.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-162">Hidden members are public, but do not appear in the output of Get-Member unless the -Force parameter is added.</span></span>
 
-<span data-ttu-id="e0d87-163">Ausgeblendete Member sind bei Verwenden der Befehlszeilenergänzung oder von IntelliSense nicht enthalten, es sei denn, die Ergänzung erfolgt in der Klasse, die das ausgeblendete Member definiert.</span><span class="sxs-lookup"><span data-stu-id="e0d87-163">Hidden members are not included when tab completing or using Intellisense unless the completion occurs in the class defining the hidden member.</span></span>
+<span data-ttu-id="c1f4a-163">Ausgeblendete Member sind bei Verwenden der Befehlszeilenergänzung oder von IntelliSense nicht enthalten, es sei denn, die Ergänzung erfolgt in der Klasse, die das ausgeblendete Member definiert.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-163">Hidden members are not included when tab completing or using Intellisense unless the completion occurs in the class defining the hidden member.</span></span>
 
-<span data-ttu-id="e0d87-164">Das neue Attribut **System.Management.Automation.HiddenAttribute** wurde hinzugefügt, damit C#-Code in Windows PowerShell die gleiche Semantik haben kann.</span><span class="sxs-lookup"><span data-stu-id="e0d87-164">A new attribute, **System.Management.Automation.HiddenAttribute** has been added so that C# code can have the same semantics within Windows PowerShell.</span></span>
+<span data-ttu-id="c1f4a-164">Das neue Attribut **System.Management.Automation.HiddenAttribute** wurde hinzugefügt, damit C#-Code in Windows PowerShell die gleiche Semantik haben kann.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-164">A new attribute, **System.Management.Automation.HiddenAttribute** has been added so that C# code can have the same semantics within Windows PowerShell.</span></span>
 
-## <a name="return-types"></a><span data-ttu-id="e0d87-165">Rückgabetypen</span><span class="sxs-lookup"><span data-stu-id="e0d87-165">Return types</span></span>
+## <a name="return-types"></a><span data-ttu-id="c1f4a-165">Rückgabetypen</span><span class="sxs-lookup"><span data-stu-id="c1f4a-165">Return types</span></span>
 
-<span data-ttu-id="e0d87-166">Der Rückgabetyp ist ein Vertrag. Der Rückgabewert wird in den erwarteten Typ konvertiert.</span><span class="sxs-lookup"><span data-stu-id="e0d87-166">Return type is a contract; the return value is converted to the expected type.</span></span> <span data-ttu-id="e0d87-167">Falls kein Rückgabetyp angegeben wird, ist der Rückgabetyp „void“.</span><span class="sxs-lookup"><span data-stu-id="e0d87-167">If no return type is specified, the return type is void.</span></span> <span data-ttu-id="e0d87-168">Es gibt kein Streaming von Objekten. Objekte können nicht absichtlich oder versehentlich in die Pipeline geschrieben werden.</span><span class="sxs-lookup"><span data-stu-id="e0d87-168">There is no streaming of objects; objects cannot be written to the pipeline either intentionally or by accident.</span></span>
+<span data-ttu-id="c1f4a-166">Der Rückgabetyp ist ein Vertrag. Der Rückgabewert wird in den erwarteten Typ konvertiert.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-166">Return type is a contract; the return value is converted to the expected type.</span></span> <span data-ttu-id="c1f4a-167">Falls kein Rückgabetyp angegeben wird, ist der Rückgabetyp „void“.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-167">If no return type is specified, the return type is void.</span></span> <span data-ttu-id="c1f4a-168">Es gibt kein Streaming von Objekten. Objekte können nicht absichtlich oder versehentlich in die Pipeline geschrieben werden.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-168">There is no streaming of objects; objects cannot be written to the pipeline either intentionally or by accident.</span></span>
 
-## <a name="attributes"></a><span data-ttu-id="e0d87-169">Attributes</span><span class="sxs-lookup"><span data-stu-id="e0d87-169">Attributes</span></span>
+## <a name="attributes"></a><span data-ttu-id="c1f4a-169">Attributes</span><span class="sxs-lookup"><span data-stu-id="c1f4a-169">Attributes</span></span>
 
-<span data-ttu-id="e0d87-170">Die beiden neuen Attribute **DscResource** und **DscProperty** wurden hinzugefügt.</span><span class="sxs-lookup"><span data-stu-id="e0d87-170">Two new attributes, **DscResource** and **DscProperty** have been added.</span></span>
+<span data-ttu-id="c1f4a-170">Die beiden neuen Attribute **DscResource** und **DscProperty** wurden hinzugefügt.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-170">Two new attributes, **DscResource** and **DscProperty** have been added.</span></span>
 
-## <a name="lexical-scoping-of-variables"></a><span data-ttu-id="e0d87-171">Lexikalische Eingrenzung von Variablen</span><span class="sxs-lookup"><span data-stu-id="e0d87-171">Lexical scoping of variables</span></span>
+## <a name="lexical-scoping-of-variables"></a><span data-ttu-id="c1f4a-171">Lexikalische Eingrenzung von Variablen</span><span class="sxs-lookup"><span data-stu-id="c1f4a-171">Lexical scoping of variables</span></span>
 
-<span data-ttu-id="e0d87-172">Das folgende Beispiel zeigt, wie die lexikalische Eingrenzung in dieser Version funktioniert.</span><span class="sxs-lookup"><span data-stu-id="e0d87-172">The following shows an example of how lexical scoping works in this release.</span></span>
+<span data-ttu-id="c1f4a-172">Das folgende Beispiel zeigt, wie die lexikalische Eingrenzung in dieser Version funktioniert.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-172">The following shows an example of how lexical scoping works in this release.</span></span>
 
 ```powershell
 $d = 42 # Script scope
@@ -209,10 +207,10 @@ $v = bar
 $v -eq $d # true
 ```
 
-## <a name="end-to-end-example"></a><span data-ttu-id="e0d87-173">End-to-End-Beispiel</span><span class="sxs-lookup"><span data-stu-id="e0d87-173">End-to-End Example</span></span>
+## <a name="end-to-end-example"></a><span data-ttu-id="c1f4a-173">End-to-End-Beispiel</span><span class="sxs-lookup"><span data-stu-id="c1f4a-173">End-to-End Example</span></span>
 
-<span data-ttu-id="e0d87-174">Das folgende Beispiel erstellt mehrere neue, benutzerdefinierte Klassen, um eine HTML-Sprache des Typs DSL (Dynamic Style Sheet Language) zu implementieren.</span><span class="sxs-lookup"><span data-stu-id="e0d87-174">The following example creates several new, custom classes to implement an HTML dynamic style sheet language (DSL).</span></span>
-<span data-ttu-id="e0d87-175">Dann werden im Beispiel Hilfsfunktionen hinzugefügt, um spezifische Elementtypen als Teil der Elementklasse zu erstellen, wie z. B. Überschriftsformate und Tabellen, damit Typen nicht außerhalb des Geltungsbereichs eines Moduls verwendet werden können.</span><span class="sxs-lookup"><span data-stu-id="e0d87-175">Then, the example adds helper functions to create specific element types as part of the element class, such as heading styles and tables, because types cannot be used outside the scope of a module.</span></span>
+<span data-ttu-id="c1f4a-174">Das folgende Beispiel erstellt mehrere neue, benutzerdefinierte Klassen, um eine HTML-Sprache des Typs DSL (Dynamic Style Sheet Language) zu implementieren.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-174">The following example creates several new, custom classes to implement an HTML dynamic style sheet language (DSL).</span></span>
+<span data-ttu-id="c1f4a-175">Dann werden im Beispiel Hilfsfunktionen hinzugefügt, um spezifische Elementtypen als Teil der Elementklasse zu erstellen, wie z. B. Überschriftsformate und Tabellen, damit Typen nicht außerhalb des Geltungsbereichs eines Moduls verwendet werden können.</span><span class="sxs-lookup"><span data-stu-id="c1f4a-175">Then, the example adds helper functions to create specific element types as part of the element class, such as heading styles and tables, because types cannot be used outside the scope of a module.</span></span>
 
 ```powershell
 # Classes that define the structure of the document

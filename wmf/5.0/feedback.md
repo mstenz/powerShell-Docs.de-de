@@ -1,13 +1,11 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 39016f028ed9076bb6de6db81c938d13e7932f7e
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: a1c15451662b59cdb9e186cd93b3274920ff70eb
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
-# <a name="feedback"></a><span data-ttu-id="cd977-102">Feedback</span><span class="sxs-lookup"><span data-stu-id="cd977-102">Feedback</span></span>
-<span data-ttu-id="cd977-103">Verwenden Sie zum Melden von Problemen oder Abgeben von Feedback die [UserVoice-Website zu PowerShell](http://windowsserver.uservoice.com/forums/301869-powershell).</span><span class="sxs-lookup"><span data-stu-id="cd977-103">For reporting issues or providing feedback, use the [PowerShell UserVoice site](http://windowsserver.uservoice.com/forums/301869-powershell).</span></span>
+# <a name="feedback"></a><span data-ttu-id="3d0f0-102">Feedback</span><span class="sxs-lookup"><span data-stu-id="3d0f0-102">Feedback</span></span>
+<span data-ttu-id="3d0f0-103">Verwenden Sie zum Melden von Problemen oder Abgeben von Feedback die [UserVoice-Website zu PowerShell](http://windowsserver.uservoice.com/forums/301869-powershell).</span><span class="sxs-lookup"><span data-stu-id="3d0f0-103">For reporting issues or providing feedback, use the [PowerShell UserVoice site](http://windowsserver.uservoice.com/forums/301869-powershell).</span></span>

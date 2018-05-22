@@ -1,16 +1,14 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: wmf,powershell,setup
-ms.openlocfilehash: d34a267bae7e48afe4442256d7f112da3a97eb7d
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: e6b54519d878ab572662075709beb4cf4454b0c6
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
-# <a name="clipboard-cmdlets"></a><span data-ttu-id="0c488-102">„Clipboard“-Cmdlets</span><span class="sxs-lookup"><span data-stu-id="0c488-102">Clipboard cmdlets</span></span>
-<span data-ttu-id="0c488-103">Die Cmdlets **Get-Clipboard** und **Set-Clipboard** vereinfachen das Übertragen von Inhalten in eine und aus einer Windows PowerShell-Sitzung.</span><span class="sxs-lookup"><span data-stu-id="0c488-103">**Get-Clipboard** and **Set-Clipboard** make it easier for you to transfer content to and from a Windows PowerShell session.</span></span> <span data-ttu-id="0c488-104">Wenn Sie beispielsweise Windows-Explorer verwenden, um drei Dateien in die Zwischenablage zu kopieren (z.B. indem Sie sie auswählen und `ctrl-c` drücken), können Sie nun einfach auf den Inhalt der Zwischenablage als Liste von Dateien zugreifen:</span><span class="sxs-lookup"><span data-stu-id="0c488-104">For example, if you use Windows Explorer to copy three files to the clipboard (by selecting them and pressing `ctrl-c`, for example), you can then easily access the contents of the clipboard as a list of files:</span></span>
+# <a name="clipboard-cmdlets"></a><span data-ttu-id="04908-102">„Clipboard“-Cmdlets</span><span class="sxs-lookup"><span data-stu-id="04908-102">Clipboard cmdlets</span></span>
+<span data-ttu-id="04908-103">Die Cmdlets **Get-Clipboard** und **Set-Clipboard** vereinfachen das Übertragen von Inhalten in eine und aus einer Windows PowerShell-Sitzung.</span><span class="sxs-lookup"><span data-stu-id="04908-103">**Get-Clipboard** and **Set-Clipboard** make it easier for you to transfer content to and from a Windows PowerShell session.</span></span> <span data-ttu-id="04908-104">Wenn Sie beispielsweise Windows-Explorer verwenden, um drei Dateien in die Zwischenablage zu kopieren (z.B. indem Sie sie auswählen und `ctrl-c` drücken), können Sie nun einfach auf den Inhalt der Zwischenablage als Liste von Dateien zugreifen:</span><span class="sxs-lookup"><span data-stu-id="04908-104">For example, if you use Windows Explorer to copy three files to the clipboard (by selecting them and pressing `ctrl-c`, for example), you can then easily access the contents of the clipboard as a list of files:</span></span>
 
 ```powershell
 PS C:\\&gt; Get-Clipboard -Format FileDropList
@@ -29,4 +27,4 @@ Mode LastWriteTime Length Name
 ```
 
 
-<span data-ttu-id="0c488-105">Die „Clipboard“-Cmdlets unterstützen Bilder, Audiodateien, Dateilisten und Text.</span><span class="sxs-lookup"><span data-stu-id="0c488-105">The Clipboard cmdlets support images, audio files, file lists, and text.</span></span>
+<span data-ttu-id="04908-105">Die „Clipboard“-Cmdlets unterstützen Bilder, Audiodateien, Dateilisten und Text.</span><span class="sxs-lookup"><span data-stu-id="04908-105">The Clipboard cmdlets support images, audio files, file lists, and text.</span></span>
