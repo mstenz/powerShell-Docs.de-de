@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Desired State Configuration Schnellstart
-ms.openlocfilehash: 25bcd46bbf62a6ebb727519a65732377363e68c0
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: eb7572f39f7a2710c82f132f42c3502b15c48d0f
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 > Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
@@ -111,7 +110,7 @@ Diese Datei, kann dann auf den Zielknoten angewendet werden.
 
 Nun, da Sie die kompilierte MOF-Dateien haben, können Sie die Konfiguration auf den Zielknoten (in diesem Fall der lokale Computer) anwenden, indem Sie das Cmdlet [Start-DscConfiguration](/reference/5.1/PSDesiredStateConfiguration/Start-DscConfiguration) aufrufen.
 
-Das `Start-DscConfiguration` fordert den [lokalen Konfigurations-Manager (Local Configuration Manager – LCM)](metaConfig.md), das DSC-Modul, auf, die Konfiguration anzuwenden.
+Das `Start-DscConfiguration`-Cmdlet fordert den [lokalen Konfigurations-Manager (Local Configuration Manager – LCM)](metaConfig.md), die DSC-Engine, auf, die Konfiguration anzuwenden.
 Der LCM übernimmt das Aufrufen der DSC-Ressourcen, um die Konfiguration anzuwenden.
 
 Wechseln Sie in einer PowerShell-Konsole in den gleichen Ordner, in dem Sie die Konfiguration gespeichert haben, und führen Sie den folgenden Befehl aus:

@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Schreiben einer benutzerdefinierten DSC-Ressource mit PowerShell-Klassen
-ms.openlocfilehash: 23669a6db17855e8d69aa0144c541bb4c799a9eb
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: f2500bfb41302cbeaf3cb9d23b843f26f01c1d5b
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>Schreiben einer benutzerdefinierten DSC-Ressource mit PowerShell-Klassen
 
@@ -15,7 +14,7 @@ ms.lasthandoff: 04/09/2018
 
 Mit der Einführung der PowerShell-Klassen in Windows PowerShell 5.0 können Sie jetzt eine DSC-Ressourcen durch Erstellen einer Klasse definieren. Die Klasse definiert das Schema und die Implementierung der Ressource, daher besteht keine Notwendigkeit, eine separate MOF-Datei zu erstellen. Die Ordnerstruktur für eine klassenbasierte Ressource ist auch einfacher, da kein **DSCResources**-Ordner erforderlich ist.
 
-In einer klassenbasierten DSC-Ressource wird das Schema als Eigenschaften der Klasse definiert, die mit Attributen für den Eigenschaftstyp geändert werden können. Die Ressource wird mit den Methoden **Get()**, **Set()**und **Test()** implementiert (entspricht den Funktionen **Get-TargetResource**, **Set-TargetResource** und **Test-TargetResource** in einer Skriptressource.
+In einer klassenbasierten DSC-Ressource wird das Schema als Eigenschaften der Klasse definiert, die mit Attributen für den Eigenschaftstyp geändert werden können. Die Ressource wird mit den Methoden **Get()**, **Set()** und **Test()** implementiert (entspricht den Funktionen **Get-TargetResource**, **Set-TargetResource** und **Test-TargetResource** in einer Skriptressource.
 
 In diesem Thema wird eine einfache Ressource mit dem Namen **FileResource** erstellt, die eine Datei unter einem angegebenen Pfad verwaltet.
 
@@ -417,7 +416,7 @@ class FileResource
 
 ## <a name="create-a-manifest"></a>Erstellen eines Manifests
 
-Um eine klassenbasierte Ressource für das DSC-Modul verfügbar zu machen, müssen Sie eine **DscResourcesToExport**-Anweisung zur Manifestdatei hinzufügen, die das Modul anweist, die Ressource zu exportieren. Unser Manifest sieht folgendermaßen aus:
+Um eine klassenbasierte Ressource für die DSC-Engine verfügbar zu machen, müssen Sie eine **DscResourcesToExport**-Anweisung zur Manifestdatei hinzufügen, die die Engine anweist, die Ressource zu exportieren. Unser Manifest sieht folgendermaßen aus:
 
 ```powershell
 @{

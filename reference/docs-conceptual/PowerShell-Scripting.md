@@ -2,11 +2,11 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: PowerShell-Skripterstellung
-ms.openlocfilehash: 3304ecc3129b710a003725715803a03b68f79b45
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 7de5a3f3149d8d464b34101d94a5f9430d9b0f23
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="powershell"></a>PowerShell
 
@@ -25,18 +25,18 @@ Windows PowerShell ist auf das Verbessern der Befehlszeilen- und Skriptumgebung 
 ### <a name="discoverability"></a>Erkennbarkeit
 Windows PowerShell erleichtert das Ermitteln seiner Features. Um z. B. eine Liste von Cmdlets zu finden, die zum Anzeigen und Ändern von Windows-Diensten dienen, geben Sie Folgendes ein:
 
-```
+```powershell
 Get-Command *-Service
 ```
 
 Nach dem Ermitteln, mit welchem Cmdlet eine Aufgabe erledigt wird, können Sie mithilfe des Cmdlets „Get-Help“ mehr über das Cmdlet erfahren. Geben Sie z.B. zum Anzeigen der Hilfe zum Cmdlet „Get-Service“ Folgendes ein:
 
-```
+```powershell
 Get-Help Get-Service
 ```
 Die meisten Cmdlets geben Objekte aus, die bearbeitet und dann in Text für die Anzeige gerendert werden können. Um die Ausgabe dieses Cmdlets vollständig zu verstehen, leiten Sie seine Ausgabe an das Cmdlet „Get-Member“ weiter. Der folgende Befehl zeigt z.B. Informationen zu den Elementen des Objekts an, das vom Cmdlet „Get-Service“ ausgegeben wurde.
 
-```
+```powershell
 Get-Service | Get-Member
 ```
 

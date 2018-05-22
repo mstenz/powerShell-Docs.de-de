@@ -1,14 +1,12 @@
 ---
 ms.date: 06/12/2017
-author: rpsqrd
-ms.topic: conceptual
 keywords: jea,powershell,security
 title: Übersicht über Just Enough Administration
-ms.openlocfilehash: fd5b97b7a483908f10cec6460d4e803740f064a8
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 3dae8b31d4d13ff9033803035c870c02fc7c38ca
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="just-enough-administration"></a>Just Enough Administration
 
@@ -33,7 +31,7 @@ Damit erhalten DNS-Administratoren letztendlich Kontrolle über Ihre gesamte Dom
 JEA kann Sie bei diesem Problem unterstützen, indem Sie das Prinzip der *geringsten Berechtigungen* befolgen.
 Mit JEA können Sie einen Verwaltungsendpunkt für DNS-Administratoren konfigurieren, die dadurch über Zugriff auf alle Befehle verfügen, die sie für ihre Arbeit benötigen – mehr jedoch nicht.
 Das bedeutet, dass Sie ihnen den entsprechenden Zugriff gewähren können, damit ein beschädigter DNS-Cache repariert oder der DNS-Server neu gestartet werden kann, ohne gleichzeitig unbeabsichtigt Berechtigungen für Active Directory, das Durchsuchen des Dateisystems oder die Ausführung potenziell gefährlicher Skripts zu erteilen.
-Wenn die JEA-Sitzung so konfiguriert ist, dass temporäre privilegierte virtuelle Konten verwendet werden, können Ihre DNS-Administratoren sogar eine Verbindung mit dem Server mithilfe von *Nicht-Admin-*Anmeldeinformationen herstellen und trotzdem Befehle ausführen, für die normalerweise Administratorberechtigungen erforderlich sind.
+Wenn die JEA-Sitzung so konfiguriert ist, dass temporäre privilegierte virtuelle Konten verwendet werden, können Ihre DNS-Administratoren sogar eine Verbindung mit dem Server mithilfe von *Nicht-Admin-* Anmeldeinformationen herstellen und trotzdem Befehle ausführen, für die normalerweise Administratorberechtigungen erforderlich sind.
 Über diese Funktion können Sie Benutzer von stark privilegierten lokalen bzw. Administratorrollen der Domäne entfernen und stattdessen sorgfältig steuern, welche Aktionen sie auf jedem Computer ausführen dürfen.
 
 ## <a name="get-started-with-jea"></a>Erste Schritte mit JEA

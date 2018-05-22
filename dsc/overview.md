@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Windows PowerShell DSC – Übersicht
-ms.openlocfilehash: 3f357ea11a388a05b73539a63e52e639ee906f68
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: c9069d7c9ce9c614330e36a42233b00363660a4b
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="windows-powershell-desired-state-configuration-overview"></a>Windows PowerShell DSC – Übersicht
 
@@ -28,7 +27,7 @@ DSC ist eine deklarative Plattform für die Konfiguration, Bereitstellung und Ve
     DSC-Konfigurationen sind auch idempotent, d. h. vom lokalen Konfigurations-Manager (LCM) wird weiter sicherstellt, dass Computer entsprechend der Deklaration in der Konfiguration konfiguriert werden.
 - [Ressourcen](resources.md) sind der „Mach es so“-Teil von DSC. Sie enthalten den Code, der das Ziel einer Konfiguration in den angegebenen Zustand versetzt und dort hält.
     Ressourcen befinden sich in PowerShell-Modulen und können geschrieben werden, um etwas Allgemeines wie eine Datei oder einen Windows-Prozess oder etwas Spezifisches wie einen IIS-Server oder eine in Azure ausgeführte VM zu modellieren.
-- Der [lokale Konfigurations-Manager (Local Configuration Manager, LCM)](metaConfig.md) ist das Modul, das DSC die Interaktion zwischen Ressourcen und Konfigurationen erleichtert.
+- Der [lokale Konfigurations-Manager (Local Configuration Manager, LCM)](metaConfig.md) ist die Engine, die DSC die Interaktion zwischen Ressourcen und Konfigurationen erleichtert.
     Der LCM fragt das System mithilfe der von Ressourcen implementierten Ablaufsteuerung ab, um sicherzustellen, dass der von einer Konfiguration definierte Zustand beibehalten wird.
     Ist dies nicht der Fall, führt der LCM Aufrufe an Code in den Ressourcen aus, um eine Korrektur entsprechend der Konfiguration vorzunehmen.
 

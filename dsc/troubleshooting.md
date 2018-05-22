@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: Problembehandlung bei DSC
-ms.openlocfilehash: 6bb639febc3f413e909c3e61559059adb5c96389
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: c08f91b514aae438578fa278228fe5ec879a4012
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="troubleshooting-dsc"></a>Problembehandlung bei DSC
 
@@ -98,7 +97,7 @@ TimeCreated                     Id LevelDisplayName Message
 11/17/2014 10:27:23 PM        4102 Information      Job {02C38626-D95A-47F1-9DA2-C1D44A7128E7} :
 ```
 
-Wie oben gezeigt, lautet der primäre Protokollname von DSC **Microsoft -> Windows -> DSC** (andere Protokollnamen unter Windows werden hier aus Gründen der Übersichtlichkeit nicht dargestellt). Der primäre Name wird an den Namen des Kanals angefügt. Daraus ergibt sich der vollständige Protokollname. Das DSC-Modul schreibt hauptsächlich in drei Protokolltypen: [Betriebsprotokoll, analytisches Protokoll und Debugprotokoll](https://technet.microsoft.com/library/cc722404.aspx). Da die analytischen Protokolle und die Debugprotokolle standardmäßig deaktiviert sind, sollten Sie sie in der Ereignisanzeige aktivieren. Öffnen Sie dazu die Ereignisanzeige, indem Sie in Windows PowerShell „Show-EventLog“ eingeben. Oder klicken Sie auf die Schaltfläche **Start** und dann auf **Systemsteuerung**, **Verwaltung** und **Ereignisanzeige**. Klicken Sie in der Ereignisanzeige im Menü **Ansicht** auf **Analytische und Debugprotokolle einblenden**. Der Name des für den analytischen Kanal lautet **Microsoft-Windows-Dsc/Analytic**, und der Debugkanal heißt **Microsoft-Windows-Dsc/Debug**. Außerdem können Sie zum Aktivieren der Protokolle das Hilfsprogramm [wevtutil](https://technet.microsoft.com/library/cc732848.aspx) verwenden, wie im folgenden Beispiel gezeigt.
+Wie oben gezeigt, lautet der primäre Protokollname von DSC **Microsoft -> Windows -> DSC** (andere Protokollnamen unter Windows werden hier aus Gründen der Übersichtlichkeit nicht dargestellt). Der primäre Name wird an den Namen des Kanals angefügt. Daraus ergibt sich der vollständige Protokollname. Die DSC-Engine schreibt hauptsächlich in drei Protokolltypen: [Betriebsprotokoll, analytisches Protokoll und Debugprotokoll](https://technet.microsoft.com/library/cc722404.aspx). Da die analytischen Protokolle und die Debugprotokolle standardmäßig deaktiviert sind, sollten Sie sie in der Ereignisanzeige aktivieren. Öffnen Sie dazu die Ereignisanzeige, indem Sie in Windows PowerShell „Show-EventLog“ eingeben. Oder klicken Sie auf die Schaltfläche **Start** und dann auf **Systemsteuerung**, **Verwaltung** und **Ereignisanzeige**. Klicken Sie in der Ereignisanzeige im Menü **Ansicht** auf **Analytische und Debugprotokolle einblenden**. Der Name des für den analytischen Kanal lautet **Microsoft-Windows-Dsc/Analytic**, und der Debugkanal heißt **Microsoft-Windows-Dsc/Debug**. Außerdem können Sie zum Aktivieren der Protokolle das Hilfsprogramm [wevtutil](https://technet.microsoft.com/library/cc732848.aspx) verwenden, wie im folgenden Beispiel gezeigt.
 
 ```powershell
 wevtutil.exe set-log “Microsoft-Windows-Dsc/Analytic” /q:true /e:true
@@ -452,13 +451,13 @@ SRV2   ANALYTIC     6/24/2016 11:36:56 AM Deleting file from C:\Windows\System32
 
 ## <a name="my-resources-wont-update-how-to-reset-the-cache"></a>Meine Ressourcen werden nicht aktualisiert: Zurücksetzen des Caches
 
-Das DSC-Modul speichert Ressourcen zwischen, die aus Effizienzgründen als PowerShell-Modul implementiert wurden. Dies kann jedoch Probleme verursachen, wenn Sie eine Ressource erstellen und gleichzeitig testen, da DSC die zwischengespeicherte Version lädt, solange der Vorgang nicht neu gestartet wurde. Die einzige Möglichkeit, DSC zu veranlassen, die neuere Version zu laden, besteht darin, den Prozess, der das DSC-Modul hostet, explizit zu beenden.
+Die DSC-Engine speichert Ressourcen zwischen, die aus Effizienzgründen als PowerShell-Engine implementiert wurden. Dies kann jedoch Probleme verursachen, wenn Sie eine Ressource erstellen und gleichzeitig testen, da DSC die zwischengespeicherte Version lädt, solange der Vorgang nicht neu gestartet wurde. Die einzige Möglichkeit, DSC zu veranlassen, die neuere Version zu laden, besteht darin, den Prozess, der die DSC-Engine hostet, explizit zu beenden.
 
 Ähnliches gilt, wenn Sie `Start-DscConfiguration` nach dem Hinzufügen und Ändern einer benutzerdefinierten Ressource ausführen. Die Änderung kann dann möglicherweise nicht ausgeführt werden, bis der Computer neu gestartet wird. Grund hierfür ist, dass DSC im WMI-Anbieterhostprozess (WmiPrvSE) ausgeführt wird, und in der Regel mehrere Instanzen von WmiPrvSE gleichzeitig ausgeführt werden. Beim Neustart wird der Hostprozess neu gestartet und der Cache geleert.
 
 Um die Konfiguration erfolgreich zu recyceln und den Cache zu löschen, ohne einen Neustart auszuführen, müssen Sie den Hostprozess beenden und neu starten. Dazu können Sie den Prozess auf Instanzebene identifizieren, beenden und neu starten. Sie können auch `DebugMode` verwenden, wie nachfolgend gezeigt, um die PowerShell DSC-Ressource erneut zu laden.
 
-Um zu identifizieren, welcher Prozess das DSC-Modul hostet, und diesen auf Instanzebene zu beenden, können Sie die Prozess-ID des WmiPrvSE-Prozesses auflisten, der das DSC-Modul hostet. Beenden Sie den WmiPrvSE-Prozess dann mithilfe der unten aufgeführten Befehle, um den Anbieter zu aktualisieren, und führen Sie anschließend **Start-DscConfiguration** erneut aus.
+Um zu identifizieren, welcher Prozess die DSC-Engine hostet, und diesen auf Instanzebene zu beenden, können Sie die Prozess-ID des WmiPrvSE-Prozesses auflisten, der die DSC-Engine hostet. Beenden Sie den WmiPrvSE-Prozess dann mithilfe der unten aufgeführten Befehle, um den Anbieter zu aktualisieren, und führen Sie anschließend **Start-DscConfiguration** erneut aus.
 
 ```powershell
 ###
@@ -476,7 +475,7 @@ Get-Process -Id $dscProcessID | Stop-Process
 
 ## <a name="using-debugmode"></a>Verwenden von DebugMode
 
-Sie können den lokalen Konfigurations-Manager (LCM) von DSC für die Verwendung von `DebugMode` konfigurieren, damit der Cache bei jedem Neustart des Hostprozesses neu gestartet wird. Indem Sie den Debugmodus verwenden (auf **TRUE** festlegen), lädt das Modul die PowerShell DSC-Ressource immer neu. Sobald Sie mit dem Schreiben Ihrer Ressource fertig sind, können Sie den Debugmodus wieder deaktivieren (auf **FALSE** festlegen), um zum alten Verhalten zurückzukehren und die Module wieder zwischenzuspeichern.
+Sie können den lokalen Konfigurations-Manager (LCM) von DSC für die Verwendung von `DebugMode` konfigurieren, damit der Cache bei jedem Neustart des Hostprozesses neu gestartet wird. Indem Sie den Debugmodus verwenden (auf **TRUE** festlegen), lädt die Engine die PowerShell DSC-Ressource immer neu. Sobald Sie mit dem Schreiben Ihrer Ressource fertig sind, können Sie den Debugmodus wieder deaktivieren (auf **FALSE** festlegen), um zum alten Verhalten zurückzukehren und die Module wieder zwischenzuspeichern.
 
 In der folgenden Demonstration wird verdeutlicht, wie `DebugMode` den Cache automatisch aktualisieren kann. Betrachten wir zunächst die Standardkonfiguration:
 

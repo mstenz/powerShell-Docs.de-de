@@ -1,13 +1,12 @@
 ---
 ms.date: 10/13/2017
-ms.topic: conceptual
 keywords: dsc,powershell,configuration,setup
 title: 'Desired State Configuration (DSC): Übersicht für Entscheidungsträger'
-ms.openlocfilehash: 3d2d4b7e09fb699751151d7af641410bae3b38a4
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: f8a851c5fbc5165ebe9642c5cd60964f1584efab
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="desired-state-configuration-overview-for-engineers"></a>Desired State Configuration (DSC): Übersicht für Ingenieure
 
@@ -26,7 +25,7 @@ Die kontinuierliche Bereitstellung ermöglicht häufige Bereitstellungen, womög
 Der Zweck dieser Bereitstellungen ist nicht, etwas zu reparieren, sondern etwas schnell veröffentlichen zu können.
 Dadurch, dass neue Features durch die Entwicklung so reibungslos und verlässlich wie möglich in Betrieb genommen werden können, kann die Amortisierungszeit der neuen Businesslogik verringert werden.
 
-Der Wechsel zum Cloudcomputing beinhaltet eine Bereitstellungslösung, bei der ein „deklaratives“ Vorlagenmodell verwendet wird. Hierbei wird eine Umgebung im Endzustand als Text deklariert und in einem Bereitstellungsmodul veröffentlicht.
+Der Wechsel zum Cloudcomputing beinhaltet eine Bereitstellungslösung, bei der ein „deklaratives“ Vorlagenmodell verwendet wird. Hierbei wird eine Umgebung im Endzustand als Text deklariert und in einer Bereitstellungs-Engine veröffentlicht.
 Diese Bereitstellungstechnik ermöglicht schnelle Änderungen im erforderlichen Umfang, mit robustem Schutz vor Ausfallrisiken, da die Bereitstellung jederzeit konsistent wiederholt werden kann, um einen Endzustand zu gewährleisten.
 Die Erstellung von Tools und Diensten, die diese Art der Vorgänge durch Automatisierung unterstützen, ist eine Reaktion auf diese Änderungen.
 
