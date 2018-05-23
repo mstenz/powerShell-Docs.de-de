@@ -8,7 +8,7 @@ In PowerShell Core wird [.NET Core 2.0][] als Runtime verwendet.
 Dank .NET Core 2.0 funktioniert PowerShell Core auf verschiedenen Plattformen (Windows, macOS und Linux).
 PowerShell Core macht auch die .NET Core 2.0-APIs verfügbar, die in PowerShell-Cmdlets und -Skripts verwendet werden.
 
-In Windows PowerShell wurde das PowerShell-Modul mithilfe der .NET Framework Runtime gehostet.
+In Windows PowerShell wurde die PowerShell-Engine mithilfe der .NET Framework Runtime gehostet.
 Windows PowerShell macht also die .NET Framework-APIs verfügbar.
 
 Die von .NET Core und .NET Framework gemeinsam genutzten APIs sind als Teil von [.NET Standard 2.0][] definiert.
@@ -219,7 +219,7 @@ Weitere Informationen zu PowerShell-Aufträgen finden Sie unter [about_Jobs](htt
 - Lokale Variablen werden beim Dot-Sourcing von Skript-Cmdlets automatisch per Push an „DottedScopes“ übertragen. (#4709)
 - Die Optionen „Singleline“ und „Multiline“ können jetzt im Split-Operator verwendet werden. (#4721) (Vielen Dank an @iSazonov)
 
-## <a name="engine-updates"></a>Modulupdates
+## <a name="engine-updates"></a>Engine-Updates
 
 - `$PSVersionTable` hat vier neue Eigenschaften:
   - `PSEdition`: Dieser Wert ist unter PowerShell Core auf `Core` festgelegt und unter Windows PowerShell auf `Desktop`.
@@ -373,7 +373,7 @@ Weitere Informationen dazu, wie wir diese Daten verwenden, finden Sie [in diesem
 [os_log]: https://developer.apple.com/documentation/os/logging
 [Syslog]: https://en.wikipedia.org/wiki/Syslog
 [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
-[breaking-changes]: https://github.com/PowerShell/PowerShell/tree/master/docs/BREAKINGCHANGES.md
+[breaking-changes]: breaking-changes-ps6.md
 [Changelog (Änderungsprotokoll)]: https://github.com/PowerShell/PowerShell/tree/master/CHANGELOG.md
 [community-dashboard]: https://aka.ms/PSGitHubBI
 [telemetry-blog]: https://blogs.msdn.microsoft.com/powershell/2017/01/31/powershell-open-source-community-dashboard/
