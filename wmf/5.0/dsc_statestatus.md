@@ -1,11 +1,11 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 272843efb68c42105af6eb88ad6a95b581da47ae
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 7b4e4dbeaf9c3c48e7b2dfc74435dfa2cd9c7ea7
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="unified-and-consistent-state-and-status-representation"></a>Vereinheitlichung und Konsistenz von Zustands- und Statusdarstellung
 
@@ -21,7 +21,7 @@ Die Darstellung des LCM-Zustands und DSC-Betriebsstatus wird gemäß den folgend
 
 Die nachfolgende Tabelle veranschaulicht die resultierenden auf Zustand und Status bezogenen Eigenschaften in einigen gängigen Szenarien.
 
-| **Szenario**                    | **LCMState\***       | **Status** | **Neustart angefordert**  | **ResourcesInDesiredState**  | **ResourcesNotInDesiredState** |
+| Szenario                    | LCMState       | Status | Neustart angefordert  | ResourcesInDesiredState  | ResourcesNotInDesiredState |
 |---------------------------------|----------------------|------------|---------------|------------------------------|--------------------------------|
 | S**^**                          | Idle                 | Erfolg    | $false        | E                            | $null                          |
 | F**^**                          | PendingConfiguration | Fehler    | $false        | $null                        | F                              |
@@ -46,11 +46,13 @@ $ResourcesInDesiredState = (Get-DscConfigurationStatus).ResourcesInDesiredState
 
 $ResourcesNotInDesiredState = (Get-DscConfigurationStatus).ResourcesNotInDesiredState
 ```
+
 ## <a name="enhancement-in-get-dscconfigurationstatus-cmdlet"></a>Verbesserungen beim Cmdlet „Get-DscConfigurationStatus“
 
 Für diese Version wurden einige Verbesserungen am Cmdlet „Get-DscConfigurationStatus“ vorgenommen. Zuvor hatte die „StartDate“-Eigenschaft von Objekten, die vom Cmdlet zurückgegeben wurden, den Typ „String“. Jetzt hat sie den Typ „Datetime“, der komplexe Auswahl- und Filtervorgänge basierend auf den inhärenten Eigenschaften eines „Datetime“-Objekts erleichtert.
+
 ```powershell
-(Get-DscConfigurationStatus).StartDate | fl \*
+(Get-DscConfigurationStatus).StartDate | fl *
 DateTime : Friday, November 13, 2015 1:39:44 PM
 Date : 11/13/2015 12:00:00 AM
 Day : 13
@@ -68,14 +70,16 @@ Year : 2015
 ```
 
 Es folgt ein Beispiel, das alle Datensätze von DSC-Vorgängen zurückgibt, die am selben Tag der Woche wie heute erfolgt sind.
+
 ```powershell
-(Get-DscConfigurationStatus –All) | where { $\_.startdate.dayofweek -eq (Get-Date).DayOfWeek }
+(Get-DscConfigurationStatus –All) | where { $_.startdate.dayofweek -eq (Get-Date).DayOfWeek }
 ```
 
 Datensätze von Vorgängen, die keine Änderungen an der Konfiguration des Knotens vornehmen (z. B. Lesevorgänge), werden entfernt. Deshalb werden die Vorgänge „Test-DscConfiguration“ und „Get-DscConfiguration“ nicht mehr mit Objekten verfälscht, die vom Cmdlet „Get-DscConfigurationStatus“ zurückgegeben werden.
 Der Rückgabe des Cmdlets „Get-DscConfigurationStatus“ werden Datensätze zum Vorgang der Einstellung der Metakonfiguration hinzugefügt.
 
 Es folgt ein Beispiel der Rückgabe des Cmdlets „Get-DscConfigurationStatus –All“.
+
 ```powershell
 All configuration operations:
 
@@ -89,12 +93,15 @@ Success 11/13/2015 11:20:44 AM LocalConfigurationManager False
 ```
 
 ## <a name="enhancement-in-get-dsclocalconfigurationmanager-cmdlet"></a>Verbesserungen beim Cmdlet „Get-DscLocalConfigurationManager“
+
 Das neue Feld „LCMStateDetail“ wird dem Objekt hinzugefügt, das vom Cmdlet „Get-DscLocalConfigurationManager“ zurückgegeben wird. Dieses Feld wird aufgefüllt, wenn „LCMState = Busy". Es kann mit dem folgenden Cmdlet abgerufen werden:
+
 ```powershell
 (Get-DscLocalConfigurationManager).LCMStateDetail
 ```
 
 Es folgt eine Beispielausgabe einer kontinuierlichen Überwachung einer Konfiguration, die zwei Neustarts auf einem Remoteknoten erfordert.
+
 ```powershell
 Start a configuration that requires two reboots
 
