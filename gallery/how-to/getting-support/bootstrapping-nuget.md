@@ -1,6 +1,14 @@
-
 ---
-ms.date :  06/12/2017 contributor:  manikb ms.topic:  reference keywords:  gallery,powershell,cmdlet,psget title:  Bootstrapping von NuGet
+ms.date: 06/12/2017
+contributor: manikb
+keywords: gallery,powershell,cmdlet,psget
+title: Bootstrapping von NuGet
+ms.openlocfilehash: f707e23737361ee7f82a16150402c9e719ee0ae1
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 05/17/2018
+ms.locfileid: "34221798"
 ---
 # <a name="bootstrap-the-nuget-provider-and-nugetexe"></a>Bootstrapping des NuGet-Anbieters und von „NuGet.exe“
 
