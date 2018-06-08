@@ -42,7 +42,7 @@ Zusätzlich müssen Sie die Kennwortauthentifizierung und ggf. die schlüsselbas
     New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
     ```
 
-1. Installieren Sie den neusten [Win32 OpenSSH]-Build über GitHub, und verwenden Sie dabei die [Installationsanweisungen].
+1. Installieren Sie den neusten [Win32 OpenSSH]-Build über GitHub, und verwenden Sie dabei die [Installation].
 1. Bearbeiten Sie die Datei „sshd_config“ am selben Ort, an dem Sie Win32 OpenSSH installiert haben.
     - Vergewissern Sie sich, dass die Kennwortauthentifizierung aktiviert ist.
 
@@ -131,7 +131,7 @@ Zusätzlich müssen Sie die Kennwortauthentifizierung und ggf. die schlüsselbas
     - Fügen Sie einen Eintrag für das PowerShell-Subsystem hinzu.
 
     ```
-    Subsystem powershell /usr/local/bin/powershell -sshs -NoLogo -NoProfile
+    Subsystem powershell /usr/local/bin/pwsh -sshs -NoLogo -NoProfile
     ```
 
     - Aktivieren Sie ggf. die Schlüsselauthentifizierung.
@@ -243,7 +243,7 @@ GitCommitId                    v6.0.0-alpha.17
 
 [PowerShell Core für Windows]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi
 [Win32 OpenSSH]: https://github.com/PowerShell/Win32-OpenSSH/releases
-[Installationsanweisungen]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
+[Installation]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
 [PowerShell für Linux]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#ubuntu-1404
 [Ubuntu SSH]: https://help.ubuntu.com/lts/serverguide/openssh-server.html
 [PowerShell für macOS]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/macos.md#macos-1012

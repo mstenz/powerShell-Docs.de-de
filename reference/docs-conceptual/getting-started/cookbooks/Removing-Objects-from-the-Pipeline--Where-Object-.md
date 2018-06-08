@@ -3,21 +3,22 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Entfernen von Objekten aus der Pipeline – Where-Object
 ms.assetid: 01df8b22-2d22-4e2c-a18d-c004cd3cc284
-ms.openlocfilehash: 2d89defdb1b234a9d0021fc06e1f05a95bb1bce9
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 46f210e1418098f4809174cd975ab8d783580285
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34753837"
 ---
 # <a name="removing-objects-from-the-pipeline-where-object"></a>Entfernen von Objekten aus der Pipeline (Where-Object)
 
 In Windows PowerShell geschieht es häufig, dass Sie mehr Objekte als gewünscht generieren und an eine Pipeline übergeben. Mithilfe der **Format**-Cmdlets können Sie die Eigenschaften bestimmter Objekte angeben, die angezeigt werden sollen, aber dies hilft dabei, ganze Objekte aus der Anzeige zu entfernen. Möglicherweise möchten Sie die Objekte vor dem Ende einer Pipeline filtern, um nur für eine Teilmenge der ursprünglich generierten Objekte bestimmte Aktionen auszuführen.
 
-Windows PowerShell enthält ein **Where-Object**-Cmdlet, mit dem Sie jedes Objekt in der Pipeline testen können, um es nur dann an die Pipeline zu übergeben, wenn es eine bestimmte Testbedingung erfüllt. Objekte, die den Test nicht bestehen, werden aus der Pipeline entfernt. Sie geben die Testbedingung als Wert des Parameters **Where-ObjectFilterScript** an.
+Windows PowerShell enthält ein `Where-Object`-Cmdlet, mit dem Sie jedes Objekt in der Pipeline testen können, um es nur dann an die Pipeline zu übergeben, wenn es eine bestimmte Testbedingung erfüllt. Objekte, die den Test nicht bestehen, werden aus der Pipeline entfernt. Sie geben die Testbedingung als Wert des Parameters `Where-Object` **FilterScript** an.
 
 ### <a name="performing-simple-tests-with-where-object"></a>Ausführen einfacher Tests mit „Where-Object“
 
-Der Wert von **FilterScript** ist ein *Skriptblock* (d.h. ein oder mehrere, in geschweifte Klammern {} eingeschlossene Windows PowerShell-Befehle), der als „true“ oder „false“ ausgewertet wird. Diese Skriptblöcke können sehr einfach sein, aber ihre Erstellung erfordert Kenntnisse eines anderen Windows PowerShell-Konzepts: Vergleichsoperatoren. Mit einem Vergleichsoperator werden die Elemente auf den beiden Seiten des Operators verglichen. Vergleichsoperatoren beginnen mit einem Minuszeichen (-), gefolgt von einem Namen. Die grundlegenden Vergleichsoperatoren können für nahezu jede Art von Objekt verwendet werden. Die erweiterten Vergleichsoperatoren können möglicherweise nur mit Text oder Arrays verwendet werden.
+Der Wert von **FilterScript** ist ein *Skriptblock* (d.h. ein oder mehrere in geschweiften Klammern {} eingeschlossene Windows PowerShell-Befehle), der als „true“ oder „false“ ausgewertet wird. Diese Skriptblöcke können sehr einfach sein, aber ihre Erstellung erfordert Kenntnisse eines anderen Windows PowerShell-Konzepts: Vergleichsoperatoren. Mit einem Vergleichsoperator werden die Elemente auf den beiden Seiten des Operators verglichen. Vergleichsoperatoren beginnen mit einem Minuszeichen (-), gefolgt von einem Namen. Die grundlegenden Vergleichsoperatoren können für nahezu jede Art von Objekt verwendet werden. Die erweiterten Vergleichsoperatoren können möglicherweise nur mit Text oder Arrays verwendet werden.
 
 > [!NOTE]
 > Bei Windows PowerShell-Vergleichsoperatoren wird beim Arbeiten mit Text die Groß-/Kleinschreibung standardmäßig nicht beachtet.

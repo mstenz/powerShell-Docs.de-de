@@ -1,42 +1,49 @@
 ---
-ms.date: 06/12/2017
+ms.date: 06/20/2018
 keywords: dsc,powershell,configuration,setup
 title: DSC-Ressource „PackageManagementSource“
-ms.openlocfilehash: 3e67cec9058ecb0e43f882f98f5ec8b92e261a09
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 5d049b05c387cafe27edb202d569852b10852dce
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34753769"
 ---
 # <a name="dsc-packagemanagementsource-resource"></a>DSC-Ressource „PackageManagementSource“
 
-> Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0, Windows PowerShell 5.1
 
 Die Ressource **PackageManagementSource** in Windows PowerShell Desired State Configuration (DSC) bietet einen Mechanismus zum Registrieren von Paketverwaltungsquellen auf einem Zielknoten sowie zum Aufheben der Registrierung. 
   **Auf diese Weise registrierte Verwaltungspaketquellen werden im Systemkontext registriert und können vom Systemkonto oder der DSC-Engine verwendet werden.** Diese Ressource erfordert das Modul **PackageManagement**, das unter http://PowerShellGallery.com verfügbar ist.
 
+> [!IMPORTANT]
+> Die folgenden Eigenschaftsinformationen gelten nur für das **PackageManagement**-Modul Version 1.1.7.0 oder höher.
+
 ## <a name="syntax"></a>Syntax
 
 ```
-PSModule [string] #ResourceName
+PackageManagementSource [String] #ResourceName
 {
     Name = [string]
-    [ Ensure = [string] { Absent | Present }  ]
-    [ InstallationPolicy = [string] ]
-    [ ProviderName = [string] ]
-    [ SourceUri = [string] ]
-    [ SourceCredential = [PSCredential] ]
+    ProviderName = [string]
+    SourceLocation = [string]
+    [DependsOn = [string[]]]
+    [Ensure = [string]{ Absent | Present }]
+    [InstallationPolicy = [string]{ Trusted | Untrusted }]
+    [PsDscRunAsCredential = [PSCredential]]
+    [SourceCredential = [PSCredential]]
 }
 ```
 
 ## <a name="properties"></a>Eigenschaften
+
 |  Eigenschaft  |  Beschreibung   |
 |---|---|
 | Name| Gibt den Namen der Paketquelle an, die auf Ihrem System registriert bzw. deren Registrierung aufgehoben werden soll.|
-| Ensure| Bestimmt, ob die Paketquelle registriert oder die Registrierung aufgehoben werden soll.|
-| InstallationPolicy| Bestimmt, ob Sie der Paketquelle vertrauen. Entweder „Nicht vertrauenswürdig“, oder „Vertrauenswürdig“.|
 | ProviderName| Gibt den Namen des OneGet-Anbieters an, über den Sie mit der Paketquelle zusammenarbeiten können.|
-| SourceUri| Gibt den URI der Paketquelle an.|
+| SourceLocation| Gibt den URI der Paketquelle an.|
+| Ensure| Bestimmt, ob die Paketquelle registriert oder die Registrierung aufgehoben werden soll.|
+| InstallationPolicy| Wird von Anbietern wie dem integrierten NuGet-Anbieter verwendet. Bestimmt, ob Sie der Paketquelle vertrauen. Entweder „Nicht vertrauenswürdig“, oder „Vertrauenswürdig“.|
 | SourceCredential| Ermöglicht den Zugriff auf das Paket für eine Remotequelle.|
 
 ## <a name="example"></a>Beispiel
@@ -51,7 +58,7 @@ Configuration PackageManagementSourceTest
         Ensure      = "Present"
         Name        = "MyNuget"
         ProviderName= "Nuget"
-        SourceUri   = "http://nuget.org/api/v2/"
+        SourceLocation   = "http://nuget.org/api/v2/"
         InstallationPolicy ="Trusted"
     }
 }
