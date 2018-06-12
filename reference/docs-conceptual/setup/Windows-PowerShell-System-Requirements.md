@@ -3,11 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell-Systemanforderungen
 ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
-ms.openlocfilehash: a15b5b33b5296befae833e520cfdfbd41a07b122
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 74c65a97a30227997c48a23c42b0431189f9ed76
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34483048"
 ---
 # <a name="windows-powershell-system-requirements"></a>Windows PowerShell-Systemanforderungen
 In diesem Thema werden die Systemanforderungen für Windows PowerShell 3.0, Windows PowerShell 4.0 und Windows PowerShell 5.0 sowie für besondere Features wie Windows PowerShell Integrated Scripting Environment (ISE), CIM-Befehle und Workflows aufgeführt.
@@ -83,21 +84,21 @@ Allerdings erfordern einige Elemente, wie z. B. die folgenden, eine grafische Be
 
 - Cmdlets
 
-    1.  [Out-GridView](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/out-gridview)
+    1.  [Out-GridView](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-gridview)
 
-    2.  [Show-Command](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Utility/Show-Command)
+    2.  [Show-Command](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Show-Command)
 
-    3.  [Show-ControlPanelItem](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Show-ControlPanelItem)
+    3.  [Show-ControlPanelItem](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Management/Show-ControlPanelItem)
 
-    4.  [Show-EventLog](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Show-EventLog)
+    4.  [Show-EventLog](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Management/Show-EventLog)
 
 - Parameter
 
-    1.  **ShowWindow**-Parameter des Cmdlets [Get-Help](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Get-Help).
+    1.  **ShowWindow**-Parameter des Cmdlets [Get-Help](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Get-Help).
 
-    2.  **ShowSecurityDescriptorUI**-Parameter der Cmdlets [Register-PSSessionConfiguration](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Register-PSSessionConfiguration) und [Set-PSSessionConfiguration](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Set-PSSessionConfiguration).
+    2.  **ShowSecurityDescriptorUI**-Parameter der Cmdlets [Register-PSSessionConfiguration](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Register-PSSessionConfiguration) und [Set-PSSessionConfiguration](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Set-PSSessionConfiguration).
 
-## <a name="windows-powershell-engine-requirements"></a>Anforderungen an das Windows PowerShell-Modul
+## <a name="windows-powershell-engine-requirements"></a>Anforderungen an die Windows PowerShell-Engine
 Windows PowerShell 4.0 ist mit Windows PowerShell 3.0 und Windows PowerShell 2.0 abwärtskompatibel. Cmdlets, Anbieter, Snap-Ins, Module und Skripts, die für Windows PowerShell 2.0 und Windows PowerShell 3.0 geschrieben wurden, können unverändert in Windows PowerShell 4.0 ausgeführt werden.
 
 Doch aufgrund einer Änderung der Richtlinie für die Laufzeitaktivierung in Microsoft .NET Framework 4 können Windows PowerShell-Hostprogramme, die für Windows PowerShell 2.0 geschrieben und mit Common Language Runtime (CLR) 2.0 kompiliert wurden, nicht unverändert in Windows PowerShell 3.0 ausgeführt werden, das mit CLR 4.0 kompiliert wurde.
@@ -111,13 +112,13 @@ Windows PowerShell 2.0, Windows PowerShell 3.0 und Windows PowerShell 4.0 werden
 
 - [Cmdlets für den intelligenten Hintergrundübertragungsdienst (Background Intelligent Transfer Service, BITS)](http://go.microsoft.com/fwlink/?LinkId=257514)
 
-- [Get-EventLog](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Get-EventLog)
+- [Get-EventLog](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Management/Get-EventLog)
 
-- [Get-WinEvent](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent)
+- [Get-WinEvent](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent)
 
-- [Save-Help](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Save-Help)
+- [Save-Help](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Save-Help)
 
-- [Update-Help](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Update-Help)
+- [Update-Help](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Update-Help)
 
 Darüber hinaus ist der **WinRM**-Dienst nicht in der Windows PE vorhanden.
 

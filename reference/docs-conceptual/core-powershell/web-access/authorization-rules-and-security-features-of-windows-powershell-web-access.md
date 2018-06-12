@@ -2,11 +2,12 @@
 ms.date: 06/27/2017
 keywords: powershell,cmdlet
 title: Autorisierungsregeln und Sicherheitsfeatures von Windows PowerShell Web Access
-ms.openlocfilehash: 0e765ae90661a054ca9bae71d0f6d449cccb185d
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 1b4d4339efda78a5cb719921a9cb06881d119930
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34483133"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Autorisierungsregeln und Sicherheitsfeatures von Windows PowerShell Web Access
 
@@ -112,7 +113,7 @@ Wenn der Benutzer keine alternativen Anmeldeinformationen angibt, werden die pri
 Mithilfe von Autorisierungsregeln kann Benutzern der Zugriff auf eine bestimmte Sitzungskonfiguration gestattet werden.
 Sie können _eingeschränkte Runspaces_ oder Sitzungskonfigurationen für Windows PowerShell Web Access erstellen und für bestimmte Benutzer nur die Verbindung mit speziellen Sitzungskonfigurationen zulassen, wenn diese sich bei Windows PowerShell Web Access anmelden.
 Mithilfe von Zugriffssteuerungslisten können Sie bestimmen, welche Benutzer auf bestimmte Endpunkte zugreifen können, und den Zugriff auf den Endpunkt für eine bestimmte Gruppe von Benutzern anhand von Autorisierungsregeln weiter einschränken, wie in diesem Abschnitt beschrieben.
-Weitere Informationen zu eingeschränkten Runspaces finden Sie unter [Creating a constrained runspace (Erstellen eines eingeschränkten Runspaces)](https://msdn.microsoft.com/en-us/library/dn614668).
+Weitere Informationen zu eingeschränkten Runspaces finden Sie unter [Creating a constrained runspace (Erstellen eines eingeschränkten Runspaces)](https://msdn.microsoft.com/library/dn614668).
 
 ### <a name="configuring-authorization-rules"></a>Konfigurieren von Autorisierungsregeln
 
@@ -122,7 +123,7 @@ Das zweite Verfahren beschreibt, wie Sie eine Autorisierungsregel entfernen, die
 
 Wenn Sie die Verwendung von benutzerdefinierten Sitzungskonfigurationen planen, um für bestimmte Benutzer nur die Arbeit in eingeschränkten Runspaces von Windows PowerShell Web Access zuzulassen, erstellen Sie die benutzerdefinierten Sitzungskonfigurationen vor dem Hinzufügen der Autorisierungsregeln, die darauf verweisen.
 Sie können die Windows PowerShell Web Access-Cmdlets nicht zum Erstellen von benutzerdefinierten Sitzungskonfigurationen verwenden.
-Weitere Informationen zur Erstellung von benutzerdefinierten Sitzungskonfigurationen finden Sie unter [about_Session_Configuration_Files](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files).
+Weitere Informationen zur Erstellung von benutzerdefinierten Sitzungskonfigurationen finden Sie unter [about_Session_Configuration_Files](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files).
 
 Für Windows PowerShell Web Access-Cmdlets wird ein Platzhalterzeichen unterstützt, und zwar das Sternchen ( \* ).
 Platzhalterzeichen innerhalb von Zeichenfolgen werden nicht unterstützt. Verwenden Sie ein einzelnes Sternchen pro Eigenschaft (Benutzer, Computer oder Sitzungskonfigurationen).
@@ -142,7 +143,7 @@ Platzhalterzeichen innerhalb von Zeichenfolgen werden nicht unterstützt. Verwen
 2. **Optionaler Schritt** zum Einschränken des Benutzerzugriffs mithilfe von Sitzungskonfigurationen:
 
     Überprüfen Sie, dass die Sitzungskonfigurationen, die Sie verwenden möchten, bereits in Ihren Regeln vorhanden sind.
-Falls diese noch nicht erstellt wurden, verwenden Sie die Anleitung zum Erstellen von Sitzungskonfigurationen unter [about_Session_Configuration_Files](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files).
+Falls diese noch nicht erstellt wurden, verwenden Sie die Anleitung zum Erstellen von Sitzungskonfigurationen unter [about_Session_Configuration_Files](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files).
 
 3. Diese Autorisierungsregel erlaubt es einem bestimmten Benutzer, auf einen Computer im Netzwerk zuzugreifen, auf den er normalerweise zugreifen kann. Der Zugriff ist auf eine bestimmte Sitzungskonfiguration beschränkt, die die üblichen Anforderungen des Benutzers im Hinblick auf die Ausführung von Skripts und Cmdlets abdeckt. Geben Sie Folgendes ein, und drücken Sie anschließend die **EINGABETASTE**.
 
@@ -220,7 +221,7 @@ Der Pfad zur XML-Datei mit den Autorisierungsregeln ist in der Datei **powwa.con
 ## <a name="session-management"></a>Sitzungsverwaltung
 
 Standardmäßig begrenzt Windows PowerShell Web Access einen Benutzer auf drei zeitgleiche Sitzungen. Sie können die Datei **web.config** der Webanwendung im IIS-Manager bearbeiten, um eine andere Anzahl von Sitzungen pro Benutzer zu unterstützen.
-Der Pfad zur Datei **web.config** lautet $Env:Windir_$Env:Windir\\Web\\PowerShellWebAccess\\wwwroot\\Web.config_.
+Der Pfad zur Datei **web.config** lautet $Env:Windir _$Env:Windir\\Web\\PowerShellWebAccess\\wwwroot\\Web.config_.
 
 Standardmäßig ist der IIS-Webserver so konfiguriert, dass der Anwendungspool neu gestartet wird, wenn Einstellungen bearbeitet werden. Beispielsweise wird der Anwendungspool neu gestartet, wenn Änderungen an der Datei **web.config** vorgenommen werden.
 >Da von **Windows PowerShell Web Access** speicherinterne Sitzungszustände verwendet werden, verlieren bei **Windows PowerShell Web Access**-Sitzungen angemeldete Benutzer ihre Sitzungen, wenn der Anwendungspool neu gestartet wird.
@@ -253,6 +254,6 @@ Wenn der Gatewayserver unter Windows Server 2012 R2 ausgeführt wird, ermöglich
 
 ## <a name="see-also"></a>Weitere Informationen
 
-- [Install and Use Windows PowerShell Web Access (Installieren und Verwenden von Windows PowerShell Web Access)](https://technet.microsoft.com/en-us/library/hh831611(v=ws.11).aspx)
+- [Install and Use Windows PowerShell Web Access (Installieren und Verwenden von Windows PowerShell Web Access)](https://technet.microsoft.com/library/hh831611(v=ws.11).aspx)
 - [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
 - [Windows PowerShell Web Access Cmdlets (Windows PowerShell Web Access-Cmdlets)](cmdlets/web-access-cmdlets.md)

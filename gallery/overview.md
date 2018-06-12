@@ -1,4 +1,14 @@
- and --- ms.date: 06/12/2017 contributor: JKeithB keywords: gallery,powershell,cmdlet,psgallery,psget title: Der PowerShell-Katalog
+---
+ms.date: 06/12/2017
+contributor: JKeithB
+keywords: gallery,powershell,cmdlet,psgallery,psget
+title: Der PowerShell-Katalog | MSDN
+ms.openlocfilehash: dc7e8dd7e4d96d8424a62cb3256c3164b63a3684
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34482929"
 ---
 # <a name="the-powershell-gallery"></a>Der PowerShell-Katalog | MSDN
 

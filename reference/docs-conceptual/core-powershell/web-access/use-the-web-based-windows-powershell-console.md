@@ -2,11 +2,12 @@
 ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: Verwendung der webbasierten Windows PowerShell-Konsole
-ms.openlocfilehash: 3ef2b39279745ffe78fa928247e8a1fb76519ba0
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 5d29a6f97fddf4b329fcc7097cf7d40d47d22cca
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34483150"
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>Verwendung der webbasierten Windows PowerShell-Konsole
 
@@ -81,7 +82,7 @@ Die einfachste Möglichkeit, die Remoteverwaltung auf Ihrem Computer zu konfigur
 
     In der Regel sind die Anmeldeinformationen zum Passieren des Windows PowerShell Web Access-Gateways dieselben, die vom zu verwaltenden Remotecomputer erkannt werden. Wenn Sie jedoch andere Anmeldeinformationen zur Verwaltung des in Schritt 2 angegebenen Remotecomputers verwenden möchten, erweitern Sie den Abschnitt **Optionale Verbindungseinstellungen**, und geben Sie die abweichenden Anmeldeinformationen an. Fahren Sie ansonsten mit Schritt 6 fort.
 
-1. Wenn der Windows PowerShell Web Access-Administrator eine benutzerdefinierte Konfiguration für Windows PowerShell Web Access-Benutzer erstellt hat, geben Sie den Namen der Sitzungskonfiguration in das Feld **Konfigurationsname** ein. Weitere Informationen zu Sitzungskonfigurationen finden Sie unter [about_Session_Configurations](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_session_configurations).
+1. Wenn der Windows PowerShell Web Access-Administrator eine benutzerdefinierte Konfiguration für Windows PowerShell Web Access-Benutzer erstellt hat, geben Sie den Namen der Sitzungskonfiguration in das Feld **Konfigurationsname** ein. Weitere Informationen zu Sitzungskonfigurationen finden Sie unter [about_Session_Configurations](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configurations).
 
 1. Belassen Sie den **Authentifizierungstyp** als **Standard**, sofern Sie nicht vom Windows PowerShell Web Access-Administrator gegenteilige Anweisungen erhalten haben.
 

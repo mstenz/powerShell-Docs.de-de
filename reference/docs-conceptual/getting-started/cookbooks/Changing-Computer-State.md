@@ -3,11 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Ändern des Computerstatus
 ms.assetid: 8093268b-27f8-4a49-8871-142c5cc33f01
-ms.openlocfilehash: 3d3983c6d9e9b11db62bd71805da51be83331fdb
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: c659ad54325b0f7305f882e1cb9607062abad6a4
+ms.sourcegitcommit: 2ffb9fa92129c2001379ca2c17646466721f7165
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 06/09/2018
+ms.locfileid: "35251516"
 ---
 # <a name="changing-computer-state"></a>Ändern des Computerstatus
 
@@ -49,16 +50,16 @@ Weitere Informationen und andere Funktionen der Win32Shutdown-Methode finden Sie
 
 Das Herunterfahren und Neustarten von Computern wird im Allgemeinen vom gleichen Tasktyp ausgeführt. Mit Tools, die einen Computer herunterfahren, kann normalerweise auch ein Neustart ausgeführt werden, und umgekehrt. Es gibt zwei einfache Optionen für den Neustart eines Computers aus Windows PowerShell. Verwenden Sie entweder „Tsshutdn.exe“ oder „Shutdown.exe“ mit den entsprechenden Argumenten. Ausführliche Informationen zur Verwendung erhalten Sie mit **tsshutdn.exe /?** oder **shutdown.exe /?**.
 
-Sie können auch **Win32_OperatingSystem** direkt in Windows PowerShell zum Herunterfahren und Neustarten verwenden.
+Sie können Ihren Computer auch direkt über Windows PowerShell herunterfahren und neu starten.
 
-Verwenden Sie zum Herunterfahren des Computers die Win32Shutdown-Methode mit dem Flag **1**.
+Verwenden Sie den Befehl „stop-computer“, um Ihren Computer herunterzufahren.
 
 ```powershell
-(Get-WmiObject -Class Win32_OperatingSystem -ComputerName .).Win32Shutdown(1)
+stop-computer
 ```
 
-Verwenden Sie zum Neustarten des Betriebssystems die Win32Shutdown-Methode mit dem Flag **2**.
+Verwenden Sie den Befehl „restart-computer“, um das Betriebssystem neu zu starten.
 
 ```powershell
-(Get-WmiObject -Class Win32_OperatingSystem -ComputerName .).Win32Shutdown(2)
+restart-computer
 ```

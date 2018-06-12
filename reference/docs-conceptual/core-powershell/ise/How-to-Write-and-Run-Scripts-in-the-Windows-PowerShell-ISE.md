@@ -3,11 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Schreiben und Ausführen von Skripts in der Windows PowerShell ISE
 ms.assetid: 62f916d9-b3a1-484a-bdfb-41f57112c22b
-ms.openlocfilehash: 4b8a9c0c3a710f3b3b9b6077c3c84e174a141db2
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 4d7c5352ef1dac6f63a50433676068f83a920db5
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34483116"
 ---
 # <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>Schreiben und Ausführen von Skripts in der Windows PowerShell ISE
 
@@ -130,7 +131,7 @@ Drücken Sie **STRG+S**, oder klicken Sie auf der Symbolleiste auf das Symbol **
 
 ### <a name="to-save-a-script-in-ascii-encoding"></a>So speichern Sie ein Skript in ASCII-Codierung
 
-Standardmäßig speichert Windows PowerShell ISE neue Skriptdateien (PS1), Skriptdatendateien (PSD1) und Skriptmoduldateien (PSM1) als Unicode (BigEndianUnicode). Verwenden Sie die Methode **Save** oder **SaveAs** für das [$psISE.CurrentFile](https://technet.microsoft.com/en-us/library/bc3300e4-9c17-4f00-a621-c8867126e3b3#CurrentFile)-Objekt, um das Skript in einer anderen Codierung, z.B. ASCII (ANSI), zu speichern.
+Standardmäßig speichert Windows PowerShell ISE neue Skriptdateien (PS1), Skriptdatendateien (PSD1) und Skriptmoduldateien (PSM1) als Unicode (BigEndianUnicode). Verwenden Sie die Methode **Save** oder **SaveAs** für das [$psISE.CurrentFile](https://technet.microsoft.com/library/bc3300e4-9c17-4f00-a621-c8867126e3b3#CurrentFile)-Objekt, um das Skript in einer anderen Codierung, z.B. ASCII (ANSI), zu speichern.
 
 Im folgenden Befehl wird ein neues Skript als „MyScript.ps1“ mit ASCII-Codierung gespeichert.
 

@@ -3,11 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Abrufen von ausführlichen Hilfeinformationen
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: bb0fac4eb338354e411458fad575c726a5f0da35
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 29c24af3f688f9388893044952442910e793842d
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34483031"
 ---
 # <a name="getting-detailed-help-information"></a>Abrufen von ausführlichen Hilfeinformationen
 Windows PowerShell umfasst ausführliche Hilfethemen, in denen die Konzepte von Windows PowerShell und die Windows PowerShell-Sprache erläutert werden. Außerdem gibt es Hilfethemen für jedes Cmdlet und jeden Anbieter sowie Hilfethemen für viele Funktionen und Skripts.
@@ -128,7 +129,7 @@ get-help c:\ps-test\TestScript.ps1
 
 Die Parameter, die für die Anzeige von Cmdlet-Hilfe konzipiert wurden, etwa *Detailed*, *Full*, *Examples* und *Parameter*, funktionieren auch für Hilfe zu Skripts und Funktionen. Wenn Sie die gesamte Hilfe anzeigen, indem Sie „get-help \*“ eingeben, wird die Hilfe zu Funktionen und Skripts aber nicht angezeigt.
 
-Informationen über das Schreiben von Hilfethemen für Ihre Funktionen und Skripts finden Sie unter [about_Functions [m2]](https://technet.microsoft.com/en-us/library/61d40692-5300-4de9-a9b5-bae31815e105), [about_Scripts](https://technet.microsoft.com/en-us/library/7dc08334-dcfe-450b-b949-0554855623af) und [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf).
+Informationen über das Schreiben von Hilfethemen für Ihre Funktionen und Skripts finden Sie unter [about_Functions [m2]](https://technet.microsoft.com/library/61d40692-5300-4de9-a9b5-bae31815e105), [about_Scripts](https://technet.microsoft.com/library/7dc08334-dcfe-450b-b949-0554855623af) und [about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf).
 
 ## <a name="getting-help-online"></a>Abrufen von Hilfe aus dem Internet
 Wenn Sie eine Verbindung mit dem Internet haben, ist eine der besten Möglichkeiten zum Abrufen von Hilfe, die Hilfethemen online anzuzeigen. Da online verfügbare Themen einfach zu aktualisieren sind, stellen sie wahrscheinlich die aktuellsten Inhalte bereit.
@@ -165,10 +166,10 @@ Die erste Zeile des Abschnitts „Verwandte Links“ des Themas ist nachstehend 
 Online version: http://go.microsoft.com/fwlink/?LinkID=135194
 ```
 
-Informationen dazu, wie Sie die Onlineunterstützung für Ihre Hilfethemen bereitstellen, finden Sie in der MSDN-Bibliothek unter [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf) sowie unter [How to Write Cmdlet Help (Schreiben von Cmdlet-Hilfe)](https://go.microsoft.com/fwlink/?LinkID=123415).
+Informationen dazu, wie Sie die Onlineunterstützung für Ihre Hilfethemen bereitstellen, finden Sie in der MSDN-Bibliothek unter [about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf) sowie unter [How to Write Cmdlet Help (Schreiben von Cmdlet-Hilfe)](https://go.microsoft.com/fwlink/?LinkID=123415).
 
 ## <a name="see-also"></a>Weitere Informationen
-- [about_Functions [m2]](https://technet.microsoft.com/en-us/library/61d40692-5300-4de9-a9b5-bae31815e105)
-- [about_Scripts](https://technet.microsoft.com/en-us/library/7dc08334-dcfe-450b-b949-0554855623af)
-- [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)
+- [about_Functions [m2]](https://technet.microsoft.com/library/61d40692-5300-4de9-a9b5-bae31815e105)
+- [about_Scripts](https://technet.microsoft.com/library/7dc08334-dcfe-450b-b949-0554855623af)
+- [about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)
 - [Get-Help [m2]](https://technet.microsoft.com/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2)
