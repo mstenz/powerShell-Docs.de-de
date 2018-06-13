@@ -74,7 +74,7 @@ Zusätzlich müssen Sie die Kennwortauthentifizierung und ggf. die schlüsselbas
 
 ## <a name="setup-on-linux-ubuntu-1404-machine"></a>Setup auf einem Linux-Computer (Ubuntu 14.04)
 
-1. Installieren Sie den neusten [PowerShell für Linux]-Build über GitHub.
+1. Installieren Sie den neusten Build von [PowerShell Core für Linux] über GitHub.
 1. Installieren Sie ggf. [Ubuntu SSH].
 
     ```bash
@@ -109,7 +109,7 @@ Zusätzlich müssen Sie die Kennwortauthentifizierung und ggf. die schlüsselbas
 
 ## <a name="setup-on-macos-machine"></a>Setup auf einem macOS-Computer
 
-1. Installieren Sie den neusten [PowerShell für macOS]-Build.
+1. Installieren Sie den neusten Build von [PowerShell Core für macOS].
     - Vergewissern Sie sich, dass SSH-Remoting aktiviert ist, indem Sie die folgenden Schritte ausführen:
       - Öffnen Sie `System Preferences`.
       - Klicken Sie auf `Sharing`.
@@ -241,9 +241,9 @@ GitCommitId                    v6.0.0-alpha.17
 
 1. Der Befehl „sudo“ funktioniert bei Remotesitzungen auf Linux-Computern nicht.
 
-[PowerShell Core für Windows]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi
+[PowerShell Core für Windows]: ../setup/installing-powershell-core-on-windows.md#msi
+[PowerShell Core für Linux]: ../setup/installing-powershell-core-on-linux.md#ubuntu-1404
+[PowerShell Core für macOS]: ../setup/installing-powershell-core-on-macos.md
 [Win32 OpenSSH]: https://github.com/PowerShell/Win32-OpenSSH/releases
 [Installation]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
-[PowerShell für Linux]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#ubuntu-1404
 [Ubuntu SSH]: https://help.ubuntu.com/lts/serverguide/openssh-server.html
-[PowerShell für macOS]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/macos.md#macos-1012
