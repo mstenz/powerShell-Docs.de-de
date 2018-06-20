@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30950966"
 ---
 # <a name="getting-ready-to-use-windows-powershell"></a><span data-ttu-id="2de04-103">Vorbereiten des Verwendens von WindowsPowerShell</span><span class="sxs-lookup"><span data-stu-id="2de04-103">Getting Ready to Use Windows PowerShell</span></span>
 <span data-ttu-id="2de04-104">Wenn Sie die Windows PowerShell installieren und ausführen, sollten Sie die folgenden Setupoptionen berücksichtigen.</span><span class="sxs-lookup"><span data-stu-id="2de04-104">When Windows PowerShell is installed and started, consider the following setup options.</span></span> <span data-ttu-id="2de04-105">Sie können diese Aufgaben zu einem beliebigen Zeitpunkt ausführen.</span><span class="sxs-lookup"><span data-stu-id="2de04-105">You can perform these tasks at any time.</span></span>

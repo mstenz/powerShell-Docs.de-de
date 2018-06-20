@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34221952"
 ---
 # <a name="packagemanagement-cmdlets"></a><span data-ttu-id="bb864-102">PackageManagement-Cmdlets</span><span class="sxs-lookup"><span data-stu-id="bb864-102">PackageManagement Cmdlets</span></span>
 <span data-ttu-id="bb864-103">Dies ist der Kern von PackageManagement zum Unterstützung der Ermittlung, Installation und Inventur von Software.</span><span class="sxs-lookup"><span data-stu-id="bb864-103">This is the core of PackageManagement to support software discovery, installation, and inventory (SDII).</span></span> <span data-ttu-id="bb864-104">Testen Sie die Cmdlets für diese Vorgänge:</span><span class="sxs-lookup"><span data-stu-id="bb864-104">Try out the cmdlets for these operations:</span></span>

@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952221"
 ---
 # <a name="managing-current-location"></a><span data-ttu-id="b5a07-103">Verwalten des aktuellen Speicherorts</span><span class="sxs-lookup"><span data-stu-id="b5a07-103">Managing Current Location</span></span>
 

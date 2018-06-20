@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30949484"
 ---
 # <a name="getting-started-with-windows-powershell"></a><span data-ttu-id="b8405-103">Erste Schritte mit Windows PowerShell</span><span class="sxs-lookup"><span data-stu-id="b8405-103">Getting Started with Windows PowerShell</span></span>
 <span data-ttu-id="b8405-104">Windows PowerShell ist eine Windows-Befehlszeilenshell, die insbesondere für Systemadministratoren konzipiert ist.</span><span class="sxs-lookup"><span data-stu-id="b8405-104">Windows PowerShell is a Windows command-line shell designed especially for system administrators.</span></span> <span data-ttu-id="b8405-105">Windows PowerShell umfasst eine interaktive Eingabeaufforderung und eine Skriptumgebung, die einzeln oder in Kombination verwendet werden können.</span><span class="sxs-lookup"><span data-stu-id="b8405-105">Windows PowerShell includes an interactive prompt and a scripting environment that can be used independently or in combination.</span></span>

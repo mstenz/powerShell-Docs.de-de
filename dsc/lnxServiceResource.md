@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34187717"
 ---
 # <a name="dsc-for-linux-nxservice-resource"></a><span data-ttu-id="6af26-103">DSC für Linux-Resource „nxService“</span><span class="sxs-lookup"><span data-stu-id="6af26-103">DSC for Linux nxService Resource</span></span>
 

@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952306"
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a><span data-ttu-id="c8c14-103">Arbeiten mit Dateien, Ordnern und Registrierungsschlüsseln</span><span class="sxs-lookup"><span data-stu-id="c8c14-103">Working With Files, Folders and Registry Keys</span></span>
 

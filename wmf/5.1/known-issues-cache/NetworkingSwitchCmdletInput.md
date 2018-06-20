@@ -9,6 +9,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34188682"
 ---
 <span data-ttu-id="bf03a-103">Die Cmdlets des Netzwerkswitch-Managers können zum Verwalten von Netzwerkswitches über WSMAN verwendet werden.</span><span class="sxs-lookup"><span data-stu-id="bf03a-103">The Network Switch Manager cmdlets can be used to manage network switches over WSMAN.</span></span>
 <span data-ttu-id="bf03a-104">Einige Cmdlets dieses Moduls können Werte aus Pipelines akzeptieren.</span><span class="sxs-lookup"><span data-stu-id="bf03a-104">A few cmdlets of this module are capable of accepting values from pipelines.</span></span>

@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952119"
 ---
 # <a name="redirecting-data-with-out--cmdlets"></a><span data-ttu-id="86fa6-103">Umleiten von Daten mit Out-\*-Cmdlets</span><span class="sxs-lookup"><span data-stu-id="86fa6-103">Redirecting Data with Out-\* Cmdlets</span></span>
 

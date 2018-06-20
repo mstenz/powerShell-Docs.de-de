@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30949263"
 ---
 # <a name="appendix-2---creating-a-custom-powershell-shortcut"></a><span data-ttu-id="3257e-103">Anhang 2: Erstellen einer benutzerdefinierten PowerShell-Verknüpfung</span><span class="sxs-lookup"><span data-stu-id="3257e-103">Appendix 2 - Creating a Custom PowerShell Shortcut</span></span>
 

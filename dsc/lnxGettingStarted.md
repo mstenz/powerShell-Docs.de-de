@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189430"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a><span data-ttu-id="e6f11-103">Erste Schritte mit DSC für Linux</span><span class="sxs-lookup"><span data-stu-id="e6f11-103">Get started with Desired State Configuration (DSC) for Linux</span></span>
 

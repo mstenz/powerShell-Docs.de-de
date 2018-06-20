@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951068"
 ---
 # <a name="understanding-the-windows-powershell-pipeline"></a><span data-ttu-id="eb954-103">Grundlegendes zur Windows PowerShell-Pipeline</span><span class="sxs-lookup"><span data-stu-id="eb954-103">Understanding the Windows PowerShell Pipeline</span></span>
 <span data-ttu-id="eb954-104">Die Weiterleitung über Pipes funktioniert nahezu überall in Windows PowerShell.</span><span class="sxs-lookup"><span data-stu-id="eb954-104">Piping works virtually everywhere in Windows PowerShell.</span></span> <span data-ttu-id="eb954-105">Obwohl Text auf dem Bildschirm angezeigt wird, leitet Windows PowerShell Text nicht zwischen Befehlen weiter.</span><span class="sxs-lookup"><span data-stu-id="eb954-105">Although you see text on the screen, Windows PowerShell does not pipe text between commands.</span></span> <span data-ttu-id="eb954-106">Stattdessen werden Objekte weitergeleitet.</span><span class="sxs-lookup"><span data-stu-id="eb954-106">Instead, it pipes objects.</span></span>

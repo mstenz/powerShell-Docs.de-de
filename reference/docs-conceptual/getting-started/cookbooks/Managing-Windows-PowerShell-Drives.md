@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951867"
 ---
 # <a name="managing-windows-powershell-drives"></a><span data-ttu-id="bc523-103">Verwalten von Windows PowerShell-Laufwerken</span><span class="sxs-lookup"><span data-stu-id="bc523-103">Managing Windows PowerShell Drives</span></span>
 

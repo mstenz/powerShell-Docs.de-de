@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34218432"
 ---
 # <a name="side-by-side-module-versioning-support-for-dsc-resources"></a><span data-ttu-id="97921-102">Unterstützung der gleichzeitigen Ausführung unterschiedlicher Versionen für DSC-Ressourcen</span><span class="sxs-lookup"><span data-stu-id="97921-102">Side-By-Side Module Versioning Support for DSC Resources</span></span>
 

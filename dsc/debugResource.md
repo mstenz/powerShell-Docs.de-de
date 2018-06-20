@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34219105"
 ---
 # <a name="debugging-dsc-resources"></a><span data-ttu-id="6a9d9-103">Debuggen von DSC-Ressourcen</span><span class="sxs-lookup"><span data-stu-id="6a9d9-103">Debugging DSC resources</span></span>
 

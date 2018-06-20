@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34187492"
 ---
 # <a name="setting-up-a-pull-client-using-configuration-id"></a><span data-ttu-id="611ca-103">Einrichten eines DSC-Pullclients mithilfe einer Konfigurations-ID</span><span class="sxs-lookup"><span data-stu-id="611ca-103">Setting up a pull client using configuration ID</span></span>
 

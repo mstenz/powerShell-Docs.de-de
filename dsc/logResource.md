@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34219384"
 ---
 # <a name="dsc-log-resource"></a><span data-ttu-id="b1dc1-103">DSC-Ressource „Log“</span><span class="sxs-lookup"><span data-stu-id="b1dc1-103">DSC Log Resource</span></span>
 

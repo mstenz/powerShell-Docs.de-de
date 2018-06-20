@@ -8,6 +8,7 @@ ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "34048493"
 ---
 # <a name="item-manifest-values-that-impact-the-powershell-gallery-ui"></a><span data-ttu-id="c2217-103">Elementmanifestwerte, die die Benutzeroberfläche des PowerShell-Katalogs betreffen</span><span class="sxs-lookup"><span data-stu-id="c2217-103">Item manifest values that impact the PowerShell Gallery UI</span></span>
 

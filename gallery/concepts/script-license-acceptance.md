@@ -8,6 +8,7 @@ ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "34048230"
 ---
 # <a name="requiring-license-acceptance-for-scripts"></a><span data-ttu-id="df8a7-103">Erforderliche Zustimmung zur Lizenz für Skripts</span><span class="sxs-lookup"><span data-stu-id="df8a7-103">Requiring license acceptance for scripts</span></span>
 

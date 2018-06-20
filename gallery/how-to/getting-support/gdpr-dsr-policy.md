@@ -8,6 +8,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189753"
 ---
 # <a name="powershell-gallery-gdpr-compliance"></a><span data-ttu-id="fde63-103">DSGVO-Kompatibilität für den PowerShell-Katalog</span><span class="sxs-lookup"><span data-stu-id="fde63-103">PowerShell Gallery GDPR compliance</span></span>
 

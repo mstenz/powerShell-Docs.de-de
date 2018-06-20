@@ -8,6 +8,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189532"
 ---
 # <a name="creating-and-publishing-an-item"></a><span data-ttu-id="52158-103">Erstellen und Veröffentlichen eines Elements</span><span class="sxs-lookup"><span data-stu-id="52158-103">Creating and publishing an item</span></span>
 

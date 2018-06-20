@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30954890"
 ---
 # <a name="multiple-selection-list-boxes"></a><span data-ttu-id="0bffb-103">Listenfelder für Mehrfachauswahl</span><span class="sxs-lookup"><span data-stu-id="0bffb-103">Multiple-selection List Boxes</span></span>
 

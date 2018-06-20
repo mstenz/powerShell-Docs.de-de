@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34218500"
 ---
 # <a name="built-in-desired-state-configuration-resources-for-linux"></a><span data-ttu-id="3c25e-103">Integrierte PowerShell DSC-Ressourcen für Linux</span><span class="sxs-lookup"><span data-stu-id="3c25e-103">Built-In Desired State Configuration Resources for Linux</span></span>
 

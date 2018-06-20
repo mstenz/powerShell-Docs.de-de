@@ -8,6 +8,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34222189"
 ---
 # <a name="bug-fixes-in-wmf-51"></a><span data-ttu-id="bcd3b-103">Fehlerkorrekturen in WMF 5.1#</span><span class="sxs-lookup"><span data-stu-id="bcd3b-103">Bug Fixes in WMF 5.1#</span></span>
 
