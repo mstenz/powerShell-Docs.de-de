@@ -7,6 +7,7 @@ ms.sourcegitcommit: 4a841ebda3339ae2477e0f5f5be8c01740221232
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33677245"
 ---
 # <a name="whats-new-with-powershell-50"></a>Neues in PowerShell 5.0
 Windows PowerShell® 5.0 bietet wichtige neue Features, die die Verwendungsmöglichkeiten erweitern, die Benutzerfreundlichkeit verbessern und es Ihnen ermöglichen, die Steuerung und Verwaltung von Windows-basierten Umgebungen leichter und umfassender zu bewältigen.  Die wichtigsten Verbesserungen finden sich in den Bereichen DSC (Desired State Configuration, Konfigurieren des gewünschten Zustands), Leistung, Remoting und Spracherweiterungen.

@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189396"
 ---
 # <a name="configure-node-with-multiple-configuration-fragments-partial-configurations"></a>Konfigurieren von Knoten mit mehreren Konfigurationsfragmenten (Teilkonfigurationen)
 

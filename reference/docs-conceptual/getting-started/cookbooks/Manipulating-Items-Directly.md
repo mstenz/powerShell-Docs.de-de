@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953666"
 ---
 # <a name="manipulating-items-directly"></a>Direktes Verarbeiten von Elementen
 
@@ -92,7 +93,7 @@ SKC  VC Name                           Property
   3   0 OptionalComponents             {}
 ```
 
-Zwar wäre es praktisch, wenn Registrierungseinträge wie Elemente behandelt werden könnten, es ist aber nicht möglich, einen Pfad zu einem Registrierungseintrag so anzugeben, dass seine Eindeutigkeit sicherstellt ist. In der Pfadnotation wird nicht zwischen dem Registrierungsunterschlüssel namens **Run** und dem **(Standard)**Registrierungseintrag im **Run**-Unterschlüssel unterschieden. Darüber hinaus könnten Sie, wenn Registrierungseinträge Elemente wären, die Pfadnotation nicht dazu verwenden, einen Registrierungseintrag namens **Windows\\CurrentVersion\\Run** von dem Unterschlüssel zu unterscheiden, der sich in diesem Pfad befindet, denn Registrierungseintragsnamen können den umgekehrten Schrägstrich (**\\**) enthalten.
+Zwar wäre es praktisch, wenn Registrierungseinträge wie Elemente behandelt werden könnten, es ist aber nicht möglich, einen Pfad zu einem Registrierungseintrag so anzugeben, dass seine Eindeutigkeit sicherstellt ist. In der Pfadnotation wird nicht zwischen dem Registrierungsunterschlüssel namens **Run** und dem **(Standard)** Registrierungseintrag im **Run**-Unterschlüssel unterschieden. Darüber hinaus könnten Sie, wenn Registrierungseinträge Elemente wären, die Pfadnotation nicht dazu verwenden, einen Registrierungseintrag namens **Windows\\CurrentVersion\\Run** von dem Unterschlüssel zu unterscheiden, der sich in diesem Pfad befindet, denn Registrierungseintragsnamen können den umgekehrten Schrägstrich (**\\**) enthalten.
 
 ### <a name="renaming-existing-items-rename-item"></a>Umbenennen von vorhandenen Elementen (Rename-Item)
 

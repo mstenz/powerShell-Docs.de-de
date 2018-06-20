@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34218211"
 ---
 # <a name="format-hex"></a>Format-Hex
 Mit **Format-Hex** können Sie Text- und Binärdaten im Hexadezimalformat anzeigen (siehe [Format-Hex](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/format-hex)).

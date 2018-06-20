@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34219088"
 ---
 # <a name="new-and-updated-cmdlets-based-on-community-feedback"></a>Neue und aktualisierte Cmdlets basierend auf Communityfeedback
 Wir haben basierend auf Feedback aus der Community über [Connect](https://connect.microsoft.com/powershell) einige neue „Utility“-Cmdlets hinzugefügt und vorhandene Cmdlets aktualisiert. Wir sichten Ihr Feedback weiter und gehen auf so viele Anforderungen wie möglich ein.

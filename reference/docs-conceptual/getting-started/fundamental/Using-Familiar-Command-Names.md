@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952680"
 ---
 # <a name="using-familiar-command-names"></a>Verwenden von vertrauten Befehlsnamen
 Durch Verwenden eines Mechanismus namens *Aliasing* versetzt Windows PowerShell Benutzer in die Lage, über alternative Namen auf Befehle zu verweisen. Aliasing ermöglicht es Benutzern mit Erfahrung mit anderen Shells, übliche Befehlsnamen, die sie bereits kennen, wiederzuverwenden, um gleiche Vorgänge in Windows PowerShell auszuführen. Windows PowerShell-Aliase werden zwar nicht im Detail erläutert, Sie können diese aber weiterhin verwenden, wenn Sie sich mit Windows PowerShell vertraut machen.

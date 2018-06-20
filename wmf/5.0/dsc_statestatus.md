@@ -6,6 +6,7 @@ ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 05/25/2018
+ms.locfileid: "34482912"
 ---
 # <a name="unified-and-consistent-state-and-status-representation"></a>Vereinheitlichung und Konsistenz von Zustands- und Statusdarstellung
 

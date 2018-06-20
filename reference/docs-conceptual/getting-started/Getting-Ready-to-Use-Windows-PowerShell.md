@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30950966"
 ---
 # <a name="getting-ready-to-use-windows-powershell"></a>Vorbereiten des Verwendens von WindowsPowerShell
 Wenn Sie die Windows PowerShell installieren und ausführen, sollten Sie die folgenden Setupoptionen berücksichtigen. Sie können diese Aufgaben zu einem beliebigen Zeitpunkt ausführen.

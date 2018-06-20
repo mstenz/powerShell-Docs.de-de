@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34218823"
 ---
 # <a name="feedback"></a>Feedback
 Verwenden Sie zum Melden von Problemen oder Abgeben von Feedback die [UserVoice-Website zu PowerShell](http://windowsserver.uservoice.com/forums/301869-powershell).

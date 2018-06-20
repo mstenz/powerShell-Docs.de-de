@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951085"
 ---
 # <a name="understanding-important-windows-powershell-concepts"></a>Grundlegendes zu wichtigen Windows PowerShell-Konzepten
 Für Windows PowerShell wurden Konzepte aus vielen verschiedenen Umgebungen integriert. Mit mehreren davon sind Personen vertraut, die Erfahrung mit bestimmten Shells oder Programmierumgebungen haben, doch nur sehr wenige kennen alle. Ein Blick auf einige dieser Konzepte ermöglicht eine nützliche Übersicht über die Shell.

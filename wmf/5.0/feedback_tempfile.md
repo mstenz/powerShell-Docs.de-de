@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: de-DE
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34217990"
 ---
 # <a name="new-temporaryfile"></a>New-TemporaryFile
 Mitunter müssen Sie in Ihren Skripts eine temporäre Datei erstellen. Hierfür dient das Cmdlet **New-TemporaryFile**:
