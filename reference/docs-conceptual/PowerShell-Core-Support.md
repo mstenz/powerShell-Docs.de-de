@@ -4,9 +4,9 @@ PowerShell Core ist eine Zusammenstellung von Tools und Komponenten, die separat
 PowerShell Core ist daher nicht in den Lizenzvereinbarungen für Windows 7/8.1/10 oder Windows Server enthalten.
 
 PowerShell Core wird jedoch von herkömmlichen Microsoft-Supportvereinbarungen unterstützt, einschließlich [Premier][], [Microsoft Enterprise Agreements][enterprise-agreement] und [Microsoft Software Assurance][assurance].
-Sie können auch Hilfe bei der kostenpflichtigen [unterstützten Support][] für PowerShell Core anfordern.
+Sie können auch Hilfe bei der kostenpflichtigen [assisted support (Unterstützter Support)][] für PowerShell Core anfordern.
 
-Auf GitHub wird Ihnen auch [Communitysupport][] geboten. Dort können Sie Tickets zu Problemen, Fehlern oder Funktionsanfragen stellen.
+Auf GitHub wird Ihnen auch [community support (Communitysupport)][] geboten. Dort können Sie Tickets zu Problemen, Fehlern oder Funktionsanfragen stellen.
 Alternativ haben Sie die Möglichkeit, sich von anderen Mitgliedern aus der allgemeinen [Microsoft Community][] oder der Microsoft [PowerShell Tech Community][] helfen zu lassen.
 Wir bieten keine Garantie, dass ihr Problem zügig behandelt oder behoben wird.
 Wenn Sie ein Problem haben, das unmittelbar Aufmerksamkeit erfordert, sollten Sie sich an die herkömmlichen kostenpflichtigen Supportoptionen wenden.
@@ -41,7 +41,7 @@ PowerShell Core wird offiziell auf folgenden Plattformen unterstützt:
 * CentOS 7
 * Red Hat Enterprise Linux 7
 * OpenSUSE 42.2
-* Fedora 25, 26
+* Fedora 27, 28
 * macOS 10.12 und höher
 
 Unsere Community hat außerdem Pakete für die folgenden Plattformen veröffentlicht, die jedoch nicht offiziell unterstützt werden:
@@ -52,8 +52,8 @@ Unsere Community hat außerdem Pakete für die folgenden Plattformen veröffentl
 
 ## <a name="notes-on-licensing"></a>Hinweise zur Lizenzierung
 
-PowerShell Core wird unter der [MIT-Lizenz][] veröffentlicht.
-Unter dieser Lizenz und in Abwesenheit einer kostenpflichtigen Supportvereinbarung gibt es für die Benutzer nur den [Communitysupport][].
+PowerShell Core wird unter der [MIT license (MIT-Lizenz)][] veröffentlicht.
+Unter dieser Lizenz und in Abwesenheit einer kostenpflichtigen Supportvereinbarung gibt es für die Benutzer nur den [community support (Communitysupport)][].
 Beim Support durch die Community gibt Microsoft keine Garantien zur Schnelligkeit der Reaktion auf Ihre Tickets oder der Problembehandlung.
 
 ## <a name="windows-powershell-module"></a>Windows PowerShell-Modul
@@ -81,12 +81,12 @@ Add-WindowsPSModulePath
 [Premier]: https://www.microsoft.com/en-us/microsoftservices/support.aspx
 [enterprise-agreement]: https://www.microsoft.com/en-us/licensing/licensing-programs/enterprise.aspx
 [assurance]: https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx
-[Communitysupport]: https://github.com/powershell/powershell/issues
+[community support (Communitysupport)]: https://github.com/powershell/powershell/issues
 [Microsoft Community]: https://answers.microsoft.com/
 [PowerShell Tech Community]: https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell
-[unterstützten Support]: https://support.microsoft.com/assistedsupportproducts
+[assisted support (Unterstützter Support)]: https://support.microsoft.com/assistedsupportproducts
 [modern]: https://support.microsoft.com/help/30881/modern-lifecycle-policy
 [lifecycle-chart]: ./images/modern-lifecycle.png
 [semi-annual]: https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview
-[MIT-Lizenz]: https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt
+[MIT license (MIT-Lizenz)]: https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt
 [`WindowsPSModulePath`]: https://www.powershellgallery.com/packages/WindowsPSModulePath/

@@ -1,6 +1,6 @@
 # <a name="installing-powershell-core-on-linux"></a>Installieren von PowerShell Core unter Linux
 
-Unterstützt [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 17.04][u17], [Debian 8][deb8], [Debian 9][deb9], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [OpenSUSE 42.2][opensuse], [Fedora 25][fed25], [Fedora 26][fed26][ und ]Arch Linux[arch].
+Unterstützt [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 17.04][u17], [Debian 8][deb8], [Debian 9][deb9], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [OpenSUSE 42.2][opensuse], [Fedora 27][fedora], [Fedora 28][fedora] und [Arch Linux][arch].
 
 Für nicht offiziell unterstützte Linux-Distributionen können Sie versuchen, [PowerShell AppImage][lai] zu verwenden.
 Stattdessen können Sie auch versuchen, PowerShell-Binärdateien über das [`tar.gz`-Archiv][tar] für Linux bereitzustellen. Dafür müssen Sie aber basierend auf Ihrem Betriebssystem die benötigten Abhängigkeiten in zusätzlichen Schritten einrichten.
@@ -16,8 +16,7 @@ Führen Sie `pwsh` über das Terminal aus, nachdem Sie das Paket installiert hab
 [cos]: #centos-7
 [rhel7]: #red-hat-enterprise-linux-rhel-7
 [opensuse]: #opensuse-422
-[fed25]: #fedora-25
-[fed26]: #fedora-26
+[fedora]: #fedora
 [arch]: #arch-linux
 [lai]: #linux-appimage
 [tar]: #binary-archives
@@ -408,58 +407,9 @@ sudo zypper install https://github.com/PowerShell/PowerShell/releases/download/v
 sudo zypper remove powershell
 ```
 
-## <a name="fedora-25"></a>Fedora 25
+## <a name="fedora"></a>Fedora
 
-### <a name="installation-via-package-repository-preferred---fedora-25"></a>Installation über das Paketrepository (bevorzugt): Fedora 25
-
-PowerShell Core für Linux wird in offiziellen Microsoft-Repositorys veröffentlicht, um die Installation (und die Updates) zu vereinfachen.
-
-```sh
-# Register the Microsoft signature key
-sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-
-# Register the Microsoft RedHat repository
-curl https://packages.microsoft.com/config/rhel/7/prod.repo | sudo tee /etc/yum.repos.d/microsoft.repo
-
-# Update the list of products
-sudo dnf update
-
-# Install PowerShell
-sudo dnf install -y powershell
-
-# Start PowerShell
-pwsh
-```
-
-### <a name="installation-via-direct-download---fedora-25"></a>Installation über einen direkten Download: Fedora 25
-
-Laden Sie das RPM-Paket `powershell-6.0.2-1.rhel.7.x86_64.rpm` über die Seite [Releases][] auf den Fedora-Computer herunter.
-
-```sh
-wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell-6.0.0-1.rhel.7.x86_64.rpm
-```
-
-Führen Sie dann folgenden Befehl im Terminal aus:
-
-```sh
-sudo dnf install powershell-6.0.2-1.rhel.7.x86_64.rpm
-```
-
-Außerdem können Sie RPM installieren, ohne es herunterladen zu müssen:
-
-```sh
-sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v6.0.2/powershell-6.0.2-1.rhel.7.x86_64.rpm
-```
-
-### <a name="uninstallation---fedora-25"></a>Deinstallation: Fedora 25
-
-```sh
-sudo dnf remove powershell
-```
-
-## <a name="fedora-26"></a>Fedora 26
-
-### <a name="installation-via-package-repository-preferred---fedora-26"></a>Installation über das Paketrepository (bevorzugt): Fedora 26
+### <a name="installation-via-package-repository-preferred---fedora-27-fedora-28"></a>Installation über das Paketrepository (bevorzugt): Fedora 27, Fedora 28
 
 PowerShell Core für Linux wird in offiziellen Microsoft-Repositorys veröffentlicht, um die Installation (und die Updates) zu vereinfachen.
 
@@ -483,14 +433,13 @@ sudo dnf install -y powershell
 pwsh
 ```
 
-### <a name="installation-via-direct-download---fedora-26"></a>Installation über einen direkten Download: Fedora 26
+### <a name="installation-via-direct-download---fedora-27-fedora-28"></a>Installation über einen direkten Download: Fedora 27, Fedora 28
 
 Laden Sie das RPM-Paket `powershell-6.0.2-1.rhel.7.x86_64.rpm` über die Seite [Releases][] auf den Fedora-Computer herunter.
 
 Führen Sie dann folgenden Befehl im Terminal aus:
 
 ```sh
-sudo dnf update
 sudo dnf install compat-openssl10
 sudo dnf install powershell-6.0.2-1.rhel.7.x86_64.rpm
 ```
@@ -498,12 +447,11 @@ sudo dnf install powershell-6.0.2-1.rhel.7.x86_64.rpm
 Außerdem können Sie RPM installieren, ohne es herunterladen zu müssen:
 
 ```sh
-sudo dnf update
 sudo dnf install compat-openssl10
 sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v6.0.2/powershell-6.0.2-1.rhel.7.x86_64.rpm
 ```
 
-### <a name="uninstallation---fedora-26"></a>Deinstallation: Fedora 26
+### <a name="uninstallation---fedora-27-fedora-28"></a>Deinstallation: Fedora 27, Fedora 28
 
 ```sh
 sudo dnf remove powershell
@@ -642,8 +590,8 @@ Im folgenden Diagramm werden die Abhängigkeiten von .NET Core 2.0 für die vers
 | Ubuntu 17.04       | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57 |
 | Debian 8 (Jessie)  | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52 |
 | Debian 9 (Stretch) | libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6, <br> libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57 |
-| CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 <br> OpenSUSE 42.2 <br> Fedora 25 | libunwind, libcurl, openssl-libs, libicu |
-| Fedora 26          | libunwind, libcurl, openssl-libs, libicu, compat-openssl10 |
+| CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 <br> OpenSUSE 42.2 | libunwind, libcurl, openssl-libs, libicu |
+| Fedora 27 <br> Fedora 28 | libunwind, libcurl, openssl-libs, libicu, compat-openssl10 |
 
 Sie müssen zur Bereitstellung von PowerShell-Binärdateien für nicht offiziell unterstützte Linux-Distributionen die notwendigen Abhängigkeiten für das Zielbetriebssystem über zusätzliche Schritte installieren.
 Beispielsweise installiert die [Amazon Linux-Dockerfile][amazon-dockerfile] zuerst die Abhängigkeiten und extrahiert anschließend erst das Linux-`tar.gz`-Archiv.
