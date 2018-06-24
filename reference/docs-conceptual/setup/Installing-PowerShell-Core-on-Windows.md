@@ -2,7 +2,7 @@
 
 ## <a name="msi"></a>MSI
 
-Installieren Sie PowerShell auf einem Windows-Client oder Windows Server-Computer (funktioniert unter Windows 7 SP1, Windows Server 2008 R2 und höher), indem Sie das MSI-Paket von unserer GitHub-Seite mit [Freigaben][] herunterladen.
+Installieren Sie PowerShell auf einem Windows-Client oder Windows Server-Computer (funktioniert unter Windows 7 SP1, Windows Server 2008 R2 und höher), indem Sie das MSI-Paket von unserer GitHub-[releases][]-Seite herunterladen.
 
 Die MSI-Datei sieht wie folgt aus: `PowerShell-<version>-win-<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
