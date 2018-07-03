@@ -1,5 +1,5 @@
 - name: Windows Management Framework (WMF) – Übersicht
-  href: README.md
+  href: overview.md
 - name: WMF 5.1
   href: 5.1/release-notes.md
   items:
@@ -10,7 +10,7 @@
           href: 5.1/DSC-improvements.md
         - name: Verbesserungen an der PowerShell-Konsole
           href: 5.1/console-improvements.md
-        - name: Verbesserungen am PowerShell-Modul
+        - name: Verbesserungen an der PowerShell-Engine
           href: 5.1/engine-improvements.md
         - name: Verbesserungen bei der Paketverwaltung
           href: 5.1/package-management-improvements.md
@@ -106,7 +106,7 @@
                   items:
                     - name: Unterstützung gemischter „RefreshMode“-Eigenschaften
                       href: 5.0/dsc_partialconfig_mixedmode.md
-                - name: Konfigurieren des DSC-Moduls mit neuem Attribut
+                - name: Konfigurieren der DSC-Engine mit neuem Attribut
                   href: 5.0/dsc_metaconfiguration.md
                 - name: Detaillierte Informationen zum LCM-Status
                   href: 5.0/dsc_lcmstate.md
