@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Verwenden von Konfigurationsdaten
-ms.openlocfilehash: d42c43fddb54050adcbac949e7f67f3b41b540f1
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 9b0b213e2d71bfdb473fd98f8080de5c874c70e2
+ms.sourcegitcommit: 68093cc12a7a22c53d11ce7d33c18622921a0dd1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189685"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36940377"
 ---
 # <a name="using-configuration-data-in-dsc"></a>Verwenden von Konfigurationsdaten in DSC
 
->Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Mithilfe des integrierten DSC-Parameters **ConfigurationData** können Sie Daten definieren, die innerhalb einer Konfiguration verwendet werden können.
 Dadurch können Sie eine einzige Konfiguration erstellen, die für mehrere Knoten oder für unterschiedliche Umgebungen verwendet werden kann.
@@ -28,7 +28,8 @@ Informationen zum Kompilieren von Konfigurationen finden Sie unter [DSC-Konfigur
 Der Parameter **ConfigurationData** ist eine Hashtabelle, die mindestens einen Schlüssel namens **AllNodes** benötigt.
 Die Hashtabelle kann außerdem noch weitere Schlüssel umfassen.
 
->**Hinweis**: In den Beispielen in diesem Thema wird (neben dem Schlüssel **AllNodes**) nur ein einziger zusätzlicher Schlüssel verwendet, dieser trägt den Namen `NonNodeData`. Sie können jedoch eine beliebige Anzahl zusätzlicher Schlüssel verwenden und diese nach Wunsch benennen.
+> [!NOTE]
+> In den Beispielen in diesem Artikel wird (neben dem Schlüssel **AllNodes**) nur ein einziger zusätzlicher Schlüssel verwendet. Dieser trägt den Namen `NonNodeData`. Sie können jedoch eine beliebige Anzahl zusätzlicher Schlüssel verwenden und diese nach Wunsch benennen.
 
 ```powershell
 $MyData =
@@ -188,6 +189,7 @@ DSC stellt drei spezielle Variablen bereit, die in einem Skript verwendet werden
 
 - **$AllNodes** bezieht sich auf die gesamte, in **ConfigurationData** definierte Knotensammlung. Sie können die **AllNodes**-Sammlung mit **.Where()** und **.ForEach()** filtern.
 - **Nodes** bezieht sich auf einen bestimmten Eintrag in der **AllNodes**-Sammlung, nachdem sie mithilfe von **.Where()** oder **.ForEach()** gefiltert wurde.
+  - Weitere Informationen zu diesen Methoden finden Sie unter [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md).
 - **ConfigurationData** bezieht sich auf die gesamte Hashtabelle, die beim Kompilieren einer Konfiguration als Parameter übergeben wird.
 
 ## <a name="using-non-node-data"></a>Verwenden von Daten ohne Knoten
@@ -199,5 +201,6 @@ Sie können jedoch eine beliebige Anzahl von zusätzlichen Schlüsseln definiere
 Ein Beispiel für die Verwendung von Nicht-Knotendaten finden Sie unter [Trennen von Konfigurations- und Umgebungsdaten](separatingEnvData.md).
 
 ## <a name="see-also"></a>Weitere Informationen
+
 - [Optionen für Anmeldeinformationen in den Konfigurationsdaten](configDataCredentials.md)
 - [DSC-Konfigurationen](configurations.md)

@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Erstellen einer Pipeline für Continuous Integration und Continuous Deplyoment mit DSC
-ms.openlocfilehash: ce0f2ed79f5f96a1c38e0beaf32529aba7538963
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: faeef5022cbd984cab0620b69db19de8b84cca0e
+ms.sourcegitcommit: 68093cc12a7a22c53d11ce7d33c18622921a0dd1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190552"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36940343"
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>Erstellen einer Pipeline für Continuous Integration und Continuous Deplyoment mit DSC
 
@@ -36,6 +36,7 @@ Um dieses Beispiel zu erstellen und auszuführen, benötigen Sie eine Umgebung m
 Dies ist der Computer, auf dem Sie die gesamte Arbeitseinrichtung vornehmen und das Beispiel ausführen.
 
 Der Clientcomputer muss ein Windows-Computer sein, auf dem folgende Komponenten installiert sind:
+
 - [Git](https://git-scm.com/)
 - Ein aus https://github.com/PowerShell/Demo_CI geklontes lokales Git-Repository
 - Ein Text-Editor, z.B. [Visual Studio Code](https://code.visualstudio.com/)
@@ -73,21 +74,22 @@ Wenn Sie das Demo_CI-Repository noch nicht auf Ihren Clientcomputer geklont habe
 1. Navigieren Sie auf Ihrem Clientcomputer in einem Webbrowser zu Ihrem TFS-Server.
 1. [Erstellen Sie in TFS ein neues Teamprojekt](https://www.visualstudio.com/en-us/docs/setup-admin/create-team-project) mit dem Namen „Demo_CI“.
 
-    Stellen Sie sicher, dass **Versionskontrolle** auf **Git** festgelegt ist.
+   Stellen Sie sicher, dass **Versionskontrolle** auf **Git** festgelegt ist.
 1. Fügen Sie dem soeben auf Ihrem Clientcomputer in TFS erstellten Repository mit dem folgenden Befehl ein Remoterepository hinzu:
 
-    `git remote add tfs <YourTFSRepoURL>`
+   `git remote add tfs <YourTFSRepoURL>`
 
-    Hierbei steht `<YourTFSRepoURL>` für die URL zum Klonen des TFS-Repositorys, das Sie im vorherigen Schritt erstellt haben.
+   Hierbei steht `<YourTFSRepoURL>` für die URL zum Klonen des TFS-Repositorys, das Sie im vorherigen Schritt erstellt haben.
 
-    Wenn Sie nicht wissen, wo Sie diese URL finden, lesen Sie den Artikel [Klonen eines vorhandenen Git-Repositorys](https://www.visualstudio.com/en-us/docs/git/tutorial/clone).
+   Wenn Sie nicht wissen, wo Sie diese URL finden, lesen Sie den Artikel [Klonen eines vorhandenen Git-Repositorys](https://www.visualstudio.com/en-us/docs/git/tutorial/clone).
 1. Pushen Sie mit dem folgenden Befehl den Code aus Ihrem lokalen Repository in Ihr TFS-Repository:
 
-    `git push tfs --all`
+   `git push tfs --all`
 1. Das TFS-Repository wird mit dem Demo_CI-Code aufgefüllt.
 
->**Hinweis**: Dieses Beispiel verwendet den Code im `ci-cd-example`-Branch des Git-Repositorys.
->Achten Sie darauf, diesen Branch in Ihrem TFS-Projekt sowie für die erstellten CI/CD-Trigger als Standardbranch anzugeben.
+> [!NOTE]
+> Dieses Beispiel verwendet den Code im `ci-cd-example`-Branch des Git-Repositorys.
+> Achten Sie darauf, diesen Branch in Ihrem TFS-Projekt sowie für die erstellten CI/CD-Trigger als Standardbranch anzugeben.
 
 ## <a name="understanding-the-code"></a>Grundlegendes zum Code
 
@@ -154,6 +156,8 @@ Node $AllNodes.Where{$_.Role -eq 'DNSServer'}.NodeName
 ```
 
 Hiermit werden alle Knoten gesucht, die in den vom `DevEnv.ps1`-Skript erstellten [Konfigurationsdaten](configData.md) mit der Rolle `DNSServer` definiert wurden.
+
+Weitere Informationen zur Methode `Where` finden Sie unter [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md).
 
 Die Verwendung von Konfigurationsdaten zum Definieren von Knoten ist im Rahmen der Continuous Integration wichtig, weil sich Knoteninformationen je nach Umgebung wahrscheinlich ändern. Mithilfe von Konfigurationsdaten können Sie problemlos Änderungen an Knoteninformationen durchführen, ohne den Konfigurationscode ändern zu müssen.
 
@@ -348,12 +352,12 @@ Mit diesem Buildschritt werden die Komponententests im Pester-Skript ausgeführt
 
 1. Fügen Sie **Inhalte** jede der folgenden Zeilen hinzu:
 
-    ```
-    initiate.ps1
-    **\deploy.ps1
-    **\Acceptance\**
-    **\Integration\**
-    ```
+   ```
+   initiate.ps1
+   **\deploy.ps1
+   **\Acceptance\**
+   **\Integration\**
+   ```
 
 1. Legen Sie **TargetFolder** auf `$(Build.ArtifactStagingDirectory)\` fest.
 

@@ -36,8 +36,7 @@ brew cask upgrade powershell
 ```
 
 > [!NOTE]
-> Die oben genannten Befehle können innerhalb eines PowerShell-Hosts (pwsh) aufgerufen werden, die Shell von PowerShell muss dann jedoch beendet und neu angegeben werden, um das Upgrade abzuschließen
-> und die in $PSVersionTable dargestellten Werte zu aktualisieren.
+> Die oben genannten Befehle können innerhalb eines PowerShell-Hosts (pwsh) aufgerufen werden, die Shell von PowerShell muss dann jedoch beendet und neu gestartet werden, um das Upgrade abzuschließen und die in $PSVersionTable dargestellten Werte zu aktualisieren.
 
 [brew]: http://brew.sh/
 [cask]: https://caskroom.github.io/
@@ -98,7 +97,7 @@ Lesen Sie den Abschnitt [Pfade][] in diesem Artikel, um zu erfahren, wie Sie zus
 
 ## <a name="paths"></a>Pfade
 
-* `$PSHOME` ist `/opt/microsoft/powershell/6.0.0/`.
+* `$PSHOME` ist `/usr/local/microsoft/powershell/6.0.2/`.
 * Benutzerprofile werden über `~/.config/powershell/profile.ps1` gelesen.
 * Standardprofile werden über `$PSHOME/profile.ps1` gelesen.
 * Benutzermodule werden über `~/.local/share/powershell/Modules` gelesen.
@@ -112,7 +111,7 @@ Das bedeutet, dass hostspezifische Standardprofile in `Microsoft.PowerShell_prof
 PowerShell hält die [XDG Base Directory Specification (XDG Base Directory-Spezifikation)][xdg-bds] unter macOs ein.
 
 Da macOS eine Ableitung von BSD ist, wird das Präfix `/usr/local` anstelle von `/opt` verwendet.
-Daher ist `$PSHOME` `/usr/local/microsoft/powershell/6.0.0/` und der Symlink wird unter `/usr/local/bin/pwsh` gespeichert.
+Daher ist `$PSHOME` `/usr/local/microsoft/powershell/6.0.2/` und der Symlink wird unter `/usr/local/bin/pwsh` gespeichert.
 
 [Releases]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html

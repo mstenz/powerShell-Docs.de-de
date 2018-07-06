@@ -1,14 +1,14 @@
 ---
 description: Informationen zur Versionsgeschichte der Desired State Configuration-Erweiterung (DSC) in Azure
-ms.date: 05/09/2018
+ms.date: 06/21/2018
 keywords: DSC, PowerShell, Azure, Erweiterung
 title: Versionsgeschichte der Azure DSC-Erweiterung
-ms.openlocfilehash: 81dfcf81bd8f8685a0c8c81cd07bc5447e1abf94
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 25248288291b9bf8efe6ce1eef203a552cd17736
+ms.sourcegitcommit: 68093cc12a7a22c53d11ce7d33c18622921a0dd1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189940"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36940326"
 ---
 # <a name="azure-desired-state-configuration-extension-version-history"></a>Versionsgeschichte der Azure Desired State Configuration-Erweiterung
 
@@ -16,12 +16,12 @@ Die VM-Erweiterung von Azure Desired State Configuration (DSC) wird bei Bedarf a
 
 Dieser Artikel informiert Sie über alle Versionen der Azure DSC-VM-Erweiterung sowie über die unterstützten Umgebungen und enthält Kommentare und Hinweise zu neuen Features und Veränderungen.
 
-## <a name="latest-versions"></a>Neueste Versionen
+## <a name="latest-version"></a>Neueste Version
 
 ### <a name="version-276"></a>Version 2.76
 
 - **Veröffentlichungsdatum:**
-  - 9. Mai 2018
+  - 9. Mai 2018 (Azure) | 21. Juni 2018 (Azure China, Azure Government)
 - **Betriebssystemunterstützung :**
   - Windows Server 2016
   - Windows Server 2012 R2
@@ -36,30 +36,11 @@ Dieser Artikel informiert Sie über alle Versionen der Azure DSC-VM-Erweiterung 
   - WMF 4.0
 - **Umgebung:**
   - Azure
+  - Azure China
+  - Azure Government
 - **Hinweise:** In dieser Version wird DSC verwendet, das in Windows Server 2016 enthalten ist. Für andere Windows-Betriebssysteme wird [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) installiert (Für die Installation von WMF ist ein Neustart erforderlich). Für Nano Server wird die DSC-Rolle auf der VM installiert.
 - **Neue Funktionen:**
   - Verbesserungen bei Erweiterungsmetadaten für den Unterstatus und andere kleinere Fehlerkorrekturen
-
-### <a name="version-219"></a>Version 2.19
-
-- **Veröffentlichungsdatum:**
-  - 3. Juni 2016
-- **Betriebssystemunterstützung :**
-  - Windows Server 2016 Technical Preview
-  - Windows Server 2012 R2
-  - Windows Server 2012
-  - Windows Server 2008 R2 SP1
-- **WMF-Support:**
-  - WMF 5.0 RTM
-  - WMF 4.0 Update
-  - WMF 4.0
-- **Umgebung:**
-  - Azure
-  - Azure China
-  - Azure Government
-- **Hinweise:** In dieser Version wird DSC verwendet, das in Windows Server 2016 Technical Preview enthalten ist. Für andere Windows-Betriebssysteme wird [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) installiert (Für die Installation von WMF ist ein Neustart erforderlich).
-- **Neue Funktionen:**
-  - Die DSC-Erweiterung ist jetzt in Azure China eingegliedert. Diese Version enthält vorwiegend Korrekturen zur fehlerfreien Ausführung der Erweiterung in Azure China.
 
 ## <a name="supported-versions"></a>Von  unterstützte Versionen
 
