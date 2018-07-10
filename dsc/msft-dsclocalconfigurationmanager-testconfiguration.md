@@ -2,19 +2,18 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: TestConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse
-ms.openlocfilehash: 2df04d317bd5e7a5c2a713d92be57c5c9a9f5e8c
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: d746832b01310f43a7aae33dd0fa70c0928bb3e0
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219010"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893925"
 ---
 # <a name="testconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>TestConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse
 
 Sendet das Konfigurationsdokument an den verwalteten Knoten und überprüft die aktuelle Konfiguration anhand dieses Dokuments.
 
-<a name="syntax"></a>Syntax
-------
+## <a name="syntax"></a>Syntax
 
 ```mof
 uint32 TestConfiguration(
@@ -25,8 +24,7 @@ uint32 TestConfiguration(
 );
 ```
 
-<a name="parameters"></a>Parameter
-----------
+## <a name="parameters"></a>Parameter
 
 *configurationData* \[in\] Die Umgebungsdaten für die Konfiguration.
 
@@ -37,7 +35,6 @@ uint32 TestConfiguration(
 *ResourcesNotInDesiredState* \[out\] Enthält bei der Rückgabe eine eingebettete Instanz der **MSFT_ResourceNotInDesiredState**-Klasse, die Ressourcen angibt, die sich nicht im gewünschten Zustand befinden.
 
 ## <a name="return-value"></a>Rückgabewert
-------------
 
 Gibt bei Erfolg null zurück, andernfalls einen Fehlercode.
 
@@ -46,13 +43,11 @@ Gibt bei Erfolg null zurück, andernfalls einen Fehlercode.
 Dies ist eine statische Methode.
 
 ## <a name="requirements"></a>Anforderungen
-------------
->**MOF:** DscCore.mof
 
->**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF:** DscCore.mof
 
+**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Siehe auch
-
 
 [**MSFT_DSCLocalConfigurationManager-Klasse**](msft-dsclocalconfigurationmanager.md)

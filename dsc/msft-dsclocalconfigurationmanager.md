@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: MSFT_DSCLocalConfigurationManager-Klasse
-ms.openlocfilehash: 615f2998b11a0a927d3868d852e0d408f500c86d
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 7f6aaf209601e99b0120407eb301d32fcfda9eb8
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188834"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892272"
 ---
 # <a name="msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager-Klasse
 
@@ -16,9 +16,8 @@ Der lokale Konfigurations-Manager, der die Zustände von Konfigurationsdateien s
 Die folgende Syntax wurde aus MOF-Code (Managed Object Format, verwaltetes Objektformat) vereinfacht und enthält alle geerbten Eigenschaften.
 
 ## <a name="syntax"></a>Syntax
-------
 
-``` syntax
+```
 [ClassVersion("1.0.0"), dynamic, provider("dsccore"), AMENDMENT]
 class MSFT_DSCLocalConfigurationManager
 {
@@ -26,11 +25,10 @@ class MSFT_DSCLocalConfigurationManager
 ```
 
 ## <a name="members"></a>Members
--------
 
 Die **MSFT_DSCLocalConfigurationManager**-Klasse hat folgende Member:
 
--   [Methoden][]
+- [Methoden][]
 
 ### <a name="methods"></a>Methoden
 
@@ -58,12 +56,8 @@ Die **MSFT_DSCLocalConfigurationManager**-Klasse enthält diese Methoden.
 | [StopConfiguration](msft-dsclocalconfigurationmanager-stopconfiguration.md)| Beende die Konfiguration, die gerade ausgeführt wird.|
 | [TestConfiguration](msft-dsclocalconfigurationmanager-testconfiguration.md)| Sendet das Konfigurationsdokument an den verwalteten Knoten und überprüft die aktuelle Konfiguration anhand dieses Dokuments.|
 
-
-
-
-
 ## <a name="requirements"></a>Anforderungen
-------------
->**MOF:** DscCore.mof
 
->**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF:** DscCore.mof
+
+**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration

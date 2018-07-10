@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: PowerShell
 title: Elementmanifestwerte, die die Benutzeroberfläche des PowerShell-Katalogs betreffen
-ms.openlocfilehash: 39522396b179c54b981e6292cddacec27b32506c
-ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
+ms.openlocfilehash: fd5e48f8cc36795742ae597fc7715f7377605b6f
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34048493"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893476"
 ---
 # <a name="item-manifest-values-that-impact-the-powershell-gallery-ui"></a>Elementmanifestwerte, die die Benutzeroberfläche des PowerShell-Katalogs betreffen
 
@@ -16,8 +16,8 @@ Dieses Thema enthält zusammenfassende Informationen darüber, wie Herausgeber d
 Der Inhalt des vorliegenden Artikels ist entsprechend der Darstellung der Änderungen organisiert – und zwar beginnend mit dem mittleren Abschnitt bis zum Navigationsbereich auf der linken Seite. Der Artikel enthält einen Detailabschnitt, in dem wichtige Tags sowie einige der häufiger verwendeten Tags erläutert werden.
 In zwei Themen werden Beispiele für Manifeste vorgestellt:
 
-- Informationen zu Modulen finden Sie unter [Update-ModuleManifest](https://docs.microsoft.com/powershell/gallery/psget/module/psget_update-modulemanifest).
-- Informationen zu Skripts finden Sie unter [New-ScriptFileInfo](https://docs.microsoft.com/powershell/gallery/psget/script/psget_new-scriptfileinfo).
+- Informationen zu Modulen finden Sie unter [Update-ModuleManifest](/powershell/module/powershellget/Update-ModuleManifest).
+- Informationen zu Skripts finden Sie unter [New-ScriptFileInfo](/powershell/module/powershellget/New-ScriptFileInfo).
 
 ## <a name="powershell-gallery-feature-elements-controlled-by-the-manifest"></a>Vom Manifest gesteuerte Elemente der PowerShell-Katalogfeatures
 
@@ -27,11 +27,11 @@ Die einzelnen Elemente geben an, ob sie vom Modul- oder Skriptmanifest gesteuert
 | Benutzeroberflächenelement | Beschreibung | Modul | Skript |
 | --- | --- | --- | --- |
 | **Titel** | Dies ist der Name des Elements, das im Katalog veröffentlicht wird.  | Nein | Nein |
-| **Version** | Die angezeigte Version besteht aus der Versionszeichenfolge in den Metadaten und falls angegeben eines Vorabrelease. Der erste Teil der Version in einem Modulmanifest ist ModuleVersion. Bei einem Skript lautet dieser „.VERSION“. Wenn die Versionszeichenfolge eines Vorabrelease angegeben wird, wird diese bei Modulen an ModuleVersion angefügt oder bei Skripts im Rahmen von „.VERSION“ angegeben. Für die Angabe von Vorabreleasezeichenfolgen steht entsprechende Dokumentation zu [Modulen](https://docs.microsoft.com/en-us/powershell/gallery/psget/module/prereleasemodule) und [Skripts](https://docs.microsoft.com/en-us/powershell/gallery/psget/script/prereleasescript) zur Verfügung. | Ja | Ja |
+| **Version** | Die angezeigte Version besteht aus der Versionszeichenfolge in den Metadaten und falls angegeben eines Vorabrelease. Der erste Teil der Version in einem Modulmanifest ist ModuleVersion. Bei einem Skript lautet dieser „.VERSION“. Wenn die Versionszeichenfolge eines Vorabrelease angegeben wird, wird diese bei Modulen an ModuleVersion angefügt oder bei Skripts im Rahmen von „.VERSION“ angegeben. Für die Angabe von Vorabreleasezeichenfolgen steht entsprechende Dokumentation zu [Modulen](/powershell/gallery/concepts/module-prerelease-support) und [Skripts](/powershell/gallery/concepts/script-prerelease-support) zur Verfügung. | Ja | Ja |
 | **Beschreibung** | Dieses Element wird im Modulmanifest durch „Description“ und in einer Skriptmanifestdatei durch „.DESCRIPTION“ angegeben. | Ja | Ja |
-| **Erforderliche Zustimmung zur Lizenz** | Ein Modul kann erfordern, dass der Benutzer eine Lizenz akzeptieren muss, indem er das Modulmanifest mit RequireLicenseAcceptance = $true ändert, ein LicenseURI angibt und eine Datei namens „license.txt“ im Stammverzeichnis des Modulordners bereitstellt. Weitere Informationen finden Sie im Thema [Erforderliche Zustimmung zur Lizenz](https://docs.microsoft.com/en-us/powershell/gallery/psgallery/psgallery_requires_license_acceptance). | Ja | Nein |
+| **Erforderliche Zustimmung zur Lizenz** | Ein Modul kann erfordern, dass der Benutzer eine Lizenz akzeptieren muss, indem er das Modulmanifest mit RequireLicenseAcceptance = $true ändert, ein LicenseURI angibt und eine Datei namens „license.txt“ im Stammverzeichnis des Modulordners bereitstellt. Weitere Informationen finden Sie im Thema [Erforderliche Zustimmung zur Lizenz](/powershell/gallery/how-to/working-with-items/items-that-require-license-acceptance). | Ja | Nein |
 | **Anmerkungen zu dieser Version** | Bei Modulen werden diese Informationen aus dem Abschnitt „ReleaseNotes“ unter „PSData\PrivateData“ abgerufen. Bei Skriptmanifesten ist es das Element „.RELEASENOTES“. | Ja | Ja |
-| **Besitzer** | Unter „Besitzer“ befindet sich die Liste der Benutzer im PowerShell-Katalog, die ein Element aktualisieren können. Die Liste der Besitzer ist nicht im Elementmanifest enthalten. Die zusätzliche Dokumentation enthält Informationen zur [Verwaltung von Elementbesitzern](https://docs.microsoft.com/en-us/powershell/gallery/psgallery/managing-item-owners). | Nein | Nein |
+| **Besitzer** | Unter „Besitzer“ befindet sich die Liste der Benutzer im PowerShell-Katalog, die ein Element aktualisieren können. Die Liste der Besitzer ist nicht im Elementmanifest enthalten. Die zusätzliche Dokumentation enthält Informationen zur [Verwaltung von Elementbesitzern](/powershell/gallery/how-to/publishing-items/managing-item-owners). | Nein | Nein |
 | **Autor** | Dieses Element lautet im Modulmanifest „Author“ und in einem Skriptmanifest „.AUTHOR“. Das Feld „Autor“ wird häufig verwendet, um ein Unternehmen oder eine Organisation anzugeben, das einem Element zugeordnet ist. | Ja | Ja |
 | **Copyright** | Dieses Element ist in einem Modulmanifest das Feld „Copyright“ und lautet in einem Skriptmanifest „.COPYRIGHT“. | Ja | Ja |
 | **FileList** | Die Dateiliste wird aus dem Paket abgerufen, wenn sie im PowerShell-Katalog veröffentlicht wird. Sie kann nicht durch die Manifestinformationen gesteuert werden. Hinweis: Bei jedem Element im PowerShell-Katalog, das nach der Installation des Elements in einem System nicht vorhanden ist, wird eine zusätzliche NUSPEC-Datei aufgeführt. Dies ist das NuGet-Paketmanifest für das Element und kann ignoriert werden. | Nein | Nein |
@@ -41,7 +41,7 @@ Die einzelnen Elemente geben an, ob sie vom Modul- oder Skriptmanifest gesteuert
 | **DSC-Ressourcen** | Bei Modulen, die in PowerShell Version 5.0 und höher verwendet werden, wird dieses Element im Manifest mithilfe von DscResourcesToExport angegeben. Wenn das Modul in PowerShell 4 verwendet werden soll, sollte nicht DSCResourcesToExport verwendet werden, da keine Unterstützung für diesen Manifestschlüssel besteht. (DSC war vor PowerShell 4 nicht vorhanden.) | Ja | Nein |
 | **Workflows** | Workflows werden als Skripts im PowerShell-Katalog veröffentlicht und im Code als Workflows identifiziert (ein Beispiel finden Sie unter [Connect-AzureVM](https://www.powershellgallery.com/packages/Connect-AzureVM/1.0/Content/Connect-AzureVM.ps1)). Dieses Element wird nicht vom Manifest gesteuert. | Nein | Nein |
 | **Rollenfunktionen** | Dieses Element wird aufgeführt, wenn das im PowerShell-Katalog veröffentlichte Modul eine oder mehrere Rollenfunktionsdateien (PSRC) enthält, die von JEA verwendet werden. Weitere Informationen zu [Rollenfunktionen](https://docs.microsoft.com/en-us/powershell/jea/role-capabilities) finden Sie in der JEA-Dokumentation. | Ja | Nein |
-| **PowerShell-Editionen** | Dieses Element wird in einem Skript- oder Modulmanifest angegeben. Bei Modulen, die für die Verwendung von PowerShell 5.0 oder niedriger konzipiert sind, wird dieses Element mithilfe von Tags gesteuert. Bei Desktop wird das Tag „PSEdition_Desktop“ und bei Core das „Tag PSEdition_Core“ verwendet. Bei Modulen, die nur in PowerShell 5.1 oder höher verwendet werden, ist ein CompatiblePSEditions-Schlüssel im Hauptmanifest enthalten. Weitere Informationen zum PS-Editionsfeature finden Sie in der [PowerShellGet-Dokumentation](https://docs.microsoft.com/en-us/powershell/gallery/psget/module/modulewithpseditionsupport). | Ja | Ja |
+| **PowerShell-Editionen** | Dieses Element wird in einem Skript- oder Modulmanifest angegeben. Bei Modulen, die für die Verwendung von PowerShell 5.0 oder niedriger konzipiert sind, wird dieses Element mithilfe von Tags gesteuert. Bei Desktop wird das Tag „PSEdition_Desktop“ und bei Core das „Tag PSEdition_Core“ verwendet. Bei Modulen, die nur in PowerShell 5.1 oder höher verwendet werden, ist ein CompatiblePSEditions-Schlüssel im Hauptmanifest enthalten. Weitere Informationen zum PS-Editionsfeature finden Sie in der [PowerShellGet-Dokumentation](/powershell/gallery/concepts/module-psedition-support). | Ja | Ja |
 | **Abhängigkeiten** | Abhängigkeiten sind die Module im PowerShell-Katalog, die entweder im Modul als RequiredModules oder im Skriptmanifest als „#Requires – Module (Name)“ deklariert werden. | Ja | Ja |
 | **PowerShell-Mindestversion** | Dieses Element kann in einem Modulmanifest als PowerShellVersion angegeben werden. | Ja | Nein |
 | **Versionsverlauf** | Der Versionsverlauf stellt die Updates dar, die an einem Modul im PowerShell-Katalog vorgenommen wurden. Wenn eine Elementversion mit der Löschfunktion ausgeblendet wird, wird diese nur Elementbesitzern im Versionsverlauf angezeigt. | Nein | Nein |
@@ -83,7 +83,6 @@ Im Idealfall sollten viele Elemente zurückgegeben werden, und die Elementbeschr
 Als Referenz werden im Folgenden einige der am häufigsten verwendeten Tags seit dem 14.12.2017 aufgeführt.
 In einigen Fällen werden ähnliche, jedoch möglicherweise weniger geeignete Optionen neben dem Tag aufgeführt.
 Es wird empfohlen, das bevorzugte Tag zu verwenden, da dies die Anzahl falscher Ergebnisse reduziert und zu besseren Suchergebnisse für Consumer führt.
-
 
 | **Bevorzugtes Tag** | **Alternativen und Hinweise** |
 | --- | --- |

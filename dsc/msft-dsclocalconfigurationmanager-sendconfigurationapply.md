@@ -2,19 +2,18 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: SendConfigurationApply-Methode der MSFT_DSCLocalConfigurationManager-Klasse
-ms.openlocfilehash: c578f4f52d3ea70e7bcf683ac204d6e484d4630d
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: da3a08307122ab38ee4a6fd5d4a9b97579a988f7
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222155"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893170"
 ---
 # <a name="sendconfigurationapply-method-of-the-msftdsclocalconfigurationmanager-class"></a>SendConfigurationApply-Methode der MSFT_DSCLocalConfigurationManager-Klasse
 
 Sendet das Konfigurationsdokument an den verwalteten Knoten und verwendet den Konfigurations-Agent zum Anwenden der Konfiguration.
 
-<a name="syntax"></a>Syntax
-------
+## <a name="syntax"></a>Syntax
 
 ```mof
 uint32 SendConfigurationApply(
@@ -23,15 +22,13 @@ uint32 SendConfigurationApply(
 );
 ```
 
-<a name="parameters"></a>Parameter
-----------
+## <a name="parameters"></a>Parameter
 
 *ConfigurationData* \[in\] Die Umgebungsdaten für die Konfiguration.
 
 *force* \[in\] **true**, um das Beenden der Konfiguration zu erzwingen.
 
 ## <a name="return-value"></a>Rückgabewert
-------------
 
 Gibt bei Erfolg null zurück, andernfalls einen Fehlercode.
 
@@ -40,13 +37,11 @@ Gibt bei Erfolg null zurück, andernfalls einen Fehlercode.
 Dies ist eine statische Methode.
 
 ## <a name="requirements"></a>Anforderungen
-------------
->**MOF:** DscCore.mof
 
->**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF:** DscCore.mof
 
+**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>Siehe auch
-
 
 [**MSFT_DSCLocalConfigurationManager-Klasse**](msft-dsclocalconfigurationmanager.md)
