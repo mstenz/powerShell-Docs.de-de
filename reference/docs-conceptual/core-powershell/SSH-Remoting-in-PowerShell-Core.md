@@ -55,6 +55,22 @@ Zusätzlich müssen Sie die Kennwortauthentifizierung und ggf. die schlüsselbas
     ```
     Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
     ```
+    
+    > [!NOTE]
+    Es besteht ein Fehler in OpenSSH für Windows, der verhindert, dass Leerzeichen in ausführbaren Pfaden zu Subsystemen funktionieren.
+    [Weitere Informationen zu diesem Problem finden Sie auf GitHub.](https://github.com/PowerShell/Win32-OpenSSH/issues/784)
+    
+    Um dieses Problem zu beheben, können Sie eine symbolische Verknüpfung mit dem Installationsverzeichnis herstellen, das keine Leerzeichen enthält:
+    
+    ```powershell
+    mklink /D c:\pwsh "C:\Program Files\PowerShell\6.0.0"
+    ```
+
+    Geben Sie diese anschließend in das Subsystem ein:
+ 
+    ```
+    Subsystem    powershell c:\pwsh\pwsh.exe -sshs -NoLogo -NoProfile
+    ```
 
     - Aktivieren Sie ggf. die Schlüsselauthentifizierung.
 
