@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 description: Stellt einen Mechanismus zum Verwalten lokaler Gruppen auf dem Zielknoten zur Verfügung.
 title: DSC-Ressource „GroupSet“
-ms.openlocfilehash: 3d6fdcaef6053964d3fb3b709a5263d291a7c840
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 487a76ca7703b2c57b940b4c5bd176eada6c8019
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222352"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892425"
 ---
 # <a name="dsc-groupset-resource"></a>DSC-Ressource „GroupSet“
 
@@ -18,7 +18,8 @@ Die Ressource **GroupSet** in Windows PowerShell DSC bietet einen Mechanismus zu
 
 Verwenden Sie diese Ressource, wenn Sie dieselbe Liste von Mitgliedern mehreren Gruppen hinzufügen oder aus diesen entfernen möchten, mehr als eine Gruppe entfernen möchten oder mehr als eine Gruppe mit derselben Liste von Mitgliedern hinzufügen möchten.
 
-##<a name="syntax"></a>Syntax##
+## <a name="syntax"></a>Syntax
+
 ```
 Group [string] #ResourceName
 {
@@ -43,7 +44,7 @@ Group [string] #ResourceName
 | MembersToInclude| Verwenden Sie diese Eigenschaft, um Member zur vorhandenen Gruppenmitgliedschaft hinzuzufügen. Der Wert dieser Eigenschaft ist ein Zeichenfolgenarray im Format *Domäne*\\*Benutzername*. Wenn Sie diese Eigenschaft in einer Konfiguration festgelegt haben, verwenden Sie die Eigenschaft **Members** nicht. Andernfalls wird ein Fehler generiert.|
 | DependsOn | Gibt an, dass die Konfiguration einer anderen Ressource ausgeführt werden muss, bevor diese Ressource konfiguriert wird. Wenn beispielsweise die ID des Skriptblocks mit der Ressourcenkonfiguration, den Sie zuerst ausführen möchten, __ResourceName__ und dessen Typ __ResourceType__ ist, lautet die Syntax für das Verwenden dieser Eigenschaft „DependsOn = „[ResourceType]ResourceName“.|
 
-## <a name="example-1"></a>Beispiel 1
+## <a name="example-1-ensuring-groups-are-present"></a>Beispiel 1: Sicherstellen, dass Gruppen vorhanden sind
 
 Im folgenden Beispiel wird gezeigt, wie Sie sicherstellen, dass die beiden Gruppen „myGroup“ und „myOtherGroup“ vorhanden sind.
 
@@ -73,8 +74,8 @@ $cd = @{
     )
 }
 
-
 GroupSetTest -ConfigurationData $cd
 ```
 
->**Hinweis:** In diesem Beispiel werden der Einfachheit halber unverschlüsselte Anmeldeinformationen verwendet. Informationen zum Verschlüsseln von Anmeldeinformationen in der MOF-Konfigurationsdatei finden Sie unter [Schützen der MOF-Datei](secureMOF.md).
+> [!NOTE] 
+> In diesem Beispiel werden der Einfachheit halber unverschlüsselte Anmeldeinformationen verwendet. Informationen zum Verschlüsseln von Anmeldeinformationen in der MOF-Konfigurationsdatei finden Sie unter [Schützen der MOF-Datei](secureMOF.md).

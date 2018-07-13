@@ -4,12 +4,12 @@ ms.topic: conceptual
 keywords: wmf,powershell,setup
 contributor: ryanpu
 title: Verbesserungen bei Just Enough Administration (JEA)
-ms.openlocfilehash: 47a58a6fae9f3a41ec527ec1f77ac1c196336669
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 79271e77a539764e7a18842efd919413cdc8ab9f
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222416"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892718"
 ---
 # <a name="improvements-to-just-enough-administration-jea"></a>Verbesserungen bei Just Enough Administration (JEA)
 
@@ -18,7 +18,7 @@ ms.locfileid: "34222416"
 Sie können Dateien jetzt remote auf einen bzw. von einem JEA-Endpunkt kopieren und sich dabei darauf verlassen, dass der Benutzer, der die Verbindung herstellt, keine *beliebige* Datei auf Ihrem System kopieren kann.
 Dies ist möglich, indem Sie Ihre PSSC-Datei für die Bereitstellung eines Benutzerlaufwerks konfigurieren, mit dem sich Benutzer verbinden können.
 Das Benutzerlaufwerk ist ein neues PSDrive, das für jeden Benutzer, der eine Verbindung herstellt, einzigartig ist und über mehrere Sitzungen hinweg beibehalten wird.
-Wenn zum Kopieren von Dateien in eine bzw. aus einer JEA-Sitzung „Copy-Item“ verwendet wird, wird der Zugriff nur auf das Benutzerlaufwerk gestattet.
+Wenn zum Kopieren von Dateien in eine bzw. aus einer JEA-Sitzung `Copy-Item` verwendet wird, wird der Zugriff nur auf das Benutzerlaufwerk gestattet.
 Beim Versuch, Dateien auf ein anderes PSDrive zu kopieren, wird der Vorgang mit einem Fehler abgebrochen.
 
 Verwenden Sie die folgenden neuen Felder, um das Benutzerlaufwerk in Ihrer Konfigurationsdatei für JEA-Sitzungen einzurichten:
@@ -30,7 +30,7 @@ UserDriveMaximumSize = 10485760    # 10 MB
 
 Der Ordner zum Sichern des Benutzerlaufwerks wird in `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\DOMAIN_USER` erstellt.
 
-Um das Benutzerlaufwerk zu verwenden und Dateien auf einen bzw. von einem JEA-Endpunkt zu kopieren, der für die Offenlegung des Benutzerlaufwerks konfiguriert ist, verwenden Sie „Copy-Item“ mit den Parametern `-ToSession` und `-FromSession`.
+Um das Benutzerlaufwerk zu verwenden und Dateien auf einen bzw. von einem JEA-Endpunkt zu kopieren, der für die Bereitstellung des Benutzerlaufwerks konfiguriert ist, verwenden Sie `Copy-Item` mit den Parametern `-ToSession` und `-FromSession`.
 
 ```powershell
 # Connect to the JEA endpoint
@@ -64,7 +64,8 @@ GroupManagedServiceAccount = 'myGMSAforJEA'
 RunAsVirtualAccount = $false
 ```
 
-> **Hinweis:** Gruppenverwaltete Dienstkonten bieten nicht die Isolation oder den begrenzten Bereich virtueller Konten.
+> [!NOTE]
+> Gruppenverwaltete Dienstkonten bieten nicht die Isolation oder den begrenzten Bereich virtueller Konten.
 > Jeder verbundene Benutzer verwendet dieselbe Identität des gruppenverwalteten Dienstkontos, das möglicherweise über Berechtigungen für Ihr gesamtes Unternehmen verfügt.
 > Gehen Sie daher mit Bedacht vor, wenn Sie die Verwendung eines gruppenverwalteten Dienstkontos wählen. Wenn möglich, sollten Sie immer virtuelle Konten vorziehen, die auf den lokalen Computer beschränkt sind.
 
@@ -91,5 +92,6 @@ RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon'
 ```
 
 ## <a name="fixed-virtual-accounts-are-now-supported-on-windows-server-2008-r2"></a>Behoben: Virtuelle Konten werden jetzt auf Windows Server 2008 R2 unterstützt
+
 In WMF 5.1 können nun virtuelle Konten auf Windows Server 2008 R2 verwendet werden, sodass für Windows Server 2008 R2 - 2016 jetzt konsistente Konfigurationen und übereinstimmende Features bereitgestellt werden.
 Bei Verwendung von JEA unter Windows 7 werden virtuelle Konten weiterhin nicht unterstützt.

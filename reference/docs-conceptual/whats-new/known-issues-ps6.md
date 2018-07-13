@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: powershell,core
 title: Bekannte Probleme bei PowerShell 6.0
-ms.openlocfilehash: 6ad1bcaf1de06f204b57eb8ce23b3053ba4a5b38
-ms.sourcegitcommit: 2d9cf1ccb9a653db7726a408ebcb65530dcb1522
+ms.openlocfilehash: 7fa6b9935ae75b62df72609b8a9ec16246b1c610
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/19/2018
-ms.locfileid: "34309611"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893687"
 ---
 # <a name="known-issues-for-powershell-60"></a>Bekannte Probleme bei PowerShell 6.0
 
@@ -55,7 +55,7 @@ Besuchen Sie [#954](https://github.com/PowerShell/PowerShell/issues/954), um uns
 
 PowerShell unter Linux und macOS verwendet .NET Core. Dabei handelt es sich um eine Teilmenge des vollständigen .NET Frameworks unter Microsoft Windows. Das ist wichtig, da PowerShell den direkten Zugriff auf die zugrunde liegenden Frameworktypen, Methoden und vieles mehr bereitstellt. Folglich können Skripts, die unter Windows ausgeführt werden, nicht auf anderen Plattformen als Windows ausgeführt werden, da die Frameworks sich unterscheiden. Weitere Informationen zum Framework .NET Core finden Sie unter <https://dotnetfoundation.org/net-core>.
 
-Mit der Einführung von [.NET Standard 2.0](https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard/) sind viele der herkömmlichen Typen und Methoden aus dem vollständigen .NET Framework wieder in .NET Core 2.0 verfügbar. Das bedeutet, dass PowerShell Core viele herkömmliche Windows PowerShell-Module ohne Änderungen laden kann. Unsere Arbeit an .NET Standard 2.0 können Sie [hier](https://github.com/PowerShell/PowerShell/projects/4) verfolgen.
+Mit der Einführung von [.NET Standard 2.0](https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard/) sind viele der konventionellen Typen und Methoden aus dem vollständigen .NET Framework wieder in .NET Core 2.0 verfügbar. Das bedeutet, dass PowerShell Core viele herkömmliche Windows PowerShell-Module ohne Änderungen laden kann. Unsere Arbeit an .NET Standard 2.0 können Sie [hier](https://github.com/PowerShell/PowerShell/projects/4) verfolgen.
 
 ### <a name="redirection-issues"></a>Umleitungsprobleme
 
@@ -64,14 +64,17 @@ Die Umleitung von Eingaben wird von PowerShell auf keiner Plattform unterstützt
 
 Verwenden Sie `Get-Content`, um die Inhalte einer Datei in die Pipeline zu schreiben.
 
-Die umgeleitete Ausgabe enthält die Bytereihenfolge-Marke in Unicode, wenn die UTF-8-Standardcodierung verwendet wird. Die Bytereihenfolge-Marke verursacht Probleme, wenn mit Hilfsprogrammen gearbeitet wird, die dies nicht erwarten oder wenn sie an eine Datei angefügt wird. Verwenden Sie `-Encoding Ascii`, um ASCII-Text zu schreiben. Dabei handelt es sich nicht um Unicode und es gibt daher keine Bytereihenfolge-Marken. (Hinweis: Geben Sie uns unter [RFC0020](https://github.com/PowerShell/PowerShell-RFC/issues/71) Feedback, damit die Codierung für PowerShell Core für alle Plattformen verbessert werden kann. Es wird daran gearbeitet, UTF-8 ohne Bytereihenfolge-Marken zu unterstützen und die Standardcodierung für verschiedene Cmdlets plattformübergreifend zu ändern.)
+Die umgeleitete Ausgabe enthält die Bytereihenfolge-Marke in Unicode, wenn die UTF-8-Standardcodierung verwendet wird. Die Bytereihenfolge-Marke verursacht Probleme, wenn mit Hilfsprogrammen gearbeitet wird, die dies nicht erwarten oder wenn sie an eine Datei angefügt wird. Verwenden Sie `-Encoding Ascii`, um ASCII-Text zu schreiben. Dabei handelt es sich nicht um Unicode und es gibt daher keine Bytereihenfolge-Marken.
+
+> [!Note]
+> Geben Sie uns unter [RFC0020](https://github.com/PowerShell/PowerShell-RFC/issues/71) Feedback, damit die Codierung für PowerShell Core für alle Plattformen verbessert werden kann. Es wird daran gearbeitet, UTF-8 ohne Bytereihenfolge-Marke zu unterstützen und die Standardcodierung für verschiedene Cmdlets plattformübergreifend zu ändern.
 
 ### <a name="job-control"></a>Auftragssteuerung
 
 Es gibt keine Unterstützung für die Auftragssteuerung in PowerShell unter Linux und macOS.
 Die Befehle `fg` und `bg` sind nicht verfügbar.
 
-Derzeit können Sie [PowerShell-Aufträge](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_jobs) verwenden, die auf allen Plattformen funktionieren.
+Derzeit können Sie [PowerShell-Aufträge](/powershell/module/microsoft.powershell.core/about/about_jobs) verwenden, die auf allen Plattformen funktionieren.
 
 ### <a name="remoting-support"></a>Unterstützung für das Remoting
 
@@ -87,7 +90,7 @@ Derzeit können keine eingeschränkten JEA-Remoting-Endpunkte in PowerShell unte
 
 ### <a name="sudo-exec-and-powershell"></a>`sudo`, `exec` und PowerShell
 
-Da PowerShell (wie Python oder Ruby) die meisten Befehle im Arbeitsspeicher ausführt, können Sie sudo nicht direkt mit integrierten PowerShell-Features verwenden. (Sie können `powershell` selbstverständlich über sudo ausführen.) Wenn es erforderlich ist, ein PowerShell-Cmdlet innerhalb von PowerShell mit sudo auszuführen, z.B. im Fall von `sudo Set-Date 8/18/2016`, sollten Sie `sudo powershell Set-Date 8/18/2016` verwenden. Gleichermaßen können Sie integrierte PowerShell-Features nicht direkt ausführen. Stattdessen müssen Sie `exec powershell item_to_exec` verwenden.
+Da PowerShell (wie Python oder Ruby) die meisten Befehle im Arbeitsspeicher ausführt, können Sie sudo nicht direkt mit integrierten PowerShell-Features verwenden. (Sie können `powershell` selbstverständlich über sudo ausführen.) Wenn es erforderlich ist, ein PowerShell-Cmdlet innerhalb von PowerShell mit sudo auszuführen, z.B. im Fall von `sudo `Set-Date` 8/18/2016`, sollten Sie `sudo powershell `Set-Date` 8/18/2016` verwenden. Gleichermaßen können Sie integrierte PowerShell-Features nicht direkt ausführen. Stattdessen müssen Sie `exec powershell item_to_exec` verwenden.
 
 Dieses Problem wird derzeit unter #3232 nachverfolgt.
 
@@ -99,45 +102,13 @@ Viele Befehle (Cmdlets), die normalerweise in PowerShell verfügbar sind, sind u
 
 In der folgenden Tabelle werden die Befehle aufgeführt, die bekanntermaßen nicht in PowerShell unter Linux und macOS funktionieren.
 
-<table>
-<th>Befehle</th><th>Betriebsstatus</th><th>Hinweise</th>
-<tr>
-<td>Get-Service, New-Service, Restart-Service, Resume-Service, Set-Service, Start-Service, Stop-Service, Suspend-Service
-<td>Nicht verfügbar.
-<td>Diese Befehle werden nicht erkannt. Dies wird in einem zukünftigen Release behoben.
-</tr>
-<tr>
-<td>Get-Acl, Set-Acl
-<td>Nicht verfügbar.
-<td>Diese Befehle werden nicht erkannt. Dies wird in einem zukünftigen Release behoben.
-</tr>
-<tr>
-<td>Get-AuthenticodeSignature, Set-AuthenticodeSignature
-<td>Nicht verfügbar.
-<td>Diese Befehle werden nicht erkannt. Dies wird in einem zukünftigen Release behoben.
-</tr>
-<tr>
-<td>Wait-Process
-<td>Dieser Befehl ist verfügbar, funktioniert jedoch nicht ordnungsgemäß. <td>`Start-Process gvim -PassThru | Wait-Process` funktioniert beispielsweise nicht. Beim Warten auf den Prozess tritt ein Fehler auf.
-</tr>
-<tr>
-<td>Register-PSSessionConfiguration, Unregister-PSSessionConfiguration, Get-PSSessionConfiguration
-<td>Dieser Befehl ist verfügbar, funktioniert jedoch nicht.
-<td>Es wird eine Fehlermeldung angezeigt, die angibt, dass die Befehle nicht funktionieren. Dies wird in einem zukünftigen Release behoben.
-</tr>
-<tr>
-<td>Get-Event, New-Event, Register-EngineEvent, Register-WmiEvent, Remove-Event, Unregister-Event
-<td>Diese Befehle sind verfügbar, es gibt jedoch keine Ereignisquellen.
-<td>Die PowerShell-Befehle für Ereignisse sind vorhanden, allerdings sind die meisten Ereignisquellen, die mit den Befehlen verwendet werden (z.B. „ System.Timers.Timer“), nicht unter Linux verfügbar. Dadurch sind die Befehle im Alpharelease unnötig.
-</tr>
-<tr>
-<td>Set-ExecutionPolicy
-<td>Dieser Befehl ist verfügbar, funktioniert jedoch nicht.
-<td>Eine Meldung wird zurückgegeben, die angibt, dass der Befehl auf dieser Plattform nicht unterstützt wird. Die Ausführungsrichtlinie stellt eine benutzerorientierte Sicherheitsmaßnahme dar, die verhindert, dass der Benutzer schwere Fehler begeht. Dabei handelt es sich nicht um eine Sicherheitsgrenze.
-</tr>
-<tr>
-<td>New-PSSessionOption, New-PSTransportOption
-<td>Diese Befehle sind verfügbar, „New-PSSession“ funktioniert jedoch nicht.
-<td>Es wurde bisher nicht überprüft, ob die Befehle „New-PSSessionOption“ und „New-PSTransportOption“ funktionieren, nachdem „New-PSSession“ nun funktioniert.
-</tr>
-</table>
+|Befehle |Betriebsstatus | Hinweise|
+|---------|------------------|------|
+|`Get-Service`, `New-Service`, `Restart-Service`, `Resume-Service`, `Set-Service`, `Start-Service`, `Stop-Service`, `Suspend-Service`|Nicht verfügbar.|Diese Befehle werden nicht erkannt. Dies wird in einem zukünftigen Release behoben.|
+|`Get-Acl`, `Set-Acl`|Nicht verfügbar.|Diese Befehle werden nicht erkannt. Dies wird in einem zukünftigen Release behoben.|
+|`Get-AuthenticodeSignature`, `Set-AuthenticodeSignature`|Nicht verfügbar.|Diese Befehle werden nicht erkannt. Dies wird in einem zukünftigen Release behoben.|
+|`Wait-Process`|Dieser Befehl ist verfügbar, funktioniert jedoch nicht ordnungsgemäß. |Beispielsweise funktioniert „Start-Process gvim -PassThru | Wait-Process“ nicht. Beim Warten auf den Prozess tritt ein Fehler auf.|
+|`Register-PSSessionConfiguration`, `Unregister-PSSessionConfiguration`, `Get-PSSessionConfiguration`|Dieser Befehl ist verfügbar, funktioniert jedoch nicht.|Es wird eine Fehlermeldung angezeigt, die angibt, dass die Befehle nicht funktionieren. Dies wird in einem zukünftigen Release behoben.|
+|`Get-Event`, `New-Event`, `Register-EngineEvent`, `Register-WmiEvent`, `Remove-Event`, `Unregister-Event`|Diese Befehle sind verfügbar, es gibt jedoch keine Ereignisquellen.|Die PowerShell-Befehle für Ereignisse sind vorhanden, allerdings sind die meisten Ereignisquellen, die mit den Befehlen verwendet werden (z.B. „ System.Timers.Timer“), nicht unter Linux verfügbar. Dadurch sind die Befehle im Alpharelease unnötig.|
+|`Set-ExecutionPolicy`|Dieser Befehl ist verfügbar, funktioniert jedoch nicht.|Eine Meldung wird zurückgegeben, die angibt, dass der Befehl auf dieser Plattform nicht unterstützt wird. Die Ausführungsrichtlinie stellt eine benutzerorientierte Sicherheitsmaßnahme dar, die verhindert, dass der Benutzer schwere Fehler begeht. Dabei handelt es sich nicht um eine Sicherheitsgrenze.|
+|`New-PSSessionOption`, `New-PSTransportOption`|Dieser Befehl ist verfügbar, `New-PSSession` funktioniert jedoch nicht.|Es wurde nicht überprüft, ob `New-PSSessionOption` und `New-PSTransportOption` funktionieren, nachdem nun `New-PSSession` funktioniert.|

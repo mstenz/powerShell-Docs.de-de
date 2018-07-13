@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea,powershell,security
 title: JEA-Voraussetzungen
-ms.openlocfilehash: a5cf5519b30b24d44c12bdeedcf4cd763e2edbde
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: acc16c0c7eec357b621c0706a66b8752ae5578cd
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189770"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893034"
 ---
 # <a name="prerequisites"></a>Voraussetzungen
 
@@ -49,8 +49,10 @@ Aktualisieren Sie Windows auf Version 1607 (Anniversary Update) oder höher, um 
 Überprüfen Sie die `$PSVersionTable`-Variable in einer Windows PowerShell-Aufforderung, um festzustellen, welche PowerShell-Version auf Ihrem System installiert ist.
 
 ```powershell
-PS C:\> $PSVersionTable.PSVersion
+$PSVersionTable.PSVersion
+```
 
+```output
 Major  Minor  Build  Revision
 -----  -----  -----  --------
 5      1      14393  1000
@@ -62,7 +64,7 @@ Wir empfehlen Ihnen, soweit möglich, ein Upgrade auf die PowerShell-Version **5
 ### <a name="install-windows-management-framework"></a>Installieren von Windows Management Framework
 
 Wenn Sie eine ältere Version von PowerShell ausführen, müssen Sie Ihr System mit dem aktuellen Update von Windows Management Framework (WMF) aktualisieren.
-Updatepakete und einen Link zu den neuesten Anmerkungen zur WMF-Version finden Sie im [Download Center](https://aka.ms/WMF5).
+Updatepakete und einen Link zu den neuesten Anmerkungen zur WMF-Version finden Sie im [Download Center](https://blogs.msdn.microsoft.com/powershell/2016/02/24/windows-management-framework-wmf-5-0-rtm-packages-has-been-republished/).
 
 Es wird dringend empfohlen, vor dem Upgrade aller Server die Kompatibilität Ihrer Workload mit WMF zu testen.
 
@@ -71,7 +73,7 @@ Windows 10-Benutzer sollten die neuesten Funktionsupdates zum Abrufen der aktuel
 ## <a name="enable-powershell-remoting"></a>Aktivieren von PowerShell-Remoting
 
 PowerShell-Remoting stellt die Grundlage für JEA dar.
-Daher sollten Sie sicherstellen, dass PowerShell-Remoting aktiviert ist und auf Ihrem System [ordnungsgemäß abgesichert](https://msdn.microsoft.com/powershell/scripting/setup/winrmsecurity) ist, bevor Sie JEA verwenden können.
+Daher sollten Sie sicherstellen, dass PowerShell-Remoting aktiviert ist und auf Ihrem System [ordnungsgemäß abgesichert](/powershell/scripting/setup/winrmsecurity) ist, bevor Sie JEA verwenden können.
 
 PowerShell-Remoting ist unter Windows Server 2012, 2012 R2 und 2016 standardmäßig aktiviert.
 Sie können PowerShell-Remoting aktivieren, indem Sie den folgenden Befehl in einem PowerShell-Fenster mit erhöhten Rechten ausführen.
@@ -92,21 +94,23 @@ Sie können die Richtlinien für die PowerShell-Modulprotokollierung mithilfe vo
 3. Doppelklicken Sie auf **Modulprotokollierung aktivieren**.
 4. Klicken Sie auf **Aktiviert**.
 5. Klicken Sie im Abschnitt „Optionen“ neben den Modulnamen auf **Anzeigen** 
-6. Geben Sie „**\***“ in das Popupfenster ein. So wird PowerShell angewiesen, Befehle aus allen Modulen zu protokollieren.
+6. Geben Sie `\*` in das Popupfenster ein. So wird PowerShell angewiesen, Befehle aus allen Modulen zu protokollieren.
 7. Klicken Sie auf **OK**, um die Richtlinie festzulegen.
 8. Doppelklicken Sie anschließend auf **Protokollierung von PowerShell-Skriptblöcken aktivieren**.
 9. Klicken Sie auf **Aktiviert**.
 10. Klicken Sie auf **OK**, um die Richtlinie festzulegen.
-11. (Nur auf der Domäne zugehörige Computer:) Führen Sie **gpupdate** aus, oder warten Sie, bis die Gruppenrichtlinie die aktualisierte Richtlinie verarbeitet hat und diese Einstellungen anwendet.
+11. (Nur in die Domäne eingebundene Computer:) Führen Sie `gpupdate` aus, oder warten Sie, bis die Gruppenrichtlinie die aktualisierte Richtlinie verarbeitet hat und diese Einstellungen anwendet.
 
 Sie können über eine Gruppenrichtlinie auch die systemweite PowerShell-Aufzeichnung aktivieren.
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-- [Create a role capability file (Erstellen einer Rollenfunktionsdatei)](role-capabilities.md)
-- [Create a session configuration file (Erstellen einer Sitzungskonfigurationsdatei)](session-configurations.md)
+[Create a role capability file (Erstellen einer Rollenfunktionsdatei)](role-capabilities.md)
+
+[Create a session configuration file (Erstellen einer Sitzungskonfigurationsdatei)](session-configurations.md)
 
 ## <a name="see-also"></a>Siehe auch
 
-- [Sicherheitsaspekte von PowerShell-Remoting](https://msdn.microsoft.com/powershell/scripting/setup/winrmsecurity)
-- [*PowerShell ♥ the Blue Team (PowerShell ♥ das Blue Team)* – Blogbeitrag zum Thema Sicherheit](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
+[Sicherheitsaspekte von PowerShell-Remoting](/powershell/scripting/setup/winrmsecurity)
+
+[*PowerShell ♥ the Blue Team (PowerShell ♥ das Blue Team)* – Blogbeitrag zum Thema Sicherheit](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)

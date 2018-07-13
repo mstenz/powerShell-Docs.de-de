@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Löschen von Elementen
-ms.openlocfilehash: 3f67f78d63e5cf797d00ce43f95fb3b4f62d6f7c
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 454cd404437bf1c31b9a1b81cd9dd0ac81e6b0f6
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218228"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893092"
 ---
 # <a name="deleting-items"></a>Löschen von Elementen
 
@@ -20,4 +20,4 @@ Durch Angabe der genauen Version kann es jedoch weiterhin heruntergeladen werden
 
 Wenn Sie in eine besonderen Situation der Ansicht sind, dass eines Ihrer Elemente gelöscht werden muss, kann dies durch das PowerShell-Katalogteam manuell erledigt werden.
 Wenn beispielsweise ein Problem mit einer Urheberrechtsverletzung oder mit potenziell schädlichen Inhalten vorliegt, könnte ein berechtigter Grund für das Löschen des Elements vorliegen.
-In diesem Fall sollten Sie über den [PowerShell-Katalog] (http://www.PowerShellGallery.com) eine Supportanfrage senden.
+In diesem Fall sollten Sie über den [PowerShell-Katalog](http://www.PowerShellGallery.com) eine Supportanfrage senden.

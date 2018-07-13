@@ -2,23 +2,24 @@
 ms.date: 04/11/2018
 keywords: dsc,powershell,configuration,setup
 title: Einrichten eines DSC-SMB-Pullservers
-ms.openlocfilehash: 92c03c99afd612fa2b5475e8c26991ff080584e9
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 1eac6c51aeca3ed573ba8fa27188103436004920
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189668"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892864"
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>Einrichten eines DSC-SMB-Pullservers
 
->Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
+Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 > [!IMPORTANT]
 > Der Pull-Server (Windows-Feature *DSC-Dienst*) ist eine von Windows Server unterstützte Komponente, jedoch sollen keine neuen Features oder Funktionen angeboten werden. Es wird empfohlen, verwaltete Clients auf [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) umzustellen (enthält Features zusätzlich zum Pull-Server unter Windows Server) oder auf eine der [hier](pullserver.md#community-solutions-for-pull-service) aufgeführten Communitylösungen.
 
-Ein DSC-[SMB](https://technet.microsoft.com/library/hh831795.aspx)-Pullserver ist ein Computer, der als Host einer SMB-Dateifreigabe fungiert, mit der DSC-Konfigurationsdateien und DSC-Ressourcen für Zielknoten zur Verfügung gestellt werden, wenn sie von diesen Knoten angefordert werden.
+Ein DSC-[SMB](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831795(v=ws.11))-Pullserver ist ein Computer, der als Host einer SMB-Dateifreigabe fungiert, mit der DSC-Konfigurationsdateien und DSC-Ressourcen für Zielknoten zur Verfügung gestellt werden, wenn sie von diesen Knoten angefordert werden.
 
 Zum Verwenden eines SMB-Pullservers für DSC müssen Sie folgende Schritte ausführen:
+
 - Einrichten einer SMB-Dateifreigabe auf einem Server mit PowerShell 4.0 oder höher
 - Konfigurieren eines Clients mit PowerShell 4.0 oder höher zum Abrufen von dieser SMB-Freigabe
 
@@ -28,31 +29,34 @@ Es gibt zahlreiche Methoden zum Einrichten einer SMB-Dateifreigabe. Im Folgenden
 
 ### <a name="install-the-xsmbshare-resource"></a>Installieren der Ressource „xSmbShare“
 
-Rufen Sie das Cmdlet [Install-Module](https://technet.microsoft.com/library/dn807162.aspx) auf, um das Modul **xSmbShare** zu installieren.
->**Hinweis**: **Install-Module** ist im Modul **PowerShellGet** enthalten, das Bestandteil von PowerShell 5.0 ist. Das Modul **PowerShellGet** für PowerShell 3.0 und 4.0 können Sie unter [PowerShell-Module „PackageManagement“ – Vorschau](https://www.microsoft.com/en-us/download/details.aspx?id=49186) herunterladen. **xSmbShare** enthält die DSC-Ressource **xSmbShare**, mit der Sie eine SMB-Dateifreigabe erstellen können.
+Rufen Sie das Cmdlet [Install-Module](/powershell/module/PowershellGet/Install-Module) auf, um das Modul **xSmbShare** zu installieren.
+
+> [!NOTE]
+> `Install-Module` ist im Modul **PowerShellGet** enthalten, das Bestandteil von PowerShell 5.0 ist. Das Modul **PowerShellGet** für PowerShell 3.0 und 4.0 können Sie unter [PowerShell-Module „PackageManagement“ – Vorschau](https://www.microsoft.com/en-us/download/details.aspx?id=49186) herunterladen.
+> **xSmbShare** enthält die DSC-Ressource **xSmbShare**, mit der Sie eine SMB-Dateifreigabe erstellen können.
 
 ### <a name="create-the-directory-and-file-share"></a>Erstellen des Verzeichnisses und der Dateifreigabe
 
 Die folgende Konfiguration verwendet die [File](fileResource.md)-Ressource zum Erstellen des Verzeichnisses für die Freigabe und die **xSmbShare**-Ressource zum Einrichten der SMB-Freigabe:
 
 ```powershell
-Configuration SmbShare {
+Configuration SmbShare
+{
+    Import-DscResource -ModuleName PSDesiredStateConfiguration
+    Import-DscResource -ModuleName xSmbShare
 
-Import-DscResource -ModuleName PSDesiredStateConfiguration
-Import-DscResource -ModuleName xSmbShare
+    Node localhost
+    {
 
-    Node localhost {
-
-        File CreateFolder {
-
+        File CreateFolder
+        {
             DestinationPath = 'C:\DscSmbShare'
             Type = 'Directory'
             Ensure = 'Present'
-
         }
 
-        xSMBShare CreateShare {
-
+        xSMBShare CreateShare
+        {
             Name = 'DscSmbShare'
             Path = 'C:\DscSmbShare'
             FullAccess = 'admininstrator'
@@ -60,40 +64,36 @@ Import-DscResource -ModuleName xSmbShare
             FolderEnumerationMode = 'AccessBased'
             Ensure = 'Present'
             DependsOn = '[File]CreateFolder'
-
         }
-
     }
-
 }
 ```
 
 Die Konfiguration erstellt das Verzeichnis `C:\DscSmbShare`, wenn es noch nicht vorhanden ist, und verwendet dieses Verzeichnis anschließend als SMB-Dateifreigabe. Jedes Konto, das in die Dateifreigabe schreiben oder Elemente daraus löschen können muss, sollte **FullAccess** erhalten, und allen Clientknoten, die Konfigurationen und/oder DSC-Ressourcen aus dieser Freigabe erhalten, **ReadAccess** gewährt werden (da DSC standardmäßig als Systemkonto ausgeführt wird, daher muss der Computer selbst auf die Freigabe zugreifen können).
-
 
 ### <a name="give-file-system-access-to-the-pull-client"></a>Gewähren von Dateisystemzugriff für den Pullclient
 
 Indem Sie einem Clientknoten **ReadAccess** gewähren, kann dieser Knoten auf die SMB-Freigabe zugreifen, aber nicht auf Dateien oder Ordner innerhalb der Freigabe. Sie müssen Clientknoten explizit Zugriff auf den SMB-Freigabeordner und dessen Unterordner gewähren. In DSC erfolgt dies mithilfe der Ressource **cNtfsPermissionEntry**, die im Modul [CNtfsAccessControl](https://www.powershellgallery.com/packages/cNtfsAccessControl/1.2.0) enthalten ist. Die folgende Konfiguration fügt einen **cNtfsPermissionEntry**-Block hinzu, der dem Pullclient „ReadAndExecute“-Zugriff gewährt:
 
 ```powershell
-Configuration DSCSMB {
+Configuration DSCSMB
+{
+    Import-DscResource -ModuleName PSDesiredStateConfiguration
+    Import-DscResource -ModuleName xSmbShare
+    Import-DscResource -ModuleName cNtfsAccessControl
 
-Import-DscResource -ModuleName PSDesiredStateConfiguration
-Import-DscResource -ModuleName xSmbShare
-Import-DscResource -ModuleName cNtfsAccessControl
+    Node localhost
+    {
 
-    Node localhost {
-
-        File CreateFolder {
-
+        File CreateFolder
+        {
             DestinationPath = 'DscSmbShare'
             Type = 'Directory'
             Ensure = 'Present'
-
         }
 
-        xSMBShare CreateShare {
-
+        xSMBShare CreateShare
+        {
             Name = 'DscSmbShare'
             Path = 'DscSmbShare'
             FullAccess = 'administrator'
@@ -101,30 +101,25 @@ Import-DscResource -ModuleName cNtfsAccessControl
             FolderEnumerationMode = 'AccessBased'
             Ensure = 'Present'
             DependsOn = '[File]CreateFolder'
-
         }
 
-        cNtfsPermissionEntry PermissionSet1 {
-
-        Ensure = 'Present'
-        Path = 'C:\DSCSMB'
-        Principal = 'myDomain\Contoso-Server$'
-        AccessControlInformation = @(
-            cNtfsAccessControlInformation
-            {
-                AccessControlType = 'Allow'
-                FileSystemRights = 'ReadAndExecute'
-                Inheritance = 'ThisFolderSubfoldersAndFiles'
-                NoPropagateInherit = $false
-            }
-        )
-        DependsOn = '[File]CreateFolder'
-
+        cNtfsPermissionEntry PermissionSet1
+        {
+            Ensure = 'Present'
+            Path = 'C:\DSCSMB'
+            Principal = 'myDomain\Contoso-Server$'
+            AccessControlInformation = @(
+                cNtfsAccessControlInformation
+                {
+                    AccessControlType = 'Allow'
+                    FileSystemRights = 'ReadAndExecute'
+                    Inheritance = 'ThisFolderSubfoldersAndFiles'
+                    NoPropagateInherit = $false
+                }
+            )
+            DependsOn = '[File]CreateFolder'
         }
-
-
     }
-
 }
 ```
 
@@ -132,20 +127,23 @@ Import-DscResource -ModuleName cNtfsAccessControl
 
 Speichern Sie alle MOF-Konfigurationsdateien und/oder DSC-Ressourcen, die von Clientknoten per Pull abgerufen werden sollen, im SMB-Freigabeordner.
 
-Alle MOF-Konfigurationsdateien müssen den Namen _ConfigurationID_.mof haben, wobei _ConfigurationID_ der Wert der **ConfigurationID**-Eigenschaft des LCM des Zielknotens ist. Weitere Informationen zum Einrichten von Pullclients finden Sie unter [Einrichten eines DSC-Pullclients mithilfe einer Konfigurations-ID](pullClientConfigID.md).
+Alle MOF-Konfigurationsdateien müssen den Namen *ConfigurationID*.mof haben, wobei *ConfigurationID* der Wert der **ConfigurationID**-Eigenschaft des LCM des Zielknotens ist. Weitere Informationen zum Einrichten von Pullclients finden Sie unter [Einrichten eines DSC-Pullclients mithilfe einer Konfigurations-ID](pullClientConfigID.md).
 
->**Hinweis:** Sie müssen Konfigurations-IDs verwenden, wenn Sie einen SMB-Pullserver verwenden. Konfigurationsnamen werden für SMB nicht unterstützt.
+> [!NOTE]
+> Sie müssen Konfigurations-IDs verwenden, wenn Sie einen SMB-Pullserver verwenden. Konfigurationsnamen werden für SMB nicht unterstützt.
 
-Jedes Ressourcenmodul muss komprimiert und entsprechend dem folgenden Muster benannt werden: `{Module Name}_{Module Version}.zip`. Ein Modul namens „xWebAdminstration“ mit einer Modulversion 3.1.2.0 würde beispielsweise „xWebAdministration_3.2.1.0.zip“ heißen. Jede Version eines Moduls muss in einer eigenen ZIP-Datei enthalten sein. Da jede ZIP-Datei nur jeweils eine Version einer Ressource enthält, wird das in WMF 5.0 eingeführte das Modulformat, das mehrere Versionen in einem einzigen Verzeichnis ermöglicht, nicht unterstützt. Das bedeutet, dass Sie vor dem Packen von DSC-Ressourcenmodulen für die Verwendung mit einem Pullserver eine kleine Änderung an der Verzeichnisstruktur vornehmen müssen. Das Standardformat für Module mit DSC-Ressourcen in WMF 5.0 ist: {Modulordner}\{Modulversion}\DscResources\{DSC-Ressourcenordner}\'. Entfernen Sie vor dem Packen für den Pullserver einfach den Ordner **{Modulversion}**, damit der Pfad wie folgt geändert wird: {Modulordner}\DscResources\{DSC-Ressourcenordner}\'. Komprimieren Sie den Ordner nach dieser Änderung wie oben beschrieben, und speichern Sie die ZIP-Dateien im SMB-Freigabeordner.
+Jedes Ressourcenmodul muss komprimiert und entsprechend dem folgenden Muster benannt werden: `{Module Name}_{Module Version}.zip`. Ein Modul namens „xWebAdminstration“ mit einer Modulversion 3.1.2.0 würde beispielsweise „xWebAdministration_3.2.1.0.zip“ heißen. Jede Version eines Moduls muss in einer eigenen ZIP-Datei enthalten sein. Da jede ZIP-Datei nur jeweils eine Version einer Ressource enthält, wird das in WMF 5.0 eingeführte das Modulformat, das mehrere Versionen in einem einzigen Verzeichnis ermöglicht, nicht unterstützt. Das bedeutet, dass Sie vor dem Packen von DSC-Ressourcenmodulen für die Verwendung mit einem Pullserver eine kleine Änderung an der Verzeichnisstruktur vornehmen müssen. Das Standardformat für Module mit DSC-Ressourcen in WMF 5.0 ist `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`. Entfernen Sie vor dem Packvorgang für den Pullserver einfach den Ordner `{Module version}`, damit der Pfad zu `{Module Folder}\DscResources\{DSC Resource Folder}\` wird. Komprimieren Sie den Ordner nach dieser Änderung wie oben beschrieben, und speichern Sie die ZIP-Dateien im SMB-Freigabeordner.
 
 ## <a name="creating-the-mof-checksum"></a>Erstellen der MOF-Prüfsumme
+
 Eine MOF-Konfigurationsdatei muss einer Prüfsummendatei zugeordnet werden, damit ein LCM auf einem Zielknoten die Konfiguration überprüfen kann.
-Um eine Prüfsumme zu erstellen, rufen Sie das Cmdlet [New-DSCCheckSum](https://technet.microsoft.com/en-us/library/dn521622.aspx) auf. Das Cmdlet verwendet einen **Path**-Parameter, der den Ordner angibt, in dem sich die MOF-Konfigurationsdatei befindet. Das Cmdlet erstellt eine Prüfsummendatei mit dem Namen `ConfigurationMOFName.mof.checksum`, wobei `ConfigurationMOFName` der Name der MOF-Konfigurationsdatei ist.
+Um eine Prüfsumme zu erstellen, rufen Sie das Cmdlet [New-DSCCheckSum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) auf. Das Cmdlet verwendet einen `Path`-Parameter, der den Ordner angibt, in dem sich die MOF-Konfigurationsdatei befindet. Das Cmdlet erstellt eine Prüfsummendatei mit dem Namen `ConfigurationMOFName.mof.checksum`, wobei `ConfigurationMOFName` der Name der MOF-Konfigurationsdatei ist.
 Wenn in dem angegebenen Ordner mehrere MOF-Konfigurationsdateien vorhanden sind, wird für jede Konfiguration im Ordner eine Prüfsumme erstellt.
 
 Die Prüfsummendatei muss sich im gleichen Verzeichnis wie die MOF-Konfigurationsdatei befinden (standardmäßig `$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration`). Sie muss den gleichen Namen mit der Erweiterung `.checksum` haben.
 
->**Hinweis**: Wenn Sie die MOF-Konfigurationsdatei in irgendeiner Weise ändern, müssen Sie auch die Prüfsummendatei neu erstellen.
+> [!NOTE]
+> Wenn Sie die MOF-Konfigurationsdatei in irgendeiner Weise ändern, müssen Sie auch die Prüfsummendatei neu erstellen.
 
 ## <a name="setting-up-a-pull-client-for-smb"></a>Einrichten eines Pullclients für SMB
 
@@ -153,9 +151,10 @@ Zum Einrichten eines Clients, der Konfigurationen und/oder der Ressourcen von ei
 
 Weitere Informationen zum Konfigurieren des LCM finden Sie unter [Einrichten eines DSC-Pullclients mithilfe einer Konfigurations-ID](pullClientConfigID.md).
 
->**Hinweis:** Der Einfachheit halber wird in diesem Beispiel **PSDscAllowPlainTextPassword** verwendet, um ein Nur-Text-Kennwort an den Parameter **Anmeldeinformationen** zu übergeben. Informationen zur sicheren Weitergabe von Anmeldeinformationen finden Sie unter [Optionen für Anmeldeinformationen in den Konfigurationsdaten](configDataCredentials.md).
-
->**Hinweis:** Geben Sie eine **Konfigurations-ID** im Codeblock **Einstellungen** einer Metakonfiguration für einen SMB-Pullserver ein, selbst wenn Sie nur Ressourcen abrufen.
+> [!NOTE]
+> Der Einfachheit halber wird in diesem Beispiel **PSDscAllowPlainTextPassword** verwendet, um die Übergabe eines Nur-Text-Kennworts an den Parameter **Credential** zu ermöglichen. Informationen zur sicheren Weitergabe von Anmeldeinformationen finden Sie unter [Optionen für Anmeldeinformationen in den Konfigurationsdaten](configDataCredentials.md).
+>
+> Sie **MÜSSEN** eine **ConfigurationID** im Codeblock **Settings** einer Metakonfiguration für einen SMB-Pullserver eingeben, selbst wenn Sie nur Ressourcen abrufen.
 
 ```powershell
 $secpasswd = ConvertTo-SecureString “Pass1Word” -AsPlainText -Force
@@ -190,21 +189,12 @@ configuration SmbCredTest
 }
 
 $ConfigurationData = @{
-
     AllNodes = @(
-
         @{
-
             #the "*" means "all nodes named in ConfigData" so we don't have to repeat ourselves
-
             NodeName="localhost"
-
             PSDscAllowPlainTextPassword = $true
-
         })
-
-
-
 }
 ```
 
@@ -213,9 +203,12 @@ $ConfigurationData = @{
 Besonderer Dank geht an folgende Personen:
 
 - Mike F. Robbins, dessen Beiträge zur Verwendung von SMB für DSC beim Zusammenstellen des Inhalts in diesem Thema geholfen haben. Seinen Blog finden Sie unter [Mike F Robbins](http://mikefrobbins.com/).
-- Serge Nikalaichyk, der das Modul **cNtfsAccessControl** erstellt hat. Die Quelle für dieses Modul finden Sie unter https://github.com/SNikalaichyk/cNtfsAccessControl.
+- Serge Nikalaichyk, der das Modul **cNtfsAccessControl** erstellt hat. Die Quelle für dieses Modul finden Sie unter [cNtfsAccessControl](https://github.com/SNikalaichyk/cNtfsAccessControl).
 
 ## <a name="see-also"></a>Siehe auch
-- [Windows PowerShell DSC – Übersicht](overview.md)
-- [Inkraftsetzung von Konfigurationen](enactingConfigurations.md)
-- [Einrichten eines Pullclients mithilfe einer Konfigurations-ID](pullClientConfigID.md)
+
+[Windows PowerShell DSC – Übersicht](overview.md)
+
+[Inkraftsetzung von Konfigurationen](enactingConfigurations.md)
+
+[Einrichten eines Pullclients mithilfe einer Konfigurations-ID](pullClientConfigID.md)

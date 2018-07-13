@@ -3,12 +3,12 @@ ms.date: 03/27/2018
 contributor: JKeithB
 keywords: katalog,powershell,psgallery,GDPR
 title: DSGVO-Kompatibilität für den PowerShell-Katalog
-ms.openlocfilehash: dca1a82952c284980a84caafa13b2807e47e25a0
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 14b82fa07df52f02f0d7577cb0eef70faa4285a2
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189753"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893245"
 ---
 # <a name="powershell-gallery-gdpr-compliance"></a>DSGVO-Kompatibilität für den PowerShell-Katalog
 
@@ -25,9 +25,9 @@ Diese Grundverordnung gilt unabhängig von Ihrem Unternehmenssitz.
 
 Im PowerShell-Katalog werden die folgenden Informationen gespeichert, die möglicherweise von Benutzern bereitgestellt werden und personenbezogene Daten enthalten:
 
-* PowerShell-Katalog-Konto
-* Im PowerShell-Katalog veröffentlichte Elemente
-* E-Mail-Korrespondenz mit dem PowerShell-Katalog-Team
+- PowerShell-Katalog-Konto
+- Im PowerShell-Katalog veröffentlichte Elemente
+- E-Mail-Korrespondenz mit dem PowerShell-Katalog-Team
 
 Die meisten Benutzer erstellen kein Konto für den PowerShell-Katalog.
 Ein Konto ist nur erforderlich, wenn Sie ein Element veröffentlichen oder das Feature „Contact Owner“ (Besitzer kontaktieren) im PowerShell-Katalog verwenden wollen.
@@ -45,15 +45,15 @@ In den folgenden Abschnitten wird erläutert, wie der PowerShell-Katalog sämtli
 
 Die E-Mail-Korrespondenz kann Folgendes umfassen:
 
-* E-Mails, die an die Besitzer der Elemente im PowerShell-Katalog gesendet wurden, wenn im Rahmen der Codeanalyseüberprüfungen ein Problem mit einem Element festgestellt wurde, das sie im PowerShell-Katalog veröffentlich haben
-* E-Mails von einer beliebigen Person an das PowerShell-Katalog-Team, die an die auf der Seite „Kontakt“ (cgadmin@microsoft.com) genannte E-Mail-Adresse gesendet wurden
-* Registrierte Benutzer, die das Feature „Contact Owner“ (Besitzer kontaktieren) im PowerShell-Katalog verwenden, um eine E-Mail an den Besitzer eines Element zu senden, das sich im PowerShell-Katalog befindet
+- E-Mails, die an die Besitzer der Elemente im PowerShell-Katalog gesendet wurden, wenn im Rahmen der Codeanalyseüberprüfungen ein Problem mit einem Element festgestellt wurde, das sie im PowerShell-Katalog veröffentlich haben
+- E-Mail von einer beliebigen Person an das PowerShell-Katalogteam, die an die auf der Seite „Kontakt“ ([cgadmin@microsoft.com](mailto:cgadmin@microsoft.com)) genannte E-Mail-Adresse gesendet wurde
+- Registrierte Benutzer, die das Feature „Contact Owner“ (Besitzer kontaktieren) im PowerShell-Katalog verwenden, um eine E-Mail an den Besitzer eines Element zu senden, das sich im PowerShell-Katalog befindet
 
 Für E-Mails, die vom PowerShell-Katalog oder an diesen gesendet werden, gilt eine Aufbewahrungsrichtlinie, gemäß derer die E-Mails 90 Tage lang für mögliche Sicherheitsuntersuchungen gespeichert werden müssen, die durchgeführt werden, wenn schädlicher Code im PowerShell-Katalog entdeckt werden sollte.
 Gemäß der Richtlinie werden diese E-Mails nach 90 Tagen gelöscht.
 
 Sie können innerhalb von 90 Tagen Kopien aller E-Mails anfordern, die Sie mit Ihrer E-Mail-Adresse oder dem PowerShell-Katalog gesendet haben oder die an Sie gesendet wurden.
-Wenn Sie diese Korrespondent anfordern möchten, senden Sie eine E-Mail an cgadmin@microsoft.com mit dem Betreff „DSR-Anforderung für E-Mails, die dieses Konto betreffen“.
+Wenn Sie diese Korrespondenz anfordern möchten, senden Sie eine E-Mail an [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com) mit dem Betreff „DSR-Anforderung für E-Mails, die dieses Konto betreffen“.
 Geben Sie in dieser E-Mail an, welche Informationen Sie anfordern, z.B.: Senden Sie mir bitte alle E-Mails, die von dieser E-Mail-Adresse aus gesendet wurden bzw. die an sie gesendet wurde. Alle E-Mails der letzten 90 Tage, die Ihre E-Mail-Adresse betreffen, werden innerhalb von sieben Werktagen an Sie gesendet.
 
 ### <a name="powershell-gallery-account-information"></a>Informationen zum PowerShell-Katalog-Konto
@@ -78,13 +78,13 @@ Dieses Skript exportiert basierend auf den im Element gespeicherten Autoreninfor
 Sie können das Skript über den folgenden PowerShell-Befehl downloaden:
 
 ```powershell
-Save-Script GetPSGalleryItemsForAuthor -path <local folder location> -repository psgallery
+Save-Script Get-repository psgallery
 ```
 
 Sie können das Skript direkt ausführen, indem Sie den folgenden PowerShell-Befehl ausführen:
 
 ```powershell
-cd <local folder location >
+# cd <local folder location>
 .\GetPSGalleryItemsForAuthor.ps1
 ```
 
@@ -95,9 +95,9 @@ Sie werden aufgefordert, den Autor und einen Ordner auf Ihrem System anzugeben, 
 Wenn Sie Ihr PowerShell-Katalog-Konto oder ein beliebiges Element, das Sie besitzen, aus dem PowerShell-Katalog löschen, senden Sie eine E-Mail an cgadmin@microsoft.com mit dem Betreff: „DSGVO-Anforderung für Elemente, die im Zusammenhang mit diesem Konto stehen“.
 Geben Sie in dieser E-Mail an, welche Informationen gelöscht werden sollen. Beispiel:
 
-* Bitte löschen Sie Version x.y.z des Elements „[Elementname]“
-* Bitte löschen Sie alle Versionen des Elements „[Elementname]“
-* Bitte löschen Sie mein PowerShell-Katalog-Konto
+- Bitte löschen Sie Version x.y.z des Elements „[Elementname]“
+- Bitte löschen Sie alle Versionen des Elements „[Elementname]“
+- Bitte löschen Sie mein PowerShell-Katalog-Konto
 
 Die Administratoren von PowerShell-Katalog werden Ihnen innerhalb von sieben Werktagen eine Antwort zukommen lassen.
 Die angegebenen Elemente werden innerhalb von 30 Tagen, nachdem die Anforderung gesendet wurde, gelöscht.

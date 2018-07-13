@@ -2,21 +2,21 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Verwenden eines DSC-Berichtsservers
-ms.openlocfilehash: 143e0bdd9b637cee87a676ed327fe6ff3a7fd719
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: bcd414e9cc6d3b321676aaab6bbc3ca1b02e80aa
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188546"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893136"
 ---
 # <a name="using-a-dsc-report-server"></a>Verwenden eines DSC-Berichtsservers
 
-> Gilt für: Windows PowerShell 5.0
+Gilt für: Windows PowerShell 5.0
 
 > [!IMPORTANT]
 > Der Pull-Server (Windows-Feature *DSC-Dienst*) ist eine von Windows Server unterstützte Komponente, jedoch sollen keine neuen Features oder Funktionen angeboten werden. Es wird empfohlen, verwaltete Clients auf [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) umzustellen (enthält Features zusätzlich zum Pull-Server unter Windows Server) oder auf eine der [hier](pullserver.md#community-solutions-for-pull-service) aufgeführten Communitylösungen.
-
->**Hinweis:** Der in diesem Thema beschriebene Berichtsserver ist in PowerShell 4.0 nicht verfügbar.
+>
+> **Hinweis**: Der in diesem Thema beschriebene Berichtsserver ist in PowerShell 4.0 nicht verfügbar.
 
 Die lokale Configuration Manager (LCM) eines Knotens kann so konfiguriert werden, dass Berichte zu seinem Konfigurationsstatus an einen Pullserver gesendet werden, der zum Abrufen dieser Daten abgefragt werden kann. Jedes Mal, wenn der Knoten eine Konfiguration überprüft und anwendet, wird ein Bericht zum Berichtsserver gesendet. Diese Berichte werden in einer Datenbank auf dem Server gespeichert und können durch Aufrufen des Webdiensts für die Berichtserstellung abgerufen werden. Jeder Bericht enthält Informationen zu den angewendeten Konfigurationen samt Zeitpunkt, verwendeten Ressourcen, ausgelösten Fehlern sowie Start- und Endzeiten.
 
@@ -56,6 +56,7 @@ configuration ReportClientConfig
         }
     }
 }
+
 ReportClientConfig
 ```
 
@@ -91,11 +92,12 @@ configuration PullClientConfig
 PullClientConfig
 ```
 
->**Hinweis:** Sie können den Webdienst beim Einrichten eines Pullservers beliebig benennen, aber die Eigenschaft **ServerURL** muss mit dem Dienstnamen übereinstimmen.
+> [!NOTE]
+> Sie können den Webdienst beim Einrichten eines Pullservers beliebig benennen, aber die Eigenschaft **ServerURL** muss mit dem Dienstnamen übereinstimmen.
 
 ## <a name="getting-report-data"></a>Abrufen von Berichtsdaten
 
-Berichte, die zum Pullserver gesendet werden, gelangen in eine Datenbank auf dem Server. Die Berichte stehen über Aufrufe des Webdiensts zur Verfügung. Zum Abrufen von Berichten für einen bestimmten Knoten senden Sie eine HTTP-Anforderung an den Berichtswebdienst in der folgenden Form: `http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId= 'MyNodeAgentId')/Reports`, wobei `MyNodeAgentId` die Agent-ID des Knotens ist, für den Sie Berichte erhalten möchten. Durch Aufrufen von [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx) auf einem Knoten können Sie die Agent-ID dieses Knotens abrufen.
+Berichte, die zum Pullserver gesendet werden, gelangen in eine Datenbank auf dem Server. Die Berichte stehen über Aufrufe des Webdiensts zur Verfügung. Zum Abrufen von Berichten für einen bestimmten Knoten senden Sie eine HTTP-Anforderung an den Berichtswebdienst in der folgenden Form: `http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId='MyNodeAgentId')/Reports`, wobei `MyNodeAgentId` die Agent-ID des Knotens ist, für den Sie Berichte erhalten möchten. Durch Aufrufen von [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager) auf einem Knoten können Sie die Agent-ID dieses Knotens abrufen.
 
 Die Berichte werden als ein Array von JSON-Objekten zurückgegeben.
 
@@ -104,7 +106,12 @@ Das folgende Skript gibt die Berichte für den Knoten zurück, auf dem es ausgef
 ```powershell
 function GetReport
 {
-    param($AgentId = "$((glcm).AgentId)", $serviceURL = "http://CONTOSO-REPORT:8080/PSDSCPullServer.svc")
+    param
+    (
+        $AgentId = "$((glcm).AgentId)", 
+        $serviceURL = "http://CONTOSO-REPORT:8080/PSDSCPullServer.svc"
+    )
+
     $requestUri = "$serviceURL/Nodes(AgentId= '$AgentId')/Reports"
     $request = Invoke-WebRequest -Uri $requestUri  -ContentType "application/json;odata=minimalmetadata;streaming=true;charset=utf-8" `
                -UseBasicParsing -Headers @{Accept = "application/json";ProtocolVersion = "2.0"} `
@@ -121,8 +128,9 @@ Wenn Sie eine Variable auf das Ergebnis der **GetReport**-Funktion festlegen, k�
 ```powershell
 $reports = GetReport
 $reports[1]
+```
 
-
+```output
 JobId                : 019dfbe5-f99f-11e5-80c6-001dd8b8065c
 OperationType        : Consistency
 RefreshMode          : Pull
@@ -168,7 +176,9 @@ Beachten Sie, dass das Feld **StatusData** ein Objekt mit mehreren Eigenschaften
 ```powershell
 $statusData = $reportMostRecent.StatusData | ConvertFrom-Json
 $statusData
+```
 
+```output
 StartDate                  : 2016-04-04T11:21:41.2990000-07:00
 IPV6Addresses              : {2001:4898:d8:f2f2:852b:b255:b071:283b, fe80::852b:b255:b071:283b%12, ::2000:0:0:0, ::1...}
 DurationInSeconds          : 25
@@ -205,7 +215,9 @@ Unter anderem wird hier deutlich, dass die neueste Konfiguration zwei Ressourcen
 
 ```powershell
 $statusData.ResourcesInDesiredState
+```
 
+```output
 SourceInfo        : C:\ReportTest\Sample_xFirewall_AddFirewallRule.ps1::16::9::Archive
 ModuleName        : PSDesiredStateConfiguration
 DurationInSeconds : 2.672
@@ -222,6 +234,9 @@ InDesiredState    : True
 Beachten Sie, dass diese Beispiele dazu dienen, Ihnen eine Vorstellung der Möglichkeiten von Berichtsdaten zu geben. Eine Einführung in das Arbeiten mit JSON in PowerShell finden Sie unter [Arbeiten mit JSON und PowerShell](https://blogs.technet.microsoft.com/heyscriptingguy/2015/10/08/playing-with-json-and-powershell/).
 
 ## <a name="see-also"></a>Weitere Informationen
-- [Konfigurieren des lokalen Konfigurations-Managers](metaConfig.md)
-- [Einrichten eines DSC-Webpullservers](pullServer.md)
-- [Einrichten eines Pullclients mithilfe von Konfigurationsnamen](pullClientConfigNames.md)
+
+[Konfigurieren des lokalen Konfigurations-Managers](metaConfig.md)
+
+[Einrichten eines DSC-Webpullservers](pullServer.md)
+
+[Einrichten eines Pullclients mithilfe von Konfigurationsnamen](pullClientConfigNames.md)

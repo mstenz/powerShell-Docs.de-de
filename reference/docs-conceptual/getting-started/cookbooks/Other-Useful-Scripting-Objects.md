@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Andere nützliche Skriptobjekte
 ms.assetid: 4d781196-720b-4ccc-90d2-c570e5e719f5
-ms.openlocfilehash: 0e87e9919199e011ab5abec5b07dccc8494ad64a
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 2ae9bc1864daedbcb0070c5f3862a6c98f8db2d4
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30949824"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893279"
 ---
 # <a name="other-useful-scripting-objects"></a>Andere nützliche Skriptobjekte
 
@@ -33,14 +33,14 @@ $psUnsupportedConsoleApplications
 
 ### <a name="pslocalhelp"></a>$psLocalHelp
 
-Dabei handelt es sich um ein Wörterbuchobjekt, das eine kontextbezogene Zuordnung zwischen Hilfethemen und den entsprechenden Links in der lokalen kompilierten HTML-Hilfedatei verwaltet. Es wird bei der Suche der lokalen Hilfe für ein bestimmtes Thema verwendet. Sie können Themen zu dieser Liste hinzufügen oder aus dieser Liste löschen. Das folgende Codebeispiel zeigt einige Beispiele für Schlüssel-Wert-Paare, die in **$psLocalHelp**enthalten sind.
+Dabei handelt es sich um ein Wörterbuchobjekt, das eine kontextbezogene Zuordnung zwischen Hilfethemen und den entsprechenden Links in der lokalen kompilierten HTML-Hilfedatei verwaltet. Es wird bei der Suche der lokalen Hilfe für ein bestimmtes Thema verwendet. Sie können Themen zu dieser Liste hinzufügen oder aus dieser Liste löschen. Das folgende Codebeispiel zeigt einige Beispiele für Schlüssel-Wert-Paare, die in `$psLocalHelp` enthalten sind.
 
 ```powershell
 # See the local help map
 $psLocalHelp | Format-List
 ```
 
-### <a name="sample-output"></a>Beispielausgabe
+### <a name="pslocalhelp-sample-output"></a>$psLocalHelp-Beispielausgabe
 
 |||
 |-|-|
@@ -61,14 +61,14 @@ Dabei handelt es sich um ein Wörterbuchobjekt, das eine kontextbezogene Zuordnu
 $psOnlineHelp | Format-List
 ```
 
-### <a name="sample-output"></a>Beispielausgabe
+## <a name="psonilnehelp-sample-output"></a>$psOnlineHelp-Beispielausgabe
 
 |||
 |-|-|
 |Key : Add-Computer|Value : http://go.microsoft.com/fwlink/p/?LinkID=135194|
 |Key : Add-Content|Value : http://go.microsoft.com/fwlink/p/?LinkID=113278|
 
- Das nachfolgende Skript fügt der Liste einen Eintrag hinzu.
+Das nachfolgende Skript fügt der Liste einen Eintrag hinzu.
 
 ```powershell
 $psOnlineHelp.Add("get-myNoun", "http://www.mydomain.com/MyNoun.html")
@@ -76,4 +76,4 @@ $psOnlineHelp.Add("get-myNoun", "http://www.mydomain.com/MyNoun.html")
 
 ## <a name="see-also"></a>Weitere Informationen
 
-- [Zweck des Windows PowerShell ISE-Skriptobjektmodells](../../core-powershell/ise/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+[Zweck des Windows PowerShell ISE-Skriptobjektmodells](../../core-powershell/ise/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
