@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Optionen für Anmeldeinformationen in den Konfigurationsdaten
-ms.openlocfilehash: 2c6685f3b6992537d1652f172cf926b85dd634c6
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 12bb8d8ce5fc4685e583e74d411b098320ac4fd4
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190042"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093676"
 ---
 # <a name="credentials-options-in-configuration-data"></a>Optionen für Anmeldeinformationen in den Konfigurationsdaten
 >Gilt für: Windows PowerShell 5.0
@@ -273,8 +273,6 @@ DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 > `NodeName` kann kein Sternchen angegeben werden; der Name eines bestimmten Knotens ist obligatorisch.
 
 **Microsoft empfiehlt, Nur-Text-Kennwörter aufgrund des hohen Sicherheitsrisikos zu vermeiden.**
-
-Eine Ausnahme wäre die Verwendung des Azure Automation DSC-Diensts, da die Daten immer verschlüsselt gespeichert werden (während der Übertragung, im Dienst ruhend und ruhend auf dem Knoten).
 
 ## <a name="domain-credentials"></a>Domänenanmeldeinformationen
 

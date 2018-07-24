@@ -2,12 +2,12 @@
 ms.date: 06/27/2017
 keywords: powershell,cmdlet
 title: Autorisierungsregeln und Sicherheitsfeatures von Windows PowerShell Web Access
-ms.openlocfilehash: a3a743d83ae3e387ee51056042c98753104e925e
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 14bb18cfc5d9826523a239aede42307a7688eaf5
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893721"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39094244"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Autorisierungsregeln und Sicherheitsfeatures von Windows PowerShell Web Access
 
@@ -163,9 +163,8 @@ Im Folgenden sind einige Beispiele für die Verwendung von Sitzungskonfiguration
 
 - Ein Administrator hat eine private Testumgebung eingerichtet und möchte nun allen autorisierten Netzwerkbenutzern den Zugriff auf alle Computer im Netzwerk ermöglichen, auf die sie normalerweise zugreifen können, und zwar mit Zugriff auf alle Sitzungskonfigurationen, auf die sie normalerweise zugreifen können. Da es sich um eine private Testumgebung handelt, erstellt der Administrator eine Autorisierungsregel, die nicht sicher ist. Der Administrator führt das Cmdlet `Add-PswaAuthorizationRule * * *` aus. Dabei wird das Platzhalterzeichen **\*** verwendet, um alle Benutzer, alle Computer und alle Konfigurationen anzugeben. Diese Regel entspricht Folgendem: `Add-PswaAuthorizationRule -UserName * -ComputerName * -ConfigurationName *`.
 
-  >[!NOTE]
-  >
-  >Diese Regel empfiehlt sich nicht für eine sichere Umgebung und umgeht die von Windows PowerShell Web Access bereitgestellte Autorisierungsregel-Sicherheitsebene.
+  > [!NOTE]
+  > Diese Regel empfiehlt sich nicht für eine sichere Umgebung und umgeht die von Windows PowerShell Web Access bereitgestellte Autorisierungsregel-Sicherheitsebene.
 
 - Ein Administrator muss für Benutzer in einer Umgebung, in der sowohl Arbeitsgruppen als auch Domänen enthalten sind, das Herstellen einer Verbindung mit Zielcomputern zulassen. Dabei werden Arbeitsgruppencomputer gelegentlich verwendet, um eine Verbindung mit Zielcomputern in Domänen herzustellen, und Computer in Domänen werden gelegentlich verwendet, um eine Verbindung mit Zielcomputern in Arbeitsgruppen herzustellen. Der Administrator verfügt über einen Gatewayserver (*PswaServer*) in einer Arbeitsgruppe, und der Zielcomputer *srv1.contoso.com* befindet sich in einer Domäne. Der Benutzer *Chris* ist ein autorisierter lokaler Benutzer auf dem Arbeitsgruppen-Gatewayserver und auf dem Zielcomputer. Sein Benutzername auf dem Arbeitsgruppenserver lautet *chrisLocal*, und sein Benutzername auf dem Zielcomputer lautet *contoso\\chris*. Der Administrator fügt die folgende Regel hinzu, um den Zugriff auf %%amp;quot;srv1.contoso.com%%amp;quot; für Chris zu autorisieren.
 
@@ -180,10 +179,9 @@ Im obigen Szenario richtet Windows PowerShell Web Access eine Verbindung mit dem
 
 1. Authentifizierung des Arbeitsgruppen-Gatewayservers durch Hinzufügen eines Benutzernamens im Format *server_name*\\*user_name* zur Autorisierungsregel
 
-2. Authentifizierung auf dem Zielcomputer mithilfe von alternativen Anmeldeinformationen, die auf der Anmeldeseite unter **Optionale Verbindungseinstellungen** angegeben wurden
+1. Authentifizierung auf dem Zielcomputer mithilfe von alternativen Anmeldeinformationen, die auf der Anmeldeseite unter **Optionale Verbindungseinstellungen** angegeben wurden
 
    > [!NOTE]
-   >
    > Wenn sich Gateway- und Zielcomputer in unterschiedlichen Arbeitsgruppen oder Domänen befinden, muss eine Vertrauensstellung zwischen den beiden Arbeitsgruppencomputern, den beiden Domänen oder der Arbeitsgruppe und der Domäne eingerichtet werden. Diese Vertrauensstellung kann nicht mithilfe von Windows PowerShell Web Access-Autorisierungsregel-Cmdlets konfiguriert werden. Mit den Autorisierungsregeln wird keine Vertrauensstellung zwischen Computern definiert. Damit kann für Benutzer nur die Verbindung mit bestimmten Zielcomputern und Sitzungskonfigurationen konfiguriert werden. Weitere Informationen zur Konfiguration einer Vertrauensstellung zwischen unterschiedlichen Domänen finden Sie unter [Creating Domain and Forest Trusts](https://technet.microsoft.com/library/cc794775.aspx") (Erstellen von Domänen- und Gesamtstruktur-Vertrauensstellungen).
    > Weitere Informationen zum Hinzufügen von Arbeitsgruppencomputern zu einer Liste mit vertrauenswürdigen Hosts finden Sie unter [Remoteverwaltung mit dem Server-Manager](https://technet.microsoft.com/library/dd759202.aspx).
 

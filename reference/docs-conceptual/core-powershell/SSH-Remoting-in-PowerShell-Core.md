@@ -46,8 +46,8 @@ Zusätzlich müssen Sie die Kennwortauthentifizierung und ggf. die schlüsselbas
    New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
    ```
 
-2. Installieren Sie den neusten [Win32 OpenSSH]-Build über GitHub, und verwenden Sie dabei die Anweisungen zur [Installation].
-3. Bearbeiten Sie die Datei „sshd_config“ am selben Ort, an dem Sie Win32 OpenSSH installiert haben.
+1. Installieren Sie den neusten [Win32 OpenSSH]-Build über GitHub, und verwenden Sie dabei die Anweisungen zur [Installation].
+1. Bearbeiten Sie die Datei „sshd_config“ am selben Ort, an dem Sie Win32 OpenSSH installiert haben.
    - Vergewissern Sie sich, dass die Kennwortauthentifizierung aktiviert ist.
 
    ```
@@ -59,8 +59,8 @@ Zusätzlich müssen Sie die Kennwortauthentifizierung und ggf. die schlüsselbas
     ```
 
     > [!NOTE]
-    Es besteht ein Fehler in OpenSSH für Windows, der verhindert, dass Leerzeichen in ausführbaren Pfaden zu Subsystemen funktionieren.
-    [Weitere Informationen zu diesem Problem finden Sie auf GitHub.](https://github.com/PowerShell/Win32-OpenSSH/issues/784)
+    > Es besteht ein Fehler in OpenSSH für Windows, der verhindert, dass Leerzeichen in ausführbaren Pfaden zu Subsystemen funktionieren.
+    > [Weitere Informationen zu diesem Problem finden Sie auf GitHub.](https://github.com/PowerShell/Win32-OpenSSH/issues/784)
 
     Um dieses Problem zu beheben, können Sie eine symbolische Verknüpfung mit dem Installationsverzeichnis herstellen, das keine Leerzeichen enthält:
 
@@ -84,27 +84,27 @@ Zusätzlich müssen Sie die Kennwortauthentifizierung und ggf. die schlüsselbas
    PubkeyAuthentication yes
    ```
 
-4. Starten Sie den SSHD-Dienst neu.
+1. Starten Sie den SSHD-Dienst neu.
 
    ```powershell
    Restart-Service sshd
    ```
 
-5. Fügen Sie den Pfad an der Stelle hinzu, an der OpenSSH für die Variable „Path Env“ installiert ist.
+1. Fügen Sie den Pfad an der Stelle hinzu, an der OpenSSH für die Variable „Path Env“ installiert ist.
    - Dieser Pfad sollte wie folgt lauten: `C:\Program Files\OpenSSH\`.
    - So kann die Datei „ssh.exe“ gefunden werden.
 
 ## <a name="setup-on-linux-ubuntu-1404-machine"></a>Setup auf einem Linux-Computer (Ubuntu 14.04)
 
 1. Installieren Sie den neusten Build von [PowerShell Core für Linux] über GitHub.
-2. Installieren Sie ggf. [Ubuntu SSH].
+1. Installieren Sie ggf. [Ubuntu SSH].
 
    ```bash
    sudo apt install openssh-client
    sudo apt install openssh-server
    ```
 
-3. Bearbeiten Sie die Datei „sshd_config“ unter „/etc/ssh“.
+1. Bearbeiten Sie die Datei „sshd_config“ unter „/etc/ssh“.
    - Vergewissern Sie sich, dass die Kennwortauthentifizierung aktiviert ist.
 
    ```
@@ -123,7 +123,7 @@ Zusätzlich müssen Sie die Kennwortauthentifizierung und ggf. die schlüsselbas
    PubkeyAuthentication yes
    ```
 
-4. Starten Sie den SSHD-Dienst neu.
+1. Starten Sie den SSHD-Dienst neu.
 
    ```bash
    sudo service sshd restart
@@ -137,7 +137,7 @@ Zusätzlich müssen Sie die Kennwortauthentifizierung und ggf. die schlüsselbas
      - Klicken Sie auf `Sharing`.
      - Überprüfen Sie, ob für `Remote Login` `Remote Login: On` angezeigt wird.
      - Erteilen Sie den entsprechenden Benutzern Zugriff.
-2. Bearbeiten Sie die Datei `sshd_config` unter `/private/etc/ssh/sshd_config`.
+1. Bearbeiten Sie die Datei `sshd_config` unter `/private/etc/ssh/sshd_config`.
    - Verwenden Sie den von Ihnen bevorzugten Editor, oder
 
      ```bash
@@ -162,7 +162,7 @@ Zusätzlich müssen Sie die Kennwortauthentifizierung und ggf. die schlüsselbas
      PubkeyAuthentication yes
      ```
 
-3. Starten Sie den SSHD-Dienst neu.
+1. Starten Sie den SSHD-Dienst neu.
 
    ```bash
    sudo launchctl stop com.openssh.sshd

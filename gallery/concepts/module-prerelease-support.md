@@ -3,12 +3,12 @@ ms.date: 09/26/2017
 contributor: keithb
 keywords: gallery,powershell,cmdlet,psget
 title: Vorabmodulversionen
-ms.openlocfilehash: 2a4fcd40353450e5ba03910984c5a05772a93d0d
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 371aae7eed4afe341755133c5ee2d356cd5876e0
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189838"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093778"
 ---
 # <a name="prerelease-module-versions"></a>Vorabmodulversionen
 
@@ -108,7 +108,6 @@ C:\windows\system32> Get-InstalledModule TestPackage
 Version         Name                                Repository           Description
 -------         ----                                ----------           -----------
 1.9.0-alpha     TestPackage                         PSGallery            Package used to validate changes to the PowerShe...
-
 ```
 
 Die parallele Installation von Modulversionen, die sich lediglich durch die angegebene Vorabversion unterscheiden, wird nicht unterstützt. Bei der Installation eines Moduls mit PowerShellGet werden verschiedene Versionen desselben Moduls parallel installiert, indem mit dem ModuleVersion-Schlüssel ein Ordnername erstellt wird. Für den Ordnernamen wird der ModuleVersion-Schlüssel ohne die Vorabversionszeichenfolge verwendet. Wenn ein Benutzer MyModule Version 2.5.0-alpha installiert, wird das Modul im Ordner „MyModule\2.5.0“ installiert. Wenn der Benutzer dann 2.5.0-beta installiert, __überschreibt__ die Version 2.5.0-beta den Inhalt des Ordners „MyModule\2.5.0“. Ein Vorteil bei dieser Vorgehensweise besteht darin, dass nach der Installation der für die Produktion freigegebenen Version die Vorabversion nicht deinstalliert werden muss. Im folgenden Beispiel wird gezeigt, wie dies aussieht:

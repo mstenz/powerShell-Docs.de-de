@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 66db78cfb136f22cad9078d7113dad085ee667a5
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: e4910e95a417da61661aaddd98b2dc7da9f98a3d
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188427"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093717"
 ---
 # <a name="creating-and-connecting-to-a-jea-endpoint"></a>Erstellen eines JEA-Endpunkts und Herstellen einer Verbindung damit
 Um einen JEA-Endpunkt zu erstellen, müssen Sie eine besonders konfigurierte PowerShell-Sitzungskonfigurationsdatei erstellen und registrieren, die mit dem Cmdlet **New-PSSessionConfigurationFile** generiert werden kann.
@@ -128,8 +128,8 @@ Copyright = '(c) 2015 Administrator. All rights reserved.'
 # AssembliesToLoad = 'System.Web', 'System.OtherAssembly, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'
 
 }
-
 ```
+
 Um in einer JEA-Sitzungskonfiguration verwendet zu werden, müssen Rollenfunktionen als gültige PowerShell-Module im Verzeichnis „RoleCapabilities“ gespeichert werden. Ein Modul kann, falls gewünscht, mehrere Rollenfunktionsdateien enthalten.
 
 Zum Starten der Festlegung, auf welche Cmdlets, Funktionen, Aliase und Skripts ein Benutzer zugreifen darf, wenn eine Verbindung mit einer JEA-Sitzung hergestellt wird, fügen Sie der Datei mit den Rollenfunktionen hinter den auskommentierten Vorlagen eigene Regeln hinzu. Um sich einen tieferen Einblick in die Konfiguration von Rollenfunktionen zu verschaffen, konsultieren Sie das vollständige [Just Enough Administration-Handbuch](http://aka.ms/JEA).
@@ -141,9 +141,11 @@ Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfi
 ```
 
 ## <a name="connect-to-a-jea-endpoint"></a>Herstellen einer Verbindung mit einem JEA-Endpunkt
+
 Das Herstellen einer Verbindung mit einem JEA-Endpunkt erfolgt wie das Verbinden mit einem beliebigen anderen PowerShell-Endpunkt.  Sie müssen einfach den Namen Ihres JEA-Endpunkts als „ConfigurationName“-Parameter für **New-PSSession**, **Invoke-Command** oder **Enter-PSSession** eingeben.
 
 ```powershell
 Enter-PSSession -ConfigurationName Maintenance -ComputerName localhost
 ```
+
 Sobald Sie mit der JEA-Sitzung verbunden sind, können Sie nur noch die Befehle ausführen, die in der Positivliste unter den Rollenfunktionen angegeben sind. Wenn Sie versuchen, einen für Ihre Rolle nicht zulässigen Befehl auszuführen, tritt ein Fehler auf.
