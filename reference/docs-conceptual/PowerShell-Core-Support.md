@@ -31,24 +31,47 @@ Letztendlich wird erwartet, dass PowerShell Core den Ansatz der „langfristigen
 
 ## <a name="supported-platforms"></a>Unterstützte Plattformen
 
-PowerShell Core wird offiziell auf folgenden Plattformen unterstützt:
+In der folgenden Tabelle erhalten Sie Informationen dazu, welche Plattform für die Version von PowerShell Core, die Sie verwenden, offiziell unterstützt wird.
 
-* Windows 7, 8.1 und 10
-* Windows Server 2008 R2, 2012 R2, 2016
-* [Halbjährlicher Kanal von Windows Server][semi-annual]
-* Ubuntu 14.04, 16.04 und 17.04
-* Debian 8.7 und höher sowie Debian 9
-* CentOS 7
-* Red Hat Enterprise Linux 7
-* OpenSUSE 42.2
-* Fedora 27, 28
-* macOS 10.12 und höher
+Unsere Community hat außerdem Pakete für einige Plattformen beigesteuert, die jedoch nicht offiziell unterstützt werden.
+Diese Pakete sind in der Tabelle mit `Community` gekennzeichnet.
 
-Unsere Community hat außerdem Pakete für die folgenden Plattformen veröffentlicht, die jedoch nicht offiziell unterstützt werden:
+Plattformen, die als `Experimental` gekennzeichnet sind, werden nicht offiziell unterstützt, stehen aber aus Test- und Feedbackzwecken zur Verfügung.
 
-* Arch Linux
-* Kali Linux
-* AppImage (funktioniert auf verschiedenen Linux-Plattformen)
+|                                                   | 6.0         | 6.1         |
+|---------------------------------------------------|:-----------:|:-----------:|
+| Windows 7, 8.1 und 10                            | Unterstützt   | Unterstützt   |
+| Windows Server 2008 R2, 2012 R2, 2016             | Unterstützt   | Unterstützt   |
+| [Halbjährlicher Kanal von Windows Server][semi-annual] | Unterstützt   | Unterstützt   |
+| Ubuntu 14.04 und 16.04                           | Unterstützt   | Unterstützt   |
+| Ubuntu 17.10 und 18.04                           |             | Unterstützt   |
+| Debian 8.7 und höher sowie Debian 9                                | Unterstützt   | Unterstützt   |
+| CentOS 7                                          | Unterstützt   | Unterstützt   |
+| Red Hat Enterprise Linux 7                        | Unterstützt   | Unterstützt   |
+| OpenSUSE 42.2                                     | Unterstützt   | Unterstützt   |
+| Fedora 27                                         | Unterstützt   | Unterstützt   |
+| Fedora 28                                         |             | Unterstützt   |
+| macOS 10.12 und höher                                      | Unterstützt   | Unterstützt   |
+| Arch                                              | Community   | Community   |
+| Raspbian                                          | Experimentell| Community   |
+| Kali                                              | Community   | Community   |
+| AppImage (funktioniert auf verschiedenen Linux-Plattformen)     | Community   | Community   |
+
+## <a name="platform-which-are-out-of-support"></a>Plattformen, die nicht mehr unterstützt werden
+
+Wenn eine Plattformversion das Ende ihrer Lebensdauer (wie vom Plattformbesitzer festgelegt) erreicht, endet auch die Unterstützung von PowerShell Core für diese Plattformversion. Bereits veröffentlichte Pakete bleiben weiterhin für Kunden verfügbar, die Zugriff benötigen. Die formelle Unterstützung und reguläre Updates jeglicher Art werden nicht mehr veröffentlicht.
+
+Deshalb wurde die Unterstützung für die folgenden Versionen vom Besitzer der Verteilung beendet. Diese werden nicht unterstützt.
+
+| Betriebssystem       | Version | Ende der Lebensdauer                                                                                 |
+|----------|---------|---------------------------------------------------------------------------------------------|
+| Fedora   | 26      | [Mai 2018](https://fedoramagazine.org/fedora-26-end-life/)                                  |
+| Fedora   | 25      | [Dezember 2017](https://fedoramagazine.org/fedora-25-end-life/)                             |
+| Fedora   | 24      | [August 2017](https://fedoramagazine.org/fedora-24-eol/)                                    |
+| openSUSE | 42.2    | [Januar 2018](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
+| openSUSE | 42.1    | [Mai 2017](https://lists.opensuse.org/opensuse-security-announce/2017-05/msg00053.html)     |
+| Ubuntu   | 17.04   | [Januar 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
+| Ubuntu   | 16.10   | [Juli 2017](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)        |
 
 ## <a name="notes-on-licensing"></a>Hinweise zur Lizenzierung
 
