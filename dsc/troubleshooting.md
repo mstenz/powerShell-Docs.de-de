@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Problembehandlung bei DSC
-ms.openlocfilehash: c08f91b514aae438578fa278228fe5ec879a4012
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 1e8bfdf3540e65e3be94bf6a9b04e7d3b14ff044
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190008"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39094067"
 ---
 # <a name="troubleshooting-dsc"></a>Problembehandlung bei DSC
 
@@ -24,10 +24,10 @@ Windows PowerShell DSC (Desired State Configuration) hängt von WinRM ab. Unter 
 Das Cmdlet [Get-DscConfigurationStatus](https://technet.microsoft.com/library/mt517868.aspx) ruft Informationen zum Konfigurationsstatus von einem Zielknoten ab.
 Ein umfangreiches Objekt wird zurückgegeben, das ausführliche Informationen dazu enthält, ob die Ausführung der Konfiguration erfolgreich war oder nicht. Sie können das Objekt eingehender untersuchen, um Details zur Ausführung der Konfiguration zu ermitteln, wie z. B.:
 
-* Alle fehlerhaften Ressourcen
-* Alle Ressourcen, die ein Neustart erfordern
-* Metakonfigurationseinstellungen zum Zeitpunkt der Konfigurationsausführung
-* usw.
+- Alle fehlerhaften Ressourcen
+- Alle Ressourcen, die ein Neustart erfordern
+- Metakonfigurationseinstellungen zum Zeitpunkt der Konfigurationsausführung
+- usw.
 
 Die folgende Parametergruppe gibt die Statusinformationen zur letzten Konfigurationsausführung zurück:
 
@@ -118,8 +118,8 @@ Consistency engine was run successfully.
 
 DSC-Ereignisse werden in einer bestimmten Struktur protokolliert, das dem Benutzer ermöglicht, Ereignisse eines DSC-Auftrags zusammenzufassen. Die Struktur sieht wie folgt aus:
 
-**Auftrags-ID: <Guid>**
-**<Event Message>**
+**Auftrags-ID:\< \>GUID**
+**\<Ereignismeldung\>**
 
 ## <a name="gathering-events-from-a-single-dsc-operation"></a>Sammeln von Ereignissen zu einem einzelnen DSC-Vorgang
 
@@ -281,7 +281,6 @@ ComputerName   SequenceId TimeCreated           Result   JobID                  
 SRV1   1          6/23/2016 9:37:52 AM  Failure  9701aadf-395e-11e6-9165-00155d390509  {@{Message=; TimeC...
 SRV1   2          6/23/2016 9:36:54 AM  Failure  7e8e2d6e-395c-11e6-9165-00155d390509  {@{Message=; TimeC...
 SRV1   3          6/23/2016 9:36:54 AM  Success  af72c6aa-3960-11e6-9165-00155d390509  {@{Message=Operati...
-
 ```
 
 Durch Verwendung des Parameters `Newest` können Sie angeben, dass nur die Ergebnisse der aktuellsten Vorgänge ausgegeben werden sollen:
@@ -618,10 +617,13 @@ onlyProperty                            PSComputerName
 ## <a name="see-also"></a>Weitere Informationen
 
 ### <a name="reference"></a>Verweis
-* [DSC-Protokollressource](logResource.md)
+
+- [DSC-Protokollressource](logResource.md)
 
 ### <a name="concepts"></a>Konzepte
-* [Erstellen von benutzerdefinierten Windows PowerShell DSC-Ressourcen](authoringResource.md)
+
+- [Erstellen von benutzerdefinierten Windows PowerShell DSC-Ressourcen](authoringResource.md)
 
 ### <a name="other-resources"></a>Weitere Ressourcen
-* [Windows PowerShell DSC-Cmdlets](https://technet.microsoft.com/library/dn521624(v=wps.630).aspx)
+
+- [Windows PowerShell DSC-Cmdlets](https://technet.microsoft.com/library/dn521624(v=wps.630).aspx)

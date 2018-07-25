@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: DSC-Ressource „Log“
-ms.openlocfilehash: c7e1957540da2fd85a30f739e0f69bdb6975a4d8
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: fade94efd8133ae0172737e4bb1aed89fc0f97d9
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219384"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093475"
 ---
 # <a name="dsc-log-resource"></a>DSC-Ressource „Log“
 
@@ -25,23 +25,22 @@ Log [string] #ResourceName
 }
 ```
 
-HINWEIS: Standardmäßig sind nur die Betriebsprotokolle für DSC aktiviert.
-Das analytische Protokoll muss aktiviert werden, um verfügbar zu sein und angezeigt zu werden.
-Weitere Informationen finden Sie in folgendem Artikel.
-
-[Wo befinden sich die DSC-Ereignisprotokolle?](https://msdn.microsoft.com/en-us/powershell/dsc/troubleshooting#where-are-dsc-event-logs)
+> [!NOTE]
+> Standardmäßig sind nur die Betriebsprotokolle für DSC aktiviert. Das analytische Protokoll muss aktiviert werden, um verfügbar zu sein und angezeigt zu werden. Weitere Informationen finden Sie im Abschnitt „Wo befinden sich die DSC-Ereignisprotokolle?“ im Artikel [Problembehandlung bei DSC](https://msdn.microsoft.com/en-us/powershell/dsc/troubleshooting#where-are-dsc-event-logs).
 
 ## <a name="properties"></a>Eigenschaften
+
 |  Eigenschaft  |  Beschreibung   |
 |---|---|
 | Message| Gibt die Meldung an, die Sie in das Ereignisprotokoll „Microsoft Windows Desired State Configuration/Analyse“ schreiben möchten.|
-| DependsOn | Gibt an, dass die Konfiguration einer anderen Ressource ausgeführt werden muss, bevor diese Protokollmeldung geschrieben wird. Wenn beispielsweise die ID des Skriptblocks mit der Ressourcenkonfiguration, den Sie zuerst ausführen möchten, __ResourceName__ und dessen Typ __ResourceType__ ist, lautet die Syntax für das Verwenden dieser Eigenschaft `DependsOn = "[ResourceType]ResourceName"`.|
+| DependsOn | Gibt an, dass die Konfiguration einer anderen Ressource ausgeführt werden muss, bevor diese Protokollmeldung geschrieben wird. Wenn beispielsweise die ID des Skriptblocks mit der Ressourcenkonfiguration, den Sie zuerst ausführen möchten, __ResourceName__ und dessen Typ __ResourceType__ ist, lautet die Syntax für das Verwenden dieser Eigenschaft `DependsOn = '[ResourceType]ResourceName'`.|
 
 ## <a name="example"></a>Beispiel
 
 Im folgenden Beispiel wird veranschaulicht, wie Sie eine Meldung in das Ereignisprotokoll „Microsoft Windows Desired State Configuration/Analyse“ einschließen.
 
-> **Hinweis**: Wenn Sie [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) mit dieser konfigurierten Ressource ausführen, wird stets **$false** zurückgegeben.
+> [!NOTE]
+> Wenn Sie [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) mit dieser konfigurierten Ressource ausführen, wird stets **$false** zurückgegeben.
 
 ```powershell
 Configuration logResourceTest
@@ -49,11 +48,10 @@ Configuration logResourceTest
     Import-DscResource -ModuleName PSDesiredStateConfiguration
 
     Node localhost
-
     {
         Log LogExample
         {
-            Message = "This message will appear in the Microsoft-Windows-Desired State Configuration/Analytic event log."
+            Message = 'This message will appear in the Microsoft-Windows-Desired State Configuration/Analytic event log.'
         }
     }
 }

@@ -58,8 +58,8 @@ Klicken Sie auf **Datei > Beenden**, um Visual Studio Code zu beenden.
 Wenn Sie eine bestimmte PowerShell-Installation mit Visual Studio Code verwenden möchten, müssen Sie der Datei mit den Benutzereinstellungen eine neue Variable hinzufügen.
 
 1. Klicken Sie auf **Datei > Voreinstellungen > Einstellungen**.
-2. Anschließend werden zwei Editorbereiche angezeigt.
-   Fügen Sie die nachfolgende Einstellung im Bereich rechts (`settings.json`) abhängig von Ihrem Betriebssystem zwischen den geschweiften Klammern (`{` und `}`) ein, und ersetzen Sie *<version>* durch die installierte PowerShell-Version:
+1. Anschließend werden zwei Editorbereiche angezeigt.
+   Fügen Sie die nachfolgende Einstellung im Bereich rechts (`settings.json`) abhängig von Ihrem Betriebssystem zwischen den geschweiften Klammern (`{` und `}`) ein, und ersetzen Sie **\<version\>** durch die installierte PowerShell-Version:
 
    ```json
     // On Windows:
@@ -72,8 +72,8 @@ Wenn Sie eine bestimmte PowerShell-Installation mit Visual Studio Code verwenden
     "powershell.powerShellExePath": "/usr/local/microsoft/powershell/<version>/pwsh"
    ```
 
-3. Ersetzen Sie die Einstellung durch den Pfad zu der gewünschten ausführbaren PowerShell-Datei.
-4. Speichern Sie die Datei mit den Einstellungen, und starten Sie Visual Studio Code neu.
+1. Ersetzen Sie die Einstellung durch den Pfad zu der gewünschten ausführbaren PowerShell-Datei.
+1. Speichern Sie die Datei mit den Einstellungen, und starten Sie Visual Studio Code neu.
 
 #### <a name="configuration-settings-for-visual-studio-code"></a>Konfigurationseinstellungen für Visual Studio Code
 

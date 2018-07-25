@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: PowerShell
 title: Elementmanifestwerte, die die Benutzeroberfläche des PowerShell-Katalogs betreffen
-ms.openlocfilehash: fd5e48f8cc36795742ae597fc7715f7377605b6f
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 00350d3558e2bfa487fb116304956ffa7291ee05
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893476"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093972"
 ---
 # <a name="item-manifest-values-that-impact-the-powershell-gallery-ui"></a>Elementmanifestwerte, die die Benutzeroberfläche des PowerShell-Katalogs betreffen
 
@@ -84,65 +84,67 @@ Als Referenz werden im Folgenden einige der am häufigsten verwendeten Tags seit
 In einigen Fällen werden ähnliche, jedoch möglicherweise weniger geeignete Optionen neben dem Tag aufgeführt.
 Es wird empfohlen, das bevorzugte Tag zu verwenden, da dies die Anzahl falscher Ergebnisse reduziert und zu besseren Suchergebnisse für Consumer führt.
 
-| **Bevorzugtes Tag** | **Alternativen und Hinweise** |
+| Bevorzugtes Tag | Alternativen und Hinweise |
 | --- | --- |
-| **Azure** |  |
-| **DSC** | DesiredStateConfiguration ist nicht das bevorzugte Tag, da es zu lang ist. |
-| **ResourceManager** | ARM wird zur Beschreibung von Prozessorgruppen verwendet und sollte nicht im Zusammenhang mit dem Azure Resource Manager verwendet werden. | **DSCResourceKit** |  |
-| **SQL** |  |
-| **AWS** |  |
-| **DSCResource** |  |
-| **Automation** |  |
-| **REST** |  |
-| **ActiveDirectory** | AD wird gegenwärtig nicht als eigenständiges Wort verwendet.  |
-| **SQLServer** |  |
-| **DBA** |  |
-| **Sicherheit** | „Defense“ ist nicht präzise genug. |
-| **Database** | „Databases“ (Plural) ist nicht das bevorzugte Tag. |
-| **DevOps** |  |
-| **Windows** |  |
-| **Build** |  |
-| **Deployment** | „Deploy“ wird etwas seltener verwendet. |
-| **Cloud** |  |
-| **GIT** |  |
-| **Test** | „Tests“ ist nicht das bevorzugte Tag. |
-| **VersionControl** | „Version“ ist nicht präzise genug, obwohl es häufiger verwendet wird.  |
-| **Logging** | Dies ist die bevorzugte Verwendung von Protokollierung als Aktion. |
-| **Log** | Dies ist die bevorzugte Verwendung eines Protokolls als Objekt. |
-| **Backup** |  |
-| **IaaS** |  |
-| **Linux** |  |
-| **IIS** |  |
-| **AzureAutomation** |  |
-| **Storage** |  |
-| **GitHub** |  |
-| **Json** |  |
-| **Exchange** |  |
-| **Network** | „Networking“ weist Ähnlichkeiten auf, wird jedoch seltener verwendet. |
-| **SharePoint** |  |
-| **Reporting** | „Reporting“ bezieht sich auf eine Aktion, während „Report“ ein Objekt bezeichnet. |
-| **Report** | „Report“ bezeichnet ein Objekt. |
-| **WinRM** |  |
-| **Monitoring** |  |
-| **VSTS** |  |
-| **Excel** |  |
-| **Google** |  |
-| **Color** |  |
-| **DNS** |  |
-| **Office365** | „Office“ sollte vorzugsweise ausgeschrieben werden. „O365“ ist zwar kürzer, wird jedoch seltener verwendet. | **Gitlab** |  |
-| **Pester** |  |
-| **AzureAD** |  |
-| **HTML** |  |
-| **Hyper-V** | „HyperV“ wird seltener als Tag verwendet. |
-| **Configuration** |  |
-| **ChatOps** |  |
-| **PackageManagement** |  |
-| **WMI** |  |
-| **Firewall** |  |
-| **Docker** |  |
-| **Appveyor** |  |
-| **AzureRm** | Dieses Element wird in erster Linie bei AzureRM-Modulen verwendet. |
-| **Zip** |  |
-| **MSI** |  |
-| **Mac** |  |
-| **PoshBot** |  |
+| Azure |  |
+| DSC | DesiredStateConfiguration ist nicht das bevorzugte Tag, da es zu lang ist. |
+| ResourceManager | ARM wird zur Beschreibung von Prozessorgruppen verwendet und sollte nicht im Zusammenhang mit dem Azure Resource Manager verwendet werden. |
+| DSCResourceKit |  |
+| SQL |  |
+| AWS |  |
+| DSCResource |  |
+| Automatisierung |  |
+| REST |  |
+| ActiveDirectory | AD wird gegenwärtig nicht als eigenständiges Wort verwendet.  |
+| SQLServer |  |
+| DBA |  |
+| Sicherheit | „Defense“ ist nicht präzise genug. |
+| Datenbank | „Databases“ (Plural) ist nicht das bevorzugte Tag. |
+| DevOps |  |
+| Windows |  |
+| Build |  |
+| Bereitstellung | „Deploy“ wird etwas seltener verwendet. |
+| Cloud |  |
+| GIT |  |
+| Test | „Tests“ ist nicht das bevorzugte Tag. |
+| VersionControl | „Version“ ist nicht präzise genug, obwohl es häufiger verwendet wird.  |
+| Protokollierung | Dies ist die bevorzugte Verwendung von Protokollierung als Aktion. |
+| Log | Dies ist die bevorzugte Verwendung eines Protokolls als Objekt. |
+| Ersatzanschluss |  |
+| IaaS |  |
+| Linux |  |
+| IIS |  |
+| AzureAutomation |  |
+| Speicher |  |
+| GitHub |  |
+| Json |  |
+| Exchange |  |
+| Netzwerk | „Networking“ weist Ähnlichkeiten auf, wird jedoch seltener verwendet. |
+| SharePoint |  |
+| Berichterstellung | „Reporting“ bezieht sich auf eine Aktion, während „Report“ ein Objekt bezeichnet. |
+| Bericht | „Report“ bezeichnet ein Objekt. |
+| WinRM |  |
+| Überwachung |  |
+| VSTS |  |
+| Excel |  |
+| Google |  |
+| Color |  |
+| Domain Name System |  |
+| Office365 | „Office“ sollte vorzugsweise ausgeschrieben werden. „O365“ ist zwar kürzer, wird jedoch seltener verwendet. |
+| Gitlab |  |
+| Pester |  |
+| AzureAD |  |
+| HTML |  |
+| Hyper-V | „HyperV“ wird seltener als Tag verwendet. |
+| Konfiguration |  |
+| ChatOps |  |
+| PackageManagement |  |
+| WMI |  |
+| Firewall |  |
+| Docker |  |
+| Appveyor |  |
+| AzureRm | Dieses Element wird in erster Linie bei AzureRM-Modulen verwendet. |
+| Zip |  |
+| MSI |  |
+| Mac |  |
+| PoshBot |  |
