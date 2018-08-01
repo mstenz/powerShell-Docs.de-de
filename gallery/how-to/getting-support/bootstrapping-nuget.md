@@ -3,24 +3,20 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: gallery,powershell,cmdlet,psget
 title: Bootstrapping von NuGet
-ms.openlocfilehash: 2d321097fda201c0d8f843b2194a161eceabe4e1
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: e82fe7bec2e6b7a321fb173cdf9a54c5a97d5f18
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39094016"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39267846"
 ---
 # <a name="bootstrap-the-nuget-provider-and-nugetexe"></a>Bootstrapping des NuGet-Anbieters und von „NuGet.exe“
 
-„NuGet.exe“ ist im neuesten NuGet-Anbieter nicht enthalten.
-Für die Veröffentlichung eines Moduls oder Skripts benötigt PowerShell die binäre ausführbare Datei „NuGet.exe“.
-Für alle weiteren Vorgänge, darunter *find*, *install*, *save* und *uninstall*, ist nur der NuGet-Anbieter erforderlich.
-PowerShell umfasst Logik für ein kombiniertes Bootstrappings des NuGet-Anbieters und der Datei „NuGet.exe“ oder ein ausschließliches Bootstrapping des NuGet-Anbieters.
-In beiden Fällen sollte nur eine einzige Aufforderungsmeldung erfolgen.
-Wenn der Computer nicht mit dem Internet verbunden ist, muss der Benutzer oder Administrator eine vertrauenswürdige Instanz des NuGet-Anbieters und/oder der Datei „NuGet.exe“ auf den getrennten Computer kopieren.
+„NuGet.exe“ ist im neuesten NuGet-Anbieter nicht enthalten. Für die Veröffentlichung eines Moduls oder Skripts benötigt PowerShell die binäre ausführbare Datei „NuGet.exe“. Für alle weiteren Vorgänge, darunter *find*, *install*, *save* und *uninstall*, ist nur der NuGet-Anbieter erforderlich.
+PowerShell umfasst Logik für ein kombiniertes Bootstrappings des NuGet-Anbieters und der Datei „NuGet.exe“ oder ein ausschließliches Bootstrapping des NuGet-Anbieters. In beiden Fällen sollte nur eine einzige Aufforderungsmeldung erfolgen. Wenn der Computer nicht mit dem Internet verbunden ist, muss der Benutzer oder Administrator eine vertrauenswürdige Instanz des NuGet-Anbieters und/oder der Datei „NuGet.exe“ auf den getrennten Computer kopieren.
 
 > [!NOTE]
-> Ab Version 6 ist der NuGet-Anbieter in der Installation von PowerShell enthalten. [http://github.com/powershell/powershell](http://github.com/powershell/powershell)
+> Ab Version 6 ist der NuGet-Anbieter in der Installation von PowerShell enthalten.
 
 ## <a name="resolving-error-when-the-nuget-provider-has-not-been-installed-on-a-machine-that-is-internet-connected"></a>Fehlerbehebung, wenn der NuGet-Anbieter auf einem Computer ohne Internetverbindung nicht installiert ist
 
@@ -123,15 +119,11 @@ VERBOSE: Successfully published module 'Contoso' to the module publish location 
 
 ## <a name="manually-bootstrapping-the-nuget-provider-on-a-machine-that-is-not-connected-to-the-internet"></a>Manuelles Bootstrapping des NuGet-Anbieters auf einem Computer ohne Internetverbindung
 
-Die oben gezeigten Prozesse setzen voraus, dass der Computer mit dem Internet verbunden ist und dass Dateien von einem öffentlichen Speicherort heruntergeladen werden können.
-Wenn dies nicht möglich ist, kann für einen Computer nur mithilfe der oben gezeigten Prozesse ein Bootstrapping durchgeführt werden, und der Anbieter muss über einen vertrauenswürdigen Offlineprozess auf den isolierten Knoten kopiert werden.
-Der gängigste Anwendungsfall für dieses Szenario ist die Verwendung eines privaten Katalogs zur Unterstützung einer isolierten Umgebung.
+Die oben gezeigten Prozesse setzen voraus, dass der Computer mit dem Internet verbunden ist und dass Dateien von einem öffentlichen Speicherort heruntergeladen werden können. Wenn dies nicht möglich ist, kann für einen Computer nur mithilfe der oben gezeigten Prozesse ein Bootstrapping durchgeführt werden, und der Anbieter muss über einen vertrauenswürdigen Offlineprozess auf den isolierten Knoten kopiert werden. Der gängigste Anwendungsfall für dieses Szenario ist die Verwendung eines privaten Katalogs zur Unterstützung einer isolierten Umgebung.
 
 Nach der Durchführung des Prozesses für das Bootstrapping eines Computers mit Internetverbindung finden Sie Anbieterdateien in diesem Verzeichnis:
 
-```
-C:\Program Files\PackageManagement\ProviderAssemblies\
-```
+`C:\Program Files\PackageManagement\ProviderAssemblies\`
 
 Die Ordner-/Dateistruktur des NuGet-Anbieters sieht folgendermaßen aus (die Versionsnummer weicht wahrscheinlich ab):
 
@@ -147,11 +139,9 @@ Kopieren Sie diese Ordner und Dateien unter Verwendung eines vertrauenswürdigen
 
 Zusätzlich zum Prozess des manuellen Bootstrappings des NuGet-Anbieters ist die ausführbare Binärdatei „NuGet.exe“ erforderlich, wenn mit dem Computer unter Verwendung der Cmdlets `Publish-Module` oder `Publish-Script` Module oder Skripts in einem privaten Katalog veröffentlicht werden sollen.
 
-Der gängigste Anwendungsfall für dieses Szenario ist die Verwendung eines privaten Katalogs zur Unterstützung einer isolierten Umgebung.
-Es gibt zwei Optionen zum Abrufen der Datei „NuGet.exe“.
+Der gängigste Anwendungsfall für dieses Szenario ist die Verwendung eines privaten Katalogs zur Unterstützung einer isolierten Umgebung. Es gibt zwei Optionen zum Abrufen der Datei „NuGet.exe“.
 
-Die erste Option besteht darin, ein Bootstrapping für einen Computer mit Internetverbindung durchzuführen und die Dateien unter Verwendung eines vertrauenswürdigen Prozesses auf die Offlinecomputer zu kopieren.
-Nach dem Bootstrapping des Computers mit Internetverbindung befindet sich die binäre Datei „NuGet.exe“ in einem dieser zwei Ordner:
+Die erste Option besteht darin, ein Bootstrapping für einen Computer mit Internetverbindung durchzuführen und die Dateien unter Verwendung eines vertrauenswürdigen Prozesses auf die Offlinecomputer zu kopieren. Nach dem Bootstrapping des Computers mit Internetverbindung befindet sich die binäre Datei „NuGet.exe“ in einem dieser zwei Ordner:
 
 Wenn die Cmdlets `Publish-Module` oder `Publish-Script` mit erhöhten Rechten (als Administrator) ausgeführt wurden:
 
@@ -165,9 +155,7 @@ Wenn die Cmdlets als Benutzer ohne erhöhte Rechte ausgeführt wurden:
 $env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
 ```
 
-Eine zweite Möglichkeit besteht darin, „NuGet.exe“ von der Website „NuGet.Org“ herunterzuladen: [https://dist.nuget.org/index.html](https://www.nuget.org/downloads) Bei Auswahl einer NuGet-Version für Produktionscomputer müssen Sie eine höhere Version als 2.8.5.208 verwenden und die Version ermitteln, die als „empfohlen“ gekennzeichnet ist.
-Denken Sie daran, die Datei zu entsperren, wenn sie mit einem Browser heruntergeladen wurde.
-Sie können die Entsperrung mit dem Cmdlet `Unblock-File` durchführen.
+Eine zweite Möglichkeit besteht darin, „NuGet.exe“ von der Website „NuGet.Org“ herunterzuladen: [https://dist.nuget.org/index.html](https://www.nuget.org/downloads) Bei Auswahl einer NuGet-Version für Produktionscomputer müssen Sie eine höhere Version als 2.8.5.208 verwenden und die Version ermitteln, die als „empfohlen“ gekennzeichnet ist. Denken Sie daran, die Datei zu entsperren, wenn sie mit einem Browser heruntergeladen wurde. Sie können die Entsperrung mit dem Cmdlet `Unblock-File` durchführen.
 
 In beiden Fällen kann die Datei „NuGet.exe“ an einen beliebigen Speicherort unter `$env:path` kopiert werden, aber dies sind die Standardspeicherorte:
 

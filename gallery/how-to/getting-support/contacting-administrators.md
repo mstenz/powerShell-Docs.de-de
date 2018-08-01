@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Kontaktieren von Katalogadministratoren
-ms.openlocfilehash: c919848e93a1f061ac0bf7dec8ef568e41212ef7
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 71c8aa15ac0c6ec57e7e1bfe3cb20cac7e2c6b29
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093820"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268652"
 ---
 # <a name="contact-gallery-administrators"></a>Kontaktieren von Katalogadministratoren
 
@@ -24,6 +24,6 @@ Katalogadministratoren sollten in den folgenden Fällen kontaktiert werden:
 
 ## <a name="how-to-contact-gallery-administrators"></a>Wie sollten Sie Katalogadministratoren kontaktieren?
 
-1. Senden Sie uns eine E-Mail: <cgadmin@microsoft.com>.
+1. Senden Sie uns eine E-Mail: cgadmin@microsoft.com.
 2. Wenn Sie den Missbrauch eines Elements melden möchten, können Sie den Link „Missbrauch melden“ unterhalb der Elementinformationen im linken Bereich verwenden.
 3. Bei anderen allgemeinen Fragen zum Katalog wenden Sie sich an [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell).
