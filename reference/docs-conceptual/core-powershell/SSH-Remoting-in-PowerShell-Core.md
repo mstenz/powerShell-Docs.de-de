@@ -3,14 +3,9 @@
 
 ## <a name="overview"></a>Übersicht
 
-In der Regel wird beim PowerShell-Remoting für die Aushandlung der Verbindung und den Datentransport WinRM verwendet.
-Für diese Remoting-Implementierung wurde Secure Shell (SSH) ausgewählt, da dieses Netzwerkprotokoll jetzt sowohl für Linux- als auch für Windows-Plattformen verfügbar ist und das PowerShell-Remoting für mehrere Plattformen ermöglicht.
-Allerdings stellt WinRM auch einen stabiles Hostingmodell für PowerShell-Remotesitzungen zur Verfügung. Dies ist bei dieser Implementierung noch nicht der Fall.
-Das bedeutet, dass die Remotekonfiguration von Endpunkten und „Just Enough Administration“ (JEA, Minimale Administration) für PowerShell in dieser Implementierung noch nicht unterstützt wird.
+In der Regel wird beim PowerShell-Remoting für die Aushandlung der Verbindung und den Datentransport WinRM verwendet. Für diese Remoting-Implementierung wurde Secure Shell (SSH) ausgewählt, da dieses Netzwerkprotokoll jetzt sowohl für Linux- als auch für Windows-Plattformen verfügbar ist und das PowerShell-Remoting für mehrere Plattformen ermöglicht. Allerdings stellt WinRM auch einen stabiles Hostingmodell für PowerShell-Remotesitzungen zur Verfügung. Dies ist bei dieser Implementierung noch nicht der Fall. Das bedeutet, dass die Remotekonfiguration von Endpunkten und „Just Enough Administration“ (JEA, Minimale Administration) für PowerShell in dieser Implementierung noch nicht unterstützt wird.
 
-Mithilfe des SSH-Remotings für PowerShell können Sie grundlegendes PowerShell-Remoting von Sitzungen zwischen Windows- und Linux-Computern ausführen.
-Dies geschieht durch Erstellen eines Hostingprozesses für PowerShell als SSH-Subsystem auf dem Zielcomputer.
-Dies soll zukünftig in ein allgemeineres Hostingmodell geändert werden, das ähnlich wie WinRM funktioniert, um so Endpunktkonfigurationen und JEA zu unterstützen.
+Mithilfe des SSH-Remotings für PowerShell können Sie grundlegendes PowerShell-Remoting von Sitzungen zwischen Windows- und Linux-Computern ausführen. Dies geschieht durch Erstellen eines Hostingprozesses für PowerShell als SSH-Subsystem auf dem Zielcomputer. Dies soll zukünftig in ein allgemeineres Hostingmodell geändert werden, das ähnlich wie WinRM funktioniert, um so Endpunktkonfigurationen und JEA zu unterstützen.
 
 Die Cmdlets `New-PSSession`, `Enter-PSSession` und `Invoke-Command` verfügen nun über einen neuen Parameter, der diese neue Remotingverbindung vereinfachen sollen.
 
@@ -18,24 +13,18 @@ Die Cmdlets `New-PSSession`, `Enter-PSSession` und `Invoke-Command` verfügen nu
 [-HostName <string>]  [-UserName <string>]  [-KeyFilePath <string>]
 ```
 
-Es werden voraussichtlich noch Änderungen an diesen neuen Parametern vorgenommen. Derzeit dienen sie jedoch dazu, Ihnen das Erstellen von SSH PSSessions zu ermöglichen, die Sie an die Befehlszeile koppeln oder über die Sie Befehle und Skripts aufrufen können.
-Geben Sie den Zielcomputer über den HostName-Parameter an, und fügen Sie über „UserName“ einen Benutzernamen hinzu.
-Wenn Sie die Cmdlets über die PowerShell-Befehlszeile ausführen, werden Sie dazu aufgefordert, ein Kennwort einzugeben.
-Außerdem haben Sie die Möglichkeit, die SSH-Schlüsselauthentifizierung zu verwenden und einen Dateipfad mit einem privaten Schlüssel über den KeyFilePath-Parameter bereitzustellen.
+Es werden voraussichtlich noch Änderungen an diesen neuen Parametern vorgenommen. Derzeit dienen sie jedoch dazu, Ihnen das Erstellen von SSH PSSessions zu ermöglichen, die Sie an die Befehlszeile koppeln oder über die Sie Befehle und Skripts aufrufen können. Geben Sie den Zielcomputer über den HostName-Parameter an, und fügen Sie über „UserName“ einen Benutzernamen hinzu. Wenn Sie die Cmdlets über die PowerShell-Befehlszeile ausführen, werden Sie dazu aufgefordert, ein Kennwort einzugeben. Außerdem haben Sie die Möglichkeit, die SSH-Schlüsselauthentifizierung zu verwenden und einen Dateipfad mit einem privaten Schlüssel über den KeyFilePath-Parameter bereitzustellen.
 
 ## <a name="general-setup-information"></a>Allgemeine Setupinformationen
 
-SSH muss auf allen Computern installiert sein.
-Sie sollten sowohl den Client (`ssh.exe`) als auch den Server (`sshd.exe`) installieren, damit Sie das Remoting für Computer ausgiebig testen können.
-Für Windows müssen Sie [Win32 OpenSSH über GitHub](https://github.com/PowerShell/Win32-OpenSSH/releases) installieren.
-Für Linux müssen Sie SSH (einschließlich SSHD-Server) entsprechend Ihrer jeweiligen Plattform installieren.
-Außerdem benötigen Sie einen aktuellen PowerShell-Build oder ein PowerShell-Paket von GitHub, das die Remotefunktion für SSH anbietet.
-SSH-Subsysteme werden verwendet, um PowerShell-Prozesse auf dem Remotecomputer zu verwenden. Dafür muss der SSH-Server konfiguriert sein.
-Zusätzlich müssen Sie die Kennwortauthentifizierung und ggf. die schlüsselbasierte Authentifizierung aktivieren.
+SSH muss auf allen Computern installiert sein. Sie sollten sowohl den Client (`ssh.exe`) als auch den Server (`sshd.exe`) installieren, damit Sie das Remoting für Computer ausgiebig testen können. Für Windows müssen Sie [Win32 OpenSSH über GitHub](https://github.com/PowerShell/Win32-OpenSSH/releases) installieren.
+Für Linux müssen Sie SSH (einschließlich SSHD-Server) entsprechend Ihrer jeweiligen Plattform installieren. Außerdem benötigen Sie einen aktuellen PowerShell-Build oder ein PowerShell-Paket von GitHub, das die Remotefunktion für SSH anbietet.
+SSH-Subsysteme werden verwendet, um PowerShell-Prozesse auf dem Remotecomputer zu verwenden. Dafür muss der SSH-Server konfiguriert sein. Zusätzlich müssen Sie die Kennwortauthentifizierung und ggf. die schlüsselbasierte Authentifizierung aktivieren.
 
 ## <a name="setup-on-windows-machine"></a>Setup auf dem Windows-Computer
 
 1. Installieren Sie die neuste Version von [PowerShell Core für Windows].
+
    - Anhand der Parameter für `New-PSSession` können Sie bestimmen, ob der Support für SSH-Remoting eingerichtet ist.
 
    ```powershell
@@ -46,65 +35,68 @@ Zusätzlich müssen Sie die Kennwortauthentifizierung und ggf. die schlüsselbas
    New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
    ```
 
-1. Installieren Sie den neusten [Win32 OpenSSH]-Build über GitHub, und verwenden Sie dabei die Anweisungen zur [Installation].
-1. Bearbeiten Sie die Datei „sshd_config“ am selben Ort, an dem Sie Win32 OpenSSH installiert haben.
+2. Installieren Sie den neusten [Win32 OpenSSH]-Build über GitHub, und verwenden Sie dabei die Anweisungen zur [Installation].
+3. Bearbeiten Sie die Datei „sshd_config“ am selben Ort, an dem Sie Win32 OpenSSH installiert haben.
+
    - Vergewissern Sie sich, dass die Kennwortauthentifizierung aktiviert ist.
 
-   ```
-   PasswordAuthentication yes
-   ```
+     ```
+     PasswordAuthentication yes
+     ```
 
-    ```
-    Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
-    ```
+     ```
+     Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
+     ```
 
-    > [!NOTE]
-    > Es besteht ein Fehler in OpenSSH für Windows, der verhindert, dass Leerzeichen in ausführbaren Pfaden zu Subsystemen funktionieren.
-    > [Weitere Informationen zu diesem Problem finden Sie auf GitHub.](https://github.com/PowerShell/Win32-OpenSSH/issues/784)
+     > [!NOTE]
+     > Es besteht ein Fehler in OpenSSH für Windows, der verhindert, dass Leerzeichen in ausführbaren Pfaden zu Subsystemen funktionieren.
+     > [Weitere Informationen zu diesem Problem finden Sie auf GitHub.](https://github.com/PowerShell/Win32-OpenSSH/issues/784)
 
-    Um dieses Problem zu beheben, können Sie eine symbolische Verknüpfung mit dem Installationsverzeichnis herstellen, das keine Leerzeichen enthält:
+     Um dieses Problem zu beheben, können Sie eine symbolische Verknüpfung mit dem Installationsverzeichnis herstellen, das keine Leerzeichen enthält:
 
-    ```powershell
-    mklink /D c:\pwsh "C:\Program Files\PowerShell\6.0.0"
-    ```
+     ```powershell
+     mklink /D c:\pwsh "C:\Program Files\PowerShell\6.0.0"
+     ```
 
-    Geben Sie diese anschließend in das Subsystem ein:
+     Geben Sie diese anschließend in das Subsystem ein:
 
-    ```
-    Subsystem    powershell c:\pwsh\pwsh.exe -sshs -NoLogo -NoProfile
-    ```
+     ```
+     Subsystem    powershell c:\pwsh\pwsh.exe -sshs -NoLogo -NoProfile
+     ```
 
-   ```
-   Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
-   ```
+     ```
+     Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
+     ```
 
    - Aktivieren Sie ggf. die Schlüsselauthentifizierung.
 
-   ```
-   PubkeyAuthentication yes
-   ```
+     ```
+     PubkeyAuthentication yes
+     ```
 
-1. Starten Sie den SSHD-Dienst neu.
+4. Starten Sie den SSHD-Dienst neu.
 
    ```powershell
    Restart-Service sshd
    ```
 
-1. Fügen Sie den Pfad an der Stelle hinzu, an der OpenSSH für die Variable „Path Env“ installiert ist.
+5. Fügen Sie den Pfad an der Stelle hinzu, an der OpenSSH für die Variable „Path Env“ installiert ist.
+
    - Dieser Pfad sollte wie folgt lauten: `C:\Program Files\OpenSSH\`.
    - So kann die Datei „ssh.exe“ gefunden werden.
 
 ## <a name="setup-on-linux-ubuntu-1404-machine"></a>Setup auf einem Linux-Computer (Ubuntu 14.04)
 
 1. Installieren Sie den neusten Build von [PowerShell Core für Linux] über GitHub.
-1. Installieren Sie ggf. [Ubuntu SSH].
+2. Installieren Sie ggf. [Ubuntu SSH].
 
    ```bash
    sudo apt install openssh-client
    sudo apt install openssh-server
    ```
 
-1. Bearbeiten Sie die Datei „sshd_config“ unter „/etc/ssh“.
+3. Bearbeiten Sie die Datei „sshd_config“ unter „/etc/ssh“.
+
    - Vergewissern Sie sich, dass die Kennwortauthentifizierung aktiviert ist.
 
    ```
@@ -123,7 +115,7 @@ Zusätzlich müssen Sie die Kennwortauthentifizierung und ggf. die schlüsselbas
    PubkeyAuthentication yes
    ```
 
-1. Starten Sie den SSHD-Dienst neu.
+4. Starten Sie den SSHD-Dienst neu.
 
    ```bash
    sudo service sshd restart
@@ -132,12 +124,15 @@ Zusätzlich müssen Sie die Kennwortauthentifizierung und ggf. die schlüsselbas
 ## <a name="setup-on-macos-machine"></a>Setup auf einem macOS-Computer
 
 1. Installieren Sie den neusten Build von [PowerShell Core für macOS].
+
    - Vergewissern Sie sich, dass SSH-Remoting aktiviert ist, indem Sie die folgenden Schritte ausführen:
      - Öffnen Sie `System Preferences`.
      - Klicken Sie auf `Sharing`.
      - Überprüfen Sie, ob für `Remote Login` `Remote Login: On` angezeigt wird.
      - Erteilen Sie den entsprechenden Benutzern Zugriff.
-1. Bearbeiten Sie die Datei `sshd_config` unter `/private/etc/ssh/sshd_config`.
+
+2. Bearbeiten Sie die Datei `sshd_config` unter `/private/etc/ssh/sshd_config`.
+
    - Verwenden Sie den von Ihnen bevorzugten Editor, oder
 
      ```bash
@@ -162,7 +157,7 @@ Zusätzlich müssen Sie die Kennwortauthentifizierung und ggf. die schlüsselbas
      PubkeyAuthentication yes
      ```
 
-1. Starten Sie den SSHD-Dienst neu.
+3. Starten Sie den SSHD-Dienst neu.
 
    ```bash
    sudo launchctl stop com.openssh.sshd
@@ -171,10 +166,7 @@ Zusätzlich müssen Sie die Kennwortauthentifizierung und ggf. die schlüsselbas
 
 ## <a name="powershell-remoting-example"></a>Beispiel für das PowerShell-Remoting
 
-Sie können das Remoting am einfachsten auf einem einzelnen Computer testen.
-In diesem Beispiel wird eine Remotesitzung zu demselben Computer auf einem Linux-Feld erstellt.
-An dieser Stelle werden PowerShell-Cmdlets über eine Eingabeaufforderung verwendet, sodass SSH-Fenster angezeigt werden, in denen Sie dazu aufgefordert werden, den Hostcomputer zu überprüfen und Kennwörter einzugeben.
-Sie können auf einem Windows-Computer genauso vorgehen, um zu gewährleisten, dass das Remoting funktioniert. Stellen Sie dann eine Remoteverbindung zwischen verschiedenen Computern her, indem Sie nur den Hostnamen ändern.
+Sie können das Remoting am einfachsten auf einem einzelnen Computer testen. In diesem Beispiel wird eine Remotesitzung zu demselben Computer auf einem Linux-Feld erstellt. An dieser Stelle werden PowerShell-Cmdlets über eine Eingabeaufforderung verwendet, sodass SSH-Fenster angezeigt werden, in denen Sie dazu aufgefordert werden, den Hostcomputer zu überprüfen und Kennwörter einzugeben. Sie können auf einem Windows-Computer genauso vorgehen, um zu gewährleisten, dass das Remoting funktioniert. Stellen Sie dann eine Remoteverbindung zwischen verschiedenen Computern her, indem Sie nur den Hostnamen ändern.
 
 ```powershell
 #
@@ -301,7 +293,7 @@ GitCommitId                    v6.0.0-alpha.17
 
 ### <a name="known-issues"></a>Bekannte Probleme
 
-- Der Befehl „sudo“ funktioniert bei Remotesitzungen auf Linux-Computern nicht.
+Der Befehl „sudo“ funktioniert bei Remotesitzungen auf Linux-Computern nicht.
 
 ## <a name="see-also"></a>Weitere Informationen
 

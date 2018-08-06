@@ -3,12 +3,12 @@ ms.date: 10/17/2017
 contributor: keithb
 keywords: gallery,powershell,cmdlet,psget
 title: Vorabskriptversionen
-ms.openlocfilehash: 7d4cec9d2b4ee5ad0b19ad5d9c68bb68747abd57
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 14ae1968e5ee73260b6eae05b11185069d047e93
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093847"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268465"
 ---
 # <a name="prerelease-versions-of-scripts"></a>Vorabskriptversionen
 
@@ -45,12 +45,12 @@ Für die Verwendung eines Vorabversionssuffixes muss die Versionszeichenfolge di
 - Ein Vorabversionssuffix darf nur angegeben werden, wenn die Versionsnummer 3 Ziffern enthält, nämlich „Hauptversion.Nebenversion.Build“.
   Dies entspricht SemVer v1.0.0.
 - Das Vorabversionssuffix ist eine Zeichenfolge, die mit einem Bindestrich beginnt und nur alphanumerische ASCII-Zeichen [0-9, A-Z, a-z] enthalten darf.
-- Da zurzeit nur SemVer v1.0.0-Vorabversionszeichenfolgen unterstützt werden, darf das Vorabversionssuffix __keine__ Punkte oder Pluszeichen [.+] enthalten, die in SemVer 2.0 zulässig sind.
+- Da zurzeit nur SemVer v1.0.0-Vorabversionszeichenfolgen unterstützt werden, darf das Vorabversionssuffix **keine** Punkte oder Pluszeichen [.+] enthalten, die in SemVer 2.0 zulässig sind.
 - Zu den unterstützten PrereleaseString-Zeichenfolgen zählen beispielsweise „-alpha“, „-alpha1“, „-BETA“ und „-update20171020“.
 
-__Auswirkung der Vorabversionsverwaltung auf die Sortierreihenfolge und Installationsordner__
+### <a name="prerelease-versioning-impact-on-sort-order-and-installation-folders"></a>Auswirkung der Vorabversionsverwaltung auf die Sortierreihenfolge und Installationsordner
 
-Die Sortierreihenfolge ändert sich bei der Verwendung einer Vorabversion, was für die Veröffentlichung von Inhalten im PowerShell-Katalog und der Installation von Skripts mit PowerShellGet-Befehlen relevant ist. Wenn zwei Skriptversionen mit der Versionsnummer vorhanden sind, erfolgt die Sortierreihenfolge basierend auf dem Zeichenfolgenteil nach dem Bindestrich. Deshalb ist Version 2.5.0-alpha niedriger als 2.5.0-beta, die wiederum niedriger als 2.5.0-gamma ist. Wenn zwei Skripts die gleiche Versionsnummer und nur einen PrereleaseString-Parameter aufweisen, wird das Skript __ohne__ das Vorabversionssuffix als für die Produktion freigegebene Version behandelt und gegenüber der Vorabversion als höhere Version sortiert. Beispiel: Beim Vergleich der Versionen 2.5.0 und 2.5.0-beta wird die Version 2.5.0 als die höhere der beiden Versionen betrachtet.
+Die Sortierreihenfolge ändert sich bei der Verwendung einer Vorabversion, was für die Veröffentlichung von Inhalten im PowerShell-Katalog und der Installation von Skripts mit PowerShellGet-Befehlen relevant ist. Wenn zwei Skriptversionen mit der Versionsnummer vorhanden sind, erfolgt die Sortierreihenfolge basierend auf dem Zeichenfolgenteil nach dem Bindestrich. Deshalb ist Version 2.5.0-alpha niedriger als 2.5.0-beta, die wiederum niedriger als 2.5.0-gamma ist. Wenn zwei Skripts die gleiche Versionsnummer und nur einen PrereleaseString-Parameter aufweisen, wird das Skript **ohne** das Vorabversionssuffix als für die Produktion freigegebene Version behandelt und gegenüber der Vorabversion als höhere Version sortiert. Beispiel: Beim Vergleich der Versionen 2.5.0 und 2.5.0-beta wird die Version 2.5.0 als die höhere der beiden Versionen betrachtet.
 
 Beim Veröffentlichen von Inhalten im PowerShell-Katalog muss die Version des Skripts, das veröffentlicht wird, standardmäßig eine höhere Version aufweisen als zuvor veröffentlichte Versionen, die nicht im PowerShell-Katalog vorhanden sind. Ein Herausgeber kann Version 2.5.0-alpha auf 2.5.0-beta oder 2.5.0 (ohne Vorabversionssuffix) aktualisieren.
 
@@ -61,7 +61,7 @@ Bei der Verwendung von Vorabversionselementen mit den PowerShellGet-Befehlen „
 Die einzigen Ausnahmen hierfür in den PowerShellGet-Skriptbefehlen sind „Get-InstalledScript“ und in einigen Fällen „Uninstall-Script“.
 
 - Mit „Get-InstalledScript“ werden immer automatisch die Vorabversionsinformationen in der Versionszeichenfolge angezeigt, sofern diese vorhanden sind.
-- Mit „Uninstall-Script“ wird standardmäßig die neueste Version eines Skripts deinstalliert, wenn __keine Version__ angegeben ist. Dieses Verhalten wurde nicht geändert. Wenn jedoch mit „-RequiredVersion“ eine Vorabversion angegeben wird, ist „-AllowPrerelease“ erforderlich.
+- Mit „Uninstall-Script“ wird standardmäßig die neueste Version eines Skripts deinstalliert, wenn **keine Version** angegeben ist. Dieses Verhalten wurde nicht geändert. Wenn jedoch mit `-RequiredVersion` eine Vorabversion angegeben wird, ist `-AllowPrerelease` erforderlich.
 
 ## <a name="examples"></a>Beispiele
 
@@ -83,13 +83,13 @@ Version        Name                                Repository           Descript
 # To install a prerelease, you must specify -AllowPrerelease. Specifying a prerelease version string is not sufficient.
 
 C:\windows\system32> Install-Script TestPackage -RequiredVersion 1.9.0-alpha
+
 PackageManagement\Find-Package : No match was found for the specified search criteria and script name 'TestPackage'.
 Try Get-PSRepository to see all available registered script repositories.
 At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.6.0\PSModule.psm1:1455 char:3
 +         PackageManagement\Find-Package @PSBoundParameters | Microsoft ...
 +         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : ObjectNotFound: (Microsoft.Power...ets.FindPackage:FindPackage) [Find-Package], Exceptio
-   n
+    + CategoryInfo          : ObjectNotFound: (Microsoft.Power...ets.FindPackage:FindPackage)[Find-Package], Exception
     + FullyQualifiedErrorId : NoMatchFoundForCriteria,Microsoft.PowerShell.PackageManagement.Cmdlets.FindPackage
 
 # The previous command failed because -AllowPrerelease was not specified.

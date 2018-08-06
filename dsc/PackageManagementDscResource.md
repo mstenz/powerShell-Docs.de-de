@@ -2,12 +2,12 @@
 ms.date: 06/20/2018
 keywords: dsc,powershell,configuration,setup
 title: DSC-Ressource „PackageManagement“
-ms.openlocfilehash: 281aee13eb005f00b23c97870eaefaa332d9c232
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 18cbbfe0715c82dcfdf4a5fb6ee36ee814e43d3b
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892500"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268091"
 ---
 # <a name="dsc-packagemanagement-resource"></a>DSC-Ressource „PackageManagement“
 
@@ -39,8 +39,8 @@ PackageManagement [string] #ResourceName
 
 ## <a name="properties"></a>Eigenschaften
 
-|  Eigenschaft  |  Beschreibung   |
-|---|---|
+| Eigenschaft | Beschreibung |
+| --- | --- |
 | Name| Gibt den Namen des Pakets an, das installiert oder deinstalliert werden soll.|
 | AdditionalParameters| Anbieterspezifische Hashtabelle mit Parametern, die an `Get-Package -AdditionalArguments` übergeben werden würden. Für NuGet-Anbieter können Sie z. B. zusätzliche Parameter wie „DestinationPath“ übergeben.|
 | Ensure| Bestimmt, ob das Paket installiert oder deinstalliert werden soll.|
@@ -54,10 +54,11 @@ PackageManagement [string] #ResourceName
 ## <a name="additional-parameters"></a>Zusätzliche Parameter
 
 In der folgenden Tabelle sind die Optionen für die Eigenschaft „AdditionalParameters“ aufgeführt.
-|  Parameter  | Beschreibung   |
-|---|---|
+
+| Parameter | Beschreibung |
+| --- | --- |
 | DestinationPath| Wird von Anbietern wie dem integrierten NuGet-Anbieter verwendet. Gibt einen Dateispeicherort an, an dem das Paket installiert werden soll.|
-| InstallationPolicy| Wird von Anbietern wie dem integrierten NuGet-Anbieter verwendet. Bestimmt, ob Sie der Paketquelle vertrauen. Entweder „Nicht vertrauenswürdig“, oder „Vertrauenswürdig“.|
+| InstallationPolicy| Wird von Anbietern wie dem integrierten NuGet-Anbieter verwendet. Bestimmt, ob Sie der Paketquelle vertrauen. Enthält einen der folgenden Werte: `Untrusted`, `Trusted`.|
 
 ## <a name="example"></a>Beispiel
 

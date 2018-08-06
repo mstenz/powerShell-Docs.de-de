@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: DSC-Ressource „Log“
-ms.openlocfilehash: fade94efd8133ae0172737e4bb1aed89fc0f97d9
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 50fd6cd31ba426108830fcf124a767318060a95d
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093475"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268431"
 ---
 # <a name="dsc-log-resource"></a>DSC-Ressource „Log“
 
-> Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
+_Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0_
 
 Die Ressource __Log__ in Windows PowerShell DSC bietet einen Mechanismus zum Schreiben von Meldungen in das Ereignisprotokoll „Microsoft Windows Desired State Configuration/Analyse“.
 
@@ -26,14 +26,14 @@ Log [string] #ResourceName
 ```
 
 > [!NOTE]
-> Standardmäßig sind nur die Betriebsprotokolle für DSC aktiviert. Das analytische Protokoll muss aktiviert werden, um verfügbar zu sein und angezeigt zu werden. Weitere Informationen finden Sie im Abschnitt „Wo befinden sich die DSC-Ereignisprotokolle?“ im Artikel [Problembehandlung bei DSC](https://msdn.microsoft.com/en-us/powershell/dsc/troubleshooting#where-are-dsc-event-logs).
+> Standardmäßig sind nur die Betriebsprotokolle für DSC aktiviert. Das analytische Protokoll muss aktiviert werden, um verfügbar zu sein und angezeigt zu werden. Weitere Informationen finden Sie im Abschnitt „Wo befinden sich die DSC-Ereignisprotokolle?“ im Artikel [Problembehandlung bei DSC](troubleshooting.md#where-are-dsc-event-logs).
 
 ## <a name="properties"></a>Eigenschaften
 
-|  Eigenschaft  |  Beschreibung   |
-|---|---|
+| Eigenschaft | Beschreibung |
+| --- | --- |
 | Message| Gibt die Meldung an, die Sie in das Ereignisprotokoll „Microsoft Windows Desired State Configuration/Analyse“ schreiben möchten.|
-| DependsOn | Gibt an, dass die Konfiguration einer anderen Ressource ausgeführt werden muss, bevor diese Protokollmeldung geschrieben wird. Wenn beispielsweise die ID des Skriptblocks mit der Ressourcenkonfiguration, den Sie zuerst ausführen möchten, __ResourceName__ und dessen Typ __ResourceType__ ist, lautet die Syntax für das Verwenden dieser Eigenschaft `DependsOn = '[ResourceType]ResourceName'`.|
+| DependsOn | Gibt an, dass die Konfiguration einer anderen Ressource ausgeführt werden muss, bevor diese Protokollmeldung geschrieben wird. Wenn beispielsweise die ID des Skriptblocks mit der Ressourcenkonfiguration, den Sie zuerst ausführen möchten, **ResourceName** und dessen Typ **ResourceType** ist, lautet die Syntax für das Verwenden dieser Eigenschaft `DependsOn = '[ResourceType]ResourceName'`.|
 
 ## <a name="example"></a>Beispiel
 

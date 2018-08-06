@@ -2,27 +2,26 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Problembehandlung bei DSC
-ms.openlocfilehash: 1e8bfdf3540e65e3be94bf6a9b04e7d3b14ff044
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 93a2f3728968882f78d4c050238d226b71c11ca5
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39094067"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268193"
 ---
 # <a name="troubleshooting-dsc"></a>Problembehandlung bei DSC
 
->Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
+_Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0_
 
 Dieses Thema beschreibt die Problembehandlung für DSC.
 
 ## <a name="winrm-dependency"></a>WinRM-Abhängigkeit
 
-Windows PowerShell DSC (Desired State Configuration) hängt von WinRM ab. Unter Windows Server 2008 R2 und Windows 7 ist WinRM nicht standardmäßig aktiviert. Führen Sie zum Aktivieren von WinRM in einer Windows PowerShell-Sitzung mit erhöhten Benutzerrechten ```Set-WSManQuickConfig``` aus.
+Windows PowerShell DSC (Desired State Configuration) hängt von WinRM ab. Unter Windows Server 2008 R2 und Windows 7 ist WinRM nicht standardmäßig aktiviert. Führen Sie zum Aktivieren von WinRM in einer Windows PowerShell-Sitzung mit erhöhten Benutzerrechten `Set-WSManQuickConfig` aus.
 
 ## <a name="using-get-dscconfigurationstatus"></a>Verwenden von „Get-DscConfigurationStatus“
 
-Das Cmdlet [Get-DscConfigurationStatus](https://technet.microsoft.com/library/mt517868.aspx) ruft Informationen zum Konfigurationsstatus von einem Zielknoten ab.
-Ein umfangreiches Objekt wird zurückgegeben, das ausführliche Informationen dazu enthält, ob die Ausführung der Konfiguration erfolgreich war oder nicht. Sie können das Objekt eingehender untersuchen, um Details zur Ausführung der Konfiguration zu ermitteln, wie z. B.:
+Das Cmdlet [Get-DscConfigurationStatus](https://technet.microsoft.com/library/mt517868.aspx) ruft Informationen zum Konfigurationsstatus von einem Zielknoten ab. Ein umfangreiches Objekt wird zurückgegeben, das ausführliche Informationen dazu enthält, ob die Ausführung der Konfiguration erfolgreich war oder nicht. Sie können das Objekt eingehender untersuchen, um Details zur Ausführung der Konfiguration zu ermitteln, wie z. B.:
 
 - Alle fehlerhaften Ressourcen
 - Alle Ressourcen, die ein Neustart erfordern
@@ -31,20 +30,20 @@ Ein umfangreiches Objekt wird zurückgegeben, das ausführliche Informationen da
 
 Die folgende Parametergruppe gibt die Statusinformationen zur letzten Konfigurationsausführung zurück:
 
-```powershell
-Get-DscConfigurationStatus  [-CimSession <CimSession[]>]
-                            [-ThrottleLimit <int>]
-                            [-AsJob]
-                            [<CommonParameters>]
+```
+Get-DscConfigurationStatus [-CimSession <CimSession[]>]
+                           [-ThrottleLimit <int>]
+                           [-AsJob]
+                           [<CommonParameters>]
 ```
 Die folgende Parametergruppe gibt die Statusinformationen zu allen vorherigen Konfigurationsausführungen zurück:
 
-```powershell
-Get-DscConfigurationStatus  -All
-                            [-CimSession <CimSession[]>]
-                            [-ThrottleLimit <int>]
-                            [-AsJob]
-                            [<CommonParameters>]
+```
+Get-DscConfigurationStatus -All
+                           [-CimSession <CimSession[]>]
+                           [-ThrottleLimit <int>]
+                           [-AsJob]
+                           [<CommonParameters>]
 ```
 
 ## <a name="example"></a>Beispiel
@@ -54,35 +53,36 @@ PS C:\> $Status = Get-DscConfigurationStatus
 
 PS C:\> $Status
 
-Status      StartDate               Type            Mode    RebootRequested     NumberOfResources
-------      ---------               ----            ----    ---------------     -----------------
-Failure     11/24/2015  3:44:56     Consistency     Push    True                36
+Status         StartDate                Type            Mode    RebootRequested        NumberOfResources
+------        ---------                ----            ----    ---------------        -----------------
+Failure        11/24/2015  3:44:56     Consistency        Push    True                36
 
 PS C:\> $Status.ResourcesNotInDesiredState
 
-ConfigurationName       :   MyService
-DependsOn               :
-ModuleName              :   PSDesiredStateConfiguration
-ModuleVersion           :   1.1
-PsDscRunAsCredential    :
-ResourceID              :   [File]ServiceDll
-SourceInfo              :   c:\git\CustomerService\Configs\MyCustomService.ps1::5::34::File
-DurationInSeconds       :   0.19
-Error                   :   SourcePath must be accessible for current configuration. The related file/directory is:
-                            \\Server93\Shared\contosoApp.dll. The related ResourceID is [File]ServiceDll
-FinalState              :
-InDesiredState          :   False
-InitialState            :
-InstanceName            :   ServiceDll
-RebootRequested         :   False
-ReosurceName            :   File
-StartDate               :   11/24/2015  3:44:56
-PSComputerName          :
+ConfigurationName     :    MyService
+DependsOn             :
+ModuleName            :    PSDesiredStateConfiguration
+ModuleVersion         :    1.1
+PsDscRunAsCredential  :
+ResourceID            :    [File]ServiceDll
+SourceInfo            :    c:\git\CustomerService\Configs\MyCustomService.ps1::5::34::File
+DurationInSeconds     :    0.19
+Error                 :    SourcePath must be accessible for current configuration. The related file/directory is:
+                           \\Server93\Shared\contosoApp.dll. The related ResourceID is [File]ServiceDll
+FinalState            :
+InDesiredState        :    False
+InitialState          :
+InstanceName          :    ServiceDll
+RebootRequested       :    False
+ReosurceName          :    File
+StartDate             :    11/24/2015  3:44:56
+PSComputerName        :
 ```
 
 ## <a name="my-script-wont-run-using-dsc-logs-to-diagnose-script-errors"></a>Mein Skript wird nicht ausgeführt: Verwenden von DSC-Protokollen für die Diagnose von Skriptfehlern
 
-Wie alle Windows-Softwareprogramme erfasst DSC Fehler und Ereignisse in [Protokollen](https://msdn.microsoft.com/library/windows/desktop/aa363632.aspx), die Sie in der [Ereignisanzeige](http://windows.microsoft.com/windows/what-information-event-logs-event-viewer) anzeigen können. Die Durchsicht dieser Protokolle kann Ihnen dabei helfen herauszufinden, warum ein bestimmter Vorgang fehlgeschlagen ist und wie Sie Fehler in Zukunft vermeiden. Das Schreiben von Konfigurationsskripts ist nicht ganz einfach. Sie sollten daher den Fortschritt der Konfiguration im Ereignisprotokoll der DSC-Analyse mithilfe der DSC-Protokollressource verfolgen, um Fehler bei der Erstellung leichter aufspüren zu können.
+Wie alle Windows-Softwareprogramme erfasst DSC Fehler und Ereignisse in [Protokollen](https://msdn.microsoft.com/library/windows/desktop/aa363632.aspx), die Sie in der [Ereignisanzeige](http://windows.microsoft.com/windows/what-information-event-logs-event-viewer) anzeigen können.
+Die Durchsicht dieser Protokolle kann Ihnen dabei helfen herauszufinden, warum ein bestimmter Vorgang fehlgeschlagen ist und wie Sie Fehler in Zukunft vermeiden. Das Schreiben von Konfigurationsskripts ist nicht ganz einfach. Sie sollten daher den Fortschritt der Konfiguration im Ereignisprotokoll der DSC-Analyse mithilfe der DSC-Protokollressource verfolgen, um Fehler bei der Erstellung leichter aufspüren zu können.
 
 ## <a name="where-are-dsc-event-logs"></a>Wo befinden sich die DSC-Ereignisprotokolle?
 
@@ -92,16 +92,19 @@ Die können auch das entsprechende PowerShell-Cmdlet [Get-WinEvent](https://tech
 
 ```
 PS C:\> Get-WinEvent -LogName "Microsoft-Windows-Dsc/Operational"
+
    ProviderName: Microsoft-Windows-DSC
+
 TimeCreated                     Id LevelDisplayName Message
 -----------                     -- ---------------- -------
 11/17/2014 10:27:23 PM        4102 Information      Job {02C38626-D95A-47F1-9DA2-C1D44A7128E7} :
 ```
 
-Wie oben gezeigt, lautet der primäre Protokollname von DSC **Microsoft -> Windows -> DSC** (andere Protokollnamen unter Windows werden hier aus Gründen der Übersichtlichkeit nicht dargestellt). Der primäre Name wird an den Namen des Kanals angefügt. Daraus ergibt sich der vollständige Protokollname. Die DSC-Engine schreibt hauptsächlich in drei Protokolltypen: [Betriebsprotokoll, analytisches Protokoll und Debugprotokoll](https://technet.microsoft.com/library/cc722404.aspx). Da die analytischen Protokolle und die Debugprotokolle standardmäßig deaktiviert sind, sollten Sie sie in der Ereignisanzeige aktivieren. Öffnen Sie dazu die Ereignisanzeige, indem Sie in Windows PowerShell „Show-EventLog“ eingeben. Oder klicken Sie auf die Schaltfläche **Start** und dann auf **Systemsteuerung**, **Verwaltung** und **Ereignisanzeige**. Klicken Sie in der Ereignisanzeige im Menü **Ansicht** auf **Analytische und Debugprotokolle einblenden**. Der Name des für den analytischen Kanal lautet **Microsoft-Windows-Dsc/Analytic**, und der Debugkanal heißt **Microsoft-Windows-Dsc/Debug**. Außerdem können Sie zum Aktivieren der Protokolle das Hilfsprogramm [wevtutil](https://technet.microsoft.com/library/cc732848.aspx) verwenden, wie im folgenden Beispiel gezeigt.
+Wie oben gezeigt, lautet der primäre Protokollname von DSC **Microsoft > Windows > DSC** (andere Protokollnamen unter Windows werden hier aus Gründen der Übersichtlichkeit nicht dargestellt). Der primäre Name wird an den Namen des Kanals angefügt. Daraus ergibt sich der vollständige Protokollname. Die DSC-Engine schreibt hauptsächlich in drei Protokolltypen: [Betriebsprotokoll, analytisches Protokoll und Debugprotokoll](https://technet.microsoft.com/library/cc722404.aspx). Da die analytischen Protokolle und die Debugprotokolle standardmäßig deaktiviert sind, sollten Sie sie in der Ereignisanzeige aktivieren. Öffnen Sie dazu die Ereignisanzeige, indem Sie in Windows PowerShell „Show-EventLog“ eingeben. Oder klicken Sie auf die Schaltfläche **Start** und dann auf **Systemsteuerung**, **Verwaltung** und **Ereignisanzeige**.
+Klicken Sie in der Ereignisanzeige im Menü **Ansicht** auf **Analytische und Debugprotokolle einblenden**. Der Name des für den analytischen Kanal lautet **Microsoft-Windows-Dsc/Analytic**, und der Debugkanal heißt **Microsoft-Windows-Dsc/Debug**. Außerdem können Sie zum Aktivieren der Protokolle das Hilfsprogramm [wevtutil](https://technet.microsoft.com/library/cc732848.aspx) verwenden, wie im folgenden Beispiel gezeigt.
 
 ```powershell
-wevtutil.exe set-log “Microsoft-Windows-Dsc/Analytic” /q:true /e:true
+wevtutil.exe set-log "Microsoft-Windows-Dsc/Analytic" /q:true /e:true
 ```
 
 ## <a name="what-do-dsc-logs-contain"></a>Was ist in den DSC-Protokollen enthalten?
@@ -118,20 +121,22 @@ Consistency engine was run successfully.
 
 DSC-Ereignisse werden in einer bestimmten Struktur protokolliert, das dem Benutzer ermöglicht, Ereignisse eines DSC-Auftrags zusammenzufassen. Die Struktur sieht wie folgt aus:
 
-**Auftrags-ID:\< \>GUID**
-**\<Ereignismeldung\>**
+```
+Job ID : <Guid>
+<Event Message>
+```
 
 ## <a name="gathering-events-from-a-single-dsc-operation"></a>Sammeln von Ereignissen zu einem einzelnen DSC-Vorgang
 
-DSC-Ereignisprotokolle enthalten Ereignisse, die mithilfe verschiedener DSC-Vorgänge generiert wurden. Allerdings interessieren Sie sich in der Regel nur für die Details zu einem bestimmten Vorgang. Alle DSC-Protokolle können nach der Auftrags-ID-Eigenschaft gruppiert werden, die für jeden DSC-Vorgang eindeutig ist. Die Auftrags-ID wird in allen DSC-Ereignissen als erster Eigenschaftswert angezeigt. Die folgenden Schritte erläutern, wie Sie alle Ereignisse in einer gruppierten Arraystruktur sammeln.
+DSC-Ereignisprotokolle enthalten Ereignisse, die mithilfe verschiedener DSC-Vorgänge generiert wurden. Allerdings sind in der Regel nur die Details zu einem bestimmten Vorgang von Interesse für Sie. Alle DSC-Protokolle können nach der Auftrags-ID-Eigenschaft gruppiert werden, die für jeden DSC-Vorgang eindeutig ist. Die Auftrags-ID wird in allen DSC-Ereignissen als erster Eigenschaftswert angezeigt. Die folgenden Schritte erläutern, wie Sie alle Ereignisse in einer gruppierten Arraystruktur sammeln.
 
 ```powershell
 <##########################################################################
  Step 1 : Enable analytic and debug DSC channels (Operational channel is enabled by default)
 ###########################################################################>
 
-wevtutil.exe set-log “Microsoft-Windows-Dsc/Analytic” /q:true /e:true
-wevtutil.exe set-log “Microsoft-Windows-Dsc/Debug” /q:True /e:true
+wevtutil.exe set-log "Microsoft-Windows-Dsc/Analytic" /q:true /e:true
+wevtutil.exe set-log "Microsoft-Windows-Dsc/Debug" /q:True /e:true
 
 <##########################################################################
  Step 2 : Perform the required DSC operation (Below is an example, you could run any DSC operation instead)
@@ -163,8 +168,11 @@ Count Name                      Group
 ----- ----                      -----
    48 {1A776B6A-5BAC-11E3-BF... {System.Diagnostics.Eventing.Reader.EventLogRecord, System.Diagnostics....
    40 {E557E999-5BA8-11E3-BF... {System.Diagnostics.Eventing.Reader.EventLogRecord, System.Diagnostics....
+
 PS C:\> $SeparateDscOperations[0].Group
+
    ProviderName: Microsoft-Windows-DSC
+
 TimeCreated                     Id LevelDisplayName Message
 -----------                     -- ---------------- -------
 12/2/2013 3:47:29 PM          4115 Information      Job {1A776B6A-5BAC-11E3-BF41-00155D553612} : ...
@@ -192,6 +200,7 @@ Alle Ereignisse verfügen über [Schweregrade](https://msdn.microsoft.com/librar
 
 ```
 PS C:\> $SeparateDscOperations | Where-Object {$_.Group.LevelDisplayName -contains "Error"}
+
 Count Name                      Group
 ----- ----                      -----
    38 {5BCA8BE7-5BB6-11E3-BF... {System.Diagnostics.Eventing.Reader.EventLogRecord, System.Diagnostics....
@@ -204,6 +213,7 @@ Count Name                      Group
 ```powershell
 PS C:\> $DateLatest = (Get-Date).AddMinutes(-30)
 PS C:\> $SeparateDscOperations | Where-Object {$_.Group.TimeCreated -gt $DateLatest}
+
 Count Name                      Group
 ----- ----                      -----
     1 {6CEC5B09-5BB0-11E3-BF... {System.Diagnostics.Eventing.Reader.EventLogRecord}
@@ -211,9 +221,10 @@ Count Name                      Group
 
 ### <a name="3-messages-from-the-latest-operation"></a>3: Meldungen zum aktuellen Vorgang
 
-Der aktuelle Vorgang wird im ersten Index der Arraygruppe `$SeparateDscOperations` gespeichert. Durch Abfragen der Meldungen der Gruppe für den Index 0 werden alle Meldungen für den aktuellen Vorgang zurückgegeben:
+Der aktuelle Vorgang wird im ersten Index der Arraygruppe `$SeparateDscOperations` gespeichert.
+Durch Abfragen der Meldungen der Gruppe für den Index 0 werden alle Meldungen für den aktuellen Vorgang zurückgegeben:
 
-```powershelll
+```powershell
 PS C:\> $SeparateDscOperations[0].Group.Message
 Job {5BCA8BE7-5BB6-11E3-BF41-00155D553612} :
 Running consistency engine.
@@ -239,6 +250,7 @@ Displaying messages from built-in DSC resources:
 PS C:\> $myFailedEvent = ($SeparateDscOperations[0].Group | Where-Object {$_.LevelDisplayName -eq "Error"})
 
 PS C:\> $myFailedEvent.Message
+
 Job {5BCA8BE7-5BB6-11E3-BF41-00155D553612} :
 DSC Engine Error :
  Error Message Current configuration does not exist. Execute Start-DscConfiguration command with -Path pa
@@ -265,13 +277,11 @@ TimeCreated                     Id LevelDisplayName Message
 
 ## <a name="using-xdscdiagnostics-to-analyze-dsc-logs"></a>Verwenden von „xDscDiagnostics“ zum Analysieren von DSC-Protokollen
 
-**xDscDiagnostics** ist ein PowerShell-Modul, das aus mehreren Funktionen besteht, die bei der Analyse von DSC-Fehlern auf dem Computer helfen können. Diese Funktionen können Ihnen helfen, alle lokalen Ereignisse der letzten DSC-Vorgänge oder DSC-Ereignisse auf Remotecomputern (mit gültigen Anmeldeinformationen) zu identifizieren. Hier wird der Begriff „DSC-Vorgang“ verwendet, um eine einzelne eindeutige DSC-Ausführung von Anfang bis Ende zu definieren. `Test-DscConfiguration` wäre z. B. ein separater DSC-Vorgang. Auf ähnliche Weise kann jedes andere Cmdlet in DSC (z. B. `Get-DscConfiguration`, `Start-DscConfiguration` usw.) jeweils als separater DSC-Vorgang identifiziert werden. Die Funktionen werden unter [xDscDiagnostics](https://github.com/PowerShell/xDscDiagnostics) erläutert.
-Hilfe ist durch Ausführen von `Get-Help <cmdlet name>` verfügbar.
+**xDscDiagnostics** ist ein PowerShell-Modul, das aus mehreren Funktionen besteht, die bei der Analyse von DSC-Fehlern auf dem Computer helfen können. Diese Funktionen können Ihnen helfen, alle lokalen Ereignisse der letzten DSC-Vorgänge oder DSC-Ereignisse auf Remotecomputern (mit gültigen Anmeldeinformationen) zu identifizieren. Hier wird der Begriff „DSC-Vorgang“ verwendet, um eine einzelne eindeutige DSC-Ausführung von Anfang bis Ende zu definieren. `Test-DscConfiguration` wäre z. B. ein separater DSC-Vorgang. Auf ähnliche Weise kann jedes andere Cmdlet in DSC (z. B. `Get-DscConfiguration`, `Start-DscConfiguration` usw.) jeweils als separater DSC-Vorgang identifiziert werden. Die Funktionen werden unter [xDscDiagnostics](https://github.com/PowerShell/xDscDiagnostics) erläutert. Hilfe ist durch Ausführen von `Get-Help <cmdlet name>` verfügbar.
 
 ### <a name="getting-details-of-dsc-operations"></a>Abrufen von Details der DSC-Vorgänge
 
-Mit der Funktion `Get-xDscOperation` können Sie die Ergebnisse der DSC-Vorgänge suchen, die auf einem oder mehreren Computern ausgeführt werden. Die Funktion gibt außerdem ein Objekt zurück, das die Sammlung der von den einzelnen DSC-Vorgängen erzeugten Ereignisse enthält.
-In der folgenden Ausgabe wurden beispielsweise drei Befehle ausgeführt. Der erste wurde erfolgreich ausgeführt, bei den beiden anderen sind Fehler aufgetreten. Die Ergebnisse sind in der Ausgabe von `Get-xDscOperation` zusammengefasst.
+Mit der Funktion `Get-xDscOperation` können Sie die Ergebnisse der DSC-Vorgänge suchen, die auf einem oder mehreren Computern ausgeführt werden. Die Funktion gibt außerdem ein Objekt zurück, das die Sammlung der von den einzelnen DSC-Vorgängen erzeugten Ereignisse enthält. In der folgenden Ausgabe wurden beispielsweise drei Befehle ausgeführt. Der erste wurde erfolgreich ausgeführt, bei den beiden anderen sind Fehler aufgetreten. Die Ergebnisse sind in der Ausgabe von `Get-xDscOperation` zusammengefasst.
 
 ```powershell
 PS C:\DiagnosticsTest> Get-xDscOperation
@@ -300,7 +310,8 @@ SRV1   5          6/23/2016 4:36:51 PM  Success                                 
 
 Das Cmdlet `Trace-xDscOperation` gibt ein Objekt zurück, das eine Sammlung von Ereignissen, deren Ereignistypen und die von einem bestimmten DSC-Vorgang generierte Meldungsausgabe enthält. Wenn Sie mit `Get-xDscOperation` in einem der Vorgänge einen Fehler finden, würden Sie diesen Vorgang normalerweise verfolgen, um herauszufinden, welches Ereignis den Fehler verursacht hat.
 
-Verwenden Sie den Parameter `SequenceID`, um die Ereignisse eines bestimmten Vorgangs auf einem bestimmten Computer abzurufen. Wenn Sie beispielsweise für `SequenceID` „9“ angeben, ruft `Trace-xDscOperaion` die Verfolgung des neuntletzten DSC-Vorgangs ab:
+Verwenden Sie den Parameter `SequenceID`, um die Ereignisse eines bestimmten Vorgangs auf einem bestimmten Computer abzurufen.
+Wenn Sie beispielsweise für `SequenceID` „9“ angeben, ruft `Trace-xDscOperaion` die Verfolgung des neuntletzten DSC-Vorgangs ab:
 
 ```powershell
 PS C:\DiagnosticsTest> Trace-xDscOperation -SequenceID 9
@@ -367,7 +378,7 @@ PS C:\DiagnosticsTest> $Trace.Event
 
 Dadurch werden gleichen Ergebnisse wie durch das Cmdlet `Get-WinEvent` in der unten stehenden Ausgabe angezeigt:
 
-```powershell
+```output
    ProviderName: Microsoft-Windows-DSC
 
 TimeCreated                     Id LevelDisplayName Message
@@ -410,6 +421,7 @@ Verwenden Sie den Parameter `ComputerName` des Cmdlets `Trace-xDscOperation`, um
 ```powershell
 New-NetFirewallRule -Name "Service RemoteAdmin" -DisplayName "Remote" -Action Allow
 ```
+
 Nun können Sie diesen Computer angeben, wenn Sie `Trace-xDscOperation` aufrufen:
 
 ```powershell
@@ -451,7 +463,8 @@ SRV2   ANALYTIC     6/24/2016 11:36:56 AM Deleting file from C:\Windows\System32
 
 ## <a name="my-resources-wont-update-how-to-reset-the-cache"></a>Meine Ressourcen werden nicht aktualisiert: Zurücksetzen des Caches
 
-Die DSC-Engine speichert Ressourcen zwischen, die aus Effizienzgründen als PowerShell-Engine implementiert wurden. Dies kann jedoch Probleme verursachen, wenn Sie eine Ressource erstellen und gleichzeitig testen, da DSC die zwischengespeicherte Version lädt, solange der Vorgang nicht neu gestartet wurde. Die einzige Möglichkeit, DSC zu veranlassen, die neuere Version zu laden, besteht darin, den Prozess, der die DSC-Engine hostet, explizit zu beenden.
+Die DSC-Engine speichert Ressourcen zwischen, die aus Effizienzgründen als PowerShell-Engine implementiert wurden.
+Dies kann jedoch Probleme verursachen, wenn Sie eine Ressource erstellen und gleichzeitig testen, da DSC die zwischengespeicherte Version lädt, solange der Vorgang nicht neu gestartet wurde. Die einzige Möglichkeit, DSC zu veranlassen, die neuere Version zu laden, besteht darin, den Prozess, der die DSC-Engine hostet, explizit zu beenden.
 
 Ähnliches gilt, wenn Sie `Start-DscConfiguration` nach dem Hinzufügen und Ändern einer benutzerdefinierten Ressource ausführen. Die Änderung kann dann möglicherweise nicht ausgeführt werden, bis der Computer neu gestartet wird. Grund hierfür ist, dass DSC im WMI-Anbieterhostprozess (WmiPrvSE) ausgeführt wird, und in der Regel mehrere Instanzen von WmiPrvSE gleichzeitig ausgeführt werden. Beim Neustart wird der Hostprozess neu gestartet und der Cache geleert.
 
@@ -479,10 +492,11 @@ Sie können den lokalen Konfigurations-Manager (LCM) von DSC für die Verwendung
 
 In der folgenden Demonstration wird verdeutlicht, wie `DebugMode` den Cache automatisch aktualisieren kann. Betrachten wir zunächst die Standardkonfiguration:
 
-```
+```powershell
 PS C:\> Get-DscLocalConfigurationManager
+```
 
-
+```output
 AllowModuleOverwrite           : False
 CertificateID                  :
 ConfigurationID                :
@@ -550,7 +564,7 @@ Configuration ConfigTestDebugMode
 ConfigTestDebugMode
 ```
 
-Sie erkennen, dass der Inhalt der Datei „**$env:SystemDrive\OutputFromTestProviderDebugMode.txt**“ **1** ist.
+Die Inhalte der Datei zeigen, dass `$env:SystemDrive\OutputFromTestProviderDebugMode.txt` **1** beträgt.
 
 Aktualisieren Sie nun den Anbietercode mithilfe des folgenden Skripts:
 
