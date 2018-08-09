@@ -1,3 +1,14 @@
+---
+title: Neuigkeiten in PowerShell Core 6.0
+description: Neue Features und Änderungen in PowerShell Core 6.0
+ms.date: 08/06/2018
+ms.openlocfilehash: f0cddad223528cd0f2b4f392faeb6e08e1050c51
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587243"
+---
 # <a name="whats-new-in-powershell-core-60"></a>Neuigkeiten in PowerShell Core 6.0
 
 [PowerShell Core 6.0][github] ist eine neue plattformübergreifende (Windows, macOS und Linux) Open Source-Edition von PowerShell, die für heterogene Umgebungen und die Cloud entwickelt wurde.
@@ -11,7 +22,7 @@ PowerShell Core macht auch die .NET Core 2.0-APIs verfügbar, die in PowerShell-
 In Windows PowerShell wurde die PowerShell-Engine mithilfe der .NET Framework Runtime gehostet.
 Windows PowerShell macht also die .NET Framework-APIs verfügbar.
 
-Die von .NET Core und .NET Framework gemeinsam genutzten APIs sind als Teil von [.NET Standard 2.0][] definiert.
+Die von .NET Core und .NET Framework gemeinsam genutzten APIs sind als Teil von [.NET Standard][] definiert.
 
 Weitere Informationen dazu, wie sich dies auf die Kompatibilität von Modulen und Skripts in PowerShell Core und Windows PowerShell auswirkt, finden Sie unter [Abwärtskompatibilität mit Windows PowerShell](#backwards-compatibility-with-windows-powershell).
 
@@ -114,11 +125,11 @@ Weitere Änderungen in `pwsh(.exe)` im Vergleich zu `powershell.exe`:
 ## <a name="backwards-compatibility-with-windows-powershell"></a>Abwärtskompatibilität mit Windows PowerShell
 
 Das Ziel von PowerShell Core ist die höchstmögliche Kompatibilität mit Windows PowerShell.
-PowerShell Core verwendet [.NET Standard 2.0][], um binäre Kompatibilität mit vorhandenen .NET-Assemblys bereitzustellen.
+PowerShell Core verwendet [.NET Standard][], um binäre Kompatibilität mit vorhandenen .NET-Assemblys bereitzustellen.
 Viele PowerShell-Module hängen von diesen Assemblys (häufig DLL-Dateien) ab. Daher lässt .NET Standard zu, dass sie weiterhin .NET Core nutzen.
 PowerShell Core enthält auch eine Heuristik, mit der in bekannten Ordnern wie dem üblichen Speicherort des globalen Assemblycache auf dem Datenträger nach .NET Framework-DLL-Abhängigkeiten gesucht wird.
 
-Weitere Informationen zu .NET Standard finden Sie auf dem [.NET-Blog][], in diesem [YouTube-Video][] und in diesen [Häufig gestellte Fragen][] auf GitHub.
+Weitere Informationen zu .NET Standard finden Sie auf dem [.NET Blog][], in diesem [YouTube][] und in diesen [FAQ][] auf GitHub.
 
 Die PowerShell-Sprache und die „integrierten“ Module (z.B. `Microsoft.PowerShell.Management` und `Microsoft.PowerShell.Utility`) sollten genauso funktionieren wie in Windows PowerShell.
 In vielen Fällen haben wir mit der Hilfe der Community Fehlerkorrekturen und neue Funktionen für diese Cmdlets eingebaut.
@@ -369,7 +380,7 @@ Weitere Informationen dazu, wie wir diese Daten verwenden, finden Sie [in diesem
 
 [github]: https://github.com/PowerShell/PowerShell
 [.NET Core 2.0]: https://docs.microsoft.com/dotnet/core/
-[.NET Standard 2.0]: https://docs.microsoft.com/en-us/dotnet/standard/net-standard
+[.NET Standard]: https://docs.microsoft.com/en-us/dotnet/standard/net-standard
 [os_log]: https://developer.apple.com/documentation/os/logging
 [Syslog]: https://en.wikipedia.org/wiki/Syslog
 [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
@@ -378,9 +389,9 @@ Weitere Informationen dazu, wie wir diese Daten verwenden, finden Sie [in diesem
 [community-dashboard]: https://aka.ms/PSGitHubBI
 [telemetry-blog]: https://blogs.msdn.microsoft.com/powershell/2017/01/31/powershell-open-source-community-dashboard/
 [.NET Standard]: https://docs.microsoft.com/dotnet/standard/net-standard
-[.NET-Blog]: https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard
-[YouTube-Video]: https://www.youtube.com/watch?v=YI4MurjfMn8&list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY
-[Häufig gestellte Fragen]: https://github.com/dotnet/standard/blob/master/docs/faq.md
+[.NET Blog]: https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard
+[YouTube]: https://www.youtube.com/watch?v=YI4MurjfMn8&list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY
+[FAQ]: https://github.com/dotnet/standard/blob/master/docs/faq.md
 [CDXML]: https://msdn.microsoft.com/library/jj542525(v=vs.85).aspx
 [docker-hub]: https://hub.docker.com/r/microsoft/powershell/
 [Docker]: https://github.com/PowerShell/PowerShell/tree/master/docker

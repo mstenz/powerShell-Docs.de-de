@@ -1,3 +1,14 @@
+---
+title: Supportlebenszyklus von PowerShell Core
+description: Richtlinien für die Unterstützung von PowerShell Core
+ms.date: 08/06/2018
+ms.openlocfilehash: 2e0ca1b9c133e6f316a40aff13365d0489059165
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587158"
+---
 # <a name="powershell-core-support-lifecycle"></a>Supportlebenszyklus von PowerShell Core
 
 PowerShell Core ist eine Zusammenstellung von Tools und Komponenten, die separat von Windows PowerShell bereitgestellt, installiert und konfiguriert wird.
@@ -44,7 +55,8 @@ Plattformen, die als `Experimental` gekennzeichnet sind, werden nicht offiziell 
 | Windows Server 2008 R2, 2012 R2, 2016             | Unterstützt   | Unterstützt   |
 | [Halbjährlicher Kanal von Windows Server][semi-annual] | Unterstützt   | Unterstützt   |
 | Ubuntu 14.04 und 16.04                           | Unterstützt   | Unterstützt   |
-| Ubuntu 17.10 und 18.04                           |             | Unterstützt   |
+| Ubuntu 18.04                                      |             | Unterstützt   |
+| Ubuntu 18.10 (über Snap-Pakete)                   |             | Community   |
 | Debian 8.7 und höher sowie Debian 9                                | Unterstützt   | Unterstützt   |
 | CentOS 7                                          | Unterstützt   | Unterstützt   |
 | Red Hat Enterprise Linux 7                        | Unterstützt   | Unterstützt   |
@@ -56,6 +68,10 @@ Plattformen, die als `Experimental` gekennzeichnet sind, werden nicht offiziell 
 | Raspbian                                          | Experimentell| Community   |
 | Kali                                              | Community   | Community   |
 | AppImage (funktioniert auf verschiedenen Linux-Plattformen)     | Community   | Community   |
+| [Snap-Paket](https://snapcraft.io/powershell)   | Siehe Hinweis    | Siehe Hinweis    |
+
+> [!NOTE]
+> Die Verwendung von Snap-Paketen wird für einen gewissen Zeitraum getestet.  Nach dieser Testphase sollten Snap-Pakete nicht zu neuen Supportanfragen führen. Die Unterstützung richtet sich nach der Distribution, auf der Sie das Paket ausführen.
 
 ## <a name="platform-which-are-out-of-support"></a>Plattformen, die nicht mehr unterstützt werden
 
@@ -65,13 +81,14 @@ Deshalb wurde die Unterstützung für die folgenden Versionen vom Besitzer der V
 
 | Betriebssystem       | Version | Ende der Lebensdauer                                                                                 |
 |----------|---------|---------------------------------------------------------------------------------------------|
-| Fedora   | 26      | [Mai 2018](https://fedoramagazine.org/fedora-26-end-life/)                                  |
-| Fedora   | 25      | [Dezember 2017](https://fedoramagazine.org/fedora-25-end-life/)                             |
 | Fedora   | 24      | [August 2017](https://fedoramagazine.org/fedora-24-eol/)                                    |
-| openSUSE | 42.2    | [Januar 2018](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
+| Fedora   | 25      | [Dezember 2017](https://fedoramagazine.org/fedora-25-end-life/)                             |
+| Fedora   | 26      | [Mai 2018](https://fedoramagazine.org/fedora-26-end-life/)                                  |
 | openSUSE | 42.1    | [Mai 2017](https://lists.opensuse.org/opensuse-security-announce/2017-05/msg00053.html)     |
-| Ubuntu   | 17.04   | [Januar 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
+| openSUSE | 42.2    | [Januar 2018](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
 | Ubuntu   | 16.10   | [Juli 2017](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)        |
+| Ubuntu   | 17.04   | [Januar 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
+| Ubuntu   | 17.10   | [Juli 2018](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)        |
 
 ## <a name="notes-on-licensing"></a>Hinweise zur Lizenzierung
 
