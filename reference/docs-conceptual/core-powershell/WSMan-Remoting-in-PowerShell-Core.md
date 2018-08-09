@@ -1,3 +1,14 @@
+---
+title: WS-Management-Remoting (WSMan) in PowerShell Core
+description: Remoting in PowerShell Core mithilfe von WSMan
+ms.date: 08/06/2018
+ms.openlocfilehash: ce58ed88f59f32b0f83951e55de36e829f7fa3f4
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587345"
+---
 # <a name="ws-management-wsman-remoting-in-powershell-core"></a>WS-Management-Remoting (WSMan) in PowerShell Core
 
 ## <a name="instructions-to-create-a-remoting-endpoint"></a>Anweisungen zum Erstellen eines Remoting-Endpunkts
