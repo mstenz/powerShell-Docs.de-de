@@ -2,30 +2,30 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Optionen für Anmeldeinformationen in den Konfigurationsdaten
-ms.openlocfilehash: 12bb8d8ce5fc4685e583e74d411b098320ac4fd4
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 890dbd01ae37ca5834070961ffd693aa811dbaa2
+ms.sourcegitcommit: 56b9be8503a5a1342c0b85b36f5ba6f57c281b63
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093676"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "43133119"
 ---
-# <a name="credentials-options-in-configuration-data"></a><span data-ttu-id="788c1-103">Optionen für Anmeldeinformationen in den Konfigurationsdaten</span><span class="sxs-lookup"><span data-stu-id="788c1-103">Credentials Options in Configuration Data</span></span>
-><span data-ttu-id="788c1-104">Gilt für: Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="788c1-104">Applies To: Windows PowerShell 5.0</span></span>
+# <a name="credentials-options-in-configuration-data"></a><span data-ttu-id="e5de0-103">Optionen für Anmeldeinformationen in den Konfigurationsdaten</span><span class="sxs-lookup"><span data-stu-id="e5de0-103">Credentials Options in Configuration Data</span></span>
+><span data-ttu-id="e5de0-104">Gilt für: Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="e5de0-104">Applies To: Windows PowerShell 5.0</span></span>
 
-## <a name="plain-text-passwords-and-domain-users"></a><span data-ttu-id="788c1-105">Nur-Text-Kennwörter und Domänenbenutzer</span><span class="sxs-lookup"><span data-stu-id="788c1-105">Plain Text Passwords and Domain Users</span></span>
+## <a name="plain-text-passwords-and-domain-users"></a><span data-ttu-id="e5de0-105">Nur-Text-Kennwörter und Domänenbenutzer</span><span class="sxs-lookup"><span data-stu-id="e5de0-105">Plain Text Passwords and Domain Users</span></span>
 
-<span data-ttu-id="788c1-106">DSC-Konfigurationen mit unverschlüsselten Anmeldeinformationen generieren eine Fehlermeldung zu Nur-Text-Kennwörtern.</span><span class="sxs-lookup"><span data-stu-id="788c1-106">DSC configurations containing a credential without encryption will generate an error message about plain text passwords.</span></span>
-<span data-ttu-id="788c1-107">DSC generiert außerdem bei Verwendung von Domänenanmeldeinformationen eine Warnung.</span><span class="sxs-lookup"><span data-stu-id="788c1-107">Also, DSC will generate a warning when using domain credentials.</span></span>
-<span data-ttu-id="788c1-108">Um diese Fehler- und Warnmeldungen zu unterdrücken, verwenden Sie die DSC-Konfigurationsdaten-Schlüsselwörter.</span><span class="sxs-lookup"><span data-stu-id="788c1-108">To suppress these error and warning messages use the DSC configuration data keywords:</span></span>
-* <span data-ttu-id="788c1-109">**PsDscAllowPlainTextPassword**</span><span class="sxs-lookup"><span data-stu-id="788c1-109">**PsDscAllowPlainTextPassword**</span></span>
-* <span data-ttu-id="788c1-110">**PsDscAllowDomainUser**</span><span class="sxs-lookup"><span data-stu-id="788c1-110">**PsDscAllowDomainUser**</span></span>
+<span data-ttu-id="e5de0-106">DSC-Konfigurationen mit unverschlüsselten Anmeldeinformationen generieren eine Fehlermeldung zu Nur-Text-Kennwörtern.</span><span class="sxs-lookup"><span data-stu-id="e5de0-106">DSC configurations containing a credential without encryption will generate an error message about plain text passwords.</span></span>
+<span data-ttu-id="e5de0-107">DSC generiert außerdem bei Verwendung von Domänenanmeldeinformationen eine Warnung.</span><span class="sxs-lookup"><span data-stu-id="e5de0-107">Also, DSC will generate a warning when using domain credentials.</span></span>
+<span data-ttu-id="e5de0-108">Um diese Fehler- und Warnmeldungen zu unterdrücken, verwenden Sie die DSC-Konfigurationsdaten-Schlüsselwörter.</span><span class="sxs-lookup"><span data-stu-id="e5de0-108">To suppress these error and warning messages use the DSC configuration data keywords:</span></span>
+* <span data-ttu-id="e5de0-109">**PsDscAllowPlainTextPassword**</span><span class="sxs-lookup"><span data-stu-id="e5de0-109">**PsDscAllowPlainTextPassword**</span></span>
+* <span data-ttu-id="e5de0-110">**PsDscAllowDomainUser**</span><span class="sxs-lookup"><span data-stu-id="e5de0-110">**PsDscAllowDomainUser**</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="788c1-111">Das Speichern/Übertragen von unverschlüsselten Nur-Text-Kennwörtern ist in der Regel nicht sicher.</span><span class="sxs-lookup"><span data-stu-id="788c1-111">Storing/transmitting plaintext passwords unencrypted is generally not secure.</span></span> <span data-ttu-id="788c1-112">Das Sichern von Anmeldeinformationen mithilfe der weiter unten in diesem Thema behandelten Verfahren wird empfohlen.</span><span class="sxs-lookup"><span data-stu-id="788c1-112">Securing credentials by using the techniques covered later in this topic is recommended.</span></span>
-> <span data-ttu-id="788c1-113">Der Azure Automation DSC-Dienst erlaubt Ihnen, Ihre Anmeldeinformationen zentral zu verwalten, um sie in Konfigurationen zu kompilieren und sicher zu speichern.</span><span class="sxs-lookup"><span data-stu-id="788c1-113">The Azure Automation DSC service allows you to centrally manage credentials to be compiled in configurations and stored securely.</span></span>
-> <span data-ttu-id="788c1-114">Informationen finden Sie unter: [Compiling DSC Configurations / Credential Assets (Kompilieren von DSC-Konfigurationen/Anmeldeinformationsassets)](/azure/automation/automation-dsc-compile#credential-assets)</span><span class="sxs-lookup"><span data-stu-id="788c1-114">For information, see: [Compiling DSC Configurations / Credential Assets](/azure/automation/automation-dsc-compile#credential-assets)</span></span>
+> <span data-ttu-id="e5de0-111">Das Speichern/Übertragen von unverschlüsselten Nur-Text-Kennwörtern ist in der Regel nicht sicher.</span><span class="sxs-lookup"><span data-stu-id="e5de0-111">Storing/transmitting plaintext passwords unencrypted is generally not secure.</span></span> <span data-ttu-id="e5de0-112">Das Sichern von Anmeldeinformationen mithilfe der weiter unten in diesem Thema behandelten Verfahren wird empfohlen.</span><span class="sxs-lookup"><span data-stu-id="e5de0-112">Securing credentials by using the techniques covered later in this topic is recommended.</span></span>
+> <span data-ttu-id="e5de0-113">Der Azure Automation DSC-Dienst erlaubt Ihnen, Ihre Anmeldeinformationen zentral zu verwalten, um sie in Konfigurationen zu kompilieren und sicher zu speichern.</span><span class="sxs-lookup"><span data-stu-id="e5de0-113">The Azure Automation DSC service allows you to centrally manage credentials to be compiled in configurations and stored securely.</span></span>
+> <span data-ttu-id="e5de0-114">Informationen finden Sie unter: [Compiling DSC Configurations / Credential Assets (Kompilieren von DSC-Konfigurationen/Anmeldeinformationsassets)](/azure/automation/automation-dsc-compile#credential-assets)</span><span class="sxs-lookup"><span data-stu-id="e5de0-114">For information, see: [Compiling DSC Configurations / Credential Assets](/azure/automation/automation-dsc-compile#credential-assets)</span></span>
 
-<span data-ttu-id="788c1-115">Im Folgenden finden ein Beispiel für die Weitergabe von Nur-Text-Anmeldeinformationen:</span><span class="sxs-lookup"><span data-stu-id="788c1-115">The following is an example of passing plain text credentials:</span></span>
+<span data-ttu-id="e5de0-115">Im Folgenden finden ein Beispiel für die Weitergabe von Nur-Text-Anmeldeinformationen:</span><span class="sxs-lookup"><span data-stu-id="e5de0-115">The following is an example of passing plain text credentials:</span></span>
 
 ```powershell
 #Prompt user for their credentials
@@ -88,7 +88,7 @@ configuration unencryptedPasswordDemo
     Node "TestMachine2"
     {
         # Now we'll use a node-specific password to this machine
-        $password = $Node.LocalPass | ConvertTo-SecureString -asPlainText -Force
+        $password = $Node.LocalPassword | ConvertTo-SecureString -asPlainText -Force
         $username = $node.UserName
         [PSCredential] $nodeCred = New-Object System.Management.Automation.PSCredential($username,$password)
 
@@ -105,7 +105,7 @@ configuration unencryptedPasswordDemo
 
         Group addToAdmin
         {
-            Credential = $domain
+            Credential = $promptedCreds
             GroupName = "Administrators"
             DependsOn = "[User]User2"
             Ensure = "Present"
@@ -125,20 +125,20 @@ unencryptedPasswordDemo -ConfigurationData $ConfigurationData
 Start-DscConfiguration ./unencryptedPasswordDemo -verbose -wait -force
 ```
 
-## <a name="handling-credentials-in-dsc"></a><span data-ttu-id="788c1-116">Behandeln von Anmeldeinformationen in DSC</span><span class="sxs-lookup"><span data-stu-id="788c1-116">Handling Credentials in DSC</span></span>
+## <a name="handling-credentials-in-dsc"></a><span data-ttu-id="e5de0-116">Behandeln von Anmeldeinformationen in DSC</span><span class="sxs-lookup"><span data-stu-id="e5de0-116">Handling Credentials in DSC</span></span>
 
-<span data-ttu-id="788c1-117">DSC-Konfigurationsressourcen werden standardmäßig als `Local System` ausgeführt.</span><span class="sxs-lookup"><span data-stu-id="788c1-117">DSC configuration resources run as `Local System` by default.</span></span>
-<span data-ttu-id="788c1-118">Einige Ressourcen benötigen jedoch Anmeldeinformationen, z. B. wenn die `Package`-Ressource Software unter einem bestimmten Benutzerkonto installieren muss.</span><span class="sxs-lookup"><span data-stu-id="788c1-118">However, some resources need a credential, for example when the `Package` resource needs to install software under a specific user account.</span></span>
+<span data-ttu-id="e5de0-117">DSC-Konfigurationsressourcen werden standardmäßig als `Local System` ausgeführt.</span><span class="sxs-lookup"><span data-stu-id="e5de0-117">DSC configuration resources run as `Local System` by default.</span></span>
+<span data-ttu-id="e5de0-118">Einige Ressourcen benötigen jedoch Anmeldeinformationen, z. B. wenn die `Package`-Ressource Software unter einem bestimmten Benutzerkonto installieren muss.</span><span class="sxs-lookup"><span data-stu-id="e5de0-118">However, some resources need a credential, for example when the `Package` resource needs to install software under a specific user account.</span></span>
 
-<span data-ttu-id="788c1-119">Frühere Ressourcen verwendeten in diesem Fall einen hartcodierten `Credential`-Eigenschaftennamen.</span><span class="sxs-lookup"><span data-stu-id="788c1-119">Earlier resources used a hard-coded `Credential` property name to handle this.</span></span>
-<span data-ttu-id="788c1-120">In WMF 5.0 wurde eine automatische `PsDscRunAsCredential`-Eigenschaft für alle Ressourcen hinzugefügt.</span><span class="sxs-lookup"><span data-stu-id="788c1-120">WMF 5.0 added an automatic `PsDscRunAsCredential` property for all resources.</span></span>
-<span data-ttu-id="788c1-121">Weitere Informationen zur Verwendung von `PsDscRunAsCredential`, finden Sie unter [Ausführen von DSC mit Benutzeranmeldeinformationen](runAsUser.md).</span><span class="sxs-lookup"><span data-stu-id="788c1-121">For information about using `PsDscRunAsCredential`, see [Running DSC with user credentials](runAsUser.md).</span></span>
-<span data-ttu-id="788c1-122">Neuere und benutzerdefinierte Ressourcen können diese automatische Eigenschaft verwenden, anstatt eine eigene Eigenschaften für Anmeldeinformationen zu erstellen.</span><span class="sxs-lookup"><span data-stu-id="788c1-122">Newer resources and custom resources can use this automatic property instead of creating their own property for credentials.</span></span>
+<span data-ttu-id="e5de0-119">Frühere Ressourcen verwendeten in diesem Fall einen hartcodierten `Credential`-Eigenschaftennamen.</span><span class="sxs-lookup"><span data-stu-id="e5de0-119">Earlier resources used a hard-coded `Credential` property name to handle this.</span></span>
+<span data-ttu-id="e5de0-120">In WMF 5.0 wurde eine automatische `PsDscRunAsCredential`-Eigenschaft für alle Ressourcen hinzugefügt.</span><span class="sxs-lookup"><span data-stu-id="e5de0-120">WMF 5.0 added an automatic `PsDscRunAsCredential` property for all resources.</span></span>
+<span data-ttu-id="e5de0-121">Weitere Informationen zur Verwendung von `PsDscRunAsCredential`, finden Sie unter [Ausführen von DSC mit Benutzeranmeldeinformationen](runAsUser.md).</span><span class="sxs-lookup"><span data-stu-id="e5de0-121">For information about using `PsDscRunAsCredential`, see [Running DSC with user credentials](runAsUser.md).</span></span>
+<span data-ttu-id="e5de0-122">Neuere und benutzerdefinierte Ressourcen können diese automatische Eigenschaft verwenden, anstatt eine eigene Eigenschaften für Anmeldeinformationen zu erstellen.</span><span class="sxs-lookup"><span data-stu-id="e5de0-122">Newer resources and custom resources can use this automatic property instead of creating their own property for credentials.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="788c1-123">Das Design einiger Ressourcen wurde so angelegt, dass sie aus einem bestimmten Grund mehrere Sätze von Anmeldeinformationen verwenden und über eigene Eigenschaften für Anmeldeinformationen verfügen.</span><span class="sxs-lookup"><span data-stu-id="788c1-123">The design of some resources are to use multiple credentials for a specific reason, and they will have their own credential properties.</span></span>
+> <span data-ttu-id="e5de0-123">Das Design einiger Ressourcen wurde so angelegt, dass sie aus einem bestimmten Grund mehrere Sätze von Anmeldeinformationen verwenden und über eigene Eigenschaften für Anmeldeinformationen verfügen.</span><span class="sxs-lookup"><span data-stu-id="e5de0-123">The design of some resources are to use multiple credentials for a specific reason, and they will have their own credential properties.</span></span>
 
-<span data-ttu-id="788c1-124">Um die verfügbaren Eigenschaften für Anmeldeinformationen für eine Ressource zu finden, verwenden Sie entweder `Get-DscResource -Name ResourceName -Syntax` oder Intellisense in der ISE (`CTRL+SPACE`).</span><span class="sxs-lookup"><span data-stu-id="788c1-124">To find the available credential properties on a resource use either `Get-DscResource -Name ResourceName -Syntax` or the Intellisense in the ISE (`CTRL+SPACE`).</span></span>
+<span data-ttu-id="e5de0-124">Um die verfügbaren Eigenschaften für Anmeldeinformationen für eine Ressource zu finden, verwenden Sie entweder `Get-DscResource -Name ResourceName -Syntax` oder Intellisense in der ISE (`CTRL+SPACE`).</span><span class="sxs-lookup"><span data-stu-id="e5de0-124">To find the available credential properties on a resource use either `Get-DscResource -Name ResourceName -Syntax` or the Intellisense in the ISE (`CTRL+SPACE`).</span></span>
 
 ```powershell
 PS C:\> Get-DscResource -Name Group -Syntax
@@ -156,26 +156,26 @@ Group [String] #ResourceName
 }
 ```
 
-<span data-ttu-id="788c1-125">In diesem Beispiel wird eine [Group](https://msdn.microsoft.com/powershell/dsc/groupresource)-Ressource aus dem integrierten DSC-Ressourcenmodul `PSDesiredStateConfiguration` verwendet.</span><span class="sxs-lookup"><span data-stu-id="788c1-125">This example uses a [Group](https://msdn.microsoft.com/powershell/dsc/groupresource) resource from the `PSDesiredStateConfiguration` built-in DSC resource module.</span></span>
-<span data-ttu-id="788c1-126">Damit können lokale Gruppen erstellt oder Member hinzugefügt bzw. entfernt werden.</span><span class="sxs-lookup"><span data-stu-id="788c1-126">It can create local groups and add or remove members.</span></span>
-<span data-ttu-id="788c1-127">Es wird sowohl die Eigenschaft `Credential` als auch die automatische Eigenschaft `PsDscRunAsCredential` akzeptiert.</span><span class="sxs-lookup"><span data-stu-id="788c1-127">It accepts both the `Credential` property and the automatic `PsDscRunAsCredential` property.</span></span>
-<span data-ttu-id="788c1-128">Allerdings verwendet die Ressource nur die Eigenschaft `Credential`.</span><span class="sxs-lookup"><span data-stu-id="788c1-128">However, the resource only uses the `Credential` property.</span></span>
+<span data-ttu-id="e5de0-125">In diesem Beispiel wird eine [Group](https://msdn.microsoft.com/powershell/dsc/groupresource)-Ressource aus dem integrierten DSC-Ressourcenmodul `PSDesiredStateConfiguration` verwendet.</span><span class="sxs-lookup"><span data-stu-id="e5de0-125">This example uses a [Group](https://msdn.microsoft.com/powershell/dsc/groupresource) resource from the `PSDesiredStateConfiguration` built-in DSC resource module.</span></span>
+<span data-ttu-id="e5de0-126">Damit können lokale Gruppen erstellt oder Member hinzugefügt bzw. entfernt werden.</span><span class="sxs-lookup"><span data-stu-id="e5de0-126">It can create local groups and add or remove members.</span></span>
+<span data-ttu-id="e5de0-127">Es wird sowohl die Eigenschaft `Credential` als auch die automatische Eigenschaft `PsDscRunAsCredential` akzeptiert.</span><span class="sxs-lookup"><span data-stu-id="e5de0-127">It accepts both the `Credential` property and the automatic `PsDscRunAsCredential` property.</span></span>
+<span data-ttu-id="e5de0-128">Allerdings verwendet die Ressource nur die Eigenschaft `Credential`.</span><span class="sxs-lookup"><span data-stu-id="e5de0-128">However, the resource only uses the `Credential` property.</span></span>
 
-<span data-ttu-id="788c1-129">Weitere Informationen über die Eigenschaft `PsDscRunAsCredential` finden Sie unter [Ausführen von DSC mit Benutzeranmeldeinformationen](runAsUser.md).</span><span class="sxs-lookup"><span data-stu-id="788c1-129">For more information about the `PsDscRunAsCredential` property, see [Running DSC with user credentials](runAsUser.md).</span></span>
+<span data-ttu-id="e5de0-129">Weitere Informationen über die Eigenschaft `PsDscRunAsCredential` finden Sie unter [Ausführen von DSC mit Benutzeranmeldeinformationen](runAsUser.md).</span><span class="sxs-lookup"><span data-stu-id="e5de0-129">For more information about the `PsDscRunAsCredential` property, see [Running DSC with user credentials](runAsUser.md).</span></span>
 
-## <a name="example-the-group-resource-credential-property"></a><span data-ttu-id="788c1-130">Beispiel: Die Eigenschaft „Credential“ der Ressource „Group“</span><span class="sxs-lookup"><span data-stu-id="788c1-130">Example: The Group resource Credential property</span></span>
+## <a name="example-the-group-resource-credential-property"></a><span data-ttu-id="e5de0-130">Beispiel: Die Eigenschaft „Credential“ der Ressource „Group“</span><span class="sxs-lookup"><span data-stu-id="e5de0-130">Example: The Group resource Credential property</span></span>
 
-<span data-ttu-id="788c1-131">Der DSC-Dienst wird unter `Local System` ausgeführt, sodass er bereits über Berechtigungen zum Ändern lokaler Benutzer und Gruppen verfügt.</span><span class="sxs-lookup"><span data-stu-id="788c1-131">DSC runs under `Local System`, so it already has permissions to change local users and groups.</span></span>
-<span data-ttu-id="788c1-132">Wenn es sich bei dem hinzugefügten Member um ein lokales Konto handelt, sind keine Anmeldeinformationen erforderlich.</span><span class="sxs-lookup"><span data-stu-id="788c1-132">If the member added is a local account, then no credential is necessary.</span></span>
-<span data-ttu-id="788c1-133">Wenn die Ressource `Group` ein Domänenkonto zur lokalen Gruppe hinzufügt, sind Anmeldeinformationen erforderlich.</span><span class="sxs-lookup"><span data-stu-id="788c1-133">If the `Group` resource adds a domain account to the local group, then a credential is necessary.</span></span>
+<span data-ttu-id="e5de0-131">Der DSC-Dienst wird unter `Local System` ausgeführt, sodass er bereits über Berechtigungen zum Ändern lokaler Benutzer und Gruppen verfügt.</span><span class="sxs-lookup"><span data-stu-id="e5de0-131">DSC runs under `Local System`, so it already has permissions to change local users and groups.</span></span>
+<span data-ttu-id="e5de0-132">Wenn es sich bei dem hinzugefügten Member um ein lokales Konto handelt, sind keine Anmeldeinformationen erforderlich.</span><span class="sxs-lookup"><span data-stu-id="e5de0-132">If the member added is a local account, then no credential is necessary.</span></span>
+<span data-ttu-id="e5de0-133">Wenn die Ressource `Group` ein Domänenkonto zur lokalen Gruppe hinzufügt, sind Anmeldeinformationen erforderlich.</span><span class="sxs-lookup"><span data-stu-id="e5de0-133">If the `Group` resource adds a domain account to the local group, then a credential is necessary.</span></span>
 
-<span data-ttu-id="788c1-134">Anonyme Abfragen an Active Directory sind nicht zulässig.</span><span class="sxs-lookup"><span data-stu-id="788c1-134">Anonymous queries to Active Directory are not allowed.</span></span>
-<span data-ttu-id="788c1-135">Die Eigenschaft `Credential` der Ressource `Group`ist das zum Abfragen von Active Directory verwendete Domänenkonto.</span><span class="sxs-lookup"><span data-stu-id="788c1-135">The `Credential` property of the `Group` resource is the domain account used to query Active Directory.</span></span>
-<span data-ttu-id="788c1-136">In den meisten Fällen könnte es sich dabei um ein allgemeines Benutzerkonto handeln, da Benutzer standardmäßig über *Lesezugriff* auf die meisten Objekte in Active Directory verfügen.</span><span class="sxs-lookup"><span data-stu-id="788c1-136">For most purposes this could be a generic user account, because by default users can *read* most of the objects in Active Directory.</span></span>
+<span data-ttu-id="e5de0-134">Anonyme Abfragen an Active Directory sind nicht zulässig.</span><span class="sxs-lookup"><span data-stu-id="e5de0-134">Anonymous queries to Active Directory are not allowed.</span></span>
+<span data-ttu-id="e5de0-135">Die Eigenschaft `Credential` der Ressource `Group`ist das zum Abfragen von Active Directory verwendete Domänenkonto.</span><span class="sxs-lookup"><span data-stu-id="e5de0-135">The `Credential` property of the `Group` resource is the domain account used to query Active Directory.</span></span>
+<span data-ttu-id="e5de0-136">In den meisten Fällen könnte es sich dabei um ein allgemeines Benutzerkonto handeln, da Benutzer standardmäßig über *Lesezugriff* auf die meisten Objekte in Active Directory verfügen.</span><span class="sxs-lookup"><span data-stu-id="e5de0-136">For most purposes this could be a generic user account, because by default users can *read* most of the objects in Active Directory.</span></span>
 
-## <a name="example-configuration"></a><span data-ttu-id="788c1-137">Beispielkonfiguration</span><span class="sxs-lookup"><span data-stu-id="788c1-137">Example Configuration</span></span>
+## <a name="example-configuration"></a><span data-ttu-id="e5de0-137">Beispielkonfiguration</span><span class="sxs-lookup"><span data-stu-id="e5de0-137">Example Configuration</span></span>
 
-<span data-ttu-id="788c1-138">Der folgende Beispielcode verwendet DSC zum Auffüllen einer lokalen Gruppen mit einem Domänenbenutzer:</span><span class="sxs-lookup"><span data-stu-id="788c1-138">The following example code uses DSC to populate a local group with a domain user:</span></span>
+<span data-ttu-id="e5de0-138">Der folgende Beispielcode verwendet DSC zum Auffüllen einer lokalen Gruppen mit einem Domänenbenutzer:</span><span class="sxs-lookup"><span data-stu-id="e5de0-138">The following example code uses DSC to populate a local group with a domain user:</span></span>
 
 ```powershell
 Configuration DomainCredentialExample
@@ -201,7 +201,7 @@ $cred = Get-Credential -UserName contoso\genericuser -Message "Password please"
 DomainCredentialExample -DomainCredential $cred
 ```
 
-<span data-ttu-id="788c1-139">Dieser Code generiert eine Fehler- und eine Warnmeldung:</span><span class="sxs-lookup"><span data-stu-id="788c1-139">This code generates both an error and warning message:</span></span>
+<span data-ttu-id="e5de0-139">Dieser Code generiert eine Fehler- und eine Warnmeldung:</span><span class="sxs-lookup"><span data-stu-id="e5de0-139">This code generates both an error and warning message:</span></span>
 
 ```
 ConvertTo-MOFInstance : System.InvalidOperationException error processing
@@ -224,17 +224,17 @@ In order to suppress the warning, you can add a property named
 for node 'localhost'.
 ```
 
-<span data-ttu-id="788c1-140">In diesem Beispiel gibt es zwei Probleme:</span><span class="sxs-lookup"><span data-stu-id="788c1-140">This example has two issues:</span></span>
-1. <span data-ttu-id="788c1-141">Ein Fehler zeigt an, dass Nur-Text-Kennwörter nicht empfohlen werden.</span><span class="sxs-lookup"><span data-stu-id="788c1-141">An error explains that plain text passwords are not recommended</span></span>
-2. <span data-ttu-id="788c1-142">Eine Warnung rät davon ab, Domänenanmeldeinformationen zu verwenden.</span><span class="sxs-lookup"><span data-stu-id="788c1-142">A warning advises against using a domain credential</span></span>
+<span data-ttu-id="e5de0-140">In diesem Beispiel gibt es zwei Probleme:</span><span class="sxs-lookup"><span data-stu-id="e5de0-140">This example has two issues:</span></span>
+1. <span data-ttu-id="e5de0-141">Ein Fehler zeigt an, dass Nur-Text-Kennwörter nicht empfohlen werden.</span><span class="sxs-lookup"><span data-stu-id="e5de0-141">An error explains that plain text passwords are not recommended</span></span>
+2. <span data-ttu-id="e5de0-142">Eine Warnung rät davon ab, Domänenanmeldeinformationen zu verwenden.</span><span class="sxs-lookup"><span data-stu-id="e5de0-142">A warning advises against using a domain credential</span></span>
 
-## <a name="psdscallowplaintextpassword"></a><span data-ttu-id="788c1-143">PsDscAllowPlainTextPassword</span><span class="sxs-lookup"><span data-stu-id="788c1-143">PsDscAllowPlainTextPassword</span></span>
+## <a name="psdscallowplaintextpassword"></a><span data-ttu-id="e5de0-143">PsDscAllowPlainTextPassword</span><span class="sxs-lookup"><span data-stu-id="e5de0-143">PsDscAllowPlainTextPassword</span></span>
 
-<span data-ttu-id="788c1-144">Die erste Fehlermeldung enthält eine URL zur Dokumentation.</span><span class="sxs-lookup"><span data-stu-id="788c1-144">The first error message has a URL with documentation.</span></span>
-<span data-ttu-id="788c1-145">Unter diesem Link wird erläutert, wie Kennwörtern mit einer [ConfigurationData](https://msdn.microsoft.com/powershell/dsc/configdata)-Struktur und einem Zertifikat verschlüsselt werden.</span><span class="sxs-lookup"><span data-stu-id="788c1-145">This link explains how to encrypt passwords using a [ConfigurationData](https://msdn.microsoft.com/powershell/dsc/configdata) structure and a certificate.</span></span>
-<span data-ttu-id="788c1-146">Weitere Informationen zu Zertifikaten und DSC [erhalten Sie in diesen Beitrag](http://aka.ms/certs4dsc).</span><span class="sxs-lookup"><span data-stu-id="788c1-146">For more information on certificates and DSC [read this post](http://aka.ms/certs4dsc).</span></span>
+<span data-ttu-id="e5de0-144">Die erste Fehlermeldung enthält eine URL zur Dokumentation.</span><span class="sxs-lookup"><span data-stu-id="e5de0-144">The first error message has a URL with documentation.</span></span>
+<span data-ttu-id="e5de0-145">Unter diesem Link wird erläutert, wie Kennwörtern mit einer [ConfigurationData](https://msdn.microsoft.com/powershell/dsc/configdata)-Struktur und einem Zertifikat verschlüsselt werden.</span><span class="sxs-lookup"><span data-stu-id="e5de0-145">This link explains how to encrypt passwords using a [ConfigurationData](https://msdn.microsoft.com/powershell/dsc/configdata) structure and a certificate.</span></span>
+<span data-ttu-id="e5de0-146">Weitere Informationen zu Zertifikaten und DSC [erhalten Sie in diesen Beitrag](http://aka.ms/certs4dsc).</span><span class="sxs-lookup"><span data-stu-id="e5de0-146">For more information on certificates and DSC [read this post](http://aka.ms/certs4dsc).</span></span>
 
-<span data-ttu-id="788c1-147">Um ein Nur-Text-Kennwort zu erzwingen, muss im Konfigurationsdatenabschnitt der Ressource das Schlüsselwort `PsDscAllowPlainTextPassword` wie folgt enthalten sein:</span><span class="sxs-lookup"><span data-stu-id="788c1-147">To force a plain text password, the resource requires the `PsDscAllowPlainTextPassword` keyword in the configuration data section as follows:</span></span>
+<span data-ttu-id="e5de0-147">Um ein Nur-Text-Kennwort zu erzwingen, muss im Konfigurationsdatenabschnitt der Ressource das Schlüsselwort `PsDscAllowPlainTextPassword` wie folgt enthalten sein:</span><span class="sxs-lookup"><span data-stu-id="e5de0-147">To force a plain text password, the resource requires the `PsDscAllowPlainTextPassword` keyword in the configuration data section as follows:</span></span>
 
 ```powershell
 Configuration DomainCredentialExample
@@ -270,24 +270,24 @@ DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 ```
 
 > [!NOTE]
-> <span data-ttu-id="788c1-148">`NodeName` kann kein Sternchen angegeben werden; der Name eines bestimmten Knotens ist obligatorisch.</span><span class="sxs-lookup"><span data-stu-id="788c1-148">`NodeName` cannot equal asterisk, a specific node name is mandatory.</span></span>
+> <span data-ttu-id="e5de0-148">`NodeName` kann kein Sternchen angegeben werden; der Name eines bestimmten Knotens ist obligatorisch.</span><span class="sxs-lookup"><span data-stu-id="e5de0-148">`NodeName` cannot equal asterisk, a specific node name is mandatory.</span></span>
 
-<span data-ttu-id="788c1-149">**Microsoft empfiehlt, Nur-Text-Kennwörter aufgrund des hohen Sicherheitsrisikos zu vermeiden.**</span><span class="sxs-lookup"><span data-stu-id="788c1-149">**Microsoft advises to avoid plain text passwords due to the significant security risk.**</span></span>
+<span data-ttu-id="e5de0-149">**Microsoft empfiehlt, Nur-Text-Kennwörter aufgrund des hohen Sicherheitsrisikos zu vermeiden.**</span><span class="sxs-lookup"><span data-stu-id="e5de0-149">**Microsoft advises to avoid plain text passwords due to the significant security risk.**</span></span>
 
-## <a name="domain-credentials"></a><span data-ttu-id="788c1-150">Domänenanmeldeinformationen</span><span class="sxs-lookup"><span data-stu-id="788c1-150">Domain Credentials</span></span>
+## <a name="domain-credentials"></a><span data-ttu-id="e5de0-150">Domänenanmeldeinformationen</span><span class="sxs-lookup"><span data-stu-id="e5de0-150">Domain Credentials</span></span>
 
-<span data-ttu-id="788c1-151">Wenn Sie das Beispielkonfigurationsskript erneut ausführen (mit oder ohne Verschlüsselung), wird weiterhin die Warnung generiert, dass die Verwendung von Anmeldeinformationen eines Domänenkontos nicht empfohlen wird.</span><span class="sxs-lookup"><span data-stu-id="788c1-151">Running the example configuration script again (with or without encryption), still generates the warning that using a domain account for a credential is not recommended.</span></span>
-<span data-ttu-id="788c1-152">Durch Verwendung eines lokalen Kontos wird verhindert, dass Domänenanmeldeinformationen, die auf anderen Servern verwendet werden könnten, offengelegt werden.</span><span class="sxs-lookup"><span data-stu-id="788c1-152">Using a local account eliminates potential exposure of domain credentials that could be used on other servers.</span></span>
+<span data-ttu-id="e5de0-151">Wenn Sie das Beispielkonfigurationsskript erneut ausführen (mit oder ohne Verschlüsselung), wird weiterhin die Warnung generiert, dass die Verwendung von Anmeldeinformationen eines Domänenkontos nicht empfohlen wird.</span><span class="sxs-lookup"><span data-stu-id="e5de0-151">Running the example configuration script again (with or without encryption), still generates the warning that using a domain account for a credential is not recommended.</span></span>
+<span data-ttu-id="e5de0-152">Durch Verwendung eines lokalen Kontos wird verhindert, dass Domänenanmeldeinformationen, die auf anderen Servern verwendet werden könnten, offengelegt werden.</span><span class="sxs-lookup"><span data-stu-id="e5de0-152">Using a local account eliminates potential exposure of domain credentials that could be used on other servers.</span></span>
 
-<span data-ttu-id="788c1-153">**Bei Verwendung von Anmeldeinformationen mit DSC-Ressourcen ziehen Sie, wenn möglich, ein lokales Konto einem Domänenkonto vor.**</span><span class="sxs-lookup"><span data-stu-id="788c1-153">**When using credentials with DSC resources, prefer a local account over a domain account when possible.**</span></span>
+<span data-ttu-id="e5de0-153">**Bei Verwendung von Anmeldeinformationen mit DSC-Ressourcen ziehen Sie, wenn möglich, ein lokales Konto einem Domänenkonto vor.**</span><span class="sxs-lookup"><span data-stu-id="e5de0-153">**When using credentials with DSC resources, prefer a local account over a domain account when possible.**</span></span>
 
-<span data-ttu-id="788c1-154">Enthält die Eigenschaft `Username` der Anmeldeinformationen einen „\'“ oder ein „@“, behandelt DSC das Konto als Domänenkonto.</span><span class="sxs-lookup"><span data-stu-id="788c1-154">If there is a '\' or '@' in the `Username` property of the credential, then DSC will treat it as a domain account.</span></span>
-<span data-ttu-id="788c1-155">Ausnahmen machen „Localhost“, „127.0.0.1“ und „:: 1“ im Domänenteil des Benutzernamens.</span><span class="sxs-lookup"><span data-stu-id="788c1-155">There is an exception for "localhost", "127.0.0.1", and "::1" in the domain portion of the user name.</span></span>
+<span data-ttu-id="e5de0-154">Enthält die Eigenschaft `Username` der Anmeldeinformationen einen „\'“ oder ein „@“, behandelt DSC das Konto als Domänenkonto.</span><span class="sxs-lookup"><span data-stu-id="e5de0-154">If there is a '\' or '@' in the `Username` property of the credential, then DSC will treat it as a domain account.</span></span>
+<span data-ttu-id="e5de0-155">Ausnahmen machen „Localhost“, „127.0.0.1“ und „:: 1“ im Domänenteil des Benutzernamens.</span><span class="sxs-lookup"><span data-stu-id="e5de0-155">There is an exception for "localhost", "127.0.0.1", and "::1" in the domain portion of the user name.</span></span>
 
-## <a name="psdscallowdomainuser"></a><span data-ttu-id="788c1-156">PSDscAllowDomainUser</span><span class="sxs-lookup"><span data-stu-id="788c1-156">PSDscAllowDomainUser</span></span>
+## <a name="psdscallowdomainuser"></a><span data-ttu-id="e5de0-156">PSDscAllowDomainUser</span><span class="sxs-lookup"><span data-stu-id="e5de0-156">PSDscAllowDomainUser</span></span>
 
-<span data-ttu-id="788c1-157">Im oben stehenden Beispiel zur DSC-Ressourcen `Group` ist zum Abfragen einer Active Directory-Domäne ein Domänenkonto *erforderlich*.</span><span class="sxs-lookup"><span data-stu-id="788c1-157">In the DSC `Group` resource example above, querying an Active Directory domain *requires* a domain account.</span></span>
-<span data-ttu-id="788c1-158">Fügen Sie in diesem Fall die Eigenschaft `PSDscAllowDomainUser` wie folgt zum Block `ConfigurationData` hinzu:</span><span class="sxs-lookup"><span data-stu-id="788c1-158">In this case add the `PSDscAllowDomainUser` property to the `ConfigurationData` block as follows:</span></span>
+<span data-ttu-id="e5de0-157">Im oben stehenden Beispiel zur DSC-Ressourcen `Group` ist zum Abfragen einer Active Directory-Domäne ein Domänenkonto *erforderlich*.</span><span class="sxs-lookup"><span data-stu-id="e5de0-157">In the DSC `Group` resource example above, querying an Active Directory domain *requires* a domain account.</span></span>
+<span data-ttu-id="e5de0-158">Fügen Sie in diesem Fall die Eigenschaft `PSDscAllowDomainUser` wie folgt zum Block `ConfigurationData` hinzu:</span><span class="sxs-lookup"><span data-stu-id="e5de0-158">In this case add the `PSDscAllowDomainUser` property to the `ConfigurationData` block as follows:</span></span>
 
 ```powershell
 $cd = @{
@@ -302,4 +302,4 @@ $cd = @{
 }
 ```
 
-<span data-ttu-id="788c1-159">Nun generiert das Konfigurationsskript die MOF-Datei ohne Fehler oder Warnungen.</span><span class="sxs-lookup"><span data-stu-id="788c1-159">Now the configuration script will generate the MOF file with no errors or warnings.</span></span>
+<span data-ttu-id="e5de0-159">Nun generiert das Konfigurationsskript die MOF-Datei ohne Fehler oder Warnungen.</span><span class="sxs-lookup"><span data-stu-id="e5de0-159">Now the configuration script will generate the MOF file with no errors or warnings.</span></span>
