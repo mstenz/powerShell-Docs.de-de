@@ -2,12 +2,12 @@
 ms.date: 06/27/2017
 keywords: powershell,cmdlet
 title: Autorisierungsregeln und Sicherheitsfeatures von Windows PowerShell Web Access
-ms.openlocfilehash: 07b85a3c7bced58b9ee8db401f0339ba6011bc96
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: e9bed3900263a51b1b8236a3c3430154a5d11886
+ms.sourcegitcommit: 31a221d982305c7f999b1afeb15e3629e9620de8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268346"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "43133094"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Autorisierungsregeln und Sicherheitsfeatures von Windows PowerShell Web Access
 
@@ -144,7 +144,7 @@ Für Windows PowerShell Web Access-Cmdlets wird ein Platzhalterzeichen unterstü
    ```
    Get-PswaAuthorizationRule `
       -RuleName <rule-name> | Remove-PswaAuthorizationRule
-  ```
+   ```
 
 > [!NOTE]
 > Sie werden nicht aufgefordert zu bestätigen, dass die angegebene Autorisierungsregel gelöscht werden soll. Die Regel wird gelöscht, wenn Sie die **EINGABETASTE** drücken. Vergewissern Sie sich, ob die Autorisierungsregel wirklich entfernt werden soll, bevor Sie das Cmdlet `Remove-PswaAuthorizationRule` ausführen.
