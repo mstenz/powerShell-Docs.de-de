@@ -1,17 +1,20 @@
 ---
-ms.date: 06/05/2017
+ms.date: 08/27/2018
 keywords: powershell,cmdlet
 title: PowerShell-Skripterstellung
-ms.openlocfilehash: c6ba3abc2544834e2cbec16a524f79399a1d2599
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 754805148dc815a12c5c77e4894fb598c6927f7e
+ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39094050"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43133992"
 ---
 # <a name="powershell"></a>PowerShell
 
-PowerShell basiert auf dem .NET Framework und ist eine aufgabenbasierte Befehlszeilenshell und Skriptsprache. Sie wurde speziell für Administratoren und Poweruser entworfen, um das Verwalten von mehreren Betriebssystemen (Linux, macOS, Unix und Windows) und die anwendungsbezogenen Prozesse auf diesen Betriebssystemen schnell zu automatisieren.
+PowerShell ist eine aufgabenbasierte Befehlszeilenshell und Skriptsprache, die auf Microsoft .NET Framework basiert.
+Mit PowerShell können Administratoren und Poweruser Aufgaben zur Verwaltung von Betriebssystemen (Linux, macOS und Windows) und Prozessen schnell automatisieren.
+
+Über PowerShell-Befehle können Sie Computer mit der Befehlszeile verwalten. Mithilfe von PowerShell-Anbietern können Sie auf Datenspeicher wie die Registrierung und den Zertifikatspeicher genauso einfach zugreifen wie auf das Dateisystem. PowerShell verfügt über einen umfangreichen Ausdrucksparser und eine vollständig entwickelte Skriptsprache.
 
 ## <a name="powershell-is-open-source"></a>PowerShell ist Open Source
 
@@ -22,57 +25,49 @@ Sie können sich alles Notwendige [hier](https://github.com/PowerShell/PowerShel
 Beginnen Sie alternativ mit einer kurzen Einführung unter [Getting Started (Erste Schritte)](https://github.com/PowerShell/PowerShell/blob/master/docs/learning-powershell).
 
 ## <a name="powershell-design-goals"></a>PowerShell-Entwurfsziele
+
 PowerShell soll Befehlszeilen- und Skriptumgebungen verbessern. Es beseitigt lange bestehende Probleme und führt neue Features ein.
 
 ### <a name="discoverability"></a>Erkennbarkeit
+
 Sie können sich leicht mit den Features in PowerShell vertraut machen. Um z. B. eine Liste von Cmdlets zu finden, die zum Anzeigen und Ändern von Windows-Diensten dienen, geben Sie Folgendes ein:
 
 ```powershell
 Get-Command *-Service
 ```
 
-Nachdem Sie ermittelt haben, welches Cmdlet welche Aufgabe erledigt, können Sie mithilfe des Cmdlets `Get-Help` mehr über das Cmdlet erfahren.
-Geben Sie z.B. zum Anzeigen der Hilfe zum Cmdlet `Get-Service` Folgendes ein:
+Nachdem Sie ermittelt haben, welches Cmdlet welche Aufgabe erledigt, können Sie mithilfe des Cmdlets `Get-Help` mehr über das Cmdlet erfahren. Geben Sie z.B. zum Anzeigen der Hilfe zum Cmdlet `Get-Service` Folgendes ein:
 
 ```powershell
 Get-Help Get-Service
 ```
-Die meisten Cmdlets geben Objekte aus, die bearbeitet und dann in Text für die Anzeige gerendert werden können.
-Um die Ausgabe dieses Cmdlets vollständig zu verstehen, leiten Sie seine Ausgabe an das Cmdlet `Get-Member` weiter.
-Der folgende Befehl zeigt z.B. Informationen zu den Elementen des Objekts an, das vom Cmdlet `Get-Service` ausgegeben wurde.
+
+Die meisten Cmdlets geben Objekte zurück, die bearbeitet und dann als Text für die Anzeige gerendert werden können. Um die Ausgabe eines Cmdlets vollständig zu verstehen, leiten Sie die Ausgabe an das Cmdlet `Get-Member` weiter. Der folgende Befehl zeigt z.B. Informationen zu den Elementen des Objekts an, das vom Cmdlet `Get-Service` ausgegeben wurde.
 
 ```powershell
 Get-Service | Get-Member
 ```
 
 ### <a name="consistency"></a>Konsistenz
-Das Verwalten von Systemen kann ein komplexer Vorgang sein, und Tools mit einer konsistenten Schnittstelle helfen, die inhärente Komplexität im Griff zu behalten.
-Leider zeichnen sich weder Befehlszeilentools noch skriptfähige COM-Objekte durch ihre Konsistenz aus.
 
-PowerShell besticht durch Konsistenz.
-Wenn Sie z.B. gelernt haben, wie das Cmdlet `Sort-Object` verwendet wird, können Sie mit diesem Wissen die Ausgabe sämtlicher Cmdlets sortieren.
-Sie müssen also nicht für jedes Cmdlet eine andere Sortierroutine erlernen.
+Das Verwalten von Systemen kann eine komplexe Aufgabe sein. Tools mit einer konsistenten Schnittstelle helfen, die inhärente Komplexität im Griff zu behalten. Leider zeichnen sich Befehlszeilentools und skriptfähige COM-Objekte nicht durch ihre Konsistenz aus.
 
-Darüber hinaus müssen Cmdlet-Entwickler keine Sortierfunktionen für ihre Cmdlets entwerfen.
-PowerShell bietet ihnen ein Framework, das grundlegende Funktionen bereitstellt und Konsistenz bei vielen Aspekten der Schnittstelle erzwingt.
-Das Framework bietet nicht mehr einige der Wahlmöglichkeiten, die normalerweise dem Entwickler überlassen werden, vereinfacht aber im Gegenzug die Entwicklung zuverlässiger und benutzerfreundlicher Cmdlets wesentlich.
+PowerShell besticht durch Konsistenz. Wenn Sie z.B. gelernt haben, wie das Cmdlet `Sort-Object` verwendet wird, können Sie mit diesem Wissen die Ausgabe sämtlicher Cmdlets sortieren. Sie müssen also nicht für jedes Cmdlet eine andere Sortierroutine erlernen.
 
-### <a name="interactive-and-scripting-environments"></a>Interaktive und Skriptumgebung
-PowerShell ist sowohl eine interaktive Umgebung als auch eine Skriptumgebung, die Zugriff auf Befehlszeilentools und COM-Objekte bietet, mit der Sie von der Leistungsfähigkeit der .NET Framework Class Library (FCL) profitieren können.
+Darüber hinaus müssen Cmdlet-Entwickler keine Sortierfunktionen für ihre Cmdlets entwerfen. PowerShell bietet ein Framework mit den grundlegenden Funktionen, das Konsistenz erzwingt. Das Framework bietet einige Optionen nicht, die dem Entwickler überlassen werden. Im Gegenzug vereinfacht es aber die Entwicklung von Cmdlets deutlich.
 
-Diese Umgebung verbessert die Windows-Eingabeaufforderung, die eine interaktive Umgebung mit mehreren Befehlszeilentools bereitstellt.
-Sie verbessert auch WSH-Skripts (Windows Script Host), mit denen Sie können mehrere Befehlszeilentools und COM-Automatisierungsobjekte verwenden können, die aber keine interaktive Umgebung bieten.
+### <a name="interactive-and-scripting-environments"></a>Interaktive und Skriptumgebungen
 
-Durch die Kombination dieser Features erweitert PowerShell die Möglichkeiten des interaktiven Benutzers und Skripterstellers und vereinfacht die Systemverwaltung.
+Die Windows-Eingabeaufforderung bietet eine interaktive Shell mit Zugriff auf Befehlszeilentools und grundlegende Funktionen für die Skripterstellung. Windows Script Host (WSH) weist skriptfähige Befehlszeilentools und COM-Automatisierungsobjekte auf, jedoch keine interaktive Shell.
+
+PowerShell kombiniert eine interaktive Shell und einer Skriptumgebung. PowerShell kann auf Befehlszeilentools, COM-Objekte und .NET-Klassenbibliotheken zugreifen. Diese Kombination von Features erweitert die Möglichkeiten von interaktiven Benutzern, Skriptautoren und Systemadministratoren.
 
 ### <a name="object-orientation"></a>Objektorientierung
-Obwohl Sie mit PowerShell interagieren, indem Sie Befehle als Text eingeben, ist PowerShell objekt- und nicht textbasiert.
-Die Ausgabe eines Befehls ist ein Objekt.
-Sie können das Ausgabeobjekt als Eingabe an einen anderen Befehl weiterleiten.
-Daher bietet PowerShell eine vertraute Schnittstelle für Personen, die mit anderen Shells vertraut sind, und führt gleichzeitig ein neues, leistungsstarkes Befehlszeilenmodell ein.
-Das Konzept des Übermittelns von Daten zwischen Befehlen wird erweitert, indem Sie Objekte anstelle von Text übermitteln können.
+
+PowerShell ist objekt- und nicht textbasiert. Die Ausgabe eines Befehls ist ein Objekt. Sie können das Ausgabeobjekt über die Pipeline als Eingabe an einen anderen Befehl senden.
+
+Diese Pipeline bietet Benutzern, die bereits über Erfahrung mit anderen Shells verfügen, eine vertraute Schnittstelle. PowerShell erweitert dieses Konzept durch das Senden von Objekten anstelle von Text.
 
 ### <a name="easy-transition-to-scripting"></a>Einfacher Übergang zur Skripterstellung
-PowerShell vereinfacht den Übergang von der interaktiven Eingabe von Befehlen zum Erstellen und Ausführen von Skripts.
-Sie können Befehle an der PowerShell-Eingabeaufforderung eingeben, um die Befehle zu ermitteln, die eine Aufgabe ausführen.
-Dann können Sie diese Befehle in einer Aufzeichnung oder einem Verlauf speichern, bevor Sie sie in eine Datei zur Verwendung als Skript kopieren.
+
+Die Erkennbarkeit von Befehlen in PowerShell vereinfacht den Übergang von der interaktiven Eingabe von Befehlen zum Erstellen und Ausführen von Skripts. Aufzeichnungen und der Verlauf von PowerShell erleichtern das Kopieren von Befehlen in eine Datei, um sie als Skript zu verwenden.

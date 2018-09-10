@@ -1,175 +1,182 @@
 ---
-ms.date: 06/05/2017
+ms.date: 08/27/2018
 keywords: powershell,cmdlet
 title: Abrufen von ausführlichen Hilfeinformationen
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: 29c24af3f688f9388893044952442910e793842d
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: 88f0357b935a7c75df07d667e3f2f2d0e493f89d
+ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34483031"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43134033"
 ---
-# <a name="getting-detailed-help-information"></a>Abrufen von ausführlichen Hilfeinformationen
-Windows PowerShell umfasst ausführliche Hilfethemen, in denen die Konzepte von Windows PowerShell und die Windows PowerShell-Sprache erläutert werden. Außerdem gibt es Hilfethemen für jedes Cmdlet und jeden Anbieter sowie Hilfethemen für viele Funktionen und Skripts.
+# <a name="getting-detailed-help-information"></a>Abrufen ausführlicher Hilfeinformationen
 
-Sie können diese Hilfethemen über die Eingabeaufforderung anzeigen, oder Sie können die zuletzt aktualisierten Versionen dieser Themen in der Microsoft TechNet Library anzeigen. Viele Programme, von denen Windows PowerShell gehostet wird, z.B. Windows PowerShell Integrated Scripting Environment, stellen zusätzliche Hilfefunktionen bereit, etwa kontextbezogene Hilfe und kompilierte Hilfedateien (CHM).
+PowerShell umfasst ausführliche Hilfeartikel, in denen die Konzepte von PowerShell und die PowerShell-Sprache erläutert werden. Außerdem gibt es Hilfeartikel für jedes Cmdlet und jeden Anbieter sowie für viele Funktionen und Skripts.
+
+Sie können diese Hilfeartikel über die Eingabeaufforderung anzeigen. Sie können aber auch die zuletzt aktualisierten Versionen dieser Artikel in der [PowerShell](/powershell/scripting/powershell-scripting)-Dokumentation online anzeigen.
 
 ## <a name="getting-help-for-cmdlets"></a>Abrufen von Hilfe für Cmdlets
-Wenn Sie Hilfe zu Windows PowerShell-Cmdlets abrufen möchten, verwenden Sie das Cmdlet [Get-Help [m2]](https://technet.microsoft.com/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2). Geben Sie beispielsweise Folgendes ein, um Hilfe für das Cmdlet [Get-ChildItem [m2]](https://technet.microsoft.com/library/4b270d63-c995-45b8-b5b4-3f8887efbfcc) abzurufen:
 
-```
-get-help get-childitem
+Wenn Sie Hilfe zu PowerShell-Cmdlets abrufen möchten, verwenden Sie das Cmdlet [Get-Help](/powershell/module/microsoft.powershell.core/Get-Help). Geben Sie beispielsweise Folgendes ein, um Hilfe für das Cmdlet `Get-ChildItem` abzurufen:
+
+```powershell
+Get-Help Get-ChildItem
 ```
 
 oder
 
-```
-get-childitem -?
+```powershell
+Get-ChildItem -?
 ```
 
 Sie können sogar Hilfe zu dem Cmdlet „Get-Help“ abrufen. Beispiel:
 
-```
-get-help get-help
-```
-
-Um eine Liste aller Cmdlet-Hilfethemen in der Sitzung abzurufen, geben Sie Folgendes ein:
-
-```
-get-help -category cmdlet
+```powershell
+Get-Help Get-Help
 ```
 
-Wenn Sie nur jeweils eine Seite jedes Hilfethemas anzeigen möchten, verwenden Sie die Funktion **help** oder deren Alias **man**. Wenn Sie beispielsweise Hilfe für das Cmdlet „Get-ChildItem“ anzeigen möchten, geben Sie Folgendes ein:
+Um eine Liste aller Cmdlet-Hilfeartikel in der Sitzung abzurufen, geben Sie Folgendes ein:
 
+```powershell
+Get-Help -Category Cmdlet
 ```
-man get-childitem
+
+Wenn Sie nur jeweils eine Seite jedes Hilfeartikels anzeigen möchten, verwenden Sie die Funktion `help` oder deren Alias `man`.
+Geben Sie beispielsweise Folgendes ein, um Hilfe für das Cmdlet `Get-ChildItem` anzuzeigen:
+
+```powershell
+man Get-ChildItem
 ```
 
 oder
 
-```
-help get-childitem
-```
-
-Um detaillierte Informationen zu einem Cmdlet, zu einer Funktion oder zu einem Skript samt Beschreibungen der jeweiligen Parameter sowie Beispielen für deren Verwendung anzuzeigen, verwenden Sie den *Detailed*-Parameter des Cmdlets „Get-Help“. Geben Sie beispielsweise Folgendes ein, um ausführliche Informationen zum Cmdlet „Get-ChildItem“ abzurufen:
-
-```
-get-help get-childitem -detailed
+```powershell
+help Get-ChildItem
 ```
 
-Wenn Sie den gesamten Inhalt eines Hilfethemas anzeigen möchten, verwenden Sie den *Full*-Parameter des Cmdlets „Get-Help“. Soll beispielsweise der gesamte Inhalt des Hilfethemas für das Cmdlet „Get-ChildItem“ angezeigt werden, geben Sie Folgendes ein:
+Um ausführliche Informationen anzuzeigen, verwenden Sie den Parameter **Detailed** des Cmdlets `Get-Help`. Geben Sie beispielsweise Folgendes ein, um ausführliche Informationen zum Cmdlet `Get-ChildItem` abzurufen:
 
-```
-get-help get-childitem -full
-```
-
-Um ausführliche Hilfe zu den Parametern eines Cmdlets abzurufen, verwenden Sie den *Parameter*-Parameter des Cmdlets „Get-Help“. Soll beispielsweise die ausführliche Hilfe zu allen Parametern des Cmdlets „Get-ChildItem“ abgerufen werden, geben Sie Folgendes ein:
-
-```
-get-help get-childitem -parameter *
+```powershell
+Get-Help Get-ChildItem -Detailed
 ```
 
-Um nur die Beispiele anzuzeigen, die es in einem Hilfethema gibt, verwenden Sie den *Example*-Parameter von „Get-Help“. Sollen beispielsweise nur die Beispiele im Hilfethema für das Cmdlet „Get-ChildItem“ angezeigt werden, geben Sie Folgendes ein:
+Wenn Sie den gesamten Inhalt eines Hilfeartikels anzeigen möchten, verwenden Sie den Parameter **Full** des Cmdlets `Get-Help`. Soll beispielsweise der gesamte Inhalt des Hilfeartikels für das Cmdlet `Get-ChildItem` angezeigt werden, geben Sie Folgendes ein:
 
-```
-get-help get-childitem -examples
+```powershell
+Get-Help Get-ChildItem -Full
 ```
 
-Informationen dazu, wie Sie Hilfethemen für die Cmdlets schreiben, die Sie erstellen, finden Sie unter [How to Write Cmdlet Help (Vorgehensweise: Schreiben von Cmdlet-Hilfe)](https://go.microsoft.com/fwlink/?LinkID=123415).
+Um ausführliche Hilfe zu den Parametern eines Cmdlets abzurufen, verwenden Sie den Parameter **Parameter** des Cmdlets `Get-Help`. Soll beispielsweise die ausführliche Hilfe zu allen Parametern des Cmdlets `Get-ChildItem` abgerufen werden, geben Sie Folgendes ein:
+
+```powershell
+Get-Help Get-ChildItem -Parameter *
+```
+
+Um nur die Beispiele in einem Hilfeartikel anzuzeigen, verwenden Sie den Parameter **Examples** von `Get-Help`.
+Sollen beispielsweise nur die Beispiele im Hilfeartikel für das Cmdlet `Get-ChildItem ` angezeigt werden, geben Sie Folgendes ein:
+
+```powershell
+Get-Help Get-ChildItem -Examples
+```
+
+Informationen dazu, wie Sie Hilfeartikel für die Cmdlets schreiben, die Sie erstellen, finden Sie unter [How to Write Cmdlet Help (Schreiben von Hilfe zu Cmdlets)](/powershell/developer/help/writing-help-for-windows-powershell-cmdlets).
 
 ## <a name="getting-conceptual-help"></a>Abrufen von konzeptioneller Hilfe
-Das Cmdlet „Get-Help“ zeigt auch Informationen zu konzeptionellen Themen in Windows PowerShell an, einschließlich Themen zur Windows PowerShell-Sprache. Konzeptionelle Hilfethemen beginnen mit dem Präfix „about_“, z.B. „about_line_editing“. (Der Name eines konzeptionellen Themas muss in Englisch eingegeben werden, auch in nicht englischsprachigen Versionen von Windows PowerShell.)
 
-Um eine Liste der konzeptionellen Themen anzuzeigen, geben Sie Folgendes ein:
+Das Cmdlet `Get-Help` zeigt auch Informationen zu konzeptionellen Artikeln in PowerShell an, darunter Artikel zur PowerShell-Sprache. Konzeptionelle Hilfeartikel beginnen mit dem Präfix „about_“, z.B. „about_line_editing“. (Der Name eines konzeptionellen Artikels muss in Englisch eingegeben werden, auch in nicht englischsprachigen Versionen von PowerShell.)
 
-```
-get-help about_*
-```
+Um eine Liste der konzeptionellen Artikel anzuzeigen, geben Sie Folgendes ein:
 
-Um ein bestimmtes Hilfethema anzuzeigen, geben Sie den Namen des Themas ein, zum Beispiel:
-
-```
-get-help about_command_syntax
+```powershell
+Get-Help about_*
 ```
 
-Die Parameter von „Get-Help“, etwa *Detailed*, *Parameter* und *Examples*, wirken sich nicht auf die Anzeige von konzeptionellen Hilfethemen aus.
+Um einen bestimmten Hilfeartikel anzuzeigen, geben Sie den Namen des Artikels ein, Beispiel:
+
+```powershell
+Get-Help about_command_syntax
+```
+
+Die Parameter von `Get-Help`, etwa **Detailed**, **Parameter** und **Examples**, wirken sich nicht auf die Anzeige von konzeptionellen Hilfeartikeln aus.
 
 ## <a name="getting-help-about-providers"></a>Abrufen von Hilfe zu Anbietern
-Das Cmdlet „Get-Help“ zeigt Informationen zu Windows PowerShell-Anbietern an. Um Hilfe zu einem Anbieter (Provider) zu abzurufen, geben Sie „Get-Help“ gefolgt vom Anbieternamen ein. Wenn Sie z. B. Hilfe zum Registrierungsanbieter abrufen möchten, geben Sie Folgendes ein:
 
-```
-get-help registry
-```
+Das Cmdlet `Get-Help` zeigt Informationen zu PowerShell-Anbietern an. Um Hilfe zu einem Anbieter abzurufen, geben Sie `Get-Help` gefolgt vom Anbieternamen ein. Wenn Sie z. B. Hilfe zum Registrierungsanbieter abrufen möchten, geben Sie Folgendes ein:
 
-Um eine Liste aller Anbieter-Hilfethemen in der Sitzung abzurufen, geben Sie Folgendes ein:
-
-```
-get-help -category provider
+```powershell
+Get-Help registry
 ```
 
-Die Parameter von „Get-Help“, etwa *Detailed*, *Parameter* und *Examples*, wirken sich nicht auf die Anzeige von Anbieter-Hilfethemen aus.
+Um eine Liste aller Hilfeartikel zu Anbietern in der Sitzung abzurufen, geben Sie Folgendes ein:
+
+```powershell
+Get-Help -Category provider
+```
+
+Die Parameter von `Get-Help`, etwa **Detailed**, **Parameter** und **Examples**, wirken sich nicht auf die Anzeige von Hilfeartikeln zu Anbietern aus.
 
 ## <a name="getting-help-about-scripts-and-functions"></a>Abrufen von Hilfe zu Skripts und Funktionen
-Viele Skripts und Funktionen in Windows PowerShell haben Hilfethemen. Verwenden Sie das Cmdlet „Get-Help“, um die Hilfethemen für Skripts und Funktionen anzuzeigen.
 
-Wenn Sie die Hilfe für eine Funktion anzeigen möchten, geben Sie „get-help“ und dahinter den Namen der Funktion ein. Soll beispielsweise Hilfe für die Funktion „Disable-PSRemoting“ abgerufen werden, geben Sie Folgendes ein:
+Viele Skripts und Funktionen in PowerShell haben Hilfeartikel. Verwenden Sie das Cmdlet `Get-Help`, um die Hilfeartikel für Skripts und Funktionen anzuzeigen.
 
-```
-get-help disable-psremoting
-```
+Wenn Sie die Hilfe für eine Funktion anzeigen möchten, geben Sie `Get-Help` und dahinter den Namen der Funktion ein. Geben Sie beispielsweise Folgendes ein, um Hilfe für die Funktion `Disable-PSRemoting` abzurufen:
 
-Um die Hilfe für ein Skript anzuzeigen, geben Sie den vollqualifizierten Pfad zur Skriptdatei ein. Befindet sich das Skript in einem Pfad, der in der Umgebungsvariablen „Path“ aufgelistet ist, müssen Sie den Pfad nicht im Befehl angeben.
-
-Wenn Sie beispielsweise ein Skript namens „TestScript.ps1“ in Ihrem Verzeichnis „C:\\PS-Test“ haben, geben Sie Folgendes ein, um das Hilfethema für das Skript anzuzeigen:
-
-```
-get-help c:\ps-test\TestScript.ps1
+```powershell
+Get-Help Disable-PSRemoting
 ```
 
-Die Parameter, die für die Anzeige von Cmdlet-Hilfe konzipiert wurden, etwa *Detailed*, *Full*, *Examples* und *Parameter*, funktionieren auch für Hilfe zu Skripts und Funktionen. Wenn Sie die gesamte Hilfe anzeigen, indem Sie „get-help \*“ eingeben, wird die Hilfe zu Funktionen und Skripts aber nicht angezeigt.
+Um die Hilfe für ein Skript anzuzeigen, geben Sie den Pfad zur Skriptdatei ein. Wenn sich das Skript nicht in einem Pfad befindet, der in der Umgebungsvariablen „Path“ aufgelistet ist, müssen Sie den vollqualifizierten Pfad verwenden.
 
-Informationen über das Schreiben von Hilfethemen für Ihre Funktionen und Skripts finden Sie unter [about_Functions [m2]](https://technet.microsoft.com/library/61d40692-5300-4de9-a9b5-bae31815e105), [about_Scripts](https://technet.microsoft.com/library/7dc08334-dcfe-450b-b949-0554855623af) und [about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf).
+Wenn Sie beispielsweise ein Skript namens „TestScript.ps1“ in Ihrem Verzeichnis „C:\\PS-Test“ haben, geben Sie Folgendes ein, um den Hilfeartikel für das Skript anzuzeigen:
+
+```powershell
+Get-Help c:\ps-test\TestScript.ps1
+```
+
+Die Parameter, die für die Anzeige der Cmdlet-Hilfe vorgesehen sind, funktionieren auch für die Hilfe zu Skripts und Funktionen. Die Hilfe zu Funktionen und Skripts wird allerdings nicht beim Ausführen von `Get-Help *` angezeigt.
+
+Informationen zum Schreiben von Hilfeartikeln für Ihre Funktionen und Skripts finden Sie in den folgenden Artikeln:
+
+- [about_Functions](/powershell/module/microsoft.powershell.core/about/about_functions)
+- [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts)
+- [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)
 
 ## <a name="getting-help-online"></a>Abrufen von Hilfe aus dem Internet
-Wenn Sie eine Verbindung mit dem Internet haben, ist eine der besten Möglichkeiten zum Abrufen von Hilfe, die Hilfethemen online anzuzeigen. Da online verfügbare Themen einfach zu aktualisieren sind, stellen sie wahrscheinlich die aktuellsten Inhalte bereit.
 
-Um Hilfe aus dem Internet abzurufen, verwenden Sie den *Online*-Parameter des Cmdlets „Get-Help“. Der *Online*-Parameter des Cmdlets „Get-Help“ funktioniert nur für Hilfe zu Cmdlets, Funktionen und Skripts. Der *Online*-Parameter kann nicht mit konzeptionellen Themen (About) oder Anbieter-Hilfethemen verwendet werden. Außerdem funktioniert dieser Parameter, da er optional ist, nicht für alle Hilfethemen zu Cmdlets, Funktionen oder Skripts.
+Die Onlineanzeige der Hilfeartikel ist eine der besten Möglichkeiten, um Hilfe zu erhalten. Onlineartikel können leichter aktualisiert werden und bieten aktuelle Inhalte.
 
-Allerdings sind alle Hilfethemen, die zu Windows PowerShell gehören, einschließlich Anbieter-Hilfe und konzeptioneller Hilfethemen (About), online im [Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116)-Abschnitt der Microsoft TechNet-Bibliothek verfügbar.
+Um Hilfe aus dem Internet abzurufen, verwenden Sie den Parameter **Online** des Cmdlets `Get-Help`. Alle Hilfeartikel für PowerShell, einschließlich der Hilfeartikel zu Anbietern und konzeptioneller Hilfeartikel („about“), stehen online in der [PowerShell](/powershell/scripting/powershell-scripting)-Dokumentation zur Verfügung.
 
-Wenn Sie den *Online*-Parameter des Cmdlets „Get-Help“ verwenden möchten, verwenden Sie das folgende Befehlsformat.
+> [!NOTE]
+> Der Parameter **Online** kann nicht mit konzeptionellen („about_*“) Hilfeartikeln oder Hilfeartikeln zu Anbietern verwendet werden.
+> Die Onlinehilfe ist optional, daher ist sie nicht für alle Cmdlets, Funktionen oder Skripts verfügbar.
 
-```
-get-help <command-name> -online
-```
+Möchten Sie beispielsweise die Onlineversion des Hilfeartikels zum Cmdlet `Get-ChildItem` abrufen, geben Sie Folgendes ein:
 
-Möchten Sie beispielsweise die Onlineversion des Hilfethemas zum Cmdlet „Get-ChildItem“ abrufen, geben Sie Folgendes ein:
-
-```
-get-help get-childitem -online
+```powershell
+Get-Help Get-ChildItem -Online
 ```
 
-Ist eine Onlineversion des Hilfethemas verfügbar, wird sie in Ihrem Standardbrowser geöffnet.
-
-Wird Onlinehilfe für ein Hilfethema unterstützt, können Sie auch die Internetadresse (URL) des Hilfethemas anzeigen. Die Internetadresse wird im Abschnitt „Verwandte Links“ eines Hilfethemas angezeigt.
+PowerShell öffnet den Artikel in Ihrem Standardbrowser. Wird Onlinehilfe für einen Hilfeartikel unterstützt, können Sie auch die URL des Hilfeartikels anzeigen. Die URL wird im Abschnitt „Verwandte Links“ eines Hilfeartikels angezeigt.
 
 Wenn Sie beispielsweise die URL für die Onlineversion des Cmdlets „Add-Computer“ anzeigen möchten, geben Sie Folgendes ein:
 
-```
-get-help add-computer
-```
-
-Die erste Zeile des Abschnitts „Verwandte Links“ des Themas ist nachstehend dargestellt.
-
-```
-Online version: http://go.microsoft.com/fwlink/?LinkID=135194
+```powershell
+Get-Help Add-Computer
 ```
 
-Informationen dazu, wie Sie die Onlineunterstützung für Ihre Hilfethemen bereitstellen, finden Sie in der MSDN-Bibliothek unter [about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf) sowie unter [How to Write Cmdlet Help (Schreiben von Cmdlet-Hilfe)](https://go.microsoft.com/fwlink/?LinkID=123415).
+Die erste Zeile des Abschnitts „Verwandte Links“ des Artikels ist nachstehend dargestellt.
 
-## <a name="see-also"></a>Weitere Informationen
-- [about_Functions [m2]](https://technet.microsoft.com/library/61d40692-5300-4de9-a9b5-bae31815e105)
-- [about_Scripts](https://technet.microsoft.com/library/7dc08334-dcfe-450b-b949-0554855623af)
-- [about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)
-- [Get-Help [m2]](https://technet.microsoft.com/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2)
+```Output
+Online version: http://go.microsoft.com/fwlink/?LinkId=821564
+```
+
+Informationen dazu, wie Sie Onlineunterstützung für Ihre Hilfeartikel bereitstellen, finden Sie unter [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
+
+## <a name="see-also"></a>Siehe auch
+
+- [about_Functions](/powershell/module/microsoft.powershell.core/about/about_functions)
+- [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts)
+- [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)
+- [Get-Help](/powershell/module/microsoft.powershell.core/get-help)
