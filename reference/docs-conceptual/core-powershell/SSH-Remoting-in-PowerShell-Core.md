@@ -1,41 +1,43 @@
 ---
 title: PowerShell-Remoting über SSH
 description: Remoting in PowerShell Core mithilfe von SSH
-ms.date: 08/06/2018
-ms.openlocfilehash: 27a8fc5623796a270a2ea67aa550c9a0998e766b
-ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.date: 08/14/2018
+ms.openlocfilehash: 1de034d667aa9a377e5460e7eb474402c690cb42
+ms.sourcegitcommit: 56b9be8503a5a1342c0b85b36f5ba6f57c281b63
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39587498"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "43133152"
 ---
-# <a name="powershell-remoting-over-ssh"></a><span data-ttu-id="fce72-103">PowerShell-Remoting über SSH</span><span class="sxs-lookup"><span data-stu-id="fce72-103">PowerShell Remoting Over SSH</span></span>
+# <a name="powershell-remoting-over-ssh"></a><span data-ttu-id="83d3f-103">PowerShell-Remoting über SSH</span><span class="sxs-lookup"><span data-stu-id="83d3f-103">PowerShell Remoting Over SSH</span></span>
 
-## <a name="overview"></a><span data-ttu-id="fce72-104">Übersicht</span><span class="sxs-lookup"><span data-stu-id="fce72-104">Overview</span></span>
+## <a name="overview"></a><span data-ttu-id="83d3f-104">Übersicht</span><span class="sxs-lookup"><span data-stu-id="83d3f-104">Overview</span></span>
 
-<span data-ttu-id="fce72-105">In der Regel wird beim PowerShell-Remoting für die Aushandlung der Verbindung und den Datentransport WinRM verwendet.</span><span class="sxs-lookup"><span data-stu-id="fce72-105">PowerShell remoting normally uses WinRM for connection negotiation and data transport.</span></span> <span data-ttu-id="fce72-106">Für diese Remoting-Implementierung wurde Secure Shell (SSH) ausgewählt, da dieses Netzwerkprotokoll jetzt sowohl für Linux- als auch für Windows-Plattformen verfügbar ist und das PowerShell-Remoting für mehrere Plattformen ermöglicht.</span><span class="sxs-lookup"><span data-stu-id="fce72-106">SSH was chosen for this remoting implementation since it is now available for both Linux and Windows platforms and allows true multiplatform PowerShell remoting.</span></span> <span data-ttu-id="fce72-107">Allerdings stellt WinRM auch einen stabiles Hostingmodell für PowerShell-Remotesitzungen zur Verfügung. Dies ist bei dieser Implementierung noch nicht der Fall.</span><span class="sxs-lookup"><span data-stu-id="fce72-107">However, WinRM also provides a robust hosting model for PowerShell remote sessions which this implementation does not yet do.</span></span> <span data-ttu-id="fce72-108">Das bedeutet, dass die Remotekonfiguration von Endpunkten und „Just Enough Administration“ (JEA, Minimale Administration) für PowerShell in dieser Implementierung noch nicht unterstützt wird.</span><span class="sxs-lookup"><span data-stu-id="fce72-108">And this means that PowerShell remote endpoint configuration and JEA (Just Enough Administration) is not yet supported in this implementation.</span></span>
+<span data-ttu-id="83d3f-105">In der Regel wird beim PowerShell-Remoting für die Aushandlung der Verbindung und den Datentransport WinRM verwendet.</span><span class="sxs-lookup"><span data-stu-id="83d3f-105">PowerShell remoting normally uses WinRM for connection negotiation and data transport.</span></span> <span data-ttu-id="83d3f-106">SSH ist jetzt für Linux- und Windows-Plattformen verfügbar und ermöglicht echtes PowerShell-Remoting für mehrere Plattformen.</span><span class="sxs-lookup"><span data-stu-id="83d3f-106">SSH is now available for Linux and Windows platforms and allows true multiplatform PowerShell remoting.</span></span>
 
-<span data-ttu-id="fce72-109">Mithilfe des SSH-Remotings für PowerShell können Sie grundlegendes PowerShell-Remoting von Sitzungen zwischen Windows- und Linux-Computern ausführen.</span><span class="sxs-lookup"><span data-stu-id="fce72-109">PowerShell SSH remoting lets you do basic PowerShell session remoting between Windows and Linux machines.</span></span> <span data-ttu-id="fce72-110">Dies geschieht durch Erstellen eines Hostingprozesses für PowerShell als SSH-Subsystem auf dem Zielcomputer.</span><span class="sxs-lookup"><span data-stu-id="fce72-110">This is done by creating a PowerShell hosting process on the target machine as an SSH subsystem.</span></span> <span data-ttu-id="fce72-111">Dies soll zukünftig in ein allgemeineres Hostingmodell geändert werden, das ähnlich wie WinRM funktioniert, um so Endpunktkonfigurationen und JEA zu unterstützen.</span><span class="sxs-lookup"><span data-stu-id="fce72-111">Eventually this will be changed to a more general hosting model similar to how WinRM works in order to support endpoint configuration and JEA.</span></span>
+<span data-ttu-id="83d3f-107">WinRM bietet ein stabiles Hostingmodell für PowerShell-Remotesitzungen.</span><span class="sxs-lookup"><span data-stu-id="83d3f-107">WinRM provides a robust hosting model for PowerShell remote sessions.</span></span> <span data-ttu-id="83d3f-108">Diese Implementierung von SSH-basiertem Remoting unterstützt derzeit die Remotekonfiguration von Endpunkten und „Just Enough Administration“ (JEA, minimale Administration) nicht.</span><span class="sxs-lookup"><span data-stu-id="83d3f-108">which this implementation SSH-based remoting doesn't currently support remote endpoint configuration and JEA (Just Enough Administration).</span></span>
 
-<span data-ttu-id="fce72-112">Die Cmdlets `New-PSSession`, `Enter-PSSession` und `Invoke-Command` verfügen nun über einen neuen Parameter, der diese neue Remotingverbindung vereinfachen sollen.</span><span class="sxs-lookup"><span data-stu-id="fce72-112">The `New-PSSession`, `Enter-PSSession` and `Invoke-Command` cmdlets now have a new parameter set to facilitate this new remoting connection</span></span>
+<span data-ttu-id="83d3f-109">Mithilfe von SSH-Remoting können Sie grundlegendes PowerShell-Remoting von Sitzungen zwischen Windows- und Linux-Computern ausführen.</span><span class="sxs-lookup"><span data-stu-id="83d3f-109">SSH remoting lets you do basic PowerShell session remoting between Windows and Linux machines.</span></span> <span data-ttu-id="83d3f-110">SSH-Remoting erstellt einen PowerShell-Hostprozess als SSH-Subsystem auf dem Zielcomputer.</span><span class="sxs-lookup"><span data-stu-id="83d3f-110">SSH Remoting creates a PowerShell host process on the target machine as an SSH subsystem.</span></span>
+<span data-ttu-id="83d3f-111">Schließlich implementieren wir ein allgemeines mit WinRM vergleichbares Hostingmodell, um die Endpunktkonfiguration und JEA zu unterstützen.</span><span class="sxs-lookup"><span data-stu-id="83d3f-111">Eventually we'll implement a general hosting model, similar to WinRM, to support endpoint configuration and JEA.</span></span>
+
+<span data-ttu-id="83d3f-112">Die Cmdlets `New-PSSession`, `Enter-PSSession` und `Invoke-Command` verfügen nun über einen neuen Parameter, der diese neue Remotingverbindung unterstützt.</span><span class="sxs-lookup"><span data-stu-id="83d3f-112">The `New-PSSession`, `Enter-PSSession`, and `Invoke-Command` cmdlets now have a new parameter set to support this new remoting connection.</span></span>
 
 ```
 [-HostName <string>]  [-UserName <string>]  [-KeyFilePath <string>]
 ```
 
-<span data-ttu-id="fce72-113">Es werden voraussichtlich noch Änderungen an diesen neuen Parametern vorgenommen. Derzeit dienen sie jedoch dazu, Ihnen das Erstellen von SSH PSSessions zu ermöglichen, die Sie an die Befehlszeile koppeln oder über die Sie Befehle und Skripts aufrufen können.</span><span class="sxs-lookup"><span data-stu-id="fce72-113">This new parameter set will likely change but for now allows you to create SSH PSSessions that you can interact with from the command line or invoke commands and scripts on.</span></span> <span data-ttu-id="fce72-114">Geben Sie den Zielcomputer über den HostName-Parameter an, und fügen Sie über „UserName“ einen Benutzernamen hinzu.</span><span class="sxs-lookup"><span data-stu-id="fce72-114">You specify the target machine with the HostName parameter and provide the user name with UserName.</span></span> <span data-ttu-id="fce72-115">Wenn Sie die Cmdlets über die PowerShell-Befehlszeile ausführen, werden Sie dazu aufgefordert, ein Kennwort einzugeben.</span><span class="sxs-lookup"><span data-stu-id="fce72-115">When running the cmdlets interactively at the PowerShell command line you will be prompted for a password.</span></span> <span data-ttu-id="fce72-116">Außerdem haben Sie die Möglichkeit, die SSH-Schlüsselauthentifizierung zu verwenden und einen Dateipfad mit einem privaten Schlüssel über den KeyFilePath-Parameter bereitzustellen.</span><span class="sxs-lookup"><span data-stu-id="fce72-116">But you also have the option to use SSH key authentication and provide a private key file path with the KeyFilePath parameter.</span></span>
+<span data-ttu-id="83d3f-113">Um eine Remotesitzung zu erstellen, geben Sie den Zielcomputer über den `HostName`-Parameter an, und fügen Sie über `UserName` den Benutzernamen hinzu.</span><span class="sxs-lookup"><span data-stu-id="83d3f-113">To create a remote session, you specify the target machine with the `HostName` parameter and provide the user name with `UserName`.</span></span> <span data-ttu-id="83d3f-114">Wenn Sie die Cmdlets interaktiv ausführen, werden Sie zur Kennworteingabe aufgefordert.</span><span class="sxs-lookup"><span data-stu-id="83d3f-114">When running the cmdlets interactively, you're prompted for a password.</span></span> <span data-ttu-id="83d3f-115">Sie können auch die SSH-Schlüsselauthentifizierung mithilfe einer privaten Schlüsseldatei mit dem `KeyFilePath`-Parameter verwenden.</span><span class="sxs-lookup"><span data-stu-id="83d3f-115">You can also, use SSH key authentication using a private key file with the `KeyFilePath` parameter.</span></span>
 
-## <a name="general-setup-information"></a><span data-ttu-id="fce72-117">Allgemeine Setupinformationen</span><span class="sxs-lookup"><span data-stu-id="fce72-117">General setup information</span></span>
+## <a name="general-setup-information"></a><span data-ttu-id="83d3f-116">Allgemeine Setupinformationen</span><span class="sxs-lookup"><span data-stu-id="83d3f-116">General setup information</span></span>
 
-<span data-ttu-id="fce72-118">SSH muss auf allen Computern installiert sein.</span><span class="sxs-lookup"><span data-stu-id="fce72-118">SSH is required to be installed on all machines.</span></span> <span data-ttu-id="fce72-119">Sie sollten sowohl den Client (`ssh.exe`) als auch den Server (`sshd.exe`) installieren, damit Sie das Remoting für Computer ausgiebig testen können.</span><span class="sxs-lookup"><span data-stu-id="fce72-119">You should install both client (`ssh.exe`) and server (`sshd.exe`) so that you can experiment with remoting to and from the machines.</span></span> <span data-ttu-id="fce72-120">Für Windows müssen Sie [Win32 OpenSSH über GitHub](https://github.com/PowerShell/Win32-OpenSSH/releases) installieren.</span><span class="sxs-lookup"><span data-stu-id="fce72-120">For Windows you will need to install [Win32 OpenSSH from GitHub](https://github.com/PowerShell/Win32-OpenSSH/releases).</span></span>
-<span data-ttu-id="fce72-121">Für Linux müssen Sie SSH (einschließlich SSHD-Server) entsprechend Ihrer jeweiligen Plattform installieren.</span><span class="sxs-lookup"><span data-stu-id="fce72-121">For Linux you will need to install SSH (including sshd server) appropriate to your platform.</span></span> <span data-ttu-id="fce72-122">Außerdem benötigen Sie einen aktuellen PowerShell-Build oder ein PowerShell-Paket von GitHub, das die Remotefunktion für SSH anbietet.</span><span class="sxs-lookup"><span data-stu-id="fce72-122">You will also need a recent PowerShell build or package from GitHub having the SSH remoting feature.</span></span>
-<span data-ttu-id="fce72-123">SSH-Subsysteme werden verwendet, um PowerShell-Prozesse auf dem Remotecomputer zu verwenden. Dafür muss der SSH-Server konfiguriert sein.</span><span class="sxs-lookup"><span data-stu-id="fce72-123">SSH subsystems is used to establish a PowerShell process on the remote machine and the SSH server will need to be configured for that.</span></span> <span data-ttu-id="fce72-124">Zusätzlich müssen Sie die Kennwortauthentifizierung und ggf. die schlüsselbasierte Authentifizierung aktivieren.</span><span class="sxs-lookup"><span data-stu-id="fce72-124">In addition you will need to enable password authentication and optionally key based authentication.</span></span>
+<span data-ttu-id="83d3f-117">SSH muss auf allen Computern installiert sein.</span><span class="sxs-lookup"><span data-stu-id="83d3f-117">SSH must be installed on all machines.</span></span> <span data-ttu-id="83d3f-118">Installieren Sie den SSH-Client (`ssh.exe`) und -Server (`sshd.exe`), damit Sie Remoting zwischen den Computern nutzen können.</span><span class="sxs-lookup"><span data-stu-id="83d3f-118">Install both the SSH client (`ssh.exe`) and server (`sshd.exe`) so that you can remote to and from the machines.</span></span> <span data-ttu-id="83d3f-119">Installieren Sie für Windows [Win32 OpenSSH über GitHub](https://github.com/PowerShell/Win32-OpenSSH/releases).</span><span class="sxs-lookup"><span data-stu-id="83d3f-119">For Windows, install [Win32 OpenSSH from GitHub](https://github.com/PowerShell/Win32-OpenSSH/releases).</span></span>
+<span data-ttu-id="83d3f-120">Installieren Sie für Linux SSH (einschließlich SSHD-Server) entsprechend Ihrer Plattform.</span><span class="sxs-lookup"><span data-stu-id="83d3f-120">For Linux, install SSH (including sshd server) appropriate to your platform.</span></span> <span data-ttu-id="83d3f-121">Sie müssen auch PowerShell Core über GitHub installieren, um das SSH-Remotingfeature zu erhalten.</span><span class="sxs-lookup"><span data-stu-id="83d3f-121">You also need to install PowerShell Core from GitHub to get the SSH remoting feature.</span></span> <span data-ttu-id="83d3f-122">Der SSH-Server muss konfiguriert werden, um ein SSH-Subsystem zum Hosten eines PowerShell-Prozesses auf dem Remotecomputer zu erstellen.</span><span class="sxs-lookup"><span data-stu-id="83d3f-122">The SSH server must be configured to create an SSH subsystem to host a PowerShell process on the remote machine.</span></span> <span data-ttu-id="83d3f-123">Sie müssen auch eine kennwort- oder schlüsselbasierte Authentifizierung konfigurieren und aktivieren.</span><span class="sxs-lookup"><span data-stu-id="83d3f-123">You also must configure enable password or key-based authentication.</span></span>
 
-## <a name="setup-on-windows-machine"></a><span data-ttu-id="fce72-125">Setup auf dem Windows-Computer</span><span class="sxs-lookup"><span data-stu-id="fce72-125">Setup on Windows Machine</span></span>
+## <a name="set-up-on-windows-machine"></a><span data-ttu-id="83d3f-124">Setup auf dem Windows-Computer</span><span class="sxs-lookup"><span data-stu-id="83d3f-124">Set up on Windows Machine</span></span>
 
-1. <span data-ttu-id="fce72-126">Installieren Sie die neuste Version von [PowerShell Core für Windows].</span><span class="sxs-lookup"><span data-stu-id="fce72-126">Install the latest version of [PowerShell Core for Windows]</span></span>
+1. <span data-ttu-id="83d3f-125">Installieren Sie die neuste Version von [PowerShell Core für Windows].</span><span class="sxs-lookup"><span data-stu-id="83d3f-125">Install the latest version of [PowerShell Core for Windows]</span></span>
 
-   - <span data-ttu-id="fce72-127">Anhand der Parameter für `New-PSSession` können Sie bestimmen, ob der Support für SSH-Remoting eingerichtet ist.</span><span class="sxs-lookup"><span data-stu-id="fce72-127">You can tell if it has the SSH remoting support by looking at the parameter sets for `New-PSSession`</span></span>
+   - <span data-ttu-id="83d3f-126">Anhand der Parameter für `New-PSSession` können Sie bestimmen, ob der Support für SSH-Remoting eingerichtet ist.</span><span class="sxs-lookup"><span data-stu-id="83d3f-126">You can tell if it has the SSH remoting support by looking at the parameter sets for `New-PSSession`</span></span>
 
    ```powershell
    Get-Command New-PSSession -syntax
@@ -45,138 +47,130 @@ ms.locfileid: "39587498"
    New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
    ```
 
-2. <span data-ttu-id="fce72-128">Installieren Sie den neusten [Win32 OpenSSH]-Build über GitHub, und verwenden Sie dabei die Anweisungen zur [Installation].</span><span class="sxs-lookup"><span data-stu-id="fce72-128">Install the latest [Win32 OpenSSH] build from GitHub using the [installation] instructions</span></span>
-3. <span data-ttu-id="fce72-129">Bearbeiten Sie die Datei „sshd_config“ am selben Ort, an dem Sie Win32 OpenSSH installiert haben.</span><span class="sxs-lookup"><span data-stu-id="fce72-129">Edit the sshd_config file at the location where you installed Win32 OpenSSH</span></span>
+2. <span data-ttu-id="83d3f-127">Installieren Sie den neusten [Win32 OpenSSH]-Build über GitHub, und verwenden Sie dabei die Anweisungen zur [Installation].</span><span class="sxs-lookup"><span data-stu-id="83d3f-127">Install the latest [Win32 OpenSSH] build from GitHub using the [installation] instructions</span></span>
+3. <span data-ttu-id="83d3f-128">Bearbeiten Sie die Datei „sshd_config“ am selben Ort, an dem Sie Win32 OpenSSH installiert haben.</span><span class="sxs-lookup"><span data-stu-id="83d3f-128">Edit the sshd_config file at the location where you installed Win32 OpenSSH</span></span>
 
-   - <span data-ttu-id="fce72-130">Vergewissern Sie sich, dass die Kennwortauthentifizierung aktiviert ist.</span><span class="sxs-lookup"><span data-stu-id="fce72-130">Make sure password authentication is enabled</span></span>
+   - <span data-ttu-id="83d3f-129">Vergewissern Sie sich, dass die Kennwortauthentifizierung aktiviert ist.</span><span class="sxs-lookup"><span data-stu-id="83d3f-129">Make sure password authentication is enabled</span></span>
 
      ```
      PasswordAuthentication yes
      ```
 
      ```
-     Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
+     Subsystem    powershell c:/program files/powershell/6.0.4/pwsh.exe -sshs -NoLogo -NoProfile
      ```
 
      > [!NOTE]
-     > <span data-ttu-id="fce72-131">Es besteht ein Fehler in OpenSSH für Windows, der verhindert, dass Leerzeichen in ausführbaren Pfaden zu Subsystemen funktionieren.</span><span class="sxs-lookup"><span data-stu-id="fce72-131">There is a bug in OpenSSH for Windows that prevents spaces from working in subsystem executable paths.</span></span>
-     > <span data-ttu-id="fce72-132">[Weitere Informationen zu diesem Problem finden Sie auf GitHub.](https://github.com/PowerShell/Win32-OpenSSH/issues/784)</span><span class="sxs-lookup"><span data-stu-id="fce72-132">See [this issue on GitHub for more information](https://github.com/PowerShell/Win32-OpenSSH/issues/784).</span></span>
+     > <span data-ttu-id="83d3f-130">Es besteht ein Fehler in OpenSSH für Windows, der verhindert, dass Leerzeichen in ausführbaren Pfaden zu Subsystemen funktionieren.</span><span class="sxs-lookup"><span data-stu-id="83d3f-130">There is a bug in OpenSSH for Windows that prevents spaces from working in subsystem executable paths.</span></span> <span data-ttu-id="83d3f-131">Weitere Informationen finden Sie in [diesem GitHub-Problem](https://github.com/PowerShell/Win32-OpenSSH/issues/784).</span><span class="sxs-lookup"><span data-stu-id="83d3f-131">For more information, see [this GitHub issue](https://github.com/PowerShell/Win32-OpenSSH/issues/784).</span></span>
 
-     <span data-ttu-id="fce72-133">Um dieses Problem zu beheben, können Sie eine symbolische Verknüpfung mit dem Installationsverzeichnis herstellen, das keine Leerzeichen enthält:</span><span class="sxs-lookup"><span data-stu-id="fce72-133">One solution is to create a symlink to the Powershell installation directory that does not contain spaces:</span></span>
+     <span data-ttu-id="83d3f-132">Um dieses Problem zu beheben, können Sie eine symbolische Verknüpfung mit dem PowerShell-Installationsverzeichnis herstellen, die keine Leerzeichen enthält:</span><span class="sxs-lookup"><span data-stu-id="83d3f-132">One solution is to create a symlink to the Powershell installation directory that doesn't have spaces:</span></span>
 
      ```powershell
-     mklink /D c:\pwsh "C:\Program Files\PowerShell\6.0.0"
+     mklink /D c:\pwsh "C:\Program Files\PowerShell\6.0.4"
      ```
 
-     <span data-ttu-id="fce72-134">Geben Sie diese anschließend in das Subsystem ein:</span><span class="sxs-lookup"><span data-stu-id="fce72-134">and then enter it in the subsystem:</span></span>
+     <span data-ttu-id="83d3f-133">Geben Sie diese anschließend in das Subsystem ein:</span><span class="sxs-lookup"><span data-stu-id="83d3f-133">and then enter it in the subsystem:</span></span>
 
      ```
      Subsystem    powershell c:\pwsh\pwsh.exe -sshs -NoLogo -NoProfile
      ```
 
-     ```
-     Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
-     ```
-
-   - <span data-ttu-id="fce72-135">Aktivieren Sie ggf. die Schlüsselauthentifizierung.</span><span class="sxs-lookup"><span data-stu-id="fce72-135">Optionally enable key authentication</span></span>
+   - <span data-ttu-id="83d3f-134">Aktivieren Sie ggf. die Schlüsselauthentifizierung.</span><span class="sxs-lookup"><span data-stu-id="83d3f-134">Optionally enable key authentication</span></span>
 
      ```
      PubkeyAuthentication yes
      ```
 
-4. <span data-ttu-id="fce72-136">Starten Sie den SSHD-Dienst neu.</span><span class="sxs-lookup"><span data-stu-id="fce72-136">Restart the sshd service</span></span>
+4. <span data-ttu-id="83d3f-135">Starten Sie den SSHD-Dienst neu.</span><span class="sxs-lookup"><span data-stu-id="83d3f-135">Restart the sshd service</span></span>
 
    ```powershell
    Restart-Service sshd
    ```
 
-5. <span data-ttu-id="fce72-137">Fügen Sie den Pfad an der Stelle hinzu, an der OpenSSH für die Variable „Path Env“ installiert ist.</span><span class="sxs-lookup"><span data-stu-id="fce72-137">Add the path where OpenSSH is installed to your Path Env Variable</span></span>
+5. <span data-ttu-id="83d3f-136">Fügen Sie den Pfad der OpenSSH-Installation der Umgebungsvariablen „Path“ hinzu.</span><span class="sxs-lookup"><span data-stu-id="83d3f-136">Add the path where OpenSSH is installed to your Path environment variable.</span></span> <span data-ttu-id="83d3f-137">Beispiel: `C:\Program Files\OpenSSH\`.</span><span class="sxs-lookup"><span data-stu-id="83d3f-137">For example, `C:\Program Files\OpenSSH\`.</span></span> <span data-ttu-id="83d3f-138">Durch diesen Eintrag kann die Datei „ssh.exe“ gefunden werden.</span><span class="sxs-lookup"><span data-stu-id="83d3f-138">This entry allows for the ssh.exe to be found.</span></span>
 
-   - <span data-ttu-id="fce72-138">Dieser Pfad sollte wie folgt lauten: `C:\Program Files\OpenSSH\`.</span><span class="sxs-lookup"><span data-stu-id="fce72-138">This should be along the lines of `C:\Program Files\OpenSSH\`</span></span>
-   - <span data-ttu-id="fce72-139">So kann die Datei „ssh.exe“ gefunden werden.</span><span class="sxs-lookup"><span data-stu-id="fce72-139">This allows for the ssh.exe to be found</span></span>
+## <a name="set-up-on-linux-ubuntu-1404-machine"></a><span data-ttu-id="83d3f-139">Setup auf einem Linux-Computer (Ubuntu 14.04)</span><span class="sxs-lookup"><span data-stu-id="83d3f-139">Set up on Linux (Ubuntu 14.04) Machine</span></span>
 
-## <a name="setup-on-linux-ubuntu-1404-machine"></a><span data-ttu-id="fce72-140">Setup auf einem Linux-Computer (Ubuntu 14.04)</span><span class="sxs-lookup"><span data-stu-id="fce72-140">Setup on Linux (Ubuntu 14.04) Machine</span></span>
-
-1. <span data-ttu-id="fce72-141">Installieren Sie den neusten Build von [PowerShell Core für Linux] über GitHub.</span><span class="sxs-lookup"><span data-stu-id="fce72-141">Install the latest [PowerShell Core for Linux] build from GitHub</span></span>
-2. <span data-ttu-id="fce72-142">Installieren Sie ggf. [Ubuntu SSH].</span><span class="sxs-lookup"><span data-stu-id="fce72-142">Install [Ubuntu SSH] as needed</span></span>
+1. <span data-ttu-id="83d3f-140">Installieren Sie den neusten Build von [PowerShell Core für Linux] über GitHub.</span><span class="sxs-lookup"><span data-stu-id="83d3f-140">Install the latest [PowerShell Core for Linux] build from GitHub</span></span>
+2. <span data-ttu-id="83d3f-141">Installieren Sie ggf. [Ubuntu SSH].</span><span class="sxs-lookup"><span data-stu-id="83d3f-141">Install [Ubuntu SSH] as needed</span></span>
 
    ```bash
    sudo apt install openssh-client
    sudo apt install openssh-server
    ```
 
-3. <span data-ttu-id="fce72-143">Bearbeiten Sie die Datei „sshd_config“ unter „/etc/ssh“.</span><span class="sxs-lookup"><span data-stu-id="fce72-143">Edit the sshd_config file at location /etc/ssh</span></span>
+3. <span data-ttu-id="83d3f-142">Bearbeiten Sie die Datei „sshd_config“ unter „/etc/ssh“.</span><span class="sxs-lookup"><span data-stu-id="83d3f-142">Edit the sshd_config file at location /etc/ssh</span></span>
 
-   - <span data-ttu-id="fce72-144">Vergewissern Sie sich, dass die Kennwortauthentifizierung aktiviert ist.</span><span class="sxs-lookup"><span data-stu-id="fce72-144">Make sure password authentication is enabled</span></span>
+   - <span data-ttu-id="83d3f-143">Vergewissern Sie sich, dass die Kennwortauthentifizierung aktiviert ist.</span><span class="sxs-lookup"><span data-stu-id="83d3f-143">Make sure password authentication is enabled</span></span>
 
    ```
    PasswordAuthentication yes
    ```
 
-   - <span data-ttu-id="fce72-145">Fügen Sie einen Eintrag für das PowerShell-Subsystem hinzu.</span><span class="sxs-lookup"><span data-stu-id="fce72-145">Add a PowerShell subsystem entry</span></span>
+   - <span data-ttu-id="83d3f-144">Fügen Sie einen Eintrag für das PowerShell-Subsystem hinzu.</span><span class="sxs-lookup"><span data-stu-id="83d3f-144">Add a PowerShell subsystem entry</span></span>
 
    ```
    Subsystem powershell /usr/bin/pwsh -sshs -NoLogo -NoProfile
    ```
 
-   - <span data-ttu-id="fce72-146">Aktivieren Sie ggf. die Schlüsselauthentifizierung.</span><span class="sxs-lookup"><span data-stu-id="fce72-146">Optionally enable key authentication</span></span>
+   - <span data-ttu-id="83d3f-145">Aktivieren Sie ggf. die Schlüsselauthentifizierung.</span><span class="sxs-lookup"><span data-stu-id="83d3f-145">Optionally enable key authentication</span></span>
 
    ```
    PubkeyAuthentication yes
    ```
 
-4. <span data-ttu-id="fce72-147">Starten Sie den SSHD-Dienst neu.</span><span class="sxs-lookup"><span data-stu-id="fce72-147">Restart the sshd service</span></span>
+4. <span data-ttu-id="83d3f-146">Starten Sie den SSHD-Dienst neu.</span><span class="sxs-lookup"><span data-stu-id="83d3f-146">Restart the sshd service</span></span>
 
    ```bash
    sudo service sshd restart
    ```
 
-## <a name="setup-on-macos-machine"></a><span data-ttu-id="fce72-148">Setup auf einem macOS-Computer</span><span class="sxs-lookup"><span data-stu-id="fce72-148">Setup on MacOS Machine</span></span>
+## <a name="set-up-on-macos-machine"></a><span data-ttu-id="83d3f-147">Setup auf einem macOS-Computer</span><span class="sxs-lookup"><span data-stu-id="83d3f-147">Set up on MacOS Machine</span></span>
 
-1. <span data-ttu-id="fce72-149">Installieren Sie den neusten Build von [PowerShell Core für macOS].</span><span class="sxs-lookup"><span data-stu-id="fce72-149">Install the latest [PowerShell Core for MacOS] build</span></span>
+1. <span data-ttu-id="83d3f-148">Installieren Sie den neusten Build von [PowerShell Core für macOS].</span><span class="sxs-lookup"><span data-stu-id="83d3f-148">Install the latest [PowerShell Core for MacOS] build</span></span>
 
-   - <span data-ttu-id="fce72-150">Vergewissern Sie sich, dass SSH-Remoting aktiviert ist, indem Sie die folgenden Schritte ausführen:</span><span class="sxs-lookup"><span data-stu-id="fce72-150">Make sure SSH Remoting is enabled by following these steps:</span></span>
-     - <span data-ttu-id="fce72-151">Öffnen Sie `System Preferences`.</span><span class="sxs-lookup"><span data-stu-id="fce72-151">Open `System Preferences`</span></span>
-     - <span data-ttu-id="fce72-152">Klicken Sie auf `Sharing`.</span><span class="sxs-lookup"><span data-stu-id="fce72-152">Click on `Sharing`</span></span>
-     - <span data-ttu-id="fce72-153">Überprüfen Sie, ob für `Remote Login` `Remote Login: On` angezeigt wird.</span><span class="sxs-lookup"><span data-stu-id="fce72-153">Check `Remote Login` - Should say `Remote Login: On`</span></span>
-     - <span data-ttu-id="fce72-154">Erteilen Sie den entsprechenden Benutzern Zugriff.</span><span class="sxs-lookup"><span data-stu-id="fce72-154">Allow access to appropriate users</span></span>
+   - <span data-ttu-id="83d3f-149">Vergewissern Sie sich, dass SSH-Remoting aktiviert ist, indem Sie die folgenden Schritte ausführen:</span><span class="sxs-lookup"><span data-stu-id="83d3f-149">Make sure SSH Remoting is enabled by following these steps:</span></span>
+     - <span data-ttu-id="83d3f-150">Öffnen Sie `System Preferences`.</span><span class="sxs-lookup"><span data-stu-id="83d3f-150">Open `System Preferences`</span></span>
+     - <span data-ttu-id="83d3f-151">Klicken Sie auf `Sharing`.</span><span class="sxs-lookup"><span data-stu-id="83d3f-151">Click on `Sharing`</span></span>
+     - <span data-ttu-id="83d3f-152">Überprüfen Sie, ob für `Remote Login` `Remote Login: On` angezeigt wird.</span><span class="sxs-lookup"><span data-stu-id="83d3f-152">Check `Remote Login` - Should say `Remote Login: On`</span></span>
+     - <span data-ttu-id="83d3f-153">Erteilen Sie den entsprechenden Benutzern Zugriff.</span><span class="sxs-lookup"><span data-stu-id="83d3f-153">Allow access to appropriate users</span></span>
 
-2. <span data-ttu-id="fce72-155">Bearbeiten Sie die Datei `sshd_config` unter `/private/etc/ssh/sshd_config`.</span><span class="sxs-lookup"><span data-stu-id="fce72-155">Edit the `sshd_config` file at location `/private/etc/ssh/sshd_config`</span></span>
+2. <span data-ttu-id="83d3f-154">Bearbeiten Sie die Datei `sshd_config` unter `/private/etc/ssh/sshd_config`.</span><span class="sxs-lookup"><span data-stu-id="83d3f-154">Edit the `sshd_config` file at location `/private/etc/ssh/sshd_config`</span></span>
 
-   - <span data-ttu-id="fce72-156">Verwenden Sie den von Ihnen bevorzugten Editor, oder</span><span class="sxs-lookup"><span data-stu-id="fce72-156">Use your favorite editor or</span></span>
+   - <span data-ttu-id="83d3f-155">Verwenden Sie den von Ihnen bevorzugten Editor, oder</span><span class="sxs-lookup"><span data-stu-id="83d3f-155">Use your favorite editor or</span></span>
 
      ```bash
      sudo nano /private/etc/ssh/sshd_config
      ```
 
-   - <span data-ttu-id="fce72-157">Vergewissern Sie sich, dass die Kennwortauthentifizierung aktiviert ist.</span><span class="sxs-lookup"><span data-stu-id="fce72-157">Make sure password authentication is enabled</span></span>
+   - <span data-ttu-id="83d3f-156">Vergewissern Sie sich, dass die Kennwortauthentifizierung aktiviert ist.</span><span class="sxs-lookup"><span data-stu-id="83d3f-156">Make sure password authentication is enabled</span></span>
 
      ```
      PasswordAuthentication yes
      ```
 
-   - <span data-ttu-id="fce72-158">Fügen Sie einen Eintrag für das PowerShell-Subsystem hinzu.</span><span class="sxs-lookup"><span data-stu-id="fce72-158">Add a PowerShell subsystem entry</span></span>
+   - <span data-ttu-id="83d3f-157">Fügen Sie einen Eintrag für das PowerShell-Subsystem hinzu.</span><span class="sxs-lookup"><span data-stu-id="83d3f-157">Add a PowerShell subsystem entry</span></span>
 
      ```
      Subsystem powershell /usr/local/bin/pwsh -sshs -NoLogo -NoProfile
      ```
 
-   - <span data-ttu-id="fce72-159">Aktivieren Sie ggf. die Schlüsselauthentifizierung.</span><span class="sxs-lookup"><span data-stu-id="fce72-159">Optionally enable key authentication</span></span>
+   - <span data-ttu-id="83d3f-158">Aktivieren Sie ggf. die Schlüsselauthentifizierung.</span><span class="sxs-lookup"><span data-stu-id="83d3f-158">Optionally enable key authentication</span></span>
 
      ```
      PubkeyAuthentication yes
      ```
 
-3. <span data-ttu-id="fce72-160">Starten Sie den SSHD-Dienst neu.</span><span class="sxs-lookup"><span data-stu-id="fce72-160">Restart the sshd service</span></span>
+3. <span data-ttu-id="83d3f-159">Starten Sie den SSHD-Dienst neu.</span><span class="sxs-lookup"><span data-stu-id="83d3f-159">Restart the sshd service</span></span>
 
    ```bash
    sudo launchctl stop com.openssh.sshd
    sudo launchctl start com.openssh.sshd
    ```
 
-## <a name="powershell-remoting-example"></a><span data-ttu-id="fce72-161">Beispiel für das PowerShell-Remoting</span><span class="sxs-lookup"><span data-stu-id="fce72-161">PowerShell Remoting Example</span></span>
+## <a name="powershell-remoting-example"></a><span data-ttu-id="83d3f-160">Beispiel für das PowerShell-Remoting</span><span class="sxs-lookup"><span data-stu-id="83d3f-160">PowerShell Remoting Example</span></span>
 
-<span data-ttu-id="fce72-162">Sie können das Remoting am einfachsten auf einem einzelnen Computer testen.</span><span class="sxs-lookup"><span data-stu-id="fce72-162">The easiest way to test remoting is to just try it on a single machine.</span></span> <span data-ttu-id="fce72-163">In diesem Beispiel wird eine Remotesitzung zu demselben Computer auf einem Linux-Feld erstellt.</span><span class="sxs-lookup"><span data-stu-id="fce72-163">Here I will create a remote session back to the same machine on a Linux box.</span></span> <span data-ttu-id="fce72-164">An dieser Stelle werden PowerShell-Cmdlets über eine Eingabeaufforderung verwendet, sodass SSH-Fenster angezeigt werden, in denen Sie dazu aufgefordert werden, den Hostcomputer zu überprüfen und Kennwörter einzugeben.</span><span class="sxs-lookup"><span data-stu-id="fce72-164">Notice that I am using PowerShell cmdlets from a command prompt so we see prompts from SSH asking to verify the host computer as well as password prompts.</span></span> <span data-ttu-id="fce72-165">Sie können auf einem Windows-Computer genauso vorgehen, um zu gewährleisten, dass das Remoting funktioniert. Stellen Sie dann eine Remoteverbindung zwischen verschiedenen Computern her, indem Sie nur den Hostnamen ändern.</span><span class="sxs-lookup"><span data-stu-id="fce72-165">You can do the same thing on a Windows machine to ensure remoting is working there and then remote between machines by simply changing the host name.</span></span>
+<span data-ttu-id="83d3f-161">Sie können das Remoting am einfachsten auf einem einzelnen Computer testen.</span><span class="sxs-lookup"><span data-stu-id="83d3f-161">The easiest way to test remoting is to try it on a single machine.</span></span> <span data-ttu-id="83d3f-162">In diesem Beispiel haben wir eine Remotesitzung mit demselben Linux-Computer erstellt.</span><span class="sxs-lookup"><span data-stu-id="83d3f-162">In this example, we create a remote session back to the same Linux machine.</span></span> <span data-ttu-id="83d3f-163">Wir verwenden PowerShell-Cmdlets interaktiv, damit wir Eingabeaufforderungen von SSH sehen, die zum Überprüfen des Hostcomputers und zur Kennworteingabe auffordern.</span><span class="sxs-lookup"><span data-stu-id="83d3f-163">We are using PowerShell cmdlets interactively so we see prompts from SSH asking to verify the host computer and prompting for a password.</span></span> <span data-ttu-id="83d3f-164">Sie können dies auch auf einem Windows-Computer durchführen, um sicherzustellen, dass das Remoting funktioniert.</span><span class="sxs-lookup"><span data-stu-id="83d3f-164">You can do the same thing on a Windows machine to ensure remoting is working.</span></span> <span data-ttu-id="83d3f-165">Verwenden Sie dann Remoting zwischen Computern, indem Sie den Hostnamen ändern.</span><span class="sxs-lookup"><span data-stu-id="83d3f-165">Then remote between machines by changing the host name.</span></span>
 
 ```powershell
 #
@@ -197,9 +191,9 @@ $session
 ```
 
 ```output
- Id Name            ComputerName    ComputerType    State         ConfigurationName     Availability
- -- ----            ------------    ------------    -----         -----------------     ------------
-  1 SSH1            UbuntuVM1       RemoteMachine   Opened        DefaultShell             Available
+ Id Name   ComputerName    ComputerType    State    ConfigurationName     Availability
+ -- ----   ------------    ------------    -----    -----------------     ------------
+  1 SSH1   UbuntuVM1       RemoteMachine   Opened   DefaultShell             Available
 ```
 
 ```powershell
@@ -301,20 +295,20 @@ GitCommitId                    v6.0.0-alpha.17
 [WinVM2]: PS C:\Users\PSRemoteUser\Documents>
 ```
 
-### <a name="known-issues"></a><span data-ttu-id="fce72-166">Bekannte Probleme</span><span class="sxs-lookup"><span data-stu-id="fce72-166">Known Issues</span></span>
+### <a name="known-issues"></a><span data-ttu-id="83d3f-166">Bekannte Probleme</span><span class="sxs-lookup"><span data-stu-id="83d3f-166">Known Issues</span></span>
 
-<span data-ttu-id="fce72-167">Der Befehl „sudo“ funktioniert bei Remotesitzungen auf Linux-Computern nicht.</span><span class="sxs-lookup"><span data-stu-id="fce72-167">The sudo command does not work in remote session to Linux machine.</span></span>
+<span data-ttu-id="83d3f-167">Der Befehl „sudo“ funktioniert bei Remotesitzungen auf Linux-Computern nicht.</span><span class="sxs-lookup"><span data-stu-id="83d3f-167">The sudo command doesn't work in remote session to Linux machine.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="fce72-168">Weitere Informationen</span><span class="sxs-lookup"><span data-stu-id="fce72-168">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="83d3f-168">Weitere Informationen</span><span class="sxs-lookup"><span data-stu-id="83d3f-168">See Also</span></span>
 
-[<span data-ttu-id="fce72-169">PowerShell Core für Windows</span><span class="sxs-lookup"><span data-stu-id="fce72-169">PowerShell Core for Windows</span></span>](../setup/installing-powershell-core-on-windows.md#msi)
+[<span data-ttu-id="83d3f-169">PowerShell Core für Windows</span><span class="sxs-lookup"><span data-stu-id="83d3f-169">PowerShell Core for Windows</span></span>](../setup/installing-powershell-core-on-windows.md#msi)
 
-[<span data-ttu-id="fce72-170">PowerShell Core für Linux</span><span class="sxs-lookup"><span data-stu-id="fce72-170">PowerShell Core for Linux</span></span>](../setup/installing-powershell-core-on-linux.md#ubuntu-1404)
+[<span data-ttu-id="83d3f-170">PowerShell Core für Linux</span><span class="sxs-lookup"><span data-stu-id="83d3f-170">PowerShell Core for Linux</span></span>](../setup/installing-powershell-core-on-linux.md#ubuntu-1404)
 
-[<span data-ttu-id="fce72-171">PowerShell Core für macOS</span><span class="sxs-lookup"><span data-stu-id="fce72-171">PowerShell Core for MacOS</span></span>](../setup/installing-powershell-core-on-macos.md)
+[<span data-ttu-id="83d3f-171">PowerShell Core für macOS</span><span class="sxs-lookup"><span data-stu-id="83d3f-171">PowerShell Core for MacOS</span></span>](../setup/installing-powershell-core-on-macos.md)
 
-[<span data-ttu-id="fce72-172">Win32 OpenSSH</span><span class="sxs-lookup"><span data-stu-id="fce72-172">Win32 OpenSSH</span></span>](https://github.com/PowerShell/Win32-OpenSSH/releases)
+[<span data-ttu-id="83d3f-172">Win32 OpenSSH</span><span class="sxs-lookup"><span data-stu-id="83d3f-172">Win32 OpenSSH</span></span>](https://github.com/PowerShell/Win32-OpenSSH/releases)
 
-[<span data-ttu-id="fce72-173">Installation</span><span class="sxs-lookup"><span data-stu-id="fce72-173">installation</span></span>](https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH)
+[<span data-ttu-id="83d3f-173">Installation</span><span class="sxs-lookup"><span data-stu-id="83d3f-173">installation</span></span>](https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH)
 
-[<span data-ttu-id="fce72-174">Ubuntu SSH</span><span class="sxs-lookup"><span data-stu-id="fce72-174">Ubuntu SSH</span></span>](https://help.ubuntu.com/lts/serverguide/openssh-server.html)
+[<span data-ttu-id="83d3f-174">Ubuntu SSH</span><span class="sxs-lookup"><span data-stu-id="83d3f-174">Ubuntu SSH</span></span>](https://help.ubuntu.com/lts/serverguide/openssh-server.html)

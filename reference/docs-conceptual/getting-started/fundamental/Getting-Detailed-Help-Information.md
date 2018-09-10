@@ -1,175 +1,182 @@
 ---
-ms.date: 06/05/2017
+ms.date: 08/27/2018
 keywords: powershell,cmdlet
 title: Abrufen von ausführlichen Hilfeinformationen
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: 29c24af3f688f9388893044952442910e793842d
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: 88f0357b935a7c75df07d667e3f2f2d0e493f89d
+ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34483031"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43134033"
 ---
-# <a name="getting-detailed-help-information"></a><span data-ttu-id="f0976-103">Abrufen von ausführlichen Hilfeinformationen</span><span class="sxs-lookup"><span data-stu-id="f0976-103">Getting Detailed Help Information</span></span>
-<span data-ttu-id="f0976-104">Windows PowerShell umfasst ausführliche Hilfethemen, in denen die Konzepte von Windows PowerShell und die Windows PowerShell-Sprache erläutert werden.</span><span class="sxs-lookup"><span data-stu-id="f0976-104">Windows PowerShell includes detailed Help topics that explain Windows PowerShell concepts and the Windows PowerShell language.</span></span> <span data-ttu-id="f0976-105">Außerdem gibt es Hilfethemen für jedes Cmdlet und jeden Anbieter sowie Hilfethemen für viele Funktionen und Skripts.</span><span class="sxs-lookup"><span data-stu-id="f0976-105">There are also Help topics for each cmdlet and provider and Help topics for many functions and scripts.</span></span>
+# <a name="getting-detailed-help-information"></a><span data-ttu-id="a4290-103">Abrufen ausführlicher Hilfeinformationen</span><span class="sxs-lookup"><span data-stu-id="a4290-103">Getting detailed help information</span></span>
 
-<span data-ttu-id="f0976-106">Sie können diese Hilfethemen über die Eingabeaufforderung anzeigen, oder Sie können die zuletzt aktualisierten Versionen dieser Themen in der Microsoft TechNet Library anzeigen.</span><span class="sxs-lookup"><span data-stu-id="f0976-106">You can display these Help topics at the command prompt or view the most recently updated versions of these topics in the Microsoft TechNet Library.</span></span> <span data-ttu-id="f0976-107">Viele Programme, von denen Windows PowerShell gehostet wird, z.B. Windows PowerShell Integrated Scripting Environment, stellen zusätzliche Hilfefunktionen bereit, etwa kontextbezogene Hilfe und kompilierte Hilfedateien (CHM).</span><span class="sxs-lookup"><span data-stu-id="f0976-107">Many programs that host Windows PowerShell, such as Windows PowerShell Integrated Scripting Environment, provide additional Help features, such as context-sensitive Help and compiled Help file (.chm).</span></span>
+<span data-ttu-id="a4290-104">PowerShell umfasst ausführliche Hilfeartikel, in denen die Konzepte von PowerShell und die PowerShell-Sprache erläutert werden.</span><span class="sxs-lookup"><span data-stu-id="a4290-104">PowerShell includes detailed Help articles that explain PowerShell concepts and the PowerShell language.</span></span> <span data-ttu-id="a4290-105">Außerdem gibt es Hilfeartikel für jedes Cmdlet und jeden Anbieter sowie für viele Funktionen und Skripts.</span><span class="sxs-lookup"><span data-stu-id="a4290-105">There are also Help articles for each cmdlet and provider and for many functions and scripts.</span></span>
 
-## <a name="getting-help-for-cmdlets"></a><span data-ttu-id="f0976-108">Abrufen von Hilfe für Cmdlets</span><span class="sxs-lookup"><span data-stu-id="f0976-108">Getting Help for Cmdlets</span></span>
-<span data-ttu-id="f0976-109">Wenn Sie Hilfe zu Windows PowerShell-Cmdlets abrufen möchten, verwenden Sie das Cmdlet [Get-Help [m2]](https://technet.microsoft.com/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2).</span><span class="sxs-lookup"><span data-stu-id="f0976-109">To get Help about Windows PowerShell cmdlets, use the [Get-Help [m2]](https://technet.microsoft.com/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2) cmdlet.</span></span> <span data-ttu-id="f0976-110">Geben Sie beispielsweise Folgendes ein, um Hilfe für das Cmdlet [Get-ChildItem [m2]](https://technet.microsoft.com/library/4b270d63-c995-45b8-b5b4-3f8887efbfcc) abzurufen:</span><span class="sxs-lookup"><span data-stu-id="f0976-110">For example, to get Help for the [Get-ChildItem [m2]](https://technet.microsoft.com/library/4b270d63-c995-45b8-b5b4-3f8887efbfcc) cmdlet, type:</span></span>
+<span data-ttu-id="a4290-106">Sie können diese Hilfeartikel über die Eingabeaufforderung anzeigen. Sie können aber auch die zuletzt aktualisierten Versionen dieser Artikel in der [PowerShell](/powershell/scripting/powershell-scripting)-Dokumentation online anzeigen.</span><span class="sxs-lookup"><span data-stu-id="a4290-106">You can display these Help articles at the command prompt or view the most recently updated versions of these articles in the [PowerShell](/powershell/scripting/powershell-scripting) documentation online.</span></span>
 
-```
-get-help get-childitem
-```
+## <a name="getting-help-for-cmdlets"></a><span data-ttu-id="a4290-107">Abrufen von Hilfe für Cmdlets</span><span class="sxs-lookup"><span data-stu-id="a4290-107">Getting help for cmdlets</span></span>
 
-<span data-ttu-id="f0976-111">oder</span><span class="sxs-lookup"><span data-stu-id="f0976-111">or</span></span>
+<span data-ttu-id="a4290-108">Wenn Sie Hilfe zu PowerShell-Cmdlets abrufen möchten, verwenden Sie das Cmdlet [Get-Help](/powershell/module/microsoft.powershell.core/Get-Help).</span><span class="sxs-lookup"><span data-stu-id="a4290-108">To get Help about PowerShell cmdlets, use the [Get-Help](/powershell/module/microsoft.powershell.core/Get-Help) cmdlet.</span></span> <span data-ttu-id="a4290-109">Geben Sie beispielsweise Folgendes ein, um Hilfe für das Cmdlet `Get-ChildItem` abzurufen:</span><span class="sxs-lookup"><span data-stu-id="a4290-109">For example, to get Help for the `Get-ChildItem` cmdlet, type:</span></span>
 
-```
-get-childitem -?
+```powershell
+Get-Help Get-ChildItem
 ```
 
-<span data-ttu-id="f0976-112">Sie können sogar Hilfe zu dem Cmdlet „Get-Help“ abrufen.</span><span class="sxs-lookup"><span data-stu-id="f0976-112">You can even get Help about the Get-Help cmdlet.</span></span> <span data-ttu-id="f0976-113">Beispiel:</span><span class="sxs-lookup"><span data-stu-id="f0976-113">For example:</span></span>
+<span data-ttu-id="a4290-110">oder</span><span class="sxs-lookup"><span data-stu-id="a4290-110">or</span></span>
 
-```
-get-help get-help
-```
-
-<span data-ttu-id="f0976-114">Um eine Liste aller Cmdlet-Hilfethemen in der Sitzung abzurufen, geben Sie Folgendes ein:</span><span class="sxs-lookup"><span data-stu-id="f0976-114">To get a list of all the cmdlet Help topics in your session, type:</span></span>
-
-```
-get-help -category cmdlet
+```powershell
+Get-ChildItem -?
 ```
 
-<span data-ttu-id="f0976-115">Wenn Sie nur jeweils eine Seite jedes Hilfethemas anzeigen möchten, verwenden Sie die Funktion **help** oder deren Alias **man**.</span><span class="sxs-lookup"><span data-stu-id="f0976-115">To display one page of each Help topic at a time, use the **help** function or its alias **man**.</span></span> <span data-ttu-id="f0976-116">Wenn Sie beispielsweise Hilfe für das Cmdlet „Get-ChildItem“ anzeigen möchten, geben Sie Folgendes ein:</span><span class="sxs-lookup"><span data-stu-id="f0976-116">For example, to display Help for the Get-ChildItem cmdlet, type</span></span>
+<span data-ttu-id="a4290-111">Sie können sogar Hilfe zu dem Cmdlet „Get-Help“ abrufen.</span><span class="sxs-lookup"><span data-stu-id="a4290-111">You can even get Help about the Get-Help cmdlet.</span></span> <span data-ttu-id="a4290-112">Beispiel:</span><span class="sxs-lookup"><span data-stu-id="a4290-112">For example:</span></span>
 
-```
-man get-childitem
-```
-
-<span data-ttu-id="f0976-117">oder</span><span class="sxs-lookup"><span data-stu-id="f0976-117">or</span></span>
-
-```
-help get-childitem
+```powershell
+Get-Help Get-Help
 ```
 
-<span data-ttu-id="f0976-118">Um detaillierte Informationen zu einem Cmdlet, zu einer Funktion oder zu einem Skript samt Beschreibungen der jeweiligen Parameter sowie Beispielen für deren Verwendung anzuzeigen, verwenden Sie den *Detailed*-Parameter des Cmdlets „Get-Help“.</span><span class="sxs-lookup"><span data-stu-id="f0976-118">To display detailed information about a cmdlet, function, or script, including descriptions of its parameters and examples of its use, use the *Detailed* parameter of the Get-Help cmdlet.</span></span> <span data-ttu-id="f0976-119">Geben Sie beispielsweise Folgendes ein, um ausführliche Informationen zum Cmdlet „Get-ChildItem“ abzurufen:</span><span class="sxs-lookup"><span data-stu-id="f0976-119">For example, to get detailed information about the Get-ChildItem cmdlet, type:</span></span>
+<span data-ttu-id="a4290-113">Um eine Liste aller Cmdlet-Hilfeartikel in der Sitzung abzurufen, geben Sie Folgendes ein:</span><span class="sxs-lookup"><span data-stu-id="a4290-113">To get a list of all the cmdlet Help articles in your session, type:</span></span>
 
-```
-get-help get-childitem -detailed
-```
-
-<span data-ttu-id="f0976-120">Wenn Sie den gesamten Inhalt eines Hilfethemas anzeigen möchten, verwenden Sie den *Full*-Parameter des Cmdlets „Get-Help“.</span><span class="sxs-lookup"><span data-stu-id="f0976-120">To display all content in the Help topic, use the *Full* parameter of the Get-Help cmdlet.</span></span> <span data-ttu-id="f0976-121">Soll beispielsweise der gesamte Inhalt des Hilfethemas für das Cmdlet „Get-ChildItem“ angezeigt werden, geben Sie Folgendes ein:</span><span class="sxs-lookup"><span data-stu-id="f0976-121">For example, to display all content in the Help topic for the Get-ChildItem cmdlet, type:</span></span>
-
-```
-get-help get-childitem -full
+```powershell
+Get-Help -Category Cmdlet
 ```
 
-<span data-ttu-id="f0976-122">Um ausführliche Hilfe zu den Parametern eines Cmdlets abzurufen, verwenden Sie den *Parameter*-Parameter des Cmdlets „Get-Help“.</span><span class="sxs-lookup"><span data-stu-id="f0976-122">To get detailed Help about the parameters of a cmdlet, use the *Parameter* parameter of the Get-Help cmdlet.</span></span> <span data-ttu-id="f0976-123">Soll beispielsweise die ausführliche Hilfe zu allen Parametern des Cmdlets „Get-ChildItem“ abgerufen werden, geben Sie Folgendes ein:</span><span class="sxs-lookup"><span data-stu-id="f0976-123">For example, to get detailed Help for all of the parameters of the Get-ChildItem cmdlet, type:</span></span>
+<span data-ttu-id="a4290-114">Wenn Sie nur jeweils eine Seite jedes Hilfeartikels anzeigen möchten, verwenden Sie die Funktion `help` oder deren Alias `man`.</span><span class="sxs-lookup"><span data-stu-id="a4290-114">To display one page of each Help article at a time, use the `help` function or its alias `man`.</span></span>
+<span data-ttu-id="a4290-115">Geben Sie beispielsweise Folgendes ein, um Hilfe für das Cmdlet `Get-ChildItem` anzuzeigen:</span><span class="sxs-lookup"><span data-stu-id="a4290-115">For example, to display Help for the `Get-ChildItem` cmdlet, type</span></span>
 
-```
-get-help get-childitem -parameter *
-```
-
-<span data-ttu-id="f0976-124">Um nur die Beispiele anzuzeigen, die es in einem Hilfethema gibt, verwenden Sie den *Example*-Parameter von „Get-Help“.</span><span class="sxs-lookup"><span data-stu-id="f0976-124">To display only the examples in a Help topic, use the *Example* parameter of the Get-Help.</span></span> <span data-ttu-id="f0976-125">Sollen beispielsweise nur die Beispiele im Hilfethema für das Cmdlet „Get-ChildItem“ angezeigt werden, geben Sie Folgendes ein:</span><span class="sxs-lookup"><span data-stu-id="f0976-125">For example, to display only the examples in the Help topic for the Get-ChildItem cmdlet, type:</span></span>
-
-```
-get-help get-childitem -examples
+```powershell
+man Get-ChildItem
 ```
 
-<span data-ttu-id="f0976-126">Informationen dazu, wie Sie Hilfethemen für die Cmdlets schreiben, die Sie erstellen, finden Sie unter [How to Write Cmdlet Help (Vorgehensweise: Schreiben von Cmdlet-Hilfe)](https://go.microsoft.com/fwlink/?LinkID=123415).</span><span class="sxs-lookup"><span data-stu-id="f0976-126">For information about how to write Help topics for the cmdlets that you write, see [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415) in the MSDN library.</span></span>
+<span data-ttu-id="a4290-116">oder</span><span class="sxs-lookup"><span data-stu-id="a4290-116">or</span></span>
 
-## <a name="getting-conceptual-help"></a><span data-ttu-id="f0976-127">Abrufen von konzeptioneller Hilfe</span><span class="sxs-lookup"><span data-stu-id="f0976-127">Getting Conceptual Help</span></span>
-<span data-ttu-id="f0976-128">Das Cmdlet „Get-Help“ zeigt auch Informationen zu konzeptionellen Themen in Windows PowerShell an, einschließlich Themen zur Windows PowerShell-Sprache.</span><span class="sxs-lookup"><span data-stu-id="f0976-128">The Get-Help cmdlet also displays information about conceptual topics in Windows PowerShell, including topics about the Windows PowerShell language.</span></span> <span data-ttu-id="f0976-129">Konzeptionelle Hilfethemen beginnen mit dem Präfix „about_“, z.B. „about_line_editing“.</span><span class="sxs-lookup"><span data-stu-id="f0976-129">Conceptual Help topics begin with the "about_" prefix, such as about_line_editing.</span></span> <span data-ttu-id="f0976-130">(Der Name eines konzeptionellen Themas muss in Englisch eingegeben werden, auch in nicht englischsprachigen Versionen von Windows PowerShell.)</span><span class="sxs-lookup"><span data-stu-id="f0976-130">(The name of the conceptual topic must be entered in English even on non-English versions of Windows PowerShell.)</span></span>
-
-<span data-ttu-id="f0976-131">Um eine Liste der konzeptionellen Themen anzuzeigen, geben Sie Folgendes ein:</span><span class="sxs-lookup"><span data-stu-id="f0976-131">To display a list of conceptual topics, type:</span></span>
-
-```
-get-help about_*
+```powershell
+help Get-ChildItem
 ```
 
-<span data-ttu-id="f0976-132">Um ein bestimmtes Hilfethema anzuzeigen, geben Sie den Namen des Themas ein, zum Beispiel:</span><span class="sxs-lookup"><span data-stu-id="f0976-132">To display a particular Help topic, type the topic name, for example:</span></span>
+<span data-ttu-id="a4290-117">Um ausführliche Informationen anzuzeigen, verwenden Sie den Parameter **Detailed** des Cmdlets `Get-Help`.</span><span class="sxs-lookup"><span data-stu-id="a4290-117">To display detailed information, use the **Detailed** parameter of the `Get-Help` cmdlet.</span></span> <span data-ttu-id="a4290-118">Geben Sie beispielsweise Folgendes ein, um ausführliche Informationen zum Cmdlet `Get-ChildItem` abzurufen:</span><span class="sxs-lookup"><span data-stu-id="a4290-118">For example, to get detailed information about the `Get-ChildItem` cmdlet, type:</span></span>
 
-```
-get-help about_command_syntax
-```
-
-<span data-ttu-id="f0976-133">Die Parameter von „Get-Help“, etwa *Detailed*, *Parameter* und *Examples*, wirken sich nicht auf die Anzeige von konzeptionellen Hilfethemen aus.</span><span class="sxs-lookup"><span data-stu-id="f0976-133">The parameters of Get-Help, such as *Detailed*, *Parameter*, and *Examples*, have no effect on the display of conceptual Help topics.</span></span>
-
-## <a name="getting-help-about-providers"></a><span data-ttu-id="f0976-134">Abrufen von Hilfe zu Anbietern</span><span class="sxs-lookup"><span data-stu-id="f0976-134">Getting Help About Providers</span></span>
-<span data-ttu-id="f0976-135">Das Cmdlet „Get-Help“ zeigt Informationen zu Windows PowerShell-Anbietern an.</span><span class="sxs-lookup"><span data-stu-id="f0976-135">The Get-Help cmdlet displays information about Windows PowerShell providers.</span></span> <span data-ttu-id="f0976-136">Um Hilfe zu einem Anbieter (Provider) zu abzurufen, geben Sie „Get-Help“ gefolgt vom Anbieternamen ein.</span><span class="sxs-lookup"><span data-stu-id="f0976-136">To get Help for a provider, type "Get-Help" followed by the provider name.</span></span> <span data-ttu-id="f0976-137">Wenn Sie z. B. Hilfe zum Registrierungsanbieter abrufen möchten, geben Sie Folgendes ein:</span><span class="sxs-lookup"><span data-stu-id="f0976-137">For example, to get Help for the Registry provider, type:</span></span>
-
-```
-get-help registry
+```powershell
+Get-Help Get-ChildItem -Detailed
 ```
 
-<span data-ttu-id="f0976-138">Um eine Liste aller Anbieter-Hilfethemen in der Sitzung abzurufen, geben Sie Folgendes ein:</span><span class="sxs-lookup"><span data-stu-id="f0976-138">To get a list of all the provider Help topics in your session, type</span></span>
+<span data-ttu-id="a4290-119">Wenn Sie den gesamten Inhalt eines Hilfeartikels anzeigen möchten, verwenden Sie den Parameter **Full** des Cmdlets `Get-Help`.</span><span class="sxs-lookup"><span data-stu-id="a4290-119">To display all content in the Help article, use the **Full** parameter of the `Get-Help` cmdlet.</span></span> <span data-ttu-id="a4290-120">Soll beispielsweise der gesamte Inhalt des Hilfeartikels für das Cmdlet `Get-ChildItem` angezeigt werden, geben Sie Folgendes ein:</span><span class="sxs-lookup"><span data-stu-id="a4290-120">For example, to display all content in the Help article for the `Get-ChildItem` cmdlet, type:</span></span>
 
-```
-get-help -category provider
-```
-
-<span data-ttu-id="f0976-139">Die Parameter von „Get-Help“, etwa *Detailed*, *Parameter* und *Examples*, wirken sich nicht auf die Anzeige von Anbieter-Hilfethemen aus.</span><span class="sxs-lookup"><span data-stu-id="f0976-139">The parameters of Get-Help, such as *Detailed*, *Parameter*, and *Examples*, have no effect on the display of provider Help topics.</span></span>
-
-## <a name="getting-help-about-scripts-and-functions"></a><span data-ttu-id="f0976-140">Abrufen von Hilfe zu Skripts und Funktionen</span><span class="sxs-lookup"><span data-stu-id="f0976-140">Getting Help About Scripts and Functions</span></span>
-<span data-ttu-id="f0976-141">Viele Skripts und Funktionen in Windows PowerShell haben Hilfethemen.</span><span class="sxs-lookup"><span data-stu-id="f0976-141">Many scripts and functions in Windows PowerShell have Help topics.</span></span> <span data-ttu-id="f0976-142">Verwenden Sie das Cmdlet „Get-Help“, um die Hilfethemen für Skripts und Funktionen anzuzeigen.</span><span class="sxs-lookup"><span data-stu-id="f0976-142">Use the Get-Help cmdlet to display the Help topics for scripts and functions.</span></span>
-
-<span data-ttu-id="f0976-143">Wenn Sie die Hilfe für eine Funktion anzeigen möchten, geben Sie „get-help“ und dahinter den Namen der Funktion ein.</span><span class="sxs-lookup"><span data-stu-id="f0976-143">To display the Help for a function, type "get-help" followed by the function name.</span></span> <span data-ttu-id="f0976-144">Soll beispielsweise Hilfe für die Funktion „Disable-PSRemoting“ abgerufen werden, geben Sie Folgendes ein:</span><span class="sxs-lookup"><span data-stu-id="f0976-144">For example, to get Help for the Disable-PSRemoting function, type:</span></span>
-
-```
-get-help disable-psremoting
+```powershell
+Get-Help Get-ChildItem -Full
 ```
 
-<span data-ttu-id="f0976-145">Um die Hilfe für ein Skript anzuzeigen, geben Sie den vollqualifizierten Pfad zur Skriptdatei ein.</span><span class="sxs-lookup"><span data-stu-id="f0976-145">To display the Help for a script, type the fully qualified path to the script file.</span></span> <span data-ttu-id="f0976-146">Befindet sich das Skript in einem Pfad, der in der Umgebungsvariablen „Path“ aufgelistet ist, müssen Sie den Pfad nicht im Befehl angeben.</span><span class="sxs-lookup"><span data-stu-id="f0976-146">If the script is in a path that is listed in the Path environment variable, you can omit the path from the command.</span></span>
+<span data-ttu-id="a4290-121">Um ausführliche Hilfe zu den Parametern eines Cmdlets abzurufen, verwenden Sie den Parameter **Parameter** des Cmdlets `Get-Help`.</span><span class="sxs-lookup"><span data-stu-id="a4290-121">To get detailed Help about the parameters of a cmdlet, use the **Parameter** parameter of the `Get-Help` cmdlet.</span></span> <span data-ttu-id="a4290-122">Soll beispielsweise die ausführliche Hilfe zu allen Parametern des Cmdlets `Get-ChildItem` abgerufen werden, geben Sie Folgendes ein:</span><span class="sxs-lookup"><span data-stu-id="a4290-122">For example, to get detailed Help for all of the parameters of the `Get-ChildItem` cmdlet, type:</span></span>
 
-<span data-ttu-id="f0976-147">Wenn Sie beispielsweise ein Skript namens „TestScript.ps1“ in Ihrem Verzeichnis „C:\\PS-Test“ haben, geben Sie Folgendes ein, um das Hilfethema für das Skript anzuzeigen:</span><span class="sxs-lookup"><span data-stu-id="f0976-147">For example, if you have a script called "TestScript.ps1" in your C:\\PS-Test directory, to display the Help topic for the script, type:</span></span>
-
-```
-get-help c:\ps-test\TestScript.ps1
+```powershell
+Get-Help Get-ChildItem -Parameter *
 ```
 
-<span data-ttu-id="f0976-148">Die Parameter, die für die Anzeige von Cmdlet-Hilfe konzipiert wurden, etwa *Detailed*, *Full*, *Examples* und *Parameter*, funktionieren auch für Hilfe zu Skripts und Funktionen.</span><span class="sxs-lookup"><span data-stu-id="f0976-148">The parameters that were designed for displaying cmdlet Help, such as *Detailed*, *Full*, *Examples*, and *Parameter*, work for script Help and function Help, too.</span></span> <span data-ttu-id="f0976-149">Wenn Sie die gesamte Hilfe anzeigen, indem Sie „get-help \*“ eingeben, wird die Hilfe zu Funktionen und Skripts aber nicht angezeigt.</span><span class="sxs-lookup"><span data-stu-id="f0976-149">However, when you display all Help, by typing "get-help \*", Help for functions and scripts does not appear.</span></span>
+<span data-ttu-id="a4290-123">Um nur die Beispiele in einem Hilfeartikel anzuzeigen, verwenden Sie den Parameter **Examples** von `Get-Help`.</span><span class="sxs-lookup"><span data-stu-id="a4290-123">To display only the examples in a Help article, use the **Examples** parameter of the `Get-Help`.</span></span>
+<span data-ttu-id="a4290-124">Sollen beispielsweise nur die Beispiele im Hilfeartikel für das Cmdlet `Get-ChildItem ` angezeigt werden, geben Sie Folgendes ein:</span><span class="sxs-lookup"><span data-stu-id="a4290-124">For example, to display only the examples in the Help article for the `Get-ChildItem `cmdlet, type:</span></span>
 
-<span data-ttu-id="f0976-150">Informationen über das Schreiben von Hilfethemen für Ihre Funktionen und Skripts finden Sie unter [about_Functions [m2]](https://technet.microsoft.com/library/61d40692-5300-4de9-a9b5-bae31815e105), [about_Scripts](https://technet.microsoft.com/library/7dc08334-dcfe-450b-b949-0554855623af) und [about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf).</span><span class="sxs-lookup"><span data-stu-id="f0976-150">For information about writing Help topics for your functions and scripts, see [about_Functions [m2]](https://technet.microsoft.com/library/61d40692-5300-4de9-a9b5-bae31815e105), [about_Scripts](https://technet.microsoft.com/library/7dc08334-dcfe-450b-b949-0554855623af), and [about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf).</span></span>
-
-## <a name="getting-help-online"></a><span data-ttu-id="f0976-151">Abrufen von Hilfe aus dem Internet</span><span class="sxs-lookup"><span data-stu-id="f0976-151">Getting Help Online</span></span>
-<span data-ttu-id="f0976-152">Wenn Sie eine Verbindung mit dem Internet haben, ist eine der besten Möglichkeiten zum Abrufen von Hilfe, die Hilfethemen online anzuzeigen.</span><span class="sxs-lookup"><span data-stu-id="f0976-152">If you are connected to the Internet, one of the best ways to get Help is to view the Help topics online.</span></span> <span data-ttu-id="f0976-153">Da online verfügbare Themen einfach zu aktualisieren sind, stellen sie wahrscheinlich die aktuellsten Inhalte bereit.</span><span class="sxs-lookup"><span data-stu-id="f0976-153">Because online topics are easy to update, they are likely to provide the most current content.</span></span>
-
-<span data-ttu-id="f0976-154">Um Hilfe aus dem Internet abzurufen, verwenden Sie den *Online*-Parameter des Cmdlets „Get-Help“.</span><span class="sxs-lookup"><span data-stu-id="f0976-154">To get Help online, try the *Online* parameter of the Get-Help cmdlet.</span></span> <span data-ttu-id="f0976-155">Der *Online*-Parameter des Cmdlets „Get-Help“ funktioniert nur für Hilfe zu Cmdlets, Funktionen und Skripts.</span><span class="sxs-lookup"><span data-stu-id="f0976-155">The *Online* parameter of the Get-Help cmdlet works only for cmdlet Help, function Help, and script Help.</span></span> <span data-ttu-id="f0976-156">Der *Online*-Parameter kann nicht mit konzeptionellen Themen (About) oder Anbieter-Hilfethemen verwendet werden.</span><span class="sxs-lookup"><span data-stu-id="f0976-156">You cannot use the *Online* parameter with conceptual (About) topics or provider Help topics.</span></span> <span data-ttu-id="f0976-157">Außerdem funktioniert dieser Parameter, da er optional ist, nicht für alle Hilfethemen zu Cmdlets, Funktionen oder Skripts.</span><span class="sxs-lookup"><span data-stu-id="f0976-157">Also, because this feature is optional, it does not work for every cmdlet, function, or script Help topic.</span></span>
-
-<span data-ttu-id="f0976-158">Allerdings sind alle Hilfethemen, die zu Windows PowerShell gehören, einschließlich Anbieter-Hilfe und konzeptioneller Hilfethemen (About), online im [Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116)-Abschnitt der Microsoft TechNet-Bibliothek verfügbar.</span><span class="sxs-lookup"><span data-stu-id="f0976-158">However, all the Help topics that come with Windows PowerShell, including provider Help and conceptual (About) Help topics, are available online in the [Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116) section of the Microsoft TechNet Library.</span></span>
-
-<span data-ttu-id="f0976-159">Wenn Sie den *Online*-Parameter des Cmdlets „Get-Help“ verwenden möchten, verwenden Sie das folgende Befehlsformat.</span><span class="sxs-lookup"><span data-stu-id="f0976-159">To use the *Online* parameter of the Get-Help cmdlet, use the following command format.</span></span>
-
-```
-get-help <command-name> -online
+```powershell
+Get-Help Get-ChildItem -Examples
 ```
 
-<span data-ttu-id="f0976-160">Möchten Sie beispielsweise die Onlineversion des Hilfethemas zum Cmdlet „Get-ChildItem“ abrufen, geben Sie Folgendes ein:</span><span class="sxs-lookup"><span data-stu-id="f0976-160">For example, to get the online version of the Help topic about the Get-ChildItem cmdlet, type:</span></span>
+<span data-ttu-id="a4290-125">Informationen dazu, wie Sie Hilfeartikel für die Cmdlets schreiben, die Sie erstellen, finden Sie unter [How to Write Cmdlet Help (Schreiben von Hilfe zu Cmdlets)](/powershell/developer/help/writing-help-for-windows-powershell-cmdlets).</span><span class="sxs-lookup"><span data-stu-id="a4290-125">For information about how to write Help articles for the cmdlets that you write, see [How to Write Cmdlet Help](/powershell/developer/help/writing-help-for-windows-powershell-cmdlets).</span></span>
 
-```
-get-help get-childitem -online
-```
+## <a name="getting-conceptual-help"></a><span data-ttu-id="a4290-126">Abrufen von konzeptioneller Hilfe</span><span class="sxs-lookup"><span data-stu-id="a4290-126">Getting conceptual help</span></span>
 
-<span data-ttu-id="f0976-161">Ist eine Onlineversion des Hilfethemas verfügbar, wird sie in Ihrem Standardbrowser geöffnet.</span><span class="sxs-lookup"><span data-stu-id="f0976-161">If an online version of the Help topic is available, it will open in your default browser.</span></span>
+<span data-ttu-id="a4290-127">Das Cmdlet `Get-Help` zeigt auch Informationen zu konzeptionellen Artikeln in PowerShell an, darunter Artikel zur PowerShell-Sprache.</span><span class="sxs-lookup"><span data-stu-id="a4290-127">The `Get-Help` cmdlet also displays information about conceptual articles in PowerShell, including articles about the PowerShell language.</span></span> <span data-ttu-id="a4290-128">Konzeptionelle Hilfeartikel beginnen mit dem Präfix „about_“, z.B. „about_line_editing“.</span><span class="sxs-lookup"><span data-stu-id="a4290-128">Conceptual Help articles begin with the "about_" prefix, such as about_line_editing.</span></span> <span data-ttu-id="a4290-129">(Der Name eines konzeptionellen Artikels muss in Englisch eingegeben werden, auch in nicht englischsprachigen Versionen von PowerShell.)</span><span class="sxs-lookup"><span data-stu-id="a4290-129">(The name of the conceptual article must be entered in English even on non-English versions of PowerShell.)</span></span>
 
-<span data-ttu-id="f0976-162">Wird Onlinehilfe für ein Hilfethema unterstützt, können Sie auch die Internetadresse (URL) des Hilfethemas anzeigen.</span><span class="sxs-lookup"><span data-stu-id="f0976-162">If online Help is supported for a Help topic, you can also view the Internet address (URL) of the Help topic.</span></span> <span data-ttu-id="f0976-163">Die Internetadresse wird im Abschnitt „Verwandte Links“ eines Hilfethemas angezeigt.</span><span class="sxs-lookup"><span data-stu-id="f0976-163">The Internet address appears in the Related Links section of a Help topic.</span></span>
+<span data-ttu-id="a4290-130">Um eine Liste der konzeptionellen Artikel anzuzeigen, geben Sie Folgendes ein:</span><span class="sxs-lookup"><span data-stu-id="a4290-130">To display a list of conceptual articles, type:</span></span>
 
-<span data-ttu-id="f0976-164">Wenn Sie beispielsweise die URL für die Onlineversion des Cmdlets „Add-Computer“ anzeigen möchten, geben Sie Folgendes ein:</span><span class="sxs-lookup"><span data-stu-id="f0976-164">For example, to see the URL for the online version of the Add-Computer cmdlet, type:</span></span>
-
-```
-get-help add-computer
+```powershell
+Get-Help about_*
 ```
 
-<span data-ttu-id="f0976-165">Die erste Zeile des Abschnitts „Verwandte Links“ des Themas ist nachstehend dargestellt.</span><span class="sxs-lookup"><span data-stu-id="f0976-165">The first line in the Related Links section of the topic is shown below.</span></span>
+<span data-ttu-id="a4290-131">Um einen bestimmten Hilfeartikel anzuzeigen, geben Sie den Namen des Artikels ein, Beispiel:</span><span class="sxs-lookup"><span data-stu-id="a4290-131">To display a particular Help article, type the article name, for example:</span></span>
 
+```powershell
+Get-Help about_command_syntax
 ```
-Online version: http://go.microsoft.com/fwlink/?LinkID=135194
+
+<span data-ttu-id="a4290-132">Die Parameter von `Get-Help`, etwa **Detailed**, **Parameter** und **Examples**, wirken sich nicht auf die Anzeige von konzeptionellen Hilfeartikeln aus.</span><span class="sxs-lookup"><span data-stu-id="a4290-132">The parameters of `Get-Help`, such as **Detailed**, **Parameter**, and **Examples**, have no effect on the display of conceptual Help articles.</span></span>
+
+## <a name="getting-help-about-providers"></a><span data-ttu-id="a4290-133">Abrufen von Hilfe zu Anbietern</span><span class="sxs-lookup"><span data-stu-id="a4290-133">Getting help about providers</span></span>
+
+<span data-ttu-id="a4290-134">Das Cmdlet `Get-Help` zeigt Informationen zu PowerShell-Anbietern an.</span><span class="sxs-lookup"><span data-stu-id="a4290-134">The `Get-Help` cmdlet displays information about PowerShell providers.</span></span> <span data-ttu-id="a4290-135">Um Hilfe zu einem Anbieter abzurufen, geben Sie `Get-Help` gefolgt vom Anbieternamen ein.</span><span class="sxs-lookup"><span data-stu-id="a4290-135">To get Help for a provider, type `Get-Help` followed by the provider name.</span></span> <span data-ttu-id="a4290-136">Wenn Sie z. B. Hilfe zum Registrierungsanbieter abrufen möchten, geben Sie Folgendes ein:</span><span class="sxs-lookup"><span data-stu-id="a4290-136">For example, to get Help for the Registry provider, type:</span></span>
+
+```powershell
+Get-Help registry
 ```
 
-<span data-ttu-id="f0976-166">Informationen dazu, wie Sie die Onlineunterstützung für Ihre Hilfethemen bereitstellen, finden Sie in der MSDN-Bibliothek unter [about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf) sowie unter [How to Write Cmdlet Help (Schreiben von Cmdlet-Hilfe)](https://go.microsoft.com/fwlink/?LinkID=123415).</span><span class="sxs-lookup"><span data-stu-id="f0976-166">For information about how to provide online support for your Help topics, see [about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf), and see [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415) in the MSDN library.</span></span>
+<span data-ttu-id="a4290-137">Um eine Liste aller Hilfeartikel zu Anbietern in der Sitzung abzurufen, geben Sie Folgendes ein:</span><span class="sxs-lookup"><span data-stu-id="a4290-137">To get a list of all the provider Help articles in your session, type</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="f0976-167">Weitere Informationen</span><span class="sxs-lookup"><span data-stu-id="f0976-167">See Also</span></span>
-- <span data-ttu-id="f0976-168">[about_Functions [m2]](https://technet.microsoft.com/library/61d40692-5300-4de9-a9b5-bae31815e105)</span><span class="sxs-lookup"><span data-stu-id="f0976-168">[about_Functions [m2]](https://technet.microsoft.com/library/61d40692-5300-4de9-a9b5-bae31815e105)</span></span>
-- [<span data-ttu-id="f0976-169">about_Scripts</span><span class="sxs-lookup"><span data-stu-id="f0976-169">about_Scripts</span></span>](https://technet.microsoft.com/library/7dc08334-dcfe-450b-b949-0554855623af)
-- [<span data-ttu-id="f0976-170">about_Comment_Based_Help</span><span class="sxs-lookup"><span data-stu-id="f0976-170">about_Comment_Based_Help</span></span>](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)
-- <span data-ttu-id="f0976-171">[Get-Help [m2]](https://technet.microsoft.com/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2)</span><span class="sxs-lookup"><span data-stu-id="f0976-171">[Get-Help [m2]](https://technet.microsoft.com/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2)</span></span>
+```powershell
+Get-Help -Category provider
+```
+
+<span data-ttu-id="a4290-138">Die Parameter von `Get-Help`, etwa **Detailed**, **Parameter** und **Examples**, wirken sich nicht auf die Anzeige von Hilfeartikeln zu Anbietern aus.</span><span class="sxs-lookup"><span data-stu-id="a4290-138">The parameters of `Get-Help`, such as **Detailed**, **Parameter**, and **Examples**, have no effect on the display of provider Help articles.</span></span>
+
+## <a name="getting-help-about-scripts-and-functions"></a><span data-ttu-id="a4290-139">Abrufen von Hilfe zu Skripts und Funktionen</span><span class="sxs-lookup"><span data-stu-id="a4290-139">Getting help about scripts and functions</span></span>
+
+<span data-ttu-id="a4290-140">Viele Skripts und Funktionen in PowerShell haben Hilfeartikel.</span><span class="sxs-lookup"><span data-stu-id="a4290-140">Many scripts and functions in PowerShell have Help articles.</span></span> <span data-ttu-id="a4290-141">Verwenden Sie das Cmdlet `Get-Help`, um die Hilfeartikel für Skripts und Funktionen anzuzeigen.</span><span class="sxs-lookup"><span data-stu-id="a4290-141">Use the `Get-Help` cmdlet to display the Help articles for scripts and functions.</span></span>
+
+<span data-ttu-id="a4290-142">Wenn Sie die Hilfe für eine Funktion anzeigen möchten, geben Sie `Get-Help` und dahinter den Namen der Funktion ein.</span><span class="sxs-lookup"><span data-stu-id="a4290-142">To display the Help for a function, type `Get-Help` followed by the function name.</span></span> <span data-ttu-id="a4290-143">Geben Sie beispielsweise Folgendes ein, um Hilfe für die Funktion `Disable-PSRemoting` abzurufen:</span><span class="sxs-lookup"><span data-stu-id="a4290-143">For example, to get Help for the `Disable-PSRemoting` function, type:</span></span>
+
+```powershell
+Get-Help Disable-PSRemoting
+```
+
+<span data-ttu-id="a4290-144">Um die Hilfe für ein Skript anzuzeigen, geben Sie den Pfad zur Skriptdatei ein.</span><span class="sxs-lookup"><span data-stu-id="a4290-144">To display the Help for a script, type the path to the script file.</span></span> <span data-ttu-id="a4290-145">Wenn sich das Skript nicht in einem Pfad befindet, der in der Umgebungsvariablen „Path“ aufgelistet ist, müssen Sie den vollqualifizierten Pfad verwenden.</span><span class="sxs-lookup"><span data-stu-id="a4290-145">If the script is not in a path listed in the Path environment variable, you must use the fully qualified path.</span></span>
+
+<span data-ttu-id="a4290-146">Wenn Sie beispielsweise ein Skript namens „TestScript.ps1“ in Ihrem Verzeichnis „C:\\PS-Test“ haben, geben Sie Folgendes ein, um den Hilfeartikel für das Skript anzuzeigen:</span><span class="sxs-lookup"><span data-stu-id="a4290-146">For example, if you have a script called "TestScript.ps1" in your C:\\PS-Test directory, to display the Help article for the script, type:</span></span>
+
+```powershell
+Get-Help c:\ps-test\TestScript.ps1
+```
+
+<span data-ttu-id="a4290-147">Die Parameter, die für die Anzeige der Cmdlet-Hilfe vorgesehen sind, funktionieren auch für die Hilfe zu Skripts und Funktionen.</span><span class="sxs-lookup"><span data-stu-id="a4290-147">The parameters that are designed for displaying cmdlet Help work for script and function Help, too.</span></span> <span data-ttu-id="a4290-148">Die Hilfe zu Funktionen und Skripts wird allerdings nicht beim Ausführen von `Get-Help *` angezeigt.</span><span class="sxs-lookup"><span data-stu-id="a4290-148">However, help for functions and scripts is not shown when you run `Get-Help *`.</span></span>
+
+<span data-ttu-id="a4290-149">Informationen zum Schreiben von Hilfeartikeln für Ihre Funktionen und Skripts finden Sie in den folgenden Artikeln:</span><span class="sxs-lookup"><span data-stu-id="a4290-149">For information about writing Help articles for your functions and scripts, see the following articles:</span></span>
+
+- [<span data-ttu-id="a4290-150">about_Functions</span><span class="sxs-lookup"><span data-stu-id="a4290-150">about_Functions</span></span>](/powershell/module/microsoft.powershell.core/about/about_functions)
+- [<span data-ttu-id="a4290-151">about_Scripts</span><span class="sxs-lookup"><span data-stu-id="a4290-151">about_Scripts</span></span>](/powershell/module/microsoft.powershell.core/about/about_scripts)
+- [<span data-ttu-id="a4290-152">about_Comment_Based_Help</span><span class="sxs-lookup"><span data-stu-id="a4290-152">about_Comment_Based_Help</span></span>](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)
+
+## <a name="getting-help-online"></a><span data-ttu-id="a4290-153">Abrufen von Hilfe aus dem Internet</span><span class="sxs-lookup"><span data-stu-id="a4290-153">Getting help online</span></span>
+
+<span data-ttu-id="a4290-154">Die Onlineanzeige der Hilfeartikel ist eine der besten Möglichkeiten, um Hilfe zu erhalten.</span><span class="sxs-lookup"><span data-stu-id="a4290-154">Viewing the Help articles online is one of the best ways to get help.</span></span> <span data-ttu-id="a4290-155">Onlineartikel können leichter aktualisiert werden und bieten aktuelle Inhalte.</span><span class="sxs-lookup"><span data-stu-id="a4290-155">Online articles are easier to update and provide the most current content.</span></span>
+
+<span data-ttu-id="a4290-156">Um Hilfe aus dem Internet abzurufen, verwenden Sie den Parameter **Online** des Cmdlets `Get-Help`.</span><span class="sxs-lookup"><span data-stu-id="a4290-156">To get Help online, use the **Online** parameter of the `Get-Help` cmdlet.</span></span> <span data-ttu-id="a4290-157">Alle Hilfeartikel für PowerShell, einschließlich der Hilfeartikel zu Anbietern und konzeptioneller Hilfeartikel („about“), stehen online in der [PowerShell](/powershell/scripting/powershell-scripting)-Dokumentation zur Verfügung.</span><span class="sxs-lookup"><span data-stu-id="a4290-157">All the Help articles that come with PowerShell, including provider Help and conceptual (About) Help articles, are available online in the [PowerShell](/powershell/scripting/powershell-scripting) documentation.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="a4290-158">Der Parameter **Online** kann nicht mit konzeptionellen („about_\*“) Hilfeartikeln oder Hilfeartikeln zu Anbietern verwendet werden.</span><span class="sxs-lookup"><span data-stu-id="a4290-158">You can't use the **Online** parameter with conceptual (about_\*) or provider Help articles.</span></span>
+> <span data-ttu-id="a4290-159">Die Onlinehilfe ist optional, daher ist sie nicht für alle Cmdlets, Funktionen oder Skripts verfügbar.</span><span class="sxs-lookup"><span data-stu-id="a4290-159">Online help is optional, so it does not work for every cmdlet, function, or script.</span></span>
+
+<span data-ttu-id="a4290-160">Möchten Sie beispielsweise die Onlineversion des Hilfeartikels zum Cmdlet `Get-ChildItem` abrufen, geben Sie Folgendes ein:</span><span class="sxs-lookup"><span data-stu-id="a4290-160">For example, to get the online version of the Help article about the `Get-ChildItem` cmdlet, type:</span></span>
+
+```powershell
+Get-Help Get-ChildItem -Online
+```
+
+<span data-ttu-id="a4290-161">PowerShell öffnet den Artikel in Ihrem Standardbrowser.</span><span class="sxs-lookup"><span data-stu-id="a4290-161">PowerShell opens the article in your default browser.</span></span> <span data-ttu-id="a4290-162">Wird Onlinehilfe für einen Hilfeartikel unterstützt, können Sie auch die URL des Hilfeartikels anzeigen.</span><span class="sxs-lookup"><span data-stu-id="a4290-162">If online Help is supported for a Help article, you can also view the URL of the Help article.</span></span> <span data-ttu-id="a4290-163">Die URL wird im Abschnitt „Verwandte Links“ eines Hilfeartikels angezeigt.</span><span class="sxs-lookup"><span data-stu-id="a4290-163">The URL appears in the Related Links section of a Help article.</span></span>
+
+<span data-ttu-id="a4290-164">Wenn Sie beispielsweise die URL für die Onlineversion des Cmdlets „Add-Computer“ anzeigen möchten, geben Sie Folgendes ein:</span><span class="sxs-lookup"><span data-stu-id="a4290-164">For example, to see the URL for the online version of the Add-Computer cmdlet, type:</span></span>
+
+```powershell
+Get-Help Add-Computer
+```
+
+<span data-ttu-id="a4290-165">Die erste Zeile des Abschnitts „Verwandte Links“ des Artikels ist nachstehend dargestellt.</span><span class="sxs-lookup"><span data-stu-id="a4290-165">The first line in the Related Links section of the article is shown below.</span></span>
+
+```Output
+Online version: http://go.microsoft.com/fwlink/?LinkId=821564
+```
+
+<span data-ttu-id="a4290-166">Informationen dazu, wie Sie Onlineunterstützung für Ihre Hilfeartikel bereitstellen, finden Sie unter [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).</span><span class="sxs-lookup"><span data-stu-id="a4290-166">For information about how to provide online support for your Help articles, see [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="a4290-167">Siehe auch</span><span class="sxs-lookup"><span data-stu-id="a4290-167">See also</span></span>
+
+- [<span data-ttu-id="a4290-168">about_Functions</span><span class="sxs-lookup"><span data-stu-id="a4290-168">about_Functions</span></span>](/powershell/module/microsoft.powershell.core/about/about_functions)
+- [<span data-ttu-id="a4290-169">about_Scripts</span><span class="sxs-lookup"><span data-stu-id="a4290-169">about_Scripts</span></span>](/powershell/module/microsoft.powershell.core/about/about_scripts)
+- [<span data-ttu-id="a4290-170">about_Comment_Based_Help</span><span class="sxs-lookup"><span data-stu-id="a4290-170">about_Comment_Based_Help</span></span>](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)
+- [<span data-ttu-id="a4290-171">Get-Help</span><span class="sxs-lookup"><span data-stu-id="a4290-171">Get-Help</span></span>](/powershell/module/microsoft.powershell.core/get-help)
