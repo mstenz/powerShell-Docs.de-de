@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: bed1186c10082bbdac7249503bf623678f13fccd
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: ff2c2bd7369893d72db001ecabf63991ded0bfd5
+ms.sourcegitcommit: ac20e0faaa37142e9c6e4507a21df2f4a3fdbece
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39267938"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44339870"
 ---
 # <a name="unified-and-consistent-state-and-status-representation"></a>Vereinheitlichung und Konsistenz von Zustands- und Statusdarstellung
 
@@ -25,8 +25,8 @@ Die nachfolgende Tabelle veranschaulicht die resultierenden auf Zustand und Stat
 
 | Szenario                        | LCMState             | Status     | Neustart angefordert | ResourcesInDesiredState   | ResourcesNotInDesiredState |
 |---------------------------------|----------------------|------------|---------------|------------------------------|--------------------------------|
-| S**^**                          | Idle                 | Erfolg    | $false        | E                            | $null                          |
-| F**^**                          | PendingConfiguration | Fehler    | $false        | $null                        | F                              |
+| S<sub>i</sub>                   | Idle                 | Erfolg    | $false        | E                            | $null                          |
+| F<sub>i</sub>                   | PendingConfiguration | Fehler    | $false        | $null                        | F                              |
 | E,F                             | PendingConfiguration | Fehler    | $false        | E                            | F                              |
 | E, S                             | PendingConfiguration | Fehler    | $false        | E                            | F                              |
 | E<sub>1</sub>, F, E<sub>2</sub> | PendingConfiguration | Fehler    | $false        | E<sub>1</sub>, E<sub>2</sub> | F                              |
