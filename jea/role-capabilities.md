@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea,powershell,security
 title: JEA-Rollenfunktionen
-ms.openlocfilehash: 0531baa284e66a42a162329ea20ecfdca6d0b526
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: bd0a995adc60e50049ff99d6b23e7c2aeb745a18
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190535"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522939"
 ---
 # <a name="jea-role-capabilities"></a>JEA-Rollenfunktionen
 
@@ -181,9 +181,9 @@ Funktionen, die in Rollenfunktionsdateien definiert werden, unterliegen weiterhi
 
 „Select-Object“ ist ein standardmäßiges, eingeschränktes Cmdlet in allen JEA-Sitzungen, das eine Auswahl beliebiger Eigenschaften auf Objekten nicht zulässt.
 Um das uneingeschränkte Select-Object-Cmdlet in Funktionen verwenden zu können, müssen Sie die vollständige Implementierung explizit durch Angabe der FQMN anfordern.
-Alle eingeschränkten Cmdlets in einer JEA-Sitzung weisen das gleiche Verhalten auf, wenn sie über eine Funktion aufgerufen werden. Dabei folgen sie der PowerShell-[Rangfolge von Befehlen](https://msdn.microsoft.com/en-us/powershell/reference/3.0/microsoft.powershell.core/about/about_command_precedence).
+Alle eingeschränkten Cmdlets in einer JEA-Sitzung weisen das gleiche Verhalten auf, wenn sie über eine Funktion aufgerufen werden. Dabei folgen sie der PowerShell-[Rangfolge von Befehlen](https://msdn.microsoft.com/powershell/reference/3.0/microsoft.powershell.core/about/about_command_precedence).
 
-Wenn Sie viele benutzerdefinierte Funktionen schreiben, ist es möglicherweise einfacher, diese in einem [PowerShell-Skriptmodul](https://msdn.microsoft.com/en-us/library/dd878340(v=vs.85).aspx) zu speichern.
+Wenn Sie viele benutzerdefinierte Funktionen schreiben, ist es möglicherweise einfacher, diese in einem [PowerShell-Skriptmodul](https://msdn.microsoft.com/library/dd878340(v=vs.85).aspx) zu speichern.
 Sie können diese Funktionen anschließend in der JEA-Sitzung mithilfe des VisibleFunctions-Felds genauso sichtbar machen wie integrierte und Drittanbietermodule.
 
 ## <a name="place-role-capabilities-in-a-module"></a>Platzieren von Rollenfunktionen in einem Modul
@@ -207,7 +207,7 @@ New-Item -ItemType Directory $rcFolder
 Copy-Item -Path .\MyFirstJEARole.psrc -Destination $rcFolder
 ```
 
-Weitere Informationen zu PowerShell-Modulen, Modulmanifeste und die Umgebungsvariable „PSModulePath“ finden Sie unter [Understanding a PowerShell Module (Grundlegendes zu PowerShell-Modulen)](https://msdn.microsoft.com/en-us/library/dd878324.aspx).
+Weitere Informationen zu PowerShell-Modulen, Modulmanifeste und die Umgebungsvariable „PSModulePath“ finden Sie unter [Understanding a PowerShell Module (Grundlegendes zu PowerShell-Modulen)](https://msdn.microsoft.com/library/dd878324.aspx).
 
 ## <a name="updating-role-capabilities"></a>Aktualisieren von Rollenfunktionen
 

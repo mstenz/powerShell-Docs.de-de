@@ -3,19 +3,19 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Erstellen und Veröffentlichen eines Elements
-ms.openlocfilehash: 7c2a2be6986bf65c168d7c3960366fac4ee31301
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: c5027c5fb357bb187611880ba75610a8f33074e0
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189532"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522972"
 ---
 # <a name="creating-and-publishing-an-item"></a>Erstellen und Veröffentlichen eines Elements
 
 Der PowerShell-Katalog ist der Ort, an dem stabile PowerShell-Module, -Skripts und DSC-Ressourcen veröffentlicht und mit der großen PowerShell-Benutzercommunity geteilt werden.
 
 In diesem Artikel werden die Mechanismen und wichtigen Schritte zum Vorbereiten eines Skripts oder Moduls sowie deren Veröffentlichung im PowerShell-Katalog erläutert.
-Es wird dringend empfohlen, die [Veröffentlichungsrichtlinien](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/psgallery-PublishingGuidelines) zu lesen, um zu verstehen, wie Sie sicherstellen, dass veröffentlichte Elemente größere Akzeptanz durch die PowerShell-Katalogbenutzer erfahren.
+Es wird dringend empfohlen, die [Veröffentlichungsrichtlinien](https://msdn.microsoft.com/powershell/gallery/psgallery/psgallery-PublishingGuidelines) zu lesen, um zu verstehen, wie Sie sicherstellen, dass veröffentlichte Elemente größere Akzeptanz durch die PowerShell-Katalogbenutzer erfahren.
 
 Für das Veröffentlichen eines Elements im PowerShell-Katalog gelten diese Mindestvoraussetzungen:
 
@@ -30,7 +30,7 @@ Bei der Bezugnahme auf Skripts sind aus einer einzigen Datei bestehende PowerShe
 
 ## <a name="powershell-gallery-account-and-api-key"></a>PowerShell-Katalogkonto und API-Schlüssel
 
-Informationen zum Einrichten Ihres PowerShell-Katalogkontos finden Sie unter [Erstellen eines PowerShell-Katalogkontos](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/psgallery_creating_an_account).
+Informationen zum Einrichten Ihres PowerShell-Katalogkontos finden Sie unter [Erstellen eines PowerShell-Katalogkontos](https://msdn.microsoft.com/powershell/gallery/psgallery/psgallery_creating_an_account).
 
 Nachdem Sie ein Konto erstellt haben, können Sie den benötigten API-Schlüssel zum Veröffentlichen eines Elements abrufen.
 Nachdem Sie sich mit dem Konto angemeldet haben, wird oben auf den PowerShell-Katalogseiten anstelle von „Register“ (Registrieren) Ihr Benutzername angezeigt.
@@ -44,9 +44,9 @@ Es wird empfohlen, den Schlüssel regelmäßig zu aktualisieren. Die Aktualisier
 
 Der PowerShell-Katalog stellt den Katalogbenutzern Informationen bereit, die aus Metadatenfeldern extrahiert werden, die im Skript oder Modulmanifest enthalten sind.
 Beim Erstellen oder Ändern von Elementen für die Veröffentlichung im PowerShell-Katalog gelten einige wenige Anforderungen für Informationen, die im Elementmanifest angegeben werden.
-Es wird dringend empfohlen, den Abschnitt „Elementmetadaten“ in den [Veröffentlichungsrichtlinien](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/psgallery-PublishingGuidelines) zu lesen, um zu erfahren, wie Sie optimale Elementinformationen für die Benutzer bereitstellen.
+Es wird dringend empfohlen, den Abschnitt „Elementmetadaten“ in den [Veröffentlichungsrichtlinien](https://msdn.microsoft.com/powershell/gallery/psgallery/psgallery-PublishingGuidelines) zu lesen, um zu erfahren, wie Sie optimale Elementinformationen für die Benutzer bereitstellen.
 
-Mit den Cmdlets [New-ModuleManifest](https://msdn.microsoft.com/en-us/powershell/gallery/psget/module/ModuleManifest-Reference) und [New-ScriptFileInfo](https://msdn.microsoft.com/en-us/powershell/gallery/psget/script/psget_new-scriptfileinfo) wird die Manifestvorlage für Sie erstellt, mit Platzhaltern für alle Manifestelemente.
+Mit den Cmdlets [New-ModuleManifest](https://msdn.microsoft.com/powershell/gallery/psget/module/ModuleManifest-Reference) und [New-ScriptFileInfo](https://msdn.microsoft.com/powershell/gallery/psget/script/psget_new-scriptfileinfo) wird die Manifestvorlage für Sie erstellt, mit Platzhaltern für alle Manifestelemente.
 
 Beide Manifeste umfassen zwei wichtige Abschnitte für die Veröffentlichung: den Bereich „Primary Key Data“ und den Bereich „PSData“ in „PrivateData“. In einem PowerShell-Modulmanifest repräsentieren alle Daten außerhalb des PrivateData-Abschnitts Daten zu primären Schlüsseln.
 Der Satz an primären Schlüsseln ist an die verwendete PowerShell-Version gebunden, das Auslassen der Schlüsseldefinition wird nicht unterstützt.
@@ -86,14 +86,14 @@ PowerShell Script Analyzer wird bei jeder Veröffentlichung oder Aktualisierung 
 Das für den Katalogbetrieb verantwortliche Team kontaktiert die Elementbesitzer, um gefundene Fehler zu beheben.
 
 Wenn die Manifestinformationen in Ihrem Element nicht von der PowerShell-Kataloginfrastruktur gelesen werden können, ist eine Veröffentlichung nicht möglich.
-[Test-ModuleManifest](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/test-modulemanifest) findet häufige Probleme, durch die das Modul nach der Installation unbrauchbar wäre. Dieses Tool muss für jedes Modul ausgeführt werden, bevor dieses im PowerShell-Katalog veröffentlicht wird.
+[Test-ModuleManifest](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/test-modulemanifest) findet häufige Probleme, durch die das Modul nach der Installation unbrauchbar wäre. Dieses Tool muss für jedes Modul ausgeführt werden, bevor dieses im PowerShell-Katalog veröffentlicht wird.
 
-In gleicher Weise überprüft [Test-ScriptFileInfo](https://msdn.microsoft.com/en-us/powershell/gallery/psget/script/psget_test-scriptfileinfo) die Metadaten in einem Skript und muss für jedes (separat von einem Modul veröffentlichte) Skript ausgeführt werden, bevor es im PowerShell-Katalog veröffentlicht wird.
+In gleicher Weise überprüft [Test-ScriptFileInfo](https://msdn.microsoft.com/powershell/gallery/psget/script/psget_test-scriptfileinfo) die Metadaten in einem Skript und muss für jedes (separat von einem Modul veröffentlichte) Skript ausgeführt werden, bevor es im PowerShell-Katalog veröffentlicht wird.
 
 
 ## <a name="publishing-items"></a>Veröffentlichen von Elementen
 
-Sie müssen [Publish-Script](https://msdn.microsoft.com/en-us/powershell/gallery/psget/script/psget_publish-script) oder [Publish-Module](https://msdn.microsoft.com/en-us/powershell/gallery/psget/module/psget_publish-module) verwenden, um Elemente im PowerShell-Katalog zu veröffentlichen.
+Sie müssen [Publish-Script](https://msdn.microsoft.com/powershell/gallery/psget/script/psget_publish-script) oder [Publish-Module](https://msdn.microsoft.com/powershell/gallery/psget/module/psget_publish-module) verwenden, um Elemente im PowerShell-Katalog zu veröffentlichen.
 Für diese Befehle sind folgende Informationen erforderlich:
 
 - Der Pfad zu dem Element, das Sie veröffentlichen. Verwenden Sie den für Ihr Modul benannten Ordner. Wenn Sie einen Ordner angeben, der mehrere Versionen desselben Moduls enthält, müssen Sie „RequiredVersion“ angeben.

@@ -4,12 +4,12 @@ contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 description: Richtlinien für Herausgeber
 title: Veröffentlichungsrichtlinien und Best Practices für den PowerShell-Katalog
-ms.openlocfilehash: 3aca76f8904c7eb64e5c96ae4f0f26014e0d2609
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 11207a312f916506f855c0e6e292752f72fc04c1
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190331"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45523023"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>Veröffentlichungsrichtlinien und Best Practices für den PowerShell-Katalog
 
@@ -172,12 +172,12 @@ PowerShell unterstützt in Bezug auf das Signieren von Code zwei primäre Ansät
 - Katalogsignierung von Modulen
 
 Das Signieren von PowerShell-Dateien ist ein bewährter Ansatz, mit dem sichergestellt wird, dass der ausgeführte Code aus einer zuverlässigen Quelle stammt und nicht verändert wurde.
-Details zum Signieren von PowerShell-Skriptdateien werden im Thema [Informationen zu Signaturen](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_signing) behandelt.
+Details zum Signieren von PowerShell-Skriptdateien werden im Thema [Informationen zu Signaturen](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_signing) behandelt.
 Allgemein ausgedrückt, kann eine Signatur jeder PS1-Datei hinzugefügt werden, die PowerShell beim Laden des Skripts überprüft.
-Mithilfe der Cmdlets für [Ausführungsrichtlinien](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_execution_policies) kann PowerShell auf die Verwendung von signierten Skripts beschränkt werden.
+Mithilfe der Cmdlets für [Ausführungsrichtlinien](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_execution_policies) kann PowerShell auf die Verwendung von signierten Skripts beschränkt werden.
 
 Die Katalogsignierung von Modulen ist ein Feature, das PowerShell in Version 5.1 hinzugefügt wurde.
-Das Signieren eines Moduls wird im Thema [Katalog-Cmdlets](https://msdn.microsoft.com/en-us/powershell/wmf/5.1/catalog-cmdlets) abgedeckt.
+Das Signieren eines Moduls wird im Thema [Katalog-Cmdlets](https://msdn.microsoft.com/powershell/wmf/5.1/catalog-cmdlets) abgedeckt.
 Allgemein ausgedrückt wird bei der Katalogsignierung eine Katalogdatei erstellt, die einen Hashwert für jede Datei im Modul enthält, und anschließend wird diese Datei signiert.
 Die PowerShell-Cmdlets „publish-module“, „install-module“, „save-module“ und „update-module“ überprüfen die Signatur auf Ihre Gültigkeit und bestätigen dann, dass der Hashwert für jedes Element den Daten im Katalog entspricht.
 Wenn eine vorherige Version des Moduls auf dem System installiert ist, wird mithilfe von „install-module“ bestätigt, dass die Signaturstelle für die neue Version derjenigen der vorherigen Installation entspricht.

@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea,powershell,security
 title: Registrieren von JEA-Konfigurationen
-ms.openlocfilehash: cda899b20378b0183a3d88ecfd593aaf7356e967
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 2c4a8f64c966903a6eb8fcabe4cd25ae7f98b2c4
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188512"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522853"
 ---
 # <a name="registering-jea-configurations"></a>Registrieren von JEA-Konfigurationen
 
@@ -57,7 +57,7 @@ Sie können die Sitzungskonfigurationsdatei jederzeit löschen. Sie wird nach de
 
 ## <a name="multi-machine-configuration-with-dsc"></a>Konfigurieren mehrerer Computer mit DSC (Desired State Configuration)
 
-Wenn Sie JEA auf mehreren Computern bereitstellen, bietet sich als einfachstes Bereitstellungsmodell die Verwendung der JEA-[DSC-](https://msdn.microsoft.com/en-us/powershell/dsc/overview)-Ressource an, um JEA schnell und konsistent auf jedem Computer bereitzustellen.
+Wenn Sie JEA auf mehreren Computern bereitstellen, bietet sich als einfachstes Bereitstellungsmodell die Verwendung der JEA-[DSC-](https://msdn.microsoft.com/powershell/dsc/overview)-Ressource an, um JEA schnell und konsistent auf jedem Computer bereitzustellen.
 
 Wenn Sie JEA mit DSC bereitstellen möchten, müssen Sie sicherstellen, dass die folgenden erforderlichen Anforderungen erfüllt sind:
 - Eine oder mehrere Rollenfunktionen wurden erstellt und einem gültigen PowerShell-Modul hinzugefügt.
@@ -110,7 +110,7 @@ Configuration JEAMaintenance
 }
 ```
 
-Diese Konfiguration kann direkt auf einem System angewendet werden. Dazu müssen Sie den [lokalen Konfigurations-Managers aufrufen ](https://msdn.microsoft.com/en-us/powershell/dsc/metaconfig) oder die [Pullserverkonfiguration](https://msdn.microsoft.com/en-us/powershell/dsc/pullserver) aktualisieren.
+Diese Konfiguration kann direkt auf einem System angewendet werden. Dazu müssen Sie den [lokalen Konfigurations-Managers aufrufen ](https://msdn.microsoft.com/powershell/dsc/metaconfig) oder die [Pullserverkonfiguration](https://msdn.microsoft.com/powershell/dsc/pullserver) aktualisieren.
 
 Mithilfe der DSC-Ressource können Sie außerdem den standardmäßigen Microsoft.PowerShell-Remoting-Endpunkt ersetzen.
 In diesem Fall registriert die Ressource automatisch einen nicht eingeschränkten Sicherungsendpunkt mit dem Namen „Microsoft.PowerShell.Restricted“, der über die Standard-WinRM-ACL verfügt. (Remotemanagementbenutzer und Mitglieder lokaler Administratorengruppen erhalten auf diese Weise Zugriff.)
