@@ -2,16 +2,16 @@
 ms.date: 08/09/2018
 keywords: Installieren, Windows, Linux, macOS, ARM, Raspbian
 title: Installieren von PowerShell
-ms.openlocfilehash: 24c40723e8f0218b3192d3d844762f774adf9c29
-ms.sourcegitcommit: 7d135f5fcb0eacab9862cfa64c4e42448b258f34
+ms.openlocfilehash: b89f11c36459bd0b03693d89ae3ff6f1327ea755
+ms.sourcegitcommit: b235c58b34d23317076540631f5cf83f1f309c0d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "40027632"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45557089"
 ---
 # <a name="installing-various-versions-of-powershell"></a>Installieren verschiedener Versionen von PowerShell
 
-Im Lauf der Jahre gab es viele Releases von PowerShell. Ursprünglich baute Windows PowerShell auf dem .NET Framework auf und funktionierte nur auf Windows-Systemen. Im aktuellen Release verwendet PowerShell Core .NET Core 2.0 als Runtime. PowerShell Core unterstützt die Plattformen Windows, macOS und Linux.
+Im Lauf der Jahre gab es viele Releases von PowerShell. Ursprünglich baute Windows PowerShell auf dem .NET Framework auf und funktionierte nur auf Windows-Systemen. Im aktuellen Release verwendet PowerShell Core .NET Core 2.x als Runtime. PowerShell Core unterstützt die Plattformen Windows, macOS und Linux.
 
 ## <a name="windows-powershell"></a>Windows PowerShell
 

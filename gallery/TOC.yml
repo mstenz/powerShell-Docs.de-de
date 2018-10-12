@@ -1,3 +1,4 @@
+items:
 - name: Übersicht
   href: readme.md
 - name: Installieren von PowerShellGet
@@ -6,79 +7,93 @@
   href: getting-started.md
 - name: Anleitung
   items:
-    - name: Suchen nach Elementen im Katalog
-      items:
-        - name: Suchen nach Elementen
-          href: how-to/finding-items/search-syntax.md
-        - name: Suchen anhand von PSEdition
-          href: how-to/finding-items/searching-by-psedition.md
-        - name: Filtern von Suchergebnissen
-          href: how-to/finding-items/filtering-items.md
-    - name: Veröffentlichen im Katalog
-      items:
-        - name: Erstellen und Veröffentlichen von Elementen
-          href: how-to/publishing-items/publishing-an-item.md
-        - name: Erstellen eines PowerShell-Katalogkontos
-          href: how-to/publishing-items/creating-an-account.md
-        - name: Entfernen von Elementen aus der Liste
-          href: how-to/publishing-items/unlisting-items.md
-        - name: Löschen von Elementen
-          href: how-to/publishing-items/deleting-items.md
-        - name: Verwalten von Elementbesitzern
-          href: how-to/publishing-items/managing-item-owners.md
-    - name: Arbeiten mit Elementen
-      items:
-        - name: FileList-Ansicht
-          href: how-to/working-with-items/filelist-view.md
-        - name: Bereitstellen in Azure Automation
-          href: how-to/working-with-items/deploy-to-azure-automation.md
-        - name: 'Elemente, die Zustimmung zur Lizenz erfordern'
-          href: how-to/working-with-items/items-that-require-license-acceptance.md
-        - name: Kontaktieren der Elementbesitzer
-          href: how-to/working-with-items/contacting-item-owners.md
-        - name: Bereitstellen von Feedback über soziale Netzwerke oder Kommentare
-          href: how-to/working-with-items/social-media-feedback.md
+  - name: Suchen nach Elementen im Katalog
+    items:
+    - name: Suchen nach Elementen
+      href: how-to/finding-items/search-syntax.md
+    - name: Suchen anhand von PSEdition
+      href: how-to/finding-items/searching-by-psedition.md
+    - name: Filtern von Suchergebnissen
+      href: how-to/finding-items/filtering-items.md
+  - name: Veröffentlichen im Katalog
+    items:
+    - name: Erstellen und Veröffentlichen von Elementen
+      href: how-to/publishing-items/publishing-an-item.md
+    - name: Erstellen eines PowerShell-Katalogkontos
+      href: how-to/publishing-items/creating-an-account.md
+    - name: Entfernen von Elementen aus der Liste
+      href: how-to/publishing-items/unlisting-items.md
+    - name: Löschen von Elementen
+      href: how-to/publishing-items/deleting-items.md
+    - name: Verwalten von Elementbesitzern
+      href: how-to/publishing-items/managing-item-owners.md
+  - name: Arbeiten mit Elementen
+    items:
+    - name: FileList-Ansicht
+      href: how-to/working-with-items/filelist-view.md
+    - name: Bereitstellen in Azure Automation
+      href: how-to/working-with-items/deploy-to-azure-automation.md
+    - name: Manuelles Herunterladen des Pakets
+      href: how-to/working-with-items/manual-download.md
+    - name: Elemente, die Zustimmung zur Lizenz erfordern
+      href: how-to/working-with-items/items-that-require-license-acceptance.md
+    - name: Kontaktieren der Elementbesitzer
+      href: how-to/working-with-items/contacting-item-owners.md
+    - name: Bereitstellen von Feedback über soziale Netzwerke oder Kommentare
+      href: how-to/working-with-items/social-media-feedback.md
+  - name: Verwalten des Kontoprofils
+    items:
+    - name: Kontoeinstellungen für den PowerShell-Katalog
+      href: how-to/managing-profile/managing-account.md
+    - name: Verwalten von API-Schlüsseln
+      href: how-to/managing-profile/creating-apikeys.md
 - name: Konzepte
   items:
-    - name: Veröffentlichungsrichtlinien und Best Practices
-      href: concepts/publishing-guidelines.md
-    - name: Elementmanifest und Katalogbenutzeroberfläche
-      href: concepts/item-manifest-affecting-ui.md
-    - name: Spezifische PSEdition erforderlich
-      items:
-        - name: Schreiben von Skripts mit PSEdition-Unterstützung
-          href: concepts/script-psedition-support.md
-        - name: Schreiben von Modulen mit PSEdition-Unterstützung
-          href: concepts/module-psedition-support.md
-    - name: Zustimmung zur Lizenz erforderlich
-      items:
-        - name: Zustimmung zur Lizenz für Skripts erforderlich
-          href: concepts/script-license-acceptance.md
-        - name: Zustimmung zur Lizenz für Module erforderlich
-          href: concepts/module-license-acceptance.md
-    - name: Definieren von Elementen als PreRelease
-      items:
-        - name: Definieren eines Moduls als PreRelease
-          href: concepts/module-prerelease-support.md
-        - name: Definieren eines Skripts als PreRelease
-          href: concepts/script-prerelease-support.md
-    - name: PSScriptAnalyzer-Regelprofil
-      href: concepts/scriptanalyzer-rule-profile.md
+  - name: Veröffentlichungsrichtlinien und Best Practices
+    href: concepts/publishing-guidelines.md
+  - name: Elementmanifest und Katalogbenutzeroberfläche
+    href: concepts/item-manifest-affecting-ui.md
+  - name: Spezifische PSEdition erforderlich
+    items:
+    - name: Schreiben von Skripts mit PSEdition-Unterstützung
+      href: concepts/script-psedition-support.md
+    - name: Schreiben von Modulen mit PSEdition-Unterstützung
+      href: concepts/module-psedition-support.md
+  - name: Zustimmung zur Lizenz erforderlich
+    items:
+    - name: Erforderliche Zustimmung zur Lizenz für Skripts
+      href: concepts/script-license-acceptance.md
+    - name: Zustimmung zur Lizenz für Module erforderlich
+      href: concepts/module-license-acceptance.md
+  - name: Definieren von Elementen als PreRelease
+    items:
+    - name: Definieren eines Moduls als PreRelease
+      href: concepts/module-prerelease-support.md
+    - name: Definieren eines Skripts als PreRelease
+      href: concepts/script-prerelease-support.md
+  - name: PSScriptAnalyzer-Regelprofil
+    href: concepts/scriptanalyzer-rule-profile.md
 - name: Support erhalten
   items:
-    - name: Melden von Missbrauch
-      href: how-to/getting-support/report-abuse.md
-    - name: Beilegung von Streitigkeiten
-      href: how-to/getting-support/dispute-resolution.md
-    - name: Kontaktieren der Administratoren
-      href: how-to/getting-support/contacting-administrators.md
-    - name: Problembehandlung
-      href: how-to/getting-support/troubleshooting-cmdlets.md
-    - name: Bootstrapping des NuGet-Anbieters und von „NuGet.exe“
-      href: how-to/getting-support/bootstrapping-nuget.md
-    - name: DSGVO-Konformität
-      href: how-to/getting-support/gdpr-dsr-policy.md
+  - name: Melden von Missbrauch
+    href: how-to/getting-support/report-abuse.md
+  - name: Beilegung von Streitigkeiten
+    href: how-to/getting-support/dispute-resolution.md
+  - name: Kontaktieren der Administratoren
+    href: how-to/getting-support/contacting-administrators.md
+  - name: Problembehandlung
+    href: how-to/getting-support/troubleshooting-cmdlets.md
+  - name: Bootstrapping des NuGet-Anbieters und von „NuGet.exe“
+    href: how-to/getting-support/bootstrapping-nuget.md
+  - name: DSGVO-Konformität
+    href: how-to/getting-support/gdpr-dsr-policy.md
 - name: FAQs zum Katalog
   href: faqs.md
 - name: PowerShellGet-Cmdlets
-  href: 'https://docs.microsoft.com/powershell/module/powershellget/'
+  href: https://docs.microsoft.com/powershell/module/powershellget/
+ms.openlocfilehash: 32577b81229d456922a6be9bfdc8156d337fd719
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.translationtype: HT
+ms.contentlocale: de-DE
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522921"

@@ -3,16 +3,20 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Erste Schritte mit dem PowerShell-Katalog
-ms.openlocfilehash: 83974698152e75efac66ea725a9c220486676d6f
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 39998df1a2bf9363dd008dc96a802157c8d691d7
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190161"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45523050"
 ---
 # <a name="get-started-with-the-powershell-gallery"></a>Erste Schritte mit dem PowerShell-Katalog
 
-Das Herunterladen von Elementen aus dem PowerShell-Katalog auf Ihr System erfordert das [PowerShellGet](/powershell/module/powershellget)-Modul. Das PowerShellGet-Modul ist in jedem der folgenden Downloads enthalten. Um diese Elemente aus dem PowerShell-Katalog herunterzuladen, müssen Sie sich nicht anmelden.
+Die richtige Vorgehensweise zum Installieren von Elementen aus dem PowerShell-Katalog ist die Verwendung der Cmdlets im Modul [PowerShellGet](/powershell/module/powershellget). Um diese Elemente aus dem PowerShell-Katalog herunterzuladen, müssen Sie sich nicht anmelden.
+
+> [!NOTE]
+> Zwar ist es möglich, ein Paket direkt aus dem PowerShell-Katalog herunterzuladen, diese Vorgehensweise wird aber nicht empfohlen. Weitere Informationen finden Sie unter [Manual Package Download (Paket manuell herunterladen)](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/how-to/working-with-items/manual-download.md).  
+
 
 ## <a name="discovering-items-from-the-powershell-gallery"></a>Suchen von Elementen im PowerShell-Katalog
 
@@ -40,7 +44,8 @@ Wenn Sie ein Element ermittelt haben, an dem Sie interessiert sind, möchten Sie
 
 Wenn Sie ein Element entdecken, das Ihrer Meinung nach nicht mit guten Absichten veröffentlicht wurde, klicken Sie auf der Elementseite auf **Report Abuse** (Missbrauch melden).
 
-Wenn Sie [Find-Module][] oder [Find-Script][] ausführen, können Sie diese Daten im zurückgegebenen PSGetModuleInfo-Objekt anzeigen. Die Ausführung von `Find-Module -Name PSReadLine -Repository PSGallery |Get-Member` gibt z.B. Daten für das PSReadLine-Modul im Katalog zurück.
+Wenn Sie [Find-Module][] oder [Find-Script][] ausführen, können Sie diese Daten im zurückgegebenen PSGetModuleInfo-Objekt anzeigen. Die Ausführung von `Find-Module -Name PSReadLine -Repository PSGallery |Get-Member` gibt beispielsweise
+Daten für das PSReadLine-Modul im Katalog zurück.
 
 ## <a name="downloading-items-from-the-powershell-gallery"></a>Herunterladen von Elementen aus dem PowerShell-Katalog
 

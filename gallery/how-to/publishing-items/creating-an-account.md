@@ -1,42 +1,35 @@
 ---
-ms.date: 06/12/2017
+ms.date: 09/11/2018
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Erstellen eines PowerShell-Katalogkontos
-ms.openlocfilehash: 4a44b51967ea8acdd331f6b3c682fc5884bd2f54
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 08d18310d9e18b00bd9e22efcc552dfd29f8982c
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219564"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522834"
 ---
-## <a name="creating-a-powershell-gallery-account"></a>Erstellen eines PowerShell-Katalogkontos
+# <a name="creating-a-powershell-gallery-account"></a>Erstellen eines PowerShell-Katalogkontos
 
-Bevor Elemente im PowerShell-Katalog veröffentlicht werden können, muss ein PowerShell-Katalogkonto eingerichtet werden.
-Das PowerShell-Katalogkonto muss mit einem E-Mail-aktivierten Azure Active Directory-Konto oder mit einem Microsoft-E-Mail-Konto (mit der Domäne outlook.com, hotmail.com usw.) verknüpft werden.
+Bevor Sie Elemente im PowerShell-Katalog veröffentlichen können, müssen Sie ein PowerShell-Katalog-Konto einrichten.
+PowerShell-Katalog-Konten müssen mit einem E-Mail-fähigen Anmeldekonto verknüpft sein. Dieses Konto kann ein Azure Active Directory-Konto oder eine Microsoft-ID sein, wie etwa ein E-Mail-Konto von outlook.com oder hotmail.com.
 
-Besuchen Sie https://PowerShellGallery.com, und klicken Sie auf „Register“ (Registrieren), um ein PowerShell-Katalogkonto zu erstellen (siehe Abbildung unten).
+Besuchen Sie [https://PowerShellGallery.com](https://PowerShellGallery.com), und klicken Sie auf **Sign in** (Anmelden), so wie in der folgenden Abbildung dargestellt.
 
-![Registrieren eines neuen Kontos](../../Images/CreatingAccount-Register.png)
+![Registrieren eines neuen Kontos](../../Images/CreateAccount-Register.png)
 
-Verwenden Sie auf der nächsten Seite ein Azure Active Directory-Konto, wählen Sie „Work or School Account“ (Geschäfts-, Schul- oder Unikonto) aus, und melden Sie sich mit Ihrem Konto an.
-Um ein Microsoft-Konto zu verwenden – beispielsweise in der Domäne Hotmail.com oder Outlook.com –, wählen Sie „Personal Account“ (Privates Konto) aus, und melden Sie sich an. 
+Verwenden Sie ein Azure Active Directory-Konto, wählen Sie **Work or School Account** (Geschäfts-, Schul- oder Unikonto) aus, und melden Sie sich mit Ihrem Konto an. Wählen Sie **Personal Account** (Persönliches Konto) aus, und melden Sie sich an, um eine Microsoft-ID zu verwenden.
 
-Nach der Anmeldung werden Sie aufgefordert, einen Benutzernamen für den PowerShell-Katalog zu erstellen.
-Lesen Sie die verlinkten Nutzungsbestimmungen und die Datenschutzrichtlinie, geben Sie einen Benutzernamen ein, und klicken Sie dann auf „Register“ (Registrieren).
+Als Nächstes werden Sie aufgefordert, einen Benutzernamen für den PowerShell-Katalog zu erstellen. Lesen Sie die Nutzungsbestimmungen und die Datenschutzrichtlinie, geben Sie einen Benutzernamen ein, und klicken Sie dann auf **Register** (Registrieren).
 
-Hinweis: Dieser Kontoname kann nach der Erstellung nicht mehr geändert werden.
-Weitere Informationen hierzu finden Sie unter [Verwalten von Elementbesitzern](https://msdn.microsoft.com/powershell/gallery/psgallery/managing-item-owners).
+> [!NOTE]
+> Der Kontoname kann nach der Erstellung nicht mehr geändert werden. Weitere Informationen finden Sie unter [Verwalten von Elementbesitzern](managing-item-owners.md).
 
-## <a name="recommended-practices-for-powershell-gallery-accounts"></a>Empfohlene Vorgehensweisen für PowerShell-Katalogkonten
+## <a name="recommended-practices-for-powershell-gallery-accounts"></a>Empfohlene Vorgehensweisen für PowerShell-Katalog-Konten
 
-Es ist wichtig, dass mit Ihrem PowerShell-Katalogkonto verwendete E-Mail-Konto aktiv zu überwachen.
-Die gesamte Kommunikation mit Besitzern von PowerShell-Katalogelementen erfolgt über die E-Mail-Adresse, die Ihrem PowerShell-Katalogkonto zugeordnet ist.
-Wenn Sie einen Elementbesitzer nicht erreichen können, kann es unter bestimmten Umständen erforderlich sein, ein Element durch das Team für den Katalogbetrieb löschen zu lassen.
+Es ist wichtig, das mit Ihrem PowerShell-Katalog-Konto verwendete E-Mail-Konto aktiv zu überwachen. Die gesamte Kommunikation mit Besitzern von PowerShell-Katalog-Elementen läuft über diese E-Mail-Adresse. Wenn das Betriebsteam des PowerShell-Katalogs einen Elementbesitzer nicht kontaktieren kann, müssen wir ggf. ein Element löschen.
 
-Organisationen, die Elemente im PowerShell-Katalog veröffentlichen, erstellen zu diesem Zweck häufig ein eindeutiges Konto in Outlook.com oder einer anderen Microsoft-Kontodomäne.
-Oft wird dieses Konto nicht regelmäßig überwacht.
-Eine bewährte Methode ist in diesem Fall die Outlook-Weiterleitung von E-Mails an ein anderes Konto – typischerweise innerhalb der Organisation –, das vom Elementbesitzer überwacht wird.
+Organisationen, die Elemente im PowerShell-Katalog veröffentlichen, erstellen zu diesem Zweck häufig ein eindeutiges externes Konto. Es wird empfohlen, die E-Mail-Weiterleitung zu nutzen, um Benachrichtigung an eine Adresse innerhalb Ihrer Organisation weiterzuleiten.
 
-Wenn einem Element mehrere Besitzer zugeordnet sind, wird die gesamte vom PowerShell-Katalog ausgehende Kommunikation an alle Benutzer gesendet.
-Ausführliche Informationen zum Hinzufügen von Besitzern zu einem Element finden Sie unter [Verwalten von Elementbesitzern](https://msdn.microsoft.com/powershell/gallery/psgallery/managing-item-owners).
+Wenn mehrere Besitzer einem Element zugeordnet werden, werden alle PowerShell-Katalog-Benachrichtigungen an alle Besitzer gesendet. Weitere Informationen finden Sie unter [Verwalten von Elementbesitzern](managing-item-owners.md).

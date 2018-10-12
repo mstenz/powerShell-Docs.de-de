@@ -2,12 +2,12 @@
 title: PowerShell-Remoting über SSH
 description: Remoting in PowerShell Core mithilfe von SSH
 ms.date: 08/14/2018
-ms.openlocfilehash: 1de034d667aa9a377e5460e7eb474402c690cb42
-ms.sourcegitcommit: 56b9be8503a5a1342c0b85b36f5ba6f57c281b63
+ms.openlocfilehash: 451a55a588381cc9bec265895b2bfad6b6f6e73c
+ms.sourcegitcommit: a652b12a0b87cdd0c8eb76381ae015467dd7b8cd
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "43133152"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46134279"
 ---
 # <a name="powershell-remoting-over-ssh"></a>PowerShell-Remoting über SSH
 
@@ -167,6 +167,14 @@ Installieren Sie für Linux SSH (einschließlich SSHD-Server) entsprechend Ihrer
    sudo launchctl stop com.openssh.sshd
    sudo launchctl start com.openssh.sshd
    ```
+
+## <a name="authentication"></a>Authentifizierung
+
+PowerShell-Remoting über SSH basiert auf dem Authentifizierungsaustausch zwischen dem SSH-Client und dem SSH-Dienst und implementiert selbst keine Authentifizierungsschemas.
+Dies bedeutet, dass alle konfigurierten Authentifizierungsschemas, einschließlich der mehrstufigen Authentifizierung, von SSH und unabhängig von PowerShell verarbeitet werden.
+Sie können den SSH-Dienst beispielsweise für die Authentifizierung mit öffentlichen Schlüsseln oder die Verwendung eines Einmalkennworts zur Erhöhung der Sicherheit konfigurieren.
+Die Konfiguration einer mehrstufigen Authentifizierung wird in dieser Dokumentation nicht beschrieben.
+Bevor Sie versuchen, eine mehrstufige Authentifizierung mit PowerShell-Remoting zu verwenden, informieren Sie sich in der Dokumentation für SSH, wie Sie eine mehrstufige Authentifizierung richtig konfigurieren, und testen Sie, ob diese außerhalb von PowerShell funktioniert.
 
 ## <a name="powershell-remoting-example"></a>Beispiel für das PowerShell-Remoting
 

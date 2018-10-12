@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: PowerShell
 title: Elementmanifestwerte, die die Benutzeroberfläche des PowerShell-Katalogs betreffen
-ms.openlocfilehash: 60415193129fe040b53d35b1f8701408cfc4989d
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: e7e9910504a665e464add0a83454cec64c1a0937
+ms.sourcegitcommit: 601609575a3214ea7086a3bcb586ae0d1df3d418
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268176"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46532969"
 ---
 # <a name="item-manifest-values-that-impact-the-powershell-gallery-ui"></a>Elementmanifestwerte, die die Benutzeroberfläche des PowerShell-Katalogs betreffen
 
@@ -44,6 +44,8 @@ Die folgende Tabelle enthält die Benutzeroberflächenelemente der PowerShell-Ka
 | **Versionsverlauf** | Der Versionsverlauf stellt die Updates dar, die an einem Modul im PowerShell-Katalog vorgenommen wurden. Wenn eine Elementversion mit der Löschfunktion ausgeblendet wird, wird diese nur Elementbesitzern im Versionsverlauf angezeigt. | Nein | Nein |
 | **Projektwebsite** | Die Projektwebsite wird bei Modulen im Abschnitt „Privatedata\PSData“ des Modulmanifests durch Angabe von ProjectURI bereitgestellt. Im Skriptmanifest wird dieses Element durch Angabe von „.PROJECTURI“ gesteuert. | Ja | Ja |
 | **Lizenz** | Ein Lizenzlink wird bei Modulen im Abschnitt „Privatedata\PSData“ des Modulmanifests durch Angabe von LicenseURI bereitgestellt. Im Skriptmanifest wird dieses Element durch Angabe von „.LICENSEURI“ gesteuert. Hinweis: Es ist wichtig zu erwähnen, dass die Nutzungsbedingungen für den PowerShell-Katalog die Nutzungsbedingungen für das Element angeben, wenn eine Lizenz nicht anhand von LicenseURI oder innerhalb eines Moduls angegeben wird. Weitere Informationen finden Sie in den Nutzungsbedingungen. | Ja | Ja |
+| **Symbol** | Ein Symbol kann für jedes Element im PowerShell-Katalog festgelegt werden. Geben Sie dazu das IconURI-Flag im Skriptmanifest oder im Abschnitt „PrivateData-PSData“ des Modulmanifests an. Der IconURI sollte auf ein 32x32 großes Bild mit transparentem Hintergrund zeigen. Der URI **muss** eine direkte Bild-URL sein und **darf nicht** zu einer Website führen, die das Bild oder eine Datei im Paket für den PowerShell-Katalog enthält. | Ja | Ja |
+
 
 ## <a name="editing-item-details"></a>Bearbeiten von Elementdetails
 
