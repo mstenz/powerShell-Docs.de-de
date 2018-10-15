@@ -2,12 +2,12 @@
 title: Neuigkeiten in PowerShell Core 6.0
 description: Neue Features und Änderungen in PowerShell Core 6.0
 ms.date: 08/06/2018
-ms.openlocfilehash: f0cddad223528cd0f2b4f392faeb6e08e1050c51
-ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.openlocfilehash: 83c104d838db9d86fe1d485e92245a9c8f2d2057
+ms.sourcegitcommit: 59e568ac9fa8ba28e2c96932b7c84d4a855fed2f
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39587243"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46289241"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>Neuigkeiten in PowerShell Core 6.0
 
@@ -80,7 +80,7 @@ Unter macOS und Linux wurden einige Änderungen vorgenommen, damit für Dateinam
   - Der Speicherpfad für den Verlauf lautet `~/.local/share/powershell/PSReadline/ConsoleHost_history.txt`
   - Der Benutzermodulpfad lautet `~/.local/share/powershell/Modules`
 - Unterstützung für Datei- und Ordnernamen mit Doppelpunkt unter Unix. (#4959)
-- Unterstützung für Skriptnamen oder vollständige Pfade, die Kommas enthalten. (#4136) (Vielen Dank an @TimCurwick)
+- Unterstützung für Skriptnamen oder vollständige Pfade, die Kommas enthalten. (#4136) (Vielen Dank an [@TimCurwick](https://github.com/TimCurwick))
 - Es wird erkannt, wann mit `-LiteralPath` die Platzhaltererweiterung für Navigations-Cmdlets unterdrückt wird. (#5038)
 - `Get-ChildItem` wurde in der Funktionsweise an `ls -R` in *nix und native `DIR /S`-Windows-Befehle angeglichen.
   `Get-ChildItem` gibt jetzt die symbolischen Links zurück, die bei einer rekursiven Suche gefunden wurden, und sucht nicht in den Verzeichnissen, zu denen die Links führen. (#3780)
@@ -118,18 +118,18 @@ Weitere Änderungen in `pwsh(.exe)` im Vergleich zu `powershell.exe`:
   Beim Versuch, einen Befehl wie `pwsh.exe -Command Get-Command` auszuführen, muss für diese Änderung jedoch `-c` oder `-Command` explizit angegeben werden. (#4019)
 - PowerShell Core akzeptiert den Schalter `-i` (oder `-Interactive`), um eine interaktive Shell anzugeben. (#3558) Daher kann PowerShell als Standard-Shell auf Unix-Plattformen verwendet werden.
 - Die Parameter `-importsystemmodules` und `-psconsoleFile` wurden aus `pwsh.exe` entfernt. (#4995)
-- `pwsh -version` wurde geändert, und Hilfe für `pwsh.exe` bei der Ausrichtung an anderen nativen Tools wurde integriert. (#4958 & #4931) (Vielen Dank an @iSazonov)
+- `pwsh -version` wurde geändert, und Hilfe für `pwsh.exe` bei der Ausrichtung an anderen nativen Tools wurde integriert. (#4958 & #4931) (Vielen Dank an [@iSazonov](https://github.com/iSazonov))
 - Ungültige Argument-Fehlermeldungen für `-File` und `-Command` und mit den Unix-Standards konsistente Exitcodes (#4573)
 - Parameter `-WindowStyle` unter Windows hinzugefügt. (#4573) Paketbasierte Installationsupdates auf Nicht-Windows-Plattformen werden direkt installiert.
 
 ## <a name="backwards-compatibility-with-windows-powershell"></a>Abwärtskompatibilität mit Windows PowerShell
 
 Das Ziel von PowerShell Core ist die höchstmögliche Kompatibilität mit Windows PowerShell.
-PowerShell Core verwendet [.NET Standard][], um binäre Kompatibilität mit vorhandenen .NET-Assemblys bereitzustellen.
+PowerShell Core verwendet [.NET Standard 2.0][], um binäre Kompatibilität mit vorhandenen .NET-Assemblys bereitzustellen.
 Viele PowerShell-Module hängen von diesen Assemblys (häufig DLL-Dateien) ab. Daher lässt .NET Standard zu, dass sie weiterhin .NET Core nutzen.
 PowerShell Core enthält auch eine Heuristik, mit der in bekannten Ordnern wie dem üblichen Speicherort des globalen Assemblycache auf dem Datenträger nach .NET Framework-DLL-Abhängigkeiten gesucht wird.
 
-Weitere Informationen zu .NET Standard finden Sie auf dem [.NET Blog][], in diesem [YouTube][] und in diesen [FAQ][] auf GitHub.
+Weitere Informationen zu .NET Standard finden Sie auf dem [.NET-Blog][], in diesem [YouTube-Video][] und in diesen [Häufig gestellte Fragen][] auf GitHub.
 
 Die PowerShell-Sprache und die „integrierten“ Module (z.B. `Microsoft.PowerShell.Management` und `Microsoft.PowerShell.Utility`) sollten genauso funktionieren wie in Windows PowerShell.
 In vielen Fällen haben wir mit der Hilfe der Community Fehlerkorrekturen und neue Funktionen für diese Cmdlets eingebaut.
@@ -214,21 +214,21 @@ Weitere Informationen zu PowerShell-Aufträgen finden Sie unter [about_Jobs](htt
 
 ## <a name="semantic-versioning"></a>Semantische Versionsverwaltung
 
-- `SemanticVersion` ist nun mit `SemVer 2.0` kompatibel. (#5037) (Vielen Dank an @iSazonov)
-- Standard-`ModuleVersion` in `New-ModuleManifest` zu `0.0.1` geändert, um SemVer zu entsprechen. (#4842) (Vielen Dank an @LDSpits)
-- `semver` wurde als Typaccelerator für `System.Management.Automation.SemanticVersion` hinzugefügt. (#4142) (Vielen Dank an @oising)
+- `SemanticVersion` ist nun mit `SemVer 2.0` kompatibel. (#5037) (Vielen Dank an [@iSazonov](https://github.com/iSazonov))
+- Standard-`ModuleVersion` in `New-ModuleManifest` zu `0.0.1` geändert, um SemVer zu entsprechen. (#4842) (Vielen Dank an [@LDSpits](https://github.com/LDSpits))
+- `semver` wurde als Typaccelerator für `System.Management.Automation.SemanticVersion` hinzugefügt. (#4142) (Vielen Dank an [@oising](https://github.com/oising))
 - Der Vergleich zwischen einer `SemanticVersion`- und einer `Version`-Instanz, der nur mit `Major`- und `Minor`-Versionswerten erstellt wurde, wurde aktiviert.
 
 ## <a name="language-updates"></a>Sprachupdates
 
-- Die Analyse von Unicode-Escapesequenzen wurde implementiert, sodass Benutzer Unicode-Zeichen als Argumente, Zeichenfolgen oder Variablennamen verwenden können. (#3958) (Vielen Dank an @rkeithhill)
+- Die Analyse von Unicode-Escapesequenzen wurde implementiert, sodass Benutzer Unicode-Zeichen als Argumente, Zeichenfolgen oder Variablennamen verwenden können. (#3958) (Vielen Dank an [@rkeithhill](https://github.com/rkeithhill))
 - Es wurde ein neues Escapezeichen für die ESC-TASTE hinzugefügt: `` `e``.
-- Es wurde Unterstützung für das Konvertieren von Enumerationen in Zeichenfolgen hinzugefügt. (#4318) (Vielen Dank an @KirkMunro)
+- Es wurde Unterstützung für das Konvertieren von Enumerationen in Zeichenfolgen hinzugefügt. (#4318) (Vielen Dank an [@KirkMunro](https://github.com/KirkMunro))
 - Probleme bei der Umwandlung eines Arrays mit einem einzigen Element in eine generische Auflistung wurden behoben. (#3170)
-- Dem `..`-Operator wurde eine Überladung des Zeichenbereichs hinzugefügt, sodass `'a'..'z'` Buchstaben von „a“ bis „z“ zurückgibt. (#5026) (Vielen Dank an @IISResetMe)
+- Dem `..`-Operator wurde eine Überladung des Zeichenbereichs hinzugefügt, sodass `'a'..'z'` Buchstaben von „a“ bis „z“ zurückgibt. (#5026) (Vielen Dank an [@IISResetMe](https://github.com/IISResetMe))
 - Schreibgeschützte Variablen werden bei der Variablenzuweisung nicht mehr überschrieben.
 - Lokale Variablen werden beim Dot-Sourcing von Skript-Cmdlets automatisch per Push an „DottedScopes“ übertragen. (#4709)
-- Die Optionen „Singleline“ und „Multiline“ können jetzt im Split-Operator verwendet werden. (#4721) (Vielen Dank an @iSazonov)
+- Die Optionen „Singleline“ und „Multiline“ können jetzt im Split-Operator verwendet werden. (#4721) (Vielen Dank an [@iSazonov](https://github.com/iSazonov))
 
 ## <a name="engine-updates"></a>Engine-Updates
 
@@ -240,12 +240,12 @@ Weitere Informationen zu PowerShell-Aufträgen finden Sie unter [about_Jobs](htt
   - `Platform`: Dieser Wert wird von `[System.Environment]::OSVersion.Platform` zurückgegeben. Unter Windows ist er auf `Win32NT`, unter macOS auf `Unix` und unter Linux auf `Unix` festgelegt.
 - Die `BuildVersion`-Eigenschaft wurde aus `$PSVersionTable` entfernt.
   Diese Eigenschaft war stark an die Windows-Buildversion gebunden.
-  Stattdessen wird empfohlen, die genaue Version von PowerShell Core mit `GitCommitId` abzurufen. (#3877) (Vielen Dank an @iSazonov)
+  Stattdessen wird empfohlen, die genaue Version von PowerShell Core mit `GitCommitId` abzurufen. (#3877) (Vielen Dank an [@iSazonov](https://github.com/iSazonov))
 - Die Eigenschaft `ClrVersion` wurde aus `$PSVersionTable` entfernt.
   Diese Eigenschaft ist für .NET Core irrelevant und wurde nur für die Abwärtskompatibilität in bestimmten Fällen beibehalten, die nicht für PowerShell gelten.
 - Es wurden die drei automatischen Variablen `$IsWindows`, `$IsMacOs` und `$IsLinux` hinzugefügt, mit denen festgestellt werden kann, ob PowerShell unter einem bestimmten Betriebssystem ausgeführt wird.
 - `GitCommitId` wurde dem PowerShell Core-Banner hinzugefügt.
-  Nun müssen Sie beim Start von PowerShell nicht `$PSVersionTable` ausführen, um die Version zu erhalten. (#3916) (Vielen Dank an @iSazonov)
+  Nun müssen Sie beim Start von PowerShell nicht `$PSVersionTable` ausführen, um die Version zu erhalten. (#3916) (Vielen Dank an [@iSazonov](https://github.com/iSazonov))
 - Es wurde eine JSON-Konfigurationsdatei namens `powershell.config.json` in `$PSHome` hinzugefügt, in der einige Einstellungen vor der Startzeit gespeichert werden (z.B. `ExecutionPolicy`).
 - Es werden keine Pipelines bei der Ausführung von ausführbaren Windows-Dateien blockiert.
 - Die Enumeration von COM-Auflistungen wurde aktiviert. (#4553)
@@ -255,93 +255,93 @@ Weitere Informationen zu PowerShell-Aufträgen finden Sie unter [about_Jobs](htt
 ### <a name="new-cmdlets"></a>Neue Cmdlets
 
 - `Get-Uptime` wurde `Microsoft.PowerShell.Utility` hinzugefügt.
-- Der Befehl `Remove-Alias` wurde hinzugefügt. (#5143) (Vielen Dank an @PowershellNinja)
-- Dem Verwaltungsmodul wurde `Remove-Service` hinzugefügt. (#4858) (Vielen Dank an @joandrsn)
+- Der Befehl `Remove-Alias` wurde hinzugefügt. (#5143) (Vielen Dank an [@PowershellNinja](https://github.com/PowershellNinja))
+- Dem Verwaltungsmodul wurde `Remove-Service` hinzugefügt. (#4858) (Vielen Dank an [@joandrsn](https://github.com/joandrsn))
 
 ### <a name="web-cmdlets"></a>Web-Cmdlets
 
-- Unterstützung für die Zertifikatauthentifizierung wurde hinzugefügt. (#4646) (Vielen Dank an @markekraus)
-- Unterstützung für Inhaltsheader wurde hinzugefügt. (#4494 & #4640) (Vielen Dank an @markekraus)
-- Unterstützung für Header mit mehreren Links wurde hinzugefügt. (#5265) (Vielen Dank an @markekraus)
+- Unterstützung für die Zertifikatauthentifizierung wurde hinzugefügt. (#4646) (Vielen Dank an [@markekraus](https://github.com/markekraus))
+- Unterstützung für Inhaltsheader wurde hinzugefügt. (#4494 & #4640) (Vielen Dank an [@markekraus](https://github.com/markekraus))
+- Unterstützung für Header mit mehreren Links wurde hinzugefügt. (#5265) (Vielen Dank an [@markekraus](https://github.com/markekraus))
 - Unterstützung für die Linkheader-Paginierung (#3828)
   - Wenn die Antwort einen Linkheader enthält, wird für `Invoke-WebRequest` eine RelationLink-Eigenschaft als Wörterbuch erstellt, das die URLs und `rel`-Attribute darstellt. Um die Verwendung zu erleichtern, wird außerdem sichergestellt, dass die URLs absolut sind.
   - Wir machen für `Invoke-RestMethod` einen `-FollowRelLink`-Schalter verfügbar, wenn die Antwort einen Linkheader enthält, der automatisch `next` `rel`-Links folgt, bis sie nicht mehr vorhanden sind, oder sobald der optionale Parameterwert `-MaximumFollowRelLink` erreicht wird.
-- Der Parameter `-CustomMethod` wurde hinzugefügt, um die Verwendung nicht standardmäßiger Methodenverben zu ermöglichen. (#3142) (Vielen Dank an @Lee303)
-- Unterstützung für `SslProtocol` wurde hinzugefügt. (#5329) (Vielen Dank an @markekraus)
-- Mehrteilige Unterstützung wurde hinzugefügt. (#4782) (Vielen Dank an @markekraus)
-- `-NoProxy` wurde Web-Cmdlets hinzugefügt, damit sie die systemweite Proxyeinstellung ignorieren. (#3447) (Vielen Dank an @TheFlyingCorpse)
-- Der Benutzer-Agent von Web-Cmdlets meldet nun die Betriebssystemplattform. (#4937) (Vielen Dank an @LDSpits)
+- Der Parameter `-CustomMethod` wurde hinzugefügt, um die Verwendung nicht standardmäßiger Methodenverben zu ermöglichen. (#3142) (Vielen Dank an [@Lee303](https://github.com/Lee303))
+- Unterstützung für `SslProtocol` wurde hinzugefügt. (#5329) (Vielen Dank an [@markekraus](https://github.com/markekraus))
+- Mehrteilige Unterstützung wurde hinzugefügt. (#4782) (Vielen Dank an [@markekraus](https://github.com/markekraus))
+- `-NoProxy` wurde Web-Cmdlets hinzugefügt, damit sie die systemweite Proxyeinstellung ignorieren. (#3447) (Vielen Dank an [@TheFlyingCorpse](https://github.com/TheFlyingCorpse))
+- Der Benutzer-Agent von Web-Cmdlets meldet nun die Betriebssystemplattform. (#4937) (Vielen Dank an [@LDSpits](https://github.com/LDSpits))
 - Der `-SkipHeaderValidation`-Schalter wurde hinzugefügt, um das Hinzufügen von Headern ohne Überprüfung des Headerwerts zu unterstützen. (#4085)
 - Falls erforderlich, können Sie festlegen, dass Web-Cmdlets das HTTPS-Zertifikat auf dem Server nicht überprüfen sollen.
-- Es wurden Authentifizierungsparameter hinzugefügt. (#5052) (Vielen Dank an @markekraus)
+- Es wurden Authentifizierungsparameter hinzugefügt. (#5052) (Vielen Dank an [@markekraus](https://github.com/markekraus))
   - Es wurde `-Authentication` mit den drei Optionen „Basic“, „OAuth“ und „Bearer“ hinzugefügt.
   - Es wurde `-Token` hinzugefügt, um das Bearer-Token für die Optionen „OAuth“ und „Bearer“ zu erhalten.
   - Es wurde `-AllowUnencryptedAuthentication` hinzugefügt, um die Authentifizierung zu umgehen, die für alle Transportschemas außer HTTPS bereitgestellt wird.
-- `-ResponseHeadersVariable` wurde `Invoke-RestMethod` hinzugefügt, um die Erfassung von Antwortheadern zu aktivieren. (#4888) (Vielen Dank an @markekraus)
+- `-ResponseHeadersVariable` wurde `Invoke-RestMethod` hinzugefügt, um die Erfassung von Antwortheadern zu aktivieren. (#4888) (Vielen Dank an [@markekraus](https://github.com/markekraus))
 - Web-Cmdlets enthalten nun die HTTP-Antwort in der Ausnahme, wenn der Statuscode der Antwort nicht erfolgreich ist. (#3201)
-- Der `UserAgent` von Web-Cmdlets wurde von `WindowsPowerShell` in `PowerShell` geändert. (#4914) (Vielen Dank an @markekraus)
+- Der `UserAgent` von Web-Cmdlets wurde von `WindowsPowerShell` in `PowerShell` geändert. (#4914) (Vielen Dank an [@markekraus](https://github.com/markekraus))
 - `Invoke-RestMethod` wurde explizite `ContentType`-Erkennung hinzugefügt. (#4692)
-- `-SkipHeaderValidation` von Web-Cmdlets funktioniert jetzt mit nicht standardmäßigen User-Agent-Headern. (#4479 & #4512) (Vielen Dank an @markekraus)
+- `-SkipHeaderValidation` von Web-Cmdlets funktioniert jetzt mit nicht standardmäßigen User-Agent-Headern. (#4479 & #4512) (Vielen Dank an [@markekraus](https://github.com/markekraus))
 
 ### <a name="json-cmdlets"></a>JSON-Cmdlets
 
-- `ConvertFrom-Json` wurde `-AsHashtable` hinzugefügt, sodass stattdessen ein `Hashtable` zurückgegeben wird. (#5043) (Vielen Dank an @bergmeister)
+- `ConvertFrom-Json` wurde `-AsHashtable` hinzugefügt, sodass stattdessen ein `Hashtable` zurückgegeben wird. (#5043) (Vielen Dank an [@bergmeister](https://github.com/bergmeister))
 - Für die `ConvertTo-Json`-Ausgabe wird ein ansprechenderer Formatierer verwendet. (#2787) (Vielen Dank an @kittholland)
 - `ConvertTo-Json` wurde Unterstützung für die `Jobject`-Serialisierung hinzugefügt. (#5141)
 - `ConvertFrom-Json` deserialisiert nun ein Array von Zeichenfolgen aus der Pipeline, die zusammen eine vollständige JSON-Zeichenfolge bilden,
   d.h., Zeilenumbrüche verursachen keine Fehler bei der JSON-Analyse mehr. (#3823)
 - Der für `System.Array` definierte `AliasProperty "Count"` wurde entfernt.
-  Dadurch wird die nicht wichtige `Count`-Eigenschaft aus einigen `ConvertFrom-Json`-Ausgaben entfernt. (#3231) (Vielen Dank an @PetSerAl)
+  Dadurch wird die nicht wichtige `Count`-Eigenschaft aus einigen `ConvertFrom-Json`-Ausgaben entfernt. (#3231) (Vielen Dank an [@PetSerAl](https://github.com/PetSerAl))
 
 ### <a name="csv-cmdlets"></a>CSV-Cmdlets
 
-- `PSTypeName`-Unterstützung wurde für `Import-Csv` und `ConvertFrom-Csv` hinzugefügt. (#5389) (Vielen Dank an @markekraus)
-- `Import-Csv` unterstützt nun `CR`, `LF` und `CRLF` als Zeilentrennzeichen. (#5363) (Vielen Dank an @iSazonov)
-- `-NoTypeInformation` ist nun der Standard für `Export-Csv` und `ConvertTo-Csv`. (#5164) (Vielen Dank an @markekraus)
+- `PSTypeName`-Unterstützung wurde für `Import-Csv` und `ConvertFrom-Csv` hinzugefügt. (#5389) (Vielen Dank an [@markekraus](https://github.com/markekraus))
+- `Import-Csv` unterstützt nun `CR`, `LF` und `CRLF` als Zeilentrennzeichen. (#5363) (Vielen Dank an [@iSazonov](https://github.com/iSazonov))
+- `-NoTypeInformation` ist nun der Standard für `Export-Csv` und `ConvertTo-Csv`. (#5164) (Vielen Dank an [@markekraus](https://github.com/markekraus))
 
 ### <a name="service-cmdlets"></a>Dienst-Cmdlets
 
-- Den von `Get-Service` zurückgegebenen `ServiceController`-Objekten wurden die Eigenschaften `UserName`, `Description`, `DelayedAutoStart`, `BinaryPathName` und `StartupType` hinzugefügt. (#4907) (Vielen Dank an @joandrsn)
-- Es wurden Funktionen zum Festlegen von Anmeldeinformationen für den `Set-Service`-Befehl hinzugefügt. (#4844) (Vielen Dank an @joandrsn)
+- Den von `Get-Service` zurückgegebenen `ServiceController`-Objekten wurden die Eigenschaften `UserName`, `Description`, `DelayedAutoStart`, `BinaryPathName` und `StartupType` hinzugefügt. (#4907) (Vielen Dank an [@joandrsn](https://github.com/joandrsn))
+- Es wurden Funktionen zum Festlegen von Anmeldeinformationen für den `Set-Service`-Befehl hinzugefügt. (#4844) (Vielen Dank an [@joandrsn](https://github.com/joandrsn))
 
 ### <a name="other-cmdlets"></a>Weitere Cmdlets
 
 - `Get-ChildItem` wurde ein Parameter namens `-FollowSymlink` hinzugefügt, der bedarfsgesteuert symbolische Verknüpfungen mit Prüfungen auf Linkschleifen durchläuft. (#4020)
-- `Add-Type` wurde aktualisiert und unterstützt nun `CSharpVersion7`. (#3933) (Vielen Dank an @iSazonov)
+- `Add-Type` wurde aktualisiert und unterstützt nun `CSharpVersion7`. (#3933) (Vielen Dank an [@iSazonov](https://github.com/iSazonov))
 - Das `Microsoft.PowerShell.LocalAccounts`-Modul wurde aufgrund der Verwendung von nicht unterstützten APIs entfernt, bis eine bessere Lösung verfügbar ist. (#4302)
 - `*-Counter`-Cmdlets wurden aufgrund der Verwendung von nicht unterstützten APIs aus `Microsoft.PowerShell.Diagnostics` entfernt, bis eine bessere Lösung verfügbar ist. (#4303)
 - Support für `Invoke-Item -Path <folder>` wurde hinzugefügt. (#4262)
-- `Split-Path` wurden die Schalter `-Extension` und `-LeafBase` hinzugefügt, sodass Pfade zwischen der Dateierweiterung und dem Rest des Dateinamens aufgeteilt werden können. (#2721) (Vielen Dank an @powercode)
+- `Split-Path` wurden die Schalter `-Extension` und `-LeafBase` hinzugefügt, sodass Pfade zwischen der Dateierweiterung und dem Rest des Dateinamens aufgeteilt werden können. (#2721) (Vielen Dank an [@powercode](https://github.com/powercode))
 - `Sort-Object` wurden die Parameter `-Top` und `-Bottom` für die Sortierung „Top/Bottom N“ hinzugefügt.
-- Der übergeordnete Prozess eines Prozesses wurde durch Hinzufügen von `CodeProperty "Parent"` zu `System.Diagnostics.Process` verfügbar gemacht. (#2850) (Vielen Dank an @powercode)
+- Der übergeordnete Prozess eines Prozesses wurde durch Hinzufügen von `CodeProperty "Parent"` zu `System.Diagnostics.Process` verfügbar gemacht. (#2850) (Vielen Dank an [@powercode](https://github.com/powercode))
 - Für Speicherspalten von `Get-Process` werden MB statt KB verwendet.
-- Der Schalter `-NoNewLine` wurde `Out-String` hinzugefügt. (#5056) (Vielen Dank an @raghav710)
+- Der Schalter `-NoNewLine` wurde `Out-String` hinzugefügt. (#5056) (Vielen Dank an [@raghav710](https://github.com/raghav710))
 - Das Cmdlet `Move-Item` berücksichtigt nun die Parameter `-Include`, `-Exclude` und `-Filter`. (#3878)
 - `*` kann jetzt in Registrierungspfaden für `Remove-Item` verwendet werden. (#4866)
 - `-Title` wurde `Get-Credential` hinzugefügt und die Benutzeroberfläche bei Aufforderungen plattformübergreifend vereinheitlicht.
 - Der Parameter `-TimeOut` wurde `Test-Connection` hinzugefügt. (#2492)
 - `Get-AuthenticodeSignature`-Cmdlets können nun Dateisignatur-Zeitstempel erhalten. (#4061)
 - Der nicht unterstützte `-ShowWindow`-Schalter wurde aus `Get-Help` entfernt. (#4903)
-- `Get-Content -Delimiter` enthält nun nicht mehr das von den Arrayelementen zurückgegebene Trennzeichen. (#3706) (Vielen Dank an @mklement0)
-- `ConvertTo-HTML` wurden die Parameter `Meta`, `Charset` und `Transitional` hinzugefügt. (#4184) (Vielen Dank an @ergo3114)
+- `Get-Content -Delimiter` enthält nun nicht mehr das von den Arrayelementen zurückgegebene Trennzeichen. (#3706) (Vielen Dank an [@mklement0](https://github.com/mklement0))
+- `ConvertTo-HTML` wurden die Parameter `Meta`, `Charset` und `Transitional` hinzugefügt. (#4184) (Vielen Dank an [@ergo3114](https://github.com/ergo3114))
 - Dem `Get-ComputerInfo`-Ergebnis wurden die Eigenschaften `WindowsUBR` und `WindowsVersion` hinzugefügt.
 - `-Group` wurde der `Get-Verb`-Parameter hinzugefügt.
-- `New-FileCatalog` und `Test-FileCatalog` wurde Unterstützung für `ShouldProcess` hinzugefügt (behebt `-WhatIf` und `-Confirm`). (#3074) (Vielen Dank an @iSazonov)
-- Dem Cmdlet `Start-Process` wurde der `-WhatIf`-Schalter hinzugefügt. (#4735) (Vielen Dank an @sarithsutha)
+- `New-FileCatalog` und `Test-FileCatalog` wurde Unterstützung für `ShouldProcess` hinzugefügt (behebt `-WhatIf` und `-Confirm`). (#3074) (Vielen Dank an [@iSazonov](https://github.com/iSazonov))
+- Dem Cmdlet `Start-Process` wurde der `-WhatIf`-Schalter hinzugefügt. (#4735) (Vielen Dank an [@sarithsutha](https://github.com/sarithsutha))
 - Vielen vorhandenen Parametern wurde `ValidateNotNullOrEmpty` hinzugefügt.
 
 ## <a name="tab-completion"></a>Registerkartenvervollständigung
 
-- Der Typrückschluss bei der Vervollständigung mit der TAB-TASTE wurde basierend auf den Variablenwerten der Common Language Runtime verbessert. (#2744) (Vielen Dank an @powercode) Dadurch funktioniert die Vervollständigung mit der TAB-TASTE z.B. in folgendem Fall:
+- Der Typrückschluss bei der Vervollständigung mit der TAB-TASTE wurde basierend auf den Variablenwerten der Common Language Runtime verbessert. (#2744) (Vielen Dank an [@powercode](https://github.com/powercode)) Dadurch funktioniert die Vervollständigung mit der TAB-TASTE z.B. in folgendem Fall:
 
   ```powershell
   $p = Get-Process
   $p | Foreach-Object Prio<tab>
   ```
 
-- Die Hashtabellen-Vervollständigung mit der TAB-TASTE wurde bei `-Property` von `Select-Object` hinzugefügt. (#3625) (Vielen Dank an @powercode)
-- Die automatische Argumentvervollständigung wurde für `-ExcludeProperty` und `-ExpandProperty` von `Select-Object` hinzugefügt. (#3443) (Vielen Dank an @iSazonov)
-- `native.exe --<tab>` ruft bei der Vervollständigung mit der TAB-TASTE den nativen Vervollständiger auf. (#3633) (Vielen Dank an @powercode)
+- Die Hashtabellen-Vervollständigung mit der TAB-TASTE wurde bei `-Property` von `Select-Object` hinzugefügt. (#3625) (Vielen Dank an [@powercode](https://github.com/powercode))
+- Die automatische Argumentvervollständigung wurde für `-ExcludeProperty` und `-ExpandProperty` von `Select-Object` hinzugefügt. (#3443) (Vielen Dank an [@iSazonov](https://github.com/iSazonov))
+- `native.exe --<tab>` ruft bei der Vervollständigung mit der TAB-TASTE den nativen Vervollständiger auf. (#3633) (Vielen Dank an [@powercode](https://github.com/powercode))
 
 ## <a name="breaking-changes"></a>Wichtige Änderungen
 
@@ -373,19 +373,19 @@ Eine vollständige Liste der Korrekturen und Änderungen finden Sie unter [Chang
   - die Betriebssystemplattform (`$PSVersionTable.OSDescription`)
   - die genaue PowerShell-Version (`$PSVersionTable.GitCommitId`)
 
-Wenn Sie diese Telemetrie deaktivieren möchten, löschen Sie einfach `$PSHome\DELETE_ME_TO_DISABLE_CONSOLEHOST_TELEMETRY`, oder erstellen Sie die Umgebungsvariable `POWERSHELL_TELEMETRY_OPTOUT` mit einem der folgenden Werte: `true`, `1` oder `yes`.
-Durch das Löschen dieser Datei bzw. das Erstellen der Variable wird das Senden von Telemetriedaten bereits vor der ersten Ausführung von PowerShell umgangen.
+Wenn Sie diese Telemetrie deaktivieren möchten, erstellen Sie einfach die Umgebungsvariable `POWERSHELL_TELEMETRY_OPTOUT` mit einem der folgenden Werte: `true`, `1` oder `yes`.
+Durch das Erstellen der Variable wird das Senden von Telemetriedaten bereits vor der ersten Ausführung von PowerShell umgangen.
 Diese Telemetriedaten und die Erkenntnisse, die wir daraus ziehen, sollen auf dem [Community-Dashboard][community-dashboard] veröffentlicht werden.
 Weitere Informationen dazu, wie wir diese Daten verwenden, finden Sie [in diesem Blogbeitrag][telemetry-blog].
 
 [github]: https://github.com/PowerShell/PowerShell
 [.NET Core 2.0]: https://docs.microsoft.com/dotnet/core/
-[.NET Standard]: https://docs.microsoft.com/en-us/dotnet/standard/net-standard
+[.NET Standard]: https://docs.microsoft.com/dotnet/standard/net-standard
 [os_log]: https://developer.apple.com/documentation/os/logging
 [Syslog]: https://en.wikipedia.org/wiki/Syslog
 [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
 [breaking-changes]: breaking-changes-ps6.md
-[Changelog (Änderungsprotokoll)]: https://github.com/PowerShell/PowerShell/tree/master/CHANGELOG.md
+[changelog]: https://github.com/PowerShell/PowerShell/tree/master/CHANGELOG.md
 [community-dashboard]: https://aka.ms/PSGitHubBI
 [telemetry-blog]: https://blogs.msdn.microsoft.com/powershell/2017/01/31/powershell-open-source-community-dashboard/
 [.NET Standard]: https://docs.microsoft.com/dotnet/standard/net-standard
