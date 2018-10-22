@@ -3,12 +3,12 @@ ms.date: 08/27/2018
 keywords: powershell,cmdlet
 title: Abrufen von ausführlichen Hilfeinformationen
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: 88f0357b935a7c75df07d667e3f2f2d0e493f89d
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: d2578604ec7c01c0b2734bd180e1babaca58b153
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134033"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851271"
 ---
 # <a name="getting-detailed-help-information"></a>Abrufen ausführlicher Hilfeinformationen
 
@@ -149,7 +149,7 @@ Die Onlineanzeige der Hilfeartikel ist eine der besten Möglichkeiten, um Hilfe 
 Um Hilfe aus dem Internet abzurufen, verwenden Sie den Parameter **Online** des Cmdlets `Get-Help`. Alle Hilfeartikel für PowerShell, einschließlich der Hilfeartikel zu Anbietern und konzeptioneller Hilfeartikel („about“), stehen online in der [PowerShell](/powershell/scripting/powershell-scripting)-Dokumentation zur Verfügung.
 
 > [!NOTE]
-> Der Parameter **Online** kann nicht mit konzeptionellen („about_*“) Hilfeartikeln oder Hilfeartikeln zu Anbietern verwendet werden.
+> Der Parameter **Online** kann nicht mit konzeptionellen (about_\*) Hilfeartikeln oder Hilfeartikeln zu Anbietern verwendet werden.
 > Die Onlinehilfe ist optional, daher ist sie nicht für alle Cmdlets, Funktionen oder Skripts verfügbar.
 
 Möchten Sie beispielsweise die Onlineversion des Hilfeartikels zum Cmdlet `Get-ChildItem` abrufen, geben Sie Folgendes ein:
