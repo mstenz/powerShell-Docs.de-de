@@ -4,12 +4,12 @@ contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 description: Richtlinien für Herausgeber
 title: Veröffentlichungsrichtlinien und Best Practices für den PowerShell-Katalog
-ms.openlocfilehash: 11207a312f916506f855c0e6e292752f72fc04c1
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.openlocfilehash: 2ddeae9fdb33a58f97bfeb66079541bb7c5791b1
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45523023"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851168"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>Veröffentlichungsrichtlinien und Best Practices für den PowerShell-Katalog
 
@@ -39,6 +39,7 @@ Elemente, die diesen Richtlinien entsprechen, werden eher heruntergeladen und vo
 - Folgen Sie bei der Versionsverwaltung den [SemVer](http://semver.org/)-Richtlinien
 - Verwenden Sie allgemeine Tags, wie in „Common PowerShell Gallery Tags“ dokumentiert.
 - Testen der Veröffentlichung mit einem lokalen Repository
+- Verwenden von PowerShell für die Veröffentlichung
 
 Jede dieser Richtlinien wird in den nachfolgenden Abschnitten kurz erläutert.
 
@@ -215,6 +216,12 @@ Verwenden Sie für jede dieser Lösungen Register-PSRepository, um ein neues „
 Ein weiterer Punkt zum Testen von Veröffentlichungen: Jedes Element, das Sie im PowerShell-Katalog veröffentlichen, kann nicht ohne die Hilfe des Betriebsteams wieder gelöscht werden, da von diesem bestätigt werden muss, dass es keine Abhängigkeiten von dem Element gibt, das Sie veröffentlichen möchten.
 Aus diesem Grund unterstützen wir den PowerShell-Katalog nicht als Testziel und werden jeden Herausgeber kontaktieren, der dies tut.
 
+## <a name="use-powershellget-to-publish"></a>Verwenden von PowerShell für die Veröffentlichung
+
+Es wird dringend empfohlen, dass Verleger die Cmdlets „Publish-Module“ und „Publish-Script“ verwenden, wenn Sie mit dem PowerShell-Katalog arbeiten. PowerShellGet wurde entwickelt, damit Sie nicht länger an wichtige Details zur Installation von einer Veröffentlichung in den PowerShell-Katalog denken müssen. Gelegentlich überspringen Verleger PowerShellGet und verwenden den NuGet-Client oder auch PackageManagement-Cmdlets anstelle des Publish-Module-Cmdlets. Es gibt viele Informationen, die leicht übersehen werden, wodurch eine Vielzahl von Supportanfragen aufkommt.
+
+Wenn es einen Grund gibt, warum Sie Publish-Module oder Publish-Script nicht verwenden können, teilen Sie uns dies mit. Stellen Sie ein Ticket im GitHub-Repository für PowerShellGet aus, und nennen Sie uns die Details, warum Sie sich für NuGet oder PackageManagement entschieden haben. 
+
 ## <a name="recommended-workflow"></a>Empfohlener Workflow
 
 Als erfolgreichster Ansatz für das Veröffentlichen von Elementen im PowerShell-Katalog hat sich der folgende bewährt:
@@ -229,3 +236,4 @@ Als erfolgreichster Ansatz für das Veröffentlichen von Elementen im PowerShell
 - Entscheiden Sie, ob Sie Ihrem Element eine Codesignatur hinzufügen möchten.
 - Wenn Sie der Meinung sind, dass das Projekt bereit zur Verwendung in einer Produktionsumgebung ist, veröffentlichen Sie eine Version 1.0.0 im PowerShell-Katalog.
 - Sammeln Sie weiterhin Feedback, und durchlaufen Sie Ihren Code basierend auf Hinweisen und Kommentaren von Benutzern.
+

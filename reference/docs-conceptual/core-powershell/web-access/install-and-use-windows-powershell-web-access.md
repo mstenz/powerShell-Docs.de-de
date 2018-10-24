@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: Installieren und Verwenden von Windows PowerShell Web Access
-ms.openlocfilehash: 8fa965ff30cd9e0b688bcc46d01d843a0f1c2e0b
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: d718d9b286a8a2189f44f10983cdc0061e41d4b9
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268414"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48851323"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Installieren und Verwenden von Windows PowerShell Web Access
 
@@ -327,7 +327,7 @@ Die Anweisungen in diesem Abschnitt gelten für die Installation der Windows Pow
 
    Ändern Sie den Standardport, falls Port 443 bereits von einer anderen Website verwendet wird oder wenn das Ändern der Portnummer aus anderen Sicherheitsgründen notwendig ist. Falls eine andere Website, die auf dem Gatewayserver ausgeführt wird, den ausgewählten Port verwendet, wird eine Warnung angezeigt, wenn Sie im Dialogfeld **Website hinzufügen** auf **OK** klicken. Sie müssen einen nicht verwendeten Port zum Ausführen von Windows PowerShell Web Access verwenden.
 
-1. Falls dies für Ihre Organisation erforderlich ist, können Sie optional einen Hostnamen angeben, der für die Organisation und Benutzer sinnvoll ist, z.B. **www.contoso.com**. Klicken Sie auf **OK**.
+1. Falls dies für Ihre Organisation erforderlich ist, können Sie optional einen Hostnamen angeben, der für die Organisation und Benutzer sinnvoll ist, z.B. **`www.contoso.com`**. Klicken Sie auf **OK**.
 
 1. Zur Erhöhung der Sicherheit von Produktionsumgebungen wird dringend dazu geraten, ein gültiges Zertifikat bereitzustellen, das von einer Zertifizierungsstelle signiert wurde. Sie müssen ein SSL-Zertifikat bereitstellen, weil Benutzer die Verbindung mit Windows PowerShell Web Access nur über eine HTTPS-Website herstellen können. Weitere Informationen zum Anfordern eines Zertifikats finden Sie in diesem Thema unter [So konfigurieren Sie ein SSL-Zertifikat im IIS-Manager](#to-configure-an-ssl-certificate-in-iis-Manager).
 
@@ -406,7 +406,7 @@ Für sichere Produktionsumgebungen sollten Sie stets ein gültiges, von einer Ze
    - Klicken Sie auf **Importieren**, um ein vorhandenes gültiges Zertifikat von einem Speicherort im Netzwerk zu importieren.
    - Klicken Sie auf **Zertifikatanforderung erstellen**, um ein Zertifikat von einer Zertifizierungsstelle wie [VeriSign](http://www.verisign.com/), [Thawte](https://www.thawte.com/) oder [GeoTrust](https://www.geotrust.com/) anzufordern. Der allgemeine Name des Zertifikats muss dem Hostheader in der Anforderung entsprechen.
 
-     Wenn der Clientbrowser beispielsweise http://www.contoso.com/ anfordert, muss der allgemeine Name ebenfalls http://www.contoso.com/ lauten. Dies ist die sicherste und empfohlene Option, um das Windows PowerShell Web Access-Gateway mit einem Zertifikat zu versehen.
+     Wenn der Clientbrowser beispielsweise `http://www.contoso.com/` anfordert, muss der allgemeine Name ebenfalls `http://www.contoso.com/` lauten. Dies ist die sicherste und empfohlene Option, um das Windows PowerShell Web Access-Gateway mit einem Zertifikat zu versehen.
 
    - Klicken Sie auf **Selbstsigniertes Zertifikat erstellen**, um ein Zertifikat zu erstellen, das Sie sofort verwenden und später bei Bedarf von einer Zertifizierungsstelle signieren lassen können. Geben Sie einen Anzeigenamen für das selbstsignierte Zertifikat an, z.B. **Windows PowerShell Web Access**. Diese Vorgehensweise ist als nicht sicher anzusehen und wird nur für eine private Testumgebung empfohlen.
 

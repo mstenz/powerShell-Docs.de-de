@@ -3,16 +3,16 @@ ms.date: 08/23/2018
 keywords: powershell,cmdlet
 title: Grundlegendes zu wichtigen PowerShell-Konzepten
 ms.assetid: 3e601e38-4520-4578-a48d-b6779f1d35ee
-ms.openlocfilehash: 577ea0764a172e1821bc492417d8b4e546e31b0b
-ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
+ms.openlocfilehash: fad64563d1a7a6abd4f0e430331f81f91f43d312
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43353193"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48850996"
 ---
 # <a name="understanding-important-powershell-concepts"></a>Grundlegendes zu wichtigen PowerShell-Konzepten
 
-PowerShell integriert Konzepte aus vielen verschiedenen Umgebungen. Einige der Konzepte werden Benutzern vertraut sein, die Erfahrung im Umgang mit Shell- oder Programmierumgebungen besitzen. Allerdings werden nur wenige Benutzer sämtliche dieser Konzepte kennen. Eine Betrachtigung einiger dieser Konzepte bietet eine nützliche Übersicht über die Shell.
+PowerShell integriert Konzepte aus vielen verschiedenen Umgebungen. Einige der Konzepte werden Benutzern vertraut sein, die Erfahrung im Umgang mit Shell- oder Programmierumgebungen besitzen. Allerdings werden nur wenige Benutzer sämtliche dieser Konzepte kennen. Ein Blick auf einige dieser Konzepte ermöglicht eine nützliche Übersicht über die Shell.
 
 ## <a name="output-is-object-based"></a>Die Ausgabe ist objektbasiert
 

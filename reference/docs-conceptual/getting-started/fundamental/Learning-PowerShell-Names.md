@@ -3,12 +3,12 @@ ms.date: 08/24/2018
 keywords: powershell,cmdlet
 title: Lernen von PowerShell-Namen
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-ms.openlocfilehash: 44c66488a20c38d8528c92d753f6b32dda5a2dcb
-ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
+ms.openlocfilehash: a4f7e12c2b30e8ae6d1cf5a125d613d2d7558c34
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43353265"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851254"
 ---
 # <a name="learning-powershell-names"></a>Lernen von PowerShell-Namen
 
@@ -19,7 +19,7 @@ Dies erscheint bei Befehlsnamen logisch, da jeder Befehl ein eigenes Tool darste
 
 ## <a name="learning-command-names-in-traditional-shells"></a>Erlernen von Namen in herkömmlichen Shells
 
-Die meisten Befehle werden erstellt, um Elemente des Betriebssystems oder von Anwendungen, z.B. Dienste oder Prozesse, zu verwalten. Die Befehle haben Namen, die zu einer Familie gehören oder auch nicht. Auf Windows-Systemen können Sie z.B. die Befehle `net start` und `net stop` zum Starten und Beenden eines Diensts verwenden. **Sc.exe** ist ein weiteres Tool zur Dienststeuerung für Windows. Dieser Name passt nicht in das Namensmuster für die **net.exe**-Dienstbefehle. Für die Verwaltung von Prozessen bietet Windows den Befehl **tasklist.exe** zum Auflisten von Prozessen und den Befehl **taskkill.exe** zum Beenden von Prozessen.
+Die meisten Befehle werden erstellt, um Elemente des Betriebssystems oder von Anwendungen, z. B. Dienste oder Prozesse, zu verwalten. Die Befehle haben Namen, die zu einer Familie gehören oder auch nicht. Auf Windows-Systemen können Sie z.B. die Befehle `net start` und `net stop` zum Starten und Beenden eines Diensts verwenden. **Sc.exe** ist ein weiteres Tool zur Dienststeuerung für Windows. Dieser Name passt nicht in das Namensmuster für die **net.exe**-Dienstbefehle. Für die Verwaltung von Prozessen bietet Windows den Befehl **tasklist.exe** zum Auflisten von Prozessen und den Befehl **taskkill.exe** zum Beenden von Prozessen.
 
 Darüber hinaus verwenden diese Befehle irreguläre Parameterspezifikationen. Sie können den Befehl `net start` nicht zum Starten eines Diensts auf einem Remotecomputer verwenden. Mit dem Befehl **sc.exe** kann Dienst auf einem Remotecomputer gestartet werden. Um den Remotecomputer anzugeben, müssen sie seinem Namen jedoch einen doppelten umgekehrten Schrägstrich voranstellen. Um den Spoolerdienst auf einem Remotecomputer namens „DC01“ zu starten, geben Sie `sc.exe \\DC01 start spooler` ein.
 Um die auf „DC01“ ausgeführten Aufgaben aufzulisten, verwenden Sie den Parameter **/S** und den Computernamen ohne Schrägstriche. Beispiel: `tasklist /S DC01`.
@@ -92,7 +92,8 @@ Es folgen einige allgemeine Merkmale der Standardparameternamen und ihre Verwend
 
 ### <a name="the-help-parameter-"></a>Der Parameter „Hilfe“ (?)
 
-Wenn Sie den Parameter `-Help` oder `-?` für ein beliebiges Cmdlet angeben, zeigt PowerShell Hilfeinformationen für das Cmdlet an. Das Cmdlet wird nicht ausgeführt.
+Wenn Sie den Parameter `-?` für ein beliebiges Cmdlet angeben, zeigt PowerShell Hilfeinformationen für das Cmdlet an.
+Das Cmdlet wird nicht ausgeführt.
 
 ### <a name="common-parameters"></a>Allgemeine Parameter
 
