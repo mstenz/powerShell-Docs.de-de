@@ -2,12 +2,12 @@
 title: Neuigkeiten in PowerShell Core 6.1
 description: Neue Funktionen und Änderungen in PowerShell Core 6.1
 ms.date: 09/13/2018
-ms.openlocfilehash: 5e2fe3c819ed638b2c14d7d40e08b7c32953147f
-ms.sourcegitcommit: 59e568ac9fa8ba28e2c96932b7c84d4a855fed2f
+ms.openlocfilehash: 4e39780a0ff446993005bba6284741f3b4b02549
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46289224"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851306"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>Neuigkeiten in PowerShell Core 6.1
 
@@ -197,11 +197,11 @@ und [`Invoke-RestMethod`](/powershell/module/microsoft.powershell.utility/invoke
 
 ## <a name="remoting-improvements"></a>Remoting-Verbesserungen
 
-### <a name="powershell-direct-tries-to-use-powershell-core-first"></a>PowerShell Direct verwendet zunächst PowerShell Core
+### <a name="powershell-direct-for-containers-tries-to-use-powershell-core-first"></a>PowerShell Direct für Container verwendet zunächst PowerShell Core
 
-[PowerShell Direct](/virtualization/hyper-v-on-windows/user-guide/powershell-direct) ist eine Funktion von PowerShell und Hyper-V, mit der Sie ohne Netzwerkverbindung oder einem anderen Remoteverwaltungsdienst eine Verbindung zu einem virtuellen Hyper-V-Computer herstellen können.
+[PowerShell Direct](/virtualization/hyper-v-on-windows/user-guide/powershell-direct) ist eine Funktion von PowerShell und Hyper-V, mit der Sie ohne Netzwerkverbindung oder einem anderen Remoteverwaltungsdienst eine Verbindung zu einem virtuellen Hyper-V-Computer oder Container herstellen können.
 
-Bisher wurde die Verbindung von PowerShell Direct mithilfe der integrierten Windows PowerShell-Instanz auf dem virtuellen Computer hergestellt.
+Bisher wurde die Verbindung von PowerShell Direct mithilfe der integrierten Windows PowerShell-Instanz auf dem Container hergestellt.
 Nun versucht PowerShell Direct zunächst, verfügbare `pwsh.exe`-Dateien der `PATH`-Umgebungsvariable dafür zu verwenden.
 Ist `pwsh.exe` nicht verfügbar, greift PowerShell Direct wieder auf `powershell.exe` zurück.
 
@@ -310,45 +310,44 @@ Aufgrund der großen Nachfrage muss nun `Update-Help` nicht mehr als Administrat
 ### <a name="new-methodsproperties-on-pscustomobject"></a>Neue Methoden/Eigenschaften für `PSCustomObject`
 
 Durch die Mithilfe von [@iSazonov](https://github.com/iSazonov) konnten `PSCustomObject` neue Methoden und Eigenschaften hinzugefügt werden.
-`PSCustomObject` enthält jetzt eine `Count`/`Length`-Eigenschaft, die die Anzahl der Elemente angibt.
-
-In beiden Beispielen wird `2` als die Anzahl der `PSCustomObjects` in der Sammlung zurückgegeben.
+`PSCustomObject` enthält nun eine `Count`/`Length`-Eigenschaften wie andere Objekte.
 
 ```powershell
-@(
-[pscustomobject]@{foo = '1'},
-[pscustomobject]@{bar = '2' }).Length
+$PSCustomObject = [pscustomobject]@{foo = 1}
+
+$PSCustomObject.Length
+```
+
+```Output
+1
 ```
 
 ```powershell
-@(
-[pscustomobject]@{foo = '1'},
-[pscustomobject]@{bar = '2' }).Count
+$PSCustomObject.Count
+```
+
+```Output
+1
 ```
 
 Diese Vorgehensweise umfasst auch `ForEach`- und `Where`-Methoden, mit denen Sie nach `PSCustomObject`-Elementen ausführen und filtern können:
 
 ```powershell
-@(
->> [pscustomobject]@{foo = 1},
->> [pscustomobject]@{foo = 2 }).ForEach({$_.foo+1})
+$PSCustomObject.ForEach({$_.foo + 1})
 ```
 
 ```Output
 2
-3
 ```
 
 ```powershell
-@(
->> [pscustomobject]@{foo = 1},
->> [pscustomobject]@{foo = 2 }).Where({$_.foo -gt 1})
+$PSCustomObject.Where({$_.foo -gt 0})
 ```
 
 ```Output
 foo
 ---
-  2
+  1
 ```
 
 ### `Where-Object -Not`
@@ -507,7 +506,7 @@ Wenn Sie diese Telemetriedaten nicht senden möchten, legen Sie die Umgebungsvar
 
 PowerShell-Remoting auf Unix-Plattformen erfordert nun die Verwendung von NTLM/Negotiate oder HTTPS, um unverschlüsselten Datenverkehr zu verhindern.
 
-Weitere Informationen zu diesen Änderungen finden Sie unter [PR #6799](https://github.com/PowerShell/PowerShell/pull/6799).
+Weitere Informationen zu diesen Änderungen finden Sie unter [Issue #6779](https://github.com/PowerShell/PowerShell/issues/6779).
 
 ### <a name="removed-visualbasic-as-a-supported-language-in-add-type"></a>`VisualBasic` als unterstützte Sprache in Add-Type entfernt
 
