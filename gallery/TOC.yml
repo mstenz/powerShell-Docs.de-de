@@ -10,37 +10,37 @@ items:
   - name: Suchen nach Elementen im Katalog
     items:
     - name: Suchen nach Elementen
-      href: how-to/finding-items/search-syntax.md
+      href: how-to/finding-packages/search-syntax.md
     - name: Suchen anhand von PSEdition
-      href: how-to/finding-items/searching-by-psedition.md
+      href: how-to/finding-packages/searching-by-psedition.md
     - name: Filtern von Suchergebnissen
-      href: how-to/finding-items/filtering-items.md
+      href: how-to/finding-packages/filtering-packages.md
   - name: Veröffentlichen im Katalog
     items:
     - name: Erstellen und Veröffentlichen von Elementen
-      href: how-to/publishing-items/publishing-an-item.md
+      href: how-to/publishing-packages/publishing-a-package.md
     - name: Erstellen eines PowerShell-Katalogkontos
-      href: how-to/publishing-items/creating-an-account.md
+      href: how-to/publishing-packages/creating-an-account.md
     - name: Entfernen von Elementen aus der Liste
-      href: how-to/publishing-items/unlisting-items.md
+      href: how-to/publishing-packages/unlisting-packages.md
     - name: Löschen von Elementen
-      href: how-to/publishing-items/deleting-items.md
+      href: how-to/publishing-packages/deleting-packages.md
     - name: Verwalten von Elementbesitzern
-      href: how-to/publishing-items/managing-item-owners.md
+      href: how-to/publishing-packages/managing-package-owners.md
   - name: Arbeiten mit Elementen
     items:
     - name: FileList-Ansicht
-      href: how-to/working-with-items/filelist-view.md
+      href: how-to/working-with-packages/filelist-view.md
     - name: Bereitstellen in Azure Automation
-      href: how-to/working-with-items/deploy-to-azure-automation.md
+      href: how-to/working-with-packages/deploy-to-azure-automation.md
     - name: Manuelles Herunterladen des Pakets
-      href: how-to/working-with-items/manual-download.md
+      href: how-to/working-with-packages/manual-download.md
     - name: Elemente, die Zustimmung zur Lizenz erfordern
-      href: how-to/working-with-items/items-that-require-license-acceptance.md
+      href: how-to/working-with-packages/packages-that-require-license-acceptance.md
     - name: Kontaktieren der Elementbesitzer
-      href: how-to/working-with-items/contacting-item-owners.md
+      href: how-to/working-with-packages/contacting-package-owners.md
     - name: Bereitstellen von Feedback über soziale Netzwerke oder Kommentare
-      href: how-to/working-with-items/social-media-feedback.md
+      href: how-to/working-with-packages/social-media-feedback.md
   - name: Verwalten des Kontoprofils
     items:
     - name: Kontoeinstellungen für den PowerShell-Katalog
@@ -52,7 +52,7 @@ items:
   - name: Veröffentlichungsrichtlinien und Best Practices
     href: concepts/publishing-guidelines.md
   - name: Elementmanifest und Katalogbenutzeroberfläche
-    href: concepts/item-manifest-affecting-ui.md
+    href: concepts/package-manifest-affecting-ui.md
   - name: Spezifische PSEdition erforderlich
     items:
     - name: Schreiben von Skripts mit PSEdition-Unterstützung
@@ -91,9 +91,9 @@ items:
   href: faqs.md
 - name: PowerShellGet-Cmdlets
   href: https://docs.microsoft.com/powershell/module/powershellget/
-ms.openlocfilehash: 32577b81229d456922a6be9bfdc8156d337fd719
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.openlocfilehash: 386e86b4a27ea840cc688b47f597e845f041af60
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45522921"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002324"
