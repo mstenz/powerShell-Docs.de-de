@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: PowerShell
 title: Erforderliche Zustimmung zur Lizenz für Skripts
-ms.openlocfilehash: 6374c8c8536dd0c8f27580a5b8895b8db18424f9
-ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
+ms.openlocfilehash: e7101eb6a480dd87965b7b9be9d49583042b603f
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34048230"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002581"
 ---
 # <a name="requiring-license-acceptance-for-scripts"></a>Erforderliche Zustimmung zur Lizenz für Skripts
 
@@ -49,5 +49,5 @@ PS> Install-Script -Name ScriptRequireLicenseAcceptance -AcceptLicense
 ## <a name="more-details"></a>Weitere Details
 
 - [Unterstützung für das Anfordern der Zustimmung zur Lizenz für Module](module-license-acceptance.md)
-- [Unterstützung für das Anfordern der Zustimmung zur Lizenz in PowerShellGallery](../how-to/working-with-items/items-that-require-license-acceptance.md)
-- [Erforderliche Zustimmung zur Lizenz für die Bereitstellung in Azure Automation](../how-to/working-with-items/deploy-to-azure-automation.md)
+- [Unterstützung für das Anfordern der Zustimmung zur Lizenz in PowerShellGallery](../how-to/working-with-packages/packages-that-require-license-acceptance.md)
+- [Erforderliche Zustimmung zur Lizenz für die Bereitstellung in Azure Automation](../how-to/working-with-packages/deploy-to-azure-automation.md)
