@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Neuerungen in Windows PowerShell 5.0
-ms.openlocfilehash: f5a27c0541e21b379f88b318cbe09a0344c1b372
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: 7a2ef581f2cd867b35533597d4942fd5bfc94570
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34483184"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225810"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Neuerungen in Windows PowerShell 5.0
 Windows PowerShell 5.0 bietet wichtige neue Features, die die Verwendungsmöglichkeiten erweitern, die Benutzerfreundlichkeit verbessern und Ihnen ermöglichen, die Steuerung und Verwaltung von Windows-basierten Umgebungen leichter und umfassender zu bewältigen.
@@ -37,8 +37,7 @@ Viele Updates und Verbesserungen für Windows PowerShell DSC (Desired State Conf
 
     -   Der [Start-DscConfiguration](http://technet.microsoft.com/library/dn521623.aspx)-Parameter „-Force“ wurde korrigiert.
 
-    -   
-  [Get-DscLocalConfigurationManager](http://technet.microsoft.com/library/dn407378.aspx) zeigt nützlichere Informationen zum Engine-Zustand.
+    -   [Get-DscLocalConfigurationManager](http://technet.microsoft.com/library/dn407378.aspx) zeigt nützlichere Informationen zum Engine-Zustand.
 
     -   [Test-DscConfiguration](http://technet.microsoft.com/library/dn407382.aspx) gibt nun den Namen des Computers zusammen mit „True“ oder „False“ zurück.
 
@@ -512,7 +511,7 @@ Für Windows PowerShell 3.0 bietet Windows PowerShell Integrated Scripting Envir
 Windows PowerShell wurde während der Common Language Runtime 4.0 erstellt. Cmdlet-, Skript- und Workflowersteller können die neuen Microsoft .NET Framework 4-Klassen in Windows PowerShell mit Features verwenden, zu denen unter anderen die Anwendungskompatibilität und Bereitstellung, Managed Extensibility Framework, paralleles Computing, Netzwerk, Windows Communication Foundation und Windows Workflow Foundation gehören.
 
 ### <a name="support-for-windows-preinstallation-environment"></a>Unterstützung für Windows Preinstallation Environment
-Windows PowerShell 3.0 ist eine optionale Komponente des Windows Preinstallation Environment (Windows PE) 4.0 für Windows 8. Windows PE ist ein minimales Betriebssystem, mit dem ein Computer ohne Betriebssystem gestartet und für die Windows-Installation vorbereitet werden kann. Windows PE kann zum Partitionieren und Formatieren von Festplatten, zum Kopieren von Datenträgerimages auf einen Computer und zum Auslösen der Windows-Einrichtung über eine Netzwerkfreigabe verwendet werden. Windows PowerShell 3.0 kann unter Windows PE zum Verwalten von Bereitstellungs-, Diagnose- und Wiederherstellungsszenarien verwendet werden.
+Windows PowerShell 3.0 ist eine optionale Komponente des Windows Preinstallation Environment (Windows PE) 4.0 für Windows 8. Windows PE ist ein minimales Betriebssystem, mit dem ein Computer ohne Betriebssystem gestartet und für die Windows-Installation vorbereitet werden kann. Windows PE kann zum Partitionieren und Formatieren von Festplatten, zum Kopieren von Datenträgerimages auf einen Computer und zum Initiieren der Windows-Einrichtung über eine Netzwerkfreigabe verwendet werden. Windows PowerShell 3.0 kann unter Windows PE zum Verwalten von Bereitstellungs-, Diagnose- und Wiederherstellungsszenarien verwendet werden.
 
 ### <a name="disconnected-sessions"></a>Getrennte Sitzungen
 Ab Windows PowerShell 3.0 werden permanente durch den Benutzer verwaltete Sitzungen ("PSSessions"), die Sie mithilfe des New-PSSession-Cmdlets erstellen, auf dem Remotecomputer gespeichert. Sie sind nicht mehr von der Sitzung abhängig, in der sie erstellt wurden.
@@ -583,7 +582,7 @@ In vorherigen Versionen von Windows PowerShell stand das Steuerelement auf diese
 
 Um eine Sitzungskonfigurationsdatei zu erstellen, müssen Sie das Cmdlet [New-PSSessionConfigurationFile](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866) verwenden. Um die Sitzungskonfigurationsdatei auf eine Sitzungskonfiguration anzuwenden, verwenden Sie das Cmdlet [Register-PSSessionConfiguration](https://technet.microsoft.com/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) oder [Set-PSSessionConfiguration](https://technet.microsoft.com/library/b21fbad3-1759-4260-b206-dcb8431cd6ea).
 
-Weitere Informationen finden Sie unter [about_Session_Configuration_Files](https://technet.microsoft.com/library/c7217447-1ebf-477b-a8ef-4dbe9a1473b8) und [New-PSSessionConfigurationFile](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866).
+Weitere Informationen finden Sie unter [about_Session_Configuration_Files](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configuration_files?view=powershell-5.0) und [New-PSSessionConfigurationFile](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866).
 
 ### <a name="scheduled-jobs-and-task-scheduler-integration"></a>Integration geplanter Aufträge und der Aufgabenplanung
 Sie können jetzt Windows PowerShell-Hintergrundaufträge planen und in Windows PowerShell und in der Aufgabenplanung verwalten.
@@ -657,7 +656,7 @@ Der automatische Import von Modulen wird durch Verwenden des Cmdlets in einem Be
 
 Sie können mithilfe der Einstellungsvariablen **$PSModuleAutoLoadingPreference** das automatische Importieren von Modulen aktivieren, deaktivieren und konfigurieren.
 
-Weitere Informationen finden Sie unter [about_Modules [v4]](https://technet.microsoft.com/library/94f57429-a539-4aee-bb0d-205cd7e801f9), [about_Preference_Variables [v4]](https://technet.microsoft.com/library/31344314-be29-4286-b039-afa5460cbe8b) und in den Hilfethemen für die Cmdlets [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) und [Import-Module](https://technet.microsoft.com/library/af616c24-e122-4098-930e-1e3ea2080ade).
+Weitere Informationen finden Sie unter [about_Modules](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_modules?view=powershell-5.0), [about_Preference_Variables [v4]](https://technet.microsoft.com/library/31344314-be29-4286-b039-afa5460cbe8b) und in den Hilfethemen für die Cmdlets [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) und [Import-Module](https://technet.microsoft.com/library/af616c24-e122-4098-930e-1e3ea2080ade).
 
 ### <a name="module-experience-improvements"></a>Verbesserungen der Moduloberfläche
 Mit Windows PowerShell 3.0 erhalten Sie die erweiterte Feature-Unterstützung für Module, dazu gehören auch folgende neue Features.

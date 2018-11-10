@@ -3,25 +3,25 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery,psget
 title: Der PowerShell-Katalog | MSDN
-ms.openlocfilehash: dc7e8dd7e4d96d8424a62cb3256c3164b63a3684
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: d3e3b9d8bb3d6cefd3a3bfe79b012bb1dc1d8a2d
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34482929"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225617"
 ---
 # <a name="the-powershell-gallery"></a>Der PowerShell-Katalog | MSDN
 
 Der PowerShell-Katalog ist das zentrale Repository für PowerShell-Inhalte. Sie finden darin nützliche PowerShell-Module, die PowerShell-Befehle und Desired State Configuration-Ressourcen (DSC) enthalten.
-Sie finden dort auch PowerShell-Skripts, von denen einige PowerShell-Workflows enthalten, eine Reihe von Aufgaben umreißen und Sequenzierungen für diese Aufgaben bereitstellen. Einige dieser Elemente wurden von Microsoft erstellt, andere stammen aus der PowerShell-Community.
+Sie finden dort auch PowerShell-Skripts, von denen einige PowerShell-Workflows enthalten, eine Reihe von Aufgaben umreißen und Sequenzierungen für diese Aufgaben bereitstellen. Einige dieser Pakete wurden von Microsoft erstellt, andere stammen aus der PowerShell-Community.
 
 ## <a name="powershellget-overview"></a>Übersicht über PowerShellGet
 
-Das PowerShellGet-Modul enthält Cmdlets zum Ermitteln, Installieren, Aktualisieren und Veröffentlichen von PowerShell-Artefakten wie Modulen, DSC-Ressourcen, Rollenfunktionen und Skripts über den [PowerShell-Katalog](https://www.PowerShellGallery.com) und andere private Repositorys.
+Das PowerShellGet-Modul enthält Cmdlets zum Ermitteln, Installieren, Aktualisieren und Veröffentlichen von PowerShell-Paketen mit Artefakten wie Modulen, DSC-Ressourcen, Rollenfunktionen und Skripts über den [PowerShell-Katalog](https://www.PowerShellGallery.com) und andere private Repositorys.
 
 ## <a name="getting-started-with-the-gallery"></a>Erste Schritte mit dem Katalog
 
-Zur Installation von Elementen aus dem Katalog wird die neueste Version des PowerShellGet-Moduls benötigt.
+Zur Installation von Paketen aus dem Katalog wird die neueste Version des PowerShellGet-Moduls benötigt.
 Eine vollständige Anleitung finden Sie unter [Installieren von PowerShellGet](installing-psget.md).
 
 Sehen Sie sich die Seite [Erste Schritte](getting-started.md) an, um weitere Informationen zur Verwendung von PowerShellGet-Befehlen mit dem Katalog zu erhalten. Sie können auch *Update-Help -Module PowerShellGet* ausführen, um die lokale Hilfe für diese Befehle zu installieren.
@@ -36,13 +36,14 @@ Eine geeignete Version von **Windows PowerShell** ist für folgende Betriebssyst
 - Windows 8.1 Pro
 - Windows 8.1 Enterprise
 - Windows 7 SP1
+- Windows Server 2019
 - Windows Server 2016
 - Windows Server 2012 R2
 - Windows Server 2008 R2 SP1
 
-Für **PowerShellGet** ist außerdem .NET Framework 4.5 oder höher erforderlich. Von [hier](https://msdn.microsoft.com/library/5a4x27ek.aspx) können Sie .NET Framework 4.5 oder höher installieren.
+Für **PowerShellGet** ist .NET Framework 4.5 oder höher erforderlich. Von [hier](https://msdn.microsoft.com/library/5a4x27ek.aspx) können Sie .NET Framework 4.5 oder höher installieren.
 
-**PowerShell Core** unterstützt viele Betriebssysteme. Eine vollständige Liste finden Sie in [diesem Artikel](https://blogs.msdn.microsoft.com/powershell/2018/01/10/powershell-core-6-0-generally-available-ga-and-supported/).
+Da **PowerShell Core** plattformübergreifend ist – was bedeutet, dass es unter Windows, Linux und macOS funktioniert –, ist auch **PowerShellGet** auf diesen Systemen verfügbar. Eine vollständige Liste der von **PowerShell Core** unterstützten Systeme finden Sie unter [Installieren von PowerShell](/powershell/scripting/setup/installing-powershell).
 
 Viele Module, die im Katalog aufgeführt sind, unterstützen andere Betriebssysteme und haben zusätzliche Anforderungen. Weitere Informationen finden Sie in der Dokumentation der jeweiligen Module.
 

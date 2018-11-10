@@ -3,21 +3,21 @@ ms.date: 10/17/2017
 contributor: keithb
 keywords: gallery,powershell,cmdlet,psget
 title: Vorabskriptversionen
-ms.openlocfilehash: 14ae1968e5ee73260b6eae05b11185069d047e93
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: 4e7eab682008ed57163c51fe3a61a744b347bef2
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268465"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002734"
 ---
 # <a name="prerelease-versions-of-scripts"></a>Vorabskriptversionen
 
-Ab Version 1.6.0 unterstützen PowerShellGet und der PowerShell-Katalog das Kennzeichnen von Versionen ab 1.0.0 als Vorabversion. Vor der Einführung dieses Features waren Vorabversionselemente auf Versionen, die mit 0 beginnen, beschränkt. Ziel dieser Features ist es, eine größere Unterstützung für die Versionsverwaltungsspezifikation [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) bereitzustellen, ohne die Abwärtskompatibilität mit PowerShell Version 3 und höher oder vorhandenen PowerShellGet-Versionen einzuschränken. Der Schwerpunkt dieses Themas liegt auf skriptspezifischen Features. Eine Erläuterung der entsprechenden Features für Module finden Sie im Thema [Vorabmodulversionen](module-prerelease-support.md). Mit diesen Features können Herausgeber ein Skript als Version 2.5.0-alpha identifizieren und später eine für die Produktion freigegebene 2.5.0-Version veröffentlichen, die die Vorabversion ablöst.
+Ab Version 1.6.0 unterstützen PowerShellGet und der PowerShell-Katalog das Kennzeichnen von Versionen ab 1.0.0 als Vorabversion. Vor der Einführung dieses Features waren Vorabversionspakete auf Versionen beschränkt, die mit 0 beginnen. Ziel dieser Features ist es, eine größere Unterstützung für die Versionsverwaltungsspezifikation [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) bereitzustellen, ohne die Abwärtskompatibilität mit PowerShell Version 3 und höher oder vorhandenen PowerShellGet-Versionen einzuschränken. Der Schwerpunkt dieses Themas liegt auf skriptspezifischen Features. Eine Erläuterung der entsprechenden Features für Module finden Sie im Thema [Vorabmodulversionen](module-prerelease-support.md). Mit diesen Features können Herausgeber ein Skript als Version 2.5.0-alpha identifizieren und später eine für die Produktion freigegebene 2.5.0-Version veröffentlichen, die die Vorabversion ablöst.
 
 Allgemein umfassen die Vorabversions-Skriptfeatures u.a. Folgendes:
 
-- Hinzufügen eines PrereleaseString-Suffixes zur Versionszeichenfolge im Skriptmanifest. Wenn die Skripts im PowerShell-Katalog veröffentlicht wurden, werden diese Daten aus dem Manifest extrahiert und zur Identifizierung von Vorabversionselementen verwendet.
-- Zum Abrufen von Vorabversionselementen müssen Sie den -AllowPrerelease-Flag zu den PowerShellGet-Befehlen „Find-Script“, „Install-Script“, „Update-Script“ und „Save-Script“ hinzufügen. Wenn das Flag nicht angegeben ist, werden keine Vorabversionselemente angezeigt.
+- Hinzufügen eines PrereleaseString-Suffixes zur Versionszeichenfolge im Skriptmanifest. Wenn die Skripts im PowerShell-Katalog veröffentlicht wurden, werden diese Daten aus dem Manifest extrahiert und zum Identifizieren von Vorabversionspaketen verwendet.
+- Zum Abrufen von Vorabversionspaketen müssen Sie den PowerShellGet-Befehlen „Find-Script“, „Install-Script“, „Update-Script“ und „Save-Script“ den „-AllowPrerelease“-Flag hinzufügen. Wenn das Flag nicht angegeben ist, werden keine Vorabversionspakete angezeigt.
 - Die durch „Find-Script“ und „Get-InstalledScript“ sowie im PowerShell-Katalog angezeigten Skriptversionen werden mit dem PrereleaseString-Parameter angezeigt (z.B. „2.5.0-alpha“).
 
 Einzelheiten zu den Features finden Sie weiter unten.
@@ -54,9 +54,9 @@ Die Sortierreihenfolge ändert sich bei der Verwendung einer Vorabversion, was f
 
 Beim Veröffentlichen von Inhalten im PowerShell-Katalog muss die Version des Skripts, das veröffentlicht wird, standardmäßig eine höhere Version aufweisen als zuvor veröffentlichte Versionen, die nicht im PowerShell-Katalog vorhanden sind. Ein Herausgeber kann Version 2.5.0-alpha auf 2.5.0-beta oder 2.5.0 (ohne Vorabversionssuffix) aktualisieren.
 
-## <a name="finding-and-acquiring-prerelease-items-using-powershellget-commands"></a>Suchen und Abrufen von Vorabversionselementen mithilfe von PowerShellGet-Befehlen
+## <a name="finding-and-acquiring-prerelease-packages-using-powershellget-commands"></a>Suchen und Abrufen von Vorabversionspaketen mit PowerShellGet-Befehlen
 
-Bei der Verwendung von Vorabversionselementen mit den PowerShellGet-Befehlen „Find-Script“, „Install-Script“, „Update-Script“ und „Save-Script“ muss das -AllowPrerelease-Flag hinzugefügt werden. Bei der Angabe von -AllowPrerelease werden Vorabversionselemente eingeschlossen, sofern diese vorhanden sind. Wenn das -AllowPrerelease-Flag nicht angegeben ist, werden keine Vorabversionselemente angezeigt.
+Wenn Sie Vorabversionspakete mit den PowerShellGet-Befehlen „Find-Script“, „Install-Script“, „Update-Script“ und „Save-Script“ verwenden, müssen Sie das „-AllowPrerelease“-Flag hinzufügen. Bei der Angabe von „-AllowPrerelease“ werden vorhandene Vorabversionspakete eingeschlossen. Wenn das „-AllowPrerelease“-Flag nicht angegeben ist, werden keine Vorabversionspakete angezeigt.
 
 Die einzigen Ausnahmen hierfür in den PowerShellGet-Skriptbefehlen sind „Get-InstalledScript“ und in einigen Fällen „Uninstall-Script“.
 

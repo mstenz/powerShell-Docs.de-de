@@ -3,12 +3,12 @@ ms.date: 09/05/2018
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Kontoeinstellungen für den PowerShell-Katalog
-ms.openlocfilehash: dd7b8b3a99b5b7fbfec5d7f82b81dd6d5cfb906c
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.openlocfilehash: ebe784ec5aae5ff3a4d444d12a168ef38aaef65f
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45523136"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002785"
 ---
 # <a name="powershell-gallery-account-settings"></a>Kontoeinstellungen für den PowerShell-Katalog
 
@@ -34,7 +34,7 @@ Wenn Sie eine neue E-Mail-Adresse eingeben, sendet der PowerShell-Katalog eine V
 Über den PowerShell-Katalog können Sie die folgenden Benachrichtigungseinstellungen vornehmen:
 
 - Benutzer können mich über den PowerShell-Katalog kontaktieren
-- Benachrichtigen, wenn ein Element mit meinem Konto in den PowerShell-Katalog gepusht wird
+- Benachrichtigen, wenn ein Paket mit meinem Konto in den PowerShell-Katalog gepusht wird
 
 ![E-Mail-Adresse ändern](../../Images/PSGallery_AccountEmailOptions.png)
 

@@ -3,22 +3,44 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell-Systemanforderungen
 ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
-ms.openlocfilehash: 74c65a97a30227997c48a23c42b0431189f9ed76
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: 5e1fdb9cb4f10fd71c2d2daf693cb359fddcc5bc
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34483048"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002717"
 ---
 # <a name="windows-powershell-system-requirements"></a>Windows PowerShell-Systemanforderungen
-In diesem Thema werden die Systemanforderungen für Windows PowerShell 3.0, Windows PowerShell 4.0 und Windows PowerShell 5.0 sowie für besondere Features wie Windows PowerShell Integrated Scripting Environment (ISE), CIM-Befehle und Workflows aufgeführt.
+In diesem Thema werden die Systemanforderungen für Windows PowerShell 3.0, Windows PowerShell 4.0, Windows PowerShell 5.0, Windows PowerShell 5.1 sowie für besondere Features wie Windows PowerShell Integrated Scripting Environment (ISE), CIM-Befehle und Workflows aufgeführt.
 
 Windows® 8.1 und Windows Server® 2012 R2 enthalten alle erforderlichen Programme. Dieses Thema ist für Benutzer früherer Versionen von Windows gedacht.
 
 ## <a name="operating-system-requirements"></a>Betriebssystemanforderungen
-Windows PowerShell 5.0 wird unter den folgenden Versionen von Windows ausgeführt.
+Windows PowerShell 5.1 wird unter den folgenden Windows-Versionen ausgeführt.
+
+- Windows Server 2019, standardmäßig installiert
 
 - Windows Server 2016, standardmäßig installiert
+
+- Windows Server 2012 R2, [Windows Management Framework 5.1](https://aka.ms/wmf5download) zum Ausführen von Windows PowerShell 5.1 installiert
+
+- Windows Server 2012, [Windows Management Framework 5.1](https://aka.ms/wmf5download) zum Ausführen von Windows PowerShell 5.0 installiert
+
+- Windows Server 2008 R2 mit Service Pack 1, [Windows Management Framework 5.1](https://aka.ms/wmf5download) zum Ausführen von Windows PowerShell 5.1 installiert
+
+- Windows 10, Version 1607 und höher, standardmäßig installiert
+
+- Windows 10, Version 1507 und 1511, [Windows Management Framework 5.1](https://aka.ms/wmf5download) zum Ausführen von Windows PowerShell 5.1 installiert
+
+- Windows 8.1, [Windows Management Framework 5.1](https://aka.ms/wmf5download) zum Ausführen von Windows PowerShell 5.1 installiert
+
+- Windows 7 mit Service Pack 1, [Windows Management Framework 5.1](https://aka.ms/wmf5download) zum Ausführen von Windows PowerShell 5.1 installiert
+
+Windows PowerShell 5.0 (ersetzt durch Windows PowerShell 5.1) wird unter den folgenden Windows-Versionen ausgeführt.
+
+- Windows Server 2019, höhere Version standardmäßig installiert
+
+- Windows Server 2016, höhere Version standardmäßig installiert
 
 - Windows Server 2012 R2, [Windows Management Framework 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) zum Ausführen von Windows PowerShell 5.0 installieren
 
@@ -26,7 +48,11 @@ Windows PowerShell 5.0 wird unter den folgenden Versionen von Windows ausgeführ
 
 - Windows Server 2008 R2 mit Service Pack 1, [Windows Management Framework 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) zum Ausführen von Windows PowerShell 5.0 installieren
 
-- Windows 8.1
+- Windows 10, Version 1607 und höher, höhere Version standardmäßig installiert
+
+- Windows 10, Version 1507 und 1511, standardmäßig installiert
+
+- Windows 8.1, [Windows Management Framework 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) zum Ausführen von Windows PowerShell 5.0 installiert
 
 - Windows 7 mit Service Pack 1, [Windows Management Framework 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) zum Ausführen von Windows PowerShell 5.0 installieren
 
@@ -53,6 +79,8 @@ Windows PowerShell 3.0 wird unter den folgenden Versionen von Windows ausgeführ
 - Windows Server 2008 mit Service Pack 2, [Windows Management Framework 3.0](https://www.microsoft.com/en-us/download/details.aspx?id=34595) zum Ausführen von Windows PowerShell 3.0 installieren
 
 ## <a name="microsoft-net-framework-requirements"></a>Microsoft .NET Framework-Anforderungen
+Windows PowerShell 5.1 erfordert die vollständige Installation von Microsoft .NET Framework 4.5. Windows 8.1 und Windows Server 2012 R2 enthalten standardmäßig Microsoft .NET Framework 4.5.
+
 Windows PowerShell 5.0 erfordert die vollständige Installation von Microsoft .NET Framework 4.5. Windows 8.1 und Windows Server 2012 R2 enthalten standardmäßig Microsoft .NET Framework 4.5.
 
 Windows PowerShell 4.0 erfordert die vollständige Installation von Microsoft .NET Framework 4.5. Windows 8.1 und Windows Server 2012 R2 enthalten standardmäßig Microsoft .NET Framework 4.5.

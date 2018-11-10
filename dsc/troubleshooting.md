@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 10/30/2018
 keywords: dsc,powershell,configuration,setup
 title: Problembehandlung bei DSC
-ms.openlocfilehash: 93a2f3728968882f78d4c050238d226b71c11ca5
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: 04fb1e9016c508d0e514b51b3cfd6e6f6d5c4974
+ms.sourcegitcommit: 9cabc119f4d59598e12d4a36238a311349082ff0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268193"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50410013"
 ---
 # <a name="troubleshooting-dsc"></a>Problembehandlung bei DSC
 
@@ -503,7 +503,7 @@ ConfigurationID                :
 ConfigurationMode              : ApplyAndMonitor
 ConfigurationModeFrequencyMins : 30
 Credential                     :
-DebugMode                      : False
+DebugMode                      : {None}
 DownloadManagerCustomData      :
 DownloadManagerName            :
 LocalConfigurationManagerState : Ready
@@ -513,7 +513,7 @@ RefreshMode                    : PUSH
 PSComputerName                 :
 ```
 
-Sie sehen, dass `DebugMode` auf **FALSE** festgelegt ist.
+Sie sehen, dass `DebugMode` auf **None** festgelegt ist.
 
 Zum Einrichten der `DebugMode`-Demo verwenden Sie die folgenden PowerShell-Ressource:
 
@@ -603,12 +603,12 @@ function Test-TargetResource
 
 Dieses Skript generiert eine Zufallszahl und aktualisiert den Anbietercode entsprechend. Ist `DebugMode` auf „false“ festgelegt, wird der Inhalt der Datei „**$env:SystemDrive\OutputFromTestProviderDebugMode.txt**“ nie geändert.
 
-Legen Sie `DebugMode` in Ihrem Konfigurationsskript jetzt auf **TRUE** fest:
+Legen Sie `DebugMode` in Ihrem Konfigurationsskript jetzt auf **ForceModuleImport** fest:
 
 ```powershell
 LocalConfigurationManager
 {
-    DebugMode = $true
+    DebugMode = "ForceModuleImport"
 }
 ```
 

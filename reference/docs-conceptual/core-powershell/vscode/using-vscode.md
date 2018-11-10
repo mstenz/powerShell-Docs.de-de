@@ -2,12 +2,12 @@
 title: Verwenden von Visual Studio Code für die Entwicklung mit PowerShell
 description: Verwenden von Visual Studio Code für die Entwicklung mit PowerShell
 ms.date: 08/06/2018
-ms.openlocfilehash: 8fbaba826624199d06fe4fdc785998e0135d7fe7
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: 9c06ce72c39d08e75fcb7e5cf9d5f92ae5dd8ed9
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134099"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225793"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>Verwenden von Visual Studio Code für die Entwicklung mit PowerShell
 
@@ -124,12 +124,11 @@ Beispielsweise können Sie Konfigurationen zu folgenden Vorgängen hinzufügen:
 - Starten einer interaktiven Sitzung im Debugger
 - Anfügen des Debuggers an einen PowerShell-Hostvorgang
 
-  Führen Sie die folgenden Schritte aus, um eine Konfigurationsdatei für den Debugvorgang zu erstellen:
+Führen Sie die folgenden Schritte aus, um eine Konfigurationsdatei für den Debugvorgang zu erstellen:
 
   1. Öffnen Sie die Ansicht **Debuggen**, indem Sie **STRG+UMSCHALT+D** drücken (oder **cmd+UMSCHALT+D** unter Mac).
   2. Klicken Sie in der Symbolleiste auf das Zahnradsymbol **Konfigurieren**.
-  3. Visual Studio Code zeigt folgende Eingabeaufforderung an: **Umgebung auswählen**.
-  Wählen Sie **PowerShell** aus.
+  3. Visual Studio Code zeigt folgende Eingabeaufforderung an: **Umgebung auswählen**. Wählen Sie **PowerShell** aus.
 
   Nachdem Sie diesen Vorgang ausgeführt haben, erstellt Visual Studio Code im Stamm Ihres Arbeitsbereichordners ein Verzeichnis und eine Datei: „.vscode\launch.json“.
   An dieser Stelle wird Ihre Debugkonfiguration gespeichert. Wenn sich Ihre Dateien in einem Git-Repository befinden, sollten Sie einen Commit für die launch.json-Datei ausführen.
@@ -171,9 +170,7 @@ Beispielsweise können Sie Konfigurationen zu folgenden Vorgängen hinzufügen:
 
   Nachdem Sie die Debugkonfiguration eingerichtet haben, können Sie auswählen, welche Konfiguration Sie während der Debugsitzung verwenden möchten, indem Sie eine der Debugkonfigurationen aus der Dropdownliste in der Symbolleistenansicht **Debuggen** auswählen.
 
-  Im Folgenden werden einige Blogbeiträge aufgeführt, die hilfreich für die ersten Schritte mit der PowerShell-Erweiterung für Visual Studio Code sein können:
-
-Visual Studio Code:
+Im Folgenden werden einige Blogbeiträge aufgeführt, die bei den ersten Schritten mit der PowerShell-Erweiterung für Visual Studio Code hilfreich sein können:
 
 - [PowerShell-Erweiterungen][ps-extension]
 - [Write and debug PowerShell scripts in Visual Studio Code (Schreiben und Debuggen von PowerShell-Skripts in Visual Studio Code)][debug]

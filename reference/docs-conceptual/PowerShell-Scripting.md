@@ -2,17 +2,17 @@
 ms.date: 08/27/2018
 keywords: powershell,cmdlet
 title: PowerShell-Skripterstellung
-ms.openlocfilehash: 8a152ab338d42f861b7ff38de44d68db14262abb
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
+ms.openlocfilehash: 07925ce8dcafd33970a703c9b241bf6f76f88d10
+ms.sourcegitcommit: 47becf2823ece251a7264db2387bb503cf3abaa9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48851185"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49451029"
 ---
 # <a name="powershell"></a>PowerShell
 
 PowerShell ist eine aufgabenbasierte Befehlszeilenshell und Skriptsprache, die auf .NET basiert.
-Mit PowerShell können Administratoren und Poweruser Aufgaben zur Verwaltung von Betriebssystemen (Linux, macOS und Windows) und Prozessen schnell automatisieren.
+Mit PowerShell können Systemadministratoren und Poweruser Aufgaben zum Verwalten von Betriebssystemen (Linux, macOS und Windows) und Prozessen schnell automatisieren.
 
 Über PowerShell-Befehle können Sie Computer mit der Befehlszeile verwalten. Mithilfe von PowerShell-Anbietern können Sie auf Datenspeicher wie die Registrierung und den Zertifikatspeicher genauso einfach zugreifen wie auf das Dateisystem. PowerShell verfügt über einen umfangreichen Ausdrucksparser und eine vollständig entwickelte Skriptsprache.
 

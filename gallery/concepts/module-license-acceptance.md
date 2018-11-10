@@ -3,18 +3,18 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: PowerShell
 title: Module, die eine Zustimmung zur Lizenz erfordern
-ms.openlocfilehash: 93f92f6e83bcf18a40c3d89eb39a154e16ca5063
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 369e32d5278a2e1bf1d3f2ae67f670c524b9f878
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893109"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002666"
 ---
 # <a name="modules-requiring-license-acceptance"></a>Module, die eine Zustimmung zur Lizenz erfordern
 
 ## <a name="synopsis"></a>ZUSAMMENFASSUNG
 
-Die Rechtsabteilungen einiger Modulherausgeber verlangen, dass Kunden der Lizenz explizit zustimmen, bevor sie das Modul aus dem PowerShell-Katalog installieren. Wenn ein Benutzer ein Modul mit PowerShellGet installiert, aktualisiert oder speichert (entweder direkt oder in Abhängigkeit von einem anderen Element) und dieses Modul die Zustimmung zu einer Lizenz erforderlich macht, muss der Benutzer die Lizenzbedingungen annehmen, da der Vorgang andernfalls nicht durchgeführt werden kann.
+Die Rechtsabteilungen einiger Modulherausgeber verlangen, dass Kunden der Lizenz explizit zustimmen, bevor sie das Modul aus dem PowerShell-Katalog installieren. Wenn ein Benutzer ein Modul mit PowerShellGet installiert, aktualisiert oder speichert (entweder direkt oder in Abhängigkeit von einem anderen Paket) und dieses Modul erfordert, dass der Benutzer einer Lizenz zustimmt, muss der Benutzer die Lizenzbedingungen akzeptieren, da der Vorgang sonst fehlschlägt.
 
 ## <a name="publish-requirements-for-modules"></a>Veröffentlichungsanforderungen für Module
 
@@ -43,7 +43,7 @@ Module, für die die Benutzer einer Lizenz zustimmen sollen, müssen folgende An
 
 - Während des Vorgangs zum Installieren/Speichern/Aktualisieren ist das obige Lizenzzustimmungsverhalten erforderlich, falls ein abhängiges Modul (ein anderes vom Modul abhängiges Element) die Zustimmung zur Lizenz verlangt.
 - Wenn die Modulversion im lokalen Katalog bereits als auf dem System installiert aufgeführt ist, wird die Lizenzüberprüfung umgangen.
-- Wenn ein abhängiges Modul beim Vorgang zum Installieren/Speichern/Aktualisieren eine Lizenz benötigt und keine Zustimmung zur Lizenz erfolgt, verursacht der Vorgang einen Fehler und befolgt die normalen Prozesse für das Element, das nicht installiert, gespeichert oder aktualisiert werden konnte.
+- Wenn ein abhängiges Modul beim Installieren/Speichern/Aktualisieren eine Lizenz benötigt und die Zustimmung zur Lizenz nicht erfolgt, schlägt der Vorgang fehl und folgt den normalen Prozessen für das Paket, das nicht installiert/gespeichert/aktualisiert werden kann.
 
 ## <a name="impact-on--force"></a>Auswirkungen auf -Force
 
@@ -219,6 +219,6 @@ Das Modul wird ohne Aufforderung zum Akzeptieren der Lizenz aktualisiert.
 
 [Erforderliche Zustimmung zur Lizenz für Skripts](./script-license-acceptance.md)
 
-[Unterstützung für das Anfordern der Zustimmung zur Lizenz in PowerShellGallery](../how-to/working-with-items/items-that-require-license-acceptance.md)
+[Unterstützung für das Anfordern der Zustimmung zur Lizenz in PowerShellGallery](../how-to/working-with-packages/packages-that-require-license-acceptance.md)
 
-[Erforderliche Zustimmung zur Lizenz für die Bereitstellung in Azure Automation](../how-to/working-with-items/deploy-to-azure-automation.md)
+[Erforderliche Zustimmung zur Lizenz für die Bereitstellung in Azure Automation](../how-to/working-with-packages/deploy-to-azure-automation.md)

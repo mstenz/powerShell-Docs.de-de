@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: DSC für Linux-Resource „nxFile“
-ms.openlocfilehash: f1eb98092049ae837d144ccf99a84fe5614144e0
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 80969ba2ea6247fcd616a301d951403a840c851d
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189855"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225708"
 ---
 # <a name="dsc-for-linux-nxfile-resource"></a>DSC für Linux-Resource „nxFile“
 
-Die Ressource **nxFile** in PowerShell DSC bietet einen Mechanismus zum Verwalten von Dateien und Verzeichnissen auf einem Linux-Knoten.
+Die Ressource **nxFile** in PowerShell DSC (Desired State Configuration) bietet einen Mechanismus zum Verwalten von Dateien und Verzeichnissen auf einem Linux-Knoten.
 
 ## <a name="syntax"></a>Syntax
 

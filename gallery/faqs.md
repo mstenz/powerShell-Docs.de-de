@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Häufig gestellte Fragen zum PowerShell-Katalog
-ms.openlocfilehash: e377e71cf5eeb1f8b73430cc0b97527eac970cff
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 3fa52892ce50491c040251baae8b4ae4ee3dcba0
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190433"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002871"
 ---
 # <a name="frequently-asked-questions"></a>Häufig gestellte Fragen
 
@@ -29,30 +29,30 @@ In der Regel sind Module besser für das Teilen, aber wir ermöglichen die Skrip
 
 ## <a name="how-can-i-publish-to-the-powershell-gallery"></a>Wie kann ich etwas im PowerShell-Katalog veröffentlichen?
 
-Sie müssen zuerst ein Konto im PowerShell-Katalog erstellen, bevor Sie Elemente im Katalog veröffentlichen können. Das liegt daran, dass das Veröffentlichen von Elementen einen NuGet API-Schlüssel erfordert, der bei der Registrierung bereitgestellt wird. Verwenden Sie zum Registrieren und Anmelden im PowerShell-Katalog Ihr persönliches, Geschäfts- oder Schulkonto. Ein einmaliger Registrierungsprozess ist erforderlich, wenn Sie sich zum ersten Mal anmelden. Danach ist der NuGet API-Schlüssel auf Ihrer Profilseite verfügbar.
+Sie müssen ein Konto im PowerShell-Katalog erstellen, bevor Sie Pakete im Katalog veröffentlichen können. Das liegt daran, dass zum Veröffentlichen von Paketen NuGetApiKey erforderlich ist. Der entsprechende Wert wird bei der Registrierung bereitgestellt. Verwenden Sie zum Registrieren und Anmelden im PowerShell-Katalog Ihr persönliches, Geschäfts- oder Schulkonto. Ein einmaliger Registrierungsprozess ist erforderlich, wenn Sie sich zum ersten Mal anmelden. Danach ist der NuGet API-Schlüssel auf Ihrer Profilseite verfügbar.
 
-Verwenden Sie, sobald Sie sich beim Katalog registriert haben, die Cmdlets [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) oder [Publish-Script](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409), um Ihr Angebot im Katalog zu veröffentlichen. Weitere Informationen zum Ausführen dieser Cmdlets finden Sie auf der Registerkarte „Veröffentlichen“, oder lesen Sie die Dokumentation zu [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) und [Publish-Script](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409).
+Verwenden Sie, wenn Sie sich im Katalog registriert haben, den Cmdlet [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) oder [Publish-Script](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409), um Ihr Paket im Katalog zu veröffentlichen. Weitere Informationen zum Ausführen dieser Cmdlets finden Sie auf der Registerkarte „Veröffentlichen“, oder lesen Sie die Dokumentation zu [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) und [Publish-Script](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409).
 
-**Sie müssen sich zum Installieren oder Speichern der Elemente nicht im Katalog registrieren oder anmelden.**
+**Sie müssen sich zum Installieren oder Speichern von Paketen nicht im Katalog registrieren oder anmelden.**
 
-## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-an-item-to-the-powershell-gallery-what-does-that-mean"></a>Ich habe die Fehlermeldung „Fehler beim Verarbeiten der Anforderung. 'Der angegebene API-Schlüssel ist ungültig oder verfügt nicht über die Zugriffsberechtigung auf das angegebene Paket.' Der Remoteserver hat einen Fehler zurückgegeben: (403) Forbidden.“ erhalten, als ich ein Element im PowerShell-Katalog veröffentlichen wollte. Was bedeutet das?
+## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>Ich habe die Fehlermeldung „Fehler beim Verarbeiten der Anforderung. 'Der angegebene API-Schlüssel ist ungültig oder verfügt nicht über die Zugriffsberechtigung auf das angegebene Paket.' Der Remoteserver hat einen Fehler zurückgegeben: (403) Forbidden.“ erhalten, als ich ein Paket im PowerShell-Katalog veröffentlichen wollte. Was bedeutet das?
 
 Dieser Fehler kann aus folgenden Gründen auftreten:
 
 - **Der angegebene API-Schlüssel ist ungültig.**
      Stellen Sie sicher, dass Sie den gültigen API-Schlüssel Ihres Konto angegeben haben. Den API-Schlüssel finden Sie auf Ihrer Profilseite.
-- **Der angegebene Elementname gehört Ihnen nicht.**
-     Wenn Sie sich vergewissert haben, dass Ihr API-Schlüssel richtig ist, existiert möglicherweise bereits ein Element mit demselben Namen wie der, den Sie verwenden möchten. Die Auflistung für das Element wurde möglicherweise durch den Besitzer aufgehoben. In diesem Fall wird es in keinen Suchergebnissen angezeigt. Öffnen Sie einen Browser, und navigieren Sie zur Seite „Elementdetails“, um festzustellen, ob bereits ein Element mit dem gleichen Namen vorhanden ist: `https://www.powershellgallery.com/packages/<itemName>`. Navigieren Sie z.B. direkt zu `https://www.powershellgallery.com/packages/pester`, gelangen Sie zur Detailseite des Pester-Moduls, unabhängig davon, ob es aufgeführt ist oder nicht. Wenn bereits ein Element mit einem einen Konflikt verursachenden Namen vorhanden ist und nicht aufgelistet ist, können Sie Folgendes tun:
-    - Einen anderen Namen für das Element auswählen
-    - Die Besitzer des vorhandenen Elements kontaktieren
+- **Der angegebene Paketname gehört Ihnen nicht.**
+     Wenn Sie Ihren API-Schlüssel überprüft haben und er korrekt ist, existiert möglicherweise bereits ein Paket mit dem gleichen Namen wie der, den Sie verwenden möchten. Möglicherweise hat der Besitzer festgelegt, dass das Paket nicht aufgelistet wird. In diesem Fall wird es in keinen Suchergebnissen angezeigt. Öffnen Sie einen Browser, und navigieren Sie zur Seite „Paketdetails“, um festzustellen, ob bereits ein Paket mit dem gleichen Namen vorhanden ist: `https://www.powershellgallery.com/packages/<packageName>`. Navigieren Sie z.B. direkt zu `https://www.powershellgallery.com/packages/pester`, gelangen Sie zur Detailseite des Pester-Moduls, unabhängig davon, ob es aufgeführt ist oder nicht. Wenn bereits ein Paket mit einem einen Konflikt verursachenden Namen vorhanden ist und nicht aufgelistet wird, haben Sie die folgenden Optionen:
+    - Einen anderen Namen für das Paket auswählen
+    - Die Besitzer des vorhandenen Pakets kontaktieren
 
 ## <a name="why-cant-i-sign-in-with-my-personal-account-but-i-could-sign-in-yesterday"></a>Warum konnte ich mich gestern mit meinem persönlichen Konto anmelden, heute aber nicht mehr?
 
 Bitte bedenken Sie, dass Ihr Katalog-Konto keine Änderungen an Ihrem primären E-Mail-Alias übernimmt. Weitere Informationen finden Sie im Microsoft [Verwalten von Aliasen für Ihr Microsoft-Konto](https://windows.microsoft.com/windows/outlook/add-alias-account).
 
-## <a name="why-dont-i-see-all-the-gallery-items-when-i-select-all-the-category-checkboxes-on-the-items-tab"></a>Warum werden mir nicht alle Katalogelemente angezeigt, wenn ich auf der Registerkarte „Elemente“ alle „Category“-Kontrollkästchen aktiviere?
+## <a name="why-dont-i-see-all-the-gallery-packages-when-i-select-all-the-category-checkboxes-on-the-packages-tab"></a>Warum werden mir nicht alle Katalogpakete angezeigt, wenn ich auf der Registerkarte „Pakete“ alle „Kategorie“-Kontrollkästchen aktiviere?
 
-Wenn Sie ein „Kategorie“-Kontrollkästchen aktivieren, geben Sie damit an, dass Sie alle Elemente in dieser Kategorie anzeigen möchten. Nur die Elemente in den ausgewählten Kategorien werden angezeigt. Wenn Sie alle „Kategorie“-Kontrollkästchen aktivieren, geben Sie damit entsprechend an, dass Sie alle Elemente in jeder beliebigen Kategorie anzeigen möchten. Allerdings gehören einige der Elemente im Katalog nicht zu den aufgeführten Kategorien, weshalb sie nicht in den Ergebnissen angezeigt werden. Deaktivieren Sie zum Anzeigen aller Elemente im Katalog alle „Kategorien“, oder wählen Sie die Registerkarte „Elemente“ erneut aus.
+Durch Aktivieren eines „Kategorie“-Kontrollkästchens geben Sie an, dass Sie alle Pakete in dieser Kategorie anzeigen möchten. Nur die Pakete in den ausgewählten Kategorien werden angezeigt. Wenn Sie alle „Kategorie“-Kontrollkästchen aktivieren, geben Sie damit also an, dass Sie alle Pakete in jeder Kategorie anzeigen möchten. Allerdings gehören einige Pakete im Katalog nicht zu den aufgeführten Kategorien, sodass sie nicht in den Ergebnissen erscheinen. Deaktivieren Sie zum Anzeigen aller Pakete im Katalog alle „Kategorien“, oder wählen Sie die Registerkarte „Pakete“ erneut aus.
 
 ## <a name="what-are-the-requirements-to-publish-a-module-to-the-powershell-gallery"></a>Welche sind die Voraussetzungen, um ein Modul im PowerShell-Katalog veröffentlichen zu können?
 
@@ -82,7 +82,7 @@ Jede Art von PowerShell-Skript (Skripts oder Workflows) kann im Katalog veröffe
 
 ## <a name="how-do-i-search"></a>Wie führe ich eine Suche aus?
 
-Geben Sie das gesuchte Thema in das Textfeld ein. Wenn Sie z.B. Module im Zusammenhang mit Azure SQL suchen, geben Sie einfach „Azure SQL“ ein. Die Suchmaschine sucht dann in allen veröffentlichten Elementen nach diesen Schlüsselwörtern, einschließlich Titel, Beschreibungen und metadatenübergreifend. Anschließend werden auf Grundlage einer gewichteten Qualitätsbewertung die besten Ergebnisse angezeigt. Sie können auch nach bestimmten Feldern der folgenden Feldtypen suchen, indem Sie die Syntax „Feld:"Wert"“ in der Suchabfrage verwenden:
+Geben Sie das gesuchte Thema in das Textfeld ein. Wenn Sie z.B. Module im Zusammenhang mit Azure SQL suchen, geben Sie einfach „Azure SQL“ ein. Die Suchmaschine sucht dann in allen veröffentlichten Paketen nach diesen Schlüsselwörtern, einschließlich Titel und Beschreibungen, sowie in allen Metadaten. Anschließend werden auf Grundlage einer gewichteten Qualitätsbewertung die besten Ergebnisse angezeigt. Sie können auch nach bestimmten Feldern der folgenden Feldtypen suchen, indem Sie die Syntax „Feld:"Wert"“ in der Suchabfrage verwenden:
 
 - Tags
 - Funktionen
@@ -112,7 +112,7 @@ Alle Module im Katalog enthalten Modulmanifeste, und die meisten dieser Module e
 
 PackageManagement ist eine allgemeine Schnittstelle für die Arbeit mit einem beliebigen Paket-Manager. Unabhängig davon, ob Sie mit PowerShell-Modulen, MSIs, RubyGems, NuGet-Paketen oder Perl-Modulen arbeiten, sollten Sie PackageManagement-Befehle (Find-Package und Install-Package) verwenden können, um sie suchen und installieren zu können. PackageManagement regelt dies mithilfe eines eigenen Paketanbieters für jeden Paket-Manager, der an PackageManagement eingebunden ist. Anbieter verrichten die eigentliche Arbeit: Sie rufen Inhalte aus Repositorys ab und installieren die Inhalte lokal. Häufig umschließen Paketanbieter einfach die vorhandenen Paket-Manager-Tools für einen gegebenen Paket.
 
-PowerShellGet ist der Paket-Manager für PowerShell-Elemente. Es gibt einen Anbieter von PSModule-Paketen, der die PowerShellGet-Funktionalität über PackageManagement verfügbar macht. Sie können daher entweder [Install-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) oder „Install-Package -Provider PSModule“ ausführen, um ein Modul aus dem PowerShell-Katalog zu installieren. Auf bestimmte PowerShellGet-Funktionen, einschließlich [Update-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) und [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409), kann nicht über PackageManagement-Befehle zugegriffen werden.
+PowerShellGet ist der Paket-Manager für PowerShell-Pakete. Es gibt einen Anbieter von PSModule-Paketen, der die PowerShellGet-Funktionalität über PackageManagement verfügbar macht. Sie können daher entweder [Install-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) oder „Install-Package -Provider PSModule“ ausführen, um ein Modul aus dem PowerShell-Katalog zu installieren. Auf bestimmte PowerShellGet-Funktionen, einschließlich [Update-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) und [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409), kann nicht über PackageManagement-Befehle zugegriffen werden.
 
 Alles in allem bietet PowerShellGet eine erstklassige Schnittstelle zur Paketverwaltung für PowerShell-Inhalte. PackageManagement dient der Bereitstellung aller Schnittstellungen zur Paketverwaltung mithilfe einiger allgemeiner Tools. Wenn Ihnen diese Antwort nicht geholfen hat, finden Sie eine ausführlichere Hilfestellung am Ende dieses Texts im Abschnitt **Wie beziehen sich PackageManagement und PowerShellGet tatsächlich aufeinander?**.
 
@@ -158,14 +158,14 @@ Aus diesem Grund erfordert **PowerShellGet** eines der folgenden Betriebssysteme
 
 Für **PowerShellGet** ist außerdem .NET Framework 4.5 oder höher erforderlich. Von [hier](https://msdn.microsoft.com/library/5a4x27ek.aspx) können Sie .NET Framework 4.5 oder höher installieren.
 
-## <a name="is-it-possible-to-reserve-names-for-items-that-will-be-published-in-future"></a>Ist es möglich, Namen für Elemente zu reservieren, die in Zukunft veröffentlicht werden?
+## <a name="is-it-possible-to-reserve-names-for-packages-that-will-be-published-in-future"></a>Lassen sich Namen für Pakete reservieren, die in Zukunft veröffentlicht werden?
 
-Es ist nicht möglich, Elementnamen zu reservieren. Wenn Sie glauben, dass ein vorhandenes Element einen Namen trägt, der besser zu Ihrem Element passt, [wenden Sie sich an den Besitzer des Elements](./how-to/working-with-items/contacting-item-owners.md). Wenn Sie innerhalb einiger Wochen keine Antwort erhalten, können Sie den Support kontaktieren und das Team für den PowerShell-Katalog prüft die Angelegenheit.
+Es ist nicht möglich, Paketnamen zu reservieren. Wenn Sie der Meinung sind, dass ein vorhandenes Paket einen Namen trägt, der besser zu Ihrem Paket passt, [wenden Sie sich an den Besitzer des Pakets](./how-to/working-with-packages/contacting-package-owners.md). Wenn Sie innerhalb einiger Wochen keine Antwort erhalten, können Sie den Support kontaktieren und das Team für den PowerShell-Katalog prüft die Angelegenheit.
 
-## <a name="how-do-i-claim-ownership-for-items-"></a>Wie mache ich Besitzansprüche für Elemente geltend?
+## <a name="how-do-i-claim-ownership-for-packages"></a>Wie mache ich Besitzansprüche für Pakete geltend?
 
-Details hierzu finden Sie unter [Verwalten von Elementbesitzern](./how-to/publishing-items/managing-item-owners.md).
+Weitere Informationen finden Sie unter [Verwalten von Paketbesitzern auf PowerShellGallery.com](./how-to/publishing-packages/managing-package-owners.md).
 
-## <a name="how-do-i-deal-with-an-item-owner-who-is-violating-my-item-license"></a>Wie gehe ich mit einem Elementbesitzer um, der meine Elementlizenz verletzt?
+## <a name="how-do-i-deal-with-a-package-owner-who-is-violating-my-package-license"></a>Wie gehe ich mit einem Paketbesitzer um, der meine Paketlizenz verletzt?
 
-Wir möchten die Zusammenarbeit in der PowerShell-Community fördern, um mögliche Rechtsstreitigkeiten zu beheben, die zwischen dem Elementbesitzern auftreten können.  Wir haben einen [Prozess zur Beilegung von Streitigkeiten](./how-to/getting-support/dispute-resolution.md) entworfen, und bitten Sie, diesen zu befolgen, bevor die Administratoren von PowerShellGallery.com eingeschaltet werden.
+Wir möchten die Zusammenarbeit in der PowerShell-Community fördern, um Streitigkeiten beizulegen, die ggf. zwischen Paketbesitzern auftreten.  Wir haben einen [Prozess zur Beilegung von Streitigkeiten](./how-to/getting-support/dispute-resolution.md) entworfen, und bitten Sie, diesen zu befolgen, bevor die Administratoren von PowerShellGallery.com eingeschaltet werden.

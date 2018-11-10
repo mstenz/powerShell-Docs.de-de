@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Kontaktieren von Katalogadministratoren
-ms.openlocfilehash: 71c8aa15ac0c6ec57e7e1bfe3cb20cac7e2c6b29
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: f9197dfbf0cedb642259f554b42ec6f63eae30a4
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268652"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002171"
 ---
 # <a name="contact-gallery-administrators"></a>Kontaktieren von Katalogadministratoren
 
@@ -16,14 +16,14 @@ ms.locfileid: "39268652"
 
 Katalogadministratoren sollten in den folgenden Fällen kontaktiert werden:
 
-1. Sie müssen ein Element löschen, das Sie veröffentlicht haben.
+1. Sie müssen ein Paket löschen, das Sie veröffentlicht haben.
 2. Sie benötigen Hilfe im Zusammenhang mit Ihrem Konto.
-3. Sie möchten ein Problem bei den Elementen im Katalog melden.
-4. Sie sind sich wegen eines Elementnamens mit anderen Benutzern uneinig und können die Meinungsverschiedenheit nicht beilegen, indem Sie die Benutzer kontaktieren.
-5. Sie wurden von Katalogadministratoren wegen Ihrer Elemente im Katalog kontaktiert und möchten antworten.
+3. Sie möchten ein Problem mit Paketen im Katalog melden.
+4. Sie sind sich wegen eines Paketnamens mit anderen Benutzern uneinig und können die Meinungsverschiedenheit nicht gemeinsam beilegen.
+5. Sie wurden von Katalogadministratoren wegen Ihrer Pakete im Katalog kontaktiert und möchten antworten.
 
 ## <a name="how-to-contact-gallery-administrators"></a>Wie sollten Sie Katalogadministratoren kontaktieren?
 
 1. Senden Sie uns eine E-Mail: cgadmin@microsoft.com.
-2. Wenn Sie den Missbrauch eines Elements melden möchten, können Sie den Link „Missbrauch melden“ unterhalb der Elementinformationen im linken Bereich verwenden.
+2. Wenn Sie den Missbrauch eines Pakets melden möchten, verwenden Sie den Link „Missbrauch melden“ links unter den Paketinformationen.
 3. Bei anderen allgemeinen Fragen zum Katalog wenden Sie sich an [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell).

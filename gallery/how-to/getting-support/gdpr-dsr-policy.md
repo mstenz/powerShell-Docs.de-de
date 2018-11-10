@@ -3,18 +3,18 @@ ms.date: 03/27/2018
 contributor: JKeithB
 keywords: katalog,powershell,psgallery,GDPR
 title: DSGVO-Kompatibilität für den PowerShell-Katalog
-ms.openlocfilehash: 14b82fa07df52f02f0d7577cb0eef70faa4285a2
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: fb1191d8a1cd12d5994e41238c384eb504d0c261
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893245"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002649"
 ---
 # <a name="powershell-gallery-gdpr-compliance"></a>DSGVO-Kompatibilität für den PowerShell-Katalog
 
 ## <a name="overview"></a>Übersicht
 
-Im Mai 2018 tritt die Datenschutz-Grundverordnung (DSGVO) der Europäischen Union in Kraft.
+Im Mai 2018 trat die Datenschutz-Grundverordnung (DSGVO) der Europäischen Union in Kraft.
 Im Rahmen der DSGVO treten neue Regeln für Unternehmen, Behörden und gemeinnützige sowie andere Organisationen in Kraft, die den Verbrauchern in der Europäischen Union Güter und Dienstleitungen anbieten bzw. personenbezogene Daten der EU-Bürger sammeln und analysieren.
 Diese Grundverordnung gilt unabhängig von Ihrem Unternehmenssitz.
 
@@ -26,16 +26,16 @@ Diese Grundverordnung gilt unabhängig von Ihrem Unternehmenssitz.
 Im PowerShell-Katalog werden die folgenden Informationen gespeichert, die möglicherweise von Benutzern bereitgestellt werden und personenbezogene Daten enthalten:
 
 - PowerShell-Katalog-Konto
-- Im PowerShell-Katalog veröffentlichte Elemente
+- Im PowerShell-Katalog veröffentlichte Pakete
 - E-Mail-Korrespondenz mit dem PowerShell-Katalog-Team
 
 Die meisten Benutzer erstellen kein Konto für den PowerShell-Katalog.
-Ein Konto ist nur erforderlich, wenn Sie ein Element veröffentlichen oder das Feature „Contact Owner“ (Besitzer kontaktieren) im PowerShell-Katalog verwenden wollen.
+Ein Konto ist nur erforderlich, wenn Sie ein Paket veröffentlichen oder das Feature „Besitzer kontaktieren“ im PowerShell-Katalog verwenden wollen.
 Neben der vom Benutzer ausgehenden E-Mail-Korrespondenz speichert der PowerShell-Katalog keine personenbezogenen Daten von Benutzern, die kein Konto erstellt haben.
 
-Benutzer, die ein PowerShell-Katalog-Konto erstellen, können Elemente in PowerShell-Katalog veröffentlichen.
-Es wird zwar erwartet, dass es sich bei diesen Elementen um PowerShell-Code handelt, sie können jedoch auch andere Informationen enthalten, einschließlich personenbezogener Daten.
-Im Folgenden erhalten Sie Informationen dazu, wie Sie sämtliche Elemente abrufen können, die Sie im PowerShell-Katalog veröffentlich haben.
+Benutzer, die ein Konto im PowerShell-Katalog erstellen, können dort Pakete veröffentlichen.
+Es wird zwar erwartet, dass es sich bei diesen Paketen um PowerShell-Code handelt, sie können jedoch auch andere Informationen enthalten, z.B. personenbezogene Daten.
+Im Folgenden erhalten Sie Informationen dazu, wie Sie sämtliche Pakete abrufen, die Sie im PowerShell-Katalog veröffentlicht haben.
 
 ## <a name="dsr-export-of-powershell-gallery-data"></a>DSR-Export von Daten aus dem PowerShell-Katalog
 
@@ -45,9 +45,9 @@ In den folgenden Abschnitten wird erläutert, wie der PowerShell-Katalog sämtli
 
 Die E-Mail-Korrespondenz kann Folgendes umfassen:
 
-- E-Mails, die an die Besitzer der Elemente im PowerShell-Katalog gesendet wurden, wenn im Rahmen der Codeanalyseüberprüfungen ein Problem mit einem Element festgestellt wurde, das sie im PowerShell-Katalog veröffentlich haben
+- E-Mails an Besitzer von Paketen im PowerShell-Katalog, wenn die Codeanalyse ein Problem mit einem Paket erkennt, das diese im PowerShell-Katalog veröffentlicht haben
 - E-Mail von einer beliebigen Person an das PowerShell-Katalogteam, die an die auf der Seite „Kontakt“ ([cgadmin@microsoft.com](mailto:cgadmin@microsoft.com)) genannte E-Mail-Adresse gesendet wurde
-- Registrierte Benutzer, die das Feature „Contact Owner“ (Besitzer kontaktieren) im PowerShell-Katalog verwenden, um eine E-Mail an den Besitzer eines Element zu senden, das sich im PowerShell-Katalog befindet
+- E-Mails registrierter Benutzer, die im PowerShell-Katalog das Feature „Besitzer kontaktieren“ verwenden, um eine E-Mail an den Besitzer eines Pakets zu senden, das sich im PowerShell-Katalog befindet
 
 Für E-Mails, die vom PowerShell-Katalog oder an diesen gesendet werden, gilt eine Aufbewahrungsrichtlinie, gemäß derer die E-Mails 90 Tage lang für mögliche Sicherheitsuntersuchungen gespeichert werden müssen, die durchgeführt werden, wenn schädlicher Code im PowerShell-Katalog entdeckt werden sollte.
 Gemäß der Richtlinie werden diese E-Mails nach 90 Tagen gelöscht.
@@ -65,13 +65,13 @@ Wenn Sie ein PowerShell-Katalog-Konto erstellt haben, finden Sie sämtliche pers
 
 Wenn Sie mehr als ein Konto im PowerShell-Katalog erstellt haben, müssen Sie diese Schritte für jedes einzelne Konto ausführen.
 
-### <a name="items-in-the-powershell-gallery"></a>Elemente im PowerShell-Katalog
+### <a name="packages-in-the-powershell-gallery"></a>Pakete im PowerShell-Katalog
 
-Um das Exportieren von im PowerShell-Katalog veröffentlichten Elementen zu vereinfachen, wurde das Skript „GetPSGalleryItemsForAuthor“ im PowerShell-Katalog veröffentlicht.
-Dieses Skript exportiert basierend auf den im Element gespeicherten Autoreninformationen eine Kopie jeder Version von jedem Element, das im PowerShell-Katalog gespeichert wurde.
+Um das Exportieren von im PowerShell-Katalog veröffentlichten Pakete zu vereinfachen, wurde das Skript „GetPSGalleryItemsForAuthor“ im PowerShell-Katalog veröffentlicht.
+Dieses Skript exportiert auf Grundlage der im Paket gespeicherten Autorinformationen eine Kopie jeder Version von jedem Paket, das im PowerShell-Katalog gespeichert wurde.
 
 > [!NOTE]
-> Der Autor wird im Elementmanifest gespeichert, wenn Sie Ihr Element veröffentlichen.
+> Der Autor wird im Paketmanifest gespeichert, wenn Sie Ihr Paket veröffentlichen.
 > Es gibt keine Garantie dafür, dass der Autor dieselbe Identität aufweist wie das von Ihnen im PowerShell-Katalog verwendete Konto.
 > Wenn Sie im Feld „Autor“ einen anderen Wert verwenden, müssen Sie den Wert angeben, wenn Sie dieses Skript verwenden.
 
@@ -88,16 +88,16 @@ Sie können das Skript direkt ausführen, indem Sie den folgenden PowerShell-Bef
 .\GetPSGalleryItemsForAuthor.ps1
 ```
 
-Sie werden aufgefordert, den Autor und einen Ordner auf Ihrem System anzugeben, in dem die Elemente gespeichert werden sollen.
+Sie werden aufgefordert, den Autor und einen Ordner in Ihrem System anzugeben, in dem die Pakete gespeichert werden sollen.
 
 ## <a name="deleting-personal-data-from-the-powershell-gallery"></a>Löschen von personenbezogenen Daten aus dem PowerShell-Katalog
 
-Wenn Sie Ihr PowerShell-Katalog-Konto oder ein beliebiges Element, das Sie besitzen, aus dem PowerShell-Katalog löschen, senden Sie eine E-Mail an cgadmin@microsoft.com mit dem Betreff: „DSGVO-Anforderung für Elemente, die im Zusammenhang mit diesem Konto stehen“.
+Um Ihr PowerShell-Katalogkonto oder ein beliebiges Paket zu löschen, das Sie im PowerShell-Katalog besitzen, senden Sie eine E-Mail an cgadmin@microsoft.com mit dem Betreff: „DSGVO-Anfrage für Elemente in Zusammenhang mit diesem Konto“.
 Geben Sie in dieser E-Mail an, welche Informationen gelöscht werden sollen. Beispiel:
 
-- Bitte löschen Sie Version x.y.z des Elements „[Elementname]“
-- Bitte löschen Sie alle Versionen des Elements „[Elementname]“
-- Bitte löschen Sie mein PowerShell-Katalog-Konto
+- Bitte löschen Sie Version x.y.z des Pakets „Paketname“.
+- Bitte löschen Sie alle Versionen des Pakets „Paketname“.
+- Bitte löschen Sie mein PowerShell-Katalog-Konto.
 
 Die Administratoren von PowerShell-Katalog werden Ihnen innerhalb von sieben Werktagen eine Antwort zukommen lassen.
-Die angegebenen Elemente werden innerhalb von 30 Tagen, nachdem die Anforderung gesendet wurde, gelöscht.
+Die angegebenen Pakete werden innerhalb von 30 Tagen nach Senden der Anfrage gelöscht.

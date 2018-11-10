@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: powershell,core
 title: Bekannte Probleme bei PowerShell 6.0
-ms.openlocfilehash: e3e718be903ff2223064d5790d3d0fe554ef04cd
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: ce40a1925e564fbd2c661e70ec36d3842d915dfe
+ms.sourcegitcommit: 47becf2823ece251a7264db2387bb503cf3abaa9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268000"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49450995"
 ---
 # <a name="known-issues-for-powershell-60"></a>Bekannte Probleme bei PowerShell 6.0
 
@@ -90,9 +90,9 @@ Derzeit können keine eingeschränkten JEA-Remoting-Endpunkte in PowerShell unte
 
 ### <a name="sudo-exec-and-powershell"></a>`sudo`, `exec` und PowerShell
 
-Da PowerShell (wie Python oder Ruby) die meisten Befehle im Arbeitsspeicher ausführt, können Sie sudo nicht direkt mit integrierten PowerShell-Features verwenden. (Sie können `powershell` selbstverständlich über sudo ausführen.) Wenn es erforderlich ist, ein PowerShell-Cmdlet innerhalb von PowerShell mit sudo auszuführen, z.B. im Fall von `sudo `Set-Date` 8/18/2016`, sollten Sie `sudo powershell `Set-Date` 8/18/2016` verwenden. Gleichermaßen können Sie integrierte PowerShell-Features nicht direkt ausführen. Stattdessen müssen Sie `exec powershell item_to_exec` verwenden.
+Da PowerShell (wie Python oder Ruby) die meisten Befehle im Arbeitsspeicher ausführt, können Sie sudo nicht direkt mit integrierten PowerShell-Features verwenden. (Sie können `pwsh` selbstverständlich über sudo ausführen.) Wenn es erforderlich ist, ein PowerShell-Cmdlet innerhalb von PowerShell mit sudo auszuführen, z.B. im Fall von `sudo Set-Date 8/18/2016`, sollten Sie `sudo pwsh Set-Date 8/18/2016` verwenden. Gleichermaßen können Sie integrierte PowerShell-Features nicht direkt ausführen. Stattdessen müssen Sie `exec pwsh item_to_exec` verwenden.
 
-Dieses Problem wird derzeit unter #3232 nachverfolgt.
+Dieses Problem wird derzeit unter [#3232](https://github.com/PowerShell/PowerShell/issues/3232) nachverfolgt.
 
 ### <a name="missing-cmdlets"></a>Fehlende Cmdlets
 

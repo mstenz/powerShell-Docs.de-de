@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: DSC für die Linux-Resource „nxUser“
-ms.openlocfilehash: ca77bcd1f23a78ddb9e2ac988e4aadfec504bbbe
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 1b02be1559957585a2a1733630cb93440e8182f9
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218925"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50226031"
 ---
 # <a name="dsc-for-linux-nxuser-resource"></a>DSC für die Linux-Resource „nxUser“
 
-Die Ressource **nxUser** in PowerShell DSC bietet einen Mechanismus zum Verwalten von Dateien und Verzeichnissen auf einem Linux-Knoten.
+Die Ressource **nxUser** in PowerShell DSC (Desired State Configuration) bietet einen Mechanismus zum Verwalten von Dateien und Verzeichnissen auf einem Linux-Knoten.
 
 ## <a name="syntax"></a>Syntax
 

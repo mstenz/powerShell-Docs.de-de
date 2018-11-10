@@ -1,13 +1,13 @@
 ---
 title: Installieren von PowerShell Core unter macOS
 description: Informationen zur Installation von PowerShell Core unter macOS
-ms.date: 08/06/2018
-ms.openlocfilehash: 042c933dfa83f3ab52e315036e4f817145116d00
-ms.sourcegitcommit: aa41249f153bbc6e11667ade60c878980c15abc6
+ms.date: 11/02/2018
+ms.openlocfilehash: 162e841bf71d708e9db84ea1bb2dbef13924783b
+ms.sourcegitcommit: f4247d3f91d06ec392c4cd66921ce7d0456a2bd9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45611486"
+ms.lasthandoff: 11/05/2018
+ms.locfileid: "50998502"
 ---
 # <a name="installing-powershell-core-on-macos"></a>Installieren von PowerShell Core unter macOS
 
@@ -15,10 +15,14 @@ PowerShell Core unterstützt macOs 10.12 und höher.
 Sämtliche Pakete sind auf der Seite [Releases][] über GitHub verfügbar.
 Führen Sie `pwsh` über das Terminal aus, nachdem Sie das Paket installiert haben.
 
-## <a name="installation-of-latest-stable-release-via-homebrew-on-macos-1012-or-higher"></a>Installation des neuesten stabilen Release über Homebrew unter macOS 10.12 oder höher
+## <a name="about-brew"></a>Informationen zu Brew
 
 Bei [Homebrew][brew] handelt es sich um den bevorzugten Paket-Manager für macOS.
 Wenn der Befehl `brew` nicht gefunden wird, müssen Sie Homebrew installieren, indem Sie [die entsprechenden Anweisungen][brew] ausführen.
+
+## <a name="installation-of-latest-stable-release-via-homebrew-on-macos-1012-or-higher"></a>Installation des neuesten stabilen Release über Homebrew unter macOS 10.12 oder höher
+
+Weitere Informationen zu Ansichten finden Sie unter [Info zu Brew](#about-brew).
 
 Jetzt können Sie PowerShell installieren:
 
@@ -40,15 +44,13 @@ brew cask upgrade powershell
 ```
 
 > [!NOTE]
-> Die oben genannten Befehle können innerhalb eines PowerShell-Hosts (pwsh) aufgerufen werden, die Shell von PowerShell muss dann jedoch beendet und neu angegeben werden, um das Upgrade abzuschließen
-> und die in $PSVersionTable dargestellten Werte zu aktualisieren.
+> Die oben genannten Befehle können innerhalb eines PowerShell-Hosts (pwsh) aufgerufen werden, die Shell von PowerShell muss dann jedoch beendet und neu gestartet werden, um das Upgrade abzuschließen und die in $PSVersionTable dargestellten Werte zu aktualisieren.
 
 [brew]: http://brew.sh/
 
 ## <a name="installation-of-latest-preview-release-via-homebrew-on-macos-1012-or-higher"></a>Installation der neuesten stabilen Vorschauversion über Homebrew unter macOS 10.12 oder höher
 
-Bei [Homebrew][brew] handelt es sich um den bevorzugten Paket-Manager für macOS.
-Wenn der Befehl `brew` nicht gefunden wird, müssen Sie Homebrew installieren, indem Sie [die entsprechenden Anweisungen][brew] ausführen.
+Weitere Informationen zu Ansichten finden Sie unter [Info zu Brew](#about-brew).
 
 Wenn Sie Homebrew installiert haben, können Sie auch problemlos PowerShell installieren.
 Installieren Sie zunächst [Cask-Versions][cask-versions]. Dies ermöglicht Ihnen das Installieren alternativer Versionen von Cask-Paketen:
@@ -91,6 +93,8 @@ Doppelklicken Sie entweder auf die Datei, und befolgen Sie die Anweisungen, oder
 sudo installer -pkg powershell-6.1.0-osx-x64.pkg -target /
 ```
 
+Installieren Sie [OpenSSL](#install-openssl), da dies für PowerShell-Remotingfunktionen und CIM-Vorgänge erforderlich ist.
+
 ## <a name="binary-archives"></a>Archive der Binärdateien
 
 `tar.gz`-Archive der PowerShell-Binärdateien werden für die macOS-Plattform zur Verfügung gestellt, um erweiterte Bereitstellungsszenarios zu ermöglichen.
@@ -112,6 +116,41 @@ sudo chmod +x /usr/local/microsoft/powershell/6.1.0/pwsh
 
 # Create the symbolic link that points to pwsh
 sudo ln -s /usr/local/microsoft/powershell/6.1.0/pwsh /usr/local/bin/pwsh
+```
+
+Installieren Sie [OpenSSL](#install-openssl), da dies für PowerShell-Remotingfunktionen und CIM-Vorgänge erforderlich ist.
+
+## <a name="installing-dependencies"></a>Installieren von Abhängigkeiten
+
+### <a name="install-xcode-command-line-tools"></a>Installieren von XCode-Befehslzeilentools
+
+```shell
+xcode-select -install
+```
+
+### <a name="install-openssl"></a>Installieren von OpenSSL
+
+OpenSSL ist für PowerShell-Remotingfunktionen und CIM-Vorgänge erforderlich.  Die Installation kann über MacPorts oder Brew erfolgen.
+
+#### <a name="install-openssl-via-brew"></a>Installieren von OpenSSL über Brew
+
+Weitere Informationen zu Ansichten finden Sie unter [Info zu Brew](#about-brew).
+
+Führen Sie `brew install openssl` aus, um OpenSSL zu installieren.
+
+#### <a name="install-openssl-via-macports"></a>Installieren von OpenSSL über MacPorts
+
+1. Installieren der [XCode-Befehslzeilentools](#install-xcode-command-line-tools)
+1. Installieren Sie MacPorts.
+   Anweisungen finden Sie im [Installationsleitfaden](https://guide.macports.org/chunked/installing.macports.html).
+1. Verwenden von MacPorts durch Ausführen von `sudo port selfupdate`
+1. Aktualisieren von MacPorts-Paketen durch Ausführen von `sudo port upgrade outdated`
+1. Installieren von OpenSSL durch Ausführen von `sudo port instal openssl`
+1. Verknüpfen Sie die Bibliotheken, sodass PowerShell diese verwenden kann.
+
+```shell
+sudo mkdir -p /usr/local/opt/openssl
+sudo ln -s /opt/local/lib /usr/local/opt/openssl/lib
 ```
 
 ## <a name="uninstalling-powershell-core"></a>Deinstallieren von PowerShell Core
@@ -149,7 +188,7 @@ Das bedeutet, dass hostspezifische Standardprofile in `Microsoft.PowerShell_prof
 PowerShell hält die [XDG Base Directory Specification (XDG Base Directory-Spezifikation)][xdg-bds] unter macOs ein.
 
 Da macOS eine Ableitung von BSD ist, wird das Präfix `/usr/local` anstelle von `/opt` verwendet.
-Daher ist `$PSHOME` `/usr/local/microsoft/powershell/6.1.0/` und der Symlink wird unter `/usr/local/bin/pwsh` gespeichert.
+Daher ist `$PSHOME` gleich `/usr/local/microsoft/powershell/6.1.0/` und der symbolische Link wird unter `/usr/local/bin/pwsh` gespeichert.
 
 ## <a name="additional-resources"></a>Weitere Ressourcen
 

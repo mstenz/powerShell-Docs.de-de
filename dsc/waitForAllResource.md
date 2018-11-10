@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: WaitForAll-Ressource in DSC
-ms.openlocfilehash: 4413220bb0b5eeef5fd1599f794cd551f15a2925
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 367f95caaa71ebec9c8e0a7c31fa5c0f5be27945
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34221781"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50226099"
 ---
 # <a name="dsc-waitforall-resource"></a>WaitForAll-Ressource in DSC
 
@@ -15,7 +15,7 @@ ms.locfileid: "34221781"
 
 Die DSC-Ressource (Desired State Configuration) **WaitForAll** kann innerhalb eines Knotenblocks in einer [DSC-Konfiguration](configurations.md) verwendet werden, um Abhängigkeiten von Konfigurationen auf anderen Knoten anzugeben.
 
-Diese Ressource ist erfolgreich, wenn sich die mit der Eigenschaft **ResourceName** angegebene Ressource auf allen der in der Eigenschaft **NodeName** definierten Zielknoten im gewünschten Zustand befindet.
+Diese Ressource ist erfolgreich, wenn sich die mit der Eigenschaft **ResourceName** angegebene Ressource auf allen in der Eigenschaft **NodeName** definierten Zielknoten im gewünschten Zustand befindet.
 
 
 ## <a name="syntax"></a>Syntax
