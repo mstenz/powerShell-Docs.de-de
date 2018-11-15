@@ -7,9 +7,9 @@ items:
   href: getting-started.md
 - name: Anleitung
   items:
-  - name: Suchen nach Elementen im Katalog
+  - name: Suchen nach Paketen im Katalog
     items:
-    - name: Suchen nach Elementen
+    - name: Suchen nach Paketen
       href: how-to/finding-packages/search-syntax.md
     - name: Suchen anhand von PSEdition
       href: how-to/finding-packages/searching-by-psedition.md
@@ -17,17 +17,17 @@ items:
       href: how-to/finding-packages/filtering-packages.md
   - name: Veröffentlichen im Katalog
     items:
-    - name: Erstellen und Veröffentlichen von Elementen
+    - name: Erstellen und Veröffentlichen eines Pakets
       href: how-to/publishing-packages/publishing-a-package.md
     - name: Erstellen eines PowerShell-Katalogkontos
       href: how-to/publishing-packages/creating-an-account.md
-    - name: Entfernen von Elementen aus der Liste
+    - name: Entfernen von Paketen aus der Liste
       href: how-to/publishing-packages/unlisting-packages.md
-    - name: Löschen von Elementen
+    - name: Löschen von Paketen
       href: how-to/publishing-packages/deleting-packages.md
-    - name: Verwalten von Elementbesitzern
+    - name: Verwalten von Paketbesitzern
       href: how-to/publishing-packages/managing-package-owners.md
-  - name: Arbeiten mit Elementen
+  - name: Arbeiten mit Paketen
     items:
     - name: FileList-Ansicht
       href: how-to/working-with-packages/filelist-view.md
@@ -35,9 +35,9 @@ items:
       href: how-to/working-with-packages/deploy-to-azure-automation.md
     - name: Manuelles Herunterladen des Pakets
       href: how-to/working-with-packages/manual-download.md
-    - name: Elemente, die Zustimmung zur Lizenz erfordern
+    - name: Pakete, die Zustimmung zur Lizenz erfordern
       href: how-to/working-with-packages/packages-that-require-license-acceptance.md
-    - name: Kontaktieren der Elementbesitzer
+    - name: Kontaktieren von Paketbesitzern
       href: how-to/working-with-packages/contacting-package-owners.md
     - name: Bereitstellen von Feedback über soziale Netzwerke oder Kommentare
       href: how-to/working-with-packages/social-media-feedback.md
@@ -47,11 +47,13 @@ items:
       href: how-to/managing-profile/managing-account.md
     - name: Verwalten von API-Schlüsseln
       href: how-to/managing-profile/creating-apikeys.md
+  - name: Arbeiten mit lokalen PowerShellGet-Repositorys
+    href: how-to/working-with-local-psrepositories.md
 - name: Konzepte
   items:
   - name: Veröffentlichungsrichtlinien und Best Practices
     href: concepts/publishing-guidelines.md
-  - name: Elementmanifest und Katalogbenutzeroberfläche
+  - name: Paketmanifest und Katalogbenutzeroberfläche
     href: concepts/package-manifest-affecting-ui.md
   - name: Spezifische PSEdition erforderlich
     items:
@@ -65,7 +67,7 @@ items:
       href: concepts/script-license-acceptance.md
     - name: Zustimmung zur Lizenz für Module erforderlich
       href: concepts/module-license-acceptance.md
-  - name: Definieren von Elementen als PreRelease
+  - name: Definieren von Paketen als Vorabversion
     items:
     - name: Definieren eines Moduls als PreRelease
       href: concepts/module-prerelease-support.md
@@ -91,9 +93,9 @@ items:
   href: faqs.md
 - name: PowerShellGet-Cmdlets
   href: https://docs.microsoft.com/powershell/module/powershellget/
-ms.openlocfilehash: 386e86b4a27ea840cc688b47f597e845f041af60
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.openlocfilehash: 123607d3ce1139511ee0006b9ec6ed2e9ae99010
+ms.sourcegitcommit: 91786b03704fbd2d185f674df0bc67faddfb6288
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002324"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51619125"
