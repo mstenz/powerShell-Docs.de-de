@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Verwenden von Konfigurationsdaten
-ms.openlocfilehash: 9b0b213e2d71bfdb473fd98f8080de5c874c70e2
-ms.sourcegitcommit: 68093cc12a7a22c53d11ce7d33c18622921a0dd1
-ms.translationtype: HT
+ms.openlocfilehash: f2d25b9ced805fb4c91378ebfe840104eb6ce52a
+ms.sourcegitcommit: 91786b03704fbd2d185f674df0bc67faddfb6288
+ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/26/2018
-ms.locfileid: "36940377"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51619176"
 ---
 # <a name="using-configuration-data-in-dsc"></a>Verwenden von Konfigurationsdaten in DSC
 
@@ -185,12 +185,13 @@ MyDscConfiguration -ConfigurationData .\MyData.psd1
 
 ## <a name="using-configurationdata-variables-in-a-configuration"></a>Verwenden von ConfigurationData-Variablen in einer Konfiguration
 
-DSC stellt drei spezielle Variablen bereit, die in einem Skript verwendet werden können: **$AllNodes**, **$Node** und **$ConfigurationData**.
+DSC bietet die folgenden besonderen Variablen, die in einem Konfigurationsskript verwendet werden können:
 
 - **$AllNodes** bezieht sich auf die gesamte, in **ConfigurationData** definierte Knotensammlung. Sie können die **AllNodes**-Sammlung mit **.Where()** und **.ForEach()** filtern.
+- **ConfigurationData** bezieht sich auf die gesamte Hashtabelle, die beim Kompilieren einer Konfiguration als Parameter übergeben wird.
+- **MyTypeName** enthält die [Konfiguration](configurations.md) die Variable, im verwendet wird Namen. Z. B. in der Konfiguration `MyDscConfiguration`, `$MyTypeName` Wert der `MyDscConfiguration`.
 - **Nodes** bezieht sich auf einen bestimmten Eintrag in der **AllNodes**-Sammlung, nachdem sie mithilfe von **.Where()** oder **.ForEach()** gefiltert wurde.
   - Weitere Informationen zu diesen Methoden finden Sie unter [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md).
-- **ConfigurationData** bezieht sich auf die gesamte Hashtabelle, die beim Kompilieren einer Konfiguration als Parameter übergeben wird.
 
 ## <a name="using-non-node-data"></a>Verwenden von Daten ohne Knoten
 
