@@ -3,12 +3,12 @@ ms.date: 08/14/2018
 keywords: powershell,cmdlet
 title: Befehlszeilenhilfe für „PowerShell.exe“
 ms.assetid: 1ab7b93b-6785-42c6-a1c9-35ff686a958f
-ms.openlocfilehash: c7f35511e876e8e5189d8a2b949555603d43f731
-ms.sourcegitcommit: 56b9be8503a5a1342c0b85b36f5ba6f57c281b63
-ms.translationtype: HT
+ms.openlocfilehash: 0a11ebb11d29adf5853c232b3aa10bc72f92bf0c
+ms.sourcegitcommit: 03c7672ee72698fe88a73e99702ceaadf87e702f
+ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "43133160"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51691829"
 ---
 # <a name="powershellexe-command-line-help"></a>Befehlszeilenhilfe für „PowerShell.exe“
 
@@ -51,7 +51,10 @@ Legt die Standardausführungsrichtlinie für die aktuelle Sitzung fest und speic
 
 Führt das angegebene Skript im lokalen Bereich aus, sodass die Funktionen und Variablen, die das Skript erstellt, in der aktuellen Sitzung verfügbar sind. Geben Sie den Pfad der Skriptdatei und Parameter an. **File** muss der letzte Parameter im Befehl sein. Alle Werte, die nach dem **-File**-Parameter eingegeben werden, werden als Skriptdateipfad und als an das Skript übergebene Parameter interpretiert.
 
-Parameter, die an das Skript übergeben werden, werden als Zeichenfolgenliterale übergeben (nach der Interpretation durch die aktuelle Shell). Wenn Sie beispielsweise in „cmd.exe“ sind und den Wert einer Umgebungsvariablen übergeben möchten, verwenden Sie die Syntax `powershell -File .\test.ps1 -Sample %windir%` von „cmd.exe“. In diesem Beispiel empfängt Ihr Skript das Zeichenfolgenliteral `$env:windir` und nicht den Wert der Umgebungsvariablen: `powershell -File .\test.ps1 -Sample $env:windir`
+Parameter, die an das Skript übergeben werden, werden als Zeichenfolgenliterale übergeben (nach der Interpretation durch die aktuelle Shell). Wenn Sie in cmd.exe und Wert einer Umgebungsvariable übergeben möchten, würden Sie z. B. der cmd.exe-Syntax verwenden: `powershell.exe -File .\test.ps1 -TestParam %windir%`
+
+Im Gegensatz dazu ausführen `powershell.exe -File .\test.ps1 -TestParam $env:windir` in cmd.exe führt das Skript mit dem Empfang der literalen Zeichenfolge `$env:windir` , da es keine spezielle Bedeutung für die aktuelle cmd.exe-Shell hat.
+Die `$env:windir` Stil der Referenz zu Umgebungsvariablen _können_ in verwendet werden. eine `-Command` Parameter, da es ihn als PowerShell-Code interpretiert wird.
 
 ### <a name="-inputformat-text--xml"></a>\--InputFormat {Text | XML}
 
@@ -103,22 +106,31 @@ Legt den Fensterstil für die Sitzung fest. Gültige Werte sind „Normal“, �
 
 ### <a name="-command"></a>-Command
 
-Führt die angegebenen Befehle (mit den Parametern) so aus, als wären sie über die PowerShell-Befehlszeile eingegeben worden. Nach der Ausführung wird PowerShell beendet, es sei denn, der `-NoExit`-Parameter wurde angegeben.
-Sämtlicher Text nach `-Command` wird als eine einzige Befehlszeile an PowerShell gesendet. Dies ist ein Unterschied zum Verhalten von `-File` bei der Verarbeitung von an ein Skript gesendete Parameter.
+Führt die angegebenen Befehle (mit den Parametern) so aus, als wären sie über die PowerShell-Befehlszeile eingegeben worden.
+PowerShell nach der Ausführung wird beendet, es sei denn, die **NoExit** Parameter angegeben ist.
+Sämtlicher Text nach `-Command` wird als eine einzige Befehlszeile an PowerShell gesendet.
+Dies ist ein Unterschied zum Verhalten von `-File` bei der Verarbeitung von an ein Skript gesendete Parameter.
 
-Der Wert von „Command“ kann „-“, eine Zeichenfolge oder ein Skriptblock sein. Wenn der Wert des Befehls „-“ ist, wird der Befehlstext aus der Standardeingabe gelesen.
+Der Wert des `-Command` kann "-", eine Zeichenfolge oder ein Skriptblock.
+Die Ergebnisse des Befehls werden an die übergeordnete Shell als deserialisierte XML-Objekte, nicht als live-Objekte zurückgegeben.
 
-Skriptblöcke müssen in geschweifte Klammern ({}) gesetzt werden. Sie können einen Skriptblock nur angeben, wenn „PowerShell.exe“ in PowerShell ausgeführt wird. Die Ergebnisse des Skripts werden an die übergeordnete Shell als deserialisierte XML-Objekte und nicht als Live-Objekte zurückgegeben.
+Wenn der Wert des `-Command` ist "-", wird der Befehlstext aus der Standardeingabe gelesen.
 
-Wenn der Wert von „Command“ eine Zeichenfolge ist, muss **Command** der letzte Parameter im Befehl sein, da alle Zeichen, die nach dem Befehl eingegeben werden, als die Befehlsargumente interpretiert werden.
+Wenn der Wert des `-Command` ist eine Zeichenfolge, **Befehl** _müssen_ der letzte Parameter angegeben werden, da alle Zeichen eingegeben werden, nachdem der Befehl als die Befehlsargumente interpretiert werden.
 
-Um eine Zeichenfolge zu schreiben, die einen PowerShell-Befehl ausführt, verwenden Sie das Format:
+Die **Befehl** Parameter akzeptiert nur einen Skriptblock für die Ausführung, wenn sie den übergebenen Wert erkennen kann `-Command` als Typ "scriptblock".
+Dies ist _nur_ möglich, die bei der Ausführung des PowerShell.exe von einem anderen PowerShell-Host.
+Der Typ kann in eine vorhandene Variable aus einem Ausdruck zurückgegebenen oder analysiert, indem Sie das PowerShell enthalten sein, "scriptblock" zu hosten, als literal Skriptblock in geschweiften Klammern `{}`, bevor an PowerShell.exe übergeben wird.
 
-```powershell
+In cmd.exe, es gibt keine als Skriptblock (oder "scriptblock" Typ), also den übergebenen Wert **Befehl** wird _immer_ eine Zeichenfolge sein.
+Sie können einen Skriptblock innerhalb der Zeichenfolge schreiben, aber ausgeführt wird es verhält sich genau als ob Sie sie in einer typischen PowerShell-Eingabeaufforderung eingegeben, Drucken des Inhalts des Skripts wieder für Sie blockiert.
+
+Eine Zeichenfolge übergeben, um `-Command` weiterhin so ausgeführt, als PowerShell, sodass die geschweiften Klammern für Skript-Block häufig nicht erforderlich in erster Linie sind bei Ausführung von cmd.exe.
+Zum Ausführen eines Inline-Skriptblock, der definiert, die in eine Zeichenfolge, die [Aufrufoperator](/powershell/module/microsoft.powershell.core/about/about_operators#call-operator-) `&` kann verwendet werden:
+
+```console
 "& {<command>}"
 ```
-
-Die Anführungszeichen geben eine Zeichenfolge an, und der Aufrufoperator (&) bewirkt, dass der Befehl ausgeführt wird.
 
 ### <a name="-help---"></a>-Help, -?, /?
 
