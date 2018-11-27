@@ -2,18 +2,18 @@
 title: Installieren von PowerShell Core unter Windows
 description: Informationen zur Installation von PowerShell Core unter Windows
 ms.date: 08/06/2018
-ms.openlocfilehash: 2b21908c38796117308f2ac1219db00ff9086408
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
-ms.translationtype: HT
+ms.openlocfilehash: ba159a69df7e117e90e21dd26228b61146260475
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48850978"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320890"
 ---
 # <a name="installing-powershell-core-on-windows"></a>Installieren von PowerShell Core unter Windows
 
 ## <a name="msi"></a>MSI
 
-Installieren Sie PowerShell auf einem Windows-Client oder Windows Server (funktioniert auf Windows 7 SP1, Windows Server 2008 R2 und höher), indem Sie das MSI-Paket von unserer GitHub [Releases][]-Seite herunterladen.
+Installieren Sie PowerShell auf einem Windows-Client oder Windows Server (funktioniert auf Windows 7 SP1, Windows Server 2008 R2 und höher), indem Sie das MSI-Paket von unserer GitHub [Freigaben][]-Seite herunterladen.
 
 Die MSI-Datei sieht wie folgt aus: `PowerShell-<version>-win-<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
@@ -99,7 +99,7 @@ In beiden Fällen benötigen Sie das Windows 10 x64 ZIP-Releasepaket, und Sie m�
 1. Verwenden Sie Ihr bevorzugtes ZIP-Hilfsprogramm, um das Paket in ein Verzeichnis im eingebundenen Nano Server-Image zu entpacken.
 2. Heben Sie die Bereitstellung des Images auf, und starten Sie es.
 3. Stellen Sie eine Verbindung zur Posteingangsinstanz von Windows PowerShell her.
-4. Befolgen Sie die Anweisungen, um einen Remoting-Endpunkt mithilfe der [„Andere Instanz-Methode“](#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register) zu erstellen.
+4. Befolgen Sie die Anweisungen, um einen Remoting-Endpunkt mithilfe der [„Andere Instanz-Methode“](../core-powershell/wsman-remoting-in-powershell-core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register) zu erstellen.
 
 ### <a name="online-deployment-of-powershell-core"></a>Onlinebereitstellung von PowerShell Core
 
@@ -153,7 +153,7 @@ So Installieren Sie PowerShell Core über das CoreCLR-Artefakt:
 
 <!-- [download-center]: TODO -->
 
-[Releases]: https://github.com/PowerShell/PowerShell/releases
+[Freigaben]: https://github.com/PowerShell/PowerShell/releases
 [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
 [wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md
 [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell

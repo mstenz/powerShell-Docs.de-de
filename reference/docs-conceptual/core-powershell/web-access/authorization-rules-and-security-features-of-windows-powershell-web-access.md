@@ -2,12 +2,12 @@
 ms.date: 06/27/2017
 keywords: powershell,cmdlet
 title: Autorisierungsregeln und Sicherheitsfeatures von Windows PowerShell Web Access
-ms.openlocfilehash: e9bed3900263a51b1b8236a3c3430154a5d11886
-ms.sourcegitcommit: 31a221d982305c7f999b1afeb15e3629e9620de8
-ms.translationtype: HT
+ms.openlocfilehash: 95c61d3a0431cda9dee738d1c9f5ec843c1209f3
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "43133094"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52321078"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Autorisierungsregeln und Sicherheitsfeatures von Windows PowerShell Web Access
 
@@ -20,19 +20,19 @@ Windows PowerShell Web Access in Windows Server 2012 R2 und in Windows Server 20
 ## <a name="configuring-authorization-rules-and-site-security"></a>Konfigurieren von Autorisierungsregeln und Websitesicherheit
 
 Nach der Installation von Windows PowerShell Web Access und der Konfiguration des Gateways können Benutzer die Anmeldeseite in einem Browser öffnen. Sie können sich jedoch erst anmelden, nachdem der Windows PowerShell Web Access-Administrator ihnen ausdrücklich Zugriff gewährt hat. Die Windows PowerShell Web Access-Zugriffssteuerung wird mithilfe der Windows PowerShell-Cmdlets verwaltet, die in der folgenden Tabelle beschrieben sind. Eine vergleichbare GUI für das Hinzufügen und Verwalten von Autorisierungsregeln ist nicht verfügbar.
-Siehe [Windows PowerShell Web Access-Cmdlets](cmdlets/web-access-cmdlets.md).
+Siehe [Windows PowerShell Web Access-Cmdlets](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps).
 
 Administratoren können `{0-n}`-Authentifizierungsregeln für Windows PowerShell Web Access definieren. Die Standardsicherheit ist nicht %%amp;quot;tolerant%%amp;quot;, sondern restriktiv: Wenn keine Authentifizierungsregel vorhanden ist, darf kein Benutzer auf irgendetwas zugreifen.
 
-Die Cmdlets [Add-PswaAuthorizationRule](cmdlets/add-pswaauthorizationrule.md) und [Test-PswaAuthorizationRule](cmdlets/test-pswaauthorizationrule.md) enthalten nun unter Windows Server 2012 R2 einen „Credential“-Parameter, mit dem Sie Windows PowerShell Web Access-Autorisierungsregeln von einem Remotecomputer aus oder innerhalb einer aktiven Windows PowerShell Web Access-Sitzung hinzufügen und testen können. Wie bei anderen Windows PowerShell-Cmdlets, die über einen „Credential“-Parameter verfügen, können Sie ein „PSCredential“-Objekt als Wert des Parameters angeben. Führen Sie das Cmdlet [Get-Credential](/powershell/module/microsoft.powershell.security/Get-Credential) aus, um ein „PSCredential“-Objekt zu erstellen, das Anmeldeinformationen enthält, die Sie an einen Remotecomputer übergeben möchten.
+Die Cmdlets [Add-PswaAuthorizationRule](/powershell/module/powershellwebaccess/add-pswaauthorizationrule?view=winserver2012r2-ps) und [Test-PswaAuthorizationRule](/powershell/module/powershellwebaccess/test-pswaauthorizationrule?view=winserver2012r2-ps) enthalten nun unter Windows Server 2012 R2 einen „Credential“-Parameter, mit dem Sie Windows PowerShell Web Access-Autorisierungsregeln von einem Remotecomputer aus oder innerhalb einer aktiven Windows PowerShell Web Access-Sitzung hinzufügen und testen können. Wie bei anderen Windows PowerShell-Cmdlets, die über einen „Credential“-Parameter verfügen, können Sie ein „PSCredential“-Objekt als Wert des Parameters angeben. Führen Sie das Cmdlet [Get-Credential](/powershell/module/microsoft.powershell.security/Get-Credential) aus, um ein „PSCredential“-Objekt zu erstellen, das Anmeldeinformationen enthält, die Sie an einen Remotecomputer übergeben möchten.
 
-Windows PowerShell Web Access-Authentifizierungsregeln sind Whitelist-Regeln. Jede Regel ist eine Definition einer zulässigen Verbindung zwischen Benutzern, Zielcomputern und bestimmten Windows PowerShell-[Sitzungskonfigurationen](/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) (auch als Endpunkte oder _Runspaces_ bezeichnet) auf angegebenen Zielcomputern.
-Eine Erläuterung zu **Runspaces** finden Sie unter [Beginning Use of PowerShell Runspaces (Verwenden von PowerShell-Runspaces)](https://blogs.technet.microsoft.com/heyscriptingguy/2015/11/26/beginning-use-of-powershell-runspaces-part-1/).
+Windows PowerShell Web Access-Authentifizierungsregeln sind Whitelist-Regeln. Jede Regel ist eine Definition einer zulässigen Verbindung zwischen Benutzern, Zielcomputern und bestimmten Windows PowerShell-[Sitzungskonfigurationen](/powershell/module/microsoft.powershell.core/about/about_session_configurations?view=powershell-5.1) (auch als Endpunkte oder _Runspaces_ bezeichnet) auf angegebenen Zielcomputern.
+Eine Erläuterung zu **Runspaces** finden Sie unter [Beginning Use of PowerShell Runspaces (Verwenden von PowerShell-Runspaces)](https://blogs.technet.microsoft.com/heyscriptingguy/2015/11/26/beginning-use-of-powershell-runspaces-part-1/)
 
 > [!IMPORTANT]
 > Für einen Benutzer muss nur eine Regel zutreffen, damit er Zugriff erhält. Wenn einem Benutzer der Zugriff auf einen Computer mit vollem Sprachzugriff oder ausschließlichem Zugriff auf Windows PowerShell-Remoteverwaltungs-Cmdlets gewährt wird, kann sich der Benutzer über die webbasierte Konsole an anderen Computern anmelden, die mit dem ersten Zielcomputer verbunden sind (bzw. per Hop zu diesen Computern wechseln). Die sicherste Möglichkeit, Windows PowerShell Web Access zu konfigurieren, besteht darin, Benutzern nur den Zugriff auf eingeschränkte Sitzungskonfigurationen zu gewähren, mit denen die Erledigung bestimmter Aufgaben möglich ist, die andernfalls remote ausgeführt werden müssten.
 
-Mit den Cmdlets, auf die in [Windows PowerShell Web Access Cmdlets (Windows PowerShell Web Access-Cmdlets)](cmdlets/web-access-cmdlets.md) verwiesen wird, kann ein Satz von Zugriffsregeln erstellt werden. Diese werden zum Autorisieren eines Benutzers auf dem Windows PowerShell Web Access-Gateway verwendet. Die Regeln unterscheiden sich von Zugriffssteuerungslisten auf dem Zielcomputer und bieten eine zusätzliche Ebene der Sicherheit für den Webzugriff. Weitere Informationen zur Sicherheit finden Sie im folgenden Abschnitt.
+Mit den Cmdlets, auf die in [Windows PowerShell Web Access Cmdlets (Windows PowerShell Web Access-Cmdlets)](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps) verwiesen wird, kann ein Satz von Zugriffsregeln erstellt werden. Diese werden zum Autorisieren eines Benutzers auf dem Windows PowerShell Web Access-Gateway verwendet. Die Regeln unterscheiden sich von Zugriffssteuerungslisten auf dem Zielcomputer und bieten eine zusätzliche Ebene der Sicherheit für den Webzugriff. Weitere Informationen zur Sicherheit finden Sie im folgenden Abschnitt.
 
 Falls ein Benutzer keine der vorherigen Sicherheitsebenen passieren kann, wird im Browserfenster eine allgemeine Meldung des Typs „Zugriff verweigert“ angezeigt. Obwohl die Sicherheitsdetails auf dem Gatewayserver protokolliert werden, erhalten die Benutzern keine Informationen darüber, wie viele Sicherheitsebenen sie passiert haben oder auf welcher Ebene der Anmelde- oder Authentifizierungsfehler aufgetreten ist.
 
@@ -229,4 +229,4 @@ Wenn der Gatewayserver unter Windows Server 2012 R2 ausgeführt wird, ermöglich
 
 [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
 
-[Windows PowerShell Web Access Cmdlets (Windows PowerShell Web Access-Cmdlets)](cmdlets/web-access-cmdlets.md)
+[Windows PowerShell Web Access Cmdlets (Windows PowerShell Web Access-Cmdlets)](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps)

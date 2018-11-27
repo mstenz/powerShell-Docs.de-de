@@ -3,16 +3,16 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Tastenkombinationen für Windows PowerShell ISE
 ms.assetid: 8328b946-0f02-4ef4-ac28-2743a1b4043b
-ms.openlocfilehash: e17fee4cf0cc8ac7aa0bb36acde3b452919312d0
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
-ms.translationtype: HT
+ms.openlocfilehash: 1abae849ce599b586357fd2a8db46c608932bd4e
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30953819"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320804"
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Tastenkombinationen für Windows PowerShell ISE
 
-Verwenden Sie die folgenden Tastenkombinationen zum Ausführen von Aktionen in Windows PowerShell® Integrated Scripting Environment (ISE). Windows PowerShell ISE ist als Bestandteil von Windows Server- und Windows-Client-Betriebssystemen verfügbar, kann aber auch unter einigen älteren Windows-Betriebssystemen als Teil des [Windows Management Framework 4.0-Downloadpakets](http://go.microsoft.com/fwlink/?LinkID=293881) installiert werden.
+Verwenden Sie die folgenden Tastenkombinationen zum Ausführen von Aktionen in Windows PowerShell® Integrated Scripting Environment (ISE). Windows PowerShell ISE ist als Bestandteil von Windows Server- und Windows-Client-Betriebssystemen verfügbar, kann aber auch unter einigen älteren Windows-Betriebssystemen als Teil des [Windows Management Framework 4.0-Downloadpakets](https://go.microsoft.com/fwlink/?LinkID=293881) installiert werden.
 
 ## <a name="keyboard-shortcuts-for-editing-text"></a>Tastenkombinationen zum Bearbeiten von Text
 
@@ -120,4 +120,4 @@ Sie können die folgenden Tastenkombinationen verwenden, um die Windows PowerShe
 
 ## <a name="see-also"></a>Weitere Informationen
 
-- [PowerShell Magazine: The Complete List of Windows PowerShell ISE Keyboard Shortcuts](http://www.powershellmagazine.com/2013/01/29/the-complete-list-of-powershell-ise-3-0-keyboard-shortcuts/)
+- [PowerShell Magazine: The Complete List of Windows PowerShell ISE Keyboard Shortcuts](https://www.powershellmagazine.com/2013/01/29/the-complete-list-of-powershell-ise-3-0-keyboard-shortcuts/)

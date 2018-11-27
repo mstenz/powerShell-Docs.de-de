@@ -3,17 +3,17 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Starten von Windows PowerShell
 ms.assetid: 59b649a2-c90c-4cf4-bf95-a740c59148e7
-ms.openlocfilehash: b56ddc2f577225646729b99f3a2abcb8cc60d307
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
-ms.translationtype: HT
+ms.openlocfilehash: 9184e8b0e508610e7f4775f1032f3a69c93bb8c1
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30953122"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320532"
 ---
 # <a name="starting-windows-powershell"></a>Starten von Windows PowerShell
-PowerShell ist ein Skriptmodul im DLL-Format, das in mehreren Hosts eingebettet ist.  Als Host werden am häufigsten die interaktive Befehlszeile „PowerShell.exe“ und die integrierte Skriptumgebung „PowerShell_ISE.exe“ verwendet.
+PowerShell ist eine Skript-Engine im DLL-Format, die in mehreren Hosts eingebettet ist.  Als Host werden am häufigsten die interaktive Befehlszeile „PowerShell.exe“ und die integrierte Skriptumgebung „PowerShell_ISE.exe“ verwendet.
 
-Informationen zum Starten von Windows PowerShell® unter Windows Server® 2012 R2, Windows® 8.1, Windows Server 2012 und Windows 8 finden Sie unter [Allgemeine Verwaltungsaufgaben und Navigation in Windows](http://technet.microsoft.com/library/hh831491.aspx).
+Informationen zum Starten von Windows PowerShell® unter Windows Server® 2012 R2, Windows® 8.1, Windows Server 2012 und Windows 8 finden Sie unter [Allgemeine Verwaltungsaufgaben und Navigation in Windows](https://technet.microsoft.com/library/hh831491.aspx).
 
 ## <a name="how-to-start-windows-powershell-on-earlier-versions-of-windows"></a>Starten von Windows PowerShell unter früheren Versionen von Windows
 
@@ -47,7 +47,7 @@ Verwenden Sie eine der folgenden Methoden, um Windows PowerShell ISE zu starten:
 #### <a name="from-the-start-menu"></a>Über das Startmenü
 
 - Klicken Sie auf **Start**, geben Sie **ISE** ein, und klicken Sie dann auf **Windows PowerShell ISE**.
-- Klicken Sie im **Start** Menü **Start** auf **Alle Programme**, danach auf **Zubehör**, anschließend auf den Ordner **Windows PowerShell** und schließlich auf **Windows PowerShell ISE**.
+- Klicken Sie im **Menü** **Start** auf **Alle Programme**, danach auf **Zubehör**, anschließend auf den Ordner **Windows PowerShell** und schließlich auf **Windows PowerShell ISE**.
 
 #### <a name="at-the-command-prompt"></a>An der Eingabeaufforderung
 
@@ -106,7 +106,7 @@ Wählen Sie eines der folgenden Verfahren, um eine 32-Bit-Version von Windows Po
 #### <a name="in-windows-81"></a>In Windows® 8.1
 
 - Geben Sie im **Startbildschirm** **Windows PowerShell (x86)** ein. Klicken Sie auf die Kachel **Windows PowerShell x86**.
-- Falls Sie die [Remoteserver-Verwaltungstools](http://go.microsoft.com/fwlink/?LinkID=304145) für Windows 8.1 ausführen, können Sie Windows PowerShell x86 auch im Server-Manager-Menü **Extras** öffnen.
+- Falls Sie die [Remoteserver-Verwaltungstools](https://go.microsoft.com/fwlink/?LinkID=304145) für Windows 8.1 ausführen, können Sie Windows PowerShell x86 auch im Server-Manager-Menü **Extras** öffnen.
   Wählen Sie **Windows PowerShell (x86)** aus.
 - Bewegen Sie auf dem Desktop den Cursor in die rechte obere Ecke, klicken Sie auf **Suchen**, geben Sie **PowerShell x86** ein, und klicken Sie dann auf **Windows PowerShell (x86)**.
 - Geben Sie über die Befehlszeile Folgendes ein: `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
@@ -114,6 +114,6 @@ Wählen Sie eines der folgenden Verfahren, um eine 32-Bit-Version von Windows Po
 #### <a name="in-windows-8"></a>In Windows® 8
 
 - Bewegen Sie auf dem Bildschirm **Start** den Cursor in die rechte obere Ecke, klicken Sie auf **Einstellungen**, dann auf **Kacheln**, und bewegen Sie den Schieberegler **Verwaltungstools anzeigen** auf „Ja“. Geben Sie dann **PowerShell** ein, und klicken Sie auf **Windows PowerShell (x86)**.
-- Falls Sie die [Remoteserver-Verwaltungstools](http://www.microsoft.com/download/details.aspx?id=28972) für Windows 8 ausführen, können Sie Windows PowerShell x86 auch im Server-Manager-Menü **Extras** öffnen. Wählen Sie **Windows PowerShell (x86)** aus.
+- Falls Sie die [Remoteserver-Verwaltungstools](https://www.microsoft.com/download/details.aspx?id=28972) für Windows 8 ausführen, können Sie Windows PowerShell x86 auch im Server-Manager-Menü **Extras** öffnen. Wählen Sie **Windows PowerShell (x86)** aus.
 - Geben Sie auf dem Bildschirm **Start** oder dem Desktop **PowerShell (x86)** ein, und klicken Sie dann auf **Windows PowerShell (x86)**.
 - Geben Sie über die Befehlszeile Folgendes ein: `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`

@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Starten der Windows PowerShell 2.0-Engine
 ms.assetid: edafc2fa-7576-49c2-bbba-9336f4bcfc28
-ms.openlocfilehash: 618745ff4865dd046acf46487e87c3ca0e324f95
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
-ms.translationtype: HT
+ms.openlocfilehash: b600c1f5ea122df9bd53132ccc8edbbc6fa1e9f6
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34482963"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320787"
 ---
 # <a name="starting-the-windows-powershell-20-engine"></a>Starten der Windows PowerShell 2.0-Engine
 
@@ -22,7 +22,7 @@ Viele Programme, die Windows PowerShell 2.0 Engine benötigen, starten sie autom
 
 Aktivieren Sie Windows PowerShell 2.0 Engine und Microsoft .NET Framework 3.5 mit Service Pack 1, bevor Sie Windows PowerShell 2.0 Engine starten. Anweisungen hierzu finden Sie unter [Installieren von Windows PowerShell](Installing-Windows-PowerShell.md).
 
-Systeme, auf denen [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881) oder Windows Management Framework 3.0 installiert sind, verfügen über alle erforderlichen Komponenten. Es ist keine weitere Konfiguration erforderlich. Informationen zum Installieren von [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881) oder Windows Management Framework 3.0 finden Sie unter [Installieren von Windows PowerShell](Installing-Windows-PowerShell.md).
+Systeme, auf denen Windows Management Framework 4.0 oder Windows Management Framework 3.0 installiert sind, verfügen über alle erforderlichen Komponenten. Es ist keine weitere Konfiguration erforderlich. Informationen zum Installieren von [Windows Management Framework 4.0](https://go.microsoft.com/fwlink/?LinkID=293881) oder Windows Management Framework 3.0 finden Sie unter [Installieren von Windows PowerShell](Installing-Windows-PowerShell.md).
 
 ## <a name="how-to-start-the-windows-powershell-20-engine"></a>So starten Sie Windows PowerShell 2.0 Engine
 

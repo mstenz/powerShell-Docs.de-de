@@ -1,25 +1,25 @@
 ---
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: Installieren des Windows PowerShell 2.0-Moduls
+title: Installieren der Windows PowerShell 2.0-Engine
 ms.assetid: 82928f2b-f96a-4ae6-a0d0-6e7b181da308
-ms.openlocfilehash: 0b3282a1a67886509e749af0f499c47fe7a99411
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
-ms.translationtype: HT
+ms.openlocfilehash: fb5ed1a5508ddca6925e9281a53caf5e6701870f
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30952340"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320498"
 ---
-# <a name="installing-the-windows-powershell-20-engine"></a>Installieren des Windows PowerShell 2.0-Moduls
+# <a name="installing-the-windows-powershell-20-engine"></a>Installieren der Windows PowerShell 2.0-Engine
 In diesem Thema wird die Installation von Windows PowerShell 2.0 Engine erläutert.
 
 Windows PowerShell 3.0 ist mit Windows PowerShell 2.0 abwärtskompatibel. Cmdlets, Anbieter, Snap-Ins, Module und Skripts, die für Windows PowerShell 2.0 geschrieben wurden, werden unverändert in Windows PowerShell 3.0 und Windows PowerShell 4.0 ausgeführt. Doch aufgrund einer Änderung der Richtlinie für die Laufzeitaktivierung in Microsoft .NET Framework 4 können Windows PowerShell-Hostprogramme, die für Windows PowerShell 2.0 geschrieben und mit Common Language Runtime (CLR) 2.0 kompiliert wurden, nicht unverändert in späteren Versionen von Windows PowerShell ausgeführt werden, die mit CLR 4.0 kompiliert wurden.
 
-Die Module Windows PowerShell 2.0, Windows PowerShell 3.0 und Windows PowerShell 4.0 können parallel ausgeführt werden, um die Abwärtskompatibilität mit Befehlen und Hostprogrammen zu erhalten, die von diesen Änderungen betroffen sind. Außerdem ist Windows PowerShell 2.0 Engine in Windows Server 2012 R2, Windows 8.1, Windows 8, Windows Server 2012 und Windows Management Framework 3.0 enthalten. Windows PowerShell 2.0 Engine soll ausschließlich verwendet werden, wenn ein vorhandenes Skript oder Hostprogramm nicht ausgeführt werden kann, da es nicht mit Windows PowerShell 3.0, Windows PowerShell 4.0 oder Microsoft .NET Framework 4 kompatibel ist. Solche Fälle sind allerdings eher selten.
+Die Engines Windows PowerShell 2.0, Windows PowerShell 3.0 und Windows PowerShell 4.0 können parallel ausgeführt werden, um die Abwärtskompatibilität mit Befehlen und Hostprogrammen zu erhalten, die von diesen Änderungen betroffen sind. Außerdem ist Windows PowerShell 2.0 Engine in Windows Server 2012 R2, Windows 8.1, Windows 8, Windows Server 2012 und Windows Management Framework 3.0 enthalten. Windows PowerShell 2.0 Engine soll ausschließlich verwendet werden, wenn ein vorhandenes Skript oder Hostprogramm nicht ausgeführt werden kann, da es nicht mit Windows PowerShell 3.0, Windows PowerShell 4.0 oder Microsoft .NET Framework 4 kompatibel ist. Solche Fälle sind allerdings eher selten.
 
 Windows PowerShell 2.0 Engine ist eine optionale Funktion von Windows Server 2012 R2, Windows 8.1, Windows® 8 und Windows-Server® 2012. In früheren Versionen von Windows ersetzt die Installation von Windows PowerShell 3.0 komplett die Installation von Windows PowerShell 2.0 im Installationsverzeichnis von Windows PowerShell, wenn Sie Windows Management Framework 3.0 installieren. Windows PowerShell 2.0 Engine wird jedoch beibehalten.
 
-Informationen zum Starten des Windows PowerShell 2.0-Moduls finden Sie unter [Starten des Windows PowerShell 2.0-Moduls](Starting-the-Windows-PowerShell-2.0-Engine.md).
+Informationen zum Starten der Windows PowerShell 2.0-Engine finden Sie unter [Starten der Windows PowerShell 2.0-Engine](Starting-the-Windows-PowerShell-2.0-Engine.md).
 
 ## <a name="on-windows-81-and-windows-8"></a>Unter Windows 8.1 und Windows 8
 Unter Windows 8.1 und Windows 8 ist die Funktion Windows PowerShell 2.0 Engine standardmäßig aktiviert. Um es verwenden zu können, müssen Sie jedoch die Option für Microsoft .NET Framework 3.5 aktivieren, das erforderlich ist. In diesem Abschnitt wird auch erläutert, wie die Funktion Windows PowerShell 2.0 Engine aktiviert und deaktiviert wird.
@@ -67,10 +67,10 @@ Mithilfe der folgenden Verfahren können Sie Windows PowerShell 2.0 Engine und M
 
 - Auf der Seite **Features**, erweitern Sie den Knoten **Windows PowerShell (installiert)**, und wählen Sie **Windows PowerShell 2.0 Engine** aus.
 
-Informationen zum Starten des Windows PowerShell 2.0-Moduls finden Sie unter [Starten des Windows PowerShell 2.0-Moduls](Starting-the-Windows-PowerShell-2.0-Engine.md).
+Informationen zum Starten der Windows PowerShell 2.0-Engine finden Sie unter [Starten der Windows PowerShell 2.0-Engine](Starting-the-Windows-PowerShell-2.0-Engine.md).
 
 ## <a name="on-earlier-systems"></a>Auf älteren Systemen
-Das [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881)-Paket, das Windows PowerShell 4.0 auf Windows 7, Windows Server 2008 R2 und Windows Server 2012 installiert, enthält Windows PowerShell 2.0 Engine. Windows PowerShell 2.0 Engine ist aktiviert und einsatzbereit, falls erforderlich, ohne zusätzliche Installation, Einrichtung und Konfiguration.
+Das [Windows Management Framework 4.0](https://go.microsoft.com/fwlink/?LinkID=293881)-Paket, das Windows PowerShell 4.0 auf Windows 7, Windows Server 2008 R2 und Windows Server 2012 installiert, enthält Windows PowerShell 2.0 Engine. Windows PowerShell 2.0 Engine ist aktiviert und einsatzbereit, falls erforderlich, ohne zusätzliche Installation, Einrichtung und Konfiguration.
 
 Das Windows Management Framework 3.0-Paket, das Windows PowerShell 3.0 auf Windows 7, Windows Server 2008 R2 und Windows Server 2008 installiert, enthält Windows PowerShell 2.0 Engine. Windows PowerShell 2.0 Engine ist aktiviert und einsatzbereit, falls erforderlich, ohne zusätzliche Installation, Einrichtung und Konfiguration.
 
@@ -78,4 +78,4 @@ Das Windows Management Framework 3.0-Paket, das Windows PowerShell 3.0 auf Windo
 - [Windows PowerShell-Systemanforderungen](Windows-PowerShell-System-Requirements.md)
 - [Installieren von Windows PowerShell](Installing-Windows-PowerShell.md)
 - [Starten von Windows PowerShell](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
-- [Starten des Windows PowerShell 2.0-Moduls](Starting-the-Windows-PowerShell-2.0-Engine.md)
+- [Starten der Windows PowerShell 2.0-Engine](Starting-the-Windows-PowerShell-2.0-Engine.md)
