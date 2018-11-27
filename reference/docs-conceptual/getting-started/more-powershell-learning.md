@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Mehr Lernmaterial zu PowerShell
-ms.openlocfilehash: 17f96620bbb483ca580d351584d5650a6734b876
-ms.sourcegitcommit: 59e568ac9fa8ba28e2c96932b7c84d4a855fed2f
-ms.translationtype: HT
+ms.openlocfilehash: da9dfeca3d2d2cfadf6ace0aa98007d16a548aae
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46289207"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320413"
 ---
 # <a name="more-powershell-learning"></a>Mehr Lernmaterial zu PowerShell
 
@@ -33,23 +33,23 @@ Zusätzlich zur Hilfe an der Befehlszeile finden Benutzer, die Windows PowerShel
 
 #### <a name="windows-powershell-essentials-for-the-busy-admin-series"></a>Windows PowerShell-Serie: Grundlagen für den vielbeschäftigten Administrator
 
-- [PowerShell 'SmowerShell'—Why You Should Learn Windows PowerShell Part 1 (PowerShell: Warum Sie den Umgang mit Windows PowerShell lernen sollten (Teil 1))](http://dlbmodigital.microsoft.com/webcasts/wmv/23976_Dnl_L.wmv)
-- [Heard It through the Pipeline—How to Compound Windows PowerShell Commands for Fun and Profit Part 2 (Wie Sie Windows PowerShell-Befehle zusammensetzen und dabei Spaß haben und Gewinn erzielen (Teil 2))](http://dlbmodigital.microsoft.com/webcasts/wmv/23977_Dnl_L.wmv)
-- [Sole Provider? Not Hardly—A Look at Windows PowerShell Providers Part 3 (Ein Blick auf Windows PowerShell-Anbieter (Teil 3))](http://dlbmodigital.microsoft.com/webcasts/wmv/23978_Dnl_L.wmv)
-- [The Main Event—Windows PowerShell Does Event Logs Part 4 (Ereignisprotokolle mit Windows PowerShell (Teil 4))](http://dlbmodigital.microsoft.com/webcasts/wmv/23979_Dnl_L.wmv)
-- [More Than Remotely Possible—Using Windows PowerShell to Manage the Remote Desktop Part 5 (Verwalten von Remotedesktops mit Windows PowerShell (Teil 5))](http://dlbmodigital.microsoft.com/webcasts/wmv/23980_Dnl_L.wmv)
+- [PowerShell 'SmowerShell'—Why You Should Learn Windows PowerShell Part 1 (PowerShell: Warum Sie den Umgang mit Windows PowerShell lernen sollten (Teil 1))](https://dlbmodigital.microsoft.com/webcasts/wmv/23976_Dnl_L.wmv)
+- [Heard It through the Pipeline—How to Compound Windows PowerShell Commands for Fun and Profit Part 2 (Wie Sie Windows PowerShell-Befehle zusammensetzen und dabei Spaß haben und Gewinn erzielen (Teil 2))](https://dlbmodigital.microsoft.com/webcasts/wmv/23977_Dnl_L.wmv)
+- [Sole Provider? Not Hardly—A Look at Windows PowerShell Providers Part 3 (Ein Blick auf Windows PowerShell-Anbieter (Teil 3))](https://dlbmodigital.microsoft.com/webcasts/wmv/23978_Dnl_L.wmv)
+- [The Main Event—Windows PowerShell Does Event Logs Part 4 (Ereignisprotokolle mit Windows PowerShell (Teil 4))](https://dlbmodigital.microsoft.com/webcasts/wmv/23979_Dnl_L.wmv)
+- [More Than Remotely Possible—Using Windows PowerShell to Manage the Remote Desktop Part 5 (Verwalten von Remotedesktops mit Windows PowerShell (Teil 5))](https://dlbmodigital.microsoft.com/webcasts/wmv/23980_Dnl_L.wmv)
 
 #### <a name="learn-it-now-before-its-an-emergency"></a>Lernen Sie jetzt, bevor der Notfall eintritt
 
-- [Windows PowerShell: Learn It Now Before It's an Emergency - Part 1](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481530_Dnl_L.wmv)
-- [Windows PowerShell: Learn It Now Before It's an Emergency - Part 2](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481542_Dnl_L.wmv)
-- [Windows PowerShell: Learn It Now Before It's an Emergency - Part 3](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481548_Dnl_L.wmv)
-- [Windows PowerShell: Learn It Now Before It's an Emergency - Part 4](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481552_Dnl_L.wmv)
-- [Windows PowerShell: Learn It Now Before It's an Emergency - Part 5](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481554_Dnl_L.wmv)
+- [Windows PowerShell: Learn It Now Before It's an Emergency - Part 1](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481530_Dnl_L.wmv)
+- [Windows PowerShell: Learn It Now Before It's an Emergency - Part 2](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481542_Dnl_L.wmv)
+- [Windows PowerShell: Learn It Now Before It's an Emergency - Part 3](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481548_Dnl_L.wmv)
+- [Windows PowerShell: Learn It Now Before It's an Emergency - Part 4](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481552_Dnl_L.wmv)
+- [Windows PowerShell: Learn It Now Before It's an Emergency - Part 5](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481554_Dnl_L.wmv)
 
 ## <a name="resources-for-windows-powershell-developers"></a>Ressourcen für Windows PowerShell-Entwickler
 
 Die folgenden Ressourcen bieten Ressourcen, die Entwicklern dabei helfen, ihre eigenen Windows PowerShell-Module, -Funktionen, -Cmdlets, -Anbieter und -Hostinganwendungen zu erstellen.
 
-- [Windows PowerShell SDK](http://go.microsoft.com/fwlink/p/?LinkID=89595) – Enthält Referenzmaterial.
-- [Windows PowerShell-Programmiererhandbuch](http://go.microsoft.com/fwlink/p/?LinkID=89596) – Stellt Tutorials bereit. Enthält zudem Informationen über grundlegende Konzepte von Windows PowerShell.
+- [Windows PowerShell SDK](https://go.microsoft.com/fwlink/p/?LinkID=89595) – Enthält Referenzmaterial.
+- [Windows PowerShell-Programmiererhandbuch](https://go.microsoft.com/fwlink/p/?LinkID=89596) – Stellt Tutorials bereit. Enthält zudem Informationen über grundlegende Konzepte von Windows PowerShell.

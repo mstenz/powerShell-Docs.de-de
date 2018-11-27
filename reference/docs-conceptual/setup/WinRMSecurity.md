@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: WinRMSecurity
-ms.openlocfilehash: 43e77067e301cdf1b792cb0d24b72ee0abb3349a
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
-ms.translationtype: HT
+ms.openlocfilehash: 59717e4806857e6760de523335bbee6028da8e84
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34482946"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320549"
 ---
 # <a name="powershell-remoting-security-considerations"></a>Sicherheitsaspekte von PowerShell-Remoting
 
@@ -15,7 +15,7 @@ PowerShell-Remoting ist die empfohlene Methode zum Verwalten von Windows-Systeme
 
 ## <a name="what-is-powershell-remoting"></a>Was ist PowerShell-Remoting?
 
-PowerShell-Remoting verwendet [Windows-Remoteverwaltung (WinRM)](https://msdn.microsoft.com/library/windows/desktop/aa384426.aspx), wobei es sich um die Microsoft-Implementierung des Protokolls von [Web Services for Management (WS-Management)](http://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf) handelt, um Benutzern die Ausführung von PowerShell-Befehlen auf Remotecomputern zu ermöglichen. Weitere Informationen zur Verwendung von PowerShell-Remoting finden Sie unter [Ausführen von Remotebefehlen](https://technet.microsoft.com/library/dd819505.aspx).
+PowerShell-Remoting verwendet [Windows-Remoteverwaltung (WinRM)](https://msdn.microsoft.com/library/windows/desktop/aa384426.aspx), wobei es sich um die Microsoft-Implementierung des Protokolls von [Web Services for Management (WS-Management)](https://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf) handelt, um Benutzern die Ausführung von PowerShell-Befehlen auf Remotecomputern zu ermöglichen. Weitere Informationen zur Verwendung von PowerShell-Remoting finden Sie unter [Ausführen von Remotebefehlen](https://technet.microsoft.com/library/dd819505.aspx).
 
 PowerShell-Remoting unterscheidet sich von Ausführung eines Cmdlets auf einem Remotecomputer unter Verwendung des Parameters **ComputerName**, wobei ein Remoteprozeduraufruf (RPC) als zugrunde liegendes Protokoll verwendet wird.
 

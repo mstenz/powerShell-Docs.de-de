@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell-Systemanforderungen
 ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
-ms.openlocfilehash: 5e1fdb9cb4f10fd71c2d2daf693cb359fddcc5bc
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
-ms.translationtype: HT
+ms.openlocfilehash: 8850cf26b0313dfb8898ccb66b4767d695860d4c
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002717"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320736"
 ---
 # <a name="windows-powershell-system-requirements"></a>Windows PowerShell-Systemanforderungen
 In diesem Thema werden die Systemanforderungen für Windows PowerShell 3.0, Windows PowerShell 4.0, Windows PowerShell 5.0, Windows PowerShell 5.1 sowie für besondere Features wie Windows PowerShell Integrated Scripting Environment (ISE), CIM-Befehle und Workflows aufgeführt.
@@ -87,9 +87,9 @@ Windows PowerShell 4.0 erfordert die vollständige Installation von Microsoft .N
 
 Windows PowerShell 3.0 erfordert die vollständige Installation von Microsoft .NET Framework 4. In Windows 8 und Windows Server 2012 ist Microsoft .NET Framework 4.5 standardmäßig enthalten, wodurch diese Anforderung erfüllt ist.
 
-Informationen zum Installieren von Microsoft .NET Framework 4.5 (dotNetFx45_Full_setup.exe) finden Sie im Microsoft Download Center unter [Microsoft .NET Framework 4.5](http://go.microsoft.com/fwlink/?LinkID=242919).
+Informationen zum Installieren von Microsoft .NET Framework 4.5 (dotNetFx45_Full_setup.exe) finden Sie im Microsoft Download Center unter [Microsoft .NET Framework 4.5](https://go.microsoft.com/fwlink/?LinkID=242919).
 
-Informationen zur vollständigen Installation von Microsoft .NET Framework 4 (dotNetFx40_Full_setup.exe) finden Sie im Microsoft Download Center unter [Microsoft .NET Framework 4](http://go.microsoft.com/fwlink/?LinkID=212931).
+Informationen zur vollständigen Installation von Microsoft .NET Framework 4 (dotNetFx40_Full_setup.exe) finden Sie im Microsoft Download Center unter [Microsoft .NET Framework 4](https://go.microsoft.com/fwlink/?LinkID=212931).
 
 ## <a name="windows-management-framework-40"></a>Windows Management Framework 4.0
 Windows PowerShell 5.0 erfordert Windows Management Framework 4.0 vorinstalliert unter Windows Server 2008 R2 SP1 und Windows 7 SP1.
@@ -138,7 +138,7 @@ Informationen zum Hinzufügen oder Installieren von Windows PowerShell 2.0 Engin
 ## <a name="windows-preinstallation-environment"></a>Windows Preinstallation Environment
 Windows PowerShell 2.0, Windows PowerShell 3.0 und Windows PowerShell 4.0 werden in Windows Preinstallation Environment (Windows PE) ausgeführt. Die folgenden Cmdlets werden jedoch nicht unterstützt.
 
-- [Cmdlets für den intelligenten Hintergrundübertragungsdienst (Background Intelligent Transfer Service, BITS)](http://go.microsoft.com/fwlink/?LinkId=257514)
+- [Cmdlets für den intelligenten Hintergrundübertragungsdienst (Background Intelligent Transfer Service, BITS)](https://go.microsoft.com/fwlink/?LinkId=257514)
 
 - [Get-EventLog](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Management/Get-EventLog)
 

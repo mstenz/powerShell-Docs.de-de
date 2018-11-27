@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: Verwendung der webbasierten Windows PowerShell-Konsole
-ms.openlocfilehash: 5d29a6f97fddf4b329fcc7097cf7d40d47d22cca
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
-ms.translationtype: HT
+ms.openlocfilehash: 2bb9c6ef486ef32012a15f9890997cf2fa6a3a0b
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34483150"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320651"
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>Verwendung der webbasierten Windows PowerShell-Konsole
 
@@ -169,7 +169,7 @@ ALT+F7 | Befehlsverlauf löschen
 
     Auf die Doppel-Hop-Einschränkung (oder die Verbindung mit einem zweiten Computer über die erste Verbindung) stoßen Sie, wenn Sie versuchen, eine neue Sitzung zu erstellen oder mit einer neuen Sitzung zu arbeiten, indem Sie Windows PowerShell Web Access verwenden. Windows PowerShell Web Access verwendet einen Remoterunspace, und **PowerShell.exe** unterstützt das Herstellen einer Remoteverbindungen mit einem zweiten Computer von einem Remoterunspace derzeit nicht. Wenn Sie beispielsweise versuchen, mithilfe des Cmdlets **Enter-PSSession** von einer bestehenden Verbindung aus eine Verbindung mit einem zweiten Remotecomputer herzustellen, können verschiedene Fehler gemeldet werden, z.B. „Netzwerkressourcen nicht verfügbar“.
 
-    Derlei Fehler können vermieden werden, indem Ihr Administrator die CredSSP-Authentifizierung in der Netzwerkumgebung Ihrer Organisation einrichtet. Weitere Informationen zur Konfiguration der CredSSP-Authentifizierung finden Sie unter [CredSSP für Zweit-Hop-Remoting](http://blogs.msdn.com/b/powershell/archive/2008/06/05/credssp-for-second-hop-remoting-part-i-domain-account.aspx) auf der Microsoft-Website. Sie können auch explizite Anmeldeinformationen zur Verwaltung eines zweiten Remotecomputers angeben, denn mit impliziten Daten ist es unwahrscheinlich, dass der zweite Hop zugelassen wird.
+    Derlei Fehler können vermieden werden, indem Ihr Administrator die CredSSP-Authentifizierung in der Netzwerkumgebung Ihrer Organisation einrichtet. Weitere Informationen zur Konfiguration der CredSSP-Authentifizierung finden Sie unter [CredSSP für Zweit-Hop-Remoting](https://blogs.msdn.com/b/powershell/archive/2008/06/05/credssp-for-second-hop-remoting-part-i-domain-account.aspx) auf der Microsoft-Website. Sie können auch explizite Anmeldeinformationen zur Verwaltung eines zweiten Remotecomputers angeben, denn mit impliziten Daten ist es unwahrscheinlich, dass der zweite Hop zugelassen wird.
 
 - Remoting
 
@@ -224,12 +224,12 @@ ALT+F7 | Befehlsverlauf löschen
 
         Die Höhe der Konsole lässt sich auf eine ähnliche Weise ändern.
 
-        Weitere Beispiele zur Anpassung der Konsolenansicht stehen im [Windows PowerShell-Teamblog](http://blogs.msdn.com/b/powershell/) zur Verfügung.
+        Weitere Beispiele zur Anpassung der Konsolenansicht stehen im [Windows PowerShell-Teamblog](https://blogs.msdn.com/b/powershell/) zur Verfügung.
 
 ## <a name="see-also"></a>Weitere Informationen
 
 - [Windows PowerShell Cmdlet Reference (Windows PowerShell-Cmdlet-Verweis)](https://technet.microsoft.com/library/ee407531(ws.10).aspx)
 - [Windows PowerShell on Microsoft TechNet (Windows PowerShell in Microsoft TechNet)](https://technet.microsoft.com/library/bb978526.aspx)
-- [TechNet Script Center Repository (TechNet-Skriptcenterrepository)](http://gallery.technet.microsoft.com/scriptcenter)
+- [TechNet Script Center Repository (TechNet-Skriptcenterrepository)](https://gallery.technet.microsoft.com/scriptcenter)
 - [Script Center - Hey, Scripting Guy! (Skriptcenter – Hey, Scripting Guy!)](https://technet.microsoft.com/scriptcenter)
-- [Windows PowerShell Team Blog (Windows PowerShell-Teamblog)](http://blogs.msdn.com/b/powershell/)
+- [Windows PowerShell Team Blog (Windows PowerShell-Teamblog)](https://blogs.msdn.com/b/powershell/)

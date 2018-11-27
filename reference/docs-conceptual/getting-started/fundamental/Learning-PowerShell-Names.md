@@ -3,16 +3,16 @@ ms.date: 08/24/2018
 keywords: powershell,cmdlet
 title: Lernen von PowerShell-Namen
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-ms.openlocfilehash: a4f7e12c2b30e8ae6d1cf5a125d613d2d7558c34
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
-ms.translationtype: HT
+ms.openlocfilehash: 6ed1f99513f00c174147876e1982c0d12869cacb
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48851254"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320481"
 ---
 # <a name="learning-powershell-names"></a>Lernen von PowerShell-Namen
 
-Das Erlernen der Namen von Befehlen und Parametern ist bei den meisten Befehlszeilenschnittstellen mit einem hohen Zeitaufwand verbunden. Das Problem liegt darin, dass nur wenige Muster vorhanden sind. Die einzige Möglichkeit besteht darin, die Befehle und Parameter auswendig zu lernen, die Sie regelmäßig verwenden müssen.
+Das Erlernen der Namen von Befehlen und Parametern ist bei den meisten Befehlszeilenschnittstellen mit einem hohen Zeitaufwand verbunden. Das Problem liegt darin, dass nur wenige Muster vorhanden sind. Erinnerung zu behalten, ist die einzige Möglichkeit, lernen die Befehle und Parameter, die Sie regelmäßig verwenden müssen.
 
 Wenn Sie mit einem neuen Befehl oder Parameter arbeiten, können Sie nicht immer auf Bekanntes zurückgreifen. Sie müssen nach neuen Namen suchen und diese lernen. Üblicherweise umfassen Befehlszeilenschnittstellen zu Beginn lediglich einen kleinen Satz an Tools und wachsen mit zunehmenden Ergänzungen. Es ist leicht zu verstehen, warum es keine Standardstruktur gibt.
 Dies erscheint bei Befehlsnamen logisch, da jeder Befehl ein eigenes Tool darstellt. PowerShell bietet eine bessere Möglichkeit, Befehlsnamen zu verarbeiten.
