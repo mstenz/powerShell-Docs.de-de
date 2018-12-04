@@ -3,16 +3,16 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Erste Schritte mit dem PowerShell-Katalog
-ms.openlocfilehash: 85b0a754aba25d850dc918024419318554f92b33
-ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
-ms.translationtype: HT
+ms.openlocfilehash: c8beba3009e462ce52cdecd34fc0313d9234f289
+ms.sourcegitcommit: 1082b13115c5c5be4b76574ba55307b3e567983f
+ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50225674"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52576888"
 ---
 # <a name="getting-started-with-the-powershell-gallery"></a>Erste Schritte mit dem PowerShell-Katalog
 
-Die richtige Vorgehensweise zum Installieren von Paketen aus dem PowerShell-Katalog ist die Verwendung der Cmdlets im Modul [PowerShellGet](/powershell/module/powershellget). Um diese Elemente aus dem PowerShell-Katalog herunterzuladen, müssen Sie sich nicht anmelden.
+PowerShell-Katalog ist ein paketrepository mit Skripts, Module und DSC-Ressourcen, die Sie herunterladen und nutzen können. Sie verwenden die Cmdlets in der [PowerShellGet](/powershell/module/powershellget) Modul, um Pakete aus dem PowerShell-Katalog zu installieren. Um diese Elemente aus dem PowerShell-Katalog herunterzuladen, müssen Sie sich nicht anmelden.
 
 > [!NOTE]
 > Zwar ist es möglich, ein Paket direkt aus dem PowerShell-Katalog herunterzuladen, diese Vorgehensweise wird aber nicht empfohlen.
@@ -20,9 +20,9 @@ Die richtige Vorgehensweise zum Installieren von Paketen aus dem PowerShell-Kata
 
 ## <a name="discovering-packages-from-the-powershell-gallery"></a>Ermitteln von Paketen im PowerShell-Katalog
 
-Sie können Pakete im PowerShell-Katalog mithilfe des Steuerelements **Suchen** auf dieser Website suchen. Alternativ dazu können Sie die Seiten zu Modulen und Skripts durchsuchen. Sie können auch nach Paketen im PowerShell-Katalog suchen, indem Sie je nach Pakettyp die Cmdlets [Find-Module][] und [Find-Script][] mit `-Repository PSGallery` ausführen.
+Können Sie Pakete im PowerShell-Katalog finden, mit der **Suche** Steuerelement auf der PowerShell-Katalog [Startseite](https://www.powershellgallery.com), oder durch eine Suche über die Module und Skripts aus der [Seite "Pakete" ](https://www.powershellgallery.com/packages). Finden Sie auch Pakete aus dem PowerShell-Katalog mit den [Find-Module][], [Find-DscResource], und [Find-Script][] -Cmdlets, je nach den Pakettyp mit `-Repository PSGallery`.
 
-Das Filtern von Ergebnissen im Katalog kann über die folgenden Parameter erfolgen:
+Sie können Ergebnisse aus dem Katalog mithilfe der folgenden Parameter filtern:
 
 - Name
 - AllVersions
@@ -75,15 +75,15 @@ Um eine ältere Version des Pakets zu installieren, fügen Sie den Parameter `-R
 
 ### <a name="deploy"></a>Bereitstellen
 
-Klicken Sie auf der Detailseite des Pakets auf **In Azure Automation bereitstellen**, um ein Paket aus dem PowerShell-Katalog in Azure Automation bereitzustellen. Sie werden zum Azure-Verwaltungsportal umgeleitet, wo Sie sich mit den Anmeldeinformationen Ihres Azure-Kontos anmelden. Beachten Sie, dass das Bereitstellen von Paketen mit Abhängigkeiten alle Abhängigkeiten in Azure Automation bereitstellt. Sie können die Schaltfläche „In Azure Automation bereitstellen“ deaktivieren, indem Sie den Paketmetadaten das Tag **AzureAutomationNotSupported** hinzufügen.
+Klicken Sie zum Bereitstellen eines Pakets aus dem PowerShell-Katalog in Azure Automation auf **Azure Automation**, klicken Sie dann auf **in Azure Automation bereitstellen** auf der Detailseite des Pakets. Sie werden in der Azure-Verwaltungsportal weitergeleitet, in dem Sie sich mithilfe Ihrer Azure-Anmeldeinformationen anmelden. Beachten Sie, dass alle Abhängigkeiten Bereitstellen von Paketen mit Abhängigkeiten in Azure Automation bereitgestellt werden. Sie können die Schaltfläche „In Azure Automation bereitstellen“ deaktivieren, indem Sie den Paketmetadaten das Tag **AzureAutomationNotSupported** hinzufügen.
 
 Weitere Informationen zu Azure Automation finden Sie in der [Azure Automation](/azure/automation)-Dokumentation.
 
 ## <a name="updating-packages-from-the-powershell-gallery"></a>Aktualisieren von Paketen aus dem PowerShell-Katalog
 
-Führen Sie zum Aktualisieren der aus dem PowerShell-Katalog installierten Pakete das Cmdlet [Update-Module][] oder das Cmdlet [Update-Script][] aus. [Update-Module][] versucht, jedes mithilfe von [Install-Module][] installierte Modul zu aktualisieren, wenn es ohne zusätzliche Parameter ausgeführt wird. Um Module einzeln zu aktualisieren, fügen Sie den Parameter `-Name` hinzu.
+Führen Sie zum Aktualisieren der aus dem PowerShell-Katalog installierten Pakete das Cmdlet [Update-Module][] oder das Cmdlet [Update-Script][] aus. Bei der Ausführung ohne zusätzliche Parameter [Update-Module] [-] versucht wird, aktualisieren alle Module installiert, indem Sie Ausführung [Install-Module][]. Um Module einzeln zu aktualisieren, fügen Sie den Parameter `-Name` hinzu. 
 
-Ähnlich versucht [Update-Script][], jedes durch Ausführung von [Install-Script][] installierte Skript zu aktualisieren, wenn es ohne zusätzliche Parameter ausgeführt wird. Um Skripts einzeln zu aktualisieren, fügen Sie den Parameter `-Name` hinzu.
+Auf ähnliche Weise bei der Ausführung ohne zusätzliche Parameter [Update-Script] [] wird auch versucht, aktualisieren Sie alle Skripts installiert, indem Sie Ausführung [Install-Script][]. Um Skripts einzeln zu aktualisieren, fügen Sie den Parameter `-Name` hinzu.
 
 ## <a name="list-packages-that-you-have-installed-from-the-powershell-gallery"></a>Auflisten von aus dem PowerShell-Katalog installierten Paketen
 

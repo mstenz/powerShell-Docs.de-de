@@ -3,16 +3,16 @@ ms.date: 09/11/2018
 contributor: JKeithB
 keywords: Katalog,PowerShell,psgallery
 title: Manuelles Herunterladen des Pakets
-ms.openlocfilehash: 0952aa4ec474850af5219fb2e0e9ee3e954b0f9a
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
-ms.translationtype: HT
+ms.openlocfilehash: 57baa14089b803f58c42ccb54553ecace841e34b
+ms.sourcegitcommit: e24525046dd37166b9d83eeecdc534726316f429
+ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50003772"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52742821"
 ---
 # <a name="manual-package-download"></a>Manuelles Herunterladen des Pakets
 
-Der PowerShell-Katalog unterstützt das direkte Herunterladen von Paketen von der Website, ohne dass dazu PowerShellGet-Cmdlets verwendet werden zu müssen. Das Paket wird als NuGet-Paketdatei (.nupkg) heruntergeladen. Diese kann dann unkompliziert in ein internes Repository kopiert werden.
+Der PowerShell-Katalog unterstützt das direkte Herunterladen von Paketen von der Website, ohne dass dazu PowerShellGet-Cmdlets verwendet werden zu müssen. Sie können ein Paket als NuGet-Paket (NUPKG-Datei)-Datei herunterladen, die Sie dann auf eines internen Repositorys kopieren können.
 
 > [!NOTE]
 > Das manuelle Herunterladen soll **nicht** das Install-Module-Cmdlet ersetzen.
@@ -45,7 +45,7 @@ Am unkompliziertesten ist es, die NuGet-spezifischen Elemente aus dem Ordner zu 
 1. Entpacken Sie den Inhalt des NuGet-Pakets in einen lokalen Ordner.
 2. Löschen Sie die NuGet-spezifischen Elemente aus dem Ordner.
 3. Benennen Sie den Ordner um. Der Standardname des Ordners ist für gewöhnlich `<name>.<version>`. Die Version kann „-prerelease“ enthalten, wenn das Modul als Vorabversion gekennzeichnet ist. Benennen Sie den Ordner in den Modulnamen um. „azurerm.storage.5.0.4-preview“ wird z.B. „azurerm.storage“.
-4. Kopieren Sie den Ordner in den PSModulePath-Pfad.
+4. Kopieren Sie den Ordner zu einem Ordner in der `$env:PSModulePath value`. `$env:PSModulePath` ist ein durch Semikolons getrennten Satz von Pfaden, die in denen PowerShell nach Modulen suchen soll.
 
 > [!IMPORTANT]
 > Durch das manuelle Herunterladen werden keine Abhängigkeiten heruntergeladen, die für das Modul erforderlich sind. Wenn das Paket über Abhängigkeiten verfügt, müssen diese auf dem System installiert werden, damit das Modul ordnungsgemäß funktioniert. Der PowerShell-Katalog zeigt alle Abhängigkeiten an, die für das Paket erforderlich sind.

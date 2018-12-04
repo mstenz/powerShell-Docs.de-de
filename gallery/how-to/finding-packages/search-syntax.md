@@ -3,22 +3,23 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Syntax für die Katalogsuche
-ms.openlocfilehash: 9aadb6771c85845cc3fa05cb56f0194b060d1c1b
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
-ms.translationtype: HT
+ms.openlocfilehash: aabcaa1f1b5b641ab5033c9ba2e358477c84a23b
+ms.sourcegitcommit: e24525046dd37166b9d83eeecdc534726316f429
+ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50003779"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52742855"
 ---
 # <a name="gallery-search-syntax"></a>Syntax für die Katalogsuche
 
-Der PowerShell-Katalog bietet ein Textsuchfeld in das Sie Wörter, Ausdrücke und Schlüsselwortausdrücke schreiben können, um die Suchergebnisse einzugrenzen.
+Sie können suchen, die PowerShell-Katalog mit der [PowerShell-Katalog-Website](https://www.powershellgallery.com/).
+PowerShell-Katalog-Website bietet ein Textsuchfeld, wo Sie Wörter, Ausdrücke und verwenden können, um die Suchergebnisse einzugrenzen.
 
 ## <a name="search-by-keywords"></a>Suche nach Schlüsselwörtern
 
     dsc azure sql
 
-Die Suche tut ihr Möglichstes, um relevante Dokumente zu finden, die alle drei Schlüsselwörter enthalten, und zugehörige Dokumente zurückzugeben.
+Suchen Sie versucht, suchen Sie die relevanten Dokumente, die alle 3-Schlüsselwörter enthält, und zugehörige Dokumente zurückzugeben.
 
 ## <a name="search-using-phrases-and-keywords"></a>Suchen mithilfe von Ausdrücken und Schlüsselwörtern
 
@@ -37,10 +38,9 @@ Aktuell lauten die durchsuchbaren Felder „Id“, „Version“, „Tags“, �
 
 ## <a name="examples"></a>Beispiele
 
-    ID:"PSReadline"
-    id:"AzureRM.Profile"
-
-So werden Pakete mit „PSReadline“ oder „AzureRM.Profile“ im jeweiligen ID-Feld gefunden.
+    ID:PSReadline
+    
+Sucht Pakete mit einer ID, die mit "PSReadline".
 
     Id:"AzureRM.Profile"
 
@@ -50,40 +50,35 @@ Der Filter „Id“ ist eine Übereinstimmung bei Teilzeichenfolge, Sie suchen a
 
     Id:"azure"
 
-Daraufhin erhalten Sie die Ergebnisse, wie z.B. „AzureRM.Profile“ und „Azure.Storage“.
+Dieser enthält Ergebnisse, die von "azurerm.Profile" enthalten "und"Azure.Storage".
 
-Sie können auch nach mehreren Schlüsselwörtern in einem einzelnen Feld suchen. Oder kombinieren Sie Felder.
+Sie können auch nach mehreren Schlüsselwörtern in einem einzelnen Feld suchen. 
 
     id:azure tags:intellisense
-    id:azure id:storage
 
-Sie können auch nach Ausdrücken suchen:
+Und Sie die Suche nach Ausdrücken mit doppelten Anführungszeichen ausführen können:
 
     id:"azure.storage"
 
-
 So suchen Sie alle Pakete mit DSC-Tag:
 
-    Tags:"DSC"
+    Tags:DSC
 
 So suchen Sie alle Pakete mit der angegebenen Funktion:
 
-    Functions:"Update-AzureRM"
+    Functions:Get-TreeSize
 
 So suchen Sie alle Pakete mit dem angegebenen Cmdlet:
 
-    Cmdlets:"Get-AzureRmEnvironment"
+    Cmdlets:Get-AzureRmEnvironment
 
 So suchen Sie alle Pakete mit dem angegebenen DSC-Ressourcennamen:
 
-    DscResources:"xArchive"
+    DscResources:xArchive
 
 So suchen Sie alle Pakete mit der angegebenen PowerShellVersion:
 
-    PowerShellVersion:"5.0"
-    PowerShellVersion:"3.0"
-    PowerShellVersion:"2.0"
-
+    PowerShellVersion:2.0
 
 Wenn Sie anschließend ein Feld verwenden, das nicht unterstützt wird, wie z.B. „commands“ (Befehle), wird es einfach ignoriert, und alle Felder werden durchsucht. Das folgende Query
 

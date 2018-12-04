@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Prüfliste für die Ressourcenerstellung
-ms.openlocfilehash: 91942a174bc6f38fa77c1925dc3c690ecf2ab34b
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
-ms.translationtype: HT
+ms.openlocfilehash: 2b6e972776dba4ecc6fd1ab5c21361d653e1a469
+ms.sourcegitcommit: e24525046dd37166b9d83eeecdc534726316f429
+ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893554"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52742838"
 ---
 # <a name="resource-authoring-checklist"></a>Prüfliste für die Ressourcenerstellung
 
@@ -85,7 +85,7 @@ If ($error.count –ne 0) {
 
 ## <a name="resource-is-idempotent-in-the-positive-case"></a>Die Ressource ist im positiven Sinn idempotent
 
-Eines der grundlegenden Merkmale von DSC-Ressourcen ist die Idempotenz. Dies bedeutet, dass beim Anwenden einer DSC-Konfiguration, die diese Ressource mehrmals enthält, immer das gleiche Ergebnis erreicht wird. Angenommen, wir erstellen eine Konfiguration mit der folgenden „File“-Ressource:
+Eine der grundlegenden Merkmale von DSC-Ressourcen ist die Idempotenz. Dies bedeutet, dass beim Anwenden einer DSC-Konfiguration, die diese Ressource mehrmals enthält, immer das gleiche Ergebnis erreicht wird. Angenommen, wir erstellen eine Konfiguration mit der folgenden „File“-Ressource:
 
 ```powershell
 File file {
