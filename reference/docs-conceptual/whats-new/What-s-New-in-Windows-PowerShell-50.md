@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Neuerungen in Windows PowerShell 5.0
-ms.openlocfilehash: 78304b0eac6e58e43bffc3abb7059a1e4b02de23
-ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.openlocfilehash: 9bd18b37b53890713faeeabc634876e5f48725da
+ms.sourcegitcommit: 7ed6ff9a3ce0b8b485d12dc2f5107c23d4b6e68b
 ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52320719"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52978894"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Neuerungen in Windows PowerShell 5.0
 Windows PowerShell 5.0 bietet wichtige neue Features, die die Verwendungsmöglichkeiten erweitern, die Benutzerfreundlichkeit verbessern und Ihnen ermöglichen, die Steuerung und Verwaltung von Windows-basierten Umgebungen leichter und umfassender zu bewältigen.
@@ -38,9 +38,9 @@ Viele Updates und Verbesserungen für Windows PowerShell DSC (Desired State Conf
   - [New-DscChecksum](https://technet.microsoft.com/library/dn521622.aspx) unterstützt jetzt UNC-Pfade.
 
 - Neue Cmdlets im Modul [PSDesiredStateConfiguration](https://technet.microsoft.com/library/dn391651(v=wps.640).aspx)
-  - [Update-DscConfiguration](https://technet.microsoft.com/library/mt143541(v=wps.630).aspx): Führt eine bedarfsgesteuerte Überprüfung des Pullservers durch.
-  - [Stop-DscConfiguration](https://technet.microsoft.com/library/mt143542(v=wps.630).aspx): Beendet eine Konfiguration, die bereits ausgeführt wird.
-  - [Remove-DscConfigurationDocument](https://technet.microsoft.com/library/mt143544(v=wps.630).aspx): Ermöglicht das Entfernen von Konfigurationsdokumenten in verschiedenen Phasen (ausstehend, vorherig oder aktuell).
+  - [Update-DscConfiguration](https://technet.microsoft.com/library/mt143541(v=wps.630).aspx)  Führt eine Überprüfung der bedarfsgesteuerter Pull-Server an.
+  - [Stop-DscConfiguration](https://technet.microsoft.com/library/mt143542(v=wps.630).aspx)  Beendet eine Konfiguration, die bereits ausgeführt wird.
+  - [Remove-DscConfigurationDocument](https://technet.microsoft.com/library/mt143544(v=wps.630).aspx)  Ermöglicht das Entfernen von Dokumenten in verschiedenen Phasen (Ausstehend, vorherige oder aktuelle).
 
 - Spracherweiterungen
   - „DependsOn“ unterstützt jetzt zusammengesetzte Ressourcen.
@@ -65,9 +65,9 @@ Viele Updates und Verbesserungen für Windows PowerShell DSC (Desired State Conf
 - Verbesserungen bei der Flexibilität
   - Die Ressource „LocalConfigurationManager“ hat die neue Eigenschaft **ActionAfterReboot**.
     - ContinueConfiguration (Standardwert): Setzt eine Konfiguration automatisch fort, nachdem ein Zielknoten neu gestartet wurde.
-    - StopConfiguration: Setzt eine Konfiguration nicht automatisch fort, nachdem ein Knoten neu gestartet wurde.
+    - StopConfiguration Eine Konfiguration nicht automatisch fortgesetzt, nachdem ein Knoten neu gestartet wurde.
   - Eine Konsistenzprüfung kann nun häufiger als ein Pullvorgang erfolgen oder umgekehrt.
-  - Unterstützung der Versionsverwaltung: DSC kann nun ein Dokument erkennen, das auf einem neueren Client generiert wurde (enthalten in [WMF 5.0](https://aka.ms/wmf5download)).
+  - Unterstützung der versionsverwaltung:  DSC kann nun ein Dokument, das generiert wurde auf einem neueren Client erkennen (in enthalten [WMF 5.0](https://aka.ms/wmf5download)).
 
 - Verbesserungen bei der Fehlervermeidung
   - Die Version des Moduls wird nun erzwungen, bevor eine Konfiguration angewendet wird.
@@ -132,9 +132,9 @@ Viele Updates und Verbesserungen für Windows PowerShell DSC (Desired State Conf
 - Der neue Status „AtBreakpoint“ wurde für Windows PowerShell-Aufträge hinzugefügt. Der Status „AtBreakpoint“ gilt, wenn ein Auftrag in einem Skript ausgeführt wird, das gesetzte Haltepunkte enthält, und das Skript einen Haltepunkt erreicht hat. Wenn ein Auftrag an einem Haltepunkt angehalten wird, müssen Sie den Auftrag durch Ausführen des Cmdlets „Debug-Job“ debuggen.
 - Windows PowerShell 5.0 implementiert in „$PSModulePath“ Unterstützung für mehrere Versionen eines einzelnen Windows PowerShell-Moduls in demselben Ordner. Die „RequiredVersion“-Eigenschaft wurde der „ModuleSpecification“-Klasse hinzugefügt, um Sie beim Abrufen der gewünschten Version zu unterstützen. Diese Eigenschaft und die „ModuleVersion“-Eigenschaft schließen sich gegenseitig aus. „RequiredVersion“ wird nun als Teil des Werts des „FullyQualifiedName“-Parameters der Cmdlets „Get-Module“, „Import-Module“ und „Remove-Module“ unterstützt.
 - Durch Ausführen des Cmdlets „Test-ModuleManifest“ können Sie jetzt die Gültigkeit der Modulversion überprüfen.
-- Ergebnisse des Cmdlets „Get-Command“ enthalten nun die Spalte „Version“. Der „CommandInfo“-Klasse wurde die neue „Version“-Eigenschaft hinzugefügt. „Get-Command“ zeigt Befehle aus mehreren Versionen des gleichen Moduls. Die „Version“-Eigenschaft ist ebenfalls Teil der abgeleiteten Klassen von „CmdletInfo“ und „ApplicationInfo“.
+- Ergebnisse des Cmdlets „Get-Command“ enthalten nun die Spalte „Version“. Der „CommandInfo“-Klasse wurde die neue „Version“-Eigenschaft hinzugefügt. „Get-Command“ zeigt Befehle aus mehreren Versionen des gleichen Moduls. Die Version-Eigenschaft ist auch Teil der abgeleiteten Klassen von CmdletInfo: Cmdletinfo "und" ApplicationInfo.
 - „Get-Command“ hat den neuen Parameter „-ShowCommandInfo“, der „ShowCommand“-Informationen als „PSObjects“ zurückgibt. Dies ist besonders nützlich für die Ausführung von „Show-Command“ in der Windows PowerShell-ISE mithilfe von Windows PowerShell-Remoting. Der Parameter „-ShowCommandInfo“ ersetzt die vorhandene „Get-SerializedCommand“-Funktion im Modul „Microsoft.PowerShell.Utility“. Doch das „Get-SerializedCommand“-Skript ist weiterhin zur Unterstützung von Skripts unter einer Vorgängerversion verfügbar.
-- Das neue Cmdlet „Get-ItemPropertyValue“ ermöglicht das Abrufen des Werts einer Eigenschaft ohne Verwendung der Punktnotation. Beispielsweise können Sie in älteren Versionen von Windows PowerShell den folgenden Befehl ausführen, um den Wert der ApplicationBase-Eigenschaft des PowerShellEngine-Registrierungsschlüssels abzurufen: **(Get-ItemProperty -Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine -Name ApplicationBase).ApplicationBase**. Ab Windows PowerShell 5.0 können Sie **Get-ItemPropertyValue -Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine -Name ApplicationBase** ausführen.
+- Das neue Cmdlet „Get-ItemPropertyValue“ ermöglicht das Abrufen des Werts einer Eigenschaft ohne Verwendung der Punktnotation. In älteren Versionen von Windows PowerShell können Sie beispielsweise den folgenden Befehl aus, um den Wert der ApplicationBase-Eigenschaft des PowerShellEngine-Registrierungsschlüssels abzurufen ausführen: **(Get-ItemProperty-Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine-Name ApplicationBase). ApplicationBase**. Ab Windows PowerShell 5.0 können Sie **Get-ItemPropertyValue -Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine -Name ApplicationBase** ausführen.
 - In der Windows PowerShell-Konsole werden jetzt wie in der Windows PowerShell ISE Syntaxfarben verwendet.
 - Das neue NetworkSwitch-Modul enthält Cmdlets, die es Ihnen ermöglichen, Netzwerkswitches, die mit dem Windows Server 2012 R2-Logo zertifiziert sind, mit einer Switch-, VLAN- und grundlegenden Schicht-2-Netzwerkswitch-Konfiguration zu versehen.
 - Der „FullyQualifiedName“-Parameter wurde den Cmdlets „Import-Module“ und „Remove-Module“ hinzugefügt, um die Speicherung mehrerer Versionen eines einzelnen Moduls zu unterstützen.
@@ -221,7 +221,7 @@ Windows PowerShell 4.0 bietet die folgenden neuen Features.
 - Der **Passthru**-Parameter wurde den Cmdlets **Enable-JobTrigger** und **Disable-JobTrigger** hinzugefügt. Der „Passthru“-Parameter zeigt alle Objekte an, die durch Ihren Befehl erstellt oder geändert wurden.
 - Die Parameternamen für das Angeben einer Arbeitsgruppe in den Cmdlets **Add-Computer** und **Remove-Computer** sind nun konsistent. Beide Cmdlets verwenden nun den Parameter **WorkgroupName**.
 - Der neue allgemeine Parameter **PipelineVariable** wurde hinzugefügt. Mit „PipelineVariable“ können Sie die Ergebnisse eines weitergeleiteten Befehls (oder Teil eines weitergeleiteten Befehls) als Variable speichern, die über den Rest der Pipeline übergeben werden kann.
-- Das Filtern einer Sammlung mithilfe einer Methodensyntax wird nun unterstützt. Dies bedeutet, Sie können eine Objektsammlung mithilfe einer vereinfachten Syntax filtern, ähnlich wie bei „Where()“ oder „Where-Object“, formatiert als Methodenaufruf. Es folgt ein Beispiel: (Get-Process).where({$_.Name -match 'powershell'})
+- Das Filtern einer Sammlung mithilfe einer Methodensyntax wird nun unterstützt. Dies bedeutet, Sie können eine Objektsammlung mithilfe einer vereinfachten Syntax filtern, ähnlich wie bei „Where()“ oder „Where-Object“, formatiert als Methodenaufruf. Im Folgenden finden Sie ein Beispiel: (Get-Process).where({$_.Name -match 'powershell'})
 - Das **Get-Process**-Cmdlet hat den neuen Switch-Parameter **IncludeUserName**.
 - Das neue Cmdlet **Get-FileHash** wurde hinzugefügt, das für eine angegebene Datei einen Dateihash in einem von mehreren Formaten zurückgibt.
 - Wenn in Windows PowerShell 4.0 ein Modul den **DefaultCommandPrefix**-Schlüssel in seinem Manifest verwendet oder der Benutzer ein Modul mit dem **Prefix**-Parameter importiert, zeigt die **ExportedCommands**-Eigenschaft des Moduls die Befehle im Modul mit dem Präfix an. Wenn Sie die Befehle mithilfe der qualifizierten Modulsyntax „ModuleName\\CommandName“ verwenden, müssen die Befehlsnamen das Präfix enthalten.
@@ -410,7 +410,7 @@ Ab Windows PowerShell 3.0 können Autoren von C#-Cmdlets die **HelpUri**-Eigensc
 
 Sie können auch dem ersten dazugehörigen Link einer XML-basierten Cmdlet-Hilfedatei einen **HelpUri**-Wert oder eine „.Link“-Direktive der kommentarbasierten Hilfe in einer Funktion hinzufügen.
 
-Weitere Informationen zur Unterstützung der Onlinehilfe finden Sie unter [Unterstützen der Onlinehilfe](https://go.microsoft.com/fwlink/?LinkId=242132) in MSDN.
+Weitere Informationen zur Unterstützung von Onlinehilfe finden Sie unter [Supporting Online Help](/powershell/developer/module/supporting-online-help) in der Microsoft-Docs.
 
 ### <a name="cim-integration"></a>CIM-Integration
 
