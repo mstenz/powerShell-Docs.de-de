@@ -162,54 +162,130 @@ items:
     href: troubleshooting/debugResource.md
 - name: Verweis
   items:
+  - name: Integrierte Windows-Ressourcen
+    href: reference/resources/windows/builtInResource.md
+    items:
+    - name: Ressource „Archive“
+      href: reference/resources/windows/archiveResource.md
+    - name: Ressource „Environment“
+      href: reference/resources/windows/environmentResource.md
+    - name: Ressource „File“
+      href: reference/resources/windows/fileResource.md
+    - name: Ressource „Group“
+      href: reference/resources/windows/groupResource.md
+    - name: GroupSet-Ressource
+      href: reference/resources/windows/groupSetResource.md
+    - name: Ressource „Log“
+      href: reference/resources/windows/logResource.md
+    - name: Ressource „Package“
+      href: reference/resources/windows/packageResource.md
+    - name: ProcessSet-Ressource
+      href: reference/resources/windows/processSetResource.md
+    - name: Ressource „Registry“
+      href: reference/resources/windows/registryResource.md
+    - name: Ressource „Script“
+      href: reference/resources/windows/scriptResource.md
+    - name: Ressource „Service“
+      href: reference/resources/windows/serviceResource.md
+    - name: ServiceSet-Ressource
+      href: reference/resources/windows/serviceSetResource.md
+    - name: Benutzerressource
+      href: reference/resources/windows/userResource.md
+    - name: WaitForAll-Ressource
+      href: reference/resources/windows/waitForAllResource.md
+    - name: WaitForAny-Ressource
+      href: reference/resources/windows/waitForAnyResource.md
+    - name: WaitForSome-Ressource
+      href: reference/resources/windows/waitForSomeResource.md
+    - name: Ressource „WindowsFeature“
+      href: reference/resources/windows/windowsfeatureResource.md
+    - name: WindowsFeatureSet-Ressource
+      href: reference/resources/windows/windowsFeatureSetResource.md
+    - name: WindowsOptionalFeature-Ressource
+      href: reference/resources/windows/windowsOptionalFeatureResource.md
+    - name: WindowsOptionalFeatureSet-Ressource
+      href: reference/resources/windows/windowsOptionalFeatureSetResource.md
+    - name: WindowsPackageCab-Ressource
+      href: reference/resources/windows/windowsPackageCabResource.md
+    - name: Ressource „WindowsProcess“
+      href: reference/resources/windows/windowsProcessResource.md
+  - name: Integrierte Linux-Ressourcen
+    href: reference/resources/linux/lnxBuiltInResources.md
+    items:
+    - name: Ressource „nxArchive“
+      href: reference/resources/linux/lnxArchiveResource.md
+    - name: Ressource „nxEnvironment“
+      href: reference/resources/linux/lnxEnvironmentResource.md
+    - name: Ressource „nxFile“
+      href: reference/resources/linux/lnxFileResource.md
+    - name: Ressource „nxFileLine“
+      href: reference/resources/linux/lnxFileLineResource.md
+    - name: Ressource „nxGroup“
+      href: reference/resources/linux/lnxGroupResource.md
+    - name: Ressource „nxPackage“
+      href: reference/resources/linux/lnxPackageResource.md
+    - name: Ressource „nxScript“
+      href: reference/resources/linux/lnxScriptResource.md
+    - name: Ressource „nxService“
+      href: reference/resources/linux/lnxServiceResource.md
+    - name: Ressource „nxSshAuthorizedKeys“
+      href: reference/resources/linux/lnxSshAuthorizedKeysResource.md
+    - name: Resource „nxUser“
+      href: reference/resources/linux/lnxUserResource.md
+  - name: Integrierte PackageManagement-Ressourcen
+    items:
+    - name: PackageManagementDsc-Ressourcen
+      href: reference/resources/packagemanagement/PackageManagementDscResource.md
+    - name: PackageManagementSourceDsc-Ressourcen
+      href: reference/resources/packagemanagement/PackageManagementSourceDscResource.md
   - name: MSFT_DSCLocalConfigurationManager-Klasse
-    href: reference/msft-dsclocalconfigurationmanager.md
+    href: reference/mof-classes/msft-dsclocalconfigurationmanager.md
     items:
     - name: ApplyConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse
-      href: reference/msft-dsclocalconfigurationmanager-applyconfiguration.md
+      href: reference/mof-classes/msft-dsclocalconfigurationmanager-applyconfiguration.md
     - name: DisableDebugConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse
-      href: reference/msft-dsclocalconfigurationmanager-disabledebugconfiguration.md
+      href: reference/mof-classes/msft-dsclocalconfigurationmanager-disabledebugconfiguration.md
     - name: EnableDebugConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse
-      href: reference/msft-dsclocalconfigurationmanager-enabledebugconfiguration.md
+      href: reference/mof-classes/msft-dsclocalconfigurationmanager-enabledebugconfiguration.md
     - name: GetConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse
-      href: reference/msft-dsclocalconfigurationmanager-getconfiguration.md
+      href: reference/mof-classes/msft-dsclocalconfigurationmanager-getconfiguration.md
     - name: GetConfigurationResultOutput-Methode der MSFT_DSCLocalConfigurationManager-Klasse
-      href: reference/msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md
+      href: reference/mof-classes/msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md
     - name: GetConfigurationStatus-Methode der MSFT_DSCLocalConfigurationManager-Klasse
-      href: reference/msft-dsclocalconfigurationmanager-getconfigurationstatus.md
+      href: reference/mof-classes/msft-dsclocalconfigurationmanager-getconfigurationstatus.md
     - name: GetMetaConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse
-      href: reference/msft-dsclocalconfigurationmanager-getmetaconfiguration.md
+      href: reference/mof-classes/msft-dsclocalconfigurationmanager-getmetaconfiguration.md
     - name: PerformRequiredConfigurationChecks-Methode der MSFT_DSCLocalConfigurationManager-Klasse
-      href: reference/msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks.md
+      href: reference/mof-classes/msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks.md
     - name: RemoveConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse
-      href: reference/msft-dsclocalconfigurationmanager-removeconfiguration.md
+      href: reference/mof-classes/msft-dsclocalconfigurationmanager-removeconfiguration.md
     - name: ResourceGet-Methode der MSFT_DSCLocalConfigurationManager-Klasse
-      href: reference/msft-dsclocalconfigurationmanager-resourceget.md
+      href: reference/mof-classes/msft-dsclocalconfigurationmanager-resourceget.md
     - name: ResourceSet-Methode der MSFT_DSCLocalConfigurationManager-Klasse
-      href: reference/msft-dsclocalconfigurationmanager-resourceset.md
+      href: reference/mof-classes/msft-dsclocalconfigurationmanager-resourceset.md
     - name: ResourceTest-Methode der MSFT_DSCLocalConfigurationManager-Klasse
-      href: reference/msft-dsclocalconfigurationmanager-resourcetest.md
+      href: reference/mof-classes/msft-dsclocalconfigurationmanager-resourcetest.md
     - name: RollBack-Methode der MSFT_DSCLocalConfigurationManager-Klasse
-      href: reference/msft-dsclocalconfigurationmanager-rollback.md
+      href: reference/mof-classes/msft-dsclocalconfigurationmanager-rollback.md
     - name: SendConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse
-      href: reference/msft-dsclocalconfigurationmanager-sendconfiguration.md
+      href: reference/mof-classes/msft-dsclocalconfigurationmanager-sendconfiguration.md
     - name: SendConfigurationApply-Methode der MSFT_DSCLocalConfigurationManager-Klasse
-      href: reference/msft-dsclocalconfigurationmanager-sendconfigurationapply.md
+      href: reference/mof-classes/msft-dsclocalconfigurationmanager-sendconfigurationapply.md
     - name: SendConfigurationApplyAsync-Methode der MSFT_DSCLocalConfigurationManager-Klasse
-      href: reference/msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md
+      href: reference/mof-classes/msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md
     - name: SendMetaConfigurationApply-Methode der MSFT_DSCLocalConfigurationManager-Klasse
-      href: reference/msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.md
+      href: reference/mof-classes/msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.md
     - name: StopConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse
-      href: reference/msft-dsclocalconfigurationmanager-stopconfiguration.md
+      href: reference/mof-classes/msft-dsclocalconfigurationmanager-stopconfiguration.md
     - name: TestConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse
-      href: reference/msft-dsclocalconfigurationmanager-testconfiguration.md
+      href: reference/mof-classes/msft-dsclocalconfigurationmanager-testconfiguration.md
 - name: Weitere Informationsquellen
   items:
   - name: Whitepapers
     href: further-reading/whitepapers.md
-ms.openlocfilehash: 454267feeae7a9ec108f910a510cd40848744a51
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: f2288226880ac36f24dd9c8a6b6ad84f47671d26
+ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400093"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54046707"
