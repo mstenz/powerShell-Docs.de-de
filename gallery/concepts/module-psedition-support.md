@@ -3,19 +3,19 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: gallery,powershell,cmdlet,psget
 title: Module mit kompatiblen PowerShell-Editionen
-ms.openlocfilehash: 0a95b47b506fbdddbb98b455a1d10d0f08ce402b
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
-ms.translationtype: HT
+ms.openlocfilehash: bda924393d37ea1596fbf0d813c10cbdea33c218
+ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002683"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655326"
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>Module mit kompatiblen PowerShell-Editionen
 
 Ab Version 5.1 steht PowerShell in verschiedenen Editionen zur Verfügung, die unterschiedliche Featuregruppen und Plattformkompatibilität bieten.
 
-- **Desktop-Edition:** Diese Edition basiert auf .NET Framework und bietet Kompatibilität mit Skripts und Modulen für Versionen von PowerShell, die unter Vollversionen von Windows wie Server Core und Windows Desktop ausgeführt werden.
-- **Core-Edition:** Diese Edition basiert auf .NET Core und bietet Kompatibilität mit Skripts und Modulen für Versionen von PowerShell, die unter funktionsreduzierten Versionen von Windows wie Nano Server und Windows IoT ausgeführt werden.
+- Desktop Edition Basiert auf .NET Framework und bietet Kompatibilität mit Skripts und Modulen für Versionen von PowerShell, die unter Vollversionen von Windows wie Server Core und Windows-Desktop ausgeführt wird.
+- **Core-Edition:** Basiert auf .NET Core und bietet Kompatibilität mit Skripts und Modulen für Versionen von PowerShell, die unter funktionsreduzierten Versionen von Windows wie Nano Server und Windows IoT ausgeführt wird.
 
 Die ausgeführte Edition von PowerShell wird in der PSEdition-Eigenschaft von `$PSVersionTable` angezeigt.
 
@@ -174,7 +174,7 @@ $PSModule.OnRemove = {
 }
 ```
 
-### <a name="option-2-use-psedition-variable-in-the-psd1-file-to-load-the-proper-dlls-and-nestedrequired-modules"></a>Option 2: Verwenden der Variable $PSEdition in der PSD1-Datei, um die korrekten DLLs und die geschachtelten/erforderlichen Module zu laden
+### <a name="option-2-use-psedition-variable-in-the-psd1-file-to-load-the-proper-dlls-and-nestedrequired-modules"></a>Option 2: Verwenden der Variable $PSEdition in der PSD1-Datei, um die korrekten DLLs und die geschachtelten/erforderlichen Module zu laden.
 
 In PS 5.1 oder höher ist die Variable „$PSEdition global“ in der Modulmanifestdatei zulässig. Durch die Verwendung dieser Variable kann der Modulautor die bedingten Werte in der Modulmanifestdatei angeben. Auf die Variable $PSEdition kann im eingeschränkten Sprachmodus oder in einem „Data“-Abschnitt verwiesen werden.
 
@@ -260,6 +260,6 @@ Find-Module -Tag PSEdition_Core
 
 [Skripts mit PowerShell-Editionen](script-psedition-support.md)
 
-[Unterstützung von PowerShell-Editionen im PowerShell-Katalog](../how-to/finding-packages/searching-by-psedition.md)
+[Unterstützung von PowerShell-Editionen im PowerShell-Katalog](../how-to/finding-packages/searching-by-compatibility.md)
 
 [Modulmanifest aktualisieren](/powershell/module/powershellget/update-modulemanifest)

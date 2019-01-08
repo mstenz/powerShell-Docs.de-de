@@ -3,20 +3,20 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: gallery,powershell,cmdlet,psget
 title: Skript mit kompatiblen PowerShell-Editionen
-ms.openlocfilehash: fcfe670a0a9ee71427b4a8adaaf3d612411941f7
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
-ms.translationtype: HT
+ms.openlocfilehash: e364879f611429a8583e550fb7704431e456fbb1
+ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002410"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655275"
 ---
 # <a name="script-with-compatible-powershell-editions"></a>Skript mit kompatiblen PowerShell-Editionen
 
 Ab Version 5.1 steht PowerShell in verschiedenen Editionen zur Verfügung, die unterschiedliche Featuregruppen und Plattformkompatibilität bieten.
 
-- **Desktop-Edition:** Diese Edition basiert auf .NET Framework und bietet Kompatibilität mit Skripts und Modulen für Versionen von PowerShell, die unter Vollversionen von Windows wie Server Core und Windows Desktop ausgeführt werden.
+- Desktop Edition Basiert auf .NET Framework und bietet Kompatibilität mit Skripts und Modulen für Versionen von PowerShell, die unter Vollversionen von Windows wie Server Core und Windows-Desktop ausgeführt wird.
 
-- **Core-Edition:** Diese Edition basiert auf .NET Core und bietet Kompatibilität mit Skripts und Modulen für Versionen von PowerShell, die unter funktionsreduzierten Versionen von Windows wie Nano Server und Windows IoT ausgeführt werden.
+- **Core-Edition:** Basiert auf .NET Core und bietet Kompatibilität mit Skripts und Modulen für Versionen von PowerShell, die unter funktionsreduzierten Versionen von Windows wie Nano Server und Windows IoT ausgeführt wird.
 
 Die ausgeführte Edition von PowerShell wird in der PSEdition-Eigenschaft von $PSVersionTable angezeigt.
 
@@ -67,4 +67,4 @@ Find-Script -Tag PSEdition_Core
 ## <a name="more-details"></a>Weitere Details
 
 - [Module mit PowerShell-Editionen](module-psedition-support.md)
-- [Unterstützung von PowerShell-Editionen im PowerShell-Katalog](../how-to/finding-packages/searching-by-psedition.md)
+- [Unterstützung von PowerShell-Editionen im PowerShell-Katalog](../how-to/finding-packages/searching-by-compatibility.md)
