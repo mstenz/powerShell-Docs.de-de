@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: jea,powershell,security
 title: JEA-Sitzungskonfigurationen
-ms.openlocfilehash: bdf3659357045203d90e8083613e51cce657da1a
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
-ms.translationtype: HT
+ms.openlocfilehash: 1b598522d43b2c1a26a739a67cee5181b21a7c32
+ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45522957"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655462"
 ---
 # <a name="jea-session-configurations"></a>JEA-Sitzungskonfigurationen
 
-> Gilt für: Windows PowerShell 5.0
+> Gilt für: Windows PowerShell 5.0
 
 Ein JEA-Endpunkt wird auf einem System durch Erstellen und Registrieren einer PowerShell-Konfigurationsdatei auf eine bestimmte Art und Weise registriert.
 Sitzungskonfigurationen bestimmen, *welche Benutzer* den JEA-Endpunkt verwenden können und auf welche Rollen sie Zugriff haben.
@@ -80,6 +80,8 @@ Wenn eine oder mehrere Sicherheitsgruppen angegeben wurden, gehört das virtuell
 RunAsVirtualAccount = $true
 RunAsVirtualAccountGroups = 'NetworkOperator', 'NetworkAuditor'
 ```
+> [!NOTE]
+> Virtuelle Konten werden vorübergehend die Anmeldung als Dienst in der Sicherheitsrichtlinie für den lokalen Server gewährt.  Wenn eines der angegebenen VirtualAccountGroups bereits diese Berechtigung in der Richtlinie gewährt wurde, wird das individuelle virtuelle Konto nicht mehr hinzugefügt und entfernt werden von der Richtlinie.  Dies kann in Szenarien, z. B. Domänencontrollern nützlich sein, in denen Änderungen an der Sicherheitsrichtlinie für Domänencontroller genau überwacht werden.  Dies ist nur in Windows Server 2016 mit der November 2018 oder höher Rollup und Windows Server-2019 mit dem Januar 2019 oder höher Rollup verfügbar.
 
 #### <a name="group-managed-service-account"></a>Gruppenverwaltetes Dienstkonto
 

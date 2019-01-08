@@ -4,12 +4,12 @@ contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 description: Richtlinien für Herausgeber
 title: Veröffentlichungsrichtlinien und Best Practices für den PowerShell-Katalog
-ms.openlocfilehash: 7e9eca8d3372ddf0b94ab42e125991b857456551
-ms.sourcegitcommit: aa1129cc2b0ae6e18918b2b0ea70c74915ed019b
-ms.translationtype: HT
+ms.openlocfilehash: a996a820d6bd52e796a41659c6f468662dbff0f4
+ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50235404"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655394"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>Veröffentlichungsrichtlinien und Best Practices für den PowerShell-Katalog
 
@@ -33,6 +33,7 @@ Pakete, die diesen Richtlinien entsprechen, werden eher heruntergeladen und von 
 - Antworten Sie auf Feedback
 - Stellen Sie anstelle von Skripts Module bereit
 - Stellen Sie einen Link zu einer Projektwebsite bereit
+- Markieren Sie das Paket mit den kompatiblen PSEdition(s) und Plattformen 
 - Schließen Sie Tests in Ihre Module ein
 - Schließen Sie Lizenzbedingungen (bzw. einen Link auf diese) ein
 - Signieren Sie Ihren Code
@@ -92,8 +93,8 @@ Es ist wichtig, Benutzern zu antworten, die konstruktives Feedback geben, da die
 
 Im PowerShell-Katalog sind zwei Feedbackmethoden verfügbar:
 
-- Besitzer kontaktieren: Über diese Option kann ein Benutzer eine E-Mail an den oder die Paketbesitzer senden. Als Paketbesitzer müssen Sie dafür Sorge tragen, dass die für PowerShell-Katalogpakete verwendete E-Mail-Adresse regelmäßig überwacht wird und gemeldete Probleme gelöst werden. Ein Nachteil dieser Methode besteht darin, dass die Kommunikation nur zwischen Benutzer und Besitzer erfolgt, sodass der Besitzer dieselbe Frage möglicherweise wiederholt beantworten muss.
-- Kommentare: Im unteren Bereich der Paketseite befindet sich ein Kommentarfeld.
+- Besitzer kontaktieren: Dadurch kann der Benutzer eine e-Mail an den Besitzer des Pakets zu senden. Als Paketbesitzer müssen Sie dafür Sorge tragen, dass die für PowerShell-Katalogpakete verwendete E-Mail-Adresse regelmäßig überwacht wird und gemeldete Probleme gelöst werden. Ein Nachteil dieser Methode besteht darin, dass die Kommunikation nur zwischen Benutzer und Besitzer erfolgt, sodass der Besitzer dieselbe Frage möglicherweise wiederholt beantworten muss.
+- Kommentare Am unteren Rand des Pakets ist die Seite ein Kommentarfeld.
   Der Vorteil dieses Systems liegt darin, dass andere Benutzer die Kommentare und Antworten sehen können. Auf diese Weise muss eine einzelne Frage nicht wiederholt beantwortet werden.
   Paketbesitzern wird dringend empfohlen, die Kommentare für jedes Paket zu verfolgen.
 Ausführliche Informationen hierzu finden Sie unter [Bereitstellen von Feedback über soziale Netzwerke oder Kommentare](../how-to/working-with-packages/social-media-feedback.md).
@@ -134,6 +135,16 @@ Ein Link kann durch Einschließen eines ProjectURI-Werts im PSData-Abschnitt des
         ProjectUri = 'https://github.com/powershell/powershell'
 
 Wenn Sie einen ProjectURI angeben, wird im PowerShell-Katalog links auf der Paketseite ein Link zur Projektwebsite angezeigt.
+
+## <a name="tag-your-package-with-the-compatible-pseditions-and-platforms"></a>Markieren Sie das Paket mit den kompatiblen PSEdition(s) und Plattformen 
+
+Verwenden Sie die folgenden Tags, um Benutzern zu zeigen, die Pakete auch mit ihrer Umgebung verwendet werden kann:
+
+- "Psedition_desktop": Pakete, die mit Windows PowerShell kompatibel sind. 
+- PSEdition_Core: Pakete, die mit Powershell Core kompatibel sind. 
+- Windows Pakete, die mit dem Windows-Betriebssystem kompatibel sind
+- Linux Pakete, die mit der Linux-Betriebssystemen kompatibel sind 
+- macOS 10.12 und höher Pakete, die mit dem Mac-Betriebssystem kompatibel sind
 
 ## <a name="include-tests"></a>Schließen Sie Tests ein
 
