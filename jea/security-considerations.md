@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: jea,powershell,security
 title: JEA-Sicherheitsüberlegungen
-ms.openlocfilehash: 46ea5cc3e9bc7b6759524aa466e900950a6dee26
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
-ms.translationtype: HT
+ms.openlocfilehash: 9526e141517601ae3b6d6932cd3536fdf49aa9a6
+ms.sourcegitcommit: 10c347a8c3dcbf8962295601834f5ba85342a87b
+ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190178"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55887598"
 ---
 # <a name="jea-security-considerations"></a>JEA-Sicherheitsüberlegungen
 
-> Gilt für: Windows PowerShell 5.0
+> Gilt für: Windows PowerShell 5.0
 
 JEA unterstützt Sie bei der Verbesserung Ihres Sicherheitsniveaus und reduziert die Anzahl der permanenten Administratoren auf Ihren Computern.
 Dies geschieht durch Erstellen eines neuen Einstiegspunkts für Benutzer zum Verwalten des Systems (eine PowerShell-Sitzungskonfiguration), der standardmäßig gesperrt ist, um Missbrauch zu verhindern.
@@ -127,7 +127,7 @@ Betrachten Sie beispielsweise den folgenden Rollenfunktionseintrag:
 ```
 
 Über diese Rollenfunktion können Benutzer jedes beliebige PowerShell-Cmdlet mit dem Namen „Process“ aus dem Microsoft.PowerShell.Management-Modul ausführen.
-Benutzer benötigen möglicherweise Zugriff auf Cmdlets wie `Get-Process`, um zu erfahren, welche Anwendungen auf dem System ausgeführt werden, oder auf `Stop-Process`, um eine Anwendung zu beenden, die sich aufgehängt hat.
+Benutzer müssen Zugriff auf Cmdlets wie `Get-Process` zu verstehen, welche Anwendungen auf dem System ausgeführt werden und `Stop-Process` , Beenden alle Anwendungen, die nicht reagieren.
 Der Eintrag ermöglicht aber auch den Befehl `Start-Process`, um ein beliebiges Programm mit vollständigen Administratorberechtigungen zu starten.
 Das Programm muss nicht zwangsläufig lokal auf dem System installiert werden. Ein Angreifer könnte einfach ein Programm auf einer Dateifreigabe starten, die dem Benutzer, der eine Verbindung herstellt, lokale Administratorrechte gibt und die Ausführung von Malware und vieles mehr ermöglicht.
 

@@ -1,21 +1,21 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 76aa4a372602d78e013b2138eb6409304a4dfb76
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
-ms.translationtype: HT
+ms.openlocfilehash: ac17333145fd8bd05aea7d32b13d95fdd0421504
+ms.sourcegitcommit: 10c347a8c3dcbf8962295601834f5ba85342a87b
+ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190059"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55887564"
 ---
 # <a name="desired-state-configuration-dsc-known-issues-and-limitations"></a>Bekannte Probleme und Einschränkungen bei DSC (Desired State Configuration)
 
-<a name="breaking-change-certificates-used-to-encryptdecrypt-passwords-in-dsc-configurations-may-not-work-after-installing-wmf-50-rtm"></a>Wichtige Änderung: Zertifikate zum Verschlüsseln und Entschlüsseln von Kennwörtern in DSC-Konfigurationen funktionieren nach der Installation von WMF 5.0 RTM ggf. nicht
+<a name="breaking-change-certificates-used-to-encryptdecrypt-passwords-in-dsc-configurations-may-not-work-after-installing-wmf-50-rtm"></a>Wichtige Änderung: Zertifikate, die zum Verschlüsseln und Entschlüsseln von Kennwörtern in DSC-Konfigurationen funktionieren nicht nach der Installation von WMF 5.0 RTM
 --------------------------------------------------------------------------------------------------------------------------------
 
 In den Versionen WMF 4.0 und WMF 5.0 Preview lässt DSC in der Konfiguration keine Kennwörter mit mehr als 121 Zeichen zu. DSC erzwang das Verwenden kurzer Kennwörter, auch wenn längere und sichere Kennwörter gewünscht waren. Dank dieser wichtigen Änderungen können Kennwörter in der DSC-Konfiguration nun eine beliebige Länge haben.
 
-**Lösung:** Erstellen Sie das Zertifikat neu, indem Sie Data Encipherment oder Key Encipherment Key und Document Encryption Enhanced Key (1.3.6.1.4.1.311.80.1) verwenden. Im TechNet-Artikel <https://technet.microsoft.com/library/dn807171.aspx> finden Sie weitere Informationen.
+**Lösung:** Erstellen Sie das Zertifikat mit der Verwendung von Data Encipherment oder Key Encipherment Key und Document Encryption Enhanced Key-Verwendung (1.3.6.1.4.1.311.80.1) neu. Im TechNet-Artikel <https://technet.microsoft.com/library/dn807171.aspx> finden Sie weitere Informationen.
 
 
 <a name="dsc-cmdlets-may-fail-after-installing-wmf-50-rtm"></a>DSC-Cmdlets funktionieren nach Installation von WMF 5.0 RTM ggf. nicht mehr
@@ -28,7 +28,7 @@ In den Versionen WMF 4.0 und WMF 5.0 Preview lässt DSC in der Konfiguration kei
     + PSComputerName : localhost
 ```
 
-**Lösung:** Löschen Sie „DSCEngineCache.mof“, indem Sie den folgenden Befehl mit erhöhten Rechten in einer PowerShell-Sitzung ausführen (Als Administrator ausführen):
+**Lösung:** Löschen Sie "dscenginecache.MOF", indem Sie den folgenden Befehl in einer mit erhöhten Rechten PowerShell-Sitzung (als Administrator ausführen) ausführen:
 
 ```powershell
 Remove-Item -Path $env:SystemRoot\system32\Configuration\DSCEngineCache.mof
@@ -37,7 +37,7 @@ Remove-Item -Path $env:SystemRoot\system32\Configuration\DSCEngineCache.mof
 
 <a name="dsc-cmdlets-may-not-work-if-wmf-50-rtm-is-installed-on-top-of-wmf-50-production-preview"></a>DSC-Cmdlets funktionieren ggf. nicht, wenn die WMF 5.0 RTM-Version zusätzlich zur WMF 5.0 Production Preview-Version installiert wird
 ------------------------------------------------------
-**Lösung:** Führen Sie den folgenden Befehl mit erhöhten Rechten in einer PowerShell-Sitzung aus (Als Administrator ausführen):
+**Lösung:** Führen Sie den folgenden Befehl in einer mit erhöhten Rechten (als Administrator ausführen) PowerShell-Sitzung ein:
 ```powershell
     mofcomp $env:windir\system32\wbem\DscCoreConfProv.mof
 ```
@@ -48,21 +48,21 @@ Remove-Item -Path $env:SystemRoot\system32\Configuration\DSCEngineCache.mof
 
 Wenn der LCM im Debugmodus ist, kann das Drücken von STRG+C zum Bearbeiten von „Get-DscConfiguration“ bewirken, dass der LCM so instabil wird, dass die Mehrheit der DSC-Cmdlets nicht funktioniert.
 
-**Lösung:** Drücken Sie während des Debuggens des Cmdlets „Get-DscConfiguration“ nicht STRG+C.
+**Lösung:** Drücken Sie STRG + C nicht während des Debuggens von Cmdlet "Get-DscConfiguration".
 
 
-<a name="stop-dscconfiguration-may-hang-in-debugmode"></a>Stop-DscConfiguration bleibt ggf. im Debugmodus hängen
+<a name="stop-dscconfiguration-may-not-respond-in-debugmode"></a>Stop-DscConfiguration reagiert möglicherweise nicht im Debugmodus
 ------------------------------------------------------------------------------------------------------------------------
-Wenn der LCM im Debugmodus ist, kann „Stop-DscConfiguration“ möglicherweise beim Versuch hängenbleiben, einen Vorgang zu beenden, der mit „Get-DscConfiguration“ gestartet wurde.
+Wenn der LCM im Debugmodus ist, Stop-DscConfiguration reagiert möglicherweise nicht beim Versuch, einen Vorgang zu beenden, die von "Get-dscconfiguration" gestartet
 
-**Lösung:** Beenden Sie das Debuggen des mit Get-DscConfiguration gestarteten Vorgangs gemäß den Angaben im Abschnitt [Debuggen von DSC-Ressourcen](https://msdn.microsoft.com/powershell/dsc/debugresource).
+**Lösung:** Beenden Sie das Debuggen des Vorgangs durch "Get-dscconfiguration" gestartet wird, wie im Abschnitt "[Debuggen von DSC-Ressourcen](https://msdn.microsoft.com/powershell/dsc/debugresource)".
 
 
 <a name="no-verbose-error-messages-are-shown-in-debugmode"></a>Im Debugmodus werden keine ausführlichen Fehlermeldungen angezeigt
 -----------------------------------------------------------------------------------
 Wenn der LCM im Debugmodus ist, werden von DSC-Ressourcen keine ausführlichen Fehlermeldungen angezeigt.
 
-**Lösung:** Deaktivieren Sie den *Debugmodus*, um ausführliche Meldungen der Ressource anzuzeigen.
+**Lösung:** Deaktivieren Sie *Debugmodus* ausführliche Meldungen von der Ressource angezeigt.
 
 
 <a name="invoke-dscresource-operations-cannot-be-retrieved-by-get-dscconfigurationstatus-cmdlet"></a>„Invoke-DscResource“-Vorgänge können vom Cmdlet „Get-DscConfigurationStatus“ nicht abgerufen werden
@@ -88,7 +88,7 @@ Das Cmdlet „Invoke-DscResource“ gibt ausführliche, Warn- und Fehlermeldunge
 <a name="dsc-resources-cannot-be-debugged-easily-when-used-with-invoke-dscresource"></a>Bei Verwendung mit „Invoke-DscResource“ ist das Debuggen von DSC-Ressourcen nicht einfach
 -----------------------------------------------------------------------
 Wenn der LCM im Debugmodus ausgeführt wird (weitere Details finden Sie unter [Debuggen von DSC-Ressourcen](https://msdn.microsoft.com/powershell/dsc/debugresource)), bietet das Invoke-DscResource-Cmdlet keine Informationen zum Runspace, mit dem zum Debuggen eine Verbindung hergestellt werden soll.
-**Lösung:** Zum Debuggen der DSC-Ressource müssen Sie zum Ermitteln des Runspaces und für ein Anfügen daran die Cmdlets **Get-PSHostProcessInfo**, **Enter-PSHostProcess**, **Get-Runspace** und **Debug-Runspace** verwenden.
+**Lösung:** Ermitteln, und fügen Sie mit dem Runspace mithilfe von Cmdlets **Get-PSHostProcessInfo**, **Enter-PSHostProcess** , **Get-Runspace** und **Debug-Runspace** zum Debuggen der DSC-Ressource.
 
 ```powershell
 # Find all the processes hosting PowerShell
@@ -121,7 +121,7 @@ Debug-Runspace -Id 2
 
 Wenn mehrere Teilkonfigurationen, die auf einem einzelnen Knoten bereitgestellt sind, identische Ressourcennamen aufweisen, kann ein Laufzeitfehler auftreten.
 
-**Lösung:** Verwenden Sie unterschiedliche Namen für die dieselben Ressourcen in unterschiedlichen Teilkonfigurationen.
+**Lösung:** Verwenden Sie unterschiedliche Namen für dieselben Ressourcen in unterschiedlichen teilkonfigurationen.
 
 
 <a name="start-dscconfiguration-useexisting-does-not-work-with--credential"></a>„Start-DscConfiguration –UseExisting“ funktioniert nicht mit „-Credential“
@@ -129,7 +129,7 @@ Wenn mehrere Teilkonfigurationen, die auf einem einzelnen Knoten bereitgestellt 
 
 Bei Verwendung von „Start-DscConfiguration“ mit dem „–UseExisting“-Parameter wird der „–Credential“-Parameter ignoriert. DSC verwendet die Standardprozessidentität, um den Vorgang fortzusetzen. Dies bewirkt einen Fehler, wenn für das Fortsetzen auf einem Remoteknoten andere Anmeldeinformationen benötigt werden.
 
-**Lösung:** Verwenden Sie für DSC-Remotevorgänge eine CIM-Sitzung:
+**Lösung:** Verwenden Sie für DSC-Remotevorgänge CIM-Sitzung ein:
 ```powershell
 $session = New-CimSession -ComputerName $node -Credential $credential
 Start-DscConfiguration -UseExisting -CimSession $session
@@ -168,7 +168,7 @@ Das Debuggen von DSC-Ressourcen, wenn eine Ressource *PSDscRunAsCredential* in d
 <a name="psdscrunascredential-is-not-supported-for-dsc-composite-resources"></a>„PsDscRunAsCredential“ wird für zusammengesetzte DSC-Ressourcen nicht unterstützt
 ----------------------------------------------------------------
 
-**Lösung:** Verwenden Sie, falls verfügbar, die „Credential“-Eigenschaft. Beispiel für „ServiceSet“ und „WindowsFeatureSet“
+**Lösung:** Verwenden Sie Credential-Eigenschaft, falls verfügbar. Beispiel für „ServiceSet“ und „WindowsFeatureSet“
 
 
 <a name="get-dscresource--syntax-does-not-reflect-psdscrunascredential-correctly"></a>*Get-DscResource -Syntax* spiegelt „PsDscRunAsCredential“ nicht ordnungsgemäß wider
@@ -196,7 +196,7 @@ At C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguratio
     + FullyQualifiedErrorId : PSInvalidOperationException,ImportClassResourcesFromModule
 ```
 
-**Lösung:** Importieren Sie die erforderliche Version, indem Sie das *ModuleSpecification*-Objekt in `-ModuleName` mit dem `RequiredVersion`-Schlüssel wie folgt definieren:
+**Lösung:** Importieren Sie die erforderliche Version durch die Definition der *"modulespecification"* -Objekt an die `-ModuleName` mit `RequiredVersion` Schlüssel wie folgt angegeben:
 ``` PowerShell
 Import-DscResource -ModuleName @{ModuleName='MyModuleName';RequiredVersion='1.2'}
 ```
@@ -204,12 +204,12 @@ Import-DscResource -ModuleName @{ModuleName='MyModuleName';RequiredVersion='1.2'
 <a name="some-dsc-resources-like-registry-resource-may-start-to-take-a-long-time-to-process-the-request"></a>Bei einigen DSC-Ressourcen, wie z. B. der Registrierungsressource, kann das Starten der Verarbeitung der Anforderung lange dauern.
 --------------------------------------------------------------------------------------------------------------------------------
 
-**Lösung 1:** Erstellen Sie eine Zeitplanaufgabe zum regelmäßigen Bereinigen des folgenden Ordners.
+**Resolution1:** Erstellen Sie eine Zeitplan-Aufgabe, die in regelmäßigen Abständen den folgenden Ordner bereinigt.
 ``` PowerShell
 $env:windir\system32\config\systemprofile\AppData\Local\Microsoft\Windows\PowerShell\CommandAnalysis
 ```
 
-**Lösung 2:** Ändern Sie die DSC-Konfiguration so, dass der Ordner *CommandAnalysis* am Ende der Konfiguration bereinigt wird.
+**Lösung 2:** Ändern Sie die DSC-Konfiguration zum Bereinigen von der *CommandAnalysis* Ordner am Ende der Konfiguration.
 ``` PowerShell
 Configuration $configName
 {
