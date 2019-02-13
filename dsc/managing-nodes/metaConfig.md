@@ -2,16 +2,16 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,setup
 title: Konfigurieren des lokalen Konfigurations-Managers
-ms.openlocfilehash: c3ced2376c7d99477c40ae078dcecd775538b350
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 86d2cc17872692a738e9c68121b8931833d2a251
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401508"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55678654"
 ---
 # <a name="configuring-the-local-configuration-manager"></a>Konfigurieren des lokalen Konfigurations-Managers
 
-> Gilt für: Windows PowerShell 5.0
+> Gilt für: Windows PowerShell 5.0
 
 Der lokale Konfigurations-Manager (Local Configuration Manager, LCM) ist die Engine von DSC (Desired State Configuration, Konfiguration des gewünschten Zustands).
 Der LCM wird auf allen Zielknoten ausgeführt und ist zuständig für das Analysieren und Anwenden von Konfigurationen, die zum Knoten gesendet werden.
@@ -72,7 +72,7 @@ Die folgenden Eigenschaften sind in einem **Settings**-Block verfügbar:
 
 |  Eigenschaft  |  Type  |  Beschreibung   |
 |----------- |------- |--------------- |
-| ActionAfterReboot| string| Gibt an, was nach einem Neustart während der Anwendung einer Konfiguration passiert. Die möglichen Werte sind __ContinueConfiguration__ und __StopConfiguration__. <ul><li> __ContinueConfiguration__: Nach dem Neustart des Computers wird das Anwenden der aktuellen Konfiguration fortgesetzt. Dies ist der Standardwert.</li><li>__StopConfiguration__ Beenden Sie die aktuelle Konfiguration nach Neustart des Computers ein.</li></ul>|
+| ActionAfterReboot| string| Gibt an, was nach einem Neustart während der Anwendung einer Konfiguration passiert. Die möglichen Werte sind __ContinueConfiguration__ und __StopConfiguration__. <ul><li> __ContinueConfiguration__: Nach dem Neustart des Computers wird das Anwenden der aktuellen Konfiguration fortgesetzt. Dies ist der Standardwert.</li><li>__StopConfiguration__: Nach dem Neustart des Computers wird die aktuelle Konfiguration beendet.</li></ul>|
 | AllowModuleOverwrite| bool| __$TRUE__, wenn neue vom Pulldienst heruntergeladene Konfigurationen die alten Konfigurationen auf dem Zielknoten überschreiben dürfen. Andernfalls „$FALSE“.|
 | CertificateId| string| Der Fingerabdruck eines Zertifikats zur Sicherung von Anmeldeinformationen, die in einer Konfiguration übergeben werden. Weitere Informationen finden Sie unter [Möchten Sie Anmeldeinformationen in Windows PowerShell zum Konfigurieren des gewünschten Zustands schützen?](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx). <br> __Hinweis:__ Dies wird bei Verwendung des Azure Automation DSC-Pulldiensts automatisch verwaltet.|
 | ConfigurationDownloadManagers| CimInstance[]| Veraltet. Verwenden Sie die Blöcke __ConfigurationRepositoryWeb__ und __ConfigurationRepositoryShare__ zum Definieren von Pulldienstendpunkten für Konfigurationen.|
@@ -80,7 +80,7 @@ Die folgenden Eigenschaften sind in einem **Settings**-Block verfügbar:
 | ConfigurationMode| string | Gibt an, wie der LCM die Konfiguration tatsächlich auf die Zielknoten anwendet. Mögliche Werte sind __ApplyOnly__, __ApplyAndMonitor__ und __ApplyAndAutoCorrect__. <ul><li>__ApplyOnly__: DSC wendet die Konfiguration an und führt keine weiteren Schritte aus, es sei denn, eine neue Konfiguration wird per Push auf den Zielknoten übertragen oder per Pull von einem Dienst abgerufen. Nach der ersten Anwendung einer neuen Konfiguration überprüft DSC nicht auf Abweichungen von einem zuvor konfigurierten Status. Beachten Sie, dass DSC versucht, die Konfiguration anzuwenden, bis dies erfolgreich passiert ist, bevor __ApplyOnly__ wirksam wird. </li><li> __ApplyAndMonitor__: Dies ist der Standardwert. Der LCM wendet neue Konfigurationen an. Wenn der Zielknoten nach der ersten Anwendung einer neuen Konfiguration vom gewünschten Zustand abweicht, meldet DSC die Abweichung in Protokollen. Beachten Sie, dass DSC versucht, die Konfiguration anzuwenden, bis dies erfolgreich passiert ist, bevor __ApplyAndMonitor__ wirksam wird.</li><li>__ApplyAndAutoCorrect__: DSC wendet alle neuen Konfigurationen an. Wenn der Zielknoten nach der ersten Anwendung einer neuen Konfiguration vom gewünschten Zustand abweicht, meldet DSC die Abweichung in Protokollen und wendet dann die aktuelle Konfiguration an.</li></ul>|
 | ConfigurationModeFrequencyMins| UInt32| Gibt (in Minuten) an, wie oft die aktuelle Konfiguration überprüft und angewendet wird. Diese Eigenschaft wird ignoriert, wenn die „ConfigurationMode“-Eigenschaft auf „ApplyOnly“ festgelegt ist. Der Standardwert ist 15.|
 | DebugMode| string| Mögliche Werte sind __None__, __ForceModuleImport__ und __All__. <ul><li>Bei Festlegung auf __None__ werden zwischengespeicherte Ressourcen verwendet. Dies ist die Standardeinstellung, die in Produktionsszenarien verwendet werden sollte.</li><li>Das Festlegen auf __ForceModuleImport__ bewirkt, dass der LCM DSC-Ressourcenmodule erneut lädt, auch wenn sie zuvor bereits geladen und zwischengespeichert wurden. Dies beeinträchtigt die Leistung von DSC-Vorgängen, da jedes Modul bei Verwendung neu geladen wird. In der Regel wird dieser Wert beim Debuggen einer Ressource verwendet.</li><li>In dieser Version ist __All__ identisch mit __ForceModuleImport__.</li></ul> |
-| RebootNodeIfNeeded| bool| Legen Sie diese Einstellung auf __$true__ fest, um den Knoten automatisch neu zu starten, nachdem eine Konfiguration angewendet wurde, die einen Neustart erfordert. Andernfalls müssen Sie den Knoten für jede Konfiguration manuell neu starten, die dies erfordert. Der Standardwert ist __$false__. Um diese Einstellung zu verwenden, wenn eine Neustartbedingung von einer anderen Komponente als von DSC in Kraft gesetzt wird (z.B. Windows Installer), kombinieren Sie diese Einstellung mit dem Modul [xPendingReboot](https://github.com/powershell/xpendingreboot).|
+| RebootNodeIfNeeded| bool| Legen Sie diesen `$true` auf Ressourcen mithilfe der Knoten neu starten, können die `$global:DSCMachineStatus` Flag. Andernfalls müssen Sie den Knoten für jede Konfiguration manuell neu starten, die dies erfordert. Der Standardwert ist `$false`. Um diese Einstellung zu verwenden, wenn eine Neustartbedingung von einer anderen Komponente als von DSC in Kraft gesetzt wird (z.B. Windows Installer), kombinieren Sie diese Einstellung mit dem Modul [xPendingReboot](https://github.com/powershell/xpendingreboot).|
 | RefreshMode| string| Gibt an, wie der LCM Konfigurationen abruft. Die möglichen Werte sind __Disabled__, __Push__ und __Pull__. <ul><li>__Disabled__: DSC-Konfigurationen werden für diesen Knoten deaktiviert.</li><li> __Push__: Konfigurationen werden gestartet, indem das Cmdlet [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) aufgerufen wird. Die Konfiguration wird sofort auf den Knoten angewendet. Dies ist der Standardwert.</li><li>__Pull:__ Der Knoten ist so konfiguriert, dass regelmäßig eine Überprüfung auf Konfigurationen von einem Pulldienst oder SMB-Pfad erfolgt. Wenn diese Eigenschaft auf __Pull__ festgelegt ist, müssen Sie in einem __ConfigurationRepositoryWeb__- oder __ConfigurationRepositoryShare__-Block einen HPPT-Pfad (Dienst) oder einen SMB-Pfad (Freigabe) angeben.</li></ul>|
 | RefreshFrequencyMins| UInt32| Das Zeitintervall (in Minuten), in dem der LCM einen Pulldienst auf aktualisierte Konfigurationen abfragt. Dieser Wert wird ignoriert, wenn der LCM nicht im Pullmodus konfiguriert ist. Der Standardwert ist 30.|
 | ReportManagers| CimInstance[]| Veraltet. Verwenden Sie __ReportServerWeb__-Blöcke, um einen Endpunkt zum Senden von Berichtsdaten an einen Pulldienst zu definieren.|
@@ -88,12 +88,23 @@ Die folgenden Eigenschaften sind in einem **Settings**-Block verfügbar:
 | PartialConfigurations| CimInstance| Nicht implementiert. Nicht verwenden.|
 | StatusRetentionTimeInDays | UInt32| Anzahl der Tage, die der LCM den Status der aktuellen Konfiguration beibehält.|
 
+> [!NOTE]
+> Die LCM-startet die **"configurationmodefrequencymins"** Zyklus basierend auf:
+>
+> - Eine neue metakonfiguration wird mithilfe der angewendet `Set-DscLocalConfigurationManager`
+> - Ein Neustart des Computers
+>
+> Für jede Bedingung, in dem der Timer-Prozess einen Absturz kommt, der innerhalb von 30 Sekunden und den Zyklus erkannt werden, wird, neu gestartet wird.
+> Ein gleichzeitiger Vorgang kann den Zyklus Verzögerung gestartet wird, die Dauer dieses Vorgangs überschreitet die konfigurierte Zyklus Häufigkeit der nächste Timer startet nicht.
+>
+> Beispielsweise die metakonfiguration wird in einem 15-Minuten-Intervall Pull konfiguriert, und ein Pull-Vorgang tritt auf, auf T1.  Der Knoten wird die Arbeit für 16 Minuten nicht abgeschlossen.  Die erste 15-Minuten-Zyklus wird ignoriert, und weiter Pull auf T1 + 15 + 15 erfolgt.
+
 ## <a name="pull-service"></a>Pulldienst
 
 Die LCM-Konfiguration unterstützt die folgenden Typen von Pulldienstendpunkten:
 
 - **Konfigurationsserver**: Repository für DSC-Konfigurationen. Definieren Sie Konfigurationsserver mithilfe der Blöcke **ConfigurationRepositoryWeb** (für webbasierte Server) und **ConfigurationRepositoryShare** (für SMB-basierte Server).
-- **Ressourcenserver**: Ein Repository für DSC-Ressourcen, verpackt als PowerShell-Module. Definieren Sie Ressourcenserver mithilfe der Blöcke **ResourceRepositoryWeb** (für webbasierte Server) und **ResourceRepositoryShare** (für SMB-basierte Server).
+- **Ressourcenserver**: Repository für DSC-Ressourcen, verpackt als PowerShell-Module. Definieren Sie Ressourcenserver mithilfe der Blöcke **ResourceRepositoryWeb** (für webbasierte Server) und **ResourceRepositoryShare** (für SMB-basierte Server).
 - **Berichtsserver**: Dienst, an den DSC Berichtsdaten sendet. Definieren Sie Berichtsserver mithilfe von **ReportServerWeb**-Blöcken. Ein Berichtsserver muss ein Webdienst sein.
 
 Weitere Informationen zu Pulldiensten finden Sie unter [Desired State Configuration – Pulldienst](../pull-server/pullServer.md).
@@ -111,7 +122,7 @@ Ein **ConfigurationRepositoryWeb**-Block definiert die folgenden Eigenschaften.
 |RegistrationKey|string|GUID, die den Knoten beim Pulldienst registriert. Weitere Informationen finden Sie unter [Einrichten eines Pullclients mit Konfigurationsnamen](../pull-server/pullClientConfigNames.md).|
 |ServerURL|string|URL des Konfigurationsdiensts.|
 
-Ein Beispielskript, das die Konfiguration des Werts „ConfigurationRepositoryWeb“ für lokale Knoten vereinfacht, steht unter [Generieren von DSC-Metakonfigurationen](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations) zur Verfügung.
+Ein Beispielskript, das die Konfiguration des Werts „ConfigurationRepositoryWeb“ für lokale Knoten vereinfacht, steht unter [Generieren von DSC-Metakonfigurationen](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations) zur Verfügung.
 
 Zum Definieren eines SMB-basierten Konfigurationsservers erstellen Sie einen **ConfigurationRepositoryShare**-Block.
 Ein **ConfigurationRepositoryShare**-Block definiert die folgenden Eigenschaften.
@@ -133,7 +144,7 @@ Ein **ResourceRepositoryWeb**-Block definiert die folgenden Eigenschaften.
 |RegistrationKey|string|GUID, die den Knoten beim Pulldienst identifiziert.|
 |ServerURL|string|URL des Konfigurationsservers.|
 
-Ein Beispielskript, das die Konfiguration des Werts „ResourceRepositoryWeb“ für lokale Knoten vereinfacht, steht unter [Generieren von DSC-Metakonfigurationen](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations) zur Verfügung.
+Ein Beispielskript, das die Konfiguration des Werts „ResourceRepositoryWeb“ für lokale Knoten vereinfacht, steht unter [Generieren von DSC-Metakonfigurationen](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations) zur Verfügung.
 
 Zum Definieren eines SMB-basierten Ressourcenservers erstellen Sie einen **ResourceRepositoryShare**-Block.
 Ein **ResourceRepositoryShare**-Block definiert die folgenden Eigenschaften.
@@ -156,7 +167,7 @@ Ein **ReportServerWeb**-Block definiert die folgenden Eigenschaften.
 |RegistrationKey|string|GUID, die den Knoten beim Pulldienst identifiziert.|
 |ServerURL|string|URL des Konfigurationsservers.|
 
-Ein Beispielskript, das die Konfiguration des Werts „ReportServerWeb“ für lokale Knoten vereinfacht, steht unter [Generieren von DSC-Metakonfigurationen](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations) zur Verfügung.
+Ein Beispielskript, das die Konfiguration des Werts „ReportServerWeb“ für lokale Knoten vereinfacht, steht unter [Generieren von DSC-Metakonfigurationen](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations) zur Verfügung.
 
 ## <a name="partial-configurations"></a>Teilkonfigurationen
 
@@ -170,7 +181,7 @@ Ein **PartialConfiguration**-Block definiert die folgenden Eigenschaften.
 |DependsOn|string{}|Eine Liste der Namen anderer Konfigurationen, die abgeschlossen sein müssen, bevor diese Teilkonfiguration angewendet wird.|
 |Beschreibung|string|Text zum Beschreiben der Teilkonfiguration.|
 |ExclusiveResources|string[]|Array von Ressourcen, die ausschließlich für diese Teilkonfiguration gelten.|
-|RefreshMode|string|Gibt an, wie der LCM diese Teilkonfiguration abruft. Die möglichen Werte sind __Disabled__, __Push__ und __Pull__. <ul><li>__Deaktiviert__: Diese Teilkonfiguration ist deaktiviert.</li><li> __Push__: Die Teilkonfiguration wird per Push auf den Knoten übertragen, indem das Cmdlet [Publish-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration) aufgerufen wird. Nachdem alle Teilkonfigurationen für den Knoten von einem Dienst per Push oder Pull abgerufen wurden, kann die Konfiguration durch Aufrufen von `Start-DscConfiguration –UseExisting` gestartet werden. Dies ist der Standardwert.</li><li>__Pull:__ Der Knoten ist so konfiguriert, dass regelmäßig eine Überprüfung auf Teilkonfigurationen von einem Pulldienst erfolgt. Wenn diese Eigenschaft auf __Pull__ festgelegt ist, müssen Sie einen Pulldienst in der __ConfigurationSource__-Eigenschaft festlegen. Weitere Informationen zum Azure Automation-Pulldienst finden Sie unter [Azure Automation DSC – Übersicht](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview).</li></ul>|
+|RefreshMode|string|Gibt an, wie der LCM diese Teilkonfiguration abruft. Die möglichen Werte sind __Disabled__, __Push__ und __Pull__. <ul><li>__Deaktiviert__: Diese Teilkonfiguration ist deaktiviert.</li><li> __Push__: Die Teilkonfiguration wird per Push auf den Knoten übertragen, indem das Cmdlet [Publish-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration) aufgerufen wird. Nachdem alle Teilkonfigurationen für den Knoten von einem Dienst per Push oder Pull abgerufen wurden, kann die Konfiguration durch Aufrufen von `Start-DscConfiguration –UseExisting` gestartet werden. Dies ist der Standardwert.</li><li>__Pull:__ Der Knoten ist so konfiguriert, dass regelmäßig eine Überprüfung auf Teilkonfigurationen von einem Pulldienst erfolgt. Wenn diese Eigenschaft auf __Pull__ festgelegt ist, müssen Sie einen Pulldienst in der __ConfigurationSource__-Eigenschaft festlegen. Weitere Informationen zum Azure Automation-Pulldienst finden Sie unter [Azure Automation DSC – Übersicht](https://docs.microsoft.com/azure/automation/automation-dsc-overview).</li></ul>|
 |ResourceModuleSource|string[]|Array der Namen von Ressourcenservern, von denen erforderliche Ressourcen für diese Teilkonfiguration heruntergeladen werden. Diese Namen müssen auf Dienstendpunkte verweisen, die zuvor in den Blöcken **ResourceRepositoryWeb** und **ResourceRepositoryShare** definiert wurden.|
 
 __Hinweis:__ Teilkonfigurationen werden in Azure Automation DSC unterstützt, es kann jedoch nur eine Konfiguration aus jedem Automation-Konto pro Knoten abgerufen werden.
@@ -180,7 +191,7 @@ __Hinweis:__ Teilkonfigurationen werden in Azure Automation DSC unterstützt, es
 ### <a name="concepts"></a>Konzepte
 [Windows PowerShell DSC – Übersicht](../overview/overview.md)
 
-[Erste Schritte mit Azure Automation DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-getting-started)
+[Erste Schritte mit Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-getting-started)
 
 ### <a name="other-resources"></a>Weitere Ressourcen
 

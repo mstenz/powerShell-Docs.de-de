@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: WinRMSecurity
 ms.openlocfilehash: 59717e4806857e6760de523335bbee6028da8e84
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401418"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55679246"
 ---
 # <a name="powershell-remoting-security-considerations"></a>Sicherheitsaspekte von PowerShell-Remoting
 
@@ -30,7 +30,7 @@ Standardmäßig gestattet PowerShell-Remoting nur Verbindungen von Mitgliedern d
 
 In privaten Netzwerken akzeptiert die Windows-Firewall-Standardregel für PowerShell-Remoting alle Verbindungen. In öffentlichen Netzwerken lässt die Windows-Firewall-Standardregel Verbindungen mit PowerShell-Remoting nur aus demselben Subnetz heraus zu. Sie müssen diese Regel explizit ändern, um PowerShell-Remoting für alle Verbindungen in einem öffentlichen Netzwerk zu öffnen.
 
->Warning Die Firewallregel für öffentliche Netzwerke soll den Computer vor potenziell schädlichen, externen Verbindungsversuchen schützen. Seien Sie vorsichtig beim Entfernen dieser Regel.
+>**Warnung:** Die Firewallregel für öffentliche Netzwerke soll den Computer vor potenziell schädlichen, externen Verbindungsversuchen schützen. Seien Sie vorsichtig beim Entfernen dieser Regel.
 
 ## <a name="process-isolation"></a>Prozessisolation
 

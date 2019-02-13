@@ -4,11 +4,11 @@ keywords: powershell,cmdlet
 title: Erstellen einer grafischen Datumsauswahl
 ms.assetid: c1cb722c-41e9-4baa-be83-59b4653222e9
 ms.openlocfilehash: 6dd43a3b1f4c67633ad1755de3db88eb8c6772c8
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401148"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55678586"
 ---
 # <a name="creating-a-graphical-date-picker"></a>Erstellen einer grafischen Datumsauswahl
 
@@ -60,7 +60,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-Das Skript beginnt mit dem Laden von zwei .NET Framework-Klassen: **System.Drawing** und **System.Windows.Forms.** Sie starten dann eine neue Instanz der .NET Framework-Klasse **Windows.Forms.Form**. Diese stellt ein leeres Formular oder Fenster bereit, in das Sie Steuerelemente einfügen können.
+Das Skript beginnt mit dem Laden von zwei .NET Framework-Klassen: **System.Drawing** und **System.Windows.Forms**. Sie starten dann eine neue Instanz der .NET Framework-Klasse **Windows.Forms.Form**. Diese stellt ein leeres Formular oder Fenster bereit, in das Sie Steuerelemente einfügen können.
 
 ```powershell
 $form = New-Object Windows.Forms.Form
@@ -138,5 +138,5 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 ## <a name="see-also"></a>Weitere Informationen
 
 - [Hey Scripting Guy: Warum funktionieren diese PowerShell GUI-Beispiele nicht?](https://go.microsoft.com/fwlink/?LinkId=506644)
-- [GitHub Winformsexampleupdates von Dave Wyatt](https://github.com/dlwyatt/WinFormsExampleUpdates)
+- [GitHub: Dave Wyatt's WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
 - [Windows PowerShell-Tipp der Woche: Erstellen einer grafischen Datumsauswahl](https://technet.microsoft.com/library/ff730942.aspx)

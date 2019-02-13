@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Erstellen erweiterter DSC-Ressourcen für Komposition und Zusammenarbeit
 ms.openlocfilehash: 3e40ba94de0a53c1c9663553c4ec443b5e0df3fd
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401799"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55678778"
 ---
 # <a name="advanced-dsc-authoring-for-composition-and-collaboration"></a>Erstellen erweiterter DSC-Ressourcen für Komposition und Zusammenarbeit
 
