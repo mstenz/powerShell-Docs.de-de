@@ -3,11 +3,11 @@ title: Neuigkeiten in PowerShell Core 6.0
 description: Neue Features und Änderungen in PowerShell Core 6.0
 ms.date: 08/06/2018
 ms.openlocfilehash: 83c104d838db9d86fe1d485e92245a9c8f2d2057
-ms.sourcegitcommit: 59e568ac9fa8ba28e2c96932b7c84d4a855fed2f
-ms.translationtype: HT
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46289241"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55678383"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>Neuigkeiten in PowerShell Core 6.0
 
@@ -125,11 +125,11 @@ Weitere Änderungen in `pwsh(.exe)` im Vergleich zu `powershell.exe`:
 ## <a name="backwards-compatibility-with-windows-powershell"></a>Abwärtskompatibilität mit Windows PowerShell
 
 Das Ziel von PowerShell Core ist die höchstmögliche Kompatibilität mit Windows PowerShell.
-PowerShell Core verwendet [.NET Standard 2.0][], um binäre Kompatibilität mit vorhandenen .NET-Assemblys bereitzustellen.
+PowerShell Core verwendet [.NET Standard][], um binäre Kompatibilität mit vorhandenen .NET-Assemblys bereitzustellen.
 Viele PowerShell-Module hängen von diesen Assemblys (häufig DLL-Dateien) ab. Daher lässt .NET Standard zu, dass sie weiterhin .NET Core nutzen.
 PowerShell Core enthält auch eine Heuristik, mit der in bekannten Ordnern wie dem üblichen Speicherort des globalen Assemblycache auf dem Datenträger nach .NET Framework-DLL-Abhängigkeiten gesucht wird.
 
-Weitere Informationen zu .NET Standard finden Sie auf dem [.NET-Blog][], in diesem [YouTube-Video][] und in diesen [Häufig gestellte Fragen][] auf GitHub.
+Weitere Informationen zu .NET Standard finden Sie auf dem [.NET Blog][], in diesem [YouTube][] und in diesen [FAQ][] auf GitHub.
 
 Die PowerShell-Sprache und die „integrierten“ Module (z.B. `Microsoft.PowerShell.Management` und `Microsoft.PowerShell.Utility`) sollten genauso funktionieren wie in Windows PowerShell.
 In vielen Fällen haben wir mit der Hilfe der Community Fehlerkorrekturen und neue Funktionen für diese Cmdlets eingebaut.
@@ -274,7 +274,7 @@ Weitere Informationen zu PowerShell-Aufträgen finden Sie unter [about_Jobs](htt
 - Der `-SkipHeaderValidation`-Schalter wurde hinzugefügt, um das Hinzufügen von Headern ohne Überprüfung des Headerwerts zu unterstützen. (#4085)
 - Falls erforderlich, können Sie festlegen, dass Web-Cmdlets das HTTPS-Zertifikat auf dem Server nicht überprüfen sollen.
 - Es wurden Authentifizierungsparameter hinzugefügt. (#5052) (Vielen Dank an [@markekraus](https://github.com/markekraus))
-  - Es wurde `-Authentication` mit den drei Optionen „Basic“, „OAuth“ und „Bearer“ hinzugefügt.
+  - Hinzufügen `-Authentication` , die bietet drei Optionen: Basic, OAuth und Trägertoken.
   - Es wurde `-Token` hinzugefügt, um das Bearer-Token für die Optionen „OAuth“ und „Bearer“ zu erhalten.
   - Es wurde `-AllowUnencryptedAuthentication` hinzugefügt, um die Authentifizierung zu umgehen, die für alle Transportschemas außer HTTPS bereitgestellt wird.
 - `-ResponseHeadersVariable` wurde `Invoke-RestMethod` hinzugefügt, um die Erfassung von Antwortheadern zu aktivieren. (#4888) (Vielen Dank an [@markekraus](https://github.com/markekraus))
@@ -385,7 +385,7 @@ Weitere Informationen dazu, wie wir diese Daten verwenden, finden Sie [in diesem
 [Syslog]: https://en.wikipedia.org/wiki/Syslog
 [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
 [breaking-changes]: breaking-changes-ps6.md
-[changelog]: https://github.com/PowerShell/PowerShell/tree/master/CHANGELOG.md
+[Changelog (Änderungsprotokoll)]: https://github.com/PowerShell/PowerShell/tree/master/CHANGELOG.md
 [community-dashboard]: https://aka.ms/PSGitHubBI
 [telemetry-blog]: https://blogs.msdn.microsoft.com/powershell/2017/01/31/powershell-open-source-community-dashboard/
 [.NET Standard]: https://docs.microsoft.com/dotnet/standard/net-standard
