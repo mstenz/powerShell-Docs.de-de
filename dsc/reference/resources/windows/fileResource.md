@@ -2,23 +2,21 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: DSC-Ressource „File“
-ms.openlocfilehash: e5f7a91e5f19c8c7bbada090804d8f29a7cfedd5
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.openlocfilehash: b5bc2c305b8cfccbd044274811df631264a24279
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047774"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55679297"
 ---
 # <a name="dsc-file-resource"></a>DSC-Ressource „File“
 
 > Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-Die Ressource „File“ in Windows PowerShell DSC bietet einen Mechanismus zum Verwalten von Dateien und Verzeichnissen auf einem Zielknoten.
-
->**Hinweis:** Wenn die Eigenschaft **MatchSource** auf **$false** festgelegt wurde (der Standardwert), werden die zu kopierenden Inhalte bei der ersten Anwendung der Konfiguration zwischengespeichert.
->Darauffolgende Anwendungen der Konfiguration suchen in dem in **SourcePath** angegebenen Pfad nicht nach aktualisierten Dateien bzw. Ordnern. Wenn Sie bei jeder Anwendung der Konfiguration nach Updates für die Dateien bzw. Ordner in **SourcePath** suchen möchten, müssen Sie **MatchSource** auf **$true** festlegen.
+Die Ressource „File“ in Windows PowerShell DSC bietet einen Mechanismus zum Verwalten von Dateien und Verzeichnissen auf einem Zielknoten. Die **DestinationPath** und **SourcePath** müssen vom Ziel Knoten zugegriffen werden kann.
 
 ## <a name="syntax"></a>Syntax
+
 ```
 File [string] #ResourceName
 {
@@ -39,24 +37,48 @@ File [string] #ResourceName
 
 ## <a name="properties"></a>Eigenschaften
 
-|  Eigenschaft  |  Beschreibung   |
-|---|---|
-| DestinationPath| Gibt den Speicherort an, an dem Sie den Zustand einer Datei oder eines Verzeichnisses sicherstellen möchten.|
-| Attributes| Gibt den gewünschten Status der Attribute der Zieldatei oder des Zielverzeichnisses an.|
-| Checksum| Gibt den zu verwendenden Typ von Prüfsumme an, wenn bestimmt wird, ob zwei Dateien identisch sind. Wenn __Checksum__ nicht angegeben ist, wird nur der Datei- oder Verzeichnisname für den Vergleich verwendet. Gültige Werte sind: SHA-1, SHA-256, SHA-512, CreatedDate, ModifiedDate.|
-| Contents| Gibt den Inhalt einer Datei an, z. B. eine bestimmte Zeichenfolge.|
-| Credential| Gibt die Anmeldeinformationen an, die für den Zugriff auf Ressourcen erforderlich sind, wie z. B. Quelldateien, wenn ein solcher Zugriff erforderlich ist.|
-| Ensure| Gibt an, ob die Datei oder das Verzeichnis vorhanden ist. Legen Sie diese Eigenschaft auf „Absent“ fest, um sicherzustellen, dass die Datei oder das Verzeichnis nicht vorhanden ist. Legen Sie sie auf „Present“ fest, um sicherzustellen, dass die Datei oder das Verzeichnis vorhanden ist. Die Standardeinstellung ist „Present“.|
-| Force| Bestimmte Dateioperationen (z. B. das Überschreiben einer Datei oder Löschen eines Verzeichnisses, das nicht leer ist), führen zu einem Fehler. Bei Verwenden der „Force“-Eigenschaft werden solche Fehler überschrieben. Der Standardwert ist __$false__.|
-| Recurse| Gibt an, ob Unterverzeichnisse enthalten sind. Legen Sie diese Eigenschaft auf __$true__ fest, um anzugeben, dass Unterverzeichnisse enthalten sein sollen. Der Standardwert ist __$false__. **Hinweis**: Diese Eigenschaft ist nur gültig, wenn die Type-Eigenschaft auf Verzeichnis festgelegt ist.|
-| DependsOn | Gibt an, dass die Konfiguration einer anderen Ressource ausgeführt werden muss, bevor diese Ressource konfiguriert wird. Wenn beispielsweise die ID des Skriptblocks mit der Ressourcenkonfiguration, den Sie zuerst ausführen möchten, __ResourceName__ und dessen Typ __ResourceType__ ist, lautet die Syntax für das Verwenden dieser Eigenschaft `DependsOn = "[ResourceType]ResourceName"`.|
-| SourcePath| Gibt den Pfad an, aus dem die Datei- oder Ordnerressource kopiert werden soll.|
-| Type| Gibt an, ob die zu konfigurierende Ressource ein Verzeichnis oder eine Datei ist. Legen Sie diese Eigenschaft auf „Directory“ fest, um anzugeben, dass die Ressource ein Verzeichnis ist. Legen Sie sie auf „File“ fest, um anzugeben, dass die Ressource eine Datei ist. Der Standardwert ist „File“.|
-| MatchSource| Bei Festlegen auf den Standardwert __$false__ werden beliebige Dateien in der Quelle (z. B. die Dateien A, B und C) dem Ziel hinzugefügt, wenn die Konfiguration zum ersten Mal angewendet wird. Wenn eine neue Datei (D) der Quelle hinzugefügt wird, wird sie nicht dem Ziel hinzugefügt, auch wenn die Konfiguration später erneut angewendet wird. Wenn der Wert __$true__ ist, werden bei jedem Anwenden der Konfiguration in der Quelle gefundene neue Dateien (wie z. B. Datei D in diesem Beispiel) dem Ziel hinzugefügt. Der Standardwert ist **$false**.|
+|Eigenschaft       |Beschreibung                                                                   |Erforderlich|Standardwert|
+|---------------|------------------------------------------------------------------------------|--------|-------|
+|DestinationPath|Der Speicherort, auf dem Zielknoten Sie sicherstellen möchten, ist `Present` oder `Absent`.|Ja|Nein|
+|Attributes     |Der gewünschte Zustand der Attribute für die Zieldatei oder das Verzeichnis. Gültige Werte sind **Archiv**, **Hidden**, **ReadOnly**, und **System**.|Nein|Keine|
+|Checksum      |Der Checksum-Typ, mit denen Sie bestimmen, ob zwei Dateien identisch sind. Gültige Werte sind: SHA-1, SHA-256, SHA-512, CreatedDate, ModifiedDate.|Nein|Nur die Datei oder Verzeichnis Namen verglichen wird.|
+|Contents       |Nur gültig, bei der Verwendung mit `File` Typ. Gibt an, den Inhalt, stellen Sie sicher sind `Present` oder `Absent` aus der entsprechenden Datei. |Nein|Keine|
+|Credential     |Die Anmeldeinformationen, die erforderlich, um den Zugriff auf Ressourcen, wie z.B. Quelldateien sind.|Nein|Computerkonto für des Zielknotens. (*Siehe Hinweis*)|
+|Ensure         |Der gewünschte Zustand der Zieldatei oder des Verzeichnisses. |Nein|**Vorhanden**|
+|Force          |Überschreibt die Access-Vorgänge, die zu einem Fehler (z. B. das Überschreiben einer Datei oder das Löschen eines Verzeichnisses, das nicht leer ist) führen würde.|Nein|`$false`|
+|Recurse        |Nur gültig, bei der Verwendung mit `Directory` Typ. Führt die Status-Vorgang rekursiv für alle Unterverzeichnisse.|Nein|`$false`|
+|DependsOn      |Legt eine Abhängigkeit auf der angegebenen Ressourcen fest. Diese Ressource wird nur nach erfolgreicher Ausführung aller abhängigen Ressourcen ausgeführt. Sie können angeben, dass abhängige Ressourcen, die mit der Syntax `"[ResourceType]ResourceName"`. Finden Sie unter [About_DependsOn](../../../configurations/resource-depends-on.md)|Nein|Keine|
+|SourcePath     |Der Pfad, von dem die Datei oder Ordner kopiert werden soll.|Nein|Keine|
+|Type           |Der Typ der zu konfigurierende Ressource. Gültige Werte sind `Directory` und `File`.|Nein|`File`|
+|MatchSource    |Bestimmt, ob die Ressource für neue Dateien, die zum Quellverzeichnis hinzugefügt werden, nachdem die erste Kopie überwachen soll. Der Wert `$true` gibt an, dass nach Erstellen der ersten Kopie aller neuen Quelldateien in das Ziel kopiert werden sollen. Wenn auf festgelegt `$False`, die Ressource speichert den Inhalt des Quellverzeichnisses und ignoriert alle Dateien hinzugefügt, nachdem die erste Kopie.|Nein|`$false`|
+
+> [!WARNING]
+> Wenn Sie einen Wert für nicht angeben `Credential` oder `PSRunAsCredential` (PS V.5), die Ressource wird mithilfe des Computerkontos des Zielknotens auf die `SourcePath`.  Wenn die `SourcePath` ist eine UNC-Freigabe, könnte dies zu einem Fehler "Zugriff verweigert". Vergewissern Sie sich Ihre Berechtigungen werden entsprechend festgelegt wird, oder verwenden Sie die `Credential` oder `PSRunAsCredential` Eigenschaften für das Konto angeben, die verwendet werden soll.
+
+## <a name="present-vs-absent"></a>Stellen Sie die Visual Studio. Nicht vorhanden
+
+Jede DSC-Ressource führt verschiedene Vorgänge, die auf Grundlage des Werts, die Sie, für angeben die `Ensure` Eigenschaft. Die Werte, die Sie angeben, für die oben aufgeführten Eigenschaften bestimmt den Status-Vorgang ausgeführt.
+
+### <a name="existence"></a>Vorhandensein
+
+Wenn Sie nur angeben, ein `DestinationPath`, die Ressource wird sichergestellt, dass der Pfad vorhanden ist (`Present`) oder ist nicht vorhanden (`Absent`).
+
+### <a name="copy-operations"></a>Kopiervorgänge
+
+Beim Angeben von eine `SourcePath` und ein `DestinationPath` mit einer `Type` Wert **Directory**, das Ressourcenverzeichnis für die Quelle von Kopien in den Zielpfad. Die Eigenschaften `Recurse`, `Force`, und `MatchSource` ändern Sie den Typ des Kopiervorgangs ausgeführt, während er sich `Credential` bestimmt, welches Konto Sie verwenden, um das Quellverzeichnis zuzugreifen.
+
+### <a name="limitations"></a>Einschränkungen
+
+Wenn Sie den Wert angegeben `ReadOnly` für die `Attributes` Eigenschaft zusammen mit einer `DestinationPath`, `Ensure = "Present"` würde den angegebene Pfad erstellen während `Contents` würde Legen Sie den Inhalt der Datei.  Ein `Absent` Zustands ignorieren würde die `Attributes` Eigenschaft vollständig, und entfernen Sie alle Dateien im angegebenen Pfad.
 
 ## <a name="example"></a>Beispiel
 
-Im folgenden Beispiel wird veranschaulicht, wie die Ressource „File“ verwendet wird, um sicherzustellen, dass ein Verzeichnis mit dem Pfad `C:\Users\Public\Documents\DSCDemo\DemoSource` auf einem Quellcomputer (z. B. dem Pullserver) auch auf dem Zielknoten (mit allen Unterverzeichnissen) vorhanden ist. Außerdem wird nach Abschluss eine Bestätigungsmeldung in das Protokoll geschrieben und eine Anweisung hinzugefügt, um dafür zu sorgen, dass der Dateiprüfvorgang vor dem Protokollierungsvorgang erfolgt.
+Das folgende Beispiel kopiert ein Verzeichnis und seinen Unterverzeichnissen von einem pullserver auf einen Zielknoten, die mit der Ressource "File". Wenn der Vorgang erfolgreich ist, schreibt die Ressource "Log" eine bestätigungsmeldung angezeigt, in das Ereignisprotokoll geschrieben.
+
+Das Quellverzeichnis ist ein UNC-Pfad (`\\PullServer\DemoSource`) aus dem Pull-Server freigegeben. Die `Recurse` Eigenschaft wird sichergestellt, dass auch alle Unterverzeichnisse kopiert werden.
+
+> [!IMPORTANT]
+> Der LCM auf dem Ziel Knoten führt standardmäßig im Kontext des lokalen Systemkontos aus. Gewähren von Zugriff auf die **SourcePath**, legen Sie Berechtigungen für das Computerkonto des Zielknotens. Die **Anmeldeinformationen** und **"psdscrunascredential"** (v5) Ändern der Kontext der LCM verwendet den Zugriff auf die **SourcePath**. Müssen Sie weiterhin Zugriff auf das Konto zu gewähren, die verwendet werden, für den Zugriff auf die **SourcePath**.
 
 ```powershell
 Configuration FileResourceDemo
@@ -65,10 +87,10 @@ Configuration FileResourceDemo
     {
         File DirectoryCopy
         {
-            Ensure = "Present"  # You can also set Ensure to "Absent"
-            Type = "Directory" # Default is "File".
-            Recurse = $true # Ensure presence of subdirectories, too
-            SourcePath = "C:\Users\Public\Documents\DSCDemo\DemoSource"
+            Ensure = "Present" # Ensure the directory is Present on the target node.
+            Type = "Directory" # The default is File.
+            Recurse = $true # Recursively copy all subdirectories.
+            SourcePath = "\\PullServer\DemoSource"
             DestinationPath = "C:\Users\Public\Documents\DSCDemo\DemoDestination"
         }
 
@@ -76,8 +98,10 @@ Configuration FileResourceDemo
         {
             # The message below gets written to the Microsoft-Windows-Desired State Configuration/Analytic log
             Message = "Finished running the file resource with ID DirectoryCopy"
-            DependsOn = "[File]DirectoryCopy" # This means run "DirectoryCopy" first.
+            DependsOn = "[File]DirectoryCopy" # Depends on successful execution of the File resource.
         }
     }
 }
 ```
+
+Für die weitere Verwendung von auf **Anmeldeinformationen** in DSC finden Sie unter [als Benutzer ausführen](../../../configurations/runAsUser.md) oder [Config Anmeldeinformationen](../../../configurations/configDataCredentials.md).
