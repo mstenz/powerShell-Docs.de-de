@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: DSC-Ressource „WindowsProcess“
 ms.openlocfilehash: cee93ab283ded407d6e032161125aa6d6ac98827
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047346"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55678011"
 ---
 # <a name="dsc-windowsprocess-resource"></a>DSC-Ressource „WindowsProcess“
 
-Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0_
+_Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0_
 
 Die Ressource **WindowsProcess** in Windows PowerShell DSC bietet einen Mechanismus zum Konfigurieren von Prozessen auf einem Zielknoten.
 

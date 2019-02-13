@@ -3,11 +3,11 @@ ms.date: 05/17/2018
 keywords: powershell,core
 title: Bekannte Probleme bei PowerShell 6.0
 ms.openlocfilehash: ce40a1925e564fbd2c661e70ec36d3842d915dfe
-ms.sourcegitcommit: 47becf2823ece251a7264db2387bb503cf3abaa9
-ms.translationtype: HT
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49450995"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55678659"
 ---
 # <a name="known-issues-for-powershell-60"></a>Bekannte Probleme bei PowerShell 6.0
 
@@ -107,7 +107,7 @@ In der folgenden Tabelle werden die Befehle aufgeführt, die bekanntermaßen nic
 |`Get-Service`, `New-Service`, `Restart-Service`, `Resume-Service`, `Set-Service`, `Start-Service`, `Stop-Service`, `Suspend-Service`|Nicht verfügbar.|Diese Befehle werden nicht erkannt. Dies wird in einem zukünftigen Release behoben.|
 |`Get-Acl`, `Set-Acl`|Nicht verfügbar.|Diese Befehle werden nicht erkannt. Dies wird in einem zukünftigen Release behoben.|
 |`Get-AuthenticodeSignature`, `Set-AuthenticodeSignature`|Nicht verfügbar.|Diese Befehle werden nicht erkannt. Dies wird in einem zukünftigen Release behoben.|
-|`Wait-Process`|Dieser Befehl ist verfügbar, funktioniert jedoch nicht ordnungsgemäß. |Beispielsweise funktioniert „Start-Process gvim -PassThru | Wait-Process“ nicht. Beim Warten auf den Prozess tritt ein Fehler auf.|
+|`Wait-Process`|Dieser Befehl ist verfügbar, funktioniert jedoch nicht ordnungsgemäß. |`Start-Process gvim -PassThru | Wait-Process` funktioniert beispielsweise nicht. Beim Warten auf den Prozess tritt ein Fehler auf.|
 |`Register-PSSessionConfiguration`, `Unregister-PSSessionConfiguration`, `Get-PSSessionConfiguration`|Dieser Befehl ist verfügbar, funktioniert jedoch nicht.|Es wird eine Fehlermeldung angezeigt, die angibt, dass die Befehle nicht funktionieren. Dies wird in einem zukünftigen Release behoben.|
 |`Get-Event`, `New-Event`, `Register-EngineEvent`, `Register-WmiEvent`, `Remove-Event`, `Unregister-Event`|Diese Befehle sind verfügbar, es gibt jedoch keine Ereignisquellen.|Die PowerShell-Befehle für Ereignisse sind vorhanden, allerdings sind die meisten Ereignisquellen, die mit den Befehlen verwendet werden (z.B. „ System.Timers.Timer“), nicht unter Linux verfügbar. Dadurch sind die Befehle im Alpharelease unnötig.|
 |`Set-ExecutionPolicy`|Dieser Befehl ist verfügbar, funktioniert jedoch nicht.|Eine Meldung wird zurückgegeben, die angibt, dass der Befehl auf dieser Plattform nicht unterstützt wird. Die Ausführungsrichtlinie stellt eine benutzerorientierte Sicherheitsmaßnahme dar, die verhindert, dass der Benutzer schwere Fehler begeht. Dabei handelt es sich nicht um eine Sicherheitsgrenze.|

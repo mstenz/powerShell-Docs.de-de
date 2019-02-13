@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: DSC-Ressource „Registry“
 ms.openlocfilehash: e0ae1a4a27edc08c4e6ccd47786426917eb1ccb4
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047371"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55679033"
 ---
 # <a name="dsc-registry-resource"></a>DSC-Ressource „Registry“
 
-Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0_
+_Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0_
 
 Die Ressource **Registry** in Windows PowerShell DSC bietet einen Mechanismus zum Verwalten von Registrierungsschlüsseln und -werten auf einem Zielknoten.
 

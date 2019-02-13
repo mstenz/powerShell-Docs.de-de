@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: DSC-Ressource „Log“
 ms.openlocfilehash: 1f94a2d847a4ef63f81e2fb83d1a0f76f5677b09
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047310"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55677765"
 ---
 # <a name="dsc-log-resource"></a>DSC-Ressource „Log“
 
-> Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0_
+> _Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0_
 
 Die Ressource __Log__ in Windows PowerShell DSC bietet einen Mechanismus zum Schreiben von Meldungen in das Ereignisprotokoll „Microsoft Windows Desired State Configuration/Analyse“.
 

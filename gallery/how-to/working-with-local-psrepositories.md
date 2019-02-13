@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery,psget
 title: Arbeiten mit lokalen PSRepositories
 ms.openlocfilehash: 94824ea584c097838b24c6f2cd02407b6147a781
-ms.sourcegitcommit: 91786b03704fbd2d185f674df0bc67faddfb6288
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51619209"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55679282"
 ---
 # <a name="working-with-local-powershellget-repositories"></a>Arbeiten mit lokalen PowerShellGet-Repositorys
 
@@ -23,7 +23,7 @@ Dieser Artikel beschreibt, wie Sie ein lokales Repository mit PowerShell einrich
 
 ## <a name="local-repository-types"></a>Lokales Repository-Typen
 
-Es gibt zwei Möglichkeiten zum Erstellen einer lokalen PSRepository: NuGet-Server oder eine Dateifreigabe. Jeder Typ verfügt über vor- und Nachteile:
+Es gibt zwei Möglichkeiten, einem PSRepository lokalen zu erstellen: NuGet-Server oder eine Dateifreigabe. Jeder Typ verfügt über vor- und Nachteile:
 
 NuGet-Server
 
@@ -52,7 +52,7 @@ Einige Funktionen, die für den PowerShell-Katalog funktioniert sind jedoch nich
 
 Im folgende Artikel sind die Schritte zum Einrichten eines eigenen NuGet-Servers aufgeführt.
 
-- ["NuGet.Server"][]
+- [NuGet.Server][]
 
 Führen Sie die Schritte bis zum Zeitpunkt des Hinzufügens von Paketen aus. Die Schritte zum [Veröffentlichen eines Pakets](#publishing-to-a-local-repository) werden weiter unten in diesem Artikel behandelt.
 
@@ -187,5 +187,5 @@ Publish-Module -Path 'F:\OfflinePowerShellGet' -Repository LocalPsRepo -NuGetApi
 
 <!-- external links -->
 [OfflinePowerShellGetDeploy]: https://www.powershellgallery.com/packages/OfflinePowerShellGetDeploy/0.1.1
-["NuGet.Server"]: /nuget/hosting-packages/nuget-server
-[NuGet.exe]: /nuget/tools/nuget-exe-cli-reference
+[Nuget.Server]: /nuget/hosting-packages/nuget-server
+[nuget.exe]: /nuget/tools/nuget-exe-cli-reference

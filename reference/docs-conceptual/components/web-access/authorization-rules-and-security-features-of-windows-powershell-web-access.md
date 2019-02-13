@@ -2,18 +2,18 @@
 ms.date: 06/27/2017
 keywords: powershell,cmdlet
 title: Autorisierungsregeln und Sicherheitsfeatures von Windows PowerShell Web Access
-ms.openlocfilehash: 95c61d3a0431cda9dee738d1c9f5ec843c1209f3
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: c426b8cfb10829241ba244a5d840c91e1de9f66e
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401589"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55678562"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Autorisierungsregeln und Sicherheitsfeatures von Windows PowerShell Web Access
 
 Aktualisiert: 24. Juni 2013
 
-Gilt für: Windows Server 2012 R2, WindowsServer 2012
+Gilt für: Windows Server 2012 R2, Windows Server 2012
 
 Windows PowerShell Web Access in Windows Server 2012 R2 und in Windows Server 2012 verfügt über ein restriktives Sicherheitsmodell. Benutzern muss explizit der Zugriff gewährt werden, bevor sie sich am Windows PowerShell Web Access-Gateway anmelden und die webbasierte Windows PowerShell-Konsole verwenden können.
 
@@ -156,7 +156,7 @@ Bei jeder Windows PowerShell-Sitzung wird eine Sitzungskonfiguration verwendet. 
 - Ein Administrator erstellt einen Endpunkt namens **PswaEndpoint** mit einem eingeschränkten Runspace. Anschließend erstellt der Administrator die Regel `*,*,PswaEndpoint` und verteilt den Endpunkt an andere Computer. Mithilfe der Regel können alle Benutzer auf alle Computer mit dem Endpunkt **PswaEndpoint** zugreifen.
   Falls es sich um die einzige Autorisierungsregel handelt, die in dem Regelsatz definiert ist, ist der Zugriff auf Computer ohne diesen Endpunkt nicht möglich.
 
-- Der Administrator hat einen Endpunkt mit dem eingeschränkten Runspace **PswaEndpoint** erstellt und möchte den Zugriff auf bestimmte Benutzer beschränken. Der Administrator erstellt eine Gruppe von Benutzern aufgerufen **Level1Support**, und definiert die folgende Regel: **Level1Support,\*, PswaEndpoint**. Mit der Regel wird allen Benutzern der Gruppe **Level1Support** Zugriff auf alle Computer mit der Konfiguration **PswaEndpoint** gewährt. Ebenso ist es möglich, den Zugriff auf eine bestimmte Gruppe von Computern zu beschränken.
+- Der Administrator hat einen Endpunkt mit dem eingeschränkten Runspace **PswaEndpoint** erstellt und möchte den Zugriff auf bestimmte Benutzer beschränken. Der Administrator erstellt eine Gruppe von Benutzern aufgerufen **Level1Support**, und definiert die folgende Regel: **Level1Support,\*,PswaEndpoint**. Mit der Regel wird allen Benutzern der Gruppe **Level1Support** Zugriff auf alle Computer mit der Konfiguration **PswaEndpoint** gewährt. Ebenso ist es möglich, den Zugriff auf eine bestimmte Gruppe von Computern zu beschränken.
 
 - Einige Administratoren gewähren bestimmten Benutzern mehr Zugriff als anderen. Beispielsweise erstellt ein Administrator die beiden Benutzergruppen **Admins** und **BasicSupport**. Ferner erstellt der Administrator einen Endpunkt mit dem eingeschränkten Runspace **PswaEndpoint**, und definiert die folgenden zwei Regeln: **Administratoren,\*,\***  und **BasicSupport,\*, PswaEndpoint**. Mit der ersten Regel wird allen Benutzern der Gruppe **Admin** Zugriff auf alle Computer gewährt, und mit der zweiten Regel wird allen Benutzern der Gruppe **BasicSupport** nur Zugriff auf Computer mit **PswaEndpoint** gewährt.
 
@@ -186,13 +186,13 @@ Im obigen Szenario richtet Windows PowerShell Web Access eine Verbindung mit dem
 
 ### <a name="using-a-single-set-of-authorization-rules-for-multiple-sites"></a>Verwenden eines einzigen Satzes mit Autorisierungsregeln für mehrere Websites
 
-Autorisierungsregeln werden in einer XML-Datei gespeichert. Standardmäßig lautet der Pfadname der XML-Datei `%windir%\Web\PowershellWebAccess\data\AuthorizationRules.xml`.
+Autorisierungsregeln werden in einer XML-Datei gespeichert. Standardmäßig lautet der Pfadname der XML-Datei `$env:windir\Web\PowershellWebAccess\data\AuthorizationRules.xml`.
 
-Der Pfad zur XML-Datei mit den Autorisierungsregeln ist in der Datei **powwa.config** gespeichert, die im Ordner `%windir%\Web\PowershellWebAccess\data` enthalten ist. Der Administrator kann den Verweis auf den Standardpfad in **powwa.config** flexibel ändern, falls Präferenzen oder Anforderungen dies erfordern. Da der Administrator den Speicherort der Datei ändern kann, können mehrere Windows PowerShell Web Access-Gateways dieselben Autorisierungsregeln verwenden, falls eine Konfiguration dieser Art gewünscht wird.
+Der Pfad zur XML-Datei mit den Autorisierungsregeln ist in der Datei **powwa.config** gespeichert, die im Ordner `$env:windir\Web\PowershellWebAccess\data` enthalten ist. Der Administrator kann den Verweis auf den Standardpfad in **powwa.config** flexibel ändern, falls Präferenzen oder Anforderungen dies erfordern. Da der Administrator den Speicherort der Datei ändern kann, können mehrere Windows PowerShell Web Access-Gateways dieselben Autorisierungsregeln verwenden, falls eine Konfiguration dieser Art gewünscht wird.
 
 ## <a name="session-management"></a>Sitzungsverwaltung
 
-Standardmäßig begrenzt Windows PowerShell Web Access einen Benutzer auf drei zeitgleiche Sitzungen. Sie können die Datei **web.config** der Webanwendung im IIS-Manager bearbeiten, um eine andere Anzahl von Sitzungen pro Benutzer zu unterstützen. Der Pfad zur Datei **web.config** lautet `$Env:Windir\Web\PowerShellWebAccess\wwwroot\Web.config`.
+Standardmäßig begrenzt Windows PowerShell Web Access einen Benutzer auf drei zeitgleiche Sitzungen. Sie können die Datei **web.config** der Webanwendung im IIS-Manager bearbeiten, um eine andere Anzahl von Sitzungen pro Benutzer zu unterstützen. Der Pfad zur Datei **web.config** lautet `$env:windir\Web\PowerShellWebAccess\wwwroot\Web.config`.
 
 Standardmäßig ist der IIS-Webserver so konfiguriert, dass der Anwendungspool neu gestartet wird, wenn Einstellungen bearbeitet werden. Beispielsweise wird der Anwendungspool neu gestartet, wenn Änderungen an der Datei **web.config** vorgenommen werden. Da von **Windows PowerShell Web Access** In-Memory-Sitzungszustände verwendet werden, werden Sitzungen von bei **Windows PowerShell Web Access**-Sitzungen angemeldeten Benutzer getrennt, wenn der Anwendungspool neu gestartet wird.
 

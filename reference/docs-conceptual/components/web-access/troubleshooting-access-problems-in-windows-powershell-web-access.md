@@ -2,18 +2,18 @@
 ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: Behandeln von Zugriffsproblemen in Windows PowerShell Web Access
-ms.openlocfilehash: c9b98c7a1685679eb88b718de0351154cb84e92e
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 314e4a8098988111739705d55b68ff5ed2f5eff3
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401412"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55679165"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Behandeln von Zugriffsproblemen in Windows PowerShell Web Access
 
 Aktualisiert: 24. Juni 2013 (überarbeitet: 23. August 2017)
 
-Gilt für: Windows Server 2012 R2, WindowsServer 2012
+Gilt für: Windows Server 2012 R2, Windows Server 2012
 
 Im folgenden Abschnitt sind einige allgemeine Probleme aufgeführt, die auftreten können, wenn versucht wird, über Windows PowerShell Web Access eine Verbindung mit einem Remotecomputer herzustellen. Außerdem enthält die Tabelle Vorschläge zur Behebung der Probleme.
 
@@ -139,4 +139,4 @@ Weitere Informationen zu IPv6-Adressen finden Sie unter [Funktionsweise von IPv6
 
 - [Authorization Rules and Security Features of Windows PowerShell Web Access (Autorisierungsregeln und Sicherheitsfeatures von Windows PowerShell Web Access)](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)
 - [Use the Web-based Windows PowerShell Console (Verwenden der webbasierten Windows PowerShell-Konsole)](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx)
-- [about_Remote_Requirements](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_remote_requirements)
+- [about_Remote_Requirements](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements)

@@ -3,11 +3,11 @@ ms.date: 10/30/2018
 keywords: dsc,powershell,configuration,setup
 title: Problembehandlung bei DSC
 ms.openlocfilehash: e1f36bbc97569ac0d65f003ee08f52ec174a4520
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401703"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55678071"
 ---
 # <a name="troubleshooting-dsc"></a>Problembehandlung bei DSC
 

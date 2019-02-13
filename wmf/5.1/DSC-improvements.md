@@ -4,11 +4,11 @@ ms.topic: conceptual
 keywords: wmf,powershell,setup
 title: DSC-Verbesserungen in WMF 5.1
 ms.openlocfilehash: 92f82d62550e105a187fd7c0c58b49367c646a7e
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
-ms.translationtype: HT
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45523038"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55677576"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>Verbesserungen an DSC (Desired State Configuration) in WMF 5.1
 
@@ -206,12 +206,12 @@ Diese Funktion verhindert, dass Knoten Konfigurationen oder Moduldateien ausfüh
 ### <a name="how-to-sign-configuration-and-module"></a>So signieren Sie Konfigurationen und Module
 
 ***
-* Konfigurationsdateien (MOF-Dateien): Das vorhandene PowerShell-Cmdlet [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) wurde erweitert und unterstützt nun das Signieren von MOF-Dateien.
-* Module: Module werden signiert, indem der entsprechende Modulkatalog wie in den nachfolgenden Schritten erläutert signiert wird:
+* Konfigurationsdateien (. MOF-Dateien): Das vorhandene PowerShell-Cmdlet [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) wurde erweitert und unterstützt Signieren von MOF-Dateien.
+* Module Signieren von Modulen erfolgt durch das Signieren der entsprechende modulkatalog wie in die folgenden Schritte aus:
     1. Erstellen einer Katalogdatei: Eine Katalogdatei enthält eine Sammlung kryptografischer Hashes oder Fingerabdrücke.
        Jeder Fingerabdruck entspricht einer Datei, die im Modul enthalten ist.
        Mit dem neu hinzugefügten Cmdlet [New-FileCatalog](https://technet.microsoft.com/library/cc732148.aspx) können Benutzer eine Katalogdatei für ihr Modul erstellen.
-    2. Signieren der Katalogdatei: Mit [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) wird die Katalogdatei signiert.
+    2. Signieren der Katalogdatei: Verwendung [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) auf die Katalogdatei signiert.
     3. Fügen Sie die Katalogdatei in den Modulordner ein.
 Gemäß der Konvention sollte die Modulkatalogdatei mit dem gleichen Namen wie das Modul im Modulordner abgelegt werden.
 

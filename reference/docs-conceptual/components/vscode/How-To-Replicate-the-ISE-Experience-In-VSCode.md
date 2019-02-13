@@ -3,11 +3,11 @@ title: Replizieren der ISE-Benutzeroberfläche in Visual Studio Code
 description: Replizieren der ISE-Benutzeroberfläche in Visual Studio Code
 ms.date: 08/06/2018
 ms.openlocfilehash: 983da850c13d72bcdc7b2d33970c6e9e06b3d869
-ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54012482"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55678847"
 ---
 # <a name="how-to-replicate-the-ise-experience-in-visual-studio-code"></a>Replizieren der ISE-Benutzeroberfläche in Visual Studio Code
 
@@ -19,7 +19,7 @@ Dieses Dokument versucht, listeneinstellungen, die Sie in Visual Studio Code, um
 
 | Funktion                              | ISE-Bindung                  | VSCode-Bindung                              |
 | ----------------                      | -----------                  | --------------                              |
-| Unterbrechen und das Unterbrechen des Debuggers          | <kbd>STRG</kbd>+<kbd>B</kbd> | <kbd>F6</kbd>                               |
+| Unterbrechen und das Unterbrechen des Debuggers          | <kbd>Ctrl</kbd>+<kbd>B</kbd> | <kbd>F6</kbd>                               |
 | Führen Sie die aktuelle Zeile/hervorgehobener text | <kbd>F8</kbd>                | <kbd>F8</kbd>                               |
 | Liste verfügbaren Ausschnitte               | <kbd>STRG</kbd>+<kbd>J</kbd> | <kbd>STRG</kbd>+<kbd>Alt</kbd>+<kbd>J</kbd> |
 

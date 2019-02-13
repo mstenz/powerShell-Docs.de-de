@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Schreiben einer benutzerdefinierten DSC-Ressource mit PowerShell-Klassen
-ms.openlocfilehash: 0759685b04688f574d72b62a15833832ad19e816
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 34356f65bcb83153e7395a16d2a4a5cf2e507332
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401667"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55679249"
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>Schreiben einer benutzerdefinierten DSC-Ressource mit PowerShell-Klassen
 
-> Gilt für: Windows PowerShell 5.0
+> Gilt für: Windows PowerShell 5.0
 
 Mit der Einführung der PowerShell-Klassen in Windows PowerShell 5.0 können Sie jetzt eine DSC-Ressourcen durch Erstellen einer Klasse definieren. Die Klasse definiert das Schema und die Implementierung der Ressource, daher besteht keine Notwendigkeit, eine separate MOF-Datei zu erstellen. Die Ordnerstruktur für eine klassenbasierte Ressource ist auch einfacher, da kein **DSCResources**-Ordner erforderlich ist.
 
@@ -30,8 +30,8 @@ Um eine benutzerdefinierte DSC-Ressource mit einer PowerShell-Klasse zu implemen
 ```
 $env:ProgramFiles\WindowsPowerShell\Modules (folder)
     |- MyDscResource (folder)
-        |- MyDscResource.psm1
-           MyDscResource.psd1
+        MyDscResource.psm1
+        MyDscResource.psd1
 ```
 
 ## <a name="create-the-class"></a>Erstellen einer Klasse
@@ -86,7 +86,6 @@ Die Methoden **Get()**, **Set()** und **Test()** werden analog zu den Funktionen
 Dieser Code umfasst auch die Funktion „CopyFile()“, eine Hilfsfunktion, die die Datei von **$SourcePath** nach **$Path** kopiert.
 
 ```powershell
-
     <#
         This method is equivalent of the Set-TargetResource script function.
         It sets the resource to the desired state.
@@ -217,6 +216,7 @@ Dieser Code umfasst auch die Funktion „CopyFile()“, eine Hilfsfunktion, die 
 ```
 
 ### <a name="the-complete-file"></a>Die vollständige Datei
+
 Die vollständige Klassendatei folgt.
 
 ```powershell
@@ -414,7 +414,6 @@ class FileResource
 } # This module defines a class for a DSC "FileResource" provider.
 ```
 
-
 ## <a name="create-a-manifest"></a>Erstellen eines Manifests
 
 Um eine klassenbasierte Ressource für die DSC-Engine verfügbar zu machen, müssen Sie eine **DscResourcesToExport**-Anweisung zur Manifestdatei hinzufügen, die die Engine anweist, die Ressource zu exportieren. Unser Manifest sieht folgendermaßen aus:
@@ -497,6 +496,36 @@ class FileResource {
 }
 ```
 
+### <a name="declaring-multiple-class-resources-in-a-module"></a>Deklarieren mehrere Ressourcen der Klasse in einem Modul
+
+Ein Modul kann mehrere klassenbasierte DSC-Ressourcen zu definieren. Sie können die Ordnerstruktur auf folgende Weise erstellen:
+
+1. Definieren Sie die erste Ressource in der "<ModuleName>. psm1" Datei- und nachfolgenden Ressourcen, die unter der **DSCResources** Ordner.
+
+   ```
+   $env:ProgramFiles\WindowsPowerShell\Modules (folder)
+        |- MyDscResource (folder)
+           |- MyDscResource.psm1
+              MyDscResource.psd1
+        |- DSCResources
+           |- SecondResource.psm1
+   ```
+
+2. Definieren Sie alle Ressourcen unter der **DSCResources** Ordner.
+
+   ```
+   $env:ProgramFiles\WindowsPowerShell\Modules (folder)
+        |- MyDscResource (folder)
+           |- MyDscResource.psm1
+              MyDscResource.psd1
+        |- DSCResources
+           |- FirstResource.psm1
+              SecondResource.psm1
+   ```
+
+> [!NOTE]
+> Fügen Sie in den obigen Beispielen keine PSM1-Dateien in die **DSCResources** auf die **"nestedmodules"** Schlüssel in der PSD1-Datei.
+
 ### <a name="access-the-user-context"></a>Zugriff auf den Benutzerkontext
 
 Um aus einer benutzerdefinierten Ressource auf den Benutzerkontext zuzugreifen, können Sie die automatische Variable `$global:PsDscContext` verwenden.
@@ -510,5 +539,5 @@ if (PsDscContext.RunAsUser) {
 ```
 
 ## <a name="see-also"></a>Weitere Informationen
-### <a name="concepts"></a>Konzepte
+
 [Erstellen von benutzerdefinierten Windows PowerShell DSC-Ressourcen](authoringResource.md)

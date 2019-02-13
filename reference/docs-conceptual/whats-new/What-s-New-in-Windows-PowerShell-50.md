@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Neuerungen in Windows PowerShell 5.0
-ms.openlocfilehash: 9bd18b37b53890713faeeabc634876e5f48725da
-ms.sourcegitcommit: 7ed6ff9a3ce0b8b485d12dc2f5107c23d4b6e68b
+ms.openlocfilehash: 06088e4a974ed4fb2a245fb9acfa780710a8ccc4
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52978894"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55679387"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Neuerungen in Windows PowerShell 5.0
 Windows PowerShell 5.0 bietet wichtige neue Features, die die Verwendungsmöglichkeiten erweitern, die Benutzerfreundlichkeit verbessern und Ihnen ermöglichen, die Steuerung und Verwaltung von Windows-basierten Umgebungen leichter und umfassender zu bewältigen.
@@ -38,7 +38,7 @@ Viele Updates und Verbesserungen für Windows PowerShell DSC (Desired State Conf
   - [New-DscChecksum](https://technet.microsoft.com/library/dn521622.aspx) unterstützt jetzt UNC-Pfade.
 
 - Neue Cmdlets im Modul [PSDesiredStateConfiguration](https://technet.microsoft.com/library/dn391651(v=wps.640).aspx)
-  - [Update-DscConfiguration](https://technet.microsoft.com/library/mt143541(v=wps.630).aspx)  Führt eine Überprüfung der bedarfsgesteuerter Pull-Server an.
+  - [Update-DscConfiguration](https://technet.microsoft.com/library/mt143541(v=wps.630).aspx):  Führt eine Überprüfung der bedarfsgesteuerter Pull-Server an.
   - [Stop-DscConfiguration](https://technet.microsoft.com/library/mt143542(v=wps.630).aspx)  Beendet eine Konfiguration, die bereits ausgeführt wird.
   - [Remove-DscConfigurationDocument](https://technet.microsoft.com/library/mt143544(v=wps.630).aspx)  Ermöglicht das Entfernen von Dokumenten in verschiedenen Phasen (Ausstehend, vorherige oder aktuelle).
 
@@ -65,7 +65,7 @@ Viele Updates und Verbesserungen für Windows PowerShell DSC (Desired State Conf
 - Verbesserungen bei der Flexibilität
   - Die Ressource „LocalConfigurationManager“ hat die neue Eigenschaft **ActionAfterReboot**.
     - ContinueConfiguration (Standardwert): Setzt eine Konfiguration automatisch fort, nachdem ein Zielknoten neu gestartet wurde.
-    - StopConfiguration Eine Konfiguration nicht automatisch fortgesetzt, nachdem ein Knoten neu gestartet wurde.
+    - StopConfiguration: Eine Konfiguration nicht automatisch fortgesetzt, nachdem ein Knoten neu gestartet wurde.
   - Eine Konsistenzprüfung kann nun häufiger als ein Pullvorgang erfolgen oder umgekehrt.
   - Unterstützung der versionsverwaltung:  DSC kann nun ein Dokument, das generiert wurde auf einem neueren Client erkennen (in enthalten [WMF 5.0](https://aka.ms/wmf5download)).
 
@@ -140,7 +140,8 @@ Viele Updates und Verbesserungen für Windows PowerShell DSC (Desired State Conf
 - Der „FullyQualifiedName“-Parameter wurde den Cmdlets „Import-Module“ und „Remove-Module“ hinzugefügt, um die Speicherung mehrerer Versionen eines einzelnen Moduls zu unterstützen.
 - „Save-Help“, „Update-Help“, „Import-PSSession“, „Export-PSSession“ und „Get-Command“ haben den neuen Parameter „FullyQualifiedModule“ des Typs „ModuleSpecification“. Fügen Sie diesen Parameter hinzu, um ein Modul mit seinem vollqualifizierten Namen anzugeben.
 - Der Wert von **$PSVersionTable.PSVersion** wurde auf 5.0 aktualisiert.
-
+- WMF 5.0 (PowerShell 5.0) bietet die **Pester** Modul.  Pester ist ein Komponententest-Framework für PowerShell. Es bietet einige einfache zu bedienende Schlüsselwörter, mit denen Sie die Tests für Ihre Skripts zu erstellen. 
+ 
 ### <a name="new-features-in-windows-powershell-desired-state-configuration"></a>Neue Features in Windows PowerShell DSC
 
 - Verbesserungen der Windows PowerShell-Sprache ermöglichen Ihnen das Definieren von Windows PowerShell-DSC-Ressourcen mithilfe von Klassen. Import-DscResource ist jetzt ein echtes dynamisches Schlüsselwort. Windows PowerShell analysiert das Stammmodul des angegebenen Moduls und sucht Klassen, die das DscResource-Attribut enthalten. Sie können jetzt Klassen verwenden, um DSC-Ressourcen zu definieren, bei denen weder eine MOF-Datei noch ein Unterordner des Typs „DSCResource“ im Modulordner erforderlich ist. Eine Windows PowerShell-Moduldatei kann mehrere DSC-Ressourcenklassen enthalten.
@@ -177,7 +178,7 @@ Viele Updates und Verbesserungen für Windows PowerShell DSC (Desired State Conf
 
 ### <a name="new-features-in-windows-powershell-ise"></a>Neue Features in der Windows PowerShell ISE
 
-- Sie können jetzt Windows PowerShell-Remoteskripts und Dateien in einer lokalen Kopie der Windows PowerShell ISE bearbeiten, indem Sie „Enter-PSSession“ ausführen, um eine Remotesitzung auf dem Computer zu starten, auf dem die Dateien gespeichert sind, die Sie bearbeiten möchten, und dann **PSEdit<path and file name on the remote computer>** ausführen. Dieses Feature erleichtert die Bearbeitung von Windows PowerShell-Dateien, für die Server Core-Installationsoption von Windows Server gespeichert sind, bei der Windows PowerShell-ISE nicht ausgeführt werden kann.
+- Sie können jetzt die Windows PowerShell-Remoteskripts und Dateien in eine lokale Kopie des Windows PowerShell ISE bearbeiten, indem ausführen Enter-PSSession, um eine Remotesitzung auf dem Computer zu starten, die die Dateien gespeichert sind, die Sie bearbeiten möchten, und klicken Sie dann **PSEdit \<Pfad und Dateinamen ein, auf dem Remotecomputer\>**. Dieses Feature erleichtert die Bearbeitung von Windows PowerShell-Dateien, für die Server Core-Installationsoption von Windows Server gespeichert sind, bei der Windows PowerShell-ISE nicht ausgeführt werden kann.
 - Das Cmdlet „Start-Transcript“ wird jetzt in der Windows PowerShell-ISE unterstützt.
 - Sie können Remoteskripts nun in der Windows PowerShell-ISE debuggen.
 - Der neue Menübefehl **Alle unterbrechen** (STRG+B) unterbricht den Debugger bei lokal und remote ausgeführten Skripts.
@@ -221,7 +222,7 @@ Windows PowerShell 4.0 bietet die folgenden neuen Features.
 - Der **Passthru**-Parameter wurde den Cmdlets **Enable-JobTrigger** und **Disable-JobTrigger** hinzugefügt. Der „Passthru“-Parameter zeigt alle Objekte an, die durch Ihren Befehl erstellt oder geändert wurden.
 - Die Parameternamen für das Angeben einer Arbeitsgruppe in den Cmdlets **Add-Computer** und **Remove-Computer** sind nun konsistent. Beide Cmdlets verwenden nun den Parameter **WorkgroupName**.
 - Der neue allgemeine Parameter **PipelineVariable** wurde hinzugefügt. Mit „PipelineVariable“ können Sie die Ergebnisse eines weitergeleiteten Befehls (oder Teil eines weitergeleiteten Befehls) als Variable speichern, die über den Rest der Pipeline übergeben werden kann.
-- Das Filtern einer Sammlung mithilfe einer Methodensyntax wird nun unterstützt. Dies bedeutet, Sie können eine Objektsammlung mithilfe einer vereinfachten Syntax filtern, ähnlich wie bei „Where()“ oder „Where-Object“, formatiert als Methodenaufruf. Im Folgenden finden Sie ein Beispiel: (Get-Process).where({$_.Name -match 'powershell'})
+- Das Filtern einer Sammlung mithilfe einer Methodensyntax wird nun unterstützt. Dies bedeutet, Sie können eine Objektsammlung mithilfe einer vereinfachten Syntax filtern, ähnlich wie bei „Where()“ oder „Where-Object“, formatiert als Methodenaufruf. Es folgt ein Beispiel: (Get-Process).where({$_.Name -match 'powershell'})
 - Das **Get-Process**-Cmdlet hat den neuen Switch-Parameter **IncludeUserName**.
 - Das neue Cmdlet **Get-FileHash** wurde hinzugefügt, das für eine angegebene Datei einen Dateihash in einem von mehreren Formaten zurückgibt.
 - Wenn in Windows PowerShell 4.0 ein Modul den **DefaultCommandPrefix**-Schlüssel in seinem Manifest verwendet oder der Benutzer ein Modul mit dem **Prefix**-Parameter importiert, zeigt die **ExportedCommands**-Eigenschaft des Moduls die Befehle im Modul mit dem Präfix an. Wenn Sie die Befehle mithilfe der qualifizierten Modulsyntax „ModuleName\\CommandName“ verwenden, müssen die Befehlsnamen das Präfix enthalten.
@@ -315,7 +316,7 @@ Windows PowerShell 3.0 bietet die folgenden neuen Features.
 
 ### <a name="windows-powershell-workflow"></a>Windows PowerShell-Workflow
 
-Durch Windows PowerShell Workflow kann Windows PowerShell auf die Leistungsfähigkeit von Windows Workflow Foundation zurückgreifen. Sie können Workflows in XAML oder in der Windows PowerShell-Sprache schreiben und sie genau wie ein Cmdlet ausführen. Das Cmdlet [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) ruft Workflowbefehle ab, das Cmdlet [Get-Help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) ruft Hilfe für Workflows ab.
+Durch Windows PowerShell Workflow kann Windows PowerShell auf die Leistungsfähigkeit von Windows Workflow Foundation zurückgreifen. Sie können Workflows in XAML oder in der Windows PowerShell-Sprache schreiben und sie genau wie ein Cmdlet ausführen. Die [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) -Cmdlet ruft Workflowbefehle ab und [Get-Help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) -Cmdlet ruft Hilfe für Workflows ab.
 
 Workflows sind Sequenzen von Verwaltungsaktivitäten mehrerer Computer, die lange ausgeführt werden, wiederholbar, parallelisierbar, unterbrechbar und neu startbar sind. Workflows können durch eine beabsichtigte oder unbeabsichtigte Unterbrechung fortgesetzt werden, z. B. nach einem Netzwerkausfall, einem Neustart von Windows oder einem Stromausfall.
 

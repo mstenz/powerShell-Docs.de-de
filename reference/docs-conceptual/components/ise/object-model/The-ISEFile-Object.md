@@ -4,11 +4,11 @@ keywords: powershell,cmdlet
 title: Das ISEFile-Objekt
 ms.assetid: 1c6d91f3-c556-42a2-a017-79b6b7b4b7db
 ms.openlocfilehash: 24549720b8bc35435882533b0eb138de432ede65
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401772"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55678149"
 ---
 # <a name="the-isefile-object"></a>Das ISEFile-Objekt
 

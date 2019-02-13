@@ -1,16 +1,16 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: a6366e18b4b6478bfab89475bc6975e6491da9f7
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
-ms.translationtype: HT
+ms.openlocfilehash: 07ebcfd37cc3e1f38a9434ffa8d86f479b89ee0f
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34482861"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55678310"
 ---
 # <a name="windows-management-framework-wmf-50-rtm-release-notes-overview"></a>Windows Management Framework (WMF) 5.0 RTM – Anmerkungen zu dieser Version – Übersicht
 
-**WMF 5.0 wird von WMF 5.1 ersetzt. Benutzer mit WMF 5.0 müssen ein Upgrade auf WMF 5.1 durchführen, um weiterhin Support zu erhalten. Führen Sie dazu die [Installationsanweisungen zu WMF 5.1](../5.1/install-configure.md)** durch.
+**WMF 5.0 wird von WMF 5.1 abgelöst. Benutzer mit WMF 5.0 müssen ein Upgrade auf WMF 5.1 durchführen, um weiterhin Support zu erhalten. Führen Sie dazu die [Installationsanweisungen zu WMF 5.1](../5.1/install-configure.md)** durch.
 
 Die RTM-Version von Windows Management Framework 5.0 (WMF) bietet Funktionen, die im Vergleich mit WMF 4.0 aktualisiert wurden. WMF 5.0 RTM kann nur unter **Windows Server 2012 R2**, **Windows Server 2012**, **Windows Server 2008 R2**, **Windows 8.1** und **Windows 7 SP1** installiert werden und bietet die folgenden neuen und aktualisierten Features:
 

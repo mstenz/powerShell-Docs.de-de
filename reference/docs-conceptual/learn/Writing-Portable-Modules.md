@@ -3,11 +3,11 @@ ms.date: 12/14/2018
 keywords: powershell,cmdlet
 title: Schreiben von portablen Modulen
 ms.openlocfilehash: 38a93b5b030d58784b91292e2cd060b3a2c19a00
-ms.sourcegitcommit: d396d0e4cfe3d279f399c17e7337380a31d373ac
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53747720"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55679210"
 ---
 # <a name="portable-modules"></a>Portable Module
 
@@ -178,7 +178,7 @@ Allerdings nicht erforderlich, um auf .NET Standard für ein Modul mit Windows P
 
 Die [PowerShell-Standard][] -Bibliothek ist eine formale Spezifikation von PowerShell-APIs in allen PowerShell-Versionen, die größer als oder gleich der Version dieses Standards zur Verfügung.
 
-Z. B. [Standard für PowerShell 5.1][] ist kompatibel mit sowohl PowerShell Core 6.0 als auch Windows PowerShell 5.1 oder höher.
+Z. B. [PowerShell Standard 5.1][] ist kompatibel mit sowohl PowerShell Core 6.0 als auch Windows PowerShell 5.1 oder höher.
 
 Es wird empfohlen, dass Sie Kompilieren des Moduls mit PowerShell-Standard-Bibliothek. Die Bibliothek wird sichergestellt, dass die APIs in Windows PowerShell und PowerShell Core 6 implementiert und verfügbar sind.
 PowerShell-Standard ist immer leitet-kompatibel sein soll. Ein Modul mithilfe von PowerShell 5.1 für Standard-Bibliothek erstellt werden immer für zukünftige Versionen von PowerShell.
@@ -202,7 +202,7 @@ Im modulmanifest den `PrivateData` Eigenschaft verfügt über eine `PSData` Unte
 | Tag               | Beschreibung                                |
 |-------------------|--------------------------------------------|
 | PSEdition_Core    | Mit PowerShell Core 6 kompatibel          |
-| "Psedition_desktop" | Kompatibel mit Windows PowerShell         |
+| PSEdition_Desktop | Kompatibel mit Windows PowerShell         |
 | Windows           | Kompatibel mit Windows                    |
 | Linux             | Kompatibel mit Linux (keine spezifischen Distribution) |
 | macOS             | Kompatibel mit macOS                      |
@@ -262,7 +262,7 @@ Beispiel:
 [.NET CLI]: /dotnet/core/tools/?tabs=netcore2x
 [.NET Standard]: /dotnet/standard/net-standard
 [PowerShell-Standard]: https://github.com/PowerShell/PowerShellStandard
-[Standard für PowerShell 5.1]: https://www.nuget.org/packages/PowerShellStandard.Library/5.1.0
+[PowerShell Standard 5.1]: https://www.nuget.org/packages/PowerShellStandard.Library/5.1.0
 [PowerShell Gallery]: https://www.powershellgallery.com
 [.NET Portability Analyzer]: https://github.com/Microsoft/dotnet-apiport
 [CompatiblePSEditions]: /powershell/gallery/concepts/module-psedition-support

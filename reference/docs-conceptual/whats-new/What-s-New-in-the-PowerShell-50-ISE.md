@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Neuerungen bei der Windows PowerShell 5.0 ISE
 ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
-ms.openlocfilehash: f05e3f3f95c8ceec6e843b8a1c79e6f092e1b87b
-ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.openlocfilehash: 2d953bc4553de7720c590304d29750b84a1ef3b2
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52320583"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55679084"
 ---
 # <a name="what39s-new-in-the-windows-powershell-ise"></a>Neuerungen bei der Windows PowerShell ISE
 In diesem Thema werden die neuen und aktualisierten Features vorgestellt, die in Versionen von Windows PowerShell Integrated Scripting Environment (ISE) eingeführt wurden.
@@ -147,11 +147,11 @@ Die Windows PowerShell ISE 2.0 verfügt über getrennte Befehls- und Ausgabebere
 
 Wenn Sie die Windows PowerShell ISE über die Befehlszeile starten (indem Sie **powershell_ise.exe** eingeben), können Sie die folgenden neuen Befehlszeilenschalter hinzufügen.
 
-- *-NoProfile*: Startet die Windows PowerShell ISE ohne Ausführung von **$profile**
+- *-NoProfile*: Startet Windows PowerShell ISE ohne Ausführung **$profile**
 
 - *-Help*: Zeigt ein Hilfefenster an
 
-- *-mta*: Startet die Windows PowerShell ISE im Multithread-Apartment-Modus Der Standardbetriebsmodus der Windows PowerShell ISE ist der Singlethread-Apartment-Modus bzw. *-sta*.
+- *-mta*: Startet Windows PowerShell ISE im Multithread-Apartment-Modus. Der Standardbetriebsmodus der Windows PowerShell ISE ist der Singlethread-Apartment-Modus bzw. *-sta*.
 
 **Welchen Nutzen bietet diese Änderung?**
 

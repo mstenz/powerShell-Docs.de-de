@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: MSFT_DSCLocalConfigurationManager-Klasse
 ms.openlocfilehash: 7f6aaf209601e99b0120407eb301d32fcfda9eb8
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047359"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55678260"
 ---
 # <a name="msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager-Klasse
 
@@ -58,6 +58,6 @@ Die **MSFT_DSCLocalConfigurationManager**-Klasse enthält diese Methoden.
 
 ## <a name="requirements"></a>Anforderungen
 
-MOF** DscCore.mof
+**MOF:** DscCore.mof
 
-**Namespace: Root\Microsoft\Windows\DesiredStateConfiguration
+**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
