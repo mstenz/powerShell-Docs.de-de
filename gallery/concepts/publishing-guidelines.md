@@ -4,12 +4,12 @@ contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 description: Richtlinien für Herausgeber
 title: Veröffentlichungsrichtlinien und Best Practices für den PowerShell-Katalog
-ms.openlocfilehash: a996a820d6bd52e796a41659c6f468662dbff0f4
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.openlocfilehash: 64c3d607b13dce64f70f138fdee849e5baaf85df
+ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
 ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655394"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56265568"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>Veröffentlichungsrichtlinien und Best Practices für den PowerShell-Katalog
 
@@ -93,8 +93,8 @@ Es ist wichtig, Benutzern zu antworten, die konstruktives Feedback geben, da die
 
 Im PowerShell-Katalog sind zwei Feedbackmethoden verfügbar:
 
-- Besitzer kontaktieren: Dadurch kann der Benutzer eine e-Mail an den Besitzer des Pakets zu senden. Als Paketbesitzer müssen Sie dafür Sorge tragen, dass die für PowerShell-Katalogpakete verwendete E-Mail-Adresse regelmäßig überwacht wird und gemeldete Probleme gelöst werden. Ein Nachteil dieser Methode besteht darin, dass die Kommunikation nur zwischen Benutzer und Besitzer erfolgt, sodass der Besitzer dieselbe Frage möglicherweise wiederholt beantworten muss.
-- Kommentare Am unteren Rand des Pakets ist die Seite ein Kommentarfeld.
+- Besitzer kontaktieren: Über diese Option kann ein Benutzer eine E-Mail an den oder die Paketbesitzer senden. Als Paketbesitzer müssen Sie dafür Sorge tragen, dass die für PowerShell-Katalogpakete verwendete E-Mail-Adresse regelmäßig überwacht wird und gemeldete Probleme gelöst werden. Ein Nachteil dieser Methode besteht darin, dass die Kommunikation nur zwischen Benutzer und Besitzer erfolgt, sodass der Besitzer dieselbe Frage möglicherweise wiederholt beantworten muss.
+- Kommentare: Im unteren Bereich der Paketseite befindet sich ein Kommentarfeld.
   Der Vorteil dieses Systems liegt darin, dass andere Benutzer die Kommentare und Antworten sehen können. Auf diese Weise muss eine einzelne Frage nicht wiederholt beantwortet werden.
   Paketbesitzern wird dringend empfohlen, die Kommentare für jedes Paket zu verfolgen.
 Ausführliche Informationen hierzu finden Sie unter [Bereitstellen von Feedback über soziale Netzwerke oder Kommentare](../how-to/working-with-packages/social-media-feedback.md).
@@ -140,11 +140,11 @@ Wenn Sie einen ProjectURI angeben, wird im PowerShell-Katalog links auf der Pake
 
 Verwenden Sie die folgenden Tags, um Benutzern zu zeigen, die Pakete auch mit ihrer Umgebung verwendet werden kann:
 
-- "Psedition_desktop": Pakete, die mit Windows PowerShell kompatibel sind. 
-- PSEdition_Core: Pakete, die mit Powershell Core kompatibel sind. 
-- Windows Pakete, die mit dem Windows-Betriebssystem kompatibel sind
-- Linux Pakete, die mit der Linux-Betriebssystemen kompatibel sind 
-- macOS 10.12 und höher Pakete, die mit dem Mac-Betriebssystem kompatibel sind
+- "Psedition_desktop": Pakete, die mit Windows PowerShell kompatibel sind 
+- PSEdition_Core: Pakete, die mit Powershell Core kompatibel sind 
+- Windows: Pakete, die mit dem Windows-Betriebssystem kompatibel sind
+- Linux: Pakete, die mit der Linux-Betriebssystemen kompatibel sind 
+- MacOS: Pakete, die mit dem Mac-Betriebssystem kompatibel sind
 
 ## <a name="include-tests"></a>Schließen Sie Tests ein
 
@@ -203,7 +203,7 @@ Die Version für Ihr Paket muss in den Manifestdaten enthalten sein.
 - Die Version sollte aus 3 numerischen Blöcken bestehen, die durch Punkte getrennt sind. Beispiele: 0.1.1 oder 4.11.192
 - Mit 0 beginnende Versionsnummern deuten darauf hin, dass das Paket noch nicht bereit für die Produktion ist, und die erste Nummer darf nur mit 0 beginnen, wenn dies die einzige verwendete Nummer ist.
 - Änderungen an der ersten Nummer (1.9.9999 bis 2.0.0) weisen auf wichtige Änderungen und Änderungen mit Auswirkung auf die Lauffähigkeit der Versionen hin.
-- Änderungen an der zweiten Nummer (1.01 bis 1.02) weisen auf Änderungen auf Featureebene hin, z.B. auf neue Cmdlets, die dem Modul hinzugefügt wurden.
+- Änderungen an der zweiten Nummer (1.1 bis 1.2) weisen auf Änderungen auf Featureebene hin, z.B. auf neue Cmdlets, die dem Modul hinzugefügt wurden.
 - Änderungen an der dritten Nummer weisen auf Änderungen ohne Auswirkung auf die Lauffähigkeit hin, z.B. neue Parameter, aktualisierte Beispiele oder neue Tests.
 - Beim Auflisten von Versionen sortiert PowerShell die Versionen als Zeichenfolgen, deshalb wird 1.01.0 als größer als 1.001.0 eingestuft.
 
