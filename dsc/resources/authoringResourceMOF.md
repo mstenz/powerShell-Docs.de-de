@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Schreiben einer benutzerdefinierten DSC-Ressource mit MOF
-ms.openlocfilehash: 2dcdeb49b50e23bc8b9d87293ebb8d8ec5e7b57d
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 5917e20769e750042a9855649ff5bec36ad14eb4
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401193"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55678928"
 ---
 # <a name="writing-a-custom-dsc-resource-with-mof"></a>Schreiben einer benutzerdefinierten DSC-Ressource mit MOF
 
@@ -290,3 +290,16 @@ if (PsDscContext.RunAsUser) {
     Write-Verbose "User: $PsDscContext.RunAsUser";
 }
 ```
+
+## <a name="rebooting-the-node"></a>Neustarten des Knotens
+
+Wenn die Aktionen, die Ihrem `Set-TargetResource` Funktion einen Neustart erfordern, können Sie ein globalen Kennzeichen geben, teilen Sie den LCM die Knoten neu starten. Diesen Neustart tritt unmittelbar nach dem die `Set-TargetResource` Funktion abgeschlossen ist.
+
+Innerhalb Ihrer `Set-TargetResource` funktioniert, fügen Sie die folgende Codezeile hinzu.
+
+```powershell
+# Include this line if the resource requires a system reboot.
+$global:DSCMachineStatus = 1
+```
+
+In der Reihenfolge für den LCM auf den Knoten neu starten, die **RebootNodeIfNeeded** Flag muss festgelegt werden, um `$true`. Die **ActionAfterReboot** Einstellung muss auch festgelegt werden, um **ContinueConfiguration**, dies ist die Standardeinstellung. Weitere Informationen zum Konfigurieren des LCMS finden Sie unter [Konfigurieren des lokalen Konfigurations-Managers](../managing-nodes/metaConfig.md), oder [Konfigurieren des lokalen Konfigurations-Managers (v4)](../managing-nodes/metaConfig4.md).
