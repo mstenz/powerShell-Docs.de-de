@@ -11,19 +11,18 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], property provider
 ms.assetid: a6adca44-b94b-4103-9970-a9b414355e60
 caps.latest.revision: 5
-ms.openlocfilehash: ade8fbd38e4f4a675e825b0d8850af0379c9d211
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 4ed15dabffa933dee9becf2f839887eb9108775d
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858896"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57430008"
 ---
 # <a name="creating-a-windows-powershell-property-provider"></a>Erstellen eines Windows PowerShell-Eigenschaftenanbieters
 
 Dieses Thema beschreibt, wie Sie einen Anbieter zu erstellen, der dem Benutzer ermöglicht, die die Eigenschaften von Elementen in einem Datenspeicher zu bearbeiten. Daher ist diese Art von Anbieter als ein Windows PowerShell-Eigenschaftenanbieter bezeichnet. Beispielsweise den Registrierungsanbieter vom Windows PowerShell-Handles Registrierungsschlüsselwerte als Eigenschaften der registrierungsschlüsselelements bereitgestellt. Diese Art von Anbieter muss hinzufügen, die [System.Management.Automation.Provider.Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider) Schnittstelle, um die Implementierung der .NET-Klasse.
 
 > [!NOTE]
-> Windows PowerShell bietet eine Vorlagendatei, die Sie verwenden können, um ein Windows PowerShell-Anbieter zu entwickeln. Die Datei TemplateProvider.cs steht auf der Microsoft Windows Software Development Kit für Windows Vista und .NET Framework 3.0-Laufzeitkomponenten zur Verfügung. Anweisungen zum Herunterladen, finden Sie unter [das Installieren von Windows PowerShell und das Windows PowerShell-SDK-Download](/powershell/developer/installing-the-windows-powershell-sdk).
 > Windows PowerShell bietet eine Vorlagendatei, die Sie verwenden können, um ein Windows PowerShell-Anbieter zu entwickeln. Die Datei TemplateProvider.cs steht auf der Microsoft Windows Software Development Kit für Windows Vista und .NET Framework 3.0-Laufzeitkomponenten zur Verfügung. Anweisungen zum Herunterladen, finden Sie unter [das Installieren von Windows PowerShell und das Windows PowerShell-SDK-Download](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > Die heruntergeladene Vorlage, die die  **\<PowerShell-Beispiele >** Verzeichnis. Sie sollten eine Kopie dieser Datei und verwenden die Kopie für die Erstellung eines neuen Windows PowerShell-Anbieters, entfernen alle Funktionen, die Sie nicht benötigen.
@@ -150,7 +149,6 @@ Hier ist die standardmäßige Implementierung des [System.Management.Automation.
 ## <a name="building-the-windows-powershell-provider"></a>Erstellen den Windows PowerShell-Anbieter
 
 Finden Sie unter [so registrieren die Cmdlets, Anbieter, und Hosten von Anwendungen](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
-Finden Sie unter [so registrieren die Cmdlets, Anbieter, und Hosten von Anwendungen](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
 ## <a name="see-also"></a>Weitere Informationen
 
@@ -159,9 +157,5 @@ Finden Sie unter [so registrieren die Cmdlets, Anbieter, und Hosten von Anwendun
 [Entwurf der Windows-PowerShell-Anbieter](./designing-your-windows-powershell-provider.md)
 
 [Erweitern die Objekttypen und Formatierung](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
-
-[Erweitern die Objekttypen und Formatierung](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
-
-[So registrieren die Cmdlets, Anbieter, und Hosten von Anwendungen](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [So registrieren die Cmdlets, Anbieter, und Hosten von Anwendungen](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)

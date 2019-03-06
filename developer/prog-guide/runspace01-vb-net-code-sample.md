@@ -8,16 +8,15 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 12ee5382-95ba-41c7-8291-7f69a6f63514
 caps.latest.revision: 7
-ms.openlocfilehash: fbc90a6736d841fe184b86ab143809ad23c7977a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c45e802605bf0b4fd84a8847787bcc937b7f417b
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856056"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429770"
 ---
 # <a name="runspace01-vbnet-code-sample"></a>Runspace01-Codebeispiel (VB.NET)
 
-Hier sind die Codebeispiele, für der Runspace beschrieben [erstellen eine Konsole Einzelanwendung eines angegebenen Befehls](http://msdn.microsoft.com/en-us/793a6570-a072-4799-840b-172f28ce620e). Zu diesem Zweck die Anwendung einen Runspace aufruft, und ruft dann einen Befehl auf. (Beachten Sie, dass diese Anwendung gibt keinen Runspace-Konfigurationsinformationen oder wird explizit eine Pipeline erstellt.) Der Befehl, der aufgerufen wird, wird die `Get-Process` Cmdlet.
 Hier sind die Codebeispiele, für der Runspace beschrieben [erstellen eine Konsole Einzelanwendung eines angegebenen Befehls](http://msdn.microsoft.com/en-us/793a6570-a072-4799-840b-172f28ce620e). Zu diesem Zweck die Anwendung einen Runspace aufruft, und ruft dann einen Befehl auf. (Beachten Sie, dass diese Anwendung gibt keinen Runspace-Konfigurationsinformationen oder wird explizit eine Pipeline erstellt.) Der Befehl, der aufgerufen wird, wird die `Get-Process` Cmdlet.
 
 ## <a name="code-sample"></a>Codebeispiel

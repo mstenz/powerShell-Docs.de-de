@@ -11,19 +11,18 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], item provider
 ms.assetid: a5a304ce-fc99-4a5b-a779-de7d85e031fe
 caps.latest.revision: 6
-ms.openlocfilehash: 30b4dbcd281f712bba8d8e3540d2282d527388e4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: be1446dbd2b244f4752e55c8137433edee8427b0
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862066"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429991"
 ---
 # <a name="creating-a-windows-powershell-item-provider"></a>Erstellen eines Windows PowerShell-Elementanbieters
 
 Dieses Thema beschreibt, wie Sie einen Windows PowerShell-Anbieter erstellen, der die Daten in einem Datenspeicher bearbeiten können. In diesem Thema werden die Elemente der Daten im Speicher zum Speichern von als "Elemente" der Daten bezeichnet. Daher ist ein Anbieter, der die Daten im Speicher zu bearbeiten, kann als eine Windows PowerShell-elementanbieter bezeichnet.
 
 > [!NOTE]
-> Sie können die C# Quelldatei (AccessDBSampleProvider03.cs) für diesen Anbieter, die mit dem Microsoft Windows Software Development Kit für Windows Vista und .NET Framework 3.0-Laufzeitkomponenten. Anweisungen zum Herunterladen, finden Sie unter [das Installieren von Windows PowerShell und das Windows PowerShell-SDK-Download](/powershell/developer/installing-the-windows-powershell-sdk).
 > Sie können die C# Quelldatei (AccessDBSampleProvider03.cs) für diesen Anbieter, die mit dem Microsoft Windows Software Development Kit für Windows Vista und .NET Framework 3.0-Laufzeitkomponenten. Anweisungen zum Herunterladen, finden Sie unter [das Installieren von Windows PowerShell und das Windows PowerShell-SDK-Download](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > Die heruntergeladene Quelldateien stehen in der  **\<PowerShell-Beispiele >** Verzeichnis.
@@ -88,7 +87,6 @@ Vor der Windows PowerShell-elementanbieter die Elemente im Speicher ändern kann
 
 ## <a name="checking-for-path-validity"></a>Für die Gültigkeit überprüfen
 
-Bei der Suche für ein Datenelement, stellt die Windows PowerShell-Laufzeit die bereit eines Windows PowerShell-Pfads auf den Anbieter, wie im Abschnitt "Konzepte PSPath" definiert [Funktionsweise von Windows PowerShell](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58). Ein Windows PowerShell-elementanbieter muss überprüfen, ob die syntaktische und semantische Gültigkeit jeder Pfad, der an es übergeben wird, durch die Implementierung der [System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) Methode. Diese Methode gibt `true` Wenn der Pfad gültig ist und `false` andernfalls. Beachten Sie, dass die Implementierung dieser Methode nicht das Vorhandensein des Elements unter dem Pfad, aber nur überprüft werden soll, die der Pfad syntaktisch und semantisch richtige sein.
 Bei der Suche für ein Datenelement, stellt die Windows PowerShell-Laufzeit die bereit eines Windows PowerShell-Pfads auf den Anbieter, wie im Abschnitt "Konzepte PSPath" definiert [Funktionsweise von Windows PowerShell](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58). Ein Windows PowerShell-elementanbieter muss überprüfen, ob die syntaktische und semantische Gültigkeit jeder Pfad, der an es übergeben wird, durch die Implementierung der [System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) Methode. Diese Methode gibt `true` Wenn der Pfad gültig ist und `false` andernfalls. Beachten Sie, dass die Implementierung dieser Methode nicht das Vorhandensein des Elements unter dem Pfad, aber nur überprüft werden soll, die der Pfad syntaktisch und semantisch richtige sein.
 
 Dies ist die Implementierung von der [System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) Methode für diesen Anbieter. Beachten Sie, dass diese Implementierung eine NormalizePath-Hilfsmethode zum Konvertieren alle Trennzeichen im Pfad zu einer einheitlichen aufruft.
@@ -266,11 +264,9 @@ Vollständigen Beispielcode finden Sie unter [AccessDbProviderSample03 Codebeisp
 ## <a name="defining-object-types-and-formatting"></a>Definieren von Objekttypen und Formatierung
 
 Wenn Sie einen Anbieter schreiben, ist es möglicherweise notwendig, vorhandene Objekte hinzufügen oder neue Objekte zu definieren. Abschließend erstellen Sie eine Typendatei, die Windows PowerShell verwenden können, um der Member des Objekts zu identifizieren und einer Formatdatei, die definiert, wie das Objekt angezeigt wird. Weitere Informationen finden Sie unter [Objekttypen erweitern und Formatierung](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
-Wenn Sie einen Anbieter schreiben, ist es möglicherweise notwendig, vorhandene Objekte hinzufügen oder neue Objekte zu definieren. Abschließend erstellen Sie eine Typendatei, die Windows PowerShell verwenden können, um der Member des Objekts zu identifizieren und einer Formatdatei, die definiert, wie das Objekt angezeigt wird. Weitere Informationen finden Sie unter [Objekttypen erweitern und Formatierung](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
 
 ## <a name="building-the-windows-powershell-provider"></a>Erstellen den Windows PowerShell-Anbieter
 
-Finden Sie unter [so registrieren die Cmdlets, Anbieter, und Hosten von Anwendungen](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 Finden Sie unter [so registrieren die Cmdlets, Anbieter, und Hosten von Anwendungen](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
 ## <a name="testing-the-windows-powershell-provider"></a>Testen des Windows PowerShell-Anbieters
@@ -289,16 +285,10 @@ Wenn dieser Windows PowerShell-elementanbieter mit Windows PowerShell registrier
 
 [Erweitern die Objekttypen und Formatierung](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
-[Erweitern die Objekttypen und Formatierung](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
-
-[Funktionsweise von Windows PowerShell](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
-
 [Funktionsweise von Windows PowerShell](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
 
 [Erstellen eines Containers Windows PowerShell-Anbieters](./creating-a-windows-powershell-container-provider.md)
 
 [Erstellen einen Laufwerk Windows PowerShell-Anbieter](./creating-a-windows-powershell-drive-provider.md)
-
-[So registrieren die Cmdlets, Anbieter, und Hosten von Anwendungen](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [So registrieren die Cmdlets, Anbieter, und Hosten von Anwendungen](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)

@@ -11,19 +11,18 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], content provider
 ms.assetid: 3da88ff9-c4c7-4ace-aa24-0a29c8cfa060
 caps.latest.revision: 6
-ms.openlocfilehash: 6e5d79487539d4f58922e2686f1fdba08797f305
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 5e35d2fdfa4c6bd70c1b69ca1f357ee8d8ebcdc4
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855306"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429974"
 ---
 # <a name="creating-a-windows-powershell-content-provider"></a>Erstellen eines Windows PowerShell-Inhaltsanbieters
 
 Dieses Thema beschreibt, wie Sie einen Windows PowerShell-Anbieter erstellen, der dem Benutzer ermöglicht, den Inhalt der Elemente in einem Datenspeicher zu bearbeiten. Daher ist ein Anbieter, der den Inhalt von Elementen zu bearbeiten, kann als eine Windows PowerShell-Inhaltsanbieter bezeichnet.
 
 > [!NOTE]
-> Sie können die C# Quelldatei (AccessDBSampleProvider06.cs) für diesen Anbieter, die mit dem Microsoft Windows Software Development Kit für Windows Vista und .NET Framework 3.0-Laufzeitkomponenten. Anweisungen zum Herunterladen, finden Sie unter [das Installieren von Windows PowerShell und das Windows PowerShell-SDK-Download](/powershell/developer/installing-the-windows-powershell-sdk).
 > Sie können die C# Quelldatei (AccessDBSampleProvider06.cs) für diesen Anbieter, die mit dem Microsoft Windows Software Development Kit für Windows Vista und .NET Framework 3.0-Laufzeitkomponenten. Anweisungen zum Herunterladen, finden Sie unter [das Installieren von Windows PowerShell und das Windows PowerShell-SDK-Download](/powershell/developer/installing-the-windows-powershell-sdk).
 >
 > Die heruntergeladene Quelldateien stehen in der  **\<PowerShell-Beispiele >** Verzeichnis.
@@ -233,11 +232,9 @@ Vollständigen Beispielcode finden Sie unter [AccessDbProviderSample06 Codebeisp
 ## <a name="defining-object-types-and-formatting"></a>Definieren von Objekttypen und Formatierung
 
 Wenn Sie einen Anbieter schreiben, ist es möglicherweise notwendig, vorhandene Objekte hinzufügen oder neue Objekte zu definieren. Wenn dies abgeschlossen ist, müssen Sie erstellen eine Typendatei, die Windows PowerShell verwenden können, um der Member des Objekts zu identifizieren und einer Formatdatei, die definiert, wie das Objekt angezeigt wird. Weitere Informationen finden Sie unter [Objekttypen erweitern und Formatierung](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
-Wenn Sie einen Anbieter schreiben, ist es möglicherweise notwendig, vorhandene Objekte hinzufügen oder neue Objekte zu definieren. Wenn dies abgeschlossen ist, müssen Sie erstellen eine Typendatei, die Windows PowerShell verwenden können, um der Member des Objekts zu identifizieren und einer Formatdatei, die definiert, wie das Objekt angezeigt wird. Weitere Informationen finden Sie unter [Objekttypen erweitern und Formatierung](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
 
 ## <a name="building-the-windows-powershell-provider"></a>Erstellen den Windows PowerShell-Anbieter
 
-Finden Sie unter [so registrieren die Cmdlets, Anbieter, und Hosten von Anwendungen](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 Finden Sie unter [so registrieren die Cmdlets, Anbieter, und Hosten von Anwendungen](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
 ## <a name="testing-the-windows-powershell-provider"></a>Testen der Windows PowerShell-Anbieter
@@ -285,11 +282,7 @@ Country   : USA
 
 [Erweitern die Objekttypen und Formatierung](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
-[Erweitern die Objekttypen und Formatierung](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
-
 [Implementieren eines Navigation Windows PowerShell-Anbieters](./creating-a-windows-powershell-navigation-provider.md)
-
-[So registrieren die Cmdlets, Anbieter, und Hosten von Anwendungen](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [So registrieren die Cmdlets, Anbieter, und Hosten von Anwendungen](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
