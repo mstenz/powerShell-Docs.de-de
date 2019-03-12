@@ -2,12 +2,12 @@
 title: Grundlegendes zur Dateicodierung in VSCode und PowerShell
 description: Konfigurieren Sie die in VSCode und PowerShell-dateicodierung
 ms.date: 02/28/2019
-ms.openlocfilehash: f3b133b4bee7688821a5960429e2f26b69b01e12
-ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
-ms.translationtype: HT
+ms.openlocfilehash: 9cf445ebd0c2bb2dbdf4438f02dafe3df3a5d1e2
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.translationtype: MTE95
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57251472"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429804"
 ---
 # <a name="understanding-file-encoding-in-vscode-and-powershell"></a>Grundlegendes zur Dateicodierung in VSCode und PowerShell
 
@@ -68,7 +68,7 @@ Diesem praktischen [Verweis](https://www.i18nqa.com/debug/utf8-debug.html) liste
 Die PowerShell-Erweiterung interagiert mit Skripts in eine Reihe von Möglichkeiten:
 
 1. Wenn Skripts in Visual Studio Code bearbeitet werden, werden die Inhalte von VSCode an der Erweiterung gesendet. Die [Sprachserverprotokoll][] ist es erforderlich, dass dieser Inhalt in UTF-8 übertragen wird. Aus diesem Grund ist es nicht möglich, für die Erweiterung aus, um die falsche Codierung zu erhalten.
-2. Wenn Skripts direkt in die integrierte Konsole ausgeführt werden, können sie die Datei von PowerShell direkt gelesen werden. Tf PowerShells Codierung unterscheidet sich die VSCode, etwas kann hier falsch.
+2. Wenn Skripts direkt in die integrierte Konsole ausgeführt werden, können sie die Datei von PowerShell direkt gelesen werden. Wenn sich PowerShells-Codierung von VSCode unterscheidet, kann etwas hier schief.
 3. Wenn ein Skript, das in Visual Studio Code geöffnet ist ein weiteres Skript, das nicht in Visual Studio Code geöffnet ist verweist, fragt die Erweiterung des Skripts Inhalt aus dem Dateisystem geladen. Die PowerShell-Erweiterung standardmäßig UTF-8-Codierung, verwendet jedoch [Bytereihenfolge-Marke][], oder die BOM, Erkennung, um die richtige Codierung auszuwählen.
 
 Das Problem tritt auf, wenn vorausgesetzt, die Codierung der BOM-freie Formate (z. B. [UTF-8][] ohne BOM und [Windows-1252][]).
@@ -100,7 +100,7 @@ Stücklisten sind optional, und der Einführung ist in der Linux-Welt so beliebt
 
 VSCode die standardcodierung ist UTF-8 ohne BOM.
 
-Festzulegende [VSCode Codierung des][], wechseln Sie zu den Einstellungen für VSCode (<kbd>STRG<kbd>+</kbd>,</kbd>) und legen Sie die `"files.encoding"` Einstellung:
+Festzulegende [VSCode Codierung][], wechseln Sie zu den Einstellungen für VSCode (<kbd>STRG<kbd>+</kbd>,</kbd>) und legen Sie die `"files.encoding"` Einstellung:
 
 ```json
 "files.encoding": "utf8bom"
@@ -192,7 +192,7 @@ Es ist nicht möglich, um PowerShell für eine bestimmte Eingabe-Codierung verwe
 
 ### <a name="existing-scripts"></a>Vorhandene Skripts
 
-Skripts, die bereits auf dem Dateisystem möglicherweise erneut auf die neue ausgewählte Codierung codiert werden müssen. In der unteren Leiste von Visual Studio Code sehen Sie die Bezeichnung UTF-8. Klicken Sie auf, um der Aktionsleiste öffnen, und wählen **mit Codierung speichern**. Sie können jetzt auswählen, eine neue Codierung für diese Datei. Finden Sie unter [VSCode Codierung des][] ausführliche Anleitungen.
+Skripts, die bereits auf dem Dateisystem möglicherweise erneut auf die neue ausgewählte Codierung codiert werden müssen. In der unteren Leiste von Visual Studio Code sehen Sie die Bezeichnung UTF-8. Klicken Sie auf, um der Aktionsleiste öffnen, und wählen **mit Codierung speichern**. Sie können jetzt auswählen, eine neue Codierung für diese Datei. Finden Sie unter [VSCode Codierung][] ausführliche Anleitungen.
 
 Wenn Sie mehrere Dateien erneut codieren müssen, können Sie das folgende Skript aus:
 
@@ -272,4 +272,4 @@ Es gibt einige andere nützliche Beiträge zu codieren, und konfigurieren die Co
 [Bytereihenfolge-Marke]: https://wikipedia.org/wiki/Byte_order_mark
 [UTF-16]: https://wikipedia.org/wiki/UTF-16
 [Sprachserverprotokoll]: https://microsoft.github.io/language-server-protocol/
-[VSCode Codierung des]: https://code.visualstudio.com/docs/editor/codebasics#_file-encoding-support
+[VSCode Codierung]: https://code.visualstudio.com/docs/editor/codebasics#_file-encoding-support
