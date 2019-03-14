@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a0ef5ac9-8254-4832-ace8-84b356c10f08
 caps.latest.revision: 13
-ms.openlocfilehash: 9aff23647e55e8c9c41c54e5b62cedc15fb28a2d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: ff4fe159eedc47fc69f4d783cd90d2b0e888c0d5
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857166"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794704"
 ---
 # <a name="background-jobs"></a>Hintergrundaufträge
 
@@ -21,7 +21,6 @@ Cmdlets können ihre Aktion ausführen, intern oder als ein Windows PowerShell*H
 
 ## <a name="background-jobs-child-jobs-and-the-job-repository"></a>Hintergrundaufträge, untergeordneten Aufträge und die Auftragsrepository
 
-Das Objekt, das von den Cmdlets zurückgegeben wird, die Unterstützung von Hintergrundaufträgen definiert den Auftrag. (Die [Start-Job](/powershell/module/Microsoft.PowerShell.Core/Start-Job) Cmdlet gibt auch ein Auftragsobjekt zurück.) Der Name des Auftrags und ein Bezeichner, der verwendet wird, um den Auftrag, Informationen über den Zustand und die untergeordneten Aufträge angeben, sind in dieser Definition enthalten. Der Auftrag führt keiner arbeiten. Jeden Hintergrundauftrag verfügt über mindestens einen untergeordneten Auftrag aus, da der untergeordnete Auftrag die eigentliche Arbeit ausführt. Wenn Sie ein Cmdlet ausgeführt, sodass die Arbeit als Hintergrundauftrag ausgeführt wird, das Cmdlet muss hinzufügen den Auftrag und die untergeordneten Aufträge auf einem gemeinsamen Repository, um genannte der *auftragsrepository*.
 Das Objekt, das von den Cmdlets zurückgegeben wird, die Unterstützung von Hintergrundaufträgen definiert den Auftrag. (Die [Start-Job](/powershell/module/Microsoft.PowerShell.Core/Start-Job) Cmdlet gibt auch ein Auftragsobjekt zurück.) Der Name des Auftrags und ein Bezeichner, der verwendet wird, um den Auftrag, Informationen über den Zustand und die untergeordneten Aufträge angeben, sind in dieser Definition enthalten. Der Auftrag führt keiner arbeiten. Jeden Hintergrundauftrag verfügt über mindestens einen untergeordneten Auftrag aus, da der untergeordnete Auftrag die eigentliche Arbeit ausführt. Wenn Sie ein Cmdlet ausgeführt, sodass die Arbeit als Hintergrundauftrag ausgeführt wird, das Cmdlet muss hinzufügen den Auftrag und die untergeordneten Aufträge auf einem gemeinsamen Repository, um genannte der *auftragsrepository*.
 
 Weitere Informationen zur Behandlung von Hintergrundaufträgen in der Befehlszeile finden Sie hier:

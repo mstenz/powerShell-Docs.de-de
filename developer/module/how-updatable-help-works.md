@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7674636e-a0f2-4587-bfc5-dd3e6ce5489e
 caps.latest.revision: 6
-ms.openlocfilehash: 8874cc18416937c4d3cb30d801f2714410304c8c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 5b6ae54ee6c843996c875189b6ee553be5e4f614
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860876"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794381"
 ---
 # <a name="how-updatable-help-works"></a>Funktionsweise der aktualisierbaren Hilfe
 
@@ -21,7 +21,6 @@ In diesem Thema wird erläutert, wie der aktualisierbaren Hilfe Prozesse die Hel
 
 ## <a name="the-update-help-process"></a>Der Update-Help-Prozess
 
-Die folgende Liste beschreibt die Aktionen der [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) Cmdlet aus, wenn ein Benutzer einen Befehl zum Aktualisieren der Hilfedateien für ein Modul in einer bestimmten UI-Kultur ausgeführt wird.
 Die folgende Liste beschreibt die Aktionen der [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) Cmdlet aus, wenn ein Benutzer einen Befehl zum Aktualisieren der Hilfedateien für ein Modul in einer bestimmten UI-Kultur ausgeführt wird.
 
 1. `Update-Help` Ruft die HelpInfo XML-Remotedatei an der durch den Wert der angegebenen Position der **HelpInfoURI** im modulmanifest Schlüssel und die Datei anhand des Schemas überprüft. (Um das Schema anzuzeigen, finden Sie unter [HelpInfo-XML-Schema](./helpinfo-xml-schema.md).) Klicken Sie dann `Update-Help` sucht nach einer lokalen HelpInfo XML-Datei für das Modul in das Modulverzeichnis auf dem Computer des Benutzers.
@@ -36,7 +35,6 @@ Die folgende Liste beschreibt die Aktionen der [Update-Help](/powershell/module/
 
 ## <a name="the-save-help-process"></a>Der Save-Help-Prozess
 
-Die folgende Liste beschreibt die Aktionen der [Save-Help](/powershell/module/Microsoft.PowerShell.Core/Save-Help) und [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) Cmdlets, wenn ein Benutzer führt die Befehle zum Aktualisieren der Hilfedateien in einer Dateifreigabe, und klicken Sie dann diese Dateien beim Aktualisieren der Hilfedateien auf den Computer des Benutzers.
 Die folgende Liste beschreibt die Aktionen der [Save-Help](/powershell/module/Microsoft.PowerShell.Core/Save-Help) und [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) Cmdlets, wenn ein Benutzer führt die Befehle zum Aktualisieren der Hilfedateien in einer Dateifreigabe, und klicken Sie dann diese Dateien beim Aktualisieren der Hilfedateien auf den Computer des Benutzers.
 
 Die `Save-Help` -Cmdlet führt die folgenden Aktionen als Reaktion auf einen Befehl aus, um die Hilfedateien für ein Modul in eine Dateifreigabe zu speichern, die angegeben wird die **DestinationPath** Parameter.

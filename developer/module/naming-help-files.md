@@ -8,16 +8,15 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: bf54eac7-88c6-4108-a5f6-2f0906d1662b
 caps.latest.revision: 5
-ms.openlocfilehash: 06281a1260dbdc120867fce89e6d5c8dd0754b87
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f65a90023df88fceafae1d1875ddf46b9088e2b8
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856666"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795350"
 ---
 # <a name="naming-help-files"></a>Benennen von Hilfedateien
 
-In diesem Thema wird erläutert, wie Sie eine XML-basierte-Hilfedatei zu benennen, damit die [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) Cmdlet finden. Die Anforderungen an den für jeden Befehl unterscheiden.
 In diesem Thema wird erläutert, wie Sie eine XML-basierte-Hilfedatei zu benennen, damit die [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) Cmdlet finden. Die Anforderungen an den für jeden Befehl unterscheiden.
 
 ## <a name="cmdlet-help-files"></a>Cmdlet-Hilfedateien
@@ -30,7 +29,6 @@ Die Hilfedatei für ein C# Cmdlet muss den Namen für die Assembly, in dem das C
 
 Das Namensformat für die Assembly ist erforderlich, auch wenn die Assembly ein geschachteltes Modul ist.
 
-Z. B. die [Get-WinEvent; PSITPro5_Diagnostic; ](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent) Cmdlet in der Microsoft.PowerShell.Diagnostics.dll-Assembly definiert ist. Die `Get-Help` Cmdlet sucht ein Hilfethema für das `Get-WinEvent` Cmdlet nur in der Microsoft.PowerShell.Diagnostics.dll help.xml Datei im Modulverzeichnis gespeichert.
 Z. B. die [Get-WinEvent; PSITPro5_Diagnostic; ](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent) Cmdlet in der Microsoft.PowerShell.Diagnostics.dll-Assembly definiert ist. Die `Get-Help` Cmdlet sucht ein Hilfethema für das `Get-WinEvent` Cmdlet nur in der Microsoft.PowerShell.Diagnostics.dll help.xml Datei im Modulverzeichnis gespeichert.
 
 ## <a name="provider-help-files"></a>Anbieter-Hilfedateien
@@ -47,7 +45,6 @@ Der Zertifikatanbieter ist z. B. in der Assembly Microsoft.PowerShell.Security.d
 
 ## <a name="function-help-files"></a>Funktion-Hilfedateien
 
-Funktionen können mithilfe von dokumentiert werden [kommentarbasierte Hilfe](/powershell/module/microsoft.powershell.core/about/about_comment_based_help) oder in eine XML-Hilfedatei dokumentiert. Wenn die Funktion in eine XML-Datei dokumentiert ist, müssen die Funktion eine `.ExternalHelp` kommentieren Schlüsselwort, das die Funktion die XML-Datei zugeordnet. Andernfalls die `Get-Help` Cmdlet wurde die Datei nicht gefunden.
 Funktionen können mithilfe von dokumentiert werden [kommentarbasierte Hilfe](/powershell/module/microsoft.powershell.core/about/about_comment_based_help) oder in eine XML-Hilfedatei dokumentiert. Wenn die Funktion in eine XML-Datei dokumentiert ist, müssen die Funktion eine `.ExternalHelp` kommentieren Schlüsselwort, das die Funktion die XML-Datei zugeordnet. Andernfalls die `Get-Help` Cmdlet wurde die Datei nicht gefunden.
 
 Es gibt keine technischen Vorschriften für den Namen einer Funktion-Hilfedatei. Ist jedoch eine bewährte Methode, um die Hilfedatei für das Skriptmodul zu benennen, in dem die Funktion definiert ist. Beispielsweise wird die folgende Funktion in der MyModule. Psm1-Datei definiert.

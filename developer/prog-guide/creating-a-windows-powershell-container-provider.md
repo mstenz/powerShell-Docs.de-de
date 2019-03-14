@@ -11,12 +11,12 @@ helpviewer_keywords:
 - container providers [PowerShell Programmer's Guide]
 ms.assetid: a7926647-0d18-45b2-967e-b31f92004bc4
 caps.latest.revision: 5
-ms.openlocfilehash: e0d83a742eae2bcde2e691860a5f2b3e5862d2de
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.openlocfilehash: de75e19abc0ee440e724fba7bf578ce240fbf2df
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57430033"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795452"
 ---
 # <a name="creating-a-windows-powershell-container-provider"></a>Erstellen eines Windows PowerShell-Containeranbieters
 
@@ -40,7 +40,7 @@ Hier ist eine Liste der Abschnitte in diesem Thema. Wenn Sie mit dem Schreiben v
 
 - [Definieren einer Windows PowerShell-Container-Klasse](#Defining-a-Windows-PowerShell-Container-Provider-Class)
 
-- [Definiert die grundlegenden Funktionen]()
+- [Definiert die grundlegenden Funktionen](#defining-base-functionality)
 
 - [Abrufen von untergeordneten Elementen](#Retrieving-Child-Items)
 
@@ -69,8 +69,6 @@ Hier ist eine Liste der Abschnitte in diesem Thema. Wenn Sie mit dem Schreiben v
 - [Anfügen von dynamische Parametern zu der `Copy-Item` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Copy-Item-Cmdlet)
 
 - [Codebeispiel](#Code-Sample)
-
-- [Definieren von Objekttypen und Formatierung]()
 
 - [Erstellen den Windows PowerShell-Anbieter](#Building-the-Windows-PowerShell-Provider)
 

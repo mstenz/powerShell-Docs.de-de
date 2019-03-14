@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f33ff3e9-213c-44aa-92ab-09450e65c676
 caps.latest.revision: 11
-ms.openlocfilehash: dcab755f565cd176c85ef6b9c719bceae10301b4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: be31d03b02394cb1694909cf7b65bbc2a29f6976
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854526"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795435"
 ---
 # <a name="extending-properties-for-objects"></a>Erweitern Objekteigenschaften
 
@@ -101,7 +101,6 @@ Im folgenden Beispiel die `VersionInfo` Eigenschaft hinzugefügt wird die [Syste
 
 ## <a name="property-sets"></a>Eigenschaftensätze
 
-Ein Eigenschaftensatz definiert eine Gruppe von erweiterten Eigenschaften, die durch den Namen des Satzes verwiesen werden kann. Z. B. die `Property` Parameter, der die [Format-Table](/powershell/module/Microsoft.PowerShell.Utility/Format-Table) Cmdlets können angeben, dass eine bestimmte Eigenschaft festlegen, die angezeigt werden. Wenn ein Eigenschaftensatz angegeben wird, werden nur die Eigenschaften, die zum Satz gehören angezeigt.
 Ein Eigenschaftensatz definiert eine Gruppe von erweiterten Eigenschaften, die durch den Namen des Satzes verwiesen werden kann. Z. B. die `Property` Parameter, der die [Format-Table](/powershell/module/Microsoft.PowerShell.Utility/Format-Table) Cmdlets können angeben, dass eine bestimmte Eigenschaft festlegen, die angezeigt werden. Wenn ein Eigenschaftensatz angegeben wird, werden nur die Eigenschaften, die zum Satz gehören angezeigt.
 
 Es gibt keine Einschränkung für die Anzahl der Eigenschaftensätze, die für ein Objekt definiert werden können. Jedoch müssen der-Eigenschaft wird verwendet, um die Standardeigenschaften für die Anzeige eines Objekts zu definieren, innerhalb der Elementgruppe PSStandardMembers angegeben werden. In der Datei %% amp;quot;Types.ps1xml%%amp;quot; Typen umfassen die Namen der standardmäßigen Satz DefaultDisplayProperty, DefaultDisplayPropertySet und DefaultKeyPropertySet. Alle zusätzlichen Eigenschaftensätze, die Sie für die Elementgruppe PSStandardMembers hinzufügen, werden ignoriert.

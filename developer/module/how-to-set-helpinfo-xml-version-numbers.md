@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 93a00463-af58-41c8-b088-450909fa1d05
 caps.latest.revision: 6
-ms.openlocfilehash: 4929a5b1c9f73bb12b6df975e03fc529db3565ef
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: d69e8a734aa96ff9b7911815fb43b81103548b59
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863316"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794347"
 ---
 # <a name="how-to-set-helpinfo-xml-version-numbers"></a>Festlegen von XML-Versionsnummern für HelpInfo
 
@@ -21,7 +21,6 @@ In diesem Thema wird erläutert, wie Sie festlegen, und erhöhen die Versionsnum
 
 ## <a name="how-to-set-helpinfo-xml-version-numbers"></a>Festlegen von XML-Versionsnummern für HelpInfo
 
-Die Versionsnummern in einer HelpInfo XML-Datei sind entscheidend für die Verwendung der aktualisierbaren Hilfe. Die [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) und [Save-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) Cmdlets Herunterladen neuer Hilfedateien nur, wenn die Versionsnummer für eine UI-Kultur in der remote HelpInfo-XML-Datendatei größer als die Versionsnummer für die jeweilige UI-Kultur in ist die lokale HelpInfo XML, oder es ist keine lokale HelpInfo XML-Datei.
 Die Versionsnummern in einer HelpInfo XML-Datei sind entscheidend für die Verwendung der aktualisierbaren Hilfe. Die [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) und [Save-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) Cmdlets Herunterladen neuer Hilfedateien nur, wenn die Versionsnummer für eine UI-Kultur in der remote HelpInfo-XML-Datendatei größer als die Versionsnummer für die jeweilige UI-Kultur in ist die lokale HelpInfo XML, oder es ist keine lokale HelpInfo XML-Datei.
 
 Die HelpInfo XML-Datei verwendet, die 4-Teil Versionsnummer, die in definiert ist die **System.Version** Klasse von Microsoft .NET Framework. Das Format ist `N1.N2.N3.N4`. Modulautoren können eine beliebige Version Nummerierungsschema, die zulässig ist die **System.Version** Klasse. Aktualisierbare Hilfe erfordert nur, dass die Versionsnummer für eine Erhöhung des UI-Kultur, wenn eine neue Version der CAB-Datei für diese Benutzeroberflächenkultur an den Speicherort hochgeladen wird, die angegeben wird die **HelpContentURI** Element in der HelpInfo XML-Datei.

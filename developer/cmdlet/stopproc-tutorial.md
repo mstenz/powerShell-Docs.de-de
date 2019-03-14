@@ -8,16 +8,15 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a142aeb6-9c11-44a0-b34f-1f9470fa347b
 caps.latest.revision: 5
-ms.openlocfilehash: 6e1c8a4709988adfa59bda14eb3af52b0a79f1df
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 27c8e2c7525aba38e69e50b2b7fd3b18b8e54989
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856356"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794398"
 ---
 # <a name="stopproc-tutorial"></a>StopProc-Tutorial
 
-Dieser Abschnitt enthält ein Tutorial zum Erstellen der Stop-Proc-Cmdlet, das ähnelt der [Stop-Process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process) Cmdlet von Windows PowerShell. Dieses Tutorial bietet Codefragmente, die veranschaulichen, wie die Cmdlets implementiert werden, sowie eine Erläuterung des Codes.
 Dieser Abschnitt enthält ein Tutorial zum Erstellen der Stop-Proc-Cmdlet, das ähnelt der [Stop-Process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process) Cmdlet von Windows PowerShell. Dieses Tutorial bietet Codefragmente, die veranschaulichen, wie die Cmdlets implementiert werden, sowie eine Erläuterung des Codes.
 
 ## <a name="topics-in-this-tutorial"></a>Die Themen in diesem Tutorial
