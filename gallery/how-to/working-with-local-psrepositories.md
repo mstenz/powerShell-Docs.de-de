@@ -123,7 +123,7 @@ Um ein Modul aus der PSGallery auf Ihrem lokalen PSRepository zu veröffentliche
 
 - Geben Sie den Namen des Pakets
 - Geben Sie "NuGet" als Dienstanbieter
-- Geben Sie den PSGallery-Speicherort als die Quelle)https://www.powershellgallery.com/api/v2)
+- Geben Sie den PSGallery-Speicherort als die Quelle) [https://www.powershellgallery.com/api/v2](https://www.powershellgallery.com/api/v2))
 - Geben Sie den Pfad zu Ihrem lokalen Repository
 
 Beispiel:
