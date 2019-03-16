@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4d68a8f3-fba0-44c5-97b9-9fc191d269a5
 caps.latest.revision: 13
-ms.openlocfilehash: c11e50913d2654b786e0e8cfeaf41454999bf75e
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 0906d0d37c66b8c1538a0b2e9e0f1ff2fba12ac0
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794968"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057721"
 ---
 # <a name="strongly-encouraged-development-guidelines"></a>Ausdrücklich empfohlene Entwicklungsrichtlinien
 
@@ -101,7 +101,7 @@ Wenn von mehreren Cmdlets derselbe Parameter verwendet wird, verwenden Sie immer
 
 #### <a name="parameters-that-take-true-and-false"></a>Parameter, die "true" verwenden und "false"
 
-Wenn der Parameter nur dauert `true` und `false`, definieren Sie den Parameter als Typ [System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter). Ein Switch-Parameter wird als behandelt `true` wenn er in einem Befehl angegeben wird. Wenn der Parameter nicht in einem Befehl enthalten ist, hält Windows PowerShell den Wert des Parameters, der sein `false`. Boolesche Parameter ist nicht definiert werden.
+Wenn der Parameter nur dauert `true` und `false`, definieren Sie den Parameter als Typ [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter). Ein Switch-Parameter wird als behandelt `true` wenn er in einem Befehl angegeben wird. Wenn der Parameter nicht in einem Befehl enthalten ist, hält Windows PowerShell den Wert des Parameters, der sein `false`. Boolesche Parameter ist nicht definiert werden.
 
 Wenn der Parameter zwischen 3 Werte unterscheiden muss: $true, $false und "nicht angegeben", definieren Sie dann auf einen Parameter vom Typ Nullable\<Bool >.  Die Notwendigkeit einer 3., tritt "nicht angegebenen" Wert in der Regel ein, wenn das Cmdlet eine boolesche Eigenschaft eines Objekts ändern kann. In diesem Fall bedeutet, dass "nicht angegeben" den aktuellen Wert der Eigenschaft nicht ändern.
 
@@ -111,7 +111,7 @@ In vielen Fällen müssen Benutzer den gleichen Vorgang für mehrere Argumente a
 
 #### <a name="support-the-passthru-parameter"></a>Unterstützen Sie den PassThru-Parameter
 
-Standardmäßig viele Cmdlets, das Ändern des Systems wie z. B. die [Stop-Process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process) -Cmdlet als "Sinks" für Objekte fungieren, und führen Sie kein Ergebnis zurückgegeben. Diese Cmdlets sollten implementieren die `PassThru` Parameter, um zu erzwingen, dass das Cmdlet ein Objekt zurückgegeben. Wenn die `PassThru` -Parameter angegeben wird, mit dem-Cmdlet gibt ein Objekt zurück, mit einem Aufruf der [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) Methode. Beispielsweise wird der folgende Befehl beendet den Calc-Prozess und übergibt an die Pipeline den resultierenden Prozess.
+Standardmäßig viele Cmdlets, das Ändern des Systems wie z. B. die [Stop-Process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process) -Cmdlet als "Sinks" für Objekte fungieren, und führen Sie kein Ergebnis zurückgegeben. Diese Cmdlets sollten implementieren die `PassThru` Parameter, um zu erzwingen, dass das Cmdlet ein Objekt zurückgegeben. Wenn die `PassThru` -Parameter angegeben wird, mit dem-Cmdlet gibt ein Objekt zurück, mit einem Aufruf der [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) Methode. Beispielsweise wird der folgende Befehl beendet den Calc-Prozess und übergibt an die Pipeline den resultierenden Prozess.
 
 ```powershell
 Stop-Process calc -passthru
@@ -135,21 +135,21 @@ Die Windows PowerShell-Laufzeit ermöglicht einem Benutzer angeben, wie die Ausg
 
 #### <a name="support-the-writewarning-writeverbose-and-writedebug-methods"></a>Unterstützen der WriteWarning WriteVerbose und WriteDebug-Methoden
 
-Es sollte ein Cmdlet aufrufen. die [System.Management.Automation.Cmdlet.Writewarning*](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) Methode, wenn das Cmdlet einen Vorgang ausführen, die möglicherweise eine unbeabsichtigte Nebeneffekte haben. Beispielsweise sollte ein Cmdlet diese Methode aufrufen, wenn das-Cmdlet wird eine schreibgeschützte Datei zu überschreiben.
+Es sollte ein Cmdlet aufrufen. die [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) Methode, wenn das Cmdlet einen Vorgang ausführen, die möglicherweise eine unbeabsichtigte Nebeneffekte haben. Beispielsweise sollte ein Cmdlet diese Methode aufrufen, wenn das-Cmdlet wird eine schreibgeschützte Datei zu überschreiben.
 
-Es sollte ein Cmdlet aufrufen. die [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) Methode, wenn der Benutzer einige Details benötigt, das Cmdlet Wozu dient. Beispielsweise sollte ein Cmdlet diese Informationen aufrufen, wenn es sich bei der Cmdlet-Autor Gefühl, dass es Szenarien, die möglicherweise weitere Informationen zu können, das Cmdlet Wozu dient.
+Es sollte ein Cmdlet aufrufen. die [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) Methode, wenn der Benutzer einige Details benötigt, das Cmdlet Wozu dient. Beispielsweise sollte ein Cmdlet diese Informationen aufrufen, wenn es sich bei der Cmdlet-Autor Gefühl, dass es Szenarien, die möglicherweise weitere Informationen zu können, das Cmdlet Wozu dient.
 
-Rufen Sie das Cmdlet sollte die [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) Methode, wenn ein Entwickler oder Produkt Supporttechniker verstehen muss, welche Daten die Cmdlet-Vorgangs beschädigt wurde. Es muss nicht für das-Cmdlet aufrufen, die [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) -Methode in der der gleiche Code, der Aufrufe der [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) Methode da die `Debug` Parameter stellt die erforderlichen Informationen.
+Rufen Sie das Cmdlet sollte die [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) Methode, wenn ein Entwickler oder Produkt Supporttechniker verstehen muss, welche Daten die Cmdlet-Vorgangs beschädigt wurde. Es muss nicht für das-Cmdlet aufrufen, die [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) -Methode in der der gleiche Code, der Aufrufe der [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) Methode Da die `Debug` Parameter stellt die erforderlichen Informationen.
 
 #### <a name="support-writeprogress-for-operations-that-take-a-long-time"></a>Unterstützung von WriteProgress für Vorgänge, die sehr lange dauern
 
-Cmdlet-Vorgänge für diese akzeptieren, die eine lange Zeit in Anspruch und, können nicht im Hintergrund ausgeführt sollte über periodische Aufrufe von statusberichterstellung unterstützen die [System.Management.Automation.Cmdlet.Writeprogress*](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) Methode.
+Cmdlet-Vorgänge für diese akzeptieren, die eine lange Zeit in Anspruch und, können nicht im Hintergrund ausgeführt sollte über periodische Aufrufe von statusberichterstellung unterstützen die [System.Management.Automation.Cmdlet.WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) Methode.
 
 #### <a name="use-the-host-interfaces"></a>Verwenden Sie die Hostschnittstellen
 
-In einigen Fällen ein Cmdlet muss kommunizieren direkt mit dem Benutzer anstelle von mithilfe der verschiedenen schreiben oder von unterstützte Methoden sollten die [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) Klasse. In diesem Fall sollte das Cmdlet leiten Sie von der [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) Klasse, und Verwenden der [System.Management.Automation.Pscmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host) Eigenschaft. Diese Eigenschaft unterstützt verschiedene Abonnementebenen Kommunikationsart, einschließlich der Typen PromptForChoice, Eingabe und WriteLine / "ReadLine" an. Auf der höchsten bestimmte Zugriffsebene, bietet aber auch Möglichkeiten zum Lesen und schreiben die einzelnen Schlüssel und zur Behandlung von Puffern.
+In einigen Fällen ein Cmdlet muss kommunizieren direkt mit dem Benutzer anstelle von mithilfe der verschiedenen schreiben oder von unterstützte Methoden sollten die [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) Klasse. In diesem Fall sollte das Cmdlet leiten Sie von der [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) Klasse, und Verwenden der [System.Management.Automation.PSCmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host) Eigenschaft. Diese Eigenschaft unterstützt verschiedene Abonnementebenen Kommunikationsart, einschließlich der Typen PromptForChoice, Eingabe und WriteLine / "ReadLine" an. Auf der höchsten bestimmte Zugriffsebene, bietet aber auch Möglichkeiten zum Lesen und schreiben die einzelnen Schlüssel und zur Behandlung von Puffern.
 
-Wenn ein Cmdlet speziell entwickelt wird, um eine grafische Benutzeroberfläche (GUI) zu generieren, sollte es den Host nicht umgehen, indem Sie mit der [System.Management.Automation.Pscmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host) Eigenschaft. Ein Beispiel für ein Cmdlet aus, die entwickelt wurde, um eine grafische Benutzeroberfläche zu generieren ist die [Out-GridView](/powershell/module/Microsoft.PowerShell.Utility/Out-GridView) Cmdlet.
+Wenn ein Cmdlet speziell entwickelt wird, um eine grafische Benutzeroberfläche (GUI) zu generieren, sollte es den Host nicht umgehen, indem Sie mit der [System.Management.Automation.PSCmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host) Eigenschaft. Ein Beispiel für ein Cmdlet aus, die entwickelt wurde, um eine grafische Benutzeroberfläche zu generieren ist die [Out-GridView](/powershell/module/Microsoft.PowerShell.Utility/Out-GridView) Cmdlet.
 
 > [!NOTE]
 > Cmdlets sollten nicht verwenden, die ["System.Console"](/dotnet/api/System.Console) API.
@@ -174,15 +174,15 @@ Wenn Ihr Cmdlet den Benutzer eine Datei oder eine Datenquelle angeben kann, soll
 
 Wenn die Daten, die mit dem-Cmdlet liest oder schreibt eine Datei sein müssen, das Cmdlet Windows PowerShell-Pfad-Eingabe akzeptieren sollte und das Cmdlet verwenden, sollten die [System.Management.Automation.Sessionstate.Path](/dotnet/api/System.Management.Automation.SessionState.Path) zu den Windows zu übersetzenden Eigenschaft PowerShell-Pfaden in Pfade, die im Dateisystem erkennt. Die bestimmten Mechanismen umfassen die folgenden Methoden:
 
-- [System.Management.Automation.Pscmdlet.Getresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PSCmdlet.GetResolvedProviderPathFromPSPath)
+- [System.Management.Automation.PSCmdlet.GetResolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PSCmdlet.GetResolvedProviderPathFromPSPath)
 
-- [System.Management.Automation.Pscmdlet.Getunresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PSCmdlet.GetUnresolvedProviderPathFromPSPath)
+- [System.Management.Automation.PSCmdlet.GetUnresolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PSCmdlet.GetUnresolvedProviderPathFromPSPath)
 
-- [System.Management.Automation.Pathintrinsics.Getresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetResolvedProviderPathFromPSPath)
+- [System.Management.Automation.PathIntrinsics.GetResolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetResolvedProviderPathFromPSPath)
 
-- [System.Management.Automation.Pathintrinsics.Getunresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetUnresolvedProviderPathFromPSPath)
+- [System.Management.Automation.PathIntrinsics.GetUnresolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetUnresolvedProviderPathFromPSPath)
 
-Wenn die Daten, die mit dem-Cmdlet liest oder schreibt nur ein Satz von Zeichenfolgen anstelle einer Datei mit dem Cmdlet sollten die Inhaltsinformationen für Anbieter verwenden (`Content` Member) zum Lesen und schreiben. Diese Informationen werden abgerufen, von der [System.Management.Automation.Provider.Cmdletprovider.Invokeprovider*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.InvokeProvider) Eigenschaft. Anhand dieser Mechanismen kann es sich um andere Datenspeicher zur Teilnahme an das Lesen und Schreiben von Daten.
+Wenn die Daten, die mit dem-Cmdlet liest oder schreibt nur ein Satz von Zeichenfolgen anstelle einer Datei mit dem Cmdlet sollten die Inhaltsinformationen für Anbieter verwenden (`Content` Member) zum Lesen und schreiben. Diese Informationen werden abgerufen, von der [System.Management.Automation.Provider.CmdletProvider.InvokeProvider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.InvokeProvider) Eigenschaft. Anhand dieser Mechanismen kann es sich um andere Datenspeicher zur Teilnahme an das Lesen und Schreiben von Daten.
 
 #### <a name="support-wildcard-characters"></a>Unterstützung von Platzhalterzeichen
 
@@ -206,11 +206,11 @@ Wenn Sie ein Objekt für ein Cmdlet entwerfen, stellen Sie sicher, dass Member d
 
 Bereits vorhandene .NET Framework-Objekten, die von Cmdlets zurückgegebenen fehlen häufig einige wichtige oder einfache Mitglieder, die vom Skriptentwickler oder Benutzer erforderlich sind. Diese fehlenden Member möglich besonders wichtig, für die Anzeige und das richtige Element Namen erstellen können, damit das Objekt ordnungsgemäß an die Pipeline übergeben werden kann. Erstellen Sie eine benutzerdefinierte Types. ps1xml-Datei, um diese erforderlichen Elemente zu dokumentieren. Wenn Sie diese Datei erstellen, sollten Sie die folgende Benennungskonvention verwendet: *< Your_Product_Name >*. Types. ps1xml.
 
-Sie könnten z. B. Hinzufügen einer `Mode` -skripteigenschaft zu den [System.IO.Fileinfo](/dotnet/api/System.IO.FileInfo) Typs, um die Attribute einer Datei deutlicher anzuzeigen. Außerdem kann hinzugefügt werden, eine `Count` aliaseigenschaft der [System.Array](/dotnet/api/System.Array) die konsistente Verwendung von der Eigenschaftenname zuzulassenden Typs (anstelle von `Length`).
+Sie könnten z. B. Hinzufügen einer `Mode` -skripteigenschaft zu den [System.IO.FileInfo](/dotnet/api/System.IO.FileInfo) Typs, um die Attribute einer Datei deutlicher anzuzeigen. Außerdem kann hinzugefügt werden, eine `Count` aliaseigenschaft der [System.Array](/dotnet/api/System.Array) die konsistente Verwendung von der Eigenschaftenname zuzulassenden Typs (anstelle von `Length`).
 
 ##### <a name="implement-the-icomparable-interface"></a>Implementieren der IComparable-Schnittstelle
 
-Implementieren einer [System.Icomparable](/dotnet/api/System.IComparable) Schnittstelle für alle Ausgabeobjekte. Dadurch wird die Ausgabeobjekte, die problemlos für verschiedene Sortier- und Analyse-Cmdlets übergeben werden.
+Implementieren einer [System.IComparable](/dotnet/api/System.IComparable) Schnittstelle für alle Ausgabeobjekte. Dadurch wird die Ausgabeobjekte, die problemlos für verschiedene Sortier- und Analyse-Cmdlets übergeben werden.
 
 ##### <a name="update-display-information"></a>Aktualisieren Sie die Anzeigeinformationen
 
@@ -230,11 +230,11 @@ Einen Parameter akzeptiert Eingaben aus der Pipeline aus, wenn die **Parameter**
 
 #### <a name="support-the-processrecord-method"></a>Unterstützung für die ProcessRecord-Methode
 
-Um alle Datensätze aus dem vorherigen Cmdlet in der Pipeline akzeptieren zu können, muss Ihr Cmdlet implementieren die [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) Methode. Windows PowerShell ruft diese Methode mehrfach, einmal für jeden Datensatz an, die dem Cmdlet gesendet wird.
+Um alle Datensätze aus dem vorherigen Cmdlet in der Pipeline akzeptieren zu können, muss Ihr Cmdlet implementieren die [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) Methode. Windows PowerShell ruft diese Methode mehrfach, einmal für jeden Datensatz an, die dem Cmdlet gesendet wird.
 
 ### <a name="write-single-records-to-the-pipeline-sc03"></a>Schreiben Sie die einzelnen Datensätze an die Pipeline (SC03)
 
-Wenn ein Cmdlet Objekte zurückgibt, schreibt das Cmdlet sollte die Objekte sofort, sobald sie generiert werden. Das Cmdlet sollte nicht sie speichern und diese in ein Array im kombinierten Puffern. Die Cmdlets, die die Objekte als Eingabe empfangen werden können zu verarbeiten, anzuzeigen oder zu verarbeiten und zeigt die Ausgabeobjekte ohne Verzögerung. Ein Cmdlet, das Ausgaben generiert Objekte einzeln aufrufen sollten die [System.Management.Automation.Cmdlet.Writeobject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) Methode. Es sollte ein Cmdlet, das Ausgabeobjekte in Batches generiert (z. B. weil eine zugrunde liegende API ein Array von Ausgabeobjekten zurückgibt) aufrufen. die [System.Managemet.Automation.Cmdlet.Writeobject](/dotnet/api/System.Managemet.Automation.Cmdlet.WriteObject) Methode, für den zweiten Parameter festgelegt um `true`.
+Wenn ein Cmdlet Objekte zurückgibt, schreibt das Cmdlet sollte die Objekte sofort, sobald sie generiert werden. Das Cmdlet sollte nicht sie speichern und diese in ein Array im kombinierten Puffern. Die Cmdlets, die die Objekte als Eingabe empfangen werden können zu verarbeiten, anzuzeigen oder zu verarbeiten und zeigt die Ausgabeobjekte ohne Verzögerung. Ein Cmdlet, das Ausgaben generiert Objekte einzeln aufrufen sollten die [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) Methode. Es sollte ein Cmdlet, das Ausgabeobjekte in Batches generiert (z. B. weil eine zugrunde liegende API ein Array von Ausgabeobjekten zurückgibt) aufrufen. die [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) Methode, für den zweiten Parameter festgelegt um `true`.
 
 ### <a name="make-cmdlets-case-insensitive-and-case-preserving-sc04"></a>Stellen Sie Cmdlets Groß-/Kleinschreibung und Groß-/Kleinschreibung beibehalten werden soll (SC04)
 

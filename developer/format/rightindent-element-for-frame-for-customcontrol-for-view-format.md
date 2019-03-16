@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 501ccacc-5b3a-45b5-ae41-2f1e0675d416
 caps.latest.revision: 6
-ms.openlocfilehash: 85c165475bd67c378557c12820e450fbf8cb186e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 0e93e2aca04f6a93016fe6b24137aee34dcf7e91
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860396"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058792"
 ---
 # <a name="rightindent-element-for-frame-for-customcontrol-for-view-format"></a>Element „RightIndent“ für Frame für CustomControl für View (Format)
 
 Gibt an, wie viele Zeichen, die die Daten von den rechten Rand verschoben wurde. Dieses Element wird verwendet, bei der Definition einer benutzerdefinierten anzuzeigen.
 
--Element (Format) ViewDefinitions-Element (Format) anzeigen (Format)-Element CustomControl-Element (Format) CustomEntries Konfigurationselement für CustomControl für Ansicht (Format) CustomEntry-Element für CustomEntries für Ansicht (Format) CustomItem-Element für CustomEntry für Frame-Element für CustomItem für CustomControl für Ansichtselement (Format) RightIndent CutomControlView (Format)
+-Element (Format) ViewDefinitions-Element (Format) anzeigen (Format)-Element CustomControl-Element (Format) CustomEntries Konfigurationselement für CustomControl für Ansicht (Format) CustomEntry-Element für CustomEntries für Ansicht (Format) CustomItem-Element für CustomEntry für Frame-Element für CustomItem für CustomControl für Ansichtselement (Format) RightIndent CustomControlView (Format)
 
 ## <a name="syntax"></a>Syntax
 

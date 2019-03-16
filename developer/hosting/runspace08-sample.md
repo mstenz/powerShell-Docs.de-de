@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1100d91d-249d-4af7-9854-2d6a423ac2f4
 caps.latest.revision: 7
-ms.openlocfilehash: ac010ee94752458c31b5b3b26c9ac17e0c56c4ad
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 70577a6a42ce26e9791360fa30baae9d7a492daf
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860796"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057738"
 ---
 # <a name="runspace08-sample"></a>Runspace08-Beispiel
 
@@ -35,7 +35,7 @@ Dieses Beispiel veranschaulicht die folgenden.
 
 - Die Cmdlets synchron ausgeführt.
 
-- Extrahieren von Eigenschaften aus der [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) Objekte, die vom Befehl zurückgegeben wird.
+- Extrahieren von Eigenschaften aus der [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) Objekte, die vom Befehl zurückgegeben wird.
 
 ## <a name="example"></a>Beispiel
 

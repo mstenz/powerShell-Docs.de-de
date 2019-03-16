@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e523a8e1-42e4-4633-887f-fb74b3464561
 caps.latest.revision: 12
-ms.openlocfilehash: 25b604621c90f1aa88bc1eea365e47db66e98c3d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 37689571eb1650e5991af2e7002cd037ae99dd68
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858406"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057959"
 ---
 # <a name="provider-types"></a>Anbietertypen
 
@@ -65,7 +65,7 @@ Container-fähigen Anbieter können Benutzer zum Verwalten von Elementen, die Co
 
 Die [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) Klasse definiert die folgenden Methoden zum Implementieren von bestimmten Anbieter-Cmdlets. In den meisten Fällen ein Anbieter-Cmdlets unterstützen Sie müssen Überschreiben der Methode, die die Windows PowerShell-Engine aufgerufen wird, das-Cmdlet aufrufen, wie z. B. die `CopyItem` -Methode für die `Copy-Item` -Cmdlet, und optional auch Sie können eine zweite Methode, wie z. B. überschreiben`CopyItemDynamicParameters`, für das Hinzufügen von dynamischer Parameters an das Cmdlet.
 
-- Die [System.Management.Automation.Provider.Containercmdletprovider.Copyitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) und [System.Management.Automation.Provider.Containercmdletprovider.Copyitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters) definiert Methoden, wie Ihr Anbieter unterstützt die `Copy-Item` Anbieter-Cmdlet. Mit diesem Cmdlet können den Benutzer ein Element von einem Speicherort in einen anderen zu kopieren.
+- Die [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) und [System.Management.Automation.Provider.Containercmdletprovider.Copyitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters) definiert Methoden, wie Ihr Anbieter unterstützt die `Copy-Item` Anbieter-Cmdlet. Mit diesem Cmdlet können den Benutzer ein Element von einem Speicherort in einen anderen zu kopieren.
 
 - Die [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) und [System.Management.Automation.Provider.Containercmdletprovider.Getchilditemsdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters) Methoden definieren, wie Ihr Anbieter unterstützt die `Get-ChildItem` Anbieter-Cmdlet. Mit diesem Cmdlet können Benutzer die untergeordneten Elemente des übergeordneten Elements abrufen.
 

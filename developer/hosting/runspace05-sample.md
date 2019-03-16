@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1685cfc4-b32c-4bed-b221-e0c4482db955
 caps.latest.revision: 9
-ms.openlocfilehash: f74ff24f114ecd872ffb443c27a57b1fbe42fa23
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: eb227b5fa5e91f59b6fc99981ff5affca1cf63fd
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860746"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056446"
 ---
 # <a name="runspace05-sample"></a>Runspace05-Beispiel
 
@@ -39,7 +39,7 @@ Dieses Beispiel veranschaulicht die folgenden.
 
 - Den Befehl synchron ausgeführt.
 
-- Extrahieren von Eigenschaften aus der [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) Objekte, die vom Befehl zurückgegeben wird.
+- Extrahieren von Eigenschaften aus der [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) Objekte, die vom Befehl zurückgegeben wird.
 
 ## <a name="example"></a>Beispiel
 

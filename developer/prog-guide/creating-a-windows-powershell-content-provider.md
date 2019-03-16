@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], content provider
 ms.assetid: 3da88ff9-c4c7-4ace-aa24-0a29c8cfa060
 caps.latest.revision: 6
-ms.openlocfilehash: 1bccbfab55f4ba4476678b130bd9db91eed7df80
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 35c68a2b0f8c9bd1ed4fc54c41aa427ddd75907c
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795316"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056633"
 ---
 # <a name="creating-a-windows-powershell-content-provider"></a>Erstellen eines Windows PowerShell-Inhaltsanbieters
 
@@ -206,9 +206,9 @@ Möglicherweise gelten die folgenden Bedingungen zu einer Implementierung von [S
 
 - In der Standardeinstellung überschreiben dieser Methode sollten nicht löschen, die Inhalte von Objekten, die vom Benutzer ausgeblendet sind, es sei denn, die [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) -Eigenschaftensatz auf `true`. Ein Fehler geschrieben werden soll, wenn Sie den Pfad ein Elements darstellt, die vom Benutzer ausgeblendet ist und [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) nastaven NA hodnotu `false`.
 
-- Die Implementierung von der [System.Management.Automation.Provider.Icontentcmdletprovider.Clearcontent*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent) Methodenaufruf sollten [System.Management.Automation.Provider.Cmdletprovider.Shouldprocess* ](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) und den Rückgabewert zu überprüfen, bevor Sie Änderungen an den Datenspeicher. Diese Methode wird verwendet, um die Ausführung eines Vorgangs zu bestätigen, wenn eine Änderung, mit dem Datenspeicher vorgenommen wird, z. B. das Löschen von Inhalt. Die [System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) Methode sendet den Namen der Ressource, die für den Benutzer mit der Windows PowerShell-Laufzeit behandeln alle befehlszeileneinstellungen oder eine Einstellung geändert werden Variablen, bei der Bestimmung, was angezeigt werden soll.
+- Die Implementierung von der [System.Management.Automation.Provider.Icontentcmdletprovider.Clearcontent*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent) Methodenaufruf sollten [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) und den Rückgabewert zu überprüfen, bevor Sie Änderungen an den Datenspeicher. Diese Methode wird verwendet, um die Ausführung eines Vorgangs zu bestätigen, wenn eine Änderung, mit dem Datenspeicher vorgenommen wird, z. B. das Löschen von Inhalt. Die [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) Methode sendet den Namen der Ressource, die für den Benutzer mit der Windows PowerShell-Laufzeit behandeln alle befehlszeileneinstellungen oder eine Einstellung geändert werden Variablen, bei der Bestimmung, was angezeigt werden soll.
 
-  Nach dem Aufruf von [System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) gibt `true`, [System.Management.Automation.Provider.Icontentcmdletprovider.Clearcontent* ](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent) Methodenaufruf sollte die [System.Management.Automation.Provider.Cmdletprovider.Shouldcontinue*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) Methode. Diese Methode sendet eine Nachricht an den Benutzer können Sie Feedback zu überprüfen, ob der Vorgang fortgesetzt werden soll. Der Aufruf von [System.Management.Automation.Provider.Cmdletprovider.Shouldcontinue*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) ermöglicht eine zusätzliche Überprüfung auf potenziell gefährliche systemmodifizierungen.
+  Nach dem Aufruf von [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) gibt `true`, [System.Management.Automation.Provider.Icontentcmdletprovider.Clearcontent*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent) Methodenaufruf sollte die [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) Methode. Diese Methode sendet eine Nachricht an den Benutzer können Sie Feedback zu überprüfen, ob der Vorgang fortgesetzt werden soll. Der Aufruf von [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) ermöglicht eine zusätzliche Überprüfung auf potenziell gefährliche systemmodifizierungen.
 
 ## <a name="attaching-dynamic-parameters-to-the-clear-content-cmdlet"></a>Dynamische Parameter Anfügen an das Cmdlet Clear-Content
 

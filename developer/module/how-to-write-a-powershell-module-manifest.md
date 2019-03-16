@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e082c2e3-12ce-4032-9caf-bf6b2e0dcf81
 caps.latest.revision: 23
-ms.openlocfilehash: 67e041756974dcd84e15cdb4edaf91be45122e28
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: eaa927ec90df6053843f5c942357fed4c7dee966
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859206"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059489"
 ---
 # <a name="how-to-write-a-powershell-module-manifest"></a>Schreiben eines PowerShell-Binärmoduls
 
@@ -77,7 +77,7 @@ Die folgende Tabelle beschreibt die Elemente, was in einem modulmanifest man
 |PowerShellVersion<br /><br /> Typ: Zeichenfolge|' '|Die Mindestversion von der Windows PowerShell-Engine, die von diesem Modul erforderlich. Aktuell gültigen Werte sind 1.0, 2.0, 3.0, 4.0 und 5.0.<br /><br /> Beispiel: `PowerShellVersion = '5.0'`|
 |PowerShellHostName<br /><br /> Typ: Zeichenfolge|' '|Gibt den Namen des Windows PowerShell-Hosts, die vom Modul erforderlich ist. Dieser Name wird von Windows PowerShell bereitgestellt. Um den Namen des Hostprogramms in der Anwendung suchen, geben: `$host.name` .<br /><br /> Beispiel: `PowerShellHostName = 'Windows PowerShell ISE Host'`|
 |PowerShellHostVersion<br /><br /> Typ: Zeichenfolge|' '|Die Mindestversion des Windows PowerShell-Hosts, die von diesem Modul erforderlich.<br /><br /> Beispiel: `PowerShellHostVersion = '2.0'`|
-|DotNetFrameworkVersion<br /><br /> Typ: Zeichenfolge|' '|Die Mindestversion von Microsoft .NET Framework, die von diesem Modul erforderlich.<br /><br /> Beispiel: `DotNetFrameorkVersion = '3.5'`|
+|DotNetFrameworkVersion<br /><br /> Typ: Zeichenfolge|' '|Die Mindestversion von Microsoft .NET Framework, die von diesem Modul erforderlich.<br /><br /> Beispiel: `DotNetFrameworkVersion = '3.5'`|
 |CLRVersion<br /><br /> Typ: Zeichenfolge|' '|Die Mindestversion von die common Language Runtime (CLR), das von diesem Modul erforderlich.<br /><br /> Beispiel: `CLRVersion = '3.5'`|
 |ProcessorArchitecture<br /><br /> Typ: Zeichenfolge|' '|Prozessorarchitektur (keiner, X86, Amd64) von diesem Modul erforderlich. Gültige Werte sind x86, AMD64, IA64 und None (unbekannt oder nicht angegeben).<br /><br /> Beispiel: `ProcessorArchitecture = 'x86'`|
 |RequiredModules<br /><br /> Typ: [String []]|@()|Module, die in der globalen Umgebung vor dem Importieren dieses Modul importiert werden müssen. Dies lädt die Module aufgeführt, es sei denn, sie bereits geladen wurden. (Z. B. möglicherweise einige Module bereits von einem anderen Modul geladen werden.). Es ist auch möglich, an eine bestimmte Version zu laden, indem `RequiredVersion` statt `ModuleVersion`. Bei Verwendung `ModuleVersion` lädt die neueste Version, die mit einem Minimum an die angegebene Version zur Verfügung.<br /><br /> Beispiel: `RequiredModules = @(@{ModuleName="myDependentModule", ModuleVersion="2.0",Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`<br /><br /> Beispiel: `RequiredModules = @(@{ModuleName="myDependentModule", RequiredVersion="1.5",Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`|

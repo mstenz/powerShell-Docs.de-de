@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e1a13100-41a4-4847-9f07-458c85783505
 caps.latest.revision: 6
-ms.openlocfilehash: a7ee550527ec1cb00b4ed83478992c7ab54dbdb6
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 925ef86e61801f5a66f89dd25e0756f00dd35155
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56861706"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054780"
 ---
 # <a name="frame-element-for-customitem-for-customcontrol-for-view-format"></a>Element „Frame“ für CustomItem für CustomControl für View (Format)
 
 Definiert, wie die Daten angezeigt werden, z. B. das Verschieben von Daten nach links oder rechts. Dieses Element wird verwendet, bei der Definition einer benutzerdefinierten anzuzeigen.
 
--Element (Format) ViewDefinitions-Element (Format) anzeigen (Format)-Element CustomControl-Element (Format) CustomEntries Konfigurationselement für CustomControl für Ansicht (Format) CustomEntry-Element für CustomEntries für Ansicht (Format) CustomItem-Element für CustomEntry für CutomControlView (Format)-Frame-Element für CustomItem für CustomControl für Ansicht (Format)
+-Element (Format) ViewDefinitions-Element (Format) anzeigen (Format)-Element CustomControl-Element (Format) CustomEntries Konfigurationselement für CustomControl für Ansicht (Format) CustomEntry-Element für CustomEntries für Ansicht (Format) CustomItem-Element für CustomEntry für CustomControlView (Format)-Frame-Element für CustomItem für CustomControl für Ansicht (Format)
 
 ## <a name="syntax"></a>Syntax
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7649d5d0-2b56-49b5-a670-dde46caca343
 caps.latest.revision: 11
-ms.openlocfilehash: ec75945c5517c02fa001f0a38573c045ffcdbfd3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 633204f3b181316761746ea2679910216fb74657
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857486"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058962"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-listcontrol-format"></a>Element „SelectionCondition“ für EntrySelectedBy für ListControl (Format)
 
@@ -44,7 +44,7 @@ Keine.
 
 |Element|Beschreibung|
 |-------------|-----------------|
-|[PropertyName-Element für SelectionCondition für EmtrySelectedBy für ListEntry (Format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|Optionales Element.<br /><br /> Gibt die .NET-Eigenschaft, die die Bedingung auslöst.|
+|[PropertyName-Element für SelectionCondition für EntrySelectedBy für ListEntry (Format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|Optionales Element.<br /><br /> Gibt die .NET-Eigenschaft, die die Bedingung auslöst.|
 |[ScriptBlock-Element für SelectionCondition für EntrySelectedBy für ListEntry (Format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|Optionales Element.<br /><br /> Gibt das Skript an, das die Bedingung auslöst.|
 |[SelectionSetName-Element für SelectionCondition für EntrySelectedBy für ListEntry (Format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md)|Optionales Element.<br /><br /> Gibt den Satz von .NET-Typen, die die Bedingung auslösen.|
 |[TypeName-Element für SelectionCondition für EntrySelectedBy für ListEntry (Format)](./typename-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|Optionales Element.<br /><br /> Gibt einen .NET-Typ, der die Bedingung auslöst.|
@@ -75,7 +75,7 @@ Weitere Informationen zu anderen Komponenten einer Listenansicht, finden Sie unt
 
 [ListEntry-Element (Format)](./listentry-element-for-listcontrol-format.md)
 
-[SelectionSetName-Element für EnrtySelectedBy für ListEntry (Format)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
+[SelectionSetName-Element für EntrySelectedBy für ListEntry (Format)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
 
 [TypeName-Element für EntrySelectedBy für ListEntry (Format)](http://msdn.microsoft.com/en-us/fcd4daa6-f3fd-43f7-a468-03c582d34533)
 

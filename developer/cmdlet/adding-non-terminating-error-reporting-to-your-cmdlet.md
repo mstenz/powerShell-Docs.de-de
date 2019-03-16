@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f2a1531a-a92a-4606-9d54-c5df80d34f33
 caps.latest.revision: 8
-ms.openlocfilehash: 2f3bb481722363557c93ebbc5e6df62baeff2555
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: e0550dacc33f45f45ba105ca5cb4d2e5b5d675fb
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862006"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056055"
 ---
 # <a name="adding-non-terminating-error-reporting-to-your-cmdlet"></a>Hinzufügen von Berichten für Fehler ohne Abbruch zu Cmdlet
 
--Cmdlets können Fehler ohne Abbruch durch den Aufruf melden die [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) Methode und weiterhin auf das aktuelle Eingabeobjekt oder weiteren eingehenden verwendet werden Objekte pipeline. In diesem Abschnitt wird erläutert, wie ein Cmdlet zu erstellen, die Fehler ohne Abbruch aus dessen eingabeverarbeitungsmethoden meldet.
+-Cmdlets können Fehler ohne Abbruch durch den Aufruf melden die [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) Methode und weiterhin auf das aktuelle Eingabeobjekt oder weiteren eingehenden verwendet werden Objekte pipeline. In diesem Abschnitt wird erläutert, wie ein Cmdlet zu erstellen, die Fehler ohne Abbruch aus dessen eingabeverarbeitungsmethoden meldet.
 
-Fehler ohne Abbruch (als auch Fehler mit Abbruch), muss das Cmdlet übergeben eine [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) Objekt, das den Fehler identifiziert. Jeden Error-Datensatz wird durch eine eindeutige Zeichenfolge, die Namen der "Fehler-ID" gekennzeichnet. Zusätzlich zu den Bezeichner, die Kategorie der einzelnen Fehler von definierten Konstanten gemäß einem [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory) Enumeration. Der Benutzer kann basierte auf ihrer Kategorie durch Festlegen von Fehlern anzeigen der `$ErrorView` Variable "CategoryView".
+Fehler ohne Abbruch (als auch Fehler mit Abbruch), muss das Cmdlet übergeben eine [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) Objekt, das den Fehler identifiziert. Jeden Error-Datensatz wird durch eine eindeutige Zeichenfolge, die Namen der "Fehler-ID" gekennzeichnet. Zusätzlich zu den Bezeichner, die Kategorie der einzelnen Fehler von definierten Konstanten gemäß einem [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory) Enumeration. Der Benutzer kann basierte auf ihrer Kategorie durch Festlegen von Fehlern anzeigen der `$ErrorView` Variable "CategoryView".
 
 Weitere Informationen zu Datensätzen, finden Sie unter [Windows PowerShell-Fehlerdatensätze](./windows-powershell-error-records.md).
 
@@ -101,11 +101,11 @@ Alle Cmdlets müssen mindestens eines der Eingabe, die Verarbeitung von bereitge
 > [!NOTE]
 > Jeder Datensatz sollte Ihr Cmdlet so unabhängig wie möglich verarbeiten können.
 
-Dieses Cmdlet "Get-Proc" überschreibt die [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) Methode zum Behandeln der `Name` Parameter für die Eingabe durch den Benutzer oder ein Skript bereitgestellt. Diese Methode erhalten die Prozesse für jede angeforderte Prozessname oder allen Prozessen, wenn kein Name angegeben ist. Details der Außerkraftsetzung erhalten [Erstellen Ihrer ersten Cmdlet](./creating-a-cmdlet-without-parameters.md).
+Dieses Cmdlet "Get-Proc" überschreibt die [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) Methode zum Behandeln der `Name` Parameter für die Eingabe durch den Benutzer oder ein Skript bereitgestellt. Diese Methode erhalten die Prozesse für jede angeforderte Prozessname oder allen Prozessen, wenn kein Name angegeben ist. Details der Außerkraftsetzung erhalten [Erstellen Ihrer ersten Cmdlet](./creating-a-cmdlet-without-parameters.md).
 
 #### <a name="things-to-remember-when-reporting-errors"></a>Wichtige Aspekte beim Melden von Fehlern
 
-Die [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) Objekt, mit das-Cmdlet übergibt, beim Schreiben eines Fehlers eine Ausnahme im Kern ist erforderlich. Befolgen Sie die .NET-Richtlinien, wenn bestimmt wird die Ausnahme zu verwenden. Wenn der Fehler semantisch identisch mit einer vorhandenen Ausnahme ist, sollte das-Cmdlet im Grunde verwenden oder diese Ausnahme abgeleitet. Es sollte, andernfalls der abgeleitet werden, eine neue Ausnahme oder ausnahmenhierarchie direkt aus der ["System.Exception"](/dotnet/api/System.Exception) Klasse.
+Die [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) Objekt, mit das-Cmdlet übergibt, beim Schreiben eines Fehlers eine Ausnahme im Kern ist erforderlich. Befolgen Sie die .NET-Richtlinien, wenn bestimmt wird die Ausnahme zu verwenden. Wenn der Fehler semantisch identisch mit einer vorhandenen Ausnahme ist, sollte das-Cmdlet im Grunde verwenden oder diese Ausnahme abgeleitet. Es sollte, andernfalls der abgeleitet werden, eine neue Ausnahme oder ausnahmenhierarchie direkt aus der ["System.Exception"](/dotnet/api/System.Exception) Klasse.
 
 Beim Erstellen des Fehler-IDs (Zugriff über die FullyQualifiedErrorId-Eigenschaft der Klasse ErrorRecord) sollten Sie Folgendes bedenken.
 
@@ -135,7 +135,7 @@ Nicht behandelte Ausnahmen werden nicht von Windows PowerShell unter den folgend
 
 ## <a name="reporting-nonterminating-errors"></a>Melden Sie Fehler ohne Abbruch
 
-Eines der eingabeverarbeitungsmethoden kann einen Fehler ohne Abbruch melden, um die Ausgabe-Stream mit der [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) Methode. Hier ist ein Codebeispiel aus diesem Get-Proc-Cmdlet, das veranschaulicht, den Aufruf von [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) von innerhalb der Überschreibung der der [ System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) Methode. In diesem Fall wird der Aufruf ausgelöst, wenn das Cmdlet einen Prozess für eine angegebene Prozess-ID nicht finden kann.
+Eines der eingabeverarbeitungsmethoden kann einen Fehler ohne Abbruch melden, um die Ausgabe-Stream mit der [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) Methode. Hier ist ein Codebeispiel aus diesem Get-Proc-Cmdlet, das veranschaulicht, den Aufruf von [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) von innerhalb der Überschreibung der der [ System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) Methode. In diesem Fall wird der Aufruf ausgelöst, wenn das Cmdlet einen Prozess für eine angegebene Prozess-ID nicht finden kann.
 
 ```csharp
 protected override void ProcessRecord()

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f33ff3e9-213c-44aa-92ab-09450e65c676
 caps.latest.revision: 11
-ms.openlocfilehash: be31d03b02394cb1694909cf7b65bbc2a29f6976
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 496e363b041194563d46c09eee67a12055bb54b0
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795435"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057296"
 ---
 # <a name="extending-properties-for-objects"></a>Erweitern Objekteigenschaften
 
@@ -83,7 +83,7 @@ Im folgenden Beispiel die `Status` -Eigenschaft (, dessen Wert immer "Success") 
 
 Eine skripteigenschaft definiert eine Eigenschaft, deren Wert die Ausgabe eines Skripts.
 
-Im folgenden Beispiel die `VersionInfo` Eigenschaft hinzugefügt wird die [System.IO.Fileinfo? Displayproperty = Fullname](/dotnet/api/System.IO.FileInfo) Typ. Die [ScriptProperty](http://msdn.microsoft.com/en-us/858a4247-676b-4cc9-9f3e-057109aad350) -Element definiert die erweiterte Eigenschaft als eine skripteigenschaft. Die [Namen](http://msdn.microsoft.com/en-us/b58e9d21-c8c9-49a5-909e-9c1cfc64f873) -Element gibt den Namen der erweiterten Eigenschaft. Und der [GetScriptBlock](http://msdn.microsoft.com/en-us/f3c77546-b98e-4c4e-bbe0-6dfd06696d1c) Element gibt an, das Skript, das den Wert der Eigenschaft generiert. (Sie können auch hinzufügen der [ScriptProperty](http://msdn.microsoft.com/en-us/858a4247-676b-4cc9-9f3e-057109aad350) Element auf die Member des der [Elementgruppen](http://msdn.microsoft.com/en-us/46a50fb5-e150-4c03-8584-e1b53e4d49e3) Element.)
+Im folgenden Beispiel die `VersionInfo` Eigenschaft hinzugefügt wird die [System.IO.FileInfo? Displayproperty = Fullname](/dotnet/api/System.IO.FileInfo) Typ. Die [ScriptProperty](http://msdn.microsoft.com/en-us/858a4247-676b-4cc9-9f3e-057109aad350) -Element definiert die erweiterte Eigenschaft als eine skripteigenschaft. Die [Namen](http://msdn.microsoft.com/en-us/b58e9d21-c8c9-49a5-909e-9c1cfc64f873) -Element gibt den Namen der erweiterten Eigenschaft. Und der [GetScriptBlock](http://msdn.microsoft.com/en-us/f3c77546-b98e-4c4e-bbe0-6dfd06696d1c) Element gibt an, das Skript, das den Wert der Eigenschaft generiert. (Sie können auch hinzufügen der [ScriptProperty](http://msdn.microsoft.com/en-us/858a4247-676b-4cc9-9f3e-057109aad350) Element auf die Member des der [Elementgruppen](http://msdn.microsoft.com/en-us/46a50fb5-e150-4c03-8584-e1b53e4d49e3) Element.)
 
 ```xml
 <Type>

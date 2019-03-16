@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows PowerShell SDK
 ms.assetid: cbba4879-bcac-484a-9906-4bbe2cd1eb33
 caps.latest.revision: 11
-ms.openlocfilehash: dfda6cb68b089a30a156760345420ee80d1d3ae9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 86595ebaac32318a4e3b9a3c4b295c73fb2e1c75
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862106"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055494"
 ---
 # <a name="windows-powershell-reference"></a>Windows PowerShell-Referenz
 
@@ -47,10 +47,10 @@ Die folgenden Ressourcen bieten zusätzlich zu Windows PowerShell SDK Weitere In
 
 [System.Management.Automation.Provider](/dotnet/api/System.Management.Automation.Provider) dieser Namespace enthält die Klassen, Enumerationen und Schnittstellen erforderlich, um ein Windows PowerShell-Anbieter implementiert. Insbesondere die [System.Management.Automation.Provider.Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) Klasse ist die Basisklasse, die von der alle Windows PowerShell-Anbieterklassen abgeleitet werden müssen.
 
-[Microsoft.Powershell.Commands](/dotnet/api/Microsoft.PowerShell.Commands) dieser Namespace enthält die Klassen für die Cmdlets und Anbieter von Windows PowerShell implementiert. Auf ähnliche Weise, es wird empfohlen, die Erstellung einer *IhrName*. Namespace-Befehle für diese Cmdlets, die Sie implementieren.
+[Microsoft.PowerShell.Commands](/dotnet/api/Microsoft.PowerShell.Commands) dieser Namespace enthält die Klassen für die Cmdlets und Anbieter von Windows PowerShell implementiert. Auf ähnliche Weise, es wird empfohlen, die Erstellung einer *IhrName*. Namespace-Befehle für diese Cmdlets, die Sie implementieren.
 
 [System.Management.Automation.Host](/dotnet/api/System.Management.Automation.Host) dieser Namespace enthält die Klassen, Enumerationen und Schnittstellen, die mit dem-Cmdlet wird verwendet, um die Interaktion zwischen Benutzer und Windows PowerShell zu definieren.
 
-[System.Management.Automation.Internal](/dotnet/api/System.Management.Automation.Internal) dieser Namespace enthält die Basisklassen, die von anderen Namespaceklassen verwendet. Z. B. die [System.Management.Automation.Internal.Cmdletmetadataattribute](/dotnet/api/System.Management.Automation.Internal.CmdletMetadataAttribute) -Klasse ist die Basisklasse für die [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute) Klasse.
+[System.Management.Automation.Internal](/dotnet/api/System.Management.Automation.Internal) dieser Namespace enthält die Basisklassen, die von anderen Namespaceklassen verwendet. Z. B. die [System.Management.Automation.Internal.Cmdletmetadataattribute](/dotnet/api/System.Management.Automation.Internal.CmdletMetadataAttribute) -Klasse ist die Basisklasse für die [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) Klasse.
 
 [System.Management.Automation.Runspaces](/dotnet/api/System.Management.Automation.Runspaces) dieser Namespace enthält die Klassen, Enumerationen und Schnittstellen, die für eine Windows PowerShell-Runspace zu erstellen. In diesem Kontext ist der Windows PowerShell-Runspace des Kontexts, in denen eine oder mehrere Windows PowerShell-Pipelines Cmdlets aufzurufen. Das heißt, arbeiten Cmdlets im Kontext einer Windows PowerShell-Runspace. Weitere Informationen AboutWindows PowerShell-Runspaces, finden Sie unter [Windows PowerShell-Runspaces](http://msdn.microsoft.com/en-us/a1582cfe-f06d-4aff-adc6-71f49a860ce9).

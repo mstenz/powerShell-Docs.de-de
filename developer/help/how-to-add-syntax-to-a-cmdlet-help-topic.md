@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d0c6d03f-1c1a-43d8-928e-e3290e90e0bc
 caps.latest.revision: 5
-ms.openlocfilehash: 947d0c0188df5bba3a9fb617fe5abf0b3b28eb51
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 2e9dbc9ff8f9507f2008cd6e114ba6fec36b10bf
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857996"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054610"
 ---
 # <a name="how-to-add-syntax-to-a-cmdlet-help-topic"></a>Hinzufügen einer Syntax zu einem Cmdlet-Hilfethema
 
@@ -112,7 +112,7 @@ Klicken Sie in der Regel Parameterwerte, die Platzhalter sind erforderlich, und 
 
    Abkürzen Sie-Typen, solange ihre Bedeutung klar, wie z. B. "String" für System.String und "Int" für System. Int32 ist.
 
-   Listen Sie alle Werte von Enumerationen, z. B.-Typparameter im vorherigen Beispiel, eingetragen werden sollen kann festgelegt werden, "basic" oder "Erweitert".
+   Liste aller Werte von Enumerationen, z. B. der - Typparameter in der im vorherigen Beispiel, das "basic" oder "advanced" festgelegt werden kann.
 
    Switch-Parameter, z. B. - Liste im vorherigen Beispiel, die keinen Wert.
 

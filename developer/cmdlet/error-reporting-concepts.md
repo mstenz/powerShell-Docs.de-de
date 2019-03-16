@@ -13,18 +13,18 @@ helpviewer_keywords:
 - errors [PowerShell SDK]
 ms.assetid: 0dce97c0-bd9a-4691-8ca3-e8d5dea902c5
 caps.latest.revision: 11
-ms.openlocfilehash: aac6b7b6ac8a0fad15194b6d3f92c434524fabdb
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 2f185e415e3effc2cf09a282ca1167e3bcfb7d6a
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855076"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054406"
 ---
 # <a name="error-reporting-concepts"></a>Konzepte der Fehlerberichterstattung
 
 Windows PowerShell bietet zwei Mechanismen zum Melden von Fehlern: ein Mechanismus zum *Fehler beenden* und einen anderen Mechanismus für die *Fehler ohne Abbruch*. Es ist richtig, damit die hostanwendung, die Ihre Cmdlets ausgeführt wird, in geeigneter Weise reagieren kann wichtig für Ihre Cmdlets aus, um Fehler zu melden.
 
-Sollte Ihr Cmdlet rufen Sie die [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) Methode, wenn ein Fehler auftritt, nicht, oder das-Cmdlet verarbeitet Eingabeobjekte weiterhin sollten nicht zulassen. Ihr Cmdlet aufrufen, sollte die [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) Methode zum Melden Fehler ohne Abbruch, wenn das Cmdlet die Eingabeobjekte Verarbeitung fortgesetzt werden kann. Beide Methoden bieten einen Fehlerdatensatz, den die hostanwendung verwenden können, um die Ursache des Fehlers untersuchen.
+Sollte Ihr Cmdlet rufen Sie die [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) Methode, wenn ein Fehler auftritt, nicht, oder das-Cmdlet verarbeitet Eingabeobjekte weiterhin sollten nicht zulassen. Ihr Cmdlet aufrufen, sollte die [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) Methode zum Melden Fehler ohne Abbruch, wenn das Cmdlet die Eingabeobjekte Verarbeitung fortgesetzt werden kann. Beide Methoden bieten einen Fehlerdatensatz, den die hostanwendung verwenden können, um die Ursache des Fehlers untersuchen.
 
 Verwenden Sie die folgenden Richtlinien, um zu bestimmen, ob ein Fehler ist ein Abbruch oder Fehler ohne Abbruch.
 
@@ -42,7 +42,7 @@ Verwenden Sie die folgenden Richtlinien, um zu bestimmen, ob ein Fehler ist ein 
 
 [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)
 
-[System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)
+[System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)
 
 [Windows PowerShell-Error-Datensätze](./windows-powershell-error-records.md)
 

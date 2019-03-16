@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 27d0ee5e-2589-4530-92ef-c09996b80994
 caps.latest.revision: 10
-ms.openlocfilehash: 3edbcabeff0c8d84831823df11749d152b347566
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c9963819f1842d1245735dabc487babaa566c160
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863336"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057160"
 ---
 # <a name="events01-sample"></a>Events01-Beispiel
 
-Dieses Beispiel zeigt, wie Sie ein Cmdlet zu erstellen, die den Benutzer zum Registrieren für Ereignisse ermöglicht, die vom ausgelöst werden [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher). Mit diesem Cmdlet können Benutzer eine Aktion, die ausgeführt werden, wenn eine Datei unter einem bestimmten Verzeichnis erstellt wird, registrieren. In diesem Beispiel leitet sich von der [Microsoft.Powershell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) Basisklasse.
+Dieses Beispiel zeigt, wie Sie ein Cmdlet zu erstellen, die den Benutzer zum Registrieren für Ereignisse ermöglicht, die vom ausgelöst werden [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher). Mit diesem Cmdlet können Benutzer eine Aktion, die ausgeführt werden, wenn eine Datei unter einem bestimmten Verzeichnis erstellt wird, registrieren. In diesem Beispiel leitet sich von der [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) Basisklasse.
 
 ## <a name="how-to-build-the-sample-by-using-visual-studio"></a>So erstellen Sie das Beispiel mithilfe von Visual Studio.
 
@@ -78,7 +78,7 @@ Dieses Beispiel ist die Windows PowerShell 2.0 erforderlich.
 
 Dieses Beispiel veranschaulicht die folgenden.
 
-- Wie Sie ein Cmdlet für die ereignisregistrierung zu schreiben. Das Cmdlet leitet sich von der [Microsoft.Powershell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) -Klasse, die Unterstützung für die gemeinsame Parameter von Register-bietet * Event-Cmdlets. Cmdlets, die abgeleitet sind [Microsoft.Powershell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) müssen Sie nur für die einzelnen Parameter definieren, und überschreiben die `GetSourceObject` und `GetSourceObjectEventName` abstrakte Methoden.
+- Wie Sie ein Cmdlet für die ereignisregistrierung zu schreiben. Das Cmdlet leitet sich von der [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) -Klasse, die Unterstützung für die gemeinsame Parameter von Register-bietet * Event-Cmdlets. Cmdlets, die abgeleitet sind [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) müssen Sie nur für die einzelnen Parameter definieren, und überschreiben die `GetSourceObject` und `GetSourceObjectEventName` abstrakte Methoden.
 
 ## <a name="example"></a>Beispiel
 

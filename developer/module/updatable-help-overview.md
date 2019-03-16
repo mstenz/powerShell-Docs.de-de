@@ -10,12 +10,12 @@ applies_to:
 - Windows PowerShell 3.0
 ms.assetid: 3f7388a9-9fa8-42bc-b294-538c9a01e30a
 caps.latest.revision: 12
-ms.openlocfilehash: 4e962890fa1d5c282a02a89f0ae2e263844c635e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f2dfb9642ba2dde38124142b659b425bbbb00f37
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856966"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057602"
 ---
 # <a name="updatable-help-overview"></a>Aktualisierbare Hilfeübersicht
 
@@ -31,7 +31,9 @@ Aktualisierbare Hilfe wird von allen Windows PowerShell-Modulen in Windows® 8 u
 
 Aktualisierbare Hilfe umfasst die folgenden Funktionen.
 
-- Die [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) -Cmdlet, das bestimmt, ob Benutzer über die neuesten Hilfedateien haben Dateien für ein Modul und, falls nicht, lädt die neuesten Hilfedateien aus dem Internet herunter, entpackt sie und installiert sie in den Unterverzeichnissen richtige Modul auf der Computer des Benutzers. Benutzer können die [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) Cmdlet, um die neu installierte Hilfethemen sofort anzuzeigen. Sie müssen sich nicht um Windows PowerShell neu zu starten.
+- Die [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) -Cmdlet, das bestimmt, ob Benutzer über die neuesten Hilfedateien haben Dateien für ein Modul und, falls nicht, lädt die neuesten Hilfedateien aus dem Internet herunter, entpackt sie und installiert sie in den Unterverzeichnissen richtige Modul auf der Computer des Benutzers.
+  Benutzer können die [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) Cmdlet, um die neu installierte Hilfethemen sofort anzuzeigen.
+  Sie müssen kein PowerShell neu zu starten.
 
 - Die [Save-Help](/powershell/module/Microsoft.PowerShell.Core/Save-Help) -Cmdlet, das die neuesten Hilfedateien lädt Dateien aus dem Internet und speichert sie in einem Dateisystemverzeichnis. Benutzer können die `Update-Help` -Cmdlet zum Abrufen von Hilfedateien aus dem Verzeichnis, und Entpacken und installieren Sie sie in den Unterverzeichnissen Modul auf dem Computer des Benutzers. Die `Save-Help` Cmdlet wurde entwickelt, für Benutzer mit eingeschränkter oder gar keinen Internetzugriff verfügen und für Unternehmen, die Zugriff auf das Internet einschränken möchten.
 

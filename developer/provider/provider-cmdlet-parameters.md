@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: b3d09eaa-924f-4e2b-adfb-14bb729090dd
 caps.latest.revision: 8
-ms.openlocfilehash: d0fb81ee1ca1f80e216c021e1bd64771b8de4dc3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: ad7f9737c646dd5cea5abb14b828236e40feac5a
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860116"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057041"
 ---
 # <a name="provider-cmdlet-parameters"></a>Anbieter-Cmdlet-Parameter
 
@@ -29,9 +29,9 @@ Statische Parameter werden von Windows PowerShell definiert. Eine große Anzahl 
 
 `Clear-ItemProperty` Cmdlets können Sie definieren, wie die Werte, die an der Anbieter verwenden, wird die `Path` und `Name` Parameter der `Clear-ItemProperty` Cmdlet, durch die Implementierung der [ System.Management.Automation.Provider.Ipropertycmdletprovider.Clearproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty) Methode.
 
-`Copy-Item` Cmdlets können Sie definieren, wie die Werte, die an der Anbieter verwenden, wird die `Path`, `Destination`, und `Recurse` Parameter der `Copy-Item` Cmdlet, durch die Implementierung der [ System.Management.Automation.Provider.Containercmdletprovider.Copyitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) Methode.
+`Copy-Item` Cmdlets können Sie definieren, wie die Werte, die an der Anbieter verwenden, wird die `Path`, `Destination`, und `Recurse` Parameter der `Copy-Item` Cmdlet, durch die Implementierung der [ System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) Methode.
 
-Get-ChildItems-Cmdlet können Sie definieren, wie die Werte, die an der Anbieter verwenden, wird die `Path` und `Recures` Parameter von der `Get-ChildItem` Cmdlet, durch die Implementierung der [ System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) und [System.Management.Automation.Provider.Containercmdletprovider.Getchildnames*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames) Methoden.
+Get-ChildItems-Cmdlet können Sie definieren, wie die Werte, die an der Anbieter verwenden, wird die `Path` und `Recurse` Parameter von der `Get-ChildItem` Cmdlet, durch die Implementierung der [ System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) und [System.Management.Automation.Provider.Containercmdletprovider.Getchildnames*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames) Methoden.
 
 `Get-Content` Cmdlets können Sie definieren, wie die Werte, die an der Anbieter verwenden, wird die `Path` Parameter der `Get-Content` Cmdlet, durch die Implementierung der [System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentreader*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader) Methode.
 
@@ -45,7 +45,7 @@ Get-ChildItems-Cmdlet können Sie definieren, wie die Werte, die an der Anbieter
 
 `New-Item` Cmdlets können Sie definieren, wie die Werte, die an der Anbieter verwenden, wird die `Path`, `ItemType`, und `Value` Parameter der `New-Item` Cmdlet, durch die Implementierung der [ System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) Methode.
 
-`New-ItemProperty` Cmdlets können Sie definieren, wie die Werte, die an der Anbieter verwenden, wird die `Path`, `Name`, `PropertyType`, und `Value` Parameter der `New-ItemProperty` Cmdlet, durch die Implementierung der [ Microsoft.Powershell.Commands.Registryprovider.Newproperty*](/dotnet/api/Microsoft.PowerShell.Commands.RegistryProvider.NewProperty) Methode.
+`New-ItemProperty` Cmdlets können Sie definieren, wie die Werte, die an der Anbieter verwenden, wird die `Path`, `Name`, `PropertyType`, und `Value` Parameter der `New-ItemProperty` Cmdlet, durch die Implementierung der [ Microsoft.PowerShell.Commands.Registryprovider.Newproperty*](/dotnet/api/Microsoft.PowerShell.Commands.RegistryProvider.NewProperty) Methode.
 
 `Remove-Item` Können Sie definieren, wie die Werte, die an der Anbieter verwenden, wird die `Path` und `Recurse` Parameter von der `Remove-Item` Cmdlet, durch die Implementierung der [System.Management.Automation.Provider.Containercmdletprovider.Removeitem* ](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem) Methode.
 

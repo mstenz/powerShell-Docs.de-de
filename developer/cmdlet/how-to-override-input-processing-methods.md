@@ -8,28 +8,28 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1a1ad921-5816-4937-acf1-ed4760fae740
 caps.latest.revision: 8
-ms.openlocfilehash: eff40a01b60985788ae0e21156fec7ec4e27fcf1
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: cfee55576518cf9ce38501192872ce94054f5213
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855916"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056395"
 ---
 # <a name="how-to-override-input-processing-methods"></a>Überschreiben von Eingabeverarbeitungsmethoden
 
 Diese Beispiele zeigen, wie Sie die eingabeverarbeitungsmethoden innerhalb eines Cmdlets zu überschreiben. Diese Methoden werden verwendet, um die folgenden Vorgänge auszuführen:
 
-- Die [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) Methode dient zum Ausführen von einmaligen Start-Vorgängen, die für alle Objekte, die vom Cmdlet verarbeiteten gültig sind. Die Windows PowerShell-Laufzeit ruft diese Methode nur einmal aus.
+- Die [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) Methode dient zum Ausführen von einmaligen Start-Vorgängen, die für alle Objekte, die vom Cmdlet verarbeiteten gültig sind. Die Windows PowerShell-Laufzeit ruft diese Methode nur einmal aus.
 
-- Die [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) Methode wird verwendet, um die Objekte, die an das Cmdlet zu verarbeiten. Die Windows PowerShell-Laufzeit ruft diese Methode für jedes Objekt, das an das Cmdlet übergeben.
+- Die [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) Methode wird verwendet, um die Objekte, die an das Cmdlet zu verarbeiten. Die Windows PowerShell-Laufzeit ruft diese Methode für jedes Objekt, das an das Cmdlet übergeben.
 
-- Die [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) Methode wird verwendet, um einmalige Post Verarbeitungsvorgänge auszuführen. Die Windows PowerShell-Laufzeit ruft diese Methode nur einmal aus.
+- Die [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) Methode wird verwendet, um einmalige Post Verarbeitungsvorgänge auszuführen. Die Windows PowerShell-Laufzeit ruft diese Methode nur einmal aus.
 
 ## <a name="to-override-the-beginprocessing-method"></a>Überschreiben Sie die BeginProcessing-Methode
 
-- Deklarieren Sie eine geschützte Überschreibung der [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) Methode.
+- Deklarieren Sie eine geschützte Überschreibung der [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) Methode.
 
-Die folgende Klasse gibt eine Beispielnachricht an. Um diese Klasse verwenden, ändern Sie die Verb- und in der Cmdlet-Attribut, ändern Sie den Namen der Klasse entsprechend den neuen Verb- und und dann die Funktionalität, die Sie benötigen die Überschreibung der Hinzufügen der [System.Management.Automation.Cmdlet.Beginprocessing ](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) Methode.
+Die folgende Klasse gibt eine Beispielnachricht an. Um diese Klasse verwenden, ändern Sie die Verb- und in der Cmdlet-Attribut, ändern Sie den Namen der Klasse entsprechend den neuen Verb- und und dann die Funktionalität, die Sie benötigen die Überschreibung der Hinzufügen der [System.Management.Automation.Cmdlet.BeginProcessing ](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) Methode.
 
 ```csharp
 [Cmdlet(VerbsDiagnostic.Test, "BeginProcessingClass")]
@@ -50,9 +50,9 @@ public class TestBeginProcessingClassTemplate : Cmdlet
 
 ## <a name="to-override-the-processrecord-method"></a>So überschreiben Sie die ProcessRecord-Methode
 
-- Deklarieren Sie eine geschützte Überschreibung der [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) Methode.
+- Deklarieren Sie eine geschützte Überschreibung der [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) Methode.
 
-Die folgende Klasse gibt eine Beispielnachricht an. Um diese Klasse verwenden, ändern Sie die Verb- und in der Cmdlet-Attribut, ändern Sie den Namen der Klasse entsprechend den neuen Verb- und und dann die Funktionalität, die Sie benötigen die Überschreibung der Hinzufügen der [System.Management.Automation.Cmdlet.Processrecord* ](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) Methode.
+Die folgende Klasse gibt eine Beispielnachricht an. Um diese Klasse verwenden, ändern Sie die Verb- und in der Cmdlet-Attribut, ändern Sie den Namen der Klasse entsprechend den neuen Verb- und und dann die Funktionalität, die Sie benötigen die Überschreibung der Hinzufügen der [System.Management.Automation.Cmdlet.ProcessRecord ](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) Methode.
 
 ```csharp
 [Cmdlet(VerbsDiagnostic.Test, "ProcessRecordClass")]
@@ -74,9 +74,9 @@ public class TestProcessRecordClassTemplate : Cmdlet
 
 ## <a name="to-override-the-endprocessing-method"></a>So überschreiben Sie die EndProcessing-Methode
 
-- Deklarieren Sie eine geschützte Überschreibung der [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) Methode.
+- Deklarieren Sie eine geschützte Überschreibung der [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) Methode.
 
-Die folgende Klasse gibt ein Beispiel aus. Um diese Klasse verwenden, ändern Sie die Verb- und in der Cmdlet-Attribut, ändern Sie den Namen der Klasse entsprechend den neuen Verb- und und dann die Funktionalität, die Sie benötigen die Überschreibung der Hinzufügen der [System.Management.Automation.Cmdlet.Endprocessing* ](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) Methode.
+Die folgende Klasse gibt ein Beispiel aus. Um diese Klasse verwenden, ändern Sie die Verb- und in der Cmdlet-Attribut, ändern Sie den Namen der Klasse entsprechend den neuen Verb- und und dann die Funktionalität, die Sie benötigen die Überschreibung der Hinzufügen der [System.Management.Automation.Cmdlet.EndProcessing ](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) Methode.
 
 ```csharp
 [Cmdlet(VerbsDiagnostic.Test, "EndProcessingClass")]
@@ -97,10 +97,10 @@ public class TestEndProcessingClassTemplate : Cmdlet
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)
+[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)
 
-[System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)
+[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)
 
-[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)
+[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)
 
 [Schreiben eines Windows PowerShell-Cmdlets](./writing-a-windows-powershell-cmdlet.md)

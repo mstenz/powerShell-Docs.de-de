@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 524fd900-c0fe-4d13-87f2-14903a8fd5a4
 caps.latest.revision: 5
-ms.openlocfilehash: 2d2d6a32ac910ecc0fc3b6f1e78cdde54c21b427
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: bf0a73267b3cad1f50d983ebed53318ec98180e0
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858306"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056463"
 ---
 # <a name="writing-a-container-provider"></a>Schreiben eines Containeranbieters
 
@@ -44,7 +44,7 @@ Deklarieren Sie den Anbieter für die Ableitung der [System.Management.Automatio
 
 ### <a name="implementing-getchilditems"></a>Implementieren von GetChildItems
 
-Ruft die PowerShell-Engine die [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) Methode, wenn ein Benutzer ruft die [Microsoft.Powershell.Commands.Get-Childitem](/dotnet/api/Microsoft.PowerShell.Commands.Get-ChildItem) -Cmdlet. Diese Methode ruft die Elemente, die die untergeordneten Elemente des Elements am angegebenen Pfad ab.
+Ruft die PowerShell-Engine die [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) Methode, wenn ein Benutzer ruft die [Microsoft.PowerShell.Commands.Get-Childitem](/dotnet/api/Microsoft.PowerShell.Commands.Get-ChildItem) -Cmdlet. Diese Methode ruft die Elemente, die die untergeordneten Elemente des Elements am angegebenen Pfad ab.
 
 Access-Datenbank beispielsweise das Verhalten von der [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) Methode hängt von den Typ des angegebenen Elements. Wenn das Element, das Laufwerk ist, klicken Sie dann die untergeordneten Elemente sind Tabellen, und die-Methode gibt den Satz von Tabellen aus der Datenbank zurück. Wenn das angegebene Element um eine Tabelle handelt, sind die untergeordneten Elemente die Zeilen der Tabelle. Wenn das Element eine Zeile ist, dann hat er keine untergeordneten Elemente und die Methode gibt nur die Zeile zurück. Alle untergeordneten Elemente gesendet werden, an der PowerShell-Engine durch die [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) Methode.
 
@@ -155,7 +155,7 @@ protected override void GetChildNames(string path,
 
 ### <a name="implementing-newitem"></a>Implementieren von NewItem
 
-Die [System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) Methode erstellt ein neues Element vom angegebenen Typ im angegebenen Pfad. Die PowerShell-Engine ruft diese Methode auf, wenn ein Benutzer ruft die [Microsoft.Powershell.Commands.New-Item](/dotnet/api/Microsoft.PowerShell.Commands.New-Item) Cmdlet.
+Die [System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) Methode erstellt ein neues Element vom angegebenen Typ im angegebenen Pfad. Die PowerShell-Engine ruft diese Methode auf, wenn ein Benutzer ruft die [Microsoft.PowerShell.Commands.New-Item](/dotnet/api/Microsoft.PowerShell.Commands.New-Item) Cmdlet.
 
 In diesem Beispiel implementiert die Methode die Logik zum Ermitteln, dass der Pfad und dem Typ übereinstimmen. D. h. nur eine Tabelle kann direkt auf dem Laufwerk (Datenbank) erstellt werden, und nur eine Zeile in einer Tabelle erstellt werden kann. Wenn dem angegebenen Pfad und den Elementtyp auf diese Weise nicht übereinstimmen, löst die Methode eine Ausnahme aus.
 
@@ -333,7 +333,7 @@ protected override void NewItem(string path, string type,
 
 ### <a name="implementing-copyitem"></a>Implementierung von CopyItem
 
-Die [System.Management.Automation.Provider.Containercmdletprovider.Copyitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) kopiert das angegebene Element in den angegebenen Pfad. Die PowerShell-Engine ruft diese Methode auf, wenn ein Benutzer ruft die [Microsoft.Powershell.Commands.Copy-Item](/dotnet/api/Microsoft.PowerShell.Commands.Copy-Item) Cmdlet. Diese Methode kann auch rekursiv, kopieren alle untergeordneten Elemente Knoten zusätzlich zu das Element selbst sein.
+Die [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) kopiert das angegebene Element in den angegebenen Pfad. Die PowerShell-Engine ruft diese Methode auf, wenn ein Benutzer ruft die [Microsoft.PowerShell.Commands.Copy-Item](/dotnet/api/Microsoft.PowerShell.Commands.Copy-Item) Cmdlet. Diese Methode kann auch rekursiv, kopieren alle untergeordneten Elemente Knoten zusätzlich zu das Element selbst sein.
 
 Ähnlich wie die [System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) -Methode, diese Methode führt die Logik, um sicherzustellen, dass das angegebene Element des richtigen Typs für den Pfad zu dem es kopiert werden. Wenn der angegebene Zielpfad eine Tabelle handelt, muss das Element, das kopiert werden z. B. eine Zeile sein.
 
@@ -466,7 +466,7 @@ protected override void CopyItem(string path, string copyPath, bool recurse)
 
 ### <a name="implementing-removeitem"></a>Implementieren von RemoveItem
 
-Die [System.Management.Automation.Provider.Containercmdletprovider.Removeitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem) Methode entfernt das Element am angegebenen Pfad. Die PowerShell-Engine ruft diese Methode auf, wenn ein Benutzer ruft die [Microsoft.Powershell.Commands.Remove-Item](/dotnet/api/Microsoft.PowerShell.Commands.Remove-Item) Cmdlet.
+Die [System.Management.Automation.Provider.Containercmdletprovider.Removeitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem) Methode entfernt das Element am angegebenen Pfad. Die PowerShell-Engine ruft diese Methode auf, wenn ein Benutzer ruft die [Microsoft.PowerShell.Commands.Remove-Item](/dotnet/api/Microsoft.PowerShell.Commands.Remove-Item) Cmdlet.
 
 ```csharp
 protected override void RemoveItem(string path, bool recurse)

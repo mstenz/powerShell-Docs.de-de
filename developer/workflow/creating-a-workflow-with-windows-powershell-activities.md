@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: fb55971a-4ea4-4c51-aeff-4e0bb05a51b2
 caps.latest.revision: 6
-ms.openlocfilehash: 65d04c526ef7aa112da82adb924c0789731f3850
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 98cac43698b3f537ee318cd2570b2174631665a7
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56853466"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055426"
 ---
 # <a name="creating-a-workflow-with-windows-powershell-activities"></a>Erstellen eines Workflows mit Windows PowerShell-Aktivitäten
 
@@ -33,9 +33,9 @@ Die folgenden Verfahren wird beschrieben, wie zum Erstellen eines Workflows, die
 
 2. Erstellen Sie ein Argument mit dem Namen `ComputerName` mit Argumenttyp `String[]`. Dieses Argument stellt den Namen der Computer zu überprüfen und zu verknüpfen.
 
-3. Erstellen Sie ein Argument mit dem Namen `DomainCred` des Typs [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential). Dieses Argument stellt die Anmeldeinformationen für die Domäne für ein Domänenkonto an, die zum Hinzufügen eines Computers zur Domäne berechtigt ist.
+3. Erstellen Sie ein Argument mit dem Namen `DomainCred` des Typs [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential). Dieses Argument stellt die Anmeldeinformationen für die Domäne für ein Domänenkonto an, die zum Hinzufügen eines Computers zur Domäne berechtigt ist.
 
-4. Erstellen Sie ein Argument mit dem Namen `MachineCred` des Typs [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential). Dieses Argument stellt die Anmeldeinformationen eines Administrators auf den Computern, um zu überprüfen und zu verknüpfen.
+4. Erstellen Sie ein Argument mit dem Namen `MachineCred` des Typs [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential). Dieses Argument stellt die Anmeldeinformationen eines Administrators auf den Computern, um zu überprüfen und zu verknüpfen.
 
 5. Hinzufügen einer **ParallelForEach** Aktivität innerhalb der **Sequenz** Aktivität. Geben Sie `comp` und `ComputerName` in den Textfeldern, damit die Elemente die Schleife durchläuft die `ComputerName` Array.
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ac6f7aaa-d0cc-4c7b-a341-85e736174579
 caps.latest.revision: 21
-ms.openlocfilehash: 4dfe27a5105d82fa18e35f965f92fad16d390a2a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 437b3d6bb62fdd3a74f3392ec71df360c01a1974
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857786"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056650"
 ---
 # <a name="format-schema-xml-reference"></a>Formatschema – XML-Referenz
 
@@ -81,7 +81,7 @@ Die Themen in diesem Abschnitt beschreiben, die XML-Elemente, die von den Format
 
 [DefaultSettings-Element (Format)](./defaultsettings-element-format.md) definiert allgemeine Einstellungen, die für alle Ansichten die Formatierungsdatei gelten. Allgemeine Einstellungen umfassen das Anzeigen von Fehlern, Umbrechen von Text in Tabellen, die definieren, wie Sammlungen erweitert werden, und vieles mehr.
 
-[DisplayError-Element (Frmat)](./displayerror-element-format.md) gibt an, dass die Zeichenfolge #ERR angezeigt wird, wenn ein Fehler auftritt, Anzeigen von Daten.
+[DisplayError-Element (Format)](./displayerror-element-format.md) gibt an, dass die Zeichenfolge #ERR angezeigt wird, wenn ein Fehler auftritt, Anzeigen von Daten.
 
 [EntrySelectedBy-Element für CustomEntry für Steuerelemente für die Konfiguration (Format)](./entryselectedby-element-for-customentry-for-controls-for-configuration-format.md) definiert .NET Typen, die die Definition eines allgemeinen Steuerelement oder die Bedingung, die für dieses Steuerelement verwendet werden, vorhanden sein muss. Dieses Element wird verwendet, wenn ein allgemeines Steuerelement zu definieren, das von allen Ansichten im die Formatierungsdatei verwendet werden kann.
 
@@ -235,7 +235,7 @@ Die Themen in diesem Abschnitt beschreiben, die XML-Elemente, die von den Format
 
 [PropertyName-Element für SelectionCondition für GroupBy (Format)](./propertyname-element-for-selectioncondition-for-groupby-format.md) gibt an, die .NET-Eigenschaft, die die Bedingung auslöst. Wenn diese Eigenschaft vorhanden ist oder wenn ergibt die Auswertung `true`, die Bedingung erfüllt ist und die Definition verwendet. Dieses Element wird verwendet, wenn Sie definieren, wie eine neue Gruppe von Objekten angezeigt wird.
 
-[PropertyName-Element für SelectionCondition für EmtrySelectedBy für ListEntry (Format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md) gibt an, die .NET-Eigenschaft, die die Bedingung auslöst. Wenn diese Eigenschaft vorhanden ist oder wenn ergibt die Auswertung `true`, die Bedingung erfüllt ist und der Listeneintrag wird verwendet.
+[PropertyName-Element für SelectionCondition für EntrySelectedBy für ListEntry (Format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md) gibt an, die .NET-Eigenschaft, die die Bedingung auslöst. Wenn diese Eigenschaft vorhanden ist oder wenn ergibt die Auswertung `true`, die Bedingung erfüllt ist und der Listeneintrag wird verwendet.
 
 [PropertyName-Element für SelectionCondition für EntrySelectedBy für TableRowEntry (Format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-tablerowentry-format.md) gibt an, die .NET-Eigenschaft, die die Bedingung auslöst. Wenn diese Eigenschaft vorhanden ist oder wenn ergibt die Auswertung `true`, die Bedingung erfüllt ist und der Tabelleneintrag wird verwendet.
 
@@ -363,7 +363,7 @@ Die Themen in diesem Abschnitt beschreiben, die XML-Elemente, die von den Format
 
 [TableRowEntries-Element (Format)](./tablerowentries-element-for-tablecontrol-format.md) definiert, die Zeilen der Tabelle.
 
-[TableRowEntry-Element (Format)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md) definiert die Daten, die in einer Zeile der Tabelle angezeigt wird.
+[TableRowEntry-Element (Format)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md) definiert die Daten, die in einer Zeile der Tabelle angezeigt wird.
 
 [Text-Element für CustomItem für Steuerelemente für die Konfiguration (Format)](./text-element-for-customitem-for-controls-for-configuration-format.md) Klammern schließen Sie die Daten und Leerzeichen für den Einzug der das gibt Text an, die die Daten hinzugefügt werden, die durch das Steuerelement wie z. B. einer Bezeichnung angezeigt wird. Dieses Element wird verwendet, wenn ein allgemeines Steuerelement zu definieren, das von allen Ansichten im die Formatierungsdatei verwendet werden kann.
 
@@ -427,7 +427,7 @@ Die Themen in diesem Abschnitt beschreiben, die XML-Elemente, die von den Format
 
 [Width-Element (Format)](./width-element-for-tablecolumnheader-for-tablecontrol-format.md) definiert die Breite einer Spalte (in Zeichen).
 
-[Umschließen Sie (Format)-Element](./wrap-element-for-tablerowentry-for-tablecontrl-format.md) gibt an, dass der Text, der die Spaltenbreite überschreitet, die in der nächsten Zeile angezeigt wird.
+[Umschließen Sie (Format)-Element](./wrap-element-for-tablerowentry-for-tablecontrol-format.md) gibt an, dass der Text, der die Spaltenbreite überschreitet, die in der nächsten Zeile angezeigt wird.
 
 [WrapTables-Element (Format)](./wraptables-element-format.md) gibt an, dass die Daten in eine Tabellenzelle in der nächsten Zeile verschoben werden, wenn die Daten länger als die Breite der Spalte ist.
 

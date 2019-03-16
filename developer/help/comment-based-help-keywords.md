@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ab90ec96-77f5-42e3-9c7e-2f4156ec207f
 caps.latest.revision: 6
-ms.openlocfilehash: dbb6f7c4cbefeaaaec0747511f50192bcf08c20c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: af8a151070d26ffe236800076115c964f625e572
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862656"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058078"
 ---
 # <a name="comment-based-help-keywords"></a>Schlüsselwörter in der kommentarbasierten Hilfe
 
@@ -23,7 +23,7 @@ Dieses Thema enthält und beschreibt die Schlüsselwörter in kommentarbasierte 
 
 Im folgenden werden die gültigen kommentarbasierte Hilfe-Schlüsselwörter. Sie werden in der Reihenfolge aufgeführt, in denen sie in der Regel in einem Hilfethema zusammen mit ihrem Verwendungszweck aufgeführt. Diese Schlüsselwörter können in beliebiger Reihenfolge in der kommentarbasierten Hilfe angezeigt werden, und sie sind nicht Groß-/Kleinschreibung beachtet.
 
-Beachten Sie, dass die `.ExternalHelp` Schlüsselwort hat Vorrang vor allen anderen kommentarbasierte Hilfe-Schlüsselwörter. Wenn `.ExternalHelp` vorhanden ist, die [Microsoft.Powershell.Commands.Get-Help](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help) Cmdlet zeigt keine kommentarbasierte Hilfe, selbst wenn er eine Hilfedatei, die den Wert des Schlüsselworts entspricht nicht finden kann.
+Beachten Sie, dass die `.ExternalHelp` Schlüsselwort hat Vorrang vor allen anderen kommentarbasierte Hilfe-Schlüsselwörter. Wenn `.ExternalHelp` vorhanden ist, die [Microsoft.PowerShell.Commands.Get-Help](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help) Cmdlet zeigt keine kommentarbasierte Hilfe, selbst wenn er eine Hilfedatei, die den Wert des Schlüsselworts entspricht nicht finden kann.
 
 `.Synopsis` Eine kurze Beschreibung der Funktion oder des Skripts. Dieses Schlüsselwort kann nur einmal in jedem Thema verwendet werden.
 
@@ -61,9 +61,9 @@ Die `.Link` Schlüsselwort Inhalt kann auch ein Uniform Resource Identifier (URI
 
 `.ExternalHelp` `<XML Help File>` Gibt den Pfad und/oder Namen einer XML-basierte Hilfedatei für das Skript oder eine Funktion.
 
-Die `.ExternalHelp` -Schlüsselwort teilt dem [Microsoft.Powershell.Commands.Get-Help](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help) Cmdlet zum Abrufen von Hilfe für das Skript oder eine Funktion in eine XML-Datei. Die **. ExternalHelp** -Schlüsselwort ist erforderlich, wenn eine XML-basierte Hilfedatei für ein Skript oder eine Funktion verwenden. Ohne diese `Get-Help` eine Hilfedatei für die Funktion bzw. das Skript wird nicht gefunden.
+Die `.ExternalHelp` -Schlüsselwort teilt dem [Microsoft.PowerShell.Commands.Get-Help](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help) Cmdlet zum Abrufen von Hilfe für das Skript oder eine Funktion in eine XML-Datei. Die **. ExternalHelp** -Schlüsselwort ist erforderlich, wenn eine XML-basierte Hilfedatei für ein Skript oder eine Funktion verwenden. Ohne diese `Get-Help` eine Hilfedatei für die Funktion bzw. das Skript wird nicht gefunden.
 
-Die `.ExternalHelp` Schlüsselwort hat Vorrang vor allen anderen kommentarbasierte Hilfe-Schlüsselwörter. Wenn `.ExternalHelp` vorhanden ist, die [Microsoft.Powershell.Commands.Get-Help](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help) Cmdlet zeigt keine kommentarbasierte Hilfe, selbst wenn er eine Hilfedatei, die den Wert des Schlüsselworts entspricht nicht finden kann.
+Die `.ExternalHelp` Schlüsselwort hat Vorrang vor allen anderen kommentarbasierte Hilfe-Schlüsselwörter. Wenn `.ExternalHelp` vorhanden ist, die [Microsoft.PowerShell.Commands.Get-Help](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help) Cmdlet zeigt keine kommentarbasierte Hilfe, selbst wenn er eine Hilfedatei, die den Wert des Schlüsselworts entspricht nicht finden kann.
 
 Wenn die Funktion wird durch ein Skriptmodul, den Wert des exportiert `.ExternalHelp` sollte ein Dateinamen ohne Pfad sein. `Get-Help` Sucht nach der Datei in einem gebietsschemaspezifischen Unterverzeichnis des Modulverzeichnisses. Es gibt keine Anforderungen für den Dateinamen, aber eine bewährte Methode ist, verwenden Sie das folgende Namensformat für die Datei: `<ScriptModule>.psm1-help.xml`.
 

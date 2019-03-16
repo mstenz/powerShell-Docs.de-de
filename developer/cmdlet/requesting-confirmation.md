@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4468066f-6759-402f-84db-0d8303cfd5cb
 caps.latest.revision: 7
-ms.openlocfilehash: 4081333c6411bfcd10005bd7018d004d44d5a932
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c5deaa9bb0dd9621b6f03aeb188cf76ed35dff6c
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854376"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054942"
 ---
 # <a name="requesting-confirmation"></a>Anfordern der Bestätigung
 
@@ -23,7 +23,7 @@ In diesem Abschnitt wird erläutert, Bestätigungsnachrichten, die ein Cmdlet, F
 
 [Anfordern der Bestätigungsvorgang für Befehle](./requesting-confirmation-from-cmdlets.md) beschreibt den Vorgang, die Cmdlets, Funktionen und Anbieter ausführen müssen, um eine Bestätigung anzufordern, bevor sie eine Änderung am System vornehmen.
 
-[Benutzer anfordern Bestätigung](./users-requesting-confirmation.md) wird erläutert, wie Benutzer für ein Cmdlet, Funktion oder Anbieter einer Bestätigung vornehmen, können bei der [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) Methode wird aufgerufen.
+[Benutzer anfordern Bestätigung](./users-requesting-confirmation.md) wird erläutert, wie Benutzer für ein Cmdlet, Funktion oder Anbieter einer Bestätigung vornehmen, können bei der [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) Methode wird aufgerufen.
 
 [Meldungen zur benutzerbestätigung](./confirmation-messages.md) bietet Beispiele für die verschiedenen Bestätigungsnachrichten, die angezeigt werden können.
 

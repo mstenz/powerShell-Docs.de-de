@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 45c45800-a87d-456e-b07c-12d4d8c27c67
 caps.latest.revision: 8
-ms.openlocfilehash: 431e5d8407b9f689a5224b329d8c7b52802e19e1
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 2c6a3d678ca68dc0d189f6ab981fdea5fef894cb
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854916"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056480"
 ---
 # <a name="displayerror-element-format"></a>Element „DisplayError“ (Format)
 
 Gibt an, dass die Zeichenfolge #ERR angezeigt wird, wenn ein Fehler auftritt, Anzeigen von Daten.
 
--Element (Format) DefaultSettings-Element (Format) DisplayError Konfigurationselement (Frmat)
+-Element (Format) DefaultSettings-Element (Format) DisplayError Konfigurationselement (Format)
 
 ## <a name="syntax"></a>Syntax
 

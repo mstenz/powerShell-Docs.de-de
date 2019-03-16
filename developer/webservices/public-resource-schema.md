@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e67298ee-a773-4402-8afb-d97ad0e030e5
 caps.latest.revision: 4
-ms.openlocfilehash: a9204ca7b28fc5792ef9bd18f6b0b24964de7386
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c7e20ff0f36e8cab2d414ff2e5924b3359ad9c60
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859546"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057245"
 ---
 # <a name="public-resource-schema"></a>Schema für öffentliche Ressourcen
 
@@ -21,7 +21,7 @@ Management OData verwendet MOF, um Ressourcen und deren Eigenschaften zu definie
 
 ## <a name="defining-a-resource"></a>Definieren eine Ressource
 
-Jede Ressource entspricht ein durch ein Windows PowerShell-Cmdlet zurückgegebenes Objekt. In der Publc Ressourcen MOF-Datei definieren Sie eine Ressource durch Deklarieren einer Klasse. Die Klasse besteht aus Eigenschaften, die die Eigenschaften des Objekts entsprechen. Im folgenden Beispiel, z. B. die ["System.Diagnostics.Process"](/dotnet/api/System.Diagnostics.Process) Klasse wird durch die folgende MOF-Datei dargestellt.
+Jede Ressource entspricht ein durch ein Windows PowerShell-Cmdlet zurückgegebenes Objekt. In der öffentlichen Ressource MOF-Datei definieren Sie eine Ressource durch Deklarieren einer Klasse. Die Klasse besteht aus Eigenschaften, die die Eigenschaften des Objekts entsprechen. Im folgenden Beispiel, z. B. die ["System.Diagnostics.Process"](/dotnet/api/System.Diagnostics.Process) Klasse wird durch die folgende MOF-Datei dargestellt.
 
 ```csharp
 class PswsTest_Process
@@ -55,7 +55,7 @@ class PswsTest_ProcessModule
 };
 ```
 
-Um eine Entitätseigenschaft als komplexer Typ deklarieren zu können, deklarieren Sie ihn als einen `string` Geben Sie mit der `EmbeddedInstance` Qualifizierer, einschließlich des Namens des komplexen Typs. Das folgende Beispiel Hshows die Deklaration einer Eigenschaft von der `PswsTest_ProcessModule` Typ deklariert wird, im vorherigen Beispiel.
+Um eine Entitätseigenschaft als komplexer Typ deklarieren zu können, deklarieren Sie ihn als einen `string` Geben Sie mit der `EmbeddedInstance` Qualifizierer, einschließlich des Namens des komplexen Typs. Das folgende Beispiel zeigt die Deklaration einer Eigenschaft der `PswsTest_ProcessModule` Typ deklariert wird, im vorherigen Beispiel.
 
 ```csharp
 [Required, EmbeddedInstance("PswsTest_ProcessModule")] String Modules[];
@@ -63,7 +63,7 @@ Um eine Entitätseigenschaft als komplexer Typ deklarieren zu können, deklarier
 
 ### <a name="associating-entities"></a>Zuordnen von Entitäten
 
-Sie können zwei Entitäten zuordnen, indem Sie die Zuordnung und AssocationClass Qualifizierer verwenden. Weitere Informationen finden Sie unter [Management OData-Entitäten zuordnen](./associating-management-odata-entities.md).
+Sie können zwei Entitäten zuordnen, indem Sie die Zuordnung und Assoziationsklasse Qualifizierer verwenden. Weitere Informationen finden Sie unter [Management OData-Entitäten zuordnen](./associating-management-odata-entities.md).
 
 ### <a name="derived-types"></a>Abgeleitete Typen
 
@@ -72,17 +72,16 @@ Sie können einen Typ von einem anderen Typ ableiten. Der abgeleitete Typ erbt a
 ```csharp
 Class Product {
 
-[Key] String ProductName;
+    [Key] String ProductName;
 
 };
 
 Class DairyProduct : Product {
 
-Uint16 PercentFat;
+    Uint16 PercentFat;
 };
 Class POPProduct : Product {
 
-Boolean IsCarbonated;
+    Boolean IsCarbonated;
 };
-
 ```

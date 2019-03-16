@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8f1069f7-8fa8-4622-9e2c-af29b0b961c2
 caps.latest.revision: 6
-ms.openlocfilehash: 803fe4ae24a4f8022639c5b6d6298100859177ce
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: a50de014988336c473c565b506a73de1c864d7e0
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858356"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058231"
 ---
 # <a name="provider-cmdlet-dynamic-parameters"></a>Dynamische Anbieter-Cmdlet-Parameter
 
@@ -73,7 +73,7 @@ Hier ist eine Liste der statischen Parameter, die zum Hinzufügen von dynamische
 
 `Copy-Item` Cmdlets können Sie dynamische Parameter, die ausgelöst werden definieren die `Path`, `Destination`, und `Recurse` Parameter von der `Copy-Item` Cmdlet, durch die Implementierung der [ System.Management.Automation.Provider.Containercmdletprovider.Copyitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters) Methode.
 
-Cmdlet "Get-ChildItems" können Sie dynamische Parameter, die ausgelöst werden definieren die `Path` und `Recures` Parameter von der `Get-ChildItem` Cmdlet, durch die Implementierung der [ System.Management.Automation.Provider.Containercmdletprovider.Getchilditemsdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters) und [System.Management.Automation.Provider.Containercmdletprovider.Getchildnamesdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNamesDynamicParameters) Methoden.
+Cmdlet "Get-ChildItems" können Sie dynamische Parameter, die ausgelöst werden definieren die `Path` und `Recurse` Parameter von der `Get-ChildItem` Cmdlet, durch die Implementierung der [ System.Management.Automation.Provider.Containercmdletprovider.Getchilditemsdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters) und [System.Management.Automation.Provider.Containercmdletprovider.Getchildnamesdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNamesDynamicParameters) Methoden.
 
 `Get-Content` Cmdlets können Sie dynamische Parameter, die ausgelöst werden definieren die `Path` Parameter der `Get-Content` Cmdlet, durch die Implementierung der [ System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentreaderdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReaderDynamicParameters) Methode.
 
@@ -89,7 +89,7 @@ Cmdlet "Get-ChildItems" können Sie dynamische Parameter, die ausgelöst werden 
 
 `New-ItemProperty` Cmdlets können Sie dynamische Parameter, die ausgelöst werden definieren die `Path`, `Name`, `PropertyType`, und `Value` Parameter von der `New-ItemProperty` Cmdlet, durch die Implementierung der [ System.Management.Automation.Provider.Idynamicpropertycmdletprovider.Newpropertydynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.NewPropertyDynamicParameters) Methode.
 
-`New-PSDrive` Cmdlets können Sie dynamische Parameter, die ausgelöst werden definieren die [: System.Management.Automation.Psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) zurückgegebenes Objekt der `New-PSDrive` Cmdlet, durch die Implementierung der [ System.Management.Automation.Provider.Drivecmdletprovider.Newdrivedynamicparameters*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters) Methode.
+`New-PSDrive` Cmdlets können Sie dynamische Parameter, die ausgelöst werden definieren die [: System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) zurückgegebenes Objekt der `New-PSDrive` Cmdlet, durch die Implementierung der [ System.Management.Automation.Provider.Drivecmdletprovider.Newdrivedynamicparameters*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters) Methode.
 
 `Remove-Item` Sie können definieren, dass dynamische Parameter, die ausgelöst werden die `Path` und `Recurse` Parameter von der `Remove-Item` Cmdlet, durch die Implementierung der [ System.Management.Automation.Provider.Containercmdletprovider.Removeitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItemDynamicParameters) Methode.
 

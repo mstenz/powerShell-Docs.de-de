@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 62be8432-28c1-4ca2-bcdb-d0350163fa8c
 caps.latest.revision: 5
-ms.openlocfilehash: 31371797ee57f07075da3436e0b42b2ca01aaffd
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 9a01f948c5b474b4f9068030907601543e13cc7e
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857346"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057653"
 ---
 # <a name="adding-and-invoking-commands"></a>Hinzufügen und Aufrufen von Befehlen
 
@@ -140,7 +140,7 @@ namespace HostPS1e
 
  Sie rufen eine Pipeline asynchron durch Aufruf einer Überladung der der [System.Management.Automation.Powershell.Begininvoke*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) zum Erstellen einer [IAsyncResult](http://msdn.microsoft.com/library/system.iasyncresult\(v=vs.110\).aspx) , und klicken Sie dann durch Aufrufen der [ System.Management.Automation.Powershell.Endinvoke*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) Methode.
 
- Das folgende Beispiel zeigt, wie Sie eine Pipeline Asynchronoulsy aufrufen.
+ Das folgende Beispiel zeigt, wie Sie eine Pipeline asynchron aufrufen.
 
 ```csharp
 using System;
@@ -157,7 +157,7 @@ namespace HostPS3
     {
       // Use the PowerShell.Create and PowerShell.AddCommand
       // methods to create a command pipeline that includes
-      // Get-Process cmdlet. Do not include spaces immediatly
+      // Get-Process cmdlet. Do not include spaces immediately
       // before or after the cmdlet name as that will cause
       // the command to fail.
       PowerShell ps = PowerShell.Create().AddCommand("Get-Process");

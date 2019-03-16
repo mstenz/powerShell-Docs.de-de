@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 98bcfda0-6ee2-46f5-bbc7-5fab8b780d6a
 caps.latest.revision: 5
-ms.openlocfilehash: a789b392bddd344ad583c93a1a55302329df9917
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f449c17e4c373c42f8a1d96fa9075940111c65bc
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863536"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056589"
 ---
 # <a name="writing-a-navigation-provider"></a>Schreiben eines Navigationsanbieters
 
@@ -132,7 +132,7 @@ protected override string GetParentPath(string path, string root)
 
 ### <a name="implementing-makepath"></a>MakePath implementieren
 
-Die [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) -Methode verknüpft einen angegebenen übergeordneten Pfad und einen angegebenen untergeordneten Pfad einen Anbieter-internen Pfad erstellen (für Informationen zu Path Datentypen Anbieter können zu unterstützen, finden Sie unter [Übersicht über Windows PowerShell-Anbieter](./windows-powershell-provider-overview.md). Die PowerShell-Engine ruft diese Methode auf, wenn ein Benutzer ruft die [Microsoft.Powershell.Commands.Join-Path](/dotnet/api/Microsoft.PowerShell.Commands.Join-Path) Cmdlet.
+Die [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) -Methode verknüpft einen angegebenen übergeordneten Pfad und einen angegebenen untergeordneten Pfad einen Anbieter-internen Pfad erstellen (für Informationen zu Path Datentypen Anbieter können zu unterstützen, finden Sie unter [Übersicht über Windows PowerShell-Anbieter](./windows-powershell-provider-overview.md). Die PowerShell-Engine ruft diese Methode auf, wenn ein Benutzer ruft die [Microsoft.PowerShell.Commands.Join-Path](/dotnet/api/Microsoft.PowerShell.Commands.Join-Path) Cmdlet.
 
 ```csharp
 protected override string MakePath(string parent, string child)
@@ -221,7 +221,7 @@ protected override string NormalizeRelativePath(string path,
 
 ### <a name="implementing-moveitem"></a>Implementieren von MoveItem
 
-Die [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) Methode verschiebt ein Element aus dem angegebenen Pfad, in den angegebenen Zielpfad. Die PowerShell-Engine ruft diese Methode auf, wenn ein Benutzer ruft die [Microsoft.Powershell.Commands.Move-Item](/dotnet/api/Microsoft.PowerShell.Commands.Move-Item) Cmdlet.
+Die [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) Methode verschiebt ein Element aus dem angegebenen Pfad, in den angegebenen Zielpfad. Die PowerShell-Engine ruft diese Methode auf, wenn ein Benutzer ruft die [Microsoft.PowerShell.Commands.Move-Item](/dotnet/api/Microsoft.PowerShell.Commands.Move-Item) Cmdlet.
 
 ```csharp
 protected override void MoveItem(string path, string destination)

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1550b068-dfbc-4ae0-9aa1-72c9a680ec59
 caps.latest.revision: 15
-ms.openlocfilehash: dd48e82452e83f93e2e005c9db53bbc51d8b2eb4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3942c008e026b0b99db3c77af4a0152b50fffc4e
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858916"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054576"
 ---
 # <a name="tablecontrol-element-format"></a>Element „TableControl“ (Format)
 
@@ -48,7 +48,7 @@ Keine.
 |[AutoSize-Element für TableControl (Format)](./autosize-element-for-tablecontrol-format.md)|Optionales Element.<br /><br /> Gibt an, ob die Größe der Spalte und die Anzahl der Spalten basierend auf der Größe der Daten angepasst werden.|
 |[HideTableHeaders-Element für TableControl (Format)](./hidetableheaders-element-format.md)|Optionales Element.<br /><br /> Gibt an, ob die Kopfzeile der Tabelle nicht angezeigt wird.|
 |[TableHeaders-Element für TableControl (Format)](./tableheaders-element-format.md)|Erforderliches Element.<br /><br /> Definiert die Bezeichnungen, die Breite und die Ausrichtung der Daten für die Spalten der Tabelle an.|
-|[TableRowEntries-Element für TableCotrol (Format)](./tablerowentries-element-for-tablecontrol-format.md)|Optionales Element.<br /><br /> Enthält die Definitionen der Tabellenansicht.|
+|[TableRowEntries-Element für TableControl (Format)](./tablerowentries-element-for-tablecontrol-format.md)|Optionales Element.<br /><br /> Enthält die Definitionen der Tabellenansicht.|
 
 ### <a name="parent-elements"></a>Übergeordnete Elemente
 

@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f24f77d5-e224-4b62-b128-535e045d333e
 caps.latest.revision: 9
-ms.openlocfilehash: 8cfbcacf93733667ffba63a252c86518c0919b57
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 19e96b612a8778d82cdbafb528a7ffeb01f15f99
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863406"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058818"
 ---
 # <a name="how-to-request-confirmations"></a>Anfordern von Bestätigungen
 
-In diesem Beispiel wird gezeigt, wie zum Aufrufen der [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) und [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) Methoden zum Anfordern von Bestätigungen aus der Benutzer, bevor eine Aktion ausgeführt wird.
+In diesem Beispiel wird gezeigt, wie zum Aufrufen der [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) und [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) Methoden zum Anfordern von Bestätigungen aus der Benutzer, bevor eine Aktion ausgeführt wird.
 
 > [!IMPORTANT]
 > Weitere Informationen zur Behandlung dieser Anforderungen von Windows PowerShell finden Sie unter [Bestätigung anfordern](./requesting-confirmation-from-cmdlets.md).
@@ -43,13 +43,13 @@ In diesem Beispiel wird gezeigt, wie zum Aufrufen der [System.Management.Automat
     private bool force;
     ```
 
-3. Hinzufügen einer `if` -Anweisung, die den Rückgabewert des verwendet die [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) Methode, um zu bestimmen, ob die [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) Methode wird aufgerufen.
+3. Hinzufügen einer `if` -Anweisung, die den Rückgabewert des verwendet die [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) Methode, um zu bestimmen, ob die [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) Methode wird aufgerufen.
 
-4. Fügen Sie eine zweite `if` -Anweisung, den Rückgabewert von der [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) -Methode und der Wert des der `Force` Parameter, um zu bestimmen, ob der Vorgang sein soll ausgeführt.
+4. Fügen Sie eine zweite `if` -Anweisung, den Rückgabewert von der [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) -Methode und der Wert des der `Force` Parameter, um zu bestimmen, ob der Vorgang sein soll ausgeführt.
 
 ## <a name="example"></a>Beispiel
 
-Das folgende Codebeispiel zeigt die [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) und [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) Methoden werden aufgerufen, aus der außer Kraft setzen, der die [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) Methode. Allerdings können Sie auch diese Methoden aus den anderen eingabeverarbeitungsmethoden aufrufen.
+Das folgende Codebeispiel zeigt die [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) und [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) Methoden aus aufgerufen werden, in der Überschreibung von der [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) Methode. Allerdings können Sie auch diese Methoden aus den anderen eingabeverarbeitungsmethoden aufrufen.
 
 ```csharp
 protected override void ProcessRecord()

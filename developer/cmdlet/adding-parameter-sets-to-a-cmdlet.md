@@ -10,12 +10,12 @@ helpviewer_keywords:
 - parameter sets [PowerShell Programmer's Guide]
 ms.assetid: a6131db4-fd6e-45f1-bd47-17e7174afd56
 caps.latest.revision: 8
-ms.openlocfilehash: b02a2e0d4b0a27c261b0bc05febda7826ad5276e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f0bff11618c18bf53b9c2a185445795a17306fa3
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859266"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054984"
 ---
 # <a name="adding-parameter-sets-to-a-cmdlet"></a>Hinzufügen von Parametersätzen zu einem Cmdlet
 
@@ -179,7 +179,7 @@ Obwohl ein unique-Parameter für jeden Parameter vorhanden sein muss, können Pa
 
 ## <a name="overriding-an-input-processing-method"></a>Überschreiben einer Eingabeverarbeitungsmethode
 
-Jedes Cmdlet eine eingabeverarbeitungsmethode muss überschrieben werden, den meisten Fällen die [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) Methode. In diesem Cmdlet die [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) Methode wird überschrieben, sodass das Cmdlet eine beliebige Anzahl von Prozessen verarbeitet werden kann. Sie enthält eine Select-Anweisung, die Aufrufe an, dass eine andere Methode festlegen, für die Parameter der Benutzerbasis wurde angegeben.
+Jedes Cmdlet eine eingabeverarbeitungsmethode muss überschrieben werden, den meisten Fällen die [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) Methode. In diesem Cmdlet die [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) Methode wird überschrieben, sodass das Cmdlet eine beliebige Anzahl von Prozessen verarbeitet werden kann. Sie enthält eine Select-Anweisung, die Aufrufe an, dass eine andere Methode festlegen, für die Parameter der Benutzerbasis wurde angegeben.
 
 ```csharp
 protected override void ProcessRecord()

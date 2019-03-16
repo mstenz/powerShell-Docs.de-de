@@ -12,12 +12,12 @@ helpviewer_keywords:
 - drives [PowerShell Programmer's Guide]
 ms.assetid: 2b446841-6616-4720-9ff8-50801d7576ed
 caps.latest.revision: 6
-ms.openlocfilehash: d1546ab0b0e6b5502f35c92c01ce148211c53db2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 174d3a6860790295e1b73f32d9c1bad46b653917
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855796"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055648"
 ---
 # <a name="creating-a-windows-powershell-drive-provider"></a>Erstellen eines Windows PowerShell-Laufwerkanbieters
 
@@ -61,7 +61,7 @@ Siehe [Entwurf der Windows PowerShell-Anbieter](./designing-your-windows-powersh
 
 Alle Windows PowerShell-Anbieter werden statusfrei sein, berücksichtigt, was bedeutet, dass es sich bei Ihrem laufwerksanbieter muss alle Zustandsinformationen zu erstellen, die von der Windows PowerShell-Laufzeit benötigt wird, wenn Ihr Anbieter aufgerufen.
 
-Für diesen laufwerksanbieter enthält Zustandsinformationen für die Verbindung mit der Datenbank, die als Teil der Informationen zum Laufwerk gespeichert wird. Hier ist der Code, der zeigt, wie diese Informationen gespeichert werden, in der [: System.Management.Automation.Psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) -Objekt, das Laufwerk beschreibt:
+Für diesen laufwerksanbieter enthält Zustandsinformationen für die Verbindung mit der Datenbank, die als Teil der Informationen zum Laufwerk gespeichert wird. Hier ist der Code, der zeigt, wie diese Informationen gespeichert werden, in der [: System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) -Objekt, das Laufwerk beschreibt:
 
 [!code-csharp[AccessDBProviderSample02.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs#L130-L151 "AccessDBProviderSample02.cs")]
 
@@ -73,15 +73,15 @@ Damit wird die Windows PowerShell-Laufzeit, um ein Laufwerk zu erstellen, muss d
 
 Ihre Überschreibung der diese Methode sollte folgendermaßen vor:
 
-- Überprüfen Sie, ob die [System.Management.Automation.Psdriveinfo.Root*](/dotnet/api/System.Management.Automation.PSDriveInfo.Root) Element vorhanden ist und, die eine Verbindung mit dem Datenspeicher hergestellt werden kann.
+- Überprüfen Sie, ob die [System.Management.Automation.PSDriveinfo.Root*](/dotnet/api/System.Management.Automation.PSDriveInfo.Root) Element vorhanden ist und, die eine Verbindung mit dem Datenspeicher hergestellt werden kann.
 
 - Erstellen Sie ein Laufwerk, und füllen Sie das Verbindung-Mitglied, Unterstützung des der `New-PSDrive` Cmdlet.
 
-- Überprüfen Sie die [: System.Management.Automation.Psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) -Objekt für das vorgeschlagene Laufwerk.
+- Überprüfen Sie die [: System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) -Objekt für das vorgeschlagene Laufwerk.
 
-- Ändern der [: System.Management.Automation.Psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) Objekt, das Laufwerk mit allen erforderlichen Leistung oder Zuverlässigkeit Informationen beschreibt, oder geben Sie zusätzliche Daten, für das Laufwerk mit Aufrufer.
+- Ändern der [: System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) Objekt, das Laufwerk mit allen erforderlichen Leistung oder Zuverlässigkeit Informationen beschreibt, oder geben Sie zusätzliche Daten, für das Laufwerk mit Aufrufer.
 
-- Behandeln von Fehlern, die mit der [System.Management.Automation.Provider.Cmdletprovider.Writeerror*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) Methode, und klicken Sie dann geben `null`.
+- Behandeln von Fehlern, die mit der [System.Management.Automation.Provider.Cmdletprovider.WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) Methode, und klicken Sie dann geben `null`.
 
   Diese Methode gibt die Laufwerkinformationen, die übergeben wurde, auf die Methode oder eine anbieterspezifische-Version des Zertifikats.
 

@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a886a26d-7730-4586-aeac-fd3f0bc60b88
 caps.latest.revision: 8
-ms.openlocfilehash: 75214a3fe4bc019836f75db19fb873bd081f200f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 229725b5b9f1f0082592dcebe11564fd2f630ce1
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56861416"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059472"
 ---
 # <a name="confirmation-messages"></a>Bestätigungsmeldungen
 
-Nachfolgend finden Sie verschiedene Bestätigungsnachrichten, die abhängig von der Varianten der angezeigt werden, können die [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) und [ System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) Methoden, die aufgerufen werden.
+Nachfolgend finden Sie verschiedene Bestätigungsnachrichten, die abhängig von der Varianten der angezeigt werden, können die [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) und [System.Management.Automation.Cmdlet.ShouldContinue ](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) Methoden, die aufgerufen werden.
 
 > [!IMPORTANT]
 > Beispielcode, der zeigt, wie Sie Bestätigungen anfordern, finden Sie unter [wie Anforderung Bestätigungen](./how-to-request-confirmations.md).
@@ -33,7 +33,7 @@ Performing operation "Test-RequestConfirmationTemplate1" on Target "MyResource".
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"):
 ```
 
-Wenn der Benutzer wählt **Ja** oder **Ja, alle** auf die Bestätigung anfordern (wie im folgenden Beispiel gezeigt), einen Aufruf der [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) Methode vorgenommen wird, die bewirkt, dass einer zweite bestätigungsmeldung angezeigt werden.
+Wenn der Benutzer wählt **Ja** oder **Ja, alle** auf die Bestätigung anfordern (wie im folgenden Beispiel gezeigt), einen Aufruf der [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)Methode vorgenommen wird, die bewirkt, dass einer zweite bestätigungsmeldung angezeigt werden.
 
 ```output
 Confirm
@@ -57,7 +57,7 @@ Performing operation "MyAction" on Target "MyResource".
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"):
 ```
 
-Wenn der Benutzer auswählt **Ja** oder **Ja, alle** zur vorherigen Nachricht, einen Aufruf der [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) Methode vorgenommen wird, wodurch ein zweite bestätigungsmeldung angezeigt werden.
+Wenn der Benutzer auswählt **Ja** oder **Ja, alle** zur vorherigen Nachricht, einen Aufruf der [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) Methode vorgenommen wird, wodurch ein zweite bestätigungsmeldung angezeigt werden.
 
 ```output
 Confirm

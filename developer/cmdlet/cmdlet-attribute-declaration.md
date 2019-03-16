@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Cmdlet attribute
 ms.assetid: 1d323332-f773-4c0e-8a69-2aada765afb2
 caps.latest.revision: 12
-ms.openlocfilehash: 2bc03aaade1f18d48f65ecf5f9ee437ffaf07f92
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 6887467ad5ccafe6edf8f03f531b4750133aa9e9
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863426"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058027"
 ---
 # <a name="cmdlet-attribute-declaration"></a>Attributdeklaration: Cmdlet
 
@@ -36,9 +36,9 @@ Das Cmdlet-Attribut identifiziert eine Microsoft .NET Framework-Klasse, wie ein 
 
 `NounName` ([System.String](/dotnet/api/System.String)) erforderlich. Gibt das Cmdlet-Nomen. Diese Nomen gibt an, die Ressource, der mit dem-Cmdlet verarbeitet wird. Weitere Informationen zu den Cmdlet-Nomen, finden Sie unter [Cmdlet Deklaration](./cmdlet-class-declaration.md) und [Strongly Encouraged Development Guidelines](./strongly-encouraged-development-guidelines.md).
 
-`SupportsShouldProcess` ([System.Boolean](/dotnet/api/System.Boolean)) Optional benannter Parameter. `True` Gibt an, dass das Cmdlet Aufrufe unterstützt die [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) -Methode, die mit dem Cmdlet bietet eine Möglichkeit, den Benutzer aufzufordern, bevor eine Aktion, die ändert das System ausgeführt wird. `False`, der Standardwert gibt an, dass das Cmdlet keine Aufrufe unterstützt die [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) Methode. Weitere Informationen zu Anforderungen, die Bestätigung finden Sie unter [Bestätigung anfordern](./requesting-confirmation-from-cmdlets.md).
+`SupportsShouldProcess` ([System.Boolean](/dotnet/api/System.Boolean)) Optional benannter Parameter. `True` Gibt an, dass das Cmdlet Aufrufe unterstützt die [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) -Methode, die mit dem Cmdlet bietet eine Möglichkeit, den Benutzer aufzufordern, bevor eine Aktion, die ändert das System ausgeführt wird. `False`, der Standardwert gibt an, dass das Cmdlet keine Aufrufe unterstützt die [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) Methode. Weitere Informationen zu Anforderungen, die Bestätigung finden Sie unter [Bestätigung anfordern](./requesting-confirmation-from-cmdlets.md).
 
-`ConfirmImpact` ([System.Management.Automation.Confirmimpact](/dotnet/api/System.Management.Automation.ConfirmImpact)) Optional benannter Parameter. Gibt an, wenn die Aktion des-Cmdlets durch einen Aufruf von bestätigt werden, damit die [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) Methode. [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) wird nur aufgerufen, wenn die "confirmimpact" des-Cmdlets (standardmäßig "Mittel") gleich oder größer als der Wert der Wert der `$ConfirmPreference` Variable. Dieser Parameter muss angegeben werden nur dann, wenn die `SupportsShouldProcess` Parameter angegeben ist.
+`ConfirmImpact` ([System.Management.Automation.Confirmimpact](/dotnet/api/System.Management.Automation.ConfirmImpact)) Optional benannter Parameter. Gibt an, wenn die Aktion des-Cmdlets durch einen Aufruf von bestätigt werden, damit die [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) Methode. [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) wird nur aufgerufen, wenn die "confirmimpact" des-Cmdlets (standardmäßig "Mittel") gleich oder größer als der Wert der Wert der `$ConfirmPreference` Variable. Dieser Parameter muss angegeben werden nur dann, wenn die `SupportsShouldProcess` Parameter angegeben ist.
 
 `DefaultParameterSetName` ([System.String](/dotnet/api/System.String)) Optional benannter Parameter. Gibt an, dass die Standardparameter festgelegt, dass die Windows PowerShell-Laufzeit versucht, mit denen sie nicht bestimmen kann, welcher Parametersatz um zu verwenden. Beachten Sie, dass diese Situation lässt, indem Sie den unique-Parameter für die einzelnen Parameter legen Sie einen obligatorischen Parameter machen.
 
@@ -54,9 +54,9 @@ Ist dies ein Fall, in denen Windows PowerShell verwenden, kann nicht den Standar
 
 **VerbName-NounName**
 
-- Alle Cmdlets, die Ressourcen außerhalb der Windows PowerShell ändern sollte enthalten die `SupportsShouldProcess` -Schlüsselwort, wenn das Cmdlet-Attribut deklariert ist, das dem-Cmdlet aufrufen, kann die [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) -Methode auf, bevor Sie das Cmdlet die zugehörige Aktion ausführt. Wenn die [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) aufrufen, gibt `false`, die Aktion nicht durchgeführt werden soll. Weitere Informationen über die Bestätigungs-Anforderungen von generiert die [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) finden Sie unter [Bestätigung anfordern](./requesting-confirmation-from-cmdlets.md).
+- Alle Cmdlets, die Ressourcen außerhalb der Windows PowerShell ändern sollte enthalten die `SupportsShouldProcess` -Schlüsselwort, wenn das Cmdlet-Attribut deklariert ist, das dem-Cmdlet aufrufen, kann die [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) -Methode auf, bevor Sie das Cmdlet die zugehörige Aktion ausführt. Wenn die [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) aufrufen, gibt `false`, die Aktion nicht durchgeführt werden soll. Weitere Informationen über die Bestätigungs-Anforderungen von generiert die [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) finden Sie unter [Bestätigung anfordern](./requesting-confirmation-from-cmdlets.md).
 
-Die `Confirm` und `WhatIf` Cmdlet-Parameter sind nur für Cmdlets, die unterstützen verfügbar [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) aufrufen.
+Die `Confirm` und `WhatIf` Cmdlet-Parameter sind nur für Cmdlets, die unterstützen verfügbar [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) aufrufen.
 
 ## <a name="example"></a>Beispiel
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 2a48de31-7961-4b0e-b58b-93466e38370b
 caps.latest.revision: 6
-ms.openlocfilehash: 86a0e8b7e8967280daa57faf5c323efcd3b1368b
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 5c5168ffd74c15066b914ad1b39d9ead947c5e7f
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794194"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054185"
 ---
 # <a name="loading-and-exporting-formatting-data"></a>Laden und Exportieren von Formatierungsdaten
 
@@ -27,7 +27,7 @@ Die aktuelle Sitzung mithilfe der folgenden Methoden können Formatierungsdateie
 
 - Sie können ein modulmanifest erstellen, die die Formatierung Datei verweist. Module können Sie die Formatierungsdateien für die Verteilung verpacken. Verwenden der [New-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest) Cmdlet, um das Manifest zu erstellen und die [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) Cmdlet, um das Modul in die aktuelle Sitzung zu laden. Weitere Informationen zu Modulen finden Sie unter [Schreiben eines Windows PowerShell-Moduls](../module/writing-a-windows-powershell-module.md).
 
-- Sie können ein Snap-in erstellen, die die Formatierung Datei verweist. Verwenden der [System.Management.Automation.Pssnapin.Formats](/dotnet/api/System.Management.Automation.PSSnapIn.Formats) auf Ihre Formatierungsdateien verweisen. Es wird dringend empfohlen, Module, die Paket-Cmdlets und zugeordnete Formatierung und Typen-Dateien für die Verteilung zu verwenden. Weitere Informationen zu Modulen finden Sie unter [Schreiben eines Windows PowerShell-Moduls](../module/writing-a-windows-powershell-module.md).
+- Sie können ein Snap-in erstellen, die die Formatierung Datei verweist. Verwenden der [System.Management.Automation.PSSnapIn.Formats](/dotnet/api/System.Management.Automation.PSSnapIn.Formats) auf Ihre Formatierungsdateien verweisen. Es wird dringend empfohlen, Module, die Paket-Cmdlets und zugeordnete Formatierung und Typen-Dateien für die Verteilung zu verwenden. Weitere Informationen zu Modulen finden Sie unter [Schreiben eines Windows PowerShell-Moduls](../module/writing-a-windows-powershell-module.md).
 
 - Wenn Sie Befehle programmgesteuert aufrufen, können Sie einen Eintrag mit Formatierung Datei auf den anfänglichen Sitzungsstatus, der den Runspace hinzufügen, in dem die Befehle ausgeführt werden. Weitere Informationen zu .NET verwendet, um die Formatierungsdatei hinzuzufügen, finden Sie unter den [System.Management.Automation.Runspaces.Sessionstateformatentry? Displayproperty = Fullname](/dotnet/api/System.Management.Automation.Runspaces.SessionStateFormatEntry) Klasse.
 

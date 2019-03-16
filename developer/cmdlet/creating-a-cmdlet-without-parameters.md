@@ -11,12 +11,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell Programmers Guide], basic cmdlet
 ms.assetid: 54236ef3-82db-45f8-9114-1ecb7ff65d3e
 caps.latest.revision: 8
-ms.openlocfilehash: 75a45e539b45b50714951f2b992d9ecf69de4664
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c380b28570c955de6f41152fd617f5c1b0f9e4bd
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860646"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054695"
 ---
 # <a name="creating-a-cmdlet-without-parameters"></a>Erstellen eines Cmdlet ohne Parameter
 
@@ -70,7 +70,7 @@ Public Class GetProcCommand
     Inherits Cmdlet
 ```
 
-Beachten Sie, dass vor der Klassendefinition den [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute) Attribut, mit der Syntax `[Cmdlet(verb, noun, ...)]`, dient zum Identifizieren dieser Klasse als Cmdlet verwendet. Dies ist das einzige erforderliche Attribut für alle Cmdlets, und es ermöglicht, dass die Windows PowerShell-Laufzeit sie richtig aufgerufen. Sie können die Attribut-Stichworte, um weitere Deklarieren der Klasse bei Bedarf festlegen. Denken Sie daran, dass die Attributdeklaration für unser Beispiel GetProcCommand-Klasse nur die Nomen und Verb-Namen für das Cmdlet "Get-Proc" deklariert.
+Beachten Sie, dass vor der Klassendefinition den [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) Attribut, mit der Syntax `[Cmdlet(verb, noun, ...)]`, dient zum Identifizieren dieser Klasse als Cmdlet verwendet. Dies ist das einzige erforderliche Attribut für alle Cmdlets, und es ermöglicht, dass die Windows PowerShell-Laufzeit sie richtig aufgerufen. Sie können die Attribut-Stichworte, um weitere Deklarieren der Klasse bei Bedarf festlegen. Denken Sie daran, dass die Attributdeklaration für unser Beispiel GetProcCommand-Klasse nur die Nomen und Verb-Namen für das Cmdlet "Get-Proc" deklariert.
 
 > [!NOTE]
 > Für alle Klassen in einer Windows PowerShell-Attribut entsprechen die Schlüsselwörter, die Sie festlegen können, die Eigenschaften der Attributklasse.
@@ -78,27 +78,27 @@ Beachten Sie, dass vor der Klassendefinition den [System.Management.Automation.C
 Bei der Benennung von der Klasse des-Cmdlets ist es empfiehlt sich, den Cmdlet-Namen in den Namen der Klasse entsprechen. Klicken Sie zu diesem Zweck verwenden Sie das Formular "VerbNounCommand", und Ersetzen Sie "Verb" und "Nomen", mit dem Verb und Substantiv im Cmdlet-Namen verwendet. Wie in der vorherigen Klassendefinition angezeigt wird, wird die Beispiel-Cmdlet "Get-Proc" definiert eine Klasse namens GetProcCommand, abgeleitet von der [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) Basisklasse.
 
 > [!IMPORTANT]
-> Wenn Sie möchten ein Cmdlet definieren, der die Windows PowerShell-Laufzeit direkt zugreift, sollte die Klasse .NET leiten Sie von der [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) Basisklasse. Weitere Informationen zu dieser Klasse finden Sie unter [erstellen ein Cmdlet, Parametersätze definiert](./adding-parameter-sets-to-a-cmdlet.md).
+> Wenn Sie möchten ein Cmdlet definieren, der die Windows PowerShell-Laufzeit direkt zugreift, sollte die Klasse .NET leiten Sie von der [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) Basisklasse. Weitere Informationen zu dieser Klasse finden Sie unter [erstellen ein Cmdlet, Parametersätze definiert](./adding-parameter-sets-to-a-cmdlet.md).
 
 > [!NOTE]
 > Die Klasse für ein Cmdlet muss explizit als öffentlich markiert werden. Klassen, die nicht als öffentlich markiert werden werden standardmäßig auf interne und werden von der Windows PowerShell-Laufzeit nicht gefunden werden.
 
-Windows PowerShell verwendet die [Microsoft.Powershell.Commands](/dotnet/api/Microsoft.PowerShell.Commands) Namespace-URI für die Cmdlet-Klassen. Es wird empfohlen, um die Cmdlet-Klassen in einem Namespace Befehle für Ihren API-Namespace, z. B. xxx.PS.Commands zu platzieren.
+Windows PowerShell verwendet die [Microsoft.PowerShell.Commands](/dotnet/api/Microsoft.PowerShell.Commands) Namespace-URI für die Cmdlet-Klassen. Es wird empfohlen, um die Cmdlet-Klassen in einem Namespace Befehle für Ihren API-Namespace, z. B. xxx.PS.Commands zu platzieren.
 
 ## <a name="overriding-an-input-processing-method"></a>Überschreiben einer Eingabeverarbeitungsmethode
 
 Die [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) Klasse enthält drei wichtigsten Eingabeverarbeitung-Methoden, die mindestens eine der Ihr Cmdlet muss außer Kraft setzen. Weitere Informationen zur Verarbeitung von Datensätzen in Windows PowerShell finden Sie unter [Funktionsweise von Windows PowerShell](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
 
-Für alle Arten von Eingaben, die Windows PowerShell-Laufzeit ruft [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) um Verarbeitung zu ermöglichen. Wenn Ihr Cmdlet einige vorverarbeitung oder Setup durchführen muss, können sie dazu diese Methode überschreiben.
+Für alle Arten von Eingaben, die Windows PowerShell-Laufzeit ruft [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) um Verarbeitung zu ermöglichen. Wenn Ihr Cmdlet einige vorverarbeitung oder Setup durchführen muss, können sie dazu diese Methode überschreiben.
 
 > [!NOTE]
 > Windows PowerShell verwendet den Begriff "Datensatz", beschreiben den Satz von Parameterwerten, die bereitgestellt werden, wenn ein Cmdlet aufgerufen wird.
 
-Wenn Ihr Cmdlet Pipelineeingabe akzeptiert, müssen sie überschreiben die [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) -Methode, und optional die [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)Methode. Beispielsweise kann ein Cmdlet beide Methoden überschreiben, wenn Sie dieses Tool sammelt alle Benutzereingabe mit [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) und klicken Sie dann auf die Eingabe als Ganzes und nicht als ein Element zu einem Zeitpunkt, als die `Sort-Object` Cmdlet bewirkt.
+Wenn Ihr Cmdlet Pipelineeingabe akzeptiert, müssen sie überschreiben die [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) -Methode, und optional die [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)Methode. Beispielsweise kann ein Cmdlet beide Methoden überschreiben, wenn Sie dieses Tool sammelt alle Benutzereingabe mit [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) und klicken Sie dann auf die Eingabe als Ganzes und nicht als ein Element zu einem Zeitpunkt, als die `Sort-Object` Cmdlet bewirkt.
 
-Wenn Ihr Cmdlet keine Pipelineeingabe akzeptiert, sollte sie überschreiben die [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) Methode. Beachten Sie, dass diese Methode häufig, anstelle von verwendet wird [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) Wenn das-Cmdlet kann nicht für ein Element zu einem Zeitpunkt wie der Fall für ein Cmdlet sortiert ist.
+Wenn Ihr Cmdlet keine Pipelineeingabe akzeptiert, sollte sie überschreiben die [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) Methode. Beachten Sie, dass diese Methode häufig, anstelle von verwendet wird [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) Wenn das-Cmdlet kann nicht für ein Element zu einem Zeitpunkt wie der Fall für ein Cmdlet sortiert ist.
 
-Da dieses Beispiel-Cmdlet "Get-Proc" Pipelineeingabe empfangen muss, überschreibt es die [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) Methode und verwendet die standardimplementierungen für [ System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) und [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing). Die [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) "Override" Ruft die Prozesse ab und schreibt sie in der Befehlszeile mithilfe der [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) -Methode.
+Da dieses Beispiel-Cmdlet "Get-Proc" Pipelineeingabe empfangen muss, überschreibt es die [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) Methode und verwendet die standardimplementierungen für [ System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) und [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing). Die [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) "Override" Ruft die Prozesse ab und schreibt sie in der Befehlszeile mithilfe der [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) Methode.
 
 ```csharp
 protected override void ProcessRecord()
@@ -136,14 +136,14 @@ End Sub 'ProcessRecord
 
 - Ein eingabeverarbeitungsmethode kann Eingabe auch die Ausgabe-Objekt von einem upstream-Cmdlet für die Pipeline empfangen werden. Weitere Informationen finden Sie unter [erstellen ein Cmdlet zum Prozess Pipelineeingabe](./adding-parameters-that-process-pipeline-input.md). Beachten Sie, dass Ihr Cmdlet empfangen von Eingaben aus einer Kombination von Befehlszeilen und pipeline kann Datenquellen.
 
-- Das Cmdlet "downstream" möglicherweise kein lange oder überhaupt nicht zurück. Aus diesem Grund die eingabeverarbeitungsmethode in Ihrem Cmdlet sollte nicht richten Sperren während des Aufrufs [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject), insbesondere Sperren, die für die der Bereich reicht hinter der Cmdlet-Instanz bis.
+- Das Cmdlet "downstream" möglicherweise kein lange oder überhaupt nicht zurück. Aus diesem Grund die eingabeverarbeitungsmethode in Ihrem Cmdlet sollte nicht richten Sperren während des Aufrufs [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject), insbesondere Sperren, die für die der Bereich reicht hinter der Cmdlet-Instanz bis.
 
 > [!IMPORTANT]
 > Cmdlets sollten niemals Aufrufen [System.Console.Writeline*](/dotnet/api/System.Console.WriteLine) oder dessen Entsprechung.
 
-- Ihr Cmdlet möglicherweise Objektvariablen bereinigt werden, wenn sie abgeschlossen ist verarbeiten (z. B. wenn ein Dateihandle in geöffnet der [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) -Methode und behält das Handle öffnen für die Verwendung von [ System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)). Es ist wichtig zu beachten, dass die Windows PowerShell-Laufzeit nicht immer rufen die [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) -Methode, die Bereinigung Objekte ausführen soll.
+- Ihr Cmdlet möglicherweise Objektvariablen bereinigt werden, wenn sie abgeschlossen ist verarbeiten (z. B. wenn ein Dateihandle in geöffnet der [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) -Methode und behält das Handle öffnen für die Verwendung von [ System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)). Es ist wichtig zu beachten, dass die Windows PowerShell-Laufzeit nicht immer rufen die [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) -Methode, die Bereinigung Objekte ausführen soll.
 
-Z. B. [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) kann nicht aufgerufen werden, wenn das Cmdlet Zielpfads abgebrochen wird oder wenn ein Abbruch tritt Fehler in einem beliebigen Teil des Cmdlets auf. Aus diesem Grund sollte ein Cmdlet, das Objekt Bereinigung erfordert die vollständige implementieren [System.Idisposable](/dotnet/api/System.IDisposable) Muster, einschließlich des Finalizers, sodass beide von die Laufzeit aufgerufen werden kann [ System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) und [System.Idisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) am Ende der Verarbeitung.
+Z. B. [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) kann nicht aufgerufen werden, wenn das Cmdlet Zielpfads abgebrochen wird oder wenn ein Abbruch tritt Fehler in einem beliebigen Teil des Cmdlets auf. Aus diesem Grund sollte ein Cmdlet, das Objekt Bereinigung erfordert die vollständige implementieren [System.IDisposable](/dotnet/api/System.IDisposable) Muster, einschließlich des Finalizers, sodass beide von die Laufzeit aufgerufen werden kann [ System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) und [System.IDisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) am Ende der Verarbeitung.
 
 ## <a name="code-sample"></a>Codebeispiel
 

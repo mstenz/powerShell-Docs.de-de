@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d43684ce-7c3d-4d14-8dbd-061c111ee805
 caps.latest.revision: 12
-ms.openlocfilehash: faa9ba78397e713400f6072df9915f20d966bb37
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: d05437aaa9652e7f81d0854d1a746acffe145699
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859446"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056905"
 ---
 # <a name="tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format"></a>Element „TableColumnItems“ für TableRowEntry für TableControl (Format)
 
@@ -47,7 +47,7 @@ Keine.
 
 |Element|Beschreibung|
 |-------------|-----------------|
-|[TableRowEntry-Element für TableRowEntries für TableControl (Format)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)|Definiert die Daten, die in einer Zeile der Tabelle angezeigt wird.|
+|[TableRowEntry-Element für TableRowEntries für TableControl (Format)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|Definiert die Daten, die in einer Zeile der Tabelle angezeigt wird.|
 
 ## <a name="remarks"></a>Hinweise
 
@@ -80,6 +80,6 @@ Das folgende Beispiel zeigt eine `TableColumnItems` Element, das drei Eigenschaf
 
 [TableColumnItem-Element (Format)](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)
 
-[TableRowEntry-Element (Format)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)
+[TableRowEntry-Element (Format)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)
 
 [Schreiben Sie eine Formatierungsdatei PowerShell](./writing-a-powershell-formatting-file.md)

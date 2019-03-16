@@ -10,12 +10,12 @@ helpviewer_keywords:
 - virtual methods (PowerShell SDK]
 ms.assetid: b0bb8172-c9fa-454b-9f1b-57c3fe60671b
 caps.latest.revision: 12
-ms.openlocfilehash: 7f8d25e03707052b1d5b62e245caae360da11d0b
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 065214647dfa6d376b727930fe75140911095faf
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794942"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059370"
 ---
 # <a name="cmdlet-input-processing-methods"></a>Cmdlet-Eingabeverarbeitungsmethoden
 
@@ -63,7 +63,7 @@ Ein ausführlicheres Beispiel zur Verwendung der [System.Management.Automation.C
 
 Cmdlets sollten außer Kraft setzen der [System.Management.Automation.Cmdlet.Endprocessing%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) Methode, um alle nachträglich verarbeiteten Vorgänge hinzuzufügen, die für alle Datensätze gültig sind, die vom Cmdlet verarbeitet wurden. Z. B. Ihr Cmdlet möglicherweise Objektvariablen bereinigen, wenn der Prozess beendet wird verarbeitet.
 
-Wenn Windows PowerShell über eine Befehlspipeline verarbeitet, ruft Windows PowerShell diese Methode einmal für jede Instanz des-Cmdlets in der Pipeline. Allerdings ist es wichtig zu beachten, dass die Windows PowerShell-Laufzeit nicht Ruft die [System.Management.Automation.Cmdlet.Endprocessing%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) Methode, wenn das-Cmdlet über die Verarbeitung von Benutzereingaben Zielpfads abgebrochen wird oder wenn ein Abbruch tritt Fehler in einem beliebigen Teil des Cmdlets auf. Aus diesem Grund sollte ein Cmdlet, das Objekt Bereinigung erfordert die vollständige implementieren [System.Idisposable](/dotnet/api/System.IDisposable) Muster, einschließlich von einem Finalizer, damit die Laufzeit sowohl aufrufen kann die [ System.Management.Automation.Cmdlet.Endprocessing%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) und [System.Idisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) Methoden am Ende der Verarbeitung. Weitere Informationen dazu, wie Windows PowerShell den Befehlspipeline aufruft, finden Sie unter [Cmdlet Verarbeitung Lebenszyklus](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5).
+Wenn Windows PowerShell über eine Befehlspipeline verarbeitet, ruft Windows PowerShell diese Methode einmal für jede Instanz des-Cmdlets in der Pipeline. Allerdings ist es wichtig zu beachten, dass die Windows PowerShell-Laufzeit nicht Ruft die [System.Management.Automation.Cmdlet.Endprocessing%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) Methode, wenn das-Cmdlet über die Verarbeitung von Benutzereingaben Zielpfads abgebrochen wird oder wenn ein Abbruch tritt Fehler in einem beliebigen Teil des Cmdlets auf. Aus diesem Grund sollte ein Cmdlet, das Objekt Bereinigung erfordert die vollständige implementieren [System.IDisposable](/dotnet/api/System.IDisposable) Muster, einschließlich von einem Finalizer, damit die Laufzeit sowohl aufrufen kann die [ System.Management.Automation.Cmdlet.Endprocessing%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0) und [System.IDisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) Methoden am Ende der Verarbeitung. Weitere Informationen dazu, wie Windows PowerShell den Befehlspipeline aufruft, finden Sie unter [Cmdlet Verarbeitung Lebenszyklus](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5).
 
 Der folgende Code zeigt eine Implementierung der [System.Management.Automation.Cmdlet.Processrecord%2A? Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0) Methode.
 
@@ -88,6 +88,6 @@ Ein ausführlicheres Beispiel zur Verwendung der [System.Management.Automation.C
 
 [System.Management.Automation.Cmdlet.Endprocessing%2A?Displayproperty=Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0)
 
-[System.Idisposable](/dotnet/api/System.IDisposable)
+[System.IDisposable](/dotnet/api/System.IDisposable)
 
 [Windows PowerShell Shell SDK](../windows-powershell-reference.md)

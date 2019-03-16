@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: b99d53fc-0af9-426b-82ce-09955e031d4b
 caps.latest.revision: 13
-ms.openlocfilehash: d919d4ad8554e762230c1448d81b50e27c38ba99
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 0fa4a5f804586c51ae6a36121f9aab041b0989cc
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863366"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058044"
 ---
 # <a name="cmdlet-samples"></a>Cmdlet-Beispiele
 
@@ -39,7 +39,7 @@ In diesem Abschnitt wird beschrieben, Beispielcode, der in der Windows PowerShel
 
 [Beispiel für StopProcessSample04](./stopprocesssample04-sample.md) dieses Beispiel zeigt, wie zum Schreiben eines Cmdlets, die deklariert Parameter legt fest, gibt an, die Standardparameter festgelegt, und ein Eingabeobjekt akzeptieren.
 
-[Beispiel für Events01](./events01-sample.md) diesem Beispiel wird gezeigt, wie Sie ein Cmdlet zu erstellen, die den Benutzer zum Registrieren von ausgelösten Ereignisse ermöglicht [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher). Mit diesem Cmdlet können Benutzer z. B. registrieren eine Aktion, die ausgeführt werden, wenn eine Datei unter einem bestimmten Verzeichnis erstellt wird. In diesem Beispiel leitet sich von der [Microsoft.Powershell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) Basisklasse.
+[Beispiel für Events01](./events01-sample.md) diesem Beispiel wird gezeigt, wie Sie ein Cmdlet zu erstellen, die den Benutzer zum Registrieren von ausgelösten Ereignisse ermöglicht [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher). Mit diesem Cmdlet können Benutzer z. B. registrieren eine Aktion, die ausgeführt werden, wenn eine Datei unter einem bestimmten Verzeichnis erstellt wird. In diesem Beispiel leitet sich von der [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) Basisklasse.
 
 ## <a name="see-also"></a>Weitere Informationen
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 6602730d-3892-4656-80c7-7bca2d14337f
 caps.latest.revision: 14
-ms.openlocfilehash: 59921a92661482b8d518b82f490c9879643543bb
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f5781c0c03aca41d01a44598a9a8c00d6d21d2fd
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859866"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059574"
 ---
 # <a name="types-of-cmdlet-parameters"></a>Cmdlet-Parametertypen
 
@@ -91,13 +91,13 @@ private string userName;
 
 ## <a name="switch-parameters"></a>Switch-Parameter
 
-Windows PowerShell bietet eine [System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter) Typ, der können Sie einen Parameter definieren, deren Wert wird automatisch festgelegt, um `false` , wenn der Parameter nicht angegeben wird, wenn das Cmdlet wird aufgerufen. Verwenden Sie nach Möglichkeit anstelle von booleschen Parametern Switch-Parameter.
+Windows PowerShell bietet eine [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter) Typ, der können Sie einen Parameter definieren, deren Wert wird automatisch festgelegt, um `false` , wenn der Parameter nicht angegeben wird, wenn das Cmdlet wird aufgerufen. Verwenden Sie nach Möglichkeit anstelle von booleschen Parametern Switch-Parameter.
 
 Betrachten Sie das folgende Beispiel aus. Mehrere Windows PowerShell-Cmdlets übergeben werden standardmäßig kein Ausgabeobjekt entlang der Pipeline. Diese Cmdlets haben jedoch eine `PassThru` switch-Parameter, die das Standardverhalten überschrieben. Wenn die `PassThru` Parameter angegeben ist, wenn diese Cmdlets aufgerufen werden, das Cmdlet gibt ein Ausgabeobjekt an die Pipeline zurück.
 
-Bei Bedarf den Parameter, um einen Standardwert besitzen `true` der Parameter im Aufruf nicht angegeben ist, berücksichtigen Sie die Bedeutung von der Parameter umkehren. Beispiel, statt das Parameter-Attribut in einen booleschen Wert der `true`, deklarieren Sie die Eigenschaft als die [System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter) geben, und legen Sie dann auf den Standardwert des Parameters, der `false`.
+Bei Bedarf den Parameter, um einen Standardwert besitzen `true` der Parameter im Aufruf nicht angegeben ist, berücksichtigen Sie die Bedeutung von der Parameter umkehren. Beispiel, statt das Parameter-Attribut in einen booleschen Wert der `true`, deklarieren Sie die Eigenschaft als die [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter) geben, und legen Sie dann auf den Standardwert des Parameters, der `false`.
 
-Um einen Switch-Parameter zu definieren, deklarieren Sie die Eigenschaft als die [System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter) eingeben, wie im folgenden Beispiel gezeigt.
+Um einen Switch-Parameter zu definieren, deklarieren Sie die Eigenschaft als die [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter) eingeben, wie im folgenden Beispiel gezeigt.
 
 ```csharp
 [Parameter(Position = 1)]

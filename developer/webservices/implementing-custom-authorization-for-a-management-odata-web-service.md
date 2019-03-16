@@ -8,20 +8,20 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ae37e3f3-5fd6-4ff6-bf66-a249ff96822b
 caps.latest.revision: 7
-ms.openlocfilehash: 5d6ad7f62c451a0013f6c52b294fac9abd0b4bf1
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 2afa0e79d9de781149f31a45666d13f98ca10a26
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862586"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057891"
 ---
 # <a name="implementing-custom-authorization-for-a-management-odata-web-service"></a>Implementieren der benutzerdefinierten Autorisierung für einen Management OData-Webdienst
 
-Mit dem Webdienst des Windows PowerShell erfordert eine von Drittanbietern zum Implementieren der [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) Windows PowerShell-Cmdlets verfügbar gemacht werden. Diese Schnittstelle führt die benutzerautorisierung an den Webdienst. Nach den Code zum Implementieren der Schnittstelle zu schreiben, kompilieren Sie es in eine DLL, die in der Webanwendung verwendet werden.
+Mit dem Webdienst des Windows PowerShell erfordert eine von Drittanbietern zum Implementieren der [Microsoft.Management.Odata.CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) Windows PowerShell-Cmdlets verfügbar gemacht werden. Diese Schnittstelle führt die benutzerautorisierung an den Webdienst. Nach den Code zum Implementieren der Schnittstelle zu schreiben, kompilieren Sie es in eine DLL, die in der Webanwendung verwendet werden.
 
 ## <a name="pass-through-authorization"></a>Pass-Through-Autorisierung
 
-Die einfachste Methode zum Implementieren der [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) Schnittstelle ist eine Pass-Through-Implementierung, die alle Benutzer autorisiert. Dieses Beispiel enthält keine Sicherheit und s, die nur als ein Llustration wie die Schnittstelle implementiert. Eine Implementierung der [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) Schnittstelle muss zwei Methoden außer Kraft setzen: [Microsoft.Management.Odata.Customauthorization.Authorizeuser*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) und [Microsoft.Management.Odata.Customauthorization.Getmembershipid*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId). In diesem Beispiel die [Microsoft.Management.Odata.Customauthorization.Authorizeuser*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) gibt immer die **System.Security.Principal.WindowsIdentity** Objekt, mit dem aktuellen Benutzer verknüpft ist .
+Die einfachste Methode zum Implementieren der [Microsoft.Management.Odata.CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) Schnittstelle ist eine Pass-Through-Implementierung, die alle Benutzer autorisiert. Dieses Beispiel enthält keine Sicherheit und s, die nur als veranschaulicht, wie die Schnittstelle implementieren. Eine Implementierung der [Microsoft.Management.Odata.CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) Schnittstelle muss zwei Methoden außer Kraft setzen: [Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) und [Microsoft.Management.Odata.CustomAuthorization.GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId). In diesem Beispiel die [Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) gibt immer die **System.Security.Principal.WindowsIdentity** Objekt, mit dem aktuellen Benutzer verknüpft ist.
 
 ```csharp
 namespace Microsoft.Samples. HYPERLINK "VBScript:u(%227%22,19)" Management. HYPERLINK "VBScript:u(%227%22,30)" OData. HYPERLINK "VBScript:u(%227%22,36)" BasicPlugins
@@ -68,7 +68,7 @@ namespace Microsoft.Samples. HYPERLINK "VBScript:u(%227%22,19)" Management. HYPE
 
         /// <summary>
 
-        /// Default managemnet system state key
+        /// Default management system state key
 
         /// </summary>
 
@@ -134,7 +134,7 @@ namespace Microsoft.Samples. HYPERLINK "VBScript:u(%227%22,19)" Management. HYPE
 
 ### <a name="role-based-authorization"></a>Rollenbasierte Autorisierung
 
-Das folgende Beispiel implementiert eine rollenbasierte Autorisierung-Richtlinie. Die Richtlinie wird in eine XML-Datei, die mit der Datei "Web.config" main Anwendungsverzeichnis befindet und MOF und XML-Mapping-Schema-Dateien definiert. Informationen dazu, wie Sie die Schemadatei für die Autorisierung zu konfigurieren, finden Sie unter [Konfigurieren der rollenbasierten Autorisierung](./configuring-role-based-authorization.md). Der erste Teil des Beispiels implementiert die [Microsoft.Management.Odata.Customauthorization.Authorizeuser*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) und [Microsoft.Management.Odata.Customauthorization.Getmembershipid*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId) -Methoden. In diesem Fall die Schnittstellenmethoden, rufen Methoden in der `RbacSystem` -Klasse (unten definiert), die die eigentliche Arbeit der Überprüfung der Berechtigungen für den Benutzer zu tun.
+Das folgende Beispiel implementiert eine rollenbasierte Autorisierung-Richtlinie. Die Richtlinie wird in eine XML-Datei, die mit der Datei "Web.config" main Anwendungsverzeichnis befindet und MOF und XML-Mapping-Schema-Dateien definiert. Informationen dazu, wie Sie die Schemadatei für die Autorisierung zu konfigurieren, finden Sie unter [Konfigurieren der rollenbasierten Autorisierung](./configuring-role-based-authorization.md). Der erste Teil des Beispiels implementiert die [Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) und [Microsoft.Management.Odata.CustomAuthorization.GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId) Methoden. In diesem Fall die Schnittstellenmethoden, rufen Methoden in der `RbacSystem` -Klasse (unten definiert), die die eigentliche Arbeit der Überprüfung der Berechtigungen für den Benutzer zu tun.
 
 ```csharp
 namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
@@ -209,7 +209,7 @@ namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
 
     /// <summary>
     /// Keeps Configuration for the RbacSystem
-    /// It reads the RacSystem configuration for configuratin file and creates RbacConfiguration
+    /// It reads the RacSystem configuration for configuration file and creates RbacConfiguration
     /// </summary>
     [Serializable]
     [XmlRoot("RbacConfiguration")]
@@ -719,7 +719,7 @@ namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
             /// Indicates whether the current object is equal to another object of the object type.
             /// </summary>
             /// <param name="other">Other object instance</param>
-            /// <returns>true, if both instace are same else false</returns>
+            /// <returns>true, if both instance are same else false</returns>
             public override bool Equals(object other)
             {
                 return this.Equals(other as RbacUserInfo);
@@ -738,4 +738,4 @@ namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
 }
 ```
 
-Abschließend implementiert die RbacSystem-Klasse Methoden, die die Arbeit der Überprüfung der Berechtigungen für den Benutzer und die Autorisierung Rückgabestatus, die in der Implementierung der definierten Methoden den [Microsoft.Management.Odata.Customauthorization ](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) Schnittstelle.
+Abschließend implementiert die RbacSystem-Klasse Methoden, die die Arbeit der Überprüfung der Berechtigungen für den Benutzer und die Autorisierung Rückgabestatus, die in der Implementierung der definierten Methoden den [Microsoft.Management.Odata.CustomAuthorization ](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) Schnittstelle.

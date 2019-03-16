@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 0db9f54c-4014-4450-9e81-c9f5fe562a0e
 caps.latest.revision: 12
-ms.openlocfilehash: a421d151ac3fdbb763668dd6fbf775f5b91a833f
-ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
+ms.openlocfilehash: c65deeda6b2ef1b52de55035dc606259a7f2d232
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56863646"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059659"
 ---
 # <a name="common-parameter-names"></a>Allgemeine Parameternamen
 
@@ -30,7 +30,7 @@ Die folgenden Parameter werden für alle Cmdlets hinzugefügt, und es können zu
 
 Datentyp: SwitchParameter
 
-Dieser Parameter gibt an, ob das auf Programmiererebene zu debuggen, die Nachrichten in der Befehlszeile angezeigt werden kann. Diese Nachrichten sind für die Problembehandlung für die Funktionsfähigkeit des Cmdlets vorgesehen und werden durch Aufrufe von generiert die [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) Methode. Debugmeldungen müssen nicht lokalisiert werden soll.
+Dieser Parameter gibt an, ob das auf Programmiererebene zu debuggen, die Nachrichten in der Befehlszeile angezeigt werden kann. Diese Nachrichten sind für die Problembehandlung für die Funktionsfähigkeit des Cmdlets vorgesehen und werden durch Aufrufe von generiert die [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) Methode. Debugmeldungen müssen nicht lokalisiert werden soll.
 
 ### <a name="erroraction-alias-ea"></a>ErrorAction (Alias: Enterprise Agreement)
 
@@ -60,7 +60,7 @@ Dieser Parameter definiert die Anzahl von Objekten, die in den Ausgabepuffer zu 
 
 Datentyp: SwitchParameter
 
-Dieser Parameter gibt an, ob das Cmdlet erläuternde Nachrichten schreibt, die in der Befehlszeile angezeigt werden können. Diese Nachrichten sollen zusätzliche Hilfe für den Benutzer zu ermöglichen, und werden durch Aufrufe der [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) Methode.
+Dieser Parameter gibt an, ob das Cmdlet erläuternde Nachrichten schreibt, die in der Befehlszeile angezeigt werden können. Diese Nachrichten sollen zusätzliche Hilfe für den Benutzer zu ermöglichen, und werden durch Aufrufe der [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) Methode.
 
 ### <a name="warningaction-alias-wa"></a>WarningAction (Alias: wa)
 

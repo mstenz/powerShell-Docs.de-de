@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1f405afb-70b5-4fe0-9986-bc07401d93fd
 caps.latest.revision: 23
-ms.openlocfilehash: 832527ea4b042812c39934cd7e124201c6dc2ea4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 862f942facafff6cea66c4f8f1040772c6a62ec3
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56861496"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057364"
 ---
 # <a name="creating-a-table-view"></a>Erstellen einer Tabellenansicht
 
@@ -95,7 +95,7 @@ Die folgende XML-Elemente werden verwendet, um eine Ansicht zu definieren:
 
 2. Die [TableColumnHeader](./tablecolumnheader-element-format.md) -Element definiert, was am oberen Rand einer Spalte der Tabelle angezeigt wird. Geben Sie diese Elemente in der Reihenfolge, in den Headern, die angezeigt werden sollen.
 
-   Es gibt keine Beschränkung der Anzahl von diesen-Element, das Sie verwenden können, aber die Anzahl der [TableColumnHeader](./tablecolumnheader-element-format.md) Elemente in der Tabellenansicht müssen gleich der Anzahl der [TableRowEntry](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md) Elemente, die Sie verwenden.
+   Es gibt keine Beschränkung der Anzahl von diesen-Element, das Sie verwenden können, aber die Anzahl der [TableColumnHeader](./tablecolumnheader-element-format.md) Elemente in der Tabellenansicht müssen gleich der Anzahl der [TableRowEntry](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md) Elemente, die Sie verwenden.
 
 3. Die [Bezeichnung](./label-element-for-tablecolumnheader-for-tablecontrol-format.md) Element gibt den Text, der angezeigt wird. Dieses Element ist optional.
 
@@ -136,7 +136,7 @@ Die folgende XML-Elemente können verwendet werden, um Definitionen für eine Ze
 
 - Die [EntrySelectedBy](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md) Element gibt an, die Objekte, die von einer bestimmten Definition angezeigt werden. Dieses Element ist optional und ist nur erforderlich, wenn Sie mehrere definieren [TableRowEntry](./listentry-element-for-listcontrol-format.md) Elemente, die verschiedene Objekte anzeigen.
 
-- Die [umschließen](./wrap-element-for-tablerowentry-for-tablecontrl-format.md) Element gibt an, dass Text, der die Spaltenbreite überschreitet, die in der nächsten Zeile angezeigt wird. Standardmäßig wird Text, der die Spaltenbreite überschreitet, abgeschnitten.
+- Die [umschließen](./wrap-element-for-tablerowentry-for-tablecontrol-format.md) Element gibt an, dass Text, der die Spaltenbreite überschreitet, die in der nächsten Zeile angezeigt wird. Standardmäßig wird Text, der die Spaltenbreite überschreitet, abgeschnitten.
 
 - Die [TableColumnItems](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md) -Element definiert die Eigenschaften oder Skripts, deren Werte werden in der Zeile angezeigt.
 

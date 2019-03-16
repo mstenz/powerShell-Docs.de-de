@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e199bba3-90d3-41ca-9d78-cb502e58508d
 caps.latest.revision: 6
-ms.openlocfilehash: c8b3f907a80d1f6125a5ac04236245503db76ed0
-ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
+ms.openlocfilehash: 9b4d83aeaf45eab1365dec5fbf48c3c796ed5bde
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57251301"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057128"
 ---
 # <a name="security-parameters"></a>Sicherheitsparameter
 
@@ -29,7 +29,7 @@ Die folgende Tabelle enthält die empfohlenen Namen und die Funktionen für Para
 |**CertStoreLocation**<br>Datentyp: Zeichenfolge|Implementieren Sie diesen Parameter, damit der Benutzer den Speicherort des Zertifikatspeichers angeben kann. Der Speicherort ist in der Regel einen Dateipfad an.|
 |**CertSubjectName**<br>Datentyp: Zeichenfolge|Implementieren Sie diesen Parameter, oder, damit der Benutzer den Aussteller eines Zertifikats angeben kann, damit der Benutzer eine Teilzeichenfolge angeben kann.|
 |**CertUsage**<br>Datentyp: Zeichenfolge|Implementieren Sie diesen Parameter, um die Schlüsselverwendung oder die erweiterte Schlüsselverwendung angeben. Der Schlüssel kann als ein wenig, einer kurzen Wartezeit einen Objektbezeichner (OID), zu maskieren oder eine Zeichenfolge dargestellt werden.|
-|**Anmeldeinformationen**<br>Datentyp: [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential)|Implementieren Sie diesen Parameter, sodass das Cmdlet automatisch den Benutzer für einen Benutzernamen oder Kennwort fordert. Eine Eingabeaufforderung für beide wird angezeigt, wenn Sie ein vollständigen Satz von Anmeldeinformationen nicht direkt bereitgestellt wird.|
+|**Anmeldeinformationen**<br>Datentyp: [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential)|Implementieren Sie diesen Parameter, sodass das Cmdlet automatisch den Benutzer für einen Benutzernamen oder Kennwort fordert. Eine Eingabeaufforderung für beide wird angezeigt, wenn Sie ein vollständigen Satz von Anmeldeinformationen nicht direkt bereitgestellt wird.|
 |**CSPName**<br>Datentyp: Zeichenfolge|Implementieren Sie diesen Parameter, damit der Benutzer den Namen des das Zertifikats-Dienstanbieter (CSP) angeben kann.|
 |**CSPType**<br>Datentyp: Ganze Zahl|Implementieren Sie diesen Parameter, damit der Benutzer den Typ des CSP angeben kann.|
 |**Gruppe**<br>Datentyp: Zeichenfolge|Implementieren Sie diesen Parameter, damit der Benutzer auf eine Auflistung von Prinzipalen für den Zugriff angeben kann. Weitere Informationen finden Sie unter der Beschreibung der **Principal** Parameter.|

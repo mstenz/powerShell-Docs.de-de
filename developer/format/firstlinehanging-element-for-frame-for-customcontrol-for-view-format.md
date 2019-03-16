@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: c6ac3d86-0529-4b93-9bc7-ee94fcef9618
 caps.latest.revision: 8
-ms.openlocfilehash: ae4ad8ae3e6cb5d1174dc001b30aa84dd182a606
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: ea43e025f5f653ff000e1d7591b535e73da5c9e5
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860236"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054219"
 ---
 # <a name="firstlinehanging-element-for-frame-for-customcontrol-for-view-format"></a>Element „FirstLineHanging“ für Frame für CustomControl für View (Format)
 
 Gibt an, wie viele Zeichen, die die erste Zeile der Daten auf der linken Seite verschoben wurde. Dieses Element wird verwendet, bei der Definition einer benutzerdefinierten anzuzeigen.
 
--Element (Format) ViewDefinitions-Element (Format) anzeigen (Format)-Element CustomControl-Element (Format) CustomEntries Konfigurationselement für CustomControl für Ansicht (Format) CustomEntry-Element für CustomEntries für Ansicht (Format) CustomItem-Element für CustomEntry für CutomControlView (Format)-Frame-Element für CustomItem für CustomControl für (Format) FirstLineHanging Ansichtselement für Frame für CustomControl für Ansicht (Format)
+-Element (Format) ViewDefinitions-Element (Format) anzeigen (Format)-Element CustomControl-Element (Format) CustomEntries Konfigurationselement für CustomControl für Ansicht (Format) CustomEntry-Element für CustomEntries für Ansicht (Format) CustomItem-Element für CustomEntry für CustomControlView (Format)-Frame-Element für CustomItem für CustomControl für (Format) FirstLineHanging Ansichtselement für Frame für CustomControl für Ansicht (Format)
 
 ## <a name="syntax"></a>Syntax
 

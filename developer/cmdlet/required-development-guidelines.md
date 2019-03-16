@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 41d2b308-a36a-496f-8542-666b6a21eedc
 caps.latest.revision: 19
-ms.openlocfilehash: a4b228be91bba27670b26fe21e765ae942afe968
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3f6bcd2e4ef4d9c404b3a5deeaa9f25d3fa42ec1
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860716"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056514"
 ---
 # <a name="required-development-guidelines"></a>Erforderliche Entwicklungsrichtlinien
 
@@ -107,7 +107,7 @@ Wenn Sie Cmdlets Namen verwenden, verwenden Sie eine der folgenden Sonderzeichen
 |%|Prozentzeichen|
 |+|Pluszeichen (+)|
 |=|Gleichheitszeichen|
-|~|tilda|
+|~|Tilde|
 
 ### <a name="parameters-names-that-cannot-be-used-rd03"></a>Parameternamen, die nicht verwendet werden können (RD03)
 
@@ -122,9 +122,9 @@ Diese Aufrufe mit dem Cmdlet muss angeben, dass sie die Anforderungen der Bestä
 > [!NOTE]
 > Wenn von der Cmdlet-Klasse die Cmdlet-Attribut gibt an, dass das Cmdlet Aufrufe unterstützt die [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) -Methode, und das Cmdlet ein Fehler auftritt, für den Aufruf an die [ System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) -Methode, konnte der Benutzer des Systems unerwartet geändert.
 
-Verwenden der [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) -Methode für jede System-Änderung. Eine benutzereinstellung und `Whatif` parametersteuerung der [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) Methode. Im Gegensatz dazu die [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) Aufruf führt eine zusätzliche Überprüfung auf potenziell gefährliche Änderungen. Diese Methode wird nicht durch alle benutzereinstellung gesteuert oder `Whatif` Parameter. Wenn Ihr Cmdlet Ruft die [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) -Methode, sie müssen eine `Force` -Parameter, der die Aufrufe an diese zwei Methoden umgangen und, die der Vorgang wird fortgesetzt. Dies ist wichtig, da Ihr Cmdlet in nicht-interaktive Skripts und -Hosts verwendet werden können.
+Verwenden der [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) -Methode für jede System-Änderung. Eine benutzereinstellung und `WhatIf` parametersteuerung der [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) Methode. Im Gegensatz dazu die [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) Aufruf führt eine zusätzliche Überprüfung auf potenziell gefährliche Änderungen. Diese Methode wird nicht durch alle benutzereinstellung gesteuert oder `WhatIf` Parameter. Wenn Ihr Cmdlet Ruft die [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) -Methode, sie müssen eine `Force` -Parameter, der die Aufrufe an diese zwei Methoden umgangen und, die der Vorgang wird fortgesetzt. Dies ist wichtig, da Ihr Cmdlet in nicht-interaktive Skripts und -Hosts verwendet werden können.
 
-Wenn Ihre Cmdlets diese Aufrufe unterstützt, kann der Benutzer bestimmen, ob die Aktion tatsächlich durchgeführt werden soll. Z. B. die [Stop-Process](/powershell/module/microsoft.powershell.management/stop-process) Cmdlet Ruft die [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) -Methode auf, bevor es eine Reihe von wichtigen Prozessen, einschließlich des Systems, Windows-Anmeldung, beendet und Spoolsrv verarbeitet.
+Wenn Ihre Cmdlets diese Aufrufe unterstützt, kann der Benutzer bestimmen, ob die Aktion tatsächlich durchgeführt werden soll. Z. B. die [Stop-Process](/powershell/module/microsoft.powershell.management/stop-process) Cmdlet Ruft die [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) -Methode auf, bevor es eine Reihe von wichtigen Prozessen, einschließlich des Systems, Windows-Anmeldung, beendet und Spoolsv verarbeitet.
 
 Weitere Informationen zur Unterstützung dieser Methoden finden Sie unter [Bestätigung anfordern](./requesting-confirmation-from-cmdlets.md).
 
@@ -212,7 +212,7 @@ Erstellen Sie ein Windows PowerShell-Modul zum Packen und Bereitstellen Ihrer Cm
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Sehr empfehlenswert eines Richtlinien](./strongly-encouraged-development-guidelines.md)
+[Richtlinien für die Entwicklung von dringend empfohlen](./strongly-encouraged-development-guidelines.md)
 
 [Richtlinien für die Advise-Entwicklung](./advisory-development-guidelines.md)
 

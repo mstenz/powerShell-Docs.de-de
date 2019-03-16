@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: bb4e1564-3fd3-4be3-b93e-ac90480e05c0
 caps.latest.revision: 6
-ms.openlocfilehash: 9ec6caedcb7cf20d4aab2216cd8a9707269d9452
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3130ecc69f7d1568bcbd392dd24e8cdcc3382905
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854956"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054848"
 ---
 # <a name="firstlineindent-element-for-frame-for-customcontrol-for-view-format"></a>Element „FirstLineIndent“ für Frame für CustomControl für View (Format)
 
 Gibt an, wie viele Zeichen, die die erste Zeile der Daten nach rechts verschoben wurde. Dieses Element wird verwendet, bei der Definition einer benutzerdefinierten anzuzeigen.
 
--Element (Format) ViewDefinitions-Element (Format) anzeigen (Format)-Element CustomControl-Element (Format) CustomEntries Konfigurationselement für CustomControl für Ansicht (Format) CustomEntry-Element für CustomEntries für Ansicht (Format) CustomItem-Element für CustomEntry für Frame-Element für CustomItem für CustomControl für Ansichtselement (Format) FirstLineIndent CutomControlView (Format)
+-Element (Format) ViewDefinitions-Element (Format) anzeigen (Format)-Element CustomControl-Element (Format) CustomEntries Konfigurationselement für CustomControl für Ansicht (Format) CustomEntry-Element für CustomEntries für Ansicht (Format) CustomItem-Element für CustomEntry für Frame-Element für CustomItem für CustomControl für Ansichtselement (Format) FirstLineIndent CustomControlView (Format)
 
 ## <a name="syntax"></a>Syntax
 

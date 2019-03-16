@@ -14,12 +14,12 @@ helpviewer_keywords:
 - error records [PowerShell], non-terminating
 ms.assetid: 0b014035-52ea-44cb-ab38-bbe463c5465a
 caps.latest.revision: 8
-ms.openlocfilehash: 7b54fc220a66a47c25b3e8cba644882d31713cb7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 45f5934314a2871ceb921c7a66b9dfb658d0bd99
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857686"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057942"
 ---
 # <a name="cmdlet-error-reporting"></a>Cmdlet-Fehlerberichterstattung
 
@@ -43,7 +43,7 @@ Die folgenden Richtlinien können verwendet werden, um festzustellen, ob ein Feh
 
 ## <a name="reporting-nonterminating-errors"></a>Melden Sie Fehler ohne Abbruch
 
-Die berichterstellung für einen Fehler ohne Abbruch sollte immer erfolgen, in der Cmdlet Implementierung des der [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) -Methode, die [ System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) -Methode, oder die [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) Methode. Diese Arten von Fehlern gemeldet werden, durch den Aufruf der [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) -Methode, die wiederum einen Fehlerdatensatz in den fehlerdatenstrom sendet.
+Die berichterstellung für einen Fehler ohne Abbruch sollte immer erfolgen, in der Cmdlet Implementierung des der [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) -Methode, die [ System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) -Methode, oder die [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) Methode. Diese Arten von Fehlern gemeldet werden, durch den Aufruf der [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) -Methode, die wiederum einen Fehlerdatensatz in den fehlerdatenstrom sendet.
 
 ## <a name="reporting-terminating-errors"></a>Melden Sie Fehler mit Abbruch
 
@@ -53,7 +53,7 @@ Sie können auch eigene Ausnahmen für Probleme für Ihre Situation zu definiere
 
 ## <a name="error-records"></a>Error-Datensätze
 
-Windows PowerShell einen ohne Abbruch Fehlerzustand, durch die Verwendung von beschreibt [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) Objekte. Jede [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord) Objekt enthält Fehlerinformationen für die Kategorie, eine optionale Zielobjekt und Details zur fehlerbedingung an.
+Windows PowerShell einen ohne Abbruch Fehlerzustand, durch die Verwendung von beschreibt [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) Objekte. Jede [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) Objekt enthält Fehlerinformationen für die Kategorie, eine optionale Zielobjekt und Details zur fehlerbedingung an.
 
 ### <a name="error-identifiers"></a>Fehler-IDs
 
@@ -61,7 +61,7 @@ Fehler-ID ist eine einfache Zeichenfolge, die die fehlerbedingung in das-Cmdlet 
 
 Beim Fehler-IDs angeben, sollten die folgenden Richtlinien eingehalten werden.
 
-- Unterschiedliche Codepfade werden verschiedene, hoch bestimmte Fehler Bezeichner zuweisen. Jeder Codepfad, der Aufrufe [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) oder [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) muss über einen eigenen Fehler-ID verfügen.
+- Unterschiedliche Codepfade werden verschiedene, hoch bestimmte Fehler Bezeichner zuweisen. Jeder Codepfad, der Aufrufe [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) oder [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) muss über einen eigenen Fehler-ID verfügen.
 
 - Fehler-IDs sollten für CLR-Ausnahmetypen für Abbruch und ohne Abbruch Fehler eindeutig sein.
 
