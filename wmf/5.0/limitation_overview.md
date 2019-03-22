@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 4eb2f0bac4f2169a9a06d80cb4fa214a09cdfa86
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 3d74217621d00dfd68cad1c45d187a9c2ffb9980
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892983"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58054373"
 ---
 # <a name="known-issues-and-limitations"></a>Bekannte Probleme und Einschränkungen
 
@@ -39,7 +39,7 @@ Der alte Exchange-Endpunkt wird zu einem neuen Endpunkt umgeleitet. Die Umleitun
 
 Wenn WMF 5.0 auf einem Computer mit Windows Server 2012 R2 installiert wird, auf dem die Protokollierung des Softwarebestands bereits ausgeführt wird, wird dieses Feature nach der Installation fälschlicherweise beendet.
 
-**Lösung:** Führen Sie das Cmdlet „Start-SilLogging“ nach der Installation von WMF aus, da der Installationsvorgang fälschlicherweise das Feature „Protokollierung des Softwarebestands“ beendet.
+**Lösung:** Führen Sie das Cmdlet „Start-SilLogging“ einmal nach der Installation von WMF aus, da der Installationsvorgang fälschlicherweise das Feature „Protokollierung des Softwarebestands“ beendet.
 
 ## <a name="get-childitem-does-not-work-if--literalpath-and--recurse-are-used-together"></a>`Get-ChildItem` funktioniert nicht, wenn „-LiteralPath“ und „-Recurse“ zusammen verwendet werden
 

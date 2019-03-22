@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea,powershell,security
 title: JEA-Sitzungskonfigurationen
-ms.openlocfilehash: 1b598522d43b2c1a26a739a67cee5181b21a7c32
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
-ms.translationtype: MTE95
+ms.openlocfilehash: b98726ea7ed3aabdfd05034c3b70118e327160cd
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655462"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58056588"
 ---
 # <a name="jea-session-configurations"></a>JEA-Sitzungskonfigurationen
 
@@ -80,8 +80,9 @@ Wenn eine oder mehrere Sicherheitsgruppen angegeben wurden, gehört das virtuell
 RunAsVirtualAccount = $true
 RunAsVirtualAccountGroups = 'NetworkOperator', 'NetworkAuditor'
 ```
+
 > [!NOTE]
-> Virtuelle Konten werden vorübergehend die Anmeldung als Dienst in der Sicherheitsrichtlinie für den lokalen Server gewährt.  Wenn eines der angegebenen VirtualAccountGroups bereits diese Berechtigung in der Richtlinie gewährt wurde, wird das individuelle virtuelle Konto nicht mehr hinzugefügt und entfernt werden von der Richtlinie.  Dies kann in Szenarien, z. B. Domänencontrollern nützlich sein, in denen Änderungen an der Sicherheitsrichtlinie für Domänencontroller genau überwacht werden.  Dies ist nur in Windows Server 2016 mit der November 2018 oder höher Rollup und Windows Server-2019 mit dem Januar 2019 oder höher Rollup verfügbar.
+> Virtuellen Konten wird die Anmeldung als Dienst direkt in der Sicherheitsrichtlinie für den lokalen Server gewährt.  Wenn einer angegebenen Gruppe von virtuellen Konten bereits diese Berechtigung in der Richtlinie gewährt wurde, wird das individuelle virtuelle Konto nicht mehr hinzugefügt, und es wird aus der Richtlinie entfernt.  Dies kann sich beispielsweise bei Domänencontrollern als nützlich erweisen, bei denen Änderungen an der Sicherheitsrichtlinie für Domänencontroller genau überwacht werden.  Dies ist nur in Windows Server 2016 mit dem Rollup vom November 2018 oder höher und Windows Server 2019 mit dem Rollup vom Januar 2019 verfügbar.
 
 #### <a name="group-managed-service-account"></a>Gruppenverwaltetes Dienstkonto
 
@@ -104,7 +105,6 @@ gMSA-Konten sollten nur dann verwendet werden, wenn ein Zugriff auf Netzwerkress
 
 > [!NOTE]
 > Gruppenverwaltete Dienstkonten sind nur unter Windows PowerShell 5.1 oder höher verfügbar sowie auf den einer Domäne angehörigen Computern.
-
 
 #### <a name="more-information-about-run-as-users"></a>Weitere Informationen zum Ausführen als Benutzer
 
@@ -179,6 +179,7 @@ RoleDefinitions = @{
 ```
 
 ### <a name="role-capability-search-order"></a>Suchreihenfolge für Rollenfunktionen
+
 Wie im obigen Beispiel gezeigt, wird auf die Rollenfunktionen durch den flachen Namen (Dateiname ohne Erweiterung) verwiesen.
 Wenn mehrere Rollenfunktionen mit dem gleichen flachen Namen im System verfügbar sind, verwendet PowerShell die implizite Suchreihenfolge, um die zutreffende Rollenfunktionsdatei auszuwählen.
 Sie erhalten **keinen** Zugriff auf alle Rollenfunktionsdateien mit dem gleichen Namen.
@@ -217,6 +218,7 @@ RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon'
 > Bedingte Zugriffsregeln sind nur in Windows PowerShell 5.1 oder höher verfügbar.
 
 ### <a name="other-properties"></a>Weitere Eigenschaften
+
 Sitzungskonfigurationsdateien verfügen über die gleichen Möglichkeiten wie eine Rollenfunktionsdatei, ohne jedoch Benutzern, die eine Verbindung herstellen, Zugriff auf unterschiedliche Befehle zu geben.
 Wenn Sie allen Benutzern den Zugriff auf bestimmte Cmdlets, Funktionen oder Anbieter ermöglichen möchten, können Sie dies direkt in der Sitzungskonfigurationsdatei tun.
 Eine vollständige Liste der unterstützten Eigenschaften in der Sitzungskonfigurationsdatei erhalten Sie, wenn Sie `Get-Help New-PSSessionConfigurationFile -Full` ausführen.

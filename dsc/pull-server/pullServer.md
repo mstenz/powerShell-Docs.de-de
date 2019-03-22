@@ -2,12 +2,12 @@
 ms.date: 03/04/2019
 keywords: dsc,powershell,configuration,setup
 title: DSC-Pulldienst
-ms.openlocfilehash: 64c22bc021666026ae58a4c4fb4e3d31b25bae5c
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.openlocfilehash: 00e01e6c71226e6bde48b221e4e4fcf5f346feb4
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57429957"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58056769"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Desired State Configuration – Pulldienst
 
@@ -72,7 +72,8 @@ Ein Beispielskript finden Sie unten.
 
 Ab dem Release 17090 von [Windows Server Insider Preview](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver) ist SQL Server eine unterstützte Option für den Pulldienst (Windows-Feature *DSC-Dienst*). Dadurch wird eine neue Option für die Skalierung großer DSC-Umgebungen bereitgestellt, die nicht zu [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) migriert wurden.
 
-> **Hinweis**: Die Unterstützung für SQL Server wird vorherigen Versionen von WMF 5.1 (oder früher) nicht hinzugefügt und ist nur für Windows Server-Versionen ab 17090 verfügbar.
+> [!NOTE]
+> Die Unterstützung für SQL Server wird vorherigen Versionen von WMF 5.1 (oder früher) nicht hinzugefügt und ist nur für Windows Server-Versionen ab 17090 verfügbar.
 
 Um den Pull-Server so zu konfigurieren, dass er SQL Server verwendet, legen Sie **SqlProvider** auf `$true` und **SqlConnectionString** auf eine gültige SQL Server-Verbindungszeichenfolge fest. Weitere Informationen finden Sie unter [SqlClient-Verbindungszeichenfolgen](/dotnet/framework/data/adonet/connection-string-syntax#sqlclient-connection-strings).
 Ein Beispiel einer SQL Server-Konfiguration mit **xDscWebService** finden Sie zunächst unter [Verwenden der xDSCWebService-Ressource](#using-the-xdscwebservice-resource), lesen Sie anschließend die GitHub-Seite zu [Sample_xDscWebServiceRegistration_UseSQLProvider.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/Examples/Sample_xDscWebServiceRegistration_UseSQLProvider.ps1).
@@ -84,12 +85,12 @@ Die folgenden Schritte erläutern, wie Sie die Ressource in einer Konfiguration 
 
 1. Rufen Sie das Cmdlet [Install-Module](/powershell/module/PowershellGet/Install-Module) auf, um das Modul **xPSDesiredStateConfiguration** zu installieren.
    > [!NOTE]
-   > **Install-Module** befindet sich auf die **PowerShellGet** -Modul, das in PowerShell 5.0 enthalten ist. Das Modul **PowerShellGet** für PowerShell 3.0 und 4.0 können Sie unter [PowerShell-Module „PackageManagement“ – Vorschau](https://www.microsoft.com/en-us/download/details.aspx?id=49186) herunterladen.
+   > **Install-Module** ist im Modul **PowerShellGet** enthalten, das Bestandteil von PowerShell 5.0 ist. Das Modul **PowerShellGet** für PowerShell 3.0 und 4.0 können Sie unter [PowerShell-Module „PackageManagement“ – Vorschau](https://www.microsoft.com/en-us/download/details.aspx?id=49186) herunterladen.
 2. Rufen Sie ein SSL-Zertifikat für den DSC-Pullserver von einer vertrauenswürdigen Zertifizierungsstelle innerhalb Ihrer Organisation oder von einer öffentlichen Zertifizierungsstelle ab. Das von der Zertifizierungsstelle empfangene Zertifikat weist normalerweise das PFX-Format auf.
-3. Installieren Sie das Zertifikat auf dem Knoten, die den DSC-Pull-Server am Standardspeicherort, werden die werden `CERT:\LocalMachine\My`.
+3. Installieren Sie auf dem Knoten, der als DSC-Pull-Server fungieren soll, das Zertifikat am Standardspeicherort, also normalerweise unter `CERT:\LocalMachine\My`.
    - Notieren Sie sich den Zertifikatfingerabdruck.
-4. Wählen Sie eine GUID als der Registrierungsschlüssel aus. Um einen mithilfe von PowerShell zu generieren, geben Sie ` [guid]::newGuid()` oder `New-Guid` an der PS-Eingabeaufforderung ein, und drücken Sie anschließend die EINGABETASTE. Dieser Schlüssel wird von Clientknoten bei der Registrierung als gemeinsamer Schlüssel zum Authentifizieren verwendet. Weitere Informationen finden Sie weiter unten im Abschnitt „Registrierungsschlüssel“.
-5. In der PowerShell ISE starten (F5) das folgende Konfigurationsskript (enthalten im Beispielordner des der **"xpsdesiredstateconfiguration"** Modul als `Sample_xDscWebServiceRegistration.ps1`). Dieses Skript richtet den Pullserver ein.
+4. Wählen Sie eine GUID als der Registrierungsschlüssel aus. Um einen mithilfe von PowerShell zu generieren, geben Sie `[guid]::newGuid()` oder `New-Guid` an der PS-Eingabeaufforderung ein, und drücken Sie anschließend die EINGABETASTE. Dieser Schlüssel wird von Clientknoten bei der Registrierung als gemeinsamer Schlüssel zum Authentifizieren verwendet. Weitere Informationen finden Sie weiter unten im Abschnitt „Registrierungsschlüssel“.
+5. Starten Sie (F5) in PowerShell ISE das folgende Konfigurationsskript (enthalten im Beispielordner des Moduls **xPSDesiredStateConfiguration** als `Sample_xDscWebServiceRegistration.ps1`). Dieses Skript richtet den Pullserver ein.
 
     ```powershell
     configuration Sample_xDscWebServiceRegistration
@@ -166,7 +167,7 @@ Um zuzulassen, dass Clientknoten sich beim Server registrieren und Konfiguration
 > [!NOTE]
 > Registrierungsschlüssel werden in PowerShell 4.0 nicht unterstützt.
 
-Zum Konfigurieren eines Knotens zur Authentifizierung beim Pull-Server muss der Registrierungsschlüssel in der Metakonfiguration für alle Zielknoten enthalten sein, die sich bei diesem Pull-Server registrieren. Beachten Sie, dass die **RegistrationKey** in der unten stehenden metakonfiguration wird entfernt, nachdem der Zielcomputer erfolgreich registriert wurde, und der Wert muss den in gespeicherten Wert entsprechen den `RegistrationKeys.txt` Datei auf dem pullserver (" 140a952b-b9d6-406b-b416-e0f759c9c0e4 "in diesem Beispiel). Behandeln Sie den Registrierungsschlüsselwert immer vertraulich, da sich jeder beliebige Zielcomputer mit diesem Schlüssel beim Pullserver registrieren könnte.
+Zum Konfigurieren eines Knotens zur Authentifizierung beim Pull-Server muss der Registrierungsschlüssel in der Metakonfiguration für alle Zielknoten enthalten sein, die sich bei diesem Pull-Server registrieren. Beachten Sie, dass **RegistrationKey** aus der unten stehenden Metakonfiguration entfernt wird, nachdem der Zielcomputer erfolgreich registriert wurde, und dass der Wert dem in der Datei `RegistrationKeys.txt` auf dem Pullserver gespeicherten Wert entsprechen muss. In diesem Beispiel ist dieser Wert „140a952b-b9d6-406b-b416-e0f759c9c0e4“. Behandeln Sie den Registrierungsschlüsselwert immer vertraulich, da sich jeder beliebige Zielcomputer mit diesem Schlüssel beim Pullserver registrieren könnte.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -210,7 +211,7 @@ Sample_MetaConfigurationToRegisterWithLessSecurePullServer -RegistrationKey $Reg
 ```
 
 > [!NOTE]
-> Die **ReportServerWeb** Abschnitt ermöglicht die Berichterstattung von Daten an den pullserver gesendet werden.
+> Der Abschnitt **ReportServerWeb** ermöglicht das Senden von Berichtsdaten an den Pullserver.
 
 Das Fehlen der Eigenschaft **ConfigurationID** in der Metakonfigurationsdatei bedeutet implizit, dass der Pullserver die V2-Version des Pullserverprotokolls unterstützt und somit eine Registrierung erforderlich ist.
 Umgekehrt bedeutet das Vorhandensein einer **ConfigurationID**, dass die V1-Version des Pullserverprotokolls verwendet wird und keine Registrierungsverarbeitung erfolgt.
@@ -227,12 +228,12 @@ Diese Dateien müssen in einem bestimmten Format vorliegen, damit sie von den Pu
 
 Jedes Ressourcenmodul muss komprimiert und entsprechend dem folgenden Muster benannt werden: `{Module Name}_{Module Version}.zip`.
 
-Angenommen, ein Modul namens "xwebadminstration" mit einer Modulversion 3.1.2.0 würde Namen `xWebAdministration_3.2.1.0.zip`.
+Ein Modul namens „xWebAdminstration“ mit einer Modulversion 3.1.2.0 würde beispielsweise `xWebAdministration_3.2.1.0.zip` heißen.
 Jede Version eines Moduls muss in einer eigenen ZIP-Datei enthalten sein.
 Da jede ZIP-Datei nur jeweils eine Version einer Ressource enthält, wird das in WMF 5.0 eingeführte das Modulformat, das mehrere Versionen in einem einzigen Verzeichnis ermöglicht, nicht unterstützt.
 Das bedeutet, dass Sie vor dem Packen von DSC-Ressourcenmodulen für die Verwendung mit einem Pullserver eine kleine Änderung an der Verzeichnisstruktur vornehmen müssen.
 Das Standardformat für Module mit DSC-Ressourcen in WMF 5.0 ist `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`.
-Entfernen Sie vor dem Packen für den Pull-Server, die **{Modulversion}** Ordner, damit der Pfad wird `{Module Folder}\DscResources\{DSC Resource Folder}\`.
+Entfernen Sie vor dem Packvorgang für den Pullserver einfach den Ordner **{Module version}**, damit der Pfad zu `{Module Folder}\DscResources\{DSC Resource Folder}\` wird.
 Komprimieren Sie den Odner nach dieser Änderung wie oben beschrieben, und speichern Sie die ZIP-Dateien im Ordner **ModulePath**.
 
 Verwenden Sie `New-DscChecksum {module zip file}` zum Erstellen einer Prüfsummendatei für das neu hinzugefügte Modul.
@@ -280,8 +281,8 @@ Für lokale Umgebungen bieten diese Pulldienstfunktionen und die Möglichkeit, d
 
 In den folgenden Themen wird das Einrichten von Pullclients im Detail beschrieben:
 
-- [Einrichten eines DSC-pullclients mithilfe einer Konfigurations-ID](pullClientConfigID.md)
-- [Einrichten eines DSC-pullclients mithilfe von Konfigurationsnamen](pullClientConfigNames.md)
+- [Set up a DSC pull client using a configuration ID (Einrichten eines DSC-Pullclients mithilfe einer Konfigurations-ID)](pullClientConfigID.md)
+- [Set up a DSC pull client using configuration names (Einrichten eines DSC-Pullclients mithilfe von Konfigurationsnamen)](pullClientConfigNames.md)
 - [Teilkonfigurationen](partialConfigs.md)
 
 ## <a name="see-also"></a>Siehe auch
@@ -289,5 +290,5 @@ In den folgenden Themen wird das Einrichten von Pullclients im Detail beschriebe
 - [Windows PowerShell DSC – Übersicht](../overview/overview.md)
 - [Inkraftsetzung von Konfigurationen](enactingConfigurations.md)
 - [Verwenden eines DSC-Berichtsservers](reportServer.md)
-- [[MS-DSCPM]: Desired State Configuration Pull Model Protocol ([MS-DSCPM]: DSC-Pullmodell-Protokoll)](https://msdn.microsoft.com/library/dn393548.aspx)
-- [[MS-DSCPM]: Desired State Configuration Pull Model Protocol ([MS-DSCPM]: DSC-Pullmodell-Protokoll Errata)](https://msdn.microsoft.com/library/mt612824.aspx)
+- [[MS-DSCPM]: Desired State Configuration Pull Model Protocol ([MS-DSCPM]: Desired State Configuration-Pullmodell-Protokoll)](https://msdn.microsoft.com/library/dn393548.aspx)
+- [[MS-DSCPM]: Desired State Configuration Pull Model Protocol Errata ([MS-DSCPM]: Desired State Configuration-Pullmodell-Protokoll Errata)](https://msdn.microsoft.com/library/mt612824.aspx)

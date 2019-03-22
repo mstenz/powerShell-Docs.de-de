@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: PowerShell
 title: Paketmanifestwerte, die die Benutzeroberfläche des PowerShell-Katalogs betreffen
-ms.openlocfilehash: dcba56d9f7edf0c08a3b9e3f2326b39a6b3be3fa
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
-ms.translationtype: MTE95
+ms.openlocfilehash: cedf81df8de29c54ef559a800d654305029491ec
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655344"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58058214"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>Paketmanifestwerte, die die Benutzeroberfläche des PowerShell-Katalogs betreffen
 
@@ -40,7 +40,7 @@ Die folgende Tabelle enthält die Benutzeroberflächenelemente der Paketseiten i
 | **Rollenfunktionen** | Dieses Element wird aufgeführt, wenn das im PowerShell-Katalog veröffentlichte Modul eine oder mehrere Rollenfunktionsdateien (PSRC) enthält, die von JEA verwendet werden. Weitere Informationen zu [Rollenfunktionen](/powershell/jea/role-capabilities) finden Sie in der JEA-Dokumentation. | Ja | Nein |
 | **PowerShell-Editionen** | Dieses Element wird in einem Skript- oder Modulmanifest angegeben. Bei Modulen, die für die Verwendung von PowerShell 5.0 oder niedriger konzipiert sind, wird dieses Element mithilfe von Tags gesteuert. Bei Desktop wird das Tag „PSEdition_Desktop“ und bei Core das „Tag PSEdition_Core“ verwendet. Bei Modulen, die nur in PowerShell 5.1 oder höher verwendet werden, ist ein CompatiblePSEditions-Schlüssel im Hauptmanifest enthalten. Weitere Informationen zum PS-Editionsfeature finden Sie in der [PowerShellGet-Dokumentation](module-psedition-support.md). | Ja | Ja |
 | **Abhängigkeiten** | Abhängigkeiten sind die Module im PowerShell-Katalog, die entweder im Modul als RequiredModules oder im Skriptmanifest als „#Requires – Module (Name)“ deklariert werden. | Ja | Ja |
-| **PowerShell-Mindestversion** | Dieses Element kann in einem Modulmanifest als PowerShellVersion angegeben werden. | Ja | Nein |
+| **Minimum PowerShell version** (PowerShell-Mindestversion) | Dieses Element kann in einem Modulmanifest als PowerShellVersion angegeben werden. | Ja | Nein |
 | **Versionsverlauf** | Der Versionsverlauf stellt die Updates dar, die an einem Modul im PowerShell-Katalog vorgenommen wurden. Wenn eine Paketversion mit der Löschfunktion ausgeblendet wird, wird diese nur Paketbesitzern im Versionsverlauf angezeigt. | Nein | Nein |
 | **Projektwebsite** | Die Projektwebsite wird bei Modulen im Abschnitt „Privatedata\PSData“ des Modulmanifests durch Angabe von ProjectURI bereitgestellt. Im Skriptmanifest wird dieses Element durch Angabe von „.PROJECTURI“ gesteuert. | Ja | Ja |
 | **Lizenz** | Ein Lizenzlink wird bei Modulen im Abschnitt „Privatedata\PSData“ des Modulmanifests durch Angabe von LicenseURI bereitgestellt. Im Skriptmanifest wird dieses Element durch Angabe von „.LICENSEURI“ gesteuert. Beachten Sie unbedingt Folgendes: Wenn eine Lizenz nicht anhand per LicenseURI oder innerhalb eines Moduls angegeben wird, bestimmen die Nutzungsbedingungen für den PowerShell-Katalog die Nutzungsbedingungen für das Paket. Weitere Informationen finden Sie in den Nutzungsbedingungen. | Ja | Ja |

@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: powershell,core
 title: Breaking Changes in PowerShell Core 6.0
-ms.openlocfilehash: d477a9b27e8d5df6653ee40f8b606879b60a80c7
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
-ms.translationtype: MTE95
+ms.openlocfilehash: 975c978629f81f0f13a235c3d304e5ec03bae6d0
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655445"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795690"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>Breaking Changes in PowerShell Core 6.0
 
@@ -65,6 +65,10 @@ Aufgrund der Verwendung von nicht unterstützten APIs wurde `Microsoft.PowerShel
 ### <a name="-counter-cmdlets"></a>`*-Counter`-Cmdlets
 
 Aufgrund der Verwendung von nicht unterstützten APIs wurde `*-Counter` aus PowerShell Core entfernt, bis eine bessere Lösung gefunden wird.
+
+### <a name="-eventlog-cmdlets"></a>`*-EventLog`-Cmdlets
+
+Aufgrund der Verwendung von nicht unterstützten APIs wurde `*-EventLog` aus PowerShell Core entfernt, bis eine bessere Lösung gefunden wird. Unter Windows stehen `Get-WinEvent` und `Create-WinEvent` zum Abrufen und Erstellen von Ereignissen zur Verfügung.
 
 ## <a name="enginelanguage-changes"></a>Änderungen an der Engine bzw. Sprache
 
@@ -179,9 +183,9 @@ Die Benennung in PowerShell sollte konsistent mit unserer Benennung und mit der 
 
 Aufgrund von nicht unterstützten APIs wurden das `LocalAccounts`-Modul und die `Counter`-Cmdlets aus dem `Diagnostics`-Modul entfernt, bis eine bessere Lösung gefunden wird.
 
-### <a name="executing-powershell-script-with-bool-parameter-does-not-work-4036httpsgithubcompowershellpowershellissues4036"></a>Die Ausführung des PowerShell-Skripts mit Bool-Parametern funktioniert nicht [#4036](https://github.com/PowerShell/PowerShell/issues/4036)
+### <a name="executing-powershell-script-with-bool-parameter-does-not-work-4036httpsgithubcompowershellpowershellissues4036"></a>Das Ausführen des PowerShell-Skripts mit booleschen Parametern funktioniert nicht [#4036](https://github.com/PowerShell/PowerShell/issues/4036)
 
-Zuvor wurde bei der Verwendung von „powershell.exe“ (jetzt `pwsh.exe`), um ein PowerShell-Skript mithilfe von `-File` auszuführen, keine Möglichkeit bereitgestellt, um „$true“ oder „$false“ als Parameterwert zu übergeben. Die Unterstützung für „$true“ oder „$false“ als analysierte Werte für Parameter wurde hinzugefügt. Parameterwerte werden ebenfalls unterstützt, da die derzeit dokumentierte Syntax nicht funktioniert.
+Zuvor wurde bei der Verwendung von **powershell.exe** (jetzt **pwsh.exe**), um ein PowerShell-Skript mithilfe von `-File` auszuführen, keine Möglichkeit bereitgestellt, `$true`/`$false` als Parameterwert zu übergeben. Die Unterstützung für `$true`/`$false` als analysierte Werte für Parameter wurde hinzugefügt. Parameterwerte werden ebenfalls unterstützt, da die derzeit dokumentierte Syntax nicht funktioniert.
 
 ### <a name="remove-clrversion-property-from-psversiontable-4027httpsgithubcompowershellpowershellissues4027"></a>Entfernung der `ClrVersion`-Eigenschaft aus `$PSVersionTable` [#4027](https://github.com/PowerShell/PowerShell/issues/4027)
 
@@ -193,7 +197,7 @@ Die Verwendung von Shebang in PowerShell auf anderen Plattformen als Windows wir
 
 ### <a name="implement-unicode-escape-parsing-3958httpsgithubcompowershellpowershellissues3958"></a>Implementierung der Analyse von Unicode-Escapesequenzen [#3958](https://github.com/PowerShell/PowerShell/issues/3958)
 
-`` `u#### `` oder `` `u{####} `` wird in das entsprechende Unicode-Zeichen konvertiert. Verwenden Sie das Hochkommazeichen (``` ``u ```), um ein Literal (`` `u ``) auszugeben.
+`` `u####`` oder `` `u{####}`` wird in das entsprechende Unicode-Zeichen konvertiert. Verwenden Sie das Hochkommazeichen (``` ``u```), um ein Literal (`` `u``) auszugeben.
 
 ### <a name="change-new-modulemanifest-encoding-to-utf8nobom-on-non-windows-platforms-3940httpsgithubcompowershellpowershellissues3940"></a>Änderung der `New-ModuleManifest`-Codierung in `UTF8NoBOM` auf anderen Plattformen als Windows [#3940](https://github.com/PowerShell/PowerShell/issues/3940)
 
@@ -271,4 +275,4 @@ Die zugrunde liegende .NET-API der Web-Cmdlets wurde in `System.Net.Http.HttpCli
 - Die `System.Net.ServicePointManager`-Einstellungen werden nicht mehr berücksichtigt.
 - Derzeit ist keine zertifikatbasierte Authentifizierung unter macOS verfügbar.
 - Das Verwenden eines `-Credential`- statt einem `http://`-URI führt zu einem Fehler. Verwenden Sie einen `https://`-URI, oder geben Sie den `-AllowUnencryptedAuthentication`-Parameter an, um den Fehler zu unterdrücken.
-- `-MaximumRedirection` erzeugt nun einen Fehler mit Abbruch, wenn Umleitung Versuche anstatt die Ergebnisse der letzten Umleitung den bereitgestellten Grenzwert überschreiten.
+- `-MaximumRedirection` erzeugt nun einen Fehler mit Abbruch, wenn Umleitungsversuche die angegebene Grenze überschreiten, anstatt die Ergebnisse der letzten Umleitung zurückzugeben.

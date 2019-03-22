@@ -2,12 +2,12 @@
 ms.date: 08/24/2018
 keywords: dsc,powershell,configuration,setup
 title: DSC-Ressource „Script“
-ms.openlocfilehash: ef84239820a44aab2a028f7f0fe17653a851b72e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: 86dfb74bf52d8907686bb955fd722f4fb8b9131b
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55678023"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58054746"
 ---
 # <a name="dsc-script-resource"></a>DSC-Ressource „Script“
 
@@ -61,7 +61,7 @@ Das Cmdlet [Test-DscConfiguration](/powershell/module/PSDesiredStateConfiguratio
 
 ## <a name="examples"></a>Beispiele
 
-### <a name="example-1-write-sample-text-using-a-script-resource"></a>Beispiel 1: Schreiben einer Skriptressource mit Beispieltext
+### <a name="example-1-write-sample-text-using-a-script-resource"></a>Beispiel 1: Schreiben von Beispieltext mit einer Skriptressource
 
 Dieses Beispiel testet das Vorhandensein von `C:\TempFolder\TestFile.txt` auf jedem Knoten. Wenn die Datei nicht vorhanden ist, wird sie mit `SetScript` erstellt. `GetScript` gibt den Inhalt der Datei zurück, und der Rückgabewert wird nicht verwendet.
 
@@ -86,7 +86,7 @@ Configuration ScriptTest
 }
 ```
 
-### <a name="example-2-compare-version-information-using-a-script-resource"></a>Beispiel 2: Vergleichen Sie die Versionsinformationen, die mit einer Skriptressource
+### <a name="example-2-compare-version-information-using-a-script-resource"></a>Beispiel 2: Vergleichen von Versionsinformationen mit einer Skriptressource
 
 Dieses Beispiel ruft die Informationen zur *konformen* Version aus einer Textdatei auf dem zur Erstellung verwendeten Computer ab und speichert sie in der `$version`-Variablen. Beim Generieren der MOF-Datei des Knotens ersetzt DSC die `$using:version`-Variablen in jedem Skriptblock durch den Wert der `$version`-Variablen. Während der Ausführung wird die *konforme* Version in einer Textdatei auf jedem Knoten gespeichert und bei nachfolgenden Ausführungen verglichen und aktualisiert.
 

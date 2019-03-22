@@ -2,12 +2,12 @@
 ms.date: 04/11/2018
 keywords: dsc,powershell,configuration,setup
 title: Einrichten eines DSC-SMB-Pullservers
-ms.openlocfilehash: 722120369df9ff383a02c69111e0bacf2e2e76a5
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 9d087a08861b2f4683e81efd1e25f857b8b75e07
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401208"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58057755"
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>Einrichten eines DSC-SMB-Pullservers
 
@@ -59,7 +59,7 @@ Configuration SmbShare
         {
             Name = 'DscSmbShare'
             Path = 'C:\DscSmbShare'
-            FullAccess = 'admininstrator'
+            FullAccess = 'administrator'
             ReadAccess = 'myDomain\Contoso-Server$'
             FolderEnumerationMode = 'AccessBased'
             Ensure = 'Present'
@@ -69,14 +69,14 @@ Configuration SmbShare
 }
 ```
 
-Die Konfiguration erstellt das Verzeichnis `C:\DscSmbShare`, wenn sie noch nicht vorhanden ist, und dieses Verzeichnis anschließend als SMB-Dateifreigabe verwendet. **FullAccess** sollte auf ein beliebiges Konto, das Schreiben oder Löschen von der Dateifreigabe muss angegeben werden. **ReadAccess** muss angegeben werden, allen Clientknoten, die Konfigurationen und/oder DSC-Ressourcen aus dieser Freigabe erhalten.
+Mit der Konfiguration wird das Verzeichnis `C:\DscSmbShare` erstellt, wenn es noch nicht vorhanden ist. Das Verzeichnis wird dann als SMB-Dateifreigabe verwendet. Die Berechtigung **FullAccess** sollte jedem Konto gewährt werden, das in die Dateifreigabe schreiben oder aus dieser löschen muss. Die Berechtigung **ReadAccess** muss allen Clientknoten gewährt werden, die Konfigurationen und bzw. oder DSC-Ressourcen von der Freigabe abrufen.
 
 > [!NOTE]
-> DSC als Systemkonto werden standardmäßig ausgeführt, damit der Computer selbst Zugriff auf die Freigabe benötigen.
+> DSC wird standardmäßig als das Systemkonto ausgeführt, der Computer selbst muss also über Zugriff auf die Freigabe verfügen.
 
 ### <a name="give-file-system-access-to-the-pull-client"></a>Gewähren von Dateisystemzugriff für den Pullclient
 
-Indem Sie einem Clientknoten **ReadAccess** gewähren, kann dieser Knoten auf die SMB-Freigabe zugreifen, aber nicht auf Dateien oder Ordner innerhalb der Freigabe. Sie müssen explizit Zugriff auf die SMB-Freigabeordner und Unterordner gewähren. In DSC erfolgt dies mithilfe der Ressource **cNtfsPermissionEntry**, die im Modul [CNtfsAccessControl](https://www.powershellgallery.com/packages/cNtfsAccessControl/1.2.0) enthalten ist. Die folgende Konfiguration fügt einen **cNtfsPermissionEntry**-Block hinzu, der dem Pullclient „ReadAndExecute“-Zugriff gewährt:
+Indem Sie einem Clientknoten **ReadAccess** gewähren, kann dieser Knoten auf die SMB-Freigabe zugreifen, aber nicht auf Dateien oder Ordner innerhalb der Freigabe. Sie müssen Clientknoten explizit Zugriff auf den SMB-Freigabeordner und dessen Unterordner gewähren. In DSC erfolgt dies mithilfe der Ressource **cNtfsPermissionEntry**, die im Modul [CNtfsAccessControl](https://www.powershellgallery.com/packages/cNtfsAccessControl/1.2.0) enthalten ist. Die folgende Konfiguration fügt einen **cNtfsPermissionEntry**-Block hinzu, der dem Pullclient „ReadAndExecute“-Zugriff gewährt:
 
 ```powershell
 Configuration DSCSMB
@@ -135,7 +135,7 @@ Alle MOF-Konfigurationsdateien müssen den Namen *ConfigurationID*.mof haben, wo
 > [!NOTE]
 > Sie müssen Konfigurations-IDs verwenden, wenn Sie einen SMB-Pullserver verwenden. Konfigurationsnamen werden für SMB nicht unterstützt.
 
-Jedes Ressourcenmodul muss komprimiert und entsprechend dem folgenden Muster benannt werden: `{Module Name}_{Module Version}.zip`. Ein Modul namens „xWebAdminstration“ mit einer Modulversion 3.1.2.0 würde beispielsweise „xWebAdministration_3.2.1.0.zip“ heißen. Jede Version eines Moduls muss in einer eigenen ZIP-Datei enthalten sein. Separate Versionen eines Moduls in eine Zip-Datei werden nicht unterstützt. Vor dem Packen von DSC-ressourcenmodulen für die Verwendung mit Pull-Server müssen Sie eine kleine Änderung an der Verzeichnisstruktur vornehmen.
+Jedes Ressourcenmodul muss komprimiert und entsprechend dem folgenden Muster benannt werden: `{Module Name}_{Module Version}.zip`. Ein Modul namens „xWebAdminstration“ mit einer Modulversion 3.1.2.0 würde beispielsweise „xWebAdministration_3.2.1.0.zip“ heißen. Jede Version eines Moduls muss in einer eigenen ZIP-Datei enthalten sein. Separate Versionen eines Moduls in einer ZIP-Datei werden nicht unterstützt. Bevor Sie die DSC-Ressourcenmodule für die Verwendung mit einem Pullserver verpacken, müssen Sie eine kleine Änderung an der Verzeichnisstruktur vornehmen.
 
 Das Standardformat für Module mit DSC-Ressourcen in WMF 5.0 ist `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`.
 

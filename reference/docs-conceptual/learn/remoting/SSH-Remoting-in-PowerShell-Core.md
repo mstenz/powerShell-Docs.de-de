@@ -2,12 +2,12 @@
 title: PowerShell-Remoting über SSH
 description: Remoting in PowerShell Core mithilfe von SSH
 ms.date: 08/14/2018
-ms.openlocfilehash: b5c6bd70841e270c2c128601612c07af9d9aa6e4
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
-ms.translationtype: MTE95
+ms.openlocfilehash: 1d7bcb69c7e784bf745cb5c2633106ea53f6226a
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655292"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58056531"
 ---
 # <a name="powershell-remoting-over-ssh"></a>PowerShell-Remoting über SSH
 
@@ -30,7 +30,7 @@ Um eine Remotesitzung zu erstellen, geben Sie den Zielcomputer über den `HostNa
 
 ## <a name="general-setup-information"></a>Allgemeine Setupinformationen
 
-SSH muss auf allen Computern installiert sein. Installieren Sie den SSH-Client (`ssh.exe`) und -Server (`sshd.exe`), damit Sie Remoting zwischen den Computern nutzen können. OpenSSH für Windows ist jetzt verfügbar in Windows 10 Build 1809 und Windows Server-2019. Weitere Informationen finden Sie unter [OpenSSH für Windows](/windows-server/administration/openssh/openssh_overview). Installieren Sie für Linux SSH (einschließlich SSHD-Server) entsprechend Ihrer Plattform. Sie müssen auch PowerShell Core über GitHub installieren, um das SSH-Remotingfeature zu erhalten. Der SSH-Server muss konfiguriert werden, um ein SSH-Subsystem zum Hosten eines PowerShell-Prozesses auf dem Remotecomputer zu erstellen. Sie müssen auch eine kennwort- oder schlüsselbasierte Authentifizierung konfigurieren und aktivieren.
+SSH muss auf allen Computern installiert sein. Installieren Sie den SSH-Client (`ssh.exe`) und -Server (`sshd.exe`), damit Sie Remoting zwischen den Computern nutzen können. OpenSSH für Windows ist nun im Windows 10-Build 1809 sowie in Windows Server 2019 verfügbar. Weitere Informationen erhalten Sie unter [OpenSSH for Windows (OpenSSH für Windows)](/windows-server/administration/openssh/openssh_overview). Installieren Sie für Linux SSH (einschließlich SSHD-Server) entsprechend Ihrer Plattform. Sie müssen auch PowerShell Core über GitHub installieren, um das SSH-Remotingfeature zu erhalten. Der SSH-Server muss konfiguriert werden, um ein SSH-Subsystem zum Hosten eines PowerShell-Prozesses auf dem Remotecomputer zu erstellen. Sie müssen auch eine kennwort- oder schlüsselbasierte Authentifizierung konfigurieren und aktivieren.
 
 ## <a name="set-up-on-windows-machine"></a>Setup auf dem Windows-Computer
 
@@ -46,8 +46,8 @@ SSH muss auf allen Computern installiert sein. Installieren Sie den SSH-Client (
    New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
    ```
 
-2. Installieren der neuesten Win32-OpenSSH an. Installationsanweisungen finden Sie unter [Installation der OpenSSH](/windows-server/administration/openssh/openssh_install_firstuse).
-3. Bearbeiten der `sshd_config` Datei `%ProgramData%\ssh`.
+2. Installieren Sie die neueste Win32-OpenSSH. Eine Anleitung hierzu finden Sie unter [Installation of OpenSSH (Installation von OpenSSH)](/windows-server/administration/openssh/openssh_install_firstuse).
+3. Bearbeiten Sie die `sshd_config`-Datei, die sich hier befindet: `$env:ProgramData\ssh`.
 
    - Vergewissern Sie sich, dass die Kennwortauthentifizierung aktiviert ist.
 
@@ -62,7 +62,7 @@ SSH muss auf allen Computern installiert sein. Installieren Sie den SSH-Client (
      > [!NOTE]
      > Es besteht ein Fehler in OpenSSH für Windows, der verhindert, dass Leerzeichen in ausführbaren Pfaden zu Subsystemen funktionieren. Weitere Informationen finden Sie in [diesem GitHub-Problem](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
 
-     Um dieses Problem zu beheben, können Sie eine symbolische Verknüpfung mit dem PowerShell-Installationsverzeichnis herstellen, die keine Leerzeichen enthält:
+     Dieses Problem kann behoben werden, indem Sie eine symbolische Verknüpfung mit dem PowerShell-Installationsverzeichnis herstellen, die keine Leerzeichen enthält:
 
      ```powershell
      mklink /D c:\pwsh "C:\Program Files\PowerShell\6"
@@ -314,6 +314,6 @@ Der Befehl „sudo“ funktioniert bei Remotesitzungen auf Linux-Computern nicht
 
 [PowerShell Core für macOS](../../install/installing-powershell-core-on-macos.md)
 
-[OpenSSH für Windows](/windows-server/administration/openssh/openssh_overview)
+[OpenSSH for Windows (OpenSSH für Windows)](/windows-server/administration/openssh/openssh_overview)
 
 [Ubuntu SSH](https://help.ubuntu.com/lts/serverguide/openssh-server.html)

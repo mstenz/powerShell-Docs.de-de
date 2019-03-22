@@ -2,18 +2,18 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: WaitForAny-Ressource in DSC
-ms.openlocfilehash: 39e90f0df3459b8891ed46e02ae82c45a285e7f5
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+ms.openlocfilehash: 55869f665837b422c006f4cfb3e91366fac60362
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047317"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58058811"
 ---
 # <a name="dsc-waitforany-resource"></a>WaitForAny-Ressource in DSC
 
-> Gilt für: Windows PowerShell 5.1 oder höher
+> Gilt für: Windows PowerShell 5.1 und höher
 
-Die DSC-Ressource (Desired State Configuration) **WaitForSome** kann innerhalb eines Knotenblocks in einer [DSC-Konfiguration](../../../configurations/configurations.md) verwendet werden, um Abhängigkeiten von Konfigurationen auf anderen Knoten anzugeben.
+Die DSC-Ressource (Desired State Configuration) **WaitForAny** kann innerhalb eines Knotenblocks in einer [DSC-Konfiguration](../../../configurations/configurations.md) verwendet werden, um Abhängigkeiten von Konfigurationen auf anderen Knoten anzugeben.
 
 Diese Ressource ist erfolgreich, wenn sich die mit der Eigenschaft **ResourceName** angegebene Ressource auf einem beliebigen der in der Eigenschaft **NodeName** definierten Zielknoten im gewünschten Zustand befindet.
 

@@ -2,31 +2,32 @@
 ms.date: 12/11/2018
 contributor: JKeithB, SydneyhSmith
 keywords: gallery,powershell,cmdlet,psgallery
-title: Pakete mit kompatiblen PowerShell-Editionen oder Betriebssystem
-ms.openlocfilehash: 8230866561d3021379a48cc2c83fb4104a4058c1
-ms.sourcegitcommit: d396d0e4cfe3d279f399c17e7337380a31d373ac
-ms.translationtype: MTE95
+title: Pakete mit kompatiblen PowerShell-Editionen oder Betriebssystemen
+ms.openlocfilehash: 14038aa9b0453e1d06e6587e97da391b56297c75
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53747703"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58057177"
 ---
 # <a name="packages-with-compatible-powershell-editions-or-operating-systems"></a>Pakete mit kompatiblen PowerShell-Editionen oder Betriebssystemen
 
 Ab Version 5.1 steht PowerShell in verschiedenen Editionen zur Verfügung, die unterschiedliche Featuregruppen und Plattformkompatibilität bieten.
 
-## <a name="searching-by-powershell-edition"></a>Suchen nach PowerShell-Editionen 
-Die zwei Editionen von Powershell sind:
-- Desktop Edition Basiert auf .NET Framework und bietet Kompatibilität mit Skripts und Modulen für Versionen von PowerShell, die unter Vollversionen von Windows wie Server Core und Windows-Desktop ausgeführt wird.
-- **Core-Edition:** Basiert auf .NET Core und bietet Kompatibilität mit Skripts und Modulen für Versionen von PowerShell, die unter funktionsreduzierten Versionen von Windows wie Nano Server und Windows IoT ausgeführt wird.
+## <a name="searching-by-powershell-edition"></a>Suchen nach PowerShell-Edition
 
-### <a name="powershell-gallery-allows-you-to-filter-packages-compatible-for-specific-powershell-editions"></a>PowerShell-Katalog können Sie Pakete, die kompatibel für bestimmte PowerShell-Editionen filtern
+Es gibt zwei PowerShell-Editionen:
+- **Desktop-Edition:** Diese Edition basiert auf .NET Framework und bietet Kompatibilität mit Skripts und Modulen für Versionen von PowerShell, die unter Vollversionen von Windows wie Server Core und Windows Desktop ausgeführt werden.
+- **Core-Edition:** Diese Edition basiert auf .NET Core und bietet Kompatibilität mit Skripts und Modulen für Versionen von PowerShell, die unter funktionsreduzierten Versionen von Windows wie Nano Server und Windows IoT ausgeführt werden.
 
-Verfügt ein Paket kompatible angegebene PSEditions, sie als Teil des "PowerShell-Editionen" aufgeführt sind in der Seite für Pakete anzeigen und auch in Paketen Ergebnisse.
-Sie können auch nach kompatiblen Paketen, die mithilfe von PowerShell suchen.
+### <a name="powershell-gallery-allows-you-to-filter-packages-compatible-for-specific-powershell-editions"></a>Der PowerShell-Katalog ermöglicht es, Pakete herauszufiltern, die mit bestimmten PowerShell-Editionen kompatibel sind
+
+Wenn für ein Paket kompatible PSEditions angegeben sind, werden diese im Rahmen von „PowerShell-Editionen“ auf der Paketseite und in den Paketergebnissen aufgelistet.
+Sie können auch mithilfe von PowerShell nach kompatiblen Paketen suchen.
 
 ![Seite des Elements mit PSEditions](../../Images/packagedisplaypagewithpseditions.PNG)
 
-### <a name="search-for-packages-in-the-gallery-ui-that-work-on-powershell-core"></a>Suchen Sie nach Paketen in der Benutzeroberfläche des Katalogs, die auf PowerShell Core
+### <a name="search-for-packages-in-the-gallery-ui-that-work-on-powershell-core"></a>Suchen nach Paketen in der Katalogbenutzeroberfläche in PowerShell Core
 
 Verwenden Sie die Tags „PSEdition_Desktop“ und „PSEdition_Core“, um die Pakete im PowerShell-Katalog zu filtern.
 
@@ -38,9 +39,10 @@ Verwenden Sie die Tags „PSEdition_Desktop“ und „PSEdition_Core“, um die 
 
 ![Suchergebnisse für Elemente, die mit Desktop PSEdition kompatibel sind](../../Images/searchresultswithpseditionsdesktop.PNG)
 
-### <a name="search-for-packages-to-find-compatible-editions-using-powershell"></a>Suchen Sie nach Paketen kompatible mithilfe von PowerShell-Editionen zu finden
-Sie können Tags für die PowerShell-Edition und Betriebssystem Filtern angeben. Sie verwenden die `Find-Package` Cmdlet angeben der `-Tag` Parameter zum Angeben der Edition (und Betriebssystem) Sie Anzielen.
-So:
+### <a name="search-for-packages-to-find-compatible-editions-using-powershell"></a>Suchen nach Paketen mithilfe von PowerShell, um kompatible Versionen zu finden
+Sie können Tags angeben, um nach PowerShell-Edition und Betriebssystem zu filtern.
+Sie verwenden das Cmdlet `Find-Package`, das die `-Tag`-Parameter angibt, um die Edition und das Betriebssystem anzugeben, auf das Sie abzielen.
+Dies sieht folgendermaßen aus:
 
 ```powershell
 # Find modules compatible with PowerShell Core:
@@ -50,34 +52,34 @@ Find-Module -Tag PSEdition_Core
 Find-Module -Tag PSEdition_Core, Linux
 ```
 
-## <a name="searching-by-operating-system"></a>Suchen nach Betriebssystem 
+## <a name="searching-by-operating-system"></a>Suchen je Betriebssystem
 
-Da PowerShell Core für Windows, Linux und MacOS verfügbar ist, können der Pakete im Katalog für eine beliebige Kombination dieser Betriebssysteme so entworfen werden. Verwenden Sie die folgenden Searchs Tags um Pakete, die vom Betriebssystem markiert zu suchen, in der Benutzeroberfläche des Katalogs:
+Da PowerShell Core für Windows, Linux und MacOS verfügbar ist, können die Pakete im Katalog für alle Kombinationen dieser drei Betriebssysteme entworfen werden. Verwenden Sie in der Katalogbenutzeroberfläche je nach Betriebssystem die folgenden Suchtags, um Pakete zu finden, die mit einem Tag versehen wurden:
 
 - Tags: "Windows"
 - Tags: "Linux"
-- Tags: "MacOS" 
+- Tags: "MacOS"
 
-Sie können diese Tags angeben, auf `Find-Module` (und andere Cmdlets im PowerShellGet-Modul) wie folgt aus:
+Sie können diese Tags folgendermaßen auf `Find-Module` (und anderen Cmdlets im PowerShellGet-Modul) angeben:
 
 ```powershell
 # Find Modules compatible with Windows
 Find-Module -Tag Linux
 ```
 
-## <a name="searching-for-multiple-compatibilities"></a>Für mehrere Probleme mit der Suche
+## <a name="searching-for-multiple-compatibilities"></a>Suchen nach mehrfacher Kompatibilität
 
-Sie können für ein Paket anzeigen, die über mehrere Probleme mit der Syntax verfügt: 
+Sie können nach einem Paket suchen, das mehrere Kompatibilitäten hat, wenn Sie diese Syntax verwenden:
 
-Tags "Compatibility1" "Compatibility2" 
+Tags: „Kompatibilität1“ „Kompatibilität2“
 
-Wenn Sie ein Paket mit PowerShell Core Kompatibilität, die für meine Windows und Linux-Computer ausgeführt wird suchen, verwenden Sie z. B. die Markierungen suchen:
+Wenn Sie beispielsweise nach einem Paket mit PowerShell Core-Kompatibilität suchen, das sowohl auf Windows- als auch auf Linux-Computern ausgeführt werden kann, verwenden Sie diese Suchtags:
 
-Tags "PSEdition_Core", "Windows", "Linux" 
+Tags: „PSEdition_Core“ „Windows“ „Linux“
 
-Um mithilfe von PowerShell zu suchen, können Sie die `Find-Module` (und die anderen Cmdlets im PowerShellGet-Modul) wie folgt aus:
+Wenn Sie über PowerShell suchen möchten, können Sie folgendermaßen `Find-Module` (und die anderen Cmdlets im PowerShellGet-Modul) verwenden:
 
-```powewrshell
+```powershell
 # Find scripts compatible with PowerShell Core, Windows, and Linux
 Find-Script -Tag PSEdition_Core,Linux,Windows
 

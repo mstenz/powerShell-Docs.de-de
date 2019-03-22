@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Verwenden von DSC auf Nano Server
-ms.openlocfilehash: fd81fe56d16100f45d9ee2dfd8fdc303c2a6c17a
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: ac5eaf3885788f40e12e4f0a0f19025668280f7e
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401436"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58054661"
 ---
 # <a name="using-dsc-on-nano-server"></a>Verwenden von DSC auf Nano Server
 
@@ -38,7 +38,7 @@ Sowohl Push- als auch Pull-Modus
 - [Stop-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Stop-DscConfiguration)
 - [Get-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration)
 - [Test-DscConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)
-- [Publish-DscConfiguraiton](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration)
+- [Publish-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration)
 - [Update-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Update-DscConfiguration)
 - [Restore-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Restore-DscConfiguration)
 - [Remove-DscConfigurationDocument](/powershell/module/PSDesiredStateConfiguration/Remove-DscConfigurationDocument)
@@ -50,7 +50,7 @@ Sowohl Push- als auch Pull-Modus
 
 - Kompilieren von Konfigurationen (siehe [DSC-Konfigurationen](../configurations/configurations.md))
 
-  **Issue #1629 (Problem #1629)** Verschlüsselung von Kennwörtern (finden Sie unter [Schützen der MOF-Datei](../pull-server/secureMOF.md)) während der Konfiguration, zu konfigurationskompilierung funktioniert nicht.
+  **Problem:** Die Kennwortverschlüsselung (siehe [Securing the MOF File (Schützen der MOF-Datei)](../pull-server/secureMOF.md)) während der Konfigurationskompilierung funktioniert nicht.
 
 - Kompilieren von Metakonfigurationen (siehe [Konfigurieren des lokalen Konfigurations-Managers](../managing-nodes/metaConfig.md)
 
@@ -60,7 +60,7 @@ Sowohl Push- als auch Pull-Modus
 
 - Debuggen von DSC-Ressourcen (siehe [Debuggen von DSC-Ressourcen](../troubleshooting/debugResource.md))
 
-  **Issue #1629 (Problem #1629)** Funktioniert nicht, wenn eine Ressource PsDscRunAsCredential verwendet (siehe [Ausführen von DSC mit Benutzeranmeldeinformationen](../configurations/runAsUser.md))
+  **Problem:** Funktioniert nicht, wenn eine Ressource die PsDscRunAsCredential-Eigenschaft verwendet (siehe [Running DSC with user credentials (Ausführen von DSC-Ressourcen mit Anmeldeinformationen)](../configurations/runAsUser.md))
 
 - [Angeben knotenübergreifender Abhängigkeiten](../configurations/crossNodeDependencies.md)
 
@@ -97,12 +97,12 @@ Sowohl Push- als auch Pull-Modus
 - **Gruppe**
 - **GroupSet**
 
-  **Issue #1629 (Problem #1629)** Oben genannten Ressourcen fehl, wenn bestimmte Instanz zweimal aufgerufen wird (die gleiche Konfiguration zweimal ausgeführt)
+  **Problem:** Bei den oben genannten Ressourcen tritt ein Fehler auf, wenn eine bestimmte Instanz zweimal aufgerufen wird (bzw. wenn die gleiche Konfiguration zweimal ausgeführt wird)
 
 - **Service**
 - **ServiceSet**
 
-  **Issue #1629 (Problem #1629)** Funktioniert nur bei starten/beenden (Status) des Diensts. Schlägt fehl, wenn versucht wird, andere Attribute des Diensts zu ändern, z. B. Starttyp, Anmeldeinformationen, Beschreibung usw. Ein Fehler mit etwa folgendem Wortlaut wird ausgelöst:
+  **Problem:** Funktioniert nur beim Starten/Beenden (Status) des Diensts. Schlägt fehl, wenn versucht wird, andere Attribute des Diensts zu ändern, z. B. Starttyp, Anmeldeinformationen, Beschreibung usw. Ein Fehler mit etwa folgendem Wortlaut wird ausgelöst:
 
   *Typ [management.managementobject] wurde nicht gefunden: Stellen Sie sicher, dass die Assembly, die diesen Typ enthält, geladen wird.*
 

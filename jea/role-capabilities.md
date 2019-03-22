@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: jea,powershell,security
 title: JEA-Rollenfunktionen
-ms.openlocfilehash: bd0a995adc60e50049ff99d6b23e7c2aeb745a18
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.openlocfilehash: b93d206680de485d6cb7a8cb26d63afda5bf8421
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45522939"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58055052"
 ---
 # <a name="jea-role-capabilities"></a>JEA-Rollenfunktionen
 
-> Gilt für: Windows PowerShell 5.0
+> Gilt für: Windows PowerShell 5.0
 
 Beim Erstellen eines JEA-Endpunkts müssen Sie eine oder mehrere „Rollenfunktionen“ definieren, die festlegen, *welche Befehle* ein Benutzer in einer JEA-Sitzung ausführen kann.
 Eine Rollenfunktion ist eine PowerShell-Datendatei mit der Erweiterung PSRC. Sie enthält alle Cmdlets, Funktionen, Anbieter und externen Programme für Benutzer, die eine Verbindung herstellen.
@@ -58,7 +58,7 @@ Die PowerShell-Hilfedokumentation enthält mehrere Beispiele dafür, wie Sie die
 
 ### <a name="allowing-powershell-cmdlets-and-functions"></a>Zulassen von PowerShell-Cmdlets und -Funktionen
 
-Fügen Sie den Feldern „VisbibleCmdlets“ oder „VisibleFunctionsCmdlet“ den Cmdlet- oder Funktionsnamen hinzu, um Benutzern das Ausführen von PowerShell-Cmdlets oder -Funktionen zu ermöglichen.
+Fügen Sie den Feldern „VisibleCmdlets“ oder „VisibleFunctions“ den Cmdlet- oder Funktionsnamen hinzu, um Benutzern das Ausführen von PowerShell-Cmdlets oder -Funktionen zu ermöglichen.
 Wenn Sie nicht sicher sind, ob es sich um einen Befehl für ein Cmdlet oder eine Funktion handelt, können Sie `Get-Command <name>` ausführen und die Eigenschaft „CommandType“ in der Ausgabe überprüfen.
 
 ```powershell
@@ -100,7 +100,6 @@ Beispiel                                                                        
 `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'}, @{ Name = 'Param2' }}`               | Ermöglicht dem Benutzer das Ausführen von `My-Func` mit den Parametern `Param1` und/oder `Param2` Für die Parameter kann ein beliebiger Wert angegeben werden.
 `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidateSet = 'Value1', 'Value2' }}`  | Ermöglicht dem Benutzer das Ausführen von `My-Func` mit dem Parameter `Param1`. Für den Parameter kann nur „Value1“ und „Value2“ angegeben werden.
 `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidatePattern = 'contoso.*' }}`     | Ermöglicht dem Benutzer das Ausführen von `My-Func` mit dem Parameter `Param1`. Für den Parameter kann ein beliebiger Wert, beginnend mit „Contoso“, angegeben werden.
-
 
 > [!WARNING]
 > Bewährten Sicherheitsmaßnahmen zufolge wird bei der Definition sichtbarer Cmdlets und Funktionen empfohlen, keine Platzhalter zu verwenden.
@@ -171,7 +170,6 @@ FunctionDefinitions = @{
 > [!IMPORTANT]
 > Vergessen Sie nicht, den Namen der benutzerdefinierten Funktionen im Feld **VisibleFunctions** hinzuzufügen, damit sie von den JEA-Benutzern ausgeführt werden können.
 
-
 Textkörper (Skriptblöcke) von benutzerdefinierten Funktionen werden im Standardsprachmodus für das System ausgeführt und unterliegen nicht den JEA-Spracheinschränkungen.
 Dies bedeutet, dass Funktionen Zugriff auf das Dateisystem und die Registrierung haben und Befehle ausführen können, die in der Rollenfunktionsdatei nicht sichtbar gemacht wurden.
 Achten Sie darauf, dass kein beliebiger Code ausgeführt wird, wenn Sie Parameter verwenden. Vermeiden Sie außerdem das direkte Weiterreichen von Benutzereingaben in Cmdlets wie `Invoke-Expression`.
@@ -211,14 +209,12 @@ Weitere Informationen zu PowerShell-Modulen, Modulmanifeste und die Umgebungsvar
 
 ## <a name="updating-role-capabilities"></a>Aktualisieren von Rollenfunktionen
 
-
 Sie können eine Rollenfunktionsdatei jederzeit aktualisieren, indem Sie einfach Änderungen an der Rollenfunktionsdatei speichern.
 Jede neue JEA-Sitzung, die nach dem Aktualisieren der Rollenfunktion gestartet wird, enthält die überarbeiteten Funktionen.
 
 Aus diesem Grund ist es so wichtig, den Zugriff auf den Rollenfunktionsordner genau zu steuern.
 Nur sehr vertrauenswürdige Administratoren sollten Rollenfunktionsdateien ändern können.
 Wenn nicht vertrauenswürdige Benutzer berechtigt sind, Rollenfunktionsdateien zu ändern, können sie sich leicht selbst Zugriff auf Cmdlets verschaffen und damit ihre eigenen Berechtigungen erhöhen.
-
 
 Administratoren, die den Zugriff auf die Rollenfunktionen einschränken möchten, müssen sicherstellen, dass das lokale System über Lesezugriff auf die Rollenfunktionsdateien und die darin enthaltenen Module verfügt.
 
@@ -256,16 +252,14 @@ $roleB = @{
                      @{ Name = 'Restart-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Server' } }
 }
 
-# Resulting permisisons for a user who belongs to both role A and B
-# - The constraint in role B for the DisplayName parameter on Get-Service is ignored becuase of rule #4
+# Resulting permissions for a user who belongs to both role A and B
+# - The constraint in role B for the DisplayName parameter on Get-Service is ignored because of rule #4
 # - The ValidateSets for Restart-Service are merged because both roles use ValidateSet on the same parameter per rule #5
 $mergedAandB = @{
     VisibleCmdlets = 'Get-Service',
                      @{ Name = 'Restart-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client', 'DNS Server' } }
 }
 ```
-
-
 
 **VisibleExternalCommands, VisibleAliases, VisibleProviders, ScriptsToProcess**
 

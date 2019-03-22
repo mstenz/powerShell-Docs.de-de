@@ -2,24 +2,24 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,setup
 title: Ressourcenabhängigkeiten mithilfe von DependsOn
-ms.openlocfilehash: 0d060f7d99bd261b0766028b245d4d32a5e1c349
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 5ea08c76c203188f41513ad0cc1f4571579b4172
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401382"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58055698"
 ---
 # <a name="resource-dependencies-using-dependson"></a>Ressourcenabhängigkeiten mithilfe von DependsOn
 
-Beim Erstellen von [Konfigurationen](configurations.md), Sie fügen [ressourcenblöcke](../resources/resources.md) Aspekte eines Ziels Knoten konfigurieren. Bei der weiteren ressourcenblöcke hinzufügen, können Ihre Konfigurationen sehr groß und aufwendig zu verwalten wachsen. Eine solche Schwierigkeit ist die angewendeten Reihenfolge von der Ressource blockiert. In der Regel werden Ressourcen in der Reihenfolge angewendet, die sie in der Konfiguration definiert sind. Wenn Ihre Konfiguration größere und komplexere wächst, können Sie die `DependsOn` -Taste, um die angewendeten Reihenfolge Ihrer Ressourcen durch Angabe zu ändern, die eine Ressource von einer anderen Ressource abhängig ist.
+Wenn Sie [Konfigurationen](configurations.md) schreiben, fügen Sie [Ressourcenblöcke](../resources/resources.md) hinzu, um Aspekte eines Zielknotens zu konfigurieren. Wenn immer mehr Ressourcenblöcke hinzugefügt werden, können Konfigurationen recht groß und ihre Verwaltung aufwändig werden. Eine Herausforderung besteht hierbei in der Reihenfolge der Anwendung Ihrer Ressourcenblöcke. Normalerweise werden Ressourcen in der Reihenfolge angewendet, in der sie in der Konfiguration angegeben sind. Wenn Ihre Konfiguration größer und komplexer wird, können Sie den `DependsOn`-Schlüssel verwenden, um die Reihenfolge der Anwendung Ihrer Ressourcen zu ändern, indem Sie angeben, dass eine Ressource von einer anderen abhängt.
 
-Die `DependsOn` Schlüssel kann in jedem Ressourcenblock verwendet werden. Es wird mit dem gleichen Schlüssel/Wert-Mechanismus wie andere Ressourcenschlüssel definiert. Die `DependsOn` Schlüssel erwartet, dass ein Array von Zeichenfolgen mit der folgenden Syntax.
+Der `DependsOn`-Schlüssel kann in jedem Ressourcenblock verwendet werden. Er wird mit denselben Schlüssel/Wert-Mechanismen angegeben wie andere Ressourcenschlüssel. Der `DependsOn`-Schlüssel erwartet ein Zeichenfolgenarray mit folgender Syntax.
 
 ```
-DependsOn = '[<Resource Type>]<Resoure Name>', '[<Resource Type>]<Resource Name'
+DependsOn = '[<Resource Type>]<Resource Name>', '[<Resource Type>]<Resource Name'
 ```
 
-Das folgende Beispiel konfiguriert eine Firewallregel, nach dem Aktivieren und konfigurieren das öffentliche Profil.
+Im folgenden Beispiel wird eine Firewallregel konfiguriert, nachdem das öffentliche Profil aktiviert und konfiguriert wurde.
 
 ```powershell
 # Install the NetworkingDSC module to configure firewall rules and profiles.
@@ -60,7 +60,7 @@ Configuration ConfigureFirewall
 ConfigureFirewall -OutputPath C:\Temp\
 ```
 
-Wenn Sie die Konfiguration anwenden, wird die Firewall-Profil immer konfiguriert zunächst unabhängig von der Reihenfolge ressourcenblöcke definiert sind. Wenn Sie die Konfiguration anzuwenden, achten Sie darauf, dass Sie zu Ihrer vorhandenen Konfiguration aus, damit Sie bei Bedarf wiederherstellen können Knoten beachten.
+Wenn Sie die Konfiguration anwenden, wird das Firewallprofil immer zuerst konfiguriert, unabhängig davon, in welcher Reihenfolge die Ressourcenblöcke angegeben wurden. Wenn Sie die Konfiguration anwenden sollten Sie sich die Konfiguration Ihres vorhandenen Zielknotens notieren, um sie ggf. wiederherzustellen.
 
 ```
 PS> Start-DSCConfiguration -Verbose -Wait -Path C:\Temp\ -ComputerName localhost
@@ -118,13 +118,13 @@ VERBOSE: Operation 'Invoke CimMethod' complete.
 VERBOSE: Time taken for configuration job to complete is 15.385 seconds
 ```
 
-Dadurch wird auch sichergestellt, dass bei der **FirewallProfile** das Ressourcenfehler aus irgendeinem Grund die **Firewall** Block wird nicht ausgeführt werden, obwohl er ursprünglich definiert wurde. Die `DependsOn` ermöglicht mehr Flexibilität bei der Ressource gruppierungsblöcke aus, und stellen Sie sicher, dass Abhängigkeiten aufgelöst werden, bevor eine Ressource ausgeführt wird.
+Dadurch wird auch sichergestellt, dass der **Firewall**-Block nicht ausgeführt wird, wenn es aus irgendeinem Grund zu einem Fehler mit der **FirewallProfile**-Ressource kommt, obwohl dieser Block zuerst angegeben wurde. Der `DependsOn`-Schlüssel bietet mehr Flexibilität dabei, Ressourcenblöcke zu gruppieren und dafür zu sorgen, dass Abhängigkeiten aufgelöst werden, bevor eine Ressource ausgeführt wird.
 
-In erweiterten Konfigurationen können Sie auch [plattformübergreifende Knoten Abhängigkeit](crossNodeDependencies.md) um noch präzisere Kontrolle (z. B., um sicherzustellen, ein Domänencontroller ist so konfiguriert, vor dem Verknüpfen eines Clients mit der Domäne) zu ermöglichen.
+In komplexeren Konfigurationen können Sie auch [knotenübergreifende Abhängigkeiten](crossNodeDependencies.md) verwenden, um eine noch feiner abgestimmte Kontrolle zu ermöglichen, z. B., um sicherzustellen, dass ein Domänencontroller konfiguriert wird, bevor der Domäne ein Client hinzugefügt wird.
 
 ## <a name="cleaning-up"></a>Bereinigung
 
-Wenn Sie die oben genannten Konfiguration angewendet haben, können Sie Schlüssel, um alle Änderungen rückgängig zu machen umkehren. Im obigen Beispiel, das Festlegen der **aktiviert** Schlüssel auf "false" wird die Firewall-Regel und das Profil deaktiviert. Sie sollten das Beispiel ändern, je nach Bedarf entsprechend des Zielknotens vorherigen konfigurierte Status.
+Wenn Sie die obige Konfiguration angewendet haben, können Sie Schlüssel umkehren, um Änderungen rückgängig zu machen. Im obigen Beispiel wird die Firewallregel und das Firewallprofil deaktiviert, wenn der **Enabled**-Schlüssel (Aktiviert) auf „False“ festgelegt wird. Sie sollten das Beispiel Ihren Bedürfnissen anpassen, damit es mit dem zuvor konfigurierten Zustand Ihres Zielknotens übereinstimmt.
 
 ```powershell
         Firewall Firewall
@@ -143,4 +143,4 @@ Wenn Sie die oben genannten Konfiguration angewendet haben, können Sie Schlüss
 
 ## <a name="see-also"></a>Siehe auch
 
-- [Verwenden Sie datenbankübergreifende Abhängigkeiten](./crossNodeDependencies.md)
+- [Use Cross Node Dependencies (Verwenden knotenübergreifender Abhängigkeiten)](./crossNodeDependencies.md)

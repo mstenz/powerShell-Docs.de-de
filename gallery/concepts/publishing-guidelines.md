@@ -4,12 +4,12 @@ contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 description: Richtlinien für Herausgeber
 title: Veröffentlichungsrichtlinien und Best Practices für den PowerShell-Katalog
-ms.openlocfilehash: 64c3d607b13dce64f70f138fdee849e5baaf85df
-ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
-ms.translationtype: MTE95
+ms.openlocfilehash: 25c359c7acbe7430762a275d8cc4a28f527ec57a
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56265568"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58056497"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>Veröffentlichungsrichtlinien und Best Practices für den PowerShell-Katalog
 
@@ -33,7 +33,7 @@ Pakete, die diesen Richtlinien entsprechen, werden eher heruntergeladen und von 
 - Antworten Sie auf Feedback
 - Stellen Sie anstelle von Skripts Module bereit
 - Stellen Sie einen Link zu einer Projektwebsite bereit
-- Markieren Sie das Paket mit den kompatiblen PSEdition(s) und Plattformen 
+- Versehen Sie Ihr Paket mit Tags der kompatiblen PowerShell-Edition(en) und Plattformen
 - Schließen Sie Tests in Ihre Module ein
 - Schließen Sie Lizenzbedingungen (bzw. einen Link auf diese) ein
 - Signieren Sie Ihren Code
@@ -136,15 +136,15 @@ Ein Link kann durch Einschließen eines ProjectURI-Werts im PSData-Abschnitt des
 
 Wenn Sie einen ProjectURI angeben, wird im PowerShell-Katalog links auf der Paketseite ein Link zur Projektwebsite angezeigt.
 
-## <a name="tag-your-package-with-the-compatible-pseditions-and-platforms"></a>Markieren Sie das Paket mit den kompatiblen PSEdition(s) und Plattformen 
+## <a name="tag-your-package-with-the-compatible-pseditions-and-platforms"></a>Versehen Sie Ihr Paket mit Tags der kompatiblen PowerShell-Edition(en) und Plattformen
 
-Verwenden Sie die folgenden Tags, um Benutzern zu zeigen, die Pakete auch mit ihrer Umgebung verwendet werden kann:
+Verwenden Sie die folgenden Tags, um Benutzern anzuzeigen, welche Pakete sich für deren Umgebung gut eignen:
 
-- "Psedition_desktop": Pakete, die mit Windows PowerShell kompatibel sind 
-- PSEdition_Core: Pakete, die mit Powershell Core kompatibel sind 
-- Windows: Pakete, die mit dem Windows-Betriebssystem kompatibel sind
-- Linux: Pakete, die mit der Linux-Betriebssystemen kompatibel sind 
-- MacOS: Pakete, die mit dem Mac-Betriebssystem kompatibel sind
+- PSEdition_Desktop : Pakete, die mit Windows PowerShell kompatibel sind.
+- PSEdition_Core : Pakete, die mit PowerShell Core kompatibel sind.
+- Windows : Pakete, die mit dem Windows-Betriebssystem kompatibel sind.
+- Linux : Pakete, die mit dem Linux-Betriebssystem kompatibel sind.
+- MacOS : Pakete, die mit MacOS kompatibel sind.
 
 ## <a name="include-tests"></a>Schließen Sie Tests ein
 
@@ -251,4 +251,3 @@ Als erfolgreichster Ansatz für das Veröffentlichen von Paketen im PowerShell-K
 - Entscheiden Sie, ob Sie Ihrem Paket eine Codesignatur hinzufügen möchten.
 - Wenn Sie der Meinung sind, dass das Projekt bereit zur Verwendung in einer Produktionsumgebung ist, veröffentlichen Sie eine Version 1.0.0 im PowerShell-Katalog.
 - Sammeln Sie weiterhin Feedback, und durchlaufen Sie Ihren Code basierend auf Hinweisen und Kommentaren von Benutzern.
-

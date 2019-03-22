@@ -3,16 +3,17 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,setup
 title: WMF 5.1 – Betriebssystemkompatibilität
-ms.openlocfilehash: f0037dbc3b172fc98f5f8044a794e49f7727a05c
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: f4d7d1403c1f397bf6720485d7a7302543c2010f
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34187509"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794961"
 ---
-# <a name="wmf-51-operating-system-compatibility"></a>WMF 5.1 – Betriebssystemkompatibilität #
+# <a name="wmf-51-operating-system-compatibility"></a>WMF 5.1 – Betriebssystemkompatibilität
 
-> Hinweis: Diese Dokumentation ist vorläufig und kann geändert werden.
+> [!NOTE]
+> Diese Informationen sind vorläufig und können geändert werden.
 
 | Betriebssystemversion | [WMF 5.1](https://aka.ms/wmf51download) | [WMF 5.0](https://aka.ms/wmf5download) | [WMF 4.0](https://aka.ms/wmf4download) |  [WMF 3.0](https://aka.ms/wmf3download) | [WMF 2.0](https://aka.ms/wmf2download) |
 | ------------------------ | ----------- | ----------- | ----------- | ------------ |  ------------- |
@@ -29,11 +30,9 @@ ms.locfileid: "34187509"
 | WindowsServer 2003| | | |  | Ja |
 | Windows XP | | | |  | Ja |
 
-
-Über „Im Lieferumfang*“: Die Funktionen von WMF 5.0 waren in der ursprünglichen Version von Windows 10 RTM enthalten.
+Informationen zu „Im Lieferumfang*“: Die WMF 5.0-Features waren in der ursprünglichen Version von Windows 10 RTM enthalten.
 Die Funktionen von WMF 5.1 waren in Windows Server 2016 und Windows 10 Anniversary Edition enthalten.
 WMF 5.1 gilt nicht für diese Betriebssysteme, das die Updates über Windows Update bereitgestellt werden.
-
 
 Beachten Sie, dass WMF nicht mit Windows ausgeliefert wird.
 WMF ist ein Upgradepaket, das eine Reihe von Windows-Funktionen für frühere Windows-Versionen bereitstellt.

@@ -2,12 +2,12 @@
 ms.date: 10/30/2018
 keywords: dsc,powershell,configuration,setup
 title: Problembehandlung bei DSC
-ms.openlocfilehash: e1f36bbc97569ac0d65f003ee08f52ec174a4520
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: 5ee1b68f4f769426fea3c8e10738c3bb6ef94480
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55678071"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58059744"
 ---
 # <a name="troubleshooting-dsc"></a>Problembehandlung bei DSC
 
@@ -74,19 +74,19 @@ InDesiredState        :    False
 InitialState          :
 InstanceName          :    ServiceDll
 RebootRequested       :    False
-ReosurceName          :    File
+ResourceName          :    File
 StartDate             :    11/24/2015  3:44:56
 PSComputerName        :
 ```
 
-## <a name="my-script-wont-run-using-dsc-logs-to-diagnose-script-errors"></a>Mein Skript wird nicht ausgeführt werden: Mithilfe von DSC-Protokolle zur diagnose von Skriptfehlern
+## <a name="my-script-wont-run-using-dsc-logs-to-diagnose-script-errors"></a>Mein Skript wird nicht ausgeführt: Verwenden von DSC-Protokollen für die Diagnose von Skriptfehlern
 
 Wie alle Windows-Softwareprogramme erfasst DSC Fehler und Ereignisse in [Protokollen](/windows/desktop/EventLog/about-event-logging), die Sie in der [Ereignisanzeige](https://support.microsoft.com/hub/4338813/windows-help) anzeigen können.
 Die Durchsicht dieser Protokolle kann Ihnen dabei helfen herauszufinden, warum ein bestimmter Vorgang fehlgeschlagen ist und wie Sie Fehler in Zukunft vermeiden. Das Schreiben von Konfigurationsskripts ist nicht ganz einfach. Sie sollten daher den Fortschritt der Konfiguration im Ereignisprotokoll der DSC-Analyse mithilfe der DSC-Protokollressource verfolgen, um Fehler bei der Erstellung leichter aufspüren zu können.
 
 ## <a name="where-are-dsc-event-logs"></a>Wo befinden sich die DSC-Ereignisprotokolle?
 
-Sind in der Ereignisanzeige DSC-Ereignisse in ein: **Anwendungen und Services Logs/Microsoft/Windows/Desired State Configuration**
+In der Ereignisanzeige befinden sich DSC-Ereignisse unter: **Applications and Services Logs/Microsoft/Windows/Desired State Configuration**
 
 Die können auch das entsprechende PowerShell-Cmdlet [Get-WinEvent](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent) ausführen, um die Ereignisprotokolle anzuzeigen:
 
@@ -100,7 +100,7 @@ TimeCreated                     Id LevelDisplayName Message
 11/17/2014 10:27:23 PM        4102 Information      Job {02C38626-D95A-47F1-9DA2-C1D44A7128E7} :
 ```
 
-Wie oben gezeigt, lautet der primäre Protokollname von DSC **Microsoft > Windows > DSC** (andere Protokollnamen unter Windows werden hier aus Gründen der Übersichtlichkeit nicht dargestellt). Der primäre Name wird an den Namen des Kanals angefügt. Daraus ergibt sich der vollständige Protokollname. Die DSC-Engine schreibt hauptsächlich in drei Protokolltypen: [Betriebsdatenbank, analytische und Debugprotokolle](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc722404(v=ws.11)). Da die analytischen Protokolle und die Debugprotokolle standardmäßig deaktiviert sind, sollten Sie sie in der Ereignisanzeige aktivieren. Öffnen Sie dazu die Ereignisanzeige, indem Sie in Windows PowerShell „Show-EventLog“ eingeben. Oder klicken Sie auf die Schaltfläche **Start** und dann auf **Systemsteuerung**, **Verwaltung** und **Ereignisanzeige**.
+Wie oben gezeigt, lautet der primäre Protokollname von DSC **Microsoft > Windows > DSC** (andere Protokollnamen unter Windows werden hier aus Gründen der Übersichtlichkeit nicht dargestellt). Der primäre Name wird an den Namen des Kanals angefügt. Daraus ergibt sich der vollständige Protokollname. Die DSC-Engine schreibt hauptsächlich in drei Arten von Protokollen: [Betriebs-, Analyse- und Debugprotokolle](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc722404(v=ws.11)). Da die analytischen Protokolle und die Debugprotokolle standardmäßig deaktiviert sind, sollten Sie sie in der Ereignisanzeige aktivieren. Öffnen Sie dazu die Ereignisanzeige, indem Sie in Windows PowerShell „Show-EventLog“ eingeben. Oder klicken Sie auf die Schaltfläche **Start** und dann auf **Systemsteuerung**, **Verwaltung** und **Ereignisanzeige**.
 Klicken Sie in der Ereignisanzeige im Menü **Ansicht** auf **Analytische und Debugprotokolle einblenden**. Der Name des für den analytischen Kanal lautet **Microsoft-Windows-Dsc/Analytic**, und der Debugkanal heißt **Microsoft-Windows-Dsc/Debug**. Außerdem können Sie zum Aktivieren der Protokolle das Hilfsprogramm [wevtutil](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc732848(v=ws.11)) verwenden, wie im folgenden Beispiel gezeigt.
 
 ```powershell
@@ -327,7 +327,7 @@ SRV1   OPERATIONAL  6/24/2016 10:51:54 AM Job runs under the following LCM setti
 SRV1   OPERATIONAL  6/24/2016 10:51:54 AM Operation Consistency Check or Pull completed successfully.
 ```
 
-Übergeben der **GUID** zugewiesen, die einem bestimmten DSC-Vorgang (wie vom die `Get-xDscOperation` Cmdlet) um die Ereignisdetails für diesen DSC-Vorgang zu erhalten:
+Übergeben Sie die einem bestimmten DSC-Vorgang zugeordnete **GUID** (wie vom Cmdlet `Get-xDscOperation` zurückgegeben), um die Ereignisdetails für diesen DSC-Vorgang abzurufen:
 
 ```powershell
 PS C:\DiagnosticsTest> Trace-xDscOperation -JobID 9e0bfb6b-3a3a-11e6-9165-00155d390509
@@ -461,7 +461,7 @@ SRV2   OPERATIONAL  6/24/2016 11:36:56 AM Operation Consistency Check or Pull co
 SRV2   ANALYTIC     6/24/2016 11:36:56 AM Deleting file from C:\Windows\System32\Configuration\DSCEngineCach...
 ```
 
-## <a name="my-resources-wont-update-how-to-reset-the-cache"></a>Meine Ressourcen werden nicht aktualisiert: Gewusst wie: Zurücksetzen des Caches
+## <a name="my-resources-wont-update-how-to-reset-the-cache"></a>Meine Ressourcen werden nicht aktualisiert: Zurücksetzen des Caches
 
 Die DSC-Engine speichert Ressourcen zwischen, die aus Effizienzgründen als PowerShell-Engine implementiert wurden.
 Dies kann jedoch Probleme verursachen, wenn Sie eine Ressource erstellen und gleichzeitig testen, da DSC die zwischengespeicherte Version lädt, solange der Vorgang nicht neu gestartet wurde. Die einzige Möglichkeit, DSC zu veranlassen, die neuere Version zu laden, besteht darin, den Prozess, der die DSC-Engine hostet, explizit zu beenden.

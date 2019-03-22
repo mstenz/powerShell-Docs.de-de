@@ -4,21 +4,22 @@ ms.topic: conceptual
 keywords: wmf,powershell,setup
 contributor: jianyunt, quoctruong
 title: Verbesserungen bei der Paketverwaltung in WMF 5.1
-ms.openlocfilehash: adcddcc94022f4961f3dd23c2cd56f2a8720049b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: 30ef59ed9dc0d56636d85cc6e53523a9a73963a4
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55679216"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794279"
 ---
-# <a name="improvements-to-package-management-in-wmf-51"></a>Verbesserungen bei der Paketverwaltung in WMF 5.1#
+# <a name="improvements-to-package-management-in-wmf-51"></a>Verbesserungen bei der Paketverwaltung in WMF 5.1
 
-## <a name="improvements-in-packagemanagement"></a>Verbesserungen bei PackageManagement ##
+## <a name="improvements-in-packagemanagement"></a>Verbesserungen bei PackageManagement
+
 In WMF 5.1 wurden folgende Probleme behoben:
 
 ### <a name="version-alias"></a>Versionsalias
 
-**Szenario**: Angenommen, Sie haben Version 1.0 und 2.0 des Pakets P1 auf Ihrem System installiert und möchten nun die Version 1.0 deinstallieren. Deshalb führen Sie `Uninstall-Package -Name P1 -Version 1.0` aus. Sie erwarten, dass Version 1.0 nach dem Ausführen des Cmdlets deinstalliert wurde. Das Ergebnis ist jedoch, dass Version 2.0 deinstalliert wird.
+**Szenario:** Sie haben Version 1.0 und 2.0 des Pakets P1 auf Ihrem System installiert und möchten nun die Version 1.0 deinstallieren. Deshalb führen Sie `Uninstall-Package -Name P1 -Version 1.0` aus. Sie erwarten, dass Version 1.0 nach dem Ausführen des Cmdlets deinstalliert wurde. Das Ergebnis ist jedoch, dass Version 2.0 deinstalliert wird.
 
 Dies passiert, weil der `-Version`-Parameter ein Alias für den `-MinimumVersion`-Parameter ist. Wenn PackageManagement ein qualifiziertes Paket mit der Mindestversion 1.0 sucht, wird die neueste Version zurückgegeben. Dieses Verhalten wird normalerweise erwartet, da meistens die neueste Version gefunden werden soll. Für `Uninstall-Package` sollte dies aber nicht gelten.
 
@@ -26,22 +27,22 @@ Dies passiert, weil der `-Version`-Parameter ein Alias für den `-MinimumVersion
 
 ### <a name="multiple-prompts-for-bootstrapping-the-nuget-provider"></a>Mehrere Aufforderungen zum Bootstrapping des NuGet-Anbieters
 
-**Szenario**: Wenn Sie `Find-Module` oder `Install-Module` oder andere PackageManagement-Cmdlets erstmals auf Ihrem Computer ausführen, versucht PackageManagement das Bootstrapping des NuGet-Anbieters. Das liegt daran, dass der PowerShellGet-Anbieter auch den NuGet-Anbieter verwendet, um PowerShell-Module herunterzuladen. PackageManagement fordert dann vom Benutzer die Berechtigung zum Installieren des NuGet-Anbieters an. Nachdem der Benutzer für das Bootstrapping „yes“ ausgewählt hat, wird die neueste Version des NuGet-Anbieters installiert.
+**Szenario:** Wenn Sie `Find-Module` oder `Install-Module` oder andere PackageManagement-Cmdlets erstmals auf Ihrem Computer ausführen, versucht PackageManagement das Bootstrapping des NuGet-Anbieters. Das liegt daran, dass der PowerShellGet-Anbieter auch den NuGet-Anbieter verwendet, um PowerShell-Module herunterzuladen. PackageManagement fordert dann vom Benutzer die Berechtigung zum Installieren des NuGet-Anbieters an. Nachdem der Benutzer für das Bootstrapping „yes“ ausgewählt hat, wird die neueste Version des NuGet-Anbieters installiert.
 
 Wenn jedoch eine ältere Version des NuGet-Anbieters auf Ihrem Computer installiert ist, wird mitunter die ältere NuGet-Version zuerst in die PowerShell-Sitzung geladen (was die Racebedingung in PackageManagement ist). Damit PowerShellGet funktioniert, ist jedoch die neuere Version des NuGet-Anbieters erforderlich. Deshalb wird PackageManagement von PowerShellGet aufgefordert, für den NuGet-Anbieter erneut das Bootstrapping auszuführen. Dies führt zu mehreren Aufforderungen zum Bootstrapping des NuGet-Anbieters.
 
-**Lösung**: In WMF 5.1 lädt PackageManagement die neueste Version von NuGet-Anbieters, um mehrere aufforderungen zum bootstrapping des NuGet-Anbieters zu vermeiden.
+**Lösung**: In WMF 5.1 lädt PackageManagement die neueste Version des NuGet-Anbieters, um mehrere Aufforderungen zum Bootstrapping des NuGet-Anbieters zu vermeiden.
 
 Es gibt auch eine Umgehung dieses Problems. Löschen Sie dazu manuell die alte Version des NuGet-Anbieters (NuGet-Anycpu.exe), sofern vorhanden, aus „$env:ProgramFiles\PackageManagement\ProviderAssemblies $env:LOCALAPPDATA\PackageManagement\ProviderAssemblies“.
 
 
 ### <a name="support-for-packagemanagement-on-computers-with-intranet-access-only"></a>Unterstützung für PackageManagement auf Computern mit ausschließlichem Intranetzugriff
 
-**Szenario**: Benutzer im Unternehmen haben keinen Zugriff auf das Internet, sondern nur auf das Intranet. Dies wurde von PackageManagement in WMF 5.0 nicht unterstützt.
+**Szenario:** Benutzer im Unternehmen haben keinen Zugriff auf das Internet, sondern nur auf das Intranet. Dies wurde von PackageManagement in WMF 5.0 nicht unterstützt.
 
-**Szenario**: In WMF 5.0 hat PackageManagement keine Computer unterstützt, die nur auf das Intranet (aber nicht auf das Internet) zugreifen dürfen.
+**Szenario:** In WMF 5.0 hat PackageManagement keine Computer unterstützt, die nur auf das Intranet (aber nicht auf das Internet) zugreifen dürfen.
 
-**Lösung**: In WMF 5.1 können Sie diese Schritte aus, um die Intranetcomputern das Verwenden von PackageManagement erlauben verwenden:
+**Lösung**: In WMF 5.1 können Sie diese Schritte ausführen, um Intranetcomputern das Verwenden von PackageManagement zu erlauben:
 
 1. Laden Sie den NuGet-Anbieter auf einem anderen Computer mit Internetverbindung mit dem Befehl `Install-PackageProvider -Name NuGet` herunter.
 
@@ -61,6 +62,7 @@ In WMF 5.1 unterstützt PackageManagement das Suchen und Installieren von Pakete
 ``` PowerShell
 Find-Package -Source <SourceWithCredential> -Credential (Get-Credential)
 ```
+
 ### <a name="support-for-using-packagemanagement-behind-a-proxy"></a>Unterstützung für die Verwendung von PackageManagement hinter einem Proxy
 
 In WMF 5.1 verwendet PackageManagement jetzt die neuen Proxyparameter `-ProxyCredential` und `-Proxy`. Mithilfe dieser Parameter können Sie den Proxy-URL und die Anmeldeinformationen für PackageManagement-Cmdlets angeben. Standardmäßig werden die Proxyeinstellungen des Systems verwendet. Beispiel:

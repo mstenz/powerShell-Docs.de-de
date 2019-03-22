@@ -3,12 +3,12 @@ ms.date: 08/27/2018
 keywords: powershell,cmdlet
 title: Abrufen von ausführlichen Hilfeinformationen
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: 8b56f003fdef38b0f126cfe82eefcc145cc54783
-ms.sourcegitcommit: 3402a478cf118c11a5642038eb117bc76553e3ab
-ms.translationtype: MTE95
+ms.openlocfilehash: e58814f512aa2c5914f92f942cf2a4a76956ee20
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53411598"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794568"
 ---
 # <a name="getting-detailed-help-information"></a>Abrufen ausführlicher Hilfeinformationen
 
@@ -74,7 +74,7 @@ Get-Help Get-ChildItem -Parameter *
 ```
 
 Um nur die Beispiele in einem Hilfeartikel anzuzeigen, verwenden Sie den Parameter **Examples** von `Get-Help`.
-Sollen beispielsweise nur die Beispiele im Hilfeartikel für das Cmdlet `Get-ChildItem ` angezeigt werden, geben Sie Folgendes ein:
+Sollen beispielsweise nur die Beispiele im Hilfeartikel für das Cmdlet `Get-ChildItem` angezeigt werden, geben Sie Folgendes ein:
 
 ```powershell
 Get-Help Get-ChildItem -Examples

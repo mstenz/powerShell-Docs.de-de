@@ -1,33 +1,33 @@
 ---
 ms.date: 1/17/2019
 keywords: dsc,powershell,configuration,setup
-title: Einen Knoten neu starten
-ms.openlocfilehash: 33ecd98aa62c3dc94a8ff2213fd3e68bf0c05cb7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+title: Neustart eines Knotens
+ms.openlocfilehash: 015b82a32caefc420973651c72e272fd85baf880
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55678354"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58054729"
 ---
-# <a name="reboot-a-node"></a>Einen Knoten neu starten
+# <a name="reboot-a-node"></a>Neustart eines Knotens
 
 > [!NOTE]
-> In diesem Thema erläutert, wie einen Knoten neu starten. In der Reihenfolge für den Neustart erfolgen die **ActionAfterReboot** und **RebootNodeIfNeeded** LCM-Einstellungen müssen ordnungsgemäß konfiguriert werden.
-> Informationen zu den Einstellungen des lokalen Konfigurations-Managers finden Sie unter [Konfigurieren des lokalen Konfigurations-Managers](../managing-nodes/metaConfig.md), oder [Konfigurieren des lokalen Konfigurations-Managers (v4)](../managing-nodes/metaConfig4.md).
+> In diesem Thema wird erläutert, wie ein Knoten neu gestartet wird. Damit der Neustart erfolgreich verläuft, müssen die LCM-Einstellungen **ActionAfterReboot** und **RebootNodeIfNeeded** ordnungsgemäß konfiguriert werden.
+> Weitere Informationen zu Einstellungen des lokalen Konfigurations-Managers finden Sie unter [Configure the Local Configuration Manager (Konfigurieren des lokalen Konfigurations-Managers)](../managing-nodes/metaConfig.md) oder [Configure the Local Configuration Manager (v4) (Konfigurieren des lokalen Konfigurations-Managers (Version 4))](../managing-nodes/metaConfig4.md).
 
-Knoten können neu gestartet werden, von innerhalb einer Ressource, mit der `$global:DSCMachineStatus` Flag. Wenn dieses Flag auf `1` in die `Set-TargetResource` Funktion erzwingt, dass den LCM den Knoten direkt nach dem Neustart der **festgelegt** Methode die aktuelle Ressource. Verwenden dieses Flag die **xPendingReboot** Ressource wird erkannt, ob ein Neustart aussteht außerhalb von DSC.
+Knoten können mithilfe des `$global:DSCMachineStatus`-Flags innerhalb einer Ressource neu gestartet werden. Wenn dieses Flag in der Funktion `Set-TargetResource` auf `1` festgelegt wird, wird der LCM direkt nach der **Set**-Methode der aktuellen Ressource zum Neustart des Knotens gezwungen. Mithilfe dieses Flags erkennt die Ressource **xPendingReboot**, ob außerhalb der DSC ein Neustart aussteht.
 
-Ihre [Konfigurationen](configurations.md) möglicherweise Schritte ausgeführt, die den Knoten neu starten zu müssen. Dies kann z. B. Aspekte umfassen:
+Ihre [Konfigurationen](configurations.md) führen möglicherweise Schritte aus, die für den Neustart des Knotens erforderlich sind. Dazu kann Folgendes gehören:
 
 - Windows-Updates
 - Softwareinstallation
-- Datei wird umbenannt.
-- Benennen Sie Computer
+- Umbenennen von Dateien
+- Umbenennen von Computern
 
-Die **xPendingReboot** Ressource überprüft den bestimmten Computer-Standorte, um festzustellen, ob ein Neustart aussteht. Wenn der Knoten einen Neustart außerhalb von DSC, erfordert die **xPendingReboot** Ressourcensätzen der `$global:DSCMachineStatus` flag `1` einen Neustart erzwungen und das ausstehende Problem zu beheben.
+Die Ressource **xPendingReboot** überprüft bestimmte Computerstandorte, um zu bestimmen, ob ein Neustart aussteht. Wenn der Knoten einen Neustart außerhalb der DSC erfordert, legt die Ressource **xPendingReboot** das `$global:DSCMachineStatus`-Flag auf `1` fest, wodurch ein Neustart erzwungen und die ausstehende Bedingung aufgelöst wird.
 
 > [!NOTE]
-> Alle DSC-Ressourcen kann anweisen, die den LCM den Knoten neu gestartet, indem Sie dieses Flag festlegen, der `Set-TargetResource` Funktion. Weitere Informationen finden Sie unter [Schreiben einer benutzerdefinierten DSC-Ressource mit MOF](../resources/authoringResourceMOF.md).
+> Jede DSC-Ressource kann den LCM zum Neustart des Knotens anweisen, indem dieses Flag in der Funktion `Set-TargetResource` festgelegt wird. Weitere Informationen finden Sie unter [Writing a custom DSC resource with MOF (Schreiben einer benutzerdefinierten DSC-Ressource mit MOF)](../resources/authoringResourceMOF.md).
 
 ## <a name="syntax"></a>Syntax
 
@@ -49,22 +49,22 @@ xPendingReboot [String] #ResourceName
 
 | Eigenschaft | Beschreibung |
 | --- | --- |
-| Name| Erforderlicher Parameter, der jede Instanz der Ressource in einer Konfiguration eindeutig sein müssen.|
-| SkipComponentBasedServicing | Skip-Neustarts, die von der komponentenbasierten Wartung-Komponente ausgelöst. |
-| SkipWindowsUpdate | Skip-Neustarts durch Windows Update ausgelöst wird.|
-| SkipPendingFileRename | Benennen Sie Skip ausstehende Neustarts aus. |
-| SkipCcmClientSDK | Skip-Neustarts durch den ConfigMgr-Client ausgelöst wird. |
-| SkipComputerRename | Skip wird veranschaulicht, wie die Computerrichtlinie durch Umbenennen der Computer neu gestartet. |
-| PSDSCRunAsCredential | In v5 unterstützt. Führt die Ressource als den angegebenen Benutzer. |
-| DependsOn | Gibt an, dass die Konfiguration einer anderen Ressource ausgeführt werden muss, bevor diese Ressource konfiguriert wird. Wenn beispielsweise die ID des Skriptblocks mit der Ressourcenkonfiguration, den Sie zuerst ausführen möchten, **ResourceName** und dessen Typ **ResourceType** ist, lautet die Syntax für das Verwenden dieser Eigenschaft `DependsOn = "[ResourceType]ResourceName"`. Weitere Informationen finden Sie unter [mithilfe von "DependsOn"](resource-depends-on.md)|
+| Name| Erforderlicher Parameter, der innerhalb einer Konfiguration pro Ressourceninstanz eindeutig sein muss.|
+| SkipComponentBasedServicing | Überspringen von Neustarts, die von der komponentenbasierten Wartungskomponente ausgelöst wurden. |
+| SkipWindowsUpdate | Überspringen von Neustarts, die von einem Windows-Update ausgelöst wurden.|
+| SkipPendingFileRename | Überspringen von ausstehenden Neustarts aufgrund von Dateiumbenennungen. |
+| SkipCcmClientSDK | Überspringen von Neustarts, die vom ConfigMgr-Client ausgelöst wurden. |
+| SkipComputerRename | Überspringen von Neustarts, die von Umbenennungen eines Computers ausgelöst wurden. |
+| PsDscRunAsCredential | Unterstützt in Version 5. Führt die Ressource als angegebener Benutzer aus. |
+| DependsOn | Gibt an, dass die Konfiguration einer anderen Ressource ausgeführt werden muss, bevor diese Ressource konfiguriert wird. Wenn beispielsweise die ID des Skriptblocks mit der Ressourcenkonfiguration, den Sie zuerst ausführen möchten, **ResourceName** und dessen Typ **ResourceType** ist, lautet die Syntax für das Verwenden dieser Eigenschaft `DependsOn = "[ResourceType]ResourceName"`. Weitere Informationen finden Sie unter [Using DependsOn (Verwenden von „DependsOn“)](resource-depends-on.md).|
 
 ## <a name="example"></a>Beispiel
 
-Im folgende Beispiel wird installiert, Microsoft Exchange verwenden die [xExchange](https://github.com/PowerShell/xExchange) Ressource.
-Während der Installation der **xPendingReboot** Ressource wird verwendet, um die Knoten neu starten.
+Das folgende Beispiel installiert Microsoft Exchange mithilfe der [xExchange](https://github.com/PowerShell/xExchange)-Ressource.
+Während der kompletten Installation wird die **xPendingReboot**-Ressource verwendet, um den Knoten neu zu starten.
 
 > [!NOTE]
-> Dieses Beispiel erfordert die Anmeldeinformationen eines Kontos, das über Rechte zum Hinzufügen von eines Exchange-Servers in der Gesamtstruktur verfügt. Weitere Informationen zur Verwendung von Anmeldeinformationen in DSC finden Sie unter [Behandeln von Anmeldeinformationen in DSC](../configurations/configDataCredentials.md)
+> Für dieses Beispiel sind die Anmeldeinformationen eines Kontos erforderlich, das berechtigt ist, der Gesamtstruktur einen Exchange-Server hinzuzufügen. Weitere Informationen zur Verwendung von Anmeldeinformationen in DSC finden Sie unter [Handling Credentials in DSC (Verwendung von Anmeldeinformationen in DSC)](../configurations/configDataCredentials.md).
 
 ```powershell
 $ConfigurationData = @{
@@ -130,11 +130,11 @@ Configuration Example
 ```
 
 > [!NOTE]
-> In diesem Beispiel wird davon ausgegangen, dass Sie Ihre lokalen Konfigurations-Managers zum ermöglichen von Neustarts und die Konfiguration nach einem Neustart weiterhin konfiguriert haben.
+> In diesem Beispiel wird davon ausgegangen, dass Sie Ihren lokalen Konfigurations-Manager so konfiguriert haben, dass Neustarts erlaubt sind, und die Konfiguration nach einem Neustart fortgesetzt wird.
 
-## <a name="where-to-download"></a>Wo heruntergeladen
+## <a name="where-to-download"></a>Speicherorte für Downloads
 
-Sie können die Ressourcen verwendet, die in diesem Thema an folgenden Speicherorten oder mithilfe von PowerShell-Katalog herunterladen.
+Sie können die in diesem Thema verwendeten Ressourcen an folgenden Speicherorten abspeichern, oder mithilfe des PowerShell-Katalogs.
 
 - [xPendingReboot](https://github.com/PowerShell/xPendingReboot)
 - [xExchange](https://github.com/PowerShell/xExchange)

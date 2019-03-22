@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Schreiben einer benutzerdefinierten DSC-Ressource mit MOF
-ms.openlocfilehash: 5917e20769e750042a9855649ff5bec36ad14eb4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: f243c3e3297711e6f6346a0f813a9c017fe227c3
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55678928"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58059727"
 ---
 # <a name="writing-a-custom-dsc-resource-with-mof"></a>Schreiben einer benutzerdefinierten DSC-Ressource mit MOF
 
@@ -69,7 +69,8 @@ Beachten Sie Folgendes im Zusammenhang mit dem vorherigen Code:
 
 Das Ressourcenskript implementiert die Logik der Ressource. In diesem Modul fügen Sie die drei Funktionen **Get-TargetResource**, **Set-TargetResource**, und **Test-TargetResource** hinzu. Alle drei Funktionen verwenden einen Parametersatz, der identisch mit dem Satz von Eigenschaften ist, die im MOF-Schema definiert wurden, das Sie für die Ressource erstellt haben. In diesem Dokument wird dieser Eigenschaftensatz als die „Ressourceneigenschaften“ bezeichnet. Speichern Sie die drei Funktionen in einer Datei namens „<ResourceName>.psm1“. Im folgenden Beispiel werden die Funktionen in einer Datei namens „Demo_IISWebsite.psm1“ gespeichert.
 
-> **Hinweis**: Wenn Sie das gleiche Konfigurationsskript mehrfach für Ihre Ressource ausführen, sollten keine Fehler ausgegeben werden, und die Ressource sollte sich im gleichen Zustand wie nach der einmaligen Ausführung des Skripts befinden. Stellen Sie dazu sicher, dass Ihre Funktionen **Get-TargetResource** und **Test-TargetResource** die Ressource unverändert verlassen, und dass das Ergebnis der Funktion **Set-TargetResource** mit denselben Parameterwerten immer identisch ist, egal, ob Sie die Funktion einmal oder mehrfach aufrufen.
+> [!NOTE]
+> Wenn Sie das gleiche Konfigurationsskript mehrfach für Ihre Ressource ausführen, sollten keine Fehler ausgegeben werden, und die Ressource sollte sich im gleichen Zustand wie nach der einmaligen Ausführung des Skripts befinden. Stellen Sie dazu sicher, dass Ihre Funktionen **Get-TargetResource** und **Test-TargetResource** die Ressource unverändert verlassen, und dass das Ergebnis der Funktion **Set-TargetResource** mit denselben Parameterwerten immer identisch ist, egal, ob Sie die Funktion einmal oder mehrfach aufrufen.
 
 Verwenden Sie in der Implementierung der Funktion **Get-TargetResource** die Schlüsselressourcen-Eigenschaftswerte, die als Parameter bereitgestellt werden, um den Status der angegebenen Ressourceninstanz zu überprüfen. Diese Funktion muss eine Hashtabelle zurückgeben, in der alle Ressourceneigenschaften als Schlüssel und die tatsächlichen Werte dieser Eigenschaften als die entsprechende Werte aufgeführt sind. Der folgende Code gibt ein Beispiel.
 
@@ -276,7 +277,7 @@ FunctionsToExport = @("Get-TargetResource", "Set-TargetResource", "Test-TargetRe
 
 ## <a name="supporting-psdscrunascredential"></a>Unterstützung von PsDscRunAsCredential
 
->**Hinweis:** **"Psdscrunascredential"** wird in PowerShell 5.0 und höher unterstützt.
+>**Hinweis:** **PsDscRunAsCredential** wird in PowerShell 5.0 und höher unterstützt.
 
 Mithilfe der Eigenschaft **PsDscRunAsCredential** kann im Ressourcenblock [DSC configurations](../configurations/configurations.md) angegeben werden, dass die Ressource mit einem festgelegten Satz an Anmeldeinformationen ausgeführt werden soll.
 Weitere Informationen finden Sie unter [Ausführen von DSC mit Benutzeranmeldeinformationen](../configurations/runAsUser.md).
@@ -293,13 +294,13 @@ if (PsDscContext.RunAsUser) {
 
 ## <a name="rebooting-the-node"></a>Neustarten des Knotens
 
-Wenn die Aktionen, die Ihrem `Set-TargetResource` Funktion einen Neustart erfordern, können Sie ein globalen Kennzeichen geben, teilen Sie den LCM die Knoten neu starten. Diesen Neustart tritt unmittelbar nach dem die `Set-TargetResource` Funktion abgeschlossen ist.
+Wenn die Aktionen in Ihrer `Set-TargetResource`-Funktion einen Neustart erfordern, können Sie ein globales Flag verwenden, um den lokalen Konfigurations-Manager zum Neustart des Knotens anzuweisen. Dieser Neustart tritt unmittelbar nach Abschluss der `Set-TargetResource`-Funktion auf.
 
-Innerhalb Ihrer `Set-TargetResource` funktioniert, fügen Sie die folgende Codezeile hinzu.
+Fügen Sie die folgende Codezeile in Ihre `Set-TargetResource`-Funktion ein.
 
 ```powershell
 # Include this line if the resource requires a system reboot.
 $global:DSCMachineStatus = 1
 ```
 
-In der Reihenfolge für den LCM auf den Knoten neu starten, die **RebootNodeIfNeeded** Flag muss festgelegt werden, um `$true`. Die **ActionAfterReboot** Einstellung muss auch festgelegt werden, um **ContinueConfiguration**, dies ist die Standardeinstellung. Weitere Informationen zum Konfigurieren des LCMS finden Sie unter [Konfigurieren des lokalen Konfigurations-Managers](../managing-nodes/metaConfig.md), oder [Konfigurieren des lokalen Konfigurations-Managers (v4)](../managing-nodes/metaConfig4.md).
+Damit der lokale Konfigurations-Manager den Knoten neu startet, muss das Flag **RebootNodeIfNeeded** auf `$true` festgelegt werden. Außerdem sollte die Einstellung **ActionAfterReboot** auf **ContinueConfiguration** festgelegt sein. Dabei handelt es sich um die Standardeinstellung. Weitere Informationen zum Konfigurieren des lokalen Konfigurations-Managers finden Sie unter [Configuring the Local Configuration Manager (Konfigurieren des lokalen Konfigurations-Managers)](../managing-nodes/metaConfig.md) und [Configuring the Local Configuration Manager (v4) (Konfigurieren des lokalen Konfigurations-Managers (PowerShell 4.0))](../managing-nodes/metaConfig4.md).

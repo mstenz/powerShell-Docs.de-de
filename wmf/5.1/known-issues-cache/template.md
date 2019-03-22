@@ -3,16 +3,16 @@ ms.date: 06/12/2017
 keywords: wmf,powershell,setup
 ms.topic: conceptual
 title: Beispielvorlage für das Hochschreiben eines bekannten Problems oder einer Einschränkung
-ms.openlocfilehash: 453d4e40b906ebcab7314f04e138ded271338846
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 8c1004e16f78913174af2e519e451f6fd9f30ff7
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34221934"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794490"
 ---
->Hinweis: Vorschlag für einen aussagekräftigen Namen und eine Kurzbeschreibung bereitstellen
+ >Hinweis: Vorschlag für einen aussagekräftigen Namen und eine Kurzbeschreibung bereitstellen
 
-## <a name="example-erroneous-executionpolicy-errors"></a>Beispiel: Fehlerhafte „ExecutionPolicy“-Fehler ##
+## <a name="example-erroneous-executionpolicy-errors"></a>Beispiel: Fehlerhafte „ExecutionPolicy“-Fehler
 Unter Windows 7 kann die Verwendung von PowerShell-Modulen und DSC-Ressourcen zu Fehlern führen, die zu „ExecutionPolicy“ gemeldet werden.
 
 ### <a name="resolution"></a>Lösung

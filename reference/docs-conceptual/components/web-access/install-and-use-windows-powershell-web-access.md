@@ -2,16 +2,16 @@
 ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: Installieren und Verwenden von Windows PowerShell Web Access
-ms.openlocfilehash: 5517347560b25f032baa77ecc2d769fb1e74ba4f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: 53558f9be5065c7f630f06e535ddab4d7ad72d9e
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55677588"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58056718"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Installieren und Verwenden von Windows PowerShell Web Access
 
-Aktualisiert: 5. November 2013 (bearbeitet: August 23, 2017
+Aktualisiert: 5. November 2013 (Bearbeitet: 23. August 2017)
 
 Gilt für: Windows Server 2012 R2, Windows Server 2012
 
@@ -178,7 +178,7 @@ Standardmäßig wird die Webanwendung **pswa** (und der dazugehörige Anwendungs
 7. Wählen Sie im Dialogfeld **Websitebindung hinzufügen** im Feld **Typ** die Option **https** aus.
 
 8. Wählen Sie das signierte Zertifikat im Dropdownmenü des Felds **SSL-Zertifikat** aus.
-   Klicken Sie auf **OK**. Weitere Informationen zum Anfordern eines Zertifikats finden Sie in diesem Thema unter [So konfigurieren Sie ein SSL-Zertifikat im IIS-Manager](#to-configure-an-ssl-certificate-in-iis-Manager).
+   Klicken Sie auf **OK**. Weitere Informationen zum Anfordern eines Zertifikats finden Sie in diesem Thema unter [So konfigurieren Sie ein SSL-Zertifikat im IIS-Manager](#to-configure-an-ssl-certificate-in-iis-manager).
 
    Die Windows PowerShell Web Access-Webanwendung ist jetzt für die Verwendung des signierten SSL-Zertifikats konfiguriert.
 
@@ -200,7 +200,7 @@ Weitere Informationen zu Windows PowerShell Web Access-Autorisierungsregeln und 
    - Klicken Sie auf dem Windows-Desktop mit der rechten Maustaste in der Taskleiste auf **Windows PowerShell** und anschließend auf **Als Administrator ausführen**.
    - Klicken Sie auf dem Windows-**Startbildschirm** mit der rechten Maustaste auf **Windows PowerShell**, und klicken Sie anschließend auf **Als Administrator ausführen**.
 
-2. Optionaler Schritt zur Einschränkung des Benutzerzugriffs mithilfe von Sitzungskonfigurationen: Überprüfen Sie, ob Sitzungskonfigurationen, die Sie in Ihren Regeln verwenden möchten, bereits vorhanden sind. Falls diese noch nicht erstellt wurden, verwenden Sie die Anleitung zum Erstellen von Sitzungskonfigurationen unter [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations).
+2. Optionaler Schritt zum Einschränken des Benutzerzugriffs mithilfe von Sitzungskonfigurationen: Überprüfen Sie, dass die Sitzungskonfigurationen, die Sie in Ihren Regeln verwenden möchten, bereits vorhanden sind. Falls diese noch nicht erstellt wurden, verwenden Sie die Anleitung zum Erstellen von Sitzungskonfigurationen unter [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations).
 
 3. Geben Sie Folgendes ein, und drücken Sie anschließend die **EINGABETASTE**.
 
@@ -273,7 +273,7 @@ Die Anweisungen in diesem Abschnitt gelten für die Installation der Windows Pow
 
 8. Suchen Sie im Feld **Physischer Pfad** nach dem Speicherort der Anwendung. Sie können den Standardspeicherort `$env:windir/Web/PowerShellWebAccess/wwwroot` verwenden. Klicken Sie auf **OK**.
 
-9. Führen Sie die Schritte im Verfahren [So konfigurieren Sie ein SSL-Zertifikat im IIS-Manager](#to-configure-an-ssl-certificate-in-iis-Manager) in diesem Thema aus.
+9. Führen Sie die Schritte im Verfahren [So konfigurieren Sie ein SSL-Zertifikat im IIS-Manager](#to-configure-an-ssl-certificate-in-iis-manager) in diesem Thema aus.
 
 10. ![](images/SecurityNote.jpeg) Optionaler Sicherheitsschritt:
 
@@ -318,7 +318,7 @@ Die Anweisungen in diesem Abschnitt gelten für die Installation der Windows Pow
 
 1. Für die neue Website wird automatisch ein Anwendungspool erstellt. Wenn Sie einen anderen Anwendungspool verwenden möchten, klicken Sie auf **Auswählen**, um einen Anwendungspool zum Zuordnen zur neuen Website auszuwählen. Wählen Sie den alternativen Anwendungspool im Dialogfeld **Anwendungspool auswählen** aus, und klicken Sie anschließend auf **OK**.
 
-1. In der **physischer Pfad** Text zu windir%/Web/PowerShellWebAccess/wwwroot.
+1. Navigieren Sie im Textfeld **Physischer Pfad** zu %windir%/Web/PowerShellWebAccess/wwwroot.
 
 1. Wählen Sie unter **Bindung** im Feld **Typ** die Option **https** aus.
 
@@ -329,7 +329,7 @@ Die Anweisungen in diesem Abschnitt gelten für die Installation der Windows Pow
 
 1. Falls dies für Ihre Organisation erforderlich ist, können Sie optional einen Hostnamen angeben, der für die Organisation und Benutzer sinnvoll ist, z.B. **`www.contoso.com`**. Klicken Sie auf **OK**.
 
-1. Zur Erhöhung der Sicherheit von Produktionsumgebungen wird dringend dazu geraten, ein gültiges Zertifikat bereitzustellen, das von einer Zertifizierungsstelle signiert wurde. Sie müssen ein SSL-Zertifikat bereitstellen, weil Benutzer die Verbindung mit Windows PowerShell Web Access nur über eine HTTPS-Website herstellen können. Weitere Informationen zum Anfordern eines Zertifikats finden Sie in diesem Thema unter [So konfigurieren Sie ein SSL-Zertifikat im IIS-Manager](#to-configure-an-ssl-certificate-in-iis-Manager).
+1. Zur Erhöhung der Sicherheit von Produktionsumgebungen wird dringend dazu geraten, ein gültiges Zertifikat bereitzustellen, das von einer Zertifizierungsstelle signiert wurde. Sie müssen ein SSL-Zertifikat bereitstellen, weil Benutzer die Verbindung mit Windows PowerShell Web Access nur über eine HTTPS-Website herstellen können. Weitere Informationen zum Anfordern eines Zertifikats finden Sie in diesem Thema unter [So konfigurieren Sie ein SSL-Zertifikat im IIS-Manager](#to-configure-an-ssl-certificate-in-iis-manager).
 
 1. Klicken Sie auf **OK**, um das Dialogfeld **Website hinzufügen** zu schließen.
 

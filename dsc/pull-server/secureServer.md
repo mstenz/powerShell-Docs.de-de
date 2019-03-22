@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Bewährte Methoden für Pullserver
-ms.openlocfilehash: da67f8fd793878b097ffb260afad0fcf5c69bb04
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: fe483a487f85f2e4edb0928fccfe98746ae11231
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401745"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58057704"
 ---
 # <a name="pull-server-best-practices"></a>Bewährte Methoden für Pullserver
 
@@ -16,7 +16,7 @@ Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 > [!IMPORTANT]
 > Der Pull-Server (Windows-Feature *DSC-Dienst*) ist eine von Windows Server unterstützte Komponente, jedoch sollen keine neuen Features oder Funktionen angeboten werden. Es wird empfohlen, verwaltete Clients auf [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) umzustellen (enthält Features zusätzlich zum Pull-Server unter Windows Server) oder auf eine der [hier](pullserver.md#community-solutions-for-pull-service) aufgeführten Communitylösungen.
 
-Zusammenfassung: Dieses Dokument soll Prozesse und Erweiterungen Techniker unterstützen, die für die Lösung vorbereiten enthalten. Details sollten bewährte Methoden bereitstellen, die von Kunden ermittelt und dann vom Produktteam bestätigt wurden, um sicherzustellen, dass die Empfehlungen in die Zukunft gerichtet sind und als stabil angesehen werden.
+Zusammenfassung: Dieser Artikel enthält Prozesse und Erweiterungen, die Techniker beim Vorbereiten von Lösungen helfen sollen. Details sollten bewährte Methoden bereitstellen, die von Kunden ermittelt und dann vom Produktteam bestätigt wurden, um sicherzustellen, dass die Empfehlungen in die Zukunft gerichtet sind und als stabil angesehen werden.
 
 | |Dokumentinformation|
 |:---|:---|
@@ -64,7 +64,7 @@ Das Bereitstellen eines Pullservers erfordert das DSC-Servicefeature von Windows
 
 ### <a name="software-downloads"></a>Softwaredownloads
 
-Zusätzlich zur Installation des neuesten Inhalts von Windows Update, es gibt zwei Downloads, die bewährte Methode zum Bereitstellen eines DSC-Pull-Servers: Die neueste Version von Windows Management Framework und ein DSC-Modul zum Automatisieren der Bereitstellung.
+Neben der Installation der neuesten Inhalte von Windows Update werden zwei Downloads als bewährte Methoden für die Bereitstellung eines DSC-Pullservers empfohlen: Die neueste Version von Windows Management Framework und ein DSC-Modul zum Automatisieren der Bereitstellung von Pullservern.
 
 ### <a name="wmf"></a>WMF
 
@@ -104,7 +104,7 @@ Haben Sie Zugang zu den Installationsdateien von Windows Server, die durch eine 
 
 Pullserverbereitstellungen werden auf physischen und virtuellen Servern unterstützt. Die Größenanforderungen für Pullserver decken sich mit den Anforderungen für Windows Server 2012 R2.
 
-CPU: 1,4-GHz-64-Bit-Prozessor, Speicher: 512 MB Festplattenspeicher 32-GB-Netzwerk: Gigabit-Ethernet-Adapter
+CPU: 1,4-GHz-64-Bit-Prozessor, Arbeitsspeicher: 512 MB, Festplattenspeicher: 32 GB, Netzwerk: Gigabit-Ethernet-Adapter.
 
 Planungsaufgabe|
 ---|
@@ -260,7 +260,7 @@ Der Befehl wird Sie nach Ihrer Genehmigung fragen, bevor Sie das Modul herunterl
 
 Die beste Methode zur Bereitstellung eines DSC-Pullservers ist die Verwendung eines DSC-Konfigurationsskripts. Dieses Dokument präsentiert Skripts, einschließlich beide grundlegenden Einstellungen, die nur den DSC-Webdienst konfigurieren und erweiterte Einstellungen, die einen durchgängigen Windows Server, einschließlich DSC-Webdienst konfigurieren.
 
-Hinweis:  Derzeit den `xPSDesiredStateConfiguation` DSC-Modul erfordert, dass der Server EN-US-Gebietsschema sein.
+Hinweis:  Das `xPSDesiredStateConfiguration`-DSC-Modul erfordert derzeit das Gebietsschema EN-US für den Server.
 
 ### <a name="basic-configuration-for-windows-server-2012"></a>Grundlegende Konfiguration für Windows Server 2012
 

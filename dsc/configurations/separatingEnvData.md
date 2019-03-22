@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Trennen von Konfiguration und Umgebungsdaten
-ms.openlocfilehash: 24a92e5e4f15959498b57a1488a688d5548f3585
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 305a766fec81d4ea4afce187756188b067a2048b
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401292"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794925"
 ---
 # <a name="separating-configuration-and-environment-data"></a>Trennen von Konfiguration und Umgebungsdaten
 
@@ -88,7 +88,7 @@ Mode                LastWriteTime         Length Name
 
 Sehen wir uns ein vollständiges Beispiel an, in dem eine einzelne Konfiguration dazu verwendet wird, die Entwicklungs- und Produktionsumgebungen einer Website einzurichten. In der Entwicklungsumgebung werden IIS und SQL Server auf demselben Knoten installiert. In der Produktionsumgebung werden sowohl IIS als auch SQL Server auf jeweils eigenen Knoten installiert. Wir verwenden eine PSD1-Konfigurationsdatendatei, um die Daten für die zwei verschiedenen Umgebungen anzugeben.
 
- ### <a name="configuration-data-file"></a>Die Konfigurationsdatendatei
+### <a name="configuration-data-file"></a>Die Konfigurationsdatendatei
 
 Wir definieren die Entwicklungs- und die Produktionsumgebungsdaten in einer Datei namens `DevProdEnvData.psd1` wie folgt:
 
@@ -135,7 +135,7 @@ Die Inhalte von „Site“ unterscheiden sich also gemäß der `SiteContents`-Ei
 
 Am Ende des Konfigurationsskripts, rufen wir die Konfiguration auf (kompilieren sie in einem MOF-Dokument) und übergeben `DevProdEnvData.psd1` als `$ConfigurationData`-Parameter.
 
->**Hinweis:** Diese Konfiguration erfordert die Module `xSqlPs` und `xWebAdministration` auf dem Zielknoten installiert sein.
+>**Hinweis:** Für diese Konfiguration müssen die Module `xSqlPs` und `xWebAdministration` auf dem Zielknoten installiert sein.
 
 Definieren wir nun die Konfiguration in einer Datei namens `MyWebApp.ps1`:
 
