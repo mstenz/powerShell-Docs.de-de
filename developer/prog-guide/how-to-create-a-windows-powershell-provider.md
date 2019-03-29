@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Windows PowerShell Programmer's Guide, providers
 ms.assetid: 863e48e9-7206-4c6a-a59a-2ab2d30396bc
 caps.latest.revision: 5
-ms.openlocfilehash: 286df63e75d6372cb41c974e60e79b02bd13686e
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.openlocfilehash: 06910f32752668f13400f9be0767a2179133df04
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57429668"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623822"
 ---
 # <a name="how-to-create-a-windows-powershell-provider"></a>Erstellen eines Windows PowerShell-Anbieters
 
@@ -29,7 +29,7 @@ Für den Entwickler ist der Windows PowerShell-Anbieter die Schnittstelle zwisch
 
 Windows PowerShell stellt mehrere Anbieter (z. B. der FileSystem-Anbieter, Registrierungsanbieter und Alias-Anbieter), die verwendet werden, um bekannte Datenspeicher zugreifen. Weitere Informationen zu den vom Windows PowerShell-Anbietern verwenden Sie den folgenden Befehl, um die Onlinehilfe zugreifen:
 
-**PS > Get-Help About_provider**
+**PS > Get-Help About_providers**
 
 ## <a name="accessing-the-stored-data-using-windows-powershell-paths"></a>Zugreifen auf den gespeicherten Daten mithilfe von Windows PowerShell-Pfaden
 
