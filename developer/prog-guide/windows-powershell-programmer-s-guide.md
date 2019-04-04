@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows PowerShell Programmer's Guide
 ms.assetid: f3aaf667-af84-4ea8-a5ad-d454d0d700b8
 caps.latest.revision: 9
-ms.openlocfilehash: 1f7b5b60b202f4de0cf3d44b65057f5edd41f2b0
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 75425fbd38141fc82dd834835912c357ecfa6d2b
+ms.sourcegitcommit: 0ca836d1044e46d3a7dcbc69fa93d84f74848559
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860046"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58920389"
 ---
 # <a name="windows-powershell-programmer39s-guide"></a>Windows PowerShell-Programmierer&#39;Benutzerhandbuch
 
@@ -57,7 +57,7 @@ Wenn Sie einen Datenspeicher verfügbar, die der Benutzer zugreifen muss machen,
 
 Windows PowerShell umfasst die Standard-Host Anwendung powershell.exe, eine Konsolenanwendung, die mit der Benutzer interagiert, und hostet die Windows PowerShell-Laufzeit, die mit einem Konsolenfenster.
 
-Nur selten müssen Sie zum Schreiben Ihrer eigenen hostanwendung für Windows PowerShell auch Anpassung unterstützt wird. Ein Fall, in dem Sie Ihre eigene Anwendung möglicherweise, ist bei einer Anforderung für eine Grafische Benutzeroberfläche, die umfangreicher als die Schnittstelle, von der hostanwendung standardmäßig bereitgestellt wird. Sie sollten auch eine benutzerdefinierte Anwendung, wenn die grafische Benutzeroberfläche, über die Befehlszeile basiert. Weitere Informationen finden Sie unter[Vorgehensweise: Erstellen einer Windows PowerShell-Hostanwendung](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07).
+Nur selten müssen Sie zum Schreiben Ihrer eigenen hostanwendung für Windows PowerShell auch Anpassung unterstützt wird. Ein Fall, in dem Sie Ihre eigene Anwendung möglicherweise, ist bei einer Anforderung für eine Grafische Benutzeroberfläche, die umfangreicher als die Schnittstelle, von der hostanwendung standardmäßig bereitgestellt wird. Sie sollten auch eine benutzerdefinierte Anwendung, wenn die grafische Benutzeroberfläche, über die Befehlszeile basiert. Weitere Informationen finden Sie unter [Vorgehensweise: Erstellen einer Windows PowerShell-Hostanwendung](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07).
 
 ### <a name="windows-powershell-runtime"></a>Windows PowerShell-Laufzeit
 
@@ -99,11 +99,11 @@ Weitere Informationen zum Starten der Windows PowerShell-Befehlsshell verwenden,
 
 |Thema|Definition|
 |-----------|----------------|
-|[Vorgehensweise: Erstellen einer Windows PowerShell-Anbieter](./how-to-create-a-windows-powershell-provider.md)|Dieser Abschnitt beschreibt, wie Sie einen Windows PowerShell-Anbieter für Windows PowerShell zu erstellen.|
+|[Erstellen eines Windows PowerShell-Anbieters](./how-to-create-a-windows-powershell-provider.md)|Dieser Abschnitt beschreibt, wie Sie einen Windows PowerShell-Anbieter für Windows PowerShell zu erstellen.|
 |[Vorgehensweise: erstellen eine Windows PowerShell-Hostanwendung](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07)|In diesem Abschnitt wird beschrieben, wie eine hostanwendung schreiben, die einen Runspace bearbeitet und wie Sie eine hostanwendung schreiben, die einen eigenen benutzerdefinierten Host implementiert.|
-|[Vorgehensweise: Erstellen Sie ein Windows PowerShell-Snap-in](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|In diesem Abschnitt wird beschrieben, wie ein Snap-In zu erstellen, die verwendet wird, um alle Cmdlets und Anbieter in einer Assembly zu registrieren und wie Sie eine benutzerdefinierte-Snap-in erstellen.|
-|[Vorgehensweise: Erstellen Sie eine Konsole-Shell](./how-to-create-a-console-shell.md)|Dieser Abschnitt beschreibt, wie Sie eine Konsole Shell erstellen, die nicht erweiterbar ist.|
-|[Windows PowerShell-Konzepten](./windows-powershell-concepts.md)|Dieser Abschnitt enthält konzeptionelle Informationen, mit denen Sie die Windows PowerShell vom Standpunkt eines Entwicklers zu verstehen.|
+|[Erstellen eines Windows PowerShell-Snap-Ins](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|In diesem Abschnitt wird beschrieben, wie ein Snap-In zu erstellen, die verwendet wird, um alle Cmdlets und Anbieter in einer Assembly zu registrieren und wie Sie eine benutzerdefinierte-Snap-in erstellen.|
+|[Erstellen einer Konsolenshell](./how-to-create-a-console-shell.md)|Dieser Abschnitt beschreibt, wie Sie eine Konsole Shell erstellen, die nicht erweiterbar ist.|
+|[Windows PowerShell: Konzepte](./windows-powershell-concepts.md)|Dieser Abschnitt enthält konzeptionelle Informationen, mit denen Sie die Windows PowerShell vom Standpunkt eines Entwicklers zu verstehen.|
 
 ## <a name="see-also"></a>Weitere Informationen
 
