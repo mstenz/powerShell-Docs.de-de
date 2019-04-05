@@ -2,10 +2,10 @@ items:
 - name: Übersicht
   href: overview.md
 - name: Installation
-  href: install/installing-powershell.md
   items:
+  - name: Installieren verschiedener Versionen von PowerShell
+    href: install/installing-powershell.md
   - name: PowerShell Core
-    href: ''
     items:
     - name: Installieren von PowerShell Core unter Windows
       href: install/installing-powershell-core-on-windows.md
@@ -16,7 +16,6 @@ items:
     - name: Installieren von PowerShell Core unter ARM
       href: install/powershell-core-on-arm.md
   - name: Windows PowerShell
-    href: ''
     items:
     - name: Installieren von Windows PowerShell
       href: install/installing-windows-powershell.md
@@ -25,15 +24,17 @@ items:
     - name: Windows PowerShell-Systemanforderungen
       href: install/windows-powershell-system-requirements.md
 - name: Erste Schritte
-  href: getting-started/getting-started-with-windows-powershell.md
   items:
+  - name: Erste Schritte mit PowerShell
+    href: getting-started/getting-started-with-windows-powershell.md
   - name: Starten von Windows PowerShell
     href: getting-started/starting-windows-powershell.md
   - name: Starten der Windows PowerShell 2.0-Engine
     href: getting-started/starting-the-windows-powershell-2.0-engine.md
 - name: Erlernen von PowerShell
-  href: learn/understanding-important-powershell-concepts.md
   items:
+  - name: Grundlegendes zu wichtigen PowerShell-Konzepten
+    href: learn/understanding-important-powershell-concepts.md
   - name: Lernen von PowerShell-Namen
     href: learn/learning-powershell-names.md
   - name: Verwenden vertrauter Befehlsnamen
@@ -50,9 +51,10 @@ items:
     href: learn/more-powershell-learning.md
   - name: Schreiben von portablen Modulen
     href: learn/writing-portable-modules.md
-  - name: Ausführen von Remotebefehlen
-    href: learn/remoting/running-remote-commands.md
+  - name: PowerShell-Remoting
     items:
+    - name: Ausführen von Remotebefehlen
+      href: learn/remoting/running-remote-commands.md
     - name: PowerShell-Remoting über SSH
       href: learn/remoting/ssh-remoting-in-powershell-core.md
     - name: WS-Management-Remoting in PowerShell Core
@@ -64,22 +66,20 @@ items:
   - name: Glossar
     href: learn/windows-powershell-glossary.md
 - name: Komponenten
-  href: ''
   items:
   - name: Konsole
-    href: ''
     items:
     - name: Befehlszeilenhilfe für „PowerShell.exe“
       href: components/console/powershell.exe-command-line-help.md
     - name: Verwenden von Erweiterung mit der TAB-TASTE
       href: components/console/using-tab-expansion.md
   - name: ISE
-    href: components/ise/introducing-the-windows-powershell-ise.md
     items:
+    - name: Einführung in die Windows PowerShell ISE
+      href: components/ise/introducing-the-windows-powershell-ise.md
     - name: Windows PowerShell Integrated Scripting Environment (ISE)
       href: components/ise/windows-powershell-integrated-scripting-environment--ise-.md
     - name: Verwenden der Windows PowerShell ISE
-      href: ''
       items:
       - name: Kennenlernen der Windows PowerShell ISE
         href: components/ise/exploring-the-windows-powershell-ise.md
@@ -100,7 +100,6 @@ items:
       - name: Barrierefreiheit in Windows PowerShell ISE
         href: components/ise/accessibility-in-windows-powershell-ise.md
     - name: Das ISE-Skriptobjektmodell
-      href: ''
       items:
       - name: Zweck des Windows PowerShell ISE-Skriptobjektmodells
         href: components/ise/object-model/purpose-of-the-windows-powershell-ise-scripting-object-model.md
@@ -133,8 +132,9 @@ items:
       - name: Das PowerShellTab-Objekt
         href: components/ise/object-model/the-powershelltab-object.md
   - name: Visual Studio Code
-    href: components/vscode/using-vscode.md
     items:
+    - name: Verwendung von Visual Studio Code
+      href: components/vscode/using-vscode.md
     - name: Replizieren der ISE-Benutzeroberfläche in Visual Studio Code
       href: components/vscode/How-To-Replicate-the-ISE-Experience-In-VSCode.md
     - name: Verwenden von Visual Studio Code für Remotebearbeitung und Remotedebuggen
@@ -142,7 +142,6 @@ items:
     - name: Grundlegendes zur Dateicodierung in VSCode und PowerShell
       href: components/vscode/understanding-file-encoding.md
   - name: Webzugriff
-    href: ''
     items:
     - name: Autorisierungsregeln und Sicherheitsfeatures
       href: components/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md
@@ -157,20 +156,21 @@ items:
   - name: Handbuch zu Workflows
     href: components/workflows-guide.md
 - name: Neues
-  href: ''
   items:
-  - name: Neuerungen in PowerShell Core 6.1
-    href: whats-new/what-s-new-in-powershell-core-61.md
-  - name: Neuigkeiten in PowerShell Core 6.0
-    href: whats-new/what-s-new-in-powershell-core-60.md
+  - name: Neuigkeiten in PowerShell Core 6.x
     items:
+    - name: Neuerungen in PowerShell Core 6.1
+      href: whats-new/what-s-new-in-powershell-core-61.md
+    - name: Neuigkeiten in PowerShell Core 6.0
+      href: whats-new/what-s-new-in-powershell-core-60.md
     - name: Breaking Changes in PowerShell Core 6.0
       href: whats-new/breaking-changes-ps6.md
     - name: Bekannte Probleme in PowerShell Core 6.0
       href: whats-new/known-issues-ps6.md
-  - name: Neuigkeiten in PowerShell 5.0
-    href: whats-new/what-s-new-with-powershell.md
+  - name: Neuigkeiten in PowerShell 5.x
     items:
+    - name: Neuigkeiten in PowerShell 5.0
+      href: whats-new/what-s-new-with-powershell.md
     - name: Neuigkeiten in Windows PowerShell 5.0
       href: whats-new/what-s-new-in-windows-powershell-50.md
     - name: Neuigkeiten in der PowerShell 5.0 ISE
@@ -178,8 +178,9 @@ items:
 - name: Supportlebenszyklus von PowerShell Core
   href: powershell-support-lifecycle.md
 - name: Beispielskripts
-  href: samples/sample-scripts-for-administration.md
   items:
+  - name: Beispielskripts für die Verwaltung
+    href: samples/sample-scripts-for-administration.md
   - name: Ändern des Computerzustands
     href: samples/changing-computer-state.md
   - name: Erfassen von Informationen über Computer
@@ -187,7 +188,6 @@ items:
   - name: Erstellen von Get-WinEvent-Abfragen mit FilterHashtable
     href: samples/creating-get-winEvent-queries-with-filterhashtable.md
   - name: Erstellen von UI-Elementen
-    href: ''
     items:
     - name: Erstellen eines benutzerdefinierten Eingabefelds
       href: samples/creating-a-custom-input-box.md
@@ -220,7 +220,6 @@ items:
   - name: Arbeiten mit Dateien, Ordnern und Registrierungsschlüsseln
     href: samples/working-with-files-folders-and-registry-keys.md
   - name: Arbeiten mit Objekten
-    href: samples/working-with-objects.md
     items:
     - name: Abrufen von WMI-Objekten (Get-WmiObject)
       href: samples/getting-wmi-objects--get-wmiobject-.md
@@ -252,9 +251,9 @@ items:
     href: samples/appendix-1---compatibility-aliases.md
   - name: 'Anhang 2: Erstellen einer benutzerdefinierten PowerShell-Verknüpfung'
     href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
-ms.openlocfilehash: dd9cac7e7570d6ff4c58b0255a3909f3f0612605
-ms.sourcegitcommit: 396509cd0d415acc306b68758b6f833406e26bf5
+ms.openlocfilehash: 3894ca88d01d4f84742321445b0b1e962631c10d
+ms.sourcegitcommit: 0ca836d1044e46d3a7dcbc69fa93d84f74848559
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320386"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58920457"
