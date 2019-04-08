@@ -4,12 +4,12 @@ contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 description: Richtlinien für Herausgeber
 title: Veröffentlichungsrichtlinien und Best Practices für den PowerShell-Katalog
-ms.openlocfilehash: 25c359c7acbe7430762a275d8cc4a28f527ec57a
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 1cd0140cc208949e13d23331b23a58ffc374430b
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58056497"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623907"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>Veröffentlichungsrichtlinien und Best Practices für den PowerShell-Katalog
 
@@ -145,6 +145,9 @@ Verwenden Sie die folgenden Tags, um Benutzern anzuzeigen, welche Pakete sich f�
 - Windows : Pakete, die mit dem Windows-Betriebssystem kompatibel sind.
 - Linux : Pakete, die mit dem Linux-Betriebssystem kompatibel sind.
 - MacOS : Pakete, die mit MacOS kompatibel sind.
+
+Wenn Sie das Paket mit den kompatiblen Plattformen markieren, wird es in die Katalogsuchfilter im linken Bereich der Suchergebnisse einbezogen. Wenn Sie das Paket auf GitHub hosten, wenn Sie es markieren, profitieren Sie außerdem von unserem [PowerShell-Katalog-Kompatibilitätsschutz](https://img.shields.io/powershellgallery/p/:packageName.svg) 
+![Kompatibilitätsschutz](https://img.shields.io/powershellgallery/p/CosmosDB.svg).  
 
 ## <a name="include-tests"></a>Schließen Sie Tests ein
 

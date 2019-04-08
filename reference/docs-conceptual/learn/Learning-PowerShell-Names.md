@@ -1,18 +1,18 @@
 ---
 ms.date: 08/24/2018
 keywords: powershell,cmdlet
-title: Erlernen der Namen der PowerShell-Befehl
+title: Lernen von PowerShell-Befehlsnamen
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-ms.openlocfilehash: 3f8ef2648709c4bb5d2eacf30fe9d8fb4f032c13
-ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
-ms.translationtype: MTE95
+ms.openlocfilehash: 8d50ca03f98ed4ca8f9c09c83ae57afbf0d7888d
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54012465"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623720"
 ---
-# <a name="learning-powershell-command-names"></a>Erlernen der Namen der PowerShell-Befehl
+# <a name="learning-powershell-command-names"></a>Lernen von PowerShell-Befehlsnamen
 
-Das Erlernen der Namen von Befehlen und Parametern ist bei den meisten Befehlszeilenschnittstellen mit einem hohen Zeitaufwand verbunden. Das Problem liegt darin, dass nur wenige Muster vorhanden sind. Erinnerung zu behalten, ist die einzige Möglichkeit, lernen die Befehle und Parameter, die Sie regelmäßig verwenden müssen.
+Das Erlernen der Namen von Befehlen und Parametern ist bei den meisten Befehlszeilenschnittstellen mit einem hohen Zeitaufwand verbunden. Das Problem liegt darin, dass nur wenige Muster vorhanden sind. Die einzige Möglichkeit besteht darin, die Befehle und Parameter auswendig zu lernen, die Sie regelmäßig verwenden müssen.
 
 Wenn Sie mit einem neuen Befehl oder Parameter arbeiten, können Sie nicht immer auf Bekanntes zurückgreifen. Sie müssen nach neuen Namen suchen und diese lernen. Üblicherweise umfassen Befehlszeilenschnittstellen zu Beginn lediglich einen kleinen Satz an Tools und wachsen mit zunehmenden Ergänzungen. Es ist leicht zu verstehen, warum es keine Standardstruktur gibt.
 Dies erscheint bei Befehlsnamen logisch, da jeder Befehl ein eigenes Tool darstellt. PowerShell bietet eine bessere Möglichkeit, Befehlsnamen zu verarbeiten.
@@ -25,7 +25,7 @@ Darüber hinaus verwenden diese Befehle irreguläre Parameterspezifikationen. Si
 Um die auf „DC01“ ausgeführten Aufgaben aufzulisten, verwenden Sie den Parameter **/S** und den Computernamen ohne Schrägstriche. Beispiel: `tasklist /S DC01`.
 
 > [!NOTE]
-> Vor PowerShell v6 war `sc` ein Alias für das Cmdlet `Set-Content`. Zum Ausführen des Befehls **sc.exe** musste die Dateierweiterung eingeschlossen werden.
+> Vor PowerShell v6 war `sc` ein Alias für das Cmdlet `Set-Content`. Aus diesem Grund müssen Sie zum Ausführen des **sc.exe**-Befehls in einer früheren PowerShell-Version als v6 den vollständigen Dateinamen **sc.exe** einschließlich der Dateierweiterung **exe** einbeziehen.
 
 Dienste und Prozesse sind Beispiele für verwaltbare Elemente auf einem Computer mit gut definierten Lebenszyklen. Sie können einen Dienst oder Prozess starten oder beenden oder eine Liste aller derzeit ausgeführten Dienste und Prozesse abrufen. Wenngleich es wichtige technische Unterschiede zwischen ihnen gibt, sind die für Dienste und Prozesse ausgeführten Aktionen vom Konzept her identisch. Darüber hinaus können auch Entscheidungen, die wir zum Anpassen einer Aktion durch das Angeben von Parametern treffen, konzeptionell vergleichbar sein.
 

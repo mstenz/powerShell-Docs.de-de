@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Bereitstellen von Feedback über soziale Netzwerke oder Kommentare
-ms.openlocfilehash: a27a2fc7cf54835cb53b11382c20d1354345a5a3
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 95e5db22b94151c3974189c30f1d4e580b47eeb5
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58055001"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623890"
 ---
 # <a name="providing-feedback-via-social-media-or-comments"></a>Bereitstellen von Feedback über soziale Netzwerke oder Kommentare
 
@@ -29,6 +29,10 @@ Der PowerShell-Katalog überprüft jedes soziale Netzwerk auf das geteilte Paket
 Da die Zahlen nur angeben, wie oft ein Paket geteilt wurde, werden die Angaben als „Gefällt mir“-Markierungen für das Paket interpretiert.
 
 ## <a name="comments"></a>Kommentare
+
+> [!IMPORTANT]
+> Livefyre-Kommentare werden von einem Drittanbieter bereitgestellt und nicht mehr unterstützt.
+> Livefyre-Kommentare sind ab dem 01.05.2019 nicht mehr im PowerShell-Katalog verfügbar. 
 
 Der PowerShell-Katalog verwendet den LiveFyre-Dienst, damit Benutzer Kommentare zu Paketen erstellen können.
 Benutzer, die Empfehlungen oder Feedback übermitteln möchten, können über dieses Feature Feedback bereitstellen, das für alle Besucher der Paketseite sichtbar ist.

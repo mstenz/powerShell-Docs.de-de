@@ -3,12 +3,12 @@ ms.date: 08/23/2018
 keywords: powershell,cmdlet
 title: Grundlegendes zu PowerShell-Modulen
 ms.assetid: 6be50926-7943-4ef7-9499-4490d72a63fb
-ms.openlocfilehash: fc7c7f57bdce458185a0f5bdb8bc1fbbd81d0d61
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 05ab98b7261f4d41ade1788a924193eccda6318c
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401217"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623958"
 ---
 # <a name="understanding-pipelines"></a>Grundlegendes zu Pipelines
 
@@ -63,6 +63,18 @@ Durch die Einteilung in Seiten wird auch die CPU-Auslastung reduziert, da die Ve
 
 Sie können den Unterschied im Windows Task-Manager überprüfen, indem Sie die CPU- und Arbeitsspeicherauslastung durch PowerShell überwachen. Führen Sie den folgenden Befehl aus: `Get-ChildItem C:\Windows -Recurse`. Vergleichen die CPU- und Arbeitsspeicherauslastung mit diesem Befehl: `Get-ChildItem C:\Windows -Recurse | Out-Host -Paging`.
 
+> [!NOTE]
+> Der **Paging**-Parameter wird nicht von allen PowerShell-Hosts unterstützt. Wenn Sie z.B. versuchen, den **Paging**-Parameter in der PowerShell-ISE zu verwenden, wird folgende Fehlermeldung angezeigt:
+>
+> ```Output
+> out-lineoutput : The method or operation is not implemented.
+> At line:1 char:1
+> + Get-ChildItem C:\Windows -Recurse | Out-Host -Paging
+> + ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+>     + CategoryInfo          : NotSpecified: (:) [out-lineoutput], NotImplementedException
+>     + FullyQualifiedErrorId : System.NotImplementedException,Microsoft.PowerShell.Commands.OutLineOutputCommand
+> ```
+
 ## <a name="objects-in-the-pipeline"></a>Objekte in der Pipeline
 
 Wenn Sie ein Cmdlet in PowerShell ausführen, sehen Sie eine Textausgabe, da es erforderlich ist, Objekte in einem Konsolenfenster als Text darzustellen. Die Textausgabe enthält möglicherweise nicht alle Eigenschaften des Objekts, das ausgegeben wird.
@@ -82,7 +94,7 @@ Die Textausgabe ist eine Zusammenfassung der Informationen, keine vollständige 
 Wenn Sie die Ausgabe an das Cmdlet `Get-Member` weiterleiten, erhalten Sie Informationen über das Objekt, das von `Get-Location` zurückgegeben wird.
 
 ```powershell
-PS> Get-Location | Get-Member
+Get-Location | Get-Member
 ```
 
 ```Output
