@@ -12,12 +12,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell SDK], verb names
 ms.assetid: 2d4e58a9-05bc-437c-86b9-d8d55cba7d48
 caps.latest.revision: 36
-ms.openlocfilehash: d8a0561d6fbb4447a691c434e0518e3e16ce41e7
-ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
+ms.openlocfilehash: 4475b3f5e15826efbe8bab867011985cd7e2e1ae
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56863666"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293349"
 ---
 # <a name="approved-verbs-for-powershell-commands"></a>Genehmigten Verben für PowerShell-Befehle
 
@@ -94,7 +94,7 @@ Die folgende Tabelle enthält die meisten der definierten Verben.
 |[Exit](/dotnet/api/System.Management.Automation.VerbsCommon.Exit) (Beispiel)|Legt die aktuelle Umgebung oder das Kontextmenü für den zuletzt verwendeten Kontext fest. Z. B. die `Exit-PSSession` Cmdlet platziert der Benutzer in der Sitzung, die verwendet wurde, um die interaktive Sitzung zu starten. Dieses Verb ist gekoppelt mit `Enter`.|Verwenden Sie für diese Aktion Verben wie Pop oder sich nicht.|
 |[Suchen](/dotnet/api/System.Management.Automation.VerbsCommon.Find) (fd)|Sucht nach der ein Objekt in einem Container, der unbekannt, impliziten, optional oder angegeben ist.||
 |[Format](/dotnet/api/System.Management.Automation.VerbsCommon.Format) (f)|Ordnet die Objekte in einer bestimmten Form oder das Layout.||
-|[Erste](/dotnet/api/System.Management.Automation.VerbsCommon.Get) (g)|Gibt eine Aktion, die eine Ressource abruft. Dieses Verb ist gekoppelt mit `Set`.|Verwenden Sie für diese Aktion nicht Verben wie lesen, Open, Cat, Typ, Dir, abrufen, Dumps, abrufen, überprüfen, suchen oder suchen Sie nach dieser Aktion.|
+|[Erste](/dotnet/api/System.Management.Automation.VerbsCommon.Get) (g)|Gibt eine Aktion, die eine Ressource abruft. Dieses Verb ist gekoppelt mit `Set`.|Verwenden Sie für diese Aktion nicht Verben wie lesen, Open, Cat, Typ, Dir, abrufen, Dump, abrufen, überprüfen, suchen oder durchsuchen.|
 |[Ausblenden](/dotnet/api/System.Management.Automation.VerbsCommon.Hide) (h)|Stellt eine Ressource nicht erkennbare. Ein Cmdlet, dessen Name das Verb ausblenden enthält, möglicherweise einen Dienst z. B. von einem Benutzer verborgen werden. Dieses Verb ist gekoppelt mit `Show`.|Verwenden Sie für diese Aktion kein Verb, z.B. das blockieren.|
 |[Join](/dotnet/api/System.Management.Automation.VerbsCommon.Join) (j)|Kombiniert Ressourcen in eine Ressource an. Z. B. die `Join-Path` Cmdlet kombiniert einen Pfad mit einem der untergeordneten Pfade um einen einzelnen Pfad zu erstellen. Dieses Verb ist gekoppelt mit `Split`.|Verwenden Sie für diese Aktion nicht Verben wie kombinieren, Unite, verbinden oder zuordnen.|
 |[Sperre](/dotnet/api/System.Management.Automation.VerbsCommon.Lock) (lk)|Sichert eine Ressource an. Dieses Verb ist gekoppelt mit `Unlock`.|Verwenden Sie für diese Aktion nicht Verben wie einschränken oder Secure.|
@@ -149,7 +149,7 @@ Die folgende Tabelle enthält die meisten der definierten Verben.
 |[ConvertFrom](/dotnet/api/System.Management.Automation.VerbsData.ConvertFrom) (Cf)|Konvertiert einen primären Typ der Eingabe (das Cmdlet-Nomen gibt die Eingabe) in eine oder mehrere der unterstützten Ausgabetypen.|Verwenden Sie für diese Aktion nicht Verben wie Export, Ausgabe oder Out.|
 |[ConvertTo](/dotnet/api/System.Management.Automation.VerbsData.ConvertTo) (ct)|Konvertiert eine oder mehrere Arten von Eingaben für einen primären Ausgabetyp (das Cmdlet-Nomen gibt den Ausgabetyp an).|Für diese Aktion, verwenden Sie keine Verben wie importieren, Eingabe, oder im.|
 |[Aufheben der Bereitstellung](/dotnet/api/System.Management.Automation.VerbsData.Dismount) (dm)|Trennt eine benannte Entität von einem Speicherort an. Dieses Verb ist gekoppelt mit `Mount`.|Verwenden Sie für diese Aktion nicht Verben wie aufheben oder Verknüpfung aufheben.|
-|[Bearbeiten Sie](/dotnet/api/System.Management.Automation.VerbsData.Edit) (Ed)|Ändert vorhandene Daten durch Hinzufügen oder Entfernen von Inhalt an.|Verwenden Sie für diese Aktion Verben wie ändern, aktualisieren oder ändern nicht für diese Aktion.|
+|[Bearbeiten Sie](/dotnet/api/System.Management.Automation.VerbsData.Edit) (Ed)|Ändert vorhandene Daten durch Hinzufügen oder Entfernen von Inhalt an.|Verwenden Sie für diese Aktion nicht Verben wie ändern, aktualisieren oder ändern.|
 |[Erweitern Sie](/dotnet/api/System.Management.Automation.VerbsData.Expand) (En)|Stellt die Daten einer Ressource, die komprimiert wurden den ursprünglichen Zustand wieder her. Dieses Verb ist gekoppelt mit `Compress`.|Verwenden Sie für diese Aktion nicht die Verben wie z. B. Explode oder dekomprimieren.|
 |[Exportieren Sie](/dotnet/api/System.Management.Automation.VerbsData.Export) (Ep)|Kapselt die primäre Eingabe in einem persistenten Datenspeicher, z. B. eine Datei oder in ein Austauschformat. Dieses Verb ist gekoppelt mit `Import`.|Verwenden Sie für diese Aktion nicht Verben wie extrahieren oder eine Sicherung.|
 |[Gruppe](/dotnet/api/System.Management.Automation.VerbsData.Group) (Gp)|Ordnet oder ordnet eine oder mehrere Ressourcen.|Verwenden Sie für diese Aktion Verben wie Aggregat, Arrange, verknüpfen, oder nicht korrelieren.|
@@ -251,6 +251,6 @@ PowerShell verwendet die [System.Management.Automation.VerbsOther](/dotnet/api/S
 
 [Cmdlet-Deklaration](./cmdlet-class-declaration.md)
 
-[Windows PowerShell Handbuch für Programmierer](../prog-guide/windows-powershell-programmer-s-guide.md)
+[Windows PowerShell-Programmiererhandbuch](../prog-guide/windows-powershell-programmer-s-guide.md)
 
-[Windows PowerShell Shell SDK](../windows-powershell-reference.md)
+[Windows PowerShell-Befehlsshell SDK](../windows-powershell-reference.md)
