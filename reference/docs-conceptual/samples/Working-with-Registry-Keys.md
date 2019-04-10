@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Arbeiten mit Registrierungsschlüsseln
 ms.assetid: 91bfaecd-8684-48b4-ad86-065dfe6dc90a
-ms.openlocfilehash: a9d08f2f6b5803980dec45a4e266ad66879c8c8d
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: e7b497ec2fccf9ba3934439a9c1e9be3cf70a705
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402061"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293196"
 ---
 # <a name="working-with-registry-keys"></a>Arbeiten mit Registrierungsschlüsseln
 
 Da Registrierungsschlüssel Elemente auf Windows PowerShell-Laufwerken sind, gleicht deren Verwendung der Arbeit mit Dateien und Ordnern. Ein wichtiger Unterschied besteht darin, dass jedes Element auf einem registrierungsbasierten Windows PowerShell-Laufwerk ein Container ist, genau wie ein Ordner auf einem Dateisystemlaufwerk. Registrierungseinträge und deren zugehörige Werte sind jedoch Eigenschaften der Elemente, nicht unterschiedliche Elemente.
 
-### <a name="listing-all-subkeys-of-a-registry-key"></a>Auflisten aller Unterschlüssel eines Registrierungsschlüssels
+## <a name="listing-all-subkeys-of-a-registry-key"></a>Auflisten aller Unterschlüssel eines Registrierungsschlüssels
 
 Mit **Get-ChildItem** können Sie alle Elemente anzeigen, die sich unmittelbar in einem Registrierungsschlüssel befinden. Fügen Sie den optionalen Parameter **Force** hinzu, um ausgeblendete oder Systemelemente anzuzeigen. Dieser Befehl zeigt z.B. die Elemente an, die sich direkt auf dem Windows PowerShell-Laufwerk HKCU: befinden, das der Registrierungsstruktur HKEY_CURRENT_USER entspricht:
 
@@ -58,7 +58,7 @@ Get-ChildItem -Path hkcu:\ -Recurse
 Get-ChildItem -Path HKCU:\Software -Recurse | Where-Object -FilterScript {($_.SubKeyCount -le 1) -and ($_.ValueCount -eq 4) }
 ```
 
-### <a name="copying-keys"></a>Kopieren von Schlüsseln
+## <a name="copying-keys"></a>Kopieren von Schlüsseln
 
 Das Kopieren erfolgt mit **Copy-Item**. Der folgende Befehl kopiert „HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion“ und alle zugehörigen Eigenschaften nach „HKCU:\\“ und erstellt dabei einen neuen Schlüssel mit dem Namen „CurrentVersion“:
 
@@ -74,7 +74,7 @@ Copy-Item -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion' -Destination h
 
 Sie können auch weiterhin andere bereits verfügbare Tools verwenden, um Dateisystemkopien auszuführen. Alle Tools zur Bearbeitung der Registrierung (z. B. „reg.exe“, „regini.exe“ und „regedit.exe“) sowie COM-Objekte, die die Bearbeitung der Registrierung unterstützen (z. B. „WScript.Shell“ und die WMI-Klasse „StdRegProv“) können in Windows PowerShell verwendet werden.
 
-### <a name="creating-keys"></a>Erstellen von Schlüsseln
+## <a name="creating-keys"></a>Erstellen von Schlüsseln
 
 Das Erstellen neuer Schlüssel in der Registrierung ist einfacher als das Erstellen eines neuen Elements in einem Dateisystem. Da alle Registrierungsschlüssel Container sind, müssen Sie keinen Elementtyp, sondern einfach einen expliziten Pfad angeben, z. B.:
 
@@ -88,7 +88,7 @@ Sie können auch einen anbieterbasierten Pfad verwenden, um einen Schlüssel anz
 New-Item -Path Registry::HKCU_DeleteMe
 ```
 
-### <a name="deleting-keys"></a>Löschen von Schlüsseln
+## <a name="deleting-keys"></a>Löschen von Schlüsseln
 
 Das Löschen von Elementen funktioniert im Wesentlichen für alle Anbieter gleich. Die folgenden Befehle entfernen Elemente automatisch ohne Benutzereingriff:
 
@@ -97,7 +97,7 @@ Remove-Item -Path hkcu:\Software_DeleteMe
 Remove-Item -Path 'hkcu:\key with spaces in the name'
 ```
 
-### <a name="removing-all-keys-under-a-specific-key"></a>Entfernen aller Schlüssel unter einem bestimmten Schlüssel
+## <a name="removing-all-keys-under-a-specific-key"></a>Entfernen aller Schlüssel unter einem bestimmten Schlüssel
 
 Mit **Remove-Item** können Sie enthaltene Elemente entfernen. Wenn ein Element weitere Elemente enthält, werden Sie jedoch aufgefordert, das Entfernen zu bestätigen. Wenn Sie z.B. versuchen, den erstellten Unterschlüssel „HKCU:\\CurrentVersion“ zu löschen, wird Folgendes angezeigt:
 

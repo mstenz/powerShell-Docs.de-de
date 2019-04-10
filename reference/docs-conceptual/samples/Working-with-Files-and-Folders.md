@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Arbeiten mit Dateien und Ordnern
 ms.assetid: c0ceb96b-e708-45f3-803b-d1f61a48f4c1
-ms.openlocfilehash: a8d57a1c269d95e692db6c3f1ae10df49e305e4e
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 393e886a4945222198d9b81019250c5d5b905ad3
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401277"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293217"
 ---
 # <a name="working-with-files-and-folders"></a>Arbeiten mit Dateien und Ordnern
 
 Das Navigieren auf Windows PowerShell-Laufwerken und das Bearbeiten der darauf gespeicherten Elemente gleicht dem Bearbeiten von Dateien und Ordnern auf physischen Windows-Festplattenlaufwerken. In diesem Abschnitt werden bestimmte Aufgaben im Zusammenhang mit der Bearbeitung von Dateien und Ordnern mithilfe von PowerShell erörtert.
 
-### <a name="listing-all-the-files-and-folders-within-a-folder"></a>Auflisten aller Dateien und Ordner in einem Ordner
+## <a name="listing-all-the-files-and-folders-within-a-folder"></a>Auflisten aller Dateien und Ordner in einem Ordner
 
 Mit **Get-ChildItem** können Sie alle Elemente abrufen, die sich unmittelbar in einem Ordner befinden. Fügen Sie den optionalen Parameter **Force** hinzu, um ausgeblendete oder Systemelemente anzuzeigen. Dieser Befehl zeigt z. B. den unmittelbaren Inhalt der Windows PowerShell-Laufwerks C: an (dieses entspricht dem physischen Windows-Laufwerk C:):
 
@@ -36,7 +36,7 @@ Der folgende Befehl sucht alle ausführbaren Dateien im Ordner „Programme“, 
 Get-ChildItem -Path $env:ProgramFiles -Recurse -Include *.exe | Where-Object -FilterScript {($_.LastWriteTime -gt '2005-10-01') -and ($_.Length -ge 1mb) -and ($_.Length -le 10mb)}
 ```
 
-### <a name="copying-files-and-folders"></a>Kopieren von Dateien und Ordner
+## <a name="copying-files-and-folders"></a>Kopieren von Dateien und Ordner
 
 Das Kopieren erfolgt mit **Copy-Item**. Der folgende Befehl sichert C:\\boot.ini nach C:\\boot.bak:
 
@@ -70,7 +70,7 @@ Sie können auch weiterhin andere Tools verwenden, um Dateisystemkopien auszufü
 (New-Object -ComObject Scripting.FileSystemObject).CopyFile('C:\boot.ini', 'C:\boot.bak')
 ```
 
-### <a name="creating-files-and-folders"></a>Erstellen von Dateien und Ordnern
+## <a name="creating-files-and-folders"></a>Erstellen von Dateien und Ordnern
 
 Das Erstellen neuer Elemente funktioniert auf allen Windows PowerShell-Anbietern gleich. Wenn ein Windows PowerShell-Anbieter über mehrere Elementtypen verfügt – der Dateisystem Windows PowerShell-Anbieter z. B. unterscheidet zwischen Verzeichnissen und Dateien – müssen Sie den Elementtyp angeben.
 
@@ -86,7 +86,7 @@ Dieser Befehl erstellt eine neue leere Datei „C:\\temp\\New Folder\\file.txt�
 New-Item -Path 'C:\temp\New Folder\file.txt' -ItemType File
 ```
 
-### <a name="removing-all-files-and-folders-within-a-folder"></a>Entfernen aller Dateien und Ordner in einem Ordner
+## <a name="removing-all-files-and-folders-within-a-folder"></a>Entfernen aller Dateien und Ordner in einem Ordner
 
 Mit **Remove-Item** können Sie enthaltene Elemente entfernen. Wenn ein Element weitere Elemente enthält, werden Sie jedoch aufgefordert, das Entfernen zu bestätigen. Wenn Sie z.B. versuchen, den Ordner „C:\\temp\\DeleteMe“, der weitere Elemente enthält, zu löschen, fordert Windows PowerShell Sie vor dem Löschen des Ordners zur Bestätigung auf:
 
@@ -107,7 +107,7 @@ Wenn Sie nicht für jedes enthaltene Element aufgefordert werden möchten, geben
 Remove-Item -Path C:\temp\DeleteMe -Recurse
 ```
 
-### <a name="mapping-a-local-folder-as-a-windows-accessible-drive"></a>Zuordnen eines lokalen Ordners als ein zugreifbares Windows-Laufwerk
+## <a name="mapping-a-local-folder-as-a-windows-accessible-drive"></a>Zuordnen eines lokalen Ordners als ein zugreifbares Windows-Laufwerk
 
 Sie können mithilfe des Befehls **subst** auch einen lokalen Ordner zuordnen. Der folgende Befehl erstellt ein lokales geroutetes Laufwerk P: im lokalen Verzeichnis „Programme“:
 
@@ -117,7 +117,7 @@ subst p: $env:programfiles
 
 Wie bei Netzlaufwerken sind in Windows PowerShell mit **subst** zugeordnete Laufwerke für die Windows PowerShell-Shell sofort sichtbar.
 
-### <a name="reading-a-text-file-into-an-array"></a>Einlesen einer Textdatei in ein Array
+## <a name="reading-a-text-file-into-an-array"></a>Einlesen einer Textdatei in ein Array
 
 Eine der häufigeren Speicherformate für Textdaten ist eine Datei mit separaten Zeilen, die als einzelne Datenelemente behandelt werden. Das Cmdlet **Get-Content** kann zum Lesen einer vollständigen Datei in einem Schritt verwendet werden, wie hier gezeigt:
 

@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Arbeiten mit Dateien, Ordnern und Registrierungsschlüsseln
 ms.assetid: e6cf87aa-b5f8-48d5-a75a-7cb7ecb482dc
-ms.openlocfilehash: a09b127d4ba37d33cb4c0f0ce0819e645fd4b137
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: cd20cc50b573435ba80b52b51e164e60625dc1b6
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401976"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293094"
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a>Arbeiten mit Dateien, Ordnern und Registrierungsschlüsseln
 
 Windows PowerShell verwendet das Nomen **Item** zum Verweisen auf Elemente in einem Windows PowerShell-Laufwerk. Im Zusammenhang mit dem Windows PowerShell FileSystem-Anbieter kann ein **Item** eine Datei, ein Ordner oder das Windows PowerShell-Laufwerk sein. Das Auflisten dieser Elemente und die Arbeiten damit ist in den meisten Verwaltungseinstellungen eine wichtige grundlegende Aufgabe. Daher sollen diese Aufgaben ausführlich erläutert werden.
 
-### <a name="enumerating-files-folders-and-registry-keys-get-childitem"></a>Auflisten von Dateien, Ordnern und Registrierungsschlüsseln (Get-ChildItem)
+## <a name="enumerating-files-folders-and-registry-keys-get-childitem"></a>Auflisten von Dateien, Ordnern und Registrierungsschlüsseln (Get-ChildItem)
 
 Da das Abrufen einer Sammlung von Elementen von einem bestimmten Standort eine sehr häufig vorkommende Aufgabe ist, wurde das Cmdlet **Get-ChildItem** speziell dazu entwickelt, alle in einem Container, z.B. einem Ordner, gefundenen Elemente zurückzugeben.
 
@@ -42,7 +42,7 @@ Get-Command -Name Get-ChildItem -Syntax
 
 Diese Parameter können gemischt und angepasst werden, um eine stark angepasste Ausgabe zu erhalten.
 
-#### <a name="listing-all-contained-items--recurse"></a>Auflisten aller enthaltenen Elemente (-Recurse)
+### <a name="listing-all-contained-items--recurse"></a>Auflisten aller enthaltenen Elemente (-Recurse)
 
 Um sowohl die Elemente in einem Windows-Ordner als auch alle in dessen Unterordnern enthaltenen Elemente anzuzeigen, verwenden Sie den Parameter **Recurse** von **Get-ChildItem**. Die Auflistung zeigt alles, was im Windows-Ordner enthalten ist, und alle Elemente in seinen Unterordnern an. Beispiel:
 
@@ -57,7 +57,7 @@ Mode                LastWriteTime     Length Name
 ...
 ```
 
-#### <a name="filtering-items-by-name--name"></a>Filtern von Elementen anhand des Namens (-Name)
+### <a name="filtering-items-by-name--name"></a>Filtern von Elementen anhand des Namens (-Name)
 
 Um nur die Elementnamen anzuzeigen, verwenden Sie den Parameter **Name** von **Get-Childitem**:
 
@@ -69,7 +69,7 @@ assembly
 ...
 ```
 
-#### <a name="forcibly-listing-hidden-items--force"></a>Erzwungenes Auflisten von ausgeblendeten Elementen (-Force)
+### <a name="forcibly-listing-hidden-items--force"></a>Erzwungenes Auflisten von ausgeblendeten Elementen (-Force)
 
 Elemente, die normalerweise im Datei-Explorer oder in „Cmd.exe“ nicht sichtbar sind, werden in der Ausgabe des Befehls **Get-ChildItem** nicht angezeigt. Um ausgeblendete Elemente anzuzeigen, verwenden Sie den Parameter **Force** von **Get-ChildItem**. Beispiel:
 
@@ -79,7 +79,7 @@ Get-ChildItem -Path C:\Windows -Force
 
 Dieser Parameter heißt „Force“ (Zwingen), weil Sie mit ihm erzwingen können, dass das normale Verhalten des Befehls **Get-ChildItem** außer Kraft gesetzt wird. „Force“ ist ein weit verbreiteter Parameter, der eine Aktion erzwingt, die ein Cmdlet normalerweise nicht ausführen würde. Allerdings wird keine Aktion ausgeführt, die die Sicherheit des Systems gefährden würde.
 
-#### <a name="matching-item-names-with-wildcards"></a>Abgleichen von Elementnamen mit Platzhaltern
+### <a name="matching-item-names-with-wildcards"></a>Abgleichen von Elementnamen mit Platzhaltern
 
 Der Befehl **Get-ChildItem** akzeptiert Platzhalter im Pfad der aufzulistenden Elemente.
 
@@ -122,7 +122,7 @@ Um alle Dateien zu suchen, deren Name mit **x** oder **z** beginnt, geben Sie Fo
 Get-ChildItem -Path C:\Windows\[xz]*
 ```
 
-#### <a name="excluding-items--exclude"></a>Ausschließen von Elementen (-Exclude)
+### <a name="excluding-items--exclude"></a>Ausschließen von Elementen (-Exclude)
 
 Sie können bestimmte Elemente durch Verwenden des Parameters **Exclude** von „Get-ChildItem“ ausschließen. Auf diese Weise können Sie eine komplexe Filterung in einer einzigen Anweisung durchführen.
 
@@ -147,7 +147,7 @@ Mode                LastWriteTime     Length Name
 -a---        2004-08-04   8:00 AM      18432 wtsapi32.dll
 ```
 
-#### <a name="mixing-get-childitem-parameters"></a>Kombinieren von Get-ChildItem-Parametern
+### <a name="mixing-get-childitem-parameters"></a>Kombinieren von Get-ChildItem-Parametern
 
 Sie können verschiedene Parameter des Cmdlets **Get-ChildItem** im gleichen Befehl verwenden. Bevor Sie Parameter kombinieren, sollten Sie sicher sein, dass Sie das Abgleichen mit Platzhalterzeichen verstanden haben. Beispielsweise gibt der folgende Befehl keine Ergebnisse zurück:
 

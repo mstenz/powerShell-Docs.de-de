@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Umleiten von Daten mit Out-Cmdlets
 ms.assetid: 2a4acd33-041d-43a5-a3e9-9608a4c52b0c
-ms.openlocfilehash: f08879f436ce751b176af020aba21e90f09aa61f
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 7c601b09cc53524eb55014b8ea19a5d79cb98b0e
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401304"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293298"
 ---
 # <a name="redirecting-data-with-out--cmdlets"></a>Umleiten von Daten mit Out-*-Cmdlets
 
@@ -68,7 +68,7 @@ Dies gilt für alle **Out**-Cmdlets. Ein **Out**-Cmdlet sollte immer am Ende ein
 > [!NOTE]
 > Alle **Out**-Cmdlets rendern Ausgabe als Text, wobei sie die Formatierung verwenden, die für das Konsolenfenster wirksam ist, einschließlich Längenbeschränkungen für Zeilen.
 
-#### <a name="paging-console-output-out-host"></a>Auslagern von Konsolenausgabe (Out-Host)
+## <a name="paging-console-output-out-host"></a>Auslagern von Konsolenausgabe (Out-Host)
 
 Standardmäßig sendet Windows PowerShell Daten an das Hostfenster, und dies entspricht exakt der Funktionsweise des „Out-Host“-Cmdlets. Die vorrangige Verwendung für das „Out-Host“-Cmdlet ist das Auslagern von Daten, wie bereits erläutert. Beispielsweise wird „Out-Host“ im folgenden Befehl dazu verwendet,die Ausgabe des „Get-Command“-Cmdlets auszulagern:
 
@@ -93,7 +93,7 @@ default=multi(0)disk(0)rdisk(0)partition(1)\WINDOWS
 ...
 ```
 
-#### <a name="discarding-output-out-null"></a>Verwerfen von Ausgabe (Out-Null)
+## <a name="discarding-output-out-null"></a>Verwerfen von Ausgabe (Out-Null)
 
 Das **Out-Null**-Cmdlet verwirft sofort jegliche Eingabe, die es empfängt. Damit können Sie überflüssige Daten verwerfen, die Sie als Nebeneffekt des Ausführens eines Befehls erhalten. Wenn Sie den folgenden Befehl eingeben, erhalten Sie keinerlei Rückgabe von dem Befehl:
 
@@ -111,7 +111,7 @@ At line:1 char:12
 + Get-Command  <<<< Is-NotACommand | Out-Null
 ```
 
-#### <a name="printing-data-out-printer"></a>Drucken von Daten (Out-Printer)
+## <a name="printing-data-out-printer"></a>Drucken von Daten (Out-Printer)
 
 Sie können Daten drucken, indem Sie das Cmdlet **Out-Printer** verwenden. Das Cmdlet **Out-Printer** verwendet den Standarddrucker, wenn Sie keinen Druckernamen angeben. Sie können jeden Windows-basierten Drucker verwenden, indem Sie dessen Anzeigenamen angeben. Es sind weder irgendeine Art von Druckeranschlusszuordnung noch sogar ein echter physischer Drucker erforderlich. Wenn Sie etwa die Bilderstellungstools für Microsoft Office-Dokumente installiert haben, können Sie die Daten in eine Bilddatei senden, indem Sie Folgendes eingeben:
 
@@ -119,7 +119,7 @@ Sie können Daten drucken, indem Sie das Cmdlet **Out-Printer** verwenden. Das C
 Get-Command Get-Command | Out-Printer -Name 'Microsoft Office Document Image Writer'
 ```
 
-#### <a name="saving-data-out-file"></a>Speichern von Daten (Out-File)
+## <a name="saving-data-out-file"></a>Speichern von Daten (Out-File)
 
 Mit dem Cmdlet **Out-File** können Sie Ausgabe in eine Datei statt an das Konsolenfenster senden. In der folgenden Befehlszeile wird die jeweilige Liste der Prozesse in die Datei **C:\\temp\\processlist.txt** gesendet:
 
