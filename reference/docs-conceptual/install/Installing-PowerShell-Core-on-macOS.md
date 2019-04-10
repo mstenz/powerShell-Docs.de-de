@@ -2,18 +2,18 @@
 title: Installieren von PowerShell Core unter macOS
 description: Informationen zur Installation von PowerShell Core unter macOS
 ms.date: 12/12/2018
-ms.openlocfilehash: 91e64cace7d4ed988da56109dde9bf2a80528eb4
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 7db8ca0cb6d13db8ce7f11b4a4b03b7d3f9b6feb
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401433"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293400"
 ---
 # <a name="installing-powershell-core-on-macos"></a>Installieren von PowerShell Core unter macOS
 
 PowerShell Core unterstützt macOs 10.12 und höher.
-Sämtliche Pakete sind auf der Seite [Freigaben][] über GitHub verfügbar.
-Nachdem das Paket installiert ist, führen Sie `pwsh` über das Terminal.
+Sämtliche Pakete sind auf der Seite [Releases][] über GitHub verfügbar.
+Nachdem Sie das Paket installiert haben, führen Sie `pwsh` über das Terminal aus.
 
 ## <a name="about-brew"></a>Informationen zu Brew
 
@@ -36,7 +36,7 @@ Vergewissern Sie sich abschließend, dass Ihre Installation voll funktionsfähig
 pwsh
 ```
 
-Wenn neue Versionen von PowerShell veröffentlicht werden, aktualisieren Sie Homebrews-Formeln, und aktualisieren Sie PowerShell:
+Wenn neue Versionen von PowerShell veröffentlicht werden, aktualisieren Sie die Formel für Homebrew, und führen Sie ein Upgrade für PowerShell aus:
 
 ```sh
 brew update
@@ -44,7 +44,7 @@ brew cask upgrade powershell
 ```
 
 > [!NOTE]
-> Die oben genannten Befehle können von innerhalb eines Hosts-PowerShell (Pwsh) aufgerufen werden, aber dann muss die PowerShell-Shell wurde beendet und neu gestartet, um das Upgrade abzuschließen, und aktualisieren die Werte im `$PSVersionTable`.
+> Die oben genannten Befehle können innerhalb eines PowerShell-Hosts (pwsh) aufgerufen werden. Allerdings muss dann die Shell von PowerShell beendet und neu gestartet werden, um das Upgrade abzuschließen und die in `$PSVersionTable` dargestellten Werte zu aktualisieren.
 
 [brew]: http://brew.sh/
 
@@ -53,7 +53,7 @@ brew cask upgrade powershell
 Weitere Informationen zu Ansichten finden Sie unter [Info zu Brew](#about-brew).
 
 Nachdem Sie Homebrew installiert haben, können Sie PowerShell installieren.
-Installieren Sie zunächst die [Cask-Versionen] [ cask-versions] Paket, das Sie alternative Versionen Cask-Pakete installieren kann:
+Installieren Sie zunächst das Paket [Cask-Versions][cask-versions]. Dies ermöglicht Ihnen das Installieren alternativer Versionen von Cask-Paketen:
 
 ```sh
 brew tap homebrew/cask-versions
@@ -71,7 +71,7 @@ Vergewissern Sie sich abschließend, dass Ihre Installation voll funktionsfähig
 pwsh-preview
 ```
 
-Wenn neue Versionen von PowerShell veröffentlicht werden, aktualisieren Sie Homebrews-Formeln, und aktualisieren Sie PowerShell:
+Wenn neue Versionen von PowerShell veröffentlicht werden, aktualisieren Sie die Formel für Homebrew, und führen Sie ein Upgrade für PowerShell aus:
 
 ```sh
 brew update
@@ -80,17 +80,18 @@ brew cask upgrade powershell-preview
 
 > [!NOTE]
 > Die oben genannten Befehle können innerhalb eines PowerShell-Hosts (pwsh) aufgerufen werden, die Shell von PowerShell muss dann jedoch beendet und neu angegeben werden, um das Upgrade abzuschließen
-> und aktualisieren Sie die Werte im `$PSVersionTable`.
+> und die in `$PSVersionTable` dargestellten Werte zu aktualisieren.
 
 ## <a name="installation-via-direct-download"></a>Installation über einen direkten Download
 
-Laden Sie das PKG-Paket `powershell-6.1.0-osx-x64.pkg`
-über die Seite [Freigaben][] auf Ihren macOS-Computer herunter.
+Laden Sie das PKG-Paket
+`powershell-6.2.0-osx-x64.pkg`
+über die Seite [Releases][] auf Ihren macOS-Computer herunter.
 
 Doppelklicken Sie entweder auf die Datei, und befolgen Sie die Anweisungen, oder installieren Sie das Paket über das Terminal:
 
 ```sh
-sudo installer -pkg powershell-6.1.0-osx-x64.pkg -target /
+sudo installer -pkg powershell-6.2.0-osx-x64.pkg -target /
 ```
 
 Installieren Sie [OpenSSL](#install-openssl). OpenSSL ist für PowerShell-Remotingfunktionen und CIM-Vorgänge erforderlich.
@@ -103,26 +104,26 @@ Installieren Sie [OpenSSL](#install-openssl). OpenSSL ist für PowerShell-Remoti
 
 ```sh
 # Download the powershell '.tar.gz' archive
-curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v6.1.0/powershell-6.1.0-osx-x64.tar.gz
+curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-osx-x64.tar.gz
 
 # Create the target folder where powershell will be placed
-sudo mkdir -p /usr/local/microsoft/powershell/6.1.0
+sudo mkdir -p /usr/local/microsoft/powershell/6.2.0
 
 # Expand powershell to the target folder
-sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/6.1.0
+sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/6.2.0
 
 # Set execute permissions
-sudo chmod +x /usr/local/microsoft/powershell/6.1.0/pwsh
+sudo chmod +x /usr/local/microsoft/powershell/6.2.0/pwsh
 
 # Create the symbolic link that points to pwsh
-sudo ln -s /usr/local/microsoft/powershell/6.1.0/pwsh /usr/local/bin/pwsh
+sudo ln -s /usr/local/microsoft/powershell/6.2.0/pwsh /usr/local/bin/pwsh
 ```
 
 Installieren Sie [OpenSSL](#install-openssl). OpenSSL ist für PowerShell-Remotingfunktionen und CIM-Vorgänge erforderlich.
 
 ## <a name="installing-dependencies"></a>Installieren von Abhängigkeiten
 
-### <a name="install-xcode-command-line-tools"></a>Installieren von XCode-Befehslzeilentools
+### <a name="install-xcode-command-line-tools"></a>Installieren von XCode-Befehlszeilentools
 
 ```sh
 xcode-select --install
@@ -136,17 +137,17 @@ OpenSSL ist für PowerShell-Remotingfunktionen und CIM-Vorgänge erforderlich. D
 
 Weitere Informationen zu Ansichten finden Sie unter [Info zu Brew](#about-brew).
 
-Führen Sie zum Installieren von OpenSSL `brew install openssl`.
+Führen Sie `brew install openssl` aus, um OpenSSL zu installieren.
 
 #### <a name="install-openssl-via-macports"></a>Installieren von OpenSSL über MacPorts
 
 1. Installieren Sie die [XCode-Befehlszeilentools](#install-xcode-command-line-tools).
 1. Installieren Sie MacPorts.
-   Wenn Sie Anweisungen benötigen, lesen Sie die [Installationshandbuch](https://guide.macports.org/chunked/installing.macports.html).
+   Wenn Sie Anleitungen dazu benötigen, lesen Sie das [Installationshandbuch](https://guide.macports.org/chunked/installing.macports.html).
 1. Aktualisieren Sie MacPorts durch Ausführen von `sudo port selfupdate`.
-1. Führen Sie eine Upgrade von MacPorts-Paketen durch Ausführen von `sudo port upgrade outdated` durch.
+1. Führen Sie ein Upgrade von MacPorts-Paketen durch Ausführen von `sudo port upgrade outdated` durch.
 1. Installieren Sie OpenSSL durch Ausführen von `sudo port install openssl`.
-1. Verknüpfen Sie die Bibliotheken aus, um sie zu PowerShell zur Verfügung zu stellen:
+1. Verknüpfen Sie die Bibliotheken, um sie PowerShell zur Verfügung zu stellen:
 
 ```sh
 sudo mkdir -p /usr/local/opt/openssl
@@ -167,28 +168,28 @@ Wenn Sie PowerShell über einen direkten Download installiert haben, muss PowerS
 sudo rm -rf /usr/local/bin/pwsh /usr/local/microsoft/powershell
 ```
 
-Um zusätzliche PowerShell-Pfade zu entfernen, finden Sie in der [Pfade](#paths) in diesem Dokument im Abschnitt, und entfernen Sie die Pfade mit `sudo rm`.
+Lesen Sie den Abschnitt [Pfade](#paths) in diesem Artikel, um zu erfahren, wie Sie zusätzliche PowerShell-Pfade deinstallieren können. Entfernen Sie die Pfade mithilfe von `sudo rm`.
 
 > [!NOTE]
 > Dies ist nicht notwendig, wenn Sie eine Installation mit Homebrew durchgeführt haben.
 
 ## <a name="paths"></a>Pfade
 
-* `$PSHOME` ist `/usr/local/microsoft/powershell/6.1.0/`.
-* Benutzerprofile werden über `~/.config/powershell/profile.ps1` gelesen.
-* Standardprofile werden über `$PSHOME/profile.ps1` gelesen.
-* Benutzermodule werden über `~/.local/share/powershell/Modules` gelesen.
-* Freigegebene Module werden über `/usr/local/share/powershell/Modules` gelesen.
-* Standardmodule werden über `$PSHOME/Modules` gelesen.
-* Der Verlauf von „PSReadline“ wird in `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt` aufgezeichnet.
+* `$PSHOME` auf `/usr/local/microsoft/powershell/6.2.0/`
+* Benutzerprofile werden gelesen über `~/.config/powershell/profile.ps1`
+* Standardprofile werden gelesen über `$PSHOME/profile.ps1`
+* Benutzermodule werden gelesen über `~/.local/share/powershell/Modules`
+* Freigegebene Module werden gelesen über `/usr/local/share/powershell/Modules`
+* Standardmodule werden gelesen über `$PSHOME/Modules`
+* Der Verlauf von „PSReadline“ wird aufgezeichnet in `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
 
 Die Profile halten sich an die Konfiguration von PowerShell pro Host.
-Damit das Standardprofil für die hostspezifische am vorhanden ist `Microsoft.PowerShell_profile.ps1` am gleichen Speicherort.
+Dies bedeutet, dass hostspezifische Standardprofile in `Microsoft.PowerShell_profile.ps1` am gleichen Speicherort vorhanden sind.
 
 PowerShell hält die [XDG Base Directory Specification (XDG Base Directory-Spezifikation)][xdg-bds] unter macOs ein.
 
 Da macOS eine Ableitung von BSD ist, wird das Präfix `/usr/local` anstelle von `/opt` verwendet.
-Also `$PSHOME` ist `/usr/local/microsoft/powershell/6.1.0/`, und die symbolische Verknüpfung befindet sich am `/usr/local/bin/pwsh`.
+Daher ist `$PSHOME` gleich `/usr/local/microsoft/powershell/6.2.0/`, und der symbolische Link wird unter `/usr/local/bin/pwsh` gespeichert.
 
 ## <a name="additional-resources"></a>Weitere Ressourcen
 
@@ -200,5 +201,5 @@ Also `$PSHOME` ist `/usr/local/microsoft/powershell/6.1.0/`, und die symbolische
 [Cask]: https://github.com/Homebrew/homebrew-cask
 [cask-versions]: https://github.com/Homebrew/homebrew-cask-versions
 [GitHub]: https://github.com/Homebrew
-[Freigaben]: https://github.com/PowerShell/PowerShell/releases/latest
+[Releases]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html

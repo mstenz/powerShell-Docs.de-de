@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Verwenden von „Format“-Befehlen zum Ändern der Ausgabeanzeige
 ms.assetid: 63515a06-a6f7-4175-a45e-a0537f4f6d05
-ms.openlocfilehash: 35ccd2525d40ffd5e3f25a1abfa38904a109bde5
-ms.sourcegitcommit: 396509cd0d415acc306b68758b6f833406e26bf5
+ms.openlocfilehash: fba37b1d0479bf605d8f2171da27cd1bceb9976e
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320420"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293043"
 ---
 # <a name="using-format-commands-to-change-output-view"></a>Verwenden von „Format“-Befehlen zum Ändern der Ausgabeanzeige
 
@@ -29,25 +29,34 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 
 Im Rest dieses Abschnitts wird untersucht, wie mit **Format**-Cmdlets die Art und Weise der Ausgabeanzeige dieses Befehl geändert werden kann.
 
-### <a name="using-format-wide-for-single-item-output"></a>Verwenden von „Format-Wide“ für die Ausgabe eines einzelnen Elements
+## <a name="using-format-wide-for-single-item-output"></a>Verwenden von „Format-Wide“ für die Ausgabe eines einzelnen Elements
 
-Das Cmdlet **Format-Wide** zeigt standardmäßig nur die Standardeigenschaft eines Objekts an. Die Informationen, die zu dem jeweiligen Objekt gehören, werden in einer einzelnen Spalte angezeigt:
+Das Cmdlet `Format-Wide` zeigt standardmäßig nur die Standardeigenschaft eines Objekts an.
+Die Informationen, die zu dem jeweiligen Objekt gehören, werden in einer einzelnen Spalte angezeigt:
 
+```powershell
+Get-Command -Verb Format | Format-Wide
 ```
-PS> Get-Process -Name powershell | Format-Wide
 
-powershell                              powershell
+```output
+Format-Custom                          Format-Hex
+Format-List                            Format-Table
+Format-Wide
 ```
 
 Sie können auch eine nicht standardmäßige Eigenschaft angeben:
 
-```
-PS> Get-Process -Name powershell | Format-Wide -Property Id
-
-2760                                    3448
+```powershell
+Get-Command -Verb Format | Format-Wide -Property Noun
 ```
 
-#### <a name="controlling-format-wide-display-with-column"></a>Steuern der „Format-Wide“-Anzeige mit Spalte
+```output
+Custom                                 Hex
+List                                   Table
+Wide
+```
+
+### <a name="controlling-format-wide-display-with-column"></a>Steuern der „Format-Wide“-Anzeige mit Spalte
 
 Mit dem Cmdlet `Format-Wide` können Sie immer nur jeweils eine Eigenschaft anzeigen.
 Dadurch ist es zum Anzeigen einfacher Listen geeignet, in denen nur ein Element pro Zeile aufgeführt wird.
@@ -65,7 +74,7 @@ Table
 Wide
 ```
 
-### <a name="using-format-list-for-a-list-view"></a>Verwenden von „Format-List“ für eine Listenansicht
+## <a name="using-format-list-for-a-list-view"></a>Verwenden von „Format-List“ für eine Listenansicht
 
 Das Cmdlet **Format-List** zeigt ein Objekt in Form einer Auflistung an, wobei jede Eigenschaft in einer eigenen Zeile beschriftet und angezeigt wird:
 
@@ -100,7 +109,7 @@ StartTime   : 2006-05-24 13:54:28
 Id          : 3448
 ```
 
-#### <a name="getting-detailed-information-by-using-format-list-with-wildcards"></a>Abrufen von ausführliche Informationen durch Verwenden von „Format-List“ mit Platzhaltern
+### <a name="getting-detailed-information-by-using-format-list-with-wildcards"></a>Abrufen von ausführliche Informationen durch Verwenden von „Format-List“ mit Platzhaltern
 
 Das Cmdlet **Format-List** bietet Ihnen die Möglichkeit, einen Platzhalters als Wert für den **Property**-Parameter zu verwenden. Dies ermöglicht es Ihnen, ausführliche Informationen anzuzeigen. Häufig enthalten Objekte mehr Informationen, als Sie benötigen. Dies ist der Grund, warum Windows PowerShell nicht standardmäßig alle Eigenschaftswerte anzeigt. Um alle Eigenschaften eines Objekts anzuzeigen, verwenden Sie den Befehl **Format-List -Property \&#42;**. Der folgende Befehl generiert mehr als 60 Zeilen an Ausgabe für einen einzelnen Prozess:
 
@@ -110,7 +119,7 @@ Get-Process -Name powershell | Format-List -Property *
 
 Obwohl der Befehl **Format-List** nützlich ist, Details anzuzeigen, ist eine einfachere tabellarische Ansicht oft nützlicher, wenn Sie einen Überblick über Ausgabe wünschen, die viele Elemente enthält.
 
-### <a name="using-format-table-for-tabular-output"></a>Verwenden von „Format-Table“ für tabellarische Ausgabe
+## <a name="using-format-table-for-tabular-output"></a>Verwenden von „Format-Table“ für tabellarische Ausgabe
 
 Wenn Sie die Ausgabe des Befehls **Get-Process** mit dem Cmdlet **Format-Table** ohne angegebene Eigenschaftsnamen formatieren, erhalten Sie genau dieselbe Ausgabe wie für den Fall, dass Sie keine Formatierung anwenden. Der Grund hierfür ist, dass Prozesse in der Regel in einem Tabellenformat angezeigt werden, wie dies für die meisten Windows PowerShell-Objekte zutrifft.
 
@@ -123,7 +132,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
     332       9    23140        632   141     1.06   3448 powershell
 ```
 
-#### <a name="improving-format-table-output-autosize"></a>Verbessern der „Format-Table“-Ausgabe (AutoSize)
+### <a name="improving-format-table-output-autosize"></a>Verbessern der „Format-Table“-Ausgabe (AutoSize)
 
 Eine tabellarische Ansicht ist zwar zum Anzeigen vieler vergleichbarer Informationen nützlich, kann aber zu Interpretationsschwierigkeiten führen, wenn die Anzeige zu schmal für die Daten ist. Wenn Sie beispielsweise versuchen, den Pfad, die ID, den Namen und das Unternehmen eines Prozesses anzuzeigen, erhalten Sie abgeschnittene Ausgabe für die Spalten mit dem Pfad und dem Unternehmen des Prozesses:
 
@@ -173,7 +182,7 @@ Microsoft Corporation C:\Program Files\Windows PowerShell\v1.0\powershell.exe 6
 
 In dieser Ausgabe ist die ID-Spalte abgeschnitten, damit sie in die Auflistung passt, und die Spaltenüberschriften sind gestapelt. Eine automatische Größenänderung der Spalten erfolgt nicht immer so, wie Sie dies wünschen.
 
-#### <a name="wrapping-format-table-output-in-columns-wrap"></a>Umbrechen von „Format-Table“-Ausgabe in Spalten (Wrap)
+### <a name="wrapping-format-table-output-in-columns-wrap"></a>Umbrechen von „Format-Table“-Ausgabe in Spalten (Wrap)
 
 Sie können erzwingen, dass zu lange **Format-Table**-Daten innerhalb ihrer Anzeigespalte umbrochen werden, indem Sie den **Wrap**-Parameter verwenden. Das alleinige Verwenden des **Wrap**-Parameters bringt nicht notwendigerweise das von Ihnen erwartete Ergebnis, weil dann die Standardeinstellungen verwendet werden, wenn Sie nicht auch **AutoSize** angeben:
 
@@ -216,7 +225,7 @@ C:\Program Files\Windows PowerShell\v1.0\powershell.exe 2836 Microsoft Corporat
                                                              ion
 ```
 
-#### <a name="organizing-table-output--groupby"></a>Ordnen von Tabellenausgabe (-GroupBy)
+### <a name="organizing-table-output--groupby"></a>Ordnen von Tabellenausgabe (-GroupBy)
 
 Eine weiterer nützlicher Parameter für das Steuern von tabellarischer Ausgabe ist **GroupBy**. Es kann insbesondere schwierig sein, längere tabellarische Auflistungen zu vergleichen. Mit dem **GroupBy**Parameter wird die Ausgabe anhand eines Eigenschaftswerts gruppiert. Beispielsweise können Prozesse zur einfacheren Überprüfung nach dem Unternehmen gruppiert werden, wobei der Unternehmenswert aus der Eigenschaftenliste entfernt ist:
 

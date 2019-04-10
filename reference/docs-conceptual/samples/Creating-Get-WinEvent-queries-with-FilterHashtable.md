@@ -1,12 +1,12 @@
 ---
 ms.date: 3/18/2019
 title: Erstellen von Get-WinEvent-Abfragen mit FilterHashtable
-ms.openlocfilehash: fae01cc8be5c1805e2aae008e1f21ed387efa325
-ms.sourcegitcommit: 396509cd0d415acc306b68758b6f833406e26bf5
+ms.openlocfilehash: 28ba3c99a297944003a28eaba7de34b77d9df536
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320455"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293281"
 ---
 # <a name="creating-get-winevent-queries-with-filterhashtable"></a>Erstellen von Get-WinEvent-Abfragen mit FilterHashtable
 
@@ -29,12 +29,12 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-### <a name="blog-posts-about-enumeration"></a>Blogbeiträge zur Enumeration
+## <a name="blog-posts-about-enumeration"></a>Blogbeiträge zur Enumeration
 
 Dieser Artikel enthält Informationen zur Verwendung von Enumerationswerten in einer Hashtabelle. Weitere Informationen über Enumeration finden Sie in diesen **Scripting Guy**-Blogbeiträgen. Um eine Funktion zu erstellen, die die Enumerationswerte zurückgibt, lesen Sie [Enumerations and Values](https://devblogs.microsoft.com/scripting/hey-scripting-guy-weekend-scripter-enumerations-and-values) (Enumerationen und Werte).
 Weitere Informationen finden Sie in der [Scripting Guy-Reihe von Blogbeiträgen zur Enumeration](https://devblogs.microsoft.com/scripting/?s=about+enumeration).
 
-### <a name="hash-table-keyvalue-pairs"></a>Hashtabellen-Schlüssel/Wert-Paare
+## <a name="hash-table-keyvalue-pairs"></a>Hashtabellen-Schlüssel/Wert-Paare
 
 Um effiziente Abfragen zu erstellen, verwenden Sie das `Get-WinEvent`-Cmdlet mit dem **FilterHashtable**-Parameter.
 **FilterHashtable** akzeptiert eine Hashtabelle als Filter, um bestimmte Informationen aus Windows-Ereignisprotokollen abzurufen. Eine Hashtabelle verwendet **Schlüssel/Wert-Paare**. Weitere Informationen zu Hashtabellen finden Sie unter [about_Hash_Tables](/powershell/module/microsoft.powershell.core/about/about_hash_tables) (Informationen zu Hashtabellen).
@@ -52,17 +52,17 @@ In der folgenden Tabelle sind die Schlüsselnamen und Datentypen aufgelistet und
 |------------- | ------------------ | ---------------------------- |
 | LogName      | `<String[]>`       | Ja |
 | ProviderName | `<String[]>`       | Ja |
-| Path         | `<String[]>`       | Nein  |
+| Pfad         | `<String[]>`       | Nein  |
 | Keywords     | `<Long[]>`         | Nein  |
 | ID           | `<Int32[]>`        | Nein  |
-| Level        | `<Int32[]>`        | Nein  |
+| Ebene        | `<Int32[]>`        | Nein  |
 | StartTime    | `<DateTime>`       | Nein  |
 | EndTime      | `<DateTime>`       | Nein  |
 | UserID       | `<SID>`            | Nein  |
-| Data         | `<String[]>`       | Nein  |
+| Daten         | `<String[]>`       | Nein  |
 | *            | `<String[]>`       | Nein  |
 
-### <a name="building-a-query-with-a-hash-table"></a>Erstellen einer Abfrage mit einer Hashtabelle
+## <a name="building-a-query-with-a-hash-table"></a>Erstellen einer Abfrage mit einer Hashtabelle
 
 Um die Ergebnisse zu überprüfen und Probleme zu behandeln, ist es sinnvoll, die Hashtabelle aus jeweils einzelnen **Schlüssel/Wert**-Paaren aufzubauen. Die Abfrage ruft Daten aus dem **Anwendungsprotokoll** ab. Die Hashtabelle ist gleichbedeutend mit `Get-WinEvent –LogName Application`.
 
@@ -89,7 +89,7 @@ Get-WinEvent -FilterHashtable @{
 
 Wenn Ihre Abfrage Daten aus archivierten Ereignisprotokollen abrufen muss, verwenden Sie den Schlüssel **Path**. Der Wert von **Path** gibt den vollständigen Pfad zur Protokolldatei an. Weitere Informationen finden Sie im **Scripting Guy**-Blogbeitrag [Use PowerShell to Parse Saved Event Logs for Errors](https://devblogs.microsoft.com/scripting/use-powershell-to-parse-saved-event-logs-for-errors) (Verwenden von PowerShell zum Analysieren von gespeicherten Ereignisprotokollen auf Fehler).
 
-### <a name="using-enumerated-values-in-a-hash-table"></a>Verwenden von Enumerationswerten in einer Hashtabelle
+## <a name="using-enumerated-values-in-a-hash-table"></a>Verwenden von Enumerationswerten in einer Hashtabelle
 
 **Keywords** ist der nächste Schlüssel in der Hashtabelle. Der Datentyp **Keywords** ist ein Array vom Werttyp `[long]`, der eine große Zahl enthält. Verwenden Sie den folgenden Befehl, um den Maximalwert von `[long]` zu ermitteln:
 
@@ -156,7 +156,7 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-#### <a name="keywords-static-property-value-optional"></a>Statischer Eigenschaftswert der Keywords-Eigenschaft (optional)
+### <a name="keywords-static-property-value-optional"></a>Statischer Eigenschaftswert der Keywords-Eigenschaft (optional)
 
 Der Schlüssel **Keywords** ist aufgezählt, Sie können in der Hashtabellenabfrage aber einen statischen Eigenschaftsnamen verwenden.
 Anstatt die zurückgegebene Zeichenfolge zu verwenden, muss der Eigenschaftsname mit der Eigenschaft **Value__** in einen Wert konvertiert werden.
@@ -172,7 +172,7 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-### <a name="filtering-by-event-id"></a>Filtern nach Ereignis-ID
+## <a name="filtering-by-event-id"></a>Filtern nach Ereignis-ID
 
 Um spezifischere Daten zu erhalten, werden die Ergebnisse der Abfrage nach der **Ereignis-ID** gefiltert. Auf die **Ereignis-ID** wird in der Hashtabelle in Form des Schlüssels **ID** Bezug genommen, und der Wert ist eine spezifische **Ereignis-ID**. In der **Windows-Ereignisanzeige** wird die **Ereignis-ID** angezeigt. In diesem Beispiel wird die **Ereignis-ID 1023** verwendet.
 
@@ -187,7 +187,7 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-### <a name="filtering-by-level"></a>Filtern nach Ebene
+## <a name="filtering-by-level"></a>Filtern nach Ebene
 
 Um die Ergebnisse weiter einzugrenzen und nur Ereignisse aufzunehmen, die Fehler darstellen, verwenden Sie den Schlüssel **Level**.
 In der **Windows-Ereignisanzeige** wird der **Level** als Zeichenfolgenwert dargestellt, es handelt sich jedoch um Enumerationswerte. Wenn Sie in der Hashtabelle den Schlüssel **Level** zusammen mit einem Zeichenfolgenwert verwenden, wird eine Fehlermeldung angezeigt.
@@ -217,11 +217,11 @@ Die Namen und Enumerationswerte von **Level** sind wie folgt:
 
 | Name           | Wert |
 | -------------- | ----- |
-| Verbose        |   5   |
+| Ausführlich        |   5   |
 | Informational  |   4   |
 | Warning        |   3   |
-| Error          |   2   |
-| Critical       |   1   |
+| Fehler          |   2   |
+| Kritisch       |   1   |
 | LogAlways      |   0   |
 
 Die Hash-Tabelle für die vollständige Abfrage enthält den Schlüssel **Level** und den Wert **2**.
@@ -236,7 +236,7 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-#### <a name="level-static-property-in-enumeration-optional"></a>Statische Level-Eigenschaft in der Enumeration (optional)
+### <a name="level-static-property-in-enumeration-optional"></a>Statische Level-Eigenschaft in der Enumeration (optional)
 
 Der Schlüssel **Level** ist aufgezählt, Sie können in der Hashtabellenabfrage aber einen statischen Eigenschaftsnamen verwenden.
 Anstatt die zurückgegebene Zeichenfolge zu verwenden, muss der Eigenschaftsname mit der Eigenschaft **Value__** in einen Wert konvertiert werden.

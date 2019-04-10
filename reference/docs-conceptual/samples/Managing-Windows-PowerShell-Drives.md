@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Verwalten von Windows PowerShell-Laufwerken
 ms.assetid: bd809e38-8de9-437a-a250-f30a667d11b4
-ms.openlocfilehash: cfc5418e9d2efb1a786817e1b941d75e22291742
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 9ac5136fb28b450ea6397cab2f36082c50f22e1f
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401916"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293247"
 ---
 # <a name="managing-windows-powershell-drives"></a>Verwalten von Windows PowerShell-Laufwerken
 
@@ -82,7 +82,7 @@ Path
 HKLM:\SOFTWARE\Microsoft
 ```
 
-### <a name="adding-new-windows-powershell-drives-new-psdrive"></a>Hinzufügen neuer Windows PowerShell-Laufwerke (New-PSDrive)
+## <a name="adding-new-windows-powershell-drives-new-psdrive"></a>Hinzufügen neuer Windows PowerShell-Laufwerke (New-PSDrive)
 
 Mit dem Befehl **New-PSDrive** können Sie eigene Windows PowerShell-Laufwerke hinzufügen. Um die Syntax des Befehls **New-PSDrive** abzurufen, geben Sie den Befehl **Get-Command** mit dem Parameter **Syntax** ein:
 
@@ -146,23 +146,23 @@ cvkey:\
 
 Das Cmdlet „New-PsDrive“ fügt das neue Laufwerk nur für die aktuelle Windows PowerShell-Sitzung hinzu. Wenn Sie das Windows PowerShell-Fenster schließen, geht das neue Laufwerk verloren. Wenn Sie ein Windows PowerShell-Laufwerk speichern möchten, verwenden Sie das Cmdlet „Export-Console“, um die aktuelle Windows PowerShell-Sitzung zu exportieren, und verwenden Sie dann den „PowerShell.exe“-Parameter **PSConsoleFile**, um sie zu importieren. Sie können auch das neue Laufwerk Ihrem Windows PowerShell-Profil hinzufügen.
 
-### <a name="deleting-windows-powershell-drives-remove-psdrive"></a>Löschen von Windows PowerShell-Laufwerken (Remove-PSDrive)
+## <a name="deleting-windows-powershell-drives-remove-psdrive"></a>Löschen von Windows PowerShell-Laufwerken (Remove-PSDrive)
 
 Über das Cmdlet **Remove-PSDrive** können Sie Laufwerke aus Windows PowerShell löschen. Das Cmdlet **Remove-PSDrive** ist einfach zu verwenden. Um ein bestimmtes Windows PowerShell-Laufwerk zu löschen, geben Sie lediglich den Namen des Windows PowerShell-Laufwerk ein.
 
-Angenommen, Sie hinzugefügt haben die **Office:** Windows PowerShell-Laufwerk, siehe die **New-PSDrive** Thema können Sie es löschen eingeben:
+Wenn Sie beispielsweise das Windows PowerShell-Laufwerk **Office:** hinzugefügt haben, wie im Thema **New-PSDrive** gezeigt, können Sie es löschen, indem Sie Folgendes eingeben:
 
 ```powershell
 Remove-PSDrive -Name Office
 ```
 
-So löschen Sie die **Cvkey:** Windows PowerShell-Laufwerks, auch aus der **New-PSDrive** Thema verwenden Sie den folgenden Befehl:
+Zum Löschen des Windows PowerShell-Laufwerks **cvkey:**, das ebenfalls im Thema **New-PSDrive** gezeigt wird, verwenden Sie den folgenden Befehl:
 
 ```powershell
 Remove-PSDrive -Name cvkey
 ```
 
-Das Löschen eines Windows PowerShell-Laufwerk ist einfach. Sie können es jedoch nur löschen, wenn Sie sich nicht auf dem Laufwerk befinden. Beispiel: Beispiel:
+Das Löschen eines Windows PowerShell-Laufwerks ist einfach. Sie können es jedoch nur löschen, wenn Sie sich nicht auf dem Laufwerk befinden. Beispiel: Beispiel:
 
 ```
 PS> cd office:
@@ -172,6 +172,6 @@ At line:1 char:15
 + remove-psdrive  <<<< -name office
 ```
 
-### <a name="adding-and-removing-drives-outside-windows-powershell"></a>Hinzufügen und Entfernen von Laufwerken außerhalb von Windows PowerShell
+## <a name="adding-and-removing-drives-outside-windows-powershell"></a>Hinzufügen und Entfernen von Laufwerken außerhalb von Windows PowerShell
 
 Windows PowerShell erkennt Dateisystemlaufwerke, die in Windows hinzugefügt oder gelöscht werden, einschließlich Netzlaufwerken, die zugeordnet sind, USB-Laufwerken, die angeschlossen sind, und Laufwerken, die über den Befehl **net use** oder die Methoden **WScript.NetworkMapNetworkDrive** und **RemoveNetworkDrive** von einem WSH-Skript (Windows Script Host) gelöscht werden.

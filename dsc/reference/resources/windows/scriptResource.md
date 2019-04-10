@@ -2,12 +2,12 @@
 ms.date: 08/24/2018
 keywords: dsc,powershell,configuration,setup
 title: DSC-Ressource „Script“
-ms.openlocfilehash: 86dfb74bf52d8907686bb955fd722f4fb8b9131b
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 4eee5625add4d96ade7ababf7f534f597a26712d
+ms.sourcegitcommit: 0ca836d1044e46d3a7dcbc69fa93d84f74848559
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58054746"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58920355"
 ---
 # <a name="dsc-script-resource"></a>DSC-Ressource „Script“
 
@@ -61,14 +61,14 @@ Das Cmdlet [Test-DscConfiguration](/powershell/module/PSDesiredStateConfiguratio
 
 ## <a name="examples"></a>Beispiele
 
-### <a name="example-1-write-sample-text-using-a-script-resource"></a>Beispiel 1: Schreiben von Beispieltext mit einer Skriptressource
+### <a name="example-1-write-sample-text-using-a-script-resource"></a>Beispiel 1: Schreiben von Beispieltext mit einer Skriptressource
 
 Dieses Beispiel testet das Vorhandensein von `C:\TempFolder\TestFile.txt` auf jedem Knoten. Wenn die Datei nicht vorhanden ist, wird sie mit `SetScript` erstellt. `GetScript` gibt den Inhalt der Datei zurück, und der Rückgabewert wird nicht verwendet.
 
 ```powershell
 Configuration ScriptTest
 {
-    Import-DscResource –ModuleName 'PSDesiredStateConfiguration'
+    Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
 
     Node localhost
     {
@@ -95,7 +95,7 @@ $version = Get-Content 'version.txt'
 
 Configuration ScriptTest
 {
-    Import-DscResource –ModuleName 'PSDesiredStateConfiguration'
+    Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
 
     Node localhost
     {

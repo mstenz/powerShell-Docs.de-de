@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Direktes Verarbeiten von Elementen
 ms.assetid: 8cbd4867-917d-41ea-9ff0-b8e765509735
-ms.openlocfilehash: 5f5b6cf4a777229029743b9d9967030effc58215
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: 4caa7d2e0eecff9783556062d8503fe10e616fe5
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55678173"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293264"
 ---
 # <a name="manipulating-items-directly"></a>Direktes Verarbeiten von Elementen
 
@@ -32,7 +32,7 @@ Cmdlet          Rename-Item                     Rename-Item [-Path] <String>...
 Cmdlet          Set-Item                        Set-Item [-Path] <String[]> ...
 ```
 
-### <a name="creating-new-items-new-item"></a>Erstellen von neuen Elementen (New-Item)
+## <a name="creating-new-items-new-item"></a>Erstellen von neuen Elementen (New-Item)
 
 Um ein neues Element im Dateisystem zu erstellen, verwenden Sie das Cmdlet **New-Item**. Fügen Sie den **Path**-Parameter mit dem Pfad zum Element und den **ItemType**-Parameter mit dem Wert „file“ oder „directory“ ein.
 
@@ -75,7 +75,7 @@ SKC  VC Name                           Property
 
 Wenn Sie einen Registrierungspfad eingeben, müssen Sie den Doppelpunkt (**:**) in die Windows PowerShell-Laufwerksnamen, „HKLM:“ und „HKCU:“, einfügen. Ohne den Doppelpunkt erkennt Windows PowerShell den Laufwerksnamen im Pfad nicht.
 
-### <a name="why-registry-values-are-not-items"></a>Warum Registrierungswerte keine Elemente
+## <a name="why-registry-values-are-not-items"></a>Warum Registrierungswerte keine Elemente
 
 Wenn Sie mit dem Cmdlet **Get-ChildItem** nach den Elemente in einem Registrierungsschlüssel suchen, werden weder die tatsächlichen Registrierungseinträge noch deren Werte angezeigt.
 
@@ -93,9 +93,9 @@ SKC  VC Name                           Property
   3   0 OptionalComponents             {}
 ```
 
-Zwar wäre es praktisch, wenn Registrierungseinträge wie Elemente behandelt werden könnten, es ist aber nicht möglich, einen Pfad zu einem Registrierungseintrag so anzugeben, dass seine Eindeutigkeit sicherstellt ist. In der Pfadnotation wird nicht zwischen dem Registrierungsunterschlüssel namens **Run** und dem **(Standard)** Registrierungseintrag im **Run**-Unterschlüssel unterschieden. Darüber hinaus könnten Sie, wenn Registrierungseinträge Elemente wären, die Pfadnotation nicht dazu verwenden, einen Registrierungseintrag namens **Windows\\CurrentVersion\\Run** von dem Unterschlüssel zu unterscheiden, der sich in diesem Pfad befindet, denn Registrierungseintragsnamen können den umgekehrten Schrägstrich (**\\**) enthalten.
+Zwar wäre es praktisch, wenn Registrierungseinträge wie Elemente behandelt werden könnten, es ist aber nicht möglich, einen Pfad zu einem Registrierungseintrag so anzugeben, dass seine Eindeutigkeit sicherstellt ist. In der Pfadnotation wird nicht zwischen dem Registrierungsunterschlüssel namens **Run** und dem **(Standard)** Registrierungseintrag im **Run**-Unterschlüssel unterschieden. Darüber hinaus könnten Sie – wenn Registrierungseinträge Elemente wären – die Pfadnotation nicht dazu verwenden, einen Registrierungseintrag namens **Windows\\CurrentVersion\\Run** von dem Unterschlüssel zu unterscheiden, der sich in diesem Pfad befindet, denn Registrierungseintragsnamen können den umgekehrten Schrägstrich (**\\**) enthalten.
 
-### <a name="renaming-existing-items-rename-item"></a>Umbenennen von vorhandenen Elementen (Rename-Item)
+## <a name="renaming-existing-items-rename-item"></a>Umbenennen von vorhandenen Elementen (Rename-Item)
 
 Um den Namen einer Datei oder eines Ordners zu ändern, verwenden Sie das Cmdlet **Rename-Item**. Der folgende Befehl ändert den Namen der Datei **file1.txt** in **fileOne.txt**.
 
@@ -112,7 +112,7 @@ At line:1 char:12
 + Rename-Item  <<<< -Path C:\temp\New.Directory\fileOne c:\temp\fileOne.txt
 ```
 
-### <a name="moving-items-move-item"></a>Verschieben von Elementen (Move-Item)
+## <a name="moving-items-move-item"></a>Verschieben von Elementen (Move-Item)
 
 Um eine Datei oder einen Ordner zu verschieben, verwenden Sie das Cmdlet **Move-Item**.
 
@@ -128,7 +128,7 @@ Mode                LastWriteTime     Length Name
 d----        2006-05-18  12:14 PM            New.Directory
 ```
 
-### <a name="copying-items-copy-item"></a>Kopieren von Elementen (Copy-Item)
+## <a name="copying-items-copy-item"></a>Kopieren von Elementen (Copy-Item)
 
 Wenn Sie mit den Kopiervorgänge in anderen Shells vertraut sind, finden Sie das Verhalten des Cmdlets **Copy-Item** in Windows PowerShell möglicherweise ungewöhnlich. Wenn Sie ein Element aus einem Speicherort in einen anderen kopieren, kopiert „Copy-Item“ den Inhalt des Elements nicht standardmäßig.
 
@@ -167,7 +167,7 @@ Mode                LastWriteTime     Length Name
 -a---        2006-05-18  11:44 AM          0 file1
 ```
 
-### <a name="deleting-items-remove-item"></a>Löschen von Elementen (Remove-Item)
+## <a name="deleting-items-remove-item"></a>Löschen von Elementen (Remove-Item)
 
 Um Dateien und Ordner zu löschen, verwenden Sie das Cmdlet **Remove-Item**. Windows PowerShell-Cmdlets, etwa **Remove-Item**, die erhebliche, nicht rückgängig zu machende Änderungen vornehmen, fordern häufig zu einer Bestätigung auf, wenn Sie deren Befehle eingeben. Wenn Sie beispielsweise versuchen, den Ordner **New.Directory** zu entfernen, werden Sie aufgefordert, den Befehl zu bestätigen, da der Ordner Dateien enthält:
 
@@ -188,7 +188,7 @@ Da **Ja** die Standardantwort ist, drücken Sie die **EINGABETASTE**, um den Ord
 Remove-Item C:\temp\New.Directory -Recurse
 ```
 
-### <a name="executing-items-invoke-item"></a>Ausführen von Elementen (Invoke-Item)
+## <a name="executing-items-invoke-item"></a>Ausführen von Elementen (Invoke-Item)
 
 Windows PowerShell verwendet das **Invoke-Item**-Cmdlet, um eine Standardaktion für eine Datei oder einen Ordner auszuführen. Diese Standardaktion ist durch den Standardanwendungshandler in der Registrierung festgelegt. Der Effekt ist derselbe, als würden Sie im Datei-Explorer auf das Element doppelklicken.
 

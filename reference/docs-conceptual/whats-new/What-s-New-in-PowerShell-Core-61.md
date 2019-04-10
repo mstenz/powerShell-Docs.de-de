@@ -2,12 +2,12 @@
 title: Neuigkeiten in PowerShell Core 6.1
 description: Neue Funktionen und Änderungen in PowerShell Core 6.1
 ms.date: 09/13/2018
-ms.openlocfilehash: 4e39780a0ff446993005bba6284741f3b4b02549
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
+ms.openlocfilehash: fe1e892d4a13a7758f5405867fdd7488c059f5cc
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48851306"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293315"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>Neuigkeiten in PowerShell Core 6.1
 
@@ -37,7 +37,7 @@ Durch das Windows Compatibility Pack kann PowerShell Core **mehr als 1.900 Cmdle
 
 ## <a name="support-for-application-whitelisting"></a>Unterstützung für Anwendungswhitelists
 
-PowerShell Core 6.1 verfügt über dieselbe Unterstützung für Anwendungswhitelists von [AppLocker](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) und [Device Guard](https://docs.microsoft.com/en-us/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) wie Windows PowerShell 5.1.
+PowerShell Core 6.1 verfügt über dieselbe Unterstützung für Anwendungswhitelists von [AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) und [Device Guard](https://docs.microsoft.com/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) wie Windows PowerShell 5.1.
 Mit Anwendungswhitelists können Sie detailliert steuern, welche Binärdateien ausgeführt werden dürfen, wenn PowerShell im [eingeschränkten Sprachmodus](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/) verwendet wird.
 
 ## <a name="performance-improvements"></a>Leistungsverbesserungen
@@ -67,7 +67,7 @@ Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Sort-Ob
 | Zeit (in Sek.)   | 12,170                 | 8,493               | 7,08                |
 | Beschleunigung (in %) | Nicht zutreffend                    | 30,2 %               | 16,6 %               |
 
-Auch `Import-Csv` wurde nach Regression durch Windows PowerShell deutlich schneller.
+`Import-Csv` wurde nach Regression durch Windows PowerShell ebenfalls deutlich schneller.
 Im folgenden Beispiel wird eine CSV-Testdatei mit 26.616 Zeilen und sechs Spalten verwendet:
 
 ```powershell
@@ -190,8 +190,8 @@ Durch die Mithilfe von [@markekraus](https://github.com/markekraus) konnte eine 
 und [`Invoke-RestMethod`](/powershell/module/microsoft.powershell.utility/invoke-restmethod) vorgenommen werden.
 
 - [PR #6109](https://github.com/PowerShell/PowerShell/pull/6109): Standardcodierung für `application-json`-Antworten auf UTF-8 festgelegt.
-- [PR #6018](https://github.com/PowerShell/PowerShell/pull/6018): `-SkipHeaderValidation`-Parameter zum Zulassen von `Content-Type`-Headern, die nicht mit den Standards kompatibel sind.
-- [PR #5972](https://github.com/PowerShell/PowerShell/pull/5972): `Form`-Parameter zur Unterstützung von vereinfachter `multipart/form-data`-Unterstützung.
+- [PR #6018](https://github.com/PowerShell/PowerShell/pull/6018) - `-SkipHeaderValidation`-Parameter zum Zulassen von `Content-Type`-Headern, die nicht mit den Standards kompatibel sind.
+- [PR #5972](https://github.com/PowerShell/PowerShell/pull/5972) - `Form`-Parameter zur Unterstützung von vereinfachter `multipart/form-data`-Unterstützung.
 - [PR #6338](https://github.com/PowerShell/PowerShell/pull/6338): Kompatible Verarbeitung von Beziehungsschlüsseln ohne Beachtung der Groß-/Kleinschreibung.
 - [PR #6447](https://github.com/PowerShell/PowerShell/pull/6447): Hinzufügen des `-Resume`-Parameters zu Web-Cmdlets.
 
@@ -209,8 +209,8 @@ Ist `pwsh.exe` nicht verfügbar, greift PowerShell Direct wieder auf `powershell
 
 `Enable-PSRemoting` erstellt jetzt zwei Konfigurationen für Remotesitzungen:
 
-- Eine für die Hauptversion von PowerShell, z.B. `PowerShell.6`. Auf diesen Endpunkt kann nach geringfügigen Aktualisierungen als systemweite Sitzungskonfiguration von PowerShell 6 zurückgegriffen werden.
-- Eine versionsspezifische Sitzungskonfiguration, z.B. `PowerShell.6.1.0`.
+- Eine für die Hauptversion von PowerShell, Beispiel: `PowerShell.6`. Auf diesen Endpunkt kann nach geringfügigen Aktualisierungen als systemweite Sitzungskonfiguration von PowerShell 6 zurückgegriffen werden.
+- Eine versionsspezifische Sitzungskonfiguration, z.B.: `PowerShell.6.1.0`
 
 Dieses Verhalten ist hilfreich, wenn Sie mehrere Versionen von PowerShell 6 auf einem Computer installiert und zugänglich haben möchten.
 
@@ -305,12 +305,12 @@ Durch die Mithilfe von [@iSazonov](https://github.com/iSazonov) konnte das [`Tes
 ### <a name="update-help-as-non-admin"></a>`Update-Help` als Nicht-Administrator
 
 Aufgrund der großen Nachfrage muss nun `Update-Help` nicht mehr als Administrator ausgeführt werden.
-Über `Update-Help` wird die Hilfe jetzt standardmäßig in einen benutzerdefinierten Ordner gespeichert.
+`Update-Help` wird die Hilfe jetzt standardmäßig in einem benutzerdefinierten Ordner gespeichert.
 
 ### <a name="new-methodsproperties-on-pscustomobject"></a>Neue Methoden/Eigenschaften für `PSCustomObject`
 
 Durch die Mithilfe von [@iSazonov](https://github.com/iSazonov) konnten `PSCustomObject` neue Methoden und Eigenschaften hinzugefügt werden.
-`PSCustomObject` enthält nun eine `Count`/`Length`-Eigenschaften wie andere Objekte.
+`PSCustomObject` enthält nun eine `Count`/`Length`-Eigenschaft wie andere Objekte.
 
 ```powershell
 $PSCustomObject = [pscustomobject]@{foo = 1}
@@ -516,3 +516,10 @@ Visual Basic wurde jedoch nur selten mit `Add-Type` verwendet. Daher wurde diese
 ### <a name="cleaned-up-uses-of-commandtypesworkflow-and-workflowinfocleaned"></a>Verwendung von `CommandTypes.Workflow` und `WorkflowInfoCleaned` bereinigt
 
 Weitere Informationen zu diesen Änderungen finden Sie unter [PR #6708](https://github.com/PowerShell/PowerShell/pull/6708).
+
+### <a name="group-object-now-sorts-the-groups"></a>Group-Object sortiert jetzt die Gruppen
+
+Im Rahmen der Leistungsverbesserung gibt `Group-Object` jetzt eine sortierte Auflistung der Gruppen zurück.
+Obwohl Sie sich auf die Reihenfolge nicht verlassen sollten, könnte diese Änderung zu einer Teilung führen, wenn Sie die erste Gruppe anzeigen möchten. Wir haben entschieden, dass diese Leistungsverbesserung die Änderung wert wäre, weil sich die Abhängigkeit vom früheren Verhalten nur geringfügig auswirkt.
+
+Weitere Informationen zu dieser Änderung finden Sie unter [Problem #7409](https://github.com/PowerShell/PowerShell/issues/7409).
