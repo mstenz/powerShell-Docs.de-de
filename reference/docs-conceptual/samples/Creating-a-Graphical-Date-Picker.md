@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Erstellen einer grafischen Datumsauswahl
 ms.assetid: c1cb722c-41e9-4baa-be83-59b4653222e9
-ms.openlocfilehash: 6dd43a3b1f4c67633ad1755de3db88eb8c6772c8
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: d3b24af935e781a8a36fc346a6108baaed37b6db
+ms.sourcegitcommit: 3f6002e7109373eda31cc65fc84d2600447cb7e9
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55678586"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59506800"
 ---
 # <a name="creating-a-graphical-date-picker"></a>Erstellen einer grafischen Datumsauswahl
 
@@ -22,101 +22,110 @@ Kopieren und fügen Sie Folgendes in Windows PowerShell ISE ein, und speichern S
 Add-Type -AssemblyName System.Windows.Forms
 Add-Type -AssemblyName System.Drawing
 
-$form = New-Object Windows.Forms.Form
+$form = New-Object Windows.Forms.Form -Property @{
+    StartPosition = [Windows.Forms.FormStartPosition]::CenterScreen
+    Size          = New-Object Drawing.Size 243, 230
+    Text          = 'Select a Date'
+    Topmost       = $true
+}
 
-$form.Text = 'Select a Date'
-$form.Size = New-Object Drawing.Size @(243,230)
-$form.StartPosition = 'CenterScreen'
-
-$calendar = New-Object System.Windows.Forms.MonthCalendar
-$calendar.ShowTodayCircle = $false
-$calendar.MaxSelectionCount = 1
+$calendar = New-Object Windows.Forms.MonthCalendar -Property @{
+    ShowTodayCircle   = $false
+    MaxSelectionCount = 1
+}
 $form.Controls.Add($calendar)
 
-$OKButton = New-Object System.Windows.Forms.Button
-$OKButton.Location = New-Object System.Drawing.Point(38,165)
-$OKButton.Size = New-Object System.Drawing.Size(75,23)
-$OKButton.Text = 'OK'
-$OKButton.DialogResult = [System.Windows.Forms.DialogResult]::OK
+$OKButton = New-Object Windows.Forms.Button -Property @{
+    Location     = New-Object Drawing.Point 38, 165
+    Size         = New-Object Drawing.Size 75, 23
+    Text         = 'OK'
+    DialogResult = [Windows.Forms.DialogResult]::OK
+}
 $form.AcceptButton = $OKButton
 $form.Controls.Add($OKButton)
 
-$CancelButton = New-Object System.Windows.Forms.Button
-$CancelButton.Location = New-Object System.Drawing.Point(113,165)
-$CancelButton.Size = New-Object System.Drawing.Size(75,23)
-$CancelButton.Text = 'Cancel'
-$CancelButton.DialogResult = [System.Windows.Forms.DialogResult]::Cancel
+$CancelButton = New-Object Windows.Forms.Button -Property @{
+    Location     = New-Object Drawing.Point 113, 165
+    Size         = New-Object Drawing.Size 75, 23
+    Text         = 'Cancel'
+    DialogResult = [Windows.Forms.DialogResult]::Cancel
+}
 $form.CancelButton = $CancelButton
 $form.Controls.Add($CancelButton)
 
-$form.Topmost = $true
-
 $result = $form.ShowDialog()
 
-if ($result -eq [System.Windows.Forms.DialogResult]::OK)
-{
+if ($result -eq [Windows.Forms.DialogResult]::OK) {
     $date = $calendar.SelectionStart
     Write-Host "Date selected: $($date.ToShortDateString())"
 }
 ```
 
-Das Skript beginnt mit dem Laden von zwei .NET Framework-Klassen: **System.Drawing** und **System.Windows.Forms**. Sie starten dann eine neue Instanz der .NET Framework-Klasse **Windows.Forms.Form**. Diese stellt ein leeres Formular oder Fenster bereit, in das Sie Steuerelemente einfügen können.
+Das Skript beginnt mit dem Laden von zwei .NET Framework-Klassen: **System.Drawing** und **System.Windows.Forms.**
+Sie starten dann eine neue Instanz der .NET Framework-Klasse **Windows.Forms.Form**. Diese stellt ein leeres Formular oder Fenster bereit, in das Sie Steuerelemente einfügen können.
 
 ```powershell
-$form = New-Object Windows.Forms.Form
+$form = New-Object Windows.Forms.Form -Property @{
+    StartPosition = [Windows.Forms.FormStartPosition]::CenterScreen
+    Size          = New-Object Drawing.Size 243, 230
+    Text          = 'Select a Date'
+    Topmost       = $true
+}
 ```
 
-Nachdem Sie eine Instanz der Formularklasse erstellt haben, ordnen Sie drei Eigenschaften dieser Klasse Werte zu.
+Dieses Beispiel weist vier Eigenschaften dieser Klasse Werte zu, indem es die Eigenschaft **Property** und die Hashtabelle verwendet.
 
-- **Text.** Dies wird der Titel des Fensters.
+1. **StartPosition**: Wenn Sie diese Eigenschaft nicht hinzufügen, wählt Windows eine Stelle aus, wenn das Formular geöffnet wird.
+   Durch Festlegen dieser Eigenschaft auf **CenterScreen** wird das Formular automatisch bei jedem Laden in der Mitte des Bildschirms angezeigt.
 
-- **Size.** Dies ist die Größe des Formulars, in Pixeln. Dieses Skript erstellt ein Formular, das 243 Pixel breit und 230 Pixel hoch ist.
+2. **Size**: Dies ist die Größe des Formulars, in Pixeln.
+   Dieses Skript erstellt ein Formular, das 243 Pixel breit und 230 Pixel hoch ist.
 
-- **StartingPosition.** Für diese optionale Eigenschaft ist im Skript oben **CenterScreen** festgelegt. Wenn Sie diese Eigenschaft nicht hinzufügen, wählt Windows eine Stelle aus, wenn das Formular geöffnet wird. Durch Festlegen der **StartingPosition** auf **CenterScreen** wird das Formular automatisch bei jedem Laden in der Mitte des Bildschirms angezeigt.
+3. **Text**: Dies wird der Titel des Fensters.
+
+4. **Topmost**: Durch das Festlegen dieser Eigenschaft auf `$true` können Sie erzwingen, dass das Fenster über anderen geöffneten Fenstern und Dialogfeldern geöffnet wird.
+
+Als Nächstes erstellen Sie in Ihrem Formular ein Kalendersteuerelement.
+In diesem Beispiel wird der aktuelle Tag nicht hervorgehoben oder markiert.
+Benutzer können immer nur einen Tag im Kalender auswählen.
 
 ```powershell
-$form.Text = 'Select a Date'
-$form.Size = New-Object Drawing.Size @(243,230)
-$form.StartPosition = 'CenterScreen'
-```
-
-Als Nächstes erstellen Sie in Ihrem Formular ein Kalendersteuerelement. In diesem Beispiel wird der aktuelle Tag nicht hervorgehoben oder markiert. Benutzer können immer nur einen Tag im Kalender auswählen.
-
-```powershell
-$calendar = New-Object System.Windows.Forms.MonthCalendar
-$calendar.ShowTodayCircle = $false
-$calendar.MaxSelectionCount = 1
+$calendar = New-Object Windows.Forms.MonthCalendar -Property @{
+    ShowTodayCircle   = $false
+    MaxSelectionCount = 1
+}
 $form.Controls.Add($calendar)
 ```
 
-Als Nächstes erstellen Sie eine Schaltfläche **OK** für Ihr Formular. Legen Sie die Größe und das Verhalten der Schaltfläche **OK** fest. In diesem Beispiel wird als Position der Schaltfläche 165 Pixel vom oberen Rand des Formulars und 38 Pixel vom linken Rand entfernt festgelegt. Die Schaltflächenhöhe beträgt 23 Pixel und die Schaltflächenlänge 75 Pixel. Das Skript verwendet vordefinierte Windows-Formulartypen zur Bestimmung des Schaltflächenverhaltens.
+Als Nächstes erstellen Sie eine Schaltfläche **OK** für Ihr Formular.
+Legen Sie die Größe und das Verhalten der Schaltfläche **OK** fest.
+In diesem Beispiel wird als Position der Schaltfläche 165 Pixel vom oberen Rand des Formulars und 38 Pixel vom linken Rand entfernt festgelegt.
+Die Schaltflächenhöhe beträgt 23 Pixel und die Schaltflächenlänge 75 Pixel.
+Das Skript verwendet vordefinierte Windows-Formulartypen zur Bestimmung des Schaltflächenverhaltens.
 
 ```powershell
-$OKButton = New-Object System.Windows.Forms.Button
-$OKButton.Location = New-Object System.Drawing.Point(38,165)
-$OKButton.Size = New-Object System.Drawing.Size(75,23)
-$OKButton.Text = 'OK'
-$OKButton.DialogResult = [System.Windows.Forms.DialogResult]::OK
+$OKButton = New-Object Windows.Forms.Button -Property @{
+    Location     = New-Object Drawing.Point 38, 165
+    Size         = New-Object Drawing.Size 75, 23
+    Text         = 'OK'
+    DialogResult = [Windows.Forms.DialogResult]::OK
+}
 $form.AcceptButton = $OKButton
 $form.Controls.Add($OKButton)
 ```
 
-In entsprechender Weise erstellen Sie eine Schaltfläche **Abbrechen**. Die Position der Schaltfläche **Abbrechen** ist 165 Pixel vom oberen Rand und 113 Pixel vom linken Rand des Fensters entfernt.
+In entsprechender Weise erstellen Sie eine Schaltfläche **Abbrechen**.
+Die Position der Schaltfläche **Abbrechen** ist 165 Pixel vom oberen Rand und 113 Pixel vom linken Rand des Fensters entfernt.
 
 ```powershell
-$CancelButton = New-Object System.Windows.Forms.Button
-$CancelButton.Location = New-Object System.Drawing.Point(113,165)
-$CancelButton.Size = New-Object System.Drawing.Size(75,23)
-$CancelButton.Text = 'Cancel'
-$CancelButton.DialogResult = [System.Windows.Forms.DialogResult]::Cancel
+$CancelButton = New-Object Windows.Forms.Button -Property @{
+    Location     = New-Object Drawing.Point 113, 165
+    Size         = New-Object Drawing.Size 75, 23
+    Text         = 'Cancel'
+    DialogResult = [Windows.Forms.DialogResult]::Cancel
+}
 $form.CancelButton = $CancelButton
 $form.Controls.Add($CancelButton)
-```
-
-Legen Sie die Eigenschaft **Topmost** auf **$true** fest, um zu erzwingen, dass das Fenster über anderen geöffneten Fenstern und Dialogfeldern geöffnet wird.
-
-```powershell
-$form.Topmost = $true
 ```
 
 Fügen Sie die folgende Codezeile hinzu, um das Formular in Windows anzuzeigen.
@@ -125,11 +134,11 @@ Fügen Sie die folgende Codezeile hinzu, um das Formular in Windows anzuzeigen.
 $result = $form.ShowDialog()
 ```
 
-Abschließend weist der Code im Block **If** Windows an, was mit dem Formular geschehen soll, wenn Benutzer einen Tag im Kalender auswählen und anschließend auf die Schaltfläche **OK** klicken oder die **EINGABETASTE** drücken. Windows PowerShell zeigt den Benutzern das ausgewählte Datum an.
+Abschließend weist der Code im Block `if` Windows an, was mit dem Formular geschehen soll, wenn Benutzer einen Tag im Kalender auswählen und anschließend auf die Schaltfläche **OK** klicken oder die **EINGABETASTE** drücken.
+Windows PowerShell zeigt den Benutzern das ausgewählte Datum an.
 
 ```powershell
-if ($result -eq [System.Windows.Forms.DialogResult]::OK)
-{
+if ($result -eq [Windows.Forms.DialogResult]::OK) {
     $date = $calendar.SelectionStart
     Write-Host "Date selected: $($date.ToShortDateString())"
 }
@@ -137,6 +146,6 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 
 ## <a name="see-also"></a>Weitere Informationen
 
-- [Hey Scripting Guy: Warum funktionieren diese PowerShell GUI-Beispiele nicht?](https://go.microsoft.com/fwlink/?LinkId=506644)
+- [Hey Scripting Guy:  Warum funktionieren diese PowerShell GUI-Beispiele nicht?](https://go.microsoft.com/fwlink/?LinkId=506644)
 - [GitHub: Dave Wyatt's WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [Windows PowerShell-Tipp der Woche: Erstellen einer grafischen Datumsauswahl](https://technet.microsoft.com/library/ff730942.aspx)
+- [Windows PowerShell – Tipp der Woche:  Erstellen einer grafischen Datumsauswahl](https://technet.microsoft.com/library/ff730942.aspx)

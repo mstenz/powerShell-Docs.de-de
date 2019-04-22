@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,service,setup
 title: Schreiben, Kompilieren und Anwenden einer Konfiguration
-ms.openlocfilehash: c884af9d92ac375457d6eb75d815ae9a9159e273
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 947308efa165543571801c88a922daf44fa88be0
+ms.sourcegitcommit: 3f6002e7109373eda31cc65fc84d2600447cb7e9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795418"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59506817"
 ---
 > Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
@@ -60,13 +60,13 @@ Durch Ausführen der Konfiguration wie eine Funktion wird eine MOF-Datei für je
 Sie müssen das Skript „HelloWorld.ps1“ per *dot source* im aktuellen Bereich aufrufen, um die Konfiguration auszuführen.
 Weitere Informationen hierzu finden Sie unter [about_Scripts (Informationen zu Skripts)](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-6#script-scope-and-dot-sourcing).
 
-Das Skript „HelloWorld.ps1“ rufen Sie per <!-- markdownlint-disable MD038 -->
-*Dot source* auf, indem Sie den Pfad zum Speicherort nach dem `. ` (Punkt gefolgt von einem Leerzeichen) eingeben. Anschließend können Sie Ihre Konfiguration ausführen, indem Sie sie wie eine Funktion aufrufen.
+<!-- markdownlint-disable MD038 -->
+Das Skript „HelloWorld.ps1“ rufen Sie per *Dot source* auf, indem Sie den Pfad zum Speicherort nach dem `. ` (Punkt gefolgt von einem Leerzeichen) eingeben. Anschließend können Sie Ihre Konfiguration ausführen, indem Sie sie wie eine Funktion aufrufen.
 <!-- markdownlint-enable MD038 -->
 
 ```powershell
-. C:\Scripts\WebsiteTest.ps1
-HelloWolrd
+. C:\Scripts\HelloWorld.ps1
+HelloWorld
 ```
 
 Die folgende Ausgabe wird generiert:
@@ -90,7 +90,7 @@ Der LCM übernimmt das Aufrufen der DSC-Ressourcen, um die Konfiguration anzuwen
 Verwenden Sie den folgenden Code, um das Cmdlet `Start-DSCConfiguration` auszuführen. Geben Sie für den `-Path`-Parameter den Verzeichnispfad an, unter dem „localhost.mof“ gespeichert ist. Das Cmdlet `Start-DSCConfiguration` durchsucht das angegebene Verzeichnis auf Dateien namens „\<Computername\>.mof“. Das Cmdlet `Start-DSCConfiguration` versucht alle gefundenen MOF-Dateien auf den vom Dateinamen angegeben Computernamen („localhost“, „server01“, „dc-02“ usw.).
 
 > [!NOTE]
-> Wenn der Parameter `-Wait` nicht festgelegt wird, erstellt `Start-DSCConfiguration` einen Hintergrundauftrag zum Ausführen des Vorgangs. Durch Festlegen des `-Verbose`-Parameters können Sie die **ausführliche** Ausgabe des Vorgangs anzeigen. `-Wait` und `-Verbose` sind optionale Parameter.
+> Wenn der Parameter `-Wait` nicht festgelegt wird, erstellt `Start-DSCConfiguration` einen Hintergrundauftrag zum Ausführen des Vorgangs. Durch Festlegen des `-Verbose`-Parameters können Sie die **ausführliche** Ausgabe des Vorgangs anzeigen. `-Wait`und `-Verbose` sind optionale Parameter.
 
 ```powershell
 Start-DscConfiguration -Path C:\Scripts\HelloWorld -Verbose -Wait
