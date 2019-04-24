@@ -12,12 +12,12 @@ helpviewer_keywords:
 - ValidateCount attribute
 ms.assetid: 516af1ef-2c2e-408d-84bc-865f5bccf761
 caps.latest.revision: 11
-ms.openlocfilehash: 4e0be34b6f7a56dcf02a4381de4d2a5d08db14df
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
-ms.translationtype: MT
+ms.openlocfilehash: ffc45f6b80a2b7ed22f27d083d042b1de7f353f6
+ms.sourcegitcommit: f4bd4e116e22c8b5bfcb61680a7c42e58b4da93e
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794438"
+ms.lasthandoff: 04/22/2019
+ms.locfileid: "59983897"
 ---
 # <a name="validatecount-attribute-declaration"></a>Attributdeklaration: ValidateCount
 
@@ -31,28 +31,34 @@ Die ValidateCount-Attribut gibt an, die minimale und maximale Anzahl von Argumen
 
 #### <a name="parameters"></a>Parameter
 
-`MinLength` ([System. Int32](/dotnet/api/System.Int32)) erforderlich. Gibt die minimale Anzahl von Argumenten an.
+`MinLength` ([System.Int32][]) erforderlich. Gibt die minimale Anzahl von Argumenten an.
 
-`MaxLength`([System. Int32](/dotnet/api/System.Int32)) erforderlich. Gibt die maximale Anzahl von Argumenten an.
+`MaxLength`([System.Int32][]) erforderlich. Gibt die maximale Anzahl von Argumenten an.
 
 ## <a name="remarks"></a>Hinweise
 
-- Weitere Informationen dazu, wie Sie dieses Attribut zu deklarieren, finden Sie unter [wie Eingabe Validierungsregeln deklarieren](http://msdn.microsoft.com/en-us/544c2100-62ba-4be4-b2a2-cc0d4e4fc45b).
+- Weitere Informationen dazu, wie Sie dieses Attribut zu deklarieren, finden Sie unter [Wie Sie eine Anzahl an Argumenten überprüfen][].
 
 - Wenn dieses Attribut nicht aufgerufen wird, kann der entsprechende Cmdlet-Parameter eine beliebige Anzahl von Argumenten verfügen.
 
 - Die Windows PowerShell-Laufzeit löst einen Fehler in den folgenden Situationen aus:
 
-    - Die `MinLength` und `MaxLength` Parameter sind nicht vom Typ [System. Int32](/dotnet/api/System.Int32).
+    - Die `MinLength` und `MaxLength` Parameter sind nicht vom Typ [System.Int32][].
 
     - Der Wert des der `MaxLength` Attributparameter ist kleiner als der Wert, der die `MinLength` Attributparameter.
 
-- Das ValidateCount-Attribut definiert ist, indem die [System.Management.Automation.Validatecount](/dotnet/api/System.Management.Automation.ValidateCount) Klasse.
+- Das ValidateCount-Attribut definiert ist, indem die [System.Management.Automation.ValidateCountAttribute][] Klasse.
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[System.Management.Automation.Validatecount](/dotnet/api/System.Management.Automation.ValidateCount)
+[System.Management.Automation.ValidateCountAttribute][]
 
-[Gewusst wie: Deklarieren Sie die Überprüfung der Eingabe-Regeln](http://msdn.microsoft.com/en-us/544c2100-62ba-4be4-b2a2-cc0d4e4fc45b)
+[Wie Sie eine Anzahl an Argumenten überprüfen][]
 
-[Schreiben eines Windows PowerShell-Cmdlets](./writing-a-windows-powershell-cmdlet.md)
+[Schreiben eines Windows PowerShell-Cmdlets][]
+
+[Wie Sie eine Anzahl an Argumenten überprüfen]: how-to-validate-an-argument-count.md
+[Schreiben eines Windows PowerShell-Cmdlets]: writing-a-windows-powershell-cmdlet.md
+
+[System.Int32]: /dotnet/api/System.Int32
+[System.Management.Automation.ValidateCountAttribute]: /dotnet/api/System.Management.Automation.ValidateCountAttribute
