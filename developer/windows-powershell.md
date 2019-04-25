@@ -3,15 +3,15 @@ title: Windows PowerShell SDK
 ms.date: 09/13/2016
 ms.topic: article
 ms.openlocfilehash: 600d43874d9eda04d556a0ece198026dde9174c3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855356"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080457"
 ---
 # <a name="windows-powershell"></a>Windows PowerShell
 
-Aktualisiert: 8. Juli 2013
+aktualisierte: 8. Juli 2013
 
 Windows PowerShell® ist eine taskbasierte Befehlszeilenshell und Skriptsprache, die speziell für die Systemverwaltung entwickelt wurde. Basiert auf .NET Framework und Windows PowerShell® hilft IT-Experten und Hauptbenutzer beim Steuern und Automatisieren der Verwaltung von Windows-Betriebssystem und Anwendungen, die unter Windows ausgeführt.
 
