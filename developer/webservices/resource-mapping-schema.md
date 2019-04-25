@@ -9,19 +9,19 @@ ms.topic: article
 ms.assetid: a7b2cc4d-292f-4714-888b-3b81536bef5d
 caps.latest.revision: 7
 ms.openlocfilehash: 0a71167926a39c821d25228825297e924e9682bd
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862696"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080559"
 ---
-# <a name="resource-mapping-schema"></a><span data-ttu-id="19265-102">Schema für Ressourcenzuordnung</span><span class="sxs-lookup"><span data-stu-id="19265-102">Resource Mapping Schema</span></span>
+# <a name="resource-mapping-schema"></a><span data-ttu-id="265c3-102">Schema für Ressourcenzuordnung</span><span class="sxs-lookup"><span data-stu-id="265c3-102">Resource Mapping Schema</span></span>
 
-<span data-ttu-id="19265-103">Management OData IIS-Erweiterung verwendet XML-Dateien, um die Zuordnung zu definieren.</span><span class="sxs-lookup"><span data-stu-id="19265-103">Management OData IIS Extension uses XML files to define resource mapping.</span></span> <span data-ttu-id="19265-104">Das folgende XSD definiert das Schema für diese Dateien verwendet.</span><span class="sxs-lookup"><span data-stu-id="19265-104">The following XSD defines the schema used for these files.</span></span>
+<span data-ttu-id="265c3-103">Management OData IIS-Erweiterung verwendet XML-Dateien, um die Zuordnung zu definieren.</span><span class="sxs-lookup"><span data-stu-id="265c3-103">Management OData IIS Extension uses XML files to define resource mapping.</span></span> <span data-ttu-id="265c3-104">Das folgende XSD definiert das Schema für diese Dateien verwendet.</span><span class="sxs-lookup"><span data-stu-id="265c3-104">The following XSD defines the schema used for these files.</span></span>
 
-## <a name="resource-mapping-file-xsd"></a><span data-ttu-id="19265-105">Der Zuordnungsdatei XSD-Ressourcen</span><span class="sxs-lookup"><span data-stu-id="19265-105">Resource Mapping File XSD</span></span>
+## <a name="resource-mapping-file-xsd"></a><span data-ttu-id="265c3-105">Der Zuordnungsdatei XSD-Ressourcen</span><span class="sxs-lookup"><span data-stu-id="265c3-105">Resource Mapping File XSD</span></span>
 
-<span data-ttu-id="19265-106">Das folgende XSD definiert das Schema für Zuordnungsdateien für Management OData IIS-Erweiterung-Ressource.</span><span class="sxs-lookup"><span data-stu-id="19265-106">The following XSD defines the schema for Management OData IIS Extension resource mapping files.</span></span>
+<span data-ttu-id="265c3-106">Das folgende XSD definiert das Schema für Zuordnungsdateien für Management OData IIS-Erweiterung-Ressource.</span><span class="sxs-lookup"><span data-stu-id="265c3-106">The following XSD defines the schema for Management OData IIS Extension resource mapping files.</span></span>
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
