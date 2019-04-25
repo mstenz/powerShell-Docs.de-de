@@ -3,11 +3,11 @@ ms.date: 08/09/2017
 keywords: powershell,cmdlet,download,installieren,setup,windows 10, windows 8.1, windows 8.0,windows 7
 title: Installieren von Windows PowerShell
 ms.openlocfilehash: 345cde8012bece730e7217ed16be6175ad26bb28
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57429872"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086475"
 ---
 # <a name="installing-windows-powershell"></a>Installieren von Windows PowerShell
 

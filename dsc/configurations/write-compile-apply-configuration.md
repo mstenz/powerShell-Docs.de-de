@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,service,setup
 title: Schreiben, Kompilieren und Anwenden einer Konfiguration
 ms.openlocfilehash: 947308efa165543571801c88a922daf44fa88be0
-ms.sourcegitcommit: 3f6002e7109373eda31cc65fc84d2600447cb7e9
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59506817"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080015"
 ---
 > Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
@@ -90,7 +90,7 @@ Der LCM übernimmt das Aufrufen der DSC-Ressourcen, um die Konfiguration anzuwen
 Verwenden Sie den folgenden Code, um das Cmdlet `Start-DSCConfiguration` auszuführen. Geben Sie für den `-Path`-Parameter den Verzeichnispfad an, unter dem „localhost.mof“ gespeichert ist. Das Cmdlet `Start-DSCConfiguration` durchsucht das angegebene Verzeichnis auf Dateien namens „\<Computername\>.mof“. Das Cmdlet `Start-DSCConfiguration` versucht alle gefundenen MOF-Dateien auf den vom Dateinamen angegeben Computernamen („localhost“, „server01“, „dc-02“ usw.).
 
 > [!NOTE]
-> Wenn der Parameter `-Wait` nicht festgelegt wird, erstellt `Start-DSCConfiguration` einen Hintergrundauftrag zum Ausführen des Vorgangs. Durch Festlegen des `-Verbose`-Parameters können Sie die **ausführliche** Ausgabe des Vorgangs anzeigen. `-Wait`und `-Verbose` sind optionale Parameter.
+> Wenn der Parameter `-Wait` nicht festgelegt wird, erstellt `Start-DSCConfiguration` einen Hintergrundauftrag zum Ausführen des Vorgangs. Durch Festlegen des `-Verbose`-Parameters können Sie die **ausführliche** Ausgabe des Vorgangs anzeigen. `-Wait` und `-Verbose` sind optionale Parameter.
 
 ```powershell
 Start-DscConfiguration -Path C:\Scripts\HelloWorld -Verbose -Wait

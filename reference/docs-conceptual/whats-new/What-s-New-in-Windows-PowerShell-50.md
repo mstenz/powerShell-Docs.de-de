@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Neuerungen in Windows PowerShell 5.0
 ms.openlocfilehash: b2cb729948d4b53c5ea9a536dbeda04c7cb50997
-ms.sourcegitcommit: 9194e603ac242ae733839eb773e4af7360fdd044
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59363529"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085948"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Neuerungen in Windows PowerShell 5.0
 
@@ -127,7 +127,7 @@ Viele Updates und Verbesserungen für Windows PowerShell DSC (Desired State Conf
 - Das neue Cmdlet „New-TemporaryFile“ ermöglicht Ihnen während der Skripterstellung das Anlegen einer temporären Datei. Standardmäßig wird der neue temporäre Datei in ```C:\Users\<user name>\AppData\Local\Temp``` erstellt.
 - Die Cmdlets „Out-File“, „Add-Content“ und „Set-Content“ verfügen nun über den neuen Parameter „-NoNewline“, der eine neue Zeile hinter der Ausgabe weglässt.
 - Das Cmdlet „New-Guid“ nutzt die .NET Framework-Klasse „Guid“ zum Generieren einer GUID, die beim Schreiben von Skripts oder DSC-Ressourcen nützlich ist.
-- Da Dateiversionsinformationen irreführend sein können, insbesondere, wenn eine Datei mit einem Patch versehen wurde, sind die neuen Skripteigenschaften „FileVersionRaw“ und „ProductVersionRaw“ für „FileInfo“-Objekte verfügbar. Sie können z. B. den folgenden Befehl ausführen, um die Werte dieser Eigenschaften für „PowerShell.exe“ anzuzeigen, wobei „$pid“ die Prozess-ID für eine ausgeführte Windows PowerShell-Sitzung enthält:   ```Get-Process -Id $pid -FileVersionInfo | Format-List *version* -Force```
+- Da Dateiversionsinformationen irreführend sein können, insbesondere, wenn eine Datei mit einem Patch versehen wurde, sind die neuen Skripteigenschaften „FileVersionRaw“ und „ProductVersionRaw“ für „FileInfo“-Objekte verfügbar. Sie können z.B. den folgenden Befehl ausführen, um die Werte dieser Eigenschaften für „PowerShell.exe“ anzuzeigen, wobei „$pid“ die Prozess-ID für eine ausgeführte Windows PowerShell-Sitzung enthält: ```Get-Process -Id $pid -FileVersionInfo | Format-List *version* -Force```
 - Die neuen Cmdlets „Enter-PSHostProcess“ und „Exit-PSHostProcess“ ermöglichen das Debuggen von Windows PowerShell-Skripts in vom aktuellen Prozess getrennten Prozessen, der in der Windows PowerShell-Konsole ausgeführt wird. Führen Sie „Enter-PSHostProcess“ zum Eingeben einer oder Anfügen an eine bestimmte Prozess-ID und dann „Get-Runspace“ zum Zurückgeben der aktiven Runspaces innerhalb des Prozesses aus. Führen Sie „Exit-PSHostProcess“ zum Trennen vom Prozess aus, wenn Sie mit dem Debuggen des Skripts innerhalb des Prozesses fertig sind.
 - Das Cmdlet „Wait-Debugger“ wurde dem Modul [Microsoft.PowerShell.Utility](https://technet.microsoft.com/library/hh849958.aspx) hinzugefügt. Sie können „Wait-Debugger“ ausführen, um ein Skript im Debugger zu beenden, bevor die nächste Anweisung im Skript ausgeführt wird.
 - Der Windows PowerShell-Workflow-Debugger unterstützt nun die Vervollständigung mit der TAB-TASTE und das Debuggen geschachtelter Workflowfunktionen. Sie können jetzt **STRG+PAUSE** drücken, um den Debugger in einem ausgeführten Skript, in lokalen und Remotesitzungen und in einem Workflowskript zu öffnen.
@@ -204,7 +204,7 @@ Windows PowerShell 4.0 wird standardmäßig unter Windows 8.1 und Windows Server
 - [Neue Features in Windows PowerShell](#new-features-in-windows-powershell-1)
 - [Neue Features in Windows PowerShell Integrated Scripting Environment (ISE)](#new-features-in-windows-powershell-integrated-scripting-environment-ise)
 - [Neue Features in Windows PowerShell Workflow](#new-features-in-windows-powershell-workflow)
-- [Neue Features in Windows PowerShell-Webdienste](#new-features-in-windows-powershell-web-services)
+- [Neue Features in Windows PowerShell Web Services](#new-features-in-windows-powershell-web-services)
 - [Neue Features in Windows PowerShell Web Access](#new-features-in-windows-powershell-web-access)
 - [Wichtige Fehlerbehebungen in Windows PowerShell 4.0](#notable-bug-fixes-in-windows-powershell-40)
 
@@ -230,7 +230,7 @@ Windows PowerShell 4.0 bietet die folgenden neuen Features.
 - Das neue Cmdlet **Get-FileHash** wurde hinzugefügt, das für eine angegebene Datei einen Dateihash in einem von mehreren Formaten zurückgibt.
 - Wenn in Windows PowerShell 4.0 ein Modul den **DefaultCommandPrefix**-Schlüssel in seinem Manifest verwendet oder der Benutzer ein Modul mit dem **Prefix**-Parameter importiert, zeigt die **ExportedCommands**-Eigenschaft des Moduls die Befehle im Modul mit dem Präfix an. Wenn Sie die Befehle mithilfe der qualifizierten Modulsyntax „ModuleName\\CommandName“ verwenden, müssen die Befehlsnamen das Präfix enthalten.
 - Der Wert von **$PSVersionTable.PSVersion** wurde auf 4.0 aktualisiert.
-- Das Verhalten des **Where()**-Operators hat sich geändert. `Collection.Where('property -match name')` Das Akzeptieren eines Zeichenfolgenausdrucks im Format `"Property -CompareOperator Value"` wird nicht mehr unterstützt. Der **Where()**-Operator akzeptiert jedoch Zeichenfolgeausdrücke im Format eines Skriptblocks. Dies wird weiterhin unterstützt.
+- Das Verhalten des **Where()**-Operators hat sich geändert. Dass `Collection.Where('property -match name')` einen Zeichenfolgeausdruck im Format `"Property -CompareOperator Value"` akzeptiert, wird nicht mehr unterstützt. Der **Where()**-Operator akzeptiert jedoch Zeichenfolgeausdrücke im Format eines Skriptblocks. Dies wird weiterhin unterstützt.
 
 ### <a name="new-features-in-windows-powershell-integrated-scripting-environment-ise"></a>Neue Features in Windows PowerShell Integrated Scripting Environment (ISE)
 
@@ -305,7 +305,7 @@ Windows PowerShell 3.0 bietet die folgenden neuen Features.
 - [Neue Kern-Cmdlets](#new-core-cmdlets)
 - [Verbesserungen an vorhandenen Core-Cmdlets und Anbietern](#improvements-to-existing-core-cmdlets-and-providers)
 - [Import und Erkennung des Remote-Moduls](#remote-module-import-and-discovery)
-- [Verbesserte Vervollständigung mit der TAB-TASTE](#enhanced-tab-completion)
+- [Verbesserte Befehlszeilenergänzung](#enhanced-tab-completion)
 - [Automatisches Laden von Modulen](#module-auto-loading)
 - [Verbesserungen der Moduloberfläche](#module-experience-improvements)
 - [Vereinfachte Ermittlung von Befehlen](#simplified-command-discovery)

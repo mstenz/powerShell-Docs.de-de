@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: WindowsPackageCab-Ressource in DSC
 ms.openlocfilehash: 035944e7ca5c7469250c48a19b79f2f2d5d38e9a
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047279"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076938"
 ---
 # <a name="dsc-windowspackagecab-resource"></a>WindowsPackageCab-Ressource in DSC
 
-> Gilt für: Windows PowerShell 5.1 oder höher
+> Gilt für: Windows PowerShell 5.1 und höher
 
 Die Ressource **WindowsPackageCab** in Windows PowerShell Desired State Configuration (DSC) bietet einen Mechanismus zum Installieren oder Deinstallieren von Windows-CAB-Paketen auf einem Zielknoten.
 

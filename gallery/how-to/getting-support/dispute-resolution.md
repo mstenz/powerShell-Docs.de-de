@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Beilegung von Streitigkeiten
 ms.openlocfilehash: 2376226c14ec1a8c2bf7c9328e29f79528d2aee9
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002751"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084265"
 ---
 # <a name="dispute-resolution"></a>Beilegung von Streitigkeiten
 
@@ -27,13 +27,13 @@ Das PowerShellGallery.com-Supportteam wird sich an Ihren Gesprächen beteiligen 
 
 Folgende Elemente und Vorgänge sind im öffentlichen PowerShell-Katalog nicht zulässig. Die entsprechenden Elemente werden umgehend und ohne Rücksprache entfernt.  Die Paketbesitzer werden benachrichtigt, wenn ihr Paket entfernt wird.
 
-- Schadsoftware, Adware oder jegliche Art von Spyware.
+- Schadsoftware, Adware oder jegliche Art von Spyware,
 - Pakete, die konzipiert wurden, um Benutzersysteme zu schädigen.
-- Urheberrechts- oder Lizenzverletzungen.
-- Illegale Inhalte.
+- Urheberrechts- oder Lizenzverletzungen,
+- illegale Inhalte,
 - Reservieren von Paketnamen, die Sie verwenden möchten, jedoch noch nicht nutzen. Das umfasst auch das Veröffentlichen von Paketen, die keine produktiven Inhalte enthalten.
-  Veröffentlichen Sie Code, und arbeiten Sie umgehend damit, oder geben Sie den Namen für Benutzer frei, die über lieferfähige Produkte verfügen.
-- Der Versuch, den Katalog zu Zwecken zu nutzen, für die er nicht explizit ausgelegt ist.
+  Veröffentlichen Sie Code, und arbeiten Sie umgehend damit, oder geben Sie den Namen für Benutzer frei, die über lieferfähige Produkte verfügen, und
+- der Versuch, den Katalog zu Zwecken zu nutzen, für die er nicht explizit ausgelegt ist.
 
 Wenn Sie ein Paket finden, das gegen diese Regeln verstößt, klicken Sie auf der Seite „Paketdetails“ auf den Link „Missbrauch melden“, um einen Bericht zu übermitteln.
 

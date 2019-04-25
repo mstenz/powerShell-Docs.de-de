@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Neues in PowerShell 5.0
-ms.openlocfilehash: 0510e447f55cb7faedbfa3daa45b81ae4cb93de2
-ms.sourcegitcommit: 4a841ebda3339ae2477e0f5f5be8c01740221232
+ms.openlocfilehash: c9a3a360d0143d4b384cec226c36fe6565eb6040
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33677245"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085914"
 ---
 # <a name="whats-new-with-powershell-50"></a>Neues in PowerShell 5.0
 Windows PowerShell® 5.0 bietet wichtige neue Features, die die Verwendungsmöglichkeiten erweitern, die Benutzerfreundlichkeit verbessern und es Ihnen ermöglichen, die Steuerung und Verwaltung von Windows-basierten Umgebungen leichter und umfassender zu bewältigen.  Die wichtigsten Verbesserungen finden sich in den Bereichen DSC (Desired State Configuration, Konfigurieren des gewünschten Zustands), Leistung, Remoting und Spracherweiterungen.

@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
-ms.openlocfilehash: 08f431c27cd0ee769518b5246af2fa95aa499d54
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: aa2e9540af8b3d4c5de5e00377a84e0e5edd6e4a
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34217990"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057848"
 ---
 # <a name="new-temporaryfile"></a>New-TemporaryFile
 Mitunter müssen Sie in Ihren Skripts eine temporäre Datei erstellen. Hierfür dient das Cmdlet **New-TemporaryFile**:
