@@ -9,20 +9,20 @@ ms.topic: article
 ms.assetid: b2faa062-a959-49ff-932b-a64279f8ff2e
 caps.latest.revision: 4
 ms.openlocfilehash: 6055b9ffaa3e5a71a0c2fa0d15746d63db0c6d81
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56853156"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065138"
 ---
-# <a name="propertycountfortable-element-format"></a><span data-ttu-id="5003e-102">Element „PropertyCountForTable“ (Format)</span><span class="sxs-lookup"><span data-stu-id="5003e-102">PropertyCountForTable Element (Format)</span></span>
+# <a name="propertycountfortable-element-format"></a><span data-ttu-id="22e98-102">Element „PropertyCountForTable“ (Format)</span><span class="sxs-lookup"><span data-stu-id="22e98-102">PropertyCountForTable Element (Format)</span></span>
 
-<span data-ttu-id="5003e-103">Einführung hier einfügen.</span><span class="sxs-lookup"><span data-stu-id="5003e-103">Insert introduction here.</span></span>
+<span data-ttu-id="22e98-103">Einführung hier einfügen.</span><span class="sxs-lookup"><span data-stu-id="22e98-103">Insert introduction here.</span></span>
 
-## <a name="section-heading"></a><span data-ttu-id="5003e-104">Abschnittsüberschrift</span><span class="sxs-lookup"><span data-stu-id="5003e-104">Section Heading</span></span>
+## <a name="section-heading"></a><span data-ttu-id="22e98-104">Abschnittsüberschrift</span><span class="sxs-lookup"><span data-stu-id="22e98-104">Section Heading</span></span>
 
-<span data-ttu-id="5003e-105">Abschnittstext hier einfügen.</span><span class="sxs-lookup"><span data-stu-id="5003e-105">Insert section body here.</span></span>
+<span data-ttu-id="22e98-105">Fügen Sie hier den Abschnittstext ein.</span><span class="sxs-lookup"><span data-stu-id="22e98-105">Insert section body here.</span></span>
 
-### <a name="subsection-heading"></a><span data-ttu-id="5003e-106">Unterabschnittsüberschrift</span><span class="sxs-lookup"><span data-stu-id="5003e-106">Subsection Heading</span></span>
+### <a name="subsection-heading"></a><span data-ttu-id="22e98-106">Überschrift für Unterabschnitt</span><span class="sxs-lookup"><span data-stu-id="22e98-106">Subsection Heading</span></span>
 
-<span data-ttu-id="5003e-107">Unterabschnittstext hier einfügen.</span><span class="sxs-lookup"><span data-stu-id="5003e-107">Insert subsection body here.</span></span>
+<span data-ttu-id="22e98-107">Unterabschnittstext hier einfügen.</span><span class="sxs-lookup"><span data-stu-id="22e98-107">Insert subsection body here.</span></span>
