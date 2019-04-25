@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 1fca30b1-13fe-48a2-b0dd-979c161177a6
 caps.latest.revision: 14
 ms.openlocfilehash: 9a4b7c842c6222fa2e9f1c14f37f45d7a5158107
-ms.sourcegitcommit: c581c4c8036edf55147e7bce4b00c860da6c5a8b
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56863696"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082839"
 ---
 # <a name="host01-sample"></a>Host01-Beispiel
 
@@ -25,7 +25,7 @@ Dieses Beispiel zeigt, wie Sie eine hostanwendung implementiert wird, die einen 
 
  Dieses Beispiel ist die Windows PowerShell 2.0 erforderlich.
 
-## <a name="demonstrates"></a>Veranschaulicht
+## <a name="demonstrates"></a>Zeigt
 
 - Erstellen einer benutzerdefinierten Host-Klasse, leitet sich von der [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) Klasse.
 

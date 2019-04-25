@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 859a6e22-75b1-43d4-ba62-62c107803b37
 caps.latest.revision: 7
 ms.openlocfilehash: 98a3f61ff4fa2367f69357173d4e8e14288ff429
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857476"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083109"
 ---
 # <a name="writing-help-for-powershell-scripts-and-functions"></a>Schreiben von Hilfe für PowerShell-Skripts und Funktionen
 
@@ -39,7 +39,7 @@ Um das Skript oder die Funktion die XML-Datei zuzuordnen, verwenden die `Externa
 
 Wenn die `ExternalHelp` kommentieren Schlüsselwort ist vorhanden, er hat Vorrang vor kommentarbasierte Hilfe, auch wenn `Get-Help` eine Hilfedatei, die den Wert der entspricht wurde nicht gefunden der `ExternalHelp` Schlüsselwort.
 
-### <a name="online-help"></a>Onlinehilfe
+### <a name="online-help"></a>Online-Hilfe
 Sie können die Hilfethemen im Internet veröffentlichen und die anschließende Weiterleitung `Get-Help` zu die Themen zu öffnen.
 Weitere Informationen zum Schreiben von Kommentar-Hilfethemen finden Sie unter [Supporting Online Help](../module/supporting-online-help.md).
 
