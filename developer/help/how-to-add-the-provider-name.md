@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: c0e1c40b-d2fd-41c3-a5f9-7584ea6bf50b
 caps.latest.revision: 4
 ms.openlocfilehash: fec90170571ae66cf75241c48a45b560d4ead2de
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855386"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083287"
 ---
 # <a name="how-to-add-the-provider-name"></a>Hinzufügen des Anbieternamens
 
@@ -25,20 +25,20 @@ ms.locfileid: "56855386"
 
 ## <a name="section-heading"></a>Abschnittsüberschrift
 
- Abschnittstext hier einfügen.
+ Fügen Sie hier den Abschnittstext ein.
 
 #### <a name="procedure-title"></a>Titel der Prozedur
 
 ## <a name="example"></a>Beispiel
 
- Dies ist die optionale Beschreibung eines Codebeispiels.
+ Dies ist die optionale Beschreibung für ein Codebeispiel.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Microsoft.Win32.RegistryKey#4](Microsoft.Win32.RegistryKey#4)]  -->
 
- Kommentare (optional).
+ Optionale Kommentare.
 
 ## <a name="compiling-the-code"></a>Kompilieren des Codes
 
-## <a name="robust-programming"></a>Robuste Programmierung
+## <a name="robust-programming"></a>Stabile Programmierung
 
 ## <a name="net-framework-security"></a>.NET Framework-Sicherheit

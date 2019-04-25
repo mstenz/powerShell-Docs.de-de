@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 60873d0f-c5f1-4d5b-ade1-49ad0df43245
 caps.latest.revision: 5
 ms.openlocfilehash: e4ab19db16b8137c833f9ef89e69f31f141f9932
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57429515"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62081256"
 ---
 # <a name="stopproc01-code-samples"></a>StopProc01-Codebeispiele
 
@@ -24,7 +24,7 @@ Hier ist das Codebeispiel für die StopProc01-Beispiel-Cmdlet. Dies ist die `Sto
 >
 > Die heruntergeladene Quelldateien stehen in der  **\<PowerShell-Beispiele >** Verzeichnis.
 
-|Sprache|Thema|
+|Language|Thema|
 |--------------|-----------|
 |C#|[StopProc01 (C#)-Codebeispiele](./stopproc01-csharp-sample-code.md)|
 

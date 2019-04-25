@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 39388197-4ff9-4889-aa32-526011afa1f6
 caps.latest.revision: 6
 ms.openlocfilehash: e95ec550a7815a76a8bd7f9526dfa405a9644360
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56861626"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083653"
 ---
 # <a name="wide-view-groupby"></a>Breite Ansicht (GroupBy)
 
@@ -30,7 +30,7 @@ Dieses Beispiel zeigt, wie Sie eine Breite Ansicht zu implementieren, die Gruppe
    > [!WARNING]
    > Diese Formatierung Datei definiert die Anzeige eines Objekts, das bereits von einer Windows PowerShell-Formatierungsdateien definiert ist. Verwenden Sie die `prependPath` Parameter an, wenn Sie das Cmdlet ausführen, und Sie nicht werden diese Formatierung geladen können Datei als Modul.
 
-## <a name="demonstrates"></a>Veranschaulicht
+## <a name="demonstrates"></a>Zeigt
 
 Diese Formatierung Datei veranschaulicht die folgenden XML-Elemente:
 

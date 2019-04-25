@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 9abb63b8-6d02-4e24-9c0e-2d15a04e9051
 caps.latest.revision: 8
 ms.openlocfilehash: 7a36f548a3eccdf2c9cad04a8bfe28bf4e8d6dfd
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860106"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083738"
 ---
 # <a name="wide-view-basic"></a>Breite Ansicht (Basic)
 
@@ -30,7 +30,7 @@ In diesem Beispiel wird gezeigt, wie eine grundlegende Breite Ansicht zu impleme
    > [!WARNING]
    > Diese Formatierung Datei definiert die Anzeige eines Objekts, das bereits von einer Windows PowerShell-Formatierung-Datei definiert ist. Verwenden Sie die `prependPath` Parameter an, wenn Sie das Cmdlet ausführen, und Sie nicht werden diese Formatierung geladen können Datei als Modul.
 
-## <a name="demonstrates"></a>Veranschaulicht
+## <a name="demonstrates"></a>Zeigt
 
 Diese Formatierung Datei veranschaulicht die folgenden XML-Elemente:
 

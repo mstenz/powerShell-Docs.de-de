@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: d5891467-8e13-484d-b7af-32e6bffab35d
 caps.latest.revision: 4
 ms.openlocfilehash: b2e8f272a82ee03de306fd8eac45e109142f6284
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58054797"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080406"
 ---
 # <a name="common-workflow-parameters"></a>Allgemeine Workflowparameter
 
@@ -26,7 +26,7 @@ Die allgemeinen Workflowparameter sind wie folgt in verschiedene Kategorien grup
 |Name|Type|Beschreibung|Kann vom Benutzer zum Zeitpunkt der Ausführung werden angegeben?|Kann vom workflowautor beim Erstellen werden angegeben?|Kann vom workflowautor bei der Instanziierung werden angegeben?|
 |----------|----------|-----------------|-----------------------------------------------------|------------------------------------------------------------|-----------------------------------------------------------|
 |PSComputerName|String[]|Eine Liste von Computernamen für die Aufträge zu starten.|Ja|Ja|Ja|
-|PS-Anmeldeinformationen|[System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential)|Anmeldeinformationen für die Verwendung für die Anmeldung bei den Computern, die anhand des PSComputerName-Parameters. Dieser Parameter ist nur gültig, wenn PSComputerName angegeben wird.|Ja|Ja|Ja|
+|PSCredential|[System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential)|Anmeldeinformationen für die Verwendung für die Anmeldung bei den Computern, die anhand des PSComputerName-Parameters. Dieser Parameter ist nur gültig, wenn PSComputerName angegeben wird.|Ja|Ja|Ja|
 |PSPort|UInt32|Der Port, mit dem der Workflow ausgeführt werden.|Ja|Ja|Ja|
 |PSUseSSL|Boolescher Wert|Verwenden Sie Secure Sockets Layer (SSL)-Protokoll zum Herstellen einer sicheren Verbindung mit dem Remotecomputer zum Ausführen des Workflows.|Ja|Ja|Ja|
 |PSConfigurationName|Zeichenfolge|Die Sitzungskonfiguration verwendet, um den Workflow auszuführen.|Ja|Ja|Ja|

@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: ee3a7e56-7331-4f71-9ecb-7a59b8021c68
 caps.latest.revision: 10
 ms.openlocfilehash: d9109e8d5b69a25ad52b90bcaff9628b01067211
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58057619"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62081020"
 ---
 # <a name="accessdbprovidersample04"></a>AccessDBProviderSample04
 
 Dieses Beispiel zeigt, wie containermethoden um Aufrufe unterstützen die `Copy-Item`, `Get-ChildItem`, `New-Item`, und `Remove-Item` Cmdlets. Diese Methoden sollten implementiert werden, wenn der Datenspeicher Elemente enthält, die Container sind. Ein Container ist eine Gruppe von untergeordneten Elementen unter einem gemeinsamen übergeordneten Element. Die Anbieterklasse in diesem Beispiel ist abgeleitet von der [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) Klasse.
 
-## <a name="demonstrates"></a>Veranschaulicht
+## <a name="demonstrates"></a>Zeigt
 
 > [!IMPORTANT]
 > Die Anbieterklasse in den meisten Fällen von abgeleitet der [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)
