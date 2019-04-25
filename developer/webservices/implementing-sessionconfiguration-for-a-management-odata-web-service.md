@@ -9,19 +9,19 @@ ms.topic: article
 ms.assetid: 0b2a7ce2-3c33-469c-a4a4-b8fe3bd05324
 caps.latest.revision: 5
 ms.openlocfilehash: 93780ee8af80d78a5b97a32098384a148070b54a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859456"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080627"
 ---
-# <a name="implementing-sessionconfiguration-for-a-management-odata-web-service"></a><span data-ttu-id="84450-102">Implementieren von SessionConfiguration für einen Management OData-Webdienst</span><span class="sxs-lookup"><span data-stu-id="84450-102">Implementing SessionConfiguration for a Management OData web service</span></span>
+# <a name="implementing-sessionconfiguration-for-a-management-odata-web-service"></a><span data-ttu-id="53368-102">Implementieren von SessionConfiguration für einen Management OData-Webdienst</span><span class="sxs-lookup"><span data-stu-id="53368-102">Implementing SessionConfiguration for a Management OData web service</span></span>
 
-<span data-ttu-id="84450-103">Mit dem Webdienst des Windows PowerShell erfordert eine von Drittanbietern zum Implementieren der [System.Management.Automation.Remoting.Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) Windows PowerShell-Cmdlets verfügbar gemacht werden.</span><span class="sxs-lookup"><span data-stu-id="84450-103">Using the Windows PowerShell Web Service requires a third party to implement the [System.Management.Automation.Remoting.Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) interface to expose Windows PowerShell cmdlets.</span></span> <span data-ttu-id="84450-104">Diese Schnittstelle bietet Zugriff auf Informationen über die remote-Sitzung, die der Webdienst verwendet, um die Cmdlets auf dem Server auszuführen.</span><span class="sxs-lookup"><span data-stu-id="84450-104">This interface provides access to information about the remote session that the web service uses to run the cmdlets on the server.</span></span> <span data-ttu-id="84450-105">Nach den Code zum Implementieren der Schnittstelle zu schreiben, kompilieren Sie es in eine DLL, die in der Webanwendung verwendet werden.</span><span class="sxs-lookup"><span data-stu-id="84450-105">After writing the code to implement the interface, you must compile it into a DLL to be used in the web application.</span></span>
+<span data-ttu-id="53368-103">Mit dem Webdienst des Windows PowerShell erfordert eine von Drittanbietern zum Implementieren der [System.Management.Automation.Remoting.Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) Windows PowerShell-Cmdlets verfügbar gemacht werden.</span><span class="sxs-lookup"><span data-stu-id="53368-103">Using the Windows PowerShell Web Service requires a third party to implement the [System.Management.Automation.Remoting.Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) interface to expose Windows PowerShell cmdlets.</span></span> <span data-ttu-id="53368-104">Diese Schnittstelle bietet Zugriff auf Informationen über die remote-Sitzung, die der Webdienst verwendet, um die Cmdlets auf dem Server auszuführen.</span><span class="sxs-lookup"><span data-stu-id="53368-104">This interface provides access to information about the remote session that the web service uses to run the cmdlets on the server.</span></span> <span data-ttu-id="53368-105">Nach den Code zum Implementieren der Schnittstelle zu schreiben, kompilieren Sie es in eine DLL, die in der Webanwendung verwendet werden.</span><span class="sxs-lookup"><span data-stu-id="53368-105">After writing the code to implement the interface, you must compile it into a DLL to be used in the web application.</span></span>
 
-## <a name="implementation-of-pssessionconfiguration-interface"></a><span data-ttu-id="84450-106">Implementierung der PSSessionConfiguration-Schnittstelle</span><span class="sxs-lookup"><span data-stu-id="84450-106">Implementation of PSSessionConfiguration interface</span></span>
+## <a name="implementation-of-pssessionconfiguration-interface"></a><span data-ttu-id="53368-106">Implementierung der PSSessionConfiguration-Schnittstelle</span><span class="sxs-lookup"><span data-stu-id="53368-106">Implementation of PSSessionConfiguration interface</span></span>
 
-<span data-ttu-id="84450-107">Der folgende code implementiert die [System.Management.Automation.Remoting.Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) Schnittstelle.</span><span class="sxs-lookup"><span data-stu-id="84450-107">The following code implements the [System.Management.Automation.Remoting.Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) interface.</span></span>
+<span data-ttu-id="53368-107">Der folgende code implementiert die [System.Management.Automation.Remoting.Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) Schnittstelle.</span><span class="sxs-lookup"><span data-stu-id="53368-107">The following code implements the [System.Management.Automation.Remoting.Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) interface.</span></span>
 
 ```csharp
 //-----------------------------------------------------------------------
@@ -114,6 +114,6 @@ namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="84450-108">Weitere Informationen</span><span class="sxs-lookup"><span data-stu-id="84450-108">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="53368-108">Weitere Informationen</span><span class="sxs-lookup"><span data-stu-id="53368-108">See Also</span></span>
 
-[<span data-ttu-id="84450-109">Implementieren von benutzerdefinierten Autorisierung für einen Management OData-Webdienst</span><span class="sxs-lookup"><span data-stu-id="84450-109">Implementing Custom Authorization for a Management OData web service</span></span>](./implementing-custom-authorization-for-a-management-odata-web-service.md)
+[<span data-ttu-id="53368-109">Implementieren von benutzerdefinierten Autorisierung für einen Management OData-Webdienst</span><span class="sxs-lookup"><span data-stu-id="53368-109">Implementing Custom Authorization for a Management OData web service</span></span>](./implementing-custom-authorization-for-a-management-odata-web-service.md)
