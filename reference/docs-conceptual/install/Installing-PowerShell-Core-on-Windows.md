@@ -3,11 +3,11 @@ title: Installieren von PowerShell Core unter Windows
 description: Informationen zur Installation von PowerShell Core unter Windows
 ms.date: 08/06/2018
 ms.openlocfilehash: 910ee5a653fc1703bfddaf6367225f3b654d600f
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293009"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058028"
 ---
 # <a name="installing-powershell-core-on-windows"></a>Installieren von PowerShell Core unter Windows
 
@@ -24,15 +24,15 @@ Zum Aktivieren des PowerShell-Remoting über WSMan müssen die folgenden Vorauss
 
 Installieren Sie PowerShell auf einem Windows-Client oder Windows Server-Computer (funktioniert unter Windows 7 SP1, Windows Server 2008 R2 und höher), indem Sie das MSI-Paket von unserer GitHub-[Releases][]-Seite herunterladen. Scrollen Sie nach unten zum Abschnitt **Assets** des Release, das Sie installieren möchten. Der Abschnitt „Assets“ ist möglicherweise reduziert, sodass Sie klicken müssen, um ihn zu erweitern.
 
-Die MSI-Datei sieht so aus – `PowerShell-<version>-win-<os-arch>.msi`
+Die MSI-Datei sieht wie folgt aus: `PowerShell-<version>-win-<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
 
 Sobald sie heruntergeladen wurde, führen Sie den Installer mit einem Doppelklick aus und befolgen die Anweisungen.
 
 Das Installationsprogramm erstellt eine Verknüpfung im Windows-Startmenü.
 
-- Das Paket wird standardmäßig installiert unter `$env:ProgramFiles\PowerShell\<version>`
-- Sie können PowerShell starten über das Startmenü oder `$env:ProgramFiles\PowerShell\<version>\pwsh.exe`
+- Das Paket wird standardmäßig unter `$env:ProgramFiles\PowerShell\<version>` installiert
+- Sie können PowerShell über das Startmenü oder über `$env:ProgramFiles\PowerShell\<version>\pwsh.exe` starten
 
 ### <a name="administrative-install-from-the-command-line"></a>Administrative Installation über die Befehlszeile
 
