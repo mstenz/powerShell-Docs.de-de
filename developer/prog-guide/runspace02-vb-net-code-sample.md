@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: 9bd9d599-faa7-4154-ac36-1f35ccf8e320
 caps.latest.revision: 7
 ms.openlocfilehash: 5ad28cfbc73628ba818e42b87128d8f4ad273bda
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856646"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62081432"
 ---
-# <a name="runspace02-vbnet-code-sample"></a><span data-ttu-id="5c670-102">Runspace02-Codebeispiel (VB.NET)</span><span class="sxs-lookup"><span data-stu-id="5c670-102">Runspace02 (VB.NET) Code Sample</span></span>
+# <a name="runspace02-vbnet-code-sample"></a><span data-ttu-id="2d9e5-102">Runspace02-Codebeispiel (VB.NET)</span><span class="sxs-lookup"><span data-stu-id="2d9e5-102">Runspace02 (VB.NET) Code Sample</span></span>
 
-<span data-ttu-id="5c670-103">Hier ist der VB.NET-Quellcode für das Beispiel Runspace02 ein.</span><span class="sxs-lookup"><span data-stu-id="5c670-103">Here is the VB.NET source code for the Runspace02 sample.</span></span> <span data-ttu-id="5c670-104">Dieses Beispiel verwendet die [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) Klasse zum Ausführen der `Get-Process` Cmdlet synchron.</span><span class="sxs-lookup"><span data-stu-id="5c670-104">This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute the `Get-Process` cmdlet synchronously.</span></span> <span data-ttu-id="5c670-105">Windows Forms und Datenbindung werden dann zum Anzeigen der Ergebnisse in einem DataGridView-Steuerelement.</span><span class="sxs-lookup"><span data-stu-id="5c670-105">Windows Forms and data binding are then used to display the results in a DataGridView control.</span></span>
+<span data-ttu-id="2d9e5-103">Hier ist der VB.NET-Quellcode für das Beispiel Runspace02 ein.</span><span class="sxs-lookup"><span data-stu-id="2d9e5-103">Here is the VB.NET source code for the Runspace02 sample.</span></span> <span data-ttu-id="2d9e5-104">Dieses Beispiel verwendet die [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) Klasse zum Ausführen der `Get-Process` Cmdlet synchron.</span><span class="sxs-lookup"><span data-stu-id="2d9e5-104">This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute the `Get-Process` cmdlet synchronously.</span></span> <span data-ttu-id="2d9e5-105">Windows Forms und Datenbindung werden dann zum Anzeigen der Ergebnisse in einem DataGridView-Steuerelement.</span><span class="sxs-lookup"><span data-stu-id="2d9e5-105">Windows Forms and data binding are then used to display the results in a DataGridView control.</span></span>
 
-## <a name="code-sample"></a><span data-ttu-id="5c670-106">Codebeispiel</span><span class="sxs-lookup"><span data-stu-id="5c670-106">Code Sample</span></span>
+## <a name="code-sample"></a><span data-ttu-id="2d9e5-106">Codebeispiel</span><span class="sxs-lookup"><span data-stu-id="2d9e5-106">Code Sample</span></span>
 
 ```vb
 Imports System
@@ -86,6 +86,6 @@ End Namespace
 
 <!-- TODO!!!: [!code-csharp[Runspace02.vb](../../powershell-sdk-samples/SDK-2.0/vb/Runspace02/Runspace02.vb#L09-L68 "Runspace02.vb")] -->
 
-## <a name="see-also"></a><span data-ttu-id="5c670-107">Weitere Informationen</span><span class="sxs-lookup"><span data-stu-id="5c670-107">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="2d9e5-107">Weitere Informationen</span><span class="sxs-lookup"><span data-stu-id="2d9e5-107">See Also</span></span>
 
-[<span data-ttu-id="5c670-108">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="5c670-108">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="2d9e5-108">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="2d9e5-108">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
