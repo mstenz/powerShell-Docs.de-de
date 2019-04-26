@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 10098160-c6b4-4339-b8ff-2c4f8cc0699b
 caps.latest.revision: 13
 ms.openlocfilehash: fbc77cc0fafce93d239da1c459d4b761b21ef3cb
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860316"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082123"
 ---
 # <a name="updatable-help-authoring-step-by-step"></a>Aktualisierbare Hilfeerstellung: Ausführliche Anleitung
 
@@ -25,7 +25,7 @@ Aktualisierbare Hilfe ist für Endbenutzer ausgelegt, aber bietet auch bedeutend
 
 Die folgenden Schritte bieten einen Überblick über den Prozess der Unterstützung der aktualisierbaren Hilfe.
 
-### <a name="step-1-find-an-internet-site-for-your-help-files"></a>„Schritt 1: Suchen einer Internetsite für Ihre Hilfedateien
+### <a name="step-1-find-an-internet-site-for-your-help-files"></a>Schritt 1: Suchen einer Internetsite für Ihre Hilfedateien
 
 Der erste Schritt beim Erstellen von aktualisierbaren Hilfe ist finden Sie einen Speicherort im Internet nach Hilfedateien des Moduls. Tatsächlich können Sie zwei verschiedene Speicherorten. Sie können an einem Speicherort im Internet und die Hilfe Content-CAB-Dateien auf einem anderen Speicherort im Internet des Moduls hilfeinformationsdatei (HelpInfo XML - unten beschrieben) beibehalten. Alle Inhalte CAB Hilfedateien für ein Modul müssen sich am gleichen Standort sein. Sie können Hilfe Inhalte CAB-Dateien für unterschiedliche Module am gleichen Speicherort platzieren.
 
@@ -52,7 +52,7 @@ Die HelpInfo XML-Informationsdatei enthält den URI, von dem Speicherort im Inte
 
 Digitale Signaturen sind nicht erforderlich, aber sie sind eine optimale Empfehlung, wenn Sie Dateien gemeinsam nutzen.
 
-### <a name="step-5-create-cab-files"></a>Schritt 5: Erstellen der CAB-Dateien
+### <a name="step-5-create-cab-files"></a>Schritt 5: Erstellen der CAB-Dateien
 
 Verwenden Sie ein Tool, erstellt der CAB-Dateien wie MakeCab.exe, zum Erstellen, einer. CAB-Datei, die die Hilfedateien für das Modul enthält. Erstellen Sie eine separate CAB-Datei für die Hilfedateien in jede unterstützte Benutzeroberflächenkultur an. Weitere Informationen finden Sie unter [vorbereiten aktualisierbare Hilfe CAB-Dateien wie](./how-to-prepare-updatable-help-cab-files.md).
 

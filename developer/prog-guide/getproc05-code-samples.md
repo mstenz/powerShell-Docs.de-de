@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: 9a770ee0-5bf8-409a-8c2b-4ece35f84596
 caps.latest.revision: 6
 ms.openlocfilehash: 50da0fccfc6cce3cb69e4226356a4db269f94543
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56861616"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62081567"
 ---
 # <a name="getproc05-code-samples"></a>GetProc05-Codebeispiele
 
 Hier sind die Codebeispiele für die GetProc05-Beispiel-Cmdlet. Dies `Get-Process` Cmdlet ist vergleichbar mit dem Cmdlet, die in beschriebenen [hinzufügen ohne Abbruch Fehlerberichterstattung an Ihr Cmdlet](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md).
 
-|Sprache|Thema|
+|Language|Thema|
 |--------------|-----------|
 |C#|[GetProc05 (C#)-Codebeispiele](./getproc05-csharp-sample-code.md)|
 |VB.NET|[GetProc05 Beispielcode (VB.NET)](./getproc05-vb-net-sample-code.md)|

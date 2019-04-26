@@ -12,11 +12,11 @@ helpviewer_keywords:
 ms.assetid: a6adca44-b94b-4103-9970-a9b414355e60
 caps.latest.revision: 5
 ms.openlocfilehash: 6ec0752a9ae06c5c2cdd1a1851caeeff52d8eb74
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58055154"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62081834"
 ---
 # <a name="creating-a-windows-powershell-property-provider"></a>Erstellen eines Windows PowerShell-Eigenschaftenanbieters
 
@@ -90,7 +90,7 @@ Hier ist die standardmäßige Implementierung des [System.Management.Automation.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testcmdletspropertyprovidergetpropertydynamicparameters](Msh_samplestestcmdlets#testcmdletspropertyprovidergetpropertydynamicparameters)]  -->
 
-## <a name="setting-properties"></a>Einstellungseigenschaften
+## <a name="setting-properties"></a>Festlegen von Eigenschaften
 
 Um Eigenschaften festzulegen, muss der Anbieter der Windows PowerShell-Eigenschaft implementieren die [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) -Methode zur Unterstützung der Aufrufe von der `Set-ItemProperty` Cmdlet. Diese Methode legt eine oder mehrere Eigenschaften des Elements am angegebenen Pfad fest, und die angegebenen Eigenschaften nach Bedarf überschrieben. [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) schreibt außerdem eine Instanz von einem [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) Objekt, das einen Eigenschaftenbehälter mit der aktualisierten darstellt. Eigenschaften.
 
