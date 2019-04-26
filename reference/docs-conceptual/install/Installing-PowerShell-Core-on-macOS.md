@@ -3,16 +3,16 @@ title: Installieren von PowerShell Core unter macOS
 description: Informationen zur Installation von PowerShell Core unter macOS
 ms.date: 12/12/2018
 ms.openlocfilehash: 7db8ca0cb6d13db8ce7f11b4a4b03b7d3f9b6feb
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293400"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086458"
 ---
 # <a name="installing-powershell-core-on-macos"></a>Installieren von PowerShell Core unter macOS
 
 PowerShell Core unterstützt macOs 10.12 und höher.
-Sämtliche Pakete sind auf der Seite [Releases][] über GitHub verfügbar.
+Sämtliche Pakete sind auf der Seite [Freigaben][] über GitHub verfügbar.
 Nachdem Sie das Paket installiert haben, führen Sie `pwsh` über das Terminal aus.
 
 ## <a name="about-brew"></a>Informationen zu Brew
@@ -84,9 +84,8 @@ brew cask upgrade powershell-preview
 
 ## <a name="installation-via-direct-download"></a>Installation über einen direkten Download
 
-Laden Sie das PKG-Paket
-`powershell-6.2.0-osx-x64.pkg`
-über die Seite [Releases][] auf Ihren macOS-Computer herunter.
+Laden Sie das PKG-Paket `powershell-6.2.0-osx-x64.pkg`
+über die Seite [Freigaben][] auf Ihren macOS-Computer herunter.
 
 Doppelklicken Sie entweder auf die Datei, und befolgen Sie die Anweisungen, oder installieren Sie das Paket über das Terminal:
 
@@ -123,7 +122,7 @@ Installieren Sie [OpenSSL](#install-openssl). OpenSSL ist für PowerShell-Remoti
 
 ## <a name="installing-dependencies"></a>Installieren von Abhängigkeiten
 
-### <a name="install-xcode-command-line-tools"></a>Installieren von XCode-Befehlszeilentools
+### <a name="install-xcode-command-line-tools"></a>Installieren von XCode-Befehslzeilentools
 
 ```sh
 xcode-select --install
@@ -145,7 +144,7 @@ Führen Sie `brew install openssl` aus, um OpenSSL zu installieren.
 1. Installieren Sie MacPorts.
    Wenn Sie Anleitungen dazu benötigen, lesen Sie das [Installationshandbuch](https://guide.macports.org/chunked/installing.macports.html).
 1. Aktualisieren Sie MacPorts durch Ausführen von `sudo port selfupdate`.
-1. Führen Sie ein Upgrade von MacPorts-Paketen durch Ausführen von `sudo port upgrade outdated` durch.
+1. Führen Sie eine Upgrade von MacPorts-Paketen durch Ausführen von `sudo port upgrade outdated` durch.
 1. Installieren Sie OpenSSL durch Ausführen von `sudo port install openssl`.
 1. Verknüpfen Sie die Bibliotheken, um sie PowerShell zur Verfügung zu stellen:
 
@@ -175,13 +174,13 @@ Lesen Sie den Abschnitt [Pfade](#paths) in diesem Artikel, um zu erfahren, wie S
 
 ## <a name="paths"></a>Pfade
 
-* `$PSHOME` auf `/usr/local/microsoft/powershell/6.2.0/`
-* Benutzerprofile werden gelesen über `~/.config/powershell/profile.ps1`
-* Standardprofile werden gelesen über `$PSHOME/profile.ps1`
-* Benutzermodule werden gelesen über `~/.local/share/powershell/Modules`
-* Freigegebene Module werden gelesen über `/usr/local/share/powershell/Modules`
-* Standardmodule werden gelesen über `$PSHOME/Modules`
-* Der Verlauf von „PSReadline“ wird aufgezeichnet in `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
+* `$PSHOME` ist `/usr/local/microsoft/powershell/6.2.0/`.
+* Benutzerprofile werden über `~/.config/powershell/profile.ps1` gelesen.
+* Standardprofile werden über `$PSHOME/profile.ps1` gelesen.
+* Benutzermodule werden über `~/.local/share/powershell/Modules` gelesen.
+* Freigegebene Module werden über `/usr/local/share/powershell/Modules` gelesen.
+* Standardmodule werden über `$PSHOME/Modules` gelesen.
+* Der Verlauf von „PSReadline“ wird in `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt` aufgezeichnet.
 
 Die Profile halten sich an die Konfiguration von PowerShell pro Host.
 Dies bedeutet, dass hostspezifische Standardprofile in `Microsoft.PowerShell_profile.ps1` am gleichen Speicherort vorhanden sind.
@@ -201,5 +200,5 @@ Daher ist `$PSHOME` gleich `/usr/local/microsoft/powershell/6.2.0/`, und der sym
 [Cask]: https://github.com/Homebrew/homebrew-cask
 [cask-versions]: https://github.com/Homebrew/homebrew-cask-versions
 [GitHub]: https://github.com/Homebrew
-[Releases]: https://github.com/PowerShell/PowerShell/releases/latest
+[Freigaben]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
