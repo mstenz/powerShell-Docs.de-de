@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 4ba6d1d2-7055-4fef-b752-a5ae8b4eeb65
 caps.latest.revision: 7
 ms.openlocfilehash: 50a02e9a7522fc04b407329f513670215ad051cf
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862566"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080542"
 ---
-# <a name="role-based-authorization-configuration-schema"></a><span data-ttu-id="4184a-102">Konfigurationsschema für die rollenbasierte Autorisierung</span><span class="sxs-lookup"><span data-stu-id="4184a-102">Role-Based Authorization Configuration Schema</span></span>
+# <a name="role-based-authorization-configuration-schema"></a><span data-ttu-id="78b05-102">Konfigurationsschema für die rollenbasierte Autorisierung</span><span class="sxs-lookup"><span data-stu-id="78b05-102">Role-Based Authorization Configuration Schema</span></span>
 
-<span data-ttu-id="4184a-103">Die [PswsRoleBasedPlugins](http://go.microsoft.com/fwlink/?LinkId=243041) Beispiel verwendet XML-Dateien, um die Konfiguration der Autorisierungsrichtlinie für.</span><span class="sxs-lookup"><span data-stu-id="4184a-103">The [PswsRoleBasedPlugins](http://go.microsoft.com/fwlink/?LinkId=243041) sample uses XML files to configure the authorization policy.</span></span> <span data-ttu-id="4184a-104">Das folgende XSD definiert das Schema für diese Dateien verwendet.</span><span class="sxs-lookup"><span data-stu-id="4184a-104">The following XSD defines the schema used for these files.</span></span>
+<span data-ttu-id="78b05-103">Die [PswsRoleBasedPlugins](http://go.microsoft.com/fwlink/?LinkId=243041) Beispiel verwendet XML-Dateien, um die Konfiguration der Autorisierungsrichtlinie für.</span><span class="sxs-lookup"><span data-stu-id="78b05-103">The [PswsRoleBasedPlugins](http://go.microsoft.com/fwlink/?LinkId=243041) sample uses XML files to configure the authorization policy.</span></span> <span data-ttu-id="78b05-104">Das folgende XSD definiert das Schema für diese Dateien verwendet.</span><span class="sxs-lookup"><span data-stu-id="78b05-104">The following XSD defines the schema used for these files.</span></span>
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
