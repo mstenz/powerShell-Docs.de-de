@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: fc9d80ee-6ebd-48cd-a7ea-53cb2b442a22
 caps.latest.revision: 6
 ms.openlocfilehash: ec5a8c284dd3fa772261099281aba1fb68c49118
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856476"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62068044"
 ---
 # <a name="getprocesssample03-sample"></a>GetProcessSample03-Beispiel
 
@@ -51,7 +51,7 @@ Dieses Beispiel zeigt, wie Sie ein Cmdlet zu implementieren, die die Prozesse au
 
 Dieses Beispiel ist die Windows PowerShell 2.0 erforderlich.
 
-## <a name="demonstrates"></a>Veranschaulicht
+## <a name="demonstrates"></a>Zeigt
 
 Dieses Beispiel veranschaulicht die folgenden.
 

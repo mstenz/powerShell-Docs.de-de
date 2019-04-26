@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 918f381c-43e6-4594-a468-a40bfa8a16d6
 caps.latest.revision: 7
 ms.openlocfilehash: 3c94d8e98f179286112a417230fce659dc0b614c
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794160"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065307"
 ---
 # <a name="list-view-basic"></a>Listenansicht (Basic)
 
@@ -30,7 +30,7 @@ Dieses Beispiel zeigt, wie Sie eine einfache Listenansicht zu implementieren, di
    > [!WARNING]
    > Diese Formatierung Datei definiert die Anzeige eines Objekts, das bereits von einer Windows PowerShell-Formatierung-Datei definiert ist. Verwenden Sie die `prependPath` Parameter an, wenn Sie das Cmdlet ausführen, und Sie nicht werden diese Formatierung geladen können Datei als Modul.
 
-## <a name="demonstrates"></a>Veranschaulicht
+## <a name="demonstrates"></a>Zeigt
 
 Diese Formatierung Datei veranschaulicht die folgenden XML-Elemente:
 

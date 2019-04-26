@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 4eb17b4f-d4c3-4ab1-8dd8-ad34f300b273
 caps.latest.revision: 4
 ms.openlocfilehash: aaacd5c1f844fd1299cc9570da990a46c0222176
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862796"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066361"
 ---
 # <a name="defining-common-configuration-features"></a>Definieren von allgemeinen Konfigurationsfunktionen
 
@@ -21,8 +21,8 @@ Einführung hier einfügen.
 
 ## <a name="section-heading"></a>Abschnittsüberschrift
 
-Abschnittstext hier einfügen.
+Fügen Sie hier den Abschnittstext ein.
 
-### <a name="subsection-heading"></a>Unterabschnittsüberschrift
+### <a name="subsection-heading"></a>Überschrift für Unterabschnitt
 
 Unterabschnittstext hier einfügen.

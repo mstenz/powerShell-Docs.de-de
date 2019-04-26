@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 868194a2-17e9-4184-bc36-c04a33f26494
 caps.latest.revision: 4
-ms.openlocfilehash: dbccaf5b8e48a1c4d924bc0ec4ea09b25e10adf0
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 30e98bfcf06b1720005a73ee8294aeba7e1ae066
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857966"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083500"
 ---
 # <a name="examples-of-comment-based-help"></a>Beispiele für die kommentarbasierte Hilfe
 
 Dieses Thema enthält Beispiel für die kommentarbasierte Hilfe für Skripts und Funktionen veranschaulichen.
 
-## <a name="example-1-comment-based-help-for-a-function"></a>Beispiel 1: Kommentarbasierte Hilfe für eine Funktion
+## <a name="example-1-comment-based-help-for-a-function"></a>Beispiel 1: Kommentarbasierte Hilfe für eine Funktion
 
  Die folgende Beispielfunktion enthält kommentarbasierte Hilfe.
 
