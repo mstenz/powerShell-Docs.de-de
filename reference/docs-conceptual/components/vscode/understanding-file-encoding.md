@@ -2,12 +2,12 @@
 title: Grundlegendes zur Dateicodierung in VSCode und PowerShell
 description: Konfigurieren der Dateicodierung in VSCode und PowerShell
 ms.date: 02/28/2019
-ms.openlocfilehash: ec06d8f5d446a92e6cd9d2d70b11260d1d0afda8
-ms.sourcegitcommit: 396509cd0d415acc306b68758b6f833406e26bf5
+ms.openlocfilehash: 6a00e45b3700f72f78e2fbcdf6e317f3a17b53c0
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320403"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058436"
 ---
 # <a name="understanding-file-encoding-in-vscode-and-powershell"></a>Grundlegendes zur Dateicodierung in VSCode und PowerShell
 
@@ -69,7 +69,7 @@ In dieser praktischen [Referenz](https://www.i18nqa.com/debug/utf8-debug.html) w
 
 Die PowerShell-Erweiterung interagiert auf unterschiedliche Weise mit den Skripts:
 
-1. Wenn Skripts in VS Code bearbeitet werden, werden die Inhalte von VS Code an die Erweiterung gesendet. Das [Seite zum Sprachserverprotokoll][] gibt vor, dass dieser Inhalt in UTF-8 übertragen wird. Deshalb ist es gar nicht möglich, dass die Erweiterung den Inhalt in einer falschen Codierung erhält.
+1. Wenn Skripts in VS Code bearbeitet werden, werden die Inhalte von VS Code an die Erweiterung gesendet. Das [Sprachserverprotokoll][] gibt vor, dass dieser Inhalt in UTF-8 übertragen wird. Deshalb ist es gar nicht möglich, dass die Erweiterung den Inhalt in einer falschen Codierung erhält.
 2. Wenn Skripts direkt in der integrierten Konsole ausgeführt werden, liest PowerShell diese direkt aus der Datei. Wenn die Codierung von PowerShell sich von derjenigen von VS Code unterscheidet, kann es zu Problemen kommen.
 3. Wenn ein Skript, das in VS Code geöffnet wird, auf ein anderes Skript verweist, das nicht in VS Code geöffnet ist, lädt die Erweiterung den Inhalt dieses Skripts aus dem Dateisystem. Die Standardeinstellung der PowerShell-Erweiterung ist UTF-8. Die Erkennung der [Bytereihenfolge-Marke][] oder Byte-Order Mark (BOM) wird jedoch verwendet, um die korrekte Codierung auszuwählen.
 
@@ -102,7 +102,7 @@ BOMs sind optional und ihre Verwendung ist im Linux-Kontext nicht sonderlich bel
 
 Die Standardcodierung von VS Code ist UTF-8 ohne BOM.
 
-Navigieren Sie zu den VS Code-Einstelllungen (<kbd>STRG<kbd>+</kbd>,</kbd>), und legen Sie die Einstellung `"files.encoding"` fest, um die [Artikel zur Codierung in VS Code][] festzulegen:
+Navigieren Sie zu den VS Code-Einstelllungen (<kbd>STRG</kbd>+<kbd>,</kbd>), und legen Sie die Einstellung `"files.encoding"` fest, um die [Artikel zur Codierung in VS Code][] festzulegen:
 
 ```json
 "files.encoding": "utf8bom"
@@ -273,5 +273,5 @@ Es gibt einige weitere nützliche Beiträge zur Codierung und Konfiguration der 
 [UTF-8]: https://wikipedia.org/wiki/UTF-8
 [Bytereihenfolge-Marke]: https://wikipedia.org/wiki/Byte_order_mark
 [UTF-16]: https://wikipedia.org/wiki/UTF-16
-[Seite zum Sprachserverprotokoll]: https://microsoft.github.io/language-server-protocol/
+[Sprachserverprotokoll]: https://microsoft.github.io/language-server-protocol/
 [Artikel zur Codierung in VS Code]: https://code.visualstudio.com/docs/editor/codebasics#_file-encoding-support
