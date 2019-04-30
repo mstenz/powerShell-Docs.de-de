@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Mehr Lernmaterial zu PowerShell
 ms.openlocfilehash: 5e81801df99a55a358d1d1405bdc79f882aae92f
-ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54012550"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058385"
 ---
 # <a name="more-powershell-learning"></a>Mehr Lernmaterial zu PowerShell
 
@@ -29,9 +29,9 @@ Zusätzlich zur Hilfe an der Befehlszeile finden Benutzer, die Windows PowerShel
 - [Erste Schritte mit PowerShell 3.0 Schnelleinstieg](https://mva.microsoft.com/en-US/training-courses/getting-started-with-powershell-30-jump-start-8276)
 - [Erweiterte Tools & Skripterstellung mit PowerShell 3.0 Schnelleinstieg](https://mva.microsoft.com/en-US/training-courses/advanced-tools-scripting-with-powershell-30-jump-start-8277)
 
-### <a name="channel-9-videos"></a>Channel 9-videos
+### <a name="channel-9-videos"></a>Channel 9-Videos
 
-Channel 9 ist unser video-publishing-Plattform. Es gibt Hunderte von Videos über PowerShell verfügbar. [Suchen Sie nach "PowerShell"](https://channel9.msdn.com/Search?term=PowerShell&sortBy=top-rated) anzuzeigen, welche Videos verfügbar sind.
+Channel 9 ist unsere Plattform für Videoveröffentlichungen. Es sind Hunderte von Videos zu PowerShell verfügbar. [Suchen Sie nach „PowerShell“](https://channel9.msdn.com/Search?term=PowerShell&sortBy=top-rated), um anzuzeigen, welche Videos verfügbar sind.
 
 ## <a name="resources-for-windows-powershell-developers"></a>Ressourcen für Windows PowerShell-Entwickler
 

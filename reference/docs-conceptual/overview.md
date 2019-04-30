@@ -2,12 +2,12 @@
 ms.date: 08/27/2018
 keywords: powershell,cmdlet
 title: PowerShell-Skripterstellung
-ms.openlocfilehash: 07925ce8dcafd33970a703c9b241bf6f76f88d10
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 281f2e798b3d3fa1c150b079d633cb7e8490dcec
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401685"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058487"
 ---
 # <a name="powershell"></a>PowerShell
 
@@ -50,7 +50,7 @@ Get-Service | Get-Member
 
 ### <a name="consistency"></a>Konsistenz
 
-Das Verwalten von Systemen kann eine komplexe Aufgabe sein. Tools mit einer konsistenten Schnittstelle helfen, die inhärente Komplexität im Griff zu behalten. Leider zeichnen sich Befehlszeilentools und skriptfähige COM-Objekte nicht durch ihre Konsistenz aus.
+Das Verwalten von Systemen kann eine komplexe Aufgabe sein. Tools mit einer konsistenten Schnittstelle helfen, die inhärente Komplexität im Griff zu behalten. Leider zeichnen sich Befehlszeilentools und skriptfähige COM-Objekte (Component Object Model) nicht durch ihre Konsistenz aus.
 
 PowerShell besticht durch Konsistenz. Wenn Sie z.B. gelernt haben, wie das Cmdlet `Sort-Object` verwendet wird, können Sie mit diesem Wissen die Ausgabe sämtlicher Cmdlets sortieren. Sie müssen also nicht für jedes Cmdlet eine andere Sortierroutine erlernen.
 

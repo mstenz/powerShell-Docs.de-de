@@ -4,11 +4,11 @@ keywords: powershell,cmdlet
 title: Das PowerShellTab-Objekt
 ms.assetid: a9b58556-951b-4f48-b3ae-b351b7564360
 ms.openlocfilehash: 577e2aaaddf3071801816d9ae91dbf0006dd5072
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401346"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057671"
 ---
 # <a name="the-powershelltab-object"></a>Das PowerShellTab-Objekt
 
@@ -40,7 +40,7 @@ In Windows PowerShell ISE 3.0 und höher unterstützt, in früheren Versionen ni
 Führt das angegebene Skript auf der PowerShell-Registerkarte aus.
 
 > [!NOTE]
-> Diese Methode kann nur für andere PowerShell-Registerkarten verwendet werden, nicht für die PowerShell-Registerkarte, auf der sie ausgeführt wird. Der Skriptblock wird ausgeführt, und alle vom Skript zurückgegebenen Werte werden an die Laufzeitumgebung zurückgegeben, in der der Befehl aufgerufen wurde. Wenn der Befehl zum Ausführen als länger dauert die **MillesecondsTimeout** Wert gibt an, und klicken Sie dann der Befehl schlägt mit einer Ausnahme: Timeout für den Vorgang wurde überschritten.
+> Diese Methode kann nur für andere PowerShell-Registerkarten verwendet werden, nicht für die PowerShell-Registerkarte, auf der sie ausgeführt wird. Der Skriptblock wird ausgeführt, und alle vom Skript zurückgegebenen Werte werden an die Laufzeitumgebung zurückgegeben, in der der Befehl aufgerufen wurde. Wenn die Ausführung des Befehls länger dauert, als vom Wert **millesecondsTimeout** angegeben, tritt durch den Befehl ein Fehler mit folgender Ausnahme auf: „Timeout bei Vorgang.“.
 
 **Script**: System.Management.Automation.ScriptBlock oder Zeichenfolge – der auszuführende Skriptblock.
 

@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,setup
 title: DSC-Ressourcen
 ms.openlocfilehash: 1f77b5e6630a2e3de6e1d1a05638f94d2df039ae
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54046690"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076619"
 ---
 # <a name="dsc-resources"></a>DSC-Ressourcen
 
@@ -17,22 +17,22 @@ DSC-Ressourcen sind die Bausteine einer DSC-Konfiguration. Eine Ressource macht 
 
 Mit einer Ressource kann etwas Allgemeines wie eine Datei oder Spezifisches wie eine IIS-Servereinstellung modelliert werden.  Gruppen ähnlicher Ressourcen werden in einem DSC-Modul kombiniert, das alle erforderlichen Dateien in einer Struktur organisiert, die portierbar ist und Metadaten zum Bestimmen des Zwecks der Ressourcen enthält.
 
-Jede Ressource verfügt über eine * Schema, das bestimmt, die Syntax erforderlich, um die Ressource im Verwenden einer [Konfiguration](../configurations/configurations.md). Schema für eine Ressource kann auf folgende Weise definiert werden:
+Jede Ressource verfügt über ein *schema, das die Syntax bestimmt, die für die Verwendung der Ressource in einer [Konfiguration](../configurations/configurations.md) erforderlich ist. Das Schema einer Ressource kann auf folgende Weise definiert werden:
 
-- **"Schema.Mof"** Datei: Die meisten Ressourcen definieren ihre *Schema* in eine Datei "schema.mof"-Datei mithilfe [Managed Object Format](/windows/desktop/wmisdk/managed-object-format--mof-).
-- **"\<Ressourcenname\>. psm1"** Datei: [Zusammengesetzte Ressourcen](../configurations/compositeConfigs.md) definieren ihre *Schema* in eine "<ResourceName>. psm1" Datei mithilfe einer [Parameter Block](/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6#functions-with-parameters).
-- **"\<Ressourcenname\>. psm1"** Datei: Klasse, die je DSC-Ressourcen definieren, deren *Schema* in der Klassendefinition. Syntaxelemente werden als Eigenschaften der Klasse angegeben. Weitere Informationen finden Sie unter ["about_classes"](/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc).
+- Datei **„Schema.Mof“**: Die meisten Ressourcen definieren ihr *Schema* in einer Datei „schema.mof“ mithilfe des [Managed Object Format (MOF)](/windows/desktop/wmisdk/managed-object-format--mof-).
+- **Datei „\<Ressourcenname\>.schema.psm1“**: [Zusammengesetzte Ressourcen](../configurations/compositeConfigs.md) definieren ihr *Schema* in einer Datei „<ResourceName>.schema.psm1“ unter Verwendung eines [Parameterblocks](/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6#functions-with-parameters).
+- **Datei „\<Ressourcenname\>.psm1“**: Klassenbasierte DSC-Ressourcen definieren ihr *Schema* in der Klassendefinition. Syntaxelemente werden als Eigenschaften der Klasse angegeben. Weitere Informationen finden Sie unter [about_Classes](/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc).
 
-Um die Syntax für eine DSC-Ressource abzurufen, verwenden Sie die [Get-DSCResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) Cmdlet mit dem `-Syntax` Parameter. Diese Verwendung ist vergleichbar mit der Verwendung [Get-Command](/powershell/module/microsoft.powershell.core/get-command) mit der `-Syntax` Parameter, um die Cmdlet-Syntax zu erhalten. Die Ausgabe, die Sie sehen, zeigt die Vorlage für einen Ressourcenblock für die Ressource, die Sie angeben.
+Um die Syntax für eine DSC-Ressource abzurufen, verwenden Sie das Cmdlet [Get-DSCResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) mit dem Parameter `-Syntax`. Diese Syntax ist ähnlich wie die Verwendung von [Get-Command](/powershell/module/microsoft.powershell.core/get-command) mit dem Parameter `-Syntax`, um die Cmdlet-Syntax abzurufen. Die Ausgabe, die Sie sehen, zeigt die Vorlage für einen Ressourcenblock für die Ressource an, die Sie angeben.
 
 ```powershell
 Get-DscResource -Syntax Service
 ```
 
-Die Ausgabe angezeigten sollte ungefähr wie unten sein, obwohl die Syntax für diese Ressource in der Zukunft ändern kann. Cmdlet-Syntax, wie die *Schlüssel* in eckigen Klammern angezeigt, sind optional. Die Typen angeben, den Typ der Daten, die jedem Schlüssel erwartet wird.
+Die Ausgabe, die Sie sehen, sollte der folgenden Ausgabe ähneln, obwohl sich die Syntax dieser Ressource in Zukunft ändern kann. Wie bei der Cmdlet-Syntax sind die *Schlüssel* in eckigen Klammern optional. Die Typen geben den Typ der Daten an, die jeder Schlüssel erwartet.
 
 > [!NOTE]
-> Die **stellen Sie sicher** Schlüssel ist optional, da modusangabe wird standardmäßig auf "Present".
+> Der Schlüssel **Ensure** ist optional, da er standardmäßig auf „Present“ (Vorhanden) festgelegt ist.
 
 ```output
 Service [String] #ResourceName
@@ -52,10 +52,10 @@ Service [String] #ResourceName
 }
 ```
 
-In einer Konfiguration einen **Service** Ressourcenblock sieht wie folgt zu **stellen Sie sicher** , die der Spooler-Dienst ausgeführt wird.
+Innerhalb einer Konfiguration könnte ein **Service**-Ressourcenblock wie folgt aussehen, um sicherzustellen (**Ensure**), dass der Spoolerdienst ausgeführt wird.
 
 > [!NOTE]
-> Bevor Sie eine Ressource in einer Konfiguration verwenden, müssen Sie importieren Sie es mithilfe [Import-DSCResource](../configurations/import-dscresource.md).
+> Bevor Sie eine Ressource in einer Konfiguration verwenden, müssen Sie sie mit [Import-DSCResource](../configurations/import-dscresource.md) importieren.
 
 ```powershell
 Configuration TestConfig
@@ -74,7 +74,7 @@ Configuration TestConfig
 }
 ```
 
-Konfigurationen können mehrere Instanzen desselben Typs der Ressource enthalten. Jede Instanz muss eindeutig benannt sein. Im folgenden Beispiel eine zweite **Service** Ressourcenblock wird zum Konfigurieren des Diensts "DHCP" hinzugefügt.
+Konfigurationen können mehrere Instanzen desselben Ressourcentyps enthalten. Jede Instanz muss eindeutig benannt sein. Im folgenden Beispiel wird ein zweiter **Service**-Ressourcenblock zum Konfigurieren des „DHCP“-Diensts hinzugefügt.
 
 ```powershell
 Configuration TestConfig
@@ -101,13 +101,13 @@ Configuration TestConfig
 ```
 
 > [!NOTE]
-> PowerShell 5.0 ab, war Intellisense für DSC hinzugefügt. Dieses neue Feature können Sie mit \<Registerkarte\> und \<STRG + LEERTASTE\> , automatische Vervollständigung von Schlüsselnamen.
+> Ab PowerShell 5.0 wurde IntelliSense für DSC hinzugefügt. Diese neue Funktion ermöglicht es Ihnen, die \<TAB-TASTE\> und \<STRG+LEERTASTE\> zum automatischen Vervollständigen von Schlüsselnamen zu verwenden.
 
-![Resource-Befehlszeilenergänzung](../media/resource-tabcompletion.png)
+![Vervollständigung der Ressource mit der TAB-TASTE](../media/resource-tabcompletion.png)
 
 ## <a name="built-in-resources"></a>Integrierte Ressourcen
 
-Zusätzlich zu den Communityressourcen sind integrierte Ressourcen für Windows, Ressourcen für Linux und Ressourcen für die knotenübergreifende Abhängigkeit. Sie können die oben genannten Schritte verwenden, um zu bestimmen, die Syntax dieser Ressourcen und deren Verwendung. Die Seiten, die diese Ressourcen dienen unter archiviert haben **Verweis**.
+Zusätzlich zu den Communityressourcen gibt es integrierte Ressourcen für Windows, Ressourcen für Linux und Ressourcen für knotenübergreifende Abhängigkeiten. Mit den oben genannten Schritten können Sie die Syntax dieser Ressourcen und deren Verwendung festlegen. Die Seiten, die diese Ressourcen verarbeiten, wurden unter **Reference** archiviert.
 
 Integrierte Windows-Ressourcen
 
@@ -131,26 +131,26 @@ Integrierte Windows-Ressourcen
 * [WindowsPackageCabResource-Ressource](../reference/resources/windows/windowsPackageCabResource.md)
 * [WindowsProcess-Ressource](../reference/resources/windows/windowsProcessResource.md)
 
-[Knotenübergreifender Abhängigkeiten](../configurations/crossNodeDependencies.md) Ressourcen
+Ressourcen für [knotenübergreifende Abhängigkeiten](../configurations/crossNodeDependencies.md)
 
 * [WaitForAll-Ressource](../reference/resources/windows/waitForAllResource.md)
 * [WaitForSome-Ressource](../reference/resources/windows/waitForSomeResource.md)
 * [WaitForAny-Ressource](../reference/resources/windows/waitForAnyResource.md)
 
-Paket-Management-Ressourcen
+Paketverwaltungsressourcen
 
-* [Ressource "PackageManagement"](../reference/resources/packagemanagement/PackageManagementDscResource.md)
-* [Ressource "packagemanagementsource"](../reference/resources/packagemanagement/PackageManagementSourceDscResource.md)
+* [PackageManagement-Ressource](../reference/resources/packagemanagement/PackageManagementDscResource.md)
+* [PackageManagementSource-Ressource](../reference/resources/packagemanagement/PackageManagementSourceDscResource.md)
 
 Linux-Ressourcen
 
-* [Linux-Archive-Ressource](../reference/resources/linux/lnxArchiveResource.md)
-* [Ressourcen für Linux-Umgebung](../reference/resources/linux/lnxEnvironmentResource.md)
-* [Linux-FileLine-Ressource](../reference/resources/linux/lnxFileLineResource.md)
-* [Ressource "File" Linux](../reference/resources/linux/lnxFileResource.md)
-* [Ressource "Group" Linux](../reference/resources/linux/lnxGroupResource.md)
-* [Ressource "Package" Linux](../reference/resources/linux/lnxPackageResource.md)
-* [Ressource "Script" Linux](../reference/resources/linux/lnxScriptResource.md)
-* [Linux-Service-Ressource](../reference/resources/linux/lnxServiceResource.md)
-* [Linux-SshAuthorizedKeys-Ressource](../reference/resources/linux/lnxSshAuthorizedKeysResource.md)
-* [Linux-User-Ressource](../reference/resources/linux/lnxUserResource.md)
+* [Linux-Ressource „Archive“](../reference/resources/linux/lnxArchiveResource.md)
+* [Linux-Resource „Environment“](../reference/resources/linux/lnxEnvironmentResource.md)
+* [Linux-Ressource „FileLine“](../reference/resources/linux/lnxFileLineResource.md)
+* [Linux-Ressource „File“](../reference/resources/linux/lnxFileResource.md)
+* [Linux-Ressource „Group“](../reference/resources/linux/lnxGroupResource.md)
+* [Linux-Ressource „Package“](../reference/resources/linux/lnxPackageResource.md)
+* [Linux-Ressource „Script“](../reference/resources/linux/lnxScriptResource.md)
+* [Linux-Ressource „Service“](../reference/resources/linux/lnxServiceResource.md)
+* [Linux-Ressource „SshAuthorizedKeys“](../reference/resources/linux/lnxSshAuthorizedKeysResource.md)
+* [Linux-Ressource „User“](../reference/resources/linux/lnxUserResource.md)

@@ -4,11 +4,11 @@ keywords: powershell,cmdlet
 title: Das ISEOptions-Objekt
 ms.assetid: 75e2a76f-f3d1-490b-ad5d-e3829946aabb
 ms.openlocfilehash: e756da21aaa5465f7fa6a90563b4180f0c89e87b
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401901"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057773"
 ---
 # <a name="the-iseoptions-object"></a>Das ISEOptions-Objekt
 
@@ -138,7 +138,7 @@ $psISE.Options.ConsolePaneTextBackgroundColor = 'pink'
 
 In Windows PowerShell ISE 3.0 und höher unterstützt, in früheren Versionen nicht enthalten.
 
-Gibt die Farben der IntelliSense-Token im Windows PowerShell ISE-Konsolenbereich an. Diese Eigenschaft ist ein Wörterbuchobjekt, das Name-Wert-Paare von Tokentypen und Farben für den Konsolenbereich enthält. Informationen zum Ändern der Farben der IntelliSense-Token im Skriptbereich finden Sie unter [TokenColors](#tokencolors). Informationen zum Zurücksetzen der Farben auf die Standardwerte finden Sie unter [RestoreDefaultConsoleTokenColors](#restoredefaultconsoletokencolors). Tokenfarben können für Folgendes festgelegt werden: Attribut-Befehl, CommandArgument, CommandParameter, Comment, GroupEnd, GroupStart, -Schlüsselwort, LineContinuation, LoopLabel, Member, neue-Zeile, Anzahl, Operator, Position, StatementSeparator, Zeichenfolge, Typ, unbekannt, Variable.
+Gibt die Farben der IntelliSense-Token im Windows PowerShell ISE-Konsolenbereich an. Diese Eigenschaft ist ein Wörterbuchobjekt, das Name-Wert-Paare von Tokentypen und Farben für den Konsolenbereich enthält. Informationen zum Ändern der Farben der IntelliSense-Token im Skriptbereich finden Sie unter [TokenColors](#tokencolors). Informationen zum Zurücksetzen der Farben auf die Standardwerte finden Sie unter [RestoreDefaultConsoleTokenColors](#restoredefaultconsoletokencolors). Tokenfarben können für folgende Elemente festgelegt werden: Attribute, Command, CommandArgument, CommandParameter, Comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, Member, NewLine, Number, Operator, Position, StatementSeparator, String, Type, Unknown, Variable.
 
 ```powershell
 # Sets the color of commands to green.
@@ -435,7 +435,7 @@ $psISE.Options.ShowWarningBeforeSavingOnRun = $true
 
 In Windows PowerShell ISE 2.0 und höher unterstützt.
 
-Gibt an, ob eine Warnung angezeigt wird, wenn die gleiche Datei auf mehreren PowerShell-Registerkarten geöffnet wird. Wenn auf festgelegt **$true**, um der gleichen Datei in mehrere Registerkarten zeigt diese Meldung zu öffnen: "Eine Kopie dieser Datei ist in einer anderen Windows PowerShell-Registerkarte geöffnet. Änderungen an dieser Datei betreffen alle geöffneten Kopien.“ Der Standardwert ist **$true**.
+Gibt an, ob eine Warnung angezeigt wird, wenn die gleiche Datei auf mehreren PowerShell-Registerkarten geöffnet wird. Wenn auf **$true** festgelegt, wird beim Öffnen der gleichen Datei in mehreren Registerkarten diese Meldung angezeigt: „Eine Kopie dieser Datei ist in einer anderen Windows PowerShell-Registerkarte geöffnet. Änderungen an dieser Datei betreffen alle geöffneten Kopien.“ Der Standardwert ist **$true**.
 
 ```powershell
 # Enable the warning message when a file is
@@ -447,7 +447,7 @@ $psISE.Options.ShowWarningForDuplicateFiles = $true
 
 In Windows PowerShell ISE 2.0 und höher unterstützt.
 
-Gibt die Farben der IntelliSense-Token im Windows PowerShell ISE-Skriptbereich an. Diese Eigenschaft ist ein Wörterbuchobjekt, das Name-Wert-Paare von Tokentypen und Farben für den Skriptbereich enthält. Informationen zum Ändern der Farben der IntelliSense-Token im Konsolenbereich finden Sie unter [ConsoleTokenColors](#consoletokencolors). Informationen zum Zurücksetzen der Farben auf die Standardwerte finden Sie unter [RestoreDefaultTokenColors](#restoredefaulttokencolors). Tokenfarben können für Folgendes festgelegt werden: Attribut-Befehl, CommandArgument, CommandParameter, Comment, GroupEnd, GroupStart, -Schlüsselwort, LineContinuation, LoopLabel, Member, neue-Zeile, Anzahl, Operator, Position, StatementSeparator, Zeichenfolge, Typ, unbekannt, Variable.
+Gibt die Farben der IntelliSense-Token im Windows PowerShell ISE-Skriptbereich an. Diese Eigenschaft ist ein Wörterbuchobjekt, das Name-Wert-Paare von Tokentypen und Farben für den Skriptbereich enthält. Informationen zum Ändern der Farben der IntelliSense-Token im Konsolenbereich finden Sie unter [ConsoleTokenColors](#consoletokencolors). Informationen zum Zurücksetzen der Farben auf die Standardwerte finden Sie unter [RestoreDefaultTokenColors](#restoredefaulttokencolors). Tokenfarben können für folgende Elemente festgelegt werden: Attribute, Command, CommandArgument, CommandParameter, Comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, Member, NewLine, Number, Operator, Position, StatementSeparator, String, Type, Unknown, Variable.
 
 ```powershell
 # Sets the color of commands to green.
@@ -539,7 +539,7 @@ $psISE.Options.WarningForegroundColor = 'yellow'
 
 In Windows PowerShell ISE 3.0 und höher unterstützt, in früheren Versionen nicht enthalten.
 
-Gibt ein Wörterbuchobjekt an, das Name-Wert-Paare von Tokentypen und Farben für XML-Inhalte enthält, die in Windows PowerShell ISE angezeigt werden. Tokenfarben können für Folgendes festgelegt werden: Attribut-Befehl, CommandArgument, CommandParameter, Comment, GroupEnd, GroupStart, -Schlüsselwort, LineContinuation, LoopLabel, Member, neue-Zeile, Anzahl, Operator, Position, StatementSeparator, Zeichenfolge, Typ, unbekannt, Variable. Siehe auch [RestoreDefaultXmlTokenColors](#restoredefaultxmltokencolors).
+Gibt ein Wörterbuchobjekt an, das Name-Wert-Paare von Tokentypen und Farben für XML-Inhalte enthält, die in Windows PowerShell ISE angezeigt werden. Tokenfarben können für folgende Elemente festgelegt werden: Attribute, Command, CommandArgument, CommandParameter, Comment, GroupEnd, GroupStart, Keyword, LineContinuation, LoopLabel, Member, NewLine, Number, Operator, Position, StatementSeparator, String, Type, Unknown, Variable. Siehe auch [RestoreDefaultXmlTokenColors](#restoredefaultxmltokencolors).
 
 ```powershell
 # Sets the color of XML element names to green.

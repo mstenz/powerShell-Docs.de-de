@@ -4,20 +4,20 @@ keywords: powershell,cmdlet
 title: Sortieren von Objekten
 ms.assetid: 8530caa8-3ed4-4c56-aed7-1295dd9ba199
 ms.openlocfilehash: 06aa15d89888f1ecbe60b8e1dfb4efebb1d73673
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401187"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086050"
 ---
 # <a name="sorting-objects"></a>Sortieren von Objekten
 
-Wir können die angezeigte Daten zu erleichtern geordnet Organisieren der `Sort-Object` Cmdlet. `Sort-Object` erhält den Namen der eine oder mehrere Eigenschaften sortiert werden soll, und Daten, die nach den Werten dieser Eigenschaften sortiert zurückgegeben.
+Sie können angezeigte Daten mithilfe des Cmdlets `Sort-Object` ordnen, damit sie sich einfacher überprüfen lassen. `Sort-Object` erhält den Namen von mindestens einer Eigenschaft, nach der sortiert werden soll, und gibt Daten zurück, die nach den Werten dieser Eigenschaften sortiert sind.
 
 ## <a name="basic-sorting"></a>Grundlegende Sortierung
 
-Betrachten Sie das Problem der Auflistung, Unterverzeichnisse und Dateien im aktuellen Verzeichnis.
-Wenn Sie möchten nach zu sortieren **"LastWriteTime"** und dann nach **Namen**, können wir durch Eingabe:
+Angenommen, Unterverzeichnisse und Dateien sollen im aktuellen Verzeichnis aufgelistet werden.
+Wenn wir nach **LastWriteTime** und dann nach **Name** sortieren möchten, können wir dies durch die folgende Eingabe erreichen:
 
 ```powershell
 Get-ChildItem |
@@ -40,7 +40,7 @@ LastWriteTime          Name
 ...
 ```
 
-Sie können die Objekte auch in umgekehrter Reihenfolge sortieren, durch Angabe der **absteigend** switch-Parameter.
+Sie können die Objekte auch in umgekehrter Reihenfolge sortieren, indem Sie den **Descending**-Umschaltparameter angeben.
 
 ```powershell
 Get-ChildItem |
@@ -67,12 +67,12 @@ LastWriteTime          Name
 
 ## <a name="using-hash-tables"></a>Verwenden von Hashtabellen
 
-Sie können verschiedene Eigenschaften in unterschiedlicher Reihenfolge sortieren, mithilfe von Hashtabellen in einem Array.
-Jeder Hashtabelle verwendet einen **Ausdruck** -Taste, um den Eigenschaftennamen als Zeichenfolge angeben und ein **aufsteigend** oder **absteigend** -Taste, um die Sortierreihenfolge von anzugeben `$true` oder `$false`.
-Die **Ausdruck** Schlüssel ist erforderlich.
-Die **aufsteigend** oder **absteigend** Schlüssel ist optional.
+Sie können verschiedene Eigenschaften in verschiedenen Reihenfolgen sortieren, indem Sie Hashtabellen in einem Array verwenden.
+Jede Hashtabelle verwendet einen **Expression**-Schlüssel, um den Namen der Eigenschaft als Zeichenfolge anzugeben, und einen **Ascending**- oder **Descending**-Schlüssel, um die Sortierreihenfolge durch `$true` oder `$false` anzugeben.
+Der **Expression**-Schlüssel ist erforderlich.
+Die **Ascending**- oder **Descending**-Schlüssel sind optional.
 
-Im folgenden Beispiel werden Objekte in absteigender **"LastWriteTime"** Reihenfolge und aufsteigender **Namen** Reihenfolge.
+Das folgende Beispiel sortiert Objekte in absteigender **LastWriteTime**- und aufsteigender **Name**-Reihenfolge.
 
 ```powershell
 Get-ChildItem |
@@ -92,10 +92,10 @@ LastWriteTime          Name
 ...
 ```
 
-Sie können auch einen Skriptblock festlegen, um die **Ausdruck** Schlüssel.
-Bei der Ausführung der `Sort-Object` -Cmdlet, das "scriptblock" ausgeführt wird und das Ergebnis wird für die Sortierung verwendet.
+Sie können auch einen Skriptblock auf den **Expression**-Schlüssel festlegen.
+Wenn Sie das Cmdlet `Sort-Object` ausführen, wird der Skriptblock ausgeführt und das Ergebnis für die Sortierung verwendet.
 
-Im folgenden Beispiel werden Objekte in absteigender Reihenfolge nach der Zeitspanne zwischen dem **CreationTime** und **"LastWriteTime"**.
+Das folgende Beispiel sortiert Objekte in absteigender Reihenfolge nach der Zeitspanne zwischen **CreationTime** und **LastWriteTime**.
 
 ```powershell
 Get-ChildItem |
@@ -119,27 +119,27 @@ LastWriteTime          CreationTime
 
 ## <a name="tips"></a>Tipps
 
-Sie können Auslassen der **Eigenschaft** Parameternamen wie folgt:
+Sie können den **Property**-Parameternamen wie folgt auslassen:
 
 ```powershell
 Sort-Object LastWriteTime, Name
 ```
 
-Außerdem sehen Sie sich `Sort-Object` über den integrierten Alias `sort`:
+Außerdem können Sie sich auch auf `Sort-Object` über den integrierten Alias `sort` beziehen:
 
 ```powershell
 sort LastWriteTime, Name
 ```
 
-Die Schlüssel in den Hashtabellen für die Sortierung können abgekürzt werden, wie folgt:
+Die Schlüssel in den Hashtabellen für die Sortierung können wie folgt abgekürzt werden:
 
 ```powershell
 Sort-Object @{ e = 'LastWriteTime'; d = $true }, @{ e = 'Name'; a = $true }
 ```
 
-In diesem Beispiel die **e** steht für **Ausdruck**, **d** steht für **absteigend**, und die **eine** steht für **aufsteigend**.
+In diesem Beispiel steht das **e** für **Expression**, das **d** für **Descending** und das **a** für **Ascending**.
 
-Um die Lesbarkeit zu verbessern, können Sie die Hashtabellen in eine separate Variable platzieren:
+Um die Lesbarkeit zu verbessern, können Sie die Hashtabellen in einer separaten Variablen platzieren:
 
 ```powershell
 $order = @(

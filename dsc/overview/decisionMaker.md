@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: 'Desired State Configuration (DSC): Übersicht für Entscheidungsträger'
 ms.openlocfilehash: ce554d4bb994d4b1816d9d9c24599e4ef0e1c593
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401349"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079590"
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>Desired State Configuration (DSC): Übersicht für Entscheidungsträger
 
@@ -44,7 +44,7 @@ Wenn eine Umgebung mittels einer einzelnen Konfiguration definiert wird, können
 
 Konfigurationen sind auch [datengesteuert](../configurations/configData.md), was es dem Betriebsteam erleichtert, Umgebungen ohne Eingriffe von Entwicklern zu erkennen und zu ändern.
 
-## <a name="desired-state-configuration-on-premises-and-off-premises"></a>Desired State Configuration, lokale und externe
+## <a name="desired-state-configuration-on-premises-and-off-premises"></a>DSC (Desired State Configuration): Lokale und externe Bereitstellungen
 DSC kann zum Verwalten lokaler und externer Bereitstellungen verwendet werden.
 Für lokale Lösungen bietet DSC einen [Pullserver](../pull-server/pullServer.md) zum Zentralisieren der Verwaltung von Computern und Melden ihres Status.
 Für Cloudlösungen lässt sich DSC da verwenden, wo Windows verwendet werden kann.

@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Schreiben einer benutzerdefinierten DSC-Ressource mit PowerShell-Klassen
 ms.openlocfilehash: 34356f65bcb83153e7395a16d2a4a5cf2e507332
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55679249"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076717"
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>Schreiben einer benutzerdefinierten DSC-Ressource mit PowerShell-Klassen
 
-> Gilt für: Windows PowerShell 5.0
+> Gilt für: Windows PowerShell 5.0
 
 Mit der Einführung der PowerShell-Klassen in Windows PowerShell 5.0 können Sie jetzt eine DSC-Ressourcen durch Erstellen einer Klasse definieren. Die Klasse definiert das Schema und die Implementierung der Ressource, daher besteht keine Notwendigkeit, eine separate MOF-Datei zu erstellen. Die Ordnerstruktur für eine klassenbasierte Ressource ist auch einfacher, da kein **DSCResources**-Ordner erforderlich ist.
 
@@ -21,7 +21,7 @@ In diesem Thema wird eine einfache Ressource mit dem Namen **FileResource** erst
 
 Weitere Informationen zu DSC-Ressourcen finden Sie unter [Erstellen von benutzerdefinierten Windows PowerShell DSC-Ressourcen](authoringResource.md).
 
->**Hinweis:** Generische Auflistungen werden in Klassen basierenden Ressourcen nicht unterstützt.
+>**Hinweis:** Generische Sammlungen werden nicht in auf Klassen basierenden Ressourcen unterstützt.
 
 ## <a name="folder-structure-for-a-class-resource"></a>Ordnerstruktur für eine Klassenressource
 
@@ -67,7 +67,7 @@ Beachten Sie, dass die Eigenschaften durch Attribute geändert werden. Die Attri
 - **DscProperty(Key)**: Die Eigenschaft ist erforderlich. Die Eigenschaft ist ein Schlüssel. Die Werte aller als Schlüssel gekennzeichneten Eigenschaften in Kombination müssen eine Ressourceninstanz in einer Konfiguration eindeutig identifizieren.
 - **DscProperty(Mandatory)**: Die Eigenschaft ist erforderlich.
 - **DscProperty(NotConfigurable)**: Die Eigenschaft ist schreibgeschützt. Eigenschaften, die mit diesem Attribut gekennzeichnet sind, können nicht von einer Konfiguration festgelegt werden, sondern werden durch die Methode **Get()**, wenn vorhanden, aufgefüllt.
-- **DscProperty()**: Die Eigenschaft ist konfigurierbar, aber es ist nicht erforderlich.
+- **DscProperty()**: Die Eigenschaft ist konfigurierbar, aber nicht erforderlich.
 
 Die Eigenschaften **$Path** und **$SourcePath** sind Zeichenfolgen. **$CreationTime** ist eine [DateTime](/dotnet/api/system.datetime)-Eigenschaft. Die Eigenschaft **$Ensure** ist ein Enumerationstyp, der wie folgt definiert ist:
 
@@ -473,7 +473,7 @@ Start-DscConfiguration -Wait -Force Test
 
 ## <a name="supporting-psdscrunascredential"></a>Unterstützung von PsDscRunAsCredential
 
->**Hinweis:** **"Psdscrunascredential"** wird in PowerShell 5.0 und höher unterstützt.
+>**Hinweis:** **PsDscRunAsCredential** wird in PowerShell 5.0 und höher unterstützt.
 
 Mithilfe der Eigenschaft **PsDscRunAsCredential** kann im Ressourcenblock [DSC configurations](../configurations/configurations.md) angegeben werden, dass die Ressource mit einem festgelegten Satz an Anmeldeinformationen ausgeführt werden soll.
 Weitere Informationen finden Sie unter [Ausführen von DSC mit Benutzeranmeldeinformationen](../configurations/runAsUser.md).
@@ -496,11 +496,11 @@ class FileResource {
 }
 ```
 
-### <a name="declaring-multiple-class-resources-in-a-module"></a>Deklarieren mehrere Ressourcen der Klasse in einem Modul
+### <a name="declaring-multiple-class-resources-in-a-module"></a>Deklarieren von Ressourcen mit mehreren Klassen in einem Modul
 
-Ein Modul kann mehrere klassenbasierte DSC-Ressourcen zu definieren. Sie können die Ordnerstruktur auf folgende Weise erstellen:
+Ein Modul kann mehrere klassenbasierte DSC-Ressourcen definieren. Sie können die Ordnerstruktur auf folgende Weise erstellen:
 
-1. Definieren Sie die erste Ressource in der "<ModuleName>. psm1" Datei- und nachfolgenden Ressourcen, die unter der **DSCResources** Ordner.
+1. Definieren Sie die erste Ressource in der Datei „<ModuleName>.psm1“ und die nachfolgenden Ressourcen unter dem Ordner **DSCResources**.
 
    ```
    $env:ProgramFiles\WindowsPowerShell\Modules (folder)
@@ -511,7 +511,7 @@ Ein Modul kann mehrere klassenbasierte DSC-Ressourcen zu definieren. Sie können
            |- SecondResource.psm1
    ```
 
-2. Definieren Sie alle Ressourcen unter der **DSCResources** Ordner.
+2. Definieren Sie alle Ressourcen unter dem Ordner **DSCResources**.
 
    ```
    $env:ProgramFiles\WindowsPowerShell\Modules (folder)
@@ -524,7 +524,7 @@ Ein Modul kann mehrere klassenbasierte DSC-Ressourcen zu definieren. Sie können
    ```
 
 > [!NOTE]
-> Fügen Sie in den obigen Beispielen keine PSM1-Dateien in die **DSCResources** auf die **"nestedmodules"** Schlüssel in der PSD1-Datei.
+> Fügen Sie in den Beispielen oben alle PSM1-Dateien unter **DSCResources** dem Schlüssel **NestedModules** in Ihrer PSD1-Datei hinzu.
 
 ### <a name="access-the-user-context"></a>Zugriff auf den Benutzerkontext
 

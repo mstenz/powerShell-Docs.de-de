@@ -3,11 +3,11 @@ ms.date: 06/20/2018
 keywords: dsc,powershell,configuration,setup
 title: DSC-Ressource „PackageManagementSource“
 ms.openlocfilehash: e51b5318288bef458567dd4b58d17caaea3ed69b
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047252"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077584"
 ---
 # <a name="dsc-packagemanagementsource-resource"></a>DSC-Ressource „PackageManagementSource“
 
@@ -42,7 +42,7 @@ PackageManagementSource [String] #ResourceName
 | ProviderName| Gibt den Namen des OneGet-Anbieters an, über den Sie mit der Paketquelle zusammenarbeiten können.|
 | SourceLocation| Gibt den URI der Paketquelle an.|
 | Ensure| Bestimmt, ob die Paketquelle registriert oder die Registrierung aufgehoben werden soll.|
-| InstallationPolicy| Wird von Anbietern wie dem integrierten NuGet-Anbieter verwendet. Bestimmt, ob Sie der Paketquelle vertrauen. Enthält einen der folgenden Werte: , . "Nicht vertrauenswürdig", vertrauenswürdige"".|
+| InstallationPolicy| Wird von Anbietern wie dem integrierten NuGet-Anbieter verwendet. Bestimmt, ob Sie der Paketquelle vertrauen. Enthält einen der folgenden Werte: „Untrusted“ (Nicht vertrauenswürdig) oder „Trusted“ (Vertrauenswürdig).|
 | SourceCredential| Ermöglicht den Zugriff auf das Paket für eine Remotequelle.|
 
 ## <a name="example"></a>Beispiel

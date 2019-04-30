@@ -2,12 +2,12 @@
 ms.date: 10/16/2017
 keywords: dsc,powershell,configuration,setup
 title: Inkraftsetzung von Konfigurationen
-ms.openlocfilehash: 4a6e7e511446ab27307683ad3d5676391e7c791c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 2a40f2055dda78cc0cb6cb05a5e14dce48be9d00
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401904"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079932"
 ---
 # <a name="enacting-configurations"></a>Inkraftsetzung von Konfigurationen
 
@@ -24,7 +24,7 @@ Der Pushmodus bezieht sich auf einen Benutzer, der eine Konfiguration durch Aufr
 Nach dem Erstellen und Kompilieren einer Konfiguration können Sie sie im Pushmodus anwenden, indem Sie das Cmdlet [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) aufrufen und den Parameter „-Path“ des Cmdlets auf den Pfad festlegen, in dem sich die MOF-Konfigurationsdatei befindet.
 Wenn sich die MOF-Konfigurationsdatei z.B. in `C:\DSC\Configurations\localhost.mof` befindet, wenden Sie sie mit dem folgenden Befehl auf den lokalen Computer an: `Start-DscConfiguration -Path 'C:\DSC\Configurations'`.
 
-> __Hinweis__: Standardmäßig wird eine Konfiguration von DSC als Hintergrundauftrag ausgeführt. Um die Konfiguration interaktiv auszuführen, rufen Sie das Cmdlet [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) mit dem __-Wait__-Parameter auf.
+> __Hinweis__: DSC führt eine Konfiguration standardmäßig als Hintergrundauftrag aus. Um die Konfiguration interaktiv auszuführen, rufen Sie das Cmdlet [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) mit dem __-Wait__-Parameter auf.
 
 ## <a name="pull-mode"></a>Pullmodus
 
@@ -48,6 +48,6 @@ Beachten Sie jedoch, dass die Funktionen dieser Implementierung eingeschränkt s
 
 In den folgenden Themen werden Pulldienst und -clients erläutert:
 
-- [Azure Automation DSC – Übersicht](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview)
+- [Azure Automation DSC – Übersicht](https://docs.microsoft.com/azure/automation/automation-dsc-overview)
 - [Einrichten eines SMB-Pullservers](pullServerSMB.md)
 - [Konfigurieren eines Pullclients](pullClientConfigID.md)

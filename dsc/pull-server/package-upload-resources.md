@@ -1,59 +1,59 @@
 ---
 ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,setup
-title: Paket und Hochladen von Ressourcen mit einem Pullserver
+title: Verpacken und Hochladen von Ressourcen auf einen Pullserver
 ms.openlocfilehash: 29a62f96393a53c9e7da57a5e51732dcb0937194
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401238"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079560"
 ---
-# <a name="package-and-upload-resources-to-a-pull-server"></a>Paket und Hochladen von Ressourcen mit einem Pullserver
+# <a name="package-and-upload-resources-to-a-pull-server"></a>Verpacken und Hochladen von Ressourcen auf einen Pullserver
 
-In den folgenden Abschnitten wird davon ausgegangen, dass Sie bereits einen Pull-Server eingerichtet haben. Wenn Sie Ihre Pull-Server nicht eingerichtet haben, können Sie die folgenden Handbüchern:
+Die folgenden Abschnitte gehen davon aus, dass Sie bereits einen Pullserver eingerichtet haben. Wenn Sie noch keinen Pullserver eingerichtet haben, können Sie die folgenden Anleitungen verwenden:
 
 - [Einrichten eines DSC-SMB-Pullservers](pullServerSmb.md)
 - [Einrichten eines DSC-HTTP-Pullservers](pullServer.md)
 
-Jeder Zielknoten kann für das Herunterladen von Konfigurationen, Ressourcen und sogar meldet seinen Status konfiguriert werden. In diesem Artikel wird zeigen, wie Ressourcen hochladen, damit sie die heruntergeladen werden, und Konfigurieren von Clients zum automatischen Herunterladen von Ressourcen verfügbar sind. Zeitpunkt des Knotens eine zugewiesenen Konfiguration und empfängt, über **Pull** oder **Push** (v5), automatisch heruntergeladen von der Konfiguration aus dem Speicherort, die im LCM angegebene erforderlichen Ressourcen.
+Jeder Zielknoten kann zum Herunterladen von Konfigurationen, Ressourcen und sogar zum Berichten seines Status konfiguriert werden. Dieser Artikel zeigt Ihnen, wie Sie Ressourcen hochladen können, damit sie zum Download zur Verfügung stehen, und wie Sie Clients so konfigurieren, dass sie Ressourcen automatisch herunterladen. Wenn der Knoten eine zugewiesene Konfiguration erhält (durch **Pull** oder **Push** (v5)), lädt er automatisch alle für die Konfiguration erforderlichen Ressourcen vom in LCM angegebenen Speicherort herunter.
 
-## <a name="package-resource-modules"></a>Paket-Ressourcenmodulen
+## <a name="package-resource-modules"></a>Verpacken von Ressourcenmodulen
 
-Jede Ressource, die für einen Client zum Herunterladen verfügbar sind, muss in einer Datei ".zip" gespeichert werden. Das folgende Beispiel zeigt die erforderlichen Schritte, die mit der ["xpsdesiredstateconfiguration"](https://www.powershellgallery.com/packages/xPSDesiredStateConfiguration/8.4.0.0) Ressource.
+Jede Ressource, die für einen Client zum Herunterladen verfügbar ist, muss in einer ZIP-Datei gespeichert werden. Das folgende Beispiel zeigt die erforderlichen Schritte unter Verwendung der Ressource [xPSDesiredStateConfiguration](https://www.powershellgallery.com/packages/xPSDesiredStateConfiguration/8.4.0.0).
 
 > [!NOTE]
-> Wenn Sie Clients mithilfe von PowerShell 4.0 verfügen, Sie möchten bei Flaten die Ordnerstruktur für die Ressource und entfernen alle Ordner Version. Weitere Informationen finden Sie unter [mehrere Versionen der Ressource](../configurations/import-dscresource.md#multiple-resource-versions).
+> Wenn ein Client PowerShell 4.0 verwendet, müssen Sie die Ressourcenordnerstruktur vereinfachen und alle Versionsordner entfernen. Weitere Informationen finden Sie unter [Mehrere Ressourcenversionen](../configurations/import-dscresource.md#multiple-resource-versions).
 
-Sie können das Ressourcenverzeichnis mit jedem Hilfsprogramm, Skript oder -Methode, die Sie bevorzugen, komprimieren. In Windows, können Sie *mit der rechten Maustaste* für das Verzeichnis von "xPSDesiredStateConfiguration", und wählen Sie "Senden an", und klicken Sie dann "Komprimierten Ordner".
+Sie können das Ressourcenverzeichnis mit einem beliebigen Hilfsprogramm, einem Skript oder einer beliebigen Methode komprimieren. Unter Windows können Sie *mit der rechten Maustaste* auf das Verzeichnis „xPSDesiredStateConfiguration“ klicken und dann „Senden an“ und „Komprimierter Ordner“ auswählen.
 
 ![Rechtsklick](../media/right-click.gif)
 
-### <a name="naming-the-resource-archive"></a>Benennen das Archiv für die Ressource
+### <a name="naming-the-resource-archive"></a>Benennen des Ressourcenarchivs
 
-Das Archiv für die Ressource muss mit dem folgenden Format benannt wird:
+Das Ressourcenarchiv muss im folgenden Format benannt werden:
 
 ```
 {ModuleName}_{Version}.zip
 ```
 
-Im Beispiel oben sollte "xPSDesiredStateConfiguration.zip" umbenannte "xPSDesiredStateConfiguration_8.4.4.0.zip" sein.
+Im Beispiel oben sollte „xPSDesiredStateConfiguration.zip“ in „xPSDesiredStateConfiguration_8.4.4.0.zip“ umbenannt werden.
 
 ### <a name="create-checksums"></a>Erstellen von Prüfsummen
 
-Sobald das Ressourcenmodul komprimiert und umbenannt wurde, müssen Sie erstellen eine **Prüfsumme**.  Die **Prüfsumme** verwendet wird, durch den LCM auf dem Client, um festzustellen, ob die Ressource geändert wurde und muss erneut heruntergeladen werden. Sie erstellen eine **Prüfsumme** mit der [New-DSCCheckSum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) wie im folgenden Beispiel gezeigt.
+Sobald das Ressourcenmodul komprimiert und umbenannt wurde, müssen Sie eine **Prüfsumme** erstellen.  Die **CheckSum** wird von LCM auf dem Client verwendet, um festzustellen, ob die Ressource geändert wurde und erneut heruntergeladen werden muss. Sie können mit dem Cmdlet [New-DSCCheckSum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) eine **CheckSum** erstellen, wie im folgenden Beispiel gezeigt.
 
 ```powershell
 New-DscChecksum -Path .\xPSDesiredStateConfiguration_8.4.4.0.zip
 ```
 
-Wird keine Ausgabe angezeigt werden, aber ein "xPSDesiredStateConfiguration_8.4.4.0.zip.checksum" sollte nun angezeigt werden. Sie können auch ausführen `New-DSCCheckSum` für ein Verzeichnis mit Dateien, die mit der `-Path` Parameter. Wenn eine Prüfsumme bereits vorhanden ist, können Sie erzwingen, mit neu erstellt werden die `-Force` Parameter.
+Es wird keine Ausgabe angezeigt, aber Sie sollten nun eine „xPSDesiredStateConfiguration_8.4.4.4.4.0.zip.zip.checksum“ vorfinden. Sie können auch `New-DSCCheckSum` für ein Verzeichnis mit Dateien mit dem Parameter `-Path` ausführen. Wenn bereits eine Prüfsumme vorhanden ist, können Sie mit dem Parameter `-Force` erzwingen, dass sie neu erstellt wird.
 
-### <a name="where-to-store-resource-archives"></a>Speicherort für Archive der Ressource
+### <a name="where-to-store-resource-archives"></a>Speicherort für Ressourcenarchive
 
-#### <a name="on-a-dsc-http-pull-server"></a>Auf einem HTTP-Pullserver von DSC
+#### <a name="on-a-dsc-http-pull-server"></a>Auf einem DSC-HTTP-Pullserver
 
-Beim Einrichten Ihrer HTTP-Pullserver, siehe [richten Sie eine DSC-HTTP-Pullserver](pullServer.md), Verzeichnisse für die Angabe der **ModulePath** und **ConfigurationPath** Schlüssel. Die **ConfigurationPath** Schlüssel gibt an, in dem alle "MOF"-Dateien gespeichert werden sollen. Die **ModulePath** gibt an, in dem alle DSC-Ressourcenmodulen gespeichert werden sollen.
+Wenn Sie Ihren HTTP-Pullserver einrichten (wie unter [Einrichten eines DSC-HTTP-Pullservers](pullServer.md) beschrieben), geben Sie Verzeichnisse für die Schlüssel **ModulePath** und **ConfigurationPath** an. Der Schlüssel **ConfigurationPath** gibt an, wo MOF-Dateien gespeichert werden sollen. **ModulePath** gibt an, wo DSC-Ressourcenmodule gespeichert werden sollen.
 
 ```powershell
     xDscWebService PSDSCPullServer
@@ -68,7 +68,7 @@ Beim Einrichten Ihrer HTTP-Pullserver, siehe [richten Sie eine DSC-HTTP-Pullserv
 
 #### <a name="on-an-smb-share"></a>Auf einer SMB-Freigabe
 
-Wenn Sie angegeben haben eine **ResourceRepositoryShare**, wenn das Einrichten Ihrer Pull-Client speichern, Archive und Prüfsummen in der **SourcePath** des Verzeichnisses der **ResourceRepositoryShare** Block.
+Wenn Sie eine **ResourceRepositoryShare** angegeben haben, speichern Sie beim Einrichten Ihres Pullclients Archive und Prüfsummen im Verzeichnis **SourcePath** aus dem Block **ResourceRepositoryShare**.
 
 ```powershell
 ConfigurationRepositoryShare SMBPullServer
@@ -82,7 +82,7 @@ ResourceRepositoryShare SMBResourceServer
 }
 ```
 
-Wenn Sie nur angegeben ein **ConfigurationRepositoryShare**, wenn das Einrichten Ihrer Pull-Client speichern, Archive und Prüfsummen in der **SourcePath** des Verzeichnisses der  **ConfigurationRepositoryShare** Block.
+Wenn Sie nur eine **ConfigurationRepositoryShare** angegeben haben, speichern Sie beim Einrichten Ihres Pullclients Archive und Prüfsummen im Verzeichnis **SourcePath** aus dem Block **ConfigurationRepositoryShare**.
 
 ```powershell
 ConfigurationRepositoryShare SMBPullServer
@@ -93,7 +93,7 @@ ConfigurationRepositoryShare SMBPullServer
 
 #### <a name="updating-resources"></a>Aktualisieren von Ressourcen
 
-Sie können erzwingen, dass einen Knoten seine Ressourcen Änderung der Versionsnummer des Archivs Namen aktualisieren, oder indem Sie eine neue Prüfsumme zu erstellen. Der Pull-Client überprüft für neuere Versionen der erforderlichen Ressourcen sowie Prüfsummen, aktualisiert, wenn der LCM aktualisiert.
+Sie können einen Knoten zwingen, seine Ressourcen zu aktualisieren, indem Sie die Versionsnummer im Namen des Archivs ändern oder eine neue Prüfsumme erstellen. Der Pullclient sucht nach neueren Versionen der erforderlichen Ressourcen sowie nach aktualisierten Prüfsummen, wenn sein LCM aktualisiert wird.
 
 ## <a name="see-also"></a>Siehe auch
 

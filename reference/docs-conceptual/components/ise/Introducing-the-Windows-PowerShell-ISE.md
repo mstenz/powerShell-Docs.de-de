@@ -2,29 +2,29 @@
 ms.date: 08/14/2018
 keywords: powershell,cmdlet
 title: Einführung in die Windows PowerShell ISE
-ms.openlocfilehash: 09a28b295855fd2a3c62bba8a681399dae3454f8
-ms.sourcegitcommit: 3402a478cf118c11a5642038eb117bc76553e3ab
-ms.translationtype: MTE95
+ms.openlocfilehash: 729c8535dbcfcd2c51070b8beac5d328375f36ae
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53411581"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057420"
 ---
-# <a name="the-windows-powershell-ise"></a>Der Windows PowerShell ISE
+# <a name="the-windows-powershell-ise"></a>Windows PowerShell ISE
 
-Windows PowerShell Integrated Scripting Environment (ISE) ist eine Hostanwendung für Windows PowerShell. Sie können in der ISE Ausführen von Befehlen und schreiben, testen und Debuggen von Skripts in einer einzelnen Windows-basierten grafischen Benutzeroberfläche. Die ISE bietet mehrzeiliger Bearbeitung, Vervollständigung mit der Tab, Syntaxfarben, Selektiver Ausführung, kontextbezogener Hilfe und Support für rechts-nach-links-Sprachen. Menüelemente und Tastenkombinationen sind vielen der Aufgaben zugeordnet, die Sie auch in der Windows PowerShell-Konsole ausführen würden. Z. B. Wenn Sie ein Skript in der ISE Debuggen, können Sie auf eine einzige Zeile Code im Bearbeitungsbereich "zum Festlegen eines Haltepunkts mit der rechten Maustaste.
+Windows PowerShell Integrated Scripting Environment (ISE) ist eine Hostanwendung für Windows PowerShell. Sie können mit ISE in einer Windows-basierten grafischen Benutzeroberfläche Befehle ausführen und Skripts schreiben, testen und debuggen. Die ISE ermöglicht mehrzeilige Bearbeitung, Vervollständigung mit der TAB-TASTE, Syntaxfarben, selektive Ausführung, kontextbezogene Hilfe und Unterstützung für Rechts-nach-links-Sprachen. Menüelemente und Tastenkombinationen sind vielen der Aufgaben zugeordnet, die Sie auch in der Windows PowerShell-Konsole ausführen würden. Wenn Sie z.B. ein Skript in ISE debuggen, können Sie mit der rechten Maustaste im Bearbeitungsbereich auf eine Codezeile klicken, um einen Breakpoint festzulegen.
 
 ## <a name="support"></a>Support
 
-Die ISE wurde erstmals mit Windows PowerShell V2 und erneut mit PowerShell V3 entwickelt wurde. Die ISE ist in allen unterstützten Versionen von Windows PowerShell bis zur und einschließlich Windows PowerShell 5.1 unterstützt. Die ISE ist jedoch im Maintennce Modus aus, und keine neuen Features sind wahrscheinlich hinzugefügt werden.
-Darüber hinaus besteht keine Unterstützung für die ISE mit PowerShell IPv6 und darüber hinaus zur Verfügung. Benutzer möchte ein grafisches Tool zum Verwalten von PowerShell Scrips usw. sollten [Visual Studio Code](https://code.visualstudio.com/).
+Die ISE wurde erstmals mit Windows PowerShell V2 eingeführt und in PowerShell V3 überarbeitet. Die ISE wird in allen unterstützten Versionen von Windows PowerShell bis einschließlich Windows PowerShell V5.1 unterstützt. Die ISE befindet sich jedoch im Wartungsmodus, und es werden wahrscheinlich keine neuen Funktionen hinzugefügt.
+Darüber hinaus besteht keine Unterstützung für die ISE mit PowerShell v6 oder höher. Benutzer, die ein grafisches Tool zur Verwaltung von PowerShell-Skripts usw. benötigen, sollten [Visual Studio Code](https://code.visualstudio.com/) in Betracht ziehen.
 
-## <a name="key-features"></a>Hauptmerkmale
+## <a name="key-features"></a>Wichtige Funktionen
 
-Wichtige Features in Windows PowerShell ISE sind:
+Zu den wichtigsten Funktionen von Windows PowerShell ISE gehören:
 
-- Mehrzeilige Bearbeitung: Zum Einfügen einer leeren Zeile unter der aktuellen Zeile im Befehlsbereich drücken Sie Umschalt + Eingabe.
-- Selektive Ausführung: Um Teil eines Skripts auszuführen, wählen Sie den Text, die Sie ausführen möchten, und klicken Sie dann auf die **Skript ausführen** Schaltfläche. Oder drücken Sie F5.
-- Kontextbezogene Hilfe: Typ **Invoke-Item**, und drücken Sie dann F1. Die Hilfedatei wird mit dem Artikel für das Cmdlet **Invoke-Item** geöffnet.
+- Mehrzeilige Bearbeitung: Drücken Sie zum Einfügen einer leeren Zeile unter der aktuellen Zeile im Befehlsbereich UMSCHALT+EINGABETASTE.
+- Selektive Ausführung: Um einen Teil eines Skripts auszuführen, markieren Sie den Text, den Sie ausführen möchten, und klicken Sie dann auf die Schaltfläche **Skript ausführen**. Oder drücken Sie F5.
+- Kontextbezogene Hilfe: Geben Sie **Invoke-Item** ein, und drücken Sie dann F1. Die Hilfedatei wird mit dem Artikel für das Cmdlet **Invoke-Item** geöffnet.
 
 Die Windows PowerShell ISE ermöglicht Ihnen das Anpassen einiger Aspekte ihrer Darstellung. Sie enthält auch ein eigenes Windows PowerShell-Profilskript.
 

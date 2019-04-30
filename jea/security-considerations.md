@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: jea,powershell,security
 title: JEA-Sicherheitsüberlegungen
 ms.openlocfilehash: 9526e141517601ae3b6d6932cd3536fdf49aa9a6
-ms.sourcegitcommit: 10c347a8c3dcbf8962295601834f5ba85342a87b
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55887598"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084775"
 ---
 # <a name="jea-security-considerations"></a>JEA-Sicherheitsüberlegungen
 
@@ -127,7 +127,7 @@ Betrachten Sie beispielsweise den folgenden Rollenfunktionseintrag:
 ```
 
 Über diese Rollenfunktion können Benutzer jedes beliebige PowerShell-Cmdlet mit dem Namen „Process“ aus dem Microsoft.PowerShell.Management-Modul ausführen.
-Benutzer müssen Zugriff auf Cmdlets wie `Get-Process` zu verstehen, welche Anwendungen auf dem System ausgeführt werden und `Stop-Process` , Beenden alle Anwendungen, die nicht reagieren.
+Benutzer benötigen möglicherweise Zugriff auf Cmdlets wie `Get-Process`, um zu erfahren, welche Anwendungen auf dem System ausgeführt werden, oder auf `Stop-Process`, um Anwendungen zu beenden, die nicht mehr reagieren.
 Der Eintrag ermöglicht aber auch den Befehl `Start-Process`, um ein beliebiges Programm mit vollständigen Administratorberechtigungen zu starten.
 Das Programm muss nicht zwangsläufig lokal auf dem System installiert werden. Ein Angreifer könnte einfach ein Programm auf einer Dateifreigabe starten, die dem Benutzer, der eine Verbindung herstellt, lokale Administratorrechte gibt und die Ausführung von Malware und vieles mehr ermöglicht.
 

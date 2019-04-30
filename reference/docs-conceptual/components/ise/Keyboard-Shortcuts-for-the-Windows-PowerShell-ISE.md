@@ -4,11 +4,11 @@ keywords: powershell,cmdlet
 title: Tastenkombinationen für Windows PowerShell ISE
 ms.assetid: 8328b946-0f02-4ef4-ac28-2743a1b4043b
 ms.openlocfilehash: 1abae849ce599b586357fd2a8db46c608932bd4e
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401211"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086832"
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Tastenkombinationen für Windows PowerShell ISE
 
@@ -20,7 +20,7 @@ Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Text bearbeite
 
 |Aktion|Tastenkombinationen|Verwenden in|
 |----------|----------------------|----------|
-|**Hilfe**|F1|Skriptbereich **wichtig:** Sie können angeben, dass F1-Hilfe aus der TechNet-Bibliothek im Web oder aus der heruntergeladenen Hilfe (finden Sie unter "Update-Help"). Um dies auszuwählen, klicken Sie auf **Tools**, **Optionen**, und aktivieren oder deaktivieren Sie dann auf der Registerkarte **Allgemeine Einstellungen** die Option **Lokale Hilfe anstatt Onlineinhalt verwenden**.|
+|**Hilfe**|F1|Skriptbereich **Wichtig:** Sie können angeben, dass F1-Hilfe aus der TechNet-Bibliothek im Internet oder aus der heruntergeladenen Hilfe abgerufen wird (siehe „Update-Help“). Um dies auszuwählen, klicken Sie auf **Tools**, **Optionen**, und aktivieren oder deaktivieren Sie dann auf der Registerkarte **Allgemeine Einstellungen** die Option **Lokale Hilfe anstatt Onlineinhalt verwenden**.|
 |**Kopieren**|STRG + C|Skriptbereich, Befehlsbereich, Ausgabebereich|
 |**Ausschneiden**|STRG+X|Skriptbereich, Befehlsbereich|
 |**Gliederung erweitern oder reduzieren**|STRG+M|Skriptbereich|
@@ -47,8 +47,8 @@ Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Skripts im Skr
 |**Ausführen**|F5|
 |**Auswahl ausführen**|F8|
 |**Vorgang beenden**|STRG+UNTBR. STRG+C kann verwendet werden, wenn der Kontext eindeutig ist (es ist kein Text ausgewählt).|
-|**Registerkarte** (zum nächsten Skript)|STRG + TAB **beachten:** TAB zum nächsten Skript wechseln funktioniert nur, wenn Sie eine einzige Windows PowerShell-Registerkarte geöffnet haben oder wenn Sie mehr als ein Windows PowerShell-Registerkarte geöffnet haben und sich der Fokus im Skriptbereich befindet.|
-|**Registerkarte** (zum vorherigen Skript)|STRG + UMSCHALT + TAB **beachten:** TAB zum vorherigen Skript wechseln funktioniert nur, wenn Sie nur eine Windows PowerShell-Registerkarten geöffnet haben, oder wenn Sie mehrere Windows PowerShell-Registerkarten geöffnet haben, und der Fokus im Skriptbereich befindet.|
+|**Registerkarte** (zum nächsten Skript)|STRG+TAB **Hinweis:** Mit STRG+TAB zum nächsten Skript wechseln funktioniert nur, wenn Sie eine einzige Windows PowerShell-Registerkarte geöffnet haben, oder wenn Sie mehrere Windows PowerShell-Registerkarten geöffnet haben und sich der Fokus im Skriptbereich befindet.|
+|**Registerkarte** (zum vorherigen Skript)|STRG+UMSCHALT+TAB **Hinweis:** Mit STRG+UMSCHALT+TAB zum vorherigen Skript wechseln funktioniert nur, wenn Sie eine einzige Windows PowerShell-Registerkarte geöffnet haben, oder wenn Sie mehrere Windows PowerShell-Registerkarten geöffnet haben und sich der Fokus im Skriptbereich befindet.|
 
 ## <a name="keyboard-shortcuts-for-customizing-the-view"></a>Tastenkombinationen zum Anpassen der Ansicht
 
@@ -120,4 +120,4 @@ Sie können die folgenden Tastenkombinationen verwenden, um die Windows PowerShe
 
 ## <a name="see-also"></a>Weitere Informationen
 
-- [PowerShell-Magazin: Die vollständige Liste der Tastenkombinationen für Windows PowerShell ISE](https://www.powershellmagazine.com/2013/01/29/the-complete-list-of-powershell-ise-3-0-keyboard-shortcuts/)
+- [PowerShell Magazine: The Complete List of Windows PowerShell ISE Keyboard Shortcuts](https://www.powershellmagazine.com/2013/01/29/the-complete-list-of-powershell-ise-3-0-keyboard-shortcuts/)

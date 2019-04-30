@@ -2,12 +2,12 @@
 title: Neuigkeiten in PowerShell Core 6.1
 description: Neue Funktionen und Änderungen in PowerShell Core 6.1
 ms.date: 09/13/2018
-ms.openlocfilehash: fe1e892d4a13a7758f5405867fdd7488c059f5cc
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.openlocfilehash: 3d836a24b494df9c7f6ebe994386e2a0297521fa
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293315"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086105"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>Neuigkeiten in PowerShell Core 6.1
 
@@ -67,7 +67,7 @@ Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Sort-Ob
 | Zeit (in Sek.)   | 12,170                 | 8,493               | 7,08                |
 | Beschleunigung (in %) | Nicht zutreffend                    | 30,2 %               | 16,6 %               |
 
-`Import-Csv` wurde nach Regression durch Windows PowerShell ebenfalls deutlich schneller.
+Auch `Import-Csv` wurde nach Regression durch Windows PowerShell deutlich schneller.
 Im folgenden Beispiel wird eine CSV-Testdatei mit 26.616 Zeilen und sechs Spalten verwendet:
 
 ```powershell
@@ -179,8 +179,9 @@ Weitere Informationen zur Funktionsweise dieser Cmdlets finden Sie unter [dieser
 
 ## <a name="experimental-feature-flags"></a>Experimentelle Featureflags
 
-Mit experimentellen Featureflags können Benutzer noch nicht fertiggestellte Funktionen aktivieren.
-Diese Features werden nicht unterstützt und enthalten möglicherweise Fehler.
+Unterstützung für [experimentelle Features][] wurde aktiviert. Auf diese Weise können PowerShell-Entwickler neue Funktionen bereitstellen und Feedback erhalten, bevor der Entwurf abgeschlossen ist. Auf diese Weise vermeiden wir, dass wir bei der Weiterentwicklung des Entwurfs Breaking Changes vornehmen.
+
+Verwenden Sie `Get-ExperimentalFeature`, um eine Liste der verfügbaren experimentellen Features abzurufen. Sie können diese Features mit `Enable-ExperimentalFeature` und `Disable-ExperimentalFeature` aktivieren oder deaktivieren.
 
 Weitere Informationen zu dieser Funktion finden Sie unter [PowerShell RFC 0029](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0029-Support-Experimental-Features.md).
 
@@ -210,7 +211,7 @@ Ist `pwsh.exe` nicht verfügbar, greift PowerShell Direct wieder auf `powershell
 `Enable-PSRemoting` erstellt jetzt zwei Konfigurationen für Remotesitzungen:
 
 - Eine für die Hauptversion von PowerShell, Beispiel: `PowerShell.6`. Auf diesen Endpunkt kann nach geringfügigen Aktualisierungen als systemweite Sitzungskonfiguration von PowerShell 6 zurückgegriffen werden.
-- Eine versionsspezifische Sitzungskonfiguration, z.B.: `PowerShell.6.1.0`
+- Eine versionsspezifische Sitzungskonfiguration, z.B. `PowerShell.6.1.0`.
 
 Dieses Verhalten ist hilfreich, wenn Sie mehrere Versionen von PowerShell 6 auf einem Computer installiert und zugänglich haben möchten.
 
@@ -305,12 +306,12 @@ Durch die Mithilfe von [@iSazonov](https://github.com/iSazonov) konnte das [`Tes
 ### <a name="update-help-as-non-admin"></a>`Update-Help` als Nicht-Administrator
 
 Aufgrund der großen Nachfrage muss nun `Update-Help` nicht mehr als Administrator ausgeführt werden.
-`Update-Help` wird die Hilfe jetzt standardmäßig in einem benutzerdefinierten Ordner gespeichert.
+Über `Update-Help` wird die Hilfe jetzt standardmäßig in einen benutzerdefinierten Ordner gespeichert.
 
 ### <a name="new-methodsproperties-on-pscustomobject"></a>Neue Methoden/Eigenschaften für `PSCustomObject`
 
 Durch die Mithilfe von [@iSazonov](https://github.com/iSazonov) konnten `PSCustomObject` neue Methoden und Eigenschaften hinzugefügt werden.
-`PSCustomObject` enthält nun eine `Count`/`Length`-Eigenschaft wie andere Objekte.
+`PSCustomObject` enthält nun eine `Count`/`Length`-Eigenschaften wie andere Objekte.
 
 ```powershell
 $PSCustomObject = [pscustomobject]@{foo = 1}
@@ -523,3 +524,6 @@ Im Rahmen der Leistungsverbesserung gibt `Group-Object` jetzt eine sortierte Auf
 Obwohl Sie sich auf die Reihenfolge nicht verlassen sollten, könnte diese Änderung zu einer Teilung führen, wenn Sie die erste Gruppe anzeigen möchten. Wir haben entschieden, dass diese Leistungsverbesserung die Änderung wert wäre, weil sich die Abhängigkeit vom früheren Verhalten nur geringfügig auswirkt.
 
 Weitere Informationen zu dieser Änderung finden Sie unter [Problem #7409](https://github.com/PowerShell/PowerShell/issues/7409).
+
+<!-- URL references -->
+[Experimentelle Features]: /powershell/module/Microsoft.PowerShell.Core/About/about_Experimental_Features

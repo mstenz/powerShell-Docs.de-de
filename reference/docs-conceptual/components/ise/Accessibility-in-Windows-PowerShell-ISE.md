@@ -4,11 +4,11 @@ keywords: powershell,cmdlet
 title: Barrierefreiheit in Windows PowerShell ISE
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
 ms.openlocfilehash: 78a001dbe43a0b005d10a817e05e4cc7a72f5bd0
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401409"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058453"
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Barrierefreiheit in Windows PowerShell ISE
 
@@ -85,8 +85,8 @@ Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Skripts im Skr
 |**Ausführen**|F5|
 |**Auswahl ausführen**|F8|
 |**Vorgang beenden**|STRG+UNTBR. STRG+C kann verwendet werden, wenn der Kontext eindeutig ist (es ist kein Text ausgewählt).|
-|**Registerkarte** (zum nächsten Skript)|STRG + TAB **beachten:** TAB zum nächsten Skript wechseln funktioniert nur, wenn Sie eine einzige PowerShell-Registerkarte geöffnet haben oder wenn Sie mehrere PowerShell-Registerkarten geöffnet haben, aber der Fokus im Skriptbereich befindet.|
-|**Registerkarte** (zum vorherigen Skript)|STRG + UMSCHALT + TAB **beachten:** TAB zum vorherigen Skript wechseln funktioniert nur, wenn Sie nur ein PowerShell-Registerkarten geöffnet haben, oder wenn Sie mehrere PowerShell-Registerkarten geöffnet haben, und der Fokus im Skriptbereich befindet.|
+|**Registerkarte** (zum nächsten Skript)|STRG+TAB **Hinweis:** Mit dieser Kombination zum nächsten Skript wechseln funktioniert nur, wenn Sie eine einzige PowerShell-Registerkarte geöffnet haben, oder wenn Sie mehrere PowerShell-Registerkarten geöffnet haben und sich der Fokus im Skriptbereich befindet.|
+|**Registerkarte** (zum vorherigen Skript)|STRG+UMSCHALT+TAB **Hinweis:** Mit dieser Kombination zum vorherigen Skript wechseln funktioniert nur, wenn Sie eine einzige PowerShell-Registerkarte geöffnet haben, oder wenn Sie mehrere PowerShell-Registerkarten geöffnet haben und sich der Fokus im Skriptbereich befindet.|
 
 ## <a name="keyboard-shortcuts-for-customizing-the-view"></a>Tastenkombinationen zum Anpassen der Ansicht
 

@@ -4,11 +4,11 @@ keywords: powershell,cmdlet
 title: Abrufen von Informationen zu Befehlen
 ms.assetid: 56f8e5b4-d97c-4e59-abbe-bf13e464eb0d
 ms.openlocfilehash: 7af83e3a0e776d96e580b442430357b4ea063a72
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401990"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057705"
 ---
 # <a name="getting-information-about-commands"></a>Abrufen von Informationen zu Befehlen
 
@@ -74,7 +74,7 @@ Es ist sinnvoller, einen reduzierten Satz von Befehlen anzuzeigen.
 > Das Sternchen (\*) wird zum Abgleich mit Platzhalterzeichen in PowerShell-Befehlsargumenten verwendet. \* bedeutet „Abgleichen mit einem oder mehreren beliebigen Zeichen“. Beispielsweise können Sie `Get-Command a*` eingeben, um nach allen Befehlen zu suchen, die mit dem Buchstaben „a“ beginnen. Anders als beim Platzhalterabgleich in **cmd.exe** führt das PowerShell-Platzhalterzeichen auch einen Abgleich mit einem Punkt durch.
 
 Verwenden Sie den **CommandType**-Parameter von `Get-Command`, um die nativen Befehle anderer Typen
-angezeigt.
+abzurufen.
 
 Geben Sie Folgendes ein, um Befehlsaliase abzurufen, bei denen es sich um die zugewiesenen Spitznamen von Befehlen handelt:
 

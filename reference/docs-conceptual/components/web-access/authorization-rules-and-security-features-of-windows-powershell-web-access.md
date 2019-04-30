@@ -3,11 +3,11 @@ ms.date: 06/27/2017
 keywords: powershell,cmdlet
 title: Autorisierungsregeln und Sicherheitsfeatures von Windows PowerShell Web Access
 ms.openlocfilehash: c426b8cfb10829241ba244a5d840c91e1de9f66e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55678562"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058419"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Autorisierungsregeln und Sicherheitsfeatures von Windows PowerShell Web Access
 
@@ -156,9 +156,9 @@ Bei jeder Windows PowerShell-Sitzung wird eine Sitzungskonfiguration verwendet. 
 - Ein Administrator erstellt einen Endpunkt namens **PswaEndpoint** mit einem eingeschränkten Runspace. Anschließend erstellt der Administrator die Regel `*,*,PswaEndpoint` und verteilt den Endpunkt an andere Computer. Mithilfe der Regel können alle Benutzer auf alle Computer mit dem Endpunkt **PswaEndpoint** zugreifen.
   Falls es sich um die einzige Autorisierungsregel handelt, die in dem Regelsatz definiert ist, ist der Zugriff auf Computer ohne diesen Endpunkt nicht möglich.
 
-- Der Administrator hat einen Endpunkt mit dem eingeschränkten Runspace **PswaEndpoint** erstellt und möchte den Zugriff auf bestimmte Benutzer beschränken. Der Administrator erstellt eine Gruppe von Benutzern aufgerufen **Level1Support**, und definiert die folgende Regel: **Level1Support,\*,PswaEndpoint**. Mit der Regel wird allen Benutzern der Gruppe **Level1Support** Zugriff auf alle Computer mit der Konfiguration **PswaEndpoint** gewährt. Ebenso ist es möglich, den Zugriff auf eine bestimmte Gruppe von Computern zu beschränken.
+- Der Administrator hat einen Endpunkt mit dem eingeschränkten Runspace **PswaEndpoint** erstellt und möchte den Zugriff auf bestimmte Benutzer beschränken. Der Administrator erstellt die Benutzergruppe namens **Level1Support** und definiert die folgende Regel: **Level1Support,\*,PswaEndpoint**. Mit der Regel wird allen Benutzern der Gruppe **Level1Support** Zugriff auf alle Computer mit der Konfiguration **PswaEndpoint** gewährt. Ebenso ist es möglich, den Zugriff auf eine bestimmte Gruppe von Computern zu beschränken.
 
-- Einige Administratoren gewähren bestimmten Benutzern mehr Zugriff als anderen. Beispielsweise erstellt ein Administrator die beiden Benutzergruppen **Admins** und **BasicSupport**. Ferner erstellt der Administrator einen Endpunkt mit dem eingeschränkten Runspace **PswaEndpoint**, und definiert die folgenden zwei Regeln: **Administratoren,\*,\***  und **BasicSupport,\*, PswaEndpoint**. Mit der ersten Regel wird allen Benutzern der Gruppe **Admin** Zugriff auf alle Computer gewährt, und mit der zweiten Regel wird allen Benutzern der Gruppe **BasicSupport** nur Zugriff auf Computer mit **PswaEndpoint** gewährt.
+- Einige Administratoren gewähren bestimmten Benutzern mehr Zugriff als anderen. Beispielsweise erstellt ein Administrator die beiden Benutzergruppen **Admins** und **BasicSupport**. Ferner erstellt der Administrator einen Endpunkt mit dem eingeschränkten Runspace namens **PswaEndpoint** und definiert die folgenden beiden Regeln: **Admins,\*,\*** und **BasicSupport,\*,PswaEndpoint**. Mit der ersten Regel wird allen Benutzern der Gruppe **Admin** Zugriff auf alle Computer gewährt, und mit der zweiten Regel wird allen Benutzern der Gruppe **BasicSupport** nur Zugriff auf Computer mit **PswaEndpoint** gewährt.
 
 - Ein Administrator hat eine private Testumgebung eingerichtet und möchte nun allen autorisierten Netzwerkbenutzern den Zugriff auf alle Computer im Netzwerk ermöglichen, auf die sie normalerweise zugreifen können, und zwar mit Zugriff auf alle Sitzungskonfigurationen, auf die sie normalerweise zugreifen können. Da es sich um eine private Testumgebung handelt, erstellt der Administrator eine Autorisierungsregel, die nicht sicher ist. Der Administrator führt das Cmdlet `Add-PswaAuthorizationRule * * *` aus. Dabei wird das Platzhalterzeichen **\*** verwendet, um alle Benutzer, alle Computer und alle Konfigurationen anzugeben. Diese Regel entspricht Folgendem: `Add-PswaAuthorizationRule -UserName * -ComputerName * -ConfigurationName *`.
 

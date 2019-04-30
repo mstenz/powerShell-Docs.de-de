@@ -4,11 +4,11 @@ keywords: powershell,cmdlet
 title: Arbeiten mit Softwareinstallationen
 ms.assetid: 51a12fe9-95f6-4ffc-81a5-4fa72a5bada9
 ms.openlocfilehash: 9369e3c5ac670895cd4fbd3ebc895c50efd02051
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293230"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086271"
 ---
 # <a name="working-with-software-installations"></a>Arbeiten mit Softwareinstallationen
 
@@ -104,7 +104,7 @@ Uninstall  Registry      HKEY_LOCAL_MACHINE\SOFTWARE\Micr...
 > [!NOTE]
 > Das Laufwerk **HKLM:** ist dem Stammverzeichnis von **HKEY_LOCAL_MACHINE** zugeordnet, daher haben wir dieses Laufwerk im Pfad zum Deinstallationsschlüssel verwendet. Statt **HKLM:** hätten wir den Registrierungspfad entweder mit **HKLM** oder **HKEY_LOCAL_MACHINE** festlegen können. Der Vorteil der Verwendung eines vorhandenen Registrierungslaufwerks ist, dass wir die Befehlszeilenergänzung verwenden können, um die Namen der Schlüssel zu vervollständigen, ohne sie ganz eingeben zu müssen.
 
-Wir haben nun ein Laufwerk mit dem Namen „Deinstallieren“, das für die schnelle und bequeme Suche nach Anwendungsinstallationen verwendet werden kann. Wir können die Anzahl der installierten Anwendungen durch Zählen der Anzahl der Registrierungsschlüssel im Laufwerk „Deinstallieren:  Windows PowerShell“ finden:
+Wir haben nun ein Laufwerk mit dem Namen „Deinstallieren“, das für die schnelle und bequeme Suche nach Anwendungsinstallationen verwendet werden kann. Wir können die Anzahl der installierten Anwendungen durch Zählen der Anzahl der Registrierungsschlüssel im Laufwerk „Deinstallieren: Windows PowerShell“ finden:
 
 ```
 PS> (Get-ChildItem -Path Uninstall:).Count

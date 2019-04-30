@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Optionen für Anmeldeinformationen in den Konfigurationsdaten
 ms.openlocfilehash: 2a326e45bbbad7bd2362b66b88bf61b98df7b02e
-ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "55678550"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080151"
 ---
 # <a name="credentials-options-in-configuration-data"></a>Optionen für Anmeldeinformationen in den Konfigurationsdaten
 
->Gilt für: Windows PowerShell 5.0
+>Gilt für: Windows PowerShell 5.0
 
 ## <a name="plain-text-passwords-and-domain-users"></a>Nur-Text-Kennwörter und Domänenbenutzer
 
@@ -25,7 +25,7 @@ Um diese Fehler- und Warnmeldungen zu unterdrücken, verwenden Sie die DSC-Konfi
 > [!NOTE]
 > Das Speichern/Übertragen von unverschlüsselten Nur-Text-Kennwörtern ist in der Regel nicht sicher. Das Sichern von Anmeldeinformationen mithilfe der weiter unten in diesem Thema behandelten Verfahren wird empfohlen.
 > Der Azure Automation DSC-Dienst erlaubt Ihnen, Ihre Anmeldeinformationen zentral zu verwalten, um sie in Konfigurationen zu kompilieren und sicher zu speichern.
-> Informationen finden Sie unter: [Compiling DSC Configurations / Credential Assets (Kompilieren von DSC-Konfigurationen/Anmeldeinformationsassets)](/azure/automation/automation-dsc-compile#credential-assets)
+> Weitere Informationen finden Sie unter: [Kompilieren von DSC-Konfigurationen/Anmeldeinformationsressourcen](/azure/automation/automation-dsc-compile#credential-assets)
 
 ## <a name="handling-credentials-in-dsc"></a>Behandeln von Anmeldeinformationen in DSC
 
@@ -137,7 +137,7 @@ In diesem Beispiel gibt es zwei Probleme:
 1. Ein Fehler zeigt an, dass Nur-Text-Kennwörter nicht empfohlen werden.
 2. Eine Warnung rät davon ab, Domänenanmeldeinformationen zu verwenden.
 
-Die Flags **PSDSCAllowPlainTextPassword** und **PSDSCAllowDomainUser** Unterdrücken der Fehler und Warnungen, die den Benutzer das Risiko zu informieren.
+Die Flags **PSDSCAllowPlainTextPassword** und **PSDSCAllowDomainUser** unterdrücken den Fehler und die Warnung, die den Benutzer über das damit verbundene Risiko informieren.
 
 ## <a name="psdscallowplaintextpassword"></a>PSDSCAllowPlainTextPassword
 
@@ -181,7 +181,7 @@ DomainCredentialExample -ConfigurationData $cd
 
 ### <a name="localhostmof"></a>localhost.mof
 
-Die **PSDSCAllowPlainTextPassword** Flag ist erforderlich, dass der Benutzer das Risiko der Speicherung von nur-Text-Kennwörtern in einer MOF-Datei bestätigen. In der generierten MOF-Datei Obwohl ein **PSCredential** Objekt mit einer **SecureString** verwendet wurde, werden die Kennwörter werden weiterhin angezeigt, als nur-Text. Dies ist nur dann, die die Anmeldeinformationen verfügbar gemacht werden. Erhalten Zugriff auf diese MOF-Datei gibt, die allen Benutzern Zugriff auf das Administratorkonto an.
+Das Flag **PSDSCAllowPlainTextPassword** verlangt, dass der Benutzer das Risiko erkennt, Nur-Text-Kennwörter in einer MOF-Datei zu speichern. In der generierten MOF-Datei liegen die Kennwörter dennoch als Nur-Text vor, obwohl ein **PSCredential**-Objekt, das eine **SecureString**-Angabe enthält, verwendet wurde. Dies ist das einzige Mal, dass die Anmeldeinformationen offengelegt werden. Wenn Sie Zugriff auf diese MOF-Datei erhalten, haben Sie Zugriff auf das Administratorkonto.
 
 ```
 /*
@@ -216,16 +216,16 @@ ModuleVersion = "1.0";
 };
 ```
 
-### <a name="credentials-in-transit-and-at-rest"></a>Anmeldeinformationen, die während der Übertragung und im Ruhezustand
+### <a name="credentials-in-transit-and-at-rest"></a>Anmeldeinformationen im Übergang und im Ruhezustand
 
-- Die **PSDscAllowPlainTextPassword** Flag ermöglicht, dass die Kompilierung von MOF-Dateien, die Kennwörter in Klartext enthalten.
-  Vorsichtsmaßnahmen Sie beim Speichern der MOF-Dateien, die Kennwörter in Klartext enthält.
-- Wann ist die MOF-Datei mit einem Knoten im übermittelt **Push** Modus WinRM verschlüsselt die Kommunikation, um die Klartext-Kennwort zu schützen, es sei denn, Sie den Standardwert außer Kraft setzen der **AllowUnencrypted** Parameter.
-  - Verschlüsseln die MOF-Datei mit einem Zertifikat schützt die MOF-Datei im Ruhezustand, bevor es zu einem Knoten angewendet wurde.
-- In **Pull** -Modus können Sie Windows-Pull-Server zur Verwendung von HTTPS zum Verschlüsseln des Datenverkehrs über das Protokoll angegeben, die in Internet Information Server konfigurieren. Weitere Informationen finden Sie in den Artikeln [zum Einrichten eines DSC-pullclients](../pull-server/pullclient.md) und [Sichern von MOF-Dateien mit Zertifikaten](../pull-server/secureMOF.md).
-  - In der [Zustands für Azure Automation](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview) service, Pull, Datenverkehr wird immer verschlüsselt.
-- MOF-Dateien sind auf dem Knoten und im Ruhezustand verschlüsselt in PowerShell 5.0 ab.
-  - In PowerShell 4.0 MOF sind Dateien unverschlüsselt im Ruhezustand, es sei denn, sie mit einem Zertifikat verschlüsselt sind, wenn sie mithilfe von Push übertragen oder auf den Knoten abgerufen.
+- Das Flag **PSDscAllowPlainTextPassword** ermöglicht die Zusammenstellung von MOF-Dateien, die Kennwörter als Nur-Text enthalten.
+  Treffen Sie Vorsichtsmaßnahmen beim Speichern von MOF-Dateien mit Nur-Text-Kennwörtern.
+- Wenn die MOF-Datei an einen Knoten im **Push**modus übermittelt wird, verschlüsselt WinRM die Kommunikation zum Schutz des Nur-Text-Kennworts, es sei denn, Sie überschreiben die Standardeinstellung mit dem **AllowUnencrypted**-Parameter.
+  - Die Verschlüsselung der MOF-Datei mit einem Zertifikat schützt die MOF-Datei im Ruhezustand, bevor sie auf einen Knoten angewendet wurde.
+- Im **Pull**modus können Sie den Windows-Pullserver so konfigurieren, dass er HTTPS verwendet, um den Datenverkehr mit dem in Internet Information Server angegebenen Protokoll zu verschlüsseln. Weitere Informationen finden Sie in den Artikeln [Einrichten eines DSC-Pullclients](../pull-server/pullclient.md) und [Sichern von MOF-Dateien mit Zertifikaten](../pull-server/secureMOF.md).
+  - In der [Azure Automation State Configuration](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview) ist Pulldatenverkehr immer verschlüsselt.
+- Auf dem Knoten werden MOF-Dateien im Ruhezustand ab PowerShell 5.0 verschlüsselt.
+  - In PowerShell 4.0 sind MOF-Dateien im Ruhezustand unverschlüsselt, es sei denn, sie werden mit einem Zertifikat verschlüsselt, wenn sie auf den Knoten gepusht oder von ihm gepullt werden.
 
 **Microsoft empfiehlt, Nur-Text-Kennwörter aufgrund des hohen Sicherheitsrisikos zu vermeiden.**
 

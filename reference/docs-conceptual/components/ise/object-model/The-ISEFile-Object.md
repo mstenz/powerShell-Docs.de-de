@@ -4,11 +4,11 @@ keywords: powershell,cmdlet
 title: Das ISEFile-Objekt
 ms.assetid: 1c6d91f3-c556-42a2-a017-79b6b7b4b7db
 ms.openlocfilehash: 24549720b8bc35435882533b0eb138de432ede65
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55678149"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057552"
 ---
 # <a name="the-isefile-object"></a>Das ISEFile-Objekt
 
@@ -52,8 +52,8 @@ Speichert die Datei mit dem angegebenen Namen und der angegebenen Codierung.
 
 ### <a name="exceptions"></a>Ausnahmen
 
-- **System.ArgumentNullException**: Die **Filename** -Parameter ist null.
-- **System.ArgumentException**: Die **Filename** Parameter ist leer.
+- **System.ArgumentNullException**: Der Parameter **Filename** ist NULL.
+- **System.ArgumentException**: Der Parameter **filename** ist leer.
 - **System.IO.IOException**: Die Datei konnte nicht gespeichert werden.
 
 ```powershell

@@ -3,13 +3,13 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: 'Zusammengesetzte Ressourcen: Verwenden einer DSC-Konfiguration als Ressource'
 ms.openlocfilehash: 2823d05e0c8feb2933ca691f9ab5149ace2f7ee3
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401214"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076683"
 ---
-# <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a>Zusammengesetzte Ressourcen Verwenden einer DSC-Konfigurations als Ressource
+# <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a>Zusammengesetzte Ressourcen Verwenden einer DSC-Konfiguration als Ressource
 
 > Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
@@ -190,7 +190,7 @@ configuration RenameVM
 
 ## <a name="supporting-psdscrunascredential"></a>Unterstützung von PsDscRunAsCredential
 
->**Hinweis:** **"Psdscrunascredential"** wird in PowerShell 5.0 und höher unterstützt.
+>**Hinweis:** **PsDscRunAsCredential** wird in PowerShell 5.0 und höher unterstützt.
 
 Mithilfe der Eigenschaft **PsDscRunAsCredential** kann im Ressourcenblock [DSC configurations](../configurations/configurations.md) angegeben werden, dass die Ressource mit einem festgelegten Satz an Anmeldeinformationen ausgeführt werden soll.
 Weitere Informationen finden Sie unter [Ausführen von DSC mit Benutzeranmeldeinformationen](../configurations/runAsUser.md).

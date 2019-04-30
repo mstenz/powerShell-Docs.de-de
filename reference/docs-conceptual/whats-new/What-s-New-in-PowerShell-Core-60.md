@@ -3,11 +3,11 @@ title: Neuigkeiten in PowerShell Core 6.0
 description: Neue Features und Änderungen in PowerShell Core 6.0
 ms.date: 08/06/2018
 ms.openlocfilehash: 83c104d838db9d86fe1d485e92245a9c8f2d2057
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55678383"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62059014"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>Neuigkeiten in PowerShell Core 6.0
 
@@ -274,7 +274,7 @@ Weitere Informationen zu PowerShell-Aufträgen finden Sie unter [about_Jobs](htt
 - Der `-SkipHeaderValidation`-Schalter wurde hinzugefügt, um das Hinzufügen von Headern ohne Überprüfung des Headerwerts zu unterstützen. (#4085)
 - Falls erforderlich, können Sie festlegen, dass Web-Cmdlets das HTTPS-Zertifikat auf dem Server nicht überprüfen sollen.
 - Es wurden Authentifizierungsparameter hinzugefügt. (#5052) (Vielen Dank an [@markekraus](https://github.com/markekraus))
-  - Hinzufügen `-Authentication` , die bietet drei Optionen: Basic, OAuth und Trägertoken.
+  - Fügen Sie `-Authentication` hinzu, um drei Optionen bereitzustellen: „Basic“, „OAuth“ und „Bearer“.
   - Es wurde `-Token` hinzugefügt, um das Bearer-Token für die Optionen „OAuth“ und „Bearer“ zu erhalten.
   - Es wurde `-AllowUnencryptedAuthentication` hinzugefügt, um die Authentifizierung zu umgehen, die für alle Transportschemas außer HTTPS bereitgestellt wird.
 - `-ResponseHeadersVariable` wurde `Invoke-RestMethod` hinzugefügt, um die Erfassung von Antwortheadern zu aktivieren. (#4888) (Vielen Dank an [@markekraus](https://github.com/markekraus))

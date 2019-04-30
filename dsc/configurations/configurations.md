@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,setup
 title: DSC-Konfigurationen
 ms.openlocfilehash: 6af27f442de3080facd65892c713c989d0e388c5
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401448"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080173"
 ---
 # <a name="dsc-configurations"></a>DSC-Konfigurationen
 
@@ -32,14 +32,14 @@ Configuration MyDscConfiguration {
 MyDscConfiguration
 ```
 
-Speichern Sie das Skript eine `.ps1` Datei.
+Speichern Sie das Skript als `.ps1`-Datei.
 
 ## <a name="configuration-syntax"></a>Konfigurationssyntax
 
 Ein Konfigurationsskript besteht aus den folgenden Teilen:
 
 - Dem **Configuration**-Block. Dies ist die äußerste Skriptblock. Sie definieren ihn mithilfe des Schlüsselworts **Configuration** und der Angabe eines Namens. In diesem Fall lautet der Name der Konfiguration „MyDscConfiguration“.
-- Mindestens einem **Node**-Block. Diese Blöcke definieren die Knoten (Computer oder VMs), die Sie konfigurieren. Bei der obigen Konfiguration gibt es einen **Node**-Block für den Computer „TEST-PC1“. Der "Node"-Block kann mehrere Computernamen akzeptieren.
+- Mindestens einem **Node**-Block. Diese Blöcke definieren die Knoten (Computer oder VMs), die Sie konfigurieren. Bei der obigen Konfiguration gibt es einen **Node**-Block für den Computer „TEST-PC1“. Der Node-Block kann mehrere Computernamen akzeptieren.
 - Mindestens einen Ressourcenblock. In diesen Blöcken werden die Eigenschaften der Ressourcen festlegt, die konfiguriert werden. In diesem Fall gibt es zwei Ressourcenblöcke, die beide die Ressource „WindowsFeature“ aufrufen.
 
 Innerhalb eines **Configuration**-Blocks sind alle Aktionen möglich, die Sie normalerweise mit einer PowerShell-Funktion ausführen. Wenn Sie beispielsweise im vorherigen Beispiel den Namen des Zielcomputers nicht in der Konfiguration hart codieren möchten, können Sie einen Parameter für den Knotennamen hinzufügen:
@@ -73,13 +73,13 @@ Configuration MyDscConfiguration
 MyDscConfiguration
 ```
 
-Die **Knoten** Block kann auch mehrere Computernamen akzeptieren. Im obigen Beispiel können Sie entweder die `-ComputerName` Parameter oder übergeben Sie eine durch Trennzeichen getrennte Liste der Computer direkt die **Knoten** Block.
+Der **Node**-Block kann auch mehrere Computernamen akzeptieren. Im Beispiel oben können Sie entweder den `-ComputerName`-Parameter verwenden oder eine durch Trennzeichen getrennte Liste der Computer direkt an den **Node** Block übergeben.
 
 ```powershell
 MyDscConfiguration -ComputerName "localhost", "Server01"
 ```
 
-Wenn Sie eine Liste von Computern zum Angeben der **Knoten** Block von innerhalb einer Konfiguration müssen Sie mithilfe der Arraynotation.
+Wenn Sie eine Liste von Computern für den **Node**-Block aus einer Konfiguration angeben, müssen Sie Arraynotation verwenden.
 
 ```powershell
 Configuration MyDscConfiguration
@@ -119,7 +119,7 @@ Beim Aufruf der Konfiguration erfolgt Folgendes:
 - Alle Variablen werden aufgelöst.
 - Im aktuellen Verzeichnis wird ein Ordner mit dem Namen der Konfiguration erstellt.
 - Eine Datei namens _NodeName.mof_ wird im neuen Verzeichnis erstellt, wobei _NodeName_ der Name des Zielknotens der Konfiguration ist.
-  Wenn mehrere Knoten vorhanden ist, wird eine MOF-Datei für jeden Knoten erstellt werden.
+  Wenn mehrere Knoten vorhanden sind, wird eine MOF-Datei für jeden Knoten erstellt.
 
 > [!NOTE]
 > Die MOF-Datei enthält alle Konfigurationsinformationen für den Zielknoten. Aus diesem Grund ist es wichtig, sie geschützt zu halten.
@@ -161,17 +161,17 @@ Derzeit gehören 12 Ressourcen zum Funktionsumfang von DSC im „PSDesiredState
 Das Cmdlet [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) kann verwendet werden, um zu bestimmen, welche Ressourcen im System installiert sind und dem LCM zur Verfügung stehen.
 Nachdem diese Module in `$env:PSModulePath` abgelegt und von [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) ordnungsgemäß erkannt wurden, müssen sie dennoch in Ihre Konfiguration geladen werden.
 
-**Import-DscResource** ist ein dynamisches Schlüsselwort, das nur in erkannt wird eine **Konfiguration** blockieren, es kein Cmdlet ist.
+**Import-DscResource** ist ein dynamisches Schlüsselwort, das nur in einem **Configuration**-Block erkannt werden kann. Es handelt sich nicht um ein Cmdlet.
 **Import-DscResource** unterstützt zwei Parameter:
 
 - **ModuleName** ist die empfohlene Methode der Verwendung von **Import DscResource**. Dieser Parameter akzeptiert den Namen des Moduls mit den Ressourcen, die importiert werden sollen, (sowie einem Zeichenfolgenarray mit Modulnamen).
 - **Name** ist der Name der zu importierenden Ressource. Dies ist nicht der Anzeigename, der als „Name“ von [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) zurückgegeben wird, sondern der Klassennamen, der verwendet wird, wenn Sie das Ressourcenschema definieren (wird als **ResourceType** von [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) zurückgegeben).
 
-Weitere Informationen zur Verwendung von `Import-DSCResource`, finden Sie unter [mithilfe von Import-DSCResource](import-dscresource.md)
+Weitere Informationen zur Verwendung von `Import-DSCResource` finden Sie unter [Verwenden von „Import-DSCResource“](import-dscresource.md).
 
-## <a name="powershell-v4-and-v5-differences"></a>PowerShell-v4- und v5-Unterschiede
+## <a name="powershell-v4-and-v5-differences"></a>Unterschiede zwischen PowerShell v4 und v5
 
-Es gibt Unterschiede in der, in denen DSC-Ressourcen müssen in PowerShell 4.0 gespeichert werden. Weitere Informationen finden Sie unter [Ressourcenspeicherort](import-dscresource.md#resource-location).
+Es gibt Unterschiede in Bezug darauf, wo DSC-Ressourcen in PowerShell 4.0 gespeichert werden müssen. Weitere Informationen finden Sie unter [Ressourcenspeicherort](import-dscresource.md#resource-location).
 
 ## <a name="see-also"></a>Weitere Informationen
 

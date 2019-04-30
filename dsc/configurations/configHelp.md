@@ -3,25 +3,25 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,setup
 title: Schreiben von Hilfe für DSC-Konfigurationen
 ms.openlocfilehash: 498ec0f594ed3229e097903c4ea2ae34d3da03a2
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401682"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080182"
 ---
 # <a name="writing-help-for-dsc-configurations"></a>Schreiben von Hilfe für DSC-Konfigurationen
 
 >Gilt für: Windows PowerShell 5.0
 
-Sie können die kommentarbasierte Hilfe in DSC-Konfigurationen verwenden. Benutzer können auf die Hilfe zugreifen, durch den Aufruf der **Konfiguration** mit `-?`, oder mithilfe der [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) Cmdlet. Platzieren Sie Ihre kommentarbasierte Hilfe direkt oberhalb der `Configuration` Schlüsselwort.
-Sie können Parameter Hilfe inline mit Ihrem Kommentarblock, direkt über die Parameterdeklaration oder beides wie im folgenden Beispiel platzieren.
+Sie können die kommentarbasierte Hilfe in DSC-Konfigurationen verwenden. Benutzer können auf die Hilfe zugreifen, entweder durch Aufrufen der **Konfiguration** mit `-?` oder mithilfe des Cmdlets [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help). Platzieren Sie Ihre kommentarbasierte Hilfe direkt oberhalb des `Configuration`-Schlüsselworts.
+Sie können die Parameterhilfe parallel zu Ihrem Kommentarblock, direkt über der Parameterdeklaration oder an beiden Positionen wie im folgenden Beispiel gezeigt platzieren.
 
 Weitere Informationen zur kommentarbasierten Hilfe für PowerShell finden Sie unter [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
 
 > [!NOTE]
-> PowerShell-entwicklungsumgebungen, wie VSCode und der ISE haben auch die Ausschnitte, sodass Sie automatisch Vorlagen von Kommentar-Block einfügen können.
+> PowerShell-Entwicklungsumgebungen wie VSCode und die ISE verfügen auch über Codeausschnitte, mit denen Sie automatisch Kommentarblockvorlagen einfügen können.
 
-Das folgende Beispiel zeigt ein Skript, das eine Konfiguration und kommentarbasierte Hilfe dafür enthält. Dieses Beispiel zeigt eine Konfiguration mit Parametern. Weitere Informationen zum Verwenden von Parametern in Ihrer Konfigurationen finden Sie unter [Parameter hinzufügen, um Ihre Konfigurationen](add-parameters-to-a-configuration.md).
+Das folgende Beispiel zeigt ein Skript, das eine Konfiguration und kommentarbasierte Hilfe dafür enthält. Dieses Beispiel zeigt eine Konfiguration mit Parametern. Weitere Informationen zum Verwenden von Parametern in Ihrer Konfigurationen finden Sie unter [Hinzufügen von Parametern zu Ihren Konfigurationen](add-parameters-to-a-configuration.md).
 
 ```powershell
 <#
@@ -77,7 +77,7 @@ configuration HelpSample1
 
 ## <a name="viewing-configuration-help"></a>Anzeigen von Hilfe zur Konfiguration
 
-Verwenden Sie zum Anzeigen der Hilfe für die Konfiguration der `Get-Help` Cmdlet mit dem Namen der Funktion, oder geben den Namen der Funktion folgt `-?`. Im folgenden wird die Ausgabe der vorherigen Konfiguration, die an `Get-Help`.
+Verwenden Sie zum Anzeigen der Hilfe für eine Konfiguration das Cmdlet `Get-Help` mit dem Namen der Funktion, oder geben der Namen der Funktion gefolgt von `-?` ein. Im Folgenden sehen Sie die Ausgabe der vorherigen Konfiguration, die an `Get-Help` übergeben wurde.
 
 ```powershell
 Get-Help HelpSample1 -Detailed
@@ -157,7 +157,7 @@ REMARKS
 ```
 
 > [!NOTE]
-> Felder von Syntax und Parameterattribute werden von PowerShell automatisch für Sie generiert.
+> Syntaxfelder und Parameterattribute werden von PowerShell automatisch für Sie generiert.
 
 ## <a name="see-also"></a>Weitere Informationen
 

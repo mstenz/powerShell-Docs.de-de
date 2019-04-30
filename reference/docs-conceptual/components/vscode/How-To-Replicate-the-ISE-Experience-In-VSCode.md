@@ -3,65 +3,65 @@ title: Replizieren der ISE-Benutzeroberfläche in Visual Studio Code
 description: Replizieren der ISE-Benutzeroberfläche in Visual Studio Code
 ms.date: 08/06/2018
 ms.openlocfilehash: 983da850c13d72bcdc7b2d33970c6e9e06b3d869
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55678847"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058504"
 ---
 # <a name="how-to-replicate-the-ise-experience-in-visual-studio-code"></a>Replizieren der ISE-Benutzeroberfläche in Visual Studio Code
 
-Während die PowerShell-Erweiterung für VSCode vollständige Funktionsparität mit der PowerShell ISE seek nicht, gibt es Features direkt auf die VSCode-Erfahrung für Benutzer von ISE natürlicher zu machen.
+Obwohl die PowerShell-Erweiterung für VSCode keine vollständige Funktionsparität mit der PowerShell ISE anstrebt, gibt es Funktionen, die die VSCode-Benutzeroberfläche für Benutzer der ISE natürlicher gestalten.
 
-Dieses Dokument versucht, listeneinstellungen, die Sie in Visual Studio Code, um die benutzerfreundlichkeit ein wenig mehr vertraut, die im Vergleich zu der ISE machen konfigurieren können.
+Dieses Dokument versucht, Einstellungen aufzulisten, die Sie in VSCode konfigurieren können, um die Benutzerfreundlichkeit im Vergleich zur ISE etwas vertrauter zu gestalten.
 
-## <a name="key-bindings"></a>Tastenzuordnungen
+## <a name="key-bindings"></a>Schlüsselbindungen
 
 | Funktion                              | ISE-Bindung                  | VSCode-Bindung                              |
 | ----------------                      | -----------                  | --------------                              |
-| Unterbrechen und das Unterbrechen des Debuggers          | <kbd>Ctrl</kbd>+<kbd>B</kbd> | <kbd>F6</kbd>                               |
-| Führen Sie die aktuelle Zeile/hervorgehobener text | <kbd>F8</kbd>                | <kbd>F8</kbd>                               |
-| Liste verfügbaren Ausschnitte               | <kbd>STRG</kbd>+<kbd>J</kbd> | <kbd>STRG</kbd>+<kbd>Alt</kbd>+<kbd>J</kbd> |
+| Unterbrechen und Pausieren des Debuggers          | <kbd>STRG</kbd>+<kbd>B</kbd> | <kbd>F6</kbd>                               |
+| Ausführen der aktuellen Zeile/des hervorgehobenen Texts | <kbd>F8</kbd>                | <kbd>F8</kbd>                               |
+| Auflisten verfügbarer Codeausschnitte               | <kbd>STRG</kbd>+<kbd>J</kbd> | <kbd>STRG</kbd>+<kbd>Alt</kbd>+<kbd>J</kbd> |
 
-### <a name="custom-key-bindings"></a>Benutzerdefinierte Schlüssel-Bindungen
+### <a name="custom-key-bindings"></a>Benutzerdefinierte Schlüsselbindungen
 
-Sie können [konfigurieren Sie Ihre eigenen tastenzuordnungen](https://code.visualstudio.com/docs/getstarted/keybindings#_custom-keybindings-for-refactorings) in Visual Studio Code auch.
+Sie können in Visual Studio Code auch [Ihre eigenen Schlüsselbindungen konfigurieren](https://code.visualstudio.com/docs/getstarted/keybindings#_custom-keybindings-for-refactorings).
 
-## <a name="tab-completion"></a>Registerkartenvervollständigung
+## <a name="tab-completion"></a>Vervollständigung mit der TAB-TASTE
 
-Um mehr ISE-ähnliche befehlszeilenergänzung zu aktivieren, fügen Sie diese Einstellung aus:
+Fügen Sie die folgende Einstellung hinzu, um Vervollständigung mit der TAB-TASTE zu erzielen, die der ISE ähnlicher ist:
 
 ```json
 "editor.tabCompletion": "on"
 ```
 
 > [!NOTE]
-> Diese Einstellung wurde direkt in VSCode (statt in der Erweiterung) hinzugefügt. Das Verhalten wird direkt von VSCode bestimmt und kann nicht geändert werden, von der Erweiterung.
+> Diese Einstellung wurde VSCode direkt (anstatt in der Erweiterung) hinzugefügt. Das Verhalten wird direkt von VSCode bestimmt und kann durch die Erweiterung nicht geändert werden.
 
-## <a name="no-focus-on-console-when-executing"></a>Ohne Fokus auf die Konsole beim Ausführen
+## <a name="no-focus-on-console-when-executing"></a>Kein Fokus auf der Konsole bei der Ausführung
 
-Zu den Fokus im Editor, beim Ausführen von mit <kbd>F8</kbd>:
+So bleibt der Fokus bei der Ausführung mit <kbd>F8</kbd> im Editor:
 
 ```json
 "powershell.integratedConsole.focusConsoleOnExecute": false
 ```
 
-Der Standardwert ist `true` aus Gründen der Barrierefreiheit.
+Der Standardwert ist aus Gründen der Barrierefreiheit `true`.
 
-## <a name="dont-start-integrated-console-on-startup"></a>Integrierte Konsole kann beim Start nicht gestartet
+## <a name="dont-start-integrated-console-on-startup"></a>Integrierte Konsole beim Start nicht starten
 
-Um die integrierte Konsole beim Start zu beenden, legen Sie Folgendes fest:
+Legen Sie Folgendes fest, um die integrierte Konsole beim Start zu beenden:
 
 ```json
 "powershell.integratedConsole.showOnStartup": false
 ```
 
 > [!NOTE]
-> Hintergrund PowerShell-Prozess startet immer noch da, IntelliSense, Skript-Analyse, symbolnavigation usw. bereitstellt. Aber die Konsole wird nicht angezeigt werden.
+> Der PowerShell-Hintergrundprozess wird trotzdem gestartet, da er IntelliSense, Skriptanalyse, Symbolnavigation usw. bereitstellt. Die Konsole wird aber nicht angezeigt.
 
-## <a name="assume-files-are-powershell-by-default"></a>Wird davon ausgegangen Sie, dass Dateien mit PowerShell in der Standardeinstellung sind
+## <a name="assume-files-are-powershell-by-default"></a>Standardmäßige Annahme, dass es sich um PowerShell-Dateien handelt
 
-Um neue/unbenannte Dateien zu machen, registrieren Sie standardmäßig als PowerShell:
+Um neue/unbenannte Dateien zu erstellen, registrieren Sie sie standardmäßig als PowerShell:
 
 ```json
 "files.defaultLanguage": "powershell"
@@ -69,46 +69,46 @@ Um neue/unbenannte Dateien zu machen, registrieren Sie standardmäßig als Power
 
 ## <a name="color-scheme"></a>Farbschema
 
-Eine Anzahl von ISE Designs stehen zur Verfügung, für VSCode, um den Editor, suchen Sie die ISE eher zu machen.
+Für VSCode stehen eine Reihe von ISE-Designs zur Verfügung, damit der Editor der ISE wesentlich ähnlicher sieht.
 
-In der [Befehlspalette] Typ `theme` abzurufenden `Preferences: Color Theme` , und drücken Sie <kbd>EINGABETASTE</kbd>.
-Wählen Sie in der Dropdown-Liste `PowerShell ISE`.
+Geben Sie `theme` in der [Befehlspalette] ein, um `Preferences: Color Theme` abzurufen, und drücken Sie die <kbd>EINGABETASTE</kbd>.
+Wählen Sie in der Dropdownliste `PowerShell ISE` aus.
 
-Sie können dieses Design in den Einstellungen mit festlegen:
+Sie können dieses Design in den Einstellungen wie folgt festlegen:
 
 ```json
 "workbench.colorTheme": "PowerShell ISE"
 ```
 
-## <a name="powershell-command-explorer"></a>PowerShell-Befehl-Explorer
+## <a name="powershell-command-explorer"></a>PowerShell-Befehls-Explorer
 
-Dank der Arbeit der [ @corbob ](https://github.com/corbob), die PowerShell-Erweiterung verfügt über die Anfänge von eigenen Befehl-Explorer.
+Dank der Arbeit von [@corbob](https://github.com/corbob) weist die PowerShell-Erweiterung Anfänge eines eigenen Befehls-Explorers auf.
 
-In der [Befehlspalette], geben Sie `PowerShell Command Explorer` , und drücken Sie <kbd>EINGABETASTE</kbd>.
+Geben Sie `PowerShell Command Explorer` in der [Befehlspalette] ein, und drücken Sie die <kbd>EINGABETASTE</kbd>.
 
-## <a name="open-in-the-ise"></a>In der ISE öffnen
+## <a name="open-in-the-ise"></a>Öffnen in der ISE
 
-Wenn Sie am Ende eine Datei trotzdem in der ISE öffnen möchten, können Sie <kbd>UMSCHALT</kbd>+<kbd>Alt</kbd>+<kbd>P</kbd>.
+Wenn Sie letztendlich trotzdem eine Datei in der ISE öffnen möchten, können Sie <kbd>UMSCHALT</kbd>+<kbd>ALT</kbd>+<kbd>P</kbd> verwenden.
 
 ## <a name="other-resources"></a>Weitere Ressourcen
 
-- 4sysops hat [ein großartiger Artikel](https://4sysops.com/archives/make-visual-studio-code-look-and-behave-like-powershell-ise/) zum Konfigurieren von VSCode genauer wie der ISE.
-- Mike F Robbins hat [einen hervorragenden Beitrag](https://mikefrobbins.com/2017/08/24/how-to-install-visual-studio-code-and-configure-it-as-a-replacement-for-the-powershell-ise/) zum Einrichten von VSCode.
-- Erfahren Sie mehr PowerShell verfügt über [eine ausgezeichnete schreiben Sie](https://www.learnpwsh.com/setup-vs-code-for-powershell/) richten Sie zum Abrufen von VSCode für PowerShell.
+- 4sysops bietet [einen großartigen Artikel](https://4sysops.com/archives/make-visual-studio-code-look-and-behave-like-powershell-ise/) zur Konfiguration von VSCode, um der ISE ähnlicher zu sein.
+- Mike F. Robbins hat [einen hervorragenden Beitrag](https://mikefrobbins.com/2017/08/24/how-to-install-visual-studio-code-and-configure-it-as-a-replacement-for-the-powershell-ise/) zum Einrichten von VSCode verfasst.
+- Learn PowerShell bietet [eine ausgezeichnete Zusammenfassung](https://www.learnpwsh.com/setup-vs-code-for-powershell/) zur Einrichtung von VSCode für PowerShell.
 
 ## <a name="more-settings"></a>Weitere Einstellungen
 
-Wenn Sie weitere Informationen zum Stellen von VSCode für ISE Benutzer mehr vertraut sein kennen, tragen Sie zu diesem Dokument. Wenn eine Anwendungskompatibilitäts-Konfiguration, die Sie suchen vorliegt, aber keinesfalls zu seiner Aktivierung nicht auffindbar [eröffnen Sie ein Problem](https://github.com/PowerShell/vscode-powershell/issues/new/choose) und stellen Sie Ihre Fragen!
+Wenn Sie weitere Möglichkeiten kennen, wie Sie VSCode für ISE-Anwender vertrauter gestalten können, tragen Sie zu diesem Dokument bei. Wenn Sie nach einer Kompatibilitätskonfiguration suchen, aber keine Möglichkeit finden, diese zu aktivieren, [legen Sie ein Issue an](https://github.com/PowerShell/vscode-powershell/issues/new/choose), und fragen Sie nach einer Lösung!
 
-Wir freuen uns immer zum Akzeptieren von PRs und Beiträge auch!
+Wir freuen uns immer über PRs und Beiträge!
 
 ## <a name="vscode-tips"></a>VSCode-Tipps
 
 ### <a name="command-palette"></a>Befehlspalette
 
-<kbd>F1</kbd> oder <kbd>STRG</kbd>+<kbd>UMSCHALT</kbd>+<kbd>P</kbd> (<kbd>Cmd</kbd> + <kbd> Shift</kbd>+<kbd>P</kbd> unter MacOS)
+<kbd>F1</kbd> ODER <kbd>STRG</kbd>+<kbd>UMSCHALT</kbd>+<kbd>P</kbd> (<kbd>Cmd</kbd>+<kbd>UMSCHALT</kbd>+<kbd>P</kbd> unter MacOS)
 
-Eine praktische Möglichkeit der Ausführung von Befehlen in Visual Studio Code.
-Weitere Informationen finden Sie unter [VSCode Dokumentation](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette).
+Eine praktische Möglichkeit zur Ausführung von Befehlen in Visual Studio Code.
+Weitere Informationen finden Sie in der [VSCode-Dokumentation](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette).
 
 [Befehlspalette]: #command-palette

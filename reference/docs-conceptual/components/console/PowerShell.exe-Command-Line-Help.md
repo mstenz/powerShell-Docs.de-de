@@ -4,11 +4,11 @@ keywords: powershell,cmdlet
 title: Befehlszeilenhilfe für „PowerShell.exe“
 ms.assetid: 1ab7b93b-6785-42c6-a1c9-35ff686a958f
 ms.openlocfilehash: 0a11ebb11d29adf5853c232b3aa10bc72f92bf0c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401358"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058512"
 ---
 # <a name="powershellexe-command-line-help"></a>Befehlszeilenhilfe für „PowerShell.exe“
 
@@ -51,10 +51,10 @@ Legt die Standardausführungsrichtlinie für die aktuelle Sitzung fest und speic
 
 Führt das angegebene Skript im lokalen Bereich aus, sodass die Funktionen und Variablen, die das Skript erstellt, in der aktuellen Sitzung verfügbar sind. Geben Sie den Pfad der Skriptdatei und Parameter an. **File** muss der letzte Parameter im Befehl sein. Alle Werte, die nach dem **-File**-Parameter eingegeben werden, werden als Skriptdateipfad und als an das Skript übergebene Parameter interpretiert.
 
-Parameter, die an das Skript übergeben werden, werden als Zeichenfolgenliterale übergeben (nach der Interpretation durch die aktuelle Shell). Wenn Sie in cmd.exe und Wert einer Umgebungsvariable übergeben möchten, würden Sie z. B. der cmd.exe-Syntax verwenden: `powershell.exe -File .\test.ps1 -TestParam %windir%`
+Parameter, die an das Skript übergeben werden, werden als Zeichenfolgenliterale übergeben (nach der Interpretation durch die aktuelle Shell). Wenn Sie beispielsweise aus „cmd.exe“ einen Wert für eine Umgebungsvariable übergeben möchten, verwenden Sie die cmd.exe-Syntax: `powershell.exe -File .\test.ps1 -TestParam %windir%`
 
-Im Gegensatz dazu ausführen `powershell.exe -File .\test.ps1 -TestParam $env:windir` in cmd.exe führt das Skript mit dem Empfang der literalen Zeichenfolge `$env:windir` , da es keine spezielle Bedeutung für die aktuelle cmd.exe-Shell hat.
-Die `$env:windir` Stil der Referenz zu Umgebungsvariablen _können_ in verwendet werden. eine `-Command` Parameter, da es ihn als PowerShell-Code interpretiert wird.
+Im Gegensatz dazu führt die Ausführung von `powershell.exe -File .\test.ps1 -TestParam $env:windir` in „cmd.exe“ dazu, dass das Skript die literale Zeichenfolge `$env:windir` erhält, da sie für die aktuelle cmd.exe-Shell keine besondere Bedeutung besitzt.
+Die `$env:windir`-Syntax des Umgebungsvariablenverweises _kann_ innerhalb eines `-Command`-Parameters verwendet werden, da er dort als PowerShell-Code interpretiert wird.
 
 ### <a name="-inputformat-text--xml"></a>\--InputFormat {Text | XML}
 
@@ -107,26 +107,26 @@ Legt den Fensterstil für die Sitzung fest. Gültige Werte sind „Normal“, �
 ### <a name="-command"></a>-Command
 
 Führt die angegebenen Befehle (mit den Parametern) so aus, als wären sie über die PowerShell-Befehlszeile eingegeben worden.
-PowerShell nach der Ausführung wird beendet, es sei denn, die **NoExit** Parameter angegeben ist.
+Nach der Ausführung wird PowerShell beendet, es sei denn, der **NoExit**-Parameter wird angegeben.
 Sämtlicher Text nach `-Command` wird als eine einzige Befehlszeile an PowerShell gesendet.
 Dies ist ein Unterschied zum Verhalten von `-File` bei der Verarbeitung von an ein Skript gesendete Parameter.
 
-Der Wert des `-Command` kann "-", eine Zeichenfolge oder ein Skriptblock.
-Die Ergebnisse des Befehls werden an die übergeordnete Shell als deserialisierte XML-Objekte, nicht als live-Objekte zurückgegeben.
+Der Wert von `-Command` kann „-“, eine Zeichenfolge oder ein Skriptblock sein.
+Die Ergebnisse des Befehls werden an die übergeordnete Shell als deserialisierte XML-Objekte und nicht als Liveobjekte zurückgegeben.
 
-Wenn der Wert des `-Command` ist "-", wird der Befehlstext aus der Standardeingabe gelesen.
+Wenn der Wert von `-Command` „-“ ist, wird der Befehlstext aus der Standardeingabe gelesen.
 
-Wenn der Wert des `-Command` ist eine Zeichenfolge, **Befehl** _müssen_ der letzte Parameter angegeben werden, da alle Zeichen eingegeben werden, nachdem der Befehl als die Befehlsargumente interpretiert werden.
+Wenn der Wert von `-Command` eine Zeichenfolge ist, _muss_ **Command** der letzte angegebene Parameter sein, da alle Zeichen, die nach dem Befehl eingegeben werden, als Befehlsargumente interpretiert werden.
 
-Die **Befehl** Parameter akzeptiert nur einen Skriptblock für die Ausführung, wenn sie den übergebenen Wert erkennen kann `-Command` als Typ "scriptblock".
-Dies ist _nur_ möglich, die bei der Ausführung des PowerShell.exe von einem anderen PowerShell-Host.
-Der Typ kann in eine vorhandene Variable aus einem Ausdruck zurückgegebenen oder analysiert, indem Sie das PowerShell enthalten sein, "scriptblock" zu hosten, als literal Skriptblock in geschweiften Klammern `{}`, bevor an PowerShell.exe übergeben wird.
+Der Parameter **Command** akzeptiert einen Skriptblock nur dann zur Ausführung, wenn er den an `-Command` übergebenen Wert als SkriptBlock-Typ erkennen kann.
+Dies ist _nur_ möglich, wenn „PowerShell.exe“ von einem anderen PowerShell-Host ausgeführt wird.
+Der Typ ScriptBlock kann in einer vorhandenen Variablen enthalten sein, von einem Ausdruck zurückgegeben oder vom PowerShell-Host als literaler Skriptblock analysiert werden, der in geschweifte Klammern `{}` eingeschlossen ist, bevor er an „PowerShell.exe“ übergeben wird.
 
-In cmd.exe, es gibt keine als Skriptblock (oder "scriptblock" Typ), also den übergebenen Wert **Befehl** wird _immer_ eine Zeichenfolge sein.
-Sie können einen Skriptblock innerhalb der Zeichenfolge schreiben, aber ausgeführt wird es verhält sich genau als ob Sie sie in einer typischen PowerShell-Eingabeaufforderung eingegeben, Drucken des Inhalts des Skripts wieder für Sie blockiert.
+In „cmd.exe“ gibt es keine Skriptblöcke (oder ScriptBlock-Typen), sodass der an **Command** übergebene Wert _immer_ eine Zeichenfolge ist.
+Sie können einen Skriptblock innerhalb der Zeichenfolge schreiben, aber anstatt ausgeführt zu werden, verhält er sich genau so, als ob Sie ihn an einer typischen PowerShell-Eingabeaufforderung eingegeben hätten, wobei der Inhalt des Skriptblocks wieder an Sie ausgegeben wird.
 
-Eine Zeichenfolge übergeben, um `-Command` weiterhin so ausgeführt, als PowerShell, sodass die geschweiften Klammern für Skript-Block häufig nicht erforderlich in erster Linie sind bei Ausführung von cmd.exe.
-Zum Ausführen eines Inline-Skriptblock, der definiert, die in eine Zeichenfolge, die [Aufrufoperator](/powershell/module/microsoft.powershell.core/about/about_operators#call-operator-) `&` kann verwendet werden:
+Eine an `-Command` übergebene Zeichenfolge wird weiterhin als PowerShell ausgeführt, sodass die geschweiften Klammern des Skriptblocks beim der Ausführung aus „cmd.exe“ oft gar nicht erst erforderlich sind.
+Zum Ausführen eines Inlineskriptblocks, der in einer Zeichenfolge definiert ist, kann der [Aufrufoperator](/powershell/module/microsoft.powershell.core/about/about_operators#call-operator-) `&` verwendet werden:
 
 ```console
 "& {<command>}"
@@ -137,7 +137,7 @@ Zum Ausführen eines Inline-Skriptblock, der definiert, die in eine Zeichenfolge
 Zeigt die Syntax von „powershell.exe“. Wenn Sie einen „PowerShell.exe“-Befehl in PowerShell eingeben, setzen Sie vor die Befehlsparameter einen Bindestrich (-) und keinen Schrägstrich (/). In „Cmd.exe“ können Sie entweder einen Binde- oder Schrägstrich verwenden.
 
 > [!NOTE]
-> Hinweis zur Fehlerbehebung: In PowerShell 2.0 das Starten einiger Programme in der Windows PowerShell-Konsole nicht mit einer folgenden "lastexitcode": 0xc0000142.
+> Hinweis zur Problembehandlung: In PowerShell 2.0 tritt beim Starten einiger Programme in der Windows PowerShell-Konsole ein Fehler mit dem folgenden LastExitCode auf: 0xc0000142.
 
 ## <a name="examples"></a>BEISPIELE
 

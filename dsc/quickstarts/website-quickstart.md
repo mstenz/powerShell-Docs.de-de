@@ -3,13 +3,13 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: 'Schnellstart: Erstellen einer Website mit DSC'
 ms.openlocfilehash: d98607939ccd3cc5e660936d8c0a6d54fce7d65f
-ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56265483"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079120"
 ---
-> Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 # <a name="quickstart---create-a-website-with-dsc"></a>Schnellstart: Erstellen einer Website mit DSC
 

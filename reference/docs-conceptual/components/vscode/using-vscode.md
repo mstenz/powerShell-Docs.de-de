@@ -3,11 +3,11 @@ title: Verwenden von Visual Studio Code für die Entwicklung mit PowerShell
 description: Verwenden von Visual Studio Code für die Entwicklung mit PowerShell
 ms.date: 08/06/2018
 ms.openlocfilehash: 1e9b9d811a39656327af2810bd6dc8aaf3fde3a4
-ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57251386"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086717"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>Verwenden von Visual Studio Code für die Entwicklung mit PowerShell
 
@@ -64,23 +64,23 @@ Klicken Sie zum Speichern auf **Datei > Speichern**, und geben Sie anschließend
 Klicken Sie auf das „x“ neben dem Dateinamen, um die Datei zu schließen.
 Klicken Sie auf **Datei > Beenden**, um Visual Studio Code zu beenden.
 
-### <a name="installing-the-powershell-extension-on-restricted-systems"></a>Installieren die PowerShell-Erweiterung auf eingeschränkten Systemen
+### <a name="installing-the-powershell-extension-on-restricted-systems"></a>Installieren der PowerShell-Erweiterung auf eingeschränkten Systemen
 
-Einige Systeme werden in einer Weise eingerichtet, die alle Codesignaturen überprüft werden muss und daher muss PowerShell Editor Services manuell genehmigt werden, um auf dem System ausgeführt.
-Aktualisierung der Gruppenrichtlinie, die Ausführungsrichtlinie ändern ist eine wahrscheinliche Ursache, wenn Sie die PowerShell-Erweiterung installiert haben, jedoch sind eine Fehlermeldung wie erreichen:
+Einige Systeme sind so eingerichtet, dass alle Codesignaturen überprüft werden müssen und die Editor-Dienste von PowerShell daher manuell für die Ausführung auf dem System genehmigt werden müssen.
+Ein Gruppenrichtlinienupdate, das die Ausführungsrichtlinie ändert, ist eine wahrscheinliche Ursache, wenn Sie die PowerShell-Erweiterung installiert haben, aber einen Fehler wie diesen erhalten:
 
 ```
 Language server startup failed.
 ```
 
-Öffnen Sie zur manuellen Genehmigung von PowerShell Editor Services und somit die PowerShell-Erweiterung für VSCode eine PowerShell-Eingabeaufforderung und führen:
+Öffnen Sie zur manuellen Genehmigung der Editor-Dienste von PowerShell und somit der PowerShell-Erweiterung für VSCode eine PowerShell-Eingabeaufforderung, und führen Sie Folgendes aus:
 
 ```powershell
 Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellEditorServices\PowerShellEditorServices.psd1
 ```
 
-Wird die Meldung "Möchten Sie den von diesem Verleger nicht vertrauenswürdige Software ausführen?"
-Typ `R` zum Ausführen der Datei. Klicken Sie anschließend, öffnen Sie Visual Studio Code, und überprüfen Sie, dass die PowerShell-Erweiterung ordnungsgemäß funktioniert. Wenn Sie immer noch Probleme, die ersten Schritten haben, teilen Sie uns auf [GitHub](https://github.com/PowerShell/vscode-powershell/issues).
+Sie werden gefragt: „Do you want to run software from this untrusted publisher?“ (Möchten Sie Software von diesem nicht vertrauenswürdigen Herausgeber ausführen?).
+Geben Sie `R` ein, um die Datei auszuführen. Öffnen Sie dann Visual Studio Code, und überprüfen Sie, ob die PowerShell-Erweiterung ordnungsgemäß funktioniert. Wenn Sie noch immer Probleme haben, lassen Sie uns dies auf [GitHub](https://github.com/PowerShell/vscode-powershell/issues) wissen.
 
 #### <a name="using-a-specific-installed-version-of-powershell"></a>Verwenden einer bestimmten installierten PowerShell-Version
 
@@ -122,7 +122,7 @@ Die folgenden Konfigurationseinstellungen werden für Visual Studio Code empfohl
 }
 ```
 
-Wenn Sie nicht, dass diese Einstellungen beeinflussen alle Dateitypen möchten, ermöglicht es VSCode auch auf die sprachenspezifische Konfigurationen aus. Erstellen Sie eine bestimmte Sprache-Einstellung durch Einfügen von Einstellungen in einem `[<language-name>]` Feld. Beispiel:
+Wenn Sie nicht möchten, dass diese Einstellungen für alle Dateitypen gelten, können Sie in VS Code auch sprachspezifische Konfigurationen vornehmen. Sie können sprachspezifische Einstellungen erstellen, indem Sie Einstellungen in ein `[<language-name>]`-Feld einfügen. Beispiel:
 
 ```json
 "[powershell]": {
@@ -131,13 +131,13 @@ Wenn Sie nicht, dass diese Einstellungen beeinflussen alle Dateitypen möchten, 
 }
 ```
 
-Weitere Informationen zur Datei Codierung in VS Code finden Sie unter [verstehen dateicodierung](understanding-file-encoding.md).
+Weitere Informationen zur Dateicodierung in VS Code finden Sie unter [Informationen zur Dateicodierung](understanding-file-encoding.md).
 
 ## <a name="debugging-with-visual-studio-code"></a>Debuggen mit Visual Studio Code
 
 ### <a name="no-workspace-debugging"></a>Debuggen außerhalb des Arbeitsbereichs
 
-Ab Visual Studio Code Version 1.9 können Sie PowerShell-Skripts debuggen, ohne den Ordner öffnen zu müssen, in dem das jeweilige Skript enthalten ist. Öffnen Sie die PowerShell-Skriptdatei mit **Datei -> Datei öffnen...** , Festlegen eines Haltepunkts in einer Zeile (drücken Sie F9), und drücken Sie F5, um mit dem Debuggen beginnen. Dann wird der Aktionsbereich „Debuggen“ angezeigt, über den Sie den Debugger anhalten und den Debugvorgang ausführen, fortsetzen oder abbrechen können.
+Ab Visual Studio Code Version 1.9 können Sie PowerShell-Skripts debuggen, ohne den Ordner öffnen zu müssen, in dem das jeweilige Skript enthalten ist. Öffnen Sie die PowerShell-Skriptdatei über **Datei > Datei öffnen**, legen Sie einen Breakpoint für eine Zeile fest (indem Sie F9 drücken), und drücken Sie dann F5, um mit dem Debuggen zu beginnen. Dann wird der Aktionsbereich „Debuggen“ angezeigt, über den Sie den Debugger anhalten und den Debugvorgang ausführen, fortsetzen oder abbrechen können.
 
 ### <a name="workspace-debugging"></a>Debuggen von Arbeitsbereichen
 

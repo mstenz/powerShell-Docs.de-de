@@ -3,11 +3,11 @@ ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: Deinstallieren von Windows PowerShell Web Access
 ms.openlocfilehash: 22c874d766445dccedd8494097daf16c30fa66ff
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55679183"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058134"
 ---
 # <a name="uninstall-windows-powershell-web-access"></a>Deinstallieren von Windows PowerShell Web Access
 
@@ -33,7 +33,7 @@ Mit den in diesem Abschnitt beschriebenen Verfahren können Sie Folgendes deinst
 
 , indem Sie Windows PowerShell-Cmdlets verwenden.
 
-### <a name="step-1-delete-the-web-application-using-cmdlets"></a>„Schritt 1: Löschen der Webanwendung mithilfe von cmdlets
+### <a name="step-1-delete-the-web-application-using-cmdlets"></a>Schritt 1: Löschen der Webanwendung mithilfe von Cmdlets
 
 1. Öffnen Sie eine Windows PowerShell-Sitzung, indem Sie einen der folgenden Schritte durchführen.
 
@@ -52,7 +52,7 @@ Mit den in diesem Abschnitt beschriebenen Verfahren können Sie Folgendes deinst
 
         `Uninstall-PswaWebApplication -DeleteTestCertificate`
 
-### <a name="step-2-uninstall-windows-powershell-web-access-using-cmdlets"></a>Schritt 2: Deinstallieren Sie Windows PowerShell Web Access mithilfe von cmdlets
+### <a name="step-2-uninstall-windows-powershell-web-access-using-cmdlets"></a>Schritt 2: Deinstallieren von Windows PowerShell Web Access mithilfe von Cmdlets
 
 1. Öffnen Sie eine Windows PowerShell-Sitzung mit erhöhten Benutzerrechten, indem Sie einen der folgenden Schritte durchführen. Wenn bereits eine Sitzung geöffnet ist, fahren Sie mit dem nächsten Schritt fort.
 
@@ -76,7 +76,7 @@ Mit den in diesem Abschnitt beschriebenen Verfahren können Sie Folgendes deinst
 
 Mit den in diesem Abschnitt beschriebenen Verfahren können Sie die Windows PowerShell Web Access-Webanwendung und die Windows PowerShell Web Access-Funktion mit dem Assistenten zum Entfernen von Rollen und Features im Server-Manager und der IIS Manager-Konsole deinstallieren.
 
-### <a name="step-1-delete-the-web-application-using-iis-manager"></a>„Schritt 1: Löschen der Webanwendung, die mit IIS-Manager
+### <a name="step-1-delete-the-web-application-using-iis-manager"></a>Schritt 1: Löschen der Webanwendung mithilfe von IIS-Manager
 
 
 1. Öffnen Sie die IIS-Manager-Konsole, indem Sie eine der folgenden Aktionen ausführen: Wenn die Konsole bereits geöffnet ist, fahren Sie mit dem nächsten Schritt fort.
@@ -101,7 +101,7 @@ Mit den in diesem Abschnitt beschriebenen Verfahren können Sie die Windows Powe
 >
 > Wenn Sie ein selbstsigniertes Zertifikat erstellt oder ein Testzertifikat verwendet haben und dieses Zertifikat nun entfernen möchten, müssen Sie es im IIS-Manager löschen.
 
-### <a name="step-2-uninstall-windows-powershell-web-access-using-the-remove-roles-and-features-wizard"></a>Schritt 2: Deinstallieren Sie Windows PowerShell Web Access mithilfe von Entfernen von Rollen und Features-Assistenten
+### <a name="step-2-uninstall-windows-powershell-web-access-using-the-remove-roles-and-features-wizard"></a>Schritt 2: Deinstallieren von Windows PowerShell Web Access mithilfe des Assistenten zum Entfernen von Rollen und Features
 
 1. Wenn der Server-Manager bereits geöffnet ist, fahren Sie mit dem nächsten Schritt fort. Ist der Server-Manager noch nicht geöffnet, öffnen Sie ihn mit einer der folgenden Aktionen.
 

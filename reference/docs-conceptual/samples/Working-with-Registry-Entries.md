@@ -1,16 +1,16 @@
 ---
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: Arbeiten mit Registrierungseinträgen
+title: Arbeiten mit Registrierungseinträge
 ms.assetid: fd254570-27ac-4cc9-81d4-011afd29b7dc
 ms.openlocfilehash: 667d17d0d62745a27ffef5f1912336b72f74c2a9
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293077"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086033"
 ---
-# <a name="working-with-registry-entries"></a>Arbeiten mit Registrierungseinträgen
+# <a name="working-with-registry-entries"></a>Arbeiten mit Registrierungseinträge
 
 Da Registrierungseinträge Eigenschaften von Schlüsseln sind und daher nicht direkt gesucht werden können, muss für die Arbeit mit diesen ein etwas anderer Ansatz gewählt werden.
 
@@ -158,7 +158,7 @@ Eine weitere Option ist die Verwendung des Befehlszeilentools „Reg.exe“. Um 
 an einer Eingabeaufforderung.
 
 Im folgenden Beispiel wird der Eintrag **Path** geändert, indem der im vorstehenden Beispiel hinzugefügte Pfad entfernt wird.
-`Get-ItemProperty` wird weiterhin zum Abrufen des aktuellen Werts verwendet, um zu vermeiden, dass die aus `reg query` zurückgegebene Zeichenfolge analysiert werden muss. Mit den Methoden **SubString** und **LastIndexOf** wird der letzte Pfad abgerufen, der dem Eintrag **Path** hinzugefügt wurde.
+`reg query` wird weiterhin zum Abrufen des aktuellen Werts verwendet, um zu vermeiden, dass die aus `Get-ItemProperty` zurückgegebene Zeichenfolge analysiert werden muss. Mit den Methoden **SubString** und **LastIndexOf** wird der letzte Pfad abgerufen, der dem Eintrag **Path** hinzugefügt wurde.
 
 ```powershell
 $value = Get-ItemProperty -Path HKCU:\Environment -Name Path

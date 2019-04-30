@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Verwenden von Konfigurationsdaten
 ms.openlocfilehash: f2d25b9ced805fb4c91378ebfe840104eb6ce52a
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401337"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080219"
 ---
 # <a name="using-configuration-data-in-dsc"></a>Verwenden von Konfigurationsdaten in DSC
 
@@ -185,11 +185,11 @@ MyDscConfiguration -ConfigurationData .\MyData.psd1
 
 ## <a name="using-configurationdata-variables-in-a-configuration"></a>Verwenden von ConfigurationData-Variablen in einer Konfiguration
 
-DSC bietet die folgenden besonderen Variablen, die in einem Konfigurationsskript verwendet werden können:
+DSC stellt die folgenden speziellen Variablen bereit, die in einem Skript verwendet werden können:
 
 - **$AllNodes** bezieht sich auf die gesamte, in **ConfigurationData** definierte Knotensammlung. Sie können die **AllNodes**-Sammlung mit **.Where()** und **.ForEach()** filtern.
 - **ConfigurationData** bezieht sich auf die gesamte Hashtabelle, die beim Kompilieren einer Konfiguration als Parameter übergeben wird.
-- **MyTypeName** enthält die [Konfiguration](configurations.md) die Variable, im verwendet wird Namen. Z. B. in der Konfiguration `MyDscConfiguration`, `$MyTypeName` Wert der `MyDscConfiguration`.
+- **MyTypeName** enthält den [Namen der Konfiguration](configurations.md), in der die Variable verwendet wird. In der Konfiguration `MyDscConfiguration` weist `$MyTypeName` beispielsweise den Wert `MyDscConfiguration` auf.
 - **Nodes** bezieht sich auf einen bestimmten Eintrag in der **AllNodes**-Sammlung, nachdem sie mithilfe von **.Where()** oder **.ForEach()** gefiltert wurde.
   - Weitere Informationen zu diesen Methoden finden Sie unter [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md).
 

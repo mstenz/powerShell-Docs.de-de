@@ -4,11 +4,11 @@ keywords: powershell,cmdlet
 title: Schreiben und Ausführen von Skripts in der Windows PowerShell ISE
 ms.assetid: 62f916d9-b3a1-484a-bdfb-41f57112c22b
 ms.openlocfilehash: 61db5e18f05e8e334cd9ba6dab2cf15dee7390cc
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401463"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086849"
 ---
 # <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>Schreiben und Ausführen von Skripts in der Windows PowerShell ISE
 
@@ -144,7 +144,7 @@ Im folgenden Befehl wird die Codierung der aktuellen Datei abgerufen.
 $psISE.CurrentFile.encoding
 ```
 
-Windows PowerShell ISE unterstützt die folgenden Codierungsoptionen: ASCII, BigEndianUnicode, Unicode, UTF32, UTF7, UTF8 und Standard. Der Wert der Option „Default“ ist je nach System unterschiedlich.
+Windows PowerShell ISE unterstützt die folgenden Codierungsoptionen: ASCII, BigEndianUnicode, Unicode, UTF32, UTF7, UTF8 und Default. Der Wert der Option „Default“ ist je nach System unterschiedlich.
 
 Windows PowerShell ISE ändert die Codierung von Skriptdateien nicht, wenn Sie die Befehle „Speichern“ oder „Speichern unter“ verwenden.
 

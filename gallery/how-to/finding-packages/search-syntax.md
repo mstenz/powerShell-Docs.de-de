@@ -4,22 +4,22 @@ contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Syntax für die Katalogsuche
 ms.openlocfilehash: aabcaa1f1b5b641ab5033c9ba2e358477c84a23b
-ms.sourcegitcommit: e24525046dd37166b9d83eeecdc534726316f429
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/01/2018
-ms.locfileid: "52742855"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084299"
 ---
 # <a name="gallery-search-syntax"></a>Syntax für die Katalogsuche
 
-Sie können suchen, die PowerShell-Katalog mit der [PowerShell-Katalog-Website](https://www.powershellgallery.com/).
-PowerShell-Katalog-Website bietet ein Textsuchfeld, wo Sie Wörter, Ausdrücke und verwenden können, um die Suchergebnisse einzugrenzen.
+Sie können den PowerShell-Katalog mit der [Website des PowerShell-Katalogs](https://www.powershellgallery.com/) durchsuchen.
+Die Website des PowerShell-Katalogs bietet ein Textsuchfeld in das Sie Wörter, Ausdrücke und Schlüsselwortausdrücke schreiben können, um die Suchergebnisse einzugrenzen.
 
 ## <a name="search-by-keywords"></a>Suche nach Schlüsselwörtern
 
     dsc azure sql
 
-Suchen Sie versucht, suchen Sie die relevanten Dokumente, die alle 3-Schlüsselwörter enthält, und zugehörige Dokumente zurückzugeben.
+Die Suche versucht, relevante Dokumente zu finden, die alle drei Schlüsselwörter enthalten, und zugehörige Dokumente zurückzugeben.
 
 ## <a name="search-using-phrases-and-keywords"></a>Suchen mithilfe von Ausdrücken und Schlüsselwörtern
 
@@ -40,7 +40,7 @@ Aktuell lauten die durchsuchbaren Felder „Id“, „Version“, „Tags“, �
 
     ID:PSReadline
     
-Sucht Pakete mit einer ID, die mit "PSReadline".
+sucht nach Paketen mit einer ID, die „PSReadline“ enthält.
 
     Id:"AzureRM.Profile"
 
@@ -50,13 +50,13 @@ Der Filter „Id“ ist eine Übereinstimmung bei Teilzeichenfolge, Sie suchen a
 
     Id:"azure"
 
-Dieser enthält Ergebnisse, die von "azurerm.Profile" enthalten "und"Azure.Storage".
+Es werden Ergebnisse bereitgestellt, die „AzureRM.Profile“ und “Azure.Storage“ enthalten.
 
 Sie können auch nach mehreren Schlüsselwörtern in einem einzelnen Feld suchen. 
 
     id:azure tags:intellisense
 
-Und Sie die Suche nach Ausdrücken mit doppelten Anführungszeichen ausführen können:
+Und Sie können die Suche nach Ausdrücken mit doppelten Anführungszeichen durchführen:
 
     id:"azure.storage"
 

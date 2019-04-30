@@ -4,16 +4,16 @@ keywords: powershell,cmdlet
 title: Verwenden von Variablen, um Objekte zu speichern
 ms.assetid: b1688d73-c173-491e-9ba6-6d0c1cc852de
 ms.openlocfilehash: d166ec58dc658c1b134030c9a9592249ee40d4f5
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401370"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086543"
 ---
 # <a name="using-variables-to-store-objects"></a>Verwenden von Variablen zum Speichern von Objekten
 
 PowerShell arbeitet mit Objekten. PowerShell ermöglicht es Ihnen, benannte Objekt zu erstellen, sogenannte Variablen.
-Namen von Variablen können es sich um den Unterstrich enthalten und alle alphanumerischen Zeichen enthalten. Bei Verwendung in PowerShell wird eine Variable immer mit dem Zeichen \$, gefolgt von einem Variablennamen angegeben.
+Variablennamen können Unterstriche und beliebige andere alphanumerische Zeichen enthalten. Bei Verwendung in PowerShell wird eine Variable immer mit dem Zeichen \$, gefolgt von einem Variablennamen angegeben.
 
 ## <a name="creating-a-variable"></a>Erstellen einer Variablen
 

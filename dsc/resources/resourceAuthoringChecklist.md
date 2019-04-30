@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Prüfliste für die Ressourcenerstellung
 ms.openlocfilehash: 7b1a096bba1b729c096b6689178ee022e12e4634
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401562"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076581"
 ---
 # <a name="resource-authoring-checklist"></a>Prüfliste für die Ressourcenerstellung
 
@@ -85,7 +85,7 @@ If ($error.count –ne 0) {
 
 ## <a name="resource-is-idempotent-in-the-positive-case"></a>Die Ressource ist im positiven Sinn idempotent
 
-Eine der grundlegenden Merkmale von DSC-Ressourcen ist die Idempotenz. Dies bedeutet, dass beim Anwenden einer DSC-Konfiguration, die diese Ressource mehrmals enthält, immer das gleiche Ergebnis erreicht wird. Angenommen, wir erstellen eine Konfiguration mit der folgenden „File“-Ressource:
+Eines der grundlegenden Merkmale von DSC-Ressourcen ist Idempotenz. Dies bedeutet, dass beim Anwenden einer DSC-Konfiguration, die diese Ressource mehrmals enthält, immer das gleiche Ergebnis erreicht wird. Angenommen, wir erstellen eine Konfiguration mit der folgenden „File“-Ressource:
 
 ```powershell
 File file {
@@ -210,11 +210,11 @@ Erstellen Sie anschauliche Beispiele, die anderen helfen, die Verwendung zu vers
 
 Gute Fehlermeldungen zeichnen sich wie folgt aus:
 
-- Es gibt: Das größte Problem bei Fehlermeldungen ist, dass sie häufig nicht vorhanden, also stellen Sie sicher, dass sie vorhanden sind.
-- Einfach zu verstehen: Menschen lesbare, nicht kryptische Fehlercodes
-- Genau Beschreiben Sie, was das Problem ist.
-- Konstruktive: Hinweise wie zum Beheben des Problems
-- Netzwerkschnittstellenbibliothek: Verantwortung zuweisen der Benutzer nicht, oder dass sie die ungültige fühlen.
+- Es gilt: Das größte Problem bei Fehlermeldungen besteht darin, dass sie häufig nicht vorhanden sind. Achten Sie deshalb darauf, dass sie vorhanden sind.
+- Sie sind einfach zu verstehen: Von Menschen lesbar, nicht kryptische Fehlercodes.
+- Sie sind genau: Eine genaue Beschreibung, was das Problem ist.
+- Sie sind konstruktiv: Konstruktive Ratschläge zum Beheben des Problems.
+- Sie verwenden einen höflicher Ton: Sie geben dem Benutzer nicht die Schuld oder machen ihm Vorwürfe.
 
 Stellen Sie sicher, dass Sie Fehler in End-to-End-Szenarien (mit `Start-DscConfiguration`) überprüfen, da sie sich von denjenigen unterscheiden können, die zurückgegeben werden, wenn die Ressourcenfunktionen direkt ausgeführt werden.
 
@@ -222,7 +222,7 @@ Stellen Sie sicher, dass Sie Fehler in End-to-End-Szenarien (mit `Start-DscConfi
 
 Stellen Sie sicher, dass Protokolle, die von der Ressource ausgegeben werden, leicht verständlich und für den Benutzer von Nutzen sind. Ressourcen sollten alle Informationen ausgeben, die für den Benutzer hilfreich sind, doch mehr Protokolle sind nicht unbedingt besser. Sie sollten das Ausgeben redundanter Daten ohne Mehrwert unbedingt vermeiden. Lassen Sie Benutzer nicht Hunderte von Protokolleinträgen durchlaufen, damit sie finden, was sie suchen. Keine Protokolle sind freilich keine akzeptable Lösung dieses Problems.
 
-Beim Testen sollten Sie auch ausführliche und Debugprotokolle (durch Ausführen von `Start-DscConfiguration` mit den Switches `–Verbose` bzw. `–Debug`) sowie ETW-Protokolle analysieren. Um DSC-ETW-Protokolle anzuzeigen, wechseln Sie zur Ereignisanzeige, und öffnen Sie den folgenden Ordner: Anwendungen und Dienste von Microsoft - Windows - Desired State Configuration.  In der Standardeinstellung gibt es den Kanal „Betriebsbereit“. Aktivieren Sie vor dem Ausführen der Konfiguration jedoch auch die Kanäle „Analyse“ und „Debuggen“.
+Beim Testen sollten Sie auch ausführliche und Debugprotokolle (durch Ausführen von `Start-DscConfiguration` mit den Switches `–Verbose` bzw. `–Debug`) sowie ETW-Protokolle analysieren. Um DSC-ETW-Protokolle anzuzeigen, navigieren Sie zur Ereignisanzeige, und öffnen Sie den folgenden Ordner: „Applications and Services/Microsoft/Windows/Desired State Configuration“.  In der Standardeinstellung gibt es den Kanal „Betriebsbereit“. Aktivieren Sie vor dem Ausführen der Konfiguration jedoch auch die Kanäle „Analyse“ und „Debuggen“.
 Zum Aktivieren der Kanäle „Analyse/Debuggen“ können Sie das folgende Skript ausführen:
 
 ```powershell
@@ -283,7 +283,7 @@ Wenn Ihre Ressource Anmeldeinformationen als Parameter verwendet:
 
 Diese Prüfliste enthält Elemente, die unbedingt getestet werden sollten und/oder oft übersehen werden. Es gibt eine Vielzahl von Tests, hauptsächlich Funktionstests, die spezifisch für die Ressource sind, die Sie testen, und hier nicht erwähnt werden. Vergessen Sie nicht die negativen Testfälle.
 
-## <a name="best-practice-resource-module-contains-tests-folder-with-resourcedesignertestsps1-script"></a>Bewährte Methode Ressourcenmodul enthält den Ordner "Tests" mit ResourceDesignerTests.ps1-Skript
+## <a name="best-practice-resource-module-contains-tests-folder-with-resourcedesignertestsps1-script"></a>Bewährte Methode: Das Ressourcenmodul enthält den Ordner „Tests“ mit dem Skript „ResourceDesignerTests.ps1“
 
 Es empfiehlt sich, im Ressourcenmodul den Ordner „Tests“ anzulegen, die Datei `ResourceDesignerTests.ps1` zu erstellen und über **Test-xDscResource** und **Test-xDscSchema** Tests für alle Ressourcen in einem bestimmten Modul hinzuzufügen.
 Auf diese Weise können Sie schnell die Schemas aller Ressourcen aus den angegebenen Modulen überprüfen und vor der Veröffentlichung eine Integritätsprüfung vornehmen.
@@ -294,7 +294,7 @@ Test-xDscResource ..\DSCResources\MSFT_xRemoteFile
 Test-xDscSchema ..\DSCResources\MSFT_xRemoteFile\MSFT_xRemoteFile.schema.mof
 ```
 
-## <a name="best-practice-resource-folder-contains-resource-designer-script-for-generating-schema"></a>Bewährte Methode Ressourcenordner enthält Ressourcen-Designer-Skript zur Generierung des Schemas
+## <a name="best-practice-resource-folder-contains-resource-designer-script-for-generating-schema"></a>Bewährte Methode: Der Ressourcenordner enthält Ressourcen-Designer-Skript zum Generieren des Schemas
 
 Jede Ressource sollte ein Ressourcen-Designer-Skript enthalten, mit dem ein MOF-Schema der Ressource generiert wird. Diese Datei sollte unter `<ResourceName>\ResourceDesignerScripts` platziert und mit dem Namen `<ResourceName>Schema.ps1` versehen werden. Bei der Ressource „xRemoteFile“ würde diese Datei `GenerateXRemoteFileSchema.ps1` lauten und Folgendes enthalten:
 
@@ -310,7 +310,7 @@ $CertificateThumbprint = New-xDscResourceProperty -Name CertificateThumbprint -T
 New-xDscResource -Name MSFT_xRemoteFile -Property @($DestinationPath, $Uri, $Headers, $UserAgent, $Ensure, $Credential, $CertificateThumbprint) -ModuleName xPSDesiredStateConfiguration2 -FriendlyName xRemoteFile
 ```
 
-## <a name="best-practice-resource-supports--whatif"></a>Bewährte Methode Ressource unterstützt "- WhatIf"
+## <a name="best-practice-resource-supports--whatif"></a>Bewährte Methode: Die Ressource unterstützt „-WhatIf“
 
 Wenn mit der Ressource „gefährliche“ Vorgänge ausgeführt werden, empfiehlt es sich, `-WhatIf`-Funktionalität zu implementieren. Nachdem dies erfolgt ist, stellen Sie sicher, dass die `-WhatIf`-Ausgabe Vorgänge ordnungsgemäß beschreibt, die eintreten würden, wenn der Befehl ohne den Switch `-WhatIf` ausgeführt würde.
 Vergewissern Sie sich auch, dass bei Vorhandensein des Switches `–WhatIf` keine Vorgänge ausgeführt werden (d.h. keine Änderungen am Zustand des Knotens erfolgen).

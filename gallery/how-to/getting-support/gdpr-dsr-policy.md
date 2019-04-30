@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: katalog,powershell,psgallery,GDPR
 title: DSGVO-Kompatibilität für den PowerShell-Katalog
 ms.openlocfilehash: fb1191d8a1cd12d5994e41238c384eb504d0c261
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002649"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084231"
 ---
 # <a name="powershell-gallery-gdpr-compliance"></a>DSGVO-Kompatibilität für den PowerShell-Katalog
 
@@ -53,8 +53,8 @@ Für E-Mails, die vom PowerShell-Katalog oder an diesen gesendet werden, gilt ei
 Gemäß der Richtlinie werden diese E-Mails nach 90 Tagen gelöscht.
 
 Sie können innerhalb von 90 Tagen Kopien aller E-Mails anfordern, die Sie mit Ihrer E-Mail-Adresse oder dem PowerShell-Katalog gesendet haben oder die an Sie gesendet wurden.
-Wenn Sie diese Korrespondenz anfordern möchten, senden Sie eine E-Mail an [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com) mit dem Betreff „DSR-Anforderung für E-Mails, die dieses Konto betreffen“.
-Geben Sie in dieser E-Mail an, welche Informationen Sie anfordern, z.B.: Senden Sie mir bitte alle E-Mails, die von dieser E-Mail-Adresse aus gesendet wurden bzw. die an sie gesendet wurde. Alle E-Mails der letzten 90 Tage, die Ihre E-Mail-Adresse betreffen, werden innerhalb von sieben Werktagen an Sie gesendet.
+Um diese Zuordnung anzufordern, senden Sie eine E-Mail mit dem folgenden Titel an [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com): DSR-Anforderung für E-Mails im Zusammenhang mit diesem Konto.
+Geben Sie in dieser E-Mail an, welche Informationen Sie anfordern (Beispiel: Bitte übermitteln Sie alle E-Mail-Nachrichten, die an diese E-Mail-Adresse gesendet oder von ihr empfangen wurden). Alle E-Mails der letzten 90 Tage, die Ihre E-Mail-Adresse betreffen, werden innerhalb von sieben Werktagen an Sie gesendet.
 
 ### <a name="powershell-gallery-account-information"></a>Informationen zum PowerShell-Katalog-Konto
 
@@ -97,7 +97,7 @@ Geben Sie in dieser E-Mail an, welche Informationen gelöscht werden sollen. Bei
 
 - Bitte löschen Sie Version x.y.z des Pakets „Paketname“.
 - Bitte löschen Sie alle Versionen des Pakets „Paketname“.
-- Bitte löschen Sie mein PowerShell-Katalog-Konto.
+- Bitte löschen Sie mein PowerShell-Katalog-Konto
 
 Die Administratoren von PowerShell-Katalog werden Ihnen innerhalb von sieben Werktagen eine Antwort zukommen lassen.
 Die angegebenen Pakete werden innerhalb von 30 Tagen nach Senden der Anfrage gelöscht.

@@ -3,11 +3,11 @@ ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: Installieren und Verwenden von Windows PowerShell Web Access
 ms.openlocfilehash: 53558f9be5065c7f630f06e535ddab4d7ad72d9e
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58056718"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058559"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Installieren und Verwenden von Windows PowerShell Web Access
 
@@ -58,7 +58,7 @@ Andere Browser, die Cookies zulassen, JavaScript ausführen und HTTPS-Websites a
 
 ### <a name="minimally-tested-mobile-devices-or-browsers"></a>Mobile Geräte oder Browser, für die Minimaltests durchgeführt wurden
 
-- Windows Phone 7 und 7.5
+- Windows Phone 7 und 7.5
 - Google Android WebKit 3.1 Browser Android 2.2.1 (Kernel 2.6)
 - Apple Safari für iPhone-Betriebssystem 5.0.1
 - Apple Safari für iPad 2-Betriebssystem 5.0.1

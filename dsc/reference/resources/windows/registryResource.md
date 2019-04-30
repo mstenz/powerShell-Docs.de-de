@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: DSC-Ressource „Registry“
 ms.openlocfilehash: e0ae1a4a27edc08c4e6ccd47786426917eb1ccb4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55679033"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076955"
 ---
 # <a name="dsc-registry-resource"></a>DSC-Ressource „Registry“
 
@@ -42,7 +42,7 @@ Registry [string] #ResourceName
 | Hex| Gibt an, ob Daten im Hexadezimalformat ausgedrückt werden. Falls angegeben, werden die DWORD/QWORD-Wertdaten im Hexadezimalformat angezeigt. Gilt nicht für andere Typen. Der Standardwert ist **$false**.|
 | DependsOn| Gibt an, dass die Konfiguration einer anderen Ressource ausgeführt werden muss, bevor diese Ressource konfiguriert wird. Wenn beispielsweise die ID des Skriptblocks mit der Ressourcenkonfiguration, den Sie zuerst ausführen möchten, **ResourceName** und dessen Typ **ResourceType** ist, lautet die Syntax für das Verwenden dieser Eigenschaft `DependsOn = "[ResourceType]ResourceName"`.|
 | ValueData| Die Daten des Registrierungswerts.|
-| ValueType| Gibt den Typ des Werts an. Die unterstützten Typen sind: Zeichenfolge (REG_SZ) "," binär (REG-BINARY) "," Dword 32-Bit (REG_DWORD) "," Qword 64-Bit (REG_QWORD) "," mehrteilige Zeichenfolge (REG_MULTI_SZ), erweiterbare Zeichenfolge (REG_EXPAND_SZ) |
+| ValueType| Gibt den Typ des Werts an. Die unterstützten Typen sind: Zeichenfolge (REG_SZ), Binär (REG-BINARY), Dword 32-Bit (REG_DWORD), Qword 64-Bit (REG_QWORD), mehrteilige Zeichenfolge (REG_MULTI_SZ), erweiterbare Zeichenfolge (REG_EXPAND_SZ) |
 
 ## <a name="example"></a>Beispiel
 

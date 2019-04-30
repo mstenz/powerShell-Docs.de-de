@@ -4,11 +4,11 @@ contributor: manikb
 keywords: gallery,powershell,cmdlet,psget
 title: Bootstrapping von NuGet
 ms.openlocfilehash: 6d8f106bc3b8741203e87e4c097948a843f06d6e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55677648"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084384"
 ---
 # <a name="bootstrap-the-nuget-provider-and-nugetexe"></a>Bootstrapping des NuGet-Anbieters und von „NuGet.exe“
 
@@ -155,7 +155,7 @@ Wenn die Cmdlets als Benutzer ohne erhöhte Rechte ausgeführt wurden:
 $env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
 ```
 
-Eine zweite Möglichkeit besteht darin, „NuGet.exe“ von der Website „NuGet.Org“ herunterzuladen: [https://dist.nuget.org/index.html](https://www.nuget.org/downloads) Bei Auswahl einer NuGet-Version für Produktionscomputer müssen Sie eine höhere Version als 2.8.5.208 verwenden und die Version ermitteln, die als „empfohlen“ gekennzeichnet ist. Denken Sie daran, die Datei zu entsperren, wenn sie mit einem Browser heruntergeladen wurde. Sie können die Entsperrung mit dem Cmdlet `Unblock-File` durchführen.
+Eine zweite Option besteht darin, „NuGet.exe“ von der NuGet.Org-Website herunterzuladen: [https://dist.nuget.org/index.html](https://www.nuget.org/downloads) Bei Auswahl einer NuGet-Version für Produktionscomputer müssen Sie sicherstellen, eine höhere Version als 2.8.5.208 zu verwenden und die Version zu ermitteln, die als „empfohlen“ gekennzeichnet ist. Denken Sie daran, die Datei zu entsperren, wenn sie mit einem Browser heruntergeladen wurde. Sie können die Entsperrung mit dem Cmdlet `Unblock-File` durchführen.
 
 In beiden Fällen kann die Datei „NuGet.exe“ an einen beliebigen Speicherort unter `$env:path` kopiert werden, aber dies sind die Standardspeicherorte:
 

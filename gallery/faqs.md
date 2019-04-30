@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Häufig gestellte Fragen zum PowerShell-Katalog
 ms.openlocfilehash: bcbb36a9ec60d88d1ef56fd270f0ae1862d5ca6b
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58057687"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084609"
 ---
 # <a name="frequently-asked-questions"></a>Häufig gestellte Fragen
 
@@ -150,7 +150,7 @@ Auf der Ebene des PackageManagement-Paketanbieters ruft der PSModule-Paketanbiet
 
 ![PowerShellGet-Architektur](Images/powershellgetArchitecture.png)
 
-Abbildung 1: PowerShellGet-Architektur
+Abbildung 1: PowerShellGet-Architektur
 
 ## <a name="what-is-required-to-run-powershellget"></a>Was ist für die Ausführung von PowerShellGet erforderlich?
 
