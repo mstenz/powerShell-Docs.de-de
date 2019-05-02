@@ -1,19 +1,19 @@
 ---
 ms.date: 12/12/2018
-keywords: DSC, Powershell, Resource, Katalog, setup
+keywords: DSC,Powershell,Resource,Katalog,Setup
 title: Hinzufügen von Parametern zu einer Konfiguration
 ms.openlocfilehash: 15213404f0cdd6416baf1f83af91b8f5279cc97f
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401430"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080255"
 ---
-# <a name="add-parameters-to-a-configuration"></a><span data-ttu-id="48437-103">Hinzufügen von Parametern zu einer Konfiguration</span><span class="sxs-lookup"><span data-stu-id="48437-103">Add Parameters to a Configuration</span></span>
+# <a name="add-parameters-to-a-configuration"></a><span data-ttu-id="e7222-103">Hinzufügen von Parametern zu einer Konfiguration</span><span class="sxs-lookup"><span data-stu-id="e7222-103">Add Parameters to a Configuration</span></span>
 
-<span data-ttu-id="48437-104">Ebenso wie Funktionen, [Konfigurationen](configurations.md) parametrisiert werden können, um mehr dynamische Konfigurationen, die auf Grundlage der Benutzereingabe zu ermöglichen.</span><span class="sxs-lookup"><span data-stu-id="48437-104">Like Functions, [Configurations](configurations.md) can be parameterized to allow more dynamic configurations based on user input.</span></span> <span data-ttu-id="48437-105">Die Schritte ähneln jenen in [Funktionen mit Parametern](/powershell/module/microsoft.powershell.core/about/about_functions).</span><span class="sxs-lookup"><span data-stu-id="48437-105">The steps are similar to those described in [Functions with Parameters](/powershell/module/microsoft.powershell.core/about/about_functions).</span></span>
+<span data-ttu-id="e7222-104">Ebenso wie Funktionen können [Konfigurationen](configurations.md) parametrisiert werden können, sodass dynamischere Konfigurationen auf Grundlage der Benutzereingabe möglich sind.</span><span class="sxs-lookup"><span data-stu-id="e7222-104">Like Functions, [Configurations](configurations.md) can be parameterized to allow more dynamic configurations based on user input.</span></span> <span data-ttu-id="e7222-105">Die Schritte ähneln den in [Funktionen mit Parametern](/powershell/module/microsoft.powershell.core/about/about_functions) beschriebenen.</span><span class="sxs-lookup"><span data-stu-id="e7222-105">The steps are similar to those described in [Functions with Parameters](/powershell/module/microsoft.powershell.core/about/about_functions).</span></span>
 
-<span data-ttu-id="48437-106">Dieses Beispiel beginnt mit einer einfachen Konfiguration, die den "Spooler" Dienst "Ausgeführt wird" konfiguriert.</span><span class="sxs-lookup"><span data-stu-id="48437-106">This example starts with a basic Configuration that configures the "Spooler" service to be "Running".</span></span>
+<span data-ttu-id="e7222-106">Dieses Beispiel beginnt mit einer einfachen Konfiguration, die den „Spooler“-Dienst als „Wird ausgeführt“ konfiguriert.</span><span class="sxs-lookup"><span data-stu-id="e7222-106">This example starts with a basic Configuration that configures the "Spooler" service to be "Running".</span></span>
 
 ```powershell
 Configuration TestConfig
@@ -32,21 +32,21 @@ Configuration TestConfig
 }
 ```
 
-## <a name="built-in-configuration-parameters"></a><span data-ttu-id="48437-107">Integrierte Konfiguration-Parameter</span><span class="sxs-lookup"><span data-stu-id="48437-107">Built-in Configuration parameters</span></span>
+## <a name="built-in-configuration-parameters"></a><span data-ttu-id="e7222-107">Integrierte Konfigurationsparameter</span><span class="sxs-lookup"><span data-stu-id="e7222-107">Built-in Configuration parameters</span></span>
 
-<span data-ttu-id="48437-108">Im Gegensatz zu einer Funktion jedoch die [CmdletBinding](/powershell/module/microsoft.powershell.core/about/about_functions_cmdletbindingattribute) -Attribut fügt keine Funktionalität.</span><span class="sxs-lookup"><span data-stu-id="48437-108">Unlike a Function though, the [CmdletBinding](/powershell/module/microsoft.powershell.core/about/about_functions_cmdletbindingattribute) attribute adds no functionality.</span></span> <span data-ttu-id="48437-109">Zusätzlich zu [allgemeine Parameter](/powershell/module/microsoft.powershell.core/about/about_commonparameters), Konfigurationen können auch die folgenden integrierten in-Parameter, ohne dass Sie sie definieren.</span><span class="sxs-lookup"><span data-stu-id="48437-109">In addition to [Common Parameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters), Configurations can also use the following built in parameters, without requiring you to define them.</span></span>
+<span data-ttu-id="e7222-108">Im Gegensatz zu einer Funktion fügt das [CmdletBinding](/powershell/module/microsoft.powershell.core/about/about_functions_cmdletbindingattribute)-Attribut jedoch keine Funktionalität hinzu.</span><span class="sxs-lookup"><span data-stu-id="e7222-108">Unlike a Function though, the [CmdletBinding](/powershell/module/microsoft.powershell.core/about/about_functions_cmdletbindingattribute) attribute adds no functionality.</span></span> <span data-ttu-id="e7222-109">Zusätzlich zu [allgemeinen Parametern](/powershell/module/microsoft.powershell.core/about/about_commonparameters) können Konfigurationen auch die folgenden integrierten Parameter verwenden, ohne dass Sie sie definieren müssen.</span><span class="sxs-lookup"><span data-stu-id="e7222-109">In addition to [Common Parameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters), Configurations can also use the following built in parameters, without requiring you to define them.</span></span>
 
-|<span data-ttu-id="48437-110">Parameter</span><span class="sxs-lookup"><span data-stu-id="48437-110">Parameter</span></span>  |<span data-ttu-id="48437-111">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="48437-111">Description</span></span>  |
+|<span data-ttu-id="e7222-110">Parameter</span><span class="sxs-lookup"><span data-stu-id="e7222-110">Parameter</span></span>  |<span data-ttu-id="e7222-111">Beschreibung</span><span class="sxs-lookup"><span data-stu-id="e7222-111">Description</span></span>  |
 |---------|---------|
-|`-InstanceName`|<span data-ttu-id="48437-112">Bei der Definition verwendet [zusammengesetzten Konfigurationen](compositeconfigs.md)</span><span class="sxs-lookup"><span data-stu-id="48437-112">Used in defining [Composite Configurations](compositeconfigs.md)</span></span>|
-|`-DependsOn`|<span data-ttu-id="48437-113">Bei der Definition verwendet [zusammengesetzten Konfigurationen](compositeconfigs.md)</span><span class="sxs-lookup"><span data-stu-id="48437-113">Used in defining [Composite Configurations](compositeconfigs.md)</span></span>|
-|`-PSDSCRunAsCredential`|<span data-ttu-id="48437-114">Bei der Definition verwendet [zusammengesetzten Konfigurationen](compositeconfigs.md)</span><span class="sxs-lookup"><span data-stu-id="48437-114">Used in defining [Composite Configurations](compositeconfigs.md)</span></span>|
-|`-ConfigurationData`|<span data-ttu-id="48437-115">Zum Übergeben von in strukturierten [Konfigurationsdaten](configData.md) für die Verwendung in der Konfiguration.</span><span class="sxs-lookup"><span data-stu-id="48437-115">Used to pass in structured [Configuration Data](configData.md) for use in the Configuration.</span></span>|
-|`-OutputPath`|<span data-ttu-id="48437-116">Zum angeben, wo Ihre "\<Computername\>.mof" Datei kompiliert wird</span><span class="sxs-lookup"><span data-stu-id="48437-116">Used to specify where your "\<computername\>.mof" file will be compiled</span></span>|
+|`-InstanceName`|<span data-ttu-id="e7222-112">Zur Definition [zusammengesetzter Konfigurationen](compositeconfigs.md)</span><span class="sxs-lookup"><span data-stu-id="e7222-112">Used in defining [Composite Configurations](compositeconfigs.md)</span></span>|
+|`-DependsOn`|<span data-ttu-id="e7222-113">Zur Definition [zusammengesetzter Konfigurationen](compositeconfigs.md)</span><span class="sxs-lookup"><span data-stu-id="e7222-113">Used in defining [Composite Configurations](compositeconfigs.md)</span></span>|
+|`-PSDSCRunAsCredential`|<span data-ttu-id="e7222-114">Zur Definition [zusammengesetzter Konfigurationen](compositeconfigs.md)</span><span class="sxs-lookup"><span data-stu-id="e7222-114">Used in defining [Composite Configurations](compositeconfigs.md)</span></span>|
+|`-ConfigurationData`|<span data-ttu-id="e7222-115">Zur Übergabe strukturierter [Konfigurationsdaten](configData.md) für die Verwendung in der Konfiguration.</span><span class="sxs-lookup"><span data-stu-id="e7222-115">Used to pass in structured [Configuration Data](configData.md) for use in the Configuration.</span></span>|
+|`-OutputPath`|<span data-ttu-id="e7222-116">Um anzugeben, wo Ihre „\<Computername\>.mof“-Datei kompiliert wird</span><span class="sxs-lookup"><span data-stu-id="e7222-116">Used to specify where your "\<computername\>.mof" file will be compiled</span></span>|
 
-## <a name="adding-your-own-parameters-to-configurations"></a><span data-ttu-id="48437-117">Hinzufügen von Ihren eigenen Parametern an Konfigurationen</span><span class="sxs-lookup"><span data-stu-id="48437-117">Adding your own parameters to Configurations</span></span>
+## <a name="adding-your-own-parameters-to-configurations"></a><span data-ttu-id="e7222-117">Hinzufügen Ihrer eigenen Parameter zu Konfigurationen</span><span class="sxs-lookup"><span data-stu-id="e7222-117">Adding your own parameters to Configurations</span></span>
 
-<span data-ttu-id="48437-118">Neben den integrierten-Standardparametern können Sie auch Ihren eigenen Parametern an, Ihre Konfigurationen hinzufügen.</span><span class="sxs-lookup"><span data-stu-id="48437-118">In addition to the built-in parameters, you can also add your own parameters to your Configurations.</span></span> <span data-ttu-id="48437-119">Der Parameterblock wird direkt in der Deklaration der Konfiguration, wie eine Funktion.</span><span class="sxs-lookup"><span data-stu-id="48437-119">The parameter block goes directly inside the Configuration declaration, just like a Function.</span></span> <span data-ttu-id="48437-120">Ein Konfigurationsblock-Parameter muss außerhalb einer **Knoten** Deklarationen und über allen *importieren* Anweisungen.</span><span class="sxs-lookup"><span data-stu-id="48437-120">A Configuration parameter block should be outside any **Node** declarations, and above any *import* statements.</span></span> <span data-ttu-id="48437-121">Durch Hinzufügen von Parametern, können Sie Ihre Konfigurationen robuster und dynamisches vornehmen.</span><span class="sxs-lookup"><span data-stu-id="48437-121">By adding parameters, you can make your Configurations more robust and dynamic.</span></span>
+<span data-ttu-id="e7222-118">Neben den integrierten Parametern können Sie auch Ihre eigenen Parameter Ihren Konfigurationen hinzufügen.</span><span class="sxs-lookup"><span data-stu-id="e7222-118">In addition to the built-in parameters, you can also add your own parameters to your Configurations.</span></span> <span data-ttu-id="e7222-119">Der Parameterblock wird wie eine Funktion direkt in die Deklaration der Konfiguration eingefügt.</span><span class="sxs-lookup"><span data-stu-id="e7222-119">The parameter block goes directly inside the Configuration declaration, just like a Function.</span></span> <span data-ttu-id="e7222-120">Ein Konfigurationsparameterblock muss außerhalb von **Node**-Deklarationen und vor jeglichen *import*-Anweisungen platziert werden.</span><span class="sxs-lookup"><span data-stu-id="e7222-120">A Configuration parameter block should be outside any **Node** declarations, and above any *import* statements.</span></span> <span data-ttu-id="e7222-121">Durch Hinzufügen von Parametern können Sie Ihre Konfigurationen robuster und dynamischer machen.</span><span class="sxs-lookup"><span data-stu-id="e7222-121">By adding parameters, you can make your Configurations more robust and dynamic.</span></span>
 
 ```powershell
 Configuration TestConfig
@@ -57,9 +57,9 @@ Configuration TestConfig
     )
 ```
 
-### <a name="add-a-computername-parameter"></a><span data-ttu-id="48437-122">Fügen Sie einen "Computername"-Parameter hinzu.</span><span class="sxs-lookup"><span data-stu-id="48437-122">Add a ComputerName parameter</span></span>
+### <a name="add-a-computername-parameter"></a><span data-ttu-id="e7222-122">Hinzufügen eines ComputerName-Parameters</span><span class="sxs-lookup"><span data-stu-id="e7222-122">Add a ComputerName parameter</span></span>
 
-<span data-ttu-id="48437-123">Der erste Parameter, die Sie möglicherweise hinzufügen, ist eine `-Computername` an, damit Sie dynamisch eine "MOF"-Datei für eine beliebige kompilieren können, `-Computername` Sie Ihrer Konfiguration übergeben.</span><span class="sxs-lookup"><span data-stu-id="48437-123">The first parameter you might add is a `-Computername` parameter so you can dynamically compile a ".mof" file for any `-Computername` you pass to your configuration.</span></span> <span data-ttu-id="48437-124">Wie Functions können Sie auch einen Standardwert definieren für den Fall, dass der Benutzer einen Wert für nicht erfüllt `-ComputerName`</span><span class="sxs-lookup"><span data-stu-id="48437-124">Like Functions, you can also define a default value, in case the user does not pass in a value for `-ComputerName`</span></span>
+<span data-ttu-id="e7222-123">Als ersten Parameter könnten Sie einen `-Computername`-Parameter hinzufügen, sodass Sie dynamisch eine MOF-Datei für einen beliebigen `-Computername` kompilieren können, den Sie Ihrer Konfiguration übergeben.</span><span class="sxs-lookup"><span data-stu-id="e7222-123">The first parameter you might add is a `-Computername` parameter so you can dynamically compile a ".mof" file for any `-Computername` you pass to your configuration.</span></span> <span data-ttu-id="e7222-124">Wie bei Funktionen können Sie auch einen Standardwert definieren für den Fall, dass der Benutzer keinen Wert für `-ComputerName` übergibt.</span><span class="sxs-lookup"><span data-stu-id="e7222-124">Like Functions, you can also define a default value, in case the user does not pass in a value for `-ComputerName`</span></span>
 
 ```powershell
 param
@@ -69,7 +69,7 @@ param
 )
 ```
 
-<span data-ttu-id="48437-125">Anschließend können Sie angeben, in Ihrer Konfiguration können Ihre `-ComputerName` Parameter, wenn Sie Ihre "Node"-Block zu definieren.</span><span class="sxs-lookup"><span data-stu-id="48437-125">Within your configuration, you can then specify your `-ComputerName` parameter when defining your Node block.</span></span>
+<span data-ttu-id="e7222-125">Anschließend können Sie in Ihrer Konfiguration Ihren `-ComputerName`-Parameter angeben, wenn Sie Ihren Node-Block definieren.</span><span class="sxs-lookup"><span data-stu-id="e7222-125">Within your configuration, you can then specify your `-ComputerName` parameter when defining your Node block.</span></span>
 
 ```powershell
 Node $ComputerName
@@ -78,17 +78,17 @@ Node $ComputerName
 }
 ```
 
-### <a name="calling-your-configuration-with-parameters"></a><span data-ttu-id="48437-126">Rufen Sie Ihre Konfiguration mit Parametern</span><span class="sxs-lookup"><span data-stu-id="48437-126">Calling your Configuration with parameters</span></span>
+### <a name="calling-your-configuration-with-parameters"></a><span data-ttu-id="e7222-126">Aufrufen Ihrer Konfiguration mit Parametern</span><span class="sxs-lookup"><span data-stu-id="e7222-126">Calling your Configuration with parameters</span></span>
 
-<span data-ttu-id="48437-127">Nachdem Sie die Konfiguration Parameter hinzugefügt haben, können Sie sie genau so wie Sie mit einem Cmdlet verwenden.</span><span class="sxs-lookup"><span data-stu-id="48437-127">After you have added parameters to your Configuration, you can use them just like you would with a cmdlet.</span></span>
+<span data-ttu-id="e7222-127">Nachdem Sie Ihrer Konfiguration Parameter hinzugefügt haben, können Sie sie genau so wie ein Cmdlet verwenden.</span><span class="sxs-lookup"><span data-stu-id="e7222-127">After you have added parameters to your Configuration, you can use them just like you would with a cmdlet.</span></span>
 
 ```powershell
 TestConfig -ComputerName "server01"
 ```
 
-### <a name="compiling-multiple-mof-files"></a><span data-ttu-id="48437-128">Kompilieren mehrere MOF-Dateien</span><span class="sxs-lookup"><span data-stu-id="48437-128">Compiling multiple .mof files</span></span>
+### <a name="compiling-multiple-mof-files"></a><span data-ttu-id="e7222-128">Kompilieren mehrerer MOF-Dateien</span><span class="sxs-lookup"><span data-stu-id="e7222-128">Compiling multiple .mof files</span></span>
 
-<span data-ttu-id="48437-129">Der "Node"-Block kann auch eine durch Trennzeichen getrennte Liste von Computernamen annehmen und "MOF"-Dateien für die einzelnen generiert.</span><span class="sxs-lookup"><span data-stu-id="48437-129">The Node block can also accept a comma-separated list of computer names and will generate ".mof" files for each.</span></span> <span data-ttu-id="48437-130">Sie können das folgende Beispiel zum Generieren von "MOF"-Dateien für alle Computer, die an Ausführen der `-ComputerName` Parameter.</span><span class="sxs-lookup"><span data-stu-id="48437-130">You can run the following example to generate ".mof" files for all of the computers passed to the `-ComputerName` parameter.</span></span>
+<span data-ttu-id="e7222-129">Der Node-Block kann auch eine durch Trennzeichen getrennte Liste von Computernamen annehmen und generiert für jeden eine MOF-Datei.</span><span class="sxs-lookup"><span data-stu-id="e7222-129">The Node block can also accept a comma-separated list of computer names and will generate ".mof" files for each.</span></span> <span data-ttu-id="e7222-130">Sie können das folgende Beispiel ausführen, um MOF-Dateien für alle an den `-ComputerName`-Parameter übergebenen Computer zu generieren.</span><span class="sxs-lookup"><span data-stu-id="e7222-130">You can run the following example to generate ".mof" files for all of the computers passed to the `-ComputerName` parameter.</span></span>
 
 ```powershell
 Configuration TestConfig
@@ -115,9 +115,9 @@ Configuration TestConfig
 TestConfig -ComputerName "server01", "server02", "server03"
 ```
 
-## <a name="advanced-parameters-in-configurations"></a><span data-ttu-id="48437-131">Erweiterte Parameter in Konfigurationen</span><span class="sxs-lookup"><span data-stu-id="48437-131">Advanced parameters in Configurations</span></span>
+## <a name="advanced-parameters-in-configurations"></a><span data-ttu-id="e7222-131">Erweiterte Parameter in Konfigurationen</span><span class="sxs-lookup"><span data-stu-id="e7222-131">Advanced parameters in Configurations</span></span>
 
-<span data-ttu-id="48437-132">Zusätzlich zu einem `-ComputerName` Parameter, wir können die Parameter für den Dienstnamen und den Zustand hinzufügen.</span><span class="sxs-lookup"><span data-stu-id="48437-132">In addition to a `-ComputerName` parameter, we can add parameters for the service name and state.</span></span> <span data-ttu-id="48437-133">Das folgende Beispiel fügt einen Parameterblock mit einer `-ServiceName` Parameter und verwendet, um dynamisch zu definieren die **Service** Ressourcenblock.</span><span class="sxs-lookup"><span data-stu-id="48437-133">The following example adds a parameter block with a `-ServiceName` parameter and uses it to dynamically define the **Service** resource block.</span></span> <span data-ttu-id="48437-134">Auch eine `-State` Parameter, um dynamisch zu definieren die **Zustand** in die **Service** Ressourcenblock.</span><span class="sxs-lookup"><span data-stu-id="48437-134">It also adds a `-State` parameter to dynamically define the **State** in the **Service** resource block.</span></span>
+<span data-ttu-id="e7222-132">Zusätzlich zu einem `-ComputerName`-Parameter können wir Parameter für den Dienstnamen und Zustand hinzufügen.</span><span class="sxs-lookup"><span data-stu-id="e7222-132">In addition to a `-ComputerName` parameter, we can add parameters for the service name and state.</span></span> <span data-ttu-id="e7222-133">Im folgenden Beispiel wird ein Parameterblock mit einem `-ServiceName`-Parameter hinzugefügt und verwendet, um den **Service**-Ressourcenblock dynamisch zu definieren.</span><span class="sxs-lookup"><span data-stu-id="e7222-133">The following example adds a parameter block with a `-ServiceName` parameter and uses it to dynamically define the **Service** resource block.</span></span> <span data-ttu-id="e7222-134">Es wird auch ein `-State`-Parameter hinzugefügt, um den **State** (Zustand) im **Service**-Ressourcenblock dynamisch zu definieren.</span><span class="sxs-lookup"><span data-stu-id="e7222-134">It also adds a `-State` parameter to dynamically define the **State** in the **Service** resource block.</span></span>
 
 ```powershell
 Configuration TestConfig
@@ -149,18 +149,18 @@ Configuration TestConfig
 ```
 
 > [!NOTE]
-> <span data-ttu-id="48437-135">In weitere Advacned Szenarien kann es sinnvoller, dynamische Daten in eine strukturierte verschieben, [Konfigurationsdaten](configData.md).</span><span class="sxs-lookup"><span data-stu-id="48437-135">In more advacned scenarios, it might make more sense to move your dynamic data into a structured [Configuration Data](configData.md).</span></span>
+> <span data-ttu-id="e7222-135">In fortgeschritteneren Szenarien könnte es sinnvoller sein, dynamische Daten in strukturierte [Konfigurationsdaten](configData.md) zu verschieben.</span><span class="sxs-lookup"><span data-stu-id="e7222-135">In more advacned scenarios, it might make more sense to move your dynamic data into a structured [Configuration Data](configData.md).</span></span>
 
-<span data-ttu-id="48437-136">In diesem Beispiel Konfiguration jetzt wird eine dynamische `$ServiceName`, aber wenn nicht angegeben wurde, kompilieren führt zu einem Fehler.</span><span class="sxs-lookup"><span data-stu-id="48437-136">The example Configuration now takes a dynamic `$ServiceName`, but if one is not specified, compiling results in an error.</span></span> <span data-ttu-id="48437-137">Sie können einen Standardwert wie im folgenden Beispiel hinzufügen.</span><span class="sxs-lookup"><span data-stu-id="48437-137">You could add a default value like this example.</span></span>
+<span data-ttu-id="e7222-136">Die Beispielkonfiguration nimmt einen dynamischen `$ServiceName` an, aber wenn er nicht angegeben wird, tritt beim Kompilieren ein Fehler auf.</span><span class="sxs-lookup"><span data-stu-id="e7222-136">The example Configuration now takes a dynamic `$ServiceName`, but if one is not specified, compiling results in an error.</span></span> <span data-ttu-id="e7222-137">Sie können einen Standardwert wie im folgenden Beispiel hinzufügen.</span><span class="sxs-lookup"><span data-stu-id="e7222-137">You could add a default value like this example.</span></span>
 
 ```powershell
 [String]
 $ServiceName="Spooler"
 ```
 
-<span data-ttu-id="48437-138">In diesem Fall allerdings es ist sinnvoller, einfach erzwingen, dass die Benutzer geben Sie einen Wert für die `$ServiceName` Parameter.</span><span class="sxs-lookup"><span data-stu-id="48437-138">In this instance though, it makes more sense to simply force the user to specify a value for the `$ServiceName` parameter.</span></span> <span data-ttu-id="48437-139">Die `parameter` Attribut können Sie nun Unterstützung für weitere Überprüfung und die Pipeline an die Konfiguration der Parameter.</span><span class="sxs-lookup"><span data-stu-id="48437-139">The `parameter` attribute allows you to add further validation and pipeline support to your Configuration's parameters.</span></span>
+<span data-ttu-id="e7222-138">In diesem Fall ist es allerdings sinnvoller, vom Benutzer einfach die Eingabe eines Werts für den `$ServiceName`-Parameter zu erzwingen.</span><span class="sxs-lookup"><span data-stu-id="e7222-138">In this instance though, it makes more sense to simply force the user to specify a value for the `$ServiceName` parameter.</span></span> <span data-ttu-id="e7222-139">Mit dem `parameter`-Attribut können Sie die Überprüfungs- und Pipelineunterstützung durch die Parameter Ihrer Konfiguration erweitern.</span><span class="sxs-lookup"><span data-stu-id="e7222-139">The `parameter` attribute allows you to add further validation and pipeline support to your Configuration's parameters.</span></span>
 
-<span data-ttu-id="48437-140">Fügen Sie vor jeder Parameterdeklaration der `parameter` Attributblock, wie im folgenden Beispiel.</span><span class="sxs-lookup"><span data-stu-id="48437-140">Above any parameter declaration, add the `parameter` attribute block as in the example below.</span></span>
+<span data-ttu-id="e7222-140">Fügen Sie vor jeder Parameterdeklaration wie im folgenden Beispiel den `parameter`-Attributblock ein.</span><span class="sxs-lookup"><span data-stu-id="e7222-140">Above any parameter declaration, add the `parameter` attribute block as in the example below.</span></span>
 
 ```powershell
 [parameter()]
@@ -168,7 +168,7 @@ $ServiceName="Spooler"
 $ServiceName
 ```
 
-<span data-ttu-id="48437-141">Sie können angeben, dass Argumente für jede `parameter` -Attribut, um die Kontrolle einiger Aspekte der definierten Parameter.</span><span class="sxs-lookup"><span data-stu-id="48437-141">You can specify arguments to each `parameter` attribute, to control aspects of the defined parameter.</span></span> <span data-ttu-id="48437-142">Im folgenden Beispiel wird die `$ServiceName` eine **obligatorisch** Parameter.</span><span class="sxs-lookup"><span data-stu-id="48437-142">The following example makes the `$ServiceName` a **Mandatory** parameter.</span></span>
+<span data-ttu-id="e7222-141">Sie können für jedes `parameter`-Attribut Argumente angeben, um die Aspekte der definierten Parameter zu steuern.</span><span class="sxs-lookup"><span data-stu-id="e7222-141">You can specify arguments to each `parameter` attribute, to control aspects of the defined parameter.</span></span> <span data-ttu-id="e7222-142">Im folgenden Beispiel wird `$ServiceName` zu einem **Mandatory**-Parameter.</span><span class="sxs-lookup"><span data-stu-id="e7222-142">The following example makes the `$ServiceName` a **Mandatory** parameter.</span></span>
 
 ```powershell
 [parameter(Mandatory)]
@@ -176,7 +176,7 @@ $ServiceName
 $ServiceName
 ```
 
-<span data-ttu-id="48437-143">Für die `$State` Parameter würden wir gerne, dass Benutzer von der Angabe von Werten außerhalb eines vordefinierten Satzes (z. B. wird ausgeführt, beendet) der `ValidationSet*`Attribut würde verhindern, dass den Benutzer angeben von Werten außerhalb eines vordefinierten Satzes (z. B. wird ausgeführt, Beendet).</span><span class="sxs-lookup"><span data-stu-id="48437-143">For the `$State` parameter, we would like to prevent the user from specifying values outside of a predefined set (like Running, Stopped) the `ValidationSet*`attribute would prevent the user from specifying values outside of a predefined set (like Running, Stopped).</span></span> <span data-ttu-id="48437-144">Im folgenden Beispiel wird die `ValidationSet` -Attribut auf die `$State` Parameter.</span><span class="sxs-lookup"><span data-stu-id="48437-144">The following example adds the `ValidationSet` attribute to the `$State` parameter.</span></span> <span data-ttu-id="48437-145">Da wir nicht, stellen möchten die `$State` Parameter **obligatorisch**, wir müssen einen Standardwert für die sie hinzufügen.</span><span class="sxs-lookup"><span data-stu-id="48437-145">Since we do not want to make the `$State` parameter **Mandatory**, we will need to add a default value for it.</span></span>
+<span data-ttu-id="e7222-143">Wir möchten verhindern, dass der Benutzer für den `$State`-Parameter außerhalb eines vordefinierten Satzes (z.B. „Running“, „Stopped“) liegende Werte angibt, und verwenden hierzu das `ValidationSet*`-Attribut.</span><span class="sxs-lookup"><span data-stu-id="e7222-143">For the `$State` parameter, we would like to prevent the user from specifying values outside of a predefined set (like Running, Stopped) the `ValidationSet*`attribute would prevent the user from specifying values outside of a predefined set (like Running, Stopped).</span></span> <span data-ttu-id="e7222-144">Im folgenden Beispiel wird das `ValidationSet`-Attribut dem `$State`-Parameter hinzugefügt.</span><span class="sxs-lookup"><span data-stu-id="e7222-144">The following example adds the `ValidationSet` attribute to the `$State` parameter.</span></span> <span data-ttu-id="e7222-145">Da wir den `$State`-Parameter nicht zu einem **Mandatory**-Parameter machen möchten, müssen wir für ihn einen Standardwert hinzufügen.</span><span class="sxs-lookup"><span data-stu-id="e7222-145">Since we do not want to make the `$State` parameter **Mandatory**, we will need to add a default value for it.</span></span>
 
 ```powershell
 [ValidateSet("Running", "Stopped")]
@@ -185,13 +185,13 @@ $State="Running"
 ```
 
 > [!NOTE]
-> <span data-ttu-id="48437-146">Sie müssen sich nicht an eine `parameter` -Attribut bei Verwendung einer `validation` Attribut.</span><span class="sxs-lookup"><span data-stu-id="48437-146">You do not need to specify a `parameter` attribute when using a `validation` attribute.</span></span>
+> <span data-ttu-id="e7222-146">Sie müssen kein `parameter`-Attribut angeben, wenn Sie ein `validation`-Attribut verwenden.</span><span class="sxs-lookup"><span data-stu-id="e7222-146">You do not need to specify a `parameter` attribute when using a `validation` attribute.</span></span>
 
-<span data-ttu-id="48437-147">Erfahren Sie mehr über die `parameter` und bei Validierungsattributen im [About_Functions_Advanced_Parameters](/powershell/module/microsoft.powershell.core/about/about_Functions_Advanced_Parameters.md).</span><span class="sxs-lookup"><span data-stu-id="48437-147">You can read more about the `parameter` and validation attributes in [about_Functions_Advanced_Parameters](/powershell/module/microsoft.powershell.core/about/about_Functions_Advanced_Parameters.md).</span></span>
+<span data-ttu-id="e7222-147">Weitere Informationen über `parameter` und Validierungsattribute finden Sie unter [Informationen zu Parametern erweiterter Funktionen](/powershell/module/microsoft.powershell.core/about/about_Functions_Advanced_Parameters.md).</span><span class="sxs-lookup"><span data-stu-id="e7222-147">You can read more about the `parameter` and validation attributes in [about_Functions_Advanced_Parameters](/powershell/module/microsoft.powershell.core/about/about_Functions_Advanced_Parameters.md).</span></span>
 
-## <a name="fully-parameterized-configuration"></a><span data-ttu-id="48437-148">Vollständig parametrisierter Konfiguration</span><span class="sxs-lookup"><span data-stu-id="48437-148">Fully parameterized Configuration</span></span>
+## <a name="fully-parameterized-configuration"></a><span data-ttu-id="e7222-148">Vollständig parametrisierte Konfiguration</span><span class="sxs-lookup"><span data-stu-id="e7222-148">Fully parameterized Configuration</span></span>
 
-<span data-ttu-id="48437-149">Wir verfügen jetzt über eine parametrisierte Konfiguration, die erzwingt, den Benutzer dass an eine `-InstanceName`, `-ServiceName`, und überprüft die `-State` Parameter.</span><span class="sxs-lookup"><span data-stu-id="48437-149">We now have a parameterized Configuration that forces the user to specify an `-InstanceName`, `-ServiceName`, and validates the `-State` parameter.</span></span>
+<span data-ttu-id="e7222-149">Wir verfügen jetzt über eine parametrisierte Konfiguration, die vom Benutzer die Eingabe von `-InstanceName` und `-ServiceName` erzwingt und den `-State`-Parameter überprüft.</span><span class="sxs-lookup"><span data-stu-id="e7222-149">We now have a parameterized Configuration that forces the user to specify an `-InstanceName`, `-ServiceName`, and validates the `-State` parameter.</span></span>
 
 ```powershell
 Configuration TestConfig
@@ -224,9 +224,9 @@ Configuration TestConfig
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="48437-150">Siehe auch</span><span class="sxs-lookup"><span data-stu-id="48437-150">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e7222-150">Siehe auch</span><span class="sxs-lookup"><span data-stu-id="e7222-150">See also</span></span>
 
-- [<span data-ttu-id="48437-151">Schreiben von Hilfe für DSC-Konfigurationen</span><span class="sxs-lookup"><span data-stu-id="48437-151">Write help for DSC configurations</span></span>](configHelp.md)
-- [<span data-ttu-id="48437-152">Dynamische Konfigurationen</span><span class="sxs-lookup"><span data-stu-id="48437-152">Dynamic Configurations</span></span>](flow-control-in-configurations.md)
-- [<span data-ttu-id="48437-153">Verwenden von Konfigurationsdaten in Ihren Konfigurationen</span><span class="sxs-lookup"><span data-stu-id="48437-153">Use Configuration Data in your Configurations</span></span>](configData.md)
-- [<span data-ttu-id="48437-154">Separate Daten für Konfigurations- und Umgebungsdaten</span><span class="sxs-lookup"><span data-stu-id="48437-154">Separate configuration and environment data</span></span>](separatingEnvData.md)
+- [<span data-ttu-id="e7222-151">Schreiben von Hilfe für DSC-Konfigurationen</span><span class="sxs-lookup"><span data-stu-id="e7222-151">Write help for DSC configurations</span></span>](configHelp.md)
+- [<span data-ttu-id="e7222-152">Bedingte Anweisungen und Schleifen in Konfigurationen</span><span class="sxs-lookup"><span data-stu-id="e7222-152">Dynamic Configurations</span></span>](flow-control-in-configurations.md)
+- [<span data-ttu-id="e7222-153">Verwenden von Konfigurationsdaten in DSC</span><span class="sxs-lookup"><span data-stu-id="e7222-153">Use Configuration Data in your Configurations</span></span>](configData.md)
+- [<span data-ttu-id="e7222-154">Trennen von Konfiguration und Umgebungsdaten</span><span class="sxs-lookup"><span data-stu-id="e7222-154">Separate configuration and environment data</span></span>](separatingEnvData.md)
