@@ -3,17 +3,17 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,setup
 title: Verwenden von Import-DscResource
 ms.openlocfilehash: ee0b2f0469c6507c8f0148138198597a9e57cdd7
-ms.sourcegitcommit: c581c4c8036edf55147e7bce4b00c860da6c5a8b
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56803411"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080100"
 ---
 # <a name="using-import-dscresource"></a>Verwenden von Import-DscResource
 
-`Import-DScResource` ist ein Schlüsselwort "dynamic", die nur innerhalb eines Skriptblocks Konfiguration verwendet werden kann. Die `Import-DSCResource` Schlüsselwort, um alle Ressourcen in Ihrer Konfiguration erforderlich sind, zu importieren. Ressourcen, die unter `$pshome` werden automatisch importiert, aber es dennoch als bewährte Methode, die alle verwendete Ressourcen explizit Importieren Ihrer [Konfiguration](Configurations.md).
+`Import-DScResource` ist ein dynamisches Schlüsselwort, das nur innerhalb eines Configuration-Skriptblocks verwendet werden kann. Das `Import-DSCResource`-Schlüsselwort dient zum Importieren aller Ressourcen, die in Ihrer Konfiguration erforderlich sind. Ressourcen unter `$pshome` werden automatisch importiert, aber es gilt immer noch als bewährte Methode, alle in Ihrer [Konfiguration](Configurations.md) verwendeten Ressourcen explizit zu importieren.
 
-Die Syntax für `Import-DSCResource` ist unten dargestellt.  Wenn Sie Module mit Namen angeben, ist es eine Anforderung, um die einzelnen in einer neuen Zeile aufgeführt.
+Die Syntax für `Import-DSCResource` ist unten dargestellt.  Wenn Sie Module mit Namen angeben, müssen Sie jedes in einer neuen Zeile aufführen.
 
 ```syntax
 Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName>]
@@ -21,14 +21,14 @@ Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName>]
 
 |Parameter  |Beschreibung  |
 |---------|---------|
-|`-Name`|Den Namen der DSC-Ressource, die Sie importieren müssen. Wenn Sie der Namen des Moduls angegeben wird, durchsucht der Befehl, um diese DSC-Ressourcen innerhalb dieses Moduls; Andernfalls sucht der Befehl die DSC-Ressourcen in allen Pfaden der DSC-Ressource. Platzhalter werden unterstützt.|
-|`-ModuleName`|Der Modulname oder Modul-Spezifikation.  Bei Angabe von Ressourcen, die von einem Modul zu importieren. versucht der Befehl, nur die Ressourcen zu importieren. Wenn Sie das Modul nur angeben, importiert der Befehl alle DSC-Ressourcen im Modul an.|
+|`-Name`|Die Namen der DSC-Ressourcen, die Sie importieren müssen. Wenn der Name des Moduls angegeben wird, durchsucht der Befehl dieses Modul nach diesen DSC-Ressourcen; andernfalls durchsucht der Befehl die DSC-Ressourcen in allen DSC-Ressourcenpfaden. Platzhalter werden unterstützt.|
+|`-ModuleName`|Modulname oder Modulspezifikation.  Bei Angabe von Ressourcen, die aus einem Modul importiert werden sollen, versucht der Befehl, nur diese Ressourcen zu importieren. Wenn Sie nur das Modul angeben, importiert der Befehl alle DSC-Ressourcen im Modul.|
 
 ```powershell
 Import-DscResource -ModuleName xActiveDirectory;
 ```
 
-## <a name="example-use-import-dscresource-within-a-configuration"></a>Beispiel: Mit Import-DSCResource in einer Konfiguration
+## <a name="example-use-import-dscresource-within-a-configuration"></a>Beispiel: Verwenden von Import-DSCResource in einer Konfiguration
 
 ```powershell
 Configuration MSDSCConfiguration
@@ -52,23 +52,23 @@ Configuration MSDSCConfiguration
 ```
 
 > [!NOTE]
-> Mehrere Werte für Namen von Ressourcen und Module im selben Befehl angeben, werden nicht unterstützt. Sie haben nicht deterministische Verhalten in Bezug auf die Ressource, von welchem Modul geladen wird, für den Fall, dass dieselbe Ressource in mehrere Module vorhanden ist. Folgenden Befehl aus, führt zu Fehler während der Kompilierung.
+> Die Angabe mehrerer Werte für Ressourcen- und Modulnamen im selben Befehl wird nicht unterstützt. Falls dieselbe Ressource in mehreren Modulen vorhanden ist, kann dies in Bezug darauf, welche Ressource aus welchem Modul geladen wird, zu einem nicht deterministischen Verhalten führen. Der folgende Befehl führt zu einem Fehler während der Kompilierung.
 >
 > ```powershell
 > Import-DscResource -Name UserConfigProvider*,TestLogger1 -ModuleName UserConfigProv,PsModuleForTestLogger
 > ```
 
-Folgendes in Betracht, wenn Sie nur den Name-Parameter verwenden:
+Wenn Sie nur den Name-Parameter verwenden, müssen Sie Folgendes beachten:
 
-- Es ist ein ressourcenintensiver Vorgang abhängig von der Anzahl der Module, die auf dem Computer installiert.
-- Es lädt die erste Ressource mit dem angegebenen Namen gefunden. Bei mehr als eine Ressource mit demselben Namen, die installiert wird, konnte es falsche Ressource geladen.
+- Abhängig von der Anzahl der auf dem Computer installierten Module ist es ein ressourcenintensiver Vorgang.
+- Es wird die zuerst gefundene Ressource des angegebenen Namens geladen. Falls mehrere Ressourcen mit demselben Namen installiert sind, könnte die falsche Ressource geladen werden.
 
-Die empfohlene Verwendung ist an `–ModuleName` mit der `-Name` Parameter, wie unten beschrieben.
+Wie unten beschrieben sollte `–ModuleName` mit dem `-Name`-Parameter angegeben werden.
 
-Diese Verwendung hat die folgenden Vorteile:
+Dies bietet folgende Vorteile:
 
-- Es verringert die Auswirkungen auf die Leistung begrenzen den Suchbereich für die angegebene Ressource.
-- Das Modul definieren die Ressource, um sicherzustellen, dass die richtige Ressource geladen wird definiert explizit.
+- Durch Begrenzen des Suchbereichs für die angegebene Ressource sind die Auswirkungen auf die Leistung geringer.
+- Durch Definieren der Ressource wird das Modul explizit definiert und sichergestellt, dass die richtige Ressource geladen wird.
 
 > [!NOTE]
 > In PowerShell 5.0 können DSC-Ressourcen mehrere Versionen haben, und verschiedene Versionen können parallel auf einem Computer installiert sein. Dies wird dadurch implementiert, dass mehrere Versionen eines Ressourcenmoduls vorhanden sind, die sich im selben Modulordner befinden.
@@ -76,23 +76,23 @@ Diese Verwendung hat die folgenden Vorteile:
 
 ## <a name="intellisense-with-import-dscresource"></a>IntelliSense mit Import-DSCResource
 
-Beim Erstellen der DSC-Konfigurations in der ISE bietet PowerShell IntelliSense für Ressourcen und Ressourceneigenschaften. Ressourcendefinitionen unter der `$pshome` Modulpfad automatisch geladen werden. Beim Importieren von Ressourcen mithilfe der `Import-DSCResource` -Schlüsselwort, die Definitionen für die angegebene Ressource hinzugefügt werden und Intellisense wird erweitert, um die importierte Ressource Schema enthalten.
+Beim Erstellen der DSC-Konfiguration in ISE stellt PowerShell IntelliSense für Ressourcen und Ressourceneigenschaften zur Verfügung. Ressourcendefinitionen unter dem `$pshome`-Modulpfad werden automatisch geladen. Beim Importieren von Ressourcen mithilfe des `Import-DSCResource`-Schlüsselworts werden die angegebenen Ressourcendefinitionen hinzugefügt, und IntelliSense wird erweitert, um das Schema der importierten Ressource einzubeziehen.
 
-![Intellisense für Ressourcen](/media/resource-intellisense.png)
+![IntelliSense für Ressourcen](/media/resource-intellisense.png)
 
 > [!NOTE]
-> PowerShell 5.0 ab, wurde Tab-Vervollständigung der ISE für DSC-Ressourcen und deren Eigenschaften hinzugefügt. Weitere Informationen finden Sie unter [Ressourcen](../resources/resources.md).
+> In PowerShell 5.0 wurde der ISE für DSC-Ressourcen und deren Eigenschaften die Vervollständigung mit der TAB-TASTE hinzugefügt. Weitere Informationen finden Sie unter [Ressourcen](../resources/resources.md).
 
-Beim Kompilieren der Konfiguration, verwendet PowerShell die Definitionen für importierte Ressource, um alle ressourcenblöcken in der Konfiguration zu überprüfen.
-Jedem Ressourcenblock wird überprüft, mit der Schemadefinition der Ressource, für die folgenden Regeln.
+Beim Kompilieren der Konfiguration verwendet PowerShell die importierten Ressourcendefinitionen, um alle Ressourcenblöcke in der Konfiguration zu überprüfen.
+Jeder Ressourcenblock wird mit der Schemadefinition der Ressource auf Einhaltung der folgenden Regeln überprüft.
 
-- Nur Eigenschaften, die im Schema definiert wird.
+- Nur im Schema definierte Eigenschaften werden verwendet.
 - Die Datentypen für jede Eigenschaft sind korrekt.
-- Eigenschaften von Schlüsseln werden angegeben.
-- Keine nur-Lese Eigenschaft wird verwendet.
-- Überprüfung auf dem Wert werden die Datentypen zugeordnet.
+- Schlüsseleigenschaften werden angegeben.
+- Es wird keine schreibgeschützte Eigenschaft verwendet.
+- Überprüfung von Wertzuordnungstypen.
 
-Beachten Sie die folgende Konfiguration ein:
+Beachten Sie die folgende Konfiguration:
 
 ```powershell
 Configuration SchemaValidationInCorrectEnumValue
@@ -111,41 +111,41 @@ Configuration SchemaValidationInCorrectEnumValue
 }
 ```
 
-Kompilieren diese Konfiguration führt zu einem Fehler.
+Die Kompilierung dieser Konfiguration führt zu einem Fehler.
 
 ```output
 PSDesiredStateConfiguration\WindowsFeature: At least one of the values ‘Invalid’ is not supported or valid for property ‘Ensure’ on class ‘WindowsFeature’. Please specify only supported values: Present, Absent.
 ```
 
-IntelliSense und der schemaüberprüfung können Sie weitere Fehler während der Analyse und Kompilierung, Abfangen Komplikationen zur Laufzeit vermieden.
+Mit IntelliSense und Schemaüberprüfung können Sie mehr Fehler während Analyse und Kompilierung abfangen und damit Komplikationen während der Runtime vermieden.
 
 > [!NOTE]
-> Jede DSC-Ressource kann einen Namen haben, und ein **FriendlyName** durch die der Ressource Schema definiert wird. Im folgenden sind die ersten beiden Zeilen von "MSFT_ServiceResource.shema.mof".
+> Jede DSC-Ressource kann einen Namen haben und einen durch das Schema der Ressource definierten **FriendlyName** (Anzeigenamen). Im Folgenden sehen Sie ersten beiden Zeilen von „MSFT_ServiceResource.shema.mof“.
 > ```syntax
 > [ClassVersion("1.0.0"),FriendlyName("Service")]
 > class MSFT_ServiceResource : OMI_BaseResource
 > ```
-> Wenn Sie diese Ressource in einer Konfiguration verwenden, können Sie angeben **MSFT_ServiceResource** oder **Service**.
+> Wenn Sie diese Ressource in einer Konfiguration verwenden, können Sie **MSFT_ServiceResource** oder **Service** angeben.
 
-## <a name="powershell-v4-and-v5-differences"></a>PowerShell-v4- und v5-Unterschiede
+## <a name="powershell-v4-and-v5-differences"></a>Unterschiede zwischen PowerShell v4 und v5
 
-Es gibt mehrere Unterschiede, die Sie sehen, wenn Konfigurationen in PowerShell 4.0 im Vergleich zu erstellen. PowerShell 5.0 und höher. In diesem Abschnitt werden die Unterschiede hervorgehoben, dass für diesen Artikel relevant angezeigt.
+Wenn Sie Konfigurationen in PowerShell 4.0 und PowerShell 5.0 und höher erstellen, werden Ihnen mehrere Unterschiede auffallen. In diesem Abschnitt werden die Unterschiede hervorgehoben, die für diesen Artikel relevant sind.
 
 ### <a name="multiple-resource-versions"></a>Mehrere Versionen der Ressource
 
-Installieren und verwenden mehrere Versionen der Ressourcen-Seite-an-Seite wurde in PowerShell 4.0 nicht unterstützt. Wenn Sie das Importieren von Ressourcen in Ihrer Konfiguration Probleme feststellen, stellen Sie sicher, dass Sie nur eine Version der Ressource installiert haben.
+Das parallele Installieren und Verwenden mehrerer Versionen von Ressourcen wurde in PowerShell 4.0 nicht unterstützt. Wenn beim Importieren von Ressourcen in Ihre Konfiguration Probleme auftreten, stellen Sie sicher, dass Sie nur eine Version der Ressource installiert haben.
 
-In der Abbildung unten, zwei Versionen der **"xpsdesiredstateconfiguration"** -Modul installiert werden.
+In der folgenden Abbildung sind zwei Versionen des **xPSDesiredStateConfiguration**-Moduls installiert.
 
-![Mehrere Ressourcen Versionen behoben](/media/multiple-resource-versions-broken.md)
+![Problembehebung bei mehreren Versionen einer Ressource](/media/multiple-resource-versions-broken.md)
 
-Kopieren Sie den Inhalt Ihrer gewünschten Module-Version, auf der obersten Ebene des Modulverzeichnisses.
+Kopieren Sie den Inhalt Ihrer gewünschten Modulversion in die oberste Ebene des Modulverzeichnisses.
 
-![Mehrere Ressourcen Versionen behoben](/media/multiple-resource-versions-fixed.md)
+![Problembehebung bei mehreren Versionen einer Ressource](/media/multiple-resource-versions-fixed.md)
 
 ### <a name="resource-location"></a>Ressourcenspeicherort
 
-Beim Erstellen und Kompilieren von Konfigurationen, können Ihre Ressourcen gespeichert werden, in einem Verzeichnis, die gemäß Ihrer [PSModulePath](/powershell/developer/module/modifying-the-psmodulepath-installation-path). In PowerShell 4.0 erfordert der LCM alle DSC-ressourcenmodulen unter "Programm Files\WindowsPowerShell\Modules" gespeichert werden oder `$pshome\Modules`. Ab in PowerShell 5.0 ist diese Anforderung wurde entfernt und Ressourcenmodule können gespeichert werden, in einem Verzeichnis anhand des `PSModulePath`.
+Beim Erstellen und Kompilieren von Konfigurationen können Ihre Ressourcen in einem beliebigen, durch Ihren [PSModulePath](/powershell/developer/module/modifying-the-psmodulepath-installation-path) angegebenen Verzeichnis gespeichert werden. In PowerShell 4.0 erfordert der LCM, dass alle DSC-Ressourcenmodule unter „Programme\WindowsPowerShell\Modules“ oder `$pshome\Modules` gespeichert werden. Seit PowerShell 5.0 besteht diese Anforderung nicht mehr, und Ressourcenmodule können in einem beliebigen durch `PSModulePath` angegebenen Verzeichnis gespeichert werden.
 
 ## <a name="see-also"></a>Siehe auch
 

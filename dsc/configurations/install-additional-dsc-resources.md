@@ -1,51 +1,51 @@
 ---
 ms.date: 12/12/2018
-keywords: DSC, Powershell, Resource, Katalog, setup
+keywords: DSC,PowerShell,Ressource,Katalog,Setup
 title: Installieren zusätzlicher DSC-Ressourcen
 ms.openlocfilehash: ecaf176230ccd934b57b1c27d72ff83e6ba906e9
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401694"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080080"
 ---
 # <a name="install-additional-dsc-resources"></a>Installieren zusätzlicher DSC-Ressourcen
 
-PowerShell umfasst mehrere Out-of-the-Box-Ressourcen für Desired State Configuration (DSC). Die **"psdesiredstateconfiguration"** -Modul enthält alle OOB-DSC-Ressourcen für Ihre spezifischen Instanz von PowerShell verfügbar.
+PowerShell umfasst mehrere vorgefertigte Ressourcen für die Desired State Configuration (DSC). Das **PSDesiredStateConfiguration**-Modul enthält alle für Ihre spezifische Instanz von PowerShell verfügbaren OOB-DSC-Ressourcen.
 
-Dies ist eine Liste mit den OOB-Ressourcen, die in PowerShell 4.0 und eine Beschreibung der Funktionen von der Ressource enthalten.
+Hier finden Sie eine Liste der in PowerShell 4.0 enthaltenen OOB-Ressourcen sowie Beschreibungen der Funktionen der Ressourcen.
 
 > [!NOTE]
-> Dies ist eine unvollständige Liste, wie die Anzahl der OOB-Ressourcen mit jeder Version von PowerShell geworden ist.
+> Diese Liste ist unvollständig, da die Anzahl der OOB-Ressourcen mit jeder Version von PowerShell gewachsen ist.
 
 |Ressource  |Beschreibung  |
 |---------|---------|
-|**File**|Steuert den Status der Dateien und Verzeichnisse. Kopiert Dateien aus einer **Quelle** auf eine **Ziel** und aktualisiert sie bei der **Quelle** Änderungen durch Vergleichen von Datumsangaben, Prüfsummen und Hashes.|
-|**Archive**|Entpacken Archive und einer angegebenen Position. Überprüft die Archive mit einem angegebenen **Prüfsumme**.|
+|**File**|Steuert den Status der Dateien und Verzeichnisse. Kopiert Dateien aus einer **Quelle** in ein **Ziel** und aktualisiert sie bei Änderung der **Quelle** durch Vergleichen von Datumsangaben, Prüfsummen und Hashes.|
+|**Archive**|Entpackt Archive an einem angegebenen Speicherort. Überprüft die Archive mit einer angegebenen **Prüfsumme**.|
 |**Environment**|Verwaltet Umgebungsvariablen.|
-|**Gruppe**|Lokale Gruppen verwaltet und steuert die Gruppenmitgliedschaft.|
-|**Log**|Schreibt Meldungen an die `Microsoft-Windows-Desired State Configuration/Analytic` Ereignisprotokoll.|
-|**Paket**|Installiert oder deinstalliert Pakete mit **Argumente**, **LogPath**, **ReturnCode**, andere Einstellungen.|
-|**Registry**|Verwaltet Registrierungsschlüssel und-Werte an.|
-|**Script**|Können Sie entwerfen Ihre eigenen [Get-Test-Set](../resources/get-test-set.md) Skriptblöcken.|
-|**Service**|Windows Services konfiguriert.|
-|**User** |Verwaltet die lokale Benutzer und -Attribute.|
-|**WindowsFeature**|Verwaltet die Rollen und Features.|
-|**WindowsProcess**|Konfiguriert die Windows-Prozesse.|
+|**Gruppe**|Verwaltet lokale Gruppen und steuert die Gruppenmitgliedschaft.|
+|**Log**|Schreibt Meldungen in das `Microsoft-Windows-Desired State Configuration/Analytic`-Ereignisprotokoll.|
+|**Paket**|Installiert oder deinstalliert Pakete mit **Arguments**, **LogPath**, **ReturnCode** und anderen Einstellungen.|
+|**Registry**|Verwaltet Registrierungsschlüssel und -werte.|
+|**Script**|Ermöglicht Ihnen den Entwurf Ihrer eigenen [get-test-set](../resources/get-test-set.md)-Skriptblöcke.|
+|**Service**|Konfiguriert Windows-Dienste.|
+|**User** |Verwaltet lokale Benutzer und Attribute.|
+|**WindowsFeature**|Verwaltet Rollen und Features.|
+|**WindowsProcess**|Konfiguriert Windows-Prozesse.|
 
-Die OOB-Ressourcen können einen guten Ausgangspunkt für allgemeine Vorgänge. Wenn die OOB-Ressourcen Ihre Anforderungen nicht erfüllen, können Sie schreiben Ihre eigenen [benutzerdefinierte Ressource](../resources/authoringResource.md). Bevor Sie eine benutzerdefinierte Ressource zur Behebung Ihres Problems schreiben, sollten Sie über die große Anzahl von DSC-Ressourcen ansehen, die bereits von Microsoft und der PowerShell-Community erstellt wurden.
+Die OOB-Ressourcen bieten einen guten Ausgangspunkt für allgemeine Vorgänge. Wenn die OOB-Ressourcen Ihre Anforderungen nicht erfüllen, können Sie Ihre eigene [benutzerdefinierte Ressource](../resources/authoringResource.md) schreiben. Bevor Sie eine benutzerdefinierte Ressource zur Behebung Ihres Problems schreiben, sollten Sie die große Anzahl von DSC-Ressourcen durchsehen, die bereits von Microsoft und der PowerShell-Community erstellt wurden.
 
-DSC-Ressourcen finden Sie in beiden die [PowerShell-Katalog](https://www.powershellgallery.com/) und [GitHub](https://github.com/). Sie können DSC-Ressourcen auch direkt über die PowerShell-Konsole mit installieren [PowerShellGet](/powershell/module/powershellget/).
+DSC-Ressourcen finden Sie sowohl im [PowerShell-Katalog](https://www.powershellgallery.com/) als auch in [GitHub](https://github.com/). Sie können DSC-Ressourcen auch mit [PowerShellGet](/powershell/module/powershellget/) direkt über die PowerShell-Konsole installieren.
 
 ## <a name="installing-powershellget"></a>Installieren von PowerShellGet
 
-Um festzustellen, ob Sie bereits haben **PowerShell** erhalten, oder um Hilfe bei der Installation erhalten zu können, finden Sie unter der folgenden Anleitung: [Installieren von PowerShellGet](/powershell/gallery/installing-psget)
+Um festzustellen, ob Sie **PowerShell** bereits besitzen, oder um Hilfe bei der Installation zu erhalten, nutzen Sie die folgende Anleitung: [Installieren von PowerShellGet](/powershell/gallery/installing-psget).
 
-## <a name="finding-dsc-resources-using-powershellget"></a>Suchen von DSC-Ressourcen, die die Verwendung von PowerShellGet
+## <a name="finding-dsc-resources-using-powershellget"></a>Suchen von DSC-Ressourcen mit PowerShellGet
 
-Einmal **PowerShellGet** wird installiert auf Ihrem System können Sie ermitteln und installieren Sie die im gehosteten DSC-Ressourcen die [PowerShell-Katalog](https://www.powershellgallery.com/).
+Sobald **PowerShellGet** auf Ihrem System installiert ist, können Sie im [PowerShell-Katalog](https://www.powershellgallery.com/) gehostete DSC-Ressourcen ermitteln und installieren.
 
-Verwenden Sie zunächst die [Find-DSCResource](/powershell/module/powershellget/find-dscresource) Cmdlet, um DSC-Ressourcen zu finden. Beim Ausführen von `Find-DSCResource` erstmals ausführen, finden Sie die folgende Aufforderung zum Installieren des Anbieters"NuGet".
+Suchen Sie zunächst mit dem [Find-DSCResource](/powershell/module/powershellget/find-dscresource)-Cmdlet DSC-Ressourcen. Wenn Sie `Find-DSCResource` erstmals ausführen, sehen Sie die folgende Aufforderung zum Installieren des „NuGet-Anbieters“.
 
 ```
 PS> Find-DSCResource
@@ -59,15 +59,15 @@ install and import the NuGet provider now?
 [Y] Yes  [N] No  [?] Help (default is "Y"):
 ```
 
-Klicken Sie nach dem Drücken 'y' der "NuGet"-Anbieter installiert ist, finden Sie eine Liste von DSC-Ressourcen, die Sie aus dem PowerShell-Katalog installieren können.
+Nach dem Drücken von „j“ wird der „NuGet“-Anbieter installiert, und Sie sehen eine Liste von DSC-Ressourcen, die Sie aus dem PowerShell-Katalog installieren können.
 
 > [!NOTE]
-> Liste wird nicht angezeigt werden, da sie sehr groß ist.
+> Die Liste wird hier nicht gezeigt, da sie sehr groß ist.
 
-Sie können auch angeben, die `-Name` mithilfe von Platzhaltern, Parameter oder `-Filter` Parameter ohne Platzhalter, um Ihre Suche einzugrenzen. In diesem Beispiel wird versucht, eine "Zeitzone" DSC-Ressource, die mit der die Platzhalter zu finden.
+Sie können auch mithilfe von Platzhaltern den `-Name`-Parameter angeben, oder den `-Filter`-Parameter ohne Platzhalter, um Ihre Suche einzugrenzen. In diesem Beispiel wird versucht, eine DSC-Ressource „TimeZone“ mit Platzhaltern zu finden.
 
 > [!IMPORTANT]
-> Derzeit ist es jedoch ein Fehler in der `Find-DSCResource` -Cmdlet, das mithilfe von Platzhaltern in beiden verhindert, dass die `-Name` und `-Filter` Parameter. Das zweite Beispiel unten zeigt eine problemumgehung mithilfe `Where-Object`.
+> Derzeit enthält das `Find-DSCResource`-Cmdlet jedoch einen Fehler, der sowohl im `-Name`- als auch `-Filter`-Parameter die Suche mit Platzhaltern verhindert. Das zweite Beispiel zeigt eine Problemumgehung mit `Where-Object`.
 
 ```
 PS> Find-DSCResource -Name *Time*
@@ -90,7 +90,7 @@ xSqlServerSQLDataRoot               1.0.0      mlSqlServerDSC                   
 xSqlServerStartupParam              1.0.0      mlSqlServerDSC                      PSGallery
 ```
 
-Sie können auch `Where-Object` zu DSC-Ressourcen über eine feiner abgestimmte Filtern zu suchen. Dieser Ansatz wird als unter Verwendung der integrierten Filterparameter langsamer sein.
+Sie können auch mit `Where-Object` DSC-Ressourcen mit einer feiner abgestimmten Filterung suchen. Dieser Ansatz ist langsamer als die Verwendung der integrierten Filterparameter.
 
 ```
 PS> Find-DSCResource | Where-Object {$_.Name -like "Time*"}
@@ -102,14 +102,14 @@ TimeZone                            6.0.0.0    ComputerManagementDsc            
 
 Weitere Informationen zur Filterung finden Sie unter [Where-Object](/powershell/module/microsoft.powershell.core/where-object).
 
-## <a name="installing-dsc-resources-using-powershellget"></a>Installieren von DSC-Ressourcen, die die Verwendung von PowerShellGet
+## <a name="installing-dsc-resources-using-powershellget"></a>Installieren von DSC-Ressourcen mit PowerShellGet
 
-Verwenden Sie zum Installieren einer DSC-Ressource die [Install-Module](/powershell/module/PowershellGet/Install-Module) Cmdlet angeben des Namens des Moduls angezeigt, die unter **Modul** Name in den Suchergebnissen.
+Installieren Sie eine DSC-Ressource mit dem [Install-Module](/powershell/module/PowershellGet/Install-Module)-Cmdlet, wobei Sie den in den Suchergebnissen unter **ModuleName** angegebenen Namen des Moduls verwenden.
 
-Die Ressource "Zeitzone" ist also, d. h. das Modul in diesem Beispiel wird installiert im Modul "ComputerManagementDSC" vorhanden.
+Da die Ressource „TimeZone“ sich im Modul „ComputerManagementDSC“ befindet, wird dieses Modul in diesem Beispiel installiert.
 
 > [!NOTE]
-> Wenn Sie nicht im PowerShell-Katalog vertrauenswürdige haben, Sie sehen, dass die Warnung unter der Aufforderung zur Bestätigung, und installiert, Sie anweisen, wie in nachfolgender eingabeaufforderungen zu vermeiden.
+> Wenn Sie den PowerShell-Katalog noch nicht als vertrauenswürdig eingestuft haben, sehen Sie die unten stehende Warnung mit der Aufforderung zur Bestätigung und Anleitungen, wie Sie nachfolgende Eingabeaufforderungen bei Installationen vermeiden können.
 
 ```
 PS> Install-Module -Name ComputerManagementDSC
@@ -121,7 +121,7 @@ InstallationPolicy value by running the Set-PSRepository cmdlet. Are you sure yo
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-Drücken Sie "y", um den Vorgang fortzusetzen, installieren das Modul aus. Nach der Installation können Sie überprüfen, ob mithilfe die neue Ressource installiert [Get-DSCResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource).
+Drücken Sie „j“, um mit dem Installieren des Moduls fortzufahren. Nach der Installation können Sie mit [Get-DSCResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) überprüfen, ob die neue Ressource installiert ist.
 
 ```
 PS> Get-DSCResource -Name TimeZone -Syntax
@@ -135,7 +135,7 @@ TimeZone [String] #ResourceName
 }
 ```
 
-Sie können auch andere Ressourcen in Ihrem neu installierte Modul anzeigen, durch Angabe der `-ModuleName` Parameter.
+Sie können mit Angabe des `-ModuleName`-Parameters auch andere Ressourcen in Ihrem neu installierten Modul anzeigen.
 
 ```
 PS> Get-DSCResource -Module ComputerManagementDSC
