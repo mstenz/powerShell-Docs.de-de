@@ -8,26 +8,29 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 27d0ee5e-2589-4530-92ef-c09996b80994
 caps.latest.revision: 10
-ms.openlocfilehash: c9963819f1842d1245735dabc487babaa566c160
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 8f745cc0e5ef6db7a6bbdf39d826103f3b8a98ce
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068129"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229292"
 ---
 # <a name="events01-sample"></a>Events01-Beispiel
 
-Dieses Beispiel zeigt, wie Sie ein Cmdlet zu erstellen, die den Benutzer zum Registrieren für Ereignisse ermöglicht, die vom ausgelöst werden [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher). Mit diesem Cmdlet können Benutzer eine Aktion, die ausgeführt werden, wenn eine Datei unter einem bestimmten Verzeichnis erstellt wird, registrieren. In diesem Beispiel leitet sich von der [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) Basisklasse.
+Dieses Beispiel zeigt, wie Sie ein Cmdlet zu erstellen, die den Benutzer zum Registrieren für Ereignisse ermöglicht, die vom ausgelöst werden [System.IO.FileSystemWatcher](/dotnet/api/System.IO.FileSystemWatcher).
+Mit diesem Cmdlet können Benutzer eine Aktion, die ausgeführt werden, wenn eine Datei unter einem bestimmten Verzeichnis erstellt wird, registrieren.
+In diesem Beispiel leitet sich von der [Microsoft.PowerShell.Commands.ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) Basisklasse.
 
 ## <a name="how-to-build-the-sample-by-using-visual-studio"></a>So erstellen Sie das Beispiel mithilfe von Visual Studio.
 
-1. Navigieren Sie zum Ordner Events01, mit dem Windows PowerShell 2.0 SDK installiert. Der standardmäßige Speicherort ist C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01.
+1. Navigieren Sie zum Ordner Events01, mit dem Windows PowerShell 2.0 SDK installiert.
+   Der Standardspeicherort ist `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01`.
 
-2. Doppelklicken Sie auf das Symbol für die Projektmappendatei (.sln). Daraufhin wird das Beispielprojekt in Microsoft Visual Studio.
+2. Doppelklicken Sie auf das Symbol für die Projektmappendatei (.sln).
+   Daraufhin wird das Beispielprojekt in Microsoft Visual Studio.
 
 3. In der **erstellen** , wählen Sie im Menü **Projektmappe**.
-
-    Die Bibliothek für das Beispiel wird in die Standardordner \bin oder \bin\debug erstellt werden.
+   Die Bibliothek für das Beispiel erstellt in der Standard- `\bin` oder `\bin\debug` Ordner.
 
 ### <a name="how-to-run-the-sample"></a>Gewusst wie: Ausführen des Beispiels
 
@@ -78,11 +81,14 @@ Dieses Beispiel ist die Windows PowerShell 2.0 erforderlich.
 
 Dieses Beispiel veranschaulicht die folgenden.
 
-- Wie Sie ein Cmdlet für die ereignisregistrierung zu schreiben. Das Cmdlet leitet sich von der [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) -Klasse, die Unterstützung für die gemeinsame Parameter von Register-bietet * Event-Cmdlets. Cmdlets, die abgeleitet sind [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) müssen Sie nur für die einzelnen Parameter definieren, und überschreiben die `GetSourceObject` und `GetSourceObjectEventName` abstrakte Methoden.
+### <a name="how-to-write-a-cmdlet-for-event-registration"></a>Gewusst wie: Schreiben Sie ein Cmdlet für die ereignisregistrierung
+
+Das Cmdlet leitet sich von der [Microsoft.PowerShell.Commands.ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) -Klasse, die gemeinsame Parameter unterstützt den `Register-*Event` Cmdlets.
+Cmdlets, die abgeleitet sind [Microsoft.PowerShell.Commands.ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) müssen Sie nur für die einzelnen Parameter definieren, und überschreiben die `GetSourceObject` und `GetSourceObjectEventName` abstrakte Methoden.
 
 ## <a name="example"></a>Beispiel
 
-Dieses Beispiel zeigt, wie für die von ausgelösten Ereignisse registrieren [System.IO.FileSystemWatcher](https://msdn.microsoft.com/en-us/library/system.io.filesystemwatcher\(v=vs.110\).aspx).
+Dieses Beispiel zeigt, wie für die von ausgelösten Ereignisse registrieren [System.IO.FileSystemWatcher](/dotnet/api/System.IO.FileSystemWatcher).
 
 ```csharp
 namespace Sample
@@ -183,4 +189,4 @@ namespace Sample
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Schreiben eines Windows PowerShell-Cmdlets](./writing-a-windows-powershell-cmdlet.md)
+[Schreiben eines Windows PowerShell-Cmdlets](writing-a-windows-powershell-cmdlet.md)
