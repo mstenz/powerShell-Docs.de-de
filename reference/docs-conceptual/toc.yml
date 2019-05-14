@@ -68,7 +68,7 @@
   items:
     - name: Konsole
       items:
-        - name: Befehlszeilenhilfe für „PowerShell.exe“
+        - name: PowerShell-Befehlszeilenoptionen
           href: components/console/powershell.exe-command-line-help.md
         - name: Verwenden von Erweiterung mit der TAB-TASTE
           href: components/console/using-tab-expansion.md
