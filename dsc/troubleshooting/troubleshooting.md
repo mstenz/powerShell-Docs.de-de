@@ -2,12 +2,12 @@
 ms.date: 10/30/2018
 keywords: dsc,powershell,configuration,setup
 title: Problembehandlung bei DSC
-ms.openlocfilehash: 5ee1b68f4f769426fea3c8e10738c3bb6ef94480
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2a0d2138f30573b9ae6cf52d8b106a05f1193407
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076547"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229538"
 ---
 # <a name="troubleshooting-dsc"></a>Problembehandlung bei DSC
 
@@ -627,6 +627,21 @@ onlyProperty                            PSComputerName
 ------------                            --------------
 14                                      localhost
 ```
+
+## <a name="dsc-returns-unexpected-response-code-internalservererror-when-registering-with-windows-pull-server"></a>DSC gibt bei der Registrierung bei Windows-Pullserver „Unerwarteter Antwortcode – InternalServerError“ zurück.
+
+Wenn eine Metakonfiguration auf einen Server angewendet wird, um ihn bei einer Instanz von Windows-Pullserver zu registrieren, wird möglicherweise der folgende Fehler angezeigt.
+
+```PowerShell
+Registration of the Dsc Agent with the server https://<serverfqdn>:8080/PSDSCPullServer.svc failed. The underlying error is: The attempt to register Dsc Agent with AgentId <ID> with the server 
+https://<serverfqdn>:8080/PSDSCPullServer.svc/Nodes(AgentId='<ID>') returned unexpected response code InternalServerError. .
+    + CategoryInfo          : InvalidResult: (root/Microsoft/...gurationManager:String) [], CimException
+    + FullyQualifiedErrorId : RegisterDscAgentUnsuccessful,Microsoft.PowerShell.DesiredStateConfiguration.Commands.RegisterDscAgentCommand
+    + PSComputerName        : <computername>
+```
+
+Er kann auftreten, wenn das Zertifikat, das auf dem Server zum Verschlüsseln von Datenverkehr verwendet wird, einen allgemeinen Namen (Common Name, CN) hat, der anders als der DNS-Name ist, der vom Knoten zum Auflösen der URL verwendet wird.
+Aktualisieren Sie die Windows-Pullserver-Instanz, sodass ein Zertifikat mit einem korrigierten Namen verwendet wird.
 
 ## <a name="see-also"></a>Weitere Informationen
 

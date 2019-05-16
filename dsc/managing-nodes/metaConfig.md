@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,setup
 title: Konfigurieren des lokalen Konfigurations-Managers
-ms.openlocfilehash: 86d2cc17872692a738e9c68121b8931833d2a251
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 15d696587d54d4a6464096cfb78757c41e9185c6
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079675"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229500"
 ---
 # <a name="configuring-the-local-configuration-manager"></a>Konfigurieren des lokalen Konfigurations-Managers
 
@@ -121,6 +121,10 @@ Ein **ConfigurationRepositoryWeb**-Block definiert die folgenden Eigenschaften.
 |ConfigurationNames|String[]|Array der Namen von Konfigurationen, die per Pull vom Zielknoten abgerufen werden. Diese werden nur verwendet, wenn der Knoten über einen **RegistrationKey** beim Pulldienst registriert ist. Weitere Informationen finden Sie unter [Einrichten eines Pullclients mit Konfigurationsnamen](../pull-server/pullClientConfigNames.md).|
 |RegistrationKey|string|GUID, die den Knoten beim Pulldienst registriert. Weitere Informationen finden Sie unter [Einrichten eines Pullclients mit Konfigurationsnamen](../pull-server/pullClientConfigNames.md).|
 |ServerURL|string|URL des Konfigurationsdiensts.|
+|ProxyURL*|string|Die URL des HTTP-Proxys, der bei der Kommunikation mit dem Konfigurationsdienst verwendet werden soll.|
+|ProxyCredential*|pscredential|Anmeldeinformation, die für den HTTP-Proxy verwendet werden soll.|
+
+>!HINWEIS \* Wird in den Windows-Versionen 1809 und höher unterstützt.
 
 Ein Beispielskript, das die Konfiguration des Werts „ConfigurationRepositoryWeb“ für lokale Knoten vereinfacht, steht unter [Generieren von DSC-Metakonfigurationen](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations) zur Verfügung.
 
@@ -143,6 +147,10 @@ Ein **ResourceRepositoryWeb**-Block definiert die folgenden Eigenschaften.
 |CertificateId|string|Der Fingerabdruck eines Zertifikats zur Authentifizierung beim Server.|
 |RegistrationKey|string|GUID, die den Knoten beim Pulldienst identifiziert.|
 |ServerURL|string|URL des Konfigurationsservers.|
+|ProxyURL*|string|Die URL des HTTP-Proxys, der bei der Kommunikation mit dem Konfigurationsdienst verwendet werden soll.|
+|ProxyCredential*|pscredential|Anmeldeinformation, die für den HTTP-Proxy verwendet werden soll.|
+
+>!HINWEIS \* Wird in den Windows-Versionen 1809 und höher unterstützt.
 
 Ein Beispielskript, das die Konfiguration des Werts „ResourceRepositoryWeb“ für lokale Knoten vereinfacht, steht unter [Generieren von DSC-Metakonfigurationen](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations) zur Verfügung.
 
@@ -166,6 +174,10 @@ Ein **ReportServerWeb**-Block definiert die folgenden Eigenschaften.
 |CertificateId|string|Der Fingerabdruck eines Zertifikats zur Authentifizierung beim Server.|
 |RegistrationKey|string|GUID, die den Knoten beim Pulldienst identifiziert.|
 |ServerURL|string|URL des Konfigurationsservers.|
+|ProxyURL*|string|Die URL des HTTP-Proxys, der bei der Kommunikation mit dem Konfigurationsdienst verwendet werden soll.|
+|ProxyCredential*|pscredential|Anmeldeinformation, die für den HTTP-Proxy verwendet werden soll.|
+
+>!HINWEIS \* Wird in den Windows-Versionen 1809 und höher unterstützt.
 
 Ein Beispielskript, das die Konfiguration des Werts „ReportServerWeb“ für lokale Knoten vereinfacht, steht unter [Generieren von DSC-Metakonfigurationen](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations) zur Verfügung.
 

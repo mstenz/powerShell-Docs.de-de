@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,setup
 title: Get-Test-Set
-ms.openlocfilehash: 6d059518a49926bc5fb56e37e7d3d4d2c66bddec
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: e4aa7770bb5fc8b916b0c0a6488b1ccc0ef0ade9
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076598"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229517"
 ---
 # <a name="get-test-set"></a>Get-Test-Set
 
@@ -121,7 +121,7 @@ ModuleVersion = "1.0";
 };
 ```
 
-Bei Anwendung liest der [lokale Konfigurations-Manager](../managing-nodes/metaConfig.md) den Wert „Spooler“ aus der MOF-Datei und übergibt ihn dem `-Name`-Parameter der **Get**-, **Test**- und **Set**-Methode für die Instanz „MyService“ der **Service**-Ressource.
+Bei Anwendung liest der [lokale Konfigurations-Manager](../managing-nodes/metaConfig.md) (Local Configuration Manager, LCM) den Wert „Spooler“ aus der MOF-Datei und übergibt ihn dem `-Name`-Parameter der **Get**-, **Test**- und **Set**-Methode für die Instanz „MyService“ der **Service**-Ressource.
 
 ## <a name="get"></a>Abrufen
 
