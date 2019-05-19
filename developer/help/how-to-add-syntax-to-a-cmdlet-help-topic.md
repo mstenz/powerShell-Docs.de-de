@@ -8,24 +8,14 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d0c6d03f-1c1a-43d8-928e-e3290e90e0bc
 caps.latest.revision: 5
-ms.openlocfilehash: 2e9dbc9ff8f9507f2008cd6e114ba6fec36b10bf
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 0210b5ed3104777541692a0e78e7d3b16f9c8256
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62083381"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855133"
 ---
 # <a name="how-to-add-syntax-to-a-cmdlet-help-topic"></a>Hinzufügen einer Syntax zu einem Cmdlet-Hilfethema
-
-- [Parameterattribute](#Parameter-Attributes)
-
-- [Parameterattribute-Wert](#Parameter-Value-Attributes)
-
-- [Informationen über die Syntax werden ermittelt.](#Gathering-Syntax-Information)
-
-- [Das Syntaxdiagramm XML-Codierung](#Coding-the-Syntax-Diagram-XML)
-
-## <a name="things-to-know-about-the-syntax-diagram-in-cmdlet-help"></a>Wissenswerte Fakten über das Syntaxdiagramm in der Cmdlet-Hilfe
 
 Lesen Sie diesen Abschnitt rufen Sie ein klares Bild von der Art der Daten, die Sie bereitstellen müssen, z. B. die Parameterattribute und wie diese Daten in das Syntaxdiagramm angezeigt werden, bevor Sie beginnen, den XML-Code für das Syntaxdiagramm in der Cmdlet-Hilfedatei zu codieren...
 
@@ -166,7 +156,7 @@ Klicken Sie in der Regel Parameterwerte, die Platzhalter sind erforderlich, und 
 
 ## <a name="coding-the-syntax-diagram-xml"></a>Das Syntaxdiagramm XML-Codierung
 
-Der syntaxknoten des XML-beginnt sofort nach der Beschreibung-Knoten, die mit endet die \</maml:description > Tag. Informationen zum Erfassen der Daten, die im Syntax verwendet, finden Sie unter [Sammeln von Informationen über die Syntax](#Gathering-Syntax-Information).
+Der syntaxknoten des XML-beginnt sofort nach der Beschreibung-Knoten, die mit endet die \</maml:description > Tag. Informationen zum Erfassen der Daten, die im Syntax verwendet, finden Sie unter [Sammeln von Informationen über die Syntax](#gathering-syntax-information).
 
 ### <a name="adding-a-syntax-node"></a>Hinzufügen eines Syntaxknotens
 
@@ -210,7 +200,7 @@ Das folgende Beispiel enthält einen syntaxknoten, der Syntax-Element-Knoten fü
 
 Jeder Parameter der syntaxknoten für das Element hinzugefügt wird angegeben, in ein Paar \<Befehlsparameter: > Tags. Sie benötigen ein Paar von \<Befehlsparameter: >-Tags für jeden Parameter in den Parametersatz, mit Ausnahme von der allgemeinen Parameter, die von Windows PowerShell bereitgestellt werden.
 
-Die Attribute des das öffnendes \<Befehlsparameter: > Tag zu ermitteln, wie der Parameter in der Syntaxdiagramm wird angezeigt. Informationen zu Attributen der Parameter finden Sie unter [Parameterattribute](#Parameter-Attributes).
+Die Attribute des das öffnendes \<Befehlsparameter: > Tag zu ermitteln, wie der Parameter in der Syntaxdiagramm wird angezeigt. Informationen zu Attributen der Parameter finden Sie unter [Parameterattribute](#parameter-attributes).
 
 > [!NOTE]
 > Die \<Befehlsparameter: > Tag unterstützt ein untergeordnetes Element \<Maml:description >, dessen Inhalt wird nicht angezeigt. Die Beschreibung der Parameter werden im Knoten "Parameter" des XML-angegeben. Bodes, die Informationen in der Syntaxelement auf Inkonsistenzen zu vermeiden und die Parameterknoten, und lassen Sie die (\<Maml:description > oder leer bleiben.

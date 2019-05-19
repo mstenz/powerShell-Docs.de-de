@@ -12,12 +12,12 @@ helpviewer_keywords:
 - ValidateLength attribute
 ms.assetid: 82fe3a35-a94b-4bc1-ad9e-dfc5f1e788b3
 caps.latest.revision: 13
-ms.openlocfilehash: 3a4c5f279ce8587eeb5d583376ea3d2286210b83
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 4d3cdccc0fe3e24b1221e41beef4821b613aab93
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62067160"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855155"
 ---
 # <a name="validatelength-attribute-declaration"></a>Attributdeklaration: ValidateLength
 
@@ -37,7 +37,7 @@ Die validateLength auf-Attribut gibt an, die minimale und maximale Anzahl von Ze
 
 ## <a name="remarks"></a>Hinweise
 
-- Weitere Informationen dazu, wie Sie dieses Attribut zu deklarieren, finden Sie unter [wie Eingabe Validierungsregeln deklarieren](http://msdn.microsoft.com/en-us/544c2100-62ba-4be4-b2a2-cc0d4e4fc45b).
+- Weitere Informationen dazu, wie Sie dieses Attribut zu deklarieren, finden Sie unter [wie Eingabe Validierungsregeln deklarieren](./how-to-validate-parameter-input.md).
 
 - Wenn dieses Attribut nicht verwendet wird, kann das entsprechende Parameterargument mit beliebiger Länge sein.
 

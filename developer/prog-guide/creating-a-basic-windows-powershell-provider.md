@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], base provider
 ms.assetid: 11eeea41-15c8-47ad-9016-0f4b72573305
 caps.latest.revision: 7
-ms.openlocfilehash: 19cc3817016d96e1412a5f3506e9d694ba55b48d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5ebc22067b20f0e1d35d31d5f33e599f50cb7564
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082072"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855062"
 ---
 # <a name="creating-a-basic-windows-powershell-provider"></a>Erstellen eines Windows PowerShell-Standardanbieters
 
@@ -26,22 +26,6 @@ Wie bereits erwähnt, den grundlegenden Anbieter beschrieben hier die Methoden z
 
 > [!NOTE]
 > Ein Beispiel für diesen Anbieter finden Sie in der AccessDBSampleProvider01.cs-Datei, die von Windows PowerShell bereitgestellt.
-
-In den Abschnitten in diesem Thema umfassen Folgendes:
-
-- [Definieren der Windows PowerShell-Anbieter-Klasse](#Defining-the-Windows-PowerShell-Provider-Class)
-
-- [Definieren anbieterspezifische Informationen](#Defining-Provider-Specific-State-Information)
-
-- [Initialisieren des Anbieters](#Initializing-the-Provider)
-
-- [Starten von dynamischen Parametern](#Start-Dynamic-Parameters)
-
-- [Zum Aufheben der Initialisierung des Anbieters](#Uninitializing-the-Provider)
-
-- [Codebeispiel](#Code-Sample)
-
-- [Testen der Windows PowerShell-Anbieter](#Testing-the-Windows-PowerShell-Provider)
 
 ## <a name="defining-the-windows-powershell-provider-class"></a>Definieren der Windows PowerShell-Anbieter-Klasse
 
@@ -77,7 +61,7 @@ Dieser grundlegende Anbieter wird diese Methode nicht überschrieben werden. Der
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplesaccessdbprov01#accessdbprov01ProviderStart](Msh_samplesaccessdbprov01#accessdbprov01ProviderStart)]  -->
 
-Der Anbieter kann anbieterspezifische Informationen den Status verwalten, wie in beschrieben [definieren anbieterspezifische Datensynchronisierungsstatus](#Defining-Provider-Specific-State-Information). In diesem Fall muss die Implementierung überschreiben die [System.Management.Automation.Provider.Cmdletprovider.Start*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) Methode, um eine Instanz der abgeleiteten Klasse zurückzugeben.
+Der Anbieter kann anbieterspezifische Informationen den Status verwalten, wie in beschrieben [definieren anbieterspezifische Datensynchronisierungsstatus](#defining-provider-specific-state-information). In diesem Fall muss die Implementierung überschreiben die [System.Management.Automation.Provider.Cmdletprovider.Start*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) Methode, um eine Instanz der abgeleiteten Klasse zurückzugeben.
 
 ## <a name="start-dynamic-parameters"></a>Starten von dynamischen Parametern
 

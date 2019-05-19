@@ -8,42 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 79c9bcbc-a2eb-4253-a4b8-65ba54ce8d01
 caps.latest.revision: 9
-ms.openlocfilehash: 871a74a084da3c7ec36767b7195461e0e7290cb9
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 980b488800587e31286e2ca2ece924e07f8af3f3
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068792"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854861"
 ---
 # <a name="advisory-development-guidelines"></a>Empfohlene Entwicklungsrichtlinien
 
 Dieser Abschnitt beschreibt die Richtlinien, die Sie berücksichtigen sollten, um sicherzustellen, dass gute Erfahrungen für Entwicklung und Benutzer. Manchmal kann gelten, und sie möglicherweise manchmal nicht.
-
-## <a name="design-guidelines"></a>Richtlinien für den Entwurf
-
-- [Unterstützt eine InputObject-Parameter (AD01)](./advisory-development-guidelines.md#AD01)
-
-- [Unterstützung der Force-Parameter (AD02)](./advisory-development-guidelines.md#AD02)
-
-- [Verarbeiten von Anmeldeinformationen mithilfe von Windows PowerShell (AD03)](./advisory-development-guidelines.md#AD03)
-
-- [Encoding-Parameter (AD04) unterstützt](./advisory-development-guidelines.md#AD04)
-
-- [Test-Cmdlets muss einen boolescher Wert (AD05) zurückgeben.](./advisory-development-guidelines.md#AD05)
-
-## <a name="code-guidelines"></a>Coderichtlinien
-
-- [Führen Sie die Cmdlet-Klasse-Benennungskonventionen (AC01)](./advisory-development-guidelines.md#AC01)
-
-- [Wenn keine Pipelineeingabe der BeginProcessing-Methode (AC02) überschreiben](./advisory-development-guidelines.md#AC02)
-
-- [Stop-Anforderungen außer Kraft setzen die StopProcessing-Methode (AC03) behandelt.](./advisory-development-guidelines.md#AC03)
-
-- [Implementieren der IDisposable-Schnittstelle (AC04)](./advisory-development-guidelines.md#AC04)
-
-- [Verwenden Sie die Serialisierung geeignet Parametertypen (AC05)](./advisory-development-guidelines.md#AC05)
-
-- [Verwenden von SecureString für vertrauliche Daten (AC06)](./advisory-development-guidelines.md#AC06)
 
 ## <a name="design-guidelines"></a>Richtlinien für den Entwurf
 

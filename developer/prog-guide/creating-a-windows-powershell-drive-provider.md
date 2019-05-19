@@ -12,38 +12,18 @@ helpviewer_keywords:
 - drives [PowerShell Programmer's Guide]
 ms.assetid: 2b446841-6616-4720-9ff8-50801d7576ed
 caps.latest.revision: 6
-ms.openlocfilehash: 174d3a6860790295e1b73f32d9c1bad46b653917
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 2696d78cae7739310b7684161b597ce436dabe92
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58055648"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855207"
 ---
 # <a name="creating-a-windows-powershell-drive-provider"></a>Erstellen eines Windows PowerShell-Laufwerkanbieters
 
 Dieses Thema beschreibt, wie Sie einen Windows PowerShell-Laufwerk-Anbieter erstellen, der mit einen Datenspeicher über ein Windows PowerShell-Laufwerk zugreifen können. Dieser Typ des Anbieters ist auch als Windows PowerShell-Laufwerk-Anbieter bezeichnet. Die Windows PowerShell-Laufwerke, die vom Anbieter verwendeten bieten die Möglichkeit, eine Verbindung mit dem Datenspeicher herstellen.
 
 Die hier beschriebene Windows PowerShell-Laufwerk-Anbieter bietet Zugriff auf eine Microsoft Access-Datenbank. Für diesen Anbieter, stellt das Windows PowerShell-Laufwerk (es ist möglich, eine beliebige Anzahl von Laufwerken zu einem laufwerksanbieter hinzufügen) die Datenbank dar, mit der Container der obersten Ebene des Laufwerks darstellen, die Tabellen in der Datenbank und die Elemente der Container stehen für die Zeilen in die Tabellen.
-
-Hier ist eine Liste der Abschnitte in diesem Thema. Wenn Sie mit dem Schreiben von Windows PowerShell-Laufwerk-Anbieter nicht vertraut sind, lesen Sie diese Abschnitte in der angezeigten Reihenfolge. Aber wenn Sie mit dem Schreiben von einem laufwerksanbieter vertraut sind, wechseln Sie direkt auf die Informationen, die Sie benötigen.
-
-- [Definieren der Windows PowerShell-Anbieter-Klasse](#Defining-the-Windows-PowerShell-Provider-Class)
-
-- [Definiert die grundlegenden Funktionen](#Defining-Base-Functionality)
-
-- [Erstellen von Laufwerkstatus-Informationen](#Creating-Drive-State-Information)
-
-- [Erstellen ein Laufwerk](#Creating-a-Drive)
-
-- [Dynamische Parameter anfügen NewDrive](#Attaching-Dynamic-Parameters-to-NewDrive)
-
-- [Entfernen ein Laufwerk](#Removing-a-Drive)
-
-- [Initialisieren von Standard-Laufwerke](#Initializing-Default-Drives)
-
-- [Codebeispiel](#Code-Sample)
-
-- [Testen des Anbieters der Windows PowerShell-Laufwerk](#Testing-the-Windows-PowerShell-Drive-Provider)
 
 ## <a name="defining-the-windows-powershell-provider-class"></a>Definieren der Windows PowerShell-Anbieter-Klasse
 

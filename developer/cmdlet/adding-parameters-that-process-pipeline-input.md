@@ -11,34 +11,18 @@ helpviewer_keywords:
 - parameters [PowerShell Programmer's Guide], pipeline input
 ms.assetid: 09bf70a9-7c76-4ffe-b3f0-a1d5f10a0931
 caps.latest.revision: 8
-ms.openlocfilehash: bd52dc8aee7975d0899083a5c2f595b17690dc33
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: def0ac2ff98575beb29c3c2a7d91a5a5c53e648e
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068758"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854979"
 ---
 # <a name="adding-parameters-that-process-pipeline-input"></a>Hinzufügen von Parametern, die Pipelineeingaben verarbeiten
 
 Eine Ursache für die Eingabe für ein Cmdlet handelt es sich um ein Objekt für die Pipeline, die von einem upstream-Cmdlet stammt. In diesem Abschnitt wird beschrieben, wie zum Hinzufügen eines Parameters an das Get-Proc-Cmdlet (beschrieben [Erstellen Ihrer ersten Cmdlet](./creating-a-cmdlet-without-parameters.md)), damit das Cmdlet Pipelineobjekte verarbeitet werden kann.
 
 Das Get-Proc-Cmdlet verwendet einen `Name` Parameter, die Eingaben von einem Pipelineobjekt akzeptiert Prozess auf dem lokalen Computer, die basierend auf den angegebenen Namen abruft und anschließend Informationen über die Prozesse in der Befehlszeile angezeigt.
-
-Die folgenden: Themen in diesem Abschnitt
-
-- [Definieren die Cmdlet-Klasse](#Defining-the-Cmdlet-Class)
-
-- [Definieren von Eingaben aus der Pipeline](#Defining-Input-from-the-Pipeline)
-
-- [Überschreiben einer Eingabeverarbeitungsmethode](#Overriding-an-Input-Processing-Method)
-
-- [Codebeispiel](#Code-Sample)
-
-- [Definieren von Objekttypen und Formatierung](#Defining-Object-Types-and-Formatting)
-
-- [Erstellen das Cmdlet](#Building-the-Cmdlet)
-
-- [Testen das Cmdlet](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet-class"></a>Definieren die Cmdlet-Klasse
 

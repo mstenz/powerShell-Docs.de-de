@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], content provider
 ms.assetid: 3da88ff9-c4c7-4ace-aa24-0a29c8cfa060
 caps.latest.revision: 6
-ms.openlocfilehash: 35c68a2b0f8c9bd1ed4fc54c41aa427ddd75907c
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: d7e237514b4db4bce3366836d3b6e0cd340bf107
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081919"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855026"
 ---
 # <a name="creating-a-windows-powershell-content-provider"></a>Erstellen eines Windows PowerShell-Inhaltsanbieters
 
@@ -28,36 +28,6 @@ Dieses Thema beschreibt, wie Sie einen Windows PowerShell-Anbieter erstellen, de
 > Die heruntergeladene Quelldateien stehen in der  **\<PowerShell-Beispiele >** Verzeichnis.
 >
 > Weitere Informationen zu anderen Implementierungen der Windows PowerShell-Anbieter, finden Sie unter [Entwerfen Ihrer Windows PowerShell-Anbieter](./designing-your-windows-powershell-provider.md).
-
-Die folgende Liste enthält die Abschnitte in diesem Thema. Wenn Sie mit dem Schreiben von Windows PowerShell-Inhaltsanbieter nicht vertraut sind, lesen Sie diese Abschnitte in der angezeigten Reihenfolge. Allerdings Sie mit dem Schreiben von Windows PowerShell-Inhaltsanbieter vertraut sind, fahren Sie direkt auf die Informationen, die Sie benötigen.
-
-- [Definieren die Windows PowerShell-Inhalte Provider-Klasse](#Define-the-Windows-PowerShell-Content-Provider-Class)
-
-- [Definiert die grundlegenden Funktionen](#Define-Functionality-of-Base-Class)
-
-- [Implementieren einen Content-Reader](#Implementing-a-Content-Reader)
-
-- [Implementieren einen Content-Writer](#Implementing-a-Content-Writer)
-
-- [Abrufen des Inhalte Readers](#Retrieving-the-Content-Reader)
-
-- [Anfügen von dynamische Parametern zu der `Get-Content` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Get-Content-Cmdlet)
-
-- [Abrufen des Inhalte Writers](#Retrieving-the-Content-Writer)
-
-- [Anfügen von dynamischen Parametern an die Add_Content und `Set-Content` Cmdlets](#Attaching-Dynamic-Parameters-to-the-Add-Content-and-Set-Content-Cmdlets)
-
-- [Löschen von Inhalt](#Clearing-Content)
-
-- [Anfügen von dynamische Parametern zu der `Clear-Content` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Clear-Content-Cmdlet)
-
-- [Codebeispiel](#Code-Sample)
-
-- [Definieren von Objekttypen und Formatierung](#defining-object-types-and-formatting)
-
-- [Erstellen den Windows PowerShell-Anbieter](#Building-the-Windows-PowerShell-Provider)
-
-- [Testen des Windows PowerShell-Anbieters](#Testing-the-Windows-PowerShell-Provider)
 
 ## <a name="define-the-windows-powershell-content-provider-class"></a>Definieren Sie die Windows PowerShell-Inhalte Provider-Klasse
 

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], item provider
 ms.assetid: a5a304ce-fc99-4a5b-a779-de7d85e031fe
 caps.latest.revision: 6
-ms.openlocfilehash: f2c9e10f0dc392399cf062500b7f28b3d1c07f6e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 6f91fd53d41dd72c99f8fbc7bc7b863322d88787
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081868"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855049"
 ---
 # <a name="creating-a-windows-powershell-item-provider"></a>Erstellen eines Windows PowerShell-Elementanbieters
 
@@ -30,44 +30,6 @@ Dieses Thema beschreibt, wie Sie einen Windows PowerShell-Anbieter erstellen, de
 > Weitere Informationen zu anderen Implementierungen der Windows PowerShell-Anbieter, finden Sie unter [Entwerfen Ihrer Windows PowerShell-Anbieter](./designing-your-windows-powershell-provider.md).
 
 Die in diesem Thema beschriebenen Windows PowerShell-elementanbieter ruft Datenelemente aus einer Access-Datenbank ab. In diesem Fall wird eine "Item", entweder eine Tabelle in der Access-Datenbank oder eine Zeile in einer Tabelle.
-
-Die folgende Liste enthält die Abschnitte in diesem Thema. Wenn Sie mit dem Schreiben von einer Windows PowerShell-elementanbieter nicht vertraut sind, lesen Sie diese Abschnitte in der angezeigten Reihenfolge. Allerdings Sie mit dem Schreiben von einer Windows PowerShell-elementanbieter vertraut sind, fahren Sie direkt auf die Informationen, die Sie benötigen:
-
-- [Definieren die Windows PowerShell-Item-Provider-Klasse](#Defining-the-Windows-PowerShell-Item-Provider-Class)
-
-- [Definiert die grundlegenden Funktionen](#Defining-Base-Functionality)
-
-- [Für die Gültigkeit überprüfen](#Checking-for-Path-Validity)
-
-- [Bestimmen, ob ein Element vorhanden ist.](#Determining-if-an-Item-Exists)
-
-- [Anfügen von dynamische Parametern zu der `Test-Path` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Test-Path-Cmdlet)
-
-- [Abrufen eines Elements](#Retrieving-an-Item)
-
-- [Anfügen von dynamische Parametern zu der `Get-Item` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Get-Item-Cmdlet)
-
-- [Ein Element festlegen](#Setting-an-Item)
-
-- [Anfügen von dynamische Parametern zu der `Set-Item` Cmdlet](#Retrieving-Dynamic-Parameters-for-SetItem)
-
-- [Löschen eines Elements](#Clearing-an-Item)
-
-- [Anfügen von dynamischen Parametern an das Cmdlet Clear-Item](#Retrieve-Dynamic-Parameters-for-ClearItem)
-
-- [Eine Standardaktion ausführen für ein Element](#Performing-a-Default-Action-for-an-Item)
-
-- [Abrufen von dynamischen Parametern für InvokeDefaultAction](#Retrieve-Dynamic-Parameters-for-InvokeDefaultAction)
-
-- [Implementieren von Hilfsmethoden und-Klassen](#Implementing-Helper-Methods-and-Classes)
-
-- [Codebeispiel](#Code-Sample)
-
-- [Definieren von Objekttypen und Formatierung](#Defining-Object-Types-and-Formatting)
-
-- [Erstellen den Windows PowerShell-Anbieter](#Building-the-Windows-PowerShell-provider)
-
-- [Testen der Windows PowerShell-Anbieter](#Testing-the-Windows-PowerShell-provider)
 
 ## <a name="defining-the-windows-powershell-item-provider-class"></a>Definieren die Windows PowerShell-Item-Provider-Klasse
 
@@ -223,7 +185,7 @@ Dieses elementanbieter implementiert diese Methode nicht. Der folgende Code ist 
 
 ## <a name="implementing-helper-methods-and-classes"></a>Implementieren von Hilfsmethoden und-Klassen
 
-Dieses elementanbieter implementiert mehrere Hilfsmethoden und Klassen, die von der öffentlichen verwendet werden Überschreiben von Windows PowerShell definiert. Der Code für diese Hilfsmethoden und Klassen werden angezeigt, der [Codebeispiel](#Code-Sample) Abschnitt.
+Dieses elementanbieter implementiert mehrere Hilfsmethoden und Klassen, die von der öffentlichen verwendet werden Überschreiben von Windows PowerShell definiert. Der Code für diese Hilfsmethoden und Klassen werden angezeigt, der [Codebeispiel](#code-sample) Abschnitt.
 
 ### <a name="normalizepath-method"></a>NormalizePath-Methode
 

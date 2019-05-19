@@ -31,12 +31,12 @@ helpviewer_keywords:
 - user notifications
 ms.assetid: 14c13acb-f0b7-4613-bc7d-c361d14da1a2
 caps.latest.revision: 8
-ms.openlocfilehash: 5b3a5f5d5d02c7d5a3c1d622ec1a3740739c694f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 138c6a43937e72fffaa2a09243e500e9822e6111
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068775"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854936"
 ---
 # <a name="adding-user-messages-to-your-cmdlet"></a>Hinzufügen von Benutzermeldungen zum Cmdlet
 
@@ -51,32 +51,6 @@ Cmdlets können mehrere Arten von Meldungen zu schreiben, die von der Windows Po
 - Statusbericht, dass Nachrichten mit Informationen dazu, wie lange das-Cmdlet funktioniert wurde abgeschlossen, beim Durchführen eines Vorgangs, das sehr lange dauert.
 
 Es gibt keine Beschränkungen auf die Anzahl der Nachrichten, die Ihr Cmdlet schreiben kann, oder den Typ der Meldungen, die Ihr Cmdlet schreibt. Jede Nachricht wird von einem bestimmten Aufruf von innerhalb der Eingabe Verarbeitungsmethode Ihres Cmdlets geschrieben.
-
-## <a name="the-stopproc-cmdlet"></a>Das StopProc Cmdlet
-
-Die folgenden: Themen in diesem Abschnitt
-
-- [Definieren das Cmdlet](#Defining-the-Cmdlet)
-
-- [Definieren von Parametern für die System-Änderung](#Defining-Parameters-for-System-Modification)
-
-- [Überschreiben einer Eingabeverarbeitungsmethode](#Overriding-an-Input-Processing-Method)
-
-- [Eine ausführliche Meldung schreiben](#Writing-a-Verbose-Message)
-
-- [Schreiben Sie eine Debugmeldung](#Writing-a-Debug-Message)
-
-- [Schreiben Sie eine Warnung angezeigt](#Writing-a-Warning-Message)
-
-- [Schreiben Sie eine Statusmeldung](#Writing-a-Progress-Message)
-
-- [Codebeispiel](#Code-Sample)
-
-- [Definieren von Objekttypen und Formatierung](#Define-Object-Types-and-Formatting)
-
-- [Erstellen das Cmdlet](#Building-the-Cmdlet)
-
-- [Testen das Cmdlet](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet"></a>Definieren das Cmdlet
 

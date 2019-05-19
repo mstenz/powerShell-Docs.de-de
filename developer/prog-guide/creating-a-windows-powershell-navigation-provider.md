@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], navigation provider
 ms.assetid: 8bd3224d-ca6f-4640-9464-cb4d9f4e13b1
 caps.latest.revision: 5
-ms.openlocfilehash: 40454f880b57d5b3a8a8ded21c8c97aebba027fe
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5f7a61e261399d3d2abe62fe4523e8c9895d5ad4
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081851"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855171"
 ---
 # <a name="creating-a-windows-powershell-navigation-provider"></a>Erstellen eines Windows PowerShell-Navigationsanbieters
 
@@ -33,34 +33,6 @@ Der Anbieter, die hier beschriebenen ermöglicht der Benutzerhandle einer Access
 
 > [!CAUTION]
 > Denken Sie daran, dass dieser Entwurf einer Datenbank geht davon aus, die ein Feld mit der namens-ID und der Typ des Felds LongInteger ist.
-
-Die folgende Liste enthält die Abschnitte in diesem Thema. Wenn Sie mit dem Schreiben von einer Windows PowerShell-Navigationsanbieter nicht vertraut sind, lesen Sie diese Informationen in der Reihenfolge, die er angezeigt wird. Aber wenn Sie mit dem Schreiben von einer Windows PowerShell-Navigationsanbieter vertraut sind, wechseln Sie direkt auf die Informationen, die Sie benötigen.
-
-- [Definieren einer Navigation PS-Klasse](#Define-the-Windows-PowerShell-provider)
-
-- [Definiert die grundlegenden Funktionen](#Defining-Base-Functionality)
-
-- [Beim Erstellen eines Pfads für PS](#Creating-a-Windows-PowerShell-Path)
-
-- [Den übergeordnete Pfad abrufen](#Retrieving-the-Parent-Path)
-
-- [Der Name der untergeordneten Pfad abrufen](#Retrieve-the-Child-Path-Name)
-
-- [Bestimmen, ob ein Element ein Container ist.](#Determining-if-an-Item-is-a-Container)
-
-- [Verschieben eines Elements](#Moving-an-Item)
-
-- [Anfügen von dynamische Parametern zu der `Move-Item` Cmdlet](#Attaching-Dynamic-Parameters-to-the-Move-Item-Cmdlet)
-
-- [Das Normalisieren eines relativen Pfads](#Normalizing-a-Relative-Path)
-
-- [Codebeispiel](#Code-Sample)
-
-- [Definieren von Objekttypen und Formatierung](#Defining-Object-Types-and-Formatting)
-
-- [Erstellen den Windows PowerShell-Anbieter](#Building-the-Windows-PowerShell-provider)
-
-- [Testen der Windows PowerShell-Anbieter](#Testing-the-Windows-PowerShell-provider)
 
 ## <a name="define-the-windows-powershell-provider"></a>Definieren Sie den Windows PowerShell-Anbieter
 

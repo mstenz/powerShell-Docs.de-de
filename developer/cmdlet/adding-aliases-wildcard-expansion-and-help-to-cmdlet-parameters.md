@@ -8,40 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 931ccace-c565-4a98-8dcc-df00f86394b1
 caps.latest.revision: 8
-ms.openlocfilehash: db664e589f625855b5a33a02c522d6b238ad2810
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 946b71e4480a47ac6ccd6930be445d7efb4fb62d
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62075255"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854892"
 ---
 # <a name="adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters"></a>Hinzufügen von Aliasen, Platzhaltererweiterung und Hilfe zu Cmdlet-Parametern
 
 In diesem Abschnitt wird beschrieben, wie Aliase, platzhaltererweiterung, hinzufügen und Hilfe von Nachrichten an die Parameter des Cmdlets Stop-Prozessor (beschrieben [ein Cmdlets zu erstellen, ändert das System](./creating-a-cmdlet-that-modifies-the-system.md)).
 
 Dieses Cmdlet Stop-Prozessor versucht, Sie Prozesse beenden, die mit dem Get-Proc-Cmdlet abgerufen werden (beschrieben [Erstellen Ihrer ersten Cmdlet](./creating-a-cmdlet-without-parameters.md)).
-
-Die folgenden: Themen in diesem Abschnitt
-
-- [Definieren das Cmdlet](#Defining-the-Cmdlet)
-
-- [Definieren von Parametern für die System-Änderung](#Defining-Parameters-for-System-Modification)
-
-- [Definieren einen Parameteralias](#Defining-a-Parameter-Alias)
-
-- [Hilfe für Parameter erstellen](#Creating-Help-for-Parameters)
-
-- [Überschreiben einer Eingabeverarbeitungsmethode](#Overriding-an-Input-Processing-Method)
-
-- [Unterstützung von Platzhaltererweiterung](#Supporting-Wildcard-Expansion)
-
-- [Codebeispiel](#Defining-a-Parameter-Alias)
-
-- [Definieren von Objekttypen und Formatierung](#Define-Object-Types-and-Formatting)
-
-- [Erstellen das Cmdlet](#Building-the-Cmdlet)
-
-- [Testen das Cmdlet](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet"></a>Definieren das Cmdlet
 

@@ -13,12 +13,12 @@ helpviewer_keywords:
 - confirm impact [PowerShell Programmer's Guide]
 ms.assetid: 59be4120-1700-4d92-a308-ef4a32ccf11a
 caps.latest.revision: 8
-ms.openlocfilehash: bbe9f0213754d1cc47e0fd9a7a898bde916c0636
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: a4fa9ce52855928679a2425f24f2e49a68030c63
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068438"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854916"
 ---
 # <a name="creating-a-cmdlet-that-modifies-the-system"></a>Erstellen eines Cmdlet, das das System ändert
 
@@ -42,28 +42,6 @@ Der Vorgang "das System ändern" bezieht sich auf alle Cmdlets, die den Zustand 
 ## <a name="the-stopproc-cmdlet"></a>Das StopProc Cmdlet
 
 In diesem Thema wird beschrieben, einem Stop-Proc-Cmdlet, das versucht, Prozesse zu beenden, die mit dem Get-Proc-Cmdlet abgerufen werden (beschrieben [Erstellen Ihrer ersten Cmdlet](./creating-a-cmdlet-without-parameters.md)).
-
-Die folgenden: Themen in diesem Abschnitt
-
-- [Definieren das Cmdlet](#Defining-the-Cmdlet)
-
-- [Definieren von Parametern für die System-Änderung](#Defining-Parameters-for-System-Modification)
-
-- [Überschreiben einer Eingabeverarbeitungsmethode](#Overriding-an-Input-Processing-Method)
-
-- [Aufrufen der ShouldProcess-Methode](#Calling-the-ShouldProcess-Method)
-
-- [Aufrufen der Methode "shouldcontinue"](#Calling-the-ShouldContinue-Method)
-
-- [Beenden des Eingabeverarbeitung](#Stopping-Input-Processing)
-
-- [Codebeispiel](#Code-Sample)
-
-- [Definieren von Objekttypen und Formatierung](#Defining-Object-Types-and-Formatting)
-
-- [Erstellen das Cmdlet](#Building-the-Cmdlet)
-
-- [Testen das Cmdlet](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet"></a>Definieren das Cmdlet
 
