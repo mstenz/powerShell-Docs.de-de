@@ -2,12 +2,12 @@
 title: Installieren von PowerShell Core unter Windows
 description: Informationen zur Installation von PowerShell Core unter Windows
 ms.date: 08/06/2018
-ms.openlocfilehash: 910ee5a653fc1703bfddaf6367225f3b654d600f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5a3c43e27f0027cfbeeefab33b045e618e0ff045
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058028"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854360"
 ---
 # <a name="installing-powershell-core-on-windows"></a>Installieren von PowerShell Core unter Windows
 
@@ -18,7 +18,7 @@ Es gibt mehrere Möglichkeiten zum Installieren von PowerShell Core unter Window
 Zum Aktivieren des PowerShell-Remoting über WSMan müssen die folgenden Voraussetzungen erfüllt sein:
 
 - [Universal C-Runtime](https://www.microsoft.com/download/details.aspx?id=50410) muss auf Windows-Versionen vor Windows 10 installiert werden. Sie ist über einen direkten Download oder durch ein Windows-Update verfügbar. Auf vollständig gepatchten (inklusive optionaler Pakete), unterstützten Systeme ist sie bereits installiert.
-- Installieren Sie Windows Management Framework (WMF) 4.0 oder höher auf Windows 7 und Windows Server 2008 R2.
+- Installieren Sie Windows Management Framework (WMF) 4.0 oder höher auf Windows 7 und Windows Server 2008 R2. Weitere Informationen zu WMF erhalten Sie in der [WMF-Übersicht](/powershell/wmf/overview).
 
 ## <a name="a-idmsi-installing-the-msi-package"></a><a id="msi" />Installieren des MSI-Pakets
 

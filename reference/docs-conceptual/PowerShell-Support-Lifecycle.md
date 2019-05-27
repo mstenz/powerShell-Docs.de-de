@@ -2,12 +2,12 @@
 title: Supportlebenszyklus von PowerShell Core
 description: Richtlinien für die Unterstützung von PowerShell Core
 ms.date: 08/06/2018
-ms.openlocfilehash: 178e5c43520f9a392ca219b9f785eb18b1ec5436
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: b8dd4891ecf245b87c3fe2fa61cd241a12209b57
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086955"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854377"
 ---
 # <a name="powershell-core-support-lifecycle"></a>Supportlebenszyklus von PowerShell Core
 
@@ -41,8 +41,6 @@ Beispiel: Wenn PowerShell Core 6.1 am 1. Juli 2018 freigegeben wird, würde von 
 
 Wenn Sie beispielsweise PowerShell Core 6.1 ausführen, und 6.1.3 wird am 19. Februar 2019 veröffentlicht, würde von Ihnen erwartet, PowerShell Core 6.1.3 bis zum 21. März 2019 zu aktualisieren – also 30 Tage nach der Veröffentlichung – um Support zu erhalten.
 Als erforderlich eingestufte Fixes werden in unserem nächsten kumulativen Update veröffentlicht.
-
-![Lebenszyklus des PowerShell Core-Branchs][lifecycle-chart]
 
 Die Modern Lifecycle-Richtlinie gibt auch vor, dass Microsoft 12 Monate im Voraus bekannt geben muss, wenn die Unterstützung eines Produkts (d.h. PowerShell Core) beendet wird.
 
@@ -88,7 +86,7 @@ Basierend auf [Lebenszyklus von PowerShell Core](#lifecycle-of-powershell-core) 
 |---------|-------------------------------|
 | 6.0     | 13. Februar 2019             |
 | 6.1     | 28. September 2019            |
-| 6.2     | 6 Monate nach der Veröffentlichung von 6.3   |
+| 6.2     | 6 Monate nach der Veröffentlichung von 7     |
 
 ## <a name="platforms-which-are-out-of-support"></a>Plattformen, die nicht mehr unterstützt werden
 

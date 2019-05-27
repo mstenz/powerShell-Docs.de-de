@@ -2,12 +2,12 @@
 title: Verwenden von Visual Studio Code für die Entwicklung mit PowerShell
 description: Verwenden von Visual Studio Code für die Entwicklung mit PowerShell
 ms.date: 08/06/2018
-ms.openlocfilehash: 1e9b9d811a39656327af2810bd6dc8aaf3fde3a4
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5badffd49252e0d72ae2c20d3147ad4b1e92d5ed
+ms.sourcegitcommit: cf1a281cce9f7239c440c90f8b2798d32a13778d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086717"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65882573"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>Verwenden von Visual Studio Code für die Entwicklung mit PowerShell
 
@@ -82,27 +82,72 @@ Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellE
 Sie werden gefragt: „Do you want to run software from this untrusted publisher?“ (Möchten Sie Software von diesem nicht vertrauenswürdigen Herausgeber ausführen?).
 Geben Sie `R` ein, um die Datei auszuführen. Öffnen Sie dann Visual Studio Code, und überprüfen Sie, ob die PowerShell-Erweiterung ordnungsgemäß funktioniert. Wenn Sie noch immer Probleme haben, lassen Sie uns dies auf [GitHub](https://github.com/PowerShell/vscode-powershell/issues) wissen.
 
-#### <a name="using-a-specific-installed-version-of-powershell"></a>Verwenden einer bestimmten installierten PowerShell-Version
+#### <a name="choosing-a-version-of-powershell-to-use-with-the-extension"></a>Auswählen einer Version von PowerShell für die Verwendung mit der Erweiterung
 
-Wenn Sie eine bestimmte PowerShell-Installation mit Visual Studio Code verwenden möchten, müssen Sie der Datei mit den Benutzereinstellungen eine neue Variable hinzufügen.
+Mit einer parallelen Installation von PowerShell Core und Windows PowerShell ist es jetzt möglich, eine bestimmte Version von PowerShell mit der PowerShell-Erweiterung zu verwenden. Verwenden Sie die folgenden Schritte, um die Version auszuwählen:
 
-1. Klicken Sie auf **Datei > Voreinstellungen > Einstellungen**.
-1. Anschließend werden zwei Editorbereiche angezeigt.
-   Fügen Sie die nachfolgende Einstellung im Bereich rechts (`settings.json`) abhängig von Ihrem Betriebssystem zwischen den geschweiften Klammern (`{` und `}`) ein, und ersetzen Sie **\<version\>** durch die installierte PowerShell-Version:
+1. Öffnen Sie die Befehlspalette (<kbd>STRG</kbd>+<kbd>UMSCHALT</kbd>+<kbd>P</kbd> auf Windows und Linux, <kbd>BEFEHL</kbd>+<kbd>UMSCHALT</kbd>+<kbd>P</kbd> unter MacOS).
+1. Suchen Sie nach „Sitzung“.
+1. Klicken Sie auf „PowerShell“: Zeigen Sie das Menü „Sitzung“ an.
+1. Wählen Sie die Version von PowerShell aus der Liste aus, die Sie verwenden möchten, z. B. „PowerShell Core“.
 
-   ```json
-    // On Windows:
-    "powershell.powerShellExePath": "c:/Program Files/PowerShell/<version>/pwsh.exe"
+>[!IMPORTANT]
+> Dieses Feature sucht in ein paar bekannten Pfaden unter verschiedenen Betriebssystemen, um die Installationsspeicherorte von PowerShell zu ermitteln. Wenn Sie PowerShell an einem untypischen Speicherort installiert haben, wird es möglicherweise anfangs nicht im Menü „Sitzung“ angezeigt. Sie können das Menü „Sitzung“ erweitern, indem Sie [Ihre eigenen benutzerdefinierten Pfade hinzufügen](#adding-your-own-powershell-paths-to-the-session-menu), wie unten beschrieben.
 
-    // On Linux:
-    "powershell.powerShellExePath": "/opt/microsoft/powershell/<version>/pwsh"
+>[!NOTE]
+> Es gibt eine weitere Möglichkeit, um zum Menü „Sitzung“ zu gelangen. Wenn Sie eine PowerShell-Datei im Editor geöffnet haben, wird unten rechts eine grüne Versionsnummer angezeigt. Wenn Sie auf diese Versionsnummer klicken, gelangen Sie zum Menü „Sitzung“.
 
-    // On macOS:
-    "powershell.powerShellExePath": "/usr/local/microsoft/powershell/<version>/pwsh"
-   ```
+##### <a name="adding-your-own-powershell-paths-to-the-session-menu"></a>Hinzufügen Ihres eigenen PowerShell-Pfads zum Menü „Sitzung“
 
-1. Ersetzen Sie die Einstellung durch den Pfad zu der gewünschten ausführbaren PowerShell-Datei.
-1. Speichern Sie die Datei mit den Einstellungen, und starten Sie Visual Studio Code neu.
+Sie können dem Menü „Sitzung“ mithilfe einer VS Code-Einstellung andere PowerShell-Pfade für ausführbare Dateien hinzufügen.
+
+Fügen Sie der Liste `powershell.powerShellAdditionalExePaths` eine Element hinzu, oder erstellen Sie die Liste, wenn sie in Ihrer `settings.json` nicht vorhanden ist:
+
+```json
+{
+    // other settings...
+
+    "powershell.powerShellAdditionalExePaths": [
+        {
+            "exePath": "C:\\Users\\tyler\\Downloads\\PowerShell\\pwsh.exe",
+            "versionName": "Downloaded PowerShell"
+        }
+    ],
+    
+    // other settings...
+}
+```
+
+Jedes Element benötigt:
+
+* `exePath`: Der Pfad zu `pwsh` oder zur ausführbaren `powershell`-Datei.
+* `versionName`: Der Text, der im Menü „Sitzung“ angezeigt wird.
+
+Sie können die PowerShell-Standardversion so festlegen, dass die Einstellung `powershell.powerShellDefaultVersion` verwendet wird, indem Sie diese auf den Text festlegen, der im Menü „Sitzung“ angezeigt wird (auch bekannt als `versionName` in der letzten Einstellung):
+
+```json
+{
+    // other settings...
+
+    "powershell.powerShellAdditionalExePaths": [
+        {
+            "exePath": "C:\\Users\\tyler\\Downloads\\PowerShell\\pwsh.exe",
+            "versionName": "Downloaded PowerShell"
+        }
+    ],
+    
+    "powershell.powerShellDefaultVersion": "Downloaded PowerShell",
+    
+    // other settings...
+}
+```
+
+Nachdem Sie diese Einstellung festgelegt haben, starten Sie Visual Studio Code neu, oder verwenden Sie die Befehlspalettenaktion „Developer: Fenster erneut laden“, um das aktuelle vscode-Fenster neu zu laden.
+
+Wenn Sie das Menü „Sitzung“ öffnen, werden jetzt Ihre zusätzlichen PowerShell-Versionen angezeigt.
+
+> [!NOTE]
+> Wenn Sie PowerShell aus der Quelle erstellen, ist dies eine hervorragende Möglichkeit zum Testen Ihres lokalen Builds von PowerShell.
 
 #### <a name="configuration-settings-for-visual-studio-code"></a>Konfigurationseinstellungen für Visual Studio Code
 
