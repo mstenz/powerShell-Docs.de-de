@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d4e38235-9987-4347-afd2-0f7d1dc8f64a
 caps.latest.revision: 19
-ms.openlocfilehash: 77d328bc1cb8cb42d5a10f107a149c05ab270ce3
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: cff50d415c4c90182fa1cf015a5a5ba84d4d613a
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082106"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470786"
 ---
 # <a name="understanding-a-windows-powershell-module"></a>Grundlegendes zum Windows PowerShell-Modul
 
@@ -55,7 +55,7 @@ Ein *Manifestmodul* ist ein Modul, das eine Manifestdatei verwendet, um alle zug
 
 ### <a name="dynamic-modules"></a>Dynamische Module
 
-Ein *dynamisches Modul* ist ein Modul nicht geladen oder in einer Datei gespeichert. Stattdessen werden dynamisch erstellt, durch ein Skript, mit der [New-Module](/powershell/module/Microsoft.PowerShell.Core/New-Module) Cmdlet. Diese Art des Moduls ermöglicht es sich um ein Skript zum Erstellen eines Moduls nach Bedarf, die nicht geladen oder in den permanenten Speicher gespeichert werden muss. Naturgemäß ein dynamisches Modul dient zum kurzlebig sein und aus diesem Grund kann nicht zugegriffen werden, indem die `Get-Module` Cmdlet. Auf ähnliche Weise, in der Regel benötigen keinen modulmanifeste, auch permanente Ordner zum Speichern von ihren zugehörigen Assemblys nicht wahrscheinlich erforderlich.
+Ein *dynamisches Modul* ist ein Modul, die nicht aus geladen wird, oder in einer Datei gespeichert. Stattdessen werden dynamisch erstellt, durch ein Skript, mit der [New-Module](/powershell/module/Microsoft.PowerShell.Core/New-Module) Cmdlet. Diese Art des Moduls ermöglicht es sich um ein Skript zum Erstellen eines Moduls nach Bedarf, die nicht geladen oder in den permanenten Speicher gespeichert werden muss. Naturgemäß ein dynamisches Modul dient zum kurzlebig sein und aus diesem Grund kann nicht zugegriffen werden, indem die `Get-Module` Cmdlet. Auf ähnliche Weise, in der Regel benötigen keinen modulmanifeste, auch permanente Ordner zum Speichern von ihren zugehörigen Assemblys nicht wahrscheinlich erforderlich.
 
 ## <a name="module-manifests"></a>Modulmanifesten
 
