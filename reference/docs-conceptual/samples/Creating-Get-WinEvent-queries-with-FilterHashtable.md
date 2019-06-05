@@ -1,12 +1,12 @@
 ---
-ms.date: 3/18/2019
+ms.date: 03/18/2019
 title: Erstellen von Get-WinEvent-Abfragen mit FilterHashtable
-ms.openlocfilehash: 28ba3c99a297944003a28eaba7de34b77d9df536
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2f598fceb570f189bee776b6ed572b11a6938f64
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058812"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66471019"
 ---
 # <a name="creating-get-winevent-queries-with-filterhashtable"></a>Erstellen von Get-WinEvent-Abfragen mit FilterHashtable
 
@@ -161,7 +161,7 @@ Get-WinEvent -FilterHashtable @{
 Der Schlüssel **Keywords** ist aufgezählt, Sie können in der Hashtabellenabfrage aber einen statischen Eigenschaftsnamen verwenden.
 Anstatt die zurückgegebene Zeichenfolge zu verwenden, muss der Eigenschaftsname mit der Eigenschaft **Value__** in einen Wert konvertiert werden.
 
-Beispielsweise verwendet das folgende Skript die Eigenschaft **Value__**.
+Beispielsweise verwendet das folgende Skript die Eigenschaft **Value__** .
 
 ```powershell
 $C = [System.Diagnostics.Eventing.Reader.StandardEventKeywords]::EventLogClassic
@@ -241,7 +241,7 @@ Get-WinEvent -FilterHashtable @{
 Der Schlüssel **Level** ist aufgezählt, Sie können in der Hashtabellenabfrage aber einen statischen Eigenschaftsnamen verwenden.
 Anstatt die zurückgegebene Zeichenfolge zu verwenden, muss der Eigenschaftsname mit der Eigenschaft **Value__** in einen Wert konvertiert werden.
 
-Beispielsweise verwendet das folgende Skript die Eigenschaft **Value__**.
+Beispielsweise verwendet das folgende Skript die Eigenschaft **Value__** .
 
 ```powershell
 $C = [System.Diagnostics.Eventing.Reader.StandardEventLevel]::Informational
