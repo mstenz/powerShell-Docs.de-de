@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
 title: Erstellen benutzerdefinierter Typen mithilfe von PowerShell-Klassen
-ms.openlocfilehash: 0dd5bbaca50abb746e15a7bb64a706c7eceee905
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: c2c50fb65ce4931fcf6ae529b4146df391c831c4
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65855535"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470938"
 ---
 # <a name="creating-custom-types-using-powershell-classes"></a>Erstellen benutzerdefinierter Typen mithilfe von PowerShell-Klassen
 
@@ -21,7 +21,7 @@ PowerShell 5.0 hat die Möglichkeit zum Definieren von Klassen und anderen benut
 - Debuggen von Typen mithilfe der PowerShell-Sprache
 - Generieren und Behandeln von Ausnahmen mithilfe formaler Mechanismen auf der richtigen Ebene
 
-# <a name="declare-base-class"></a>Deklarieren der Basisklasse
+## <a name="declare-base-class"></a>Deklarieren der Basisklasse
 
 Sie können eine PowerShell-Klasse als Basistyp für eine andere PowerShell-Klasse deklarieren.
 
@@ -54,7 +54,7 @@ $list.Add(100)
 $list[0] # return 100
 ```
 
-# <a name="call-base-class-constructor"></a>Aufrufen des Basisklassenkonstruktors
+### <a name="call-base-class-constructor"></a>Aufrufen des Basisklassenkonstruktors
 
 Um einen Basisklassenkonstruktor aus einer Unterklasse aufzurufen, verwenden Sie das Schlüsselwort **base**:
 
@@ -86,7 +86,7 @@ class C : B
 }
 ```
 
-# <a name="call-base-class-method"></a>Aufrufen der Basisklassenmethode
+### <a name="call-base-class-method"></a>Aufrufen der Basisklassenmethode
 
 Sie können vorhandene Methoden in Unterklassen überschreiben. Deklarieren Sie dazu Methoden mit demselben Namen und derselben Signatur:
 
@@ -135,7 +135,7 @@ $list.Add(100)
 $list[0] # return 200
 ```
 
-# <a name="declare-implemented-interface"></a>Deklarieren der implementierten Schnittstelle
+### <a name="declare-implemented-interface"></a>Deklarieren der implementierten Schnittstelle
 
 Sie können implementierte Schnittstellen nach Basistypen oder unmittelbar nach einem Doppelpunkt (:) deklarieren, wenn kein Basistyp angegeben ist. Trennen Sie alle Typnamen durch Kommas. Dies entspricht der C#-Syntax.
 
@@ -157,11 +157,11 @@ class MyComparableBar : bar, system.IComparable
 }
 ```
 
-# <a name="new-language-features-in-powershell-50"></a>Neue Sprachfeatures in PowerShell 5.0
+## <a name="new-language-features-in-powershell-50"></a>Neue Sprachfeatures in PowerShell 5.0
 
 PowerShell 5.0 führt die folgenden neuen Sprachelemente in PowerShell ein:
 
-## <a name="class-keyword"></a>Schlüsselwort „Class“
+### <a name="class-keyword"></a>Schlüsselwort „Class“
 
 Das Schlüsselwort `class` definiert eine neue Klasse. Es handelt sich um einen echten .NET Framework-Typ. Klassenmember sind öffentlich, jedoch nur innerhalb des Geltungsbereichs des Moduls. Sie können auf den Typnamen nicht mittels einer Zeichenfolge verweisen (`New-Object` funktioniert z. B. nicht). In dieser Version können Sie zudem keinen Literaltyp (z. B. `[MyClass]`) außerhalb der Skript- oder Moduldatei verwenden, in der die Klasse definiert ist.
 
@@ -172,7 +172,7 @@ class MyClass
 }
 ```
 
-## <a name="enum-keyword-and-enumerations"></a>Schlüsselwort „enum“ und Enumerationen
+### <a name="enum-keyword-and-enumerations"></a>Schlüsselwort „enum“ und Enumerationen
 
 Das Schlüsselwort `enum` wurde hinzugefügt, welches das Zeilenumbruchzeichen als Trennzeichen verwendet. Zurzeit können Sie einen Enumerator nicht hinsichtlich sich selbst definieren. Sie können aber, wie im folgenden Beispiel gezeigt, eine Enumeration hinsichtlich einer anderen Enumeration initialisieren. Darüber hinaus kann der Basistyp nicht angegeben werden. Er ist stets `[int]`.
 
@@ -202,11 +202,11 @@ enum SomeEnum { Max = 42 }
 enum OtherEnum { Max = [SomeEnum]::Max + 1 }
 ```
 
-## <a name="import-dscresource"></a>Import-DscResource
+### <a name="import-dscresource"></a>Import-DscResource
 
 `Import-DscResource` ist jetzt ein tatsächlich dynamisches Schlüsselwort. PowerShell analysiert das Stammmodul des angegebenen Moduls und sucht Klassen, die das **DscResource**-Attribut enthalten.
 
-## <a name="implementingassembly"></a>ImplementingAssembly
+### <a name="implementingassembly"></a>ImplementingAssembly
 
 Eine neue Feld **ImplementingAssembly** wurde zu **ModuleInfo** hinzugefügt. Es ist auf die dynamische Assembly, die für ein Skriptmodul erstellt wird, wenn das Skript Klassen definiert, oder die geladene Assembly für binäre Module festgelegt. Falls **ModuleType** = **Manifest**, wird es nicht festgelegt.
 
@@ -232,11 +232,11 @@ $s = "hello"
 
 Alle Member sind öffentlich.
 
-## <a name="constructors-and-instantiation"></a>Konstruktoren und Instanziierung
+### <a name="constructors-and-instantiation"></a>Konstruktoren und Instanziierung
 
 PowerShell-Klassen können Konstruktoren besitzen. Sie haben denselben Namen wie ihre Klasse. Konstruktoren können überladen werden. Statische Konstruktoren werden unterstützt. Eigenschaften mit Initialisierungsausdrücken werden vor dem Ausführen von Code in einem Konstruktor initialisiert. Statische Eigenschaften werden vor dem Hauptteil eines statischen Konstruktors initialisiert. Instanzeigenschaften werden vor dem Hauptteil des nicht statischen Konstruktors initialisiert. Derzeit gibt es keine Syntax zum Aufrufen eines Konstruktors aus einem anderen Konstruktor (wie die C\#-Syntax „: this()“). Die Problemumgehung besteht darin, eine allgemeine `Init()`-Methode zu definieren.
 
-### <a name="creating-instances"></a>Erstellen von Instanzen
+#### <a name="creating-instances"></a>Erstellen von Instanzen
 
 > [!NOTE]
 > In PowerShell 5.0 funktioniert `New-Object` nicht mit Klassen, die in PowerShell definiert werden. Außerdem ist der Typname nur lexikalisch sichtbar, was bedeutet, dass er außerhalb des Moduls oder Skripts, das die Klasse definiert, nicht sichtbar ist. Funktionen können Instanzen einer in PowerShell definierten Klasse zurückgeben. Diese Instanzen funktionieren außerhalb des Moduls oder Skripts.
@@ -265,7 +265,7 @@ Die pseudostatische Methode `new()` funktioniert mit .NET-Typen, wie im folgende
 [hashtable]::new()
 ```
 
-### <a name="discovering-constructors"></a>Ermitteln von Konstruktoren
+#### <a name="discovering-constructors"></a>Ermitteln von Konstruktoren
 
 Sie können jetzt Konstruktorüberladungen mit `Get-Member` oder wie in diesem Beispiel anzeigen:
 
@@ -280,7 +280,7 @@ hashtable new(int capacity, float loadFactor)
 
 `Get-Member -Static` listet Konstruktoren auf, sodass Sie Überladungen wie andere Methoden anzeigen können. Die Leistung dieser Syntax ist auch erheblich schneller als `New-Object`.
 
-## <a name="methods"></a>Methoden
+### <a name="methods"></a>Methoden
 
 Eine PowerShell-Klassenmethode wird als **Skriptblock** mit nur einem „end“-Block implementiert. Alle Methoden sind öffentlich. Nachstehend sehen Sie ein Beispiel der Definition einer Methode namens **DoSomething**.
 
@@ -304,29 +304,29 @@ $b.DoSomething(42)
 
 Überladene Methoden werden ebenfalls unterstützt.
 
-## <a name="properties"></a>Eigenschaften
+### <a name="properties"></a>Eigenschaften
 
 Alle Eigenschaften sind öffentlich. Eigenschaften erfordern ein Zeilenumbruchzeichen oder Semikolon. Wenn kein Objekttyp angegeben ist, ist der Eigenschaftentyp „object“.
 
 Eigenschaften, die Validierungs- oder Argumenttransformationsattribute verwenden (z. B. `[ValidateSet("aaa")]`), funktionieren wie erwartet.
 
-## <a name="hidden"></a>Hidden
+### <a name="hidden"></a>Hidden
 
 Mit `Hidden` wurde ein neues Schlüsselwort hinzugefügt. `Hidden` kann auf Eigenschaften und Methoden (einschließlich Konstruktoren) angewendet werden.
 
-Ausgeblendete Member sind öffentlich, werden aber in der Ausgabe von `Get-Member` nicht angezeigt, es sei denn, der „-Force“-Parameter wird hinzugefügt. Ausgeblendete Member sind bei Verwenden der Befehlszeilenergänzung oder von IntelliSense nicht enthalten, es sei denn, die Ergänzung erfolgt in der Klasse, die das ausgeblendete Member definiert.
+Ausgeblendete Member sind öffentlich, werden aber in der Ausgabe von `Get-Member` nicht angezeigt, es sei denn, der `-Force`-Parameter wird hinzugefügt. Ausgeblendete Member sind bei Verwenden der Befehlszeilenergänzung oder von IntelliSense nicht enthalten, es sei denn, die Ergänzung erfolgt in der Klasse, die das ausgeblendete Member definiert.
 
 Das neue Attribut **System.Management.Automation.HiddenAttribute** wurde hinzugefügt, damit C\#-Code in PowerShell die gleiche Semantik haben kann.
 
-## <a name="return-types"></a>Rückgabetypen
+### <a name="return-types"></a>Rückgabetypen
 
 Der Rückgabetyp ist ein Vertrag. Der Rückgabewert wird in den erwarteten Typ konvertiert. Falls kein Rückgabetyp angegeben wird, ist der Rückgabetyp **void**. Es gibt kein Streaming von Objekten. Objekte können nicht absichtlich oder versehentlich in die Pipeline geschrieben werden.
 
-## <a name="attributes"></a>Attributes
+### <a name="attributes"></a>Attributes
 
 Die beiden neuen Attribute **DscResource** und **DscProperty** wurden hinzugefügt.
 
-## <a name="lexical-scoping-of-variables"></a>Lexikalische Eingrenzung von Variablen
+### <a name="lexical-scoping-of-variables"></a>Lexikalische Eingrenzung von Variablen
 
 Das folgende Beispiel zeigt, wie die lexikalische Eingrenzung in dieser Version funktioniert.
 

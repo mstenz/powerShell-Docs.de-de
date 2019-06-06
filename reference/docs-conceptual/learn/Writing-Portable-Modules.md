@@ -2,12 +2,12 @@
 ms.date: 12/14/2018
 keywords: powershell,cmdlet
 title: Schreiben von portablen Modulen
-ms.openlocfilehash: 38a93b5b030d58784b91292e2cd060b3a2c19a00
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 237f6aaea0ed019c54d04a8477d7a456edf00910
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086407"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470977"
 ---
 # <a name="portable-modules"></a>Portable Module
 
@@ -17,11 +17,12 @@ Windows PowerShell ist für [.NET Framework][] geschrieben, PowerShell Core hing
 
 ### <a name="porting-a-pssnapin"></a>Portieren eines PSSnapIn
 
-PowerShell SnapIns (PSSnapIn) werden in PowerShell Core nicht unterstützt. Es ist jedoch einfach, ein PSSnapIn in ein PowerShell-Modul zu konvertieren. In der Regel befindet sich der PSSnapIn-Registrierungscode in einer einzelnen Quelldatei einer Klasse, die von [PSSnapIn][] abgeleitet ist. Entfernen Sie diese Quelldatei aus dem Build, denn sie ist nicht mehr erforderlich.
+PowerShell [SnapIns](/powershell/developer/cmdlet/modules-and-snap-ins) werden in PowerShell Core nicht unterstützt. Es ist jedoch einfach, ein PSSnapIn in ein PowerShell-Modul zu konvertieren. In der Regel befindet sich der PSSnapIn-Registrierungscode in einer einzelnen Quelldatei einer Klasse, die von [PSSnapIn][] abgeleitet ist.
+Entfernen Sie diese Quelldatei aus dem Build, denn sie ist nicht mehr erforderlich.
 
-Erstellen Sie mit [New-ModuleManifest][] ein neues Modulmanifest, das den PSSnapIn-Registrierungscode überflüssig macht. Einige der Werte aus dem PSSnapIn (z.B. „Description“) können innerhalb des Modulmanifests wiederverwendet werden.
+Erstellen Sie mit [New-ModuleManifest][] ein neues Modulmanifest, das den PSSnapIn-Registrierungscode überflüssig macht. Einige der Werte aus dem **PSSnapIn** (z.B. **Description**) können innerhalb des Modulmanifests wiederverwendet werden.
 
-Die `RootModule`-Eigenschaft im Modulmanifest sollte auf den Namen der Assembly (DLL) festgelegt werden, die die Cmdlets implementiert.
+Die **RootModule**-Eigenschaft im Modulmanifest sollte auf den Namen der Assembly (DLL) festgelegt werden, die die Cmdlets implementiert.
 
 ### <a name="the-net-portability-analyzer-aka-apiport"></a>Der .NET Portability Analyzer (auch bekannt als APIPort)
 

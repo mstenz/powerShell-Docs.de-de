@@ -3,12 +3,12 @@ ms.date: 11/13/2018
 keywords: powershell,cmdlet
 title: Decodieren eines PowerShell-Befehls in einem laufenden Prozess
 author: randomnote1
-ms.openlocfilehash: a0602070a8c5b60ce0bb09e227690f48d970a868
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: a6c01d8edf67aba6c47350a97cc0ceec4801ad29
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086237"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470969"
 ---
 # <a name="decode-a-powershell-command-from-a-running-process"></a>Decodieren eines PowerShell-Befehls in einem laufenden Prozess
 
@@ -33,7 +33,7 @@ powershell.exe -Command {
 
 ## <a name="view-the-process"></a>Anzeigen des Prozesses
 
-Der Textkörper des Befehls, den PowerShell ausführt, wird in der Eigenschaft **CommandLine** der Klasse [Win32_Process][] gespeichert. Wenn der Befehl ein [codierter Befehl][] ist, enthält die **CommandLine**-Eigenschaft die Zeichenfolge „EncodedCommand“. Mithilfe dieser Informationen kann der codierte Befehl über den folgenden Prozess entschleiert werden.
+Der Textkörper des Befehls, den PowerShell ausführt, wird in der Eigenschaft **CommandLine** der Klasse [Win32_Process][] gespeichert. Wenn der Befehl ein codierter Befehl ist, enthält die **CommandLine**-Eigenschaft die Zeichenfolge „EncodedCommand“. Mithilfe dieser Informationen kann der codierte Befehl über den folgenden Prozess entschleiert werden.
 
 Starten Sie PowerShell als Administrator. Es ist unerlässlich, dass PowerShell als Administrator ausgeführt wird, da andernfalls bei der Abfrage der ausgeführten Prozesse keine Ergebnisse zurückgegeben werden.
 
@@ -107,4 +107,3 @@ DecodedCommand :
 [Aufgabenplanung]: /windows/desktop/TaskSchd/task-scheduler-start-page
 [SQL Server-Agent]: /sql/ssms/agent/sql-server-agent
 [Win32_Process]: /windows/desktop/CIMWin32Prov/win32-process
-[Codierter Befehl]: /powershell/scripting/core-powershell/console/powershell.exe-command-line-help#-encodedcommand-
