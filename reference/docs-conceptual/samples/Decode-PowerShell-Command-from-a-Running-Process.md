@@ -3,21 +3,21 @@ ms.date: 11/13/2018
 keywords: powershell,cmdlet
 title: Decodieren eines PowerShell-Befehls in einem laufenden Prozess
 author: randomnote1
-ms.openlocfilehash: a0602070a8c5b60ce0bb09e227690f48d970a868
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: a6c01d8edf67aba6c47350a97cc0ceec4801ad29
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086237"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470969"
 ---
-# <a name="decode-a-powershell-command-from-a-running-process"></a><span data-ttu-id="8b959-103">Decodieren eines PowerShell-Befehls in einem laufenden Prozess</span><span class="sxs-lookup"><span data-stu-id="8b959-103">Decode a PowerShell command from a running process</span></span>
+# <a name="decode-a-powershell-command-from-a-running-process"></a><span data-ttu-id="1ecce-103">Decodieren eines PowerShell-Befehls in einem laufenden Prozess</span><span class="sxs-lookup"><span data-stu-id="1ecce-103">Decode a PowerShell command from a running process</span></span>
 
-<span data-ttu-id="8b959-104">Gelegentlich wird möglicherweise ein PowerShell-Prozess ausgeführt, der eine große Menge an Ressourcen beansprucht.</span><span class="sxs-lookup"><span data-stu-id="8b959-104">At times, you may have a PowerShell process running that is taking up a large amount of resources.</span></span>
-<span data-ttu-id="8b959-105">Dieser Prozess kann im Rahmen eines [Aufgabenplanung][]-Auftrags oder eines [SQL Server-Agent][]-Auftrags ausgeführt werden.</span><span class="sxs-lookup"><span data-stu-id="8b959-105">This process could be running in the context of a [Task Scheduler][] job or a [SQL Server Agent][] job.</span></span> <span data-ttu-id="8b959-106">Wenn mehrere PowerShell-Prozesse ausgeführt werden, kann eine Identifizierung schwierig sein, welcher Prozess das Problem darstellt.</span><span class="sxs-lookup"><span data-stu-id="8b959-106">Where there are multiple PowerShell processes running, it can be difficult to know which process represents the problem.</span></span> <span data-ttu-id="8b959-107">Dieser Artikel zeigt, wie Sie einen Skriptblock decodieren, der aktuell von einem PowerShell-Prozess ausgeführt wird.</span><span class="sxs-lookup"><span data-stu-id="8b959-107">This article shows how to decode a script block that a PowerShell process is currently running.</span></span>
+<span data-ttu-id="1ecce-104">Gelegentlich wird möglicherweise ein PowerShell-Prozess ausgeführt, der eine große Menge an Ressourcen beansprucht.</span><span class="sxs-lookup"><span data-stu-id="1ecce-104">At times, you may have a PowerShell process running that is taking up a large amount of resources.</span></span>
+<span data-ttu-id="1ecce-105">Dieser Prozess kann im Rahmen eines [Aufgabenplanung][]-Auftrags oder eines [SQL Server-Agent][]-Auftrags ausgeführt werden.</span><span class="sxs-lookup"><span data-stu-id="1ecce-105">This process could be running in the context of a [Task Scheduler][] job or a [SQL Server Agent][] job.</span></span> <span data-ttu-id="1ecce-106">Wenn mehrere PowerShell-Prozesse ausgeführt werden, kann eine Identifizierung schwierig sein, welcher Prozess das Problem darstellt.</span><span class="sxs-lookup"><span data-stu-id="1ecce-106">Where there are multiple PowerShell processes running, it can be difficult to know which process represents the problem.</span></span> <span data-ttu-id="1ecce-107">Dieser Artikel zeigt, wie Sie einen Skriptblock decodieren, der aktuell von einem PowerShell-Prozess ausgeführt wird.</span><span class="sxs-lookup"><span data-stu-id="1ecce-107">This article shows how to decode a script block that a PowerShell process is currently running.</span></span>
 
-## <a name="create-a-long-running-process"></a><span data-ttu-id="8b959-108">Erstellen eines zeitintensiven Prozesses</span><span class="sxs-lookup"><span data-stu-id="8b959-108">Create a long running process</span></span>
+## <a name="create-a-long-running-process"></a><span data-ttu-id="1ecce-108">Erstellen eines zeitintensiven Prozesses</span><span class="sxs-lookup"><span data-stu-id="1ecce-108">Create a long running process</span></span>
 
-<span data-ttu-id="8b959-109">Um dieses Szenario zu veranschaulichen, öffnen Sie ein neues PowerShell-Fenster und führen den folgenden Code aus.</span><span class="sxs-lookup"><span data-stu-id="8b959-109">To demonstrate this scenario, open a new PowerShell window and run the following code.</span></span> <span data-ttu-id="8b959-110">Es führt einen PowerShell-Befehl aus, der 10 Minuten lang jede Minute eine Zahl ausgibt.</span><span class="sxs-lookup"><span data-stu-id="8b959-110">It executes a PowerShell command that outputs a number every minute for 10 minutes.</span></span>
+<span data-ttu-id="1ecce-109">Um dieses Szenario zu veranschaulichen, öffnen Sie ein neues PowerShell-Fenster und führen den folgenden Code aus.</span><span class="sxs-lookup"><span data-stu-id="1ecce-109">To demonstrate this scenario, open a new PowerShell window and run the following code.</span></span> <span data-ttu-id="1ecce-110">Es führt einen PowerShell-Befehl aus, der 10 Minuten lang jede Minute eine Zahl ausgibt.</span><span class="sxs-lookup"><span data-stu-id="1ecce-110">It executes a PowerShell command that outputs a number every minute for 10 minutes.</span></span>
 
 ```powershell
 powershell.exe -Command {
@@ -31,19 +31,19 @@ powershell.exe -Command {
 }
 ```
 
-## <a name="view-the-process"></a><span data-ttu-id="8b959-111">Anzeigen des Prozesses</span><span class="sxs-lookup"><span data-stu-id="8b959-111">View the process</span></span>
+## <a name="view-the-process"></a><span data-ttu-id="1ecce-111">Anzeigen des Prozesses</span><span class="sxs-lookup"><span data-stu-id="1ecce-111">View the process</span></span>
 
-<span data-ttu-id="8b959-112">Der Textkörper des Befehls, den PowerShell ausführt, wird in der Eigenschaft **CommandLine** der Klasse [Win32_Process][] gespeichert.</span><span class="sxs-lookup"><span data-stu-id="8b959-112">The body of the command which PowerShell is executing is stored in the **CommandLine** property of the [Win32_Process][] class.</span></span> <span data-ttu-id="8b959-113">Wenn der Befehl ein [codierter Befehl][] ist, enthält die **CommandLine**-Eigenschaft die Zeichenfolge „EncodedCommand“.</span><span class="sxs-lookup"><span data-stu-id="8b959-113">If the command is an [encoded command][], the **CommandLine** property contains the string "EncodedCommand".</span></span> <span data-ttu-id="8b959-114">Mithilfe dieser Informationen kann der codierte Befehl über den folgenden Prozess entschleiert werden.</span><span class="sxs-lookup"><span data-stu-id="8b959-114">Using this information, the encoded command can be de-obfuscated via the following process.</span></span>
+<span data-ttu-id="1ecce-112">Der Textkörper des Befehls, den PowerShell ausführt, wird in der Eigenschaft **CommandLine** der Klasse [Win32_Process][] gespeichert.</span><span class="sxs-lookup"><span data-stu-id="1ecce-112">The body of the command which PowerShell is executing is stored in the **CommandLine** property of the [Win32_Process][] class.</span></span> <span data-ttu-id="1ecce-113">Wenn der Befehl ein codierter Befehl ist, enthält die **CommandLine**-Eigenschaft die Zeichenfolge „EncodedCommand“.</span><span class="sxs-lookup"><span data-stu-id="1ecce-113">If the command is an encoded command, the **CommandLine** property contains the string "EncodedCommand".</span></span> <span data-ttu-id="1ecce-114">Mithilfe dieser Informationen kann der codierte Befehl über den folgenden Prozess entschleiert werden.</span><span class="sxs-lookup"><span data-stu-id="1ecce-114">Using this information, the encoded command can be de-obfuscated via the following process.</span></span>
 
-<span data-ttu-id="8b959-115">Starten Sie PowerShell als Administrator.</span><span class="sxs-lookup"><span data-stu-id="8b959-115">Start PowerShell as Administrator.</span></span> <span data-ttu-id="8b959-116">Es ist unerlässlich, dass PowerShell als Administrator ausgeführt wird, da andernfalls bei der Abfrage der ausgeführten Prozesse keine Ergebnisse zurückgegeben werden.</span><span class="sxs-lookup"><span data-stu-id="8b959-116">It is vital that PowerShell is running as administrator, otherwise no results are returned when querying the running processes.</span></span>
+<span data-ttu-id="1ecce-115">Starten Sie PowerShell als Administrator.</span><span class="sxs-lookup"><span data-stu-id="1ecce-115">Start PowerShell as Administrator.</span></span> <span data-ttu-id="1ecce-116">Es ist unerlässlich, dass PowerShell als Administrator ausgeführt wird, da andernfalls bei der Abfrage der ausgeführten Prozesse keine Ergebnisse zurückgegeben werden.</span><span class="sxs-lookup"><span data-stu-id="1ecce-116">It is vital that PowerShell is running as administrator, otherwise no results are returned when querying the running processes.</span></span>
 
-<span data-ttu-id="8b959-117">Führen Sie den folgenden Befehl aus, um alle PowerShell-Prozesse abzurufen, die über einen codierten Befehl verfügen:</span><span class="sxs-lookup"><span data-stu-id="8b959-117">Execute the following command to get all of the PowerShell processes that have an encoded command:</span></span>
+<span data-ttu-id="1ecce-117">Führen Sie den folgenden Befehl aus, um alle PowerShell-Prozesse abzurufen, die über einen codierten Befehl verfügen:</span><span class="sxs-lookup"><span data-stu-id="1ecce-117">Execute the following command to get all of the PowerShell processes that have an encoded command:</span></span>
 
 ```powershell
 $powerShellProcesses = Get-CimInstance -ClassName Win32_Process -Filter 'CommandLine LIKE "%EncodedCommand%"'
 ```
 
-<span data-ttu-id="8b959-118">Der folgende Befehl erstellt ein benutzerdefiniertes PowerShell-Objekt, das die Prozess-ID und den codierten Befehl enthält.</span><span class="sxs-lookup"><span data-stu-id="8b959-118">The following command creates a custom PowerShell object that contains the process ID and the encoded command.</span></span>
+<span data-ttu-id="1ecce-118">Der folgende Befehl erstellt ein benutzerdefiniertes PowerShell-Objekt, das die Prozess-ID und den codierten Befehl enthält.</span><span class="sxs-lookup"><span data-stu-id="1ecce-118">The following command creates a custom PowerShell object that contains the process ID and the encoded command.</span></span>
 
 ```powershell
 $commandDetails = $powerShellProcesses | Select-Object -Property ProcessId,
@@ -58,7 +58,7 @@ $commandDetails = $powerShellProcesses | Select-Object -Property ProcessId,
 }
 ```
 
-<span data-ttu-id="8b959-119">Jetzt kann der codierte Befehl decodiert werden.</span><span class="sxs-lookup"><span data-stu-id="8b959-119">Now the encoded command can be decoded.</span></span> <span data-ttu-id="8b959-120">Der folgende Codeausschnitt iteriert durch das Befehlsdetailobjekt, decodiert den codierten Befehl und fügt den decodierten Befehl zur weiteren Untersuchung dem Objekt erneut hinzu.</span><span class="sxs-lookup"><span data-stu-id="8b959-120">The following snippet iterates over the command details object, decodes the encoded command, and adds the decoded command back to the object for further investigation.</span></span>
+<span data-ttu-id="1ecce-119">Jetzt kann der codierte Befehl decodiert werden.</span><span class="sxs-lookup"><span data-stu-id="1ecce-119">Now the encoded command can be decoded.</span></span> <span data-ttu-id="1ecce-120">Der folgende Codeausschnitt iteriert durch das Befehlsdetailobjekt, decodiert den codierten Befehl und fügt den decodierten Befehl zur weiteren Untersuchung dem Objekt erneut hinzu.</span><span class="sxs-lookup"><span data-stu-id="1ecce-120">The following snippet iterates over the command details object, decodes the encoded command, and adds the decoded command back to the object for further investigation.</span></span>
 
 ```powershell
 $commandDetails | ForEach-Object -Process {
@@ -79,7 +79,7 @@ $commandDetails | ForEach-Object -Process {
 $commandDetails[0]
 ```
 
-<span data-ttu-id="8b959-121">Der decodierte Befehl kann jetzt durch Auswählen der decodierten Befehlseigenschaft überprüft werden.</span><span class="sxs-lookup"><span data-stu-id="8b959-121">The decoded command can now be reviewed by selecting the decoded command property.</span></span>
+<span data-ttu-id="1ecce-121">Der decodierte Befehl kann jetzt durch Auswählen der decodierten Befehlseigenschaft überprüft werden.</span><span class="sxs-lookup"><span data-stu-id="1ecce-121">The decoded command can now be reviewed by selecting the decoded command property.</span></span>
 
 ```output
 ProcessId      : 8752
@@ -109,5 +109,3 @@ DecodedCommand :
 [SQL Server-Agent]: /sql/ssms/agent/sql-server-agent
 [SQL Server Agent]: /sql/ssms/agent/sql-server-agent
 [Win32_Process]: /windows/desktop/CIMWin32Prov/win32-process
-[Codierter Befehl]: /powershell/scripting/core-powershell/console/powershell.exe-command-line-help#-encodedcommand-
-[encoded command]: /powershell/scripting/core-powershell/console/powershell.exe-command-line-help#-encodedcommand-
