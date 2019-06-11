@@ -154,4 +154,7 @@ PowerShell Core unterstützt das PowerShell-Remotingprotokoll (PSRP) über WSMan
 - [WSMan-Remoting in PowerShell Core][wsman-remoting]
 
 <!-- [download-center]: TODO -->
-[Releases]: https://github.com/PowerShell/PowerShell/releases [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md [wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
+[Releases]: https://github.com/PowerShell/PowerShell/releases
+[ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
+[wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md
+[AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
