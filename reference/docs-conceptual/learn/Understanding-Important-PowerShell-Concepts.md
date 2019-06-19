@@ -2,13 +2,12 @@
 ms.date: 08/23/2018
 keywords: powershell,cmdlet
 title: Grundlegendes zu wichtigen PowerShell-Konzepten
-ms.assetid: 3e601e38-4520-4578-a48d-b6779f1d35ee
-ms.openlocfilehash: fad64563d1a7a6abd4f0e430331f81f91f43d312
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 8f9af370db46ea47dbccbabb7cc90fc27b8f2765
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058589"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030983"
 ---
 # <a name="understanding-important-powershell-concepts"></a>Grundlegendes zu wichtigen PowerShell-Konzepten
 
@@ -31,7 +30,7 @@ Die nativen Befehle in PowerShell werden als *Cmdlets* bezeichnet (ausgesprochen
 
 Wenn Sie einen Befehl eingeben, verarbeitet PowerShell die Befehlszeileneingabe immer sofort. PowerShell formatiert darüber hinaus die Ausgabe, die auf dem Bildschirm angezeigt wird. Dieser Unterschied ist wesentlich, weil dadurch die Arbeit für jedes Cmdlet verringert wird. Es wird sichergestellt, dass Sie Aufgaben mit beliebigen Cmdlets immer gleich ausführen können. Cmdlet-Entwickler müssen keinen Code schreiben, mit dem die Befehlszeilenargumente analysiert oder die Ausgabe formatiert wird.
 
-Herkömmliche Befehlszeilentools haben eigene Schemas zum Anfordern und Anzeigen von Hilfe. Bei einigen Befehlszeilentools muss **/?** eingegeben werden, um die Anzeige von Hilfe auszulösen. Bei anderen muss **-?**, **/H** oder gar **//** eingegeben werden. Bei einigen wird Hilfe in einem Fenster auf der grafischen Benutzeroberfläche und nicht in der Konsole angezeigt. Wenn Sie den falschen Parameter verwenden, ignoriert das Tool möglicherweise Ihre Eingabe und beginnt damit, automatisch einen Task auszuführen.
+Herkömmliche Befehlszeilentools haben eigene Schemas zum Anfordern und Anzeigen von Hilfe. Bei einigen Befehlszeilentools muss **/?** eingegeben werden, um die Anzeige von Hilfe auszulösen. Bei anderen muss **-?** , **/H** oder gar **//** eingegeben werden. Bei einigen wird Hilfe in einem Fenster auf der grafischen Benutzeroberfläche und nicht in der Konsole angezeigt. Wenn Sie den falschen Parameter verwenden, ignoriert das Tool möglicherweise Ihre Eingabe und beginnt damit, automatisch einen Task auszuführen.
 Da PowerShell die Befehlszeile automatisch analysiert und verarbeitet, wird der Parameter **-?** immer als „Hilfe für diesen Befehl anzeigen“ interpretiert.
 
 > [!NOTE]

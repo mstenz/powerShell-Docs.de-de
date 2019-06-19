@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Starten von Windows PowerShell
-ms.assetid: 59b649a2-c90c-4cf4-bf95-a740c59148e7
-ms.openlocfilehash: 9184e8b0e508610e7f4775f1032f3a69c93bb8c1
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: d2cb77027f404c5b008a902c5147d018dd741a67
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058351"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030456"
 ---
 # <a name="starting-windows-powershell"></a>Starten von Windows PowerShell
 PowerShell ist eine Skript-Engine im DLL-Format, die in mehreren Hosts eingebettet ist.  Als Host werden am häufigsten die interaktive Befehlszeile „PowerShell.exe“ und die integrierte Skriptumgebung „PowerShell_ISE.exe“ verwendet.
