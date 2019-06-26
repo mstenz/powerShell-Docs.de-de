@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC,Powershell,Resource,Katalog,Setup
 title: Hinzufügen von Parametern zu einer Konfiguration
-ms.openlocfilehash: 15213404f0cdd6416baf1f83af91b8f5279cc97f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 514bb4cf82b7adbe4cd3d3e34d5464f574cb2206
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080255"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67301509"
 ---
 # <a name="add-parameters-to-a-configuration"></a>Hinzufügen von Parametern zu einer Konfiguration
 
@@ -187,7 +187,7 @@ $State="Running"
 > [!NOTE]
 > Sie müssen kein `parameter`-Attribut angeben, wenn Sie ein `validation`-Attribut verwenden.
 
-Weitere Informationen über `parameter` und Validierungsattribute finden Sie unter [Informationen zu Parametern erweiterter Funktionen](/powershell/module/microsoft.powershell.core/about/about_Functions_Advanced_Parameters.md).
+Weitere Informationen über `parameter` und Validierungsattribute finden Sie unter [Informationen zu Parametern erweiterter Funktionen](/powershell/module/microsoft.powershell.core/about/about_Functions_Advanced_Parameters).
 
 ## <a name="fully-parameterized-configuration"></a>Vollständig parametrisierte Konfiguration
 

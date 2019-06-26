@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Erstellen einer Pipeline für Continuous Integration und Continuous Deplyoment mit DSC
-ms.openlocfilehash: 012057a32ccf85b0d15e76a332cadda4b226180a
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2d049cd640f0df9b018a88ad106e59dbeed7bcee
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076472"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67301494"
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>Erstellen einer Pipeline für Continuous Integration und Continuous Deplyoment mit DSC
 
@@ -22,10 +22,10 @@ Eine automatisierte CI/CD-Pipeline unterstützt Sie bei einer schnelleren und zu
 
 Um dieses Beispiel zu verwenden, sollten Sie mit folgenden Konzepten und Modellen vertraut sein:
 
-- CI-CD-Konzepte, eine gute Referenz bietet [The Release Pipeline Model](http://aka.ms/thereleasepipelinemodelpdf) (Das Releasepipeline-Modell)
+- CI-CD-Konzepte, eine gute Referenz bietet [The Release Pipeline Model](https://aka.ms/thereleasepipelinemodelpdf) (Das Releasepipeline-Modell)
 - [Git](https://git-scm.com/)-Quellcodeverwaltung
 - Das [Pester](https://github.com/pester/Pester)-Testframework
-- [Team Foundation Server](https://www.visualstudio.com/tfs/)
+- [Team Foundation Server](https://visualstudio.microsoft.com/tfs/)
 
 ## <a name="what-you-will-need"></a>Benötigte Komponenten
 
@@ -44,7 +44,7 @@ Der Clientcomputer muss ein Windows-Computer sein, auf dem folgende Komponenten 
 ### <a name="tfssrv1"></a>TFSSrv1
 
 Der Computer, der den TFS-Server hostet, auf dem Sie Build und Release definieren.
-Auf diesem Computer muss [Team Foundation Server 2017](https://www.visualstudio.com/tfs/) installiert sein.
+Auf diesem Computer muss [Team Foundation Server 2017](https://visualstudio.microsoft.com/tfs/) installiert sein.
 
 ### <a name="buildagent"></a>BuildAgent
 
@@ -157,7 +157,7 @@ Node $AllNodes.Where{$_.Role -eq 'DNSServer'}.NodeName
 
 Hiermit werden alle Knoten gesucht, die in den vom `DevEnv.ps1`-Skript erstellten [Konfigurationsdaten](../configurations/configData.md) mit der Rolle `DNSServer` definiert wurden.
 
-Weitere Informationen zur Methode `Where` finden Sie unter [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md).
+Weitere Informationen zur Methode `Where` finden Sie unter [about_arrays](/powershell/module/microsoft.powershell.core/about/about_arrays).
 
 Die Verwendung von Konfigurationsdaten zum Definieren von Knoten ist im Rahmen der Continuous Integration wichtig, weil sich Knoteninformationen je nach Umgebung wahrscheinlich ändern. Mithilfe von Konfigurationsdaten können Sie problemlos Änderungen an Knoteninformationen durchführen, ohne den Konfigurationscode ändern zu müssen.
 
@@ -319,7 +319,7 @@ Das Skript für die Integrationstests verwendet eine Kombination aus der [Pester
 
 Fahren wir jetzt, nachdem wir unseren Code in TFS hochgeladen und uns seine Funktionsweise angesehen haben, mit dem Definieren unseres Builds fort.
 
-Nachfolgend werden nur die Buildschritte abgedeckt, die Sie dem Build hinzufügen. Anweisungen zum Erstellen einer Builddefinition in TFS finden Sie unter [Erstellen einer Builddefinition und Einreihen in die Warteschlange](/azure/devops/pipelines/get-started-designer).
+Nachfolgend werden nur die Buildschritte abgedeckt, die Sie dem Build hinzufügen. Anweisungen zum Erstellen einer Builddefinition in TFS finden Sie unter [Erstellen einer Builddefinition und Einreihen in die Warteschlange](/azure/devops/pipelines/create-first-pipeline).
 
 Erstellen Sie eine neue Builddefinition namens „InfraDNS“ (wählen Sie die Vorlage **Leer** aus).
 Fügen Sie Ihrer Builddefinition die folgenden Schritte hinzu:
@@ -388,7 +388,7 @@ Erstellen wir jetzt eine Releasedefinition, damit das Projekt immer dann in der 
 
 Fügen Sie hierzu eine neue Releasedefinition hinzu, die der zuvor erstellten Builddefinition `InfraDNS` zugeordnet ist.
 Stellen Sie sicher, dass **Continuous Deployment** ausgewählt ist, damit immer dann eine neue Release ausgelöst wird, wenn ein neuer Build erstellt wurde.
-([Was sind Releasepipelines?](/azure/devops/pipelines/release/what-is-release-management)), und konfigurieren Sie sie wie folgt:
+([Was sind Releasepipelines?](/azure/devops/pipelines/release/)), und konfigurieren Sie sie wie folgt:
 
 Fügen Sie der Releasedefinition die folgenden Schritte hinzu:
 
