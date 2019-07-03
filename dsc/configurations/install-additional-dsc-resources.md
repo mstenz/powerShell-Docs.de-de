@@ -23,7 +23,7 @@ Hier finden Sie eine Liste der in PowerShell 4.0 enthaltenen OOB-Ressourcen sowi
 |**File**|Steuert den Status der Dateien und Verzeichnisse. Kopiert Dateien aus einer **Quelle** in ein **Ziel** und aktualisiert sie bei Änderung der **Quelle** durch Vergleichen von Datumsangaben, Prüfsummen und Hashes.|
 |**Archive**|Entpackt Archive an einem angegebenen Speicherort. Überprüft die Archive mit einer angegebenen **Prüfsumme**.|
 |**Environment**|Verwaltet Umgebungsvariablen.|
-|**Gruppe**|Verwaltet lokale Gruppen und steuert die Gruppenmitgliedschaft.|
+|**Group**|Verwaltet lokale Gruppen und steuert die Gruppenmitgliedschaft.|
 |**Log**|Schreibt Meldungen in das `Microsoft-Windows-Desired State Configuration/Analytic`-Ereignisprotokoll.|
 |**Paket**|Installiert oder deinstalliert Pakete mit **Arguments**, **LogPath**, **ReturnCode** und anderen Einstellungen.|
 |**Registry**|Verwaltet Registrierungsschlüssel und -werte.|
@@ -67,7 +67,7 @@ Nach dem Drücken von „j“ wird der „NuGet“-Anbieter installiert, und Sie
 Sie können auch mithilfe von Platzhaltern den `-Name`-Parameter angeben, oder den `-Filter`-Parameter ohne Platzhalter, um Ihre Suche einzugrenzen. In diesem Beispiel wird versucht, eine DSC-Ressource „TimeZone“ mit Platzhaltern zu finden.
 
 > [!IMPORTANT]
-> Derzeit enthält das `Find-DSCResource`-Cmdlet jedoch einen Fehler, der sowohl im `-Name`- als auch `-Filter`-Parameter die Suche mit Platzhaltern verhindert. Das zweite Beispiel zeigt eine Problemumgehung mit `Where-Object`.
+> Derzeit enthält das `Find-DSCResource`-Cmdlet jedoch einen Fehler, der sowohl im `-Name`- als auch im `-Filter`-Parameter die Suche mit Platzhaltern verhindert. Das zweite Beispiel zeigt eine Problemumgehung mit `Where-Object`.
 
 ```
 PS> Find-DSCResource -Name *Time*
