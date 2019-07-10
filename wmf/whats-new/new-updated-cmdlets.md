@@ -39,7 +39,7 @@ Weitere Informationen finden Sie unter:
 
 ## <a name="cryptographic-message-syntax-cms-cmdlets"></a>CMS-Cmdlets (Cryptographic Message Syntax, Syntax verschlüsselter Nachrichten)
 
-Der CMS-Cmdlets unterstützen die Ver- und Entschlüsselung von Inhalten mithilfe des IETF-Standardformats für kryptografisch geschützte Nachrichten, wie unter [RFC5652](https://tools.ietf.org/html/rfc5652.html) dokumentiert.
+Die CMS-Cmdlets unterstützen die Ver- und Entschlüsselung von Inhalten mithilfe des IETF-Standardformats für kryptografisch geschützte Nachrichten, wie unter [RFC5652](https://tools.ietf.org/html/rfc5652.html) dokumentiert.
 
 Der CMS-Verschlüsselungsstandard implementiert die Verschlüsselung mit öffentlichem Schlüssel, bei der der Schlüssel zum Verschlüsseln von Inhalten (der *öffentliche Schlüssel*) und zum Entschlüsseln von Inhalten (der *private Schlüssel*) getrennt sind.
 
@@ -74,7 +74,7 @@ Weitere Informationen finden Sie unter [ConvertFrom-String](/powershell/module/M
 
 ### <a name="convert-string"></a>Convert-String
 
-`Convert-String` gestattete es Ihnen, „Vorher“- und „Nachher“-Beispiele dafür anzugeben, wie Text aussehen soll. Das Cmdlet formatiert Ihren Text dann automatisch.
+`Convert-String` gestattet es Ihnen, „Vorher“- und „Nachher“-Beispiele dafür anzugeben, wie Text aussehen soll. Das Cmdlet formatiert Ihren Text dann automatisch.
 
 Weitere Informationen finden Sie unter [Convert-String](/powershell/module/Microsoft.PowerShell.Utility/Convert-String).
 
@@ -172,7 +172,7 @@ Zur Unterstützung symbolischer Verknüpfungen wurden das Item-Cmdlet und einige
 
 ### <a name="symbolic-link-files"></a>Symbolische Verknüpfungsdateien
 
-In diesem Beispiel erstellen wir eine neue symbolische Verknüpfungsdatei mit dem Namen „MySymLinkFile.txt“ in „C:\Temp“, die mit „$pshome\profile.ps1“ verknüpft. Alle drei Beispiele erzeugen dasselbe Ergebnis.
+In diesem Beispiel erstellen wir eine neue symbolische Verknüpfungsdatei mit dem Namen „MySymLinkFile.txt“ in „C:\Temp“, die mit „$pshome\profile.ps1“ verknüpft ist. Alle drei Beispiele erzeugen dasselbe Ergebnis.
 
 ```powershell
 New-Item -ItemType SymbolicLink -Path C:\Temp -Name MySymLinkFile.txt -Value $pshome\profile.ps1
@@ -208,7 +208,7 @@ New-Item -ItemType Junction -Path C:\Temp\MyJunctionDir -Value $pshome
 
 ### <a name="get-childitem"></a>Get-ChildItem
 
-`Get-ChildItem` zeigt nun „l“ in der **Modus**-Eigenschaft an, um ein/e symbolische/s Verknüpfungsdatei oder -verzeichnis anzuzeigen.
+`Get-ChildItem` zeigt nun „l“ in der **Modus**-Eigenschaft an, um eine symbolische Verknüpfungsdatei bzw. ein symbolisches Verknüpfungsverzeichnis anzuzeigen.
 
 ```powershell
 Get-ChildItem C:\Temp | sort LastWriteTime -Descending
