@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows PowerShell Programmer's Guide
 ms.assetid: f3aaf667-af84-4ea8-a5ad-d454d0d700b8
 caps.latest.revision: 9
-ms.openlocfilehash: 75425fbd38141fc82dd834835912c357ecfa6d2b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 44a9c970d32dc6f98456227f8b02101280541dd9
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081086"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734875"
 ---
 # <a name="windows-powershell-programmer39s-guide"></a>Windows PowerShell-Programmierer&#39;Benutzerhandbuch
 
@@ -37,7 +37,7 @@ Bei der herkömmlichen Entwicklung müssen Sie einen Parameter-Parser, einen Bin
 
 Windows PowerShell definiert mehrere Typen von Befehlen, die Sie verwenden können, in der Entwicklung. Zu diesen Befehlen zählen: Funktionen, Filter, Skripts, Aliasen und ausführbare Dateien (Anwendungen). Der Hauptbefehl-Typ, der in diesem Handbuch beschriebene ist die einfache, kleine Befehl eine "Cmdlet". Windows PowerShell stellt bereit einen Satz von Cmdlets und Cmdlet-Anpassungen entsprechend Ihrer Umgebung vollständig unterstützt. Die Windows PowerShell-Laufzeit verarbeitet alle Befehlstypen, genau wie Cmdlets, die mithilfe von Pipelines.
 
-Zusätzlich zu den Befehlen unterstützt Windows PowerShell die verschiedenen anpassbaren Windows PowerShell-Anbieter, die zur Verfügung bestimmte Gruppen von Cmdlets zu machen. Die Shell ausgeführt wird, in die bereitgestellte Windows PowerShell-hostanwendung (Windows PowerShell.exe), aber es ist genauso zugegriffen werden kann, in einer benutzerdefinierten hostanwendung, die Sie entwickeln können, um bestimmte Anforderungen zu erfüllen. Weitere Informationen finden Sie unter [Funktionsweise von Windows PowerShell](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
+Zusätzlich zu den Befehlen unterstützt Windows PowerShell die verschiedenen anpassbaren Windows PowerShell-Anbieter, die zur Verfügung bestimmte Gruppen von Cmdlets zu machen. Die Shell ausgeführt wird, in die bereitgestellte Windows PowerShell-hostanwendung (Windows PowerShell.exe), aber es ist genauso zugegriffen werden kann, in einer benutzerdefinierten hostanwendung, die Sie entwickeln können, um bestimmte Anforderungen zu erfüllen. Weitere Informationen finden Sie unter [Funktionsweise von Windows PowerShell](/previous-versions//ms714658(v=vs.85)).
 
 ### <a name="windows-powershell-cmdlets"></a>Windows PowerShell-Cmdlets
 
@@ -51,17 +51,17 @@ Bei der Ausführung von Verwaltungsaufgaben, kann der Benutzer müssen in einem 
 
 Windows PowerShell stellt mehrere Windows PowerShell-Anbieter. Der Registrierungsanbieter unterstützt beispielsweise navigieren und Bearbeiten der Windows-Registrierung. Registrierungsschlüssel werden als Elemente dargestellt, und die Registrierungswerte werden als Eigenschaften behandelt.
 
-Wenn Sie einen Datenspeicher verfügbar, die der Benutzer zugreifen muss machen, müssen möglicherweise schreiben Ihren eigenen Windows PowerShell-Anbieter, wie in beschrieben [Erstellen von Windows PowerShell-Anbieter](./how-to-create-a-windows-powershell-provider.md). Weitere Informationen AboutWindows PowerShell-Anbieter, finden Sie unter [Funktionsweise von Windows PowerShell](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
+Wenn Sie einen Datenspeicher verfügbar, die der Benutzer zugreifen muss machen, müssen möglicherweise schreiben Ihren eigenen Windows PowerShell-Anbieter, wie in beschrieben [Erstellen von Windows PowerShell-Anbieter](./how-to-create-a-windows-powershell-provider.md). Weitere Informationen AboutWindows PowerShell-Anbieter, finden Sie unter [Funktionsweise von Windows PowerShell](/previous-versions//ms714658(v=vs.85)).
 
 ### <a name="host-application"></a>Hostanwendung
 
 Windows PowerShell umfasst die Standard-Host Anwendung powershell.exe, eine Konsolenanwendung, die mit der Benutzer interagiert, und hostet die Windows PowerShell-Laufzeit, die mit einem Konsolenfenster.
 
-Nur selten müssen Sie zum Schreiben Ihrer eigenen hostanwendung für Windows PowerShell auch Anpassung unterstützt wird. Ein Fall, in dem Sie Ihre eigene Anwendung möglicherweise, ist bei einer Anforderung für eine Grafische Benutzeroberfläche, die umfangreicher als die Schnittstelle, von der hostanwendung standardmäßig bereitgestellt wird. Sie sollten auch eine benutzerdefinierte Anwendung, wenn die grafische Benutzeroberfläche, über die Befehlszeile basiert. Weitere Informationen finden Sie unter [Vorgehensweise: Erstellen einer Windows PowerShell-Hostanwendung](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07).
+Nur selten müssen Sie zum Schreiben Ihrer eigenen hostanwendung für Windows PowerShell auch Anpassung unterstützt wird. Ein Fall, in dem Sie Ihre eigene Anwendung möglicherweise, ist bei einer Anforderung für eine Grafische Benutzeroberfläche, die umfangreicher als die Schnittstelle, von der hostanwendung standardmäßig bereitgestellt wird. Sie sollten auch eine benutzerdefinierte Anwendung, wenn die grafische Benutzeroberfläche, über die Befehlszeile basiert. Weitere Informationen finden Sie unter [Vorgehensweise: Erstellen einer Windows PowerShell-Hostanwendung](/powershell/developer/hosting/writing-a-windows-powershell-host-application).
 
 ### <a name="windows-powershell-runtime"></a>Windows PowerShell-Laufzeit
 
-Die Windows PowerShell-Laufzeit ist der ausführungs-Engine, die befehlsverarbeitung implementiert. Sie enthält die Klassen, die Schnittstelle zwischen der hostanwendung und Windows PowerShell-Befehle und Anbieter zu ermöglichen. Die Windows PowerShell-Laufzeit wird als ein Runspace-Objekt für die aktuelle Windows PowerShell-Sitzung implementiert, die die betriebsumgebung ist in der die Shell und die Befehle ausgeführt. Betriebsbezogenen Details, finden Sie unter [Funktionsweise von Windows PowerShell](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58).
+Die Windows PowerShell-Laufzeit ist der ausführungs-Engine, die befehlsverarbeitung implementiert. Sie enthält die Klassen, die Schnittstelle zwischen der hostanwendung und Windows PowerShell-Befehle und Anbieter zu ermöglichen. Die Windows PowerShell-Laufzeit wird als ein Runspace-Objekt für die aktuelle Windows PowerShell-Sitzung implementiert, die die betriebsumgebung ist in der die Shell und die Befehle ausgeführt. Betriebsbezogenen Details, finden Sie unter [Funktionsweise von Windows PowerShell](/previous-versions//ms714658(v=vs.85)).
 
 ### <a name="windows-powershell-language"></a>Windows PowerShell-Sprache
 
@@ -81,7 +81,7 @@ Windows PowerShell ermöglicht den Zugriff auf eine Vielzahl von verschiedenen O
 
   Mit ETS, können Sie erstellen neue flexible "Typen", die mit der Windows PowerShell-Sprache kompatibel sind. Wenn Sie eine .NET Entwickler sind, Sie können zum Arbeiten mit Objekten, die mit der Semantik wie die Windows PowerShell-Sprache mit dem Skripting, z. B. angewendet wird, um zu bestimmen, ob ein Objekt ergibt `true`.
 
-  Weitere Informationen zu ETS und wie Windows PowerShell Objekte verwendet, finden Sie unter [Konzepte von Windows PowerShell-Objekt](http://msdn.microsoft.com/en-us/12700631-be23-4e6b-9bf0-81ea0d166353).
+  Weitere Informationen zu ETS und wie Windows PowerShell Objekte verwendet, finden Sie unter [Konzepte von Windows PowerShell-Objekt](/powershell/scripting/learn/understanding-important-powershell-concepts?view=powershell-6).
 
 ## <a name="programming-for-windows-powershell"></a>Programmieren für Windows PowerShell
 
@@ -100,7 +100,7 @@ Weitere Informationen zum Starten der Windows PowerShell-Befehlsshell verwenden,
 |Thema|Definition|
 |-----------|----------------|
 |[Vorgehensweise: Erstellen einer Windows PowerShell-Anbieter](./how-to-create-a-windows-powershell-provider.md)|Dieser Abschnitt beschreibt, wie Sie einen Windows PowerShell-Anbieter für Windows PowerShell zu erstellen.|
-|[Vorgehensweise: erstellen eine Windows PowerShell-Hostanwendung](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07)|In diesem Abschnitt wird beschrieben, wie eine hostanwendung schreiben, die einen Runspace bearbeitet und wie Sie eine hostanwendung schreiben, die einen eigenen benutzerdefinierten Host implementiert.|
+|[Vorgehensweise: erstellen eine Windows PowerShell-Hostanwendung](/powershell/developer/hosting/writing-a-windows-powershell-host-application)|In diesem Abschnitt wird beschrieben, wie eine hostanwendung schreiben, die einen Runspace bearbeitet und wie Sie eine hostanwendung schreiben, die einen eigenen benutzerdefinierten Host implementiert.|
 |[Vorgehensweise: Erstellen Sie ein Windows PowerShell-Snap-in](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|In diesem Abschnitt wird beschrieben, wie ein Snap-In zu erstellen, die verwendet wird, um alle Cmdlets und Anbieter in einer Assembly zu registrieren und wie Sie eine benutzerdefinierte-Snap-in erstellen.|
 |[Vorgehensweise: Erstellen Sie eine Konsole-Shell](./how-to-create-a-console-shell.md)|Dieser Abschnitt beschreibt, wie Sie eine Konsole Shell erstellen, die nicht erweiterbar ist.|
 |[Windows PowerShell-Konzepten](./windows-powershell-concepts.md)|Dieser Abschnitt enthält konzeptionelle Informationen, mit denen Sie die Windows PowerShell vom Standpunkt eines Entwicklers zu verstehen.|

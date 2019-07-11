@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 82244fbd-07b9-47f3-805c-3fb90ebbf58a
 caps.latest.revision: 13
-ms.openlocfilehash: 0d4addc0a064873701ae15c204dbd335f3374ab7
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 81f6c8cd75ccea9e711cd8f6d6daa6cca5a499a0
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080905"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734869"
 ---
 # <a name="windows-powershell-provider-overview"></a>Windows PowerShell-Anbieter: Übersicht
 
@@ -27,7 +27,7 @@ Wenn Sie einen Anbieter schreiben, können Sie standardmäßige Laufwerken-Laufw
 
 ## <a name="type-of-providers"></a>Der Typ von Anbietern
 
-Es gibt mehrere Arten von Anbietern, von die jeder einen unterschiedlichen Grad an Funktionalität bietet. Ein Anbieter wird als eine von einem Nachfolgerelemente des abgeleitete Klasse implementiert die [System.Management.Automation.Sessionstatecategory.Cmdletprovider](/dotnet/api/System.Management.Automation.SessionStateCategory.CmdletProvider) Klasse. Weitere Informationen zu den verschiedenen Typen von Anbietern finden Sie unter [Anbietertypen](./provider-types.md).
+Es gibt mehrere Arten von Anbietern, von die jeder einen unterschiedlichen Grad an Funktionalität bietet. Ein Anbieter wird als eine von einem Nachfolgerelemente des abgeleitete Klasse implementiert die [System.Management.Automation.SessionStateCategory](/dotnet/api/system.management.automation.sessionstatecategory?view=pscore-6.2.0) **CmdletProvider** Klasse. Weitere Informationen zu den verschiedenen Typen von Anbietern finden Sie unter [Anbietertypen](./provider-types.md).
 
 ## <a name="provider-cmdlets"></a>Anbieter-Cmdlets
 
@@ -63,7 +63,7 @@ Anbieter können dynamische Parameter definieren, die einem Anbieter-Cmdlet hinz
 
 ## <a name="provider-capabilities"></a>Funktionen des Anbieters
 
-Die [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) Enumeration definiert eine Reihe von Funktionen, die Anbieter unterstützen können. Dazu gehören die Möglichkeit, die Platzhalter verwenden, Filtern von Elementen und Unterstützung für Transaktionen. Um Funktionen für einen Anbieter zu anzugeben, fügen Sie eine Liste von Werten der [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) Enumeration, die in Kombination mit einer logischen `OR` -Operation, als die [ System.Management.Automation.Provider.Cmdletproviderattribute.Providercapabilities*](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute.ProviderCapabilities) Eigenschaft (der zweite Parameter des Attributs), der die [System.Management.Automation.Provider.Cmdletproviderattribute ](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) Attribut für die Provider-Klasse. Das folgende Attribut gibt beispielsweise an, dass der Anbieter unterstützt die [System.Management.Automation.Provider.Providercapabilities.Shouldprocess](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities.ShouldProcess) und [ System.Management.Automation.Provider.Providercapabilities.Transactions](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities.Transactions) Funktionen.
+Die [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) Enumeration definiert eine Reihe von Funktionen, die Anbieter unterstützen können. Dazu gehören die Möglichkeit, die Platzhalter verwenden, Filtern von Elementen und Unterstützung für Transaktionen. Um Funktionen für einen Anbieter zu anzugeben, fügen Sie eine Liste von Werten der [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) Enumeration, die in Kombination mit einer logischen `OR` -Operation, als die [ System.Management.Automation.Provider.Cmdletproviderattribute.Providercapabilities*](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute.ProviderCapabilities) Eigenschaft (der zweite Parameter des Attributs), der die [System.Management.Automation.Provider.Cmdletproviderattribute ](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) Attribut für die Provider-Klasse. Das folgende Attribut gibt beispielsweise an, dass der Anbieter unterstützt die [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **ShouldProcess** und [ System.Management.Automation.Provider.ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **Transaktionen** Funktionen.
 
 ```csharp
 [CmdletProvider(RegistryProvider.ProviderName, ProviderCapabilities.ShouldProcess | ProviderCapabilities.Transactions)]

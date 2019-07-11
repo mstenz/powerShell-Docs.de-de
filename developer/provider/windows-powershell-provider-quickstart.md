@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3e879ba7-c334-460b-94a1-3e9b63d3d8de
 caps.latest.revision: 5
-ms.openlocfilehash: 151b7125afe1b0d386467a0e5f89225716857ac2
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 949c0d63b1e5bca1bfe670362df4297c29e98fcc
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080882"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734844"
 ---
 # <a name="windows-powershell-provider-quickstart"></a>Windows PowerShell-Anbieter: Schnellstart
 
@@ -67,7 +67,7 @@ namespace Microsoft.Samples.PowerShell.Providers
 
 ### <a name="implementing-newdrive"></a>Implementieren von NewDrive
 
-Die [System.Management.Automation.Provider.Drivecmdletprovider.Newdrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) Methode wird von der Windows PowerShell-Engine aufgerufen, wenn ein Benutzer ruft die [Microsoft.PowerShell.Commands.New-PSDrive](/dotnet/api/Microsoft.PowerShell.Commands.New-PSDrive)Cmdlet Geben Sie dabei den Namen des Anbieters. Der PSDriveInfo-Parameter wird von der Windows PowerShell-Engine übergeben, und die Methode gibt das neue Laufwerk für die Windows PowerShell-Engine zurück. Diese Methode muss innerhalb der oben erstellten Klasse deklariert werden.
+Die [System.Management.Automation.Provider.Drivecmdletprovider.Newdrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) Methode wird von der Windows PowerShell-Engine aufgerufen, wenn ein Benutzer ruft die [Microsoft.PowerShell.Commands.NewPSDriveCommand](/dotnet/api/Microsoft.PowerShell.Commands.Newpsdrivecommand) Cmdlet Geben Sie dabei den Namen des Anbieters. Der PSDriveInfo-Parameter wird von der Windows PowerShell-Engine übergeben, und die Methode gibt das neue Laufwerk für die Windows PowerShell-Engine zurück. Diese Methode muss innerhalb der oben erstellten Klasse deklariert werden.
 
 Die Methode überprüft zuerst, um sicherzustellen, dass das Laufwerk und den Stamm des Laufwerks, die übergeben wurden vorhanden, `null` ist davon nicht der Fall. Anschließend werden mit einem Konstruktor, der internen Klasse AccessDBPSDriveInfo erstellen Sie ein neues Laufwerk, und eine Verbindung mit der Access-Datenbank das Laufwerk darstellt.
 
@@ -147,7 +147,7 @@ internal class AccessDBPSDriveInfo : PSDriveInfo
 
 ### <a name="implementing-removedrive"></a>Implementieren von RemoveDrive
 
-Die [System.Management.Automation.Provider.Drivecmdletprovider.Removedrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive) Methode wird von der Windows PowerShell-Engine aufgerufen, wenn ein Benutzer ruft die [Microsoft.PowerShell.Commands.Remove-PSDrive](/dotnet/api/Microsoft.PowerShell.Commands.Remove-PSDrive) Cmdlet. Die Methode in diesem Anbieter schließt die Verbindung mit der Access-Datenbank.
+Die [System.Management.Automation.Provider.Drivecmdletprovider.Removedrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive) Methode wird von der Windows PowerShell-Engine aufgerufen, wenn ein Benutzer ruft die [Microsoft.PowerShell.Commands.RemovePSDriveCommand ](/dotnet/api/Microsoft.PowerShell.Commands.removepsdrivecommand) Cmdlet. Die Methode in diesem Anbieter schließt die Verbindung mit der Access-Datenbank.
 
 ```csharp
 protected override PSDriveInfo RemoveDrive(PSDriveInfo drive)

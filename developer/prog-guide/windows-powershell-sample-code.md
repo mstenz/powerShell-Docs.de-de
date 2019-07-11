@@ -8,19 +8,19 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1106829a-8ddc-454e-bbdd-ade15d4bffb4
 caps.latest.revision: 7
-ms.openlocfilehash: 264e9f7538e13b48d899e87541239250eb88f14e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 4154aeb22b5dde7806f3af133559d471e82bb981
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081205"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733777"
 ---
 # <a name="windows-powershell-sample-code"></a>Windows PowerShell-Beispielcode
 
 Windows PowerShell® Beispiele stehen über das Windows SDK zur Verfügung. Dieser Abschnitt enthält Beispielcode, der in Windows SDK-Beispielen enthalten ist.
 
 > [!NOTE]
-> Wenn das Windows SDK installiert ist, eine **Beispiele** Verzeichnis wird erstellt, in dem alle Windows PowerShell-Beispiele zur Verfügung gestellt werden. Eine typische Installationsverzeichnis ist **c:\Programme\Microsoft c:\Programme\Microsoft SDKs\Windows\v6.0**. Starten Sie Windows PowerShell, und geben **"cd Samples\SysMgmt\PowerShell"** , das Windows PowerShell-Beispiele-Verzeichnis gesucht werden soll. In diesem Dokument, das Windows PowerShell-Beispiele-Verzeichnis wird als bezeichnet  **\<PowerShell-Beispiele >**.
+> Wenn das Windows SDK installiert ist, eine **Beispiele** Verzeichnis wird erstellt, in dem alle Windows PowerShell-Beispiele zur Verfügung gestellt werden. Eine typische Installationsverzeichnis ist **c:\Programme\Microsoft c:\Programme\Microsoft SDKs\Windows\v6.0**. Starten Sie Windows PowerShell, und geben **"cd Samples\SysMgmt\PowerShell"** , das Windows PowerShell-Beispiele-Verzeichnis gesucht werden soll. In diesem Dokument, das Windows PowerShell-Beispiele-Verzeichnis wird als bezeichnet  **\<PowerShell-Beispiele >** .
 
 ## <a name="sample-code-listing"></a>Beispiel-Codeliste
 
@@ -39,15 +39,15 @@ Windows PowerShell® Beispiele stehen über das Windows SDK zur Verfügung. Dies
 |[GetProc05-Codebeispiele](./getproc05-code-samples.md)|Dies `Get-Process` Cmdlet ist vergleichbar mit dem Cmdlet, die in beschriebenen [hinzufügen ohne Abbruch Fehlerberichterstattung an Ihr Cmdlet](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md).|
 |[StopProc01-Codebeispiele](./stopproc01-code-samples.md)|Dies ist die `Stop-Process` Cmdlet-Beispiel in beschriebenen [erstellen ein Cmdlet, ändert das System](../cmdlet/creating-a-cmdlet-that-modifies-the-system.md).|
 |[StopProcessSample04-Codebeispiele](./stopprocesssample04-code-samples.md)|Dies ist die `Stop-Process` Cmdlet-Beispiel in beschriebenen [Parametersätze hinzufügen, um ein Cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md).|
-|[Runspace01-Codebeispiele](./runspace01-code-samples.md)|Hierbei handelt es sich um den Codebeispiele, für der Runspace beschrieben [erstellen eine Konsole Einzelanwendung eines angegebenen Befehls](http://msdn.microsoft.com/en-us/793a6570-a072-4799-840b-172f28ce620e).|
+|[Runspace01-Codebeispiele](./runspace01-code-samples.md)|Hierbei handelt es sich um den Codebeispiele, für der Runspace beschrieben [erstellen eine Konsole Einzelanwendung eines angegebenen Befehls](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program).|
 |[Runspace02-Codebeispiele](./runspace02-code-samples.md)|Dieses Beispiel verwendet die [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) Klasse zum Ausführen der `Get-Process` Cmdlet synchron.|
-|[RunSpace03-Codebeispiele](./runspace03-code-samples.md)|Hierbei handelt es sich um den Codebeispiele, für der Runspace beschrieben [erstellen eine Konsole-Anwendungsausführung an, dass ein Skript angegeben](http://msdn.microsoft.com/en-us/a93e6006-36db-4bcc-b9da-c5bebf4ffd68).|
+|[RunSpace03-Codebeispiele](./runspace03-code-samples.md)|Hierbei handelt es sich um den Codebeispiele, für der Runspace beschrieben [erstellen eine Konsole-Anwendungsausführung an, dass ein Skript angegeben](fd).|
 |[RunSpace04-Codebeispiele](./runspace04-code-samples.md)|Dies ist ein Codebeispiel für einen Runspace, die verwendet die [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) Klasse, um ein Skript ausführen, das einen Abbruchfehler generiert.|
-|[RunSpace05-Codebeispiel](./runspace05-code-sample.md)|Dies ist der Quellcode für das Beispiel Runspace05 in beschrieben [konfigurieren einen Runspace mithilfe RunspaceConfiguration](http://msdn.microsoft.com/en-us/42681d19-2d05-4975-befd-afb1990e79b2).|
-|[RunSpace06-Codebeispiel](./runspace06-code-sample.md)|Dies ist der Quellcode für das Beispiel Runspace06 in beschrieben [konfigurieren einen Runspace ein Windows PowerShell-Snap-in mit](http://msdn.microsoft.com/en-us/a7289ee8-9732-49ee-91c7-d533e9538b83).|
-|[RunSpace07-Codebeispiel](./runspace07-code-sample.md)|Dies ist der Quellcode für das Beispiel Runspace07 in beschrieben [erstellen eine Anwendung, fügt Konsolenbefehle zu einer Pipeline](http://msdn.microsoft.com/en-us/01eb7808-e97b-4905-80be-9e2fa38c262e).|
-|[RunSpace08-Codebeispiel](./runspace08-code-sample.md)|Dies ist der Quellcode für das Beispiel Runspace08 in beschrieben [erstellen eine Anwendung, fügt Konsolenparameter zu einem Befehl](http://msdn.microsoft.com/en-us/848b2b46-60f1-4a86-b448-cfc7c0cccfba).|
-|[RunSpace09-Codebeispiel](./runspace09-code-sample.md)|Dies ist der Quellcode für das Beispiel Runspace09 in beschrieben [erstellen eine Konsole, ruft Anwendung eine Pipeline asynchron](http://msdn.microsoft.com/en-us/198c1c94-2a06-457e-93ce-c0d910618e47).|
+|[RunSpace05-Codebeispiel](./runspace05-code-sample.md)|Dies ist der Quellcode für das Beispiel Runspace05 in beschrieben [konfigurieren einen Runspace mithilfe RunspaceConfiguration](https://msdn.microsoft.com/en-us/42681d19-2d05-4975-befd-afb1990e79b2).|
+|[RunSpace06-Codebeispiel](./runspace06-code-sample.md)|Dies ist der Quellcode für das Beispiel Runspace06 in beschrieben [konfigurieren einen Runspace ein Windows PowerShell-Snap-in mit](https://msdn.microsoft.com/en-us/a7289ee8-9732-49ee-91c7-d533e9538b83).|
+|[RunSpace07-Codebeispiel](./runspace07-code-sample.md)|Dies ist der Quellcode für das Beispiel Runspace07 in beschrieben [erstellen eine Anwendung, fügt Konsolenbefehle zu einer Pipeline](https://msdn.microsoft.com/en-us/01eb7808-e97b-4905-80be-9e2fa38c262e).|
+|[RunSpace08-Codebeispiel](./runspace08-code-sample.md)|Dies ist der Quellcode für das Beispiel Runspace08 in beschrieben [erstellen eine Anwendung, fügt Konsolenparameter zu einem Befehl](https://msdn.microsoft.com/en-us/848b2b46-60f1-4a86-b448-cfc7c0cccfba).|
+|[RunSpace09-Codebeispiel](./runspace09-code-sample.md)|Dies ist der Quellcode für das Beispiel Runspace09 in beschrieben [erstellen eine Konsole, ruft Anwendung eine Pipeline asynchron](https://msdn.microsoft.com/en-us/198c1c94-2a06-457e-93ce-c0d910618e47).|
 |[RunSpace10-Codebeispiel](./runspace10-code-sample.md)|Dies ist der Quellcode für das Runspace10-Beispiel, das ein Cmdlet zum hinzufügt [System.Management.Automation.Runspaces.Runspaceconfiguration](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConfiguration) und verwendet dann die geänderte Konfigurationsinformationen zum Erstellen des Runspaces.|
 
 ## <a name="see-also"></a>Weitere Informationen

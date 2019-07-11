@@ -13,12 +13,12 @@ helpviewer_keywords:
 - error category string [PowerShell SDK]
 ms.assetid: bdd66fea-eb63-4bb6-9cbe-9a799e5e0db5
 caps.latest.revision: 9
-ms.openlocfilehash: f6f5e50c55b477cbbeeaaf4f3ea665d5dc07758c
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5412d88b690a1f5f1ef387416e3bf9da3a32c95d
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62067041"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67735061"
 ---
 # <a name="windows-powershell-error-records"></a>Windows PowerShell-Fehlerdatensätze
 
@@ -60,9 +60,9 @@ Verwenden Sie die folgenden Richtlinien, um Fehler-IDs zu generieren, bei der Er
 
 ## <a name="error-category"></a>Fehlerkategorie
 
-Beim Erstellen eines fehlerdatensatzes Geben Sie die Kategorie des Fehlers mit einem der Konstanten definiert werden, indem die [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory) Enumeration. Windows PowerShell verwendet die Fehlerkategorie, um Fehler anzuzeigen, wenn der Benutzer festlegen, die `$ErrorView` Variable `"CategoryView"`.
+Beim Erstellen eines fehlerdatensatzes Geben Sie die Kategorie des Fehlers mit einem der Konstanten definiert werden, indem die [System.Management.Automation.ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) Enumeration. Windows PowerShell verwendet die Fehlerkategorie, um Fehler anzuzeigen, wenn der Benutzer festlegen, die `$ErrorView` Variable `"CategoryView"`.
 
-Vermeiden Sie die Verwendung der [System.Management.Automation.Errorcategory.Notspecified](/dotnet/api/System.Management.Automation.ErrorCategory.NotSpecified) Konstanten. Wenn Sie alle Informationen über den Fehler oder über den Vorgang, der den Fehler verursacht hat, wählen Sie die Kategorie, die den Fehler oder den Vorgang am besten beschreibt, auch wenn die Kategorie keine perfekte Übereinstimmung vorliegt.
+Vermeiden Sie die Verwendung der [System.Management.Automation.ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) **"NotSpecified"** Konstanten. Wenn Sie alle Informationen über den Fehler oder über den Vorgang, der den Fehler verursacht hat, wählen Sie die Kategorie, die den Fehler oder den Vorgang am besten beschreibt, auch wenn die Kategorie keine perfekte Übereinstimmung vorliegt.
 
 Die Informationen von Windows PowerShell wird als die Kategorieansicht Zeichenfolge bezeichnet und basiert auf dem die Eigenschaften der [System.Management.Automation.Errorcategoryinfo](/dotnet/api/System.Management.Automation.ErrorCategoryInfo) Klasse. (Diese Klasse erfolgt über den Fehler [System.Management.Automation.ErrorRecord.CategoryInfo](/dotnet/api/System.Management.Automation.ErrorRecord.CategoryInfo) Eigenschaft.)
 
@@ -72,7 +72,7 @@ Die Informationen von Windows PowerShell wird als die Kategorieansicht Zeichenfo
 
 Die folgende Liste beschreibt die Informationen angezeigt:
 
-- Kategorie: Ein Windows PowerShell-definierten [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory) Konstanten.
+- Kategorie: Ein Windows PowerShell-definierten [System.Management.Automation.ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) Konstanten.
 
 - TargetName: Standardmäßig den Namen des Objekts mit dem-Cmdlet verarbeitet hat, als der Fehler aufgetreten ist. Oder ein anderes Cmdlet definierte Zeichenfolge.
 
@@ -88,9 +88,9 @@ Wenn Sie einen Fehlerdatensatz für ein Cmdlet entwickeln, stammt die Standardfe
 
 Die Nachricht für die Ersetzung erfolgt über eine [System.Management.Automation.ErrorDetails](/dotnet/api/System.Management.Automation.ErrorDetails) Objekt. Verwenden Sie einen der folgenden Konstruktoren dieses-Objekts, da sie zusätzliche Lokalisierungsinformationen bereitstellen, die von Windows PowerShell verwendet werden kann.
 
-- [ErrorDetails.ErrorDetails (Objekt-Cmdlet, String, String,\[System.Management.Automation.ErrorDetails.%23Ctor%28System.Management.Automation.Cmdlet%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29? Displayproperty = Fullname](/dotnet/api/System.Management.Automation.ErrorDetails.%23ctor%28System.Management.Automation.Cmdlet%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29): Verwenden Sie diesen Konstruktor, wenn Ihre Vorlage enthält eine Ressourcenzeichenfolge in der gleichen Assembly ist in der das Cmdlet implementiert wird, oder wenn Sie, laden Sie die Vorlagenzeichenfolge über eine Überschreibung der möchten der [System.Management.Automation.Cmdlet.GetResourceString ](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString) Methode.
+- [ErrorDetails(Cmdlet, String, String, Object[])](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Management_Automation_Cmdlet_System_String_System_String_System_Object___): Verwenden Sie diesen Konstruktor, wenn Ihre Vorlage enthält eine Ressourcenzeichenfolge in der gleichen Assembly ist in der das Cmdlet implementiert wird, oder wenn Sie, laden Sie die Vorlagenzeichenfolge über eine Überschreibung der möchten der [System.Management.Automation.Cmdlet.GetResourceString ](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString) Methode.
 
-- [ErrorDetails.ErrorDetails (Objekt-Assembly, String, String,\[System.Management.Automation.ErrorDetails.%23Ctor%28System.Reflection.Assembly%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29? Displayproperty = Fullname](/dotnet/api/System.Management.Automation.ErrorDetails.%23ctor%28System.Reflection.Assembly%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29): Verwenden Sie diesen Konstruktor, wenn die Vorlagenzeichenfolge befindet sich in einer anderen Assembly, und Sie es nicht, in einer Überschreibung von geladen werden [System.Management.Automation.Cmdlet.GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString).
+- [ErrorDetails(Assembly, String, String, Object[])](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Reflection_Assembly_System_String_System_String_System_Object___): Verwenden Sie diesen Konstruktor, wenn die Vorlagenzeichenfolge befindet sich in einer anderen Assembly, und Sie es nicht, in einer Überschreibung von geladen werden [System.Management.Automation.Cmdlet.GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString).
 
 Die .NET Framework-Entwurfsrichtlinien für das Schreiben von ausnahmemeldungen einen kleinen Unterschied muss Ersatznachricht entsprechen. Der Status der Richtlinien, den ausnahmemeldungen, die für Entwickler geschrieben werden soll. Diese Nachrichten sollte für den Cmdlet-Benutzer geschrieben werden.
 
@@ -110,7 +110,7 @@ Bei Verwendung von einem Cmdlet [System.Management.Automation.Cmdlet.WriteError]
 
 [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)
 
-[System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory)
+[System.Management.Automation.ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0)
 
 [System.Management.Automation.Errorcategoryinfo](/dotnet/api/System.Management.Automation.ErrorCategoryInfo)
 
