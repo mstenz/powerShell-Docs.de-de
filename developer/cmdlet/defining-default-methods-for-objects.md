@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 53fe744a-485f-4c21-9623-1cb546372211
 caps.latest.revision: 9
-ms.openlocfilehash: fa0f0371856d8723af7ec17a4306de209a481a18
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: af554cde5e888f2a008028010332caa473151622
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068214"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733980"
 ---
 # <a name="defining-default-methods-for-objects"></a>Definieren von Standardmethoden für Objekte
 
@@ -26,7 +26,7 @@ Wenn Sie .NET Framework-Objekten erweitern, können Sie Methoden in Code und Skr
 
 Eine Codemethode verweist auf eine statische Methode der .NET Framework-Objekt.
 
-Im folgenden Beispiel die **ConvertLargeIntegerToInt64** -Methode hinzugefügt wird, um die [System.Xml.Xmlnode? Displayproperty = Fullname](/dotnet/api/System.Xml.XmlNode) Typ. Die [CodeMethod](http://msdn.microsoft.com/en-us/1ea9b031-bbcf-4e35-b497-bf30fa0b1b05) Element definiert die erweiterte Methode als eine Codemethode. Die [Namen](http://msdn.microsoft.com/en-us/b58e9d21-c8c9-49a5-909e-9c1cfc64f873) Element gibt den Namen der erweiterten-Methode. Und der [CodeReference](http://msdn.microsoft.com/en-us/70017b85-18d2-4f55-8357-92f309d5618b) Element gibt an, die statische Methode. (Sie können auch hinzufügen der [CodeMethod](http://msdn.microsoft.com/en-us/1ea9b031-bbcf-4e35-b497-bf30fa0b1b05) Element auf die Member des der [Elementgruppen](http://msdn.microsoft.com/en-us/46a50fb5-e150-4c03-8584-e1b53e4d49e3) Element.)
+Im folgenden Beispiel die **ConvertLargeIntegerToInt64** -Methode hinzugefügt wird, um die [System.Xml.Xmlnode? Displayproperty = Fullname](/dotnet/api/System.Xml.XmlNode) Typ. Die [PSCodeMethod](/dotnet/api/system.management.automation.pscodemethod) Element definiert die erweiterte Methode als eine Codemethode. Die [Namen](/dotnet/api/system.management.automation.psmemberinfo.name?view=pscore-6.2.0#System_Management_Automation_PSMemberInfo_Name) Element gibt den Namen der erweiterten-Methode. Und der [CodeReference](/dotnet/api/system.management.automation.pscodemethod.codereference?view=pscore-6.2.0#System_Management_Automation_PSCodeMethod_CodeReference) Element gibt an, die statische Methode. (Sie können auch hinzufügen der [PSCodeMethod](/dotnet/api/system.management.automation.pscodemethod) Element, das Mitglied der [PSMemberSets](/dotnet/api/system.management.automation.psmemberset?view=pscore-6.2.0) Element.)
 
 ```xml
 <Type>
@@ -45,7 +45,7 @@ Im folgenden Beispiel die **ConvertLargeIntegerToInt64** -Methode hinzugefügt w
 
 ## <a name="script-methods"></a>Skriptmethoden
 
-Eine Skriptmethode definiert eine Methode, deren Wert die Ausgabe eines Skripts ist. Im folgenden Beispiel die **ConvertToDateTime** -Methode hinzugefügt wird, um die [System.Management.Managementobject? Displayproperty = Fullname](/dotnet/api/System.Management.ManagementObject) Typ. Die [ScriptMethod](http://msdn.microsoft.com/en-us/59f8160f-bc95-42f0-92e2-b16a616bc65c) Element definiert die erweiterte Methode als eine Skriptmethode. Die [Namen](http://msdn.microsoft.com/en-us/b58e9d21-c8c9-49a5-909e-9c1cfc64f873) Element gibt den Namen der erweiterten-Methode. Und der [Skript](http://msdn.microsoft.com/en-us/1937ad1b-bb2b-4512-9864-01fc0767d46f) Element gibt an, das Skript, das den methodenwert generiert. (Sie können auch hinzufügen der [ScriptMethod](http://msdn.microsoft.com/en-us/59f8160f-bc95-42f0-92e2-b16a616bc65c) Element auf die Member des der [Elementgruppen](http://msdn.microsoft.com/en-us/46a50fb5-e150-4c03-8584-e1b53e4d49e3) Element.)
+Eine Skriptmethode definiert eine Methode, deren Wert die Ausgabe eines Skripts ist. Im folgenden Beispiel die **ConvertToDateTime** -Methode hinzugefügt wird, um die [System.Management.Managementobject? Displayproperty = Fullname](/dotnet/api/System.Management.ManagementObject) Typ. Die [PSScriptMethod](/dotnet/api/system.management.automation.psscriptmethod?view=pscore-6.2.0) Element definiert die erweiterte Methode als eine Skriptmethode. Die [Namen](/dotnet/api/system.management.automation.psmemberinfo.name?view=pscore-6.2.0#System_Management_Automation_PSMemberInfo_Name) Element gibt den Namen der erweiterten-Methode. Und der [Skript](/dotnet/api/system.management.automation.psscriptmethod.script?view=pscore-6.2.0#System_Management_Automation_PSScriptMethod_Script) Element gibt an, das Skript, das den methodenwert generiert. (Sie können auch hinzufügen der [PSScriptMethod](/dotnet/api/system.management.automation.psscriptmethod?view=pscore-6.2.0) Element, das Mitglied der [PSMemberSets](/dotnet/api/system.management.automation.psmemberset?view=pscore-6.2.0) Element.)
 
 ```xml
 <Type>

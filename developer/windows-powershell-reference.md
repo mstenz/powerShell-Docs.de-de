@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows PowerShell SDK
 ms.assetid: cbba4879-bcac-484a-9906-4bbe2cd1eb33
 caps.latest.revision: 11
-ms.openlocfilehash: 86595ebaac32318a4e3b9a3c4b295c73fb2e1c75
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 48b2b2b9ab2a39cf185ed54bcfa99d46562e13b6
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080497"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733737"
 ---
 # <a name="windows-powershell-reference"></a>Windows PowerShell-Referenz
 
@@ -53,4 +53,4 @@ Die folgenden Ressourcen bieten zusätzlich zu Windows PowerShell SDK Weitere In
 
 [System.Management.Automation.Internal](/dotnet/api/System.Management.Automation.Internal) dieser Namespace enthält die Basisklassen, die von anderen Namespaceklassen verwendet. Z. B. die [System.Management.Automation.Internal.Cmdletmetadataattribute](/dotnet/api/System.Management.Automation.Internal.CmdletMetadataAttribute) -Klasse ist die Basisklasse für die [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) Klasse.
 
-[System.Management.Automation.Runspaces](/dotnet/api/System.Management.Automation.Runspaces) dieser Namespace enthält die Klassen, Enumerationen und Schnittstellen, die für eine Windows PowerShell-Runspace zu erstellen. In diesem Kontext ist der Windows PowerShell-Runspace des Kontexts, in denen eine oder mehrere Windows PowerShell-Pipelines Cmdlets aufzurufen. Das heißt, arbeiten Cmdlets im Kontext einer Windows PowerShell-Runspace. Weitere Informationen AboutWindows PowerShell-Runspaces, finden Sie unter [Windows PowerShell-Runspaces](http://msdn.microsoft.com/en-us/a1582cfe-f06d-4aff-adc6-71f49a860ce9).
+[System.Management.Automation.Runspaces](/dotnet/api/System.Management.Automation.Runspaces) dieser Namespace enthält die Klassen, Enumerationen und Schnittstellen, die für eine Windows PowerShell-Runspace zu erstellen. In diesem Kontext ist der Windows PowerShell-Runspace des Kontexts, in denen eine oder mehrere Windows PowerShell-Pipelines Cmdlets aufzurufen. Das heißt, arbeiten Cmdlets im Kontext einer Windows PowerShell-Runspace. Weitere Informationen AboutWindows PowerShell-Runspaces, finden Sie unter [Windows PowerShell-Runspaces](https://msdn.microsoft.com/en-us/a1582cfe-f06d-4aff-adc6-71f49a860ce9).

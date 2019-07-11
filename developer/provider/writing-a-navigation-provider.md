@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 98bcfda0-6ee2-46f5-bbc7-5fab8b780d6a
 caps.latest.revision: 5
-ms.openlocfilehash: f449c17e4c373c42f8a1d96fa9075940111c65bc
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: edb4d9944a527391983e068ddf07f4fac415c3f9
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080865"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734729"
 ---
 # <a name="writing-a-navigation-provider"></a>Schreiben eines Navigationsanbieters
 
@@ -25,7 +25,7 @@ Weitere Informationen zu Windows PowerShell-Anbietern finden Sie unter [Übersic
 
 ## <a name="implementing-navigation-methods"></a>Navigationsmethoden implementiert werden
 
-Die [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) -Klasse implementiert Methoden, die die geschachtelten Container, relative Pfade und Verschieben von Elementen zu unterstützen. Eine vollständige Liste der folgenden Methoden, finden Sie unter [NavigationCmdletProvider Methoden](http://msdn.microsoft.com/library/system.management.automation.provider.navigationcmdletprovider_methods\(v=vs.85\).aspx).
+Die [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) -Klasse implementiert Methoden, die die geschachtelten Container, relative Pfade und Verschieben von Elementen zu unterstützen. Eine vollständige Liste der folgenden Methoden, finden Sie unter [NavigationCmdletProvider Methoden](/dotnet/api/system.management.automation.provider.navigationcmdletprovider?view=pscore-6.2.0#methods).
 
 > [!NOTE]
 > Dieses Thema baut auf den Informationen in [Schnellstartanleitung zu Windows PowerShell-Anbieter](./windows-powershell-provider-quickstart.md). Dieses Thema deckt sich nicht auf die Grundlagen zum Einrichten eines Anbieter-Projekts und Gewusst wie: Implementieren der Methoden geerbt von der [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) -Klasse, die erstellen und Entfernen von Laufwerken. In diesem Thema behandelt auch nicht vom verfügbar gemachten Methoden implementieren die [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) oder [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) Klassen. Ein Beispiel zum Implementieren der Item-Cmdlets finden Sie unter [Schreiben eines Datenanbieters Element](./writing-an-item-provider.md). Ein Beispiel, wie Container Cmdlets implementiert, finden Sie unter [Schreiben eines Anbieters Container](./writing-a-container-provider.md).
@@ -132,7 +132,7 @@ protected override string GetParentPath(string path, string root)
 
 ### <a name="implementing-makepath"></a>MakePath implementieren
 
-Die [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) -Methode verknüpft einen angegebenen übergeordneten Pfad und einen angegebenen untergeordneten Pfad einen Anbieter-internen Pfad erstellen (für Informationen zu Path Datentypen Anbieter können zu unterstützen, finden Sie unter [Übersicht über Windows PowerShell-Anbieter](./windows-powershell-provider-overview.md). Die PowerShell-Engine ruft diese Methode auf, wenn ein Benutzer ruft die [Microsoft.PowerShell.Commands.Join-Path](/dotnet/api/Microsoft.PowerShell.Commands.Join-Path) Cmdlet.
+Die [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) -Methode verknüpft einen angegebenen übergeordneten Pfad und einen angegebenen untergeordneten Pfad einen Anbieter-internen Pfad erstellen (für Informationen zu Path Datentypen Anbieter können zu unterstützen, finden Sie unter [Übersicht über Windows PowerShell-Anbieter](./windows-powershell-provider-overview.md). Die PowerShell-Engine ruft diese Methode auf, wenn ein Benutzer ruft die [Microsoft.PowerShell.Commands.JoinPathCommand](/dotnet/api/Microsoft.PowerShell.Commands.joinpathcommand) Cmdlet.
 
 ```csharp
 protected override string MakePath(string parent, string child)
@@ -221,7 +221,7 @@ protected override string NormalizeRelativePath(string path,
 
 ### <a name="implementing-moveitem"></a>Implementieren von MoveItem
 
-Die [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) Methode verschiebt ein Element aus dem angegebenen Pfad, in den angegebenen Zielpfad. Die PowerShell-Engine ruft diese Methode auf, wenn ein Benutzer ruft die [Microsoft.PowerShell.Commands.Move-Item](/dotnet/api/Microsoft.PowerShell.Commands.Move-Item) Cmdlet.
+Die [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) Methode verschiebt ein Element aus dem angegebenen Pfad, in den angegebenen Zielpfad. Die PowerShell-Engine ruft diese Methode auf, wenn ein Benutzer ruft die [Microsoft.PowerShell.Commands.MoveItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.moveitemcommand) Cmdlet.
 
 ```csharp
 protected override void MoveItem(string path, string destination)
@@ -298,7 +298,7 @@ protected override void MoveItem(string path, string destination)
        }
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Schreiben eines Anbieters für container](./writing-a-container-provider.md)
 
