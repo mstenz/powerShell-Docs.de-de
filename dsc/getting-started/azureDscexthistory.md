@@ -3,12 +3,12 @@ description: Informationen zur Versionsgeschichte der Desired State Configuratio
 ms.date: 06/21/2018
 keywords: DSC, PowerShell, Azure, Erweiterung
 title: Versionsgeschichte der Azure DSC-Erweiterung
-ms.openlocfilehash: 2c076e3beccc15e99af2327820916d7a4d28da68
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 6d821e53e9206d99425e8c83f6d90986c7c28b63
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079743"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734663"
 ---
 # <a name="azure-desired-state-configuration-extension-version-history"></a>Versionsgeschichte der Azure Desired State Configuration-Erweiterung
 
@@ -21,7 +21,7 @@ Dieser Artikel informiert Sie über alle Versionen der Azure DSC-VM-Erweiterung 
 ### <a name="version-276"></a>Version 2.76
 
 - **Veröffentlichungsdatum:**
-  - 9. Mai 2018 (Azure) | 21. Juni 2018 (Azure China, Azure Government)
+  - 9\. Mai 2018 (Azure) | 21. Juni 2018 (Azure China, Azure Government)
 - **Betriebssystemunterstützung :**
   - Windows Server 2016
   - Windows Server 2012 R2
@@ -164,7 +164,7 @@ Dieser Artikel informiert Sie über alle Versionen der Azure DSC-VM-Erweiterung 
 - **Umgebung:** Azure
 - **Hinweise:** In dieser Version wird DSC verwendet, das in Windows Server 2016 Technical Preview enthalten ist. Für andere Windows-Betriebssysteme wird [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) installiert. (Bei Installation von WMF ist ein Neustart erforderlich.)
 - **Neue Funktionen:**
-  - Unterstützung für WMF 5.1 Preview Bei der ersten Veröffentlichung war diese Version ein optionales Upgrade, und zur Installation von WMF 5.1 Preview musste in der Resource Manager-Vorlage Wmfversion = ‘5.1PP’ angegeben werden. Wmfversion = „neueste Version“ installiert noch immer [WMF 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/). Weitere Informationen zur WMF 5.1-Preview finden Sie in [diesem Blog]( https://blogs.msdn.microsoft.com/powershell/2016/07/16/announcing-windows-management-framework-wmf-5-1-preview/).
+  - Unterstützung für WMF 5.1 Preview Bei der ersten Veröffentlichung war diese Version ein optionales Upgrade, und zur Installation von WMF 5.1 Preview musste in der Resource Manager-Vorlage Wmfversion = ‘5.1PP’ angegeben werden. Wmfversion = „neueste Version“ installiert noch immer [WMF 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/). Weitere Informationen zur WMF 5.1-Preview finden Sie in [diesem Blog](https://blogs.msdn.microsoft.com/powershell/2016/07/16/announcing-windows-management-framework-wmf-5-1-preview/).
   - Es wurden weitere geringfügige Korrekturen und Verbesserungen hinzugefügt.
 
 ### <a name="version--219"></a>Version 2.19

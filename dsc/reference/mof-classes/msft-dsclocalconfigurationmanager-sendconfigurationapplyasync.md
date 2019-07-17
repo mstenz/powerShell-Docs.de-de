@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
-title: SendConfigurationApplyAsync-Methode der MSFT_DSCLocalConfigurationManager-Klasse
-ms.openlocfilehash: b028079cf826719967858f50e357b441ba8f9d79
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: SendConfigurationApplyAsync-Methode
+ms.openlocfilehash: c0e6dc9418757ee719e848fa8e7006dd73d91ad8
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62078276"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734306"
 ---
-# <a name="sendconfigurationapplyasync-method-of-the-msftdsclocalconfigurationmanager-class"></a>SendConfigurationApplyAsync-Methode der MSFT_DSCLocalConfigurationManager-Klasse
+# <a name="sendconfigurationapplyasync-method"></a>SendConfigurationApplyAsync-Methode
 
 Sendet das Konfigurationsdokument asynchron an den verwalteten Knoten und verwendet den Konfigurations-Agent, um die Konfiguration anzuwenden.
 

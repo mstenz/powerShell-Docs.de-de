@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
-title: PerformRequiredConfigurationChecks-Methode der MSFT_DSCLocalConfigurationManager-Klasse
-ms.openlocfilehash: b92eefb7fbea6d96afa31f6b802ba10fe20d4103
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: PerformRequiredConfigurationChecks-Methode
+ms.openlocfilehash: 909e3a48d08e0220ab0efc6a03bea7ead5d9843e
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62078435"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734408"
 ---
-# <a name="performrequiredconfigurationchecks-method-of-the-msftdsclocalconfigurationmanager-class"></a>PerformRequiredConfigurationChecks-Methode der MSFT_DSCLocalConfigurationManager-Klasse
+# <a name="performrequiredconfigurationchecks-method"></a>PerformRequiredConfigurationChecks-Methode
 
 Startet eine Konsistenzprüfung unter Verwendung des Taskplaners.
 

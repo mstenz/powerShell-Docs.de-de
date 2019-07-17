@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Verwenden von Konfigurationsdaten
-ms.openlocfilehash: f2d25b9ced805fb4c91378ebfe840104eb6ce52a
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 7d13b19ba932d1a818194a221f145fd1a3832547
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080219"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727209"
 ---
 # <a name="using-configuration-data-in-dsc"></a>Verwenden von Konfigurationsdaten in DSC
 
@@ -191,7 +191,7 @@ DSC stellt die folgenden speziellen Variablen bereit, die in einem Skript verwen
 - **ConfigurationData** bezieht sich auf die gesamte Hashtabelle, die beim Kompilieren einer Konfiguration als Parameter übergeben wird.
 - **MyTypeName** enthält den [Namen der Konfiguration](configurations.md), in der die Variable verwendet wird. In der Konfiguration `MyDscConfiguration` weist `$MyTypeName` beispielsweise den Wert `MyDscConfiguration` auf.
 - **Nodes** bezieht sich auf einen bestimmten Eintrag in der **AllNodes**-Sammlung, nachdem sie mithilfe von **.Where()** oder **.ForEach()** gefiltert wurde.
-  - Weitere Informationen zu diesen Methoden finden Sie unter [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md).
+  - Weitere Informationen zu diesen Methoden finden Sie unter [about_arrays](/powershell/module/microsoft.powershell.core/about/about_arrays).
 
 ## <a name="using-non-node-data"></a>Verwenden von Daten ohne Knoten
 

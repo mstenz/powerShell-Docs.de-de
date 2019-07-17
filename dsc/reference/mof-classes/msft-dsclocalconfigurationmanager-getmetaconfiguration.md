@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
-title: GetMetaConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse
-ms.openlocfilehash: e14237ef68b95d68e2f14071aa1fa6ba0717f39f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: GetMetaConfiguration-Methode
+ms.openlocfilehash: bd280cb8ebd7b0522e4e01cbd24bd9bdcfddf4c2
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62078519"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734451"
 ---
-# <a name="getmetaconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>GetMetaConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse
+# <a name="getmetaconfiguration-method"></a>GetMetaConfiguration-Methode
 
 Ruft die Einstellungen des lokalen Konfigurations-Managers ab, die zur Steuerung des Konfigurations-Agents verwendet werden.
 

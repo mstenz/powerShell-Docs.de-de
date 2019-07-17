@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
-title: GetConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse
-ms.openlocfilehash: ae31ac30c152c96707b764ddaf00c924806afcfc
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: GetConfiguration-Methode
+ms.openlocfilehash: eabc536cfe69abe1144ff031a6f64c09a772e638
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62078652"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734523"
 ---
-# <a name="getconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>GetConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse
+# <a name="getconfiguration-method"></a>GetConfiguration-Methode
 
 Sendet das Konfigurationsdokument an den verwalteten Knoten und verwendet die **Get**-Methode des Konfigurations-Agents, um die Konfiguration anzuwenden.
 
