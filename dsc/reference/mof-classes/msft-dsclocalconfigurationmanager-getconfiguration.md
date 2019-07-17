@@ -1,19 +1,19 @@
 ---
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
-title: GetConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse
-ms.openlocfilehash: ae31ac30c152c96707b764ddaf00c924806afcfc
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: GetConfiguration-Methode
+ms.openlocfilehash: eabc536cfe69abe1144ff031a6f64c09a772e638
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62078652"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734523"
 ---
-# <a name="getconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="b8fea-103">GetConfiguration-Methode der MSFT_DSCLocalConfigurationManager-Klasse</span><span class="sxs-lookup"><span data-stu-id="b8fea-103">GetConfiguration method of the MSFT_DSCLocalConfigurationManager class</span></span>
+# <a name="getconfiguration-method"></a><span data-ttu-id="ea980-103">GetConfiguration-Methode</span><span class="sxs-lookup"><span data-stu-id="ea980-103">GetConfiguration method</span></span>
 
-<span data-ttu-id="b8fea-104">Sendet das Konfigurationsdokument an den verwalteten Knoten und verwendet die **Get**-Methode des Konfigurations-Agents, um die Konfiguration anzuwenden.</span><span class="sxs-lookup"><span data-stu-id="b8fea-104">Sends the configuration document to the managed node and uses the **Get** method of the Configuration Agent to apply the configuration.</span></span>
+<span data-ttu-id="ea980-104">Sendet das Konfigurationsdokument an den verwalteten Knoten und verwendet die **Get**-Methode des Konfigurations-Agents, um die Konfiguration anzuwenden.</span><span class="sxs-lookup"><span data-stu-id="ea980-104">Sends the configuration document to the managed node and uses the **Get** method of the Configuration Agent to apply the configuration.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="b8fea-105">Syntax</span><span class="sxs-lookup"><span data-stu-id="b8fea-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="ea980-105">Syntax</span><span class="sxs-lookup"><span data-stu-id="ea980-105">Syntax</span></span>
 
 ```mof
 uint32 GetConfiguration(
@@ -22,26 +22,26 @@ uint32 GetConfiguration(
 );
 ```
 
-## <a name="parameters"></a><span data-ttu-id="b8fea-106">Parameter</span><span class="sxs-lookup"><span data-stu-id="b8fea-106">Parameters</span></span>
+## <a name="parameters"></a><span data-ttu-id="ea980-106">Parameter</span><span class="sxs-lookup"><span data-stu-id="ea980-106">Parameters</span></span>
 
-<span data-ttu-id="b8fea-107">*configurationData* \[in\] Gibt die zu sendenden Konfigurationsdaten an.</span><span class="sxs-lookup"><span data-stu-id="b8fea-107">*configurationData* \[in\] Specifies the configuration data to send.</span></span>
+<span data-ttu-id="ea980-107">*configurationData* \[in\] Gibt die zu sendenden Konfigurationsdaten an.</span><span class="sxs-lookup"><span data-stu-id="ea980-107">*configurationData* \[in\] Specifies the configuration data to send.</span></span>
 
-<span data-ttu-id="b8fea-108">*configurations* \[out\] Enthält bei Rückgabe eine eingebettete Instanz der Konfigurationen.</span><span class="sxs-lookup"><span data-stu-id="b8fea-108">*configurations* \[out\] On return, contains an embedded instance of the configurations.</span></span>
+<span data-ttu-id="ea980-108">*configurations* \[out\] Enthält bei Rückgabe eine eingebettete Instanz der Konfigurationen.</span><span class="sxs-lookup"><span data-stu-id="ea980-108">*configurations* \[out\] On return, contains an embedded instance of the configurations.</span></span>
 
-## <a name="return-value"></a><span data-ttu-id="b8fea-109">Rückgabewert</span><span class="sxs-lookup"><span data-stu-id="b8fea-109">Return value</span></span>
+## <a name="return-value"></a><span data-ttu-id="ea980-109">Rückgabewert</span><span class="sxs-lookup"><span data-stu-id="ea980-109">Return value</span></span>
 
-<span data-ttu-id="b8fea-110">Gibt bei Erfolg null zurück, andernfalls einen Fehlercode.</span><span class="sxs-lookup"><span data-stu-id="b8fea-110">Returns zero on success; otherwise returns an error code.</span></span>
+<span data-ttu-id="ea980-110">Gibt bei Erfolg null zurück, andernfalls einen Fehlercode.</span><span class="sxs-lookup"><span data-stu-id="ea980-110">Returns zero on success; otherwise returns an error code.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="b8fea-111">Hinweise</span><span class="sxs-lookup"><span data-stu-id="b8fea-111">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="ea980-111">Hinweise</span><span class="sxs-lookup"><span data-stu-id="ea980-111">Remarks</span></span>
 
-<span data-ttu-id="b8fea-112">Dies ist eine statische Methode.</span><span class="sxs-lookup"><span data-stu-id="b8fea-112">This is a static method.</span></span>
+<span data-ttu-id="ea980-112">Dies ist eine statische Methode.</span><span class="sxs-lookup"><span data-stu-id="ea980-112">This is a static method.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="b8fea-113">Anforderungen</span><span class="sxs-lookup"><span data-stu-id="b8fea-113">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="ea980-113">Anforderungen</span><span class="sxs-lookup"><span data-stu-id="ea980-113">Requirements</span></span>
 
-<span data-ttu-id="b8fea-114">**MOF:** DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="b8fea-114">**MOF:** DscCore.mof</span></span>
+<span data-ttu-id="ea980-114">**MOF:** DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="ea980-114">**MOF:** DscCore.mof</span></span>
 
-<span data-ttu-id="b8fea-115">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="b8fea-115">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
+<span data-ttu-id="ea980-115">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="ea980-115">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="b8fea-116">Siehe auch</span><span class="sxs-lookup"><span data-stu-id="b8fea-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ea980-116">Siehe auch</span><span class="sxs-lookup"><span data-stu-id="ea980-116">See also</span></span>
 
-[<span data-ttu-id="b8fea-117">**MSFT_DSCLocalConfigurationManager-Klasse**</span><span class="sxs-lookup"><span data-stu-id="b8fea-117">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
+[<span data-ttu-id="ea980-117">**MSFT_DSCLocalConfigurationManager-Klasse**</span><span class="sxs-lookup"><span data-stu-id="ea980-117">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
