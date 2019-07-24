@@ -2,16 +2,16 @@
 title: Neuigkeiten in PowerShell Core 6.0
 description: Neue Features und Änderungen in PowerShell Core 6.0
 ms.date: 08/06/2018
-ms.openlocfilehash: 83c104d838db9d86fe1d485e92245a9c8f2d2057
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: e1218a38398f4d86829cf2b4ba6a3a882675eaab
+ms.sourcegitcommit: 09f02ccef56ef30e7a9ca901f8d3713724960c68
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62059014"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67843919"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>Neuigkeiten in PowerShell Core 6.0
 
-[PowerShell Core 6.0][github] ist eine neue plattformübergreifende (Windows, macOS und Linux) Open Source-Edition von PowerShell, die für heterogene Umgebungen und die Cloud entwickelt wurde.
+[PowerShell Core 6.0][github] ist eine neue, plattformübergreifende (Windows, macOS und Linux) Open Source-Edition von PowerShell, die für heterogene Umgebungen und die Hybrid Cloud entwickelt wurde.
 
 ## <a name="moved-from-net-framework-to-net-core"></a>Aus .NET Framework in .NET Core übernommen
 
@@ -159,7 +159,7 @@ Add-WindowsPSModulePath
 
 PowerShell Core enthält Unterstützung für Docker-Container für alle wichtigen Plattformen, die wir unterstützen, einschließlich mehrerer Linux-Distributionen, Windows Server Core und Nano Server.
 
-Eine vollständige Liste finden Sie unter „Tags“ unter [`microsoft/powershell` im Docker-Hub][docker-hub].
+Eine vollständige Liste finden Sie bei den Tags unter [`microsoft/powershell` auf Docker Hub][docker-hub].
 Weitere Informationen zu Docker und PowerShell Core finden Sie unter [Docker][] auf GitHub.
 
 ## <a name="ssh-based-powershell-remoting"></a>SSH-basiertes PowerShell-Remoting
@@ -169,7 +169,7 @@ Das PowerShell-Remoting-Protokoll (PSRP) funktioniert jetzt nicht nur mit dem he
 Sie können also Cmdlets wie `Enter-PSSession` und `New-PSSession` verwenden und sich mithilfe von SSH authentifizieren.
 Dazu müssen Sie PowerShell nur als Subsystem mit einem OpenSSH-basierten SSH-Server registrieren. Anschließend können Sie Ihre vorhandene SSH-basierte Authentifizierung (z.B. Kennwörter oder private Schlüssel) mit der herkömmlichen `PSSession`-Semantik verwenden.
 
-Weitere Informationen zum Konfigurieren und Verwenden von SSH-basiertem Remoting finden Sie unter [PowerShell Remoting Over SSH (PowerShell-Remoting über SSH)][ssh-remoting].
+Weitere Informationen zum Konfigurieren und Verwenden von SSH-basiertem Remoting finden Sie unter [PowerShell-Remoting über SSH][ssh-remoting].
 
 ## <a name="default-encoding-is-utf-8-without-a-bom-except-for-new-modulemanifest"></a>Die Standardcodierung ist UTF-8 ohne BOM mit Ausnahme von New-ModuleManifest.
 
@@ -295,6 +295,7 @@ Weitere Informationen zu PowerShell-Aufträgen finden Sie unter [about_Jobs](htt
 
 ### <a name="csv-cmdlets"></a>CSV-Cmdlets
 
+- `Import-Csv` unterstützt nun das erweiterte W3C-Protokolldateiformat. (#2482) (Vielen Dank an [@iSazonov](https://github.com/iSazonov))
 - `PSTypeName`-Unterstützung wurde für `Import-Csv` und `ConvertFrom-Csv` hinzugefügt. (#5389) (Vielen Dank an [@markekraus](https://github.com/markekraus))
 - `Import-Csv` unterstützt nun `CR`, `LF` und `CRLF` als Zeilentrennzeichen. (#5363) (Vielen Dank an [@iSazonov](https://github.com/iSazonov))
 - `-NoTypeInformation` ist nun der Standard für `Export-Csv` und `ConvertTo-Csv`. (#5164) (Vielen Dank an [@markekraus](https://github.com/markekraus))
@@ -346,7 +347,7 @@ Weitere Informationen zu PowerShell-Aufträgen finden Sie unter [about_Jobs](htt
 ## <a name="breaking-changes"></a>Wichtige Änderungen
 
 Wir haben einige wichtige Änderungen in PowerShell Core 6.0 eingeführt.
-Weitere Informationen finden Sie unter [Breaking Changes for PowerShell 6.0 (Wichtige Änderungen in PowerShell 6.0)][breaking-changes].
+Weitere Informationen finden Sie unter [Breaking Changes in PowerShell 6.0][breaking-changes].
 
 ## <a name="debugging"></a>Debuggen
 
@@ -375,8 +376,8 @@ Eine vollständige Liste der Korrekturen und Änderungen finden Sie unter [Chang
 
 Wenn Sie diese Telemetrie deaktivieren möchten, erstellen Sie einfach die Umgebungsvariable `POWERSHELL_TELEMETRY_OPTOUT` mit einem der folgenden Werte: `true`, `1` oder `yes`.
 Durch das Erstellen der Variable wird das Senden von Telemetriedaten bereits vor der ersten Ausführung von PowerShell umgangen.
-Diese Telemetriedaten und die Erkenntnisse, die wir daraus ziehen, sollen auf dem [Community-Dashboard][community-dashboard] veröffentlicht werden.
-Weitere Informationen dazu, wie wir diese Daten verwenden, finden Sie [in diesem Blogbeitrag][telemetry-blog].
+Diese Telemetriedaten und die daraus gewonnenen Erkenntnisse sollen im [Community-Dashboard][community-dashboard] veröffentlicht werden.
+Weitere Informationen zur Verwendung dieser Daten finden Sie in diesem [Blogbeitrag][telemetry-blog].
 
 [github]: https://github.com/PowerShell/PowerShell
 [.NET Core 2.0]: https://docs.microsoft.com/dotnet/core/

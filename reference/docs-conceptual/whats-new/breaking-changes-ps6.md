@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: powershell,core
 title: Breaking Changes in PowerShell Core 6.0
-ms.openlocfilehash: d25cf07baa11040af57f330feede44635c00c551
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 186e55c1ac46ce3fc172df18995f8c15d9eeb8eb
+ms.sourcegitcommit: 09f02ccef56ef30e7a9ca901f8d3713724960c68
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62085931"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67843939"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>Breaking Changes in PowerShell Core 6.0
 
@@ -15,7 +15,7 @@ ms.locfileid: "62085931"
 
 ### <a name="powershell-workflow"></a>PowerShell-Workflow
 
-Der [PowerShell-Workflow][workflow] ist ein Feature in Windows PowerShell, das auf [Windows Workflow Foundation (WF)][workflow-foundation] basiert und die Erstellung von stabilen Runbooks für lang andauernde oder parallelisierte Aufgaben ermöglicht.
+[PowerShell-Workflow][workflow] is a feature in Windows PowerShell that builds on top of [Windows Workflow Foundation (WF)][workflow-foundation], der die Erstellung robuster Runbooks für lang andauernde oder parallele Aufgaben ermöglicht.
 
 Da Windows Workflow Foundation in .NET Core nicht unterstützt wird, wird der PowerShell-Workflow in PowerShell Core nicht mehr unterstützt.
 
@@ -26,7 +26,7 @@ Zukünftig soll die native Parallelität in der PowerShell-Sprache ohne Notwendi
 
 ### <a name="custom-snap-ins"></a>Benutzerdefinierte Snap-Ins
 
-[PowerShell-Snap-Ins][snapin] sind die Vorgänger von PowerShell-Modulen und sind in der PowerShell-Community nicht weit verbreitet.
+[PowerShell-Snap-Ins][snapin] sind die Vorgänger von PowerShell-Modulen und in der PowerShell-Community nicht weit verbreitet.
 
 Aufgrund der Komplexität der unterstützenden Snap-Ins und der zu geringen Verwendung in der Community werden benutzerdefinierte Snap-Ins in PowerShell Core nicht mehr unterstützt.
 
@@ -113,9 +113,13 @@ Zuvor wurde das Verhalten von `$ErrorActionPreference` überschrieben, wenn `-Ve
 
 Wenn eine API nur `null` zurückgibt, hat Invoke-RestMethod dies als die Zeichenfolge `"null"` statt `$null` serialisiert. Diese Änderung korrigiert die Logik in `Invoke-RestMethod`, um das gültige JSON-Literal mit Einzelwert `null` ordnungsgemäß als `$null` zu serialisieren.
 
-### <a name="remove--computername-from--computer-cmdlets-5277httpsgithubcompowershellpowershellissues5277"></a>Entfernung von `-ComputerName` aus `*-Computer`-Cmdlets [#5277](https://github.com/PowerShell/PowerShell/issues/5277)
+### <a name="remove--protocol-from--computer-cmdlets-5277httpsgithubcompowershellpowershellissues5277"></a>Entfernung von `-Protocol` aus `*-Computer`-Cmdlets [#5277](https://github.com/PowerShell/PowerShell/issues/5277)
 
-Aufgrund von Problemen mit dem RPC-Remoting in CoreFX (insbesondere auf anderen Plattformen als Windows) und zur Gewährleistung einer konsistenten Remotingumgebung in PowerShell wurde der Parameter `-ComputerName` aus den `\*-Computer`-Cmdlets entfernt. Verwenden Sie stattdessen `Invoke-Command`, um Cmdlets remote auszuführen.
+Aufgrund von Problemen mit dem RPC-Remoting in CoreFX (insbesondere auf anderen Plattformen als Windows) und zur Gewährleistung einer konsistenten Remotingumgebung in PowerShell wurde der Parameter `-Protocol` aus den `\*-Computer`-Cmdlets entfernt. DCOM wird für das Remoting nicht mehr unterstützt. Die folgenden Cmdlets unterstützen nur das WSMAN-Remoting:
+
+- Rename-Computer
+- Restart-Computer
+- Stop-Computer
 
 ### <a name="remove--computername-from--service-cmdlets-5090httpsgithubcompowershellpowershellissues5094"></a>Entfernung von `-ComputerName` aus `*-Service`-Cmdlets [#5090](https://github.com/PowerShell/PowerShell/issues/5094)
 
@@ -159,7 +163,7 @@ Folgende Features wurden entfernt, da sie in PowerShell Core nicht unterstützt 
 
 ### <a name="removed-runspaceconfiguration-support-4942httpsgithubcompowershellpowershellissues4942"></a>Entfernung der Unterstützung von `RunspaceConfiguration` [#4942](https://github.com/PowerShell/PowerShell/issues/4942)
 
-Zuvor konnten Sie bei der programmgesteuerten Erstellung eines PowerShell-Runspaces mithilfe der API die veraltete Klasse [`RunspaceConfiguration`][runspaceconfig] oder die neuere Klasse [`InitialSessionState`][iss] verwenden. Durch diese Änderung wurde die Unterstützung für `RunspaceConfiguration` entfernt, sodass nur noch `InitialSessionState` unterstützt wird.
+Zuvor konnten Sie bei der programmgesteuerten Erstellung eines PowerShell-Runspaces mithilfe der API die veraltete Klasse [`RunspaceConfiguration`][runspaceconfig] or the newer [`InitialSessionState`][iss] verwenden. Durch diese Änderung wurde die Unterstützung für `RunspaceConfiguration` entfernt, sodass nur noch `InitialSessionState` unterstützt wird.
 
 [runspaceconfig]: https://docs.microsoft.com/dotnet/api/system.management.automation.runspaces.runspaceconfiguration
 [iss]: https://docs.microsoft.com/dotnet/api/system.management.automation.runspaces.initialsessionstate
@@ -172,7 +176,7 @@ Die falsche Position eines Parameters führte dazu, dass die Argumente als Einga
 
 `-showwindow` basiert auf WPF. Dies wird auf CoreCLR nicht unterstützt.
 
-### <a name="allow--to-be-used-in-registry-path-for-remove-item-4866httpsgithubcompowershellpowershellissues4866"></a>* kann jetzt in Registrierungspfaden für `Remove-Item` verwendet werden [#4866](https://github.com/PowerShell/PowerShell/issues/4866)
+### <a name="allow--to-be-used-in-registry-path-for-remove-item-4866httpsgithubcompowershellpowershellissues4866"></a>\* kann jetzt in Registrierungspfaden für `Remove-Item` verwendet werden [#4866](https://github.com/PowerShell/PowerShell/issues/4866)
 
 Zuvor wurde ein `-LiteralPath`-Cmdlet im Hintergrund beendet, wenn ein Platzhalter es wie `-Path` behandelt und dieser keine Dateien findet. Korrekterweise sollte `-LiteralPath` ein Literal sein, sodass ein Fehler angezeigt wird, wenn die Datei nicht vorhanden ist. Die Änderung besteht darin, dass Platzhalter, die mit `-Literal` verwendet werden, als Literal behandelt werden.
 

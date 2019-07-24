@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,setup
 title: Angeben knotenübergreifender Abhängigkeiten
-ms.openlocfilehash: 1bdfbd9f8a94809d6bf410eff525e1c877fb6aad
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 62e553d894897ae1908745c2788b7b7b9cbe50ff
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080202"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734675"
 ---
 # <a name="specifying-cross-node-dependencies"></a>Angeben knotenübergreifender Abhängigkeiten
 
@@ -55,14 +55,22 @@ WaitForSome [String] #ResourceName
 
 Alle **WaitForXXXX**-Ressourcen verwenden die folgenden Syntaxschlüssel gemeinsam.
 
-|  Eigenschaft  |  Beschreibung   | | RetryIntervalSec| Die Anzahl der Sekunden vor einem Wiederholungsversuch. Der Mindestwert ist 1.| | RetryCount| Die maximale Anzahl der Wiederholungsversuche.| | ThrottleLimit| Die Anzahl der gleichzeitig zu verbindenden Computer. Der Standardwert ist `New-CimSession`.| | DependsOn | Gibt an, dass die Konfiguration einer anderen Ressource ausgeführt werden muss, bevor diese Ressource konfiguriert wird. Weitere Informationen finden Sie unter [DependsOn](resource-depends-on.md)| | PsDscRunAsCredential | Siehe [Verwenden von DSC mit Benutzeranmeldeinformationen](./runAsUser.md) |
-
+|Eigenschaft|  Beschreibung   |
+|---------|---------------------|
+| RetryIntervalSec| Die Anzahl von Sekunden bis zu einem Neuversuch. Der Mindestwert lautet 1.|
+| RetryCount| Die maximal zulässige Anzahl von Neuversuchen.|
+| ThrottleLimit| Die Anzahl von Computern, die gleichzeitig eine Verbindung herstellen können. Die Standardeinstellung lautet `New-CimSession`.|
+| DependsOn | Gibt an, dass die Konfiguration einer anderen Ressource ausgeführt werden muss, bevor diese Ressource konfiguriert wird. Weitere Informationen finden Sie unter [DependsOn](resource-depends-on.md).|
+| PsDscRunAsCredential | Informationen finden Sie unter [Verwenden von DSC mit Benutzeranmeldeinformationen](./runAsUser.md). |
 
 ## <a name="using-waitforxxxx-resources"></a>Verwenden von WaitForXXXX-Ressourcen
 
-Jede **WaitForXXXX**-Ressource wartet darauf, dass die angegebenen Ressourcen auf dem angegebenen Knoten abgeschlossen werden. Andere Ressourcen in derselben Konfiguration können dann von der **WaitForXXXX**-Ressource mit dem Schlüssel **DependsOn** als *abhängig* gekennzeichnet werden.
+Jede **WaitForXXXX**-Ressource wartet darauf, dass die angegebenen Ressourcen auf dem angegebenen Knoten abgeschlossen werden.
+Andere Ressourcen in derselben Konfiguration können dann von der **WaitForXXXX**-Ressource mit dem Schlüssel **DependsOn** als *abhängig* gekennzeichnet werden.
 
 Bei der folgenden Konfiguration wartet der Zielknoten beispielsweise, bis die Ressource **xADDomain** auf dem Knoten **MyDC** (bei einer maximalen Anzahl von 30 Wiederholungen in 15-Sekunden-Intervallen) abgeschlossen ist, ehe der Zielknoten der Domäne beitreten kann.
+
+Standardmäßig führen die **WaitForXXXX**-Ressourcen einen Versuch durch und verursachen dann einen Fehler. Auch wenn dies nicht erforderlich ist, sollten Sie in der Regel **RetryCount** sowie **RetryIntervalSec** angeben.
 
 ```powershell
 Configuration JoinDomain
@@ -111,7 +119,9 @@ Configuration JoinDomain
 
 Wenn Sie die Konfiguration kompilieren, werden zwei MOF-Dateien generiert. Wenden Sie beide MOF-Dateien mit dem Cmdlet [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) auf die Zielknoten an.
 
->**Hinweis:** Standardmäßig führen die WaitForXXXX-Ressourcen einen Versuch durch und verursachen dann einen Fehler. Auch wenn dies nicht erforderlich ist, sollten Sie in der Regel **RetryCount** sowie **RetryIntervalSec** angeben.
+> [!NOTE]
+> Die Ressource **WaitForXXX** verwendet die Windows-Remoteverwaltung, um den Status anderer Knoten zu überprüfen.
+> Weitere Informationen zu Anforderungen zur Portierung und Sicherheit für WinRM finden Sie unter [Sicherheitsaspekte von PowerShell-Remoting](/powershell/scripting/learn/remoting/winrmsecurity?view=powershell-6).
 
 ## <a name="see-also"></a>Weitere Informationen
 
