@@ -2,12 +2,12 @@
 title: PowerShell-Remoting über SSH
 description: Remoting in PowerShell Core mithilfe von SSH
 ms.date: 08/14/2018
-ms.openlocfilehash: 1d7bcb69c7e784bf745cb5c2633106ea53f6226a
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: d994a3888b9a372b803a65666634775a8905d63a
+ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086390"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68372137"
 ---
 # <a name="powershell-remoting-over-ssh"></a>PowerShell-Remoting über SSH
 
@@ -17,8 +17,7 @@ In der Regel wird beim PowerShell-Remoting für die Aushandlung der Verbindung u
 
 WinRM bietet ein stabiles Hostingmodell für PowerShell-Remotesitzungen. SSH-basiertes Remoting unterstützt derzeit nicht die Remotekonfiguration von Endpunkten und JEA (Just Enough Administration, minimale Verwaltung).
 
-Mithilfe von SSH-Remoting können Sie grundlegendes PowerShell-Remoting von Sitzungen zwischen Windows- und Linux-Computern ausführen. SSH-Remoting erstellt einen PowerShell-Hostprozess als SSH-Subsystem auf dem Zielcomputer.
-Schließlich implementieren wir ein allgemeines mit WinRM vergleichbares Hostingmodell, um die Endpunktkonfiguration und JEA zu unterstützen.
+Mithilfe von SSH-Remoting können Sie grundlegendes PowerShell-Remoting von Sitzungen zwischen Windows- und Linux-Computern ausführen. SSH-Remoting erstellt einen PowerShell-Hostprozess als SSH-Subsystem auf dem Zielcomputer. Schließlich implementieren wir ein allgemeines mit WinRM vergleichbares Hostingmodell, um die Endpunktkonfiguration und JEA zu unterstützen.
 
 Die Cmdlets `New-PSSession`, `Enter-PSSession` und `Invoke-Command` verfügen nun über einen neuen Parameter, der diese neue Remotingverbindung unterstützt.
 
@@ -30,7 +29,7 @@ Um eine Remotesitzung zu erstellen, geben Sie den Zielcomputer über den `HostNa
 
 ## <a name="general-setup-information"></a>Allgemeine Setupinformationen
 
-SSH muss auf allen Computern installiert sein. Installieren Sie den SSH-Client (`ssh.exe`) und -Server (`sshd.exe`), damit Sie Remoting zwischen den Computern nutzen können. OpenSSH für Windows ist nun im Windows 10-Build 1809 sowie in Windows Server 2019 verfügbar. Weitere Informationen erhalten Sie unter [OpenSSH for Windows (OpenSSH für Windows)](/windows-server/administration/openssh/openssh_overview). Installieren Sie für Linux SSH (einschließlich SSHD-Server) entsprechend Ihrer Plattform. Sie müssen auch PowerShell Core über GitHub installieren, um das SSH-Remotingfeature zu erhalten. Der SSH-Server muss konfiguriert werden, um ein SSH-Subsystem zum Hosten eines PowerShell-Prozesses auf dem Remotecomputer zu erstellen. Sie müssen auch eine kennwort- oder schlüsselbasierte Authentifizierung konfigurieren und aktivieren.
+SSH muss auf allen Computern installiert sein. Installieren Sie den SSH-Client (`ssh.exe`) und -Server (`sshd.exe`), damit Sie Remoting zwischen den Computern nutzen können. OpenSSH für Windows ist jetzt im Windows 10-Build 1809 sowie in Windows Server 2019 verfügbar. Weitere Informationen erhalten Sie unter [OpenSSH for Windows (OpenSSH für Windows)](/windows-server/administration/openssh/openssh_overview). Installieren Sie für Linux SSH (einschließlich SSHD-Server) entsprechend Ihrer Plattform. Sie müssen auch PowerShell Core über GitHub installieren, um das SSH-Remotingfeature zu erhalten. Der SSH-Server muss konfiguriert werden, um ein SSH-Subsystem zum Hosten eines PowerShell-Prozesses auf dem Remotecomputer zu erstellen. Sie müssen auch eine kennwort- oder schlüsselbasierte Authentifizierung konfigurieren und aktivieren.
 
 ## <a name="set-up-on-windows-machine"></a>Setup auf dem Windows-Computer
 
@@ -88,9 +87,9 @@ SSH muss auf allen Computern installiert sein. Installieren Sie den SSH-Client (
 
 5. Fügen Sie den Pfad der OpenSSH-Installation der Umgebungsvariablen „Path“ hinzu. Beispiel: `C:\Program Files\OpenSSH\`. Durch diesen Eintrag kann die Datei „ssh.exe“ gefunden werden.
 
-## <a name="set-up-on-linux-ubuntu-1404-machine"></a>Setup auf einem Linux-Computer (Ubuntu 14.04)
+## <a name="set-up-on-linux-ubuntu-1604-machine"></a>Setup auf einem Linux-Computer (Ubuntu 16.04)
 
-1. Installieren Sie den neusten Build von [PowerShell Core für Linux](../../install/installing-powershell-core-on-linux.md#ubuntu-1404) über GitHub.
+1. Installieren Sie den neusten Build von [PowerShell Core für Linux](../../install/installing-powershell-core-on-linux.md#ubuntu-1604) über GitHub.
 2. Installieren Sie ggf. [Ubuntu SSH](https://help.ubuntu.com/lts/serverguide/openssh-server.html).
 
    ```bash
@@ -169,11 +168,7 @@ SSH muss auf allen Computern installiert sein. Installieren Sie den SSH-Client (
 
 ## <a name="authentication"></a>Authentifizierung
 
-PowerShell-Remoting über SSH basiert auf dem Authentifizierungsaustausch zwischen dem SSH-Client und dem SSH-Dienst und implementiert selbst keine Authentifizierungsschemas.
-Dies bedeutet, dass alle konfigurierten Authentifizierungsschemas, einschließlich der mehrstufigen Authentifizierung, von SSH und unabhängig von PowerShell verarbeitet werden.
-Sie können den SSH-Dienst beispielsweise für die Authentifizierung mit öffentlichen Schlüsseln oder die Verwendung eines Einmalkennworts zur Erhöhung der Sicherheit konfigurieren.
-Die Konfiguration einer mehrstufigen Authentifizierung wird in dieser Dokumentation nicht beschrieben.
-Bevor Sie versuchen, eine mehrstufige Authentifizierung mit PowerShell-Remoting zu verwenden, informieren Sie sich in der Dokumentation für SSH, wie Sie eine mehrstufige Authentifizierung richtig konfigurieren, und testen Sie, ob diese außerhalb von PowerShell funktioniert.
+PowerShell-Remoting über SSH basiert auf dem Authentifizierungsaustausch zwischen dem SSH-Client und dem SSH-Dienst und implementiert selbst keine Authentifizierungsschemas. Dies bedeutet, dass alle konfigurierten Authentifizierungsschemas, einschließlich der mehrstufigen Authentifizierung, von SSH und unabhängig von PowerShell verarbeitet werden. Sie können den SSH-Dienst beispielsweise für die Authentifizierung mit öffentlichen Schlüsseln oder die Verwendung eines Einmalkennworts zur Erhöhung der Sicherheit konfigurieren. Die Konfiguration einer mehrstufigen Authentifizierung wird in dieser Dokumentation nicht beschrieben. Bevor Sie versuchen, eine mehrstufige Authentifizierung mit PowerShell-Remoting zu verwenden, informieren Sie sich in der Dokumentation für SSH, wie Sie eine mehrstufige Authentifizierung richtig konfigurieren, und testen Sie, ob diese außerhalb von PowerShell funktioniert.
 
 ## <a name="powershell-remoting-example"></a>Beispiel für das PowerShell-Remoting
 
@@ -209,7 +204,7 @@ Enter-PSSession $session
 
 ```output
 [UbuntuVM1]: PS /home/TestUser> uname -a
-Linux TestUser-UbuntuVM1 4.2.0-42-generic 49~14.04.1-Ubuntu SMP Wed Jun 29 20:22:11 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
+Linux TestUser-UbuntuVM1 4.2.0-42-generic 49~16.04.1-Ubuntu SMP Wed Jun 29 20:22:11 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
 
 [UbuntuVM1]: PS /home/TestUser> Exit-PSSession
 ```
@@ -310,7 +305,7 @@ Der Befehl „sudo“ funktioniert bei Remotesitzungen auf Linux-Computern nicht
 
 [PowerShell Core für Windows](../../install/installing-powershell-core-on-windows.md#msi)
 
-[PowerShell Core für Linux](../../install/installing-powershell-core-on-linux.md#ubuntu-1404)
+[PowerShell Core für Linux](../../install/installing-powershell-core-on-linux.md#ubuntu-1604)
 
 [PowerShell Core für macOS](../../install/installing-powershell-core-on-macos.md)
 
