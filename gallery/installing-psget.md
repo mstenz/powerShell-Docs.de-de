@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: gallery,powershell,cmdlet,psget
 title: Installieren von PowerShellGet
-ms.openlocfilehash: 23a53a9117c9f6a7ad157b635cd7ff4b3b3444c5
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2d3ba8c4d4d4c7ee023c7e6a948a29d8f47ea242
+ms.sourcegitcommit: 8d47eb41445ffaf10fcd68874e397c9a1703d898
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62075272"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68601416"
 ---
 # <a name="installing-powershellget"></a>Installieren von PowerShellGet
 
@@ -28,7 +28,7 @@ ms.locfileid: "62075272"
 - Bevor Sie PowerShellGet aktualisieren, sollten Sie immer den neuesten NuGet-Anbieter installieren. Führen Sie hierzu den folgenden Befehl in einer PowerShell-Sitzung mit erhöhten Rechten aus.
 
   ```powershell
-  Install-PackageProvider Nuget –Force
+  Install-PackageProvider Nuget -Force
   Exit
   ```
 
@@ -37,7 +37,7 @@ ms.locfileid: "62075272"
 - Führen Sie hierzu unter Windows 10, Windows Server 2016 auf einem beliebigen System mit WMF 5.0 oder 5.1 oder auf einem beliebigen System mit PowerShell 6 den folgenden Befehl aus einer PowerShell-Sitzung mit erhöhten Rechten aus.
 
   ```powershell
-  Install-Module –Name PowerShellGet –Force
+  Install-Module -Name PowerShellGet -Force
   Exit
   ```
 
