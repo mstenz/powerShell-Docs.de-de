@@ -3,10 +3,10 @@ ms.date: 05/17/2018
 keywords: powershell,core
 title: Breaking Changes in PowerShell Core 6.0
 ms.openlocfilehash: 186e55c1ac46ce3fc172df18995f8c15d9eeb8eb
-ms.sourcegitcommit: 09f02ccef56ef30e7a9ca901f8d3713724960c68
+ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/12/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "67843939"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>Breaking Changes in PowerShell Core 6.0
@@ -15,7 +15,7 @@ ms.locfileid: "67843939"
 
 ### <a name="powershell-workflow"></a>PowerShell-Workflow
 
-[PowerShell-Workflow][workflow] is a feature in Windows PowerShell that builds on top of [Windows Workflow Foundation (WF)][workflow-foundation], der die Erstellung robuster Runbooks für lang andauernde oder parallele Aufgaben ermöglicht.
+Der [PowerShell-Workflow][workflow] ist ein Feature in Windows PowerShell, das auf [Windows Workflow Foundation (WF)][workflow-foundation] basiert und die Erstellung von stabilen Runbooks für lang andauernde oder parallelisierte Aufgaben ermöglicht.
 
 Da Windows Workflow Foundation in .NET Core nicht unterstützt wird, wird der PowerShell-Workflow in PowerShell Core nicht mehr unterstützt.
 
@@ -163,7 +163,7 @@ Folgende Features wurden entfernt, da sie in PowerShell Core nicht unterstützt 
 
 ### <a name="removed-runspaceconfiguration-support-4942httpsgithubcompowershellpowershellissues4942"></a>Entfernung der Unterstützung von `RunspaceConfiguration` [#4942](https://github.com/PowerShell/PowerShell/issues/4942)
 
-Zuvor konnten Sie bei der programmgesteuerten Erstellung eines PowerShell-Runspaces mithilfe der API die veraltete Klasse [`RunspaceConfiguration`][runspaceconfig] or the newer [`InitialSessionState`][iss] verwenden. Durch diese Änderung wurde die Unterstützung für `RunspaceConfiguration` entfernt, sodass nur noch `InitialSessionState` unterstützt wird.
+Zuvor konnten Sie bei der programmgesteuerten Erstellung eines PowerShell-Runspaces mithilfe der API die veraltete Klasse [`RunspaceConfiguration`][runspaceconfig] oder die neuere Klasse [`InitialSessionState`][iss] verwenden. Durch diese Änderung wurde die Unterstützung für `RunspaceConfiguration` entfernt, sodass nur noch `InitialSessionState` unterstützt wird.
 
 [runspaceconfig]: https://docs.microsoft.com/dotnet/api/system.management.automation.runspaces.runspaceconfiguration
 [iss]: https://docs.microsoft.com/dotnet/api/system.management.automation.runspaces.initialsessionstate
@@ -176,7 +176,7 @@ Die falsche Position eines Parameters führte dazu, dass die Argumente als Einga
 
 `-showwindow` basiert auf WPF. Dies wird auf CoreCLR nicht unterstützt.
 
-### <a name="allow--to-be-used-in-registry-path-for-remove-item-4866httpsgithubcompowershellpowershellissues4866"></a>\* kann jetzt in Registrierungspfaden für `Remove-Item` verwendet werden [#4866](https://github.com/PowerShell/PowerShell/issues/4866)
+### <a name="allow--to-be-used-in-registry-path-for-remove-item-4866httpsgithubcompowershellpowershellissues4866"></a>* kann jetzt in Registrierungspfaden für `Remove-Item` verwendet werden [#4866](https://github.com/PowerShell/PowerShell/issues/4866)
 
 Zuvor wurde ein `-LiteralPath`-Cmdlet im Hintergrund beendet, wenn ein Platzhalter es wie `-Path` behandelt und dieser keine Dateien findet. Korrekterweise sollte `-LiteralPath` ein Literal sein, sodass ein Fehler angezeigt wird, wenn die Datei nicht vorhanden ist. Die Änderung besteht darin, dass Platzhalter, die mit `-Literal` verwendet werden, als Literal behandelt werden.
 
