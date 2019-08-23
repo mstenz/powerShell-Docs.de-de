@@ -1,5 +1,5 @@
 ---
-title: Cmdlet-Windows-Fehlerberichterstattung | Microsoft-Dokumentation
+title: Cmdlet-Fehlerberichterstattung | Microsoft-Dokumentation
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -14,79 +14,80 @@ helpviewer_keywords:
 - error records [PowerShell], non-terminating
 ms.assetid: 0b014035-52ea-44cb-ab38-bbe463c5465a
 caps.latest.revision: 8
-ms.openlocfilehash: 45f5934314a2871ceb921c7a66b9dfb658d0bd99
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5dfec318438ca139518c596011ac5e56445738ea
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068588"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986323"
 ---
 # <a name="cmdlet-error-reporting"></a>Cmdlet-Fehlerberichterstattung
 
-Cmdlets melden festgestellten Fehler unterschiedlich, abhängig davon, ob die Fehler Fehler beendet werden oder Fehler ohne Abbruch. Fehler mit Abbruch sind Fehler, die dazu führen, dass die Pipeline sofort beendet werden soll, oder Fehler, die auftreten, wenn es keinen Grund gibt, die Verarbeitung wird fortgesetzt. Fehler ohne Abbruch werden diese Fehler, die einen aktuellen Fehler gemeldet, aber das Cmdlet kann weiterhin Verarbeiten von Eingabeobjekten. Mit Fehler ohne Abbruch der Benutzer in der Regel eine Benachrichtigung des Problems, aber das-Cmdlet wird weiterhin das nächste Eingabeobjekt verarbeitet.
+Cmdlets sollten Fehler unterschiedlich melden, je nachdem, ob Fehler durch das Beenden von Fehlern oder nicht abschließende Fehler verursacht werden. Abschließende Fehler sind Fehler, die dazu führen, dass die Pipeline sofort beendet wird, oder Fehler, die auftreten, wenn es keinen Grund gibt, die Verarbeitung fortzusetzen. Fehler, die nicht abgebrochen werden, sind die Fehler, die einen aktuellen Fehlerzustand melden, aber das Cmdlet kann die Verarbeitung von Eingabe Objekten fortsetzen. Bei nicht abschließenden Fehlern wird der Benutzer in der Regel über das Problem benachrichtigt, aber das Cmdlet verarbeitet weiterhin das nächste Eingabe Objekt.
 
-## <a name="terminating-and-nonterminating-errors"></a>Abbruch und ohne Abbruch-Fehler
+## <a name="terminating-and-nonterminating-errors"></a>Abschließende und nicht abschließende Fehler
 
-Die folgenden Richtlinien können verwendet werden, um festzustellen, ob ein Fehlerzustand, einen Fehler mit Abbruch oder ein Fehler ohne Abbruch ist.
+Die folgenden Richtlinien können verwendet werden, um zu bestimmen, ob eine Fehlerbedingung ein Abbruch Fehler oder ein Fehler ohne Abbruch ist.
 
-- Verhindert die fehlerbedingung Ihr Cmdlet Weitere Eingabeobjekten erfolgreich zu verarbeiten? Wenn dies der Fall ist, ist dies ein Fehler mit Abbruch.
+- Verhindert die Fehlerbedingung, dass das Cmdlet keine weiteren Eingabe Objekte verarbeitet? Wenn dies der Fall ist, ist dies ein Abbruch Fehler.
 
-- Bezieht sich die fehlerbedingung auf ein bestimmtes Objekt für die Eingabe oder eine Teilmenge der Eingabeobjekte? Wenn dies der Fall ist, ist dies ein Fehler ohne Abbruch.
+- Handelt es sich um einen Fehlerzustand, der sich auf ein bestimmtes Eingabe Objekt oder eine Teilmenge von Eingabe Objekten bezieht? Wenn dies der Fall ist, ist dies ein Fehler ohne Abbruch.
 
-- Akzeptiert das Cmdlet mehrere Eingabeobjekte, z. B. die Verarbeitung auf einem anderen Eingabeobjekt erfolgreich ausgeführt werden kann? Wenn dies der Fall ist, ist dies ein Fehler ohne Abbruch.
+- Akzeptiert das Cmdlet mehrere Eingabe Objekte, sodass die Verarbeitung für ein anderes Eingabe Objekt erfolgreich ist? Wenn dies der Fall ist, ist dies ein Fehler ohne Abbruch.
 
-- Cmdlets, die mehrere Eingabeobjekte akzeptieren können sollten zwischen was beendet werden und Fehler ohne Abbruch, entscheiden, auch wenn nur ein einzelnes input-Objekt eine bestimmte Situation gilt.
+- Cmdlets, die mehrere Eingabe Objekte akzeptieren können, sollten zwischen den Fehlern beim Beenden und beim nicht beenden entscheiden, auch wenn eine bestimmte Situation nur für ein einzelnes Eingabe Objekt gilt.
 
-- Cmdlets können erhalten eine beliebige Anzahl von Eingabeobjekten und senden eine beliebige Anzahl von Objekten von Erfolg oder Fehler, bevor eine abschließende Ausnahme auszulösen. Es gibt keine Beziehung zwischen der Anzahl von Eingabeobjekten empfangen und die Anzahl der erfolgreichen und fehlerhaften-Objekte, die gesendet werden.
+- Cmdlets können eine beliebige Anzahl von Eingabe Objekten empfangen und eine beliebige Anzahl von Success-oder Error-Objekten senden, bevor eine Abbruch Ausnahme ausgelöst wird. Es gibt keine Beziehung zwischen der Anzahl der empfangenen Eingabe Objekte und der Anzahl der empfangenen Erfolgs-und Fehler Objekte.
 
-- Cmdlets, die nur 0-1-Geben Sie die Objekte, und generieren nur 0 bis 1 annehmen kann Ausgabe Objekte sollten Fehler als Fehler behandeln und abschließende Ausnahmen zu generieren.
+- Cmdlets, die nur 0-1-Eingabe Objekte akzeptieren und nur 0-1 Output-Objekte generieren, sollten Fehler als Fehler beim Abbrechen behandeln und abschließende Ausnahmen generieren.
 
-## <a name="reporting-nonterminating-errors"></a>Melden Sie Fehler ohne Abbruch
+## <a name="reporting-nonterminating-errors"></a>Melden von nicht abschließenden Fehlern
 
-Die berichterstellung für einen Fehler ohne Abbruch sollte immer erfolgen, in der Cmdlet Implementierung des der [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) -Methode, die [ System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) -Methode, oder die [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) Methode. Diese Arten von Fehlern gemeldet werden, durch den Aufruf der [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) -Methode, die wiederum einen Fehlerdatensatz in den fehlerdatenstrom sendet.
+Die Berichterstellung eines Fehlers ohne Abbruch sollte immer innerhalb der Cmdlet-Implementierung der [System. Management. Automation. Cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) -Methode, der [System. Management. Automation. Cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) -Methode oder die [System. Management. Automation. Cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) -Methode. Diese Fehlertypen werden gemeldet, indem die [System. Management. Automation. Cmdlet. Write error](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) -Methode aufgerufen wird, die wiederum einen Fehler Daten Satz an den fehlerstream sendet.
 
-## <a name="reporting-terminating-errors"></a>Melden Sie Fehler mit Abbruch
+## <a name="reporting-terminating-errors"></a>Melden von abschließenden Fehlern
 
-Fehler werden gemeldet, durch Auslösen von Ausnahmen oder durch Aufrufen der [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) Methode. Denken Sie daran, dass die Cmdlets können auch abfangen und lösen Sie Ausnahmen, z. B. OutOfMemory erneut aus, sie sind jedoch nicht erforderlich, die Ausnahmen erneut ausgelöst wird, wie die Windows PowerShell-Laufzeit sie ebenfalls abgefangen werden.
+Abschließende Fehler werden gemeldet, indem Ausnahmen ausgelöst oder die [System. Management. Automation. Cmdlet. ThrowTerminatingError](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) -Methode aufgerufen wird. Beachten Sie, dass Cmdlets Ausnahmen wie z. b. **oudefmemory**auch abfangen und erneut auslösen können, aber Sie müssen Ausnahmen nicht erneut auslösen, da Sie von der PowerShell-Laufzeit ebenfalls abgefangen werden.
 
-Sie können auch eigene Ausnahmen für Probleme für Ihre Situation zu definieren oder zusätzliche Informationen zu einer vorhandenen Ausnahme, die mit der Error-Datensatz hinzuzufügen.
+Sie können auch eigene Ausnahmen für Probleme definieren, die für Ihre Situation spezifisch sind, oder einer vorhandenen Ausnahme mithilfe des Fehler Datensatzes zusätzliche Informationen hinzufügen.
 
-## <a name="error-records"></a>Error-Datensätze
+## <a name="error-records"></a>Fehler Datensätze
 
-Windows PowerShell einen ohne Abbruch Fehlerzustand, durch die Verwendung von beschreibt [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) Objekte. Jede [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) Objekt enthält Fehlerinformationen für die Kategorie, eine optionale Zielobjekt und Details zur fehlerbedingung an.
+PowerShell beschreibt eine nicht abschließende Fehlerbedingung mit [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) -Objekten. Jedes-Objekt stellt Fehler Kategorieinformationen, ein optionales Zielobjekt und Details zum Fehlerzustand bereit.
 
-### <a name="error-identifiers"></a>Fehler-IDs
+### <a name="error-identifiers"></a>Fehler Bezeichner
 
-Fehler-ID ist eine einfache Zeichenfolge, die die fehlerbedingung in das-Cmdlet identifiziert. Windows PowerShell kombiniert diesen Bezeichner mit einer Cmdlet-Bezeichner, der einen Bezeichner für den vollqualifizierten Fehler erstellen, der später verwendet werden kann, wenn fehlerdatenströmen oder Protokollieren von Fehlern, zu filtern, um die Reaktion auf bestimmte Fehler auf oder andere benutzerdefinierte Aktivitäten.
+Der Fehler Bezeichner ist eine einfache Zeichenfolge, die die Fehlerbedingung innerhalb des Cmdlets identifiziert.
+PowerShell kombiniert diesen Bezeichner mit einem Cmdlet-Bezeichner, um einen voll qualifizierten Fehler Bezeichner zu erstellen, der später beim Filtern von Fehler Datenströmen oder Protokollierungs Fehlern, beim reagieren auf bestimmte Fehler oder bei anderen benutzerspezifischen Aktivitäten verwendet werden kann.
 
-Beim Fehler-IDs angeben, sollten die folgenden Richtlinien eingehalten werden.
+Beim Angeben von Fehler bezeichmern sollten die folgenden Richtlinien befolgt werden:
 
-- Unterschiedliche Codepfade werden verschiedene, hoch bestimmte Fehler Bezeichner zuweisen. Jeder Codepfad, der Aufrufe [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) oder [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) muss über einen eigenen Fehler-ID verfügen.
+- Weisen Sie unterschiedliche, sehr spezifische Fehler Bezeichner unterschiedlichen Codepfade zu. Jeder Codepfad, der " [System. Management. Automation. Cmdlet. Write-error](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) " oder " [System. Management. Automation. Cmdlet. ThrowTerminatingError](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) " aufruft, sollte über einen eigenen Fehler Bezeichner verfügen.
 
-- Fehler-IDs sollten für CLR-Ausnahmetypen für Abbruch und ohne Abbruch Fehler eindeutig sein.
+- Fehler Bezeichner sollten für Fehler beim Beenden und beim nicht beenden eindeutig für CLR-Ausnahme Typen (Common Language Runtime) gelten.
 
-- Ändern Sie die Semantik eines Bezeichners Fehler zwischen den Versionen der Cmdlets oder Windows PowerShell-Anbieter nicht. Nachdem die Semantik eines Bezeichners Fehler eingerichtet wurde, sollte es während des Lebenszyklus Ihres Cmdlets konstant.
+- Ändern Sie nicht die Semantik eines Fehler Bezeichners zwischen den Versionen des Cmdlets oder des PowerShell-Anbieters. Nachdem die Semantik eines Fehler Bezeichners festgelegt wurde, sollte Sie während des gesamten Lebenszyklus des Cmdlets konstant bleiben.
 
-- Verwenden Sie für Fehler mit Abbruch eine eindeutigen Fehler-ID für einen bestimmten Typ der CLR-Ausnahme aus. Wenn der Typ der Ausnahme geändert wird, verwenden Sie einen neuen fehlerbezeichner.
+- Verwenden Sie für das Beenden von Fehlern einen eindeutigen Fehler Bezeichner für einen bestimmten CLR-Ausnahmetyp. Wenn sich der Ausnahmetyp ändert, verwenden Sie einen neuen Fehler Bezeichner.
 
-- Verwenden Sie für Fehler ohne Abbruch eine bestimmten Fehler-ID für ein bestimmtes Objekt für die Eingabe aus.
+- Verwenden Sie für nicht abschließende Fehler einen bestimmten Fehler Bezeichner für ein bestimmtes Eingabe Objekt.
 
-- Wählen Sie Text für den Bezeichner, der nur sehr knapp entspricht der Fehler gemeldet wird. Verwenden Sie keine leer- oder Interpunktionszeichen.
+- Wählen Sie Text für den Bezeichner aus, der dem gemeldeten Fehler entspricht. Verwenden Sie keine Leerzeichen oder Interpunktions Zeichen.
 
-- Fehler-IDs, die nicht reproduzierbar sind keine generiert. Generieren Sie z. B. keine Bezeichner, die Prozess-ID enthalten. Fehler-IDs sind nützlich, nur dann, wenn diese Bezeichner entsprechen, die von anderen Benutzern angezeigt werden, die das gleiche Problem auftritt.
+- Generieren Sie keine Fehler Bezeichner, die nicht reproduzierbar sind. Generieren Sie z. b. keine Bezeichner, die eine Prozess-ID enthalten. Fehler Bezeichner sind nur hilfreich, wenn Sie bezeichmern entsprechen, die von anderen Benutzern mit dem gleichen Problem erkannt werden.
 
 ### <a name="error-categories"></a>Fehlerkategorien
 
-Fehlerkategorien werden verwendet, um Fehler für den Endbenutzer zu gruppieren. Windows PowerShell definiert diese Kategorien und -Cmdlets und Windows PowerShell-Anbietern müssen sie auswählen, beim Generieren der Error-Datensatzes.
+Fehlerkategorien werden zum Gruppieren von Fehlern für den Benutzer verwendet. PowerShell definiert diese Kategorien und Cmdlets, und PowerShell-Anbieter müssen bei der Erstellung des Fehler Datensatzes zwischen Ihnen wählen.
 
-Eine Beschreibung der Fehlerkategorien, die verfügbar sind, finden Sie unter den [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory) Enumeration. Im Allgemeinen sollten Sie mithilfe von "noError" zurückgegeben, UndefinedError und allgemeiner Fehler, wann immer möglich.
+Eine Beschreibung der verfügbaren Fehlerkategorien finden Sie unter der [System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory) -Enumeration. Im Allgemeinen sollten Sie, wenn möglich, die Verwendung von " **noError**", " **undefinederror**" und " **genericerror** " vermeiden.
 
-Benutzer können die Fehler basierend auf Kategorie, wenn sie festgelegt anzeigen "`$ErrorView`", "CategoryView".
+Benutzer können Fehler basierend auf der Kategorie anzeigen, wenn `$ErrorView` Sie auf **categoryview**festgelegt haben.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Windows PowerShell-Cmdlets](./cmdlet-overview.md)
+[Cmdlet-Übersicht](./cmdlet-overview.md)
 
-[Cmdlet-Ausgabe](./types-of-cmdlet-output.md)
+[Cmdlet-Ausgabetypen](./types-of-cmdlet-output.md)
 
-[Windows PowerShell Shell SDK](../windows-powershell-reference.md)
+[Windows PowerShell-Referenz](../windows-powershell-reference.md)
