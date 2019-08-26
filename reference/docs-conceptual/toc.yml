@@ -52,6 +52,24 @@
       href: learn/writing-portable-modules.md
     - name: PowerShell-Remoting
       items:
+        - name: Just Enough Administration (JEA)
+          items:
+            - name: Übersicht
+              href: learn/remoting/jea/overview.md
+            - name: Voraussetzungen
+              href: learn/remoting/jea/prerequisites.md
+            - name: Rollenfunktionen
+              href: learn/remoting/jea/role-capabilities.md
+            - name: Sitzungskonfigurationen
+              href: learn/remoting/jea/session-configurations.md
+            - name: Registrieren von JEA
+              href: learn/remoting/jea/register-jea.md
+            - name: Verwenden von JEA
+              href: learn/remoting/jea/using-jea.md
+            - name: Sicherheitsüberlegungen
+              href: learn/remoting/jea/security-considerations.md
+            - name: Überwachen und Erstellen von Berichten in JEA
+              href: learn/remoting/jea/audit-and-report.md
         - name: Ausführen von Remotebefehlen
           href: learn/remoting/running-remote-commands.md
         - name: PowerShell-Remoting über SSH
