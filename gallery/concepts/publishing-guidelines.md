@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB
+contributor: JKeithB, SydneyhSmith
 keywords: gallery,powershell,cmdlet,psgallery
 description: Richtlinien für Herausgeber
 title: Veröffentlichungsrichtlinien und Best Practices für den PowerShell-Katalog
-ms.openlocfilehash: 1cd0140cc208949e13d23331b23a58ffc374430b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: b470dbd81e79d2a6a228b8c89f85e57c03803ede
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62084656"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986501"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>Veröffentlichungsrichtlinien und Best Practices für den PowerShell-Katalog
 
@@ -51,7 +51,7 @@ PSScriptAnalyzer identifiziert die häufigsten Probleme in PowerShell-Code und s
 Das Tool ist einfach bedienbar und unterteilt die Probleme in Fehler (schwerwiegend, müssen behoben werden), Warnungen (müssen überprüft und sollten behoben werden) und Informationsmeldungen (sollten im Rahmen der Best Practices überprüft werden).
 Alle der im PowerShell-Katalog veröffentlichten Pakete werden mithilfe von PSScriptAnalyzer überprüft. Gefundene Fehler werden dem Besitzer gemeldet und müssen beseitigt werden.
 
-Als Best Practice wird `Invoke-ScriptAnalyzer` mit `-Recurse` und `-Severity` mit der Einstellung „Warning“ ausgeführt. 
+Als Best Practice wird `Invoke-ScriptAnalyzer` mit `-Recurse` und `-Severity` mit der Einstellung „Warning“ ausgeführt.
 
 Überprüfen Sie die Ergebnisse, und stellen Sie Folgendes sicher:
 
@@ -85,6 +85,22 @@ Beispiele für im PowerShell-Katalog veröffentlichte Module sollten in einem Or
 
 Ein gutes Muster für Beispiele finden Sie im [PSDscResource-Modul](https://www.powershellgallery.com/packages/PSDscResources) im Ordner „Examples\RegistryResource“.
 Dort sind vier Beispielanwendungsfälle mit einer kurzen Beschreibung zu Beginn jeder Datei enthalten, die das Gezeigte dokumentieren.
+
+## <a name="manage-dependencies"></a>Verwalten von Abhängigkeiten
+
+Es ist wichtig, im Modulmanifest die Module anzugeben, von denen Ihr Modul abhängt.
+Auf diese Weise müssen sich die Endbenutzer keine Sorgen um die Installation der richtigen Versionen von Modulen machen, von denen Ihr Modul abhängt.
+Um die Modulabhängigkeiten anzugeben, müssen Sie das Feld für erforderliche Module im Modulmanifest verwenden.
+So werden vor dem Import Ihres Moduls alle aufgelisteten Module in die globale Umgebung geladen, sofern nicht bereits geschehen. (Beispielsweise könnten einige Module bereits durch ein anderes Modul geladen worden sein.)
+Anstelle des ModuleVersion-Felds kann auch das RequiredVersion-Feld verwendet werden, um eine bestimmte Version anzugeben, die geladen werden soll. Bei Verwendung des ModuleVersion-Felds wird die neueste verfügbare Version unter Berücksichtigung der angegebenen Mindestversion geladen.
+Wenn das RequiredVersion-Feld nicht zum Angeben einer bestimmten Version verwendet wird, ist es wichtig, das erforderliche Modul auf Versionsupdates zu überwachen.
+Insbesondere müssen Breaking Changes berücksichtigt werden, die die Benutzerfreundlichkeit Ihres Moduls beeinträchtigen könnten.
+
+```powershell
+Example: RequiredModules = @(@{ModuleName="myDependentModule"; ModuleVersion="2.0"; Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})
+
+Example: RequiredModules = @(@{ModuleName="myDependentModule"; RequiredVersion="1.5"; Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})
+```
 
 ## <a name="respond-to-feedback"></a>Antworten Sie auf Feedback
 
