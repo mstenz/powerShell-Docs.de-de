@@ -1,45 +1,55 @@
 ---
-title: 'Gewusst wie: Importieren von Modulen mit Cmdlets | Microsoft-Dokumentation'
+title: Importieren von Cmdlets mithilfe von Modulen | Microsoft-Dokumentation
 ms.custom: ''
-ms.date: 09/13/2016
+ms.date: 08/28/2019
 ms.reviewer: ''
 ms.suite: ''
 ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a41d9e5f-de6f-47b7-9601-c108609320d0
 caps.latest.revision: 8
-ms.openlocfilehash: c007bb11324e10ffd100797dccd9e6ab0d09a73e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2f145795a57c988da0cb4ed294142aa141c53cae
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62067976"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215274"
 ---
-# <a name="how-to-import-cmdlets-using-modules"></a><span data-ttu-id="a7f7a-102">Importieren von Cmdlets mit Modulen</span><span class="sxs-lookup"><span data-stu-id="a7f7a-102">How to Import Cmdlets Using Modules</span></span>
+# <a name="how-to-import-cmdlets-using-modules"></a><span data-ttu-id="3e5d0-102">Importieren von Cmdlets mit Modulen</span><span class="sxs-lookup"><span data-stu-id="3e5d0-102">How to Import Cmdlets Using Modules</span></span>
 
-<span data-ttu-id="a7f7a-103">Dieses Thema beschreibt, wie Sie Cmdlets in einer Windows PowerShell-Sitzung zu importieren, mit einem binären Modul.</span><span class="sxs-lookup"><span data-stu-id="a7f7a-103">This topic describes how to import cmdlets to a Windows PowerShell session by using a binary module.</span></span>
+<span data-ttu-id="3e5d0-103">In diesem Artikel wird beschrieben, wie Sie Cmdlets mithilfe eines binären Moduls in eine PowerShell-Sitzung importieren.</span><span class="sxs-lookup"><span data-stu-id="3e5d0-103">This article describes how to import cmdlets to a PowerShell session by using a binary module.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="a7f7a-104">Die Elemente der Module zählen die Cmdlets, Anbieter, Funktionen, Variablen, Aliase und vieles mehr.</span><span class="sxs-lookup"><span data-stu-id="a7f7a-104">The members of modules can include cmdlets, providers, functions, variables, aliases, and much more.</span></span> <span data-ttu-id="a7f7a-105">-Snap-ins können nur Cmdlets und Anbieter enthalten.</span><span class="sxs-lookup"><span data-stu-id="a7f7a-105">Snap-ins can contain only cmdlets and providers.</span></span>
+> <span data-ttu-id="3e5d0-104">Die Member von Modulen können Cmdlets, Anbieter, Funktionen, Variablen, Aliase und vieles mehr enthalten.</span><span class="sxs-lookup"><span data-stu-id="3e5d0-104">The members of modules can include cmdlets, providers, functions, variables, aliases, and much more.</span></span> <span data-ttu-id="3e5d0-105">Snap-Ins können nur Cmdlets und Anbieter enthalten.</span><span class="sxs-lookup"><span data-stu-id="3e5d0-105">Snap-ins can contain only cmdlets and providers.</span></span>
 
-## <a name="how-to-load-cmdlets-using-a-module"></a><span data-ttu-id="a7f7a-106">Gewusst wie: Laden Sie ein Modul mit cmdlets</span><span class="sxs-lookup"><span data-stu-id="a7f7a-106">How to load cmdlets using a module</span></span>
+## <a name="how-to-load-cmdlets-using-a-module"></a><span data-ttu-id="3e5d0-106">Vorgehensweise beim Laden von Cmdlets mithilfe eines Moduls</span><span class="sxs-lookup"><span data-stu-id="3e5d0-106">How to load cmdlets using a module</span></span>
 
-1. <span data-ttu-id="a7f7a-107">Erstellen Sie einen Ordner "Module", die den gleichen Namen wie die Assemblydatei hat in der die Cmdlets implementiert werden.</span><span class="sxs-lookup"><span data-stu-id="a7f7a-107">Create a module folder that has the same name as the assembly file in which the cmdlets are implemented.</span></span> <span data-ttu-id="a7f7a-108">In diesem Verfahren wird der Ordner "Module" erstellt, der `system32` Ordner.</span><span class="sxs-lookup"><span data-stu-id="a7f7a-108">In this procedure, the module folder is created in the `system32` folder.</span></span>
+1. <span data-ttu-id="3e5d0-107">Erstellen Sie einen Modul Ordner, der denselben Namen hat wie die Assemblydatei, in der die Cmdlets implementiert sind.</span><span class="sxs-lookup"><span data-stu-id="3e5d0-107">Create a module folder that has the same name as the assembly file in which the cmdlets are implemented.</span></span> <span data-ttu-id="3e5d0-108">In diesem Verfahren wird der Modul Ordner im Windows `system32` -Ordner erstellt.</span><span class="sxs-lookup"><span data-stu-id="3e5d0-108">In this procedure, the module folder is created in the Windows `system32` folder.</span></span>
 
    `%SystemRoot%\system32\WindowsPowerShell\v1.0\Modules\mymodule`
 
-2. <span data-ttu-id="a7f7a-109">Stellen Sie sicher, dass die `PSModulePath` Umgebungsvariable enthält den Pfad zu Ihrem Ordner "Module".</span><span class="sxs-lookup"><span data-stu-id="a7f7a-109">Make sure that the `PSModulePath` environment variable includes the path to your new module folder.</span></span> <span data-ttu-id="a7f7a-110">Wird standardmäßig der Ordner "System" wurde bereits hinzugefügt der `PSModulePath` -Umgebungsvariablen angegeben.</span><span class="sxs-lookup"><span data-stu-id="a7f7a-110">By default, the system folder is already added to the `PSModulePath` environment variable.</span></span>
+1. <span data-ttu-id="3e5d0-109">Stellen Sie sicher, `PSModulePath` dass die Umgebungsvariable den Pfad zum neuen Modul Ordner enthält.</span><span class="sxs-lookup"><span data-stu-id="3e5d0-109">Make sure that the `PSModulePath` environment variable includes the path to your new module folder.</span></span> <span data-ttu-id="3e5d0-110">Standardmäßig ist der Systemordner bereits der `PSModulePath` Umgebungsvariablen hinzugefügt.</span><span class="sxs-lookup"><span data-stu-id="3e5d0-110">By default, the system folder is already added to the `PSModulePath` environment variable.</span></span> <span data-ttu-id="3e5d0-111">Geben Sie zum `PSModulePath`Anzeigen von Folgendes `$env:PSModulePath`ein:.</span><span class="sxs-lookup"><span data-stu-id="3e5d0-111">To view the `PSModulePath`, type: `$env:PSModulePath`.</span></span>
 
-3. <span data-ttu-id="a7f7a-111">Kopieren Sie die Cmdlet-Assembly, in dem Ordner "Module".</span><span class="sxs-lookup"><span data-stu-id="a7f7a-111">Copy the cmdlet assembly into the module folder.</span></span>
+1. <span data-ttu-id="3e5d0-112">Kopieren Sie die Cmdlet-Assembly in den Modul Ordner.</span><span class="sxs-lookup"><span data-stu-id="3e5d0-112">Copy the cmdlet assembly into the module folder.</span></span>
 
-4. <span data-ttu-id="a7f7a-112">Führen Sie den folgenden Befehl zum Hinzufügen der Cmdlets für die Sitzung ein:</span><span class="sxs-lookup"><span data-stu-id="a7f7a-112">Run the following command to add the cmdlets to the session:</span></span>
+1. <span data-ttu-id="3e5d0-113">Fügen Sie im Stamm Ordner des`.psd1`Moduls eine Modul Manifest-Datei () hinzu.</span><span class="sxs-lookup"><span data-stu-id="3e5d0-113">Add a module manifest file (`.psd1`) in the module's root folder.</span></span> <span data-ttu-id="3e5d0-114">PowerShell verwendet das Modul Manifest, um das Modul zu importieren.</span><span class="sxs-lookup"><span data-stu-id="3e5d0-114">PowerShell uses the module manifest to import your module.</span></span> <span data-ttu-id="3e5d0-115">Weitere Informationen finden Sie unter Gewusst [wie: Schreiben eines PowerShell-Modul Manifests](../module/how-to-write-a-powershell-module-manifest.md).</span><span class="sxs-lookup"><span data-stu-id="3e5d0-115">For more information, see [How to Write a PowerShell Module Manifest](../module/how-to-write-a-powershell-module-manifest.md).</span></span>
 
-   `import-module [Module_Name]`
+1. <span data-ttu-id="3e5d0-116">Führen Sie den folgenden Befehl aus, um der Sitzung die Cmdlets hinzuzufügen:</span><span class="sxs-lookup"><span data-stu-id="3e5d0-116">Run the following command to add the cmdlets to the session:</span></span>
 
-   <span data-ttu-id="a7f7a-113">Dieses Verfahren kann verwendet werden, um Ihre Cmdlets zu testen.</span><span class="sxs-lookup"><span data-stu-id="a7f7a-113">This procedure can be used to test your cmdlets.</span></span> <span data-ttu-id="a7f7a-114">Alle Cmdlets hinzugefügt in der Assembly mit der Sitzung.</span><span class="sxs-lookup"><span data-stu-id="a7f7a-114">It adds all the cmdlets in the assembly to the session.</span></span> <span data-ttu-id="a7f7a-115">Weitere Informationen zu Modulen, die verschiedenen Arten von Modulen, die verschiedenen Methoden zum Laden von Modulen und wie Sie die Elemente eines Moduls zu beschränken, die exportiert werden, finden Sie unter [Schreiben eines Windows PowerShell-Moduls](../module/writing-a-windows-powershell-module.md).</span><span class="sxs-lookup"><span data-stu-id="a7f7a-115">For more information about modules, the different types of modules, the different ways to load modules, and how to restrict the elements of a module that are exported, see [Writing a Windows PowerShell Module](../module/writing-a-windows-powershell-module.md).</span></span>
+   `Import-Module [Module_Name]`
 
-## <a name="see-also"></a><span data-ttu-id="a7f7a-116">Weitere Informationen</span><span class="sxs-lookup"><span data-stu-id="a7f7a-116">See Also</span></span>
+   <span data-ttu-id="3e5d0-117">Mithilfe dieses Verfahrens können Sie die Cmdlets testen.</span><span class="sxs-lookup"><span data-stu-id="3e5d0-117">This procedure can be used to test your cmdlets.</span></span> <span data-ttu-id="3e5d0-118">Der Sitzung werden alle Cmdlets in der Assembly hinzugefügt.</span><span class="sxs-lookup"><span data-stu-id="3e5d0-118">It adds all the cmdlets in the assembly to the session.</span></span> <span data-ttu-id="3e5d0-119">Weitere Informationen zu Modulen finden Sie unter [Schreiben eines Windows PowerShell-Moduls](../module/writing-a-windows-powershell-module.md).</span><span class="sxs-lookup"><span data-stu-id="3e5d0-119">For more information about modules, see [Writing a Windows PowerShell Module](../module/writing-a-windows-powershell-module.md).</span></span>
 
-[<span data-ttu-id="a7f7a-117">Schreiben eines Windows PowerShell-Cmdlets</span><span class="sxs-lookup"><span data-stu-id="a7f7a-117">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+## <a name="see-also"></a><span data-ttu-id="3e5d0-120">Siehe auch</span><span class="sxs-lookup"><span data-stu-id="3e5d0-120">See also</span></span>
 
-[<span data-ttu-id="a7f7a-118">Installieren von Modulen</span><span class="sxs-lookup"><span data-stu-id="a7f7a-118">Installing Modules</span></span>](../module/installing-a-powershell-module.md)
+[<span data-ttu-id="3e5d0-121">Schreiben eines PowerShell-Modul Manifests</span><span class="sxs-lookup"><span data-stu-id="3e5d0-121">How to Write a PowerShell Module Manifest</span></span>](../module/how-to-write-a-powershell-module-manifest.md)
+
+[<span data-ttu-id="3e5d0-122">Importieren eines PowerShell-Moduls</span><span class="sxs-lookup"><span data-stu-id="3e5d0-122">Importing a PowerShell Module</span></span>](../module/importing-a-powershell-module.md)
+
+[<span data-ttu-id="3e5d0-123">Import-Module</span><span class="sxs-lookup"><span data-stu-id="3e5d0-123">Import-Module</span></span>](/powershell/module/Microsoft.PowerShell.Core/Import-Module)
+
+[<span data-ttu-id="3e5d0-124">Installieren von Modulen</span><span class="sxs-lookup"><span data-stu-id="3e5d0-124">Installing Modules</span></span>](../module/installing-a-powershell-module.md)
+
+[<span data-ttu-id="3e5d0-125">Ändern des psmodulepath-Installations Pfads</span><span class="sxs-lookup"><span data-stu-id="3e5d0-125">Modifying the PSModulePath Installation Path</span></span>](../module/modifying-the-psmodulepath-installation-path.md)
+
+[<span data-ttu-id="3e5d0-126">Schreiben eines Windows PowerShell-Cmdlets</span><span class="sxs-lookup"><span data-stu-id="3e5d0-126">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
