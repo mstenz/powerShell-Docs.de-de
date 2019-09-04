@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,setup
 title: Verwenden von Import-DscResource
-ms.openlocfilehash: ee0b2f0469c6507c8f0148138198597a9e57cdd7
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: e1c2c06d756a70c2de516f330e3123235ce740ba
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080100"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215404"
 ---
 # <a name="using-import-dscresource"></a>Verwenden von Import-DscResource
 
@@ -78,7 +78,7 @@ Dies bietet folgende Vorteile:
 
 Beim Erstellen der DSC-Konfiguration in ISE stellt PowerShell IntelliSense für Ressourcen und Ressourceneigenschaften zur Verfügung. Ressourcendefinitionen unter dem `$pshome`-Modulpfad werden automatisch geladen. Beim Importieren von Ressourcen mithilfe des `Import-DSCResource`-Schlüsselworts werden die angegebenen Ressourcendefinitionen hinzugefügt, und IntelliSense wird erweitert, um das Schema der importierten Ressource einzubeziehen.
 
-![IntelliSense für Ressourcen](/media/resource-intellisense.png)
+![IntelliSense für Ressourcen](../media/resource-intellisense.png)
 
 > [!NOTE]
 > In PowerShell 5.0 wurde der ISE für DSC-Ressourcen und deren Eigenschaften die Vervollständigung mit der TAB-TASTE hinzugefügt. Weitere Informationen finden Sie unter [Ressourcen](../resources/resources.md).
@@ -137,11 +137,11 @@ Das parallele Installieren und Verwenden mehrerer Versionen von Ressourcen wurde
 
 In der folgenden Abbildung sind zwei Versionen des **xPSDesiredStateConfiguration**-Moduls installiert.
 
-![Problembehebung bei mehreren Versionen einer Ressource](/media/multiple-resource-versions-broken.md)
+![Problembehebung bei mehreren Versionen einer Ressource](../media/multiple-resource-versions-broken.png)
 
 Kopieren Sie den Inhalt Ihrer gewünschten Modulversion in die oberste Ebene des Modulverzeichnisses.
 
-![Problembehebung bei mehreren Versionen einer Ressource](/media/multiple-resource-versions-fixed.md)
+![Problembehebung bei mehreren Versionen einer Ressource](../media/multiple-resource-versions-fixed.png)
 
 ### <a name="resource-location"></a>Ressourcenspeicherort
 
