@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,setup
 title: Konfigurieren des lokalen Konfigurations-Managers
-ms.openlocfilehash: 15d696587d54d4a6464096cfb78757c41e9185c6
-ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
+ms.openlocfilehash: 42544036d87fcea3189fd6d2e55579fe87f137e1
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65229500"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215389"
 ---
 # <a name="configuring-the-local-configuration-manager"></a>Konfigurieren des lokalen Konfigurations-Managers
 
@@ -124,7 +124,8 @@ Ein **ConfigurationRepositoryWeb**-Block definiert die folgenden Eigenschaften.
 |ProxyURL*|string|Die URL des HTTP-Proxys, der bei der Kommunikation mit dem Konfigurationsdienst verwendet werden soll.|
 |ProxyCredential*|pscredential|Anmeldeinformation, die für den HTTP-Proxy verwendet werden soll.|
 
->!HINWEIS \* Wird in den Windows-Versionen 1809 und höher unterstützt.
+> [!NOTE]
+> * Wird in den Windows-Versionen 1809 und höher unterstützt.
 
 Ein Beispielskript, das die Konfiguration des Werts „ConfigurationRepositoryWeb“ für lokale Knoten vereinfacht, steht unter [Generieren von DSC-Metakonfigurationen](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations) zur Verfügung.
 
@@ -150,7 +151,8 @@ Ein **ResourceRepositoryWeb**-Block definiert die folgenden Eigenschaften.
 |ProxyURL*|string|Die URL des HTTP-Proxys, der bei der Kommunikation mit dem Konfigurationsdienst verwendet werden soll.|
 |ProxyCredential*|pscredential|Anmeldeinformation, die für den HTTP-Proxy verwendet werden soll.|
 
->!HINWEIS \* Wird in den Windows-Versionen 1809 und höher unterstützt.
+> [!NOTE]
+> * Wird in den Windows-Versionen 1809 und höher unterstützt.
 
 Ein Beispielskript, das die Konfiguration des Werts „ResourceRepositoryWeb“ für lokale Knoten vereinfacht, steht unter [Generieren von DSC-Metakonfigurationen](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations) zur Verfügung.
 
@@ -177,7 +179,8 @@ Ein **ReportServerWeb**-Block definiert die folgenden Eigenschaften.
 |ProxyURL*|string|Die URL des HTTP-Proxys, der bei der Kommunikation mit dem Konfigurationsdienst verwendet werden soll.|
 |ProxyCredential*|pscredential|Anmeldeinformation, die für den HTTP-Proxy verwendet werden soll.|
 
->!HINWEIS \* Wird in den Windows-Versionen 1809 und höher unterstützt.
+> [!NOTE]
+> * Wird in den Windows-Versionen 1809 und höher unterstützt.
 
 Ein Beispielskript, das die Konfiguration des Werts „ReportServerWeb“ für lokale Knoten vereinfacht, steht unter [Generieren von DSC-Metakonfigurationen](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations) zur Verfügung.
 

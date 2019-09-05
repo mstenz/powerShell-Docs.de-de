@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Arbeiten mit Dateien und Ordnern
-ms.openlocfilehash: 0f7cb233918b59475417ec49b611ecc25a94ebe1
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: 743e261d2f5e8bfa39f2731fca7fea6e5678c711
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67030693"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215535"
 ---
 # <a name="working-with-files-and-folders"></a>Arbeiten mit Dateien und Ordnern
 
@@ -106,15 +106,17 @@ Wenn Sie nicht für jedes enthaltene Element aufgefordert werden möchten, geben
 Remove-Item -Path C:\temp\DeleteMe -Recurse
 ```
 
-## <a name="mapping-a-local-folder-as-a-windows-accessible-drive"></a>Zuordnen eines lokalen Ordners als ein zugreifbares Windows-Laufwerk
+## <a name="mapping-a-local-folder-as-a-drive"></a>Zuordnen eines lokalen Ordners als Laufwerk
 
-Sie können mithilfe des Befehls **subst** auch einen lokalen Ordner zuordnen. Der folgende Befehl erstellt ein lokales geroutetes Laufwerk P: im lokalen Verzeichnis „Programme“:
+Sie können mithilfe des Befehls **New-PSDrive** auch einen lokalen Ordner zuordnen. Der folgende Befehl erstellt ein lokales Laufwerk „P:“ im lokalen Verzeichnis „Programme“, das nur in der PowerShell-Sitzung sichtbar ist:
 
 ```powershell
-subst p: $env:programfiles
+New-PSDrive -Name P -Root $env:ProgramFiles -PSProvider FileSystem
 ```
 
-Wie bei Netzlaufwerken sind in Windows PowerShell mit **subst** zugeordnete Laufwerke für die Windows PowerShell-Shell sofort sichtbar.
+Wie bei Netzlaufwerken sind in Windows PowerShell zugeordnete Laufwerke für die Windows PowerShell-Shell sofort sichtbar.
+Um ein zugeordnetes Laufwerk zu erstellen, das im Datei-Explorer sichtbar ist, wird der Parameter **-Persist** benötigt. Mit „Persist“ können aber nur Remotepfade verwendet werden.
+
 
 ## <a name="reading-a-text-file-into-an-array"></a>Einlesen einer Textdatei in ein Array
 
