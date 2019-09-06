@@ -199,7 +199,7 @@
 - name: Beispielskripts
   items:
     - name: Beispielskripts für die Verwaltung
-      href: samples/sample-scripts-for-administration.md
+      href: samples/sample-scripts-for-administration.yml
     - name: Ändern des Computerzustands
       href: samples/changing-computer-state.md
     - name: Erfassen von Informationen über Computer
