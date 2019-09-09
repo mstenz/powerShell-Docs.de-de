@@ -1,32 +1,32 @@
 ---
 title: Erweitern von Eigenschaften für Objekte | Microsoft-Dokumentation
 ms.custom: ''
-ms.date: 09/13/2016
+ms.date: 08/21/2019
 ms.reviewer: ''
 ms.suite: ''
 ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f33ff3e9-213c-44aa-92ab-09450e65c676
 caps.latest.revision: 11
-ms.openlocfilehash: 496e363b041194563d46c09eee67a12055bb54b0
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 3b14007384cca0d0cfa35655aee437adf73b1ff0
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068146"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986493"
 ---
 # <a name="extending-properties-for-objects"></a>Erweitern Objekteigenschaften
 
-Wenn Sie .NET Framework-Objekten erweitern, können Sie die Eigenschaften, Codeeigenschaften, Note-Eigenschaften, Skripteigenschaften und Eigenschaftensätze alias für die Objekte hinzufügen. Der XML-Code, die zum Definieren der Eigenschaften verwendet wird, wird in den folgenden Abschnitten beschrieben.
+Wenn Sie .NET Framework Objekte erweitern, können Sie den-Objekten Alias Eigenschaften, Code Eigenschaften, Notiz Eigenschaften, Skript Eigenschaften und Eigenschaften Sätze hinzufügen. Die XML-Daten, die diese Eigenschaften definieren, werden in den folgenden Abschnitten beschrieben.
 
 > [!NOTE]
-> In die Beispielen in den folgenden Abschnitten werden der Standarddatei für die Typen von Types. ps1xml im Installationsverzeichnis von Windows PowerShell (`$pshome`).
+> Die Beispiele in den folgenden Abschnitten stammen aus der Datei `Types.ps1xml` mit den Standardtypen im PowerShell-Installations`$PSHOME`Verzeichnis (). Weitere Informationen finden Sie unter [about Types. ps1xml](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml).
 
-## <a name="alias-properties"></a>Aliaseigenschaften
+## <a name="alias-properties"></a>Alias Eigenschaften
 
-Eine aliaseigenschaft definiert einen neuen Namen für eine vorhandene Eigenschaft.
+Eine Alias Eigenschaft definiert einen neuen Namen für eine vorhandene Eigenschaft.
 
-Im folgenden Beispiel die `Count` Eigenschaft hinzugefügt wird die [System.Array? Displayproperty = Fullname](/dotnet/api/System.Array) Typ. Die [AliasProperty](http://msdn.microsoft.com/en-us/b140038c-807a-4bb9-beca-332491cda1b1) Element definiert die erweiterte Eigenschaft als aliaseigenschaft. Die [Namen](http://msdn.microsoft.com/en-us/b58e9d21-c8c9-49a5-909e-9c1cfc64f873) Element gibt den neuen Namen. Und der [referencedmembername-Eigenschaft](http://msdn.microsoft.com/en-us/0c5db6cc-9033-4d48-88a7-76b962882f7a) Element gibt an, die vorhandene Eigenschaft, die durch den Alias verwiesen wird. (Sie können auch hinzufügen der [AliasProperty](http://msdn.microsoft.com/en-us/d6647953-94ad-4b0b-af2e-4dda6952dee1) Element auf die Member des der [Elementgruppen](http://msdn.microsoft.com/en-us/46a50fb5-e150-4c03-8584-e1b53e4d49e3) Element.)
+Im folgenden Beispiel wird die **count** -Eigenschaft dem [System. Array](/dotnet/api/System.Array) -Typ hinzugefügt. Das [aliasproperty](/dotnet/api/system.management.automation.psaliasproperty) -Element definiert die erweiterte Eigenschaft als Alias Eigenschaft. Das [Name](/dotnet/api/system.management.automation.psmemberinfo.name) -Element gibt den neuen Namen an. Und das [referencedmembership Name](/dotnet/api/system.management.automation.psaliasproperty.referencedmembername) -Element gibt die vorhandene Eigenschaft an, auf die vom Alias verwiesen wird. Sie können auch das `AliasProperty` -Element den Membern des Members [-Elements hinzu](/dotnet/api/system.management.automation.psmemberset) fügen.
 
 ```xml
 <Type>
@@ -40,11 +40,11 @@ Im folgenden Beispiel die `Count` Eigenschaft hinzugefügt wird die [System.Arra
 </Type>
 ```
 
-## <a name="code-properties"></a>Codeeigenschaften
+## <a name="code-properties"></a>Code Eigenschaften
 
-Eine Eigenschaft verweist auf eine statische Eigenschaft von .NET Framework-Objekt.
+Eine Code Eigenschaft verweist auf eine statische Eigenschaft eines .NET Framework Objekts.
 
-Im folgenden Beispiel die `Node` Eigenschaft hinzugefügt wird die [System.IO.Directoryinfo? Displayproperty = Fullname](/dotnet/api/System.IO.DirectoryInfo) Typ. Die [CodeProperty](http://msdn.microsoft.com/en-us/59bc4d18-41eb-4c0d-8ad3-bbfa5dc488db) Element definiert die erweiterte Eigenschaft als Eigenschaft Code. Die [Namen](http://msdn.microsoft.com/en-us/b58e9d21-c8c9-49a5-909e-9c1cfc64f873) -Element gibt den Namen der erweiterten Eigenschaft. Und der [GetCodeReference](http://msdn.microsoft.com/en-us/62af34f5-cc22-42c0-9e0c-3bd0f5c1a4a0) -Element definiert die statische Methode, die von der erweiterten Eigenschaft verwiesen wird. (Sie können auch hinzufügen der [CodeProperty](http://msdn.microsoft.com/en-us/59bc4d18-41eb-4c0d-8ad3-bbfa5dc488db) Element auf die Member des der [Elementgruppen](http://msdn.microsoft.com/en-us/46a50fb5-e150-4c03-8584-e1b53e4d49e3) Element.)
+Im folgenden Beispiel wird die **Mode** -Eigenschaft dem [System. IO. directoriyinfo](/dotnet/api/System.IO.DirectoryInfo) -Typ hinzugefügt. Das [CodeProperty](/dotnet/api/system.management.automation.pscodeproperty) -Element definiert die erweiterte Eigenschaft als Code Eigenschaft. Das [Name](/dotnet/api/system.management.automation.psmemberinfo.name) -Element gibt den Namen der erweiterten Eigenschaft an. Und das [getcodereferenzierungselement](/dotnet/api/system.management.automation.pscodeproperty.gettercodereference) definiert die statische Methode, auf die von der erweiterten Eigenschaft verwiesen wird. Sie können auch das `CodeProperty` -Element den Membern des Members [-Elements hinzu](/dotnet/api/system.management.automation.psmemberset) fügen.
 
 ```xml
 <Type>
@@ -61,11 +61,11 @@ Im folgenden Beispiel die `Node` Eigenschaft hinzugefügt wird die [System.IO.Di
 </Type>
 ```
 
-## <a name="note-properties"></a>Eigenschaften notieren
+## <a name="note-properties"></a>Hinweis Eigenschaften
 
-Eine hinweiseigenschaft definiert eine Eigenschaft mit einem statischen Wert an.
+Eine Hinweis Eigenschaft definiert eine Eigenschaft, die über einen statischen Wert verfügt.
 
-Im folgenden Beispiel die `Status` -Eigenschaft (, dessen Wert immer "Success") wurde die [System.IO.Directoryinfo? Displayproperty = Fullname](/dotnet/api/System.IO.DirectoryInfo) Typ. Die [NoteProperty](http://msdn.microsoft.com/en-us/331e6c50-d703-43f0-89bc-ca9fb97800eb) -Element definiert die erweiterte Eigenschaft als eine hinweiseigenschaft; die [Namen](http://msdn.microsoft.com/en-us/b58e9d21-c8c9-49a5-909e-9c1cfc64f873) -Element gibt den Namen der erweiterten Eigenschaft; und die [Wert](http://msdn.microsoft.com/en-us/f3c77546-b98e-4c4e-bbe0-6dfd06696d1c) Element Gibt an, der statische Wert der erweiterten Eigenschaft. (Die [NoteProperty](http://msdn.microsoft.com/en-us/331e6c50-d703-43f0-89bc-ca9fb97800eb) Element kann auch hinzugefügt werden, auf die Member des der [Elementgruppen](http://msdn.microsoft.com/en-us/46a50fb5-e150-4c03-8584-e1b53e4d49e3) Element.)
+Im folgenden Beispiel wird die **Status** -Eigenschaft, deren Wert immer **Erfolg**ist, dem [System. IO. directoriyinfo](/dotnet/api/System.IO.DirectoryInfo) -Typ hinzugefügt. Das [NoteProperty](/dotnet/api/system.management.automation.psnoteproperty) -Element definiert die erweiterte Eigenschaft als Note-Eigenschaft. Das [Name](/dotnet/api/system.management.automation.psmemberinfo.name) -Element gibt den Namen der erweiterten Eigenschaft an. Das [value](/dotnet/api/system.management.automation.psnoteproperty.value) -Element gibt den statischen Wert der erweiterten Eigenschaft an. Das `NoteProperty` -Element kann auch den Membern [des Elements Members](/dotnet/api/system.management.automation.psmemberset) hinzugefügt werden.
 
 ```xml
 <Type>
@@ -79,11 +79,11 @@ Im folgenden Beispiel die `Status` -Eigenschaft (, dessen Wert immer "Success") 
 </Type>
 ```
 
-## <a name="script-properties"></a>Skripteigenschaften
+## <a name="script-properties"></a>Skript Eigenschaften
 
-Eine skripteigenschaft definiert eine Eigenschaft, deren Wert die Ausgabe eines Skripts.
+Eine Skript Eigenschaft definiert eine Eigenschaft, deren Wert die Ausgabe eines Skripts ist.
 
-Im folgenden Beispiel die `VersionInfo` Eigenschaft hinzugefügt wird die [System.IO.FileInfo? Displayproperty = Fullname](/dotnet/api/System.IO.FileInfo) Typ. Die [ScriptProperty](http://msdn.microsoft.com/en-us/858a4247-676b-4cc9-9f3e-057109aad350) -Element definiert die erweiterte Eigenschaft als eine skripteigenschaft. Die [Namen](http://msdn.microsoft.com/en-us/b58e9d21-c8c9-49a5-909e-9c1cfc64f873) -Element gibt den Namen der erweiterten Eigenschaft. Und der [GetScriptBlock](http://msdn.microsoft.com/en-us/f3c77546-b98e-4c4e-bbe0-6dfd06696d1c) Element gibt an, das Skript, das den Wert der Eigenschaft generiert. (Sie können auch hinzufügen der [ScriptProperty](http://msdn.microsoft.com/en-us/858a4247-676b-4cc9-9f3e-057109aad350) Element auf die Member des der [Elementgruppen](http://msdn.microsoft.com/en-us/46a50fb5-e150-4c03-8584-e1b53e4d49e3) Element.)
+Im folgenden Beispiel wird die **VERSIONINFO** -Eigenschaft dem [System. IO. FileInfo](/dotnet/api/System.IO.FileInfo) -Typ hinzugefügt. Das [scriptproperty](/dotnet/api/system.management.automation.psscriptproperty) -Element definiert die erweiterte Eigenschaft als Skript Eigenschaft. Das [Name](/dotnet/api/system.management.automation.psmemberinfo.name) -Element gibt den Namen der erweiterten Eigenschaft an. Das [getscriptblock](/dotnet/api/system.management.automation.psscriptproperty.getterscript) -Element gibt das Skript an, das den Eigenschafts Wert generiert. Sie können auch das `ScriptProperty` -Element den Membern des Members [-Elements hinzu](/dotnet/api/system.management.automation.psmemberset) fügen.
 
 ```xml
 <Type>
@@ -99,13 +99,15 @@ Im folgenden Beispiel die `VersionInfo` Eigenschaft hinzugefügt wird die [Syste
 </Type>
 ```
 
-## <a name="property-sets"></a>Eigenschaftensätze
+## <a name="property-sets"></a>Eigenschaften Sätze
 
-Ein Eigenschaftensatz definiert eine Gruppe von erweiterten Eigenschaften, die durch den Namen des Satzes verwiesen werden kann. Z. B. die `Property` Parameter, der die [Format-Table](/powershell/module/Microsoft.PowerShell.Utility/Format-Table) Cmdlets können angeben, dass eine bestimmte Eigenschaft festlegen, die angezeigt werden. Wenn ein Eigenschaftensatz angegeben wird, werden nur die Eigenschaften, die zum Satz gehören angezeigt.
+Ein Eigenschaften Satz definiert eine Gruppe erweiterter Eigenschaften, auf die durch den Namen des Satzes verwiesen werden kann.
+Beispielsweise kann der [Format-Table](/powershell/module/Microsoft.PowerShell.Utility/Format-Table)
+-**Eigenschafts** Parameter eine bestimmte Eigenschaften Gruppe angeben, die angezeigt werden soll. Wenn ein Eigenschaften Satz angegeben wird, werden nur die Eigenschaften angezeigt, die zum Satz gehören.
 
-Es gibt keine Einschränkung für die Anzahl der Eigenschaftensätze, die für ein Objekt definiert werden können. Jedoch müssen der-Eigenschaft wird verwendet, um die Standardeigenschaften für die Anzeige eines Objekts zu definieren, innerhalb der Elementgruppe PSStandardMembers angegeben werden. In der Datei %% amp;quot;Types.ps1xml%%amp;quot; Typen umfassen die Namen der standardmäßigen Satz DefaultDisplayProperty, DefaultDisplayPropertySet und DefaultKeyPropertySet. Alle zusätzlichen Eigenschaftensätze, die Sie für die Elementgruppe PSStandardMembers hinzufügen, werden ignoriert.
+Es gibt keine Einschränkung hinsichtlich der Anzahl der Eigenschafts Sätze, die für ein Objekt definiert werden können. Die Eigenschaften Sätze, die zum Definieren der Standard Anzeigeeigenschaften eines Objekts verwendet werden, müssen jedoch innerhalb des **psstandardmembers** -Element Satzes angegeben werden. In der `Types.ps1xml` Types-Datei enthalten die standardmäßigen Eigenschaften Satz Namen " **defaultdisplayproperty**", " **defaultdisplaypropertyset**" und " **defaultkeypropertyset**". Alle zusätzlichen Eigenschaften Sätze, die Sie dem **psstandardmembers** -Element Satz hinzufügen, werden ignoriert.
 
-Im folgenden Beispiel wird DefaultDisplayPropertySet Eigenschaftensatz enthalten hinzugefügt, auf die PSStandardMembers Member der [System.Serviceprocess.Servicecontroller? Displayproperty = Fullname](/dotnet/api/System.ServiceProcess.ServiceController) Typ. Die [PropertySet](http://msdn.microsoft.com/en-us/14cdc234-796e-4857-9b51-bdbaa1412188) Element definiert die Gruppe von Eigenschaften. Die [Namen](http://msdn.microsoft.com/en-us/b58e9d21-c8c9-49a5-909e-9c1cfc64f873) Element gibt den Namen des Eigenschaftensatzes an. Und der [ReferencedProperties](http://msdn.microsoft.com/en-us/5e620423-8679-4fbf-b6db-9f79288e4786) Element gibt die Eigenschaften des Satzes an. (Sie können auch hinzufügen der [PropertySet](http://msdn.microsoft.com/en-us/14cdc234-796e-4857-9b51-bdbaa1412188) Element, das Mitglied der [Typ](http://msdn.microsoft.com/en-us/e5dbd353-d6b2-40a1-92b6-6f1fea744ebe) Element.)
+Im folgenden Beispiel wird der Wert der **defaultdisplaypropertyset** -Eigenschaft dem **psstandardmembers** -Element Satz des Typs [System. ServiceProcess. ServiceController](/dotnet/api/System.ServiceProcess.ServiceController) hinzugefügt. Das [PropertySet](/dotnet/api/system.management.automation.pspropertyset) -Element definiert die Gruppe von Eigenschaften. Das [Name](/dotnet/api/system.management.automation.psmemberinfo.name) -Element gibt den Namen des Eigenschaften Satzes an. Und das [referencedproperties](/dotnet/api/system.management.automation.pspropertyset.referencedpropertynames) -Element gibt die Eigenschaften des Satzes an. Sie können auch das `PropertySet` -Element den Membern des [Type](/dotnet/api/system.management.automation.pstypename) -Elements hinzufügen.
 
 ```xml
 <Type>
@@ -128,6 +130,10 @@ Im folgenden Beispiel wird DefaultDisplayPropertySet Eigenschaftensatz enthalten
 </Type>
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
+
+[Informationen zu Typen. ps1xml](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml)
+
+[System. Management. Automation](/dotnet/api/System.Management.Automation)
 
 [Schreiben eines Windows PowerShell-Cmdlets](./writing-a-windows-powershell-cmdlet.md)
