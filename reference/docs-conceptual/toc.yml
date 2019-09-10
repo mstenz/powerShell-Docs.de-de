@@ -94,8 +94,6 @@
       items:
         - name: Einführung in die Windows PowerShell ISE
           href: components/ise/introducing-the-windows-powershell-ise.md
-        - name: Windows PowerShell Integrated Scripting Environment (ISE)
-          href: components/ise/windows-powershell-integrated-scripting-environment--ise-.md
         - name: Verwenden der Windows PowerShell ISE
           items:
             - name: Kennenlernen der Windows PowerShell ISE
@@ -200,12 +198,66 @@
   items:
     - name: Beispielskripts für die Verwaltung
       href: samples/sample-scripts-for-administration.yml
-    - name: Ändern des Computerzustands
-      href: samples/changing-computer-state.md
-    - name: Erfassen von Informationen über Computer
-      href: samples/collecting-information-about-computers.md
-    - name: Erstellen von Get-WinEvent-Abfragen mit FilterHashtable
-      href: samples/creating-get-winEvent-queries-with-filterhashtable.md
+    - name: Arbeiten mit Objekten
+      items:
+        - name: Anzeigen einer Objektstruktur (Get-Member)
+          href: samples/viewing-object-structure--get-member-.md
+        - name: Auswählen von Objektteilen (Select-Object)
+          href: samples/selecting-parts-of-objects--select-object-.md
+        - name: Entfernen von Objekten aus der Pipeline (Where-Object)
+          href: samples/removing-objects-from-the-pipeline--where-object-.md
+        - name: Sortieren von Objekten
+          href: samples/sorting-objects.md
+        - name: Wiederholen einer Aufgabe für mehrere Objekte (ForEach-Object)
+          href: samples/repeating-a-task-for-multiple-objects--foreach-object-.md
+        - name: Erstellen von .NET- und COM-Objekten (New-Object)
+          href: samples/creating-.net-and-com-objects--new-object-.md
+        - name: Verwenden von statischen Klassen und Methoden
+          href: samples/using-static-classes-and-methods.md
+        - name: Abrufen von WMI-Objekten (Get-WmiObject)
+          href: samples/getting-wmi-objects--get-wmiobject-.md
+    - name: Verwalten von Computern
+      items:
+        - name: Ändern des Computerzustands
+          href: samples/changing-computer-state.md
+        - name: Erfassen von Informationen über Computer
+          href: samples/collecting-information-about-computers.md
+        - name: Erstellen von Get-WinEvent-Abfragen mit FilterHashtable
+          href: samples/creating-get-winEvent-queries-with-filterhashtable.md
+    - name: Verwalten von Prozessen und Diensten
+      items:
+        - name: Verwalten von Prozessen mit Process-Cmdlets
+          href: samples/managing-processes-with-process-cmdlets.md
+        - name: Verwalten von Diensten
+          href: samples/managing-services.md
+        - name: Verwalten von Windows PowerShell-Laufwerken
+          href: samples/managing-windows-powershell-drives.md
+        - name: Arbeiten mit Druckern
+          href: samples/working-with-printers.md
+        - name: Durchführen von Netzwerkaufgaben
+          href: samples/performing-networking-tasks.md
+        - name: Arbeiten mit Softwareinstallationen
+          href: samples/working-with-software-installations.md
+        - name: Decodieren eines PowerShell-Befehls in einem laufenden Prozess
+          href: samples/decode-powershell-command-from-a-running-process.md
+    - name: Arbeiten mit Ausgaben
+      items:
+        - name: Umleiten von Daten mit Out-*-Cmdlets
+          href: samples/redirecting-data-with-out---cmdlets.md
+        - name: Verwenden von Formatbefehlen zum Ändern der Ausgabeanzeige
+          href: samples/using-format-commands-to-change-output-view.md
+    - name: Verwalten von Laufwerken und Dateien
+      items:
+        - name: Verwalten des aktuellen Speicherorts
+          href: samples/managing-current-location.md
+        - name: Arbeiten mit Dateien und Ordnern
+          href: samples/working-with-files-and-folders.md
+        - name: 'Arbeiten mit Dateien, Ordnern und Registrierungsschlüsseln'
+          href: samples/working-with-files-folders-and-registry-keys.md
+        - name: Arbeiten mit Registrierungseinträgen
+          href: samples/working-with-registry-entries.md
+        - name: Arbeiten mit Registrierungsschlüsseln
+          href: samples/working-with-registry-keys.md
     - name: Erstellen von UI-Elementen
       items:
         - name: Erstellen eines benutzerdefinierten Eingabefelds
@@ -216,57 +268,13 @@
           href: samples/multiple-selection-list-boxes.md
         - name: Auswählen von Elementen in einem Listenfeld
           href: samples/selecting-items-from-a-list-box.md
-    - name: Decodieren eines PowerShell-Befehls in einem laufenden Prozess
-      href: samples/decode-powershell-command-from-a-running-process.md
-    - name: Verwalten des aktuellen Speicherorts
-      href: samples/managing-current-location.md
-    - name: Verwalten von Prozessen mit Process-Cmdlets
-      href: samples/managing-processes-with-process-cmdlets.md
-    - name: Verwalten von Diensten
-      href: samples/managing-services.md
-    - name: Verwalten von Windows PowerShell-Laufwerken
-      href: samples/managing-windows-powershell-drives.md
-    - name: Direktes Verarbeiten von Elementen
-      href: samples/manipulating-items-directly.md
-    - name: Durchführen von Netzwerkaufgaben
-      href: samples/performing-networking-tasks.md
-    - name: Umleiten von Daten mit Out-*-Cmdlets
-      href: samples/redirecting-data-with-out---cmdlets.md
-    - name: Verwenden von Formatbefehlen zum Ändern der Ausgabeanzeige
-      href: samples/using-format-commands-to-change-output-view.md
-    - name: Arbeiten mit Dateien und Ordnern
-      href: samples/working-with-files-and-folders.md
-    - name: 'Arbeiten mit Dateien, Ordnern und Registrierungsschlüsseln'
-      href: samples/working-with-files-folders-and-registry-keys.md
-    - name: Arbeiten mit Objekten
+    - name: Weitere Beispiele
       items:
-        - name: Abrufen von WMI-Objekten (Get-WmiObject)
-          href: samples/getting-wmi-objects--get-wmiobject-.md
-        - name: Erstellen von .NET- und COM-Objekten (New-Object)
-          href: samples/creating-.net-and-com-objects--new-object-.md
-        - name: Entfernen von Objekten aus der Pipeline (Where-Object)
-          href: samples/removing-objects-from-the-pipeline--where-object-.md
-        - name: Auswählen von Objektteilen (Select-Object)
-          href: samples/selecting-parts-of-objects--select-object-.md
-        - name: Sortieren von Objekten
-          href: samples/sorting-objects.md
-        - name: Wiederholen einer Aufgabe für mehrere Objekte (ForEach-Object)
-          href: samples/repeating-a-task-for-multiple-objects--foreach-object-.md
-        - name: Verwenden von statischen Klassen und Methoden
-          href: samples/using-static-classes-and-methods.md
-        - name: Anzeigen einer Objektstruktur (Get-Member)
-          href: samples/viewing-object-structure--get-member-.md
-    - name: Arbeiten mit Druckern
-      href: samples/working-with-printers.md
-    - name: Arbeiten mit Registrierungseinträgen
-      href: samples/working-with-registry-entries.md
-    - name: Arbeiten mit Registrierungsschlüsseln
-      href: samples/working-with-registry-keys.md
-    - name: Arbeiten mit Softwareinstallationen
-      href: samples/working-with-software-installations.md
-    - name: Andere nützliche Skriptobjekte
-      href: samples/other-useful-scripting-objects.md
-    - name: 'Anhang 1: Kompatibilitätsaliase'
-      href: samples/appendix-1---compatibility-aliases.md
-    - name: 'Anhang 2: Erstellen einer benutzerdefinierten PowerShell-Verknüpfung'
-      href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
+        - name: Direktes Verarbeiten von Elementen
+          href: samples/manipulating-items-directly.md
+        - name: Andere nützliche Skriptobjekte
+          href: samples/other-useful-scripting-objects.md
+        - name: 'Anhang 1: Kompatibilitätsaliase'
+          href: samples/appendix-1---compatibility-aliases.md
+        - name: 'Anhang 2: Erstellen einer benutzerdefinierten PowerShell-Verknüpfung'
+          href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
