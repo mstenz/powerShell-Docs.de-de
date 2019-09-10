@@ -8,115 +8,115 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d4e38235-9987-4347-afd2-0f7d1dc8f64a
 caps.latest.revision: 19
-ms.openlocfilehash: cff50d415c4c90182fa1cf015a5a5ba84d4d613a
-ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
+ms.openlocfilehash: b42ba6b2bf42a74213eb78f2db22e16de7e90583
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66470786"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848063"
 ---
 # <a name="understanding-a-windows-powershell-module"></a>Grundlegendes zum Windows PowerShell-Modul
 
-Ein *Modul* ist ein Satz von zugehörigen Windows PowerShell-Funktionalitäten, die als eine praktische Einheit, die (in der Regel in einem Verzeichnis gespeichert) gruppiert. Definieren Sie einen Satz von entsprechenden Skriptdateien, Assemblys und zugehörigen Ressourcen als ein Modul, können Sie verweisen, laden, speichern und teilen Sie Ihren Code viel einfacher, als würde Sie sonst.
+Ein *Modul* ist ein Satz verwandter Windows PowerShell-Funktionen, die als bequeme Einheit gruppiert sind (in der Regel in einem einzigen Verzeichnis gespeichert). Wenn Sie einen Satz verwandter Skriptdateien, Assemblys und zugehöriger Ressourcen als Modul definieren, können Sie Ihren Code viel einfacher referenzieren, laden, speichern und freigeben, als andernfalls.
 
-Der Hauptzweck eines Moduls ist, um die modularisierung von Windows PowerShell-Code (z. B. Wiederverwendung und Abstraktion) zu ermöglichen. Beispielsweise ist die einfachste Möglichkeit zum Erstellen eines Moduls, um ein Windows PowerShell-Skript einfach als eine. psm1-Datei zu speichern. Somit können Sie steuern (z. B. öffentlich oder privat) die Funktionen und Variablen im Skript enthalten. Speichern das Skript als. psm1-Datei können Sie auch den Umfang der bestimmten Variablen steuern. Schließlich auch können Cmdlets wie z. B. [Install-Module](/powershell/module/PowershellGet/Install-Module) zum Organisieren, installieren und verwenden Sie das Skript als Bausteine für größere Lösungen.
+Der Hauptzweck eines Moduls besteht darin, die Modularisierung (IE, Wiederverwendung und Abstraktion) von Windows PowerShell-Code zuzulassen. Die einfachste Methode zum Erstellen eines Moduls ist beispielsweise, ein Windows PowerShell-Skript einfach als psm1-Datei zu speichern. Auf diese Weise können Sie die Funktionen und Variablen, die im Skript enthalten sind, Steuern (d.h. öffentlich oder privat). Wenn Sie das Skript als psm1-Datei speichern, können Sie auch den Bereich bestimmter Variablen steuern. Zum Schluss können Sie auch Cmdlets wie " [Install-Module](/powershell/module/PowershellGet/Install-Module) " verwenden, um Ihr Skript als Bausteine für größere Lösungen zu organisieren, zu installieren und zu verwenden.
 
-## <a name="module-components-and-types"></a>Komponenten der Module und Typen
+## <a name="module-components-and-types"></a>Modulkomponenten und-Typen
 
-Ein Modul besteht aus vier grundlegenden Komponenten:
+Ein Modul besteht aus vier Grundkomponenten:
 
-1. Einige Sortieren der Codedatei – in der Regel entweder ein PowerShell-Skript oder eine verwaltete Cmdlet-Assembly.
+1. Eine Codedatei (in der Regel entweder ein PowerShell-Skript oder eine verwaltete Cmdlet-Assembly).
 
-2. Die möglicherweise von den oben angegebenen Codedatei benötigen, z. B. zusätzliche Assemblys, Dateien oder Skripts helfen.
+2. Alles, was die obige Codedatei benötigt, z. b. zusätzliche Assemblys, Hilfedateien oder Skripts.
 
-3. Eine Manifestdatei, die beschreibt, der oben genannten Dateien als auch auflisten, z. B. Autor und versionsverwaltung speichert...
+3. Eine Manifest-Datei, in der die obigen Dateien beschrieben werden, sowie Metadaten wie Autoren und Versionsinformationen werden gespeichert.
 
-4. Ein Verzeichnis, das alle von den oben angegebenen Inhalt enthält, und befindet, in dem PowerShell einigermaßen finden sie.
+4. Ein Verzeichnis, das den gesamten obigen Inhalt enthält und sich dort befindet, wo PowerShell Sie finden kann.
 
-   Beachten Sie, dass keine dieser Komponenten, und auch wirklich erforderlich sind. Beispielsweise kann ein Modul aus technischer Sicht nur ein Skript in einer psm1-Datei gespeichert sein. Sie können auch ein Modul verwenden, die lediglich eine Manifestdatei wird hauptsächlich für organisatorische Zwecke verwendet wird. Sie können auch ein Skript schreiben, die dynamisch erstellt ein Modul, und daher nicht unbedingt ein Verzeichnis zum Speichern von in. Den folgenden Abschnitten werden die Arten von Modulen, die Sie durch das Mischen und Anpassen von die anderen Teile eines Moduls zusammen abrufen können.
+   Beachten Sie, dass keine dieser Komponenten tatsächlich notwendig ist. Ein Modul kann z. b. technisch gesehen nur ein Skript sein, das in einer psm1-Datei gespeichert ist. Sie können auch ein Modul verwenden, das nichts anderes als eine Manifest-Datei ist, das hauptsächlich für organisatorische Zwecke verwendet wird. Sie können auch ein Skript schreiben, mit dem ein Modul dynamisch erstellt wird. Daher ist es eigentlich nicht erforderlich, in ein Verzeichnis zu speichern. In den folgenden Abschnitten werden die Modultypen beschrieben, die Sie durch das kombinieren und Zuordnen der verschiedenen möglichen Teile eines Moduls erreichen können.
 
-### <a name="script-modules"></a>Script-Module
+### <a name="script-modules"></a>Skript Module
 
-Wie der Name schon sagt, ein *Skriptmodul* ist eine Datei (. psm1), die alle gültigen Windows PowerShell-Code enthält. Skriptentwickler und Administratoren können diese Art von Modul Module erstellen, deren Member-Funktionen, Variablen usw. enthalten. Im Prinzip ist ein Skriptmodul einfach ein Windows PowerShell-Skript mit einer anderen Erweiterung, die Administratoren ermöglicht, Import, Export und Management-Funktionen auf ihn zu verwenden.
+Wie der Name schon sagt, ist ein *Skript Modul* eine Datei (. psm1), die einen beliebigen gültigen Windows PowerShell-Code enthält. Skriptentwickler und-Administratoren können mit diesem Modultyp Module erstellen, deren Member Funktionen, Variablen und mehr enthalten. Bei einem Skript Modul handelt es sich um ein Windows PowerShell-Skript mit einer anderen Erweiterung, mit der Administratoren Import-, Export-und Verwaltungsfunktionen verwenden können.
 
-Darüber hinaus können Sie eine Manifestdatei zum Einbeziehen anderer Ressourcen in Ihrem Modul wie z. B. Dateien, andere abhängige Module oder Common Language Runtime-Skripts aus. Manifestdateien sind auch nützlich, für die nachverfolgung von Metadaten wie z. B. Informationen zu erstellen und die versionsverwaltung.
+Außerdem können Sie eine Manifest-Datei verwenden, um andere Ressourcen in das Modul einzuschließen, z. b. Datendateien, andere abhängige Module oder Lauf Zeit Skripts. Manifestressourcen sind auch nützlich für die Nachverfolgung von Metadaten, wie z. b. das Erstellen von Informationen
 
-Schließlich muss ein Skriptmodul, wie andere Module, die nicht dynamisch erstellt wird, in einem Ordner gespeichert werden, die relativ PowerShell ermitteln kann. In der Regel ist dies für den Pfad der PowerShell-Modul. aber bei Bedarf Sie können explizit zu beschreiben, wo Ihr Modul installiert ist. Weitere Informationen finden Sie unter [Gewusst wie: Schreiben Sie ein PowerShell-Skriptmodul](./how-to-write-a-powershell-script-module.md).
+Schließlich muss ein Skript Modul, wie ein beliebiges anderes Modul, das nicht dynamisch erstellt wird, in einem Ordner gespeichert werden, der von PowerShell angemessen ermittelt werden kann. Dies erfolgt in der Regel im PowerShell-Modulpfad. bei Bedarf können Sie jedoch explizit beschreiben, wo das Modul installiert ist. Weitere Informationen finden Sie unter Gewusst [wie: Schreiben eines PowerShell-Skript Moduls](./how-to-write-a-powershell-script-module.md).
 
 ### <a name="binary-modules"></a>Binäre Module
 
-Ein *binäres Modul* ist .NET Framework-Assembly (.dll), die kompilierten Code, z. B. enthält C#. Cmdlet-Entwickler können diese Art von Modul-Cmdlets, Anbietern und vieles mehr zu teilen. (Vorhandene-Snap-ins kann auch als binäre Module verwendet werden.) Im Vergleich zu einem Skriptmodul, ein binäres Modul ermöglicht Ihnen die Erstellung von Cmdlets, die schneller, oder verwenden Features (z. B. multithreading), die nicht einfach, Code in Windows PowerShell-Skripts sind.
+Ein *binäres Modul* ist eine .NET Framework Assembly (. dll), die kompilierten Code enthält C#, z. b. Cmdlet-Entwickler können diese Art von Modul verwenden, um Cmdlets, Anbieter und vieles mehr gemeinsam zu nutzen. (Vorhandene Snap-Ins können auch als binäre Module verwendet werden.) Im Vergleich zu einem Skript Modul können Sie mit einem binären Modul Cmdlets erstellen, die schneller sind oder Funktionen verwenden (z. b. Multithreading), die in Windows PowerShell-Skripts nicht so einfach zu programmieren sind.
 
-Als können mit Skriptmodule, Sie enthalten eine Manifestdatei, um zusätzliche Ressourcen zu beschreiben, die Ihr Modul verwendet, und klicken Sie zum Nachverfolgen von Metadaten zu Ihrem Modul. Ebenso sollten Sie wahrscheinlich Ihre binäre Modul in einem Ordner an einer beliebigen Stelle entlang des Pfads der PowerShell-Modul installieren. Weitere Informationen finden Sie unter Vorgehensweise [zum Schreiben von einem binären Modul für PowerShell](./how-to-write-a-powershell-binary-module.md).
+Wie bei Skript Modulen können Sie eine Manifest-Datei einschließen, um zusätzliche Ressourcen zu beschreiben, die das Modul verwendet, und um Metadaten zu Ihrem Modul zu überprüfen. Ebenso sollten Sie das binäre Modul wahrscheinlich in einem Ordner irgendwo im PowerShell-Modulpfad installieren. Weitere Informationen finden Sie unter How to [Write a PowerShell Binary Module](./how-to-write-a-powershell-binary-module.md).
 
-### <a name="manifest-modules"></a>Manifestmodule
+### <a name="manifest-modules"></a>Manifest-Module
 
-Ein *Manifestmodul* ist ein Modul, das eine Manifestdatei verwendet, um alle zugehörigen Komponenten zu beschreiben, aber keine Art von Core-Assembly oder ein Skript verfügen. (Eine Manifestmodul formal, verlässt der `ModuleToProcess` oder `RootModule` -Element des Manifests leer.) Allerdings weiterhin können Sie die anderen Funktionen eines Moduls, z.B. die Möglichkeit, abhängige Assemblys laden, oder führen automatisch bestimmte vorab verarbeitete Skripts. Sie können auch ein manifest-Modul verwenden, wie eine einfache Möglichkeit, Ressourcen, die andere Module, z. B. geschachtelte Module, Assemblys, Typen oder Formate verwendet werden verpacken. Weitere Informationen finden Sie unter [Gewusst wie: Schreiben eines Modulmanifests PowerShell](./how-to-write-a-powershell-module-manifest.md).
+Ein *Manifest-Modul* ist ein Modul, das eine Manifest-Datei verwendet, um alle Komponenten zu beschreiben, aber keine Art von Kernassembly oder Skript. (Formal lässt ein Manifest-Modul das `ModuleToProcess` - `RootModule` Element oder das-Element des Manifests leer.) Sie können jedoch weiterhin die anderen Features eines Moduls verwenden, z. b. die Möglichkeit, abhängige Assemblys zu laden oder bestimmte vorab verarbeitete Skripts automatisch auszuführen. Sie können auch ein Manifest-Modul als bequeme Methode zum Verpacken von Ressourcen verwenden, die von anderen Modulen verwendet werden, wie z. b. geschaltete Module, Assemblys, Typen oder Formate. Weitere Informationen finden Sie unter Gewusst [wie: Schreiben eines PowerShell-Modul Manifests](./how-to-write-a-powershell-module-manifest.md).
 
 ### <a name="dynamic-modules"></a>Dynamische Module
 
-Ein *dynamisches Modul* ist ein Modul, die nicht aus geladen wird, oder in einer Datei gespeichert. Stattdessen werden dynamisch erstellt, durch ein Skript, mit der [New-Module](/powershell/module/Microsoft.PowerShell.Core/New-Module) Cmdlet. Diese Art des Moduls ermöglicht es sich um ein Skript zum Erstellen eines Moduls nach Bedarf, die nicht geladen oder in den permanenten Speicher gespeichert werden muss. Naturgemäß ein dynamisches Modul dient zum kurzlebig sein und aus diesem Grund kann nicht zugegriffen werden, indem die `Get-Module` Cmdlet. Auf ähnliche Weise, in der Regel benötigen keinen modulmanifeste, auch permanente Ordner zum Speichern von ihren zugehörigen Assemblys nicht wahrscheinlich erforderlich.
+Ein *dynamisches Modul* ist ein Modul, das nicht aus einer Datei geladen oder in eine Datei gespeichert wird. Stattdessen werden Sie mithilfe des [New-Module-](/powershell/module/Microsoft.PowerShell.Core/New-Module) Cmdlets dynamisch von einem Skript erstellt. Dieser Modultyp ermöglicht einem Skript, bei Bedarf ein Modul zu erstellen, das nicht geladen oder im persistenten Speicher gespeichert werden muss. Ein dynamisches Modul ist naturgemäß kurzlebig und kann daher nicht über das `Get-Module` Cmdlet darauf zugreifen. Analog dazu benötigen Sie in der Regel keine Modul Manifeste, und Sie benötigen wahrscheinlich keine permanenten Ordner zum Speichern der zugehörigen Assemblys.
 
-## <a name="module-manifests"></a>Modulmanifesten
+## <a name="module-manifests"></a>Modul Manifeste
 
-Ein *modulmanifest* ist eine psd1-Datei, die eine Hashtabelle enthält. Die Schlüssel und Werte in der Hashtabelle gehen Sie folgendermaßen vor:
+Ein *Modul Manifest* ist eine. psd1-Datei, die eine Hash Tabelle enthält. Die Schlüssel und Werte in der Hash Tabelle führen die folgenden Schritte aus:
 
 - Beschreiben Sie den Inhalt und die Attribute des Moduls.
 
-- Definieren Sie die erforderlichen Komponenten.
+- Definieren Sie die Voraussetzungen.
 
 - Bestimmen Sie, wie die Komponenten verarbeitet werden.
 
-  Manifeste sind für ein Modul nicht erforderlich. Module können verweisen auf Skriptdateien (ps1), skriptmoduldateien (psm1), manifest-Dateien (psd1), Formatierung und geben Sie Dateien (. ps1xml), Cmdlets und Anbieter von Assemblys (.dll), Ressourcendateien, Hilfedateien, Lokalisierungsdateien oder einen anderen Typ von Datei oder Ressource, die ist als Teil des Moduls enthalten. Für eine internationale Skript enthält die Ordner "Module" auch einen Satz von Nachrichtendateien-Katalog. Wenn Sie den Ordner "Module" eine Manifestdatei hinzugefügt haben, können Sie mehrere Dateien als einzelne Einheit verweisen, durch einen Verweis auf das Manifest.
+  Manifeste sind für ein Modul nicht erforderlich. Module können auf Skriptdateien (. ps1), Skript Moduldateien (. psm1), Manifest-Dateien (. psd1), Formatierungs-und Typdateien (. ps1xml), Cmdlets und Anbieterassemblys (DLL-Dateien), Ressourcen Dateien, Hilfedateien, Lokalisierungsdateien oder beliebige andere Datei-oder Ressourcentypen verweisen, die wird als Teil des Moduls gebündelt. Für ein internationalisiertes Skript enthält der Modul Ordner auch einen Satz von Nachrichten Katalogdateien. Wenn Sie dem Modul Ordner eine Manifest-Datei hinzufügen, können Sie auf die verschiedenen Dateien als einzelne Einheit verweisen, indem Sie auf das Manifest verweisen.
 
-  Das Manifest selbst beschreibt die folgenden Kategorien von Informationen an:
+  Das Manifest selbst beschreibt die folgenden Kategorien von Informationen:
 
-- Metadaten über das Modul, wie z. B. die Versionsnummer des Moduls, dem Autor und die Beschreibung.
+- Metadaten zum Modul, z. b. die Modulversionsnummer, der Autor und die Beschreibung.
 
-- Voraussetzungen zum Importieren des Moduls, wie die Windows PowerShell-Version, die Version der common Language Runtime (CLR) und die erforderlichen Module.
+- Erforderliche Komponenten zum Importieren des Moduls, wie z. b. die Windows PowerShell-Version, die Common Language Runtime-Version (CLR) und die erforderlichen Module.
 
-- Verarbeitungsrichtlinien, z. B. die Skripts, Formate und -Typen zu verarbeiten.
+- Verarbeitungs Direktiven, wie z. b. die zu verarbeitenden Skripts, Formate und Typen.
 
-- Einschränkungen für die Elemente des Moduls zu exportieren, z. B. die Aliase, Funktionen, Variablen und -Cmdlets exportieren.
+- Einschränkungen für die zu exportierenden Member des Moduls, z. b. die Aliase, Funktionen, Variablen und Cmdlets, die exportiert werden sollen.
 
-  Weitere Informationen finden Sie unter [Gewusst wie: Schreiben eines Modulmanifests PowerShell](./how-to-write-a-powershell-module-manifest.md).
+  Weitere Informationen finden Sie unter Gewusst [wie: Schreiben eines PowerShell-Modul Manifests](./how-to-write-a-powershell-module-manifest.md).
 
-## <a name="storing-and-installing-a-module"></a>Speichern und das Installieren eines Moduls
+## <a name="storing-and-installing-a-module"></a>Speichern und Installieren eines Moduls
 
-Nachdem Sie ein Skript, Binär- oder manifest-Modul erstellt haben, können Sie Ihre Arbeit an einem Ort speichern, andere darauf zugreifen können. Beispielsweise kann Ihr Modul oder gespeichert werden im Ordner "System", in denen Windows PowerShell installiert ist, können Sie in einem Benutzerordner gespeichert werden.
+Nachdem Sie ein Skript-, Binär-oder Manifest-Modul erstellt haben, können Sie Ihre Arbeit an einem Speicherort speichern, an dem andere Benutzer darauf zugreifen können. Das Modul kann z. b. im Systemordner gespeichert werden, in dem Windows PowerShell installiert ist, oder es kann in einem Benutzerordner gespeichert werden.
 
-Im Allgemeinen können Sie bestimmen, in dem Ihr Modul installiert werden soll, mithilfe einer der Pfade gespeichert, der `$ENV:PSModulePath` Variable. Mit einem dieser Pfade also PowerShell automatisch finden und Laden Ihr Modul aus, wenn ein Benutzer es in ihrem Code aufruft. Wenn Sie Ihr Modul, das an anderer Stelle gespeichert werden, explizit lassen Sie PowerShell, wissen übergeben den Speicherort Ihres Moduls als Parameter beim Aufrufen `Install-Module`.
+Im Allgemeinen können Sie mithilfe eines der Pfade, die in der `$ENV:PSModulePath` Variablen gespeichert sind, ermitteln, wo Sie das Modul installieren sollten. Die Verwendung eines dieser Pfade bedeutet, dass PowerShell das Modul automatisch suchen und laden kann, wenn ein Benutzer in seinem Code einen aufzurufenden Vorgang ausführt. Wenn Sie das Modul an einem anderen Speicherort speichern, können Sie PowerShell explizit mitteilen, indem Sie den Speicherort des Moduls als Parameter übergeben, `Install-Module`Wenn Sie aufrufen.
 
-Unabhängig davon, der Pfad des Ordners wird als bezeichnet die *Basis* des Moduls (ModuleBase), und den Namen des Skripts, Binär- oder manifest Moduldatei muss identisch mit dem Modul Ordnernamen ein, mit Ausnahme der folgenden:
+Unabhängig davon wird der Pfad des Ordners als *Basis* des Moduls (modulebase) bezeichnet, und der Name der Skript-, Binär-oder Manifest-Modul Datei sollte mit dem Namen des Modul Ordners übereinstimmen, mit den folgenden Ausnahmen:
 
-- Dynamische Module, die vom erstellten der `New-Module` Cmdlet kann mit benannt werden die `Name` -Parameter des Cmdlets.
+- Dynamische Module, die vom `New-Module` Cmdlet erstellt werden, können mithilfe des `Name` -Parameters des Cmdlets benannt werden.
 
-- Module, die aus der Assemblyobjekte nach importiert die  **`Import-Module` -Assembly** Befehl entsprechend der folgenden Syntax benannt werden: `"dynamic_code_module_" + assembly.GetName()`.
+- Module, die durch den  **`Import-Module` -Assembly-** Befehl aus assemblyobjekten importiert werden, werden `"dynamic_code_module_" + assembly.GetName()`gemäß der folgenden Syntax benannt:.
 
-  Weitere Informationen finden Sie unter [Installieren eines PowerShell-Moduls](./installing-a-powershell-module.md) und [ändern den Installationspfad PSModulePath](./modifying-the-psmodulepath-installation-path.md).
+  Weitere Informationen finden Sie unter [Installieren eines PowerShell-Moduls](./installing-a-powershell-module.md) und [Ändern des psmodulepath-Installations Pfads](./modifying-the-psmodulepath-installation-path.md).
 
-## <a name="module-cmdlets-and-variables"></a>Module-Cmdlets und Variablen
+## <a name="module-cmdlets-and-variables"></a>Module-Cmdlets und-Variablen
 
-Die folgenden Cmdlets und Variablen werden von Windows PowerShell für die Erstellung und Verwaltung von Modulen bereitgestellt.
+Die folgenden Cmdlets und Variablen werden von Windows PowerShell zum Erstellen und Verwalten von Modulen bereitgestellt.
 
-[Neues Modul](/powershell/module/Microsoft.PowerShell.Core/New-Module) Cmdlet dieses Cmdlet erstellt ein neues dynamisches Modul, das vorhanden ist nur im Arbeitsspeicher. Das Modul aus einen Skriptblock erstellt wird, und ihre exportierten Member, z. B. Funktionen und Variablen sind in der Sitzung sofort verfügbar und verfügbar bleiben, bis die Sitzung geschlossen wird.
+[New-Module-](/powershell/module/Microsoft.PowerShell.Core/New-Module) Cmdlet dieses Cmdlet erstellt ein neues dynamisches Modul, das nur im Arbeitsspeicher vorhanden ist. Das Modul wird aus einem Skriptblock erstellt, und seine exportierten Member, z. b. die zugehörigen Funktionen und Variablen, sind in der Sitzung sofort verfügbar und bleiben verfügbar, bis die Sitzung geschlossen wird.
 
-[Neue-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest) Cmdlets mit diesem Cmdlet erstellt eine neue Datei des Moduls-modulmanifestdatei (psd1), füllt die Werte und speichert die Manifestdatei in den angegebenen Pfad. Dieses Cmdlet kann auch verwendet werden, Manifestvorlage Modul zu erstellen, die manuell ausgefüllt werden können.
+[New-modulemanifest](/powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest) -Cmdlet: Dieses Cmdlet erstellt eine neue Modul Manifest-Datei (. psd1), füllt ihre Werte auf und speichert die Manifest-Datei im angegebenen Pfad. Dieses Cmdlet kann auch verwendet werden, um eine Modul Manifest-Vorlage zu erstellen, die manuell ausgefüllt werden kann.
 
-[Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) Cmdlet dieses Cmdlet Fügt ein oder mehrere Module für die aktuelle Sitzung.
+Cmdlet " [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) ": Dieses Cmdlet fügt der aktuellen Sitzung ein oder mehrere Module hinzu.
 
-[Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) Cmdlet dieses Cmdlet Ruft Informationen zu den Modulen, die wurden oder in die aktuelle Sitzung importiert werden können.
+[Get-Module-](/powershell/module/Microsoft.PowerShell.Core/Get-Module) Cmdlet dieses Cmdlet ruft Informationen über die Module ab, die in die aktuelle Sitzung importiert wurden oder importiert werden können.
 
-[Export-ModuleMember](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember) Cmdlet dieses Cmdlet gibt die modulmitglieder (z. B. Cmdlets, Funktionen, Variablen und Aliase) an, die aus einer skriptmoduldatei (. psm1) oder aus einem dynamischen Modul, das mithilfe von erstellt exportiert werden die `New-Module` Cmdlet.
+[Export-modulemember](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember) -Cmdlet dieses Cmdlet gibt die Modulmember (z. b. Cmdlets, Funktionen, Variablen und Aliase) an, die aus einer Skript Modul Datei (. psm1) oder einem dynamischen Modul exportiert werden, `New-Module` das mit dem Cmdlet erstellt wurde.
 
-[Remove-Module](/powershell/module/Microsoft.PowerShell.Core/Remove-Module) Cmdlets mit diesem Cmdlet werden die Module aus der aktuellen Sitzung entfernt.
+Cmdlet " [Remove-Module](/powershell/module/Microsoft.PowerShell.Core/Remove-Module) ": Dieses Cmdlet entfernt Module aus der aktuellen Sitzung.
 
-[Test-ModuleManifest](/powershell/module/Microsoft.PowerShell.Core/Test-ModuleManifest) Cmdlet dieses Cmdlet stellt sicher, dass ein modulmanifest die Komponenten eines Moduls genau beschreibt überprüfen Sie, dass die Dateien, die in der modulmanifestdatei (psd1) aufgeführten tatsächlich in den angegebenen Pfaden vorhanden sind.
+[Test-modulemanifest](/powershell/module/Microsoft.PowerShell.Core/Test-ModuleManifest) -Cmdlet dieses Cmdlet überprüft, ob ein Modul Manifest die Komponenten eines Moduls genau beschreibt, indem überprüft wird, ob die in der Modul Manifest-Datei (. psd1) aufgeführten Dateien tatsächlich in den angegebenen Pfaden vorhanden sind.
 
-$PSScriptRoot enthält diese Variable das Verzeichnis, die aus dem Skriptmodul ausgeführt wird. Skripts, um die Modulpfad verwenden, um auf andere Ressourcen zugreifen können.
+$PSScriptRoot diese Variable das Verzeichnis enthält, aus dem das Skript Modul ausgeführt wird. Sie ermöglicht es Skripts, den Modulpfad für den Zugriff auf andere Ressourcen zu verwenden.
 
-$env: PSModulePath diese Umgebungsvariable enthält eine Liste der Verzeichnisse in dem das Windows PowerShell Modules gespeichert werden. Windows PowerShell verwendet den Wert dieser Variablen, die beim Importieren von Modulen wird automatisch ein, und aktualisieren die Hilfethemen für Module an.
+$ENV:P smodulepath diese Umgebungsvariable enthält eine Liste der Verzeichnisse, in denen Windows PowerShell-Module gespeichert werden. Windows PowerShell verwendet den Wert dieser Variablen beim automatischen Importieren von Modulen und zum Aktualisieren der Hilfe Themen für Module.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Schreiben eines Windows PowerShell-Moduls](./writing-a-windows-powershell-module.md)

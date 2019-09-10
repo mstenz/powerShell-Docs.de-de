@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e20e5ad6-a6e6-4a63-9d42-1ac54214f748
 caps.latest.revision: 5
-ms.openlocfilehash: cc4877242a16a9caa99564aeaae985f85e38791e
-ms.sourcegitcommit: ffcc1c55f5b3adc063353cb75f2a2183acc2234a
+ms.openlocfilehash: 59839e9b8b6f2a56f2f1a9c755f2f1a85deb34aa
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70737603"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848119"
 ---
 # <a name="how-to-add-dynamic-parameters-to-a-provider-help-topic"></a>Hinzufügen von dynamischen Parametern zu einem Anbieterhilfethema
 
@@ -23,7 +23,7 @@ In diesem Abschnitt wird erläutert, wie der Abschnitt **dynamische Parameter** 
 
 Die dynamischen Parameter, die in einem Anbieter Hilfethema dokumentiert werden, sind die dynamischen Parameter, die der Anbieter dem Cmdlet oder der Funktion hinzufügt, wenn das Cmdlet oder die Funktion im Anbieter Laufwerk verwendet wird.
 
-Dynamische Parameter können auch in der benutzerdefinierten Cmdlet-Hilfe für einen Anbieter dokumentiert werden. Wenn Sie sowohl Anbieter Hilfe als auch benutzerdefinierte Cmdlet-Hilfe für einen Anbieter schreiben, fügen Sie die dynamische Parameter Dokumentation in beide Dokumente ein. Weitere Informationen zu benutzerdefinierten Cmdlet-Hilfe finden Sie unter Erstellen einer [benutzerdefinierten Windows PowerShell-Cmdlet-Hilfe für Anbieter](./writing-custom-cmdlet-help-for-windows-powershell-providers.md).
+Dynamische Parameter können auch in der benutzerdefinierten Cmdlet-Hilfe für einen Anbieter dokumentiert werden. Wenn Sie sowohl Anbieter Hilfe als auch benutzerdefinierte Cmdlet-Hilfe für einen Anbieter schreiben, fügen Sie die dynamische Parameter Dokumentation in beide Dokumente ein.
 
 Wenn ein Anbieter keine dynamischen Parameter implementiert, enthält das Hilfethema für den Anbieter ein leeres `DynamicParameters` -Element.
 

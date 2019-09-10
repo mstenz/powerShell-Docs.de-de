@@ -1,5 +1,5 @@
 ---
-title: Schreiben von Hilfe für PowerShell-Skripts und Funktionen | Microsoft-Dokumentation
+title: Schreiben von Hilfe für PowerShell-Skripts und-Funktionen | Microsoft-Dokumentation
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,70 +8,66 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 859a6e22-75b1-43d4-ba62-62c107803b37
 caps.latest.revision: 7
-ms.openlocfilehash: 98a3f61ff4fa2367f69357173d4e8e14288ff429
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: af989fb2eeba6b68f2e3e6506f3f60d5be6f7d8a
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62083109"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848101"
 ---
-# <a name="writing-help-for-powershell-scripts-and-functions"></a>Schreiben von Hilfe für PowerShell-Skripts und Funktionen
+# <a name="writing-help-for-powershell-scripts-and-functions"></a>Schreiben von Hilfe für PowerShell-Skripts und-Funktionen
 
-PowerShell-Skripts und Funktionen sollten vollständig dokumentiert werden, wenn sie für andere Benutzer freigegeben werden.
-Die `Get-Help` Cmdlet zeigt die Hilfethemen für Skripts und die Funktion im gleichen Format, z. B. es zeigt die Hilfe für Cmdlets und alle der `Get-Help` Parametern verwendet wird, auf die Hilfethemen für Skripts und -Funktion.
+PowerShell-Skripts und-Funktionen sollten vollständig dokumentiert sein, wenn Sie für andere Personen freigegeben werden.
+Das `Get-Help` -Cmdlet zeigt die Hilfe Themen für Skripts und Funktionen im gleichen Format an, in dem die Hilfe für Cmdlets angezeigt `Get-Help` wird, und alle Parameter funktionieren in Skript-und Funktions Hilfe Themen.
 
-PowerShell-Skripts können ein Hilfethema zu diesem Skript und die Hilfethemen zu den einzelnen Funktionen in das Skript eingefügt werden.
-Funktionen, die unabhängig von den Skripts gemeinsam genutzt werden, können ihre eigenen Hilfethemen enthalten.
+PowerShell-Skripts können ein Hilfethema zu dem Skript und Hilfe Themen zu den einzelnen Funktionen im Skript enthalten.
+Funktionen, die unabhängig von Skripts freigegeben werden, können eigene Hilfe Themen enthalten.
 
-In diesem Dokument wird erläutert, das Format und die richtige Platzierung der Hilfethemen, und es enthält Vorschläge für Richtlinien für den Inhalt.
+In diesem Dokument werden das Format und die richtige Platzierung der Hilfe Themen erläutert, und es werden Richtlinien für den Inhalt vorgeschlagen.
 
-## <a name="types-of-script-and-function-help"></a>Typen von Skript und die Funktion-Hilfe
+## <a name="types-of-script-and-function-help"></a>Typen von Skript-und Funktions Hilfe
 
-### <a name="comment-based-help"></a>Kommentarbasierte Hilfe
-Das Hilfethema, das ein Skript oder eine Funktion beschreibt, kann als ein Satz von Anmerkungen in das Skript oder die Funktion implementiert werden.
-Beim kommentarbasierte Hilfe für ein Skript, und für Funktionen in einem Skript zu schreiben, achten Sie sorgfältig den Regeln für die kommentarbasierte Hilfe platzieren.
-Die Platzierung bestimmt, ob die `Get-Help` Cmdlet, das Skript oder eine Funktion ordnet das Hilfethema.
-Weitere Informationen zum Schreiben von Kommentar-Hilfethemen finden Sie unter [About_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
+### <a name="comment-based-help"></a>Kommentar basierte Hilfe
+Das Hilfethema, das ein Skript oder eine Funktion beschreibt, kann als Satz von Kommentaren innerhalb des Skripts oder der Funktion implementiert werden.
+Beachten Sie beim Schreiben der Kommentar basierten Hilfe für ein Skript und für Funktionen in einem Skript sorgfältig die Regeln zum Platzieren der Kommentar basierten Hilfe.
+Die Platzierung bestimmt, ob `Get-Help` das Cmdlet das Hilfethema dem Skript oder einer Funktion zuordnet.
+Weitere Informationen zum Schreiben von Kommentar basierten Hilfe Themen finden Sie unter [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
 
-### <a name="xml-based-command-help"></a>XML-basierten Befehl Hilfe
-Das Hilfethema, das ein Skript oder eine Funktion beschreibt, kann in eine XML-Datei implementiert werden, die der Befehl Hilfe-Schema verwendet.
-Um das Skript oder die Funktion die XML-Datei zuzuordnen, verwenden die `ExternalHelp` kommentieren Schlüsselwort, gefolgt von den Pfad und Namen der XML-Datei.
+### <a name="xml-based-command-help"></a>XML-basierte Befehls Hilfe
+Das Hilfethema, das ein Skript oder eine Funktion beschreibt, kann in einer XML-Datei implementiert werden, die das Befehls Hilfe Schema verwendet.
+Um das Skript oder die Funktion der XML-Datei zuzuordnen, verwenden `ExternalHelp` Sie das Kommentar Schlüsselwort, gefolgt vom Pfad und Namen der XML-Datei.
 
-Wenn die `ExternalHelp` kommentieren Schlüsselwort ist vorhanden, er hat Vorrang vor kommentarbasierte Hilfe, auch wenn `Get-Help` eine Hilfedatei, die den Wert der entspricht wurde nicht gefunden der `ExternalHelp` Schlüsselwort.
+Wenn das `ExternalHelp` Kommentar Schlüsselwort vorhanden ist, hat es Vorrang vor der Kommentar basierten Hilfe, `Get-Help` auch wenn keine Hilfedatei finden kann, die mit dem `ExternalHelp` Wert des Schlüssel Worts übereinstimmt.
 
-### <a name="online-help"></a>Online-Hilfe
-Sie können die Hilfethemen im Internet veröffentlichen und die anschließende Weiterleitung `Get-Help` zu die Themen zu öffnen.
-Weitere Informationen zum Schreiben von Kommentar-Hilfethemen finden Sie unter [Supporting Online Help](../module/supporting-online-help.md).
+### <a name="online-help"></a>Online Hilfe
+Sie können Ihre Hilfe Themen im Internet veröffentlichen und die Themen dann `Get-Help` direkt öffnen.
+Weitere Informationen zum Schreiben von Kommentar basierten Hilfe Themen finden Sie [unter unterstützen der Online Hilfe](../module/supporting-online-help.md).
 
-Es gibt keine feststehende Methode für das Schreiben von konzeptionellen ("Info") Themen für Skripts und Funktionen.
-Allerdings können Sie konzeptionellen Themen, in der Internet-Liste in den Themen und den URLs im Abschnitt "Verwandte Links" eines Hilfethemas Befehl veröffentlichen.
+Es gibt keine bewährte Methode zum Schreiben von konzeptionellen Themen ("about") für Skripts und Funktionen.
+Sie können jedoch konzeptionelle Themen im Internet auflisten. die Themen und deren URLs finden Sie im Abschnitt Verwandte Links eines Befehls Hilfe Themas.
 
-## <a name="content-considerations-for-script-and-function-help"></a>Inhalt Überlegungen zum Skript und die Funktion unterstützen
+## <a name="content-considerations-for-script-and-function-help"></a>Inhalts Überlegungen für Skript-und Funktions Hilfe
 
-- Wenn Sie eine sehr kurze Hilfethema mit nur einigen der verfügbaren Befehl Hilfe enthaltenen Abschnitte schreiben, achten Sie darauf, dass Sie klare Beschreibungen der Parameter Skript oder einer Funktion enthalten soll. Auch enthalten Sie ein oder zwei Beispiele für Befehle im Abschnitt "Beispiele", selbst wenn Sie zum Beispiel Beschreibungen auslassen.
+- Wenn Sie ein sehr kurzes Hilfethema mit nur einigen der verfügbaren Befehls Hilfe Abschnitte schreiben, stellen Sie sicher, dass Sie klare Beschreibungen der Skript-oder Funktionsparameter einschließen. Fügen Sie auch einen oder zwei Beispiel Befehle in den Abschnitt "Beispiele" ein, auch wenn Sie sich entscheiden, Beispiel Beschreibungen auszulassen.
 
-- Alle Beschreibungen finden Sie in den Befehl als ein Skript oder eine Funktion. Diese Informationen helfen den Benutzer zu verstehen und verwalten den Befehl.
+- Verweisen Sie in allen Beschreibungen auf den Befehl als Skript oder Funktion. Diese Informationen helfen dem Benutzer, den Befehl zu verstehen und zu verwalten.
 
-  Gibt z. B. die folgende ausführliche Beschreibung an, dass der New-Topic-Befehl ein Skript handelt. Dies erinnert Benutzer, die sie benötigen, geben den Pfad und den vollständigen Namen ein, wenn sie ausgeführt wird.
+  In der folgenden detaillierten Beschreibung ist beispielsweise angegeben, dass der New-Topic-Befehl ein Skript ist. Dadurch werden Benutzer daran erinnert, dass Sie den Pfad und den vollständigen Namen angeben müssen, wenn Sie Sie ausführen.
 
-  > "Das New-Topic-Skript erstellt eine leere Konzeptthema für jeden Themennamen eines in der Eingabedatei..."
+  > "Das New-Topic-Skript erstellt ein leeres konzeptionelles Thema für jeden Themen Namen in der Eingabedatei..."
 
-  Gibt an, dass die folgende ausführliche Beschreibung `Disable-PSRemoting` ist eine Funktion. Diese Informationen sind besonders nützlich für Benutzer, wenn die Sitzung mehrere Befehle mit demselben Namen enthält, von denen einige möglicherweise von einem Befehl mit höherer rangfolgenposition verborgen werden.
+  Die folgende ausführliche Beschreibung gibt an `Disable-PSRemoting` , dass eine Funktion ist. Diese Informationen sind besonders nützlich für Benutzer, wenn die Sitzung mehrere Befehle mit demselben Namen enthält, von denen einige möglicherweise durch einen Befehl mit höherer Rangfolge ausgeblendet werden.
 
-  > Die `Disable-PSRemoting` Funktion deaktiviert alle Sitzungskonfigurationen auf dem lokalen Computer...
+  > Die `Disable-PSRemoting` Funktion deaktiviert alle Sitzungs Konfigurationen auf dem lokalen Computer...
 
-- In einem Skript-Hilfethema wird erläutert, wie das Skript als Ganzes verwenden. Wenn Sie auch die Hilfethemen für Funktionen im Skript schreiben, die Funktionen in Ihrem Skript Hilfethema durch, und enthalten Sie Verweise auf die Hilfethemen für die Funktion im Abschnitt "Verwandte Links" des Hilfethemas Skript. Im Gegensatz dazu eine Funktion in einem Skript ist, Erläutern Sie im Hilfethema Funktion die Rolle, die die Funktion wiedergegeben wird, in das Skript, und wie sie unabhängig voneinander verwendet werden kann. Listen Sie dann im Hilfethema "Skript" im Abschnitt "Verwandte Links" des Hilfethemas Funktion.
+- Erläutern Sie in einem Skript Hilfethema, wie Sie das Skript als Ganzes verwenden. Wenn Sie auch Hilfe Themen für Funktionen im Skript schreiben, erwähnen Sie die Funktionen in Ihrem Skript Hilfethema, und schließen Sie Verweise auf die Funktionen der Hilfe Themen im Abschnitt Verwandte Links des Skripts Hilfethema ein. Wenn eine Funktion Teil eines Skripts ist, erklären Sie im Gegensatz dazu im Hilfethema der Funktion die Rolle, die die Funktion im Skript spielt, und wie Sie unabhängig voneinander verwendet werden kann. Listen Sie dann das Skript Hilfethema im Abschnitt "Verwandte Links" des Hilfe Themas für die Funktion auf.
 
-- Wenn Sie Beispiele für ein Hilfethema Skript zu schreiben, achten Sie darauf, dass Sie den Pfad zur Skriptdatei im Beispielbefehl enthält. Dies erinnert Benutzer daran, dass sie den Pfad explizit angeben müssen, auch wenn das Skript im aktuellen Verzeichnis ist.
+- Wenn Sie Beispiele für ein Skript Hilfethema schreiben, stellen Sie sicher, dass Sie den Pfad zur Skriptdatei im Beispiel Befehl einschließen. Dadurch werden Benutzer daran erinnert, dass Sie den Pfad explizit angeben müssen, auch wenn sich das Skript im aktuellen Verzeichnis befindet.
 
-- In einem Hilfethema Funktion erinnern Sie Benutzer, die die Funktion nur in der aktuellen Sitzung vorhanden ist, und klicken, um es in anderen Sitzungen verwenden, müssen sie hinzufügen oder ein PowerShell-Profil hinzufügen.
+- Erinnern Sie sich in einem Funktions Hilfethema an Benutzer, dass die Funktion nur in der aktuellen Sitzung vorhanden ist, und um Sie in anderen Sitzungen zu verwenden. Sie müssen Sie hinzufügen oder ihr ein PowerShell-Profil hinzufügen.
 
-- `Get-Help` Zeigt das Hilfethema für ein Skript oder eine Funktion an, nur, wenn die Skriptdatei und die Hilfedateien am richtigen Speicherort gespeichert werden. Aus diesem Grund ist es nicht sinnvoll, die Anweisungen zum Installieren von PowerShell, oder speichern, oder installieren das Skript oder einer Funktion in einem Hilfethema Skript oder einer Funktion enthalten. Stattdessen können Sie alle Anweisungen zur Installation in das Dokument, das Sie verwenden, um das Skript oder die Funktion zu verteilen.
+- `Get-Help`zeigt das Hilfethema für ein Skript oder eine Funktion nur an, wenn die Skriptdatei und die Hilfe Themendateien an den richtigen Speicherorten gespeichert werden. Daher ist es nicht sinnvoll, Anweisungen zum Installieren von PowerShell oder zum Speichern oder Installieren des Skripts oder der Funktion in einem Skript oder in einem Hilfethema zu erhalten. Fügen Sie stattdessen alle Installationsanweisungen in das Dokument ein, das Sie zum Verteilen des Skripts oder der Funktion verwenden.
 
 ## <a name="see-also"></a>Weitere Informationen
 
- [Schreiben von XML-Hilfethemen für Skripts und Funktionen](./writing-xml-based-help-topics-for-scripts-and-functions.md)
-
- [Schreiben von XML-basierte Hilfethemen zu Befehlen](./writing-xml-based-help-topics-for-commands.md)
-
- [Schreiben von Kommentar-Hilfethemen](./writing-comment-based-help-topics.md)
+[Schreiben von Kommentar basierten Hilfe Themen](./writing-comment-based-help-topics.md)
