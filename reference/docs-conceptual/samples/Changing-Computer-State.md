@@ -2,16 +2,16 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Ändern des Computerstatus
-ms.openlocfilehash: 80692ad7c56aa13e55d4997cfec289ffb3605458
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: de3e31e358548943a015b7bba275c4461202b20f
+ms.sourcegitcommit: d1ba596f9e0d4df9565601a70687a126d535c917
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67030280"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70386285"
 ---
 # <a name="changing-computer-state"></a>Ändern des Computerstatus
 
-Verwenden Sie zum Zurücksetzen eines Computers in Windows PowerShell entweder ein Standardbefehlszeilentool oder ein WMI-Klasse. Sie verwenden Windows PowerShell zwar nur zum Ausführen des Tools, dennoch erfahren Sie einige wichtige Details über die Arbeit mit externen Tools in Windows PowerShell, indem Sie lernen, wie Sie den Energiezustand eines Computers in Windows PowerShell ändern.
+Verwenden Sie zum Zurücksetzen eines Computers in Windows PowerShell entweder ein Standardbefehlszeilentool, WMI- oder CIM-Klasse. Sie verwenden Windows PowerShell zwar nur zum Ausführen des Tools, dennoch erfahren Sie einige wichtige Details über die Arbeit mit externen Tools in Windows PowerShell, indem Sie lernen, wie Sie den Energiezustand eines Computers in Windows PowerShell ändern.
 
 ## <a name="locking-a-computer"></a>Sperren eines Computers
 
@@ -37,7 +37,7 @@ Sie können auch das Tool **shutdown.exe** mit der zugehörigen Abmeldeoption ve
 shutdown.exe -l
 ```
 
-Eine dritte Möglichkeit ist die Verwendung von WMI. Die Klasse „Win32_OperatingSystem“ besitzt eine Win32Shutdown-Methode. Durch Aufrufen der Methode mit dem 0-Flag wird die Abmeldung initiiert:
+Eine weitere Möglichkeit ist die Verwendung von WMI. Die Klasse „Win32_OperatingSystem“ besitzt eine Win32Shutdown-Methode. Durch Aufrufen der Methode mit dem 0-Flag wird die Abmeldung initiiert:
 
 ```powershell
 (Get-WmiObject -Class Win32_OperatingSystem -ComputerName .).Win32Shutdown(0)
@@ -45,9 +45,15 @@ Eine dritte Möglichkeit ist die Verwendung von WMI. Die Klasse „Win32_Operati
 
 Weitere Informationen und andere Funktionen der Win32Shutdown-Methode finden Sie unter „Win32Shutdown-Methode der Win32_OperatingSystem-Klasse“ in MSDN.
 
+Schließlich können Sie CIM mit der gleichen Win32_OperatingSystem-Klasse verwenden, wie oben bei der WMI-Methode beschrieben.
+
+```powershell
+Get-CIMInstance -Classname Win32_OperatingSystem | Invoke-CimMethod -MethodName Shutdown
+```
+
 ## <a name="shutting-down-or-restarting-a-computer"></a>Herunterfahren oder Neustarten eines Computers
 
-Das Herunterfahren und Neustarten von Computern wird im Allgemeinen vom gleichen Tasktyp ausgeführt. Mit Tools, die einen Computer herunterfahren, kann normalerweise auch ein Neustart ausgeführt werden, und umgekehrt. Es gibt zwei einfache Optionen für den Neustart eines Computers aus Windows PowerShell. Verwenden Sie entweder „Tsshutdn.exe“ oder „Shutdown.exe“ mit den entsprechenden Argumenten. Ausführliche Informationen zur Verwendung erhalten Sie mit **tsshutdn.exe /?** oder **shutdown.exe /?**.
+Das Herunterfahren und Neustarten von Computern wird im Allgemeinen vom gleichen Tasktyp ausgeführt. Mit Tools, die einen Computer herunterfahren, kann normalerweise auch ein Neustart ausgeführt werden, und umgekehrt. Es gibt zwei einfache Optionen für den Neustart eines Computers aus Windows PowerShell. Verwenden Sie entweder „Tsshutdn.exe“ oder „Shutdown.exe“ mit den entsprechenden Argumenten. Ausführliche Informationen zur Verwendung erhalten Sie mit **tsshutdn.exe /?** oder **shutdown.exe /?** .
 
 Sie können Ihren Computer auch direkt über Windows PowerShell herunterfahren und neu starten.
 
