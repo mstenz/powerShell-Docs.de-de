@@ -1,5 +1,5 @@
 ---
-title: Erstellen remote Runspaces | Microsoft-Dokumentation
+title: Erstellen von Remoterunspaces | Microsoft-Dokumentation
 ms.custom: ''
 ms.date: 09/12/2016
 ms.reviewer: ''
@@ -8,30 +8,30 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 057a666f-731b-423d-9d80-7be6b1836244
 caps.latest.revision: 5
-ms.openlocfilehash: f6cc69df8afe64cea867f5d7f9a7d45753a54d6f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: c97b0dfc12d96f99c53383d3578579f1988efd52
+ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082973"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71143553"
 ---
-# <a name="creating-remote-runspaces"></a><span data-ttu-id="0f335-102">Erstellen von Remoterunspaces</span><span class="sxs-lookup"><span data-stu-id="0f335-102">Creating remote runspaces</span></span>
+# <a name="creating-remote-runspaces"></a><span data-ttu-id="5d982-102">Erstellen von Remoterunspaces</span><span class="sxs-lookup"><span data-stu-id="5d982-102">Creating remote runspaces</span></span>
 
-<span data-ttu-id="0f335-103">Windows PowerShell-Befehle, nehmen eine `ComputerName` Parameter kann auf alle Computer mit Windows PowerShell ausgeführt werden.</span><span class="sxs-lookup"><span data-stu-id="0f335-103">Windows PowerShell commands that take a `ComputerName` parameter can be run on any computer that runs Windows PowerShell.</span></span> <span data-ttu-id="0f335-104">Zum Ausführen von Befehlen, die keinen akzeptieren einen `ComputerName` Parameter, Sie können verwenden Sie WS-Management, um einen Runspace konfigurieren Sie die Verbindung mit einem angegebenen Computer und führen Sie Befehle auf diesem Computer.</span><span class="sxs-lookup"><span data-stu-id="0f335-104">To run commands that do not take a `ComputerName` parameter, you can use WS-Management to configure a runspace that connects to a specified computer, and run commands on that computer.</span></span>
+<span data-ttu-id="5d982-103">PowerShell-Befehle, die einen **Computername** -Parameter annehmen, können auf jedem Computer ausgeführt werden, auf dem PowerShell ausgeführt wird.</span><span class="sxs-lookup"><span data-stu-id="5d982-103">PowerShell commands that take a **ComputerName** parameter can be run on any computer that runs PowerShell.</span></span> <span data-ttu-id="5d982-104">Zum Ausführen von Befehlen, die keinen **Computername** -Parameter verwenden, können Sie die WS-Verwaltung verwenden, um einen Runspace zu konfigurieren, der eine Verbindung mit einem angegebenen Computer herstellt, und Befehle auf diesem Computer auszuführen.</span><span class="sxs-lookup"><span data-stu-id="5d982-104">To run commands that don't take a **ComputerName** parameter, you can use WS-Management to configure a runspace that connects to a specified computer, and run commands on that computer.</span></span>
 
-## <a name="using-a-wsmanconnection-to-create-a-remote-runspace"></a><span data-ttu-id="0f335-105">Verwenden eine WSManConnection einen Remoterunspace erstellen</span><span class="sxs-lookup"><span data-stu-id="0f335-105">Using a WSManConnection to create a remote runspace</span></span>
+## <a name="using-a-wsmanconnection-to-create-a-remote-runspace"></a><span data-ttu-id="5d982-105">Verwenden von wsmanconnection zum Erstellen eines Remoterunspace</span><span class="sxs-lookup"><span data-stu-id="5d982-105">Using a WSManConnection to create a remote runspace</span></span>
 
- <span data-ttu-id="0f335-106">Um einen Runspace erstellen, die mit einem Remotecomputer verbunden, erstellen Sie eine [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) Objekt.</span><span class="sxs-lookup"><span data-stu-id="0f335-106">To create a runspace that connects to a remote computer, you create a [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span> <span data-ttu-id="0f335-107">Geben Sie den Zielendpunkt für die Verbindung durch Festlegen der [System.Management.Automation.Runspaces.Wsmanconnectioninfo.Connectionuri\*](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri) -Eigenschaft des Objekts.</span><span class="sxs-lookup"><span data-stu-id="0f335-107">You specify the target endpoint for the connection by setting the [System.Management.Automation.Runspaces.Wsmanconnectioninfo.Connectionuri\*](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri) property of the object.</span></span> <span data-ttu-id="0f335-108">Sie erstellen dann einen Runspace durch Aufrufen der [System.Management.Automation.Runspaces.Runspacefactory.Createrunspace\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace) -Methode, Angeben der [System.Management.Automation.Runspaces.Wsmanconnectioninfo ](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) -Objekts entsprechend der `connectionInfo` Parameter.</span><span class="sxs-lookup"><span data-stu-id="0f335-108">You then create a runspace by calling the [System.Management.Automation.Runspaces.Runspacefactory.Createrunspace\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace) method, specifying the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object as the `connectionInfo` parameter.</span></span>
+ <span data-ttu-id="5d982-106">Um einen Runspace zu erstellen, der eine Verbindung mit einem Remote Computer herstellt, erstellen Sie ein [System. Management. Automation. Runspaces. wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) -Objekt.</span><span class="sxs-lookup"><span data-stu-id="5d982-106">To create a runspace that connects to a remote computer, you create a [System.Management.Automation.Runspaces.WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span> <span data-ttu-id="5d982-107">Sie geben den Ziel Endpunkt für die Verbindung an, indem Sie die [System. Management. Automation. Runspaces. wsmanconnectioninfo. ConnectionUri](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri) -Eigenschaft des-Objekts festlegen.</span><span class="sxs-lookup"><span data-stu-id="5d982-107">You specify the target endpoint for the connection by setting the [System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri) property of the object.</span></span> <span data-ttu-id="5d982-108">Anschließend erstellen Sie einen Runspace, indem Sie die [System. Management. Automation. Runspaces. runspacefactory. createrunspace](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace) -Methode aufrufen und das [System. Management. Automation. Runspaces. wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) - `connectionInfo` Objekt als Parame.</span><span class="sxs-lookup"><span data-stu-id="5d982-108">You then create a runspace by calling the [System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace) method, specifying the [System.Management.Automation.Runspaces.WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object as the `connectionInfo` parameter.</span></span>
 
- <span data-ttu-id="0f335-109">Das folgende Beispiel zeigt, wie Sie einen Runspace erstellen, der mit einem Remotecomputer verbunden.</span><span class="sxs-lookup"><span data-stu-id="0f335-109">The following example shows how to create a runspace that connects to a remote computer.</span></span> <span data-ttu-id="0f335-110">Im Beispiel `RemoteComputerUri` dient als Platzhalter für den tatsächlichen URI von einem Remotecomputer befindet.</span><span class="sxs-lookup"><span data-stu-id="0f335-110">In the example, `RemoteComputerUri` is used as a placeholder for the actual URI of a remote computer.</span></span>
+ <span data-ttu-id="5d982-109">Im folgenden Beispiel wird gezeigt, wie ein Runspace erstellt wird, der eine Verbindung mit einem Remote Computer herstellt.</span><span class="sxs-lookup"><span data-stu-id="5d982-109">The following example shows how to create a runspace that connects to a remote computer.</span></span> <span data-ttu-id="5d982-110">Im Beispiel `RemoteComputerUri` wird als Platzhalter für den tatsächlichen URI eines Remote Computers verwendet.</span><span class="sxs-lookup"><span data-stu-id="5d982-110">In the example, `RemoteComputerUri` is used as a placeholder for the actual URI of a remote computer.</span></span>
 
 ```csharp
 namespace Samples
 {
   using System;
   using System.Collections.ObjectModel;
-  using System.Management.Automation;            // Windows PowerShell namespace.
-  using System.Management.Automation.Runspaces;  // Windows PowerShell namespace.
+  using System.Management.Automation;            // PowerShell namespace.
+  using System.Management.Automation.Runspaces;  // PowerShell namespace.
 
   /// <summary>
   /// This class contains the Main entry point for this host application.
@@ -48,10 +48,11 @@ namespace Samples
       // Create a WSManConnectionInfo object using the default constructor
       // to connect to the "localHost". The WSManConnectionInfo object can
       // also be used to specify connections to remote computers.
-      WSManConnectionInfo connectionInfo = new WSManConnectionInfo();
+      Uri RemoteComputerUri = new uri("http://Server01:5985/WSMAN");
+      WSManConnectionInfo connectionInfo = new WSManConnectionInfo(RemoteComputerUri);
 
       // Set the OperationTimeout property and OpenTimeout properties.
-      // The OperationTimeout property is used to tell Windows PowerShell
+      // The OperationTimeout property is used to tell PowerShell
       // how long to wait (in milliseconds) before timing out for an
       // operation. The OpenTimeout property is used to tell Windows
       // PowerShell how long to wait (in milliseconds) before timing out
