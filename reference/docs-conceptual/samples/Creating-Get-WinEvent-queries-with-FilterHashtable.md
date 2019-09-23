@@ -1,12 +1,12 @@
 ---
-ms.date: 03/18/2019
+ms.date: 09/13/2019
 title: Erstellen von Get-WinEvent-Abfragen mit FilterHashtable
-ms.openlocfilehash: 2f598fceb570f189bee776b6ed572b11a6938f64
-ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
+ms.openlocfilehash: 1bf321c09c20736de36eb896fabced31cfdfbd75
+ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66471019"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71143670"
 ---
 # <a name="creating-get-winevent-queries-with-filterhashtable"></a>Erstellen von Get-WinEvent-Abfragen mit FilterHashtable
 
@@ -16,9 +16,11 @@ Dieser Artikel ist ein Auszug des ursprünglichen Blogbeitrags und erläutert di
 
 Bei der Arbeit mit großen Ereignisprotokollen ist es nicht effizient, Objekte die Pipeline hinab an einen `Where-Object`-Befehl zu senden. Vor PowerShell 6 war das `Get-EventLog`-Cmdlet eine weitere Option, Protokolldaten abzurufen. Beispielsweise sind die folgenden Befehle zum Filtern der **Microsoft-Windows-Defrag**-Protokolle ineffizient:
 
-`Get-EventLog -LogName Application | Where-Object Source -Match defrag`
+```powershell
+Get-EventLog -LogName Application | Where-Object Source -Match defrag
 
-`Get-WinEvent -LogName Application | Where-Object { $_.ProviderName -Match 'defrag' }`
+Get-WinEvent -LogName Application | Where-Object { $_.ProviderName -Match 'defrag' }
+```
 
 Der folgende Befehl verwendet eine Hashtabelle, die die Leistung steigert:
 
@@ -48,19 +50,35 @@ Die akzeptierten **Schlüssel/Wert**-Paare sind in der folgenden Tabelle dargest
 
 In der folgenden Tabelle sind die Schlüsselnamen und Datentypen aufgelistet und ob für einen Datenwert Platzhalterzeichen akzeptiert werden.
 
-| Schlüsselname     | Wertdatentyp    | Platzhalterzeichen akzeptiert? |
-|------------- | ------------------ | ---------------------------- |
-| LogName      | `<String[]>`       | Ja |
-| ProviderName | `<String[]>`       | Ja |
-| Pfad         | `<String[]>`       | Nein  |
-| Keywords     | `<Long[]>`         | Nein  |
-| ID           | `<Int32[]>`        | Nein  |
-| Ebene        | `<Int32[]>`        | Nein  |
-| StartTime    | `<DateTime>`       | Nein  |
-| EndTime      | `<DateTime>`       | Nein  |
-| UserID       | `<SID>`            | Nein  |
-| Daten         | `<String[]>`       | Nein  |
-| *            | `<String[]>`       | Nein  |
+|    Schlüsselname    | Wertdatentyp | Platzhalterzeichen akzeptiert? |
+| -------------- | --------------- | ---------------------------- |
+| LogName        | `<String[]>`    | Ja                          |
+| ProviderName   | `<String[]>`    | Ja                          |
+| Pfad           | `<String[]>`    | Nein                           |
+| Keywords       | `<Long[]>`      | Nein                           |
+| ID             | `<Int32[]>`     | Nein                           |
+| Ebene          | `<Int32[]>`     | Nein                           |
+| StartTime      | `<DateTime>`    | Nein                           |
+| EndTime        | `<DateTime>`    | Nein                           |
+| UserID         | `<SID>`         | Nein                           |
+| Daten           | `<String[]>`    | Nein                           |
+| \<named-data\> | `<String[]>`    | Nein                           |
+
+Der Schlüssel \<named-data\> stellt ein benanntes Ereignisdatenfeld dar. Beispielsweise kann das Perflib-Ereignis 1008 die folgenden Ereignisdaten enthalten:
+
+```xml
+<EventData>
+  <Data Name="Service">BITS</Data>
+  <Data Name="Library">C:\Windows\System32\bitsperf.dll</Data>
+  <Data Name="Win32Error">2</Data>
+</EventData>
+```
+
+Sie können diese Ereignisse mit dem folgenden Befehl abfragen:
+
+```powershell
+Get-WinEvent -FilterHashtable @{LogName='Application'; 'Service'='Bits'}
+```
 
 ## <a name="building-a-query-with-a-hash-table"></a>Erstellen einer Abfrage mit einer Hashtabelle
 
