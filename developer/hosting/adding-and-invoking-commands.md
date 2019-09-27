@@ -8,46 +8,46 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 62be8432-28c1-4ca2-bcdb-d0350163fa8c
 caps.latest.revision: 5
-ms.openlocfilehash: 9a01f948c5b474b4f9068030907601543e13cc7e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: f776f13fe743a3f5f67de0d94883e3f754040ffc
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62083024"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71323484"
 ---
 # <a name="adding-and-invoking-commands"></a>Hinzufügen und Aufrufen von Befehlen
 
-Nachdem ein Runspace erstellt haben, können Sie Windows PowerShellcommands und Skripts hinzufügen, um eine Pipeline und rufen Sie dann die Pipeline synchron oder asynchron.
+Nachdem Sie einen Runspace erstellt haben, können Sie Windows powershellcommands und Skripts zu einer Pipeline hinzufügen und die Pipeline dann synchron oder asynchron aufrufen.
 
-## <a name="creating-a-pipeline"></a>Erstellen einer pipeline
+## <a name="creating-a-pipeline"></a>Erstellen einer Pipeline
 
- Die [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) Klasse bietet mehrere Methoden, um Befehle, Parameter und Skripts zur Pipeline hinzufügen. Sie können die Pipeline synchron durch Aufruf einer Überladung von Aufrufen der [System.Management.Automation.Powershell.Invoke*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) -Methode, oder asynchron durch Aufruf einer Überladung der der [ System.Management.Automation.Powershell.Begininvoke*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) und klicken Sie dann die [System.Management.Automation.Powershell.Endinvoke*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) Methode.
+ Die [System. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) -Klasse bietet mehrere Methoden zum Hinzufügen von Befehlen, Parametern und Skripts zur Pipeline. Sie können die Pipeline synchron aufrufen, indem Sie eine Überladung der [System. Management. Automation. PowerShell. Call *](/dotnet/api/System.Management.Automation.PowerShell.Invoke) -Methode aufrufen, oder asynchron durch Aufrufen einer Überladung von [System. Management. Automation. PowerShell. beginCall *](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) und dann die [System. Management. Automation. PowerShell. EndInvoke *](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) -Methode.
 
 ### <a name="addcommand"></a>AddCommand
 
-1. Erstellen Sie eine [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) Objekt.
+1. Erstellen Sie ein [System. Management. Automation. PowerShell](/dotnet/api/system.management.automation.powershell) -Objekt.
 
    ```csharp
    PowerShell ps = PowerShell.Create();
    ```
 
-2. Fügen Sie den Befehl aus, dem Sie ausführen möchten.
+2. Fügen Sie den Befehl hinzu, den Sie ausführen möchten.
 
    ```csharp
    ps.AddCommand("Get-Process");
    ```
 
-3. Rufen Sie den Befehl.
+3. Rufen Sie den Befehl auf.
 
    ```csharp
    ps.Invoke();
    ```
 
- Aufrufen der [System.Management.Automation.Powershell.Addcommand*](/dotnet/api/System.Management.Automation.PowerShell.AddCommand) Methode, die mehr als einmal vor dem Aufruf der [System.Management.Automation.Powershell.Invoke*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) -Methode, die das Ergebnis der ersten Befehl wird über die Pipeline zum zweiten und So weiter. Wenn Sie nicht das Ergebnis eines vorherigen Befehls an einen Befehl übergeben möchten, fügen Sie ihn durch Aufrufen der [System.Management.Automation.Powershell.Addstatement*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) stattdessen.
+ Wenn Sie die [System. Management. Automation. PowerShell. AddCommand *](/dotnet/api/System.Management.Automation.PowerShell.AddCommand) -Methode mehrmals aufrufen, bevor Sie die [System. Management. Automation. PowerShell. Call*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) -Methode aufrufen, wird das Ergebnis des ersten Befehls an die zweite weitergeleitet usw. Wenn Sie das Ergebnis eines vorherigen Befehls nicht an einen Befehl übergeben möchten, fügen Sie es hinzu, indem Sie stattdessen die [System. Management. Automation. PowerShell. addstatement *](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) aufrufen.
 
 ### <a name="addparameter"></a>AddParameter
 
- Im vorherige Beispiel führt einen einzelnen Befehl ohne Parameter aus. Sie können Parameter an den Befehl hinzufügen, mit der [System.Management.Automation.Pscommand.Addparameter*](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) z. B. der folgende Code ruft Methode eine Liste aller Prozesse mit dem Namen `PowerShell` unter der Computer.
+ Das vorherige Beispiel führt einen einzelnen Befehl ohne Parameter aus. Sie können dem Befehl mithilfe der [System. Management. Automation. PSCommand. AddParameter *](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) -Methode Parameter hinzufügen. der folgende Code ruft beispielsweise eine Liste aller Prozesse ab, die auf dem Computer `PowerShell` mit dem Namen ausgeführt werden.
 
 ```csharp
 PowerShell.Create().AddCommand("Get-Process")
@@ -55,7 +55,7 @@ PowerShell.Create().AddCommand("Get-Process")
                    .Invoke();
 ```
 
- Sie können zusätzliche Parameter hinzufügen, durch den Aufruf [System.Management.Automation.Pscommand.Addparameter*](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) wiederholt.
+ Sie können zusätzliche Parameter hinzufügen, indem Sie [System. Management. Automation. PSCommand. AddParameter *](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) wiederholt aufrufen.
 
 ```csharp
 PowerShell.Create().AddCommand("Get-Process")
@@ -64,7 +64,7 @@ PowerShell.Create().AddCommand("Get-Process")
                    .Invoke();
 ```
 
- Sie können auch ein Wörterbuch von Parameternamen und Werte hinzufügen, durch den Aufruf der [System.Management.Automation.Powershell.Addparameters*](/dotnet/api/System.Management.Automation.PowerShell.AddParameters) Methode.
+ Sie können auch ein Wörterbuch mit Parameternamen und-Werten hinzufügen, indem Sie die [System. Management. Automation. PowerShell. AddParameters *](/dotnet/api/System.Management.Automation.PowerShell.AddParameters) -Methode aufrufen.
 
 ```csharp
 IDictionary parameters = new Dictionary<String, String>();
@@ -77,9 +77,9 @@ PowerShell.Create().AddCommand("Get-Process")
 
 ```
 
-### <a name="addstatement"></a>AddStatement
+### <a name="addstatement"></a>Addstatement
 
- Sie können mithilfe von Batchverarbeitung simulieren die [System.Management.Automation.Powershell.Addstatement*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) -Methode, die an das Ende der Pipeline eine zusätzliche Anweisung der folgende Code eine Liste fügt ruft der ausgeführten Prozesse mit dem Namen `PowerShell`, und ruft anschließend die Liste der ausgeführten Dienste.
+ Sie können die Batch Verarbeitung simulieren, indem Sie die [System. Management. Automation. PowerShell. addstatement *](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) -Methode verwenden, mit der am Ende der Pipeline eine zusätzliche Anweisung hinzugefügt wird. der folgende Code Ruft eine Liste `PowerShell`der ausgelaufenden Prozesse mit dem Namen ab. Ruft dann die Liste der laufenden Dienste ab.
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -90,23 +90,23 @@ ps.Invoke();
 
 ### <a name="addscript"></a>AddScript
 
- Sie können ein vorhandenes Skript ausführen, durch den Aufruf der [System.Management.Automation.Powershell.Addscript*](/dotnet/api/System.Management.Automation.PowerShell.AddScript) Methode. Im folgenden Beispiel wird die Pipeline ein Skript hinzugefügt und wird ausgeführt. In diesem Beispiel wird vorausgesetzt, es ist bereits ein Skript namens `MyScript.ps1` in einem Ordner namens `D:\PSScripts`.
+ Sie können ein vorhandenes Skript ausführen, indem Sie die [System. Management. Automation. PowerShell. addScript *](/dotnet/api/System.Management.Automation.PowerShell.AddScript) -Methode aufrufen. Das folgende Beispiel fügt der Pipeline ein Skript hinzu und führt es aus. In diesem Beispiel wird davon ausgegangen, dass bereits `MyScript.ps1` ein Skript namens in `D:\PSScripts`einem Ordner namens vorhanden ist.
 
 ```csharp
 PowerShell ps = PowerShell.Create();
 ps.AddScript("D:\PSScripts\MyScript.ps1").Invoke();
 ```
 
- Es gibt auch eine Version der [System.Management.Automation.Powershell.Addscript*](/dotnet/api/System.Management.Automation.PowerShell.AddScript) -Methode, die einen booleschen namens Parameter `useLocalScope`. Wenn dieser Parameter, um festgelegt wird `true`, und klicken Sie dann das Skript im lokalen Bereich ausgeführt wird. Der folgende Code führt das Skript im lokalen Bereich.
+ Es gibt auch eine Version der [System. Management. Automation. PowerShell. addScript *](/dotnet/api/System.Management.Automation.PowerShell.AddScript) -Methode, die einen booleschen Parameter namens `useLocalScope`annimmt. Wenn dieser Parameter auf `true`festgelegt ist, wird das Skript im lokalen Gültigkeitsbereich ausgeführt. Mit dem folgenden Code wird das Skript im lokalen Gültigkeitsbereich ausgeführt.
 
 ```csharp
 PowerShell ps = PowerShell.Create();
 ps.AddScript(@"D:\PSScripts\MyScript.ps1", true).Invoke();
 ```
 
-### <a name="invoking-a-pipeline-synchronously"></a>Synchron Aufrufen einer pipeline
+### <a name="invoking-a-pipeline-synchronously"></a>Synchrones Aufrufen einer Pipeline
 
- Nachdem Sie die Pipeline Elemente hinzuzufügen, rufen Sie es. Um die Pipeline synchron aufzurufen, rufen Sie eine Überladung von der [System.Management.Automation.Powershell.Invoke*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) Methode. Das folgende Beispiel zeigt, wie Sie eine Pipeline synchron aufrufen.
+ Nachdem Sie der Pipeline Elemente hinzugefügt haben, rufen Sie Sie auf. Um die Pipeline synchron aufzurufen, rufen Sie eine Überladung der [System. Management. Automation. PowerShell. aufrufen *](/dotnet/api/System.Management.Automation.PowerShell.Invoke) -Methode auf. Im folgenden Beispiel wird gezeigt, wie eine Pipeline synchron aufgerufen wird.
 
 ```csharp
 using System;
@@ -136,11 +136,11 @@ namespace HostPS1e
 }
 ```
 
-### <a name="invoking-a-pipeline-asynchronously"></a>Aufrufen einer Pipeline asynchron
+### <a name="invoking-a-pipeline-asynchronously"></a>Asynchrones Aufrufen einer Pipeline
 
- Sie rufen eine Pipeline asynchron durch Aufruf einer Überladung der der [System.Management.Automation.Powershell.Begininvoke*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) zum Erstellen einer [IAsyncResult](http://msdn.microsoft.com/library/system.iasyncresult\(v=vs.110\).aspx) , und klicken Sie dann durch Aufrufen der [ System.Management.Automation.Powershell.Endinvoke*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) Methode.
+ Sie rufen eine Pipeline asynchron auf, indem Sie eine Überladung von [System. Management. Automation. PowerShell. beginCall *](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) aufrufen, um ein [IAsyncResult](https://msdn.microsoft.com/library/system.iasyncresult\(v=vs.110\).aspx) -Objekt zu erstellen, und dann " [System. Management. Automation. PowerShell. EndInvoke" aufrufen. *](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) -Methode.
 
- Das folgende Beispiel zeigt, wie Sie eine Pipeline asynchron aufrufen.
+ Im folgenden Beispiel wird gezeigt, wie eine Pipeline asynchron aufgerufen wird.
 
 ```csharp
 using System;
@@ -182,8 +182,8 @@ namespace HostPS3
 }
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
- [Erstellen eine InitialSessionState](./creating-an-initialsessionstate.md)
+ [Erstellen eines initialsessionstate](./creating-an-initialsessionstate.md)
 
- [Erstellen einen eingeschränkten runspace](./creating-a-constrained-runspace.md)
+ [Erstellen eines eingeschränkten Runspace](./creating-a-constrained-runspace.md)

@@ -8,24 +8,24 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 64718f8e-de60-4fb7-894d-2975b5257ff6
 caps.latest.revision: 4
-ms.openlocfilehash: 8e1d2feff0665f169966f7d5e99540088e66bdfb
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: bdced961d91088dd75be347b7b74b22467c8c9be
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080355"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71322963"
 ---
 # <a name="scheduling-jobs-with-the-powershell-api"></a>Planen von Aufträgen mit der PowerShell-API
 
-Können Sie die Objekte, die verfügbar gemacht werden, indem die **Microsoft.PowerShell.ScheduledJob** Namespace die folgenden Schritte ausführen:
+Sie können die Objekte verwenden, die vom **Microsoft. PowerShell. ScheduledJob** -Namespace verfügbar gemacht werden, um Folgendes zu tun:
 
-- Erstellen eines geplanten Auftrags an.
-- Definieren Sie, wann der Auftrag ausgeführt wird.
-- Rufen Sie die Ergebnisse zum abgeschlossenen Auftrag.
+- Erstellen Sie einen geplanten Auftrag.
+- Hiermit wird definiert, wann der Auftrag ausgeführt wird.
+- Ergebnisse zum abgeschlossenen Auftrag erhalten.
 
 ## <a name="triggering-the-job"></a>Auslösen des Auftrags
 
-Der erste Schritt beim Erstellen eines geplanten Auftrags angegeben wird, wann der Auftrag ausgeführt werden soll. Zu diesem Zweck erstellen und Konfigurieren einer **Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger** Objekt. Der folgende Code erstellt einen Trigger, der einen Auftrag, ein einziges Mal 20 Sekunden in der Zukunft geplant.
+Der erste Schritt beim Erstellen eines geplanten Auftrags besteht darin, anzugeben, wann der Auftrag ausgeführt werden soll. Erstellen und konfigurieren Sie hierfür ein **Microsoft. PowerShell. ScheduledJob. ScheduledJob-** Objekt. Der folgende Code erstellt einen-Vorgang, der einen Auftrag für eine einmalige Ausführung von 20 Sekunden plant.
 
 ```csharp
 ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
@@ -40,18 +40,18 @@ ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
 
 ## <a name="defining-the-job"></a>Definieren des Auftrags
 
-Definieren Sie einen PowerShell-Auftrag, durch das ein Parameterwörterbuch zu erstellen. Die folgenden Parameter werden unterstützt:
+Sie definieren einen PowerShell-Auftrag, indem Sie ein Parameter Wörterbuch erstellen. Die folgenden Parameter werden unterstützt:
 
 |Name des Parameters|Beschreibung|
 |--------------------|-----------------|
 |**Name**|Der Name des Auftrags.|
-|**ScriptBock**|Ein PowerShell-Skriptblock, der angibt, welche Aufgabe geeignet ist.|
-|**FilePath**|Pfad zu einer Datei, die einen PowerShell-Skriptblock, um anzugeben, was bewirkt, dass der Auftrag enthält.|
+|**Scriptbock**|Ein PowerShell-Skriptblock, der angibt, was der Auftrag bewirkt.|
+|**FilePath**|Pfad zu einer Datei, die einen PowerShell-Skriptblock enthält, um die Aufgaben des Auftrags anzugeben.|
 |**InitializationScript**|Ein PowerShell-Skriptblock, der den Auftrag initialisiert.|
-|**ArgumentList**|Ein Array von Objekten, die Argumente angeben, die den Auftrag ausführt.|
-|**RunAs32**|Ein boolescher Wert, der angibt, ob den Auftrag in einem 32-Bit-Prozess ausgeführt wird.|
+|**Argument List**|Ein Array von-Objekten, die Argumente angeben, die der Auftrag annimmt.|
+|**RunAs32**|Ein boolescher Wert, der angibt, ob der Auftrag in einem 32-Bit-Prozess ausgeführt werden soll.|
 
-Der folgende Code erstellt ein Dictionary-Objekt für Parameter und legt die **Namen** und **"scriptblock"** Parameter.
+Mit dem folgenden Code wird ein Parameter Wörterbuch Objekt erstellt und der **Name** und die **ScriptBlock** -Parameter festgelegt.
 
 ```csharp
 string schedJobDefName = "MySampleSchedJob";
@@ -64,9 +64,9 @@ string schedJobDefName = "MySampleSchedJob";
 
 ```
 
-## <a name="creating-the-invocation-and-job-definition-objects"></a>Erstellen den Aufruf und der Auftrag definitionsobjekten
+## <a name="creating-the-invocation-and-job-definition-objects"></a>Erstellen der Aufruf-und Auftrags Definitions Objekte
 
-Sie erstellen `ScheduledJobInvocationInfo` und `ScheduledJobDefinition` Objekte zum Ausführen des Auftrags, wie im folgenden Beispiel gezeigt:
+Anschließend erstellen `ScheduledJobInvocationInfo` Sie das `ScheduledJobDefinition` -Objekt und das-Objekt, um den Auftrag auszuführen, wie im folgenden Beispiel gezeigt:
 
 ```csharp
 ScheduledJobInvocationInfo jobInvocationInfo = new ScheduledJobInvocationInfo(
@@ -82,9 +82,9 @@ ScheduledJobInvocationInfo jobInvocationInfo = new ScheduledJobInvocationInfo(
 
 ```
 
-## <a name="registering-the-job-with-the-task-scheduler"></a>Registrieren den Auftrag mit der aufgabenplanung
+## <a name="registering-the-job-with-the-task-scheduler"></a>Registrieren des Auftrags beim Taskplaner
 
-Der folgende Code registriert den Auftrag mit der [Windows-Aufgabenplanung](http://go.microsoft.com/fwlink/?LinkId=251817).
+Der folgende Code registriert den Auftrag beim [Windows-Taskplaner](https://go.microsoft.com/fwlink/?LinkId=251817).
 
 ```csharp
 schedJobDefinition.Register();
@@ -93,9 +93,9 @@ schedJobDefinition.Register();
 
 ```
 
-## <a name="complete-code-example"></a>Der vollständige Code-Beispiel
+## <a name="complete-code-example"></a>Codebeispiel vervollständigen
 
-Im folgenden wird das gesamte Codebeispiel dargestellt, das die vorherigen Codeausschnitten entnommen wurden.
+Im folgenden finden Sie das gesamte Codebeispiel, aus dem die vorherigen Ausschnitte entnommen wurden.
 
 ```csharp
 using System;

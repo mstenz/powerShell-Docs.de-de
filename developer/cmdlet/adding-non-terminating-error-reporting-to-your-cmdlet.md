@@ -1,5 +1,5 @@
 ---
-title: Hinzufügen von nicht endenden Fehlerberichte an Ihr Cmdlet | Microsoft-Dokumentation
+title: Hinzufügen von Fehlerberichten ohne Abbruch zum Cmdlet | Microsoft-Dokumentation
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,33 +8,33 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f2a1531a-a92a-4606-9d54-c5df80d34f33
 caps.latest.revision: 8
-ms.openlocfilehash: 3741982f81efa04d8fe7ab448fba5f2fdf4b0c01
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: a4426abec96cd922360aeef8c157b4e9f41a15b9
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068863"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71322872"
 ---
 # <a name="adding-non-terminating-error-reporting-to-your-cmdlet"></a>Hinzufügen von Berichten für Fehler ohne Abbruch zu Cmdlet
 
--Cmdlets können Fehler ohne Abbruch durch den Aufruf melden die [System.Management.Automation.Cmdlet.WriteError][] Methode und weiterhin auf das aktuelle Eingabeobjekt oder weiteren eingehenden verwendet werden Objekte pipeline.
-In diesem Abschnitt wird erläutert, wie ein Cmdlet zu erstellen, die Fehler ohne Abbruch aus dessen eingabeverarbeitungsmethoden meldet.
+Cmdlets können nicht abschließende Fehler melden, indem Sie die [System. Management. Automation. Cmdlet. Write error][] -Methode aufrufen und weiterhin auf dem aktuellen Eingabe Objekt oder in weiteren eingehenden Pipeline Objekten arbeiten.
+In diesem Abschnitt wird erläutert, wie ein Cmdlet erstellt wird, das nicht abschließende Fehler von seinen Eingabe Verarbeitungsmethoden meldet.
 
-Fehler ohne Abbruch (als auch Fehler mit Abbruch), muss das Cmdlet übergeben eine [System.Management.Automation.ErrorRecord][] Objekt, das den Fehler identifiziert.
-Jeden Error-Datensatz wird durch eine eindeutige Zeichenfolge, die Namen "Fehler-ID" gekennzeichnet.
-Zusätzlich zu den Bezeichner, die Kategorie der einzelnen Fehler von definierten Konstanten gemäß einem [System.Management.Automation.ErrorCategory][] Enumeration.
-Der Benutzer kann basierte auf ihrer Kategorie durch Festlegen von Fehlern anzeigen der `$ErrorView` Variable "CategoryView".
+Bei nicht beendenden Fehlern (sowie beim Beenden von Fehlern) muss das Cmdlet ein [System. Management. Automation. ErrorRecord][] -Objekt übergeben, das den Fehler identifiziert.
+Jeder Fehler Daten Satz wird durch eine eindeutige Zeichenfolge identifiziert, die als "Fehler Bezeichner" bezeichnet wird.
+Zusätzlich zum Bezeichner wird die Kategorie jedes Fehlers durch Konstanten angegeben, die durch eine [System. Management. Automation. ErrorCategory][] -Enumeration definiert werden.
+Der Benutzer kann Fehler basierend auf der Kategorie anzeigen, indem er `$ErrorView` die Variable auf "categoryview" festlegt.
 
-Weitere Informationen zu Datensätzen, finden Sie unter [Windows PowerShell-Fehlerdatensätze](./windows-powershell-error-records.md).
+Weitere Informationen zu Fehler Datensätzen finden Sie unter [Windows PowerShell-Fehler Datensätze](./windows-powershell-error-records.md).
 
-## <a name="defining-the-cmdlet"></a>Definieren das Cmdlet
+## <a name="defining-the-cmdlet"></a>Definieren des Cmdlets
 
-Der erste Schritt bei der Cmdlet-Erstellung ist immer benennen das Cmdlet und .NET implementiert die Klasse, mit dem-Cmdlet deklarieren.
-Dieses Cmdlet Ruft die Prozessinformationen, ab, der Namen des Verbs hier ausgewählten also "Get".
-(Nahezu jede Art von Cmdlets, mit dem Informationen abgerufen werden, kann die Befehlszeileneingabe verarbeiten.) Weitere Informationen zu zulässigen Cmdlet-Verben, finden Sie unter [Cmdlet Verbnamen](approved-verbs-for-windows-powershell-commands.md).
+Der erste Schritt bei der Cmdlet-Erstellung ist die Benennung des Cmdlets und das Deklarieren der .NET-Klasse, die das Cmdlet implementiert.
+Dieses Cmdlet ruft Prozessinformationen ab, daher lautet der hier gewählte Verb Name "Get".
+(Fast jede Art von Cmdlet, das Informationen abrufen kann, kann die Befehlszeilen Eingabe verarbeiten.) Weitere Informationen zu genehmigten Cmdlet-Verben finden Sie unter [Cmdlet-Verb Namen](approved-verbs-for-windows-powershell-commands.md).
 
-Im folgenden finden die Definition für dieses Cmdlet "Get-Proc".
-Details zu dieser Definition werden in angegebenen [Erstellen Ihrer ersten Cmdlet](creating-a-cmdlet-without-parameters.md).
+Im folgenden finden Sie die Definition für dieses Get-proc-Cmdlet.
+Einzelheiten zu dieser Definition finden Sie unter [Erstellen des ersten Cmdlets](creating-a-cmdlet-without-parameters.md).
 
 ```csharp
 [Cmdlet(VerbsCommon.Get, "proc")]
@@ -49,10 +49,10 @@ Public Class GetProcCommand
 
 ## <a name="defining-parameters"></a>Definieren von Parametern
 
-Falls erforderlich, muss Ihr Cmdlet Parameter für die Verarbeitung von Eingaben definieren.
-Dieses Cmdlet "Get-Proc" definiert eine **Namen** Parameter wie beschrieben in [Hinzufügen von Parametern die Prozess-Command-Line-Eingabe](adding-parameters-that-process-command-line-input.md).
+Bei Bedarf muss das Cmdlet Parameter für die Verarbeitung von Eingaben definieren.
+Dieses Cmdlet "Get-proc" definiert einen **namens** Parameter, wie unter [Hinzufügen von Parametern zur Verarbeitung der Befehlszeilen Eingabe](adding-parameters-that-process-command-line-input.md)beschrieben.
 
-Hier folgt die Parameterdeklaration für die **Namen** Parameter des Cmdlets Get-Proc.
+Hier ist die Parameter Deklaration für den **Name** -Parameter dieses Get-proc-Cmdlets.
 
 ```csharp
 [Parameter(
@@ -84,63 +84,63 @@ Public Property Name() As String()
 End Property
 ```
 
-## <a name="overriding-input-processing-methods"></a>Eingabeverarbeitungsmethoden überschreiben
+## <a name="overriding-input-processing-methods"></a>Überschreiben von Eingabe Verarbeitungsmethoden
 
-Alle Cmdlets müssen mindestens eines der Eingabe, die Verarbeitung von bereitgestellten Methoden überschreiben die [System.Management.Automation.Cmdlet][] Klasse.
-Diese Methoden finden Sie im [Erstellen Ihrer ersten Cmdlet](creating-a-cmdlet-without-parameters.md).
+Alle Cmdlets müssen mindestens eine der Eingabe Verarbeitungsmethoden überschreiben, die von der [System. Management. Automation. Cmdlet][] -Klasse bereitgestellt werden.
+Diese Methoden werden unter [Erstellen des ersten Cmdlets](creating-a-cmdlet-without-parameters.md)erläutert.
 
 > [!NOTE]
-> Jeder Datensatz sollte Ihr Cmdlet so unabhängig wie möglich verarbeiten können.
+> Ihr Cmdlet sollte jeden Datensatz so unabhängig wie möglich verarbeiten.
 
-Dieses Cmdlet "Get-Proc" überschreibt die [System.Management.Automation.Cmdlet.ProcessRecord][] Methode zum Behandeln der **Namen** Parameter für die Eingabe durch den Benutzer oder ein Skript bereitgestellt.
-Diese Methode erhalten die Prozesse für jede angeforderte Prozessname oder allen Prozessen, wenn kein Name angegeben ist.
-Details der Außerkraftsetzung erhalten [Erstellen Ihrer ersten Cmdlet](creating-a-cmdlet-without-parameters.md).
+Dieses Get-proc-Cmdlet überschreibt die [System. Management. Automation. Cmdlet. ProcessRecord][] -Methode, um den **namens** Parameter für die vom Benutzer oder einem Skript bereitgestellte Eingabe zu verarbeiten.
+Diese Methode erhält die Prozesse für die einzelnen angeforderten Prozessnamen oder alle Prozesse, wenn kein Name angegeben wird.
+Details dieser außer Kraft Setzung werden bei [der Erstellung des ersten Cmdlets](creating-a-cmdlet-without-parameters.md)angegeben.
 
-### <a name="things-to-remember-when-reporting-errors"></a>Wichtige Aspekte beim Melden von Fehlern
+### <a name="things-to-remember-when-reporting-errors"></a>Dinge, die beim Melden von Fehlern beachtet werden sollten
 
-Die [System.Management.Automation.ErrorRecord][] Objekt, mit das-Cmdlet übergibt, beim Schreiben eines Fehlers eine Ausnahme im Kern ist erforderlich.
-Befolgen Sie die .NET-Richtlinien, wenn bestimmt wird die Ausnahme zu verwenden.
-Wenn der Fehler semantisch identisch mit einer vorhandenen Ausnahme ist, sollte das-Cmdlet im Grunde verwenden oder diese Ausnahme abgeleitet.
-Es sollte, andernfalls der abgeleitet werden, eine neue Ausnahme oder ausnahmenhierarchie direkt aus der [System.Exception][] Klasse.
+Das [System. Management. Automation. ErrorRecord][] -Objekt, das das Cmdlet beim Schreiben eines Fehlers übergibt, erfordert im Kern eine Ausnahme.
+Befolgen Sie die .NET-Richtlinien bei der Bestimmung der zu verwendenden Ausnahme.
+Wenn der Fehler in der Semantik identisch mit einer vorhandenen Ausnahme ist, sollte das Cmdlet diese Ausnahme verwenden oder davon ableiten.
+Andernfalls sollte eine neue Ausnahme-oder eine Ausnahme Hierarchie direkt von der [System. Exception][] -Klasse abgeleitet werden.
 
-Beim Erstellen des Fehler-IDs (Zugriff über die FullyQualifiedErrorId-Eigenschaft der Klasse ErrorRecord) sollten Sie Folgendes bedenken.
+Beachten Sie beim Erstellen von Fehler bezeichgern (auf die über die fullyqualifiederrorid-Eigenschaft der ErrorRecord-Klasse zugegriffen wird) Folgendes:
 
-- Verwenden von Zeichenfolgen, die für Diagnosezwecke, damit Sie beim Untersuchen des vollqualifizierten Bezeichners Worin den Fehler ermitteln können ist und wo der Fehler stammt vorgesehen sind.
+- Verwenden Sie Zeichen folgen, die zu Diagnose Zwecken dienen, damit Sie bei der Überprüfung des voll qualifizierten Bezeichners ermitteln können, welcher Fehler vorliegt und wo der Fehler aufgetreten ist.
 
-- Eine wohlgeformte vollqualifizierten Fehler-ID könnte folgendermaßen aussehen.
+- Ein wohlgeformter voll qualifizierter Fehler Bezeichner kann wie folgt lauten.
 
 `CommandNotFoundException,Microsoft.PowerShell.Commands.GetCommandCommand`
 
-Beachten Sie, dass im vorherigen Beispiel, die Fehler-ID (das erste Token) kennzeichnet den Fehler, und der verbleibende Teil gibt an, in dem der Fehler stammt.
+Beachten Sie, dass im vorherigen Beispiel der Fehler Bezeichner (das erste Token) angibt, was der Fehler ist, und der verbleibende Teil gibt an, wo der Fehler aufgetreten ist.
 
-- Für komplexere Szenarien kann der Fehler-ID einen Punkt getrennte Token sein, die mit der Untersuchung analysiert werden können.
-  Dadurch, dass Sie auch auf die die Fehler-ID als auch für die Fehlerkategorie für Bezeichner und Fehler verzweigen.
+- Bei komplexeren Szenarios kann der Fehler Bezeichner ein Punkt getrenntes Token sein, das bei der Überprüfung analysiert werden kann.
+  Dies ermöglicht es Ihnen, die Teile des Fehler Bezeichners sowie den Fehler Bezeichner und die Fehler Kategorie zu verzweigen.
 
-Das Cmdlet sollten unterschiedliche Codepfade Fehler Bezeichner zuweisen.
-Bedenken Sie die folgende Informationen für die Zuweisung des Fehler-IDs:
+Mit dem-Cmdlet sollten bestimmte Fehler Bezeichner verschiedenen Codepfade zugewiesen werden.
+Beachten Sie bei der Zuweisung von Fehler bezeichmern die folgenden Informationen:
 
-- Ein Bezeichner für den Fehler sollte während des Lebenszyklus des Cmdlet konstant bleibt.
-  Die Semantik eines Bezeichners Fehler zwischen den Cmdlet-Versionen werden nicht geändert werden.
+- Ein Fehler Bezeichner sollte während des gesamten Lebenszyklus des Cmdlets konstant bleiben.
+  Ändern Sie nicht die Semantik eines Fehler Bezeichners zwischen den Cmdlet-Versionen.
 
-- Verwenden Sie Text für eine Fehler-ID, die nur sehr knapp entspricht der Fehler gemeldet wird.
-  Verwenden Sie keine leer- oder Interpunktionszeichen.
+- Verwenden Sie Text für einen Fehler Bezeichner, der dem gemeldeten Fehler entspricht.
+  Verwenden Sie keine Leerzeichen oder Interpunktions Zeichen.
 
-- Haben Sie Ihr Cmdlet nur die Fehler-IDs zu generieren, die reproduzierbar sind.
-  Beispielsweise sollten sie keinen Bezeichner generiert, der Prozess-ID enthält.
-  Fehler-IDs eignen sich für einen Benutzer nur dann, wenn diese Bezeichner entsprechen, die von anderen Benutzern, die das gleiche Problem bemerkt werden.
+- Verwenden Sie das Cmdlet, um nur Fehler Bezeichner zu generieren, die reproduzierbar sind.
+  Beispielsweise sollte kein Bezeichner generiert werden, der einen Prozess Bezeichner enthält.
+  Fehler Bezeichner sind nur dann für einen Benutzer nützlich, wenn Sie bezeichmern entsprechen, die von anderen Benutzern erkannt werden, die das gleiche Problem aufweisen.
 
-Nicht behandelte Ausnahmen werden nicht von PowerShell unter den folgenden Bedingungen abgefangen:
+Nicht behandelte Ausnahmen werden von PowerShell unter den folgenden Bedingungen nicht abgefangen:
 
-- Wenn ein Cmdlet erstellt einen neuen Thread und Code, der ausgeführt wird, dass Thread eine nicht behandelte Ausnahme auslöst, ist PowerShell fängt keine Fehler und der Prozess beendet wird.
+- Wenn ein Cmdlet einen neuen Thread erstellt und Code, der in diesem Thread ausgeführt wird, eine nicht behandelte Ausnahme auslöst, wird der Fehler von PowerShell nicht abgefangen, und der Prozess wird beendet.
 
-- Verfügt ein Objekt für Code in seinem Destruktor oder die Dispose-Methoden, die eine nicht behandelte Ausnahme auslöst, ist PowerShell fängt keine Fehler und der Prozess beendet wird.
+- Wenn ein Objekt über Code im Debuggen verfügt oder Methoden verwerfen, die zu einer nicht behandelten Ausnahme geführt haben, wird der Fehler von PowerShell nicht abgefangen, und der Prozess wird beendet.
 
-## <a name="reporting-nonterminating-errors"></a>Melden Sie Fehler ohne Abbruch
+## <a name="reporting-nonterminating-errors"></a>Melden von nicht abschließenden Fehlern
 
-Eines der eingabeverarbeitungsmethoden kann einen Fehler ohne Abbruch melden, um die Ausgabe-Stream mit der [System.Management.Automation.Cmdlet.WriteError][] Methode.
+Jede der Eingabe Verarbeitungsmethoden kann mithilfe der [System. Management. Automation. Cmdlet. Write error][] -Methode einen Fehler ohne Abbruch an den Ausgabestream melden.
 
-Hier ist ein Codebeispiel aus diesem Get-Proc-Cmdlet, das veranschaulicht, den Aufruf von [System.Management.Automation.Cmdlet.WriteError][] von innerhalb der Überschreibung der der [System.Management.Automation.Cmdlet.ProcessRecord][] Methode.
-In diesem Fall wird der Aufruf ausgelöst, wenn das Cmdlet einen Prozess für eine angegebene Prozess-ID nicht finden kann.
+Im folgenden finden Sie ein Codebeispiel aus diesem Get-proc-Cmdlet, das den [System. Management. Automation. Cmdlet. Write error][] -Befehl in der Überschreibung der [System. Management. Automation. Cmdlet. ProcessRecord][] -Methode veranschaulicht.
+In diesem Fall wird der-Befehl durchgeführt, wenn das Cmdlet keinen Prozess für einen angegebenen Prozess Bezeichner finden kann.
 
 ```csharp
 protected override void ProcessRecord()
@@ -180,38 +180,38 @@ protected override void ProcessRecord()
   }
 ```
 
-### <a name="things-to-remember-about-writing-nonterminating-errors"></a>Punkte zu beachten, die zum Schreiben von Fehler ohne Abbruch
+### <a name="things-to-remember-about-writing-nonterminating-errors"></a>Dinge, die Sie beim Schreiben von Fehlern bei der nicht Beendigung
 
-Für einen Fehler ohne Abbruch muss das Cmdlet einen bestimmten Fehler-ID für jeden bestimmten Eingabeobjekt generiert.
+Bei einem Fehler ohne Abbruch muss das Cmdlet einen bestimmten Fehler Bezeichner für jedes bestimmte Eingabe Objekt generieren.
 
-Ein Cmdlet muss häufig die PowerShell-Aktion erzeugt einen Fehler ohne Abbruch ändern.
-Hierzu können sie definieren die `ErrorAction` und `ErrorVariable` Parameter.
-Definieren der `ErrorAction` -Parameter mit dem-Cmdlet zeigt die Benutzeroptionen [System.Management.Automation.ActionPreference][], können Sie die Aktion auch direkt beeinflussen, indem Sie festlegen der `$ErrorActionPreference` Variable.
+Ein Cmdlet muss häufig die PowerShell-Aktion ändern, die von einem Fehler ohne Abbruch erzeugt wird.
+Hierzu können Sie den-Parameter und `ErrorAction` den `ErrorVariable` -Parameter definieren.
+Wenn Sie den `ErrorAction` Parameter definieren, zeigt das Cmdlet die Benutzeroptionen [System. Management. Automation. Action Preference][]an. Sie können die Aktion auch direkt beeinflussen, `$ErrorActionPreference` indem Sie die Variable festlegen.
 
-Das-Cmdlet kann Fehler ohne Abbruch speichern, um eine Variable mit dem `ErrorVariable` -Parameter, der die Einstellung nicht betroffen ist `ErrorAction`.
-Fehler bei der können für eine vorhandene Fehlervariable angefügt werden durch das Hinzufügen ein Pluszeichen (+) am Anfang der Variablenname.
+Mithilfe `ErrorVariable` des-Parameters, der nicht von der-Einstellung von `ErrorAction`betroffen ist, kann das Cmdlet nicht abschließende Fehler in einer Variablen speichern.
+Fehler können an eine vorhandene Fehler Variable angehängt werden, indem ein Pluszeichen (+) am Anfang des Variablen namens hinzugefügt wird.
 
-## <a name="code-sample"></a>Codebeispiel
+## <a name="code-sample"></a>Code Beispiel
 
-Für die vollständige C# Beispielcode, finden Sie unter [GetProcessSample04 Beispiel](./getprocesssample04-sample.md).
+Den gesamten C# Beispielcode finden Sie unter [GetProcessSample04 Sample](./getprocesssample04-sample.md).
 
 ## <a name="define-object-types-and-formatting"></a>Definieren von Objekttypen und Formatierung
 
-PowerShell übergibt Informationen zwischen Cmdlets, die mithilfe von .NET-Objekten.
-Daher müssen möglicherweise ein Cmdlet seinen eigenen Typ definieren, oder das-Cmdlet zum Erweitern eines vorhandenen Typs, der durch ein anderes Cmdlet angegeben müssen.
-Weitere Informationen zum Definieren neuer Typen, oder erweitern vorhandene Typen finden Sie unter [Objekttypen erweitern und Formatierung](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+PowerShell übergibt Informationen zwischen Cmdlets mithilfe von .NET-Objekten.
+Folglich muss ein Cmdlet möglicherweise seinen eigenen Typ definieren, oder das Cmdlet muss möglicherweise einen vorhandenen Typ erweitern, der von einem anderen Cmdlet bereitgestellt wird.
+Weitere Informationen zum Definieren neuer Typen oder zum Erweitern vorhandener Typen finden Sie unter [Erweitern von Objekttypen und Formatierung](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
 
-## <a name="building-the-cmdlet"></a>Erstellen das Cmdlet
+## <a name="building-the-cmdlet"></a>Cmdlet wird aufgebaut
 
-Nach der Implementierung eines Cmdlets, müssen Sie es mit Windows PowerShell über eine Windows PowerShell-Snap-in registrieren.
-Weitere Informationen zum Registrieren von Cmdlets finden Sie unter [wie zum Registrieren von Cmdlets, Anbietern und Hostanwendungen](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+Nachdem Sie ein Cmdlet implementiert haben, müssen Sie es über ein Windows PowerShell-Snap-in bei Windows PowerShell registrieren.
+Weitere Informationen zum Registrieren von Cmdlets finden [Sie unter Registrieren von Cmdlets, Anbietern und Host Anwendungen](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
-## <a name="testing-the-cmdlet"></a>Testen das Cmdlet
+## <a name="testing-the-cmdlet"></a>Testen des Cmdlets
 
-Wenn Ihr Cmdlet mit PowerShell registriert wurde, können Sie es testen, indem Sie sie in der Befehlszeile ausführen.
-Testen Sie nun das Beispiel-Get-Proc-Cmdlet, um festzustellen, ob es sich um ein Fehler gemeldet:
+Wenn das Cmdlet in PowerShell registriert wurde, können Sie es in der Befehlszeile testen.
+Testen Sie das Get-proc-Beispiel Cmdlet, um zu sehen, ob es einen Fehler meldet:
 
-- Starten Sie PowerShell, und verwenden Sie das Get-Proc-Cmdlet zum Abrufen der Prozesse, die mit dem Namen "TEST".
+- Starten Sie PowerShell, und verwenden Sie das Get-proc-Cmdlet zum Abrufen der Prozesse mit dem Namen "Test".
 
     ```powershell
     PS> get-proc -name test
@@ -225,26 +225,26 @@ Die folgende Ausgabe wird angezeigt.
     + get-proc  <<<< -name test
     ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Hinzufügen von Parametern, die Eingabe der Prozesspipeline](./adding-parameters-that-process-pipeline-input.md)
+[Hinzufügen von Parametern, die Pipeline Eingaben verarbeiten](./adding-parameters-that-process-pipeline-input.md)
 
-[Hinzufügen von Parametern, die Befehlszeileneingabe verarbeiten](./adding-parameters-that-process-command-line-input.md)
+[Hinzufügen von Parametern zur Verarbeitung der Befehlszeilen Eingabe](./adding-parameters-that-process-command-line-input.md)
 
-[Erstellen eines ersten Cmdlets](./creating-a-cmdlet-without-parameters.md)
+[Erstellen Ihres ersten Cmdlets](./creating-a-cmdlet-without-parameters.md)
 
-[Erweitern die Objekttypen und Formatierung](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Erweitern von Objekttypen und Formatierung](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
-[So registrieren die Cmdlets, Anbieter, und Hosten von Anwendungen](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Registrieren von Cmdlets, Anbietern und Host Anwendungen](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [Windows PowerShell-Referenz](../windows-powershell-reference.md)
 
 [Cmdlet-Beispiele](./cmdlet-samples.md)
 
-[System.Exception]: /dotnet/api/System.Exception
-[System.Management.Automation.ActionPreference]: /dotnet/api/System.Management.Automation.ActionPreference
-[System.Management.Automation.Cmdlet.ProcessRecord]: /dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord
-[System.Management.Automation.Cmdlet.WriteError]: /dotnet/api/System.Management.Automation.Cmdlet.WriteError
-[System.Management.Automation.Cmdlet]: /dotnet/api/System.Management.Automation.Cmdlet
-[System.Management.Automation.ErrorCategory]: /dotnet/api/System.Management.Automation.ErrorCategory
-[System.Management.Automation.ErrorRecord]: /dotnet/api/System.Management.Automation.ErrorRecord
+[System. Exception]: /dotnet/api/System.Exception
+[System. Management. Automation. Action Preference]: /dotnet/api/System.Management.Automation.ActionPreference
+[System. Management. Automation. Cmdlet. ProcessRecord]: /dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord
+[System. Management. Automation. Cmdlet. Write error]: /dotnet/api/System.Management.Automation.Cmdlet.WriteError
+[System. Management. Automation. Cmdlet]: /dotnet/api/System.Management.Automation.Cmdlet
+[System. Management. Automation. ErrorCategory]: /dotnet/api/System.Management.Automation.ErrorCategory
+[System. Management. Automation. ErrorRecord]: /dotnet/api/System.Management.Automation.ErrorRecord
