@@ -1,3 +1,5 @@
+- name: Informationen zur Verwendung dieser Dokumentation
+  href: how-to-use-docs.md
 - name: Übersicht
   href: overview.md
 - name: Installation
@@ -170,6 +172,100 @@
           href: components/web-access/use-the-web-based-windows-powershell-console.md
     - name: Handbuch zu Workflows
       href: components/workflows-guide.md
+- name: PowerShell-Katalog
+  items:
+    - name: Übersicht
+      href: gallery/overview.md
+    - name: Installieren von PowerShellGet
+      href: gallery/installing-psget.md
+    - name: Erste Schritte
+      href: gallery/getting-started.md
+    - name: Anleitung
+      items:
+        - name: Suchen nach Paketen im Katalog
+          items:
+            - name: Suchen nach Paketen
+              href: gallery/how-to/finding-packages/search-syntax.md
+            - name: Suchen nach Kompatibilität
+              href: gallery/how-to/finding-packages/searching-by-compatibility.md
+            - name: Filtern von Suchergebnissen
+              href: gallery/how-to/finding-packages/filtering-packages.md
+        - name: Veröffentlichen im Katalog
+          items:
+            - name: Erstellen und Veröffentlichen eines Pakets
+              href: gallery/how-to/publishing-packages/publishing-a-package.md
+            - name: Erstellen eines PowerShell-Katalogkontos
+              href: gallery/how-to/publishing-packages/creating-an-account.md
+            - name: Entfernen von Paketen aus der Liste
+              href: gallery/how-to/publishing-packages/unlisting-packages.md
+            - name: Löschen von Paketen
+              href: gallery/how-to/publishing-packages/deleting-packages.md
+            - name: Verwalten von Paketbesitzern
+              href: gallery/how-to/publishing-packages/managing-package-owners.md
+        - name: Arbeiten mit Paketen
+          items:
+            - name: FileList-Ansicht
+              href: gallery/how-to/working-with-packages/filelist-view.md
+            - name: Bereitstellen in Azure Automation
+              href: gallery/how-to/working-with-packages/deploy-to-azure-automation.md
+            - name: Manuelles Herunterladen des Pakets
+              href: gallery/how-to/working-with-packages/manual-download.md
+            - name: 'Pakete, die Zustimmung zur Lizenz erfordern'
+              href: gallery/how-to/working-with-packages/packages-that-require-license-acceptance.md
+            - name: Kontaktieren von Paketbesitzern
+              href: gallery/how-to/working-with-packages/contacting-package-owners.md
+            - name: Bereitstellen von Feedback über soziale Netzwerke oder Kommentare
+              href: gallery/how-to/working-with-packages/social-media-feedback.md
+        - name: Verwalten des Kontoprofils
+          items:
+            - name: Kontoeinstellungen für den PowerShell-Katalog
+              href: gallery/how-to/managing-profile/managing-account.md
+            - name: Verwalten von API-Schlüsseln
+              href: gallery/how-to/managing-profile/creating-apikeys.md
+        - name: Arbeiten mit lokalen PowerShellGet-Repositorys
+          href: gallery/how-to/working-with-local-psrepositories.md
+    - name: Konzepte
+      items:
+        - name: Veröffentlichungsrichtlinien und Best Practices
+          href: gallery/concepts/publishing-guidelines.md
+        - name: Paketmanifest und Katalogbenutzeroberfläche
+          href: gallery/concepts/package-manifest-affecting-ui.md
+        - name: Spezifische PSEdition erforderlich
+          items:
+            - name: Schreiben von Skripts mit PSEdition-Unterstützung
+              href: gallery/concepts/script-psedition-support.md
+            - name: Schreiben von Modulen mit PSEdition-Unterstützung
+              href: gallery/concepts/module-psedition-support.md
+        - name: Zustimmung zur Lizenz erforderlich
+          items:
+            - name: Erforderliche Zustimmung zur Lizenz für Skripts
+              href: gallery/concepts/script-license-acceptance.md
+            - name: Zustimmung zur Lizenz für Module erforderlich
+              href: gallery/concepts/module-license-acceptance.md
+        - name: Definieren von Paketen als Vorabversion
+          items:
+            - name: Definieren eines Moduls als PreRelease
+              href: gallery/concepts/module-prerelease-support.md
+            - name: Definieren eines Skripts als PreRelease
+              href: gallery/concepts/script-prerelease-support.md
+        - name: PSScriptAnalyzer-Regelprofil
+          href: gallery/concepts/scriptanalyzer-rule-profile.md
+    - name: Support erhalten
+      items:
+        - name: Melden von Missbrauch
+          href: gallery/how-to/getting-support/report-abuse.md
+        - name: Beilegung von Streitigkeiten
+          href: gallery/how-to/getting-support/dispute-resolution.md
+        - name: Kontaktieren der Administratoren
+          href: gallery/how-to/getting-support/contacting-administrators.md
+        - name: Problembehandlung
+          href: gallery/how-to/getting-support/troubleshooting-cmdlets.md
+        - name: Bootstrapping des NuGet-Anbieters und von „NuGet.exe“
+          href: gallery/how-to/getting-support/bootstrapping-nuget.md
+        - name: DSGVO-Konformität
+          href: gallery/how-to/getting-support/gdpr-dsr-policy.md
+    - name: FAQs zum Katalog
+      href: gallery/faqs.md
 - name: Neues
   items:
     - name: Neuigkeiten in PowerShell Core 6.x
