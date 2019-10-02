@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Erstellen von .NET- und COM-Objekten – New-Object
-ms.openlocfilehash: 8bb0326d350be634a50897bdcd432e13ec93450c
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: 6e98a159451bc7da4ba3b37eaeb813eb71590d2b
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67030267"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71325164"
 ---
 # <a name="creating-net-and-com-objects-new-object"></a>Erstellen von .NET- und COM-Objekten (New-Object)
 
@@ -226,7 +226,7 @@ $ie.Visible = $true
 Anschließend können Sie mithilfe der Methode „Navigate“ zu einer bestimmten Webadresse navigieren:
 
 ```powershell
-$ie.Navigate("http://www.microsoft.com/technet/scriptcenter/default.mspx")
+$ie.Navigate("https://devblogs.microsoft.com/scripting/")
 ```
 
 Unter Verwendung anderer Elemente des Internet Explorer-Objektmodells können Sie Text-Inhalt von der Website abrufen. Mit dem folgenden Befehl können Sie den HTML-Text im Hauptteil der aktuellen Webseite anzeigen:

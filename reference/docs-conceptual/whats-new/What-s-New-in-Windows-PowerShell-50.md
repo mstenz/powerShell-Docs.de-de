@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Neuerungen in Windows PowerShell 5.0
-ms.openlocfilehash: b2cb729948d4b53c5ea9a536dbeda04c7cb50997
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: d86c9c947c521e0aee261a8a0335f1557b0d5a34
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62085948"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71325133"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Neuerungen in Windows PowerShell 5.0
 
@@ -217,7 +217,7 @@ Windows PowerShell 4.0 bietet die folgenden neuen Features.
 - Der Windows PowerShell-Debugger wurde insofern verbessert, dass das Debuggen von Windows PowerShell-Workflows und von Skripts ermöglicht wird, die auf Remotecomputern ausgeführt werden. Windows PowerShell-Workflows können nun auf Skriptebene über die Windows PowerShell-Befehlszeile oder über Windows PowerShell ISE gedebuggt werden. Windows PowerShell-Skripts, darunter auch Skriptworkflows, können nun über Remotesitzungen gedebuggt werden. Remotedebugsitzungen werden bei Windows PowerShell-Remotesitzungen beibehalten, die getrennt werden und später erneut eine Verbindung aufbauen.
 - Durch einen **RunNow**-Parameter für **Register-ScheduledJob** und **Set-ScheduledJob** entfällt das Festlegen eines sofortigen Startdatums und einer Uhrzeit für Aufträge, indem der **Trigger**-Parameter verwendet wird.
 - Mit **Invoke-RestMethod** und **Invoke-WebRequest** können Sie nun alle Header festlegen, indem Sie den „Headers“-Parameter verwenden. Obwohl dieser Parameter schon immer vorhanden war, handelte es sich dabei um einen von vielen Parametern für die Web-Cmdlets, die Ausnahmen oder Fehler verursacht haben.
-- **Get-Module** hat den neuen Parameter **FullyQualifiedName** des Typs **ModuleSpecification\[]**. Mit dem **FullyQualifiedName**-Parameter von „Get-Module“ können Sie nun ein Modul angeben, indem Sie den Modulnamen, die Version und optional die GUID angeben.
+- **Get-Module** hat den neuen Parameter **FullyQualifiedName** des Typs **ModuleSpecification\[]** . Mit dem **FullyQualifiedName**-Parameter von „Get-Module“ können Sie nun ein Modul angeben, indem Sie den Modulnamen, die Version und optional die GUID angeben.
 - Die Standard-Ausführungsrichtlinieneinstellung in Windows Server 2012 R2 lautet **RemoteSigned**. Unter Windows 8.1 gibt es keine Änderung der Standardeinstellung.
 - Ab Windows PowerShell 4.0 wird der Methodenaufruf mithilfe dynamischer Methodennamen unterstützt. Sie können eine Variable zum Speichern eines Methodennamens verwenden, und anschließend die Methode dynamisch aufrufen, indem die Variable aufgerufen wird.
 - Asynchrone Workflowaufträge werden nicht mehr gelöscht, wenn das Timeoutintervall abgelaufen ist, das vom allgemeinen **PSElapsedTimeoutSec**-Workflowparameter angegeben wird.
@@ -230,7 +230,7 @@ Windows PowerShell 4.0 bietet die folgenden neuen Features.
 - Das neue Cmdlet **Get-FileHash** wurde hinzugefügt, das für eine angegebene Datei einen Dateihash in einem von mehreren Formaten zurückgibt.
 - Wenn in Windows PowerShell 4.0 ein Modul den **DefaultCommandPrefix**-Schlüssel in seinem Manifest verwendet oder der Benutzer ein Modul mit dem **Prefix**-Parameter importiert, zeigt die **ExportedCommands**-Eigenschaft des Moduls die Befehle im Modul mit dem Präfix an. Wenn Sie die Befehle mithilfe der qualifizierten Modulsyntax „ModuleName\\CommandName“ verwenden, müssen die Befehlsnamen das Präfix enthalten.
 - Der Wert von **$PSVersionTable.PSVersion** wurde auf 4.0 aktualisiert.
-- Das Verhalten des **Where()**-Operators hat sich geändert. Dass `Collection.Where('property -match name')` einen Zeichenfolgeausdruck im Format `"Property -CompareOperator Value"` akzeptiert, wird nicht mehr unterstützt. Der **Where()**-Operator akzeptiert jedoch Zeichenfolgeausdrücke im Format eines Skriptblocks. Dies wird weiterhin unterstützt.
+- Das Verhalten des **Where()** -Operators hat sich geändert. Dass `Collection.Where('property -match name')` einen Zeichenfolgeausdruck im Format `"Property -CompareOperator Value"` akzeptiert, wird nicht mehr unterstützt. Der **Where()** -Operator akzeptiert jedoch Zeichenfolgeausdrücke im Format eines Skriptblocks. Dies wird weiterhin unterstützt.
 
 ### <a name="new-features-in-windows-powershell-integrated-scripting-environment-ise"></a>Neue Features in Windows PowerShell Integrated Scripting Environment (ISE)
 
@@ -407,7 +407,7 @@ Das **Get-Help -Online**-Feature in Windows PowerShell 3.0 ist nun noch leistung
 
 ```
 PS C:\>(Get-Command Get-ScheduledJob).HelpUri
-http://go.microsoft.com/fwlink/?LinkID=223923
+https://go.microsoft.com/fwlink/?LinkID=223923
 ```
 
 Ab Windows PowerShell 3.0 können Autoren von C#-Cmdlets die **HelpUri**-Eigenschaft auffüllen, indem sie ein **HelpUri**-Attribut in der Cmdlet-Klasse erstellen. Entwickler erweiterter Funktionen können eine **HelpUri**-Eigenschaft für das **CmdletBinding**-Attribut definieren. Der Wert der **HelpUri**-Eigenschaft muss mit „http“ oder „https“ beginnen.

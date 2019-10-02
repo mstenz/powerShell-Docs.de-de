@@ -2,12 +2,12 @@
 ms.date: 08/27/2018
 keywords: powershell,cmdlet
 title: Abrufen von ausführlichen Hilfeinformationen
-ms.openlocfilehash: 3f52de8c9963618c154b119d5f4859a92d61fbda
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: 033a8962ca438b49c10fafa2852c87d19868b4d9
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67030403"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71325208"
 ---
 # <a name="getting-detailed-help-information"></a>Abrufen ausführlicher Hilfeinformationen
 
@@ -168,7 +168,7 @@ Get-Help Add-Computer
 Die erste Zeile des Abschnitts „Verwandte Links“ des Artikels ist nachstehend dargestellt.
 
 ```Output
-Online version: http://go.microsoft.com/fwlink/?LinkId=821564
+Online version: https://go.microsoft.com/fwlink/?LinkId=821564
 ```
 
 Informationen dazu, wie Sie Onlineunterstützung für Ihre Hilfeartikel bereitstellen, finden Sie unter [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
