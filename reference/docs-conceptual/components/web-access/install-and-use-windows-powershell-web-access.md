@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: Installieren und Verwenden von Windows PowerShell Web Access
-ms.openlocfilehash: 53558f9be5065c7f630f06e535ddab4d7ad72d9e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5f6e94859c55bbd07f3f8a83bc4b9a83bc89d0fa
+ms.sourcegitcommit: a35450f420dc10a02379f6e6f08a28ad11fe5a6d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058559"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71692248"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Installieren und Verwenden von Windows PowerShell Web Access
 
@@ -275,7 +275,7 @@ Die Anweisungen in diesem Abschnitt gelten für die Installation der Windows Pow
 
 9. Führen Sie die Schritte im Verfahren [So konfigurieren Sie ein SSL-Zertifikat im IIS-Manager](#to-configure-an-ssl-certificate-in-iis-manager) in diesem Thema aus.
 
-10. ![](images/SecurityNote.jpeg) Optionaler Sicherheitsschritt:
+10. ![Sicherheitshinweis](images/SecurityNote.jpeg) Optionaler Sicherheitsschritt:
 
     Doppelklicken Sie im Inhaltsbereich auf **SSL-Einstellungen**, während die Website im Strukturbereich ausgewählt ist.
     Wählen Sie die Option **SSL erforderlich** aus, und klicken Sie anschließend im Bereich **Aktionen** auf **Übernehmen**. Optional können Sie es im Bereich **SSL-Einstellungen** obligatorisch machen, dass Benutzer, die eine Verbindung mit der Windows PowerShell Web Access-Website herstellen, über Clientzertifikate verfügen. Clientzertifikate dienen dazu, die Identität des Benutzers eines Clientgeräts zu überprüfen. Weitere Informationen dazu, wie das Anfordern von Clientzertifikaten die Sicherheit von Windows PowerShell Web Access erhöhen kann, finden Sie unter [Autorisierungsregeln und Sicherheitsfeatures von Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md) in diesem Handbuch.

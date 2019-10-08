@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: powershell,core
 title: Bekannte Probleme bei PowerShell 6.0
-ms.openlocfilehash: 502143b660204edada6a9e62bdf6b260a384a078
-ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.openlocfilehash: e84dd2f7deefcc64aea09585e7ce24dc1e8515fc
+ms.sourcegitcommit: a35450f420dc10a02379f6e6f08a28ad11fe5a6d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67733828"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71692222"
 ---
 # <a name="known-issues-for-powershell-60"></a>Bekannte Probleme bei PowerShell 6.0
 
@@ -53,7 +53,7 @@ Besuchen Sie [#954](https://github.com/PowerShell/PowerShell/issues/954), um uns
 
 ### <a name="net-framework-vs-net-core-framework"></a>.NET Framework und .NET Core Framework im Vergleich
 
-PowerShell unter Linux und macOS verwendet .NET Core. Dabei handelt es sich um eine Teilmenge des vollständigen .NET Frameworks unter Microsoft Windows. Das ist wichtig, da PowerShell den direkten Zugriff auf die zugrunde liegenden Frameworktypen, Methoden und vieles mehr bereitstellt. Folglich können Skripts, die unter Windows ausgeführt werden, nicht auf anderen Plattformen als Windows ausgeführt werden, da die Frameworks sich unterscheiden. Weitere Informationen zum Framework .NET Core finden Sie unter <https://dotnetfoundation.org/net-core>.
+PowerShell unter Linux und macOS verwendet .NET Core. Dabei handelt es sich um eine Teilmenge des vollständigen .NET Frameworks unter Microsoft Windows. Das ist wichtig, da PowerShell den direkten Zugriff auf die zugrunde liegenden Frameworktypen, Methoden und vieles mehr bereitstellt. Folglich können Skripts, die unter Windows ausgeführt werden, nicht auf anderen Plattformen als Windows ausgeführt werden, da die Frameworks sich unterscheiden. Weitere Informationen zum .NET Core-Framework finden Sie unter [dotnetfoundation.org](https://dotnetfoundation.org/).
 
 Mit der Einführung von [.NET Standard 2.0](https://devblogs.microsoft.com/dotnet/introducing-net-standard/) sind viele der konventionellen Typen und Methoden aus dem vollständigen .NET Framework wieder in .NET Core 2.0 verfügbar. Das bedeutet, dass PowerShell Core viele herkömmliche Windows PowerShell-Module ohne Änderungen laden kann. Unsere Arbeit an .NET Standard 2.0 können Sie [hier](https://github.com/PowerShell/PowerShell/projects/4) verfolgen.
 

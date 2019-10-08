@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: Behandeln von Zugriffsproblemen in Windows PowerShell Web Access
-ms.openlocfilehash: 66e913504cf0c34f8d9ab18b088fb06173aca24c
-ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.openlocfilehash: 74cebbe418fecd21567ba9ecc7c561b51ac008fd
+ms.sourcegitcommit: a35450f420dc10a02379f6e6f08a28ad11fe5a6d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67733865"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71692233"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Behandeln von Zugriffsproblemen in Windows PowerShell Web Access
 
@@ -49,7 +49,7 @@ Dies kann bei Benutzern der Fall sein, die sich mit einem Domänennamen angemeld
 
 #### <a name="workaround"></a>Problemumgehung
 
-1. [Install and run Internet Explorer 10 (Installieren und Ausführen von Internet Explorer 10)](https://ie.microsoft.com/testdrive/info/downloads/Default.html)
+1. Installieren und Ausführen von Internet Explorer 10
 1. Ändern Sie für Internet Explorer die Einstellung **Dokumentmodus** in *IE10-Standards*.
    1. Drücken Sie die Taste **F12**, um die Konsole mit den Entwicklertools zu öffnen.
    1. Klicken Sie in Internet Explorer 10 auf **Browsermodus**, und wählen Sie die Option *Internet Explorer 10* aus.

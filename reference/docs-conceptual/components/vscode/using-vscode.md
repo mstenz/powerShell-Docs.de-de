@@ -2,22 +2,20 @@
 title: Verwenden von Visual Studio Code für die Entwicklung mit PowerShell
 description: Verwenden von Visual Studio Code für die Entwicklung mit PowerShell
 ms.date: 08/06/2018
-ms.openlocfilehash: 6a0da6e060693dc7cfc08d40fd658414dc23d660
-ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.openlocfilehash: 0e082b74f99d214749f10224fb5aaf41e2ef8951
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67733873"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71325228"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>Verwenden von Visual Studio Code für die Entwicklung mit PowerShell
 
-Neben der [PowerShell ISE][ise] wird auch PowerShell in Visual Studio Code unterstützt.
-Außerdem wird die PowerShell ISE zwar nicht mit PowerShell Core unterstützt, jedoch wird Visual Studio Code für PowerShell Core auf sämtlichen Plattformen (Windows, macOS und Linux) unterstützt.
+Neben der [PowerShell ISE][ise] wird auch PowerShell in Visual Studio Code (VS Code) unterstützt. Außerdem wird die PowerShell ISE zwar nicht mit PowerShell Core unterstützt, jedoch wird VS Code für PowerShell Core auf sämtlichen Plattformen (Windows, macOS und Linux) unterstützt.
 
-Sie können Visual Studio Code unter Windows mit PowerShell Version 5 verwenden, wenn Sie Windows 10 verwenden oder für ältere Windows-Versionen (z.B. Windows 8.1) [Windows Management Framework 5.0 RTM](https://devblogs.microsoft.com/powershell/windows-management-framework-wmf-5-0-rtm-is-now-available-via-the-microsoft-update-catalog/) installieren.
+Sie können VS Code unter Windows mit PowerShell Version 5 verwenden, wenn Sie Windows 10 verwenden oder für ältere Windows-Versionen (z.B. Windows 8.1) [Windows Management Framework 5.0 RTM](https://devblogs.microsoft.com/powershell/windows-management-framework-wmf-5-0-rtm-is-now-available-via-the-microsoft-update-catalog/) installieren.
 
-Prüfen Sie, ob PowerShell auf Ihrem System vorhanden ist, bevor Sie das Programm starten.
-Aktuelle Workloads unter Windows, macOS und Linux finden Sie unter:
+Prüfen Sie, ob PowerShell auf Ihrem System vorhanden ist, bevor Sie das Programm starten. Aktuelle Workloads unter Windows, macOS und Linux finden Sie unter:
 
 - [Installieren von PowerShell Core unter Linux][install-pscore-linux]
 - [Installieren von PowerShell Core unter macOS][install-pscore-macos]
@@ -25,49 +23,40 @@ Aktuelle Workloads unter Windows, macOS und Linux finden Sie unter:
 
 Herkömmliche Windows PowerShell-Workloads finden Sie unter [Installieren von Windows PowerShell][install-winps].
 
-## <a name="editing-with-visual-studio-code"></a>Bearbeiten von Visual Studio Code
+## <a name="editing-with-vscode"></a>Bearbeiten mit VS Code
 
-### <a name="1-installing-visual-studio-codehttpscodevisualstudiocomdocssetupsetup-overview"></a>[1. Installieren von Visual Studio Code](https://code.visualstudio.com/Docs/setup/setup-overview)
+1. [Installieren von VS Code](https://code.visualstudio.com/Docs/setup/setup-overview)
 
-- **Linux:** Führen Sie die Installationsanweisungen auf der Seite [Running VS Code on Linux (Ausführen von VS Code unter Linux)](https://code.visualstudio.com/docs/setup/linux) aus.
+   - **Linux:** Führen Sie die Installationsanweisungen auf der Seite [Running VS Code on Linux (Ausführen von VS Code unter Linux)](https://code.visualstudio.com/docs/setup/linux) aus.
+   - **macOS:** Führen Sie die Installationsanweisungen auf der Seite [Running VS Code on macOS (Ausführen von VS Code unter macOS)](https://code.visualstudio.com/docs/setup/mac) aus.
 
-- **macOS:** Führen Sie die Installationsanweisungen auf der Seite [Running VS Code on macOS (Ausführen von VS Code unter macOS)](https://code.visualstudio.com/docs/setup/mac) aus.
+     > [!IMPORTANT]
+     > Unter macOS müssen Sie OpenSSL für die PowerShell-Erweiterung installieren, damit diese einwandfrei funktionieren kann. Dies funktioniert am besten, wenn Sie [Homebrew](https://brew.sh/) installieren und anschließend `brew install openssl` ausführen. VS Code kann jetzt die PowerShell-Erweiterung erfolgreich laden.
 
-  > [!IMPORTANT]
-  > Unter macOS müssen Sie OpenSSL für die PowerShell-Erweiterung installieren, damit diese einwandfrei funktionieren kann.
-  > Dies funktioniert am besten, wenn Sie [Homebrew](https://brew.sh/) installieren und anschließend `brew install openssl` ausführen.
-  > VS Code kann jetzt die PowerShell-Erweiterung erfolgreich laden.
+   - **Windows:** Führen Sie die Installationsanweisungen auf der Seite [Running VS Code on Windows (Ausführen von VS Code unter Windows)](https://code.visualstudio.com/docs/setup/windows) aus.
 
-- **Windows:** Führen Sie die Installationsanweisungen auf der Seite [Running VS Code on Windows (Ausführen von VS Code unter Windows)](https://code.visualstudio.com/docs/setup/windows) aus.
+2. Installieren der PowerShell-Erweiterung
 
-### <a name="2-installing-powershell-extension"></a>2. Installieren der PowerShell-Erweiterung
+   - Starten Sie VS Code, indem Sie:
+     - **Windows:** `code` in Ihre PowerShell-Sitzung eingeben.
+     - **Linux:** `code` in Ihr Terminal eingeben.
+     - **macOS:** `code` in Ihr Terminal eingeben.
+   - Starten Sie **Quick Open**, indem Sie <kbd>STRG</kbd>+<kbd>P</kbd> (<kbd>cmd</kbd>+<kbd>P</kbd> unter Mac) drücken.
+   - Geben Sie in Quick Open `ext install powershell` ein, und drücken Sie die **EINGABETASTE**.
+   - Dann öffnet sich die Ansicht **Erweiterungen** in der Seitenleiste. Wählen Sie die PowerShell-Erweiterung für Microsoft aus.
+     Es sollte etwa Folgendes angezeigt werden:
 
-- Starten Sie die Visual Studio Code-App, indem Sie:
-  - **Windows:** `code` in Ihre PowerShell-Sitzung eingeben.
-  - **Linux:** `code` in Ihr Terminal eingeben.
-  - **macOS:** `code` in Ihr Terminal eingeben.
+     ![VSCode](../../images/using-vscode/vscode.png)
 
-- Starten Sie **Quick Open**, indem Sie **STRG+P** (**cmd+P** unter Mac) drücken.
-- Geben Sie in Quick Open `ext install powershell` ein, und drücken Sie die **EINGABETASTE**.
-- Dann öffnet sich die Ansicht **Erweiterungen** in der Seitenleiste. Wählen Sie die PowerShell-Erweiterung für Microsoft aus.
-  Es sollte etwa Folgendes angezeigt werden:
+   - Klicken Sie auf die Schaltfläche **Installieren** in der PowerShell-Erweiterung für Microsoft.
+   - Nach der Installation ändert sich die Schaltfläche **Installieren** in **Erneut laden**. Klicken Sie auf **Erneut laden**.
+   - Nachdem VS Code neu geladen wurde, können Sie Bearbeitungen vornehmen.
 
-  ![VSCode](../../images/vscode.png)
-
-- Klicken Sie auf die Schaltfläche **Installieren** in der PowerShell-Erweiterung für Microsoft.
-- Nach der Installation ändert sich die Schaltfläche **Installieren** in **Erneut laden**.
-  Klicken Sie auf **Erneut laden**.
-- Nachdem Visual Studio Code neu geladen wurde, können Sie Bearbeitungen vornehmen.
-
-Klicken Sie z.B. auf **Datei > Neu**, um eine neue Datei zu erstellen.
-Klicken Sie zum Speichern auf **Datei > Speichern**, und geben Sie anschließend einen Dateinamen ein, z.B. `HelloWorld.ps1`.
-Klicken Sie auf das „x“ neben dem Dateinamen, um die Datei zu schließen.
-Klicken Sie auf **Datei > Beenden**, um Visual Studio Code zu beenden.
+Klicken Sie z.B. auf **Datei > Neu**, um eine neue Datei zu erstellen. Klicken Sie zum Speichern auf **Datei > Speichern**, und geben Sie anschließend einen Dateinamen ein, z.B. `HelloWorld.ps1`. Klicken Sie auf das „x“ neben dem Dateinamen, um die Datei zu schließen. Wählen Sie zum Beenden von VS Code **Datei > Beenden** aus.
 
 ### <a name="installing-the-powershell-extension-on-restricted-systems"></a>Installieren der PowerShell-Erweiterung auf eingeschränkten Systemen
 
-Einige Systeme sind so eingerichtet, dass alle Codesignaturen überprüft werden müssen und die Editor-Dienste von PowerShell daher manuell für die Ausführung auf dem System genehmigt werden müssen.
-Ein Gruppenrichtlinienupdate, das die Ausführungsrichtlinie ändert, ist eine wahrscheinliche Ursache, wenn Sie die PowerShell-Erweiterung installiert haben, aber einen Fehler wie diesen erhalten:
+Einige Systeme sind so eingerichtet, dass alle Codesignaturen überprüft werden müssen und die Editor-Dienste von PowerShell daher manuell für die Ausführung auf dem System genehmigt werden müssen. Ein Gruppenrichtlinienupdate, das die Ausführungsrichtlinie ändert, ist eine wahrscheinliche Ursache, wenn Sie die PowerShell-Erweiterung installiert haben, aber einen Fehler wie diesen erhalten:
 
 ```
 Language server startup failed.
@@ -79,8 +68,7 @@ Language server startup failed.
 Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellEditorServices\PowerShellEditorServices.psd1
 ```
 
-Sie werden gefragt: „Do you want to run software from this untrusted publisher?“ (Möchten Sie Software von diesem nicht vertrauenswürdigen Herausgeber ausführen?).
-Geben Sie `R` ein, um die Datei auszuführen. Öffnen Sie dann Visual Studio Code, und überprüfen Sie, ob die PowerShell-Erweiterung ordnungsgemäß funktioniert. Wenn Sie noch immer Probleme haben, lassen Sie uns dies auf [GitHub](https://github.com/PowerShell/vscode-powershell/issues) wissen.
+Sie werden gefragt: „Do you want to run software from this untrusted publisher?“ (Möchten Sie Software von diesem nicht vertrauenswürdigen Herausgeber ausführen?). Geben Sie `R` ein, um die Datei auszuführen. Öffnen Sie dann VS Code, und überprüfen Sie, ob die PowerShell-Erweiterung ordnungsgemäß funktioniert. Wenn Sie noch immer Probleme haben, lassen Sie uns dies auf [GitHub](https://github.com/PowerShell/vscode-powershell/issues) wissen.
 
 #### <a name="choosing-a-version-of-powershell-to-use-with-the-extension"></a>Auswählen einer Version von PowerShell für die Verwendung mit der Erweiterung
 
@@ -91,7 +79,7 @@ Mit einer parallelen Installation von PowerShell Core und Windows PowerShell ist
 1. Klicken Sie auf „PowerShell“: Zeigen Sie das Menü „Sitzung“ an.
 1. Wählen Sie die Version von PowerShell aus der Liste aus, die Sie verwenden möchten, z. B. „PowerShell Core“.
 
->[!IMPORTANT]
+> [!IMPORTANT]
 > Dieses Feature sucht in ein paar bekannten Pfaden unter verschiedenen Betriebssystemen, um die Installationsspeicherorte von PowerShell zu ermitteln. Wenn Sie PowerShell an einem untypischen Speicherort installiert haben, wird es möglicherweise anfangs nicht im Menü „Sitzung“ angezeigt. Sie können das Menü „Sitzung“ erweitern, indem Sie [Ihre eigenen benutzerdefinierten Pfade hinzufügen](#adding-your-own-powershell-paths-to-the-session-menu), wie unten beschrieben.
 
 >[!NOTE]
@@ -113,7 +101,7 @@ Fügen Sie der Liste `powershell.powerShellAdditionalExePaths` eine Element hinz
             "versionName": "Downloaded PowerShell"
         }
     ],
-    
+
     // other settings...
 }
 ```
@@ -135,25 +123,25 @@ Sie können die PowerShell-Standardversion so festlegen, dass die Einstellung `p
             "versionName": "Downloaded PowerShell"
         }
     ],
-    
+
     "powershell.powerShellDefaultVersion": "Downloaded PowerShell",
-    
+
     // other settings...
 }
 ```
 
-Wenn Sie diese Einstellung festgelegt haben, starten Sie Visual Studio Code neu, oder verwenden Sie die Befehlspalettenaktion „Developer: Fenster erneut laden“, um das aktuelle Fenster neu zu laden.
+Wenn Sie diese Einstellung festgelegt haben, starten Sie VS Code neu, oder verwenden Sie die Befehlspalettenaktion „Developer: Fenster erneut laden“, um das aktuelle Fenster neu zu laden.
 
 Wenn Sie das Menü „Sitzung“ öffnen, werden jetzt Ihre zusätzlichen PowerShell-Versionen angezeigt.
 
 > [!NOTE]
 > Wenn Sie PowerShell aus der Quelle erstellen, ist dies eine hervorragende Möglichkeit zum Testen Ihres lokalen Builds von PowerShell.
 
-#### <a name="configuration-settings-for-visual-studio-code"></a>Konfigurationseinstellungen für Visual Studio Code
+#### <a name="configuration-settings-for-vscode"></a>Konfigurationseinstellungen für VS Code
 
 Mithilfe der im vorherigen Absatz aufgeführten Schritte können Sie die Konfigurationseinstellungen zu `settings.json` hinzufügen.
 
-Die folgenden Konfigurationseinstellungen werden für Visual Studio Code empfohlen:
+Die folgenden Konfigurationseinstellungen werden für VS Code empfohlen:
 
 ```json
 {
@@ -178,20 +166,17 @@ Wenn Sie nicht möchten, dass diese Einstellungen für alle Dateitypen gelten, k
 
 Weitere Informationen zur Dateicodierung in VS Code finden Sie unter [Informationen zur Dateicodierung](understanding-file-encoding.md).
 
-## <a name="debugging-with-visual-studio-code"></a>Debuggen mit Visual Studio Code
+## <a name="debugging-with-vscode"></a>Debuggen mit VS Code
 
 ### <a name="no-workspace-debugging"></a>Debuggen außerhalb des Arbeitsbereichs
 
-Ab Visual Studio Code Version 1.9 können Sie PowerShell-Skripts debuggen, ohne den Ordner öffnen zu müssen, in dem das jeweilige Skript enthalten ist. Öffnen Sie die PowerShell-Skriptdatei über **Datei > Datei öffnen**, legen Sie einen Breakpoint für eine Zeile fest (indem Sie F9 drücken), und drücken Sie dann F5, um mit dem Debuggen zu beginnen. Dann wird der Aktionsbereich „Debuggen“ angezeigt, über den Sie den Debugger anhalten und den Debugvorgang ausführen, fortsetzen oder abbrechen können.
+Ab VS Code Version 1.9 können Sie PowerShell-Skripts debuggen, ohne den Ordner öffnen zu müssen, in dem das jeweilige PowerShell-Skript enthalten ist. Öffnen Sie die PowerShell-Skriptdatei über **Datei > Datei öffnen**, legen Sie einen Breakpoint für eine Zeile fest (indem Sie <kbd>F9</kbd> drücken), und drücken Sie dann <kbd>F5</kbd>, um mit dem Debuggen zu beginnen. Dann wird der Aktionsbereich „Debuggen“ angezeigt, über den Sie den Debugger anhalten und den Debugvorgang ausführen, fortsetzen oder abbrechen können.
 
 ### <a name="workspace-debugging"></a>Debuggen von Arbeitsbereichen
 
-Wenn davon die Rede ist, Arbeitsbereiche zu debuggen, ist damit das Debuggen eines Ordners gemeint, den Sie in Visual Studio Code über **Ordner öffnen...** im Menü **Datei** öffnen.
-In der Regel wird dafür der PowerShell-Projektordner und bzw. oder der Stamm des Git-Repositorys geöffnet.
+Wenn davon die Rede ist, Arbeitsbereiche zu debuggen, ist damit das Debuggen eines Ordners gemeint, den Sie in Visual Studio Code über **Ordner öffnen...** im Menü **Datei** öffnen. In der Regel wird dafür der PowerShell-Projektordner und bzw. oder der Stamm des Git-Repositorys geöffnet.
 
-Sie können sogar in diesem Modus damit beginnen, das zu diesem Zeitpunkt ausgewählte PowerShell-Skript zu debuggen, indem Sie F5 drücken.
-Wenn Sie allerdings Arbeitsbereiche debuggen, kann nicht nur für die zu diesem Zeitpunkt geöffnete Datei ein Debugvorgang ausgeführt werden, sondern es können auch mehrere Debugkonfigurationen definiert werden.
-Beispielsweise können Sie Konfigurationen zu folgenden Vorgängen hinzufügen:
+Sie können sogar in diesem Modus damit beginnen, das aktuell ausgewählte PowerShell-Skript zu debuggen, indem Sie <kbd>F5</kbd> drücken. Wenn Sie allerdings Arbeitsbereiche debuggen, kann nicht nur für die zu diesem Zeitpunkt geöffnete Datei ein Debugvorgang ausgeführt werden, sondern es können auch mehrere Debugkonfigurationen definiert werden. Beispielsweise können Sie Konfigurationen zu folgenden Vorgängen hinzufügen:
 
 - Starten von Pester-Tests im Debugger
 - Starten einer bestimmten Datei mit Argumenten im Debugger
@@ -200,13 +185,11 @@ Beispielsweise können Sie Konfigurationen zu folgenden Vorgängen hinzufügen:
 
 Führen Sie die folgenden Schritte aus, um eine Konfigurationsdatei für den Debugvorgang zu erstellen:
 
-  1. Öffnen Sie die Ansicht **Debuggen**, indem Sie **STRG+UMSCHALT+D** drücken (oder **cmd+UMSCHALT+D** unter Mac).
+  1. Öffnen Sie die Ansicht **Debuggen**, indem Sie <kbd>STRG</kbd>+<kbd>UMSCHALT</kbd>+<kbd>D</kbd> drücken (oder <kbd>cmd</kbd>+<kbd>UMSCHALT</kbd>+<kbd>D</kbd> unter Mac).
   2. Klicken Sie in der Symbolleiste auf das Zahnradsymbol **Konfigurieren**.
-  3. Visual Studio Code zeigt folgende Eingabeaufforderung an: **Umgebung auswählen**. Wählen Sie **PowerShell** aus.
+  3. VS Code zeigt folgende Eingabeaufforderung an: **Umgebung auswählen**. Wählen Sie **PowerShell** aus.
 
-  Nachdem Sie diesen Vorgang ausgeführt haben, erstellt Visual Studio Code im Stamm Ihres Arbeitsbereichordners ein Verzeichnis und eine Datei: „.vscode\launch.json“.
-  An dieser Stelle wird Ihre Debugkonfiguration gespeichert. Wenn sich Ihre Dateien in einem Git-Repository befinden, sollten Sie einen Commit für die launch.json-Datei ausführen.
-  In dieser Datei sind folgende Inhalte enthalten:
+  Nachdem Sie diesen Vorgang ausgeführt haben, erstellt VS Code im Stamm Ihres Arbeitsbereichordners ein Verzeichnis und eine Datei: „.vscode\launch.json“. An dieser Stelle wird Ihre Debugkonfiguration gespeichert. Wenn sich Ihre Dateien in einem Git-Repository befinden, sollten Sie einen Commit für die launch.json-Datei ausführen. In dieser Datei sind folgende Inhalte enthalten:
 
   ```json
   {
@@ -237,10 +220,7 @@ Führen Sie die folgenden Schritte aus, um eine Konfigurationsdatei für den Deb
   }
   ```
 
-  Dies ist ein Beispiel für häufig auftretende Debugszenarios.
-  Wenn Sie diese Datei im Editor öffnen, wird Ihnen jedoch die Schaltfläche **Konfiguration hinzufügen...** angezeigt.
-  Sie können auf diese Schaltfläche klicken, um weitere Debugkonfigurationen für PowerShell hinzuzufügen. Sie können zum Beispiel die Konfiguration **PowerShell: Launch Script** (PowerShell: Skript starten) hinzufügen.
-  Mithilfe dieser Konfiguration können Sie optionale Argumente für eine bestimmte Datei angeben, die immer gestartet werden soll, wenn Sie F5 drücken. Dabei macht es keinen Unterschied, welche Datei zu diesem Zeitpunkt im Editor aktiv ist.
+  Dies ist ein Beispiel für häufig auftretende Debugszenarios. Wenn Sie diese Datei im Editor öffnen, wird Ihnen jedoch die Schaltfläche **Konfiguration hinzufügen...** angezeigt. Sie können auf diese Schaltfläche klicken, um weitere Debugkonfigurationen für PowerShell hinzuzufügen. Sie können zum Beispiel die Konfiguration **PowerShell: Launch Script** (PowerShell: Skript starten) hinzufügen. Mithilfe dieser Konfiguration können Sie optionale Argumente für eine bestimmte Datei angeben, die immer gestartet werden soll, wenn Sie <kbd>F5</kbd> drücken. Dabei macht es keinen Unterschied, welche Datei zu diesem Zeitpunkt im Editor aktiv ist.
 
   Nachdem Sie die Debugkonfiguration eingerichtet haben, können Sie auswählen, welche Konfiguration Sie während der Debugsitzung verwenden möchten, indem Sie eine der Debugkonfigurationen aus der Dropdownliste in der Symbolleistenansicht **Debuggen** auswählen.
 
@@ -271,6 +251,6 @@ Im Folgenden werden einige Blogbeiträge aufgeführt, die bei den ersten Schritt
 [debugging-part1]: https://blogs.technet.microsoft.com/heyscriptingguy/2017/02/06/debugging-powershell-script-in-visual-studio-code-part-1/
 [debugging-part2]: https://blogs.technet.microsoft.com/heyscriptingguy/2017/02/13/debugging-powershell-script-in-visual-studio-code-part-2/
 
-## <a name="powershell-extension-for-visual-studio-code"></a>PowerShell-Erweiterung für Visual Studio Code
+## <a name="powershell-extension-for-vscode"></a>PowerShell-Erweiterung für VS Code
 
 Sie finden den Quellcode der PowerShell-Erweiterung auf [GitHub](https://github.com/PowerShell/vscode-powershell).
