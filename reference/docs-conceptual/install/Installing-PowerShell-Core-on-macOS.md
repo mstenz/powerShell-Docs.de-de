@@ -23,7 +23,7 @@ Andernfalls können Sie PowerShell über [Direkter Download](#installation-via-d
 
 ## <a name="installation-of-latest-stable-release-via-homebrew-on-macos-1012-or-higher"></a>Installation des neuesten stabilen Release über Homebrew unter macOS 10.12 oder höher
 
-Weitere Informationen zu Ansichten finden Sie unter [Info zu Brew](#about-brew).
+Weitere Informationen zu Brew finden Sie unter [Info zu Brew](#about-brew).
 
 Jetzt können Sie PowerShell installieren:
 
@@ -37,7 +37,7 @@ Vergewissern Sie sich abschließend, dass Ihre Installation voll funktionsfähig
 pwsh
 ```
 
-Wenn neue Versionen von PowerShell veröffentlicht werden, aktualisieren Sie die Formel für Homebrew, und führen Sie ein Upgrade für PowerShell aus:
+Wenn neue Versionen von PowerShell veröffentlicht werden, aktualisieren Sie die Formeln für Homebrew, und führen Sie ein Upgrade für PowerShell aus:
 
 ```sh
 brew update
@@ -49,9 +49,9 @@ brew cask upgrade powershell
 
 [brew]: https://brew.sh/
 
-## <a name="installation-of-latest-preview-release-via-homebrew-on-macos-1012-or-higher"></a>Installation der neuesten stabilen Vorschauversion über Homebrew unter macOS 10.12 oder höher
+## <a name="installation-of-latest-preview-release-via-homebrew-on-macos-1012-or-higher"></a>Installation der neuesten Vorschauversion über Homebrew unter macOS 10.12 oder höher
 
-Weitere Informationen zu Ansichten finden Sie unter [Info zu Brew](#about-brew).
+Weitere Informationen zu Brew finden Sie unter [Info zu Brew](#about-brew).
 
 Nachdem Sie Homebrew installiert haben, können Sie PowerShell installieren.
 Installieren Sie zunächst das Paket [Cask-Versions][cask-versions]. Dies ermöglicht Ihnen das Installieren alternativer Versionen von Cask-Paketen:
@@ -72,7 +72,7 @@ Vergewissern Sie sich abschließend, dass Ihre Installation voll funktionsfähig
 pwsh-preview
 ```
 
-Wenn neue Versionen von PowerShell veröffentlicht werden, aktualisieren Sie die Formel für Homebrew, und führen Sie ein Upgrade für PowerShell aus:
+Wenn neue Versionen von PowerShell veröffentlicht werden, aktualisieren Sie die Formeln für Homebrew, und führen Sie ein Upgrade für PowerShell aus:
 
 ```sh
 brew update
@@ -135,7 +135,7 @@ OpenSSL ist für PowerShell-Remotingfunktionen und CIM-Vorgänge erforderlich. D
 
 #### <a name="install-openssl-via-brew"></a>Installieren von OpenSSL über Brew
 
-Weitere Informationen zu Ansichten finden Sie unter [Info zu Brew](#about-brew).
+Weitere Informationen zu Brew finden Sie unter [Info zu Brew](#about-brew).
 
 Führen Sie `brew install openssl` aus, um OpenSSL zu installieren.
 

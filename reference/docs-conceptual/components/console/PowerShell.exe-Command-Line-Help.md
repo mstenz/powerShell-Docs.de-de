@@ -15,6 +15,6 @@ Sie können PowerShell mithilfe von Befehlszeilenoptionen über die Befehlszeile
 
 Die Befehlszeilenoptionen ermöglichen es Ihnen, die Konfiguration der PowerShell-Sitzung anzupassen und die Eingabe zu steuern.
 
-Eine vollständige Liste der Optionen für Windows PowerShell (powershell.exe) finden Sie unter [about_PowerShell_exe](/powershell/module/Microsoft.PowerShell.Core/About/about_PowerShell_exe).
+Eine vollständige Liste der Optionen für Windows PowerShell (powershell.exe) finden Sie unter [About_PowerShell_exe](/powershell/module/Microsoft.PowerShell.Core/About/about_PowerShell_exe).
 
-Eine vollständige Liste der Optionen für PowerShell Core (pwsh) finden Sie unter [about_pwsh](/powershell/module/Microsoft.PowerShell.Core/About/about_pwsh).
+Eine vollständige Liste der Optionen für PowerShell Core (pwsh) finden Sie unter [About_pwsh](/powershell/module/Microsoft.PowerShell.Core/About/about_pwsh).
