@@ -2,25 +2,26 @@
 title: Installieren von PowerShell Core unter Linux
 description: Informationen zur Installation von PowerShell Core auf verschiedenen Linux-Distributionen
 ms.date: 07/19/2019
-ms.openlocfilehash: 7d7c9a9f915f0a6e735a7baec1ec56e9c205a155
-ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
+ms.openlocfilehash: fc5a278f0fc10733a0d60fb856d0400332ba2719
+ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70848186"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72350191"
 ---
 # <a name="installing-powershell-core-on-linux"></a>Installieren von PowerShell Core unter Linux
 
-Unterstützt [Ubuntu 16.04][u16], [Ubuntu 18.04][u1804], [Ubuntu 18.10][u1810], [Ubuntu 19.04][u1904], [Debian 9][deb9], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42.3][opensuse], [openSUSE Leap 15][opensuse], [Fedora 27][fedora], [Fedora 28][fedora] und [Arch Linux][arch].
+Unterstützt [Ubuntu 16.04][u16], [Ubuntu 18.04][u1804], [Ubuntu 18.10][u1810], [Ubuntu 19.04][u1904], [Debian 8][deb8], [Debian 9][deb9], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42.3][opensuse], [openSUSE Leap 15][opensuse], [Fedora 27][fedora], [Fedora 28][fedora] und [Arch Linux][arch].
 
 Für nicht offiziell unterstützte Linux-Distributionen können Sie versuchen, PowerShell über das [Snap-Paket für PowerShell][snap] zu installieren. Stattdessen können Sie auch versuchen, PowerShell-Binärdateien über das [`tar.gz`-Archiv][tar] für Linux bereitzustellen. Dafür müssen Sie aber die für Ihr Betriebssystem erforderlichen Abhängigkeiten in zusätzlichen Schritten einrichten.
 
-Sämtliche Pakete sind auf der Seite [Freigaben][] über GitHub verfügbar. Nachdem Sie das Paket installiert haben, führen Sie `pwsh` über das Terminal aus.
+Sämtliche Pakete sind auf der Seite [Freigaben][] über GitHub verfügbar. Nachdem Sie das Paket installiert haben, führen Sie `pwsh` über das Terminal aus. Führen Sie `pwsh-preview` aus, wenn Sie eine [Vorschauversion](#installing-preview-releases) installiert haben.
 
 [u16]: #ubuntu-1604
 [u1804]: #ubuntu-1804
 [u1810]: #ubuntu-1810
 [u1904]: #ubuntu-1904
+[deb8]: #debian-8
 [deb9]: #debian-9
 [cos]: #centos-7
 [rhel7]: #red-hat-enterprise-linux-rhel-7
@@ -234,6 +235,103 @@ sudo apt-get install -f
 sudo apt-get remove powershell
 ```
 
+## <a name="debian-10"></a>Debian 10
+
+> [!NOTE]
+> Debian 10 wird nur in PowerShell 7.0 und höher unterstützt.
+
+### <a name="installation-via-direct-download---debian-10"></a>Installation über direkten Download: Debian 10
+
+Laden Sie das tar.gz-Paket `powershell_7.0.0-preview-7-linux-x64.tar.gz` über die Seite [Freigaben][] auf den Debian-Computer herunter.
+
+Führen Sie dann im Terminal folgenden Befehl aus:
+
+```sh
+sudo apt-get update
+# install the requirements
+sudo apt-get install -y \
+        less \
+        locales \
+        ca-certificates \
+        libicu63 \
+        libssl1.1 \
+        libc6 \
+        libgcc1 \
+        libgssapi-krb5-2 \
+        liblttng-ust0 \
+        libstdc++6 \
+        zlib1g \
+        curl
+
+# Download the powershell '.tar.gz' archive
+curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.0.0-preview.4/powershell-7.0.0-preview.4-linux-x64.tar.gz -o /tmp/powershell.tar.gz
+
+# Create the target folder where powershell will be placed
+sudo mkdir -p /opt/microsoft/powershell/7-preview
+
+# Expand powershell to the target folder
+sudo tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/7-preview
+
+# Set execute permissions
+sudo chmod +x /opt/microsoft/powershell/7-preview/pwsh
+
+# Create the symbolic link that points to pwsh
+sudo ln -s /opt/microsoft/powershell/7-preview/pwsh /usr/bin/pwsh-preview
+
+# Start PowerShell
+pwsh-preview
+```
+
+## <a name="alpine-39-and-310"></a>Alpine 3.9 und 3.10
+
+> [!NOTE]
+> Alpine 3.9 und 3.10 werden nur in PowerShell 7.0 und höher unterstützt.
+
+### <a name="installation-via-direct-download---alpine-39-and-310"></a>Installation über direkten Download: Alpine 3.9 und 3.10
+
+Laden Sie das tar.gz-Paket `powershell_7.0.0-preview-7-linux-x64.tar.gz` über die Seite [Freigaben][] auf den Alpine-Computer herunter.
+
+Führen Sie dann im Terminal folgenden Befehl aus:
+
+```sh
+# install the requirements
+sudo apk add --no-cache \
+    ca-certificates \
+    less \
+    ncurses-terminfo-base \
+    krb5-libs \
+    libgcc \
+    libintl \
+    libssl1.1 \
+    libstdc++ \
+    tzdata \
+    userspace-rcu \
+    zlib \
+    icu-libs \
+    curl
+
+sudo apk -X https://dl-cdn.alpinelinux.org/alpine/edge/main add --no-cache \
+    lttng-ust
+
+# Download the powershell '.tar.gz' archive
+curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.0.0-preview.4/powershell-7.0.0-preview.4-linux-alpine-x64.tar.gz -o /tmp/powershell.tar.gz
+
+# Create the target folder where powershell will be placed
+sudo mkdir -p /opt/microsoft/powershell/7-preview
+
+# Expand powershell to the target folder
+sudo tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/7-preview
+
+# Set execute permissions
+sudo chmod +x /opt/microsoft/powershell/7-preview/pwsh
+
+# Create the symbolic link that points to pwsh
+sudo ln -s /opt/microsoft/powershell/7-preview/pwsh /usr/bin/pwsh-preview
+
+# Start PowerShell
+pwsh-preview
+```
+
 ## <a name="centos-7"></a>CentOS 7
 
 > [!NOTE]
@@ -384,7 +482,10 @@ rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 > [!NOTE]
 > Fedora 28 wird nur in PowerShell Core 6.1 und höher unterstützt.
 
-### <a name="installation-via-package-repository-preferred---fedora-27-fedora-28"></a>Installation über das Paketrepository (bevorzugt): Fedora 27, Fedora 28
+> [!NOTE]
+> Fedora 29 und 30 werden nur in PowerShell 7.0 und höher unterstützt.
+
+### <a name="installation-via-package-repository-preferred---fedora-28-29-and-30"></a>Installation über das Paketrepository (bevorzugt): Fedora 28, 29 und 30
 
 PowerShell Core für Linux wird in offiziellen Microsoft-Repositorys veröffentlicht, um die Installation und die Updates zu vereinfachen.
 
@@ -408,7 +509,7 @@ sudo dnf install -y powershell
 pwsh
 ```
 
-### <a name="installation-via-direct-download---fedora-27-fedora-28"></a>Installation über einen direkten Download: Fedora 27, Fedora 28
+### <a name="installation-via-direct-download---fedora-28-29-and-30"></a>Installation über direkten Download: Fedora 28, 29 und 30
 
 Laden Sie das RPM-Paket `powershell-6.2.0-1.rhel.7.x86_64.rpm` über die Seite [Freigaben][] auf den Fedora-Computer herunter.
 
@@ -426,7 +527,7 @@ sudo dnf install compat-openssl10
 sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
-### <a name="uninstallation---fedora-27-fedora-28"></a>Deinstallation: Fedora 27, Fedora 28
+### <a name="uninstallation---fedora-28-29-and-30"></a>Deinstallation: Fedora 28, 29 und 30
 
 ```sh
 sudo dnf remove powershell

@@ -1,58 +1,47 @@
 ---
-ms.date: 06/12/2017
+ms.date: 10/11/2019
 keywords: dsc,powershell,configuration,setup
 title: 'Desired State Configuration (DSC): Übersicht für Entscheidungsträger'
-ms.openlocfilehash: ce554d4bb994d4b1816d9d9c24599e4ef0e1c593
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.openlocfilehash: 271ec04035feb17e932acd0ac80f32213a4e018b
+ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71953687"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72352132"
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>Desired State Configuration (DSC): Übersicht für Entscheidungsträger
 
-In diesem Dokument werden die Unternehmensvorteile der Verwendung von Windows PowerShell Desired State Configuration (DSC) beschrieben. Es handelt sich nicht um ein technisches Handbuch.
+Dieses Dokument ist keine technische Anleitung, sondern beschreibt die geschäftlichen Vorteile von PowerShell Desired State Configuration (DSC).
 
-## <a name="what-is-desired-state-configuration"></a>Was ist „Desired State Configuration“?
+## <a name="what-is-dsc"></a>Was ist DSC?
 
-PowerShell Desired State Configuration ist eine in Windows integrierte Konfigurationsverwaltungsplattform, die auf offenen Standards basiert. DSC ist flexibel genug, in jeder Phase des Bereitstellungslebenszyklus (Entwicklung, Test, Präproduktion, Produktion) sowie bei horizontaler Skalierung zuverlässig und konsistent zu funktionieren.
+PowerShell DSC ist eine in Windows integrierte Konfigurationsverwaltungsplattform, die auf offenen Standards basiert. DSC ist flexibel genug, in jeder Phase des Bereitstellungslebenszyklus (Entwicklung, Test, Vorproduktion, Produktion) sowie bei horizontaler Skalierung zuverlässig und konsistent zu funktionieren.
 
-Eine Hauptfunktion von DSC sind [Konfigurationen](../configurations/configurations.md).
-Eine Konfiguration ist ein einfach zu lesendes Dokument, das eine aus Computern („Knoten“) bestehende Umgebung mit bestimmten Merkmalen beschreibt.
-Diese Merkmale können so einfach wie das Sicherstellen, dass ein bestimmtes Windows-Feature aktiviert ist, oder so komplex wie das Bereitstellen von SharePoint sein.
+Eine Hauptfunktion von DSC sind [Konfigurationen](../configurations/configurations.md). Eine Konfiguration ist ein PowerShell-Skript, das eine aus Computern (Knoten) bestehende Umgebung mit bestimmten Merkmalen beschreibt. Diese Merkmale können so einfach wie das Sicherstellen, dass ein bestimmtes Windows-Feature aktiviert ist, oder so komplex wie das Bereitstellen von SharePoint sein.
 
-DSC verfügt auch über eine integrierte Überwachung und Berichterstellung.
-Wenn ein System nicht mehr kompatibel ist, kann DSC eine Warnung auslösen und agieren, um das System zu korrigieren.
+DSC verfügt über integrierte Überwachungs- und Berichterstellungsfunktionen. Wenn ein System nicht mehr kompatibel ist, kann DSC eine Warnung auslösen und agieren, um das System zu korrigieren.
 
-## <a name="benefits-of-using-desired-state-configuration"></a>Vorteile der Verwendung von DSC
+## <a name="benefits-of-using-dsc"></a>Die Vorteile von DSC
 
-Konfigurationen sind leicht zu lesen, zu speichern und zu aktualisieren.
-Konfigurationen definieren den Zustand, den Zielgeräte haben sollen, anstatt Anweisungen zu schreiben, wie diese in den jeweiligen Zustand versetzt werden können.
-Dadurch ist der Aufwand wesentlich geringer, eine Konfiguration über DSC zu erlernen, zu übernehmen, zu implementieren und beizubehalten.
+Das Design vereinfacht das Lesen, Speichern und Aktualisieren von Konfigurationen. Konfigurationen definieren den Zustand von Zielgeräten, anstatt Anweisungen zu schreiben, wie diese in den jeweiligen Zustand versetzt werden können. Dank dieser Faktoren ist der Aufwand wesentlich geringer, eine Konfiguration über DSC zu erlernen, zu übernehmen, zu implementieren und zu warten.
 
-Das Erstellen von Konfigurationen bedeutet, dass komplexe Bereitstellungsschritte als kompakte Lösung an einem zentralen Ort erfasst werden.
-Dadurch wird die wiederholte Bereitstellung bestimmter Computergruppen wesentlich weniger fehleranfällig.
-Auf der anderen Seite werden Bereitstellungen schneller und zuverlässiger, sodass sich komplexe Bereitstellungen schneller realisieren lassen.
+Eine Konfiguration zu erstellen bedeutet, komplexe Bereitstellungsschritte als **kompakte Lösung** an einem zentralen Ort zu erfassen. Durch Konfigurationen wird die wiederholte Bereitstellung bestimmter Computergruppen wesentlich weniger fehleranfällig. Zudem sind Bereitstellungen schneller und zuverlässiger, sodass sich komplexe Bereitstellungen schneller realisieren lassen.
 
-Konfigurationen können auch über den [PowerShell-Katalog](https://powershellgallery.com) freigegeben werden. Möglicherweise sind für die Arbeiten, die erledigt werden müssen, bereits gängige Szenarios und bewährte Methoden vorhanden.
+Konfigurationen können über den [PowerShell-Katalog](https://powershellgallery.com) freigegeben werden. Es ist möglich, dass bereits gängige Szenarien und bewährte Methoden für die Aufgaben vorhanden sind, die Sie ausführen müssen.
 
+## <a name="dsc-and-devops"></a>DSC und DevOps
 
-## <a name="desired-state-configuration-and-devops"></a>DSC und DevOps
+DSC wurde mit Fokus auf [DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) entworfen. DevOps ist eine Kombination aus Benutzern, Prozessen und Tools, die eine schnelle Bereitstellung und Iteration ermöglicht, um sowohl internen als auch externen Endbenutzern einen Mehrwert zu bieten. Wenn eine Umgebung durch eine einzige Konfiguration definiert wird, können Entwickler ihre Anforderungen in die Konfiguration programmieren und diese in die Quellcodeverwaltung einchecken. Betriebsteams können den Code dann bereitstellen, ohne fehleranfällige manuelle Prozesse durchlaufen zu müssen.
 
-DSC wurde mit [DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) im Hinterkopf entwickelt. Dieser Ansatz vereint Benutzer, Prozesse und Tools, sodass eine schnelle Bereitstellung und Iteration möglich ist, um sowohl internen als auch externen Endbenutzern einen Mehrwert zu bieten.
-Wenn eine Umgebung mittels einer einzelnen Konfiguration definiert wird, können Entwickler ihre Anforderungen in einer Konfiguration codieren und diese Konfiguration in die Quellcodeverwaltung einchecken. Das Betriebsteam kann anschließend Code bereitstellen, ohne fehleranfällige manuelle Prozesse durchlaufen zu müssen.
+Konfigurationen sind [datengesteuert](../configurations/configData.md). Durch definierte Daten ist es für Betriebsteams leichter, Umgebungen ohne Eingriffe von Entwicklern zu erkennen und zu ändern.
 
-Konfigurationen sind auch [datengesteuert](../configurations/configData.md), was es dem Betriebsteam erleichtert, Umgebungen ohne Eingriffe von Entwicklern zu erkennen und zu ändern.
+## <a name="dsc-on-premises-and-off-premises"></a>DSC lokal und extern
 
-## <a name="desired-state-configuration-on-premises-and-off-premises"></a>DSC (Desired State Configuration): Lokale und externe Bereitstellungen
-DSC kann zum Verwalten lokaler und externer Bereitstellungen verwendet werden.
-Für lokale Lösungen bietet DSC einen [Pullserver](../pull-server/pullServer.md) zum Zentralisieren der Verwaltung von Computern und Melden ihres Status.
-Für Cloudlösungen lässt sich DSC da verwenden, wo Windows verwendet werden kann.
-Es gibt auch spezielle Angebote in Azure, die auf DSC basieren, wie z.B. [Azure Automation](https://azure.microsoft.com/en-us/documentation/services/automation/) zum Zentralisieren der Berichterstattung für DSC.
+DSC kann zum Verwalten lokaler und externer Bereitstellungen verwendet werden. Für lokale Lösungen bietet DSC einen [Pullserver](../pull-server/pullServer.md) zum Zentralisieren der Verwaltung von Computern und zum Melden ihres Status. Für externe Cloudlösungen kann DSC überall dort eingesetzt werden wo auch Windows verwendet werden kann.
+Es gibt bestimmte Angebote von Azure, die auf DSC basieren, wie z. B. [Azure Automation ](https://azure.microsoft.com/en-us/documentation/services/automation/), mit dem die DSC-Berichterstellung zentralisiert wird.
 
 ## <a name="dsc-and-compatibility"></a>DSC und Kompatibilität
 
-DSC wurde zwar in Windows Server 2012 R2 eingeführt, ist aber auch für ältere Betriebssysteme über das WMF-Paket (WMF) verfügbar.
-Weitere Informationen zum WMF finden Sie auf der [PowerShell-Startseite](/powershell/).
+DSC wurde in Windows Server 2012 R2 eingeführt, ist aber über das Windows Management Framework (WMF) auch für ältere Betriebssysteme verfügbar. Weitere Informationen zu WMF finden Sie unter [Windows Management Framework](/powershell/scripting/wmf/overview).
 
-DSC kann auch zum Verwalten von Linux verwendet werden. Weitere Informationen finden Sie unter [Erste Schritte mit DSC für Linux](../getting-started/lnxGettingStarted.md).
+DSC kann zum Verwalten von Linux verwendet werden. Weitere Informationen finden Sie unter [Erste Schritte mit DSC für Linux](../getting-started/lnxGettingStarted.md).
