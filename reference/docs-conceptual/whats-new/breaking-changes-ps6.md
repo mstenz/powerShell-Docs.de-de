@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: powershell,core
 title: Breaking Changes in PowerShell Core 6.0
-ms.openlocfilehash: 186e55c1ac46ce3fc172df18995f8c15d9eeb8eb
-ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
+ms.openlocfilehash: df716fc3ad48d640ddefcfd87da445eaf104cfbe
+ms.sourcegitcommit: e1027805385081c2e6f9250f9cd1167a45f035b0
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "67843939"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72561260"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>Breaking Changes in PowerShell Core 6.0
 
@@ -20,6 +20,8 @@ Der [PowerShell-Workflow][workflow] ist ein Feature in Windows PowerShell, das a
 Da Windows Workflow Foundation in .NET Core nicht unterstützt wird, wird der PowerShell-Workflow in PowerShell Core nicht mehr unterstützt.
 
 Zukünftig soll die native Parallelität in der PowerShell-Sprache ohne Notwendigkeit des PowerShell-Workflows ermöglicht werden.
+
+Wenn für die Fortsetzung eines Skripts nach dem Neustart des Betriebssystems Prüfpunkte erforderlich sind, empfehlen wir die Verwendung des Taskplaners, um beim Betriebssystemstart ein Skript auszuführen. Das Skript muss dabei jedoch seinen Status selbst verwalten (z. B. durch Speichern in eine Datei).
 
 [workflow]: https://docs.microsoft.com/powershell/scripting/core-powershell/workflows-guide
 [workflow-foundation]: https://docs.microsoft.com/dotnet/framework/windows-workflow-foundation/
@@ -176,7 +178,7 @@ Die falsche Position eines Parameters führte dazu, dass die Argumente als Einga
 
 `-showwindow` basiert auf WPF. Dies wird auf CoreCLR nicht unterstützt.
 
-### <a name="allow--to-be-used-in-registry-path-for-remove-item-4866httpsgithubcompowershellpowershellissues4866"></a>* kann jetzt in Registrierungspfaden für `Remove-Item` verwendet werden [#4866](https://github.com/PowerShell/PowerShell/issues/4866)
+### <a name="allow--to-be-used-in-registry-path-for-remove-item-4866httpsgithubcompowershellpowershellissues4866"></a>\* kann jetzt in Registrierungspfaden für `Remove-Item` verwendet werden [#4866](https://github.com/PowerShell/PowerShell/issues/4866)
 
 Zuvor wurde ein `-LiteralPath`-Cmdlet im Hintergrund beendet, wenn ein Platzhalter es wie `-Path` behandelt und dieser keine Dateien findet. Korrekterweise sollte `-LiteralPath` ein Literal sein, sodass ein Fehler angezeigt wird, wenn die Datei nicht vorhanden ist. Die Änderung besteht darin, dass Platzhalter, die mit `-Literal` verwendet werden, als Literal behandelt werden.
 
