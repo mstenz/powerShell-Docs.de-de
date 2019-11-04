@@ -2,12 +2,12 @@
 title: Installieren das Windows PowerShell SDK
 ms.date: 09/13/2016
 ms.topic: article
-ms.openlocfilehash: da1b3dbb8a599aee2cdbab9115aedcab0b4c78c9
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: e7ca38377b3e6533eec1a70027f6de1a9fb3091b
+ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72367269"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73444515"
 ---
 # <a name="installing-the-windows-powershell-sdk"></a>Installieren das Windows PowerShell SDK
 
@@ -17,24 +17,21 @@ Das folgende Thema beschreibt, wie das PowerShell SDK in verschiedenen Versionen
 
 ## <a name="installing-windows-powershell-30-sdk-for-windows-8-and-windows-server-2012"></a>Installieren des Windows PowerShell 3.0 SDK für Windows 8 und Windows Server 2012
 
-Windows PowerShell 3.0 wird automatisch mit Windows 8 und Windows Server 2012 installiert. Darüber hinaus können Sie die Verweisassemblys für Windows PowerShell 3.0 als Teil des Windows 8 SDKs herunterladen und installieren. Diese Assemblys ermöglichen Ihnen das Schreiben von Cmdlets, Anbietern und Host-Programmen für Windows PowerShell 3.0. Wenn Sie das Windows SDK für Windows 8 installieren, werden die Windows PowerShell-Assemblys im Ordner „Verweisassembly“ unter „\Programme (x86)\Reference Assemblies\Microsoft\WindowsPowerShell\3.0“ automatisch installiert. Weitere Informationen finden Sie auf der Windows 8 SDK-Download Website. Codebeispiele für Windows PowerShell stehen ebenfalls im Dev Center zur Verfügung.
-Weitere Informationen finden Sie auf der dev Center-Website auf der Seite Desktop Code Sample.
-
-Darüber hinaus ist Windows PowerShell 3.0 abwärtskompatibel mit dem Windows PowerShell 2.0 SDK, das eine Reihe von Codebeispielen enthält. Weitere Informationen zum Herunterladen des Windows PowerShell 2.0 SDKs finden Sie nachstehend. (Beachten Sie, dass, während die 2.0-Codebeispiele mit Windows 8 und Windows PowerShell 3.0 kompatibel sind, Sie Windows PowerShell 2.0 auf einer Windows 8-Plattform nicht installieren können.)
+Windows PowerShell 3.0 wird automatisch mit Windows 8 und Windows Server 2012 installiert. Darüber hinaus können Sie die Verweisassemblys für Windows PowerShell 3.0 als Teil des Windows 8 SDKs herunterladen und installieren. Diese Assemblys ermöglichen Ihnen das Schreiben von Cmdlets, Anbietern und Host-Programmen für Windows PowerShell 3.0. Wenn Sie das Windows SDK für Windows 8 installieren, werden die Windows PowerShell-Assemblys automatisch im Referenzassemblyordner unter `\Program Files
+(x86)\Reference Assemblies\Microsoft\WindowsPowerShell\3.0` installiert. Weitere Informationen finden Sie auf der Windows 8 SDK-Download Website. Windows PowerShell-Codebeispiele sind auch im Development Center unter [Windows PowerShell 3,0 SDK Sample Pack](https://code.msdn.microsoft.com/Windows-PowerShell-30-SDK-9a34641d)verfügbar.
 
 ## <a name="installing-windows-powershell-30-sdk-for-windows-7-and-windows-server-2008-r2"></a>Installieren des Windows PowerShell 3.0 SDK für Windows 7 und Windows Server 2008 R2
 
-Bei Windows 7 und Windows Server 2008 R2 wird PowerShell 2.0 automatisch installiert. Darüber hinaus können Sie PowerShell 3.0 auf diesen Systemen installieren. (Weitere Informationen finden Sie unter Installieren von Windows PowerShell.) Wie oben beschrieben, können Sie das Windows 8 SDK auch unter Windows 7 und Windows Server 2008 R2 installieren.
+Bei Windows 7 und Windows Server 2008 R2 wird PowerShell 2.0 automatisch installiert. Darüber hinaus können Sie PowerShell 3.0 auf diesen Systemen installieren. Sie können das Windows 8 SDK auch unter Windows 7 und Windows Server 2008 R2 installieren, wie oben beschrieben.
 
 ## <a name="installing-windows-powershell-20-sdk-for-windows-7-vista-xp-server-2003-and-server-2008"></a>Installieren des Windows PowerShell 2.0 SDK für Windows 7, Vista, XP, Server 2003 und Server 2008
 
-Das Windows PowerShell 2.0 SDK stellt die Verweisassemblys bereit, die zum Schreiben von Cmdlets, Anbietern und Hostinganwendungen erforderlich sind, und bietet C#-Beispielcode, der als Ausgangspunkt dienen kann, wenn Sie mit dem Schreiben von Code beginnen.
-
-Informationen zum Installieren dieses SDK finden Sie unter Windows PowerShell 2,0 SDK.
+Das Windows PowerShell 2.0 SDK stellt die Verweisassemblys bereit, die zum Schreiben von Cmdlets, Anbietern und Hostinganwendungen erforderlich sind, und bietet C#-Beispielcode, der als Ausgangspunkt dienen kann, wenn Sie mit dem Schreiben von Code beginnen. Sie können die Codebeispiele aus [https://www.microsoft.com/download/details.aspx?id=2560](https://www.microsoft.com/download/details.aspx?id=2560)herunterladen.
 
 ### <a name="reference-assemblies"></a>Verweisassemblys
 
-Verweisassemblys werden standardmäßig an folgendem Speicherort installiert: c:\Programme\Reference assemblies\microsoft\windowspowershell\v1.0.
+Verweisassemblys werden standardmäßig an folgendem Speicherort installiert: `c:\Program Files\Reference
+Assemblies\Microsoft\WindowsPowerShell\V1.0`.
 
 > [!NOTE]
 >
@@ -43,14 +40,15 @@ Verweisassemblys werden standardmäßig an folgendem Speicherort installiert: c:
 
 ### <a name="samples"></a>Beispiele
 
-Code Beispiele werden standardmäßig an folgendem Speicherort installiert: c:\Programme\Microsoft SDKs\Windows\v7.0\samples\sysmgmt\windowspowershell\. Die folgenden Abschnitte enthalten eine kurze Beschreibung der einzelnen Beispiele.
+Codebeispiele werden standardmäßig an folgendem Speicherort installiert: `C:\Program Files\Microsoft
+SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\`. Die folgenden Abschnitte enthalten eine kurze Beschreibung der einzelnen Beispiele.
 
 #### <a name="cmdlet-samples"></a>Cmdlet-Beispiele
 
 - GetProcessSample01: zeigt, wie ein einfaches Cmdlet geschrieben wird, das alle Prozesse auf dem lokalen Computer abruft.
 - GetProcessSample02-zeigt, wie Parameter zum Cmdlet hinzugefügt werden. Das Cmdlet akzeptiert einen oder mehrere Prozessnamen und gibt die entsprechenden Prozesse zurück.
 - GetProcessSample03: zeigt, wie Parameter hinzugefügt werden, die Eingaben aus der Pipeline akzeptieren.
-- GetProcessSample04: zeigt, wie nicht abschließende Fehler behandelt werden.
+- GetProcessSample04: zeigt, wie Fehler ohne Abbruch behandelt werden.
 - GetProcessSample05-zeigt, wie eine Liste der angegebenen Prozesse angezeigt wird.
 - SelectObject: zeigt, wie ein Filter geschrieben wird, um nur bestimmte Objekte auszuwählen.
 - SelectString: zeigt, wie Dateien nach angegebenen Mustern durchsucht werden.
