@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: 'Zusammengesetzte Ressourcen: Verwenden einer DSC-Konfiguration als Ressource'
-ms.openlocfilehash: ef8d5665e552da01977c2f21a43246c72bb7155f
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.openlocfilehash: 7fa6ee56d4706b96fb47123c7aa00c4df6256492
+ms.sourcegitcommit: 14b50e5446f69729f72231f5dc6f536cdd1084c3
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71954347"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73933824"
 ---
 # <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a>Zusammengesetzte Ressourcen Verwenden einer DSC-Konfiguration als Ressource
 
@@ -158,10 +158,8 @@ Die Ressource kann nun mit dem Cmdlet „Get-DscResource“ gefunden werden, und
 Als Nächstes wird eine Konfiguration erstellt, die die zusammengesetzte Ressource aufruft. Diese Konfiguration ruft die zusammengesetzte Ressource „xVirtualMachine“ auf, um einen virtuellen Computer zu erstellen, und ruft anschließend die Ressource **xComputer** auf, um sie umzubenennen.
 
 ```powershell
-
 configuration RenameVM
 {
-
     Import-DscResource -Module xVirtualMachine
     Node localhost
     {
@@ -188,9 +186,32 @@ configuration RenameVM
 }
 ```
 
+Sie können diese Ressource auch zum Erstellen mehrerer VMs verwenden, indem Sie ein Array von VM-Namen an die Ressource „xVirtualMachine“ übergeben.
+
+```PowerShell
+Configuration MultipleVms
+{
+    Import-DscResource -Module xVirtualMachine
+    Node localhost
+    {
+        xVirtualMachine VMs
+        {
+            VMName = "IIS01", "SQL01", "SQL02"
+            SwitchName = "Internal"
+            SwitchType = "Internal"
+            VhdParentPath = "C:\Demo\VHD\RTM.vhd"
+            VHDPath = "C:\Demo\VHD"
+            VMStartupMemory = 1024MB
+            VMState = "Running"
+        }
+    }
+}
+```
+
 ## <a name="supporting-psdscrunascredential"></a>Unterstützung von PsDscRunAsCredential
 
->**Hinweis:** **PsDscRunAsCredential** wird in PowerShell 5.0 und höher unterstützt.
+> [!NOTE]
+> **PsDscRunAsCredential** wird in PowerShell 5.0 und höher unterstützt.
 
 Mithilfe der Eigenschaft **PsDscRunAsCredential** kann im Ressourcenblock [DSC configurations](../configurations/configurations.md) angegeben werden, dass die Ressource mit einem festgelegten Satz an Anmeldeinformationen ausgeführt werden soll.
 Weitere Informationen finden Sie unter [Ausführen von DSC mit Benutzeranmeldeinformationen](../configurations/runAsUser.md).
