@@ -2,12 +2,12 @@
 ms.date: 09/06/2019
 keywords: powershell,cmdlet
 title: Neuigkeiten bei PowerShell 5.0 ISE
-ms.openlocfilehash: a719baef0da1600f0a5377e1b72c81b67e37eef2
-ms.sourcegitcommit: a74ae7ed089301992fed201fbe55d827a622afa0
+ms.openlocfilehash: f687c409a1a4b0e6b872863e9f132f7cf5baff20
+ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70746223"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74117517"
 ---
 # <a name="whats-new-in-the-windows-powershell-50-ise"></a>Neuigkeiten bei Windows PowerShell 5.0 ISE
 
@@ -201,4 +201,4 @@ Durch das Verwenden von `Show-Command` in Ihren Windows PowerShell-Skripts könn
 
 ## <a name="see-also"></a>Siehe auch
 
-Weitere Informationen über die Verwendung von Windows PowerShell ISE finden Sie unter [Kennenlernen der Windows PowerShell ISE](../getting-started/fundamental/exploring-the-windows-powershell-ise.md).
+Weitere Informationen über die Verwendung von Windows PowerShell ISE finden Sie unter [Kennenlernen der Windows PowerShell ISE](../components/ise/exploring-the-windows-powershell-ise.md).

@@ -2,12 +2,12 @@
 ms.date: 08/14/2018
 keywords: powershell,cmdlet
 title: Schreiben und Ausführen von Skripts in der Windows PowerShell ISE
-ms.openlocfilehash: 4a08d7d206d103dcb398964d7ce75bea1e76559a
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: be54e26965a6d2f1472059820080a6a06c47dd26
+ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67028971"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74117555"
 ---
 # <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>Schreiben und Ausführen von Skripts in der Windows PowerShell ISE
 
@@ -149,4 +149,4 @@ Windows PowerShell ISE ändert die Codierung von Skriptdateien nicht, wenn Sie d
 
 ## <a name="see-also"></a>Weitere Informationen
 
-- [Kennenlernen der Windows PowerShell ISE](../../getting-started/fundamental/exploring-the-windows-powershell-ise.md)
+- [Kennenlernen der Windows PowerShell ISE](exploring-the-windows-powershell-ise.md)

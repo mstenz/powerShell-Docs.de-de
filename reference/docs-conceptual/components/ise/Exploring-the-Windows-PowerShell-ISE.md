@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Kennenlernen der Windows PowerShell ISE
-ms.openlocfilehash: 8c47e236e2e345a887fc3af281e429f440e176ff
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: 7949b690cda73148f07922985b1fc30fe1e8b2d0
+ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67031029"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74117436"
 ---
 # <a name="exploring-the-windows-powershell-ise"></a>Kennenlernen der Windows PowerShell ISE
 
@@ -18,7 +18,7 @@ Sie können Windows PowerShell® Integrated Scripting Environment (ISE) verwende
 
 ## <a name="menu-bar"></a>Menüleiste
 
-Die Menüleiste enthält die Menüs **Datei**, **Bearbeiten**, **Ansicht**, **Tools**, **Debuggen**, **Add-Ons** und **Hilfe**. Über die Schaltflächen in den Menüs können Sie Aufgaben erledigen, die im Zusammenhang mit dem Schreiben und Ausführen von Skripts und Ausführen von Befehlen in der Windows PowerShell ISE stehen. Darüber hinaus kann ein [Add-On-Tool](../../core-powershell/ise/The-ISEAddOnTool-Object.md) auf der Menüleiste platziert werden, indem Skripts ausgeführt werden, die die [ISE-Objektmodellhierarchie](../../core-powershell/ise/The-ISE-Object-Model-Hierarchy.md) verwenden.
+Die Menüleiste enthält die Menüs **Datei**, **Bearbeiten**, **Ansicht**, **Tools**, **Debuggen**, **Add-Ons** und **Hilfe**. Über die Schaltflächen in den Menüs können Sie Aufgaben erledigen, die im Zusammenhang mit dem Schreiben und Ausführen von Skripts und Ausführen von Befehlen in der Windows PowerShell ISE stehen. Darüber hinaus kann ein [Add-On-Tool](object-model/The-ISEAddOnTool-Object.md) auf der Menüleiste platziert werden, indem Skripts ausgeführt werden, die die [ISE-Objektmodellhierarchie](object-model/The-ISE-Object-Model-Hierarchy.md) verwenden.
 
 > [!NOTE]
 > In Windows PowerShell ISE 2.0 gab es die Menüs **Tools** und **Add-Ons** nicht.
@@ -83,4 +83,4 @@ Hilfe für Windows PowerShell ISE ist im Web in der TechNet-Bibliothek verfügba
 
 ## <a name="see-also"></a>Weitere Informationen
 
-- [Einführung in die Windows PowerShell ISE](../../core-powershell/ise/Introducing-the-Windows-PowerShell-ISE.md)
+- [Einführung in die Windows PowerShell ISE](Introducing-the-Windows-PowerShell-ISE.md)
