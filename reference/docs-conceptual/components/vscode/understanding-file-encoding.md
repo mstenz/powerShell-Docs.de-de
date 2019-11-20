@@ -2,12 +2,12 @@
 title: Grundlegendes zur Dateicodierung in VSCode und PowerShell
 description: Konfigurieren der Dateicodierung in VSCode und PowerShell
 ms.date: 02/28/2019
-ms.openlocfilehash: 6a00e45b3700f72f78e2fbcdf6e317f3a17b53c0
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 3283e1262c8eb26906429ecf195cfa0b122b330f
+ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058436"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74117406"
 ---
 # <a name="understanding-file-encoding-in-vscode-and-powershell"></a>Grundlegendes zur Dateicodierung in VSCode und PowerShell
 
@@ -15,7 +15,7 @@ Wenn Sie mit VS Code PowerShell-Skripts erstellen und bearbeiten, ist es wichtig
 
 ## <a name="what-is-file-encoding-and-why-is-it-important"></a>Was ist die Dateicodierung und weshalb ist sie wichtig?
 
-VS Code fungiert als Schnittstelle zwischen einem Menschen, der Zeichenfolgen in einen Puffer eingibt, und dem Lesen/Schreiben von Byteblocks in das Dateisystem. Wenn VS Code eine Datei speichert, verwendet es die Textcodierung.
+VS Code fungiert als Schnittstelle zwischen einem Menschen, der Zeichenfolgen in einen Puffer eingibt, und dem Lesen/Schreiben von Byteblocks in das Dateisystem. Wenn VS Code eine Datei speichert, wird mithilfe einer Textcodierung festgelegt, in welche Bytes jedes Zeichen umgewandelt wird.
 
 Wenn PowerShell ein Skript ausführt, muss es die Bytes in einer Datei entsprechend in Zeichen konvertieren, um die Datei in einem PowerShell-Programm zu rekonstruieren. Da VS Code die Datei schreibt und PowerShell diese liest, müssen sie dasselbe Codierungssystem verwenden. Die Analyse eines PowerShell-Skripts sieht folgendermaßen aus: *Bytes* -> *Zeichen* -> *Token* -> *abstrakte Syntaxstruktur* -> *Ausführung*.
 
@@ -27,9 +27,10 @@ Codierungsprobleme treten auf, wenn die Codierung von VS Code oder der Skriptdat
 
 Es ist wahrscheinlicher, dass Codierungsprobleme auftreten, wenn Sie Zeichen verwenden, die nicht im [7-Bit-ASCII-Zeichensatz](https://ascii.cl/) enthalten sind. Beispiel:
 
+- Erweiterte Zeichen, bei denen es sich nicht um Buchstaben handelt – z. B. Geviertstrich (`—`), geschützte Leerzeichen (` `) oder doppelte linke Anführungszeichen (`“`)
 - Lateinische Buchstaben mit Akzenten und Umlaute (`É`, `ü`)
 - Nicht lateinische Zeichen wie Kyrillisch (`Д`, `Ц`)
-- Han-Chinesisch (`脚`, `本`)
+- CJK-Zeichen (`本`, `화`, `が`)
 
 Aus den folgenden Gründen kann es zu Codierungsproblemen kommen:
 

@@ -2,12 +2,12 @@
 title: Replizieren der ISE-Benutzeroberfläche in Visual Studio Code
 description: Replizieren der ISE-Benutzeroberfläche in Visual Studio Code
 ms.date: 08/06/2018
-ms.openlocfilehash: 983da850c13d72bcdc7b2d33970c6e9e06b3d869
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: d5542e9a3a48b1ae64356309be669418edf6c79e
+ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058504"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74117488"
 ---
 # <a name="how-to-replicate-the-ise-experience-in-visual-studio-code"></a>Replizieren der ISE-Benutzeroberfläche in Visual Studio Code
 
@@ -27,12 +27,29 @@ Dieses Dokument versucht, Einstellungen aufzulisten, die Sie in VSCode konfiguri
 
 Sie können in Visual Studio Code auch [Ihre eigenen Schlüsselbindungen konfigurieren](https://code.visualstudio.com/docs/getstarted/keybindings#_custom-keybindings-for-refactorings).
 
-## <a name="tab-completion"></a>Vervollständigung mit der TAB-TASTE
+## <a name="simplified-ise-like-ui"></a>Vereinfachte, ISE-ähnliche Benutzeroberfläche
+
+Wenn Sie nach einer Möglichkeit zur Vereinfachung der Visual Studio Code-Benutzeroberfläche suchen, damit diese der ISE-Benutzeroberfläche ähnelt, wenden Sie diese zwei Einstellungen an:
+
+```json
+"workbench.activityBar.visible": false,
+"debug.openDebug": "neverOpen",
+```
+
+Dies führt zum Ausblenden der Aktivitätsleiste und der Seitenleiste zum Debuggen innerhalb des roten Kastens:
+
+![Hervorgehobener Abschnitt mit Aktivitätsleiste und der Seitenleiste zum Debuggen](images/How-To-Replicate-the-ISE-Experience-In-VSCode/1-highlighted-sidebar.png)
+
+Das Endergebnis sieht so aus:
+
+![Vereinfachte Ansicht von VS Code](images/How-To-Replicate-the-ISE-Experience-In-VSCode/2-simplified-ui.png)
+
+## <a name="tab-completion"></a>Registerkartenvervollständigung
 
 Fügen Sie die folgende Einstellung hinzu, um Vervollständigung mit der TAB-TASTE zu erzielen, die der ISE ähnlicher ist:
 
 ```json
-"editor.tabCompletion": "on"
+"editor.tabCompletion": "on",
 ```
 
 > [!NOTE]
@@ -64,7 +81,7 @@ Legen Sie Folgendes fest, um die integrierte Konsole beim Start zu beenden:
 Um neue/unbenannte Dateien zu erstellen, registrieren Sie sie standardmäßig als PowerShell:
 
 ```json
-"files.defaultLanguage": "powershell"
+"files.defaultLanguage": "powershell",
 ```
 
 ## <a name="color-scheme"></a>Farbschema
@@ -77,7 +94,7 @@ Wählen Sie in der Dropdownliste `PowerShell ISE` aus.
 Sie können dieses Design in den Einstellungen wie folgt festlegen:
 
 ```json
-"workbench.colorTheme": "PowerShell ISE"
+"workbench.colorTheme": "PowerShell ISE",
 ```
 
 ## <a name="powershell-command-explorer"></a>PowerShell-Befehls-Explorer
