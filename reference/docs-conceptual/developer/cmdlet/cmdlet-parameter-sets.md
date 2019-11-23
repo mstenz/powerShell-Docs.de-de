@@ -1,5 +1,5 @@
 ---
-title: Cmdlet-Parameter Sätze | Microsoft-Dokumentation
+title: Cmdlet Parameter Sets | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,60 +8,59 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f902fd4d-8f6e-4ef1-b07f-59983039a0d1
 caps.latest.revision: 10
-ms.openlocfilehash: d8c00c7ffd369a32af151836785a2c5f47b05a68
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: dfe747893b4aef6376ea3b12dd79b7c144455ed0
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72365899"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74415684"
 ---
-# <a name="cmdlet-parameter-sets"></a>Cmdlet-Parametersätze
+# <a name="cmdlet-parameter-sets"></a>Cmdlet parameter sets
 
-PowerShell verwendet Parametersätze, damit Sie ein einzelnes Cmdlet schreiben können, das verschiedene Aktionen für verschiedene Szenarien ausführen kann. Parametersätze ermöglichen es Ihnen, dem Benutzer verschiedene Parameter verfügbar zu machen. Und, um basierend auf den vom Benutzer angegebenen Parametern unterschiedliche Informationen zurückzugeben.
+PowerShell uses parameter sets to enable you to write a single cmdlet that can do different actions for different scenarios. Parameter sets enable you to expose different parameters to the user. And, to return different information based on the parameters specified by the user.
 
-## <a name="examples-of-parameter-sets"></a>Beispiele für Parametersätze
+## <a name="examples-of-parameter-sets"></a>Examples of parameter sets
 
-Das PowerShell-Cmdlet "`Get-EventLog`" gibt z. b. unterschiedliche Informationen zurück, je nachdem, ob der Benutzer den **List** -oder **logName** -Parameter angibt. Wenn der **List** -Parameter angegeben wird, gibt das Cmdlet Informationen zu den Protokolldateien selbst zurück, jedoch nicht zu den darin enthaltenen Ereignis Informationen. Wenn der **logName** -Parameter angegeben wird, gibt das Cmdlet Informationen zu den Ereignissen in einem bestimmten Ereignisprotokoll zurück. Mit den Parametern **List** und **logName** werden zwei separate Parametersätze identifiziert.
+For example, the PowerShell `Get-EventLog` cmdlet returns different information depending on whether the user specifies the **List** or **LogName** parameter. If the **List** parameter is specified, the cmdlet returns information about the log files themselves but not the event information they contain. If the **LogName** parameter is specified, the cmdlet returns information about the events in a specific event log. The **List** and **LogName** parameters identify two separate parameter sets.
 
-## <a name="unique-parameter"></a>Unique-Parameter
+## <a name="unique-parameter"></a>Unique parameter
 
-Jeder Parametersatz muss über einen eindeutigen Parameter verfügen, der von der PowerShell-Laufzeit verwendet wird, um den entsprechenden Parametersatz verfügbar zu machen. Wenn möglich, sollte der Unique-Parameter ein obligatorischer Parameter sein. Wenn ein Parameter obligatorisch ist, muss der Benutzer den-Parameter angeben, und die PowerShell-Laufzeit verwendet diesen Parameter, um den Parametersatz zu identifizieren. Der Unique-Parameter kann nicht obligatorisch sein, wenn das Cmdlet ohne Angabe von Parametern ausgeführt werden soll.
+Each parameter set must have a unique parameter that the PowerShell runtime uses to expose the appropriate parameter set. If possible, the unique parameter should be a mandatory parameter. When a parameter is mandatory, the user must specify the parameter, and the PowerShell runtime uses that parameter to identify the parameter set. The unique parameter can't be mandatory if your cmdlet is designed to run without specifying any parameters.
 
-## <a name="multiple-parameter-sets"></a>Mehrere Parametersätze
+## <a name="multiple-parameter-sets"></a>Multiple parameter sets
 
-In der folgenden Abbildung werden in der linken Spalte drei gültige Parametersätze angezeigt. Der **Parameter a** ist eindeutig für den ersten Parametersatz, der **Parameter B** ist für den zweiten Parametersatz eindeutig, und der **Parameter C** ist für den dritten Parametersatz eindeutig. In der rechten Spalte haben die Parametersätze keinen eindeutigen Parameter.
+In the following illustration, the left column shows three valid parameter sets. **Parameter A** is unique to the first parameter set, **parameter B** is unique to the second parameter set, and **parameter C** is unique to the third parameter set. In the right column, the parameter sets don't have a unique parameter.
 
 ![ps_parametersets](../media/ps-parametersets.gif)
 
-## <a name="parameter-set-requirements"></a>Parameter Satz Anforderungen
+## <a name="parameter-set-requirements"></a>Parameter set requirements
 
-Die folgenden Anforderungen gelten für alle Parametersätze.
+The following requirements apply to all parameter sets.
 
-- Jeder Parametersatz muss mindestens einen eindeutigen Parameter aufweisen. Wenn möglich, machen Sie diesen Parameter zu einem obligatorischen Parameter.
+- Each parameter set must have at least one unique parameter. If possible, make this parameter a mandatory parameter.
 
-- Ein Parametersatz, der mehrere Positions Parameter enthält, muss eindeutige Positionen für jeden Parameter definieren. Es können nicht zwei Positions Parameter dieselbe Position angeben.
+- A parameter set that contains multiple positional parameters must define unique positions for each parameter. No two positional parameters can specify the same position.
 
-- Nur ein Parameter in einer Menge kann das `ValueFromPipeline`-Schlüsselwort mit dem Wert `true` deklarieren.
-  Mehrere Parameter können das `ValueFromPipelineByPropertyName`-Schlüsselwort mit dem Wert `true` definieren.
+- Only one parameter in a set can declare the `ValueFromPipeline` keyword with a value of `true`.
+  Multiple parameters can define the `ValueFromPipelineByPropertyName` keyword with a value of `true`.
 
-- Wenn für einen Parameter kein Parametersatz angegeben ist, gehört der Parameter zu allen Parametersätzen.
+- If no parameter set is specified for a parameter, the parameter belongs to all parameter sets.
 
 > [!NOTE]
-> Für ein Cmdlet oder eine Funktion gibt es ein Limit von 32-Parametersätzen.
+> For a cmdlet or function, there is a limit of 32 parameter sets.
 
-## <a name="default-parameter-sets"></a>Standardparameter Sätze
+## <a name="default-parameter-sets"></a>Default parameter sets
 
-Wenn mehrere Parametersätze definiert sind, können Sie mit dem `DefaultParameterSetName`-Schlüsselwort des **Cmdlet** -Attributs den Standardparameter Satz angeben. PowerShell verwendet den Standardparameter Satz, wenn der festgelegte Parameter auf der Grundlage der vom Befehl bereitgestellten Informationen nicht bestimmt werden kann. Weitere Informationen zum **Cmdlet** -Attribut finden Sie unter [Cmdlet-Attribut Deklaration](./cmdlet-attribute-declaration.md).
+When multiple parameter sets are defined, you can use the `DefaultParameterSetName` keyword of the **Cmdlet** attribute to specify the default parameter set. PowerShell uses the default parameter set if it can't determine the parameter set to use based on the information provided by the command. For more information about the **Cmdlet** attribute, see [Cmdlet Attribute Declaration](./cmdlet-attribute-declaration.md).
 
-## <a name="declaring-parameter-sets"></a>Deklarieren von Parametersätzen
+## <a name="declaring-parameter-sets"></a>Declaring parameter sets
 
-Um einen Parametersatz zu erstellen, müssen Sie das `ParameterSetName`-Schlüsselwort angeben, wenn Sie das **Parameter** Attribut für jeden Parameter im Parametersatz deklarieren. Fügen Sie für Parameter, die mehreren Parametersätzen angehören, ein **Parameter** Attribut für jeden Parametersatz hinzu. Mit diesem Attribut können Sie den Parameter für jeden Parametersatz anders definieren. Beispielsweise können Sie einen Parameter in einem Satz als obligatorisch definieren und optional in einem anderen. Jeder Parametersatz muss jedoch einen eindeutigen Parameter enthalten. Weitere Informationen finden Sie unter [Parameter Attribut Deklaration](parameter-attribute-declaration.md).
+To create a parameter set, you must specify the `ParameterSetName` keyword when you declare the **Parameter** attribute for every parameter in the parameter set. For parameters that belong to multiple parameter sets, add a **Parameter** attribute for each parameter set. This attribute enables you to define the parameter differently for each parameter set. For example, you can define a parameter as mandatory in one set and optional in another. However, each parameter set must contain one unique parameter. For more information, see [Parameter Attribute Declaration](parameter-attribute-declaration.md).
 
-Im folgenden Beispiel ist der **username** -Parameter der Unique-Parameter des `Test01`-Parameter Satzes, und der **Computername** -Parameter ist der eindeutige Parameter des `Test02`-Parameter Satzes. Der **sharedparam** -Parameter gehört zu beiden Sätzen und ist für den `Test01`-Parametersatz obligatorisch, aber für den `Test02`-Parametersatz optional.
+In the following example, the **UserName** parameter is the unique parameter of the `Test01` parameter set, and the **ComputerName** parameter is the unique parameter of the `Test02` parameter set. The **SharedParam** parameter belongs to both sets and is mandatory for the `Test01` parameter set but optional for the `Test02` parameter set.
 
 ```csharp
-[Parameter(Position = 0, Mandatory = true,
-           ParameterSetName = "Test01")]
+[Parameter(Position = 0, Mandatory = true, ParameterSetName = "Test01")]
 public string UserName
 {
   get { return userName; }
@@ -69,8 +68,7 @@ public string UserName
 }
 private string userName;
 
-[Parameter(Position = 0, Mandatory = true,
-           ParameterSetName = "Test02")]
+[Parameter(Position = 0, Mandatory = true, ParameterSetName = "Test02")]
 public string ComputerName
 {
   get { return computerName; }

@@ -1,5 +1,5 @@
 ---
-title: GetProc02-Code Beispiele | Microsoft-Dokumentation
+title: GetProc02 Code Samples | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,31 +8,31 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a2fd91af-758b-49b9-b57f-106ee01fc8c1
 caps.latest.revision: 5
-ms.openlocfilehash: 00b015f1c16623d8ca4cf6f609aa2547c0385402
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: 381011ffd9bd4a46dcfcdbebaa0164d03378abe6
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72366789"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416173"
 ---
 # <a name="getproc02-code-samples"></a>GetProc02-Codebeispiele
 
-Im folgenden finden Sie die Codebeispiele für das Cmdlet "GetProc02 Sample". Dies ist das `Get-Process`-Cmdlet-Beispiel [, das unter Hinzufügen von Parametern zur Verarbeitung der Befehlszeilen Eingabe](../cmdlet/adding-parameters-that-process-command-line-input.md)beschrieben wird. Dieses `Get-Process`-Cmdlet ruft Prozesse auf der Grundlage ihres Namens ab und zeigt dann Informationen zu den Prozessen in der Befehlszeile an.
+Here are the code samples for the GetProc02 sample cmdlet. This is the `Get-Process` cmdlet sample described in [Adding Parameters that Process Command-Line Input](../cmdlet/adding-parameters-that-process-command-line-input.md). This `Get-Process` cmdlet retrieves processes based on their name, and then displays information about the processes at the command line.
 
 > [!NOTE]
-> Sie können die C# Quelldatei (getproc02.cs) für dieses Get-proc-Cmdlet mit dem Microsoft Windows Software Development Kit für Windows Vista und .NET Framework 3,0-Laufzeitkomponenten herunterladen. Anweisungen zum Herunterladen finden Sie unter [Installieren von Windows PowerShell und Herunterladen des Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).
+> You can download the C# source file (getproc02.cs) for this Get-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
 >
-> Die heruntergeladenen Quelldateien sind in den **\<powershell-Beispielen >** Verzeichnis verfügbar.
+> The downloaded source files are available in the **\<PowerShell Samples>** directory.
 
-Einen umfassenden Beispielcode finden Sie in den folgenden Themen.
+For complete sample code, see the following topics.
 
 |Language|Thema|
 |--------------|-----------|
-|C#|[GetProc02 (C#)-Beispiel Code](./getproc02-csharp-sample-code.md)|
-|VB.NET|[GetProc02 (VB.net)-Beispiel Code](./getproc02-vb-net-sample-code.md)|
+|C#|[GetProc02 (C#) Sample Code](./getproc02-csharp-sample-code.md)|
+|VB.NET|[GetProc02 (VB.NET) Sample Code](./getproc02-vb-net-sample-code.md)|
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Windows PowerShell-Programmier Handbuch](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

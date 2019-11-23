@@ -6,46 +6,46 @@ ms.reviewer: ''
 ms.suite: ''
 ms.tgt_pltfrm: ''
 ms.topic: article
-ms.openlocfilehash: 7acccbd48dcfb654b11e448a1f24835ad3668fae
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: 3096965ba9f99f70994f2fb5b180cc58691b04f8
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72365719"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74415697"
 ---
 # <a name="creating-a-cmdlet-to-access-a-data-store"></a>Erstellen eines Cmdlet für den Zugriff auf einen Datenspeicher
 
-In diesem Abschnitt wird beschrieben, wie Sie ein Cmdlet erstellen, das über einen Windows PowerShell-Anbieter auf gespeicherte Daten zugreift. Diese Art von Cmdlet verwendet die Windows PowerShell-Anbieter Infrastruktur der Windows PowerShell-Laufzeit. Daher muss die Cmdlet-Klasse von der Basisklasse " [System. Management. Automation. PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) " abgeleitet werden.
+This section describes how to create a cmdlet that accesses stored data by way of a Windows PowerShell provider. This type of cmdlet uses the Windows PowerShell provider infrastructure of the Windows PowerShell runtime and, therefore, the cmdlet class must derive from the [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) base class.
 
-Das hier beschriebene Select-Str-Cmdlet kann Zeichen folgen in einer Datei oder einem Objekt suchen und auswählen. Die zum Identifizieren der Zeichenfolge verwendeten Muster können explizit über den `Path`-Parameter des Cmdlets oder implizit über den `Script`-Parameter angegeben werden.
+The Select-Str cmdlet described here can locate and select strings in a file or object. The patterns used to identify the string can be specified explicitly through the `Path` parameter of the cmdlet or implicitly through the `Script` parameter.
 
-Das-Cmdlet ist für die Verwendung eines beliebigen Windows PowerShell-Anbieters konzipiert, der von [System. Management. Automation. Provider. icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider)abgeleitet wird. Beispielsweise kann das Cmdlet den File System-Anbieter oder den Variablen Anbieter angeben, der von Windows PowerShell bereitgestellt wird. Weitere Informationen zu Windows PowerShell-Anbietern finden Sie unter [Entwerfen des Windows PowerShell-Anbieters](../prog-guide/designing-your-windows-powershell-provider.md).
+The cmdlet is designed to use any Windows PowerShell provider that derives from [System.Management.Automation.Provider.Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider). For example, the cmdlet can specify the FileSystem provider or the Variable provider that is provided by Windows PowerShell. For more information aboutWindows PowerShell providers, see [Designing Your Windows PowerShell provider](../prog-guide/designing-your-windows-powershell-provider.md).
 
-## <a name="defining-the-cmdlet-class"></a>Definieren der Cmdlet-Klasse
+## <a name="defining-the-cmdlet-class"></a>Defining the Cmdlet Class
 
-Der erste Schritt bei der Cmdlet-Erstellung ist die Benennung des Cmdlets und das Deklarieren der .NET-Klasse, die das Cmdlet implementiert. Dieses Cmdlet erkennt bestimmte Zeichen folgen, sodass der hier gewählte Verb Name "Select" ist, der von der Klasse " [System. Management. Automation. verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon) " definiert wird. Der Nomen Name "str" wird verwendet, da das Cmdlet auf Zeichen folgen anwendet. Beachten Sie in der folgenden Deklaration, dass das Cmdlet-Verb und der nominale Name in den Namen der Cmdlet-Klasse reflektiert werden. Weitere Informationen zu genehmigten Cmdlet-Verben finden Sie unter [Cmdlet-Verb Namen](./approved-verbs-for-windows-powershell-commands.md).
+The first step in cmdlet creation is always naming the cmdlet and declaring the .NET class that implements the cmdlet. This cmdlet detects certain strings, so the verb name chosen here is "Select", defined by the [System.Management.Automation.Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon) class. The noun name "Str" is used because the cmdlet acts upon strings. In the declaration below, note that the cmdlet verb and noun name are reflected in the name of the cmdlet class. For more information about approved cmdlet verbs, see [Cmdlet Verb Names](./approved-verbs-for-windows-powershell-commands.md).
 
-Die .NET-Klasse für dieses Cmdlet muss von der Basisklasse " [System. Management. Automation. PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) " abgeleitet werden, da Sie die von der Windows PowerShell-Laufzeit benötigte Unterstützung bereitstellt, um die Windows PowerShell-Anbieter Infrastruktur verfügbar zu machen. Beachten Sie, dass dieses Cmdlet auch die .NET Framework regulären Ausdrucks Klassen verwendet, wie z. b. [System. Text. RegularExpressions. Regex](/dotnet/api/System.Text.RegularExpressions.Regex).
+The .NET class for this cmdlet must derive from the [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) base class, because it provides the support needed by the Windows PowerShell runtime to expose the Windows PowerShell provider infrastructure. Note that this cmdlet also makes use of the .NET Framework regular expressions classes, such as [System.Text.Regularexpressions.Regex](/dotnet/api/System.Text.RegularExpressions.Regex).
 
-Der folgende Code stellt die Klassendefinition für dieses SELECT-Str-Cmdlet dar.
+The following code is the class definition for this Select-Str cmdlet.
 
 ```csharp
 [Cmdlet(VerbsCommon.Select, "Str", DefaultParameterSetName="PatternParameterSet")]
 public class SelectStringCommand : PSCmdlet
 ```
 
-Dieses Cmdlet definiert einen Standardparameter Satz durch Hinzufügen des Attributs "`DefaultParameterSetName`" zur Klassen Deklaration. Der Standardparameter Satz `PatternParameterSet` wird verwendet, wenn der Parameter "`Script`" nicht angegeben wird. Weitere Informationen zu diesem Parametersatz finden Sie in der `Pattern`-und `Script`-Parameter Diskussion im folgenden Abschnitt.
+This cmdlet defines a default parameter set by adding the `DefaultParameterSetName` attribute keyword to the class declaration. The default parameter set `PatternParameterSet` is used when the `Script` parameter is not specified. For more information about this parameter set, see the `Pattern` and `Script` parameter discussion in the following section.
 
-## <a name="defining-parameters-for-data-access"></a>Definieren von Parametern für den Datenzugriff
+## <a name="defining-parameters-for-data-access"></a>Defining Parameters for Data Access
 
-Dieses Cmdlet definiert mehrere Parameter, die es dem Benutzer ermöglichen, auf gespeicherte Daten zuzugreifen und diese zu überprüfen. Diese Parameter enthalten einen `Path`-Parameter, der den Speicherort des Datenspeicher angibt, einen `Pattern`-Parameter, der das in der Suche zu verwendende Muster angibt, und verschiedene weitere Parameter, die die Art der Suche unterstützen.
+This cmdlet defines several parameters that allow the user to access and examine stored data. These parameters include a `Path` parameter that indicates the location of the data store, a `Pattern` parameter that specifies the pattern to be used in the search, and several other parameters that support how the search is performed.
 
 > [!NOTE]
-> Weitere Informationen zu den Grundlagen der Definition von Parametern finden Sie unter [Hinzufügen von Parametern, die Befehlszeilen Eingaben verarbeiten](./adding-parameters-that-process-command-line-input.md).
+> For more information about the basics of defining parameters, see [Adding Parameters that Process Command Line Input](./adding-parameters-that-process-command-line-input.md).
 
-### <a name="declaring-the-path-parameter"></a>Deklarieren des path-Parameters
+### <a name="declaring-the-path-parameter"></a>Declaring the Path Parameter
 
-Um den Datenspeicher zu finden, muss dieses Cmdlet einen Windows PowerShell-Pfad verwenden, um den Windows PowerShell-Anbieter zu identifizieren, der für den Zugriff auf den Datenspeicher konzipiert ist. Daher definiert Sie einen `Path`-Parameter vom Typ Zeichen folgen Array, um den Speicherort des Anbieters anzugeben.
+To locate the data store, this cmdlet must use a Windows PowerShell path to identify the Windows PowerShell provider that is designed to access the data store. Therefore, it defines a `Path` parameter of type string array to indicate the location of the provider.
 
 ```csharp
 [Parameter(
@@ -66,15 +66,15 @@ public string[] Path
 private string[] paths;
 ```
 
-Beachten Sie, dass dieser Parameter zu zwei verschiedenen Parametersätzen gehört und über einen Alias verfügt.
+Note that this parameter belongs to two different parameter sets and that it has an alias.
 
-Zwei [System. Management. Automation. Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) -Attribute deklarieren, dass der `Path`-Parameter zu den `ScriptParameterSet` und `PatternParameterSet` gehört. Weitere Informationen zu Parametersätzen finden Sie unter [Hinzufügen von Parametersätzen zu einem Cmdlet](./adding-parameter-sets-to-a-cmdlet.md).
+Two [System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) attributes declare that the `Path` parameter belongs to the `ScriptParameterSet` and the `PatternParameterSet`. For more information about parameter sets, see [Adding Parameter Sets to a Cmdlet](./adding-parameter-sets-to-a-cmdlet.md).
 
-Das [System. Management. Automation. Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) -Attribut deklariert einen `PSPath`-Alias für den `Path`-Parameter. Das Deklarieren dieses Alias wird dringend empfohlen, um Konsistenz mit anderen Cmdlets zu erhalten, die auf Windows PowerShell-Anbieter zugreifen. Weitere Informationen zu Windows PowerShell-Pfaden finden Sie unter "PowerShell-Pfad Konzepte" unter [Funktionsweise von Windows PowerShell](/previous-versions//ms714658(v=vs.85)).
+The [System.Management.Automation.Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) attribute declares a `PSPath` alias for the `Path` parameter. Declaring this alias is strongly recommended for consistency with other cmdlets that access Windows PowerShell providers. For more information aboutWindows PowerShell paths, see "PowerShell Path Concepts" in [How Windows PowerShell Works](/previous-versions//ms714658(v=vs.85)).
 
-### <a name="declaring-the-pattern-parameter"></a>Deklarieren des pattern-Parameters
+### <a name="declaring-the-pattern-parameter"></a>Declaring the Pattern Parameter
 
-Um die zu suchenden Muster anzugeben, deklariert dieses Cmdlet einen `Pattern`-Parameter, der ein Array von Zeichen folgen ist. Ein positives Ergebnis wird zurückgegeben, wenn eines der Muster im Datenspeicher gefunden wird. Beachten Sie, dass diese Muster in ein Array von kompilierten regulären Ausdrücken oder ein Array von Platzhalter Mustern kompiliert werden können, die für literalsuchvorgänge verwendet werden.
+To specify the patterns to search for, this cmdlet declares a `Pattern` parameter that is an array of strings. A positive result is returned when any of the patterns are found in the data store. Note that these patterns can be compiled into an array of compiled regular expressions or an array of wildcard patterns used for literal searches.
 
 ```csharp
 [Parameter(
@@ -91,13 +91,13 @@ private Regex[] regexPattern;
 private WildcardPattern[] wildcardPattern;
 ```
 
-Wenn dieser Parameter angegeben wird, verwendet das Cmdlet den Standardparameter Satz `PatternParameterSet`. In diesem Fall verwendet das Cmdlet die hier angegebenen Muster, um Zeichen folgen auszuwählen. Im Gegensatz dazu könnte der Parameter "`Script`" auch verwendet werden, um ein Skript bereitzustellen, das die Muster enthält. Mit den Parametern "`Script`" und "`Pattern`" werden zwei separate Parametersätze definiert, sodass Sie sich gegenseitig ausschließen.
+When this parameter is specified, the cmdlet uses the default parameter set `PatternParameterSet`. In this case, the cmdlet uses the patterns specified here to select strings. In contrast, the `Script` parameter could also be used to provide a script that contains the patterns. The `Script` and `Pattern` parameters define two separate parameter sets, so they are mutually exclusive.
 
-### <a name="declaring-search-support-parameters"></a>Deklarieren von Such Unterstützungs Parametern
+### <a name="declaring-search-support-parameters"></a>Declaring Search Support Parameters
 
-Dieses Cmdlet definiert die folgenden Unterstützungs Parameter, die verwendet werden können, um die Suchfunktionen des Cmdlets zu ändern.
+This cmdlet defines the following support parameters that can be used to modify the search capabilities of the cmdlet.
 
-Der `Script`-Parameter gibt einen Skriptblock an, der zum Bereitstellen eines alternativen Suchmechanismus für das Cmdlet verwendet werden kann. Das Skript muss die Muster enthalten, die für die Übereinstimmung verwendet werden, und ein [System. Management. Automation. psobject](/dotnet/api/System.Management.Automation.PSObject) -Objekt zurückgeben. Beachten Sie, dass dieser Parameter auch der eindeutige Parameter ist, der den `ScriptParameterSet`-Parametersatz identifiziert. Wenn die Windows PowerShell-Laufzeit diesen Parameter sieht, werden nur Parameter verwendet, die zum `ScriptParameterSet`-Parametersatz gehören.
+The `Script` parameter specifies a script block that can be used to provide an alternate search mechanism for the cmdlet. The script must contain the patterns used for matching and return a [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) object. Note that this parameter is also the unique parameter that identifies the `ScriptParameterSet` parameter set. When the Windows PowerShell runtime sees this parameter, it uses only parameters that belong to the `ScriptParameterSet` parameter set.
 
 ```csharp
 [Parameter(
@@ -112,7 +112,7 @@ public ScriptBlock Script
 ScriptBlock script;
 ```
 
-Der `SimpleMatch`-Parameter ist ein Switch-Parameter, der angibt, ob das Cmdlet die Muster explizit mit den angegebenen Mustern vergleichen soll. Wenn der Benutzer den Parameter in der Befehlszeile (`true`) angibt, verwendet das Cmdlet die Muster, wenn Sie bereitgestellt werden. Wenn der-Parameter nicht angegeben wird (`false`), verwendet das Cmdlet reguläre Ausdrücke. Der Standardwert für diesen Parameter ist `false`.
+The `SimpleMatch` parameter is a switch parameter that indicates whether the cmdlet is to explicitly match the patterns as they are supplied. When the user specifies the parameter at the command line (`true`), the cmdlet uses the patterns as they are supplied. If the parameter is not specified (`false`), the cmdlet uses regular expressions. The default for this parameter is `false`.
 
 ```csharp
 [Parameter]
@@ -124,7 +124,7 @@ public SwitchParameter SimpleMatch
 private bool simpleMatch;
 ```
 
-Der `CaseSensitive`-Parameter ist ein Switch-Parameter, der angibt, ob die Suche nach Groß-/Kleinschreibung durchgeführt wird. Wenn der Benutzer den Parameter in der Befehlszeile (`true`) angibt, überprüft das Cmdlet beim Vergleichen von Mustern das groß-und Kleinbuchstaben der Zeichen. Wenn der-Parameter nicht angegeben wird (`false`), unterscheidet das Cmdlet nicht zwischen Groß-und Kleinschreibung. Beispielsweise werden "MyFile" und "MyFile" als positive Treffer zurückgegeben. Der Standardwert für diesen Parameter ist `false`.
+The `CaseSensitive` parameter is a switch parameter that indicates whether a case-sensitive search is performed. When the user specifies the parameter at the command line (`true`), the cmdlet checks for the uppercase and lowercase of characters when comparing patterns. If the parameter is not specified (`false`), the cmdlet does not distinguish between uppercase and lowercase. For example "MyFile" and "myfile" would both be returned as positive hits. The default for this parameter is `false`.
 
 ```csharp
 [Parameter]
@@ -136,7 +136,7 @@ public SwitchParameter CaseSensitive
 private bool caseSensitive;
 ```
 
-Mit den Parametern "`Exclude`" und "`Include`" werden Elemente identifiziert, die von der Suche explizit ausgeschlossen oder eingeschlossen werden. Standardmäßig durchsucht das Cmdlet alle Elemente im Datenspeicher. Um jedoch die durch das Cmdlet ausgeführte Suche einzuschränken, können diese Parameter verwendet werden, um explizit anzugeben, dass Elemente in die Suche eingeschlossen oder ausgelassen werden.
+The `Exclude` and `Include` parameters identify items that are explicitly excluded from or included in the search. By default, the cmdlet will search all items in the data store. However, to limit the search performed by the cmdlet, these parameters can be used to explicitly indicate items to be included in the search or omitted.
 
 ```csharp
 [Parameter]
@@ -173,15 +173,15 @@ internal string[] includeStrings = null;
 internal WildcardPattern[] include = null;
 ```
 
-### <a name="declaring-parameter-sets"></a>Deklarieren von Parameter Sätzen
+### <a name="declaring-parameter-sets"></a>Declaring Parameter Sets
 
-Dieses Cmdlet verwendet zwei Parametersätze (`ScriptParameterSet` und `PatternParameterSet` (Standard) als die Namen von zwei Parametersätzen, die beim Datenzugriff verwendet werden. `PatternParameterSet` ist der Standardparameter Satz, der verwendet wird, wenn der `Pattern`-Parameter angegeben wird. `ScriptParameterSet` wird verwendet, wenn der Benutzer mithilfe des Parameters "`Script`" einen alternativen Suchmechanismus angibt. Weitere Informationen zu Parametersätzen finden Sie unter [Hinzufügen von Parametersätzen zu einem Cmdlet](./adding-parameter-sets-to-a-cmdlet.md).
+This cmdlet uses two parameter sets (`ScriptParameterSet` and `PatternParameterSet`, which is the default) as the names of two parameter sets used in data access. `PatternParameterSet` is the default parameter set and is used when the `Pattern` parameter is specified. `ScriptParameterSet` is used when the user specifies an alternate search mechanism through the `Script` parameter. For more information about parameter sets, see [Adding Parameter Sets to a Cmdlet](./adding-parameter-sets-to-a-cmdlet.md).
 
-## <a name="overriding-input-processing-methods"></a>Überschreiben von Eingabe Verarbeitungsmethoden
+## <a name="overriding-input-processing-methods"></a>Overriding Input Processing Methods
 
-Cmdlets müssen mindestens eine Eingabe Verarbeitungsmethode für die Klasse [System. Management. Automation. PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) überschreiben. Weitere Informationen zu den Eingabe Verarbeitungsmethoden finden Sie unter [Erstellen des ersten Cmdlets](./creating-a-cmdlet-without-parameters.md).
+Cmdlets must override one or more of the input processing methods for the [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) class. For more information about the input processing methods, see [Creating Your First Cmdlet](./creating-a-cmdlet-without-parameters.md).
 
-Mit diesem Cmdlet wird die [System. Management. Automation. Cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) -Methode überschrieben, um beim Start ein Array kompilierter regulärer Ausdrücke zu erstellen. Dies steigert die Leistung bei Such Vorgängen, die keine einfache Übereinstimmung verwenden.
+This cmdlet overrides the [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) method to build an array of compiled regular expressions at startup. This increases performance during searches that do not use simple matching.
 
 ```csharp
 protected override void BeginProcessing()
@@ -260,7 +260,7 @@ protected override void BeginProcessing()
 }// End of function BeginProcessing().
 ```
 
-Dieses Cmdlet überschreibt auch die [System. Management. Automation. Cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) -Methode, um die Zeichen folgen Auswahl zu verarbeiten, die der Benutzer in der Befehlszeile vornimmt. Die Ergebnisse der Zeichen folgen Auswahl werden in Form eines benutzerdefinierten Objekts geschrieben, indem eine private **matchstring** -Methode aufgerufen wird.
+This cmdlet also overrides the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method to process the string selections that the user makes on the command line. It writes the results of string selection in the form of a custom object by calling a private **MatchString** method.
 
 ```csharp
 protected override void ProcessRecord()
@@ -369,15 +369,15 @@ protected override void ProcessRecord()
 }// End of protected override void ProcessRecord().
 ```
 
-## <a name="accessing-content"></a>Zugreifen auf Inhalt
+## <a name="accessing-content"></a>Accessing Content
 
-Ihr Cmdlet muss den Anbieter öffnen, der durch den Windows PowerShell-Pfad angegeben wird, sodass er auf die Daten zugreifen kann. Das [System. Management. Automation. SessionState](/dotnet/api/System.Management.Automation.SessionState) -Objekt für den Runspace wird für den Zugriff auf den Anbieter verwendet, während die [System. Management. Automation. PSCmdlet. invokeprovider *](/dotnet/api/System.Management.Automation.PSCmdlet.InvokeProvider) -Eigenschaft des Cmdlets zum Öffnen des Anbieters verwendet wird. Der Zugriff auf den Inhalt wird durch Abrufen des [System. Management. Automation. providerintrinsics](/dotnet/api/System.Management.Automation.ProviderIntrinsics) -Objekts für den geöffneten Anbieter bereitgestellt.
+Your cmdlet must open the provider indicated by the Windows PowerShell path so that it can access the data. The [System.Management.Automation.Sessionstate](/dotnet/api/System.Management.Automation.SessionState) object for the runspace is used for access to the provider, while the [System.Management.Automation.PSCmdlet.Invokeprovider*](/dotnet/api/System.Management.Automation.PSCmdlet.InvokeProvider) property of the cmdlet is used to open the provider. Access to content is provided by retrieval of the [System.Management.Automation.Providerintrinsics](/dotnet/api/System.Management.Automation.ProviderIntrinsics) object for the provider opened.
 
-In diesem Beispiel Select-Str-Cmdlet wird die [System. Management. Automation. providerintrinsics. Content *](/dotnet/api/System.Management.Automation.ProviderIntrinsics.Content) -Eigenschaft verwendet, um den zu überprüfenden Inhalt verfügbar zu machen. Anschließend kann die [System. Management. Automation. contentcmdletproviderintrinsics. GetReader *](/dotnet/api/System.Management.Automation.ContentCmdletProviderIntrinsics.GetReader) -Methode aufgerufen werden, um den erforderlichen Windows PowerShell-Pfad zu übergeben.
+This sample Select-Str cmdlet uses the [System.Management.Automation.Providerintrinsics.Content*](/dotnet/api/System.Management.Automation.ProviderIntrinsics.Content) property to expose the content to scan. It can then call the [System.Management.Automation.Contentcmdletproviderintrinsics.Getreader*](/dotnet/api/System.Management.Automation.ContentCmdletProviderIntrinsics.GetReader) method, passing the required Windows PowerShell path.
 
-## <a name="code-sample"></a>Code Beispiel
+## <a name="code-sample"></a>Code Sample
 
-Der folgende Code zeigt die Implementierung dieser Version dieses SELECT-Str-Cmdlets. Beachten Sie, dass dieser Code die Cmdlet-Klasse, private Methoden, die vom Cmdlet verwendet werden, und den Windows PowerShell-Snap-in-Code enthält, der zum Registrieren des Cmdlets verwendet wird. Weitere Informationen zum Registrieren des Cmdlets finden Sie unter [Building the Cmdlet](#defining-the-cmdlet-class).
+The following code shows the implementation of this version of this Select-Str cmdlet. Note that this code includes the cmdlet class, private methods used by the cmdlet, and the Windows PowerShell snap-in code used to register the cmdlet. For more information about registering the cmdlet, see [Building the Cmdlet](#defining-the-cmdlet-class).
 
 ```csharp
 //
@@ -1086,21 +1086,21 @@ namespace Microsoft.Samples.PowerShell.Commands
 } //namespace Microsoft.Samples.PowerShell.Commands;
 ```
 
-## <a name="building-the-cmdlet"></a>Cmdlet wird aufgebaut
+## <a name="building-the-cmdlet"></a>Building the Cmdlet
 
-Nachdem Sie ein Cmdlet implementiert haben, müssen Sie es über ein Windows PowerShell-Snap-in bei Windows PowerShell registrieren. Weitere Informationen zum Registrieren von Cmdlets finden [Sie unter Registrieren von Cmdlets, Anbietern und Host Anwendungen](/previous-versions//ms714644(v=vs.85)).
+After implementing a cmdlet, you must register it with Windows PowerShell through a Windows PowerShell snap-in. For more information about registering cmdlets, see [How to Register Cmdlets, Providers, and Host Applications](/previous-versions//ms714644(v=vs.85)).
 
-## <a name="testing-the-cmdlet"></a>Testen des Cmdlets
+## <a name="testing-the-cmdlet"></a>Testing the Cmdlet
 
-Wenn das Cmdlet bei Windows PowerShell registriert wurde, können Sie es in der Befehlszeile testen. Das folgende Verfahren kann verwendet werden, um das Beispiel-"Select-Str"-Cmdlet zu testen.
+When your cmdlet has been registered with Windows PowerShell, you can test it by running it on the command line. The following procedure can be used to test the sample Select-Str cmdlet.
 
-1. Starten Sie Windows PowerShell, und suchen Sie in der Notizen-Datei nach Vorkommen von Zeilen mit dem Ausdruck ".net". Beachten Sie, dass die Anführungszeichen um den Namen des Pfads nur erforderlich sind, wenn der Pfad aus mehr als einem Wort besteht.
+1. Start Windows PowerShell, and search the Notes file for occurrences of lines with the expression ".NET". Note that the quotation marks around the name of the path are required only if the path consists of more than one word.
 
     ```powershell
     select-str -Path "notes" -Pattern ".NET" -SimpleMatch=$false
     ```
 
-    Die folgende Ausgabe wird angezeigt.
+    The following output appears.
 
     ```output
     IgnoreCase   : True
@@ -1115,13 +1115,13 @@ Wenn das Cmdlet bei Windows PowerShell registriert wurde, können Sie es in der 
     Pattern      : .NET
     ```
 
-2. Durchsuchen Sie die Notizen-Datei nach Vorkommen von Zeilen mit dem Wort "Over", gefolgt von einem anderen Text. Der `SimpleMatch`-Parameter verwendet den Standardwert `false`. Bei der Suche wird die Groß-/Kleinschreibung nicht beachtet, da der Parameter `CaseSensitive` auf `false` festgelegt ist.
+2. Search the Notes file for occurrences of lines with the word "over", followed by any other text. The `SimpleMatch` parameter is using the default value of `false`. The search is case-insensitive because the `CaseSensitive` parameter is set to `false`.
 
     ```powershell
     select-str -Path notes -Pattern "over*" -SimpleMatch -CaseSensitive:$false
     ```
 
-    Die folgende Ausgabe wird angezeigt.
+    The following output appears.
 
     ```output
     IgnoreCase   : True
@@ -1136,13 +1136,13 @@ Wenn das Cmdlet bei Windows PowerShell registriert wurde, können Sie es in der 
     Pattern      : over*
     ```
 
-3. Durchsuchen Sie die Notizen-Datei mithilfe eines regulären Ausdrucks als Muster. Das Cmdlet sucht alphabetische Zeichen und Leerzeichen, die in Klammern eingeschlossen sind.
+3. Search the Notes file using a regular expression as the pattern. The cmdlet searches for alphabetical characters and blank spaces enclosed in parentheses.
 
     ```powershell
     select-str -Path notes -Pattern "\([A-Za-z:blank:]" -SimpleMatch:$false
     ```
 
-    Die folgende Ausgabe wird angezeigt.
+    The following output appears.
 
     ```output
     IgnoreCase   : True
@@ -1157,13 +1157,13 @@ Wenn das Cmdlet bei Windows PowerShell registriert wurde, können Sie es in der 
     Pattern      : \([A-Za-z:blank:]
     ```
 
-4. Unterscheidung nach Groß-/Kleinschreibung Durchsuchen der Notizen-Datei für Vorkommen des Worts "Parameter".
+4. Perform a case-sensitive search of the Notes file for occurrences of the word "Parameter".
 
     ```powershell
     select-str -Path notes -Pattern Parameter -CaseSensitive
     ```
 
-    Die folgende Ausgabe wird angezeigt.
+    The following output appears.
 
     ```output
     IgnoreCase   : False
@@ -1178,13 +1178,13 @@ Wenn das Cmdlet bei Windows PowerShell registriert wurde, können Sie es in der 
     Pattern      : Parameter
     ```
 
-5. Durchsuchen Sie den mit Windows PowerShell gelieferten Variablen Anbieter nach Variablen mit numerischen Werten von 0 bis 9.
+5. Search the variable provider shipped with Windows PowerShell for variables that have numerical values from 0 through 9.
 
     ```powershell
     select-str -Path * -Pattern "[0-9]"
     ```
 
-    Die folgende Ausgabe wird angezeigt.
+    The following output appears.
 
     ```output
     IgnoreCase   : True
@@ -1194,13 +1194,13 @@ Wenn das Cmdlet bei Windows PowerShell registriert wurde, können Sie es in der 
     Pattern      : [0-9]
     ```
 
-6. Verwenden Sie einen Skriptblock, um die Datei SelectStrCommandSample.cs nach der Zeichenfolge "POS" zu durchsuchen. Die **cmatch** -Funktion für das Skript führt eine Muster Übereinstimmung ohne Berücksichtigung der Groß-und Kleinschreibung
+6. Use a script block to search the file SelectStrCommandSample.cs for the string "Pos". The **cmatch** function for the script performs a case-insensitive pattern match.
 
     ```powershell
     select-str -Path "SelectStrCommandSample.cs" -Script { if ($args[0] -cmatch "Pos"){ return $true } return $false }
     ```
 
-    Die folgende Ausgabe wird angezeigt.
+    The following output appears.
 
     ```output
     IgnoreCase   : True
@@ -1212,16 +1212,16 @@ Wenn das Cmdlet bei Windows PowerShell registriert wurde, können Sie es in der 
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Erstellen eines Windows PowerShell-Cmdlets](/powershell/developer/cmdlet/writing-a-windows-powershell-cmdlet)
+[How to Create a Windows PowerShell Cmdlet](/powershell/scripting/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 
-[Erstellen Ihres ersten Cmdlets](./creating-a-cmdlet-without-parameters.md)
+[Creating Your First Cmdlet](./creating-a-cmdlet-without-parameters.md)
 
-[Erstellen eines Cmdlets, das das System ändert](./creating-a-cmdlet-that-modifies-the-system.md)
+[Creating a Cmdlet that Modifies the System](./creating-a-cmdlet-that-modifies-the-system.md)
 
-[Entwerfen Ihres Windows PowerShell-Anbieters](../prog-guide/designing-your-windows-powershell-provider.md)
+[Design Your Windows PowerShell Provider](../prog-guide/designing-your-windows-powershell-provider.md)
 
-[Funktionsweise von Windows PowerShell](/previous-versions//ms714658(v=vs.85))
+[How Windows PowerShell Works](/previous-versions//ms714658(v=vs.85))
 
-[Registrieren von Cmdlets, Anbietern und Host Anwendungen](/previous-versions//ms714644(v=vs.85))
+[How to Register Cmdlets, Providers, and Host Applications](/previous-versions//ms714644(v=vs.85))
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

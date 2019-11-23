@@ -1,5 +1,5 @@
 ---
-title: StopProcessSample04-Code Beispiele | Microsoft-Dokumentation
+title: StopProcessSample04 Code Samples | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,31 +8,31 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: dc68af2b-f622-47c4-964f-b07f3d5bdf14
 caps.latest.revision: 5
-ms.openlocfilehash: 367fecfe5417e0e4cc41b076bac6fefbe185624f
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: 9aef3eeb8bfeeccd234755b6c5a7c451da6628cc
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72360109"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417830"
 ---
 # <a name="stopprocesssample04-code-samples"></a>StopProcessSample04-Codebeispiele
 
-Im folgenden finden Sie die Codebeispiele für das Cmdlet "StopProc00 Sample". Dies ist das `Stop-Process`-Cmdlet-Beispiel [, das unter Hinzufügen von Parameter Sätzen zu einem Cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md)beschrieben wird. Das Cmdlet "`Stop-Process`" ist so konzipiert, dass Prozesse beendet werden, die mit dem Cmdlet "Get-proc" abgerufen werden (siehe [Erstellen des ersten Cmdlets](../cmdlet/creating-a-cmdlet-without-parameters.md)).
+Here are the code samples for the StopProc00 sample cmdlet. This is the `Stop-Process` cmdlet sample described in [Adding Parameter Sets to a Cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md). The `Stop-Process` cmdlet is designed to stop processes that are retrieved using the Get-Proc cmdlet (described in [Creating Your First Cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md)).
 
 > [!NOTE]
-> Sie können C# (stopprocesssample04.cs) und VB.net (stopprocesssample04. vb) für dieses Cmdlet "" mit dem Microsoft Windows Software Development Kit für Windows Vista und .NET Framework 3,0-Laufzeitkomponenten herunterladen. Anweisungen zum Herunterladen finden Sie unter [Installieren von Windows PowerShell und Herunterladen des Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).
+> You can download the C# (stopprocesssample04.cs) and VB.NET (stopprocesssample04.vb) for this Stop-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
 >
-> Die heruntergeladenen Quelldateien sind in den **\<powershell-Beispielen >** Verzeichnis verfügbar.
+> The downloaded source files are available in the **\<PowerShell Samples>** directory.
 
-Einen umfassenden Beispielcode finden Sie in den folgenden Themen.
+For complete sample code, see the following topics.
 
 |Language|Thema|
 |--------------|-----------|
-|C#|[StopProc04 (C#)-Beispiel Code](./stopprocesssample04-csharp-sample-code.md)|
-|VB.NET|[StopProc04 (VB.net)-Beispiel Code](./stopprocesssample04-vb-net-sample-code.md)|
+|C#|[StopProc04 (C#) Sample Code](./stopprocesssample04-csharp-sample-code.md)|
+|VB.NET|[StopProc04 (VB.NET) Sample Code](./stopprocesssample04-vb-net-sample-code.md)|
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Windows PowerShell-Programmier Handbuch](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)
