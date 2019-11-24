@@ -17,13 +17,13 @@ ms.locfileid: "72359769"
 ---
 # <a name="configuring-role-based-authorization"></a>Konfigurieren der rollenbasierten Autorisierung
 
-In diesem Thema wird veranschaulicht, wie Sie die rollenbasierte Autorisierungs Richtlinie für die Beispiel Implementierung der [Microsoft. Management. odata. customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) -Schnittstelle konfigurieren, die unter [Implementieren der benutzerdefinierten Autorisierung für die Verwaltung beschrieben wird Odata-IIS-Erweiterung](./implementing-custom-authorization-for-a-management-odata-web-service.md).
+In diesem Thema wird veranschaulicht, wie Sie die rollenbasierte Autorisierungs Richtlinie für die Beispiel Implementierung der [Microsoft. Management. odata. customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) -Schnittstelle konfigurieren, die unter [Implementieren der benutzerdefinierten Autorisierung für die IIS-Erweiterung "Management odata](./implementing-custom-authorization-for-a-management-odata-web-service.md)" beschrieben
 
 In diesem Beispiel konfigurieren Sie eine XML-Datei, die von der beispielverwaltungs-odata-Anwendung verwendet wird, um die Autorisierungs Richtlinie zu definieren. Sie erstellen zwei Rollen und ordnen verschiedene Windows PowerShell-Module zu, die Workflows mit diesen Rollen enthalten. Das Schema, das die XML-Datei definiert, wird unter [rollenbasiertes Autorisierungs Konfigurations Schema](./role-based-authorization-configuration-schema.md)aufgelistet.
 
 ## <a name="modifying-the-rbacconfigurationxml-file"></a>Ändern der Datei "rbacconfiguration. xml"
 
-Mit dieser Datei wird die Autorisierungs Richtlinie für die Anwendung definiert. Rollen werden mithilfe `Group`-Knoten definiert. Ein Knoten vom @no__t 0 definiert die Windows PowerShell-Befehle, die Benutzer ausführen können, die dieser Gruppe zugewiesen sind. Benutzer werden Gruppen mithilfe `User`-Knoten zugewiesen.
+Mit dieser Datei wird die Autorisierungs Richtlinie für die Anwendung definiert. Rollen werden mithilfe `Group` Knoten definiert. Ein `Group` Knoten definiert die Windows PowerShell-Befehle, die Benutzer ausführen können, die dieser Gruppe zugewiesen sind. Benutzer werden Gruppen mithilfe `User`-Knoten zugewiesen.
 
 In diesen Beispielen fügen Sie dem Knoten Administrator `Group` ein Modul hinzu und fügen jeder Gruppe einen Benutzer hinzu.
 
@@ -85,9 +85,9 @@ In diesen Beispielen fügen Sie dem Knoten Administrator `Group` ein Modul hinzu
    </RbacConfiguration>
    ```
 
-2. Die Datei enthält zwei `Group`-Knoten. Diese stellen die beiden in diesem Beispiel verwendeten Rollen dar, die `NonAdminGroup` und die `AdminGroup`-Rollen.
+2. Die Datei enthält zwei `Group` Knoten. Diese stellen die beiden in diesem Beispiel verwendeten Rollen dar, die `NonAdminGroup` und die `AdminGroup` Rollen.
 
-   Fügen Sie direkt nach dem schließenden `Cmdlets`-Tag im ersten `Group`-Knoten den folgenden XML-Code hinzu:
+   Fügen Sie direkt nach dem schließenden `Cmdlets`-Tag im ersten `Group` Knoten den folgenden XML-Code hinzu:
 
    ```xml
    <Modules>
@@ -97,7 +97,7 @@ In diesen Beispielen fügen Sie dem Knoten Administrator `Group` ein Modul hinzu
 
 #### <a name="adding-a-user-to-a-group-node"></a>Hinzufügen eines Benutzers zu einem Gruppenknoten
 
-1. Öffnen Sie die Datei " **rbacconfiguration. XML** " in einem Text-Editor. Diese Datei befindet sich im Ordner C: \\ \ inetpub\wwwroot\mudata, wenn Sie den Endpunkt Namen vor der Installation nicht geändert haben.
+1. Öffnen Sie die Datei " **rbacconfiguration. XML** " in einem Text-Editor. Diese Datei befindet sich im Ordner C:\\\inetpub\wwwroot\mudata, wenn Sie den Endpunkt Namen vor der Installation nicht geändert haben.
 
 2. Fügen Sie direkt nach dem schließenden Tag im Knoten `Users` den folgenden XML-Code hinzu:
 

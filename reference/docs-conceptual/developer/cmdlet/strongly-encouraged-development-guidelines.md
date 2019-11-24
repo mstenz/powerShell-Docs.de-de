@@ -53,15 +53,15 @@ Um die Benutzer Leistung zu verbessern, sollte das Substantiv, das Sie für eine
 
 ### <a name="use-pascal-case-for-cmdlet-names-sd02"></a>Verwenden der Pascal-Schreibweise für Cmdlet-Namen (SD02)
 
-Verwenden Sie Pascal Case für Parameternamen. Dies bedeutet, dass der erste Buchstabe des Verbs und alle Begriffe, die im Substantiv verwendet werden, groß geschrieben werden. Beispiel: "`Clear-ItemProperty`".
+Verwenden Sie Pascal Case für Parameternamen. Dies bedeutet, dass der erste Buchstabe des Verbs und alle Begriffe, die im Substantiv verwendet werden, groß geschrieben werden. Beispiel: "`Clear-ItemProperty`“.
 
 ### <a name="parameter-design-guidelines-sd03"></a>Entwurfs Richtlinien für Parameter (SD03)
 
-Ein Cmdlet benötigt Parameter, die die Daten empfangen, auf denen er ausgeführt werden muss, und Parameter, die Informationen angeben, die zum Bestimmen der Merkmale des Vorgangs verwendet werden. Beispielsweise kann ein Cmdlet über einen `Name`-Parameter verfügen, der Daten aus der Pipeline empfängt, und das Cmdlet verfügt möglicherweise über einen `Force`-Parameter, um anzugeben, dass das Cmdlet zum Ausführen des Vorgangs erzwungen werden kann. Es gibt keine Beschränkung für die Anzahl von Parametern, die von einem Cmdlet definiert werden können.
+Ein Cmdlet benötigt Parameter, die die Daten empfangen, auf denen er ausgeführt werden muss, und Parameter, die Informationen angeben, die zum Bestimmen der Merkmale des Vorgangs verwendet werden. Ein Cmdlet kann z. b. über einen `Name` Parameter verfügen, der Daten aus der Pipeline empfängt, und das Cmdlet kann einen `Force` Parameter aufweisen, um anzugeben, dass das Cmdlet zum Ausführen des Vorgangs erzwungen werden kann. Es gibt keine Beschränkung für die Anzahl von Parametern, die von einem Cmdlet definiert werden können.
 
 #### <a name="use-standard-parameter-names"></a>Standard Parameter Namen verwenden
 
-Ihr Cmdlet sollte Standardparameter Namen verwenden, damit der Benutzer schnell ermitteln kann, was ein bestimmter Parameter bedeutet. Wenn ein spezifischeren Name erforderlich ist, verwenden Sie einen Standardparameter Namen, und geben Sie dann einen spezifischeren Namen als Alias an. Das Cmdlet "`Get-Service`" hat beispielsweise einen Parameter mit einem generischen Namen (`Name`) und einem spezifischeren Alias (`ServiceName`). Beide Begriffe können zum Angeben des Parameters verwendet werden.
+Ihr Cmdlet sollte Standardparameter Namen verwenden, damit der Benutzer schnell ermitteln kann, was ein bestimmter Parameter bedeutet. Wenn ein spezifischeren Name erforderlich ist, verwenden Sie einen Standardparameter Namen, und geben Sie dann einen spezifischeren Namen als Alias an. Das `Get-Service`-Cmdlet hat z. b. einen Parameter mit einem generischen Namen (`Name`) und einem spezifischeren Alias (`ServiceName`). Beide Begriffe können zum Angeben des Parameters verwendet werden.
 
 Weitere Informationen zu Parameternamen und deren Datentypen finden Sie unter [Cmdlet-Parameter Name und Funktions Richtlinien](./standard-cmdlet-parameter-names-and-types.md).
 
@@ -97,13 +97,13 @@ Parameter sollten als .NET Framework Typen definiert werden, um eine bessere Par
 
 #### <a name="use-consistent-parameter-types"></a>Konsistente Parameter Typen verwenden
 
-Wenn derselbe Parameter von mehreren Cmdlets verwendet wird, verwenden Sie immer denselben Parametertyp.  Wenn der `Process`-Parameter z. b. ein [System. Int16](/dotnet/api/System.Int16) -Typ für ein Cmdlet ist, legen Sie den Parameter "`Process`" nicht für ein anderes Cmdlet als [System. UInt16](/dotnet/api/System.UInt16) -Typ fest.
+Wenn derselbe Parameter von mehreren Cmdlets verwendet wird, verwenden Sie immer denselben Parametertyp.  Wenn der `Process`-Parameter z. b [. ein System. Int16](/dotnet/api/System.Int16) -Typ für ein Cmdlet ist, legen Sie den `Process`-Parameter für ein anderes Cmdlet nicht als [System. UInt16](/dotnet/api/System.UInt16) -Typ fest.
 
 #### <a name="parameters-that-take-true-and-false"></a>Parameter mit "true" und "false"
 
-Wenn der Parameter nur `true` und `false` annimmt, definieren Sie den Parameter als Type [System. Management. Automation. Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter). Ein Switch-Parameter wird als `true` behandelt, wenn er in einem Befehl angegeben wird. Wenn der-Parameter nicht in einem Befehl enthalten ist, betrachtet Windows PowerShell den Wert des-Parameters als `false`. Definieren Sie keine booleschen Parameter.
+Wenn der Parameter nur `true` und `false`annimmt, definieren Sie den Parameter als Type [System. Management. Automation. Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter). Ein Switch-Parameter wird als `true` behandelt, wenn er in einem Befehl angegeben wird. Wenn der-Parameter nicht in einem Befehl enthalten ist, betrachtet Windows PowerShell den Wert des-Parameters als `false`. Definieren Sie keine booleschen Parameter.
 
-Wenn Ihr Parameter zwischen 3 Werten unterscheiden muss: $true, $false und "nicht angegeben", definieren Sie einen Parameter vom Typ "Nullable @ no__t-0bool >".  Der Bedarf an einem Dritten, nicht angegebenen Wert tritt normalerweise auf, wenn das Cmdlet eine boolesche Eigenschaft eines Objekts ändern kann. In diesem Fall bedeutet "nicht angegeben", dass der aktuelle Wert der Eigenschaft nicht geändert werden soll.
+Wenn Ihr Parameter zwischen 3 Werten unterscheiden muss: $true, $false und "nicht angegeben", definieren Sie einen Parameter vom Typ "Nullable"\<booleschen >.  Der Bedarf an einem Dritten, nicht angegebenen Wert tritt normalerweise auf, wenn das Cmdlet eine boolesche Eigenschaft eines Objekts ändern kann. In diesem Fall bedeutet "nicht angegeben", dass der aktuelle Wert der Eigenschaft nicht geändert werden soll.
 
 #### <a name="support-arrays-for-parameters"></a>Unterstützung von Arrays für Parameter
 
@@ -111,7 +111,7 @@ Häufig müssen Benutzer denselben Vorgang für mehrere Argumente ausführen. F�
 
 #### <a name="support-the-passthru-parameter"></a>Unterstützung des passthru-Parameters
 
-Standardmäßig fungieren viele Cmdlets, die das System ändern, z. b. das Cmdlet "End [-Process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process) ", als "senken" für Objekte, und es wird kein Ergebnis zurückgegeben. Dieses Cmdlet muss den `PassThru`-Parameter implementieren, um zu erzwingen, dass das Cmdlet ein Objekt zurückgibt. Wenn der Parameter "`PassThru`" angegeben wird, gibt das Cmdlet ein Objekt zurück, indem die [System. Management. Automation. Cmdlet. Write Object](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) -Methode aufgerufen wird. Der folgende Befehl beendet beispielsweise den Calc-Prozess und übergibt den resultierenden Prozess an die Pipeline.
+Standardmäßig fungieren viele Cmdlets, die das System ändern, z. b. das Cmdlet "End [-Process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process) ", als "senken" für Objekte, und es wird kein Ergebnis zurückgegeben. Dieses Cmdlet muss den `PassThru`-Parameter implementieren, um zu erzwingen, dass das Cmdlet ein Objekt zurückgibt. Wenn der `PassThru`-Parameter angegeben wird, gibt das Cmdlet ein Objekt zurück, indem die [System. Management. Automation. Cmdlet. Write Object](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) -Methode aufgerufen wird. Der folgende Befehl beendet beispielsweise den Calc-Prozess und übergibt den resultierenden Prozess an die Pipeline.
 
 ```powershell
 Stop-Process calc -passthru
@@ -131,7 +131,7 @@ Wenn Parametersätze verwendet werden, wird der Standardparameter Satz durch das
 
 Verwenden Sie die Richtlinien in diesem Abschnitt, um dem Benutzer Feedback zu geben. Dank dieses Feedbacks kann der Benutzer wissen, was im System passiert, und bessere administrative Entscheidungen treffen.
 
-Mithilfe der Windows PowerShell-Laufzeit kann ein Benutzer angeben, wie die Ausgabe der einzelnen Aufrufe der `Write`-Methode behandelt werden soll, indem eine Einstellungs Variable festgelegt wird. Der Benutzer kann mehrere Einstellungs Variablen festlegen, einschließlich einer Variablen, die bestimmt, ob das Systeminformationen anzeigen soll, sowie eine Variable, die bestimmt, ob das System den Benutzer vor der weiteren Aktion Abfragen soll.
+Mithilfe der Windows PowerShell-Laufzeit kann ein Benutzer angeben, wie die Ausgabe der einzelnen Aufrufe der `Write` Methode behandelt werden soll, indem eine Einstellungs Variable festgelegt wird. Der Benutzer kann mehrere Einstellungs Variablen festlegen, einschließlich einer Variablen, die bestimmt, ob das Systeminformationen anzeigen soll, sowie eine Variable, die bestimmt, ob das System den Benutzer vor der weiteren Aktion Abfragen soll.
 
 #### <a name="support-the-writewarning-writeverbose-and-writedebug-methods"></a>Unterstützung der Methoden "Write Warning", "Write Verbose" und "Write Debug"
 
@@ -139,7 +139,7 @@ Ein Cmdlet muss die [System. Management. Automation. Cmdlet. Write Warning](/dot
 
 Ein Cmdlet muss die [System. Management. Automation. Cmdlet. Write-Verbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) -Methode aufruft, wenn der Benutzer einige Details zu den Aktionen des Cmdlets benötigt. Beispielsweise sollte ein Cmdlet diese Informationen anrufen, wenn der Autor des Cmdlets der Meinung ist, dass es Szenarien gibt, in denen möglicherweise weitere Informationen zum Ausführen des Cmdlets erforderlich sind.
 
-Das Cmdlet muss die [System. Management. Automation. Cmdlet. Write-Debug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) -Methode anrufen, wenn ein Entwickler oder Produktsupport Techniker wissen muss, was den Cmdlet-Vorgang beschädigt hat. Das Cmdlet muss die [System. Management. Automation. Cmdlet. Write Team Debug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) -Methode nicht im gleichen Code aufrufen, der die [System. Management. Automation. Cmdlet. Write-Verbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) -Methode aufruft, da der `Debug`-Parameter beide Informations Sätze.
+Das Cmdlet muss die [System. Management. Automation. Cmdlet. Write-Debug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) -Methode anrufen, wenn ein Entwickler oder Produktsupport Techniker wissen muss, was den Cmdlet-Vorgang beschädigt hat. Das Cmdlet muss die [System. Management. Automation. Cmdlet. Write Team Debug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) -Methode nicht im gleichen Code aufrufen, der die [System. Management. Automation. Cmdlet. Write](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) Items-Methode aufruft, da der `Debug`-Parameter beide Sätze von Informationen darstellt.
 
 #### <a name="support-writeprogress-for-operations-that-take-a-long-time"></a>Unterstützung von Write Progress bei Vorgängen, die sehr lange dauern
 
@@ -170,9 +170,9 @@ Definieren Sie einen Parameter, indem Sie eine öffentliche Eigenschaft der Cmdl
 
 Der Windows PowerShell-Pfad ist der Mechanismus, mit dem der Zugriff auf Namespaces normalisiert wird. Wenn Sie einen Windows PowerShell-Pfad einem Parameter im Cmdlet zuweisen, kann der Benutzer ein benutzerdefiniertes "Laufwerk" definieren, das als Verknüpfung zu einem bestimmten Pfad fungiert. Wenn ein Benutzer ein solches Laufwerk festlegt, können gespeicherte Daten, z. b. Daten in der Registrierung, auf konsistente Weise verwendet werden.
 
-Wenn das Cmdlet dem Benutzer ermöglicht, eine Datei oder eine Datenquelle anzugeben, sollte ein Parameter vom Typ " [System. String](/dotnet/api/System.String)" definiert werden. Wenn mehr als ein Laufwerk unterstützt wird, muss es sich bei dem Typ um ein Array handeln. Der Name des Parameters sollte `Path` sein und den Alias `PSPath` aufweisen. Außerdem sollte der Parameter "`Path`" Platzhalter Zeichen unterstützen. Wenn keine Unterstützung für Platzhalter Zeichen erforderlich ist, definieren Sie einen `LiteralPath`-Parameter.
+Wenn das Cmdlet dem Benutzer ermöglicht, eine Datei oder eine Datenquelle anzugeben, sollte ein Parameter vom Typ " [System. String](/dotnet/api/System.String)" definiert werden. Wenn mehr als ein Laufwerk unterstützt wird, muss es sich bei dem Typ um ein Array handeln. Der Name des Parameters sollte mit dem Alias `PSPath``Path`werden. Außerdem sollte der `Path`-Parameter Platzhalter Zeichen unterstützen. Wenn keine Unterstützung für Platzhalter Zeichen erforderlich ist, definieren Sie einen `LiteralPath` Parameter.
 
-Wenn die vom Cmdlet gelesenen oder geschriebenen Daten eine Datei sein müssen, muss das Cmdlet die Windows PowerShell-Pfad Eingabe akzeptieren, und das Cmdlet muss die [System. Management. Automation. SessionState. Path](/dotnet/api/System.Management.Automation.SessionState.Path) -Eigenschaft verwenden, um die Windows PowerShell-Pfade in zu übersetzen. Pfade, die vom Dateisystem erkannt werden. Zu den spezifischen Mechanismen gehören die folgenden Methoden:
+Wenn die vom Cmdlet gelesenen oder geschriebenen Daten eine Datei sein müssen, muss das Cmdlet die Windows PowerShell-Pfad Eingabe akzeptieren, und das Cmdlet muss die [System. Management. Automation. SessionState. Path](/dotnet/api/System.Management.Automation.SessionState.Path) -Eigenschaft verwenden, um die Windows PowerShell-Pfade in Pfade zu übersetzen, die vom Datei System erkannt werden. Zu den spezifischen Mechanismen gehören die folgenden Methoden:
 
 - [System. Management. Automation. PSCmdlet. getresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PSCmdlet.GetResolvedProviderPathFromPSPath)
 
@@ -182,11 +182,11 @@ Wenn die vom Cmdlet gelesenen oder geschriebenen Daten eine Datei sein müssen, 
 
 - [System. Management. Automation. pathintrinsics. getunresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetUnresolvedProviderPathFromPSPath)
 
-Wenn die vom Cmdlet gelesenen oder geschriebenen Daten nur eine Reihe von Zeichen folgen anstelle einer Datei sind, sollte das Cmdlet die Anbieter Inhaltsinformationen (`Content`-Member) zum Lesen und Schreiben verwenden. Diese Informationen werden aus der [System. Management. Automation. Provider. cmdletprovider. invokeprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.InvokeProvider) -Eigenschaft abgerufen. Mit diesen Mechanismen können andere Datenspeicher an dem Lesen und Schreiben von Daten teilnehmen.
+Wenn die vom Cmdlet gelesenen oder geschriebenen Daten nur eine Reihe von Zeichen folgen anstelle einer Datei sind, sollte das Cmdlet die Anbieter Inhaltsinformationen (`Content` Member) zum Lesen und Schreiben verwenden. Diese Informationen werden aus der [System. Management. Automation. Provider. cmdletprovider. invokeprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.InvokeProvider) -Eigenschaft abgerufen. Mit diesen Mechanismen können andere Datenspeicher an dem Lesen und Schreiben von Daten teilnehmen.
 
 #### <a name="support-wildcard-characters"></a>Platzhalter Zeichen unterstützen
 
-Ein Cmdlet sollte nach Möglichkeit Platzhalter Zeichen unterstützen. Die Unterstützung von Platzhalter Zeichen tritt an vielen Stellen in einem Cmdlet auf (insbesondere dann, wenn ein Parameter eine Zeichenfolge annimmt, um ein Objekt aus einer Gruppe von Objekten zu identifizieren). Beispielsweise definiert das Beispiel **Stop-proc-** Cmdlet aus dem [stopproc-Tutorial](./stopproc-tutorial.md) einen `Name`-Parameter, um Zeichen folgen zu behandeln, die Prozessnamen darstellen. Dieser Parameter unterstützt Platzhalter Zeichen, sodass der Benutzer die zu stoppenden Prozesse problemlos angeben kann.
+Ein Cmdlet sollte nach Möglichkeit Platzhalter Zeichen unterstützen. Die Unterstützung von Platzhalter Zeichen tritt an vielen Stellen in einem Cmdlet auf (insbesondere dann, wenn ein Parameter eine Zeichenfolge annimmt, um ein Objekt aus einer Gruppe von Objekten zu identifizieren). Beispielsweise definiert das Beispiel **Stop-proc-** Cmdlet aus dem [stopproc-Tutorial](./stopproc-tutorial.md) einen `Name` Parameter, um Zeichen folgen zu behandeln, die Prozessnamen darstellen. Dieser Parameter unterstützt Platzhalter Zeichen, sodass der Benutzer die zu stoppenden Prozesse problemlos angeben kann.
 
 Wenn die Unterstützung für Platzhalter Zeichen verfügbar ist, erzeugt ein Cmdlet-Vorgang in der Regel ein Array. Gelegentlich ist es nicht sinnvoll, ein Array zu unterstützen, da der Benutzer möglicherweise nur ein einzelnes Element gleichzeitig verwendet. Beispielsweise muss das Cmdlet " [Set-Location](/powershell/module/Microsoft.PowerShell.Management/Set-Location) " kein Array unterstützen, da der Benutzer nur einen einzigen Speicherort festlegt. In diesem Fall unterstützt das Cmdlet weiterhin Platzhalter Zeichen, aber es erzwingt die Auflösung an einem einzelnen Speicherort.
 
@@ -206,7 +206,7 @@ Wenn Sie ein Objekt für ein Cmdlet entwerfen, stellen Sie sicher, dass seine Me
 
 Bereits vorhandene .NET Framework Objekte, die von Cmdlets zurückgegeben werden, fehlen häufig einige wichtige oder bequeme Member, die vom Skriptentwickler oder-Benutzer benötigt werden. Diese fehlenden Member können besonders wichtig für die Anzeige und das Erstellen der richtigen Elementnamen sein, damit das Objekt ordnungsgemäß an die Pipeline übermittelt werden kann. Erstellen Sie eine benutzerdefinierte Types. ps1xml-Datei, um diese erforderlichen Member zu dokumentieren. Wenn Sie diese Datei erstellen, wird die folgende Benennungs Konvention empfohlen: *< Your_Product_Name >* . Types. ps1xml.
 
-Beispielsweise können Sie dem [System. IO. FileInfo](/dotnet/api/System.IO.FileInfo) -Typ eine `Mode`-Skript Eigenschaft hinzufügen, um die Attribute einer Datei deutlicher anzuzeigen. Außerdem können Sie dem [System. Array](/dotnet/api/System.Array) -Typ eine `Count`-Alias Eigenschaft hinzufügen, um die konsistente Verwendung dieses Eigenschafts namens (anstelle von `Length`) zuzulassen.
+Beispielsweise können Sie dem [System. IO. FileInfo](/dotnet/api/System.IO.FileInfo) -Typ eine `Mode` Script-Eigenschaft hinzufügen, um die Attribute einer Datei deutlicher anzuzeigen. Außerdem können Sie dem [System. Array](/dotnet/api/System.Array) -Typ eine `Count` Alias Eigenschaft hinzufügen, um die konsistente Verwendung dieses Eigenschafts namens (anstelle `Length`) zuzulassen.
 
 ##### <a name="implement-the-icomparable-interface"></a>Implementieren der ivergleichbare-Schnittstelle
 
@@ -234,13 +234,13 @@ Um alle Datensätze aus dem vorherigen Cmdlet in der Pipeline zu akzeptieren, mu
 
 ### <a name="write-single-records-to-the-pipeline-sc03"></a>Schreiben einzelner Datensätze in die Pipeline (Sc03)
 
-Wenn ein Cmdlet Objekte zurückgibt, sollte das Cmdlet die Objekte sofort beim Generieren schreiben. Das Cmdlet sollte Sie nicht enthalten, um Sie in einem kombinierten Array zu puffern. Die Cmdlets, die die Objekte als Eingabe empfangen, können dann die Ausgabe Objekte ohne Verzögerung verarbeiten, anzeigen oder verarbeiten und anzeigen. Ein Cmdlet, das Ausgabe Objekte nacheinander generiert, muss die [System. Management. Automation. Cmdlet. Write Object](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) -Methode aufzurufen. Ein Cmdlet, das Ausgabe Objekte in Batches generiert (z. b. weil eine zugrunde liegende API ein Array von Ausgabe Objekten zurückgibt), sollte die [System. Management. Automation. Cmdlet. Write-Object](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) -Methode aufrufen, wobei der zweite Parameter auf `true` festgelegt ist.
+Wenn ein Cmdlet Objekte zurückgibt, sollte das Cmdlet die Objekte sofort beim Generieren schreiben. Das Cmdlet sollte Sie nicht enthalten, um Sie in einem kombinierten Array zu puffern. Die Cmdlets, die die Objekte als Eingabe empfangen, können dann die Ausgabe Objekte ohne Verzögerung verarbeiten, anzeigen oder verarbeiten und anzeigen. Ein Cmdlet, das Ausgabe Objekte nacheinander generiert, muss die [System. Management. Automation. Cmdlet. Write Object](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) -Methode aufzurufen. Ein Cmdlet, das Ausgabe Objekte in Batches generiert (z. b. weil eine zugrunde liegende API ein Array von Ausgabe Objekten zurückgibt), sollte die [System. Management. Automation. Cmdlet. Write-Object](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) -Methode aufrufen, wobei der zweite Parameter auf `true`festgelegt ist.
 
 ### <a name="make-cmdlets-case-insensitive-and-case-preserving-sc04"></a>Cmdlets ohne Berücksichtigung der Groß-/Kleinschreibung und Groß-/Kleinschreibung (Sc04)
 
 Standardmäßig wird von Windows PowerShell selbst keine Groß-/Kleinschreibung beachtet. Da es jedoch viele bereits vorhandene Systeme behandelt, behält Windows PowerShell die Groß-/Kleinschreibung bei, um den Betrieb und die Kompatibilität zu vereinfachen. Anders ausgedrückt: Wenn ein Zeichen in Großbuchstaben angegeben wird, speichert Windows PowerShell es in Großbuchstaben. Damit Systeme gut funktionieren, muss ein Cmdlet dieser Konvention folgen. Wenn möglich, sollte die Groß-/Kleinschreibung nicht beachtet werden. Der ursprüngliche Fall für Cmdlets, die später in einem Befehl oder in der Pipeline auftreten, sollte jedoch beibehalten werden.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Erforderliche Entwicklungs Richtlinien](./required-development-guidelines.md)
 

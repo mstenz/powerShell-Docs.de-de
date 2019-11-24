@@ -20,7 +20,7 @@ ms.locfileid: "72364449"
 Wenn Sie .NET Framework Objekte erweitern, können Sie den-Objekten Alias Eigenschaften, Code Eigenschaften, Notiz Eigenschaften, Skript Eigenschaften und Eigenschaften Sätze hinzufügen. Die XML-Daten, die diese Eigenschaften definieren, werden in den folgenden Abschnitten beschrieben.
 
 > [!NOTE]
-> Die Beispiele in den folgenden Abschnitten stammen aus der standardmäßigen `Types.ps1xml`-Typen Datei im PowerShell-Installationsverzeichnis (`$PSHOME`). Weitere Informationen finden Sie unter [about Types. ps1xml](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml).
+> Die Beispiele in den folgenden Abschnitten stammen aus der standardmäßigen `Types.ps1xml` Types-Datei im PowerShell-Installationsverzeichnis (`$PSHOME`). Weitere Informationen finden Sie unter [about Types. ps1xml](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml).
 
 ## <a name="alias-properties"></a>Alias Eigenschaften
 
@@ -65,7 +65,7 @@ Im folgenden Beispiel wird die **Mode** -Eigenschaft dem [System. IO. directoriy
 
 Eine Hinweis Eigenschaft definiert eine Eigenschaft, die über einen statischen Wert verfügt.
 
-Im folgenden Beispiel wird die **Status** -Eigenschaft, deren Wert immer **Erfolg**ist, dem [System. IO. directoriyinfo](/dotnet/api/System.IO.DirectoryInfo) -Typ hinzugefügt. Das [NoteProperty](/dotnet/api/system.management.automation.psnoteproperty) -Element definiert die erweiterte Eigenschaft als Note-Eigenschaft. Das [Name](/dotnet/api/system.management.automation.psmemberinfo.name) -Element gibt den Namen der erweiterten Eigenschaft an. Das [value](/dotnet/api/system.management.automation.psnoteproperty.value) -Element gibt den statischen Wert der erweiterten Eigenschaft an. Das `NoteProperty`-Element kann auch den Membern des Elements " [Membership Sets](/dotnet/api/system.management.automation.psmemberset) " hinzugefügt werden.
+Im folgenden Beispiel wird die **Status** -Eigenschaft, deren Wert immer **Erfolg**ist, dem [System. IO. directoriyinfo](/dotnet/api/System.IO.DirectoryInfo) -Typ hinzugefügt. Das [NoteProperty](/dotnet/api/system.management.automation.psnoteproperty) -Element definiert die erweiterte Eigenschaft als Note-Eigenschaft. Das [Name](/dotnet/api/system.management.automation.psmemberinfo.name) -Element gibt den Namen der erweiterten Eigenschaft an. Das [value](/dotnet/api/system.management.automation.psnoteproperty.value) -Element gibt den statischen Wert der erweiterten Eigenschaft an. Das `NoteProperty`-Element kann auch den Membern [des Elements Members](/dotnet/api/system.management.automation.psmemberset) hinzugefügt werden.
 
 ```xml
 <Type>
@@ -103,9 +103,9 @@ Im folgenden Beispiel wird die **VERSIONINFO** -Eigenschaft dem [System. IO. Fil
 
 Ein Eigenschaften Satz definiert eine Gruppe erweiterter Eigenschaften, auf die durch den Namen des Satzes verwiesen werden kann.
 Beispielsweise kann der [Format-Table](/powershell/module/Microsoft.PowerShell.Utility/Format-Table)
--**Eigenschafts** Parameter eine bestimmte Eigenschaft angeben, die angezeigt werden soll. Wenn ein Eigenschaften Satz angegeben wird, werden nur die Eigenschaften angezeigt, die zum Satz gehören.
+**Property** -Parameter eine bestimmte Eigenschaft festlegen, die angezeigt werden soll. Wenn ein Eigenschaften Satz angegeben wird, werden nur die Eigenschaften angezeigt, die zum Satz gehören.
 
-Es gibt keine Einschränkung hinsichtlich der Anzahl der Eigenschafts Sätze, die für ein Objekt definiert werden können. Die Eigenschaften Sätze, die zum Definieren der Standard Anzeigeeigenschaften eines Objekts verwendet werden, müssen jedoch innerhalb des **psstandardmembers** -Element Satzes angegeben werden. In der Datei "`Types.ps1xml`" sind die standardmäßigen Eigenschaften Satz Namen " **defaultdisplayproperty**", " **defaultdisplaypropertyset**" und " **defaultkeypropertyset**". Alle zusätzlichen Eigenschaften Sätze, die Sie dem **psstandardmembers** -Element Satz hinzufügen, werden ignoriert.
+Es gibt keine Einschränkung hinsichtlich der Anzahl der Eigenschafts Sätze, die für ein Objekt definiert werden können. Die Eigenschaften Sätze, die zum Definieren der Standard Anzeigeeigenschaften eines Objekts verwendet werden, müssen jedoch innerhalb des **psstandardmembers** -Element Satzes angegeben werden. In der Datei mit den `Types.ps1xml` Typen enthalten die standardmäßigen Eigenschaften Satz Namen " **defaultdisplayproperty**", " **defaultdisplaypropertyset**" und " **defaultkeypropertyset**". Alle zusätzlichen Eigenschaften Sätze, die Sie dem **psstandardmembers** -Element Satz hinzufügen, werden ignoriert.
 
 Im folgenden Beispiel wird der Wert der **defaultdisplaypropertyset** -Eigenschaft dem **psstandardmembers** -Element Satz des Typs [System. ServiceProcess. ServiceController](/dotnet/api/System.ServiceProcess.ServiceController) hinzugefügt. Das [PropertySet](/dotnet/api/system.management.automation.pspropertyset) -Element definiert die Gruppe von Eigenschaften. Das [Name](/dotnet/api/system.management.automation.psmemberinfo.name) -Element gibt den Namen des Eigenschaften Satzes an. Und das [referencedproperties](/dotnet/api/system.management.automation.pspropertyset.referencedpropertynames) -Element gibt die Eigenschaften des Satzes an. Sie können auch das `PropertySet`-Element den Membern des [Type](/dotnet/api/system.management.automation.pstypename) -Elements hinzufügen.
 

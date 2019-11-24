@@ -22,7 +22,7 @@ Häufig müssen Sie ein Cmdlet so entwerfen, dass es für eine Gruppe von Ressou
 
 ## <a name="windows-powershell-cmdlets-that-use-wildcards"></a>Windows PowerShell-Cmdlets, die Platzhalter verwenden
 
- Viele Windows PowerShell-Cmdlets unterstützen Platzhalter Zeichen für Ihre Parameterwerte. Beispielsweise unterstützt fast jedes Cmdlet, das über einen `Name`-oder `Path`-Parameter verfügt, Platzhalter Zeichen für diese Parameter. (Obwohl die meisten Cmdlets, die über einen `Path`-Parameter verfügen, auch über einen `LiteralPath`-Parameter verfügen, der keine Platzhalter Zeichen unterstützt.) Der folgende Befehl zeigt, wie ein Platzhalter Zeichen verwendet wird, um alle Cmdlets in der aktuellen Sitzung zurückzugeben, deren Name das Get-Verb enthält.
+ Viele Windows PowerShell-Cmdlets unterstützen Platzhalter Zeichen für Ihre Parameterwerte. Beispielsweise unterstützt fast jedes Cmdlet, das über einen `Name` oder `Path` Parameter verfügt, Platzhalter Zeichen für diese Parameter. (Obwohl die meisten Cmdlets, die über einen `Path` Parameter verfügen, auch über einen `LiteralPath` Parameter verfügen, der keine Platzhalter Zeichen unterstützt.) Der folgende Befehl zeigt, wie ein Platzhalter Zeichen verwendet wird, um alle Cmdlets in der aktuellen Sitzung zurückzugeben, deren Name das Get-Verb enthält.
 
  `Get-Command get-*`
 
@@ -30,7 +30,7 @@ Häufig müssen Sie ein Cmdlet so entwerfen, dass es für eine Gruppe von Ressou
 
 Windows PowerShell unterstützt die folgenden Platzhalter Zeichen.
 
-| Wild |                             Description                             |  Beispiel   |     Treffer      | Stimmt nicht überein mit |
+| Wild |                             Beschreibung                             |  Beispiel   |     Treffer      | Stimmt nicht überein mit |
 | -------- | ------------------------------------------------------------------- | ---------- | ---------------- | -------------- |
 | *        | Entspricht 0 (null) oder mehr Zeichen, beginnend an der angegebenen Position. | `a*`       | A, AG, Apple     |                |
 | ?        | Entspricht einem beliebigen Zeichen an der angegebenen Position.                     | `?n`       | Ein, in, ein       | an            |
@@ -41,7 +41,7 @@ Wenn Sie Cmdlets entwerfen, die Platzhalter Zeichen unterstützen, lassen Sie Ko
 
 `Get-ChildItem c:\techdocs\[a-l]\*.txt`
 
-Der vorherige Befehl verwendet den Bereichs Platzhalter `[a-l]`, um anzugeben, dass der Dateiname mit den Zeichen "a" bis "l" beginnen soll, und verwendet das Platzhalter Zeichen "`*`" als Platzhalter für alle Zeichen zwischen dem ersten Buchstaben des Datei namens und der txt-Datei **.** Erweiterung.
+Der vorherige Befehl verwendet den Bereich Platzhalter `[a-l]`, um anzugeben, dass der Dateiname mit den Zeichen "a" bis "l" beginnen soll, und verwendet das `*` Platzhalter Zeichen als Platzhalter für alle Zeichen zwischen dem ersten Buchstaben des Datei namens und der Erweiterung " **. txt** ".
 
 Im folgenden Beispiel wird ein Bereichs Halter Muster verwendet, das den Buchstaben "d" ausschließt, aber alle anderen Buchstaben von "a" bis "f" umfasst.
 
@@ -55,13 +55,13 @@ Das folgende Muster enthält z. b. zwei eckige Klammern, die wörtlich genommen 
 
 Wenn Sie in der PowerShell-API verwendet wird, verwenden Sie:
 
-- "John Smith \` [* ']"
+- "John Smith \`[* ']"
 
 Wenn Sie von der PowerShell-Eingabeaufforderung verwendet wird:
 
-- "John Smith \` @ no__t-1 [* \` ']"
+- "John Smith \`\`[*\`']"
 
-Dieses Muster entspricht "John Smith [Marketing]" oder "John Smith [Development]". Beispiel:
+Dieses Muster entspricht "John Smith [Marketing]" oder "John Smith [Development]". Zum Beispiel:
 
 ```
 PS> "John Smith [Marketing]" -like "John Smith ``[*``]"
@@ -76,7 +76,7 @@ True
 Wenn Cmdlet-Parameter Platzhalter Zeichen unterstützen, generiert der Vorgang normalerweise eine Array Ausgabe.
 Gelegentlich ist es nicht sinnvoll, eine Array Ausgabe zu unterstützen, da der Benutzer möglicherweise nur ein einzelnes Element verwendet. Beispielsweise unterstützt das Cmdlet "`Set-Location`" die Array Ausgabe nicht, da der Benutzer nur einen einzigen Speicherort festlegt. In diesem Fall unterstützt das Cmdlet weiterhin Platzhalter Zeichen, aber es erzwingt die Auflösung an einem einzelnen Speicherort.
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Schreiben eines Windows PowerShell-Cmdlets](./writing-a-windows-powershell-cmdlet.md)
 

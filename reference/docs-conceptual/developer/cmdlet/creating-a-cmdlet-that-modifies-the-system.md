@@ -26,15 +26,15 @@ Manchmal muss ein Cmdlet den Lauf Zustand des Systems ändern, nicht nur den Sta
 
 Zur Unterstützung der Bestätigung muss ein Cmdlet zwei Aktionen ausführen.
 
-- Deklarieren Sie, dass das Cmdlet die Bestätigung unterstützt, wenn Sie das [System. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) -Attribut angeben, indem Sie das Schlüsselwort supportsschulter dprocess auf `true` festlegen.
+- Deklarieren Sie, dass das Cmdlet die Bestätigung unterstützt, wenn Sie das [System. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) -Attribut angeben, indem Sie das Schlüsselwort supportsschulter dprocess auf `true`festlegen.
 
 - Während der Ausführung des Cmdlets wird [System. Management. Automation. Cmdlet. rudprocess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) aufgerufen (wie im folgenden Beispiel gezeigt).
 
-Durch die Unterstützung der Bestätigung macht ein Cmdlet die Parameter "`Confirm`" und "`WhatIf`" verfügbar, die von Windows PowerShell bereitgestellt werden, und erfüllt außerdem die Entwicklungs Richtlinien für Cmdlets (Weitere Informationen zu Cmdlet-Entwicklungs Richtlinien finden Sie unter [Cmdlet Entwicklungs Richtlinien](./cmdlet-development-guidelines.md).)
+Durch die Unterstützung der Bestätigung macht ein Cmdlet die `Confirm` und `WhatIf` Parameter verfügbar, die von Windows PowerShell bereitgestellt werden, und erfüllt außerdem die Entwicklungs Richtlinien für Cmdlets (Weitere Informationen zu Cmdlet-Entwicklungs Richtlinien finden Sie unter [Cmdlet-Entwicklungs Richtlinien](./cmdlet-development-guidelines.md)).
 
 ## <a name="changing-the-system"></a>Ändern des Systems
 
-Der Vorgang "Ändern des Systems" bezieht sich auf jedes Cmdlet, das möglicherweise den Status des Systems außerhalb von Windows PowerShell ändert. Das Beenden eines Prozesses, das Aktivieren oder Deaktivieren eines Benutzerkontos oder das Hinzufügen einer Zeile zu einer Datenbanktabelle sind alle Änderungen am System, die bestätigt werden sollen. Im Gegensatz dazu ändern Vorgänge, die Daten lesen oder vorübergehende Verbindungen herstellen, das System nicht und erfordern im Allgemeinen keine Bestätigung. Die Bestätigung wird auch nicht für Aktionen benötigt, deren Auswirkung auf in der Windows PowerShell-Laufzeit beschränkt ist, wie z. b. `set-variable`. Cmdlets, die eine permanente Änderung möglicherweise vornehmen, sollten `SupportsShouldProcess` deklarieren und [System. Management. Automation. Cmdlet. tiondprocess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) nur dann abrufen, wenn Sie eine permanente Änderung vornehmen.
+Der Vorgang "Ändern des Systems" bezieht sich auf jedes Cmdlet, das möglicherweise den Status des Systems außerhalb von Windows PowerShell ändert. Das Beenden eines Prozesses, das Aktivieren oder Deaktivieren eines Benutzerkontos oder das Hinzufügen einer Zeile zu einer Datenbanktabelle sind alle Änderungen am System, die bestätigt werden sollen. Im Gegensatz dazu ändern Vorgänge, die Daten lesen oder vorübergehende Verbindungen herstellen, das System nicht und erfordern im Allgemeinen keine Bestätigung. Die Bestätigung wird auch nicht für Aktionen benötigt, deren Auswirkung auf in der Windows PowerShell-Laufzeit beschränkt ist, wie z. b. `set-variable`. Cmdlets, die möglicherweise eine permanente Änderung vornehmen, sollten `SupportsShouldProcess` deklarieren und [System. Management. Automation. Cmdlet. dauerdprocess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) nur dann abrufen, wenn Sie im Begriff sind, eine permanente Änderung vorzunehmen.
 
 > [!NOTE]
 > Die Bestätigungsprozess Bestätigung gilt nur für Cmdlets. Wenn ein Befehl oder ein Skript den Lauf Zustand eines Systems durch direktes Aufrufen von .NET-Methoden oder-Eigenschaften oder durch Aufrufen von Anwendungen außerhalb von Windows PowerShell ändert, ist diese Form der Bestätigung nicht verfügbar.
@@ -55,11 +55,11 @@ Im folgenden finden Sie die Klassendefinition für dieses Cmdlet "Pause-proc".
 public class StopProcCommand : Cmdlet
 ```
 
-Beachten Sie, dass das `SupportsShouldProcess`-Attribut Schlüsselwort in der [System. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) -Deklaration auf `true` festgelegt ist, damit das Cmdlet Aufrufe an [System. Management. Automation. Cmdlet. tiondprocess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) und [ System. Management. Automation. Cmdlet. schuldcontinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue). Wenn dieses Schlüsselwort nicht festgelegt ist, sind die Parameter "`Confirm`" und "`WhatIf`" für den Benutzer nicht verfügbar.
+Beachten Sie, dass das `SupportsShouldProcess` Attribute-Schlüsselwort in der [System. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) -Deklaration auf `true` festgelegt ist, um das Cmdlet zum Aufrufen von [System. Management. Automation. Cmdlet. Schulter dprocess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) und [System. Management. Automation. Cmdlet. Schulter dcontinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)zu aktivieren. Wenn dieses Schlüsselwort nicht festgelegt ist, sind die Parameter `Confirm` und `WhatIf` für den Benutzer nicht verfügbar.
 
 ### <a name="extremely-destructive-actions"></a>Äußerst zerstörerische Aktionen
 
-Einige Vorgänge sind äußerst destruktiv, z. b. die Neuformatierung einer aktiven Festplatten Partition. In diesen Fällen sollte das Cmdlet beim Deklarieren des [System. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) -Attributs `ConfirmImpact` @ no__t-1 @ no__t-2 festlegen. Diese Einstellung erzwingt, dass das Cmdlet die Benutzer Bestätigung anfordert, auch wenn der Benutzer den `Confirm`-Parameter nicht angegeben hat. Cmdlet-Entwickler sollten jedoch vermeiden, `ConfirmImpact` für Vorgänge zu übernehmen, die nur potenziell destruktiv sind, wie z. b. das Löschen eines Benutzerkontos. Beachten Sie, dass `ConfirmImpact` auf [System. Management. Automation. confirmimpact](/dotnet/api/System.Management.Automation.ConfirmImpact) **High**festgelegt ist.
+Einige Vorgänge sind äußerst destruktiv, z. b. die Neuformatierung einer aktiven Festplatten Partition. In diesen Fällen sollte das Cmdlet `ConfirmImpact` = `ConfirmImpact.High` festlegen, wenn das [System. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) -Attribut deklariert wird. Diese Einstellung erzwingt, dass das Cmdlet die Benutzer Bestätigung anfordert, auch wenn der Benutzer den `Confirm`-Parameter nicht angegeben hat. Cmdlet-Entwickler sollten jedoch vermeiden, `ConfirmImpact` für Vorgänge zu übernehmen, die nur potenziell destruktiv sind, wie z. b. das Löschen eines Benutzerkontos. Beachten Sie, dass `ConfirmImpact` auf [System. Management. Automation. confirmimpact](/dotnet/api/System.Management.Automation.ConfirmImpact) **High**festgelegt ist.
 
 Ebenso ist es unwahrscheinlich, dass einige Vorgänge destruktiv sind, obwohl Sie theoretisch den Lauf Zustand eines Systems außerhalb von Windows PowerShell ändern. Diese Cmdlets können `ConfirmImpact` auf [System. Management. Automation. confirmimpact. Low](/dotnet/api/system.management.automation.confirmimpact?view=powershellsdk-1.1.0)festlegen. Dadurch werden Bestätigungs Anforderungen umgangen, bei denen der Benutzer aufgefordert wurde, nur Vorgänge mit mittlerer Auswirkung und hohem Einfluss zu bestätigen.
 
@@ -67,13 +67,13 @@ Ebenso ist es unwahrscheinlich, dass einige Vorgänge destruktiv sind, obwohl Si
 
 In diesem Abschnitt wird beschrieben, wie Sie die Cmdlet-Parameter definieren, einschließlich derjenigen, die zur Unterstützung der Systemänderung benötigt werden. Weitere Informationen zum Definieren von Parametern finden Sie unter [Hinzufügen von Parametern, die die Befehlszeilen Eingabe verarbeiten](./adding-parameters-that-process-command-line-input.md) .
 
-Das Cmdlet "Break-proc" definiert drei Parameter: `Name`, `Force` und `PassThru`.
+Das Cmdlet "Break-proc" definiert drei Parameter: `Name`, `Force`und `PassThru`.
 
-Der Parameter "`Name`" entspricht der Eigenschaft "`Name`" des Prozess Eingabe Objekts. Beachten Sie, dass der Parameter "`Name`" in diesem Beispiel obligatorisch ist, da das Cmdlet fehlschlägt, wenn kein benannter Prozess zum Abbrechen vorhanden ist.
+Der `Name`-Parameter entspricht der `Name`-Eigenschaft des Process Input-Objekts. Beachten Sie, dass der `Name`-Parameter in diesem Beispiel obligatorisch ist, da das Cmdlet fehlschlägt, wenn kein benannter Prozess zum Abbrechen vorhanden ist.
 
-Mit dem Parameter "`Force`" kann der Benutzer Aufrufe von " [System. Management. Automation. Cmdlet. undcontinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)" überschreiben. Tatsächlich sollte jedes Cmdlet, das [System. Management. Automation. Cmdlet. tiondcontinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) aufruft, über einen `Force`-Parameter verfügen, sodass das Cmdlet beim Angeben von `Force` den Aufruf von [System. Management. Automation. Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) überspringt. und wird mit dem-Vorgang fortgesetzt. Beachten Sie, dass dies keine Auswirkungen auf Aufrufe von [System. Management. Automation. Cmdlet. schuldprocess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)hat.
+Der `Force`-Parameter ermöglicht dem Benutzer das außer Kraft setzen von Aufrufen von [System. Management. Automation. Cmdlet. Schulter dcontinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue). Tatsächlich sollte jedes Cmdlet, das [System. Management. Automation. Cmdlet. daudcontinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) aufruft, über einen `Force`-Parameter verfügen, damit das Cmdlet bei Angabe von `Force` den Aufruf von [System. Management. Automation. Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) überspringt und den Vorgang fortsetzt. Beachten Sie, dass dies keine Auswirkungen auf Aufrufe von [System. Management. Automation. Cmdlet. schuldprocess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)hat.
 
-Mit dem Parameter "`PassThru`" kann der Benutzer angeben, ob das Cmdlet ein Ausgabe Objekt über die Pipeline übergibt, in diesem Fall, nachdem ein Prozess beendet wurde. Beachten Sie, dass dieser Parameter nicht an eine Eigenschaft des Eingabe Objekts, sondern an das Cmdlet selbst gebunden ist.
+Mit dem `PassThru`-Parameter kann der Benutzer angeben, ob das Cmdlet ein Ausgabe Objekt über die Pipeline übergibt, in diesem Fall, nachdem ein Prozess angehalten wurde. Beachten Sie, dass dieser Parameter nicht an eine Eigenschaft des Eingabe Objekts, sondern an das Cmdlet selbst gebunden ist.
 
 Hier ist die Parameter Deklaration für das Cmdlet "halte-proc".
 
@@ -120,7 +120,7 @@ private bool passThru;
 
 ## <a name="overriding-an-input-processing-method"></a>Überschreiben einer Eingabe Verarbeitungsmethode
 
-Das Cmdlet muss eine Eingabe Verarbeitungsmethode überschreiben. Der folgende Code veranschaulicht die [System. Management. Automation. Cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) -außer Kraft setzung, die im Beispiel-Cmdlet "halte-proc" verwendet wird. Diese Methode stellt für jeden angeforderten Prozessnamen sicher, dass es sich bei dem Prozess nicht um einen speziellen Prozess handelt, versucht, den Prozess zu beenden, und sendet dann ein Ausgabe Objekt, wenn der Parameter "`PassThru`" angegeben wird.
+Das Cmdlet muss eine Eingabe Verarbeitungsmethode überschreiben. Der folgende Code veranschaulicht die [System. Management. Automation. Cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) -außer Kraft setzung, die im Beispiel-Cmdlet "halte-proc" verwendet wird. Diese Methode stellt für jeden angeforderten Prozessnamen sicher, dass es sich bei dem Prozess nicht um einen speziellen Prozess handelt, versucht, den Prozess zu beenden, und sendet dann ein Ausgabe Objekt, wenn der `PassThru` Parameter angegeben wird.
 
 ```csharp
 protected override void ProcessRecord()
@@ -229,7 +229,7 @@ Die Eingabe Verarbeitungsmethode des Cmdlets muss die [System. Management. Autom
 > [!NOTE]
 > Wenn ein Cmdlet angibt, dass es von unterstützt wird, und den [System. Management. Automation. Cmdlet.](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) --Prozess nicht aufzurufen, kann der Benutzer das System möglicherweise unerwartet ändern.
 
-Der [System. Management. Automation. Cmdlet. tiondprocess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) -Befehl sendet den Namen der Ressource, die an den Benutzer geändert werden soll, wobei die Windows PowerShell-Laufzeit alle Befehlszeilen Einstellungen oder Einstellungs Variablen beim Bestimmen der sollte dem Benutzer angezeigt werden.
+Der [System. Management. Automation. Cmdlet. tiondprocess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) -Befehl sendet den Namen der Ressource, die an den Benutzer geändert werden soll, wobei die Windows PowerShell-Laufzeit alle Befehlszeilen Einstellungen oder Einstellungs Variablen berücksichtigt, um zu bestimmen, was dem Benutzer angezeigt werden soll.
 
 Im folgenden Beispiel wird der System [. Management. Automation. Cmdlet. tiondprocess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) -Befehl aus der Überschreibung der [System. Management. Automation. Cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) -Methode im Sample-proc-Cmdlet gezeigt.
 
@@ -243,7 +243,7 @@ if (!ShouldProcess(string.Format("{0} ({1})", processName,
 
 ## <a name="calling-the-shouldcontinue-method"></a>Aufrufen der Methode "schuldcontinue"
 
-Der Aufrufe der [System. Management. Automation. Cmdlet. Schulter dcontinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) -Methode sendet eine sekundäre Nachricht an den Benutzer. Dieser Vorgang wird ausgelöst, nachdem der [System. Management. Automation. Cmdlet. tiondprocess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) -Befehl `true` zurückgegeben hat und der `Force`-Parameter nicht auf `true` festgelegt wurde. Der Benutzer kann dann Feedback geben, um anzugeben, ob der Vorgang fortgesetzt werden soll. Ihr Cmdlet ruft die [System. Management. Automation. Cmdlet. tiondcontinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) auf, um eine zusätzliche Überprüfung auf potenziell gefährliche System Änderungen vorzunehmen, oder wenn Sie dem Benutzer die Optionen Yes-to-all und No-to-all bereitstellen möchten.
+Der Aufrufe der [System. Management. Automation. Cmdlet. Schulter dcontinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) -Methode sendet eine sekundäre Nachricht an den Benutzer. Dieser Befehl wird ausgelöst, nachdem der [System. Management. Automation. Cmdlet. Schulter dprocess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) -Befehl `true` zurückgegeben hat und der `Force`-Parameter nicht auf `true`festgelegt wurde. Der Benutzer kann dann Feedback geben, um anzugeben, ob der Vorgang fortgesetzt werden soll. Ihr Cmdlet ruft die [System. Management. Automation. Cmdlet. tiondcontinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) auf, um eine zusätzliche Überprüfung auf potenziell gefährliche System Änderungen vorzunehmen, oder wenn Sie dem Benutzer die Optionen Yes-to-all und No-to-all bereitstellen möchten.
 
 Im folgenden Beispiel wird der System [. Management. Automation. Cmdlet. tiondcontinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) -aufrufsvorgang von der Überschreibung der [System. Management. Automation. Cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) -Methode im Sample-proc-Cmdlet gezeigt.
 
@@ -270,7 +270,7 @@ if (criticalProcess &&!force)
 
 ## <a name="stopping-input-processing"></a>Beenden der Eingabe Verarbeitung
 
-Die Eingabe Verarbeitungsmethode eines Cmdlets, das Systemänderungen vornimmt, muss eine Möglichkeit zum Beenden der Verarbeitung von Eingaben bereitstellen. Bei diesem Cmdlet "beenden-proc" wird ein-Befehl von der [System. Management. Automation. Cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) -Methode an die [System. Diagnostics. Process. Kill *](/dotnet/api/System.Diagnostics.Process.Kill) -Methode durchgeführt. Da der Parameter "`PassThru`" auf `true` festgelegt ist, wird von [System. Management. Automation. Cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) auch [System. Management. Automation. Cmdlet. Write Object](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) aufgerufen, um das Prozess Objekt an die Pipeline zu senden.
+Die Eingabe Verarbeitungsmethode eines Cmdlets, das Systemänderungen vornimmt, muss eine Möglichkeit zum Beenden der Verarbeitung von Eingaben bereitstellen. Bei diesem Cmdlet "beenden-proc" wird ein-Befehl von der [System. Management. Automation. Cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) -Methode an die [System. Diagnostics. Process. Kill *](/dotnet/api/System.Diagnostics.Process.Kill) -Methode durchgeführt. Da der `PassThru`-Parameter auf `true`festgelegt ist, wird von [System. Management. Automation. Cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) auch [System. Management. Automation. Cmdlet. Write Object](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) aufgerufen, um das Prozess Objekt an die Pipeline zu senden.
 
 ## <a name="code-sample"></a>Code Beispiel
 
@@ -288,7 +288,7 @@ Nachdem ein Cmdlet implementiert wurde, muss es über ein Windows PowerShell-Sna
 
 Wenn das Cmdlet bei Windows PowerShell registriert wurde, können Sie es in der Befehlszeile testen. Es folgen mehrere Tests, bei denen das Cmdlet "Stopp-proc" getestet wird. Weitere Informationen zur Verwendung von Cmdlets über die Befehlszeile finden Sie unter [Getting Started with Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell).
 
-- Starten Sie Windows PowerShell, und verwenden Sie das Cmdlet "Break-proc", um die Verarbeitung wie unten dargestellt zu starten. Da das Cmdlet den Parameter "`Name`" als obligatorisch angibt, fragt das Cmdlet den Parameter ab.
+- Starten Sie Windows PowerShell, und verwenden Sie das Cmdlet "Break-proc", um die Verarbeitung wie unten dargestellt zu starten. Da das Cmdlet den `Name` Parameter als obligatorisch angibt, fragt das Cmdlet den Parameter ab.
 
     ```powershell
     PS> stop-proc
@@ -350,7 +350,7 @@ Die folgende Ausgabe wird angezeigt.
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): N
     ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Hinzufügen von Parametern zur Verarbeitung der Befehlszeilen Eingabe](./adding-parameters-that-process-command-line-input.md)
 
