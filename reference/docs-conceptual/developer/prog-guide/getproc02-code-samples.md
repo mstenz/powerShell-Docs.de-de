@@ -1,5 +1,5 @@
 ---
-title: GetProc02 Code Samples | Microsoft Docs
+title: GetProc02-Code Beispiele | Microsoft-Dokumentation
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -17,22 +17,22 @@ ms.locfileid: "74416173"
 ---
 # <a name="getproc02-code-samples"></a>GetProc02-Codebeispiele
 
-Here are the code samples for the GetProc02 sample cmdlet. This is the `Get-Process` cmdlet sample described in [Adding Parameters that Process Command-Line Input](../cmdlet/adding-parameters-that-process-command-line-input.md). This `Get-Process` cmdlet retrieves processes based on their name, and then displays information about the processes at the command line.
+Im folgenden finden Sie die Codebeispiele für das Cmdlet "GetProc02 Sample". Dies ist das `Get-Process` Cmdlet-Beispiel, das unter [Hinzufügen von Parametern zur Verarbeitung der Befehlszeilen Eingabe](../cmdlet/adding-parameters-that-process-command-line-input.md)beschrieben wird. Dieses `Get-Process`-Cmdlet ruft Prozesse anhand ihres Namens ab und zeigt dann Informationen zu den Prozessen in der Befehlszeile an.
 
 > [!NOTE]
-> You can download the C# source file (getproc02.cs) for this Get-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
+> Sie können die C# Quelldatei (getproc02.cs) für dieses Get-proc-Cmdlet mit dem Microsoft Windows Software Development Kit für Windows Vista und .NET Framework 3,0-Laufzeitkomponenten herunterladen. Anweisungen zum Herunterladen finden Sie unter [Installieren von Windows PowerShell und Herunterladen des Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
 >
-> The downloaded source files are available in the **\<PowerShell Samples>** directory.
+> Die heruntergeladenen Quelldateien stehen im **\<PowerShell-Beispiele >** Verzeichnis zur Verfügung.
 
-For complete sample code, see the following topics.
+Einen umfassenden Beispielcode finden Sie in den folgenden Themen.
 
-|Language|Thema|
+|Sprache|Thema|
 |--------------|-----------|
-|C#|[GetProc02 (C#) Sample Code](./getproc02-csharp-sample-code.md)|
-|VB.NET|[GetProc02 (VB.NET) Sample Code](./getproc02-vb-net-sample-code.md)|
+|C#|[GetProc02 (C#)-Beispiel Code](./getproc02-csharp-sample-code.md)|
+|VB.NET|[GetProc02 (VB.net)-Beispiel Code](./getproc02-vb-net-sample-code.md)|
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell-Programmier Handbuch](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)
