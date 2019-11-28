@@ -2,12 +2,12 @@
 ms.date: 07/10/2019
 keywords: jea,powershell,security
 title: JEA-Voraussetzungen
-ms.openlocfilehash: 8fca5c068412e86acfdb8bed400699f721b76191
-ms.sourcegitcommit: e894ed833cef57967cdaf002f8c883f66864e836
+ms.openlocfilehash: 1833bacf49eebcccefc10f7c85a39732559c1a97
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2019
-ms.locfileid: "70017811"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416727"
 ---
 # <a name="prerequisites"></a>Voraussetzungen
 
@@ -60,7 +60,7 @@ Sie können JEA auch auf Ihrem Heim- oder Firmencomputer verwenden:
 
 ### <a name="install-windows-management-framework"></a>Installieren von Windows Management Framework
 
-Wenn Sie eine ältere Version von PowerShell ausführen, müssen Sie Ihr System möglicherweise mit dem aktuellen Update von Windows Management Framework (WMF) aktualisieren. Weitere Informationen finden Sie in der [WMF-Dokumentation](/powershell/wmf/overview).
+Wenn Sie eine ältere Version von PowerShell ausführen, müssen Sie Ihr System möglicherweise mit dem aktuellen Update von Windows Management Framework (WMF) aktualisieren. Weitere Informationen finden Sie in der [WMF-Dokumentation](/powershell/scripting/wmf/overview).
 
 Es wird empfohlen, vor dem Upgrade aller Server die Kompatibilität Ihrer Workload mit WMF zu testen.
 

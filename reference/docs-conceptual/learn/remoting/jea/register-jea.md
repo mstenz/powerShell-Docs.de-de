@@ -2,12 +2,12 @@
 ms.date: 07/10/2019
 keywords: jea,powershell,security
 title: Registrieren von JEA-Konfigurationen
-ms.openlocfilehash: c85eddea2196e4db4bbeea54bde11074f3d1c927
-ms.sourcegitcommit: e894ed833cef57967cdaf002f8c883f66864e836
+ms.openlocfilehash: dbed5c7dd71f2f7a09d97416be56dff675799548
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2019
-ms.locfileid: "70017711"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417616"
 ---
 # <a name="registering-jea-configurations"></a>Registrieren von JEA-Konfigurationen
 
@@ -51,7 +51,7 @@ Nach der Registrierung können Sie [JEA verwenden](using-jea.md). Sie können di
 
 ## <a name="multi-machine-configuration-with-dsc"></a>Konfigurieren mehrerer Computer mit DSC (Desired State Configuration)
 
-Wenn Sie JEA auf mehreren Computern bereitstellen, bietet sich als einfachstes Bereitstellungsmodell die Verwendung der JEA-[DSC-](/powershell/dsc/overview)-Ressource (Desired State Configuration) an, um JEA schnell und konsistent auf jedem Computer bereitzustellen.
+Wenn Sie JEA auf mehreren Computern bereitstellen, bietet sich als einfachstes Bereitstellungsmodell die Verwendung der JEA-[DSC-](/powershell/scripting/dsc/overview)-Ressource (Desired State Configuration) an, um JEA schnell und konsistent auf jedem Computer bereitzustellen.
 
 Um JEA mit DSC bereitzustellen, müssen die folgenden Voraussetzungen erfüllt sein:
 
@@ -59,7 +59,7 @@ Um JEA mit DSC bereitzustellen, müssen die folgenden Voraussetzungen erfüllt s
 - Das PowerShell-Modul, das die Rollen enthält, ist auf einer (schreibgeschützten) Freigabe gespeichert, auf die von jedem Computer aus zugegriffen werden kann.
 - Die Einstellungen für die Sitzungskonfiguration wurden festgelegt. Sie müssen keine Sitzungskonfigurationsdatei erstellen, um die JEA-DSC-Ressource zu verwenden.
 - Sie verfügen über Anmeldeinformationen, die Verwaltungsaktionen auf allen Computern ermöglichen, oder Sie haben Zugriff auf einen DSC-Pullserver, um die Computer zu verwalten.
-- Sie haben die [JEA-DSC-Ressourcen](https://github.com/PowerShell/JEA/tree/master/DSC%20Resource) heruntergeladen.
+- Sie haben die [JEA-DSC-Ressourcen](https://github.com/powershell/JEA/tree/master/DSC%20Resource) heruntergeladen.
 
 Erstellen Sie auf einem Zielcomputer (oder gegebenenfalls einem Pullserver) eine DSC-Konfiguration für Ihren JEA-Endpunkt. In dieser Konfiguration definiert die **JustEnoughAdministration**-DSC-Ressource die Sitzungskonfigurationsdatei, und die **Dateiressource** kopiert die Rollenfunktionen aus der Dateifreigabe.
 
@@ -102,7 +102,7 @@ Configuration JEAMaintenance
 }
 ```
 
-Diese Konfiguration wird danach auf einem System angewendet. Dazu müssen Sie den [lokalen Konfigurations-Manager aufrufen ](/powershell/dsc/managing-nodes/metaConfig) oder die [Pullserverkonfiguration](/powershell/dsc/pull-server/pullServer) aktualisieren.
+Diese Konfiguration wird danach auf einem System angewendet. Dazu müssen Sie den [lokalen Konfigurations-Manager aufrufen ](/powershell/scripting/dsc/managing-nodes/metaConfig) oder die [Pullserverkonfiguration](/powershell/scripting/dsc/pull-server/pullServer) aktualisieren.
 
 Mithilfe der DSC-Ressource können Sie außerdem den **Microsoft.PowerShell**-Standardendpunkt ersetzen. Wenn dieser ersetzt wird, registriert die Ressource automatisch einen Sicherungsendpunkt namens **Microsoft.PowerShell.Restricted**. Der Sicherungsendpunkt verfügt über die Standard-WinRM-ACL, die Remotemanagementbenutzern und Mitgliedern der lokalen Administratorengruppe erlaubt, auf diesen zuzugreifen.
 

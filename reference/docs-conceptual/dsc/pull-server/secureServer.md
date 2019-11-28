@@ -2,19 +2,19 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Bewährte Methoden für Pullserver
-ms.openlocfilehash: a3c4ca039b1e061a9246848bef6aeecebcd89011
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.openlocfilehash: 5cb47598b11f7884dddf1440cec21afeab49bebb
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71953527"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417732"
 ---
 # <a name="pull-server-best-practices"></a>Bewährte Methoden für Pullserver
 
 Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 > [!IMPORTANT]
-> Der Pull-Server (Windows-Feature *DSC-Dienst*) ist eine von Windows Server unterstützte Komponente, jedoch sollen keine neuen Features oder Funktionen angeboten werden. Es wird empfohlen, verwaltete Clients auf [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) umzustellen (enthält Features zusätzlich zum Pull-Server unter Windows Server) oder auf eine der [hier](/powershell/dsc/pull-server/pullserver#community-solutions-for-pull-service) aufgeführten Communitylösungen.
+> Der Pull-Server (Windows-Feature *DSC-Dienst*) ist eine von Windows Server unterstützte Komponente, jedoch sollen keine neuen Features oder Funktionen angeboten werden. Es wird empfohlen, verwaltete Clients auf [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) umzustellen (enthält Features zusätzlich zum Pull-Server unter Windows Server) oder auf eine der [hier](/powershell/scripting/dsc/pull-server/pullserver#community-solutions-for-pull-service) aufgeführten Communitylösungen.
 
 Zusammenfassung: Dieser Artikel enthält Prozesse und Erweiterungen, die Techniker beim Vorbereiten von Lösungen helfen sollen. Details sollten bewährte Methoden bereitstellen, die von Kunden ermittelt und dann vom Produktteam bestätigt wurden, um sicherzustellen, dass die Empfehlungen in die Zukunft gerichtet sind und als stabil angesehen werden.
 
@@ -27,7 +27,7 @@ Veröffentlicht | April 2015
 ## <a name="abstract"></a>Zusammenfassung
 
 Dieses Dokument soll als offizieller Leitfaden für alle dienen, die die Implementierung eines Windows PowerShell DSC-Pullservers planen. Ein Pullserver ist ein einfacher Dienst, der in wenigen Minuten bereitgestellt sein sollte. Obwohl dieses Dokument technische Hilfe und Anleitungen zur Verfügung stellen soll, die in einer Bereitstellung genutzt werden können, stellt dieses eine Referenz für bewährte Methoden und die zu beachtenden Punkte vor der Bereitstellung dar.
-Leser sollten über grundlegende DSC-Kenntnisse verfügen und die Bestimmungen kennen, mit denen die Komponenten beschrieben werden, die in einer DSC-Bereitstellung enthalten sind. Weitere Informationen finden Sie im Thema [Windows PowerShell DSC – Übersicht](/powershell/dsc/overview).
+Leser sollten über grundlegende DSC-Kenntnisse verfügen und die Bestimmungen kennen, mit denen die Komponenten beschrieben werden, die in einer DSC-Bereitstellung enthalten sind. Weitere Informationen finden Sie im Thema [Windows PowerShell DSC – Übersicht](/powershell/scripting/dsc/overview).
 Da sich DSC im gleichen Maße weiterentwickeln sollte, wie sich die Cloudinfrastruktur weiterentwickelt, wird die zugrunde liegende Technologie einschließlich des Pullservers sich ebenfalls weiterentwickeln und neue Funktionen einführen. Dieses Dokument enthält eine Versionstabelle im Anhang, die Referenzen zu vorherigen Versionen und in die Zukunft gerichteten Lösungen bereitstellt, um in die Zukunft gerichtete Entwürfe zu fördern.
 
 Die zwei Hauptabschnitte dieses Dokuments:
@@ -50,9 +50,9 @@ Windows PowerShell bietet eine Reihe an Spracherweiterungen für Desired State C
 Ein Pullserver bietet einen zentralisierten Dienst zum Speichern von Konfigurationen, die für Zielknoten zugänglich sein werden.
 
 Die Pullserverrolle kann als Webserverinstanz oder SMB-Dateifreigabe bereitgestellt werden. Die Webserverfunktion enthält eine OData-Schnittstelle und kann optional Funktionen für die Zielknoten enthalten, die die Bestätigung des Erfolgs oder Misserfolgs der angewendeten Konfigurationen übermitteln. Diese Funktion ist nützlich in Umgebungen, in denen eine große Anzahl von Knoten besteht.
-Nach dem Konfigurieren eines Zielknotens (auch als Client bezeichnet), der auf den Pullserver verweist, werden die aktuellen Konfigurationsdaten und alle erforderlichen Skripts heruntergeladen und angewendet. Dies kann eine einmalige Bereitstellung oder eine wiederkehrende Aufgabe sein und macht den Pullserver zu einer wichtigen Ressource zur Verwaltung von Skalierungsänderungen. Weitere Informationen finden Sie unter [Desired State Configuration – Pulldienst](/powershell/dsc/pullServer/pullserver) und
+Nach dem Konfigurieren eines Zielknotens (auch als Client bezeichnet), der auf den Pullserver verweist, werden die aktuellen Konfigurationsdaten und alle erforderlichen Skripts heruntergeladen und angewendet. Dies kann eine einmalige Bereitstellung oder eine wiederkehrende Aufgabe sein und macht den Pullserver zu einer wichtigen Ressource zur Verwaltung von Skalierungsänderungen. Weitere Informationen finden Sie unter [Desired State Configuration – Pulldienst](/powershell/scripting/dsc/pullServer/pullserver) und
 
-[Desired State Configuration – Pulldienst](/powershell/dsc/pullServer/pullserver).
+[Desired State Configuration – Pulldienst](/powershell/scripting/dsc/pullServer/pullserver).
 
 ## <a name="configuration-planning"></a>Konfigurationsplanung
 

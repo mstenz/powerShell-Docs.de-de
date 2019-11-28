@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,setup
 title: Verwenden von Import-DscResource
-ms.openlocfilehash: f6c1260bac7d4c545f5a6bc4c098ca90ebb186b5
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.openlocfilehash: 4bc269ab1dd4696298b4f33f7661473aae869eba
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71954057"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417422"
 ---
 # <a name="using-import-dscresource"></a>Verwenden von Import-DscResource
 
@@ -147,7 +147,7 @@ Kopieren Sie den Inhalt Ihrer gewünschten Modulversion in die oberste Ebene des
 
 ### <a name="resource-location"></a>Ressourcenspeicherort
 
-Beim Erstellen und Kompilieren von Konfigurationen können Ihre Ressourcen in einem beliebigen, durch Ihren [PSModulePath](/powershell/developer/module/modifying-the-psmodulepath-installation-path) angegebenen Verzeichnis gespeichert werden. In PowerShell 4.0 erfordert der LCM, dass alle DSC-Ressourcenmodule unter „Programme\WindowsPowerShell\Modules“ oder `$pshome\Modules` gespeichert werden. Seit PowerShell 5.0 besteht diese Anforderung nicht mehr, und Ressourcenmodule können in einem beliebigen durch `PSModulePath` angegebenen Verzeichnis gespeichert werden.
+Beim Erstellen und Kompilieren von Konfigurationen können Ihre Ressourcen in einem beliebigen, durch Ihren [PSModulePath](/powershell/scripting/developer/module/modifying-the-psmodulepath-installation-path) angegebenen Verzeichnis gespeichert werden. In PowerShell 4.0 erfordert der LCM, dass alle DSC-Ressourcenmodule unter „Programme\WindowsPowerShell\Modules“ oder `$pshome\Modules` gespeichert werden. Seit PowerShell 5.0 besteht diese Anforderung nicht mehr, und Ressourcenmodule können in einem beliebigen durch `PSModulePath` angegebenen Verzeichnis gespeichert werden.
 
 ### <a name="moduleversion-added"></a>ModuleVersion hinzugefügt
 

@@ -2,12 +2,12 @@
 ms.date: 07/10/2019
 keywords: jea,powershell,security
 title: JEA-Rollenfunktionen
-ms.openlocfilehash: 7191b90e198ffb539da6870a8ddc3e449ad9e8ae
-ms.sourcegitcommit: e894ed833cef57967cdaf002f8c883f66864e836
+ms.openlocfilehash: 613557d03bb481f9280a06ca1506166a18b4dab2
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 08/25/2019
-ms.locfileid: "70017841"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416783"
 ---
 # <a name="jea-role-capabilities"></a>JEA-Rollenfunktionen
 
@@ -177,7 +177,7 @@ New-Item -ItemType Directory $rcFolder
 Copy-Item -Path .\MyFirstJEARole.psrc -Destination $rcFolder
 ```
 
-Weitere Informationen zu PowerShell-Modulen finden Sie in den [Grundlagen zu PowerShell-Modulen](/powershell/developer/windows-powershell).
+Weitere Informationen zu PowerShell-Modulen finden Sie in den [Grundlagen zu PowerShell-Modulen](/powershell/scripting/developer/windows-powershell).
 
 ## <a name="updating-role-capabilities"></a>Aktualisieren von Rollenfunktionen
 

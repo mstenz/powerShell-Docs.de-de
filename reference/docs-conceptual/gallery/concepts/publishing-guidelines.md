@@ -4,12 +4,12 @@ contributor: JKeithB, SydneyhSmith
 keywords: gallery,powershell,cmdlet,psgallery
 description: Richtlinien für Herausgeber
 title: Veröffentlichungsrichtlinien und Best Practices für den PowerShell-Katalog
-ms.openlocfilehash: 03c3a037b1d6c523914a2275249124940111fdcd
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.openlocfilehash: 9047e938ab961c68e225c9029e52403c40afbe26
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71328511"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417672"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>Veröffentlichungsrichtlinien und Best Practices für den PowerShell-Katalog
 
@@ -45,7 +45,7 @@ Jede dieser Richtlinien wird in den nachfolgenden Abschnitten kurz erläutert.
 
 [PSScriptAnalyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer) ist ein kostenloses Analysetool für statischen Code, das für PowerShell-Code eingesetzt werden kann. **PSScriptAnalyzer** identifiziert die häufigsten Probleme in PowerShell-Code und stellt in vielen Fällen eine Empfehlung zur Lösung des Problems bereit. Das Tool lässt sich ganz einfach bedienen und unterteilt die Probleme in Fehler (schwerwiegend, müssen behoben werden), Warnungen (müssen überprüft und sollten behoben werden) und Informationsmeldungen (sollten im Rahmen von Best Practices überprüft werden). Alle im PowerShell-Katalog veröffentlichte Pakete werden mithilfe von **PSScriptAnalyzer** überprüft. Gefundene Fehler werden dem Besitzer gemeldet und müssen beseitigt werden.
 
-Als Best Practice wird `Invoke-ScriptAnalyzer` mit `-Recurse` und `-Severity` mit der Einstellung „Warning“ ausgeführt. 
+Als Best Practice wird `Invoke-ScriptAnalyzer` mit `-Recurse` und `-Severity` mit der Einstellung „Warning“ ausgeführt.
 
 Überprüfen Sie die Ergebnisse, und stellen Sie Folgendes sicher:
 
@@ -98,7 +98,7 @@ Falls in einem dieser Kommunikationskanäle ein unangemessenes Verhalten zu beob
 
 Das Freigeben eines Skripts für andere Benutzer ist grundsätzlich eine gute Sache und ermöglicht es, Beispiele für die Beseitigung möglicher Probleme bereitzustellen. Der Nachteil von Skripts im PowerShell-Katalog liegt darin, dass es sich um einzelne Dateien ohne separate Dokumentation, Beispiele und Tests handelt.
 
-PowerShell-Module bieten eine Ordnerstruktur, die es erlaubt, mehrere Ordner und Dateien in das Paket einzuschließen. Die Modulstruktur ermöglicht das Bereitstellen weiterer Pakete, die wir als Best Practices auflisten: Cmdlet-Hilfe, Dokumentation, Beispiele und Tests. Der größte Nachteil besteht darin, dass ein Skript innerhalb eines Moduls als Funktion verfügbar gemacht und verwendet werden muss. Informationen zum Erstellen eines Moduls finden Sie unter [Writing a Windows PowerShell Module](/powershell/developer/module/writing-a-windows-powershell-module) (Schreiben eines Windows PowerShell-Moduls).
+PowerShell-Module bieten eine Ordnerstruktur, die es erlaubt, mehrere Ordner und Dateien in das Paket einzuschließen. Die Modulstruktur ermöglicht das Bereitstellen weiterer Pakete, die wir als Best Practices auflisten: Cmdlet-Hilfe, Dokumentation, Beispiele und Tests. Der größte Nachteil besteht darin, dass ein Skript innerhalb eines Moduls als Funktion verfügbar gemacht und verwendet werden muss. Informationen zum Erstellen eines Moduls finden Sie unter [Writing a Windows PowerShell Module](/powershell/scripting/developer/module/writing-a-windows-powershell-module) (Schreiben eines Windows PowerShell-Moduls).
 
 Es gibt Situationen, in denen ein Skript benutzerfreundlicher ist, dies gilt insbesondere bei DSC-Konfigurationen. Die bewährte Methode für DSC-Konfigurationen besteht darin, die Konfiguration als Skript zu veröffentlichen, gemeinsam mit einem Begleitmodul, das die Dokumentation, Beispiele und Tests enthält. Das Skript listet das Begleitmodul mithilfe von `RequiredModules = @(Name of the Module)` auf. Dieser Ansatz kann für jedes Skript verwendet werden.
 
@@ -165,7 +165,7 @@ PowerShell unterstützt in Bezug auf das Signieren von Code zwei primäre Ansät
 
 Das Signieren von PowerShell-Dateien ist ein bewährtes Vorgehen, mit dem sichergestellt wird, dass der ausgeführte Code aus einer zuverlässigen Quelle stammt und nicht verändert wurde. Details zum Signieren von PowerShell-Skriptdateien werden im Artikel [Informationen zu Signaturen](/powershell/module/microsoft.powershell.core/about/about_signing) beschrieben. Eine Signatur kann jeder `.PS1`-Datei hinzugefügt werden, die PowerShell beim Laden des Skripts überprüft. Mithilfe der Cmdlets für [Ausführungsrichtlinien](/powershell/module/microsoft.powershell.core/about/about_execution_policies) kann PowerShell auf die Verwendung von signierten Skripts beschränkt werden.
 
-Die Katalogsignierung von Modulen ist ein Feature, das PowerShell in Version 5.1 hinzugefügt wurde. Das Signieren eines Moduls wird im Artikel [Katalog-Cmdlets](/powershell/wmf/5.1/catalog-cmdlets) erläutert. Allgemein ausgedrückt wird bei der Katalogsignierung eine Katalogdatei erstellt, die einen Hashwert für jede Datei im Modul enthält, und anschließend wird diese Datei signiert.
+Die Katalogsignierung von Modulen ist ein Feature, das PowerShell in Version 5.1 hinzugefügt wurde. Das Signieren eines Moduls wird im Artikel [Katalog-Cmdlets](/powershell/scripting/wmf/5.1/catalog-cmdlets) erläutert. Allgemein ausgedrückt wird bei der Katalogsignierung eine Katalogdatei erstellt, die einen Hashwert für jede Datei im Modul enthält, und anschließend wird diese Datei signiert.
 
 Die **PowerShellGet**-Cmdlets `Publish-Module`, `Install-Module` und `Update-Module` überprüfen die Signatur auf ihre Gültigkeit und bestätigen dann, dass der Hashwert für jedes Paket den Daten im Katalog entspricht. `Save-Module` überprüft keine Signaturen. Wenn eine vorherige Version des Moduls im System installiert ist, wird mit `Install-Module` bestätigt, dass die Signaturstelle für die neue Version derjenigen der vorherigen Installation entspricht. `Install-Module` und `Update-Module` verwenden die Signatur in einer `.PSD1`-Datei, wenn das Paket nicht durch den Katalog signiert wurde. Die Katalogsignierung kann zusammen mit dem Signieren von Skriptdateien verwendet werden, ersetzt diese Methode aber nicht. PowerShell führt beim Laden von Modulen keine Überprüfung von Katalogsignaturen durch.
 

@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,setup
 title: Bekannte Probleme und Einschränkungen bei DSC (Desired State Configuration)
-ms.openlocfilehash: 6faf24795d14a93f265943029d9f6f1388f32263
-ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
+ms.openlocfilehash: a76c5bb336804c5b384e6b6ba6a705c6049ef7fb
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71147720"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416611"
 ---
 # <a name="desired-state-configuration-dsc-known-issues-and-limitations"></a>Bekannte Probleme und Einschränkungen bei DSC (Desired State Configuration)
 
@@ -52,7 +52,7 @@ Wenn der LCM im Debugmodus ist, kann das Drücken von STRG+C zum Bearbeiten von 
 
 Wenn der lokale Konfigurations-Manager im Debugmodus ist, reagiert `Stop-DscConfiguration` möglicherweise nicht beim Versuch, einen Vorgang zu beenden, der mit `Get-DscConfiguration` gestartet wurde.
 
-**Lösung:** Beenden Sie das Debuggen des mit `Get-DscConfiguration` gestarteten Vorgangs gemäß der Anweisungen unter [Debuggen von DSC-Ressourcen](/powershell/dsc/troubleshooting/debugResource).
+**Lösung:** Beenden Sie das Debuggen des mit `Get-DscConfiguration` gestarteten Vorgangs gemäß der Anweisungen unter [Debuggen von DSC-Ressourcen](/powershell/scripting/dsc/troubleshooting/debugResource).
 
 ## <a name="no-verbose-error-messages-are-shown-in-debugmode"></a>Im Debugmodus werden keine ausführlichen Fehlermeldungen angezeigt
 
@@ -80,7 +80,7 @@ Das Cmdlet `Invoke-DscResource` gibt ausführliche, Warn- und Fehlermeldungen ni
 
 ## <a name="dsc-resources-cannot-be-debugged-easily-when-used-with-invoke-dscresource"></a>Bei Verwendung mit „Invoke-DscResource“ ist das Debuggen von DSC-Ressourcen nicht einfach
 
-Wenn der LCM im Debugmodus ausgeführt wird, bietet das Cmdlet `Invoke-DscResource` keine Informationen zum Runspace, mit dem zum Debuggen eine Verbindung hergestellt werden soll. Weitere Informationen finden Sie unter [Debuggen von DSC-Ressourcen](/powershell/dsc/troubleshooting/debugResource).
+Wenn der LCM im Debugmodus ausgeführt wird, bietet das Cmdlet `Invoke-DscResource` keine Informationen zum Runspace, mit dem zum Debuggen eine Verbindung hergestellt werden soll. Weitere Informationen finden Sie unter [Debuggen von DSC-Ressourcen](/powershell/scripting/dsc/troubleshooting/debugResource).
 
 **Lösung:** Ermitteln und Anfügen an den Runspace mithilfe der Cmdlets `Get-PSHostProcessInfo`, `Enter-PSHostProcess`, `Get-Runspace` und `Debug-Runspace` zum Debuggen der DSC-Ressource.
 

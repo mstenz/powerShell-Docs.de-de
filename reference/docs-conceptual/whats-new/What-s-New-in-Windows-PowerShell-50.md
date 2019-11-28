@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Neuerungen in Windows PowerShell 5.0
-ms.openlocfilehash: d86c9c947c521e0aee261a8a0335f1557b0d5a34
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.openlocfilehash: 08775c1767f1d9d18dafab39d188db152073e69d
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71325133"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417570"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Neuerungen in Windows PowerShell 5.0
 
@@ -414,7 +414,7 @@ Ab Windows PowerShell 3.0 können Autoren von C#-Cmdlets die **HelpUri**-Eigensc
 
 Sie können auch dem ersten dazugehörigen Link einer XML-basierten Cmdlet-Hilfedatei einen **HelpUri**-Wert oder eine „.Link“-Direktive der kommentarbasierten Hilfe in einer Funktion hinzufügen.
 
-Weitere Informationen zur Unterstützung der Onlinehilfe finden Sie unter [Supporting Online Help (Unterstützen der Onlinehilfe)](/powershell/developer/module/supporting-online-help) in der Microsoft-Dokumentation.
+Weitere Informationen zur Unterstützung der Onlinehilfe finden Sie unter [Supporting Online Help (Unterstützen der Onlinehilfe)](/powershell/scripting/developer/module/supporting-online-help) in der Microsoft-Dokumentation.
 
 ### <a name="cim-integration"></a>CIM-Integration
 

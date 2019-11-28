@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,setup
 title: Veröffentlichen auf einem Pullserver mithilfe von Konfigurations-IDs (v4/v5)
-ms.openlocfilehash: c258814f480b91eba75c7ce9abf70c558f1f469e
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.openlocfilehash: 3b094308338e62c783b19f4d3bb41634feee63f6
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71953597"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417256"
 ---
 # <a name="publish-to-a-pull-server-using-configuration-ids-v4v5"></a>Veröffentlichen auf einem Pullserver mithilfe von Konfigurations-IDs (v4/v5)
 
@@ -61,7 +61,7 @@ Sie können Ihre `.mof`-Datei dann mit jeder zulässigen Methode umbenennen. Im 
 Rename-Item -Path .\localhost.mof -NewName '64856475-939e-41fb-aba5-4469f4006059.mof'
 ```
 
-Weitere Informationen zur Verwendung von **GUIDs** in Ihrer Umgebung finden Sie unter [Plan for Guids (Planen von GUIDs)](/powershell/dsc/secureserver#guids).
+Weitere Informationen zur Verwendung von **GUIDs** in Ihrer Umgebung finden Sie unter [Plan for Guids (Planen von GUIDs)](/powershell/scripting/dsc/secureserver#guids).
 
 ### <a name="configuration-names"></a>Konfigurationsnamen
 

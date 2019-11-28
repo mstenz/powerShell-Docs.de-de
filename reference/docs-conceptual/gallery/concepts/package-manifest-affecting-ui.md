@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: PowerShell
 title: Paketmanifestwerte, die die Benutzeroberfläche des PowerShell-Katalogs betreffen
-ms.openlocfilehash: cedf81df8de29c54ef559a800d654305029491ec
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.openlocfilehash: 9e37fec879f2f5cbe3926c7dbc946389425d856a
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71328131"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417046"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>Paketmanifestwerte, die die Benutzeroberfläche des PowerShell-Katalogs betreffen
 
@@ -37,7 +37,7 @@ Die folgende Tabelle enthält die Benutzeroberflächenelemente der Paketseiten i
 | **Funktionen** | Dieses Element wird im Modulmanifest mithilfe von FunctionsToExport angegeben. Hinweis: Es wird empfohlen, anstelle des Platzhalterzeichens „*“ die Elemente explizit aufzulisten, da hierdurch der Vorgang zum Laden des Moduls für Benutzer verbessert wird. | Ja | Nein |
 | **DSC-Ressourcen** | Bei Modulen, die in PowerShell Version 5.0 und höher verwendet werden, wird dieses Element im Manifest mithilfe von DscResourcesToExport angegeben. Wenn das Modul in PowerShell 4 verwendet werden soll, sollte nicht DSCResourcesToExport verwendet werden, da keine Unterstützung für diesen Manifestschlüssel besteht. (DSC war vor PowerShell 4 nicht vorhanden.) | Ja | Nein |
 | **Workflows** | Workflows werden als Skripts im PowerShell-Katalog veröffentlicht und im Code als Workflows identifiziert (ein Beispiel finden Sie unter [Connect-AzureVM](https://www.powershellgallery.com/packages/Connect-AzureVM/1.0/Content/Connect-AzureVM.ps1)). Dieses Element wird nicht vom Manifest gesteuert. | Nein | Nein |
-| **Rollenfunktionen** | Dieses Element wird aufgeführt, wenn das im PowerShell-Katalog veröffentlichte Modul eine oder mehrere Rollenfunktionsdateien (PSRC) enthält, die von JEA verwendet werden. Weitere Informationen zu [Rollenfunktionen](/powershell/jea/role-capabilities) finden Sie in der JEA-Dokumentation. | Ja | Nein |
+| **Rollenfunktionen** | Dieses Element wird aufgeführt, wenn das im PowerShell-Katalog veröffentlichte Modul eine oder mehrere Rollenfunktionsdateien (PSRC) enthält, die von JEA verwendet werden. Weitere Informationen zu [Rollenfunktionen](/powershell/scripting/learn/remoting/jea/role-capabilities) finden Sie in der JEA-Dokumentation. | Ja | Nein |
 | **PowerShell-Editionen** | Dieses Element wird in einem Skript- oder Modulmanifest angegeben. Bei Modulen, die für die Verwendung von PowerShell 5.0 oder niedriger konzipiert sind, wird dieses Element mithilfe von Tags gesteuert. Bei Desktop wird das Tag „PSEdition_Desktop“ und bei Core das „Tag PSEdition_Core“ verwendet. Bei Modulen, die nur in PowerShell 5.1 oder höher verwendet werden, ist ein CompatiblePSEditions-Schlüssel im Hauptmanifest enthalten. Weitere Informationen zum PS-Editionsfeature finden Sie in der [PowerShellGet-Dokumentation](module-psedition-support.md). | Ja | Ja |
 | **Abhängigkeiten** | Abhängigkeiten sind die Module im PowerShell-Katalog, die entweder im Modul als RequiredModules oder im Skriptmanifest als „#Requires – Module (Name)“ deklariert werden. | Ja | Ja |
 | **Minimum PowerShell version** (PowerShell-Mindestversion) | Dieses Element kann in einem Modulmanifest als PowerShellVersion angegeben werden. | Ja | Nein |

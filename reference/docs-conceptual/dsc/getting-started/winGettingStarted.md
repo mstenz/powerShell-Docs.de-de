@@ -2,12 +2,12 @@
 ms.date: 08/15/2019
 keywords: dsc,powershell,configuration,setup
 title: Erste Schritte mit Desired State Configuration (DSC) für Windows
-ms.openlocfilehash: a4f9db481afda65fc4ac5e553230dbba3037ac9a
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.openlocfilehash: a9346b96693acdbad9bacbd4b6ca85971e17a3d1
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71954407"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417769"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-windows"></a>Erste Schritte mit Desired State Configuration (DSC) für Windows
 
@@ -110,4 +110,4 @@ Erfordert die Angabe des Pfads zur MOF-Metakonfigurationsdatei.
 ## <a name="windows-powershell-desired-state-configuration-log-files"></a>Windows PowerShell DSC-Protokolldateien
 
 Protokolle für Desired State Configuration werden in das Windows-Ereignisprotokoll im Pfad `Microsoft-Windows-Dsc/Operational` geschrieben.
-Zusätzliche Protokolle zu Debuggingzwecken können mithilfe der unter [Wo befinden sich die DSC-Ereignisprotokolle?](/powershell/dsc/troubleshooting/troubleshooting#where-are-dsc-event-logs) genannten Schritte aktiviert werden.
+Zusätzliche Protokolle zu Debuggingzwecken können mithilfe der unter [Wo befinden sich die DSC-Ereignisprotokolle?](/powershell/scripting/dsc/troubleshooting/troubleshooting#where-are-dsc-event-logs) genannten Schritte aktiviert werden.

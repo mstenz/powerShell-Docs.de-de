@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,setup
 title: Versionshinweise zu WMF 5.x
-ms.openlocfilehash: 8924240a4bbedcd34bc68b7cacdd23189a3716d6
-ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
+ms.openlocfilehash: 3fc712dbcbe184c60ae248b260c8f6800f111fdd
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71147580"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416502"
 ---
 # <a name="windows-management-framework-wmf-5x-release-notes"></a>Windows Management Framework (WMF) 5.x – Anmerkungen zu dieser Version
 
@@ -56,8 +56,8 @@ Ab Version 5.1 steht PowerShell in verschiedenen Editionen zur Verfügung, die u
 
 - [Determine running edition of PowerShell using $PSVersionTable (Bestimmen der ausgeführten Edition von PowerShell mit $PSVersionTable)](/powershell/module/microsoft.powershell.core/about/about_automatic_variables)
 - [Filter Get-Module results by CompatiblePSEditions using PSEdition parameter (Filtern von Get-Module-Ergebnissen nach CompatiblePSEditions mithilfe des PSEdition-Parameters)](/powershell/module/microsoft.powershell.core/get-module)
-- [Verhindern der Ausführung von Skripts außer bei Ausführung in einer kompatiblen Edition von PowerShell](/powershell/gallery/concepts/script-psedition-support)
-- [Deklarieren der Kompatibilität eines Moduls mit bestimmten Versionen von PowerShell](/powershell/gallery/concepts/module-psedition-support)
+- [Verhindern der Ausführung von Skripts außer bei Ausführung in einer kompatiblen Edition von PowerShell](/powershell/scripting/gallery/concepts/script-psedition-support)
+- [Deklarieren der Kompatibilität eines Moduls mit bestimmten Versionen von PowerShell](/powershell/scripting/gallery/concepts/module-psedition-support)
 
 ## <a name="module-analysis-cache"></a>Die Datei „ModuleAnalysisCache“
 

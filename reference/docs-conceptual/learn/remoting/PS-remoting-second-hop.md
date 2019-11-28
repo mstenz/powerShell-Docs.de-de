@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Ausführen des zweiten Hops in PowerShell-Remoting
-ms.openlocfilehash: f4cfde39de8494050c31cfc3181271b968819695
-ms.sourcegitcommit: a35450f420dc10a02379f6e6f08a28ad11fe5a6d
+ms.openlocfilehash: 567d75009f7d53e9e95e5480b275ec3991cfb9f5
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71692149"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417630"
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>Ausführen des zweiten Hops in PowerShell-Remoting
 
@@ -22,7 +22,7 @@ Es gibt verschiedene Möglichkeiten, um dieses Problem zu lösen. In diesem Them
 
 ## <a name="credssp"></a>CredSSP
 
-Sie können den [Credential Security Support Provider (CredSSP)](https://msdn.microsoft.com/library/windows/desktop/bb931352.aspx) für die Authentifizierung verwenden. CredSSP speichert Anmeldeinformationen auf dem Remoteserver  _ServerB_. Der Server wird dadurch der Gefahr von Angriffen zum Diebstahl der Anmeldeinformationen ausgesetzt. Wenn der Remotecomputer kompromittiert ist, hat der Angreifer Zugriff auf die Anmeldeinformationen des Benutzers. CredSSP ist standardmäßig sowohl auf Client- als auch auf Servercomputern deaktiviert. Sie sollten CredSSP nur in absolut vertrauenswürdigen Umgebungen aktivieren. Beispielsweise wenn ein Domänenadministrator eine Verbindung mit einem Domänencontroller herstellt, weil der Domänencontroller hochgradig vertrauenswürdig ist.
+Sie können den [Credential Security Support Provider (CredSSP)](/windows/win32/secauthn/credential-security-support-provider) für die Authentifizierung verwenden. CredSSP speichert Anmeldeinformationen auf dem Remoteserver  _ServerB_. Der Server wird dadurch der Gefahr von Angriffen zum Diebstahl der Anmeldeinformationen ausgesetzt. Wenn der Remotecomputer kompromittiert ist, hat der Angreifer Zugriff auf die Anmeldeinformationen des Benutzers. CredSSP ist standardmäßig sowohl auf Client- als auch auf Servercomputern deaktiviert. Sie sollten CredSSP nur in absolut vertrauenswürdigen Umgebungen aktivieren. Beispielsweise wenn ein Domänenadministrator eine Verbindung mit einem Domänencontroller herstellt, weil der Domänencontroller hochgradig vertrauenswürdig ist.
 
 Weitere Informationen zu Sicherheitsaspekten bei der Verwendung von CredSSP für PowerShell-Remoting finden Sie unter [Versehentliche Sabotage: Vorsicht vor CredSSP](https://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp).
 
@@ -153,7 +153,7 @@ $x.'msDS-AllowedToActOnBehalfOfOtherIdentity'.Access
 Get-ADComputer -Identity $ServerC -Properties PrincipalsAllowedToDelegateToAccount
 ```
 
-Das Kerberos-[Schlüsselverteilungscenter (KDC)](https://msdn.microsoft.com/library/windows/desktop/aa378170(v=vs.85).aspx) speichert verweigerte Zugriffsversuche (negativer Cache) über einen Zeitraum von 15 Minuten. Wenn _ServerB_ zuvor versucht hat, auf _ServerC_ zuzugreifen, müssen Sie zum Löschen des Caches auf _ServerB_ folgenden Befehl aufrufen:
+Das Kerberos-[Schlüsselverteilungscenter (KDC)](/windows/win32/secauthn/key-distribution-center) speichert verweigerte Zugriffsversuche (negativer Cache) über einen Zeitraum von 15 Minuten. Wenn _ServerB_ zuvor versucht hat, auf _ServerC_ zuzugreifen, müssen Sie zum Löschen des Caches auf _ServerB_ folgenden Befehl aufrufen:
 
 ```powershell
 Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
@@ -214,8 +214,8 @@ Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
 - [How Windows Server 2012 Eases the Pain of Kerberos Constrained Delegation, Part 1 (Wie Windows Server 2012 bei den Problemen mit der eingeschränkten Kerberos-Delegierung Abhilfe schafft, Teil 1)](https://www.itprotoday.com/windows-server/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1)
 - [How Windows Server 2012 Eases the Pain of Kerberos Constrained Delegation, Part 2 (Wie Windows Server 2012 bei den Problemen mit der eingeschränkten Kerberos-Delegierung Abhilfe schafft, Teil 2)](https://www.itprotoday.com/windows-server/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-2)
 - [Understanding Kerberos Constrained Delegation for Azure Active Directory Application Proxy Deployments with Integrated Windows Authentication (Grundlegendes zur eingeschränkten Kerberos-Delegierung für Azure Active Directory Application Proxy-Bereitstellungen mit integrierter Windows-Authentifizierung)](https://aka.ms/kcdpaper)
-- [[MS-ADA2]: Active Directory Schema Attributes M2.210 Attribute msDS-AllowedToActOnBehalfOfOtherIdentity](https://msdn.microsoft.com/library/hh554126.aspx)
-- [[MS-SFU]: Kerberos-Protokollerweiterungen: Protokoll 1.3.2 S4U2proxy für Service-for-User und eingeschränkte Delegierung](https://msdn.microsoft.com/library/cc246079.aspx)
+- [[MS-ADA2]: Active Directory Schema Attributes M2.210 Attribute msDS-AllowedToActOnBehalfOfOtherIdentity](/openspecs/windows_protocols/ms-ada2/cea4ac11-a4b2-4f2d-84cc-aebb4a4ad405)
+- [[MS-SFU]: Kerberos-Protokollerweiterungen: Protokoll 1.3.2 S4U2proxy für Service-for-User und eingeschränkte Delegierung](/openspecs/windows_protocols/ms-sfu/bde93b0e-f3c9-4ddf-9f44-e1453be7af5a)
 - [Resource Based Kerberos Constrained Delegation (Ressourcenbasierte eingeschränkte Kerberos-Delegierung)](https://blog.kloud.com.au/2013/07/11/kerberos-constrained-delegation/)
 - [Remote Administration Without Constrained Delegation Using PrincipalsAllowedToDelegateToAccount (Remoteverwaltung ohne eingeschränkte Delegierung mit PrincipalsAllowedToDelegateToAccount)](https://blogs.msdn.microsoft.com/taylorb/2012/11/06/remote-administration-without-constrained-delegation-using-principalsallowedtodelegatetoaccount/)
 
@@ -238,7 +238,7 @@ Weitere Informationen zur Verwendung von PSSessionConfiguration und RunAs, um da
 
 Mit JEA können Sie einschränken, welche Befehle ein Administrator während einer PowerShell-Sitzung ausführen darf. Das Toolkit kann verwendet werden, um das zweite Hop-Problem zu lösen.
 
-Informationen zu JEA finden Sie unter [Just Enough Administration](https://docs.microsoft.com/powershell/jea/overview).
+Informationen zu JEA finden Sie unter [Just Enough Administration](/powershell/scripting/learn/remoting/jea/overview).
 
 ### <a name="pros"></a>Vorteile
 
@@ -251,7 +251,7 @@ Informationen zu JEA finden Sie unter [Just Enough Administration](https://docs.
 
 ## <a name="pass-credentials-inside-an-invoke-command-script-block"></a>Übergeben von Anmeldeinformationen innerhalb eines Invoke-Command-Skriptblocks
 
-Anmeldeinformationen können innerhalb des **ScriptBlock**-Parameters für einen Aufruf des [Invoke-Command](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/invoke-command)-Cmdlet übergeben werden.
+Anmeldeinformationen können innerhalb des **ScriptBlock**-Parameters für einen Aufruf des [Invoke-Command](/powershell/module/microsoft.powershell.core/invoke-command)-Cmdlet übergeben werden.
 
 ### <a name="pros"></a>Vorteile
 

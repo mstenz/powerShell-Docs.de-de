@@ -2,18 +2,18 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,configuration,setup
 title: Erstellen einer DSC-Ressource in C#
-ms.openlocfilehash: 6f2bb4d411237f13e2735c2e5f630b4f40dc6842
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.openlocfilehash: a19559c225dd91eceed397df91dd584a577cd7d4
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71954317"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417697"
 ---
 # <a name="authoring-a-dsc-resource-in-c"></a>Erstellen einer DSC-Ressource in C\#
 
 > Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-In der Regel wird eine benutzerdefinierte Windows PowerShell DSC-Ressource in einem PowerShell-Skript implementiert. Allerdings können Sie die Funktionalität einer benutzerdefinierten DSC-Ressource auch durch Schreiben von C#-Cmdlets implementieren. Eine Einführung zum Schreiben von Cmdlets in C# finden Sie unter [Schreiben eines Windows PowerShell-Cmdlets](/powershell/developer/windows-powershell).
+In der Regel wird eine benutzerdefinierte Windows PowerShell DSC-Ressource in einem PowerShell-Skript implementiert. Allerdings können Sie die Funktionalität einer benutzerdefinierten DSC-Ressource auch durch Schreiben von C#-Cmdlets implementieren. Eine Einführung zum Schreiben von Cmdlets in C# finden Sie unter [Schreiben eines Windows PowerShell-Cmdlets](/powershell/scripting/developer/windows-powershell).
 
 Abgesehen von der Implementierung der Ressource als Cmdlets in C# entsprechen die Schritte zum Erstellen des MOF-Schemas, zum Erstellen der Ordnerstruktur sowie zum Importieren und Verwenden Ihrer benutzerdefinierten DSC-Ressource dem unter [Schreiben einer benutzerdefinierten DSC-Ressource mit MOF](authoringResourceMOF.md) beschriebenen Verfahren.
 
@@ -281,4 +281,4 @@ $env: psmodulepath (folder)
 #### <a name="concepts"></a>Konzepte
 [Schreiben einer benutzerdefinierten DSC-Ressource mit MOF](authoringResourceMOF.md)
 #### <a name="other-resources"></a>Weitere Ressourcen
-[Schreiben eines Windows PowerShell-Cmdlets](/powershell/developer/windows-powershell)
+[Schreiben eines Windows PowerShell-Cmdlets](/powershell/scripting/developer/windows-powershell)

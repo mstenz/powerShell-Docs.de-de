@@ -3,12 +3,12 @@ description: Informationen zur Versionsgeschichte der Desired State Configuratio
 ms.date: 06/21/2018
 keywords: DSC, PowerShell, Azure, Erweiterung
 title: Versionsgeschichte der Azure DSC-Erweiterung
-ms.openlocfilehash: d97ba879679972752196e3f16d0dfb7c731776b9
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.openlocfilehash: 7a89037d62cb2c8580141d2b177fdded5db654eb
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71953917"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417282"
 ---
 # <a name="azure-desired-state-configuration-extension-version-history"></a>Versionsgeschichte der Azure Desired State Configuration-Erweiterung
 
@@ -219,7 +219,7 @@ Dieser Artikel informiert Sie über alle Versionen der Azure DSC-VM-Erweiterung 
 - **Umgebung:** Azure
 - **Hinweise:** In dieser Version wird DSC verwendet, das in Windows Server 2016 Technical Preview enthalten ist. Für andere Windows-Betriebssysteme wird [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) installiert. (Bei Installation von WMF ist ein Neustart erforderlich.)
 - **Neue Funktionen:**
-  - In der Erweiterungsversion 2.14 wurden Veränderungen bezüglich der Installation von WMF RTM vorgenommen. Beim Upgrade der Erweiterungsversion von 2.13.2.0 auf 2.14.0.0 bemerken Sie möglicherweise, dass einige DSC-Cmdlets fehlschlagen oder bei der Konfiguration die Fehlermeldung „No Instance found with given property values“ (Es wurde keine Instanz mit den Eigenschaftswerten gefunden) angezeigt wird. Weitere Informationen finden Sie in den [DSC release notes (Anmerkungen zu DSC)](https://msdn.microsoft.com/en-us/powershell/wmf/limitation_dsc). Die Problemumgehungen für diese Probleme wurden in Version 2.15 hinzugefügt.
+  - In der Erweiterungsversion 2.14 wurden Veränderungen bezüglich der Installation von WMF RTM vorgenommen. Beim Upgrade der Erweiterungsversion von 2.13.2.0 auf 2.14.0.0 bemerken Sie möglicherweise, dass einige DSC-Cmdlets fehlschlagen oder bei der Konfiguration die Fehlermeldung „No Instance found with given property values“ (Es wurde keine Instanz mit den Eigenschaftswerten gefunden) angezeigt wird. Weitere Informationen finden Sie in den [DSC release notes (Anmerkungen zu DSC)](/powershell/scripting/wmf/known-issues/known-issues-dsc). Die Problemumgehungen für diese Probleme wurden in Version 2.15 hinzugefügt.
   - Wenn Sie die Version 2.14 schon installiert haben und eines der beiden oben genannten Probleme auftritt, müssen Sie diese Schritte manuell ausführen.  In einer PowerShell-Sitzung mit erhöhten Rechten:
     - `Remove-Item -Path $env:SystemRoot\system32\Configuration\DSCEngineCache.mof`
     - `mofcomp $env:windir\system32\wbem\DscCoreConfProv.mof`
