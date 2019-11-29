@@ -2,12 +2,12 @@
 ms.date: 08/14/2018
 keywords: powershell,cmdlet
 title: Einführung in die Windows PowerShell ISE
-ms.openlocfilehash: 729c8535dbcfcd2c51070b8beac5d328375f36ae
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 1723c11f38966cfffec9a6b3e4cb7b2304f19e7a
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62057420"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416289"
 ---
 # <a name="the-windows-powershell-ise"></a>Windows PowerShell ISE
 
@@ -15,16 +15,21 @@ Windows PowerShell Integrated Scripting Environment (ISE) ist eine Hostanwendung
 
 ## <a name="support"></a>Support
 
-Die ISE wurde erstmals mit Windows PowerShell V2 eingeführt und in PowerShell V3 überarbeitet. Die ISE wird in allen unterstützten Versionen von Windows PowerShell bis einschließlich Windows PowerShell V5.1 unterstützt. Die ISE befindet sich jedoch im Wartungsmodus, und es werden wahrscheinlich keine neuen Funktionen hinzugefügt.
-Darüber hinaus besteht keine Unterstützung für die ISE mit PowerShell v6 oder höher. Benutzer, die ein grafisches Tool zur Verwaltung von PowerShell-Skripts usw. benötigen, sollten [Visual Studio Code](https://code.visualstudio.com/) in Betracht ziehen.
+Die ISE wurde erstmals mit Windows PowerShell V2 eingeführt und in PowerShell V3 überarbeitet. Die ISE wird in allen unterstützten Versionen von Windows PowerShell bis einschließlich Windows PowerShell V5.1 unterstützt.
+
+> [!NOTE]
+> Die PowerShell ISE befindet sich nicht mehr in der aktiven Featureentwicklung. Als in Windows enthaltene Komponente wird sie weiterhin offiziell mit Sicherheits- und Wartungsfixes hoher Priorität unterstützt.
+> Zurzeit ist es nicht geplant, die ISE aus Windows zu entfernen.
+>
+> Es besteht keine Unterstützung für die ISE in PowerShell v6 oder höher. Benutzer, die einen Ersatz für die ISE suchen, sollten [Visual Studio Code](https://code.visualstudio.com/) mit der [PowerShell-Erweiterung](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell) verwenden.
 
 ## <a name="key-features"></a>Wichtige Funktionen
 
 Zu den wichtigsten Funktionen von Windows PowerShell ISE gehören:
 
-- Mehrzeilige Bearbeitung: Drücken Sie zum Einfügen einer leeren Zeile unter der aktuellen Zeile im Befehlsbereich UMSCHALT+EINGABETASTE.
-- Selektive Ausführung: Um einen Teil eines Skripts auszuführen, markieren Sie den Text, den Sie ausführen möchten, und klicken Sie dann auf die Schaltfläche **Skript ausführen**. Oder drücken Sie F5.
-- Kontextbezogene Hilfe: Geben Sie **Invoke-Item** ein, und drücken Sie dann F1. Die Hilfedatei wird mit dem Artikel für das Cmdlet **Invoke-Item** geöffnet.
+- Mehrzeilige Bearbeitung: Drücken Sie zum Einfügen einer leeren Zeile unter der aktuellen Zeile im Befehlsbereich <kbd>UMSCHALT</kbd>+<kbd>EINGABETASTE</kbd>.
+- Selektive Ausführung: Um einen Teil eines Skripts auszuführen, markieren Sie den Text, den Sie ausführen möchten, und klicken Sie dann auf die Schaltfläche **Skript ausführen**. Drücken Sie alternativ dazu <kbd>F5</kbd>.
+- Kontextbezogene Hilfe: Geben Sie `Invoke-Item` ein, und drücken Sie dann <kbd>F1</kbd>. Die Hilfedatei wird mit dem Artikel für das Cmdlet `Invoke-Item` geöffnet.
 
 Die Windows PowerShell ISE ermöglicht Ihnen das Anpassen einiger Aspekte ihrer Darstellung. Sie enthält auch ein eigenes Windows PowerShell-Profilskript.
 
@@ -35,4 +40,4 @@ Alternativ können Sie `powershell_ise.exe` in eine Befehlsshell oder im Feld �
 
 ## <a name="to-get-help-in-the-windows-powershell-ise"></a>So rufen Sie Hilfe in der Windows PowerShell ISE ab
 
-Klicken Sie im Menü **Hilfe** auf **Windows PowerShell-Hilfe**. Oder drücken Sie F1. Die Datei, die geöffnet wird, beschreibt die Windows PowerShell ISE und Windows PowerShell, einschließlich sämtlicher Hilfe, die über das Cmdlet „Get-Help“ verfügbar ist.
+Klicken Sie im Menü **Hilfe** auf **Windows PowerShell-Hilfe**. Drücken Sie alternativ dazu <kbd>F1</kbd>. Die daraufhin geöffnete Datei beschreibt die Windows PowerShell ISE und Windows PowerShell und enthält die gesamte Hilfe, die über das Cmdlet `Get-Help` verfügbar ist.

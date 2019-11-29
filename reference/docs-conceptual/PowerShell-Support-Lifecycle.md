@@ -2,12 +2,12 @@
 title: Supportlebenszyklus von PowerShell Core
 description: Richtlinien für die Unterstützung von PowerShell Core
 ms.date: 08/06/2018
-ms.openlocfilehash: fbbda0a5f8460e5625625adcc50c631729df53f1
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: 27738514fc84105a0339eafcdbb540b7d3790052
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72351813"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416304"
 ---
 # <a name="powershell-core-support-lifecycle"></a>Supportlebenszyklus von PowerShell Core
 
@@ -19,7 +19,7 @@ Sie können auch Hilfe bei der kostenpflichtigen [unterstützten Support][] für
 ## <a name="community-support"></a>Communitysupport
 
 Auf GitHub wird Ihnen auch [Communitysupport][] geboten. Dort können Sie Tickets zu Problemen, Fehlern oder Funktionsanfragen stellen.
-Sie haben auch die Möglichkeit, sich von anderen Mitgliedern aus der allgemeinen [Microsoft Community][] oder der Microsoft [PowerShell Tech Community][] helfen zu lassen. Wir bieten keine Garantie, dass die Community Ihr Problem zügig behandelt oder behebt. Wenn Sie ein Problem haben, das unmittelbar Aufmerksamkeit erfordert, sollten Sie sich an die herkömmlichen kostenpflichtigen Supportoptionen wenden.
+Außerdem finden Sie Unterstützung von anderen Mitgliedern der Community in der Microsoft [PowerShell Tech Community][] oder in einem der Foren, die im Communityabschnitt der [PowerShell][pshub]-Hubseite aufgeführt sind. Wir bieten keine Garantie, dass die Community Ihr Problem zügig behandelt oder behebt. Wenn Sie ein Problem haben, das unmittelbar Aufmerksamkeit erfordert, sollten Sie sich an die herkömmlichen kostenpflichtigen Supportoptionen wenden.
 
 ## <a name="lifecycle-of-powershell-core"></a>Lebenszyklus von PowerShell Core
 
@@ -117,9 +117,9 @@ PowerShell Core wird unter der [MIT-Lizenz][] veröffentlicht. Unter dieser Lize
 
 Der Support für PowerShell Core gilt nicht für andere Produktmodule, es sei denn, diese Module unterstützen PowerShell Core ausdrücklich. Zum Beispiel wird das Modul `ActiveDirectory`, das als Teil von Windows Server bereitgestellt wird, nicht unterstützt.
 
-Allerdings können auch Module, die PowerShell Core nicht explizit unterstützen, in einigen Fällen kompatibel sein. Durch die Installation des Moduls [`WindowsPSModulePath`][] können Sie `PSModulePath` von Windows PowerShell an `PSModulePath` von PowerShell Core anfügen.
+Allerdings können auch Module, die PowerShell Core nicht explizit unterstützen, in einigen Fällen kompatibel sein. Durch die Installation des [WindowsPSModulePath][]-Moduls können Sie den Windows PowerShell-`PSModulePath` an Ihren PowerShell Core-`PSModulePath` anfügen.
 
-Installieren Sie zunächst das `WindowsPSModulePath`-Modul aus dem PowerShell-Katalog:
+Installieren Sie zunächst das **WindowsPSModulePath**-Modul aus dem PowerShell-Katalog:
 
 ```powershell
 # Add `-Scope CurrentUser` if you're installing as non-admin
@@ -141,12 +141,12 @@ Add-WindowsPSModulePath
 [enterprise-agreement]: https://www.microsoft.com/en-us/licensing/licensing-programs/enterprise.aspx
 [assurance]: https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx
 [Communitysupport]: https://github.com/powershell/powershell/issues
-[Microsoft Community]: https://answers.microsoft.com/
+[pshub]: https://docs.microsoft.com/powershell
 [PowerShell Tech Community]: https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell
 [unterstützten Support]: https://support.microsoft.com/assistedsupportproducts
 [modern]: https://support.microsoft.com/help/30881/modern-lifecycle-policy
 [lifecycle-chart]: ./images/modern-lifecycle.png
 [semi-annual]: https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview
 [MIT-Lizenz]: https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt
-[`WindowsPSModulePath`]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
+[WindowsPSModulePath]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
 [Experimentelle Features]: /powershell/module/microsoft.powershell.core/about/about_powershell_config?view=powershell-6#experimentalfeatures

@@ -1,15 +1,15 @@
 ---
-ms.date: 05/17/2018
+ms.date: 11/15/2019
 keywords: powershell,core
 title: Breaking Changes in PowerShell Core 6.0
-ms.openlocfilehash: df716fc3ad48d640ddefcfd87da445eaf104cfbe
-ms.sourcegitcommit: e1027805385081c2e6f9250f9cd1167a45f035b0
+ms.openlocfilehash: a1dac42bcda8e1258a99ef281691a9d4c5986b53
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72561260"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417560"
 ---
-# <a name="breaking-changes-for-powershell-60"></a>Breaking Changes in PowerShell Core 6.0
+# <a name="breaking-changes-for-powershell-6x"></a>Breaking Changes in PowerShell 6.x
 
 ## <a name="features-no-longer-available-in-powershell-core"></a>Nicht mehr verfügbare Features in PowerShell Core
 
@@ -23,7 +23,7 @@ Zukünftig soll die native Parallelität in der PowerShell-Sprache ohne Notwendi
 
 Wenn für die Fortsetzung eines Skripts nach dem Neustart des Betriebssystems Prüfpunkte erforderlich sind, empfehlen wir die Verwendung des Taskplaners, um beim Betriebssystemstart ein Skript auszuführen. Das Skript muss dabei jedoch seinen Status selbst verwalten (z. B. durch Speichern in eine Datei).
 
-[workflow]: https://docs.microsoft.com/powershell/scripting/core-powershell/workflows-guide
+[workflow]: /powershell/scripting/components/workflows-guide
 [workflow-foundation]: https://docs.microsoft.com/dotnet/framework/windows-workflow-foundation/
 
 ### <a name="custom-snap-ins"></a>Benutzerdefinierte Snap-Ins
@@ -291,3 +291,4 @@ Die zugrunde liegende .NET-API der Web-Cmdlets wurde in `System.Net.Http.HttpCli
 - Derzeit ist keine zertifikatbasierte Authentifizierung unter macOS verfügbar.
 - Das Verwenden eines `-Credential`- statt einem `http://`-URI führt zu einem Fehler. Verwenden Sie einen `https://`-URI, oder geben Sie den `-AllowUnencryptedAuthentication`-Parameter an, um den Fehler zu unterdrücken.
 - `-MaximumRedirection` erzeugt nun einen Fehler mit Abbruch, wenn Umleitungsversuche die angegebene Grenze überschreiten, anstatt die Ergebnisse der letzten Umleitung zurückzugeben.
+- In PowerShell 6.2 wurde eine Änderung an der standardmäßigen UTF-8-Codierung für JSON-Antworten vorgenommen. Wenn für eine JSON-Antwort kein Zeichensatz angegeben wird, muss die Standardcodierung gemäß RFC 8259 UTF-8 lauten.
