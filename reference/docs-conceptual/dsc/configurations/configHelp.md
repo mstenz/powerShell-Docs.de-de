@@ -3,25 +3,25 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,setup
 title: Schreiben von Hilfe für DSC-Konfigurationen
 ms.openlocfilehash: 498ec0f594ed3229e097903c4ea2ae34d3da03a2
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71954137"
 ---
-# <a name="writing-help-for-dsc-configurations"></a><span data-ttu-id="58e74-103">Schreiben von Hilfe für DSC-Konfigurationen</span><span class="sxs-lookup"><span data-stu-id="58e74-103">Writing help for DSC configurations</span></span>
+# <a name="writing-help-for-dsc-configurations"></a><span data-ttu-id="eb093-103">Schreiben von Hilfe für DSC-Konfigurationen</span><span class="sxs-lookup"><span data-stu-id="eb093-103">Writing help for DSC configurations</span></span>
 
-><span data-ttu-id="58e74-104">Gilt für: Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="58e74-104">Applies To: Windows PowerShell 5.0</span></span>
+><span data-ttu-id="eb093-104">Gilt für: Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="eb093-104">Applies To: Windows PowerShell 5.0</span></span>
 
-<span data-ttu-id="58e74-105">Sie können die kommentarbasierte Hilfe in DSC-Konfigurationen verwenden.</span><span class="sxs-lookup"><span data-stu-id="58e74-105">You can use comment-based help in DSC configurations.</span></span> <span data-ttu-id="58e74-106">Benutzer können auf die Hilfe zugreifen, entweder durch Aufrufen der **Konfiguration** mit `-?` oder mithilfe des Cmdlets [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help).</span><span class="sxs-lookup"><span data-stu-id="58e74-106">Users can access the help by calling the **Configuration** with `-?`, or by using the [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet.</span></span> <span data-ttu-id="58e74-107">Platzieren Sie Ihre kommentarbasierte Hilfe direkt oberhalb des `Configuration`-Schlüsselworts.</span><span class="sxs-lookup"><span data-stu-id="58e74-107">Place your Comment-based help directly above the `Configuration` keyword.</span></span>
-<span data-ttu-id="58e74-108">Sie können die Parameterhilfe parallel zu Ihrem Kommentarblock, direkt über der Parameterdeklaration oder an beiden Positionen wie im folgenden Beispiel gezeigt platzieren.</span><span class="sxs-lookup"><span data-stu-id="58e74-108">You can place parameter help in-line with your comment block, directly above the parameter declaration, or both as in the example below.</span></span>
+<span data-ttu-id="eb093-105">Sie können die kommentarbasierte Hilfe in DSC-Konfigurationen verwenden.</span><span class="sxs-lookup"><span data-stu-id="eb093-105">You can use comment-based help in DSC configurations.</span></span> <span data-ttu-id="eb093-106">Benutzer können auf die Hilfe zugreifen, entweder durch Aufrufen der **Konfiguration** mit `-?` oder mithilfe des Cmdlets [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help).</span><span class="sxs-lookup"><span data-stu-id="eb093-106">Users can access the help by calling the **Configuration** with `-?`, or by using the [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet.</span></span> <span data-ttu-id="eb093-107">Platzieren Sie Ihre kommentarbasierte Hilfe direkt oberhalb des `Configuration`-Schlüsselworts.</span><span class="sxs-lookup"><span data-stu-id="eb093-107">Place your Comment-based help directly above the `Configuration` keyword.</span></span>
+<span data-ttu-id="eb093-108">Sie können die Parameterhilfe parallel zu Ihrem Kommentarblock, direkt über der Parameterdeklaration oder an beiden Positionen wie im folgenden Beispiel gezeigt platzieren.</span><span class="sxs-lookup"><span data-stu-id="eb093-108">You can place parameter help in-line with your comment block, directly above the parameter declaration, or both as in the example below.</span></span>
 
-<span data-ttu-id="58e74-109">Weitere Informationen zur kommentarbasierten Hilfe für PowerShell finden Sie unter [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).</span><span class="sxs-lookup"><span data-stu-id="58e74-109">For more information about PowerShell comment-based help, see [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).</span></span>
+<span data-ttu-id="eb093-109">Weitere Informationen zur kommentarbasierten Hilfe für PowerShell finden Sie unter [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).</span><span class="sxs-lookup"><span data-stu-id="eb093-109">For more information about PowerShell comment-based help, see [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="58e74-110">PowerShell-Entwicklungsumgebungen wie VSCode und die ISE verfügen auch über Codeausschnitte, mit denen Sie automatisch Kommentarblockvorlagen einfügen können.</span><span class="sxs-lookup"><span data-stu-id="58e74-110">PowerShell development environments, like VSCode and the ISE, also have snippets to allow you to automatically insert comment block templates.</span></span>
+> <span data-ttu-id="eb093-110">PowerShell-Entwicklungsumgebungen wie VSCode und die ISE verfügen auch über Codeausschnitte, mit denen Sie automatisch Kommentarblockvorlagen einfügen können.</span><span class="sxs-lookup"><span data-stu-id="eb093-110">PowerShell development environments, like VSCode and the ISE, also have snippets to allow you to automatically insert comment block templates.</span></span>
 
-<span data-ttu-id="58e74-111">Das folgende Beispiel zeigt ein Skript, das eine Konfiguration und kommentarbasierte Hilfe dafür enthält.</span><span class="sxs-lookup"><span data-stu-id="58e74-111">The following example shows a script that contains a configuration and comment-based help for it.</span></span> <span data-ttu-id="58e74-112">Dieses Beispiel zeigt eine Konfiguration mit Parametern.</span><span class="sxs-lookup"><span data-stu-id="58e74-112">This example shows a Configuration with parameters.</span></span> <span data-ttu-id="58e74-113">Weitere Informationen zum Verwenden von Parametern in Ihrer Konfigurationen finden Sie unter [Hinzufügen von Parametern zu Ihren Konfigurationen](add-parameters-to-a-configuration.md).</span><span class="sxs-lookup"><span data-stu-id="58e74-113">To learn more about using parameters in your Configurations, see [Add Parameters to your Configurations](add-parameters-to-a-configuration.md).</span></span>
+<span data-ttu-id="eb093-111">Das folgende Beispiel zeigt ein Skript, das eine Konfiguration und kommentarbasierte Hilfe dafür enthält.</span><span class="sxs-lookup"><span data-stu-id="eb093-111">The following example shows a script that contains a configuration and comment-based help for it.</span></span> <span data-ttu-id="eb093-112">Dieses Beispiel zeigt eine Konfiguration mit Parametern.</span><span class="sxs-lookup"><span data-stu-id="eb093-112">This example shows a Configuration with parameters.</span></span> <span data-ttu-id="eb093-113">Weitere Informationen zum Verwenden von Parametern in Ihrer Konfigurationen finden Sie unter [Hinzufügen von Parametern zu Ihren Konfigurationen](add-parameters-to-a-configuration.md).</span><span class="sxs-lookup"><span data-stu-id="eb093-113">To learn more about using parameters in your Configurations, see [Add Parameters to your Configurations](add-parameters-to-a-configuration.md).</span></span>
 
 ```powershell
 <#
@@ -75,9 +75,9 @@ configuration HelpSample1
 }
 ```
 
-## <a name="viewing-configuration-help"></a><span data-ttu-id="58e74-114">Anzeigen von Hilfe zur Konfiguration</span><span class="sxs-lookup"><span data-stu-id="58e74-114">Viewing configuration help</span></span>
+## <a name="viewing-configuration-help"></a><span data-ttu-id="eb093-114">Anzeigen von Hilfe zur Konfiguration</span><span class="sxs-lookup"><span data-stu-id="eb093-114">Viewing configuration help</span></span>
 
-<span data-ttu-id="58e74-115">Verwenden Sie zum Anzeigen der Hilfe für eine Konfiguration das Cmdlet `Get-Help` mit dem Namen der Funktion, oder geben der Namen der Funktion gefolgt von `-?` ein.</span><span class="sxs-lookup"><span data-stu-id="58e74-115">To view the help for a configuration, use the `Get-Help` cmdlet with the name of the function, or type the name of the function followed by `-?`.</span></span> <span data-ttu-id="58e74-116">Im Folgenden sehen Sie die Ausgabe der vorherigen Konfiguration, die an `Get-Help` übergeben wurde.</span><span class="sxs-lookup"><span data-stu-id="58e74-116">The following is the output of the previous Configuration passed to `Get-Help`.</span></span>
+<span data-ttu-id="eb093-115">Verwenden Sie zum Anzeigen der Hilfe für eine Konfiguration das Cmdlet `Get-Help` mit dem Namen der Funktion, oder geben der Namen der Funktion gefolgt von `-?` ein.</span><span class="sxs-lookup"><span data-stu-id="eb093-115">To view the help for a configuration, use the `Get-Help` cmdlet with the name of the function, or type the name of the function followed by `-?`.</span></span> <span data-ttu-id="eb093-116">Im Folgenden sehen Sie die Ausgabe der vorherigen Konfiguration, die an `Get-Help` übergeben wurde.</span><span class="sxs-lookup"><span data-stu-id="eb093-116">The following is the output of the previous Configuration passed to `Get-Help`.</span></span>
 
 ```powershell
 Get-Help HelpSample1 -Detailed
@@ -157,10 +157,10 @@ REMARKS
 ```
 
 > [!NOTE]
-> <span data-ttu-id="58e74-117">Syntaxfelder und Parameterattribute werden von PowerShell automatisch für Sie generiert.</span><span class="sxs-lookup"><span data-stu-id="58e74-117">Syntax fields and parameter attributes are automatically generated for you by PowerShell.</span></span>
+> <span data-ttu-id="eb093-117">Syntaxfelder und Parameterattribute werden von PowerShell automatisch für Sie generiert.</span><span class="sxs-lookup"><span data-stu-id="eb093-117">Syntax fields and parameter attributes are automatically generated for you by PowerShell.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="58e74-118">Weitere Informationen</span><span class="sxs-lookup"><span data-stu-id="58e74-118">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="eb093-118">Weitere Informationen</span><span class="sxs-lookup"><span data-stu-id="eb093-118">See Also</span></span>
 
-- [<span data-ttu-id="58e74-119">DSC-Konfigurationen</span><span class="sxs-lookup"><span data-stu-id="58e74-119">DSC Configurations</span></span>](configurations.md)
-- [<span data-ttu-id="58e74-120">Schreiben, Kompilieren und Anwenden einer Konfiguration</span><span class="sxs-lookup"><span data-stu-id="58e74-120">Write, Compile, and Apply a Configuration</span></span>](write-compile-apply-configuration.md)
-- [<span data-ttu-id="58e74-121">Hinzufügen von Parametern zu einer Konfiguration</span><span class="sxs-lookup"><span data-stu-id="58e74-121">Add Parameters to a Configuration</span></span>](add-parameters-to-a-configuration.md)
+- [<span data-ttu-id="eb093-119">DSC-Konfigurationen</span><span class="sxs-lookup"><span data-stu-id="eb093-119">DSC Configurations</span></span>](configurations.md)
+- [<span data-ttu-id="eb093-120">Schreiben, Kompilieren und Anwenden einer Konfiguration</span><span class="sxs-lookup"><span data-stu-id="eb093-120">Write, Compile, and Apply a Configuration</span></span>](write-compile-apply-configuration.md)
+- [<span data-ttu-id="eb093-121">Hinzufügen von Parametern zu einer Konfiguration</span><span class="sxs-lookup"><span data-stu-id="eb093-121">Add Parameters to a Configuration</span></span>](add-parameters-to-a-configuration.md)
