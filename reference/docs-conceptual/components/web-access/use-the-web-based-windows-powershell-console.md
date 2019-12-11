@@ -3,10 +3,10 @@ ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: Verwendung der webbasierten Windows PowerShell-Konsole
 ms.openlocfilehash: 2bb9c6ef486ef32012a15f9890997cf2fa6a3a0b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "62086632"
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>Verwendung der webbasierten Windows PowerShell-Konsole
@@ -201,7 +201,7 @@ ALT+F7 | Befehlsverlauf löschen
 
 - Permanente Windows PowerShell-Sitzungen (erneute Verbindung).
 
-    Nachdem die Sitzung mit dem Windows PowerShell Web Access-Gateway abgelaufen ist, wird die Remoteverbindung zwischen dem Gateway und dem Zielcomputer getrennt. Dabei werden alle Cmdlets und Skripts, die aktuell laufen, beendet. Es ist empfehlenswert, bei lang andauernden Aufgaben die Windows PowerShell-**-Job**-Infrastruktur zu verwenden, damit Sie Aufträge starten, die Verbindung mit dem Computer trennen und später wieder herstellen können, ohne dass der Auftrag abgebrochen wird. Ein weiterer Vorteil der Verwendung von **-Job**-Cmdlets ist, dass Sie sie mithilfe von Windows PowerShell Web Access starten, sich abmelden und später wieder anmelden können, indem Sie entweder Windows PowerShell Web Access oder einen anderen Host ausführen (z.B. Windows PowerShell Integrated Scripting Environment (ISE)).
+    Nachdem die Sitzung mit dem Windows PowerShell Web Access-Gateway abgelaufen ist, wird die Remoteverbindung zwischen dem Gateway und dem Zielcomputer getrennt. Dabei werden alle Cmdlets und Skripts, die aktuell laufen, beendet. Es ist empfehlenswert, bei lang andauernden Aufgaben die Windows PowerShell- **-Job**-Infrastruktur zu verwenden, damit Sie Aufträge starten, die Verbindung mit dem Computer trennen und später wieder herstellen können, ohne dass der Auftrag abgebrochen wird. Ein weiterer Vorteil der Verwendung von **-Job**-Cmdlets ist, dass Sie sie mithilfe von Windows PowerShell Web Access starten, sich abmelden und später wieder anmelden können, indem Sie entweder Windows PowerShell Web Access oder einen anderen Host ausführen (z.B. Windows PowerShell Integrated Scripting Environment (ISE)).
 
 - Ändern der Konsolengröße.
 

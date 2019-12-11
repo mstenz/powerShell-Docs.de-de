@@ -3,10 +3,10 @@ ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: Deinstallieren von Windows PowerShell Web Access
 ms.openlocfilehash: 22c874d766445dccedd8494097daf16c30fa66ff
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "62058134"
 ---
 # <a name="uninstall-windows-powershell-web-access"></a>Deinstallieren von Windows PowerShell Web Access
@@ -81,7 +81,7 @@ Mit den in diesem Abschnitt beschriebenen Verfahren können Sie die Windows Powe
 
 1. Öffnen Sie die IIS-Manager-Konsole, indem Sie eine der folgenden Aktionen ausführen: Wenn die Konsole bereits geöffnet ist, fahren Sie mit dem nächsten Schritt fort.
 
-    -   Starten Sie auf dem Windows-Desktop den Server-Manager, indem Sie in der Windows-Taskleiste auf **Server-Manager** klicken. Klicken Sie im Menü **Tools** im Server-Manager auf **Internetinformationsdienste-Manager (IIS)**.
+    -   Starten Sie auf dem Windows-Desktop den Server-Manager, indem Sie in der Windows-Taskleiste auf **Server-Manager** klicken. Klicken Sie im Menü **Tools** im Server-Manager auf **Internetinformationsdienste-Manager (IIS)** .
 
     -   Geben Sie auf dem Windows-**Startbildschirm** einen beliebigen Teil des Namens **Internetinformationsdienste-Manager (IIS)** ein. Klicken Sie auf die Verknüpfung, wenn diese in den Ergebnissen unter **Apps** angezeigt wird.
 

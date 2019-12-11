@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Verwalten von Windows PowerShell-Laufwerken
 ms.openlocfilehash: 5d1aba459caeaab2542e17e74534da6713b0faa9
-ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/03/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "70215509"
 ---
 # <a name="managing-windows-powershell-drives"></a>Verwalten von Windows PowerShell-Laufwerken
@@ -115,7 +115,7 @@ Office     FileSystem    C:\Program Files\Microsoft Offic...
 > [!NOTE]
 > Bei Pfaden wird im Allgemeinen Groß-/Kleinschreibung nicht beachtet.
 
-Sie verweisen auf das neue Windows PowerShell-Laufwerk wie auf alle Windows PowerShell-Laufwerke – über den Namen gefolgt von einem Doppelpunkt (**:**).
+Sie verweisen auf das neue Windows PowerShell-Laufwerk wie auf alle Windows PowerShell-Laufwerke – über den Namen gefolgt von einem Doppelpunkt ( **:** ).
 
 Ein Windows PowerShell-Laufwerk kann viele Aufgaben einfacher machen. Beispielsweise haben einige der wichtigsten Schlüssel in der Windows-Registrierung äußerst lange Pfade, die den Zugriff darauf mühsam machen und schwer zu merken sind. Wichtige Konfigurationsinformationen befinden sich unter **HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion**. Zum Anzeigen und Ändern von Elementen im Registrierungsschlüssel „CurrentVersion“ können Sie ein Windows PowerShell-Laufwerk mit dem Stamm in diesem Schlüssel erstellen, indem Sie Folgendes eingeben:
 
@@ -155,7 +155,7 @@ Wenn Sie beispielsweise das Windows PowerShell-Laufwerk **Office:** hinzugefügt
 Remove-PSDrive -Name Office
 ```
 
-Zum Löschen des Windows PowerShell-Laufwerks **cvkey:**, das ebenfalls im Thema **New-PSDrive** gezeigt wird, verwenden Sie den folgenden Befehl:
+Zum Löschen des Windows PowerShell-Laufwerks **cvkey:** , das ebenfalls im Thema **New-PSDrive** gezeigt wird, verwenden Sie den folgenden Befehl:
 
 ```powershell
 Remove-PSDrive -Name cvkey

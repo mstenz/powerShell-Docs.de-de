@@ -3,10 +3,10 @@ title: Grundlegendes zur Dateicodierung in VSCode und PowerShell
 description: Konfigurieren der Dateicodierung in VSCode und PowerShell
 ms.date: 02/28/2019
 ms.openlocfilehash: 3283e1262c8eb26906429ecf195cfa0b122b330f
-ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74117406"
 ---
 # <a name="understanding-file-encoding-in-vscode-and-powershell"></a>Grundlegendes zur Dateicodierung in VSCode und PowerShell
@@ -210,7 +210,7 @@ Get-ChildItem *.ps1 -Recurse | ForEach-Object {
 
 Wenn Sie auch Skripts mit der PowerShell ISE verwenden, müssen Sie dort Ihre Codierungseinstellungen synchronisieren.
 
-Die ISE sollte eine BOM beachten. Es ist jedoch auch möglich, die [Codierung mit der Reflektion festzulegen](https://bensonxion.wordpress.com/2012/04/25/powershell-ise-default-saveas-encoding/).
+Die ISE sollte eine BOM beachten. Es ist jedoch auch möglich, die [Codierung mit der Reflexion festzulegen](https://bensonxion.wordpress.com/2012/04/25/powershell-ise-default-saveas-encoding/).
 Beachten Sie, dass diese Einstellung beim erneuten Öffnen nicht beibehalten wird.
 
 ### <a name="source-control-software"></a>Quellcodeverwaltungssoftware

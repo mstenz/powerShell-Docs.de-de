@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: wmf,powershell,setup
 title: Erstellen benutzerdefinierter Typen mithilfe von PowerShell-Klassen
 ms.openlocfilehash: c2c50fb65ce4931fcf6ae529b4146df391c831c4
-ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 09/19/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71147840"
 ---
 # <a name="creating-custom-types-using-powershell-classes"></a>Erstellen benutzerdefinierter Typen mithilfe von PowerShell-Klassen
@@ -210,7 +210,7 @@ enum OtherEnum { Max = [SomeEnum]::Max + 1 }
 
 Eine neue Feld **ImplementingAssembly** wurde zu **ModuleInfo** hinzugefügt. Es ist auf die dynamische Assembly, die für ein Skriptmodul erstellt wird, wenn das Skript Klassen definiert, oder die geladene Assembly für binäre Module festgelegt. Falls **ModuleType** = **Manifest**, wird es nicht festgelegt.
 
-Über eine Reflektion auf das Feld **ImplementingAssembly** werden Ressourcen in einem Modul ermittelt. Dies bedeutet, dass Sie Ressourcen ermitteln können, die in PowerShell oder anderen verwalteten Sprachen geschrieben wurden.
+Über eine Reflexion auf das Feld **ImplementingAssembly** werden Ressourcen in einem Modul ermittelt. Dies bedeutet, dass Sie Ressourcen ermitteln können, die in PowerShell oder anderen verwalteten Sprachen geschrieben wurden.
 
 Felder mit Initialisierern:
 

@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Installieren der Windows PowerShell 2.0-Engine
 ms.openlocfilehash: a2b78755e7e44e2523baee5477fadc94eab485b1
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030964"
 ---
 # <a name="installing-the-windows-powershell-20-engine"></a>Installieren der Windows PowerShell 2.0-Engine
@@ -29,7 +29,7 @@ Unter Windows 8.1 und Windows 8 ist die Funktion Windows PowerShell 2.0 Engine s
 
 2. Klicken Sie auf der Leiste **Apps** auf **Einstellungen**, und klicken Sie dann auf **Windows-Features aktivieren oder deaktivieren**.
 
-3. Klicken Sie im Feld **Windows-Features** auf **.NET Framework 3.5 (enthält .NET 2.0 und 3.0)**, um es auszuwählen.
+3. Klicken Sie im Feld **Windows-Features** auf **.NET Framework 3.5 (enthält .NET 2.0 und 3.0)** , um es auszuwählen.
 
     Wenn Sie die Option **NET Framework 3.5 (enthält .NET 2.0 und 3.0)** auswählen, wird das Feld aufgefüllt, um anzugeben, dass nur ein Teil des Features ausgewählt ist. Dies ist jedoch für Windows PowerShell 2.0 Engine ausreichend.
 
@@ -64,7 +64,7 @@ Mithilfe der folgenden Verfahren können Sie Windows PowerShell 2.0 Engine und M
 
 - Wählen Sie auf der Seite **Installationstyp auswählen** **Rollenbasierte oder featurebasierte Installation** aus.
 
-- Auf der Seite **Features**, erweitern Sie den Knoten **Windows PowerShell (installiert)**, und wählen Sie **Windows PowerShell 2.0 Engine** aus.
+- Auf der Seite **Features**, erweitern Sie den Knoten **Windows PowerShell (installiert)** , und wählen Sie **Windows PowerShell 2.0 Engine** aus.
 
 Informationen zum Starten der Windows PowerShell 2.0-Engine finden Sie unter [Starten der Windows PowerShell 2.0-Engine](../getting-started/Starting-the-Windows-PowerShell-2.0-Engine.md).
 

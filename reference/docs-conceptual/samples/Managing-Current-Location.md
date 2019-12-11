@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Verwalten des aktuellen Speicherorts
 ms.openlocfilehash: 42ab56759dec882d140f813c8614e578957722b3
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030206"
 ---
 # <a name="managing-current-location"></a>Verwalten des aktuellen Speicherorts
@@ -49,9 +49,9 @@ C:\WINDOWS
 
 Der Parameter **-PassThru** kann mit vielen „Set“-Befehlen in Windows PowerShell verwendet werden, um Informationen über das Ergebnis in Fällen zurückzugeben, in denen keine Standardausgabe vorhanden ist.
 
-Sie können Pfade, die relativ zu Ihrem aktuellen Speicherort sind, auf die gleiche Weise angeben, wie Sie dies in den meisten UNIX- und Windows-Befehlsshells tun würden. In der Standardschreibweise für relative Pfade stellt ein Punkt (**.**) Ihren aktuellen Ordner dar, und zwei Punkte (**..**) stellen das übergeordnete Verzeichnis Ihres aktuellen Speicherorts dar.
+Sie können Pfade, die relativ zu Ihrem aktuellen Speicherort sind, auf die gleiche Weise angeben, wie Sie dies in den meisten UNIX- und Windows-Befehlsshells tun würden. In der Standardschreibweise für relative Pfade stellt ein Punkt ( **.** ) Ihren aktuellen Ordner dar, und zwei Punkte ( **..** ) stellen das übergeordnete Verzeichnis Ihres aktuellen Speicherorts dar.
 
-Wenn Sie sich beispielsweise im Ordner **C:\\Windows** befinden, stellt ein Punkt (**.**) **C:\\Windows** dar, während zwei Punkte (**..**) **C:** darstellen. Sie können aus Ihrem aktuellen Speicherort in das Stammverzeichnis des Laufwerks C: wechseln, indem Sie Folgendes eingeben:
+Wenn Sie sich beispielsweise im Ordner **C:\\Windows** befinden, stellt ein Punkt ( **.** ) **C:\\Windows** dar, während zwei Punkte ( **..** ) **C:** darstellen. Sie können aus Ihrem aktuellen Speicherort in das Stammverzeichnis des Laufwerks C: wechseln, indem Sie Folgendes eingeben:
 
 ```
 PS> Set-Location -Path .. -PassThru
@@ -61,7 +61,7 @@ Path
 C:\
 ```
 
-Dieselbe Vorgehensweise funktioniert für Windows PowerShell-Laufwerke, die keine Dateisystemlaufwerke sind, etwa **HKLM:**. Sie können Ihren Speicherort auf den Schlüssel „HKLM\\Software“ in der Registrierung festlegen, indem Sie Folgendes eingeben:
+Dieselbe Vorgehensweise funktioniert für Windows PowerShell-Laufwerke, die keine Dateisystemlaufwerke sind, etwa **HKLM:** . Sie können Ihren Speicherort auf den Schlüssel „HKLM\\Software“ in der Registrierung festlegen, indem Sie Folgendes eingeben:
 
 ```
 PS> Set-Location -Path HKLM:\SOFTWARE -PassThru

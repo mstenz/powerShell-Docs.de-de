@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: dsc,powershell,configuration,setup
 title: DSC für Linux-Resource „nxPackage“
 ms.openlocfilehash: 4091cbbd5e34a84b9011870da4bda93281378347
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71954817"
 ---
 # <a name="dsc-for-linux-nxpackage-resource"></a>DSC für Linux-Resource „nxPackage“

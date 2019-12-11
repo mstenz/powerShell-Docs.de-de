@@ -3,10 +3,10 @@ ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: Installieren und Verwenden von Windows PowerShell Web Access
 ms.openlocfilehash: 5f6e94859c55bbd07f3f8a83bc4b9a83bc89d0fa
-ms.sourcegitcommit: a35450f420dc10a02379f6e6f08a28ad11fe5a6d
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/01/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71692248"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Installieren und Verwenden von Windows PowerShell Web Access
@@ -165,7 +165,7 @@ Standardmäßig wird die Webanwendung **pswa** (und der dazugehörige Anwendungs
 
 3. Öffnen Sie die IIS-Manager-Konsole, indem Sie eine der folgenden Aktionen ausführen:
 
-   - Starten Sie auf dem Windows-Desktop den Server-Manager, indem Sie in der Windows-Taskleiste auf **Server-Manager** klicken. Klicken Sie im Menü **Tools** im Server-Manager auf **Internetinformationsdienste-Manager (IIS)**.
+   - Starten Sie auf dem Windows-Desktop den Server-Manager, indem Sie in der Windows-Taskleiste auf **Server-Manager** klicken. Klicken Sie im Menü **Tools** im Server-Manager auf **Internetinformationsdienste-Manager (IIS)** .
    - Klicken Sie auf der Windows-**Startseite** auf **Server-Manager**.
 
 4. Erweitern Sie im IIS-Manager-Strukturbereich den Knoten für den Server, auf dem Windows PowerShell Web Access installiert ist, bis der Ordner **Sites** sichtbar ist. Erweitern Sie den Ordner **Sites**.
@@ -256,7 +256,7 @@ Die Anweisungen in diesem Abschnitt gelten für die Installation der Windows Pow
 
 1. Öffnen Sie die IIS-Manager-Konsole, indem Sie eine der folgenden Aktionen ausführen:
 
-   - Starten Sie auf dem Windows-Desktop den Server-Manager, indem Sie in der Windows-Taskleiste auf **Server-Manager** klicken. Klicken Sie im Menü **Tools** im Server-Manager auf **Internetinformationsdienste-Manager (IIS)**.
+   - Starten Sie auf dem Windows-Desktop den Server-Manager, indem Sie in der Windows-Taskleiste auf **Server-Manager** klicken. Klicken Sie im Menü **Tools** im Server-Manager auf **Internetinformationsdienste-Manager (IIS)** .
    - Geben Sie auf dem Windows-**Startbildschirm** einen beliebigen Teil des Namens **Internetinformationsdienste-Manager (IIS)** ein. Klicken Sie auf die Verknüpfung, wenn diese in den **Apps**-Ergebnissen angezeigt wird.
 
 2. Erstellen Sie einen neuen Anwendungspool für Windows PowerShell Web Access. Erweitern Sie den Knoten des Gatewayservers im IIS-Manager-Strukturbereich, wählen Sie die **Anwendungspools** aus, und klicken Sie im Bereich **Aktionen** auf **Anwendungspool hinzufügen**.
@@ -307,7 +307,7 @@ Die Anweisungen in diesem Abschnitt gelten für die Installation der Windows Pow
 
 1. Öffnen Sie die IIS-Manager-Konsole, indem Sie eine der folgenden Aktionen ausführen:
 
-   - Starten Sie auf dem Windows-Desktop den Server-Manager, indem Sie in der Windows-Taskleiste auf **Server-Manager** klicken. Klicken Sie im Menü **Tools** im Server-Manager auf **Internetinformationsdienste-Manager (IIS)**.
+   - Starten Sie auf dem Windows-Desktop den Server-Manager, indem Sie in der Windows-Taskleiste auf **Server-Manager** klicken. Klicken Sie im Menü **Tools** im Server-Manager auf **Internetinformationsdienste-Manager (IIS)** .
    - Geben Sie auf dem Windows-**Startbildschirm** einen beliebigen Teil des Namens **Internetinformationsdienste-Manager (IIS)** ein. Klicken Sie auf die Verknüpfung, wenn diese in den **Apps**-Ergebnissen angezeigt wird.
 
 1. Erweitern Sie im IIS-Manager-Strukturbereich den Knoten für den Server, auf dem Windows PowerShell Web Access installiert ist, bis der Ordner **Sites** sichtbar ist. Wählen Sie den Ordner **Sites** aus.
@@ -327,7 +327,7 @@ Die Anweisungen in diesem Abschnitt gelten für die Installation der Windows Pow
 
    Ändern Sie den Standardport, falls Port 443 bereits von einer anderen Website verwendet wird oder wenn das Ändern der Portnummer aus anderen Sicherheitsgründen notwendig ist. Falls eine andere Website, die auf dem Gatewayserver ausgeführt wird, den ausgewählten Port verwendet, wird eine Warnung angezeigt, wenn Sie im Dialogfeld **Website hinzufügen** auf **OK** klicken. Sie müssen einen nicht verwendeten Port zum Ausführen von Windows PowerShell Web Access verwenden.
 
-1. Falls dies für Ihre Organisation erforderlich ist, können Sie optional einen Hostnamen angeben, der für die Organisation und Benutzer sinnvoll ist, z.B. **`www.contoso.com`**. Klicken Sie auf **OK**.
+1. Falls dies für Ihre Organisation erforderlich ist, können Sie optional einen Hostnamen angeben, der für die Organisation und Benutzer sinnvoll ist, z.B. **`www.contoso.com`** . Klicken Sie auf **OK**.
 
 1. Zur Erhöhung der Sicherheit von Produktionsumgebungen wird dringend dazu geraten, ein gültiges Zertifikat bereitzustellen, das von einer Zertifizierungsstelle signiert wurde. Sie müssen ein SSL-Zertifikat bereitstellen, weil Benutzer die Verbindung mit Windows PowerShell Web Access nur über eine HTTPS-Website herstellen können. Weitere Informationen zum Anfordern eines Zertifikats finden Sie in diesem Thema unter [So konfigurieren Sie ein SSL-Zertifikat im IIS-Manager](#to-configure-an-ssl-certificate-in-iis-manager).
 
