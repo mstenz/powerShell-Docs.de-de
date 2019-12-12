@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 92492a7e-257d-47d3-b119-89df3c5545e8
 caps.latest.revision: 9
 ms.openlocfilehash: db7ff3a2dbd92f562379d206db494ab92ef08736
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367299"
 ---
 # <a name="windows-powershell02-sample"></a>Windows PowerShell02-Beispiel
@@ -23,9 +23,9 @@ In diesem Beispiel wird gezeigt, wie Befehle asynchron mit den Runspaces eines R
 
 - Dieses Beispiel erfordert Windows PowerShell 2,0.
 
-## <a name="demonstrates"></a>Deutlich
+## <a name="demonstrates"></a>Gegenstand
 
-In diesem Beispiel wird Folgendes veranschaulicht:
+Dieses Beispiel zeigt die folgenden Vorgänge:
 
 - Das Erstellen eines runspacepool-Objekts mit einer minimalen und maximalen Anzahl von Runspaces, die gleichzeitig geöffnet sein dürfen.
 
