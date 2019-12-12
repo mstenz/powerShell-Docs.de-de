@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: f2a1531a-a92a-4606-9d54-c5df80d34f33
 caps.latest.revision: 8
 ms.openlocfilehash: a4426abec96cd922360aeef8c157b4e9f41a15b9
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364609"
 ---
 # <a name="adding-non-terminating-error-reporting-to-your-cmdlet"></a>Hinzufügen von Berichten für Fehler ohne Abbruch zu Cmdlet
@@ -23,7 +23,7 @@ In diesem Abschnitt wird erläutert, wie ein Cmdlet erstellt wird, das nicht abs
 Bei nicht beendenden Fehlern (sowie beim Beenden von Fehlern) muss das Cmdlet ein [System. Management. Automation. ErrorRecord][] -Objekt übergeben, das den Fehler identifiziert.
 Jeder Fehler Daten Satz wird durch eine eindeutige Zeichenfolge identifiziert, die als "Fehler Bezeichner" bezeichnet wird.
 Zusätzlich zum Bezeichner wird die Kategorie jedes Fehlers durch Konstanten angegeben, die durch eine [System. Management. Automation. ErrorCategory][] -Enumeration definiert werden.
-Der Benutzer kann Fehler basierend auf der Kategorie anzeigen, indem er die Variable `$ErrorView` auf "categoryview" festlegt.
+Der Benutzer kann Fehler basierend auf der Kategorie anzeigen, indem er die `$ErrorView` Variable auf "categoryview" festlegt.
 
 Weitere Informationen zu Fehler Datensätzen finden Sie unter [Windows PowerShell-Fehler Datensätze](./windows-powershell-error-records.md).
 
@@ -186,12 +186,12 @@ Bei einem Fehler ohne Abbruch muss das Cmdlet einen bestimmten Fehler Bezeichner
 
 Ein Cmdlet muss häufig die PowerShell-Aktion ändern, die von einem Fehler ohne Abbruch erzeugt wird.
 Hierzu können Sie die Parameter "`ErrorAction`" und "`ErrorVariable`" definieren.
-Wenn Sie den Parameter "`ErrorAction`" definieren, zeigt das Cmdlet die Benutzeroptionen " [System. Management. Automation. Action Preference][]" an. Sie können die Aktion auch direkt beeinflussen, indem Sie die Variable "`$ErrorActionPreference`" festlegen.
+Wenn Sie den `ErrorAction` Parameter definieren, zeigt das Cmdlet die Benutzeroptionen [System. Management. Automation. Action Preference][]an. Sie können die Aktion auch direkt beeinflussen, indem Sie die `$ErrorActionPreference` Variable festlegen.
 
-Mit dem-Cmdlet können nicht abschließende Fehler in einer Variablen mithilfe des Parameters "`ErrorVariable`" gespeichert werden, der von der-Einstellung `ErrorAction` nicht betroffen ist.
+Mit dem-Cmdlet können nicht abschließende Fehler in einer Variablen gespeichert werden. dabei wird der `ErrorVariable`-Parameter verwendet, der von der-Einstellung `ErrorAction`nicht betroffen ist.
 Fehler können an eine vorhandene Fehler Variable angehängt werden, indem ein Pluszeichen (+) am Anfang des Variablen namens hinzugefügt wird.
 
-## <a name="code-sample"></a>Code Beispiel
+## <a name="code-sample"></a>Codebeispiel
 
 Den gesamten C# Beispielcode finden Sie unter [GetProcessSample04 Sample](./getprocesssample04-sample.md).
 

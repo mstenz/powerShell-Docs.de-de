@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 27d0ee5e-2589-4530-92ef-c09996b80994
 caps.latest.revision: 10
 ms.openlocfilehash: 8f745cc0e5ef6db7a6bbdf39d826103f3b8a98ce
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369739"
 ---
 # <a name="events01-sample"></a>Events01-Beispiel
@@ -24,15 +24,15 @@ Dieses Beispiel wird von der [Microsoft. PowerShell. Commands. objecteventregist
 ## <a name="how-to-build-the-sample-by-using-visual-studio"></a>So erstellen Sie das Beispiel mithilfe von Visual Studio.
 
 1. Navigieren Sie mit installiertem Windows PowerShell 2,0 SDK zum Ordner Events01.
-   Der Standard Speicherort ist `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01`.
+   Der Standardspeicherort ist `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01`.
 
 2. Doppelklicken Sie auf das Symbol für die Projektmappendatei (. sln).
    Dadurch wird das Beispiel Projekt in Microsoft Visual Studio geöffnet.
 
-3. Wählen Sie im Menü **Erstellen** die Option Projekt Mappe **Erstellen**aus.
-   Die Bibliothek für das Beispiel wird in den standardmäßigen `\bin`-oder `\bin\debug`-Ordner erstellt.
+3. Wählen Sie im Menü **Erstellen** die Option **Projektmappe erstellen** aus.
+   Die Bibliothek für das Beispiel wird in den standardmäßigen `\bin`-oder `\bin\debug` Ordner erstellt.
 
-### <a name="how-to-run-the-sample"></a>So führen Sie das Beispiel aus
+### <a name="how-to-run-the-sample"></a>Ausführen des Beispiels
 
 1. Erstellen Sie den folgenden Modul Ordner:
 
@@ -77,14 +77,14 @@ A file was created in the TEMP directory
 
 Dieses Beispiel erfordert Windows PowerShell 2,0.
 
-## <a name="demonstrates"></a>Deutlich
+## <a name="demonstrates"></a>Gegenstand
 
 In diesem Beispiel wird Folgendes veranschaulicht:
 
 ### <a name="how-to-write-a-cmdlet-for-event-registration"></a>Schreiben eines Cmdlets für die Ereignis Registrierung
 
 Das-Cmdlet wird von der [Microsoft. PowerShell. Commands. objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) -Klasse abgeleitet, die Unterstützung für Parameter bereitstellt, die den `Register-*Event`-Cmdlets gemeinsam sind.
-Cmdlets, die von [Microsoft. PowerShell. Commands. objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) abgeleitet werden, müssen nur die jeweiligen Parameter definieren und die abstrakten Methoden `GetSourceObject` und `GetSourceObjectEventName` überschreiben.
+Cmdlets, die von [Microsoft. PowerShell. Commands. objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) abgeleitet werden, müssen nur Ihre spezifischen Parameter definieren und die `GetSourceObject` und `GetSourceObjectEventName` abstrakten Methoden überschreiben.
 
 ## <a name="example"></a>Beispiel
 

@@ -14,10 +14,10 @@ helpviewer_keywords:
 ms.assetid: bdd66fea-eb63-4bb6-9cbe-9a799e5e0db5
 caps.latest.revision: 9
 ms.openlocfilehash: 5412d88b690a1f5f1ef387416e3bf9da3a32c95d
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369109"
 ---
 # <a name="windows-powershell-error-records"></a>Windows PowerShell-Fehlerdatensätze
@@ -38,7 +38,7 @@ Wenn das Cmdlet eine Ausnahme nicht abfängt, muss eine neue Ausnahme erstellt u
 
 - Optionale Aufruf Informationen über das Cmdlet, das den Fehler ausgelöst hat. Diese Informationen werden von Windows PowerShell angegeben (siehe Aufruf Nachricht).
 
-- Das Zielobjekt, das beim Auftreten des Fehlers verarbeitet wurde. Dies kann das Eingabe Objekt sein, oder es kann ein anderes Objekt sein, das das Cmdlet verarbeitet hat. Beispielsweise kann für den Befehl `remove-item -recurse c:\somedirectory` der Fehler eine Instanz eines FileInfo-Objekts für "c:\somedirectory\lockedfile" sein. Die Zielobjekt Informationen sind optional.
+- Das Zielobjekt, das beim Auftreten des Fehlers verarbeitet wurde. Dies kann das Eingabe Objekt sein, oder es kann ein anderes Objekt sein, das das Cmdlet verarbeitet hat. Beispielsweise kann für den Befehl `remove-item -recurse c:\somedirectory`der Fehler eine Instanz eines FileInfo-Objekts für "c:\somedirectory\lockedfile" sein. Die Zielobjekt Informationen sind optional.
 
 ## <a name="error-identifier"></a>Fehler Bezeichner
 
@@ -58,9 +58,9 @@ Verwenden Sie die folgenden Richtlinien, um beim Erstellen von Fehler Datensätz
 
 - Generieren Sie Fehler Bezeichner nicht dynamisch auf nicht reproduzierbare Weise. Binden Sie z. b. keine Fehlerinformationen ein, z. b. eine Prozess-ID. Fehler Bezeichner sind nur hilfreich, wenn Sie den Fehler bezeichmern entsprechen, die von anderen Benutzern erkannt werden, die dieselbe Fehlerbedingung aufweisen.
 
-## <a name="error-category"></a>Fehler Kategorie
+## <a name="error-category"></a>Fehlerkategorie
 
-Wenn Sie einen Fehler Daten Satz erstellen, geben Sie die Kategorie des Fehlers mithilfe einer der Konstanten an, die von der [System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) -Enumeration definiert werden. Windows PowerShell verwendet die Fehler Kategorie, um Fehlerinformationen anzuzeigen, wenn Benutzer die `$ErrorView`-Variable auf `"CategoryView"` festlegen.
+Wenn Sie einen Fehler Daten Satz erstellen, geben Sie die Kategorie des Fehlers mithilfe einer der Konstanten an, die von der [System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) -Enumeration definiert werden. Windows PowerShell verwendet die Fehler Kategorie, um Fehlerinformationen anzuzeigen, wenn Benutzer die `$ErrorView` Variable auf `"CategoryView"`festlegen.
 
 Vermeiden Sie die Verwendung der [System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) **NotSet** -Konstante. Wenn Sie Informationen über den Fehler oder den Vorgang haben, der den Fehler verursacht hat, wählen Sie die Kategorie aus, die den Fehler oder den Vorgang am besten beschreibt, auch wenn die Kategorie nicht perfekt geeignet ist.
 
@@ -88,7 +88,7 @@ Wenn Sie einen Fehler Daten Satz für ein Cmdlet entwickeln, wird die Standard F
 
 Die Ersetzungs Meldung wird von einem [System. Management. Automation. errorDetails](/dotnet/api/System.Management.Automation.ErrorDetails) -Objekt bereitgestellt. Verwenden Sie einen der folgenden Konstruktoren dieses Objekts, da Sie zusätzliche Lokalisierungs Informationen bereitstellen, die von Windows PowerShell verwendet werden können.
 
-- [ErrorDetails (Cmdlet, String, String, Object [])](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Management_Automation_Cmdlet_System_String_System_String_System_Object___): Verwenden Sie diesen Konstruktor, wenn die Vorlagen Zeichenfolge eine Ressourcen Zeichenfolge in derselben Assembly ist, in der das Cmdlet implementiert ist, oder wenn Sie die Vorlagen Zeichenfolge über eine außer Kraft setzung des [ System. Management. Automation. Cmdlet. GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString) -Methode.
+- [ErrorDetails (Cmdlet, String, String, Object [])](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Management_Automation_Cmdlet_System_String_System_String_System_Object___): Verwenden Sie diesen Konstruktor, wenn die Vorlagen Zeichenfolge eine Ressourcen Zeichenfolge in derselben Assembly ist, in der das Cmdlet implementiert ist, oder wenn Sie die Vorlagen Zeichenfolge über eine Überschreibung der [System. Management. Automation. Cmdlet. GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString) -Methode laden möchten.
 
 - [ErrorDetails (Assembly, String, String, Object [])](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Reflection_Assembly_System_String_System_String_System_Object___): Verwenden Sie diesen Konstruktor, wenn sich die Vorlagen Zeichenfolge in einer anderen Assembly befindet, und Sie Sie nicht durch eine außer Kraft Setzung von [System. Management. Automation. Cmdlet. GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString)laden.
 
@@ -102,7 +102,7 @@ Das [System. Management. Automation. errorDetails](/dotnet/api/System.Management
 
 ## <a name="invocation-information"></a>Aufruf Informationen
 
-Wenn ein Cmdlet " [System. Management. Automation. Cmdlet. Write-error](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) " oder " [System. Management. Automation. Cmdlet. ThrowTerminatingError *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) " verwendet, um einen Fehler Daten Satz zu melden, werden von Windows PowerShell automatisch Informationen hinzugefügt, die die der Befehl, der aufgerufen wurde, als der Fehler aufgetreten ist. Diese Informationen werden von einem [System. Management. Automation. invocationinfo](/dotnet/api/System.Management.Automation.InvocationInfo) -Objekt bereitgestellt, das den Namen des Cmdlets enthält, das vom Befehl aufgerufen wurde, dem Befehl selbst und Informationen zur Pipeline oder dem Skript. Diese Eigenschaft ist schreibgeschützt.
+Wenn ein Cmdlet " [System. Management. Automation. Cmdlet. Write-error](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) " oder " [System. Management. Automation. Cmdlet. ThrowTerminatingError *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) " verwendet, um einen Fehler Daten Satz zu melden, fügt Windows PowerShell automatisch Informationen hinzu, die den Befehl beschreiben, der beim Auftreten des Fehlers aufgerufen wurde. Diese Informationen werden von einem [System. Management. Automation. invocationinfo](/dotnet/api/System.Management.Automation.InvocationInfo) -Objekt bereitgestellt, das den Namen des Cmdlets enthält, das vom Befehl aufgerufen wurde, dem Befehl selbst und Informationen zur Pipeline oder dem Skript. Diese Eigenschaft ist schreibgeschützt.
 
 ## <a name="see-also"></a>Weitere Informationen
 

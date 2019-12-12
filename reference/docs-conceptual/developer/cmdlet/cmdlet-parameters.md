@@ -17,15 +17,15 @@ helpviewer_keywords:
 ms.assetid: 3f1cca5f-5b95-4bce-94a6-a22db1aefd47
 caps.latest.revision: 23
 ms.openlocfilehash: 914a10907bcf980eed8d7e2f819c382fe6b341ad
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365929"
 ---
 # <a name="cmdlet-parameters"></a>Cmdlet-Parameter
 
-Cmdlet-Parameter stellen den Mechanismus bereit, mit dem ein Cmdlet Eingaben akzeptieren kann. Parameter können Eingaben direkt von der Befehlszeile aus oder von Objekten, die an das Cmdlet über die Pipeline übergeben werden, annehmen. die Argumente (auch als *Werte*bezeichnet) dieser Parameter können die vom Cmdlet akzeptierte Eingabe angeben, wie das Cmdlet seine Aktionen und die Daten, die vom Cmdlet an die Pipeline zurückgegeben werden.
+Cmdlet-Parameter stellen den Mechanismus bereit, mit dem ein Cmdlet Eingaben akzeptieren kann. Parameter können Eingaben direkt von der Befehlszeile aus oder von Objekten, die an das Cmdlet über die Pipeline übergeben werden, annehmen. die Argumente (auch als " *Werte*" bezeichnet) können die Eingabe angeben, die das Cmdlet akzeptiert, wie das Cmdlet die Aktionen durchführt, und die Daten, die das Cmdlet an die Pipeline zurückgibt.
 
 ## <a name="in-this-section"></a>In diesem Abschnitt
 
@@ -47,7 +47,7 @@ Cmdlet-Parameter stellen den Mechanismus bereit, mit dem ein Cmdlet Eingaben akz
 
 Überprüfen der [Parameter Eingabe](./validating-parameter-input.md) Beschreibt, wie Windows PowerShell die an Cmdlet-Parameter übergebenen Argumente überprüft.
 
-[Eingabe Filter Parameter](./input-filter-parameters.md) Erläutert die Parameter "`Filter`", "`Include`" und "`Exclude`", die den Satz von Eingabe Objekten filtern, auf die sich das Cmdlet auswirkt.
+[Eingabe Filter Parameter](./input-filter-parameters.md) Erläutert die `Filter`, `Include`und `Exclude` Parameter, die den Satz von Eingabe Objekten filtern, auf die sich das Cmdlet auswirkt.
 
 ## <a name="related-sections"></a>Verwandte Abschnitte
 

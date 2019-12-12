@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 73fb11ee-0ebd-477a-ac36-acdfbb32e70d
 caps.latest.revision: 7
 ms.openlocfilehash: bd0cb69770817ec215ddb1862a43a838baddefcf
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364029"
 ---
 # <a name="customitem-element-for-customentry-for-controls-for-configuration-format"></a>Element „CustomItem“ für CustomEntry für Controls für Configuration (Format)
@@ -34,7 +34,7 @@ Konfigurationselement (Format) steuert Element des Konfigurations Elements (Form
 
 ## <a name="attributes-and-elements"></a>Attribute und Elemente
 
-In den folgenden Abschnitten werden Attribute, untergeordnete Elemente und das übergeordnete Element des `CustomItem`-Elements beschrieben. Weitere Informationen finden Sie unter "Hinweise".
+In den folgenden Abschnitten werden Attribute, untergeordnete Elemente und das übergeordnete Element des `CustomItem`-Elements beschrieben. Weitere Informationen finden Sie in den Hinweisen.
 
 ### <a name="attributes"></a>Attributes
 
@@ -57,13 +57,13 @@ Keine.
 
 ## <a name="remarks"></a>Hinweise
 
-Beachten Sie Folgendes, wenn Sie die untergeordneten Elemente des Elements `CustomItem` angeben:
+Beachten Sie Folgendes, wenn Sie die untergeordneten Elemente des `CustomItem` Elements angeben:
 
-- Die untergeordneten Elemente müssen in der folgenden Reihenfolge hinzugefügt werden: `ExpressionBinding`, `NewLine`, `Text` und `Frame`.
+- Die untergeordneten Elemente müssen in der folgenden Reihenfolge hinzugefügt werden: `ExpressionBinding`, `NewLine`, `Text`und `Frame`.
 
 - Es gibt keine maximale Beschränkung für die Anzahl der Sequenzen, die Sie angeben können.
 
-- In jeder Sequenz gibt es keine maximale Beschränkung für die Anzahl der `ExpressionBinding`-Elemente, die Sie verwenden können.
+- In jeder Sequenz gibt es keine maximale Beschränkung für die Anzahl der `ExpressionBinding` Elemente, die Sie verwenden können.
 
 ## <a name="see-also"></a>Weitere Informationen
 

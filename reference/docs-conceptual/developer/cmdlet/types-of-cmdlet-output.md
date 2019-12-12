@@ -11,10 +11,10 @@ helpviewer_keywords:
 ms.assetid: 547e6695-e936-4cac-a90b-417d0dab393d
 caps.latest.revision: 12
 ms.openlocfilehash: 3efa98c7aa22fdaee8042bae99282aea0618ef5f
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369289"
 ---
 # <a name="types-of-cmdlet-output"></a>Cmdlet-Ausgabetypen
@@ -54,7 +54,7 @@ Standardmäßig werden keine Debugmeldungen angezeigt. Sie können den **Debug**
 
 Cmdlets können Warnmeldungen anzeigen, indem Sie die [System. Management. Automation. Cmdlet. Write Warning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) -Methode aufrufen.
 
-Standardmäßig werden Warnmeldungen angezeigt. Sie können jedoch Warnmeldungen konfigurieren, indem Sie die Variable "`$WarningPreference`" oder die Parameter " **verbose** " und " **Debug** " verwenden, wenn das Cmdlet aufgerufen wird.
+Standardmäßig werden Warnmeldungen angezeigt. Sie können jedoch Warnmeldungen konfigurieren, indem Sie die `$WarningPreference` Variable verwenden oder die **verbose** -und **Debug** -Parameter verwenden, wenn das Cmdlet aufgerufen wird.
 
 ## <a name="displaying-output"></a>Anzeigen der Ausgabe
 

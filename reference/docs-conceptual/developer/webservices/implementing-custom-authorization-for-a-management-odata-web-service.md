@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: ae37e3f3-5fd6-4ff6-bf66-a249ff96822b
 caps.latest.revision: 7
 ms.openlocfilehash: 2afa0e79d9de781149f31a45666d13f98ca10a26
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359679"
 ---
 # <a name="implementing-custom-authorization-for-a-management-odata-web-service"></a>Implementieren der benutzerdefinierten Autorisierung für einen Management OData-Webdienst
@@ -21,7 +21,7 @@ Die Verwendung des Windows PowerShell-Webdiensts erfordert, dass ein Drittanbiet
 
 ## <a name="pass-through-authorization"></a>Pass-Through-Autorisierung
 
-Die einfachste Möglichkeit, die [Microsoft. Management. odata. customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) -Schnittstelle zu implementieren, ist eine Pass-Through-Implementierung, die alle Benutzer autorisiert. Dieses Beispiel stellt keine Sicherheit bereit und wird nur als Abbildung der Implementierung der-Schnittstelle bereitgestellt. Eine Implementierung der [Microsoft. Management. odata. customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) -Schnittstelle muss zwei Methoden überschreiben: [Microsoft. Management. odata. customauthorization. autorizeuser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) und [ Microsoft. Management. odata. customauthorization. getmembership shipid](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId). In diesem Beispiel gibt " [Microsoft. Management. odata. customauthorization. autorizeuser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) " immer das **System. Security. Principal. Windows** Identity-Objekt zurück, das dem aktuellen Benutzer zugeordnet ist.
+Die einfachste Möglichkeit, die [Microsoft. Management. odata. customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) -Schnittstelle zu implementieren, ist eine Pass-Through-Implementierung, die alle Benutzer autorisiert. Dieses Beispiel stellt keine Sicherheit bereit und wird nur als Abbildung der Implementierung der-Schnittstelle bereitgestellt. Eine Implementierung der [Microsoft. Management. odata. customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) -Schnittstelle muss zwei Methoden überschreiben: [Microsoft. Management. odata. customauthorization. autorizeuser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) und [Microsoft. Management. odata. customauthorization. getmembership shipid](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId). In diesem Beispiel gibt " [Microsoft. Management. odata. customauthorization. autorizeuser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) " immer das **System. Security. Principal. Windows** Identity-Objekt zurück, das dem aktuellen Benutzer zugeordnet ist.
 
 ```csharp
 namespace Microsoft.Samples. HYPERLINK "VBScript:u(%227%22,19)" Management. HYPERLINK "VBScript:u(%227%22,30)" OData. HYPERLINK "VBScript:u(%227%22,36)" BasicPlugins
@@ -738,4 +738,4 @@ namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
 }
 ```
 
-Zum Schluss implementiert die rbacsystem-Klasse Methoden, die die Berechtigungen für den Benutzer überprüfen, und gibt den Autorisierungs Status an die Methoden zurück, die in der Implementierung von [Microsoft. Management. odata. customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) definiert sind. berfläche.
+Zum Schluss implementiert die rbacsystem-Klasse Methoden, die die Berechtigungen für den Benutzer überprüfen und den Autorisierungs Status an die Methoden zurückgeben, die in der Implementierung der [Microsoft. Management. odata. customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) -Schnittstelle definiert sind.

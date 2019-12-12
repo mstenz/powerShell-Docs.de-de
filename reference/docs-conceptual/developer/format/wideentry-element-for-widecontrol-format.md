@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 014763cb-7716-4931-899c-8375b5d7a3dd
 caps.latest.revision: 15
 ms.openlocfilehash: d1d13b5c3436871053353814293d9163ea13c7fb
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367899"
 ---
 # <a name="wideentry-element-for-widecontrol-format"></a>Element „WideEntry“ für WideControl (Format)
@@ -32,7 +32,7 @@ Configuration-Element (Format) viewdefinitions-Element (Format) Ansichts Element
 
 ## <a name="attributes-and-elements"></a>Attribute und Elemente
 
-In den folgenden Abschnitten werden die Attribute, untergeordneten Elemente und das übergeordnete Element des `WideEntry`-Elements beschrieben. Sie müssen ein einzelnes untergeordnetes `WideItem`-Element angeben.
+In den folgenden Abschnitten werden die Attribute, untergeordneten Elemente und das übergeordnete Element des `WideEntry`-Elements beschrieben. Sie müssen ein einzelnes `WideItem` untergeordnetes Element angeben.
 
 ### <a name="attributes"></a>Attributes
 
@@ -57,7 +57,7 @@ Eine breite Ansicht ist ein Listenformat, in dem ein einzelner Eigenschafts Wert
 
 ## <a name="example"></a>Beispiel
 
-Das folgende Beispiel zeigt ein `WideEntry`-Element, das ein einzelnes `WideItem`-Element definiert. Das `WideItem`-Element definiert die-Eigenschaft, deren Wert in der Ansicht angezeigt wird.
+Das folgende Beispiel zeigt ein `WideEntry`-Element, das ein einzelnes `WideItem` Element definiert. Das `WideItem`-Element definiert die-Eigenschaft, deren Wert in der Ansicht angezeigt wird.
 
 ```xml
 <WideEntries>

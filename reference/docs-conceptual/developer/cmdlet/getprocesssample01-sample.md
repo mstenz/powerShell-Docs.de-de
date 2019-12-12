@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 7b48bf80-cbf0-4cb1-8d5b-3b8d06196598
 caps.latest.revision: 10
 ms.openlocfilehash: 00190c7350cb0f1cfc5c389b56e48e9397480446
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369729"
 ---
 # <a name="getprocesssample01-sample"></a>GetProcessSample01-Beispiel
 
-In diesem Beispiel wird gezeigt, wie ein Cmdlet implementiert wird, das die Prozesse auf dem lokalen Computer abruft. Dieses Cmdlet ist eine vereinfachte Version des Cmdlets "`Get-Process`", das von Windows PowerShell 2,0 bereitgestellt wird.
+In diesem Beispiel wird gezeigt, wie ein Cmdlet implementiert wird, das die Prozesse auf dem lokalen Computer abruft. Dieses Cmdlet ist eine vereinfachte Version des `Get-Process` Cmdlets, das von Windows PowerShell 2,0 bereitgestellt wird.
 
 ## <a name="how-to-build-the-sample-by-using-visual-studio"></a>So erstellen Sie das Beispiel mithilfe von Visual Studio.
 
@@ -25,11 +25,11 @@ In diesem Beispiel wird gezeigt, wie ein Cmdlet implementiert wird, das die Proz
 
 2. Doppelklicken Sie auf das Symbol für die Projektmappendatei (. sln). Dadurch wird das Beispiel Projekt in Microsoft Visual Studio geöffnet.
 
-3. Wählen Sie im Menü **Erstellen** die Option Projekt Mappe **Erstellen**aus.
+3. Wählen Sie im Menü **Erstellen** die Option **Projektmappe erstellen** aus.
 
   Die Bibliothek für das Beispiel wird im Standardordner \bin oder \bin\Debug erstellt.
 
-### <a name="how-to-run-the-sample"></a>So führen Sie das Beispiel aus
+### <a name="how-to-run-the-sample"></a>Ausführen des Beispiels
 
 1. Öffnen Sie ein Eingabeaufforderungsfenster.
 
@@ -68,7 +68,7 @@ In diesem Beispiel wird gezeigt, wie ein Cmdlet implementiert wird, das die Proz
 
 Für dieses Beispiel ist Windows PowerShell 1,0 oder höher erforderlich.
 
-## <a name="demonstrates"></a>Deutlich
+## <a name="demonstrates"></a>Gegenstand
 
 In diesem Beispiel wird Folgendes veranschaulicht:
 

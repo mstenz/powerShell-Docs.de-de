@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 1685cfc4-b32c-4bed-b221-e0c4482db955
 caps.latest.revision: 9
 ms.openlocfilehash: eb227b5fa5e91f59b6fc99981ff5affca1cf63fd
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72360879"
 ---
 # <a name="runspace05-sample"></a>Runspace05-Beispiel
@@ -23,7 +23,7 @@ In diesem Beispiel wird gezeigt, wie ein Snap-in zu einem [System. Management. A
 
 Dieses Beispiel erfordert Windows PowerShell 2,0.
 
-## <a name="demonstrates"></a>Deutlich
+## <a name="demonstrates"></a>Gegenstand
 
 In diesem Beispiel wird Folgendes veranschaulicht:
 

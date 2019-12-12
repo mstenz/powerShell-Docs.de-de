@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 3e83c9d9-6d06-4247-94d9-e3bfd4013b11
 caps.latest.revision: 4
 ms.openlocfilehash: a806d012097d107b6cc35710b9a93f2b27dd1ace
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359799"
 ---
 # <a name="authoring-the-xml-schema-file-for-a-management-odata-web-service"></a>Erstellen der XML-Schemadatei für einen Management OData-Webdienst
 
-Nachdem Sie die Ressourcen definiert haben, die von Ihrem Webdienst verfügbar gemacht werden (siehe [Erstellen der MOF-Schema Datei für einen Management odata-Webdienst](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)), ordnen Sie diese Ressourcen den zugrunde liegenden Windows PowerShell-Cmdlets zu, die jeweils die unterstützten Vorgänge implementieren. Ressource durch Erstellen einer XML-Datei, die dem [Ressourcen Zuordnung Schema](./resource-mapping-schema.md)entspricht. Die XML-Datei gibt auch die URLs an, die vom Client für den Zugriff auf die Ressourcen verwendet werden.
+Nachdem Sie die Ressourcen definiert haben, die vom Webdienst verfügbar gemacht werden (siehe [Erstellen der MOF-Schema Datei für einen Management odata-Webdienst](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)), ordnen Sie diese Ressourcen den zugrunde liegenden Windows PowerShell-Cmdlets zu, die die unterstützten Vorgänge für jede Ressource implementieren, indem Sie eine XML-Datei erstellen, die dem Ressourcen Zuordnungs [Schema](./resource-mapping-schema.md)entspricht. Die XML-Datei gibt auch die URLs an, die vom Client für den Zugriff auf die Ressourcen verwendet werden.
 
 ## <a name="mappng-resources-to-urls"></a>Mappng Ressourcen an URLs
 
@@ -51,7 +51,7 @@ Anschließend geben Sie die Cmdlets an, die den CRUD-Vorgängen (erstellen, lese
 |Update/Aktualisieren|Update/Aktualisieren|
 |„Löschen“|„Löschen“|
 
-Das folgende Beispiel zeigt die Zuordnungen für die Erstellungs-, Lese-und Aktualisierungs Vorgänge für die `Service`-Ressource.
+Das folgende Beispiel zeigt die Zuordnungen für die Erstellungs-, Lese-und Aktualisierungs Vorgänge für die `Service` Ressource.
 
 ```xml
 <ClassImplementations>

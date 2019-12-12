@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 6aebd53f-0610-4959-88b2-42339588c859
 caps.latest.revision: 6
 ms.openlocfilehash: ad4300937c10652b677346a62c42fa4f6e8513cf
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365699"
 ---
 # <a name="getprocesssample05-sample"></a>GetProcessSample05-Beispiel
@@ -27,11 +27,11 @@ Dieses Beispiel zeigt eine vollständige Version des Get-proc-Cmdlets.
 
 2. Doppelklicken Sie auf das Symbol für die Projektmappendatei (. sln). Dadurch wird das Beispiel Projekt in Visual Studio geöffnet.
 
-3. Wählen Sie im Menü **Erstellen** die Option Projekt Mappe **Erstellen**aus.
+3. Wählen Sie im Menü **Erstellen** die Option **Projektmappe erstellen** aus.
 
    Die Bibliothek für das Beispiel wird in den Standardverzeichnissen \bin oder \bin\Debug erstellt.
 
-### <a name="how-to-run-the-sample"></a>So führen Sie das Beispiel aus
+### <a name="how-to-run-the-sample"></a>Ausführen des Beispiels
 
 1. Erstellen Sie den folgenden Modul Ordner:
 
@@ -53,7 +53,7 @@ Dieses Beispiel zeigt eine vollständige Version des Get-proc-Cmdlets.
 
 Dieses Beispiel erfordert Windows PowerShell 2,0.
 
-## <a name="demonstrates"></a>Deutlich
+## <a name="demonstrates"></a>Gegenstand
 
 In diesem Beispiel wird Folgendes veranschaulicht:
 

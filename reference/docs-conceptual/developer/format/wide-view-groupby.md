@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 39388197-4ff9-4889-aa32-526011afa1f6
 caps.latest.revision: 6
 ms.openlocfilehash: e95ec550a7815a76a8bd7f9526dfa405a9644360
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367949"
 ---
 # <a name="wide-view-groupby"></a>Breite Ansicht (GroupBy)
@@ -23,14 +23,14 @@ In diesem Beispiel wird gezeigt, wie eine breite Ansicht implementiert wird, in 
 
 1. Kopieren Sie den XML-Code aus dem Beispiel Abschnitt dieses Themas in eine Textdatei.
 
-2. Speichern Sie die Textdatei. Stellen Sie sicher, dass Sie die Erweiterung "`format.ps1xml`" der Datei hinzufügen, um Sie als Formatierungs Datei zu identifizieren.
+2. Speichern Sie die Textdatei. Stellen Sie sicher, dass Sie die `format.ps1xml` Erweiterung der Datei hinzufügen, um Sie als Formatierungs Datei zu identifizieren.
 
 3. Öffnen Sie Windows PowerShell, und führen Sie den folgenden Befehl aus, um die Formatierungs Datei in die aktuelle Sitzung zu laden: `Update-formatdata -prependpath PathToFormattingFile`.
 
    > [!WARNING]
    > Mit dieser Formatierungs Datei wird die Anzeige eines Objekts definiert, das bereits von Windows PowerShell-Formatierungs Dateien definiert wird. Sie müssen den `prependPath`-Parameter verwenden, wenn Sie das Cmdlet ausführen, und Sie können diese Formatierungs Datei nicht als Modul laden.
 
-## <a name="demonstrates"></a>Deutlich
+## <a name="demonstrates"></a>Gegenstand
 
 Diese Formatierungs Datei veranschaulicht die folgenden XML-Elemente:
 

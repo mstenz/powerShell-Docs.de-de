@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 5dd0bd5d-f206-4cc6-a0f8-70700ee2c4b7
 caps.latest.revision: 8
 ms.openlocfilehash: 819906127e81355c45103ede85ef3608e1c1cfeb
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368319"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-tablecontrol-format"></a>Element „SelectionSetName“ für EntrySelectedBy für TableControl (Format)
@@ -29,7 +29,7 @@ Configuration-Element (Format) viewdefinitions-Element (Format) View-Element (Fo
 
 ## <a name="attributes-and-elements"></a>Attribute und Elemente
 
-In den folgenden Abschnitten werden Attribute, untergeordnete Elemente und übergeordnete Elemente beschrieben.
+In den folgenden Abschnitten werden die Attribute, untergeordneten und übergeordneten Elemente beschrieben.
 
 ### <a name="attributes"></a>Attributes
 

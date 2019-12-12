@@ -9,23 +9,23 @@ ms.topic: article
 ms.assetid: 432798e4-5d69-46b1-9517-ff09bffaa4be
 caps.latest.revision: 7
 ms.openlocfilehash: f213605dda0132051d983f8608515325e815c455
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361239"
 ---
 # <a name="how-to-add-input-types-to-a-cmdlet-help-topic"></a>Hinzufügen von Eingabetypen zu einem Cmdlet-Hilfethema
 
 In diesem Abschnitt wird beschrieben, wie Sie einem Windows PowerShell-® Cmdlet-Hilfethema einen Abschnitt Eingaben hinzufügen. Im Abschnitt Eingaben werden die .NET-Klassen von Objekten aufgelistet, die das Cmdlet als Eingabe aus der Pipeline akzeptiert, entweder nach Wert oder nach Eigenschaftsnamen.
 
-Es gibt keine Beschränkung für die Anzahl der Klassen, die Sie einem Abschnitt Eingaben hinzufügen können. Die Eingabetypen sind in einem \<-Befehl: InputTypes > Knoten eingeschlossen, wobei jede Klasse in ein \<command: InputType >-Element eingeschlossen ist.
+Es gibt keine Beschränkung für die Anzahl der Klassen, die Sie einem Abschnitt Eingaben hinzufügen können. Die Eingabetypen sind in einem \<Befehl enthalten: InputTypes > Knoten, wobei jede Klasse in einen \<Befehl eingeschlossen ist: InputType > Element.
 
-Das Schema enthält zwei \<maml: Description > Elemente in jedem \<command: InputType >-Element. Das Cmdlet "`Get-Help`" zeigt jedoch nur den Inhalt des Elements "\<command: InputType >/\<maml: Description >" an.
+Das Schema enthält zwei \<MAML: Description > Elemente in jedem \<Befehl: InputType > Element. Das `Get-Help`-Cmdlet zeigt jedoch nur den Inhalt des \<Befehls: InputType >/\<MAML: Description >)-Element an.
 
-Ab Windows PowerShell 3,0 zeigt das Cmdlet "`Get-Help`" den Inhalt des > Elements "\<maml: URI" an. Mit diesem Element können Sie Benutzer an Themen weiterleiten, in denen die .NET-Klasse beschrieben wird.
+Ab Windows PowerShell 3,0 zeigt das Cmdlet "`Get-Help`" den Inhalt des > Elements \<MAML: URI an. Mit diesem Element können Sie Benutzer an Themen weiterleiten, in denen die .NET-Klasse beschrieben wird.
 
-Der folgende XML-Code zeigt den Knoten \<maml: InputTypes >.
+Der folgende XML-Code zeigt den Knoten \<MAML: InputTypes >.
 
 ```xml
 <command:inputTypes>
@@ -42,7 +42,7 @@ Der folgende XML-Code zeigt den Knoten \<maml: InputTypes >.
 </command:inputTypes>
 ```
 
-Der folgende XML-Code zeigt ein Beispiel für die Verwendung des Knotens \<maml: InputTypes >, um einen Eingabetyp zu dokumentieren.
+Der folgende XML-Code zeigt ein Beispiel für die Verwendung des Knotens \<MAML: InputTypes >, um einen Eingabetyp zu dokumentieren.
 
 ```xml
 <command:inputTypes>

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: b99d53fc-0af9-426b-82ce-09955e031d4b
 caps.latest.revision: 13
 ms.openlocfilehash: 0fa4a5f804586c51ae6a36121f9aab041b0989cc
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365879"
 ---
 # <a name="cmdlet-samples"></a>Cmdlet-Beispiele
@@ -31,7 +31,7 @@ In diesem Abschnitt wird der Beispielcode beschrieben, der im Windows PowerShell
 
 [GetProcessSample05-Beispiel](./getprocesssample05-sample.md) Dieses Beispiel zeigt eine vollständige Version des Get-proc-Cmdlets.
 
-[StopProcessSample01-Beispiel](./stopprocesssample01-sample.md) Dieses Beispiel zeigt, wie ein Cmdlet geschrieben wird, das Feedback vom Benutzer anfordert, bevor es versucht, einen Prozess zu beenden, und wie ein `PassThru`-Parameter implementiert wird, der angibt, dass der Benutzer das Cmdlet zum Zurückgeben eines Objekts wünscht.
+[StopProcessSample01-Beispiel](./stopprocesssample01-sample.md) In diesem Beispiel wird gezeigt, wie ein Cmdlet geschrieben wird, das Feedback vom Benutzer anfordert, bevor versucht wird, einen Prozess zu beenden, und wie ein `PassThru` Parameter implementiert wird, der angibt, dass der Benutzer das Cmdlet zum Zurückgeben eines Objekts wünscht.
 
 [StopProcessSample02-Beispiel](./stopprocesssample02-sample.md) In diesem Beispiel wird gezeigt, wie ein Cmdlet geschrieben wird, das beim Beenden von Prozessen auf dem lokalen Computer Debug-, ausführliche und Warnmeldungen schreibt.
 

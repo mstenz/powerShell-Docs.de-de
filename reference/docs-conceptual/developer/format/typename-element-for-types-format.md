@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 0595b99e-b438-4240-b47b-555cf0316f33
 caps.latest.revision: 15
 ms.openlocfilehash: bd5baa03c2050b2c3bbe1d7697c253d923175d39
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368029"
 ---
 # <a name="typename-element-for-types-format"></a>Element „TypeName“ für Types (Format)
@@ -29,7 +29,7 @@ Configuration-Element (Format) selectionsets-Element (Format) SelectionSet-Eleme
 
 ## <a name="attributes-and-elements"></a>Attribute und Elemente
 
-In den folgenden Abschnitten werden die Attribute, untergeordneten Elemente und das übergeordnete Element des `TypeName`-Elements beschrieben. Mindestens ein `TypeName`-Element muss im Auswahl Satz enthalten sein.
+In den folgenden Abschnitten werden die Attribute, untergeordneten Elemente und das übergeordnete Element des `TypeName`-Elements beschrieben. Mindestens ein `TypeName` Element muss im Auswahl Satz enthalten sein.
 
 ### <a name="attributes"></a>Attributes
 
@@ -53,7 +53,7 @@ Geben Sie den voll qualifizierten Namen des .net-Typs an.
 
 Sie können Auswahl Sätze verwenden, wenn Sie über einen Satz verwandter Objekte verfügen, auf die Sie verweisen möchten, indem Sie einen einzelnen Namen verwenden, z. b. eine Gruppe von Objekten, die durch Vererbung verknüpft sind. Wenn Sie die Ansichten definieren, können Sie den Satz von-Objekten angeben, indem Sie den Namen des Auswahl Satzes verwenden, anstatt alle Objekte in jeder Ansicht aufzulisten.
 
-Allgemeine Auswahl Sätze werden durch ihren Namen angegeben, wenn die Ansichten der Formatierungs Datei definiert werden. In diesen Fällen gibt das untergeordnete `SelectionSetName`-Element des `ViewSelectedBy`-Elements für die Sicht den Satz an. Bei verschiedenen Einträgen einer Sicht kann jedoch auch ein Auswahl Satz angegeben werden, der nur für diesen Eintrag der Sicht gilt. Weitere Informationen zu Auswahl Sätzen finden Sie unter [Definieren von Objekt Sätzen](./defining-selection-sets.md).
+Allgemeine Auswahl Sätze werden durch ihren Namen angegeben, wenn die Ansichten der Formatierungs Datei definiert werden. In diesen Fällen gibt das `SelectionSetName` untergeordnete Element des `ViewSelectedBy`-Elements für die Sicht den Satz an. Bei verschiedenen Einträgen einer Sicht kann jedoch auch ein Auswahl Satz angegeben werden, der nur für diesen Eintrag der Sicht gilt. Weitere Informationen zu Auswahl Sätzen finden Sie unter [Definieren von Objekt Sätzen](./defining-selection-sets.md).
 
 ## <a name="example"></a>Beispiel
 

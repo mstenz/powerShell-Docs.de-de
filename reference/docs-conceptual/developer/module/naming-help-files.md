@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: bf54eac7-88c6-4108-a5f6-2f0906d1662b
 caps.latest.revision: 5
 ms.openlocfilehash: f65a90023df88fceafae1d1875ddf46b9088e2b8
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367009"
 ---
 # <a name="naming-help-files"></a>Benennen von Hilfedateien
@@ -45,7 +45,7 @@ Der Zertifikat Anbieter wird z. b. in der Microsoft. PowerShell. Security. dll-A
 
 ## <a name="function-help-files"></a>Funktionen-Hilfedateien
 
-Funktionen können mithilfe der [Kommentar basierten Hilfe](/powershell/module/microsoft.powershell.core/about/about_comment_based_help) dokumentiert werden oder in einer XML-Hilfedatei dokumentiert werden. Wenn die Funktion in einer XML-Datei dokumentiert ist, muss die Funktion über ein Kommentar Schlüsselwort `.ExternalHelp` verfügen, das die Funktion der XML-Datei zuordnet. Andernfalls kann das Cmdlet "`Get-Help`" die Hilfedatei nicht finden.
+Funktionen können mithilfe der [Kommentar basierten Hilfe](/powershell/module/microsoft.powershell.core/about/about_comment_based_help) dokumentiert werden oder in einer XML-Hilfedatei dokumentiert werden. Wenn die Funktion in einer XML-Datei dokumentiert ist, muss die Funktion über ein `.ExternalHelp` Comment-Schlüsselwort verfügen, das die Funktion der XML-Datei zuordnet. Andernfalls kann das Cmdlet "`Get-Help`" die Hilfedatei nicht finden.
 
 Es gibt keine technischen Anforderungen für den Namen einer Funktions Hilfedatei. Eine bewährte Vorgehensweise besteht jedoch darin, die Hilfedatei für das Skript Modul zu benennen, in dem die Funktion definiert ist. Beispielsweise ist die folgende Funktion in der Datei "MyModule. psm1" definiert.
 
@@ -62,7 +62,7 @@ Die Hilfedatei für einen CIM-Befehl muss für die cdxml-Datei benannt werden, i
 <FileName>.cdxml-help.xml
 ```
 
-CIM-Befehle sind in cdxml-Dateien definiert, die in Module als geduckte Module eingeschlossen werden können. Wenn der CIM-Befehl als Funktion in die Sitzung importiert wird, fügt Windows PowerShell der Funktionsdefinition ein `.ExternalHelp`-Kommentar Schlüsselwort hinzu, das die Funktion einer XML-Hilfedatei zuordnet, die für die cdxml-Datei benannt ist, in der der CIM-Befehl definiert ist.
+CIM-Befehle sind in cdxml-Dateien definiert, die in Module als geduckte Module eingeschlossen werden können. Wenn der CIM-Befehl als Funktion in die Sitzung importiert wird, fügt Windows PowerShell der Funktionsdefinition ein `.ExternalHelp` Comment-Schlüsselwort hinzu, das die Funktion einer XML-Hilfedatei zuordnet, die für die cdxml-Datei benannt ist, in der der CIM-Befehl definiert ist.
 
 ## <a name="script-workflow-help-files"></a>Skripterstellung für Workflow Hilfedateien
 
@@ -72,6 +72,6 @@ Skript Workflows, die in Modulen enthalten sind, können in XML-basierten Hilfed
 <ScriptModule>.psm1-help.xml
 ```
 
-Im Gegensatz zu anderen Skript gesteuerten Befehlen benötigen Skript Workflows kein `.ExternalHelp`-Kommentar Schlüsselwort, um Sie einer Hilfedatei zuzuordnen. Stattdessen durchsucht Windows PowerShell die Benutzeroberflächen kulturspezifischen Unterverzeichnisse des Modul Verzeichnisses nach XML-basierten Hilfedateien und sucht in allen Dateien nach Hilfe für den Skript Workflow. `.ExternalHelp`-Kommentar Schlüsselwort wird ignoriert.
+Im Gegensatz zu anderen Skript gesteuerten Befehlen benötigen Skript Workflows kein `.ExternalHelp` Comment-Schlüsselwort, um Sie einer Hilfedatei zuzuordnen. Stattdessen durchsucht Windows PowerShell die Benutzeroberflächen kulturspezifischen Unterverzeichnisse des Modul Verzeichnisses nach XML-basierten Hilfedateien und sucht in allen Dateien nach Hilfe für den Skript Workflow. `.ExternalHelp` Comment-Schlüsselwort wird ignoriert.
 
-Da das Kommentar Schlüsselwort `.ExternalHelp` ignoriert wird, kann das `Get-Help`-Cmdlet Hilfe zu Skript Workflows nur dann finden, wenn Sie in Module enthalten sind.
+Da das `.ExternalHelp` Comment-Schlüsselwort ignoriert wird, kann das `Get-Help`-Cmdlet Hilfe zu Skript Workflows nur dann finden, wenn Sie in-Modulen enthalten sind.

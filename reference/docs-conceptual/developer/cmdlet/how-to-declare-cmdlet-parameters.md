@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 0c0509cc-5a50-49ad-a74f-5527023d0270
 caps.latest.revision: 10
 ms.openlocfilehash: 80e3e27bcf72b078c192525a843a3b3afb306529
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365679"
 ---
 # <a name="how-to-declare-cmdlet-parameters"></a>Deklarieren von Cmdlet-Parametern
@@ -21,7 +21,7 @@ In diesen Beispielen wird gezeigt, wie benannte, positionelle, erforderliche, op
 
 ## <a name="how-to-declare-a-named-parameter"></a>Deklarieren eines benannten Parameters
 
-- Definieren Sie eine öffentliche Eigenschaft, wie im folgenden Code gezeigt. Wenn Sie das Parameter-Attribut hinzufügen, lassen Sie das-Schlüsselwort `Position` aus dem-Attribut.
+- Definieren Sie eine öffentliche Eigenschaft, wie im folgenden Code gezeigt. Wenn Sie das Parameter-Attribut hinzufügen, lassen Sie das `Position`-Schlüsselwort aus dem-Attribut Weg.
 
     ```csharp
     [Parameter()]
@@ -37,7 +37,7 @@ Weitere Informationen zum Parameter Attribut finden Sie unter [Parameter Attribu
 
 ## <a name="how-to-declare-a-positional-parameter"></a>Deklarieren eines Positions Parameters
 
-- Definieren Sie eine öffentliche Eigenschaft, wie im folgenden Code gezeigt. Wenn Sie das Parameter-Attribut hinzufügen, legen Sie das-Schlüsselwort `Position` auf die Argument Position fest. Der Wert 0 gibt die erste Position an.
+- Definieren Sie eine öffentliche Eigenschaft, wie im folgenden Code gezeigt. Wenn Sie das Parameter-Attribut hinzufügen, legen Sie das `Position`-Schlüsselwort auf die Argument Position fest. Der Wert 0 gibt die erste Position an.
 
     ```csharp
     [Parameter(Position = 0)]
@@ -53,7 +53,7 @@ Weitere Informationen zum Parameter Attribut finden Sie unter [Parameter Attribu
 
 ## <a name="how-to-declare-a-mandatory-parameter"></a>Deklarieren eines obligatorischen Parameters
 
-- Definieren Sie eine öffentliche Eigenschaft, wie im folgenden Code gezeigt. Wenn Sie das Parameter-Attribut hinzufügen, legen Sie das `Mandatory`-Schlüsselwort auf `true` fest.
+- Definieren Sie eine öffentliche Eigenschaft, wie im folgenden Code gezeigt. Wenn Sie das Parameter-Attribut hinzufügen, legen Sie das `Mandatory`-Schlüsselwort auf `true`fest.
 
     ```csharp
     [Parameter(Position = 0, Mandatory = true)]
@@ -69,7 +69,7 @@ Weitere Informationen zum Parameter Attribut finden Sie unter [Parameter Attribu
 
 ## <a name="how-to-declare-an-optional-parameter"></a>So deklarieren Sie einen optionalen Parameter
 
-- Definieren Sie eine öffentliche Eigenschaft, wie im folgenden Code gezeigt. Wenn Sie das Parameter-Attribut hinzufügen, lassen Sie das-Schlüsselwort `Mandatory` aus.
+- Definieren Sie eine öffentliche Eigenschaft, wie im folgenden Code gezeigt. Wenn Sie das Parameter-Attribut hinzufügen, lassen Sie das `Mandatory`-Schlüsselwort aus.
 
     ```csharp
     [Parameter(Position = 0)]

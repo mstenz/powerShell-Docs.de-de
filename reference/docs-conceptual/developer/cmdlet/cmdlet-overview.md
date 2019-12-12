@@ -12,10 +12,10 @@ helpviewer_keywords:
 ms.assetid: 0aa32589-4447-4ead-a5dd-a3be99113140
 caps.latest.revision: 21
 ms.openlocfilehash: 14200aed2fb94c37c8b8af29650f602945e7ac1c
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365889"
 ---
 # <a name="cmdlet-overview"></a>Cmdlet-Übersicht
@@ -51,7 +51,7 @@ Cmdlets können über erforderliche, benannte, positionelle und *Switch* -Parame
 Mit Switch-Parametern können Sie Parameter definieren, die nur ausgewertet werden, wenn die Parameter im-Befehl angegeben werden.
 Weitere Informationen zu den verschiedenen Typen von Parametern finden [Sie unter Cmdlet-Parameter](cmdlet-parameters.md).
 
-### <a name="parameter-set"></a>Parameter Satz
+### <a name="parameter-set"></a>Parametersatz
 
 Gruppe von Parametern, die im selben Befehl verwendet werden kann, um eine bestimmte Aktion auszuführen.
 Ein Cmdlet kann über mehrere Parametersätze verfügen, aber jeder Parametersatz muss mindestens einen eindeutigen Parameter aufweisen.
@@ -67,7 +67,7 @@ Weitere Informationen zu dynamischen Parametern finden [Sie unter Cmdlet Dynamic
 ### <a name="input-processing-method"></a>Eingabe Verarbeitungsmethode
 
 Methode, die ein Cmdlet verwenden kann, um die Datensätze, die es empfängt, als Eingabe zu nutzen.
-Die Eingabe Verarbeitungsmethoden umfassen die [System. Management. Automation. Cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) -Methode, die [System. Management. Automation. Cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) -Methode, die [ System. Management. Automation. Cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) -Methode und die [System. Management. Automation. Cmdlet. StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing) -Methode. Wenn Sie ein Cmdlet implementieren, müssen Sie mindestens einen der [System. Management. Automation. Cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)-, [System. Management. Automation. Cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)-und [ System. Management. Automation. Cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) -Methoden.
+Zu den Eingabe Verarbeitungsmethoden zählen die [System. Management. Automation. Cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) -Methode, die [System. Management. Automation. Cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) -Methode, die [System. Management. Automation. Cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) -Methode und die [System. Management. Automation. Cmdlet. StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing) -Methode. Wenn Sie ein Cmdlet implementieren, müssen Sie mindestens eine der Methoden " [System. Management. Automation. Cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)", " [System. Management. Automation. Cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)" und " [System. Management. Automation. Cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) " überschreiben.
 In der Regel ist die [System. Management. Automation. Cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) -Methode die Methode, die Sie überschreiben, da Sie für jeden Datensatz aufgerufen wird, den das Cmdlet verarbeitet.
 Im Gegensatz dazu werden die [System. Management. Automation. Cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) -Methode und die [System. Management. Automation. Cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) -Methode einmal aufgerufen, um die Datensätze vorab zu verarbeiten oder nachzuverarbeiten.
 Weitere Informationen zu diesen Methoden finden Sie unter [Input processing Methods](cmdlet-input-processing-methods.md).
@@ -75,7 +75,7 @@ Weitere Informationen zu diesen Methoden finden Sie unter [Input processing Meth
 ### <a name="shouldprocess-feature"></a>"Schuldprocess"-Funktion
 
 PowerShell ermöglicht es Ihnen, Cmdlets zu erstellen, die den Benutzer zur Eingabe eines Feedbacks auffordern, bevor das Cmdlet eine Änderung am System vornimmt.
-Um dieses Feature verwenden zu können, muss das Cmdlet deklarieren, dass es die "schuldprocess"-Funktion unterstützt, wenn Sie das Cmdlet-Attribut deklarieren, und das Cmdlet muss " [System. Management. Automation. Cmdlet. rudprocess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) " und [" System. Management. Automation. Cmdlet. dendcontinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) -Methoden aus einer Eingabe Verarbeitungsmethode.
+Um dieses Feature verwenden zu können, muss das Cmdlet deklarieren, dass es die "schuldprocess"-Funktion unterstützt, wenn Sie das Cmdlet-Attribut deklarieren. das Cmdlet muss die Methoden " [System. Management. Automation. Cmdlet. undprocess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) " und " [System. Management. Automation. Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)
 Weitere Informationen zur Unterstützung der-Funktion zur Unterstützung der-Funktion finden Sie unter [Anfordern einer Bestätigung](requesting-confirmation-from-cmdlets.md).
 
 ### <a name="transaction"></a>Transaktion
@@ -104,7 +104,7 @@ Cmdlets unterscheiden sich von Befehlen in anderen befehlsshellumgebungen auf fo
 
 Windows PowerShell unterstützt Cmdlets, die von den folgenden zwei Basisklassen abgeleitet werden.
 
-- Die meisten Cmdlets basieren auf .NET Framework Klassen, die von der [System. Management. Automation. Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) -Basisklasse abgeleitet werden. Durch Ableiten von dieser Klasse kann ein Cmdlet den minimalen Satz von Abhängigkeiten in der Windows PowerShell-Laufzeit verwenden. Dies hat zwei Vorteile: Der erste Vorteil besteht darin, dass die Cmdlet-Objekte kleiner sind, und Sie sind weniger wahrscheinlich von Änderungen an der Windows PowerShell-Laufzeit betroffen. Der zweite Vorteil besteht darin, dass Sie bei Bedarf direkt eine Instanz des Cmdlet-Objekts erstellen und dann direkt aufrufen können, anstatt Sie über die Windows PowerShell-Laufzeit aufzurufen.
+- Die meisten Cmdlets basieren auf .NET Framework Klassen, die von der [System. Management. Automation. Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) -Basisklasse abgeleitet werden. Durch Ableiten von dieser Klasse kann ein Cmdlet den minimalen Satz von Abhängigkeiten in der Windows PowerShell-Laufzeit verwenden. Dies hat zwei Vorteile. Der erste Vorteil besteht darin, dass die Cmdlet-Objekte kleiner sind, und Sie sind weniger wahrscheinlich von Änderungen an der Windows PowerShell-Laufzeit betroffen. Der zweite Vorteil besteht darin, dass Sie bei Bedarf direkt eine Instanz des Cmdlet-Objekts erstellen und dann direkt aufrufen können, anstatt Sie über die Windows PowerShell-Laufzeit aufzurufen.
 
 - Die komplexeren Cmdlets basieren auf .NET Framework Klassen, die von der [System. Management. Automation. PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) -Basisklasse abgeleitet werden. Das Ableiten von dieser Klasse gewährt Ihnen viel mehr Zugriff auf die Windows PowerShell-Laufzeit. Dieser Zugriff ermöglicht es dem Cmdlet, Skripts aufzurufen, auf Anbieter zuzugreifen und auf den aktuellen Sitzungszustand zuzugreifen. (Um auf den aktuellen Sitzungszustand zuzugreifen, können Sie Sitzungsvariablen und-Einstellungen abrufen und festlegen.) Das Ableiten von dieser Klasse erhöht jedoch die Größe des Cmdlet-Objekts und bedeutet, dass Ihr Cmdlet enger an die aktuelle Version der Windows PowerShell-Laufzeit gekoppelt ist.
 

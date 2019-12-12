@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 0db9f54c-4014-4450-9e81-c9f5fe562a0e
 caps.latest.revision: 12
 ms.openlocfilehash: c65deeda6b2ef1b52de55035dc606259a7f2d232
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365739"
 ---
 # <a name="common-parameter-names"></a>Allgemeine Parameternamen
@@ -20,7 +20,7 @@ ms.locfileid: "72365739"
 Die in diesem Thema beschriebenen Parameter werden als *Allgemeine Parameter*bezeichnet. Sie werden Cmdlets von der Windows PowerShell-Runtime hinzugefügt und können nicht vom Cmdlet deklariert werden.
 
 > [!NOTE]
-> Diese Parameter werden auch Anbieter-Cmdlets und Funktionen hinzugefügt, die mit dem `CmdletBinding`-Attribut ergänzt werden.
+> Diese Parameter werden auch Anbieter-Cmdlets und Funktionen hinzugefügt, die mit dem `CmdletBinding`-Attribut versehen sind.
 
 ## <a name="general-common-parameters"></a>Allgemeine allgemeine Parameter
 

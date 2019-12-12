@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 18d86af7-7ff9-4968-81be-2caa61937d49
 caps.latest.revision: 10
 ms.openlocfilehash: 946ffb3fe857503c02b9000238a86775969abbd6
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361799"
 ---
 # <a name="tablerowentry-element-for-tablerowentries-for-tablecontrol-format"></a>Element „TableRowEntry“ für TableRowEntries für TableControl (Format)
@@ -55,13 +55,13 @@ Keine.
 
 ## <a name="remarks"></a>Hinweise
 
-Ein `TableColumnItems`-Element und ein `EntrySelectedBy`-Element müssen angegeben werden.
+Ein `TableColumnItems` Element und ein `EntrySelectedBy` Element müssen angegeben werden.
 
 Weitere Informationen zu den Komponenten einer Tabellenansicht finden Sie unter [Erstellen einer Tabellen Sicht](./creating-a-table-view.md).
 
 ## <a name="example"></a>Beispiel
 
-Das folgende Beispiel zeigt ein `TableRowEntry`-Element, das eine Zeile definiert, in der die Werte von zwei Eigenschaften des [System. Diagnostics. Process](/dotnet/api/System.Diagnostics.Process) -Objekts angezeigt werden.
+Das folgende Beispiel zeigt ein `TableRowEntry` Element, das eine Zeile definiert, in der die Werte von zwei Eigenschaften des [System. Diagnostics. Process](/dotnet/api/System.Diagnostics.Process) -Objekts angezeigt werden.
 
 ```xml
 <TableRowEntry>

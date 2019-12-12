@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: c00afd46-758a-4aec-b865-2c9d8f6a17ad
 caps.latest.revision: 5
 ms.openlocfilehash: 8326d1f47ce07698f09ade9ba97154ecc358465a
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417460"
 ---
 # <a name="getproc04-code-samples"></a>GetProc04-Codebeispiele
@@ -26,12 +26,12 @@ Im folgenden finden Sie die Codebeispiele für das Cmdlet "GetProc04 Sample". Di
 
 Einen umfassenden Beispielcode finden Sie in den folgenden Themen.
 
-|Sprache|Thema|
+|Language|Thema|
 |--------------|-----------|
 |C#|[GetProc04 (C#)-Beispiel Code](./getproc04-csharp-sample-code.md)|
 |VB.NET|[GetProc04 (VB.net)-Beispiel Code](./getproc04-vb-net-sample-code.md)|
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Windows PowerShell-Programmier Handbuch](./windows-powershell-programmer-s-guide.md)
 

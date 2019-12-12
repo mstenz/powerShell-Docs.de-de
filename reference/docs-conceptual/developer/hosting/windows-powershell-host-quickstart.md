@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 5a134b81-bd0c-4e1c-a2f0-9acbe852745a
 caps.latest.revision: 9
 ms.openlocfilehash: 390eb2d0153c65967d8c0711c852aa6e13fe4660
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72360819"
 ---
 # <a name="windows-powershell-host-quickstart"></a>Windows PowerShell-Host: Schnellstart
@@ -58,7 +58,7 @@ Wenn Sie das Ergebnis eines vorherigen Befehls nicht an einen Befehl übergeben 
 
 Das vorherige Beispiel führt einen einzelnen Befehl ohne Parameter aus.
 Sie können dem Befehl Parameter hinzufügen, indem Sie die [System. Management. Automation. PSCommand. AddParameter](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) -Methode verwenden.
-Der folgende Code ruft beispielsweise eine Liste aller Prozesse ab, die den Namen `PowerShell` haben, die auf dem Computer ausgeführt wird.
+Der folgende Code ruft beispielsweise eine Liste aller Prozesse ab, die `PowerShell` auf dem Computer ausgeführt werden.
 
 ```csharp
 PowerShell.Create().AddCommand("Get-Process")
@@ -91,7 +91,7 @@ PowerShell.Create().AddCommand("Get-Process")
 ### <a name="addstatement"></a>Addstatement
 
 Sie können die Batch Verarbeitung simulieren, indem Sie die [System. Management. Automation. PowerShell. addstatement](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) -Methode verwenden, mit der am Ende der Pipeline eine zusätzliche-Anweisung hinzugefügt wird.
-Mit dem folgenden Code wird eine Liste der laufenden Prozesse mit dem Namen `PowerShell` abgerufen, und anschließend wird die Liste der derzeit laufenden Dienste abgerufen.
+Der folgende Code Ruft eine Liste der laufenden Prozesse mit dem Namen `PowerShell`ab und ruft dann die Liste der laufenden Dienste ab.
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -104,7 +104,7 @@ ps.Invoke();
 
 Sie können ein vorhandenes Skript ausführen, indem Sie die [System. Management. Automation. PowerShell. addScript](/dotnet/api/System.Management.Automation.PowerShell.AddScript) -Methode aufrufen.
 Das folgende Beispiel fügt der Pipeline ein Skript hinzu und führt es aus.
-In diesem Beispiel wird davon ausgegangen, dass in einem Ordner mit dem Namen `D:\PSScripts` bereits ein Skript mit dem Namen `MyScript.ps1` vorhanden ist
+In diesem Beispiel wird davon ausgegangen, dass bereits ein Skript mit dem Namen `MyScript.ps1` in einem Ordner namens `D:\PSScripts`vorhanden ist.
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -112,7 +112,7 @@ ps.AddScript("D:\PSScripts\MyScript.ps1").Invoke();
 ```
 
 Es gibt auch eine Version der addScript-Methode, die einen booleschen Parameter namens "`useLocalScope`" annimmt.
-Wenn dieser Parameter auf `true` festgelegt ist, wird das Skript im lokalen Gültigkeitsbereich ausgeführt.
+Wenn dieser Parameter auf `true`festgelegt ist, wird das Skript im lokalen Gültigkeitsbereich ausgeführt.
 Mit dem folgenden Code wird das Skript im lokalen Gültigkeitsbereich ausgeführt.
 
 ```csharp
@@ -151,7 +151,7 @@ Um einen eingeschränkteren Runspace zu erstellen, müssen Sie ein leeres initia
 Wenn Sie einen Runspace verwenden, der nur die von Ihnen angegebenen Befehle lädt, wird die Leistung erheblich verbessert.
 
 Verwenden Sie die Methoden der [System. Management. Automation. Runspaces. sessionstatecmdletentry](/dotnet/api/System.Management.Automation.Runspaces.SessionStateCmdletEntry) -Klasse, um Cmdlets für den anfänglichen Sitzungs Status zu definieren.
-Im folgenden Beispiel wird ein leerer ursprünglicher Sitzungszustand erstellt, dann werden die `Get-Command`-und `Import-Module`-Befehle definiert und dem anfänglichen Sitzungszustand hinzugefügt.
+Im folgenden Beispiel wird ein leerer ursprünglicher Sitzungszustand erstellt. Anschließend werden die `Get-Command`-und `Import-Module`-Befehle definiert und dem anfänglichen Sitzungszustand hinzugefügt.
 Anschließend erstellen wir einen durch diesen anfänglichen Sitzungs Status eingeschränkten Runspace und führen die Befehle in diesem Runspace aus.
 
 Erstellen Sie den anfänglichen Sitzungszustand.

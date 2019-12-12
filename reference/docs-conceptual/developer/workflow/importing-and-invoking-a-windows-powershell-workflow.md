@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 50e6f9b1-2678-4f53-9250-7c48843a9549
 caps.latest.revision: 5
 ms.openlocfilehash: 1113c0d1cd68bb97d2f96b529f755b62137d1f40
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366039"
 ---
 # <a name="importing-and-invoking-a-windows-powershell-workflow"></a>Importieren und Aufrufen eines Windows PowerShell-Workflows
@@ -25,7 +25,7 @@ Die [System. Management. Automation. psjobproxy](/dotnet/api/System.Management.A
 
 1. Erstellen Sie ein [System. Management. Automation. Runspaces. wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)-Objekt, um eine Verbindung mit einem Remoterunspace herzustellen.
 
-2. Legen Sie die [System. Management. Automation. Runspaces. wsmanconnectioninfo. shelluri *](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ShellUri) -Eigenschaft des [System. Management. Automation. Runspaces. wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)-Objekts auf "`Microsoft.PowerShell.Workflow`" fest, um einen Windows PowerShell-Endpunkt anzugeben.
+2. Legen Sie die [System. Management. Automation. Runspaces. wsmanconnectioninfo. shelluri *](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ShellUri) -Eigenschaft des [System. Management. Automation. Runspaces. wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)-Objekts auf `Microsoft.PowerShell.Workflow` fest, um einen Windows PowerShell-Endpunkt anzugeben.
 
 3. Erstellen Sie einen Runspace, der die mit den vorherigen Schritten erstellte Verbindung verwendet.
 

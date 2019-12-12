@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: b4191157-bf01-4831-b221-6f8cc581cd53
 caps.latest.revision: 6
 ms.openlocfilehash: 0cbefbb48427b56d4ae2a5ae27c7726dcfad7b84
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364919"
 ---
 # <a name="scriptblock-element-for-itemselectioncondition-for-controls-for-view-format"></a>Element „ScriptBlock“ für ItemSeclectionCondition für Controls für View (Format)
 
-Gibt das Skript an, das die Bedingung auslöst. Wenn dieses Skript `true` ausgewertet wird, wird die Bedingung erfüllt, und das-Steuerelement wird verwendet. Dieses Element wird beim Definieren von Steuerelementen verwendet, die von einer Ansicht verwendet werden können.
+Gibt das Skript an, das die Bedingung auslöst. Wenn dieses Skript zum `true`ausgewertet wird, wird die Bedingung erfüllt, und das-Steuerelement wird verwendet. Dieses Element wird beim Definieren von Steuerelementen verwendet, die von einer Ansicht verwendet werden können.
 
 Konfigurationselement (Format) viewdefinitions-Element (Format) Ansichts Element (Format) steuert Element (Format) Steuerelement (Format) Steuerelement für Steuerelemente für Ansicht (Format) CustomControl-Element für Steuerelement für Steuerelemente für Ansicht (Format) customentries-Element für CustomControl für View (Format) customentry-Element für customentries für Steuerelemente für View (Format) customItem-Element für customentry für Steuerelemente für View (Format) ExpressionBinding-Element für customItem für Steuerelemente für Ansicht (Format) Itemselectioncondition-Element von ExpressionBinding für Steuerelemente für das View (Format) ScriptBlock-Element für itemselectioncondition für Steuerelemente für View (Format)
 

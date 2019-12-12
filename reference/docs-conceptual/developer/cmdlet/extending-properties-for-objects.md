@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: f33ff3e9-213c-44aa-92ab-09450e65c676
 caps.latest.revision: 11
 ms.openlocfilehash: 3b14007384cca0d0cfa35655aee437adf73b1ff0
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364449"
 ---
 # <a name="extending-properties-for-objects"></a>Erweitern Objekteigenschaften
@@ -61,7 +61,7 @@ Im folgenden Beispiel wird die **Mode** -Eigenschaft dem [System. IO. directoriy
 </Type>
 ```
 
-## <a name="note-properties"></a>Hinweis Eigenschaften
+## <a name="note-properties"></a>Eigenschaften notieren
 
 Eine Hinweis Eigenschaft definiert eine Eigenschaft, die über einen statischen Wert verfügt.
 

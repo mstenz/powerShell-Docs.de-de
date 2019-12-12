@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 8c012115-9241-4851-9015-841eb508faf3
 caps.latest.revision: 10
 ms.openlocfilehash: d6adf2fa62384d671fd6a07dd185a941daa44cec
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72362009"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format"></a>Element „SelectionCondition“ für EntrySelectedBy für EnumerableExpansion (Format)
@@ -34,7 +34,7 @@ Configuration-Element (Format) DefaultSettings-Element (Format) enumerableerweit
 
 ## <a name="attributes-and-elements"></a>Attribute und Elemente
 
-In den folgenden Abschnitten werden Attribute, untergeordnete Elemente und das übergeordnete Element des `SelectionCondition`-Elements beschrieben. Sie müssen ein einzelnes `PropertyName`-oder `ScriptBlock`-Element angeben. Die `SelectionSetName`-und `TypeName`-Elemente sind optional. Sie können eines der beiden Elemente angeben.
+In den folgenden Abschnitten werden Attribute, untergeordnete Elemente und das übergeordnete Element des `SelectionCondition`-Elements beschrieben. Sie müssen ein einzelnes `PropertyName` oder `ScriptBlock` Element angeben. Die `SelectionSetName`-und `TypeName` Elemente sind optional. Sie können eines der beiden Elemente angeben.
 
 ### <a name="attributes"></a>Attributes
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: b7a9f086-b1ca-4400-9be7-9ec1ec8880f3
 caps.latest.revision: 11
 ms.openlocfilehash: f20679e3392b99a049c075f24c7712262bab08e1
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364779"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-widecontrol-format"></a>Element „SelectionCondition“ für EntrySelectedBy für WideControl (Format)
@@ -34,7 +34,7 @@ Configuration-Element (Format) viewdefinitions-Element (Format) Ansichts Element
 
 ## <a name="attributes-and-elements"></a>Attribute und Elemente
 
-In den folgenden Abschnitten werden Attribute, untergeordnete Elemente und das übergeordnete Element des `SelectionCondition`-Elements beschrieben. Sie müssen ein einzelnes `PropertyName`-oder `ScriptBlock`-Element angeben. Die `SelectionSetName`-und `TypeName`-Elemente sind optional. Sie können eines der beiden Elemente angeben.
+In den folgenden Abschnitten werden Attribute, untergeordnete Elemente und das übergeordnete Element des `SelectionCondition`-Elements beschrieben. Sie müssen ein einzelnes `PropertyName` oder `ScriptBlock` Element angeben. Die `SelectionSetName`-und `TypeName` Elemente sind optional. Sie können eines der beiden Elemente angeben.
 
 ### <a name="attributes"></a>Attributes
 

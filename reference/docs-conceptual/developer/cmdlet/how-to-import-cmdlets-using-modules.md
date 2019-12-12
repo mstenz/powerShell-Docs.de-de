@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: a41d9e5f-de6f-47b7-9601-c108609320d0
 caps.latest.revision: 8
 ms.openlocfilehash: 2f145795a57c988da0cb4ed294142aa141c53cae
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364459"
 ---
 # <a name="how-to-import-cmdlets-using-modules"></a>Importieren von Cmdlets mit Modulen
@@ -28,11 +28,11 @@ In diesem Artikel wird beschrieben, wie Sie Cmdlets mithilfe eines binären Modu
 
    `%SystemRoot%\system32\WindowsPowerShell\v1.0\Modules\mymodule`
 
-1. Stellen Sie sicher, dass die `PSModulePath`-Umgebungsvariable den Pfad zu Ihrem neuen Modul Ordner enthält. Standardmäßig ist der Systemordner bereits der Umgebungsvariablen "`PSModulePath`" hinzugefügt. Wenn Sie die `PSModulePath` anzeigen möchten, geben Sie Folgendes ein: `$env:PSModulePath`.
+1. Stellen Sie sicher, dass die `PSModulePath`-Umgebungsvariable den Pfad zum neuen Modul Ordner enthält. Standardmäßig ist der Systemordner bereits der `PSModulePath`-Umgebungsvariablen hinzugefügt. Zum Anzeigen des `PSModulePath`geben Sie Folgendes ein: `$env:PSModulePath`.
 
 1. Kopieren Sie die Cmdlet-Assembly in den Modul Ordner.
 
-1. Fügen Sie im Stamm Ordner des Moduls eine Modul Manifest-Datei (`.psd1`) hinzu. PowerShell verwendet das Modul Manifest, um das Modul zu importieren. Weitere Informationen finden Sie unter Gewusst [wie: Schreiben eines PowerShell-Modul Manifests](../module/how-to-write-a-powershell-module-manifest.md).
+1. Fügen Sie eine Modul Manifest-Datei (`.psd1`) im Stamm Ordner des Moduls hinzu. PowerShell verwendet das Modul Manifest, um das Modul zu importieren. Weitere Informationen finden Sie unter Gewusst [wie: Schreiben eines PowerShell-Modul Manifests](../module/how-to-write-a-powershell-module-manifest.md).
 
 1. Führen Sie den folgenden Befehl aus, um der Sitzung die Cmdlets hinzuzufügen:
 

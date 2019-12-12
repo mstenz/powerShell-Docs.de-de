@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: ec048408-e1c6-41ef-b39b-72f4c2dcf2ac
 caps.latest.revision: 6
 ms.openlocfilehash: b4b2440fdb7171d09fdc16ac7cc4f25ed1a4bb78
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72362399"
 ---
 # <a name="propertyname-element-for-selectioncondition-for-controls-for-configuration-format"></a>Element „PropertyName“ für SelectionCondition für Controls für Configuration (Format)
 
-Gibt die .net-Eigenschaft an, die die Bedingung auslöst. Wenn diese Eigenschaft vorhanden ist oder als `true` ausgewertet wird, wird die Bedingung erfüllt, und der Eintrag wird verwendet. Dieses Element wird verwendet, wenn ein gemeinsames Steuerelement definiert wird, das von allen Sichten in der Formatierungs Datei verwendet werden kann.
+Gibt die .net-Eigenschaft an, die die Bedingung auslöst. Wenn diese Eigenschaft vorhanden ist oder als zu `true`ausgewertet wird, wird die Bedingung erfüllt, und der Eintrag wird verwendet. Dieses Element wird verwendet, wenn ein gemeinsames Steuerelement definiert wird, das von allen Sichten in der Formatierungs Datei verwendet werden kann.
 
 Konfigurationselement (Format) steuert Element des Konfigurations Elements (Format) Steuerelement für Steuerelemente für Konfiguration (Format) CustomControl-Element für Steuerelement für Configuration (Format) customentries-Element für CustomControl for Configuration ( Format) customentry-Element für CustomControl für Steuerelemente für das Configuration (Format) entryselectedby-Element für customentry für Steuerelemente für das Configuration (Format) selectioncondition-Element für entryselectedby für customentry for Configuration ( Format) propertyName-Element für selectioncondition für entryselectedby für ListEntry (Format)
 

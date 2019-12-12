@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 39acce45-5144-43ba-894d-a4ce782fa67d
 caps.latest.revision: 13
 ms.openlocfilehash: f89f0009972d5237d71cb8f0d1c53cd0ae614b67
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361409"
 ---
 # <a name="writing-a-powershell-formatting-file"></a>Schreiben einer PowerShell-Formatierungsdatei
@@ -21,7 +21,7 @@ ms.locfileid: "72361409"
 
 ## <a name="in-this-section"></a>In diesem Abschnitt
 
-[Übersicht über Formatierungs Datei](./formatting-file-overview.md) Beschreibt, was eine Format Datei ist, und die allgemeinen Komponenten einer Formatierungs Datei, einschließlich allgemeiner Features, die in der Datei definiert werden können, die unterschiedlichen Typen von Format Ansichten, die für .NET-Objekte definiert werden können, und ein vereinfachtes Beispiel für den XML-Code, der zum Definieren einer Tabelle v verwendet wird. IEW.
+[Übersicht über Formatierungs Datei](./formatting-file-overview.md) Beschreibt, was eine Format Datei ist, und die allgemeinen Komponenten einer Formatierungs Datei, einschließlich allgemeiner Features, die in der Datei definiert werden können, die unterschiedlichen Typen von Format Ansichten, die für .NET-Objekte definiert werden können, und ein vereinfachtes Beispiel für den XML-Code, der zum Definieren einer Tabellen Sicht verwendet wird.
 
 [Formatieren von Datei Konzepten](./formatting-file-concepts.md) Enthält Informationen, die Sie möglicherweise kennen müssen, wenn Sie eigene Formatierungs Dateien erstellen, z. b. die verschiedenen Typen von Sichten, die Sie definieren können, und spezielle Komponenten dieser Sichten.
 

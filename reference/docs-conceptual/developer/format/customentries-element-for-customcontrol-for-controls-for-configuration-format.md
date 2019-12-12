@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 80fc4de2-208f-4506-9a6a-c2675bb83be4
 caps.latest.revision: 11
 ms.openlocfilehash: abef6c91500f665c2366f221496d4cfd6444f5c9
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368819"
 ---
 # <a name="customentries-element-for-customcontrol-for-controls-for-configuration-format"></a>Element „CustomEntries“ für CustomControl für Controls für Configuration (Format)
@@ -52,7 +52,7 @@ Keine.
 
 ## <a name="remarks"></a>Hinweise
 
-In den meisten Fällen verfügt ein Steuerelement nur über eine Definition, die in einem einzelnen `CustomEntry`-Element definiert ist. Es ist jedoch möglich, mehrere Definitionen zu verwenden, wenn Sie das gleiche Steuerelement verwenden möchten, um unterschiedliche .NET-Objekte anzuzeigen. In diesen Fällen können Sie ein `CustomEntry`-Element für jedes Objekt oder jede Gruppe von Objekten definieren.
+In den meisten Fällen verfügt ein Steuerelement nur über eine Definition, die in einem einzelnen `CustomEntry` Element definiert ist. Es ist jedoch möglich, mehrere Definitionen zu verwenden, wenn Sie das gleiche Steuerelement verwenden möchten, um unterschiedliche .NET-Objekte anzuzeigen. In diesen Fällen können Sie ein `CustomEntry`-Element für jedes Objekt oder jede Gruppe von Objekten definieren.
 
 ## <a name="see-also"></a>Weitere Informationen
 

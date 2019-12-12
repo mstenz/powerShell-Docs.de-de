@@ -15,10 +15,10 @@ helpviewer_keywords:
 ms.assetid: 0b014035-52ea-44cb-ab38-bbe463c5465a
 caps.latest.revision: 8
 ms.openlocfilehash: 5dfec318438ca139518c596011ac5e56445738ea
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365919"
 ---
 # <a name="cmdlet-error-reporting"></a>Cmdlet-Fehlerberichterstattung
@@ -43,7 +43,7 @@ Die folgenden Richtlinien können verwendet werden, um zu bestimmen, ob eine Feh
 
 ## <a name="reporting-nonterminating-errors"></a>Melden von nicht abschließenden Fehlern
 
-Die Berichterstellung eines Fehlers ohne Abbruch sollte immer innerhalb der Cmdlet-Implementierung der [System. Management. Automation. Cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) -Methode, der [System. Management. Automation. Cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) -Methode oder die [System. Management. Automation. Cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) -Methode. Diese Fehlertypen werden gemeldet, indem die [System. Management. Automation. Cmdlet. Write error](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) -Methode aufgerufen wird, die wiederum einen Fehler Daten Satz an den fehlerstream sendet.
+Die Berichterstellung eines Fehlers ohne Abbruch sollte immer innerhalb der Cmdlet-Implementierung der [System. Management. Automation. Cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) -Methode, der [System. Management. Automation. Cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) -Methode oder der [System. Management. Automation. Cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) -Methode erfolgen. Diese Fehlertypen werden gemeldet, indem die [System. Management. Automation. Cmdlet. Write error](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) -Methode aufgerufen wird, die wiederum einen Fehler Daten Satz an den fehlerstream sendet.
 
 ## <a name="reporting-terminating-errors"></a>Melden von abschließenden Fehlern
 

@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: d0c6d03f-1c1a-43d8-928e-e3290e90e0bc
 caps.latest.revision: 5
 ms.openlocfilehash: 0210b5ed3104777541692a0e78e7d3b16f9c8256
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361209"
 ---
 # <a name="how-to-add-syntax-to-a-cmdlet-help-topic"></a>Hinzufügen einer Syntax zu einem Cmdlet-Hilfethema
 
 Bevor Sie beginnen, den XML-Code für das Syntax Diagramm in der Cmdlet-Hilfedatei zu codieren, lesen Sie diesen Abschnitt, um einen Überblick über die Art der Daten zu erhalten, die Sie bereitstellen müssen, wie z. b. die Parameter Attribute und die Art und Weise, wie diese Daten im Syntax Diagramm angezeigt werden.
 
-### <a name="parameter-attributes"></a>Parameter Attribute
+### <a name="parameter-attributes"></a>Parameterattribute
 
 - Erforderlich
 
@@ -27,7 +27,7 @@ Bevor Sie beginnen, den XML-Code für das Syntax Diagramm in der Cmdlet-Hilfedat
 
   - Wenn der Wert false ist, ist der Parameter in allen Befehlen, die den Parametersatz verwenden, optional.
 
-- Gebracht
+- Ort
 
   - Wenn benannt, ist der Parameter Name erforderlich.
 
@@ -37,7 +37,7 @@ Bevor Sie beginnen, den XML-Code für das Syntax Diagramm in der Cmdlet-Hilfedat
 
   - Wenn true (byvalue), können Sie die Eingabe an den-Parameter übergeben. Die Eingabe wird dem Parameter zugeordnet ("gebunden"), auch wenn der Eigenschaftsname und der Objekttyp nicht dem erwarteten Typ entsprechen. Windows PowerShell? Parameter Bindungskomponenten versuchen, die Eingabe in den richtigen Typ zu konvertieren, und schlagen den Befehl nur fehl, wenn der Typ nicht konvertiert werden kann. Nur ein Parameter in einem Parametersatz kann nach Wert zugeordnet werden.
 
-  - Wenn true (bypropertyname), können Sie die Eingabe an den-Parameter übergeben. Die Eingabe wird jedoch nur mit dem-Parameter verknüpft, wenn der Parameter Name mit dem Namen einer Eigenschaft des Eingabe Objekts übereinstimmt. Wenn der Parameter Name beispielsweise `Path` ist, werden Objekte, die an das Cmdlet weitergeleitet werden, diesem Parameter nur dann zugeordnet, wenn das Objekt über eine Eigenschaft mit dem Namen Path verfügt.
+  - Wenn true (bypropertyname), können Sie die Eingabe an den-Parameter übergeben. Die Eingabe wird jedoch nur mit dem-Parameter verknüpft, wenn der Parameter Name mit dem Namen einer Eigenschaft des Eingabe Objekts übereinstimmt. Wenn der Parameter Name beispielsweise `Path`ist, werden Objekte, die an das Cmdlet weitergeleitet werden, diesem Parameter nur dann zugeordnet, wenn das Objekt über eine Eigenschaft mit dem Namen Path verfügt.
 
   - Wenn true (byvalue, bypropertyname), können Sie die Eingabe an den-Parameter übergeben, indem Sie den Eigenschaftsnamen oder den Wert angeben. Nur ein Parameter in einem Parametersatz kann nach Wert zugeordnet werden.
 
@@ -90,7 +90,7 @@ Normalerweise sind Parameterwerte, die Platzhalter sind, erforderlich, und Param
 
    Stellen Sie sicher, dass Sie die Parameter "WhatIf" und "Confirm" auflisten, wenn das Cmdlet "Schulter verarbeiten"
 
-   Listen Sie die allgemeinen Parameter (z. b. "Verbose", "Debug" und "ErrorAction") nicht in Ihrem Syntax Diagramm auf. Das Cmdlet "`Get-Help`" fügt diese Informationen für Sie hinzu, wenn das Hilfethema angezeigt wird.
+   Listen Sie die allgemeinen Parameter (z. b. "Verbose", "Debug" und "ErrorAction") nicht in Ihrem Syntax Diagramm auf. Mit dem `Get-Help`-Cmdlet werden diese Informationen für Sie hinzugefügt, wenn das Hilfethema angezeigt wird.
 
 3. Fügen Sie die Parameterwerte hinzu. In Windows PowerShell werden Parameterwerte durch ihren .NET-Typ dargestellt. Allerdings kann der Typname abgekürzt werden, z. b. "String" für System. String.
 
@@ -156,11 +156,11 @@ Normalerweise sind Parameterwerte, die Platzhalter sind, erforderlich, und Param
 
 ## <a name="coding-the-syntax-diagram-xml"></a>Codieren des Syntax Diagramm-XML
 
-Der Syntax Knoten des XML-Codes beginnt unmittelbar nach dem Beschreibungs Knoten, der mit dem \</MAML: Description > Tag endet. Informationen zum Sammeln von Daten, die im Syntax Diagramm verwendet werden, finden Sie unter [Sammeln von Syntax Informationen](#gathering-syntax-information).
+Der Syntax Knoten des XML-Codes beginnt unmittelbar nach dem Beschreibungs Knoten, der mit dem \</MAML: Description >-Tag endet. Informationen zum Sammeln von Daten, die im Syntax Diagramm verwendet werden, finden Sie unter [Sammeln von Syntax Informationen](#gathering-syntax-information).
 
 ### <a name="adding-a-syntax-node"></a>Hinzufügen eines Syntax Knotens
 
-Das im Cmdlet-Hilfethema angezeigte Syntax Diagramm wird aus den Daten im Knoten Syntax der XML-Datei generiert. Der Syntax Knoten ist in ein paar eingeschlossen, wenn \<command: Syntax > Tags. Mit jedem Parametersatz des Cmdlets, der in ein paar von \<command: syntaxitem > Tags eingeschlossen ist. Es gibt keine Beschränkung für die Anzahl der \<-Befehle: syntaxitem > Tags, die Sie hinzufügen können.
+Das im Cmdlet-Hilfethema angezeigte Syntax Diagramm wird aus den Daten im Knoten Syntax der XML-Datei generiert. Der Syntax Knoten ist in ein paar eingeschlossen, wenn \<Befehl: Syntax > Tags. Mit jedem Parametersatz des Cmdlets, der in ein paar von \<Befehl eingeschlossen ist: syntaxitem > Tags. Es gibt keine Beschränkung für die Anzahl \<Befehls: syntaxitem > Tags, die Sie hinzufügen können.
 
 Das folgende Beispiel zeigt einen Syntax Knoten, der über Syntax Elementknoten für zwei Parametersätze verfügt.
 
@@ -181,7 +181,7 @@ Das folgende Beispiel zeigt einen Syntax Knoten, der über Syntax Elementknoten 
 
 ### <a name="adding-the-cmdlet-name-to-the-parameter-set-data"></a>Hinzufügen des Cmdlet-namens zu den Parameter Satz Daten
 
-Jeder Parametersatz des Cmdlets wird in einem Syntax Elementknoten angegeben. Jeder Syntax Elementknoten beginnt mit einem Paar von \<maml: Name > Tags, die den Namen des Cmdlets enthalten.
+Jeder Parametersatz des Cmdlets wird in einem Syntax Elementknoten angegeben. Jeder Syntax Elementknoten beginnt mit einem Paar aus \<MAML: Name > Tags, die den Namen des Cmdlets enthalten.
 
 Das folgende Beispiel schließt einen Syntax Knoten ein, der über Syntax Elementknoten für zwei Parametersätze verfügt.
 
@@ -196,14 +196,14 @@ Das folgende Beispiel schließt einen Syntax Knoten ein, der über Syntax Elemen
 </command:syntax>
 ```
 
-### <a name="adding-parameters"></a>Parameter werden hinzugefügt
+### <a name="adding-parameters"></a>Hinzufügen von Parametern
 
-Jeder Parameter, der dem Knoten Syntax Element hinzugefügt wird, wird in einem Paar von \<command: Parameter > Tags angegeben. Sie benötigen ein paar von \<-Befehl: Parameter > Tags für jeden Parameter, der im Parametersatz enthalten ist, mit Ausnahme der allgemeinen Parameter, die von Windows PowerShell bereitgestellt werden?.
+Jeder Parameter, der dem Knoten Syntax Element hinzugefügt wird, wird in einem Paar von \<Befehl: Parameter > Tags angegeben. Sie benötigen ein paar von \<Befehl: Parameter > Tags für jeden Parameter, der im Parametersatz enthalten ist, mit Ausnahme der allgemeinen Parameter, die von Windows PowerShell bereitgestellt werden?.
 
-Die Attribute des öffnenden \<command: Parameter >-Tags bestimmen, wie der Parameter im Syntax Diagramm angezeigt wird. Weitere Informationen zu Parameter Attributen finden Sie unter [Parameter Attribute](#parameter-attributes).
+Die Attribute des öffnenden \<Command: Parameter >-Tags bestimmen, wie der Parameter im Syntax Diagramm angezeigt wird. Weitere Informationen zu Parameter Attributen finden Sie unter [Parameter Attribute](#parameter-attributes).
 
 > [!NOTE]
-> Der \<command: Parameter > Tag unterstützt ein untergeordnetes Element \<maml: Description > dessen Inhalt nie angezeigt wird. Die Parameter Beschreibungen werden im Parameter Knoten der XML-Datei angegeben. Um Inkonsistenzen zwischen den Informationen im Syntax Element verheißen und dem Parameter Knoten zu vermeiden, lassen Sie das (\<maml: Description >, oder lassen Sie es leer.
+> Der \<Befehl: Parameter > Tag unterstützt ein untergeordnetes Element \<MAML: Description->, dessen Inhalt nie angezeigt wird. Die Parameter Beschreibungen werden im Parameter Knoten der XML-Datei angegeben. Um Inkonsistenzen zwischen den Informationen im Syntax Element verheißen und dem Parameter Knoten zu vermeiden, lassen Sie das (\<MAML: Description >, oder lassen Sie es leer.
 
 Das folgende Beispiel schließt einen Syntax Elementknoten für einen Parametersatz mit zwei Parametern ein.
 

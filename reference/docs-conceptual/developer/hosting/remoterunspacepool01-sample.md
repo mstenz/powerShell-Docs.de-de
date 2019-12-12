@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: dffedd31-c10d-4e11-a9ee-4fdfe9a869e8
 caps.latest.revision: 8
 ms.openlocfilehash: 894c995474d4bf5b7fe11c1289c4500371c9dd43
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367429"
 ---
 # <a name="remoterunspacepool01-sample"></a>RemoteRunspacePool01-Beispiel
@@ -23,11 +23,11 @@ Dieses Beispiel zeigt, wie Sie einen Remote-Runspace-Pool erstellen und mehrere 
 
  Dieses Beispiel erfordert Windows PowerShell 2,0.
 
-## <a name="demonstrates"></a>Deutlich
+## <a name="demonstrates"></a>Gegenstand
 
 - Erstellen eines [System. Management. Automation. Runspaces. wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) -Objekts.
 
-- Festlegen der Eigenschaften [System. Management. Automation. Runspaces. runspaceconnectioninfo. OperationTimeout *](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) und [System. Management. Automation. Runspaces. runspaceconnectioninfo. OpenTimeout *](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) der [ System. Management. Automation. Runspaces. wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) -Objekt.
+- Festlegen der [System. Management. Automation. Runspaces. runspaceconnectioninfo. OperationTimeout *](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) -und der [System. Management. Automation. Runspaces. runspaceconnectioninfo. OpenTimeout *](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) -Eigenschaften des [System. Management. Automation. Runspaces. wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) -Objekts.
 
 - Erstellen eines Remoterunspace, der das [System. Management. Automation. Runspaces. wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) -Objekt verwendet, um die Remote Verbindung herzustellen.
 

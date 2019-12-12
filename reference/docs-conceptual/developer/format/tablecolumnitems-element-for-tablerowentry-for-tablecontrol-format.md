@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: d43684ce-7c3d-4d14-8dbd-061c111ee805
 caps.latest.revision: 12
 ms.openlocfilehash: d05437aaa9652e7f81d0854d1a746acffe145699
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361809"
 ---
 # <a name="tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format"></a>Element „TableColumnItems“ für TableRowEntry für TableControl (Format)
@@ -51,7 +51,7 @@ Keine.
 
 ## <a name="remarks"></a>Hinweise
 
-Für jede Spalte der Zeile ist ein `TableColumnItem`-Element erforderlich. Der erste Eintrag wird in der ersten Spalte angezeigt, der zweite Eintrag in der zweiten Spalte usw.
+Für jede Spalte der Zeile ist ein `TableColumnItem` Element erforderlich. Der erste Eintrag wird in der ersten Spalte angezeigt, der zweite Eintrag in der zweiten Spalte usw.
 
 Weitere Informationen zu den Komponenten einer Tabellenansicht finden Sie unter [Erstellen einer Tabellen Sicht](./creating-a-table-view.md).
 

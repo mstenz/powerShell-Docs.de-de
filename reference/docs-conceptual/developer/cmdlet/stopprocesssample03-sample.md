@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 31298f1b-8b76-4637-8406-863f5ad27e53
 caps.latest.revision: 8
 ms.openlocfilehash: 91b56a78f878e0d9c0fc11e4b882399bdfb108ac
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369369"
 ---
 # <a name="stopprocesssample03-sample"></a>StopProcessSample03-Beispiel
 
-In diesem Beispiel wird gezeigt, wie ein Cmdlet geschrieben wird, dessen Parameter Aliase aufweisen und deren Parameter Platzhalter Zeichen unterstützen. Dieses Cmdlet ähnelt dem Cmdlet "`Stop-Process`", das von Windows PowerShell 2,0 bereitgestellt wird.
+In diesem Beispiel wird gezeigt, wie ein Cmdlet geschrieben wird, dessen Parameter Aliase aufweisen und deren Parameter Platzhalter Zeichen unterstützen. Dieses Cmdlet ähnelt dem `Stop-Process`-Cmdlet, das von Windows PowerShell 2,0 bereitgestellt wird.
 
 ### <a name="how-to-build-the-sample-by-using-visual-studio"></a>So erstellen Sie das Beispiel mithilfe von Visual Studio.
 
@@ -25,11 +25,11 @@ In diesem Beispiel wird gezeigt, wie ein Cmdlet geschrieben wird, dessen Paramet
 
 2. Doppelklicken Sie auf das Symbol für die Projektmappendatei (. sln). Dadurch wird das Beispiel Projekt in Microsoft Visual Studio geöffnet.
 
-3. Wählen Sie im Menü **Erstellen** die Option Projekt Mappe **Erstellen**aus.
+3. Wählen Sie im Menü **Erstellen** die Option **Projektmappe erstellen** aus.
 
     Die Bibliothek für das Beispiel wird im Standardordner \bin oder \bin\Debug erstellt.
 
-### <a name="how-to-run-the-sample"></a>So führen Sie das Beispiel aus
+### <a name="how-to-run-the-sample"></a>Ausführen des Beispiels
 
 1. Erstellen Sie den folgenden Modul Ordner:
 
@@ -51,7 +51,7 @@ In diesem Beispiel wird gezeigt, wie ein Cmdlet geschrieben wird, dessen Paramet
 
 Dieses Beispiel erfordert Windows PowerShell 2,0.
 
-## <a name="demonstrates"></a>Deutlich
+## <a name="demonstrates"></a>Gegenstand
 
 In diesem Beispiel wird Folgendes veranschaulicht:
 

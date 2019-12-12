@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: cf6c1442-60aa-477a-8f30-ab02b1b11039
 caps.latest.revision: 7
 ms.openlocfilehash: d4a5fc934a41b00f89862674e44e4540680674f7
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361229"
 ---
 # <a name="how-to-add-parameter-information"></a>Hinzufügen von Parameterinformationen
@@ -171,11 +171,11 @@ Beachten Sie beim Hinzufügen von Parametern die folgenden Punkte.
 
 Der Standardwert des-Parameters ist der Wert, der verwendet wird, wenn der-Parameter nicht in der Befehlszeile angegeben wird. Beachten Sie, dass der Standardwert optional ist und für einige Parameter, wie z. b. erforderliche Parameter, nicht benötigt wird. Sie sollten jedoch einen Standardwert für die meisten optionalen Parameter angeben.
 
-Der Standardwert unterstützt den Benutzer dabei, die Auswirkungen der Verwendung des-Parameters zu verstehen. Beschreiben Sie den Standardwert sehr spezifisch, z. b. "Aktuelles Verzeichnis" oder "Windows PowerShell-Installationsverzeichnis ($PSHome)", um einen optionalen Pfad zu erhalten. Sie können auch einen Satz schreiben, der den Standard beschreibt, z. b. den folgenden Satz, der für den Parameter "`PassThru`" verwendet wird: "Wenn passthru nicht angegeben ist, übergibt das Cmdlet Objekte nicht in der Pipeline."  Außerdem müssen Sie den Begriff "Standardwert" nicht in den Eintrag einschließen, da der Wert dem Feldnamen "**Standardwert**" angezeigt wird.
+Der Standardwert unterstützt den Benutzer dabei, die Auswirkungen der Verwendung des-Parameters zu verstehen. Beschreiben Sie den Standardwert sehr spezifisch, z. b. "Aktuelles Verzeichnis" oder "Windows PowerShell-Installationsverzeichnis ($PSHome)", um einen optionalen Pfad zu erhalten. Sie können auch einen Satz schreiben, der den Standard beschreibt, z. b. den folgenden Satz, der für den `PassThru`-Parameter verwendet wird: "Wenn passthru nicht angegeben ist, übergibt das Cmdlet Objekte nicht in der Pipeline."  Außerdem müssen Sie den Begriff "Standardwert" nicht in den Eintrag einschließen, da der Wert dem Feldnamen "**Standardwert**" angezeigt wird.
 
 Der Standardwert des-Parameters wird nicht in allen Ansichten des Hilfe Themas für das Cmdlet angezeigt. Sie wird jedoch in einer Tabelle (zusammen mit den Parameter Attributen) nach der Parameter Beschreibung angezeigt, wenn der Benutzer die vollständige Ansicht (Get-Help \<cmdletname >-Full) oder den Parameter (Get-Help \<cmdletname >-Parameter) des Themas anfordert.
 
-Der folgende XML-Code zeigt ein paar von `<dev:defaultValue>`-Tags, die dem Knoten `<command:parameter>` hinzugefügt wurden. Beachten Sie, dass der Standardwert unmittelbar nach dem schließenden `</command:parameterValue>`-Tag (wenn der Parameterwert angegeben ist) oder dem schließenden `</maml:description>`-Tag der Parameter Beschreibung folgt. Benennen.
+Der folgende XML-Code zeigt ein paar `<dev:defaultValue>` Tags, die dem `<command:parameter>`-Knoten hinzugefügt wurden. Beachten Sie, dass der Standardwert unmittelbar nach dem schließenden `</command:parameterValue>`-Tag (wenn der Parameterwert angegeben ist) oder dem schließenden `</maml:description>`-Tag der Parameter Beschreibung folgt. name.
 
 ```xml
 <command:parameters>
@@ -195,11 +195,11 @@ Der folgende XML-Code zeigt ein paar von `<dev:defaultValue>`-Tags, die dem Knot
 
 Werte für Enumerationstypen hinzufügen
 
-Wenn der Parameter mehrere Werte oder Werte eines enumerierten Typs aufweist, können Sie einen optionalen \<dev: PossibleValues > Knoten verwenden. Mit diesem Knoten können Sie einen Namen und eine Beschreibung für mehrere Werte angeben.
+Wenn der Parameter mehrere Werte oder Werte eines Enumerationstyps enthält, können Sie einen optionalen \<dev: PossibleValues-> Knoten verwenden. Mit diesem Knoten können Sie einen Namen und eine Beschreibung für mehrere Werte angeben.
 
-Beachten Sie, dass die Beschreibungen der aufgelisteten Werte in keiner der Standard Hilfe Ansichten angezeigt werden, die vom Cmdlet "`Get-Help`" angezeigt werden, aber andere Help Viewer können diesen Inhalt in ihren Ansichten anzeigen.
+Beachten Sie, dass die Beschreibungen der aufgelisteten Werte nicht in einer der Standard Hilfe Ansichten angezeigt werden, die vom Cmdlet "`Get-Help`" angezeigt werden, aber andere Help Viewer können diese Inhalte in ihren Ansichten anzeigen.
 
-Der folgende XML-Code zeigt einen `<dev:possibleValues>`-Knoten mit zwei angegebenen Werten.
+Der folgende XML-Code zeigt einen `<dev:possibleValues>` Knoten mit zwei angegebenen Werten.
 
 ```xml
 <command:parameters>

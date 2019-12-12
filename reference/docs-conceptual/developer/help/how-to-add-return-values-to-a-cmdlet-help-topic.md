@@ -9,25 +9,25 @@ ms.topic: article
 ms.assetid: a52ab737-753c-4d04-8af7-758d5c805e18
 caps.latest.revision: 7
 ms.openlocfilehash: b21811e5a5a819c3d5c4a55fcbe685a84819b71d
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367799"
 ---
 # <a name="how-to-add-return-values-to-a-cmdlet-help-topic"></a>Hinzufügen von Rückgabewerten zu einem Cmdlet-Hilfethema
 
 In diesem Abschnitt wird beschrieben, wie Sie einen Ausgabe Abschnitt zu einem Windows PowerShell-® Cmdlet-Hilfethema hinzufügen. Im Abschnitt "Outputs" werden die .NET-Klassen von Objekten aufgelistet, die vom Cmdlet zurückgegeben oder an die Pipeline übergeben werden.
 
-Es gibt keine Beschränkung für die Anzahl der Klassen, die Sie dem Ausgabe Abschnitt hinzufügen können. Die Rückgabe Typen eines Cmdlets werden in einem \<command: returnvalues > Knoten eingeschlossen, wobei jede Klasse in ein \<command: returnValue-> Element eingeschlossen ist.
+Es gibt keine Beschränkung für die Anzahl der Klassen, die Sie dem Ausgabe Abschnitt hinzufügen können. Die Rückgabe Typen eines Cmdlets werden in einem \<Befehl: returnvalues > Knoten eingeschlossen, wobei jede Klasse in einen \<Befehl eingeschlossen ist: returnValue > Element.
 
 Wenn ein Cmdlet keine Ausgabe generiert, verwenden Sie diesen Abschnitt, um anzugeben, dass keine Ausgabe vorhanden ist. Schreiben Sie z. b. anstelle des Klassen namens "None", und stellen Sie eine kurze Erläuterung bereit. Wenn das Cmdlet die Ausgabe bedingt generiert, verwenden Sie diesen Knoten, um die Bedingungen zu erläutern und die bedingte Ausgabe zu beschreiben.
 
-Das Schema enthält zwei \<maml: Description > Elemente in jedem \<command: returnValue-> Element. Das Cmdlet "`Get-Help`" zeigt jedoch nur den Inhalt des > Elements "\<command: returnValue >/\<maml: Description" an.
+Das Schema enthält zwei \<MAML: Description > Elemente in jedem \<Command: returnValue > Element. Das Cmdlet "`Get-Help`" zeigt jedoch nur den Inhalt des \<Befehls: returnValue >/\<MAML: Description > Element an.
 
-Ab Windows PowerShell 3,0 zeigt das Cmdlet "`Get-Help`" den Inhalt des > Elements "\<maml: URI" an. Mit diesem Element können Sie Benutzer an Themen weiterleiten, in denen die .NET-Klasse beschrieben wird.
+Ab Windows PowerShell 3,0 zeigt das Cmdlet "`Get-Help`" den Inhalt des > Elements \<MAML: URI an. Mit diesem Element können Sie Benutzer an Themen weiterleiten, in denen die .NET-Klasse beschrieben wird.
 
-Der folgende XML-Code zeigt den Knoten \<maml: returnvalues >.
+Der folgende XML-Code zeigt den \<MAML: returnvalues > Knoten.
 
 ```xml
 <command:returnValues>
@@ -45,7 +45,7 @@ Der folgende XML-Code zeigt den Knoten \<maml: returnvalues >.
 </command: returnValues>
 ```
 
-Der folgende XML-Code zeigt ein Beispiel für die Verwendung des Knotens \<maml: returnvalues >, um einen Ausgabetyp zu dokumentieren.
+Der folgende XML-Code zeigt ein Beispiel für die Verwendung des Knotens \<MAML: returnvalues >, um einen Ausgabetyp zu dokumentieren.
 
 ```xml
 <command:returnValues>

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 98bcfda0-6ee2-46f5-bbc7-5fab8b780d6a
 caps.latest.revision: 5
 ms.openlocfilehash: edb4d9944a527391983e068ddf07f4fac415c3f9
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359869"
 ---
 # <a name="writing-a-navigation-provider"></a>Schreiben eines Navigationsanbieters
@@ -132,7 +132,7 @@ protected override string GetParentPath(string path, string root)
 
 ### <a name="implementing-makepath"></a>Implementieren von makepath
 
-Die [System. Management. Automation. Provider. navigationcmdletprovider. makepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) -Methode verbindet einen angegebenen übergeordneten Pfad und einen angegebenen untergeordneten Pfad, um einen Anbieter internen Pfad zu erstellen (Weitere Informationen zu Pfad Typen, die von Anbietern unterstützt werden können, finden Sie unter [Übersicht über den Windows PowerShell-Anbieter](./windows-powershell-provider-overview.md). Die PowerShell-Engine ruft diese Methode auf, wenn ein Benutzer das [Microsoft. PowerShell. Commands. joinpathcommand](/dotnet/api/Microsoft.PowerShell.Commands.joinpathcommand) -Cmdlet aufruft.
+Die [System. Management. Automation. Provider. navigationcmdletprovider. makepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) -Methode verbindet einen angegebenen übergeordneten Pfad und einen angegebenen untergeordneten Pfad, um einen Anbieter internen Pfad zu erstellen (Weitere Informationen zu Pfad Typen, die Anbieter unterstützen können, finden Sie unter [Windows PowerShell Provider Overview](./windows-powershell-provider-overview.md). Die PowerShell-Engine ruft diese Methode auf, wenn ein Benutzer das [Microsoft. PowerShell. Commands. joinpathcommand](/dotnet/api/Microsoft.PowerShell.Commands.joinpathcommand) -Cmdlet aufruft.
 
 ```csharp
 protected override string MakePath(string parent, string child)
@@ -191,7 +191,7 @@ protected override string MakePath(string parent, string child)
 
 ### <a name="implementing-normalizerelativepath"></a>Implementieren von normalizerelativepath
 
-Die [System. Management. Automation. Provider. navigationcmdletprovider. normalizerelativepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.NormalizeRelativePath) -Methode übernimmt `path`-und `basepath`-Parameter und gibt einen normalisierten Pfad zurück, der dem `path`-Parameter und relativ zum `basepath` entspricht. Parame.
+Die [System. Management. Automation. Provider. navigationcmdletprovider. normalizerelativepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.NormalizeRelativePath) -Methode übernimmt `path` und `basepath` Parameter und gibt einen normalisierten Pfad zurück, der dem `path`-Parameter und relativ zum `basepath`-Parameter entspricht.
 
 ```csharp
 protected override string NormalizeRelativePath(string path,

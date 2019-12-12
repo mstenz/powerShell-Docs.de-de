@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: b3d80a7d-3797-4c46-ae74-ae5cda79b24f
 caps.latest.revision: 8
 ms.openlocfilehash: efb20c3f2077547e6eb3cb28240512b444f9c481
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363889"
 ---
 # <a name="entryselectedby-element-for-customentry-for-controls-for-view-format"></a>Element „EntrySelectedBy“ für CustomEntry für Controls für View (Format)
@@ -55,7 +55,7 @@ Keine.
 
 ## <a name="remarks"></a>Hinweise
 
-Auswahl Bedingungen werden verwendet, um eine Bedingung zu definieren, die für die zu verwendende Definition vorhanden sein muss, z. b. Wenn ein Objekt eine bestimmte Eigenschaft hat oder wenn ein bestimmter Eigenschafts Wert oder ein Skript zu `true` ausgewertet wird. Weitere Informationen zu Auswahl Bedingungen finden Sie unter [Definieren von Bedingungen für die Verwendung eines Ansichts Eintrags oder eines Elements](./defining-conditions-for-displaying-data.md).
+Auswahl Bedingungen werden verwendet, um eine Bedingung zu definieren, die für die zu verwendende Definition vorhanden sein muss, z. b. Wenn ein Objekt eine bestimmte Eigenschaft hat oder wenn ein bestimmter Eigenschafts Wert oder ein Skript zu `true`ausgewertet wird. Weitere Informationen zu Auswahl Bedingungen finden Sie unter [Definieren von Bedingungen für die Verwendung eines Ansichts Eintrags oder eines Elements](./defining-conditions-for-displaying-data.md).
 
 ## <a name="see-also"></a>Weitere Informationen
 

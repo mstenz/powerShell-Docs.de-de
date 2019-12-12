@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: ab2a5379-299d-4c97-86a2-b639ea890fae
 caps.latest.revision: 6
 ms.openlocfilehash: 7f9066c0fe0954fadff9dc8f0c35a62c6710f516
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72362949"
 ---
 # <a name="frame-element-for-customitem-for-groupby-format"></a>Element „Frame“ für CustomItem für GroupBy (Format)
@@ -59,7 +59,7 @@ Keine.
 
 ## <a name="remarks"></a>Hinweise
 
-Sie können die Elemente [firstlinehanging](./firstlinehanging-element-for-frame-for-groupby-format.md) und [FirstLineIndent](./firstlineindent-element-for-frame-for-groupby-format.md) nicht im selben `Frame`-Element angeben.
+Sie können die Elemente [firstlinehanging](./firstlinehanging-element-for-frame-for-groupby-format.md) und [FirstLineIndent](./firstlineindent-element-for-frame-for-groupby-format.md) nicht im selben `Frame` Element angeben.
 
 ## <a name="see-also"></a>Weitere Informationen
 

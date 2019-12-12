@@ -11,10 +11,10 @@ helpviewer_keywords:
 ms.assetid: 875024f4-e02b-4416-80b9-af5e5b50aad6
 caps.latest.revision: 7
 ms.openlocfilehash: 465ab9e8fa29716ce0f46ad0dcf01d0ddd615bcd
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364229"
 ---
 # <a name="writing-a-windows-powershell-snap-in"></a>Schreiben eines Windows PowerShell-Snap-Ins
@@ -31,7 +31,7 @@ Bei dieser Art von Snap-in wählen Sie nicht die Cmdlets und Anbieter aus, die S
 
     In diesem Beispiel lautet der Klassenname "GetProcPSSnapIn01".
 
-3. Fügen Sie eine öffentliche Eigenschaft für den Namen des Snap-Ins hinzu (erforderlich). Verwenden Sie beim Benennen von Snap-Ins keines der folgenden Zeichen: #. , () {} [] &-/\ $; : "' \< >;? @ ` *
+3. Fügen Sie eine öffentliche Eigenschaft für den Namen des Snap-Ins hinzu (erforderlich). Verwenden Sie beim Benennen von Snap-Ins keines der folgenden Zeichen: #. , () {} [] &-/\ $; : "" \< >;? @ ` *
 
     In diesem Beispiel lautet der Name des Snap-Ins "GetProcPSSnapIn01".
 

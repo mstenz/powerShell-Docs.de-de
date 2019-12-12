@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: 4d68a8f3-fba0-44c5-97b9-9fc191d269a5
 caps.latest.revision: 13
 ms.openlocfilehash: 0906d0d37c66b8c1538a0b2e9e0f1ff2fba12ac0
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369339"
 ---
 # <a name="strongly-encouraged-development-guidelines"></a>Ausdrücklich empfohlene Entwicklungsrichtlinien
 
 In diesem Abschnitt werden Richtlinien beschrieben, die Sie beim Schreiben von Cmdlets befolgen sollten. Sie sind in Richtlinien zum Entwerfen von Cmdlets und Richtlinien zum Schreiben des Cmdlet-Codes unterteilt. Möglicherweise stellen Sie fest, dass diese Richtlinien für jedes Szenario nicht anwendbar sind. Wenn Sie jedoch angewendet werden und diese Richtlinien nicht befolgt werden, können Ihre Benutzer bei der Verwendung ihrer Cmdlets eine schlechte Benutzer Leistung aufweisen.
 
-## <a name="design-guidelines"></a>Entwurfs Richtlinien
+## <a name="design-guidelines"></a>Entwurfsrichtlinien
 
 - [Verwenden eines bestimmten Substantivs für einen Cmdlet-Namen (SD01)](./strongly-encouraged-development-guidelines.md#use-a-specific-noun-for-a-cmdlet-name-sd01)
 
@@ -41,7 +41,7 @@ In diesem Abschnitt werden Richtlinien beschrieben, die Sie beim Schreiben von C
 
 - [Cmdlets ohne Berücksichtigung der Groß-/Kleinschreibung und Groß-/Kleinschreibung (Sc04)](./strongly-encouraged-development-guidelines.md#make-cmdlets-case-insensitive-and-case-preserving-sc04)
 
-## <a name="design-guidelines"></a>Entwurfs Richtlinien
+## <a name="design-guidelines"></a>Entwurfsrichtlinien
 
 Beachten Sie beim Entwerfen von Cmdlets die folgenden Richtlinien, um eine konsistente Benutzer Darstellung zwischen der Verwendung ihrer Cmdlets und anderer Cmdlets sicherzustellen. Wenn Sie eine Entwurfsrichtlinie finden, die für Ihre Situation gilt, sollten Sie sich die Code Richtlinien für ähnliche Richtlinien ansehen.
 
@@ -240,7 +240,7 @@ Wenn ein Cmdlet Objekte zurückgibt, sollte das Cmdlet die Objekte sofort beim G
 
 Standardmäßig wird von Windows PowerShell selbst keine Groß-/Kleinschreibung beachtet. Da es jedoch viele bereits vorhandene Systeme behandelt, behält Windows PowerShell die Groß-/Kleinschreibung bei, um den Betrieb und die Kompatibilität zu vereinfachen. Anders ausgedrückt: Wenn ein Zeichen in Großbuchstaben angegeben wird, speichert Windows PowerShell es in Großbuchstaben. Damit Systeme gut funktionieren, muss ein Cmdlet dieser Konvention folgen. Wenn möglich, sollte die Groß-/Kleinschreibung nicht beachtet werden. Der ursprüngliche Fall für Cmdlets, die später in einem Befehl oder in der Pipeline auftreten, sollte jedoch beibehalten werden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Erforderliche Entwicklungs Richtlinien](./required-development-guidelines.md)
 

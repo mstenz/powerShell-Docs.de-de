@@ -11,10 +11,10 @@ helpviewer_keywords:
 ms.assetid: 3cba3ab7-c3b6-4d17-aa17-88377496551b
 caps.latest.revision: 9
 ms.openlocfilehash: a39e34d1f1c333185f09b4a934819e1368d29a48
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365519"
 ---
 # <a name="how-to-validate-an-argument-range"></a>Überprüfen eines Argumentbereichs
@@ -26,7 +26,7 @@ In diesem Beispiel wird gezeigt, wie eine Validierungs Regel angegeben wird, mit
 
 ### <a name="to-validate-an-argument-range"></a>So validieren Sie einen Argument Bereich
 
-- Fügen Sie das validaterange-Attribut hinzu, wie im folgenden Code gezeigt. In diesem Beispiel wird ein Bereich von 0 bis 5 für den Parameter `InputData` angegeben.
+- Fügen Sie das validaterange-Attribut hinzu, wie im folgenden Code gezeigt. In diesem Beispiel wird ein Bereich von 0 bis 5 für den `InputData`-Parameter angegeben.
 
     ```csharp
     [ValidateRange(0, 5)]

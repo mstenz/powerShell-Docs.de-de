@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: eb4e72e6-24c4-42b6-b7b9-a62585c17f26
 caps.latest.revision: 15
 ms.openlocfilehash: ed614de125f78cbcf8411cc334baf3c95933dd47
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367119"
 ---
 # <a name="how-to-write-a-powershell-binary-module"></a>Schreiben eines PowerShell-Binärmoduls
@@ -73,9 +73,9 @@ Im folgenden Verfahren wird beschrieben, wie ein PowerShell-Binär Modul erstell
 
 3. Packen Sie die Projekt Mappe, und speichern Sie das Paket an einer beliebigen Stelle im PowerShell-Modulpfad.
 
-   Die globale Umgebungsvariable `PSModulePath` beschreibt die Standard Pfade, die von PowerShell zum Auffinden des Moduls verwendet werden. Ein allgemeiner Pfad zum Speichern eines Moduls auf einem System wäre beispielsweise `%SystemRoot%\users\<user>\Documents\WindowsPowerShell\Modules\<moduleName>`. Wenn Sie nicht die Standard Pfade verwenden, müssen Sie den Speicherort des Moduls während der Installation explizit angeben. Stellen Sie sicher, dass Sie einen Ordner erstellen, in dem das Modul gespeichert werden kann, da Sie möglicherweise den Ordner zum Speichern mehrerer Assemblys und Dateien für die Projekt Mappe benötigen.
+   Die `PSModulePath` globale Umgebungsvariable beschreibt die Standard Pfade, die von PowerShell verwendet werden, um das Modul zu suchen. Beispielsweise wäre ein allgemeiner Pfad zum Speichern eines Moduls auf einem System `%SystemRoot%\users\<user>\Documents\WindowsPowerShell\Modules\<moduleName>`. Wenn Sie nicht die Standard Pfade verwenden, müssen Sie den Speicherort des Moduls während der Installation explizit angeben. Stellen Sie sicher, dass Sie einen Ordner erstellen, in dem das Modul gespeichert werden kann, da Sie möglicherweise den Ordner zum Speichern mehrerer Assemblys und Dateien für die Projekt Mappe benötigen.
 
-   Beachten Sie, dass Sie das Modul nicht an einer beliebigen Stelle auf dem `PSModulePath` installieren müssen. Dies sind die Standard Speicherorte, die von PowerShell nach Ihrem Modul gesucht werden. Es wird jedoch empfohlen, dies zu tun, es sei denn, Sie haben einen guten Grund, das Modul an anderer Stelle zu speichern. Weitere Informationen finden Sie unter [Installieren eines PowerShell-Moduls](./installing-a-powershell-module.md) und [Ändern des Installations Pfads des PowerShell-Moduls](./modifying-the-psmodulepath-installation-path.md).
+   Beachten Sie, dass Sie das Modul nicht an einer beliebigen Stelle im `PSModulePath` installieren müssen. Dies sind lediglich die Standard Speicherorte, die PowerShell nach Ihrem Modul sucht. Es wird jedoch empfohlen, dies zu tun, es sei denn, Sie haben einen guten Grund, das Modul an anderer Stelle zu speichern. Weitere Informationen finden Sie unter [Installieren eines PowerShell-Moduls](./installing-a-powershell-module.md) und [Ändern des Installations Pfads des PowerShell-Moduls](./modifying-the-psmodulepath-installation-path.md).
 
 4. Importieren Sie das Modul mit einem [Import-Module-](/powershell/module/Microsoft.PowerShell.Core/Import-Module)Befehl in PowerShell.
 

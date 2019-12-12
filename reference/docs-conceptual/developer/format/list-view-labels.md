@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 53442bb1-74a3-49f9-9150-3bc3081a7565
 caps.latest.revision: 6
 ms.openlocfilehash: 27de41c88e224f7610c10a764e51524016ecc8cb
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72362789"
 ---
 # <a name="list-view-labels"></a>Listenansicht (Label)
@@ -23,14 +23,14 @@ Dieses Beispiel zeigt, wie Sie eine Listenansicht implementieren, in der eine be
 
 1. Kopieren Sie den XML-Code aus dem Beispiel Abschnitt dieses Themas in eine Textdatei.
 
-2. Speichern Sie die Textdatei. Stellen Sie sicher, dass Sie die Erweiterung "`format.ps1xml`" der Datei hinzufügen, um Sie als Formatierungs Datei zu identifizieren.
+2. Speichern Sie die Textdatei. Stellen Sie sicher, dass Sie die `format.ps1xml` Erweiterung der Datei hinzufügen, um Sie als Formatierungs Datei zu identifizieren.
 
 3. Öffnen Sie Windows PowerShell, und führen Sie den folgenden Befehl aus, um die Formatierungs Datei in die aktuelle Sitzung zu laden: `Update-formatdata -prependpath PathToFormattingFile`.
 
    > [!WARNING]
    > Mit dieser Formatierungs Datei wird die Anzeige eines Objekts definiert, das bereits durch eine Windows PowerShell-Formatierungs Datei definiert ist. Sie müssen den `prependPath`-Parameter verwenden, wenn Sie das Cmdlet ausführen, und Sie können diese Formatierungs Datei nicht als Modul laden.
 
-## <a name="demonstrates"></a>Deutlich
+## <a name="demonstrates"></a>Gegenstand
 
 Diese Formatierungs Datei veranschaulicht die folgenden XML-Elemente:
 

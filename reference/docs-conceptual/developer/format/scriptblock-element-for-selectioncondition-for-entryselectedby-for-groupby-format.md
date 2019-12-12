@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: e01344bd-ad69-4789-8e9f-2e79880c3a33
 caps.latest.revision: 6
 ms.openlocfilehash: cb79fb942111cee89c6b2abba75de4c494082b7e
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368599"
 ---
 # <a name="scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format"></a>Element „ScriptBlock“ für SelectionCondition für EntrySelectedBy für GroupBy (Format)
 
-Gibt das Skript an, das die Bedingung auslöst. Wenn dieses Skript `true` ausgewertet wird, wird die Bedingung erfüllt, und die Definition wird verwendet. Dieses Element wird verwendet, wenn definiert wird, wie eine neue Gruppe von Objekten angezeigt wird.
+Gibt das Skript an, das die Bedingung auslöst. Wenn dieses Skript zum `true`ausgewertet wird, wird die Bedingung erfüllt, und die Definition wird verwendet. Dieses Element wird verwendet, wenn definiert wird, wie eine neue Gruppe von Objekten angezeigt wird.
 
 Konfigurationselement (Format) viewdefinitions-Element (Format) Ansichts Element (Format) GroupBy-Element für View (Format) CustomControl-Element für GroupBy (Format) customentries-Element für CustomControl für GroupBy (Format) customentry-Element für CustomControl für GroupBy (Format) entryselectedby-Element für customentry für GroupBy (Format) selectioncondition-Element für entryselectedby für GroupBy (Format) ScriptBlock-Element für selectioncondition für GroupBy (Format)
 

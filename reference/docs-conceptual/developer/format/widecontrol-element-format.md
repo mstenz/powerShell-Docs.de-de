@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 715ea055-037b-46ad-b70f-87b3f5134403
 caps.latest.revision: 14
 ms.openlocfilehash: 2742be0389a1bf04af100a490a59c0d938165811
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367989"
 ---
 # <a name="widecontrol-element-format"></a>Element „WideControl“ (Format)
@@ -33,7 +33,7 @@ Configuration-Element (Format) viewdefinitions-Element (Format) View-Element (Fo
 
 ## <a name="attributes-and-elements"></a>Attribute und Elemente
 
-In den folgenden Abschnitten werden die Attribute, die untergeordneten Elemente und das übergeordnete Element des `WideControl`-Elements beschrieben. Sie können die Elemente `AutoSize` und `ColumnNumber` nicht gleichzeitig angeben.
+In den folgenden Abschnitten werden die Attribute, die untergeordneten Elemente und das übergeordnete Element des `WideControl`-Elements beschrieben. Die `AutoSize`-und `ColumnNumber`-Elemente können nicht gleichzeitig angegeben werden.
 
 ### <a name="attributes"></a>Attributes
 
@@ -55,7 +55,7 @@ Keine.
 
 ## <a name="remarks"></a>Hinweise
 
-Wenn Sie eine breite Sicht definieren, können Sie das `AutoSize`-Element oder den `ColumnNumber` hinzufügen, aber Sie können nicht beides hinzufügen.
+Beim Definieren einer breiten Ansicht können Sie das `AutoSize`-Element oder das-`ColumnNumber` hinzufügen, aber Sie können nicht beides hinzufügen.
 
 In den meisten Fällen ist nur eine Definition für jede Breite Ansicht erforderlich, aber es ist möglich, mehrere Definitionen zu verwenden, wenn Sie dieselbe Ansicht verwenden möchten, um unterschiedliche .NET-Objekte anzuzeigen. In diesen Fällen können Sie eine separate Definition für jedes Objekt oder jede Gruppe von Objekten bereitstellen.
 

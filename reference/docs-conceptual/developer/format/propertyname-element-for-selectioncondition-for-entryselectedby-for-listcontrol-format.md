@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 71c3f1f6-6fe2-42f1-8260-6974d3871748
 caps.latest.revision: 11
 ms.openlocfilehash: 7d526372cf80327b3fb9b79b6e83429c57780183
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72362289"
 ---
 # <a name="propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format"></a>Element „PropertyName“ für SelectionCondition für EntrySelectedBy für ListControl (Format)
 
-Gibt die .net-Eigenschaft an, die die Bedingung auslöst. Wenn diese Eigenschaft vorhanden ist oder als `true` ausgewertet wird, wird die Bedingung erfüllt, und der Listeneintrag wird verwendet.
+Gibt die .net-Eigenschaft an, die die Bedingung auslöst. Wenn diese Eigenschaft vorhanden ist oder als zu `true`ausgewertet wird, wird die Bedingung erfüllt, und der Listeneintrag wird verwendet.
 
 Configuration-Element (Format) viewdefinitions-Element (Format) Ansichts Element (Format) ListControl-Element (Format) ListEntries-Element (Format) ListEntry-Element (Format) entryselectedby-Element für ListEntry (Format) selectioncondition-Element für Entryselectedby für ListEntry (Format) propertyName-Element für selectioncondition für entryselectedby für ListEntry (Format)
 

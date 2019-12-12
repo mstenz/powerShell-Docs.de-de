@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 0a49e3c4-6a1b-404c-aefc-134e5ce3d108
 caps.latest.revision: 11
 ms.openlocfilehash: 98271f5f439d10b6d29fd0a6422b5b9b4ab55716
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367459"
 ---
 # <a name="host05-sample"></a>Host05-Beispiel
@@ -25,13 +25,13 @@ Dieses Beispiel zeigt, wie eine interaktive konsolenbasierte Host Anwendung erst
 
 - Diese Anwendung muss im erweiterten Modus ausgeführt werden (als Administrator ausführen).
 
-## <a name="demonstrates"></a>Deutlich
+## <a name="demonstrates"></a>Gegenstand
 
-- Erstellen eines benutzerdefinierten Hosts, dessen Klassen von der [System. Management. Automation. Host. pshost](/dotnet/api/System.Management.Automation.Host.PSHost) -Klasse, der [System. Management. Automation. Host. pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) -Klasse und der [ System. Management. Automation. Host. pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) -Klasse.
+- Erstellen eines benutzerdefinierten Hosts, dessen Klassen von der [System. Management. Automation. Host. pshost](/dotnet/api/System.Management.Automation.Host.PSHost) -Klasse, der [System. Management. Automation. Host. pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) -Klasse und der [System. Management. Automation. Host. pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) -Klasse abgeleitet werden.
 
 - Erstellen einer Konsolenanwendung, die diese Host Klassen verwendet, um eine interaktive Windows PowerShell-Shell zu erstellen.
 
-- Erstellen einer `$profile`-Variablen und Laden der folgenden Profile.
+- Erstellen einer `$profile` Variable und Laden der folgenden Profile.
 
   - Aktueller Benutzer, aktueller Host
 

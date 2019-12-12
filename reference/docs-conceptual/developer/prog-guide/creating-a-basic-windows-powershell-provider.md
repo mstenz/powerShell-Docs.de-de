@@ -12,10 +12,10 @@ helpviewer_keywords:
 ms.assetid: 11eeea41-15c8-47ad-9016-0f4b72573305
 caps.latest.revision: 7
 ms.openlocfilehash: e825581b96f0f33893b38f9f6499dd46a7bf38eb
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72360519"
 ---
 # <a name="creating-a-basic-windows-powershell-provider"></a>Erstellen eines Windows PowerShell-Standardanbieters
@@ -29,9 +29,9 @@ Wie bereits erwähnt, implementiert der hier beschriebene grundlegende Anbieter 
 
 ## <a name="defining-the-windows-powershell-provider-class"></a>Definieren der Windows PowerShell-Anbieter Klasse
 
-Der erste Schritt beim Erstellen eines Windows PowerShell-Anbieters ist die Definition der .NET-Klasse. Dieser grundlegende Anbieter definiert eine Klasse mit dem Namen "`AccessDBProvider`", die von der [System. Management. Automation. Provider. cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) -Basisklasse abgeleitet wird.
+Der erste Schritt beim Erstellen eines Windows PowerShell-Anbieters ist die Definition der .NET-Klasse. Dieser grundlegende Anbieter definiert eine Klasse mit dem Namen `AccessDBProvider`, die von der [System. Management. Automation. Provider. cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) -Basisklasse abgeleitet wird.
 
-Es wird empfohlen, die Anbieter Klassen in einem `Providers`-Namespace ihres API-Namespace zu platzieren, z. b. xxx. PowerShell. Providers. Dieser Anbieter verwendet den `Microsoft.Samples.PowerShell.Provider`-Namespace, in dem alle Windows PowerShell-Anbieter Beispiele ausgeführt werden.
+Es wird empfohlen, dass Sie Ihre Anbieter Klassen in einem `Providers` Namespace ihres API-Namespace platzieren, z. b. xxx. PowerShell. Providers. Dieser Anbieter verwendet den `Microsoft.Samples.PowerShell.Provider`-Namespace, in dem alle Windows PowerShell-Anbieter Beispiele ausgeführt werden.
 
 > [!NOTE]
 > Die-Klasse für einen Windows PowerShell-Anbieter muss explizit als public gekennzeichnet werden. Klassen, die nicht als public gekennzeichnet sind, werden standardmäßig intern verwendet und werden von der Windows PowerShell-Laufzeit nicht gefunden.
@@ -49,13 +49,13 @@ Sie können Attribut Schlüsselwörter festlegen, um die Klasse bei Bedarf weite
 
 ## <a name="defining-provider-specific-state-information"></a>Definieren Anbieter spezifischer Zustandsinformationen
 
-Die [System. Management. Automation. Provider. cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) -Basisklasse und alle abgeleiteten Klassen werden als zustandslos angesehen, weil die Windows PowerShell-Laufzeit nur dann Anbieter Instanzen erstellt, wenn dies erforderlich ist. Wenn Ihr Anbieter eine vollständige Kontrolle und Zustands Verwaltung für anbieterspezifische Daten erfordert, muss daher eine Klasse von der [System. Management. Automation. ProviderInfo](/dotnet/api/System.Management.Automation.ProviderInfo) -Klasse abgeleitet werden. Ihre abgeleitete Klasse sollte die für die Beibehaltung des Zustands erforderlichen Elemente definieren, damit auf die anbieterspezifischen Daten zugegriffen werden kann, wenn die Windows PowerShell-Laufzeit die [System. Management. Automation. Provider. cmdletprovider. Start *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) -Methode aufruft. Initialisieren Sie den Anbieter.
+Die [System. Management. Automation. Provider. cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) -Basisklasse und alle abgeleiteten Klassen werden als zustandslos angesehen, weil die Windows PowerShell-Laufzeit nur dann Anbieter Instanzen erstellt, wenn dies erforderlich ist. Wenn Ihr Anbieter eine vollständige Kontrolle und Zustands Verwaltung für anbieterspezifische Daten erfordert, muss daher eine Klasse von der [System. Management. Automation. ProviderInfo](/dotnet/api/System.Management.Automation.ProviderInfo) -Klasse abgeleitet werden. Ihre abgeleitete Klasse sollte die für die Beibehaltung des Zustands erforderlichen Elemente definieren, damit auf die anbieterspezifischen Daten zugegriffen werden kann, wenn die Windows PowerShell-Laufzeit die [System. Management. Automation. Provider. cmdletprovider. Start *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) -Methode aufruft, um den Anbieter zu initialisieren.
 
 Ein Windows PowerShell-Anbieter kann auch den verbindungsbasierten Status beibehalten. Weitere Informationen zum Beibehalten des Verbindungsstatus finden Sie unter [Erstellen eines PowerShell-Laufwerks Anbieters](./creating-a-windows-powershell-drive-provider.md).
 
 ## <a name="initializing-the-provider"></a>Initialisieren des Anbieters
 
-Um den Anbieter zu initialisieren, ruft die Windows PowerShell-Runtime die [System. Management. Automation. Provider. cmdletprovider. Start *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) -Methode auf, wenn Windows PowerShell gestartet wird. Der Anbieter kann zum größten Teil die Standard Implementierung dieser Methode verwenden, die einfach das [System. Management. Automation. ProviderInfo](/dotnet/api/System.Management.Automation.ProviderInfo) -Objekt zurückgibt, das Ihren Anbieter beschreibt. Wenn Sie jedoch zusätzliche Initialisierungs Informationen hinzufügen möchten, sollten Sie eine eigene [System. Management. Automation. Provider. cmdletprovider. Start *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) -Methode implementieren, die eine geänderte Version von [zurückgibt. System. Management. Automation. ProviderInfo](/dotnet/api/System.Management.Automation.ProviderInfo) -Objekt, das an Ihren Anbieter übermittelt wird. Im Allgemeinen sollte diese Methode das bereitgestellte [System. Management. Automation. ProviderInfo](/dotnet/api/System.Management.Automation.ProviderInfo) -Objekt zurückgeben, das an Sie übermittelt wurde, oder ein geändertes [System. Management. Automation. ProviderInfo](/dotnet/api/System.Management.Automation.ProviderInfo) -Objekt, das weitere Initialisierungs Informationen enthält.
+Um den Anbieter zu initialisieren, ruft die Windows PowerShell-Runtime die [System. Management. Automation. Provider. cmdletprovider. Start *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) -Methode auf, wenn Windows PowerShell gestartet wird. Der Anbieter kann zum größten Teil die Standard Implementierung dieser Methode verwenden, die einfach das [System. Management. Automation. ProviderInfo](/dotnet/api/System.Management.Automation.ProviderInfo) -Objekt zurückgibt, das Ihren Anbieter beschreibt. Wenn Sie jedoch zusätzliche Initialisierungs Informationen hinzufügen möchten, sollten Sie eine eigene [System. Management. Automation. Provider. cmdletprovider. Start *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) -Methode implementieren, die eine geänderte Version des [System. Management. Automation. ProviderInfo](/dotnet/api/System.Management.Automation.ProviderInfo) -Objekts zurückgibt, die an den Anbieter übergeben wird. Im Allgemeinen sollte diese Methode das bereitgestellte [System. Management. Automation. ProviderInfo](/dotnet/api/System.Management.Automation.ProviderInfo) -Objekt zurückgeben, das an Sie übermittelt wurde, oder ein geändertes [System. Management. Automation. ProviderInfo](/dotnet/api/System.Management.Automation.ProviderInfo) -Objekt, das weitere Initialisierungs Informationen enthält.
 
 Dieser grundlegende Anbieter überschreibt diese Methode nicht. Der folgende Code zeigt jedoch die Standard Implementierung dieser Methode:
 
@@ -65,7 +65,7 @@ Der Anbieter kann den Zustand der anbieterspezifischen Informationen wie unter [
 
 ## <a name="start-dynamic-parameters"></a>Dynamische Parameter starten
 
-Die Anbieter Implementierung der [System. Management. Automation. Provider. cmdletprovider. Start *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) -Methode erfordert möglicherweise zusätzliche Parameter. In diesem Fall sollte der Anbieter die [System. Management. Automation. Provider. cmdletprovider. startdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.StartDynamicParameters) -Methode außer Kraft setzen und ein Objekt zurückgeben, das über Eigenschaften und Felder mit ähnlichen Attributen wie einer Cmdlet-Klasse oder einen [ System. Management. Automation. runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) -Objekt.
+Die Anbieter Implementierung der [System. Management. Automation. Provider. cmdletprovider. Start *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) -Methode erfordert möglicherweise zusätzliche Parameter. In diesem Fall sollte der Anbieter die [System. Management. Automation. Provider. cmdletprovider. startdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.StartDynamicParameters) -Methode überschreiben und ein Objekt zurückgeben, das über Eigenschaften und Felder mit Attribut Attributen verfügt, ähnlich wie eine Cmdlet-Klasse oder ein [System. Management. Automation. runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) -Objekt.
 
 Dieser grundlegende Anbieter überschreibt diese Methode nicht. Der folgende Code zeigt jedoch die Standard Implementierung dieser Methode:
 
@@ -79,7 +79,7 @@ Dieser grundlegende Anbieter überschreibt diese Methode nicht. Der folgende Cod
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplesaccessdbprov01#accessdbprov01ProviderStop](Msh_samplesaccessdbprov01#accessdbprov01ProviderStop)]  -->
 
-## <a name="code-sample"></a>Code Beispiel
+## <a name="code-sample"></a>Codebeispiel
 
 Einen umfassenden Beispielcode finden Sie unter [AccessDbProviderSample01-Codebeispiel](./accessdbprovidersample01-code-sample.md).
 

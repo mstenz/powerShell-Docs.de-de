@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 868194a2-17e9-4184-bc36-c04a33f26494
 caps.latest.revision: 4
 ms.openlocfilehash: 30e98bfcf06b1720005a73ee8294aeba7e1ae066
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367819"
 ---
 # <a name="examples-of-comment-based-help"></a>Beispiele für die kommentarbasierte Hilfe
@@ -145,7 +145,7 @@ C:\PS> get-help add-extension -full
 
 Die folgende Beispiel Funktion enthält eine Kommentar basierte Hilfe.
 
-Beachten Sie die leeren Zeilen zwischen dem Schließ **enden #>** und der `Param`-Anweisung. In einem Skript, das nicht über eine `Param`-Anweisung verfügt, müssen mindestens zwei Leerzeilen zwischen dem letzten Kommentar im Hilfethema und der ersten Funktionsdeklaration vorhanden sein. Ohne diese leeren Zeilen verknüpft Get-Help das Hilfethema anstelle des Skripts mit der Funktion.
+Beachten Sie die leeren Zeilen zwischen dem schließenden **#>** und der `Param` Anweisung. In einem Skript, das nicht über eine `Param`-Anweisung verfügt, müssen mindestens zwei Leerzeilen zwischen dem letzten Kommentar im Hilfethema und der ersten Funktionsdeklaration vorhanden sein. Ohne diese leeren Zeilen verknüpft Get-Help das Hilfethema anstelle des Skripts mit der Funktion.
 
 ```powershell
 <#
@@ -257,7 +257,7 @@ C:\PS> get-help c:\ps-test\update-month.ps1 -full
 
 ## <a name="example-3-parameter-descriptions-in-a-param-statement"></a>Beispiel 3: Parameter Beschreibungen in einer Param-Anweisung
 
-In diesem Beispiel wird gezeigt, wie Parameterbeschreibungen in der `Param`-Anweisung einer Funktion oder eines Skripts eingefügt werden. Dieses Format ist besonders nützlich, wenn die Parameter Beschreibungen kurz sind.
+In diesem Beispiel wird gezeigt, wie Parameter Beschreibungen in die `Param`-Anweisung einer Funktion oder eines Skripts eingefügt werden. Dieses Format ist besonders nützlich, wenn die Parameter Beschreibungen kurz sind.
 
 ```powershell
 function Add-Extension
@@ -282,7 +282,7 @@ function Add-Extension
     #>
 ```
 
-Die Ergebnisse sind identisch mit den Ergebnissen für Beispiel 1. "Get-Help" interpretiert die Parameter Beschreibungen so, als hätten Sie das Schlüsselwort "`.Parameter`" begleitet.
+Die Ergebnisse sind identisch mit den Ergebnissen für Beispiel 1. "Get-Help" interpretiert die Parameter Beschreibungen so, als hätten Sie das `.Parameter`-Schlüsselwort begleitet.
 
 ## <a name="example-4--redirecting-to-an-xml-file"></a>Beispiel 4: Umleiten an eine XML-Datei
 
@@ -311,7 +311,7 @@ function Add-Extension
 
 ## <a name="example-5--redirecting-to-a-different-help-topic"></a>Beispiel 5: Umleiten an ein anderes Hilfethema
 
-Der folgende Code ist ein Auszug aus dem Anfang der integrierten `Help`-Funktion in Windows PowerShell, die jeweils einen Bildschirm mit Hilfe Text anzeigt. Da im Hilfethema für das Cmdlet "Get-Help" die Hilfe Funktion beschrieben wird, verwendet die Funktion "Help" das `.ForwardHelpTargetName`-und `.ForwardHelpCategory`-Schlüsselwort, um den Benutzer zum Hilfethema "Get-Help Cmdlet" umzuleiten.
+Der folgende Code ist ein Auszug aus dem Anfang der integrierten `Help`-Funktion in Windows PowerShell, die jeweils einen Bildschirm von Hilfe Text anzeigt. Da im Hilfethema für das Cmdlet "Get-Help" die Hilfe Funktion beschrieben wird, verwendet die Funktion "Help" das `.ForwardHelpTargetName`-und `.ForwardHelpCategory`-Schlüsselwort, um den Benutzer zum Hilfethema "Get-Help Cmdlet" umzuleiten.
 
 ```powershell
 function help

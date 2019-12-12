@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 46905eb9-64d7-4c55-9c2a-7bc7bf04e14b
 caps.latest.revision: 10
 ms.openlocfilehash: 6c2e5891a8e3f24969c12a2e57dc5ae8caa68e41
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365609"
 ---
 # <a name="how-to-declare-parameter-sets"></a>Deklarieren von Parametersätzen
@@ -20,7 +20,7 @@ ms.locfileid: "72365609"
 In diesem Beispiel wird gezeigt, wie zwei Parametersätze definiert werden, wenn Sie die Parameter für ein Cmdlet deklarieren. Jeder Parametersatz verfügt sowohl über einen eindeutigen Parameter als auch über einen freigegebenen Parameter, der von beiden Parametersätzen verwendet wird. Weitere Informationen zu Parametersätzen, einschließlich der Angabe des Standardparameter Satzes, finden Sie unter [Cmdlet-Parametersätze](./cmdlet-parameter-sets.md).
 
 > [!IMPORTANT]
-> Definieren Sie nach Möglichkeit den eindeutigen Parameter eines Parameter Satzes als erforderlichen Parameter. Wenn Sie jedoch möchten, dass das Cmdlet ohne Angabe von Parametern ausgeführt wird, kann der Unique-Parameter ein optionaler Parameter sein. Beispielsweise ist der Unique-Parameter des Cmdlets "`Get-Command`" optional.
+> Definieren Sie nach Möglichkeit den eindeutigen Parameter eines Parameter Satzes als erforderlichen Parameter. Wenn Sie jedoch möchten, dass das Cmdlet ohne Angabe von Parametern ausgeführt wird, kann der Unique-Parameter ein optionaler Parameter sein. Beispielsweise ist der Unique-Parameter des `Get-Command`-Cmdlets optional.
 
 ## <a name="how-to-define-two-parameter-sets"></a>Definieren von zwei Parameter Sätzen
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 2d4303c5-b451-4ccb-9831-b17a17ceac20
 caps.latest.revision: 16
 ms.openlocfilehash: 651de5d3bc2619f20438f3951ac5a8c4b0bf46d4
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368949"
 ---
 # <a name="creating-a-wide-view"></a>Erstellen einer breiten Ansicht
@@ -239,7 +239,7 @@ Die folgenden XML-Elemente können verwendet werden, um ein Format Muster anzuge
 
 - Das [ScriptBlock](./scriptblock-element-for-wideitem-for-widecontrol-format.md) -Element (nicht angezeigt) gibt das Skript an, dessen Wert von der Sicht angezeigt wird. Sie müssen entweder ein-Skript oder eine-Eigenschaft angeben, aber Sie können nicht beides angeben.
 
-Im folgenden Beispiel wird die `ToString`-Methode aufgerufen, um den Wert des Skripts zu formatieren. Skripts können beliebige Methoden eines Objekts aufzurufen. Wenn ein Objekt über eine-Methode verfügt, z. b. `ToString`, die Formatierungs Parameter hat, kann das Skript daher diese Methode zum Formatieren des Ausgabe Werts des Skripts aufruft.
+Im folgenden Beispiel wird die `ToString`-Methode aufgerufen, um den Wert des Skripts zu formatieren. Skripts können beliebige Methoden eines Objekts aufzurufen. Wenn ein Objekt z. b. über eine-Methode verfügt, z. b. `ToString`, die über Formatierungs Parameter verfügt, kann das Skript diese Methode zum Formatieren des Ausgabe Werts des Skripts aufruft.
 
 ```xml
 <WideItem>

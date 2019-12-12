@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: af83c0f6-7fdd-4aa0-af12-efc62f632974
 caps.latest.revision: 7
 ms.openlocfilehash: f073142bf836ae892f161cf8c36ed16c35e311f5
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364089"
 ---
 # <a name="customentries-element-for-customcontrol-for-groupby-format"></a>Element „CustomEntries“ für CustomControl für GroupBy (Format)
@@ -51,7 +51,7 @@ Keine.
 
 ## <a name="remarks"></a>Hinweise
 
-In den meisten Fällen verfügt ein Steuerelement nur über eine Definition, die in einem einzelnen `CustomEntry`-Element angegeben wird. Es ist jedoch möglich, mehrere Definitionen bereitzustellen, wenn Sie das gleiche Steuerelement verwenden möchten, um unterschiedliche Gruppen anzuzeigen. In diesen Fällen können Sie ein `CustomEntry`-Element für eine Gruppe definieren.
+In den meisten Fällen verfügt ein Steuerelement nur über eine Definition, die in einem einzelnen `CustomEntry` Element angegeben wird. Es ist jedoch möglich, mehrere Definitionen bereitzustellen, wenn Sie das gleiche Steuerelement verwenden möchten, um unterschiedliche Gruppen anzuzeigen. In diesen Fällen können Sie ein `CustomEntry`-Element für eine Gruppe definieren.
 
 ## <a name="see-also"></a>Weitere Informationen
 

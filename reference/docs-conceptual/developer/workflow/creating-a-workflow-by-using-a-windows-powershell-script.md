@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 70532e7e-9cac-43c3-9687-e77011ecc878
 caps.latest.revision: 4
 ms.openlocfilehash: 5eb2186cbceee21f8b4a8c88b812e9c71f15e0af
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366029"
 ---
 # <a name="creating-a-workflow-by-using-a-windows-powershell-script"></a>Erstellen eines Workflows mit einem Windows PowerShell-Skript
@@ -28,7 +28,7 @@ Sie finden den Workflow genauso wie jeden anderen Windows PowerShell-Befehl.
 
 ## <a name="implementing-parallel-and-sequence"></a>Implementieren von parallel und Sequence
 
-[Windows Workflow Foundation](https://msdn.microsoft.com/en-us/library/ms735967.aspx) unterstützt die parallele Ausführung von Aktivitäten. Um diese Funktion in einem Windows PowerShell-Skript zu implementieren, verwenden Sie das Schlüsselwort "`parallel`" vor einem Skriptblock. Sie können die `foreach -parallel`-Konstruktion auch verwenden, um eine Auflistung von-Objekten parallel zu durchlaufen. Um eine Gruppe von Aktivitäten in sequenzieller Reihenfolge innerhalb eines parallelen Blocks auszuführen, schließen Sie diese Gruppe von Aktivitäten in einen Skriptblock ein, und stellen Sie dem Block das Sequence-Schlüsselwort voran.
+[Windows Workflow Foundation](https://msdn.microsoft.com/en-us/library/ms735967.aspx) unterstützt die parallele Ausführung von Aktivitäten. Um diese Funktion in einem Windows PowerShell-Skript zu implementieren, verwenden Sie das `parallel`-Schlüsselwort vor einem Skriptblock. Sie können auch die `foreach -parallel` Erstellung verwenden, um eine Auflistung von-Objekten parallel zu durchlaufen. Um eine Gruppe von Aktivitäten in sequenzieller Reihenfolge innerhalb eines parallelen Blocks auszuführen, schließen Sie diese Gruppe von Aktivitäten in einen Skriptblock ein, und stellen Sie dem Block das Sequence-Schlüsselwort voran.
 
 ## <a name="joining-computers-to-a-domain"></a>Hinzufügen von Computern zu einer Domäne
 

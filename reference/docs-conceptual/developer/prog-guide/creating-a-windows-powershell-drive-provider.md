@@ -13,10 +13,10 @@ helpviewer_keywords:
 ms.assetid: 2b446841-6616-4720-9ff8-50801d7576ed
 caps.latest.revision: 6
 ms.openlocfilehash: 2e3d97e224b06bdf36ac0bc1237911e029ea762d
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366829"
 ---
 # <a name="creating-a-windows-powershell-drive-provider"></a>Erstellen eines Windows PowerShell-Laufwerkanbieters
@@ -31,11 +31,11 @@ Der Laufwerk Anbieter muss eine .NET-Klasse definieren, die von der [System. Man
 
 [!code-csharp[AccessDBProviderSample02.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs#L29-L30 "AccessDBProviderSample02.cs")]
 
-Beachten Sie, dass das [System. Management. Automation. Provider. cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) -Attribut in diesem Beispiel einen benutzerfreundlichen Namen für den Anbieter und die Windows PowerShell-spezifischen Funktionen angibt, die der Anbieter für Windows verfügbar macht. PowerShell-Laufzeit während der Befehls Verarbeitung. Die möglichen Werte für die Anbieter Funktionen werden von der [System. Management. Automation. Provider. providerfunktionalitäten](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) -Enumeration definiert. Dieser Laufwerk Anbieter unterstützt diese Funktionen nicht.
+Beachten Sie, dass das [System. Management. Automation. Provider. cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) -Attribut in diesem Beispiel einen benutzerfreundlichen Namen für den Anbieter und die Windows PowerShell-spezifischen Funktionen angibt, die der Anbieter während der Befehls Verarbeitung für die Windows PowerShell-Laufzeit verfügbar macht. Die möglichen Werte für die Anbieter Funktionen werden von der [System. Management. Automation. Provider. providerfunktionalitäten](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) -Enumeration definiert. Dieser Laufwerk Anbieter unterstützt diese Funktionen nicht.
 
 ## <a name="defining-base-functionality"></a>Definieren der Basisfunktionalität
 
-Wie unter [Entwerfen des Windows PowerShell-Anbieters](./designing-your-windows-powershell-provider.md)beschrieben, wird die [System. Management. Automation. Provider. drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) -Klasse von der [System. Management. Automation. Provider. cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) -Basisklasse abgeleitet, die definiert die Methoden, die zum Initialisieren und Aufheben der Initialisierung des Anbieters erforderlich sind. Informationen zum Implementieren von Funktionen zum Hinzufügen von Sitzungs spezifischen Initialisierungs Informationen und zum Freigeben von Ressourcen, die vom Anbieter verwendet werden, finden Sie unter [Erstellen eines einfachen Windows PowerShell-Anbieters](./creating-a-basic-windows-powershell-provider.md). Die meisten Anbieter (einschließlich des hier beschriebenen Anbieters) können jedoch die Standard Implementierung dieser Funktionalität verwenden, die von Windows PowerShell bereitgestellt wird.
+Wie in [Entwerfen des Windows PowerShell-Anbieters](./designing-your-windows-powershell-provider.md)beschrieben, wird die [System. Management. Automation. Provider. drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) -Klasse von der [System. Management. Automation. Provider. cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) -Basisklasse abgeleitet, die die zum Initialisieren und Aufheben der Initialisierung des Anbieters erforderlichen Methoden definiert. Informationen zum Implementieren von Funktionen zum Hinzufügen von Sitzungs spezifischen Initialisierungs Informationen und zum Freigeben von Ressourcen, die vom Anbieter verwendet werden, finden Sie unter [Erstellen eines einfachen Windows PowerShell-Anbieters](./creating-a-basic-windows-powershell-provider.md). Die meisten Anbieter (einschließlich des hier beschriebenen Anbieters) können jedoch die Standard Implementierung dieser Funktionalität verwenden, die von Windows PowerShell bereitgestellt wird.
 
 ## <a name="creating-drive-state-information"></a>Erstellen von Laufwerks Zustandsinformationen
 
@@ -55,19 +55,19 @@ Die außer Kraft setzung dieser Methode sollte folgende Aktionen ausführen:
 
 - Überprüfen Sie, ob der Member " [System. Management. Automation. psdriveinfo. root *](/dotnet/api/System.Management.Automation.PSDriveInfo.Root) " vorhanden ist und eine Verbindung mit dem Datenspeicher hergestellt werden kann.
 
-- Erstellen Sie ein Laufwerk, und füllen Sie das Verbindungs Mitglied auf, um das Cmdlet "`New-PSDrive`" zu unterstützen.
+- Erstellen Sie ein Laufwerk, und füllen Sie das Verbindungs Mitglied auf, um das `New-PSDrive`-Cmdlet zu unterstützen.
 
 - Überprüfen Sie das [System. Management. Automation. psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) -Objekt für das vorgeschlagene Laufwerk.
 
 - Ändern Sie das [System. Management. Automation. psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) -Objekt, das das Laufwerk mit den erforderlichen Leistungs-oder Zuverlässigkeits Informationen beschreibt, oder stellen Sie zusätzliche Daten für Aufrufer mit dem Laufwerk bereit.
 
-- Behandeln Sie Fehler mithilfe der [System. Management. Automation. Provider. cmdletprovider. Write-error](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) -Methode, und geben Sie dann `null` zurück.
+- Behandeln Sie Fehler mithilfe der [System. Management. Automation. Provider. cmdletprovider. Write-error](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) -Methode, und geben Sie dann `null`zurück.
 
   Diese Methode gibt entweder die Laufwerk Informationen zurück, die an die-Methode oder eine anbieterspezifische Version der Methode übermittelt wurden.
 
 ## <a name="attaching-dynamic-parameters-to-newdrive"></a>Dynamische Parameter werden an newdrive angefügt.
 
-Das Cmdlet "`New-PSDrive`", das von Ihrem Laufwerk Anbieter unterstützt wird, erfordert möglicherweise zusätzliche Parameter Um diese dynamischen Parameter an das Cmdlet anzufügen, implementiert der Anbieter die [System. Management. Automation. Provider. drivecmdletprovider. newdrivedynamicparameters *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters) -Methode. Diese Methode gibt ein Objekt zurück, das über Eigenschaften und Felder mit Attribut Attributen verfügt, die einer Cmdlet-Klasse oder einem [System. Management. Automation. runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) -Objekt ähneln.
+Das `New-PSDrive`-Cmdlet, das von Ihrem Laufwerk Anbieter unterstützt wird, erfordert möglicherweise zusätzliche Parameter. Um diese dynamischen Parameter an das Cmdlet anzufügen, implementiert der Anbieter die [System. Management. Automation. Provider. drivecmdletprovider. newdrivedynamicparameters *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters) -Methode. Diese Methode gibt ein Objekt zurück, das über Eigenschaften und Felder mit Attribut Attributen verfügt, die einer Cmdlet-Klasse oder einem [System. Management. Automation. runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) -Objekt ähneln.
 
 Dieser Laufwerk Anbieter setzt diese Methode nicht außer Kraft. Der folgende Code zeigt jedoch die Standard Implementierung dieser Methode:
 
@@ -81,7 +81,7 @@ Der folgende Code zeigt die Implementierung der [System. Management. Automation.
 
 [!code-csharp[AccessDBProviderSample02.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs#L91-L116 "AccessDBProviderSample02.cs")]
 
-Wenn das Laufwerk entfernt werden kann, sollte die-Methode die an die Methode übergebenen Informationen über den `drive`-Parameter zurückgeben. Wenn das Laufwerk nicht entfernt werden kann, sollte die Methode eine Ausnahme schreiben und dann `null` zurückgeben. Wenn der Anbieter diese Methode nicht außer Kraft setzt, gibt die Standard Implementierung dieser Methode nur die als Eingabe übergebenen Laufwerks Informationen zurück.
+Wenn das Laufwerk entfernt werden kann, sollte die-Methode die an die Methode übergebenen Informationen über den `drive`-Parameter zurückgeben. Wenn das Laufwerk nicht entfernt werden kann, sollte die Methode eine Ausnahme schreiben und dann `null`zurückgeben. Wenn der Anbieter diese Methode nicht außer Kraft setzt, gibt die Standard Implementierung dieser Methode nur die als Eingabe übergebenen Laufwerks Informationen zurück.
 
 ## <a name="initializing-default-drives"></a>Standard Laufwerke werden initialisiert.
 
@@ -97,7 +97,7 @@ Dieser Laufwerk Anbieter setzt die [System. Management. Automation. Provider. dr
 
 Alle Laufwerks Anbieter sollten ein Stamm Laufwerk einbinden, um dem Benutzer die Auffindbarkeit zu erleichtern. Das Stamm Laufwerk kann Speicherorte auflisten, die als Stämme für andere eingebundene Laufwerke fungieren. Beispielsweise kann der Active Directory Anbieter ein Laufwerk erstellen, das die Namenskontexte auflistet, die in den `namingContext`-Attributen der DSE-Stamm Umgebung (DSE) enthalten sind. Dadurch können Benutzer Einstellungspunkte für andere Laufwerke ermitteln.
 
-## <a name="code-sample"></a>Code Beispiel
+## <a name="code-sample"></a>Codebeispiel
 
 Einen umfassenden Beispielcode finden Sie unter [AccessDbProviderSample02-Codebeispiel](./accessdbprovidersample02-code-sample.md).
 
@@ -105,9 +105,9 @@ Einen umfassenden Beispielcode finden Sie unter [AccessDbProviderSample02-Codebe
 
 Wenn Ihr Windows PowerShell-Anbieter bei Windows PowerShell registriert wurde, können Sie ihn testen, indem Sie die unterstützten Cmdlets in der Befehlszeile ausführen, einschließlich aller Cmdlets, die durch Ableitung verfügbar gemacht wurden. Testen Sie den Beispiel Laufwerk Anbieter.
 
-1. Führen Sie das `Get-PSProvider`-Cmdlet aus, um die Liste der Anbieter abzurufen, um sicherzustellen, dass der accessdb-Laufwerks Anbieter vorhanden ist:
+1. Führen Sie das `Get-PSProvider` Cmdlet aus, um die Liste der Anbieter abzurufen, um sicherzustellen, dass der accessdb-Laufwerks Anbieter vorhanden ist:
 
-   **PS > `Get-PSProvider`**
+   **PS-> `Get-PSProvider`**
 
    Die folgende Ausgabe wird angezeigt:
 

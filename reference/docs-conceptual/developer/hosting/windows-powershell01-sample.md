@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: f607a5ad-5372-4392-b2dc-ef3532fabd0f
 caps.latest.revision: 9
 ms.openlocfilehash: 7fafbc6bc19082abb8f37b68c031e0995bf879f6
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367349"
 ---
 # <a name="windows-powershell01-sample"></a>Windows PowerShell01-Beispiel
@@ -23,9 +23,9 @@ In diesem Beispiel wird gezeigt, wie ein [System. Management. Automation. Runspa
 
 Dieses Beispiel erfordert Windows PowerShell 2,0.
 
-## <a name="demonstrates"></a>Deutlich
+## <a name="demonstrates"></a>Gegenstand
 
-In diesem Beispiel wird Folgendes veranschaulicht:
+Dieses Beispiel zeigt die folgenden Vorgänge:
 
 - Einschränken der Sprache durch Festlegen der [System. Management. Automation. Runspaces. initialsessionstate. languagemode](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.LanguageMode) -Eigenschaft.
 

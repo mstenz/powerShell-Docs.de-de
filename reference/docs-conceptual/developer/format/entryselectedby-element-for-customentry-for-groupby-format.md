@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: a317d482-73cc-4c98-a002-1357fa879cd7
 caps.latest.revision: 7
 ms.openlocfilehash: cf1a80e845c38d97d71f26eba63c38a550958b79
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363859"
 ---
 # <a name="entryselectedby-element-for-customentry-for-groupby-format"></a>Element „EntrySelectedBy“ für CustomEntry für GroupBy (Format)
@@ -55,7 +55,7 @@ Keine.
 
 ## <a name="remarks"></a>Hinweise
 
-Auswahl Bedingungen werden verwendet, um eine Bedingung zu definieren, die für die zu verwendende Definition vorhanden sein muss, z. b. Wenn ein Objekt eine bestimmte Eigenschaft hat oder wenn ein bestimmter Eigenschafts Wert oder ein Skript zu `true` ausgewertet wird. Weitere Informationen zu Auswahl Bedingungen finden Sie unter [Definieren von Bedingungen für die Verwendung eines Ansichts Eintrags oder eines Elements](./defining-conditions-for-displaying-data.md).
+Auswahl Bedingungen werden verwendet, um eine Bedingung zu definieren, die für die zu verwendende Definition vorhanden sein muss, z. b. Wenn ein Objekt eine bestimmte Eigenschaft hat oder wenn ein bestimmter Eigenschafts Wert oder ein Skript zu `true`ausgewertet wird. Weitere Informationen zu Auswahl Bedingungen finden Sie unter [Definieren von Bedingungen für die Verwendung eines Ansichts Eintrags oder eines Elements](./defining-conditions-for-displaying-data.md).
 
 ## <a name="see-also"></a>Weitere Informationen
 

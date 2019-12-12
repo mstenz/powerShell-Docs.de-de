@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: d569f5d5-9746-40c0-be5e-f218bc4560f7
 caps.latest.revision: 4
 ms.openlocfilehash: f52953ee091f05df5f355719ecba788d3d5ee055
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359789"
 ---
 # <a name="authoring-the-webconfig-file-for-a-management-odata-web-service"></a>Erstellen der Web.config-Schemadatei für einen Management OData-Webdienst
 
-Bevor Sie den Management odata-Webdienst bereitstellen können, müssen Sie die Datei Web. config so konfigurieren, dass Sie auf die XML-Schema Dateien und die DLLs verweist, die [Microsoft. Management. odata. customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) implementieren, und [ System. Management. Automation. Remoting. pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) -Schnittstellen.
+Bevor Sie den Management-odata-Webdienst bereitstellen können, müssen Sie die Datei Web. config so konfigurieren, dass Sie auf die XML-Schema Dateien und die DLLs verweist, die die Schnittstellen [Microsoft. Management. odata. customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) und [System. Management. Automation. Remoting. pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) implementieren.
 
 ## <a name="sample-config-file"></a>Beispielkonfigurationsdatei
 

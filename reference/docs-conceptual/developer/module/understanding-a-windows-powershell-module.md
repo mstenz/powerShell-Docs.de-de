@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: d4e38235-9987-4347-afd2-0f7d1dc8f64a
 caps.latest.revision: 19
 ms.openlocfilehash: b42ba6b2bf42a74213eb78f2db22e16de7e90583
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72360639"
 ---
 # <a name="understanding-a-windows-powershell-module"></a>Grundlegendes zum Windows PowerShell-Modul
@@ -51,11 +51,11 @@ Wie bei Skript Modulen können Sie eine Manifest-Datei einschließen, um zusätz
 
 ### <a name="manifest-modules"></a>Manifest-Module
 
-Ein *Manifest-Modul* ist ein Modul, das eine Manifest-Datei verwendet, um alle Komponenten zu beschreiben, aber keine Art von Kernassembly oder Skript. (Formal lässt ein Manifest-Modul das `ModuleToProcess`-oder `RootModule`-Element des Manifests leer.) Sie können jedoch weiterhin die anderen Features eines Moduls verwenden, z. b. die Möglichkeit, abhängige Assemblys zu laden oder bestimmte vorab verarbeitete Skripts automatisch auszuführen. Sie können auch ein Manifest-Modul als bequeme Methode zum Verpacken von Ressourcen verwenden, die von anderen Modulen verwendet werden, wie z. b. geschaltete Module, Assemblys, Typen oder Formate. Weitere Informationen finden Sie unter Gewusst [wie: Schreiben eines PowerShell-Modul Manifests](./how-to-write-a-powershell-module-manifest.md).
+Ein *Manifest-Modul* ist ein Modul, das eine Manifest-Datei verwendet, um alle Komponenten zu beschreiben, aber keine Art von Kernassembly oder Skript. (Formal lässt ein Manifest-Modul das `ModuleToProcess` oder `RootModule` Element des Manifests leer.) Sie können jedoch weiterhin die anderen Features eines Moduls verwenden, z. b. die Möglichkeit, abhängige Assemblys zu laden oder bestimmte vorab verarbeitete Skripts automatisch auszuführen. Sie können auch ein Manifest-Modul als bequeme Methode zum Verpacken von Ressourcen verwenden, die von anderen Modulen verwendet werden, wie z. b. geschaltete Module, Assemblys, Typen oder Formate. Weitere Informationen finden Sie unter Gewusst [wie: Schreiben eines PowerShell-Modul Manifests](./how-to-write-a-powershell-module-manifest.md).
 
 ### <a name="dynamic-modules"></a>Dynamische Module
 
-Ein *dynamisches Modul* ist ein Modul, das nicht aus einer Datei geladen oder in eine Datei gespeichert wird. Stattdessen werden Sie mithilfe des [New-Module-](/powershell/module/Microsoft.PowerShell.Core/New-Module) Cmdlets dynamisch von einem Skript erstellt. Dieser Modultyp ermöglicht einem Skript, bei Bedarf ein Modul zu erstellen, das nicht geladen oder im persistenten Speicher gespeichert werden muss. Ein dynamisches Modul ist naturgemäß kurzlebig und kann daher nicht über das Cmdlet "`Get-Module`" aufgerufen werden. Analog dazu benötigen Sie in der Regel keine Modul Manifeste, und Sie benötigen wahrscheinlich keine permanenten Ordner zum Speichern der zugehörigen Assemblys.
+Ein *dynamisches Modul* ist ein Modul, das nicht aus einer Datei geladen oder in eine Datei gespeichert wird. Stattdessen werden Sie mithilfe des [New-Module-](/powershell/module/Microsoft.PowerShell.Core/New-Module) Cmdlets dynamisch von einem Skript erstellt. Dieser Modultyp ermöglicht einem Skript, bei Bedarf ein Modul zu erstellen, das nicht geladen oder im persistenten Speicher gespeichert werden muss. Ein dynamisches Modul ist naturgemäß kurzlebig und kann daher nicht über das `Get-Module`-Cmdlet darauf zugreifen. Analog dazu benötigen Sie in der Regel keine Modul Manifeste, und Sie benötigen wahrscheinlich keine permanenten Ordner zum Speichern der zugehörigen Assemblys.
 
 ## <a name="module-manifests"></a>Modul Manifeste
 
@@ -85,13 +85,13 @@ Ein *Modul Manifest* ist eine. psd1-Datei, die eine Hash Tabelle enthält. Die S
 
 Nachdem Sie ein Skript-, Binär-oder Manifest-Modul erstellt haben, können Sie Ihre Arbeit an einem Speicherort speichern, an dem andere Benutzer darauf zugreifen können. Das Modul kann z. b. im Systemordner gespeichert werden, in dem Windows PowerShell installiert ist, oder es kann in einem Benutzerordner gespeichert werden.
 
-Im Allgemeinen können Sie mithilfe eines der Pfade, die in der `$ENV:PSModulePath`-Variablen gespeichert werden, bestimmen, wo Sie das Modul installieren sollten. Die Verwendung eines dieser Pfade bedeutet, dass PowerShell das Modul automatisch suchen und laden kann, wenn ein Benutzer in seinem Code einen aufzurufenden Vorgang ausführt. Wenn Sie das Modul an einem anderen Speicherort speichern, können Sie PowerShell explizit mitteilen, indem Sie den Speicherort des Moduls als Parameter übergeben, wenn Sie `Install-Module` aufrufen.
+Im Allgemeinen können Sie mithilfe eines der Pfade, die in der `$ENV:PSModulePath` Variablen gespeichert werden, bestimmen, wo Sie das Modul installieren sollten. Die Verwendung eines dieser Pfade bedeutet, dass PowerShell das Modul automatisch suchen und laden kann, wenn ein Benutzer in seinem Code einen aufzurufenden Vorgang ausführt. Wenn Sie das Modul an einem anderen Speicherort speichern, können Sie PowerShell explizit mitteilen, indem Sie den Speicherort des Moduls als Parameter übergeben, wenn Sie `Install-Module`aufrufen.
 
 Unabhängig davon wird der Pfad des Ordners als *Basis* des Moduls (modulebase) bezeichnet, und der Name der Skript-, Binär-oder Manifest-Modul Datei sollte mit dem Namen des Modul Ordners übereinstimmen, mit den folgenden Ausnahmen:
 
-- Dynamische Module, die mit dem Cmdlet "`New-Module`" erstellt werden, können mit dem Parameter "`Name`" des Cmdlets benannt werden.
+- Dynamische Module, die durch das-Cmdlet "`New-Module`" erstellt werden, können mithilfe des `Name`-Parameters des Cmdlets benannt werden.
 
-- Module, die vom Befehl " **`Import-Module`-Assembly** " aus assemblyobjekten importiert werden, werden gemäß der folgenden Syntax benannt: `"dynamic_code_module_" + assembly.GetName()`.
+- Module, die durch den **`Import-Module`-Assembly-** Befehl aus assemblyobjekten importiert werden, werden gemäß der folgenden Syntax benannt: `"dynamic_code_module_" + assembly.GetName()`.
 
   Weitere Informationen finden Sie unter [Installieren eines PowerShell-Moduls](./installing-a-powershell-module.md) und [Ändern des psmodulepath-Installations Pfads](./modifying-the-psmodulepath-installation-path.md).
 

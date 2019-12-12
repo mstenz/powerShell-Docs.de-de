@@ -9,16 +9,16 @@ ms.topic: article
 ms.assetid: 859a6e22-75b1-43d4-ba62-62c107803b37
 caps.latest.revision: 7
 ms.openlocfilehash: af989fb2eeba6b68f2e3e6506f3f60d5be6f7d8a
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367719"
 ---
 # <a name="writing-help-for-powershell-scripts-and-functions"></a>Schreiben von Hilfe für PowerShell-Skripts und-Funktionen
 
 PowerShell-Skripts und-Funktionen sollten vollständig dokumentiert sein, wenn Sie für andere Personen freigegeben werden.
-Das Cmdlet "`Get-Help`" zeigt die Skript-und Funktions Hilfe Themen im gleichen Format an, in dem die Hilfe für Cmdlets angezeigt wird, und alle `Get-Help`-Parameter funktionieren in Skript-und Funktions Hilfe Themen.
+Das `Get-Help`-Cmdlet zeigt die Hilfe Themen für Skripts und Funktionen im gleichen Format an, in dem die Hilfe für Cmdlets angezeigt wird, und alle `Get-Help` Parameter funktionieren in Skript-und Funktions Hilfe Themen.
 
 PowerShell-Skripts können ein Hilfethema zu dem Skript und Hilfe Themen zu den einzelnen Funktionen im Skript enthalten.
 Funktionen, die unabhängig von Skripts freigegeben werden, können eigene Hilfe Themen enthalten.
@@ -30,17 +30,17 @@ In diesem Dokument werden das Format und die richtige Platzierung der Hilfe Them
 ### <a name="comment-based-help"></a>Kommentar basierte Hilfe
 Das Hilfethema, das ein Skript oder eine Funktion beschreibt, kann als Satz von Kommentaren innerhalb des Skripts oder der Funktion implementiert werden.
 Beachten Sie beim Schreiben der Kommentar basierten Hilfe für ein Skript und für Funktionen in einem Skript sorgfältig die Regeln zum Platzieren der Kommentar basierten Hilfe.
-Die Platzierung bestimmt, ob das Cmdlet "`Get-Help`" das Hilfethema dem Skript oder einer Funktion zuordnet.
+Die Platzierung bestimmt, ob das `Get-Help`-Cmdlet das Hilfethema dem Skript oder einer Funktion zuordnet.
 Weitere Informationen zum Schreiben von Kommentar basierten Hilfe Themen finden Sie unter [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).
 
 ### <a name="xml-based-command-help"></a>XML-basierte Befehls Hilfe
 Das Hilfethema, das ein Skript oder eine Funktion beschreibt, kann in einer XML-Datei implementiert werden, die das Befehls Hilfe Schema verwendet.
-Um das Skript oder die Funktion der XML-Datei zuzuordnen, verwenden Sie das Kommentar Schlüsselwort `ExternalHelp`, gefolgt vom Pfad und Namen der XML-Datei.
+Um das Skript oder die Funktion der XML-Datei zuzuordnen, verwenden Sie das `ExternalHelp` Comment-Schlüsselwort, gefolgt vom Pfad und Namen der XML-Datei.
 
-Wenn das Kommentar Schlüsselwort `ExternalHelp` vorhanden ist, hat es Vorrang vor der Kommentar basierten Hilfe, auch wenn `Get-Help` keine Hilfedatei finden kann, die mit dem Wert des `ExternalHelp`-Schlüssel Worts übereinstimmt.
+Wenn das `ExternalHelp` Comment-Schlüsselwort vorhanden ist, hat es Vorrang vor der Kommentar basierten Hilfe, auch wenn `Get-Help` keine Hilfedatei finden kann, die mit dem Wert des `ExternalHelp`-Schlüssel Worts übereinstimmt.
 
-### <a name="online-help"></a>Online Hilfe
-Sie können Ihre Hilfe Themen im Internet veröffentlichen und dann `Get-Help` weiterleiten, um die Themen zu öffnen.
+### <a name="online-help"></a>Onlinehilfe
+Sie können Ihre Hilfe Themen im Internet veröffentlichen und dann direkt `Get-Help`, um die Themen zu öffnen.
 Weitere Informationen zum Schreiben von Kommentar basierten Hilfe Themen finden Sie [unter unterstützen der Online Hilfe](../module/supporting-online-help.md).
 
 Es gibt keine bewährte Methode zum Schreiben von konzeptionellen Themen ("about") für Skripts und Funktionen.
@@ -58,7 +58,7 @@ Sie können jedoch konzeptionelle Themen im Internet auflisten. die Themen und d
 
   Die folgende ausführliche Beschreibung gibt an, dass `Disable-PSRemoting` eine Funktion ist. Diese Informationen sind besonders nützlich für Benutzer, wenn die Sitzung mehrere Befehle mit demselben Namen enthält, von denen einige möglicherweise durch einen Befehl mit höherer Rangfolge ausgeblendet werden.
 
-  > Die Funktion "`Disable-PSRemoting`" deaktiviert alle Sitzungs Konfigurationen auf dem lokalen Computer...
+  > Die `Disable-PSRemoting`-Funktion deaktiviert alle Sitzungs Konfigurationen auf dem lokalen Computer...
 
 - Erläutern Sie in einem Skript Hilfethema, wie Sie das Skript als Ganzes verwenden. Wenn Sie auch Hilfe Themen für Funktionen im Skript schreiben, erwähnen Sie die Funktionen in Ihrem Skript Hilfethema, und schließen Sie Verweise auf die Funktionen der Hilfe Themen im Abschnitt Verwandte Links des Skripts Hilfethema ein. Wenn eine Funktion Teil eines Skripts ist, erklären Sie im Gegensatz dazu im Hilfethema der Funktion die Rolle, die die Funktion im Skript spielt, und wie Sie unabhängig voneinander verwendet werden kann. Listen Sie dann das Skript Hilfethema im Abschnitt "Verwandte Links" des Hilfe Themas für die Funktion auf.
 

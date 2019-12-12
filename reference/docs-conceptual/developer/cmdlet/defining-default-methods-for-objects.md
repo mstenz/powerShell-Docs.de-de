@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 53fe744a-485f-4c21-9623-1cb546372211
 caps.latest.revision: 9
 ms.openlocfilehash: 346a194c6b4c81aa61a6331cdb62ae380a17bb1e
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365689"
 ---
 # <a name="defining-default-methods-for-objects"></a>Definieren von Standardmethoden für Objekte
@@ -21,7 +21,7 @@ Wenn Sie .NET Framework Objekte erweitern, können Sie den-Objekten Code Methode
 Der XML-Code, der verwendet wird, um diese Methoden zu definieren, wird in den folgenden Abschnitten beschrieben.
 
 > [!NOTE]
-> Die Beispiele in den folgenden Abschnitten stammen aus der Datei `Types.ps1xml`-Typen im Windows PowerShell-Installationsverzeichnis (`$PSHOME`). Weitere Informationen finden Sie unter [about Types. ps1xml](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml).
+> Die Beispiele in den folgenden Abschnitten stammen aus der `Types.ps1xml` Types-Datei im Windows PowerShell-Installationsverzeichnis (`$PSHOME`). Weitere Informationen finden Sie unter [about Types. ps1xml](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml).
 
 ## <a name="code-methods"></a>Code Methoden
 

@@ -13,10 +13,10 @@ helpviewer_keywords:
 ms.assetid: 87b811be-6d93-4e7d-b9d0-c567a19bb0ef
 caps.latest.revision: 13
 ms.openlocfilehash: 5edcb65a6fbe1cb2fe2d0efe3f763fb84628b049
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369159"
 ---
 # <a name="validatepattern-attribute-declaration"></a>Attributdeklaration: ValidatePattern
@@ -34,7 +34,7 @@ Wenn validatepattern innerhalb eines Cmdlets aufgerufen wird, konvertiert Window
 
 #### <a name="parameters"></a>Parameter
 
-`RegexString` ([System. String](/dotnet/api/System.String)) ist erforderlich. Gibt einen regulären Ausdruck an, der das Parameter Argument überprüft.
+`RegexString` ([System. String](/dotnet/api/System.String)) erforderlich. Gibt einen regulären Ausdruck an, der das Parameter Argument überprüft.
 
 Optionen ([System. Text. RegularExpressions. RegexOptions](/dotnet/api/System.Text.RegularExpressions.RegexOptions)) optionaler benannter Parameter. Gibt eine bitweise Kombination von [System. Text. RegularExpressions. RegexOptions](/dotnet/api/System.Text.RegularExpressions.RegexOptions) -Flags an, die Optionen für reguläre Ausdrücke angeben.
 

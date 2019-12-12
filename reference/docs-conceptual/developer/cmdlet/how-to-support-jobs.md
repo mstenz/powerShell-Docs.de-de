@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 5eac452c-eae2-4193-b4da-0b618bef3677
 caps.latest.revision: 9
 ms.openlocfilehash: d732bce1af446090c3e5741eebeba737f86c7ca8
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369659"
 ---
 # <a name="how-to-support-jobs"></a>Unterstützen von Aufträgen
@@ -21,7 +21,7 @@ In diesem Beispiel wird gezeigt, wie Aufträge beim Schreiben von Cmdlets unters
 
 ## <a name="to-support-jobs"></a>So unterstützen Sie Aufträge
 
-1. Definieren Sie einen `AsJob`-Schalter Parameter, sodass der Benutzer entscheiden kann, ob das Cmdlet als Auftrag ausgeführt werden soll.
+1. Definieren Sie einen `AsJob` Switch-Parameter, sodass der Benutzer entscheiden kann, ob das Cmdlet als Auftrag ausgeführt werden soll.
 
     Das folgende Beispiel zeigt eine AsJob-Parameter Deklaration.
 

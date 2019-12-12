@@ -7,10 +7,10 @@ ms.suite: ''
 ms.tgt_pltfrm: ''
 ms.topic: article
 ms.openlocfilehash: 19644c5bc186a5554d6b134a67fc7c4d7aa7b64c
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365309"
 ---
 # <a name="supporting-wildcard-characters-in-cmdlet-parameters"></a>Unterstützung für Platzhalter in Cmdlet-Parametern
@@ -30,7 +30,7 @@ Häufig müssen Sie ein Cmdlet so entwerfen, dass es für eine Gruppe von Ressou
 
 Windows PowerShell unterstützt die folgenden Platzhalter Zeichen.
 
-| Wild |                             Beschreibung                             |  Beispiel   |     Treffer      | Stimmt nicht überein mit |
+| Platzhalter |                             Description                             |  Beispiel   |     Treffer      | Stimmt nicht überein mit |
 | -------- | ------------------------------------------------------------------- | ---------- | ---------------- | -------------- |
 | *        | Entspricht 0 (null) oder mehr Zeichen, beginnend an der angegebenen Position. | `a*`       | A, AG, Apple     |                |
 | ?        | Entspricht einem beliebigen Zeichen an der angegebenen Position.                     | `?n`       | Ein, in, ein       | an            |
@@ -61,7 +61,7 @@ Wenn Sie von der PowerShell-Eingabeaufforderung verwendet wird:
 
 - "John Smith \`\`[*\`']"
 
-Dieses Muster entspricht "John Smith [Marketing]" oder "John Smith [Development]". Zum Beispiel:
+Dieses Muster entspricht "John Smith [Marketing]" oder "John Smith [Development]". Beispiel:
 
 ```
 PS> "John Smith [Marketing]" -like "John Smith ``[*``]"
@@ -76,7 +76,7 @@ True
 Wenn Cmdlet-Parameter Platzhalter Zeichen unterstützen, generiert der Vorgang normalerweise eine Array Ausgabe.
 Gelegentlich ist es nicht sinnvoll, eine Array Ausgabe zu unterstützen, da der Benutzer möglicherweise nur ein einzelnes Element verwendet. Beispielsweise unterstützt das Cmdlet "`Set-Location`" die Array Ausgabe nicht, da der Benutzer nur einen einzigen Speicherort festlegt. In diesem Fall unterstützt das Cmdlet weiterhin Platzhalter Zeichen, aber es erzwingt die Auflösung an einem einzelnen Speicherort.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Schreiben eines Windows PowerShell-Cmdlets](./writing-a-windows-powershell-cmdlet.md)
 

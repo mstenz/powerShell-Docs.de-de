@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 64718f8e-de60-4fb7-894d-2975b5257ff6
 caps.latest.revision: 4
 ms.openlocfilehash: bdced961d91088dd75be347b7b74b22467c8c9be
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366019"
 ---
 # <a name="scheduling-jobs-with-the-powershell-api"></a>Planen von Aufträgen mit der PowerShell-API
@@ -44,7 +44,7 @@ Sie definieren einen PowerShell-Auftrag, indem Sie ein Parameter Wörterbuch ers
 
 |Name des Parameters|Description|
 |--------------------|-----------------|
-|**Benennen**|Der Name des Auftrags.|
+|**Name**|Der Name des Auftrags.|
 |**Scriptbock**|Ein PowerShell-Skriptblock, der angibt, was der Auftrag bewirkt.|
 |**FilePath**|Pfad zu einer Datei, die einen PowerShell-Skriptblock enthält, um die Aufgaben des Auftrags anzugeben.|
 |**InitializationScript**|Ein PowerShell-Skriptblock, der den Auftrag initialisiert.|
@@ -66,7 +66,7 @@ string schedJobDefName = "MySampleSchedJob";
 
 ## <a name="creating-the-invocation-and-job-definition-objects"></a>Erstellen der Aufruf-und Auftrags Definitions Objekte
 
-Anschließend erstellen Sie `ScheduledJobInvocationInfo`-und `ScheduledJobDefinition`-Objekte, um den Auftrag auszuführen, wie im folgenden Beispiel gezeigt:
+Anschließend erstellen Sie `ScheduledJobInvocationInfo` und `ScheduledJobDefinition` Objekte, um den Auftrag auszuführen, wie im folgenden Beispiel gezeigt:
 
 ```csharp
 ScheduledJobInvocationInfo jobInvocationInfo = new ScheduledJobInvocationInfo(

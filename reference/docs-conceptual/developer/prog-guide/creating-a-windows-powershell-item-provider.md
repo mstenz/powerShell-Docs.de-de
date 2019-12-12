@@ -12,10 +12,10 @@ helpviewer_keywords:
 ms.assetid: a5a304ce-fc99-4a5b-a779-de7d85e031fe
 caps.latest.revision: 6
 ms.openlocfilehash: ad42b8de867f468e832380ab6a22a39b6d27d3c6
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417491"
 ---
 # <a name="creating-a-windows-powershell-item-provider"></a>Erstellen eines Windows PowerShell-Elementanbieters
@@ -219,7 +219,7 @@ Dieser Element Anbieter definiert die databaserowinfo-Hilfsklasse, die eine Zeil
 
 Der Beispiel Anbieter definiert eine databaserowinfo. GetRows-Methode, um eine Auflistung von Zeilen Informationsobjekten für die angegebene Tabelle zurückzugeben. Diese Methode enthält einen try/catch-Block zum Abfangen von Ausnahmen. Alle Fehler führen zu keinen Zeilen Informationen.
 
-## <a name="code-sample"></a>Code Beispiel
+## <a name="code-sample"></a>Codebeispiel
 
 Einen umfassenden Beispielcode finden Sie unter [AccessDbProviderSample03-Codebeispiel](./accessdbprovidersample03-code-sample.md).
 
@@ -235,7 +235,7 @@ Weitere Informationen finden [Sie unter Registrieren von Cmdlets, Anbietern und 
 
 Wenn dieser Windows PowerShell-Element Anbieter bei Windows PowerShell registriert ist, können Sie nur die grundlegenden und Laufwerk Funktionen des Anbieters testen. Zum Testen der Bearbeitung von Elementen müssen Sie auch die Container Funktionalität implementieren, die unter [Implementieren eines Windows PowerShell-Anbieters für Container](./creating-a-windows-powershell-container-provider.md)beschrieben wird.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)
 

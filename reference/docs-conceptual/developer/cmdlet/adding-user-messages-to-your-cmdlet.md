@@ -32,10 +32,10 @@ helpviewer_keywords:
 ms.assetid: 14c13acb-f0b7-4613-bc7d-c361d14da1a2
 caps.latest.revision: 8
 ms.openlocfilehash: 9079f40e75dae86c22fd8b4f8a45d501c6125498
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74416028"
 ---
 # <a name="adding-user-messages-to-your-cmdlet"></a>Hinzufügen von Benutzermeldungen zum Cmdlet
@@ -206,7 +206,7 @@ pr.RecordType = ProgressRecordType.Completed;
 WriteProgress(pr);
 ```
 
-## <a name="code-sample"></a>Code Beispiel
+## <a name="code-sample"></a>Codebeispiel
 
 Den gesamten C# Beispielcode finden Sie unter [StopProcessSample02 Sample](./stopprocesssample02-sample.md).
 
@@ -245,7 +245,7 @@ Die folgende Ausgabe wird angezeigt.
     VERBOSE: Stopped process "notepad", pid 5584.
     ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Erstellen Sie ein Cmdlet, das das System ändert.](./creating-a-cmdlet-that-modifies-the-system.md)
 

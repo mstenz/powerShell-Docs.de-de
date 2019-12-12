@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 00dbb5ee-93d4-4914-a082-ef4d8b236b5c
 caps.latest.revision: 16
 ms.openlocfilehash: 596212f2e64401a751cf3dca0ee7d60b80912c00
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368849"
 ---
 # <a name="defining-selection-sets"></a>Definieren von Auswahlgruppen
 
-Wenn Sie mehrere Ansichten und Steuerelemente erstellen, können Sie Sätze von Objekten definieren, die als Auswahl Sätze bezeichnet werden. Mithilfe eines Auswahl Satzes können Sie die Objekte einmal definieren, ohne Sie für jede Ansicht oder jedes Steuerelement wiederholt definieren zu müssen. Normalerweise werden Auswahl Sätze verwendet, wenn Sie über einen Satz verwandter .NET-Objekte verfügen. Die Formatierungs Datei `FileSystem` (File System. Format. ps1xml) definiert z. b. einen Auswahl Satz der Dateisystemtypen, die von mehreren Ansichten verwendet werden.
+Wenn Sie mehrere Ansichten und Steuerelemente erstellen, können Sie Sätze von Objekten definieren, die als Auswahl Sätze bezeichnet werden. Mithilfe eines Auswahl Satzes können Sie die Objekte einmal definieren, ohne Sie für jede Ansicht oder jedes Steuerelement wiederholt definieren zu müssen. Normalerweise werden Auswahl Sätze verwendet, wenn Sie über einen Satz verwandter .NET-Objekte verfügen. Die `FileSystem` Formatierungs Datei (File System. Format. ps1xml) definiert z. b. einen Auswahl Satz der Dateisystemtypen, die von mehreren Ansichten verwendet werden.
 
 ## <a name="where-selection-sets-are-defined-and-referenced"></a>Wo Auswahl Sätze definiert sind und referenziert werden
 
@@ -35,15 +35,15 @@ Sie definieren Auswahl Sätze als Teil der allgemeinen Daten, die von allen Sich
 
 Auf folgende Weise können Sie auf eine Auswahl festgelegt werden:
 
-- Jede Sicht verfügt über ein `ViewSelectedBy`-Element, das definiert, welche Objekte mithilfe der-Sicht angezeigt werden. Das `ViewSelectedBy`-Element verfügt über ein untergeordnetes `SelectionSetName`-Element, das den Auswahl Satz angibt, der von allen Definitionen der Sicht verwendet wird. Es gibt keine Einschränkung hinsichtlich der Anzahl von Auswahl Sätzen, auf die Sie von einer Ansicht aus verweisen können.
+- Jede Ansicht verfügt über ein `ViewSelectedBy` Element, das definiert, welche Objekte mithilfe der Sicht angezeigt werden. Das `ViewSelectedBy`-Element verfügt über ein untergeordnetes `SelectionSetName`-Element, das den Auswahl Satz angibt, der von allen Definitionen der Sicht verwendet wird. Es gibt keine Einschränkung hinsichtlich der Anzahl von Auswahl Sätzen, auf die Sie von einer Ansicht aus verweisen können.
 
-- In jeder Definition einer Sicht oder eines Steuer Elements definiert das `EntrySelectedBy`-Element, welche Objekte mit dieser Definition angezeigt werden. In der Regel verfügt eine Ansicht oder ein Steuerelement nur über eine Definition, sodass die Objekte vom `ViewSelectedBy`-Element definiert werden. Das `EntrySelectedBy`-Element der Definition verfügt über ein untergeordnetes `SelectionSetName`-Element, das den Auswahl Satz angibt. Wenn Sie den Auswahl Satz für eine Definition angeben, können Sie keines der anderen untergeordneten Elemente des `EntrySelectedBy`-Elements angeben.
+- In jeder Definition einer Sicht oder eines Steuer Elements definiert das `EntrySelectedBy` Element, welche Objekte mit dieser Definition angezeigt werden. In der Regel verfügt eine Ansicht oder ein Steuerelement nur über eine Definition, sodass die Objekte durch das `ViewSelectedBy`-Element definiert werden. Das `EntrySelectedBy`-Element der Definition verfügt über ein untergeordnetes `SelectionSetName`-Element, das den Auswahl Satz angibt. Wenn Sie den Auswahl Satz für eine Definition angeben, können Sie keines der anderen untergeordneten Elemente des `EntrySelectedBy`-Elements angeben.
 
 - In jeder Definition einer Sicht oder eines Steuer Elements kann das `SelectionCondition`-Element verwendet werden, um eine Bedingung für die Verwendung der Definition anzugeben. Das `SelectionCondition`-Element verfügt über ein untergeordnetes `SelectionSetName`-Element, das den Auswahl Satz angibt, der die Bedingung auslöst. Die Bedingung wird ausgelöst, wenn eines der im Auswahl Satz definierten Objekte angezeigt wird. Weitere Informationen zum Festlegen dieser Bedingungen finden Sie unter Definieren von [Bedingungen für den Fall, dass Daten angezeigt](./defining-conditions-for-displaying-data.md)werden.
 
 ## <a name="selection-set-example"></a>Beispiel für Auswahl Satz
 
-Das folgende Beispiel zeigt einen Auswahl Satz, der direkt aus der von Windows PowerShell bereitgestellten `FileSystem`-Formatierungs Datei entnommen wird. Weitere Informationen zu anderen Windows PowerShell-Formatierungs Dateien finden Sie unter [Windows PowerShell-Formatierungs Dateien](./powershell-formatting-files.md).
+Das folgende Beispiel zeigt einen Auswahl Satz, der direkt aus der von Windows PowerShell bereitgestellten `FileSystem` Formatierungs Datei entnommen wird. Weitere Informationen zu anderen Windows PowerShell-Formatierungs Dateien finden Sie unter [Windows PowerShell-Formatierungs Dateien](./powershell-formatting-files.md).
 
 ```xml
 <SelectionSets>
@@ -59,7 +59,7 @@ Das folgende Beispiel zeigt einen Auswahl Satz, der direkt aus der von Windows P
 </SelectionSets>
 ```
 
-Auf den vorherigen Auswahl Satz wird im `ViewSelectedBy`-Element einer Tabellen Sicht verwiesen.
+Auf den vorherigen Auswahl Satz wird im `ViewSelectedBy`-Element einer Tabellenansicht verwiesen.
 
 ```xml
 <ViewDefinitions>
@@ -138,9 +138,9 @@ Auf den vorherigen Auswahl Satz wird im `ViewSelectedBy`-Element einer Tabellen 
 
 [SelectionSet](./selectionset-element-format.md)
 
-[Benennen](./name-element-for-selectionset-format.md)
+[Name](./name-element-for-selectionset-format.md)
 
-[Solche](./types-element-for-selectionset-format.md)
+[Typen](./types-element-for-selectionset-format.md)
 
 [PowerShell-Formatierungs Dateien](./powershell-formatting-files.md)
 

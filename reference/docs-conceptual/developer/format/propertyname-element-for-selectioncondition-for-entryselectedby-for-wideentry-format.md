@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 340abb12-6df1-42f4-bdae-b0509c90952c
 caps.latest.revision: 11
 ms.openlocfilehash: 196877b97db9ed0592e357486c1318dc1e7efd31
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72362239"
 ---
 # <a name="propertyname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format"></a>Element „PropertyName“ für SelectionCondition für EntrySelectedBy für WideEntry (Format)
 
-Gibt die .net-Eigenschaft an, die die Bedingung auslöst. Wenn diese Eigenschaft vorhanden ist oder als `true` ausgewertet wird, wird die Bedingung erfüllt, und die Definition wird verwendet.
+Gibt die .net-Eigenschaft an, die die Bedingung auslöst. Wenn diese Eigenschaft vorhanden ist oder als zu `true`ausgewertet wird, wird die Bedingung erfüllt, und die Definition wird verwendet.
 
 Configuration-Element (Format) viewdefinitions-Element (Format) Ansichts Element (Format) widecontrol-Element (Format) wideentries-Element (Format) wideentry-Element (Format) entryselectedby-Element für wideentry (Format) selectioncondition-Element für Entryselectedby für wideentry (Format) propertyName-Element für selectioncondition für entryselectedby für wideentry (Format)
 

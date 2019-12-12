@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 1f405afb-70b5-4fe0-9986-bc07401d93fd
 caps.latest.revision: 23
 ms.openlocfilehash: 862f942facafff6cea66c4f8f1040772c6a62ec3
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363409"
 ---
 # <a name="creating-a-table-view"></a>Erstellen einer Tabellenansicht
@@ -232,7 +232,7 @@ Die folgenden XML-Elemente können verwendet werden, um ein Format Muster anzuge
 
 - Das Format [String](./label-element-for-listitem-for-listcontrol-format.md) -Element gibt ein Format Muster an, das definiert, wie der Eigenschafts-oder Skript Wert angezeigt wird.
 
-Im folgenden Beispiel wird die `ToString`-Methode aufgerufen, um den Wert des Skripts zu formatieren. Skripts können beliebige Methoden eines Objekts aufzurufen. Wenn ein Objekt über eine-Methode verfügt, z. b. `ToString`, die Formatierungs Parameter hat, kann das Skript daher diese Methode zum Formatieren des Ausgabe Werts des Skripts aufruft.
+Im folgenden Beispiel wird die `ToString`-Methode aufgerufen, um den Wert des Skripts zu formatieren. Skripts können beliebige Methoden eines Objekts aufzurufen. Wenn ein Objekt z. b. über eine-Methode verfügt, z. b. `ToString`, die über Formatierungs Parameter verfügt, kann das Skript diese Methode zum Formatieren des Ausgabe Werts des Skripts aufruft.
 
 ```xml
 <ListItem>

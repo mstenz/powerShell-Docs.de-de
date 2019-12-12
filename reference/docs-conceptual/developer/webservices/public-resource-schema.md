@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: e67298ee-a773-4402-8afb-d97ad0e030e5
 caps.latest.revision: 4
 ms.openlocfilehash: c7e20ff0f36e8cab2d414ff2e5924b3359ad9c60
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366269"
 ---
 # <a name="public-resource-schema"></a>Schema für öffentliche Ressourcen
@@ -40,11 +40,11 @@ Jedem Eigenschaftsnamen wird ein Datentyp vorangestellt. Die Datentypen in diese
 
 Der `Key`-Qualifizierer gibt an, dass eine Eigenschaft zur eindeutigen Identifizierung einer Ressourcen Instanz verwendet wird. Eine Ressource kann über mehr als einen Schlüssel verfügen.
 
-Der `Required`-Qualifizierer gibt an, dass die Eigenschaft erforderlich ist. Wenn eine Eigenschaft mit dem `Key`-Qualifizierer gekennzeichnet ist, wird Sie als erforderlich angesehen, und der `Required`-Qualifizierer ist nicht erforderlich.
+Der `Required`-Qualifizierer gibt an, dass die Eigenschaft erforderlich ist. Wenn eine Eigenschaft mit dem `Key` Qualifizierer gekennzeichnet ist, wird Sie als erforderlich angesehen, und der `Required` Qualifizierer ist nicht erforderlich.
 
 ### <a name="complex-data-types"></a>Komplexe Datentypen
 
-Eigenschaften von Entitäten können komplexe Datentypen aufweisen. Komplexe Datentypen sind Typen, die aus anderen Typen bestehen, ähnlich wie Strukturen in der Programmiersprache C. Ein komplexer Typ wird in der MOF-Datei als Klasse mit dem `ComplexType`-Qualifizierer deklariert, wie im folgenden Beispiel gezeigt.
+Eigenschaften von Entitäten können komplexe Datentypen aufweisen. Komplexe Datentypen sind Typen, die aus anderen Typen bestehen, ähnlich wie Strukturen in der Programmiersprache C. Ein komplexer Typ wird in der MOF-Datei als Klasse mit dem `ComplexType` Qualifizierer deklariert, wie im folgenden Beispiel gezeigt.
 
 ```csharp
 [ComplexType]
@@ -55,7 +55,7 @@ class PswsTest_ProcessModule
 };
 ```
 
-Um eine Entitäts Eigenschaft als komplexen Typ zu deklarieren, deklarieren Sie Sie als `string`-Typ mit dem Qualifizierer `EmbeddedInstance`, einschließlich des Namens des komplexen Typs. Das folgende Beispiel zeigt die Deklaration einer Eigenschaft des Typs "`PswsTest_ProcessModule`", der im vorherigen Beispiel deklariert wurde.
+Um eine Entitäts Eigenschaft als komplexen Typ zu deklarieren, deklarieren Sie Sie als `string` Typ mit dem `EmbeddedInstance`-Qualifizierer, einschließlich des Namens des komplexen Typs. Im folgenden Beispiel wird die Deklaration einer Eigenschaft des im vorherigen Beispiel deklarierten `PswsTest_ProcessModule` Typs veranschaulicht.
 
 ```csharp
 [Required, EmbeddedInstance("PswsTest_ProcessModule")] String Modules[];

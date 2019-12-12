@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 17352fc4-ba83-4f04-86bc-f591765d85a8
 caps.latest.revision: 18
 ms.openlocfilehash: fa9eda3ea1028c27dbfb3eb04747af3b817c1a81
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361399"
 ---
 # <a name="wideitem-element-for-widecontrol-format"></a>Element „WideItem“ für WideControl (Format)
@@ -33,7 +33,7 @@ Configuration-Element (Format) viewdefinitions-Element (Format) Ansichts Element
 
 ## <a name="attributes-and-elements"></a>Attribute und Elemente
 
-In den folgenden Abschnitten werden die Attribute, untergeordneten Elemente und das übergeordnete Element des `WideItem`-Elements beschrieben. Das `FormatString`-Element ist optional. Sie müssen jedoch ein `PropertyName`-oder `ScriptBlock`-Element angeben, aber Sie können nicht beides angeben.
+In den folgenden Abschnitten werden die Attribute, untergeordneten Elemente und das übergeordnete Element des `WideItem`-Elements beschrieben. Das `FormatString`-Element ist optional. Sie müssen jedoch eine `PropertyName` oder `ScriptBlock`-Element angeben, aber Sie können nicht beides angeben.
 
 ### <a name="attributes"></a>Attributes
 
@@ -59,7 +59,7 @@ Weitere Informationen zu den Komponenten einer breiten Ansicht finden Sie unter 
 
 ## <a name="example"></a>Beispiel
 
-Das folgende Beispiel zeigt ein `WideEntry`-Element, das ein einzelnes `WideItem`-Element definiert. Das `WideItem`-Element definiert die Eigenschaft oder das Skript, dessen Wert in der Ansicht angezeigt wird.
+Das folgende Beispiel zeigt ein `WideEntry`-Element, das ein einzelnes `WideItem` Element definiert. Das `WideItem`-Element definiert die Eigenschaft oder das Skript, dessen Wert in der Ansicht angezeigt wird.
 
 ```xml
 <WideEntry>

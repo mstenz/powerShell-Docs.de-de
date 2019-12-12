@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 5d4c8f84-ebd2-4405-bb10-cfc5400d4ad6
 caps.latest.revision: 6
 ms.openlocfilehash: 3ec127d5ff60754de5d7f1ac73f2965524228b9c
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365009"
 ---
 # <a name="windows-powershell-formatting-files"></a>Windows PowerShell-Formatierungsdateien
 
-Windows PowerShell bietet mehrere Formatierungs Dateien (. Format. ps1xml), die sich im Installationsverzeichnis (`$pshome`) befinden. Jede dieser Dateien definiert die Standard Anzeige für einen bestimmten Satz von .NET-Objekten. Diese Dateien sollten nie geändert werden. Sie können Sie jedoch als Referenz verwenden, um eigene benutzerdefinierte Formatierungs Dateien zu erstellen.
+Windows PowerShell bietet mehrere Formatierungs Dateien (. Format. ps1xml), die sich im-Installationsverzeichnis (`$pshome`) befinden. Jede dieser Dateien definiert die Standard Anzeige für einen bestimmten Satz von .NET-Objekten. Diese Dateien sollten nie geändert werden. Sie können Sie jedoch als Referenz verwenden, um eigene benutzerdefinierte Formatierungs Dateien zu erstellen.
 
 `Certificate.Format.ps1xml` definiert die Anzeige von Objekten im Zertifikat Speicher, z. b. x. 509-Zertifikate und Zertifikat Speicher.
 

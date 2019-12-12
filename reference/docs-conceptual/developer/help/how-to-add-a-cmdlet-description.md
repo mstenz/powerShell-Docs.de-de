@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 47af9d57-bd63-4596-816a-0b717418476b
 caps.latest.revision: 10
 ms.openlocfilehash: a2e4c4d42566d5a52006924eab02295c37cf3159
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361279"
 ---
 # <a name="how-to-add-a-cmdlet-description"></a>Hinzufügen einer Cmdlet-Beschreibung
@@ -30,7 +30,7 @@ In diesem Abschnitt wird beschrieben, wie Sie Inhalte hinzufügen, die im Abschn
 
 - Enthalten Informationen zu Möglichkeiten, mit denen Benutzer das Cmdlet zusätzlich zu den offensichtlichen Verwendungsmöglichkeiten verwenden können. Beispielsweise können Sie das-Objekt verwenden, das das `Get-Host`-Cmdlet abruft, um die Textfarbe im Windows PowerShell-Befehlsfenster zu ändern.
 
-  Beispiel: "das Cmdlet" `Get-Acl` "Ruft die Objekte ab, die die Sicherheits Beschreibung einer Datei oder Ressource darstellen. Die Sicherheitsbeschreibung enthält die Zugriffssteuerungslisten (Access Control Lists, ACLs) der Ressource. Die ACL gibt die Berechtigungen an, die Benutzer und Benutzergruppen für den Zugriff auf die Ressource haben.
+  Beispiel: "das `Get-Acl`-Cmdlet ruft Objekte ab, die die Sicherheits Beschreibung einer Datei oder Ressource darstellen. Die Sicherheitsbeschreibung enthält die Zugriffssteuerungslisten (Access Control Lists, ACLs) der Ressource. Die ACL gibt die Berechtigungen an, die Benutzer und Benutzergruppen für den Zugriff auf die Ressource haben.
 
 - Die ausführliche Beschreibung sollte das Cmdlet beschreiben, aber es sollte keine Konzepte beschreiben, die vom Cmdlet verwendet werden. Legen Sie Konzept Definitionen in zusätzlichen Notizen ab.
 

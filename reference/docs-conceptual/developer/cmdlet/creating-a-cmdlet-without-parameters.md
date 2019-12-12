@@ -12,10 +12,10 @@ helpviewer_keywords:
 ms.assetid: 54236ef3-82db-45f8-9114-1ecb7ff65d3e
 caps.latest.revision: 8
 ms.openlocfilehash: af41c2c9855310d047404114a07b27180a7aa8fc
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74415671"
 ---
 # <a name="creating-a-cmdlet-without-parameters"></a>Erstellen eines Cmdlet ohne Parameter
@@ -129,7 +129,7 @@ End Sub 'ProcessRecord
 
 Beispielsweise kann " [System. Management. Automation. Cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) " nicht aufgerufen werden, wenn das Cmdlet in der Mitte abgebrochen wird oder wenn in einem beliebigen Teil des Cmdlets ein Abbruch Fehler auftritt. Daher sollte ein Cmdlet, das die Objekt Bereinigung erfordert, das komplette [System. iverwerf-](/dotnet/api/System.IDisposable) Muster implementieren, einschließlich des Finalizers, damit die Laufzeit sowohl [System. Management. Automation. Cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) als auch [System. iverwerf. verwerfen *](/dotnet/api/System.IDisposable.Dispose) am Ende der Verarbeitung abrufen kann.
 
-## <a name="code-sample"></a>Code Beispiel
+## <a name="code-sample"></a>Codebeispiel
 
 Den gesamten C# Beispielcode finden Sie unter [GetProcessSample01 Sample](./getprocesssample01-sample.md).
 
@@ -254,7 +254,7 @@ Wenn das Cmdlet bei Windows PowerShell registriert wurde, können Sie es in der 
     ...
     ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Erstellen eines Cmdlets zur Verarbeitung der Befehlszeilen Eingabe](./adding-parameters-that-process-command-line-input.md)
 

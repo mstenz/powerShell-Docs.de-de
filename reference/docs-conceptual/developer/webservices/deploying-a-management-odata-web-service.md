@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 4497b64c-7875-4047-bf77-07e04c098ffe
 caps.latest.revision: 4
 ms.openlocfilehash: 376d90394b632e82322b848cb124f002ff91d8b3
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366179"
 ---
 # <a name="deploying-a-management-odata-web-service"></a>Bereitstellen eines Management OData-Webdiensts
@@ -23,9 +23,9 @@ Nachdem Sie alle Schritte abgeschlossen haben, die zum Erstellen eines odata-Web
 
 Führen Sie die folgenden Schritte aus, um den Verwaltungs-odata-Webdienst bereitzustellen.
 
-1. Erstellen Sie ein Verzeichnis für Ihre Webanwendung in Ihrem IIS `WWWRoot`-Verzeichnis.
+1. Erstellen Sie ein Verzeichnis für Ihre Webanwendung in Ihrem IIS-`WWWRoot` Verzeichnis.
 
-2. Kopieren Sie die MOF-Schema Datei, die XML-Schema Datei, die DLLs, die die Schnittstellen [Microsoft. Management. odata. customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) und [System. Management. Automation. Remoting. pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) exportieren, und die Datei Web. config in das Anwendungsverzeichnis.
+2. Kopieren Sie die MOF-Schema Datei, die XML-Schema Datei, die DLLs, die die Schnittstellen " [Microsoft. Management. odata. customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) " und " [System. Management. Automation. Remoting. pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) " exportieren, und die Datei "Web. config" in das Anwendungsverzeichnis.
 
 3. Erstellen Sie eine Site-ID.
 

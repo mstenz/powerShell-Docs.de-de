@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 7031fa8b-3e2b-4ea8-89cb-95171f467b5a
 caps.latest.revision: 6
 ms.openlocfilehash: e55d1c5aa533005b258ecbbbf3ed9d55f852eab6
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368639"
 ---
 # <a name="scriptblock-element-for-selectioncondition-for-customcontrol-for-view-format"></a>Element „ScriptBlock“ für SelectionCondition für CustomControl für View (Format)
 
-Gibt das Skript an, das die Bedingung auslöst. Wenn dieses Skript `true` ausgewertet wird, wird die Bedingung erfüllt, und die Definition wird verwendet. Dieses Element wird beim Definieren einer benutzerdefinierten Steuerelement Ansicht verwendet.
+Gibt das Skript an, das die Bedingung auslöst. Wenn dieses Skript zum `true`ausgewertet wird, wird die Bedingung erfüllt, und die Definition wird verwendet. Dieses Element wird beim Definieren einer benutzerdefinierten Steuerelement Ansicht verwendet.
 
 Konfigurationselement (Format) viewdefinitions-Element (Format) View-Element (Format) CustomControl-Element für View (Format) customentries-Element für CustomControl for View (Format) customentry-Element für customentries für CustomControl für Ansicht ( Format) customItem-Element für customentry für CustomControl für View (Format) selectioncondition-Element für entryselectedby für CustomControl for View (Format) ScriptBlock-Element für selectioncondition for CustomControl for View (Format)
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 49ff3062-6396-4aa8-919b-3fd3ac60899a
 caps.latest.revision: 19
 ms.openlocfilehash: d3ad7fa563def17d43ce4dc64d155b65b650521f
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361849"
 ---
 # <a name="tablecolumnheader-element-format"></a>Element „TableColumnHeader“ (Format)
@@ -55,9 +55,9 @@ Keine.
 
 ## <a name="remarks"></a>Hinweise
 
-Geben Sie einen Header für jede Spalte der Tabelle an. Die Spalten werden in der Reihenfolge angezeigt, in der die `TableColumnHeader`-Elemente definiert sind.
+Geben Sie einen Header für jede Spalte der Tabelle an. Die Spalten werden in der Reihenfolge angezeigt, in der die `TableColumnHeader` Elemente definiert sind.
 
-Eine Tabelle muss die gleiche Anzahl von `TableColumnHeader`-Elementen wie `TableRowEntry`-Elemente aufweisen. Der Spaltenheader definiert, wie der Text oben in der Tabelle angezeigt wird. Die Zeilen Einträge definieren, welche Daten in den Zeilen der Tabelle angezeigt werden.
+Eine Tabelle muss die gleiche Anzahl `TableColumnHeader` Elemente wie `TableRowEntry` Elemente aufweisen. Der Spaltenheader definiert, wie der Text oben in der Tabelle angezeigt wird. Die Zeilen Einträge definieren, welche Daten in den Zeilen der Tabelle angezeigt werden.
 
 Weitere Informationen zu den Komponenten einer Tabellenansicht finden Sie unter [Tabellen Sicht](./creating-a-table-view.md).
 

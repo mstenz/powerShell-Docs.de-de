@@ -13,10 +13,10 @@ helpviewer_keywords:
 ms.assetid: 1f8066e6-e5d3-4f4e-8948-a90af5dace82
 caps.latest.revision: 11
 ms.openlocfilehash: 155a406b9855c435041fe175ac7d983a4b4eb8b7
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369129"
 ---
 # <a name="validaterange-attribute-declaration"></a>Attributdeklaration: ValidateRange
@@ -31,19 +31,19 @@ Das validaterange-Attribut gibt die minimalen und maximalen Werte (den Bereich) 
 
 #### <a name="parameters"></a>Parameter
 
-`MinRange` ([System. Object](/dotnet/api/system.object)) ist erforderlich. Gibt den zulässigen Mindestwert an.
+`MinRange` ([System. Object](/dotnet/api/system.object)) erforderlich. Gibt den zulässigen Mindestwert an.
 
-`MaxRange` ([System. Object](/dotnet/api/system.object)) ist erforderlich. Gibt den maximal zulässigen Wert an.
+`MaxRange` ([System. Object](/dotnet/api/system.object)) erforderlich. Gibt den maximal zulässigen Wert an.
 
 ## <a name="remarks"></a>Hinweise
 
-- Die Windows PowerShell-Laufzeit löst einen Konstruktionsfehler aus, wenn der Wert des Parameters "`MinRange`" größer als der Wert des Parameters "`MaxRange`" ist.
+- Die Windows PowerShell-Laufzeit löst einen Konstruktionsfehler aus, wenn der Wert des `MinRange`-Parameters größer als der Wert des `MaxRange`-Parameters ist.
 
 - Die Windows PowerShell-Laufzeit löst unter den folgenden Bedingungen einen Validierungs Fehler aus:
 
-    - Wenn der Wert des Arguments kleiner ist als das Limit von `MinRange` oder größer als das Limit von `MaxRange`.
+    - Wenn der Wert des Arguments kleiner ist als das `MinRange` Limit oder größer als das `MaxRange` Limit.
 
-    - Wenn das Argument nicht denselben Typ wie die Parameter "`MinRange`" und "`MaxRange`" hat.
+    - Wenn das Argument nicht denselben Typ wie die `MinRange` und die `MaxRange` Parameter hat.
 
 - Das validaterange-Attribut wird von der [System. Management. Automation. validaterangeattribute](/dotnet/api/System.Management.Automation.ValidateRangeAttribute) -Klasse definiert.
 

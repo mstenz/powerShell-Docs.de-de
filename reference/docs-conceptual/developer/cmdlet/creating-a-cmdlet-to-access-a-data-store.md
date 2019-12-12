@@ -7,10 +7,10 @@ ms.suite: ''
 ms.tgt_pltfrm: ''
 ms.topic: article
 ms.openlocfilehash: 3096965ba9f99f70994f2fb5b180cc58691b04f8
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74415697"
 ---
 # <a name="creating-a-cmdlet-to-access-a-data-store"></a>Erstellen eines Cmdlet für den Zugriff auf einen Datenspeicher
@@ -375,7 +375,7 @@ Ihr Cmdlet muss den Anbieter öffnen, der durch den Windows PowerShell-Pfad ange
 
 In diesem Beispiel Select-Str-Cmdlet wird die [System. Management. Automation. providerintrinsics. Content *](/dotnet/api/System.Management.Automation.ProviderIntrinsics.Content) -Eigenschaft verwendet, um den zu überprüfenden Inhalt verfügbar zu machen. Anschließend kann die [System. Management. Automation. contentcmdletproviderintrinsics. GetReader *](/dotnet/api/System.Management.Automation.ContentCmdletProviderIntrinsics.GetReader) -Methode aufgerufen werden, um den erforderlichen Windows PowerShell-Pfad zu übergeben.
 
-## <a name="code-sample"></a>Code Beispiel
+## <a name="code-sample"></a>Codebeispiel
 
 Der folgende Code zeigt die Implementierung dieser Version dieses SELECT-Str-Cmdlets. Beachten Sie, dass dieser Code die Cmdlet-Klasse, private Methoden, die vom Cmdlet verwendet werden, und den Windows PowerShell-Snap-in-Code enthält, der zum Registrieren des Cmdlets verwendet wird. Weitere Informationen zum Registrieren des Cmdlets finden Sie unter [Building the Cmdlet](#defining-the-cmdlet-class).
 
@@ -1210,7 +1210,7 @@ Wenn das Cmdlet bei Windows PowerShell registriert wurde, können Sie es in der 
     Pattern      :
     ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Erstellen eines Windows PowerShell-Cmdlets](/powershell/scripting/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 

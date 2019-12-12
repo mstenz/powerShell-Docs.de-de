@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 3e879ba7-c334-460b-94a1-3e9b63d3d8de
 caps.latest.revision: 5
 ms.openlocfilehash: 949c0d63b1e5bca1bfe670362df4297c29e98fcc
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359919"
 ---
 # <a name="windows-powershell-provider-quickstart"></a>Windows PowerShell-Anbieter: Schnellstart
@@ -21,7 +21,7 @@ In diesem Thema wird erläutert, wie Sie einen Windows PowerShell-Anbieter erste
 
 ## <a name="writing-a-basic-provider"></a>Schreiben eines einfachen Anbieters
 
-Die grundlegendsten Funktionen eines Windows PowerShell-Anbieters sind das Erstellen und Entfernen von Laufwerken. In diesem Beispiel implementieren wir die Methoden " [System. Management. Automation. Provider. drivecmdletprovider. newdrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) " und " [System. Management. Automation. Provider. drivecmdletprovider. removedrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive) " des [ System. Management. Automation. Provider. drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) -Klasse. Außerdem erfahren Sie, wie Sie eine Anbieter Klasse deklarieren.
+Die grundlegendsten Funktionen eines Windows PowerShell-Anbieters sind das Erstellen und Entfernen von Laufwerken. In diesem Beispiel implementieren wir die [System. Management. Automation. Provider. drivecmdletprovider. newdrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) -und die [System. Management. Automation. Provider. drivecmdletprovider. removedrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive) -Methode der [System. Management. Automation. Provider. drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) -Klasse. Außerdem erfahren Sie, wie Sie eine Anbieter Klasse deklarieren.
 
 Wenn Sie einen Anbieter schreiben, können Sie Standard Laufwerke angeben, die automatisch erstellt werden, wenn der Anbieter verfügbar ist. Außerdem definieren Sie eine Methode, mit der neue Laufwerke erstellt werden, die diesen Anbieter verwenden.
 
@@ -35,7 +35,7 @@ Erstellen Sie in Visual Studio ein Klassen Bibliotheksprojekt mit dem Namen acce
 
 1. Fügen Sie die System. Management. Automation-Assembly als Verweis auf das Projekt hinzu.
 
-2. Klicken Sie **> Debuggen auf Projekt > accessdbprovidersample-Eigenschaften**. Klicken Sie unter **Projekt starten**auf **externes Programm starten**, und navigieren Sie zur ausführbaren Windows PowerShell-Datei (in der Regel c:\windows\system32\windowspowershell\ v1.0\\.PowerShell.exe).
+2. Klicken Sie **> Debuggen auf Projekt > accessdbprovidersample-Eigenschaften**. Klicken Sie unter **Projekt starten**auf **externes Programm starten**, und navigieren Sie zur ausführbaren Windows PowerShell-Datei (in der Regel c:\Windows\System32\WindowsPowerShell\v1.0\\. PowerShell. exe).
 
 3. Geben Sie unter **Start Optionen**Folgendes in das Feld **Befehlszeilenargumente** ein: `-noexit -command "[reflection.assembly]::loadFrom(AccessDBProviderSample.dll' ) | import-module"`
 
@@ -43,7 +43,7 @@ Erstellen Sie in Visual Studio ein Klassen Bibliotheksprojekt mit dem Namen acce
 
 Der Anbieter wird von der [System. Management. Automation. Provider. drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) -Klasse abgeleitet. Die meisten Anbieter, die echte Funktionen bereitstellen (Zugriff und Bearbeitung von Elementen, Navigation im Datenspeicher und das Festlegen und Festlegen von Inhalts Elementen), werden von der [System. Management. Automation. Provider. navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) -Klasse abgeleitet.
 
-Zusätzlich zur Angabe, dass die Klasse von [System. Management. Automation. Provider. drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)abgeleitet ist, müssen Sie Sie mit dem [System. Management. Automation. Provider. cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) ergänzen, wie im Beispiel gezeigt. .
+Zusätzlich zur Angabe, dass die Klasse von [System. Management. Automation. Provider. drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)abgeleitet ist, müssen Sie Sie mit dem [System. Management. Automation. Provider. cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) ergänzen, wie im Beispiel gezeigt.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Providers
@@ -67,7 +67,7 @@ namespace Microsoft.Samples.PowerShell.Providers
 
 ### <a name="implementing-newdrive"></a>Implementieren von newdrive
 
-Die [System. Management. Automation. Provider. drivecmdletprovider. newdrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) -Methode wird von der Windows PowerShell-Engine aufgerufen, wenn ein Benutzer das [Microsoft. PowerShell. Commands. newpsdrivecommand](/dotnet/api/Microsoft.PowerShell.Commands.Newpsdrivecommand) -Cmdlet angibt, das den Namen Ihrer ab. Der psdriveinfo-Parameter wird von der Windows PowerShell-Engine übergeben, und die-Methode gibt das neue Laufwerk an die Windows PowerShell-Engine zurück. Diese Methode muss innerhalb der oben erstellten-Klasse deklariert werden.
+Die [System. Management. Automation. Provider. drivecmdletprovider. newdrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) -Methode wird von der Windows PowerShell-Engine aufgerufen, wenn ein Benutzer das [Microsoft. PowerShell. Commands. newpsdrivecommand](/dotnet/api/Microsoft.PowerShell.Commands.Newpsdrivecommand) -Cmdlet aufruft, das den Namen des Anbieters angibt. Der psdriveinfo-Parameter wird von der Windows PowerShell-Engine übergeben, und die-Methode gibt das neue Laufwerk an die Windows PowerShell-Engine zurück. Diese Methode muss innerhalb der oben erstellten-Klasse deklariert werden.
 
 Die-Methode prüft zunächst, ob sowohl das Laufwerks Objekt als auch der Laufwerks Stamm vorhanden sind, die übergebenen sind, und gibt `null` zurück, wenn dies nicht der Fall ist. Anschließend wird ein Konstruktor der internen Klasse accessdbpsdriveingefo verwendet, um ein neues Laufwerk und eine Verbindung mit der Access-Datenbank zu erstellen, die das Laufwerk darstellt.
 

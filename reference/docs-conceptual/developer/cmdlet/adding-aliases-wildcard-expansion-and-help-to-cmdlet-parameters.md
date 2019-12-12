@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 931ccace-c565-4a98-8dcc-df00f86394b1
 caps.latest.revision: 8
 ms.openlocfilehash: d210a852a90d94df2ab360dd86f0b83a396330e3
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74415659"
 ---
 # <a name="adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters"></a>Hinzufügen von Aliasen, Platzhaltererweiterung und Hilfe zu Cmdlet-Parametern
@@ -128,7 +128,7 @@ if (!wildcard.IsMatch(processName))
 }
 ```
 
-## <a name="code-sample"></a>Code Beispiel
+## <a name="code-sample"></a>Codebeispiel
 
 Den gesamten C# Beispielcode finden Sie unter [StopProcessSample03 Sample](./stopprocesssample03-sample.md).
 
@@ -209,7 +209,7 @@ Die folgende Ausgabe wird angezeigt.
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): N
     ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Erstellen Sie ein Cmdlet, das das System ändert.](./creating-a-cmdlet-that-modifies-the-system.md)
 

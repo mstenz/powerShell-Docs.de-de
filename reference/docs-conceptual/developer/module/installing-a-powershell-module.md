@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: fb82827e-fdb7-4cbf-b3d4-093e72b3ff0e
 caps.latest.revision: 28
 ms.openlocfilehash: 60ac4bf9089232a9fa879e835e32da53422489fd
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367069"
 ---
 # <a name="installing-a-powershell-module"></a>Installieren eines PowerShell-Moduls
@@ -62,7 +62,7 @@ Standardmäßig enthält der Wert der Umgebungsvariablen **psmodulepath** die fo
   ```
 
   > [!IMPORTANT]
-  > Nachdem Sie den Pfad zu **psmodulepath**hinzugefügt haben, sollten Sie eine Umgebungs Meldung über die Änderung übertragen. Durch das Senden der Änderung können andere Anwendungen, wie z. b. die Shell, die Änderung übernehmen. Um die Änderung zu übertragen, lassen Sie Ihren Produkt Installationscode eine **WM_SETTINGCHANGE** -Nachricht senden, wobei `lParam` auf die Zeichenfolge "Environment" festgelegt ist. Stellen Sie sicher, dass Sie die Nachricht senden, nachdem der Installationscode des Moduls " **psmodulepath**" aktualisiert hat.
+  > Nachdem Sie den Pfad zu **psmodulepath**hinzugefügt haben, sollten Sie eine Umgebungs Meldung über die Änderung übertragen. Durch das Senden der Änderung können andere Anwendungen, wie z. b. die Shell, die Änderung übernehmen. Wenn Sie die Änderung übertragen möchten, lassen Sie den Produkt Installationscode eine **WM_SETTINGCHANGE** Nachricht senden, bei der `lParam` auf die Zeichenfolge "Environment" festgelegt ist. Stellen Sie sicher, dass Sie die Nachricht senden, nachdem der Installationscode des Moduls " **psmodulepath**" aktualisiert hat.
 
 ### <a name="use-the-correct-module-directory-name"></a>Richtigen Modul Verzeichnisnamen verwenden
 
@@ -89,7 +89,7 @@ Wenn das Modul nicht wohl geformt ist und sein Speicherort nicht im Wert der **p
 
 - Die Funktion zum automatischen Laden von Modulen kann das Modul nicht automatisch importieren.
 
-- Der Parameter "`ListAvailable`" des Cmdlets " [Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) " kann das Modul nicht finden.
+- Der `ListAvailable`-Parameter des Cmdlets " [Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) " kann das Modul nicht finden.
 
 - Das [Import-Module-](/powershell/module/Microsoft.PowerShell.Core/Import-Module) Cmdlet kann das Modul nicht finden. Zum Importieren des Moduls müssen Sie den vollständigen Pfad zur Stamm Modul Datei oder zur Modul Manifest-Datei angeben.
 
@@ -101,7 +101,7 @@ Wenn das Modul nicht wohl geformt ist und sein Speicherort nicht im Wert der **p
 
 - Das Cmdlet " [Show-Command](/powershell/module/Microsoft.PowerShell.Utility/Show-Command) " kann die Befehle im Modul nicht finden und anzeigen.
 
-  Die Befehle im Modul fehlen im Fenster "`Show-Command`" in Windows PowerShell Integrated Scripting Environment (ISE).
+  Die Befehle im Modul fehlen im `Show-Command` Fenster in Windows PowerShell Integrated Scripting Environment (ISE).
 
 ## <a name="where-to-install-modules"></a>Installationsort von Modulen
 
@@ -153,7 +153,7 @@ $p += ";C:\Program Files\Fabrikam Technologies\Fabrikam Manager\Modules\"
 
 Wenn ein Modul von mehreren Komponenten eines Produkts oder von mehreren Produktversionen verwendet wird, installieren Sie das Modul in einem modulspezifischen Unterverzeichnis des Unterverzeichnisses "%ProgramFiles%\Common files\modules".
 
-Im folgenden Beispiel wird das Modul "Fabrikam" in einem Unterverzeichnis "Fabrikam" des Unterverzeichnisses "`%ProgramFiles%\Common Files\Modules`" installiert. Beachten Sie, dass sich jedes Modul in einem eigenen Unterverzeichnis im Unterverzeichnis "modules" befindet.
+Im folgenden Beispiel wird das Modul "Fabrikam" in einem Unterverzeichnis "Fabrikam" des `%ProgramFiles%\Common Files\Modules` Unterverzeichnis installiert. Beachten Sie, dass sich jedes Modul in einem eigenen Unterverzeichnis im Unterverzeichnis "modules" befindet.
 
 ```
 C:\Program Files
@@ -185,7 +185,7 @@ Wenn Sie mehrere Versionen desselben Moduls installieren möchten, verwenden Sie
 2. Erstellen Sie ein Modul Manifest für jede Version des Moduls. Geben Sie im Manifest im Wert des **moduleversion** -Schlüssels die Modulversionsnummer ein. Speichern Sie die Manifest-Datei (. psd1) im Versions spezifischen Verzeichnis für das Modul.
 3. Fügen Sie den Pfad des Modul Stamm Ordners zum Wert der **psmodulepath** -Umgebungsvariablen hinzu, wie in den folgenden Beispielen gezeigt.
 
-Um eine bestimmte Version des Moduls zu importieren, kann der Endbenutzer die `MinimumVersion`-oder `RequiredVersion`-Parameter des [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) -Cmdlets verwenden.
+Um eine bestimmte Version des Moduls zu importieren, kann der Endbenutzer die `MinimumVersion` oder `RequiredVersion` Parameter des Cmdlets [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) verwenden.
 
 Wenn das Modul Fabrikam beispielsweise in den Versionen 8,0 und 9,0 verfügbar ist, könnte die Fabrikam-Modul Verzeichnisstruktur wie folgt aussehen.
 
@@ -210,7 +210,7 @@ $p += ";C:\Program Files\Fabrikam\Fabrikam8;C:\Program Files\Fabrikam\Fabrikam9"
 [Environment]::SetEnvironmentVariable("PSModulePath",$p)
 ```
 
-Wenn diese Schritte ausgeführt werden, ruft der **listavailable** -Parameter des [Get-Module-](/powershell/module/Microsoft.PowerShell.Core/Get-Module) Cmdlets beide Fabrikam-Module ab. Um ein bestimmtes Modul zu importieren, verwenden Sie die Parameter "`MinimumVersion`" oder "`RequiredVersion`" des Cmdlets " [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) ".
+Wenn diese Schritte ausgeführt werden, ruft der **listavailable** -Parameter des [Get-Module-](/powershell/module/Microsoft.PowerShell.Core/Get-Module) Cmdlets beide Fabrikam-Module ab. Um ein bestimmtes Modul zu importieren, verwenden Sie die Parameter `MinimumVersion` oder `RequiredVersion` des Cmdlets [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) .
 
 Wenn beide Module in dieselbe Sitzung importiert werden und die Module Cmdlets mit denselben Namen enthalten, sind die zuletzt importierten Cmdlets in der Sitzung gültig.
 

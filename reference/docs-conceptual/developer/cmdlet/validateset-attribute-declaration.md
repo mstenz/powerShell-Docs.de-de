@@ -13,10 +13,10 @@ helpviewer_keywords:
 ms.assetid: 4a6f97ab-45b2-4f3d-84d4-30acf8e074d0
 caps.latest.revision: 12
 ms.openlocfilehash: b036f39cd01ffe4b4ce7db9627cb6da0d5327190
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364279"
 ---
 # <a name="validateset-attribute-declaration"></a>Attributdeklaration: ValidateSet
@@ -34,14 +34,14 @@ Wenn dieses Attribut angegeben wird, bestimmt die Windows PowerShell-Laufzeit, o
 
 #### <a name="parameters"></a>Parameter
 
-`ValidValues` ([System. String](/dotnet/api/System.String)) ist erforderlich. Gibt die gültigen Parameter Element Werte an. Im folgenden Beispiel wird gezeigt, wie ein-Element oder mehrere-Elemente angegeben werden.
+`ValidValues` ([System. String](/dotnet/api/System.String)) erforderlich. Gibt die gültigen Parameter Element Werte an. Im folgenden Beispiel wird gezeigt, wie ein-Element oder mehrere-Elemente angegeben werden.
 
 ```csharp
 [ValidateSetAttribute("Steve")]
 [ValidateSetAttribute("Steve","Mary")]
 ```
 
-der optionale benannte Parameter `IgnoreCase` ([System. Boolean](/dotnet/api/System.Boolean)). Der Standardwert `true` gibt an, dass der Fall ignoriert wird. Bei einem Wert von "`false`" wird die Groß-/Kleinschreibung berücksichtigt.
+`IgnoreCase` ([System. Boolean](/dotnet/api/System.Boolean)) optionaler benannter Parameter. Der Standardwert `true` gibt an, dass der Fall ignoriert wird. Bei einem Wert von `false` wird beim Cmdlet die Groß-/Kleinschreibung beachtet.
 
 ## <a name="remarks"></a>Hinweise
 

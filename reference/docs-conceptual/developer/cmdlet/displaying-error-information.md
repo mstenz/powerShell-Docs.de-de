@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 76fcc0c1-9795-45d3-a564-40f822b657b5
 caps.latest.revision: 8
 ms.openlocfilehash: 4bc8666ee9053eb368402c8644558f4fe2dcc9ee
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369969"
 ---
 # <a name="displaying-error-information"></a>Anzeigen von Fehlerinformationen
@@ -26,7 +26,7 @@ $ stop-service lanmanworkstation
 You do not have sufficient permissions to stop the service Workstation.
 ```
 
-Allerdings können Benutzerfehler nach Kategorie anzeigen, indem Sie die Variable `$ErrorView` auf `"CategoryView"` festlegen. In der Kategorieansicht werden bestimmte Informationen aus dem Fehler Daten Satz und nicht eine frei Textbeschreibung des Fehlers angezeigt. Diese Ansicht kann nützlich sein, wenn Sie über eine lange Liste der zu überprüfenden Fehler verfügen. In der Kategorieansicht wird die vorherige Fehlermeldung wie folgt angezeigt.
+Allerdings können Benutzerfehler nach Kategorie anzeigen, indem Sie die `$ErrorView` Variable auf `"CategoryView"`festlegen. In der Kategorieansicht werden bestimmte Informationen aus dem Fehler Daten Satz und nicht eine frei Textbeschreibung des Fehlers angezeigt. Diese Ansicht kann nützlich sein, wenn Sie über eine lange Liste der zu überprüfenden Fehler verfügen. In der Kategorieansicht wird die vorherige Fehlermeldung wie folgt angezeigt.
 
 ```powershell
 $ $ErrorView = "CategoryView"

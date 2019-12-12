@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: 12ee5382-95ba-41c7-8291-7f69a6f63514
 caps.latest.revision: 7
 ms.openlocfilehash: 19de0fd33cd764c161366c8161adf46c2247482b
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72360219"
 ---
 # <a name="runspace01-vbnet-code-sample"></a>Runspace01-Codebeispiel (VB.NET)
 
 Im folgenden finden Sie die Codebeispiele für den Runspace [, der unter Erstellen einer Konsolenanwendung beschrieben wird, die einen angegebenen Befehl ausführt](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program). Hierzu ruft die Anwendung einen Runspace auf und ruft dann einen Befehl auf. (Beachten Sie, dass in dieser Anwendung keine Runspace-Konfigurationsinformationen angegeben werden und keine Pipeline explizit erstellt wird.) Der Befehl, der aufgerufen wird, ist das Cmdlet "`Get-Process`".
 
-## <a name="code-sample"></a>Code Beispiel
+## <a name="code-sample"></a>Codebeispiel
 
 ```vb
 Imports System

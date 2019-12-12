@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: 853b7e5d-76c1-490e-8269-0ef31ba2ff13
 caps.latest.revision: 10
 ms.openlocfilehash: dc1ae92af8a57d6197b595db8e098256ac444b78
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359999"
 ---
 # <a name="accessdbprovidersample01"></a>AccessDBProviderSample01
 
 Dieses Beispiel zeigt, wie Sie eine Anbieter Klasse deklarieren, die direkt von der [System. Management. Automation. Provider. cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) -Klasse abgeleitet wird. Wird hier nur aus Gründen der Vollständigkeit aufgeführt.
 
-## <a name="demonstrates"></a>Deutlich
+## <a name="demonstrates"></a>Gegenstand
 
 > [!IMPORTANT]
 > Ihre Anbieter Klasse wird wahrscheinlich von einer der folgenden Klassen abgeleitet und kann möglicherweise andere Anbieter Schnittstellen implementieren:
@@ -30,15 +30,15 @@ Dieses Beispiel zeigt, wie Sie eine Anbieter Klasse deklarieren, die direkt von 
 >
 > Weitere Informationen zum Auswählen der Anbieter Klasse, von der basierend auf den Anbieter Features abgeleitet werden soll, finden [Sie unter Entwerfen des Windows PowerShell-Anbieters](./provider-types.md).
 
-In diesem Beispiel wird Folgendes veranschaulicht:
+Dieses Beispiel zeigt die folgenden Vorgänge:
 
-- Deklarieren des `CmdletProvider`-Attributs.
+- Deklarieren des `CmdletProvider` Attributs.
 
 - Definieren einer Anbieter Klasse, die direkt von der [System. Management. Automation. Provider. cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) -Klasse abgeleitet wird.
 
 ## <a name="example"></a>Beispiel
 
-Dieses Beispiel zeigt, wie Sie eine Anbieter Klasse definieren und das `CmdletProvider`-Attribut deklarieren.
+Dieses Beispiel zeigt, wie Sie eine Anbieter Klasse definieren und das `CmdletProvider` Attribut deklarieren.
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Providers

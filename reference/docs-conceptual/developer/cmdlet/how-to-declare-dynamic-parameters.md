@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: db04f1df-def5-4456-8869-336024cda723
 caps.latest.revision: 8
 ms.openlocfilehash: a9c530cdc66302eb6b3d9d2b284eeb486c3b2ba9
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364419"
 ---
 # <a name="how-to-declare-dynamic-parameters"></a>Deklarieren von dynamischen Parametern
 
-Dieses Beispiel zeigt, wie Sie dynamische Parameter definieren, die dem Cmdlet zur Laufzeit hinzugefügt werden. In diesem Beispiel wird der Parameter "`Department`" dem Cmdlet hinzugefügt, wenn der Benutzer den `Employee`-Schalter Parameter angibt. Weitere Informationen zu dynamischen Parametern finden [Sie unter Cmdlet Dynamic Parameters](./cmdlet-dynamic-parameters.md).
+Dieses Beispiel zeigt, wie Sie dynamische Parameter definieren, die dem Cmdlet zur Laufzeit hinzugefügt werden. In diesem Beispiel wird der `Department` Parameter zum Cmdlet hinzugefügt, wenn der Benutzer den `Employee` Switch-Parameter angibt. Weitere Informationen zu dynamischen Parametern finden [Sie unter Cmdlet Dynamic Parameters](./cmdlet-dynamic-parameters.md).
 
 ## <a name="to-define-dynamic-parameters"></a>So definieren Sie dynamische Parameter
 
@@ -60,7 +60,7 @@ Dieses Beispiel zeigt, wie Sie dynamische Parameter definieren, die dem Cmdlet z
 
 ## <a name="example"></a>Beispiel
 
-In diesem Beispiel wird der Parameter "`Department`" hinzugefügt, wenn der Benutzer den Parameter "`Employee`" angibt. Der `Department`-Parameter ist ein optionaler Parameter, und das validateset-Attribut wird verwendet, um die zulässigen Argumente anzugeben.
+In diesem Beispiel wird der `Department`-Parameter hinzugefügt, wenn der Benutzer den `Employee`-Parameter angibt. Der `Department`-Parameter ist ein optionaler Parameter, und das validateset-Attribut wird verwendet, um die zulässigen Argumente anzugeben.
 
 ```csharp
 using System;

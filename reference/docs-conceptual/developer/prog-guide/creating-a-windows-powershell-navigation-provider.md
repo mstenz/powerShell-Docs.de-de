@@ -12,10 +12,10 @@ helpviewer_keywords:
 ms.assetid: 8bd3224d-ca6f-4640-9464-cb4d9f4e13b1
 caps.latest.revision: 5
 ms.openlocfilehash: f73e732ca9416b906b3647c5090dfa04ad940484
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74416198"
 ---
 # <a name="creating-a-windows-powershell-navigation-provider"></a>Erstellen eines Windows PowerShell-Navigationsanbieters
@@ -150,7 +150,7 @@ Der Beispiel-Navigations Anbieter setzt diese Methode nicht außer Kraft. Im fol
 
 Ihre Implementierung von [System. Management. Automation. Provider. navigationcmdletprovider. normalizerelativepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.NormalizeRelativePath) sollte den `path`-Parameter analysieren, jedoch nicht die rein syntaktische Analyse verwenden. Es wird empfohlen, diese Methode so zu entwerfen, dass Sie den Pfad verwendet, um die Pfadinformationen im Datenspeicher zu suchen und einen Pfad zu erstellen, der mit der Syntax für Groß-und Kleinschreibung übereinstimmt.
 
-## <a name="code-sample"></a>Code Beispiel
+## <a name="code-sample"></a>Codebeispiel
 
 Einen umfassenden Beispielcode finden Sie unter [AccessDbProviderSample05-Codebeispiel](./accessdbprovidersample05-code-sample.md).
 
@@ -284,7 +284,7 @@ Wenn Ihr Windows PowerShell-Anbieter bei Windows PowerShell registriert wurde, k
    ReportsTo       : 2
    ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Erstellen von Windows PowerShell-Anbietern](./how-to-create-a-windows-powershell-provider.md)
 

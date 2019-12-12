@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: a252e0ec-d456-42d7-bd49-d6b8bc57f388
 caps.latest.revision: 11
 ms.openlocfilehash: 9c9d50c880f843e21621e5735c800e3afb48b2ad
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369719"
 ---
 # <a name="extending-output-objects"></a>Erweitern von Ausgabeobjekten
@@ -21,7 +21,7 @@ Sie können die .NET Framework Objekte, die von Cmdlets, Funktionen und Skripts 
 
 ## <a name="extending-the-systemarray-object"></a>Erweitern des System. Array-Objekts
 
-Das folgende Beispiel zeigt, wie Windows PowerShell das [System. Array](/dotnet/api/System.Array) -Objekt in der Datei Types. ps1xml erweitert. Standardmäßig verfügen [System. Array](/dotnet/api/System.Array) -Objekte über eine `Length`-Eigenschaft, die die Anzahl der Objekte im Array auflistet. Da der Name "length" die Eigenschaft jedoch nicht eindeutig beschreibt, fügt Windows PowerShell die `Count`-Alias Eigenschaft hinzu, die denselben Wert wie die Eigenschaft "`Length`" anzeigt. Mit dem folgenden XML-Code wird dem [System. Array](/dotnet/api/System.Array) -Typ die `Count`-Eigenschaft hinzugefügt.
+Das folgende Beispiel zeigt, wie Windows PowerShell das [System. Array](/dotnet/api/System.Array) -Objekt in der Datei Types. ps1xml erweitert. Standardmäßig verfügen [System. Array](/dotnet/api/System.Array) -Objekte über eine `Length`-Eigenschaft, die die Anzahl der Objekte im Array auflistet. Da die Eigenschaft mit dem Namen "length" jedoch nicht eindeutig beschrieben wird, fügt Windows PowerShell die `Count` Alias Eigenschaft hinzu, die denselben Wert wie die Eigenschaft "`Length`" anzeigt. Im folgenden XML-Code wird dem [System. Array](/dotnet/api/System.Array) -Typ die `Count`-Eigenschaft hinzugefügt.
 
 ```xml
 <Type>

@@ -12,10 +12,10 @@ helpviewer_keywords:
 ms.assetid: 1fcc4c5e-0c75-496c-a712-5f844e310576
 caps.latest.revision: 14
 ms.openlocfilehash: 979025ad5c34ab73dcc23d0e38ffb9acc431f15a
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363519"
 ---
 # <a name="cmdlet-class-declaration"></a>Deklaration der Cmdlet-Klasse
@@ -45,7 +45,7 @@ Mit dem **Cmdlet** -Attribut können Sie auch angeben, dass das Cmdlet einige de
 
 Weitere Informationen zur Deklarations Syntax, die zum Angeben des **Cmdlet** -Attributs verwendet wird, finden Sie unter [Cmdlet-Attribut Deklaration](./cmdlet-attribute-declaration.md).
 
-## <a name="cmdlet-class-definition"></a>Cmdlet-Klassen Definition
+## <a name="cmdlet-class-definition"></a>Cmdlet-Klassendefinition
 
 Der folgende Code ist die Definition für eine getproc-Cmdlet-Klasse. Beachten Sie, dass die Pascal-Schreibweise verwendet wird und dass der Name der Klasse das Verb und das Substantiv des Cmdlets enthält.
 
@@ -53,7 +53,7 @@ Der folgende Code ist die Definition für eine getproc-Cmdlet-Klasse. Beachten S
 
 ## <a name="pascal-casing"></a>Pascal-Schreibweise
 
-Wenn Sie Cmdlets benennen, verwenden Sie die Pascal-Schreibweise. Die Cmdlets `Get-Item` und `Get-ItemProperty` zeigen z. b. die richtige Methode für die Verwendung von Groß-/Kleinschreibung, wenn Sie Cmdlets benennen.
+Wenn Sie Cmdlets benennen, verwenden Sie die Pascal-Schreibweise. Die Cmdlets `Get-Item` und `Get-ItemProperty` zeigen z. b. die richtige Methode für die Verwendung von Groß-und Kleinschreibung, wenn Sie Cmdlets benennen.
 
 ## <a name="see-also"></a>Weitere Informationen
 

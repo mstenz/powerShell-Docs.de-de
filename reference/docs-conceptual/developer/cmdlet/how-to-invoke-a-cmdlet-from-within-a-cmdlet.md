@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: efa4dc9c-ddee-46a3-978a-9dbb61e9bb6f
 caps.latest.revision: 12
 ms.openlocfilehash: 57543a88d04eb66c9d109249a99ddd272b02ef9d
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365549"
 ---
 # <a name="how-to-invoke-a-cmdlet-from-within-a-cmdlet"></a>Aufrufen eines Cmdlet in einem Cmdlet
 
-In diesem Beispiel wird gezeigt, wie ein Cmdlet aus einem anderen Cmdlet aufgerufen wird, mit dem Sie die Funktionalität des aufgerufenen Cmdlets zum Cmdlet hinzufügen können, das Sie entwickeln. In diesem Beispiel wird das Cmdlet "`Get-Process`" aufgerufen, um die Prozesse zu erhalten, die auf dem lokalen Computer ausgeführt werden. Der-Befehl für das-Cmdlet "`Get-Process`" entspricht dem folgenden Befehl. Dieser Befehl ruft alle Prozesse ab, deren Namen mit den Zeichen "a" bis "t" beginnen.
+In diesem Beispiel wird gezeigt, wie ein Cmdlet aus einem anderen Cmdlet aufgerufen wird, mit dem Sie die Funktionalität des aufgerufenen Cmdlets zum Cmdlet hinzufügen können, das Sie entwickeln. In diesem Beispiel wird das Cmdlet `Get-Process` aufgerufen, um die Prozesse zu erhalten, die auf dem lokalen Computer ausgeführt werden. Der-Befehl zum `Get-Process`-Cmdlet entspricht dem folgenden Befehl. Dieser Befehl ruft alle Prozesse ab, deren Namen mit den Zeichen "a" bis "t" beginnen.
 
 ```powershell
 Get-Process -name [a-t]
@@ -43,7 +43,7 @@ Get-Process -name [a-t]
     gp.Name = new string[] { "[a-t]*" };
     ```
 
-3. Rufen Sie die [System. Management. Automation. Cmdlet. aufrufen *](/dotnet/api/System.Management.Automation.Cmdlet.Invoke) -Methode auf, um das Cmdlet "`Get-Process`" aufzurufen.
+3. Rufen Sie die [System. Management. Automation. Cmdlet. Call*](/dotnet/api/System.Management.Automation.Cmdlet.Invoke) -Methode auf, um das Cmdlet "`Get-Process`" aufzurufen.
 
     ```csharp
       foreach (Process p in gp.Invoke<Process>())

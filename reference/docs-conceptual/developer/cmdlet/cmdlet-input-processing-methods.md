@@ -11,10 +11,10 @@ helpviewer_keywords:
 ms.assetid: b0bb8172-c9fa-454b-9f1b-57c3fe60671b
 caps.latest.revision: 12
 ms.openlocfilehash: a28c8d3df19bc72bf338d6abc4e02768c5097209
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369869"
 ---
 # <a name="cmdlet-input-processing-methods"></a>Cmdlet-Eingabeverarbeitungsmethoden
@@ -63,7 +63,7 @@ Beispielsweise muss das Cmdlet möglicherweise Objektvariablen bereinigen, nachd
 
 Wenn PowerShell eine Befehls Pipeline verarbeitet, ruft PowerShell diese Methode für jede Instanz des Cmdlets in der Pipeline einmal auf.
 Es ist jedoch wichtig zu beachten, dass die PowerShell-Runtime die EndProcessing-Methode nicht aufruft, wenn das Cmdlet in der Mitte durch die Eingabe Verarbeitung abgebrochen wird oder wenn in einem beliebigen Teil des Cmdlets ein Abbruch Fehler auftritt.
-Aus diesem Grund sollte ein Cmdlet, das die Objekt Bereinigung erfordert, das komplette [System. iverwerf-](/dotnet/api/System.IDisposable) Muster implementieren, einschließlich eines Finalizers, damit die Laufzeit sowohl die EndProcessing-als auch die [System. iverwerf.](/dotnet/api/System.IDisposable.Dispose) verwerfen-Methode am Ende von abrufen kann. Aufbereitungs.
+Aus diesem Grund sollte ein Cmdlet, das die Objekt Bereinigung erfordert, das komplette [System. iverwerf-](/dotnet/api/System.IDisposable) Muster implementieren, einschließlich eines Finalizers, damit die Laufzeit die EndProcessing-und die [System. iverwerf.](/dotnet/api/System.IDisposable.Dispose) verwerfen-Methode am Ende der Verarbeitung abrufen kann.
 Weitere Informationen dazu, wie PowerShell die Befehls Pipeline aufruft, finden Sie unter [Cmdlet processing Lifecycle](/previous-versions/ms714429(v=vs.85)).
 
 Der folgende Code zeigt eine Implementierung der EndProcessing-Methode.
@@ -86,6 +86,6 @@ protected override void EndProcessing()
 
 [Selectstr-Tutorial](selectstr-tutorial.md)
 
-[System. iverwerfbare](/dotnet/api/System.IDisposable)
+[System.IDisposable](/dotnet/api/System.IDisposable)
 
 [Windows PowerShell Shell SDK](../windows-powershell-reference.md)

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 41d2b308-a36a-496f-8542-666b6a21eedc
 caps.latest.revision: 19
 ms.openlocfilehash: e68e43a91f9139e8d3dc636b5740121515aab2e6
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369519"
 ---
 # <a name="required-development-guidelines"></a>Erforderliche Entwicklungsrichtlinien
@@ -21,7 +21,7 @@ Die folgenden Richtlinien müssen befolgt werden, wenn Sie die Cmdlets schreiben
 
 ## <a name="in-this-topic"></a>In diesem Thema
 
-### <a name="design-guidelines"></a>Entwurfs Richtlinien
+### <a name="design-guidelines"></a>Entwurfsrichtlinien
 
 - [Nur genehmigte Verben verwenden (RD01)](./required-development-guidelines.md#use-only-approved-verbs-rd01)
 
@@ -51,7 +51,7 @@ Die folgenden Richtlinien müssen befolgt werden, wenn Sie die Cmdlets schreiben
 
 - [Verwenden eines Windows PowerShell-Moduls zum Bereitstellen von Cmdlets (RC07)](./required-development-guidelines.md#use-a-windows-powershell-module-to-deploy-your-cmdlets-rc07)
 
-## <a name="design-guidelines"></a>Entwurfs Richtlinien
+## <a name="design-guidelines"></a>Entwurfsrichtlinien
 
 Beim Entwerfen von Cmdlets müssen die folgenden Richtlinien befolgt werden, um eine konsistente Benutzer Darstellung zwischen der Verwendung ihrer Cmdlets und anderer Cmdlets sicherzustellen. Wenn Sie eine Entwurfsrichtlinie finden, die für Ihre Situation gilt, sollten Sie sich die Code Richtlinien für ähnliche Richtlinien ansehen.
 
@@ -81,31 +81,31 @@ Benutzer benötigen einen Satz erkennbarer und erwarteter Cmdlet-Namen. Verwende
 
 Wenn Sie Cmdlets benennen, dürfen Sie keines der folgenden Sonderzeichen verwenden.
 
-|Art|Name|
+|Zeichen|Name|
 |---------------|----------|
-|#|Nummern Zeichen|
+|#|Nummernzeichen|
 |,|Komma|
 |()|Klammern|
 |{}|Klammern|
 |[]|angegeben|
-|&|Kaufmännisches und|
+|&|kaufmännisches und|
 |-|Bindestrich **Hinweis:** der Bindestrich kann verwendet werden, um das Verb vom Substantiv zu trennen, aber es kann nicht innerhalb des Substantiv oder innerhalb des Verbs verwendet werden.|
 |/|Schrägstrich|
-|\\ | umgekehrter Schrägstrich|
+|\\| umgekehrter Schrägstrich|
 |$|Dollarzeichen|
-|^|Einfügemarke|
+|^|Caretzeichen|
 |;|Semikolon|
 |:|Doppelpunkt|
 |"|doppeltes Anführungszeichen|
-|'|einfache Anführungszeichen|
+|'|Einfaches Anführungszeichen|
 |<>|spitzen Klammern|
 |&#124;|senkrechter Strich|
 |?|Fragezeichen|
-|@|at-Zeichen|
+|@|@-Zeichen|
 |`|Backtick (großes Akzent)|
-|*|gekennzeichneten|
+|*|Sternchen|
 |%|Prozentzeichen|
-|+|Plus Zeichen|
+|+|Pluszeichen|
 |=|Gleichheitszeichen|
 |~|Tilde|
 
@@ -115,14 +115,14 @@ Windows PowerShell bietet einen gemeinsamen Satz von Parametern für alle Cmdlet
 
 ### <a name="support-confirmation-requests-rd04"></a>Unterstützung von Bestätigungs Anforderungen (RD04)
 
-Für Cmdlets, die einen Vorgang ausführen, der das System ändert, sollten Sie die [System. Management. Automation. Cmdlet. Schulter dprocess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) -Methode zum Anfordern der Bestätigung und in besonderen Fällen das [ System. Management. Automation. Cmdlet. schuldcontinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) -Methode. (Die [System. Management. Automation. Cmdlet. schuldcontinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) -Methode sollte nur aufgerufen werden, nachdem die [System. Management. Automation. Cmdlet. Schulter Name Process *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) -Methode aufgerufen wurde.)
+Für Cmdlets, die einen Vorgang ausführen, der das System ändert, sollten Sie die [System. Management. Automation. Cmdlet. Schulter dprocess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) -Methode zum Anfordern der Bestätigung und in speziellen Fällen die [System. Management. Automation. Cmdlet. Schulter dcontinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) -Methode aufruft. (Die [System. Management. Automation. Cmdlet. schuldcontinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) -Methode sollte nur aufgerufen werden, nachdem die [System. Management. Automation. Cmdlet. Schulter Name Process *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) -Methode aufgerufen wurde.)
 
-Um diese Aufrufe durchzuführen, muss das Cmdlet angeben, dass Bestätigungs Anforderungen unterstützt werden, indem das `SupportsShouldProcess`-Schlüsselwort des Cmdlet-Attributs festgelegt wird. Weitere Informationen zum Festlegen dieses Attributs finden [Sie unter Cmdlet-Attribut Deklaration](./cmdlet-attribute-declaration.md).
+Um diese Aufrufe vorzunehmen, muss das Cmdlet angeben, dass Bestätigungs Anforderungen unterstützt werden, indem das `SupportsShouldProcess`-Schlüsselwort des Cmdlet-Attributs festgelegt wird. Weitere Informationen zum Festlegen dieses Attributs finden [Sie unter Cmdlet-Attribut Deklaration](./cmdlet-attribute-declaration.md).
 
 > [!NOTE]
-> Wenn das Cmdlet-Attribut der Cmdlet-Klasse anzeigt, dass das Cmdlet Aufrufe der [System. Management. Automation. Cmdlet. Schulter dprocess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) -Methode unterstützt, und das Cmdlet den Aufruf von [nicht durchführen kann. System. Management. Automation. Cmdlet. schuldprocess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) -Methode, kann der Benutzer das System unerwartet ändern.
+> Wenn das Cmdlet-Attribut der Cmdlet-Klasse anzeigt, dass das Cmdlet Aufrufe der [System. Management. Automation. Cmdlet. Schulter dprocess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) -Methode unterstützt, und das Cmdlet den Aufruf der [System. Management. Automation. Cmdlet. Schulter dprocess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) -Methode nicht ausführen kann, kann der Benutzer das System unerwartet ändern.
 
-Verwenden Sie die [System. Management. Automation. Cmdlet. Schulter dprocess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) -Methode für jede System Änderung. Eine Benutzereinstellung und der `WhatIf`-Parameter steuern die [System. Management. Automation. Cmdlet. tiondprocess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) -Methode. Im Gegensatz dazu führt der [System. Management. Automation. Cmdlet. schuldcontinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) -Befehl eine zusätzliche Überprüfung auf potenziell gefährliche Änderungen aus. Diese Methode wird nicht durch eine Benutzereinstellung oder den `WhatIf`-Parameter gesteuert. Wenn das Cmdlet die [System. Management. Automation. Cmdlet. tiondcontinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) -Methode aufruft, sollte es über einen `Force`-Parameter verfügen, der die Aufrufe an diese beiden Methoden umgeht und den Vorgang fortsetzt. Dies ist wichtig, da das Cmdlet in nicht interaktiven Skripts und Hosts verwendet werden kann.
+Verwenden Sie die [System. Management. Automation. Cmdlet. Schulter dprocess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) -Methode für jede System Änderung. Eine Benutzereinstellung und der `WhatIf`-Parameter steuern die [System. Management. Automation. Cmdlet. Schulter dprocess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) -Methode. Im Gegensatz dazu führt der [System. Management. Automation. Cmdlet. schuldcontinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) -Befehl eine zusätzliche Überprüfung auf potenziell gefährliche Änderungen aus. Diese Methode wird nicht durch eine Benutzereinstellung oder den `WhatIf`-Parameter gesteuert. Wenn das Cmdlet die [System. Management. Automation. Cmdlet. tiondcontinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) -Methode aufruft, sollte es über einen `Force` Parameter verfügen, der die Aufrufe an diese beiden Methoden umgeht und den Vorgang fortsetzt. Dies ist wichtig, da das Cmdlet in nicht interaktiven Skripts und Hosts verwendet werden kann.
 
 Wenn die Cmdlets diese Aufrufe unterstützen, kann der Benutzer bestimmen, ob die Aktion tatsächlich ausgeführt werden soll. Beispielsweise ruft das Cmdlet " [Stopp-Process](/powershell/module/microsoft.powershell.management/stop-process) " die [System. Management. Automation. Cmdlet. tiondcontinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) -Methode auf, bevor es eine Reihe kritischer Prozesse stoppt, einschließlich der System-, Winlogon-und spoolsv-Prozesse.
 
@@ -196,11 +196,11 @@ Eine Verwaltungs Umgebung erkennt von Natur aus wichtige Änderungen am System, 
 
 - Wenn ein Fehler verhindert, dass ein Cmdlet die Verarbeitung von weiteren Datensätzen fortsetzt, ist dies ein Abbruch Fehler. Das Cmdlet muss die [System. Management. Automation. Cmdlet. ThrowTerminatingError *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) -Methode, die auf ein [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) -Objekt verweist, aufruft. Wenn eine Ausnahme vom Cmdlet nicht abgefangen wird, löst die Windows PowerShell-Laufzeit selbst einen Abbruch Fehler aus, der weniger Informationen enthält.
 
-- Bei einem Fehler ohne Abbruch, bei dem der Vorgang für den nächsten Datensatz, der aus der Pipeline stammt (z. b. ein von einem anderen Prozess generierender Datensatz), nicht beendet wird, muss das Cmdlet die [System. Management. Automation. Cmdlet. Write error *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) -Methode aufrufen, die verweist auf ein [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) -Objekt. Ein Beispiel für einen Fehler ohne Abbruch ist der Fehler, der auftritt, wenn ein bestimmter Prozess nicht beendet wird. Durch Aufrufen der [System. Management. Automation. Cmdlet. Write-error *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) -Methode kann der Benutzer die angeforderten Aktionen konsistent ausführen und die Informationen für bestimmte Aktionen beibehalten, die fehlschlagen. Ihr Cmdlet sollte jeden Datensatz so unabhängig wie möglich verarbeiten.
+- Bei einem Fehler ohne Abbruch, bei dem der Vorgang für den nächsten Datensatz, der aus der Pipeline stammt (z. b. ein von einem anderen Prozess generierender Datensatz), nicht beendet wird, muss das Cmdlet die [System. Management. Automation. Cmdlet. Write-error *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) -Methode aufrufen, die auf ein [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) -Objekt verweist. Ein Beispiel für einen Fehler ohne Abbruch ist der Fehler, der auftritt, wenn ein bestimmter Prozess nicht beendet wird. Durch Aufrufen der [System. Management. Automation. Cmdlet. Write-error *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) -Methode kann der Benutzer die angeforderten Aktionen konsistent ausführen und die Informationen für bestimmte Aktionen beibehalten, die fehlschlagen. Ihr Cmdlet sollte jeden Datensatz so unabhängig wie möglich verarbeiten.
 
-- Das [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) -Objekt, auf das von der [System. Management. Automation. Cmdlet. ThrowTerminatingError *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) -und der [System. Management. Automation. Cmdlet. Write-error *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) -Methode verwiesen wird, erfordert ein Ausnahme im Kern. Befolgen Sie die Entwurfs Richtlinien für .NET Framework, wenn Sie die zu verwendende Ausnahme bestimmen. Wenn der Fehler semantisch identisch mit einer vorhandenen Ausnahme ist, verwenden Sie diese Ausnahme oder leiten Sie von dieser Ausnahme ab. Leiten Sie andernfalls eine neue Ausnahme-oder eine Ausnahme Hierarchie direkt vom [System. Exception](/dotnet/api/System.Exception) -Typ ab.
+- Das [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) -Objekt, auf das von der [System. Management. Automation. Cmdlet. ThrowTerminatingError *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) -und der [System. Management. Automation. Cmdlet. Write-error *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) -Methode verwiesen wird, erfordert im Kern eine Ausnahme. Befolgen Sie die Entwurfs Richtlinien für .NET Framework, wenn Sie die zu verwendende Ausnahme bestimmen. Wenn der Fehler semantisch identisch mit einer vorhandenen Ausnahme ist, verwenden Sie diese Ausnahme oder leiten Sie von dieser Ausnahme ab. Leiten Sie andernfalls eine neue Ausnahme-oder eine Ausnahme Hierarchie direkt vom [System. Exception](/dotnet/api/System.Exception) -Typ ab.
 
-Ein [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) -Objekt benötigt außerdem eine Fehler Kategorie, in der Fehler für den Benutzer gruppiert werden. Der Benutzer kann Fehler basierend auf der Kategorie anzeigen, indem er den Wert der Shellvariablen `$ErrorView` auf categoryview festlegt. Die möglichen Kategorien werden von der [System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory) -Enumeration definiert.
+Ein [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) -Objekt benötigt außerdem eine Fehler Kategorie, in der Fehler für den Benutzer gruppiert werden. Der Benutzer kann Fehler basierend auf der Kategorie anzeigen, indem er den Wert der `$ErrorView` Shellvariable auf categoryview festlegt. Die möglichen Kategorien werden von der [System. Management. Automation. ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory) -Enumeration definiert.
 
 - Wenn ein Cmdlet einen neuen Thread erstellt und der Code, der in diesem Thread ausgeführt wird, eine nicht behandelte Ausnahme auslöst, wird der Fehler von Windows PowerShell nicht abgefangen, und der Prozess wird beendet.
 

@@ -11,10 +11,10 @@ helpviewer_keywords:
 ms.assetid: 6c24dd44-a8ec-421d-ac86-90912e1a8cc6
 caps.latest.revision: 5
 ms.openlocfilehash: 7166881bd1403ea8c81ec2928321f6b93e3ac58d
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72360269"
 ---
 # <a name="how-to-create-a-console-shell"></a>Erstellen einer Konsolenshell
@@ -54,7 +54,7 @@ Im folgenden finden Sie eine kurze Beschreibung der Parameter von Make-Shell.
 |---------------|-----------------|
 |-Out n. exe|Erforderlich. Der Name der zu erstellenden Shell. Der Pfad wird als Teil dieses Parameters angegeben.<br /><br /> "Make-Shell" fügt ". exe" an diesen Wert an, wenn er nicht angegeben ist. **Vorsicht:**  Erstellen Sie keine Ausgabedatei mit demselben Namen wie die DLL-Datei, auf die verwiesen wird. Wenn Sie dies versuchen, erstellt das Make-Shell-Tool eine CS-Datei mit dem gleichen Namen, die die CS-Datei mit dem Cmdlet-Quellcode überschreibt.|
 |-Namespace-NS|Erforderlich. Der Namespace, der für die abgeleitete [System. Management. Automation. Runspaces. runspaceconfiguration](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConfiguration) -Klasse verwendet werden soll, die vom Make-Kit generiert und kompiliert wird.|
-|-lib libdirectory1 [, libdirectory2,..]|Die Verzeichnisse, die nach .NET-Assemblys durchsucht werden, einschließlich der Windows PowerShell-Assemblys, Assemblys, die vom Parameter "`reference`" angegeben werden, werden indirekt von einer anderen Assembly referenzierte Assemblys|
+|-lib libdirectory1 [, libdirectory2,..]|Die Verzeichnisse, die nach .NET-Assemblys durchsucht werden, einschließlich der Windows PowerShell-Assemblys, der vom `reference`-Parameter angegebenen Assemblys, auf die indirekt von einer anderen Assembly verwiesen wird, und der .net|
 |-Reference CA1. dll [, Ca2. dll,...]|Eine durch Trennzeichen getrennte Liste der Assemblys, die in der Shell enthalten sein sollen. Diese Assemblys enthalten alle Cmdlets und anbieteassemblys sowie Ressourcenassemblys, die geladen werden sollten. Wenn dieser Parameter nicht angegeben wird, wird eine Shell erstellt, die nur die Kern-Cmdlets und Anbieter enthält, die von Windows PowerShell bereitgestellt werden.<br /><br /> Die Assemblys können mithilfe Ihres vollständigen Pfads angegeben werden. andernfalls werden Sie nach dem durch den `lib`-Parameter angegebenen Pfad durchsucht.|
 |-formatdata fd1. Format. ps1xml [, FD2. Format. ps1xml,...]|Eine durch Trennzeichen getrennte Liste von Format Daten, die in der Shell enthalten sein sollen. Wenn dieser Parameter nicht angegeben wird, wird eine Shell erstellt, die nur die von Windows PowerShell bereitgestellten Formatierungsdaten enthält.|
 |-typedata TD1. Type. ps1xml [, TD2. Type. ps1xml,...]|Eine durch Trennzeichen getrennte Liste von Typdaten, die in der Shell enthalten sein sollen. Wenn dieser Parameter nicht angegeben wird, wird eine Shell erstellt, die nur die Typdaten enthält, die von Windows PowerShell bereitgestellt werden.|
@@ -63,10 +63,10 @@ Im folgenden finden Sie eine kurze Beschreibung der Parameter von Make-Shell.
 |-win32icon i. ico|Das Symbol für die exe-Datei für die Shell. Wenn kein Wert angegeben wird, hat die Shell das Symbol, das der c#-Compiler enthält (sofern vorhanden).|
 |-Initscript p. ps1|Das Start Profil für die Shell. Die Datei ist "unverändert" enthalten. keine Gültigkeits Überprüfung erfolgt durch make-Shell.|
 |-builtinscript S1. ps1 [, S2. ps1,...]|Eine Liste der integrierten Skripts für die Shell. Diese Skripts werden vor Skripts im Pfad erkannt, und ihre Inhalte können nicht mehr geändert werden, nachdem die Shell erstellt wurde.<br /><br /> Die Dateien sind unverändert enthalten. keine Gültigkeits Überprüfung erfolgt durch make-Shell.|
-|-Resource resourceFile. txt|Die txt-Datei, die Hilfe-und Banner Ressourcen für die Shell enthält. Die erste Ressource heißt "shellhelp" und enthält den Text, der angezeigt wird, wenn die Shell mit dem Parameter "`help`" aufgerufen wird. Die zweite Ressource heißt shellbanner und enthält den Text und die Copyright Informationen, die angezeigt werden, wenn die Shell im interaktiven Modus gestartet wird.<br /><br /> Wenn dieser Parameter nicht angegeben wird oder diese Ressourcen nicht vorhanden sind, werden eine generische Hilfe und ein Banner verwendet.|
+|-Resource resourceFile. txt|Die txt-Datei, die Hilfe-und Banner Ressourcen für die Shell enthält. Die erste Ressource heißt "shellhelp" und enthält den Text, der angezeigt wird, wenn die Shell mit dem `help`-Parameter aufgerufen wird. Die zweite Ressource heißt shellbanner und enthält den Text und die Copyright Informationen, die angezeigt werden, wenn die Shell im interaktiven Modus gestartet wird.<br /><br /> Wenn dieser Parameter nicht angegeben wird oder diese Ressourcen nicht vorhanden sind, werden eine generische Hilfe und ein Banner verwendet.|
 |cscflags-cscflags|Flags, die an den C# Compiler (CSC. exe) übermittelt werden sollen. Diese werden unverändert übermittelt. Wenn dieser Parameter Leerzeichen enthält, sollte er in doppelte Anführungszeichen eingeschlossen werden.|
-|-?<br /><br /> -Hilfe|Zeigt die Copyright Meldung und die Befehlszeilenoptionen für die Befehlszeile an.|
-|-Verbose|Zeigt ausführliche Informationen an, während die Shell erstellt wird.|
+|-?<br /><br /> -help|Zeigt die Copyright Meldung und die Befehlszeilenoptionen für die Befehlszeile an.|
+|-verbose|Zeigt ausführliche Informationen an, während die Shell erstellt wird.|
 
 ## <a name="see-also"></a>Weitere Informationen
 

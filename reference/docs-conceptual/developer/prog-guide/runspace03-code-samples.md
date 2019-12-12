@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: a6b8303d-e868-4dd0-bbbb-ed2e6d8f2f76
 caps.latest.revision: 6
 ms.openlocfilehash: 93bcdb1dae1c55e46fa06161141117286a9009a9
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417979"
 ---
 # <a name="runspace03-code-samples"></a>Runspace03-Codebeispiele
@@ -25,12 +25,12 @@ Im folgenden finden Sie die Codebeispiele für den Runspace, der unter "Erstelle
 
 Einen umfassenden Beispielcode finden Sie in den folgenden Themen.
 
-| Sprache |                                 Thema                                 |
+| Language |                                 Thema                                 |
 | -------- | --------------------------------------------------------------------- |
 | C#       | [RunSpace03 (C#)-Code Beispiel](./runspace03-csharp-code-sample.md)     |
 | VB.NET   | [RunSpace03 (VB.net)-Code Beispiel](./runspace03-vb-net-code-sample.md) |
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Windows PowerShell-Programmier Handbuch](./windows-powershell-programmer-s-guide.md)
 

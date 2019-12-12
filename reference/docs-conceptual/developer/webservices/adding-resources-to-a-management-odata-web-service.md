@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: e620bf6d-76be-47b0-a7a8-f43418f30c60
 caps.latest.revision: 6
 ms.openlocfilehash: b81a32b867795ae51c3f5308c2f82c31ed2747fa
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359819"
 ---
 # <a name="adding-resources-to-a-management-odata-web-service"></a>Hinzufügen von Ressourcen zu einem Management OData-Webdienst
@@ -49,19 +49,19 @@ Der erste Schritt besteht darin, das Schema aus dem vorhandenen Verwaltungs-odat
 
 2. Stellen Sie sicher, dass **lokaler Computer** ausgewählt ist, und klicken Sie auf **weiter**.
 
-3. Stellen Sie sicher, dass installierte Windows PowerShell-Module ausgewählt ist, und wählen Sie in der Dropdown Liste die Option Hyper-V aus. Klicken Sie auf **weiter**. Klicken Sie auf **Weiter**.
+3. Stellen Sie sicher, dass installierte Windows PowerShell-Module ausgewählt ist, und wählen Sie in der Dropdown Liste die Option Hyper-V aus. Klicken Sie auf **Weiter**. Klicken Sie auf **Weiter**.
 
 4. Wählen Sie in der **Cmdlet-Substantiv** Liste die Option **VM**aus. Klicken Sie auf **Weiter**.
 
-5. In diesem Beispiel werden nur die Get-und DELETE-Befehle mit Cmdlets gebunden. Deaktivieren Sie die Kontrollkästchen **Erstellen** und **Aktualisieren** , und stellen Sie sicher, dass die Kontrollkästchen **Get** und **Delete** aktiviert sind. Stellen Sie sicher, dass das Cmdlet "`Get-VM`" für **Get**ausgewählt ist und das Cmdlet "`Remove-VM`" zum **Löschen**ausgewählt ist.
+5. In diesem Beispiel werden nur die Get-und DELETE-Befehle mit Cmdlets gebunden. Deaktivieren Sie die Kontrollkästchen **Erstellen** und **Aktualisieren** , und stellen Sie sicher, dass die Kontrollkästchen **Get** und **Delete** aktiviert sind. Stellen Sie sicher, dass das Cmdlet "`Get-VM`" für **Get**ausgewählt ist, und dass das `Remove-VM`-Cmdlet zum **Löschen**ausgewählt ist.
 
-6. Da in den Metadaten für die VM-Cmdlets kein Ausgabetyp angegeben ist, müssen Sie das Cmdlet ausführen, um den Ausgabetyp anzugeben. Wählen Sie geben Sie den **Ausgabetyp** aus, und klicken Sie auf **Ausführen** Das Dialogfeld " **Cmdlet ausführen** " wird angezeigt. Klicken Sie auf **Ausführen**. Das Feld für den **CLR-Typ** wird mit dem Typ "`VirtualMachine`" aufgefüllt. Klicken Sie auf **OK**, und klicken Sie dann auf **weiter**.
+6. Da in den Metadaten für die VM-Cmdlets kein Ausgabetyp angegeben ist, müssen Sie das Cmdlet ausführen, um den Ausgabetyp anzugeben. Wählen Sie geben Sie den **Ausgabetyp** aus, und klicken Sie auf **Ausführen** Das Dialogfeld " **Cmdlet ausführen** " wird angezeigt. Klicken Sie auf **Ausführen**. Das Feld für den **CLR-Typ** wird mit dem `VirtualMachine`-Typ aufgefüllt. Klicken Sie auf **OK**, und klicken Sie dann auf **weiter**.
 
 7. Standardmäßig sind alle Eigenschaften des virtualmachine-Objekts ausgewählt. Sie können alle Eigenschaften löschen, die nicht als Teil der Daten angezeigt werden sollen, die zurückgegeben werden, wenn Sie diese Ressource vom Webdienst anfordern. Klicken Sie auf **Weiter**.
 
 8. Sie müssen mindestens eine Eigenschaft auswählen, die als Schlüssel verwendet werden soll. Wählen Sie in der Liste **Name** aus, und klicken Sie auf **weiter**.
 
-9. Im nächsten Fenster können Sie Eigenschaften der odata-Verwaltungs Ressource den Eigenschaften der zugrunde liegenden Cmdlets zuordnen. Der Assistent ordnet Eigenschaften standardmäßig identischen Namen zu. Beispielsweise wird die `ComputerName`-Eigenschaft der Ressource der Eigenschaft `ComputerName` der Cmdlets zugeordnet.  Dies ermöglicht es Ihnen, die `ComputerName`-Eigenschaft in einer Anforderung an den Webdienst anzugeben, und der angegebene Wert muss an das Cmdlet `Get-VM` übergeben werden. `Id` und `Name` werden ebenfalls standardmäßig zugeordnet.
+9. Im nächsten Fenster können Sie Eigenschaften der odata-Verwaltungs Ressource den Eigenschaften der zugrunde liegenden Cmdlets zuordnen. Der Assistent ordnet Eigenschaften standardmäßig identischen Namen zu. Beispielsweise wird die `ComputerName`-Eigenschaft der Ressource der Eigenschaft `ComputerName` der Cmdlets zugeordnet.  Auf diese Weise können Sie die `ComputerName`-Eigenschaft in einer Anforderung an den Webdienst angeben und angeben, dass der angegebene Wert an das `Get-VM`-Cmdlet übergeben werden soll. `Id` und `Name` werden ebenfalls standardmäßig zugeordnet.
 
    10. Klicken Sie auf **weiter**und dann auf **Fertig**stellen.
 
@@ -77,4 +77,4 @@ Der erste Schritt besteht darin, das Schema aus dem vorhandenen Verwaltungs-odat
 
 ## <a name="next-steps"></a>Nächste Schritte
 
-Bevor Sie über den odata-Webdienst für die Verwaltung auf die neue VM-Ressource zugreifen, müssen Sie die Datei rbacconfiguration. xml aktualisieren, um den Zugriff auf das Hyper-V-Windows PowerShell-Modul zu ermöglichen, wie unter [Konfigurieren der rollenbasierten Autorisierung](./configuring-role-based-authorization.md)beschrieben. Außerdem werden Sie der Webdienst muss neu gestartet werden.
+Bevor Sie über den odata-Webdienst für die Verwaltung auf die neue VM-Ressource zugreifen, müssen Sie die Datei rbacconfiguration. xml aktualisieren, um den Zugriff auf das Hyper-V-Windows PowerShell-Modul zu ermöglichen, wie unter [Konfigurieren der rollenbasierten Autorisierung](./configuring-role-based-authorization.md)beschrieben. Außerdem müssen Sie den Webdienst neu starten.

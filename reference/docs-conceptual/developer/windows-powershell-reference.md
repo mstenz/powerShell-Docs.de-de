@@ -11,10 +11,10 @@ helpviewer_keywords:
 ms.assetid: cbba4879-bcac-484a-9906-4bbe2cd1eb33
 caps.latest.revision: 11
 ms.openlocfilehash: 48b2b2b9ab2a39cf185ed54bcfa99d46562e13b6
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366279"
 ---
 # <a name="windows-powershell-reference"></a>Windows PowerShell-Referenz
@@ -23,7 +23,7 @@ Windows PowerShell ist eine mit Microsoft .NET Framework verbundene Umgebung, di
 
 Mithilfe von Windows PowerShell kann ein Systemadministrator die Verwaltung von Systemressourcen durch die Ausführung von Befehlen entweder direkt oder über Skripts automatisieren.
 
-## <a name="developer-audience"></a>Entwickler Zielgruppe
+## <a name="developer-audience"></a>Entwicklerzielgruppe
 
 Das Windows PowerShell Software Development Kit (SDK) wird für Befehls Entwickler geschrieben, die Referenzinformationen zu den von Windows PowerShell bereitgestellten APIs benötigen. Befehls Entwickler verwenden Windows PowerShell zum Erstellen von Befehlen und Anbietern, mit denen die von Windows PowerShell auszuführenden Aufgaben erweitert werden.
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: baab6a56-c199-48d7-a03e-a904b1bb1baa
 caps.latest.revision: 7
 ms.openlocfilehash: 7f75a3a3d2ab89696bb34ec2fdf7ba7a5ce0f9b1
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74416237"
 ---
 # <a name="accessdbprovidersample06-code-sample"></a>AccessDbProviderSample06-Codebeispiel
@@ -26,11 +26,11 @@ Der folgende Code zeigt die Implementierung des Windows PowerShell-Inhalts Anbie
 >
 > Weitere Informationen zu anderen Windows PowerShell-Anbieter Implementierungen finden [Sie unter Entwerfen des Windows PowerShell-Anbieters](./designing-your-windows-powershell-provider.md).
 
-## <a name="code-sample"></a>Code Beispiel
+## <a name="code-sample"></a>Codebeispiel
 
 [!code-csharp[AccessDBProviderSample06.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L11-L2399 "AccessDBProviderSample06.cs")]
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Windows PowerShell-Programmier Handbuch](./windows-powershell-programmer-s-guide.md)
 

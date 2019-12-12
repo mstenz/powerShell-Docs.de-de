@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: b7bed607-369b-4507-87fa-f6011c2f1970
 caps.latest.revision: 9
 ms.openlocfilehash: 2ce146df05ef876d9c17f560628ebac2c39e57bf
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365299"
 ---
 # <a name="stopprocesssample01-sample"></a>StopProcessSample01-Beispiel
 
-In diesem Beispiel wird gezeigt, wie ein Cmdlet geschrieben wird, das Feedback vom Benutzer anfordert, bevor es versucht, einen Prozess zu beenden, und wie ein `PassThru`-Parameter implementiert wird, der angibt, dass das Cmdlet ein Objekt zurückgeben soll. Dieses Cmdlet ähnelt dem Cmdlet "`Stop-Process`", das von Windows PowerShell 2,0 bereitgestellt wird.
+In diesem Beispiel wird gezeigt, wie ein Cmdlet geschrieben wird, das Feedback vom Benutzer anfordert, bevor es versucht, einen Prozess zu beenden, und wie ein `PassThru`-Parameter implementiert wird, der angibt, dass das Cmdlet ein Objekt zurückgeben soll. Dieses Cmdlet ähnelt dem `Stop-Process`-Cmdlet, das von Windows PowerShell 2,0 bereitgestellt wird.
 
 ### <a name="how-to-build-the-sample-by-using-visual-studio"></a>So erstellen Sie das Beispiel mithilfe von Visual Studio.
 
@@ -25,11 +25,11 @@ In diesem Beispiel wird gezeigt, wie ein Cmdlet geschrieben wird, das Feedback v
 
 2. Doppelklicken Sie auf das Symbol für die Projektmappendatei (. sln). Dadurch wird das Beispiel Projekt in Microsoft Visual Studio geöffnet.
 
-3. Wählen Sie im Menü **Erstellen** die Option Projekt Mappe **Erstellen**aus.
+3. Wählen Sie im Menü **Erstellen** die Option **Projektmappe erstellen** aus.
 
     Die Bibliothek für das Beispiel wird im Standardordner \bin oder \bin\Debug erstellt.
 
-### <a name="how-to-run-the-sample"></a>So führen Sie das Beispiel aus
+### <a name="how-to-run-the-sample"></a>Ausführen des Beispiels
 
 1. Erstellen Sie den folgenden Modul Ordner:
 
@@ -51,7 +51,7 @@ In diesem Beispiel wird gezeigt, wie ein Cmdlet geschrieben wird, das Feedback v
 
 Dieses Beispiel erfordert Windows PowerShell 2,0.
 
-## <a name="demonstrates"></a>Deutlich
+## <a name="demonstrates"></a>Gegenstand
 
 In diesem Beispiel wird Folgendes veranschaulicht:
 
@@ -65,7 +65,7 @@ In diesem Beispiel wird Folgendes veranschaulicht:
 
 ## <a name="example"></a>Beispiel
 
-In diesem Beispiel wird gezeigt, wie ein `PassThru`-Parameter implementiert wird, der angibt, dass der Benutzer das Cmdlet zum Zurückgeben eines Objekts und das Anfordern von Benutzer Feedback durch Aufrufe der Methoden `ShouldProcess` und `ShouldContinue` benötigt.
+In diesem Beispiel wird gezeigt, wie ein `PassThru` Parameter implementiert wird, der angibt, dass das Cmdlet ein Objekt zurückgeben soll und wie Benutzer Feedback durch Aufrufe der Methoden `ShouldProcess` und `ShouldContinue` angefordert wird.
 
 ```csharp
 using System;

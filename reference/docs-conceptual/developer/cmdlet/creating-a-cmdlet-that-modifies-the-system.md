@@ -14,10 +14,10 @@ helpviewer_keywords:
 ms.assetid: 59be4120-1700-4d92-a308-ef4a32ccf11a
 caps.latest.revision: 8
 ms.openlocfilehash: 8a65915b88a04e36e773853b903528a65fe11e99
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365759"
 ---
 # <a name="creating-a-cmdlet-that-modifies-the-system"></a>Erstellen eines Cmdlet, das das System ändert
@@ -272,7 +272,7 @@ if (criticalProcess &&!force)
 
 Die Eingabe Verarbeitungsmethode eines Cmdlets, das Systemänderungen vornimmt, muss eine Möglichkeit zum Beenden der Verarbeitung von Eingaben bereitstellen. Bei diesem Cmdlet "beenden-proc" wird ein-Befehl von der [System. Management. Automation. Cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) -Methode an die [System. Diagnostics. Process. Kill *](/dotnet/api/System.Diagnostics.Process.Kill) -Methode durchgeführt. Da der `PassThru`-Parameter auf `true`festgelegt ist, wird von [System. Management. Automation. Cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) auch [System. Management. Automation. Cmdlet. Write Object](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) aufgerufen, um das Prozess Objekt an die Pipeline zu senden.
 
-## <a name="code-sample"></a>Code Beispiel
+## <a name="code-sample"></a>Codebeispiel
 
 Den gesamten C# Beispielcode finden Sie unter [StopProcessSample01 Sample](./stopprocesssample01-sample.md).
 
@@ -350,7 +350,7 @@ Die folgende Ausgabe wird angezeigt.
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): N
     ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Hinzufügen von Parametern zur Verarbeitung der Befehlszeilen Eingabe](./adding-parameters-that-process-command-line-input.md)
 

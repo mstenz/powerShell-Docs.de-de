@@ -9,33 +9,33 @@ ms.topic: article
 ms.assetid: 79c9bcbc-a2eb-4253-a4b8-65ba54ce8d01
 caps.latest.revision: 9
 ms.openlocfilehash: 980b488800587e31286e2ca2ece924e07f8af3f3
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72370039"
 ---
 # <a name="advisory-development-guidelines"></a>Empfohlene Entwicklungsrichtlinien
 
 In diesem Abschnitt werden Richtlinien beschrieben, die Sie berücksichtigen sollten, um eine gute Entwicklung und Benutzerfreundlichkeit sicherzustellen. Manchmal können Sie angewendet werden, und manchmal nicht.
 
-## <a name="design-guidelines"></a>Entwurfs Richtlinien
+## <a name="design-guidelines"></a>Entwurfsrichtlinien
 
 Beim Entwerfen von Cmdlets sollten die folgenden Richtlinien berücksichtigt werden. Wenn Sie eine Entwurfsrichtlinie finden, die für Ihre Situation gilt, sollten Sie sich die Code Richtlinien für ähnliche Richtlinien ansehen.
 
 ### <a name="support-an-inputobject-parameter-ad01"></a>Unterstützung eines Inputobject-Parameters (ad01)
 
-Da Windows PowerShell direkt mit Microsoft .NET Framework-Objekten arbeitet, ist häufig ein .NET Framework Objekt verfügbar, das genau mit dem Typ übereinstimmt, den der Benutzer zum Ausführen eines bestimmten Vorgangs benötigt. `InputObject` ist der Standardname für einen Parameter, der ein solches Objekt als Eingabe annimmt. Beispielsweise definiert das Beispiel **Stop-proc-** Cmdlet im [stopproc-Tutorial](./stopproc-tutorial.md) einen `InputObject`-Parameter des Typs Process, der die Eingabe aus der Pipeline unterstützt. Der Benutzer kann einen Satz von Prozess Objekten erhalten, ihn bearbeiten, um die genauen Objekte auszuwählen, die beendet werden sollen, und Sie dann direkt an das Cmdlet "Set **-proc** " übergeben.
+Da Windows PowerShell direkt mit Microsoft .NET Framework-Objekten arbeitet, ist häufig ein .NET Framework Objekt verfügbar, das genau mit dem Typ übereinstimmt, den der Benutzer zum Ausführen eines bestimmten Vorgangs benötigt. `InputObject` ist der Standardname für einen Parameter, der ein solches Objekt als Eingabe annimmt. Beispielsweise definiert das Beispiel **Stop-proc-** Cmdlet im [stopproc-Tutorial](./stopproc-tutorial.md) einen `InputObject` Parameter des Typs Process, der die Eingabe aus der Pipeline unterstützt. Der Benutzer kann einen Satz von Prozess Objekten erhalten, ihn bearbeiten, um die genauen Objekte auszuwählen, die beendet werden sollen, und Sie dann direkt an das Cmdlet "Set **-proc** " übergeben.
 
 ### <a name="support-the-force-parameter-ad02"></a>Unterstützen des Force-Parameters (ad02)
 
-Gelegentlich muss ein Cmdlet den Benutzer vor der Ausführung eines angeforderten Vorgangs schützen. Ein derartiges Cmdlet sollte einen `Force`-Parameter unterstützen, um dem Benutzer zu ermöglichen, diesen Schutz zu überschreiben, wenn der Benutzer über Berechtigungen zum Ausführen des Vorgangs verfügt.
+Gelegentlich muss ein Cmdlet den Benutzer vor der Ausführung eines angeforderten Vorgangs schützen. Ein derartiges Cmdlet sollte einen `Force` Parameter unterstützen, um dem Benutzer zu ermöglichen, diesen Schutz zu überschreiben, wenn der Benutzer über Berechtigungen zum Ausführen des Vorgangs verfügt.
 
-Beispielsweise entfernt das [Remove-Item-](/powershell/module/microsoft.powershell.management/remove-item) Cmdlet normalerweise keine schreibgeschützte Datei. Dieses Cmdlet unterstützt jedoch einen `Force`-Parameter, damit ein Benutzer das Entfernen einer schreibgeschützten Datei erzwingen kann. Wenn der Benutzer bereits über die Berechtigung zum Ändern des schreibgeschützten Attributs verfügt und der Benutzer die Datei entfernt, vereinfacht die Verwendung des Parameters "`Force`" den Vorgang. Wenn der Benutzer jedoch nicht über die Berechtigung zum Entfernen der Datei verfügt, hat der Parameter "`Force`" keine Auswirkung.
+Beispielsweise entfernt das [Remove-Item-](/powershell/module/microsoft.powershell.management/remove-item) Cmdlet normalerweise keine schreibgeschützte Datei. Dieses Cmdlet unterstützt jedoch einen `Force` Parameter, sodass ein Benutzer das Entfernen einer schreibgeschützten Datei erzwingen kann. Wenn der Benutzer bereits über die Berechtigung zum Ändern des schreibgeschützten Attributs verfügt und der Benutzer die Datei entfernt, vereinfacht die Verwendung des `Force`-Parameters den Vorgang. Wenn der Benutzer jedoch nicht über die Berechtigung zum Entfernen der Datei verfügt, hat der `Force`-Parameter keine Auswirkungen.
 
 ### <a name="handle-credentials-through-windows-powershell-ad03"></a>Behandeln von Anmelde Informationen über Windows PowerShell (AD03)
 
-Ein Cmdlet muss einen `Credential`-Parameter definieren, um die Anmelde Informationen darzustellen. Dieser Parameter muss vom Typ " [System. Management. Automation. PSCredential](/dotnet/api/System.Management.Automation.PSCredential) " sein und muss mithilfe der Deklaration eines Credential-Attributs definiert werden. Durch diese Unterstützung wird der Benutzer automatisch zur Eingabe des Benutzernamens, des Kennworts oder für beides aufgefordert, wenn keine vollständigen Anmelde Informationen direkt bereitgestellt werden. Weitere Informationen zum Credential-Attribut finden Sie unter [Credential Attribute Declaration](./credential-attribute-declaration.md).
+Ein Cmdlet muss einen `Credential` Parameter definieren, um die Anmelde Informationen darzustellen. Dieser Parameter muss vom Typ " [System. Management. Automation. PSCredential](/dotnet/api/System.Management.Automation.PSCredential) " sein und muss mithilfe der Deklaration eines Credential-Attributs definiert werden. Durch diese Unterstützung wird der Benutzer automatisch zur Eingabe des Benutzernamens, des Kennworts oder für beides aufgefordert, wenn keine vollständigen Anmelde Informationen direkt bereitgestellt werden. Weitere Informationen zum Credential-Attribut finden Sie unter [Credential Attribute Declaration](./credential-attribute-declaration.md).
 
 ### <a name="support-encoding-parameters-ad04"></a>Unterstützen von Codierungs Parametern (AD04)
 
@@ -59,7 +59,7 @@ Normalerweise definieren Sie die-Klasse für ein Cmdlet in einem .NET Framework 
 
 #### <a name="name-the-cmdlet-class-to-match-the-cmdlet-name"></a>Benennen Sie die Cmdlet-Klasse mit dem Namen des Cmdlets.
 
-Wenn Sie die .NET Framework Klasse benennen, die ein Cmdlet implementiert, benennen Sie die Klasse " *\<verb > **\<noun >** \<command >* ", wobei Sie das *\<verb >* und *\<noun >* Platzhalter durch ersetzen. das Verb und das Substantiv, die für den Cmdlet-Namen verwendet werden. Das [Get-Process-](/powershell/module/Microsoft.PowerShell.Management/Get-Process) Cmdlet wird z. b. von einer Klasse mit dem Namen `GetProcessCommand` implementiert.
+Wenn Sie die .NET Framework Klasse benennen, die ein Cmdlet implementiert, benennen Sie die Klasse " *\<Verb > **\<Substantiv >** \<Command >* ", wobei Sie das *\<Verb >* und *\<Substantiv >* Platzhalter durch das Verb und das Nomen ersetzen, die für den Cmdlet-Namen verwendet werden. Beispielsweise wird das Cmdlet " [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) " von einer Klasse mit dem Namen "`GetProcessCommand`" implementiert.
 
 ### <a name="if-no-pipeline-input-override-the-beginprocessing-method-ac02"></a>Wenn keine Pipeline Eingabe die BeginProcessing-Methode außer Kraft setzt (AC02)
 
@@ -67,13 +67,13 @@ Wenn das Cmdlet keine Eingaben aus der Pipeline annimmt, sollte die Verarbeitung
 
 ### <a name="to-handle-stop-requests-override-the-stopprocessing-method-ac03"></a>Überschreiben Sie die StopProcessing-Methode (AC03), um Stopp Anforderungen zu verarbeiten.
 
-Überschreiben Sie die [System. Management. Automation. Cmdlet. StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing) -Methode, damit das Cmdlet das Stoppsignal verarbeiten kann. Einige Cmdlets nehmen lange Zeit in Anspruch, und Sie ermöglichen eine lange Zeit zwischen Aufrufen der Windows PowerShell-Laufzeit, z. b. wenn das Cmdlet den Thread in lang andauernden RPC-Aufrufen blockiert. Dies schließt Cmdlets ein, die Aufrufe an die [System. Management. Automation. Cmdlet. Write Object](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) -Methode, an die [System. Management. Automation. Cmdlet. Write-error](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) -Methode und an andere Feedback Mechanismen machen, die möglicherweise viel Zeit in Anspruch nehmen. . In diesen Fällen muss der Benutzer möglicherweise ein Stoppsignal an diese Cmdlets senden.
+Überschreiben Sie die [System. Management. Automation. Cmdlet. StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing) -Methode, damit das Cmdlet das Stoppsignal verarbeiten kann. Einige Cmdlets nehmen lange Zeit in Anspruch, und Sie ermöglichen eine lange Zeit zwischen Aufrufen der Windows PowerShell-Laufzeit, z. b. wenn das Cmdlet den Thread in lang andauernden RPC-Aufrufen blockiert. Dies schließt Cmdlets ein, die Aufrufe an die [System. Management. Automation. Cmdlet. Write Object](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) -Methode, an die [System. Management. Automation. Cmdlet. Write-error](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) -Methode und an andere Feedback Mechanismen machen, die möglicherweise viel Zeit in Anspruch nehmen. In diesen Fällen muss der Benutzer möglicherweise ein Stoppsignal an diese Cmdlets senden.
 
 ### <a name="implement-the-idisposable-interface-ac04"></a>Implementieren der iverwerfbaren Schnittstelle (AC04)
 
-Wenn das Cmdlet Objekte enthält, die nicht von der [System. Management. Automation. Cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) -Methode verworfen (in die Pipeline geschrieben) werden, benötigt das Cmdlet möglicherweise eine zusätzliche Objekt Beseitigung. Wenn das Cmdlet z. b. ein Datei Handle in der [System. Management. Automation. Cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) -Methode öffnet und das Handle für die Verwendung durch die [System. Management. Automation. Cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) -Methode offen hält, muss dieses handle geschlossen am Ende der Verarbeitung.
+Wenn das Cmdlet Objekte enthält, die nicht von der [System. Management. Automation. Cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) -Methode verworfen (in die Pipeline geschrieben) werden, benötigt das Cmdlet möglicherweise eine zusätzliche Objekt Beseitigung. Wenn das Cmdlet z. b. ein Datei Handle in der [System. Management. Automation. Cmdlet. BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) -Methode öffnet und das Handle für die Verwendung durch die [System. Management. Automation. Cmdlet. ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) -Methode offen hält, muss dieses Handle am Ende der Verarbeitung geschlossen werden.
 
-Von der Windows PowerShell-Laufzeit wird nicht immer die [System. Management. Automation. Cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) -Methode aufgerufen. Beispielsweise kann die [System. Management. Automation. Cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) -Methode nicht aufgerufen werden, wenn das Cmdlet in der Mitte durch den Vorgang abgebrochen wird oder wenn in einem beliebigen Teil des Cmdlets ein Abbruch Fehler auftritt. Daher sollte die .NET Framework-Klasse für ein Cmdlet, das die Objekt Bereinigung erfordert, das gesamte [System. iverwerfbare](/dotnet/api/System.IDisposable) Schnittstellen Muster implementieren, einschließlich des Finalizers, damit die Windows PowerShell-Laufzeit beide [ System. Management. Automation. Cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) -und [System. iverwerf. verwerfen *](/dotnet/api/System.IDisposable.Dispose) -Methoden am Ende der Verarbeitung.
+Von der Windows PowerShell-Laufzeit wird nicht immer die [System. Management. Automation. Cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) -Methode aufgerufen. Beispielsweise kann die [System. Management. Automation. Cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) -Methode nicht aufgerufen werden, wenn das Cmdlet in der Mitte durch den Vorgang abgebrochen wird oder wenn in einem beliebigen Teil des Cmdlets ein Abbruch Fehler auftritt. Daher sollte die .NET Framework-Klasse für ein Cmdlet, das die Objekt Bereinigung erfordert, das gesamte [System. iverwerfbare](/dotnet/api/System.IDisposable) Schnittstellen Muster implementieren, einschließlich des Finalizers, damit die Windows PowerShell-Laufzeit sowohl die [System. Management. Automation. Cmdlet. EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) -als auch die [System. iverwerf. verwerfen *](/dotnet/api/System.IDisposable.Dispose) -Methode am Ende der Verarbeitung abrufen kann.
 
 ### <a name="use-serialization-friendly-parameter-types-ac05"></a>Verwenden von serialisierungsfreundlichen Parameter Typen (AC05)
 
@@ -91,11 +91,11 @@ Integrierte, verteilbare Typen:
 
 - Psprientschärvedictionary
 
-- Switch
+- SwitchParameter
 
 - Pslistmodifier
 
-- PSCredential
+- PS-Anmeldeinformationen
 
 - IPAddress, Mail Address
 
@@ -107,7 +107,7 @@ Integrierte, verteilbare Typen:
 
 Andere Typen:
 
-- SecureString
+- Sicherheitszeichenfolge
 
 - Container (Listen und Wörterbücher des obigen Typs)
 

@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 3204599c-7159-47aa-82ec-4a476f461027
 caps.latest.revision: 7
 ms.openlocfilehash: 5c5707d1c533e0498c6794b60f4499e530e25813
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72360659"
 ---
 # <a name="supporting-online-help"></a>Unterstützung für Onlinehilfe
 
-Ab Windows PowerShell 3,0 gibt es zwei Möglichkeiten, das `Get-Help`-Online Feature für Windows PowerShell-Befehle zu unterstützen. In diesem Thema wird erläutert, wie diese Funktion für verschiedene Befehls Typen implementiert wird.
+Ab Windows PowerShell 3,0 gibt es zwei Möglichkeiten, das `Get-Help` Online-Feature für Windows PowerShell-Befehle zu unterstützen. In diesem Thema wird erläutert, wie diese Funktion für verschiedene Befehls Typen implementiert wird.
 
 ## <a name="about-online-help"></a>Informationen zur Online Hilfe
 
@@ -27,15 +27,15 @@ Mit der Einführung der aktualisierbaren Hilfe in Windows PowerShell 3,0 spielt 
 
 ## <a name="how-get-help--online-works"></a>Funktionsweise von "Get-Help-Online"
 
-Um Benutzern die Suche nach den Online Hilfe Themen für Befehle zu erleichtern, hat der `Get-Help`-Befehl einen Online-Parameter, der die Online Version des Hilfe Themas für einen Befehl im Standard Internet Browser des Benutzers öffnet.
+Um Benutzern die Suche nach den Online Hilfe Themen für Befehle zu erleichtern, verfügt der `Get-Help` Befehl über einen Online-Parameter, der die Online Version des Hilfe Themas für einen Befehl im Standard Internet Browser des Benutzers öffnet.
 
-Der folgende Befehl öffnet z. b. das Online Hilfethema für das Cmdlet "`Invoke-Command`".
+Mit dem folgenden Befehl wird beispielsweise das Online Hilfethema für das Cmdlet "`Invoke-Command`" geöffnet.
 
 ```powershell
 Get-Help Invoke-Command -Online
 ```
 
-Um `Get-Help`-Online zu implementieren, sucht das `Get-Help`-Cmdlet in den folgenden Speicherorten nach einem Uniform Resource Identifier (URI) für das Hilfethema der Online Version.
+Um `Get-Help`-online zu implementieren, sucht das `Get-Help`-Cmdlet in den folgenden Speicherorten nach einem Uniform Resource Identifier (URI) für das Hilfethema der Online Version.
 
 - Der erste Link im Abschnitt "Verwandte Links" des Hilfe Themas für den Befehl. Das Hilfethema muss auf dem Computer des Benutzers installiert sein. Diese Funktion wurde in Windows PowerShell 2,0 eingeführt.
 
@@ -45,9 +45,9 @@ Um `Get-Help`-Online zu implementieren, sucht das `Get-Help`-Cmdlet in den folge
 
 ## <a name="adding-a-uri-to-the-first-related-link-of-a-command-help-topic"></a>Hinzufügen eines URIs zum ersten verknüpften Link eines Befehls Hilfe Themas
 
-Sie können `Get-Help`-Online für jeden Befehl unterstützen, indem Sie dem ersten Eintrag im Abschnitt Verwandte Links des XML-basierten Hilfe Themas für den Befehl einen gültigen URI hinzufügen. Diese Option ist nur in XML-basierten Hilfe Themen gültig und funktioniert nur, wenn das Hilfethema auf dem Computer des Benutzers installiert ist. Wenn das Hilfethema installiert ist und der URI aufgefüllt wird, hat dieser Wert Vorrang vor der **HelpUri** -Eigenschaft des Befehls.
+Sie können `Get-Help` Online für jeden Befehl unterstützen, indem Sie dem ersten Eintrag im Abschnitt Verwandte Links des XML-basierten Hilfe Themas für den Befehl einen gültigen URI hinzufügen. Diese Option ist nur in XML-basierten Hilfe Themen gültig und funktioniert nur, wenn das Hilfethema auf dem Computer des Benutzers installiert ist. Wenn das Hilfethema installiert ist und der URI aufgefüllt wird, hat dieser Wert Vorrang vor der **HelpUri** -Eigenschaft des Befehls.
 
-Um diese Funktion zu unterstützen, muss der URI im `maml:uri`-Element unter dem ersten `maml:relatedLinks/maml:navigationLink`-Element im `maml:relatedLinks`-Element angezeigt werden.
+Um diese Funktion zu unterstützen, muss der URI im `maml:uri`-Element unter dem ersten `maml:relatedLinks/maml:navigationLink`-Element im `maml:relatedLinks`-Element enthalten sein.
 
 Der folgende XML-Code zeigt die korrekte Platzierung des URI. Der Text "Online Version:" im `maml:linkText`-Element ist eine bewährte Vorgehensweise, aber er ist nicht erforderlich.
 
@@ -73,7 +73,7 @@ In diesem Abschnitt wird gezeigt, wie die HelpUri-Eigenschaft Befehlen verschied
 
 Fügen Sie für in C#geschriebene Cmdlets der Cmdlet-Klasse ein **HelpUri** -Attribut hinzu. Der Wert des-Attributs muss ein URI sein, der mit "http" oder "https" beginnt.
 
-Der folgende Code zeigt das HelpUri-Attribut der `Get-History`-Cmdlet-Klasse.
+Der folgende Code zeigt das HelpUri-Attribut der `Get-History` Cmdlet-Klasse.
 
 ```
 [Cmdlet(VerbsCommon.Get, "History", HelpUri = "http://go.microsoft.com/fwlink/?LinkID=001122")]

@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: 2a65b964-5bc6-4ade-a66b-b6afa7351ce7
 caps.latest.revision: 9
 ms.openlocfilehash: 32ebf2531237bfd1042310ccc4155193a58401fd
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365419"
 ---
 # <a name="interpreting-errorrecord-objects"></a>Interpretieren von ErrorRecord-Objekten
 
 In den meisten Fällen stellt ein [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) -Objekt einen Fehler ohne Abbruch dar, der von einem Befehl oder Skript generiert wird. Durch das Beenden von Fehlern können auch die zusätzlichen Informationen in einem ErrorRecord über die [System. Management. Automation. icontainserrorrecord](/dotnet/api/System.Management.Automation.IContainsErrorRecord) -Schnittstelle angegeben werden.
 
-Wenn Sie einen Fehlerhandler in das Skript oder einen Host schreiben möchten, um bestimmte Fehler zu behandeln, die während der Ausführung des Befehls oder Skripts auftreten, müssen Sie das [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) -Objekt interpretieren, um zu bestimmen, ob es die Klasse von darstellt. der Fehler, den Sie behandeln möchten.
+Wenn Sie einen Fehlerhandler in das Skript oder einen Host schreiben möchten, um bestimmte Fehler zu behandeln, die während der Ausführung von Befehlen oder Skripts auftreten, müssen Sie das [System. Management. Automation. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord) -Objekt interpretieren, um zu bestimmen, ob es die Klasse des zu behandelnden Fehlers darstellt.
 
 Wenn ein Cmdlet auf einen Fehler beim Beenden oder ohne Abbruch stößt, sollte ein Fehler Daten Satz erstellt werden, der den Fehlerzustand beschreibt. Die Host Anwendung muss diese Fehler Datensätze untersuchen und jede beliebige Aktion ausführen, um den Fehler zu beheben. Die Host Anwendung muss auch Fehler Datensätze für nicht abschließende Fehler untersuchen, die einen Datensatz nicht verarbeiten konnten, aber den Vorgang fortsetzen konnten, und Fehler Datensätze untersuchen, um Fehler zu beenden, die dazu führten, dass die Pipeline beendet wurde.
 

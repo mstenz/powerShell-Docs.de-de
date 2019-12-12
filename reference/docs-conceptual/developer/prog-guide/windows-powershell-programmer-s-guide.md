@@ -11,10 +11,10 @@ helpviewer_keywords:
 ms.assetid: f3aaf667-af84-4ea8-a5ad-d454d0d700b8
 caps.latest.revision: 9
 ms.openlocfilehash: f8cbaf464345b8f2b693e72f3dbe781a47605b28
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417776"
 ---
 # <a name="windows-powershell-programmer39s-guide"></a>Leitfaden für Windows PowerShell-Programmierer&#39;
@@ -39,7 +39,7 @@ Windows PowerShell definiert mehrere Typen von Befehlen, die Sie bei der Entwick
 
 Zusätzlich zu den Befehlen unterstützt Windows PowerShell verschiedene anpassbare Windows PowerShell-Anbieter, die bestimmte Sätze von Cmdlets zur Verfügung stellen. Die Shell wird in der von Windows PowerShell bereitgestellten Host Anwendung (Windows PowerShell. exe) betrieben, ist aber gleichermaßen über eine benutzerdefinierte Host Anwendung verfügbar, die Sie für bestimmte Anforderungen entwickeln können. Weitere Informationen finden Sie unter [Funktionsweise von Windows PowerShell](/previous-versions//ms714658(v=vs.85)).
 
-### <a name="windows-powershell-cmdlets"></a>Windows PowerShell-Cmdlets
+### <a name="windows-powershell-cmdlets"></a>Windows PowerShell Cmdlets
 
 Ein Cmdlet ist ein Lightweight-Befehl, der in der Windows PowerShell-Umgebung verwendet wird. Die Windows PowerShell-Laufzeit ruft diese Cmdlets im Kontext von Automatisierungs Skripts auf, die in der Befehlszeile bereitgestellt werden, und die Windows PowerShell-Laufzeit ruft Sie auch Programm gesteuert über Windows PowerShell-APIs auf.
 
@@ -53,7 +53,7 @@ Windows PowerShell bietet mehrere standardmäßige Windows PowerShell-Anbieter. 
 
 Wenn Sie einen Datenspeicher verfügbar machen, auf den der Benutzer zugreifen muss, müssen Sie möglicherweise einen eigenen Windows PowerShell-Anbieter schreiben, wie unter [Erstellen von Windows PowerShell-Anbietern](./how-to-create-a-windows-powershell-provider.md)beschrieben. Weitere Informationen zu Windows PowerShell-Anbietern finden Sie unter [Funktionsweise von Windows PowerShell](/previous-versions//ms714658(v=vs.85)).
 
-### <a name="host-application"></a>Host Anwendung
+### <a name="host-application"></a>Hostanwendung
 
 Windows PowerShell umfasst die Standard Host Anwendung PowerShell. exe, eine Konsolenanwendung, die mit dem Benutzer interagiert und die Windows PowerShell-Laufzeit mithilfe eines Konsolenfensters hostet.
 
@@ -105,6 +105,6 @@ Weitere Informationen zum Einstieg in die Verwendung der Windows PowerShell-Shel
 |[Erstellen einer Konsolen-Shell](./how-to-create-a-console-shell.md)|In diesem Abschnitt wird beschrieben, wie eine Konsolen Shell erstellt wird, die nicht erweiterbar ist.|
 |[Windows PowerShell-Konzepte](./windows-powershell-concepts.md)|Dieser Abschnitt enthält konzeptionelle Informationen, die Ihnen helfen, Windows PowerShell vom Standpunkt eines Entwicklers zu verstehen.|
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)
