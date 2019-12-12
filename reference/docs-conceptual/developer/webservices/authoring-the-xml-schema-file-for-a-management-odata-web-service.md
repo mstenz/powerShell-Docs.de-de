@@ -9,19 +9,19 @@ ms.topic: article
 ms.assetid: 3e83c9d9-6d06-4247-94d9-e3bfd4013b11
 caps.latest.revision: 4
 ms.openlocfilehash: a806d012097d107b6cc35710b9a93f2b27dd1ace
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359799"
 ---
-# <a name="authoring-the-xml-schema-file-for-a-management-odata-web-service"></a><span data-ttu-id="62189-102">Erstellen der XML-Schemadatei für einen Management OData-Webdienst</span><span class="sxs-lookup"><span data-stu-id="62189-102">Authoring the XML schema file for a Management OData web service</span></span>
+# <a name="authoring-the-xml-schema-file-for-a-management-odata-web-service"></a><span data-ttu-id="35c06-102">Erstellen der XML-Schemadatei für einen Management OData-Webdienst</span><span class="sxs-lookup"><span data-stu-id="35c06-102">Authoring the XML schema file for a Management OData web service</span></span>
 
-<span data-ttu-id="62189-103">Nachdem Sie die Ressourcen definiert haben, die von Ihrem Webdienst verfügbar gemacht werden (siehe [Erstellen der MOF-Schema Datei für einen Management odata-Webdienst](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)), ordnen Sie diese Ressourcen den zugrunde liegenden Windows PowerShell-Cmdlets zu, die jeweils die unterstützten Vorgänge implementieren. Ressource durch Erstellen einer XML-Datei, die dem [Ressourcen Zuordnung Schema](./resource-mapping-schema.md)entspricht.</span><span class="sxs-lookup"><span data-stu-id="62189-103">After you define the resources your web service will expose (see [Authoring the MOF schema file for a Management OData web service](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)), you map those resources to the underlying Windows PowerShell cmdlets that implement the supported operations for each resource by creating an XML file that conforms to the [Resource Mapping Schema](./resource-mapping-schema.md).</span></span> <span data-ttu-id="62189-104">Die XML-Datei gibt auch die URLs an, die vom Client für den Zugriff auf die Ressourcen verwendet werden.</span><span class="sxs-lookup"><span data-stu-id="62189-104">The XML file also specifies the URLs that are used by the client to access the resources.</span></span>
+<span data-ttu-id="35c06-103">Nachdem Sie die Ressourcen definiert haben, die vom Webdienst verfügbar gemacht werden (siehe [Erstellen der MOF-Schema Datei für einen Management odata-Webdienst](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)), ordnen Sie diese Ressourcen den zugrunde liegenden Windows PowerShell-Cmdlets zu, die die unterstützten Vorgänge für jede Ressource implementieren, indem Sie eine XML-Datei erstellen, die dem Ressourcen Zuordnungs [Schema](./resource-mapping-schema.md)entspricht.</span><span class="sxs-lookup"><span data-stu-id="35c06-103">After you define the resources your web service will expose (see [Authoring the MOF schema file for a Management OData web service](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)), you map those resources to the underlying Windows PowerShell cmdlets that implement the supported operations for each resource by creating an XML file that conforms to the [Resource Mapping Schema](./resource-mapping-schema.md).</span></span> <span data-ttu-id="35c06-104">Die XML-Datei gibt auch die URLs an, die vom Client für den Zugriff auf die Ressourcen verwendet werden.</span><span class="sxs-lookup"><span data-stu-id="35c06-104">The XML file also specifies the URLs that are used by the client to access the resources.</span></span>
 
-## <a name="mappng-resources-to-urls"></a><span data-ttu-id="62189-105">Mappng Ressourcen an URLs</span><span class="sxs-lookup"><span data-stu-id="62189-105">Mappng resources to URLs</span></span>
+## <a name="mappng-resources-to-urls"></a><span data-ttu-id="35c06-105">Mappng Ressourcen an URLs</span><span class="sxs-lookup"><span data-stu-id="35c06-105">Mappng resources to URLs</span></span>
 
-<span data-ttu-id="62189-106">Der erste Teil der XML-Datei ordnet die in der MOF-Schema Datei definierten Ressourcen den URLs zu, die für den Zugriff verwendet werden.</span><span class="sxs-lookup"><span data-stu-id="62189-106">The first part of the XML file maps the resources defined in the MOF schema file to the URLs that are used to access them.</span></span> <span data-ttu-id="62189-107">Das folgende Beispiel zeigt die Zuordnung.</span><span class="sxs-lookup"><span data-stu-id="62189-107">The following example shows that mapping.</span></span>
+<span data-ttu-id="35c06-106">Der erste Teil der XML-Datei ordnet die in der MOF-Schema Datei definierten Ressourcen den URLs zu, die für den Zugriff verwendet werden.</span><span class="sxs-lookup"><span data-stu-id="35c06-106">The first part of the XML file maps the resources defined in the MOF schema file to the URLs that are used to access them.</span></span> <span data-ttu-id="35c06-107">Das folgende Beispiel zeigt die Zuordnung.</span><span class="sxs-lookup"><span data-stu-id="35c06-107">The following example shows that mapping.</span></span>
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -40,18 +40,18 @@ ms.locfileid: "72359799"
     </Resources>
 ```
 
-## <a name="mapping-cmdlets-to-crud-operations"></a><span data-ttu-id="62189-108">Mapping von Cmdlets zu CRUD-Vorgängen</span><span class="sxs-lookup"><span data-stu-id="62189-108">Mapping cmdlets to CRUD operations</span></span>
+## <a name="mapping-cmdlets-to-crud-operations"></a><span data-ttu-id="35c06-108">Mapping von Cmdlets zu CRUD-Vorgängen</span><span class="sxs-lookup"><span data-stu-id="35c06-108">Mapping cmdlets to CRUD operations</span></span>
 
-<span data-ttu-id="62189-109">Anschließend geben Sie die Cmdlets an, die den CRUD-Vorgängen (erstellen, lesen, aktualisieren und löschen) entsprechen, die von den Ressourcen unterstützt werden.</span><span class="sxs-lookup"><span data-stu-id="62189-109">You then specify the cmdlets that correspond to the CRUD (create, read, update, and delete) operations that the resources support.</span></span> <span data-ttu-id="62189-110">Im Management odata- [Ressourcen Zuordnungsschema](./resource-mapping-schema.md)werden die CRUD-Vorgänge wie folgt zugeordnet.</span><span class="sxs-lookup"><span data-stu-id="62189-110">In the Management OData [Resource Mapping Schema](./resource-mapping-schema.md), the CRUD operations are mapped as follows.</span></span>
+<span data-ttu-id="35c06-109">Anschließend geben Sie die Cmdlets an, die den CRUD-Vorgängen (erstellen, lesen, aktualisieren und löschen) entsprechen, die von den Ressourcen unterstützt werden.</span><span class="sxs-lookup"><span data-stu-id="35c06-109">You then specify the cmdlets that correspond to the CRUD (create, read, update, and delete) operations that the resources support.</span></span> <span data-ttu-id="35c06-110">Im Management odata- [Ressourcen Zuordnungsschema](./resource-mapping-schema.md)werden die CRUD-Vorgänge wie folgt zugeordnet.</span><span class="sxs-lookup"><span data-stu-id="35c06-110">In the Management OData [Resource Mapping Schema](./resource-mapping-schema.md), the CRUD operations are mapped as follows.</span></span>
 
-|<span data-ttu-id="62189-111">CRUD-Befehl</span><span class="sxs-lookup"><span data-stu-id="62189-111">CRUD command</span></span>|<span data-ttu-id="62189-112">XML-Element</span><span class="sxs-lookup"><span data-stu-id="62189-112">XML element</span></span>|
+|<span data-ttu-id="35c06-111">CRUD-Befehl</span><span class="sxs-lookup"><span data-stu-id="35c06-111">CRUD command</span></span>|<span data-ttu-id="35c06-112">XML-Element</span><span class="sxs-lookup"><span data-stu-id="35c06-112">XML element</span></span>|
 |------------------|-----------------|
-|<span data-ttu-id="62189-113">Erstellen</span><span class="sxs-lookup"><span data-stu-id="62189-113">Create</span></span>|<span data-ttu-id="62189-114">Erstellen</span><span class="sxs-lookup"><span data-stu-id="62189-114">Create</span></span>|
-|<span data-ttu-id="62189-115">Lesen</span><span class="sxs-lookup"><span data-stu-id="62189-115">Read</span></span>|<span data-ttu-id="62189-116">Abfrage</span><span class="sxs-lookup"><span data-stu-id="62189-116">Query</span></span>|
-|<span data-ttu-id="62189-117">Update/Aktualisieren</span><span class="sxs-lookup"><span data-stu-id="62189-117">Update</span></span>|<span data-ttu-id="62189-118">Update/Aktualisieren</span><span class="sxs-lookup"><span data-stu-id="62189-118">Update</span></span>|
-|<span data-ttu-id="62189-119">„Löschen“</span><span class="sxs-lookup"><span data-stu-id="62189-119">Delete</span></span>|<span data-ttu-id="62189-120">„Löschen“</span><span class="sxs-lookup"><span data-stu-id="62189-120">Delete</span></span>|
+|<span data-ttu-id="35c06-113">Erstellen</span><span class="sxs-lookup"><span data-stu-id="35c06-113">Create</span></span>|<span data-ttu-id="35c06-114">Erstellen</span><span class="sxs-lookup"><span data-stu-id="35c06-114">Create</span></span>|
+|<span data-ttu-id="35c06-115">Lesen</span><span class="sxs-lookup"><span data-stu-id="35c06-115">Read</span></span>|<span data-ttu-id="35c06-116">Abfrage</span><span class="sxs-lookup"><span data-stu-id="35c06-116">Query</span></span>|
+|<span data-ttu-id="35c06-117">Update/Aktualisieren</span><span class="sxs-lookup"><span data-stu-id="35c06-117">Update</span></span>|<span data-ttu-id="35c06-118">Update/Aktualisieren</span><span class="sxs-lookup"><span data-stu-id="35c06-118">Update</span></span>|
+|<span data-ttu-id="35c06-119">„Löschen“</span><span class="sxs-lookup"><span data-stu-id="35c06-119">Delete</span></span>|<span data-ttu-id="35c06-120">„Löschen“</span><span class="sxs-lookup"><span data-stu-id="35c06-120">Delete</span></span>|
 
-<span data-ttu-id="62189-121">Das folgende Beispiel zeigt die Zuordnungen für die Erstellungs-, Lese-und Aktualisierungs Vorgänge für die `Service`-Ressource.</span><span class="sxs-lookup"><span data-stu-id="62189-121">The following example shows the mappings for the Create, Read, and Update operations on the `Service` resource.</span></span>
+<span data-ttu-id="35c06-121">Das folgende Beispiel zeigt die Zuordnungen für die Erstellungs-, Lese-und Aktualisierungs Vorgänge für die `Service` Ressource.</span><span class="sxs-lookup"><span data-stu-id="35c06-121">The following example shows the mappings for the Create, Read, and Update operations on the `Service` resource.</span></span>
 
 ```xml
 <ClassImplementations>
@@ -157,10 +157,10 @@ ms.locfileid: "72359799"
         </Class>
 ```
 
-## <a name="see-also"></a><span data-ttu-id="62189-122">Weitere Informationen</span><span class="sxs-lookup"><span data-stu-id="62189-122">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="35c06-122">Weitere Informationen</span><span class="sxs-lookup"><span data-stu-id="35c06-122">See Also</span></span>
 
-[<span data-ttu-id="62189-123">Erstellen der MOF-Schema Datei für einen Management odata-Webdienst</span><span class="sxs-lookup"><span data-stu-id="62189-123">Authoring the MOF schema file for a Management OData web service</span></span>](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
+[<span data-ttu-id="35c06-123">Erstellen der MOF-Schema Datei für einen Management odata-Webdienst</span><span class="sxs-lookup"><span data-stu-id="35c06-123">Authoring the MOF schema file for a Management OData web service</span></span>](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
 
-[<span data-ttu-id="62189-124">Schema der Ressourcen Zuordnung</span><span class="sxs-lookup"><span data-stu-id="62189-124">Resource Mapping Schema</span></span>](./resource-mapping-schema.md)
+[<span data-ttu-id="35c06-124">Schema der Ressourcen Zuordnung</span><span class="sxs-lookup"><span data-stu-id="35c06-124">Resource Mapping Schema</span></span>](./resource-mapping-schema.md)
 
-[<span data-ttu-id="62189-125">Erstellen eines odata-Webdiensts für die Verwaltung</span><span class="sxs-lookup"><span data-stu-id="62189-125">Creating a Management OData Web Service</span></span>](./creating-a-management-odata-web-service.md)
+[<span data-ttu-id="35c06-125">Erstellen eines odata-Webdiensts für die Verwaltung</span><span class="sxs-lookup"><span data-stu-id="35c06-125">Creating a Management OData Web Service</span></span>](./creating-a-management-odata-web-service.md)

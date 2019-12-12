@@ -9,33 +9,33 @@ ms.topic: article
 ms.assetid: 8f723b21-8f95-4981-8b6e-4f07c22d601a
 caps.latest.revision: 5
 ms.openlocfilehash: b6f8aef76a5f4b5dc1a60425541856ead9a9c77a
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368109"
 ---
-# <a name="how-to-add-examples-to-a-cmdlet-help-topic"></a><span data-ttu-id="44fe3-102">Hinzufügen von Beispielen zu einem Cmdlet-Hilfethema</span><span class="sxs-lookup"><span data-stu-id="44fe3-102">How to Add Examples to a Cmdlet Help Topic</span></span>
+# <a name="how-to-add-examples-to-a-cmdlet-help-topic"></a><span data-ttu-id="7a6a4-102">Hinzufügen von Beispielen zu einem Cmdlet-Hilfethema</span><span class="sxs-lookup"><span data-stu-id="7a6a4-102">How to Add Examples to a Cmdlet Help Topic</span></span>
 
-## <a name="things-to-know-about-examples-in-cmdlet-help"></a><span data-ttu-id="44fe3-103">Informationen zu Beispielen in der Cmdlet-Hilfe</span><span class="sxs-lookup"><span data-stu-id="44fe3-103">Things to Know about Examples in Cmdlet Help</span></span>
+## <a name="things-to-know-about-examples-in-cmdlet-help"></a><span data-ttu-id="7a6a4-103">Informationen zu Beispielen in der Cmdlet-Hilfe</span><span class="sxs-lookup"><span data-stu-id="7a6a4-103">Things to Know about Examples in Cmdlet Help</span></span>
 
-- <span data-ttu-id="44fe3-104">Listet alle Parameternamen im Befehl auf, auch wenn die Parameternamen optional sind.</span><span class="sxs-lookup"><span data-stu-id="44fe3-104">List all of the parameter names in the command, even when the parameter names are optional.</span></span> <span data-ttu-id="44fe3-105">Dies unterstützt den Benutzer dabei, den Befehl problemlos zu interpretieren.</span><span class="sxs-lookup"><span data-stu-id="44fe3-105">This helps the user to interpret the command easily.</span></span>
+- <span data-ttu-id="7a6a4-104">Listet alle Parameternamen im Befehl auf, auch wenn die Parameternamen optional sind.</span><span class="sxs-lookup"><span data-stu-id="7a6a4-104">List all of the parameter names in the command, even when the parameter names are optional.</span></span> <span data-ttu-id="7a6a4-105">Dies unterstützt den Benutzer dabei, den Befehl problemlos zu interpretieren.</span><span class="sxs-lookup"><span data-stu-id="7a6a4-105">This helps the user to interpret the command easily.</span></span>
 
-- <span data-ttu-id="44fe3-106">Vermeiden Sie Aliase und partielle Parameternamen, auch wenn Sie in Windows PowerShell® funktionieren.</span><span class="sxs-lookup"><span data-stu-id="44fe3-106">Avoid aliases and partial parameter names, even though they work in Windows PowerShell®.</span></span>
+- <span data-ttu-id="7a6a4-106">Vermeiden Sie Aliase und partielle Parameternamen, auch wenn Sie in Windows PowerShell® funktionieren.</span><span class="sxs-lookup"><span data-stu-id="7a6a4-106">Avoid aliases and partial parameter names, even though they work in Windows PowerShell®.</span></span>
 
-- <span data-ttu-id="44fe3-107">Erläutern Sie in der Beispiel Beschreibung das rationale für die Konstruktion des Befehls.</span><span class="sxs-lookup"><span data-stu-id="44fe3-107">In the example description, explain the rational for the construction of the command.</span></span> <span data-ttu-id="44fe3-108">Erläutern Sie, warum Sie bestimmte Parameter und Werte ausgewählt haben und wie Sie Variablen verwenden.</span><span class="sxs-lookup"><span data-stu-id="44fe3-108">Explain why you chose particular parameters and values, and how you use variables.</span></span>
+- <span data-ttu-id="7a6a4-107">Erläutern Sie in der Beispiel Beschreibung das rationale für die Konstruktion des Befehls.</span><span class="sxs-lookup"><span data-stu-id="7a6a4-107">In the example description, explain the rational for the construction of the command.</span></span> <span data-ttu-id="7a6a4-108">Erläutern Sie, warum Sie bestimmte Parameter und Werte ausgewählt haben und wie Sie Variablen verwenden.</span><span class="sxs-lookup"><span data-stu-id="7a6a4-108">Explain why you chose particular parameters and values, and how you use variables.</span></span>
 
-- <span data-ttu-id="44fe3-109">Wenn der Befehl Ausdrücke verwendet, erklären Sie diese ausführlich.</span><span class="sxs-lookup"><span data-stu-id="44fe3-109">If the command uses expressions, explain them in detail.</span></span>
+- <span data-ttu-id="7a6a4-109">Wenn der Befehl Ausdrücke verwendet, erklären Sie diese ausführlich.</span><span class="sxs-lookup"><span data-stu-id="7a6a4-109">If the command uses expressions, explain them in detail.</span></span>
 
-- <span data-ttu-id="44fe3-110">Wenn der Befehl Eigenschaften und Methoden von Objekten verwendet, insbesondere Eigenschaften, die nicht in der Standard Anzeige angezeigt werden, verwenden Sie das Beispiel als Gelegenheit, um den Benutzer über das Objekt zu informieren.</span><span class="sxs-lookup"><span data-stu-id="44fe3-110">If the command uses properties and methods of objects, especially properties that do not appear in the default display, use the example as an opportunity tell the user about the object.</span></span>
+- <span data-ttu-id="7a6a4-110">Wenn der Befehl Eigenschaften und Methoden von Objekten verwendet, insbesondere Eigenschaften, die nicht in der Standard Anzeige angezeigt werden, verwenden Sie das Beispiel als Gelegenheit, um den Benutzer über das Objekt zu informieren.</span><span class="sxs-lookup"><span data-stu-id="7a6a4-110">If the command uses properties and methods of objects, especially properties that do not appear in the default display, use the example as an opportunity tell the user about the object.</span></span>
 
-## <a name="help-views-that-display-examples"></a><span data-ttu-id="44fe3-111">Hilfe Ansichten, in denen Beispiele angezeigt werden</span><span class="sxs-lookup"><span data-stu-id="44fe3-111">Help Views that Display Examples</span></span>
+## <a name="help-views-that-display-examples"></a><span data-ttu-id="7a6a4-111">Hilfe Ansichten, in denen Beispiele angezeigt werden</span><span class="sxs-lookup"><span data-stu-id="7a6a4-111">Help Views that Display Examples</span></span>
 
-<span data-ttu-id="44fe3-112">Beispiele werden nur in den ausführlichen und vollständigen Ansichten der Cmdlet-Hilfe angezeigt.</span><span class="sxs-lookup"><span data-stu-id="44fe3-112">Examples appear only in the Detailed and Full views of cmdlet Help.</span></span>
+<span data-ttu-id="7a6a4-112">Beispiele werden nur in den ausführlichen und vollständigen Ansichten der Cmdlet-Hilfe angezeigt.</span><span class="sxs-lookup"><span data-stu-id="7a6a4-112">Examples appear only in the Detailed and Full views of cmdlet Help.</span></span>
 
-## <a name="adding-an-examples-node"></a><span data-ttu-id="44fe3-113">Hinzufügen eines Knotens für Beispiele</span><span class="sxs-lookup"><span data-stu-id="44fe3-113">Adding an Examples Node</span></span>
+## <a name="adding-an-examples-node"></a><span data-ttu-id="7a6a4-113">Hinzufügen eines Knotens für Beispiele</span><span class="sxs-lookup"><span data-stu-id="7a6a4-113">Adding an Examples Node</span></span>
 
-<span data-ttu-id="44fe3-114">Der folgende XML-Code zeigt, wie ein Beispiele-Knoten hinzugefügt wird, der einen einzelnen Beispiel Knoten enthält.</span><span class="sxs-lookup"><span data-stu-id="44fe3-114">The following XML shows how to add an Examples node that contains a single Example node.</span></span> <span data-ttu-id="44fe3-115">Fügen Sie zusätzliche Beispiel Knoten für die einzelnen Beispiele hinzu, die Sie in das Thema einschließen möchten.</span><span class="sxs-lookup"><span data-stu-id="44fe3-115">Add additional example nodes for each examples you want to include in the topic.</span></span>
+<span data-ttu-id="7a6a4-114">Der folgende XML-Code zeigt, wie ein Beispiele-Knoten hinzugefügt wird, der einen einzelnen Beispiel Knoten enthält.</span><span class="sxs-lookup"><span data-stu-id="7a6a4-114">The following XML shows how to add an Examples node that contains a single Example node.</span></span> <span data-ttu-id="7a6a4-115">Fügen Sie zusätzliche Beispiel Knoten für die einzelnen Beispiele hinzu, die Sie in das Thema einschließen möchten.</span><span class="sxs-lookup"><span data-stu-id="7a6a4-115">Add additional example nodes for each examples you want to include in the topic.</span></span>
 
 ```xml
 <command:examples>
@@ -44,9 +44,9 @@ ms.locfileid: "72368109"
 </command:examples>
 ```
 
-## <a name="adding-an-example-title"></a><span data-ttu-id="44fe3-116">Hinzufügen eines Beispiel Titels</span><span class="sxs-lookup"><span data-stu-id="44fe3-116">Adding an Example Title</span></span>
+## <a name="adding-an-example-title"></a><span data-ttu-id="7a6a4-116">Hinzufügen eines Beispiel Titels</span><span class="sxs-lookup"><span data-stu-id="7a6a4-116">Adding an Example Title</span></span>
 
-<span data-ttu-id="44fe3-117">Der folgende XML-Code zeigt, wie Sie einen Titel für das Beispiel hinzufügen.</span><span class="sxs-lookup"><span data-stu-id="44fe3-117">The following XML shows how to add a title for the example.</span></span> <span data-ttu-id="44fe3-118">Der Titel wird verwendet, um das Beispiel von anderen Beispielen zu unterscheiden.</span><span class="sxs-lookup"><span data-stu-id="44fe3-118">The title is used to set the example apart from other examples.</span></span> <span data-ttu-id="44fe3-119">Windows PowerShell® verwendet einen Standard Header, der eine sequenzielle Beispiel Nummer enthält.</span><span class="sxs-lookup"><span data-stu-id="44fe3-119">Windows PowerShell® uses a standard header that includes a sequential example number.</span></span>
+<span data-ttu-id="7a6a4-117">Der folgende XML-Code zeigt, wie Sie einen Titel für das Beispiel hinzufügen.</span><span class="sxs-lookup"><span data-stu-id="7a6a4-117">The following XML shows how to add a title for the example.</span></span> <span data-ttu-id="7a6a4-118">Der Titel wird verwendet, um das Beispiel von anderen Beispielen zu unterscheiden.</span><span class="sxs-lookup"><span data-stu-id="7a6a4-118">The title is used to set the example apart from other examples.</span></span> <span data-ttu-id="7a6a4-119">Windows PowerShell® verwendet einen Standard Header, der eine sequenzielle Beispiel Nummer enthält.</span><span class="sxs-lookup"><span data-stu-id="7a6a4-119">Windows PowerShell® uses a standard header that includes a sequential example number.</span></span>
 
 ```xml
 <command:examples>
@@ -56,9 +56,9 @@ ms.locfileid: "72368109"
 </command:examples>
 ```
 
-## <a name="adding-preceding-characters"></a><span data-ttu-id="44fe3-120">Hinzufügen vorheriger Zeichen</span><span class="sxs-lookup"><span data-stu-id="44fe3-120">Adding Preceding Characters</span></span>
+## <a name="adding-preceding-characters"></a><span data-ttu-id="7a6a4-120">Hinzufügen vorheriger Zeichen</span><span class="sxs-lookup"><span data-stu-id="7a6a4-120">Adding Preceding Characters</span></span>
 
-<span data-ttu-id="44fe3-121">Der folgende XML-Code zeigt, wie Sie Zeichen hinzufügen, z. b. die Windows PowerShell-Eingabeaufforderung, die unmittelbar vor dem Beispiel Befehl (ohne dazwischen liegende Leerzeichen) angezeigt werden.</span><span class="sxs-lookup"><span data-stu-id="44fe3-121">The following XML shows how to add characters, such as the Windows PowerShell prompt, that are displayed immediately before the example command (without any intervening spaces).</span></span> <span data-ttu-id="44fe3-122">Windows PowerShell® verwendet die Windows PowerShell-Eingabeaufforderung: c:\ps >.</span><span class="sxs-lookup"><span data-stu-id="44fe3-122">Windows PowerShell® uses the Windows PowerShell prompt: C:\PS>.</span></span>
+<span data-ttu-id="7a6a4-121">Der folgende XML-Code zeigt, wie Sie Zeichen hinzufügen, z. b. die Windows PowerShell-Eingabeaufforderung, die unmittelbar vor dem Beispiel Befehl (ohne dazwischen liegende Leerzeichen) angezeigt werden.</span><span class="sxs-lookup"><span data-stu-id="7a6a4-121">The following XML shows how to add characters, such as the Windows PowerShell prompt, that are displayed immediately before the example command (without any intervening spaces).</span></span> <span data-ttu-id="7a6a4-122">Windows PowerShell® verwendet die Windows PowerShell-Eingabeaufforderung: c:\ps >.</span><span class="sxs-lookup"><span data-stu-id="7a6a4-122">Windows PowerShell® uses the Windows PowerShell prompt: C:\PS>.</span></span>
 
 ```xml
 <command:examples>
@@ -71,9 +71,9 @@ ms.locfileid: "72368109"
 </command:examples>
 ```
 
-## <a name="adding-the-command"></a><span data-ttu-id="44fe3-123">Hinzufügen des Befehls</span><span class="sxs-lookup"><span data-stu-id="44fe3-123">Adding the Command</span></span>
+## <a name="adding-the-command"></a><span data-ttu-id="7a6a4-123">Hinzufügen des Befehls</span><span class="sxs-lookup"><span data-stu-id="7a6a4-123">Adding the Command</span></span>
 
-<span data-ttu-id="44fe3-124">Der folgende XML-Code zeigt, wie der tatsächliche Befehl des Beispiels hinzugefügt wird.</span><span class="sxs-lookup"><span data-stu-id="44fe3-124">The following XML shows how to add the actual command of the example.</span></span> <span data-ttu-id="44fe3-125">Wenn Sie den Befehl hinzufügen, geben Sie den vollständigen Namen (keinen Alias verwenden) von Cmdlets und Parametern ein.</span><span class="sxs-lookup"><span data-stu-id="44fe3-125">When adding the command, type the entire name (do not use alias) of cmdlets and parameters.</span></span> <span data-ttu-id="44fe3-126">Verwenden Sie nach Möglichkeit auch Kleinbuchstaben.</span><span class="sxs-lookup"><span data-stu-id="44fe3-126">Also, use lowercase characters whenever possible.</span></span>
+<span data-ttu-id="7a6a4-124">Der folgende XML-Code zeigt, wie der tatsächliche Befehl des Beispiels hinzugefügt wird.</span><span class="sxs-lookup"><span data-stu-id="7a6a4-124">The following XML shows how to add the actual command of the example.</span></span> <span data-ttu-id="7a6a4-125">Wenn Sie den Befehl hinzufügen, geben Sie den vollständigen Namen (keinen Alias verwenden) von Cmdlets und Parametern ein.</span><span class="sxs-lookup"><span data-stu-id="7a6a4-125">When adding the command, type the entire name (do not use alias) of cmdlets and parameters.</span></span> <span data-ttu-id="7a6a4-126">Verwenden Sie nach Möglichkeit auch Kleinbuchstaben.</span><span class="sxs-lookup"><span data-stu-id="7a6a4-126">Also, use lowercase characters whenever possible.</span></span>
 
 ```xml
 <command:examples>
@@ -87,9 +87,9 @@ ms.locfileid: "72368109"
 </command:examples>
 ```
 
-## <a name="adding-a-description"></a><span data-ttu-id="44fe3-127">Hinzufügen einer Beschreibung</span><span class="sxs-lookup"><span data-stu-id="44fe3-127">Adding a Description</span></span>
+## <a name="adding-a-description"></a><span data-ttu-id="7a6a4-127">Hinzufügen einer Beschreibung</span><span class="sxs-lookup"><span data-stu-id="7a6a4-127">Adding a Description</span></span>
 
-<span data-ttu-id="44fe3-128">Der folgende XML-Code zeigt, wie eine Beschreibung für das Beispiel hinzugefügt wird.</span><span class="sxs-lookup"><span data-stu-id="44fe3-128">The following XML shows how to add a description for the example.</span></span> <span data-ttu-id="44fe3-129">Windows PowerShell® verwendet einen einzelnen Satz von \<maml: para > Tags für die Beschreibung, obwohl mehrere \<maml: para > Tags verwendet werden können.</span><span class="sxs-lookup"><span data-stu-id="44fe3-129">Windows PowerShell® uses a single set of \<maml:para> tags for the description, even though multiple \<maml:para> tags can be used.</span></span>
+<span data-ttu-id="7a6a4-128">Der folgende XML-Code zeigt, wie eine Beschreibung für das Beispiel hinzugefügt wird.</span><span class="sxs-lookup"><span data-stu-id="7a6a4-128">The following XML shows how to add a description for the example.</span></span> <span data-ttu-id="7a6a4-129">Windows PowerShell® verwendet einen einzelnen Satz \<MAML: para > Tags für die Beschreibung, obwohl mehrere \<MAML: para > Tags verwendet werden können.</span><span class="sxs-lookup"><span data-stu-id="7a6a4-129">Windows PowerShell® uses a single set of \<maml:para> tags for the description, even though multiple \<maml:para> tags can be used.</span></span>
 
 ```xml
 <command:examples>
@@ -106,9 +106,9 @@ ms.locfileid: "72368109"
 </command:examples>
 ```
 
-## <a name="adding-example-output"></a><span data-ttu-id="44fe3-130">Hinzufügen einer Beispielausgabe</span><span class="sxs-lookup"><span data-stu-id="44fe3-130">Adding Example Output</span></span>
+## <a name="adding-example-output"></a><span data-ttu-id="7a6a4-130">Hinzufügen einer Beispielausgabe</span><span class="sxs-lookup"><span data-stu-id="7a6a4-130">Adding Example Output</span></span>
 
-<span data-ttu-id="44fe3-131">Der folgende XML-Code zeigt, wie die Ausgabe des Befehls hinzugefügt wird.</span><span class="sxs-lookup"><span data-stu-id="44fe3-131">The following XML shows how to add the output of the command.</span></span> <span data-ttu-id="44fe3-132">Die Befehls Ergebnisinformationen sind optional, aber in einigen Fällen ist es hilfreich, die Auswirkungen der Verwendung bestimmter Parameter zu veranschaulichen.</span><span class="sxs-lookup"><span data-stu-id="44fe3-132">The command results information is optional, but in some cases it is helpful to demonstrate the effect of using specific parameters.</span></span> <span data-ttu-id="44fe3-133">Windows PowerShell® verwendet zwei Sätze leerer \<maml: para > Tags, um die Befehlsausgabe des Befehls zu trennen.</span><span class="sxs-lookup"><span data-stu-id="44fe3-133">Windows PowerShell® uses two sets of blank \<maml:para> tags to separate the command output from the command.</span></span>
+<span data-ttu-id="7a6a4-131">Der folgende XML-Code zeigt, wie die Ausgabe des Befehls hinzugefügt wird.</span><span class="sxs-lookup"><span data-stu-id="7a6a4-131">The following XML shows how to add the output of the command.</span></span> <span data-ttu-id="7a6a4-132">Die Befehls Ergebnisinformationen sind optional, aber in einigen Fällen ist es hilfreich, die Auswirkungen der Verwendung bestimmter Parameter zu veranschaulichen.</span><span class="sxs-lookup"><span data-stu-id="7a6a4-132">The command results information is optional, but in some cases it is helpful to demonstrate the effect of using specific parameters.</span></span> <span data-ttu-id="7a6a4-133">Windows PowerShell® verwendet zwei Sätze von leeren \<MAML: para >-Tags, um die Befehlsausgabe des Befehls zu trennen.</span><span class="sxs-lookup"><span data-stu-id="7a6a4-133">Windows PowerShell® uses two sets of blank \<maml:para> tags to separate the command output from the command.</span></span>
 
 ```xml
 <command:examples>

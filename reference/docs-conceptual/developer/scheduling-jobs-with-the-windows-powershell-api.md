@@ -3,19 +3,19 @@ title: Planen von Aufträgen mit der Windows PowerShell-API
 ms.date: 09/13/2016
 ms.topic: article
 ms.openlocfilehash: 4e1d4ed6bffd858b92bf29b1dc6d8503454fafda
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359829"
 ---
-# <a name="scheduling-jobs-with-the-windows-powershell-api"></a><span data-ttu-id="3d80a-102">Planen von Aufträgen mit der Windows PowerShell-API</span><span class="sxs-lookup"><span data-stu-id="3d80a-102">Scheduling Jobs with the Windows PowerShell API</span></span>
+# <a name="scheduling-jobs-with-the-windows-powershell-api"></a><span data-ttu-id="65d89-102">Planen von Aufträgen mit der Windows PowerShell-API</span><span class="sxs-lookup"><span data-stu-id="65d89-102">Scheduling Jobs with the Windows PowerShell API</span></span>
 
-<span data-ttu-id="3d80a-103">Sie können die Objekte, die vom N:Microsoft.PowerShell.ScheduledJob-Namespace verfügbar gemacht werden, verwenden, um einen geplanten Auftrag zu erstellen, den Zeitpunkt der Ausführung zu definieren und Ergebnisse zum abgeschlossenen Auftrag nach der Ausführung zu erhalten.</span><span class="sxs-lookup"><span data-stu-id="3d80a-103">You can use the objects exposed by the N:Microsoft.PowerShell.ScheduledJob namespace to create a scheduled job, define when it runs, and get results about the completed job after it has run.</span></span>
+<span data-ttu-id="65d89-103">Sie können die Objekte, die vom N:Microsoft.PowerShell.ScheduledJob-Namespace verfügbar gemacht werden, verwenden, um einen geplanten Auftrag zu erstellen, den Zeitpunkt der Ausführung zu definieren und Ergebnisse zum abgeschlossenen Auftrag nach der Ausführung zu erhalten.</span><span class="sxs-lookup"><span data-stu-id="65d89-103">You can use the objects exposed by the N:Microsoft.PowerShell.ScheduledJob namespace to create a scheduled job, define when it runs, and get results about the completed job after it has run.</span></span>
 
-## <a name="triggering-the-job"></a><span data-ttu-id="3d80a-104">Auslösen des Auftrags</span><span class="sxs-lookup"><span data-stu-id="3d80a-104">Triggering the Job</span></span>
+## <a name="triggering-the-job"></a><span data-ttu-id="65d89-104">Auslösen des Auftrags</span><span class="sxs-lookup"><span data-stu-id="65d89-104">Triggering the Job</span></span>
 
-<span data-ttu-id="3d80a-105">Der erste Schritt beim Erstellen eines geplanten Auftrags besteht darin, anzugeben, wann der Auftrag ausgeführt werden soll.</span><span class="sxs-lookup"><span data-stu-id="3d80a-105">The first step in creating a scheduled job is specifying when the job should run.</span></span> <span data-ttu-id="3d80a-106">Erstellen und konfigurieren Sie hierfür ein T:Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger-Objekt.</span><span class="sxs-lookup"><span data-stu-id="3d80a-106">Do this by creating and configuring a T:Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger object.</span></span> <span data-ttu-id="3d80a-107">Der folgende Code erstellt einen-Vorgang, der einen Auftrag für eine einmalige Ausführung von 20 Sekunden plant.</span><span class="sxs-lookup"><span data-stu-id="3d80a-107">The following code creates a trigger that schedules a job to run a single time 20 seconds in the future.</span></span>
+<span data-ttu-id="65d89-105">Der erste Schritt beim Erstellen eines geplanten Auftrags besteht darin, anzugeben, wann der Auftrag ausgeführt werden soll.</span><span class="sxs-lookup"><span data-stu-id="65d89-105">The first step in creating a scheduled job is specifying when the job should run.</span></span> <span data-ttu-id="65d89-106">Erstellen und konfigurieren Sie hierfür ein T:Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger-Objekt.</span><span class="sxs-lookup"><span data-stu-id="65d89-106">Do this by creating and configuring a T:Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger object.</span></span> <span data-ttu-id="65d89-107">Der folgende Code erstellt einen-Vorgang, der einen Auftrag für eine einmalige Ausführung von 20 Sekunden plant.</span><span class="sxs-lookup"><span data-stu-id="65d89-107">The following code creates a trigger that schedules a job to run a single time 20 seconds in the future.</span></span>
 
 ```csharp
 ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
@@ -27,20 +27,20 @@ ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
     true);                              // Create trigger enabled
 ```
 
-## <a name="defining-the-job"></a><span data-ttu-id="3d80a-108">Definieren des Auftrags</span><span class="sxs-lookup"><span data-stu-id="3d80a-108">Defining the Job</span></span>
+## <a name="defining-the-job"></a><span data-ttu-id="65d89-108">Definieren des Auftrags</span><span class="sxs-lookup"><span data-stu-id="65d89-108">Defining the Job</span></span>
 
-<span data-ttu-id="3d80a-109">Wenn Sie einen Windows PowerShell-Auftrag definieren, erstellen Sie ein Parameter Wörterbuch.</span><span class="sxs-lookup"><span data-stu-id="3d80a-109">You define a Windows PowerShell job by creating a parameter dictionary.</span></span> <span data-ttu-id="3d80a-110">Die folgenden Parameter werden unterstützt.</span><span class="sxs-lookup"><span data-stu-id="3d80a-110">The following parameters are supported.</span></span>
+<span data-ttu-id="65d89-109">Wenn Sie einen Windows PowerShell-Auftrag definieren, erstellen Sie ein Parameter Wörterbuch.</span><span class="sxs-lookup"><span data-stu-id="65d89-109">You define a Windows PowerShell job by creating a parameter dictionary.</span></span> <span data-ttu-id="65d89-110">Die folgenden Parameter werden unterstützt.</span><span class="sxs-lookup"><span data-stu-id="65d89-110">The following parameters are supported.</span></span>
 
-|<span data-ttu-id="3d80a-111">Name des Parameters</span><span class="sxs-lookup"><span data-stu-id="3d80a-111">Parameter Name</span></span>|<span data-ttu-id="3d80a-112">Description</span><span class="sxs-lookup"><span data-stu-id="3d80a-112">Description</span></span>|
+|<span data-ttu-id="65d89-111">Name des Parameters</span><span class="sxs-lookup"><span data-stu-id="65d89-111">Parameter Name</span></span>|<span data-ttu-id="65d89-112">Description</span><span class="sxs-lookup"><span data-stu-id="65d89-112">Description</span></span>|
 |---|---|
-|<span data-ttu-id="3d80a-113">Name</span><span class="sxs-lookup"><span data-stu-id="3d80a-113">Name</span></span>|<span data-ttu-id="3d80a-114">Der Name des Auftrags.</span><span class="sxs-lookup"><span data-stu-id="3d80a-114">The name of the job.</span></span>|
-|<span data-ttu-id="3d80a-115">Scriptbock</span><span class="sxs-lookup"><span data-stu-id="3d80a-115">ScriptBock</span></span>|<span data-ttu-id="3d80a-116">Ein Windows PowerShell-Skriptblock, der angibt, was der Auftrag bewirkt.</span><span class="sxs-lookup"><span data-stu-id="3d80a-116">A Windows PowerShell script block that specifies what the job does.</span></span>|
-|<span data-ttu-id="3d80a-117">Dateipfad</span><span class="sxs-lookup"><span data-stu-id="3d80a-117">FilePath</span></span>|<span data-ttu-id="3d80a-118">Ein Pfad zu einer Datei, die einen Windows PowerShell-Skriptblock enthält, der angibt, was der Auftrag bewirkt.</span><span class="sxs-lookup"><span data-stu-id="3d80a-118">A path to a file that contains Windows PowerShell script block that specifies what the job does.</span></span>|
-|<span data-ttu-id="3d80a-119">InitializationScript</span><span class="sxs-lookup"><span data-stu-id="3d80a-119">InitializationScript</span></span>|<span data-ttu-id="3d80a-120">Ein Windows PowerShell-Skriptblock, der den Auftrag initialisiert.</span><span class="sxs-lookup"><span data-stu-id="3d80a-120">A Windows PowerShell script block that initializes the job.</span></span>|
-|<span data-ttu-id="3d80a-121">Argument List</span><span class="sxs-lookup"><span data-stu-id="3d80a-121">ArgumentList</span></span>|<span data-ttu-id="3d80a-122">Ein Array von-Objekten, die Argumente angeben, die der Auftrag annimmt.</span><span class="sxs-lookup"><span data-stu-id="3d80a-122">An array of objects that specify arguments that the job takes.</span></span>|
-|<span data-ttu-id="3d80a-123">RunAs32</span><span class="sxs-lookup"><span data-stu-id="3d80a-123">RunAs32</span></span>|<span data-ttu-id="3d80a-124">Ein boolescher Wert, der angibt, ob der Auftrag in einem 32-Bit-Prozess ausgeführt werden soll.</span><span class="sxs-lookup"><span data-stu-id="3d80a-124">A boolean value that specifies whether to run the job in a 32-bit process.</span></span>|
+|<span data-ttu-id="65d89-113">Name</span><span class="sxs-lookup"><span data-stu-id="65d89-113">Name</span></span>|<span data-ttu-id="65d89-114">Der Name des Auftrags.</span><span class="sxs-lookup"><span data-stu-id="65d89-114">The name of the job.</span></span>|
+|<span data-ttu-id="65d89-115">Scriptbock</span><span class="sxs-lookup"><span data-stu-id="65d89-115">ScriptBock</span></span>|<span data-ttu-id="65d89-116">Ein Windows PowerShell-Skriptblock, der angibt, was der Auftrag bewirkt.</span><span class="sxs-lookup"><span data-stu-id="65d89-116">A Windows PowerShell script block that specifies what the job does.</span></span>|
+|<span data-ttu-id="65d89-117">Dateipfad</span><span class="sxs-lookup"><span data-stu-id="65d89-117">FilePath</span></span>|<span data-ttu-id="65d89-118">Ein Pfad zu einer Datei, die einen Windows PowerShell-Skriptblock enthält, der angibt, was der Auftrag bewirkt.</span><span class="sxs-lookup"><span data-stu-id="65d89-118">A path to a file that contains Windows PowerShell script block that specifies what the job does.</span></span>|
+|<span data-ttu-id="65d89-119">InitializationScript</span><span class="sxs-lookup"><span data-stu-id="65d89-119">InitializationScript</span></span>|<span data-ttu-id="65d89-120">Ein Windows PowerShell-Skriptblock, der den Auftrag initialisiert.</span><span class="sxs-lookup"><span data-stu-id="65d89-120">A Windows PowerShell script block that initializes the job.</span></span>|
+|<span data-ttu-id="65d89-121">Argument List</span><span class="sxs-lookup"><span data-stu-id="65d89-121">ArgumentList</span></span>|<span data-ttu-id="65d89-122">Ein Array von-Objekten, die Argumente angeben, die der Auftrag annimmt.</span><span class="sxs-lookup"><span data-stu-id="65d89-122">An array of objects that specify arguments that the job takes.</span></span>|
+|<span data-ttu-id="65d89-123">RunAs32</span><span class="sxs-lookup"><span data-stu-id="65d89-123">RunAs32</span></span>|<span data-ttu-id="65d89-124">Ein boolescher Wert, der angibt, ob der Auftrag in einem 32-Bit-Prozess ausgeführt werden soll.</span><span class="sxs-lookup"><span data-stu-id="65d89-124">A boolean value that specifies whether to run the job in a 32-bit process.</span></span>|
 
-<span data-ttu-id="3d80a-125">Mit dem folgenden Code wird ein Parameter Wörterbuch Objekt erstellt und der Name und die ScriptBlock-Parameter festgelegt.</span><span class="sxs-lookup"><span data-stu-id="3d80a-125">The following code creates a parameter dictionary object and sets the Name and ScriptBlock parameters.</span></span>
+<span data-ttu-id="65d89-125">Mit dem folgenden Code wird ein Parameter Wörterbuch Objekt erstellt und der Name und die ScriptBlock-Parameter festgelegt.</span><span class="sxs-lookup"><span data-stu-id="65d89-125">The following code creates a parameter dictionary object and sets the Name and ScriptBlock parameters.</span></span>
 
 ```csharp
 string schedJobDefName = "MySampleSchedJob";
@@ -52,9 +52,9 @@ jobDefParameters.Add("ScriptBlock", scriptBlock);  // A scriptblock or script Fi
                                                    // is required.
 ```
 
-## <a name="creating-the-invocation-and-job-definition-objects"></a><span data-ttu-id="3d80a-126">Erstellen der Aufruf-und Auftrags Definitions Objekte</span><span class="sxs-lookup"><span data-stu-id="3d80a-126">Creating the Invocation and Job Definition Objects</span></span>
+## <a name="creating-the-invocation-and-job-definition-objects"></a><span data-ttu-id="65d89-126">Erstellen der Aufruf-und Auftrags Definitions Objekte</span><span class="sxs-lookup"><span data-stu-id="65d89-126">Creating the Invocation and Job Definition Objects</span></span>
 
-<span data-ttu-id="3d80a-127">Anschließend erstellen Sie scheduledjobinvocationinfo-und scheduledjobdefinition-Objekte, um den Auftrag auszuführen.</span><span class="sxs-lookup"><span data-stu-id="3d80a-127">You then create ScheduledJobInvocationInfo and ScheduledJobDefinition objects to run the job.</span></span> <span data-ttu-id="3d80a-128">Dies wird im folgenden Code veranschaulicht.</span><span class="sxs-lookup"><span data-stu-id="3d80a-128">The following code demonstrates this.</span></span>
+<span data-ttu-id="65d89-127">Anschließend erstellen Sie scheduledjobinvocationinfo-und scheduledjobdefinition-Objekte, um den Auftrag auszuführen.</span><span class="sxs-lookup"><span data-stu-id="65d89-127">You then create ScheduledJobInvocationInfo and ScheduledJobDefinition objects to run the job.</span></span> <span data-ttu-id="65d89-128">Im folgenden Code wird dies veranschaulicht.</span><span class="sxs-lookup"><span data-stu-id="65d89-128">The following code demonstrates this.</span></span>
 
 ```csharp
 ScheduledJobInvocationInfo jobInvocationInfo = new ScheduledJobInvocationInfo(
@@ -69,9 +69,9 @@ schedJobDefinition = new ScheduledJobDefinition(
                                                 // in default Task Scheduler process, account.
 ```
 
-## <a name="registering-the-job-with-the-task-scheduler"></a><span data-ttu-id="3d80a-129">Registrieren des Auftrags beim Taskplaner</span><span class="sxs-lookup"><span data-stu-id="3d80a-129">Registering the Job with the Task Scheduler</span></span>
+## <a name="registering-the-job-with-the-task-scheduler"></a><span data-ttu-id="65d89-129">Registrieren des Auftrags beim Taskplaner</span><span class="sxs-lookup"><span data-stu-id="65d89-129">Registering the Job with the Task Scheduler</span></span>
 
-<span data-ttu-id="3d80a-130">Der folgende Code registriert den Auftrag beim Windows-Taskplaner.</span><span class="sxs-lookup"><span data-stu-id="3d80a-130">The following code registers the job with the Windows Task Scheduler.</span></span>
+<span data-ttu-id="65d89-130">Der folgende Code registriert den Auftrag beim Windows-Taskplaner.</span><span class="sxs-lookup"><span data-stu-id="65d89-130">The following code registers the job with the Windows Task Scheduler.</span></span>
 
 ```csharp
 schedJobDefinition.Register();
@@ -79,9 +79,9 @@ registrationSucceeded = true;
 Console.WriteLine("Scheduled job has been registered.  Waiting 30 seconds for it to be started and run.");
 ```
 
-## <a name="complete-code-example"></a><span data-ttu-id="3d80a-131">Code Beispiel vervollständigen</span><span class="sxs-lookup"><span data-stu-id="3d80a-131">Complete Code Example</span></span>
+## <a name="complete-code-example"></a><span data-ttu-id="65d89-131">Code Beispiel vervollständigen</span><span class="sxs-lookup"><span data-stu-id="65d89-131">Complete Code Example</span></span>
 
-<span data-ttu-id="3d80a-132">Im folgenden finden Sie das gesamte Codebeispiel, aus dem die vorherigen Ausschnitte entnommen wurden.</span><span class="sxs-lookup"><span data-stu-id="3d80a-132">The following is the complete code example from which the previous snippets were taken.</span></span>
+<span data-ttu-id="65d89-132">Im folgenden finden Sie das gesamte Codebeispiel, aus dem die vorherigen Ausschnitte entnommen wurden.</span><span class="sxs-lookup"><span data-stu-id="65d89-132">The following is the complete code example from which the previous snippets were taken.</span></span>
 
 ```csharp
 using System;

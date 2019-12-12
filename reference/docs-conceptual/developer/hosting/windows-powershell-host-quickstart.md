@@ -9,56 +9,56 @@ ms.topic: article
 ms.assetid: 5a134b81-bd0c-4e1c-a2f0-9acbe852745a
 caps.latest.revision: 9
 ms.openlocfilehash: 390eb2d0153c65967d8c0711c852aa6e13fe4660
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72360819"
 ---
-# <a name="windows-powershell-host-quickstart"></a><span data-ttu-id="1f532-102">Windows PowerShell-Host: Schnellstart</span><span class="sxs-lookup"><span data-stu-id="1f532-102">Windows PowerShell Host Quickstart</span></span>
+# <a name="windows-powershell-host-quickstart"></a><span data-ttu-id="a12ad-102">Windows PowerShell-Host: Schnellstart</span><span class="sxs-lookup"><span data-stu-id="a12ad-102">Windows PowerShell Host Quickstart</span></span>
 
-<span data-ttu-id="1f532-103">Um Windows PowerShell in Ihrer Anwendung zu hosten, verwenden Sie die [System. Management. Automation. PowerShell](/dotnet/api/System.Management.Automation.PowerShell) -Klasse.</span><span class="sxs-lookup"><span data-stu-id="1f532-103">To host Windows PowerShell in your application, you use the [System.Management.Automation.PowerShell](/dotnet/api/System.Management.Automation.PowerShell) class.</span></span>
-<span data-ttu-id="1f532-104">Diese Klasse stellt Methoden bereit, mit denen eine Pipeline von Befehlen erstellt und diese Befehle anschließend in einem Runspace ausgeführt werden.</span><span class="sxs-lookup"><span data-stu-id="1f532-104">This class provides methods that create a pipeline of commands and then execute those commands in a runspace.</span></span>
-<span data-ttu-id="1f532-105">Die einfachste Möglichkeit zum Erstellen einer Host Anwendung besteht darin, den standardrunspace zu verwenden.</span><span class="sxs-lookup"><span data-stu-id="1f532-105">The simplest way to create a host application is to use the default runspace.</span></span>
-<span data-ttu-id="1f532-106">Der Standard-Runspace enthält alle Windows PowerShell-Kern Befehle.</span><span class="sxs-lookup"><span data-stu-id="1f532-106">The default runspace contains all of the core Windows PowerShell commands.</span></span>
-<span data-ttu-id="1f532-107">Wenn Sie möchten, dass Ihre Anwendung nur eine Teilmenge der Windows PowerShell-Befehle verfügbar macht, müssen Sie einen benutzerdefinierten Runspace erstellen.</span><span class="sxs-lookup"><span data-stu-id="1f532-107">If you want your application to expose only a subset of the Windows PowerShell commands, you must create a custom runspace.</span></span>
+<span data-ttu-id="a12ad-103">Um Windows PowerShell in Ihrer Anwendung zu hosten, verwenden Sie die [System. Management. Automation. PowerShell](/dotnet/api/System.Management.Automation.PowerShell) -Klasse.</span><span class="sxs-lookup"><span data-stu-id="a12ad-103">To host Windows PowerShell in your application, you use the [System.Management.Automation.PowerShell](/dotnet/api/System.Management.Automation.PowerShell) class.</span></span>
+<span data-ttu-id="a12ad-104">Diese Klasse stellt Methoden bereit, mit denen eine Pipeline von Befehlen erstellt und diese Befehle anschließend in einem Runspace ausgeführt werden.</span><span class="sxs-lookup"><span data-stu-id="a12ad-104">This class provides methods that create a pipeline of commands and then execute those commands in a runspace.</span></span>
+<span data-ttu-id="a12ad-105">Die einfachste Möglichkeit zum Erstellen einer Host Anwendung besteht darin, den standardrunspace zu verwenden.</span><span class="sxs-lookup"><span data-stu-id="a12ad-105">The simplest way to create a host application is to use the default runspace.</span></span>
+<span data-ttu-id="a12ad-106">Der Standard-Runspace enthält alle Windows PowerShell-Kern Befehle.</span><span class="sxs-lookup"><span data-stu-id="a12ad-106">The default runspace contains all of the core Windows PowerShell commands.</span></span>
+<span data-ttu-id="a12ad-107">Wenn Sie möchten, dass Ihre Anwendung nur eine Teilmenge der Windows PowerShell-Befehle verfügbar macht, müssen Sie einen benutzerdefinierten Runspace erstellen.</span><span class="sxs-lookup"><span data-stu-id="a12ad-107">If you want your application to expose only a subset of the Windows PowerShell commands, you must create a custom runspace.</span></span>
 
-## <a name="using-the-default-runspace"></a><span data-ttu-id="1f532-108">Verwenden des Standard-Runspace</span><span class="sxs-lookup"><span data-stu-id="1f532-108">Using the default runspace</span></span>
+## <a name="using-the-default-runspace"></a><span data-ttu-id="a12ad-108">Verwenden des Standard-Runspace</span><span class="sxs-lookup"><span data-stu-id="a12ad-108">Using the default runspace</span></span>
 
-<span data-ttu-id="1f532-109">Zunächst verwenden wir den standardrunspace und verwenden die Methoden der [System. Management. Automation. PowerShell](/dotnet/api/System.Management.Automation.PowerShell) -Klasse, um einer Pipeline Befehle, Parameter, Anweisungen und Skripts hinzuzufügen.</span><span class="sxs-lookup"><span data-stu-id="1f532-109">To start, we'll use the default runspace, and use the methods of the [System.Management.Automation.PowerShell](/dotnet/api/System.Management.Automation.PowerShell) class to add commands, parameters, statements, and scripts to a pipeline.</span></span>
+<span data-ttu-id="a12ad-109">Zunächst verwenden wir den standardrunspace und verwenden die Methoden der [System. Management. Automation. PowerShell](/dotnet/api/System.Management.Automation.PowerShell) -Klasse, um einer Pipeline Befehle, Parameter, Anweisungen und Skripts hinzuzufügen.</span><span class="sxs-lookup"><span data-stu-id="a12ad-109">To start, we'll use the default runspace, and use the methods of the [System.Management.Automation.PowerShell](/dotnet/api/System.Management.Automation.PowerShell) class to add commands, parameters, statements, and scripts to a pipeline.</span></span>
 
-### <a name="addcommand"></a><span data-ttu-id="1f532-110">AddCommand</span><span class="sxs-lookup"><span data-stu-id="1f532-110">AddCommand</span></span>
+### <a name="addcommand"></a><span data-ttu-id="a12ad-110">AddCommand</span><span class="sxs-lookup"><span data-stu-id="a12ad-110">AddCommand</span></span>
 
-<span data-ttu-id="1f532-111">Verwenden Sie die [System. Management. Automation. PowerShell. AddCommand](/dotnet/api/System.Management.Automation.PowerShell.AddCommand) -Methode, um der Pipeline Befehle hinzuzufügen.</span><span class="sxs-lookup"><span data-stu-id="1f532-111">You use the [System.Management.Automation.Powershell.AddCommand](/dotnet/api/System.Management.Automation.PowerShell.AddCommand) method to add commands to the pipeline.</span></span>
-<span data-ttu-id="1f532-112">Angenommen, Sie möchten die Liste der ausgelaufenden Prozesse auf dem Computer erhalten.</span><span class="sxs-lookup"><span data-stu-id="1f532-112">For example, suppose you want to get the list of running processes on the machine.</span></span>
-<span data-ttu-id="1f532-113">Der Befehl kann wie folgt ausgeführt werden.</span><span class="sxs-lookup"><span data-stu-id="1f532-113">The way to run this command is as follows.</span></span>
+<span data-ttu-id="a12ad-111">Verwenden Sie die [System. Management. Automation. PowerShell. AddCommand](/dotnet/api/System.Management.Automation.PowerShell.AddCommand) -Methode, um der Pipeline Befehle hinzuzufügen.</span><span class="sxs-lookup"><span data-stu-id="a12ad-111">You use the [System.Management.Automation.Powershell.AddCommand](/dotnet/api/System.Management.Automation.PowerShell.AddCommand) method to add commands to the pipeline.</span></span>
+<span data-ttu-id="a12ad-112">Angenommen, Sie möchten die Liste der ausgelaufenden Prozesse auf dem Computer erhalten.</span><span class="sxs-lookup"><span data-stu-id="a12ad-112">For example, suppose you want to get the list of running processes on the machine.</span></span>
+<span data-ttu-id="a12ad-113">Der Befehl kann wie folgt ausgeführt werden.</span><span class="sxs-lookup"><span data-stu-id="a12ad-113">The way to run this command is as follows.</span></span>
 
-1. <span data-ttu-id="1f532-114">Erstellen Sie ein [System. Management. Automation. PowerShell](/dotnet/api/System.Management.Automation.PowerShell) -Objekt.</span><span class="sxs-lookup"><span data-stu-id="1f532-114">Create a [System.Management.Automation.PowerShell](/dotnet/api/System.Management.Automation.PowerShell) object.</span></span>
+1. <span data-ttu-id="a12ad-114">Erstellen Sie ein [System. Management. Automation. PowerShell](/dotnet/api/System.Management.Automation.PowerShell) -Objekt.</span><span class="sxs-lookup"><span data-stu-id="a12ad-114">Create a [System.Management.Automation.PowerShell](/dotnet/api/System.Management.Automation.PowerShell) object.</span></span>
 
    ```csharp
    PowerShell ps = PowerShell.Create();
    ```
 
-2. <span data-ttu-id="1f532-115">Fügen Sie den Befehl hinzu, den Sie ausführen möchten.</span><span class="sxs-lookup"><span data-stu-id="1f532-115">Add the command that you want to execute.</span></span>
+2. <span data-ttu-id="a12ad-115">Fügen Sie den Befehl hinzu, den Sie ausführen möchten.</span><span class="sxs-lookup"><span data-stu-id="a12ad-115">Add the command that you want to execute.</span></span>
 
    ```csharp
    ps.AddCommand("Get-Process");
    ```
 
-3. <span data-ttu-id="1f532-116">Rufen Sie den Befehl auf.</span><span class="sxs-lookup"><span data-stu-id="1f532-116">Invoke the command.</span></span>
+3. <span data-ttu-id="a12ad-116">Rufen Sie den Befehl auf.</span><span class="sxs-lookup"><span data-stu-id="a12ad-116">Invoke the command.</span></span>
 
    ```csharp
    ps.Invoke();
    ```
 
-<span data-ttu-id="1f532-117">Wenn Sie die AddCommand-Methode mehrmals aufrufen, bevor Sie die [System. Management. Automation. PowerShell. aufrufen](/dotnet/api/System.Management.Automation.PowerShell.Invoke) -Methode aufrufen, wird das Ergebnis des ersten Befehls an die zweite weitergeleitet usw.</span><span class="sxs-lookup"><span data-stu-id="1f532-117">If you call the AddCommand method more than once before you call the [System.Management.Automation.Powershell.Invoke](/dotnet/api/System.Management.Automation.PowerShell.Invoke) method, the result of the first command is piped to the second, and so on.</span></span>
-<span data-ttu-id="1f532-118">Wenn Sie das Ergebnis eines vorherigen Befehls nicht an einen Befehl übergeben möchten, fügen Sie es hinzu, indem Sie stattdessen die [System. Management. Automation. PowerShell. addstatement](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) aufrufen.</span><span class="sxs-lookup"><span data-stu-id="1f532-118">If you do not want to pipe the result of a previous command to a command, add it by calling the [System.Management.Automation.Powershell.AddStatement](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) instead.</span></span>
+<span data-ttu-id="a12ad-117">Wenn Sie die AddCommand-Methode mehrmals aufrufen, bevor Sie die [System. Management. Automation. PowerShell. aufrufen](/dotnet/api/System.Management.Automation.PowerShell.Invoke) -Methode aufrufen, wird das Ergebnis des ersten Befehls an die zweite weitergeleitet usw.</span><span class="sxs-lookup"><span data-stu-id="a12ad-117">If you call the AddCommand method more than once before you call the [System.Management.Automation.Powershell.Invoke](/dotnet/api/System.Management.Automation.PowerShell.Invoke) method, the result of the first command is piped to the second, and so on.</span></span>
+<span data-ttu-id="a12ad-118">Wenn Sie das Ergebnis eines vorherigen Befehls nicht an einen Befehl übergeben möchten, fügen Sie es hinzu, indem Sie stattdessen die [System. Management. Automation. PowerShell. addstatement](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) aufrufen.</span><span class="sxs-lookup"><span data-stu-id="a12ad-118">If you do not want to pipe the result of a previous command to a command, add it by calling the [System.Management.Automation.Powershell.AddStatement](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) instead.</span></span>
 
-### <a name="addparameter"></a><span data-ttu-id="1f532-119">AddParameter</span><span class="sxs-lookup"><span data-stu-id="1f532-119">AddParameter</span></span>
+### <a name="addparameter"></a><span data-ttu-id="a12ad-119">AddParameter</span><span class="sxs-lookup"><span data-stu-id="a12ad-119">AddParameter</span></span>
 
-<span data-ttu-id="1f532-120">Das vorherige Beispiel führt einen einzelnen Befehl ohne Parameter aus.</span><span class="sxs-lookup"><span data-stu-id="1f532-120">The previous example executes a single command without any parameters.</span></span>
-<span data-ttu-id="1f532-121">Sie können dem Befehl Parameter hinzufügen, indem Sie die [System. Management. Automation. PSCommand. AddParameter](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) -Methode verwenden.</span><span class="sxs-lookup"><span data-stu-id="1f532-121">You can add parameters to the command by using the [System.Management.Automation.PSCommand.AddParameter](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) method.</span></span>
-<span data-ttu-id="1f532-122">Der folgende Code ruft beispielsweise eine Liste aller Prozesse ab, die den Namen `PowerShell` haben, die auf dem Computer ausgeführt wird.</span><span class="sxs-lookup"><span data-stu-id="1f532-122">For example, the following code gets a list of all of the processes that are named `PowerShell` running on the machine.</span></span>
+<span data-ttu-id="a12ad-120">Das vorherige Beispiel führt einen einzelnen Befehl ohne Parameter aus.</span><span class="sxs-lookup"><span data-stu-id="a12ad-120">The previous example executes a single command without any parameters.</span></span>
+<span data-ttu-id="a12ad-121">Sie können dem Befehl Parameter hinzufügen, indem Sie die [System. Management. Automation. PSCommand. AddParameter](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) -Methode verwenden.</span><span class="sxs-lookup"><span data-stu-id="a12ad-121">You can add parameters to the command by using the [System.Management.Automation.PSCommand.AddParameter](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) method.</span></span>
+<span data-ttu-id="a12ad-122">Der folgende Code ruft beispielsweise eine Liste aller Prozesse ab, die `PowerShell` auf dem Computer ausgeführt werden.</span><span class="sxs-lookup"><span data-stu-id="a12ad-122">For example, the following code gets a list of all of the processes that are named `PowerShell` running on the machine.</span></span>
 
 ```csharp
 PowerShell.Create().AddCommand("Get-Process")
@@ -66,7 +66,7 @@ PowerShell.Create().AddCommand("Get-Process")
                    .Invoke();
 ```
 
-<span data-ttu-id="1f532-123">Sie können zusätzliche Parameter hinzufügen, indem Sie die AddParameter-Methode wiederholt aufrufen.</span><span class="sxs-lookup"><span data-stu-id="1f532-123">You can add additional parameters by calling the AddParameter method repeatedly.</span></span>
+<span data-ttu-id="a12ad-123">Sie können zusätzliche Parameter hinzufügen, indem Sie die AddParameter-Methode wiederholt aufrufen.</span><span class="sxs-lookup"><span data-stu-id="a12ad-123">You can add additional parameters by calling the AddParameter method repeatedly.</span></span>
 
 ```csharp                   
 PowerShell.Create().AddCommand("Get-ChildItem")
@@ -75,7 +75,7 @@ PowerShell.Create().AddCommand("Get-ChildItem")
                    .Invoke();
 ```
 
-<span data-ttu-id="1f532-124">Sie können auch ein Wörterbuch mit Parameternamen und-Werten hinzufügen, indem Sie die [System. Management. Automation. PowerShell. AddParameters](/dotnet/api/System.Management.Automation.PowerShell.AddParameters) -Methode aufrufen.</span><span class="sxs-lookup"><span data-stu-id="1f532-124">You can also add a dictionary of parameter names and values by calling the [System.Management.Automation.PowerShell.AddParameters](/dotnet/api/System.Management.Automation.PowerShell.AddParameters) method.</span></span>
+<span data-ttu-id="a12ad-124">Sie können auch ein Wörterbuch mit Parameternamen und-Werten hinzufügen, indem Sie die [System. Management. Automation. PowerShell. AddParameters](/dotnet/api/System.Management.Automation.PowerShell.AddParameters) -Methode aufrufen.</span><span class="sxs-lookup"><span data-stu-id="a12ad-124">You can also add a dictionary of parameter names and values by calling the [System.Management.Automation.PowerShell.AddParameters](/dotnet/api/System.Management.Automation.PowerShell.AddParameters) method.</span></span>
 
 ```csharp
 IDictionary parameters = new Dictionary<String, String>();
@@ -88,10 +88,10 @@ PowerShell.Create().AddCommand("Get-Process")
 
 ```
 
-### <a name="addstatement"></a><span data-ttu-id="1f532-125">Addstatement</span><span class="sxs-lookup"><span data-stu-id="1f532-125">AddStatement</span></span>
+### <a name="addstatement"></a><span data-ttu-id="a12ad-125">Addstatement</span><span class="sxs-lookup"><span data-stu-id="a12ad-125">AddStatement</span></span>
 
-<span data-ttu-id="1f532-126">Sie können die Batch Verarbeitung simulieren, indem Sie die [System. Management. Automation. PowerShell. addstatement](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) -Methode verwenden, mit der am Ende der Pipeline eine zusätzliche-Anweisung hinzugefügt wird.</span><span class="sxs-lookup"><span data-stu-id="1f532-126">You can simulate batching by using the [System.Management.Automation.PowerShell.AddStatement](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) method, which adds an additional statement to the end of the pipeline.</span></span>
-<span data-ttu-id="1f532-127">Mit dem folgenden Code wird eine Liste der laufenden Prozesse mit dem Namen `PowerShell` abgerufen, und anschließend wird die Liste der derzeit laufenden Dienste abgerufen.</span><span class="sxs-lookup"><span data-stu-id="1f532-127">The following code gets a list of running processes with the name `PowerShell`, and then gets the list of running services.</span></span>
+<span data-ttu-id="a12ad-126">Sie können die Batch Verarbeitung simulieren, indem Sie die [System. Management. Automation. PowerShell. addstatement](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) -Methode verwenden, mit der am Ende der Pipeline eine zusätzliche-Anweisung hinzugefügt wird.</span><span class="sxs-lookup"><span data-stu-id="a12ad-126">You can simulate batching by using the [System.Management.Automation.PowerShell.AddStatement](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) method, which adds an additional statement to the end of the pipeline.</span></span>
+<span data-ttu-id="a12ad-127">Der folgende Code Ruft eine Liste der laufenden Prozesse mit dem Namen `PowerShell`ab und ruft dann die Liste der laufenden Dienste ab.</span><span class="sxs-lookup"><span data-stu-id="a12ad-127">The following code gets a list of running processes with the name `PowerShell`, and then gets the list of running services.</span></span>
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -100,37 +100,37 @@ ps.AddStatement().AddCommand("Get-Service");
 ps.Invoke();
 ```
 
-### <a name="addscript"></a><span data-ttu-id="1f532-128">AddScript</span><span class="sxs-lookup"><span data-stu-id="1f532-128">AddScript</span></span>
+### <a name="addscript"></a><span data-ttu-id="a12ad-128">AddScript</span><span class="sxs-lookup"><span data-stu-id="a12ad-128">AddScript</span></span>
 
-<span data-ttu-id="1f532-129">Sie können ein vorhandenes Skript ausführen, indem Sie die [System. Management. Automation. PowerShell. addScript](/dotnet/api/System.Management.Automation.PowerShell.AddScript) -Methode aufrufen.</span><span class="sxs-lookup"><span data-stu-id="1f532-129">You can run an existing script by calling the [System.Management.Automation.PowerShell.AddScript](/dotnet/api/System.Management.Automation.PowerShell.AddScript) method.</span></span>
-<span data-ttu-id="1f532-130">Das folgende Beispiel fügt der Pipeline ein Skript hinzu und führt es aus.</span><span class="sxs-lookup"><span data-stu-id="1f532-130">The following example adds a script to the pipeline and runs it.</span></span>
-<span data-ttu-id="1f532-131">In diesem Beispiel wird davon ausgegangen, dass in einem Ordner mit dem Namen `D:\PSScripts` bereits ein Skript mit dem Namen `MyScript.ps1` vorhanden ist</span><span class="sxs-lookup"><span data-stu-id="1f532-131">This example assumes there is already a script named `MyScript.ps1` in a folder named `D:\PSScripts`.</span></span>
+<span data-ttu-id="a12ad-129">Sie können ein vorhandenes Skript ausführen, indem Sie die [System. Management. Automation. PowerShell. addScript](/dotnet/api/System.Management.Automation.PowerShell.AddScript) -Methode aufrufen.</span><span class="sxs-lookup"><span data-stu-id="a12ad-129">You can run an existing script by calling the [System.Management.Automation.PowerShell.AddScript](/dotnet/api/System.Management.Automation.PowerShell.AddScript) method.</span></span>
+<span data-ttu-id="a12ad-130">Das folgende Beispiel fügt der Pipeline ein Skript hinzu und führt es aus.</span><span class="sxs-lookup"><span data-stu-id="a12ad-130">The following example adds a script to the pipeline and runs it.</span></span>
+<span data-ttu-id="a12ad-131">In diesem Beispiel wird davon ausgegangen, dass bereits ein Skript mit dem Namen `MyScript.ps1` in einem Ordner namens `D:\PSScripts`vorhanden ist.</span><span class="sxs-lookup"><span data-stu-id="a12ad-131">This example assumes there is already a script named `MyScript.ps1` in a folder named `D:\PSScripts`.</span></span>
 
 ```csharp
 PowerShell ps = PowerShell.Create();
 ps.AddScript("D:\PSScripts\MyScript.ps1").Invoke();
 ```
 
-<span data-ttu-id="1f532-132">Es gibt auch eine Version der addScript-Methode, die einen booleschen Parameter namens "`useLocalScope`" annimmt.</span><span class="sxs-lookup"><span data-stu-id="1f532-132">There is also a version of the AddScript method that takes a boolean parameter named `useLocalScope`.</span></span>
-<span data-ttu-id="1f532-133">Wenn dieser Parameter auf `true` festgelegt ist, wird das Skript im lokalen Gültigkeitsbereich ausgeführt.</span><span class="sxs-lookup"><span data-stu-id="1f532-133">If this parameter is set to `true`, then the script is run in the local scope.</span></span>
-<span data-ttu-id="1f532-134">Mit dem folgenden Code wird das Skript im lokalen Gültigkeitsbereich ausgeführt.</span><span class="sxs-lookup"><span data-stu-id="1f532-134">The following code will run the script in the local scope.</span></span>
+<span data-ttu-id="a12ad-132">Es gibt auch eine Version der addScript-Methode, die einen booleschen Parameter namens "`useLocalScope`" annimmt.</span><span class="sxs-lookup"><span data-stu-id="a12ad-132">There is also a version of the AddScript method that takes a boolean parameter named `useLocalScope`.</span></span>
+<span data-ttu-id="a12ad-133">Wenn dieser Parameter auf `true`festgelegt ist, wird das Skript im lokalen Gültigkeitsbereich ausgeführt.</span><span class="sxs-lookup"><span data-stu-id="a12ad-133">If this parameter is set to `true`, then the script is run in the local scope.</span></span>
+<span data-ttu-id="a12ad-134">Mit dem folgenden Code wird das Skript im lokalen Gültigkeitsbereich ausgeführt.</span><span class="sxs-lookup"><span data-stu-id="a12ad-134">The following code will run the script in the local scope.</span></span>
 
 ```csharp
 PowerShell ps = PowerShell.Create();
 ps.AddScript(@"D:\PSScripts\MyScript.ps1", true).Invoke();
 ```
 
-## <a name="creating-a-custom-runspace"></a><span data-ttu-id="1f532-135">Erstellen eines benutzerdefinierten Runspace</span><span class="sxs-lookup"><span data-stu-id="1f532-135">Creating a custom runspace</span></span>
+## <a name="creating-a-custom-runspace"></a><span data-ttu-id="a12ad-135">Erstellen eines benutzerdefinierten Runspace</span><span class="sxs-lookup"><span data-stu-id="a12ad-135">Creating a custom runspace</span></span>
 
-<span data-ttu-id="1f532-136">Während der Standard-Runspace, der in den vorherigen Beispielen verwendet wird, alle Windows PowerShell-Kern Befehle lädt, können Sie einen benutzerdefinierten Runspace erstellen, der nur eine bestimmte Teilmenge aller Befehle lädt.</span><span class="sxs-lookup"><span data-stu-id="1f532-136">While the default runspace used in the previous examples loads all of the core Windows PowerShell commands, you can create a custom runspace that loads only a specified subset of all commands.</span></span>
-<span data-ttu-id="1f532-137">Dies ist möglicherweise sinnvoll, um die Leistung zu verbessern (das Laden einer größeren Anzahl von Befehlen ist eine Leistungs Beeinträchtigung) oder um die Fähigkeit des Benutzers einzuschränken, Vorgänge auszuführen.</span><span class="sxs-lookup"><span data-stu-id="1f532-137">You might want to do this to improve performance (loading a larger number of commands is a performance hit), or to restrict the capability of the user to perform operations.</span></span>
-<span data-ttu-id="1f532-138">Ein Runspace, der nur eine begrenzte Anzahl von Befehlen verfügbar macht, wird als eingeschränkter Runspace bezeichnet.</span><span class="sxs-lookup"><span data-stu-id="1f532-138">A runspace that exposes only a limited number of commands is called a constrained runspace.</span></span>
-<span data-ttu-id="1f532-139">Um einen eingeschränkten Runspace zu erstellen, verwenden Sie die Klassen " [System. Management. Automation. Runspaces. Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) " und " [System. Management. Automation. Runspaces. initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) ".</span><span class="sxs-lookup"><span data-stu-id="1f532-139">To create a constrained runspace, you use the [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) and [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) classes.</span></span>
+<span data-ttu-id="a12ad-136">Während der Standard-Runspace, der in den vorherigen Beispielen verwendet wird, alle Windows PowerShell-Kern Befehle lädt, können Sie einen benutzerdefinierten Runspace erstellen, der nur eine bestimmte Teilmenge aller Befehle lädt.</span><span class="sxs-lookup"><span data-stu-id="a12ad-136">While the default runspace used in the previous examples loads all of the core Windows PowerShell commands, you can create a custom runspace that loads only a specified subset of all commands.</span></span>
+<span data-ttu-id="a12ad-137">Dies ist möglicherweise sinnvoll, um die Leistung zu verbessern (das Laden einer größeren Anzahl von Befehlen ist eine Leistungs Beeinträchtigung) oder um die Fähigkeit des Benutzers einzuschränken, Vorgänge auszuführen.</span><span class="sxs-lookup"><span data-stu-id="a12ad-137">You might want to do this to improve performance (loading a larger number of commands is a performance hit), or to restrict the capability of the user to perform operations.</span></span>
+<span data-ttu-id="a12ad-138">Ein Runspace, der nur eine begrenzte Anzahl von Befehlen verfügbar macht, wird als eingeschränkter Runspace bezeichnet.</span><span class="sxs-lookup"><span data-stu-id="a12ad-138">A runspace that exposes only a limited number of commands is called a constrained runspace.</span></span>
+<span data-ttu-id="a12ad-139">Um einen eingeschränkten Runspace zu erstellen, verwenden Sie die Klassen " [System. Management. Automation. Runspaces. Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) " und " [System. Management. Automation. Runspaces. initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) ".</span><span class="sxs-lookup"><span data-stu-id="a12ad-139">To create a constrained runspace, you use the [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) and [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) classes.</span></span>
 
-### <a name="creating-an-initialsessionstate-object"></a><span data-ttu-id="1f532-140">Erstellen eines initialsessionstate-Objekts</span><span class="sxs-lookup"><span data-stu-id="1f532-140">Creating an InitialSessionState object</span></span>
+### <a name="creating-an-initialsessionstate-object"></a><span data-ttu-id="a12ad-140">Erstellen eines initialsessionstate-Objekts</span><span class="sxs-lookup"><span data-stu-id="a12ad-140">Creating an InitialSessionState object</span></span>
 
-<span data-ttu-id="1f532-141">Um einen benutzerdefinierten Runspace zu erstellen, müssen Sie zunächst ein [System. Management. Automation. Runspaces. initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -Objekt erstellen.</span><span class="sxs-lookup"><span data-stu-id="1f532-141">To create a custom runspace, you must first create an [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
-<span data-ttu-id="1f532-142">Im folgenden Beispiel wird mithilfe von [System. Management. Automation. Runspaces. runspacefactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) ein Runspace erstellt, nachdem ein Standardmäßiges initialsessionstate-Objekt erstellt wurde.</span><span class="sxs-lookup"><span data-stu-id="1f532-142">In the following example, we use the [System.Management.Automation.Runspaces.RunspaceFactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) to create a runspace after creating a default InitialSessionState object.</span></span>
+<span data-ttu-id="a12ad-141">Um einen benutzerdefinierten Runspace zu erstellen, müssen Sie zunächst ein [System. Management. Automation. Runspaces. initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -Objekt erstellen.</span><span class="sxs-lookup"><span data-stu-id="a12ad-141">To create a custom runspace, you must first create an [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
+<span data-ttu-id="a12ad-142">Im folgenden Beispiel wird mithilfe von [System. Management. Automation. Runspaces. runspacefactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) ein Runspace erstellt, nachdem ein Standardmäßiges initialsessionstate-Objekt erstellt wurde.</span><span class="sxs-lookup"><span data-stu-id="a12ad-142">In the following example, we use the [System.Management.Automation.Runspaces.RunspaceFactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) to create a runspace after creating a default InitialSessionState object.</span></span>
 
 ```csharp
 InitialSessionState iss = InitialSessionState.CreateDefault();
@@ -142,25 +142,25 @@ ps.AddCommand("Get-Command");
 ps.Invoke();
 ```
 
-### <a name="constraining-the-runspace"></a><span data-ttu-id="1f532-143">Einschränken des Runspace</span><span class="sxs-lookup"><span data-stu-id="1f532-143">Constraining the runspace</span></span>
+### <a name="constraining-the-runspace"></a><span data-ttu-id="a12ad-143">Einschränken des Runspace</span><span class="sxs-lookup"><span data-stu-id="a12ad-143">Constraining the runspace</span></span>
 
-<span data-ttu-id="1f532-144">Im vorherigen Beispiel haben wir ein Standardmäßiges [System. Management. Automation. Runspaces. initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -Objekt erstellt, das alle integrierten Windows PowerShell-Kernfunktionen lädt.</span><span class="sxs-lookup"><span data-stu-id="1f532-144">In the previous example, we created a default [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object that loads all of the built-in core Windows PowerShell.</span></span>
-<span data-ttu-id="1f532-145">Wir könnten auch die [System. Management. Automation. Runspaces. initialsessionstate. CreateDefault2](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) -Methode aufrufen, um ein initialsessionstate-Objekt zu erstellen, das nur die Befehle im Microsoft. PowerShell. Core-Snap-in Laden würde.</span><span class="sxs-lookup"><span data-stu-id="1f532-145">We could also have called the [System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) method to create an InitialSessionState object that would load only the commands in the Microsoft.PowerShell.Core snapin.</span></span>
-<span data-ttu-id="1f532-146">Um einen eingeschränkteren Runspace zu erstellen, müssen Sie ein leeres initialsessionstate-Objekt erstellen, indem Sie die [System. Management. Automation. Runspaces. initialsessionstate. Create](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) -Methode aufrufen und dann den initialsessionstate-Befehlen hinzufügen.</span><span class="sxs-lookup"><span data-stu-id="1f532-146">To create a more constrained runspace, you must create an empty InitialSessionState object by calling the [System.Management.Automation.Runspaces.InitialSessionState.Create](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) method, and then add commands to the InitialSessionState.</span></span>
+<span data-ttu-id="a12ad-144">Im vorherigen Beispiel haben wir ein Standardmäßiges [System. Management. Automation. Runspaces. initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) -Objekt erstellt, das alle integrierten Windows PowerShell-Kernfunktionen lädt.</span><span class="sxs-lookup"><span data-stu-id="a12ad-144">In the previous example, we created a default [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object that loads all of the built-in core Windows PowerShell.</span></span>
+<span data-ttu-id="a12ad-145">Wir könnten auch die [System. Management. Automation. Runspaces. initialsessionstate. CreateDefault2](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) -Methode aufrufen, um ein initialsessionstate-Objekt zu erstellen, das nur die Befehle im Microsoft. PowerShell. Core-Snap-in Laden würde.</span><span class="sxs-lookup"><span data-stu-id="a12ad-145">We could also have called the [System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2) method to create an InitialSessionState object that would load only the commands in the Microsoft.PowerShell.Core snapin.</span></span>
+<span data-ttu-id="a12ad-146">Um einen eingeschränkteren Runspace zu erstellen, müssen Sie ein leeres initialsessionstate-Objekt erstellen, indem Sie die [System. Management. Automation. Runspaces. initialsessionstate. Create](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) -Methode aufrufen und dann den initialsessionstate-Befehlen hinzufügen.</span><span class="sxs-lookup"><span data-stu-id="a12ad-146">To create a more constrained runspace, you must create an empty InitialSessionState object by calling the [System.Management.Automation.Runspaces.InitialSessionState.Create](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) method, and then add commands to the InitialSessionState.</span></span>
 
-<span data-ttu-id="1f532-147">Wenn Sie einen Runspace verwenden, der nur die von Ihnen angegebenen Befehle lädt, wird die Leistung erheblich verbessert.</span><span class="sxs-lookup"><span data-stu-id="1f532-147">Using a runspace that loads only the commands that you specify provides significantly improved performance.</span></span>
+<span data-ttu-id="a12ad-147">Wenn Sie einen Runspace verwenden, der nur die von Ihnen angegebenen Befehle lädt, wird die Leistung erheblich verbessert.</span><span class="sxs-lookup"><span data-stu-id="a12ad-147">Using a runspace that loads only the commands that you specify provides significantly improved performance.</span></span>
 
-<span data-ttu-id="1f532-148">Verwenden Sie die Methoden der [System. Management. Automation. Runspaces. sessionstatecmdletentry](/dotnet/api/System.Management.Automation.Runspaces.SessionStateCmdletEntry) -Klasse, um Cmdlets für den anfänglichen Sitzungs Status zu definieren.</span><span class="sxs-lookup"><span data-stu-id="1f532-148">You use the methods of the [System.Management.Automation.Runspaces.SessionStateCmdletEntry](/dotnet/api/System.Management.Automation.Runspaces.SessionStateCmdletEntry) class to define cmdlets for the initial session state.</span></span>
-<span data-ttu-id="1f532-149">Im folgenden Beispiel wird ein leerer ursprünglicher Sitzungszustand erstellt, dann werden die `Get-Command`-und `Import-Module`-Befehle definiert und dem anfänglichen Sitzungszustand hinzugefügt.</span><span class="sxs-lookup"><span data-stu-id="1f532-149">The following example creates an empty initial session state, then defines and adds the `Get-Command` and `Import-Module` commands to the initial session state.</span></span>
-<span data-ttu-id="1f532-150">Anschließend erstellen wir einen durch diesen anfänglichen Sitzungs Status eingeschränkten Runspace und führen die Befehle in diesem Runspace aus.</span><span class="sxs-lookup"><span data-stu-id="1f532-150">We then create a runspace constrained by that initial session state, and execute the commands in that runspace.</span></span>
+<span data-ttu-id="a12ad-148">Verwenden Sie die Methoden der [System. Management. Automation. Runspaces. sessionstatecmdletentry](/dotnet/api/System.Management.Automation.Runspaces.SessionStateCmdletEntry) -Klasse, um Cmdlets für den anfänglichen Sitzungs Status zu definieren.</span><span class="sxs-lookup"><span data-stu-id="a12ad-148">You use the methods of the [System.Management.Automation.Runspaces.SessionStateCmdletEntry](/dotnet/api/System.Management.Automation.Runspaces.SessionStateCmdletEntry) class to define cmdlets for the initial session state.</span></span>
+<span data-ttu-id="a12ad-149">Im folgenden Beispiel wird ein leerer ursprünglicher Sitzungszustand erstellt. Anschließend werden die `Get-Command`-und `Import-Module`-Befehle definiert und dem anfänglichen Sitzungszustand hinzugefügt.</span><span class="sxs-lookup"><span data-stu-id="a12ad-149">The following example creates an empty initial session state, then defines and adds the `Get-Command` and `Import-Module` commands to the initial session state.</span></span>
+<span data-ttu-id="a12ad-150">Anschließend erstellen wir einen durch diesen anfänglichen Sitzungs Status eingeschränkten Runspace und führen die Befehle in diesem Runspace aus.</span><span class="sxs-lookup"><span data-stu-id="a12ad-150">We then create a runspace constrained by that initial session state, and execute the commands in that runspace.</span></span>
 
-<span data-ttu-id="1f532-151">Erstellen Sie den anfänglichen Sitzungszustand.</span><span class="sxs-lookup"><span data-stu-id="1f532-151">Create the initial session state.</span></span>
+<span data-ttu-id="a12ad-151">Erstellen Sie den anfänglichen Sitzungszustand.</span><span class="sxs-lookup"><span data-stu-id="a12ad-151">Create the initial session state.</span></span>
 
 ```csharp
 InitialSessionState iss = InitialSessionState.Create();
 ```
 
-<span data-ttu-id="1f532-152">Definieren und Hinzufügen von Befehlen zum anfänglichen Sitzungszustand.</span><span class="sxs-lookup"><span data-stu-id="1f532-152">Define and add commands to the initial session state.</span></span>
+<span data-ttu-id="a12ad-152">Definieren und Hinzufügen von Befehlen zum anfänglichen Sitzungszustand.</span><span class="sxs-lookup"><span data-stu-id="a12ad-152">Define and add commands to the initial session state.</span></span>
 
 ```csharp
 SessionStateCmdletEntry getCommand = new SessionStateCmdletEntry(
@@ -171,14 +171,14 @@ iss.Commands.Add(getCommand);
 iss.Commands.Add(importModule);
 ```
 
-<span data-ttu-id="1f532-153">Erstellen Sie den Runspace, und öffnen Sie ihn.</span><span class="sxs-lookup"><span data-stu-id="1f532-153">Create and open the runspace.</span></span>
+<span data-ttu-id="a12ad-153">Erstellen Sie den Runspace, und öffnen Sie ihn.</span><span class="sxs-lookup"><span data-stu-id="a12ad-153">Create and open the runspace.</span></span>
 
 ```csharp
 Runspace rs = RunspaceFactory.CreateRunspace(iss);
 rs.Open();
 ```
 
-<span data-ttu-id="1f532-154">Führen Sie einen Befehl aus, um das Ergebnis anzuzeigen.</span><span class="sxs-lookup"><span data-stu-id="1f532-154">Execute a command and show the result.</span></span>
+<span data-ttu-id="a12ad-154">Führen Sie einen Befehl aus, um das Ergebnis anzuzeigen.</span><span class="sxs-lookup"><span data-stu-id="a12ad-154">Execute a command and show the result.</span></span>
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -191,7 +191,7 @@ foreach (var entry in result)
 }
 ```
 
-<span data-ttu-id="1f532-155">Wenn Sie ausführen, wird die Ausgabe dieses Codes wie folgt aussehen.</span><span class="sxs-lookup"><span data-stu-id="1f532-155">When run, the output of this code will look as follows.</span></span>
+<span data-ttu-id="a12ad-155">Wenn Sie ausführen, wird die Ausgabe dieses Codes wie folgt aussehen.</span><span class="sxs-lookup"><span data-stu-id="a12ad-155">When run, the output of this code will look as follows.</span></span>
 
 ```powershell
 Get-Command
