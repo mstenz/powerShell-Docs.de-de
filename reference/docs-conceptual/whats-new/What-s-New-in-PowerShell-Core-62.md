@@ -2,12 +2,12 @@
 title: Neuerungen in PowerShell Core 6.2
 description: Neue Funktionen und Änderungen in PowerShell Core 6.2
 ms.date: 03/28/2019
-ms.openlocfilehash: 6a0da8a410e602ae3963e0bc7bace745317d7d4b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 2f5f5d11ba46d53966093c5e3ed6d0c7d47308d0
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62058096"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75737133"
 ---
 # <a name="whats-new-in-powershell-core-62"></a>Neuerungen in PowerShell Core 6.2
 
@@ -72,7 +72,7 @@ Wenn Sie PowerShell Core auf verschiedenen Betriebssystemen verwenden, werden Si
 
 ```powershell
 PS> "Hello World!" > Temp:/hello.txt
-PS> `Get-Content` Temp:/hello.txt
+PS> Get-Content Temp:/hello.txt
 Hello World!
 ```
 
@@ -102,7 +102,7 @@ PS> Import-AzRecoveryServicesAsrVaultSettingsFile
 > Dieses Feature ist für die interaktive Verwendung vorgesehen. Abgekürzte Formen der Cmdlets können nicht ausgeführt werden.
 > Dieses Feature ist kein Ersatz für Aliase.
 
-## <a name="breaking-changes"></a>Wichtige Änderungen
+## <a name="breaking-changes"></a>Aktuelle Änderungen
 
 - `-NoEnumerate`-Verhalten in `Write-Output` ist konsistent mit Windows PowerShell. (#9069)
 - Das Ergebnis von `Join-String -InputObject 1,2,3` ist jetzt gleich dem Ergebnis von `1,2,3 | Join-String` (#8611) – vielen Dank an @sethvs!

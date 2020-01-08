@@ -1,13 +1,13 @@
 ---
 ms.date: 10/11/2019
-keywords: dsc,powershell,configuration,setup
+keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: 'Desired State Configuration (DSC): Übersicht für Entscheidungsträger'
-ms.openlocfilehash: 271ec04035feb17e932acd0ac80f32213a4e018b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b6d483d105c2d3b9be7215be36397d452338c7f1
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72352132"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75737252"
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>Desired State Configuration (DSC): Übersicht für Entscheidungsträger
 
@@ -31,7 +31,7 @@ Konfigurationen können über den [PowerShell-Katalog](https://powershellgallery
 
 ## <a name="dsc-and-devops"></a>DSC und DevOps
 
-DSC wurde mit Fokus auf [DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) entworfen. DevOps ist eine Kombination aus Benutzern, Prozessen und Tools, die eine schnelle Bereitstellung und Iteration ermöglicht, um sowohl internen als auch externen Endbenutzern einen Mehrwert zu bieten. Wenn eine Umgebung durch eine einzige Konfiguration definiert wird, können Entwickler ihre Anforderungen in die Konfiguration programmieren und diese in die Quellcodeverwaltung einchecken. Betriebsteams können den Code dann bereitstellen, ohne fehleranfällige manuelle Prozesse durchlaufen zu müssen.
+DSC wurde mit Fokus auf [DevOps](/archive/blogs/ashleymcglone/devops-for-n00bs-ie-windows-people-like-me) entworfen. DevOps ist eine Kombination aus Benutzern, Prozessen und Tools, die eine schnelle Bereitstellung und Iteration ermöglicht, um sowohl internen als auch externen Endbenutzern einen Mehrwert zu bieten. Wenn eine Umgebung durch eine einzige Konfiguration definiert wird, können Entwickler ihre Anforderungen in die Konfiguration programmieren und diese in die Quellcodeverwaltung einchecken. Betriebsteams können den Code dann bereitstellen, ohne fehleranfällige manuelle Prozesse durchlaufen zu müssen.
 
 Konfigurationen sind [datengesteuert](../configurations/configData.md). Durch definierte Daten ist es für Betriebsteams leichter, Umgebungen ohne Eingriffe von Entwicklern zu erkennen und zu ändern.
 
