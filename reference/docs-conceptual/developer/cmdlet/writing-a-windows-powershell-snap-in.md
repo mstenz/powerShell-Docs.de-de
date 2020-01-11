@@ -10,12 +10,12 @@ helpviewer_keywords:
 - snap-ins [PowerShell SDK], PSSnapin example
 ms.assetid: 875024f4-e02b-4416-80b9-af5e5b50aad6
 caps.latest.revision: 7
-ms.openlocfilehash: 465ab9e8fa29716ce0f46ad0dcf01d0ddd615bcd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d12a66e354a23041fffb0f8fa286c849849ec2b0
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364229"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870471"
 ---
 # <a name="writing-a-windows-powershell-snap-in"></a>Schreiben eines Windows PowerShell-Snap-Ins
 
@@ -31,7 +31,7 @@ Bei dieser Art von Snap-in wählen Sie nicht die Cmdlets und Anbieter aus, die S
 
     In diesem Beispiel lautet der Klassenname "GetProcPSSnapIn01".
 
-3. Fügen Sie eine öffentliche Eigenschaft für den Namen des Snap-Ins hinzu (erforderlich). Verwenden Sie beim Benennen von Snap-Ins keines der folgenden Zeichen: #. , () {} [] &-/\ $; : "" \< >;? @ ` *
+3. Fügen Sie eine öffentliche Eigenschaft für den Namen des Snap-Ins hinzu (erforderlich). Verwenden Sie beim Benennen von Snap-Ins keines der folgenden Zeichen: `#`, `.`, `,`, `(`, `)`, `{`, `}`, `[`, `]`, `&`, `-`, `/`, `\`, `$`, `;`, `:`, `"`, `'`, `<`, `>`, `|`, `?`, `@`, `` ` ``, `*`
 
     In diesem Beispiel lautet der Name des Snap-Ins "GetProcPSSnapIn01".
 
@@ -53,7 +53,7 @@ Bei dieser Art von Snap-in wählen Sie nicht die Cmdlets und Anbieter aus, die S
 
 ## <a name="example"></a>Beispiel
 
-Dieses Beispiel zeigt, wie Sie ein Windows PowerShell-Snap-in schreiben, das zum Registrieren des Get-proc-Cmdlets in der Windows PowerShell-Shell verwendet werden kann. Beachten Sie, dass in diesem Beispiel die vollständige Assembly nur die GetProcPSSnapIn01-Snap-in-Klasse und die Get-proc-Cmdlet-Klasse enthalten würde.
+Dieses Beispiel zeigt, wie Sie ein Windows PowerShell-Snap-in schreiben, das zum Registrieren des Get-proc-Cmdlets in der Windows PowerShell-Shell verwendet werden kann. Beachten Sie, dass in diesem Beispiel die vollständige Assembly nur die GetProcPSSnapIn01-Snap-in-Klasse und die `Get-Proc` Cmdlet-Klasse enthalten würde.
 
 ```csharp
 [RunInstaller(true)]
@@ -126,8 +126,8 @@ public class GetProcPSSnapIn01 : PSSnapIn
 }
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
-[Registrieren von Cmdlets, Anbietern und Host Anwendungen](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Registrieren von Cmdlets, Anbietern und Host Anwendungen](/previous-versions/ms714644(v=vs.85))
 
 [Windows PowerShell Shell SDK](../windows-powershell-reference.md)

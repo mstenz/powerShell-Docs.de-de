@@ -1,22 +1,14 @@
 ---
-title: Erstellen eines Windows PowerShell-navigationsanbieters | Microsoft-Dokumentation
-ms.custom: ''
+title: Erstellen eines Windows PowerShell-Navigationsanbieters
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
 ms.topic: article
-helpviewer_keywords:
-- navigation providers [PowerShell Programmer's Guide]
-- providers [PowerShell Programmer's Guide], navigation provider
 ms.assetid: 8bd3224d-ca6f-4640-9464-cb4d9f4e13b1
-caps.latest.revision: 5
-ms.openlocfilehash: f73e732ca9416b906b3647c5090dfa04ad940484
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 96a9167019c047bb9c6e56362b2c1110ece553dd
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416198"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870692"
 ---
 # <a name="creating-a-windows-powershell-navigation-provider"></a>Erstellen eines Windows PowerShell-Navigationsanbieters
 
@@ -24,10 +16,7 @@ In diesem Thema wird beschrieben, wie Sie einen Windows PowerShell-Navigations A
 
 > [!NOTE]
 > Sie können die C# Quelldatei (AccessDBSampleProvider05.cs) für diesen Anbieter mithilfe des Microsoft Windows Software Development Kit für Windows Vista und .NET Framework 3,0-Laufzeitkomponenten herunterladen. Anweisungen zum Herunterladen finden Sie unter [Installieren von Windows PowerShell und Herunterladen des Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
->
-> Die heruntergeladenen Quelldateien stehen im **\<PowerShell-Beispiele >** Verzeichnis zur Verfügung.
->
-> Weitere Informationen zu anderen Windows PowerShell-Anbieter Implementierungen finden [Sie unter Entwerfen des Windows PowerShell-Anbieters](./designing-your-windows-powershell-provider.md).
+> Die heruntergeladenen Quelldateien stehen im **\<PowerShell-Beispiele >** Verzeichnis zur Verfügung. Weitere Informationen zu anderen Windows PowerShell-Anbieter Implementierungen finden [Sie unter Entwerfen des Windows PowerShell-Anbieters](./designing-your-windows-powershell-provider.md).
 
 Der hier beschriebene Anbieter ermöglicht dem Benutzer das Verarbeiten einer Access-Datenbank als Laufwerk, sodass der Benutzer zu den Datentabellen in der Datenbank navigieren kann. Beim Erstellen eines eigenen navigationsanbieters können Sie Methoden implementieren, die für das Laufwerk qualifizierte Pfade für die Navigation, normalisieren relativer Pfade, Verschieben von Elementen des Datenspeicher sowie Methoden zum erhalten von untergeordneten Namen, zum erhalten des übergeordneten Pfads eines Elements und zum Testen , um zu ermitteln, ob ein Element ein Container ist.
 
@@ -38,7 +27,8 @@ Der hier beschriebene Anbieter ermöglicht dem Benutzer das Verarbeiten einer Ac
 
 Ein Windows PowerShell-Navigations Anbieter muss eine .NET-Klasse erstellen, die von der [System. Management. Automation. Provider. navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) -Basisklasse abgeleitet wird. Hier ist die Klassendefinition für den in diesem Abschnitt beschriebenen Navigations Anbieter.
 
-[!code-csharp[AccessDBProviderSample05.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample05/AccessDBProviderSample05.cs#L31-L32 "AccessDBProviderSample05.cs")]
+[!code-csharp[AccessDBProviderSample05.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample05/AccessDBProviderSample05.cs#L31-L32
+"AccessDBProviderSample05.cs")]
 
 Beachten Sie, dass das [System. Management. Automation. Provider. cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) -Attribut in diesem Anbieter zwei Parameter enthält. Der erste Parameter gibt einen benutzerfreundlichen Namen für den Anbieter an, der von Windows PowerShell verwendet wird. Der zweite Parameter gibt die Windows PowerShell-spezifischen Funktionen an, die der Anbieter während der Befehls Verarbeitung für die Windows PowerShell-Laufzeit verfügbar macht. Für diesen Anbieter gibt es keine Windows PowerShell-spezifischen Funktionen, die hinzugefügt werden.
 
@@ -77,7 +67,8 @@ Die folgenden Bedingungen können für Ihre Implementierung von [System. Managem
 
 Windows PowerShell-Navigations Anbieter implementieren die [System. Management. Automation. Provider. navigationcmdletprovider. getbientpath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetParentPath) -Methode, um den übergeordneten Teil des angegebenen vollständigen oder partiellen anbieterspezifischen Pfads abzurufen. Die-Methode entfernt den untergeordneten Teil des Pfads und gibt den übergeordneten Pfadteil zurück. Der `root`-Parameter gibt den voll qualifizierten Pfad zum Stamm eines Laufwerks an. Dieser Parameter kann NULL oder leer sein, wenn ein bereitgestelltes Laufwerk nicht für den Abruf Vorgang verwendet wird. Wenn ein root-Wert angegeben wird, muss die Methode einen Pfad zu einem Container in derselben Struktur wie der Stamm zurückgeben.
 
-Der Beispiel-Navigations Anbieter setzt diese Methode nicht außer Kraft, sondern verwendet die Standard Implementierung. Sie akzeptiert Pfade, die "/" und "\\" als Pfad Trennzeichen verwenden. Zuerst wird der Pfad so normalisiert, dass nur die Trennzeichen "\\" vorhanden sind. Anschließend wird der übergeordnete Pfad auf der letzten "\\" und der übergeordnete Pfad zurückgegeben.
+Der Beispiel-Navigations Anbieter setzt diese Methode nicht außer Kraft, sondern verwendet die Standard Implementierung.
+Sie akzeptiert Pfade, die "/" und "\\" als Pfad Trennzeichen verwenden. Zuerst wird der Pfad so normalisiert, dass nur die Trennzeichen "\\" vorhanden sind. Anschließend wird der übergeordnete Pfad auf der letzten "\\" und der übergeordnete Pfad zurückgegeben.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidergetparentpath](Msh_samplestestcmdlets#testprovidergetparentpath)]  -->
 
@@ -126,7 +117,8 @@ Die .NET-Klasse des navigationsanbieters kann die Anbieter Funktionen von expand
 
 Standardmäßig sollten über schreibungen dieser Methode Objekte nicht über vorhandene Objekte verschieben, es sei denn, die [System. Management. Automation. Provider. cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) -Eigenschaft ist auf `true`festgelegt. Beispielsweise kopiert der File System-Anbieter nicht "c:\temp\abc.txt" über eine vorhandene c:\bar.txt-Datei, es sei denn, die [System. Management. Automation. Provider. cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) -Eigenschaft ist auf "`true`" festgelegt. Wenn der im `destination`-Parameter angegebene Pfad vorhanden ist und ein Container ist, ist die [System. Management. Automation. Provider. cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) -Eigenschaft nicht erforderlich. In diesem Fall sollte [System. Management. Automation. Provider. navigationcmdletprovider. MoveItem *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) das Element, das vom `path`-Parameter angegeben wird, in den Container verschieben, der durch den `destination`-Parameter als untergeordnetes Element angegeben wird.
 
-Ihre Implementierung der [System. Management. Automation. Provider. navigationcmdletprovider. muveitem *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) -Methode sollte [System. Management. Automation. Provider. cmdletprovider. rechtdprocess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) aufzurufen und ihren Rückgabewert überprüfen, bevor Änderungen am Datenspeicher vorgenommen werden. Diese Methode wird verwendet, um die Ausführung eines Vorgangs zu bestätigen, wenn eine Änderung am Systemstatus vorgenommen wird, z. b. das Löschen von Dateien. [System. Management. Automation. Provider. cmdletprovider. schuldprocess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) sendet den Namen der Ressource, die an den Benutzer geändert werden soll, wobei die Windows PowerShell-Laufzeit alle Befehlszeilen Einstellungen oder Einstellungs Variablen unternimmt, um zu bestimmen, was dem Benutzer angezeigt werden soll.
+Ihre Implementierung der [System. Management. Automation. Provider. navigationcmdletprovider. muveitem *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) -Methode sollte [System. Management. Automation. Provider. cmdletprovider. rechtdprocess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) aufzurufen und ihren Rückgabewert überprüfen, bevor Änderungen am Datenspeicher vorgenommen werden. Diese Methode wird verwendet, um die Ausführung eines Vorgangs zu bestätigen, wenn eine Änderung am Systemstatus vorgenommen wird, z. b. das Löschen von Dateien.
+[System. Management. Automation. Provider. cmdletprovider. schuldprocess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) sendet den Namen der Ressource, die an den Benutzer geändert werden soll, wobei die Windows PowerShell-Laufzeit alle Befehlszeilen Einstellungen oder Einstellungs Variablen unternimmt, um zu bestimmen, was dem Benutzer angezeigt werden soll.
 
 Nach dem Aufruf von [System. Management. Automation. Provider. cmdletprovider. schuldprocess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) gibt `true`zurück, die [System. Management. Automation. Provider. navigationcmdletprovider. muveitem *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) -Methode muss die [System. Management. Automation. Provider. cmdletprovider. dendcontinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) -Methode aufruft. Diese Methode sendet eine Meldung an den Benutzer, um Feedback zu geben, ob der Vorgang fortgesetzt werden soll. Der Anbieter sollte [System. Management. Automation. Provider. cmdletprovider. undcontinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) als zusätzliche Überprüfung auf potenziell gefährliche System Änderungen abrufen.
 
@@ -156,11 +148,11 @@ Einen umfassenden Beispielcode finden Sie unter [AccessDbProviderSample05-Codebe
 
 ## <a name="defining-object-types-and-formatting"></a>Definieren von Objekttypen und Formatierung
 
-Es ist möglich, dass ein Anbieter vorhandenen Objekten Elemente hinzufügt oder neue Objekte definiert. Weitere Informationen finden Sie unter[Erweitern von Objekttypen und Formatierung](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+Es ist möglich, dass ein Anbieter vorhandenen Objekten Elemente hinzufügt oder neue Objekte definiert. Weitere Informationen finden Sie unter[Erweitern von Objekttypen und Formatierung](/previous-versions/ms714665(v=vs.85)).
 
 ## <a name="building-the-windows-powershell-provider"></a>Entwickeln des Windows PowerShell-Anbieters
 
-Weitere Informationen finden Sie unter [Registrieren von Cmdlets, Anbietern und Host Anwendungen](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+Weitere Informationen finden Sie unter [Registrieren von Cmdlets, Anbietern und Host Anwendungen](/previous-versions/ms714644(v=vs.85)).
 
 ## <a name="testing-the-windows-powershell-provider"></a>Testen des Windows PowerShell-Anbieters
 
@@ -178,7 +170,7 @@ Wenn Ihr Windows PowerShell-Anbieter bei Windows PowerShell registriert wurde, k
    Get-ChildItem | Format-Table rowcount,name -AutoSize
    ```
 
-   ```output
+   ```Output
    RowCount   Name
    --------   ----
         180   MSysAccessObjects
@@ -211,7 +203,7 @@ Wenn Ihr Windows PowerShell-Anbieter bei Windows PowerShell registriert wurde, k
    Get-Location
    ```
 
-   ```output
+   ```Output
    Path
    ----
    mydb:\Employees
@@ -223,7 +215,7 @@ Wenn Ihr Windows PowerShell-Anbieter bei Windows PowerShell registriert wurde, k
    Get-ChildItem | Format-Table rownumber,psiscontainer,data -AutoSize
    ```
 
-   ```output
+   ```Output
    RowNumber   PSIsContainer   Data
    ---------   --------------   ----
    0           False            System.Data.DataRow
@@ -243,7 +235,7 @@ Wenn Ihr Windows PowerShell-Anbieter bei Windows PowerShell registriert wurde, k
    Get-Item 0
    ```
 
-   ```output
+   ```Output
    PSPath        : AccessDB::C:\PS\Northwind.mdb\Employees\0
    PSParentPath  : AccessDB::C:\PS\Northwind.mdb\Employees
    PSChildName   : 0
@@ -260,7 +252,7 @@ Wenn Ihr Windows PowerShell-Anbieter bei Windows PowerShell registriert wurde, k
    (Get-Item 0).data
    ```
 
-   ```output
+   ```Output
    EmployeeID      : 1
    LastName        : Davis
    FirstName       : Sara
@@ -284,17 +276,17 @@ Wenn Ihr Windows PowerShell-Anbieter bei Windows PowerShell registriert wurde, k
    ReportsTo       : 2
    ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Erstellen von Windows PowerShell-Anbietern](./how-to-create-a-windows-powershell-provider.md)
 
 [Entwerfen Ihres Windows PowerShell-Anbieters](./designing-your-windows-powershell-provider.md)
 
-[Erweitern von Objekttypen und Formatierung](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Erweitern von Objekttypen und Formatierung](/previous-versions/ms714665(v=vs.85))
 
 [Implementieren eines Windows PowerShell-Anbieters für Container](./creating-a-windows-powershell-container-provider.md)
 
-[Registrieren von Cmdlets, Anbietern und Host Anwendungen](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Registrieren von Cmdlets, Anbietern und Host Anwendungen](/previous-versions/ms714644(v=vs.85))
 
 [Windows PowerShell-Programmier Handbuch](./windows-powershell-programmer-s-guide.md)
 

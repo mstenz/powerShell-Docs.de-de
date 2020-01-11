@@ -1,22 +1,14 @@
 ---
-title: Erstellen eines Windows PowerShell-Inhalts Anbieters | Microsoft-Dokumentation
-ms.custom: ''
+title: Erstellen eines Windows PowerShell-Inhaltsanbieters
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
 ms.topic: article
-helpviewer_keywords:
-- content providers [PowerShell Programmer's Guide]
-- providers [PowerShell Programmer's Guide], content provider
 ms.assetid: 3da88ff9-c4c7-4ace-aa24-0a29c8cfa060
-caps.latest.revision: 6
-ms.openlocfilehash: 4afe0370f7a2c5b17826544e94e76650611c9d68
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 2d48c18cb41dcca372b1e12e1f3abc4c3f5e4bee
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417510"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870726"
 ---
 # <a name="creating-a-windows-powershell-content-provider"></a>Erstellen eines Windows PowerShell-Inhaltsanbieters
 
@@ -24,16 +16,14 @@ In diesem Thema wird beschrieben, wie Sie einen Windows PowerShell-Anbieter erst
 
 > [!NOTE]
 > Sie können die C# Quelldatei (AccessDBSampleProvider06.cs) für diesen Anbieter mithilfe des Microsoft Windows Software Development Kit für Windows Vista und .NET Framework 3,0-Laufzeitkomponenten herunterladen. Anweisungen zum Herunterladen finden Sie unter [Installieren von Windows PowerShell und Herunterladen des Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
->
-> Die heruntergeladenen Quelldateien stehen im **\<PowerShell-Beispiele >** Verzeichnis zur Verfügung.
->
-> Weitere Informationen zu anderen Windows PowerShell-Anbieter Implementierungen finden [Sie unter Entwerfen des Windows PowerShell-Anbieters](./designing-your-windows-powershell-provider.md).
+> Die heruntergeladenen Quelldateien stehen im **\<PowerShell-Beispiele >** Verzeichnis zur Verfügung. Weitere Informationen zu anderen Windows PowerShell-Anbieter Implementierungen finden [Sie unter Entwerfen des Windows PowerShell-Anbieters](./designing-your-windows-powershell-provider.md).
 
 ## <a name="define-the-windows-powershell-content-provider-class"></a>Definieren der Windows PowerShell-Inhaltsanbieter Klasse
 
 Ein Windows PowerShell-Inhaltsanbieter muss eine .NET-Klasse erstellen, die die [System. Management. Automation. Provider. icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider) -Schnittstelle unterstützt. Hier ist die Klassendefinition für den in diesem Abschnitt beschriebenen Element Anbieter.
 
-[!code-csharp[AccessDBProviderSample06.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L32-L33 "AccessDBProviderSample06.cs")]
+[!code-csharp[AccessDBProviderSample06.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L32-L33
+"AccessDBProviderSample06.cs")]
 
 Beachten Sie, dass das [System. Management. Automation. Provider. cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) -Attribut in dieser Klassendefinition zwei Parameter enthält. Der erste Parameter gibt einen benutzerfreundlichen Namen für den Anbieter an, der von Windows PowerShell verwendet wird. Der zweite Parameter gibt die Windows PowerShell-spezifischen Funktionen an, die der Anbieter während der Befehls Verarbeitung für die Windows PowerShell-Laufzeit verfügbar macht. Für diesen Anbieter gibt es keine zusätzlichen Windows PowerShell-spezifischen Funktionen.
 
@@ -41,7 +31,8 @@ Beachten Sie, dass das [System. Management. Automation. Provider. cmdletprovider
 
 Wie unter [Entwerfen des Windows PowerShell-Anbieters](./designing-your-windows-powershell-provider.md)beschrieben, wird die [System. Management. Automation. Provider. navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) -Klasse von mehreren anderen Klassen abgeleitet, die unterschiedliche Anbieter Funktionen bereitgestellt haben. Daher definiert ein Windows PowerShell-Inhaltsanbieter in der Regel die gesamte Funktionalität, die von diesen Klassen bereitgestellt wird.
 
-Weitere Informationen zum Implementieren von Funktionen zum Hinzufügen von Sitzungs spezifischen Initialisierungs Informationen und zum Freigeben von Ressourcen, die vom Anbieter verwendet werden, finden Sie unter [Erstellen eines einfachen Windows PowerShell-Anbieters](./creating-a-basic-windows-powershell-provider.md). Die meisten Anbieter, einschließlich des hier beschriebenen Anbieters, können jedoch die Standard Implementierung dieser Funktionalität verwenden, die von Windows PowerShell bereitgestellt wird.
+Weitere Informationen zum Implementieren von Funktionen zum Hinzufügen von Sitzungs spezifischen Initialisierungs Informationen und zum Freigeben von Ressourcen, die vom Anbieter verwendet werden, finden Sie unter [Erstellen eines einfachen Windows PowerShell-Anbieters](./creating-a-basic-windows-powershell-provider.md).
+Die meisten Anbieter, einschließlich des hier beschriebenen Anbieters, können jedoch die Standard Implementierung dieser Funktionalität verwenden, die von Windows PowerShell bereitgestellt wird.
 
 Der Anbieter muss die Methoden der [System. Management. Automation. Provider. drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) -Basisklasse implementieren, um auf den Datenspeicher zugreifen zu können. Weitere Informationen zum Implementieren dieser Methoden finden Sie unter [Erstellen eines Windows PowerShell-Laufwerks Anbieters](./creating-a-windows-powershell-drive-provider.md).
 
@@ -53,13 +44,16 @@ Der Anbieter muss die [System. Management. Automation. Provider. navigationcmdle
 
 ## <a name="implementing-a-content-reader"></a>Implementieren eines Inhalts Readers
 
-Zum Lesen von Inhalten aus einem Element muss ein Anbieter eine Inhalts Leser Klasse implementieren, die von [System. Management. Automation. Provider. icontentreader](/dotnet/api/System.Management.Automation.Provider.IContentReader)abgeleitet ist. Der Inhalts Leser für diesen Anbieter ermöglicht den Zugriff auf den Inhalt einer Zeile in einer Datentabelle. Die Content Reader-Klasse definiert eine **Read** -Methode, die die Daten aus der festgelegten Zeile abruft und eine Liste zurückgibt, die diese Daten darstellt, eine **Seek** -Methode, die den Inhalts Reader verschiebt, eine **Close** -Methode, die den Inhalts Reader schließt, **und eine verwerfen** -Methode.
+Zum Lesen von Inhalten aus einem Element muss ein Anbieter eine Inhalts Leser Klasse implementieren, die von [System. Management. Automation. Provider. icontentreader](/dotnet/api/System.Management.Automation.Provider.IContentReader)abgeleitet ist.
+Der Inhalts Leser für diesen Anbieter ermöglicht den Zugriff auf den Inhalt einer Zeile in einer Datentabelle. Die Content Reader-Klasse definiert eine **Read** -Methode, die die Daten aus der festgelegten Zeile abruft und eine Liste zurückgibt, die diese Daten darstellt, eine **Seek** -Methode, die den Inhalts Reader verschiebt, eine **Close** -Methode, die den Inhalts Reader schließt, **und eine verwerfen** -Methode.
 
-[!code-csharp[AccessDBProviderSample06.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L2115-L2241 "AccessDBProviderSample06.cs")]
+[!code-csharp[AccessDBProviderSample06.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L2115-L2241
+"AccessDBProviderSample06.cs")]
 
 ## <a name="implementing-a-content-writer"></a>Implementieren eines inhaltswriter
 
-Um Inhalt in ein Element zu schreiben, muss ein Anbieter eine inhaltswriter-Klasse implementieren, die von [System. Management. Automation. Provider. icontentwriter](/dotnet/api/System.Management.Automation.Provider.IContentWriter)abgeleitet ist. Die inhaltswriter-Klasse definiert eine **Write** -Methode, die den angegebenen Zeilen Inhalt schreibt, eine **Seek** -Methode, die den inhaltswriter verschiebt, eine **Close** -Methode, die den inhaltswriter schließt, **und eine verwerfen** -Methode.
+Um Inhalt in ein Element zu schreiben, muss ein Anbieter eine inhaltswriter-Klasse implementieren, die von [System. Management. Automation. Provider. icontentwriter](/dotnet/api/System.Management.Automation.Provider.IContentWriter)abgeleitet ist.
+Die inhaltswriter-Klasse definiert eine **Write** -Methode, die den angegebenen Zeilen Inhalt schreibt, eine **Seek** -Methode, die den inhaltswriter verschiebt, eine **Close** -Methode, die den inhaltswriter schließt, **und eine verwerfen** -Methode.
 
 [!code-csharp[AccessDBProviderSample06.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L2250-L2394 "AccessDBProviderSample06.cs")]
 
@@ -201,11 +195,11 @@ Einen umfassenden Beispielcode finden Sie unter [AccessDbProviderSample06-Codebe
 
 ## <a name="defining-object-types-and-formatting"></a>Definieren von Objekttypen und Formatierung
 
-Beim Schreiben eines Anbieters müssen möglicherweise Elemente zu vorhandenen Objekten hinzugefügt oder neue Objekte definiert werden. Wenn dies geschehen ist, müssen Sie eine Typdatei erstellen, die Windows PowerShell verwenden kann, um die Member des Objekts und eine Format Datei zu identifizieren, die definiert, wie das Objekt angezeigt wird. Weitere Informationen finden Sie unter [Erweitern von Objekttypen und Formatierung](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+Beim Schreiben eines Anbieters müssen möglicherweise Elemente zu vorhandenen Objekten hinzugefügt oder neue Objekte definiert werden. Wenn dies geschehen ist, müssen Sie eine Typdatei erstellen, die Windows PowerShell verwenden kann, um die Member des Objekts und eine Format Datei zu identifizieren, die definiert, wie das Objekt angezeigt wird. Weitere Informationen finden Sie unter [Erweitern von Objekttypen und Formatierung](/previous-versions//ms714665(v=vs.85)).
 
 ## <a name="building-the-windows-powershell-provider"></a>Entwickeln des Windows PowerShell-Anbieters
 
-Weitere Informationen finden [Sie unter Registrieren von Cmdlets, Anbietern und Host Anwendungen](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+Weitere Informationen finden [Sie unter Registrieren von Cmdlets, Anbietern und Host Anwendungen](/previous-versions/ms714644(v=vs.85)).
 
 ## <a name="testing-the-windows-powershell-provider"></a>Testen des Windows PowerShell-Anbieters
 
@@ -217,7 +211,7 @@ Verwenden Sie das Cmdlet "`Get-Content`", um den Inhalt des angegebenen Elements
 Get-Content -Path mydb:\Customers -ReadCount 2
 ```
 
-```output
+```Output
 ID        : 1
 FirstName : Eric
 LastName  : Gruber
@@ -244,17 +238,17 @@ Zip       : 98089
 Country   : USA
 ```
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Erstellen von Windows PowerShell-Anbietern](./how-to-create-a-windows-powershell-provider.md)
 
 [Entwerfen Ihres Windows PowerShell-Anbieters](./designing-your-windows-powershell-provider.md)
 
-[Erweitern von Objekttypen und Formatierung](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Erweitern von Objekttypen und Formatierung](/previous-versions//ms714665(v=vs.85))
 
 [Implementieren eines Windows PowerShell-navigationsanbieters](./creating-a-windows-powershell-navigation-provider.md)
 
-[Registrieren von Cmdlets, Anbietern und Host Anwendungen](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Registrieren von Cmdlets, Anbietern und Host Anwendungen](/previous-versions/ms714644(v=vs.85))
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)
 

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], property provider
 ms.assetid: a6adca44-b94b-4103-9970-a9b414355e60
 caps.latest.revision: 5
-ms.openlocfilehash: 9197f5635528e0f52cd08adde1c6bd69467725e8
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d6c84c3b23439cd3fd6205a2c1d480e0c063d09c
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417470"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870675"
 ---
 # <a name="creating-a-windows-powershell-property-provider"></a>Erstellen eines Windows PowerShell-Eigenschaftenanbieters
 
@@ -24,10 +24,7 @@ In diesem Thema wird beschrieben, wie Sie einen Anbieter erstellen, der es dem B
 
 > [!NOTE]
 > Windows PowerShell bietet eine Vorlagen Datei, die Sie zum Entwickeln eines Windows PowerShell-Anbieters verwenden können. Die Datei TemplateProvider.cs ist im Microsoft Windows Software Development Kit für Windows Vista und .NET Framework 3,0-Laufzeitkomponenten verfügbar. Anweisungen zum Herunterladen finden Sie unter [Installieren von Windows PowerShell und Herunterladen des Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
->
-> Die heruntergeladene Vorlage steht im **\<PowerShell-Beispiele >** Verzeichnis zur Verfügung. Erstellen Sie eine Kopie dieser Datei, und verwenden Sie die Kopie zum Erstellen eines neuen Windows PowerShell-Anbieters, um alle Funktionen zu entfernen, die Sie nicht benötigen.
->
-> Weitere Informationen zu anderen Windows PowerShell-Anbieter Implementierungen finden [Sie unter Entwerfen des Windows PowerShell-Anbieters](./designing-your-windows-powershell-provider.md).
+> Die heruntergeladene Vorlage steht im **\<PowerShell-Beispiele >** Verzeichnis zur Verfügung. Erstellen Sie eine Kopie dieser Datei, und verwenden Sie die Kopie zum Erstellen eines neuen Windows PowerShell-Anbieters, um alle Funktionen zu entfernen, die Sie nicht benötigen. Weitere Informationen zu anderen Windows PowerShell-Anbieter Implementierungen finden [Sie unter Entwerfen des Windows PowerShell-Anbieters](./designing-your-windows-powershell-provider.md).
 
 > [!CAUTION]
 > Die Methoden des Eigenschaften Anbieters sollten alle-Objekte mithilfe der [System. Management. Automation. Provider. cmdletprovider. Write tepropertyobject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WritePropertyObject) -Methode schreiben.
@@ -72,7 +69,8 @@ Dies ist die Standard Implementierung von [System. Management. Automation. Provi
 
 ## <a name="setting-properties"></a>Festlegen von Eigenschaften
 
-Zum Festlegen von Eigenschaften muss der Windows PowerShell-Eigenschaften Anbieter die [System. Management. Automation. Provider. ipropertycmdletprovider. SetProperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) -Methode implementieren, um Aufrufe aus dem `Set-ItemProperty`-Cmdlet zu unterstützen. Diese Methode legt eine oder mehrere Eigenschaften des Elements im angegebenen Pfad fest und überschreibt die angegebenen Eigenschaften nach Bedarf. [System. Management. Automation. Provider. ipropertycmdletprovider. SetProperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) schreibt außerdem eine Instanz eines [System. Management. Automation. psobject](/dotnet/api/System.Management.Automation.PSObject) -Objekts, das einen Eigenschaften Behälter der aktualisierten Eigenschaften darstellt.
+Zum Festlegen von Eigenschaften muss der Windows PowerShell-Eigenschaften Anbieter die [System. Management. Automation. Provider. ipropertycmdletprovider. SetProperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) -Methode implementieren, um Aufrufe aus dem `Set-ItemProperty`-Cmdlet zu unterstützen. Diese Methode legt eine oder mehrere Eigenschaften des Elements im angegebenen Pfad fest und überschreibt die angegebenen Eigenschaften nach Bedarf.
+[System. Management. Automation. Provider. ipropertycmdletprovider. SetProperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) schreibt außerdem eine Instanz eines [System. Management. Automation. psobject](/dotnet/api/System.Management.Automation.PSObject) -Objekts, das einen Eigenschaften Behälter der aktualisierten Eigenschaften darstellt.
 
 Dies ist die Standard Implementierung von [System. Management. Automation. Provider. ipropertycmdletprovider. SetProperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) aus der TemplateProvider.cs-Datei, die von Windows PowerShell bereitgestellt wird.
 
@@ -86,7 +84,8 @@ Die folgenden Bedingungen können auf eine Implementierung von [System. Manageme
 
 - Standardmäßig sollten über schreibungen dieser Methode keinen Reader für Objekte abrufen, die für den Benutzer ausgeblendet sind, es sei denn, die [System. Management. Automation. Provider. cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) -Eigenschaft ist auf `true`festgelegt. Ein Fehler sollte geschrieben werden, wenn der Pfad ein Element darstellt, das für den Benutzer ausgeblendet ist, und [System. Management. Automation. Provider. cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) ist auf `false`festgelegt.
 
-- Ihre Implementierung der [System. Management. Automation. Provider. ipropertycmdletprovider. SetProperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) -Methode sollte [System. Management. Automation. Provider. cmdletprovider. dendprocess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) aufrufen und ihren Rückgabewert überprüfen, bevor Änderungen am Datenspeicher vorgenommen werden. Diese Methode wird verwendet, um die Ausführung eines Vorgangs zu bestätigen, wenn eine Änderung am Systemstatus vorgenommen wird, z. b. beim Umbenennen von Dateien. [System. Management. Automation. Provider. cmdletprovider. tiondprocess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) sendet den Namen der Ressource, die an den Benutzer geändert werden soll, mit der Windows PowerShell-Laufzeit und die Verarbeitung jeglicher Befehlszeilen Einstellungen oder Einstellungs Variablen, um zu bestimmen, was angezeigt werden soll.
+- Ihre Implementierung der [System. Management. Automation. Provider. ipropertycmdletprovider. SetProperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) -Methode sollte [System. Management. Automation. Provider. cmdletprovider. dendprocess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) aufrufen und ihren Rückgabewert überprüfen, bevor Änderungen am Datenspeicher vorgenommen werden. Diese Methode wird verwendet, um die Ausführung eines Vorgangs zu bestätigen, wenn eine Änderung am Systemstatus vorgenommen wird, z. b. beim Umbenennen von Dateien.
+  [System. Management. Automation. Provider. cmdletprovider. tiondprocess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) sendet den Namen der Ressource, die an den Benutzer geändert werden soll, mit der Windows PowerShell-Laufzeit und die Verarbeitung jeglicher Befehlszeilen Einstellungen oder Einstellungs Variablen, um zu bestimmen, was angezeigt werden soll.
 
   Nach dem Aufrufen von [System. Management. Automation. Provider. cmdletprovider. rudprocess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) gibt `true`zurück, wenn potenziell gefährliche System Änderungen vorgenommen werden können, muss die [System. Management. Automation. Provider. ipropertycmdletprovider. SetProperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) -Methode die [System. Management. Automation. Provider. cmdletprovider. dendcontinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) -Methode aufrufen. Diese Methode sendet eine Bestätigungsmeldung an den Benutzer, damit zusätzliches Feedback angezeigt werden kann, um anzugeben, dass der Vorgang fortgesetzt werden soll.
 
@@ -114,7 +113,8 @@ Die folgenden Bedingungen können für Ihre Implementierung von [System. Managem
 
 - Standardmäßig sollten über schreibungen dieser Methode keinen Reader für Objekte abrufen, die für den Benutzer ausgeblendet sind, es sei denn, die [System. Management. Automation. Provider. cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) -Eigenschaft ist auf `true`festgelegt. Ein Fehler sollte geschrieben werden, wenn der Pfad ein Element darstellt, das für den Benutzer ausgeblendet ist, und [System. Management. Automation. Provider. cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) ist auf `false`festgelegt.
 
-- Ihre Implementierung der [System. Management. Automation. Provider. ipropertycmdletprovider. clearproperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty) -Methode sollte [System. Management. Automation. Provider. cmdletprovider. schuldprocess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) aufrufen und ihren Rückgabewert überprüfen, bevor Änderungen am Datenspeicher vorgenommen werden. Diese Methode wird verwendet, um die Ausführung eines Vorgangs zu bestätigen, bevor eine Änderung am Systemstatus vorgenommen wird, z. b. das Löschen von Inhalt. [System. Management. Automation. Provider. cmdletprovider. undprocess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) sendet den Namen der Ressource, die an den Benutzer geändert werden soll, wobei die Windows PowerShell-Laufzeit alle Befehlszeilen Einstellungen oder Einstellungs Variablen unternimmt, um zu bestimmen, was angezeigt werden soll.
+- Ihre Implementierung der [System. Management. Automation. Provider. ipropertycmdletprovider. clearproperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty) -Methode sollte [System. Management. Automation. Provider. cmdletprovider. schuldprocess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) aufrufen und ihren Rückgabewert überprüfen, bevor Änderungen am Datenspeicher vorgenommen werden. Diese Methode wird verwendet, um die Ausführung eines Vorgangs zu bestätigen, bevor eine Änderung am Systemstatus vorgenommen wird, z. b. das Löschen von Inhalt.
+  [System. Management. Automation. Provider. cmdletprovider. undprocess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) sendet den Namen der Ressource, die an den Benutzer geändert werden soll, wobei die Windows PowerShell-Laufzeit alle Befehlszeilen Einstellungen oder Einstellungs Variablen unternimmt, um zu bestimmen, was angezeigt werden soll.
 
   Nach dem Aufrufen von [System. Management. Automation. Provider. cmdletprovider. rudprocess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) gibt `true`zurück, wenn potenziell gefährliche System Änderungen vorgenommen werden können, muss die [System. Management. Automation. Provider. ipropertycmdletprovider. clearproperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty) -Methode die [System. Management. Automation. Provider. cmdletprovider. dendcontinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) -Methode aufrufen. Diese Methode sendet eine Bestätigungsmeldung an den Benutzer, damit zusätzliches Feedback angezeigt werden kann, um anzugeben, dass der potenziell gefährliche Vorgang fortgesetzt werden soll.
 
@@ -128,14 +128,14 @@ Dies ist die Standard Implementierung von [System. Management. Automation. Provi
 
 ## <a name="building-the-windows-powershell-provider"></a>Entwickeln des Windows PowerShell-Anbieters
 
-Weitere Informationen finden [Sie unter Registrieren von Cmdlets, Anbietern und Host Anwendungen](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+Weitere Informationen finden [Sie unter Registrieren von Cmdlets, Anbietern und Host Anwendungen](https://msdn.microsoft.com/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Windows PowerShell-Anbieter](./designing-your-windows-powershell-provider.md)
 
 [Entwerfen Ihres Windows PowerShell-Anbieters](./designing-your-windows-powershell-provider.md)
 
-[Erweitern von Objekttypen und Formatierung](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Erweitern von Objekttypen und Formatierung](https://msdn.microsoft.com/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
-[Registrieren von Cmdlets, Anbietern und Host Anwendungen](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[Registrieren von Cmdlets, Anbietern und Host Anwendungen](https://msdn.microsoft.com/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)

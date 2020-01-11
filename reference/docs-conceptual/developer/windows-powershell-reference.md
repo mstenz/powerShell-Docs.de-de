@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows PowerShell SDK
 ms.assetid: cbba4879-bcac-484a-9906-4bbe2cd1eb33
 caps.latest.revision: 11
-ms.openlocfilehash: 48b2b2b9ab2a39cf185ed54bcfa99d46562e13b6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: c00590df4d07e0f5ed9e93fd84a2780329753e39
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72366279"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870862"
 ---
 # <a name="windows-powershell-reference"></a>Windows PowerShell-Referenz
 
@@ -37,7 +37,8 @@ Zusätzlich zum Windows PowerShell SDK bieten die folgenden Ressourcen weitere I
 
 [Schreiben eines Windows PowerShell-Cmdlets](./cmdlet/writing-a-windows-powershell-cmdlet.md) Enthält Informationen und Codebeispiele für Programm-Manager, die Cmdlets entwerfen, sowie für Entwickler, die Cmdlet-Code implementieren.
 
-[Windows PowerShell-Teamblog](https://blogs.msdn.microsoft.com/PowerShell/) Die beste Ressource für das Erlernen von und die Zusammenarbeit mit anderen Windows PowerShell-Benutzern. Lesen Sie den Windows PowerShell-Teamblog, und nehmen Sie am Windows PowerShell-Benutzer Forum Teil (Microsoft. public. Windows. PowerShell). Verwenden Sie Windows Live Search, um weitere Windows PowerShell-Blogs und-Ressourcen zu finden. Wenn Sie Ihr Know-how entwickeln, können Sie Ihre Ideen kostenlos einbringen.
+[Windows PowerShell-Teamblog](https://blogs.msdn.microsoft.com/PowerShell/) Die beste Ressource für das Erlernen von und die Zusammenarbeit mit anderen Windows PowerShell-Benutzern. Lesen Sie den Windows PowerShell-Teamblog, und nehmen Sie am Windows PowerShell-Benutzer Forum Teil (Microsoft. public. Windows. PowerShell).
+Verwenden Sie Windows Live Search, um weitere Windows PowerShell-Blogs und-Ressourcen zu finden. Wenn Sie Ihr Know-how entwickeln, können Sie Ihre Ideen kostenlos einbringen.
 
 [PowerShell-Modul Browser](/powershell/module/) Stellt die neuesten Versionen der Hilfe Themen für die Befehlszeile bereit.
 
@@ -53,4 +54,4 @@ Zusätzlich zum Windows PowerShell SDK bieten die folgenden Ressourcen weitere I
 
 [System. Management. Automation. Internal](/dotnet/api/System.Management.Automation.Internal) dieser Namespace enthält die Basisklassen, die von anderen Namespace Klassen verwendet werden. Beispielsweise ist die [System. Management. Automation. Internal. Cmdletmetadataattribute](/dotnet/api/System.Management.Automation.Internal.CmdletMetadataAttribute) -Klasse die Basisklasse für die [System. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) -Klasse.
 
-[System. Management. Automation. Runspaces](/dotnet/api/System.Management.Automation.Runspaces) dieser Namespace enthält die Klassen, Enumerationen und Schnittstellen, die verwendet werden, um einen Windows PowerShell-Runspace zu erstellen. In diesem Kontext ist der Windows PowerShell-Runspace der Kontext, in dem eine oder mehrere Windows PowerShell-Pipelines Cmdlets aufrufen. Das heißt, dass Cmdlets im Kontext eines Windows PowerShell-Runspace funktionieren. Weitere Informationen zu Windows PowerShell-Runspaces finden Sie unter [Windows PowerShell-Runspaces](https://msdn.microsoft.com/en-us/a1582cfe-f06d-4aff-adc6-71f49a860ce9).
+[System. Management. Automation. Runspaces](/dotnet/api/System.Management.Automation.Runspaces) dieser Namespace enthält die Klassen, Enumerationen und Schnittstellen, die verwendet werden, um einen Windows PowerShell-Runspace zu erstellen. In diesem Kontext ist der Windows PowerShell-Runspace der Kontext, in dem eine oder mehrere Windows PowerShell-Pipelines Cmdlets aufrufen. Das heißt, dass Cmdlets im Kontext eines Windows PowerShell-Runspace funktionieren. Weitere Informationen zu Windows PowerShell-Runspaces finden Sie unter [Windows PowerShell-Runspaces](hosting/creating-runspaces.md).

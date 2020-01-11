@@ -1,19 +1,14 @@
 ---
-title: Beispiele für Remote-Runspace | Microsoft-Dokumentation
-ms.custom: ''
+title: Beispiele für Remoterunspaces
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8c44df35-b22b-41b0-b34c-ba7ce17b889b
-caps.latest.revision: 7
-ms.openlocfilehash: 4b79b533e9fb926e851c9d0eebc932aec80ad959
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: ada4a16b3e8142f505a2adb794c746129e3f359c
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367439"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870437"
 ---
 # <a name="remote-runspace-samples"></a>Beispiele für Remoterunspaces
 
@@ -22,10 +17,8 @@ Dieser Abschnitt enthält Beispielcode, der zeigt, wie Sie Runspaces erstellen, 
 ## <a name="in-this-section"></a>In diesem Abschnitt
 
 > [!NOTE]
-> Weitere Informationen zum Ausführen von Befehlen auf einem Remote Computer finden Sie unter [Windows PowerShell-Remoting](https://msdn.microsoft.com/en-us/library/ee706563(v=vs.85).aspx).
+> Weitere Informationen zum Ausführen von Befehlen auf einem Remote Computer finden Sie unter [Windows PowerShell-Remoting](/previous-versions/ms714644(v=vs.85)).
 
  [RemoteRunspace01-Beispiel](./remoterunspace01-sample.md) Dieses Beispiel zeigt, wie Sie einen Remoterunspace erstellen, der zum Herstellen einer Remote Verbindung verwendet wird.
 
  [RemoteRunspacePool01-Beispiel](./remoterunspacepool01-sample.md) Dieses Beispiel zeigt, wie Sie einen Remote-Runspace-Pool erstellen und mehrere Befehle gleichzeitig mit diesem Pool ausführen.
-
-## <a name="see-also"></a>Weitere Informationen
