@@ -1,23 +1,23 @@
 ---
 ms.date: 06/12/2017
-keywords: dsc,powershell,configuration,setup
+keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: 'Zusammengesetzte Ressourcen: Verwenden einer DSC-Konfiguration als Ressource'
-ms.openlocfilehash: 7fa6ee56d4706b96fb47123c7aa00c4df6256492
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 79fe94bd5bab8fa460714e5994d2e2487f302410
+ms.sourcegitcommit: 1b88c280dd0799f225242608f0cbdab485357633
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73933824"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75415888"
 ---
-# <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a><span data-ttu-id="4f171-103">Zusammengesetzte Ressourcen Verwenden einer DSC-Konfiguration als Ressource</span><span class="sxs-lookup"><span data-stu-id="4f171-103">Composite resources: Using a DSC configuration as a resource</span></span>
+# <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a><span data-ttu-id="ba7f5-103">Zusammengesetzte Ressourcen Verwenden einer DSC-Konfiguration als Ressource</span><span class="sxs-lookup"><span data-stu-id="ba7f5-103">Composite resources: Using a DSC configuration as a resource</span></span>
 
-> <span data-ttu-id="4f171-104">Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="4f171-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
+> <span data-ttu-id="ba7f5-104">Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="ba7f5-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
 
-<span data-ttu-id="4f171-105">In realen Situationen können Konfigurationen lang und komplex sein, viele verschiedene Ressourcen aufrufen und eine große Anzahl von Eigenschaften festlegen.</span><span class="sxs-lookup"><span data-stu-id="4f171-105">In real-world situations, configurations can become long and complex, calling many different resources and setting a vast number of properties.</span></span> <span data-ttu-id="4f171-106">Um mit dieser Komplexität zurecht zu kommen, können Sie eine Windows PowerShell DSC-Konfiguration als Ressource für andere Konfigurationen verwenden.</span><span class="sxs-lookup"><span data-stu-id="4f171-106">To help address this complexity, you can use a Windows PowerShell Desired State Configuration (DSC) configuration as a resource for other configurations.</span></span> <span data-ttu-id="4f171-107">Dies wird als zusammengesetzte Ressource bezeichnet.</span><span class="sxs-lookup"><span data-stu-id="4f171-107">We call this a composite resource.</span></span> <span data-ttu-id="4f171-108">Eine zusammengesetzte Ressource ist eine DSC-Konfiguration, die Parameter verwendet.</span><span class="sxs-lookup"><span data-stu-id="4f171-108">A composite resource is a DSC configuration that takes parameters.</span></span> <span data-ttu-id="4f171-109">Die Parameter der Konfiguration fungieren als Eigenschaften der Ressource.</span><span class="sxs-lookup"><span data-stu-id="4f171-109">The parameters of the configuration act as the properties of the resource.</span></span> <span data-ttu-id="4f171-110">Die Konfiguration wird als Datei mit der Erweiterung **.schema.psm1** gespeichert und tritt in einer normalen DSC-Ressource an die Stelle von MOF-Schema und Ressourcenskript (weitere Informationen zu DSC-Ressourcen finden Sie unter [Windows PowerShell DSC-Ressourcen](resources.md).</span><span class="sxs-lookup"><span data-stu-id="4f171-110">The configuration is saved as a file with a **.schema.psm1** extension, and takes the place of both the MOF schema and the resource script in a typical DSC resource (for more information about DSC resources, see [Windows PowerShell Desired State Configuration Resources](resources.md).</span></span>
+<span data-ttu-id="ba7f5-105">In realen Situationen können Konfigurationen lang und komplex sein, viele verschiedene Ressourcen aufrufen und eine große Anzahl von Eigenschaften festlegen.</span><span class="sxs-lookup"><span data-stu-id="ba7f5-105">In real-world situations, configurations can become long and complex, calling many different resources and setting a vast number of properties.</span></span> <span data-ttu-id="ba7f5-106">Um mit dieser Komplexität zurecht zu kommen, können Sie eine Windows PowerShell DSC-Konfiguration als Ressource für andere Konfigurationen verwenden.</span><span class="sxs-lookup"><span data-stu-id="ba7f5-106">To help address this complexity, you can use a Windows PowerShell Desired State Configuration (DSC) configuration as a resource for other configurations.</span></span> <span data-ttu-id="ba7f5-107">Dies wird als zusammengesetzte Ressource bezeichnet.</span><span class="sxs-lookup"><span data-stu-id="ba7f5-107">This is called a composite resource.</span></span> <span data-ttu-id="ba7f5-108">Eine zusammengesetzte Ressource ist eine DSC-Konfiguration, die Parameter verwendet.</span><span class="sxs-lookup"><span data-stu-id="ba7f5-108">A composite resource is a DSC configuration that takes parameters.</span></span> <span data-ttu-id="ba7f5-109">Die Parameter der Konfiguration fungieren als Eigenschaften der Ressource.</span><span class="sxs-lookup"><span data-stu-id="ba7f5-109">The parameters of the configuration act as the properties of the resource.</span></span> <span data-ttu-id="ba7f5-110">Die Konfiguration wird als Datei mit der Erweiterung `.schema.psm1` gespeichert.</span><span class="sxs-lookup"><span data-stu-id="ba7f5-110">The configuration is saved as a file with a `.schema.psm1` extension.</span></span> <span data-ttu-id="ba7f5-111">Sie ersetzt sowohl das MOF-Schema als auch das Ressourcenskript in einer typischen DSC-Ressource.</span><span class="sxs-lookup"><span data-stu-id="ba7f5-111">It takes the place of both the MOF schema, and the resource script in a typical DSC resource.</span></span> <span data-ttu-id="ba7f5-112">Weitere Informationen zu DSC-Ressourcen finden Sie unter [Windows PowerShell DSC-Ressourcen](resources.md).</span><span class="sxs-lookup"><span data-stu-id="ba7f5-112">For more information about DSC resources, see [Windows PowerShell Desired State Configuration Resources](resources.md).</span></span>
 
-## <a name="creating-the-composite-resource"></a><span data-ttu-id="4f171-111">Erstellen der zusammengesetzten Ressource</span><span class="sxs-lookup"><span data-stu-id="4f171-111">Creating the composite resource</span></span>
+## <a name="creating-the-composite-resource"></a><span data-ttu-id="ba7f5-113">Erstellen der zusammengesetzten Ressource</span><span class="sxs-lookup"><span data-stu-id="ba7f5-113">Creating the composite resource</span></span>
 
-<span data-ttu-id="4f171-112">Im folgenden Beispiel wird eine Konfiguration erstellt, die eine Reihe von vorhandenen Ressourcen zum Konfigurieren virtueller Computer aufruft.</span><span class="sxs-lookup"><span data-stu-id="4f171-112">In our example, we create a configuration that invokes a number of existing resources to configure virtual machines.</span></span> <span data-ttu-id="4f171-113">Anstatt die festzulegenden Werte in Konfigurationsblöcken anzugeben, verwendet die Konfiguration eine Reihe von Parametern, die dann in den Konfigurationsblöcken verwendet werden.</span><span class="sxs-lookup"><span data-stu-id="4f171-113">Instead of specifying the values to be set in configuration blocks, the configuration takes a number of parameters that are then used in the configuration blocks.</span></span>
+<span data-ttu-id="ba7f5-114">Im folgenden Beispiel wird eine Konfiguration erstellt, die eine Reihe von vorhandenen Ressourcen zum Konfigurieren virtueller Computer aufruft.</span><span class="sxs-lookup"><span data-stu-id="ba7f5-114">In our example, we create a configuration that invokes a number of existing resources to configure virtual machines.</span></span> <span data-ttu-id="ba7f5-115">Anstatt die festzulegenden Werte in Konfigurationsblöcken anzugeben, verwendet die Konfiguration Parameter, die anschließend in den Konfigurationsblöcken verwendet werden.</span><span class="sxs-lookup"><span data-stu-id="ba7f5-115">Instead of specifying the values to be set in configuration blocks, the configuration takes in parameters that are then used in the configuration blocks.</span></span>
 
 ```powershell
 Configuration xVirtualMachine
@@ -131,31 +131,37 @@ Configuration xVirtualMachine
 }
 ```
 
-### <a name="saving-the-configuration-as-a-composite-resource"></a><span data-ttu-id="4f171-114">Speichern die Konfiguration als eine zusammengesetzte Ressource</span><span class="sxs-lookup"><span data-stu-id="4f171-114">Saving the configuration as a composite resource</span></span>
+> [!NOTE]
+> <span data-ttu-id="ba7f5-116">DSC bietet aktuell keine Unterstützung für das Platzieren von zusammengesetzten Ressourcen oder geschachtelten Konfigurationen innerhalb einer zusammengesetzten Ressource.</span><span class="sxs-lookup"><span data-stu-id="ba7f5-116">DSC doesn't currently support placing composite resources or nested configurations within a composite resource.</span></span>
 
-<span data-ttu-id="4f171-115">Damit die parametrisierte Konfiguration als DSC-Ressource verwendet werden kann, speichern Sie sie in einer Verzeichnisstruktur, die den Verzeichnisstrukturen MOF-basierter Ressourcen entspricht, und geben Sie ihr einen Namen mit der Erweiterung **.schema.psm1**.</span><span class="sxs-lookup"><span data-stu-id="4f171-115">To use the parameterized configuration as a DSC resource, save it in a directory structure like that of any other MOF-based resource, and name it with a **.schema.psm1** extension.</span></span> <span data-ttu-id="4f171-116">In diesem Beispiel erhält die Datei den Namen **xVirtualMachine.schema.psm1**.</span><span class="sxs-lookup"><span data-stu-id="4f171-116">For this example, we'll name the file **xVirtualMachine.schema.psm1**.</span></span> <span data-ttu-id="4f171-117">Sie müssen auch ein Manifest mit dem Namen **xVirtualMachine.psd1** erstellen, das die folgende Zeile enthält.</span><span class="sxs-lookup"><span data-stu-id="4f171-117">You also need to create a manifest named **xVirtualMachine.psd1** that contains the following line.</span></span> <span data-ttu-id="4f171-118">Beachten Sie, dass dies zusätzlich zur Datei **MyDscResources.psd1** erforderlich ist, dem Modulmanifest für alle Ressourcen im Ordner **MyDscResources**.</span><span class="sxs-lookup"><span data-stu-id="4f171-118">Note that this is in addition to **MyDscResources.psd1**, the module manifest for all resources under the **MyDscResources** folder.</span></span>
+### <a name="saving-the-configuration-as-a-composite-resource"></a><span data-ttu-id="ba7f5-117">Speichern die Konfiguration als eine zusammengesetzte Ressource</span><span class="sxs-lookup"><span data-stu-id="ba7f5-117">Saving the configuration as a composite resource</span></span>
+
+<span data-ttu-id="ba7f5-118">Damit die parametrisierte Konfiguration als DSC-Ressource verwendet werden kann, speichern Sie sie in einer Verzeichnisstruktur, die den Verzeichnisstrukturen MOF-basierter Ressourcen entspricht, und geben Sie ihr einen Namen mit der Erweiterung `.schema.psm1`.</span><span class="sxs-lookup"><span data-stu-id="ba7f5-118">To use the parameterized configuration as a DSC resource, save it in a directory structure like that of any other MOF-based resource, and name it with a `.schema.psm1` extension.</span></span> <span data-ttu-id="ba7f5-119">In diesem Beispiel erhält die Datei die Bezeichnung `xVirtualMachine.schema.psm1`.</span><span class="sxs-lookup"><span data-stu-id="ba7f5-119">For this example, we'll name the file `xVirtualMachine.schema.psm1`.</span></span> <span data-ttu-id="ba7f5-120">Sie müssen außerdem ein Manifest mit dem Namen `xVirtualMachine.psd1` erstellen, das die folgende Zeile enthält.</span><span class="sxs-lookup"><span data-stu-id="ba7f5-120">You also need to create a manifest named `xVirtualMachine.psd1` that contains the following line.</span></span>
 
 ```powershell
 RootModule = 'xVirtualMachine.schema.psm1'
 ```
 
-<span data-ttu-id="4f171-119">Wenn Sie fertig sind, sollte die Ordnerstruktur wie folgt aussehen:</span><span class="sxs-lookup"><span data-stu-id="4f171-119">When you are done, the folder structure should be as follows.</span></span>
+> [!NOTE]
+> <span data-ttu-id="ba7f5-121">Dies ist neben `MyDscResources.psd1` das Modulmanifest für alle Ressourcen im Ordner `MyDscResources`.</span><span class="sxs-lookup"><span data-stu-id="ba7f5-121">This is in addition to `MyDscResources.psd1`, the module manifest for all resources under the `MyDscResources` folder.</span></span>
+
+<span data-ttu-id="ba7f5-122">Wenn Sie fertig sind, sollte die Ordnerstruktur wie folgt aussehen:</span><span class="sxs-lookup"><span data-stu-id="ba7f5-122">When you are done, the folder structure should be as follows.</span></span>
 
 ```
 $env: psmodulepath
     |- MyDscResources
-           MyDscResources.psd1
+        |- MyDscResources.psd1
         |- DSCResources
             |- xVirtualMachine
                 |- xVirtualMachine.psd1
                 |- xVirtualMachine.schema.psm1
 ```
 
-<span data-ttu-id="4f171-120">Die Ressource kann nun mit dem Cmdlet „Get-DscResource“ gefunden werden, und ihre Eigenschaften können entweder mit diesem Cmdlet oder über die Tastenkombination **STRG+LEERTASTE** (AutoVervollständigen) in Windows PowerShell ISE sichtbar gemacht werden.</span><span class="sxs-lookup"><span data-stu-id="4f171-120">The resource is now discoverable by using the Get-DscResource cmdlet, and its properties are discoverable by either that cmdlet or by using **Ctrl+Space** auto-complete in the Windows PowerShell ISE.</span></span>
+<span data-ttu-id="ba7f5-123">Die Ressource kann nun mit dem Cmdlet `Get-DscResource` gefunden werden, und ihre Eigenschaften können entweder mit diesem Cmdlet oder über die Tastenkombination <kbd>STRG</kbd>+<kbd>LEERTASTE</kbd> (AutoVervollständigen) in Windows PowerShell ISE sichtbar gemacht werden.</span><span class="sxs-lookup"><span data-stu-id="ba7f5-123">The resource is now discoverable by using the `Get-DscResource` cmdlet, and its properties are discoverable by either that cmdlet or by using <kbd>Ctrl</kbd>+<kbd>Space</kbd> autocomplete in the Windows PowerShell ISE.</span></span>
 
-## <a name="using-the-composite-resource"></a><span data-ttu-id="4f171-121">Verwenden der zusammengesetzten Ressource</span><span class="sxs-lookup"><span data-stu-id="4f171-121">Using the composite resource</span></span>
+## <a name="using-the-composite-resource"></a><span data-ttu-id="ba7f5-124">Verwenden der zusammengesetzten Ressource</span><span class="sxs-lookup"><span data-stu-id="ba7f5-124">Using the composite resource</span></span>
 
-<span data-ttu-id="4f171-122">Als Nächstes wird eine Konfiguration erstellt, die die zusammengesetzte Ressource aufruft.</span><span class="sxs-lookup"><span data-stu-id="4f171-122">Next we create a configuration that calls the composite resource.</span></span> <span data-ttu-id="4f171-123">Diese Konfiguration ruft die zusammengesetzte Ressource „xVirtualMachine“ auf, um einen virtuellen Computer zu erstellen, und ruft anschließend die Ressource **xComputer** auf, um sie umzubenennen.</span><span class="sxs-lookup"><span data-stu-id="4f171-123">This configuration calls the xVirtualMachine composite resource to create a virtual machine, and then calls the **xComputer** resource to rename it.</span></span>
+<span data-ttu-id="ba7f5-125">Als Nächstes wird eine Konfiguration erstellt, die die zusammengesetzte Ressource aufruft.</span><span class="sxs-lookup"><span data-stu-id="ba7f5-125">Next we create a configuration that calls the composite resource.</span></span> <span data-ttu-id="ba7f5-126">Diese Konfiguration ruft die zusammengesetzte Ressource „xVirtualMachine“ auf, um einen virtuellen Computer zu erstellen, und ruft anschließend die Ressource **xComputer** auf, um sie umzubenennen.</span><span class="sxs-lookup"><span data-stu-id="ba7f5-126">This configuration calls the xVirtualMachine composite resource to create a virtual machine, and then calls the **xComputer** resource to rename it.</span></span>
 
 ```powershell
 configuration RenameVM
@@ -186,7 +192,7 @@ configuration RenameVM
 }
 ```
 
-<span data-ttu-id="4f171-124">Sie können diese Ressource auch zum Erstellen mehrerer VMs verwenden, indem Sie ein Array von VM-Namen an die Ressource „xVirtualMachine“ übergeben.</span><span class="sxs-lookup"><span data-stu-id="4f171-124">You can also use this resource to create multiple VMs by passing in an array of VM names to the xVirtualMachine resource.</span></span>
+<span data-ttu-id="ba7f5-127">Sie können diese Ressource auch zum Erstellen mehrerer VMs verwenden, indem Sie ein Array von VM-Namen an die Ressource „xVirtualMachine“ übergeben.</span><span class="sxs-lookup"><span data-stu-id="ba7f5-127">You can also use this resource to create multiple VMs by passing in an array of VM names to the xVirtualMachine resource.</span></span>
 
 ```PowerShell
 Configuration MultipleVms
@@ -208,17 +214,16 @@ Configuration MultipleVms
 }
 ```
 
-## <a name="supporting-psdscrunascredential"></a><span data-ttu-id="4f171-125">Unterstützung von PsDscRunAsCredential</span><span class="sxs-lookup"><span data-stu-id="4f171-125">Supporting PsDscRunAsCredential</span></span>
+## <a name="supporting-psdscrunascredential"></a><span data-ttu-id="ba7f5-128">Unterstützung von PsDscRunAsCredential</span><span class="sxs-lookup"><span data-stu-id="ba7f5-128">Supporting PsDscRunAsCredential</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="4f171-126">**PsDscRunAsCredential** wird in PowerShell 5.0 und höher unterstützt.</span><span class="sxs-lookup"><span data-stu-id="4f171-126">**PsDscRunAsCredential** is supported in PowerShell 5.0 and later.</span></span>
+> <span data-ttu-id="ba7f5-129">**PsDscRunAsCredential** wird in PowerShell 5.0 und höher unterstützt.</span><span class="sxs-lookup"><span data-stu-id="ba7f5-129">**PsDscRunAsCredential** is supported in PowerShell 5.0 and later.</span></span>
 
-<span data-ttu-id="4f171-127">Mithilfe der Eigenschaft **PsDscRunAsCredential** kann im Ressourcenblock [DSC configurations](../configurations/configurations.md) angegeben werden, dass die Ressource mit einem festgelegten Satz an Anmeldeinformationen ausgeführt werden soll.</span><span class="sxs-lookup"><span data-stu-id="4f171-127">The **PsDscRunAsCredential** property can be used in [DSC configurations](../configurations/configurations.md) resource block to specify that the resource should be run under a specified set of credentials.</span></span>
-<span data-ttu-id="4f171-128">Weitere Informationen finden Sie unter [Ausführen von DSC mit Benutzeranmeldeinformationen](../configurations/runAsUser.md).</span><span class="sxs-lookup"><span data-stu-id="4f171-128">For more information, see [Running DSC with user credentials](../configurations/runAsUser.md).</span></span>
+<span data-ttu-id="ba7f5-130">Mithilfe der Eigenschaft **PsDscRunAsCredential** kann im Ressourcenblock [DSC configurations](../configurations/configurations.md) angegeben werden, dass die Ressource mit einem festgelegten Satz an Anmeldeinformationen ausgeführt werden soll.</span><span class="sxs-lookup"><span data-stu-id="ba7f5-130">The **PsDscRunAsCredential** property can be used in [DSC configurations](../configurations/configurations.md) resource block to specify that the resource should be run under a specified set of credentials.</span></span> <span data-ttu-id="ba7f5-131">Weitere Informationen finden Sie unter [Ausführen von DSC mit Benutzeranmeldeinformationen](../configurations/runAsUser.md).</span><span class="sxs-lookup"><span data-stu-id="ba7f5-131">For more information, see [Running DSC with user credentials](../configurations/runAsUser.md).</span></span>
 
-<span data-ttu-id="4f171-129">Um aus einer benutzerdefinierten Ressource auf den Benutzerkontext zuzugreifen, können Sie die automatische Variable `$PsDscContext` verwenden.</span><span class="sxs-lookup"><span data-stu-id="4f171-129">To access the user context from within a custom resource, you can use the automatic variable `$PsDscContext`.</span></span>
+<span data-ttu-id="ba7f5-132">Um aus einer benutzerdefinierten Ressource auf den Benutzerkontext zuzugreifen, können Sie die automatische Variable `$PsDscContext` verwenden.</span><span class="sxs-lookup"><span data-stu-id="ba7f5-132">To access the user context from within a custom resource, you can use the automatic variable `$PsDscContext`.</span></span>
 
-<span data-ttu-id="4f171-130">Beispielsweise wird mit dem folgenden Code der Benutzerkontext für die Ressourcenausführung in den ausführlichen Ausgabestream geschrieben:</span><span class="sxs-lookup"><span data-stu-id="4f171-130">For example the following code would write the user context under which the resource is running to the verbose output stream:</span></span>
+<span data-ttu-id="ba7f5-133">Beispielsweise wird mit dem folgenden Code der Benutzerkontext für die Ressourcenausführung in den ausführlichen Ausgabestream geschrieben:</span><span class="sxs-lookup"><span data-stu-id="ba7f5-133">For example, the following code would write the user context under which the resource is running to the verbose output stream:</span></span>
 
 ```powershell
 if ($PsDscContext.RunAsUser) {
@@ -226,7 +231,9 @@ if ($PsDscContext.RunAsUser) {
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="4f171-131">Weitere Informationen</span><span class="sxs-lookup"><span data-stu-id="4f171-131">See Also</span></span>
-### <a name="concepts"></a><span data-ttu-id="4f171-132">Konzepte</span><span class="sxs-lookup"><span data-stu-id="4f171-132">Concepts</span></span>
-* [<span data-ttu-id="4f171-133">Schreiben einer benutzerdefinierten DSC-Ressource mit MOF</span><span class="sxs-lookup"><span data-stu-id="4f171-133">Writing a custom DSC resource with MOF</span></span>](authoringResourceMOF.md)
-* [<span data-ttu-id="4f171-134">Erste Schritte mit Windows PowerShell Desired State Configuration (DSC)</span><span class="sxs-lookup"><span data-stu-id="4f171-134">Get Started with Windows PowerShell Desired State Configuration</span></span>](../overview/overview.md)
+## <a name="see-also"></a><span data-ttu-id="ba7f5-134">Weitere Informationen</span><span class="sxs-lookup"><span data-stu-id="ba7f5-134">See Also</span></span>
+
+### <a name="concepts"></a><span data-ttu-id="ba7f5-135">Konzepte</span><span class="sxs-lookup"><span data-stu-id="ba7f5-135">Concepts</span></span>
+
+- [<span data-ttu-id="ba7f5-136">Schreiben einer benutzerdefinierten DSC-Ressource mit MOF</span><span class="sxs-lookup"><span data-stu-id="ba7f5-136">Writing a custom DSC resource with MOF</span></span>](authoringResourceMOF.md)
+- [<span data-ttu-id="ba7f5-137">Erste Schritte mit Windows PowerShell Desired State Configuration (DSC)</span><span class="sxs-lookup"><span data-stu-id="ba7f5-137">Get Started with Windows PowerShell Desired State Configuration</span></span>](../overview/overview.md)
