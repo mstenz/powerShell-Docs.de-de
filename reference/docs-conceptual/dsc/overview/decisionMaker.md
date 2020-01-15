@@ -2,12 +2,12 @@
 ms.date: 10/11/2019
 keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: 'Desired State Configuration (DSC): Übersicht für Entscheidungsträger'
-ms.openlocfilehash: b6d483d105c2d3b9be7215be36397d452338c7f1
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.openlocfilehash: bb73ee8fe636272f99989aa45712fe34fedad617
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75737252"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870794"
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>Desired State Configuration (DSC): Übersicht für Entscheidungsträger
 
@@ -38,7 +38,7 @@ Konfigurationen sind [datengesteuert](../configurations/configData.md). Durch de
 ## <a name="dsc-on-premises-and-off-premises"></a>DSC lokal und extern
 
 DSC kann zum Verwalten lokaler und externer Bereitstellungen verwendet werden. Für lokale Lösungen bietet DSC einen [Pullserver](../pull-server/pullServer.md) zum Zentralisieren der Verwaltung von Computern und zum Melden ihres Status. Für externe Cloudlösungen kann DSC überall dort eingesetzt werden wo auch Windows verwendet werden kann.
-Es gibt bestimmte Angebote von Azure, die auf DSC basieren, wie z. B. [Azure Automation ](https://azure.microsoft.com/en-us/documentation/services/automation/), mit dem die DSC-Berichterstellung zentralisiert wird.
+Es gibt bestimmte Angebote von Azure, die auf DSC basieren, wie z. B. [Azure Automation ](/azure/automation), mit dem die DSC-Berichterstellung zentralisiert wird.
 
 ## <a name="dsc-and-compatibility"></a>DSC und Kompatibilität
 
