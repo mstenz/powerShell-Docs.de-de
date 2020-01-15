@@ -1,17 +1,18 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/31/2019
 keywords: powershell,cmdlet
 title: Das ISEMenuItem-Objekt
-ms.openlocfilehash: a513a3e9f2eb97f3955fa817faedbcbf4e0ed018
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: c3ffe6e8f0b28987543fe0a873c552292dc5158a
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67028941"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736980"
 ---
 # <a name="the-isemenuitem-object"></a>Das ISEMenuItem-Objekt
 
-Ein **ISEMenuItem**-Objekt ist eine Instanz der Microsoft.PowerShell.Host.ISE.ISEMenuItem-Klasse. Alle Menüobjekte im Menü **Add-Ons** sind Instanzen der **Microsoft.PowerShell.Host.ISE.ISEMenuItem**-Klasse.
+Ein **ISEMenuItem**-Objekt ist eine Instanz der **Microsoft.PowerShell.Host.ISE.ISEMenuItem**-Klasse.
+Alle Menüobjekte im Menü **Add-Ons** sind Instanzen der **Microsoft.PowerShell.Host.ISE.ISEMenuItem**-Klasse.
 
 ## <a name="properties"></a>Eigenschaften
 
@@ -28,7 +29,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Add('_Process', {Get-Process}, '
 $psISE.CurrentPowerShellTab.AddOnsMenu.DisplayName
 ```
 
-### <a name="action"></a>Aktion
+### <a name="action"></a>Action
 
 In Windows PowerShell ISE 2.0 und höher unterstützt.
 
@@ -44,7 +45,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Action
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Action.Invoke()
 ```
 
-### <a name="shortcut"></a>Abkürzung
+### <a name="shortcut"></a>Tastenkombination
 
 In Windows PowerShell ISE 2.0 und höher unterstützt.
 

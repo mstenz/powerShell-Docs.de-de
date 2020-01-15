@@ -1,17 +1,17 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/31/2019
 keywords: powershell,cmdlet
 title: Das ISEFile-Objekt
-ms.openlocfilehash: ebb5a35f6ea9d93eab633b9f4e6c84e4fddd6ae8
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1069e46aa586b8df2050129194a909b90f77b745
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67028962"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736997"
 ---
 # <a name="the-isefile-object"></a>Das ISEFile-Objekt
 
-Ein **ISEFile**-Objekt stellt eine Datei in Windows-PowerShell® Integrated Scripting Environment (ISE) dar Es ist eine Instanz der Microsoft.PowerShell.Host.ISE.ISEFile-Klasse. In diesem Thema werden die Elementmethoden und -eigenschaften aufgeführt. **$psISE.CurrentFile** und die Dateien in der DateiSammlung auf einer PowerShell-Registerkarte sind Instanzen der Microsoft.PowerShell.Host.ISE.ISEFile-Klasse.
+Ein **ISEFile**-Objekt stellt eine Datei in Windows-PowerShell® Integrated Scripting Environment (ISE) dar Es handelt sich um eine Instanz der **Microsoft.PowerShell.Host.ISE.ISEFile**-Klasse. In diesem Thema werden die Elementmethoden und -eigenschaften aufgeführt. `$psISE.CurrentFile` und die Dateien in der Dateisammlung auf einer PowerShell-Registerkarte sind Instanzen der ****Microsoft.PowerShell.Host.ISE.ISEFile**-Klasse.
 
 ## <a name="methods"></a>Methoden
 
@@ -69,7 +69,7 @@ $psISE.CurrentFile.SaveAs($fullPath, [System.Text.Encoding]::UTF8)
 
 In Windows PowerShell ISE 2.0 und höher unterstützt.
 
-Die schreibgeschützte Eigenschaft, die die Zeichenfolge mit dem Anzeigenamen dieser Datei abruft. Der Name wird auf der Registerkarte **Datei** oben im Editor angezeigt. Ein Sternchen \(\*\) am Ende des Namens zeigt an, dass die Datei nicht gespeicherte Änderungen enthält.
+Die schreibgeschützte Eigenschaft, die die Zeichenfolge mit dem Anzeigenamen dieser Datei abruft. Der Name wird auf der Registerkarte **Datei** oben im Editor angezeigt. Ein Sternchen `(*)` am Ende des Namens zeigt an, dass die Datei nicht gespeicherte Änderungen enthält.
 
 ```powershell
 # Shows the display name of the file.
@@ -87,7 +87,7 @@ Die schreibgeschützte Eigenschaft, die das für die angegebene Datei verwendete
 $psISE.CurrentFile.Editor.Text
 ```
 
-### <a name="encoding"></a>Codierung
+### <a name="encoding"></a>Codieren
 
 In Windows PowerShell ISE 2.0 und höher unterstützt.
 
@@ -113,7 +113,7 @@ $psISE.CurrentFile.FullPath
 
 In Windows PowerShell ISE 2.0 und höher unterstützt.
 
-Die schreibgeschützte boolesche Eigenschaft, die **$true** zurückgibt, wenn die Datei nach der letzten Änderung gespeichert wurde.
+Die schreibgeschützte boolesche Eigenschaft, die `$true` zurückgibt, wenn die Datei nach der letzten Änderung gespeichert wurde.
 
 ```powershell
 # Determines whether the file has been saved since it was last modified.
@@ -125,7 +125,7 @@ $myfile.IsSaved
 
 In Windows PowerShell ISE 2.0 und höher unterstützt.
 
-Die schreibgeschützte Eigenschaft, die **$true** zurückgibt, wenn für die Datei nie ein Titel festgelegt wurde.
+Die schreibgeschützte Eigenschaft, die `$true` zurückgibt, wenn für die Datei nie ein Titel festgelegt wurde.
 
 ```powershell
 # Determines whether the file has never been given a title.

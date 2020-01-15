@@ -1,17 +1,17 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/31/2019
 keywords: powershell,cmdlet
 title: Das ISEAddOnToolCollection-Objekt
-ms.openlocfilehash: 28ab9747e573b7a76ee655289b341870b1728bc2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e07a47169381307b50ac190165307c926b4ad94e
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030627"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75737014"
 ---
 # <a name="the-iseaddontoolcollection-object"></a>Das ISEAddOnToolCollection-Objekt
 
-Das **ISEAddOnToolCollection**-Objekt ist eine Sammlung von **ISEAddOnTool**-Objekten. Ein Beispiel ist das **$psISE.CurrentPowerShellTab.VerticalAddOnTools**-Objekt.
+Das **ISEAddOnToolCollection**-Objekt ist eine Sammlung von **ISEAddOnTool**-Objekten. Ein Beispiel ist das `$psISE.CurrentPowerShellTab.VerticalAddOnTools`-Objekt.
 
 ## <a name="methods"></a>Methoden
 
@@ -25,7 +25,7 @@ Fügt der Sammlung ein neues Add-On-Tool hinzu. Das neu hinzugefügte Add-On-Too
 
 **ControlType** – Typ – gibt das Steuerelement an, das hinzugefügt wird
 
-**\[IsVisible\]** – optionaler boolescher Wert – bei **$true** ist das Add-On-Tool sofort im zugehörigen Toolbereich sichtbar
+**\[IsVisible\]** – optionaler boolescher Wert: Bei Festlegung auf `$true` ist das Add-On-Tool sofort im zugehörigen Toolbereich sichtbar.
 
 ```powershell
 # Load a DLL with an add-on and then add it to the ISE

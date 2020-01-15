@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Das PowerShellTab-Objekt
-ms.openlocfilehash: bfa11b553f97b7b27b974855ff4e8f1a48c33fea
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 55e3678a8285f0ec7e8131d98c87478216c26f37
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67028906"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736929"
 ---
 # <a name="the-powershelltab-object"></a>Das PowerShellTab-Objekt
 
@@ -43,7 +43,7 @@ Führt das angegebene Skript auf der PowerShell-Registerkarte aus.
 
 **Script**: System.Management.Automation.ScriptBlock oder Zeichenfolge – der auszuführende Skriptblock.
 
-**\[useNewScope\]** : optionaler boolescher Wert mit Standardwert **$true**. Bei Festlegung auf **$true** wird ein neuer Bereich erstellt, in dem der Befehl ausgeführt werden soll. Die Laufzeitumgebung der vom Befehl angegebenen PowerShell-Registerkarte wird nicht geändert.
+**\[useNewScope\]** : optionaler boolescher Wert mit Standardwert `$true`. Bei Festlegung auf `$true` wird ein neuer Bereich erstellt, in dem der Befehl ausgeführt werden soll. Die Laufzeitumgebung der vom Befehl angegebenen PowerShell-Registerkarte wird nicht geändert.
 
 **\[millisecondsTimeout\]** : optionale ganze Zahl mit Standardwert **500**.
 Wenn der Befehl nicht innerhalb der angegebenen Zeit abgeschlossen wird, generiert der Befehl eine **TimeoutException** mit der Meldung „Timeout für Vorgang überschritten“.
@@ -92,7 +92,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu
 
 In Windows PowerShell ISE 2.0 und höher unterstützt.
 
-Die schreibgeschützte boolesche Eigenschaft, die den Wert **$true** zurückgibt, wenn ein Skript mit der [Invoke( Script )](#invoke-script-)-Methode aufgerufen werden kann.
+Die schreibgeschützte boolesche Eigenschaft, die den Wert `$true` zurückgibt, wenn ein Skript mit der [Invoke( Script )](#invoke-script-)-Methode aufgerufen werden kann.
 
 ```powershell
 # CanInvoke will be false if the PowerShell
@@ -107,9 +107,9 @@ $secondTab.Invoke({sleep 20})
 $secondTab.CanInvoke
 ```
 
-### <a name="consolepane"></a>Consolepane
+### <a name="consolepane"></a>ConsolePane
 
-In Windows PowerShell ISE 3.0 und höher unterstützt, in früheren Versionen nicht enthalten.  In Windows PowerShell ISE 2.0 lautete der Name hierfür **CommandPane**.
+In Windows PowerShell ISE 3.0 und höher unterstützt, in früheren Versionen nicht enthalten. In Windows PowerShell ISE 2.0 lautete der Name hierfür **CommandPane**.
 
 Die schreibgeschützte Eigenschaft, die das [editor](The-ISEEditor-Object.md)-Objekt des Konsolenbereichs abruft.
 
@@ -154,9 +154,9 @@ $newFile.Editor.Text = "a`r`nb"
 $newFile.Editor.LineCount
 ```
 
-### <a name="output"></a>Ausgabe
+### <a name="output"></a>Output
 
-Dieses Feature ist in Windows PowerShell ISE 2.0 enthalten, wurde in höheren Versionen von ISE aber entfernt oder umbenannt.  In höheren Versionen von Windows PowerShell ISE können Sie das **ConsolePane**-Objekt für den gleichen Zweck verwenden.
+Dieses Feature ist in Windows PowerShell ISE 2.0 enthalten, wurde in höheren Versionen von ISE aber entfernt oder umbenannt. In höheren Versionen von Windows PowerShell ISE können Sie das **ConsolePane**-Objekt für den gleichen Zweck verwenden.
 
 Die schreibgeschützte Eigenschaft, die den Ausgabebereich des aktuellen [editor](The-ISEEditor-Object.md) abruft.
 
@@ -165,7 +165,7 @@ Die schreibgeschützte Eigenschaft, die den Ausgabebereich des aktuellen [editor
 $psISE.CurrentPowerShellTab.output.clear()
 ```
 
-### <a name="prompt"></a>Auffordern
+### <a name="prompt"></a>Prompt
 
 In Windows PowerShell ISE 2.0 und höher unterstützt.
 

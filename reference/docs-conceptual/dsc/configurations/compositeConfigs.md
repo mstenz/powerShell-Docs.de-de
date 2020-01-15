@@ -1,18 +1,17 @@
 ---
 ms.date: 06/12/2017
-keywords: dsc,powershell,configuration,setup
+keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: Verschachteln von Konfigurationen
-ms.openlocfilehash: 54162cd72d2d1e7773e3be636bfa681329854498
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 07e4fb5b9d406153d2fbb4285e28b8d1f0dfdcf5
+ms.sourcegitcommit: 1b88c280dd0799f225242608f0cbdab485357633
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71954557"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75417868"
 ---
 # <a name="nesting-dsc-configurations"></a>Verschachteln von DSC-Konfigurationen
 
-Eine geschachtelte Konfiguration (auch zusammengesetzte Konfiguration genannt) ist eine Konfiguration, die in einer anderen Konfiguration aufgerufen wird, als handele es sich um eine Ressource.
-Beide Konfigurationen müssen in derselben Datei definiert werden.
+Eine geschachtelte Konfiguration (auch zusammengesetzte Konfiguration genannt) ist eine Konfiguration, die in einer anderen Konfiguration aufgerufen wird, als handele es sich um eine Ressource. Beide Konfigurationen müssen in derselben Datei definiert werden.
 
 Sehen wir uns ein einfaches Beispiel an:
 
@@ -30,12 +29,11 @@ Configuration FileConfig
     Import-DscResource -ModuleName PSDesiredStateConfiguration
 
     File FileTest
-       {
-           SourcePath = $CopyFrom
-           DestinationPath = $CopyTo
-           Ensure = 'Present'
-       }
-
+    {
+        SourcePath = $CopyFrom
+        DestinationPath = $CopyTo
+        Ensure = 'Present'
+    }
 }
 
 Configuration NestedFileConfig
@@ -51,9 +49,9 @@ Configuration NestedFileConfig
 }
 ```
 
-In diesem Beispiel akzeptiert `FileConfig` zwei erforderliche Parameter, **CopyFrom** und **CopyTo**, die als Werte für die Eigenschaften **SourcePath** und **DestinationPath** im Ressourcenblock `File` verwendet werden.
-Die Konfiguration `NestedConfig` ruft `FileConfig` auf, als handele es sich um eine Ressource.
-Die Eigenschaften im Ressourcenblock `NestedConfig` (**CopyFrom** und **CopyTo**) sind die Parameter der Konfiguration `FileConfig`.
+In diesem Beispiel akzeptiert `FileConfig` zwei erforderliche Parameter – **CopyFrom** und **CopyTo**–, die als Werte für die Eigenschaften **SourcePath** und **DestinationPath** im Ressourcenblock `File` verwendet werden. Die Konfiguration `NestedConfig` ruft `FileConfig` auf, als handele es sich um eine Ressource. Die Eigenschaften im Ressourcenblock `NestedConfig` (**CopyFrom** und **CopyTo**) sind die Parameter der Konfiguration `FileConfig`.
+
+DSC unterstützt aktuell keine geschachtelten Konfigurationen innerhalb von geschachtelten Konfigurationen. Sie können eine Konfiguration nur eine Ebene tief schachteln.
 
 ## <a name="see-also"></a>Weitere Informationen
 

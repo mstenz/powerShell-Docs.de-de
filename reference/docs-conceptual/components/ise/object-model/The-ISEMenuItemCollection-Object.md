@@ -1,17 +1,17 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/31/2019
 keywords: powershell,cmdlet
 title: Das ISEMenuItemCollection-Objekt
-ms.openlocfilehash: b3795af1a6ed61ed6e371e5fc20cc4e95f643fd4
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 39e8547c9b19ba323d4b224a46eda416542b2807
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030542"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736171"
 ---
 # <a name="the-isemenuitemcollection-object"></a>Das ISEMenuItemCollection-Objekt
 
-Ein **ISEMenuItemCollection**-Objekt ist eine Sammlung von **ISEMenuItem**-Objekten. Es ist eine Instanz der Microsoft.PowerShell.Host.ISE.ISEMenuItemCollection-Klasse. Ein Beispiel ist das **$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus**-Objekt, das verwendet wird, um das Menü **Add-On** in Windows PowerShell® Integrated Scripting Environment (ISE) anzupassen.
+Ein **ISEMenuItemCollection**-Objekt ist eine Sammlung von **ISEMenuItem**-Objekten. Es handelt sich um eine Instanz der **Microsoft.PowerShell.Host.ISE.ISEMenuItemCollection**-Klasse. Ein Beispiel ist das `$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus`-Objekt, das verwendet wird, um das Menü **Add-On** in Windows PowerShell® Integrated Scripting Environment (ISE) anzupassen.
 
 ## <a name="method"></a>Methode
 
@@ -27,7 +27,7 @@ Fügt der Sammlung ein Menüelement hinzu.
 
 **Shortcut** Die Tastenkombination für diese Aktion.
 
-**Returns** Das ISEMenuItem-Objekt, das soeben hinzugefügt wurde.
+**Returns** Das **ISEMenuItem**-Objekt, das soeben hinzugefügt wurde.
 
 ```powershell
 # Create an Add-ons menu with an fast access key and a shortcut.

@@ -2,17 +2,16 @@
 ms.date: 08/25/2017
 keywords: powershell,cmdlet
 title: Das ObjectModelRoot-Objekt
-ms.openlocfilehash: 2670321ebac1eac4ecc8457afb796f9f260da471
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0b04bdb3127edaac7b504556843efb64ee65ed13
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62086781"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736027"
 ---
 # <a name="the-objectmodelroot-object"></a>Das ObjectModelRoot-Objekt
 
-Das **$psISE**-Objekt, das das Prinzipalstammobjekt in Windows PowerShell® Integrated Scripting Environment (ISE) ist, ist eine Instanz der Microsoft.PowerShell.Host.ISE.ObjectModelRoot-Klasse.
-Dieses Thema beschreibt die Eigenschaften des **ObjectModelRoot**-Objekts.
+Das `$psISE`-Objekt ist das Prinzipalstammobjekt in Windows PowerShell® Integrated Scripting Environment (ISE) und eine Instanz der Microsoft.PowerShell.Host.ISE.ObjectModelRoot-Klasse. Dieses Thema beschreibt die Eigenschaften des **ObjectModelRoot**-Objekts.
 
 ## <a name="properties"></a>Eigenschaften
 
@@ -40,7 +39,7 @@ Die schreibgeschützte Eigenschaft, die das derzeit sichtbare Windows PowerShell
 
 Die schreibgeschützte Eigenschaft, die das derzeit sichtbare Windows PowerShell ISE-Add-On-Tool abruft, das sich im vertikalen Toolbereich rechts im Editor befindet.
 
-### <a name="options"></a>Optionen
+### <a name="options"></a>Tastatur
 
 > In Windows PowerShell ISE 2.0 und höher unterstützt.
 

@@ -3,14 +3,14 @@ ms.date: 11/06/2018
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery,psget
 title: Arbeiten mit lokalen PSRepositorys
-ms.openlocfilehash: 94824ea584c097838b24c6f2cd02407b6147a781
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: c1bd905674ae76a3badd3eff50780f0e1bb5fc64
+ms.sourcegitcommit: 1b88c280dd0799f225242608f0cbdab485357633
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71327991"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75415817"
 ---
-# <a name="working-with-local-powershellget-repositories"></a>Arbeiten mit lokalen PowerShellGet-Repositorys
+# <a name="working-with-private-powershellget-repositories"></a>Arbeiten mit privaten PowerShellGet-Repositorys
 
 Das PowerShellGet-Modul unterstützt andere Repositorys als den PowerShell-Katalog.
 Diese Cmdlets ermöglichen die folgenden Szenarien:
@@ -18,6 +18,7 @@ Diese Cmdlets ermöglichen die folgenden Szenarien:
 - Unterstützung eines vertrauenswürdigen, bereits überprüften Satzes von PowerShell-Modulen für die Verwendung in Ihrer Umgebung
 - Testen einer CI/CD-Pipeline, die PowerShell-Module oder -Skripts erstellt
 - Bereitstellen von PowerShell-Skripts und -Modulen auf Systemen, die nicht auf das Internet zugreifen können
+- Bereitstellen von PowerShell-Skripts und -Modulen nur für Ihre Organisation
 
 Dieser Artikel beschreibt, wie Sie ein lokales PowerShell-Repository einrichten. Der Artikel behandelt auch das im PowerShell-Katalog verfügbare [OfflinePowerShellGetDeploy][]-Modul. Dieses Modul enthält Cmdlets zum Installieren der neuesten Version von PowerShellGet in Ihrem lokalen Repository.
 
@@ -25,7 +26,7 @@ Dieser Artikel beschreibt, wie Sie ein lokales PowerShell-Repository einrichten.
 
 Lokale PSRepositorys können auf zwei Arten erstellt werden: NuGet-Server oder Dateifreigabe. Jeder Typ hat Vor- und Nachteile:
 
-NuGet-Server
+### <a name="nuget-server"></a>NuGet-Server
 
 | Vorteile| Nachteile |
 | --- | --- |
@@ -34,7 +35,7 @@ NuGet-Server
 | NuGet unterstützt Metadaten in `.Nupkg`-Paketen | Veröffentlichung erfordert Verwaltung und Wartung des API-Schlüssels |
 | Ermöglicht Suche, Paketverwaltung usw. | |
 
-Dateifreigabe
+### <a name="file-share"></a>Dateifreigabe
 
 | Vorteile| Nachteile |
 | --- | --- |
@@ -98,7 +99,7 @@ Veröffentlichen Sie Ihr Modul mit `Publish-Module` und `Publish-Script` genauso
 
 - Geben Sie den Speicherort für Ihren Code an
 - Geben Sie einen API-Schlüssel an
-- Geben Sie den Namen des Repositorys an. Beispiel: `-PSRepository LocalPSRepo`.
+- Geben Sie den Namen des Repositorys an. Zum Beispiel, `-PSRepository LocalPSRepo`
 
 > [!NOTE]
 > Sie müssen ein Konto auf dem NuGet-Server erstellen und sich dann anmelden, um den API-Schlüssel zu generieren und zu speichern.
@@ -109,7 +110,9 @@ Beispiele:
 ```powershell
 # Publish to a NuGet Server repository using my NuGetAPI key
 Publish-Module -Path 'c:\projects\MyModule' -Repository LocalPsRepo -NuGetApiKey 'oy2bi4avlkjolp6bme6azdyssn6ps3iu7ib2qpiudrtbji'
+```
 
+```powershell
 # Publish to a file share repo - the NuGet API key must be a non-blank string
 Publish-Module -Path 'c:\projects\MyModule' -Repository LocalPsRepo -NuGetApiKey 'AnyStringWillDo'
 ```
@@ -130,7 +133,7 @@ Beispiel:
 
 ```powershell
 # Publish from the PSGallery to your local Repository
-Save-Package -Name 'PackageName' -Provider Nuget -Source https://www.powershellgallery.com/api/v2 -Path '\\localhost\PSRepoLocal\'
+Save-Package -Name 'PackageName' -Provider NuGet -Source https://www.powershellgallery.com/api/v2 -Path '\\localhost\PSRepoLocal\'
 ```
 
 Wenn Ihr lokales PSRepository webbasiert ist, erfordert es einen zusätzlichen Schritt, der „nuget.exe“ zum Veröffentlichen verwendet.
@@ -181,6 +184,10 @@ Publish-Module -Path 'F:\OfflinePowershellGet' -Repository LocalPsRepo -NuGetApi
 # Publish to a file share repo - the NuGet API key must be a non-blank string
 Publish-Module -Path 'F:\OfflinePowerShellGet' -Repository LocalPsRepo -NuGetApiKey 'AnyStringWillDo'
 ```
+
+## <a name="use-packaging-solutions-to-host-powershellget-repositories"></a>Verwenden von Paketierungslösungen zum Hosten von PowerShellGet-Repositorys
+
+Sie können auch Paketierungslösungen wie Azure Artifacts verwenden, um ein privates oder öffentliches PowerShellGet-Repository zu hosten. Weitere Informationen und Anweisungen finden Sie in der [Azure Artifacts-Dokumentation](https://docs.microsoft.com/azure/devops/artifacts/tutorials/private-powershell-library).
 
 > [!IMPORTANT]
 > Um die Sicherheit zu gewährleisten, sollten API-Schlüssel nicht in Skripts hartcodiert sein. Verwenden Sie ein sicheres Schlüsselverwaltungssystem.

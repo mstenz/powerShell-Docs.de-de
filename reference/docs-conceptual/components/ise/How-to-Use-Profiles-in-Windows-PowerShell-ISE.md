@@ -1,22 +1,25 @@
 ---
-ms.date: 06/05/2017
+ms.date: 01/02/2020
 keywords: powershell,cmdlet
 title: "So wird's gemacht: Verwenden von Profilen in Windows PowerShell ISE"
-ms.openlocfilehash: 28354f39aaaa577cec69c1b3f62cfe16ef091218
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: da7dc2f234ad0c2968fbb213e9e57da875f456e4
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030606"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736248"
 ---
 # <a name="how-to-use-profiles-in-windows-powershell-ise"></a>So wird's gemacht: Verwenden von Profilen in Windows PowerShell ISE
 
-In diesem Thema wird erklärt, wie Profile in Windows PowerShell® Integrated Scripting Environment (ISE) verwendet werden können. Es empfiehlt sich, die Aufgaben in diesem Abschnitt erst auszuführen, nachdem Sie [about_Profiles](/powershell/module/microsoft.powershell.core/about/about_profiles) gelesen oder im Konsolenbereich `Get-Help about_Profiles` eingegeben und die **EINGABETASTE** gedrückt haben.
+In diesem Thema wird erklärt, wie Profile in Windows PowerShell® Integrated Scripting Environment (ISE) verwendet werden können. Es empfiehlt sich, die Aufgaben in diesem Abschnitt erst auszuführen, nachdem Sie [about_Profiles](/powershell/module/microsoft.powershell.core/about/about_profiles) gelesen oder im Konsolenbereich `Get-Help about_Profiles` eingegeben und die <kbd>EINGABETASTE</kbd> gedrückt haben.
 
-Ein Profil ist ein Windows PowerShell ISE-Skript, das automatisch ausgeführt wird, wenn Sie eine neue Sitzung starten.  Sie können ein oder mehrere Windows PowerShell-Profile für Windows PowerShell ISE erstellen und diese dazu verwenden, die Umgebung von Windows PowerShell oder Windows PowerShell ISE zu konfigurieren, um sie mit den Variablen, Aliasen, Funktionen sowie Farb- und Schriftartvoreinstellungen vorzubereiten, die Sie zur Verfügung haben möchten. Ein Profil wirkt sich auf jede Windows PowerShell ISE-Sitzung aus, die Sie starten.
+Ein Profil ist ein Windows PowerShell ISE-Skript, das automatisch ausgeführt wird, wenn Sie eine neue Sitzung starten.
+Sie können ein oder mehrere Windows PowerShell-Profile für Windows PowerShell ISE erstellen und diese dazu verwenden, die Umgebung von Windows PowerShell oder Windows PowerShell ISE zu konfigurieren, um sie mit den Variablen, Aliasen, Funktionen sowie Farb- und Schriftartvoreinstellungen vorzubereiten, die Sie zur Verfügung haben möchten. Ein Profil wirkt sich auf jede Windows PowerShell ISE-Sitzung aus, die Sie starten.
 
 > [!NOTE]
-> Die Windows PowerShell-Ausführungsrichtlinie bestimmt, ob Sie Skripts ausführen und ein Profil laden dürfen. Die Standardausführungsrichtlinie, „Restricted“, verhindert das Ausführen jeglicher Skripts, einschließlich Profile. Wenn Sie die Richtlinie „Restricted“ verwenden, kann das Profil nicht geladen werden. Weitere Informationen zu Ausführungsrichtlinien finden Sie unter [about_Execution_Policies](/powershell/module/microsoft.powershell.core/about/about_execution_policies).
+> Die Windows PowerShell-Ausführungsrichtlinie bestimmt, ob Sie Skripts ausführen und ein Profil laden dürfen.
+> Die Standardausführungsrichtlinie, „Restricted“, verhindert das Ausführen jeglicher Skripts, einschließlich Profile.
+> Wenn Sie die Richtlinie „Restricted“ verwenden, kann das Profil nicht geladen werden. Weitere Informationen zu Ausführungsrichtlinien finden Sie unter [about_Execution_Policies](/powershell/module/microsoft.powershell.core/about/about_execution_policies).
 
 ## <a name="selecting-a-profile-to-use-in-the-windows-powershell-ise"></a>Auswählen eines Profils, das in Windows PowerShell ISE verwendet werden soll
 
@@ -24,18 +27,18 @@ Windows PowerShell ISE unterstützt Profile für den aktuellen Benutzer sowie f�
 
 Das Profil, das Sie verwenden, wird durch die Verwendung der Windows PowerShell und Windows PowerShell ISE bestimmt.
 
-- Wenn Sie nur Windows PowerShell ISE verwenden, um Windows PowerShell auszuführen, speichern Sie alle ihre Elemente in einem ISE-spezifischen Profil, z.B. dem Profil „CurrentUserCurrentHost“ für Windows PowerShell ISE oder „AllUsersCurrentHost“ für Windows PowerShell ISE.
+- Wenn Sie nur Windows PowerShell ISE verwenden, um Windows PowerShell auszuführen, speichern Sie alle ihre Elemente in einem ISE-spezifischen Profil, z. B. dem Profil **CurrentUserCurrentHost** für Windows PowerShell ISE oder **AllUsersCurrentHost** für Windows PowerShell ISE.
 
-- Wenn Sie mehrere Hostprogramme verwenden, um Windows PowerShell auszuführen, speichern Sie Ihre Funktionen, Aliase, Variablen und Befehle in einem Profil, das alle Hostprogramme betrifft, z.B. dem Profil „CurrentUserAllHosts“ oder „AllUsersAllHosts“. Speichern Sie ISE-spezifische Merkmale wie Anpassungen von Farbe und Schriftart im Profil „CurrentUserCurrentHost“ für Windows PowerShell ISE oder „AllUsersCurrentHost“ für Windows PowerShell ISE.
+- Wenn Sie mehrere Hostprogramme verwenden, um Windows PowerShell auszuführen, speichern Sie Ihre Funktionen, Aliase, Variablen und Befehle in einem Profil, das alle Hostprogramme betrifft, z. B. dem Profil „CurrentUserAllHosts“ oder **AllUsersAllHosts**. Speichern Sie ISE-spezifische Merkmale wie Anpassungen von Farbe und Schriftart im Profil **CurrentUserCurrentHost** für Windows PowerShell ISE oder **AllUsersCurrentHost** für Windows PowerShell ISE.
 
 Die folgenden Profile sind Profile, die in Windows PowerShell ISE erstellt und verwendet werden können. Jedes Profil wird in seinem eigenen speziellen Pfad gespeichert.
 
-| Profiltyp | Profilpfad |
-| --- | --- |
-| **Aktueller Benutzer, PowerShell ISE**| `$PROFILE.CurrentUserCurrentHost` oder `$PROFILE` |
-| **Alle Benutzer, PowerShell ISE**| `$PROFILE.AllUsersCurrentHost` |
-| **Aktueller Benutzer, alle Hosts**| `$PROFILE.CurrentUserAllHosts` |
-| **Alle Benutzer, alle Hosts** | `$PROFILE.AllUsersAllHosts` |
+|           Profiltyp           |                   Profilpfad                   |
+| -------------------------------- | ------------------------------------------------ |
+| **Aktueller Benutzer, PowerShell ISE** | `$PROFILE.CurrentUserCurrentHost` oder `$PROFILE` |
+| **Alle Benutzer, PowerShell ISE**    | `$PROFILE.AllUsersCurrentHost`                   |
+| **Aktueller Benutzer, alle Hosts**      | `$PROFILE.CurrentUserAllHosts`                   |
+| **Alle Benutzer, alle Hosts**         | `$PROFILE.AllUsersAllHosts`                      |
 
 ## <a name="to-create-a-new-profile"></a>So erstellen Sie ein neues Profil
 
@@ -69,11 +72,11 @@ if (!(Test-Path -Path $PROFILE.AllUsersAllHosts))
 
 ## <a name="to-edit-a-profile"></a>So bearbeiten Sie ein Profil
 
-1. Um das Profil zu öffnen, führen Sie den Befehl „psedit“ mit der Variablen aus, die das Profil angibt, das Sie bearbeiten möchten. Wenn Sie beispielsweise das „Aktueller Benutzer, PowerShell ISE“-Profil öffnen möchten, geben Sie Folgendes ein: `psEdit $PROFILE`
+1. Um das Profil zu öffnen, führen Sie den Befehl `psEdit` mit der Variablen aus, die das Profil angibt, das Sie bearbeiten möchten. Wenn Sie beispielsweise das „Aktueller Benutzer, PowerShell ISE“-Profil öffnen möchten, geben Sie Folgendes ein: `psEdit $PROFILE`
 
 2. Fügen Sie dem Profil einige Elemente hinzu. Es folgen einige Beispiele, die Ihnen den Einstieg erleichtern sollen:
 
-   - Um die Standardhintergrundfarbe des Konsolenbereichs in Blau zu ändern, geben Sie Folgendes in die Profildatei ein: `$psISE.Options.OutputPaneBackground = 'blue'`. Weitere Informationen zu der Variablen „$psISE“ finden Sie unter [Referenz zum Windows PowerShell ISE-Objektmodell](object-model/The-ISE-Object-Model-Hierarchy.md).
+   - Um die Standardhintergrundfarbe des Konsolenbereichs in Blau zu ändern, geben Sie Folgendes in die Profildatei ein: `$psISE.Options.OutputPaneBackground = 'blue'`. Weitere Informationen zu der Variablen `$psISE` finden Sie unter [Referenz zum Windows PowerShell ISE-Objektmodell](object-model/The-ISE-Object-Model-Hierarchy.md).
 
    - Um den Schriftgrad in 20 zu ändern, geben Sie Folgendes in die Profildatei ein: `$psISE.Options.FontSize =20`
 

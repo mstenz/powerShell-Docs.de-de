@@ -1,27 +1,27 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/31/2019
 keywords: powershell,cmdlet
 title: Das ISEFileCollection-Objekt
-ms.openlocfilehash: 96db51ee921cc0fa34803091d563bc6e118643b6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4192afa9dc91d9ea4c4c084d3ba0175483620229
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030514"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736214"
 ---
 # <a name="the-isefilecollection-object"></a>Das ISEFileCollection-Objekt
 
-Das **ISEFileCollection**-Objekt ist eine Sammlung von **ISEFile**-Objekten. Ein Beispiel ist die $psISE.CurrentPowerShellTab.Files-Sammlung.
+Das **ISEFileCollection**-Objekt ist eine Sammlung von **ISEFile**-Objekten. Ein Beispiel ist die `$psISE.CurrentPowerShellTab.Files`-Auflistung.
 
 ## <a name="methods"></a>Methoden
 
-### <a name="add-fullpath-"></a>Add\( \[fullPath\] \)
+### <a name="add-fullpath-"></a>Add\( \[FullPath\] \)
 
 In Windows PowerShell ISE 2.0 und höher unterstützt.
 
-Erstellt eine neue unbenannte Datei, gibt diese zurück und fügt sie der Sammlung hinzu. Die **IsUntitled**-Eigenschaft der neu erstellten Datei ist **$true**.
+Erstellt eine neue unbenannte Datei, gibt diese zurück und fügt sie der Sammlung hinzu. Die **IsUntitled**-Eigenschaft der neu erstellten Datei lautet `$true`.
 
-**\[fullPath\]** – Optionale Zeichenfolge – der vollständig angegebene Pfad der Datei Eine Ausnahme wird erstellt, falls Sie den **fullPath**-Parameter und den relativen Pfad angeben oder falls Sie einen Dateinamen statt dem vollständigen Pfad verwenden.
+**\[FullPath\]** – Optionale Zeichenfolge – der vollständig angegebene Pfad der Datei. Es wird eine Ausnahme generiert, wenn Sie den **FullPath**-Parameter und den relativen Pfad angeben oder einen Dateinamen anstelle des vollständigen Pfads verwenden.
 
 ```powershell
 # Adds a new untitled file to the collection of files in the current PowerShell tab.
@@ -39,7 +39,7 @@ Entfernt eine angegebene Datei aus der aktuellen PowerShell-Registerkarte.
 
 **File** – Zeichenfolge – Die ISEFile-Datei, die Sie aus der Sammlung entfernen möchten Falls die Datei nicht gespeichert wurde, löst diese Methode eine Ausnahme aus. Verwenden Sie den Schalter **Force**, um das Entfernen einer ungespeicherten Datei zu erzwingen.
 
-**\[Force\]** – Optionaler boolescher Wert: Falls er auf **$true** festgelegt wird, erteilt er die Berechtigung dafür, die Datei zu entfernen, auch wenn sie nach der letzten Verwendung nicht gespeichert wurde. Der Standardwert ist **$false**.
+**\[Force\]** – Optionaler boolescher Wert: Bei Festlegung auf `$true` wird die Berechtigung zum Entfernen von Dateien erteilt, auch wenn diese nach der letzten Verwendung nicht gespeichert wurde. Der Standardwert lautet `$false`.
 
 ```powershell
 # Removes the first opened file from the file collection associated with the current PowerShell tab.
@@ -56,9 +56,9 @@ $psISE.CurrentPowerShellTab.Files.Remove($firstfile, $true)
 
 In Windows PowerShell ISE 2.0 und höher unterstützt.
 
-Wählt die Datei aus, die durch den **selectedFile**-Parameter angegeben wird.
+Wählt die Datei aus, die durch den **SelectedFile**-Parameter angegeben wird.
 
-**selectedFile** – Microsoft.PowerShell.Host.ISE.ISEFile – Die ISEFile-Datei, die Sie auswählen möchten
+**SelectedFile** – Microsoft.PowerShell.Host.ISE.ISEFile: Die ISEFile-Datei, die Sie auswählen möchten.
 
 ```powershell
 # Selects the specified file.

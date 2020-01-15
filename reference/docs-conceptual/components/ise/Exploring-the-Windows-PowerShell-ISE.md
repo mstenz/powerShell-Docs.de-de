@@ -1,13 +1,13 @@
 ---
-ms.date: 06/05/2017
+ms.date: 01/02/2020
 keywords: powershell,cmdlet
 title: Kennenlernen der Windows PowerShell ISE
-ms.openlocfilehash: 7949b690cda73148f07922985b1fc30fe1e8b2d0
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 03728a8c83962894b27738609a5b1bec841fdb13
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74117436"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75737099"
 ---
 # <a name="exploring-the-windows-powershell-ise"></a>Kennenlernen der Windows PowerShell ISE
 
@@ -31,25 +31,25 @@ Eine Windows PowerShell-Registerkarte ist die Umgebung, in der ein Windows Power
 
 Die folgenden Schaltflächen befinden sich auf der Symbolleiste.
 
-|Schaltfläche|Funktion|
-|----------|------------|
-|**Neu**|Öffnet ein neues Skript.|
-|**Öffnen**|Öffnet ein vorhandenes Skript oder eine Datei.|
-|**Speichern**|Speichert ein Skript oder eine Datei.|
-|**Ausschneiden**|Schneidet den ausgewählten Text aus und kopiert ihn in die Zwischenablage.|
-|**Kopieren**|Kopiert den ausgewählten Text in die Zwischenablage.|
-|**Einfügen**|Fügt den Inhalt der Zwischenablage an der Cursorposition ein.|
-|**Ausgabebereich löschen**|Löscht den gesamten Inhalt aus dem Ausgabebereich.|
-|**Rückgängig**|Macht die Aktion rückgängig, die zuvor erfolgt ist.|
-|**Wiederholen**|Führt die Aktion aus, die zuvor rückgängig gemacht wurde.|
-|**Skript ausführen**|Führt ein Skript aus.|
-|**Auswahl ausführen**|Führt einen ausgewählten Teil eines Skripts aus.|
-|**Vorgang beenden**|Beendet ein Skript, das ausgeführt wird.|
-|**Neue Registerkarte „Remote-PowerShell“**|Erstellt eine neue PowerShell-Registerkarte, die eine Sitzung auf einem Remotecomputer herstellt. Ein Dialogfeld wird angezeigt und fordert Sie zur Eingabe von Details auf, die zum Herstellen der Remoteverbindung erforderlich sind.|
-|**„PowerShell.exe“ starten**|Öffnet eine PowerShell-Konsole.|
-|**Skriptbereich oben anzeigen**|Verschiebt den Skriptbereich in der Anzeige nach oben.|
-|**Skriptbereich rechts anzeigen**|Verschiebt den Skriptbereich in der Anzeige nach rechts.|
-|**Skriptbereich maximiert anzeigen**|Maximiert den Skriptbereich.|
+|             Taste             |                                                                                     Funktion                                                                                     |
+| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Neu**                        | Öffnet ein neues Skript.                                                                                                                                                              |
+| **Öffnen**                       | Öffnet ein vorhandenes Skript oder eine Datei.                                                                                                                                                |
+| **Speichern**                       | Speichert ein Skript oder eine Datei.                                                                                                                                                          |
+| **Ausschneiden**                        | Schneidet den ausgewählten Text aus und kopiert ihn in die Zwischenablage.                                                                                                                           |
+| **Copy**                       | Kopiert den ausgewählten Text in die Zwischenablage.                                                                                                                                       |
+| **Einfügen**                      | Fügt den Inhalt der Zwischenablage an der Cursorposition ein.                                                                                                                     |
+| **Ausgabebereich löschen**          | Löscht den gesamten Inhalt aus dem Ausgabebereich.                                                                                                                                           |
+| **Rückgängig**                       | Macht die Aktion rückgängig, die zuvor erfolgt ist.                                                                                                                                     |
+| **Wiederholen**                       | Führt die Aktion aus, die zuvor rückgängig gemacht wurde.                                                                                                                                        |
+| **Skript ausführen**                 | Führt ein Skript aus.                                                                                                                                                                   |
+| **Auswahl ausführen**              | Führt einen ausgewählten Teil eines Skripts aus.                                                                                                                                             |
+| **Vorgang beenden**             | Beendet ein Skript, das ausgeführt wird.                                                                                                                                                  |
+| **Neue Registerkarte „Remote-PowerShell“**  | Erstellt eine neue PowerShell-Registerkarte, die eine Sitzung auf einem Remotecomputer herstellt. Ein Dialogfeld wird angezeigt und fordert Sie zur Eingabe von Details auf, die zum Herstellen der Remoteverbindung erforderlich sind. |
+| **„PowerShell.exe“ starten**       | Öffnet eine PowerShell-Konsole.                                                                                                                                                      |
+| **Skriptbereich oben anzeigen**       | Verschiebt den Skriptbereich in der Anzeige nach oben.                                                                                                                                 |
+| **Skriptbereich rechts anzeigen**     | Verschiebt den Skriptbereich in der Anzeige nach rechts.                                                                                                                               |
+| **Skriptbereich maximiert anzeigen** | Maximiert den Skriptbereich.                                                                                                                                                       |
 
 ## <a name="script-tab"></a>Skriptregisterkarte
 
@@ -67,7 +67,7 @@ Zeigt die Ergebnisse der Befehle und Skripts an, die ausgeführt wurden. Sie kö
 
 ## <a name="command-pane"></a>Befehlsbereich
 
-Ermöglicht das Schreiben von Befehlen. Sie können im Befehlsbereich einen Befehl mit einer oder mehreren Zeilen ausführen. Drücken Sie UMSCHALT+EINGABETASTE, um jede Zeile eines mehrzeiligen Befehls einzugeben. Drücken Sie nach der letzten Zeile die EINGABETASTE, um den mehrzeiligen Befehl auszuführen. Die oben im Befehlsbereich angezeigte Aufforderung zeigt den Pfad zum aktuellen Arbeitsverzeichnis.
+Ermöglicht das Schreiben von Befehlen. Sie können im Befehlsbereich einen Befehl mit einer oder mehreren Zeilen ausführen. Drücken Sie <kbd>UMSCHALT</kbd>+<kbd>EINGABETASTE</kbd>, um jede Zeile eines mehrzeiligen Befehls einzugeben. Drücken Sie nach der letzten Zeile die <kbd>EINGABETASTE</kbd>, um den mehrzeiligen Befehl auszuführen. Die oben im Befehlsbereich angezeigte Aufforderung zeigt den Pfad zum aktuellen Arbeitsverzeichnis.
 
 ## <a name="status-bar"></a>Statusleiste
 
@@ -79,7 +79,8 @@ Erhöht oder verringert die Größe des Texts auf dem Bildschirm.
 
 ## <a name="help"></a>Hilfe
 
-Hilfe für Windows PowerShell ISE ist im Web in der TechNet-Bibliothek verfügbar. Sie können die Hilfe öffnen, indem Sie im Menü **Hilfe** auf **Hilfe zu Windows PowerShell ISE** klicken oder die Taste F1 drücken, wobei sich der Cursor allerdings nicht über einem Cmdlet-Namen im Skript- oder Konsolenbereich befinden darf. Im Menü **Hilfe** können Sie auch das Cmdlet „Update-Help“ ausführen und das Befehlsfenster anzeigen. Dieses unterstützt Sie beim Erstellen von Befehlen, indem alle Parameter für ein Cmdlet angezeigt werden und Sie die Parameter in einem benutzerfreundlichen Formular ausfüllen können.
+Hilfe für Windows PowerShell ISE ist im Web in der TechNet-Bibliothek verfügbar. Sie können die Hilfe öffnen, indem Sie im Menü **Hilfe** auf **Hilfe zu Windows PowerShell ISE** klicken oder die Taste <kbd>F1</kbd> drücken, wobei sich der Cursor allerdings nicht über einem Cmdlet-Namen im Skript- oder Konsolenbereich befinden darf.
+Im Menü **Hilfe** können Sie auch das Cmdlet `Update-Help` ausführen und das Befehlsfenster anzeigen. Dieses unterstützt Sie beim Erstellen von Befehlen, indem alle Parameter für ein Cmdlet angezeigt werden und Sie die Parameter in einem benutzerfreundlichen Formular ausfüllen können.
 
 ## <a name="see-also"></a>Weitere Informationen
 

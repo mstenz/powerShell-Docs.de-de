@@ -1,24 +1,24 @@
 ---
 ms.date: 06/12/2017
-keywords: dsc,powershell,configuration,setup
+keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: 'Schnellstart: Erstellen einer Website mit DSC'
-ms.openlocfilehash: d98607939ccd3cc5e660936d8c0a6d54fce7d65f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 08ca25604998ce8c913ef8112b5342f2e0216b6e
+ms.sourcegitcommit: 1b88c280dd0799f225242608f0cbdab485357633
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71955067"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75416128"
 ---
-> Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
+# <a name="quickstart---create-a-website-with-desired-state-configuration-dsc"></a>Schnellstart: Erstellen einer Website mit Desired State Configuration (DSC)
 
-# <a name="quickstart---create-a-website-with-dsc"></a>Schnellstart: Erstellen einer Website mit DSC
+> Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 Diese Übung führt Sie von Anfang bis Ende durch das Erstellen und Anwenden einer Desired State Configuration (DSC)-Konfiguration.
 Das Beispiel, das wir verwenden, stellt sicher, dass ein Server die `Web-Server` (IIS)-Funktion aktiviert hat und der Inhalt für eine einfache „Hello World“-Website ist im Verzeichnis `inetpub\wwwroot` des Servers vorhanden ist.
 
 Eine Übersicht über DSC und die Funktionsweise finden Sie unter [Desired State Configuration (DSC): Übersicht für Entscheidungsträger](../overview/decisionMaker.md).
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 Sie benötigen einen Computer mit Windows Server 2012 oder höher und mit PowerShell 4.0 oder höher, um dieses Beispiel auszuführen.
 
@@ -74,7 +74,7 @@ Speichern Sie die Datei unter dem Namen `WebsiteTest.ps1`.
 
 Sie sehen, dass sie wie eine PowerShell-Funktion aussieht und zusätzlich das Schlüsselworts **Configuration** enthält, welches vor dem Namen der Funktion verwendet wurde.
 
-Der **Node**-Block gibt den zu konfigurierenden Zielknoten an, in diesem Fall `localhost`.
+Der **Node**-Block gibt den zu konfigurierenden Zielknoten an. In diesem Fall `localhost`.
 
 Die Konfiguration ruft zwei [Ressourcen](../resources/resources.md) auf, **WindowsFeature** und **File**.
 Ressourcen stellen sicher, dass sich der Zielknoten im durch die Konfiguration definierten Zustand befindet.
@@ -105,7 +105,7 @@ Die erste Zeile macht die Konfigurationsfunktion in der Konsole verfügbar.
 In der zweiten Zeile wird die Konfiguration ausgeführt.
 Dies bedeutet, dass ein neuer Ordner mit dem Namen `WebsiteTest` als Unterordner des aktuellen Ordners erstellt wird.
 Der Ordner `WebsiteTest` enthält eine Datei mit dem Namen `localhost.mof`.
-Diese Datei, kann dann auf den Zielknoten angewendet werden.
+Dies ist die Datei, die anschließend auf den Zielknoten angewendet werden kann.
 
 ## <a name="apply-the-configuration"></a>Anwenden der Konfiguration
 
@@ -113,6 +113,9 @@ Nun, da Sie die kompilierte MOF-Dateien haben, können Sie die Konfiguration auf
 
 Das `Start-DscConfiguration`-Cmdlet fordert den [lokalen Konfigurations-Manager (Local Configuration Manager – LCM)](../managing-nodes/metaConfig.md), die DSC-Engine, auf, die Konfiguration anzuwenden.
 Der LCM übernimmt das Aufrufen der DSC-Ressourcen, um die Konfiguration anzuwenden.
+
+> [!NOTE]
+> Damit DSC ausgeführt werden kann, muss Windows für den Empfang von PowerShell-Remotebefehlen konfiguriert werden – selbst dann, wenn Sie eine `localhost`-Konfiguration ausführen. Um Ihre Umgebung auf einfache Weise ordnungsgemäß zu konfigurieren, rufen Sie einfach `Set-WsManQuickConfig -Force` in einem PowerShell-Terminal mit erhöhten Rechten aus.
 
 Wechseln Sie in einer PowerShell-Konsole in den gleichen Ordner, in dem Sie die Konfiguration gespeichert haben, und führen Sie den folgenden Befehl aus:
 

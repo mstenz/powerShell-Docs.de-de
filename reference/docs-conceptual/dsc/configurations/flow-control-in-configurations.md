@@ -1,24 +1,25 @@
 ---
 ms.date: 12/12/2018
-keywords: dsc,powershell,configuration,setup
+keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: Bedingte Anweisungen und Schleifen in Konfigurationen
-ms.openlocfilehash: 0073d94d28afbb45bb635442129a6cddde4c805a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 86f75be4a3d1c1760dd6269335431e8ab9fd8d09
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71954077"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736895"
 ---
-# <a name="conditional-statements-and-loops-in-configurations"></a>Bedingte Anweisungen und Schleifen in Konfigurationen
+# <a name="conditional-statements-and-loops-in-a-configuration"></a>Bedingte Anweisungen und Schleifen in einer Konfiguration
 
-Sie können Ihre [Konfigurationen](configurations.md) dynamischer gestalten, indem Sie Ablaufsteuerungs-Schlüsselwörter von PowerShell verwenden. Dieser Artikel zeigt Ihnen, wie Sie bedingte Anweisungen und Schleifen verwenden können, um Ihre Konfigurationen dynamischer zu gestalten. Die Kombination von Bedingungen und Schleifen mit [Parametern](add-parameters-to-a-configuration.md) und [Konfigurationsdaten](configData.md) ermöglicht Ihnen mehr Flexibilität und Kontrolle bei der Kompilierung Ihrer Konfigurationen.
+Sie können Ihre [Konfiguration](configurations.md) dynamischer gestalten, indem Sie PowerShell-Schlüsselwörter für die Ablaufsteuerung verwenden. Dieser Artikel zeigt Ihnen, wie Sie bedingte Anweisungen und Schleifen verwenden können, um Ihre `Configuration` dynamischer zu gestalten. Die Kombination von Bedingungen und Schleifen mit [Parametern](add-parameters-to-a-configuration.md) und [Konfigurationsdaten](configData.md) ermöglicht Ihnen mehr Flexibilität und Kontrolle bei der Kompilierung Ihrer `Configuration`.
 
-Genau wie eine Funktion oder ein Skriptblock können Sie jede beliebige PowerShell-Sprache innerhalb einer Konfiguration verwenden. Die von Ihnen verwendeten Anweisungen werden nur ausgewertet, wenn Sie Ihre Konfiguration aufrufen, um eine MOF-Datei zu kompilieren. Die folgenden Beispiele zeigen einfache Szenarien zur Veranschaulichung der Konzepte. Bedingte Anweisungen und Schleifen werden häufiger mit Parametern und Konfigurationsdaten verwendet.
+Genau wie eine Funktion oder ein Skriptblock können Sie jedes beliebige PowerShell-Sprachfeature innerhalb einer `Configuration` verwenden.
+Die von Ihnen verwendeten Anweisungen werden nur ausgewertet, wenn Sie Ihre `Configuration` aufrufen, um eine `.mof`-Datei zu kompilieren. Die folgenden Beispiele zeigen Szenarien zur Veranschaulichung der Konzepte. Bedingte Anweisungen und Schleifen werden häufiger mit Parametern und Konfigurationsdaten verwendet.
 
-In diesem einfachen Beispiel ruft der Ressourcenblock **Service** den aktuellen Zustand eines Diensts zur Kompilierungszeit ab, um eine MOF-Datei zu generieren, die ihren aktuellen Zustand beibehält.
+In diesem Beispiel ruft der Ressourcenblock **Service** den aktuellen Zustand eines Diensts zur Kompilierungszeit ab, um eine `.mof`-Datei zu generieren, die ihren aktuellen Zustand beibehält.
 
 > [!NOTE]
-> Die Verwendung dynamischer Ressourcenblöcke verhindert die Effektivität von IntelliSense. Der PowerShell-Parser kann nicht bestimmen, ob die angegebenen Werte akzeptabel sind, bis die Konfiguration kompiliert wurde.
+> Die Verwendung dynamischer Ressourcenblöcke verhindert die Effektivität von IntelliSense. Der PowerShell-Parser kann nicht bestimmen, ob die angegebenen Werte akzeptabel sind, bis die `Configuration` kompiliert wurde.
 
 ```powershell
 Configuration ServiceState
@@ -37,7 +38,7 @@ Configuration ServiceState
 }
 ```
 
-Zusätzlich können Sie für jeden Dienst auf dem aktuellen Computer eine **Service**-Blockressource erstellen, indem Sie eine `foreach`-Schleife verwenden.
+Zusätzlich können Sie für jeden Dienst auf dem aktuellen Computer einen **Service**-Ressourcenblock erstellen, indem Sie eine `foreach`-Schleife verwenden.
 
 ```powershell
 Configuration ServiceState
@@ -46,7 +47,7 @@ Configuration ServiceState
     Import-DSCResource -Name Service -Module PSDesiredStateConfiguration
     Node localhost
     {
-        Foreach ($service in $(Get-Service))
+        foreach ($service in $(Get-Service))
         {
             Service $service.Name
             {
@@ -59,7 +60,7 @@ Configuration ServiceState
 }
 ```
 
-Sie können auch nur Konfigurationen für Computer erstellen, die online sind, indem Sie eine einfache `if`-Anweisung verwenden.
+Sie können mithilfe einer `if`-Anweisung auch eine `Configuration` nur für Computer erstellen, die online sind.
 
 ```powershell
 Configuration ServiceState
@@ -67,7 +68,7 @@ Configuration ServiceState
     # It is best practice to explicitly import any resources used in your Configurations.
     Import-DSCResource -Name Service -Module PSDesiredStateConfiguration
 
-    Foreach ($computer in @('Server01', 'Server02', 'Server03'))
+    foreach ($computer in @('Server01', 'Server02', 'Server03'))
     {
         if (Test-Connection -ComputerName $computer)
         {
@@ -85,7 +86,7 @@ Configuration ServiceState
 ```
 
 > [!NOTE]
-> Die dynamischen Ressourcenblöcke in den oben aufgeführten Beispielen verweisen auf den aktuellen Computer. In diesem Fall wäre das der Computer, auf dem Sie die Konfiguration erstellen, und nicht der Zielknoten.
+> Die dynamischen Ressourcenblöcke in den oben aufgeführten Beispielen verweisen auf den aktuellen Computer. In diesem Fall wäre das der Computer, auf dem Sie die `Configuration` erstellen, nicht der Zielknoten.
 
 <!---
 Mention Get-DSCConfigurationFromSystem
@@ -93,7 +94,7 @@ Mention Get-DSCConfigurationFromSystem
 
 ## <a name="summary"></a>Zusammenfassung
 
-Zusammenfassend lässt sich sagen, dass Sie jede beliebige PowerShell-Sprache innerhalb einer Konfiguration verwenden können.
+Zusammenfassend lässt sich sagen, dass Sie jedes beliebige PowerShell-Sprachfeature innerhalb einer `Configuration` verwenden können.
 
 Dazu zählen etwa:
 
@@ -105,9 +106,9 @@ Dazu zählen etwa:
 - Active Directory-Objekte
 - und weitere...
 
-Der gesamte PowerShell-Code, der in einer Konfiguration definiert ist, wird während der Kompilierung ausgewertet, aber Sie können auch Code in das Skript einfügen, das Ihre Konfiguration enthält. Der Code außerhalb des Konfigurationsblocks wird ausgeführt, wenn Sie Ihre Konfiguration importieren.
+Der gesamte PowerShell-Code, der in einer `Configuration` definiert ist, wird während der Kompilierung ausgewertet, aber Sie können auch Code in das Skript einfügen, das Ihre `Configuration` enthält. Sämtlicher Code, der sich außerhalb des `Configuration`-Blocks befindet, wird beim Import Ihrer `Configuration` ausgeführt.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 - [Hinzufügen von Parametern zu einer Konfiguration](add-parameters-to-a-configuration.md)
 - [Trennen von Konfigurationsdaten von Konfigurationen](configData.md)
