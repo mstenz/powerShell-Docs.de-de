@@ -16,12 +16,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell SDK], parameters
 ms.assetid: 3f1cca5f-5b95-4bce-94a6-a22db1aefd47
 caps.latest.revision: 23
-ms.openlocfilehash: 914a10907bcf980eed8d7e2f819c382fe6b341ad
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: c1d8984f4aad7bae6f9be66a2222e2c74c8afa3d
+ms.sourcegitcommit: cab4e4e67dbed024864887c7f8984abb4db3a78b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365929"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022211"
 ---
 # <a name="cmdlet-parameters"></a>Cmdlet-Parameter
 
@@ -33,7 +33,7 @@ Cmdlet-Parameter stellen den Mechanismus bereit, mit dem ein Cmdlet Eingaben akz
 
 [Typen von Cmdlet-Parametern](./types-of-cmdlet-parameters.md) Beschreibt die verschiedenen Typen von Parametern, die Sie in Cmdlets deklarieren können.
 
-[Cmdlet-Parameter Name und-Funktions Richtlinien](./standard-cmdlet-parameter-names-and-types.md) Diskverwendet die Namen, den empfohlenen Datentyp und die Funktionalität von Standardparametern.
+[Cmdlet-Parameter Name und-Funktions Richtlinien](./standard-cmdlet-parameter-names-and-types.md) Erläutert die Namen, den empfohlenen Datentyp und die Funktionalität von Standardparametern.
 
 [Parameter Aliase](./parameter-aliases.md) Erläutert die Aliase, die Sie für Parameter definieren können.
 
@@ -53,7 +53,7 @@ Cmdlet-Parameter stellen den Mechanismus bereit, mit dem ein Cmdlet Eingaben akz
 
 [Validieren von Parameter Eingaben](./how-to-validate-parameter-input.md)
 
-## <a name="see-also"></a>Weitere Informationen
+## <a name="see-also"></a>Siehe auch
 
 [Parameter Attribut Deklaration](./parameter-attribute-declaration.md)
 
