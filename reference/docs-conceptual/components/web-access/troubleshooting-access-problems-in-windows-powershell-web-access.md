@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: Behandeln von Zugriffsproblemen in Windows PowerShell Web Access
-ms.openlocfilehash: 74cebbe418fecd21567ba9ecc7c561b51ac008fd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 818beffaf7df55ae36a154b7b751f9201c5b4299
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71692233"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870182"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Behandeln von Zugriffsproblemen in Windows PowerShell Web Access
 
@@ -37,7 +37,7 @@ Ein Fehler kann aufgrund einer der folgenden Bedingungen auftreten.
 
   Weitere Informationen finden Sie unter [How to Configure Your Computer for Remoting (Vorgehensweise: Konfigurieren Ihres Computers für das Remoting)](/powershell/module/microsoft.powershell.core/about/about_remote_requirements#how-to-configure-your-computer-for-remoting).
 
-## <a name="internal-server-error"></a>Interner Serverfehler.
+## <a name="internal-server-error"></a>Interner Serverfehler
 
 Wenn Benutzer versuchen, sich in einem Internet Explorer-Fenster bei Windows PowerShell Web Access anzumelden, wird die Seite **Interner Serverfehler** angezeigt, oder der *Internet Explorer* reagiert nicht mehr.
 
@@ -56,7 +56,7 @@ Dies kann bei Benutzern der Fall sein, die sich mit einem Domänennamen angemeld
    1. Klicken Sie auf **Dokumentmodus** und dann auf *IE10-Standards*.
    1. Drücken Sie die Taste **F12** erneut, um die Konsole mit den Entwicklertools zu schließen.
 1. Deaktivieren Sie die automatische Proxykonfiguration in Internet Explorer 10.
-   1. Klicken Sie auf **Tools**und dann auf **Internetoptionen**.
+   1. Klicken Sie auf **Tools** und dann auf **Internetoptionen**.
    1. Klicken Sie im Dialogfeld **Internetoptionen** auf der Registerkarte **Verbindungen** auf **LAN-Einstellungen**.
    1. Deaktivieren Sie das Kontrollkästchen **Automatische Suche der Einstellungen**. Klicken Sie auf **OK** und dann erneut auf **OK**, um das Dialogfeld *Internetoptionen* zu schließen.
 
@@ -66,63 +66,59 @@ Wenn der Zielcomputer Mitglied einer Arbeitsgruppe ist, können Sie die folgende
 
 ## <a name="cannot-find-web-server-iis-management-tools-even-though-the-role-was-installed"></a>Die Verwaltungstools des Webservers (IIS) sind nicht verfügbar, obwohl die Rolle installiert wurde.
 
-Wenn Sie Windows PowerShell Web Access mit dem Cmdlet `Install-WindowsFeature` installiert haben, werden die Verwaltungstools nur installiert, wenn dem Cmdlet der Parameter `-IncludeManagementTools` hinzugefügt wird.
+Bei der Installation von Windows PowerShell Web Access mit dem `Install-WindowsFeature`-Cmdlet werden die Verwaltungstools nur installiert, wenn der **IncludeManagementTools**-Parameter zum Cmdlet hinzugefügt wird.
 
 Ein Beispiel finden Sie unter [To install Windows PowerShell Web Access by using Windows PowerShell cmdlets (Installieren von Windows PowerShell Web Access mithilfe von Windows PowerShell-Cmdlets)](install-and-use-windows-powershell-web-access.md#to-install-windows-powershell-web-access-by-using-windows-powershell-cmdlets).
 
-Sie können die IIS-Manager-Konsole und andere benötigte IIS-Verwaltungstools hinzufügen, indem Sie die Tools in einer Sitzung des **Assistenten zum Hinzufügen von Rollen und Features** auswählen, die auf den Gatewayserver ausgerichtet sind.
-Der Assistent zum Hinzufügen von Rollen und Features wird über den Server-Manager geöffnet.
+Sie können die IIS-Manager-Konsole und andere benötigte IIS-Verwaltungstools hinzufügen, indem Sie die Tools in einer Sitzung des **Assistenten zum Hinzufügen von Rollen und Features** auswählen, die auf den Gatewayserver ausgerichtet sind. Der Assistent zum Hinzufügen von Rollen und Features wird über den Server-Manager geöffnet.
 
 ## <a name="windows-powershell-web-access-website-is-not-accessible"></a>Auf die Windows PowerShell Web Access-Website kann nicht zugegriffen werden
 
 Wenn die verstärkte Sicherheitskonfiguration in Internet Explorer (IE ESC) aktiviert ist, können Sie die Windows PowerShell Web Access-Website der Liste der vertrauenswürdigen Websites hinzufügen.
 
-Ein wenig empfohlener Ansatz ist wegen Sicherheitsrisiken das Deaktivieren von IE ESC.
-Sie können IE ESC auf der Kachel „Eigenschaften“ der Seite „Lokaler Server“ im Server-Manager deaktivieren.
+Ein wenig empfohlener Ansatz ist wegen Sicherheitsrisiken das Deaktivieren von IE ESC. Sie können IE ESC auf der Kachel „Eigenschaften“ der Seite „Lokaler Server“ im Server-Manager deaktivieren.
 
 ## <a name="an-authorization-failure-occurred-verify-that-you-are-authorized-to-connect-to-the-destination-computer"></a>Fehler bei der Autorisierung. Stellen Sie sicher, dass Sie zum Herstellen einer Verbindung mit dem Zielcomputer autorisiert sind.
 
 Die obenstehende Fehlermeldung wird beim Versuch angezeigt, eine Verbindung herzustellen, wenn der Gatewayserver der Zielcomputer ist und sich auch in einer Arbeitsgruppe befindet.
 
-Wenn der Gatewayserver auch der Zielserver ist und sich in einer Arbeitsgruppe befindet, geben Sie den Benutzernamen, den Computernamen und den Benutzergruppennamen an.
-Verwenden Sie nicht nur einen Punkt (.) als Computernamen.
+Wenn der Gatewayserver auch der Zielserver ist und sich in einer Arbeitsgruppe befindet, geben Sie den Benutzernamen, den Computernamen und den Benutzergruppennamen an. Verwenden Sie nicht nur einen Punkt (.) als Computernamen.
 
 ### <a name="scenarios-and-proper-values"></a>Szenarios und richtige Werte
 
 #### <a name="all-cases"></a>Alle Fälle
 
-Parameter | Wert
--- | --
-UserName | Server\_name\\user\_name<br/>Localhost\\user\_name<br/>.\\user\_name
-UserGroup | Server\_name\\user\_group<br/>Localhost\\user\_group<br/>.\\user\_group
-ComputerGroup | Server\_name\\computer\_group<br/>Localhost\\computer\_group<br/>.\\computer\_group
+  Parameter   |                                        value
+------------- | -----------------------------------------------------------------------------------
+UserName      | `Server_name\user_name`<br/>`Localhost\user_name`<br/>`.\user_name`
+UserGroup     | `Server_name\user_group`<br/>`Localhost\user_group`<br/>`.\user_group`
+ComputerGroup | `Server_name\computer_group`<br/>`Localhost\computer_group`<br/>`.\computer_group`
 
 #### <a name="gateway-server-is-in-a-domain"></a>Gatewayserver befindet sich in Domäne
 
-Parameter | Wert
--- | --
-ComputerName | Vollqualifizierter Name des Gatewayservers oder Localhost
+ Parameter   |                        value
+------------ | ----------------------------------------------------
+Computername | Vollqualifizierter Name des Gatewayservers oder Localhost
 
 #### <a name="gateway-server-is-in-a-workgroup"></a>Gatewayserver befindet sich in Arbeitsgruppe
 
-Parameter | Wert
--- | --
-ComputerName | Servername
+ Parameter   |    value
+------------ | -----------
+Computername | Servername
 
 ### <a name="gateway-credentials"></a>Gateway-Anmeldeinformationen
 
 Melden Sie sich bei einem Gatewayserver als Zielcomputer an, indem Sie Anmeldeinformationen in einem der folgenden Formate verwenden.
 
-- Server\_name\\user\_name
-- Localhost\\user\_name
-- .\\user\_name
+- `Server_name\user_name`
+- `Localhost\user_name`
+- `.\user_name`
 
 ## <a name="a-security-identifier-sid-is-displayed-in-an-authorization-rule"></a>Eine Sicherheits-ID (SID) wird in einer Autorisierungsregel angezeigt.
 
-Eine Sicherheits-ID wird in einer Autorisierungsregel anstelle der Syntax user\_name/computer\_name angezeigt.
+In einer Autorisierungsregel wird anstelle der Syntax `user_name/computer_name` eine Sicherheits-ID angezeigt.
 
-Entweder ist die Regel nicht mehr gültig, oder bei der Active Directory-Domänendienste-Abfrage ist ein Fehler aufgetreten.
-Eine Autorisierungsregel ist normalerweise nicht in Fällen gültig, in denen der Gatewayserver zuerst einer Arbeitsgruppe angehörte, dann jedoch einer Domäne beigetreten ist.
+Entweder ist die Regel nicht mehr gültig, oder bei der Active Directory-Domänendienste-Abfrage ist ein Fehler aufgetreten. Eine Autorisierungsregel ist normalerweise nicht in Fällen gültig, in denen der Gatewayserver zuerst einer Arbeitsgruppe angehörte, dann jedoch einer Domäne beigetreten ist.
 
 ## <a name="cannot-sign-in-with-rule-as-an-ipv6-address-with-a-domain"></a>Es ist nicht möglich, sich bei einer Regel mit einer IPv6-Adresse mit einer Domäne anzumelden.
 
@@ -130,13 +126,12 @@ Anmeldung an einem Zielcomputer, der in Autorisierungsregeln als IPv6-Adresse mi
 
 Autorisierungsregeln unterstützen keine IPv6-Adresse in Form eines Domänennamens.
 
-Verwenden Sie zum Angeben eines Zielcomputers mithilfe einer IPv6-Adresse die ursprüngliche IPv6-Adresse (mit Doppelpunkten) in der Autorisierungsregel.
-Sowohl domänenbezogene als auch numerische IPv6-Adressen (mit Doppelpunkten) werden auf der Anmeldeseite von Windows PowerShell Web Access als Zielcomputername unterstützt. Dies gilt jedoch nicht für Autorisierungsregeln.
+Verwenden Sie zum Angeben eines Zielcomputers mithilfe einer IPv6-Adresse die ursprüngliche IPv6-Adresse (mit Doppelpunkten) in der Autorisierungsregel. Sowohl domänenbezogene als auch numerische IPv6-Adressen (mit Doppelpunkten) werden auf der Anmeldeseite von Windows PowerShell Web Access als Zielcomputername unterstützt. Dies gilt jedoch nicht für Autorisierungsregeln.
 
-Weitere Informationen zu IPv6-Adressen finden Sie unter [Funktionsweise von IPv6](https://technet.microsoft.com/library/cc781672(v=ws.10).aspx).
+Weitere Informationen zu IPv6-Adressen finden Sie unter [Funktionsweise von IPv6](/previous-versions/windows/it-pro/windows-server-2003/cc781672(v=ws.10)).
 
 ## <a name="see-also"></a>Weitere Informationen
 
-- [Authorization Rules and Security Features of Windows PowerShell Web Access (Autorisierungsregeln und Sicherheitsfeatures von Windows PowerShell Web Access)](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)
-- [Use the Web-based Windows PowerShell Console (Verwenden der webbasierten Windows PowerShell-Konsole)](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx)
-- [about_Remote_Requirements](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements)
+- [Authorization Rules and Security Features of Windows PowerShell Web Access (Autorisierungsregeln und Sicherheitsfeatures von Windows PowerShell Web Access)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn282394(v=ws.11))
+- [Use the Web-based Windows PowerShell Console (Verwenden der webbasierten Windows PowerShell-Konsole)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831417(v=ws.11))
+- [about_Remote_Requirements](/powershell/module/microsoft.powershell.core/about/about_remote_requirements)

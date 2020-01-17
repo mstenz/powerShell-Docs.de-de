@@ -1,24 +1,20 @@
 ---
-ms.date: 03/04/2019
-keywords: dsc,powershell,configuration,setup
+ms.date: 01/08/2020
+keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: DSC-Pulldienst
-ms.openlocfilehash: 865eae5813e0c7b656a4158f0b1350e60f1e3291
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d71c87e0420a0ee54eca36f1792b43103431233f
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71955127"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870811"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Desired State Configuration – Pulldienst
 
 > [!IMPORTANT]
 > Der Pull-Server (Windows-Feature *DSC-Dienst*) ist eine von Windows Server unterstützte Komponente, jedoch sollen keine neuen Features oder Funktionen angeboten werden. Es wird empfohlen, verwaltete Clients auf [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) umzustellen (enthält Features zusätzlich zum Pull-Server unter Windows Server) oder auf eine der [hier](pullserver.md#community-solutions-for-pull-service) aufgeführten Communitylösungen.
 
-Der lokale Konfigurations-Manager kann zentral mithilfe einer Pulldienstlösung verwaltet werden.
-Bei diesem Ansatz wird der verwaltete Knoten bei einem Dienst registriert und in den LCM-Einstellungen einer Konfiguration zugeordnet.
-Die Konfiguration und alle DSC-Ressourcen, die als Abhängigkeiten für die Konfiguration erforderlich sind, werden auf den Computer heruntergeladen und von LCM zum Verwalten der Konfiguration verwendet.
-Informationen über den Status des verwalteten Computers werden zur Berichterstellung auf den Dienst hochgeladen.
-Dieses Konzept wird als „Pulldienst“ bezeichnet.
+Local Configuration Manager (LCM) kann zentral über eine Pulldienstlösung verwaltet werden. Bei diesem Ansatz wird der verwaltete Knoten bei einem Dienst registriert und in den LCM-Einstellungen einer Konfiguration zugeordnet. Die Konfiguration und alle DSC-Ressourcen, die als Abhängigkeiten für die Konfiguration erforderlich sind, werden auf den Computer heruntergeladen und von LCM zum Verwalten der Konfiguration verwendet. Informationen über den Status des verwalteten Computers werden zur Berichterstellung auf den Dienst hochgeladen. Dieses Konzept wird als "Pulldienst" bezeichnet.
 
 Folgende Optionen sind zurzeit für den Pulldienst verfügbar:
 
@@ -29,8 +25,7 @@ Folgende Optionen sind zurzeit für den Pulldienst verfügbar:
 
 **Die empfohlene Lösung** und die Option mit den meisten verfügbaren Features ist [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
 
-Der Azure-Dienst kann Knoten lokal in privaten Rechenzentren oder in öffentlichen Clouds wie Azure und AWS verwalten.
-Für private Umgebungen, in denen Server keine direkte Verbindung mit dem Internet herstellen können, sollten Sie die Begrenzung des ausgehenden Datenverkehrs auf den veröffentlichten Azure-IP-Adressbereich in Betracht ziehen. Informationen hierzu finden Sie unter [Azure Datacenter IP Ranges](https://www.microsoft.com/en-us/download/details.aspx?id=41653) (IP-Adressbereiche für Azure-Rechenzentren).
+Der Azure-Dienst kann Knoten lokal in privaten Rechenzentren oder in öffentlichen Clouds wie Azure und AWS verwalten. Für private Umgebungen, in denen Server keine direkte Verbindung mit dem Internet herstellen können, sollten Sie die Begrenzung des ausgehenden Datenverkehrs auf den veröffentlichten Azure-IP-Adressbereich in Betracht ziehen. Informationen hierzu finden Sie unter [Azure Datacenter IP Ranges](https://www.microsoft.com/download/details.aspx?id=41653) (IP-Adressbereiche für Azure-Rechenzentren).
 
 Features des Onlinediensts, die im Pulldienst unter Windows Server zurzeit nicht verfügbar sind:
 
@@ -47,9 +42,7 @@ Features des Onlinediensts, die im Pulldienst unter Windows Server zurzeit nicht
 
 ## <a name="dsc-pull-service-in-windows-server"></a>DSC-Pulldienst in Windows Server
 
-Es ist möglich, einen Pulldienst für die Ausführung unter Windows Server zu konfigurieren.
-Beachten Sie, dass die in Windows Server enthaltene Pulldienstlösung nur die Funktionen zum Speichern von Konfigurationen/Modulen für den Download und das Erfassen von Berichtsdaten in einer Datenbank umfasst.
-Sie umfasst viele der Funktionen nicht, die vom Dienst in Azure bereitgestellt werden, und stellt daher kein gutes Tool dar, um den Einsatz des Diensts zu bewerten.
+Es ist möglich, einen Pulldienst für die Ausführung unter Windows Server zu konfigurieren. Beachten Sie, dass die in Windows Server enthaltene Pulldienstlösung nur die Funktionen zum Speichern von Konfigurationen/Modulen für den Download und das Erfassen von Berichtsdaten in einer Datenbank umfasst. Sie enthält viele der Funktionen nicht, die vom Dienst in Azure bereitgestellt werden, und eignet sich daher nicht gut, um den Einsatz des Diensts zu bewerten.
 
 Der in Windows Server angebotene Pulldienst ist ein Webdienst in IIS, der DSC-Konfigurationsdateien mithilfe einer OData-Schnittstelle für Zielknoten verfügbar macht, wenn die Zielknoten diese anfordern.
 
@@ -61,36 +54,36 @@ Anforderungen für die Verwendung eines Pullservers:
   - DSC-Dienst
 - Im Idealfall eine Möglichkeit zum Generieren eines Zertifikats, um die an den lokalen Konfigurations-Manager (LCM) auf Zielknoten übergebenen Anmeldeinformationen abzusichern
 
-Die beste Möglichkeit, Windows Server zum Hosten eines Pulldiensts zu konfigurieren, ist die Verwendung einer DSC-Konfiguration.
-Ein Beispielskript finden Sie unten.
+Die beste Möglichkeit, Windows Server zum Hosten eines Pulldiensts zu konfigurieren, ist die Verwendung einer DSC-Konfiguration. Ein Beispielskript finden Sie unten.
 
 ### <a name="supported-database-systems"></a>Unterstützte Datenbanksysteme
 
-|WMF 4.0   |WMF 5.0  |WMF 5.1 |WMF 5.1 (Windows Server Insider Preview 17090)|
-|---------|---------|---------|---------|
-|MDB     |ESENT (Standard), MDB |ESENT (Standard), MDB|ESENT (Standard), SQL Server, MDB
+| WMF 4.0 |       WMF 5.0        |       WMF 5.1        | WMF 5.1 (Windows Server Insider Preview 17090) |
+| ------- | -------------------- | -------------------- | ---------------------------------------------- |
+| MDB     | ESENT (Standard), MDB | ESENT (Standard), MDB | ESENT (Standard), SQL Server, MDB               |
 
-Ab dem Release 17090 von [Windows Server Insider Preview](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver) ist SQL Server eine unterstützte Option für den Pulldienst (Windows-Feature *DSC-Dienst*). Dadurch wird eine neue Option für die Skalierung großer DSC-Umgebungen bereitgestellt, die nicht zu [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) migriert wurden.
+Ab dem Release 17090 von [Windows Server Insider Preview](https://www.microsoft.com/software-download/windowsinsiderpreviewserver) ist SQL Server eine unterstützte Option für den Pulldienst (Windows-Feature *DSC-Dienst*). Dadurch wird eine neue Option für die Skalierung großer DSC-Umgebungen bereitgestellt, die nicht zu [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) migriert wurden.
 
 > [!NOTE]
 > Die Unterstützung für SQL Server wird vorherigen Versionen von WMF 5.1 (oder früher) nicht hinzugefügt und ist nur für Windows Server-Versionen ab 17090 verfügbar.
 
 Um den Pull-Server so zu konfigurieren, dass er SQL Server verwendet, legen Sie **SqlProvider** auf `$true` und **SqlConnectionString** auf eine gültige SQL Server-Verbindungszeichenfolge fest. Weitere Informationen finden Sie unter [SqlClient-Verbindungszeichenfolgen](/dotnet/framework/data/adonet/connection-string-syntax#sqlclient-connection-strings).
-Ein Beispiel einer SQL Server-Konfiguration mit **xDscWebService** finden Sie zunächst unter [Verwenden der xDSCWebService-Ressource](#using-the-xdscwebservice-resource), lesen Sie anschließend die GitHub-Seite zu [Sample_xDscWebServiceRegistration_UseSQLProvider.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/Examples/Sample_xDscWebServiceRegistration_UseSQLProvider.ps1).
+Ein Beispiel einer SQL Server-Konfiguration mit **xDscWebService** finden Sie zunächst unter [Verwenden der xDSCWebService-Ressource](#using-the-xdscwebservice-resource), lesen Sie anschließend die GitHub-Seite zu [Sample_xDscWebServiceRegistration_UseSQLProvider.ps1](https://github.com/dsccommunity/xPSDesiredStateConfiguration/blob/master/source/Examples/Sample_xDscWebServiceRegistration_UseSQLProvider.ps1).
 
 ### <a name="using-the-xdscwebservice-resource"></a>Verwenden der xDscWebService-Ressource
 
-Die einfachste Möglichkeit einen Web-Pull-Server einzurichten, ist die Verwendung der Ressource **xDscWebService** im Modul **xPSDesiredStateConfiguration**.
-Die folgenden Schritte erläutern, wie Sie die Ressource in einer Konfiguration verwenden, die den Webdienst einrichtet.
+Die einfachste Möglichkeit einen Web-Pull-Server einzurichten, ist die Verwendung der Ressource **xDscWebService** im Modul **xPSDesiredStateConfiguration**. Die folgenden Schritte erläutern, wie Sie die Ressource in einer `Configuration` verwenden, die den Webdienst einrichtet.
 
-1. Rufen Sie das Cmdlet [Install-Module](/powershell/module/PowershellGet/Install-Module) auf, um das Modul **xPSDesiredStateConfiguration** zu installieren.
+1. Rufen Sie das Cmdlet [Install-Module](/reference/6/PowerShellGet/Install-Module.md) auf, um das Modul **xPSDesiredStateConfiguration** zu installieren.
+
    > [!NOTE]
-   > **Install-Module** ist im Modul **PowerShellGet** enthalten, das Bestandteil von PowerShell 5.0 ist. Das Modul **PowerShellGet** für PowerShell 3.0 und 4.0 können Sie unter [PowerShell-Module „PackageManagement“ – Vorschau](https://www.microsoft.com/en-us/download/details.aspx?id=49186) herunterladen.
-2. Rufen Sie ein SSL-Zertifikat für den DSC-Pullserver von einer vertrauenswürdigen Zertifizierungsstelle innerhalb Ihrer Organisation oder von einer öffentlichen Zertifizierungsstelle ab. Das von der Zertifizierungsstelle empfangene Zertifikat weist normalerweise das PFX-Format auf.
-3. Installieren Sie auf dem Knoten, der als DSC-Pull-Server fungieren soll, das Zertifikat am Standardspeicherort, also normalerweise unter `CERT:\LocalMachine\My`.
+   > `Install-Module` ist im Modul **PowerShellGet** enthalten, das Bestandteil von PowerShell 5.0 und höher ist.
+
+1. Rufen Sie ein SSL-Zertifikat für den DSC-Pullserver von einer vertrauenswürdigen Zertifizierungsstelle innerhalb Ihrer Organisation oder von einer öffentlichen Zertifizierungsstelle ab. Das von der Zertifizierungsstelle empfangene Zertifikat weist normalerweise das PFX-Format auf.
+1. Installieren Sie auf dem Knoten, der als DSC-Pull-Server fungieren soll, das Zertifikat am Standardspeicherort, also normalerweise unter `CERT:\LocalMachine\My`.
    - Notieren Sie sich den Zertifikatfingerabdruck.
-4. Wählen Sie eine GUID als der Registrierungsschlüssel aus. Um einen mithilfe von PowerShell zu generieren, geben Sie `[guid]::newGuid()` oder `New-Guid` an der PS-Eingabeaufforderung ein, und drücken Sie anschließend die EINGABETASTE. Dieser Schlüssel wird von Clientknoten bei der Registrierung als gemeinsamer Schlüssel zum Authentifizieren verwendet. Weitere Informationen finden Sie weiter unten im Abschnitt „Registrierungsschlüssel“.
-5. Starten Sie (F5) in PowerShell ISE das folgende Konfigurationsskript (enthalten im Beispielordner des Moduls **xPSDesiredStateConfiguration** als `Sample_xDscWebServiceRegistration.ps1`). Dieses Skript richtet den Pullserver ein.
+1. Wählen Sie eine GUID als der Registrierungsschlüssel aus. Um einen mithilfe von PowerShell zu generieren, geben Sie `[guid]::newGuid()` oder `New-Guid` an der PS-Eingabeaufforderung ein, und drücken Sie anschließend die EINGABETASTE. Dieser Schlüssel wird von Clientknoten bei der Registrierung als gemeinsamer Schlüssel zum Authentifizieren verwendet. Weitere Informationen finden Sie weiter unten im Abschnitt „Registrierungsschlüssel“.
+1. Starten Sie in der PowerShell ISE (mit <kbd>F5</kbd>) das folgende Konfigurationsskript (im Beispielordner des Moduls **xPSDesiredStateConfiguration** als `Sample_xDscWebServiceRegistration.ps1` enthalten). Dieses Skript richtet den Pullserver ein.
 
     ```powershell
     configuration Sample_xDscWebServiceRegistration
@@ -146,7 +139,7 @@ Die folgenden Schritte erläutern, wie Sie die Ressource in einer Konfiguration 
     }
     ```
 
-6. Führen Sie die Konfiguration aus, und übergeben Sie als Parameter **certificateThumbPrint** den Fingerabdruck des SSL-Zertifikats und als Parameter **RegistrationKey** einen GUID-Registrierungschlüssel:
+1. Führen Sie die Konfiguration aus, und übergeben Sie als Parameter **certificateThumbPrint** den Fingerabdruck des SSL-Zertifikats und als Parameter **RegistrationKey** einen GUID-Registrierungschlüssel:
 
     ```powershell
     # To find the Thumbprint for an installed SSL certificate for use with the pull server list all certificates in your local store
@@ -213,39 +206,27 @@ Sample_MetaConfigurationToRegisterWithLessSecurePullServer -RegistrationKey $Reg
 > [!NOTE]
 > Der Abschnitt **ReportServerWeb** ermöglicht das Senden von Berichtsdaten an den Pullserver.
 
-Das Fehlen der Eigenschaft **ConfigurationID** in der Metakonfigurationsdatei bedeutet implizit, dass der Pullserver die V2-Version des Pullserverprotokolls unterstützt und somit eine Registrierung erforderlich ist.
-Umgekehrt bedeutet das Vorhandensein einer **ConfigurationID**, dass die V1-Version des Pullserverprotokolls verwendet wird und keine Registrierungsverarbeitung erfolgt.
+Das Fehlen der Eigenschaft **ConfigurationID** in der Metakonfigurationsdatei bedeutet implizit, dass der Pullserver die V2-Version des Pullserverprotokolls unterstützt und somit eine Registrierung erforderlich ist. Umgekehrt bedeutet das Vorhandensein einer **ConfigurationID**, dass die V1-Version des Pullserverprotokolls verwendet wird und keine Registrierungsverarbeitung erfolgt.
 
 > [!NOTE]
 > In einem PUSH-Szenario tritt im aktuellen Release ein Fehler auf, aufgrund dessen es erforderlich ist, in der Metakonfigurationsdatei für Knoten, die noch nie bei einem Pullserver registriert wurden, die Eigenschaft „ConfigurationID“ zu definieren. Dies erzwingt die Verwendung des V1-Pullserver-Protokolls verhindert Registrierungsfehlermeldungen.
 
 ## <a name="placing-configurations-and-resources"></a>Platzieren von Konfigurationen und Ressourcen
 
-Nach Abschluss des Pullserversetups befinden sich die von den Eigenschaften **ConfigurationPath** und **ModulePath** in der Pullserverkonfiguration definierten Ordner an dem Ort, an dem Module und Konfigurationen abgelegt werden, die für Zielknoten zum Abrufen verfügbar sein sollen.
-Diese Dateien müssen in einem bestimmten Format vorliegen, damit sie von den Pullservern ordnungsgemäß verarbeiten werden können.
+Nach Abschluss des Pullserversetups befinden sich die von den Eigenschaften **ConfigurationPath** und **ModulePath** in der Pullserverkonfiguration definierten Ordner an dem Ort, an dem Module und Konfigurationen abgelegt werden, die für Zielknoten zum Abrufen verfügbar sein sollen. Diese Dateien müssen in einem bestimmten Format vorliegen, damit sie von den Pullservern ordnungsgemäß verarbeiten werden können.
 
 ### <a name="dsc-resource-module-package-format"></a>Format des DSC-Ressourcenmodulpakets
 
 Jedes Ressourcenmodul muss komprimiert und entsprechend dem folgenden Muster benannt werden: `{Module Name}_{Module Version}.zip`.
 
-Ein Modul namens „xWebAdminstration“ mit einer Modulversion 3.1.2.0 würde beispielsweise `xWebAdministration_3.1.2.0.zip` heißen.
-Jede Version eines Moduls muss in einer eigenen ZIP-Datei enthalten sein.
-Da jede ZIP-Datei nur jeweils eine Version einer Ressource enthält, wird das in WMF 5.0 eingeführte das Modulformat, das mehrere Versionen in einem einzigen Verzeichnis ermöglicht, nicht unterstützt.
-Das bedeutet, dass Sie vor dem Packen von DSC-Ressourcenmodulen für die Verwendung mit einem Pullserver eine kleine Änderung an der Verzeichnisstruktur vornehmen müssen.
-Das Standardformat für Module mit DSC-Ressourcen in WMF 5.0 ist `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`.
-Entfernen Sie vor dem Packvorgang für den Pullserver einfach den Ordner **{Module version}** , damit der Pfad zu `{Module Folder}\DscResources\{DSC Resource Folder}\` wird.
-Komprimieren Sie den Odner nach dieser Änderung wie oben beschrieben, und speichern Sie die ZIP-Dateien im Ordner **ModulePath**.
+Ein Modul namens „xWebAdminstration“ mit einer Modulversion 3.1.2.0 würde beispielsweise `xWebAdministration_3.1.2.0.zip` heißen. Jede Version eines Moduls muss in einer eigenen ZIP-Datei enthalten sein.
+Da jede ZIP-Datei nur jeweils eine Version einer Ressource enthält, wird das in WMF 5.0 eingeführte das Modulformat, das mehrere Versionen in einem einzigen Verzeichnis ermöglicht, nicht unterstützt. Das bedeutet, dass Sie vor dem Packen von DSC-Ressourcenmodulen für die Verwendung mit einem Pullserver eine kleine Änderung an der Verzeichnisstruktur vornehmen müssen. Das Standardformat für Module mit DSC-Ressourcen in WMF 5.0 ist `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`. Entfernen Sie vor dem Packvorgang für den Pullserver einfach den Ordner **{Module version}** , damit der Pfad zu `{Module Folder}\DscResources\{DSC Resource Folder}\` wird. Komprimieren Sie den Odner nach dieser Änderung wie oben beschrieben, und speichern Sie die ZIP-Dateien im Ordner **ModulePath**.
 
 Verwenden Sie `New-DscChecksum {module zip file}` zum Erstellen einer Prüfsummendatei für das neu hinzugefügte Modul.
 
 ### <a name="configuration-mof-format"></a>MOF-Konfigurationsformat
 
-Eine MOF-Konfigurationsdatei muss einer Prüfsummendatei zugeordnet werden, damit ein LCM auf einem Zielknoten die Konfiguration überprüfen kann.
-Um eine Prüfsumme zu erstellen, rufen Sie das Cmdlet [New-DscChecksum](/powershell/module/PSDesiredStateConfiguration/New-DscChecksum) auf.
-Das Cmdlet verwendet einen **Path**-Parameter, der den Ordner angibt, in dem sich die MOF-Konfigurationsdatei befindet.
-Das Cmdlet erstellt eine Prüfsummendatei mit dem Namen `ConfigurationMOFName.mof.checksum`, wobei `ConfigurationMOFName` der Name der MOF-Konfigurationsdatei ist.
-Wenn in dem angegebenen Ordner mehrere MOF-Konfigurationsdateien vorhanden sind, wird für jede Konfiguration im Ordner eine Prüfsumme erstellt.
-Platzieren Sie die MOF-Dateien und die zugeordneten Prüfsummendateien im Ordner **ConfigurationPath**.
+Eine MOF-Konfigurationsdatei muss einer Prüfsummendatei zugeordnet werden, damit ein LCM auf einem Zielknoten die Konfiguration überprüfen kann. Um eine Prüfsumme zu erstellen, rufen Sie das Cmdlet [New-DscChecksum](/reference/6/PSDesiredStateConfiguration/New-DSCCheckSum.md) auf. Das Cmdlet verwendet einen **Path**-Parameter, der den Ordner angibt, in dem sich die MOF-Konfigurationsdatei befindet. Das Cmdlet erstellt eine Prüfsummendatei mit dem Namen `ConfigurationMOFName.mof.checksum`, wobei `ConfigurationMOFName` der Name der MOF-Konfigurationsdatei ist. Wenn in dem angegebenen Ordner mehrere MOF-Konfigurationsdateien vorhanden sind, wird für jede Konfiguration im Ordner eine Prüfsumme erstellt. Platzieren Sie die MOF-Dateien und die zugeordneten Prüfsummendateien im Ordner **ConfigurationPath**.
 
 > [!NOTE]
 > Wenn Sie die MOF-Konfigurationsdatei in irgendeiner Weise ändern, müssen Sie auch die Prüfsummendatei neu erstellen.
@@ -255,7 +236,7 @@ Platzieren Sie die MOF-Dateien und die zugeordneten Prüfsummendateien im Ordner
 Um das Einrichten, Überprüfen und Verwalten des Pullservers zu vereinfachen, enthält die neueste Version des Moduls „xPSDesiredStateConfiguration“ folgende Tools als Beispiele:
 
 1. Ein Modul, das beim Packen von DSC-Ressourcenmodulen und Konfigurationsdateien zur Verwendung auf dem Pullserver hilft.
-   [PublishModulesAndMofsToPullServer.psm1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/DSCPullServerSetup/PublishModulesAndMofsToPullServer.psm1).
+   [PublishModulesAndMofsToPullServer.psm1](https://github.com/dsccommunity/xPSDesiredStateConfiguration/blob/master/source/Modules/DscPullServerSetup/DscPullServerSetup.psm1).
    Beispiele unten:
 
     ```powershell
@@ -267,12 +248,11 @@ Um das Einrichten, Überprüfen und Verwalten des Pullservers zu vereinfachen, e
          Publish-DSCModuleAndMof -Source C:\LocalDepot -Force
     ```
 
-1. Ein Skript, das den Pullserver überprüft, wurde ordnungsgemäß konfiguriert. [PullServerSetupTests.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/DSCPullServerSetup/PullServerDeploymentVerificationTest/PullServerSetupTests.ps1).
+1. Ein Skript, das den Pullserver überprüft, wurde ordnungsgemäß konfiguriert. [PullServerSetupTests.ps1](https://github.com/dsccommunity/xPSDesiredStateConfiguration/blob/master/source/Modules/DscPullServerSetup/DscPullServerSetupTest/DscPullServerSetupTest.ps1).
 
 ## <a name="community-solutions-for-pull-service"></a>Community-Lösungen für Pulldienste
 
-Die DSC-Community hat mehrere Lösungen zum Implementieren des Pulldienstprotokolls erstellt.
-Für lokale Umgebungen bieten diese Pulldienstfunktionen und die Möglichkeit, der Community mit inkrementellen Verbesserungen etwas zurückzugeben.
+Die DSC-Community hat mehrere Lösungen zum Implementieren des Pulldienstprotokolls erstellt. Für lokale Umgebungen bieten diese Pulldienstfunktionen und die Möglichkeit, der Community mit inkrementellen Verbesserungen etwas zurückzugeben.
 
 - [Tug](https://github.com/powershellorg/tug)
 - [DSC-TRÆK](https://github.com/powershellorg/dsc-traek)
@@ -285,10 +265,10 @@ In den folgenden Themen wird das Einrichten von Pullclients im Detail beschriebe
 - [Set up a DSC pull client using configuration names (Einrichten eines DSC-Pullclients mithilfe von Konfigurationsnamen)](pullClientConfigNames.md)
 - [Teilkonfigurationen](partialConfigs.md)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 - [Windows PowerShell DSC – Übersicht](../overview/overview.md)
 - [Inkraftsetzung von Konfigurationen](enactingConfigurations.md)
 - [Verwenden eines DSC-Berichtsservers](reportServer.md)
-- [[MS-DSCPM]: Desired State Configuration Pull Model Protocol ([MS-DSCPM]: Desired State Configuration-Pullmodell-Protokoll)](https://msdn.microsoft.com/library/dn393548.aspx)
-- [[MS-DSCPM]: Desired State Configuration Pull Model Protocol Errata ([MS-DSCPM]: Desired State Configuration-Pullmodell-Protokoll Errata)](https://msdn.microsoft.com/library/mt612824.aspx)
+- [[MS-DSCPM]: Desired State Configuration Pull Model Protocol ([MS-DSCPM]: Desired State Configuration-Pullmodell-Protokoll)](https://docs.microsoft.com/openspecs/windows_protocols/ms-dscpm/ea744c01-51a2-4000-9ef2-312711dcc8c9)
+- [[MS-DSCPM]: Desired State Configuration Pull Model Protocol Errata ([MS-DSCPM]: Desired State Configuration-Pullmodell-Protokoll Errata)](https://docs.microsoft.com/openspecs/windows_protocols/ms-winerrata/f5fc7ae3-9172-41e8-ac6a-2a5a5b7bfaf5)
