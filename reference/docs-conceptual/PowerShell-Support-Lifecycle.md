@@ -2,12 +2,12 @@
 title: Supportlebenszyklus von PowerShell Core
 description: Richtlinien für die Unterstützung von PowerShell Core
 ms.date: 08/06/2018
-ms.openlocfilehash: 27738514fc84105a0339eafcdbb540b7d3790052
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 57804df830da01bee0f48acc374658b025a46b85
+ms.sourcegitcommit: cab4e4e67dbed024864887c7f8984abb4db3a78b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416304"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022234"
 ---
 # <a name="powershell-core-support-lifecycle"></a>Supportlebenszyklus von PowerShell Core
 
@@ -54,19 +54,21 @@ Plattformen, die als `Experimental` gekennzeichnet sind, werden nicht offiziell 
 | Windows 7, 8.1 und 10                            |   Unterstützt   | Unterstützt |
 | Windows Server 2008 R2, 2012 R2, 2016             |   Unterstützt   | Unterstützt |
 | [Halbjährlicher Kanal von Windows Server][semi-annual] |   Unterstützt   | Unterstützt |
-| Ubuntu 16.04 und 18.04                            |   Unterstützt   | Unterstützt |
+| Ubuntu 16.04 und 18.04                            |   Unterstützt   | Unterstützt |
 | Ubuntu 18.10 (über Snap-Pakete)                   |   Community   | Community |
 | Ubuntu 19.04 (über Snap-Pakete)                   |   Community   | Community |
 | Debian 9                                          |   Unterstützt   | Unterstützt |
 | Debian 10                                         | Nicht unterstützt | Unterstützt |
-| CentOS 7                                          |   Unterstützt   | Unterstützt |
+| CentOS 7:                                          |   Unterstützt   | Unterstützt |
+| CentOS 8                                          | Nicht unterstützt | Unterstützt |
 | Red Hat Enterprise Linux 7                        |   Unterstützt   | Unterstützt |
+| Red Hat Enterprise Linux 8                        | Nicht unterstützt | Unterstützt |
 | openSUSE 42.3                                     |   Unterstützt   | Unterstützt |
 | Fedora 28                                         |   Unterstützt   | Unterstützt |
 | Fedora 29, 30                                     | Nicht unterstützt | Unterstützt |
 | Alpine 3.8                                        |   Siehe Hinweis    | Siehe Hinweis  |
 | Alpine 3.9 und 3.10                               | Nicht unterstützt | Siehe Hinweis  |
-| macOS 10.12 und höher                                      |   Unterstützt   | Unterstützt |
+| macOS 10.12 oder höher                                      |   Unterstützt   | Unterstützt |
 | Arch                                              |   Community   | Community |
 | Raspbian                                          |   Community   | Community |
 | Kali                                              |   Community   | Community |
