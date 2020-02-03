@@ -288,6 +288,8 @@
           href: whats-new/what-s-new-in-windows-powershell-50.md
         - name: Neuigkeiten in der PowerShell 5.0 ISE
           href: whats-new/what-s-new-in-the-powershell-50-ise.md
+    - name: Releaseverlauf für Module und Cmdlets
+      href: whats-new/cmdlet-versions.md
 - name: Supportlebenszyklus von PowerShell Core
   href: powershell-support-lifecycle.md
 - name: Windows Management Framework (WMF)
@@ -430,7 +432,7 @@
               href: dsc/resources/singleInstance.md
             - name: Prüfliste für die Ressourcenerstellung
               href: dsc/resources/resourceAuthoringChecklist.md
-        - name: Gewusst-wie-Anleitungen
+        - name: Anleitungen
           items:
             - name: Schreiben von MOF-basierten Ressourcen in PowerShell
               href: dsc/resources/authoringResourceMOF.md
@@ -444,7 +446,7 @@
               href: dsc/resources/authoringResourceMofDesigner.md
     - name: Verwalten von Knoten
       items:
-        - name: Gewusst-wie-Anleitungen
+        - name: Anleitungen
           items:
             - name: 'Anwenden, Abrufen und Testen von Konfigurationen auf einen Knoten'
               href: dsc/managing-nodes/apply-get-test.md
@@ -460,7 +462,7 @@
           items:
             - name: Push/Pull-Modell
               href: dsc/pull-server/enactingConfigurations.md
-        - name: Gewusst-wie-Anleitungen
+        - name: Anleitungen
           items:
             - name: Einrichten eines Pullservers
               items:
@@ -496,7 +498,7 @@
                   href: dsc/pull-server/secureServer.md
                 - name: Schützen von MOF-Dateien mit Zertifikaten
                   href: dsc/pull-server/secureMOF.md
-    - name: Lernprogramme
+    - name: Tutorials
       items:
         - name: 'Erstellen einer CI/CD-Pipeline mit DSC, Pester und Visual Studio Team Services'
           href: dsc/tutorials/dscCiCd.md
