@@ -2,12 +2,12 @@
 ms.date: 12/23/2019
 keywords: powershell,cmdlet
 title: Arbeiten mit Softwareinstallationen
-ms.openlocfilehash: d164064418ad7a0209166c81a7c3cc32a9db300a
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.openlocfilehash: f3023d8819d6cdcc9f55befcfedb21e6ff9d282c
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75737150"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76996122"
 ---
 # <a name="working-with-software-installations"></a>Arbeiten mit Softwareinstallationen
 
@@ -103,7 +103,7 @@ IdentifyingNumber : {ACC73072-9AD5-416C-94BF-D82DDCEA0F1B}
 
 Da die meisten Standardanwendungen ein Deinstallationsprogramm bei Windows registrieren, können Sie mit diesen lokal arbeiten, indem Sie sie in der Windows-Registrierung suchen. Es gibt keine garantierte Möglichkeit, jede Anwendung auf einem System zu finden. Allerdings ist es möglich, alle Programme mit Auflistungen in **Software** im folgenden Registrierungsschlüssel zu finden:
 
-[https://login.microsoftonline.com/consumers/](`HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall`).
+`HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall`.
 
 Dieser Schlüssel kann untersucht werden, um Anwendungen zu finden. Um die Anzeige des Deinstallationsschlüssels zu vereinfachen, kann diesem Registrierungsspeicherort ein PowerShell-Laufwerk zugeordnet werden:
 
@@ -158,7 +158,7 @@ Name                           Property
 BB71E00}                       Comments            :
                                Contact             :
                                DisplayVersion      : 5.1.50918.0
-                               HelpLink            : http://go.microsoft.com/fwlink/?LinkID=91955
+                               HelpLink            : https://go.microsoft.com/fwlink/?LinkID=91955
                                HelpTelephone       :
                                InstallDate         : 20190115
                                InstallLocation     : C:\Program Files\Microsoft Silverlight\

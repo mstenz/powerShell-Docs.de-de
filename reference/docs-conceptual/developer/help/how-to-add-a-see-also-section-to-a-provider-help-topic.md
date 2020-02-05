@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 9c754ac3-cee3-4c13-9bad-e499c8a68a09
 caps.latest.revision: 4
-ms.openlocfilehash: f5c48fd04c620828a6e99c5c5424d11b31fd10e5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1c1b7f4cf56ea2f9e30438a60e7bee29d87b80ba
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367839"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76995952"
 ---
 # <a name="how-to-add-a-see-also-section-to-a-provider-help-topic"></a>Hinzufügen eines Bereichs „Siehe auch“ zu einem Anbieterhilfethema
 
@@ -29,7 +29,7 @@ Der Abschnitt Siehe auch wird aus dem `RelatedLinks`-Element und den darin entha
 
 1. Fügen Sie in der Datei *AssemblyName*. dll-Help. XML innerhalb des `providerHelp`-Elements ein `RelatedLinks`-Element hinzu. Das `RelatedLinks` Element muss das letzte Element im `providerHelp` Element sein. Nur ein `RelatedLinks`-Element ist in jedem Hilfethema des Anbieters zulässig.
 
-   Beispiel:
+   Zum Beispiel:
 
     ```xml
     <providerHelp>
@@ -40,7 +40,7 @@ Der Abschnitt Siehe auch wird aus dem `RelatedLinks`-Element und den darin entha
 
 2. Fügen Sie für jedes Thema im Abschnitt " **Siehe auch** " im `RelatedLinks`-Element ein `navigationLink`-Element hinzu. Fügen Sie dann in jedem `navigationLink`-Element ein `linkText`-Element und ein `uri`-Element hinzu. Wenn Sie das `uri`-Element nicht verwenden, können Sie es als leeres Element (\<URI/>) hinzufügen.
 
-   Beispiel:
+   Zum Beispiel:
 
     ```xml
     <providerHelp>
@@ -70,7 +70,7 @@ Der Abschnitt Siehe auch wird aus dem `RelatedLinks`-Element und den darin entha
             </navigationLink>
             <navigationLink>
                 <linkText> Windows PowerShell Getting Started Guide </linkText>
-                <uri>http://go.microsoft.com/fwlink/?LinkID=89597<uri/>
+                <uri>https://go.microsoft.com/fwlink/?LinkID=89597<uri/>
             </navigationLink>
         </RelatedLinks>
     </providerHelp>
