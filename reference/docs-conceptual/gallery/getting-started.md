@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Erste Schritte mit dem PowerShell-Katalog
-ms.openlocfilehash: ee3fe7d9c65ad1a8f9ffd2ddec0f4ce6659bc3d5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: fd4185234136dd9f3e628df50954b6ebff637639
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71328461"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76995887"
 ---
 # <a name="getting-started-with-the-powershell-gallery"></a>Erste Schritte mit dem PowerShell-Katalog
 
@@ -31,8 +31,8 @@ Sie können Ergebnisse aus dem Katalog filtern, indem Sie die folgenden Paramete
 - Includes
 - DscResource
 - RoleCapability
-- Befehl
-- Filter
+- Get-Help
+- Filtern
 
 Wenn Sie nur spezifische DSC-Ressourcen im Katalog suchen, können Sie das Cmdlet [Find-DscResource][] ausführen. „Find-DscResource“ gibt Daten zu DSC-Ressourcen zurück, die im Katalog enthalten sind. Da DSC-Ressourcen immer als Teil eines Moduls geliefert werden, müssen Sie [Install-Module][] ausführen, um diese DSC-Ressourcen zu installieren.
 
@@ -56,7 +56,7 @@ Einige dieser Pakete wurden von Microsoft erstellt, andere stammen aus der Power
 
 Wenn Sie ein Paket entdecken, das Ihrer Meinung nach nicht mit guten Absichten veröffentlicht wurde, klicken Sie auf der Seite dieses Pakets auf **Missbrauch melden**.
 
-### <a name="install"></a>Installation
+### <a name="install"></a>Installieren
 
 Um ein Paket aus dem Katalog für die Verwendung zu installieren, führen Sie je nach Pakettyp das Cmdlet [Install-Module][] oder das Cmdlet [Install-Script][] aus.
 
@@ -98,3 +98,5 @@ Um herauszufinden, welche Skripts Sie aus dem PowerShell-Katalog installiert hab
 [Register-PSRepository]: /powershell/module/powershellget/Register-Repository
 [Save-Module]: /powershell/module/powershellget/Save-Module
 [Save-Script]: /powershell/module/powershellget/Save-Script
+[Update-Module]: /powershell/module/powershellget/Update-Module
+[Update-Script]: /powershell/module/powershellget/Update-Script

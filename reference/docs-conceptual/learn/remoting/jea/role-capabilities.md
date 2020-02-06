@@ -2,12 +2,12 @@
 ms.date: 07/10/2019
 keywords: jea,powershell,security
 title: JEA-Rollenfunktionen
-ms.openlocfilehash: 613557d03bb481f9280a06ca1506166a18b4dab2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5b5b5977d4fec1ed850f1146fe7c09463908651b
+ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416783"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76818174"
 ---
 # <a name="jea-role-capabilities"></a>JEA-Rollenfunktionen
 
@@ -157,9 +157,11 @@ Wenn Sie mehrere benutzerdefinierte Funktionen schreiben, ist es einfacher, dies
 
 Damit die Registerkartenvervollständigung in JEA-Sitzungen ordnungsgemäß funktioniert, müssen Sie die integrierte Funktion `tabexpansion2` in die Liste **VisibleFunctions** einbeziehen.
 
-## <a name="place-role-capabilities-in-a-module"></a>Platzieren von Rollenfunktionen in einem Modul
+## <a name="make-the-role-capabilities-available-to-a-configuration"></a>Verfügbarmachen der Rollenfunktionen für eine Konfiguration
 
-Damit PowerShell eine Rollenfunktionsdatei erkennen kann, müssen Sie diese im Ordner **RoleCapabilities** in einem PowerShell-Modul speichern. Das Modul kann in einem beliebigen Ordner gespeichert werden, der in der Umgebungsvariablen `$env:PSModulePath` enthalten ist. Sie sollten das Modul jedoch nicht unter dem Ordner „System32“ oder in einen Ordner einfügen, dessen Dateien von nicht vertrauenswürdigen Benutzern geändert werden können, die eine Verbindung herstellen. Im Folgenden finden Sie ein Beispiel für das Erstellen eines einfachen PowerShell-Skripts mit dem Namen **ContosoJEA** im Pfad `$env:ProgramFiles`.
+Damit PowerShell in Versionen vor PowerShell 6 eine Rollenfunktionsdatei erkennen kann, müssen Sie diese im Ordner **RoleCapabilities** in einem PowerShell-Modul speichern. Das Modul kann in einem beliebigen Ordner gespeichert werden, der in der Umgebungsvariablen `$env:PSModulePath` enthalten ist. Sie sollten das Modul jedoch nicht in `$env:SystemRoot\System32` oder in einen Ordner einfügen, dessen Dateien von nicht vertrauenswürdigen Benutzern geändert werden können.
+
+Im folgenden Beispiel wird ein PowerShell-Skriptmodul namens **ContosoJEA** zum Hosten der Rollenfunktionsdatei im `$env:ProgramFiles`-Pfad erstellt.
 
 ```powershell
 # Create a folder for the module
@@ -178,6 +180,8 @@ Copy-Item -Path .\MyFirstJEARole.psrc -Destination $rcFolder
 ```
 
 Weitere Informationen zu PowerShell-Modulen finden Sie in den [Grundlagen zu PowerShell-Modulen](/powershell/scripting/developer/windows-powershell).
+
+Ab PowerShell 6 wird die Eigenschaft **RoleDefinitions** der Sitzungskonfigurationsdatei hinzugefügt. Mit dieser Eigenschaft können Sie den Speicherort einer Rollenkonfigurationsdatei für die Rollendefinition angeben. Siehe Beispiele in [New-PSSessionConfigurationFile](/powershell/module/microsoft.powershell.core/new-pssessionconfigurationfile).
 
 ## <a name="updating-role-capabilities"></a>Aktualisieren von Rollenfunktionen
 

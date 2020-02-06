@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Häufig gestellte Fragen zum PowerShell-Katalog
-ms.openlocfilehash: bcbb36a9ec60d88d1ef56fd270f0ae1862d5ca6b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 70e2220bd68b351e0b09dd3c59901104f7874335
+ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71328051"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76818123"
 ---
 # <a name="frequently-asked-questions"></a>Häufig gestellte Fragen
 
@@ -38,7 +38,7 @@ Weitere Informationen zum Ausführen dieser Cmdlets finden Sie auf der Registerk
 
 ## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>Ich habe die Fehlermeldung „Fehler beim Verarbeiten der Anforderung. 'Der angegebene API-Schlüssel ist ungültig oder verfügt nicht über die Zugriffsberechtigung auf das angegebene Paket.' The remote server returned an error: (403) Forbidden.“ (Der Remoteserver hat einen Fehler zurückgegeben: (403) Verboten.) erhalten, als ich ein Paket im PowerShell-Katalog veröffentlichen wollte. Was bedeutet das?
 
-Dieser Fehler kann aus folgenden Gründen auftreten:
+Dieser Fehler kann aus den folgenden Gründe auftreten:
 
 - **Der angegebene API-Schlüssel ist ungültig.**
      Stellen Sie sicher, dass Sie den gültigen API-Schlüssel Ihres Konto angegeben haben. Den API-Schlüssel finden Sie auf Ihrer Profilseite.
@@ -93,8 +93,8 @@ Jedes Skript, das die folgenden Informationen im Abschnitt „PSScriptInfo“ en
 
 Geben Sie das gesuchte Thema in das Textfeld ein. Wenn Sie z.B. Module im Zusammenhang mit Azure SQL suchen, geben Sie einfach „Azure SQL“ ein. Die Suchmaschine sucht dann in allen veröffentlichten Paketen nach diesen Schlüsselwörtern, einschließlich Titel und Beschreibungen, sowie in allen Metadaten. Anschließend werden auf Grundlage einer gewichteten Qualitätsbewertung die besten Ergebnisse angezeigt. Sie können auch nach bestimmten Feldern der folgenden Feldtypen suchen, indem Sie die Syntax „Feld:"Wert"“ in der Suchabfrage verwenden:
 
-- Tags
-- Funktionen
+- `Tags`
+- Functions
 - Cmdlets
 - DscResources
 - PowerShellVersion
@@ -160,19 +160,19 @@ Für das **PowerShellGet**-Modul ist **PowerShell 3.0 oder neuer** erforderlich.
 
 Aus diesem Grund erfordert **PowerShellGet** eines der folgenden Betriebssysteme:
 
-- Windows 10
-- Windows 8.1 Pro
+- Windows 10
+- Windows 8.1 Pro
 - Windows 8.1 Enterprise
 - Windows 7 SP1
 - Windows Server 2016
-- Windows Server 2012 R2
+- Windows Server 2012 R2
 - Windows Server 2008 R2 SP1
 
 Für **PowerShellGet** ist außerdem .NET Framework 4.5 oder höher erforderlich. Von [hier](https://msdn.microsoft.com/library/5a4x27ek.aspx) können Sie .NET Framework 4.5 oder höher installieren.
 
 ## <a name="is-it-possible-to-reserve-names-for-packages-that-will-be-published-in-future"></a>Lassen sich Namen für Pakete reservieren, die in Zukunft veröffentlicht werden?
 
-Es ist nicht möglich, Paketnamen zu reservieren. Wenn Sie der Meinung sind, dass ein vorhandenes Paket einen Namen trägt, der besser zu Ihrem Paket passt, [wenden Sie sich an den Besitzer des Pakets](./how-to/working-with-packages/contacting-package-owners.md). Wenn Sie innerhalb einiger Wochen keine Antwort erhalten, können Sie den Support kontaktieren und das Team für den PowerShell-Katalog prüft die Angelegenheit.
+Es ist nicht möglich, Paketnamen zu reservieren. Wenn Sie der Meinung sind, dass ein vorhandenes Paket einen Namen trägt, der besser zu Ihrem Paket passt, [wenden Sie sich an den Besitzer des Pakets](./how-to/working-with-packages/contacting-package-owners.md). Wenn Sie innerhalb einiger Wochen keine Antwort erhalten, können Sie den Support kontaktieren, und das Team für den PowerShell-Katalog prüft die Angelegenheit.
 
 ## <a name="how-do-i-claim-ownership-for-packages"></a>Wie mache ich Besitzansprüche für Pakete geltend?
 

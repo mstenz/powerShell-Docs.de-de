@@ -2,12 +2,12 @@
 ms.date: 01/08/2020
 keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: DSC-Pulldienst
-ms.openlocfilehash: d71c87e0420a0ee54eca36f1792b43103431233f
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.openlocfilehash: f171c3dc579dfb24a8c9fb87fbb50dccae619091
+ms.sourcegitcommit: aaf1284dfec2e4c698009d6dc27ff103aaafd581
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75870811"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76885386"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Desired State Configuration – Pulldienst
 
@@ -22,6 +22,14 @@ Folgende Optionen sind zurzeit für den Pulldienst verfügbar:
 - Ein Pulldienst bei der Ausführung unter Windows Server
 - Von der Community verwaltete Open-Source-Lösungen
 - Eine SMB-Freigabe
+
+Die empfohlene Skalierung für jede Lösung lautet wie folgt:
+
+|                   Lösung                   |              Clientknoten              |
+| -------------------------------------------- | -------------------------------------- |
+| Windows-Pullserver mit MDB-/ESENT-Datenbank | Bis zu 500 Knoten                        |
+| Windows-Pullserver mit SQL-Datenbank       | Bis zu 1.000 Knoten                       |
+| Azure Automation DSC                         | Szenarios mit mehr als 1.000 Knoten |
 
 **Die empfohlene Lösung** und die Option mit den meisten verfügbaren Features ist [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
 
@@ -219,7 +227,7 @@ Nach Abschluss des Pullserversetups befinden sich die von den Eigenschaften **Co
 
 Jedes Ressourcenmodul muss komprimiert und entsprechend dem folgenden Muster benannt werden: `{Module Name}_{Module Version}.zip`.
 
-Ein Modul namens „xWebAdminstration“ mit einer Modulversion 3.1.2.0 würde beispielsweise `xWebAdministration_3.1.2.0.zip` heißen. Jede Version eines Moduls muss in einer eigenen ZIP-Datei enthalten sein.
+Ein Modul namens **xWebAdminstration** mit einer Modulversion 3.1.2.0 würde beispielsweise `xWebAdministration_3.1.2.0.zip` heißen. Jede Version eines Moduls muss in einer eigenen ZIP-Datei enthalten sein.
 Da jede ZIP-Datei nur jeweils eine Version einer Ressource enthält, wird das in WMF 5.0 eingeführte das Modulformat, das mehrere Versionen in einem einzigen Verzeichnis ermöglicht, nicht unterstützt. Das bedeutet, dass Sie vor dem Packen von DSC-Ressourcenmodulen für die Verwendung mit einem Pullserver eine kleine Änderung an der Verzeichnisstruktur vornehmen müssen. Das Standardformat für Module mit DSC-Ressourcen in WMF 5.0 ist `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`. Entfernen Sie vor dem Packvorgang für den Pullserver einfach den Ordner **{Module version}** , damit der Pfad zu `{Module Folder}\DscResources\{DSC Resource Folder}\` wird. Komprimieren Sie den Odner nach dieser Änderung wie oben beschrieben, und speichern Sie die ZIP-Dateien im Ordner **ModulePath**.
 
 Verwenden Sie `New-DscChecksum {module zip file}` zum Erstellen einer Prüfsummendatei für das neu hinzugefügte Modul.

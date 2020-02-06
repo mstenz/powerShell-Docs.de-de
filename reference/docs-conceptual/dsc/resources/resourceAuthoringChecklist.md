@@ -1,13 +1,13 @@
 ---
 ms.date: 06/12/2017
-keywords: dsc,powershell,configuration,setup
+keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: Prüfliste für die Ressourcenerstellung
-ms.openlocfilehash: c0a18169b5e9f6ba0c3848b00725731453763611
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e7401071db9cb149fff572d79568d69a0b8ea004
+ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71952877"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76818140"
 ---
 # <a name="resource-authoring-checklist"></a>Prüfliste für die Ressourcenerstellung
 
@@ -130,7 +130,7 @@ Mögliche Problemtypen:
 - Das Verhalten von Anmeldeinformationen oder der Sitzung ist möglicherweise anders, da der DSC-Agent als Dienst ausgeführt wird.  Führen Sie in diesem Bereich auf jeden Fall End-to-End-Tests von Features durch.
 - Von `Start-DscConfiguration` ausgegebene Fehler sind ggf. anders als die, die angezeigt werden, wenn die Funktion `Set-TargetResource` direkt aufgerufen wird.
 
-## <a name="test-compatability-on-all-dsc-supported-platforms"></a>Testen der Kompatibilität auf allen DSC-unterstützten Plattformen
+## <a name="test-compatibility-on-all-dsc-supported-platforms"></a>Testen der Kompatibilität auf allen DSC-unterstützten Plattformen
 
 Die Ressource sollte auf allen von DSC unterstützten Plattformen funktionieren (Windows Server 2008 R2 und höher). Installieren Sie für Ihr Betriebssystem das neueste WMF (Windows Management Framework), um die neueste DSC-Version zu erhalten. Wenn Ihre Ressource einige dieser Plattformen entwurfsbedingt nicht unterstützt, sollte eine bestimmte Fehlermeldung zurückgegeben werden. Stellen Sie außerdem sicher, dass die Ressource überprüft, ob die Cmdlets, die Sie aufrufen, auf einem bestimmten Computer vorhanden sind. Windows Server 2012 wurde eine große Anzahl neuer Cmdlets hinzugefügt, die unter Windows Server 2008 R2, sogar mit installiertem WMF, nicht verfügbar sind.
 
@@ -246,7 +246,7 @@ Wenn Ihre Ressource auf bestimmte Pfade zugreifen muss, verwenden Sie Umgebungsv
 
 Beispiel:
 
-Anstelle von:
+Verwenden Sie anstelle von
 
 ```powershell
 $tempPath = "C:\Users\kkaczma\AppData\Local\Temp\MyResource"

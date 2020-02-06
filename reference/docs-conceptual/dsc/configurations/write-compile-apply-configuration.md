@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,configuration,service,setup
 title: Schreiben, Kompilieren und Anwenden einer Konfiguration
-ms.openlocfilehash: 8bcd55518b0409b9a4b02ca95f027a0a77eb5300
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: eb61e518762b9f13e617ecd4711bfef7a86814ec
+ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71953997"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76818157"
 ---
 > Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
@@ -18,7 +18,7 @@ Anhand des folgenden Beispiels erfahren Sie, wie Sie eine einfache Konfiguration
 
 Eine Übersicht über DSC und die Funktionsweise finden Sie unter [Desired State Configuration Overview for Developers (Desired State Configuration (DSC): Übersicht für Entwickler)](../overview/overview.md).
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 Sie benötigen einen Computer mit PowerShell 4.0 oder höher, um dieses Beispiel auszuführen.
 
@@ -47,7 +47,7 @@ Configuration HelloWorld {
 }
 ```
 
-> !Wichtig: In komplexeren Szenarien, in denen mehrere Module importiert werden müssen, damit Sie mit vielen DSC-Ressourcen in der gleichen Konfiguration arbeiten können, geben Sie jedes Modul mit `Import-DscResource` auf einer separaten Zeile an.
+> !Wichtig: In komplexeren Szenarien, in denen mehrere Module importiert werden müssen, damit Sie mit vielen DSC-Ressourcen in der gleichen Konfiguration arbeiten können, geben Sie jedes Modul mit `Import-DscResource` in einer separaten Zeile an.
 > Dies lässt sich in der Quellcodeverwaltung leichter nachverfolgen und ist erforderlich, wenn Sie in Azure State Configuration mit DSC arbeiten.
 >
 > ```powershell
@@ -112,7 +112,7 @@ Start-DscConfiguration -Path C:\Scripts\HelloWorld -Verbose -Wait
 
 Sobald das Cmdlet `Start-DSCConfiguration` abgeschlossen ist, sollte Ihnen eine „HelloWorld.txt“-Datei am von Ihnen festgelegten Speicherort angezeigt werden. Sie können die Inhalte mit dem Cmdlet [Get-Content](/powershell/module/microsoft.powershell.management/get-content) überprüfen.
 
-Sie können den aktuellen Status auch mit [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration) *testen*.
+Sie können den aktuellen Status auch mit [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)*testen*.
 
 Die Ausgabe sollte „TRUE“ zurückgeben, wenn der Knoten derzeit der angewendeten Konfiguration entspricht.
 
