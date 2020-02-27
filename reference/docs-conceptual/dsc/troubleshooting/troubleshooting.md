@@ -1,13 +1,13 @@
 ---
 ms.date: 10/30/2018
-keywords: dsc,powershell,configuration,setup
+keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: Problembehandlung bei DSC
-ms.openlocfilehash: 2a0d2138f30573b9ae6cf52d8b106a05f1193407
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5cbe6496a6e0b9940f4b69e13d1e19e43b3915f0
+ms.sourcegitcommit: 5f199cd2a1b31dbcebaab44f2fe496f289831a30
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71954617"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77478784"
 ---
 # <a name="troubleshooting-dsc"></a>Problembehandlung bei DSC
 
@@ -564,7 +564,7 @@ Configuration ConfigTestDebugMode
 ConfigTestDebugMode
 ```
 
-Die Inhalte der Datei zeigen, dass `$env:SystemDrive\OutputFromTestProviderDebugMode.txt` **1** beträgt.
+Die Inhalte der Datei zeigen, dass `$env:SystemDrive\OutputFromTestProviderDebugMode.txt`**1** beträgt.
 
 Aktualisieren Sie nun den Anbietercode mithilfe des folgenden Skripts:
 
@@ -642,6 +642,16 @@ https://<serverfqdn>:8080/PSDSCPullServer.svc/Nodes(AgentId='<ID>') returned une
 
 Er kann auftreten, wenn das Zertifikat, das auf dem Server zum Verschlüsseln von Datenverkehr verwendet wird, einen allgemeinen Namen (Common Name, CN) hat, der anders als der DNS-Name ist, der vom Knoten zum Auflösen der URL verwendet wird.
 Aktualisieren Sie die Windows-Pullserver-Instanz, sodass ein Zertifikat mit einem korrigierten Namen verwendet wird.
+
+## <a name="error-when-running-sysprep-after-applying-a-dsc-configuration"></a>Fehler beim Ausführen von Sysprep nach dem Anwenden einer DSC-Konfiguration
+
+Bei dem Versuch, Sysprep auszuführen, um einen Windows-Server nach der Anwendung einer DSC-Konfiguration zu generalisieren, tritt möglicherweise der folgende Fehler auf:
+
+```
+SYSPRP LaunchDll:Failure occurred while executing 'DscCore.dll,SysPrep_Cleanup', returned error code 0x2
+```
+
+Das Generalisieren von Servern nach der Konfiguration mit der Plattform Desired State Configuration für Windows PowerShell wird nicht unterstützt.  Wenden Sie stattdessen erst Konfigurationen auf Windows an, nachdem die Phase „Specialize“ (Spezialisierung) des Windows-Setups abgeschlossen ist.
 
 ## <a name="see-also"></a>Weitere Informationen
 
