@@ -2,12 +2,12 @@
 ms.date: 07/10/2019
 keywords: jea,powershell,security
 title: Registrieren von JEA-Konfigurationen
-ms.openlocfilehash: dbed5c7dd71f2f7a09d97416be56dff675799548
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7cc67e891bc14dd667c97e9a8b550b33b4c2b874
+ms.sourcegitcommit: 0a3f9945d52e963e9cba2538ffb33e42156e1395
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417616"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77706205"
 ---
 # <a name="registering-jea-configurations"></a>Registrieren von JEA-Konfigurationen
 
@@ -51,7 +51,7 @@ Nach der Registrierung können Sie [JEA verwenden](using-jea.md). Sie können di
 
 ## <a name="multi-machine-configuration-with-dsc"></a>Konfigurieren mehrerer Computer mit DSC (Desired State Configuration)
 
-Wenn Sie JEA auf mehreren Computern bereitstellen, bietet sich als einfachstes Bereitstellungsmodell die Verwendung der JEA-[DSC-](/powershell/scripting/dsc/overview)-Ressource (Desired State Configuration) an, um JEA schnell und konsistent auf jedem Computer bereitzustellen.
+Wenn Sie JEA auf mehreren Computern bereitstellen, bietet sich als einfachstes Bereitstellungsmodell die Verwendung der JEA-[DSC-](../../../dsc/overview/overview.md)-Ressource (Desired State Configuration) an, um JEA schnell und konsistent auf jedem Computer bereitzustellen.
 
 Um JEA mit DSC bereitzustellen, müssen die folgenden Voraussetzungen erfüllt sein:
 
