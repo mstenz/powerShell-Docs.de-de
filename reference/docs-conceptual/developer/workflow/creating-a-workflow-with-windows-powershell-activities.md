@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: fb55971a-4ea4-4c51-aeff-4e0bb05a51b2
 caps.latest.revision: 6
-ms.openlocfilehash: 98cac43698b3f537ee318cd2570b2174631665a7
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7d399786b9b43ee302493359d9702981045212e9
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359629"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78277462"
 ---
 # <a name="creating-a-workflow-with-windows-powershell-activities"></a>Erstellen eines Workflows mit Windows PowerShell-Aktivitäten
 
@@ -45,9 +45,9 @@ In den folgenden Prozeduren wird beschrieben, wie ein Workflow erstellt wird, de
 
 8. Bearbeiten Sie die Eigenschaften der **getwmiobject** -Aktivität wie folgt.
 
-   |Eigenschaft|Value|
+   |Eigenschaft|value|
    |--------------|-----------|
-   |**Class**|"Win32_ComputerSystem"|
+   |**Klasse**|"Win32_ComputerSystem"|
    |**PSComputerName**|zuschreiben|
    |**PSCredential**|Machinecred|
 
@@ -55,27 +55,27 @@ In den folgenden Prozeduren wird beschrieben, wie ein Workflow erstellt wird, de
 
 10. Bearbeiten Sie die Eigenschaften der **addcomputer** -Aktivität wie folgt.
 
-    |Eigenschaft|Value|
+    |Eigenschaft|value|
     |--------------|-----------|
-    |**ComputerName**|zuschreiben|
+    |**Computername**|zuschreiben|
     |**DomainCredential**|Domaincred|
 
 11. Fügen Sie der **JoinDomain** -Sequenz nach der **addcomputer** -Aktivität eine **restartcomputer** -Aktivität hinzu.
 
 12. Bearbeiten Sie die Eigenschaften der **restartcomputer** -Aktivität wie folgt.
 
-    |Eigenschaft|Value|
+    |Eigenschaft|value|
     |--------------|-----------|
-    |**ComputerName**|zuschreiben|
+    |**Computername**|zuschreiben|
     |**Credential**|Machinecred|
-    |**For**|Microsoft. PowerShell. Commands. waitforservicetypes. PowerShell|
-    |**Force**|Wahr|
-    |Wait|Wahr|
+    |**Damit**|Microsoft. PowerShell. Commands. waitforservicetypes. PowerShell|
+    |**Force**|True|
+    |Warten|True|
     |PSComputerName|{""}|
 
 13. Fügen Sie eine **getwmiobject** -Aktivität der **JoinDomain** -Sequenz nach der **restartcomputer** -Aktivität hinzu. Bearbeiten Sie die zugehörigen Eigenschaften so, dass Sie mit der vorherigen **getwmiobject** -Aktivität identisch sind.
 
     Wenn Sie die Prozeduren abgeschlossen haben, sollte das Workflow Entwurfs Fenster wie folgt aussehen.
 
-    ![JoinDomain XAML im Workflow-Designer](../media/joindomainworkflow.png)
-    ![JoinDomain XAML im Workflow-Designer](../media/joindomainworkflow.png "Joindomainworkflow")
+    ![JoinDomain XAML im Workflow-Designer](media/creating-a-workflow-with-windows-powershell-activities/joindomainworkflow.png)
+    ![JoinDomain XAML im Workflow-Designer](media/creating-a-workflow-with-windows-powershell-activities/joindomainworkflow.png "Joindomainworkflow")
