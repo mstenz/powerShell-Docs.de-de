@@ -3,18 +3,18 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Bereitstellen in Azure Automation
-ms.openlocfilehash: 707691e24a77647064e60da0d9a31ad5eece1c59
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5d09a0777c59b642400d683c8cb6f881319fb881
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71327911"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278718"
 ---
 # <a name="deploy-to-azure-automation"></a>Bereitstellen in Azure Automation
 
 Mit der Schaltfläche „In Azure Automation bereitstellen“ auf der Seite mit den Paketdetails können Sie ein Paket aus dem PowerShell-Katalog in Azure Automation bereitstellen.
 
-![Schaltfläche zum Bereitstellen in Azure Automation](../../Images/DeployToAzureAutomationButton.png)
+![Schaltfläche zum Bereitstellen in Azure Automation](media/deploy-to-azure-automation/DeployToAzureAutomationButton.png)
 
 Wenn Sie auf diese Schaltfläche klicken, werden Sie zum Azure-Verwaltungsportal umgeleitet, wo Sie sich mit den Anmeldeinformationen Ihres Azure-Kontos anmelden.
 Wenn das Paket Abhängigkeiten enthält, werden diese ebenfalls in Azure Automation bereitgestellt.
@@ -30,9 +30,9 @@ Sie können die Schaltfläche „In Azure Automation bereitstellen“ deaktivier
 
 Wenn für das Modul, das in Azure Automation bereitgestellt wird, die Zustimmung zur Lizenz erforderlich ist, wird auf der Portaloberfläche ein Haftungsausschluss mit folgender Meldung angezeigt: „Für dieses Modul muss der Lizenz zugestimmt werden. Indem Sie auf ‚OK‘ klicken, akzeptieren Sie die Lizenzbedingungen.“
 
-![Für die Bereitstellung in Azure Automation ist die Zustimmung zur Lizenz erforderlich.](../../Images/DeployToAzureAutomationRequireLicenseAcceptanceDisclaimer.png)
+![Für die Bereitstellung in Azure Automation ist die Zustimmung zur Lizenz erforderlich.](media/deploy-to-azure-automation/DeployToAzureAutomationRequireLicenseAcceptanceDisclaimer.png)
 
-## <a name="more-details"></a>Weitere Details
+## <a name="more-details"></a>Weitere Informationen
 
 - [Erforderliche Zustimmung zur Lizenz in PowerShellGet](../../concepts/module-license-acceptance.md)
 - [Erforderliche Zustimmung zur Lizenz im PowerShell-Katalog](packages-that-require-license-acceptance.md)

@@ -1,13 +1,13 @@
 ---
 ms.date: 12/12/2018
-keywords: dsc,powershell,configuration,setup
+keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: Verpacken und Hochladen von Ressourcen auf einen Pullserver
-ms.openlocfilehash: 29a62f96393a53c9e7da57a5e51732dcb0937194
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 8aac343d7495ecda94ed76d1d97079397eecd65f
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71954377"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278499"
 ---
 # <a name="package-and-upload-resources-to-a-pull-server"></a>Verpacken und Hochladen von Ressourcen auf einen Pullserver
 
@@ -16,7 +16,7 @@ Die folgenden Abschnitte gehen davon aus, dass Sie bereits einen Pullserver eing
 - [Einrichten eines DSC-SMB-Pullservers](pullServerSmb.md)
 - [Einrichten eines DSC-HTTP-Pullservers](pullServer.md)
 
-Jeder Zielknoten kann zum Herunterladen von Konfigurationen, Ressourcen und sogar zum Berichten seines Status konfiguriert werden. Dieser Artikel zeigt Ihnen, wie Sie Ressourcen hochladen können, damit sie zum Download zur Verfügung stehen, und wie Sie Clients so konfigurieren, dass sie Ressourcen automatisch herunterladen. Wenn der Knoten eine zugewiesene Konfiguration erhält (durch **Pull** oder **Push** (v5)), lädt er automatisch alle für die Konfiguration erforderlichen Ressourcen vom in LCM angegebenen Speicherort herunter.
+Jeder Zielknoten kann zum Herunterladen von Konfigurationen, Ressourcen und sogar zum Berichten seines Status konfiguriert werden. Dieser Artikel zeigt Ihnen, wie Sie Ressourcen hochladen können, damit sie zum Download zur Verfügung stehen, und wie Sie Clients so konfigurieren, dass sie Ressourcen automatisch herunterladen. Wenn der Knoten eine zugewiesene Konfiguration empfängt (durch **Pull** oder **Push** (v5)), lädt er automatisch alle für die Konfiguration erforderlichen Ressourcen vom in LCM angegebenen Speicherort herunter.
 
 ## <a name="package-resource-modules"></a>Verpacken von Ressourcenmodulen
 
@@ -27,7 +27,7 @@ Jede Ressource, die für einen Client zum Herunterladen verfügbar ist, muss in 
 
 Sie können das Ressourcenverzeichnis mit einem beliebigen Hilfsprogramm, einem Skript oder einer beliebigen Methode komprimieren. Unter Windows können Sie *mit der rechten Maustaste* auf das Verzeichnis „xPSDesiredStateConfiguration“ klicken und dann „Senden an“ und „Komprimierter Ordner“ auswählen.
 
-![Rechtsklick](../media/right-click.gif)
+![Rechtsklick](media/package-upload-resources/right-click.gif)
 
 ### <a name="naming-the-resource-archive"></a>Benennen des Ressourcenarchivs
 
@@ -95,7 +95,7 @@ ConfigurationRepositoryShare SMBPullServer
 
 Sie können einen Knoten zwingen, seine Ressourcen zu aktualisieren, indem Sie die Versionsnummer im Namen des Archivs ändern oder eine neue Prüfsumme erstellen. Der Pullclient sucht nach neueren Versionen der erforderlichen Ressourcen sowie nach aktualisierten Prüfsummen, wenn sein LCM aktualisiert wird.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 - [Einrichten eines DSC-SMB-Pullservers](pullServerSmb.md)
 - [Einrichten eines DSC-HTTP-Pullservers](pullServer.md)

@@ -3,12 +3,12 @@ ms.date: 09/10/2018
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Verwalten von API-Schlüsseln
-ms.openlocfilehash: 954eb27c25babdb8efe50c13caf5f2d287c6b3e3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0f44a080415f1acf13680771b6e9db5b805f8f45
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71328291"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278291"
 ---
 # <a name="managing-api-keys"></a>Verwalten von API-Schlüsseln
 
@@ -19,7 +19,7 @@ Der PowerShell-Katalog unterstützt das Erstellen mehrerer API-Schlüssel für e
 
 Die folgende Abbildung zeigt die beim Erstellen eines bereichsbezogenen API-Schlüssels verfügbaren Optionen.
 
-![Erstellen von API-Schlüsseln](../../Images/PSGallery_KeyScoped.png)
+![Erstellen von API-Schlüsseln](media/creating-APIkeys/PSGallery_KeyScoped.png)
 
 In diesem Beispiel haben wir einen API-Schlüssel mit dem Namen **AzureRMDataFactory** erstellt. Dieser Schlüsselwert kann zur Übertragung von Paketen mithilfe von Push genutzt werden, deren Namen mit „AzureRM.DataFactory“ beginnen, und ist 365 Tage lang gültig. Dies ist ein typisches Szenario, wenn verschiedene Teams innerhalb einer Organisation an verschiedenen Paketen arbeiten. Die Mitglieder des Teams haben einen Schlüssel, der ihnen Berechtigungen für das jeweilige Paket gewährt, an dem sie arbeiten.
 Der Ablaufwert verhindert, dass veraltete oder vergessene Schlüssel verwendet werden.
@@ -32,7 +32,7 @@ Wenn Sie an mehreren Paketen arbeiten, können Sie mit Globmustern mehrere Paket
 
 Aus Sicherheitsgründen wird ein neu erstellter Schlüsselwert nie auf dem Bildschirm angezeigt und ist wie unten dargestellt nur über die Schaltfläche „Kopieren“ verfügbar.
 
-![Abrufen eines neuen API-Schlüsselwerts](../../Images/PSGallery_CopyCreatedKey.png)
+![Abrufen eines neuen API-Schlüsselwerts](media/creating-APIkeys/PSGallery_CopyCreatedKey.png)
 
 > [!IMPORTANT]
 > Sie können den API-Schlüsselwert nur direkt nach dem Erstellen oder Aktualisieren kopieren. Er wird nicht angezeigt und ist nach dem Aktualisieren der Seite nicht mehr verfügbar. Wenn Sie den Schlüsselwert verlieren, müssen Sie „Erneut generieren“ anklicken und den Schlüssel danach kopieren.
@@ -59,7 +59,7 @@ Diese Einstellungen können nicht geändert werden, nachdem der Schlüssel erste
 
 Sie können einige Einstellungen eines vorhandenen Schlüssels ändern. Wie bereits erwähnt, können Sie den Sicherheitsbereich und das Ablaufdatum eines vorhandenen API-Schlüssels nicht ändern. Die Optionen, die geändert werden können, sehen Sie in folgendem Screenshot:
 
-![Abrufen eines neuen API-Schlüsselwerts](../../Images/PSGallery_EditAPIKey.png)
+![Abrufen eines neuen API-Schlüsselwerts](media/creating-APIkeys/PSGallery_EditAPIKey.png)
 
 Zum Ändern der Pakete, die durch einen Schlüssel kontrolliert werden, können Sie einzelne Pakete aus der Liste auswählen oder das Globmuster ändern.
 
@@ -67,6 +67,6 @@ Durch Klicken auf **Erneut generieren** wird ein neuer Schlüsselwert erstellt. 
 
 Nach dem Klicken auf **Löschen** wird eine Bestätigungsmeldung angezeigt. Wenn ein Schlüssel gelöscht wurde, kann er nicht mehr verwendet werden.
 
-## <a name="key-expiration"></a>Ablauf des Schlüssels
+## <a name="key-expiration"></a>Ablauf von Schlüsseln
 
 Zehn Tage vor Ablauf sendet der PowerShell-Katalog eine E-Mail zur Warnung an den Kontoinhaber des API-Schlüssels. Nach Ablauf kann der Schlüssel nicht mehr verwendet werden. Eine Warnmeldung erscheint oben auf der Verwaltungsseite des API-Schlüssels und gibt an, welche Schlüssel nicht mehr gültig sind. Sie können einen neuen Schlüsselwert erstellen.

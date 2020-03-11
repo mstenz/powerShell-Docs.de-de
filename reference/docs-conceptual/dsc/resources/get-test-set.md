@@ -1,19 +1,19 @@
 ---
 ms.date: 12/12/2018
-keywords: dsc,powershell,configuration,setup
+keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: Get-Test-Set
-ms.openlocfilehash: 42c1df6df2fbf65cbbb8407db613cac2e5b81cfb
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: bf409f71c07c434fbc7389789e16575868d21b42
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71954287"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278415"
 ---
 # <a name="get-test-set"></a>Get-Test-Set
 
 >Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
-![Get, Test und Set](../media/get-test-set.png)
+![Get, Test und Set](media/get-test-set/get-test-set.png)
 
 PowerShell Desired State Configuration ist um einen **Get**-, **Test**- und **Set**-Prozess herum konstruiert. Die DSC-[Ressourcen](resources.md) enthalten Methoden, um jeden dieser Vorgänge abzuschließen. In einer [Konfiguration](../configurations/configurations.md) definieren Sie Ressourcenblöcke, um Schlüssel auszufüllen, die Parameter für **Get**-, **Test**- und **Set**-Methoden einer Ressource werden.
 
@@ -123,7 +123,7 @@ ModuleVersion = "1.0";
 
 Bei Anwendung liest der [lokale Konfigurations-Manager](../managing-nodes/metaConfig.md) (Local Configuration Manager, LCM) den Wert „Spooler“ aus der MOF-Datei und übergibt ihn dem `-Name`-Parameter der **Get**-, **Test**- und **Set**-Methode für die Instanz „MyService“ der **Service**-Ressource.
 
-## <a name="get"></a>Abrufen
+## <a name="get"></a>Herunterladen
 
 Die **Get**-Methode einer Ressource ruft den Status der Ressource ab, wenn sie auf dem Zielknoten konfiguriert wird. Dieser Status wird als [Hashtabelle](/powershell/module/microsoft.powershell.core/about/about_hash_tables) zurückgegeben. Die Schlüssel der **Hashtabelle** sind die konfigurierbaren Werte oder Parameter, die die Ressource akzeptiert.
 
@@ -180,7 +180,7 @@ Service [String] #ResourceName
 Die **Test**-Methode einer Ressource bestimmt, ob der Zielknoten derzeit mit dem *gewünschten Status* der Ressource konform ist. Die **Test**-Methode gibt `$True` oder `$False` nur zurück, um anzuzeigen, ob der Knoten konform ist.
 Beim Aufruf von [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration) ruft der LCM die **Test**-Methoden der einzelnen Ressourcen in der gerade angewendeten Konfiguration auf. Der LCM nutzt die in der MOF-Datei gespeicherten Schlüsselwerte als Parameter für die jeweilige entsprechende Ressourceninstanz.
 
-Wenn das Ergebnis von **Test** einer beliebigen einzelnen Ressource `$False` ist, gibt `Test-DSCConfiguration` `$False` zurück, um anzugeben, dass der Knoten nicht konform ist. Wenn die **Test**-Methoden aller Ressourcen `$True` zurückgeben, gibt `Test-DSCConfiguration` `$True` zurück, um anzugeben, dass der Knoten konform ist.
+Wenn das Ergebnis von **Test** einer beliebigen einzelnen Ressource `$False` ist, gibt `Test-DSCConfiguration``$False` zurück, um anzugeben, dass der Knoten nicht konform ist. Wenn die **Test**-Methoden aller Ressourcen `$True` zurückgeben, gibt `Test-DSCConfiguration``$True` zurück, um anzugeben, dass der Knoten konform ist.
 
 ```powershell
 Test-DSCConfiguration
@@ -204,9 +204,9 @@ localhost       {[Service]Spooler}                                            Tr
 
 Weitere Informationen finden Sie unter [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration).
 
-## <a name="set"></a>Festlegen
+## <a name="set"></a>Set
 
-Die **Set**-Methode einer Ressource versucht, die Konformität des Knotens mit dem *gewünschten Status* der Ressource zu erzwingen. Die **Set**-Methode soll **idempotent** sein, was bedeutet, dass **Set** mehrmals ausgeführt werden und immer ohne Fehler das gleiche Ergebnis erzielen könnte.  Beim Aufruf von [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Start-DSCConfiguration) durchläuft der LCM die einzelnen Ressourcen in der gerade angewendeten Konfiguration. Der LCM ruft Schlüsselwerte für die aktuelle Ressourceninstanz aus der MOF-Datei ab und verwendet sie als Parameter für die **Test**-Methode. Wenn die **Test**-Methode `$True` zurückgibt, ist der Knoten mit der aktuellen Ressource konform, und die **Set**-Methode wird übersprungen. Wenn der **Test** `$False` zurückgibt, ist der Knoten nicht konform.  Der LCM übergibt die Schlüsselwerte der Ressourceninstanz als Parameter an die **Set**-Methode der Ressource und stellt dabei die Konformität des Knotens wieder her.
+Die **Set**-Methode einer Ressource versucht, die Konformität des Knotens mit dem *gewünschten Status* der Ressource zu erzwingen. Die **Set**-Methode soll **idempotent** sein, was bedeutet, dass **Set** mehrmals ausgeführt werden und immer ohne Fehler das gleiche Ergebnis erzielen könnte.  Beim Aufruf von [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Start-DSCConfiguration) durchläuft der LCM die einzelnen Ressourcen in der gerade angewendeten Konfiguration. Der LCM ruft Schlüsselwerte für die aktuelle Ressourceninstanz aus der MOF-Datei ab und verwendet sie als Parameter für die **Test**-Methode. Wenn die **Test**-Methode `$True` zurückgibt, ist der Knoten mit der aktuellen Ressource konform, und die **Set**-Methode wird übersprungen. Wenn der **Test**`$False` zurückgibt, ist der Knoten nicht konform.  Der LCM übergibt die Schlüsselwerte der Ressourceninstanz als Parameter an die **Set**-Methode der Ressource und stellt dabei die Konformität des Knotens wieder her.
 
 Durch Angabe der Parameter `-Verbose` und `-Wait` können Sie den Fortschritt des `Start-DSCConfiguration`-Cmdlets verfolgen. In diesem Beispiel ist der Knoten bereits konform. Die `Verbose`-Ausgabe gibt an, dass die **Set**-Methode übersprungen wurde.
 
@@ -235,7 +235,7 @@ VERBOSE: Operation 'Invoke CimMethod' complete.
 VERBOSE: Time taken for configuration job to complete is 1.379 seconds
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 - [Azure Automation DSC – Übersicht](https://docs.microsoft.com/azure/automation/automation-dsc-overview)
 - [Einrichten eines SMB-Pullservers](../pull-server/pullServerSMB.md)

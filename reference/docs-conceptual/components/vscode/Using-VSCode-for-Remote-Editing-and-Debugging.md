@@ -2,12 +2,12 @@
 title: Verwenden von Visual Studio Code für Remotebearbeitung und Remotedebuggen
 description: Verwenden von Visual Studio Code für Remotebearbeitung und Remotedebuggen
 ms.date: 06/13/2019
-ms.openlocfilehash: ae3b7a3709498fcd547a48d0849b0dc880217225
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5ce7f575d90ff47fd6b8a0a2b567e972ec3a9fef
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67264030"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279136"
 ---
 # <a name="using-visual-studio-code-for-remote-editing-and-debugging"></a>Verwenden von Visual Studio Code für Remotebearbeitung und Remotedebuggen
 
@@ -38,7 +38,7 @@ Diese Beispiele veranschaulichen das Remotebearbeiten und -debuggen von einem Ma
 
 Nach Starten der PowerShell-Erweiterung für VSCode und Öffnen der integrierten PowerShell-Konsole können wir `Open-EditorFile foo.ps1` oder `psedit foo.ps1` eingeben, um die lokale Datei „foo.ps1“ direkt im Editor zu öffnen.
 
-![Bearbeitung von „foo.ps1“ in Open-EditorFile funktioniert lokal](images/Using-VSCode-for-Remote-Editing-and-Debugging/1-open-local-file.png)
+![Bearbeitung von „foo.ps1“ in Open-EditorFile funktioniert lokal](media/Using-VSCode-for-Remote-Editing-and-Debugging/1-open-local-file.png)
 
 >[!NOTE]
 > Die Datei `foo.ps1` muss bereits vorhanden sein.
@@ -47,11 +47,11 @@ Von dort aus können wir:
 
 - Fügen Sie Haltepunkte zum Bundsteg hinzu.
 
-  ![Hinzufügen von Haltepunkten zum Bundsteg](images/Using-VSCode-for-Remote-Editing-and-Debugging/2-adding-breakpoint-gutter.png)
+  ![Hinzufügen von Haltepunkten zum Bundsteg](media/Using-VSCode-for-Remote-Editing-and-Debugging/2-adding-breakpoint-gutter.png)
 
 - Drücken Sie F5, um das PowerShell-Skript zu debuggen.
 
-  ![Debuggen des lokalen PowerShell-Skripts](images/Using-VSCode-for-Remote-Editing-and-Debugging/3-local-debug.png)
+  ![Debuggen des lokalen PowerShell-Skripts](media/Using-VSCode-for-Remote-Editing-and-Debugging/3-local-debug.png)
 
 Sie können während des Debuggens mit der Debugging-Konsole interagieren, im Bereich auf der linken Seite die Variablen überprüfen und alle anderen standardmäßigen Debuggingtools verwenden.
 
@@ -73,20 +73,20 @@ Da wir von macOS aus auf eine Ubuntu-VM in Azure zugreifen, verwenden wir SSH f�
 
 Führen Sie zunächst in der integrierten Konsole `Enter-PSSession` aus. Sie sind mit der Remotesitzung verbunden, wenn links neben Ihrer Eingabeaufforderung `[<hostname>]` angezeigt wird.
 
-![Der Aufruf von Enter-PSSession](images/Using-VSCode-for-Remote-Editing-and-Debugging/4-enter-pssession.png)
+![Der Aufruf von Enter-PSSession](media/Using-VSCode-for-Remote-Editing-and-Debugging/4-enter-pssession.png)
 
 Jetzt können wir dieselben Schritte ausführen wie beim Bearbeiten eines lokalen Skripts.
 
 1. Führen Sie `Open-EditorFile test.ps1` oder `psedit test.ps1` aus, um die Remotedatei `test.ps1` zu öffnen.
 
-  ![Datei „Open-EditorFile the test.ps1“](images/Using-VSCode-for-Remote-Editing-and-Debugging/5-open-remote-file.png)
+  ![Datei „Open-EditorFile the test.ps1“](media/Using-VSCode-for-Remote-Editing-and-Debugging/5-open-remote-file.png)
 
 1. Bearbeiten Sie die Datei bzw. / legen Sie Haltepunkte fest.
 
-   ![Bearbeiten und Festlegen von Haltepunkten](images/Using-VSCode-for-Remote-Editing-and-Debugging/6-set-breakpoints.png)
+   ![Bearbeiten und Festlegen von Haltepunkten](media/Using-VSCode-for-Remote-Editing-and-Debugging/6-set-breakpoints.png)
 
 1. Beginnen Sie mit dem Debuggen (F5) der Remotedatei.
 
-   ![Debuggen der Remotedatei](images/Using-VSCode-for-Remote-Editing-and-Debugging/7-start-debugging.png)
+   ![Debuggen der Remotedatei](media/Using-VSCode-for-Remote-Editing-and-Debugging/7-start-debugging.png)
 
 Zur Lösung eventuell noch auftretender Probleme steht Ihnen das [GitHub-Repository](https://github.com/powershell/vscode-powershell) zur Verfügung.

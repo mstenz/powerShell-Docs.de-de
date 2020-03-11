@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Häufig gestellte Fragen zum PowerShell-Katalog
-ms.openlocfilehash: 70e2220bd68b351e0b09dd3c59901104f7874335
-ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
+ms.openlocfilehash: 9572a61d38b0d540b0b8933405810ac4f2b6377e
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76818123"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278176"
 ---
 # <a name="frequently-asked-questions"></a>Häufig gestellte Fragen
 
@@ -64,7 +64,7 @@ Alle im Katalog veröffentlichten Module müssen über Modulmanifeste verfügen.
 Jedes Modul, das die folgenden Informationen in seinem Manifest enthält, kann im Katalog veröffentlicht werden:
 
 - Version
-- Beschreibung
+- BESCHREIBUNG
 - Autor
 - Ein URI zu den Lizenzbedingungen des Moduls, entweder als Teil des **PrivateData**-Abschnitts des Manifests oder im **LicenseUri**-Parameter des Cmdlets [Publish-Module][].
 
@@ -85,7 +85,7 @@ Alle im Katalog veröffentlichten Skripts müssen Metadateninformationen besitze
 Jedes Skript, das die folgenden Informationen im Abschnitt „PSScriptInfo“ enthält, kann im Katalog veröffentlicht werden:
 
 - Version
-- Beschreibung
+- BESCHREIBUNG
 - Autor
 - Ein URI zu den Lizenzbedingungen des Skripts, entweder als Teil des Abschnitts **PSScriptInfo** des Skripts oder im **LicenseUri**-Parameter des Cmdlets [Publish-Script][].
 
@@ -148,7 +148,7 @@ Auf der Ebene der PowerShell-Cmdlets ist [Install-Module][] ein einfacher Wrappe
 
 Auf der Ebene des PackageManagement-Paketanbieters ruft der PSModule-Paketanbieter andere PackageManagement-Paketanbieter auf. Wenn Sie beispielsweise mit NuGet-basierten Katalogen arbeiten(z.B. dem PowerShell-Katalog), verwendet der PSModule-Paketanbieter den NuGet-Paketanbieter, um mit dem Repository zu arbeiten.
 
-![PowerShellGet-Architektur](Images/powershellgetArchitecture.png)
+![PowerShellGet-Architektur](media/faqs/powershellgetArchitecture.png)
 
 Abbildung 1: PowerShellGet-Architektur
 

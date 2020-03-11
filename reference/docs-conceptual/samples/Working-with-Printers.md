@@ -2,12 +2,12 @@
 ms.date: 12/23/2019
 keywords: powershell,cmdlet
 title: Arbeiten mit Druckern
-ms.openlocfilehash: 47c4f230d023ad93e2b65080feaa1dbfae803d08
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.openlocfilehash: 1d6b9a57ec61f06af694757dc8017d50b4dd40fe
+ms.sourcegitcommit: 1fa89ab20d14a61f139f1394c45aaedd5a7c5438
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75736861"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78935209"
 ---
 # <a name="working-with-printers-in-windows"></a>Arbeiten mit Druckern in Windows
 
@@ -42,7 +42,8 @@ Verwenden Sie zum Hinzufügen eines neuen Netzwerkdruckers **WScript.Network**:
 Um mithilfe von WMI den Standarddrucker festzulegen, suchen Sie den Drucker in der **Win32_Printer**-Sammlung, und rufen Sie dann die Methode **SetDefaultPrinter** auf:
 
 ```powershell
-(Get-CimInstance -Class Win32_Printer -Filter "Name='HP LaserJet 5Si'").SetDefaultPrinter()
+$printer = Get-CimInstance -Class Win32_Printer -Filter "Name='HP LaserJet 5Si'"
+Invoke-CimMethod -InputObject $printer -MethodName SetDefaultPrinter
 ```
 
 **WScript.Network** ist etwas einfacher zu verwenden, da es eine **SetDefaultPrinter**-Methode besitzt, die nur den Druckernamen als Argument akzeptiert:
