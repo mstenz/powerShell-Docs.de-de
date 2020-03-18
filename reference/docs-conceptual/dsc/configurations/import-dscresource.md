@@ -1,13 +1,13 @@
 ---
 ms.date: 12/12/2018
-keywords: dsc,powershell,configuration,setup
+keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: Verwenden von Import-DscResource
-ms.openlocfilehash: 4bc269ab1dd4696298b4f33f7661473aae869eba
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a041169ad557becf7ca87641d9ce5222ee8f6beb
+ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417422"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79402447"
 ---
 # <a name="using-import-dscresource"></a>Verwenden von Import-DscResource
 
@@ -19,7 +19,7 @@ Die Syntax für `Import-DSCResource` ist unten dargestellt.  Wenn Sie Module mit
 Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName>] [-ModuleVersion <ModuleVersion>]
 ```
 
-|Parameter  |Beschreibung  |
+|Parameter  |BESCHREIBUNG  |
 |---------|---------|
 |`-Name`|Die Namen der DSC-Ressourcen, die Sie importieren müssen. Wenn der Name des Moduls angegeben wird, durchsucht der Befehl dieses Modul nach diesen DSC-Ressourcen; andernfalls durchsucht der Befehl die DSC-Ressourcen in allen DSC-Ressourcenpfaden. Platzhalter werden unterstützt.|
 |`-ModuleName`|Modulname oder Modulspezifikation.  Bei Angabe von Ressourcen, die aus einem Modul importiert werden sollen, versucht der Befehl, nur diese Ressourcen zu importieren. Wenn Sie nur das Modul angeben, importiert der Befehl alle DSC-Ressourcen im Modul.|
@@ -80,7 +80,7 @@ Dies bietet folgende Vorteile:
 
 Beim Erstellen der DSC-Konfiguration in ISE stellt PowerShell IntelliSense für Ressourcen und Ressourceneigenschaften zur Verfügung. Ressourcendefinitionen unter dem `$pshome`-Modulpfad werden automatisch geladen. Beim Importieren von Ressourcen mithilfe des `Import-DSCResource`-Schlüsselworts werden die angegebenen Ressourcendefinitionen hinzugefügt, und IntelliSense wird erweitert, um das Schema der importierten Ressource einzubeziehen.
 
-![IntelliSense für Ressourcen](../media/resource-intellisense.png)
+![IntelliSense für Ressourcen](media/import-dscresource/resource-intellisense.png)
 
 > [!NOTE]
 > In PowerShell 5.0 wurde der ISE für DSC-Ressourcen und deren Eigenschaften die Vervollständigung mit der TAB-TASTE hinzugefügt. Weitere Informationen finden Sie unter [Ressourcen](../resources/resources.md).
@@ -139,11 +139,11 @@ Das parallele Installieren und Verwenden mehrerer Versionen von Ressourcen wurde
 
 In der folgenden Abbildung sind zwei Versionen des **xPSDesiredStateConfiguration**-Moduls installiert.
 
-![Problembehebung bei mehreren Versionen einer Ressource](../media/multiple-resource-versions-broken.png)
+![Problembehebung bei mehreren Versionen einer Ressource](media/import-dscresource/multiple-resource-versions-broken.png)
 
 Kopieren Sie den Inhalt Ihrer gewünschten Modulversion in die oberste Ebene des Modulverzeichnisses.
 
-![Problembehebung bei mehreren Versionen einer Ressource](../media/multiple-resource-versions-fixed.png)
+![Problembehebung bei mehreren Versionen einer Ressource](media/import-dscresource/multiple-resource-versions-fixed.png)
 
 ### <a name="resource-location"></a>Ressourcenspeicherort
 
@@ -153,6 +153,6 @@ Beim Erstellen und Kompilieren von Konfigurationen können Ihre Ressourcen in ei
 
 Ab PowerShell 5.0 können Sie mit dem `-ModuleVersion`-Parameter angeben, welche Version eines Moduls in der Konfiguration verwendet werden soll.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 - [Ressourcen](../resources/resources.md)
