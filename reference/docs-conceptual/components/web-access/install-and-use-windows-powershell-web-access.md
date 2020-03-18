@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: Installieren und Verwenden von Windows PowerShell Web Access
-ms.openlocfilehash: 5f6e94859c55bbd07f3f8a83bc4b9a83bc89d0fa
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a3207c859c4b93b07d4c1b41d7df5269daa39a7d
+ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71692248"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79402617"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Installieren und Verwenden von Windows PowerShell Web Access
 
@@ -35,7 +35,7 @@ Dieses Thema enthält keine ausführliche Anleitung zum IIS-Webserverbetrieb, so
 
 Das folgende Diagramm zeigt die Funktionsweise von Windows PowerShell Web Access.
 
-![Windows PowerShell Web Access-Diagramm](images/Windows-PowerShell-Web-Access-diagram.jpg)
+![Windows PowerShell Web Access-Diagramm](media/install-and-use-windows-powershell-web-access/Windows-PowerShell-Web-Access-diagram.jpg)
 
 ## <a name="requirements-for-running-windows-powershell-web-access"></a>Anforderungen für die Ausführung von Windows PowerShell Web Access
 
@@ -99,7 +99,7 @@ Sie können das Windows PowerShell Web Access-Gateway auf einem Server mit Windo
    > [!NOTE]
    > Bei der Installation von Windows PowerShell Web Access mithilfe von Windows PowerShell-Cmdlets werden Webserver (IIS)-Verwaltungstools nicht standardmäßig hinzugefügt. Wenn Sie die Verwaltungstools auf demselben Server wie das Windows PowerShell Web Access-Gateway installieren möchten, fügen Sie dem Installationsbefehl wie in diesem Schritt angegeben den `-IncludeManagementTools`-Parameter hinzu. Wenn Sie die Windows PowerShell Web Access-Website über einen Remotecomputer verwalten, installieren Sie das IIS-Manager-Snap-In, indem Sie die [Remoteserver-Verwaltungstools für Windows 8.1](https://www.microsoft.com/en-us/download/details.aspx?id=39296) oder die [Remoteserver-Verwaltungstools für Windows 8](https://www.microsoft.com/en-us/download/details.aspx?id=28972) auf dem Computer installieren, von dem aus Sie das Gateway verwalten möchten.
 
-   Zum Installieren von Rollen oder Features auf einer Offline-VHD müssen Sie die Parameter `-ComputerName` und `-VHD` hinzufügen. Der Parameter `-ComputerName` enthält den Namen des Servers, auf dem die VHD eingebunden werden soll, und der Parameter `-VHD` enthält den Pfad zur VHD-Datei auf dem angegebenen Server.
+   Zum Installieren von Rollen oder Features auf einer Offline-VHD müssen Sie die Parameter `-ComputerName` und `-VHD` hinzufügen. Der Parameter `-ComputerName` enthält den Namen des Servers, auf dem die VHD eingebunden werden soll. Der Parameter `-VHD` enthält den Pfad zur VHD-Datei auf dem angegebenen Server.
 
    `Install-WindowsFeature -Name WindowsPowerShellWebAccess -VHD <path> -ComputerName <computer_name> -IncludeManagementTools -Restart`
 
@@ -109,12 +109,13 @@ Sie können das Windows PowerShell Web Access-Gateway auf einem Server mit Windo
 
 ### <a name="configure-the-gateway"></a>Konfigurieren des Gateways
 
-Das Cmdlet **Install-PswaWebApplication** stellt eine schnelle Möglichkeit zum Konfigurieren von Windows PowerShell Web Access dar. Sie können den Parameter `UseTestCertificate` zwar dem Cmdlet `Install-PswaWebApplication` hinzufügen können, um zu Testzwecken ein selbstsigniertes SSL-Zertifikat zu installieren, aber dies ist kein sicheres Verfahren. Verwenden Sie für eine sichere Produktionsumgebung immer ein gültiges SSL-Zertifikat, das von einer Zertifizierungsstelle signiert wurde. Mithilfe der IIS-Manager-Konsole können Administratoren das Testzertifikat durch ein signiertes Zertifikat ihrer Wahl ersetzen.
+Das Cmdlet **Install-PswaWebApplication** stellt eine schnelle Möglichkeit zum Konfigurieren von Windows PowerShell Web Access dar. Sie können den Parameter `UseTestCertificate` zwar dem Cmdlet `Install-PswaWebApplication` hinzufügen, um zu Testzwecken ein selbstsigniertes SSL-Zertifikat zu installieren, aber dies ist kein sicheres Verfahren. Verwenden Sie für eine sichere Produktionsumgebung immer ein gültiges SSL-Zertifikat, das von einer Zertifizierungsstelle signiert wurde. Mithilfe der IIS-Manager-Konsole können Administratoren das Testzertifikat durch ein signiertes Zertifikat ihrer Wahl ersetzen.
 
 Sie können die Konfiguration der Windows PowerShell Web Access-Webanwendung durchführen, indem Sie entweder das Cmdlet `Install-PswaWebApplication` ausführen oder im IIS-Manager GUI-basierte Konfigurationsschritte ausführen.
 Standardmäßig wird die Webanwendung **pswa** (und der dazugehörige Anwendungspool **pswa_pool**) durch das Cmdlet im Container **Standardwebsite** installiert, wie im IIS-Manager gezeigt. Bei Bedarf können Sie das Cmdlet anweisen, den Container „Standardwebsite“ der Webanwendung zu ändern. Der IIS-Manager bietet Konfigurationsoptionen, die für Webanwendungen verfügbar sind, beispielsweise das Ändern der Portnummer oder des SSL-Zertifikats (Secure Sockets Layer).
 
-> **![Sicherheitshinweis](images/securitynote.jpeg) Sicherheitshinweis** Es wird nachdrücklich empfohlen, dass Administratoren das Gateway so konfigurieren, dass ein gültiges, von einer Zertifizierungsstelle signiertes Zertifikat verwendet wird.
+> [!IMPORTANT]
+> Es wird nachdrücklich empfohlen, dass Administratoren das Gateway so konfigurieren, dass ein gültiges, von einer Zertifizierungsstelle signiertes Zertifikat verwendet wird.
 
 #### <a name="to-configure-the-windows-powershell-web-access-gateway-with-a-test-certificate-by-using-install-pswawebapplication"></a>So verwenden Sie das Install-PswaWebApplication-Cmdlet, um das Windows PowerShell Web Access-Gateway mit einem Testzertifikat zu konfigurieren
 
@@ -127,9 +128,10 @@ Standardmäßig wird die Webanwendung **pswa** (und der dazugehörige Anwendungs
 
    `Install-PswaWebApplication -UseTestCertificate`
 
-   > **![Sicherheitshinweis](images/securitynote.jpeg) Sicherheitshinweis** Der Parameter `UseTestCertificate` sollte nur in einer privaten Testumgebung verwendet werden. Für sichere Produktionsumgebungen empfiehlt sich die Verwendung eines gültigen Zertifikats, das von einer Zertifizierungsstelle signiert wurde.
+   > [!IMPORTANT]
+   > Der Parameter `UseTestCertificate` darf nur in einer privaten Testumgebung verwendet werden. Für sichere Produktionsumgebungen empfiehlt sich die Verwendung eines gültigen Zertifikats, das von einer Zertifizierungsstelle signiert wurde.
 
-   Beim Ausführen des Cmdlets wird die Windows PowerShell Web Access-Webanwendung im Container „Standardwebsite“ von IIS installiert. Das Cmdlet erstellt die erforderliche Infrastruktur zum Ausführen von Windows PowerShell Web Access auf der Standardwebsite `https://<server_name>/pswa`. Geben Sie zum Installieren der Webanwendung auf einer anderen Website den Websitenamen an, indem Sie den Parameter `WebSiteName` hinzufügen. Fügen Sie den Parameter `pswa`hinzu, um den Namen der Webanwendung zu ändern (der Standardname lautet `WebApplicationName` ).
+   Beim Ausführen des Cmdlets wird die Windows PowerShell Web Access-Webanwendung im Container „Standardwebsite“ von IIS installiert. Das Cmdlet erstellt die erforderliche Infrastruktur zum Ausführen von Windows PowerShell Web Access auf der Standardwebsite `https://<server_name>/pswa`. Geben Sie zum Installieren der Webanwendung auf einer anderen Website den Websitenamen an, indem Sie den Parameter `WebSiteName` hinzufügen. Fügen Sie den Parameter `WebApplicationName` hinzu, um den Namen der Webanwendung zu ändern (Standardname: `pswa`).
 
    Die folgenden Einstellungen werden durch die Ausführung des Cmdlets konfiguriert. Falls gewünscht, können Sie diese in der IIS-Manager-Konsole manuell ändern.
 
@@ -208,7 +210,7 @@ Weitere Informationen zu Windows PowerShell Web Access-Autorisierungsregeln und 
 
    Diese Autorisierungsregel erlaubt es einem bestimmten Benutzer, auf einen Computer im Netzwerk zuzugreifen, auf den er normalerweise zugreifen kann. Der Zugriff ist auf eine bestimmte Sitzungskonfiguration beschränkt, die die üblichen Anforderungen des Benutzers im Hinblick auf die Ausführung von Skripts und Cmdlets abdeckt.
 
-   Im folgenden Beispiel wird dem Benutzer `JSmith` in der Domäne `Contoso` Zugriff auf die Verwaltung des Computers `Contoso_214`gewährt und eine Sitzungskonfiguration mit dem Namen `NewAdminsOnly`verwendet.
+   Im folgenden Beispiel wird dem Benutzer `JSmith` in der Domäne `Contoso` Zugriff auf die Verwaltung des Computers `Contoso_214` gewährt und eine Sitzungskonfiguration mit dem Namen `NewAdminsOnly` verwendet.
 
    `Add-PswaAuthorizationRule -UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly`
 
@@ -232,7 +234,7 @@ Nach der Installation von Windows PowerShell Web Access können Sie die Konfigur
 
 2. Klicken Sie im Menü **Verwalten** auf **Rollen und Funktionen hinzufügen**.
 
-3. Wählen Sie auf der Seite **Installationstyp auswählen** die Option **Rollenbasierte oder featurebasierte Installation** aus.
+3. Wählen Sie auf der Seite **Installationstyp auswählen** die Option **Rollenbasierte oder featurebasierte Installation**.
    Klicken Sie auf **Weiter**.
 
 4. Wählen Sie auf der Seite **Zielserver auswählen** einen Server aus dem Serverpool aus, oder wählen Sie eine Offline-VHD aus. Um eine Offline-VHD als Zielserver auszuwählen, müssen Sie zuerst den Server auswählen, auf dem die VHD eingebunden werden soll. Wählen Sie anschließend die VHD-Datei aus. Informationen zum Hinzufügen von Servern zu Ihrem Serverpool finden Sie in der Server-Manager-Hilfe. Klicken Sie nach dem Auswählen des Zielservers auf **Weiter**.
@@ -275,7 +277,7 @@ Die Anweisungen in diesem Abschnitt gelten für die Installation der Windows Pow
 
 9. Führen Sie die Schritte im Verfahren [So konfigurieren Sie ein SSL-Zertifikat im IIS-Manager](#to-configure-an-ssl-certificate-in-iis-manager) in diesem Thema aus.
 
-10. ![Sicherheitshinweis](images/SecurityNote.jpeg) Optionaler Sicherheitsschritt:
+10. Optionaler Sicherheitsschritt:
 
     Doppelklicken Sie im Inhaltsbereich auf **SSL-Einstellungen**, während die Website im Strukturbereich ausgewählt ist.
     Wählen Sie die Option **SSL erforderlich** aus, und klicken Sie anschließend im Bereich **Aktionen** auf **Übernehmen**. Optional können Sie es im Bereich **SSL-Einstellungen** obligatorisch machen, dass Benutzer, die eine Verbindung mit der Windows PowerShell Web Access-Website herstellen, über Clientzertifikate verfügen. Clientzertifikate dienen dazu, die Identität des Benutzers eines Clientgeräts zu überprüfen. Weitere Informationen dazu, wie das Anfordern von Clientzertifikaten die Sicherheit von Windows PowerShell Web Access erhöhen kann, finden Sie unter [Autorisierungsregeln und Sicherheitsfeatures von Windows PowerShell Web Access](authorization-rules-and-security-features-of-windows-powershell-web-access.md) in diesem Handbuch.
@@ -371,7 +373,7 @@ Weitere Informationen zu Windows PowerShell Web Access-Autorisierungsregeln und 
    - Klicken Sie auf dem Windows-Desktop mit der rechten Maustaste in der Taskleiste auf **Windows PowerShell** und anschließend auf **Als Administrator ausführen**.
    - Klicken Sie auf dem Windows-**Startbildschirm** mit der rechten Maustaste auf **Windows PowerShell**, und klicken Sie anschließend auf **Als Administrator ausführen**.
 
-1. ![Sicherheitshinweis](images/SecurityNote.jpeg) Optionaler Schritt zum Einschränken des Benutzerzugriffs mithilfe von Sitzungskonfigurationen:
+1. Optionaler Schritt zum Einschränken des Benutzerzugriffs mithilfe von Sitzungskonfigurationen:
 
    Überprüfen Sie, dass die Sitzungskonfigurationen, die Sie in Ihren Regeln verwenden möchten, bereits vorhanden sind. Falls diese noch nicht erstellt wurden, verwenden Sie die Anleitung zum Erstellen von Sitzungskonfigurationen unter [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations).
 
@@ -379,9 +381,9 @@ Weitere Informationen zu Windows PowerShell Web Access-Autorisierungsregeln und 
 
    `Add-PswaAuthorizationRule -UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>`
 
-   Diese Autorisierungsregel erlaubt es einem bestimmten Benutzer, auf einen Computer im Netzwerk zuzugreifen, auf den er normalerweise zugreifen kann. Der Zugriff ist auf eine bestimmte Sitzungskonfiguration beschränkt, die die üblichen Anforderungen des Benutzers im Hinblick auf die Ausführung von Skripts und Cmdlets abdeckt.
+   Diese Autorisierungsregel erlaubt es einem bestimmten Benutzer, auf einen Computer im Netzwerk zuzugreifen, auf den er üblicherweise zugreifen kann. Der Zugriff ist auf eine bestimmte Sitzungskonfiguration beschränkt, die die üblichen Anforderungen des Benutzers im Hinblick auf die Ausführung von Skripts und Cmdlets abdeckt.
 
-   Im folgenden Beispiel wird dem Benutzer `JSmith` in der Domäne `Contoso` Zugriff auf die Verwaltung des Computers `Contoso_214`gewährt und eine Sitzungskonfiguration mit dem Namen `NewAdminsOnly`verwendet.
+   Im folgenden Beispiel wird dem Benutzer `JSmith` in der Domäne `Contoso` Zugriff auf die Verwaltung des Computers `Contoso_214` gewährt und eine Sitzungskonfiguration mit dem Namen `NewAdminsOnly` verwendet.
 
    `Add-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly`
 
@@ -410,7 +412,7 @@ Für sichere Produktionsumgebungen sollten Sie stets ein gültiges, von einer Ze
 
    - Klicken Sie auf **Selbstsigniertes Zertifikat erstellen**, um ein Zertifikat zu erstellen, das Sie sofort verwenden und später bei Bedarf von einer Zertifizierungsstelle signieren lassen können. Geben Sie einen Anzeigenamen für das selbstsignierte Zertifikat an, z.B. **Windows PowerShell Web Access**. Diese Vorgehensweise ist als nicht sicher anzusehen und wird nur für eine private Testumgebung empfohlen.
 
-1. Wählen Sie nach der Erstellung bzw. Beschaffung eines Zertifikats die Website, auf die das Zertifikat angewendet werden soll (z.B. **Standardwebsite**), im IIS-Manager-Strukturbereich aus. Klicken Sie anschließend im Bereich **Aktionen** auf **Bindungen**.
+1. Wählen Sie nach der Erstellung bzw. Beschaffung eines Zertifikats die Website, auf die das Zertifikat angewendet werden soll (z. B. **Standardwebsite**), im IIS-Manager-Strukturbereich aus. Klicken Sie anschließend im **Aktionsbereich** auf **Bindungen** .
 
 1. Fügen Sie im Dialogfeld **Websitebindung hinzufügen** eine Bindung vom Typ **https** für die Website hinzu, falls noch keine Bindung angezeigt wird. Wenn Sie kein selbstsigniertes Zertifikat verwenden, geben Sie den Hostnamen aus Schritt 3 dieses Verfahrens an. Wenn Sie ein selbstsigniertes Zertifikat verwenden, ist dieser Schritt nicht erforderlich.
 
