@@ -1,32 +1,30 @@
 ---
-title: Installieren von PowerShell Core unter macOS
-description: Informationen zur Installation von PowerShell Core unter macOS
+title: Installieren von PowerShell unter macOS
+description: Informationen zur Installation von PowerShell unter macOS
 ms.date: 12/12/2018
-ms.openlocfilehash: ad1306e99261e8e6e2fd49d3199d863929c31e92
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7f0d6a1aa275deb39a7d670546ee7e833b8ef315
+ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73444431"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78404824"
 ---
-# <a name="installing-powershell-core-on-macos"></a>Installieren von PowerShell Core unter macOS
+# <a name="installing-powershell-on-macos"></a>Installieren von PowerShell unter macOS
 
-PowerShell Core unterstützt macOs 10.12 und höher.
+PowerShell unterstützt macOS 10.12 und höher.
 Sämtliche Pakete sind auf der Seite [Freigaben][] über GitHub verfügbar.
 Nachdem Sie das Paket installiert haben, führen Sie `pwsh` über das Terminal aus.
 
-> [!TIP]
-> Wenn Sie das [.NET Core SDK](/dotnet/core/sdk) bereits installiert haben, können Sie PowerShell einfach als [globales .NET-Tool](/dotnet/core/tools/global-tools) installieren.
+> [!NOTE]
+> PowerShell 7 ist ein direktes Upgrade, mit dem PowerShell Core 6.x entfernt wird.
 >
-> ```
-> dotnet tool install --global PowerShell
-> ```
+> Der Ordner `/usr/local/microsoft/powershell/6` wird durch `/usr/local/microsoft/powershell/7` ersetzt.
+>
+> Wenn Sie PowerShell 6 und PowerShell 7 parallel ausführen müssen, installieren Sie PowerShell 6 mithilfe der [binary archive](#binary-archives)-Methode neu.
 
 ## <a name="about-brew"></a>Informationen zu Brew
 
-Bei [Homebrew][brew] handelt es sich um den bevorzugten Paket-Manager für macOS.
-Wenn der Befehl `brew` nicht gefunden wird, müssen Sie Homebrew installieren, indem Sie [die entsprechenden Anweisungen][brew] ausführen.
-Andernfalls können Sie PowerShell über [Direkter Download](#installation-via-direct-download) oder aus [Archive der Binärdateien](#binary-archives) installieren.
+Bei [Homebrew][brew] handelt es sich um den bevorzugten Paket-Manager für macOS. Wenn der Befehl `brew` nicht gefunden wird, müssen Sie Homebrew installieren, indem Sie [die entsprechenden Anweisungen][brew] ausführen. Andernfalls können Sie PowerShell über [Direkter Download](#installation-via-direct-download) oder aus [Archive der Binärdateien](#binary-archives) installieren.
 
 ## <a name="installation-of-latest-stable-release-via-homebrew-on-macos-1012-or-higher"></a>Installation des neuesten stabilen Release über Homebrew unter macOS 10.12 oder höher
 
@@ -103,6 +101,14 @@ sudo installer -pkg powershell-6.2.0-osx-x64.pkg -target /
 
 Installieren Sie [OpenSSL](#install-openssl). OpenSSL ist für PowerShell-Remotingfunktionen und CIM-Vorgänge erforderlich.
 
+## <a name="install-as-a-net-global-tool"></a>Installieren als globales .NET-Tool
+
+Wenn Sie das [.NET Core SDK](/dotnet/core/sdk) bereits installiert haben, können Sie PowerShell einfach als [globales .NET-Tool](/dotnet/core/tools/global-tools) installieren.
+
+```
+dotnet tool install --global PowerShell
+```
+
 ## <a name="binary-archives"></a>Archive der Binärdateien
 
 `tar.gz`-Archive der PowerShell-Binärdateien werden für die macOS-Plattform zur Verfügung gestellt, um erweiterte Bereitstellungsszenarios zu ermöglichen.
@@ -161,7 +167,7 @@ sudo mkdir -p /usr/local/opt/openssl
 sudo ln -s /opt/local/lib /usr/local/opt/openssl/lib
 ```
 
-## <a name="uninstalling-powershell-core"></a>Deinstallieren von PowerShell Core
+## <a name="uninstalling-powershell"></a>Deinstallieren von PowerShell
 
 Wenn Sie PowerShell mit Homebrew installiert haben, verwenden Sie den folgenden Befehl zum Deinstallieren:
 
@@ -180,7 +186,7 @@ Lesen Sie den Abschnitt [Pfade](#paths) in diesem Artikel, um zu erfahren, wie S
 > [!NOTE]
 > Dies ist nicht notwendig, wenn Sie eine Installation mit Homebrew durchgeführt haben.
 
-## <a name="paths"></a>Pfade
+## <a name="paths"></a>Paths
 
 * `$PSHOME` ist `/usr/local/microsoft/powershell/6.2.0/`.
 * Benutzerprofile werden über `~/.config/powershell/profile.ps1` gelesen.

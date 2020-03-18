@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,setup
 title: DSC-Verbesserungen in WMF 5.1
-ms.openlocfilehash: d9339ec9f316c4a32c5fa6cb2360c077973ee334
-ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
+ms.openlocfilehash: 99434d14100de54d2d4c89c5888741ab2f1c512a
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76818106"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78277606"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>Verbesserungen an DSC (Desired State Configuration) in WMF 5.1
 
@@ -59,7 +59,7 @@ Weitere Informationen finden Sie in den nachfolgenden Abbildungen:
 
 - Lokale Konfigurationseinstellungen, die eine Teilkonfiguration definieren, die von einem Knoten empfangen werden darf.
 
-  ![Beispiel einer Metakonfiguration](../images/DSC-improvements/MetaConfigPartialOne.png)
+  ![Beispiel einer Metakonfiguration](media/DSC-improvements/MetaConfigPartialOne.png)
 
 - Beispieldefinition einer partiellen Konfiguration
 
@@ -80,11 +80,11 @@ Weitere Informationen finden Sie in den nachfolgenden Abbildungen:
 
 - ConfigurationName, eingebettet in der generierten MOF-Datei
 
-  ![Beispiel einer generierten MOF-Datei](../images/DSC-improvements/PartialGeneratedMof.png)
+  ![Beispiel einer generierten MOF-Datei](media/DSC-improvements/PartialGeneratedMof.png)
 
 - FileName im Repository der Pull-Konfiguration
 
-  ![FileName im Repository der Konfiguration](../images/DSC-improvements/PartialInConfigRepository.png)
+  ![FileName im Repository der Konfiguration](media/DSC-improvements/PartialInConfigRepository.png)
 
   Basierend auf dem Namen des Azure Automation-Diensts generierte MOF-Dateien nach dem Schema „`<ConfigurationName>.<NodeName>.mof`“. Die nachstehende Konfiguration wird also in „PartialOne.localhost.mof“ kompiliert.
 
@@ -293,11 +293,11 @@ Die Festlegung der oben genannten Metakonfiguration auf einem Knoten aktiviert d
 > Signaturen von Modulkatalogen und -konfigurationen werden nur bei der ersten Anwendung der Konfiguration auf das System überprüft, oder wenn das Modul heruntergeladen und installiert wird.
 > Konsistenzläufe überprüfen nicht die Signatur von „current.mof“-Dateien oder deren Modulabhängigkeiten. Wenn bei der Überprüfung zu irgendeinem Zeitpunkt ein Fehler auftritt, z. B. wenn die vom Pull-Server mithilfe von Pull übertragene Konfiguration nicht signiert ist, wird bei der Verarbeitung der Konfiguration der nachstehende Fehler ausgegeben, und alle temporären Dateien werden gelöscht.
 
-![Beispielkonfiguration einer Fehlerausgabe](../images/DSC-improvements/PullUnsignedConfigFail.png)
+![Beispielkonfiguration einer Fehlerausgabe](media/DSC-improvements/PullUnsignedConfigFail.png)
 
 Entsprechend wird beim Übertragen eines Moduls mithilfe von Pull, dessen Katalog nicht signiert ist, der folgende Fehler ausgegeben:
 
-![Beispielmodul einer Fehlerausgabe](../images/DSC-improvements/PullUnisgnedCatalog.png)
+![Beispielmodul einer Fehlerausgabe](media/DSC-improvements/PullUnisgnedCatalog.png)
 
 #### <a name="push"></a>Push
 
@@ -345,12 +345,12 @@ Eine Konfiguration, die über Push bereitgestellt wurde, könnte an ihrer Quelle
   Start-DscConfiguration -Path .\Test -Wait -Verbose -Force
   ```
 
-  ![ErrorUnsignedMofPushed](../images/DSC-improvements/PushUnsignedMof.png)
+  ![ErrorUnsignedMofPushed](media/DSC-improvements/PushUnsignedMof.png)
 
 - Signieren Sie die Konfigurationsdatei mithilfe eines Codesignaturzertifikats.
 
-  ![SignMofFile](../images/DSC-improvements/SignMofFile.png)
+  ![SignMofFile](media/DSC-improvements/SignMofFile.png)
 
 - Versuchen Sie, die signierte MOF-Datei mithilfe von Push zu übertragen.
 
-  ![PushSignedMofFile](../images/DSC-improvements/PushSignedMof.png)
+  ![PushSignedMofFile](media/DSC-improvements/PushSignedMof.png)

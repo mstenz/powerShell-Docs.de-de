@@ -4,12 +4,12 @@ contributor: JKeithB, SydneyhSmith
 keywords: gallery,powershell,cmdlet,psgallery
 description: Richtlinien für Herausgeber
 title: Veröffentlichungsrichtlinien und Best Practices für den PowerShell-Katalog
-ms.openlocfilehash: 9047e938ab961c68e225c9029e52403c40afbe26
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 07271e037100350d3efc7ae63860f42afd22aae7
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417672"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278211"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>Veröffentlichungsrichtlinien und Best Practices für den PowerShell-Katalog
 
@@ -128,7 +128,7 @@ Verwenden Sie die folgenden Tags, um Benutzern anzuzeigen, welche Pakete sich f�
 - MacOS: Pakete, die mit MacOS kompatibel sind.
 
 Wenn Sie das Paket mit den kompatiblen Plattformen markieren, wird es in die Katalogsuchfilter im linken Bereich der Suchergebnisse einbezogen. Wenn Sie Ihr Paket auf GitHub hosten, profitieren Sie durch die Markierung außerdem von unserem [PowerShell-Katalog-Kompatibilitätsschutz](https://img.shields.io/powershellgallery/p/:packageName.svg)
-![Kompatibilitätsschutz](../Images/CosmosDB.svg).
+![Kompatibilitätsschutz](media/publishing-guidelines/CosmosDB.svg).
 
 ## <a name="include-tests"></a>Schließen Sie Tests ein
 
@@ -167,7 +167,7 @@ Das Signieren von PowerShell-Dateien ist ein bewährtes Vorgehen, mit dem sicher
 
 Die Katalogsignierung von Modulen ist ein Feature, das PowerShell in Version 5.1 hinzugefügt wurde. Das Signieren eines Moduls wird im Artikel [Katalog-Cmdlets](/powershell/scripting/wmf/5.1/catalog-cmdlets) erläutert. Allgemein ausgedrückt wird bei der Katalogsignierung eine Katalogdatei erstellt, die einen Hashwert für jede Datei im Modul enthält, und anschließend wird diese Datei signiert.
 
-Die **PowerShellGet**-Cmdlets `Publish-Module`, `Install-Module` und `Update-Module` überprüfen die Signatur auf ihre Gültigkeit und bestätigen dann, dass der Hashwert für jedes Paket den Daten im Katalog entspricht. `Save-Module` überprüft keine Signaturen. Wenn eine vorherige Version des Moduls im System installiert ist, wird mit `Install-Module` bestätigt, dass die Signaturstelle für die neue Version derjenigen der vorherigen Installation entspricht. `Install-Module` und `Update-Module` verwenden die Signatur in einer `.PSD1`-Datei, wenn das Paket nicht durch den Katalog signiert wurde. Die Katalogsignierung kann zusammen mit dem Signieren von Skriptdateien verwendet werden, ersetzt diese Methode aber nicht. PowerShell führt beim Laden von Modulen keine Überprüfung von Katalogsignaturen durch.
+Die **PowerShellGet**-Cmdlets `Publish-Module`, `Install-Module` und `Update-Module` überprüfen die Signatur auf Gültigkeit und bestätigen dann, dass der Hashwert für jedes Paket den Daten im Katalog entspricht. `Save-Module` überprüft keine Signaturen. Wenn eine vorherige Version des Moduls im System installiert ist, wird mit `Install-Module` bestätigt, dass die Signaturstelle für die neue Version derjenigen der vorherigen Installation entspricht. `Install-Module` und `Update-Module` verwenden die Signatur in einer `.PSD1`-Datei, wenn das Paket nicht durch den Katalog signiert wurde. Die Katalogsignierung kann zusammen mit dem Signieren von Skriptdateien verwendet werden, ersetzt diese Methode aber nicht. PowerShell führt beim Laden von Modulen keine Überprüfung von Katalogsignaturen durch.
 
 ## <a name="follow-semver-guidelines-for-versioning"></a>Folgen Sie bei der Versionsverwaltung den SemVer-Richtlinien
 

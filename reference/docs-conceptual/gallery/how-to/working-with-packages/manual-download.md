@@ -3,12 +3,12 @@ ms.date: 09/11/2018
 contributor: JKeithB
 keywords: Katalog,PowerShell,psgallery
 title: Manuelles Herunterladen des Pakets
-ms.openlocfilehash: c0a96e866dfd27f9b2170ea540ec6dd0c67701fd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e562f5b94b4d2caa7d31269a324e417d1a9e844a
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71327891"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278710"
 ---
 # <a name="manual-package-download"></a>Manuelles Herunterladen des Pakets
 
@@ -22,7 +22,7 @@ Der PowerShell-Katalog unterstützt das direkte Herunterladen von Paketen von de
 
 Auf jeder Seite gibt es einen Link zum manuellen Download:
 
-![Manueller Download](../../Images/packagedisplaypagewithpseditions.png)
+![Manueller Download](media/manual-download/packagedisplaypagewithpseditions.png)
 
 Klicken Sie auf **Download the raw nupkg file** (NUPKG-Rohdatei herunterladen), um das Paket manuell herunterzuladen. Eine Kopie des Pakets mit dem Namen `<name>.<version>.nupkg` wird in den Downloadordner Ihres Browsers heruntergeladen.
 
@@ -44,9 +44,10 @@ Eine NuGet-Paketdatei enthält die folgenden **NuGet-spezifischen Elemente**, di
 Am unkompliziertesten ist es, die NuGet-spezifischen Elemente aus dem Ordner zu entfernen. Nach dem Entfernen der Elemente bleibt der vom Paketautor erstellte PowerShell-Code übrig.
 Eine Liste der NuGet-spezifischen Elemente finden Sie unter [Manuelles Herunterladen eines Pakets](#using-manual-download-to-acquire-a-package).
 
-Das Verfahren besteht aus folgenden Schritten:
+Die Schritte lauten wie folgt:
 
-1. Entpacken Sie den Inhalt des NuGet-Pakets in einen lokalen Ordner.
+1. Heben Sie die Blockierung der aus dem Internet heruntergeladenen NuGet-Paketdatei (`.nupkg`) auf, z. B. mit dem Cmdlet `Unblock-File -Path C:\Downloads\module.nupkg`.
+2. Entpacken Sie den Inhalt des NuGet-Pakets in einen lokalen Ordner.
 2. Löschen Sie die NuGet-spezifischen Elemente aus dem Ordner.
 3. Benennen Sie den Ordner um. Der Standardname des Ordners ist für gewöhnlich `<name>.<version>`. Die Version kann `-prerelease` enthalten, wenn das Modul als Vorabversion gekennzeichnet ist. Benennen Sie den Ordner in den Modulnamen um. `azurerm.storage.5.0.4-preview` wird beispielsweise zu `azurerm.storage`.
 4. Kopieren Sie den Ordner in einen der Ordner in `$env:PSModulePath value`. `$env:PSModulePath` ist eine durch Semikolons getrennte Reihe von Pfaden, in denen PowerShell nach Modulen suchen soll.
@@ -61,9 +62,10 @@ Das Verfahren besteht aus folgenden Schritten:
 
 Es ist am unkompliziertesten, das NuGet-Paket zu entpacken und das Skript dann direkt zu verwenden.
 
-Das Verfahren besteht aus folgenden Schritten:
+Die Schritte lauten wie folgt:
 
-1. Entpacken Sie den Inhalt des NuGet-Pakets.
+1. Heben Sie die Blockierung der aus dem Internet heruntergeladenen NuGet-Paketdatei (`.nupkg`) auf, z. B. mit dem Cmdlet `Unblock-File -Path C:\Downloads\package.nupkg`.
+2. Entpacken Sie den Inhalt des NuGet-Pakets.
 2. Die `.PS1`-Datei im Ordner kann direkt von dort verwendet werden.
 3. Sie können die NuGet-spezifischen Elemente aus dem Ordner löschen.
 

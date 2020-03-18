@@ -2,18 +2,34 @@
 title: Replizieren der ISE-Benutzeroberfläche in Visual Studio Code
 description: Replizieren der ISE-Benutzeroberfläche in Visual Studio Code
 ms.date: 08/06/2018
-ms.openlocfilehash: d5542e9a3a48b1ae64356309be669418edf6c79e
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 193243dc2e3e921b22a6ee068370200ae84ce4ac
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74117488"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279248"
 ---
 # <a name="how-to-replicate-the-ise-experience-in-visual-studio-code"></a>Replizieren der ISE-Benutzeroberfläche in Visual Studio Code
 
 Obwohl die PowerShell-Erweiterung für VSCode keine vollständige Funktionsparität mit der PowerShell ISE anstrebt, gibt es Funktionen, die die VSCode-Benutzeroberfläche für Benutzer der ISE natürlicher gestalten.
 
 Dieses Dokument versucht, Einstellungen aufzulisten, die Sie in VSCode konfigurieren können, um die Benutzerfreundlichkeit im Vergleich zur ISE etwas vertrauter zu gestalten.
+
+## <a name="ise-mode"></a>ISE-Modus
+
+> [!NOTE]
+> Dieses Feature ist in der PowerShell Preview-Erweiterung seit Version 2019.12.0 und in der PowerShell-Erweiterung seit Version 2020.3.0 verfügbar.
+
+Die einfachste Möglichkeit zum Replizieren der ISE-Benutzeroberfläche in Visual Studio Code ist das Aktivieren des ISE-Modus.
+Öffnen Sie hierzu die Befehlspalette (<kbd>F1</kbd> oder <kbd>STRG</kbd>+<kbd>UMSCHALT</kbd>+<kbd>P</kbd> oder <kbd>BEFEHLSTASTE</kbd>+<kbd>UMSCHALT</kbd>+<kbd>P</kbd> unter macOS), und geben Sie „ISE-Modus“ ein.
+Wählen Sie in der Liste „PowerShell: ISE-Modus aktivieren“ aus.
+
+Dieser Befehl wendet einen Großteil der in diesem Dokument beschriebenen Einstellungen automatisch an.
+Das Ergebnis sieht wie folgt aus:
+
+![ISE-Modus](media/How-To-Replicate-the-ISE-Experience-In-VSCode/3-ise-mode.png)
+
+Der Rest dieses Artikels enthält detailliertere Informationen zu den Einstellungen im ISE-Modus und einigen zusätzlichen Einstellungen.
 
 ## <a name="key-bindings"></a>Schlüsselbindungen
 
@@ -36,13 +52,16 @@ Wenn Sie nach einer Möglichkeit zur Vereinfachung der Visual Studio Code-Benutz
 "debug.openDebug": "neverOpen",
 ```
 
+> [!NOTE]
+> Diese Einstellungen sind im [ISE-Modus](#ise-mode) enthalten.
+
 Dies führt zum Ausblenden der Aktivitätsleiste und der Seitenleiste zum Debuggen innerhalb des roten Kastens:
 
-![Hervorgehobener Abschnitt mit Aktivitätsleiste und der Seitenleiste zum Debuggen](images/How-To-Replicate-the-ISE-Experience-In-VSCode/1-highlighted-sidebar.png)
+![Hervorgehobener Abschnitt mit Aktivitätsleiste und der Seitenleiste zum Debuggen](media/How-To-Replicate-the-ISE-Experience-In-VSCode/1-highlighted-sidebar.png)
 
 Das Endergebnis sieht so aus:
 
-![Vereinfachte Ansicht von VS Code](images/How-To-Replicate-the-ISE-Experience-In-VSCode/2-simplified-ui.png)
+![Vereinfachte Ansicht von VS Code](media/How-To-Replicate-the-ISE-Experience-In-VSCode/2-simplified-ui.png)
 
 ## <a name="tab-completion"></a>Registerkartenvervollständigung
 
@@ -55,7 +74,10 @@ Fügen Sie die folgende Einstellung hinzu, um Vervollständigung mit der TAB-TAS
 > [!NOTE]
 > Diese Einstellung wurde VSCode direkt (anstatt in der Erweiterung) hinzugefügt. Das Verhalten wird direkt von VSCode bestimmt und kann durch die Erweiterung nicht geändert werden.
 
-## <a name="no-focus-on-console-when-executing"></a>Kein Fokus auf der Konsole bei der Ausführung
+> [!NOTE]
+> Diese Einstellung ist im [ISE-Modus](#ise-mode) enthalten.
+
+## <a name="no-focus-on-console-when-executing"></a>Kein Fokus auf der Konsole beim Ausführen
 
 So bleibt der Fokus bei der Ausführung mit <kbd>F8</kbd> im Editor:
 
@@ -63,7 +85,10 @@ So bleibt der Fokus bei der Ausführung mit <kbd>F8</kbd> im Editor:
 "powershell.integratedConsole.focusConsoleOnExecute": false
 ```
 
-Der Standardwert ist aus Gründen der Barrierefreiheit `true`.
+> [!NOTE]
+> Diese Einstellung ist im [ISE-Modus](#ise-mode) enthalten.
+
+Der Standardwert lautet aus Gründen der Barrierefreiheit `true`.
 
 ## <a name="dont-start-integrated-console-on-startup"></a>Integrierte Konsole beim Start nicht starten
 
@@ -84,6 +109,9 @@ Um neue/unbenannte Dateien zu erstellen, registrieren Sie sie standardmäßig al
 "files.defaultLanguage": "powershell",
 ```
 
+> [!NOTE]
+> Diese Einstellung ist im [ISE-Modus](#ise-mode) enthalten.
+
 ## <a name="color-scheme"></a>Farbschema
 
 Für VSCode stehen eine Reihe von ISE-Designs zur Verfügung, damit der Editor der ISE wesentlich ähnlicher sieht.
@@ -97,11 +125,17 @@ Sie können dieses Design in den Einstellungen wie folgt festlegen:
 "workbench.colorTheme": "PowerShell ISE",
 ```
 
+> [!NOTE]
+> Diese Einstellung ist im [ISE-Modus](#ise-mode) enthalten.
+
 ## <a name="powershell-command-explorer"></a>PowerShell-Befehls-Explorer
 
 Dank der Arbeit von [@corbob](https://github.com/corbob) weist die PowerShell-Erweiterung Anfänge eines eigenen Befehls-Explorers auf.
 
 Geben Sie `PowerShell Command Explorer` in der [Befehlspalette] ein, und drücken Sie die <kbd>EINGABETASTE</kbd>.
+
+> [!NOTE]
+> Dies wird im [ISE-Modus](#ise-mode) automatisch angezeigt.
 
 ## <a name="open-in-the-ise"></a>Öffnen in der ISE
 
