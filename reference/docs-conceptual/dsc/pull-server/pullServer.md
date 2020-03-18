@@ -2,12 +2,12 @@
 ms.date: 01/08/2020
 keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: DSC-Pulldienst
-ms.openlocfilehash: f171c3dc579dfb24a8c9fb87fbb50dccae619091
-ms.sourcegitcommit: aaf1284dfec2e4c698009d6dc27ff103aaafd581
+ms.openlocfilehash: cf2420e6889f63ac3b2859e5ee36fa888b728afc
+ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76885386"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79402437"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Desired State Configuration – Pulldienst
 
@@ -28,10 +28,10 @@ Die empfohlene Skalierung für jede Lösung lautet wie folgt:
 |                   Lösung                   |              Clientknoten              |
 | -------------------------------------------- | -------------------------------------- |
 | Windows-Pullserver mit MDB-/ESENT-Datenbank | Bis zu 500 Knoten                        |
-| Windows-Pullserver mit SQL-Datenbank       | Bis zu 1.000 Knoten                       |
-| Azure Automation DSC                         | Szenarios mit mehr als 1.000 Knoten |
+| Windows-Pullserver mit SQL-Datenbank       | Bis zu 3500 Knoten                       |
+| Azure Automation DSC                         | Sowohl kleine als auch große Umgebungen      |
 
-**Die empfohlene Lösung** und die Option mit den meisten verfügbaren Features ist [Azure Automation DSC](/azure/automation/automation-dsc-getting-started).
+**Die empfohlene Lösung** und die Option mit den meisten verfügbaren Features ist [Azure Automation DSC](/azure/automation/automation-dsc-getting-started). Eine Obergrenze für die Anzahl von Knoten pro Automation-Konto wurde nicht bestimmt.
 
 Der Azure-Dienst kann Knoten lokal in privaten Rechenzentren oder in öffentlichen Clouds wie Azure und AWS verwalten. Für private Umgebungen, in denen Server keine direkte Verbindung mit dem Internet herstellen können, sollten Sie die Begrenzung des ausgehenden Datenverkehrs auf den veröffentlichten Azure-IP-Adressbereich in Betracht ziehen. Informationen hierzu finden Sie unter [Azure Datacenter IP Ranges](https://www.microsoft.com/download/details.aspx?id=41653) (IP-Adressbereiche für Azure-Rechenzentren).
 
