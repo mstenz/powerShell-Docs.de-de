@@ -2,12 +2,12 @@
 ms.date: 02/03/2020
 keywords: powershell,core
 title: Releaseverlauf von Modulen und Cmdlets
-ms.openlocfilehash: 9b7c769198fa2a39d8efcc9602f2a913c041289c
-ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
+ms.openlocfilehash: 824380c7aa732e6a2027d86be33cbde901ab11e1
+ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78404983"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80082731"
 ---
 # <a name="release-history-of-modules-and-cmdlets"></a>Releaseverlauf von Modulen und Cmdlets
 
@@ -311,17 +311,17 @@ Dies ist in Bearbeitung. Helfen Sie uns dabei, diese Informationen auf dem neues
 | ConvertTo-SecureString    | &check; | &check; | &check; | &check; |                                         |
 | Get-Acl                   | &check; | &check; | &check; | &check; | Nur Windows                            |
 | Get-AuthenticodeSignature | &check; | &check; | &check; | &check; | Nur Windows                            |
-| Get-CmsMessage            | &check; | &check; | &check; | &check; | Nur Windows                            |
+| Get-CmsMessage            | &check; | &check; | &check; | &check; | Unterstützung für Linux/macOS in 7.1 hinzugefügt    |
 | Get-Credential            | &check; | &check; | &check; | &check; |                                         |
 | Get-ExecutionPolicy       | &check; | &check; | &check; | &check; | Gibt unter Linux/macOS **Uneingeschränkt** zurück |
 | Get-PfxCertificate        | &check; | &check; | &check; | &check; |                                         |
 | New-FileCatalog           | &check; | &check; | &check; | &check; | Nur Windows                            |
-| Protect-CmsMessage        | &check; | &check; | &check; | &check; | Nur Windows                            |
+| Protect-CmsMessage        | &check; | &check; | &check; | &check; | Unterstützung für Linux/macOS in 7.1 hinzugefügt    |
 | Set-Acl                   | &check; | &check; | &check; | &check; | Nur Windows                            |
 | Set-AuthenticodeSignature | &check; | &check; | &check; | &check; | Nur Windows                            |
 | Set-ExecutionPolicy       | &check; | &check; | &check; | &check; | Funktioniert nicht unter Linux/macOS             |
 | Test-FileCatalog          | &check; | &check; | &check; | &check; | Nur Windows                            |
-| Unprotect-CmsMessage      | &check; | &check; | &check; | &check; | Nur Windows                            |
+| Unprotect-CmsMessage      | &check; | &check; | &check; | &check; | Unterstützung für Linux/macOS in 7.1 hinzugefügt    |
 
 ### <a name="microsoftpowershellutility"></a>Microsoft.PowerShell.Utility
 
@@ -516,66 +516,22 @@ Dies ist in Bearbeitung. Helfen Sie uns dabei, diese Informationen auf dem neues
 
 |                Cmdlet-Name                 |   5,1   |   6.x   |   7.0   |   7.1   |     Hinweis     |
 | ------------------------------------------ | :-----: | :-----: | :-----: | :-----: | ------------ |
-| Add-NodeKeys                               |         | &check; |         |         |              |
-| ConvertTo-MOFInstance                      |         | &check; |         |         |              |
 | Disable-DscDebug                           | &check; |         |         |         | Nur Windows |
 | Enable-DscDebug                            | &check; |         |         |         | Nur Windows |
-| Generate-VersionInfo                       |         | &check; |         |         |              |
-| Get-CompatibleVersionAddtionaPropertiesStr |         | &check; |         |         |              |
-| Get-ComplexResourceQualifier               |         | &check; |         |         |              |
-| Get-ConfigurationErrorCount                |         | &check; |         |         |              |
 | Get-DscConfiguration                       | &check; |         |         |         | Nur Windows |
 | Get-DscConfigurationStatus                 | &check; |         |         |         | Nur Windows |
 | Get-DscLocalConfigurationManager           | &check; |         |         |         | Nur Windows |
 | Get-DscResource                            | &check; | &check; | &check; | &check; |              |
-| Get-DSCResourceModules                     |         | &check; |         |         |              |
-| Get-EncryptedPassword                      |         | &check; |         |         |              |
-| Get-InnerMostErrorRecord                   |         | &check; |         |         |              |
-| Get-MofInstanceName                        |         | &check; |         |         |              |
-| Get-MofInstanceText                        |         | &check; |         |         |              |
-| Get-PositionInfo                           |         | &check; |         |         |              |
-| Get-PSCurrentConfigurationNode             |         | &check; |         |         |              |
-| Get-PSDefaultConfigurationDocument         |         | &check; |         |         |              |
-| Get-PSMetaConfigDocumentInstVersionInfo    |         | &check; |         |         |              |
-| Get-PSMetaConfigurationProcessed           |         | &check; |         |         |              |
-| Get-PSTopConfigurationName                 |         | &check; |         |         |              |
-| Get-PublicKeyFromFile                      |         | &check; |         |         |              |
-| Get-PublicKeyFromStore                     |         | &check; |         |         |              |
-| Initialize-ConfigurationRuntimeState       |         | &check; |         |         |              |
 | Invoke-DscResource                         | &check; |         | &check; | &check; |              |
 | New-DSCCheckSum                            | &check; | &check; | &check; | &check; |              |
 | Publish-DscConfiguration                   | &check; |         |         |         | Nur Windows |
 | Remove-DscConfigurationDocument            | &check; |         |         |         | Nur Windows |
 | Restore-DscConfiguration                   | &check; |         |         |         | Nur Windows |
 | Set-DscLocalConfigurationManager           | &check; |         |         |         | Nur Windows |
-| Set-NodeExclusiveResources                 |         | &check; |         |         |              |
-| Set-NodeManager                            |         | &check; |         |         |              |
-| Set-NodeResources                          |         | &check; |         |         |              |
-| Set-NodeResourceSource                     |         | &check; |         |         |              |
-| Set-PSCurrentConfigurationNode             |         | &check; |         |         |              |
-| Set-PSDefaultConfigurationDocument         |         | &check; |         |         |              |
-| Set-PSMetaConfigDocInsProcessedBeforeMeta  |         | &check; |         |         |              |
-| Set-PSMetaConfigVersionInfoV2              |         | &check; |         |         |              |
-| Set-PSTopConfigurationName                 |         | &check; |         |         |              |
 | Start-DscConfiguration                     | &check; |         |         |         | Nur Windows |
 | Stop-DscConfiguration                      | &check; |         |         |         | Nur Windows |
-| Test-ConflictingResources                  |         | &check; |         |         |              |
 | Test-DscConfiguration                      | &check; |         |         |         | Nur Windows |
-| Test-ModuleReloadRequired                  |         | &check; |         |         |              |
-| Test-MofInstanceText                       |         | &check; |         |         |              |
-| Test-NodeManager                           |         | &check; |         |         |              |
-| Test-NodeResources                         |         | &check; |         |         |              |
-| Test-NodeResourceSource                    |         | &check; |         |         |              |
-| Update-ConfigurationDocumentRef            |         | &check; |         |         |              |
-| Update-ConfigurationErrorCount             |         | &check; |         |         |              |
-| Update-DependsOn                           |         | &check; |         |         |              |
 | Update-DscConfiguration                    | &check; |         |         |         | Nur Windows |
-| Update-LocalConfigManager                  |         | &check; |         |         |              |
-| Update-ModuleVersion                       |         | &check; |         |         |              |
-| ValidateUpdate-ConfigurationData           |         | &check; |         |         |              |
-| Write-Log                                  |         | &check; |         |         |              |
-| Write-MetaConfigFile                       |         | &check; |         |         |              |
-| Write-NodeMOFFile                          |         | &check; |         |         |              |
 
 ### <a name="psdiagnostics"></a>PSDiagnostics
 
