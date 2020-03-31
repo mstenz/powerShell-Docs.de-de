@@ -1,13 +1,13 @@
 ---
 title: Installieren das Windows PowerShell SDK
-ms.date: 09/13/2016
+ms.date: 03/30/2020
 ms.topic: article
-ms.openlocfilehash: e7ca38377b3e6533eec1a70027f6de1a9fb3091b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b47dddaf167024d30a7a31596f96569f976109d7
+ms.sourcegitcommit: bf71c8c5e2a4fc7d5c3a67a537db1285089d03a7
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73444515"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80394987"
 ---
 # <a name="installing-the-windows-powershell-sdk"></a>Installieren das Windows PowerShell SDK
 
@@ -18,7 +18,7 @@ Das folgende Thema beschreibt, wie das PowerShell SDK in verschiedenen Versionen
 ## <a name="installing-windows-powershell-30-sdk-for-windows-8-and-windows-server-2012"></a>Installieren des Windows PowerShell 3.0 SDK für Windows 8 und Windows Server 2012
 
 Windows PowerShell 3.0 wird automatisch mit Windows 8 und Windows Server 2012 installiert. Darüber hinaus können Sie die Verweisassemblys für Windows PowerShell 3.0 als Teil des Windows 8 SDKs herunterladen und installieren. Diese Assemblys ermöglichen Ihnen das Schreiben von Cmdlets, Anbietern und Host-Programmen für Windows PowerShell 3.0. Wenn Sie das Windows SDK für Windows 8 installieren, werden die Windows PowerShell-Assemblys automatisch im Referenzassemblyordner unter `\Program Files
-(x86)\Reference Assemblies\Microsoft\WindowsPowerShell\3.0` installiert. Weitere Informationen finden Sie auf der Windows 8 SDK-Download Website. Windows PowerShell-Codebeispiele sind auch im Development Center unter [Windows PowerShell 3,0 SDK Sample Pack](https://code.msdn.microsoft.com/Windows-PowerShell-30-SDK-9a34641d)verfügbar.
+(x86)\Reference Assemblies\Microsoft\WindowsPowerShell\3.0` installiert. Weitere Informationen finden Sie auf der Windows 8 SDK-Download Website. Windows PowerShell-Codebeispiele sind auch im Repository " [PowerShell-SDK-Samples](https://github.com/MicrosoftDocs/powershell-sdk-samples/tree/master/SDK-3.0) " verfügbar.
 
 ## <a name="installing-windows-powershell-30-sdk-for-windows-7-and-windows-server-2008-r2"></a>Installieren des Windows PowerShell 3.0 SDK für Windows 7 und Windows Server 2008 R2
 
@@ -34,9 +34,7 @@ Verweisassemblys werden standardmäßig an folgendem Speicherort installiert: `c
 Assemblies\Microsoft\WindowsPowerShell\V1.0`.
 
 > [!NOTE]
->
 > Code, der für die Windows PowerShell 2.0-Assemblys kompiliert wird, kann nicht in Windows PowerShell 1.0-Installationen geladen werden. Jedoch kann Code, der für die Windows PowerShell 1.0-Assemblys kompiliert wird, in Windows PowerShell 2.0-Installationen geladen werden.
-
 
 ### <a name="samples"></a>Beispiele
 
@@ -73,11 +71,11 @@ SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\`. Die folgenden Abschnitte 
 #### <a name="hosting-application-samples"></a>Hosten von Anwendungsbeispielen
 
 - Runspace01: zeigt, wie die PowerShell-Klasse verwendet wird, um das `Get-Process`-Cmdlet synchron auszuführen.
-Das `Get-Process`-Cmdlet gibt Prozess Objekte für jeden Prozess zurück, der auf dem lokalen Computer ausgeführt wird.
+  Das `Get-Process`-Cmdlet gibt Prozess Objekte für jeden Prozess zurück, der auf dem lokalen Computer ausgeführt wird.
 - Runspace02: zeigt, wie die PowerShell-Klasse zum synchronen Ausführen der `Get-Process` und `Sort-Object` Cmdlets verwendet wird. Das `Get-Process`-Cmdlet gibt Prozess Objekte für jeden Prozess zurück, der auf dem lokalen Computer ausgeführt wird, und der `Sort-Object` sortiert die Objekte basierend auf Ihrer ID-Eigenschaft. Die Ergebnisse dieser Befehle werden mithilfe eines DataGridView-Steuer Elements angezeigt.
 - Runspace03: zeigt, wie die PowerShell-Klasse zum synchronen Ausführen eines Skripts verwendet wird und wie Fehler ohne Abbruch behandelt werden. Das Skript empfängt eine Liste von Prozessnamen und ruft diese Prozesse anschließend ab. Die Ergebnisse des Skripts, einschließlich Fehler ohne Abbruch, die beim Ausführen des Skripts generiert wurden, werden in einem Konsolenfenster angezeigt.
 - Runspace04: zeigt, wie die PowerShell-Klasse zum Ausführen von Befehlen verwendet wird, und wie abschließende Fehler abgefangen werden, die beim Ausführen der Befehle ausgelöst werden. Zwei Befehle werden ausgeführt. An den letzten Befehl wird ein ungültiges Parameterargument übergeben. Daher werden keine Objekte zurückgegeben, und ein Fehler mit Abbruch wird ausgelöst.
-- Runspace05: zeigt, wie einem initialsessionstate-Objekt ein Snap-in hinzugefügt wird, sodass das Cmdlet des Snap-Ins verfügbar ist, wenn der Runspace geöffnet wird. Das-Snap-in stellt ein Get-proc-Cmdlet bereit (definiert durch das GetProcessSample01-Beispiel), das synchron mithilfe eines PowerShell-Objekts ausgeführt wird.
+- Runspace05: zeigt, wie einem initialsessionstate-Objekt ein Snap-in hinzugefügt wird, sodass das Cmdlet des Snap-Ins verfügbar ist, wenn der Runspace geöffnet wird. Das Snap-in stellt ein Get-proc-Cmdlet bereit (definiert durch das GetProcessSample01-Beispiel), das synchron mithilfe eines PowerShell-Objekts ausgeführt wird.
 - Runspace06: zeigt, wie ein Modul einem initialsessionstate-Objekt hinzugefügt wird, damit das Modul geladen wird, wenn der Runspace geöffnet wird. Das Modul stellt ein Get-proc-Cmdlet bereit (definiert durch das GetProcessSample02-Beispiel), das synchron mithilfe eines PowerShell-Objekts ausgeführt wird.
 - Runspace07: zeigt, wie ein Runspace erstellt wird, und verwendet dann diesen Runspace, um zwei Cmdlets mithilfe eines PowerShell-Objekts synchron auszuführen.
 - Runspace08: zeigt, wie Sie der Pipeline eines PowerShell-Objekts Befehle und Argumente hinzufügen und wie die Befehle synchron ausgeführt werden.
@@ -89,7 +87,7 @@ Das `Get-Process`-Cmdlet gibt Prozess Objekte für jeden Prozess zurück, der au
 
 #### <a name="host-samples"></a>Hostbeispiele
 
-- Host01: zeigt, wie eine Host Anwendung implementiert wird, die einen benutzerdefinierten Host verwendet. In diesem Beispiel wird ein Runspace erstellt, der den benutzerdefinierten Host verwendet, und anschließend wird die PowerShell-API zum Ausführen eines Skripts verwendet, das "Exit" aufruft. Die Hostanwendung untersucht anschließend die Ausgabe des Skripts und gibt die Ergebnisse aus.
+- Host01: zeigt, wie eine Host Anwendung implementiert wird, die einen benutzerdefinierten Host verwendet. In diesem Beispiel wird ein Runspace erstellt, der den benutzerdefinierten Host verwendet, und dann wird die PowerShell-API zum Ausführen eines Skripts verwendet, das `exit`aufruft. Die Hostanwendung untersucht anschließend die Ausgabe des Skripts und gibt die Ergebnisse aus.
 - Host02: zeigt, wie eine Host Anwendung geschrieben wird, die die Windows PowerShell-Laufzeit zusammen mit einer benutzerdefinierten Host Implementierung verwendet. Die Host Anwendung legt die Host Kultur auf Deutsch fest, führt das `Get-Process`-Cmdlet aus und zeigt die Ergebnisse an, wie Sie Sie mithilfe von "pwrsh. exe" sehen würden. Anschließend werden die aktuellen Daten und die aktuelle Zeit in Deutsch ausgegeben.
 - Host03: zeigt, wie eine interaktive konsolenbasierte Host Anwendung erstellt wird, die Befehle in der Befehlszeile liest, die Befehle ausführt und die Ergebnisse anschließend in der Konsole anzeigt.
 - Host04: zeigt, wie eine interaktive konsolenbasierte Host Anwendung erstellt wird, die Befehle in der Befehlszeile liest, die Befehle ausführt und die Ergebnisse anschließend in der Konsole anzeigt. Diese Hostanwendung unterstützt auch das Anzeigen von Eingabeaufforderungen, die es den Benutzern ermöglichen, mehrere Auswahlmöglichkeiten anzugeben.
