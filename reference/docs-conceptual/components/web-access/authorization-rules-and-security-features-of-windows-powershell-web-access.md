@@ -2,12 +2,12 @@
 ms.date: 06/27/2017
 keywords: powershell,cmdlet
 title: Autorisierungsregeln und Sicherheitsfeatures von Windows PowerShell Web Access
-ms.openlocfilehash: c426b8cfb10829241ba244a5d840c91e1de9f66e
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.openlocfilehash: 9bc1be125ebab4e9ba29ba832b442777e9bfc859
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79402607"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500888"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Autorisierungsregeln und Sicherheitsfeatures von Windows PowerShell Web Access
 
@@ -85,7 +85,7 @@ Diese Ebene bietet die gleichen Sicherheitsmechanismen, die auch Verbindungsvers
 
 Standardmäßig verwendet Windows PowerShell Web Access den primären Benutzernamen und das dazugehörige Kennwort für die Authentifizierung auf dem Gateway und dem Zielcomputer. Die webbasierte Anmeldeseite enthält im Abschnitt **Optionale Verbindungseinstellungen** eine Option, bei der Benutzer bei Bedarf andere Anmeldeinformationen für den Zielcomputer angeben können. Wenn der Benutzer keine alternativen Anmeldeinformationen angibt, werden die primären Benutzernamen- und Kennwortinformationen, die für die Verbindung zum Gateway verwendet werden, auch genutzt, um eine Verbindung mit dem Zielcomputer herzustellen.
 
-Mithilfe von Autorisierungsregeln kann Benutzern der Zugriff auf eine bestimmte Sitzungskonfiguration gestattet werden. Sie können _eingeschränkte Runspaces_ oder Sitzungskonfigurationen für Windows PowerShell Web Access erstellen und für bestimmte Benutzer nur die Verbindung mit speziellen Sitzungskonfigurationen zulassen, wenn diese sich bei Windows PowerShell Web Access anmelden. Mithilfe von Zugriffssteuerungslisten können Sie bestimmen, welche Benutzer auf bestimmte Endpunkte zugreifen können, und den Zugriff auf den Endpunkt für eine bestimmte Gruppe von Benutzern anhand von Autorisierungsregeln weiter einschränken, wie in diesem Abschnitt beschrieben. Weitere Informationen zu eingeschränkten Runspaces finden Sie unter [Creating a constrained runspace (Erstellen eines eingeschränkten Runspaces)](https://msdn.microsoft.com/library/dn614668).
+Mithilfe von Autorisierungsregeln kann Benutzern der Zugriff auf eine bestimmte Sitzungskonfiguration gestattet werden. Sie können _eingeschränkte Runspaces_ oder Sitzungskonfigurationen für Windows PowerShell Web Access erstellen und für bestimmte Benutzer nur die Verbindung mit speziellen Sitzungskonfigurationen zulassen, wenn diese sich bei Windows PowerShell Web Access anmelden. Mithilfe von Zugriffssteuerungslisten können Sie bestimmen, welche Benutzer auf bestimmte Endpunkte zugreifen können, und den Zugriff auf den Endpunkt für eine bestimmte Gruppe von Benutzern anhand von Autorisierungsregeln weiter einschränken, wie in diesem Abschnitt beschrieben. Weitere Informationen zu eingeschränkten Runspaces finden Sie unter [Creating a constrained runspace (Erstellen eines eingeschränkten Runspaces)](/powershell/scripting/developer/hosting/creating-a-constrained-runspace).
 
 ### <a name="configuring-authorization-rules"></a>Konfigurieren von Autorisierungsregeln
 
@@ -112,7 +112,7 @@ Für Windows PowerShell Web Access-Cmdlets wird ein Platzhalterzeichen unterstü
 
    Falls diese noch nicht erstellt wurden, verwenden Sie die Anleitung zum Erstellen von Sitzungskonfigurationen unter [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configuration_files).
 
-3. Diese Autorisierungsregel erlaubt es einem bestimmten Benutzer, auf einen Computer im Netzwerk zuzugreifen, auf den er normalerweise zugreifen kann. Der Zugriff ist auf eine bestimmte Sitzungskonfiguration beschränkt, die die üblichen Anforderungen des Benutzers im Hinblick auf die Ausführung von Skripts und Cmdlets abdeckt. Geben Sie Folgendes ein, und drücken Sie anschließend die **EINGABETASTE**.
+3. Diese Autorisierungsregel erlaubt es einem bestimmten Benutzer, auf einen Computer im Netzwerk zuzugreifen, auf den er üblicherweise zugreifen kann. Der Zugriff ist auf eine bestimmte Sitzungskonfiguration beschränkt, die die üblichen Anforderungen des Benutzers im Hinblick auf die Ausführung von Skripts und Cmdlets abdeckt. Geben Sie Folgendes ein, und drücken Sie anschließend die **EINGABETASTE**.
 
    ```
    Add-PswaAuthorizationRule -UserName <domain\user | computer\user> `
@@ -151,7 +151,8 @@ Für Windows PowerShell Web Access-Cmdlets wird ein Platzhalterzeichen unterstü
 
 #### <a name="other-authorization-rule-scenario-examples"></a>Weitere Beispiele für Autorisierungsregelszenarios
 
-Bei jeder Windows PowerShell-Sitzung wird eine Sitzungskonfiguration verwendet. Falls für eine Sitzung keine Konfiguration angegeben ist, wird von Windows PowerShell die standardmäßige integrierte Windows PowerShell-Sitzungskonfiguration mit dem Namen „Microsoft.PowerShell“ verwendet. Die Standardsitzungskonfiguration schließt alle auf einem Computer verfügbaren Cmdlets ein. Administratoren können den Zugriff auf alle Computer einschränken, indem sie eine Sitzungskonfiguration mit eingeschränktem Runspace (ein begrenzter Bereich von Cmdlets und Aufgaben, die die Endbenutzer ausführen können) definieren. Ein Benutzer, dem der Zugriff auf einen Computer gestattet wurde (entweder mit vollem Sprachzugriff oder nur mit Zugriff auf die Windows PowerShell-Remoteverwaltungs-Cmdlets), kann Verbindungen mit anderen Computern herstellen, die mit dem ersten Computer verbunden sind. Durch die Definition eines eingeschränkten Runspace kann verhindert werden, dass Benutzer von ihrem zulässigen Windows PowerShell-Runspace aus auf andere Computer zugreifen. Außerdem wird dadurch die Sicherheit der Windows PowerShell Web Access-Umgebung verbessert. Die Sitzungskonfiguration kann (per Gruppenrichtlinie) an alle Computer verteilt werden, für die Administratoren den Zugriff über Windows PowerShell Web Access gewähren möchten. Weitere Informationen zu Sitzungskonfigurationen finden Sie unter [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx). Im Folgenden sind einige Beispiele für die Verwendung von Sitzungskonfigurationen aufgeführt.
+Bei jeder Windows PowerShell-Sitzung wird eine Sitzungskonfiguration verwendet. Falls für eine Sitzung keine Konfiguration angegeben ist, wird von Windows PowerShell die standardmäßige integrierte Windows PowerShell-Sitzungskonfiguration mit dem Namen „Microsoft.PowerShell“ verwendet. Die Standardsitzungskonfiguration schließt alle auf einem Computer verfügbaren Cmdlets ein. Administratoren können den Zugriff auf alle Computer einschränken, indem sie eine Sitzungskonfiguration mit eingeschränktem Runspace (ein begrenzter Bereich von Cmdlets und Aufgaben, die die Endbenutzer ausführen können) definieren. Ein Benutzer, dem der Zugriff auf einen Computer gestattet wurde (entweder mit vollem Sprachzugriff oder nur mit Zugriff auf die Windows PowerShell-Remoteverwaltungs-Cmdlets), kann Verbindungen mit anderen Computern herstellen, die mit dem ersten Computer verbunden sind. Durch die Definition eines eingeschränkten Runspace kann verhindert werden, dass Benutzer von ihrem zulässigen Windows PowerShell-Runspace aus auf andere Computer zugreifen. Außerdem wird dadurch die Sicherheit der Windows PowerShell Web Access-Umgebung verbessert. Die Sitzungskonfiguration kann (per Gruppenrichtlinie) an alle Computer verteilt werden, für die Administratoren den Zugriff über Windows PowerShell Web Access gewähren möchten. Weitere Informationen zu Sitzungskonfigurationen finden Sie unter [about_Session_Configurations](/powershell/module/Microsoft.PowerShell.Core/About/about_session_configurations).
+Im Folgenden sind einige Beispiele für die Verwendung von Sitzungskonfigurationen aufgeführt.
 
 - Ein Administrator erstellt einen Endpunkt namens **PswaEndpoint** mit einem eingeschränkten Runspace. Anschließend erstellt der Administrator die Regel `*,*,PswaEndpoint` und verteilt den Endpunkt an andere Computer. Mithilfe der Regel können alle Benutzer auf alle Computer mit dem Endpunkt **PswaEndpoint** zugreifen.
   Falls es sich um die einzige Autorisierungsregel handelt, die in dem Regelsatz definiert ist, ist der Zugriff auf Computer ohne diesen Endpunkt nicht möglich.
@@ -181,8 +182,8 @@ Im obigen Szenario richtet Windows PowerShell Web Access eine Verbindung mit dem
 2. Authentifizierung auf dem Zielcomputer mithilfe von alternativen Anmeldeinformationen, die auf der Anmeldeseite unter **Optionale Verbindungseinstellungen** angegeben wurden
 
    > [!NOTE]
-   > Wenn sich Gateway- und Zielcomputer in unterschiedlichen Arbeitsgruppen oder Domänen befinden, muss eine Vertrauensstellung zwischen den beiden Arbeitsgruppencomputern, den beiden Domänen oder der Arbeitsgruppe und der Domäne eingerichtet werden. Diese Vertrauensstellung kann nicht mithilfe von Windows PowerShell Web Access-Autorisierungsregel-Cmdlets konfiguriert werden. Mit den Autorisierungsregeln wird keine Vertrauensstellung zwischen Computern definiert. Damit kann für Benutzer nur die Verbindung mit bestimmten Zielcomputern und Sitzungskonfigurationen konfiguriert werden. Weitere Informationen zur Konfiguration einer Vertrauensstellung zwischen unterschiedlichen Domänen finden Sie unter [Creating Domain and Forest Trusts](https://technet.microsoft.com/library/cc794775.aspx) (Erstellen von Domänen- und Gesamtstruktur-Vertrauensstellungen).
-   > Weitere Informationen zum Hinzufügen von Arbeitsgruppencomputern zu einer Liste mit vertrauenswürdigen Hosts finden Sie unter [Remoteverwaltung mit dem Server-Manager](https://technet.microsoft.com/library/dd759202.aspx).
+   > Wenn sich Gateway- und Zielcomputer in unterschiedlichen Arbeitsgruppen oder Domänen befinden, muss eine Vertrauensstellung zwischen den beiden Arbeitsgruppencomputern, den beiden Domänen oder der Arbeitsgruppe und der Domäne eingerichtet werden. Diese Vertrauensstellung kann nicht mithilfe von Windows PowerShell Web Access-Autorisierungsregel-Cmdlets konfiguriert werden. Mit den Autorisierungsregeln wird keine Vertrauensstellung zwischen Computern definiert. Damit kann für Benutzer nur die Verbindung mit bestimmten Zielcomputern und Sitzungskonfigurationen konfiguriert werden. Weitere Informationen zur Konfiguration einer Vertrauensstellung zwischen unterschiedlichen Domänen finden Sie unter [Creating Domain and Forest Trusts](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc794775(v=ws.10)) (Erstellen von Domänen- und Gesamtstruktur-Vertrauensstellungen).
+   > Weitere Informationen zum Hinzufügen von Arbeitsgruppencomputern zu einer Liste mit vertrauenswürdigen Hosts finden Sie unter [Remoteverwaltung mit dem Server-Manager](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd759202(v=ws.11)).
 
 ### <a name="using-a-single-set-of-authorization-rules-for-multiple-sites"></a>Verwenden eines einzigen Satzes mit Autorisierungsregeln für mehrere Websites
 
@@ -198,7 +199,7 @@ Standardmäßig ist der IIS-Webserver so konfiguriert, dass der Anwendungspool n
 
 ### <a name="setting-default-parameters-on-the-sign-in-page"></a>Festlegen von Standardparametern auf der Anmeldeseite
 
-Wenn Ihr Windows PowerShell Web Access-Gateway unter Windows Server 2012 R2 ausgeführt wird, können Sie die Standardwerte für die Einstellungen konfigurieren, die auf der Windows PowerShell Web Access-Anmeldeseite angezeigt werden. Sie können Werte in der Datei **web.config** konfigurieren, die im vorherigen Abschnitt beschrieben wurde. Standardwerte für die Anmeldeseiteneinstellungen finden Sie im Abschnitt **appSettings** der Datei „web.config“. Es folgt ein Beispiel des Abschnitts **appSettings**. Gültige Werte für viele dieser Einstellungen entsprechen denen der entsprechenden Parameter des Cmdlets [New-PSSession](https://technet.microsoft.com/library/hh849717.aspx) in Windows PowerShell.
+Wenn Ihr Windows PowerShell Web Access-Gateway unter Windows Server 2012 R2 ausgeführt wird, können Sie die Standardwerte für die Einstellungen konfigurieren, die auf der Windows PowerShell Web Access-Anmeldeseite angezeigt werden. Sie können Werte in der Datei **web.config** konfigurieren, die im vorherigen Abschnitt beschrieben wurde. Standardwerte für die Anmeldeseiteneinstellungen finden Sie im Abschnitt **appSettings** der Datei „web.config“. Es folgt ein Beispiel des Abschnitts **appSettings**. Gültige Werte für viele dieser Einstellungen entsprechen denen der entsprechenden Parameter des Cmdlets [New-PSSession](/powershell/module/Microsoft.PowerShell.Core/New-PSSession) in Windows PowerShell.
 
 Der im folgenden Codeblock enthaltene Schlüssel `defaultApplicationName` ist z.B. der Wert der Einstellungsvariablen **$PSSessionApplicationName** auf dem Zielcomputer.
 
@@ -225,8 +226,8 @@ Wenn der Gatewayserver unter Windows Server 2012 R2 ausgeführt wird, ermöglich
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Install and Use Windows PowerShell Web Access (Installieren und Verwenden von Windows PowerShell Web Access)](https://technet.microsoft.com/library/hh831611(v=ws.11).aspx)
+[Install and Use Windows PowerShell Web Access (Installieren und Verwenden von Windows PowerShell Web Access)](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831611(v=ws.11))
 
-[about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
+[about_Session_Configurations](/powershell/module/microsoft.powershell.core/about/about_Session_Configurations)
 
 [Windows PowerShell Web Access Cmdlets (Windows PowerShell Web Access-Cmdlets)](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps)
