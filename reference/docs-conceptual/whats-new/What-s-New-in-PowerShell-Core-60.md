@@ -2,12 +2,12 @@
 title: Neuigkeiten in PowerShell Core 6.0
 description: Neue Features und Änderungen in PowerShell Core 6.0
 ms.date: 08/06/2018
-ms.openlocfilehash: d1bc1ef2676da60062b8bdd57042331f0f245bec
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.openlocfilehash: 39bcb343c44c32d183c8bb90306a8f4a57397eb6
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76995497"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500489"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>Neuigkeiten in PowerShell Core 6.0
 
@@ -231,7 +231,7 @@ Wenn Sie ein `&` am Ende einer Pipeline einfügen, wird die Pipeline als PowerSh
 - Unterstützung für die Linkheader-Paginierung (#3828)
   - Wenn die Antwort einen Linkheader enthält, wird für `Invoke-WebRequest` eine RelationLink-Eigenschaft als Wörterbuch erstellt, das die URLs und `rel`-Attribute darstellt. Um die Verwendung zu erleichtern, wird außerdem sichergestellt, dass die URLs absolut sind.
   - Wir machen für `Invoke-RestMethod` einen `-FollowRelLink`-Schalter verfügbar, wenn die Antwort einen Linkheader enthält, der automatisch `next` `rel`-Links folgt, bis sie nicht mehr vorhanden sind, oder sobald der optionale Parameterwert `-MaximumFollowRelLink` erreicht wird.
-- Der Parameter `-CustomMethod` wurde hinzugefügt, um die Verwendung nicht standardmäßiger Methodenverben zu ermöglichen. (#3142) (Vielen Dank an [@Lee303](https://github.com/Lee303))
+- Der Parameter `-CustomMethod` wurde hinzugefügt, um die Verwendung nicht standardmäßiger Methodenverben zu ermöglichen. (#3142) (Vielen Dank an @Lee303)
 - Unterstützung für `SslProtocol` wurde hinzugefügt. (#5329) (Vielen Dank an [@markekraus](https://github.com/markekraus))
 - Mehrteilige Unterstützung wurde hinzugefügt. (#4782) (Vielen Dank an [@markekraus](https://github.com/markekraus))
 - `-NoProxy` wurde Web-Cmdlets hinzugefügt, damit sie die systemweite Proxyeinstellung ignorieren. (#3447) (Vielen Dank an [@TheFlyingCorpse](https://github.com/TheFlyingCorpse))
@@ -248,7 +248,7 @@ Wenn Sie ein `&` am Ende einer Pipeline einfügen, wird die Pipeline als PowerSh
 - Der `UserAgent` von Web-Cmdlets wurde von `WindowsPowerShell` in `PowerShell` geändert. (#4914) (Vielen Dank an [@markekraus](https://github.com/markekraus))
 - `Invoke-RestMethod` wurde explizite `ContentType`-Erkennung hinzugefügt. (#4692)
 - `-SkipHeaderValidation` von Web-Cmdlets funktioniert jetzt mit nicht standardmäßigen User-Agent-Headern. (#4479 und
-  #<a name="4512-thanks-markekraushttpsgithubcommarkekraus"></a>4512) (Vielen Dank an [@markekraus](https://github.com/markekraus))
+  #<a name="4512-thanks-markekraus"></a>4512) (Vielen Dank an [@markekraus](https://github.com/markekraus))
 
 ### <a name="json-cmdlets"></a>JSON-Cmdlets
 

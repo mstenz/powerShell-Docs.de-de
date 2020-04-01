@@ -1,13 +1,13 @@
 ---
 ms.date: 12/12/2018
-keywords: dsc,powershell,configuration,setup
+keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: Veröffentlichen auf einem Pullserver mithilfe von Konfigurations-IDs (v4/v5)
-ms.openlocfilehash: 3b094308338e62c783b19f4d3bb41634feee63f6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 99c5b89e7d556fa72eaa6a3ba1654936f96a0b9d
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417256"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500746"
 ---
 # <a name="publish-to-a-pull-server-using-configuration-ids-v4v5"></a>Veröffentlichen auf einem Pullserver mithilfe von Konfigurations-IDs (v4/v5)
 
@@ -61,7 +61,7 @@ Sie können Ihre `.mof`-Datei dann mit jeder zulässigen Methode umbenennen. Im 
 Rename-Item -Path .\localhost.mof -NewName '64856475-939e-41fb-aba5-4469f4006059.mof'
 ```
 
-Weitere Informationen zur Verwendung von **GUIDs** in Ihrer Umgebung finden Sie unter [Plan for Guids (Planen von GUIDs)](/powershell/scripting/dsc/secureserver#guids).
+Weitere Informationen zur Verwendung von **GUIDs** in Ihrer Umgebung finden Sie unter [Plan for Guids (Planen von GUIDs)](secureServer.md#guids).
 
 ### <a name="configuration-names"></a>Konfigurationsnamen
 
@@ -122,7 +122,7 @@ Als Nächstes müssen Sie die Pullclients so konfigurieren, dass sie die angegeb
 - [Einrichten eines Pullclients mithilfe von Konfigurations-IDs (v5)](pullClientConfigId.md)
 - [Einrichten eines Pullclients mithilfe von Konfigurationsnamen (v5)](pullClientConfigNames.md)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 - [Einrichten eines DSC-SMB-Pullservers](pullServerSmb.md)
 - [Einrichten eines DSC-HTTP-Pullservers](pullServer.md)

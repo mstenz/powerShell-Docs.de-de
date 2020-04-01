@@ -2,12 +2,12 @@
 ms.date: 07/10/2019
 keywords: jea,powershell,security
 title: Verwenden von JEA
-ms.openlocfilehash: 912e7a3c46be40ff5b5dfa37fe92b67bab5f98dc
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.openlocfilehash: 1c424eb4a476dd0db3cc69c0e6f14c89a3c523ba
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76995427"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500515"
 ---
 # <a name="using-jea"></a>Verwenden von JEA
 
@@ -91,8 +91,8 @@ $filteredCommands = $commands.Name | Where-Object { $jeaDefaultCmdlets -notconta
 Import-PSSession -Session $jeasession -Prefix 'JEA' -CommandName $filteredCommands
 ```
 
-Sie können die Proxy-Cmdlets aus dem impliziten Remotingvorgang auch mithilfe von [Export-PSSession](/powershell/microsoft.powershell.utility/Export-PSSession) beibehalten.
-Weitere Informationen zum impliziten Remoting finden Sie in der Dokumentation zu [Import-PSSession](/powershell/microsoft.powershell.utility/import-pssession) und [Import-Module](/powershell/microsoft.powershell.core/import-module).
+Sie können die Proxy-Cmdlets aus dem impliziten Remotingvorgang auch mithilfe von [Export-PSSession](/powershell/module/microsoft.powershell.utility/Export-PSSession) beibehalten.
+Weitere Informationen zum impliziten Remoting finden Sie in der Dokumentation zu [Import-PSSession](/powershell/module/microsoft.powershell.utility/import-pssession) und [Import-Module](/powershell/module/microsoft.powershell.core/import-module).
 
 ## <a name="using-jea-programmatically"></a>Programmgesteuertes Verwenden von JEA
 

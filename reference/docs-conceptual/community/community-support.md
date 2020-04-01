@@ -2,12 +2,12 @@
 title: Ressourcen aus der PowerShell-Community
 description: Liste der für und von PowerShell-Benutzern erstellten Ressourcen
 ms.date: 03/04/2020
-ms.openlocfilehash: ce828926624ab0255bc0ede1ce1c2ff965dbf679
-ms.sourcegitcommit: 18d832858a7b8ea094763afa753e0f48f01372e7
+ms.openlocfilehash: 50f5eaaef9ef30351fa605f74648a8efbce90af3
+ms.sourcegitcommit: bf71c8c5e2a4fc7d5c3a67a537db1285089d03a7
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79060355"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80395019"
 ---
 # <a name="powershell-community-resources"></a>Ressourcen aus der PowerShell-Community
 
@@ -32,4 +32,4 @@ Weitere Informationen zu unserer Supportrichtlinie finden Sie im [PowerShell-Sup
 
 Wir bieten eine Sammlung digitaler Grafiken, die Ihnen zur Verfügung steht.
 
-[Digitale Grafiken](https://docs.microsoft.com/powershell/scripting/community/digital-art.md)
+[Digitale Grafiken](/powershell/scripting/community/digital-art)
