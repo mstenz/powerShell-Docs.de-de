@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: Prüfliste für die Ressourcenerstellung
-ms.openlocfilehash: e7401071db9cb149fff572d79568d69a0b8ea004
-ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
+ms.openlocfilehash: 85e0963d46358cd37cb87ea94fe6d1178a4f6a4a
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76818140"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500614"
 ---
 # <a name="resource-authoring-checklist"></a>Prüfliste für die Ressourcenerstellung
 
@@ -15,8 +15,8 @@ Diese Prüfliste ist eine Liste der bewährten Methoden beim Erstellen einer neu
 
 ## <a name="resource-module-contains-psd1-file-and-schemamof-for-every-resource"></a>Das Ressourcenmodul enthält für jede Ressource Dateien des Typs „.psd1“ und „schema.mof“.
 
-Stellen Sie sicher, dass Ihre Ressource eine ordnungsgemäße Struktur hat und alle erforderlichen Dateien enthält. Ein Ressourcenmodul muss eine PSD1-Datei enthalten, und für jede nicht zusammengesetzte Ressource muss die Datei „schema.mof“ vorhanden sein. Ressourcen ohne Schema werden nach Ausführen von `Get-DscResource` nicht aufgeführt. Zudem können Benutzer nicht mit IntelliSense arbeiten, wenn Code für diese Module in der ISE geschrieben wird.
-Die Verzeichnisstruktur für die Ressource „xRemoteFile“, die Teil des [Ressourcenmoduls „xPSDesiredStateConfiguration“](https://github.com/PowerShell/xPSDesiredStateConfiguration) ist, sieht folgendermaßen aus:
+Stellen Sie sicher, dass Ihre Ressource eine ordnungsgemäße Struktur hat und alle erforderlichen Dateien enthält. Ein Ressourcenmodul muss eine PSD1-Datei enthalten, und für jede nicht zusammengesetzte Ressource muss die Datei „schema.mof“ vorhanden sein.
+Ressourcen ohne Schema werden nach Ausführen von `Get-DscResource` nicht aufgeführt. Zudem können Benutzer nicht mit IntelliSense arbeiten, wenn Code für diese Module in der ISE geschrieben wird. Die Verzeichnisstruktur für die Ressource „xRemoteFile“, die Teil des [Ressourcenmoduls „xPSDesiredStateConfiguration“](https://github.com/PowerShell/xPSDesiredStateConfiguration) ist, sieht folgendermaßen aus:
 
 ```
 xPSDesiredStateConfiguration
@@ -35,8 +35,7 @@ xPSDesiredStateConfiguration
 
 ## <a name="resource-and-schema-are-correct"></a>Die Ressource und das Schema sind richtig
 
-Überprüfen Sie die Ressourcenschemadatei („*.schema.mof“). Sie können den [DSC-Ressourcen-Designer](https://www.powershellgallery.com/packages/xDSCResourceDesigner/1.12.0.0) verwenden, um Ihr Schema zu entwickeln und zu testen.
-Stellen Sie Folgendes sicher:
+Überprüfen Sie die Ressourcenschemadatei („*.schema.mof“). Sie können den [DSC-Ressourcen-Designer](https://www.powershellgallery.com/packages/xDSCResourceDesigner/1.12.0.0) verwenden, um Ihr Schema zu entwickeln und zu testen. Stellen Sie Folgendes sicher:
 
 - Eigenschaftentypen sind ordnungsgemäß (z.B. STRING wird nicht für Eigenschaften für numerische Werte verwendet, wofür UInt32 oder andere numerische Typen gewählt werden müssen).
 - Eigenschaftsattribute sind ordnungsgemäß angegeben als: ([key], [required], [write], [read]).
@@ -54,7 +53,7 @@ Stellen Sie Folgendes sicher:
 
   Beispiel: `[ClassVersion("1.0.0.0"), FriendlyName("xRemoteFile")]`
 
-- Jedes Feld hat eine aussagekräftige Beschreibung. Das PowerShell-GitHub-Repository enthält gute Beispiele, z.B. [die Datei „.schema.mof“ für „xRemoteFile“](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/DSCResources/MSFT_xRemoteFile/MSFT_xRemoteFile.schema.mof)
+- Jedes Feld hat eine aussagekräftige Beschreibung. Das PowerShell-GitHub-Repository enthält gute Beispiele, z. B. [die Datei „.schema.mof“ für xRemoteFile](https://github.com/dsccommunity/xPSDesiredStateConfiguration/blob/master/source/DSCResources/DSC_xRemoteFile/DSC_xRemoteFile.schema.mof).
 
 Sie sollten darüber hinaus die Cmdlets **Test-xDscResource** und **Test-xDscSchema** im [DSC-Ressourcen-Designer](https://www.powershellgallery.com/packages/xDSCResourceDesigner/1.12.0.0) verwenden, um die Ressource und das Schema automatisch zu überprüfen:
 
@@ -72,8 +71,7 @@ Test-xDscSchema ..\DSCResources\MSFT_xRemoteFile\MSFT_xRemoteFile.schema.mof
 
 ## <a name="resource-loads-without-errors"></a>Ressource wird ohne Fehler geladen.
 
-Überprüfen Sie, ob das Ressourcenmodul erfolgreich geladen werden kann.
-Dies kann manuell erfolgen, indem `Import-Module <resource_module> -force` ausgeführt und bestätigt wird, dass keine Fehler aufgetreten sind. Sie können auch einen automatisierten Test schreiben. Im letzteren Fall können Sie diese Struktur bei Ihrem Testfall befolgen:
+Überprüfen Sie, ob das Ressourcenmodul erfolgreich geladen werden kann. Dies kann manuell erfolgen, indem `Import-Module <resource_module> -force` ausgeführt und bestätigt wird, dass keine Fehler aufgetreten sind. Sie können auch einen automatisierten Test schreiben. Im letzteren Fall können Sie diese Struktur bei Ihrem Testfall befolgen:
 
 ```powershell
 $error = $null
@@ -94,8 +92,7 @@ File file {
 }
 ```
 
-Nach dem ersten Anwenden sollte die Datei „test.txt“ im Ordner `C:\test` enthalten sein. Bei nachfolgenden Ausführungen derselben Konfiguration sollte sich der Zustand des Computers nicht ändern (z.B. sollten keine Kopien der Datei `test.txt` erstellt werden).
-Um sicherzustellen, dass eine Ressource idempotent ist, können Sie beim direkten Testen der Ressource `Set-TargetResource` wiederholt aufrufen. Bei End-to-End-Tests können Sie `Start-DscConfiguration` mehrmals aufrufen. Das Ergebnis sollte nach jeder Ausführung identisch sein.
+Nach dem ersten Anwenden sollte die Datei „test.txt“ im Ordner `C:\test` enthalten sein. Bei nachfolgenden Ausführungen derselben Konfiguration sollte sich der Zustand des Computers nicht ändern (z.B. sollten keine Kopien der Datei `test.txt` erstellt werden). Um sicherzustellen, dass eine Ressource idempotent ist, können Sie beim direkten Testen der Ressource `Set-TargetResource` wiederholt aufrufen. Bei End-to-End-Tests können Sie `Start-DscConfiguration` mehrmals aufrufen. Das Ergebnis sollte nach jeder Ausführung identisch sein.
 
 ## <a name="test-user-modification-scenario"></a>Testen des Benutzeränderungsszenarios
 
@@ -124,10 +121,9 @@ Stellen Sie sicher, dass Sie die **Get/Set/Test-TargetResource**-Funktionen test
 
 ## <a name="verify-end-to-end-using-start-dscconfiguration"></a>End-to-End-Überprüfen der Ressource mithilfe von **Start-DscConfiguration**
 
-Das Testen von **Get/Set/Test-TargetResource**-Funktionen, indem sie direkt aufgerufen werden, ist wichtig, doch auf diese Weise werden nicht alle Probleme ermittelt. Konzentrieren Sie einen wesentlichen Teil Ihrer Tests auf die Verwendung von `Start-DscConfiguration` oder des Pullservers. Benutzer verwenden die Ressource genau so, weshalb Sie die Bedeutung dieser Art von Tests nicht unterschätzen sollten.
-Mögliche Problemtypen:
+Das Testen von **Get/Set/Test-TargetResource**-Funktionen, indem sie direkt aufgerufen werden, ist wichtig, doch auf diese Weise werden nicht alle Probleme ermittelt. Konzentrieren Sie einen wesentlichen Teil Ihrer Tests auf die Verwendung von `Start-DscConfiguration` oder des Pullservers. Benutzer verwenden die Ressource genau so, weshalb Sie die Bedeutung dieser Art von Tests nicht unterschätzen sollten. Mögliche Problemtypen:
 
-- Das Verhalten von Anmeldeinformationen oder der Sitzung ist möglicherweise anders, da der DSC-Agent als Dienst ausgeführt wird.  Führen Sie in diesem Bereich auf jeden Fall End-to-End-Tests von Features durch.
+- Das Verhalten von Anmeldeinformationen oder der Sitzung ist möglicherweise anders, da der DSC-Agent als Dienst ausgeführt wird. Führen Sie in diesem Bereich auf jeden Fall End-to-End-Tests von Features durch.
 - Von `Start-DscConfiguration` ausgegebene Fehler sind ggf. anders als die, die angezeigt werden, wenn die Funktion `Set-TargetResource` direkt aufgerufen wird.
 
 ## <a name="test-compatibility-on-all-dsc-supported-platforms"></a>Testen der Kompatibilität auf allen DSC-unterstützten Plattformen
@@ -187,8 +183,7 @@ Erstellen Sie anschauliche Beispiele, die anderen helfen, die Verwendung zu vers
   }
   ```
 
-- Es empfiehlt sich, am Ende des Beispielskripts ein (auskommentiertes) Beispiel hinzuzufügen, wie die Konfiguration mit den tatsächlichen Werte aufgerufen wird.
-  Aus der obigen Konfiguration geht beispielsweise nicht unbedingt hervor, dass die beste Möglichkeit zum Angeben von „UserAgent“ wie folgt aussieht:
+- Es empfiehlt sich, am Ende des Beispielskripts ein (auskommentiertes) Beispiel hinzuzufügen, wie die Konfiguration mit den tatsächlichen Werte aufgerufen wird. Aus der obigen Konfiguration geht beispielsweise nicht unbedingt hervor, dass die beste Möglichkeit zum Angeben von „UserAgent“ wie folgt aussieht:
 
   `UserAgent = [Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer` In diesem Fall kann ein Kommentar die beabsichtigte Ausführung der Konfiguration verdeutlichen:
 
@@ -220,10 +215,10 @@ Stellen Sie sicher, dass Sie Fehler in End-to-End-Szenarien (mit `Start-DscConfi
 
 ## <a name="log-messages-are-easy-to-understand-and-informative-including-verbose-debug-and-etw-logs"></a>Protokollmeldungen sind leicht verständlich und informativ (z. B. „–verbose“, „–debug“ und ETW-Protokolle)
 
-Stellen Sie sicher, dass Protokolle, die von der Ressource ausgegeben werden, leicht verständlich und für den Benutzer von Nutzen sind. Ressourcen sollten alle Informationen ausgeben, die für den Benutzer hilfreich sind, doch mehr Protokolle sind nicht unbedingt besser. Sie sollten das Ausgeben redundanter Daten ohne Mehrwert unbedingt vermeiden. Lassen Sie Benutzer nicht Hunderte von Protokolleinträgen durchsehen, damit sie finden, was sie suchen. Keine Protokolle sind freilich keine akzeptable Lösung dieses Problems.
+Stellen Sie sicher, dass Protokolle, die von der Ressource ausgegeben werden, leicht verständlich und für den Benutzer von Nutzen sind.
+Ressourcen sollten alle Informationen ausgeben, die für den Benutzer hilfreich sind, doch mehr Protokolle sind nicht unbedingt besser. Sie sollten das Ausgeben redundanter Daten ohne Mehrwert unbedingt vermeiden. Lassen Sie Benutzer nicht Hunderte von Protokolleinträgen durchsehen, damit sie finden, was sie suchen. Keine Protokolle sind freilich keine akzeptable Lösung dieses Problems.
 
-Beim Testen sollten Sie auch ausführliche und Debugprotokolle (durch Ausführen von `Start-DscConfiguration` mit den Switches `–Verbose` bzw. `–Debug`) sowie ETW-Protokolle analysieren. Um DSC-ETW-Protokolle anzuzeigen, navigieren Sie zur Ereignisanzeige, und öffnen Sie den folgenden Ordner: „Applications and Services/Microsoft/Windows/Desired State Configuration“.  In der Standardeinstellung gibt es den Kanal „Betriebsbereit“. Aktivieren Sie vor dem Ausführen der Konfiguration jedoch auch die Kanäle „Analyse“ und „Debuggen“.
-Zum Aktivieren der Kanäle „Analyse/Debuggen“ können Sie das folgende Skript ausführen:
+Beim Testen sollten Sie auch ausführliche und Debugprotokolle (durch Ausführen von `Start-DscConfiguration` mit den Switches `–Verbose` bzw. `–Debug`) sowie ETW-Protokolle analysieren. Um DSC-ETW-Protokolle anzuzeigen, navigieren Sie zur Ereignisanzeige, und öffnen Sie den folgenden Ordner: „Applications and Services/Microsoft/Windows/Desired State Configuration“. In der Standardeinstellung gibt es den Kanal „Betriebsbereit“. Aktivieren Sie vor dem Ausführen der Konfiguration jedoch auch die Kanäle „Analyse“ und „Debuggen“. Zum Aktivieren der Kanäle „Analyse/Debuggen“ können Sie das folgende Skript ausführen:
 
 ```powershell
 $statusEnabled = $true
@@ -241,8 +236,7 @@ Invoke-Expression $commandToExecute
 
 ## <a name="resource-implementation-does-not-contain-hardcoded-paths"></a>Ressourcenimplementierung ohne hartcodierte Pfade
 
-Vergewissern Sie sich, dass es in der Ressourcenimplementierung keine hartcodierten Pfade gibt, insbesondere wenn diese eine Sprache voraussetzen (z. B. en-us), oder wenn es Systemvariablen gibt, die verwendet werden können.
-Wenn Ihre Ressource auf bestimmte Pfade zugreifen muss, verwenden Sie Umgebungsvariablen anstelle eines hartcodierten Pfads, da sich dieser je nach Computer unterscheiden kann.
+Vergewissern Sie sich, dass es in der Ressourcenimplementierung keine hartcodierten Pfade gibt, insbesondere wenn diese eine Sprache voraussetzen (z. B. en-us), oder wenn es Systemvariablen gibt, die verwendet werden können. Wenn Ihre Ressource auf bestimmte Pfade zugreifen muss, verwenden Sie Umgebungsvariablen anstelle eines hartcodierten Pfads, da sich dieser je nach Computer unterscheiden kann.
 
 Beispiel:
 
@@ -285,9 +279,7 @@ Diese Prüfliste enthält Elemente, die unbedingt getestet werden sollten und/od
 
 ## <a name="best-practice-resource-module-contains-tests-folder-with-resourcedesignertestsps1-script"></a>Bewährte Methode: Das Ressourcenmodul enthält den Ordner „Tests“ mit dem Skript „ResourceDesignerTests.ps1“
 
-Es empfiehlt sich, im Ressourcenmodul den Ordner „Tests“ anzulegen, die Datei `ResourceDesignerTests.ps1` zu erstellen und über **Test-xDscResource** und **Test-xDscSchema** Tests für alle Ressourcen in einem bestimmten Modul hinzuzufügen.
-Auf diese Weise können Sie schnell die Schemas aller Ressourcen aus den angegebenen Modulen überprüfen und vor der Veröffentlichung eine Integritätsprüfung vornehmen.
-Für „xRemoteFile“ kann `ResourceTests.ps1` einfach so aussehen:
+Es empfiehlt sich, im Ressourcenmodul den Ordner „Tests“ anzulegen, die Datei `ResourceDesignerTests.ps1` zu erstellen und über **Test-xDscResource** und **Test-xDscSchema** Tests für alle Ressourcen in einem bestimmten Modul hinzuzufügen. Auf diese Weise können Sie schnell die Schemas aller Ressourcen aus den angegebenen Modulen überprüfen und vor der Veröffentlichung eine Integritätsprüfung vornehmen. Für „xRemoteFile“ kann `ResourceTests.ps1` einfach so aussehen:
 
 ```powershell
 Test-xDscResource ..\DSCResources\MSFT_xRemoteFile
@@ -312,9 +304,7 @@ New-xDscResource -Name MSFT_xRemoteFile -Property @($DestinationPath, $Uri, $Hea
 
 ## <a name="best-practice-resource-supports--whatif"></a>Bewährte Methode: Die Ressource unterstützt „-WhatIf“
 
-Wenn mit der Ressource „gefährliche“ Vorgänge ausgeführt werden, empfiehlt es sich, `-WhatIf`-Funktionalität zu implementieren. Nachdem dies erfolgt ist, stellen Sie sicher, dass die `-WhatIf`-Ausgabe Vorgänge ordnungsgemäß beschreibt, die eintreten würden, wenn der Befehl ohne den Switch `-WhatIf` ausgeführt würde.
-Vergewissern Sie sich auch, dass bei Vorhandensein des Switches `–WhatIf` keine Vorgänge ausgeführt werden (d.h. keine Änderungen am Zustand des Knotens erfolgen).
-Angenommen, wir testen die Ressource „File“. Nachstehend finden Sie eine einfache Konfiguration, die die Datei `test.txt` mit dem Inhalt „test“ erstellt:
+Wenn mit der Ressource „gefährliche“ Vorgänge ausgeführt werden, empfiehlt es sich, `-WhatIf`-Funktionalität zu implementieren. Nachdem dies erfolgt ist, stellen Sie sicher, dass die `-WhatIf`-Ausgabe Vorgänge ordnungsgemäß beschreibt, die eintreten würden, wenn der Befehl ohne den Switch `-WhatIf` ausgeführt würde. Vergewissern Sie sich auch, dass bei Vorhandensein des Switches `–WhatIf` keine Vorgänge ausgeführt werden (d.h. keine Änderungen am Zustand des Knotens erfolgen). Angenommen, wir testen die Ressource „File“. Nachstehend finden Sie eine einfache Konfiguration, die die Datei `test.txt` mit dem Inhalt „test“ erstellt:
 
 ```powershell
 configuration config
@@ -337,7 +327,7 @@ Wenn wir die Konfiguration kompilieren und dann mit dem Switch `-WhatIf` ausfüh
 Start-DscConfiguration -Path .\config -ComputerName localhost -Wait -Verbose -WhatIf
 ```
 
-```output
+```Output
 VERBOSE: Perform operation 'Invoke CimMethod' with following parameters, ''methodName' =
 SendConfigurationApply,'className' = MSFT_DSCLocalConfigurationManager,'namespaceName' =
 root/Microsoft/Windows/DesiredStateConfiguration'.

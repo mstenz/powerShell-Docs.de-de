@@ -2,12 +2,12 @@
 ms.date: 12/19/2019
 keywords: powershell,cmdlet
 title: Barrierefreiheit in Windows PowerShell ISE
-ms.openlocfilehash: e618daca98d76f767a8b60a3425760bfc0bd0f64
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.openlocfilehash: 89eff839d69fdbd5a1fa48b61dab627ef83f751b
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75736282"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500965"
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Barrierefreiheit in Windows PowerShell ISE
 
@@ -60,7 +60,7 @@ Führen Sie eines der folgenden Verfahren aus:
 
 Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Text bearbeiten.
 
-|           Action            |       Tastenkombinationen       |          Verwenden in           |
+|           Aktion            |       Tastenkombinationen       |          Verwenden in           |
 | --------------------------- | ------------------------------ | ------------------------- |
 | **Copy**                    | <kbd>STRG</kbd>+<kbd>C</kbd>   | Skriptbereich, Konsolenbereich |
 | **Ausschneiden**                     | <kbd>STRG</kbd>+<kbd>X</kbd>   | Skriptbereich, Konsolenbereich |
@@ -78,7 +78,7 @@ Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Text bearbeite
 
 Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Skripts im Skriptbereich ausführen.
 
-|            Action            |                                                                                                     Tastenkombination                                                                                                      |
+|            Aktion            |                                                                                                     Tastenkombination                                                                                                      |
 | ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Neu**                      | <kbd>STRG</kbd>+<kbd>N</kbd>                                                                                                                                                                                               |
 | **Öffnen**                     | <kbd>STRG</kbd>+<kbd>O</kbd>                                                                                                                                                                                               |
@@ -92,7 +92,7 @@ Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Skripts im Skr
 
 Sie können die folgenden Tastenkombinationen verwenden, um die Ansicht in Windows PowerShell ISE anzupassen. Diese Tastenkombinationen sind in allen Bereichen in der Anwendung wirksam.
 
-|           Action           |         Tastenkombination        |
+|           Aktion           |         Tastenkombination        |
 | -------------------------- | -------------------------------- |
 | **Zur Konsole wechseln**     | <kbd>STRG</kbd>+<kbd>D</kbd>     |
 | **Zum Skriptbereich gehen**      | <kbd>STRG</kbd>+<kbd>I</kbd>     |
@@ -108,7 +108,7 @@ Sie können die folgenden Tastenkombinationen verwenden, um die Ansicht in Windo
 
 Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Skripts debuggen.
 
-|           Action           |               Tastenkombination                |                Verwenden in                |
+|           Aktion           |               Tastenkombination                |                Verwenden in                |
 | -------------------------- | ---------------------------------------------- | ------------------------------------ |
 | **Ausführen/Fortsetzen**           | <kbd>F5</kbd>                                  | Skriptbereich beim Debuggen eines Skripts |
 | **Einzelschritt**              | <kbd>F11</kbd>                                 | Skriptbereich beim Debuggen eines Skripts |
@@ -121,9 +121,9 @@ Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Skripts debugg
 | **Debugger beenden**          | <kbd>UMSCHALT</kbd>+<kbd>F5</kbd>                 | Skriptbereich beim Debuggen eines Skripts |
 
 > [!NOTE]
-> Sie können beim Debuggen von Skripts in der Windows PowerShell ISE auch die Tastenkombinationen verwenden, die für die Windows PowerShell-Konsole vorgesehen sind. Um diese Tastenkombinationen zu verwenden, müssen Sie die jeweilige Kombination im Konsolenbereich eingeben und die EINGABETASTE drücken.
+> Sie können beim Debuggen von Skripts in der Windows PowerShell ISE auch die Tastenkombinationen verwenden, die für die Windows PowerShell-Konsole vorgesehen sind. Um diese Tastenkombinationen zu verwenden, müssen Sie die jeweilige Kombination im Konsolenbereich eingeben und die <kbd>EINGABETASTE</kbd> drücken.
 
-|                 Action                  |      Tastenkombination       |                Verwenden in                 |
+|                 Aktion                  |      Tastenkombination       |                Verwenden in                 |
 | --------------------------------------- | ---------------------------- | ------------------------------------- |
 | **Fortsetzen**                            | <kbd>C</kbd>                 | Konsolenbereich, wenn ein Skript debuggt wird |
 | **Einzelschritt**                           | <kbd>S</kbd>                 | Konsolenbereich, wenn ein Skript debuggt wird |
@@ -139,26 +139,25 @@ Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Skripts debugg
 
 Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Windows PowerShell-Registerkarten verwenden.
 
-|             Action              |                                 Tastenkombination                                  |
+|             Aktion              |                                 Tastenkombination                                  |
 | ------------------------------- | ---------------------------------------------------------------------------------- |
 | **PowerShell-Registerkarte schließen**        | <kbd>STRG</kbd>+<kbd>W</kbd>                                                       |
 | **Neue PowerShell-Registerkarte**          | <kbd>STRG</kbd>+<kbd>T</kbd>                                                       |
-| **Vorherige PowerShell-Registerkarte**     | <kbd>STRG</kbd>+<kbd>UMSCHALT</kbd>+<kbd>TAB</kbd> (Funktioniert nur, wenn keine Dateien in einer der PowerShell-Registerkarten geöffnet sind)                 |
+| **Vorherige PowerShell-Registerkarte**     | <kbd>STRG</kbd>+<kbd>UMSCHALT</kbd>+<kbd>TAB</kbd> (Funktioniert nur, wenn keine Dateien in einer der PowerShell-Registerkarten geöffnet sind) |
 | **Nächste Windows PowerShell-Registerkarte** | <kbd>STRG</kbd>+<kbd>TAB</kbd> (Funktioniert nur, wenn keine Dateien in einer der PowerShell-Registerkarten geöffnet sind) |
 
 ## <a name="keyboard-shortcuts-for-starting-and-exiting"></a>Tastenkombinationen für Starten und Beenden
 
 Sie können die folgenden Tastenkombinationen verwenden, um die Windows PowerShell-Konsole (**PowerShell.exe**) zu starten oder Windows PowerShell ISE zu beenden.
 
-|                        Action                         |               Tastenkombination               |
+|                        Aktion                         |               Tastenkombination               |
 | ----------------------------------------------------- | --------------------------------------------- |
 | **Beenden**                                              | <kbd>ALT</kbd>+<kbd>F4</kbd>                  |
 | **PowerShell.exe starten** (Windows PowerShell-Konsole) | <kbd>STRG</kbd>+<kbd>UMSCHALT</kbd>+<kbd>P</kbd> |
 
 ## <a name="breakpoint-management"></a>Haltepunktverwaltung
 
-Für Sehbehinderte stehen Haltepunktinformationen über die Cmdlets zum Verwalten von Haltepunkten zur Verfügung, wie z. B. [Get-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Get-PSBreakpoint.md) und [Set-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Set-PSBreakpoint.md).
-Weitere Informationen finden Sie unter „Verwalten von Haltepunkten“ in [Debuggen von Skripts in der Windows PowerShell ISE](How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md).
+Für Sehbehinderte stehen Haltepunktinformationen über die Cmdlets zum Verwalten von Haltepunkten zur Verfügung, wie z. B. [Get-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Get-PSBreakpoint) und [Set-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Set-PSBreakpoint). Weitere Informationen finden Sie unter „Verwalten von Haltepunkten“ in [Debuggen von Skripts in der Windows PowerShell ISE](How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md).
 
 ## <a name="see-also"></a>Weitere Informationen
 

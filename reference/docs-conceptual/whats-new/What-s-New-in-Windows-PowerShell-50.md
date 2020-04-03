@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Neuerungen in Windows PowerShell 5.0
-ms.openlocfilehash: 08775c1767f1d9d18dafab39d188db152073e69d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 8c1858a63adad467e389a683708bccba2a6768c7
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417570"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500467"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Neuerungen in Windows PowerShell 5.0
 
@@ -17,11 +17,12 @@ Windows PowerShell 5.0 ist abwärtskompatibel. Cmdlets, Anbieter, Module, Snap-I
 
 ## <a name="installing-windows-powershell"></a>Installieren von Windows PowerShell
 
-Windows PowerShell 5.0 wird standardmäßig unter Windows Server 2016 Technical Preview und Windows 10 installiert.
+Windows PowerShell 5.0 wird standardmäßig unter Windows Server 2016 Technical Preview und Windows installiert.
+10.
 
 Zum Installieren von Windows PowerShell 5.0 unter Windows Server 2012 R2, Windows 8.1 Enterprise oder Windows 8.1 Pro müssen Sie [Windows Management Framework 5.0](https://aka.ms/wmf5download) herunterladen und installieren. Achten Sie darauf, dass Sie die Details für das Herunterladen lesen und alle Systemanforderungen erfüllen, bevor Sie Windows Management Framework 5.0 installieren.
 
-## <a name="in-this-topic"></a>Inhalt dieses Themas
+## <a name="in-this-topic"></a>In diesem Thema
 
 - [Windows PowerShell 4.0 DSC-Updates in KB 3000850](#windows-powershell-40-updates-in-november-2014-update-rollup-kb-3000850)
 - [Neue Features in Windows PowerShell 5.0](#new-features-in-windows-powershell-50)
@@ -32,18 +33,18 @@ Zum Installieren von Windows PowerShell 5.0 unter Windows Server 2012 R2, Window
 
 Viele Updates und Verbesserungen für Windows PowerShell DSC (Desired State Configuration, Konfiguration für den gewünschten Zustand) in Windows PowerShell 4.0 stehen im [Updaterollup vom November 2014 für Windows RT 8.1, Windows 8.1 und Windows Server 2012 R2](https://support.microsoft.com/kb/3000850/) (KB 3000850) zur Verfügung. Sie können feststellen, ob KB 3000850 auf Ihrem System installiert ist, indem Sie `Get-Hotfix -Id KB3000850` in Windows PowerShell ausführen.
 
-- Aktualisierungen vorhandener Cmdlets im Modul [PSDesiredStateConfiguration](https://technet.microsoft.com/library/dn391651(v=wps.640).aspx)
-  - [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) ist schneller (insbesondere in der ISE).
-  - [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) verfügt über den neuen Parameter „-UseExisting“, der die zuletzt angewendete Konfiguration erneut anwendet.
-  - Der [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx)-Parameter „-Force“ wurde korrigiert.
-  - [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx) zeigt nützlichere Informationen zum Engine-Zustand.
-  - [Test-DscConfiguration](https://technet.microsoft.com/library/dn407382.aspx) gibt nun den Namen des Computers zusammen mit „True“ oder „False“ zurück.
-  - [New-DscChecksum](https://technet.microsoft.com/library/dn521622.aspx) unterstützt jetzt UNC-Pfade.
+- Aktualisierungen vorhandener Cmdlets im Modul [PSDesiredStateConfiguration](/powershell/module/PSDesiredStateConfiguration)
+  - [Get-DscResource](/powershell/module/PSDesiredStateConfiguration) ist schneller (insbesondere in der ISE).
+  - [Start-DscConfiguration](/powershell/module/PSDesiredStateConfiguration) verfügt über den neuen Parameter „-UseExisting“, der die zuletzt angewendete Konfiguration erneut anwendet.
+  - Der [Start-DscConfiguration](/powershell/module/PSDesiredStateConfiguration)-Parameter „-Force“ wurde korrigiert.
+  - [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration) zeigt nützlichere Informationen zum Engine-Zustand.
+  - [Test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration) gibt nun den Namen des Computers zusammen mit „True“ oder „False“ zurück.
+  - [New-DscChecksum](/powershell/module/PSDesiredStateConfiguration) unterstützt jetzt UNC-Pfade.
 
-- Neue Cmdlets im Modul [PSDesiredStateConfiguration](https://technet.microsoft.com/library/dn391651(v=wps.640).aspx)
-  - [Update-DscConfiguration:](https://technet.microsoft.com/library/mt143541(v=wps.630).aspx)  Führt eine bedarfsgesteuerte Überprüfung des Pullservers durch.
-  - [Stop-DscConfiguration:](https://technet.microsoft.com/library/mt143542(v=wps.630).aspx)  Beendet eine Konfiguration, die bereits ausgeführt wird.
-  - [Remove-DscConfigurationDocument:](https://technet.microsoft.com/library/mt143544(v=wps.630).aspx)  Ermöglicht das Entfernen von Konfigurationsdokumenten in verschiedenen Phasen (ausstehend, vorherig oder aktuell).
+- Neue Cmdlets im Modul [PSDesiredStateConfiguration](/powershell/module/PSDesiredStateConfiguration)
+  - [Update-DscConfiguration:](/powershell/module/PSDesiredStateConfiguration/Update-DscConfiguration) Führt eine bedarfsgesteuerte Überprüfung des Pullservers durch.
+  - [Stop-DscConfiguration:](/powershell/module/PSDesiredStateConfiguration/Stop-DscConfiguration) Beendet eine Konfiguration, die bereits ausgeführt wird.
+  - [Remove-DscConfigurationDocument:](/powershell/module/PSDesiredStateConfiguration/Remove-DscConfigurationDocument) Ermöglicht das Entfernen von Konfigurationsdokumenten in verschiedenen Phasen (ausstehend, vorherig oder aktuell).
 
 - Spracherweiterungen
   - „DependsOn“ unterstützt jetzt zusammengesetzte Ressourcen.
@@ -70,7 +71,7 @@ Viele Updates und Verbesserungen für Windows PowerShell DSC (Desired State Conf
     - ContinueConfiguration (Standardwert): Setzt eine Konfiguration automatisch fort, nachdem ein Zielknoten neu gestartet wurde.
     - StopConfiguration: Setzt eine Konfiguration nicht automatisch fort, nachdem ein Knoten neu gestartet wurde.
   - Eine Konsistenzprüfung kann nun häufiger als ein Pullvorgang erfolgen oder umgekehrt.
-  - Unterstützung der Versionsverwaltung:  DSC kann nun ein Dokument erkennen, das auf einem neueren Client generiert wurde (enthalten in [WMF 5.0](https://aka.ms/wmf5download)).
+  - Unterstützung der Versionsverwaltung: DSC kann nun ein Dokument erkennen, das auf einem neueren Client generiert wurde (enthalten in [WMF 5.0](https://aka.ms/wmf5download)).
 
 - Verbesserungen bei der Fehlervermeidung
   - Die Version des Moduls wird nun erzwungen, bevor eine Konfiguration angewendet wird.
@@ -86,8 +87,8 @@ Viele Updates und Verbesserungen für Windows PowerShell DSC (Desired State Conf
   - Die Ressource „Package“
     - Installiert nicht mehr das falsche Paket (entweder aus lokalen oder Webquellen).
     - Unterstützt nun HTTPS.
-  - Die [Ressource „Package“](https://technet.microsoft.com/library/dn282132.aspx) unterstützt jetzt HTTPS.
-  - Die [Ressource „Archive“](https://technet.microsoft.com/library/dn249917.aspx) unterstützt jetzt Anmeldeinformationen.
+  - Die [Ressource „Package“](/powershell/scripting/dsc/reference/resources/windows/packageresource) unterstützt jetzt HTTPS.
+  - Die [Ressource „Archive“](/powershell/scripting/dsc/reference/resources/windows/archiveresource) unterstützt jetzt Anmeldeinformationen.
 
 ## <a name="new-features-in-windows-powershell-50"></a>Neue Features in Windows PowerShell 5.0
 
@@ -99,7 +100,8 @@ Viele Updates und Verbesserungen für Windows PowerShell DSC (Desired State Conf
 
 ### <a name="new-features-in-windows-powershell"></a>Neue Features in Windows PowerShell
 
-- Ab Windows PowerShell 5.0 ist eine Entwicklung mithilfe von Klassen möglich, indem eine mit anderen objektorientierten Programmiersprachen vergleichbare formale Syntax und Semantik verwendet wird. **Class**, **Enum** und andere Schlüsselwörter wurden der Windows PowerShell-Sprache hinzugefügt, um das neue Feature zu unterstützen. Weitere Informationen zum Arbeiten mit Klassen finden Sie unter „about_Classes“.
+- Ab Windows PowerShell 5.0 ist eine Entwicklung mithilfe von Klassen möglich, indem eine mit anderen objektorientierten Programmiersprachen vergleichbare formale Syntax und Semantik verwendet wird. **Class**, **Enum** und andere Schlüsselwörter wurden der Windows PowerShell-Sprache hinzugefügt, um das neue Feature zu unterstützen.
+  Weitere Informationen zum Arbeiten mit Klassen finden Sie unter „about_Classes“.
 
 - Windows PowerShell 5.0 führt einen neuen, strukturierten Informationsdatenstrom ein, mit dessen Hilfe Sie strukturierte Daten zwischen einem Skript und seinen Aufrufern (oder seiner Hostingumgebung) übertragen können. Sie können nun „Write-Host“ zum Übergeben der Ausgabe an den Informationsdatenstrom nutzen. Informationsdatenströme funktionieren auch für „PowerShell.Streams“, Aufträge, geplante Aufträge und Workflows. Die folgenden Features unterstützen den Informationsdatenstrom.
   - Das neue Cmdlet „Write-Information“ ermöglicht Ihnen das Angeben, wie Windows PowerShell Daten in einem Informationsdatenstrom für einen Befehl verarbeitet. „Write-Host“ ist ein Wrapper für „Write-Informationen“. „Write-Information“ ist auch eine unterstützte Workflowaktivität.
@@ -111,27 +113,30 @@ Viele Updates und Verbesserungen für Windows PowerShell DSC (Desired State Conf
 - In Zusammenarbeit mit [Microsoft Research](https://research.microsoft.com/) wurde das neue Cmdlet „ConvertFrom-String“ hinzugefügt. „ConvertFrom-String“ ermöglicht das Extrahieren und Analysieren strukturierter Objekte aus dem Inhalt von Textzeichenfolgen. Weitere Informationen finden Sie unter „ConvertFrom-String“.
 - Das neue Cmdlet „Convert-String“ formatiert Text automatisch basierend auf einem Beispiel, das Sie in einem „-Example“-Parameter angeben.
 - Das neue Modul „Microsoft.PowerShell.Archive“ bietet Cmdlets, mit denen Sie Dateien und Ordner in Archivdateien (.zip) komprimieren, Dateien aus vorhandenen ZIP-Dateien extrahieren und ZIP-Dateien mit neueren Versionen von Dateien aktualisieren können, die in ihnen komprimiert sind.
-- Mit dem neuen Modul „PackageManagement“ können Sie Softwarepakete im Internet ermitteln und installieren. Das Modul „PackageManagement“ (zuvor als OneGet bezeichnet) dient zur Verwaltung vorhandener Paket-Manager (die auch als Paketanbieter bezeichnet werden) und zur Vereinheitlichung der Verwaltung von Windows-Paketen mithilfe einer einzigen Windows PowerShell-Schnittstelle.
+- Mit dem neuen Modul „PackageManagement“ können Sie Softwarepakete im Internet ermitteln und installieren.
+  Das Modul „PackageManagement“ (zuvor als OneGet bezeichnet) dient zur Verwaltung vorhandener Paket-Manager (die auch als Paketanbieter bezeichnet werden) und zur Vereinheitlichung der Verwaltung von Windows-Paketen mithilfe einer einzigen Windows PowerShell-Schnittstelle.
 - Mit dem neuen Modul „PowerShellGet“ können Sie Module und DSC-Ressourcen im [PowerShell-Katalog](https://www.powershellgallery.com/) finden, installieren, veröffentlichen und aktualisieren. Dies ist auch in einem internen Modulrepository möglich, das Sie durch Ausführen des Cmdlets „Register-PSRepository“ einrichten können.
-- Das neue Schlüsselwort **Hidden** wurde hinzugefügt, um anzugeben, dass ein Member (eine Eigenschaft oder Methode) nicht standardmäßig in Ergebnissen von „Get-Member“ angezeigt wird (es sei denn, Sie fügen den Parameter „-Force“ hinzu). Eigenschaften oder Methoden, die als ausgeblendet markiert wurden, werden auch nicht in IntelliSense-Ergebnissen angezeigt. Dies gilt nur, wenn Sie sich in einem Kontext befinden, in dem der Member sichtbar sein soll. Die automatische Variable „$This“ soll beispielsweise ausgeblendete Member zeigen, wenn sie in der Klassenmethode enthalten ist.
+- Das neue Schlüsselwort **Hidden** wurde hinzugefügt, um anzugeben, dass ein Member (eine Eigenschaft oder Methode) nicht standardmäßig in Ergebnissen von „Get-Member“ angezeigt wird (es sei denn, Sie fügen den Parameter „-Force“ hinzu).
+  Eigenschaften oder Methoden, die als ausgeblendet markiert wurden, werden auch nicht in IntelliSense-Ergebnissen angezeigt. Dies gilt nur, wenn Sie sich in einem Kontext befinden, in dem der Member sichtbar sein soll. Die automatische Variable „$This“ soll beispielsweise ausgeblendete Member zeigen, wenn sie in der Klassenmethode enthalten ist.
 - „New-Item“, „Remove-Item“ und „Get-ChildItem“ wurden verbessert, um das Erstellen und Verwalten [symbolischer Verknüpfungen](https://en.wikipedia.org/wiki/Symbolic_link) zu unterstützen. Der **ItemType**-Parameter für „New-Item“ akzeptiert den neuen Wert **SymbolicLink**. Nun können Sie symbolische Verknüpfungen in einer einzigen Zeile erstellen, indem Sie das Cmdlet „New-Item“ ausführen.
 - „Get-ChildItem“ verfügt auch über den neuen „-Depth“-Parameter, den Sie mit dem „-Recurse“-Parameter verwenden, um die Rekursion zu beschränken. Beispiel: „Get-ChildItem -Recurse -Depth 2“ gibt Ergebnisse aus dem aktuellen Ordner, aus allen untergeordneten Ordnern im aktuellen Ordner und allen Ordnern innerhalb der untergeordneten Ordner zurück.
-- „Copy-Item“ ermöglicht Ihnen nun das Kopieren von Dateien oder Ordnern aus einer Windows PowerShell-Sitzung in eine andere. Das bedeutet, dass Sie Dateien in Sitzungen kopieren können, die mit Remotecomputern verbunden sind (einschließlich Computern mit [Nano Server](https://blogs.technet.com/b/windowsserver/archive/2015/04/08/microsoft-announces-nano-server-for-modern-apps-and-cloud.aspx), die keine andere Schnittstelle haben). Zum Kopieren von Dateien geben Sie „PSSession“-IDs als Wert für die neuen Parameter „FromSession“ und „ToSession“ ein. Fügen Sie „-Path“ und „-Destination“ hinzu, um den Ursprungspfad und das Ziel anzugeben. Beispiel: Copy-Item -Path c:\\myFile.txt -ToSession $s -Destination d:\\destinationFolder.
+- „Copy-Item“ ermöglicht Ihnen nun das Kopieren von Dateien oder Ordnern aus einer Windows PowerShell-Sitzung in eine andere. Das bedeutet, dass Sie Dateien in Sitzungen kopieren können, die mit Remotecomputern verbunden sind (einschließlich Computern mit Nano Server, die keine andere Schnittstelle haben). Zum Kopieren von Dateien geben Sie „PSSession“-IDs als Wert für die neuen Parameter „FromSession“ und „ToSession“ ein. Fügen Sie „-Path“ und „-Destination“ hinzu, um den Ursprungspfad und das Ziel anzugeben. Beispiel: Copy-Item -Path c:\\myFile.txt -ToSession $s -Destination d:\\destinationFolder.
 - Die Windows PowerShell-Aufzeichnung wurde verbessert und gilt nun für alle Hostinganwendungen (z. B. Windows PowerShell ISE) anstatt nur für den Konsolenhost (**powershell.exe**). Aufzeichnungsoptionen (einschließlich einer systemweiten Aufzeichnung) können durch Aktivieren der Gruppenrichtlinieneinstellung **PowerShell-Aufzeichnung aktivieren** („Administrative Vorlagen“/„Windows-Komponenten“/„Windows PowerShell“) konfiguriert werden.
 - Ein neues Feature zur detaillierten Ablaufverfolgung von Skripts ermöglicht eine detaillierte Nachverfolgung und Analyse der Verwendung von Windows PowerShell-Skripts auf einem System. Nachdem Sie die detaillierte Ablaufverfolgung von Skripts aktiviert haben, protokolliert Windows PowerShell alle Skriptblöcke im ETW-Ereignisprotokoll **Microsoft-Windows-PowerShell/Operational**.
-- Ab Windows PowerShell 5.0 unterstützen die neuen CMS-Cmdlets (Cryptographic Message Syntax) die Ver- und Entschlüsselung von Inhalten mithilfe des IETF-Standardformats für kryptografisch geschützte Nachrichten, wie unter [RFC5652](https://tools.ietf.org/html/rfc5652) dokumentiert. Die Cmdlets „Get-CmsMessage“, „Protect-CmsMessage“ und „Unprotect-CmsMessage“ wurden dem Modul [Microsoft.PowerShell.Security](https://technet.microsoft.com/library/hh849807.aspx) hinzugefügt.
-- Neue Cmdlets im Modul [Microsoft.PowerShell.Utility](https://technet.microsoft.com/library/hh849958.aspx) (Get-Runspace, Debug-Runspace, Get-RunspaceDebug, Enable-RunspaceDebug, Disable-RunspaceDebug), ermöglichen das Festlegen von Debugoptionen für einen Runspace sowie das Starten und Beenden des Debuggens in einem Runspace. Für das Debuggen beliebiger Runspaces, d. h. Runspaces, die nicht der Standardrunspace für eine Windows PowerShell-Konsole oder Windows PowerShell-ISE-Sitzung sind, ermöglicht Windows PowerShell, dass Sie in einem Skript Haltepunkte setzen und veranlassen, dass hinzugefügte Haltepunkte die Ausführung des Skripts anhalten, bis Sie einen Debugger zum Debuggen des Runspaceskripts anfügen können. Dem Windows PowerShell-Skriptdebugger für Runspaces wurde Unterstützung für das geschachtelte Debugging für beliebige Runspaces hinzugefügt.
-- Das Cmdlet „Format-Hex“ wurde dem Modul [Microsoft.PowerShell.Utility](https://technet.microsoft.com/library/hh849958.aspx) hinzugefügt. Mit Format-Hex- können Sie Text- und Binärdaten im Hexadezimalformat anzeigen.
-- Die Cmdlets „Get-Clipboard“ und „Set-Clipboard“ wurden dem Modul [Microsoft.PowerShell.Utility](https://technet.microsoft.com/library/hh849958.aspx) hinzugefügt. Sie vereinfachen die Übertragung von Inhalten in und aus einer Windows PowerShell-Sitzung. Die „Clipboard“-Cmdlets unterstützen Bilder, Audiodateien, Dateilisten und Text.
-- Das Cmdlet „Clear-RecycleBin“ wurde dem Modul [Microsoft.PowerShell.Utility](https://technet.microsoft.com/library/hh849827(v=wps.640).aspx) hinzugefügt. Es dient zum Leeren des Papierkorbs für ein Festplattenlaufwerk, wozu auch externe Laufwerke zählen. Standardmäßig werden Sie aufgefordert, einen „Clear-RecycleBin“-Befehl zu bestätigen, da die „ConfirmImpact“-Eigenschaft des Cmdlets auf „ConfirmImpact.High“ festgelegt ist.
+- Ab Windows PowerShell 5.0 unterstützen die neuen CMS-Cmdlets (Cryptographic Message Syntax) die Ver- und Entschlüsselung von Inhalten mithilfe des IETF-Standardformats für kryptografisch geschützte Nachrichten, wie unter [RFC5652](https://tools.ietf.org/html/rfc5652) dokumentiert. Die Cmdlets „Get-CmsMessage“, „Protect-CmsMessage“ und „Unprotect-CmsMessage“ wurden dem Modul [Microsoft.PowerShell.Security](/powershell/module/Microsoft.PowerShell.Security) hinzugefügt.
+- Neue Cmdlets im Modul [Microsoft.PowerShell.Utility](/powershell/module/Microsoft.PowerShell.Utility) (Get-Runspace, Debug-Runspace, Get-RunspaceDebug, Enable-RunspaceDebug, Disable-RunspaceDebug), ermöglichen das Festlegen von Debugoptionen für einen Runspace sowie das Starten und Beenden des Debuggens in einem Runspace. Für das Debuggen beliebiger Runspaces, d. h. Runspaces, die nicht der Standardrunspace für eine Windows PowerShell-Konsole oder Windows PowerShell-ISE-Sitzung sind, ermöglicht Windows PowerShell, dass Sie in einem Skript Haltepunkte setzen und veranlassen, dass hinzugefügte Haltepunkte die Ausführung des Skripts anhalten, bis Sie einen Debugger zum Debuggen des Runspaceskripts anfügen können. Dem Windows PowerShell-Skriptdebugger für Runspaces wurde Unterstützung für das geschachtelte Debugging für beliebige Runspaces hinzugefügt.
+- Das Cmdlet „Format-Hex“ wurde dem Modul [Microsoft.PowerShell.Utility](/powershell/module/Microsoft.PowerShell.Utility) hinzugefügt.
+  Mit Format-Hex- können Sie Text- und Binärdaten im Hexadezimalformat anzeigen.
+- Die Cmdlets „Get-Clipboard“ und „Set-Clipboard“ wurden dem Modul [Microsoft.PowerShell.Utility](/powershell/module/Microsoft.PowerShell.Utility) hinzugefügt. Sie vereinfachen die Übertragung von Inhalten in und aus einer Windows PowerShell-Sitzung. Die „Clipboard“-Cmdlets unterstützen Bilder, Audiodateien, Dateilisten und Text.
+- Das Cmdlet „Clear-RecycleBin“ wurde dem Modul [Microsoft.PowerShell.Utility](/powershell/module/Microsoft.PowerShell.Management) hinzugefügt. Es dient zum Leeren des Papierkorbs für ein Festplattenlaufwerk, wozu auch externe Laufwerke zählen. Standardmäßig werden Sie aufgefordert, einen „Clear-RecycleBin“-Befehl zu bestätigen, da die „ConfirmImpact“-Eigenschaft des Cmdlets auf „ConfirmImpact.High“ festgelegt ist.
 - Das neue Cmdlet „New-TemporaryFile“ ermöglicht Ihnen während der Skripterstellung das Anlegen einer temporären Datei. Standardmäßig wird der neue temporäre Datei in ```C:\Users\<user name>\AppData\Local\Temp``` erstellt.
 - Die Cmdlets „Out-File“, „Add-Content“ und „Set-Content“ verfügen nun über den neuen Parameter „-NoNewline“, der eine neue Zeile hinter der Ausgabe weglässt.
 - Das Cmdlet „New-Guid“ nutzt die .NET Framework-Klasse „Guid“ zum Generieren einer GUID, die beim Schreiben von Skripts oder DSC-Ressourcen nützlich ist.
-- Da Dateiversionsinformationen irreführend sein können, insbesondere, wenn eine Datei mit einem Patch versehen wurde, sind die neuen Skripteigenschaften „FileVersionRaw“ und „ProductVersionRaw“ für „FileInfo“-Objekte verfügbar. Sie können z.B. den folgenden Befehl ausführen, um die Werte dieser Eigenschaften für „PowerShell.exe“ anzuzeigen, wobei „$pid“ die Prozess-ID für eine ausgeführte Windows PowerShell-Sitzung enthält: ```Get-Process -Id $pid -FileVersionInfo | Format-List *version* -Force```
+- Da Dateiversionsinformationen irreführend sein können, insbesondere, wenn eine Datei mit einem Patch versehen wurde, sind die neuen Skripteigenschaften „FileVersionRaw“ und „ProductVersionRaw“ für „FileInfo“-Objekte verfügbar. Sie können z. B. den folgenden Befehl ausführen, um die Werte dieser Eigenschaften für PowerShell.exe“ anzuzeigen, wobei $pid die Prozess-ID für eine ausgeführte Windows PowerShell-Sitzung enthält: `Get-Process -Id $pid -FileVersionInfo | Format-List *version* -Force`
 - Die neuen Cmdlets „Enter-PSHostProcess“ und „Exit-PSHostProcess“ ermöglichen das Debuggen von Windows PowerShell-Skripts in vom aktuellen Prozess getrennten Prozessen, der in der Windows PowerShell-Konsole ausgeführt wird. Führen Sie „Enter-PSHostProcess“ zum Eingeben einer oder Anfügen an eine bestimmte Prozess-ID und dann „Get-Runspace“ zum Zurückgeben der aktiven Runspaces innerhalb des Prozesses aus. Führen Sie „Exit-PSHostProcess“ zum Trennen vom Prozess aus, wenn Sie mit dem Debuggen des Skripts innerhalb des Prozesses fertig sind.
-- Das Cmdlet „Wait-Debugger“ wurde dem Modul [Microsoft.PowerShell.Utility](https://technet.microsoft.com/library/hh849958.aspx) hinzugefügt. Sie können „Wait-Debugger“ ausführen, um ein Skript im Debugger zu beenden, bevor die nächste Anweisung im Skript ausgeführt wird.
+- Das Cmdlet „Wait-Debugger“ wurde dem Modul [Microsoft.PowerShell.Utility](/powershell/module/Microsoft.PowerShell.Utility) hinzugefügt. Sie können „Wait-Debugger“ ausführen, um ein Skript im Debugger zu beenden, bevor die nächste Anweisung im Skript ausgeführt wird.
 - Der Windows PowerShell-Workflow-Debugger unterstützt nun die Vervollständigung mit der TAB-TASTE und das Debuggen geschachtelter Workflowfunktionen. Sie können jetzt **STRG+PAUSE** drücken, um den Debugger in einem ausgeführten Skript, in lokalen und Remotesitzungen und in einem Workflowskript zu öffnen.
-- Das Cmdlet „Debug-Job“ wurde dem Modul [Microsoft.PowerShell.Core](https://technet.microsoft.com/library/hh849695.aspx) hinzugefügt, um ausgeführte Auftragsskripts zu debuggen, die für Windows PowerShell-Workflowaufträge, Hintergrundaufträge und in Remotesitzungen ausgeführte Aufträge ausgeführt werden.
+- Das Cmdlet „Debug-Job“ wurde dem Modul [Microsoft.PowerShell.Core](/powershell/module/Microsoft.PowerShell.Core) hinzugefügt, um ausgeführte Auftragsskripts zu debuggen, die für Windows PowerShell-Workflowaufträge, Hintergrundaufträge und in Remotesitzungen ausgeführte Aufträge ausgeführt werden.
 - Der neue Status „AtBreakpoint“ wurde für Windows PowerShell-Aufträge hinzugefügt. Der Status „AtBreakpoint“ gilt, wenn ein Auftrag in einem Skript ausgeführt wird, das gesetzte Haltepunkte enthält, und das Skript einen Haltepunkt erreicht hat. Wenn ein Auftrag an einem Haltepunkt angehalten wird, müssen Sie den Auftrag durch Ausführen des Cmdlets „Debug-Job“ debuggen.
 - Windows PowerShell 5.0 implementiert in „$PSModulePath“ Unterstützung für mehrere Versionen eines einzelnen Windows PowerShell-Moduls in demselben Ordner. Die „RequiredVersion“-Eigenschaft wurde der „ModuleSpecification“-Klasse hinzugefügt, um Sie beim Abrufen der gewünschten Version zu unterstützen. Diese Eigenschaft und die „ModuleVersion“-Eigenschaft schließen sich gegenseitig aus. „RequiredVersion“ wird nun als Teil des Werts des „FullyQualifiedName“-Parameters der Cmdlets „Get-Module“, „Import-Module“ und „Remove-Module“ unterstützt.
 - Durch Ausführen des Cmdlets „Test-ModuleManifest“ können Sie jetzt die Gültigkeit der Modulversion überprüfen.
@@ -143,7 +148,7 @@ Viele Updates und Verbesserungen für Windows PowerShell DSC (Desired State Conf
 - Der „FullyQualifiedName“-Parameter wurde den Cmdlets „Import-Module“ und „Remove-Module“ hinzugefügt, um die Speicherung mehrerer Versionen eines einzelnen Moduls zu unterstützen.
 - „Save-Help“, „Update-Help“, „Import-PSSession“, „Export-PSSession“ und „Get-Command“ haben den neuen Parameter „FullyQualifiedModule“ des Typs „ModuleSpecification“. Fügen Sie diesen Parameter hinzu, um ein Modul mit seinem vollqualifizierten Namen anzugeben.
 - Der Wert von **$PSVersionTable.PSVersion** wurde auf 5.0 aktualisiert.
-- WMF 5.0 (PowerShell 5.0) beinhaltet das **Pester**-Modul.  Pester in ein Komponententestframework für PowerShell. Es stellt einige einfach verwendbare Schlüsselwörter zur Verfügung, mithilfe derer Sie Tests für Ihre Skripts erstellen können.
+- WMF 5.0 (PowerShell 5.0) beinhaltet das **Pester**-Modul. Pester in ein Komponententestframework für PowerShell. Es stellt einige einfach verwendbare Schlüsselwörter zur Verfügung, mithilfe derer Sie Tests für Ihre Skripts erstellen können.
 
 ### <a name="new-features-in-windows-powershell-desired-state-configuration"></a>Neue Features in Windows PowerShell DSC
 
@@ -170,8 +175,9 @@ Viele Updates und Verbesserungen für Windows PowerShell DSC (Desired State Conf
 - Windows PowerShell bietet nun Unterstützung für benutzerdefinierte Hilfe für DSC-Konfigurationen, die durch Hinzufügen von „\[CmdletBinding()]“ zur generierten Konfigurationsfunktion definiert wird.
 - Das neue **DscLocalConfigurationManager**-Attribut kennzeichnet einen Konfigurationsblock als Metakonfiguration, die zum Konfigurieren des lokalen Konfigurations-Managers von DSC verwendet wird. Dieses Attribut beschränkt eine Konfiguration auf ausschließlich Elemente, die zum Konfigurieren des lokalen Konfigurations-Managers von DSC dienen. Während der Verarbeitung generiert diese Konfiguration eine „\*.meta.mof“-Datei, die dann mit dem Cmdlet „Set-DscLocalConfigurationManager“ an die entsprechenden Zielknoten gesendet wird.
 - Teilkonfigurationen sind jetzt in Windows PowerShell 5.0 zulässig. Sie können Konfigurationsdokumente in Fragmenten an einen Knoten übermitteln. Damit ein Knoten mehrere Fragmente eines Konfigurationsdokuments empfangen kann, muss der lokale Konfigurations-Manager des Knotens zuerst für das Angeben der erwarteten Fragmente eingerichtet sein.
-- Die computerübergreifende Synchronisierung in DSC in Windows PowerShell 5.0 ist neu. Mithilfe der integrierten Ressourcen des Typs „WaitFor\*“ (**WaitForAll**, **WaitForAny**, **WaitForSome**) können Sie jetzt computerübergreifende Abhängigkeiten im Verlauf von Konfigurationsausführungen ohne externe Orchestrierungen angeben. Diese Ressourcen ermöglichen eine Synchronisierung zwischen Knoten mithilfe von CIM-Verbindungen über das Protokoll „WS-Man“. Eine Konfiguration kann warten, bis sich der Zustand einer bestimmten Ressource eines anderen Computers geändert hat.
-- Just Enough Administration (JEA), ein neues Delegierungssicherheitsfeature, nutzt DSC und von Windows PowerShell eingeschränkte Runspaces, um Unternehmen vor (absichtlichen oder unabsichtlichen) Datenverlusten oder Gefährdungen durch Mitarbeiter zu schützen. Weitere Informationen zu JEA, so z. B. zum Herunterladen der xJEA DSC-Ressource, finden Sie unter [Just Enough Administration, Step by Step](https://blogs.technet.com/b/privatecloud/archive/2014/05/14/just-enough-administration-step-by-step.aspx) (Just Enough Administration, Schritt für Schritt).
+- Die computerübergreifende Synchronisierung in DSC in Windows PowerShell 5.0 ist neu. Mithilfe der integrierten Ressourcen des Typs „WaitFor\*“ (**WaitForAll**, **WaitForAny**, **WaitForSome**) können Sie jetzt computerübergreifende Abhängigkeiten im Verlauf von Konfigurationsausführungen ohne externe Orchestrierungen angeben. Diese Ressourcen ermöglichen eine Synchronisierung zwischen Knoten mithilfe von CIM-Verbindungen über das Protokoll „WS-Man“.
+  Eine Konfiguration kann warten, bis sich der Zustand einer bestimmten Ressource eines anderen Computers geändert hat.
+- Just Enough Administration (JEA), ein neues Delegierungssicherheitsfeature, nutzt DSC und von Windows PowerShell eingeschränkte Runspaces, um Unternehmen vor (absichtlichen oder unabsichtlichen) Datenverlusten oder Gefährdungen durch Mitarbeiter zu schützen. Weitere Informationen zu JEA, so z. B. zum Herunterladen der xJEA DSC-Ressource, finden Sie unter [Just Enough Administration](/powershell/scripting/learn/remoting/jea/overview).
 - Dem Modul „PSDesiredStateConfiguration“ wurden die folgenden neuen Cmdlets hinzugefügt.
   - Das neue Cmdlet „Get-DscConfigurationStatus“ ruft allgemeine Informationen zum Konfigurationsstatus von einem Knoten ab. Sie erhalten den Status der letzten oder aller Konfigurationen.
   - Das neue Cmdlet „Compare-DscConfiguration“ vergleicht eine angegebene Konfiguration mit dem tatsächlichen Status eines oder mehrerer Zielknoten.
@@ -188,7 +194,7 @@ Viele Updates und Verbesserungen für Windows PowerShell DSC (Desired State Conf
 
 ### <a name="new-features-in-windows-powershell-web-services-management-odata-iis-extension"></a>Neue Features in Windows PowerShell-Webdienste (Verwaltung der OData-IIS-Erweiterung)
 
-- Ab Windows PowerShell 5.0 können Sie einen Satz von Windows PowerShell-Cmdlets basierend auf den Funktionen generieren, die von einem bestimmten OData-Endpunkt verfügbar gemacht werden, indem Sie das Cmdlet „Export-ODataEndpointProxy“ im neuen Modul [Microsoft.PowerShell.OdataUtils](https://technet.microsoft.com/library/dn818507(v=wps.640).aspx) ausführen.
+- Ab Windows PowerShell 5.0 können Sie einen Satz von Windows PowerShell-Cmdlets basierend auf den Funktionen generieren, die von einem bestimmten OData-Endpunkt verfügbar gemacht werden, indem Sie das Cmdlet „Export-ODataEndpointProxy“ im neuen Modul [Microsoft.PowerShell.OdataUtils](/powershell/module/microsoft.powershell.odatautils) ausführen.
 
 ### <a name="notable-bug-fixes-in-windows-powershell-50"></a>Wichtige Fehlerbehebungen in Windows PowerShell 5.0
 
@@ -210,27 +216,29 @@ Windows PowerShell 4.0 wird standardmäßig unter Windows 8.1 und Windows Server
 
 Windows PowerShell 4.0 bietet die folgenden neuen Features.
 
-### <a name="a-namenew-features-in-windows-powershell-1-new-features-in-windows-powershell"></a><a name="new-features-in-windows-powershell-1" />Neue Features in Windows PowerShell
+### <a name="new-features-in-windows-powershell"></a><a name="new-features-in-windows-powershell-1" />Neue Features in Windows PowerShell
 
-- **Windows PowerShell DSC** (Desired State Configuration, Konfiguration für den gewünschten Zustand) ist ein neues Verwaltungssystem in Windows PowerShell 4.0, mit dem die Bereitstellung und Verwaltung von Konfigurationsdaten für Softwaredienste und die Umgebung ermöglicht wird, in der diese Dienste ausgeführt werden. Weitere Informationen zu DSC finden Sie unter [Erste Schritte mit Windows PowerShell DSC](https://technet.microsoft.com/library/c134aa32-b085-4656-9a89-955d8ff768d0).
+- **Windows PowerShell DSC** (Desired State Configuration, Konfiguration für den gewünschten Zustand) ist ein neues Verwaltungssystem in Windows PowerShell 4.0, mit dem die Bereitstellung und Verwaltung von Konfigurationsdaten für Softwaredienste und die Umgebung ermöglicht wird, in der diese Dienste ausgeführt werden. Weitere Informationen zu DSC finden Sie unter [Erste Schritte mit Windows PowerShell DSC](/powershell/scripting/dsc/getting-started/wingettingstarted).
 - Sie können nun mit **Save-Help** die Hilfe für Module speichern, die auf Remotecomputern installiert sind. Sie können Save-Help verwenden, um die Modulhilfe auf einen mit dem Internet verbundenen Client (auf dem möglicherweise nicht alle Module installiert sind, für die Sie Hilfe benötigen) herunterzuladen, und anschließend die gespeicherte Hilfe in einen freigegebenen Remoteordner oder auf einen Remotecomputer, der nicht über einen Internetzugang verfügt, zu kopieren.
 - Der Windows PowerShell-Debugger wurde insofern verbessert, dass das Debuggen von Windows PowerShell-Workflows und von Skripts ermöglicht wird, die auf Remotecomputern ausgeführt werden. Windows PowerShell-Workflows können nun auf Skriptebene über die Windows PowerShell-Befehlszeile oder über Windows PowerShell ISE gedebuggt werden. Windows PowerShell-Skripts, darunter auch Skriptworkflows, können nun über Remotesitzungen gedebuggt werden. Remotedebugsitzungen werden bei Windows PowerShell-Remotesitzungen beibehalten, die getrennt werden und später erneut eine Verbindung aufbauen.
 - Durch einen **RunNow**-Parameter für **Register-ScheduledJob** und **Set-ScheduledJob** entfällt das Festlegen eines sofortigen Startdatums und einer Uhrzeit für Aufträge, indem der **Trigger**-Parameter verwendet wird.
 - Mit **Invoke-RestMethod** und **Invoke-WebRequest** können Sie nun alle Header festlegen, indem Sie den „Headers“-Parameter verwenden. Obwohl dieser Parameter schon immer vorhanden war, handelte es sich dabei um einen von vielen Parametern für die Web-Cmdlets, die Ausnahmen oder Fehler verursacht haben.
 - **Get-Module** hat den neuen Parameter **FullyQualifiedName** des Typs **ModuleSpecification\[]** . Mit dem **FullyQualifiedName**-Parameter von „Get-Module“ können Sie nun ein Modul angeben, indem Sie den Modulnamen, die Version und optional die GUID angeben.
 - Die Standard-Ausführungsrichtlinieneinstellung in Windows Server 2012 R2 lautet **RemoteSigned**. Unter Windows 8.1 gibt es keine Änderung der Standardeinstellung.
-- Ab Windows PowerShell 4.0 wird der Methodenaufruf mithilfe dynamischer Methodennamen unterstützt. Sie können eine Variable zum Speichern eines Methodennamens verwenden, und anschließend die Methode dynamisch aufrufen, indem die Variable aufgerufen wird.
+- Ab Windows PowerShell 4.0 wird der Methodenaufruf mithilfe dynamischer Methodennamen unterstützt.
+  Sie können eine Variable zum Speichern eines Methodennamens verwenden, und anschließend die Methode dynamisch aufrufen, indem die Variable aufgerufen wird.
 - Asynchrone Workflowaufträge werden nicht mehr gelöscht, wenn das Timeoutintervall abgelaufen ist, das vom allgemeinen **PSElapsedTimeoutSec**-Workflowparameter angegeben wird.
 - Der neue Parameter **RepeatIndefinitely** wurde den Cmdlets **New-JobTrigger** und **Set-JobTrigger** hinzugefügt. Dadurch entfällt die Angabe eines **TimeSpan.MaxValue**-Werts für den **RepetitionDuration**-Parameter, damit ein geplanter Auftrag für eine unbestimmte Zeit wiederholt ausgeführt werden kann.
 - Der **Passthru**-Parameter wurde den Cmdlets **Enable-JobTrigger** und **Disable-JobTrigger** hinzugefügt. Der „Passthru“-Parameter zeigt alle Objekte an, die durch Ihren Befehl erstellt oder geändert wurden.
 - Die Parameternamen für das Angeben einer Arbeitsgruppe in den Cmdlets **Add-Computer** und **Remove-Computer** sind nun konsistent. Beide Cmdlets verwenden nun den Parameter **WorkgroupName**.
 - Der neue allgemeine Parameter **PipelineVariable** wurde hinzugefügt. Mit „PipelineVariable“ können Sie die Ergebnisse eines weitergeleiteten Befehls (oder Teil eines weitergeleiteten Befehls) als Variable speichern, die über den Rest der Pipeline übergeben werden kann.
-- Das Filtern einer Sammlung mithilfe einer Methodensyntax wird nun unterstützt. Dies bedeutet, Sie können eine Objektsammlung mithilfe einer vereinfachten Syntax filtern, ähnlich wie bei „Where()“ oder „Where-Object“, formatiert als Methodenaufruf. Im Folgenden finden Sie ein Beispiel: (Get-Process).where({$_.Name -match 'powershell'})
+- Das Filtern einer Sammlung mithilfe einer Methodensyntax wird nun unterstützt. Dies bedeutet, Sie können eine Objektsammlung mithilfe einer vereinfachten Syntax filtern, ähnlich wie bei „Where()“ oder „Where-Object“, formatiert als Methodenaufruf. Es folgt ein Beispiel: (Get-Process).where({$_.Name -match 'powershell'})
 - Das **Get-Process**-Cmdlet hat den neuen Switch-Parameter **IncludeUserName**.
 - Das neue Cmdlet **Get-FileHash** wurde hinzugefügt, das für eine angegebene Datei einen Dateihash in einem von mehreren Formaten zurückgibt.
 - Wenn in Windows PowerShell 4.0 ein Modul den **DefaultCommandPrefix**-Schlüssel in seinem Manifest verwendet oder der Benutzer ein Modul mit dem **Prefix**-Parameter importiert, zeigt die **ExportedCommands**-Eigenschaft des Moduls die Befehle im Modul mit dem Präfix an. Wenn Sie die Befehle mithilfe der qualifizierten Modulsyntax „ModuleName\\CommandName“ verwenden, müssen die Befehlsnamen das Präfix enthalten.
 - Der Wert von **$PSVersionTable.PSVersion** wurde auf 4.0 aktualisiert.
-- Das Verhalten des **Where()** -Operators hat sich geändert. Dass `Collection.Where('property -match name')` einen Zeichenfolgeausdruck im Format `"Property -CompareOperator Value"` akzeptiert, wird nicht mehr unterstützt. Der **Where()** -Operator akzeptiert jedoch Zeichenfolgeausdrücke im Format eines Skriptblocks. Dies wird weiterhin unterstützt.
+- Das Verhalten des **Where()** -Operators hat sich geändert. Dass `Collection.Where('property -match name')` einen Zeichenfolgeausdruck im Format `"Property -CompareOperator Value"` akzeptiert, wird nicht mehr unterstützt.
+  Der **Where()** -Operator akzeptiert jedoch Zeichenfolgeausdrücke im Format eines Skriptblocks. Dies wird weiterhin unterstützt.
 
 ### <a name="new-features-in-windows-powershell-integrated-scripting-environment-ise"></a>Neue Features in Windows PowerShell Integrated Scripting Environment (ISE)
 
@@ -249,11 +257,12 @@ Windows PowerShell 4.0 bietet die folgenden neuen Features.
 
 ### <a name="new-features-in-windows-powershell-web-services"></a>Neue Features in Windows PowerShell Web Services
 
-- Wenn in Windows PowerShell-Webdienste (PSWS, auch als Management OData IIS-Erweiterung bezeichnet) ein Fehler auftritt, während ein Cmdlet ausgeführt wird, werden detailliertere Fehlermeldungen an den Aufrufer zurückgegeben. Außerdem befolgen Fehlercodes [Richtlinien für Fehlercodes für die Microsoft Azure-REST-API](https://msdn.microsoft.com/library/windowsazure/dd179357.aspx).
+- Wenn in Windows PowerShell-Webdienste (PSWS, auch als Management OData IIS-Erweiterung bezeichnet) ein Fehler auftritt, während ein Cmdlet ausgeführt wird, werden detailliertere Fehlermeldungen an den Aufrufer zurückgegeben. Außerdem befolgen Fehlercodes [Richtlinien für Fehlercodes für die Microsoft Azure-REST-API](/rest/api/storageservices/Common-REST-API-Error-Codes).
 - Ein Endpunkt kann nun die API-Version definieren, sowie die Nutzung einer bestimmten API-Version erzwingen. Wenn Versionskonflikte zwischen Client und Server auftreten, werden auf dem Client und auf dem Server Fehler angezeigt.
 - Die Verwaltung des Dispatchschemas wurde vereinfacht, indem Werte für im Schema fehlende Felder automatisch generiert werden. Die Generierung erfolgt als ein hilfreicher Ausgangspunkt, selbst wenn das Dispatchschema nicht vorhanden ist.
 - Die Typenverarbeitung in PSWS wurde so verbessert, dass auch Typen unterstützt werden, die einen anderen als den Standardkonstruktor verwenden, indem sie sich ähnlich wie der **PSTypeConverter** in Windows PowerShell verhält. Auf diese Weise können Sie mit PSWS komplexe Typen verwenden.
-- Mit PSWS können Sie eine zugewiesene Instanz nun während der Ausführung einer Abfrage erweitern. Bei größeren binären Inhalten (z. B. Bildern, Audio oder Videos) sind die Übertragungskosten erheblich, und es ist besser, binäre Daten ohne Codierung zu übertragen. PSWS verwendet benannte Ressourcenstreams für die Übertragung ohne Codierung. Der benannte Ressourcendatenstrom ist eine Eigenschaft einer Entität des **Edm.Stream**-Typs. Jeder benannte Ressourcenstream verfügt über einen separaten URI für GET- oder UPDATE-Vorgänge.
+- Mit PSWS können Sie eine zugewiesene Instanz nun während der Ausführung einer Abfrage erweitern. Bei größeren binären Inhalten (z. B. Bildern, Audio oder Videos) sind die Übertragungskosten erheblich, und es ist besser, binäre Daten ohne Codierung zu übertragen. PSWS verwendet benannte Ressourcenstreams für die Übertragung ohne Codierung.
+  Der benannte Ressourcendatenstrom ist eine Eigenschaft einer Entität des **Edm.Stream**-Typs. Jeder benannte Ressourcenstream verfügt über einen separaten URI für GET- oder UPDATE-Vorgänge.
 - OData -Aktionen bieten nun einen Mechanismus zum Aufrufen von nicht-CRUD-Methoden (Erstellen, Lesen, Aktualisieren und Löschen) für eine Ressource. Sie können eine Aktion aufrufen, indem Sie eine HTTP POST-Anforderung an den URI senden, die für die Aktion definiert ist. Die Parameter für die Aktion werden im Text der POST-Anforderung definiert.
 - Um eine Konsistenz mit Windows Azure-Richtlinien herzustellen, sollten alle URLs vereinfacht werden. Durch eine in **Key As Segment** enthaltene Änderung können einzelne Schlüssel als Segmente dargestellt werden. Beachten Sie, dass Verweise, die mehrere Schlüsselwerte enthalten, wie zuvor durch Kommas getrennte Werte in einer eingeklammerten Notation benötigen.
 - Vor dieser Version von PSWS war die einzige Möglichkeit für die Ausführung von Erstell-, Aktualisierungs- und Löschvorgängen das Aufrufen von Post, Put, oder Delete zu einer Ressource auf oberster Ebene. Neu in dieser Version von PSWS: mit enthaltenen Ressourcenvorgängen können Benutzer die gleichen Ergebnisse erzielen und dabei die gleiche Ressource weniger direkt erreichen, als wären die Ressourcen enthalten.
@@ -319,7 +328,8 @@ Windows PowerShell 3.0 bietet die folgenden neuen Features.
 
 ### <a name="windows-powershell-workflow"></a>Windows PowerShell-Workflow
 
-Durch Windows PowerShell Workflow kann Windows PowerShell auf die Leistungsfähigkeit von Windows Workflow Foundation zurückgreifen. Sie können Workflows in XAML oder in der Windows PowerShell-Sprache schreiben und sie genau wie ein Cmdlet ausführen. Das Cmdlet [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) ruft Workflowbefehle ab, das Cmdlet [Get-Help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) ruft Hilfe für Workflows ab.
+Durch Windows PowerShell Workflow kann Windows PowerShell auf die Leistungsfähigkeit von Windows Workflow Foundation zurückgreifen.
+Sie können Workflows in XAML oder in der Windows PowerShell-Sprache schreiben und sie genau wie ein Cmdlet ausführen. Das Cmdlet `Get-Command` ruft Workflowbefehle ab, das Cmdlet `Get-Help` ruft Hilfe für Workflows ab.
 
 Workflows sind Sequenzen von Verwaltungsaktivitäten mehrerer Computer, die lange ausgeführt werden, wiederholbar, parallelisierbar, unterbrechbar und neu startbar sind. Workflows können durch eine beabsichtigte oder unbeabsichtigte Unterbrechung fortgesetzt werden, z. B. nach einem Netzwerkausfall, einem Neustart von Windows oder einem Stromausfall.
 
@@ -329,10 +339,12 @@ Im Folgenden finden Sie die Vorteile von Windows PowerShell Workflow.
 
 - Automatisierung sequenzierter, langer Aufgaben.
 - **Remoteüberwachung lange ausgeführter Aufgaben**. Status und Fortschritt von Aktivitäten sind jederzeit sichtbar.
-- **Verwaltung mehrerer Computer.** Gleichzeitiges Ausführen von Aufgaben als Workflows zu Hundertern von verwalteten Knoten. Windows PowerShell Workflow enthält eine integrierte Bibliothek allgemeiner Verwaltungsparameter, z.B. **PSComputerName**, mit denen Verwaltungsszenarios für mehrere Computer umgesetzt werden können.
+- **Verwaltung mehrerer Computer.** Gleichzeitiges Ausführen von Aufgaben als Workflows zu Hundertern von verwalteten Knoten.
+  Windows PowerShell Workflow enthält eine integrierte Bibliothek allgemeiner Verwaltungsparameter, z.B. **PSComputerName**, mit denen Verwaltungsszenarios für mehrere Computer umgesetzt werden können.
 - **Einzelne Aufgabenausführung komplexer Prozesse.** Sie können ähnliche Skripts kombinieren, die ein vollständiges End-to-End-Szenario in einen einzelnen Workflow implementiert.
 - **Persistenz**: Ein Workflow wird an bestimmten Punkten gespeichert (oder zwischengespeichert), die vom Autor definiert wurden, sodass der Workflow bei der letzten persistent gespeicherten Aufgabe (oder dem Prüfpunkt) fortgesetzt werden kann, statt den Workflow vom Anfang erneut starten zu müssen.
-- **Stabilität.** Automatisierte Wiederherstellung nach einem Fehler. Workflows überstehen geplante und nicht geplante Neustarts. Sie können die Workflowausführung unterbrechen und den Workflow anschließend vom letzten permanenten Punkt fortsetzen. Workflowautoren können festlegen, dass bestimmte Aktivitäten bei einem Fehler für einen oder mehrere verwaltete Knoten erneut ausgeführt werden.
+- **Stabilität.** Automatisierte Wiederherstellung nach einem Fehler. Workflows überstehen geplante und nicht geplante Neustarts. Sie können die Workflowausführung unterbrechen und den Workflow anschließend vom letzten permanenten Punkt fortsetzen.
+  Workflowautoren können festlegen, dass bestimmte Aktivitäten bei einem Fehler für einen oder mehrere verwaltete Knoten erneut ausgeführt werden.
 - **Möglichkeit, die Verbindung zu trennen, erneut eine Verbindung herzustellen, und zum Ausführen in getrennten Sitzungen.** Benutzer können eine Verbindung zum Workflowserver herstellen und sie trennen, der Workflow wird jedoch kontinuierlich ausgeführt. Sie können sich vom Clientcomputer abmelden oder den Clientcomputer neu starten und die Workflowausführung von einem anderen Computer überwachen, ohne den Workflow zu unterbrechen.
 - **Planung.** Workflowaufgaben können wie jedes Windows PowerShell-Cmdlet oder -Skript geplant werden.
 - **Workflow- und Verbindungsdrosselung.** Die Workflowausführung und Verbindungen zu Knoten können gedrosselt werden, sodass eine Skalierung und Hochverfügbarkeitsszenarios möglich sind.
@@ -341,11 +353,11 @@ Im Folgenden finden Sie die Vorteile von Windows PowerShell Workflow.
 
 Windows PowerShell Web Access ist ein Windows Server 2012-Feature, mit dem Benutzer Windows PowerShell-Befehle und -Skripts in einer webbasierten Konsole ausführen können. Geräte mit webbasierter Konsole benötigen Windows PowerShell, Remoteverwaltungssoftware oder Browser-Plug-In-Installationen nicht. Erforderlich ist lediglich ein ordnungsgemäß konfiguriertes Windows PowerShell Web Access-Gateway und ein Browser auf dem Clientgerät, der JavaScript unterstützt und Cookies akzeptiert.
 
-Weitere Informationen finden Sie unter [Bereitstellen von Windows PowerShell Web Access](https://go.microsoft.com/fwlink/p/?LinkID=221050).
+Weitere Informationen finden Sie unter [Bereitstellen von Windows PowerShell Web Access](/powershell/scripting/components/web-access/install-and-use-windows-powershell-web-access).
 
 ### <a name="new-windows-powershell-ise-features"></a>Neue Windows PowerShell ISE-Features
 
-Für Windows PowerShell 3.0 bietet Windows PowerShell Integrated Scripting Environment (ISE) viele neue Features, darunter IntelliSense, das Fenster „Befehl anzeigen“ und ein vereinheitlichter Konsolenbereich, Snippets, übereinstimmende Klammern, Bereich erweitern/reduzieren, automatisches Speichern, Liste zuletzt verwendeter Elemente, umfassende Kopie, Blockkopie und vollständige Unterstützung für das Schreiben von Windows PowerShell-Skriptworkflows. Weitere Informationen finden Sie unter [about_Windows_PowerShell_ISE [v3]](https://technet.microsoft.com/library/dfa54d47-60c6-4fff-8197-c747e8d411bb).
+Für Windows PowerShell 3.0 bietet Windows PowerShell Integrated Scripting Environment (ISE) viele neue Features, darunter IntelliSense, das Fenster „Befehl anzeigen“ und ein vereinheitlichter Konsolenbereich, Snippets, übereinstimmende Klammern, Bereich erweitern/reduzieren, automatisches Speichern, Liste zuletzt verwendeter Elemente, umfassende Kopie, Blockkopie und vollständige Unterstützung für das Schreiben von Windows PowerShell-Skriptworkflows. Weitere Informationen finden Sie unter Informationen [about_Windows_PowerShell_ISE](/powershell/module/microsoft.powershell.core/about/about_windows_powershell_ise).
 
 ### <a name="support-for-microsoft-net-framework-4"></a>Unterstützung für Microsoft .NET Framework 4
 
@@ -353,7 +365,8 @@ Windows PowerShell wurde während der Common Language Runtime 4.0 erstellt. Cmdl
 
 ### <a name="support-for-windows-preinstallation-environment"></a>Unterstützung für Windows Preinstallation Environment
 
-Windows PowerShell 3.0 ist eine optionale Komponente des Windows Preinstallation Environment (Windows PE) 4.0 für Windows 8. Windows PE ist ein minimales Betriebssystem, mit dem ein Computer ohne Betriebssystem gestartet und für die Windows-Installation vorbereitet werden kann. Windows PE kann zum Partitionieren und Formatieren von Festplatten, zum Kopieren von Datenträgerimages auf einen Computer und zum Initiieren der Windows-Einrichtung über eine Netzwerkfreigabe verwendet werden. Windows PowerShell 3.0 kann unter Windows PE zum Verwalten von Bereitstellungs-, Diagnose- und Wiederherstellungsszenarien verwendet werden.
+Windows PowerShell 3.0 ist eine optionale Komponente des Windows Preinstallation Environment (Windows PE) 4.0 für Windows 8. Windows PE ist ein minimales Betriebssystem, mit dem ein Computer ohne Betriebssystem gestartet und für die Windows-Installation vorbereitet werden kann. Windows PE kann zum Partitionieren und Formatieren von Festplatten, zum Kopieren von Datenträgerimages auf einen Computer und zum Auslösen der Windows-Einrichtung über eine Netzwerkfreigabe verwendet werden.
+Windows PowerShell 3.0 kann unter Windows PE zum Verwalten von Bereitstellungs-, Diagnose- und Wiederherstellungsszenarien verwendet werden.
 
 ### <a name="disconnected-sessions"></a>Getrennte Sitzungen
 
@@ -361,9 +374,9 @@ Ab Windows PowerShell 3.0 werden permanente durch den Benutzer verwaltete Sitzun
 
 Sie können jetzt eine Sitzung trennen, ohne die Befehle zu unterbrechen, die in der Sitzung ausgeführt werden. Sie können die Sitzung schließen und den Computer herunterfahren. Später können Sie über eine andere Sitzung auf demselben oder einem anderen Computer erneut eine Verbindung zu der Sitzung herstellen.
 
-Der **ComputerName**-Parameter des Cmdlets [Get-PSSession](https://technet.microsoft.com/library/b2b10531-d0df-4746-b877-e75c09955cb6) ruft nun alle Benutzersitzungen ab, die eine Verbindung mit dem Computer aufbauen, sogar wenn sie in einer anderen Sitzung auf einem anderen Computer gestartet wurden. Sie können eine Verbindung zu den Sitzungen herstellen, die Ergebnisse der Befehle abrufen, neue Befehle starten, und anschließend die Verbindung zu der Sitzung trennen.
+Der Parameter **ComputerName**des Cmdlets `Get-PSSession` ruft nun alle Benutzersitzungen ab, die eine Verbindung mit dem Computer aufbauen, sogar wenn sie in einer anderen Sitzung auf einem anderen Computer gestartet wurden. Sie können eine Verbindung zu den Sitzungen herstellen, die Ergebnisse der Befehle abrufen, neue Befehle starten, und anschließend die Verbindung zu der Sitzung trennen.
 
-Neue Cmdlets wurden hinzugefügt, damit das Feature „Getrennte Sitzungen“ unterstützt wird. Dazu gehören [Disconnect-PSSession](https://technet.microsoft.com/library/f8f95111-612f-4cba-9098-77904b0473d8), [Connect-PSSession](https://technet.microsoft.com/library/b803dd29-f208-4079-80d4-db04d778f060) und „Receive-PSSession“ sowie neue Parameter, die den Cmdlets hinzugefügt wurden, die „PSSessions“ verwalten, z.B. der **InDisconnectedSession**-Parameter des Cmdlets [Invoke-Command](https://technet.microsoft.com/library/906b4b41-7da8-4330-9363-e7164e5e6970).
+Neue Cmdlets wurden hinzugefügt, damit das Feature „Getrennte Sitzungen“ unterstützt wird. Dazu gehören`Disconnect-PSSession`, `Connect-PSSession` und `Receive-PSSession` sowie neue Parameter, die den Cmdlets hinzugefügt wurden, die PSSessions verwalten, z. B. der Parameter **InDisconnectedSession** des Cmdlets `Invoke-Command`.
 
 Die Funktion für getrennte Sitzungen wird nur unterstützt, wenn die Computer am startenden ("Client") und beendenden ("Server") Ende der Verbindung Windows PowerShell 3.0 ausführen.
 
@@ -377,19 +390,20 @@ Diese Features bieten eine zuverlässigere und wiederherstellbare Remoting-Erfah
 
 ### <a name="updatable-help-system"></a>Aktualisierbares Hilfesystem
 
-Sie können aktualisierte Hilfedateien für die Cmdlets in Ihren Modulen herunterladen. Das Cmdlet [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) ermittelt die neuesten Hilfedateien, lädt sie aus dem Internet herunter, entpackt sie, überprüft sie auf Gültigkeit und installiert sie im ordnungsgemäßen sprachspezifischen Verzeichnis für das Modul.
+Sie können aktualisierte Hilfedateien für die Cmdlets in Ihren Modulen herunterladen. Das Cmdlet `Update-Help` ermittelt die neuesten Hilfedateien, lädt sie aus dem Internet herunter, entpackt sie, überprüft sie auf Gültigkeit und installiert sie im ordnungsgemäßen sprachspezifischen Verzeichnis für das Modul.
 
 Um die aktualisierten Hilfedateien zu verwenden, geben Sie einfach `Get-Help` ein. Windows oder Windows PowerShell müssen nicht neu gestartet werden. Starten Sie Windows PowerShell mit der Option „Als Administrator ausführen“, um Hilfe für Module im Verzeichnis „$pshome“ zu aktualisieren.
 
-Um Benutzer zu unterstützen, die keinen Internetzugriff haben und sich hinter Firewalls befinden, lädt das neue Cmdlet [Save-Help](https://technet.microsoft.com/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa) Hilfedateien in ein Dateisystemverzeichnis (z. B. eine Dateifreigabe) herunter. Benutzer können anschließend das Cmdlet [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) verwenden, um aktualisierte Hilfedateien aus der Dateifreigabe abzurufen.
+Um Benutzer zu unterstützen, die keinen Internetzugriff haben und sich hinter Firewalls befinden, lädt das neue Cmdlet `Save-Help` Hilfedateien in ein Dateisystemverzeichnis (z. B. eine Dateifreigabe) herunter. Benutzer können anschließend das Cmdlet `Update-Help` verwenden, um aktualisierte Hilfedateien aus der Dateifreigabe abzurufen.
 
-Sie können das Cmdlet [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) verwenden, um Hilfedateien für alle oder bestimmte Module in allen unterstützten Benutzeroberflächenkulturen zu aktualisieren. Sie können sogar einen [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545)-Befehl in Ihrem Windows PowerShell-Profil ablegen. Standardmäßig lädt Windows PowerShell die Hilfedateien für ein Modul nicht öfter als einmal täglich herunter.
+Sie können das Cmdlet `Update-Help` verwenden, um Hilfedateien für alle oder bestimmte Module in allen unterstützten Benutzeroberflächenkulturen zu aktualisieren. Sie können sogar einen `Update-Help`-Befehl in Ihrem Windows PowerShell-Profil ablegen.
+Standardmäßig lädt Windows PowerShell die Hilfedateien für ein Modul nicht öfter als einmal täglich herunter.
 
-Windows 8- und Windows Server 2012-Module enthalten keine Hilfedateien. Um die neuesten Hilfedateien herunterzuladen, geben Sie `Update-Help` ein. Geben Sie `Get-Help` (ohne Parameter) ein, um weitere Informationen zu erhalten, oder lesen Sie [about_Updatable_Help](https://technet.microsoft.com/library/10bba75c-f4ac-4ca1-bbf3-8f34dd521ffe).
+Windows 8- und Windows Server 2012-Module enthalten keine Hilfedateien. Um die neuesten Hilfedateien herunterzuladen, geben Sie `Update-Help` ein. Geben Sie `Get-Help` (ohne Parameter) ein, um weitere Informationen zu erhalten, oder lesen Sie [about_Updatable_Help](/powershell/module/microsoft.powershell.core/about/about_Updatable_Help).
 
-Wenn die Hilfedateien für ein Cmdlet nicht auf dem Computer installiert sind, zeigt das Cmdlet [Get-Help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) nun automatisch generierte Hilfe an. Die automatisch generierte Hilfe umfasst die Befehlssyntax und Anweisungen für die Nutzung des Cmdlets [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) zum Herunterladen der Hilfedateien.
+Wenn die Hilfedateien für ein Cmdlet nicht auf dem Computer installiert sind, zeigt das Cmdlet `Get-Help` nun automatisch generierte Hilfe an. Die automatisch generierte Hilfe umfasst die Befehlssyntax und Anweisungen für die Nutzung des Cmdlets `Update-Help` zum Herunterladen der Hilfedateien.
 
-Jeder Modulautor kann eine aktualisierbare Hilfe für das Modul unterstützen. Sie können Hilfedateien in das Modul einschließen und die aktualisierbare Hilfe verwenden, um sie zu aktualisieren oder Hilfedateien wegzulassen und die aktualisierbare Hilfe zu verwenden, um sie zu installieren. Weitere Informationen zur Unterstützung der aktualisierbaren Hilfe finden Sie unter [Unterstützen der aktualisierbaren Hilfe](https://go.microsoft.com/FWLink/?LinkID=242129) in MSDN.
+Jeder Modulautor kann eine aktualisierbare Hilfe für das Modul unterstützen. Sie können Hilfedateien in das Modul einschließen und die aktualisierbare Hilfe verwenden, um sie zu aktualisieren oder Hilfedateien wegzulassen und die aktualisierbare Hilfe zu verwenden, um sie zu installieren. Weitere Informationen zur Unterstützung der aktualisierbaren Hilfe finden Sie unter [Unterstützen der aktualisierbaren Hilfe](/powershell/scripting/developer/module/supporting-updatable-help).
 
 ### <a name="enhanced-online-help"></a>Verbesserte Onlinehilfe
 
@@ -422,15 +436,16 @@ Windows PowerShell 3.0 bietet Unterstützung für das Common Information Model (
 
 ### <a name="session-configuration-files"></a>Sitzungskonfigurationsdateien
 
-Ab Windows PowerShell 3.0 können Sie mithilfe einer Datei eine benutzerdefinierte Sitzungskonfiguration entwerfen. Mit der neuen Sitzungskonfigurationsdatei können Sie die Umgebung der Sitzungen ermitteln, die die Sitzungskonfiguration verwendet, dazu gehören die Module, Skripts, und Formatdateien werden in Sitzungen geladen, die Cmdlets und Sprachelemente, die Benutzer verwenden können, und Skripts, die sie ausführen können sowie die Variablen, die sie verwenden können.
+Ab Windows PowerShell 3.0 können Sie mithilfe einer Datei eine benutzerdefinierte Sitzungskonfiguration entwerfen.
+Mit der neuen Sitzungskonfigurationsdatei können Sie die Umgebung der Sitzungen ermitteln, die die Sitzungskonfiguration verwendet, dazu gehören die Module, Skripts, und Formatdateien werden in Sitzungen geladen, die Cmdlets und Sprachelemente, die Benutzer verwenden können, und Skripts, die sie ausführen können sowie die Variablen, die sie verwenden können.
 
 Sie können eine Sitzung entwerfen, in der Benutzer Cmdlets nur von einem bestimmten Modul ausführen können, oder eine Sitzung, in der Benutzer denen vollständigen Sprachzugriff auf alle Module und Zugriff auf Skripts haben, die erweiterte Aufgaben ausführen.
 
 In vorherigen Versionen von Windows PowerShell stand das Steuerelement auf dieser Ebene nur den Benutzern zur Verfügung, die ein C#-Programm oder ein komplexes Startskript schreiben können. Nun kann jedes Mitglied der Administratorengruppe auf dem Computer eine Sitzungskonfiguration mithilfe einer Konfigurationsdatei anpassen.
 
-Um eine Sitzungskonfigurationsdatei zu erstellen, müssen Sie das Cmdlet [New-PSSessionConfigurationFile](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866) verwenden. Um die Sitzungskonfigurationsdatei auf eine Sitzungskonfiguration anzuwenden, verwenden Sie das Cmdlet [Register-PSSessionConfiguration](https://technet.microsoft.com/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) oder [Set-PSSessionConfiguration](https://technet.microsoft.com/library/b21fbad3-1759-4260-b206-dcb8431cd6ea).
+Um eine Sitzungskonfigurationsdatei zu erstellen, verwenden Sie das Cmdlet `New-PSSessionConfigurationFile`. Um die Sitzungskonfigurationsdatei auf eine Sitzungskonfiguration anzuwenden, verwenden Sie das Cmdlet `Register-PSSessionConfiguration` oder Set-PSSessionConfiguration.
 
-Weitere Informationen finden Sie unter [about_Session_Configuration_Files](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configuration_files?view=powershell-5.0) und [New-PSSessionConfigurationFile](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866).
+Weitere Informationen finden Sie unter [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configuration_files) und `New-PSSessionConfigurationFile`.
 
 ### <a name="scheduled-jobs-and-task-scheduler-integration"></a>Integration geplanter Aufträge und der Aufgabenplanung
 
@@ -438,13 +453,14 @@ Sie können jetzt Windows PowerShell-Hintergrundaufträge planen und in Windows 
 
 In Windows PowerShell geplante Aufträge sind eine nützliche Hybridlösung von Windows PowerShell-Hintergrundaufträgen und Aufgabenplanungsaufträgen.
 
-Genau wie Windows PowerShell-Hintergrundaufträge werden geplante Aufträge asynchron im Hintergrund ausgeführt. Instanzen geplanter, abgeschlossener Aufträge können mithilfe von „Job“-Cmdlets verwaltet werden, wie z. B. [Start-Job](https://technet.microsoft.com/library/2bc04935-0deb-4ec0-b856-d7290cca6442) und [Get-Job](https://technet.microsoft.com/library/1352c534-7193-46ca-9ab1-0c5219a661ad).
+Genau wie Windows PowerShell-Hintergrundaufträge werden geplante Aufträge asynchron im Hintergrund ausgeführt.
+Instanzen geplanter, abgeschlossener Aufträge können mithilfe von „Job“-Cmdlets verwaltet werden, wie z. B. `Start-Job` und `Get-Job`.
 
 Genau wie Task Scheduler-Aufgaben können Sie geplante Aufträge für einen einmaligen oder wiederkehrenden Plan, oder als Antwort auf eine Aktion oder ein Ereignis ausführen. Sie können geplante Aufträge in der Aufgabenplanung bei Bedarf anzeigen, aktivieren und deaktivieren, sie ausführen oder als Vorlagen verwenden, und Bedingungen festlegen, unter denen der Auftrag gestartet wird.
 
 Außerdem enthalten geplante Aufträge einen angepassten Cmdlets-Satz für die Verwaltung. Mit den Cmdlets können Sie geplante Aufträge erstellen, bearbeiten, verwalten, deaktivieren und geplante Aufträge erneut aktivieren, geplante Auftragsauslöser erstellen und geplante Auftragsoptionen festlegen.
 
-Weitere Informationen zu geplanten Aufträgen finden Sie unter [about_Scheduled_Jobs](https://technet.microsoft.com/library/3b546629-703c-4939-b44f-52dd567bce92).
+Weitere Informationen zu geplanten Aufträgen finden Sie unter [about_Scheduled_Jobs](/powershell/module/microsoft.powershell.core/about/about_Scheduled_Jobs).
 
 ### <a name="windows-powershell-language-enhancements"></a>Verbesserungen der Windows PowerShell-Sprache
 
@@ -454,36 +470,36 @@ Windows PowerShell 3.0 umfasst viele Features, die darauf ausgelegt sind, die Sp
 
 Zur Windows PowerShell-Kerninstallation wurden neue Cmdlets hinzugefügt, dazu gehören Cmdlets zur Verwaltung geplanter Aufträge, getrennte Sitzungen, die CIM-Integration und das aktualisierbare Hilfesystem.
 
-|||
-|-|-|
-|Add-JobTrigger|New-JobTrigger|
-|Connect-PSSession|New-PSSessionConfigurationFile|
-|ConvertFrom-Json|New-PSTransportOption|
-|ConvertTo-Json|New-PSWorkflowExecutionOption|
-|Disable-JobTrigger|New-PSWorkflowSession|
-|Disable-ScheduledJob|New-ScheduledJobOption|
-|Disconnect-PSSession|New-WinEvent|
-|Enable-JobTrigger|Receive-PSSession|
-|Enable-ScheduledJob|Register-CimIndicationEvent|
-|Get-CimAssociatedInstance|Register-ScheduledJob|
-|Get-CimClass|Remove-CimInstance|
-|Get-CimInstance|Remove-CimSession|
-|Get-CimSession|Remove-TypeData|
-|Get-ControlPanelItem|Rename-Computer|
-|Get-IseSnippet|Resume-Job|
-|Get-JobTrigger|Save-Help|
-|Get-ScheduledJob|Set-CimInstance|
-|Get-ScheduledJobOption|Set-JobTrigger|
-|Get-TypeData|Set-ScheduledJob|
-|Import-IseSnippet|Set-ScheduledJobOption|
-|Invoke-AsWorkflow|Show-Command|
-|Invoke-CimMethod|Show-ControlPanelItem|
-|Invoke-RestMethod|Suspend-Job|
-|Invoke-WebRequest|Test-PSSessionConfigurationFile|
-|New-CimInstance|Unblock-File|
-|New-CimSession|Unregister-ScheduledJob|
-|New-CimSessionOption|Update-Help|
-|New-IseSnippet||
+|                           |                                 |
+| ------------------------- | ------------------------------- |
+| Add-JobTrigger            | New-JobTrigger                  |
+| Connect-PSSession         | New-PSSessionConfigurationFile  |
+| ConvertFrom-Json          | New-PSTransportOption           |
+| ConvertTo-Json            | New-PSWorkflowExecutionOption   |
+| Disable-JobTrigger        | New-PSWorkflowSession           |
+| Disable-ScheduledJob      | New-ScheduledJobOption          |
+| Disconnect-PSSession      | New-WinEvent                    |
+| Enable-JobTrigger         | Receive-PSSession               |
+| Enable-ScheduledJob       | Register-CimIndicationEvent     |
+| Get-CimAssociatedInstance | Register-ScheduledJob           |
+| Get-CimClass              | Remove-CimInstance              |
+| Get-CimInstance           | Remove-CimSession               |
+| Get-CimSession            | Remove-TypeData                 |
+| Get-ControlPanelItem      | Rename-Computer                 |
+| Get-IseSnippet            | Resume-Job                      |
+| Get-JobTrigger            | Save-Help                       |
+| Get-ScheduledJob          | Set-CimInstance                 |
+| Get-ScheduledJobOption    | Set-JobTrigger                  |
+| Get-TypeData              | Set-ScheduledJob                |
+| Import-IseSnippet         | Set-ScheduledJobOption          |
+| Invoke-AsWorkflow         | Show-Command                    |
+| Invoke-CimMethod          | Show-ControlPanelItem           |
+| Invoke-RestMethod         | Suspend-Job                     |
+| Invoke-WebRequest         | Test-PSSessionConfigurationFile |
+| New-CimInstance           | Unblock-File                    |
+| New-CimSession            | Unregister-ScheduledJob         |
+| New-CimSessionOption      | Update-Help                     |
+| New-IseSnippet            |                                 |
 
 ### <a name="improvements-to-existing-core-cmdlets-and-providers"></a>Verbesserungen an vorhandenen Core-Cmdlets und Anbietern
 
@@ -495,23 +511,25 @@ Die Windows PowerShell-Anbieter wurden auch erheblich verbessert, dazu gehört d
 
 Windows PowerShell 3.0 erweitert die Modulerkennung, die Importfunktion und implizite Remotefunktionen auf Remotecomputern. Die Module-Cmdlets rufen Module auf den Remotecomputern ab und importieren die Module mithilfe von Windows PowerShell-Remoting auf die Remote- oder lokalen Computer. Mit der neuen Unterstützung für CIM-Sitzungen können Sie CIM und WMI verwenden, um nicht-Windows-Computer zu verwalten, indem Sie die Befehle auf dem lokalen Computer importieren, die implizit auf dem Remotecomputer ausgeführt werden.
 
-Weitere Informationen finden Sie in den Hilfethemen für die Cmdlets [Get-Module](https://technet.microsoft.com/library/2cccd4c4-9a21-4c77-b691-984ee57242e1) und [Import-Module](https://technet.microsoft.com/library/af616c24-e122-4098-930e-1e3ea2080ade).
+Weitere Informationen finden Sie in den Hilfethemen zu den Cmdlets `Get-Module`und `Import-Module`.
 
 ### <a name="enhanced-tab-completion"></a>Verbesserte Befehlszeilenergänzung
 
-Durch die Vervollständigung mit der TAB-TASTE in der Windows PowerShell-Konsole werden nun die Namen von Cmdlets, Parametern, Parameterwerten, Enumerationen, .NET Framework-Typen, COM-Objekten, versteckten Verzeichnissen und vielem mehr vervollständigt. Das Feature zum Fertigstellen von Registerkarten wurde auf Grundlage einer neuen Analyse und einer abstrakten Syntaxstruktur komplett neu geschrieben, damit weitere Szenarios unterstützt werden, dazu gehören speicherinterne Analysestrukturen und die Midline-Registerkartenfertigstellung.
+Durch die Vervollständigung mit der TAB-TASTE in der Windows PowerShell-Konsole werden nun die Namen von Cmdlets, Parametern, Parameterwerten, Enumerationen, .NET Framework-Typen, COM-Objekten, versteckten Verzeichnissen und vielem mehr vervollständigt.
+Das Feature zum Fertigstellen von Registerkarten wurde auf Grundlage einer neuen Analyse und einer abstrakten Syntaxstruktur komplett neu geschrieben, damit weitere Szenarios unterstützt werden, dazu gehören speicherinterne Analysestrukturen und die Midline-Registerkartenfertigstellung.
 
 ### <a name="module-auto-loading"></a>Automatisches Laden von Modulen
 
-Das Cmdlet [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) ruft nun alle Cmdlets und Funktionen aus allen Modulen ab, die auf dem Computer installiert sind, selbst wenn das Modul nicht in die aktuelle Sitzung importiert wird.
+Das Cmdlet `Get-Command` ruft nun alle Cmdlets und Funktionen aus allen Modulen ab, die auf dem Computer installiert sind, selbst wenn das Modul nicht in die aktuelle Sitzung importiert wird.
 
-Wenn Sie das erforderliche Cmdlet abrufen, können Sie es sofort nutzen, ohne Module importieren zu müssen. Windows PowerShell-Module werden nun automatisch importiert, wenn Sie ein beliebiges Cmdlet im Modul verwenden. Sie müssen nicht mehr nach dem Modul suchen und es importieren, um die Cmdlets zu nutzen.
+Wenn Sie das erforderliche Cmdlet abrufen, können Sie es sofort nutzen, ohne Module importieren zu müssen.
+Windows PowerShell-Module werden nun automatisch importiert, wenn Sie ein beliebiges Cmdlet im Modul verwenden. Sie müssen nicht mehr nach dem Modul suchen und es importieren, um die Cmdlets zu nutzen.
 
-Der automatische Import von Modulen wird durch Verwenden des Cmdlets in einem Befehl oder durch Ausführen von **Get-Command** für ein Cmdlet ohne Platzhalter oder von [Get-Help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) für ein Cmdlet ohne Platzhalter ausgelöst.
+Der automatische Import von Modulen wird durch Verwenden des Cmdlets in einem Befehl oder durch Ausführen von `Get-Command` für ein Cmdlet ohne Platzhalter oder von `Get-Help` für ein Cmdlet ohne Platzhalter ausgelöst.
 
 Sie können mithilfe der Einstellungsvariablen **$PSModuleAutoLoadingPreference** das automatische Importieren von Modulen aktivieren, deaktivieren und konfigurieren.
 
-Weitere Informationen finden Sie unter [about_Modules](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_modules?view=powershell-5.0), [about_Preference_Variables [v4]](https://technet.microsoft.com/library/31344314-be29-4286-b039-afa5460cbe8b) und in den Hilfethemen für die Cmdlets [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) und [Import-Module](https://technet.microsoft.com/library/af616c24-e122-4098-930e-1e3ea2080ade).
+Weitere Informationen finden Sie unter [about_Modules](/powershell/module/microsoft.powershell.core/about/about_modules), [about_Preference_Variables](/powershell/module/microsoft.powershell.core/about/about_Preference_Variables) und in den Hilfethemen für die Cmdlets `Get-Command` und `Import-Module`.
 
 ### <a name="module-experience-improvements"></a>Verbesserungen der Moduloberfläche
 
@@ -523,15 +541,15 @@ Mit Windows PowerShell 3.0 erhalten Sie die erweiterte Feature-Unterstützung f�
 4. Verbesserte Erkennung verfügbarer (nicht importierter) Module, einschließlich Zulassen der Parameter **Path** und **ListAvailable** im selben Befehl.
 5. Der neue **DefaultCommandPrefix**-Schlüssel in Modulemanifesten, der Namenskonflikte vermeidet, ohne den Modulcode zu ändern.
 6. Verbesserte Modulvoraussetzungen, einschließlich voll qualifizierter, erforderlicher Module mit Version und GUID sowie dem automatischen Importieren erforderlicher Module
-7. Ruhigerer, optimierter Ablauf des Cmdlets [New-ModuleManifest](https://technet.microsoft.com/library/512adced-f42f-4e88-ba7c-834fc9e5d047).
-8. Neuer **Module**-Parameter für „#Requires“
-9. Verbessertes Cmdlet [Import-Module](https://technet.microsoft.com/library/af616c24-e122-4098-930e-1e3ea2080ade) mit den Parametern **MinimumVersion** und **RequiredVersion**.
+7. Ruhigerer, optimierter Ablauf des Cmdlets `New-ModuleManifest`.
+8. Neuer **Module**-Parameter für #Requires
+9. Verbessertes Cmdlet `Import-Module` mit den Parametern **MinimumVersion** und **RequiredVersion**.
 
 ### <a name="simplified-command-discovery"></a>Vereinfachte Ermittlung von Befehlen
 
-Sie müssen nicht mehr alle Module importieren, um die für Ihre Sitzung verfügbaren Befehle zu erkennen. In Windows PowerShell 3.0 ruft das Cmdlet [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) alle Befehle aus allen installierten Modulen ab. Und wenn Sie einen Befehl verwenden, wird das Modul, das den Befehl exportiert, automatisch in Ihre Sitzung importiert.
+Sie müssen nicht mehr alle Module importieren, um die für Ihre Sitzung verfügbaren Befehle zu erkennen. In Windows PowerShell 3.0 ruft das Cmdlet `Get-Command` alle Befehle aus allen installierten Modulen ab. Und wenn Sie einen Befehl verwenden, wird das Modul, das den Befehl exportiert, automatisch in Ihre Sitzung importiert.
 
-Das neue Cmdlet [Show-Command](https://technet.microsoft.com/library/65bba50b-91a8-49d5-80a2-a30fc684ba41) ist speziell für Einsteiger konzipiert. Sie können in einem Fenster nach Befehlen suchen. Sie können alle Befehle anzeigen oder nach Modul filtern, ein Modul importieren, indem Sie auf eine Schaltfläche klicken, Textfelder und Dropdownlisten verwenden, um einen gültigen Befehl zu konstruieren, und anschließend den Befehl zu kopieren und auszuführen, ohne das Fenster zu verlassen.
+Das neue Cmdlet `Show-Command` ist speziell für Einsteiger konzipiert. Sie können in einem Fenster nach Befehlen suchen. Sie können alle Befehle anzeigen oder nach Modul filtern, ein Modul importieren, indem Sie auf eine Schaltfläche klicken, Textfelder und Dropdownlisten verwenden, um einen gültigen Befehl zu konstruieren, und anschließend den Befehl zu kopieren und auszuführen, ohne das Fenster zu verlassen.
 
 ### <a name="improved-logging-diagnostics-and-group-policy-support"></a>Verbesserte Protokollierung, Diagnose und Unterstützung von Gruppenrichtlinien
 
@@ -545,15 +563,13 @@ Neue Formatierungs- und Ausgabeverbesserungen steigern die Effizienz aller Windo
 
 Das Windows PowerShell-Konsolenhostprogramm hat in Windows PowerShell 3.0 neue Features. Dazu gehört auch standardmäßig das Singlethread-Apartment. Mit der neuen „Mit PowerShell ausführen“-Option im Datei-Explorer können Sie Skripts in einer nicht eingeschränkten Sitzung durch einen einfachen Rechtsklick ausführen. Die neue Konsolenhostlogik startet Windows PowerShell schneller und mit den neuen Schriftarten können Sie die bekannte Konsolenfensteroberfläche personalisieren.
 
-Weitere Informationen finden Sie unter [about_Run_With_PowerShell](https://technet.microsoft.com/library/c9d9ca5f-eff9-4409-be9d-e43b5b4087eb).
-
 ### <a name="new-cmdlet-and-hosting-apis"></a>Neue Cmdlets und Hosting-APIs
 
 Die neuen Cmdlet-API und Hosting-API umfassen öffentliche, erweiterte Syntaxstruktur (AST)-APIs und APIs für die Pipeline-Nummerierung, geschachtelte Pipelines, Runspacepool-Registerkartenfertigstellung, Windows RT, das obsolete Cmdlet-Attribut, und Verb- und Substantiveigenschaften des FunctionInfo-Objekts.
 
 ### <a name="performance-improvements"></a>Leistungsverbesserungen
 
-Die erheblichen Leistungsverbesserungen in Windows PowerShell stammen aus der neuen Sprachanalyse, die auf DLR (Dynamic Runtime Language) in .NET Framework 4. basiert, sowie der Laufzeitskriptkompilierung, Engine-Zuverlässigkeitsverbesserungen und Änderungen am Algorithmus von [Get-ChildItem](https://technet.microsoft.com/library/75cf79bb-4db6-4a67-8c36-3d20754e2190), die die Leistung verbessern, besonders bei der Suche nach Netzwerkfreigaben.
+Die erheblichen Leistungsverbesserungen in Windows PowerShell stammen aus der neuen Sprachanalyse, die auf DLR (Dynamic Runtime Language) in .NET Framework 4. basiert, sowie der Laufzeitskriptkompilierung, Engine-Zuverlässigkeitsverbesserungen und Änderungen am Algorithmus von `Get-ChildItem`, die die Leistung verbessern, besonders bei der Suche nach Netzwerkfreigaben.
 
 ### <a name="runas-and-shared-host-support"></a>RunAs und Unterstützung freigegebener Hosts
 
@@ -565,9 +581,9 @@ Mit dem Feature **SharedHost** können mehrere Benutzer auf mehreren Computern g
 
 ### <a name="special-character-handling-improvements"></a>Verbesserungen bei der Verarbeitung von Sonderzeichen
 
-Damit Windows PowerShell 3.0 Sonderzeichen besser interpretieren und ordnungsgemäß verarbeiten kann, ist der **LiteralPath**-Parameter, der Sonderzeichen in Pfaden verarbeitet, für fast alle Cmdlets gültig, die über einen **Path**-Parameter verfügen. Dazu zählen die neuen Cmdlets [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) und [Save-Help](https://technet.microsoft.com/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa). Die Analyse bietet außerdem eine spezielle Logik zur Verbesserung der Verarbeitung von Akzentzeichen (\`) und eckigen Klammern in Dateinamen und -pfaden.
+Damit Windows PowerShell 3.0 Sonderzeichen besser interpretieren und ordnungsgemäß verarbeiten kann, ist der **LiteralPath**-Parameter, der Sonderzeichen in Pfaden verarbeitet, für fast alle Cmdlets gültig, die über einen **Path**-Parameter verfügen. Dazu zählen die neuen Cmdlets `Update-Help` und `Save-Help`. Die Analyse bietet außerdem eine spezielle Logik zur Verbesserung der Verarbeitung von Akzentzeichen (\`) und eckigen Klammern in Dateinamen und -pfaden.
 
 ## <a name="see-also"></a>Weitere Informationen
 
-- [about_Windows_PowerShell_5.0](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_windows_powershell_5.0?view=powershell-5.0)
-- [Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=107116)
+- [about_Windows_PowerShell_5.0](/previous-versions/powershell/module/microsoft.powershell.core/about/about_windows_powershell_5.0?view=powershell-5.0)
+- [Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=107116)

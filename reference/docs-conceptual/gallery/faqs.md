@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Häufig gestellte Fragen zum PowerShell-Katalog
-ms.openlocfilehash: 9572a61d38b0d540b0b8933405810ac4f2b6377e
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.openlocfilehash: 035681e108e1a3e05fe5d659d527ae1ad1c64cf4
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78278176"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500588"
 ---
 # <a name="frequently-asked-questions"></a>Häufig gestellte Fragen
 
@@ -29,10 +29,10 @@ In der Regel sind Module besser für das Teilen, aber wir ermöglichen die Skrip
 
 ## <a name="how-can-i-publish-to-the-powershell-gallery"></a>Wie kann ich etwas im PowerShell-Katalog veröffentlichen?
 
-Sie müssen ein Konto im PowerShell-Katalog erstellen, bevor Sie Pakete im Katalog veröffentlichen können. Das liegt daran, dass zum Veröffentlichen von Paketen NuGetApiKey erforderlich ist. Der entsprechende Wert wird bei der Registrierung bereitgestellt. Verwenden Sie zum Registrieren und Anmelden im PowerShell-Katalog Ihr persönliches, Geschäfts- oder Schulkonto. Ein einmaliger Registrierungsprozess ist erforderlich, wenn Sie sich zum ersten Mal anmelden. Danach ist der NuGet API-Schlüssel auf Ihrer Profilseite verfügbar.
+Sie müssen ein Konto im PowerShell-Katalog erstellen, bevor Sie Pakete im Katalog veröffentlichen können. Das liegt daran, dass zum Veröffentlichen von Paketen NuGetApiKey erforderlich ist. Der entsprechende Wert wird bei der Registrierung bereitgestellt. Verwenden Sie zum Registrieren und Anmelden im PowerShell-Katalog Ihr persönliches, Geschäfts- oder Schulkonto. Ein einmaliger Registrierungsprozess ist erforderlich, wenn Sie sich zum ersten Mal anmelden.
+Danach ist der NuGet API-Schlüssel auf Ihrer Profilseite verfügbar.
 
-Verwenden Sie, wenn Sie sich im Katalog registriert haben, den Cmdlet [Publish-Module][] oder [Publish-Script][], um Ihr Paket im Katalog zu veröffentlichen.
-Weitere Informationen zum Ausführen dieser Cmdlets finden Sie auf der Registerkarte „Veröffentlichen“, oder lesen Sie die Dokumentation zu [Publish-Module][] und [Publish-Script][].
+Verwenden Sie, wenn Sie sich im Katalog registriert haben, den Cmdlet [Publish-Module][] oder [Publish-Script][], um Ihr Paket im Katalog zu veröffentlichen. Weitere Informationen zum Ausführen dieser Cmdlets finden Sie auf der Registerkarte „Veröffentlichen“, oder lesen Sie die Dokumentation zu [Publish-Module][] und [Publish-Script][].
 
 **Sie müssen sich zum Installieren oder Speichern von Paketen nicht im Katalog registrieren oder anmelden.**
 
@@ -40,16 +40,15 @@ Weitere Informationen zum Ausführen dieser Cmdlets finden Sie auf der Registerk
 
 Dieser Fehler kann aus den folgenden Gründe auftreten:
 
-- **Der angegebene API-Schlüssel ist ungültig.**
-     Stellen Sie sicher, dass Sie den gültigen API-Schlüssel Ihres Konto angegeben haben. Den API-Schlüssel finden Sie auf Ihrer Profilseite.
-- **Der angegebene Paketname gehört Ihnen nicht.**
-     Wenn Sie Ihren API-Schlüssel überprüft haben und er korrekt ist, existiert möglicherweise bereits ein Paket mit dem gleichen Namen wie der, den Sie verwenden möchten. Möglicherweise hat der Besitzer festgelegt, dass das Paket nicht aufgelistet wird. In diesem Fall wird es in keinen Suchergebnissen angezeigt. Öffnen Sie einen Browser, und navigieren Sie zur Seite „Paketdetails“, um festzustellen, ob bereits ein Paket mit dem gleichen Namen vorhanden ist: `https://www.powershellgallery.com/packages/<packageName>`. Navigieren Sie z.B. direkt zu `https://www.powershellgallery.com/packages/pester`, gelangen Sie zur Detailseite des Pester-Moduls, unabhängig davon, ob es aufgeführt ist oder nicht. Wenn bereits ein Paket mit einem einen Konflikt verursachenden Namen vorhanden ist und nicht aufgelistet wird, haben Sie die folgenden Optionen:
-    - Einen anderen Namen für das Paket auswählen
-    - Die Besitzer des vorhandenen Pakets kontaktieren
+- **Der angegebene API-Schlüssel ist ungültig.** Stellen Sie sicher, dass Sie den gültigen API-Schlüssel Ihres Konto angegeben haben. Den API-Schlüssel finden Sie auf Ihrer Profilseite.
+- **Der angegebene Paketname gehört Ihnen nicht.** Wenn Sie Ihren API-Schlüssel überprüft haben und er korrekt ist, existiert möglicherweise bereits ein Paket mit dem gleichen Namen wie der, den Sie verwenden möchten. Möglicherweise hat der Besitzer festgelegt, dass das Paket nicht aufgelistet wird. In diesem Fall wird es in keinen Suchergebnissen angezeigt. Öffnen Sie einen Browser, und navigieren Sie zur Seite „Paketdetails“, um festzustellen, ob bereits ein Paket mit dem gleichen Namen vorhanden ist: `https://www.powershellgallery.com/packages/<packageName>`. Navigieren Sie z.B. direkt zu `https://www.powershellgallery.com/packages/pester`, gelangen Sie zur Detailseite des Pester-Moduls, unabhängig davon, ob es aufgeführt ist oder nicht. Wenn bereits ein Paket mit einem einen Konflikt verursachenden Namen vorhanden ist und nicht aufgelistet wird, haben Sie die folgenden Optionen:
+  - Einen anderen Namen für das Paket auswählen
+  - Die Besitzer des vorhandenen Pakets kontaktieren
 
 ## <a name="why-cant-i-sign-in-with-my-personal-account-but-i-could-sign-in-yesterday"></a>Warum konnte ich mich gestern mit meinem persönlichen Konto anmelden, heute aber nicht mehr?
 
-Bitte bedenken Sie, dass Ihr Katalog-Konto keine Änderungen an Ihrem primären E-Mail-Alias übernimmt. Weitere Informationen finden Sie im Microsoft [Verwalten von Aliasen für Ihr Microsoft-Konto](https://windows.microsoft.com/windows/outlook/add-alias-account).
+Bitte bedenken Sie, dass Ihr Katalog-Konto keine Änderungen an Ihrem primären E-Mail-Alias übernimmt.
+Weitere Informationen finden Sie im Microsoft [Verwalten von Aliasen für Ihr Microsoft-Konto](https://windows.microsoft.com/windows/outlook/add-alias-account).
 
 ## <a name="why-dont-i-see-all-the-gallery-packages-when-i-select-all-the-category-checkboxes-on-the-packages-tab"></a>Warum werden mir nicht alle Katalogpakete angezeigt, wenn ich auf der Registerkarte „Pakete“ alle „Kategorie“-Kontrollkästchen aktiviere?
 
@@ -57,11 +56,7 @@ Durch Aktivieren eines „Kategorie“-Kontrollkästchens geben Sie an, dass Sie
 
 ## <a name="what-are-the-requirements-to-publish-a-module-to-the-powershell-gallery"></a>Welche sind die Voraussetzungen, um ein Modul im PowerShell-Katalog veröffentlichen zu können?
 
-Jede Art von PowerShell-Modul (Skriptmodule, binäre Module oder Manifestmodule) können im Katalog veröffentlicht werden.
-PowerShellGet benötigt zum Veröffentlichen einige Informationen über das Modul, wie z.B. Version, Beschreibung, Autor und Lizenzierung.
-Diese Informationen werden im Rahmen des Veröffentlichungsprozesses in der *Modulmanifest*-Datei (.psd1) oder aus dem Wert des **LicenseUri**-Parameter des Cmdlets [Publish-Module][] gelesen.
-Alle im Katalog veröffentlichten Module müssen über Modulmanifeste verfügen.
-Jedes Modul, das die folgenden Informationen in seinem Manifest enthält, kann im Katalog veröffentlicht werden:
+Jede Art von PowerShell-Modul (Skriptmodule, binäre Module oder Manifestmodule) können im Katalog veröffentlicht werden. PowerShellGet benötigt zum Veröffentlichen einige Informationen über das Modul, wie z.B. Version, Beschreibung, Autor und Lizenzierung. Diese Informationen werden im Rahmen des Veröffentlichungsprozesses in der *Modulmanifest*-Datei (.psd1) oder aus dem Wert des **LicenseUri**-Parameter des Cmdlets [Publish-Module][] gelesen. Alle im Katalog veröffentlichten Module müssen über Modulmanifeste verfügen. Jedes Modul, das die folgenden Informationen in seinem Manifest enthält, kann im Katalog veröffentlicht werden:
 
 - Version
 - BESCHREIBUNG
@@ -78,11 +73,7 @@ Verwenden Sie das Cmdlet [Update-ModuleManifest][], um die Felder der Modulmanif
 
 ## <a name="what-are-the-requirements-to-publish-a-script-to-the-gallery"></a>Welche Voraussetzungen müssen erfüllt sein, damit ich ein Modul im Katalog veröffentlichen kann?
 
-Jede Art von PowerShell-Skript (Skripts oder Workflows) kann im Katalog veröffentlicht werden.
-PowerShellGet benötigt zum Veröffentlichen einige Informationen über das Skript, wie z.B. Version, Beschreibung, Autor und Lizenzierung.
-Diese Informationen werden im Rahmen des Veröffentlichungsprozesses aus dem Abschnitt *PSScriptInfo* der Skriptdatei oder aus dem Wert des **LicenseUri**-Parameters des Cmdlets [Publish-Script][] gelesen.
-Alle im Katalog veröffentlichten Skripts müssen Metadateninformationen besitzen.
-Jedes Skript, das die folgenden Informationen im Abschnitt „PSScriptInfo“ enthält, kann im Katalog veröffentlicht werden:
+Jede Art von PowerShell-Skript (Skripts oder Workflows) kann im Katalog veröffentlicht werden. PowerShellGet benötigt zum Veröffentlichen einige Informationen über das Skript, wie z.B. Version, Beschreibung, Autor und Lizenzierung. Diese Informationen werden im Rahmen des Veröffentlichungsprozesses aus dem Abschnitt *PSScriptInfo* der Skriptdatei oder aus dem Wert des **LicenseUri**-Parameters des Cmdlets [Publish-Script][] gelesen. Alle im Katalog veröffentlichten Skripts müssen Metadateninformationen besitzen. Jedes Skript, das die folgenden Informationen im Abschnitt „PSScriptInfo“ enthält, kann im Katalog veröffentlicht werden:
 
 - Version
 - BESCHREIBUNG
@@ -121,10 +112,7 @@ Alle Module im Katalog enthalten Modulmanifeste, und die meisten dieser Module e
 
 PackageManagement ist eine allgemeine Schnittstelle für die Arbeit mit einem beliebigen Paket-Manager. Unabhängig davon, ob Sie mit PowerShell-Modulen, MSIs, RubyGems, NuGet-Paketen oder Perl-Modulen arbeiten, sollten Sie PackageManagement-Befehle (Find-Package und Install-Package) verwenden können, um sie suchen und installieren zu können. PackageManagement regelt dies mithilfe eines eigenen Paketanbieters für jeden Paket-Manager, der an PackageManagement eingebunden ist. Anbieter verrichten die eigentliche Arbeit: Sie rufen Inhalte aus Repositorys ab und installieren die Inhalte lokal. Häufig umschließen Paketanbieter einfach die vorhandenen Paket-Manager-Tools für einen gegebenen Paket.
 
-PowerShellGet ist der Paket-Manager für PowerShell-Pakete.
-Es gibt einen Anbieter von PSModule-Paketen, der die PowerShellGet-Funktionalität über PackageManagement verfügbar macht.
-Sie können daher entweder [Install-Module][] oder „Install-Package -Provider PSModule“ ausführen, um ein Modul aus dem PowerShell-Katalog zu installieren.
-Auf bestimmte PowerShellGet-Funktionen, einschließlich [Update-Module][] und [Publish-Module][], kann nicht über PackageManagement-Befehle zugegriffen werden.
+PowerShellGet ist der Paket-Manager für PowerShell-Pakete. Es gibt einen Anbieter von PSModule-Paketen, der die PowerShellGet-Funktionalität über PackageManagement verfügbar macht. Sie können daher entweder [Install-Module][] oder „Install-Package -Provider PSModule“ ausführen, um ein Modul aus dem PowerShell-Katalog zu installieren. Auf bestimmte PowerShellGet-Funktionen, einschließlich [Update-Module][] und [Publish-Module][], kann nicht über PackageManagement-Befehle zugegriffen werden.
 
 Alles in allem bietet PowerShellGet eine erstklassige Schnittstelle zur Paketverwaltung für PowerShell-Inhalte. PackageManagement dient der Bereitstellung aller Schnittstellungen zur Paketverwaltung mithilfe einiger allgemeiner Tools. Wenn Ihnen diese Antwort nicht geholfen hat, finden Sie eine ausführlichere Hilfestellung am Ende dieses Texts im Abschnitt **Wie beziehen sich PackageManagement und PowerShellGet tatsächlich aufeinander?** .
 
@@ -132,7 +120,8 @@ Weitere Informationen finden Sie auf der Projektseite zu [PackageManagement](htt
 
 ## <a name="how-does-nuget-relate-to-powershellget"></a>Was hat NuGet mit PowerShellGet zu tun?
 
-Der PowerShell-Katalog ist eine geänderte Version des [NuGet-Katalogs](https://www.nuget.org/). PowerShellGet verwendet den NuGet-Anbieter, um mit NuGet-basierten Repositorys wie dem PowerShell-Katalog zu arbeiten.
+Der PowerShell-Katalog ist eine geänderte Version des [NuGet-Katalogs](https://www.nuget.org/).
+PowerShellGet verwendet den NuGet-Anbieter, um mit NuGet-basierten Repositorys wie dem PowerShell-Katalog zu arbeiten.
 
 Sie können PowerShellGet für jedes gültige NuGet-Repository oder jede gültige NuGet-Dateifreigabe verwenden. Hierzu müssen Sie das Repository einfach mithilfe des Cmdlets [Register-PSRepository][] hinzufügen.
 
@@ -144,7 +133,7 @@ Ja.
 
 PowerShellGet nutzt im Hintergrund stark die PackageManagement-Infrastruktur.
 
-Auf der Ebene der PowerShell-Cmdlets ist [Install-Module][] ein einfacher Wrapper um Install-Package -Provider PSModule.
+Auf der Ebene der PowerShell-Cmdlets ist [Install-Module][] ein einfacher Wrapper um `Install-Package -Provider PSModule`.
 
 Auf der Ebene des PackageManagement-Paketanbieters ruft der PSModule-Paketanbieter andere PackageManagement-Paketanbieter auf. Wenn Sie beispielsweise mit NuGet-basierten Katalogen arbeiten(z.B. dem PowerShell-Katalog), verwendet der PSModule-Paketanbieter den NuGet-Paketanbieter, um mit dem Repository zu arbeiten.
 
@@ -172,7 +161,8 @@ Für **PowerShellGet** ist außerdem .NET Framework 4.5 oder höher erforderlich
 
 ## <a name="is-it-possible-to-reserve-names-for-packages-that-will-be-published-in-future"></a>Lassen sich Namen für Pakete reservieren, die in Zukunft veröffentlicht werden?
 
-Es ist nicht möglich, Paketnamen zu reservieren. Wenn Sie der Meinung sind, dass ein vorhandenes Paket einen Namen trägt, der besser zu Ihrem Paket passt, [wenden Sie sich an den Besitzer des Pakets](./how-to/working-with-packages/contacting-package-owners.md). Wenn Sie innerhalb einiger Wochen keine Antwort erhalten, können Sie den Support kontaktieren, und das Team für den PowerShell-Katalog prüft die Angelegenheit.
+Es ist nicht möglich, Paketnamen zu reservieren. Wenn Sie der Meinung sind, dass ein vorhandenes Paket einen Namen trägt, der besser zu Ihrem Paket passt, [wenden Sie sich an den Besitzer des Pakets](./how-to/working-with-packages/contacting-package-owners.md).
+Wenn Sie innerhalb einiger Wochen keine Antwort erhalten, können Sie den Support kontaktieren, und das Team für den PowerShell-Katalog prüft die Angelegenheit.
 
 ## <a name="how-do-i-claim-ownership-for-packages"></a>Wie mache ich Besitzansprüche für Pakete geltend?
 
@@ -180,12 +170,12 @@ Weitere Informationen finden Sie unter [Verwalten von Paketbesitzern auf PowerSh
 
 ## <a name="how-do-i-deal-with-a-package-owner-who-is-violating-my-package-license"></a>Wie gehe ich mit einem Paketbesitzer um, der meine Paketlizenz verletzt?
 
-Wir möchten die Zusammenarbeit in der PowerShell-Community fördern, um Streitigkeiten beizulegen, die ggf. zwischen Paketbesitzern auftreten.  Wir haben einen [Prozess zur Beilegung von Streitigkeiten](./how-to/getting-support/dispute-resolution.md) entworfen, und bitten Sie, diesen zu befolgen, bevor die Administratoren von PowerShellGallery.com eingeschaltet werden.
+Wir möchten die Zusammenarbeit in der PowerShell-Community fördern, um Streitigkeiten beizulegen, die ggf. zwischen Paketbesitzern auftreten. Wir haben einen [Prozess zur Beilegung von Streitigkeiten](./how-to/getting-support/dispute-resolution.md) entworfen, und bitten Sie, diesen zu befolgen, bevor die Administratoren von PowerShellGallery.com eingeschaltet werden.
 
+<!-- link references-->
 [New-ModuleManifest]: /powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest
 [Test-ModuleManifest]: /powershell/module/Microsoft.PowerShell.Core/Test-ModuleManifest
-[Update-ModuleManifest]: /powershell/module/Microsoft.PowerShell.Core/Update-ModuleManifest
-
+[Update-ModuleManifest]: /powershell/module/PowerShellGet/Update-ModuleManifest
 [Install-Module]: /powershell/module/PowershellGet/Install-Module
 [New-ScriptFileInfo]: /powershell/module/PowershellGet/New-ScriptFileInfo
 [Publish-Module]: /powershell/module/PowershellGet/Publish-Module

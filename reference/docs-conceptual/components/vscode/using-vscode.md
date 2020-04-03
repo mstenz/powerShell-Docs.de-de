@@ -2,12 +2,12 @@
 title: Verwenden von Visual Studio Code für die Entwicklung mit PowerShell
 description: Verwenden von Visual Studio Code für die Entwicklung mit PowerShell
 ms.date: 11/07/2019
-ms.openlocfilehash: 86739970b58460bef9686a75bf0604d0605d4888
-ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
+ms.openlocfilehash: 8644aa7c648d649651ca679238e0b79ff35ac579
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80082437"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500909"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>Verwenden von Visual Studio Code für die Entwicklung mit PowerShell
 
@@ -22,9 +22,9 @@ Die folgenden PowerShell-Versionen werden unterstützt:
 
 Prüfen Sie, ob PowerShell auf Ihrem System vorhanden ist, bevor Sie starten. Aktuelle Workloads unter Windows, macOS und Linux finden Sie unter den folgenden Links:
 
-- [Installieren von PowerShell Core unter Linux][install-pscore-linux]
-- [Installieren von PowerShell Core unter macOS][install-pscore-macos]
-- [Installieren von PowerShell Core unter Windows][install-pscore-windows]
+- [Installieren von PowerShell unter Linux][install-pscore-linux]
+- [Installieren von PowerShell unter macOS][install-pscore-macos]
+- [Installieren von PowerShell unter Windows][install-pscore-windows]
 
 Herkömmliche Windows PowerShell-Workloads finden Sie unter [Installieren von Windows PowerShell][install-winps].
 
@@ -268,7 +268,16 @@ Diese Datei ist ein Beispiel für häufig auftretende Debugszenarios. Wenn Sie d
 
 Nachdem die Debugkonfiguration eingerichtet wurde, können Sie auswählen, welche Konfiguration Sie während einer Debugsitzung verwenden möchten. Wählen Sie eine Konfiguration aus der Dropdownliste „Debugkonfiguration“ in der Symbolleiste der Ansicht **Debuggen**.
 
-Im Folgenden werden einige Blogbeiträge aufgeführt, die bei den ersten Schritten mit der PowerShell-Erweiterung für Visual Studio Code hilfreich sein können:
+## <a name="useful-resources"></a>Nützliche Ressourcen
+
+Im Folgenden sind einige Videos und Blogbeiträge aufgeführt, die bei den ersten Schritten mit der PowerShell-Erweiterung für Visual Studio Code hilfreich sein können:
+
+### <a name="videos"></a>Videos
+
+- [Using Visual Studio Code as Your Default PowerShell Editor](https://youtu.be/bGn45vIeAMM) (Verwenden von Visual Studio Code als PowerShell-Standard-Editor)
+- [Visual Studio Code: deep dive into debugging your PowerShell scripts](https://youtu.be/cSbIXmlkr8o) (Visual Studio Code: Ausführliche Einführung in das Debuggen von PowerShell-Skripts)
+
+### <a name="blog-posts"></a>Blogbeiträge
 
 - [PowerShell-Erweiterung][ps-extension]
 - [Write and debug PowerShell scripts in Visual Studio Code (Schreiben und Debuggen von PowerShell-Skripts in Visual Studio Code)][debug]
@@ -279,6 +288,16 @@ Im Folgenden werden einige Blogbeiträge aufgeführt, die bei den ersten Schritt
 - [Visual Studio Code editing features for PowerShell development – Part 2 (Bearbeitungsfeatures für die PowerShell-Entwicklung mit Visual Studio Code: Teil 2)][editing-part2]
 - [Debugging PowerShell script in Visual Studio Code – Part 1 (Debuggen von PowerShell-Skripts in Visual Studio Code: Teil 1)][debugging-part1]
 - [Debugging PowerShell script in Visual Studio Code – Part 2 (Debuggen von PowerShell-Skripts in Visual Studio Code: Teil 2)][debugging-part2]
+
+## <a name="powershell-extension-for-visual-studio-code"></a>PowerShell-Erweiterung für Visual Studio Code
+
+Sie finden den Quellcode der PowerShell-Erweiterung auf [GitHub](https://github.com/PowerShell/vscode-powershell).
+
+Wenn Sie einen Beitrag leisten möchten, sind Pull Requests sehr willkommen. Befolgen Sie die [Entwicklerdokumentation auf GitHub](https://github.com/PowerShell/vscode-powershell/blob/master/docs/development.md), um loszulegen.
+
+## <a name="troubleshooting-the-powershell-extension-for-visual-studio-code"></a>Problembehandlung der PowerShell-Erweiterung für Visual Studio Code
+
+Wenn bei der Verwendung von Visual Studio Code für die Entwicklung von PowerShell-Skripts Probleme auftreten, sehen Sie sich den [Leitfaden zur Problembehandlung auf GitHub](https://github.com/PowerShell/vscode-powershell/blob/master/docs/troubleshooting.md) an.
 
 [ise]: ../ise/Introducing-the-Windows-PowerShell-ISE.md
 [install-pscore-linux]:  ../../install/Installing-PowerShell-Core-on-Linux.md
@@ -294,13 +313,3 @@ Im Folgenden werden einige Blogbeiträge aufgeführt, die bei den ersten Schritt
 [editing-part2]: https://devblogs.microsoft.com/scripting/visual-studio-code-editing-features-for-powershell-development-part-2/
 [debugging-part1]: https://devblogs.microsoft.com/scripting/debugging-powershell-script-in-visual-studio-code-part-1/
 [debugging-part2]: https://devblogs.microsoft.com/scripting/debugging-powershell-script-in-visual-studio-code-part-2/
-
-## <a name="powershell-extension-for-visual-studio-code"></a>PowerShell-Erweiterung für Visual Studio Code
-
-Sie finden den Quellcode der PowerShell-Erweiterung auf [GitHub](https://github.com/PowerShell/vscode-powershell).
-
-Wenn Sie einen Beitrag leisten möchten, sind Pull Requests sehr willkommen. Befolgen Sie die [Entwicklerdokumentation auf GitHub](https://github.com/PowerShell/vscode-powershell/blob/master/docs/development.md), um loszulegen.
-
-## <a name="troubleshooting-the-powershell-extension-for-visual-studio-code"></a>Problembehandlung der PowerShell-Erweiterung für Visual Studio Code
-
-Wenn bei der Verwendung von Visual Studio Code für die Entwicklung von PowerShell-Skripts Probleme auftreten, sehen Sie sich den [Leitfaden zur Problembehandlung auf GitHub](https://github.com/PowerShell/vscode-powershell/blob/master/docs/troubleshooting.md) an.

@@ -2,12 +2,12 @@
 ms.date: 01/08/2020
 keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: DSC-Pulldienst
-ms.openlocfilehash: cf2420e6889f63ac3b2859e5ee36fa888b728afc
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.openlocfilehash: 821f183c91e805154323f9f6a42f7f5006499182
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79402437"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500723"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Desired State Configuration – Pulldienst
 
@@ -70,7 +70,7 @@ Die beste Möglichkeit, Windows Server zum Hosten eines Pulldiensts zu konfiguri
 | ------- | -------------------- | -------------------- | ---------------------------------------------- |
 | MDB     | ESENT (Standard), MDB | ESENT (Standard), MDB | ESENT (Standard), SQL Server, MDB               |
 
-Ab dem Release 17090 von [Windows Server Insider Preview](https://www.microsoft.com/software-download/windowsinsiderpreviewserver) ist SQL Server eine unterstützte Option für den Pulldienst (Windows-Feature *DSC-Dienst*). Dadurch wird eine neue Option für die Skalierung großer DSC-Umgebungen bereitgestellt, die nicht zu [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) migriert wurden.
+Ab Release 17090 von Windows Server ist SQL Server eine unterstützte Option für den Pulldienst (Windows-Feature *DSC-Service*). Dadurch wird eine neue Option für die Skalierung großer DSC-Umgebungen bereitgestellt, die nicht zu [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) migriert wurden.
 
 > [!NOTE]
 > Die Unterstützung für SQL Server wird vorherigen Versionen von WMF 5.1 (oder früher) nicht hinzugefügt und ist nur für Windows Server-Versionen ab 17090 verfügbar.
@@ -82,7 +82,7 @@ Ein Beispiel einer SQL Server-Konfiguration mit **xDscWebService** finden Sie zu
 
 Die einfachste Möglichkeit einen Web-Pull-Server einzurichten, ist die Verwendung der Ressource **xDscWebService** im Modul **xPSDesiredStateConfiguration**. Die folgenden Schritte erläutern, wie Sie die Ressource in einer `Configuration` verwenden, die den Webdienst einrichtet.
 
-1. Rufen Sie das Cmdlet [Install-Module](/reference/6/PowerShellGet/Install-Module.md) auf, um das Modul **xPSDesiredStateConfiguration** zu installieren.
+1. Rufen Sie das Cmdlet [Install-Module](/powershell/module/PowerShellGet/Install-Module) auf, um das Modul **xPSDesiredStateConfiguration** zu installieren.
 
    > [!NOTE]
    > `Install-Module` ist im Modul **PowerShellGet** enthalten, das Bestandteil von PowerShell 5.0 und höher ist.
@@ -234,7 +234,7 @@ Verwenden Sie `New-DscChecksum {module zip file}` zum Erstellen einer Prüfsumme
 
 ### <a name="configuration-mof-format"></a>MOF-Konfigurationsformat
 
-Eine MOF-Konfigurationsdatei muss einer Prüfsummendatei zugeordnet werden, damit ein LCM auf einem Zielknoten die Konfiguration überprüfen kann. Um eine Prüfsumme zu erstellen, rufen Sie das Cmdlet [New-DscChecksum](/reference/6/PSDesiredStateConfiguration/New-DSCCheckSum.md) auf. Das Cmdlet verwendet einen **Path**-Parameter, der den Ordner angibt, in dem sich die MOF-Konfigurationsdatei befindet. Das Cmdlet erstellt eine Prüfsummendatei mit dem Namen `ConfigurationMOFName.mof.checksum`, wobei `ConfigurationMOFName` der Name der MOF-Konfigurationsdatei ist. Wenn in dem angegebenen Ordner mehrere MOF-Konfigurationsdateien vorhanden sind, wird für jede Konfiguration im Ordner eine Prüfsumme erstellt. Platzieren Sie die MOF-Dateien und die zugeordneten Prüfsummendateien im Ordner **ConfigurationPath**.
+Eine MOF-Konfigurationsdatei muss einer Prüfsummendatei zugeordnet werden, damit ein LCM auf einem Zielknoten die Konfiguration überprüfen kann. Um eine Prüfsumme zu erstellen, rufen Sie das Cmdlet [New-DscChecksum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) auf. Das Cmdlet verwendet einen **Path**-Parameter, der den Ordner angibt, in dem sich die MOF-Konfigurationsdatei befindet. Das Cmdlet erstellt eine Prüfsummendatei mit dem Namen `ConfigurationMOFName.mof.checksum`, wobei `ConfigurationMOFName` der Name der MOF-Konfigurationsdatei ist. Wenn in dem angegebenen Ordner mehrere MOF-Konfigurationsdateien vorhanden sind, wird für jede Konfiguration im Ordner eine Prüfsumme erstellt. Platzieren Sie die MOF-Dateien und die zugeordneten Prüfsummendateien im Ordner **ConfigurationPath**.
 
 > [!NOTE]
 > Wenn Sie die MOF-Konfigurationsdatei in irgendeiner Weise ändern, müssen Sie auch die Prüfsummendatei neu erstellen.

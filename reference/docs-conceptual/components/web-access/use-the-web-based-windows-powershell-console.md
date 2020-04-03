@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: Verwendung der webbasierten Windows PowerShell-Konsole
-ms.openlocfilehash: 4c1bac2c712e430263d748b36897f4cfd8885919
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.openlocfilehash: 29aa123049884004dd4e1a8f042783538d80abc6
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79402587"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500867"
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>Verwendung der webbasierten Windows PowerShell-Konsole
 
@@ -102,7 +102,7 @@ Sie werden in den folgenden Situationen von einer webbasierten Windows PowerShel
 
 - Wenn Sie das Clientgerät ausschalten, auf dem der Browser ausgeführt wird, oder es vom Netzwerk trennen.
 
-- Wenn Sie den **Beenden**-Befehl in der Webkonsole ausführen. Der Befehl funktioniert nicht, wenn die Sitzungskonfiguration, mit der Sie verbunden sind, zur Unterstützung des [NoLanguage](https://msdn.microsoft.com/library/windows/desktop/system.management.automation.pslanguagemode.aspx)-Modus konfiguriert ist oder sich in einem eingeschränkten Runspace befindet.
+- Wenn Sie den **Beenden**-Befehl in der Webkonsole ausführen. Der Befehl funktioniert nicht, wenn die Sitzungskonfiguration, mit der Sie verbunden sind, zur Unterstützung des [NoLanguage](/dotnet/api/system.management.automation.pslanguagemode)-Modus konfiguriert ist oder sich in einem eingeschränkten Runspace befindet.
 
 Falls Sie sich wieder anmelden möchten, öffnen Sie die Windows PowerShell Web Access-Website erneut, und melden Sie sich anhand der Schritte in [Anmelden bei Windows PowerShell Web Access](#signing-in-to-windows-powershell-web-access) in diesem Artikel an.
 
@@ -215,8 +215,5 @@ ALT+F7          | Befehlsverlauf löschen
 
 ## <a name="see-also"></a>Weitere Informationen
 
-- [Windows PowerShell Cmdlet Reference (Windows PowerShell-Cmdlet-Verweis)](https://technet.microsoft.com/library/ee407531(ws.10).aspx)
-- [Windows PowerShell on Microsoft TechNet (Windows PowerShell in Microsoft TechNet)](https://technet.microsoft.com/library/bb978526.aspx)
-- [TechNet Script Center Repository (TechNet-Skriptcenterrepository)](https://gallery.technet.microsoft.com/scriptcenter)
-- [Script Center - Hey, Scripting Guy! (Skriptcenter – Hey, Scripting Guy!)](https://technet.microsoft.com/scriptcenter)
-- [Windows PowerShell Team Blog (Windows PowerShell-Teamblog)](https://blogs.msdn.com/b/powershell/)
+- [Hey, Scripting Guy!](https://devblogs.microsoft.com/scripting/)
+- [PowerShell-Teamblog](https://devblogs.microsoft.com/powershell/)

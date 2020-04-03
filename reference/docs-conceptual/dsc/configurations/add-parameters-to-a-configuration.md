@@ -1,13 +1,13 @@
 ---
 ms.date: 12/12/2018
-keywords: DSC,Powershell,Resource,Katalog,Setup
+keywords: DSC,PowerShell,Ressource,Katalog,Setup
 title: Hinzufügen von Parametern zu einer Konfiguration
-ms.openlocfilehash: 72e6c15593d11ed39d7fe8ea79f794089f410cf8
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 9dd9f2be58c13840be2b24e7e21a0d4af79b67cc
+ms.sourcegitcommit: b0966d61293e28ecdb929c5065be9760884e4e7d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71954197"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80263151"
 ---
 # <a name="add-parameters-to-a-configuration"></a>Hinzufügen von Parametern zu einer Konfiguration
 
@@ -36,17 +36,18 @@ Configuration TestConfig
 
 Im Gegensatz zu einer Funktion fügt das [CmdletBinding](/powershell/module/microsoft.powershell.core/about/about_functions_cmdletbindingattribute)-Attribut jedoch keine Funktionalität hinzu. Zusätzlich zu [allgemeinen Parametern](/powershell/module/microsoft.powershell.core/about/about_commonparameters) können Konfigurationen auch die folgenden integrierten Parameter verwenden, ohne dass Sie sie definieren müssen.
 
-|Parameter  |Beschreibung  |
-|---------|---------|
-|`-InstanceName`|Zur Definition [zusammengesetzter Konfigurationen](compositeconfigs.md)|
-|`-DependsOn`|Zur Definition [zusammengesetzter Konfigurationen](compositeconfigs.md)|
-|`-PSDSCRunAsCredential`|Zur Definition [zusammengesetzter Konfigurationen](compositeconfigs.md)|
-|`-ConfigurationData`|Zur Übergabe strukturierter [Konfigurationsdaten](configData.md) für die Verwendung in der Konfiguration.|
-|`-OutputPath`|Um anzugeben, wo Ihre „\<Computername\>.mof“-Datei kompiliert wird|
+|        Parameter        |                                         BESCHREIBUNG                                          |
+| ----------------------- | -------------------------------------------------------------------------------------------- |
+| `-InstanceName`         | Zur Definition [zusammengesetzter Konfigurationen](compositeconfigs.md)                             |
+| `-DependsOn`            | Zur Definition [zusammengesetzter Konfigurationen](compositeconfigs.md)                             |
+| `-PSDSCRunAsCredential` | Zur Definition [zusammengesetzter Konfigurationen](compositeconfigs.md)                             |
+| `-ConfigurationData`    | Zur Übergabe strukturierter [Konfigurationsdaten](configData.md) für die Verwendung in der Konfiguration. |
+| `-OutputPath`           | Um anzugeben, wo Ihre „\<Computername\>.mof“-Datei kompiliert wird                      |
 
 ## <a name="adding-your-own-parameters-to-configurations"></a>Hinzufügen Ihrer eigenen Parameter zu Konfigurationen
 
-Neben den integrierten Parametern können Sie auch Ihre eigenen Parameter Ihren Konfigurationen hinzufügen. Der Parameterblock wird wie eine Funktion direkt in die Deklaration der Konfiguration eingefügt. Ein Konfigurationsparameterblock muss außerhalb von **Node**-Deklarationen und vor jeglichen *import*-Anweisungen platziert werden. Durch Hinzufügen von Parametern können Sie Ihre Konfigurationen robuster und dynamischer machen.
+Neben den integrierten Parametern können Sie auch Ihre eigenen Parameter Ihren Konfigurationen hinzufügen.
+Der Parameterblock wird wie eine Funktion direkt in die Deklaration der Konfiguration eingefügt. Ein Konfigurationsparameterblock muss außerhalb von **Node**-Deklarationen und vor jeglichen *import*-Anweisungen platziert werden. Durch Hinzufügen von Parametern können Sie Ihre Konfigurationen robuster und dynamischer machen.
 
 ```powershell
 Configuration TestConfig
@@ -117,7 +118,8 @@ TestConfig -ComputerName "server01", "server02", "server03"
 
 ## <a name="advanced-parameters-in-configurations"></a>Erweiterte Parameter in Konfigurationen
 
-Zusätzlich zu einem `-ComputerName`-Parameter können wir Parameter für den Dienstnamen und Zustand hinzufügen. Im folgenden Beispiel wird ein Parameterblock mit einem `-ServiceName`-Parameter hinzugefügt und verwendet, um den **Service**-Ressourcenblock dynamisch zu definieren. Es wird auch ein `-State`-Parameter hinzugefügt, um den **State** (Zustand) im **Service**-Ressourcenblock dynamisch zu definieren.
+Zusätzlich zu einem `-ComputerName`-Parameter können wir Parameter für den Dienstnamen und Zustand hinzufügen.
+Im folgenden Beispiel wird ein Parameterblock mit einem `-ServiceName`-Parameter hinzugefügt und verwendet, um den **Service**-Ressourcenblock dynamisch zu definieren. Es wird auch ein `-State`-Parameter hinzugefügt, um den **State** (Zustand) im **Service**-Ressourcenblock dynamisch zu definieren.
 
 ```powershell
 Configuration TestConfig
@@ -213,7 +215,7 @@ Configuration TestConfig
     # It is best practice to explicitly import any required resources or modules.
     Import-DSCResource -Module PSDesiredStateConfiguration
 
-    Node localhost
+    Node $ComputerName
     {
         Service $ServiceName
         {
@@ -224,7 +226,7 @@ Configuration TestConfig
 }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 - [Schreiben von Hilfe für DSC-Konfigurationen](configHelp.md)
 - [Bedingte Anweisungen und Schleifen in Konfigurationen](flow-control-in-configurations.md)
