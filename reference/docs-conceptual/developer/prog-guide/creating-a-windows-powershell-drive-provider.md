@@ -12,30 +12,33 @@ helpviewer_keywords:
 - drives [PowerShell Programmer's Guide]
 ms.assetid: 2b446841-6616-4720-9ff8-50801d7576ed
 caps.latest.revision: 6
-ms.openlocfilehash: 2e3d97e224b06bdf36ac0bc1237911e029ea762d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 88be7cc6cc0ab54604bc9de71e0ae07c20457514
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72366829"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978456"
 ---
 # <a name="creating-a-windows-powershell-drive-provider"></a>Erstellen eines Windows PowerShell-Laufwerkanbieters
 
 In diesem Thema wird beschrieben, wie Sie einen Windows PowerShell-Laufwerks Anbieter erstellen, der die Möglichkeit bietet, über ein Windows PowerShell-Laufwerk auf einen Datenspeicher zuzugreifen. Diese Art von Anbieter wird auch als Windows PowerShell-Laufwerks Anbieter bezeichnet. Die vom Anbieter verwendeten Windows PowerShell-Laufwerke bieten die Möglichkeit, eine Verbindung mit dem Datenspeicher herzustellen.
 
-Der hier beschriebene Windows PowerShell-Laufwerks Anbieter ermöglicht den Zugriff auf eine Microsoft Access-Datenbank. Für diesen Anbieter stellt das Windows PowerShell-Laufwerk die Datenbank dar (es ist möglich, einem Laufwerks Anbieter eine beliebige Anzahl von Laufwerken hinzuzufügen), die Container der obersten Ebene des Laufwerks repräsentieren die Tabellen in der Datenbank, und die Elemente der Container repräsentieren die Zeilen in die Tabellen.
+Der hier beschriebene Windows PowerShell-Laufwerks Anbieter ermöglicht den Zugriff auf eine Microsoft Access-Datenbank.
+Für diesen Anbieter stellt das Windows PowerShell-Laufwerk die Datenbank dar (es ist möglich, einem Laufwerks Anbieter eine beliebige Anzahl von Laufwerken hinzuzufügen), die Container der obersten Ebene des Laufwerks repräsentieren die Tabellen in der Datenbank, und die Elemente der Container repräsentieren die Zeilen in den Tabellen.
 
 ## <a name="defining-the-windows-powershell-provider-class"></a>Definieren der Windows PowerShell-Anbieter Klasse
 
 Der Laufwerk Anbieter muss eine .NET-Klasse definieren, die von der [System. Management. Automation. Provider. drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) -Basisklasse abgeleitet wird. Hier ist die Klassendefinition für diesen Laufwerks Anbieter:
 
-[!code-csharp[AccessDBProviderSample02.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs#L29-L30 "AccessDBProviderSample02.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs" range="29-30":::
 
-Beachten Sie, dass das [System. Management. Automation. Provider. cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) -Attribut in diesem Beispiel einen benutzerfreundlichen Namen für den Anbieter und die Windows PowerShell-spezifischen Funktionen angibt, die der Anbieter während der Befehls Verarbeitung für die Windows PowerShell-Laufzeit verfügbar macht. Die möglichen Werte für die Anbieter Funktionen werden von der [System. Management. Automation. Provider. providerfunktionalitäten](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) -Enumeration definiert. Dieser Laufwerk Anbieter unterstützt diese Funktionen nicht.
+Beachten Sie, dass das [System. Management. Automation. Provider. cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) -Attribut in diesem Beispiel einen benutzerfreundlichen Namen für den Anbieter und die Windows PowerShell-spezifischen Funktionen angibt, die der Anbieter während der Befehls Verarbeitung für die Windows PowerShell-Laufzeit verfügbar macht.
+Die möglichen Werte für die Anbieter Funktionen werden von der [System. Management. Automation. Provider. providerfunktionalitäten](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) -Enumeration definiert. Dieser Laufwerk Anbieter unterstützt diese Funktionen nicht.
 
 ## <a name="defining-base-functionality"></a>Definieren der Basisfunktionalität
 
-Wie in [Entwerfen des Windows PowerShell-Anbieters](./designing-your-windows-powershell-provider.md)beschrieben, wird die [System. Management. Automation. Provider. drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) -Klasse von der [System. Management. Automation. Provider. cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) -Basisklasse abgeleitet, die die zum Initialisieren und Aufheben der Initialisierung des Anbieters erforderlichen Methoden definiert. Informationen zum Implementieren von Funktionen zum Hinzufügen von Sitzungs spezifischen Initialisierungs Informationen und zum Freigeben von Ressourcen, die vom Anbieter verwendet werden, finden Sie unter [Erstellen eines einfachen Windows PowerShell-Anbieters](./creating-a-basic-windows-powershell-provider.md). Die meisten Anbieter (einschließlich des hier beschriebenen Anbieters) können jedoch die Standard Implementierung dieser Funktionalität verwenden, die von Windows PowerShell bereitgestellt wird.
+Wie in [Entwerfen des Windows PowerShell-Anbieters](./designing-your-windows-powershell-provider.md)beschrieben, wird die [System. Management. Automation. Provider. drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) -Klasse von der [System. Management. Automation. Provider. cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) -Basisklasse abgeleitet, die die zum Initialisieren und Aufheben der Initialisierung des Anbieters erforderlichen Methoden definiert. Informationen zum Implementieren von Funktionen zum Hinzufügen von Sitzungs spezifischen Initialisierungs Informationen und zum Freigeben von Ressourcen, die vom Anbieter verwendet werden, finden Sie unter [Erstellen eines einfachen Windows PowerShell-Anbieters](./creating-a-basic-windows-powershell-provider.md).
+Die meisten Anbieter (einschließlich des hier beschriebenen Anbieters) können jedoch die Standard Implementierung dieser Funktionalität verwenden, die von Windows PowerShell bereitgestellt wird.
 
 ## <a name="creating-drive-state-information"></a>Erstellen von Laufwerks Zustandsinformationen
 
@@ -43,24 +46,20 @@ Alle Windows PowerShell-Anbieter gelten als zustandslos. Dies bedeutet, dass Ihr
 
 Bei diesem Laufwerk Anbieter enthalten Zustandsinformationen die Verbindung mit der Datenbank, die als Teil der Laufwerk Informationen beibehalten wird. Der folgende Code zeigt, wie diese Informationen im [System. Management. Automation. psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) -Objekt gespeichert werden, das das Laufwerk beschreibt:
 
-[!code-csharp[AccessDBProviderSample02.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs#L130-L151 "AccessDBProviderSample02.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs" range="130-151":::
 
 ## <a name="creating-a-drive"></a>Erstellen eines Laufwerks
 
 Damit die Windows PowerShell-Laufzeit ein Laufwerk erstellen kann, muss der Laufwerk Anbieter die [System. Management. Automation. Provider. drivecmdletprovider. newdrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) -Methode implementieren. Der folgende Code zeigt die Implementierung der [System. Management. Automation. Provider. drivecmdletprovider. newdrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) -Methode für diesen Laufwerk Anbieter:
 
-[!code-csharp[AccessDBProviderSample02.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs#L42-L84 "AccessDBProviderSample02.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs" range="42-84":::
 
 Die außer Kraft setzung dieser Methode sollte folgende Aktionen ausführen:
 
 - Überprüfen Sie, ob der Member " [System. Management. Automation. psdriveinfo. root *](/dotnet/api/System.Management.Automation.PSDriveInfo.Root) " vorhanden ist und eine Verbindung mit dem Datenspeicher hergestellt werden kann.
-
 - Erstellen Sie ein Laufwerk, und füllen Sie das Verbindungs Mitglied auf, um das `New-PSDrive`-Cmdlet zu unterstützen.
-
 - Überprüfen Sie das [System. Management. Automation. psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) -Objekt für das vorgeschlagene Laufwerk.
-
 - Ändern Sie das [System. Management. Automation. psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) -Objekt, das das Laufwerk mit den erforderlichen Leistungs-oder Zuverlässigkeits Informationen beschreibt, oder stellen Sie zusätzliche Daten für Aufrufer mit dem Laufwerk bereit.
-
 - Behandeln Sie Fehler mithilfe der [System. Management. Automation. Provider. cmdletprovider. Write-error](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) -Methode, und geben Sie dann `null`zurück.
 
   Diese Methode gibt entweder die Laufwerk Informationen zurück, die an die-Methode oder eine anbieterspezifische Version der Methode übermittelt wurden.
@@ -79,7 +78,7 @@ Der Laufwerks Anbieter muss die [System. Management. Automation. Provider. drive
 
 Der folgende Code zeigt die Implementierung der [System. Management. Automation. Provider. drivecmdletprovider. removedrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive) -Methode für diesen Laufwerk Anbieter:
 
-[!code-csharp[AccessDBProviderSample02.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs#L91-L116 "AccessDBProviderSample02.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs" range="91-116":::
 
 Wenn das Laufwerk entfernt werden kann, sollte die-Methode die an die Methode übergebenen Informationen über den `drive`-Parameter zurückgeben. Wenn das Laufwerk nicht entfernt werden kann, sollte die Methode eine Ausnahme schreiben und dann `null`zurückgeben. Wenn der Anbieter diese Methode nicht außer Kraft setzt, gibt die Standard Implementierung dieser Methode nur die als Eingabe übergebenen Laufwerks Informationen zurück.
 
@@ -111,7 +110,7 @@ Wenn Ihr Windows PowerShell-Anbieter bei Windows PowerShell registriert wurde, k
 
    Die folgende Ausgabe wird angezeigt:
 
-   ```output
+   ```Output
    Name                 Capabilities                  Drives
    ----                 ------------                  ------
    AccessDB             None                          {}
@@ -122,15 +121,17 @@ Wenn Ihr Windows PowerShell-Anbieter bei Windows PowerShell registriert wurde, k
    Registry             ShouldProcess                 {HKLM, HKCU}
    ```
 
-2. Stellen Sie sicher, dass ein Datenbankserver Name (DSN) für die Datenbank vorhanden ist, indem Sie auf den **Datenquellen** Teil der **Verwaltungs Tools** für das Betriebssystem zugreifen. Doppelklicken Sie in der Tabelle **Benutzer-DSN** auf **MS Access Database** , und fügen Sie den Laufwerks Pfad c:\ps\northwind.mdb hinzu.
+2. Stellen Sie sicher, dass ein Datenbankserver Name (DSN) für die Datenbank vorhanden ist, indem Sie auf den **Datenquellen** Teil der **Verwaltungs Tools** für das Betriebssystem zugreifen. Doppelklicken Sie in der Tabelle **Benutzer-DSN** auf **MS Access Database** , und fügen Sie den Laufwerks Pfad `C:\ps\northwind.mdb`hinzu.
 
 3. Erstellen Sie ein neues Laufwerk mithilfe des Beispiel-Laufwerk Anbieters:
 
-   **PS > New-PSDrive-Name mydb-root c:\ps\northwind.mdb-psprovider accessdb**
+   ```powershell
+   new-psdrive -name mydb -root c:\ps\northwind.mdb -psprovider AccessDb`
+   ```
 
    Die folgende Ausgabe wird angezeigt:
 
-   ```output
+   ```Output
    Name     Provider     Root                   CurrentLocation
    ----     --------     ----                   ---------------
    mydb     AccessDB     c:\ps\northwind.mdb
@@ -145,7 +146,7 @@ Wenn Ihr Windows PowerShell-Anbieter bei Windows PowerShell registriert wurde, k
 
    Die folgende Ausgabe wird angezeigt:
 
-   ```output
+   ```Output
    ConnectionString  : Driver={Microsoft Access Driver (*.mdb)};DBQ=c:\ps\northwind.mdb
    ConnectionTimeout : 15
    Database          : c:\ps\northwind
@@ -159,9 +160,10 @@ Wenn Ihr Windows PowerShell-Anbieter bei Windows PowerShell registriert wurde, k
 
 5. Entfernen Sie das Laufwerk, und beenden Sie die Shell:
 
-   **PS > Remove-PSDrive mydb**
-
-   **PS > beenden**
+   ```powershell
+   PS> remove-psdrive mydb
+   PS> exit
+   ```
 
 ## <a name="see-also"></a>Weitere Informationen
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 65094bb7-1972-44b3-b8b0-5f639860b58c
 caps.latest.revision: 5
-ms.openlocfilehash: 499a688ce5e8daa78baff58c454ad237836bbe48
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 71ba68521ed8d26d0c85169d2b0d547cc6d2d5e3
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416161"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978422"
 ---
 # <a name="getproc01-c-sample-code"></a>GetProc01-Codebeispiel (C#)
 
@@ -21,12 +21,11 @@ Der folgende Code zeigt die Implementierung des GetProc01-Beispiel-Cmdlets. Beac
 
 > [!NOTE]
 > Sie können die C# Quelldatei (getproc01.cs) für dieses Get-proc-Cmdlet mit dem Microsoft Windows Software Development Kit für Windows Vista und .NET Framework 3,0-Laufzeitkomponenten herunterladen. Anweisungen zum Herunterladen finden Sie unter [Installieren von Windows PowerShell und Herunterladen des Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
->
 > Die heruntergeladenen Quelldateien stehen im **\<PowerShell-Beispiele >** Verzeichnis zur Verfügung.
 
 ## <a name="code-sample"></a>Codebeispiel
 
-[!code-csharp[GetProcessSample01.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample01/GetProcessSample01.cs#L11-L126 "GetProcessSample01.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample01/GetProcessSample01.cs" range="11-126":::
 
 ## <a name="see-also"></a>Weitere Informationen
 

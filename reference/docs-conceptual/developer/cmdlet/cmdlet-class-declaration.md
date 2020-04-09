@@ -11,16 +11,17 @@ helpviewer_keywords:
 - declaring cmdlets [PowerShell SDK]
 ms.assetid: 1fcc4c5e-0c75-496c-a712-5f844e310576
 caps.latest.revision: 14
-ms.openlocfilehash: 979025ad5c34ab73dcc23d0e38ffb9acc431f15a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0de49d979c31b0e8d111323a2e1899d97868ec3f
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72363519"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978711"
 ---
 # <a name="cmdlet-class-declaration"></a>Deklaration der Cmdlet-Klasse
 
-Eine Microsoft .NET Framework-Klasse wird als Cmdlet deklariert, indem das **Cmdlet** -Attribut als Metadaten für die-Klasse angegeben wird. (Das **Cmdlet** -Attribut ist das einzige erforderliche Attribut für alle Cmdlets). Wenn Sie das **Cmdlet** -Attribut angeben, müssen Sie das Verb-und-Substantiv-Paar angeben, das das Cmdlet für den Benutzer identifiziert. Und Sie müssen die Windows PowerShell-Funktionalität beschreiben, die vom Cmdlet unterstützt wird. Weitere Informationen zur Deklarations Syntax, die zum Angeben des **Cmdlet** -Attributs verwendet wird, finden Sie unter [Cmdlet-Attribut Deklaration](./cmdlet-attribute-declaration.md).
+Eine Microsoft .NET Framework-Klasse wird als Cmdlet deklariert, indem das **Cmdlet** -Attribut als Metadaten für die-Klasse angegeben wird. (Das **Cmdlet** -Attribut ist das einzige erforderliche Attribut für alle Cmdlets).
+Wenn Sie das **Cmdlet** -Attribut angeben, müssen Sie das Verb-und-Substantiv-Paar angeben, das das Cmdlet für den Benutzer identifiziert. Und Sie müssen die Windows PowerShell-Funktionalität beschreiben, die vom Cmdlet unterstützt wird. Weitere Informationen zur Deklarations Syntax, die zum Angeben des **Cmdlet** -Attributs verwendet wird, finden Sie unter [Cmdlet-Attribut Deklaration](./cmdlet-attribute-declaration.md).
 
 > [!NOTE]
 > Das **Cmdlet** -Attribut wird von der [System. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) -Klasse definiert. Die Eigenschaften dieser Klasse entsprechen den Deklarations Parametern, die beim Deklarieren des Attributs verwendet werden.
@@ -45,11 +46,11 @@ Mit dem **Cmdlet** -Attribut können Sie auch angeben, dass das Cmdlet einige de
 
 Weitere Informationen zur Deklarations Syntax, die zum Angeben des **Cmdlet** -Attributs verwendet wird, finden Sie unter [Cmdlet-Attribut Deklaration](./cmdlet-attribute-declaration.md).
 
-## <a name="cmdlet-class-definition"></a>Cmdlet-Klassendefinition
+## <a name="cmdlet-class-definition"></a>Cmdlet-Klassen Definition
 
 Der folgende Code ist die Definition für eine getproc-Cmdlet-Klasse. Beachten Sie, dass die Pascal-Schreibweise verwendet wird und dass der Name der Klasse das Verb und das Substantiv des Cmdlets enthält.
 
-[!code-csharp[GetProcessSample01.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample01/GetProcessSample01.cs#L33-L34 "GetProcessSample01.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample01/GetProcessSample01.cs" range="33-34":::
 
 ## <a name="pascal-casing"></a>Pascal-Schreibweise
 

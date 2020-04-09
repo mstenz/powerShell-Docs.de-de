@@ -1,19 +1,58 @@
 ---
 title: Neuerungen in der PowerShell-Dokumentation
 description: Liste der Änderungen an der PowerShell-Dokumentation
-ms.date: 03/04/2020
-ms.openlocfilehash: b2b196a83eafc87daf9f9eb06a93377058f1ff20
-ms.sourcegitcommit: 18d832858a7b8ea094763afa753e0f48f01372e7
+ms.date: 03/31/2020
+ms.openlocfilehash: b7fee886b1c5584dc9d75b86ca79980579040db7
+ms.sourcegitcommit: ef1a3079809ec2e3c58e785c84de2df968145658
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79060215"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80537067"
 ---
 # <a name="whats-new-in-powershell-docs"></a>Neuerungen in der PowerShell-Dokumentation
 
 In diesem Artikel sind einige der wichtigsten Änderungen an den Dokumenten im vergangenen Monat aufgeführt. Außerdem werden die Beiträge der Community gewürdigt.
 
 Helfen Sie uns, die Dokumentation zu verbessern. Lesen Sie den [Leitfaden für Mitwirkende][contrib], um mehr über die ersten Schritte zu erfahren.
+
+## <a name="2020-march"></a>März 2020
+
+### <a name="highlights"></a>Highlights
+
+- Neue Dokumente
+  - PowerShell-Communitydokumentationsseiten
+    - [Ressourcen aus der PowerShell-Community](/powershell/scripting/community/community-support)
+    - [Neuerungen in der PowerShell-Dokumentation](#2020-march) (diese Seite)
+    - [PowerShell-Infografik](https://github.com/MicrosoftDocs/PowerShell-Docs/blob/staging/assets/PowerShell_7_Infographic.pdf) zur Seite „Digitale Kunst“ hinzugefügt
+    - [Mitwirkung an der PowerShell-Dokumentation](/powershell/scripting/community/contributing/overview?view=powershell-7)
+  - Neue PowerShell-Inhalte
+    - [Migrieren von Windows PowerShell 5.1 zu PowerShell 7](/powershell/scripting/whats-new/migrating-from-windows-powershell-51-to-powershell-7)
+    - [Kompatibilität von PowerShell 7-Modulen](/PowerShell/scripting/whats-new/module-compatibility)
+    - [Verwenden von PowerShell in Docker](/powershell/scripting/install/powershell-in-docker)
+  - Neue Wiki-Inhalte
+    - [PowerShell verhindert Ausnahmen für nicht vorhandene Schlüssel für Typen, die „IDictionary TKey, TValue“ implementieren](https://github.com/MicrosoftDocs/PowerShell-Docs/wiki/PowerShell-prevents-exceptions-for-non-existent-keys-for-types-that-implement-IDictionary-TKey,-TValue-)
+    - [Keine Beachtung von Groß-/Kleinschreibung, aber Beibehaltung der Schreibweise von Namespaces bei PowerShell](https://github.com/MicrosoftDocs/PowerShell-Docs/wiki/PowerShell's-treatment-of-namespaces-is-case-insensitive-but-case-preserving)
+
+- Korrekturen in Dokumentationen
+  - Umfangreiche Bereinigung fehlerhafter Links
+  - Bereinigen von alten und doppelten Problemen
+
+- GitHub-Statistik
+  - 100 Pull Requests gemergt (14 aus der Community)
+  - 68 Issues geöffnet (56 aus der Community)
+  - 109 Issues geschlossen
+
+### <a name="top-community-contributors"></a>Wichtigste Mitwirkende an der Community
+
+Die folgenden Personen haben an der PowerShell-Dokumentation mitgewirkt, indem sie Pull Requests (PRs) eingereicht oder Issues gemeldet haben. Vielen Dank!
+
+- k-takai: 7 PRs
+- mklement0: 5 Issues
+- juvtib: 4 Issues
+- iSazonov: 3 Issues
+- doctordns: 2 Issues
+- mdorantesm: 2 Issues
+- qt3m45su0najc7: 2 Issues
 
 ## <a name="2020-february"></a>Februar 2020
 
@@ -77,11 +116,11 @@ Pull Requests helfen uns, diese Probleme zu beheben und die Dokumentation für a
 
 | Eingereichte PRs für Dokumentation | 2016 | 2017 | 2018 | 2019 | 2020 | Grand Total |
 | ------------------ | ---: | ---: | ---: | ---: | ---: | ----------: |
-| Community insgesamt    |  194 |  447 |  467 |  320 |   16 |        1447 |
+| Community insgesamt    |  198 |  448 |  468 |  322 |   22 |        1469 |
 | matt9ucci          |      |  157 |   80 |   30 |      |         267 |
 | nschonni           |      |      |   14 |  138 |      |         152 |
 | kiazhi             |   25 |   79 |   12 |      |      |         116 |
-| alexandair         |   57 |    7 |   26 |    2 |      |          92 |
+| alexandair         |   59 |    8 |   26 |    2 |      |          95 |
 | doctordns          |    5 |   32 |   20 |    7 |    2 |          66 |
 | sethvs             |      |    1 |   44 |      |      |          45 |
 | Dan1el42           |   20 |      |      |      |      |          20 |
@@ -89,8 +128,10 @@ Pull Requests helfen uns, diese Probleme zu beheben und die Dokumentation für a
 | it-praktyk         |      |      |   16 |    1 |      |          17 |
 | markekraus         |      |   11 |    5 |      |      |          16 |
 | purdo17            |      |      |   13 |      |      |          13 |
+| k-takai            |      |      |    5 |    1 |    7 |          13 |
 | kvprasoon          |    2 |    1 |    7 |    2 |      |          12 |
 | PlagueHO           |   10 |      |      |    1 |      |          11 |
+| KirkMunro          |    1 |    1 |    2 |    6 |      |          10 |
 | exchange12rocks    |      |    7 |    3 |      |      |          10 |
 
 ### <a name="github-issues-opened"></a>Eröffnete GitHub-Issues
@@ -99,14 +140,14 @@ GitHub-Issues helfen uns, Fehler und Lücken in unserer Dokumentation zu bestimm
 
 | Eröffnete GitHub-Issues zur Dokumentation | 2016 | 2017 | 2018 | 2019 | 2020 | Grand Total |
 | ------------------ | ---: | ---: | ---: | ---: | ---: | ----------: |
-| Community insgesamt    |   34 |   95 |  213 |  575 |   86 |        1003 |
-| mklement0          |      |   19 |   60 |   56 |   13 |         148 |
+| Community insgesamt    |   34 |   95 |  213 |  575 |  123 |        1081 |
+| mklement0          |      |   19 |   60 |   56 |   17 |         153 |
 | jszabo98           |      |      |    2 |   15 |    2 |          19 |
-| iSazonov           |      |    1 |    4 |   10 |      |          15 |
-| doctordns          |      |    5 |    3 |    5 |    2 |          15 |
+| iSazonov           |      |    1 |    4 |   10 |    2 |          18 |
+| doctordns          |      |    5 |    3 |    5 |    4 |          17 |
+| alexandair         |    9 |    4 |    2 |      |      |          15 |
 | KirkMunro          |      |      |    7 |    7 |      |          14 |
 | vexx32             |      |      |    3 |   11 |      |          14 |
-| alexandair         |    6 |    4 |    2 |      |      |          12 |
 
 <!-- Link references -->
 [contrib]: contributing/overview.md
