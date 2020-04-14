@@ -158,7 +158,7 @@
           href: components/vscode/How-To-Replicate-the-ISE-Experience-In-VSCode.md
         - name: Verwenden von Visual Studio Code für Remotebearbeitung und Remotedebuggen
           href: components/vscode/Using-VSCode-for-Remote-Editing-and-Debugging.md
-        - name: Grundlegendes zur Dateicodierung in VSCode und PowerShell
+        - name: "Grundlegendes zur Dateicodierung in VS\_Code und PowerShell"
           href: components/vscode/understanding-file-encoding.md
     - name: Webzugriff
       items:
