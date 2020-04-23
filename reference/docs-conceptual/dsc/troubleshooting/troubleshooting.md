@@ -3,10 +3,10 @@ ms.date: 10/30/2018
 keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: Problembehandlung bei DSC
 ms.openlocfilehash: 5cbe6496a6e0b9940f4b69e13d1e19e43b3915f0
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/15/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "79402407"
 ---
 # <a name="troubleshooting-dsc"></a>Problembehandlung bei DSC
@@ -86,7 +86,7 @@ Die Durchsicht dieser Protokolle kann Ihnen dabei helfen herauszufinden, warum e
 
 ## <a name="where-are-dsc-event-logs"></a>Wo befinden sich die DSC-Ereignisprotokolle?
 
-In der Ereignisanzeige befinden sich DSC-Ereignisse unter: **Applications and Services Logs/Microsoft/Windows/Desired State Configuration**
+In der Ereignisanzeige werden DSC-Ereignisse unter **Anwendungs- und Dienstprotokolle/Microsoft/Windows/Desired State Configuration** angezeigt.
 
 Die können auch das entsprechende PowerShell-Cmdlet [Get-WinEvent](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent) ausführen, um die Ereignisprotokolle anzuzeigen:
 
@@ -100,7 +100,7 @@ TimeCreated                     Id LevelDisplayName Message
 11/17/2014 10:27:23 PM        4102 Information      Job {02C38626-D95A-47F1-9DA2-C1D44A7128E7} :
 ```
 
-Wie oben gezeigt, lautet der primäre Protokollname von DSC **Microsoft > Windows > DSC** (andere Protokollnamen unter Windows werden hier aus Gründen der Übersichtlichkeit nicht dargestellt). Der primäre Name wird an den Namen des Kanals angefügt. Daraus ergibt sich der vollständige Protokollname. Die DSC-Engine schreibt hauptsächlich in drei Arten von Protokollen: [Betriebs-, Analyse- und Debugprotokolle](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc722404(v=ws.11)). Da die analytischen Protokolle und die Debugprotokolle standardmäßig deaktiviert sind, sollten Sie sie in der Ereignisanzeige aktivieren. Öffnen Sie dazu die Ereignisanzeige, indem Sie in Windows PowerShell „Show-EventLog“ eingeben. Oder klicken Sie auf die Schaltfläche **Start** und dann auf **Systemsteuerung**, **Verwaltung** und **Ereignisanzeige**.
+Wie oben gezeigt, lautet der primäre Protokollname von DSC **Microsoft > Windows > DSC** (andere Protokollnamen unter Windows werden hier aus Gründen der Übersichtlichkeit nicht dargestellt). Der primäre Name wird an den Namen des Kanals angefügt. Daraus ergibt sich der vollständige Protokollname. Die DSC-Engine schreibt hauptsächlich in drei Protokolltypen: [Betriebsprotokoll, analytisches Protokoll und Debugprotokoll](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc722404(v=ws.11)). Da die analytischen Protokolle und die Debugprotokolle standardmäßig deaktiviert sind, sollten Sie sie in der Ereignisanzeige aktivieren. Öffnen Sie dazu die Ereignisanzeige, indem Sie in Windows PowerShell „Show-EventLog“ eingeben. Oder klicken Sie auf die Schaltfläche **Start** und dann auf **Systemsteuerung**, **Verwaltung** und **Ereignisanzeige**.
 Klicken Sie in der Ereignisanzeige im Menü **Ansicht** auf **Analytische und Debugprotokolle einblenden**. Der Name des für den analytischen Kanal lautet **Microsoft-Windows-Dsc/Analytic**, und der Debugkanal heißt **Microsoft-Windows-Dsc/Debug**. Außerdem können Sie zum Aktivieren der Protokolle das Hilfsprogramm [wevtutil](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc732848(v=ws.11)) verwenden, wie im folgenden Beispiel gezeigt.
 
 ```powershell

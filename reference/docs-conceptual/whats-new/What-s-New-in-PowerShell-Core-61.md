@@ -3,10 +3,10 @@ title: Neuigkeiten in PowerShell Core 6.1
 description: Neue Funktionen und Änderungen in PowerShell Core 6.1
 ms.date: 09/13/2018
 ms.openlocfilehash: 079d5a472c743ce94f2e93143c1dcb4ff406951f
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "78277729"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>Neuigkeiten in PowerShell Core 6.1
@@ -344,7 +344,7 @@ foo
 
 ### `Where-Object -Not`
 
-Durch die Mithilfe von @SimonWahlin konnte `Where-Object` der `-Not`-Parameter hinzugefügt werden. Jetzt können Sie ein Objekt in der Pipeline nach dem Nichtvorhandensein einer Eigenschaft oder eines leeren oder NULL-Eigenschaftswerts filtern.
+Durch die Mithilfe von @SimonWahlin konnte `-Not` der `Where-Object`-Parameter hinzugefügt werden. Jetzt können Sie ein Objekt in der Pipeline nach dem Nichtvorhandensein einer Eigenschaft oder eines leeren oder NULL-Eigenschaftswerts filtern.
 
 Dieser Befehl gibt z.B. alle Dienste zurück, die über keine definierten abhängigen Dienste verfügen:
 
@@ -380,7 +380,7 @@ Weitere Informationen zu dieser Änderung finden Sie unter [PR #5287](https://gi
 
 ### <a name="standard-deviation-in-measure-object"></a>Standardabweichung in `Measure-Object`
 
-Durch die Mithilfe von [@CloudyDino](https://github.com/CloudyDino) wurde `Measure-Object` eine `StandardDeviation`-Eigenschaft hinzugefügt:
+Durch die Mithilfe von [@CloudyDino](https://github.com/CloudyDino) wurde `StandardDeviation` eine `Measure-Object`-Eigenschaft hinzugefügt:
 
 ```powershell
 Get-Process | Measure-Object -Property CPU -AllStats

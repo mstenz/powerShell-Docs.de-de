@@ -3,10 +3,10 @@ ms.date: 07/10/2019
 keywords: jea,powershell,security
 title: JEA-Voraussetzungen
 ms.openlocfilehash: 1833bacf49eebcccefc10f7c85a39732559c1a97
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "74416727"
 ---
 # <a name="prerequisites"></a>Voraussetzungen
@@ -33,8 +33,8 @@ JEA ist mit PowerShell 5.0 oder höher verfügbar. Wenn Sie jedoch die vollstä
 | Serverbetriebssystem |                JEA-Verfügbarkeit                |
 | ----------------------- | ---------------------------------------------- |
 | Windows Server 2016+    | Vorinstalliert                                   |
-| Windows Server 2012 R2  | Vollständige Funktionalität mit WMF 5.1                |
-| Windows Server 2012     | Vollständige Funktionalität mit WMF 5.1                |
+| Windows Server 2012 R2  | Vollständige Funktionalität mit WMF 5.1                |
+| Windows Server 2012     | Vollständige Funktionalität mit WMF 5.1                |
 | Windows Server 2008 R2  | Reduzierte Funktionalität<sup>1</sup> mit WMF 5.1 |
 
 Sie können JEA auch auf Ihrem Heim- oder Firmencomputer verwenden:
@@ -45,7 +45,7 @@ Sie können JEA auch auf Ihrem Heim- oder Firmencomputer verwenden:
 | Windows 10 1603, 1511   | Vorinstalliert, mit eingeschränkter Funktionalität<sup>2</sup> |
 | Windows 10 1507         | Nicht verfügbar                                        |
 | Windows 8, 8.1          | Vollständige Funktionalität mit WMF 5.1                      |
-| Windows 7               | Reduzierte Funktionalität<sup>1</sup> mit WMF 5.1       |
+| Windows 7               | Reduzierte Funktionalität<sup>1</sup> mit WMF 5.1       |
 
 - <sup>1</sup> JEA kann nicht konfiguriert werden, um gruppenverwaltete Dienstkonten unter Windows Server 2008 R2 oder Windows 7 zu verwenden. Virtuelle Konten und andere JEA-Features *werden* unterstützt.
 
@@ -102,7 +102,7 @@ Sie können über eine Gruppenrichtlinie auch die systemweite PowerShell-Aufzeic
 
 [Create a session configuration file (Erstellen einer Sitzungskonfigurationsdatei)](session-configurations.md)
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [WinRM-Sicherheit](/powershell/scripting/learn/remoting/winrmsecurity)
 

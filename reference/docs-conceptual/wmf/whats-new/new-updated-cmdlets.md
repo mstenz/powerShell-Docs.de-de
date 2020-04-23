@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: wmf,powershell,setup
 title: Neue und aktualisierte Cmdlets
 ms.openlocfilehash: ffd5db2d4fc9bf8f67ef5e352633ad3209f72c87
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71147590"
 ---
 # <a name="new-and-updated-cmdlets"></a>Neue und aktualisierte Cmdlets
@@ -32,7 +32,7 @@ Diese generieren und überprüfen Windows-Katalogdateien.
 
 Die Cmdlets `Get-Clipboard` und `Set-Clipboard` vereinfachen das Übertragen von Inhalten in eine und aus einer Windows PowerShell-Sitzung. Die „Clipboard“-Cmdlets unterstützen Bilder, Audiodateien, Dateilisten und Text.
 
-Weitere Informationen finden Sie unter:
+Weitere Informationen finden Sie unter
 
 - [Get-Clipboard](/powershell/module/Microsoft.PowerShell.Management/Get-Clipboard)
 - [Set-Clipboard](/powershell/module/Microsoft.PowerShell.Management/Set-Clipboard)

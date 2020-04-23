@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Anhang 2 – Erstellen einer benutzerdefinierten PowerShell-Verknüpfung
 ms.openlocfilehash: 6f1a6a8187b1797103e3620b2cf9155978807ea5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030304"
 ---
 # <a name="appendix-2---creating-a-custom-powershell-shortcut"></a>Anhang 2: Erstellen einer benutzerdefinierten PowerShell-Verknüpfung
@@ -17,7 +17,7 @@ In der folgenden Vorgehensweise wird beschrieben, wie Sie eine Verknüpfung zu W
 
 2. Klicken Sie mit der rechten Maustaste auf die Verknüpfung, und klicken Sie dann auf **Eigenschaften**.
 
-3. Klicken Sie auf die Registerkarte **Optionen**.
+3. Klicken Sie auf die Registerkarte **Options** .
 
 4. Aktivieren Sie im Abschnitt **Bearbeitungsoptionen** das Kontrollkästchen **QuickEdit**.
 

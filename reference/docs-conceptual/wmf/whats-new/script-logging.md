@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: wmf,powershell,setup
 title: Ablaufverfolgung und Protokollierung von Skripts
 ms.openlocfilehash: 6b7e5022cb4c974da5ddb3d670b5808dc9fb7bdc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71147800"
 ---
 # <a name="script-tracing-and-logging"></a>Ablaufverfolgung und Protokollierung von Skripts
@@ -17,28 +17,28 @@ Die Protokollierung wird über die Gruppenrichtlinieneinstellung **Protokollieru
 
 Die Ereignisse sind wie folgt:
 
-| Kanal |                               Betriebsbereit                               |
+| Channel |                               Bei Betrieb                               |
 | ------- | ----------------------------------------------------------------------- |
 | Ebene   | Ausführlich                                                                 |
 | Opcode  | Erstellen                                                                  |
 | Aufgabe    | CommandStart                                                            |
 | Schlüsselwort | Runspace                                                                |
-| Ereignis-ID | Engine_ScriptBlockCompiled (0x1008 = 4104)                              |
-| Meldung | Skriptblocktext (%1 von %2) wird erstellt: </br> %3 </br> ScriptBlock-ID: %4 |
+| EventId | Engine_ScriptBlockCompiled (0x1008 = 4104)                              |
+| `Message` | Skriptblocktext (%1 von %2) wird erstellt: </br> %3 </br> ScriptBlock-ID: %4 |
 
 
 Der in der Meldung eingebettete Text gibt das Ausmaß des kompilierten Skriptblocks an. Die ID ist eine GUID, die für die Gültigkeitsdauer des Skriptblocks beibehalten wird.
 
 Wenn Sie die ausführlichen Protokollierung aktivieren, schreibt das Feature die Markierungen „begin“ und „end“:
 
-| Kanal |                                 Betriebsbereit                                |
+| Channel |                                 Bei Betrieb                                |
 | ------- | -------------------------------------------------------------------------- |
 | Ebene   | Ausführlich                                                                    |
 | Opcode  | Öffnen/Schließen                                                               |
 | Aufgabe    | CommandStart/CommandStop                                                 |
 | Schlüsselwort | Runspace                                                                   |
-| Ereignis-ID | ScriptBlock\_Invoke\_Start\_Detail (0x1009 = 4105) / </br> ScriptBlock\_Invoke\_Complete\_Detail (0x100A = 4106) / |
-| Message | Der Aufruf der ScriptBlock-ID wurde gestartet/abgeschlossen: %1 </br> Runspace-ID: %2 |
+| EventId | ScriptBlock\_Invoke\_Start\_Detail (0x1009 = 4105) / </br> ScriptBlock\_Invoke\_Complete\_Detail (0x100A = 4106) / |
+| `Message` | Der Aufruf der ScriptBlock-ID wurde gestartet/abgeschlossen: %1 </br> Runspace-ID: %2 |
 
 Die ID ist die GUID, die den Skriptblock darstellt (der mit der Ereignis-ID 0x1008 korreliert werden kann). Die Runspace-ID stellt den Runspace dar, in dem dieser Skriptblock ausgeführt wurde.
 

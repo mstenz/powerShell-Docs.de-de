@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: Verpacken und Hochladen von Ressourcen auf einen Pullserver
 ms.openlocfilehash: 8aac343d7495ecda94ed76d1d97079397eecd65f
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "78278499"
 ---
 # <a name="package-and-upload-resources-to-a-pull-server"></a>Verpacken und Hochladen von Ressourcen auf einen Pullserver
@@ -41,7 +41,7 @@ Im Beispiel oben sollte „xPSDesiredStateConfiguration.zip“ in „xPSDesiredS
 
 ### <a name="create-checksums"></a>Erstellen von Prüfsummen
 
-Sobald das Ressourcenmodul komprimiert und umbenannt wurde, müssen Sie eine **Prüfsumme** erstellen.  Die **CheckSum** wird von LCM auf dem Client verwendet, um festzustellen, ob die Ressource geändert wurde und erneut heruntergeladen werden muss. Sie können mit dem Cmdlet [New-DSCCheckSum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) eine **CheckSum** erstellen, wie im folgenden Beispiel gezeigt.
+Sobald das Ressourcenmodul komprimiert und umbenannt wurde, müssen Sie eine **Prüfsumme** erstellen.  Die **CheckSum** wird von LCM auf dem Client verwendet, um festzustellen, ob die Ressource geändert wurde und erneut heruntergeladen werden muss. Sie können mit dem Cmdlet **New-DSCCheckSum** eine [CheckSum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) erstellen, wie im folgenden Beispiel gezeigt.
 
 ```powershell
 New-DscChecksum -Path .\xPSDesiredStateConfiguration_8.4.4.0.zip

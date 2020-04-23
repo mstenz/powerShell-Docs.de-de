@@ -1,12 +1,12 @@
 ---
 ms.date: 09/20/2019
-keywords: dsc,powershell,configuration,setup
+keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: DSC-Ressource „WindowsOptionalFeature“
 ms.openlocfilehash: 7312edcaeb47427bf4736f466a9ed41bd7c31f6a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954647"
 ---
 # <a name="dsc-windowsoptionalfeature-resource"></a>DSC-Ressource „WindowsOptionalFeature“
@@ -34,10 +34,10 @@ WindowsOptionalFeature [string] #ResourceName
 
 ## <a name="properties"></a>Eigenschaften
 
-|Eigenschaft |Beschreibung |
+|Eigenschaft |BESCHREIBUNG |
 |---|---|
 |Name |Gibt den Namen des Features an, das aktiviert oder deaktiviert werden soll. |
-|Source |Nicht implementiert. |
+|`Source` |Nicht implementiert. |
 |NoWindowsUpdateCheck |Gibt an, ob Windows Update (WU) von DISM kontaktiert wird, wenn die Quelldateien zum Aktivieren eines Features gesucht werden. Falls `$true`, wird WU nicht von DISM kontaktiert. |
 |RemoveFilesOnDisable |Legen Sie diese Einstellung auf `$true` fest, um alle zu dem Feature gehörigen Dateien zu entfernen, wenn **Ensure** auf **Absent** festgelegt wird. |
 |LogLevel |Die maximale Ausgabeebene, die in den Protokollen angezeigt wird. Zulässige Werte: **ErrorsOnly**, **ErrorsAndWarning** und **ErrorsAndWarningAndInformation**. |
@@ -45,10 +45,10 @@ WindowsOptionalFeature [string] #ResourceName
 
 ## <a name="common-properties"></a>Allgemeine Eigenschaften
 
-|Eigenschaft |Beschreibung |
+|Eigenschaft |BESCHREIBUNG |
 |---|---|
 |DependsOn |Gibt an, dass die Konfiguration einer anderen Ressource ausgeführt werden muss, bevor diese Ressource konfiguriert wird. Wenn beispielsweise die ID des Skriptblocks mit der Ressourcenkonfiguration, den Sie zuerst ausführen möchten, „ResourceName“ und dessen Typ „ResourceType“ ist, lautet die Syntax für das Verwenden dieser Eigenschaft `DependsOn = "[ResourceType]ResourceName"`. |
-|Ensure |Gibt an, ob das Feature aktiviert ist. Um sicherzustellen, dass das Feature aktiviert ist, legen Sie diese Eigenschaft auf _Enable_ fest. Um sicherzustellen, dass das Feature deaktiviert ist, legen Sie diese Eigenschaft auf _Disable_ fest. Der Standardwert ist _Enable_. |
+|Ensure |Gibt an, ob die Funktion aktiviert ist. Um sicherzustellen, dass das Feature aktiviert ist, legen Sie diese Eigenschaft auf _Enable_ fest. Um sicherzustellen, dass das Feature deaktiviert ist, legen Sie diese Eigenschaft auf _Disable_ fest. Der Standardwert ist _Enable_. |
 |PsDscRunAsCredential |Legt die Anmeldeinformationen für die Ausführung der gesamten Ressource fest. |
 
 > [!NOTE]

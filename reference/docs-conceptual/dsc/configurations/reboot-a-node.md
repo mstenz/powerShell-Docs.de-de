@@ -1,12 +1,12 @@
 ---
 ms.date: 01/17/2019
-keywords: dsc,powershell,configuration,setup
+keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: Neustart eines Knotens
 ms.openlocfilehash: 22c63fab9b6646f522f8531b46a43a94ff883552
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954027"
 ---
 # <a name="reboot-a-node"></a>Neustart eines Knotens
@@ -15,7 +15,7 @@ ms.locfileid: "71954027"
 > In diesem Thema wird erläutert, wie ein Knoten neu gestartet wird. Damit der Neustart erfolgreich verläuft, müssen die LCM-Einstellungen **ActionAfterReboot** und **RebootNodeIfNeeded** ordnungsgemäß konfiguriert werden.
 > Weitere Informationen zu Einstellungen des lokalen Konfigurations-Managers finden Sie unter [Configure the Local Configuration Manager (Konfigurieren des lokalen Konfigurations-Managers)](../managing-nodes/metaConfig.md) oder [Configure the Local Configuration Manager (v4) (Konfigurieren des lokalen Konfigurations-Managers (Version 4))](../managing-nodes/metaConfig4.md).
 
-Knoten können mithilfe des `$global:DSCMachineStatus`-Flags innerhalb einer Ressource neu gestartet werden. Wenn dieses Flag in der Funktion `Set-TargetResource` auf `1` festgelegt wird, wird der LCM direkt nach der **Set**-Methode der aktuellen Ressource zum Neustart des Knotens gezwungen. Mithilfe dieses Flags erkennt die **PendingReboot**-Ressource im DSC-Ressourcenmodul [ComputerManagementDsc](https://github.com/PowerShell/ComputerManagementDsc), ob ein Neustart außerhalb von DSC aussteht.
+Knoten können mithilfe des `$global:DSCMachineStatus`-Flags innerhalb einer Ressource neu gestartet werden. Wenn dieses Flag in der Funktion `1` auf `Set-TargetResource` festgelegt wird, wird der LCM direkt nach der **Set**-Methode der aktuellen Ressource zum Neustart des Knotens gezwungen. Mithilfe dieses Flags erkennt die **PendingReboot**-Ressource im DSC-Ressourcenmodul [ComputerManagementDsc](https://github.com/PowerShell/ComputerManagementDsc), ob ein Neustart außerhalb von DSC aussteht.
 
 Ihre [Konfigurationen](configurations.md) führen möglicherweise Schritte aus, die für den Neustart des Knotens erforderlich sind. Dazu kann Folgendes gehören:
 
@@ -47,7 +47,7 @@ PendingReboot [String] #ResourceName
 
 ## <a name="properties"></a>Eigenschaften
 
-| Eigenschaft | Beschreibung |
+| Eigenschaft | BESCHREIBUNG |
 | --- | --- |
 | Name| Erforderlicher Parameter, der innerhalb einer Konfiguration pro Ressourceninstanz eindeutig sein muss.|
 | SkipComponentBasedServicing | Überspringen von Neustarts, die von der komponentenbasierten Wartungskomponente ausgelöst wurden. |

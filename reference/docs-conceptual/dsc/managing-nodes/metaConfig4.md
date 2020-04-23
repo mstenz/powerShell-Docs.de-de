@@ -1,17 +1,17 @@
 ---
 ms.date: 12/12/2018
-keywords: dsc,powershell,configuration,setup
+keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: Konfigurieren des LCM in PowerShell 4.0
 ms.openlocfilehash: 747b15c483c79a7ecbb62214ef5a59f8dc137bd4
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71953827"
 ---
 # <a name="configuring-the-lcm-in-powershell-40"></a>Konfigurieren des LCM in PowerShell 4.0
 
->Gilt für: Windows PowerShell 4.0
+>Gilt für: Windows PowerShell 4.0
 
 **Informationen, die sich auf Windows PowerShell 5.0 und höher beziehen, finden Sie unter [Konfigurieren des lokalen Konfigurations-Managers](metaConfig.md).**
 
@@ -34,7 +34,7 @@ Nachstehend sind die LCM-Eigenschaften aufgelistet, die Sie festlegen oder abruf
 - **Credential:** Gibt (z. B. mit „Get-Credential“) erforderliche Anmeldeinformationen für den Zugriff auf Remoteressourcen an, um z. B. den Konfigurationsdienst zu kontaktieren.
 - **DownloadManagerCustomData:** Stellt ein Array mit benutzerdefinierten Daten dar, die spezifisch für den Download-Manager sind.
 - **DownloadManagerName:** Gibt den Namen der Konfiguration und des Moduls des Download-Managers an.
-- **RebootNodeIfNeeded:** Legen Sie für diese Option `$true` fest, um Ressourcen das Neustarten des Knotens mithilfe des `$global:DSCMachineStatus`-Flags zu ermöglichen. Andernfalls müssen Sie den Knoten für jede Konfiguration manuell neu starten, die dies erfordert. Der Standardwert ist `$false`. Um diese Einstellung zu verwenden, wenn eine Neustartbedingung von einer anderen Komponente als von DSC in Kraft gesetzt wird (z.B. Windows Installer), kombinieren Sie diese Einstellung mit dem Modul [xPendingReboot](https://github.com/powershell/xpendingreboot).
+- **RebootNodeIfNeeded:** Legen Sie für diese Option `$true` fest, um Ressourcen das Neustarten des Knotens mithilfe des `$global:DSCMachineStatus`-Flags zu ermöglichen. Andernfalls müssen Sie den Knoten für jede Konfiguration manuell neu starten, die dies erfordert. Standardwert: `$false`. Um diese Einstellung zu verwenden, wenn eine Neustartbedingung von einer anderen Komponente als von DSC in Kraft gesetzt wird (z.B. Windows Installer), kombinieren Sie diese Einstellung mit dem Modul [xPendingReboot](https://github.com/powershell/xpendingreboot).
 - **RefreshFrequencyMins:** Wird verwendet, wenn Sie einen Pulldienst eingerichtet haben. Stellt die Häufigkeit (in Minuten) dar, mit der der lokale Konfigurations-Manager einen Pulldienst kontaktiert, um die aktuelle Konfiguration herunterzuladen. Dieser Wert kann in Verbindung mit „ConfigurationModeFrequencyMins“ festgelegt werden. Wenn „RefreshMode“ auf PULL festgelegt ist, kontaktiert der Zielknoten den Pulldienst in einem von „RefreshFrequencyMins“ festgelegten Intervall und lädt die aktuelle Konfiguration herunter. Die Konsistenz-Engine wendet im von „ConfigurationModeFrequencyMins“ festgelegten Intervall die neueste Konfiguration an, die auf den Zielknoten heruntergeladen wurde. Wenn „RefreshFrequencyMins“ nicht in Form einer ganzen Zahl auf ein Vielfaches von „ConfigurationModeFrequencyMins“ festgelegt wurde, rundet das System den Wert auf. Der Standardwert ist 30.
 - **RefreshMode:** Mögliche Werte sind **Push** (Standard) und **Pull**. Bei der Pushkonfiguration müssen Sie mithilfe eines beliebigen Clientcomputers eine Konfigurationsdatei auf jedem Zielknoten ablegen. Im Pullmodus müssen Sie einen Pulldienst für den lokalen Konfigurations-Manager einrichten, der für den Zugriff auf die Konfigurationsdateien kontaktiert werden muss.
 

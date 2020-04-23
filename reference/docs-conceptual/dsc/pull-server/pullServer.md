@@ -3,10 +3,10 @@ ms.date: 01/08/2020
 keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: DSC-Pulldienst
 ms.openlocfilehash: 821f183c91e805154323f9f6a42f7f5006499182
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500723"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Desired State Configuration – Pulldienst
@@ -278,5 +278,5 @@ In den folgenden Themen wird das Einrichten von Pullclients im Detail beschriebe
 - [Windows PowerShell DSC – Übersicht](../overview/overview.md)
 - [Inkraftsetzung von Konfigurationen](enactingConfigurations.md)
 - [Verwenden eines DSC-Berichtsservers](reportServer.md)
-- [[MS-DSCPM]: Desired State Configuration Pull Model Protocol ([MS-DSCPM]: Desired State Configuration-Pullmodell-Protokoll)](https://docs.microsoft.com/openspecs/windows_protocols/ms-dscpm/ea744c01-51a2-4000-9ef2-312711dcc8c9)
-- [[MS-DSCPM]: Desired State Configuration Pull Model Protocol Errata ([MS-DSCPM]: Desired State Configuration-Pullmodell-Protokoll Errata)](https://docs.microsoft.com/openspecs/windows_protocols/ms-winerrata/f5fc7ae3-9172-41e8-ac6a-2a5a5b7bfaf5)
+- [[MS-DSCPM]: Desired State Configuration Pull Model Protocol ([MS-DSCPM]: DSC-Pullmodell-Protokoll)](https://docs.microsoft.com/openspecs/windows_protocols/ms-dscpm/ea744c01-51a2-4000-9ef2-312711dcc8c9)
+- [[MS-DSCPM]: Desired State Configuration Pull Model Protocol ([MS-DSCPM]: DSC-Pullmodell-Protokoll Errata)](https://docs.microsoft.com/openspecs/windows_protocols/ms-winerrata/f5fc7ae3-9172-41e8-ac6a-2a5a5b7bfaf5)

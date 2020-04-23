@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
-keywords: dsc,powershell,configuration,setup
+keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: Erste Schritte mit DSC für Linux
 ms.openlocfilehash: b1bc9b9fafd89a1af0f967de38a817bff1f3ffe3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "73933853"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Erste Schritte mit DSC für Linux
@@ -26,10 +26,10 @@ Die folgenden Linux-Betriebssystemversionen werden für DSC unterstützt.
 
 In der folgenden Tabelle werden die erforderlichen Paketabhängigkeiten für DSC für Linux beschrieben.
 
-|  Erforderliches Paket |  Beschreibung |  Mindestversion |
+|  Erforderliches Paket |  BESCHREIBUNG |  Mindestversion |
 |---|---|---|
 | glibc| GNU-Bibliothek| 2…4 – 31.30|
-| python| Python| 2.4 – 3.4|
+| Python| Python| 2.4 – 3.4|
 | omiserver| Open Management Infrastructure| 1.0.8.1|
 | openssl| OpenSSL-Bibliotheken| 0.9.8 oder 1.0|
 | ctypes| Python CTypes-Bibliothek| Muss mit Python-Version übereinstimmen|
@@ -41,7 +41,7 @@ Sie müssen vor der Installation von DSC für Linux die [Open Management Infrast
 
 ### <a name="installing-omi"></a>Installieren von OMI
 
-DSC für Linux erfordert den Open Management Infrastructure (OMI) CIM-Server, Version 1.0.8.1 oder höher. OMI kann von The Open Group heruntergeladen werden: [Open Management Infrastructure (OMI)](https://github.com/Microsoft/omi).
+DSC für Linux erfordert den Open Management Infrastructure (OMI) CIM-Server, Version 1.0.8.1 oder höher. OMI kann unter The Open Group: [Open Management Infrastructure (OMI)](https://github.com/Microsoft/omi) heruntergeladen werden.
 
 Zum Installieren von OMI installieren Sie das Ihrem Linux-System entsprechende Paket (RPM oder DEB), die OpenSSL-Version (ssl_098 oder ssl_100) und die Architektur (x64/x86). RPM-Pakete eignen sich für CentOS, Red Hat Enterprise Linux, SUSE Linux Enterprise Server und Oracle Linux. DEB-Pakete sind für Debian GNU/Linux und Ubuntu Server geeignet. Die ssl_098-Pakete eignen sich für Computer mit installiertem OpenSSL 0.9.8, während die ssl_100 Pakete für Computer mit installiertem OpenSSL 1.0 geeignet sind.
 
@@ -183,7 +183,7 @@ Wendet eine MOF-Metakonfigurationsdatei auf den Computer an. Vergleichbar mit de
 
 Die folgenden Protokolldateien werden für DSC-für-Linux-Nachrichten generiert.
 
-|Protokolldatei|Verzeichnis|Beschreibung|
+|Protokolldatei|Verzeichnis|BESCHREIBUNG|
 |---|---|---|
 |**omiserver.log**|`/var/opt/omi/log`|Meldungen im Zusammenhang mit dem Betrieb des OMI CIM-Servers.|
 |**dsc.log**|`/var/opt/omi/log`|Meldungen im Zusammenhang mit dem Betrieb des lokalen Konfigurations-Managers (LCM) und DSC-Ressourcenvorgängen.|

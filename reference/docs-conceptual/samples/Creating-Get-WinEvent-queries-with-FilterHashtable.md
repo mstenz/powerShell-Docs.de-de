@@ -2,10 +2,10 @@
 ms.date: 09/13/2019
 title: Erstellen von Get-WinEvent-Abfragen mit FilterHashtable
 ms.openlocfilehash: 35d18dc894d90e698b38395b79ff4cf395515909
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "73444383"
 ---
 # <a name="creating-get-winevent-queries-with-filterhashtable"></a>Erstellen von Get-WinEvent-Abfragen mit FilterHashtable
@@ -54,9 +54,9 @@ In der folgenden Tabelle sind die Schlüsselnamen und Datentypen aufgelistet und
 | -------------- | --------------- | ---------------------------- |
 | LogName        | `<String[]>`    | Ja                          |
 | ProviderName   | `<String[]>`    | Ja                          |
-| Pfad           | `<String[]>`    | Nein                           |
+| `Path`           | `<String[]>`    | Nein                           |
 | Keywords       | `<Long[]>`      | Nein                           |
-| ID             | `<Int32[]>`     | Nein                           |
+| id             | `<Int32[]>`     | Nein                           |
 | Ebene          | `<Int32[]>`     | Nein                           |
 | StartTime      | `<DateTime>`    | Nein                           |
 | EndTime        | `<DateTime>`    | Nein                           |
@@ -129,7 +129,7 @@ Im Dropdownmenü **Schlüsselwörter** werden die verfügbaren Schlüsselwörter
 
 ![Abbildung der Schlüsselwörter der Windows-Ereignisanzeige.](./media/creating-get-winEvent-queries-with-filterhashtable/keywords.png)
 
-Verwenden Sie den folgenden Befehl, um die `StandardEventKeywords`-Eigenschaftsnamen anzuzeigen.
+Verwenden Sie den folgenden Befehl, um die Eigenschaftsnamen für `StandardEventKeywords` anzuzeigen.
 
 ```powershell
 [System.Diagnostics.Eventing.Reader.StandardEventKeywords] | Get-Member -Static -MemberType Property
@@ -240,7 +240,7 @@ Die Namen und Enumerationswerte von **Level** sind wie folgt:
 | -------------- | ----- |
 | Ausführlich        |   5   |
 | Informational  |   4   |
-| Warning        |   3   |
+| Warnung        |   3   |
 | Fehler          |   2   |
 | Kritisch       |   1   |
 | LogAlways      |   0   |

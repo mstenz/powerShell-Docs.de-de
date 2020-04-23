@@ -1,12 +1,12 @@
 ---
 ms.date: 12/12/2018
-keywords: dsc,powershell,configuration,setup
+keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: Ressourcenabhängigkeiten mithilfe von DependsOn
 ms.openlocfilehash: 5ea08c76c203188f41513ad0cc1f4571579b4172
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954477"
 ---
 # <a name="resource-dependencies-using-dependson"></a>Ressourcenabhängigkeiten mithilfe von DependsOn
@@ -141,6 +141,6 @@ Wenn Sie die obige Konfiguration angewendet haben, können Sie Schlüssel umkehr
         }
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 - [Use Cross Node Dependencies (Verwenden knotenübergreifender Abhängigkeiten)](./crossNodeDependencies.md)

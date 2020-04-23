@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: wmf,powershell,setup
 title: Verbesserungen beim Debuggen von PowerShell-Skripts
 ms.openlocfilehash: f1771a451ba671da2371fcfc95374e6131573ddc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71147810"
 ---
 # <a name="improvements-in-powershell-script-debugging"></a>Verbesserungen beim Debuggen von PowerShell-Skripts
@@ -48,7 +48,7 @@ Neue Cmdlets wurden hinzugefügt, mit denen Sie aktuelle Runspaces in einem Proz
 
 ### <a name="attach-to-process-hosting-powershell"></a>Anfügen an den Prozess, der PowerShell hostet
 
-Nun ist ein Anfügen an jeden Computerprozess möglich, für den PowerShell geladen wurde. Hierzu starten Sie eine interaktive Sitzung mit dem Hostprozess. Weitere Informationen finden Sie unter:
+Nun ist ein Anfügen an jeden Computerprozess möglich, für den PowerShell geladen wurde. Hierzu starten Sie eine interaktive Sitzung mit dem Hostprozess. Weitere Informationen finden Sie unter
 
 - [Enter-PSHostProcess](/powershell/module/Microsoft.PowerShell.Core/Enter-PSHostProcess)
 - [Exit-PSHostProcess](/powershell/module/Microsoft.PowerShell.Core/Exit-PSHostProcess)

@@ -3,10 +3,10 @@ ms.date: 09/06/2019
 keywords: powershell,cmdlet
 title: Neuigkeiten bei PowerShell 5.0 ISE
 ms.openlocfilehash: 8f15e99c5a6ae33aeae9bd33eb0cf58fb27e3b90
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "74416646"
 ---
 # <a name="whats-new-in-the-windows-powershell-50-ise"></a>Neuigkeiten bei Windows PowerShell 5.0 ISE
@@ -112,7 +112,7 @@ Die separaten Befehls- und Ausgabebereiche, die in der ersten Version der Window
 
 - Syntaxfarben für Eingabetext (nicht für Ausgabetext), einschließlich XML-Syntax
 - IntelliSense
-- Zugehörige Klammer
+- Klammernabgleich (zugehörige Klammer)
 - Fehleranzeige
 - Vollständige Unicode-Unterstützung
 - Kontextbezogene Hilfe über <kbd>F1</kbd>
@@ -205,6 +205,6 @@ Durch das Verwenden von `Show-Command` in Ihren Windows PowerShell-Skripts könn
 
 `Show-Command` ist neu in Windows PowerShell ISE 3.0.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 Weitere Informationen über die Verwendung von Windows PowerShell ISE finden Sie unter [Kennenlernen der Windows PowerShell ISE](../components/ise/exploring-the-windows-powershell-ise.md).

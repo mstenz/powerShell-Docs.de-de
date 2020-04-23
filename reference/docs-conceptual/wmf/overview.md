@@ -3,10 +3,10 @@ ms.date: 04/19/2019
 keywords: wmf,powershell,setup
 title: Windows Management Framework (WMF)
 ms.openlocfilehash: d581370fd602e03c86aa549eb8b273ff4d01b4e5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71147910"
 ---
 # <a name="windows-management-framework"></a>Windows Management Framework
@@ -19,7 +19,7 @@ Bei der WMF-Installation werden die folgenden Features hinzugefügt bzw. aktuali
 - Windows PowerShell Desired State Configuration (DSC)
 - Windows PowerShell Integrated Scripting Environment (ISE)
 - Windows-Remoteverwaltung (WinRM)
-- Windows-Verwaltungsinstrumentation (Windows Management Instrumentation, WMI)
+- Windows-Verwaltungsinstrumentation (WMI, Windows Management Instrumentation)
 - Windows PowerShell-Webdienste (Verwaltung der OData-IIS-Erweiterung)
 - Protokollierung des Softwarebestands (Software Inventory Logging, SIL)
 - CIM-Anbieter für Server-Manager
@@ -39,16 +39,16 @@ Um die verschiedenen Verbesserungen an PowerShell und anderen Komponenten einer 
 | --------------------------------------- | ------------ | --------------------------- | ------------ | ------------ | ------------ |
 | Windows Server 2019                     | Im Lieferumfang |                             |              |              |              |
 | Windows Server 2016                     | Im Lieferumfang |                             |              |              |              |
-| Windows 10                              | Im Lieferumfang | Im Lieferumfang                |              |              |              |
-| Windows Server 2012 R2                  | Ja          | Ja                         | Im Lieferumfang |              |              |
+| Windows 10                              | Im Lieferumfang | Im Lieferumfang                |              |              |              |
+| Windows Server 2012 R2                  | Ja          | Ja                         | Im Lieferumfang |              |              |
 | Windows 8.1                             | Ja          | Ja                         | Im Lieferumfang |              |              |
-| Windows Server 2012                     | Ja          | Ja                         | Ja          | Im Lieferumfang |              |
+| Windows Server 2012                     | Ja          | Ja                         | Ja          | Im Lieferumfang |              |
 | Windows 8<br>*Nicht mehr unterstützt*           |              |                             |              | Im Lieferumfang |              |
 | Windows Server 2008 R2 SP1              | Ja          | Ja                         | Ja          | Ja          | Im Lieferumfang |
 | Windows 7 SP1                           | Ja          | Ja                         | Ja          | Ja          | Im Lieferumfang |
-| Windows Server 2008 SP2                 |              |                             |              | Ja          | Ja          |
+| Windows Server 2008 SP2                 |              |                             |              | Ja          | Ja          |
 | Windows Vista<br>*Nicht mehr unterstützt*       |              |                             |              |              | Ja          |
-| WindowsServer 2003<br>*Nicht mehr unterstützt* |              |                             |              |              | Ja          |
+| Windows Server 2003<br>*Nicht mehr unterstützt* |              |                             |              |              | Ja          |
 | Windows XP<br>*Nicht mehr unterstützt*          |              |                             |              | Ja          | Ja          |
 
 - **Im Lieferumfang enthalten**: Die Features von der angegebenen WMF-Version waren in den angegebenen Versionen des Windows-Clients und von Windows Server im Lieferumfang enthalten.

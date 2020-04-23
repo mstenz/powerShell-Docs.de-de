@@ -1,12 +1,12 @@
 ---
 ms.date: 09/20/2019
-keywords: dsc,powershell,configuration,setup
+keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: DSC-Ressource „Package“
 ms.openlocfilehash: efac07b4b051564cadd5aa1542a6afda6cd453ad
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71953147"
 ---
 # <a name="dsc-package-resource"></a>DSC-Ressource „Package“
@@ -35,19 +35,19 @@ Package [string] #ResourceName
 
 ## <a name="properties"></a>Eigenschaften
 
-|Eigenschaft |Beschreibung |
+|Eigenschaft |BESCHREIBUNG |
 |---|---|
 |Name |Gibt den Namen des Pakets an, für das Sie einen bestimmten Zustand sicherstellen möchten. |
-|Pfad |Gibt den Pfad an, in dem das Paket gespeichert ist. |
-|ProductID |Gibt die Produkt-ID an, die das Paket eindeutig identifiziert. |
-|Arguments |Führt eine Zeichenfolge mit Argumenten auf, die exakt wie angegeben an das Paket übergeben wird. |
-|Credential |Ermöglicht den Zugriff auf das Paket für eine Remotequelle. Diese Eigenschaft wird nicht verwendet, um das Paket zu installieren. Das Paket wird immer auf dem lokalen System installiert. |
+|`Path` |Gibt den Pfad an, in dem das Paket gespeichert ist. |
+|ProductId |Gibt die Produkt-ID an, die das Paket eindeutig identifiziert. |
+|Argumente |Führt eine Zeichenfolge mit Argumenten auf, die exakt wie angegeben an das Paket übergeben wird. |
+|Anmeldeinformationen |Ermöglicht den Zugriff auf das Paket für eine Remotequelle. Diese Eigenschaft wird nicht verwendet, um das Paket zu installieren. Das Paket wird immer auf dem lokalen System installiert. |
 |LogPath |Gibt den vollständigen Pfad an, in dem der Anbieter eine Protokolldatei zum Installieren oder Deinstallieren des Pakets speichern soll. |
 |ReturnCode |Gibt den erwarteten Rückgabecode an. Wenn der tatsächliche Rückgabecode nicht dem erwarteten Wert entspricht, gibt die Konfiguration einen Fehler zurück. |
 
 ## <a name="common-properties"></a>Allgemeine Eigenschaften
 
-|Eigenschaft |Beschreibung |
+|Eigenschaft |BESCHREIBUNG |
 |---|---|
 |DependsOn |Gibt an, dass die Konfiguration einer anderen Ressource ausgeführt werden muss, bevor diese Ressource konfiguriert wird. Wenn beispielsweise die ID des Skriptblocks mit der Ressourcenkonfiguration, den Sie zuerst ausführen möchten, „ResourceName“ und dessen Typ „ResourceType“ ist, lautet die Syntax für das Verwenden dieser Eigenschaft `DependsOn = "[ResourceType]ResourceName"`. |
 |Ensure |Gibt an, ob das Paket installiert ist. Legen Sie diese Eigenschaft auf **Absent** fest, um sicherzustellen, dass das Paket nicht installiert wird (oder deinstalliert wird, wenn es installiert ist). Legen Sie sie auf **Present** fest, um sicherzustellen, dass das Paket installiert wird. Der Standardwert ist **Present**. |

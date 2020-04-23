@@ -3,10 +3,10 @@ title: Ressourcen aus der PowerShell-Community
 description: Liste der für und von PowerShell-Benutzern erstellten Ressourcen
 ms.date: 03/04/2020
 ms.openlocfilehash: 50f5eaaef9ef30351fa605f74648a8efbce90af3
-ms.sourcegitcommit: bf71c8c5e2a4fc7d5c3a67a537db1285089d03a7
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/30/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80395019"
 ---
 # <a name="powershell-community-resources"></a>Ressourcen aus der PowerShell-Community

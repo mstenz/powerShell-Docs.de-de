@@ -1,17 +1,17 @@
 ---
 ms.date: 06/12/2017
-keywords: dsc,powershell,configuration,setup
+keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: Importieren einer spezifischen Version einer installierten Ressource
 ms.openlocfilehash: 5ed81e11aa67eb6590d958647f48a33b1b5f1c0e
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71953987"
 ---
 # <a name="import-a-specific-version-of-an-installed-resource"></a>Importieren einer spezifischen Version einer installierten Ressource
 
-> Gilt für: Windows PowerShell 5.0
+> Gilt für: Windows PowerShell 5.0
 
 In PowerShell 5.0 können separate Versionen von DSC-Ressourcen auf einem Computer parallel installiert werden. Ein Ressourcenmodul kann separate Versionen einer Ressource in nach der Version benannten Ordnern speichern.
 
@@ -95,7 +95,7 @@ configuration VersionTest
 
 Dies funktioniert auch in PowerShell 5.0, aber es wird empfohlen, dass Sie den Parameter **ModuleVersion** verwenden.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 - [DSC-Konfigurationen](configurations.md)
 - [DSC-Ressourcen](../resources/resources.md)

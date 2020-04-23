@@ -4,10 +4,10 @@ contributor: JKeithB
 keywords: katalog,powershell,psgallery,GDPR
 title: DSGVO-Kompatibilität für den PowerShell-Katalog
 ms.openlocfilehash: fb1191d8a1cd12d5994e41238c384eb504d0c261
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71328321"
 ---
 # <a name="powershell-gallery-gdpr-compliance"></a>DSGVO-Kompatibilität für den PowerShell-Katalog
@@ -41,7 +41,7 @@ Im Folgenden erhalten Sie Informationen dazu, wie Sie sämtliche Pakete abrufen,
 
 In den folgenden Abschnitten wird erläutert, wie der PowerShell-Katalog sämtliche DSR-Anforderungen (Data Subject Rights) unterstützt. Sie erhalten Informationen dazu, wie Sie im PowerShell-Katalog gespeicherte Informationen exportieren und wie Sie das Löschen dieser Informationen anfordern.
 
-### <a name="email"></a>E-Mail
+### <a name="email"></a>Email
 
 Die E-Mail-Korrespondenz kann Folgendes umfassen:
 

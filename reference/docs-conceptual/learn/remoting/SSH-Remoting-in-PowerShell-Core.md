@@ -3,10 +3,10 @@ title: PowerShell-Remoting über SSH
 description: Remoting in PowerShell Core mithilfe von SSH
 ms.date: 09/30/2019
 ms.openlocfilehash: 0f2fb13010d62dec5b19b373a24a199bff22665d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "73444364"
 ---
 # <a name="powershell-remoting-over-ssh"></a>PowerShell-Remoting über SSH
@@ -179,7 +179,7 @@ PowerShell 6 oder höher und SSH müssen auf allen Computern installiert sein. I
    sudo launchctl start com.openssh.sshd
    ```
 
-## <a name="authentication"></a>Authentifizierung
+## <a name="authentication"></a>Authentication
 
 PowerShell-Remoting über SSH basiert auf dem Authentifizierungsaustausch zwischen dem SSH-Client und dem SSH-Dienst und implementiert selbst keine Authentifizierungsschemas. Infolgedessen werden alle konfigurierten Authentifizierungsschemas, einschließlich der mehrstufigen Authentifizierung, von SSH und unabhängig von PowerShell verarbeitet. Sie können den SSH-Dienst beispielsweise für die Authentifizierung mit öffentlichen Schlüsseln oder die Verwendung eines Einmalkennworts zur Erhöhung der Sicherheit konfigurieren. Die Konfiguration einer mehrstufigen Authentifizierung wird in dieser Dokumentation nicht beschrieben. Bevor Sie versuchen, eine mehrstufige Authentifizierung mit PowerShell-Remoting zu verwenden, informieren Sie sich in der Dokumentation für SSH, wie Sie eine mehrstufige Authentifizierung richtig konfigurieren, und testen Sie, ob diese außerhalb von PowerShell funktioniert.
 
@@ -314,13 +314,13 @@ GitCommitId                    v6.0.0-alpha.17
 
 Der Befehl **sudo** funktioniert bei Remotesitzungen auf Linux-Computern nicht.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Installieren von PowerShell Core unter Linux](../../install/installing-powershell-core-on-linux.md#ubuntu-1604)
 
 [Installieren von PowerShell Core unter macOS](../../install/installing-powershell-core-on-macos.md)
 
-[Installing PowerShell Core on Windows (Installieren von PowerShell Core unter Windows)](../../install/installing-powershell-core-on-windows.md#msi)
+[Installieren von PowerShell Core unter Windows](../../install/installing-powershell-core-on-windows.md#msi)
 
 [Installation von OpenSSH für Windows Server 2019 und Windows 10](/windows-server/administration/openssh/openssh_overview)
 

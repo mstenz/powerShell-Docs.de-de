@@ -4,10 +4,10 @@ contributor: keithb
 keywords: gallery,powershell,cmdlet,psget
 title: Vorabmodulversionen
 ms.openlocfilehash: eced067dd21082de0db653daf3b838217154f1dd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71328141"
 ---
 # <a name="prerelease-module-versions"></a>Vorabmodulversionen
@@ -17,7 +17,7 @@ Ab Version 1.6.0 unterstützen PowerShellGet und der PowerShell-Katalog das Kenn
 Allgemein umfassen die Vorabversions-Modulfeatures u.a. Folgendes:
 
 - Durch Hinzufügen einer Vorabversionszeichenfolge zum PSData-Abschnitt des Modulmanifests wird das Modul als Vorabversion identifiziert. Wenn das Modul im PowerShell-Katalog veröffentlicht wird, werden diese Daten aus dem Manifest extrahiert und zum Identifizieren von Vorabversionspaketen verwendet.
-- Zum Abrufen von Vorabversionspaketen muss den PowerShellGet-Befehlen `Find-Module`, `Install-Module`, `Update-Module` und `Save-Module` das `-AllowPrerelease`-Flag hinzugefügt werden. Wenn das Flag nicht angegeben ist, werden keine Vorabversionspakete angezeigt.
+- Zum Abrufen von Vorabversionspaketen muss den PowerShellGet-Befehlen `-AllowPrerelease`, `Find-Module`, `Install-Module` und `Update-Module` das `Save-Module`-Flag hinzugefügt werden. Wenn das Flag nicht angegeben ist, werden keine Vorabversionspakete angezeigt.
 - Die durch `Find-Module` und `Get-InstalledModule` sowie im PowerShell-Katalog angezeigten Modulversionen werden als einzelne Zeichenfolge mit angefügter Vorabversionszeichenfolge angezeigt (z.B. „2.5.0-alpha“).
 
 Einzelheiten zu den Features finden Sie weiter unten.
@@ -192,7 +192,7 @@ Version         Name          Repository   Description
 1.1.3.2         TestPackage   PSGallery    Package used to validate changes to the PowerShe...
 ```
 
-## <a name="more-details"></a>Weitere Details
+## <a name="more-details"></a>Weitere Informationen
 
 - [Vorabskriptversionen](script-prerelease-support.md)
 - [Find-Module](/powershell/module/powershellget/find-module)

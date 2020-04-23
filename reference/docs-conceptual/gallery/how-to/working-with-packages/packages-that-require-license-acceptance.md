@@ -4,10 +4,10 @@ contributor: Farehar
 keywords: Katalog,PowerShell,psgallery
 title: Erforderliche Zustimmung zur Lizenz
 ms.openlocfilehash: 4b293ea693062cf9717fa4ca913c3eb9abaf7014
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "78278647"
 ---
 # <a name="require-license-acceptance"></a>Erforderliche Zustimmung zur Lizenz

@@ -4,10 +4,10 @@ contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Erstellen und Veröffentlichen eines Elements
 ms.openlocfilehash: 1aa9cc84f259869ca6f8b8e2f6952e43eaac14df
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71327921"
 ---
 # <a name="creating-and-publishing-an-item"></a>Erstellen und Veröffentlichen eines Elements
@@ -24,7 +24,7 @@ Für das Veröffentlichen eines Elements im PowerShell-Katalog gelten diese Mind
 - Sie müssen das Element mithilfe der Befehle „Publish-Module“ und „Publish-Script“ im PowerShell-Katalog veröffentlichen.
 - Sie müssen auf Fragen oder Bedenken zu Ihrem Element antworten.
 
-Im PowerShell-Katalog können PowerShell-Module und PowerShell-Skripts veröffentlicht werden. Bei der Bezugnahme auf Skripts sind aus einer einzigen Datei bestehende PowerShell-Skripts gemeint – nicht hingegen Skripts, die Bestandteil eines größeren Moduls sind.
+Der PowerShell-Katalog akzeptiert PowerShell-Module und PowerShell-Skripts. Bei der Bezugnahme auf Skripts sind aus einer einzigen Datei bestehende PowerShell-Skripts gemeint – nicht hingegen Skripts, die Bestandteil eines größeren Moduls sind.
 
 ## <a name="powershell-gallery-account-and-api-key"></a>PowerShell-Katalogkonto und API-Schlüssel
 
@@ -82,7 +82,7 @@ Die meisten der weiteren Optionen in der Befehlszeile sollten in den Manifestdat
 
 Damit Fehler vermieden werden, wird dringend empfohlen, die Befehle mit „-WhatIf -Verbose“ zu testen, bevor Sie die Veröffentlichung durchführen. Hierdurch sparen Sie eine Menge Zeit, weil Sie bei jeder Veröffentlichung im PowerShell-Katalog die Versionsnummer im Manifestabschnitt des Elements aktualisieren müssen.
 
-Beispiele:
+Beispiele wären:
 
 * `Publish-Module -Path ".\MyModule" -NugetAPIKey "GUID" -WhatIf -Verbose`
 * `Publish-Script -Path ".\MyScriptFile.PS1" -NugetAPIKey "GUID" -WhatIf -Verbose`

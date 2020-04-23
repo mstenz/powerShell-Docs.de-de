@@ -3,10 +3,10 @@ ms.date: 12/05/2019
 keywords: powershell,cmdlet
 title: Starten von Windows PowerShell
 ms.openlocfilehash: 97b15a4cd79c77a391451ba917f985f9d99db3f5
-ms.sourcegitcommit: 0e4c69d8b5cf71431592fe41da816dec9b70f1f9
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/09/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "74953822"
 ---
 # <a name="starting-windows-powershell"></a>Starten von Windows PowerShell
@@ -26,7 +26,7 @@ Verwenden Sie die folgenden Links, um die Cmdlet-Referenz und die Installationsd
 | Dokument | Link |
 | ----- | ----- |
 | Cmdlet-Referenz | [PowerShell-Modulbrowser](/powershell/module/?view=powershell-7) |
-| Windows-Installation | [Installing PowerShell Core on Windows (Installieren von PowerShell Core unter Windows)](/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7) |
+| Windows-Installation | [Installieren von PowerShell Core unter Windows](/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7) |
 | macOS-Installation | [Installieren von PowerShell Core unter macOS](/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-7) |
 | Linux-Installation | [Installieren von PowerShell Core unter Linux](/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-7) |
 

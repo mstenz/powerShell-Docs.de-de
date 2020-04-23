@@ -1,13 +1,13 @@
 ---
 ms.date: 06/09/2017
 schema: 2.0.0
-keywords: PowerShell
+keywords: powershell
 title: Paketmanifestwerte, die die Benutzeroberfläche des PowerShell-Katalogs betreffen
 ms.openlocfilehash: 9e37fec879f2f5cbe3926c7dbc946389425d856a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "74417046"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>Paketmanifestwerte, die die Benutzeroberfläche des PowerShell-Katalogs betreffen
@@ -21,13 +21,13 @@ Dieses Thema enthält zusammenfassende Informationen darüber, wie Herausgeber d
 
 Die folgende Tabelle enthält die Benutzeroberflächenelemente der Paketseiten im PowerShell-Katalog, die vom Herausgeber gesteuert werden. Die einzelnen Elemente geben an, ob sie vom Modul- oder Skriptmanifest gesteuert werden können.
 
-| Benutzeroberflächenelement | Beschreibung | Modul | Skript |
+| Benutzeroberflächenelement | BESCHREIBUNG | Modul | Skript |
 | --- | --- | --- | --- |
 | **Titel** | Dies ist der Name des Pakets, das im Katalog veröffentlicht wurde.  | Nein | Nein |
 | **Version** | Die angezeigte Version besteht aus der Versionszeichenfolge in den Metadaten und falls angegeben eines Vorabrelease. Der erste Teil der Version in einem Modulmanifest ist ModuleVersion. Bei einem Skript lautet dieser „.VERSION“. Wenn die Versionszeichenfolge eines Vorabrelease angegeben wird, wird diese bei Modulen an ModuleVersion angefügt oder bei Skripts im Rahmen von „.VERSION“ angegeben. Für die Angabe von Vorabreleasezeichenfolgen steht entsprechende Dokumentation zu [Modulen](module-prerelease-support.md) und [Skripts](script-prerelease-support.md) zur Verfügung. | Ja | Ja |
 | **Beschreibung** | Dieses Element wird im Modulmanifest durch „Description“ und in einer Skriptmanifestdatei durch „.DESCRIPTION“ angegeben. | Ja | Ja |
 | **Erforderliche Zustimmung zur Lizenz** | Ein Modul kann erfordern, dass der Benutzer eine Lizenz akzeptieren muss, indem er das Modulmanifest mit RequireLicenseAcceptance = $true ändert, ein LicenseURI angibt und eine Datei namens „license.txt“ im Stammverzeichnis des Modulordners bereitstellt. Weitere Informationen finden Sie im Thema [Erforderliche Zustimmung zur Lizenz](../how-to/working-with-packages/packages-that-require-license-acceptance.md). | Ja | Nein |
-| **Anmerkungen zu dieser Version** | Bei Modulen werden diese Informationen aus dem Abschnitt „ReleaseNotes“ unter „PSData\PrivateData“ abgerufen. Bei Skriptmanifesten ist es das Element „.RELEASENOTES“. | Ja | Ja |
+| **Versionshinweise** | Bei Modulen werden diese Informationen aus dem Abschnitt „ReleaseNotes“ unter „PSData\PrivateData“ abgerufen. Bei Skriptmanifesten ist es das Element „.RELEASENOTES“. | Ja | Ja |
 | **Besitzer** | Unter „Besitzer“ befindet sich die Liste der Benutzer im PowerShell-Katalog, die ein Paket aktualisieren können. Die Liste der Besitzer ist nicht im Paketmanifest enthalten. Die zusätzliche Dokumentation enthält Informationen zur [Verwaltung von Elementbesitzern](../how-to/publishing-packages/managing-package-owners.md). | Nein | Nein |
 | **Autor** | Dieses Element lautet im Modulmanifest „Author“ und in einem Skriptmanifest „.AUTHOR“. Das Feld „Autor“ wird häufig verwendet, um ein Unternehmen oder eine Organisation anzugeben, das bzw. die einem Paket zugeordnet ist. | Ja | Ja |
 | **Copyright** | Dieses Element ist in einem Modulmanifest das Feld „Copyright“ und lautet in einem Skriptmanifest „.COPYRIGHT“. | Ja | Ja |
@@ -44,22 +44,22 @@ Die folgende Tabelle enthält die Benutzeroberflächenelemente der Paketseiten i
 | **Versionsverlauf** | Der Versionsverlauf stellt die Updates dar, die an einem Modul im PowerShell-Katalog vorgenommen wurden. Wenn eine Paketversion mit der Löschfunktion ausgeblendet wird, wird diese nur Paketbesitzern im Versionsverlauf angezeigt. | Nein | Nein |
 | **Projektwebsite** | Die Projektwebsite wird bei Modulen im Abschnitt „Privatedata\PSData“ des Modulmanifests durch Angabe von ProjectURI bereitgestellt. Im Skriptmanifest wird dieses Element durch Angabe von „.PROJECTURI“ gesteuert. | Ja | Ja |
 | **Lizenz** | Ein Lizenzlink wird bei Modulen im Abschnitt „Privatedata\PSData“ des Modulmanifests durch Angabe von LicenseURI bereitgestellt. Im Skriptmanifest wird dieses Element durch Angabe von „.LICENSEURI“ gesteuert. Beachten Sie unbedingt Folgendes: Wenn eine Lizenz nicht anhand per LicenseURI oder innerhalb eines Moduls angegeben wird, bestimmen die Nutzungsbedingungen für den PowerShell-Katalog die Nutzungsbedingungen für das Paket. Weitere Informationen finden Sie in den Nutzungsbedingungen. | Ja | Ja |
-| **Symbol** | Für jedes Paket im PowerShell-Katalog kann ein Symbol festgelegt werden, indem das IconURI-Flag im Skriptmanifest oder im Abschnitt „PrivateData-PSData“ des Modulmanifests angegeben wird. Der IconURI sollte auf ein 32x32 großes Bild mit transparentem Hintergrund zeigen. Der URI **muss** eine direkte Bild-URL sein und **darf nicht** zu einer Website führen, die das Bild oder eine Datei im Paket für den PowerShell-Katalog enthält. | Ja | Ja |
+| **Symbol:** | Für jedes Paket im PowerShell-Katalog kann ein Symbol festgelegt werden, indem das IconURI-Flag im Skriptmanifest oder im Abschnitt „PrivateData-PSData“ des Modulmanifests angegeben wird. Der IconURI sollte auf ein 32x32 großes Bild mit transparentem Hintergrund zeigen. Der URI **muss** eine direkte Bild-URL sein und **darf nicht** zu einer Website führen, die das Bild oder eine Datei im Paket für den PowerShell-Katalog enthält. | Ja | Ja |
 
 
 ## <a name="editing-package-details"></a>Bearbeiten von Paketdetails
 
 Auf der Seite zur Paketbearbeitung im PowerShell-Katalog können Herausgeber einige der für ein Paket angezeigten Felder ändern. Dies gilt insbesondere für folgende:
 
-- Anrede
-- Beschreibung
+- Titel
+- BESCHREIBUNG
 - Zusammenfassung
 - Symbol-URL
 - URL der Projektstartseite
-- Autoren
+- Authors
 - Copyright
-- Tags
-- Anmerkungen zu dieser Version
+- `Tags`
+- Versionshinweise
 - Lizenz erforderlich
 
 Von diesem Ansatz wird in der Regel abgeraten, ausgenommen die angezeigten Element müssen für eine ältere Version eines Moduls korrigiert werden. Benutzer, die das Modul abrufen, werden feststellen, dass die Metadaten nicht mit den im PowerShell-Katalog angezeigten Metadaten übereinstimmen, und das Paket als verdächtig einstufen. Dies führt dazu, dass häufig Anfragen an Paketbesitzer zur Bestätigung der Änderung gesendet werden. Es wird dringend empfohlen, bei dieser Vorgehensweise stets eine neue Version des Pakets mit den gleichen Änderungen zu veröffentlichen.
@@ -84,7 +84,7 @@ Als Referenz werden im Folgenden einige der am häufigsten verwendeten Tags seit
 | SQL |  |
 | AWS |  |
 | DSCResource |  |
-| Automatisierung |  |
+| Automation |  |
 | REST |  |
 | ActiveDirectory | AD wird gegenwärtig nicht als eigenständiges Wort verwendet.  |
 | SQLServer |  |
@@ -93,7 +93,7 @@ Als Referenz werden im Folgenden einige der am häufigsten verwendeten Tags seit
 | Datenbank | „Databases“ (Plural) ist nicht das bevorzugte Tag. |
 | DevOps |  |
 | Windows |  |
-| Build |  |
+| Entwickeln |  |
 | Bereitstellung | „Deploy“ wird etwas seltener verwendet. |
 | Cloud |  |
 | GIT |  |
@@ -101,12 +101,12 @@ Als Referenz werden im Folgenden einige der am häufigsten verwendeten Tags seit
 | VersionControl | „Version“ ist nicht präzise genug, obwohl es häufiger verwendet wird.  |
 | Protokollierung | Dies ist die bevorzugte Verwendung von Protokollierung als Aktion. |
 | Log | Dies ist die bevorzugte Verwendung eines Protokolls als Objekt. |
-| Sicherung |  |
+| Backup |  |
 | IaaS |  |
 | Linux |  |
 | IIS |  |
 | AzureAutomation |  |
-| Speicher |  |
+| Storage |  |
 | GitHub |  |
 | Json |  |
 | Exchange |  |
@@ -120,7 +120,7 @@ Als Referenz werden im Folgenden einige der am häufigsten verwendeten Tags seit
 | Excel |  |
 | Google |  |
 | Color |  |
-| Domain Name System |  |
+| DNS |  |
 | Office365 | „Office“ sollte vorzugsweise ausgeschrieben werden. „O365“ ist zwar kürzer, wird jedoch seltener verwendet. |
 | Gitlab |  |
 | Pester |  |

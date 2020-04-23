@@ -3,10 +3,10 @@ ms.date: 01/02/2020
 keywords: powershell,cmdlet
 title: Tastenkombinationen für Windows PowerShell ISE
 ms.openlocfilehash: ee1b5961f8528d44330345bc49368e61970861ca
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75737048"
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Tastenkombinationen für Windows PowerShell ISE
@@ -17,7 +17,7 @@ Verwenden Sie die folgenden Tastenkombinationen zum Ausführen von Aktionen in W
 
 Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Text bearbeiten.
 
-|              Action              |       Tastenkombinationen       |                                                                                                                                                 Verwenden in                                                                                                                                                 |
+|              Aktion              |       Tastenkombinationen       |                                                                                                                                                 Verwenden in                                                                                                                                                 |
 | -------------------------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Hilfe**                         | <kbd>F1</kbd>                  | Skriptbereich **Wichtig:** Sie können angeben, dass <kbd>F1</kbd>-Hilfe aus der TechNet-Bibliothek im Internet oder aus der heruntergeladenen Hilfe abgerufen wird (siehe `Update-Help`). Zur Auswahl klicken Sie auf **Tools** > **Optionen** und aktivieren oder deaktivieren dann auf der Registerkarte **Allgemeine Einstellungen** die Option **Lokale Hilfe anstelle von Onlineinhalt verwenden**. |
 | **Copy**                         | <kbd>STRG</kbd>+<kbd>C</kbd>   | Skriptbereich, Befehlsbereich, Ausgabebereich                                                                                                                                                                                                                                                                 |
@@ -39,7 +39,7 @@ Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Text bearbeite
 
 Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Skripts im Skriptbereich ausführen.
 
-|            Action            |                                                                                                             Tastenkombination                                                                                                             |
+|            Aktion            |                                                                                                             Tastenkombination                                                                                                             |
 | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Neu**                      | <kbd>STRG</kbd>+<kbd>N</kbd>                                                                                                                                                                                                              |
 | **Öffnen**                     | <kbd>STRG</kbd>+<kbd>O</kbd>                                                                                                                                                                                                              |
@@ -53,7 +53,7 @@ Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Skripts im Skr
 
 Sie können die folgenden Tastenkombinationen verwenden, um die Ansicht in Windows PowerShell ISE anzupassen. Diese Tastenkombinationen sind in allen Bereichen in der Anwendung wirksam.
 
-|                        Action                         |               Tastenkombination               |
+|                        Aktion                         |               Tastenkombination               |
 | ----------------------------------------------------- | --------------------------------------------- |
 | **Zum Befehls- (v2) oder Konsolenbereich (v3 und höher) wechseln** | <kbd>STRG</kbd>+<kbd>D</kbd>                  |
 | **Zum Ausgabebereich wechseln (nur v2)**                       | <kbd>STRG</kbd>+<kbd>UMSCHALT</kbd>+<kbd>O</kbd> |
@@ -70,7 +70,7 @@ Sie können die folgenden Tastenkombinationen verwenden, um die Ansicht in Windo
 
 Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Skripts debuggen.
 
-|           Action           |               Tastenkombination                |                Verwenden in                |
+|           Aktion           |               Tastenkombination                |                Verwenden in                |
 | -------------------------- | ---------------------------------------------- | ------------------------------------ |
 | **Ausführen/Fortsetzen**           | <kbd>F5</kbd>                                  | Skriptbereich beim Debuggen eines Skripts |
 | **Einzelschritt**              | <kbd>F11</kbd>                                 | Skriptbereich beim Debuggen eines Skripts |
@@ -85,7 +85,7 @@ Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Skripts debugg
 > [!NOTE]
 > Sie können beim Debuggen von Skripts in der Windows PowerShell ISE auch die Tastenkombinationen verwenden, die für die Windows PowerShell-Konsole vorgesehen sind. Um diese Tastenkombinationen zu verwenden, müssen Sie die jeweilige Kombination im Befehlsbereich eingeben und die <kbd>EINGABETASTE</kbd> drücken.
 
-|                        Action                        | Tastenkombination |                Verwenden in                 |
+|                        Aktion                        | Tastenkombination |                Verwenden in                 |
 | ---------------------------------------------------- | ----------------- | ------------------------------------- |
 | **Fortsetzen**                                         | `C`               | Konsolenbereich, wenn ein Skript debuggt wird |
 | **Einzelschritt**                                        | `S`               | Konsolenbereich, wenn ein Skript debuggt wird |
@@ -101,7 +101,7 @@ Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Skripts debugg
 
 Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Windows PowerShell-Registerkarten verwenden.
 
-|             Action              |                                                        Tastenkombination                                                        |
+|             Aktion              |                                                        Tastenkombination                                                        |
 | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | **PowerShell-Registerkarte schließen**        | <kbd>STRG</kbd>+<kbd>W</kbd>                                                                                                    |
 | **Neue PowerShell-Registerkarte**          | <kbd>STRG</kbd>+<kbd>T</kbd>                                                                                                    |
@@ -112,7 +112,7 @@ Sie können die folgenden Tastenkombinationen verwenden, wenn Sie Windows PowerS
 
 Sie können die folgenden Tastenkombinationen verwenden, um die Windows PowerShell-Konsole (PowerShell.exe) zu starten oder Windows PowerShell ISE zu beenden.
 
-|                        Action                        |               Tastenkombination               |
+|                        Aktion                        |               Tastenkombination               |
 | ---------------------------------------------------- | --------------------------------------------- |
 | **Beenden**                                             | <kbd>ALT</kbd>+<kbd>F4</kbd>                  |
 | **PowerShell.exe starten** (Windows PowerShell-Konsole) | <kbd>STRG</kbd>+<kbd>UMSCHALT</kbd>+<kbd>P</kbd> |

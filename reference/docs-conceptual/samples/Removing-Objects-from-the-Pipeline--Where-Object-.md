@@ -3,10 +3,10 @@ ms.date: 12/23/2019
 keywords: powershell,cmdlet
 title: Entfernen von Objekten aus der Pipeline – Where-Object
 ms.openlocfilehash: 370e7745341b70c0794352a690d5750d21f53ac2
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75737184"
 ---
 # <a name="removing-objects-from-the-pipeline-where-object"></a>Entfernen von Objekten aus der Pipeline (Where-Object)
@@ -107,7 +107,7 @@ intelppm               Intel Processor Driver
 ...
 ```
 
-Der Befehl oben umfasst zwei `Where-Object`-Elemente, die aber mithilfe des logischen Operators `-and` wie folgt in einem einzigen `Where-Object`-Element ausgedrückt werden können:
+Der Befehl oben umfasst zwei `Where-Object`-Elemente, die aber mithilfe des logischen Operators `Where-Object` wie folgt in einem einzigen `-and`-Element ausgedrückt werden können:
 
 ```powershell
 Get-CimInstance -Class Win32_SystemDriver |

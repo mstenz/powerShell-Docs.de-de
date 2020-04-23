@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell-Glossar
 ms.openlocfilehash: 0827ec771b1744b87a8c0f0ddf48438f9ba484b2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030358"
 ---
 # <a name="windows-powershell-glossary"></a>Windows PowerShell-Glossar
@@ -21,7 +21,7 @@ ms.locfileid: "67030358"
 |Dynamischer Parameter|Parameter, der einem Windows PowerShell-Cmdlet, einer Funktion oder Skript einen unter bestimmten Umständen hinzugefügt wird. Cmdlets, Funktionen, Anbieter und Skripts können dynamische Parameter hinzufügen.|
 |Formatierungsdatei|Eine Windows PowerShell-XML-Datei mit der Erweiterung „.format.ps1xml“, die definiert, wie Windows PowerShell ein Objekt basierend auf seinem .NET Framework-Typ angezeigt.|
 |Globaler Sitzungsstatus|Der Sitzungsstatus, der die Daten enthält, auf die der Benutzer einer Windows PowerShell-Sitzung zugreifen kann.|
-|Host|Die Schnittstelle, die die Windows PowerShell-Engine für die Kommunikation mit dem Benutzer verwendet. Der Host gibt beispielsweise an, wie Eingabeaufforderungen zwischen Windows PowerShell und dem Benutzer behandelt werden.|
+|host|Die Schnittstelle, die die Windows PowerShell-Engine für die Kommunikation mit dem Benutzer verwendet. Der Host gibt beispielsweise an, wie Eingabeaufforderungen zwischen Windows PowerShell und dem Benutzer behandelt werden.|
 |Hostanwendung|Programm, das die Windows PowerShell-Engine in seinen Prozess lädt und verwendet, um Vorgänge auszuführen.|
 |Eingabeverarbeitungsmethode|Methode, die ein Cmdlet verwenden kann, um die Datensätze, die es empfängt, als Eingabe zu nutzen. Eingabeverarbeitungsmethoden sind z. B. „BeginProcessing“, „ProcessRecord“, „EndProcessing“und „StopProcessing“.|
 |Manifestmodul|Windows PowerShell-Modul, das über ein Manifest verfügt und dessen RootModule-Schlüssel leer ist.|
@@ -31,7 +31,7 @@ ms.locfileid: "67030358"
 |Nomen|Wort, das in einen Windows PowerShell-Cmdlet-Namen auf den Bindestrich folgt. Das Nomen beschreibt die Ressourcen, auf die das Cmdlet angewendet wird.|
 |Parametersatz|Gruppe von Parametern, die im selben Befehl verwendet werden kann, um eine bestimmte Aktion auszuführen.|
 |Pipe|Dient in Windows PowerShell zum Weiterleiten der Ergebnisse des vorherigen Befehls als Eingabe an den nächsten Befehl in der Pipeline.|
-|Pipeline|Reihe von Befehlen, die durch Pipelineoperatoren (&#124;) (ASCII 124) verbunden sind. Jeder Pipelineoperator leitet die Ergebnisse des vorherigen Befehls als Eingabe an den nächsten Befehl weiter.|
+|pipeline|Reihe von Befehlen, die durch Pipelineoperatoren (&#124;) (ASCII 124) verbunden sind. Jeder Pipelineoperator leitet die Ergebnisse des vorherigen Befehls als Eingabe an den nächsten Befehl weiter.|
 |PSSession|Typ von Windows PowerShell-Sitzung, die vom Benutzer erstellt, verwaltet und geschlossen wird.|
 |Stammmodul|Das Modul, das im RootModule-Schlüssel in einem Modulmanifest angegeben ist.|
 |Runspace|In Windows PowerShell die Betriebsumgebung, in der jeder Befehl in einer Pipeline ausgeführt wird.|
@@ -41,7 +41,7 @@ ms.locfileid: "67030358"
 |Shell|Befehlsinterpreter, der verwendet wird, um Befehle an das Betriebssystem zu übergeben.|
 |Switch-Parameter|Parameter, der kein Argument akzeptiert.|
 |Fehler mit Abbruch|Fehler, der verhindert, dass Windows PowerShell die Verarbeitung des Befehls abschließt.|
-|Transaktion|Unteilbare Arbeitseinheit. Die Arbeit in einer Transaktion muss als Ganzes abgeschlossen werden. Wenn bei einem Teil der Transaktion ein Fehler auftritt, misslingt die gesamte Transaktion.|
+|transaction|Unteilbare Arbeitseinheit. Die Arbeit in einer Transaktion muss als Ganzes abgeschlossen werden. Wenn bei einem Teil der Transaktion ein Fehler auftritt, misslingt die gesamte Transaktion.|
 |Typdatei|Windows PowerShell-XML-Datei mit der Erweiterung „.ps1xml“, die die Eigenschaften der Microsoft .NET Framework-Typen in Windows PowerShell erweitert.|
 |Verb|Wort, das in einen Windows PowerShell-Cmdlet-Namen vor dem Bindestrich steht. Das Verb beschreibt die Aktion, die das Cmdlet ausführt.|
 |Windows PowerShell|Eine Befehlszeilenshell und aufgabenbasierte Technologie zur Skripterstellung, die IT-Administratoren eine umfassende Kontrolle und Automatisierung von Systemverwaltungsaufgaben ermöglicht.|

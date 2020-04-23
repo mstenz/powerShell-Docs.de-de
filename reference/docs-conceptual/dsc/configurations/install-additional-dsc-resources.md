@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: DSC,PowerShell,Ressource,Katalog,Setup
 title: Installieren zusätzlicher DSC-Ressourcen
 ms.openlocfilehash: 7a6a935349358e11a77d2f00c0bf88e0ad18c097
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "74417798"
 ---
 # <a name="install-additional-dsc-resources"></a>Installieren zusätzlicher DSC-Ressourcen
@@ -18,18 +18,18 @@ Hier finden Sie eine Liste der in PowerShell 4.0 enthaltenen OOB-Ressourcen sowi
 > [!NOTE]
 > Diese Liste ist unvollständig, da die Anzahl der OOB-Ressourcen mit jeder Version von PowerShell gewachsen ist.
 
-|Ressource  |Beschreibung  |
+|Resource  |BESCHREIBUNG  |
 |---------|---------|
 |**File**|Steuert den Status der Dateien und Verzeichnisse. Kopiert Dateien aus einer **Quelle** in ein **Ziel** und aktualisiert sie bei Änderung der **Quelle** durch Vergleichen von Datumsangaben, Prüfsummen und Hashes.|
-|**Archive**|Entpackt Archive an einem angegebenen Speicherort. Überprüft die Archive mit einer angegebenen **Prüfsumme**.|
-|**Environment**|Verwaltet Umgebungsvariablen.|
-|**Group**|Verwaltet lokale Gruppen und steuert die Gruppenmitgliedschaft.|
-|**Log**|Schreibt Meldungen in das `Microsoft-Windows-Desired State Configuration/Analytic`-Ereignisprotokoll.|
+|**Archivieren**|Entpackt Archive an einem angegebenen Speicherort. Überprüft die Archive mit einer angegebenen **Prüfsumme**.|
+|**Umgebung**|Verwaltet Umgebungsvariablen.|
+|**Gruppe**|Verwaltet lokale Gruppen und steuert die Gruppenmitgliedschaft.|
+|**Protokoll**|Schreibt Meldungen in das `Microsoft-Windows-Desired State Configuration/Analytic`-Ereignisprotokoll.|
 |**Paket**|Installiert oder deinstalliert Pakete mit **Arguments**, **LogPath**, **ReturnCode** und anderen Einstellungen.|
-|**Registry**|Verwaltet Registrierungsschlüssel und -werte.|
-|**Script**|Ermöglicht Ihnen den Entwurf Ihrer eigenen [get-test-set](../resources/get-test-set.md)-Skriptblöcke.|
+|**Registrierung**|Verwaltet Registrierungsschlüssel und -werte.|
+|**Skript**|Ermöglicht Ihnen den Entwurf Ihrer eigenen [get-test-set](../resources/get-test-set.md)-Skriptblöcke.|
 |**Service**|Konfiguriert Windows-Dienste.|
-|**User** |Verwaltet lokale Benutzer und Attribute.|
+|**Benutzer** |Verwaltet lokale Benutzer und Attribute.|
 |**WindowsFeature**|Verwaltet Rollen und Features.|
 |**WindowsProcess**|Konfiguriert Windows-Prozesse.|
 
@@ -151,6 +151,6 @@ PowerShell      TimeZone                  ComputerManagementDsc          6.0.0.0
 PowerShell      VirtualMemory             ComputerManagementDsc          6.0.0.0    {Drive, Type, DependsOn, Initi...
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 - [Was sind Ressourcen?](../resources/resources.md)

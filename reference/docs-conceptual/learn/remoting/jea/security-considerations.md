@@ -3,10 +3,10 @@ ms.date: 07/10/2019
 keywords: jea,powershell,security
 title: JEA-Sicherheitsüberlegungen
 ms.openlocfilehash: befc24fec368c4f6d60477daf63bf17e9431133e
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "70017771"
 ---
 # <a name="jea-security-considerations"></a>JEA-Sicherheitsüberlegungen
@@ -31,9 +31,9 @@ In der folgenden Tabelle werden die möglichen Konfigurationsoptionen und die si
 
 |        Computertyp         | Konfiguration virtueller Kontogruppen |                   Lokaler Benutzerkontext                    | Netzwerkbenutzerkontext |
 | ---------------------------- | ----------------------------------- | ------------------------------------------------------- | -------------------- |
-| Domänencontroller            | Standardwert                             | Domänenbenutzer, Mitglied von „*DOMÄNE*\Domänen-Admins“         | Computerkonto     |
+| Domänencontroller            | Standard                             | Domänenbenutzer, Mitglied von „*DOMÄNE*\Domänen-Admins“         | Computerkonto     |
 | Domänencontroller            | Domänengruppen A und B               | Domänenbenutzer, Mitglied von „*DOMAIN*\A“, „*DOMAIN*\B“       | Computerkonto     |
-| Mitgliedsserver oder Arbeitsstation | Standardwert                             | Lokaler Benutzer, Mitglied von „*BUILTIN*\Administrators“        | Computerkonto     |
+| Mitgliedsserver oder Arbeitsstation | Standard                             | Lokaler Benutzer, Mitglied von „*BUILTIN*\Administrators“        | Computerkonto     |
 | Mitgliedsserver oder Arbeitsstation | Lokale Gruppen C und D                | Lokale Gruppen, Mitglied von „*COMPUTER*\C“ und „*COMPUTER*\D“ | Computerkonto     |
 
 Wenn Sie Sicherheitsüberwachungsereignisse und Anwendungsereignisprotokolle genauer betrachten, erkennen Sie, dass jede JEA-Benutzersitzung über ein eindeutiges virtuelles Konto verfügt. Dadurch können Sie die Benutzeraktionen in einem JEA-Endpunkt zum ursprünglichen Benutzer zurückverfolgen, der den Befehl ausgeführt hat. Virtuelle Kontonamen haben folgendes Format: `WinRM Virtual Users\WinRM_VA_<ACCOUNTNUMBER>_<DOMAIN>_<sAMAccountName>`. Wenn beispielsweise der Benutzer **Alice** in der Domäne **Contoso** einen Dienst in einem JEA-Endpunkt neu startet, so lautet der Benutzername, der einem beliebigen Ereignis eines Dienststeuerungs-Managers zugeordnet ist, `WinRM Virtual Users\WinRM_VA_1_contoso_alice`.

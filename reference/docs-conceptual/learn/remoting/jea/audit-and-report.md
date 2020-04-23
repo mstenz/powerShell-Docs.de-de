@@ -3,10 +3,10 @@ ms.date: 07/10/2019
 keywords: jea,powershell,security
 title: Überwachung und Berichterstellung zu JEA
 ms.openlocfilehash: 2afefe83acecc1fc3643d49766120ffecc25378f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "70017791"
 ---
 # <a name="auditing-and-reporting-on-jea"></a>Überwachung und Berichterstellung zu JEA
@@ -46,7 +46,7 @@ $jea.RoleDefinitions.GetEnumerator() | Select-Object Name, @{
 
 ## <a name="find-available-role-capabilities-on-the-machine"></a>Ermitteln verfügbarer Rollenfunktionen auf dem Computer
 
-JEA ruft die im Ordner **RoleCapabilities** gespeicherten `.psrc`-Dateien innerhalb eines PowerShell-Moduls ab. Mit der folgenden Funktion können Sie alle auf einem Computer verfügbaren Rollenfunktionen ermitteln:
+JEA ruft die im Ordner `.psrc`RoleCapabilities**gespeicherten**-Dateien innerhalb eines PowerShell-Moduls ab. Mit der folgenden Funktion können Sie alle auf einem Computer verfügbaren Rollenfunktionen ermitteln:
 
 ```powershell
 function Find-LocalRoleCapability {
@@ -131,10 +131,10 @@ PS>CommandInvocation(Get-Service): "Get-Service"
 Running  Dns                DNS Server
 ```
 
-Für jeden von einem Benutzer ausgeführten Befehl wird eine **CommandInvocation**-Zeile geschrieben. Mit **ParameterBindings** werden alle Parameter und Werte erfasst, die für den Befehl angegeben wurden. Im vorherigen Beispiel wird für das Cmdlet `Get-Service` der Parameter **Name** mit dem Wert **Dns** angegeben.
+Für jeden von einem Benutzer ausgeführten Befehl wird eine **CommandInvocation**-Zeile geschrieben. Mit **ParameterBindings** werden alle Parameter und Werte erfasst, die für den Befehl angegeben wurden. Im vorherigen Beispiel wird für das Cmdlet **der Parameter**Name**mit dem Wert**Dns`Get-Service` angegeben.
 
 Die Ausgabe jedes Befehls löst außerdem **CommandInvocation** aus, in der Regel zu `Out-Default`. **InputObject** von `Out-Default` stellt das vom Befehl zurückgegebene PowerShell-Objekt dar. Die Details des Objekts einige Zeilen darunter bilden täuschend ähnlich das nach, was der Benutzer gesehen hätte.
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [*PowerShell ♥ the Blue Team (PowerShell ♥ das Blue Team)* – Blogbeitrag zum Thema Sicherheit](https://devblogs.microsoft.com/powershell/powershell-the-blue-team/)

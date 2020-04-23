@@ -1,12 +1,12 @@
 ---
 ms.date: 09/20/2019
-keywords: dsc,powershell,configuration,setup
+keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: DSC für Linux-Resource „nxFile“
 ms.openlocfilehash: be5f098d2fe1c8b354c07e6a8f882b8fdf00e1db
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954827"
 ---
 # <a name="dsc-for-linux-nxfile-resource"></a>DSC für Linux-Resource „nxFile“
@@ -36,15 +36,15 @@ nxFile <string> #ResourceName
 
 ## <a name="properties"></a>Eigenschaften
 
-|Eigenschaft |Beschreibung |
+|Eigenschaft |BESCHREIBUNG |
 |---|---|
 |DestinationPath |Gibt den Speicherort an, an dem Sie den Zustand einer Datei oder eines Verzeichnisses sicherstellen möchten. |
 |SourcePath |Gibt den Pfad an, aus dem die Datei- oder Ordnerressource kopiert werden soll. Dieser Pfad kann ein lokaler Pfad oder eine URL des Typs `http/https/ftp` sein. Remote-URLs des Typs `http/https/ftp` werden nur unterstützt, wenn der Wert der **Type**-Eigenschaft **file** ist. |
-|Type |Gibt an, ob die zu konfigurierende Ressource ein Verzeichnis oder eine Datei ist. Legen Sie diese Eigenschaft auf **directory** fest, um anzugeben, dass die Ressource ein Verzeichnis ist. Legen Sie sie auf **file** fest, um anzugeben, dass die Ressource eine Datei ist. Der Standardwert ist **file**. |
+|type |Gibt an, ob die zu konfigurierende Ressource ein Verzeichnis oder eine Datei ist. Legen Sie diese Eigenschaft auf **directory** fest, um anzugeben, dass die Ressource ein Verzeichnis ist. Legen Sie sie auf **file** fest, um anzugeben, dass die Ressource eine Datei ist. Der Standardwert ist **file**. |
 |Contents |Gibt den Inhalt einer Datei an, z. B. eine bestimmte Zeichenfolge. |
 |Checksum |Definiert den zu verwendenden Typ, wenn bestimmt wird, ob zwei Dateien identisch sind. Wenn **Checksum** nicht angegeben ist, wird nur der Datei- oder Verzeichnisnamen für den Vergleich verwendet. Werte sind: **ctime**, **mtime** oder **md5**. |
-|Recurse |Gibt an, ob Unterverzeichnisse enthalten sind. Legen Sie diese Eigenschaft auf `$true` fest, um anzugeben, dass Unterverzeichnisse enthalten sein sollen. Der Standardwert ist `$false`. Diese Eigenschaft ist nur gültig, wenn die **Type**-Eigenschaft auf **directory** festgelegt ist. |
-|Force |Bestimmte Dateioperationen (z. B. das Überschreiben einer Datei oder Löschen eines Verzeichnisses, das nicht leer ist), führen zu einem Fehler. Bei Verwenden der **Force**-Eigenschaft werden solche Fehler überschrieben. Der Standardwert ist `$false`. |
+|Recurse |Gibt an, ob Unterverzeichnisse enthalten sind. Legen Sie diese Eigenschaft auf `$true` fest, um anzugeben, dass Unterverzeichnisse enthalten sein sollen. Der Standardwert lautet `$false`. Diese Eigenschaft ist nur gültig, wenn die **Type**-Eigenschaft auf **directory** festgelegt ist. |
+|Force |Bestimmte Dateioperationen (z. B. das Überschreiben einer Datei oder Löschen eines Verzeichnisses, das nicht leer ist), führen zu einem Fehler. Bei Verwenden der **Force**-Eigenschaft werden solche Fehler überschrieben. Standardwert: `$false`. |
 |Links |Gibt das gewünschte Verhalten für symbolische Verknüpfungen an. Legen Sie diese Eigenschaft auf **follow** fest, um symbolischen Verknüpfungen zu folgen und Aktionen auf das Ziel der Verknüpfung anzuwenden. Ein Beispiel ist das Kopieren der Datei anstatt der Verknüpfung. Legen Sie diese Eigenschaft auf **manage** fest, um eine Aktion auf die Verknüpfung anzuwenden. Ein Beispiel ist das Kopieren der Verknüpfung selbst. Legen Sie diese Eigenschaft auf **ignore** fest, um symbolische Verknüpfungen zu ignorieren. |
 |Group |Der Name der **Gruppe**, die über Zugriffsberechtigungen auf die Datei oder das Verzeichnis besitzen soll. |
 |Mode |Gibt die gewünschten Berechtigungen für die Ressource in der Oktal- oder symbolischen Schreibweise an. Beispiele hierfür sind **777** oder **rwxrwxrwx**. Geben Sie bei Verwenden der symbolischen Schreibweise nicht das erste Zeichen an, welches Verzeichnis oder Datei angibt. |
@@ -52,12 +52,12 @@ nxFile <string> #ResourceName
 
 ## <a name="common-properties"></a>Allgemeine Eigenschaften
 
-|Eigenschaft |Beschreibung |
+|Eigenschaft |BESCHREIBUNG |
 |---|---|
 |DependsOn |Gibt an, dass die Konfiguration einer anderen Ressource ausgeführt werden muss, bevor diese Ressource konfiguriert wird. Wenn beispielsweise die ID des Skriptblocks mit der Ressourcenkonfiguration, den Sie zuerst ausführen möchten, „ResourceName“ und dessen Typ „ResourceType“ ist, lautet die Syntax für das Verwenden dieser Eigenschaft `DependsOn = "[ResourceType]ResourceName"`. |
 |Ensure |Bestimmt, ob das Vorhandensein der Datei geprüft werden soll. Legen Sie diese Eigenschaft auf **Present** fest, um sicherzustellen, dass die Datei vorhanden ist. Legen Sie sie auf **Absent** fest, um sicherzustellen, dass die Datei nicht vorhanden ist. Der Standardwert ist **Present**. |
 
-## <a name="additional-information"></a>Weitere Informationen
+## <a name="additional-information"></a>Zusätzliche Informationen
 
 Linux und Windows verwenden in Textdateien standardmäßig unterschiedliche Zeilenumbruchzeichen. Diese kann zu unerwarteten Ergebnissen führen, wenn einige Dateien mit **nxFile** auf einem Linux-Computer konfiguriert werden. Es gibt mehrere Möglichkeiten, den Inhalt einer Linux-Datei zu verwalten, um durch unerwartete Zeilenumbruchzeichen verursachte Probleme zu vermeiden:
 

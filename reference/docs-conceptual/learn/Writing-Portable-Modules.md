@@ -3,10 +3,10 @@ ms.date: 01/10/2020
 keywords: powershell,cmdlet
 title: Schreiben von portablen Modulen
 ms.openlocfilehash: 124e6efadfd07b8c5214a5c0446b1589f7142388
-ms.sourcegitcommit: cab4e4e67dbed024864887c7f8984abb4db3a78b
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "76022244"
 ---
 # <a name="portable-modules"></a>Portable Module
@@ -200,7 +200,7 @@ Nachdem Sie überprüft haben, ob Ihr Modul sowohl mit Windows PowerShell als au
 
 Im Modulmanifest hat die `PrivateData`-Eigenschaft eine `PSData`-Untereigenschaft. Die optionale `Tags`-Eigenschaft von `PSData` akzeptiert ein Array von Werten, die im PowerShell-Katalog angezeigt werden. Der PowerShell-Katalog unterstützt die folgenden Kompatibilitätswerte:
 
-| Tag               | Beschreibung                                |
+| Tag               | BESCHREIBUNG                                |
 |-------------------|--------------------------------------------|
 | PSEdition_Core    | Kompatibel mit PowerShell Core 6          |
 | PSEdition_Desktop | Kompatibel mit Windows PowerShell         |

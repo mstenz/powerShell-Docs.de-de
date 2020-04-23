@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: wmf,powershell,setup
 title: Verbesserungen bei Just Enough Administration (JEA)
 ms.openlocfilehash: 847ae92a6225023bcd0ee3dfe7c7058bdc356836
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71147600"
 ---
 # <a name="improvements-to-just-enough-administration-jea"></a>Verbesserungen bei Just Enough Administration (JEA)
@@ -26,7 +26,7 @@ UserDriveMaximumSize = 10485760    # 10 MB
 
 Der Ordner zum Sichern des Benutzerlaufwerks wird in `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\DOMAIN_USER` erstellt.
 
-Um das Benutzerlaufwerk zu verwenden und Dateien auf einen bzw. von einem JEA-Endpunkt zu kopieren, der für die Bereitstellung des Benutzerlaufwerks konfiguriert ist, verwenden Sie `Copy-Item` mit den Parametern `-ToSession` und `-FromSession`.
+Um das Benutzerlaufwerk zu verwenden und Dateien auf einen bzw. von einem JEA-Endpunkt zu kopieren, der für die Bereitstellung des Benutzerlaufwerks konfiguriert ist, verwenden Sie `-ToSession` mit den Parametern `-FromSession` und `Copy-Item`.
 
 ```powershell
 # Connect to the JEA endpoint
@@ -81,6 +81,6 @@ RequiredGroups = @{ Or = '2FA-logon', 'smartcard-logon' }
 RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon' }}
 ```
 
-## <a name="fixed-virtual-accounts-are-now-supported-on-windows-server-2008-r2"></a>Behoben: Virtuelle Konten werden jetzt unter Windows Server 2008 R2 unterstützt
+## <a name="fixed-virtual-accounts-are-now-supported-on-windows-server-2008-r2"></a>Behoben: Virtuelle Konten werden jetzt auf Windows Server 2008 R2 unterstützt
 
 In WMF 5.1 können nun virtuelle Konten auf Windows Server 2008 R2 verwendet werden, sodass für Windows Server 2008 R2 - 2016 jetzt konsistente Konfigurationen und übereinstimmende Features bereitgestellt werden. Bei Verwendung von JEA unter Windows 7 werden virtuelle Konten weiterhin nicht unterstützt.

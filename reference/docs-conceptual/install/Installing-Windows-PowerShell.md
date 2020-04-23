@@ -3,10 +3,10 @@ ms.date: 08/09/2017
 keywords: powershell,cmdlet,download,installieren,setup,windows 10, windows 8.1, windows 8.0,windows 7
 title: Installieren von Windows PowerShell
 ms.openlocfilehash: 345cde8012bece730e7217ed16be6175ad26bb28
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "62086475"
 ---
 # <a name="installing-windows-powershell"></a>Installieren von Windows PowerShell
@@ -24,17 +24,17 @@ Alle aufgelisteten Versionen sind die ursprünglich veröffentlichten Versionen 
 
 ### <a name="for-console"></a>Für die Konsole
 
-Version | Speicherort
+Version | Location
 -- | --
-Windows 10 | Klicken Sie auf das Windows-Symbol in der linken unteren Ecke, geben Sie dort „PowerShell“ ein.
+Windows 10 | Klicken Sie auf das Windows-Symbol in der linken unteren Ecke, geben Sie dort „PowerShell“ ein.
 Windows 8.1, 8.0 | Geben Sie auf dem Startbildschirm „PowerShell“ ein.<br/>Wenn Sie sich auf dem Desktop befinden, klicken Sie auf das Windows-Symbol in der linken unteren Ecke, geben Sie dort „PowerShell“ ein.
 Windows 7 SP1 | Klicken Sie auf das Windows-Symbol in der linken unteren Ecke, geben Sie in der Suchleiste „PowerShell“ ein.
 
 ### <a name="for-ise"></a>Für die ISE
 
-Version | Speicherort
+Version | Location
 -- | --
-Windows 10 | Klicken Sie auf das Windows-Symbol in der linken unteren Ecke, geben Sie dort „ISE“ ein.
+Windows 10 | Klicken Sie auf das Windows-Symbol in der linken unteren Ecke, geben Sie dort „ISE“ ein.
 Windows 8.1, 8.0 | Geben Sie auf dem Startbildschirm **PowerShell ISE** ein.<br/>Wenn Sie sich auf dem Desktop befinden, klicken Sie auf das Windows-Symbol in der linken unteren Ecke, geben Sie dort **PowerShell ISE** ein.
 Windows 7 SP1 | Klicken Sie auf das Windows-Symbol in der linken unteren Ecke, geben Sie in der Suchleiste „PowerShell“ ein.
 
@@ -71,8 +71,8 @@ Wenn Sie Ihre vorhandene Version in Windows aktualisieren müssen, können Sie i
 Windows | PS 3.0 | PS 4.0 | PS 5.0 | PS 5.1 |
 --|--|--|--|--|
 Windows 10 (siehe Hinweis 1)<br/>Windows Server 2016 | - | - | - | installiert
-Windows 8.1<br/>Windows Server 2012 R2 | - | installiert | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
-Windows 8<br/>Windows Server 2012 | installiert | [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
+Windows 8.1<br/>Windows Server 2012 R2 | - | installiert | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
+Windows 8<br/>Windows Server 2012 | installiert | [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
 Windows 7 SP1<br/>Windows Server 2008 R2 SP1 | [WMF 3.0](https://www.microsoft.com/en-us/download/details.aspx?id=34595) | [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
 
 > [!NOTE]

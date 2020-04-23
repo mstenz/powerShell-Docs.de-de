@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: DSC,PowerShell,Ressource,Katalog,Setup
 title: Hinzufügen von Parametern zu einer Konfiguration
 ms.openlocfilehash: 9dd9f2be58c13840be2b24e7e21a0d4af79b67cc
-ms.sourcegitcommit: b0966d61293e28ecdb929c5065be9760884e4e7d
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/25/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80263151"
 ---
 # <a name="add-parameters-to-a-configuration"></a>Hinzufügen von Parametern zu einer Konfiguration

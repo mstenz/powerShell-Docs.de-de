@@ -3,10 +3,10 @@ ms.date: 12/23/2019
 keywords: powershell,cmdlet
 title: Ausführen von Netzwerkaufgaben
 ms.openlocfilehash: e0aa3b8ef3d911ab0fe851f6621d70e1265c5bd4
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75737201"
 ---
 # <a name="performing-networking-tasks"></a>Ausführen von Netzwerkaufgaben
@@ -142,7 +142,7 @@ Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true
 
 Die Filteranweisung `IPEnabled=$true` ist erforderlich, da selbst in einem Netzwerk, in dem nur TCP/IP verwendet wird, verschiedene Netzwerkadapterkonfigurationen auf einem Computer keine wirklichen TCP/IP-Adapter sind. Es handelt sich um allgemeine Softwareelemente, die RAS, PPTP, QoS und andere Dienste für alle Adapter unterstützen und deshalb keine eigene Adresse aufweisen.
 
-Sie können den Befehl filtern, indem Sie anstelle des Filters `Get-CimInstance` das Cmdlet `Where-Object` verwenden.
+Sie können den Befehl filtern, indem Sie anstelle des Filters `Where-Object` das Cmdlet `Get-CimInstance` verwenden.
 
 ```powershell
 Get-CimInstance -Class Win32_NetworkAdapterConfiguration |

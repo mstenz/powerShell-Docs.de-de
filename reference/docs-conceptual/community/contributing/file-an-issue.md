@@ -4,10 +4,10 @@ description: In diesem Artikel wird erläutert, wie Sie Feedback zur PowerShell-
 ms.date: 03/05/2020
 ms.topic: conceptual
 ms.openlocfilehash: fa2c74d55cdcd779646c50d58f7705f7a4c33542
-ms.sourcegitcommit: 18d832858a7b8ea094763afa753e0f48f01372e7
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "79060295"
 ---
 # <a name="how-to-file-a-powershell-docs-issue"></a>Melden eines Issues in der PowerShell-Dokumentation
@@ -28,7 +28,7 @@ Am unteren Rand der meisten Seiten auf `docs.microsoft.com` sind zwei Feedbacksc
 
 ## <a name="filing-issues-on-github"></a>Melden von Issues auf GitHub
 
-Um ein GitHub-Issue direkt zu melden, können Sie im Repository [PowerShell-Docs][docs-issues] auf die Schaltfläche [New issue][new-issue] klicken. Klicken Sie für den Typ des Issues, das Sie erstellen möchten, auf die Schaltfläche **Get Started**. Das neue GitHub-Issue ist bereits mittels einer Vorlage vorausgefüllt. Mithilfe der Vorlage können Sie die Informationen bereitstellen, die zur Lösung des von Ihnen gemeldeten Problems erforderlich sind.
+Um ein GitHub-Issue direkt zu melden, können Sie im Repository [PowerShell-Docs][new-issue] auf die Schaltfläche [New issue][docs-issues] klicken. Klicken Sie für den Typ des Issues, das Sie erstellen möchten, auf die Schaltfläche **Get Started**. Das neue GitHub-Issue ist bereits mittels einer Vorlage vorausgefüllt. Mithilfe der Vorlage können Sie die Informationen bereitstellen, die zur Lösung des von Ihnen gemeldeten Problems erforderlich sind.
 
 Bevor Sie ein neues Issue melden, sehen Sie sich die vorhandenen Issues an, um zu prüfen, ob Ihr Problem bereits gemeldet wurde. Dies hilft, Duplizierungen zu vermeiden. Möglicherweise wurde zudem Ihr Anliegen bereits geklärt. Wenn Sie ein bestehendes Issue finden, können Sie Ihre Kommentare, zugehörige Fragen oder Antworten hinzufügen.
 

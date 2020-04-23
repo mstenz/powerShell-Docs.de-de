@@ -4,10 +4,10 @@ contributor: keithb
 keywords: gallery,powershell,cmdlet,psget
 title: Vorabskriptversionen
 ms.openlocfilehash: c0198c2f575d2c004949ccebab49d93ce54716be
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71328481"
 ---
 # <a name="prerelease-versions-of-scripts"></a>Vorabskriptversionen
@@ -138,7 +138,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.5.0.0\PSModule.psm
     + FullyQualifiedErrorId : NoMatchFound,Microsoft.PowerShell.PackageManagement.Cmdlets.GetPackage
 ```
 
-## <a name="more-details"></a>Weitere Details
+## <a name="more-details"></a>Weitere Informationen
 
 - [Vorabmodulversionen](module-prerelease-support.md)
 - [Find-Script](/powershell/module/powershellget/find-script)

@@ -4,10 +4,10 @@ schema: 2.0.0
 keywords: powershell
 title: Module, die eine Zustimmung zur Lizenz erfordern
 ms.openlocfilehash: a2f7ed72aae8579a6723f65b86dd0993f1a22afd
-ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/21/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80082809"
 ---
 # <a name="modules-requiring-license-acceptance"></a>Module, die eine Zustimmung zur Lizenz erfordern
@@ -97,7 +97,7 @@ Install-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense
 
 Das Modul wird ohne Aufforderung zum Akzeptieren der Lizenz installiert.
 
-### <a name="example-4-install-module-requiring-license-acceptance-with--force"></a>Beispiel 4: Installieren eines Moduls, das die Zustimmung zur Lizenz erfordert, mit -Force
+### <a name="example-4-install-module-requiring-license-acceptance-with--force"></a>Beispiel 4: Installieren eines Moduls, das die Zustimmung zur Lizenz mit -Force erfordert
 
 ```powershell
 Install-Module -Name ModuleRequireLicenseAcceptance -Force
@@ -114,7 +114,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.1.3.3\PSModule.psm
    .InstallPackage
 ```
 
-### <a name="example-5-install-module-with-dependencies-requiring-license-acceptance"></a>Beispiel 5: Installieren eines Moduls mit Abhängigkeiten, das die Zustimmung zur Lizenz erfordert
+### <a name="example-5-install-module-with-dependencies-requiring-license-acceptance"></a>Beispiel 5: Installieren eines Moduls mit Abhängigkeiten, die die Zustimmung zur Lizenz erfordern
 
 Das Modul **ModuleWithDependency** hängt vom Modul **ModuleRequireLicenseAcceptance** ab. Der Benutzer wird zum Akzeptieren der Lizenz aufgefordert.
 
@@ -136,7 +136,7 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-### <a name="example-6-install-module-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a>Beispiel 6: Installieren eines Moduls mit Abhängigkeiten, das die Zustimmung zur Lizenz und -AcceptLicense erfordert
+### <a name="example-6-install-module-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a>Beispiel 6: Installieren eines Moduls mit Abhängigkeiten, die die Zustimmung zur Lizenz erfordern, und -AcceptLicense
 
 Das Modul **ModuleWithDependency** hängt vom Modul **ModuleRequireLicenseAcceptance** ab. Der Benutzer wird nicht zum Akzeptieren der Lizenz aufgefordert, weil **AcceptLicense** angegeben wurde.
 
