@@ -3,36 +3,36 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Das PowerShellTabCollection-Objekt
 ms.openlocfilehash: 0aad885afd3ba3ae3b00f5c11d2c62a9ff303798
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75736112"
 ---
-# <a name="the-powershelltabcollection-object"></a><span data-ttu-id="e6e39-103">Das PowerShellTabCollection-Objekt</span><span class="sxs-lookup"><span data-stu-id="e6e39-103">The PowerShellTabCollection Object</span></span>
+# <a name="the-powershelltabcollection-object"></a><span data-ttu-id="926d0-103">Das PowerShellTabCollection-Objekt</span><span class="sxs-lookup"><span data-stu-id="926d0-103">The PowerShellTabCollection Object</span></span>
 
-<span data-ttu-id="e6e39-104">Das **PowerShellTab**-Sammlungsobjekt ist eine Sammlung von **PowerShellTab**-Objekten.</span><span class="sxs-lookup"><span data-stu-id="e6e39-104">The **PowerShellTab** collection object is a collection of **PowerShellTab** objects.</span></span> <span data-ttu-id="e6e39-105">Jedes **PowerShellTab**-Objekt fungiert als eine separate Laufzeitumgebung.</span><span class="sxs-lookup"><span data-stu-id="e6e39-105">Each **PowerShellTab** object functions as a separate runtime environment.</span></span> <span data-ttu-id="e6e39-106">Dies ist eine Instanz der Microsoft.PowerShell.Host.ISE.PowerShellTabs-Klasse.</span><span class="sxs-lookup"><span data-stu-id="e6e39-106">It is an instance of Microsoft.PowerShell.Host.ISE.PowerShellTabs class.</span></span> <span data-ttu-id="e6e39-107">Ein Beispiel ist das `$psISE.PowerShellTabs`-Objekt.</span><span class="sxs-lookup"><span data-stu-id="e6e39-107">An example is the `$psISE.PowerShellTabs` object.</span></span>
+<span data-ttu-id="926d0-104">Das **PowerShellTab**-Sammlungsobjekt ist eine Sammlung von **PowerShellTab**-Objekten.</span><span class="sxs-lookup"><span data-stu-id="926d0-104">The **PowerShellTab** collection object is a collection of **PowerShellTab** objects.</span></span> <span data-ttu-id="926d0-105">Jedes **PowerShellTab**-Objekt fungiert als eine separate Laufzeitumgebung.</span><span class="sxs-lookup"><span data-stu-id="926d0-105">Each **PowerShellTab** object functions as a separate runtime environment.</span></span> <span data-ttu-id="926d0-106">Dies ist eine Instanz der Microsoft.PowerShell.Host.ISE.PowerShellTabs-Klasse.</span><span class="sxs-lookup"><span data-stu-id="926d0-106">It is an instance of Microsoft.PowerShell.Host.ISE.PowerShellTabs class.</span></span> <span data-ttu-id="926d0-107">Ein Beispiel ist das `$psISE.PowerShellTabs`-Objekt.</span><span class="sxs-lookup"><span data-stu-id="926d0-107">An example is the `$psISE.PowerShellTabs` object.</span></span>
 
-## <a name="methods"></a><span data-ttu-id="e6e39-108">Methoden</span><span class="sxs-lookup"><span data-stu-id="e6e39-108">Methods</span></span>
+## <a name="methods"></a><span data-ttu-id="926d0-108">Methoden</span><span class="sxs-lookup"><span data-stu-id="926d0-108">Methods</span></span>
 
-### <a name="add"></a><span data-ttu-id="e6e39-109">Add\(\)</span><span class="sxs-lookup"><span data-stu-id="e6e39-109">Add\(\)</span></span>
+### <a name="add"></a><span data-ttu-id="926d0-109">Add\(\)</span><span class="sxs-lookup"><span data-stu-id="926d0-109">Add\(\)</span></span>
 
-<span data-ttu-id="e6e39-110">In Windows PowerShell ISE 2.0 und höher unterstützt.</span><span class="sxs-lookup"><span data-stu-id="e6e39-110">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="926d0-110">In Windows PowerShell ISE 2.0 und höher unterstützt.</span><span class="sxs-lookup"><span data-stu-id="926d0-110">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="e6e39-111">Fügt eine neue PowerShell-Registerkarte zur Sammlung hinzu.</span><span class="sxs-lookup"><span data-stu-id="e6e39-111">Adds a new PowerShell tab to the collection.</span></span> <span data-ttu-id="e6e39-112">Die neu hinzugefügte Registerkarte wird zurückgegeben.</span><span class="sxs-lookup"><span data-stu-id="e6e39-112">It returns the newly added tab.</span></span>
+<span data-ttu-id="926d0-111">Fügt eine neue PowerShell-Registerkarte zur Sammlung hinzu.</span><span class="sxs-lookup"><span data-stu-id="926d0-111">Adds a new PowerShell tab to the collection.</span></span> <span data-ttu-id="926d0-112">Die neu hinzugefügte Registerkarte wird zurückgegeben.</span><span class="sxs-lookup"><span data-stu-id="926d0-112">It returns the newly added tab.</span></span>
 
 ```powershell
 $newTab = $psISE.PowerShellTabs.Add()
 $newTab.DisplayName = 'Brand New Tab'
 ```
 
-### <a name="removemicrosoftpowershellhostisepowershelltab-pstab"></a><span data-ttu-id="e6e39-113">Remove\(Microsoft.PowerShell.Host.ISE.PowerShellTab psTab\)</span><span class="sxs-lookup"><span data-stu-id="e6e39-113">Remove\(Microsoft.PowerShell.Host.ISE.PowerShellTab psTab\)</span></span>
+### <a name="removemicrosoftpowershellhostisepowershelltab-pstab"></a><span data-ttu-id="926d0-113">Remove\(Microsoft.PowerShell.Host.ISE.PowerShellTab psTab\)</span><span class="sxs-lookup"><span data-stu-id="926d0-113">Remove\(Microsoft.PowerShell.Host.ISE.PowerShellTab psTab\)</span></span>
 
-<span data-ttu-id="e6e39-114">In Windows PowerShell ISE 2.0 und höher unterstützt.</span><span class="sxs-lookup"><span data-stu-id="e6e39-114">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="926d0-114">In Windows PowerShell ISE 2.0 und höher unterstützt.</span><span class="sxs-lookup"><span data-stu-id="926d0-114">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="e6e39-115">Entfernt die Registerkarte, die durch den **psTab**-Parameter angegeben wird.</span><span class="sxs-lookup"><span data-stu-id="e6e39-115">Removes the tab that is specified by the **psTab** parameter.</span></span>
+<span data-ttu-id="926d0-115">Entfernt die Registerkarte, die durch den **psTab**-Parameter angegeben wird.</span><span class="sxs-lookup"><span data-stu-id="926d0-115">Removes the tab that is specified by the **psTab** parameter.</span></span>
 
-<span data-ttu-id="e6e39-116">**psTab** Die zu entfernende PowerShell-Registerkarte.</span><span class="sxs-lookup"><span data-stu-id="e6e39-116">**psTab** The PowerShell tab to remove.</span></span>
+<span data-ttu-id="926d0-116">**psTab** Die zu entfernende PowerShell-Registerkarte.</span><span class="sxs-lookup"><span data-stu-id="926d0-116">**psTab** The PowerShell tab to remove.</span></span>
 
 ```powershell
 $newTab = $psISE.PowerShellTabs.Add()
@@ -42,13 +42,13 @@ sleep 5
 $psISE.PowerShellTabs.Remove($newTab)
 ```
 
-### <a name="setselectedpowershelltabmicrosoftpowershellhostisepowershelltab-pstab"></a><span data-ttu-id="e6e39-117">SetSelectedPowerShellTab\(Microsoft.PowerShell.Host.ISE.PowerShellTab psTab\)</span><span class="sxs-lookup"><span data-stu-id="e6e39-117">SetSelectedPowerShellTab\(Microsoft.PowerShell.Host.ISE.PowerShellTab psTab\)</span></span>
+### <a name="setselectedpowershelltabmicrosoftpowershellhostisepowershelltab-pstab"></a><span data-ttu-id="926d0-117">SetSelectedPowerShellTab\(Microsoft.PowerShell.Host.ISE.PowerShellTab psTab\)</span><span class="sxs-lookup"><span data-stu-id="926d0-117">SetSelectedPowerShellTab\(Microsoft.PowerShell.Host.ISE.PowerShellTab psTab\)</span></span>
 
-<span data-ttu-id="e6e39-118">In Windows PowerShell ISE 2.0 und höher unterstützt.</span><span class="sxs-lookup"><span data-stu-id="e6e39-118">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="926d0-118">In Windows PowerShell ISE 2.0 und höher unterstützt.</span><span class="sxs-lookup"><span data-stu-id="926d0-118">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="e6e39-119">Wählt die PowerShell-Registerkarte aus, die durch den **psTab**-Parameter angegeben wird, um diese als aktuell aktive PowerShell-Registerkarte festzulegen.</span><span class="sxs-lookup"><span data-stu-id="e6e39-119">Selects the PowerShell tab that is specified by the **psTab** parameter to make it the currently active PowerShell tab.</span></span>
+<span data-ttu-id="926d0-119">Wählt die PowerShell-Registerkarte aus, die durch den **psTab**-Parameter angegeben wird, um diese als aktuell aktive PowerShell-Registerkarte festzulegen.</span><span class="sxs-lookup"><span data-stu-id="926d0-119">Selects the PowerShell tab that is specified by the **psTab** parameter to make it the currently active PowerShell tab.</span></span>
 
-<span data-ttu-id="e6e39-120">**psTab** Die auszuwählende PowerShell-Registerkarte.</span><span class="sxs-lookup"><span data-stu-id="e6e39-120">**psTab** The PowerShell tab to select.</span></span>
+<span data-ttu-id="926d0-120">**psTab** Die auszuwählende PowerShell-Registerkarte.</span><span class="sxs-lookup"><span data-stu-id="926d0-120">**psTab** The PowerShell tab to select.</span></span>
 
 ```powershell
 # Save the current tab in a variable and rename it
@@ -61,8 +61,8 @@ $newTab.DisplayName = 'Brand New Tab'
 $psISE.PowerShellTabs.SelectedPowerShellTab = $oldTab
 ```
 
-## <a name="see-also"></a><span data-ttu-id="e6e39-121">Weitere Informationen</span><span class="sxs-lookup"><span data-stu-id="e6e39-121">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="926d0-121">Weitere Informationen</span><span class="sxs-lookup"><span data-stu-id="926d0-121">See Also</span></span>
 
-- [<span data-ttu-id="e6e39-122">Das PowerShellTab-Objekt</span><span class="sxs-lookup"><span data-stu-id="e6e39-122">The PowerShellTab Object</span></span>](The-PowerShellTab-Object.md)
-- [<span data-ttu-id="e6e39-123">Zweck des Windows PowerShell ISE-Skriptobjektmodells</span><span class="sxs-lookup"><span data-stu-id="e6e39-123">Purpose of the Windows PowerShell ISE Scripting Object Model</span></span>](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-- [<span data-ttu-id="e6e39-124">Die ISE-Objektmodellhierarchie</span><span class="sxs-lookup"><span data-stu-id="e6e39-124">The ISE Object Model Hierarchy</span></span>](The-ISE-Object-Model-Hierarchy.md)
+- [<span data-ttu-id="926d0-122">Das PowerShellTab-Objekt</span><span class="sxs-lookup"><span data-stu-id="926d0-122">The PowerShellTab Object</span></span>](The-PowerShellTab-Object.md)
+- [<span data-ttu-id="926d0-123">Zweck des Windows PowerShell ISE-Skriptobjektmodells</span><span class="sxs-lookup"><span data-stu-id="926d0-123">Purpose of the Windows PowerShell ISE Scripting Object Model</span></span>](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [<span data-ttu-id="926d0-124">Die ISE-Objektmodellhierarchie</span><span class="sxs-lookup"><span data-stu-id="926d0-124">The ISE Object Model Hierarchy</span></span>](The-ISE-Object-Model-Hierarchy.md)

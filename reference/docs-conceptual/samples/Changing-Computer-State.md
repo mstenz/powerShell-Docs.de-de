@@ -3,69 +3,69 @@ ms.date: 12/23/2019
 keywords: powershell,cmdlet
 title: Ändern des Computerstatus
 ms.openlocfilehash: 9278df55ba027134a61c8ed4e89b5b839d460b29
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75736912"
 ---
-# <a name="changing-computer-state"></a><span data-ttu-id="f1b83-103">Ändern des Computerstatus</span><span class="sxs-lookup"><span data-stu-id="f1b83-103">Changing Computer State</span></span>
+# <a name="changing-computer-state"></a><span data-ttu-id="5a7de-103">Ändern des Computerstatus</span><span class="sxs-lookup"><span data-stu-id="5a7de-103">Changing Computer State</span></span>
 
-<span data-ttu-id="f1b83-104">Verwenden Sie zum Zurücksetzen eines Computers in PowerShell entweder ein Standardbefehlszeilentool, WMI oder die CIM-Klasse.</span><span class="sxs-lookup"><span data-stu-id="f1b83-104">To reset a computer in PowerShell, use either a standard command-line tool, WMI or CIM class.</span></span>
-<span data-ttu-id="f1b83-105">Sie verwenden PowerShell zwar nur zum Ausführen des Tools, dennoch erfahren Sie einige wichtige Details über die Arbeit mit externen Tools in PowerShell, indem Sie lernen, wie Sie den Energiezustand eines Computers in PowerShell ändern.</span><span class="sxs-lookup"><span data-stu-id="f1b83-105">Although you are using PowerShell only to run the tool, learning how to change a computer's power state in PowerShell illustrates some of the important details about working with external tools in PowerShell.</span></span>
+<span data-ttu-id="5a7de-104">Verwenden Sie zum Zurücksetzen eines Computers in PowerShell entweder ein Standardbefehlszeilentool, WMI oder die CIM-Klasse.</span><span class="sxs-lookup"><span data-stu-id="5a7de-104">To reset a computer in PowerShell, use either a standard command-line tool, WMI or CIM class.</span></span>
+<span data-ttu-id="5a7de-105">Sie verwenden PowerShell zwar nur zum Ausführen des Tools, dennoch erfahren Sie einige wichtige Details über die Arbeit mit externen Tools in PowerShell, indem Sie lernen, wie Sie den Energiezustand eines Computers in PowerShell ändern.</span><span class="sxs-lookup"><span data-stu-id="5a7de-105">Although you are using PowerShell only to run the tool, learning how to change a computer's power state in PowerShell illustrates some of the important details about working with external tools in PowerShell.</span></span>
 
-## <a name="locking-a-computer"></a><span data-ttu-id="f1b83-106">Sperren eines Computers</span><span class="sxs-lookup"><span data-stu-id="f1b83-106">Locking a Computer</span></span>
+## <a name="locking-a-computer"></a><span data-ttu-id="5a7de-106">Sperren eines Computers</span><span class="sxs-lookup"><span data-stu-id="5a7de-106">Locking a Computer</span></span>
 
-<span data-ttu-id="f1b83-107">Die einzige Möglichkeit, einen Computer unmittelbar mit den standardmäßig verfügbaren Tools zu sperren, besteht im Aufrufen der Funktion **LockWorkstation()** in **user32.dll**:</span><span class="sxs-lookup"><span data-stu-id="f1b83-107">The only way to lock a computer directly with the standard available tools is to call the **LockWorkstation()** function in **user32.dll**:</span></span>
+<span data-ttu-id="5a7de-107">Die einzige Möglichkeit, einen Computer unmittelbar mit den standardmäßig verfügbaren Tools zu sperren, besteht im Aufrufen der Funktion **LockWorkstation()** in **user32.dll**:</span><span class="sxs-lookup"><span data-stu-id="5a7de-107">The only way to lock a computer directly with the standard available tools is to call the **LockWorkstation()** function in **user32.dll**:</span></span>
 
 ```powershell
 rundll32.exe user32.dll,LockWorkStation
 ```
 
-<span data-ttu-id="f1b83-108">Mit diesem Befehl wird die Arbeitsstation sofort gesperrt.</span><span class="sxs-lookup"><span data-stu-id="f1b83-108">This command immediately locks the workstation.</span></span> <span data-ttu-id="f1b83-109">Hierbei wird **rundll32.exe** zum Ausführen von Windows-DLLs (und Speichern ihrer Bibliotheken für die wiederholte Verwendung) verwendet, um `user32.dll` auszuführen – eine Bibliothek mit Windows-Verwaltungsfunktionen.</span><span class="sxs-lookup"><span data-stu-id="f1b83-109">It uses **rundll32.exe**, which runs Windows DLLs (and saves their libraries for repeated use) to run `user32.dll`, a library of Windows management functions.</span></span>
+<span data-ttu-id="5a7de-108">Mit diesem Befehl wird die Arbeitsstation sofort gesperrt.</span><span class="sxs-lookup"><span data-stu-id="5a7de-108">This command immediately locks the workstation.</span></span> <span data-ttu-id="5a7de-109">Hierbei wird **rundll32.exe** zum Ausführen von Windows-DLLs (und Speichern ihrer Bibliotheken für die wiederholte Verwendung) verwendet, um `user32.dll` auszuführen – eine Bibliothek mit Windows-Verwaltungsfunktionen.</span><span class="sxs-lookup"><span data-stu-id="5a7de-109">It uses **rundll32.exe**, which runs Windows DLLs (and saves their libraries for repeated use) to run `user32.dll`, a library of Windows management functions.</span></span>
 
-<span data-ttu-id="f1b83-110">Wenn Sie eine Arbeitsstation sperren, während die schnelle Benutzerumschaltung aktiviert ist, z. B. bei Computern unter Windows XP, wird der Benutzeranmeldebildschirm anstelle des Bildschirmschoners des aktuellen Benutzers angezeigt.</span><span class="sxs-lookup"><span data-stu-id="f1b83-110">When you lock a workstation while Fast User Switching is enabled, such as on Windows XP, the computer displays the user logon screen rather than starting the current user's screensaver.</span></span>
+<span data-ttu-id="5a7de-110">Wenn Sie eine Arbeitsstation sperren, während die schnelle Benutzerumschaltung aktiviert ist, z. B. bei Computern unter Windows XP, wird der Benutzeranmeldebildschirm anstelle des Bildschirmschoners des aktuellen Benutzers angezeigt.</span><span class="sxs-lookup"><span data-stu-id="5a7de-110">When you lock a workstation while Fast User Switching is enabled, such as on Windows XP, the computer displays the user logon screen rather than starting the current user's screensaver.</span></span>
 
-<span data-ttu-id="f1b83-111">Um bestimmte Sitzungen auf einem Terminalserver herunterzufahren, verwenden Sie das Befehlszeilentool **tsshutdn.exe**.</span><span class="sxs-lookup"><span data-stu-id="f1b83-111">To shut down particular sessions on a Terminal Server, use the **tsshutdn.exe** command-line tool.</span></span>
+<span data-ttu-id="5a7de-111">Um bestimmte Sitzungen auf einem Terminalserver herunterzufahren, verwenden Sie das Befehlszeilentool **tsshutdn.exe**.</span><span class="sxs-lookup"><span data-stu-id="5a7de-111">To shut down particular sessions on a Terminal Server, use the **tsshutdn.exe** command-line tool.</span></span>
 
-## <a name="logging-off-the-current-session"></a><span data-ttu-id="f1b83-112">Abmelden der aktuellen Sitzung</span><span class="sxs-lookup"><span data-stu-id="f1b83-112">Logging Off the Current Session</span></span>
+## <a name="logging-off-the-current-session"></a><span data-ttu-id="5a7de-112">Abmelden der aktuellen Sitzung</span><span class="sxs-lookup"><span data-stu-id="5a7de-112">Logging Off the Current Session</span></span>
 
-<span data-ttu-id="f1b83-113">Es sind mehrere verschiedene Verfahren verfügbar, um eine Sitzung auf dem lokalen System abzumelden.</span><span class="sxs-lookup"><span data-stu-id="f1b83-113">You can use several different techniques to log off of a session on the local system.</span></span> <span data-ttu-id="f1b83-114">Die einfachste Möglichkeit besteht in der Verwendung des Remotedesktop-/Terminaldienste-Befehlszeilentools **logoff.exe**. (Weitere Informationen erhalten Sie, indem Sie an der PowerShell-Eingabeaufforderung `logoff /?` eingeben).</span><span class="sxs-lookup"><span data-stu-id="f1b83-114">The simplest way is to use the Remote Desktop/Terminal Services command-line tool, **logoff.exe** (For details, at the PowerShell prompt, type `logoff /?`).</span></span> <span data-ttu-id="f1b83-115">Zum Abmelden der aktuellen aktiven Sitzung geben Sie `logoff` ohne Argumente ein.</span><span class="sxs-lookup"><span data-stu-id="f1b83-115">To log off the current active session, type `logoff` with no arguments.</span></span>
+<span data-ttu-id="5a7de-113">Es sind mehrere verschiedene Verfahren verfügbar, um eine Sitzung auf dem lokalen System abzumelden.</span><span class="sxs-lookup"><span data-stu-id="5a7de-113">You can use several different techniques to log off of a session on the local system.</span></span> <span data-ttu-id="5a7de-114">Die einfachste Möglichkeit besteht in der Verwendung des Remotedesktop-/Terminaldienste-Befehlszeilentools **logoff.exe**. (Weitere Informationen erhalten Sie, indem Sie an der PowerShell-Eingabeaufforderung `logoff /?` eingeben).</span><span class="sxs-lookup"><span data-stu-id="5a7de-114">The simplest way is to use the Remote Desktop/Terminal Services command-line tool, **logoff.exe** (For details, at the PowerShell prompt, type `logoff /?`).</span></span> <span data-ttu-id="5a7de-115">Zum Abmelden der aktuellen aktiven Sitzung geben Sie `logoff` ohne Argumente ein.</span><span class="sxs-lookup"><span data-stu-id="5a7de-115">To log off the current active session, type `logoff` with no arguments.</span></span>
 
-<span data-ttu-id="f1b83-116">Sie können auch das Tool **shutdown.exe** mit der zugehörigen Abmeldeoption verwenden:</span><span class="sxs-lookup"><span data-stu-id="f1b83-116">You can also use the **shutdown.exe** tool with its logoff option:</span></span>
+<span data-ttu-id="5a7de-116">Sie können auch das Tool **shutdown.exe** mit der zugehörigen Abmeldeoption verwenden:</span><span class="sxs-lookup"><span data-stu-id="5a7de-116">You can also use the **shutdown.exe** tool with its logoff option:</span></span>
 
 ```powershell
 shutdown.exe -l
 ```
 
-<span data-ttu-id="f1b83-117">Eine weitere Möglichkeit ist die Verwendung von WMI.</span><span class="sxs-lookup"><span data-stu-id="f1b83-117">Another option is to use WMI.</span></span> <span data-ttu-id="f1b83-118">Die Klasse **Win32_OperatingSystem** umfasst eine **Shutdown**-Methode.</span><span class="sxs-lookup"><span data-stu-id="f1b83-118">The **Win32_OperatingSystem** class has a **Shutdown** method.</span></span>
-<span data-ttu-id="f1b83-119">Durch Aufrufen der Methode mit dem 0-Flag wird die Abmeldung initiiert:</span><span class="sxs-lookup"><span data-stu-id="f1b83-119">Invoking the method with the 0 flag initiates logoff:</span></span>
+<span data-ttu-id="5a7de-117">Eine weitere Möglichkeit ist die Verwendung von WMI.</span><span class="sxs-lookup"><span data-stu-id="5a7de-117">Another option is to use WMI.</span></span> <span data-ttu-id="5a7de-118">Die Klasse **Win32_OperatingSystem** umfasst eine **Shutdown**-Methode.</span><span class="sxs-lookup"><span data-stu-id="5a7de-118">The **Win32_OperatingSystem** class has a **Shutdown** method.</span></span>
+<span data-ttu-id="5a7de-119">Durch Aufrufen der Methode mit dem 0-Flag wird die Abmeldung initiiert:</span><span class="sxs-lookup"><span data-stu-id="5a7de-119">Invoking the method with the 0 flag initiates logoff:</span></span>
 
-<span data-ttu-id="f1b83-120">Weitere Informationen zur **Shutdown**-Methode finden Sie unter [Shutdown-Methode der Win32_OperatingSystem-Klasse](/windows/win32/cimwin32prov/shutdown-method-in-class-win32-operatingsystem).</span><span class="sxs-lookup"><span data-stu-id="f1b83-120">For more information about the **Shutdown** method, see [Shutdown method of the Win32_OperatingSystem class](/windows/win32/cimwin32prov/shutdown-method-in-class-win32-operatingsystem)</span></span>
+<span data-ttu-id="5a7de-120">Weitere Informationen zur **Shutdown**-Methode finden Sie unter [Shutdown-Methode der Win32_OperatingSystem-Klasse](/windows/win32/cimwin32prov/shutdown-method-in-class-win32-operatingsystem).</span><span class="sxs-lookup"><span data-stu-id="5a7de-120">For more information about the **Shutdown** method, see [Shutdown method of the Win32_OperatingSystem class](/windows/win32/cimwin32prov/shutdown-method-in-class-win32-operatingsystem)</span></span>
 
 ```powershell
 Get-CimInstance -Classname Win32_OperatingSystem | Invoke-CimMethod -MethodName Shutdown
 ```
 
-## <a name="shutting-down-or-restarting-a-computer"></a><span data-ttu-id="f1b83-121">Herunterfahren oder Neustarten eines Computers</span><span class="sxs-lookup"><span data-stu-id="f1b83-121">Shutting Down or Restarting a Computer</span></span>
+## <a name="shutting-down-or-restarting-a-computer"></a><span data-ttu-id="5a7de-121">Herunterfahren oder Neustarten eines Computers</span><span class="sxs-lookup"><span data-stu-id="5a7de-121">Shutting Down or Restarting a Computer</span></span>
 
-<span data-ttu-id="f1b83-122">Das Herunterfahren und Neustarten von Computern wird im Allgemeinen vom gleichen Tasktyp ausgeführt.</span><span class="sxs-lookup"><span data-stu-id="f1b83-122">Shutting down and restarting computers are generally the same types of task.</span></span> <span data-ttu-id="f1b83-123">Mit Tools, die einen Computer herunterfahren, kann normalerweise auch ein Neustart ausgeführt werden, und umgekehrt.</span><span class="sxs-lookup"><span data-stu-id="f1b83-123">Tools that shut down a computer will generally restart it as well—and vice versa.</span></span> <span data-ttu-id="f1b83-124">Es gibt zwei einfache Optionen für den Neustart eines Computers über PowerShell.</span><span class="sxs-lookup"><span data-stu-id="f1b83-124">There are two straightforward options for restarting a computer from PowerShell.</span></span> <span data-ttu-id="f1b83-125">Verwenden Sie entweder **tsshutdn.exe** oder **shutdown.exe** mit den geeigneten Argumenten.</span><span class="sxs-lookup"><span data-stu-id="f1b83-125">Use either **tsshutdn.exe** or **shutdown.exe** with appropriate arguments.</span></span> <span data-ttu-id="f1b83-126">Ausführliche Informationen zur Verwendung erhalten Sie über `tsshutdn.exe /?` oder `shutdown.exe /?`.</span><span class="sxs-lookup"><span data-stu-id="f1b83-126">You can get detailed usage information from `tsshutdn.exe /?` or `shutdown.exe /?`.</span></span>
+<span data-ttu-id="5a7de-122">Das Herunterfahren und Neustarten von Computern wird im Allgemeinen vom gleichen Tasktyp ausgeführt.</span><span class="sxs-lookup"><span data-stu-id="5a7de-122">Shutting down and restarting computers are generally the same types of task.</span></span> <span data-ttu-id="5a7de-123">Mit Tools, die einen Computer herunterfahren, kann normalerweise auch ein Neustart ausgeführt werden, und umgekehrt.</span><span class="sxs-lookup"><span data-stu-id="5a7de-123">Tools that shut down a computer will generally restart it as well—and vice versa.</span></span> <span data-ttu-id="5a7de-124">Es gibt zwei einfache Optionen für den Neustart eines Computers über PowerShell.</span><span class="sxs-lookup"><span data-stu-id="5a7de-124">There are two straightforward options for restarting a computer from PowerShell.</span></span> <span data-ttu-id="5a7de-125">Verwenden Sie entweder **tsshutdn.exe** oder **shutdown.exe** mit den geeigneten Argumenten.</span><span class="sxs-lookup"><span data-stu-id="5a7de-125">Use either **tsshutdn.exe** or **shutdown.exe** with appropriate arguments.</span></span> <span data-ttu-id="5a7de-126">Ausführliche Informationen zur Verwendung erhalten Sie über `tsshutdn.exe /?` oder `shutdown.exe /?`.</span><span class="sxs-lookup"><span data-stu-id="5a7de-126">You can get detailed usage information from `tsshutdn.exe /?` or `shutdown.exe /?`.</span></span>
 
-<span data-ttu-id="f1b83-127">Sie können Ihren Computer auch direkt über PowerShell herunterfahren und neu starten.</span><span class="sxs-lookup"><span data-stu-id="f1b83-127">You can also perform shutdown and restart operations directly from PowerShell as well.</span></span>
+<span data-ttu-id="5a7de-127">Sie können Ihren Computer auch direkt über PowerShell herunterfahren und neu starten.</span><span class="sxs-lookup"><span data-stu-id="5a7de-127">You can also perform shutdown and restart operations directly from PowerShell as well.</span></span>
 
-<span data-ttu-id="f1b83-128">Verwenden Sie den Befehl „Stop-Computer“, um den Computer herunterzufahren.</span><span class="sxs-lookup"><span data-stu-id="f1b83-128">To shut down the computer, use the Stop-Computer command</span></span>
+<span data-ttu-id="5a7de-128">Verwenden Sie den Befehl „Stop-Computer“, um den Computer herunterzufahren.</span><span class="sxs-lookup"><span data-stu-id="5a7de-128">To shut down the computer, use the Stop-Computer command</span></span>
 
 ```powershell
 Stop-Computer
 ```
 
-<span data-ttu-id="f1b83-129">Verwenden Sie den Befehl „Restart-Computer“, um das Betriebssystem neu zu starten.</span><span class="sxs-lookup"><span data-stu-id="f1b83-129">To restart the operating system, use the Restart-Computer command</span></span>
+<span data-ttu-id="5a7de-129">Verwenden Sie den Befehl „Restart-Computer“, um das Betriebssystem neu zu starten.</span><span class="sxs-lookup"><span data-stu-id="5a7de-129">To restart the operating system, use the Restart-Computer command</span></span>
 
 ```powershell
 Restart-Computer
 ```
 
-<span data-ttu-id="f1b83-130">Um einen sofortigen Neustart des Computers zu erzwingen, verwenden Sie den -Force-Parameter.</span><span class="sxs-lookup"><span data-stu-id="f1b83-130">To force an immediate restart of the computer, use the -Force parameter.</span></span>
+<span data-ttu-id="5a7de-130">Um einen sofortigen Neustart des Computers zu erzwingen, verwenden Sie den -Force-Parameter.</span><span class="sxs-lookup"><span data-stu-id="5a7de-130">To force an immediate restart of the computer, use the -Force parameter.</span></span>
 
 ```powershell
 Restart-Computer -Force
