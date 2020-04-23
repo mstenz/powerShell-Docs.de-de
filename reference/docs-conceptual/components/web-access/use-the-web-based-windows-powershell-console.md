@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: Verwendung der webbasierten Windows PowerShell-Konsole
-ms.openlocfilehash: 29aa123049884004dd4e1a8f042783538d80abc6
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.openlocfilehash: 9a5d6d825dc82710466768bc612b012dd80937da
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80500867"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "80978660"
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>Verwendung der webbasierten Windows PowerShell-Konsole
 
@@ -211,9 +211,8 @@ ALT+F7          | Befehlsverlauf löschen
 
     Die Höhe der Konsole lässt sich auf eine ähnliche Weise ändern.
 
-    Weitere Beispiele zur Anpassung der Konsolenansicht stehen im [Windows PowerShell-Teamblog](h https://devblogs.microsoft.com/powershell) zur Verfügung.
+    Weitere Beispiele zur Anpassung der Konsolenansicht stehen im [Windows PowerShell-Teamblog](https://devblogs.microsoft.com/powershell) zur Verfügung.
 
 ## <a name="see-also"></a>Weitere Informationen
 
 - [Hey, Scripting Guy!](https://devblogs.microsoft.com/scripting/)
-- [PowerShell-Teamblog](https://devblogs.microsoft.com/powershell/)

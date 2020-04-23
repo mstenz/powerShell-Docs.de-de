@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Neuerungen in Windows PowerShell 5.0
-ms.openlocfilehash: 8c1858a63adad467e389a683708bccba2a6768c7
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.openlocfilehash: dba016546fe034684f6b7afe43ec2e7a1b793d96
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80500467"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "80978201"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Neuerungen in Windows PowerShell 5.0
 
@@ -460,7 +460,7 @@ Genau wie Task Scheduler-Aufgaben können Sie geplante Aufträge für einen einm
 
 Außerdem enthalten geplante Aufträge einen angepassten Cmdlets-Satz für die Verwaltung. Mit den Cmdlets können Sie geplante Aufträge erstellen, bearbeiten, verwalten, deaktivieren und geplante Aufträge erneut aktivieren, geplante Auftragsauslöser erstellen und geplante Auftragsoptionen festlegen.
 
-Weitere Informationen zu geplanten Aufträgen finden Sie unter [about_Scheduled_Jobs](/powershell/module/microsoft.powershell.core/about/about_Scheduled_Jobs).
+Weitere Informationen zu geplanten Aufträgen finden Sie unter [about_Scheduled_Jobs](/powershell/module/psscheduledjob/about/about_scheduled_jobs?view=powershell-5.1).
 
 ### <a name="windows-powershell-language-enhancements"></a>Verbesserungen der Windows PowerShell-Sprache
 
@@ -542,7 +542,7 @@ Mit Windows PowerShell 3.0 erhalten Sie die erweiterte Feature-Unterstützung f�
 5. Der neue **DefaultCommandPrefix**-Schlüssel in Modulemanifesten, der Namenskonflikte vermeidet, ohne den Modulcode zu ändern.
 6. Verbesserte Modulvoraussetzungen, einschließlich voll qualifizierter, erforderlicher Module mit Version und GUID sowie dem automatischen Importieren erforderlicher Module
 7. Ruhigerer, optimierter Ablauf des Cmdlets `New-ModuleManifest`.
-8. Neuer **Module**-Parameter für #Requires
+8. Neuer **Module**-Parameter für „#Requires“
 9. Verbessertes Cmdlet `Import-Module` mit den Parametern **MinimumVersion** und **RequiredVersion**.
 
 ### <a name="simplified-command-discovery"></a>Vereinfachte Ermittlung von Befehlen

@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,setup
 title: DSC-Verbesserungen in WMF 5.1
-ms.openlocfilehash: 99434d14100de54d2d4c89c5888741ab2f1c512a
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.openlocfilehash: 78c15f453977384ba437b0bd69cd620eb1a29fbd
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78277606"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "80978286"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>Verbesserungen an DSC (Desired State Configuration) in WMF 5.1
 
@@ -147,7 +147,7 @@ Weitere Informationen finden Sie in den nachfolgenden Abbildungen:
 
 ## <a name="using-psdscrunascredential-with-dsc-composite-resources"></a>Verwenden von PsDscRunAsCredential mit zusammengesetzten DSC-Ressourcen
 
-Ab jetzt können Sie auch[PsDscRunAsCredential](/powershell/scripting/dsc/configurations/runAsUser) mit [zusammengesetzten](/powershell/scripting/dsc/authoringresourcecomposite) DSC-Ressourcen verwenden.
+Ab jetzt können Sie auch[PsDscRunAsCredential](/powershell/scripting/dsc/configurations/runAsUser) mit [zusammengesetzten](/powershell/scripting/dsc/resources/authoringresourcecomposite) DSC-Ressourcen verwenden.
 
 Sie können jetzt für **PsDscRunAsCredential** einen Wert angeben, wenn sie zusammengesetzte Ressourcen innerhalb von Konfigurationen verwenden. Wenn angegeben, werden alle Ressourcen in einer zusammengesetzten Ressource als RunAs-Benutzer ausgeführt. Wenn eine zusammengesetzte Ressource eine andere zusammengesetzte Ressource aufruft, werden deren gesamte Ressourcen ebenfalls als RunAs-Benutzer ausgeführt. RunAs-Anmeldeinformationen werden auf alle Hierarchieebenen der zusammengesetzten Ressource verteilt. Wenn eine Ressource in einer zusammengesetzten Ressource einen eigenen Wert für **PsDscRunAsCredential** angibt, wird während der Kompilierung der Konfiguration ein Fehler beim Zusammenführen zurückgegeben.
 

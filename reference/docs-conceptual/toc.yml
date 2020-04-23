@@ -442,7 +442,7 @@
               href: dsc/resources/singleInstance.md
             - name: Prüfliste für die Ressourcenerstellung
               href: dsc/resources/resourceAuthoringChecklist.md
-        - name: Anleitungen
+        - name: Gewusst-wie-Anleitungen
           items:
             - name: Schreiben von MOF-basierten Ressourcen in PowerShell
               href: dsc/resources/authoringResourceMOF.md
@@ -456,7 +456,7 @@
               href: dsc/resources/authoringResourceMofDesigner.md
     - name: Verwalten von Knoten
       items:
-        - name: Anleitungen
+        - name: Gewusst-wie-Anleitungen
           items:
             - name: 'Anwenden, Abrufen und Testen von Konfigurationen auf einen Knoten'
               href: dsc/managing-nodes/apply-get-test.md
@@ -472,7 +472,7 @@
           items:
             - name: Push/Pull-Modell
               href: dsc/pull-server/enactingConfigurations.md
-        - name: Anleitungen
+        - name: Gewusst-wie-Anleitungen
           items:
             - name: Einrichten eines Pullservers
               items:
@@ -508,7 +508,7 @@
                   href: dsc/pull-server/secureServer.md
                 - name: Schützen von MOF-Dateien mit Zertifikaten
                   href: dsc/pull-server/secureMOF.md
-    - name: Tutorials
+    - name: Lernprogramme
       items:
         - name: 'Erstellen einer CI/CD-Pipeline mit DSC, Pester und Visual Studio Team Services'
           href: dsc/tutorials/dscCiCd.md
@@ -791,7 +791,7 @@
               items:
                 - name: Aktualisierbare Hilfeübersicht
                   href: developer/module/updatable-help-overview.md
-                - name: 'Aktualisierbare Hilfeerstellung: Ausführliche Anleitung'
+                - name: 'Aktualisierbare Hilfeerstellung: Schrittanleitung'
                   href: developer/module/updatable-help-authoring-step-by-step.md
                 - name: Funktionsweise der aktualisierbaren Hilfe
                   href: developer/module/how-updatable-help-works.md

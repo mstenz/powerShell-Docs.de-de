@@ -3,13 +3,13 @@ title: Neuerungen in der PowerShell-Dokumentation
 description: Liste der Änderungen an der PowerShell-Dokumentation
 ms.date: 03/31/2020
 ms.openlocfilehash: b7fee886b1c5584dc9d75b86ca79980579040db7
-ms.sourcegitcommit: ef1a3079809ec2e3c58e785c84de2df968145658
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80537067"
 ---
-# <a name="whats-new-in-powershell-docs"></a>Neuerungen in der PowerShell-Dokumentation
+# <a name="whats-new-in-powershell-docs"></a>Neuigkeiten in der PowerShell-Dokumentation
 
 In diesem Artikel sind einige der wichtigsten Änderungen an den Dokumenten im vergangenen Monat aufgeführt. Außerdem werden die Beiträge der Community gewürdigt.
 
