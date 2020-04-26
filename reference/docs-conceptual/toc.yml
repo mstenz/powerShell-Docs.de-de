@@ -372,9 +372,9 @@
         - name: Erste Schritte mit DSC auf Nano
           href: dsc/getting-started/nanoDSC.md
         - name: Erste Schritte mit DSC in Azure Automation
-          href: dsc/getting-started/azureDSC.md
-        - name: Erste Schritte mit DSC auf Azure Virtual Machines
-          href: dsc/getting-started/azureDSCexthistory.md
+          href: /azure/automation/automation-dsc-getting-started
+        - name: Erste Schritte mit der Guest Configuration von Azure Policy
+          href: /azure/governance/policy/concepts/guest-configuration
     - name: Schnellstarts
       expanded: true
       items:
@@ -442,7 +442,7 @@
               href: dsc/resources/singleInstance.md
             - name: Prüfliste für die Ressourcenerstellung
               href: dsc/resources/resourceAuthoringChecklist.md
-        - name: Gewusst-wie-Anleitungen
+        - name: Anleitungen
           items:
             - name: Schreiben von MOF-basierten Ressourcen in PowerShell
               href: dsc/resources/authoringResourceMOF.md
@@ -456,7 +456,7 @@
               href: dsc/resources/authoringResourceMofDesigner.md
     - name: Verwalten von Knoten
       items:
-        - name: Gewusst-wie-Anleitungen
+        - name: Anleitungen
           items:
             - name: 'Anwenden, Abrufen und Testen von Konfigurationen auf einen Knoten'
               href: dsc/managing-nodes/apply-get-test.md
@@ -472,7 +472,7 @@
           items:
             - name: Push/Pull-Modell
               href: dsc/pull-server/enactingConfigurations.md
-        - name: Gewusst-wie-Anleitungen
+        - name: Anleitungen
           items:
             - name: Einrichten eines Pullservers
               items:
@@ -508,7 +508,7 @@
                   href: dsc/pull-server/secureServer.md
                 - name: Schützen von MOF-Dateien mit Zertifikaten
                   href: dsc/pull-server/secureMOF.md
-    - name: Lernprogramme
+    - name: Tutorials
       items:
         - name: 'Erstellen einer CI/CD-Pipeline mit DSC, Pester und Visual Studio Team Services'
           href: dsc/tutorials/dscCiCd.md
@@ -791,7 +791,7 @@
               items:
                 - name: Aktualisierbare Hilfeübersicht
                   href: developer/module/updatable-help-overview.md
-                - name: 'Aktualisierbare Hilfeerstellung: Schrittanleitung'
+                - name: 'Aktualisierbare Hilfeerstellung: Ausführliche Anleitung'
                   href: developer/module/updatable-help-authoring-step-by-step.md
                 - name: Funktionsweise der aktualisierbaren Hilfe
                   href: developer/module/how-updatable-help-works.md
