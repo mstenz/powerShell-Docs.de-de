@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Erste Schritte mit dem PowerShell-Katalog
-ms.openlocfilehash: fd4185234136dd9f3e628df50954b6ebff637639
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.openlocfilehash: bae0af144e6f520142e7eaea3dd0e1039976dae4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76995887"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81219692"
 ---
 # <a name="getting-started-with-the-powershell-gallery"></a>Erste Schritte mit dem PowerShell-Katalog
 
@@ -85,6 +85,16 @@ Analog dazu versucht [Update-Script][], alle durch Ausführung von [Install-Scri
 Führen Sie das Cmdlet [Get-InstalledModule][] aus, um herauszufinden, welche Module Sie aus dem PowerShell-Katalog installiert haben. Dieser Befehl listet alle Module auf, die direkt aus dem PowerShell-Katalog auf Ihrem System installiert wurden.
 
 Um herauszufinden, welche Skripts Sie aus dem PowerShell-Katalog installiert haben, führen Sie das Cmdlet [Get-InstalledScript][] aus. Dieser Befehl listet alle Skripts auf, die direkt aus dem PowerShell-Katalog auf Ihrem System installiert wurden.
+
+## <a name="network-access-to-the-powershell-gallery"></a>Netzwerkzugriff auf den PowerShell-Katalog
+
+Der PowerShell-Katalog verwendet die folgenden Hostnamen.
+
+- `psg-prod-eastus.azureedge.net`: der CDN-Hostname
+- `devopsgallerystorage.blob.core.windows.net`: der Hostname des Speicherkontos
+- `*.powershellgallery.com`: die Website
+
+Diese Hostnamen sollten zu Zulassungslisten hinzugefügt werden, die den Zugriff über Ihr Netzwerk steuern.
 
 [Find-DscResource]: /powershell/module/powershellget/Find-DscResource
 [Find-Module]: /powershell/module/powershellget/Find-Module

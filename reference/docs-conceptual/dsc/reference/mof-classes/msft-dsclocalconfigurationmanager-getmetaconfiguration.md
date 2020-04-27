@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
-keywords: dsc,powershell,configuration,setup
+keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: GetMetaConfiguration-Methode
 ms.openlocfilehash: bd280cb8ebd7b0522e4e01cbd24bd9bdcfddf4c2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71953407"
 ---
 # <a name="getmetaconfiguration-method"></a>GetMetaConfiguration-Methode
@@ -29,16 +29,16 @@ uint32 GetMetaConfiguration(
 
 Gibt bei Erfolg null zurück, andernfalls einen Fehlercode.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Dies ist eine statische Methode.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **MOF:** DscCore.mof
 
 **Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [**MSFT_DSCLocalConfigurationManager-Klasse**](msft-dsclocalconfigurationmanager.md)

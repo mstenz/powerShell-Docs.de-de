@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
-keywords: dsc,powershell,configuration,setup
+keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: Erstellen einer Pipeline für Continuous Integration und Continuous Deplyoment mit DSC
 ms.openlocfilehash: 2d049cd640f0df9b018a88ad106e59dbeed7bcee
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954237"
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>Erstellen einer Pipeline für Continuous Integration und Continuous Deplyoment mit DSC
@@ -37,7 +37,7 @@ Dies ist der Computer, auf dem Sie die gesamte Arbeitseinrichtung vornehmen und 
 
 Der Clientcomputer muss ein Windows-Computer sein, auf dem folgende Komponenten installiert sind:
 
-- [Git](https://git-scm.com/)
+- [Git-Client](https://git-scm.com/)
 - Ein aus https://github.com/PowerShell/Demo_CI geklontes lokales Git-Repository
 - Ein Text-Editor, z.B. [Visual Studio Code](https://code.visualstudio.com/)
 
@@ -344,7 +344,7 @@ Mit diesem Buildschritt wird die Datei `initiate.ps1` ausgeführt, mit der das p
 1. Legen Sie **Testergebnisformat** auf `NUnit` fest.
 1. Legen Sie **Testergebnisdateien** auf `InfraDNS/Tests/Results/*.xml` fest.
 1. Legen Sie **Testlauftitel** auf `Unit` fest.
-1. Stellen Sie sicher, dass sowohl **Steuerungsoptionen** **Aktiviert** als auch **Immer ausführen** ausgewählt sind.
+1. Stellen Sie sicher, dass sowohl die **Steuerungsoptionen** **Aktiviert** sind, als auch **Immer ausführen** ausgewählt ist.
 
 Mit diesem Buildschritt werden die Komponententests im Pester-Skript ausgeführt, das wir uns weiter oben angesehen haben. Die Ergebnisse werden im Ordner `InfraDNS/Tests/Results/*.xml` gespeichert.
 
@@ -370,7 +370,7 @@ Mit diesem Schritt werden der Build und die Testskripts in das Stagingverzeichni
 1. Legen Sie **Artefaktyp** auf `Server` fest.
 1. Wählen Sie in den **Steuerungsoptionen** die Einstellung `Enabled` aus.
 
-## <a name="enable-continuous-integration"></a>Aktivieren der Continuous Integration
+## <a name="enable-continuous-integration"></a>Aktivieren von Continuous Integration
 
 Jetzt richten wir einen Trigger ein, mit dem das Projekt immer dann erstellt wird, wenn eine Änderung in den `ci-cd-example`-Branch des Git-Repositorys eingecheckt wird.
 

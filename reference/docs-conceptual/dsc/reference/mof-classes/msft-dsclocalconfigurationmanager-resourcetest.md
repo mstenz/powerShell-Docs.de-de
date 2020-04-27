@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
-keywords: dsc,powershell,configuration,setup
+keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: ResourceTest-Methode
 ms.openlocfilehash: ff06fd645a94055e79aa0f8d20f2f06e16483720
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954947"
 ---
 # <a name="resourcetest-method"></a>ResourceTest-Methode
@@ -38,16 +38,16 @@ uint32 ResourceTest(
 
 Gibt bei Erfolg null zurück, andernfalls einen Fehlercode.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Dies ist eine statische Methode.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **MOF:** DscCore.mof
 
 **Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [**MSFT_DSCLocalConfigurationManager-Klasse**](msft-dsclocalconfigurationmanager.md)

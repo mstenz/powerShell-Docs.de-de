@@ -2,12 +2,12 @@
 title: Migrieren von Windows PowerShell 5.1 zu PowerShell 7
 description: Informationen zum Update von PowerShell 5.1 auf PowerShell 7 für Ihre Windows-Plattformen.
 ms.date: 03/25/2020
-ms.openlocfilehash: e3881b1758f50119444969ad39541aec694cebe5
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.openlocfilehash: 8f19297bdb4825f3bbd50544dc5737997e3c83e3
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80500502"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81440491"
 ---
 # <a name="migrating-from-windows-powershell-51-to-powershell-7"></a>Migrieren von Windows PowerShell 5.1 zu PowerShell 7
 
@@ -176,7 +176,7 @@ Um eine Remotesitzung zu erstellen, geben Sie den Zielcomputer mit dem Parameter
 Enter-PSSession -HostName <Computer> -UserName <Username>
 ```
 
-Wenn Sie den Parameter **HostName** verwenden, geben Sie alternativ die Informationen zum Benutzernamen gefolgt vom At-Zeichen (@) und Computernamen an.
+Wenn Sie den Parameter **HostName** verwenden, geben Sie alternativ die Informationen zum Benutzernamen gefolgt vom At-Zeichen (`@`) und Computernamen an.
 
 ```powershell
 Enter-PSSession -HostName <Username>@<Computer>
@@ -187,7 +187,7 @@ Weitere Informationen finden Sie unter [OpenSSH-Schlüsselverwaltung](/windows-s
 
 ### <a name="group-policy-supported"></a>Unterstützung von Gruppenrichtlinien
 
-PowerShell enthält Gruppenrichtlinieneinstellungen, die Ihnen helfen, einheitliche Optionswerte für Server in einer Unternehmensumgebung festzulegen. Dazu gehören folgende Einstellungen:
+PowerShell enthält Gruppenrichtlinieneinstellungen, die Ihnen helfen, einheitliche Optionswerte für Server in einer Unternehmensumgebung festzulegen. Dies umfasst Folgendes:
 
 - Konfiguration der Konsolensitzung: Legt einen Konfigurationsendpunkt fest, an dem PowerShell ausgeführt wird.
 - Modulprotokollierung aktivieren: Legt die Eigenschaft LogPipelineExecutionDetails von Modulen fest.
@@ -240,9 +240,9 @@ Die aktualisierte PowerShell-Erweiterung umfasst Folgendes:
 
 Um den Umstieg auf Visual Studio Code zu erleichtern, verwenden Sie in der **Befehlspalette** die Funktion  **ISE-Modus aktivieren**. Über diese Option wird auf ein Layout im ISE-Stil umgestellt. Das Layout im ISE-Stil bietet Ihnen alle neuen Features und Funktionen von PowerShell in einer vertrauten Benutzerumgebung.
 
-Um auf das neue ISE-Layout umzustellen, drücken Sie <kbd>STRG</kbd>+<kbd>UMSCHALT</kbd>+<kbd>P</kbd>, um die **Befehlspalette** zu öffnen. Geben Sie `PowerShell` ein, und wählen Sie **PowerShell: ISE-Modus aktivieren** aus.
+Um auf das neue ISE-Layout umzustellen, drücken Sie <kbd>STRG</kbd>+<kbd>UMSCHALT</kbd>+<kbd>P</kbd>, um die **Befehlspalette** zu öffnen. Geben Sie `PowerShell` ein, und wählen Sie folgende Option aus: **PowerShell: ISE-Modus aktivieren**.
 
-Um das Layout auf das Originallayout festzulegen, öffnen Sie die **Befehlspalette**, und wählen Sie **PowerShell: ISE-Modus deaktivieren (Standard wiederherstellen)** aus.
+Um das Layout auf das Originallayout festzulegen, öffnen Sie die **Befehlspalette**, und wählen Sie folgende Option aus: **PowerShell: ISE-Modus deaktivieren (Standard wiederherstellen)** .
 
 Ausführliche Informationen zum Anpassen des Layouts von Visual Studio Code an ISE finden Sie unter [Replizieren der ISE-Benutzeroberfläche in Visual Studio Code](/powershell/scripting/components/vscode/how-to-replicate-the-ise-experience-in-vscode).
 

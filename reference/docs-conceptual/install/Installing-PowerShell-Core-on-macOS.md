@@ -2,12 +2,12 @@
 title: Installieren von PowerShell unter macOS
 description: Informationen zur Installation von PowerShell unter macOS
 ms.date: 12/12/2018
-ms.openlocfilehash: 3a5e71d0f69d0c39f9b7f3fa667863d7ec0a31dd
-ms.sourcegitcommit: bf71c8c5e2a4fc7d5c3a67a537db1285089d03a7
+ms.openlocfilehash: 4640cef3f99aefe36d69d4eb7cb4859bde1c0347
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80395010"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "80977521"
 ---
 # <a name="installing-powershell-on-macos"></a>Installieren von PowerShell unter macOS
 
@@ -146,13 +146,7 @@ xcode-select --install
 
 ### <a name="install-openssl"></a>Installieren von OpenSSL
 
-OpenSSL ist für PowerShell-Remotingfunktionen und CIM-Vorgänge erforderlich. Die Installation kann über MacPorts oder Brew erfolgen.
-
-#### <a name="install-openssl-via-brew"></a>Installieren von OpenSSL über Brew
-
-Weitere Informationen zu Brew finden Sie unter [Info zu Brew](#about-brew).
-
-Führen Sie `brew install openssl` aus, um OpenSSL zu installieren.
+OpenSSL ist für PowerShell-Remotingfunktionen und CIM-Vorgänge erforderlich. Die Installation kann über MacPorts erfolgen.
 
 #### <a name="install-openssl-via-macports"></a>Installieren von OpenSSL über MacPorts
 
@@ -161,12 +155,12 @@ Führen Sie `brew install openssl` aus, um OpenSSL zu installieren.
    Wenn Sie Anleitungen dazu benötigen, lesen Sie das [Installationshandbuch](https://guide.macports.org/chunked/installing.macports.html).
 1. Aktualisieren Sie MacPorts durch Ausführen von `sudo port selfupdate`.
 1. Führen Sie eine Upgrade von MacPorts-Paketen durch Ausführen von `sudo port upgrade outdated` durch.
-1. Installieren Sie OpenSSL durch Ausführen von `sudo port install openssl`.
+1. Installieren Sie OpenSSL durch Ausführen von `sudo port install openssl10`.
 1. Verknüpfen Sie die Bibliotheken, um sie PowerShell zur Verfügung zu stellen:
 
 ```sh
 sudo mkdir -p /usr/local/opt/openssl
-sudo ln -s /opt/local/lib /usr/local/opt/openssl/lib
+sudo ln -s /opt/local/lib/openssl-1.0 /usr/local/opt/openssl/lib
 ```
 
 ## <a name="uninstalling-powershell"></a>Deinstallieren von PowerShell

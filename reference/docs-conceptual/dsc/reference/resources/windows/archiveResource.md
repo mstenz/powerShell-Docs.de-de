@@ -1,12 +1,12 @@
 ---
 ms.date: 09/20/2019
-keywords: dsc,powershell,configuration,setup
+keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: DSC-Ressourcen „Archive“
 ms.openlocfilehash: ddabe1a623783fe213b8059f47851184d5253fc5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954767"
 ---
 # <a name="dsc-archive-resource"></a>DSC-Ressourcen „Archive“
@@ -33,17 +33,17 @@ Archive [string] #ResourceName
 
 ## <a name="properties"></a>Eigenschaften
 
-|Eigenschaft |Beschreibung |
+|Eigenschaft |BESCHREIBUNG |
 |---|---|
-|Ziel |Gibt den Speicherort an, an dem der Archivinhalt einer Datei extrahiert werden soll. |
-|Pfad |Gibt den Quellpfad der Archivdatei an. |
-|Prüfsumme |Definiert den zu verwendenden Typ, wenn bestimmt wird, ob zwei Dateien identisch sind. Wenn **Checksum** nicht angegeben ist, wird nur der Datei- oder Verzeichnisnamen für den Vergleich verwendet. Gültige Werte: **SHA-1**, **SHA-256**, **SHA-512**, **createdDate**, **modifiedDate**. Wenn Sie **Checksum** ohne **Validate** angeben, schlägt die Konfiguration fehl. |
+|Destination |Gibt den Speicherort an, an dem der Archivinhalt einer Datei extrahiert werden soll. |
+|`Path` |Gibt den Quellpfad der Archivdatei an. |
+|Checksum |Definiert den zu verwendenden Typ, wenn bestimmt wird, ob zwei Dateien identisch sind. Wenn **Checksum** nicht angegeben ist, wird nur der Datei- oder Verzeichnisnamen für den Vergleich verwendet. Gültige Werte: **SHA-1**, **SHA-256**, **SHA-512**, **createdDate**, **modifiedDate**. Wenn Sie **Checksum** ohne **Validate** angeben, schlägt die Konfiguration fehl. |
 |Force |Bestimmte Dateioperationen (z. B. das Überschreiben einer Datei oder Löschen eines Verzeichnisses, das nicht leer ist), führen zu einem Fehler. Bei Verwenden der **Force**-Eigenschaft werden solche Fehler überschrieben. Der Standardwert ist **False**. |
 |Überprüfen| Verwendet die Eigenschaft **Checksum**, um zu bestimmen, ob das Archiv der Signatur entspricht. Wenn Sie **Checksum** ohne **Validate** angeben, schlägt die Konfiguration fehl. Wenn Sie **Validate** ohne **Checksum** angeben, wird standardmäßig eine _SHA-256_-**Prüfsumme** verwendet. |
 
 ## <a name="common-properties"></a>Allgemeine Eigenschaften
 
-|Eigenschaft |Beschreibung |
+|Eigenschaft |BESCHREIBUNG |
 |---|---|
 |DependsOn |Gibt an, dass die Konfiguration einer anderen Ressource ausgeführt werden muss, bevor diese Ressource konfiguriert wird. Wenn beispielsweise die ID des Skriptblocks mit der Ressourcenkonfiguration, den Sie zuerst ausführen möchten, „ResourceName“ und dessen Typ „ResourceType“ ist, lautet die Syntax für das Verwenden dieser Eigenschaft `DependsOn = "[ResourceType]ResourceName"`. |
 |Ensure |Bestimmt, ob geprüft wird, ob der Inhalt der Archivdatei am **Ziel** vorhanden ist. Legen Sie diese Eigenschaft auf **Present** fest, um sicherzustellen, dass der Inhalt vorhanden ist. Legen Sie sie auf **Absent** fest, um sicherzustellen, dass der Inhalt nicht vorhanden ist. Der Standardwert ist **Present**. |

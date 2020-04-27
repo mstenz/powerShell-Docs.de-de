@@ -3,12 +3,12 @@ title: Einstieg in die Mitwirkung an PowerShell-Dokumentation
 description: Dieser Artikel bietet einen Überblick über die ersten Schritte als Mitwirkender an der PowerShell-Dokumentation.
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: 95eb2c3157a99fcb6560914da8464022e1b64fad
-ms.sourcegitcommit: 18d832858a7b8ea094763afa753e0f48f01372e7
+ms.openlocfilehash: fdf29feb75abb6592205aaf1726c07a60ce3a924
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79060305"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81005515"
 ---
 # <a name="get-started-contributing-to-powershell-documentation"></a>Einstieg in die Mitwirkung an PowerShell-Dokumentation
 
@@ -43,7 +43,7 @@ Die [konzeptionelle Dokumentation][conceptual] ist nicht versionsbezogen organis
 
 ## <a name="using-git-branches"></a>Verwenden von Git-Branches
 
-Der Standardbranch für PowerShell-Docs ist `staging`. Änderungen, die in Bearbeitungsbranches vorgenommen werden, werden vor der Veröffentlichung in den Branch `staging` gemergt. Ca. einmal pro Woche wird der Branch `staging` in den Branch `live` gemergt. Der Branch `live` enthält den Inhalt, der auf docs.microsoft.com veröffentlicht wird. Änderungen dürfen auf keinen Fall im Branch `live` erfolgen.
+Der Standardbranch für PowerShell-Docs ist `staging`. Änderungen, die in Bearbeitungsbranches vorgenommen werden, werden vor der Veröffentlichung im Branch `staging` zusammengeführt. Ca. einmal pro Woche wird der Branch `staging` in den Branch `live` gemergt. Der Branch `live` enthält den Inhalt, der auf docs.microsoft.com veröffentlicht wird. Änderungen dürfen auf keinen Fall im Branch `live` erfolgen.
 
 Wenn Sie eine Dokumentationsänderung einreichen, die nur für eine unveröffentlichte Version von PowerShell gilt, prüfen Sie, ob es einen Releasebranch für diese Version gibt. Alle Änderungen, die sich auf eine bestimmte, künftige Version beziehen, sollten auf den Releasebranch abzielen. Releasebranches weisen das folgende Namensmuster auf: `release-<version>`.
 
@@ -55,7 +55,7 @@ Nehmen Sie die einzureichenden Änderungen im Anschluss an den Prozess im Abschn
 
 Für jedes neue Dokument, an dem Sie mitwirken möchten, muss ein GitHub-Issue erstellt werden. Prüfen Sie auf bestehende Issues, um sicherzustellen, dass es nicht zu Überschneidungen kommt. Issues, die jemandem zugewiesen werden, gelten als „in Bearbeitung“. Wenn Sie an einem Issue mitarbeiten möchten, wenden Sie sich an die für das Issue zuständige Person.
 
-Ähnlich wie beim [RFC-Prozess][rfc] für PowerShell stellt das Erstellen eines Issues vor dem Schreiben des Inhalts sicher, dass Sie nicht viel Zeit und Mühe für etwas aufwenden, das vom PowerShell-Docs-Team abgelehnt wird. Dies ermöglicht es uns auch, uns mit Ihnen über den Umfang des Inhalts zu beraten und darüber, wo er in die PowerShell-Dokumentation am besten passt.
+Ähnlich wie beim [RFC-Prozess][rfc] für PowerShell stellt das Erstellen eines Issues vor dem Schreiben des Inhalts sicher, dass Sie nicht viel Zeit und Mühe für etwas aufwenden, das vom PowerShell-Docs-Team abgelehnt wird. Dies ermöglicht es uns auch, uns mit Ihnen über den Umfang des Inhalts zu beraten und darüber, wo er am besten in die PowerShell-Dokumentation passt.
 
 ### <a name="updating-existing-articles"></a>Aktualisieren vorhandener Artikel
 

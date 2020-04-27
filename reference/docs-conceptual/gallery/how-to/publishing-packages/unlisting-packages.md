@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Entfernen von Paketen aus der Liste
-ms.openlocfilehash: fb66fd23dae1d4640056a764c31426f61f56d910
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b7404420db531ac5d97debd46e1b84c6fdd49d9a
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71328271"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "80978269"
 ---
 # <a name="unlisting-packages"></a>Entfernen von Paketen aus der Liste
 
@@ -16,17 +16,17 @@ ms.locfileid: "71328271"
 
 Der PowerShell-Katalog unterstützt nicht das endgültige Löschen von Paketen durch Benutzer.
 So können andere Benutzer Abhängigkeiten von Ihren Paketen festlegen, ohne darauf zu achten, ob diese in Zukunft verfügbar sind.
-Wenn das Pester-Modul z. B. vom Azure-Modul abhängt und das Azure-Modul aus dem Katalog entfernt wird, kann der Benutzer das Pester-Modul nicht mehr verwenden.
+Wenn das Pester-Modul z. B. vom Azure-Modul abhängig ist und das Azure-Modul aus dem Katalog entfernt wird, können Benutzer das Pester-Modul nicht mehr verwenden.
 
-Anstatt ein Paket zu löschen, können Sie es jedoch aus der Liste entfernen.
+Anstatt ein Paket zu entfernen, können Sie die Auflistung aufheben.
 
 **Was geschieht, wenn ein Paket aus der Liste im PowerShell-Katalog entfernt wird?**
 
-Wenn ein Paket, z.B. ein Modul oder ein Skript, aus der Liste im PowerShell-Katalog entfernt wird, wird es nicht länger auf der Registerkarte „Pakete“ angezeigt. Außerdem werden aus der Liste entfernte Pakete nicht mehr über die Suchleiste gefunden.
+Wenn ein Paket, z. B. ein Modul oder ein Skript, aus der Liste im PowerShell-Katalog entfernt wird, wird es nicht länger auf der Registerkarte „Pakete“ angezeigt. Außerdem werden aus der Liste entfernte Pakete nicht mehr über die Suchleiste gefunden.
 Pakete, die aus der Liste entfernt wurden, können nur bei Angabe des genauen Namens und der Version des Pakets herunterladen werden.
 Folglich treten infolge des Entfernens eines Pakets aus der Liste keine Probleme bei Modulen oder Skripts auf, die von diesem Paket abhängen.
 
-Um Ihr Paket aus der Liste zu entfernen, rufen Sie die Seite „Paketdetails“ auf, und wählen Sie „Modul löschen“ aus. Deaktivieren Sie das Kontrollkästchen „Aufgelistet“, und klicken Sie auf „Speichern“.
+Um Ihr Paket aus der Liste zu entfernen, rufen Sie die Seite „Paketdetails“ auf, und wählen Sie „Modul löschen“ aus. Deaktivieren Sie das Kontrollkästchen „Aufgelistet“, und wählen Sie „Speichern“ aus.
 
 **Wie kann ich ein Paket entfernen?**
 

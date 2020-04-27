@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
-keywords: dsc,powershell,configuration,setup
+keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: PerformRequiredConfigurationChecks-Methode
 ms.openlocfilehash: 909e3a48d08e0220ab0efc6a03bea7ead5d9843e
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71955007"
 ---
 # <a name="performrequiredconfigurationchecks-method"></a>PerformRequiredConfigurationChecks-Methode
@@ -25,7 +25,7 @@ uint32 PerformRequiredConfigurationChecks(
 
 *Flags* \[in\] Eine Bitmaske, die den Typ der auszuführenden Konsistenzprüfung angibt. Die folgenden Werte sind gültig und können mit einem bitweisen **ODER**-Vorgang kombiniert werden:
 
-|Wert |Beschreibung |
+|Wert |BESCHREIBUNG |
 |:--- |:---|
 |**1** | Eine normale Konsistenzprüfung. |
 |**2** | Die Fortsetzung einer Konsistenzprüfung nach einem Neustart. Dieser Wert sollte nicht mit anderen Werten kombiniert werden. |
@@ -36,16 +36,16 @@ uint32 PerformRequiredConfigurationChecks(
 
 Gibt bei Erfolg null zurück, andernfalls einen Fehlercode.
 
-## <a name="remarks"></a>Hinweise
+## <a name="remarks"></a>Bemerkungen
 
 Dies ist eine statische Methode.
 
-## <a name="requirements"></a>Anforderungen
+## <a name="requirements"></a>Requirements (Anforderungen)
 
 **MOF:** DscCore.mof
 
 **Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [**MSFT_DSCLocalConfigurationManager-Klasse**](msft-dsclocalconfigurationmanager.md)

@@ -3,12 +3,12 @@ title: Checkliste für die Bearbeitung
 description: Dies ist eine zusammengefasste Liste mit Regeln für die Bearbeitung der PowerShell-Dokumentation.
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: 511e0c323e1a3256039e819d06f32f6e1ac42767
-ms.sourcegitcommit: 18d832858a7b8ea094763afa753e0f48f01372e7
+ms.openlocfilehash: b5baf7366239084779d34e23f218e5e6222ed1a3
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79060335"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81624736"
 ---
 # <a name="editors-checklist"></a>Checkliste für die Bearbeitung
 
@@ -36,7 +36,8 @@ Dies ist eine Zusammenfassung der Regeln, die beim Schreiben neuer oder Aktualis
   - Syntaktische Beispiele: `Verb-Noun -Parameter`
   - Dateipfade: `C:\Program Files\PowerShell`, `/usr/bin/pwsh`
   - URLs, auf die im Dokument nicht geklickt werden soll
-- Eigenschaftsnamen, Parameterwerte, Parameternamen, Klassennamen, Modulnamen, Entitätsnamen, Objekt- oder Typnamen fett formatieren
+  - Eigenschafts- oder Parameterwerte
+- Formatieren Sie Eigenschaftsnamen, Parameternamen, Klassennamen, Modulnamen, Entitätsnamen sowie Objekt- oder Typnamen fett
   - Fett wird für semantisches Markup verwendet, nicht zur Betonung
   - Fett: Sternchen `**`
 - Kursiv: Unterstrich `_`
@@ -60,7 +61,7 @@ Dies ist eine Zusammenfassung der Regeln, die beim Schreiben neuer oder Aktualis
 - Leerzeile davor und dahinter
 - Codeumgrenzungen in Form von Tags verwenden: **PowerShell**, **Ausgabe** oder andere geeignete Sprach-ID
 - Umgrenzung ohne Tags: Syntaxblöcke oder andere Shells
-- Legen Sie **Ausgabe** in einem separaten Codeblock ab, außer für einfache Beispiele, bei denen Sie nicht beabsichtigen, dass der Leser auf die Schaltfläche **Kopieren** klickt.
+- Platzieren Sie die Ausgabe in einem separaten Codeblock (mit Ausnahme von einfachen Beispielen, bei denen Sie nicht beabsichtigen, dass der Leser auf die Schaltfläche **Kopieren** klickt)
 - Siehe die Liste der [unterstützten Sprachen](/contribute/code-in-docs#supported-languages)
 
 ### <a name="lists"></a>Listen
@@ -109,7 +110,7 @@ Dies ist eine Zusammenfassung der Regeln, die beim Schreiben neuer oder Aktualis
 
 - Verknüpfung außerhalb des Docsets oder zwischen Cmdlet-Referenz und konzeptuellen Inhalten
   - Relative URLs beim Verknüpfen mit docs.microsoft.com verwenden (`https://docs.microsoft.com/en-us` entfernen)
-  - Gebietsschemas nicht in URLs für Microsoft-Eigenschaften einbeziehen (z. B. `/en-us` aus URL entfernen)
+  - Schließen Sie keine Gebietsschemas in URLs in Microsoft-Eigenschaften ein (entfernen Sie beispielsweise `/en-us` aus dem URL)
   - Alle URLs zu externen Websites müssen HTTPS verwenden, es sei denn, dies gilt nicht für die Zielwebsite
 - Innerhalb des Docsets
   - Link zu Dateipfad (z. B. `../folder/file.md`)
