@@ -2,12 +2,12 @@
 title: PowerShell-Remoting über SSH
 description: Remoting in PowerShell Core mithilfe von SSH
 ms.date: 09/30/2019
-ms.openlocfilehash: 0f2fb13010d62dec5b19b373a24a199bff22665d
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 9fe3e22c54a4695a1027f416acf113f2f7fd2cd7
+ms.sourcegitcommit: 7c7f8bb9afdc592d07bf7ff4179d000a48716f13
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "73444364"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82174131"
 ---
 # <a name="powershell-remoting-over-ssh"></a>PowerShell-Remoting über SSH
 
@@ -64,10 +64,12 @@ PowerShell 6 oder höher und SSH müssen auf allen Computern installiert sein. I
    Erstellen Sie das SSH-Subsystem, das einen PowerShell-Prozess auf dem Remotecomputer hostet:
 
    ```
-   Subsystem powershell c:/progra~1/powershell/6/pwsh.exe -sshs -NoLogo -NoProfile
+   Subsystem powershell c:/progra~1/powershell/7/pwsh.exe -sshs -NoLogo -NoProfile
    ```
 
    > [!NOTE]
+   > Der Standardspeicherort der ausführbaren PowerShell-Datei ist `c:/progra~1/powershell/7/pwsh.exe`. Der Speicherort kann abhängig von der installierten PowerShell-Instanz variieren.
+   >
    > Sie müssen den kurzen Namen von Version 8.3 für alle Dateipfade verwenden, die Leerzeichen enthalten. Es besteht ein Fehler in OpenSSH für Windows, der verhindert, dass Leerzeichen in ausführbaren Pfaden zu Subsystemen funktionieren. Weitere Informationen finden Sie in diesem [GitHub-Problem](https://github.com/PowerShell/Win32-OpenSSH/issues/784).
    >
    > Der kurze Name von Version 8.3 für den Ordner `Program Files` unter Windows lautet üblicherweise `Progra~1`. Sie können jedoch den folgenden Befehl verwenden, um dies sicherzustellen:
@@ -123,6 +125,9 @@ PowerShell 6 oder höher und SSH müssen auf allen Computern installiert sein. I
    Subsystem powershell /usr/bin/pwsh -sshs -NoLogo -NoProfile
    ```
 
+   > [!NOTE]
+   > Der Standardspeicherort der ausführbaren PowerShell-Datei ist `/usr/bin/pwsh`. Der Speicherort kann abhängig von der installierten PowerShell-Instanz variieren.
+
    Aktivieren Sie ggf. die Schlüsselauthentifizierung:
 
    ```
@@ -166,6 +171,9 @@ PowerShell 6 oder höher und SSH müssen auf allen Computern installiert sein. I
    Subsystem powershell /usr/local/bin/pwsh -sshs -NoLogo -NoProfile
    ```
 
+   > [!NOTE]
+   > Der Standardspeicherort der ausführbaren PowerShell-Datei ist `/usr/local/bin/pwsh`. Der Speicherort kann abhängig von der installierten PowerShell-Instanz variieren.
+
    Aktivieren Sie ggf. die Schlüsselauthentifizierung:
 
    ```
@@ -179,7 +187,7 @@ PowerShell 6 oder höher und SSH müssen auf allen Computern installiert sein. I
    sudo launchctl start com.openssh.sshd
    ```
 
-## <a name="authentication"></a>Authentication
+## <a name="authentication"></a>Authentifizierung
 
 PowerShell-Remoting über SSH basiert auf dem Authentifizierungsaustausch zwischen dem SSH-Client und dem SSH-Dienst und implementiert selbst keine Authentifizierungsschemas. Infolgedessen werden alle konfigurierten Authentifizierungsschemas, einschließlich der mehrstufigen Authentifizierung, von SSH und unabhängig von PowerShell verarbeitet. Sie können den SSH-Dienst beispielsweise für die Authentifizierung mit öffentlichen Schlüsseln oder die Verwendung eines Einmalkennworts zur Erhöhung der Sicherheit konfigurieren. Die Konfiguration einer mehrstufigen Authentifizierung wird in dieser Dokumentation nicht beschrieben. Bevor Sie versuchen, eine mehrstufige Authentifizierung mit PowerShell-Remoting zu verwenden, informieren Sie sich in der Dokumentation für SSH, wie Sie eine mehrstufige Authentifizierung richtig konfigurieren, und testen Sie, ob diese außerhalb von PowerShell funktioniert.
 

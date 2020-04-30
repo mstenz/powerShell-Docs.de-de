@@ -2,18 +2,14 @@
 title: Installieren von PowerShell unter Linux
 description: Informationen zur Installation von PowerShell auf verschiedenen Linux-Distributionen
 ms.date: 03/09/2020
-ms.openlocfilehash: 31da32b81dbbcf4b46fd5f0cd9d921f28f434763
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 201bb693c3473f6b1f05d860562b1fc132912bb2
+ms.sourcegitcommit: 7c7f8bb9afdc592d07bf7ff4179d000a48716f13
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500548"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82174132"
 ---
 # <a name="installing-powershell-on-linux"></a>Installieren von PowerShell unter Linux
-
-Unterstützt [Ubuntu 16.04][u16], [Ubuntu 18.04][u1804], [Ubuntu 18.10][u1810], [Ubuntu 19.04][u1904], [Debian 8][deb8], [Debian 9][deb9], [Debian 10][deb10], [Alpine 3.9 und 3.10][alpine], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42.3][opensuse], [openSUSE Leap 15][opensuse], [Fedora 28][fedora], [Fedora 29][fedora], [Fedora 30][fedora] und [Arch Linux][arch].
-
-Für nicht offiziell unterstützte Linux-Distributionen können Sie versuchen, PowerShell über das [Snap-Paket für PowerShell][snap] zu installieren. Stattdessen können Sie auch versuchen, PowerShell-Binärdateien über das [`tar.gz`-Archiv][tar] für Linux bereitzustellen. Dafür müssen Sie aber die für Ihr Betriebssystem erforderlichen Abhängigkeiten in zusätzlichen Schritten einrichten.
 
 Sämtliche Pakete sind auf der Seite [Freigaben][] über GitHub verfügbar. Nachdem Sie das Paket installiert haben, führen Sie `pwsh` über das Terminal aus. Führen Sie `pwsh-preview` aus, wenn Sie eine [Vorschauversion](#installing-preview-releases) installiert haben.
 
@@ -24,36 +20,40 @@ Sämtliche Pakete sind auf der Seite [Freigaben][] über GitHub verfügbar. Nach
 >
 > Wenn Sie PowerShell 6 und PowerShell 7 parallel ausführen müssen, installieren Sie PowerShell 6 mithilfe der [binary archive](#binary-archives)-Methode neu.
 
-[u16]: #ubuntu-1604
-[u1804]: #ubuntu-1804
-[u1810]: #ubuntu-1810
-[u1904]: #ubuntu-1904
-[deb8]: #debian-8
-[deb9]: #debian-9
-[deb10]: #debian-10
-[alpine]: #alpine-39-and-310
-[cos]: #centos-7
-[rhel7]: #red-hat-enterprise-linux-rhel-7
-[opensuse]: #opensuse
-[fedora]: #fedora
-[arch]: #arch-linux
+Für nicht offiziell unterstützte Linux-Distributionen können Sie versuchen, PowerShell über das [Snap-Paket für PowerShell][snap] zu installieren. Stattdessen können Sie auch versuchen, PowerShell-Binärdateien über das [`tar.gz`-Archiv][tar] für Linux bereitzustellen. Dafür müssen Sie aber die für Ihr Betriebssystem erforderlichen Abhängigkeiten in zusätzlichen Schritten einrichten.
+
 [snap]: #snap-package
 [tar]: #binary-archives
 
+Offiziell unterstützte Releases:
 
-## <a name="installing-preview-releases"></a>Installieren von Vorschauversionen
+- Ubuntu 16.04
+- Ubuntu 18.04
+- Debian 8
+- Debian 9
+- Debian 10
+- Alpine 3.9 und 3.10
+- CentOS 7:
+- Red Hat Enterprise Linux 7 (RHEL)
+- Fedora 28
+- Fedora 29
+- Fedora 30
+- openSUSE 42.3
+- openSUSE Leap 15
 
-Wenn eine Vorschauversion von PowerShell für Linux über ein Paketrepository installiert wird, ändert sich der Paketname von `powershell` in `powershell-preview`.
+Von der Community unterstützte Releases:
 
-Bei einer Installation über einen direkten Download wird nur der Dateiname geändert.
+- Ubuntu 18.10
+- Ubuntu 19.04
+- Arch Linux
+- Kali
+- Raspbian (experimentell)
 
-In der nachfolgenden Tabelle werden die Befehle aufgeführt, über die Sie Pakete stabiler Versionen und von Vorschauversionen mithilfe der verschiedenen Paket-Manager installieren können:
+Alternative Installationsmethoden
 
-| Distribution(en) |            Befehl für die stabile Version            |               Befehl für die Vorschauversion                |
-| --------------- | ------------------------------------ | -------------------------------------------- |
-| Ubuntu, Debian  | `sudo apt-get install -y powershell` | `sudo apt-get install -y powershell-preview` |
-| CentOS, RedHat  | `sudo yum install -y powershell`     | `sudo yum install -y powershell-preview`     |
-| Fedora          | `sudo dnf install -y powershell`     | `sudo dnf install -y powershell-preview`     |
+- Snap-Paket
+- Archive der Binärdateien
+- Globales .NET-Tool
 
 ## <a name="ubuntu-1604"></a>Ubuntu 16.04
 
@@ -573,9 +573,9 @@ sudo dnf remove powershell
 
 PowerShell ist über das Benutzerrepository [Arch Linux][] verfügbar.
 
-* Es kann gemeinsam mit dem [zuletzt markierten Release][arch-release] kompiliert werden.
-* Es kann gemeinsam vom [letzten Commit für den Master][arch-git] aus kompiliert werden.
-* Es kann mithilfe der [zuletzt zur Veröffentlichung bestimmten Binärdatei][arch-bin] installiert werden.
+- Es kann gemeinsam mit dem [zuletzt markierten Release][arch-release] kompiliert werden.
+- Es kann gemeinsam vom [letzten Commit für den Master][arch-git] aus kompiliert werden.
+- Es kann mithilfe der [zuletzt zur Veröffentlichung bestimmten Binärdatei][arch-bin] installiert werden.
 
 Pakete im Benutzerrepository „Arch Linux“ werden von der Community verwaltet. Es gibt keinen offiziellen Support.
 
@@ -709,6 +709,20 @@ sudo ~/powershell/pwsh -c New-Item -ItemType SymbolicLink -Path "/usr/bin/pwsh" 
 ```sh
 rm -rf ~/powershell
 ```
+
+## <a name="installing-preview-releases"></a>Installieren von Vorschauversionen
+
+Wenn eine Vorschauversion von PowerShell für Linux über ein Paketrepository installiert wird, ändert sich der Paketname von `powershell` in `powershell-preview`.
+
+Bei einer Installation über einen direkten Download wird nur der Dateiname geändert.
+
+In der nachfolgenden Tabelle werden die Befehle aufgeführt, über die Sie Pakete stabiler Versionen und von Vorschauversionen mithilfe der verschiedenen Paket-Manager installieren können:
+
+| Distribution(en) |            Befehl für die stabile Version            |               Befehl für die Vorschauversion                |
+| --------------- | ------------------------------------ | -------------------------------------------- |
+| Ubuntu, Debian  | `sudo apt-get install -y powershell` | `sudo apt-get install -y powershell-preview` |
+| CentOS, RedHat  | `sudo yum install -y powershell`     | `sudo yum install -y powershell-preview`     |
+| Fedora          | `sudo dnf install -y powershell`     | `sudo dnf install -y powershell-preview`     |
 
 ## <a name="install-as-a-net-global-tool"></a>Installieren als globales .NET-Tool
 
