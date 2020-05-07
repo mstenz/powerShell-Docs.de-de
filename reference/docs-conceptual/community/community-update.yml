@@ -1,0 +1,61 @@
+### YamlMime:Landing
+title: Communityupdate
+summary: Eine Liste der Ressourcen und eine Zusammenfassung der neuen Artikel und Communitybeiträge.
+metadata:
+  title: Communityupdate
+  description: Eine Liste der Ressourcen und eine Zusammenfassung der neuen Artikel und Communitybeiträge.
+  ms.topic: landing-page
+  author: sdwheeler
+  ms.author: sewhee
+  ms.date: 04/29/2020
+  ms.openlocfilehash: 42d8de8ffedf9ac1b0bd7ee5df1483f8d1316da7
+  ms.sourcegitcommit: e6a9b13a4799667b74e0ba0f742dded4511d32b4
+  ms.translationtype: HT
+  ms.contentlocale: de-DE
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82630886"
+landingContent:
+- title: Communityressourcen
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Communityunterstützung
+      url: community-support.md
+    - text: Digitale Kunst
+      url: digital-art.md
+    - text: Hall of Fame für Mitwirkende
+      url: hall-of-fame.md
+- title: Neuerungen in der PowerShell-Dokumentation
+  linkLists:
+  - linkListType: whats-new
+    links:
+    - text: 2020-Q2
+      url: ./2020-Q2.md
+    - text: 2020-Q1
+      url: ./2020-Q1.md
+- title: Machen Sie mit – tragen Sie zur PowerShell-Dokumentation bei
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 'PowerShell: Leitfaden für Mitwirkende'
+      url: contributing/overview.md
+    - text: Erste Schritte beim Schreiben von Dokumentation
+      url: contributing/get-started-writing.md
+  - linkListType: how-to-guide
+    links:
+    - text: Melden eines Issues
+      url: contributing/file-an-issue.md
+    - text: Übermitteln eines Pull Requests
+      url: contributing/pull-requests.md
+    - text: Styleguide für die PowerShell-Dokumentation
+      url: contributing/powershell-style-guide.md
+    - text: Bearbeiten der Cmdlet-Referenz
+      url: contributing/editing-cmdlet-ref.md
+  - linkListType: reference
+    links:
+    - text: Checkliste für die Bearbeitung
+      url: contributing/editorial-checklist.md
+    - text: Verwalten von Issues
+      url: contributing/managing-issues.md
+    - text: Verwalten von Pull Requests
+      url: contributing/managing-pull-requests.md
