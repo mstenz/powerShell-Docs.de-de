@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: Konfigurieren des LCM in PowerShell 4.0
-ms.openlocfilehash: 747b15c483c79a7ecbb62214ef5a59f8dc137bd4
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 4a9dedf67f9fb18fdd7f5adf70dbf1402fb3f918
+ms.sourcegitcommit: 4eda0bc902658d4a188159bd7310e64399f6e178
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71953827"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83271830"
 ---
 # <a name="configuring-the-lcm-in-powershell-40"></a>Konfigurieren des LCM in PowerShell 4.0
 
@@ -24,11 +24,11 @@ In diesem Thema werden die Eigenschaften des lokalen Konfigurations-Managers (LC
 Nachstehend sind die LCM-Eigenschaften aufgelistet, die Sie festlegen oder abrufen können.
 
 - **AllowModuleOverwrite:** Steuert, ob neue vom Konfigurationsdienst heruntergeladene Konfigurationen die alten Konfigurationen auf dem Zielknoten überschreiben dürfen. Mögliche Werte sind „True“ und „False“.
-- **CertificateID**: Der Fingerabdruck eines Zertifikats zur Sicherung von Anmeldeinformationen, die in einer Konfiguration übergeben werden. Weitere Informationen finden Sie unter [Möchten Sie Anmeldeinformationen in Windows PowerShell DSC schützen?](https://blogs.msdn.microsoft.com/powershell/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration/).
+- **CertificateID**: Der Fingerabdruck eines Zertifikats zur Sicherung von Anmeldeinformationen, die in einer Konfiguration übergeben werden. Weitere Informationen finden Sie unter [Möchten Sie Anmeldeinformationen in Windows PowerShell DSC schützen?](https://devblogs.microsoft.com/powershell/want-to-secure-credentials-in-windows-powershell-desired-state-configuration/).
 - **ConfigurationID:** Eine GUID, die zum Abrufen einer bestimmten Konfigurationsdatei von einem Pulldienst dient. Die GUID stellt sicher, dass auf die richtige Konfigurationsdatei zugegriffen wird.
 - **ConfigurationMode:** Gibt an, wie der lokale Konfigurations-Manager tatsächlich die Konfiguration auf die Zielknoten anwendet. Die folgenden Werte sind möglich:
   - **ApplyOnly**: Bei dieser Option wendet DSC die Konfiguration an und führt nur dann weitere Aktionen durch, wenn eine neue Konfiguration ermittelt wird – entweder indem Sie eine neue Konfiguration direkt an den Zielknoten senden oder indem Sie eine Verbindung mit einem Pulldienst herstellen und DSC bei der Abfrage des Pulldiensts eine neue Konfiguration ermittelt. Wenn die Konfiguration des Zielknotens abweicht, erfolgt keine Aktion.
-  - **ApplyAndMonitor**: Bei dieser Standardoption wendet DSC neue Konfigurationen unabhängig davon an, ob diese von Ihnen direkt zum Zielknoten gesendet oder in einem Pulldienst ermittelt werden. Wenn sich im Anschluss die Konfiguration des Zielknotens von der Konfigurationsdatei unterscheidet, meldet DSC die Diskrepanz in Protokollen. Weitere Informationen zur DSC-Protokollierung finden Sie unter [Verwenden von Ereignisprotokollen zum Untersuchen von Fehlern in DSC](https://blogs.msdn.com/b/powershell/archive/2014/01/03/using-event-logs-to-diagnose-errors-in-desired-state-configuration.aspx).
+  - **ApplyAndMonitor**: Bei dieser Standardoption wendet DSC neue Konfigurationen unabhängig davon an, ob diese von Ihnen direkt zum Zielknoten gesendet oder in einem Pulldienst ermittelt werden. Wenn sich im Anschluss die Konfiguration des Zielknotens von der Konfigurationsdatei unterscheidet, meldet DSC die Diskrepanz in Protokollen. Weitere Informationen zur DSC-Protokollierung finden Sie unter [Verwenden von Ereignisprotokollen zum Untersuchen von Fehlern in DSC](https://devblogs.microsoft.com/powershell/using-event-logs-to-diagnose-errors-in-desired-state-configuration/).
   - **ApplyAndAutoCorrect:** Bei dieser Option wendet DSC neue Konfigurationen unabhängig davon an, ob diese von Ihnen direkt zum Zielknoten gesendet oder in einem Pulldienst erkannt werden. Wenn sich im Anschluss die Konfiguration des Zielknotens von der Konfigurationsdatei unterscheidet, meldet DSC die Diskrepanz in Protokollen. Anschließend wird versucht, die Zielknotenkonfiguration in Übereinstimmung mit der Konfigurationsdatei zu bringen.
 - **ConfigurationModeFrequencyMins:** Die Häufigkeit (in Minuten), mit der die DSC-Hintergrundanwendung versucht, die aktuelle Konfiguration auf dem Zielknoten anzuwenden. Der Standardwert ist 15. Dieser Wert kann in Verbindung mit „RefreshMode“ festgelegt werden. Wenn „RefreshMode“ auf PULL festgelegt ist, kontaktiert der Zielknoten den Konfigurationsdienst in einem von „RefreshFrequencyMins“ festgelegten Intervall und lädt die aktuelle Konfiguration herunter. Unabhängig vom Wert von „RefreshMode“ wendet die Konsistenz-Engine im von „ConfigurationModeFrequencyMins“ festgelegten Intervall die neueste Konfiguration an, die auf den Zielknoten heruntergeladen wurde. „RefreshFrequencyMins“ muss auf ein Vielfaches in Form einer ganzen Zahl von „ConfigurationModeFrequencyMins“ festgelegt werden.
 - **Credential:** Gibt (z. B. mit „Get-Credential“) erforderliche Anmeldeinformationen für den Zugriff auf Remoteressourcen an, um z. B. den Konfigurationsdienst zu kontaktieren.
