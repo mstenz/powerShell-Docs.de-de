@@ -755,22 +755,20 @@
               href: community/contributing/managing-pull-requests.md
     - name: Digitale Kunst
       href: community/digital-art.md
-- name: PowerShell-Entwickler
+- name: Skripterstellung und Entwicklung
   items:
-    - name: Plattformübergreifende Entwicklung
+    - name: Visual Studio Code
       items:
-        - name: Visual Studio Code
-          items:
-            - name: Verwendung von Visual Studio Code
-              href: components/vscode/using-vscode.md
-            - name: Replizieren der ISE-Benutzeroberfläche in Visual Studio Code
-              href: components/vscode/How-To-Replicate-the-ISE-Experience-In-VSCode.md
-            - name: Verwenden von Visual Studio Code für Remotebearbeitung und Remotedebuggen
-              href: components/vscode/Using-VSCode-for-Remote-Editing-and-Debugging.md
-            - name: "Grundlegendes zur Dateicodierung in VS\_Code und PowerShell"
-              href: components/vscode/understanding-file-encoding.md
-        - name: Schreiben von portablen Modulen
-          href: learn/writing-portable-modules.md
+        - name: Verwendung von Visual Studio Code
+          href: components/vscode/using-vscode.md
+        - name: Replizieren der ISE-Benutzeroberfläche in Visual Studio Code
+          href: components/vscode/How-To-Replicate-the-ISE-Experience-In-VSCode.md
+        - name: Verwenden von Visual Studio Code für Remotebearbeitung und Remotedebuggen
+          href: components/vscode/Using-VSCode-for-Remote-Editing-and-Debugging.md
+        - name: "Grundlegendes zur Dateicodierung in VS\_Code und PowerShell"
+          href: components/vscode/understanding-file-encoding.md
+    - name: Schreiben von portablen Modulen
+      href: learn/writing-portable-modules.md
     - name: Legacy-SDK für PowerShell
       items:
         - name: Übersicht
