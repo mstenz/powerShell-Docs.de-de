@@ -60,7 +60,7 @@ Configuration ServiceState
 }
 ```
 
-Sie können mithilfe einer `Configuration`-Anweisung auch eine `if` nur für Computer erstellen, die online sind.
+Sie können mithilfe einer `if`-Anweisung auch eine `Configuration` nur für Computer erstellen, die online sind.
 
 ```powershell
 Configuration ServiceState

@@ -138,7 +138,7 @@ Obwohl der Befehl `Format-List` nützlich ist, um Details anzuzeigen, ist eine e
 
 ## <a name="using-format-table-for-tabular-output"></a>Verwenden von „Format-Table“ für tabellarische Ausgabe
 
-Falls Sie die Ausgabe des Befehls `Format-Table` mit dem Cmdlet `Get-Process` ohne angegebene Eigenschaftennamen formatieren, erhalten Sie genau dieselbe Ausgabe wie ohne das Cmdlet `Format`. Standardmäßig zeigt PowerShell **Prozessobjekte** im Tabellenformat an.
+Falls Sie die Ausgabe des Befehls `Get-Process` mit dem Cmdlet `Format-Table` ohne angegebene Eigenschaftennamen formatieren, erhalten Sie genau dieselbe Ausgabe wie ohne das Cmdlet `Format`. Standardmäßig zeigt PowerShell **Prozessobjekte** im Tabellenformat an.
 
 ```powershell
 Get-Service -Name win* | Format-Table

@@ -186,7 +186,7 @@ Die vorherige Codierung (ASCII, 7 Bit) würde in manchen Fällen zu falschen Än
 
 ### <a name="-verbose-and--debug-no-longer-overrides-erroractionpreference-5113"></a>`-Verbose` und `-Debug` überschreibt nicht länger `$ErrorActionPreference` [#5113](https://github.com/PowerShell/PowerShell/issues/5113)
 
-Zuvor wurde das Verhalten von `-Verbose` überschrieben, wenn `-Debug` oder `$ErrorActionPreference` angegeben wurden. Durch diese Änderung wirken `-Verbose` und `-Debug` sich nicht mehr auf das Verhalten von `$ErrorActionPreference` aus.
+Zuvor wurde das Verhalten von `$ErrorActionPreference` überschrieben, wenn `-Verbose` oder `-Debug` angegeben wurden. Durch diese Änderung wirken `-Verbose` und `-Debug` sich nicht mehr auf das Verhalten von `$ErrorActionPreference` aus.
 
 ## <a name="cmdlet-changes"></a>Änderungen an Cmdlets
 
@@ -263,7 +263,7 @@ Zuvor wurde ein `-LiteralPath`-Cmdlet im Hintergrund beendet, wenn ein Platzhalt
 
 ### <a name="fix-set-service-failing-test-4802"></a>Behebung eines fehlgeschlagenen Tests für `Set-Service`[#4802](https://github.com/PowerShell/PowerShell/issues/4802)
 
-Zuvor wurde `New-Service -StartupType foo` ignoriert, wenn `foo` verwendet wurde, und der Dienst wurde mit Standardstarttypen erstellt. Durch diese Änderung soll für ungültige Starttypen explizit ein Fehler ausgelöst werden.
+Zuvor wurde `foo` ignoriert, wenn `New-Service -StartupType foo` verwendet wurde, und der Dienst wurde mit Standardstarttypen erstellt. Durch diese Änderung soll für ungültige Starttypen explizit ein Fehler ausgelöst werden.
 
 ### <a name="rename-isosx-to-ismacos-4700"></a>Umbenennung von `$IsOSX` in `$IsMacOS` [#4700](https://github.com/PowerShell/PowerShell/issues/4700)
 
@@ -291,7 +291,7 @@ Die Verwendung von Shebang in PowerShell auf anderen Plattformen als Windows wir
 
 ### <a name="implement-unicode-escape-parsing-3958"></a>Implementierung der Analyse von Unicode-Escapesequenzen [#3958](https://github.com/PowerShell/PowerShell/issues/3958)
 
-`` `u####`` oder `` `u{####}`` wird in das entsprechende Unicode-Zeichen konvertiert. Verwenden Sie das Hochkommazeichen (`` `u``), um ein Literal (``` ``u```) auszugeben.
+`` `u####`` oder `` `u{####}`` wird in das entsprechende Unicode-Zeichen konvertiert. Verwenden Sie das Hochkommazeichen (``` ``u```), um ein Literal (`` `u``) auszugeben.
 
 ### <a name="change-new-modulemanifest-encoding-to-utf8nobom-on-non-windows-platforms-3940"></a>Änderung der `New-ModuleManifest`-Codierung in `UTF8NoBOM` auf anderen Plattformen als Windows [#3940](https://github.com/PowerShell/PowerShell/issues/3940)
 

@@ -103,7 +103,7 @@ Sie können dies überprüfen, indem Sie das Cmdlet [Get-WindowsFeature](/powers
 
 ## <a name="inject-a-dsc-metaconfiguration-into-a-vhd"></a>Hinzufügen einer Metakonfiguration zu einer VHD
 
-Sie können einen Computer auch so konfigurieren, dass eine Konfiguration beim ersten Hochfahren abgerufen wird, indem Sie eine Metakonfiguration als [-Datei zur VHD hinzufügen (siehe ](../managing-nodes/metaConfig.md)Configuring the Local Configuration Manager (LCM) (Konfigurieren des lokalen Konfigurations-Managers)`MetaConfig.mof`).
+Sie können einen Computer auch so konfigurieren, dass eine Konfiguration beim ersten Hochfahren abgerufen wird, indem Sie eine Metakonfiguration als `MetaConfig.mof`-Datei zur VHD hinzufügen (siehe [Configuring the Local Configuration Manager (LCM) (Konfigurieren des lokalen Konfigurations-Managers)](../managing-nodes/metaConfig.md)).
 Ist der Registrierungsschlüssel **DSCAutomationHostEnabled** auf 2 (Standardwert) festgelegt, wird die in `MetaConfig.mof` definierte Metakonfiguration von DSC auf den LCM angewendet, sobald der Computer zum ersten Mal gestartet wird.
 Wenn in der Metakonfiguration festgelegt ist, dass Konfigurationen durch den lokalen Konfigurations-Manager von einem Pullserver abgerufen werden sollen, versucht der Computer beim ersten Hochfahren, die Konfiguration von diesem Pullserver abzurufen.
 Weitere Informationen zum Einrichten von DSC-Pullservern finden Sie unter [Einrichten eines DSC-Webpullservers](../pull-server/pullServer.md).

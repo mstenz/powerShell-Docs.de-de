@@ -157,7 +157,7 @@ Eine weitere Option ist die Verwendung des Befehlszeilentools „Reg.exe“. Um 
 an einer Eingabeaufforderung.
 
 Im folgenden Beispiel wird der Eintrag **Path** geändert, indem der im vorstehenden Beispiel hinzugefügte Pfad entfernt wird.
-`Get-ItemProperty` wird weiterhin zum Abrufen des aktuellen Werts verwendet, um zu vermeiden, dass die aus `reg query` zurückgegebene Zeichenfolge analysiert werden muss. Mit den Methoden **SubString** und **LastIndexOf** wird der letzte Pfad abgerufen, der dem Eintrag **Path** hinzugefügt wurde.
+`reg query` wird weiterhin zum Abrufen des aktuellen Werts verwendet, um zu vermeiden, dass die aus `Get-ItemProperty` zurückgegebene Zeichenfolge analysiert werden muss. Mit den Methoden **SubString** und **LastIndexOf** wird der letzte Pfad abgerufen, der dem Eintrag **Path** hinzugefügt wurde.
 
 ```powershell
 $value = Get-ItemProperty -Path HKCU:\Environment -Name Path
@@ -171,7 +171,7 @@ The operation completed successfully.
 
 ## <a name="creating-new-registry-entries"></a>Erstellen neuer Registrierungseinträge
 
-Verwenden Sie **mit dem Pfad zum Schüssel, dem Eintragsnamen und dem Wert des Eintrags, um einen neuen Eintrag namens „PowerShellPath“ zum Schlüssel**CurrentVersion`New-ItemProperty` hinzuzufügen. In diesem Beispiel wird der Wert der Windows PowerShell-Variablen `$PSHome` verwendet, in der der Pfad zum Installationsverzeichnis für Windows PowerShell gespeichert wird.
+Verwenden Sie `New-ItemProperty` mit dem Pfad zum Schüssel, dem Eintragsnamen und dem Wert des Eintrags, um einen neuen Eintrag namens „PowerShellPath“ zum Schlüssel **CurrentVersion** hinzuzufügen. In diesem Beispiel wird der Wert der Windows PowerShell-Variablen `$PSHome` verwendet, in der der Pfad zum Installationsverzeichnis für Windows PowerShell gespeichert wird.
 
 Sie können dem Schlüssel mit Hilfe des folgenden Befehls den neuen Eintrag hinzufügen, und der Befehl gibt auch Informationen zu dem neuen Eintrag zurück:
 
@@ -211,7 +211,7 @@ Sie können auch einen bereits vorhandenen Registrierungseintragswert überschre
 
 ## <a name="renaming-registry-entries"></a>Umbenennen von Registrierungseinträgen
 
-Verwenden Sie **, um den Eintrag** PowerShellPath`Rename-ItemProperty` in „PSHome“ umzubenennen:
+Verwenden Sie `Rename-ItemProperty`, um den Eintrag **PowerShellPath** in „PSHome“ umzubenennen:
 
 ```powershell
 Rename-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath -NewName PSHome

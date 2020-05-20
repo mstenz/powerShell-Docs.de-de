@@ -220,7 +220,7 @@ Wenn Sie das Beispielkonfigurationsskript erneut ausführen (mit oder ohne Versc
 
 **Bei Verwendung von Anmeldeinformationen mit DSC-Ressourcen ziehen Sie, wenn möglich, ein lokales Konto einem Domänenkonto vor.**
 
-Enthält die \\-Eigenschaft der Anmeldeinformationen die Zeichen „\@“ oder „`Username`“, behandelt DSC das Konto als Domänenkonto. Ausnahmen machen „Localhost“, „127.0.0.1“ und „:: 1“ im Domänenteil des Benutzernamens.
+Enthält die `Username`-Eigenschaft der Anmeldeinformationen die Zeichen „\\“ oder „\@“, behandelt DSC das Konto als Domänenkonto. Ausnahmen machen „Localhost“, „127.0.0.1“ und „:: 1“ im Domänenteil des Benutzernamens.
 
 ## <a name="psdscallowdomainuser"></a>PSDscAllowDomainUser
 

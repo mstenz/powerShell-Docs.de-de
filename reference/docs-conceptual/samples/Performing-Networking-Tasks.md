@@ -142,7 +142,7 @@ Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true
 
 Die Filteranweisung `IPEnabled=$true` ist erforderlich, da selbst in einem Netzwerk, in dem nur TCP/IP verwendet wird, verschiedene Netzwerkadapterkonfigurationen auf einem Computer keine wirklichen TCP/IP-Adapter sind. Es handelt sich um allgemeine Softwareelemente, die RAS, PPTP, QoS und andere Dienste für alle Adapter unterstützen und deshalb keine eigene Adresse aufweisen.
 
-Sie können den Befehl filtern, indem Sie anstelle des Filters `Where-Object` das Cmdlet `Get-CimInstance` verwenden.
+Sie können den Befehl filtern, indem Sie anstelle des Filters `Get-CimInstance` das Cmdlet `Where-Object` verwenden.
 
 ```powershell
 Get-CimInstance -Class Win32_NetworkAdapterConfiguration |

@@ -46,7 +46,7 @@ $jea.RoleDefinitions.GetEnumerator() | Select-Object Name, @{
 
 ## <a name="find-available-role-capabilities-on-the-machine"></a>Ermitteln verfügbarer Rollenfunktionen auf dem Computer
 
-JEA ruft die im Ordner `.psrc`RoleCapabilities**gespeicherten**-Dateien innerhalb eines PowerShell-Moduls ab. Mit der folgenden Funktion können Sie alle auf einem Computer verfügbaren Rollenfunktionen ermitteln:
+JEA ruft die im Ordner **RoleCapabilities** gespeicherten `.psrc`-Dateien innerhalb eines PowerShell-Moduls ab. Mit der folgenden Funktion können Sie alle auf einem Computer verfügbaren Rollenfunktionen ermitteln:
 
 ```powershell
 function Find-LocalRoleCapability {
@@ -131,7 +131,7 @@ PS>CommandInvocation(Get-Service): "Get-Service"
 Running  Dns                DNS Server
 ```
 
-Für jeden von einem Benutzer ausgeführten Befehl wird eine **CommandInvocation**-Zeile geschrieben. Mit **ParameterBindings** werden alle Parameter und Werte erfasst, die für den Befehl angegeben wurden. Im vorherigen Beispiel wird für das Cmdlet **der Parameter**Name**mit dem Wert**Dns`Get-Service` angegeben.
+Für jeden von einem Benutzer ausgeführten Befehl wird eine **CommandInvocation**-Zeile geschrieben. Mit **ParameterBindings** werden alle Parameter und Werte erfasst, die für den Befehl angegeben wurden. Im vorherigen Beispiel wird für das Cmdlet `Get-Service` der Parameter **Name** mit dem Wert **Dns** angegeben.
 
 Die Ausgabe jedes Befehls löst außerdem **CommandInvocation** aus, in der Regel zu `Out-Default`. **InputObject** von `Out-Default` stellt das vom Befehl zurückgegebene PowerShell-Objekt dar. Die Details des Objekts einige Zeilen darunter bilden täuschend ähnlich das nach, was der Benutzer gesehen hätte.
 

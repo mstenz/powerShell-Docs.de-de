@@ -17,7 +17,7 @@ Ab Version 1.6.0 unterstützen PowerShellGet und der PowerShell-Katalog das Kenn
 Allgemein umfassen die Vorabversions-Modulfeatures u.a. Folgendes:
 
 - Durch Hinzufügen einer Vorabversionszeichenfolge zum PSData-Abschnitt des Modulmanifests wird das Modul als Vorabversion identifiziert. Wenn das Modul im PowerShell-Katalog veröffentlicht wird, werden diese Daten aus dem Manifest extrahiert und zum Identifizieren von Vorabversionspaketen verwendet.
-- Zum Abrufen von Vorabversionspaketen muss den PowerShellGet-Befehlen `-AllowPrerelease`, `Find-Module`, `Install-Module` und `Update-Module` das `Save-Module`-Flag hinzugefügt werden. Wenn das Flag nicht angegeben ist, werden keine Vorabversionspakete angezeigt.
+- Zum Abrufen von Vorabversionspaketen muss den PowerShellGet-Befehlen `Find-Module`, `Install-Module`, `Update-Module` und `Save-Module` das `-AllowPrerelease`-Flag hinzugefügt werden. Wenn das Flag nicht angegeben ist, werden keine Vorabversionspakete angezeigt.
 - Die durch `Find-Module` und `Get-InstalledModule` sowie im PowerShell-Katalog angezeigten Modulversionen werden als einzelne Zeichenfolge mit angefügter Vorabversionszeichenfolge angezeigt (z.B. „2.5.0-alpha“).
 
 Einzelheiten zu den Features finden Sie weiter unten.

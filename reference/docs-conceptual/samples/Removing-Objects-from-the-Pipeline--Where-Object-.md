@@ -107,7 +107,7 @@ intelppm               Intel Processor Driver
 ...
 ```
 
-Der Befehl oben umfasst zwei `Where-Object`-Elemente, die aber mithilfe des logischen Operators `Where-Object` wie folgt in einem einzigen `-and`-Element ausgedrückt werden können:
+Der Befehl oben umfasst zwei `Where-Object`-Elemente, die aber mithilfe des logischen Operators `-and` wie folgt in einem einzigen `Where-Object`-Element ausgedrückt werden können:
 
 ```powershell
 Get-CimInstance -Class Win32_SystemDriver |
