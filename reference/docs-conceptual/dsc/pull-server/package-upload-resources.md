@@ -41,7 +41,7 @@ Im Beispiel oben sollte „xPSDesiredStateConfiguration.zip“ in „xPSDesiredS
 
 ### <a name="create-checksums"></a>Erstellen von Prüfsummen
 
-Sobald das Ressourcenmodul komprimiert und umbenannt wurde, müssen Sie eine **Prüfsumme** erstellen.  Die **CheckSum** wird von LCM auf dem Client verwendet, um festzustellen, ob die Ressource geändert wurde und erneut heruntergeladen werden muss. Sie können mit dem Cmdlet **New-DSCCheckSum** eine [CheckSum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) erstellen, wie im folgenden Beispiel gezeigt.
+Sobald das Ressourcenmodul komprimiert und umbenannt wurde, müssen Sie eine **Prüfsumme** erstellen.  Die **CheckSum** wird von LCM auf dem Client verwendet, um festzustellen, ob die Ressource geändert wurde und erneut heruntergeladen werden muss. Sie können mit dem Cmdlet [New-DSCCheckSum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) eine **CheckSum** erstellen, wie im folgenden Beispiel gezeigt.
 
 ```powershell
 New-DscChecksum -Path .\xPSDesiredStateConfiguration_8.4.4.0.zip

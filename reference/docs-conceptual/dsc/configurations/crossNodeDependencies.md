@@ -66,7 +66,7 @@ Alle **WaitForXXXX**-Ressourcen verwenden die folgenden Syntaxschlüssel gemeins
 ## <a name="using-waitforxxxx-resources"></a>Verwenden von WaitForXXXX-Ressourcen
 
 Jede **WaitForXXXX**-Ressource wartet darauf, dass die angegebenen Ressourcen auf dem angegebenen Knoten abgeschlossen werden.
-Andere Ressourcen in derselben Konfiguration können dann von der *WaitForXXXX*-Ressource mit dem Schlüssel **DependsOn** als **abhängig** gekennzeichnet werden.
+Andere Ressourcen in derselben Konfiguration können dann von der **WaitForXXXX**-Ressource mit dem Schlüssel **DependsOn** als *abhängig* gekennzeichnet werden.
 
 Bei der folgenden Konfiguration wartet der Zielknoten beispielsweise, bis die Ressource **xADDomain** auf dem Knoten **MyDC** (bei einer maximalen Anzahl von 30 Wiederholungen in 15-Sekunden-Intervallen) abgeschlossen ist, ehe der Zielknoten der Domäne beitreten kann.
 

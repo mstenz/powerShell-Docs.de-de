@@ -76,7 +76,7 @@ Rename-Item -Path .\localhost.mof -NewName 'GenericConfig.mof'
 Jede `.mof`-Datei, die auf einem Pullserver oder in einer SMB-Freigabe gespeichert ist, muss über eine zugeordnete `.checksum`-Datei verfügen.
 Diese Datei informiert die Clients, wenn sich die zugeordnete `.mof`-Datei geändert hat und erneut heruntergeladen werden muss.
 
-Sie können mit dem Cmdlet **New-DSCCheckSum** eine [CheckSum](/powershell/module/psdesiredstateconfiguration/new-dscchecksum) erstellen. Sie können auch `New-DSCCheckSum` für ein Verzeichnis mit Dateien mit dem Parameter `-Path` ausführen.
+Sie können mit dem Cmdlet [New-DSCCheckSum](/powershell/module/psdesiredstateconfiguration/new-dscchecksum) eine **CheckSum** erstellen. Sie können auch `New-DSCCheckSum` für ein Verzeichnis mit Dateien mit dem Parameter `-Path` ausführen.
 Wenn bereits eine Prüfsumme vorhanden ist, können Sie mit dem Parameter `-Force` erzwingen, dass sie neu erstellt wird. Das folgende Beispiel gibt ein Verzeichnis mit der `.mof`-Datei aus dem vorherigen Abschnitt an und verwendet den `-Force`-Parameter.
 
 ```powershell
