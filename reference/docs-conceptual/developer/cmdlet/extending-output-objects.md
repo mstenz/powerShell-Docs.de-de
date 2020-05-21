@@ -8,20 +8,20 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a252e0ec-d456-42d7-bd49-d6b8bc57f388
 caps.latest.revision: 11
-ms.openlocfilehash: 9c9d50c880f843e21621e5735c800e3afb48b2ad
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 12a826363221b8a7ce06245c787a7bd0529e42f8
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369719"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83690898"
 ---
 # <a name="extending-output-objects"></a>Erweitern von Ausgabeobjekten
 
-Sie können die .NET Framework Objekte, die von Cmdlets, Funktionen und Skripts zurückgegeben werden, mithilfe von Typen Dateien (. ps1xml) erweitern. Typen Dateien sind XML-basierte Dateien, mit denen Sie vorhandenen Objekten Eigenschaften und Methoden hinzufügen können. Windows PowerShell stellt z. b. die Datei Types. ps1xml bereit, die mehreren vorhandenen .NET Framework Objekten Elemente hinzufügt. Die Datei Types. ps1xml befindet sich im Windows PowerShell-Installationsverzeichnis (`$pshome`). Sie können Ihre eigene Typen Datei erstellen, um diese Objekte weiter zu erweitern oder andere Objekte zu erweitern. Wenn Sie ein Objekt mithilfe einer Typen Datei erweitern, wird jede Instanz des Objekts mit den neuen Elementen erweitert.
+Sie können die .NET Framework Objekte, die von Cmdlets, Funktionen und Skripts zurückgegeben werden, mithilfe von Typen Dateien (. ps1xml) erweitern. Typen Dateien sind XML-basierte Dateien, mit denen Sie vorhandenen Objekten Eigenschaften und Methoden hinzufügen können. Windows PowerShell stellt z. b. die Datei Types. ps1xml bereit, die mehreren vorhandenen .NET Framework Objekten Elemente hinzufügt. Die Datei Types. ps1xml befindet sich im Windows PowerShell-Installationsverzeichnis ( `$pshome` ). Sie können Ihre eigene Typen Datei erstellen, um diese Objekte weiter zu erweitern oder andere Objekte zu erweitern. Wenn Sie ein Objekt mithilfe einer Typen Datei erweitern, wird jede Instanz des Objekts mit den neuen Elementen erweitert.
 
 ## <a name="extending-the-systemarray-object"></a>Erweitern des System. Array-Objekts
 
-Das folgende Beispiel zeigt, wie Windows PowerShell das [System. Array](/dotnet/api/System.Array) -Objekt in der Datei Types. ps1xml erweitert. Standardmäßig verfügen [System. Array](/dotnet/api/System.Array) -Objekte über eine `Length`-Eigenschaft, die die Anzahl der Objekte im Array auflistet. Da die Eigenschaft mit dem Namen "length" jedoch nicht eindeutig beschrieben wird, fügt Windows PowerShell die `Count` Alias Eigenschaft hinzu, die denselben Wert wie die Eigenschaft "`Length`" anzeigt. Im folgenden XML-Code wird dem [System. Array](/dotnet/api/System.Array) -Typ die `Count`-Eigenschaft hinzugefügt.
+Das folgende Beispiel zeigt, wie Windows PowerShell das [System. Array](/dotnet/api/System.Array) -Objekt in der Datei Types. ps1xml erweitert. Standardmäßig verfügen [System. Array](/dotnet/api/System.Array) -Objekte über eine `Length` Eigenschaft, die die Anzahl der Objekte im Array auflistet. Da der Name "length" die Eigenschaft jedoch nicht eindeutig beschreibt, fügt Windows PowerShell die Alias- `Count` Eigenschaft hinzu, die denselben Wert wie die Eigenschaft anzeigt `Length` . Im folgenden XML-Code wird die- `Count` Eigenschaft dem [System. Array](/dotnet/api/System.Array) -Typ hinzugefügt.
 
 ```xml
 <Type>
@@ -43,6 +43,7 @@ Get-Member -InputObject (1,2,3,4)
 ```
 
 Der Befehl gibt die folgenden Ergebnisse zurück.
+
 ```output
 Name           MemberType    Definition
 ----           ----------    ----------
@@ -55,7 +56,8 @@ Get            Method        System.Object Get(Int32 )
 ...
 Length         Property      System.Int32 Length {get;}
 ```
-Sie können entweder die `Count`-Eigenschaft oder die `Length`-Eigenschaft verwenden, um zu bestimmen, wie viele Objekte in einem Array sind. Beispiel:
+
+Sie können entweder die- `Count` Eigenschaft oder die- `Length` Eigenschaft verwenden, um zu bestimmen, wie viele Objekte in einem Array sind. Beispiel:
 
 ```powershell
 PS> (1, 2, 3, 4).Count
@@ -75,7 +77,7 @@ PS> (1, 2, 3, 4).Length
 
 ## <a name="custom-types-files"></a>Benutzerdefinierte Typen Dateien
 
-Wenn Sie eine benutzerdefinierte Typen Datei erstellen möchten, kopieren Sie zunächst eine vorhandene Typen Datei. Die neue Datei kann einen beliebigen Namen haben, Sie muss jedoch über die Dateinamenerweiterung. ps1xml verfügen. Wenn Sie die Datei kopieren, können Sie die neue Datei in einem beliebigen Verzeichnis platzieren, das für Windows PowerShell zugänglich ist, aber es ist hilfreich, die Dateien im Windows PowerShell-Installationsverzeichnis (`$pshome`) oder in einem Unterverzeichnis des-Installationsverzeichnisses zu platzieren.
+Wenn Sie eine benutzerdefinierte Typen Datei erstellen möchten, kopieren Sie zunächst eine vorhandene Typen Datei. Die neue Datei kann einen beliebigen Namen haben, Sie muss jedoch über die Dateinamenerweiterung. ps1xml verfügen. Wenn Sie die Datei kopieren, können Sie die neue Datei in einem beliebigen Verzeichnis platzieren, das für Windows PowerShell zugänglich ist, aber es ist hilfreich, die Dateien im Windows PowerShell-Installationsverzeichnis ( `$pshome` ) oder in einem Unterverzeichnis des-Installationsverzeichnisses zu platzieren.
 
 Fügen Sie für jedes Objekt, das Sie erweitern möchten, ein Types-Element hinzu, um der Datei eigene erweiterte Typen hinzuzufügen. In den folgenden Themen werden Beispiele bereitgestellt.
 
@@ -87,7 +89,7 @@ Fügen Sie für jedes Objekt, das Sie erweitern möchten, ein Types-Element hinz
 
 Nachdem Sie Ihre eigenen erweiterten Typen definiert haben, verwenden Sie eine der folgenden Methoden, um die erweiterten Objekte verfügbar zu machen:
 
-- Verwenden Sie das [Update-typedata-](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData) Cmdlet, um die Datei mit erweiterten Typen für die aktuelle Sitzung verfügbar zu machen. Wenn Sie möchten, dass Ihre Typen Vorrang vor den Typen haben, die in anderen Typen Dateien (einschließlich der Types. ps1xml-Datei) definiert sind, verwenden Sie den `PrependData`-Parameter des Cmdlets " [Update-typedata](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData) ".
+- Verwenden Sie das [Update-typedata-](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData) Cmdlet, um die Datei mit erweiterten Typen für die aktuelle Sitzung verfügbar zu machen. Wenn Sie möchten, dass Ihre Typen Vorrang vor den Typen haben, die in anderen Typen Dateien (einschließlich der Types. ps1xml-Datei) definiert sind, verwenden Sie den- `PrependData` Parameter des [Update-typedata-](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData) Cmdlets.
 - Um die Datei mit erweiterten Typen für alle zukünftigen Sitzungen verfügbar zu machen, fügen Sie die Typdatei einem Modul hinzu, exportieren die aktuelle Sitzung oder fügen den [Update-typedata-](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData) Befehl zu Ihrem Windows PowerShell-Profil hinzu.
 
 ## <a name="signing-types-files"></a>Signierungs Typen Dateien
@@ -100,6 +102,6 @@ Typen Dateien sollten digital signiert werden, um Manipulationen zu verhindern, 
 
 [Definieren von Standardmethoden für Objekte](./defining-default-methods-for-objects.md)
 
-[Definieren von Standardmember-Sätzen für Objekte](./defining-default-member-sets-for-objects.md)
+[Definieren von Standardelementgruppen für Objekte](./defining-default-member-sets-for-objects.md)
 
 [Schreiben eines Windows PowerShell-Cmdlets](./writing-a-windows-powershell-cmdlet.md)

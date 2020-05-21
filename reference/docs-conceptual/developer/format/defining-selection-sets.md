@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 00dbb5ee-93d4-4914-a082-ef4d8b236b5c
 caps.latest.revision: 16
-ms.openlocfilehash: 596212f2e64401a751cf3dca0ee7d60b80912c00
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 95eeb037b3b9190fec1212a68029624993f3fd9f
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72368849"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692282"
 ---
 # <a name="defining-selection-sets"></a>Definieren von Auswahlgruppen
 
@@ -35,15 +35,15 @@ Sie definieren Auswahl Sätze als Teil der allgemeinen Daten, die von allen Sich
 
 Auf folgende Weise können Sie auf eine Auswahl festgelegt werden:
 
-- Jede Ansicht verfügt über ein `ViewSelectedBy` Element, das definiert, welche Objekte mithilfe der Sicht angezeigt werden. Das `ViewSelectedBy`-Element verfügt über ein untergeordnetes `SelectionSetName`-Element, das den Auswahl Satz angibt, der von allen Definitionen der Sicht verwendet wird. Es gibt keine Einschränkung hinsichtlich der Anzahl von Auswahl Sätzen, auf die Sie von einer Ansicht aus verweisen können.
+- Jede Ansicht verfügt über ein- `ViewSelectedBy` Element, das definiert, welche Objekte mithilfe der-Sicht angezeigt werden. Das- `ViewSelectedBy` Element verfügt über ein untergeordnetes- `SelectionSetName` Element, das den Auswahl Satz angibt, der von allen Definitionen der Sicht verwendet wird. Es gibt keine Einschränkung hinsichtlich der Anzahl von Auswahl Sätzen, auf die Sie von einer Ansicht aus verweisen können.
 
-- In jeder Definition einer Sicht oder eines Steuer Elements definiert das `EntrySelectedBy` Element, welche Objekte mit dieser Definition angezeigt werden. In der Regel verfügt eine Ansicht oder ein Steuerelement nur über eine Definition, sodass die Objekte durch das `ViewSelectedBy`-Element definiert werden. Das `EntrySelectedBy`-Element der Definition verfügt über ein untergeordnetes `SelectionSetName`-Element, das den Auswahl Satz angibt. Wenn Sie den Auswahl Satz für eine Definition angeben, können Sie keines der anderen untergeordneten Elemente des `EntrySelectedBy`-Elements angeben.
+- In jeder Definition einer Sicht oder eines Steuer `EntrySelectedBy` Elements definiert das-Element, welche Objekte mit dieser Definition angezeigt werden. In der Regel verfügt eine Ansicht oder ein Steuerelement nur über eine Definition, sodass die Objekte vom Element definiert werden `ViewSelectedBy` . Das- `EntrySelectedBy` Element der-Definition verfügt über ein untergeordnetes- `SelectionSetName` Element, das den Auswahl Satz angibt. Wenn Sie den Auswahl Satz für eine Definition angeben, können Sie keines der anderen untergeordneten Elemente des- `EntrySelectedBy` Elements angeben.
 
-- In jeder Definition einer Sicht oder eines Steuer Elements kann das `SelectionCondition`-Element verwendet werden, um eine Bedingung für die Verwendung der Definition anzugeben. Das `SelectionCondition`-Element verfügt über ein untergeordnetes `SelectionSetName`-Element, das den Auswahl Satz angibt, der die Bedingung auslöst. Die Bedingung wird ausgelöst, wenn eines der im Auswahl Satz definierten Objekte angezeigt wird. Weitere Informationen zum Festlegen dieser Bedingungen finden Sie unter Definieren von [Bedingungen für den Fall, dass Daten angezeigt](./defining-conditions-for-displaying-data.md)werden.
+- In jeder Definition einer Sicht oder eines Steuer `SelectionCondition` Elements kann das-Element verwendet werden, um eine Bedingung für die Verwendung der Definition anzugeben. Das- `SelectionCondition` Element verfügt über ein untergeordnetes- `SelectionSetName` Element, das den Auswahl Satz angibt, der die Bedingung auslöst. Die Bedingung wird ausgelöst, wenn eines der im Auswahl Satz definierten Objekte angezeigt wird. Weitere Informationen zum Festlegen dieser Bedingungen finden Sie unter Definieren von [Bedingungen für den Fall, dass Daten angezeigt](./defining-conditions-for-displaying-data.md)werden.
 
 ## <a name="selection-set-example"></a>Beispiel für Auswahl Satz
 
-Das folgende Beispiel zeigt einen Auswahl Satz, der direkt aus der von Windows PowerShell bereitgestellten `FileSystem` Formatierungs Datei entnommen wird. Weitere Informationen zu anderen Windows PowerShell-Formatierungs Dateien finden Sie unter [Windows PowerShell-Formatierungs Dateien](./powershell-formatting-files.md).
+Das folgende Beispiel zeigt einen Auswahl Satz, der direkt aus der `FileSystem` von Windows PowerShell bereitgestellten Formatierungs Datei entnommen wird. Weitere Informationen zu anderen Windows PowerShell-Formatierungs Dateien finden Sie unter [Windows PowerShell-Formatierungs Dateien](./powershell-formatting-files.md).
 
 ```xml
 <SelectionSets>
@@ -59,7 +59,7 @@ Das folgende Beispiel zeigt einen Auswahl Satz, der direkt aus der von Windows P
 </SelectionSets>
 ```
 
-Auf den vorherigen Auswahl Satz wird im `ViewSelectedBy`-Element einer Tabellenansicht verwiesen.
+Auf den vorherigen Auswahl Satz wird im- `ViewSelectedBy` Element einer Tabellenansicht verwiesen.
 
 ```xml
 <ViewDefinitions>
@@ -90,47 +90,47 @@ Auf den vorherigen Auswahl Satz wird im `ViewSelectedBy`-Element einer Tabellena
 
 - Das folgende Element gibt den Auswahl Satz an, der in allen Definitionen der Sicht verwendet werden soll:
 
-    - [Selectionsetname-Element für viewselectedby (Format)](./selectionsetname-element-for-viewselectedby-format.md)
+  - [Element „SelectionSetName“ für ViewSelectedBy (Format)](./selectionsetname-element-for-viewselectedby-format.md)
 
-    - [Selectionsetname-Element für entryselectedby für GroupBy (Format)](./selectionsetname-element-for-entryselectedby-for-groupby-format.md)
+  - [Element „SelectionSetName“ für EntrySelectedBy für GroupBy (Format)](./selectionsetname-element-for-entryselectedby-for-groupby-format.md)
 
 - Die folgenden Elemente geben den Auswahl Satz an, der von einer einzelnen Sicht Definition verwendet wird:
 
-    - [Selectionsetname-Element für entryselectedby für ListControl (Format)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
+  - [Element „SelectionSetName“ für EntrySelectedBy für ListControl (Format)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
 
-    - [Selectionsetname-Element für entryselectedby für tablecontrol (Format)](./selectionsetname-element-for-entryselectedby-for-tablecontrol-format.md)
+  - [Element „SelectionSetName“ für EntrySelectedBy für TableControl (Format)](./selectionsetname-element-for-entryselectedby-for-tablecontrol-format.md)
 
-    - [Selectionsetname-Element für entryselectedby für widecontrol (Format)](./selectionsetname-element-for-entryselectedby-for-widecontrol-format.md)
+  - [Element „SelectionSetName“ für EntrySelectedBy für WideControl (Format)](./selectionsetname-element-for-entryselectedby-for-widecontrol-format.md)
 
-    - [Selectionsetname-Element für entryselectedby für CustomControl für Ansicht (Format)](./selectionsetname-element-for-entryselectedby-for-customcontrol-for-view-format.md)
+  - [Element „SelectionSetName“ für EntrySelectedBy für CustomControl für View (Format)](./selectionsetname-element-for-entryselectedby-for-customcontrol-for-view-format.md)
 
 - Die folgenden Elemente geben den Auswahl Satz an, der von Common-und View-Steuerelement Definitionen verwendet wird:
 
-    - [Selectionsetname-Element für entryselectedby für Steuerelemente für View (Format)](./selectionsetname-element-for-entryselectedby-for-controls-for-view-format.md)
+  - [Element „SelectionSetName“ für EntrySelectedBy für Controls für View (Format)](./selectionsetname-element-for-entryselectedby-for-controls-for-view-format.md)
 
-    - [Selectionsetname-Element für entryselectedby für Steuerelemente für die Konfiguration (Format)](./selectionsetname-element-for-entryselectedby-for-controls-for-configuration-format.md)
+  - [Element „SelectionSetName“ für EntrySelectedBy für Controls für Configuration (Format)](./selectionsetname-element-for-entryselectedby-for-controls-for-configuration-format.md)
 
 - Die folgenden Elemente geben den Auswahl Satz an, der verwendet wird, wenn Sie definieren, welches Objekt erweitert werden soll:
 
-    - [Selectionsetname-Element für entryselectedby für enumerableexpansion (Format)](./selectionsetname-element-for-entryselectedby-for-enumerableexpansion-format.md)
+  - [Element „SelectionSetName“ für EntrySelectedBy für EnumerableExpansion (Format)](./selectionsetname-element-for-entryselectedby-for-enumerableexpansion-format.md)
 
 - Die folgenden Elemente geben den Auswahl Satz an, der von Auswahl Bedingungen verwendet wird.
 
-    - [Selectionsetname-Element für selectioncondition für Steuerelemente für die Konfiguration (Format)](./selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format.md)
+  - [Element „SelectionSetName“ für SelectionCondition für Controls für Configuration (Format)](./selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format.md)
 
-    - [Selectionsetname-Element für selectioncondition für Steuerelemente für View (Format)](./selectionsetname-element-for-selectioncondition-for-controls-for-view-format.md)
+  - [Element „SelectionSetName“ für SelectionCondition für Controls für View (Format)](./selectionsetname-element-for-selectioncondition-for-controls-for-view-format.md)
 
-    - [Selectionsetname-Element für selectioncondition für CustomControl für Ansicht (Format)](./selectionsetname-element-for-selectioncondition-for-customcontrol-for-view-format.md)
+  - [Element „SelectionSetName“ für SelectionCondition für CustomControl für View (Format)](./selectionsetname-element-for-selectioncondition-for-customcontrol-for-view-format.md)
 
-    - [Selectionsetname-Element für selectioncondition für entryselectedby für enumerableweiterung (Format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)
+  - [Element „SelectionSetName“ für SelectionCondition für EntrySelectedBy für EnumerableExpansion (Format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)
 
-    - [Selectionsetname-Element für selectioncondition für entryselectedby für ListEntry (Format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md)
+  - [Element „SelectionSetName“ für SelectionCondition für EntrySelectedBy für ListEntry (Format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md)
 
-    - [Selectionsetname-Element für selectioncondition für entryselectedby für tablecontrol (Format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format.md)
+  - [Element „SelectionSetName“ für SelectionCondition für EntrySelectedBy für TableControl (Format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format.md)
 
-    - [Selectionsetname-Element für selectioncondition für entryselectedby für wideentry (Format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)
+  - [Element „SelectionSetName“ für SelectionCondition für EntrySelectedBy für WideEntry (Format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)
 
-    - [Selectionsetname-Element für selectioncondition für GroupBy (Format)](./selectionsetname-element-for-selectioncondition-for-groupby-format.md)
+  - [Element „SelectionSetName“ für SelectionCondition für GroupBy (Format)](./selectionsetname-element-for-selectioncondition-for-groupby-format.md)
 
 ## <a name="see-also"></a>Weitere Informationen
 
@@ -142,7 +142,7 @@ Auf den vorherigen Auswahl Satz wird im `ViewSelectedBy`-Element einer Tabellena
 
 [Typen](./types-element-for-selectionset-format.md)
 
-[PowerShell-Formatierungs Dateien](./powershell-formatting-files.md)
+[PowerShell-Formatierungsdateien](./powershell-formatting-files.md)
 
 [Definieren von Bedingungen für die Anzeige von Daten](./defining-conditions-for-displaying-data.md)
 

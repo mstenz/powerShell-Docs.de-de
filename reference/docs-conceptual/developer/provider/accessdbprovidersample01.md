@@ -8,29 +8,29 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 853b7e5d-76c1-490e-8269-0ef31ba2ff13
 caps.latest.revision: 10
-ms.openlocfilehash: dc1ae92af8a57d6197b595db8e098256ac444b78
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 67c2b6cfd36a805fce25bf0c7c55db56ec14092c
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359999"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83690923"
 ---
 # <a name="accessdbprovidersample01"></a>AccessDBProviderSample01
 
 Dieses Beispiel zeigt, wie Sie eine Anbieter Klasse deklarieren, die direkt von der [System. Management. Automation. Provider. cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) -Klasse abgeleitet wird. Wird hier nur aus Gründen der Vollständigkeit aufgeführt.
 
-## <a name="demonstrates"></a>Gegenstand
+## <a name="demonstrates"></a>Zeigt
 
 > [!IMPORTANT]
 > Ihre Anbieter Klasse wird wahrscheinlich von einer der folgenden Klassen abgeleitet und kann möglicherweise andere Anbieter Schnittstellen implementieren:
 >
-> -   [System. Management. Automation. Provider. itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) -Klasse. Siehe [AccessDBProviderSample03](./accessdbprovidersample03.md).
-> -   [System. Management. Automation. Provider. containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) -Klasse. Siehe [AccessDBProviderSample04](./accessdbprovidersample04.md).
-> -   [System. Management. Automation. Provider. navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) -Klasse. Siehe [AccessDBProviderSample05](./accessdbprovidersample05.md).
+> - [System. Management. Automation. Provider. itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) -Klasse. Siehe [AccessDBProviderSample03](./accessdbprovidersample03.md).
+> - [System. Management. Automation. Provider. containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) -Klasse. Siehe [AccessDBProviderSample04](./accessdbprovidersample04.md).
+> - [System. Management. Automation. Provider. navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) -Klasse. Siehe [AccessDBProviderSample05](./accessdbprovidersample05.md).
 >
 > Weitere Informationen zum Auswählen der Anbieter Klasse, von der basierend auf den Anbieter Features abgeleitet werden soll, finden [Sie unter Entwerfen des Windows PowerShell-Anbieters](./provider-types.md).
 
-Dieses Beispiel zeigt die folgenden Vorgänge:
+Dieses Beispiel zeigt Folgendes:
 
 - Deklarieren des `CmdletProvider` Attributs.
 
@@ -38,7 +38,7 @@ Dieses Beispiel zeigt die folgenden Vorgänge:
 
 ## <a name="example"></a>Beispiel
 
-Dieses Beispiel zeigt, wie Sie eine Anbieter Klasse definieren und das `CmdletProvider` Attribut deklarieren.
+Dieses Beispiel zeigt, wie Sie eine Anbieter Klasse definieren und das Attribut deklarieren `CmdletProvider` .
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Providers
@@ -66,4 +66,4 @@ namespace Microsoft.Samples.PowerShell.Providers
 
 [System. Management. Automation. Provider. navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)
 
-[Entwerfen Ihres Windows PowerShell-Anbieters](./provider-types.md)
+[Entwerfen eines Windows PowerShell-Anbieters](./provider-types.md)

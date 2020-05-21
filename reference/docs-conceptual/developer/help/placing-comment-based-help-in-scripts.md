@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 49f8267c-d887-4d7d-b9b7-80dc624b1261
 caps.latest.revision: 4
-ms.openlocfilehash: d199c53a748ac57bb2a5f998b5056e39d3e80c0d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1bebfbd822963830363012060067c656d7709543
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72361179"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83565525"
 ---
 # <a name="placing-comment-based-help-in-scripts"></a>Ablegen der kommentarbasierten Hilfe in Skripts
 
-In diesem Thema wird erläutert, wo Sie eine Kommentar basierte Hilfe für ein Skript platzieren können, damit das `Get-Help`-Cmdlet Skripts mit Skripts verknüpft und keine Funktionen enthält, die möglicherweise im Skript vorhanden sind.
+In diesem Thema wird erläutert, wo Sie eine Kommentar basierte Hilfe für ein Skript platzieren können, damit das `Get-Help` Cmdlet das Kommentar basierte Hilfethema Skripts und keine Funktionen zuordnet, die möglicherweise im Skript vorhanden sind.
 
 ## <a name="where-to-place-comment-based-help-for-a-script"></a>Platzieren der Kommentar basierten Hilfe für ein Skript
 
