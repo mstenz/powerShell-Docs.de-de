@@ -8,17 +8,17 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d603de38-6dfe-4fd9-898c-21fbcb686645
 caps.latest.revision: 8
-ms.openlocfilehash: 099a4955cd74770008f353c67491077899e5a31c
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: bf7555c07b0c3d8584565f5dd1f11e9973de9a9e
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359699"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557242"
 ---
-# <a name="management-odata-iis-extension-schema-files"></a><span data-ttu-id="e2237-102">IIS-Erweiterung für OData Services for Management: Schemadateien</span><span class="sxs-lookup"><span data-stu-id="e2237-102">Management OData IIS Extension Schema Files</span></span>
+# <a name="management-odata-iis-extension-schema-files"></a><span data-ttu-id="b5ef0-102">IIS-Erweiterung für OData Services for Management: Schemadateien</span><span class="sxs-lookup"><span data-stu-id="b5ef0-102">Management OData IIS Extension Schema Files</span></span>
 
-<span data-ttu-id="e2237-103">Verwaltungs-odata-Webdienste verwenden MOF-Dateien zum Definieren von Ressourcen und XML-Dateien zum Definieren der Ressourcen Zuordnung.</span><span class="sxs-lookup"><span data-stu-id="e2237-103">Management OData web services use MOF files to define resources and XML files to define resource mapping.</span></span> <span data-ttu-id="e2237-104">In den folgenden Themen werden die Schemas für diese Dateien beschrieben.</span><span class="sxs-lookup"><span data-stu-id="e2237-104">The following topics describe the schemas for those files.</span></span>
+<span data-ttu-id="b5ef0-103">Verwaltungs-odata-Webdienste verwenden MOF-Dateien zum Definieren von Ressourcen und XML-Dateien zum Definieren der Ressourcen Zuordnung.</span><span class="sxs-lookup"><span data-stu-id="b5ef0-103">Management OData web services use MOF files to define resources and XML files to define resource mapping.</span></span> <span data-ttu-id="b5ef0-104">In den folgenden Themen werden die Schemas für diese Dateien beschrieben.</span><span class="sxs-lookup"><span data-stu-id="b5ef0-104">The following topics describe the schemas for those files.</span></span>
 
-- [<span data-ttu-id="e2237-105">Schema der Ressourcen Zuordnung</span><span class="sxs-lookup"><span data-stu-id="e2237-105">Resource Mapping Schema</span></span>](./resource-mapping-schema.md)
+- [<span data-ttu-id="b5ef0-105">Schema für Ressourcenzuordnung</span><span class="sxs-lookup"><span data-stu-id="b5ef0-105">Resource Mapping Schema</span></span>](./resource-mapping-schema.md)
 
-- [<span data-ttu-id="e2237-106">Öffentliches Ressourcen Schema</span><span class="sxs-lookup"><span data-stu-id="e2237-106">Public Resource Schema</span></span>](./public-resource-schema.md)
+- [<span data-ttu-id="b5ef0-106">Schema für öffentliche Ressourcen</span><span class="sxs-lookup"><span data-stu-id="b5ef0-106">Public Resource Schema</span></span>](./public-resource-schema.md)
