@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 471c85f3-9287-45c2-b4bc-833caa1b7634
 caps.latest.revision: 8
-ms.openlocfilehash: 3850aec88bc800718a82f51c91fbd0cb3c705089
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 49a938a5acd7817476b299deea465771b6a94985
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367589"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83563667"
 ---
 # <a name="runspace06-sample"></a>Runspace06-Beispiel
 
@@ -23,7 +23,7 @@ In diesem Beispiel wird gezeigt, wie ein Modul einem [System. Management. Automa
 
 Dieses Beispiel erfordert Windows PowerShell 2,0.
 
-## <a name="demonstrates"></a>Gegenstand
+## <a name="demonstrates"></a>Zeigt
 
 In diesem Beispiel wird Folgendes veranschaulicht:
 
@@ -127,4 +127,4 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Schreiben einer Windows PowerShell-Host Anwendung](./writing-a-windows-powershell-host-application.md)
+[Schreiben einer Windows PowerShell-Hostanwendung](./writing-a-windows-powershell-host-application.md)

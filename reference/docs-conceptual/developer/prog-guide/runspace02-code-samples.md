@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ce442990-b5f1-4334-b6d8-080e527ccea1
 caps.latest.revision: 7
-ms.openlocfilehash: 1b5977bbc9c08182f73456fae2595cbaa16a9c86
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 8dd57add55cf6b7583e7d8f218a8782b7210af60
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72366629"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560286"
 ---
 # <a name="runspace02-code-samples"></a>Runspace02-Codebeispiele
 
@@ -21,10 +21,10 @@ Im folgenden finden Sie den Quellcode für das Runspace02-Beispiel. In diesem Be
 
 Einen umfassenden Beispielcode finden Sie in den folgenden Themen.
 
-|Language|Thema|
+|Sprache|Thema|
 |--------------|-----------|
-|C#|[Runspace02 (C#)-Code Beispiel](./runspace02-csharp-code-sample.md)|
-|VB.NET|[Runspace02 (VB.net)-Code Beispiel](./runspace02-vb-net-code-sample.md)|
+|C#|[Runspace02-Codebeispiel (C#)](./runspace02-csharp-code-sample.md)|
+|VB.NET|[Runspace02-Codebeispiel (VB.NET)](./runspace02-vb-net-code-sample.md)|
 
 ## <a name="see-also"></a>Weitere Informationen
 

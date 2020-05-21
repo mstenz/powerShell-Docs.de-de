@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 98bcfda0-6ee2-46f5-bbc7-5fab8b780d6a
 caps.latest.revision: 5
-ms.openlocfilehash: edb4d9944a527391983e068ddf07f4fac415c3f9
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: c557a6ec51d52f529faaaa316c89da359cd97051
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359869"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83562508"
 ---
 # <a name="writing-a-navigation-provider"></a>Schreiben eines Navigationsanbieters
 
@@ -191,7 +191,7 @@ protected override string MakePath(string parent, string child)
 
 ### <a name="implementing-normalizerelativepath"></a>Implementieren von normalizerelativepath
 
-Die [System. Management. Automation. Provider. navigationcmdletprovider. normalizerelativepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.NormalizeRelativePath) -Methode übernimmt `path` und `basepath` Parameter und gibt einen normalisierten Pfad zurück, der dem `path`-Parameter und relativ zum `basepath`-Parameter entspricht.
+Die [System. Management. Automation. Provider. navigationcmdletprovider. normalizerelativepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.NormalizeRelativePath) -Methode nimmt `path` -und- `basepath` Parameter an und gibt einen normalisierten Pfad zurück, der dem `path` -Parameter und relativ zum- `basepath` Parameter entspricht.
 
 ```csharp
 protected override string NormalizeRelativePath(string path,
@@ -300,6 +300,6 @@ protected override void MoveItem(string path, string destination)
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Schreiben eines Container Anbieters](./writing-a-container-provider.md)
+[Schreiben eines Containeranbieters](./writing-a-container-provider.md)
 
-[Windows PowerShell-Anbieter (Übersicht)](./windows-powershell-provider-overview.md)
+[Windows PowerShell-Anbieter: Übersicht](./windows-powershell-provider-overview.md)

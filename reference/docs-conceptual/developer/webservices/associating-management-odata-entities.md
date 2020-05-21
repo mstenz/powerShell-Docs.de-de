@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 947a3add-3593-400d-8144-8b44c8adbe5e
 caps.latest.revision: 5
-ms.openlocfilehash: 44b718e024eb98ac562edb50076287a31f5edc6b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4849735bf412497f5590b109c67760b6a197cb2b
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359809"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561728"
 ---
 # <a name="associating-management-odata-entities"></a>Zuordnen von Management OData-Entitäten
 
-Es ist oft hilfreich, eine Zuordnung zwischen zwei verschiedenen odata-Verwaltungs Entitäten zu erstellen. Ein Verwaltungs-odata-Dienst könnte z. b. über Entitäten verfügen, die einen Produktkatalog verwalten, der in Kategorien organisiert ist, und die Entitäten `Product` und `Category`definieren. Wenn Sie diese beiden Entitäten zuordnen, kann ein Client Informationen zu allen Produkten in einer Kategorie mit einer einzelnen Anforderung an den Webdienst erhalten.
+Es ist oft hilfreich, eine Zuordnung zwischen zwei verschiedenen odata-Verwaltungs Entitäten zu erstellen. Ein Verwaltungs-odata-Dienst könnte z. b. über Entitäten verfügen, die einen Produktkatalog verwalten, der in Kategorien organisiert ist, und die Entitäten `Product` und definieren `Category` . Wenn Sie diese beiden Entitäten zuordnen, kann ein Client Informationen zu allen Produkten in einer Kategorie mit einer einzelnen Anforderung an den Webdienst erhalten.
 
 Ein Beispiel, das zeigt, wie Zuordnungen zwischen Entitäten erstellt werden können, finden Sie unter [Association Sample](https://code.msdn.microsoft.com:443/windowsdesktop/Association-sample-0f0fa87e).
 
@@ -43,9 +43,9 @@ string Products[];
 }
 ```
 
-Die `Category`-Klasse definiert eine Eigenschaft, bei der es sich um ein Array mit den Namen der Produkte handelt, die zu dieser Kategorie gehören.
+Die- `Category` Klasse definiert eine Eigenschaft, bei der es sich um ein Array mit den Namen der Produkte handelt, die zu dieser Kategorie gehören.
 
-Um zwei Entitäten zuzuordnen, müssen Sie eine Klasse mit dem `Association`-Attribut in der MOF-Datei des Ressourcen Schemas für den Dienst definieren. Die-Klasse muss die beiden zu zugeordneten Entitäten definieren, die als `ends` der Zuordnung bezeichnet werden. Das folgende Beispiel zeigt eine Definition einer Klasse, die eine Zuordnung zwischen den Entitäten "Category" und "Products" definiert.
+Um zwei Entitäten zuzuordnen, müssen Sie eine Klasse mit dem- `Association` Attribut in der MOF-Datei des Ressourcen Schemas für den Dienst definieren. Die-Klasse muss die beiden zu zugeordneten Entitäten definieren, die als Zuordnung bezeichnet werden `ends` . Das folgende Beispiel zeigt eine Definition einer Klasse, die eine Zuordnung zwischen den Entitäten "Category" und "Products" definiert.
 
 ```csharp
 [Association]
@@ -55,7 +55,7 @@ Product ref theProducts;
 }
 ```
 
-Außerdem müssen Sie die Deklaration der Products-Eigenschaft in der Category-Klasse ändern. Verwenden Sie das `AssociationClass`-Schlüsselwort, um anzugeben, dass die Eigenschaft ein Ende der Zuordnung ist. Die-Eigenschaft muss auch als Verweis auf eine separate Entität anstelle eines Arrays von Zeichen folgen definiert werden. Dazu verwenden Sie das `ref`-Schlüsselwort. Das folgende Beispiel zeigt die Eigenschaften Definition für die Zuordnung.
+Außerdem müssen Sie die Deklaration der Products-Eigenschaft in der Category-Klasse ändern. Verwenden Sie das- `AssociationClass` Schlüsselwort, um anzugeben, dass die Eigenschaft ein Ende der Zuordnung ist. Die-Eigenschaft muss auch als Verweis auf eine separate Entität anstelle eines Arrays von Zeichen folgen definiert werden. Verwenden Sie hierzu das- `ref` Schlüsselwort. Das folgende Beispiel zeigt die Eigenschaften Definition für die Zuordnung.
 
 ```csharp
 class Sample_Category {
@@ -67,7 +67,7 @@ Sample_Product ref AssociatedProducts[];
 };
 ```
 
-Schließlich müssen Sie das andere Ende der Zuordnung deklarieren, indem Sie der `Product`-Klasse eine Eigenschafts Definition hinzufügen. Dabei handelt es sich um einen Verweis auf ein Array oder eine einzelne Entität. Angenommen, jedes Produkt gehört nur zu einer Kategorie, die Definition sieht wie folgt aus.
+Schließlich müssen Sie das andere Ende der Zuordnung deklarieren, indem Sie der Klasse eine Eigenschafts Definition hinzufügen `Product` . Dabei handelt es sich um einen Verweis auf ein Array oder eine einzelne Entität. Angenommen, jedes Produkt gehört nur zu einer Kategorie, die Definition sieht wie folgt aus.
 
 ```csharp
 class Sample_Product {
@@ -82,7 +82,7 @@ Die Eigenschaften, die die beiden Enden der Zuordnung darstellen, werden als Nav
 
 #### <a name="steps-for-associating-entities-in-the-resource-schema-file"></a>Schritte zum Zuordnen von Entitäten in der Ressourcen Schema Datei
 
-- Definieren Sie die Zuordnung als Klasse, indem Sie das `Association`-Schlüsselwort verwenden.
+- Definieren Sie die Zuordnung als Klasse, indem Sie das- `Association` Schlüsselwort verwenden.
 
 - Definieren Sie die Enden der Zuordnung, indem Sie das associationclass-Schlüsselwort verwenden, um die Eigenschaften der zugeordneten Entitäten zu qualifizieren.
 
@@ -94,7 +94,7 @@ Beim Zuordnen einer Zuordnung in der XML-Datei der Ressourcen Zuordnung müssen 
 
 - , Wenn die Navigations Eigenschaft im zugrunde liegenden vorhanden ist. .NET Framework Typ, und diese Eigenschaft enthält Fremdschlüssel, ist keine explizite Zuordnung erforderlich.
 
-- Wenn die Navigations Eigenschaft nicht im zugrunde liegenden .NET Framework Typ vorhanden ist, müssen Sie ein Cmdlet angeben, das die Liste der Schlüssel der zugeordneten Instanzen abruft. Hierzu fügen Sie ein `Association`-Element hinzu, das unter dem `CmdletImplementation`-Element unter dem-Element, das die `cmdlets` für die anderen CRUD-Befehle definiert.
+- Wenn die Navigations Eigenschaft nicht im zugrunde liegenden .NET Framework Typ vorhanden ist, müssen Sie ein Cmdlet angeben, das die Liste der Schlüssel der zugeordneten Instanzen abruft. Hierzu fügen Sie ein Element hinzu `Association` , das unter dem-Element unter dem- `CmdletImplementation` Element enthalten ist. Befolgen Sie dabei die Elemente, die `cmdlets` für die anderen CRUD-Befehle definieren.
 
   ```xml
   Class Name=" Category">
@@ -177,7 +177,7 @@ Der Client kann eine Liste der Instanzen abrufen, die einer Entität zugeordnet 
 
 #### <a name="constructing-queries-for-associated-entities"></a>Erstellen von Abfragen für zugehörige Entitäten
 
-- Ein Client kann die Details einer Kategorie anfordern, ohne die zugehörigen Produkte abzurufen. Beispielsweise werden mit der folgenden Anforderung Details der Kategorie `food` abgerufen.
+- Ein Client kann die Details einer Kategorie anfordern, ohne die zugehörigen Produkte abzurufen. Beispielsweise ruft die folgende Anforderung Details der Kategorie ab `food` .
 
   ```
   http://localhost:7000/MODataSvc/sample.svc/Category('food')
@@ -195,7 +195,7 @@ Der Client kann eine Liste der Instanzen abrufen, die einer Entität zugeordnet 
   http://localhost:7000/MODataSvc/sample.svc/Category('food')/$links/AssociatedProducts
   ```
 
-- Der Client kann die Kategoriedetails und die dazugehörigen Produkte mithilfe des `$expand` Qualifizierers erhalten.
+- Der Client kann die Kategoriedetails und die dazugehörigen Produkte mithilfe des- `$expand` Qualifizierers erhalten.
 
   ```
   http://localhost:7000/MODataSvc/sample.svc/Category('food')?$expand=AssociatedProducts

@@ -10,12 +10,12 @@ applies_to:
 - Windows PowerShell 3.0
 ms.assetid: a8f48736-c9fa-4e07-bd18-dd813e11f774
 caps.latest.revision: 6
-ms.openlocfilehash: fb5189e2e77b90ddaf61386246a6f001369bfda4
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 9d87b086a8309560c039b000afc1c6535dbca38e
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72360709"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560541"
 ---
 # <a name="how-to-prepare-updatable-help-cab-files"></a>Vorbereiten von aktualisierbaren CAB-Hilfedateien
 
@@ -25,10 +25,10 @@ In diesem Abschnitt werden folgende Themen behandelt.
 
 - [Erstellen und Hochladen von CAB-Dateien](./how-to-create-and-upload-cab-files.md)
 
-- [Benennen der CAB-Datei für eine aktualisierbare Hilfe](./how-to-name-an-updatable-help-cab-file.md)
+- [Benennen von aktualisierbaren CAB-Hilfedateien](./how-to-name-an-updatable-help-cab-file.md)
 
-- [Dateitypen in einer aktualisierbaren Hilfe-CAB-Datei zulässig](./file-types-permitted-in-an-updatable-help-cab-file.md)
+- [Zulässige Dateitypen in aktualisierbaren CAB-Hilfedateien](./file-types-permitted-in-an-updatable-help-cab-file.md)
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Unterstützen aktualisierbarer Hilfe](./supporting-updatable-help.md)
+[Unterstützung einer aktualisierbaren Hilfe](./supporting-updatable-help.md)

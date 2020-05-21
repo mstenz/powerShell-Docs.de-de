@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4497b64c-7875-4047-bf77-07e04c098ffe
 caps.latest.revision: 4
-ms.openlocfilehash: 376d90394b632e82322b848cb124f002ff91d8b3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d29a652b32d07b7825bc5bed5099daa67dd32ff4
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72366179"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564594"
 ---
 # <a name="deploying-a-management-odata-web-service"></a>Bereitstellen eines Management OData-Webdiensts
 
@@ -23,7 +23,7 @@ Nachdem Sie alle Schritte abgeschlossen haben, die zum Erstellen eines odata-Web
 
 Führen Sie die folgenden Schritte aus, um den Verwaltungs-odata-Webdienst bereitzustellen.
 
-1. Erstellen Sie ein Verzeichnis für Ihre Webanwendung in Ihrem IIS-`WWWRoot` Verzeichnis.
+1. Erstellen Sie ein Verzeichnis für Ihre Webanwendung in Ihrem IIS- `WWWRoot` Verzeichnis.
 
 2. Kopieren Sie die MOF-Schema Datei, die XML-Schema Datei, die DLLs, die die Schnittstellen " [Microsoft. Management. odata. customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) " und " [System. Management. Automation. Remoting. pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) " exportieren, und die Datei "Web. config" in das Anwendungsverzeichnis.
 
@@ -427,14 +427,14 @@ Start-Sleep 10
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Implementieren einer benutzerdefinierten Autorisierung für einen Management-odata-Webdienst](./implementing-custom-authorization-for-a-management-odata-web-service.md)
+[Implementieren der benutzerdefinierten Autorisierung für einen Management OData-Webdienst](./implementing-custom-authorization-for-a-management-odata-web-service.md)
 
-[Implementieren von SessionConfiguration für einen Management-odata-Webdienst](./implementing-sessionconfiguration-for-a-management-odata-web-service.md)
+[Implementieren von SessionConfiguration für einen Management OData-Webdienst](./implementing-sessionconfiguration-for-a-management-odata-web-service.md)
 
-[Erstellen der MOF-Schema Datei für einen Management odata-Webdienst](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
+[Erstellen der MOF-Schemadatei für einen Management OData-Webdienst](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
 
-[Erstellen der XML-Schema Datei für einen Management odata-Webdienst](./authoring-the-xml-schema-file-for-a-management-odata-web-service.md)
+[Erstellen der XML-Schemadatei für einen Management OData-Webdienst](./authoring-the-xml-schema-file-for-a-management-odata-web-service.md)
 
-[Erstellen der Datei "Web. config" für einen Management-odata-Webdienst](./authoring-the-web-config-file-for-a-management-odata-web-service.md)
+[Erstellen der Web.config-Schemadatei für einen Management OData-Webdienst](./authoring-the-web-config-file-for-a-management-odata-web-service.md)
 
-[Erstellen eines odata-Webdiensts für die Verwaltung](./creating-a-management-odata-web-service.md)
+[Erstellen eines Management OData-Webdiensts](./creating-a-management-odata-web-service.md)

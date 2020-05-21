@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: db04f1df-def5-4456-8869-336024cda723
 caps.latest.revision: 8
-ms.openlocfilehash: a9c530cdc66302eb6b3d9d2b284eeb486c3b2ba9
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d3c2c339ba9ac6ec4a1958fadbfe1c6d74e3d736
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364419"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561051"
 ---
 # <a name="how-to-declare-dynamic-parameters"></a>Deklarieren von dynamischen Parametern
 
@@ -27,7 +27,7 @@ Dieses Beispiel zeigt, wie Sie dynamische Parameter definieren, die dem Cmdlet z
    public class SendGreetingCommand : Cmdlet, IDynamicParameters
    ```
 
-2. Aufrufen der [System. Management. Automation. idynamicparameters. getdynamicparameters *](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters) -Methode, die das Objekt zurückgibt, in dem die dynamischen Parameter definiert sind. In diesem Beispiel wird die-Methode aufgerufen, wenn der `Employee`-Parameter angegeben wird.
+2. Aufrufen der [System. Management. Automation. idynamicparameters. getdynamicparameters *](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters) -Methode, die das Objekt zurückgibt, in dem die dynamischen Parameter definiert sind. In diesem Beispiel wird die-Methode aufgerufen, wenn der- `Employee` Parameter angegeben wird.
 
    ```csharp
    public object GetDynamicParameters()
@@ -60,7 +60,7 @@ Dieses Beispiel zeigt, wie Sie dynamische Parameter definieren, die dem Cmdlet z
 
 ## <a name="example"></a>Beispiel
 
-In diesem Beispiel wird der `Department`-Parameter hinzugefügt, wenn der Benutzer den `Employee`-Parameter angibt. Der `Department`-Parameter ist ein optionaler Parameter, und das validateset-Attribut wird verwendet, um die zulässigen Argumente anzugeben.
+In diesem Beispiel wird der- `Department` Parameter hinzugefügt, wenn der Benutzer den- `Employee` Parameter angibt. Der `Department` -Parameter ist ein optionaler Parameter, und das validateset-Attribut wird verwendet, um die zulässigen Argumente anzugeben.
 
 ```csharp
 using System;

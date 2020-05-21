@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 931ccace-c565-4a98-8dcc-df00f86394b1
 caps.latest.revision: 8
-ms.openlocfilehash: d210a852a90d94df2ab360dd86f0b83a396330e3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7c4098c6c670f22253fe7d463b33e45208d00790
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74415659"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83559997"
 ---
 # <a name="adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters"></a>Hinzufügen von Aliasen, Platzhaltererweiterung und Hilfe zu Cmdlet-Parametern
 
@@ -35,13 +35,13 @@ public class StopProcCommand : Cmdlet
 
 ## <a name="defining-parameters-for-system-modification"></a>Definieren von Parametern für die System Änderung
 
-Ihr Cmdlet muss Parameter definieren, die Systemänderungen und Benutzer Feedback unterstützen. Mit dem-Cmdlet sollte ein `Name` Parameter oder eine entsprechende-Entsprechung definiert werden, damit das Cmdlet das System durch eine bestimmte Art von Bezeichner ändern kann. Außerdem sollte das Cmdlet die `Force`-und `PassThru` Parameter definieren. Weitere Informationen zu diesen Parametern finden Sie unter [Erstellen eines Cmdlets, das das System ändert](./creating-a-cmdlet-that-modifies-the-system.md).
+Ihr Cmdlet muss Parameter definieren, die Systemänderungen und Benutzer Feedback unterstützen. Mit dem-Cmdlet sollte ein `Name` Parameter oder eine Entsprechung definiert werden, damit das Cmdlet das System mit einer bestimmten Art von Bezeichner ändern kann. Außerdem sollte mit dem-Cmdlet der `Force` -Parameter und der-Parameter definiert werden `PassThru` . Weitere Informationen zu diesen Parametern finden Sie unter [Erstellen eines Cmdlets, das das System ändert](./creating-a-cmdlet-that-modifies-the-system.md).
 
 ## <a name="defining-a-parameter-alias"></a>Definieren eines parameteralias
 
 Ein parameteralias kann ein alternativer Name oder ein gut definierter Kurzname mit einem oder zwei Buchstaben für einen Cmdlet-Parameter sein. In beiden Fällen besteht das Ziel der Verwendung von Aliasen darin, den Benutzereintrag von der Befehlszeile aus zu vereinfachen. Windows PowerShell unterstützt Parameter Aliase über das [System. Management. Automation. Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) -Attribut, das die Deklarations Syntax [Alias ()] verwendet.
 
-Der folgende Code zeigt, wie dem `Name`-Parameter ein Alias hinzugefügt wird.
+Der folgende Code zeigt, wie dem-Parameter ein Alias hinzugefügt wird `Name` .
 
 ```csharp
 /// <summary>
@@ -64,13 +64,13 @@ public string[] Name
 private string[] processNames;
 ```
 
-Zusätzlich zur Verwendung des [System. Management. Automation. Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) -Attributs führt die Windows PowerShell-Laufzeit eine partielle namens Übereinstimmung aus, auch wenn keine Aliase angegeben werden. Wenn das Cmdlet z. b. über einen `FileName`-Parameter verfügt und der einzige Parameter ist, der mit `F`beginnt, kann der Benutzer `Filename`, `Filenam`, `File`, `Fi`oder `F` eingeben und den Eintrag weiterhin als `FileName` Parameter erkennen.
+Zusätzlich zur Verwendung des [System. Management. Automation. Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) -Attributs führt die Windows PowerShell-Laufzeit eine partielle namens Übereinstimmung aus, auch wenn keine Aliase angegeben werden. Wenn das Cmdlet z. b. über einen `FileName` Parameter verfügt und der einzige Parameter ist, der mit beginnt `F` , kann der Benutzer `Filename` , `Filenam` , `File` , oder eingeben `Fi` `F` und den Eintrag weiterhin als Parameter erkennen `FileName` .
 
 ## <a name="creating-help-for-parameters"></a>Erstellen von Hilfe für Parameter
 
-Mit Windows PowerShell können Sie Hilfe für Cmdlet-Parameter erstellen. Verwenden Sie dies für alle Parameter, die für die Systemänderung und das Benutzer Feedback verwendet werden. Für jeden Parameter zur Unterstützung der Hilfe können Sie das `HelpMessage` Attribute-Schlüsselwort in der [System. Management. Automation. Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) -Attribut Deklaration festlegen. Dieses Schlüsselwort definiert den Text, der dem Benutzer zur Unterstützung bei der Verwendung des-Parameters angezeigt werden soll. Sie können auch das `HelpMessageBaseName`-Schlüsselwort festlegen, um den Basis Namen einer Ressource zu identifizieren, die für die Nachricht verwendet werden soll. Wenn Sie dieses Schlüsselwort festlegen, müssen Sie auch das `HelpMessageResourceId`-Schlüsselwort festlegen, um den Ressourcen Bezeichner anzugeben.
+Mit Windows PowerShell können Sie Hilfe für Cmdlet-Parameter erstellen. Verwenden Sie dies für alle Parameter, die für die Systemänderung und das Benutzer Feedback verwendet werden. Für jeden Parameter zur Unterstützung der Hilfe können Sie das `HelpMessage` Attribute-Schlüsselwort in der [System. Management. Automation. Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) -Attribut Deklaration festlegen. Dieses Schlüsselwort definiert den Text, der dem Benutzer zur Unterstützung bei der Verwendung des-Parameters angezeigt werden soll. Sie können auch das- `HelpMessageBaseName` Schlüsselwort festlegen, um den Basis Namen einer Ressource zu identifizieren, die für die Nachricht verwendet werden soll. Wenn Sie dieses Schlüsselwort festlegen, müssen Sie auch das- `HelpMessageResourceId` Schlüsselwort festlegen, um den Ressourcen Bezeichner anzugeben.
 
-Der folgende Code aus diesem Cmdlet "halte-proc" definiert das `HelpMessage` attributsschlüsselwort für den Parameter "`Name`".
+Der folgende Code aus diesem Cmdlet "Pause-proc" definiert das `HelpMessage` Attribut Schlüsselwort für den `Name` Parameter.
 
 ```csharp
 /// <summary>
@@ -92,7 +92,7 @@ Ihr Cmdlet muss eine Eingabe Verarbeitungsmethode überschreiben, meistens hande
 
 ## <a name="supporting-wildcard-expansion"></a>Unterstützung für Platzhalter
 
-Um die Auswahl mehrerer Objekte zu ermöglichen, kann das Cmdlet die Klassen " [System. Management. Automation. wildcardpattern](/dotnet/api/System.Management.Automation.WildcardPattern) " und " [System. Management. Automation. wildcardoptions](/dotnet/api/System.Management.Automation.WildcardOptions) " verwenden, um die Unterstützung für Platzhalter Erweiterungen für Parameter Eingaben bereitzustellen. Beispiele für Platzhalter Muster sind LSA *, \*. txt und [a-c]\*. Verwenden Sie das backanführungs Zeichen (') als Escapezeichen, wenn das Muster ein Zeichen enthält, das buchstäblich verwendet werden soll.
+Um die Auswahl mehrerer Objekte zu ermöglichen, kann das Cmdlet die Klassen " [System. Management. Automation. wildcardpattern](/dotnet/api/System.Management.Automation.WildcardPattern) " und " [System. Management. Automation. wildcardoptions](/dotnet/api/System.Management.Automation.WildcardOptions) " verwenden, um die Unterstützung für Platzhalter Erweiterungen für Parameter Eingaben bereitzustellen. Beispiele für Platzhalter Muster sind LSA *, \* txt und [a-c] \* . Verwenden Sie das backanführungs Zeichen (') als Escapezeichen, wenn das Muster ein Zeichen enthält, das buchstäblich verwendet werden soll.
 
 Platzhalter Erweiterungen von Datei-und Pfadnamen sind Beispiele für gängige Szenarien, in denen das Cmdlet möglicherweise die Unterstützung von Pfad Eingaben zulässt, wenn die Auswahl mehrerer Objekte erforderlich ist. Häufig wird das Dateisystem angezeigt, in dem ein Benutzer alle Dateien im aktuellen Ordner anzeigen möchte.
 
@@ -100,7 +100,7 @@ Sie sollten eine angepasste Platzhalter Muster Vergleichs Implementierung nur se
 
 - **Fragezeichen (?).** Entspricht einem beliebigen Zeichen an der angegebenen Position.
 
-- **Sternchen (\*).** Entspricht 0 (null) oder mehr Zeichen, beginnend an der angegebenen Position.
+- **Sternchen ( \* ).** Entspricht 0 (null) oder mehr Zeichen, beginnend an der angegebenen Position.
 
 - **Öffnende eckige Klammer ([).** Führt einen Muster Klammer Ausdruck ein, der Zeichen oder einen Zeichenbereich enthalten kann. Wenn ein Bereich erforderlich ist, wird ein Bindestrich (-) verwendet, um den Bereich anzugeben.
 
@@ -111,7 +111,7 @@ Sie sollten eine angepasste Platzhalter Muster Vergleichs Implementierung nur se
 > [!NOTE]
 > Weitere Informationen zu Platzhalter Mustern finden Sie [unter unterstützen von Platzhaltern in Cmdlet-Parametern](./supporting-wildcard-characters-in-cmdlet-parameters.md).
 
-Der folgende Code zeigt, wie Sie Platzhalter Optionen festlegen und das Platzhalter Muster definieren, das zum Auflösen des `Name`-Parameters für dieses Cmdlet verwendet wird.
+Der folgende Code zeigt, wie Sie Platzhalter Optionen festlegen und das Platzhalter Muster definieren, das zum Auflösen des- `Name` Parameters für dieses Cmdlet verwendet wird.
 
 ```csharp
 WildcardOptions options = WildcardOptions.IgnoreCase |
@@ -130,7 +130,7 @@ if (!wildcard.IsMatch(processName))
 
 ## <a name="code-sample"></a>Codebeispiel
 
-Den gesamten C# Beispielcode finden Sie unter [StopProcessSample03 Sample](./stopprocesssample03-sample.md).
+Den gesamten c#-Beispielcode finden Sie unter [StopProcessSample03 Sample](./stopprocesssample03-sample.md).
 
 ## <a name="define-object-types-and-formatting"></a>Definieren von Objekttypen und Formatierung
 
@@ -144,13 +144,13 @@ Nachdem ein Cmdlet implementiert wurde, muss es über ein Windows PowerShell-Sna
 
 Wenn das Cmdlet bei Windows PowerShell registriert wurde, können Sie es in der Befehlszeile testen. Testen Sie das Beispiel-Cmdlet "Stopp-proc". Weitere Informationen zur Verwendung von Cmdlets über die Befehlszeile finden Sie unter [Getting Started with Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell).
 
-- Starten Sie Windows PowerShell, und verwenden Sie "Break-proc", um einen Prozess mit dem ProcessName-Alias für den `Name`-Parameter zu starten.
+- Starten Sie Windows PowerShell, und verwenden Sie "Ende-proc", um einen Prozess mit dem ProcessName-Alias für den Parameter zu starten `Name` .
 
     ```powershell
     PS> stop-proc -ProcessName notepad
     ```
 
-Die folgende Ausgabe wird angezeigt.
+    Die folgende Ausgabe wird angezeigt.
 
     ```
     Confirm
@@ -165,7 +165,7 @@ Die folgende Ausgabe wird angezeigt.
     PS> stop-proc
     ```
 
-Die folgende Ausgabe wird angezeigt.
+    Die folgende Ausgabe wird angezeigt.
 
     ```
     Cmdlet stop-proc at command pipeline position 1
@@ -176,13 +176,13 @@ Die folgende Ausgabe wird angezeigt.
     Name[0]: notepad
     ```
 
-- Führen Sie nun den folgenden Eintrag aus, um alle Prozesse anzuhalten, die dem Platzhalter Muster "* Note\*" entsprechen. Sie werden dazu aufgefordert, jeden Prozess anzuhalten, der mit dem Muster übereinstimmt.
+- Führen Sie nun den folgenden Eintrag aus, um alle Prozesse anzuhalten, die dem Platzhalter Muster "* Note \* " entsprechen. Sie werden dazu aufgefordert, jeden Prozess anzuhalten, der mit dem Muster übereinstimmt.
 
     ```powershell
     PS> stop-proc -Name *note*
     ```
 
-Die folgende Ausgabe wird angezeigt.
+    Die folgende Ausgabe wird angezeigt.
 
     ```
     Confirm
@@ -191,7 +191,7 @@ Die folgende Ausgabe wird angezeigt.
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): Y
     ```
 
-Die folgende Ausgabe wird angezeigt.
+    Die folgende Ausgabe wird angezeigt.
 
     ```
     Confirm
@@ -200,7 +200,7 @@ Die folgende Ausgabe wird angezeigt.
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): N
     ```
 
-Die folgende Ausgabe wird angezeigt.
+    Die folgende Ausgabe wird angezeigt.
 
     ```
     Confirm

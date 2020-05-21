@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 137543d8-0012-4cba-bcd6-98b25aac83bb
 caps.latest.revision: 9
-ms.openlocfilehash: 8271512d06047f3ff5e45f81d971ffe2c1f6afd7
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 9bd72e8f97c194c98adb1049f5a966549113fd12
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365469"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83563892"
 ---
 # <a name="how-to-write-a-cmdlet"></a>Schreiben eines Cmdlets
 
-In diesem Artikel wird gezeigt, wie Sie ein Cmdlet schreiben. Das `Send-Greeting`-Cmdlet nimmt einen einzelnen Benutzernamen als Eingabe an und schreibt dann eine Begrüßung an diesen Benutzer. Obwohl das Cmdlet nicht viel Arbeit leistet, veranschaulicht dieses Beispiel die Hauptabschnitte eines Cmdlets.
+In diesem Artikel wird gezeigt, wie Sie ein Cmdlet schreiben. Das `Send-Greeting` Cmdlet nimmt einen einzelnen Benutzernamen als Eingabe an und schreibt dann eine Begrüßung an diesen Benutzer. Obwohl das Cmdlet nicht viel Arbeit leistet, veranschaulicht dieses Beispiel die Hauptabschnitte eines Cmdlets.
 
 ## <a name="steps-to-write-a-cmdlet"></a>Schritte zum Schreiben eines Cmdlets
 

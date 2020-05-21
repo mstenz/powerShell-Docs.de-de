@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 27d0ee5e-2589-4530-92ef-c09996b80994
 caps.latest.revision: 10
-ms.openlocfilehash: 8f745cc0e5ef6db7a6bbdf39d826103f3b8a98ce
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 772f73793449856651ab6b03e1ccc14faed941fc
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369739"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561446"
 ---
 # <a name="events01-sample"></a>Events01-Beispiel
 
@@ -30,7 +30,7 @@ Dieses Beispiel wird von der [Microsoft. PowerShell. Commands. objecteventregist
    Dadurch wird das Beispiel Projekt in Microsoft Visual Studio geöffnet.
 
 3. Wählen Sie im Menü **Erstellen** die Option **Projektmappe erstellen** aus.
-   Die Bibliothek für das Beispiel wird in den standardmäßigen `\bin`-oder `\bin\debug` Ordner erstellt.
+   Die Bibliothek für das Beispiel wird in den Standard- `\bin` oder- `\bin\debug` Ordnern erstellt.
 
 ### <a name="how-to-run-the-sample"></a>Ausführen des Beispiels
 
@@ -77,14 +77,14 @@ A file was created in the TEMP directory
 
 Dieses Beispiel erfordert Windows PowerShell 2,0.
 
-## <a name="demonstrates"></a>Gegenstand
+## <a name="demonstrates"></a>Zeigt
 
 In diesem Beispiel wird Folgendes veranschaulicht:
 
 ### <a name="how-to-write-a-cmdlet-for-event-registration"></a>Schreiben eines Cmdlets für die Ereignis Registrierung
 
-Das-Cmdlet wird von der [Microsoft. PowerShell. Commands. objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) -Klasse abgeleitet, die Unterstützung für Parameter bereitstellt, die den `Register-*Event`-Cmdlets gemeinsam sind.
-Cmdlets, die von [Microsoft. PowerShell. Commands. objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) abgeleitet werden, müssen nur Ihre spezifischen Parameter definieren und die `GetSourceObject` und `GetSourceObjectEventName` abstrakten Methoden überschreiben.
+Das-Cmdlet wird von der [Microsoft. PowerShell. Commands. objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) -Klasse abgeleitet, die Unterstützung für Parameter bereitstellt, die von den `Register-*Event` Cmdlets gemeinsam sind.
+Cmdlets, die von [Microsoft. PowerShell. Commands. objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) abgeleitet werden, müssen nur die jeweiligen Parameter definieren und die `GetSourceObject` abstrakten Methoden und überschreiben `GetSourceObjectEventName` .
 
 ## <a name="example"></a>Beispiel
 

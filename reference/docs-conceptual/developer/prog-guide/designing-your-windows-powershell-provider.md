@@ -10,12 +10,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], designing
 ms.assetid: 11d20319-cc40-4227-b810-4af33372b182
 caps.latest.revision: 10
-ms.openlocfilehash: bfb29fd5df87ffa9ae270c18ce8bfb0c59ee6f90
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.openlocfilehash: 6112e64a4a15d9dc8ac28ba51259b6647db4c064
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75870658"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560048"
 ---
 # <a name="designing-your-windows-powershell-provider"></a>Entwerfen eines Windows PowerShell-Anbieters
 
@@ -33,15 +33,15 @@ Um dem Benutzer den Zugriff auf Daten zu ermöglichen, die sich auf einem physis
 
 ### <a name="defining-a-provider-qualified-path"></a>Definieren eines vom Anbieter qualifizierten Pfads
 
-Damit die Windows PowerShell-Laufzeit den Anbieter initialisieren und deren Initialisierung initialisieren kann, muss der Windows PowerShell-Anbieter einen von einem Anbieter qualifizierten Pfad unterstützen. File System::\\\uncshare\abc\bar ist beispielsweise der vom Anbieter qualifizierte Pfad für den File System-Anbieter, der von Windows PowerShell bereitgestellt wird.
+Damit die Windows PowerShell-Laufzeit den Anbieter initialisieren und deren Initialisierung initialisieren kann, muss der Windows PowerShell-Anbieter einen von einem Anbieter qualifizierten Pfad unterstützen. File System:: \\ \uncshare\abc\bar ist beispielsweise der vom Anbieter qualifizierte Pfad für den File System-Anbieter, der von Windows PowerShell bereitgestellt wird.
 
 ### <a name="defining-a-provider-direct-path"></a>Definieren eines direkten Pfads für einen Anbieter
 
-Um den Remote Zugriff auf Ihren Windows PowerShell-Anbieter zuzulassen, sollte er einen Anbieter-Direct-Pfad unterstützen, um direkt an den Windows PowerShell-Anbieter für den aktuellen Speicherort zu übergeben. Der Windows PowerShell-Anbieter für die Registrierung kann z. b. \\\server\regkeypath als Anbieter-Direct-Pfad verwenden.
+Um den Remote Zugriff auf Ihren Windows PowerShell-Anbieter zuzulassen, sollte er einen Anbieter-Direct-Pfad unterstützen, um direkt an den Windows PowerShell-Anbieter für den aktuellen Speicherort zu übergeben. Der Windows PowerShell-Anbieter für die Registrierung kann z \\ . b. \server\regkeypath als Anbieter-Direct-Pfad verwenden.
 
 ### <a name="defining-a-provider-internal-path"></a>Definieren eines internen Anbieter Pfads
 
-Um dem Anbieter-Cmdlet den Zugriff auf Daten mit nicht-Windows PowerShell-APIs (Application Programming Interface) zu gestatten, sollte der Windows PowerShell-Anbieter einen Anbieter internen Pfad unterstützen. Dieser Pfad wird nach dem "::" im vom Anbieter qualifizierten Pfad angegeben. Beispielsweise ist der Anbieter interne Pfad für den Windows PowerShell-Anbieter "File System" \\\uncshare\abc\bar.
+Um dem Anbieter-Cmdlet den Zugriff auf Daten mit nicht-Windows PowerShell-APIs (Application Programming Interface) zu gestatten, sollte der Windows PowerShell-Anbieter einen Anbieter internen Pfad unterstützen. Dieser Pfad wird nach dem "::" im vom Anbieter qualifizierten Pfad angegeben. Beispielsweise ist der Anbieter interne Pfad für den Windows PowerShell-Anbieter "File System" \\ \uncshare\abc\bar.
 
 ## <a name="changing-stored-data"></a>Ändern gespeicherter Daten
 
@@ -53,12 +53,12 @@ Windows PowerShell bietet eine Reihe von Basisklassen, die Sie verwenden können
 
 Jede Windows PowerShell-Anbieter-Basisklasse stellt eine Reihe von Cmdlets zur Verfügung. In diesem Abschnitt werden die-Cmdlets beschrieben, aber ihre Parameter werden nicht beschrieben.
 
-Mithilfe des Sitzungs Zustands werden von der Windows PowerShell-Runtime verschiedene Location-Cmdlets für bestimmte Windows PowerShell-Anbieter bereitgestellt, wie z. b. die `Get-Location`-, `Set-Location`-, `Pop-Location`-und `Push-Location`-Cmdlets. Mit dem Cmdlet "`Get-Help`" können Sie Informationen zu diesen Location-Cmdlets abrufen.
+Mithilfe des Sitzungs Zustands stellt die Windows PowerShell-Runtime verschiedene Location-Cmdlets für bestimmte Windows PowerShell-Anbieter zur Verfügung, `Get-Location` z `Set-Location` . b. die `Pop-Location` `Push-Location` Cmdlets,, und. Mit dem- `Get-Help` Cmdlet können Sie Informationen zu diesen Location-Cmdlets abrufen.
 
 ### <a name="cmdletprovider-base-class"></a>Cmdletprovider-Basisklasse
 
 Die [System. Management. Automation. Provider. cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) -Klasse definiert einen einfachen Windows PowerShell-Anbieter. Diese Klasse unterstützt die Anbieter Deklaration und bietet eine Reihe von Eigenschaften und Methoden, die für alle Windows PowerShell-Anbieter verfügbar sind.
-Die-Klasse wird vom-Cmdlet `Get-PSProvider` aufgerufen, um alle verfügbaren Anbieter für eine Sitzung aufzulisten.
+Die-Klasse wird vom `Get-PSProvider` Cmdlet aufgerufen, um alle verfügbaren Anbieter für eine Sitzung aufzulisten.
 Die Implementierung dieses Cmdlets wird durch den Sitzungszustand bereitgestellt.
 
 > [!NOTE]
@@ -68,7 +68,7 @@ Die Implementierung dieses Cmdlets wird durch den Sitzungszustand bereitgestellt
 
 Die [System. Management. Automation. Provider. drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) -Klasse definiert einen Windows PowerShell-Laufwerks Anbieter, der Vorgänge zum Hinzufügen neuer Laufwerke, zum Entfernen vorhandener Laufwerke und zum Initialisieren von Standardlaufwerken unterstützt. Beispielsweise initialisiert der von Windows PowerShell bereitgestellte File System-Anbieter Laufwerke für alle bereitgestellten Volumes, z. b. Festplatten und CD/DVD-Geräte Laufwerke.
 
-Diese Klasse wird von der [System. Management. Automation. Provider. cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) -Basisklasse abgeleitet. In der folgenden Tabelle sind die Cmdlets aufgelistet, die von dieser Klasse verfügbar gemacht werden. Zusätzlich zu den aufgelisteten-Cmdlets (durch den Sitzungszustand verfügbar gemacht) ist das Cmdlet "`Get-PSDrive`", das zum Abrufen der verfügbaren Laufwerke verwendet wird.
+Diese Klasse wird von der [System. Management. Automation. Provider. cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider) -Basisklasse abgeleitet. In der folgenden Tabelle sind die Cmdlets aufgelistet, die von dieser Klasse verfügbar gemacht werden. Zusätzlich zu den aufgelisteten `Get-PSDrive` ist das Cmdlet (durch den Sitzungszustand verfügbar gemacht) ein verknüpftes Cmdlet, das zum Abrufen der verfügbaren Laufwerke verwendet wird.
 
 |      Cmdlet      |                             Definition                              |
 | ---------------- | ------------------------------------------------------------------- |
@@ -81,12 +81,12 @@ Die [System. Management. Automation. Provider. itemcmdletprovider](/dotnet/api/S
 
 |     Cmdlet     |                                                                                                                                                            Definition                                                                                                                                                            |
 | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Clear-Item`   | Löscht den aktuellen Inhalt von Elementen an der angegebenen Position und ersetzt ihn durch den vom Anbieter angegebenen "Clear"-Wert. Dieses Cmdlet übergibt kein Ausgabe Objekt über die Pipeline, es sei denn, der `PassThru` Parameter ist angegeben.                                                                                   |
+| `Clear-Item`   | Löscht den aktuellen Inhalt von Elementen an der angegebenen Position und ersetzt ihn durch den vom Anbieter angegebenen "Clear"-Wert. Dieses Cmdlet übergibt kein Ausgabe Objekt über die Pipeline, es sei denn, der `PassThru` Parameter wurde angegeben.                                                                                   |
 | `Get-Item`     | Ruft Elemente aus der angegebenen Position ab und streamt die resultierenden Objekte.                                                                                                                                                                                                                                                  |
 | `Invoke-Item`  | Ruft die Standardaktion für das Element im angegebenen Pfad auf.                                                                                                                                                                                                                                                                   |
-| `Set-Item`     | Legt ein Element an der angegebenen Position mit dem angegebenen Wert fest. Dieses Cmdlet übergibt kein Ausgabe Objekt über die Pipeline, es sei denn, der `PassThru` Parameter ist angegeben.                                                                                                                                                   |
+| `Set-Item`     | Legt ein Element an der angegebenen Position mit dem angegebenen Wert fest. Dieses Cmdlet übergibt kein Ausgabe Objekt über die Pipeline, es sei denn, der `PassThru` Parameter wurde angegeben.                                                                                                                                                   |
 | `Resolve-Path` | Löst die Platzhalter für einen Windows PowerShell-Pfad auf und streamt Pfadinformationen.                                                                                                                                                                                                                                              |
-| `Test-Path`    | Testet auf den angegebenen Pfad und gibt `true` zurück, sofern vorhanden, und andernfalls `false`. Dieses Cmdlet wird implementiert, um den `IsContainer`-Parameter für die [System. Management. Automation. Provider. cmdletprovider. Write teitemject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) -Methode zu unterstützen. |
+| `Test-Path`    | Testet auf den angegebenen Pfad und gibt zurück, `true` Wenn es vorhanden ist, und `false` andernfalls. Dieses Cmdlet wird zur Unterstützung des- `IsContainer` Parameters für die [System. Management. Automation. Provider. cmdletprovider. Write-temuject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) -Methode implementiert. |
 
 ### <a name="containercmdletprovider-base-class"></a>Containercmdletprovider-Basisklasse
 
@@ -96,11 +96,11 @@ Diese Klasse wird von der [System. Management. Automation. Provider. itemcmdletp
 
 |     Cmdlet      |                                                                        Definition                                                                        |
 | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Copy-Item`     | Kopiert Elemente von einem Speicherort in einen anderen. Dieses Cmdlet übergibt kein Ausgabe Objekt über die Pipeline, es sei denn, der `PassThru` Parameter ist angegeben. |
+| `Copy-Item`     | Kopiert Elemente von einem Speicherort in einen anderen. Dieses Cmdlet übergibt kein Ausgabe Objekt über die Pipeline, es sei denn, der `PassThru` Parameter wurde angegeben. |
 | `Get-Childitem` | Ruft die untergeordneten Elemente an der angegebenen Position ab und streamt sie als-Objekte.                                                                        |
 | `New-Item`      | Erstellt neue Elemente an der angegebenen Position und streamt das resultierende Objekt.                                                                           |
 | `Remove-Item`   | Entfernt Elemente aus der angegebenen Position.                                                                                                               |
-| `Rename-Item`   | Benennt ein Element an der angegebenen Position um. Dieses Cmdlet übergibt kein Ausgabe Objekt über die Pipeline, es sei denn, der `PassThru` Parameter ist angegeben. |
+| `Rename-Item`   | Benennt ein Element an der angegebenen Position um. Dieses Cmdlet übergibt kein Ausgabe Objekt über die Pipeline, es sei denn, der `PassThru` Parameter wurde angegeben. |
 
 ### <a name="navigationcmdletprovider-base-class"></a>Navigationcmdletprovider-Basisklasse
 
@@ -109,13 +109,13 @@ Die [System. Management. Automation. Provider. navigationcmdletprovider](/dotnet
 |    Cmdlet    |                                                                      Definition                                                                      |
 | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Kombinieren-Pfad | Kombiniert zwei Pfade zu einem einzelnen Pfad, wobei ein Anbieter spezifisches Trennzeichen zwischen Pfaden verwendet wird. Dieses Cmdlet streamt Zeichen folgen.                               |
-| `Move-Item`  | Verschiebt Elemente an den angegebenen Speicherort. Dieses Cmdlet übergibt kein Ausgabe Objekt über die Pipeline, es sei denn, der `PassThru` Parameter ist angegeben. |
+| `Move-Item`  | Verschiebt Elemente an den angegebenen Speicherort. Dieses Cmdlet übergibt kein Ausgabe Objekt über die Pipeline, es sei denn, der `PassThru` Parameter wurde angegeben. |
 
-Ein verwandtes Cmdlet ist das grundlegende Cmdlet "Cmdlet", das von Windows PowerShell bereitgestellt wird. Dieses Cmdlet kann zum Analysieren eines Windows PowerShell-Pfads verwendet werden, um den `Parent`-Parameter zu unterstützen. Die übergeordnete Pfad Zeichenfolge wird gestreamt.
+Ein verwandtes Cmdlet ist das grundlegende Cmdlet "Cmdlet", das von Windows PowerShell bereitgestellt wird. Dieses Cmdlet kann zum Analysieren eines Windows PowerShell-Pfads verwendet werden, um den-Parameter zu unterstützen `Parent` . Die übergeordnete Pfad Zeichenfolge wird gestreamt.
 
 ## <a name="select-provider-interfaces-to-support"></a>Anbieter Schnittstellen zur Unterstützung auswählen
 
-Zusätzlich zur Ableitung von einer der Windows PowerShell-Basisklassen kann Ihr Windows PowerShell-Anbieter auch andere Funktionen unterstützen, indem er von einer oder mehreren der folgenden Anbieter Schnittstellen ableitet. In diesem Abschnitt werden die Schnittstellen und die von den einzelnen unterstützten Cmdlets definiert. Es werden nicht die Parameter für die von der Schnittstelle unterstützten Cmdlets beschrieben. Cmdlet-Parameterinformationen sind Online mithilfe der Cmdlets `Get-Command` und `Get-Help` verfügbar.
+Zusätzlich zur Ableitung von einer der Windows PowerShell-Basisklassen kann Ihr Windows PowerShell-Anbieter auch andere Funktionen unterstützen, indem er von einer oder mehreren der folgenden Anbieter Schnittstellen ableitet. In diesem Abschnitt werden die Schnittstellen und die von den einzelnen unterstützten Cmdlets definiert. Es werden nicht die Parameter für die von der Schnittstelle unterstützten Cmdlets beschrieben. Cmdlet-Parameterinformationen sind Online mithilfe der `Get-Command` `Get-Help` Cmdlets und verfügbar.
 
 ### <a name="icontentcmdletprovider"></a>Icontentcmdletprovider
 
@@ -123,23 +123,23 @@ Die [System. Management. Automation. Provider. icontentcmdletprovider](/dotnet/a
 
 |     Cmdlet      |                                                                                        Definition                                                                                        |
 | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Add-Content`   | Fügt den angegebenen Wert Längen an den Inhalt des angegebenen Elements an. Dieses Cmdlet übergibt kein Ausgabe Objekt über die Pipeline, es sei denn, der `PassThru` Parameter ist angegeben. |
-| `Clear-Content` | Legt den Inhalt des angegebenen Elements auf den Wert "Clear" fest. Dieses Cmdlet übergibt kein Ausgabe Objekt über die Pipeline, es sei denn, der `PassThru` Parameter ist angegeben.               |
+| `Add-Content`   | Fügt den angegebenen Wert Längen an den Inhalt des angegebenen Elements an. Dieses Cmdlet übergibt kein Ausgabe Objekt über die Pipeline, es sei denn, der `PassThru` Parameter wurde angegeben. |
+| `Clear-Content` | Legt den Inhalt des angegebenen Elements auf den Wert "Clear" fest. Dieses Cmdlet übergibt kein Ausgabe Objekt über die Pipeline, es sei denn, der `PassThru` Parameter wurde angegeben.               |
 | `Get-Content`   | Ruft den Inhalt der angegebenen Elemente ab und streamt die resultierenden Objekte.                                                                                                         |
-| `Set-Content`   | Ersetzt den vorhandenen Inhalt für die angegebenen Elemente. Dieses Cmdlet übergibt kein Ausgabe Objekt über die Pipeline, es sei denn, der `PassThru` Parameter ist angegeben.                     |
+| `Set-Content`   | Ersetzt den vorhandenen Inhalt für die angegebenen Elemente. Dieses Cmdlet übergibt kein Ausgabe Objekt über die Pipeline, es sei denn, der `PassThru` Parameter wurde angegeben.                     |
 
 ### <a name="ipropertycmdletprovider"></a>Ipropertycmdletprovider
 
 Die [System. Management. Automation. Provider. ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider) -Schnittstelle definiert einen Windows PowerShell-Eigenschaften Anbieter, der Vorgänge für die Eigenschaften von Elementen im Datenspeicher ausführt. In der folgenden Tabelle sind die von dieser Schnittstelle verfügbar gemachten Cmdlets aufgeführt.
 
 > [!NOTE]
-> Der `Path`-Parameter für diese Cmdlets gibt einen Pfad zu einem Element an, anstatt eine Eigenschaft zu identifizieren.
+> Der- `Path` Parameter für diese Cmdlets gibt einen Pfad zu einem Element an, anstatt eine Eigenschaft zu identifizieren.
 
 |        Cmdlet        |                                                                                   Definition                                                                                    |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Clear-ItemProperty` | Legt die Eigenschaften der angegebenen Elemente auf den "Clear"-Wert fest. Dieses Cmdlet übergibt kein Ausgabe Objekt über die Pipeline, es sei denn, der `PassThru` Parameter ist angegeben.      |
+| `Clear-ItemProperty` | Legt die Eigenschaften der angegebenen Elemente auf den "Clear"-Wert fest. Dieses Cmdlet übergibt kein Ausgabe Objekt über die Pipeline, es sei denn, der `PassThru` Parameter wurde angegeben.      |
 | `Get-ItemProperty`   | Ruft Eigenschaften aus den angegebenen Elementen ab und streamt die resultierenden Objekte.                                                                                                |
-| `Set-ItemProperty`   | Legt die Eigenschaften der angegebenen Elemente mit den angegebenen Werten fest. Dieses Cmdlet übergibt kein Ausgabe Objekt über die Pipeline, es sei denn, der `PassThru` Parameter ist angegeben. |
+| `Set-ItemProperty`   | Legt die Eigenschaften der angegebenen Elemente mit den angegebenen Werten fest. Dieses Cmdlet übergibt kein Ausgabe Objekt über die Pipeline, es sei denn, der `PassThru` Parameter wurde angegeben. |
 
 ### <a name="idynamicpropertycmdletprovider"></a>Idynamicpropertycmdletprovider
 
@@ -148,11 +148,11 @@ In der folgenden Tabelle sind die von dieser Schnittstelle verfügbar gemachten 
 
 |        Cmdlet         |                                                                                Definition                                                                                |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `Copy-ItemProperty`   | Kopiert eine Eigenschaft aus dem angegebenen Element in ein anderes Element. Dieses Cmdlet übergibt kein Ausgabe Objekt über die Pipeline, es sei denn, der `PassThru` Parameter ist angegeben. |
-| `Move-ItemProperty`   | Verschiebt eine Eigenschaft aus dem angegebenen Element in ein anderes Element. Dieses Cmdlet übergibt kein Ausgabe Objekt über die Pipeline, es sei denn, der `PassThru` Parameter ist angegeben.  |
+| `Copy-ItemProperty`   | Kopiert eine Eigenschaft aus dem angegebenen Element in ein anderes Element. Dieses Cmdlet übergibt kein Ausgabe Objekt über die Pipeline, es sei denn, der `PassThru` Parameter wurde angegeben. |
+| `Move-ItemProperty`   | Verschiebt eine Eigenschaft aus dem angegebenen Element in ein anderes Element. Dieses Cmdlet übergibt kein Ausgabe Objekt über die Pipeline, es sei denn, der `PassThru` Parameter wurde angegeben.  |
 | `New-ItemProperty`    | Erstellt eine Eigenschaft für die angegebenen Elemente und streamt die resultierenden Objekte.                                                                                             |
 | `Remove-ItemProperty` | Entfernt eine Eigenschaft für die angegebenen Elemente.                                                                                                                              |
-| `Rename-ItemProperty` | Benennt eine Eigenschaft der angegebenen Elemente um. Dieses Cmdlet übergibt kein Ausgabe Objekt über die Pipeline, es sei denn, der `PassThru` Parameter ist angegeben.                 |
+| `Rename-ItemProperty` | Benennt eine Eigenschaft der angegebenen Elemente um. Dieses Cmdlet übergibt kein Ausgabe Objekt über die Pipeline, es sei denn, der `PassThru` Parameter wurde angegeben.                 |
 
 ### <a name="isecuritydescriptorcmdletprovider"></a>Isecuritydescriptor cmdletprovider
 
@@ -163,7 +163,7 @@ Die [System. Management. Automation. Provider. isecuritydescriptorcmdletprovider
 | `Get-Acl` | Ruft die Informationen ab, die in einer Zugriffs Steuerungs Liste (Access Control List, ACL) enthalten sind. diese ist Teil einer Sicherheits Beschreibung, die zum Schutz von Betriebssystemressourcen verwendet wird, z. b. eine Datei oder ein Objekt.                                                                                                                                                                                                                                      |
 | `Set-Acl` | Legt die Informationen für eine ACL fest. Sie befindet sich in der Form einer Instanz von [System. Security. AccessControl. ObjectSecurity](/dotnet/api/System.Security.AccessControl.ObjectSecurity) für die Elemente, die für den angegebenen Pfad festgelegt sind. Dieses Cmdlet kann Informationen zu Dateien, Schlüsseln und unter Schlüsseln in der Registrierung oder einem beliebigen anderen Anbieter Element festlegen, wenn der Windows PowerShell-Anbieter die Einstellung von Sicherheitsinformationen unterstützt. |
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
 [Erstellen von Windows PowerShell-Anbietern](./how-to-create-a-windows-powershell-provider.md)
 

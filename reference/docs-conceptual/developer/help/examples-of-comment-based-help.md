@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 868194a2-17e9-4184-bc36-c04a33f26494
 caps.latest.revision: 4
-ms.openlocfilehash: 30e98bfcf06b1720005a73ee8294aeba7e1ae066
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: fbaea91c12eede70d30e29dce3fd2d36d7f55994
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367819"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564839"
 ---
 # <a name="examples-of-comment-based-help"></a>Beispiele für die kommentarbasierte Hilfe
 
@@ -145,7 +145,7 @@ C:\PS> get-help add-extension -full
 
 Die folgende Beispiel Funktion enthält eine Kommentar basierte Hilfe.
 
-Beachten Sie die leeren Zeilen zwischen dem schließenden **#>** und der `Param` Anweisung. In einem Skript, das nicht über eine `Param`-Anweisung verfügt, müssen mindestens zwei Leerzeilen zwischen dem letzten Kommentar im Hilfethema und der ersten Funktionsdeklaration vorhanden sein. Ohne diese leeren Zeilen verknüpft Get-Help das Hilfethema anstelle des Skripts mit der Funktion.
+Beachten Sie die leeren Zeilen zwischen dem schließenden **#>** und der- `Param` Anweisung. In einem Skript, das keine `Param` -Anweisung enthält, müssen mindestens zwei Leerzeilen zwischen dem letzten Kommentar im Hilfethema und der ersten Funktionsdeklaration vorhanden sein. Ohne diese leeren Zeilen verknüpft Get-Help das Hilfethema anstelle des Skripts mit der Funktion.
 
 ```powershell
 <#
@@ -257,7 +257,7 @@ C:\PS> get-help c:\ps-test\update-month.ps1 -full
 
 ## <a name="example-3-parameter-descriptions-in-a-param-statement"></a>Beispiel 3: Parameter Beschreibungen in einer Param-Anweisung
 
-In diesem Beispiel wird gezeigt, wie Parameter Beschreibungen in die `Param`-Anweisung einer Funktion oder eines Skripts eingefügt werden. Dieses Format ist besonders nützlich, wenn die Parameter Beschreibungen kurz sind.
+Dieses Beispiel zeigt, wie Parameterbeschreibungen in die- `Param` Anweisung einer Funktion oder eines Skripts eingefügt werden. Dieses Format ist besonders nützlich, wenn die Parameter Beschreibungen kurz sind.
 
 ```powershell
 function Add-Extension
@@ -282,11 +282,11 @@ function Add-Extension
     #>
 ```
 
-Die Ergebnisse sind identisch mit den Ergebnissen für Beispiel 1. "Get-Help" interpretiert die Parameter Beschreibungen so, als hätten Sie das `.Parameter`-Schlüsselwort begleitet.
+Die Ergebnisse sind identisch mit den Ergebnissen für Beispiel 1. "Get-Help" interpretiert die Parameter Beschreibungen so, als wären Sie mit dem- `.Parameter` Schlüsselwort versehen.
 
 ## <a name="example-4--redirecting-to-an-xml-file"></a>Beispiel 4: Umleiten an eine XML-Datei
 
-Sie können XML-basierte Hilfe Themen für Funktionen und Skripts schreiben. Obwohl die Kommentar basierte Hilfe einfacher implementiert werden kann, ist die XML-basierte Hilfe erforderlich, wenn Sie die Hilfe Inhalte genauer steuern möchten oder wenn Sie Hilfe Themen in mehrere Sprachen übersetzen möchten. Das folgende Beispiel zeigt die ersten Zeilen des Skripts Update-month. ps1. Das Skript verwendet das `.ExternalHelp`-Schlüsselwort, um den Pfad zu einem XML-basierten Hilfethema für das Skript anzugeben.
+Sie können XML-basierte Hilfe Themen für Funktionen und Skripts schreiben. Obwohl die Kommentar basierte Hilfe einfacher implementiert werden kann, ist die XML-basierte Hilfe erforderlich, wenn Sie die Hilfe Inhalte genauer steuern möchten oder wenn Sie Hilfe Themen in mehrere Sprachen übersetzen möchten. Das folgende Beispiel zeigt die ersten Zeilen des Skripts Update-month. ps1. Das Skript verwendet das- `.ExternalHelp` Schlüsselwort, um den Pfad zu einem XML-basierten Hilfethema für das Skript anzugeben.
 
 ```powershell
 #  .ExternalHelp C:\MyScripts\Update-Month-Help.xml
@@ -296,7 +296,7 @@ Sie können XML-basierte Hilfe Themen für Funktionen und Skripts schreiben. Obw
     function Get-Data { }
 ```
 
-Das folgende Beispiel zeigt die Verwendung des-Schlüssel Worts `.ExternalHelp` in einer-Funktion.
+Das folgende Beispiel zeigt die Verwendung des- `.ExternalHelp` Schlüssel Worts in einer-Funktion.
 
 ```powershell
 function Add-Extension
@@ -311,7 +311,7 @@ function Add-Extension
 
 ## <a name="example-5--redirecting-to-a-different-help-topic"></a>Beispiel 5: Umleiten an ein anderes Hilfethema
 
-Der folgende Code ist ein Auszug aus dem Anfang der integrierten `Help`-Funktion in Windows PowerShell, die jeweils einen Bildschirm von Hilfe Text anzeigt. Da im Hilfethema für das Cmdlet "Get-Help" die Hilfe Funktion beschrieben wird, verwendet die Funktion "Help" das `.ForwardHelpTargetName`-und `.ForwardHelpCategory`-Schlüsselwort, um den Benutzer zum Hilfethema "Get-Help Cmdlet" umzuleiten.
+Der folgende Code ist ein Auszug aus dem Anfang der integrierten `Help` Funktion in Windows PowerShell, der jeweils einen Bildschirm mit Hilfe Text anzeigt. Da im Hilfethema für das Cmdlet "Get-Help" die Hilfe Funktion beschrieben wird, verwendet die Hilfe Funktion die `.ForwardHelpTargetName` `.ForwardHelpCategory` Schlüsselwörter und, um den Benutzer zum Hilfethema Get-Help Cmdlet umzuleiten.
 
 ```powershell
 function help

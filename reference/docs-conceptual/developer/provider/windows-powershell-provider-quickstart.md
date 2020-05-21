@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3e879ba7-c334-460b-94a1-3e9b63d3d8de
 caps.latest.revision: 5
-ms.openlocfilehash: 949c0d63b1e5bca1bfe670362df4297c29e98fcc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4693a2ec02a8f010f900bebf5a50853edef88cb1
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359919"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560932"
 ---
 # <a name="windows-powershell-provider-quickstart"></a>Windows PowerShell-Anbieter: Schnellstart
 
@@ -35,9 +35,9 @@ Erstellen Sie in Visual Studio ein Klassen Bibliotheksprojekt mit dem Namen acce
 
 1. Fügen Sie die System. Management. Automation-Assembly als Verweis auf das Projekt hinzu.
 
-2. Klicken Sie **> Debuggen auf Projekt > accessdbprovidersample-Eigenschaften**. Klicken Sie unter **Projekt starten**auf **externes Programm starten**, und navigieren Sie zur ausführbaren Windows PowerShell-Datei (in der Regel c:\Windows\System32\WindowsPowerShell\v1.0\\. PowerShell. exe).
+2. Klicken Sie **> Debuggen auf Projekt > accessdbprovidersample-Eigenschaften**. Klicken Sie unter **Projekt starten**auf **externes Programm starten**, und navigieren Sie zur ausführbaren Windows PowerShell-Datei (in der Regel c:\Windows\System32\WindowsPowerShell\v1.0 \\ . PowerShell. exe).
 
-3. Geben Sie unter **Start Optionen**Folgendes in das Feld **Befehlszeilenargumente** ein: `-noexit -command "[reflection.assembly]::loadFrom(AccessDBProviderSample.dll' ) | import-module"`
+3. Geben Sie unter **Start Optionen**Folgendes in das Feld **Befehlszeilenargumente** ein:`-noexit -command "[reflection.assembly]::loadFrom(AccessDBProviderSample.dll' ) | import-module"`
 
 ### <a name="declaring-the-provider-class"></a>Deklarieren der Anbieter Klasse
 
@@ -69,7 +69,7 @@ namespace Microsoft.Samples.PowerShell.Providers
 
 Die [System. Management. Automation. Provider. drivecmdletprovider. newdrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) -Methode wird von der Windows PowerShell-Engine aufgerufen, wenn ein Benutzer das [Microsoft. PowerShell. Commands. newpsdrivecommand](/dotnet/api/Microsoft.PowerShell.Commands.Newpsdrivecommand) -Cmdlet aufruft, das den Namen des Anbieters angibt. Der psdriveinfo-Parameter wird von der Windows PowerShell-Engine übergeben, und die-Methode gibt das neue Laufwerk an die Windows PowerShell-Engine zurück. Diese Methode muss innerhalb der oben erstellten-Klasse deklariert werden.
 
-Die-Methode prüft zunächst, ob sowohl das Laufwerks Objekt als auch der Laufwerks Stamm vorhanden sind, die übergebenen sind, und gibt `null` zurück, wenn dies nicht der Fall ist. Anschließend wird ein Konstruktor der internen Klasse accessdbpsdriveingefo verwendet, um ein neues Laufwerk und eine Verbindung mit der Access-Datenbank zu erstellen, die das Laufwerk darstellt.
+Die-Methode prüft zunächst, ob sowohl das Laufwerks Objekt als auch der Laufwerks Stamm vorhanden sind, die übergebenen sind, und gibt zurück, `null` Wenn dies nicht der Fall ist. Anschließend wird ein Konstruktor der internen Klasse accessdbpsdriveingefo verwendet, um ein neues Laufwerk und eine Verbindung mit der Access-Datenbank zu erstellen, die das Laufwerk darstellt.
 
 ```csharp
 protected override PSDriveInfo NewDrive(PSDriveInfo drive)

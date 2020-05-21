@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d569f5d5-9746-40c0-be5e-f218bc4560f7
 caps.latest.revision: 4
-ms.openlocfilehash: eee515252cf03c05d15368ee6e2a1cb62dc82647
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.openlocfilehash: 8e5897c3df38689e80d2135dfb82898bf9a05b86
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80500790"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561480"
 ---
 # <a name="authoring-the-webconfig-file-for-a-management-odata-web-service"></a>Erstellen der Web.config-Schemadatei für einen Management OData-Webdienst
 
@@ -63,12 +63,12 @@ Im folgenden finden Sie ein Beispiel dafür, wie die Web. config-Datei für Ihre
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Implementieren einer benutzerdefinierten Autorisierung für einen Management-odata-Webdienst](./implementing-custom-authorization-for-a-management-odata-web-service.md)
+[Implementieren der benutzerdefinierten Autorisierung für einen Management OData-Webdienst](./implementing-custom-authorization-for-a-management-odata-web-service.md)
 
-[Implementieren von SessionConfiguration für einen Management-odata-Webdienst](./implementing-sessionconfiguration-for-a-management-odata-web-service.md)
+[Implementieren von SessionConfiguration für einen Management OData-Webdienst](./implementing-sessionconfiguration-for-a-management-odata-web-service.md)
 
-[Erstellen der MOF-Schema Datei für einen Management odata-Webdienst](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
+[Erstellen der MOF-Schemadatei für einen Management OData-Webdienst](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
 
-[Erstellen der XML-Schema Datei für einen Management odata-Webdienst](./authoring-the-xml-schema-file-for-a-management-odata-web-service.md)
+[Erstellen der XML-Schemadatei für einen Management OData-Webdienst](./authoring-the-xml-schema-file-for-a-management-odata-web-service.md)
 
-[Erstellen eines odata-Webdiensts für die Verwaltung](./creating-a-management-odata-web-service.md)
+[Erstellen eines Management OData-Webdiensts](./creating-a-management-odata-web-service.md)

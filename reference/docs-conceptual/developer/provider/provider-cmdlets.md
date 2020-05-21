@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d2465420-0970-4408-9ee5-260cf444cb67
 caps.latest.revision: 8
-ms.openlocfilehash: e6a0711cff6a550100f584fb64ae7f59f71a3cfb
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b266a22e3ab16762b22e9d630b968ee510ff1c49
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359979"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564188"
 ---
 # <a name="provider-cmdlets"></a>Anbieter-Cmdlets
 
@@ -25,7 +25,7 @@ Dies sind die Anbieter-Cmdlets, die vom Benutzer ausgeführt werden können:
 
 ### <a name="psdrive-cmdlets"></a>PSDrive-Cmdlets
 
-- `Get-PSDrive`: mit diesem Cmdlet werden die Windows PowerShell-Laufwerke in der aktuellen Sitzung zurückgegeben. Sie müssen keine Methoden überschreiben, um dieses Cmdlet zu unterstützen.
+- `Get-PSDrive`: Mit diesem Cmdlet werden die Windows PowerShell-Laufwerke in der aktuellen Sitzung zurückgegeben. Sie müssen keine Methoden überschreiben, um dieses Cmdlet zu unterstützen.
 
 - `New-PSDrive`: Dieses Cmdlet ermöglicht es dem Benutzer, Windows PowerShell-Laufwerke für den Zugriff auf den Datenspeicher zu erstellen. Zur Unterstützung dieses Cmdlets überschreiben Sie die [System. Management. Automation. Provider. drivecmdletprovider. newdrive](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) -Methode und die [System. Management. Automation. Provider. drivecmdletprovider. newdrivedynamicparameters](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters) -Methode.
 
@@ -33,13 +33,13 @@ Dies sind die Anbieter-Cmdlets, die vom Benutzer ausgeführt werden können:
 
 ### <a name="item-cmdlets"></a>Item-Cmdlets
 
-- `Clear-Item`: mit diesem Cmdlet kann der Benutzer den Wert eines Elements im Datenspeicher entfernen. Um dieses Cmdlet zu unterstützen, überschreiben Sie die Methoden " [System. Management. Automation. Provider. itemcmdletprovider. ClearItem](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItem) " und " [System. Management. Automation. Provider. itemcmdletprovider. clearitemdynamicparameters](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItemDynamicParameters) ".
+- `Clear-Item`: Mit diesem Cmdlet kann der Benutzer den Wert eines Elements im Datenspeicher entfernen. Um dieses Cmdlet zu unterstützen, überschreiben Sie die Methoden " [System. Management. Automation. Provider. itemcmdletprovider. ClearItem](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItem) " und " [System. Management. Automation. Provider. itemcmdletprovider. clearitemdynamicparameters](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItemDynamicParameters) ".
 
-- `Copy-Item`: mit diesem Cmdlet kann der Benutzer ein Element von einem Speicherort in einen anderen kopieren. Zur Unterstützung dieses Cmdlets überschreiben Sie die [System. Management. Automation. Provider. containercmdletprovider. CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) -und die [System. Management. Automation. Provider. containercmdletprovider. copyitemdynamicparameters](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters) -Methode.
+- `Copy-Item`: Mit diesem Cmdlet kann der Benutzer ein Element von einem Speicherort in einen anderen kopieren. Zur Unterstützung dieses Cmdlets überschreiben Sie die [System. Management. Automation. Provider. containercmdletprovider. CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem) -und die [System. Management. Automation. Provider. containercmdletprovider. copyitemdynamicparameters](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters) -Methode.
 
 - `Get-Item`: Dieses Cmdlet ermöglicht dem Benutzer das Abrufen von Daten aus dem Datenspeicher. Zur Unterstützung dieses Cmdlets überschreiben Sie die [System. Management. Automation. Provider. itemcmdletprovider. GetItem](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) -Methode und die [System. Management. Automation. Provider. itemcmdletprovider. getitemdynamicparameters](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItemDynamicParameters) -Methode.
 
-- `Get-ChildItem`: Dieses Cmdlet ermöglicht dem Benutzer das Abrufen der untergeordneten Elemente des übergeordneten Elements. Überschreiben Sie die folgenden Methoden, um dieses Cmdlet zu unterstützen:
+- `Get-ChildItem`: Mit diesem Cmdlet kann der Benutzer die untergeordneten Elemente des übergeordneten Elements abrufen. Überschreiben Sie die folgenden Methoden, um dieses Cmdlet zu unterstützen:
 
   - [System. Management. Automation. Provider. containercmdletprovider. getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)
 
@@ -49,15 +49,15 @@ Dies sind die Anbieter-Cmdlets, die vom Benutzer ausgeführt werden können:
 
   - [System. Management. Automation. Provider. containercmdletprovider. getchildnamesdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNamesDynamicParameters)
 
-- `Invoke-Item`: mit diesem Cmdlet kann der Benutzer die vom Element angegebene Standardaktion ausführen. Um dieses Cmdlet zu unterstützen, überschreiben Sie die Methoden " [System. Management. Automation. Provider. itemcmdletprovider. invokedefaultaction](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction) " und " [System. Management. Automation. Provider. itemcmdletprovider. invokedefaultaction](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction) ".
+- `Invoke-Item`: Mit diesem Cmdlet kann der Benutzer die vom Element angegebene Standardaktion ausführen. Um dieses Cmdlet zu unterstützen, überschreiben Sie die Methoden " [System. Management. Automation. Provider. itemcmdletprovider. invokedefaultaction](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction) " und " [System. Management. Automation. Provider. itemcmdletprovider. invokedefaultaction](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction) ".
 
-- `Move-Item`: mit diesem Cmdlet kann der Benutzer ein Element von einem Speicherort an einen anderen Speicherort verschieben. Um dieses Cmdlet zu unterstützen, überschreiben Sie die Methoden " [System. Management. Automation. Provider. navigationcmdletprovider. muveitem](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) " und " [System. Management. Automation. Provider. navigationcmdletprovider. muveitemdynamicparameters](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItemDynamicParameters)s".
+- `Move-Item`: Mit diesem Cmdlet kann der Benutzer ein Element von einem Speicherort an einen anderen Speicherort verschieben. Um dieses Cmdlet zu unterstützen, überschreiben Sie die Methoden " [System. Management. Automation. Provider. navigationcmdletprovider. muveitem](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) " und " [System. Management. Automation. Provider. navigationcmdletprovider. muveitemdynamicparameters](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItemDynamicParameters)s".
 
-- `New-ItemProperty`: mit diesem Cmdlet kann der Benutzer ein neues Element im Datenspeicher erstellen.
+- `New-ItemProperty`: Mit diesem Cmdlet kann der Benutzer ein neues Element im Datenspeicher erstellen.
 
 - `Remove-Item`: Dieses Cmdlet ermöglicht dem Benutzer das Entfernen von Elementen aus dem Datenspeicher. Zur Unterstützung dieses Cmdlets überschreiben Sie die [System. Management. Automation. Provider. containercmdletprovider. RemoveItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem) -Methode und die [System. Management. Automation. Provider. containercmdletprovider. removeitemdynamicparameters](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItemDynamicParameters) -Methode.
 
-- `Rename-Item`: mit diesem Cmdlet kann der Benutzer Elemente im Datenspeicher umbenennen. Zur Unterstützung dieses Cmdlets überschreiben Sie die [System. Management. Automation. Provider. containercmdletprovider. RenameItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem) -und die [System. Management. Automation. Provider. containercmdletprovider. renameitemdynamicparameters](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItemDynamicParameters) -Methode.
+- `Rename-Item`: Mit diesem Cmdlet kann der Benutzer Elemente im Datenspeicher umbenennen. Zur Unterstützung dieses Cmdlets überschreiben Sie die [System. Management. Automation. Provider. containercmdletprovider. RenameItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem) -und die [System. Management. Automation. Provider. containercmdletprovider. renameitemdynamicparameters](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItemDynamicParameters) -Methode.
 
 - `Set-Item`: Dieses Cmdlet ermöglicht dem Benutzer, die Werte von Elementen im Datenspeicher zu aktualisieren. Zur Unterstützung dieses Cmdlets überschreiben Sie die [System. Management. Automation. Provider. itemcmdletprovider. SetItem](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) -Methode und die [System. Management. Automation. Provider. itemcmdletprovider. setitemdynamicparameters](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItemDynamicParameters) -Methode.
 
@@ -73,29 +73,29 @@ Dies sind die Anbieter-Cmdlets, die vom Benutzer ausgeführt werden können:
 
 ### <a name="item-property-cmdlets"></a>Cmdlets für Element Eigenschaften
 
-- `Clear-ItemProperty`: mit diesem Cmdlet kann der Benutzer den Wert einer Eigenschaft löschen. Zur Unterstützung dieses Cmdlets überschreiben Sie die [System. Management. Automation. Provider. ipropertycmdletprovider. clearproperty](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty) -und die [System. Management. Automation. Provider. ipropertycmdletprovider. clearpropertydynamicparameters](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearPropertyDynamicParameters) -Methode.
+- `Clear-ItemProperty`: Mit diesem Cmdlet kann der Benutzer den Wert einer Eigenschaft löschen. Zur Unterstützung dieses Cmdlets überschreiben Sie die [System. Management. Automation. Provider. ipropertycmdletprovider. clearproperty](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty) -und die [System. Management. Automation. Provider. ipropertycmdletprovider. clearpropertydynamicparameters](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearPropertyDynamicParameters) -Methode.
 
-- `Copy-ItemProperty`: mit diesem Cmdlet kann der Benutzer eine Eigenschaft und ihren Wert von einem Speicherort in einen anderen kopieren. Um dieses Cmdlet zu unterstützen, überschreiben Sie die Methoden " [System. Management. Automation. Provider. idynamicpropertycmdletprovider. copyproperty](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.CopyProperty) " und " [System. Management. Automation. Provider. idynamicpropertycmdletprovider. copypropertydynamicparameters](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.CopyPropertyDynamicParameters) ".
+- `Copy-ItemProperty`: Mit diesem Cmdlet kann der Benutzer eine Eigenschaft und ihren Wert von einem Speicherort in einen anderen kopieren. Um dieses Cmdlet zu unterstützen, überschreiben Sie die Methoden " [System. Management. Automation. Provider. idynamicpropertycmdletprovider. copyproperty](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.CopyProperty) " und " [System. Management. Automation. Provider. idynamicpropertycmdletprovider. copypropertydynamicparameters](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.CopyPropertyDynamicParameters) ".
 
-- `Get-ItemProperty`: mit diesem Cmdlet werden die Eigenschaften eines Elements abgerufen. Zur Unterstützung dieses Cmdlets überschreiben Sie die [System. Management. Automation. Provider. ipropertycmdletprovider. GetProperty](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty) -Methode und die [System. Management. Automation. Provider. ipropertycmdletprovider. getpropertydynamicparameters](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetPropertyDynamicParameters) -Methode.
+- `Get-ItemProperty`: Mit diesem Cmdlet werden die Eigenschaften eines Elements abgerufen. Zur Unterstützung dieses Cmdlets überschreiben Sie die [System. Management. Automation. Provider. ipropertycmdletprovider. GetProperty](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty) -Methode und die [System. Management. Automation. Provider. ipropertycmdletprovider. getpropertydynamicparameters](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetPropertyDynamicParameters) -Methode.
 
-- `Move-ItemProperty`: mit diesem Cmdlet kann der Benutzer eine Eigenschaft und ihren Wert von einem Speicherort an einen anderen verschieben. Um dieses Cmdlet zu unterstützen, überschreiben Sie die Methoden " [System. Management. Automation. Provider. idynamicpropertycmdletprovider. muveproperty](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.MoveProperty) " und " [System. Management. Automation. Provider. idynamicpropertycmdletprovider. muvepropertydynamicparameters](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.MovePropertyDynamicParameters) ".
+- `Move-ItemProperty`: Mit diesem Cmdlet kann der Benutzer eine Eigenschaft und ihren Wert von einem Speicherort an einen anderen verschieben. Um dieses Cmdlet zu unterstützen, überschreiben Sie die Methoden " [System. Management. Automation. Provider. idynamicpropertycmdletprovider. muveproperty](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.MoveProperty) " und " [System. Management. Automation. Provider. idynamicpropertycmdletprovider. muvepropertydynamicparameters](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.MovePropertyDynamicParameters) ".
 
-- `New-ItemProperty`: mit diesem Cmdlet kann der Benutzer eine neue Eigenschaft erstellen und deren Wert festlegen. Um dieses Cmdlet zu unterstützen, überschreiben Sie die Methoden " [System. Management. Automation. Provider. idynamicpropertycmdletprovider. newproperty](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.NewProperty) " und " [System. Management. Automation. Provider. idynamicpropertycmdletprovider. newpropertydynamicparameters](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.NewPropertyDynamicParameters) ".
+- `New-ItemProperty`: Mit diesem Cmdlet kann der Benutzer eine neue Eigenschaft erstellen und deren Wert festlegen. Um dieses Cmdlet zu unterstützen, überschreiben Sie die Methoden " [System. Management. Automation. Provider. idynamicpropertycmdletprovider. newproperty](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.NewProperty) " und " [System. Management. Automation. Provider. idynamicpropertycmdletprovider. newpropertydynamicparameters](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.NewPropertyDynamicParameters) ".
 
-- `Remove-ItemProperty`: mit diesem Cmdlet kann der Benutzer eine Eigenschaft und ihren Wert löschen. Um dieses Cmdlet zu unterstützen, überschreiben Sie die Methoden " [System. Management. Automation. Provider. idynamicpropertycmdletprovider. RemoveProperty](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RemoveProperty) " und " [System. Management. Automation. Provider. idynamicpropertycmdletprovider. removepropertydynamicparameters](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RemovePropertyDynamicParameters) ".
+- `Remove-ItemProperty`: Mit diesem Cmdlet kann der Benutzer eine Eigenschaft und ihren Wert löschen. Um dieses Cmdlet zu unterstützen, überschreiben Sie die Methoden " [System. Management. Automation. Provider. idynamicpropertycmdletprovider. RemoveProperty](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RemoveProperty) " und " [System. Management. Automation. Provider. idynamicpropertycmdletprovider. removepropertydynamicparameters](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RemovePropertyDynamicParameters) ".
 
-- `Rename-ItemProperty`: mit diesem Cmdlet kann der Benutzer den Namen einer Eigenschaft ändern. Um dieses Cmdlet zu unterstützen, überschreiben Sie die Methoden " [System. Management. Automation. Provider. idynamicpropertycmdletprovider. renameproperty](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RenameProperty) " und " [System. Management. Automation. Provider. idynamicpropertycmdletprovider. renamepropertydynamicparameters](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RenamePropertyDynamicParameters) ".
+- `Rename-ItemProperty`: Mit diesem Cmdlet kann der Benutzer den Namen einer Eigenschaft ändern. Um dieses Cmdlet zu unterstützen, überschreiben Sie die Methoden " [System. Management. Automation. Provider. idynamicpropertycmdletprovider. renameproperty](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RenameProperty) " und " [System. Management. Automation. Provider. idynamicpropertycmdletprovider. renamepropertydynamicparameters](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RenamePropertyDynamicParameters) ".
 
-- `Set-ItemProperty`: mit diesem Cmdlet kann der Benutzer die Eigenschaften eines Elements aktualisieren. Zur Unterstützung dieses Cmdlets überschreiben Sie die [System. Management. Automation. Provider. ipropertycmdletprovider. SetProperty](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) -Methode und die [System. Management. Automation. Provider. ipropertycmdletprovider. setpropertydynamicparameters](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetPropertyDynamicParameters) -Methode.
+- `Set-ItemProperty`: Mit diesem Cmdlet kann der Benutzer die Eigenschaften eines Elements aktualisieren. Zur Unterstützung dieses Cmdlets überschreiben Sie die [System. Management. Automation. Provider. ipropertycmdletprovider. SetProperty](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) -Methode und die [System. Management. Automation. Provider. ipropertycmdletprovider. setpropertydynamicparameters](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetPropertyDynamicParameters) -Methode.
 
 ### <a name="location-cmdlets"></a>Location-Cmdlets
 
-- `Get-Location`: Ruft Informationen zum aktuellen Arbeits Speicherort ab. Sie müssen keine Methoden überschreiben, um dieses Cmdlet zu unterstützen.
+- `Get-Location`: Ruft Informationen über den aktuellen Arbeits Speicherort ab. Sie müssen keine Methoden überschreiben, um dieses Cmdlet zu unterstützen.
 
 - `Pop-Location`: Dieses Cmdlet ändert den aktuellen Speicherort in den Speicherort, der zuletzt auf den Stapel verschoben wurde. Sie müssen keine Methoden überschreiben, um dieses Cmdlet zu unterstützen.
 
-- `Push-Location`: mit diesem Cmdlet wird der aktuelle Speicherort am Anfang einer Liste von Standorten (einem "Stapel") hinzugefügt. Sie müssen keine Methoden überschreiben, um dieses Cmdlet zu unterstützen.
+- `Push-Location`: Mit diesem Cmdlet wird der aktuelle Speicherort am Anfang einer Liste von Standorten (einem "Stapel") hinzugefügt. Sie müssen keine Methoden überschreiben, um dieses Cmdlet zu unterstützen.
 
 - `Set-Location`: Dieses Cmdlet legt den aktuellen Arbeits Speicherort auf einen angegebenen Speicherort fest. Sie müssen keine Methoden überschreiben, um dieses Cmdlet zu unterstützen.
 
@@ -105,9 +105,9 @@ Dies sind die Anbieter-Cmdlets, die vom Benutzer ausgeführt werden können:
 
 - `Convert-Path`: Dieses Cmdlet konvertiert einen Pfad aus einem Windows PowerShell-Pfad in einen Windows PowerShell-Anbieter Pfad.
 
-- `Split-Path`: gibt den angegebenen Teil eines Pfads zurück.
+- `Split-Path`: Gibt den angegebenen Teil eines Pfads zurück.
 
-- `Resolve-Path`: löst die Platzhalter Zeichen in einem Pfad auf und zeigt den Pfad Inhalt an.
+- `Resolve-Path`: Löst die Platzhalter Zeichen in einem Pfad auf und zeigt den Pfad Inhalt an.
 
 - `Test-Path`: Dieses Cmdlet bestimmt, ob alle Elemente eines Pfads vorhanden sind. Zur Unterstützung dieses Cmdlets überschreiben Sie die [System. Management. Automation. Provider. itemcmdletprovider. itemexists](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) -und die [System. Management. Automation. Provider. itemcmdletprovider. itemexistsdynamicparameters](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExistsDynamicParameters) -Methode.
 

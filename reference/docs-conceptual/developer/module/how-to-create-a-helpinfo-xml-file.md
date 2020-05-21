@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3971ce1f-271c-4938-a9d3-47ff3aaf7219
 caps.latest.revision: 9
-ms.openlocfilehash: 7df9764fd573b75f285fec592448a550e481bea3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1f09146a9e6456584f67edb52407193d8a9330ce
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367319"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564788"
 ---
 # <a name="how-to-create-a-helpinfo-xml-file"></a>Erstellen einer XML-Datei HelpInfo
 
@@ -27,18 +27,18 @@ Jedes Modul verfügt nur über eine helpinfo-XML-Datei, auch wenn das Modul mehr
 
 Es ist wichtig, dass die helpinfo-XML-Datei sorgfältig verwaltet wird. Wenn Sie neue Dateien hochladen, aber vergessen, die Versionsnummern zu erhöhen, werden die neuen Dateien von der aktualisierbaren Hilfe nicht auf die Benutzer Computer heruntergeladen. Wenn Sie Hilfedateien für eine neue Benutzeroberflächen Kultur hinzufügen, aber die helpinfo-XML-Datei nicht aktualisieren oder am richtigen Speicherort platzieren, werden die neuen Dateien durch die aktualisierbare Hilfe nicht heruntergeladen.
 
-## <a name="in-this-section"></a>Inhalt dieses Abschnitts
+## <a name="in-this-section"></a>In diesem Abschnitt
 
 In diesem Abschnitt werden folgende Themen behandelt.
 
-- [Helpinfo-XML-Schema](./helpinfo-xml-schema.md)
+- [XML-Schema von HelpInfo](./helpinfo-xml-schema.md)
 
-- [Helpinfo-XML-Beispieldatei](./helpinfo-xml-sample-file.md)
+- [XML-Beispieldatei HelpInfo](./helpinfo-xml-sample-file.md)
 
-- [Benennen einer helpinfo-XML-Datei](./how-to-name-a-helpinfo-xml-file.md)
+- [Benennen einer XML-Datei HelpInfo](./how-to-name-a-helpinfo-xml-file.md)
 
-- [Festlegen der helpinfo-XML-Versionsnummern](./how-to-set-helpinfo-xml-version-numbers.md)
+- [Festlegen von XML-Versionsnummern für HelpInfo](./how-to-set-helpinfo-xml-version-numbers.md)
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Unterstützen aktualisierbarer Hilfe](./supporting-updatable-help.md)
+[Unterstützung einer aktualisierbaren Hilfe](./supporting-updatable-help.md)

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3e83c9d9-6d06-4247-94d9-e3bfd4013b11
 caps.latest.revision: 4
-ms.openlocfilehash: b830571418fe75bbfc68df02f20a6012efefd99a
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.openlocfilehash: 7ccdeeb2833b79cabc7c77d1a400e0c9132b2dcd
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76996075"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561463"
 ---
 # <a name="authoring-the-xml-schema-file-for-a-management-odata-web-service"></a>Erstellen der XML-Schemadatei für einen Management OData-Webdienst
 
@@ -48,8 +48,8 @@ Anschließend geben Sie die Cmdlets an, die den CRUD-Vorgängen (erstellen, lese
 |------------------|-----------------|
 |Erstellen|Erstellen|
 |Lesen|Abfrage|
-|Update/Aktualisieren|Update/Aktualisieren|
-|„Löschen“|„Löschen“|
+|Update|Aktualisieren|
+|Löschen|Löschen|
 
 Das folgende Beispiel zeigt die Zuordnungen für die Erstellungs-, Lese-und Aktualisierungs Vorgänge für die `Service` Ressource.
 
@@ -157,10 +157,10 @@ Das folgende Beispiel zeigt die Zuordnungen für die Erstellungs-, Lese-und Aktu
         </Class>
 ```
 
-## <a name="see-also"></a>Siehe auch
+## <a name="see-also"></a>Weitere Informationen
 
-[Erstellen der MOF-Schema Datei für einen Management odata-Webdienst](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
+[Erstellen der MOF-Schemadatei für einen Management OData-Webdienst](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
 
-[Schema der Ressourcen Zuordnung](./resource-mapping-schema.md)
+[Schema für Ressourcenzuordnung](./resource-mapping-schema.md)
 
-[Erstellen eines odata-Webdiensts für die Verwaltung](./creating-a-management-odata-web-service.md)
+[Erstellen eines Management OData-Webdiensts](./creating-a-management-odata-web-service.md)

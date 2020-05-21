@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 9c8ef289-0659-42d1-9976-044b144201eb
 caps.latest.revision: 6
-ms.openlocfilehash: 2a8372d937fc3c959f7d829bb52495048423d506
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: ecd23d3eb722137bdda0498fc71e0e966c57a589
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359649"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561188"
 ---
 # <a name="adding-windows-powershell-activities-to-the-visual-studio-toolbox"></a>Hinzufügen von Windows PowerShell-Aktivitäten zur Visual Studio-Toolbox
 
@@ -29,11 +29,11 @@ Bevor Sie einen PowerShell-Workflow mithilfe von Workflow-Designer erstellen, m�
 
    Durch das Hinzufügen einer Registerkarte können Sie die PowerShell-Aktivitäten getrennt von anderen Tools in der Toolbox gruppieren.
 
-4. Klicken Sie auf der Registerkarte neue Toolbox auf **Elemente auswählen...** . Das Dialogfeld **Toolbox Elemente auswählen** wird angezeigt.
+4. Klicken Sie auf der Registerkarte neue Toolbox auf **Elemente auswählen...**. Das Dialogfeld **Toolbox Elemente auswählen** wird angezeigt.
 
 5. Klicken Sie im Dialogfeld **Toolbox Elemente auswählen** auf die Registerkarte **System. Activities** .
 
-6. Klicken Sie auf **Browse**.
+6. Klicken Sie auf **Durchsuchen**.
 
 7. Navigieren Sie zum Ordner%windir%\Microsoft.net\assembly\ GAC_MSIL \Microsoft.PowerShell.Core.activities\v4.0_3.0.0.0__31bf3856ad364e, und doppelklicken Sie auf Microsoft. PowerShell. Core. Activities. dll.
 
@@ -41,6 +41,6 @@ Bevor Sie einen PowerShell-Workflow mithilfe von Workflow-Designer erstellen, m�
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Schreiben eines PowerShell-Workflows](./writing-a-windows-powershell-workflow.md)
+[Schreiben Sie einen Windows PowerShell-Workflow](./writing-a-windows-powershell-workflow.md)
 
 [Erstellen eines Workflows mit Windows PowerShell-Aktivitäten](./creating-a-workflow-with-windows-powershell-activities.md)

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 9c90d268-730b-4e73-9dfd-5f288c27aed0
 caps.latest.revision: 8
-ms.openlocfilehash: 74d7c9e9cb0d7ce829635e6aff994473e09e7479
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 606f06339d0bbec3393c6b2602df3636c1f4e458
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72360849"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83565382"
 ---
 # <a name="runspace11-sample"></a>Runspace11-Beispiel
 
@@ -23,7 +23,7 @@ In diesem Beispiel wird gezeigt, wie Sie mit der [System. Management. Automation
 
 Dieses Beispiel erfordert Windows PowerShell 2,0.
 
-## <a name="demonstrates"></a>Gegenstand
+## <a name="demonstrates"></a>Zeigt
 
 In diesem Beispiel wird Folgendes veranschaulicht:
 
@@ -246,4 +246,4 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Schreiben einer Windows PowerShell-Host Anwendung](./writing-a-windows-powershell-host-application.md)
+[Schreiben einer Windows PowerShell-Hostanwendung](./writing-a-windows-powershell-host-application.md)

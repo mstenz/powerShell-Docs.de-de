@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1685cfc4-b32c-4bed-b221-e0c4482db955
 caps.latest.revision: 9
-ms.openlocfilehash: eb227b5fa5e91f59b6fc99981ff5affca1cf63fd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b640493bca81a0157bf5abffe3ab43b3a2832b01
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72360879"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83565256"
 ---
 # <a name="runspace05-sample"></a>Runspace05-Beispiel
 
@@ -23,7 +23,7 @@ In diesem Beispiel wird gezeigt, wie ein Snap-in zu einem [System. Management. A
 
 Dieses Beispiel erfordert Windows PowerShell 2,0.
 
-## <a name="demonstrates"></a>Gegenstand
+## <a name="demonstrates"></a>Zeigt
 
 In diesem Beispiel wird Folgendes veranschaulicht:
 
@@ -129,4 +129,4 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Schreiben einer Windows PowerShell-Host Anwendung](./writing-a-windows-powershell-host-application.md)
+[Schreiben einer Windows PowerShell-Hostanwendung](./writing-a-windows-powershell-host-application.md)

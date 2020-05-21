@@ -10,12 +10,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell SDK], output
 ms.assetid: 547e6695-e936-4cac-a90b-417d0dab393d
 caps.latest.revision: 12
-ms.openlocfilehash: 3efa98c7aa22fdaee8042bae99282aea0618ef5f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: de21d9ebfec4f23d3819695df225f7a230864a7b
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369289"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561411"
 ---
 # <a name="types-of-cmdlet-output"></a>Cmdlet-Ausgabetypen
 
@@ -54,7 +54,7 @@ Standardmäßig werden keine Debugmeldungen angezeigt. Sie können den **Debug**
 
 Cmdlets können Warnmeldungen anzeigen, indem Sie die [System. Management. Automation. Cmdlet. Write Warning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) -Methode aufrufen.
 
-Standardmäßig werden Warnmeldungen angezeigt. Sie können jedoch Warnmeldungen konfigurieren, indem Sie die `$WarningPreference` Variable verwenden oder die **verbose** -und **Debug** -Parameter verwenden, wenn das Cmdlet aufgerufen wird.
+Standardmäßig werden Warnmeldungen angezeigt. Sie können jedoch Warnmeldungen konfigurieren, indem Sie die `$WarningPreference` -Variable verwenden oder die **verbose** -und **Debug** -Parameter verwenden, wenn das Cmdlet aufgerufen wird.
 
 ## <a name="displaying-output"></a>Anzeigen der Ausgabe
 
@@ -66,7 +66,7 @@ Sie können ein Cmdlet auch so entwerfen, dass direkt auf die Ausgabefunktionen 
 
 ## <a name="see-also"></a>Siehe auch
 
-[Konzepte für die Fehlerberichterstattung](./error-reporting-concepts.md)
+[Konzepte der Fehlerberichterstattung](./error-reporting-concepts.md)
 
 [Cmdlet-Übersicht](./cmdlet-overview.md)
 

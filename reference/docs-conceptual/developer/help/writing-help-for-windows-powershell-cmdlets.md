@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 55908d67-7cbe-482a-a105-5a6da93c5311
 caps.latest.revision: 4
-ms.openlocfilehash: 8d692cf88d1d356886ef973f0989294d6b51ee6d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: fd565e8bf8429d91d785664c8cc69d1843439219
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72361069"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560592"
 ---
 # <a name="writing-help-for-powershell-cmdlets"></a>Schreiben von Hilfe für PowerShell-Cmdlets
 
@@ -34,7 +34,7 @@ Eine weitere Alternative besteht darin, den Hilfetext in Microsoft Word zu kopie
 
 ### <a name="write-simply"></a>Einfaches schreiben
 Verwenden Sie einfache Wörter und Ausdrücke.
-Vermeiden Sie den Jargon.
+Fachsprache vermeiden.
 Beachten Sie, dass viele Leser nur mit einem fremdsprachigen Wörterbuch und Ihrem Hilfethema ausgestattet sind.
 
 ### <a name="write-consistently"></a>Konsistentes schreiben
@@ -87,22 +87,22 @@ Sie können auch Feedback aus Newsgroups anfordern.
 
  [Erstellen der Cmdlet-Hilfedatei](./how-to-create-the-cmdlet-help-file.md)
 
- [Vorgehensweise beim Hinzufügen des Cmdlet-namens und der Synchronisierungs Datei zu einem Cmdlet-Hilfethema](./how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md)
+ [Hinzufügen von Cmdlet-Namen und -Übersicht zu einem Cmdlet-Hilfethema](./how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md)
 
  [Vorgehensweise beim Hinzufügen der ausführlichen Beschreibung zu einem Cmdlet-Hilfethema](./how-to-add-a-cmdlet-description.md)
 
- [Vorgehensweise beim Hinzufügen von Syntax zu einem Cmdlet-Hilfethema](./how-to-add-syntax-to-a-cmdlet-help-topic.md)
+ [Hinzufügen einer Syntax zu einem Cmdlet-Hilfethema](./how-to-add-syntax-to-a-cmdlet-help-topic.md)
 
  [Vorgehensweise beim Hinzufügen von Parametern zu einem Cmdlet-Hilfethema](./how-to-add-parameter-information.md)
 
  [Vorgehensweise beim Hinzufügen von Eingabetypen zu einem Cmdlet-Hilfethema](./how-to-add-input-types-to-a-cmdlet-help-topic.md)
 
- [Vorgehensweise beim Hinzufügen von Rückgabe Werten zu einem Cmdlet-Hilfethema](./how-to-add-return-values-to-a-cmdlet-help-topic.md)
+ [Hinzufügen von Rückgabewerten zu einem Cmdlet-Hilfethema](./how-to-add-return-values-to-a-cmdlet-help-topic.md)
 
- [Vorgehensweise beim Hinzufügen von Notizen zu einem Cmdlet-Hilfethema](./how-to-add-notes-to-a-cmdlet-help-topic.md)
+ [Hinzufügen von Anmerkungen zu einem Cmdlet-Hilfethema](./how-to-add-notes-to-a-cmdlet-help-topic.md)
 
- [Vorgehensweise beim Hinzufügen von Beispielen zu einem Cmdlet-Hilfethema](./how-to-add-examples-to-a-cmdlet-help-topic.md)
+ [Hinzufügen von Beispielen zu einem Cmdlet-Hilfethema](./how-to-add-examples-to-a-cmdlet-help-topic.md)
 
- [Hinzufügen verwandter Links zu einem Cmdlet-Hilfethema](./how-to-add-related-links-to-a-cmdlet-help-topic.md)
+ [Hinzufügen von zugehörigen Verknüpfungen zu einem Cmdlet-Hilfethema](./how-to-add-related-links-to-a-cmdlet-help-topic.md)
 
  [Windows PowerShell SDK](../windows-powershell-reference.md)

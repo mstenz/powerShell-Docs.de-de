@@ -10,35 +10,35 @@ applies_to:
 - Windows PowerShell 3.0
 ms.assetid: 832ea622-25a9-4760-904d-e15d6105bb27
 caps.latest.revision: 7
-ms.openlocfilehash: 363c40c3eacf406bb29662c89a6b30eeb715d513
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 331634f44e8c06f7d2a479dccf30dbef1067f515
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367039"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83559963"
 ---
-# <a name="supporting-updatable-help"></a>Unterstützung für aktualisierbare Hilfe
+# <a name="supporting-updatable-help"></a>Unterstützung einer aktualisierbaren Hilfe
 
 Das *Windows PowerShell-aktualisierbare Hilfe System*, das in Windows® 8 und Windows Server® 2012 eingeführt wurde, ist darauf ausgerichtet, sicherzustellen, dass Benutzer immer die neuesten Hilfe Themen an der Eingabeaufforderung auf Ihrem lokalen Computer besitzen. Zusammen mit der Windows PowerShell-Online Hilfe bietet die aktualisierbare Hilfe eine umfassende Hilfe Lösung für Benutzer. Dieser Abschnitt beschreibt das aktualisierbare Hilfe System und erläutert, wie Modul Entwickler die aktualisierbare Hilfe für Ihre Module unterstützen können.
 
 In diesem Abschnitt werden folgende Themen behandelt.
 
-- [Aktualisierbare Hilfe Übersicht](./updatable-help-overview.md)
+- [Aktualisierbare Hilfeübersicht](./updatable-help-overview.md)
 
-- [Aktualisierbare Hilfe Erstellung: Schritt für Schritt](./updatable-help-authoring-step-by-step.md)
+- [Aktualisierbare Hilfeerstellung: Ausführliche Anleitung](./updatable-help-authoring-step-by-step.md)
 
 - [Funktionsweise der aktualisierbaren Hilfe](./how-updatable-help-works.md)
 
-- [Erstellen einer helpinfo-XML-Datei](./how-to-create-a-helpinfo-xml-file.md)
+- [Erstellen einer XML-Datei HelpInfo](./how-to-create-a-helpinfo-xml-file.md)
 
-- [Vorbereiten der CAB-Dateien der aktualisierbaren Hilfe](./how-to-prepare-updatable-help-cab-files.md)
+- [Vorbereiten von aktualisierbaren CAB-Hilfedateien](./how-to-prepare-updatable-help-cab-files.md)
 
 - [Aktualisieren von Hilfedateien](./how-to-update-help-files.md)
 
-- [Vorgehensweise beim Testen der aktualisierbaren Hilfe](./how-to-test-updatable-help.md)
+- [Testen der aktualisierbaren Hilfe](./how-to-test-updatable-help.md)
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Unterstützen der Online Hilfe](./supporting-online-help.md)
+[Unterstützung einer Onlinehilfe](./supporting-online-help.md)
 
 [Aktualisierbare Hilfe Status Tabelle](https://www.microsoft.com/en-us/itpro/windows)

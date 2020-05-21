@@ -31,12 +31,12 @@ helpviewer_keywords:
 - user notifications
 ms.assetid: 14c13acb-f0b7-4613-bc7d-c361d14da1a2
 caps.latest.revision: 8
-ms.openlocfilehash: 9079f40e75dae86c22fd8b4f8a45d501c6125498
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 9b9a598b592d0ac60099020e564ec7fffa54e683
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416028"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561068"
 ---
 # <a name="adding-user-messages-to-your-cmdlet"></a>Hinzufügen von Benutzermeldungen zum Cmdlet
 
@@ -56,7 +56,7 @@ Es gibt keine Beschränkung für die Anzahl der Nachrichten, die das Cmdlet schr
 
 Der erste Schritt bei der Cmdlet-Erstellung ist die Benennung des Cmdlets und das Deklarieren der .NET-Klasse, die das Cmdlet implementiert. Jede Art von Cmdlet kann Benutzer Benachrichtigungen von den Eingabe Verarbeitungsmethoden schreiben. im Allgemeinen können Sie dieses Cmdlet mit einem beliebigen Verb benennen, das angibt, welche Systemänderungen das Cmdlet ausführt. Weitere Informationen zu genehmigten Cmdlet-Verben finden Sie unter [Cmdlet-Verb Namen](./approved-verbs-for-windows-powershell-commands.md).
 
-Das Cmdlet "halte-proc" wurde entwickelt, um das System zu ändern. Daher muss die [System. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) -Deklaration für die .NET-Klasse das `SupportsShouldProcess` Attribute-Schlüsselwort einschließen und auf `true`festgelegt werden.
+Das Cmdlet "halte-proc" wurde entwickelt, um das System zu ändern. Daher muss die [System. Management. Automation. CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) -Deklaration für die .NET-Klasse das `SupportsShouldProcess` Attribute-Schlüsselwort einschließen und auf festgelegt werden `true` .
 
 Der folgende Code ist die Definition für diese Cmdlet-Klasse "". Weitere Informationen zu dieser Definition finden Sie unter [Erstellen eines Cmdlets, das das System ändert](./creating-a-cmdlet-that-modifies-the-system.md).
 
@@ -68,7 +68,7 @@ public class StopProcCommand : Cmdlet
 
 ## <a name="defining-parameters-for-system-modification"></a>Definieren von Parametern für die System Änderung
 
-Das Cmdlet "Break-proc" definiert drei Parameter: `Name`, `Force`und `PassThru`. Weitere Informationen zum Definieren dieser Parameter finden Sie unter [Erstellen eines Cmdlets, das das System ändert](./creating-a-cmdlet-that-modifies-the-system.md).
+Das Cmdlet "Break-proc" definiert drei Parameter: `Name` , `Force` und `PassThru` . Weitere Informationen zum Definieren dieser Parameter finden Sie unter [Erstellen eines Cmdlets, das das System ändert](./creating-a-cmdlet-that-modifies-the-system.md).
 
 Hier ist die Parameter Deklaration für das Cmdlet "halte-proc".
 
@@ -168,7 +168,7 @@ WriteObject(process);
 
 Windows PowerShell leitet automatisch alle [System. Management. Automation. Cmdlet. Write-Debug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) -Aufrufe an die Ablauf Verfolgungs Infrastruktur und-Cmdlets weiter. Dies ermöglicht es, dass die Methodenaufrufe auf die Host Anwendung, eine Datei oder einen Debugger nachverfolgt werden, ohne dass Sie zusätzliche Entwicklungsaufgaben innerhalb des Cmdlets ausführen müssen. Der folgende Befehlszeilen Eintrag implementiert einen Ablauf Verfolgungs Vorgang.
 
-**PS > Trace-Expression-Vorgang zum Abbrechen der Prozedur "-proc-File proc. log-Command".**
+**PS> Trace-Expression-Vorgang zum Abbrechen der Prozedur "-proc-File proc. log-Command".**
 
 ## <a name="writing-a-warning-message"></a>Schreiben einer Warnmeldung
 
@@ -208,7 +208,7 @@ WriteProgress(pr);
 
 ## <a name="code-sample"></a>Codebeispiel
 
-Den gesamten C# Beispielcode finden Sie unter [StopProcessSample02 Sample](./stopprocesssample02-sample.md).
+Den gesamten c#-Beispielcode finden Sie unter [StopProcessSample02 Sample](./stopprocesssample02-sample.md).
 
 ## <a name="define-object-types-and-formatting"></a>Definieren von Objekttypen und Formatierung
 
@@ -228,7 +228,7 @@ Wenn das Cmdlet bei Windows PowerShell registriert wurde, können Sie es in der 
     PS> stop-proc -Name notepad -Verbose -Debug
     ```
 
-Die folgende Ausgabe wird angezeigt.
+    Die folgende Ausgabe wird angezeigt.
 
     ```
     VERBOSE: Attempting to stop process " notepad ".
