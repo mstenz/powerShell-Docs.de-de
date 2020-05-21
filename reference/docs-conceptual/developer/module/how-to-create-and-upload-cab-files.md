@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8d35f233-5447-48a2-a961-9fbca763262b
 caps.latest.revision: 7
-ms.openlocfilehash: 9928a0b31a57d42eb39cea1af0509613c483caf7
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 37b31aa77dde23c1bd57a9af67e2232ef0827005
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367329"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557583"
 ---
 # <a name="how-to-create-and-upload-cab-files"></a>Erstellen und Hochladen von CAB-Dateien
 
@@ -25,7 +25,7 @@ Sie können das Feature "aktualisierbare Hilfe" verwenden, um neue oder aktualis
 
 1. Organisieren Sie die Hilfedateien für das Modul anhand der Benutzeroberflächen Kultur. Jede aktualisierbare Hilfe-CAB-Datei enthält die Hilfedateien für ein Modul in einer Benutzeroberflächen Kultur. Sie können mehrere Hilfe-CAB-Dateien für das Modul bereitzustellen, jeweils für eine andere Benutzeroberflächen Kultur.
 
-2. Stellen Sie sicher, dass Hilfedateien nur die Dateitypen enthalten, die für eine aktualisierbare Hilfe zulässig sind, und überprüfen Sie Sie anhand eines Hilfe Wenn das `Update-Help`-Cmdlet auf eine ungültige Datei trifft oder kein zulässiger Typ ist, wird die ungültige Datei nicht installiert, und die Installation von Dateien aus dem CAB wird beendet. Eine Liste zulässiger Dateitypen finden Sie unter [in einer aktualisierbare Hilfe-CAB-Datei zugelassene Dateitypen](./file-types-permitted-in-an-updatable-help-cab-file.md).
+2. Stellen Sie sicher, dass Hilfedateien nur die Dateitypen enthalten, die für eine aktualisierbare Hilfe zulässig sind, und überprüfen Sie Sie anhand eines Hilfe Wenn das `Update-Help` Cmdlet auf eine Datei trifft, die ungültig ist oder kein zulässiger Typ ist, wird die ungültige Datei nicht installiert, und die Installation von Dateien aus dem CAB wird beendet. Eine Liste zulässiger Dateitypen finden Sie unter [in einer aktualisierbare Hilfe-CAB-Datei zugelassene Dateitypen](./file-types-permitted-in-an-updatable-help-cab-file.md).
 
 3. Signieren Sie die Hilfedateien Digital. Digitale Signaturen sind nicht erforderlich, aber es handelt sich um eine bewährte Vorgehensweise.
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a6a04f15-b5d8-475b-ac9c-e75c58ec8933
 caps.latest.revision: 8
-ms.openlocfilehash: 3cb370cd1bfe9ce7198980cc1c26fafb126d00a3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 416061e5812e608f2099ca833bcaac4f0e651f59
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72360899"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557617"
 ---
 # <a name="runspace04-sample"></a>Runspace04-Beispiel
 
@@ -23,7 +23,7 @@ Dieses Beispiel zeigt, wie Sie mit der [System. Management. Automation. PowerShe
 
 Dieses Beispiel erfordert Windows PowerShell 2,0.
 
-## <a name="demonstrates"></a>Gegenstand
+## <a name="demonstrates"></a>Zeigt
 
 In diesem Beispiel wird Folgendes veranschaulicht:
 
@@ -125,4 +125,4 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Schreiben einer Windows PowerShell-Host Anwendung](./writing-a-windows-powershell-host-application.md)
+[Schreiben einer Windows PowerShell-Hostanwendung](./writing-a-windows-powershell-host-application.md)

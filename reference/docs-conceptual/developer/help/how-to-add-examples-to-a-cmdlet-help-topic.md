@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8f723b21-8f95-4981-8b6e-4f07c22d601a
 caps.latest.revision: 5
-ms.openlocfilehash: b6f8aef76a5f4b5dc1a60425541856ead9a9c77a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 82bee7b7bb0ef49203636f2a293075f3db924ce4
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72368109"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557089"
 ---
 # <a name="how-to-add-examples-to-a-cmdlet-help-topic"></a>Hinzufügen von Beispielen zu einem Cmdlet-Hilfethema
 
@@ -58,7 +58,7 @@ Der folgende XML-Code zeigt, wie Sie einen Titel für das Beispiel hinzufügen. 
 
 ## <a name="adding-preceding-characters"></a>Hinzufügen vorheriger Zeichen
 
-Der folgende XML-Code zeigt, wie Sie Zeichen hinzufügen, z. b. die Windows PowerShell-Eingabeaufforderung, die unmittelbar vor dem Beispiel Befehl (ohne dazwischen liegende Leerzeichen) angezeigt werden. Windows PowerShell® verwendet die Windows PowerShell-Eingabeaufforderung: c:\ps >.
+Der folgende XML-Code zeigt, wie Sie Zeichen hinzufügen, z. b. die Windows PowerShell-Eingabeaufforderung, die unmittelbar vor dem Beispiel Befehl (ohne dazwischen liegende Leerzeichen) angezeigt werden. Windows PowerShell® verwendet die Windows PowerShell-Eingabeaufforderung: c:\ps>.
 
 ```xml
 <command:examples>
@@ -89,7 +89,7 @@ Der folgende XML-Code zeigt, wie der tatsächliche Befehl des Beispiels hinzugef
 
 ## <a name="adding-a-description"></a>Hinzufügen einer Beschreibung
 
-Der folgende XML-Code zeigt, wie eine Beschreibung für das Beispiel hinzugefügt wird. Windows PowerShell® verwendet einen einzelnen Satz \<MAML: para > Tags für die Beschreibung, obwohl mehrere \<MAML: para > Tags verwendet werden können.
+Der folgende XML-Code zeigt, wie eine Beschreibung für das Beispiel hinzugefügt wird. Windows PowerShell® verwendet einen einzelnen Satz von \< MAML: para>-Tags für die Beschreibung, obwohl mehrere \< MAML: para>-Tags verwendet werden können.
 
 ```xml
 <command:examples>
@@ -108,7 +108,7 @@ Der folgende XML-Code zeigt, wie eine Beschreibung für das Beispiel hinzugefüg
 
 ## <a name="adding-example-output"></a>Hinzufügen einer Beispielausgabe
 
-Der folgende XML-Code zeigt, wie die Ausgabe des Befehls hinzugefügt wird. Die Befehls Ergebnisinformationen sind optional, aber in einigen Fällen ist es hilfreich, die Auswirkungen der Verwendung bestimmter Parameter zu veranschaulichen. Windows PowerShell® verwendet zwei Sätze von leeren \<MAML: para >-Tags, um die Befehlsausgabe des Befehls zu trennen.
+Der folgende XML-Code zeigt, wie die Ausgabe des Befehls hinzugefügt wird. Die Befehls Ergebnisinformationen sind optional, aber in einigen Fällen ist es hilfreich, die Auswirkungen der Verwendung bestimmter Parameter zu veranschaulichen. Windows PowerShell® verwendet zwei Sätze leerer \< MAML: para>-Tags, um die Befehlsausgabe des Befehls zu trennen.
 
 ```xml
 <command:examples>

@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 70532e7e-9cac-43c3-9687-e77011ecc878
 caps.latest.revision: 4
-ms.openlocfilehash: 5720200ce32f114cd4965d961b9e2804bd154b2e
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.openlocfilehash: cc613240e056e8443b075019cbff6dd15da3716f
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75870845"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557447"
 ---
 # <a name="creating-a-workflow-by-using-a-windows-powershell-script"></a>Erstellen eines Workflows mit einem Windows PowerShell-Skript
 
-Sie können einen Workflow erstellen, indem Sie ein Windows PowerShell-Skript schreiben. Um einen Workflow zu erstellen, verwenden Sie das Workflow Schlüsselwort, gefolgt von einem Namen für den Workflow vor dem Text des Skripts. Zum Beispiel:
+Sie können einen Workflow erstellen, indem Sie ein Windows PowerShell-Skript schreiben. Um einen Workflow zu erstellen, verwenden Sie das Workflow Schlüsselwort, gefolgt von einem Namen für den Workflow vor dem Text des Skripts. Beispiel:
 
 ```powershell
 
@@ -28,7 +28,7 @@ Sie finden den Workflow genauso wie jeden anderen Windows PowerShell-Befehl.
 
 ## <a name="implementing-parallel-and-sequence"></a>Implementieren von parallel und Sequence
 
-[Windows Workflow Foundation](/previous-versions/dotnet/netframework-3.5/ms735967(v=vs.90)) unterstützt die parallele Ausführung von Aktivitäten. Um diese Funktion in einem Windows PowerShell-Skript zu implementieren, verwenden Sie das `parallel`-Schlüsselwort vor einem Skriptblock. Sie können auch die `foreach -parallel` Erstellung verwenden, um eine Auflistung von-Objekten parallel zu durchlaufen. Um eine Gruppe von Aktivitäten in sequenzieller Reihenfolge innerhalb eines parallelen Blocks auszuführen, schließen Sie diese Gruppe von Aktivitäten in einen Skriptblock ein, und stellen Sie dem Block das Sequence-Schlüsselwort voran.
+[Windows Workflow Foundation](/previous-versions/dotnet/netframework-3.5/ms735967(v=vs.90)) unterstützt die parallele Ausführung von Aktivitäten. Um diese Funktion in einem Windows PowerShell-Skript zu implementieren, verwenden Sie das- `parallel` Schlüsselwort vor einem Skriptblock. Sie können die-Konstruktion auch verwenden `foreach -parallel` , um eine Auflistung von-Objekten parallel zu durchlaufen. Um eine Gruppe von Aktivitäten in sequenzieller Reihenfolge innerhalb eines parallelen Blocks auszuführen, schließen Sie diese Gruppe von Aktivitäten in einen Skriptblock ein, und stellen Sie dem Block das Sequence-Schlüsselwort voran.
 
 ## <a name="joining-computers-to-a-domain"></a>Hinzufügen von Computern zu einer Domäne
 

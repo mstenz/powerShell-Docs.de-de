@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5ec7159e-e4e9-4b21-95df-94244432f679
 caps.latest.revision: 5
-ms.openlocfilehash: a663bd69be7825b1685f64ff8d3068bdd8ca3265
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 898225a582c7ed25f746dec7f84012db1ae60b98
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367779"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557062"
 ---
 # <a name="placing-comment-based-help-in-functions"></a>Ablegen der kommentarbasierten Hilfe in Funktionen
 
-In diesem Thema wird erläutert, wo Sie eine Kommentar basierte Hilfe für eine Funktion platzieren können, damit das `Get-Help`-Cmdlet das Kommentar basierte Hilfethema der richtigen Funktion zuordnet.
+In diesem Thema wird erläutert, wo Sie eine Kommentar basierte Hilfe für eine Funktion platzieren können, damit das `Get-Help` Cmdlet das Kommentar basierte Hilfethema der richtigen Funktion zuordnet.
 
 ## <a name="where-to-place-comment-based-help-for-a-function"></a>Speicherort der Kommentar basierten Hilfe für eine Funktion
 
@@ -25,7 +25,7 @@ In diesem Thema wird erläutert, wo Sie eine Kommentar basierte Hilfe für eine 
 
 - Am Ende des Funktions Texts.
 
-- Vor dem `Function`-Schlüsselwort. Wenn sich die Funktion in einem Skript-oder Skript Modul befindet, darf zwischen der letzten Zeile der Kommentar basierten Hilfe und dem `Function`-Schlüsselwort nicht mehr als eine Leerzeile vorhanden sein. Andernfalls ordnet `Get-Help` die Hilfe dem Skript zu, nicht mit der-Funktion.
+- Vor dem- `Function` Schlüsselwort. Wenn sich die Funktion in einem Skript-oder Skript Modul befindet, darf zwischen der letzten Zeile der Kommentar basierten Hilfe und dem-Schlüsselwort nicht mehr als eine Leerzeile vorhanden sein `Function` . Andernfalls ordnet die `Get-Help` Hilfe dem Skript und nicht der-Funktion zu.
 
 ## <a name="examples-of-help-placement-in-a-function"></a>Beispiele für die Platzierung von Hilfe in einer Funktion
 

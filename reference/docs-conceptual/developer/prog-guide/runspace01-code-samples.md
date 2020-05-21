@@ -8,26 +8,26 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 05b088de-fac3-4a01-9eea-3d96ab755c4b
 caps.latest.revision: 6
-ms.openlocfilehash: 4802f2806cc90cc1a50b372cfc6027c366e015e0
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7fe02616f646bb181462d997940db380b67da3bc
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72360259"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557344"
 ---
 # <a name="runspace01-code-samples"></a>Runspace01-Codebeispiele
 
-Im folgenden finden Sie die Codebeispiele für den Runspace [, der unter Erstellen einer Konsolenanwendung beschrieben wird, die einen angegebenen Befehl ausführt](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program). Der Befehl, der im Runspace aufgerufen wird, ist das Cmdlet "`Get-Process`".
+Im folgenden finden Sie die Codebeispiele für den Runspace [, der unter Erstellen einer Konsolenanwendung beschrieben wird, die einen angegebenen Befehl ausführt](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program). Der Befehl, der im Runspace aufgerufen wird, ist das `Get-Process` Cmdlet.
 
 Einen umfassenden Beispielcode finden Sie in den folgenden Themen.
 
-|Language|Thema|
+|Sprache|Thema|
 |--------------|-----------|
-|C#|[Runspace01 (C#)-Code Beispiel](./runspace01-csharp-code-sample.md)|
-|VB.NET|[Runspace01 (VB.net)-Code Beispiel](./runspace01-vb-net-code-sample.md)|
+|C#|[Runspace01-Codebeispiel (C#)](./runspace01-csharp-code-sample.md)|
+|VB.NET|[Runspace01-Codebeispiel (VB.NET)](./runspace01-vb-net-code-sample.md)|
 
 ## <a name="see-also"></a>Weitere Informationen
 
-[Windows PowerShell-Programmier Handbuch](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell-Programmiererhandbuch](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

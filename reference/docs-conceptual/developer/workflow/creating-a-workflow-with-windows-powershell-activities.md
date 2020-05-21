@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: fb55971a-4ea4-4c51-aeff-4e0bb05a51b2
 caps.latest.revision: 6
-ms.openlocfilehash: 7d399786b9b43ee302493359d9702981045212e9
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.openlocfilehash: 12b0b246b78142f3811f9f566cd94e4dabd40cc9
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78277462"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557464"
 ---
 # <a name="creating-a-workflow-with-windows-powershell-activities"></a>Erstellen eines Workflows mit Windows PowerShell-Aktivitäten
 
@@ -31,23 +31,23 @@ In den folgenden Prozeduren wird beschrieben, wie ein Workflow erstellt wird, de
 
 1. Fügen Sie dem Workflow eine **Sequence** -Aktivität hinzu.
 
-2. Erstellen Sie ein Argument mit dem Namen `ComputerName` mit dem Argumenttyp `String[]`. Dieses Argument stellt die Namen der Computer dar, die überprüft und verknüpft werden sollen.
+2. Erstellen Sie ein Argument `ComputerName` mit dem Namen und dem Argumenttyp `String[]` . Dieses Argument stellt die Namen der Computer dar, die überprüft und verknüpft werden sollen.
 
-3. Erstellen Sie ein Argument mit dem Namen `DomainCred` vom Typ [System. Management. Automation. PSCredential](/dotnet/api/System.Management.Automation.PSCredential). Dieses Argument stellt die Domänen Anmelde Informationen eines Domänen Kontos dar, das zum Hinzufügen eines Computers zur Domäne autorisiert ist.
+3. Erstellen Sie ein Argument `DomainCred` vom Typ " [System. Management. Automation. PSCredential](/dotnet/api/System.Management.Automation.PSCredential)". Dieses Argument stellt die Domänen Anmelde Informationen eines Domänen Kontos dar, das zum Hinzufügen eines Computers zur Domäne autorisiert ist.
 
-4. Erstellen Sie ein Argument mit dem Namen `MachineCred` vom Typ [System. Management. Automation. PSCredential](/dotnet/api/System.Management.Automation.PSCredential). Dieses Argument stellt die Anmelde Informationen eines Administrators auf den Computern dar, die überprüft und verknüpft werden sollen.
+4. Erstellen Sie ein Argument `MachineCred` vom Typ " [System. Management. Automation. PSCredential](/dotnet/api/System.Management.Automation.PSCredential)". Dieses Argument stellt die Anmelde Informationen eines Administrators auf den Computern dar, die überprüft und verknüpft werden sollen.
 
-5. Fügen Sie eine **ParallelForEach** -Aktivität in der **Sequence** -Aktivität hinzu. Geben Sie `comp` ein, und `ComputerName` in die Textfelder, damit die Schleife die Elemente des `ComputerName` Arrays durchläuft.
+5. Fügen Sie eine **ParallelForEach** -Aktivität in der **Sequence** -Aktivität hinzu. Geben Sie `comp` und `ComputerName` in die Textfelder ein, sodass die Schleife die Elemente des Arrays durchläuft `ComputerName` .
 
-6. Fügen Sie dem Text der **ParallelForEach** -Aktivität eine **Sequence** -Aktivität hinzu. Legen Sie die **Display Name** -Eigenschaft der Sequenz auf `JoinDomain`fest.
+6. Fügen Sie dem Text der **ParallelForEach** -Aktivität eine **Sequence** -Aktivität hinzu. Legen Sie die **Display Name** -Eigenschaft der Sequenz auf fest `JoinDomain` .
 
 7. Fügen Sie der **JoinDomain** -Sequenz eine **getwmiobject** -Aktivität hinzu.
 
 8. Bearbeiten Sie die Eigenschaften der **getwmiobject** -Aktivität wie folgt.
 
-   |Eigenschaft|value|
+   |Eigenschaft|Value|
    |--------------|-----------|
-   |**Klasse**|"Win32_ComputerSystem"|
+   |**Class**|"Win32_ComputerSystem"|
    |**PSComputerName**|zuschreiben|
    |**PSCredential**|Machinecred|
 
@@ -55,7 +55,7 @@ In den folgenden Prozeduren wird beschrieben, wie ein Workflow erstellt wird, de
 
 10. Bearbeiten Sie die Eigenschaften der **addcomputer** -Aktivität wie folgt.
 
-    |Eigenschaft|value|
+    |Eigenschaft|Value|
     |--------------|-----------|
     |**Computername**|zuschreiben|
     |**DomainCredential**|Domaincred|
@@ -64,7 +64,7 @@ In den folgenden Prozeduren wird beschrieben, wie ein Workflow erstellt wird, de
 
 12. Bearbeiten Sie die Eigenschaften der **restartcomputer** -Aktivität wie folgt.
 
-    |Eigenschaft|value|
+    |Eigenschaft|Value|
     |--------------|-----------|
     |**Computername**|zuschreiben|
     |**Credential**|Machinecred|
@@ -77,5 +77,5 @@ In den folgenden Prozeduren wird beschrieben, wie ein Workflow erstellt wird, de
 
     Wenn Sie die Prozeduren abgeschlossen haben, sollte das Workflow Entwurfs Fenster wie folgt aussehen.
 
-    ![JoinDomain XAML im Workflow-Designer](media/creating-a-workflow-with-windows-powershell-activities/joindomainworkflow.png)
-    ![JoinDomain XAML im Workflow-Designer](media/creating-a-workflow-with-windows-powershell-activities/joindomainworkflow.png "Joindomainworkflow")
+    ![JoinDomain XAML im Workflow-Designer ](media/creating-a-workflow-with-windows-powershell-activities/joindomainworkflow.png)
+     ![JoinDomain XAML im Workflow-Designer](media/creating-a-workflow-with-windows-powershell-activities/joindomainworkflow.png "Joindomainworkflow")
