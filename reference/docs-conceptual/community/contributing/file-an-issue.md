@@ -28,7 +28,7 @@ Am unteren Rand der meisten Seiten auf `docs.microsoft.com` sind zwei Feedbacksc
 
 ## <a name="filing-issues-on-github"></a>Melden von Issues auf GitHub
 
-Um ein GitHub-Issue direkt zu melden, können Sie im Repository [PowerShell-Docs][new-issue] auf die Schaltfläche [New issue][docs-issues] klicken. Klicken Sie für den Typ des Issues, das Sie erstellen möchten, auf die Schaltfläche **Get Started**. Das neue GitHub-Issue ist bereits mittels einer Vorlage vorausgefüllt. Mithilfe der Vorlage können Sie die Informationen bereitstellen, die zur Lösung des von Ihnen gemeldeten Problems erforderlich sind.
+Um ein GitHub-Issue direkt zu melden, können Sie im Repository [PowerShell-Docs][docs-issues] auf die Schaltfläche [New issue][new-issue] klicken. Klicken Sie für den Typ des Issues, das Sie erstellen möchten, auf die Schaltfläche **Get Started**. Das neue GitHub-Issue ist bereits mittels einer Vorlage vorausgefüllt. Mithilfe der Vorlage können Sie die Informationen bereitstellen, die zur Lösung des von Ihnen gemeldeten Problems erforderlich sind.
 
 Bevor Sie ein neues Issue melden, sehen Sie sich die vorhandenen Issues an, um zu prüfen, ob Ihr Problem bereits gemeldet wurde. Dies hilft, Duplizierungen zu vermeiden. Möglicherweise wurde zudem Ihr Anliegen bereits geklärt. Wenn Sie ein bestehendes Issue finden, können Sie Ihre Kommentare, zugehörige Fragen oder Antworten hinzufügen.
 
