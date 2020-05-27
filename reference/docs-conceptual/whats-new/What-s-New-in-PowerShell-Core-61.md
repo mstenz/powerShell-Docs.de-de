@@ -2,12 +2,12 @@
 title: Neuigkeiten in PowerShell Core 6.1
 description: Neue Funktionen und Änderungen in PowerShell Core 6.1
 ms.date: 09/13/2018
-ms.openlocfilehash: 070ecb871003487e2f1ff7b0d56c44c562acaaf8
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 079d5a472c743ce94f2e93143c1dcb4ff406951f
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83565079"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "78277729"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>Neuigkeiten in PowerShell Core 6.1
 
@@ -93,6 +93,7 @@ Measure-Command {Get-Content .\foo.json | ConvertFrom-Json}
 Im Update 1809 für Windows Update 10 und im Update für Windows Server 2019 wurden eine Reihe von integrierten PowerShell-Modulen aktualisiert, um sie als mit PowerShell Core kompatibel zu kennzeichnen.
 
 Beim Starten von PowerShell Core 6.1 wird automatisch `$windir\System32` als Teil der `PSModulePath`-Umgebungsvariable mit einbezogen. Allerdings werden Module nur dann `Get-Module` und `Import-Module` verfügbar gemacht, wenn `CompatiblePSEdition` als kompatibel mit `Core` gekennzeichnet ist.
+
 
 ```powershell
 Get-Module -ListAvailable
@@ -343,7 +344,7 @@ foo
 
 ### `Where-Object -Not`
 
-Durch die Mithilfe von @SimonWahlin konnte `-Not` der `Where-Object`-Parameter hinzugefügt werden. Jetzt können Sie ein Objekt in der Pipeline nach dem Nichtvorhandensein einer Eigenschaft oder eines leeren oder NULL-Eigenschaftswerts filtern.
+Durch die Mithilfe von @SimonWahlin konnte `Where-Object` der `-Not`-Parameter hinzugefügt werden. Jetzt können Sie ein Objekt in der Pipeline nach dem Nichtvorhandensein einer Eigenschaft oder eines leeren oder NULL-Eigenschaftswerts filtern.
 
 Dieser Befehl gibt z.B. alle Dienste zurück, die über keine definierten abhängigen Dienste verfügen:
 
@@ -379,7 +380,7 @@ Weitere Informationen zu dieser Änderung finden Sie unter [PR #5287](https://gi
 
 ### <a name="standard-deviation-in-measure-object"></a>Standardabweichung in `Measure-Object`
 
-Durch die Mithilfe von [@CloudyDino](https://github.com/CloudyDino) wurde `StandardDeviation` eine `Measure-Object`-Eigenschaft hinzugefügt:
+Durch die Mithilfe von [@CloudyDino](https://github.com/CloudyDino) wurde `Measure-Object` eine `StandardDeviation`-Eigenschaft hinzugefügt:
 
 ```powershell
 Get-Process | Measure-Object -Property CPU -AllStats
