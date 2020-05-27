@@ -2,12 +2,12 @@
 title: Neuerungen in der PowerShell-Dokumentation
 description: Liste der Änderungen an der PowerShell-Dokumentation
 ms.date: 04/29/2020
-ms.openlocfilehash: a3b99c4d98362f2509ca9974d32c1a4d4780b664
-ms.sourcegitcommit: e6a9b13a4799667b74e0ba0f742dded4511d32b4
+ms.openlocfilehash: 6f1e6bbc04efa13287154be45eceaab204fbdd7c
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82630906"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692513"
 ---
 # <a name="community-contributor-hall-of-fame"></a>Hall of Fame für Mitwirkende an der Community
 
@@ -15,7 +15,7 @@ Die PowerShell-Community ist eine dynamische, engagierte Benutzergruppe. Wir wis
 
 Mit Stand von April 2020 sind diese GitHub-Benutzer die wichtigsten Mitwirkenden an der Community.
 
-### <a name="pull-requests-opened"></a>Eröffnete Pull Requests
+## <a name="pull-requests-opened"></a>Eröffnete Pull Requests
 
 Pull Requests helfen uns, diese Probleme zu beheben und die Dokumentation für alle Beteiligten zu verbessern.
 
@@ -40,7 +40,7 @@ Pull Requests helfen uns, diese Probleme zu beheben und die Dokumentation für a
 | exchange12rocks    |      |    7 |    3 |      |      |          10 |
 | KirkMunro          |    1 |    1 |    2 |    6 |      |          10 |
 
-### <a name="github-issues-opened"></a>Eröffnete GitHub-Issues
+## <a name="github-issues-opened"></a>Eröffnete GitHub-Issues
 
 GitHub-Issues helfen uns, Fehler und Lücken in unserer Dokumentation zu bestimmen.
 

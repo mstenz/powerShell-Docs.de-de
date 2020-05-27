@@ -3,12 +3,12 @@ ms.date: 09/05/2018
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Kontoeinstellungen für den PowerShell-Katalog
-ms.openlocfilehash: db61c3fd8c73048b51f3411a8c1dab52fb03d08a
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 7f67311b42123f247a00a9c7a5bf775685b64d48
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78278087"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560456"
 ---
 # <a name="powershell-gallery-account-settings"></a>Kontoeinstellungen für den PowerShell-Katalog
 
@@ -65,7 +65,6 @@ Sie müssen mit dem aktuellen Konto angemeldet sein, um das Anmeldekonto zu änd
    ![Kontoeinstellungen](media/managing-account/PSGallery_LoginAccountChange-3.png)
 
 4. Geben Sie das Kennwort für das neue Konto ein. Wenn Sie das Kennwort eingegeben haben, werden Sie zu den Kontoeinstellungen weitergeleitet. Dort wird angezeigt, dass das Anmeldekonto aktualisiert wurde.
-
 
 ## <a name="enable-two-factor-authentication-2fa"></a>Aktivieren der zweistufigen Authentifizierung
 

@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: DSC für Linux-Resource „nxGroup“
-ms.openlocfilehash: 098ae2e8ab183934ec3c185c0fd237731b1353dc
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 3682cb728d314d00b4a64a93b93018e8a6d12a21
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71953207"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560847"
 ---
 # <a name="dsc-for-linux-nxgroup-resource"></a>DSC für Linux-Resource „nxGroup“
 

@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Filtern von Suchergebnissen
-ms.openlocfilehash: 13270a310613a974e1588a9f56d443a936cfebb8
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 51f8d243cb9b1f4ff7413eec8839697299e8dd52
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71328041"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83691468"
 ---
 # <a name="filtering-search-results"></a>Filtern von Suchergebnissen
 
@@ -20,12 +20,14 @@ Um weitere Details zu einem bestimmten Paket anzuzeigen, klicken Sie auf das Pak
 ## <a name="filter-by"></a>Filtern nach
 
 Mit der Dropdownliste „Filtern nach“ können Benutzer die Ergebnisse nach folgenden Kriterien filtern:
+
 - Vorabversion einbeziehen
 - Nur stabile
 
 Informationen zu „Vorabversion“ und „stabil“ finden Sie im PowerShell-Teamblog unter [Prerelease Versioning Added to PowerShellGet and PowerShell Gallery](https://blogs.msdn.microsoft.com/powershell/2017/12/05/prerelease-versioning-added-to-powershellget-and-powershell-gallery/) (Versionsverwaltung von Vorabversionen zu PowerShellGet und dem PowerShell-Katalog hinzugefügt).
 
 Mithilfe der Kontrollkästchen unter der Dropdownliste können Benutzer die Ergebnisse nach folgenden Kriterien filtern:
+
 - Pakettypen
   - Modul
   - Skript
@@ -49,6 +51,7 @@ Um im PowerShell-Katalog nur Skripts anzuzeigen, aktivieren Sie unter „Paketty
 ## <a name="sort-by"></a>Sortieren nach
 
 Mithilfe der Dropdownliste „Sortieren nach“ können Benutzer die Ergebnisse nach folgenden Kriterien filtern:
+
 - Beliebtheit: Die Beliebtheit wird durch die Anzahl der Downloads bestimmt.
 - A-Z: Alphabetisch nach Paketname.
 - Aktuell: Pakete werden in der Reihenfolge der Veröffentlichungsdaten angezeigt.

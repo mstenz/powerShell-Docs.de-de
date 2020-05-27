@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: DSC-Ressource „ProcessSet“
-ms.openlocfilehash: 72925d3a9516f5c0040427773a3b1d66034667bb
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 0f4f311f7609b6bd67607d89aceb804c67dba980
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71953127"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83559912"
 ---
 # <a name="dsc-processset-resource"></a>DSC-Ressource „ProcessSet“
 

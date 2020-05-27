@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: DSC-Ressource „WindowsFeatureSet“
-ms.openlocfilehash: 1758d248dde4fdee57bd01c157a3f9a8340d6194
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 4707616b23a125e49e17031e0b75fd3cde4b9a3d
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71952957"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83565416"
 ---
 # <a name="dsc-windowsfeatureset-resource"></a>DSC-Ressource „WindowsFeatureSet“
 

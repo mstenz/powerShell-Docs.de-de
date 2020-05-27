@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: Verwenden des Ressourcen-Designers
-ms.openlocfilehash: 36eed0fc888380a03a3279e834748708f578d973
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 9e7488e922bdca70bb152e7e976077e43cfad7af
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500627"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692181"
 ---
 # <a name="using-the-resource-designer-tool"></a>Verwenden des Ressourcen-Designers
 
@@ -19,6 +19,7 @@ Der Ressourcen-Designer ist ein Satz von Cmdlets, die vom Modul **xDscResourceDe
 Zunächst werden Eigenschaften festgelegt, die die Ressource verfügbar machen soll. In diesem Beispiel wird ein Active Directory-Benutzer mit den folgenden Eigenschaften definiert.
 
 Parameternamen und Beschreibungen
+
 * **UserName**: Schlüsseleigenschaft, die einen Benutzer eindeutig identifiziert.
 * **Ensure**: Gibt an, ob das Benutzerkonto vorhanden („Present“) oder nicht vorhanden („Absent“) sein soll. Für diesen Parameter gibt es nur zwei mögliche Werte.
 * **DomainCredential**: Das Domänenkennwort für den Benutzer.

@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: Direktes Aufrufen von DSC-Ressourcenmethoden
-ms.openlocfilehash: cf237f638593706e5959e2bcc0d851b0e55baf0e
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 9955de4f284c182a724b004c17080a8b8e19808d
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71954387"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692417"
 ---
 # <a name="calling-dsc-resource-methods-directly"></a>Direktes Aufrufen von DSC-Ressourcenmethoden
 
@@ -26,8 +26,8 @@ Im Folgenden finden Sie Beispiele für das direkte Aufrufen von Ressourcenmethod
 
 ```powershell
 $result = Invoke-DscResource -Name File -Method Set -Property @{
-                            DestinationPath = "$env:SystemDrive\\DirectAccess.txt";
-                            Contents = 'This file is create by Invoke-DscResource'} -Verbose
+              DestinationPath = "$env:SystemDrive\\DirectAccess.txt";
+              Contents = 'This file is create by Invoke-DscResource'} -Verbose
 $result | fl
 ```
 
@@ -35,8 +35,8 @@ $result | fl
 
 ```powershell
 $result = Invoke-DscResource -Name File -Method Test -Property @{
-                            DestinationPath="$env:SystemDrive\\DirectAccess.txt";
-                            Contents='This file is create by Invoke-DscResource'} -Verbose
+              DestinationPath="$env:SystemDrive\\DirectAccess.txt";
+              Contents='This file is create by Invoke-DscResource'} -Verbose
 $result | fl
 ```
 
@@ -44,14 +44,15 @@ $result | fl
 
 ```powershell
 $result = Invoke-DscResource -Name File -Method Get -Property @{
-                            DestinationPath="$env:SystemDrive\\DirectAccess.txt";
-                            Contents='This file is create by Invoke-DscResource'} -Verbose
+              DestinationPath="$env:SystemDrive\\DirectAccess.txt";
+              Contents='This file is create by Invoke-DscResource'} -Verbose
 $result.ItemValue | fl
 ```
 
 >**Hinweis:** Das direkte Aufrufen von Methoden für zusammengesetzte Ressourcen wird nicht unterstützt. Rufen Sie stattdessen die Methoden der zugrunde liegenden Ressourcen auf, aus denen die zusammengesetzte Ressource besteht.
 
 ## <a name="see-also"></a>Weitere Informationen
+
 - [Schreiben einer benutzerdefinierten DSC-Ressource mit MOF](../resources/authoringResourceMOF.md)
 - [Schreiben einer benutzerdefinierten DSC-Ressource mit PowerShell-Klassen](../resources/authoringResourceClass.md)
 - [Debuggen von DSC-Ressourcen](../troubleshooting/debugResource.md)

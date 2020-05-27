@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: DSC für Linux-Resource „nxArchive“
-ms.openlocfilehash: 77b52ad68344ba791501baeb585a5001cc97a126
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 56f8df65945f16a93c69407ea30f51878a201b63
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71953327"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560915"
 ---
 # <a name="dsc-for-linux-nxarchive-resource"></a>DSC für Linux-Resource „nxArchive“
 

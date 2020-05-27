@@ -1,13 +1,13 @@
 ---
 title: Installieren von PowerShell unter macOS
 description: Informationen zur Installation von PowerShell unter macOS
-ms.date: 12/12/2018
-ms.openlocfilehash: 4640cef3f99aefe36d69d4eb7cb4859bde1c0347
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.date: 05/21/2020
+ms.openlocfilehash: 32b3ebf3eb4017af41fc1a062f2f0a2e08629a58
+ms.sourcegitcommit: fd6a33b9fac973b3554fecfea7f51475e650a606
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80977521"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83791474"
 ---
 # <a name="installing-powershell-on-macos"></a>Installieren von PowerShell unter macOS
 
@@ -90,13 +90,13 @@ brew cask upgrade powershell-preview
 
 ## <a name="installation-via-direct-download"></a>Installation über einen direkten Download
 
-Laden Sie das PKG-Paket `powershell-lts-7.0.0-osx-x64.pkg`
+Laden Sie das PKG-Paket `powershell-lts-7.0.1-osx-x64.pkg`
 über die Seite [Freigaben][] auf Ihren macOS-Computer herunter.
 
 Doppelklicken Sie entweder auf die Datei, und befolgen Sie die Anweisungen, oder installieren Sie das Paket über das Terminal:
 
 ```sh
-sudo installer -pkg powershell-lts-7.0.0-osx-x64.pkg -target /
+sudo installer -pkg powershell-lts-7.0.1-osx-x64.pkg -target /
 ```
 
 Installieren Sie [OpenSSL](#install-openssl). OpenSSL ist für PowerShell-Remotingfunktionen und CIM-Vorgänge erforderlich.
@@ -119,19 +119,19 @@ Der .NET-Toolinstaller fügt `~/.dotnet/tools` Ihrer `PATH`-Umgebungsvariablen h
 
 ```sh
 # Download the powershell '.tar.gz' archive
-curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.0.0/powershell-7.0.0-osx-x64.tar.gz
+curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.0.1/powershell-7.0.1-osx-x64.tar.gz
 
 # Create the target folder where powershell will be placed
-sudo mkdir -p /usr/local/microsoft/powershell/7.0.0
+sudo mkdir -p /usr/local/microsoft/powershell/7.0.1
 
 # Expand powershell to the target folder
-sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/7.0.0
+sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/7.0.1
 
 # Set execute permissions
-sudo chmod +x /usr/local/microsoft/powershell/7.0.0/pwsh
+sudo chmod +x /usr/local/microsoft/powershell/7.0.1/pwsh
 
 # Create the symbolic link that points to pwsh
-sudo ln -s /usr/local/microsoft/powershell/7.0.0/pwsh /usr/local/bin/pwsh
+sudo ln -s /usr/local/microsoft/powershell/7.0.1/pwsh /usr/local/bin/pwsh
 ```
 
 Installieren Sie [OpenSSL](#install-openssl). OpenSSL ist für PowerShell-Remotingfunktionen und CIM-Vorgänge erforderlich.
@@ -184,7 +184,7 @@ Lesen Sie den Abschnitt [Pfade](#paths) in diesem Artikel, um zu erfahren, wie S
 
 ## <a name="paths"></a>Paths
 
-* `$PSHOME` ist `/usr/local/microsoft/powershell/7.0.0/`.
+* `$PSHOME` ist `/usr/local/microsoft/powershell/7.0.1/`.
 * Benutzerprofile werden über `~/.config/powershell/profile.ps1` gelesen.
 * Standardprofile werden über `$PSHOME/profile.ps1` gelesen.
 * Benutzermodule werden über `~/.local/share/powershell/Modules` gelesen.
@@ -198,7 +198,7 @@ Dies bedeutet, dass hostspezifische Standardprofile in `Microsoft.PowerShell_pro
 PowerShell hält die [XDG Base Directory Specification (XDG Base Directory-Spezifikation)][xdg-bds] unter macOs ein.
 
 Da macOS eine Ableitung von BSD ist, wird das Präfix `/usr/local` anstelle von `/opt` verwendet.
-Daher ist `$PSHOME` gleich `/usr/local/microsoft/powershell/7.0.0/`, und der symbolische Link wird unter `/usr/local/bin/pwsh` gespeichert.
+Daher ist `$PSHOME` gleich `/usr/local/microsoft/powershell/7.0.1/`, und der symbolische Link wird unter `/usr/local/bin/pwsh` gespeichert.
 
 ## <a name="additional-resources"></a>Weitere Ressourcen
 

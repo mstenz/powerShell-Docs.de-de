@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: Konfigurieren des lokalen Konfigurations-Managers
-ms.openlocfilehash: 5847a29efd165724ffe9f1f0e89cfaf358ade31c
-ms.sourcegitcommit: 4eda0bc902658d4a188159bd7310e64399f6e178
+ms.openlocfilehash: c736f1c6a7cd6740f9d777dd68559f29909bc5b6
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83271847"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83691996"
 ---
 # <a name="configuring-the-local-configuration-manager"></a>Konfigurieren des lokalen Konfigurations-Managers
 
@@ -125,6 +125,7 @@ Ein **ConfigurationRepositoryWeb**-Block definiert die folgenden Eigenschaften.
 |ProxyCredential*|pscredential|Anmeldeinformation, die für den HTTP-Proxy verwendet werden soll.|
 
 > [!NOTE]
+>
 > * Wird in den Windows-Versionen 1809 und höher unterstützt.
 
 Ein Beispielskript, das die Konfiguration des Werts „ConfigurationRepositoryWeb“ für lokale Knoten vereinfacht, steht unter [Generieren von DSC-Metakonfigurationen](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations) zur Verfügung.
@@ -152,6 +153,7 @@ Ein **ResourceRepositoryWeb**-Block definiert die folgenden Eigenschaften.
 |ProxyCredential*|pscredential|Anmeldeinformation, die für den HTTP-Proxy verwendet werden soll.|
 
 > [!NOTE]
+>
 > * Wird in den Windows-Versionen 1809 und höher unterstützt.
 
 Ein Beispielskript, das die Konfiguration des Werts „ResourceRepositoryWeb“ für lokale Knoten vereinfacht, steht unter [Generieren von DSC-Metakonfigurationen](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations) zur Verfügung.
@@ -180,6 +182,7 @@ Ein **ReportServerWeb**-Block definiert die folgenden Eigenschaften.
 |ProxyCredential*|pscredential|Anmeldeinformation, die für den HTTP-Proxy verwendet werden soll.|
 
 > [!NOTE]
+>
 > * Wird in den Windows-Versionen 1809 und höher unterstützt.
 
 Ein Beispielskript, das die Konfiguration des Werts „ReportServerWeb“ für lokale Knoten vereinfacht, steht unter [Generieren von DSC-Metakonfigurationen](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations) zur Verfügung.

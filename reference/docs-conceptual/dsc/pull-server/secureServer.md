@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: Bewährte Methoden für Pullserver
-ms.openlocfilehash: b2469984086a827b6b2a0fe84d1f326fc214ec28
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 2d707dc64c327cf30d09104aee140e5b78ee7c29
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500678"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692255"
 ---
 # <a name="pull-server-best-practices"></a>Bewährte Methoden für Pullserver
 
@@ -86,6 +86,7 @@ Das Modul **PowerShellGet** wird das Modul hier speichern:
 `C:\Program Files\Windows PowerShell\Modules`
 
 Planungsaufgabe
+
 - Haben Sie Zugriff auf die Installationsdateien für Windows Server 2012 R2?
 - Wird die Bereitstellungsumgebung Internetzugang haben, damit WMF und das Modul aus dem Onlinekatalog heruntergeladen werden können?
 - Wie werden Sie nach der Installation des Betriebssystems die neuesten Sicherheitsupdates installieren?
@@ -102,6 +103,7 @@ Pullserverbereitstellungen werden auf physischen und virtuellen Servern unterst�
 - Netzwerk: Gigabit-Ethernet-Adapter.
 
 Planungsaufgabe
+
 - Werden Sie auf einer physischen Hardware oder einer Virtualisierungsplattform bereitstellen?
 - Wie sieht der Prozess zum Anfordern eines neuen Servers für Ihre Zielumgebung aus?
 - Was ist die durchschnittliche Verarbeitungszeit, bis ein Server verfügbar wird?
@@ -121,14 +123,15 @@ Mit einem DNS-CNAME können Sie ein Alias erstellen, um auf Ihren Hosteintrag (A
 Bedenken Sie die Lösungsarchitektur, wenn Sie einen Namen für den DNS-Datensatz auswählen.
 Bei der Nutzung des Lastenausgleichs muss das Zertifikat zur Sicherung von Datenverkehr über HTTPS über denselben Namen verfügen wie der DNS-Datensatz.
 
-       Szenario        |                                                                                         Bewährte Methode
-:--------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Testumgebung       | Reproduzieren Sie nach Möglichkeit die geplante Produktionsumgebung. Ein Serverhostname eignet sich für einfache Konfigurationen. Wenn DNS nicht verfügbar ist, kann eine IP-Adresse anstatt eines Hostnamen verwendet werden.
-Einzelknotenbereitstellung | Erstellen Sie einen DNS CNAME-Datensatz, der auf den Serverhostnamen verweist.
+|       Szenario        |                                                                                         Bewährte Methode
+|:--------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|Testumgebung       | Reproduzieren Sie nach Möglichkeit die geplante Produktionsumgebung. Ein Serverhostname eignet sich für einfache Konfigurationen. Wenn DNS nicht verfügbar ist, kann eine IP-Adresse anstatt eines Hostnamen verwendet werden.
+|Einzelknotenbereitstellung | Erstellen Sie einen DNS CNAME-Datensatz, der auf den Serverhostnamen verweist.
 
 Weitere Informationen finden Sie unter [Configuring DNS Round Robin in Windows Server (Konfigurieren des DNS-Roundrobin in Windows Server)](/previous-versions/windows/it-pro/windows-server-2003/cc787484(v=ws.10)).
 
 Planungsaufgabe
+
 - Wissen Sie, an wen Sie sich zur Erstellung und Änderung der DNS-Datensätze wenden müssen?
 - Was ist die durchschnittliche Verarbeitungszeit für eine Anforderung eines DNS-Datensatzes?
 - Müssen Sie statische Hostnamendatensätze (A) für Server anfordern?
@@ -143,6 +146,7 @@ Es ist zwar möglich, einen Pullserver mithilfe von HTTP bereitzustellen, was Cl
 Die Zertifikatanforderungen zur Sicherung von HTTPS-Datenverkehr für Pullserver unterscheiden sich nicht von der Sicherung anderer HTTPS-Websites. Die **Webserver**-Vorlage in einem Windows Server Certificate Service erfüllt die erforderlichen Funktionen.
 
 Planungsaufgabe
+
 - Wenn Zertifikatanforderungen nicht automatisiert sind, wen müssen Sie kontaktieren, um ein Zertifikat anzufordern?
 - Was ist die durchschnittliche Verarbeitungszeit für die Anforderung?
 - Wie wird Ihnen diese Zertifikatdatei übertragen?
@@ -159,6 +163,7 @@ Ein Pullserver kann mithilfe eines auf IIS gehosteten Webdiensts oder einer SMB-
 Clients, die mit dem Webdienst interagieren, fordern Informationen an, die in einer einzelnen Antwort zurückgegeben werden. Es sind keine sequenziellen Anforderungen erforderlich. Deshalb muss die Lastenausgleichsplattform nicht sicherstellen, dass Sitzungen zu jedem Zeitpunkt auf einem einzelnen Server beibehalten werden.
 
 Planungsaufgabe
+
 - Welche Lösung wird für den serverübergreifenden Lastenausgleich für Datenverkehr verwendet werden?
 - Wenn Sie einen Hardwarelastenausgleich verwenden, wer wird eine Anforderung annehmen, um eine neue Konfiguration zum Gerät hinzuzufügen?
 - Was ist die durchschnittliche Verarbeitungszeit für eine Anforderung zur Konfiguration eines neuen, per Lastenausgleich verarbeiteten, Webdiensts?
@@ -187,6 +192,7 @@ New-DscChecksum -ConfigurationPath .\ -OutPath .\
 ```
 
 Planungsaufgabe
+
 - Welche Szenarios sind wichtig zur Überprüfung, wenn Sie eine Test- oder Laborumgebung planen?
 - Gibt es öffentlich verfügbare Module, die Ressourcen enthalten, die alles abdecken, das Sie benötigen, oder müssen Sie Ihre eigenen Ressourcen erstellen?
 - Wird Ihre Umgebung Internetzugang haben, um öffentliche Module abrufen zu können?
@@ -210,6 +216,7 @@ Das Planen der Konfigurations-**GUIDs** lohnt sich besonders, wenn Sie eine Pull
   Die GUID sollte als vertraulich behandelt werden, da sie von jemanden mit böswilligen Absichten genutzt werden könnte, um Informationen über die Bereitstellung und Konfiguration von Servern in Ihrer Umgebung zu erlangen. Weitere Informationen finden Sie unter [Securely allocating GUIDs in PowerShell Desired State Configuration Pull Mode](https://blogs.msdn.microsoft.com/powershell/2014/12/31/securely-allocating-guids-in-powershell-desired-state-configuration-pull-mode/) (Sicheres Zuweisen von GUIDs in PowerShell Desired State Configuration Pullmodus).
 
 Planungsaufgabe
+
 - Wer wird für das Kopieren der Konfigurationen in den Pullserverordner verantwortlich sein, sobald sie bereit sind?
 - Wie wird der Weiterleitungsprozess aussehen, wenn Konfigurationen von einem Anwendungsteam erstellt werden?
 - Werden Sie ein Repository zum Speichern von Konfigurationen nutzen, wenn sie über Teams hinweg verfasst werden?

@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Verwalten von Paketbesitzern
-ms.openlocfilehash: 5cf26a7195ac446177cbb7f3a055e8e0a78569cc
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 72a3ff72818c5461c74d46de5689e2d6c59b19bf
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71328261"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564668"
 ---
 # <a name="managing-package-owners"></a>Verwalten von Paketbesitzern
 
@@ -41,7 +41,6 @@ Dieser Einladungsprozess verhindert, dass Benutzer fälschlicherweise andere Ben
 
 Beachten Sie, dass die Metadaten „Autoren“ in reinem Freiformtext vorliegen. Nur „Besitzer“ werden gesteuert.
 
-
 ## <a name="removing-owners"></a>Entfernen von Besitzern
 
 Wenn ein Paket mehrere Besitzer aufweist und einer entfernt werden muss, ist der Prozess einfach:
@@ -50,8 +49,6 @@ Wenn ein Paket mehrere Besitzer aufweist und einer entfernt werden muss, ist der
 2. Navigieren Sie zu einer Paketseite, indem Sie die Registerkarte „Pakete“ verwenden, suchen oder auf Ihren Benutzernamen und dann auf [**Meine Pakete verwalten**](https://www.powershellgallery.com/account/Packages) klicken.
 3. Wenn Sie als Besitzer eines Pakets angemeldet sind, finden Sie auf der linken Seite einen Link „Besitzer verwalten“, auf den Sie klicken können.
 4. Klicken Sie neben dem Besitzer, der entfernt werden soll, auf den Link „Entfernen“.
-
-
 
 ## <a name="transferring-package-ownership"></a>Übertragen des Paketbesitzes
 
@@ -65,7 +62,6 @@ Diese Anfrage ist über mehrere Formulare eingegangen, der Prozess funktioniert 
 
 - Der Besitz eines Pakets wechselt von einem Entwickler zu einem anderen.
 - Das Paket wurde versehentlich über das falsche Konto veröffentlicht.
-
 
 ## <a name="orphaned-packages"></a>Verwaiste Pakete
 

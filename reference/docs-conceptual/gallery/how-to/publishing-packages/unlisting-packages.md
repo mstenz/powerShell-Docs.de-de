@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: Entfernen von Paketen aus der Liste
-ms.openlocfilehash: b7404420db531ac5d97debd46e1b84c6fdd49d9a
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 4291b910dcea65b2ca241e55838ea00d4ec53ee4
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80978269"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692366"
 ---
 # <a name="unlisting-packages"></a>Entfernen von Paketen aus der Liste
 
@@ -32,6 +32,7 @@ Um Ihr Paket aus der Liste zu entfernen, rufen Sie die Seite „Paketdetails“ 
 
 Wenn ein Paket gelöscht werden muss, wenden Sie sich an die PowerShell-Katalogadministratoren.
 In folgenden Fällen ist das Löschen eines Elements zulässig:
+
 - Probleme aufgrund von Urheberrechtsverletzungen.
 - Das Paket enthält potenziell schädlichen Inhalt.
 - Das Paket enthält sensible Daten.

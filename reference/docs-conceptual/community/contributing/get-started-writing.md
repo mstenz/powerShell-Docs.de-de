@@ -3,12 +3,12 @@ title: Einstieg in die Mitwirkung an PowerShell-Dokumentation
 description: Dieser Artikel bietet einen Überblick über die ersten Schritte als Mitwirkender an der PowerShell-Dokumentation.
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: fdf29feb75abb6592205aaf1726c07a60ce3a924
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 989605f21685decda5f916298a05ec7f5600e575
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81005515"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560677"
 ---
 # <a name="get-started-contributing-to-powershell-documentation"></a>Einstieg in die Mitwirkung an PowerShell-Dokumentation
 

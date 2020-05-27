@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: Verwenden von Import-DscResource
-ms.openlocfilehash: a041169ad557becf7ca87641d9ce5222ee8f6beb
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 1b066e231d158fb5b6333e42c91d24690e9b0223
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "79402447"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692460"
 ---
 # <a name="using-import-dscresource"></a>Verwenden von Import-DscResource
 
@@ -123,10 +123,12 @@ Mit IntelliSense und Schemaüberprüfung können Sie mehr Fehler während Analys
 
 > [!NOTE]
 > Jede DSC-Ressource kann einen Namen haben und einen durch das Schema der Ressource definierten **FriendlyName** (Anzeigenamen). Im Folgenden sehen Sie ersten beiden Zeilen von „MSFT_ServiceResource.shema.mof“.
+>
 > ```syntax
 > [ClassVersion("1.0.0"),FriendlyName("Service")]
 > class MSFT_ServiceResource : OMI_BaseResource
 > ```
+>
 > Wenn Sie diese Ressource in einer Konfiguration verwenden, können Sie **MSFT_ServiceResource** oder **Service** angeben.
 
 ## <a name="powershell-v4-and-v5-differences"></a>Unterschiede zwischen PowerShell v4 und v5

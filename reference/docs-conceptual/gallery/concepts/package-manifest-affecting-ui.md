@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: Paketmanifestwerte, die die Benutzeroberfläche des PowerShell-Katalogs betreffen
-ms.openlocfilehash: 9e37fec879f2f5cbe3926c7dbc946389425d856a
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 460b1c67af0af81dd993a45c4f988b825dc2f3eb
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "74417046"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560422"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>Paketmanifestwerte, die die Benutzeroberfläche des PowerShell-Katalogs betreffen
 
@@ -45,7 +45,6 @@ Die folgende Tabelle enthält die Benutzeroberflächenelemente der Paketseiten i
 | **Projektwebsite** | Die Projektwebsite wird bei Modulen im Abschnitt „Privatedata\PSData“ des Modulmanifests durch Angabe von ProjectURI bereitgestellt. Im Skriptmanifest wird dieses Element durch Angabe von „.PROJECTURI“ gesteuert. | Ja | Ja |
 | **Lizenz** | Ein Lizenzlink wird bei Modulen im Abschnitt „Privatedata\PSData“ des Modulmanifests durch Angabe von LicenseURI bereitgestellt. Im Skriptmanifest wird dieses Element durch Angabe von „.LICENSEURI“ gesteuert. Beachten Sie unbedingt Folgendes: Wenn eine Lizenz nicht anhand per LicenseURI oder innerhalb eines Moduls angegeben wird, bestimmen die Nutzungsbedingungen für den PowerShell-Katalog die Nutzungsbedingungen für das Paket. Weitere Informationen finden Sie in den Nutzungsbedingungen. | Ja | Ja |
 | **Symbol:** | Für jedes Paket im PowerShell-Katalog kann ein Symbol festgelegt werden, indem das IconURI-Flag im Skriptmanifest oder im Abschnitt „PrivateData-PSData“ des Modulmanifests angegeben wird. Der IconURI sollte auf ein 32x32 großes Bild mit transparentem Hintergrund zeigen. Der URI **muss** eine direkte Bild-URL sein und **darf nicht** zu einer Website führen, die das Bild oder eine Datei im Paket für den PowerShell-Katalog enthält. | Ja | Ja |
-
 
 ## <a name="editing-package-details"></a>Bearbeiten von Paketdetails
 
