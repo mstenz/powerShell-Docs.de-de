@@ -2,12 +2,12 @@
 ms.date: 08/09/2018
 keywords: Installieren, Windows, Linux, macOS, ARM, Raspbian
 title: Installieren von PowerShell
-ms.openlocfilehash: 22c88bfbbe4cd6b163e69ab5e599a98528caf9c8
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: fd62d33945e0253b43b80f294964d5e9b8ba03a0
+ms.sourcegitcommit: c752ae8d0fa47eaaf3c5eae2a5a770f06c63921c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78405061"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83841003"
 ---
 # <a name="installing-various-versions-of-powershell"></a>Installieren verschiedener Versionen von PowerShell
 
@@ -24,4 +24,4 @@ PowerShell Core ist ein Open-Source-Projekt auf [GitHub](https://github.com/powe
 
 ## <a name="windows-powershell"></a>Windows PowerShell
 
-Weitere Informationen zum Installieren älterer Versionen von PowerShell unter Windows finden Sie unter [Installieren von Windows PowerShell](installing-windows-powershell.md).
+Weitere Informationen zum Installieren älterer Versionen von PowerShell unter Windows finden Sie unter [Installieren von Windows PowerShell](../windows-powershell/install/installing-windows-powershell.md).
