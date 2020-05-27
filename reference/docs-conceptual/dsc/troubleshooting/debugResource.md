@@ -2,27 +2,26 @@
 ms.date: 06/12/2017
 keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: Debuggen von DSC-Ressourcen
-ms.openlocfilehash: c088e13a25ba31ceebaf52b2d24b5d32b96ae2fc
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 53ee9ea5652ffb577f0c7fba2f240f63816281db
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71954257"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83691952"
 ---
-# <a name="debugging-dsc-resources"></a><span data-ttu-id="6c115-103">Debuggen von DSC-Ressourcen</span><span class="sxs-lookup"><span data-stu-id="6c115-103">Debugging DSC resources</span></span>
+# <a name="debugging-dsc-resources"></a><span data-ttu-id="6f768-103">Debuggen von DSC-Ressourcen</span><span class="sxs-lookup"><span data-stu-id="6f768-103">Debugging DSC resources</span></span>
 
-> <span data-ttu-id="6c115-104">Gilt für: Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="6c115-104">Applies To: Windows PowerShell 5.0</span></span>
+> <span data-ttu-id="6f768-104">Gilt für: Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="6f768-104">Applies To: Windows PowerShell 5.0</span></span>
 
-<span data-ttu-id="6c115-105">In PowerShell 5.0 wurde ein neues Feature in der Konfiguration für den gewünschten Zustand (Desired State Configuration, DSC) eingeführt, mit dem Sie eine DSC-Ressource beim Anwenden einer Konfiguration debuggen können.</span><span class="sxs-lookup"><span data-stu-id="6c115-105">In PowerShell 5.0, a new feature was introduced in Desired State Configuration (DSC) that allows you to debug a DSC resource as a configuration is being applied.</span></span>
+<span data-ttu-id="6f768-105">In PowerShell 5.0 wurde ein neues Feature in der Konfiguration für den gewünschten Zustand (Desired State Configuration, DSC) eingeführt, mit dem Sie eine DSC-Ressource beim Anwenden einer Konfiguration debuggen können.</span><span class="sxs-lookup"><span data-stu-id="6f768-105">In PowerShell 5.0, a new feature was introduced in Desired State Configuration (DSC) that allows you to debug a DSC resource as a configuration is being applied.</span></span>
 
-## <a name="enabling-dsc-debugging"></a><span data-ttu-id="6c115-106">Aktivieren des DSC-Debuggens</span><span class="sxs-lookup"><span data-stu-id="6c115-106">Enabling DSC debugging</span></span>
-<span data-ttu-id="6c115-107">Bevor Sie eine Ressource debuggen können, müssen Sie das Cmdlet [Enable-DscDebug](/powershell/module/PSDesiredStateConfiguration/Enable-DscDebug) aufrufen, um das Debuggen zu aktivieren.</span><span class="sxs-lookup"><span data-stu-id="6c115-107">Before you can debug a resource, you have to enable debugging by calling the [Enable-DscDebug](/powershell/module/PSDesiredStateConfiguration/Enable-DscDebug) cmdlet.</span></span>
-<span data-ttu-id="6c115-108">Dieses Cmdlet verfügt über den Pflichtparameter **BreakAll**.</span><span class="sxs-lookup"><span data-stu-id="6c115-108">This cmdlet takes a mandatory parameter, **BreakAll**.</span></span>
+## <a name="enabling-dsc-debugging"></a><span data-ttu-id="6f768-106">Aktivieren des DSC-Debuggens</span><span class="sxs-lookup"><span data-stu-id="6f768-106">Enabling DSC debugging</span></span>
+<span data-ttu-id="6f768-107">Bevor Sie eine Ressource debuggen können, müssen Sie das Cmdlet [Enable-DscDebug](/powershell/module/PSDesiredStateConfiguration/Enable-DscDebug) aufrufen, um das Debuggen zu aktivieren.</span><span class="sxs-lookup"><span data-stu-id="6f768-107">Before you can debug a resource, you have to enable debugging by calling the [Enable-DscDebug](/powershell/module/PSDesiredStateConfiguration/Enable-DscDebug) cmdlet.</span></span>
+<span data-ttu-id="6f768-108">Dieses Cmdlet verfügt über den Pflichtparameter **BreakAll**.</span><span class="sxs-lookup"><span data-stu-id="6f768-108">This cmdlet takes a mandatory parameter, **BreakAll**.</span></span>
 
-<span data-ttu-id="6c115-109">Um zu überprüfen, ob das Debuggen aktiviert wurde, werfen Sie einen Blick auf das Ergebnis eines Aufrufs von [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager).</span><span class="sxs-lookup"><span data-stu-id="6c115-109">You can verify that debugging has been enabled by looking at the result of a call to [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager).</span></span>
+<span data-ttu-id="6f768-109">Um zu überprüfen, ob das Debuggen aktiviert wurde, werfen Sie einen Blick auf das Ergebnis eines Aufrufs von [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager).</span><span class="sxs-lookup"><span data-stu-id="6f768-109">You can verify that debugging has been enabled by looking at the result of a call to [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager).</span></span>
 
-<span data-ttu-id="6c115-110">Die folgende PowerShell-Ausgabe zeigt das Ergebnis der Aktivierung des Debuggens an:</span><span class="sxs-lookup"><span data-stu-id="6c115-110">The following PowerShell output shows the result of enabling debugging:</span></span>
-
+<span data-ttu-id="6f768-110">Die folgende PowerShell-Ausgabe zeigt das Ergebnis der Aktivierung des Debuggens an:</span><span class="sxs-lookup"><span data-stu-id="6f768-110">The following PowerShell output shows the result of enabling debugging:</span></span>
 
 ```powershell
 PS C:\DebugTest> $LCM = Get-DscLocalConfigurationManager
@@ -41,10 +40,9 @@ ResourceScriptBreakAll
 PS C:\DebugTest>
 ```
 
-
-## <a name="starting-a-configuration-with-debug-enabled"></a><span data-ttu-id="6c115-111">Starten einer Konfiguration mit aktiviertem Debuggen</span><span class="sxs-lookup"><span data-stu-id="6c115-111">Starting a configuration with debug enabled</span></span>
-<span data-ttu-id="6c115-112">Um eine DSC-Ressource zu debuggen, starten Sie eine Konfiguration, die diese Ressource aufruft.</span><span class="sxs-lookup"><span data-stu-id="6c115-112">To debug a DSC resource, you start a configuration that calls that resource.</span></span>
-<span data-ttu-id="6c115-113">In diesem Beispiel betrachten wir eine einfache Konfiguration, die die Ressource **WindowsFeature** aufruft, um sicherzustellen, dass das Feature „WindowsPowerShellWebAccess“ installiert wurde:</span><span class="sxs-lookup"><span data-stu-id="6c115-113">For this example, we'll look at a simple configuration that calls the **WindowsFeature** resource to ensure that the "WindowsPowerShellWebAccess" feature is installed:</span></span>
+## <a name="starting-a-configuration-with-debug-enabled"></a><span data-ttu-id="6f768-111">Starten einer Konfiguration mit aktiviertem Debuggen</span><span class="sxs-lookup"><span data-stu-id="6f768-111">Starting a configuration with debug enabled</span></span>
+<span data-ttu-id="6f768-112">Um eine DSC-Ressource zu debuggen, starten Sie eine Konfiguration, die diese Ressource aufruft.</span><span class="sxs-lookup"><span data-stu-id="6f768-112">To debug a DSC resource, you start a configuration that calls that resource.</span></span>
+<span data-ttu-id="6f768-113">In diesem Beispiel betrachten wir eine einfache Konfiguration, die die Ressource **WindowsFeature** aufruft, um sicherzustellen, dass das Feature „WindowsPowerShellWebAccess“ installiert wurde:</span><span class="sxs-lookup"><span data-stu-id="6f768-113">For this example, we'll look at a simple configuration that calls the **WindowsFeature** resource to ensure that the "WindowsPowerShellWebAccess" feature is installed:</span></span>
 
 ```powershell
 Configuration PSWebAccess
@@ -61,9 +59,10 @@ Configuration PSWebAccess
     }
 PSWebAccess
 ```
-<span data-ttu-id="6c115-114">Rufen Sie nach dem Kompilieren der Konfiguration [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) auf, um die Konfiguration zu starten.</span><span class="sxs-lookup"><span data-stu-id="6c115-114">After compiling the configuration, start it by calling [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration).</span></span>
-<span data-ttu-id="6c115-115">Die Konfiguration wird beendet, wenn der lokale Konfigurations-Manager die erste Ressource in der Konfiguration aufruft.</span><span class="sxs-lookup"><span data-stu-id="6c115-115">The configuration will stop when the Local Configuration Manager (LCM) calls into the first resource in the configuration.</span></span>
-<span data-ttu-id="6c115-116">Bei Verwendung der Parameter `-Verbose` und `-Wait` werden in der Ausgabe die Zeilen angezeigt, die Sie eingeben müssen, um das Debuggen zu starten.</span><span class="sxs-lookup"><span data-stu-id="6c115-116">If you use the `-Verbose` and `-Wait` parameters, the output displays the lines you need to enter to start debugging.</span></span>
+
+<span data-ttu-id="6f768-114">Rufen Sie nach dem Kompilieren der Konfiguration [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) auf, um die Konfiguration zu starten.</span><span class="sxs-lookup"><span data-stu-id="6f768-114">After compiling the configuration, start it by calling [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration).</span></span>
+<span data-ttu-id="6f768-115">Die Konfiguration wird beendet, wenn der lokale Konfigurations-Manager die erste Ressource in der Konfiguration aufruft.</span><span class="sxs-lookup"><span data-stu-id="6f768-115">The configuration will stop when the Local Configuration Manager (LCM) calls into the first resource in the configuration.</span></span>
+<span data-ttu-id="6f768-116">Bei Verwendung der Parameter `-Verbose` und `-Wait` werden in der Ausgabe die Zeilen angezeigt, die Sie eingeben müssen, um das Debuggen zu starten.</span><span class="sxs-lookup"><span data-stu-id="6f768-116">If you use the `-Verbose` and `-Wait` parameters, the output displays the lines you need to enter to start debugging.</span></span>
 
 ```powershell
 Start-DscConfiguration .\PSWebAccess -Wait -Verbose
@@ -85,29 +84,30 @@ Enter-PSSession -ComputerName TEST-SRV -Credential <credentials>
 Enter-PSHostProcess -Id 9000 -AppDomainName DscPsPluginWkr_AppDomain
 Debug-Runspace -Id 9
 ```
-<span data-ttu-id="6c115-117">An diesem Punkt hat der lokale Konfigurations-Manager die Ressource aufgerufen und den ersten Haltepunkt erreicht.</span><span class="sxs-lookup"><span data-stu-id="6c115-117">At this point, the LCM has called the resource, and come to the first break point.</span></span>
-<span data-ttu-id="6c115-118">Die letzten drei Zeilen in der Ausgabe zeigen, wie das Ressourcenskript an den Prozess angefügt und das Debuggen gestartet wird.</span><span class="sxs-lookup"><span data-stu-id="6c115-118">The last three lines in the output show you how to attach to the process and start debugging the resource script.</span></span>
 
-## <a name="debugging-the-resource-script"></a><span data-ttu-id="6c115-119">Debuggen des Ressourcenskripts</span><span class="sxs-lookup"><span data-stu-id="6c115-119">Debugging the resource script</span></span>
+<span data-ttu-id="6f768-117">An diesem Punkt hat der lokale Konfigurations-Manager die Ressource aufgerufen und den ersten Haltepunkt erreicht.</span><span class="sxs-lookup"><span data-stu-id="6f768-117">At this point, the LCM has called the resource, and come to the first break point.</span></span>
+<span data-ttu-id="6f768-118">Die letzten drei Zeilen in der Ausgabe zeigen, wie das Ressourcenskript an den Prozess angefügt und das Debuggen gestartet wird.</span><span class="sxs-lookup"><span data-stu-id="6f768-118">The last three lines in the output show you how to attach to the process and start debugging the resource script.</span></span>
 
-<span data-ttu-id="6c115-120">Starten Sie eine neue Instanz von PowerShell ISE.</span><span class="sxs-lookup"><span data-stu-id="6c115-120">Start a new instance of the PowerShell ISE.</span></span>
-<span data-ttu-id="6c115-121">Geben Sie im Konsolenbereich die letzten drei Zeilen der `Start-DscConfiguration`-Ausgabe als Befehle ein, wobei Sie `<credentials>` durch gültige Benutzeranmeldeinformationen ersetzen.</span><span class="sxs-lookup"><span data-stu-id="6c115-121">In the console pane, enter the last three lines of output from the `Start-DscConfiguration` output as commands, replacing `<credentials>` with valid user credentials.</span></span>
-<span data-ttu-id="6c115-122">Jetzt sollte eine Eingabeaufforderung angezeigt werden, die in etwa so aussieht:</span><span class="sxs-lookup"><span data-stu-id="6c115-122">You should now see a prompt that looks similar to:</span></span>
+## <a name="debugging-the-resource-script"></a><span data-ttu-id="6f768-119">Debuggen des Ressourcenskripts</span><span class="sxs-lookup"><span data-stu-id="6f768-119">Debugging the resource script</span></span>
+
+<span data-ttu-id="6f768-120">Starten Sie eine neue Instanz von PowerShell ISE.</span><span class="sxs-lookup"><span data-stu-id="6f768-120">Start a new instance of the PowerShell ISE.</span></span>
+<span data-ttu-id="6f768-121">Geben Sie im Konsolenbereich die letzten drei Zeilen der `Start-DscConfiguration`-Ausgabe als Befehle ein, wobei Sie `<credentials>` durch gültige Benutzeranmeldeinformationen ersetzen.</span><span class="sxs-lookup"><span data-stu-id="6f768-121">In the console pane, enter the last three lines of output from the `Start-DscConfiguration` output as commands, replacing `<credentials>` with valid user credentials.</span></span>
+<span data-ttu-id="6f768-122">Jetzt sollte eine Eingabeaufforderung angezeigt werden, die in etwa so aussieht:</span><span class="sxs-lookup"><span data-stu-id="6f768-122">You should now see a prompt that looks similar to:</span></span>
 
 ```powershell
 [TEST-SRV]: [DBG]: [Process:9000]: [RemoteHost]: PS C:\DebugTest>>
 ```
 
-<span data-ttu-id="6c115-123">Das Ressourcenskript wird im Skriptfenster geöffnet, und der Debugger wird in der ersten Zeile der Funktion **Test-TargetResource** angehalten (der **Test()** -Methode einer klassenbasierten Ressource).</span><span class="sxs-lookup"><span data-stu-id="6c115-123">The resource script will open in the script pane, and the debugger is stopped at the first line of the **Test-TargetResource** function (the **Test()** method of a class-based resource).</span></span>
-<span data-ttu-id="6c115-124">Jetzt können Sie die Debugbefehle in der ISE verwenden, um das Ressourcenskript schrittweise zu durchlaufen, sich die Variablenwerte anzuschauen, die Aufrufliste anzuzeigen, usw.</span><span class="sxs-lookup"><span data-stu-id="6c115-124">Now you can use the debug commands in the ISE to step through the resource script, look at variable values, view the call stack, and so on.</span></span> <span data-ttu-id="6c115-125">Denken Sie daran, dass jede Zeile im Ressourcenskript (oder in der Klasse) als Haltepunkt festgelegt ist.</span><span class="sxs-lookup"><span data-stu-id="6c115-125">Remember that every line in the resource script (or class) is set as a break point.</span></span>
+<span data-ttu-id="6f768-123">Das Ressourcenskript wird im Skriptfenster geöffnet, und der Debugger wird in der ersten Zeile der Funktion **Test-TargetResource** angehalten (der **Test()** -Methode einer klassenbasierten Ressource).</span><span class="sxs-lookup"><span data-stu-id="6f768-123">The resource script will open in the script pane, and the debugger is stopped at the first line of the **Test-TargetResource** function (the **Test()** method of a class-based resource).</span></span>
+<span data-ttu-id="6f768-124">Jetzt können Sie die Debugbefehle in der ISE verwenden, um das Ressourcenskript schrittweise zu durchlaufen, sich die Variablenwerte anzuschauen, die Aufrufliste anzuzeigen, usw.</span><span class="sxs-lookup"><span data-stu-id="6f768-124">Now you can use the debug commands in the ISE to step through the resource script, look at variable values, view the call stack, and so on.</span></span> <span data-ttu-id="6f768-125">Denken Sie daran, dass jede Zeile im Ressourcenskript (oder in der Klasse) als Haltepunkt festgelegt ist.</span><span class="sxs-lookup"><span data-stu-id="6f768-125">Remember that every line in the resource script (or class) is set as a break point.</span></span>
 
-## <a name="disabling-dsc-debugging"></a><span data-ttu-id="6c115-126">Deaktivieren des DSC-Debuggens</span><span class="sxs-lookup"><span data-stu-id="6c115-126">Disabling DSC debugging</span></span>
+## <a name="disabling-dsc-debugging"></a><span data-ttu-id="6f768-126">Deaktivieren des DSC-Debuggens</span><span class="sxs-lookup"><span data-stu-id="6f768-126">Disabling DSC debugging</span></span>
 
-<span data-ttu-id="6c115-127">Nach Aufrufen von [Enable-DscDebug](/powershell/module/PSDesiredStateConfiguration/Enable-DscDebug), führen alle Aufrufe von [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) dazu, dass die Konfiguration unterbrochen und der Debugger gestartet wird.</span><span class="sxs-lookup"><span data-stu-id="6c115-127">After calling [Enable-DscDebug](/powershell/module/PSDesiredStateConfiguration/Enable-DscDebug), all calls to [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) will result in the configuration breaking into the debugger.</span></span> <span data-ttu-id="6c115-128">Damit Konfigurationen wie gewohnt ausgeführt werden können, müssen Sie das Debuggen durch Aufrufen des Cmdlets [Disable-DscDebug](/powershell/module/PSDesiredStateConfiguration/Disable-DscDebug) deaktivieren.</span><span class="sxs-lookup"><span data-stu-id="6c115-128">To allow configurations to run normally, you must disable debugging by calling the [Disable-DscDebug](/powershell/module/PSDesiredStateConfiguration/Disable-DscDebug) cmdlet.</span></span>
+<span data-ttu-id="6f768-127">Nach Aufrufen von [Enable-DscDebug](/powershell/module/PSDesiredStateConfiguration/Enable-DscDebug), führen alle Aufrufe von [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) dazu, dass die Konfiguration unterbrochen und der Debugger gestartet wird.</span><span class="sxs-lookup"><span data-stu-id="6f768-127">After calling [Enable-DscDebug](/powershell/module/PSDesiredStateConfiguration/Enable-DscDebug), all calls to [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) will result in the configuration breaking into the debugger.</span></span> <span data-ttu-id="6f768-128">Damit Konfigurationen wie gewohnt ausgeführt werden können, müssen Sie das Debuggen durch Aufrufen des Cmdlets [Disable-DscDebug](/powershell/module/PSDesiredStateConfiguration/Disable-DscDebug) deaktivieren.</span><span class="sxs-lookup"><span data-stu-id="6f768-128">To allow configurations to run normally, you must disable debugging by calling the [Disable-DscDebug](/powershell/module/PSDesiredStateConfiguration/Disable-DscDebug) cmdlet.</span></span>
 
-><span data-ttu-id="6c115-129">**Hinweis:** Ein Neustart ändert den Debugzustand des LCM nicht.</span><span class="sxs-lookup"><span data-stu-id="6c115-129">**Note:** Rebooting does not change the debug state of the LCM.</span></span> <span data-ttu-id="6c115-130">Wenn das Debuggen aktiviert ist, wird nach einem Neustart weiterhin das Starten einer Konfiguration unterbrochen und der Debugger gestartet.</span><span class="sxs-lookup"><span data-stu-id="6c115-130">If debugging is enabled, starting a configuration will still break into the debugger after a reboot.</span></span>
+><span data-ttu-id="6f768-129">**Hinweis:** Ein Neustart ändert den Debugzustand des LCM nicht.</span><span class="sxs-lookup"><span data-stu-id="6f768-129">**Note:** Rebooting does not change the debug state of the LCM.</span></span> <span data-ttu-id="6f768-130">Wenn das Debuggen aktiviert ist, wird nach einem Neustart weiterhin das Starten einer Konfiguration unterbrochen und der Debugger gestartet.</span><span class="sxs-lookup"><span data-stu-id="6f768-130">If debugging is enabled, starting a configuration will still break into the debugger after a reboot.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="6c115-131">Weitere Informationen</span><span class="sxs-lookup"><span data-stu-id="6c115-131">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="6f768-131">Weitere Informationen</span><span class="sxs-lookup"><span data-stu-id="6f768-131">See Also</span></span>
 
-- [<span data-ttu-id="6c115-132">Schreiben einer benutzerdefinierten DSC-Ressource mit MOF</span><span class="sxs-lookup"><span data-stu-id="6c115-132">Writing a custom DSC resource with MOF</span></span>](../resources/authoringResourceMOF.md)
-- [<span data-ttu-id="6c115-133">Schreiben einer benutzerdefinierten DSC-Ressource mit PowerShell-Klassen</span><span class="sxs-lookup"><span data-stu-id="6c115-133">Writing a custom DSC resource with PowerShell classes</span></span>](../resources/authoringResourceClass.md)
+- [<span data-ttu-id="6f768-132">Schreiben einer benutzerdefinierten DSC-Ressource mit MOF</span><span class="sxs-lookup"><span data-stu-id="6f768-132">Writing a custom DSC resource with MOF</span></span>](../resources/authoringResourceMOF.md)
+- [<span data-ttu-id="6f768-133">Schreiben einer benutzerdefinierten DSC-Ressource mit PowerShell-Klassen</span><span class="sxs-lookup"><span data-stu-id="6f768-133">Writing a custom DSC resource with PowerShell classes</span></span>](../resources/authoringResourceClass.md)
