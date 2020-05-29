@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: Schreiben einer benutzerdefinierten DSC-Ressource mit PowerShell-Klassen
-ms.openlocfilehash: 34356f65bcb83153e7395a16d2a4a5cf2e507332
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: f96a567253ab4808381c004df243c96886948407
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71952827"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692225"
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>Schreiben einer benutzerdefinierten DSC-Ressource mit PowerShell-Klassen
 
@@ -500,7 +500,7 @@ class FileResource {
 
 Ein Modul kann mehrere klassenbasierte DSC-Ressourcen definieren. Sie können die Ordnerstruktur auf folgende Weise erstellen:
 
-1. Definieren Sie die erste Ressource in der Datei „<ModuleName>.psm1“ und die nachfolgenden Ressourcen unter dem Ordner **DSCResources**.
+1. Definieren Sie die erste Ressource in der Datei `<ModuleName>.psm1` und die nachfolgenden Ressourcen unter dem Ordner **DSCResources**.
 
    ```
    $env:ProgramFiles\WindowsPowerShell\Modules (folder)

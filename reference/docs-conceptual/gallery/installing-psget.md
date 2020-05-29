@@ -3,12 +3,12 @@ ms.date: 09/19/2019
 contributor: manikb
 keywords: gallery,powershell,cmdlet,psget
 title: Installieren von PowerShellGet
-ms.openlocfilehash: 69dc851c54089b47fb19e5b32990d579d26effb9
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: f42eb0df101eb63a5dc267196fa9f666747b8e35
+ms.sourcegitcommit: 23ea4a36ee85f923684657de5313a5adf0b6b094
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71328201"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83727794"
 ---
 # <a name="installing-powershellget"></a>Installieren von PowerShellGet
 
@@ -48,7 +48,12 @@ Exit
 
 Diese Anweisungen gelten für Computer, auf denen die **PackageManagement-Vorschauversion** oder keine Version von **PowerShellGet** installiert ist.
 
-Das Cmdlet `Save-Module` wird in beiden Anweisungssätzen verwendet. `Save-Module` lädt ein Modul und alle Abhängigkeiten aus einem registrierten Repository herunter und speichert sie. Die neueste Version des Moduls wird in einem bestimmten Pfad auf dem lokalen Computer gespeichert, wird aber nicht installiert. Weitere Informationen finden Sie unter [Save-Module](/powershell/module/PowershellGet/Save-Module).
+Das Cmdlet `Save-Module` wird in beiden Anweisungssätzen verwendet. `Save-Module` lädt ein Modul und alle Abhängigkeiten aus einem registrierten Repository herunter und speichert sie. Die neueste Version des Moduls wird in einem bestimmten Pfad auf dem lokalen Computer gespeichert, wird aber nicht installiert. Kopieren Sie die in Modulen gespeicherten Ordner in `$env:ProgramFiles\WindowsPowerShell\Modules`, um die Module in PowerShell 3.0 oder 4.0 zu installieren.
+
+Weitere Informationen finden Sie unter [Save-Module](/powershell/module/PowershellGet/Save-Module).
+
+> [!NOTE]
+> PowerShell 3.0 und PowerShell 4.0 unterstützten nur eine Version eines Moduls Ab PowerShell 5.0 werden Module in `<modulename>\<version>` installiert. Dadurch können Sie mehrere Versionen nebeneinander installieren. Nachdem Sie das Modul mithilfe von `Save-Module` heruntergeladen haben, müssen Sie die Datei aus `<modulename>\<version>` in den Ordner `<modulename>` auf dem Zielcomputer kopieren.
 
 #### <a name="computers-with-the-packagemanagement-preview-installed"></a>Computer mit installierter PackageManagement-Vorschauversion
 
@@ -63,8 +68,8 @@ Das Cmdlet `Save-Module` wird in beiden Anweisungssätzen verwendet. `Save-Modul
 1. Öffnen Sie die PowerShell-Konsole erneut mit erhöhten Rechten, und führen Sie die folgenden Befehle aus.
 
    ```powershell
-   Copy-Item "C:\LocalFolder\PowerShellGet\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\" -Recurse -Force
-   Copy-Item "C:\LocalFolder\PackageManagement\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\" -Recurse -Force
+   Copy-Item "C:\LocalFolder\PowerShellGet\<version>\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\" -Recurse -Force
+   Copy-Item "C:\LocalFolder\PackageManagement\<version>\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\" -Recurse -Force
    ```
 
 #### <a name="computers-without-powershellget"></a>Computer ohne PowerShellGet

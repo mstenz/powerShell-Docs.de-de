@@ -1,13 +1,13 @@
 ---
-ms.date: 04/15/2020
+ms.date: 05/14/2020
 keywords: powershell,cmdlet
 title: Ausführen des zweiten Hops in PowerShell-Remoting
-ms.openlocfilehash: 7819058bd8118ba44e66ec658017f536076609b5
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 3a9db11726d4c02dc69e52c45da304f7422def39
+ms.sourcegitcommit: 843756c8277e7afb874867703963248abc8a6c91
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81527621"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83439375"
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>Ausführen des zweiten Hops in PowerShell-Remoting
 
@@ -18,81 +18,79 @@ Das sogenannte „zweite Hop-Problem“ bezieht sich auf folgende Situation:
 3. Ein auf _ServerB_ über Ihre PowerShell-Remotesitzung ausgeführter Befehl versucht, auf eine Ressource auf _ServerC_ zuzugreifen.
 4. Der Zugriff auf die Ressource auf _ServerC_ wird verweigert, da die Anmeldeinformationen, die Sie zum Erstellen der PowerShell-Remotesitzung verwendet haben, nicht von _ServerB_ an _ServerC_ übergeben werden.
 
-Es gibt verschiedene Möglichkeiten, um dieses Problem zu lösen. In diesem Thema werden einige der geläufigsten Lösungen für das zweite Hop-Problem vorgestellt.
+Es gibt verschiedene Möglichkeiten, um dieses Problem zu lösen. In der folgenden Tabelle werden die Methoden in der Reihenfolge ihrer Präferenz aufgelistet.
+
+|                      Konfiguration                       |                                  Hinweis                                  |
+| -------------------------------------------------------- | ---------------------------------------------------------------------- |
+| CredSSP                                                  | Ausgeglichene Benutzerfreundlichkeit und Sicherheit                                      |
+| Ressourcenbasierte eingeschränkte Kerberos-Delegierung           | Höhere Sicherheit mit einfacherer Konfiguration                             |
+| Eingeschränkte Kerberos-Delegierung                          | Hohe Sicherheit, erfordert jedoch einen Domänenadministrator                         |
+| Kerberos-Delegierung (uneingeschränkt)                      | Nicht empfohlen                                                        |
+| Just Enough Administration (JEA)                         | Kann die beste Sicherheit bieten, erfordert jedoch eine ausführlichere Konfiguration |
+| PSSessionConfiguration mithilfe von RunAs                       | Einfachere Konfiguration, erfordert jedoch Verwaltung von Anmeldeinformationen                |
+| Übergeben von Anmeldeinformationen innerhalb eines `Invoke-Command`-Skriptblocks | Am einfachsten zu verwenden, jedoch müssen Anmeldeinformationen bereitgestellt werden                       |
 
 ## <a name="credssp"></a>CredSSP
 
-Sie können den [Credential Security Support Provider (CredSSP)](/windows/win32/secauthn/credential-security-support-provider) für die Authentifizierung verwenden. CredSSP speichert Anmeldeinformationen auf dem Remoteserver  _ServerB_. Der Server wird dadurch der Gefahr von Angriffen zum Diebstahl der Anmeldeinformationen ausgesetzt. Wenn der Remotecomputer kompromittiert ist, hat der Angreifer Zugriff auf die Anmeldeinformationen des Benutzers. CredSSP ist standardmäßig sowohl auf Client- als auch auf Servercomputern deaktiviert. Sie sollten CredSSP nur in absolut vertrauenswürdigen Umgebungen aktivieren. Beispielsweise wenn ein Domänenadministrator eine Verbindung mit einem Domänencontroller herstellt, weil der Domänencontroller hochgradig vertrauenswürdig ist.
+Sie können den [Credential Security Support Provider (CredSSP)][credssp] für die Authentifizierung verwenden.
+CredSSP speichert Anmeldeinformationen auf dem Remoteserver  _ServerB_. Der Server wird dadurch der Gefahr von Angriffen zum Diebstahl der Anmeldeinformationen ausgesetzt. Wenn der Remotecomputer kompromittiert ist, hat der Angreifer Zugriff auf die Anmeldeinformationen des Benutzers. CredSSP ist standardmäßig sowohl auf Client- als auch auf Servercomputern deaktiviert. Sie sollten CredSSP nur in absolut vertrauenswürdigen Umgebungen aktivieren. Beispielsweise wenn ein Domänenadministrator eine Verbindung mit einem Domänencontroller herstellt, weil der Domänencontroller hochgradig vertrauenswürdig ist.
 
-Weitere Informationen zu Sicherheitsaspekten bei der Verwendung von CredSSP für PowerShell-Remoting finden Sie unter [Versehentliche Sabotage: Vorsicht vor CredSSP](https://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp).
+Weitere Informationen zu Sicherheitsaspekten bei der Verwendung von CredSSP für PowerShell-Remoting finden Sie unter [Versehentliche Sabotage: Vorsicht vor CredSSP][beware].
 
-Weitere Informationen zu Angriffen zum Diebstahl von Anmeldeinformationen finden Sie unter [Abschwächen von Pass-the-Hash-Angriffen (PtH) und anderen Techniken zum Diebstahl von Anmeldeinformationen](https://www.microsoft.com/en-us/download/details.aspx?id=36036).
+Weitere Informationen zu Angriffen zum Diebstahl von Anmeldeinformationen finden Sie unter [Abschwächen von Pass-the-Hash-Angriffen (PtH) und anderen Techniken zum Diebstahl von Anmeldeinformationen][pth].
 
-Ein Beispiel zum Aktivieren und Verwenden von CredSSP für PowerShell-Remoting finden Sie unter [Enable PowerShell "Second-Hop" Functionality with CredSSP](https://devblogs.microsoft.com/scripting/enable-powershell-second-hop-functionality-with-credssp/) (Aktivieren der PowerShell-Funktion für zweiten Hop mit CredSSP).
+Ein Beispiel zum Aktivieren und Verwenden von CredSSP für PowerShell-Remoting finden Sie unter [Enable PowerShell "Second-Hop" Functionality with CredSSP][credssp-psblog] (Aktivieren der PowerShell-Funktion für zweiten Hop mit CredSSP).
 
-### <a name="pros"></a>Vorteile
+**Vorteile**
 
 - Die Lösung eignet sich für alle Server mit Windows Server 2008 oder höher.
 
-### <a name="cons"></a>Nachteile
+**Nachteile**
 
 - birgt Sicherheitsrisiken
 - erfordert die Konfiguration von Client- und Serverrollen
-
-## <a name="kerberos-delegation-unconstrained"></a>Kerberos-Delegierung (uneingeschränkt)
-
-Sie können auch die uneingeschränkte Kerberos-Delegierung verwenden, um den zweiten Hop ausführen. Diese Methode ermöglicht jedoch keine Kontrolle darüber, wo die delegierten Anmeldeinformationen verwendet werden.
-
-> [!NOTE]
-> Active Directory-Konten mit dem Eigenschaftensatz **Konto ist vertraulich und kann nicht delegiert werden** können nicht delegiert werden. Weitere Informationen finden Sie unter [Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](/archive/blogs/poshchap/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts) (Sicherheit im Fokus: Analyse von „Konto ist vertraulich und kann nicht delegiert werden“ für privilegierte Konten) und [Kerberos-Authentifizierungstools und -Einstellungen](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx).
-
-### <a name="pros"></a>Vorteile
-
-- erfordert keine besondere Codierung
-
-### <a name="cons"></a>Nachteile
-
-- keine Unterstützung für den zweiten Hop für WinRM
-- bietet keine Kontrolle darüber, wo Anmeldeinformationen verwendet werden; birgt Sicherheitsrisiken
+- Funktioniert nicht mit der Gruppe „geschützte Benutzer“. Weitere Informationen finden Sie unter [Sicherheitsgruppe „Geschützte Benutzer“][protected-users].
 
 ## <a name="kerberos-constrained-delegation"></a>Eingeschränkte Kerberos-Delegierung
 
 Sie können eingeschränkte Legacydelegierung (nicht ressourcenbasiert) verwenden, um den zweiten Hop auszuführen. Konfigurieren Sie die eingeschränkte Kerberos-Delegierung mit der Option „Beliebiges Authentifizierungsprotokoll verwenden“, um den Protokollübergang zu ermöglichen.
 
-> [!NOTE]
-> Active Directory-Konten mit dem Eigenschaftensatz **Konto ist vertraulich und kann nicht delegiert werden** können nicht delegiert werden. Weitere Informationen finden Sie unter [Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts (Sicherheit im Fokus: Analyse von „Konto ist vertraulich und kann nicht delegiert werden“ für privilegierte Konten)](/archive/blogs/poshchap/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts) und [Kerberos Authentication Tools and Settings (Kerberos-Authentifizierungstools und -Einstellungen)](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx).
-
-### <a name="pros"></a>Vorteile
+**Vorteile**
 
 - erfordert keine besondere Codierung
+- kein Speichern von Anmeldeinformationen
 
-### <a name="cons"></a>Nachteile
+**Nachteile**
 
 - keine Unterstützung für den zweiten Hop für WinRM
+- Erfordert Domänenadministratorzugriff für die Konfiguration
 - muss auf dem Active Directory-Objekt des Remoteservers konfiguriert werden (_ServerB_)
 - auf einen Server begrenzt; kann Domänen oder Gesamtstrukturen nicht überschreiten
 - erfordert Rechte zum Aktualisieren von Objekten und Dienstprinzipalnamen (SPN)
+- _ServerB_ kann ein Kerberos-Ticket für _ServerC_ im Auftrag des Benutzers abrufen, ohne dass ein Benutzereingriff erforderlich ist.
+
+> [!NOTE]
+> Active Directory-Konten mit dem Eigenschaftensatz **Konto ist vertraulich und kann nicht delegiert werden** können nicht delegiert werden. Weitere Informationen finden Sie unter [Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts][blog] (Sicherheit im Fokus: Analyse von „Konto ist vertraulich und kann nicht delegiert werden“ für privilegierte Konten) und [Kerberos-Authentifizierungstools und -Einstellungen][ktools].
 
 ## <a name="resource-based-kerberos-constrained-delegation"></a>Ressourcenbasierte eingeschränkte Kerberos-Delegierung
 
 Mithilfe von ressourcenbasierter eingeschränkter Kerberos-Delegierung (in Windows Server 2012 eingeführt) können Sie die Delegierung der Anmeldeinformationen für das Serverobjekt konfigurieren, in dem sich Ressourcen befinden. Im zuvor beschriebenen zweiten Hop-Szenario konfigurieren Sie _ServerC_ und geben an, von wo aus Anmeldeinformationen akzeptiert werden.
 
-> [!NOTE]
-> Active Directory-Konten mit dem Eigenschaftensatz **Konto ist vertraulich und kann nicht delegiert werden** können nicht delegiert werden. Weitere Informationen finden Sie unter [Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts (Sicherheit im Fokus: Analyse von „Konto ist vertraulich und kann nicht delegiert werden“ für privilegierte Konten)](/archive/blogs/poshchap/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts) und [Kerberos Authentication Tools and Settings (Kerberos-Authentifizierungstools und -Einstellungen)](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx).
-
-### <a name="pros"></a>Vorteile
+**Vorteile**
 
 - kein Speichern von Anmeldeinformationen
-- relativ einfach mithilfe von PowerShell-Cmdlets konfigurierbar – keine spezielle Codierung erforderlich
-- kein spezieller Domänenzugriff erforderlich
+- Konfiguriert mithilfe von PowerShell-Cmdlets Keine besondere Codierung erforderlich
+- Erfordert keinen Domänenadministratorzugriff für die Konfiguration
 - domänen- und gesamtstrukturübergreifende Funktionsweise
-- PowerShell-Code
 
-### <a name="cons"></a>Nachteile
+**Nachteile**
 
 - erfordert Windows Server 2012 oder höher
 - keine Unterstützung für den zweiten Hop für WinRM
 - erfordert Rechte zum Aktualisieren von Objekten und Dienstprinzipalnamen (SPN)
+
+> [!NOTE]
+> Active Directory-Konten mit dem Eigenschaftensatz **Konto ist vertraulich und kann nicht delegiert werden** können nicht delegiert werden. Weitere Informationen finden Sie unter [Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts][blog] (Sicherheit im Fokus: Analyse von „Konto ist vertraulich und kann nicht delegiert werden“ für privilegierte Konten) und [Kerberos-Authentifizierungstools und -Einstellungen][ktools].
 
 ### <a name="example"></a>Beispiel
 
@@ -101,15 +99,14 @@ Sehen wir uns ein PowerShell-Beispiel an, bei dem _ServerC_ für eine ressourcen
 Bevor Sie die eingeschränkte Delegierung konfigurieren können, müssen Sie das `RSAT-AD-PowerShell`-Feature hinzufügen, um das Active Directory-PowerShell-Modul zu installieren und anschließend dieses Modul in die Sitzung zu importieren:
 
 ```powershell
-PS C:\> Add-WindowsFeature RSAT-AD-PowerShell
-PS C:\> Import-Module ActiveDirectory
+Add-WindowsFeature RSAT-AD-PowerShell
+Import-Module ActiveDirectory
+Get-Command -ParameterName PrincipalsAllowedToDelegateToAccount
 ```
 
 Mehrere verfügbare Cmdlets haben jetzt einen **PrincipalsAllowedToDelegateToAccount**-Parameter:
 
-```powershell
-PS C:\> Get-Command -ParameterName PrincipalsAllowedToDelegateToAccount
-
+```Output
 CommandType Name                 ModuleName
 ----------- ----                 ----------
 Cmdlet      New-ADComputer       ActiveDirectory
@@ -120,7 +117,7 @@ Cmdlet      Set-ADServiceAccount ActiveDirectory
 Cmdlet      Set-ADUser           ActiveDirectory
 ```
 
-Der Parameter **PrincipalsAllowedToDelegateToAccount** legt das Active Directory-Objektattribut **MsDS-AllowedToActOnBehalfOfOtherIdentity** fest, das eine Zugriffssteuerungsliste (access control list, ACL) enthält. Diese gibt an, welche Konten die Berechtigung zum Delegieren von Anmeldeinformationen für das zugehörige Konto haben (in unserem Beispiel das Computerkonto für _Server_).
+Der Parameter **PrincipalsAllowedToDelegateToAccount** legt das Active Directory-Objektattribut **MsDS-AllowedToActOnBehalfOfOtherIdentity** fest, das eine Zugriffssteuerungsliste (access control list, ACL) enthält. Diese gibt an, welche Konten die Berechtigung zum Delegieren von Anmeldeinformationen für das zugehörige Konto haben (in unserem Beispiel das Computerkonto für _ServerA_).
 
 Richten Sie nun die Variablen ein, die wir verwenden, um die Server darzustellen:
 
@@ -134,9 +131,13 @@ $ServerC = Get-ADComputer -Identity ServerC
 WinRM (und somit die PowerShell-Remoting) wird standardmäßig als Computerkonto ausgeführt. Dies sehen Sie anhand der **StartName**-Eigenschaft des `winrm`-Diensts:
 
 ```powershell
-PS C:\> Get-WmiObject win32_service -filter 'name="winrm"' | Format-List StartName
+Get-CimInstance Win32_Service -Filter 'Name="winrm"' | Select-Object StartName
+```
 
-StartName : NT AUTHORITY\NetworkService
+```Output
+StartName
+---------
+NT AUTHORITY\NetworkService
 ```
 
 Damit _ServerC_ die Delegierung aus einer PowerShell-Remoting-Sitzung auf _ServerB_ zulässt, vergeben wir Zugriffsrechte, indem wir den Parameter **PrincipalsAllowedToDelegateToAccount** von _ServerC_ auf das Computerobjekt von _ServerB_ festlegen:
@@ -178,7 +179,7 @@ Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
 ```
 
 In diesem Beispiel wird die `$using`-Variable verwendet, um die `$ServerC`-Variable für _ServerB_ sichtbar zu machen.
-Weitere Informationen zur `$using`-Variable finden Sie unter [About Remote Variables (Informationen zu Remote-Variablen)](https://technet.microsoft.com/library/jj149005.aspx).
+Weitere Informationen zur `$using`-Variable finden Sie unter [About Remote Variables (Informationen zu Remote-Variablen)](/powershell/module/Microsoft.PowerShell.Core/About/about_Remote_Variables).
 
 Damit mehrere Server Anmeldeinformationen an _ServerC_ delegieren können, müssen Sie den Wert des Parameters **PrincipalsAllowedToDelegateToAccount** auf _ServerC_ auf ein Array festlegen:
 
@@ -211,28 +212,20 @@ Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
 
 ### <a name="information-on-resource-based-kerberos-constrained-delegation"></a>Informationen zu ressourcenbasierter eingeschränkter Kerberos-Delegierung
 
-- [Neues bei der Kerberos-Authentifizierung](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831747(v=ws.11))
-- [How Windows Server 2012 Eases the Pain of Kerberos Constrained Delegation, Part 1 (Wie Windows Server 2012 bei den Problemen mit der eingeschränkten Kerberos-Delegierung Abhilfe schafft, Teil 1)](https://www.itprotoday.com/windows-server/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1)
-- [How Windows Server 2012 Eases the Pain of Kerberos Constrained Delegation, Part 2 (Wie Windows Server 2012 bei den Problemen mit der eingeschränkten Kerberos-Delegierung Abhilfe schafft, Teil 2)](https://www.itprotoday.com/windows-server/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-2)
-- [Understanding Kerberos Constrained Delegation for Azure Active Directory Application Proxy Deployments with Integrated Windows Authentication (Grundlegendes zur eingeschränkten Kerberos-Delegierung für Azure Active Directory Application Proxy-Bereitstellungen mit integrierter Windows-Authentifizierung)](https://aka.ms/kcdpaper)
-- [[MS-ADA2]: Active Directory Schema Attributes M2.210 Attribute msDS-AllowedToActOnBehalfOfOtherIdentity](/openspecs/windows_protocols/ms-ada2/cea4ac11-a4b2-4f2d-84cc-aebb4a4ad405)
-- [[MS-SFU]: Kerberos-Protokollerweiterungen: Protokoll 1.3.2 S4U2proxy für Service-for-User und eingeschränkte Delegierung](/openspecs/windows_protocols/ms-sfu/bde93b0e-f3c9-4ddf-9f44-e1453be7af5a)
-- [Remote Administration Without Constrained Delegation Using PrincipalsAllowedToDelegateToAccount (Remoteverwaltung ohne eingeschränkte Delegierung mit PrincipalsAllowedToDelegateToAccount)](/archive/blogs/taylorb/remote-administration-without-constrained-delegation-using-principalsallowedtodelegatetoaccount)
+- [Neues bei der Kerberos-Authentifizierung][whats-new]
+- [How Windows Server 2012 Eases the Pain of Kerberos Constrained Delegation, Part 1 (Wie Windows Server 2012 bei den Problemen mit der eingeschränkten Kerberos-Delegierung Abhilfe schafft, Teil 1)][kcd2012-1]
+- [How Windows Server 2012 Eases the Pain of Kerberos Constrained Delegation, Part 2 (Wie Windows Server 2012 bei den Problemen mit der eingeschränkten Kerberos-Delegierung Abhilfe schafft, Teil 2)][kcd2012-2]
+- [Understanding Kerberos Constrained Delegation for Azure Active Directory Application Proxy Deployments with Integrated Windows Authentication (Grundlegendes zur eingeschränkten Kerberos-Delegierung für Azure Active Directory Application Proxy-Bereitstellungen mit integrierter Windows-Authentifizierung)][kcdpaper]
+- [[MS-ADA2] Active Directory-Schemaattribute M2.210 msDS-AllowedToActOnBehalfOfOtherIdentity-Attribut][MS-ADA2]
+- [[MS-SFU] Kerberos-Protokollerweiterungen: Protokoll 1.3.2 S4U2proxy für Service-for-User und eingeschränkte Delegierung][MS-SFU]
+- [Remote Administration Without Constrained Delegation Using PrincipalsAllowedToDelegateToAccount (Remoteverwaltung ohne eingeschränkte Delegierung mit PrincipalsAllowedToDelegateToAccount)][remote-admin]
 
-## <a name="pssessionconfiguration-using-runas"></a>PSSessionConfiguration mithilfe von RunAs
+## <a name="kerberos-delegation-unconstrained"></a>Kerberos-Delegierung (uneingeschränkt)
 
-Sie können eine Sitzungskonfiguration auf _ServerB_ erstellen und ihren **RunAsCredential**-Parameter festlegen.
+Sie können auch die uneingeschränkte Kerberos-Delegierung verwenden, um den zweiten Hop ausführen. Wie in allen Kerberos-Szenarios werden Anmeldeinformationen nicht gespeichert. Diese Methode unterstützt nicht den zweiten Hop für WinRM.
 
-Weitere Informationen zur Verwendung von PSSessionConfiguration und RunAs, um das zweite Hop-Problem zu lösen, finden Sie unter [Another solution to multi-hop PowerShell remoting (Eine weitere Lösung für Multi-Hop-PowerShell-Remoting)](/archive/blogs/sergey_babkins_blog/another-solution-to-multi-hop-powershell-remoting).
-
-### <a name="pros"></a>Vorteile
-
-- funktioniert mit jedem Server mit WMF 3.0 oder höher
-
-### <a name="cons"></a>Nachteile
-
-- erfordert die Konfiguration von **PSSessionConfiguration** und **RunAs** auf jedem Zwischenserver (_ServerB_)
-- erfordert Kennwortverwaltungsaufgaben bei Verwendung eines Domänen-**RunAs**-Kontos
+> [!WARNING]
+> Diese Methode bietet keine Kontrolle darüber, wo die delegierten Anmeldeinformationen verwendet werden. Sie ist weniger sicher als CredSSP. Diese Methode sollte nur für Testszenarios verwendet werden.
 
 ## <a name="just-enough-administration-jea"></a>Just Enough Administration (JEA)
 
@@ -240,25 +233,40 @@ Mit JEA können Sie einschränken, welche Befehle ein Administrator während ein
 
 Informationen zu JEA finden Sie unter [Just Enough Administration](/powershell/scripting/learn/remoting/jea/overview).
 
-### <a name="pros"></a>Vorteile
+**Vorteile**
 
 - keine Kennwortverwaltungsaufgaben bei Verwendung eines virtuellen Kontos
 
-### <a name="cons"></a>Nachteile
+**Nachteile**
 
 - erfordert WMF 5.0 oder höher
 - erfordert die Konfiguration auf jedem Zwischenserver (_ServerB_).
+
+## <a name="pssessionconfiguration-using-runas"></a>PSSessionConfiguration mithilfe von RunAs
+
+Sie können eine Sitzungskonfiguration auf _ServerB_ erstellen und ihren **RunAsCredential**-Parameter festlegen.
+
+Weitere Informationen zur Verwendung von **PSSessionConfiguration** und **RunAs**, um das zweite Hop-Problem zu lösen, finden Sie unter [Eine weitere Lösung für Multi-Hop-PowerShell-Remoting][pssessionconfig].
+
+**Vorteile**
+
+- funktioniert mit jedem Server mit WMF 3.0 oder höher
+
+**Nachteile**
+
+- erfordert die Konfiguration von **PSSessionConfiguration** und **RunAs** auf jedem Zwischenserver (_ServerB_)
+- erfordert Kennwortverwaltungsaufgaben bei Verwendung eines Domänen-**RunAs**-Kontos
 
 ## <a name="pass-credentials-inside-an-invoke-command-script-block"></a>Übergeben von Anmeldeinformationen innerhalb eines Invoke-Command-Skriptblocks
 
 Anmeldeinformationen können innerhalb des **ScriptBlock**-Parameters für einen Aufruf des [Invoke-Command](/powershell/module/microsoft.powershell.core/invoke-command)-Cmdlet übergeben werden.
 
-### <a name="pros"></a>Vorteile
+**Vorteile**
 
 - erfordert keine spezielle Serverkonfiguration
 - funktioniert auf jedem Server mit WMF 2.0 oder höher
 
-### <a name="cons"></a>Nachteile
+**Nachteile**
 
 - erfordert eine umständliche Codetechnik
 - Wenn WMF 2.0 ausgeführt wird, wird eine andere Syntax zum Übergeben von Argumenten an eine Remotesitzung benötigt.
@@ -280,3 +288,20 @@ Invoke-Command -ComputerName ServerB -Credential $cred -ScriptBlock {
 ## <a name="see-also"></a>Weitere Informationen
 
 [Sicherheitsaspekte von PowerShell-Remoting](WinRMSecurity.md)
+
+<!-- link references -->
+[blog]: /archive/blogs/poshchap/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts
+[ktools]: /previous-versions/windows/it-pro/windows-server-2003/cc738673(v=ws.10)
+[credssp]: /windows/win32/secauthn/credential-security-support-provider
+[beware]: https://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp
+[pth]: https://www.microsoft.com/download/details.aspx?id=36036
+[credssp-psblog]: https://devblogs.microsoft.com/scripting/enable-powershell-second-hop-functionality-with-credssp/
+[whats-new]: /previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831747(v=ws.11)
+[kcd2012-1]: https://www.itprotoday.com/windows-server/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1
+[kcd2012-2]: https://www.itprotoday.com/windows-server/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-2
+[kcdpaper]: https://aka.ms/kcdpaper
+[MS-ADA2]: /openspecs/windows_protocols/ms-ada2/cea4ac11-a4b2-4f2d-84cc-aebb4a4ad405
+[MS-SFU]: /openspecs/windows_protocols/ms-sfu/bde93b0e-f3c9-4ddf-9f44-e1453be7af5a
+[remote-admin]: /archive/blogs/taylorb/remote-administration-without-constrained-delegation-using-principalsallowedtodelegatetoaccount
+[pssessionconfig]: /archive/blogs/sergey_babkins_blog/another-solution-to-multi-hop-powershell-remoting
+[protected-users]: /windows-server/security/credentials-protection-and-management/protected-users-security-group

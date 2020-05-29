@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: DSC-Ressource „Script“
-ms.openlocfilehash: e09e86011fa7dbb2a4d7f28b5032b4328b6f6ec2
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 50d4667396c8c619079288ec51599152ed2d6cd5
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71953067"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557021"
 ---
 # <a name="dsc-script-resource"></a>DSC-Ressource „Script“
 
@@ -73,7 +73,7 @@ In diesem Fall wird **SetScript** jedoch nicht ausgeführt, unabhängig davon, w
 
 ## <a name="examples"></a>Beispiele
 
-### <a name="example-1-write-sample-text-using-a-script-resource"></a>Beispiel 1: Schreiben von Beispieltext mit einer Script-Ressource
+### <a name="example-1-write-sample-text-using-a-script-resource"></a>Beispiel 1: Schreiben von Beispieltext mit einer Skriptressource
 
 Dieses Beispiel testet das Vorhandensein von `C:\TempFolder\TestFile.txt` auf jedem Knoten. Wenn die Datei nicht vorhanden ist, wird sie mit `SetScript` erstellt. `GetScript` gibt den Inhalt der Datei zurück, und der Rückgabewert wird nicht verwendet.
 
@@ -98,7 +98,7 @@ Configuration ScriptTest
 }
 ```
 
-### <a name="example-2-compare-version-information-using-a-script-resource"></a>Beispiel 2: Vergleichen von Versionsinformationen mit einer Script-Ressource
+### <a name="example-2-compare-version-information-using-a-script-resource"></a>Beispiel 2: Vergleichen von Versionsinformationen mit einer Skriptressource
 
 Dieses Beispiel ruft die Informationen zur *konformen* Version aus einer Textdatei auf dem zur Erstellung verwendeten Computer ab und speichert sie in der `$version`-Variablen. Beim Generieren der MOF-Datei des Knotens ersetzt DSC die `$using:version`-Variablen in jedem Skriptblock durch den Wert der `$version`-Variablen.
 Während der Ausführung wird die *konforme* Version in einer Textdatei auf jedem Knoten gespeichert und bei nachfolgenden Ausführungen verglichen und aktualisiert.
@@ -136,4 +136,63 @@ Configuration ScriptTest
         }
     }
 }
+```
+
+### <a name="example-3-utilizing-parameters-in-a-script-resource"></a>Beispiel 3: Verwenden von Parametern in einer Skriptressource
+
+In diesem Beispiel wird in der Skriptressource auf Parameter zugegriffen, indem der `using`-Bereich verwendet wird. Beachten Sie dass auf **ConfigurationData** auf ähnliche Weise zugegriffen werden kann. Wie in Beispiel 2 wird erwartet, dass eine Version in einer lokalen Datei auf dem Zielknoten gespeichert wird. Jedoch sind sowohl der lokale Dateipfad als auch die Version konfigurierbar, wobei Code von Konfigurationsdaten abgekoppelt wird.
+
+```powershell
+Configuration ScriptTest
+{
+    param
+    (
+        [Version]
+        $Version,
+
+        [string]
+        $FilePath
+    )
+
+    Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
+
+    Node localhost
+    {
+        Script UpdateConfigurationVersion
+        {
+            GetScript = {
+                $currentVersion = Get-Content -Path $using:FilePath
+                return @{ 'Result' = "$currentVersion" }
+            }
+            TestScript = {
+                # Create and invoke a scriptblock using the $GetScript automatic variable, which contains a string representation of the GetScript.
+                $state = [scriptblock]::Create($GetScript).Invoke()
+
+                if( $state['Result'] -eq $using:Version )
+                {
+                    Write-Verbose -Message ('{0} -eq {1}' -f $state['Result'],$using:version)
+                    return $true
+                }
+
+                Write-Verbose -Message ('Version up-to-date: {0}' -f $using:version)
+                return $false
+            }
+            SetScript = {
+                Set-Content -Path $using:FilePath -Value $using:Version
+            }
+        }
+    }
+}
+```
+
+Die resultierende MOF-Datei enthält die Variablen und deren Werte, auf die über den `using`-Bereich zugegriffen wird.
+Sie werden in jeden ScriptBlock eingefügt, die die Variablen verwendet. Test- und Set-Skripts wurden der Kürze halber entfernt:
+
+```Output
+instance of MSFT_ScriptResource as $MSFT_ScriptResource1ref
+{
+ GetScript = "$FilePath ='C:\\Config.ini'\n\n $currentVersion = Get-Content -Path $FilePath\n return @{ 'Result' = \"$currentVersion\" }\n";
+ TestScript = ...;
+ SetScript = ...;
+};
 ```

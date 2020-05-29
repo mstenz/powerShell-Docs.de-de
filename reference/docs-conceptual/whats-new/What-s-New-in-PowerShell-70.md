@@ -2,12 +2,12 @@
 title: Neuerungen in PowerShell 7.0
 description: In PowerShell 7.0 veröffentlichte neue Features und Änderungen
 ms.date: 03/04/2020
-ms.openlocfilehash: 84631d9fa169c8d1b4cd4dd23eb3d7c1bca120bb
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 313ed2b663262b57abd52bfc7378e1f4661dc03a
+ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80263134"
+ms.lasthandoff: 05/23/2020
+ms.locfileid: "83808400"
 ---
 # <a name="whats-new-in-powershell-70"></a>Neuerungen in PowerShell 7.0
 
@@ -53,7 +53,8 @@ Weitere aktuelle Informationen zu unterstützten Betriebssystemen und zum Suppor
 
 ## <a name="running-powershell-7"></a>Ausführen von PowerShell 7
 
-PowerShell 7 wird in ein neues Verzeichnis installiert und parallel mit Windows PowerShell 5.1 ausgeführt. Für PowerShell Core 6.x ist PowerShell 7 ein direktes Upgrade, durch das PowerShell Core 6.x entfernt wird.
+PowerShell 7 wird in ein Verzeichnis getrennt von Windows PowerShell installiert.
+Dadurch wird ermöglicht, PowerShell 7 parallel mit Windows PowerShell 5.1 zu nutzen. Für PowerShell Core 6.x ist PowerShell 7 ein direktes Upgrade, durch das PowerShell Core 6.x entfernt wird.
 
 - PowerShell 7 wird in `%programfiles%\PowerShell\7` installiert.
 - Der Ordner `%programfiles%\PowerShell\7` wird `$env:PATH` hinzugefügt.
@@ -65,7 +66,7 @@ Das Installationsprogramm von PowerShell 7 aktualisiert frühere Versionen von 
 - macOS: `/usr/local/microsoft/powershell/6` wird durch `/usr/local/microsoft/powershell/7` ersetzt.
 
 > [!NOTE]
-> In Windows PowerShell heißt die ausführbare Datei zum Starten von PowerShell `powershell.exe`. Ab Version 6 wurde die ausführbare Datei so geändert, dass die parallele Ausführung unterstützt wird. Die neue ausführbare Datei zum Starten von PowerShell 7 ist `pwsh.exe`. Vorschaubuilds bleiben als `pwsh-preview` anstelle von `pwsh` im Verzeichnis „7-preview“ erhalten.
+> In Windows PowerShell heißt die ausführbare Datei zum Starten von PowerShell `powershell.exe`. Ab Version 6 wurde der Name der ausführbaren Datei so geändert, dass die parallele Ausführung unterstützt wird. Der neue Name der ausführbaren Datei zum Starten von PowerShell 7 ist `pwsh.exe`. Vorschaubuilds bleiben als `pwsh-preview` anstelle von `pwsh` im Verzeichnis „7-preview“ erhalten.
 
 ## <a name="improved-backwards-compatibility-with-windows-powershell"></a>Verbesserte Abwärtskompatibilität mit Windows PowerShell
 
@@ -266,7 +267,7 @@ Weitere Informationen finden Sie unter [Informationen zu Operatoren](/powershell
 
 ## <a name="new-view-conciseview-and-cmdlet-get-error"></a>Neue Ansicht ConciseView und neues Cmdlet Get-Error
 
-Die Anzeige von Fehlermeldungen wurde verbessert, um die Lesbarkeit von Interaktions- und Skriptfehlern mithilfe einer neuen Standardansicht namens **ConciseView** zu verbessern. Die Ansichten sind vom Benutzer über die Einstellungsvariable `$ErrorView` auswählbar.
+In PowerShell 7.0 wurde die Anzeige von Fehlermeldungen verbessert, um die Lesbarkeit von Interaktions- und Skriptfehlern mithilfe einer neuen Standardansicht namens **ConciseView** zu optimieren. Die Ansichten sind vom Benutzer über die Einstellungsvariable `$ErrorView` auswählbar.
 
 Wenn bei **ConciseView** ein Fehler nicht von einem Skript- oder Parserfehler herrührt, handelt es sich um eine einzeilige Fehlermeldung:
 
@@ -282,8 +283,8 @@ Wenn der Fehler während der Skriptausführung auftritt oder ein Analysefehler i
 
 ![Fehleranzeige in einem Skript](./media/What-s-New-in-PowerShell-70/myscript-error.png)
 
-Die Standardansicht in PowerShell 7 ist **ConciseView**. Die vorherige Standardansicht war **NormalView**, die vom Benutzer durch Festlegen der Einstellungsvariablen `$ErrorView` ausgewählt werden kann.
-
+Die Standardansicht in PowerShell 7 ist **ConciseView**. Die vorherige Standardansicht war **NormalView**, die durch Festlegen der Einstellungsvariablen `$ErrorView` ausgewählt werden kann.
+ 
 ```powershell
 $ErrorView = 'NormalView' # Sets the error view to NormalView
 $ErrorView = 'ConciseView' # Sets the error view to ConciseView
@@ -517,7 +518,7 @@ Weitere Informationen finden Sie unter [Invoke-DSCResource](/powershell/module/p
 - Bereinigung von CodeFactor-Stilproblemen bei Commits im letzten Monat (#10591) (vielen Dank an @iSazonov!)
 - Korrektur eines Tippfehlers in der Beschreibung des experimentellen Features PSTernaryOperator (#10586) (vielen Dank an @bergmeister!)
 - Konvertierung des Enumerationswerts ActionPreference.suspend in einen nicht unterstützten, reservierten Zustand und Aufhebung der Einschränkung für die Verwendung von ActionPreference.Ignore in Einstellungsvariablen (#10317) (vielen Dank an @KirkMunro!)
-- Austausch von ArrayList durch List<T>, um besser lesbaren und zuverlässigeren Code zu erhalten, ohne Funktionalität zu ändern (#10333) (vielen Dank an @iSazonov!)
+- Austausch von ArrayList durch List\<T>, um besser lesbaren und zuverlässigeren Code zu erhalten, ohne Funktionalität zu ändern (#10333) (vielen Dank an @iSazonov!)
 - Korrekturen am Codestil für TestConnectionCommand (#10439) (vielen Dank an @vexx32!)
 - Bereinigung von AutomationEngine und Entfernung des zusätzlichen Aufrufs der SetSessionStateDrive-Methode (#10416) (vielen Dank an @iSazonov!)
 - Umbenennung der Standardeinstellung ParameterSetName zurück in Delimiter für ConvertTo-Csv und ConvertFrom-Csv (#10425)

@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: Schreiben einer benutzerdefinierten DSC-Ressource mit MOF
-ms.openlocfilehash: 24e9d15bcbe1eddd297daeb04e0713c443e52c38
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 7dd107431e756e5cbfc2d6babec41331b89743cc
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71952897"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692238"
 ---
 # <a name="writing-a-custom-dsc-resource-with-mof"></a>Schreiben einer benutzerdefinierten DSC-Ressource mit MOF
 
@@ -67,7 +67,7 @@ Beachten Sie Folgendes im Zusammenhang mit dem vorherigen Code:
 
 ### <a name="writing-the-resource-script"></a>Schreiben des Ressourcenskripts
 
-Das Ressourcenskript implementiert die Logik der Ressource. In diesem Modul fügen Sie die drei Funktionen **Get-TargetResource**, **Set-TargetResource**, und **Test-TargetResource** hinzu. Alle drei Funktionen verwenden einen Parametersatz, der identisch mit dem Satz von Eigenschaften ist, die im MOF-Schema definiert wurden, das Sie für die Ressource erstellt haben. In diesem Dokument wird dieser Eigenschaftensatz als die „Ressourceneigenschaften“ bezeichnet. Speichern Sie die drei Funktionen in einer Datei namens „<ResourceName>.psm1“. Im folgenden Beispiel werden die Funktionen in einer Datei namens „Demo_IISWebsite.psm1“ gespeichert.
+Das Ressourcenskript implementiert die Logik der Ressource. In diesem Modul fügen Sie die drei Funktionen **Get-TargetResource**, **Set-TargetResource**, und **Test-TargetResource** hinzu. Alle drei Funktionen verwenden einen Parametersatz, der identisch mit dem Satz von Eigenschaften ist, die im MOF-Schema definiert wurden, das Sie für die Ressource erstellt haben. In diesem Dokument wird dieser Eigenschaftensatz als die „Ressourceneigenschaften“ bezeichnet. Speichern Sie die drei Funktionen in einer Datei namens `<ResourceName>.psm1`. Im folgenden Beispiel werden die Funktionen in einer Datei namens „Demo_IISWebsite.psm1“ gespeichert.
 
 > [!NOTE]
 > Wenn Sie das gleiche Konfigurationsskript mehrfach für Ihre Ressource ausführen, sollten keine Fehler ausgegeben werden, und die Ressource sollte sich im gleichen Zustand wie nach der einmaligen Ausführung des Skripts befinden. Stellen Sie dazu sicher, dass Ihre Funktionen **Get-TargetResource** und **Test-TargetResource** die Ressource unverändert verlassen, und dass das Ergebnis der Funktion **Set-TargetResource** mit denselben Parameterwerten immer identisch ist, egal, ob Sie die Funktion einmal oder mehrfach aufrufen.
@@ -221,7 +221,7 @@ $result
 
 ### <a name="creating-the-module-manifest"></a>Erstellen das Modulmanifest
 
-Verwenden Sie abschließend das Cmdlet **New-ModuleManifest**, um eine „<ResourceName>psd1“-Datei für das benutzerdefinierte Ressourcenmodul zu definieren. Wenn Sie dieses Cmdlet aufrufen, verweisen Sie auf die im vorherigen Abschnitt beschriebene Skriptmoduldatei (.psm1). Fügen Sie **Get-TargetResource**, **Set-TargetResource** und **Test-TargetResource** zur Liste der zu exportierenden Funktionen hinzu. Im Folgenden finden Sie eine Beispielmanifestdatei.
+Verwenden Sie abschließend das Cmdlet **New-ModuleManifest**, um eine `<ResourceName>.psd1`-Datei für das benutzerdefinierte Ressourcenmodul zu definieren. Wenn Sie dieses Cmdlet aufrufen, verweisen Sie auf die im vorherigen Abschnitt beschriebene Skriptmoduldatei (.psm1). Fügen Sie **Get-TargetResource**, **Set-TargetResource** und **Test-TargetResource** zur Liste der zu exportierenden Funktionen hinzu. Im Folgenden finden Sie eine Beispielmanifestdatei.
 
 ```powershell
 # Module manifest for module 'Demo.IIS.Website'

@@ -2,12 +2,12 @@
 title: Supportlebenszyklus von PowerShell Core
 description: Richtlinien für die Unterstützung von PowerShell Core
 ms.date: 03/09/2020
-ms.openlocfilehash: c319371778eb4615559ae12e0cd153a535ed22bf
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: e7ec0fd9a702b7d23a784eff6e730fc3a6c30467
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500992"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560728"
 ---
 # <a name="powershell-support-lifecycle"></a>Supportlebenszyklus von PowerShell
 
@@ -139,6 +139,17 @@ Weitere Informationen finden Sie im Artikel [about_Windows_Compatibility][] und 
 
 [Experimentelle Features][] sind auf [Communitysupport](#community-support) begrenzt.
 
+## <a name="security-servicing-criteria"></a>Kriterien für die Sicherheitswartung
+
+PowerShell folgt den [Microsoft-Kriterien für die Sicherheitswartung für Windows][].
+In der folgenden Tabelle sind die Features aufgeführt, die die Kriterien für die Sicherheitswartung erfüllen, und diejenigen, die dies nicht tun.
+
+| Funktion                          | type             |
+|----------------------------------|------------------|
+| Ausführungsrichtlinie                 | Tiefgehende Verteidigung |
+| Systemsperrung mit AppLocker | Tiefgehende Verteidigung |
+| Systemsperrung mit WDAC      | Sicherheitsfeature |
+
 ## <a name="release-history"></a>Releaseverlauf
 
 Die folgende Tabelle enthält die Hauptversionen von PowerShell im Zeitverlauf. Diese Tabelle wird als historische Referenz bereitgestellt. Sie eignet sich nicht zur Bestimmung des Supportlebenszyklus.
@@ -172,3 +183,4 @@ Die folgende Tabelle enthält die Hauptversionen von PowerShell im Zeitverlauf. 
 [Modulkompatibilitätsliste]: /powershell/scripting/whats-new/module-compatibility
 [WindowsPSModulePath]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
 [Experimentelle Features]: /powershell/module/microsoft.powershell.core/about/about_powershell_config#experimentalfeatures
+[Microsoft-Kriterien für die Sicherheitswartung für Windows]: https://www.microsoft.com/en-us/msrc/windows-security-servicing-criteria.

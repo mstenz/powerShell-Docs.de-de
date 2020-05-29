@@ -2,16 +2,16 @@
 ms.date: 10/31/2017
 keywords: DSC,PowerShell,Konfiguration,Setup,Einrichtung
 title: Schützen der MOF-Datei
-ms.openlocfilehash: ab03db8bf4ed7d412691ae87fd12da5131607886
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 30b7ff276781b398aeae94e710c810f5fccafdfb
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78278465"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83556386"
 ---
 # <a name="securing-the-mof-file"></a>Schützen der MOF-Datei
 
-> Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
+> Gilt für: Windows PowerShell 4.0, Windows PowerShell 5.0
 
 DSC verwaltet die Konfiguration von Serverknoten durch Anwenden der in einer MOF-Datei gespeicherten Informationen; die Implementierung des gewünschten Endzustands übernimmt der lokale Konfigurations-Manager (LCM). Da diese Datei die Details der Konfiguration enthält, muss sie geschützt werden. In diesem Thema wird beschrieben, auf welche Weise sichergestellt werden kann, dass die Datei auf dem Zielknoten verschlüsselt wurde.
 
@@ -44,10 +44,10 @@ Zum Aktivieren der Verschlüsselung der Anmeldeinformationen muss auf dem _Zielk
 
 1. **Schlüsselverwendung**:
    - Muss enthalten: „KeyEncipherment“ und „DataEncipherment“.
-   - Sollte _nicht_ enthalten: „Digitale Signatur“.
+   - Darf _nicht_ enthalten: „Digitale Signatur“.
 2. **Erweiterte Schlüsselverwendung**:
    - Muss enthalten: Dokumentenverschlüsselung (1.3.6.1.4.1.311.80.1).
-   - Sollte _nicht_ enthalten: Clientauthentifizierung (1.3.6.1.5.5.7.3.2) und Serverauthentifizierung (1.3.6.1.5.5.7.3.1).
+   - Darf _nicht_ enthalten: Clientauthentifizierung (1.3.6.1.5.5.7.3.2) und Serverauthentifizierung (1.3.6.1.5.5.7.3.1).
 3. Der private Schlüssel für das Zertifikat ist auf dem *Zielknoten_ verfügbar.
 4. Der **Anbieter** für das Zertifikat muss „Microsoft RSA SChannel Cryptographic Provider“ sein.
 
@@ -86,7 +86,7 @@ $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 
 Einmal exportiert, müsste `DscPublicKey.cer` auf den **Erstellungsknoten** kopiert werden.
 
-> Zielknoten: Windows Server 2012 R2/Windows 8.1 und früher
+> Zielknoten: Windows Server 2012 R2/Windows 8.1 oder früher
 > [!WARNING]
 > Da das Cmdlet `New-SelfSignedCertificate` unter älteren Windows-Betriebssystemen als Windows 10 und Windows Server 2016 nicht den Parameter **Type** unterstützt, ist eine alternative Methode zum Erstellen dieses Zertifikats unter diesen Betriebssystemen erforderlich. In diesem Fall können Sie `makecert.exe` oder `certutil.exe` zum Erstellen des Zertifikats verwenden. Eine alternative Methode besteht darin, [das Skript „New-SelfSignedCertificateEx.ps1“ aus dem Microsoft Script Center](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) herunterzuladen und es stattdessen zum Erstellen des Zertifikats zu verwenden:
 
@@ -151,7 +151,7 @@ Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cer
 
 Einmal exportiert, müsste `DscPrivateKey.pfx` auf den **Zielknoten** kopiert werden.
 
-> Zielknoten: Windows Server 2012 R2/Windows 8.1 und früher
+> Zielknoten: Windows Server 2012 R2/Windows 8.1 oder früher
 > [!WARNING]
 > Da das Cmdlet `New-SelfSignedCertificate` unter älteren Windows-Betriebssystemen als Windows 10 und Windows Server 2016 nicht den Parameter **Type** unterstützt, ist eine alternative Methode zum Erstellen dieses Zertifikats unter diesen Betriebssystemen erforderlich. In diesem Fall können Sie `makecert.exe` oder `certutil.exe` zum Erstellen des Zertifikats verwenden. Eine alternative Methode besteht darin, [das Skript „New-SelfSignedCertificateEx.ps1“ aus dem Microsoft Script Center](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) herunterzuladen und es stattdessen zum Erstellen des Zertifikats zu verwenden:
 
@@ -303,8 +303,8 @@ configuration CredentialEncryptionExample
 
 An dieser Stellen können Sie die Konfiguration ausführen, woraufhin zwei Dateien ausgegeben werden:
 
-- Eine Datei des Typs „*.meta.mof“, die vom lokalen Konfigurations-Manager zum Entschlüsseln der Anmeldeinformationen mithilfe des Zertifikats verwendet wird, das sich im lokalen Computerspeicher befindet und von dessen Fingerabdruck bestimmt wird.
-  [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/library/dn521621.aspx) installiert die *.meta.mof-Datei.
+- Eine Datei des Typs „\*.meta.mof“, die vom lokalen Konfigurations-Manager zum Entschlüsseln der Anmeldeinformationen mithilfe des Zertifikats verwendet wird, das sich im lokalen Computerspeicher befindet und von dessen Fingerabdruck bestimmt wird.
+  [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/library/dn521621.aspx) installiert die \*.meta.mof-Datei.
 - Eine MOF-Datei, die die Konfiguration tatsächlich anwendet. „Start-DscConfiguration“ wendet die Konfiguration an.
 
 Mit diesen Befehlen werden diese Schritte ausgeführt:

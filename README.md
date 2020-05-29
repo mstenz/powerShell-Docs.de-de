@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 034d75a84e39cb0cf88a272ca58b5ccc229c5d9b
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 0d91230aa063e58106b35a4ada1d577f316f8f27
+ms.sourcegitcommit: c752ae8d0fa47eaaf3c5eae2a5a770f06c63921c
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "74540457"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83840991"
 ---
 # <a name="microsoft-open-source-code-of-conduct"></a>Microsoft Open-Source-Verhaltenskodex
 
@@ -15,9 +15,9 @@ Für dieses Projekt gelten die Microsoft-Verhaltensregeln für Open Source ([Mic
 
 ## <a name="build-status"></a>Buildstatus
 
-| Live-Branch | Staging-Branch |
-|:------------|:---------------|
-| [![live-badge][]][live-badge] | [![staging-badge][]][staging-badge]
+|          Live-Branch          |           Staging-Branch            |
+| :---------------------------- | :---------------------------------- |
+| [![live-badge][]][live-badge] | [![staging-badge][]][staging-badge] |
 
 ## <a name="powershell-documentation"></a>PowerShell-Dokumentation
 
@@ -32,15 +32,16 @@ In diesem Repository befinden sich diese Ordner auf oberster Ebene, die jeweils 
     - [developer/](https://docs.microsoft.com/powershell/scripting/developer/) enthält die Dokumentation des PowerShell SDK (migriert von MSDN).
     - [dsc/](https://docs.microsoft.com/powershell/scripting/dsc/) ist für das Desired State Configuration-Feature bestimmt.
     - [gallery/](https://docs.microsoft.com/powershell/scripting/gallery) enthält den [PowerShell-Katalog](https://www.powershellgallery.com/).
-    - [jea/](https://docs.microsoft.com/powershell/scripting/jea/) ist für das Feature „Just Enough Administration (JEA)“ bestimmt.
-    - [/wmf](https://docs.microsoft.com/powershell/scripting/wmf/overview) enthält Versionshinweise für Windows Management Framework, das Paket, das für die Verteilung neuer Versionen von PowerShell an frühere Versionen von Windows verwendet wird.
+    - [jea/](https://docs.microsoft.com/powershell/scripting/learn/remoting/jea/overview) ist für das Feature „Just Enough Administration (JEA)“ bestimmt.
+    - [/wmf](https://docs.microsoft.com/powershell/scripting/windows-powershell/wmf/overview) enthält Versionshinweise für Windows Management Framework, das Paket, das für die Verteilung neuer Versionen von PowerShell an frühere Versionen von Windows verwendet wird.
 
 ## <a name="contributing"></a>Mitwirken
 
-Beiträge zu diesem Repository werden aktiv über [Pullanforderungen](https://help.github.com/articles/using-pull-requests/) im *Staging*-Branch zusammengeführt.
+Beiträge zu diesem Repository werden aktiv über [Pullanforderungen](https://help.github.com/articles/using-pull-requests/) im _Staging_-Branch zusammengeführt.
 Beachten Sie, dass Sie vor der Übermittlung einer Pullanforderung [einen Beitragslizenzvertrags unterschreiben](https://cla.microsoft.com/) müssen, um sicherzustellen, dass die Community Ihre Einsendungen kostenlos verwenden darf.
 
-Weitere Informationen zu Beiträgen finden Sie in unserem [Handbuch für Mitwirkende](https://docs.microsoft.com/contribute/powershell/powershell-contribute). Das Handbuch für Mitwirkende enthält ausführliche Informationen zum Erstellen von Beiträgen zur Dokumentation, Stil- und Formatierungsvorgaben sowie Vorschlagen von Tools. Verwenden Sie die Vorlagen für Probleme und Pullanforderungen, um die Dokumentation über Versionen hinweg konsistent zu halten.
+Weitere Informationen zu Beiträgen finden Sie in unserem [Handbuch für Mitwirkende](https://docs.microsoft.com/powershell/scripting/community/contributing/overview).
+Das Handbuch für Mitwirkende enthält ausführliche Informationen zum Erstellen von Beiträgen zur Dokumentation, Stil- und Formatierungsvorgaben sowie Vorschlagen von Tools. Verwenden Sie die Vorlagen für Probleme und Pullanforderungen, um die Dokumentation über Versionen hinweg konsistent zu halten.
 
 ## <a name="licenses"></a>Lizenzen
 
