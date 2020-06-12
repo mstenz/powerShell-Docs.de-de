@@ -3,12 +3,12 @@ title: Alles, was Sie schon immer über Ausnahmen wissen wollten
 description: Die Fehlerbehandlung ist nur ein Teil der Aufgaben beim Schreiben von Code.
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: fd3ddacbf14d1faeee98682697161f86c6ff0c72
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.openlocfilehash: 3ecb1669fa8d58bc742d4e8e77051b3ace4452a0
+ms.sourcegitcommit: 4a40e3ea3601c02366be3495a5dcc7f4cac9f1ea
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149543"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84337181"
 ---
 # <a name="everything-you-wanted-to-know-about-exceptions"></a>Alles, was Sie schon immer über Ausnahmen wissen wollten
 
@@ -55,7 +55,7 @@ Hier finden Sie eine kurze Übersicht über die in PowerShell verwendete grundle
 Zum Erstellen eines eigenen Ausnahmeereignisses, lösen wir eine Ausnahme mit dem Schlüsselwort `throw` aus.
 
 ```powershell
-function Do-Something
+function Start-Something
 {
     throw "Bad thing happened"
 }
@@ -64,7 +64,7 @@ function Do-Something
 Dadurch wird eine Laufzeitausnahme erstellt, die ein Fehler mit Abbruch ist. Sie wird von einem `catch` in einer Aufruffunktion behandelt oder beendet das Skript mit einer Meldung wie dieser.
 
 ```powershell
-PS> Do-Something
+PS> Start-Something
 
 Bad thing happened
 At line:1 char:1
@@ -89,7 +89,7 @@ Vielen Dank an Lee Daily, der daran erinnert hat, dass man `-ErrorAction Stop` a
 Wenn Sie `-ErrorAction Stop` in einer beliebigen erweiterten Funktion oder einem Cmdlet angeben, werden alle `Write-Error`-Anweisungen in Fehler mit Abbruch umgewandelt, durch die die Ausführung angehalten wird oder die von einem `catch` behandelt werden können.
 
 ```powershell
-Do-Something -ErrorAction Stop
+Start-Something -ErrorAction Stop
 ```
 
 ### <a name="trycatch"></a>Try/Catch
@@ -99,7 +99,7 @@ Die Ausnahmebehandlung in PowerShell (und vielen anderen Sprachen) funktioniert 
 ```powershell
 try
 {
-    Do-Something
+    Start-Something
 }
 catch
 {
@@ -108,7 +108,7 @@ catch
 
 try
 {
-    Do-Something -ErrorAction Stop
+    Start-Something -ErrorAction Stop
 }
 catch
 {
@@ -213,7 +213,7 @@ Diese Eigenschaft zeigt die Reihenfolge der Funktionsaufrufe an, mit der Sie den
 ```powershell
 PS> $PSItem.ScriptStackTrace
 at Get-Resource, C:\blog\throwerror.ps1: line 13
-at Do-Something, C:\blog\throwerror.ps1: line 5
+at Start-Something, C:\blog\throwerror.ps1: line 5
 at <ScriptBlock>, C:\blog\throwerror.ps1: line 18
 ```
 
@@ -276,7 +276,7 @@ Sie können auswählen, welche Ausnahmen Sie abfangen wollen. Ausnahmen haben ei
 ```powershell
 try
 {
-    Do-Something -Path $path
+    Start-Something -Path $path
 }
 catch [System.IO.FileNotFoundException]
 {
@@ -300,7 +300,7 @@ Es können mehrere Ausnahmetypen mit der gleichen `catch`-Anweisung abgefangen w
 ```powershell
 try
 {
-    Do-Something -Path $path -ErrorAction Stop
+    Start-Something -Path $path -ErrorAction Stop
 }
 catch [System.IO.DirectoryNotFoundException],[System.IO.FileNotFoundException]
 {
@@ -449,7 +449,6 @@ At line:31 char:9
     + FullyQualifiedErrorId : Unable to find the specified file.
 ```
 
-
 Wenn ich die Fehlermeldung bekomme, dass mein Skript fehlerhaft ist, weil ich `throw` in Zeile 31 angerufen habe, ist das für die Benutzer Ihres Skripts eine schlechte Meldung. Sie erhalten dadurch keine hilfreichen Informationen.
 
 Dexter Dhami hat darauf hingewiesen, dass ich `ThrowTerminatingError()` verwenden kann, um dies zu korrigieren.
@@ -495,13 +494,13 @@ Dadurch wird die Fehlerquelle in das Cmdlet geändert und die Interna Ihrer Funk
 Kirk Munro zeigt, dass einige Ausnahmen nur bei der Ausführung innerhalb eines `try/catch`-Blocks Fehler mit Abbruch sind. Er hat mir dieses Beispiel gegeben, das eine „Division durch Null“-Laufzeitausnahme generiert.
 
 ```powershell
-function Do-Something { 1/(1-1) }
+function Start-Something { 1/(1-1) }
 ```
 
 Führen Sie den Aufruf so aus. Sie sehen dann, dass der Fehler generiert und die Meldung trotzdem ausgegeben wird.
 
 ```powershell
-&{ Do-Something; Write-Output "We did it. Send Email" }
+&{ Start-Something; Write-Output "We did it. Send Email" }
 ```
 
 Wenn Sie jedoch denselben Code in einem `try/catch` einfügen, passiert etwas anderes.
@@ -509,14 +508,13 @@ Wenn Sie jedoch denselben Code in einem `try/catch` einfügen, passiert etwas an
 ```powershell
 try
 {
-    &{ Do-Something; Write-Output "We did it. Send Email" }
+    &{ Start-Something; Write-Output "We did it. Send Email" }
 }
 catch
 {
     Write-Output "Notify Admin to fix error and send email"
 }
 ```
-
 
 Der Fehler wird ein Fehler mit Abbruch, und die erste Meldung wird nicht ausgegeben. Was mir daran nicht gefällt, ist, dass Sie diesen Code in einer Funktion verwenden können, und er verhält sich anders, wenn jemand `try/catch`verwendet.
 
@@ -528,12 +526,12 @@ Eine Besonderheit von `$PSCmdlet.ThrowTerminatingError()` besteht darin, dass ei
 
 ### <a name="public-function-templates"></a>Öffentliche Funktionsvorlagen
 
-Eine letzte Sache, die ich aus meinem Gespräch mit Kirk Munro mitgenommen habe, war, dass er bei alle seinen erweiterten Funktionen um jeden `begin`-, `process`- und `end`-Block einen `try{...}catch{...}` einfügt. In diesen allgemeinen Catch-Blöcken verwendet er eine einzige Zeile mit `$PSCmdlet.ThrowTerminatingError($PSitem)`, um alle Ausnahmen zu behandeln, die seine Funktionen verlassen.
+Eine letzte Sache, die ich aus meinem Gespräch mit Kirk Munro mitgenommen habe, war, dass er bei alle seinen erweiterten Funktionen um jeden `begin`-, `process`- und `end`-Block einen `try{...}catch{...}` einfügt. In diesen allgemeinen Catch-Blöcken verwendet er eine einzige Zeile mit `$PSCmdlet.ThrowTerminatingError($PSItem)`, um alle Ausnahmen zu behandeln, die seine Funktionen verlassen.
 
 ```powershell
-function Do-Something
+function Start-Something
 {
-    [cmdletbinding()]
+    [CmdletBinding()]
     param()
 
     process
@@ -544,7 +542,7 @@ function Do-Something
         }
         catch
         {
-            $PSCmdlet.ThrowTerminatingError($PSitem)
+            $PSCmdlet.ThrowTerminatingError($PSItem)
         }
     }
 }

@@ -3,19 +3,19 @@ title: Alles, was Sie schon immer über Hashtabellen wissen wollten
 description: Hashtabellen spielen eine wichtige Rolle in PowerShell, daher sollten Sie mit dem Konzept vertraut sein.
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 60a5172485b9caf6343f54194563cd048648206e
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.openlocfilehash: 336c32cca351cc7d87f3300364c075ba7bd8aaeb
+ms.sourcegitcommit: 0b9268e7b92fb76b47169b72e28de43e4bfe7fbf
 ms.translationtype: HT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149513"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84307128"
 ---
 # <a name="everything-you-wanted-to-know-about-hashtables"></a>Alles, was Sie schon immer über Hashtabellen wissen wollten
 
 Heute möchte ich einen Schritt zurückgehen und über [Hashtabellen][] sprechen. Ich verwende sie die ganze Zeit. Nach dem Treffen unserer Benutzergruppe gestern habe ich sie einem anderen Benutzer erklärt und dabei festgestellt, dass mich dieselben Aspekte verwirren wie ihn. Hashtabellen spielen eine wichtige Rolle in PowerShell, daher sollten Sie mit dem Konzept vertraut sein.
 
 > [!NOTE]
-> Die [Originalversion][] dieses Artikels wurde im Blog von [@KevinMarquette][] veröffentlicht. Das PowerShell-Team dankt Kevin, dass er diesen Inhalt mit uns teilt. Weitere Informationen finden Sie in seinem Blog auf [PowerShellExplained.com][].
+> Die [Originalversion][] dieses Artikels wurde im Blog von [@KevinMarquette][] veröffentlicht. Das PowerShell-Team dankt Kevin Marquette, dass er diesen Inhalt mit uns teilt. Weitere Informationen finden Sie in seinem Blog auf [PowerShellExplained.com][].
 
 ## <a name="hashtable-as-a-collection-of-things"></a>Hashtabellen als Auflistung
 
@@ -541,10 +541,9 @@ Damit wird dieselbe Hashtabelle erstellt, die Sie oben bereits gesehen haben, un
 ```powershell
 $person.location.city
 Austin
-```powershell
+```
 
-There are many ways to approach the structure of your objects. Here is a second way to look at a
-nested hashtable.
+Es gibt viele Ansätze für die Struktur Ihrer Objekte. Hier ein zweiter Blickwinkel auf eine geschachtelte Hashtabelle.
 
 ```powershell
 $people = @{
@@ -671,6 +670,36 @@ $people = Get-Content -Path $path -Raw | ConvertFrom-JSON
 
 Bei dieser Methode sind zwei wichtige Punkte zu beachten. Erstens: JSON wird auf mehreren Zeilen geschrieben, daher muss ich zum erneuten Einlesen in einer einzigen Zeichenfolge die `-Raw`-Option verwenden. Der zweite Punkt ist, dass das importierte Objekt keine `[hashtable]` mehr ist. Es ist jetzt ein `[pscustomobject]`, und das kann zu Problemen führen, wenn Sie nicht damit rechnen.
 
+Achten Sie auf Hashtabellen mit vielen Schachtelungsebenen. Wenn Sie diese in JSON konvertieren, erhalten Sie möglicherweise nicht die erwarteten Ergebnisse.
+
+```powershell
+@{ a = @{ b = @{ c = @{ d = "e" }}}} | ConvertTo-Json
+
+{
+  "a": {
+    "b": {
+      "c": "System.Collections.Hashtable"
+    }
+  }
+}
+```
+
+Verwenden Sie den **Depth**-Parameter, um sicherzustellen, dass alle geschachtelten Hashtabellen erweitert wurden.
+
+```powershell
+@{ a = @{ b = @{ c = @{ d = "e" }}}} | ConvertTo-Json -Depth 3
+
+{
+  "a": {
+    "b": {
+      "c": {
+        "d": "e"
+      }
+    }
+  }
+}
+```
+
 Wenn Sie beim Import eine `[hashtable]` benötigen, müssen Sie die Befehle `Export-CliXml` und `Import-CliXml` verwenden.
 
 ### <a name="converting-json-to-hashtable"></a>Konvertieren von JSON in eine Hashtabelle
@@ -682,6 +711,18 @@ Wenn Sie JSON-Code in eine `[hashtable]` konvertieren müssen, kenne ich eine M�
 $JSSerializer = [System.Web.Script.Serialization.JavaScriptSerializer]::new()
 $JSSerializer.Deserialize($json,'Hashtable')
 ```
+
+Ab PowerShell v6 verwendet die JSON-Unterstützung JSON.NET von NewtonSoft und die zugehörige Hashtabellenunterstützung.
+
+```powershell
+'{ "a": "b" }' | ConvertFrom-Json -AsHashtable
+
+Name      Value
+----      -----
+a         b
+```
+
+In PowerShell 6.2 wurde der **Depth**-Parameter zu `ConvertFrom-Json` hinzugefügt. Der Standardwert für **Depth** ist 1024.
 
 ### <a name="reading-directly-from-a-file"></a>Direktes Lesen aus einer Datei
 
@@ -698,9 +739,9 @@ Dieser Code importiert die Dateiinhalte in einen `scriptblock` und führt dann e
 
 Übrigens: Wussten Sie, dass ein Modulmanifest (die PSD1-Datei) einfach eine Hashtabelle ist?
 
-## <a name="keys-are-just-strings"></a>Schlüssel sind einfach nur Zeichenfolgen
+## <a name="keys-can-be-any-object"></a>Bei Schlüsseln kann es sich um jedes Objekt handeln
 
-Ich wollte weiter oben nicht vom eigentlichen Thema abkommen, aber Schlüssel sind ganz einfach nur Zeichenfolgen. Daher können wir Anführungszeichen um so ziemlich jede Zeichenfolge setzen und diese damit zu einem Schlüssel machen.
+In den meisten Fällen sind Schlüssel einfach nur Zeichenfolgen. Daher können wir Anführungszeichen um so ziemlich jede Zeichenfolge setzen und diese damit zu einem Schlüssel machen.
 
 ```powershell
 $person = @{
@@ -721,13 +762,34 @@ $person.$key
 
 Aber nur weil Sie etwas machen können, heißt das noch lange nicht, dass es auch ratsam ist. Dieses letzte Beispiel riecht förmlich danach, dass ein Fehler auftritt, und kann von anderen Personen, die Ihren Code lesen, leicht missverstanden werden.
 
-Aus technischer Sicht müssen Schlüssel keine Zeichenfolgen sein, sie sind aber leichter verständlich, wenn Sie nur Zeichenfolgen verwenden.
+Aus technischer Sicht müssen Schlüssel keine Zeichenfolgen sein, sie sind aber leichter verständlich, wenn Sie nur Zeichenfolgen verwenden. Die Indizierung funktioniert aber nicht so gut mit komplexen Schlüsseln.
+
+```powershell
+$ht = @{ @(1,2,3) = "a" }
+$ht
+
+Name                           Value
+----                           -----
+{1, 2, 3}                      a
+```
+
+Auf einen Wert in der Hashtabelle kann nicht immer anhand des zugehörigen Schlüssels zugegriffen werden. Beispiel:
+
+```powershell
+$key = $ht.keys[0]
+$ht.$key
+$ht[$key]
+a
+```
+
+Die Memberzugriffsnotation (`.`) gibt nichts zurück. Die Arrayindexnotation (`[]`) dagegen funktioniert.
 
 ## <a name="use-in-automatic-variables"></a>Verwenden in automatischen Variablen
 
 ### <a name="psboundparameters"></a>$PSBoundParameters
 
-[$PSBoundParameters][] ist eine automatische Variable, die nur im Kontext einer Funktion existiert. Sie enthält alle Parameter, mit denen die Funktion aufgerufen wurde. Die Variable ist nicht direkt eine Hashtabelle, dieser aber so ähnlich, dass Sie sie als eine solche behandeln können.
+[$PSBoundParameters][] ist eine automatische Variable, die nur im Kontext einer Funktion existiert.
+Sie enthält alle Parameter, mit denen die Funktion aufgerufen wurde. Die Variable ist nicht direkt eine Hashtabelle, dieser aber so ähnlich, dass Sie sie als eine solche behandeln können.
 
 Das bedeutet, dass Sie auch Schlüssel entfernen und die Variable per Splatting an andere Funktionen übergeben können. Wenn Sie selbst Proxyfunktionen schreiben, sollten Sie sich diese Variable näher ansehen.
 
@@ -893,8 +955,6 @@ Dieses Beispiel verarbeitet keine anderen Verweistypen oder Arrays, aber es ist 
 ## <a name="anything-else"></a>Noch etwas?
 
 Ich habe hier in kurzer Zeit sehr viele Aspekte vorgestellt. Ich hoffe, dass Sie hier etwas Neues erfahren haben oder einige Aspekte besser verstehen, wenn Sie diesen Artikel erneut lesen. Da ich das komplette Spektrum dieses Features abgedeckt habe, gibt es sicherlich einige Aspekte, die Sie zurzeit noch nicht betreffen. Das ist mir völlig klar, und ich habe damit gerechnet – je nachdem, wie viel und häufig Sie mit PowerShell arbeiten.
-
-Hier noch eine Liste aller erläuterten Aspekte, falls Sie sich einzelne Themen noch einmal genauer ansehen möchten. Eine solche Liste steht normalerweise am Anfang eines Artikels, aber in diesem Fall bauen die vorgestellten Beispiele aufeinander auf.
 
 <!-- link references -->
 [Originalversion]: https://powershellexplained.com/2016-11-06-powershell-hashtable-everything-you-wanted-to-know-about/
