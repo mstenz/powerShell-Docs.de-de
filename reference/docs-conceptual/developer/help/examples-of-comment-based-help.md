@@ -8,12 +8,11 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 868194a2-17e9-4184-bc36-c04a33f26494
 caps.latest.revision: 4
-ms.openlocfilehash: fbaea91c12eede70d30e29dce3fd2d36d7f55994
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
-ms.translationtype: MT
+ms.openlocfilehash: 30f7a52adaebac9373279b6edc4480277ba183e4
+ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83564839"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86035432"
 ---
 # <a name="examples-of-comment-based-help"></a>Beispiele für die kommentarbasierte Hilfe
 
@@ -185,7 +184,7 @@ param ([string]$InputPath, [string]$OutPutPath)
 function Get-Data { }
 ```
 
-Der folgende Befehl ruft die Skript Hilfe ab. Da es sich bei dem Skript nicht um ein Verzeichnis handelt, das in der PATH-Umgebungsvariablen aufgelistet ist, muss der Get-Help-Befehl, der die Skript Hilfe abruft, den Skript Pfad angeben.
+Der folgende Befehl ruft die Skript Hilfe ab. Da sich das Skript nicht in einem Verzeichnis befindet, das in der PATH-Umgebungsvariablen aufgelistet ist, muss der Get-Help-Befehl, der die Skript Hilfe abruft, den Skript Pfad angeben.
 
 ```powershell
 C:\PS> get-help c:\ps-test\update-month.ps1 -full
@@ -257,7 +256,7 @@ C:\PS> get-help c:\ps-test\update-month.ps1 -full
 
 ## <a name="example-3-parameter-descriptions-in-a-param-statement"></a>Beispiel 3: Parameter Beschreibungen in einer Param-Anweisung
 
-Dieses Beispiel zeigt, wie Parameterbeschreibungen in die- `Param` Anweisung einer Funktion oder eines Skripts eingefügt werden. Dieses Format ist besonders nützlich, wenn die Parameter Beschreibungen kurz sind.
+Dieses Beispiel zeigt, wie Parameter Beschreibungen in die- `Param` Anweisung einer Funktion oder eines Skripts eingefügt werden. Dieses Format ist besonders nützlich, wenn die Parameter Beschreibungen kurz sind.
 
 ```powershell
 function Add-Extension
@@ -286,7 +285,7 @@ Die Ergebnisse sind identisch mit den Ergebnissen für Beispiel 1. "Get-Help" in
 
 ## <a name="example-4--redirecting-to-an-xml-file"></a>Beispiel 4: Umleiten an eine XML-Datei
 
-Sie können XML-basierte Hilfe Themen für Funktionen und Skripts schreiben. Obwohl die Kommentar basierte Hilfe einfacher implementiert werden kann, ist die XML-basierte Hilfe erforderlich, wenn Sie die Hilfe Inhalte genauer steuern möchten oder wenn Sie Hilfe Themen in mehrere Sprachen übersetzen möchten. Das folgende Beispiel zeigt die ersten Zeilen des Skripts Update-month. ps1. Das Skript verwendet das- `.ExternalHelp` Schlüsselwort, um den Pfad zu einem XML-basierten Hilfethema für das Skript anzugeben.
+Sie können XML-basierte Hilfe Themen für Funktionen und Skripts schreiben. Obwohl die Kommentar basierte Hilfe einfacher implementiert werden kann, ist die XML-basierte Hilfe erforderlich, wenn Sie die Hilfe Inhalte genauer steuern möchten oder wenn Sie Hilfe Themen in mehrere Sprachen übersetzen möchten. Das folgende Beispiel zeigt die ersten Zeilen des Update-Month.ps1 Skripts. Das Skript verwendet das- `.ExternalHelp` Schlüsselwort, um den Pfad zu einem XML-basierten Hilfethema für das Skript anzugeben.
 
 ```powershell
 #  .ExternalHelp C:\MyScripts\Update-Month-Help.xml
