@@ -1,0 +1,35 @@
+---
+title: Erweiterte Typsystem-Klassenmember
+ms.date: 07/09/2020
+ms.topic: conceptual
+ms.openlocfilehash: c066bd69c0ab20cceff96aa789654e80443758e5
+ms.sourcegitcommit: d26e2237397483c6333abcf4331bd82f2e72b4e3
+ms.translationtype: MT
+ms.contentlocale: de-DE
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86217946"
+---
+# <a name="extended-type-system-class-members"></a><span data-ttu-id="755ee-102">Erweiterte Typsystem-Klassenmember</span><span class="sxs-lookup"><span data-stu-id="755ee-102">Extended Type System class members</span></span>
+
+<span data-ttu-id="755ee-103">ETS verweist auf eine Reihe verschiedener Arten von Membern, deren Typen durch die **psmembership Types** -Enumeration definiert werden.</span><span class="sxs-lookup"><span data-stu-id="755ee-103">ETS refers to a number of different kinds of members whose types are defined by the **PSMemberTypes** enumeration.</span></span> <span data-ttu-id="755ee-104">Diese Elementtypen umfassen Eigenschaften, Methoden, Member und Element Sätze, die jeweils durch ihren eigenen CLR-Typ definiert sind.</span><span class="sxs-lookup"><span data-stu-id="755ee-104">These member types include properties, methods, members, and member sets that are each defined by their own CLR type.</span></span> <span data-ttu-id="755ee-105">Beispielsweise wird eine **NoteProperty** durch ihren eigenen **psnoteproperty** -Typ definiert.</span><span class="sxs-lookup"><span data-stu-id="755ee-105">For example, a **NoteProperty** is defined by its own **PSNoteProperty** type.</span></span> <span data-ttu-id="755ee-106">Diese einzelnen CLR-Typen verfügen sowohl über eigene eindeutige Eigenschaften als auch über gemeinsame Eigenschaften, die von der [psmembership Info-Klasse](/dotnet/api/system.management.automation.psmemberinfo)geerbt werden.</span><span class="sxs-lookup"><span data-stu-id="755ee-106">These individual CLR types have both their own unique properties and common properties that are inherited from the [PSMemberInfo class](/dotnet/api/system.management.automation.psmemberinfo).</span></span>
+
+## <a name="the-psmemberinfo-class"></a><span data-ttu-id="755ee-107">Die psmembership Info-Klasse</span><span class="sxs-lookup"><span data-stu-id="755ee-107">The PSMemberInfo class</span></span>
+
+<span data-ttu-id="755ee-108">Die **psmembership Info** -Klasse dient als Basisklasse für alle ETS-Elementtypen.</span><span class="sxs-lookup"><span data-stu-id="755ee-108">The **PSMemberInfo** class serves as a base class for all ETS member types.</span></span> <span data-ttu-id="755ee-109">Diese Klasse stellt die folgenden Basis Eigenschaften für alle Member CLR-Typen bereit.</span><span class="sxs-lookup"><span data-stu-id="755ee-109">This class provides the following base properties to all member CLR types.</span></span>
+
+- <span data-ttu-id="755ee-110">**Name** -Eigenschaft: der Name des Members.</span><span class="sxs-lookup"><span data-stu-id="755ee-110">**Name** property: The name of the member.</span></span> <span data-ttu-id="755ee-111">Dieser Name kann vom Basisobjekt definiert oder von PowerShell definiert werden, wenn angepasste Member oder Erweiterte Member verfügbar gemacht werden.</span><span class="sxs-lookup"><span data-stu-id="755ee-111">This name can be defined by the base-object or defined by PowerShell when adapted members or extended members are exposed.</span></span>
+- <span data-ttu-id="755ee-112">**Value** -Eigenschaft: der Wert, der vom jeweiligen Member zurückgegeben wird.</span><span class="sxs-lookup"><span data-stu-id="755ee-112">**Value** property: The value returned from the particular member.</span></span> <span data-ttu-id="755ee-113">Jeder Elementtyp definiert, wie er seinen Elementwert behandelt.</span><span class="sxs-lookup"><span data-stu-id="755ee-113">Each member type defines how it handles its member value.</span></span>
+- <span data-ttu-id="755ee-114">**Typameofvalue** -Eigenschaft: Dies ist der Name des CLR-Typs des Werts, der von der Value-Eigenschaft zurückgegeben wird.</span><span class="sxs-lookup"><span data-stu-id="755ee-114">**TypeNameOfValue** property: This is the name of the CLR type of the value that is returned by the Value property.</span></span>
+
+## <a name="accessing-members"></a><span data-ttu-id="755ee-115">Zugreifen auf Member</span><span class="sxs-lookup"><span data-stu-id="755ee-115">Accessing members</span></span>
+
+<span data-ttu-id="755ee-116">Auf Auflistungen von Membern kann **über die Eigenschaften**, **Methoden**und **Eigenschaften** des **psobject** -Objekts zugegriffen werden.</span><span class="sxs-lookup"><span data-stu-id="755ee-116">Collections of members can be accessed through the **Members**, **Methods**, and **Properties** properties of the **PSObject** object.</span></span>
+
+## <a name="ets-properties"></a><span data-ttu-id="755ee-117">ETS-Eigenschaften</span><span class="sxs-lookup"><span data-stu-id="755ee-117">ETS properties</span></span>
+
+<span data-ttu-id="755ee-118">ETS-Eigenschaften sind Elemente, die als Eigenschaft behandelt werden können.</span><span class="sxs-lookup"><span data-stu-id="755ee-118">ETS properties are members that can be treated as a property.</span></span> <span data-ttu-id="755ee-119">Im Wesentlichen können Sie auf der linken Seite eines Ausdrucks angezeigt werden.</span><span class="sxs-lookup"><span data-stu-id="755ee-119">Essentially, they can appear on the left-hand side of an expression.</span></span> <span data-ttu-id="755ee-120">Dazu zählen Alias Eigenschaften, Code Eigenschaften, PowerShell-Eigenschaften, Notiz Eigenschaften und Skript Eigenschaften.</span><span class="sxs-lookup"><span data-stu-id="755ee-120">They include alias properties, code properties, PowerShell properties, note properties, and script properties.</span></span> <span data-ttu-id="755ee-121">Weitere Informationen zu diesen Eigenschaften Typen finden Sie unter [ETS-Eigenschaften](properties.md).</span><span class="sxs-lookup"><span data-stu-id="755ee-121">For more information about these types of properties, see [ETS properties](properties.md).</span></span>
+
+## <a name="ets-methods"></a><span data-ttu-id="755ee-122">ETS-Methoden</span><span class="sxs-lookup"><span data-stu-id="755ee-122">ETS methods</span></span>
+
+<span data-ttu-id="755ee-123">ETS-Methoden sind Member, die Argumente annehmen, möglicherweise Ergebnisse zurückgeben und nicht auf der linken Seite eines Ausdrucks angezeigt werden können.</span><span class="sxs-lookup"><span data-stu-id="755ee-123">ETS methods are members that can take arguments, may return results, and cannot appear on the left-hand side of an expression.</span></span> <span data-ttu-id="755ee-124">Dazu zählen Code Methoden, PowerShell-Methoden und Skript Methoden.</span><span class="sxs-lookup"><span data-stu-id="755ee-124">They include code methods, PowerShell methods, and script methods.</span></span>
+<span data-ttu-id="755ee-125">Weitere Informationen zu diesen Methoden Typen finden Sie unter [ETS-Methoden](methods.md).</span><span class="sxs-lookup"><span data-stu-id="755ee-125">For more information about these types of methods, see [ETS methods](methods.md).</span></span>
