@@ -28,10 +28,7 @@
         "docset_prebuild": [
           "_dependentPackages/CommonPlugins/tools/PowerShellReference.ps1"
         ]
-      },
-      "customized_template_paths": [
-        "_dependentPackages/azurecli.plugins/azurecli"
-      ],
+      },      
       "monikerPath": [
         "mapping/monikerMapping.json"
       ],
