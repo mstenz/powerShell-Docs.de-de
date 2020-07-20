@@ -53,7 +53,12 @@
   "contribution_branch_mappings": {
     "live-sxs": "live"
   },
-  "dependent_repositories": [
+  "dependent_repositories": [{
+            "branch": "ps-fix",
+            "branch_mapping": {},
+            "path_to_root": "_themes",
+            "url": "https://github.com/Microsoft/templates.docs.msft"
+        },
     {
       "path_to_root": "_themes",
       "url": "https://github.com/Microsoft/templates.docs.msft.de-de",
