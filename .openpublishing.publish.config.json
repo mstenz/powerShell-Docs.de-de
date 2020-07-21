@@ -8,10 +8,10 @@
         "version": "latest-prerelease"
     }],
     "dependent_repositories": [{
-            "branch": "ps-fix",
+            "branch": "master",
             "branch_mapping": {},
             "path_to_root": "_themes",
-            "url": "https://github.com/Microsoft/templates.docs.msft"
+            "url": "https://github.com/Microsoft/templates.docs.msft.de-de"
         },
         {
             "branch": "master",
