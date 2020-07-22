@@ -1,23 +1,16 @@
 ---
-title: Schreiben der Windows PowerShell-Hilfe | Microsoft-Dokumentation
-ms.custom: ''
+title: Schreiben der Windows PowerShell-Hilfe
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 20cbf009-9633-476e-b0b3-5604117ef2dd
-caps.latest.revision: 4
-ms.openlocfilehash: adde7c205f26c9bb87307f7eaa56988cefccdeaf
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 8807fe48c6354022900738de0b912c55dec9febb
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367669"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86892896"
 ---
 # <a name="writing-windows-powershell-help"></a>Schreiben der Windows PowerShell-Hilfe
 
-Dieses Dokument wird für jeden geschrieben, der Hilfe Inhalte für Windows PowerShell-Cmdlets,-Anbieter und konzeptionelle Informationen zu Themen verfasst, die mithilfe des-Cmdlets `Get-Help` in der Befehlszeile angezeigt werden können.
+Dieses Dokument wird für jeden geschrieben, der Hilfe Inhalte für PowerShell-Cmdlets,-Anbieter und konzeptionelle Informationen zu Themen verfasst, die mithilfe des-Cmdlets in der Befehlszeile angezeigt werden können `Get-Help` .
 
 ## <a name="cmdlet-help"></a>Hilfe zum Cmdlet
 

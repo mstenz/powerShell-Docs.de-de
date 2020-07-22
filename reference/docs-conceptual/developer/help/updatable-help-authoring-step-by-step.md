@@ -1,19 +1,12 @@
 ---
-title: 'Aktualisierbare Hilfe Erstellung: Schritt für Schritt | Microsoft-Dokumentation'
-ms.custom: ''
+title: 'Aktualisierbare Hilfe Erstellung: Schritt für Schritt'
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 10098160-c6b4-4339-b8ff-2c4f8cc0699b
-caps.latest.revision: 13
-ms.openlocfilehash: a5290265f3d729504983b95195c793b88c4a2613
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: c9214be3c3363a4e6354595b50cf76a17d49aa67
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83811379"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893117"
 ---
 # <a name="updatable-help-authoring-step-by-step"></a>Aktualisierbare Hilfeerstellung: Ausführliche Anleitung
 
@@ -31,7 +24,7 @@ Der erste Schritt bei der Erstellung der aktualisierbaren Hilfe ist die Suche na
 
 ### <a name="step-2-add-a-helpinfouri-key-to-your-module-manifest"></a>Schritt 2: Hinzufügen eines helpinfouri-Schlüssels zum Modul Manifest
 
-Fügen Sie dem Modul Manifest einen **helpinfouri** -Schlüssel hinzu. Der Wert des Schlüssels ist die Uniform Resource Identifier (URI) des Speicher Orts der helpinfo-XML-Informationsdatei für das Modul. Aus Sicherheitsgründen muss die Adresse mit "http" oder "https" beginnen. Der URI sollte einen Internet Speicherort angeben, darf jedoch nicht den Namen der helpinfo-XML-Datei enthalten.
+Fügen Sie dem Modul Manifest einen **helpinfouri** -Schlüssel hinzu. Der Wert des Schlüssels ist die Uniform Resource Identifier (URI) des Speicher Orts der helpinfo-XML-Informationsdatei für das Modul. Aus Sicherheitsgründen muss die Adresse mit "http" oder "https" beginnen. Der URI sollte einen Internet Speicherort angeben, darf jedoch nicht den helpinfo-XML-Dateinamen enthalten.
 
 Beispiel:
 
@@ -48,14 +41,10 @@ HelpInfoURI = 'https://go.microsoft.com/fwlink/?LinkID=0123'
 
 Die helpinfo-XML-Informationsdatei enthält den URI des Internet Speicherorts ihrer Hilfedateien und die Versionsnummern der neuesten Hilfedateien für das Modul in jeder unterstützten Benutzeroberflächen Kultur. Jedes Windows PowerShell-Modul verfügt über eine helpinfo-XML-Datei. Wenn Sie die Hilfedateien aktualisieren, müssen Sie die helpinfo-XML-Datei bearbeiten oder ersetzen. Sie fügen keinen weiteren hinzu. Weitere Informationen finden Sie unter [Erstellen einer helpinfo-XML-Datei](./how-to-create-a-helpinfo-xml-file.md).
 
-### <a name="step-4-sign-your-help-files"></a>Schritt 4: Signieren der Hilfedateien
+### <a name="step-4-create-cab-files"></a>Schritt 4: Erstellen von CAB-Dateien
 
-Digitale Signaturen sind nicht erforderlich, aber Sie sind eine bewährte Empfehlung, wenn Sie Dateien freigeben.
+Verwenden Sie ein Tool, `.cab` mit dem CAB-Dateien erstellt werden, z `MakeCab.exe` . b., um eine CAB-Datei zu erstellen, die die Hilfedateien für das Modul enthält. Erstellen Sie eine separate CAB-Datei für die Hilfedateien in jeder unterstützten Benutzeroberflächen Kultur. Weitere Informationen finden Sie unter [Vorbereiten der CAB-Dateien der aktualisierbaren Hilfe](./how-to-prepare-updatable-help-cab-files.md).
 
-### <a name="step-5-create-cab-files"></a>Schritt 5: Erstellen von CAB-Dateien
-
-Verwenden Sie ein Tool, mit dem CAB-Dateien (z. b. makecab. exe) erstellt werden, um eine zu erstellen. Die CAB-Datei, die die Hilfedateien für das Modul enthält. Erstellen Sie eine separate CAB-Datei für die Hilfedateien in jeder unterstützten Benutzeroberflächen Kultur. Weitere Informationen finden Sie unter [Vorbereiten der CAB-Dateien der aktualisierbaren Hilfe](./how-to-prepare-updatable-help-cab-files.md).
-
-### <a name="step-6-upload-your-files"></a>Schritt 6: Hochladen der Dateien
+### <a name="step-5-upload-your-files"></a>Schritt 5: Hochladen der Dateien
 
 Zum Veröffentlichen neuer oder aktualisierter Hilfedateien laden Sie die CAB-Dateien an den Internet Speicherort hoch, der durch das **helpcontenturi** -Element in der helpinfo-XML-Datei angegeben wird. Laden Sie dann die helpinfo-XML-Datei an den Internet Speicherort hoch, der durch den Wert des **helpinfouri** -Schlüssels im Modul Manifest angegeben wird.

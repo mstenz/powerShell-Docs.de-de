@@ -1,19 +1,12 @@
 ---
-title: Platzieren der Kommentar basierten Hilfe in Functions | Microsoft-Dokumentation
-ms.custom: ''
+title: Ablegen der kommentarbasierten Hilfe in Funktionen
 ms.date: 09/12/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 5ec7159e-e4e9-4b21-95df-94244432f679
-caps.latest.revision: 5
-ms.openlocfilehash: 898225a582c7ed25f746dec7f84012db1ae60b98
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: c7a8f8db6c71fa2ef12aaa4df0f78815626ec8d6
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83557062"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893202"
 ---
 # <a name="placing-comment-based-help-in-functions"></a>Ablegen der kommentarbasierten Hilfe in Funktionen
 
@@ -29,14 +22,13 @@ In diesem Thema wird erläutert, wo Sie eine Kommentar basierte Hilfe für eine 
 
 ## <a name="examples-of-help-placement-in-a-function"></a>Beispiele für die Platzierung von Hilfe in einer Funktion
 
- Die folgenden Beispiele zeigen jede der drei Platzierungs Optionen für die Kommentar basierte Hilfe für eine Funktion.
+Die folgenden Beispiele zeigen jede der drei Platzierungs Optionen für die Kommentar basierte Hilfe für eine Funktion.
 
 ### <a name="help-at-the-beginning-of-a-function-body"></a>Hilfe am Anfang eines Funktions Texts
 
- Das folgende Beispiel zeigt einen Kommentar basierten am Anfang eines Funktions Texts.
+Das folgende Beispiel zeigt einen Kommentar basierten am Anfang eines Funktions Texts.
 
 ```powershell
-
 function MyProcess
 {
     <#
@@ -46,7 +38,6 @@ function MyProcess
 
     Get-Process powershell
 }
-
 ```
 
 ### <a name="help-at-the-end-of-a-function-body"></a>Hilfe am Ende eines Funktions Texts
@@ -54,7 +45,6 @@ function MyProcess
  Das folgende Beispiel zeigt am Ende eines Funktions Texts einen Kommentar basierten Text.
 
 ```powershell
-
 function MyFunction
 {
     Get-Process powershell
@@ -64,7 +54,6 @@ function MyFunction
        The MyProcess function gets the Windows PowerShell process.
     #>
 }
-
 ```
 
 ### <a name="help-before-the-function-keyword"></a>Hilfe vor dem Function-Schlüsselwort
@@ -72,11 +61,9 @@ function MyFunction
  In den folgenden Beispielen wird die Kommentar basierte Zeile vor dem Function-Schlüsselwort gezeigt.
 
 ```powershell
-
 <#
     .Description
     The MyProcess function gets the Windows PowerShell process.
 #>
 function MyFunction { Get-Process powershell}
-
 ```

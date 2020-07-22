@@ -1,19 +1,12 @@
 ---
-title: Platzieren von Kommentar basierter Hilfe in Skripts | Microsoft-Dokumentation
-ms.custom: ''
+title: Ablegen der kommentarbasierten Hilfe in Skripts
 ms.date: 09/12/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 49f8267c-d887-4d7d-b9b7-80dc624b1261
-caps.latest.revision: 4
-ms.openlocfilehash: 1bebfbd822963830363012060067c656d7709543
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: a3ade6c3138826b924939056b9d1ffb233006d44
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83565525"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893185"
 ---
 # <a name="placing-comment-based-help-in-scripts"></a>Ablegen der kommentarbasierten Hilfe in Skripts
 
@@ -21,7 +14,9 @@ In diesem Thema wird erläutert, wo Sie eine Kommentar basierte Hilfe für ein S
 
 ## <a name="where-to-place-comment-based-help-for-a-script"></a>Platzieren der Kommentar basierten Hilfe für ein Skript
 
-- Am Anfang der Skriptdatei. Der Skript Hilfe kann das Skript nur durch Kommentare und leere Zeilen vorangestellt werden.
+- Am Anfang der Skriptdatei.
+
+  Der Skript Hilfe kann das Skript nur durch Kommentare und leere Zeilen vorangestellt werden.
 
 - Am Ende der Skriptdatei.
 
@@ -29,13 +24,13 @@ In diesem Thema wird erläutert, wo Sie eine Kommentar basierte Hilfe für ein S
 
 ## <a name="examples-of-help-placement-in-a-script"></a>Beispiele für die Platzierung von Hilfe in einem Skript
 
- In den folgenden Beispielen werden die einzelnen Platzierungs Optionen für die Kommentar basierte Hilfe eines Skripts gezeigt.
+In den folgenden Beispielen werden die einzelnen Platzierungs Optionen für die Kommentar basierte Hilfe eines Skripts gezeigt.
 
 ### <a name="help-at-the-beginning-of-a-script"></a>Hilfe zu Beginn eines Skripts
 
- Das folgende Beispiel zeigt einen Kommentar basierten am Anfang eines Skripts.
+Das folgende Beispiel zeigt einen Kommentar basierten am Anfang eines Skripts.
 
-```
+```powershell
 <#
 .Description
 This script performs a series of network connection tests.
@@ -57,5 +52,4 @@ function Ping { Test-Connection -ComputerName $ComputerName }
 .Description
 This script performs a series of network connection tests.
 #>
-
 ```

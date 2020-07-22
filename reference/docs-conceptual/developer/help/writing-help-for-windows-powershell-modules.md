@@ -1,12 +1,12 @@
 ---
 title: Schreiben von Hilfe für PowerShell-Module
 ms.date: 04/10/2020
-ms.openlocfilehash: 2c6450c03fb9847de331605fb6b9bfb203af3d89
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 115ea3f3c5941e74ed6ddbc8480d4a21576bc5c6
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83811459"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893066"
 ---
 # <a name="writing-help-for-powershell-modules"></a>Schreiben von Hilfe für PowerShell-Module
 
@@ -29,7 +29,7 @@ Ein Modul kann die folgenden Arten von Hilfe enthalten.
 - **Konzeptionelle Hilfe ("about")**. Sie können ein konzeptionelles ("about") Hilfethema verwenden, um das Modul und seine Member zu beschreiben und zu erläutern, wie die Member zum Ausführen von Aufgaben verwendet werden können.
   Konzeptionelle Hilfe Themen sind Textdateien mit Unicode-Codierung (UTF-8). Der Dateiname muss das `about_<name>.help.txt` Format verwenden, z `about_MyModule.help.txt` . b.. Standardmäßig umfasst PowerShell mehr als 100 dieser konzeptionellen Informationen zu Hilfe Themen, die wie im folgenden Beispiel formatiert sind.
 
-  ```
+  ```Output
   TOPIC
       about_<subject or module name>
 
@@ -99,7 +99,7 @@ Weitere Informationen zur aktualisierbaren Hilfe finden Sie [unter unterstützen
 
 ## <a name="supporting-online-help"></a>Unterstützung einer Onlinehilfe
 
-Benutzer, die aktualisierte Hilfedateien auf ihren Computern nicht installieren können oder nicht installieren, basieren häufig auf der Online Version der Modul Hilfe Themen. Der **Online-** Parameter des `Get-Help` Cmdlets öffnet die Online Version eines Cmdlets oder Hilfe Themas für erweiterte Funktionen für den Benutzer in seinem standardmäßigen Internet Browser.
+Benutzer, die aktualisierte Hilfedateien auf ihren Computern nicht installieren können oder nicht installieren, basieren häufig auf der Online Version der Modul Hilfe Themen. Der **Online-** Parameter des `Get-Help` Cmdlets öffnet die Online Version eines Cmdlets oder Hilfe Themas für erweiterte Funktionen für den Benutzer in seinem standardmäßigen Internetbrowser.
 
 Das `Get-Help` Cmdlet verwendet den Wert der **HelpUri** -Eigenschaft des Cmdlets oder der Funktion, um die Online Version des Hilfe Themas zu suchen.
 

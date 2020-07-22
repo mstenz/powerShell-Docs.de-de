@@ -1,18 +1,12 @@
 ---
-title: Beispiele für die Kommentar basierte Hilfe | Microsoft-Dokumentation
-ms.custom: ''
+title: Beispiele für die kommentarbasierte Hilfe
 ms.date: 09/12/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 868194a2-17e9-4184-bc36-c04a33f26494
-caps.latest.revision: 4
-ms.openlocfilehash: 30f7a52adaebac9373279b6edc4480277ba183e4
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 3858fa7f15d71c505dacaf9679910d45ef4640e5
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86035432"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893491"
 ---
 # <a name="examples-of-comment-based-help"></a>Beispiele für die kommentarbasierte Hilfe
 
@@ -70,13 +64,13 @@ function Add-Extension
 }
 ```
 
-Die folgende Ausgabe zeigt die Ergebnisse eines Get-Help-Befehls, der die Hilfe für die Add-Extension-Funktion anzeigt.
+Die folgende Ausgabe zeigt die Ergebnisse eines `Get-Help` Befehls, der die Hilfe für die `Add-Extension` Funktion anzeigt.
 
 ```powershell
 C:\PS> get-help add-extension -full
 ```
 
-```output
+```Output
         NAME
             Add-Extension
 
@@ -144,7 +138,7 @@ C:\PS> get-help add-extension -full
 
 Die folgende Beispiel Funktion enthält eine Kommentar basierte Hilfe.
 
-Beachten Sie die leeren Zeilen zwischen dem schließenden **#>** und der- `Param` Anweisung. In einem Skript, das keine `Param` -Anweisung enthält, müssen mindestens zwei Leerzeilen zwischen dem letzten Kommentar im Hilfethema und der ersten Funktionsdeklaration vorhanden sein. Ohne diese leeren Zeilen verknüpft Get-Help das Hilfethema anstelle des Skripts mit der Funktion.
+Beachten Sie die leeren Zeilen zwischen dem schließenden **#>** und der- `Param` Anweisung. In einem Skript, das keine `Param` -Anweisung enthält, müssen mindestens zwei Leerzeilen zwischen dem letzten Kommentar im Hilfethema und der ersten Funktionsdeklaration vorhanden sein. Ohne diese leeren Zeilen wird das `Get-Help` Hilfethema anstelle des Skripts mit der Funktion verknüpft.
 
 ```powershell
 <#
@@ -184,13 +178,13 @@ param ([string]$InputPath, [string]$OutPutPath)
 function Get-Data { }
 ```
 
-Der folgende Befehl ruft die Skript Hilfe ab. Da sich das Skript nicht in einem Verzeichnis befindet, das in der PATH-Umgebungsvariablen aufgelistet ist, muss der Get-Help-Befehl, der die Skript Hilfe abruft, den Skript Pfad angeben.
+Der folgende Befehl ruft die Skript Hilfe ab. Da sich das Skript nicht in einem Verzeichnis befindet, das in der PATH-Umgebungsvariablen aufgelistet ist, `Get-Help` muss der Befehl, mit dem die Skript Hilfe abgerufen wird, den Skript Pfad angeben.
 
 ```powershell
 C:\PS> get-help c:\ps-test\update-month.ps1 -full
 ```
 
-```output
+```Output
             NAME
                 C:\ps-test\Update-Month.ps1
 
@@ -281,11 +275,11 @@ function Add-Extension
     #>
 ```
 
-Die Ergebnisse sind identisch mit den Ergebnissen für Beispiel 1. "Get-Help" interpretiert die Parameter Beschreibungen so, als wären Sie mit dem- `.Parameter` Schlüsselwort versehen.
+Die Ergebnisse sind identisch mit den Ergebnissen für Beispiel 1. `Get-Help`interpretiert die Parameter Beschreibungen so, als hätten Sie das- `.Parameter` Schlüsselwort begleitet.
 
 ## <a name="example-4--redirecting-to-an-xml-file"></a>Beispiel 4: Umleiten an eine XML-Datei
 
-Sie können XML-basierte Hilfe Themen für Funktionen und Skripts schreiben. Obwohl die Kommentar basierte Hilfe einfacher implementiert werden kann, ist die XML-basierte Hilfe erforderlich, wenn Sie die Hilfe Inhalte genauer steuern möchten oder wenn Sie Hilfe Themen in mehrere Sprachen übersetzen möchten. Das folgende Beispiel zeigt die ersten Zeilen des Update-Month.ps1 Skripts. Das Skript verwendet das- `.ExternalHelp` Schlüsselwort, um den Pfad zu einem XML-basierten Hilfethema für das Skript anzugeben.
+Sie können XML-basierte Hilfe Themen für Funktionen und Skripts schreiben. Obwohl die Kommentar basierte Hilfe einfacher implementiert werden kann, ist die XML-basierte Hilfe erforderlich, wenn Sie die Hilfe Inhalte genauer steuern möchten oder wenn Sie Hilfe Themen in mehrere Sprachen übersetzen möchten. Das folgende Beispiel zeigt die ersten Zeilen des `Update-Month.ps1` Skripts. Das Skript verwendet das- `.ExternalHelp` Schlüsselwort, um den Pfad zu einem XML-basierten Hilfethema für das Skript anzugeben.
 
 ```powershell
 #  .ExternalHelp C:\MyScripts\Update-Month-Help.xml
@@ -310,7 +304,7 @@ function Add-Extension
 
 ## <a name="example-5--redirecting-to-a-different-help-topic"></a>Beispiel 5: Umleiten an ein anderes Hilfethema
 
-Der folgende Code ist ein Auszug aus dem Anfang der integrierten `Help` Funktion in Windows PowerShell, der jeweils einen Bildschirm mit Hilfe Text anzeigt. Da im Hilfethema für das Cmdlet "Get-Help" die Hilfe Funktion beschrieben wird, verwendet die Hilfe Funktion die `.ForwardHelpTargetName` `.ForwardHelpCategory` Schlüsselwörter und, um den Benutzer zum Hilfethema Get-Help Cmdlet umzuleiten.
+Der folgende Code ist ein Auszug aus dem Anfang der integrierten `Help` Funktion in PowerShell, der jeweils einen Bildschirm mit Hilfe Text anzeigt. Da im Hilfethema für das Cmdlet "Get-Help" die Hilfe Funktion beschrieben wird, verwendet die Hilfe Funktion die `.ForwardHelpTargetName` `.ForwardHelpCategory` Schlüsselwörter und, um den Benutzer zum Hilfethema Get-Help Cmdlet umzuleiten.
 
 ```powershell
 function help
@@ -328,13 +322,13 @@ function help
     ...
 ```
 
-Der folgende Befehl verwendet diese Funktion. Wenn ein Benutzer einen Get-Help-Befehl für die Hilfe Funktion eingibt, zeigt Get-Help das Hilfethema für das Cmdlet "Get-Help" an.
+Der folgende Befehl verwendet diese Funktion. Wenn ein Benutzer einen `Get-Help` Befehl für die Funktion eingibt `Help` , `Get-Help` zeigt das Hilfethema für das `Get-Help` Cmdlet an.
 
 ```powershell
 C:\PS> get-help help
 ```
 
-```output
+```Output
             NAME
                 Get-Help
 

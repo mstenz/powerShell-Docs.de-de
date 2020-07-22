@@ -1,37 +1,28 @@
 ---
-title: Benennen der CAB-Datei für eine aktualisierbare Hilfe | Microsoft-Dokumentation
-ms.custom: ''
+title: Benennen von aktualisierbaren CAB-Hilfedateien
 ms.date: 09/12/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: de302da0-c17a-4d31-a8ef-14a626738993
-caps.latest.revision: 7
-ms.openlocfilehash: a253f98d213f797a659affb1560907bb99a045d3
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 42486461d92f1f6fcff452a4539edf5be7a66f22
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83811699"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86892998"
 ---
 # <a name="how-to-name-an-updatable-help-cab-file"></a>Benennen von aktualisierbaren CAB-Hilfedateien
 
-In diesem Thema wird das erforderliche Namensformat für den aktualisierbaren Hilfe Schrank () erläutert. CAB-Dateien.
+In diesem Thema wird das erforderliche Namensformat für die aktualisierbaren Hilfe CAB- `.CAB` Dateien () erläutert.
 
 ## <a name="how-to-name-an-updatable-help-cab-file"></a>Benennen von aktualisierbaren CAB-Hilfedateien
 
-Eine aktualisierbare CAB-(. CAB) muss ein Name im folgenden Format vorliegen.
+Eine aktualisierbare CAB- `.CAB` Datei () muss einen Namen haben, der das folgende Format hat.
 
 `<ModuleName>_<ModuleGUID>_<UICulture>_HelpContent.cab`
 
 Die Elemente des Namens lauten wie folgt.
 
-ModuleName der Wert der **Name** -Eigenschaft des **ModuleInfo** -Objekts, das vom [Get-Module-](/powershell/module/Microsoft.PowerShell.Core/Get-Module) Cmdlet zurückgegeben wird.
-
-ModuleGUID der Wert des **GUID** -Schlüssels im Modul Manifest.
-
-UICulture die Benutzeroberflächen Kultur der Hilfedateien in der CAB-Datei. Dieser Wert muss mit dem Wert eines der **UICulture** -Elemente in der helpinfo-XML-Datei für das Modul identisch sein.
+- `<ModuleName>`: Der Wert der **Name** -Eigenschaft des **ModuleInfo** -Objekts, das vom [Get-Module-](/powershell/module/Microsoft.PowerShell.Core/Get-Module) Cmdlet zurückgegeben wird.
+- `<ModuleGUID>`: Der Wert des **GUID** -Schlüssels im Modul Manifest.
+- `<UICulture>`: Die Benutzeroberflächen Kultur der Hilfedateien in der CAB-Datei. Dieser Wert muss mit dem Wert eines der **UICulture** -Elemente in der helpinfo-XML-Datei für das Modul identisch sein.
 
 Wenn der Modulname beispielsweise "Testmodule" lautet, ist die Modul-GUID 9cabb9ad-f2ac-4914-a46b-bfc1bebf07f9, und die Benutzeroberflächen Kultur ist "en-US", der Name der CAB-Datei lautet wie folgt:
 

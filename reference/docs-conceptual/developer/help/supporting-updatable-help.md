@@ -1,25 +1,16 @@
 ---
-title: Unterstützung für aktualisierbare Hilfe Microsoft-Dokumentation
-ms.custom: ''
+title: Unterstützung einer aktualisierbaren Hilfe
 ms.date: 10/28/2012
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-applies_to:
-- Windows PowerShell 3.0
-ms.assetid: 832ea622-25a9-4760-904d-e15d6105bb27
-caps.latest.revision: 7
-ms.openlocfilehash: 331634f44e8c06f7d2a479dccf30dbef1067f515
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 6fa1a9e1f7f3cd42b512a72d7b68ae4a4976978f
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83811389"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893338"
 ---
 # <a name="supporting-updatable-help"></a>Unterstützung einer aktualisierbaren Hilfe
 
-Das *Windows PowerShell-aktualisierbare Hilfe System*, das in Windows® 8 und Windows Server® 2012 eingeführt wurde, ist darauf ausgerichtet, sicherzustellen, dass Benutzer immer die neuesten Hilfe Themen an der Eingabeaufforderung auf Ihrem lokalen Computer besitzen. Zusammen mit der Windows PowerShell-Online Hilfe bietet die aktualisierbare Hilfe eine umfassende Hilfe Lösung für Benutzer. Dieser Abschnitt beschreibt das aktualisierbare Hilfe System und erläutert, wie Modul Entwickler die aktualisierbare Hilfe für Ihre Module unterstützen können.
+Das *aktualisierbare Hilfe System von Windows PowerShell*, das in Windows 8 und Windows Server 2012 eingeführt wurde, soll sicherstellen, dass Benutzer immer über die neuesten Hilfe Themen an der Eingabeaufforderung auf dem lokalen Computer verfügen. Zusammen mit der Windows PowerShell-Online Hilfe bietet die aktualisierbare Hilfe eine umfassende Hilfe Lösung für Benutzer. Dieser Abschnitt beschreibt das aktualisierbare Hilfe System und erläutert, wie Modul Entwickler die aktualisierbare Hilfe für Ihre Module unterstützen können.
 
 In diesem Abschnitt werden folgende Themen behandelt.
 

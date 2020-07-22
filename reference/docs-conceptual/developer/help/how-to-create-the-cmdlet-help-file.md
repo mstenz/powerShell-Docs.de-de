@@ -8,19 +8,19 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4a88dd89-6beb-494f-9e2a-6b10baed1a8d
 caps.latest.revision: 17
-ms.openlocfilehash: cc77c0546de98e492c9724e051b9d72f1ebfdcb6
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: b5a5f3e187634b38ba3ce3da18a7ad64ccc09ce2
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560167"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893015"
 ---
 # <a name="how-to-create-the-cmdlet-help-file"></a>Erstellen der Cmdlet-Hilfedatei
 
 In diesem Abschnitt wird beschrieben, wie Sie eine gültige XML-Datei erstellen, die Inhalt für Windows PowerShell-Cmdlet-Hilfe Themen enthält. In diesem Abschnitt wird erläutert, wie Sie die Hilfedatei benennen, die entsprechenden XML-Header hinzufügen und Knoten hinzufügen, die die verschiedenen Abschnitte der Cmdlet-Hilfe Inhalte enthalten.
 
 > [!NOTE]
-> Eine umfassende Übersicht über eine Hilfedatei erhalten Sie, indem Sie eine der dll-Help. XML-Dateien öffnen, die sich im Windows PowerShell-Installationsverzeichnis befinden. Beispielsweise enthält die Datei Microsoft. PowerShell. Commands. Management. dll-Help. XML Inhalte für mehrere der Windows PowerShell-Cmdlets.
+> Eine umfassende Ansicht einer Hilfedatei erhalten Sie, indem Sie eine der `dll-Help.xml` Dateien öffnen, die sich im Windows PowerShell-Installationsverzeichnis befinden. Die `Microsoft.PowerShell.Commands.Management.dll-Help.xml` Datei enthält z. b. Inhalte für mehrere PowerShell-Cmdlets.
 
 ### <a name="how-to-create-a-cmdlet-help-file"></a>Erstellen einer Cmdlet-Hilfedatei
 
@@ -28,29 +28,29 @@ In diesem Abschnitt wird beschrieben, wie Sie eine gültige XML-Datei erstellen,
 
    `<PSSnapInAssemblyName>.dll-Help.xml`
 
-2. Fügen Sie die folgenden XML-Header der Textdatei hinzu. Beachten Sie, dass die Datei mit dem MAML-Schema (Multi-Agent Modeling Language) überprüft wird. Derzeit bietet Windows PowerShell keine Tools zum Überprüfen der Datei.
+1. Fügen Sie die folgenden XML-Header der Textdatei hinzu. Beachten Sie, dass die Datei mit dem Schema der Microsoft-Unterstützung Markup Sprache (MAML) überprüft wird. PowerShell stellt derzeit keine Tools zum Überprüfen der Datei bereit.
 
    `<?xml version="1.0" encoding="utf-8" ?> <helpItems xmlns="http://msh" schema="maml">`
 
-3. Fügen Sie der Cmdlet-Hilfedatei einen Befehls Knoten für jedes Cmdlet in der Assembly hinzu. Jeder Knoten im Befehls Knoten bezieht sich auf die verschiedenen Abschnitte des Cmdlet-Hilfe Themas.
+1. Fügen Sie der Cmdlet-Hilfedatei einen **Befehls** Knoten für jedes Cmdlet in der Assembly hinzu. Jeder Knoten im **Befehls** Knoten bezieht sich auf die verschiedenen Abschnitte des Cmdlet-Hilfe Themas.
 
    In der folgenden Tabelle wird das XML-Element für jeden Knoten aufgeführt, gefolgt von einer Beschreibung der einzelnen Knoten.
 
-   |Node|Beschreibung|
-   |----------|-----------------|
-   |`<details>`|Fügt Inhalt für die Abschnitte "Name" und "Synopsis" des Cmdlet-Hilfe Themas hinzu. Weitere Informationen finden Sie unter Vorgehens [Weise beim Hinzufügen des Cmdlet-namens und der Synchronisierungs](./how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md)Datei.|
-   |`<maml:description>`|Fügt Inhalt für den Beschreibungs Abschnitt des Cmdlet-Hilfe Themas hinzu. Weitere Informationen finden Sie unter Vorgehens [Weise beim Hinzufügen der ausführlichen Beschreibung zu einem Cmdlet-Hilfethema](./how-to-add-a-cmdlet-description.md).|
-   |`<command:syntax>`|Fügt Inhalt für den Syntax Abschnitt des Cmdlet-Hilfe Themas hinzu. Weitere Informationen finden Sie unter Vorgehens [Weise beim Hinzufügen von Syntax zu einem Cmdlet-Hilfethema](./how-to-add-syntax-to-a-cmdlet-help-topic.md).|
-   |`<command:parameters>`|Fügt Inhalt für den Parameter Abschnitt des Cmdlet-Hilfe Themas hinzu. Weitere Informationen finden Sie unter Vorgehens [Weise beim Hinzufügen von Parametern zu einem Cmdlet-Hilfethema](./how-to-add-parameter-information.md).|
-   |`<command:inputTypes>`|Fügt Inhalt für den Abschnitt Eingaben des Hilfe Themas für das Cmdlet hinzu. Weitere Informationen finden Sie unter Vorgehens [Weise beim Hinzufügen von Eingabetypen zu einem Cmdlet-Hilfethema](./how-to-add-input-types-to-a-cmdlet-help-topic.md).|
-   |`<command:returnValues>`|Fügt Inhalt für den Abschnitt "Outputs" des Cmdlet-Hilfe Themas hinzu. Weitere Informationen finden Sie unter Vorgehens [Weise beim Hinzufügen von Rückgabe Werten zu einem Cmdlet-Hilfethema](./how-to-add-return-values-to-a-cmdlet-help-topic.md).|
-   |`<maml:alertset>`|Fügt dem Abschnitt "Notizen" des Cmdlet-Hilfe Themas Inhalt hinzu. Weitere Informationen finden Sie unter Vorgehens [Weise beim Hinzufügen von Notizen zu einem Cmdlet-Hilfethema](./how-to-add-notes-to-a-cmdlet-help-topic.md).|
-   |`<command:examples>`|Fügt Inhalt für den Abschnitt "Beispiele" des Cmdlet-Hilfe Themas hinzu. Weitere Informationen finden Sie unter [Hinzufügen von Beispielen zu einem Cmdlet-Hilfethema](./how-to-add-examples-to-a-cmdlet-help-topic.md).|
-   |`<maml:relatedLinks>`|Fügt Inhalt für den Abschnitt "Verwandte Links" des Cmdlet-Hilfe Themas hinzu. Weitere Informationen finden Sie [unter Hinzufügen verwandter Links zu einem Cmdlet-Hilfethema](./how-to-add-related-links-to-a-cmdlet-help-topic.md).|
+   |           Node           |                                                                                                     Beschreibung                                                                                                     |
+   | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+   | `<details>`              | Fügt Inhalt für die Abschnitte "Name" und "Synopsis" des Cmdlet-Hilfe Themas hinzu. Weitere Informationen finden Sie unter Vorgehens [Weise beim Hinzufügen des Cmdlet-namens und der Synchronisierungs](./how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md)Datei. |
+   | `<maml:description>`     | Fügt Inhalt für den Beschreibungs Abschnitt des Cmdlet-Hilfe Themas hinzu. Weitere Informationen finden Sie unter Vorgehens [Weise beim Hinzufügen der ausführlichen Beschreibung zu einem Cmdlet-Hilfethema](./how-to-add-a-cmdlet-description.md).                    |
+   | `<command:syntax>`       | Fügt Inhalt für den Syntax Abschnitt des Cmdlet-Hilfe Themas hinzu. Weitere Informationen finden Sie unter Vorgehens [Weise beim Hinzufügen von Syntax zu einem Cmdlet-Hilfethema](./how-to-add-syntax-to-a-cmdlet-help-topic.md).                                  |
+   | `<command:parameters>`   | Fügt Inhalt für den Parameter Abschnitt des Cmdlet-Hilfe Themas hinzu. Weitere Informationen finden Sie unter Vorgehens [Weise beim Hinzufügen von Parametern zu einem Cmdlet-Hilfethema](./how-to-add-parameter-information.md).                                  |
+   | `<command:inputTypes>`   | Fügt Inhalt für den Abschnitt Eingaben des Hilfe Themas für das Cmdlet hinzu. Weitere Informationen finden Sie unter Vorgehens [Weise beim Hinzufügen von Eingabetypen zu einem Cmdlet-Hilfethema](./how-to-add-input-types-to-a-cmdlet-help-topic.md).                        |
+   | `<command:returnValues>` | Fügt Inhalt für den Abschnitt "Outputs" des Cmdlet-Hilfe Themas hinzu. Weitere Informationen finden Sie unter Vorgehens [Weise beim Hinzufügen von Rückgabe Werten zu einem Cmdlet-Hilfethema](./how-to-add-return-values-to-a-cmdlet-help-topic.md).                   |
+   | `<maml:alertset>`        | Fügt Inhalt für den Abschnitt Notizen des Cmdlet-Hilfe Themas hinzu. Weitere Informationen finden Sie unter Vorgehens [Weise beim Hinzufügen von Notizen zu einem Cmdlet-Hilfethema](./how-to-add-notes-to-a-cmdlet-help-topic.md).                                      |
+   | `<command:examples>`     | Fügt Inhalt für den Abschnitt "Beispiele" des Cmdlet-Hilfe Themas hinzu. Weitere Informationen finden Sie unter [Hinzufügen von Beispielen zu einem Cmdlet-Hilfethema](./how-to-add-examples-to-a-cmdlet-help-topic.md).                            |
+   | `<maml:relatedLinks>`    | Fügt Inhalt für den Abschnitt "Verwandte Links" des Cmdlet-Hilfe Themas hinzu. Weitere Informationen finden Sie [unter Hinzufügen verwandter Links zu einem Cmdlet-Hilfethema](./how-to-add-related-links-to-a-cmdlet-help-topic.md).             |
 
 ## <a name="example"></a>Beispiel
 
- Im folgenden finden Sie ein Beispiel für einen Befehls Knoten, der die Knoten für die verschiedenen Abschnitte des Cmdlet-Hilfe Themas enthält.
+ Im folgenden finden Sie ein Beispiel für einen **Befehls** Knoten, der die Knoten für die verschiedenen Abschnitte des Cmdlet-Hilfe Themas enthält.
 
 ```xml
 <command:command

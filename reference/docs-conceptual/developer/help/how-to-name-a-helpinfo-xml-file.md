@@ -1,19 +1,12 @@
 ---
-title: Benennen einer helpinfo-XML-Datei | Microsoft-Dokumentation
-ms.custom: ''
+title: Benennen einer XML-Datei HelpInfo
 ms.date: 09/12/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 64e85b53-5aeb-4d6c-903c-af4ab62f11c1
-caps.latest.revision: 7
-ms.openlocfilehash: 45e8a5bb0066f38c82cd3be8ec881383befd9c85
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 9505a7f66852a569d25ac0c1be86e68f870a7930
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83811409"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86892930"
 ---
 # <a name="how-to-name-a-helpinfo-xml-file"></a>Benennen einer XML-Datei HelpInfo
 
@@ -27,9 +20,9 @@ Eine helpinfo-XML-Datei muss einen Namen haben, der das folgende Format hat.
 
 Die Elemente des Namens lauten wie folgt.
 
-ModuleName der Wert der **Name** -Eigenschaft des **ModuleInfo** -Objekts, das vom [Get-Module-](/powershell/module/Microsoft.PowerShell.Core/Get-Module) Cmdlet zurückgegeben wird.
+- `<ModuleName>`: Der Wert der **Name** -Eigenschaft des **ModuleInfo** -Objekts, das vom [Get-Module-](/powershell/module/Microsoft.PowerShell.Core/Get-Module) Cmdlet zurückgegeben wird.
 
-ModuleGUID der Wert des **GUID** -Schlüssels im Modul Manifest.
+- `<ModuleGUID>`: Der Wert des **GUID** -Schlüssels im Modul Manifest.
 
 Wenn der Modulname beispielsweise "Testmodule" und die Modul-GUID 9cabb9ad-f2ac-4914-a46b-bfc1bebf07f9 ist, lautet der Name der helpinfo-XML-Datei für das Modul wie folgt:
 
