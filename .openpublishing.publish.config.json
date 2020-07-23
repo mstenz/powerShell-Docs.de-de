@@ -1,6 +1,6 @@
 {
     "build_entry_point": "docs",
-   "dependent_packages": [{
+    "dependent_packages": [{
         "id": "Microsoft.DocAsCode.MAML2Yaml",
         "nuget_feed": "https://www.myget.org/F/op/api/v2",
         "path_to_root": "_dependentPackages/MAML2Yaml",
@@ -69,7 +69,9 @@
     "notification_subscribers": [],
     "sync_notification_subscribers": [],
     "enable_incremental_build": true,
-    "contribution_branch_mappings": {},
+    "contribution_branch_mappings": {
+       "live-sxs": "live"
+    },
     "skip_source_output_uploading": false,
     "need_generate_pdf_url_template": false,
     "branch_target_mapping": {},
