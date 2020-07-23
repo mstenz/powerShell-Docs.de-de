@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4a88dd89-6beb-494f-9e2a-6b10baed1a8d
 caps.latest.revision: 17
-ms.openlocfilehash: b5a5f3e187634b38ba3ce3da18a7ad64ccc09ce2
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.openlocfilehash: 652e095bcce606e47cb97658f79eaca34033b239
+ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
 ms.translationtype: MT
 ms.contentlocale: de-DE
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893015"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953300"
 ---
 # <a name="how-to-create-the-cmdlet-help-file"></a>Erstellen der Cmdlet-Hilfedatei
 
@@ -36,7 +36,7 @@ In diesem Abschnitt wird beschrieben, wie Sie eine gültige XML-Datei erstellen,
 
    In der folgenden Tabelle wird das XML-Element für jeden Knoten aufgeführt, gefolgt von einer Beschreibung der einzelnen Knoten.
 
-   |           Node           |                                                                                                     Beschreibung                                                                                                     |
+   |           Node           |                                                                                                     BESCHREIBUNG                                                                                                     |
    | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
    | `<details>`              | Fügt Inhalt für die Abschnitte "Name" und "Synopsis" des Cmdlet-Hilfe Themas hinzu. Weitere Informationen finden Sie unter Vorgehens [Weise beim Hinzufügen des Cmdlet-namens und der Synchronisierungs](./how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md)Datei. |
    | `<maml:description>`     | Fügt Inhalt für den Beschreibungs Abschnitt des Cmdlet-Hilfe Themas hinzu. Weitere Informationen finden Sie unter Vorgehens [Weise beim Hinzufügen der ausführlichen Beschreibung zu einem Cmdlet-Hilfethema](./how-to-add-a-cmdlet-description.md).                    |
@@ -54,9 +54,9 @@ In diesem Abschnitt wird beschrieben, wie Sie eine gültige XML-Datei erstellen,
 
 ```xml
 <command:command
-  xmlns:maml="https://schemas.microsoft.com/maml/2004/10"
-  xmlns:command="https://schemas.microsoft.com/maml/dev/command/2004/10"
-  xmlns:dev="https://schemas.microsoft.com/maml/dev/2004/10">
+  xmlns:maml="http://schemas.microsoft.com/maml/2004/10"
+  xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10"
+  xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
   <command:details>
     <!--Add name an synopsis here-->
   </command:details>
