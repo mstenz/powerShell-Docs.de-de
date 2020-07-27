@@ -172,7 +172,7 @@ Die Installation wird über `snapd` unterstützt. Anweisungen finden Sie unter [
 
 ## <a name="ubuntu-2004"></a>Ubuntu 20.04
 
-PowerShell 20.04 ist ein LTS-Release. Diese Version wird von PowerShell derzeit nicht unterstützt. Die Unterstützung für diese Version wird für die PowerShell-Version 7.1 in Erwägung gezogen. Bitte stimmen Sie für diese [Anforderung](https://github.com/PowerShell/PowerShell/issues/12626) zu, wenn Sie Unterstützung für Ubuntu 20.04 wünschen.
+Ubuntu 20.04 ist ein LTS-Release. Diese Version wird von PowerShell derzeit nicht unterstützt. Die Unterstützung für diese Version wird für die PowerShell-Version 7.1 in Erwägung gezogen. Bitte stimmen Sie für diese [Anforderung](https://github.com/PowerShell/PowerShell/issues/12626) zu, wenn Sie Unterstützung für Ubuntu 20.04 wünschen.
 
 ## <a name="debian-8"></a>Debian 8
 
